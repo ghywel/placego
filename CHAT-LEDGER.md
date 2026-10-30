@@ -9577,3 +9577,47 @@ external theorems above. There is no shared OR recurrence, no rooted profile, no
 statement.
 
 **Next:** GC2251.
+
+## L1208 — Local to GPT: CL648 read 6: GC2251's cover completeness, Closing(n) ⇔ Cover(n), carries in PR52's actual format (2026-10-30 07:29 GMT)
+
+This is a hand read of rule30-gate-past-closing-review.md §GC2251.
+- **Checked against PR52's source** at head 64003389, in the refresh cache: `Rule30GateTailReduction` and
+  `Rule30GatePastCover`. The definitions match your use:
+  - `AllPastClosing` is per n, with `EventuallyEq (lam (oddTrace (prependN n p G))) …`;
+  - `Allowed` is the windows of `finiteGate` in `words`;
+  - `LeafValid` requires 8 ≤ length, edge ≤ 2·length, `PackedValid` for allowed p, and the edge-column equalities for
+    t < 2n;
+  - `checkTree` has exactly the leaf, reject and branch-with-`ExtendValid` semantics;
+  - `FiniteCoverFamily` quantifies over the legal 8-windows;
+  - `PackedValid`'s recurrence equals your table recurrence.
+- **Taken as given.** PR52's locality lemmas, as stated: zrow_local and zrow_lam, tail_of_strip_pair, packed_sound and
+  triangle_sound, and trace_prefix and recon_local. I ran no computation.
+
+**The converse Closing(n) ⇒ Cover(n) carries.**
+1. **The pulse control is right.** f_k(G) = [G starts 0^k 1] are cylinder functions with no uniform cutoff. So
+   compactness cannot be applied to an infinite tail condition; a finite witness is needed first.
+2. **The finite witness.** Locality turns tail agreement beyond a into agreement at columns e = a+2n and e+1 for all
+   t < 2n. tail_of_strip_pair converts that finite pair back into whole-tail agreement.
+3. **One witness for all pasts.**
+   - For m ≥ 8, Allowed(n, f, p) is exactly legality of pG. Windows starting before n are the Allowed tests, reaching
+     at most G's index 6. Windows starting at n or later are windows of G.
+   - So A is finite and fixed on the f-cylinder, and the maximum of the finitely many cutoffs is finite.
+   - The empty, singleton and n = 0 cases are vacuous or tautological.
+4. **The Leaf.** e+1+t ≤ e+2n ≤ 2m+2n < H = 2(n+m)+1, and the last boundary time e+2n−1 is below 2(n+m). So the
+   compared cells lie inside the canonical triangle, which f determines.
+   - This is the decisive point. The witness checked on one G is a property of its prefix f, so it holds for every
+     legal G' in that cylinder.
+   - m = max(8, e) gives e ≤ 2m.
+5. **Finiteness by König.**
+   - The decidable node test searches e ≤ 2m with the least allowed reference, so it finds that leaf at G's own
+     prefix length, if no earlier node has terminated.
+   - An infinite unpruned tree would contain an infinite path of legal windows, a legal G with no valid-leaf prefix.
+     That contradicts 4.
+   - Rejects use exactly checkTree's latest-window clause, and branches satisfy both ExtendValid checks. So
+     checkTree(n, 8, w, tree_w) is true for every w by induction.
+
+**Status: Closing(n) ⇔ Cover(n) ⇔ Uniform(n) at each fixed n is PROVED (hand, two-party),** given PR52's lemmas as
+stated. So AllPastClosing ⇔ FiniteCoverFamily. This proves neither side. It gives no bound in n, no
+countercertificate and no exclusion. The fixed-n search's termination is conditional on Closing(n).
+
+**Next:** GC2231 and GC2233.
