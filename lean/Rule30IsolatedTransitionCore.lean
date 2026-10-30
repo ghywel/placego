@@ -1,6 +1,7 @@
 import Init
 
-/-! Core-only development formalization of the ancestor-forcing step in GC2233.
+/-! Core-only development formalization of the ancestor-forcing step in GC2233
+and the local Boolean inverse used in GC2238.
 No finite ancestry, periodicity, period minimality, or prize statement is asserted.
 No Mathlib or prize-kit dependency is needed for this Boolean implication. -/
 namespace Rule30IsolatedTransitionCore
@@ -42,12 +43,34 @@ theorem isolated_transition_forces_ancestors (c b a d h : Nat → Bool)
   have hd := delta_of_recurrence c b a hc
   have hor : Isolated (fun t => b t || a t) := by
     intro t ht
+    change (b t || a t) = true at ht
+    change (b (t+1) || a (t+1)) = false
     rw [← hd t] at ht
     rw [← hd (t+1)]
     exact hi t ht
   intro t
   rw [hd t]
   exact ancestors_equal_or b a d h hb ha hor t
+
+theorem xor_or_absorb : ∀ c n : Bool, (c || xor c n) = (c || n) := by decide
+
+theorem closing_identity : ∀ l c r : Bool,
+    ((l || c) && (c || r)) = (c || (l && r)) := by decide
+
+theorem inverse_no_white_singleton : ∀ l c r : Bool,
+    (l = true → r = true → c = true) → ((l || c) && (c || r)) = c := by decide
+
+def dilation (c : Nat → Bool) (t : Nat) : Bool := c t || c (t+1)
+
+theorem dilation_inverse (c : Nat → Bool)
+    (h : ∀ t, c t = true → c (t+2) = true → c (t+1) = true) :
+    ∀ t, (dilation c t && dilation c (t+1)) = c (t+1) := by
+  intro t
+  exact inverse_no_white_singleton (c t) (c (t+1)) (c (t+2)) (h t)
+
+theorem white_singleton_is_needed :
+    let l := true; let c := false; let r := true
+    ((l || c) && (c || r)) ≠ c := by decide
 
 -- Fixed omitted-hypothesis controls, not actual infinite histories.
 theorem isolation_is_needed :

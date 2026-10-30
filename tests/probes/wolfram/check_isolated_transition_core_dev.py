@@ -28,7 +28,9 @@ def main():
     env = dict(os.environ, LEAN_PATH="", LEAN_NUM_THREADS="1")
     heads = ["xor_cancel", "delta_of_recurrence", "local_forcing", "ancestors_equal_or",
              "isolated_transition_forces_ancestors", "isolation_is_needed",
-             "second_recurrence_is_needed", "first_recurrence_is_needed"]
+             "second_recurrence_is_needed", "first_recurrence_is_needed",
+             "xor_or_absorb", "closing_identity", "inverse_no_white_singleton",
+             "dilation_inverse", "white_singleton_is_needed"]
     text = source.read_text()
     if any(word in text for word in ["sorry", "native_decide", "axiom "]):
         raise SystemExit("forbidden proof escape")
@@ -91,9 +93,22 @@ def main():
         assert not admitted or b == a == (b or a)
         rows.append([b, a, d, h, bn, an, admitted])
     (out / "literal-oracle.json").write_text(json.dumps(rows) + "\n")
+    # Arithmetic min/max is independent of Lean's Boolean expression syntax.
+    inverse_rows = []
+    for l, c, r in itertools.product([0, 1], repeat=3):
+        image_pair = [max(l, c), max(c, r)]
+        recovered = min(image_pair)
+        guard = l * r <= c
+        assert recovered == max(c, l * r)
+        assert not guard or recovered == c
+        assert max(c, (c + r) % 2) == max(c, r)
+        inverse_rows.append([l, c, r, guard, recovered])
+    assert [1, 0, 1, False, 1] in inverse_rows
+    (out / "inverse-oracle.json").write_text(json.dumps(inverse_rows) + "\n")
     usage = resource.getrusage(resource.RUSAGE_SELF)
     result = {"status": "PASS_DEVELOPMENT_4331_CORE_ONLY", "headlines": len(heads),
               "axioms": [], "literal_rows": len(rows), "compiler_calls": len(calls),
+              "inverse_rows": len(inverse_rows),
               "child_cpu_s": sum(x["cpu_s"] for x in calls),
               "driver_cpu_s": usage.ru_utime + usage.ru_stime,
               "official_435_replay": "NOT_RUN", "independent_carrying_review": "PENDING"}

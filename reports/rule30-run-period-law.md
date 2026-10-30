@@ -161,3 +161,60 @@ standard [binary dilation and erosion](https://www.mathworks.com/help/images/mor
 The candidate1990 morphology paper's publisher link returned404; no theorem
 from that inaccessible text was used. No priority inference is made from
 the searches or the absence of an exact named corollary.
+
+
+## GC2240: one separately frozen core-only development check
+
+This changed-source stage follows the explicit GC2239 decision. It retains
+GC2236's failed source/receipt, and repairs exactly the applied-lambda issue
+with two explicit change steps before rewriting. The ancestor theorem's
+statement and hypotheses are unchanged. Five additional heads check Boolean
+absorption, the closing identity, its inverse with no white singleton, the
+forward-time profile lift, and the fixed101 omitted-guard witness. These
+are preparation for the hand argument, not a formal least-period/count proof.
+
+Source [Rule30IsolatedTransitionCore.lean](../lean/Rule30IsolatedTransitionCore.lean)
+SHA256 `4758cd2167c5d90bd6b7fdc2fe7b0d7235e0e133494486834020988889732699`;
+[driver](../tests/probes/wolfram/check_isolated_transition_core_dev.py)
+SHA256 `dd81aa18502fbb0349be6b98ba8accd754349927d2bf9038076760f4ed30690f`;
+unchanged run_capped SHA256
+`c8c58b49e032fc4c20b61675adc4194646713e692a51815996791ac8943ffc56`.
+Only the installed Lean4.33.1 is available. Its binary SHA256 matches the
+retained provenance `998f0cc2a5a754cc66df1f33b85e1447528737ff15012db35d8c501754b02f1e`;
+version output is checked in the stage. No downloads, lake, Mathlib build or
+4.35/official-checker claim. Source is UNCOMPILED at freeze.
+
+**Prediction:** all13 heads compile with empty axiom reports, with no
+warnings/errors; the separate false proposition is rejected for the expected
+reason; the16 literal Rule30-table cases and8 arithmetic min/max inverse
+cases pass. **Counterfactual:** any other result stops the stage and retains
+the failure, with no repair or retry in this freeze. **Unexpected control:**
+the101 word must violate the inverse without the guard; the three original
+omitted-recurrence/isolation witnesses remain checked. This is a same-worker
+validation, not the missing independent carrying read.
+
+Record searched: GC2238's actual kit932cf8dd/portal23PR comparison completed
+04:53:47Z, inp_least_period/S_rule and GC798; elementary morphology and
+Rowland2006 comparison are in the preceding section. The current source
+change formalizes the scoped hand identities and asserts no additional
+priority. Exact diff and driver syntax inspected before any compilation.
+
+ONE stage after pushing this freeze, with unchanged limits: one job,
+one Lean thread at nice10;300wall,768MiB owned-tree RSS,max3processes,
+16MiB/file and128MiB/stage; launch4096MiB and running3072MiB free+inactive,
+64MiB swap-growth stop. run_capped uses tree tracking, monitor-failure stop
+and verified cleanup. At most three sequential compiler calls each have
+verified20CPU-second hard limits; the non-spawning driver has4CPU seconds
+soft with no signal handler. Their fixed assigned total is64CPU seconds,
+below the120aggregate budget. This is a bounded call plan, not a claim that
+run_capped's inherited per-process120CPU limit is a tree-aggregate meter.
+Retain actual cumulative compiler/driver and supervisor CPU separately and
+check the stage total against120. No GPU or concurrent heavy job.
+
+Intel preflight05:11:59Z:6248MiB free+inactive,193.25MiB swap, load2.29;
+no compiler/probe job. pmset reports no recorded thermal/performance warning
+and CPU scheduler/speed limits100. This is a warning-status snapshot, not a
+physical temperature measurement or continuous thermal enforcement. Check
+again at completion; any warning forbids further compute and redirects to
+light reasoning. The existing pressure/monitor stops remain enforced during
+the job. No relaxed cap or automatic wider stage is authorized.
