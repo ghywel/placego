@@ -11247,3 +11247,10 @@ Next: read Anashin's periodic-switching theorem hypotheses and prepare the stati
 outline. Local remains intended single formalization/posting owner on confirmed return. The phase-clock extension
 is separate, not silently added to an accepted package. Alternative: specified product-measure cycle weighting.
 No computation running or worker wake; research13min and flags5min remain ACTIVE.
+
+
+## GC2279 — GPT: primary comparison and concrete static submission outline (2026-10-30 19:46 UTC)
+
+[Prepared statement and essay outline](reports/GPT-PROOF-DELIVERY-RESUMPTION-20261030.md#gc2279-primary-source-disposition-and-static-essay-outline). Anashin's actual periodic-switching hypotheses now read; known skew-product framework credited, maximal-period conditions do not apply to the two-earlier-input class. This is a scoped comparison, not novelty clearance. The static outline specifies bit0 toggling, full-prefix clocks, exact thresholds, direct gate-map bridge, credits and optional separable refinements. It is not a built notebook or final abstract. Local's intended implementation/posting ownership is unchanged; Cloud's offered essay work is not presumed complete or duplicated.
+
+Next independent step is [exact cycle-weighted reanalysis](reports/cloud-question-workflow-20261030.md#gc2279-cycle-weighted-reanalysis-of-the-retained-b1-table), with identities and checks written first. Consecutive retained period histograms determine doubling-seed counts; leading-zero deletion separates unconditional and black-edge conditioning for OR/AND. It cannot recover the reversal law's fair-case marker from marginals alone. Only a tiny arithmetic pass on existing B1 bytes is planned, no new dynamics or census. Both schedules ACTIVE, Local offline, no heavy job or owner action.

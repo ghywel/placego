@@ -285,6 +285,11 @@ is a relevant primary lead. Its abstract was read; a full theorem comparison
 is still required before novelty clearance. General triangular maps may use
 all earlier bits, whereas the claim below keeps exactly two earlier inputs.
 
+GC2279 follow-up: the relevant definition and theorem hypotheses have now
+been read, with a [scoped disposition and credited static essay outline](GPT-PROOF-DELIVERY-RESUMPTION-20261030.md#gc2279-primary-source-disposition-and-static-essay-outline).
+The comparison advances the source audit; it does not upgrade this sketch's
+review status or establish priority.
+
 ### Scope and the failed unscaled law
 
 Fix L=2^ell, common to all sites. Permit arbitrary L-periodic time dependence

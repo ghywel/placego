@@ -355,4 +355,59 @@ Each stage used one payload process/thread at nice10, a tracked time wrapper and
 
 The requested question pass is complete with the open cells explicitly named. Both heartbeats remain paused and no job is running. The useful next carrying read is A4's invariant affine restriction, E2's recurrent-image argument, and the all-root reduction immediately above; passive committed pointers suffice and no sleeping worker is assigned a job. A further independent research route is the conditional fresh-bit distribution law: derive a nontrivial statement about its deterministic branch from a stated ensemble, rather than fitting actual-root frequencies.
 
+## GC2279: cycle-weighted reanalysis of the retained B1 table
+
+Owner restart GC2277 supersedes the historical pause above. This is the
+independent A3'/C2 step while Local is offline. The pull is to extract an
+exact conditional ensemble statistic without rerunning a trajectory or
+treating cycles of different lengths as equally likely.
+
+**Hand identity, PROOF-SKETCH application of known cycle lifting.** For a
+fixed triangular map, let N_n(k) count n-bit seeds with least prefix period
+2^k. Let D_n(k) count those n-bit seeds whose two extensions double that
+period. The next-bit lifting flag is constant on the old orbit and independent
+of the newly appended initial bit. A returning lift splits into two cycles;
+a doubling lift joins into one double-length cycle. Counting seeds gives
+
+    N_(n+1)(k) = 2*(N_n(k)-D_n(k)) + 2*D_n(k-1),
+    D_n(-1)=0,
+    D_n(k) = N_n(k) + D_n(k-1) - N_(n+1)(k)/2.
+
+Thus consecutive complete period histograms determine the number of doubling
+seeds in each old clock class. Under independent fair initial bits,
+
+    Pr(next prefix doubles) = sum_k D_n(k)/2^n
+                            = mean(E_(n+1))-mean(E_n),
+
+where E_n in this section means the exponent for n bits, not index n.
+N_n(k)/2^k is the number of cycles in that class; using that count as a seed
+weight would change the ensemble.
+
+For homogeneous OR and AND, g(0,0)=0. Their even-seed subsystem is exactly
+the (n-1)-bit map after deleting the leading zero. Consequently the odd-seed
+counts, equivalently the black-edge-conditioned counts, are
+
+    O_n(k)=N_n(k)-N_(n-1)(k),
+    mean_odd(E_n)=2*mean(E_n)-mean(E_(n-1)).
+
+Taking differences also yields p_n^odd=2*p_n-p_(n-1), for n>=1, with the
+empty-prefix convention N_0(0)=1. This does not apply to arbitrary gates
+with g(0,0)=1. Nor does it extract the fair-versus-deterministic branch of
+the reversal law: that requires an upstream parity statistic not stored in
+these marginal histograms. These are finite identities, not a limit claim.
+
+**Predeclared retained-data check.** Record searched: B1 freeze GC2260 and
+outcome GC2270, CL663 A3'/C2', current `TFunctionCycles.lift_iff`, and the
+measure/ergodicity distinction in the primary triangular-map sources.
+Use only the already retained `edge_distributions.json` in the digest-bound
+GC2260 archive; no new dynamics, new seeds or enlarged widths. Prediction:
+the recurrence yields integer multiples of 2^k with 0<=D_n(k)<=N_n(k),
+and probabilities equal the expectation differences. The odd-seed subtraction
+must have mass 2^(n-1), and its own lift recurrence must give the stated
+conditional identity. Counterfactual: any failure stops this reanalysis and
+requires checking the count convention and retained bytes, not rerunning
+the census. Controls: total mass 2^n, known two-bit OR/AND discrepancy,
+one-bit base, and p_1^OR=1/2 versus p_1^AND=0. This is short exact-integer
+arithmetic on at most 21 stored rows; it starts no substantial compute stage.
+
 P128maximum plateau is unresolved: reopen only with a genuinely more economical exact closure/rank representation and a separately justified resource freeze, not a larger state cap by default. Exact4/3and root doubling density remain open: reopen a speed fit only with a structural front law, and the density route only with a root-compatible correlation law. The exact geometric fill, raw-overlap monotonicity, hiccup additivity and the simple bottom-wheel classification are refuted and should not be recycled. All-depth backward coalescence needs a new structural identity; extending40or512alone does not supply it. The optional Parry comparison remains parked; no owner action is requested.

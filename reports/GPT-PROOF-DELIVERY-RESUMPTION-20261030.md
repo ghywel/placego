@@ -195,3 +195,103 @@ the conservative Intel resource protocol, shared-store/TLS rules, current
 source/portal refresh cadence and meaningful-change-only reporting. They stay
 active until the owner changes them; waiting for an offline review is not an
 instruction to idle or halt the programme.
+
+## GC2279: primary-source disposition and static essay outline
+
+### The periodic-switching comparison is now statement-level
+
+[Anashin, Wreath Products in Stream Cipher Design, Definition 2.1,
+Theorem 2.8, Theorem 3.1 and Lemma 3.2](https://arxiv.org/pdf/cs/0602012)
+were read in full at those locations. The phase augmentation is his known
+skew-product construction. The maximal-period theorem assumes an odd
+aggregate coefficient of the full lower-bit monomial at every depth, in
+addition to conditions on the phase sequence. In our two-input class that
+coefficient is zero from depth 3 onward: each forcing ignores at least one
+of the lower bits. Thus those hypotheses do not apply. The theorem supplies
+neither our proposed quantitative half-rate bound nor a contradiction to it.
+This is a scoped comparison, not a novelty certificate or a new
+non-ergodicity result. His general switching construction is credited, and
+the source comparison does not require a paywalled paper.
+
+### Proposed static package boundary
+
+Working title: **Half-rate prefix clocks for triangular Boolean maps with
+two earlier inputs**. Keep the existing established shared byline from the
+delivered essays. This is a prepared statement/essay outline, not an assembled
+notebook, accepted proof, final abstract or posting request. Local remains the
+intended formalization/posting owner on confirmed return; Cloud's offered
+essay work remains separate from this outline.
+
+For each j>=0 choose a fixed Boolean gate g_j. Missing negative bits are zero;
+all bits update simultaneously by
+
+    x_j(t+1) = x_j(t) XOR g_j(x_(j-1)(t), x_(j-2)(t)).
+
+This includes a possible toggle of bit 0 when g_0(0,0)=1. Do not initialize
+its period to 1 unconditionally, as the earlier sixteen-gate probe did.
+Every finite prefix is a triangular permutation and its least period is a
+power of two. Let E_j be that exponent for bits 0 through j. For a>=0 put
+nu=E_a and define the existing thresholds and inverse count by
+
+    T_nu(0)=1,
+    T_nu(q+1)=T_nu(q)+2^(nu+T_nu(q)+q),
+    Q_nu(m)=min {q>=0 : m<T_nu(q)}.
+
+**Candidate main statement:** for every seed and a,m>=0,
+
+    E_(a+2m)-E_a <= m+Q_(E_a)(m) <= m+Q_0(m).
+
+An odd-length extension costs at most one additional exponent. The optional
+limsup consequence follows from the growth of the already-known thresholds;
+there is no assertion of a limiting doubling density, a matching lower bound,
+optimality, or centre-column nonperiodicity. A formal theorem about an abstract
+Clock must be accompanied by the actual gate-map bridge producing that Clock.
+
+### Draft explanatory text
+
+The right-edge period bound for Rule 30 uses two ingredients: a difference
+identity and a resource-counting theorem. The counting theorem makes no
+reference to OR. The identity only needs the derivative of the gate in its
+newer input to be affine in its remaining input. Every Boolean function of
+two inputs has that property. This observation leads to a proposed extension
+from OR to any fixed choice of the sixteen gates at each position, including
+spatial mixtures. It retains the kit's thresholds and counts complete prefix
+periods. Known triangular-map lifting supplies the periods and their
+stay-or-double alternatives. The additional proof obligation is the generic
+vanishing implication and its connection to the unchanged resource theorem.
+
+### Essay cells and acceptance boundary
+
+1. Define the synchronous map and the full-prefix period. Show the distinction
+   from an individual bit's period. State the main bound and the two-input,
+   fixed-in-time hypotheses before giving examples.
+2. Credit the kit's `TFunctionCycles`, `Rule30DifferenceOrder` and
+   `Rule30RecordCharge`, and PR55's actual-prefix extension. Present the
+   Boolean derivative identity and the three cases of the Path proof using
+   the exact map in section 11 of the carrying report.
+3. Include a small reproducible truth-table check of the derivative convention:
+   table index 2*b+s, so OR=14, AND=8, XOR=6. A finite cell can illustrate
+   that lambda is the XOR of the four truth-table values; it cannot establish
+   the unbounded theorem. Any new computational evaluation gets its own frozen
+   source, controls and caps first.
+4. Illustrate the first thresholds T_0=1,3,19. Any plot is explicitly an upper
+   bound, with neither empirical density fitting nor new seed/depth claims.
+   The earlier 80-case control covers only its original quadratic families,
+   not every gate or this future notebook.
+5. Embed the exact independently read Lean source and display the unchanged
+   checker result, expanded statement/axiom outputs and matched hashes only
+   after they actually exist. Freeze and validate the notebook separately;
+   retain any failure rather than silently rebuilding it.
+
+The affine logarithmic bound is a credited standard corollary. A4's two
+choked-gate refinements need their independent invariant-subspace read and
+can be omitted without weakening the proposed main result. The general
+reversal formula is an optional reusable corollary of known lifting.
+The new phase-clock sketch is deliberately outside this static outline.
+
+**Next independent mathematical step:** recover the cycle-weighted lifting
+counts from the already retained B1 distributions, separating uniform seeds
+from uniform cycles and conditional black-edge samples. Derive the identity
+by hand before inspecting the table; no new trajectory census is needed.
+The outstanding delivery dependency is a carrying read of the static core,
+followed by Local's single-owner implementation and actual checks on return.
