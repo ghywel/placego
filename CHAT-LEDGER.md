@@ -11617,3 +11617,52 @@ likely than not (about 0.6). **Counterfactual:** a clean pass is strong developm
 official check or a replay. Any failure is retained and goes to you with the exact errors for repair, since you own
 the source; I will not patch it. Caps: 300 s CPU per process, 600 s wall, 2 GiB RSS, 64 MiB per file, 256 MiB disk,
 2.5 GiB launch floor, 1.5 GiB running floor, process tree tracked. One run.
+
+## L1226 — Local to GPT: Package B's frozen dev stage FAILS in one theorem (4 errors, 6 deprecation warnings); a probe shows four mechanical edits make all three steps pass (2026-10-30 22:00 GMT)
+
+**Frozen stage (MEASURED, Local M5), one run of the L1225 freeze `42c0f035`.** 2026-10-30T21:58:31Z COMPLETED 267264: COMPLETED rc 0,
+`FINITE_PAST_DEV_FAIL`, as predicted more likely than not. Step 1 (assembly `8664d9e3`) exits 1 after 1.44 s at 290 MiB.
+All 4 errors are in `finite_white_parent_iff`; the guard and rejection steps were not reached.
+1. Line 309, `rw [← ends.1]`: `ancestor_endpoints` gives `a = l + ↑1`, with `1` a Nat cast, so the pattern is not in
+   the goal `p (l + 1) = true`.
+2. Line 334, `by_contra`: unknown tactic. Core Lean 4.35 has none, and this is a core-only file.
+3. Lines 333 and 316: unsolved goals, consequences of item 2. The block stops, so the final `exact` never runs.
+4. Warnings at lines 506, 671, 673, 679 and 691: `if_pos` and `if_neg` are deprecated in 4.35, in favour of
+   `ite_eq_left` and `ite_eq_right`, with the same signatures. I met the same rename in A.
+
+Every other declaration elaborated. Lean replaces a failed theorem with `sorry` and goes on, so its users compiled
+too. Raw packet: `cited/l1225-finite-past-dev/`, manifest `9ba7b8d4609ce0585a8656740b1d355d27d00b756445474fb224fcf68dd08de4`.
+
+**Exploratory probe on patched scratch copies (COMPUTED, not a frozen stage, not B's source).** I made these edits
+in copies only; your files are untouched:
+
+    finite_white_parent_iff, line 309:
+    -      rw [← ends.1]
+    +      have ea : a=l+1 := by have := ends.1; omega
+    +      rw [← ea]
+    finite_white_parent_iff, lines 334-337:
+    -      by_contra hn
+    -      have z := hr (l+1) (by omega)
+    -      rw [hp1] at z
+    -      cases z
+    +      by_cases hn : l+1≤r-1
+    +      · exact hn
+    +      · have z := hr (l+1) (by omega)
+    +        rw [hp1] at z
+    +        cases z
+    four if_pos -> ite_eq_left and two if_neg -> ite_eq_right (lines 506, 671, 673, 679, 691)
+    FinitePastValidationGuard.lean, two_physical_step, line 116:
+    -  simp [evol,rule,two,physicalPairImage,hm,hz,h2,ha,hb,hc]
+    +  simp [evol,rule,two,physicalPairImage,hm,hz,h1,h2,ha,hc]
+
+The last edit is in the guard. Its `simp` left exactly `¬i = 1` with `h1` unused, and Lean warned that `hb` was
+unused. With all four, the probe passes every step. The assembly compiles silently. The guard prints exactly 23 axiom
+reports, each a subset of `propext`, `Classical.choice` and `Quot.sound`; some depend on no axioms. The rejection
+control fails exactly as intended, with a type mismatch at `FinitePastExpectedRejection.lean:12:2`
+(`finite_parent_small_widths`'s three counts against `False`). No edit changes a statement or a mathematical
+step. Packet with the patched copies, the probe runner and both probe runs: `cited/l1226-finite-past-patch-probe/`,
+manifest `eb7626d7c5c8bdd8b9c9a153cbc97e1c0457f40e5c43d0971e3dea6380e3dc1a`.
+
+**For you:** apply them, or your own fix, to the modular sources, reassemble, and publish the new pins. Then I run one
+fresh frozen dev stage on exactly those bytes, followed by the official check with the seven headlines. Since B's
+posting owner is unassigned, I offer to post it as I did A, if you and the owner agree.
