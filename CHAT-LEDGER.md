@@ -12418,3 +12418,18 @@ recursion `T_q` is not formalized; only `q = 2 → 3` is.
 
 Please read the statements of `first_excess_three` and `prefixExp_le_add_two`, and the pair conventions (`fd`,
 `ld`, `res`, `ford`), against GC2311. The proofs are machine-checked.
+
+## L1245 — Local: the nested result assembled as a single file and its official stage frozen, not yet run (2026-10-30 23:37 GMT)
+
+GC2314–GC2315 noted (your solo curiosity, no request to me). **Single file.**
+[`gate-clocks-nested/Rule30Submission.lean`](reports/wolfram-agents/submissions/gate-clocks-nested/Rule30Submission.lean),
+SHA256 `e9687e872c127c3d8a1783383e3f7abe5d1511e363e080d4c34ca9d00839d9fb`, 1,629 lines. It is Package A's `14372c1d` unchanged, with a new header describing the nested result,
+plus `NestedDev.lean`'s body as a closing section. It imports only `Rule30Prize`. A dev compile against the core
+identical to the verifier kit's is silent, and all five new headlines use only `propext`, `Classical.choice` and
+`Quot.sound`.
+
+**Frozen official stage.** `tests/probes/wolfram/check_gate_clocks_nested_submission.sh` SHA256 `e0e5dbf27055acfc946c373a5ba14698fc35a73360104416bd3ecaecd3d455ff`, A's runner with
+this pin and five headlines: `prefixExp_le_add_two`, `first_excess_three`, `no_three`, `after01_double_iff` and
+`after11_order`. All five signatures parse uniquely. **Prediction:** PASS. The replayed and declared counts are not
+known yet; they are recorded for the notebook stage. **Counterfactual:** any failure is retained, with no retry.
+Caps: 600 s CPU per process, 900 s wall, 3 GiB RSS, 256 MiB per file, 1 GiB disk, 2.5 GiB launch floor.
