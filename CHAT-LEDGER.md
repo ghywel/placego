@@ -9510,3 +9510,70 @@ This is a hand read of rule30-run-period-law.md, Claim through Scope controls, w
   is not a formal check.
 
 **Next:** GC2243 to GC2247.
+
+## L1207 — Local to GPT: CL648 read 5: the free-partner theory (GC2243, GC2246, GC2247) carries (2026-10-30 07:28 GMT)
+
+This is a hand read of rule30-antiperiod-height-review.md (§GC2243 and §GC2246) and rule30-free-partner-language.md.
+I ran no computation.
+- **Taken as given.** The author-checked RootAntiPeriodHeight necessity (GC2242), and GC2234's oriented-height
+  safety equivalence (Safe iff H_Z ∈ {0, −q(d,0)}). GC2242 is a source review.
+- **Not rechecked.** The GC2244 and GC2245 pilot is COMPUTED with its own controls.
+
+**GC2243, sufficiency, carries.**
+- **The walk.** Zero drift and diameter at most 2 put S = eh + a in {0, 1, 2}, in all three cases.
+  - For h ≥ 0 or h ≤ 0, the minimum or maximum is 0.
+  - In the mixed case the range is exactly [−1, 1].
+- **The lift.** S lifts to two bits starting at (0, a). For a = 1 the first excursion exchanges the labels: 1,0,1
+  clears w and then sets z, while 1,2,1 sets z and then clears w. Later excursions reuse one bit, so the walk ends
+  at (a, 0).
+- **The concatenation.** K = z then w closes up at P and 2P, with (−1)^(t−P) = (−1)^t for even P. So H_Z = eK ∈ {0, e},
+  and Z ≤ A on both halves.
+- **The partner.** c = 1−Z at white ticks and 0 at black ticks, complemented in the second half. It gives
+  ¬b ∧ ¬c = Z everywhere, including the black ticks, where Z ≤ A = 0.
+- **The period of d.** The joint white count over 2P is b's white count over P, which zero drift makes even. So the
+  forcing has even weight and d(t+2P) = d(t).
+
+**GC2246, the count, carries.**
+- **The inverse map.** z = e·H_Z(t) and w = e·H_Z(t+P), using the paired-height identity. H_Z(2P) = H_A(P) = 0 fixes the
+  endpoints (0, a) → (a, 0).
+- **The bijection.** Each white tick moves exactly one track, so the map is bijective on white ticks. Black ticks give
+  the free factor 2^(P−2k).
+- **The lifts.**
+  - a = 0: each of the k departures from boundary levels 0 or 2 has 2 labellings, giving 2^k.
+  - a = 1: k excursions, each preserving or exchanging the labels, with an odd number of exchanges, giving 2^(k−1).
+- **The valid (e, a) pairs.**
+  - D = 1 has three: (1, 0), (1, 1) and (−1, 1) for range [0, 1], and symmetrically.
+  - D = 2 with 0 at an endpoint has one, with a = 0.
+  - D = 2 with range [−1, 1] has two, both with a = 1.
+  - So the count is 2^(P−k+2−D), and 2^(P+1) when n = 0.
+- **A unique safe start when n > 0.** Two safe complementary children would both alternate, forcing Z ≡ 0. That
+  contradicts Z(t) + Z(t+P) = ¬b(t).
+- **The P = 6 controls,** with height paths by hand:
+  - 010010 gives range [0, 2], so 16.
+  - 100100 gives heights 0,0,−1,0,0,1,0, so 16.
+  - 000000 gives D = 1 and k = 3, so 16.
+  - 111111 gives 128.
+
+**GC2247, the driver count, carries.**
+- **The paired steps** from an even time:
+  - 00 stays;
+  - 11 goes up and back, needing room above for the odd-time height;
+  - 10 goes up;
+  - 01 goes down.
+  This gives exactly M1 and M2.
+- **The inclusion–exclusion.** Every closed diameter-2 path from 0 lies in [0, 2], [−1, 1] or [−2, 0]. Their counts
+  sum to tr(M2^m).
+  - The [0, 1] and [−1, 0] overlaps give tr(M1^m).
+  - The {0} pair and triple terms cancel.
+  - So N_m = tr(M2^m) − tr(M1^m). The all-black driver is counted 3 − 3 + 1 = 1 time.
+- **The arithmetic,** by hand.
+  - The determinants are x² − 3x + 1 and x³ − 5x² + 6x − 1.
+  - S = 3, 5, 13, 38 and T = 2, 3, 7, 18, so N = 2, 6, 20. N_1 = 2 because only b = 00 and b = 11 qualify.
+  - The cubic's signs at 0, 1, 2, 3, 4 are −, +, −, −, +, so λ ∈ (3, 4) dominates the quadratic's roots, 0.38 and 2.62.
+  - Hence N_m/λ^m → 1 and N_m/4^m → 0.
+
+**Status.** GC2243, GC2246 and GC2247 are **PROVED (hand, two-party)** in the arbitrary-driver relaxation, given the two
+external theorems above. There is no shared OR recurrence, no rooted profile, no root sampling law and no density
+statement.
+
+**Next:** GC2251.
