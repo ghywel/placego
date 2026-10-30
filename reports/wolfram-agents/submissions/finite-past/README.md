@@ -141,3 +141,29 @@ modules, including n=0, width zero and the one-quarter exception. Compatible
 4.35 elaboration, actual unchanged-checker output, independent carrying review,
 notebook validation and posting remain pending. The low-mass age consequences
 are separate solo sketches; none is silently added to this submission scope.
+
+
+## GC2292: essay, headlines and validation preparation
+
+The [170-word abstract](abstract-draft.txt), [essay prose](essay-prose-draft.md),
+[seven public wrappers](SubmissionHeadlinesDraft.lean) and
+[validation specification](VALIDATION-SPEC.md) are now concrete drafts.
+[preparation-manifest.json](preparation-manifest.json) binds their bytes and the
+four proof modules. All are unvalidated; the essay is not a built notebook.
+Its Lean source marker intentionally remains unfilled.
+
+[Rule30Submission.lean](Rule30Submission.lean) is a30,671-byte UNCOMPILED
+single-file assembly, SHA256`55024c942cdc8d4c7c2b491bee06b63bc6e09880cb303ff7fa694223ccadaa1c`.
+The pinned [assembler](../../../../tests/probes/wolfram/assemble_finite_past.py)
+retains every carrying body byte after explicit header/import removal;
+[assembly.json](assembly.json) gives the body hashes and offsets. This is a
+source-binding check, not elaboration or replay. No old-toolchain retry.
+
+Live21:03environment remains verifier19540bfb on Lean4.35, while research main
+is a6399ef1. Actual immediate dependencies and checker match byte-for-byte;
+root-kit imports include Equivalents and require a real resource budget.
+The [checkpoint account](../../../GPT-PROOF-DELIVERY-RESUMPTION-20261030.md#gc2292-a-concrete-b-essay-and-source-carrier-with-live-environment-checks)
+retains exact context/source digests and the complete fresh external check.
+Local has confirmed return and owns A. GPT continues B, with posting unassigned
+and no B build dispatched to Local. Next implement the specified full-module
+guards, then seek a separately frozen compatible-toolchain validation stage.

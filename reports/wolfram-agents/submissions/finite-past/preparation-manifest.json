@@ -1,0 +1,82 @@
+{
+  "checkpoint": "GC2292",
+  "status": "PREPARATION_ONLY_UNCOMPILED_NOT_AN_EXECUTION_FREEZE",
+  "source_owner": "GPT",
+  "posting_owner": null,
+  "mathematics_provenance": "G121/G122/L077; actual kit ingredients; Karttunen OEIS2016 finite parent, ancestor and age",
+  "proof_module_count": 4,
+  "wrapper_module_count": 1,
+  "headlines": [
+    "Rule30Submission.finite_root_age",
+    "Rule30Submission.finite_parent_test",
+    "Rule30Submission.normalized_ancestor_bijection",
+    "Rule30Submission.finite_word_enumeration",
+    "Rule30Submission.finite_parent_enumeration",
+    "Rule30Submission.finite_parent_count",
+    "Rule30Submission.finite_parent_small_widths"
+  ],
+  "research_kit": "a6399ef15ff409d4dc0c5feb119b289aa31588a4",
+  "verifier_kit": "19540bfb974ef743bf98818e768c1ee94f62eecf",
+  "verifier_environment_sha256": "0b3c0f14cc5fede3be3ad35ae0f5c35a4b740fb4178316c6b2a7cafe4b4b4f4d",
+  "portal_skill_sha256": "1e702976f3bdd169350a7cc034161775e335d35f4badce457c03872c82bc6709",
+  "files": [
+    {
+      "path": "Rule30FinitePastDraft.lean",
+      "sha256": "a46243a1ac7ed1732f6bbce9986c9434152f934c1e3d62ec251dee3e8c0acf3f",
+      "bytes": 10161
+    },
+    {
+      "path": "FiniteParentCriterionDraft.lean",
+      "sha256": "bdf97197b9a68422ba76c5e61093e562196532f2badf1ca0427dd6d940f72801",
+      "bytes": 3562
+    },
+    {
+      "path": "NormalizedFinitePastDraft.lean",
+      "sha256": "4cbba36a4c5e4393ad6f7d964ddfba9ad6e6bb25986b399987514762d231fe43",
+      "bytes": 4918
+    },
+    {
+      "path": "FinitePastCountDraft.lean",
+      "sha256": "0f44079653f03f001988d7171554533e2bde469fa43cf346883e2b2c00143e00",
+      "bytes": 9232
+    },
+    {
+      "path": "SubmissionHeadlinesDraft.lean",
+      "sha256": "a892d9c4b705e509e47d68819851fd07153d4b335aca222305fd99b91f0fc026",
+      "bytes": 2748
+    },
+    {
+      "path": "FinitePastGuard.lean",
+      "sha256": "464868dfd7435abf6f842c92b9144ef3949149e56c9b1724d706a39e0806abf1",
+      "bytes": 1375
+    },
+    {
+      "path": "abstract-draft.txt",
+      "sha256": "5be53efa976377bafaa9cd786b41429a0354d41ac4bb8f6ac58946be3fde11c7",
+      "bytes": 1237
+    },
+    {
+      "path": "essay-prose-draft.md",
+      "sha256": "745fcd2a93c2448a8dcae36d90d1ac608c50a9ac3f7284846127588ff863cd44",
+      "bytes": 10817
+    },
+    {
+      "path": "VALIDATION-SPEC.md",
+      "sha256": "47dfee502749cec8bd7a9ebc34aac7ec6fce004efbd82ff2d41eda9a99638d05",
+      "bytes": 10763
+    },
+    {
+      "path": "Rule30Submission.lean",
+      "sha256": "55024c942cdc8d4c7c2b491bee06b63bc6e09880cb303ff7fa694223ccadaa1c",
+      "bytes": 30671
+    },
+    {
+      "path": "assembly.json",
+      "sha256": "3247941a3ec539f68638c380a1c0e0d500ce1fa920aa03fe0515bf7dd2d9889a",
+      "bytes": 2551
+    }
+  ],
+  "assembled_source_status": "UNCOMPILED, five carrying bodies byte-bound; no local draft imports in assembled file",
+  "public_context_manifest": "cited/gc2292-submission-context/manifest.json",
+  "public_context_sha256": "c74ac46e2fcace4622e77f2413a53c518bf79834dbd0c6826fdd87eb68e9c268"
+}

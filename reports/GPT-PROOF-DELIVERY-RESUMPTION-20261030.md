@@ -6,12 +6,24 @@ pulls. The 13-minute research heartbeat and 5-minute flag poller were updated
 through the app and independently read back ACTIVE at their existing cadences.
 Their prompts now carry this arrangement and supersede the previous pauses.
 
-Local is offline for approximately 1.5 hours during the owner's travel. GPT
-must not wake Local, dispatch work, assume M5 availability, or infer a return
-from elapsed time alone. A fresh owner/Local resumption confirms availability.
-Committed and shared-store pointers are passive. GPT continues useful work
-independently. Cloud's CL667 assessment is read completely; it is a proposal
+At the restart Local was offline during the owner's travel; GPT used passive
+committed/shared-store pointers and did not infer a return from elapsed time.
+Local's explicit resumption is now recorded in GC2292 below. GPT continues
+independent work without assuming an unallocated M5 build slot.
+Cloud's CL667 assessment is read completely; it is a proposal
 to evaluate and prepare two packages, not an acceptance or novelty certificate.
+
+## Live checkpoint: GC2292
+
+**Local has resumed**, confirmed by its shared state at21:00:25UTC on the owner's word. It takes sole Package A formalization/posting ownership, starting with the static-core carrying read; it reported nothing compiling at that time. GPT continues B preparation. No B build is assigned to Local, and no machine availability is inferred beyond that report.
+
+B now has a [170-word abstract, essay draft, seven public wrappers and validation specification](wolfram-agents/submissions/finite-past/README.md#gc2292-essay-headlines-and-validation-preparation). A deterministic assembly preserves all five pinned source bodies in a 30,671-byte single module. Everything remains UNCOMPILED; the essay has an explicit unfilled source marker and has not been built or run. Independent source/artifact review and compatible-toolchain checks remain pending. The prior failed stage is not retried.
+
+The complete21:03:37external refresh found no new portal entry or indexed source change:69entries,17openPRs, kit main a6399ef1. Two new PR comments were read completely. PR61 asks about an arbitrary-black-prefix period-reflection analogue; its cited seed-only proof depends on the seed's white triangle and does not instantiate directly. No external reply sent. The verifier is still19540bfb on Lean4.35; the actual B dependencies and checker were fetched and compared, and retained with the instructions/environment packet.
+
+**Next executable step:** implement the validation controls specified for the complete B source without launching a compiler until a compatible toolchain, fresh resource allocation and frozen stage are in place. Keep the seven exact wrapper types and source assembly bound. Do not duplicate Local's A work. A later actual source review may revise these drafts; no final notebook or posting status is implied.
+
+**Warm alternative:** inspect the exact seed-dependent step of PR61's period-reflection question against existing arbitrary-prefix statements, seeking a source-compatible replacement for the initial white triangle; no external reply or renewed solver. **Curiosity:** seek a run-transition resource for fixed black mass; zero runs saturate but inversion can create many black cells, so the three/four-cell bounds supply no induction or fitted general formula. Both schedules ACTIVE.
 
 ## Live checkpoint: GC2290–GC2291
 
@@ -866,3 +878,41 @@ All other four-black rows are roots. In particular **A(y)<=4**, sharply. The lit
 The terminal word has four black cells and age four, since the initial singleton is a root and finite predecessors are unique. A parity guard is q=2: Z_2=11001001 has parent X_2=110111, which fails the congruence test; the corresponding four-black word at sites 0,1,4,11 has age three, not four. The q=1 endpoint and the separate v=1 branch prevent a truncated or empty-block exception.
 
 This is a universal hand classification over arbitrary gaps for exactly four black cells, not a trend from a finite sample. It does not prove that every fixed population has a span-independent age bound, or supply an induction on population: the unique parent can contain arbitrarily many black cells. The next useful question is whether the run-transformation monoid supplies a reusable decreasing resource; simply testing five cells or fitting a sequence of maxima would not answer that question.
+
+
+## GC2292: a concrete B essay and source carrier, with live environment checks
+
+### Preparation artifact, not validation
+
+Prepared [abstract](wolfram-agents/submissions/finite-past/abstract-draft.txt), [essay prose](wolfram-agents/submissions/finite-past/essay-prose-draft.md), [seven headline wrappers](wolfram-agents/submissions/finite-past/SubmissionHeadlinesDraft.lean), and [validation specification](wolfram-agents/submissions/finite-past/VALIDATION-SPEC.md). The abstract is170words/1237characters and uses the established shared byline in the essay. It states the physical root/age bound, exact conditional white-right-parent test, translated n-step bijection and all-width count, with known OEIS/kit/G121 provenance. Solo age-distribution, three/four-black and infinite-tail claims are excluded. This is a preparation artifact, not a new submission or novelty clearance.
+
+The wrapper types are actual source, not names promised for later implementation. `finite_word_enumeration` and `finite_parent_enumeration` include membership equivalence and duplicate-freeness, so their lengths count the claimed rows. Textual checks match all seven names to the planned notebook checks. The source uses neither added axioms nor native decision shortcuts, but only a compiler/replay can establish acceptance.
+
+[The assembler](../tests/probes/wolfram/assemble_finite_past.py) ran once as a lightweight text operation, not a Lean/Wolfram computation. It pins all five input digests and removes only their exact listed module/import/public-section lines. Every remaining byte is retained, with body offsets/digests in [assembly.json](wolfram-agents/submissions/finite-past/assembly.json). The output [Rule30Submission.lean](wolfram-agents/submissions/finite-past/Rule30Submission.lean) is30,671bytes, SHA256 `55024c942cdc8d4c7c2b491bee06b63bc6e09880cb303ff7fa694223ccadaa1c`, **UNCOMPILED**. It imports the official statements through Rule30PrizeKit and the actual Realization module; no private draft import remains. Source preparation is now concrete, while independent source review and a compatible compiler stage are still pending.
+
+The essay's two small illustrations are written but unexecuted: a literal five-row pattern with its centre bits, and widths1..8with a separate integer-formula orientation check. Expected values are specified, not reported as output. Its source marker remains unfilled until validated bytes are available; no LeanEnvironment, notebook, replay or posting outcome is claimed. The validation specification distinguishes development, source assembly, unchanged official replay, notebook evaluation and public verification, and explicitly avoids importing the old M5 resource envelope onto Intel.
+
+Adversarial hand review corrected a provisional boundary control before any run. An all-black row with only one white cell does not give111 as first proposed; it gives a singleton. The correct countercontrol is the step p(i)=[i>=1], whose output is11 at0,1. Both test bits y(1),p(1) are black, yet p is infinite and fails the required white-right premise at R=1. The specification retains this precise control and no failed numerical result is invented.
+
+### Fresh external state and actual dependency comparison
+
+`known_find.py --new` completed at21:03:37UTC, portal timestamp21:03:34: kit main
+`a6399ef15ff409d4dc0c5feb119b289aa31588a4`,69portal entries,17openPRs. The only indexed additions are two comments:
+
+- [PR58 comment](https://github.com/WolframInstitute/Rule30PrizeKit/pull/58#issuecomment-6532322199), read fully: its author reports removal of a docstring credit line, retained README credit, rebase and local successful checks. Head remains1b7cbc6d18a1c989a24f6a7e598ef2fac5ab8de4; no new indexed proof bytes or independently performed replay.
+- [PR61 comment](https://github.com/WolframInstitute/Rule30PrizeKit/pull/61#issuecomment-6532322600), read fully: the already carried four-layer budget and linked five-digit trap retain their scope. The new question asks whether periodic categorical boundary memory of an actual arbitrary black prefix reflects its full autonomous prefix period. The archive explicitly keeps this open. Head17098426 and archive30b7cfb9 are unchanged from GC2283. Reading `RightPeriods.Z_of_inp_per` and `halve_inp` shows the exact nontransferable step: `R_lt` makes the seed's initial white triangle, which periodic input copies to a later triangle. An arbitrary initial prefix has no such premise. `WordBoundary.reflection_of_word_injective` remains a conditional implication from the open all-return-word claim. This is a source/scope check, not a solution or obstruction to every replacement argument. No reply to the external author was sent; the owner's reserved PR51 reply remains untouched.
+
+The live [portal skill](https://www.wolframcloud.com/obj/rule-30-prize/Agents/skill.md) remains1.17.3, SHA256
+`1e702976f3bdd169350a7cc034161775e335d35f4badce457c03872c82bc6709`.
+The web browsing tool could not access it; a verified-TLS direct read succeeded.
+Its existing consent condition is already satisfied by the owner's standing delivery authorization; no new routine permission round is introduced.
+The live [verifier environment](https://www.wolframcloud.com/obj/rule-30-prize/Agents/api/environment)
+reports kit`19540bfb974ef743bf98818e768c1ee94f62eecf`, Lean4.35.0,
+Mathlib56a005855e, LeanLink1.2.1, image11. The exact environment digest is
+`0b3c0f14cc5fede3be3ad35ae0f5c35a4b740fb4178316c6b2a7cafe4b4b4f4d`.
+
+Direct verifier-commit source reads bind Jen`07009448`, Realization`da644450`, Prize`9d6bc9de`, checker`b882f252`, toolchain and Lake files: all byte-identical to current main. The root Rule30PrizeKit file differs only in its catalogue-count comment,136versus168. Its imports include Rule30Equivalents, so core-only proof bodies do not guarantee a small whole-submission import footprint. A later real stage must budget for its actual import closure and current host headroom.
+
+All13public source/context payloads,115,762bytes, were uploaded raw with verified TLS and readback to `cited/gc2292-submission-context/`; manifest SHA256
+`c74ac46e2fcace4622e77f2413a53c518bf79834dbd0c6826fdd87eb68e9c268`.
+This is retained public context, not a compiler receipt. The preparation manifest binds the essay, abstract, four proof modules, wrapper, inherited guard, specification and source assembly. No new computation, kernel replay, worker dispatch or submission occurred.
