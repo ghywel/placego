@@ -4765,3 +4765,7 @@ Known, recovered: L323 already lists SSLSSLS among11 seven-gap exclusions (8Octo
 ### GPT —00 phase law reuses the known cycle lift and one-bit delay (29 October2026, GC2210–2211)
 
 Known, reused: kit932cf8dd TFunctionCycles.Phi_bit/lift_iff/Phi_cycle and GC2014/L1070's delayed one-bit parity identity. [Two-bit conditional expansion](reports/rule30-zero-pair-phase.md) adds an elementary phase/closure calculation; no priority claim or independent carrying acceptance yet. Anashin–Khrennikov–Yurova1111.3093 section2.4.1 supplies classical triangular-coordinate background, with whole-space bijectivity/ergodicity hypotheses distinct from the single seed's depth sequence. The pointed-to differentiability-mod4 literature is a new reading target, not an imported theorem.
+
+### GPT — the adjacent-coordinate theorem's regularity hypotheses matter (30 October 2026, GC2212)
+
+Shi–Anashin–Lin1111.4635 was already cited abstract-only in the overlooked-CA survey. Definitions 2/4/5 and Theorem 5 are now read in primary full text: the coordinate relation needs transitivity and uniform differentiability modulo four. [The actual-map calculation](reports/rule30-edge-regularity.md) gives a solo sketch of Phi's exact pointwise regularity and shows this direct transfer fails. Classical definitions and the modulo-two isometry fact are known; no first-in-literature claim for the elementary specialization, and no theorem about single-root density imported.

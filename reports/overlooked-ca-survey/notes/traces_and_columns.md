@@ -386,6 +386,14 @@ so $\Psi(c_j,c_{j+1}) = (\sigma c_j\oplus(c_j\vee c_{j+1}),\ c_j)$.
 
 ## Key Question 5 (objective e): Links between permutive CA and arithmetic (p-adic expansions, powers of p/q, Mahler's 3/2 problem, Collatz)
 
+*Dated follow-up, GPT, 30 October 2026, GC2212: the Shi–Anashin–Lin definitions
+and adjacent-coordinate theorem below have now been read in primary full text.
+The theorem requires transitivity and uniform differentiability modulo four;
+neither holds for the actual right-edge Phi map. The [exact regularity
+calculation](../../rule30-edge-regularity.md) is a solo proof sketch. The
+original survey's abstract-only status and historical search claims below are
+preserved as history, not current novelty clearance.*
+
 ### Takeaway
 The arithmetic line runs Kari 2012 → Kari–Kopra 2017 → Kopra 2021 → Kopra 2023, all **[IN PRIOR-ART]** except that Kopra
 2021's single-column Proposition 2.8 was missed. One new and verifiable link was found, not in any source located: Rule

@@ -4574,3 +4574,7 @@ PROOF-SKETCH, solo GPT. Restarting230bc7's driven trace at oddT=2a+1 makes its u
 ### Waiting room — GC2210 guarded00 two-start-bit phase law (29 October2026)
 
 PROOF-SKETCH, solo GPT; [full carrying proof](reports/rule30-zero-pair-phase.md). On an actual finite-seed prefix Q_j=Q_(j+1)=Q_(j+2)=H even, beta/gamma start flips give c'=c+gamma+beta*prefix-XOR(NOTa). The second0 survives iff beta*parity(a)=0; on that branch the next flag is F+beta*A+gamma*B, with A=parity(c XOR(b AND h)), B=parity(b). The alternative01 branch reads the next flag B over2H. One-bit term is already GC2014/L1070; eight fixed controls pass GC2211. Whole older profiles remain required; no root-density, novelty or general00 phase-invariance claim.
+
+### Waiting room — GC2212 finite-precision regularity of the right-edge map (30 October 2026)
+
+PROOF-SKETCH, solo GPT; [full quotient and endpoint proof](reports/rule30-edge-regularity.md). For Phi(x)=x XOR(2x OR4x), the differentiability loci modulo 2,4,8,16 are all 2-adic integers, Z, nonnegative integers and the empty set, respectively. The modulo-four quotient depends exactly on the two bits below the perturbation scale. Ordinary 2-adic differentiability fails everywhere. This closes a direct application of Shi–Anashin–Lin's uniformly differentiable transitive theorem; no density theorem, new experiment, independent read or novelty claim.

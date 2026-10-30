@@ -1242,3 +1242,16 @@ from this conditional decision, although their profiles change. [Proof and exact
 The traveller is given the full input profiles and cycle endpoint. Their generation, growing length and
 constraints remain part of the problem; this is not an autonomous small-state model. Local's carrying read
 is complete in this scope; no frequency, density or prize conclusion follows.
+
+## GC2212 — how smooth is the right-edge arithmetic map?
+
+The pointwise precision ladder has a sharp hand answer: for
+Phi(x)=x XOR(2x OR4x), derivatives modulo 2,4,8,16 exist respectively at all
+2-adic integers, ordinary integers, nonnegative integers and nowhere. The
+small-increment quotient modulo four reads exactly the two bits below its
+scale. [Proof and literature hypotheses](reports/rule30-edge-regularity.md).
+Status PROOF-SKETCH, solo GPT; no new experiment or priority claim. This
+explains why the uniformly differentiable T-function coordinate theorem
+does not directly constrain the actual edge. Finite orbit states have only
+pointwise control beyond their whole support. Whether useful cancellations
+occur in return quotients is separate from this ambient regularity question.
