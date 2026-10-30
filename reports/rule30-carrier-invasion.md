@@ -69,7 +69,9 @@ above the old front is0, so the flipped front forces a defect two places ahead. 
 background cell is1 and masks the two-place advance. The next cell stays background because
 both the actual and background OR are1. The front itself remains defective because its actual
 preceding cell is1. This verifies both the absence of an earlier leading defect and the exact
-stalled step. It also explains why a leading-defect position alone is too weak a state.
+stalled step. **GC2225 clarification:** at the specified phase A, the leading defect itself
+forces the needed one-step B guard. The three-cell hypothesis closes the displayed trailing
+signature and the exit calculation; it is not necessary for the front speed.
 
 The first phase A at t=1,s=0 has001, not101, at s-2..s. Its two negative cells remain zero.
 At t=2 the cells0,1,2 are111; at t=3 the cells0,1,2 are100; at t=4 the cells2,3,4 are100;
@@ -79,7 +81,8 @@ The first-failure front statement is therefore not inferred from a repeated fini
 
 For comparison, if phase A has001 at s-2..s, with the two older cells s-4,s-3 equal01,
 then the corresponding word at s+4..s+6 four ticks later is001, not101. The extra older1
-changes the guard. This is a hand countercontrol to dropping the three-cell hypothesis.
+changes the guard. This is a hand countercontrol to dropping the three-cell hypothesis from
+the signature claim, not a counterexample to the phase-dependent front-speed law.
 
 ## The exit has three arrival phases
 
@@ -216,3 +219,138 @@ with the same phase-A leading defect and preceding0, can a finite older prefix a
 guard indefinitely? First derive the guarded001 one-cycle condition and compare its moving-frame
 constraint with known zero-boundary/clock results. No new stage is frozen for that question;
 an exact reduction or counterexample is preferable to expanding a trajectory sample.
+
+## GC2225: exact guard map and the remaining capture question
+
+**PROOF-SKETCH, solo hand calculation; no new computation.** The front-speed question has
+a stronger answer than the previous sufficient guard suggested. At a phase-A leading defect,
+the six-depth/four-tick advance holds with completely arbitrary older cells. What may vary is
+the trailing signature, whose first two bits obey a small exact map.
+
+Translate a phase-A front to s=0, and write the actual cells at depths0,-1,-2,-3,-4 as
+1,p,q,r,u. Above0 the background is00010001..., starting with the background0 at0.
+All cells below-4 are arbitrary. After four ticks the front is6; let p',q' be its preceding
+two actual bits, at5,4 respectively. Then
+
+    p' = p AND (q OR r),
+    q' = 1                         if p=1,
+    q' = q OR NOT(r OR u)           if p=0.
+
+Here is the full local derivation. At the first tick, actual cells-1,0,1,2 are b,a,1,1, where
+
+    a = NOT(p OR q), b = p XOR(q OR r), d = q XOR(r OR u).
+
+The value d is the first-tick cell-2. At the second tick, cells0,1,2 are e,c,0, where
+
+    c = NOT(a OR b), e = a XOR(b OR d).
+
+At the third tick, cells2,3,4 are c OR e,c,0. At the fourth, cells4,5,6 are c OR e,c,1.
+Thus p'=c and q'=c OR e. If p=0, c=0, and e is1 when q=1 and NOT(r OR u) when q=0.
+If p=1, c=q OR r and b=NOT c, so c OR e=1. This proves the formulas with no unlisted
+incoming bit. All cells above the successive fronts2,2,4,6 stay background. The first-tick
+cell1 is always1, which is precisely what protects the second tick's stall. Therefore the
+same phase-A leading defect reappears at6, regardless of p,q,r,u, and the speed law iterates.
+
+This corrects the earlier inference that the omitted101 guard challenged the front-position
+law. It challenged only reproduction of101. GC2223's stronger signature and all three exit
+calculations remain valid in their stated guarded scope.
+
+Reading the three-cell signature as q,p,1 gives:
+
+| Signature at A | Signature at the next A, four ticks later |
+|---|---|
+| 101 | 101, for every older continuation |
+| 111 | 111, for every older continuation |
+| 011 | 101 if r=0; 111 if r=1 |
+| 001 | 101 if r=u=0; otherwise001 |
+
+Thus there are two closed signature classes. A finite older prefix ending111 is an immediate
+counterexample to an unrestricted claim that every phase-A front eventually has signature101.
+The earlier queued question explicitly assumed p=0; that narrower capture question is still
+open. In that class p remains0 and q is an absorbing bit: once1, it stays1. Crucially, no
+capture theorem is needed for the front-speed result itself.
+
+### Two-cycle avoidance and a finite twelve-tick control by hand
+
+Assume p=q=0 initially and write the next older bits as r,u,v,w at depths-3,-4,-5,-6.
+The signature is still001 after two four-tick cycles if and only if
+
+    u=1 AND (r=0 OR v=1 OR w=1).
+
+To see this, survival of the first cycle requires r OR u=1. Under that condition the next
+older pair r',u', at depths3,2 behind the new front6, is
+
+    r' = NOT r,
+    u' = NOT r OR f,
+    f = NOT((r XOR(u OR v)) OR (u XOR(v OR w))).
+
+These follow from the same four layers: the second-tick cells-1,-2 are NOT r,f; the next
+cells1,0 are NOT r,NOT r OR f, and hence the fourth-tick cells3,2 have the displayed values.
+If r=0, first survival already forces u=1 and r'=1 forces second survival. If r=1,u=0,
+the two terms inside f's negation have OR1, so f=0 and second survival fails. If r=u=1,
+f=v OR w; second survival holds exactly when v OR w=1. This proves the criterion.
+
+Consequently indefinite001 avoidance would force, at every phase-A sample,
+
+    q_h=p_h=0, u_h=1, r_(h+1)=NOT r_h,
+    and v_h OR w_h=1 whenever r_h=1.
+
+These are consequences of actual evolution, not freely selectable inputs. No independence,
+frequency or periodicity of the deeper row follows from them.
+
+For a cheap finite countercontrol to capture within eight ticks, choose phase A as the starting
+clock phase, set actual cells-4 and0 to1, all other cells at depths<=0 to0, and use the carrier
+above0. The older prefix has finite support; the entire row has an infinite periodic tail.
+After four ticks the actual cells0..6 are0011001, by the literal recurrence. Relative to the
+new front6 this gives p=q=0 and (r,u,v,w)=(1,1,0,0). The two-cycle criterion applied there
+gives q=1 after two more cycles, while its one-cycle condition gives q=0 after one. Thus the
+signatures at ticks0,4,8 are001, and capture as101 is exactly at tick12
+relative to this start. This is a hand example, not a newly measured trajectory or a claim
+of unbounded capture times. Translation by four makes its rightmost black cell depth0;
+the chosen carrier phase is an allowed initial phase, not a claimed earlier ancestry.
+
+### Why the familiar clock results do not close the remaining case
+
+Let y_h(k)=x_(s_h-k)(t_h), s_h=s_0+6h and t_h=t_0+4h. With
+
+    (D y)(k) = y(k) XOR(y(k+1) OR y(k+2)),
+
+the exact sampled operator is (G y)(k)=(D^4 y)(k-6). Its dependency interval is k-6..k+2.
+The negative k values are the prescribed periodic carrier, and finite support on the older
+side means y(k)=0 for all sufficiently large positive k. This support generally grows under
+G; the moving boundary does not turn the whole state into a finite periodic orbit.
+
+The unresolved assertion is now precise: does every such finite older state with p=q=0
+eventually violate the displayed sampled masking conditions, and hence acquire q=1?
+Neither a proof nor a finite-prefix perpetual-survival counterexample has been obtained.
+Do not replace this assertion with a full-state return or independently chosen older bits.
+
+Source comparison uses the current kit932cf8dd and the complete01:39:49Z index,22 open PRs.
+`Rule30ControlledResponse.diagonal` is D, not G; `Rule30ZeroBoundary.zrow_succ` is a one-tick
+clamped physical wall, not this four-tick/six-depth sampling. `Rule30ClockMask.no_constant_OR_at_onset`
+requires actual temporal period/antiperiod hypotheses for adjacent D columns, absent here.
+The actual headline of portal0ef9c8 additionally requires D^32(x)=x for the full finite state;
+it cannot be invoked from the local sampled gate. Portal4d375d's front-clock core uses
+(x<<2) XOR((x<<1) OR x), a different map. These are scoped definition/headline comparisons,
+not new complete carrying reviews of those portal sources.
+
+`Rule30Equivalents.PeriodicPoints.Recurs`/`recurs_add_factorial` require recurrence of the entire
+configuration, not a repeating front strip. `Rule30Equivalents.Lines` gives almost-everywhere
+laws for random configurations, not the present deterministic carrier. Primary
+[Kopra, arXiv:2202.13809](https://arxiv.org/pdf/2202.13809), Definition2.4 and Theorem3.5,
+requires a left-zero number-like start for the original rapidly left-expansive rule and a
+vertical trace. The present physical start has an infinite carrier on the left and zeros
+on the right, and the sample follows a different ray. No transfer hypothesis has been proved.
+
+Read-source SHA256: PeriodicPoints `dd7e300baf996d52dabe789ce8537f1a5fb03c59504c233f37544bbd17843f57`;
+ClockMask `b0ec0d01e18e88c167ca2762b4cd50714bd67f31982e656a0a07d2cb2514a6b1`;
+portal4d375d `d9a4bab0aad7a42f641e8f65c70af85aebc43274db621a8656ddd4a510a7dd3a`;
+portal0ef9c8 `cd2425f35ca59e204a4b93fe6ec9c72603052209fb9f1997b4af703e47c32e0f`.
+
+Park indefinite001 capture at this explicit G-survival problem. Reopen only with a specific
+law controlling the actual successive older pairs, a justified conjugacy to a known boundary
+problem, or a rigorously specified perpetual-survival construction. More local gates or a longer
+seed sample alone do not supply that step. Change to the relevant but independent PR47
+synchronizing-carrier source: its prescribed inverse histories may teach something different,
+and its carrying proof has not yet been fully read in this record. No experiment or posting
+is frozen; Local and Cloud remain offline.

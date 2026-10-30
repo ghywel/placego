@@ -1268,3 +1268,8 @@ and packed implementations. Universal status remains PROOF-SKETCH pending anothe
 The period-eight ring carrier is known; neither its existence nor these finite imitation lifetimes
 settles the root's doubling density or a centre-column prize. Whether arbitrary finite older prefixes
 enter this guarded front is a separate question, now the next hand discriminator.
+
+GC2225 separates that question: the specified phase-A front has the same speed for every older
+continuation;101 is sufficient only for its trailing signature and the stated exit calculation.
+There is also a closed111 signature. The p0/001 capture question remains an exact sampled-boundary
+survival problem, with a hand12tick delayed-capture example; it is parked pending a new bridge.
