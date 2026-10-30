@@ -1,5 +1,5 @@
 {
-  "checkpoint": "GC2292",
+  "checkpoint": "GC2295",
   "status": "PREPARATION_ONLY_UNCOMPILED_NOT_AN_EXECUTION_FREEZE",
   "source_owner": "GPT",
   "posting_owner": null,
@@ -42,8 +42,8 @@
     },
     {
       "path": "SubmissionHeadlinesDraft.lean",
-      "sha256": "a892d9c4b705e509e47d68819851fd07153d4b335aca222305fd99b91f0fc026",
-      "bytes": 2748
+      "sha256": "3375871f2a29a1b484d511608a66fe41dda6502efc78dad0f933b79a57c4742b",
+      "bytes": 2769
     },
     {
       "path": "FinitePastGuard.lean",
@@ -57,26 +57,43 @@
     },
     {
       "path": "essay-prose-draft.md",
-      "sha256": "745fcd2a93c2448a8dcae36d90d1ac608c50a9ac3f7284846127588ff863cd44",
-      "bytes": 10817
+      "sha256": "29a2d00f4680286b60663418262e5d6cf61aa203dc52e88a2e093af7a1f24455",
+      "bytes": 10881
     },
     {
       "path": "VALIDATION-SPEC.md",
-      "sha256": "47dfee502749cec8bd7a9ebc34aac7ec6fce004efbd82ff2d41eda9a99638d05",
-      "bytes": 10763
+      "sha256": "d1b2c197124d7c61406a53c497015f84cd73b6f9292fdafa059927f6b38d19e6",
+      "bytes": 12793
     },
     {
       "path": "Rule30Submission.lean",
-      "sha256": "55024c942cdc8d4c7c2b491bee06b63bc6e09880cb303ff7fa694223ccadaa1c",
-      "bytes": 30671
+      "sha256": "8664d9e306f508edf8b83d56a90c63be2bb11ba6fa993bf07c7cf1916d438235",
+      "bytes": 30692
     },
     {
       "path": "assembly.json",
-      "sha256": "3247941a3ec539f68638c380a1c0e0d500ce1fa920aa03fe0515bf7dd2d9889a",
-      "bytes": 2551
+      "sha256": "c636d1cc838d75e7a41e4f7d20046a5577ae189fc233be28a0cbc3c937e10ac1",
+      "bytes": 2575
+    },
+    {
+      "path": "FinitePastValidationGuard.lean",
+      "sha256": "1494f9ca3767c3bf94af66a6362818944d20f8abef8f479d29afc091ffeba0ee",
+      "bytes": 10017
+    },
+    {
+      "path": "FinitePastExpectedRejection.lean",
+      "sha256": "b87d6eee0098a9fd0108bbfee9677a9771e2d4fd46327fbd41cd8443e513c5db",
+      "bytes": 526
     }
   ],
-  "assembled_source_status": "UNCOMPILED, five carrying bodies byte-bound; no local draft imports in assembled file",
+  "assembled_source_status": "UNCOMPILED; direct Prize/Realization imports, four proof bodies and seven public types/theorem bodies unchanged; new positive and expected-rejection guards unexecuted",
   "public_context_manifest": "cited/gc2292-submission-context/manifest.json",
-  "public_context_sha256": "c74ac46e2fcace4622e77f2413a53c518bf79834dbd0c6826fdd87eb68e9c268"
+  "public_context_sha256": "c74ac46e2fcace4622e77f2413a53c518bf79834dbd0c6826fdd87eb68e9c268",
+  "independent_review": "L1219 seven headline statements consistent; definition/proof-body read pending",
+  "development_owner": "Local: proposed L1219, agreed GC2295; one compatible4.35development stage after A, carrying read and separate published freeze; not started",
+  "previous_assembled_source_sha256": "55024c942cdc8d4c7c2b491bee06b63bc6e09880cb303ff7fa694223ccadaa1c",
+  "direct_imports": [
+    "Ruliology.CellularAutomata.Rule30Prize",
+    "Ruliology.CellularAutomata.Rule30Realization"
+  ]
 }

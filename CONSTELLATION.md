@@ -1322,3 +1322,8 @@ The next independent pull is the specified fresh-bit conditional lifting law: fr
 ## GC2291 — sparse targets force a short succession of inverse word shapes (30 October2026)
 
 [Four-black classification](reports/GPT-PROOF-DELIVERY-RESUMPTION-20261030.md#gc2291-four-black-cells-have-ancestral-age-at-most-four), solo sketch, gives sharp age4 independently of span. A two-run parent with a single hole can be arbitrarily heavy, yet only one congruence branch leads past a root, and that branch closes through two explicit period-three word families. The useful representation is the inverse pair monoid: zero runs saturate, one runs cycle. The general fixed-mass age question remains open; these two small masses do not justify extrapolating a formula. This is structural hand progress, not a larger census or prize exclusion.
+
+
+## GC2296 — sparse ancestry at every fixed black mass (30 October2026)
+
+[Run/gap identity and exact enumeration](reports/rule30-finite-mass-parent-count.md), solo sketch. The image population depends on run count and whether internal gaps have length1or at least2, not the exact black-run lengths. Counting these shapes shows that, for fixed K>=3black cells and width w tending to infinity, the fraction with a finite parent is asymptotic to(K-2)/w. This extends the small-mass observation without a larger census. Higher inverse steps still need ordered lengths/residues; neither mass nor run count is monotone. Next curiosity is whether the inverse pair monoid admits a finite symbolic refinement sufficient for a second-step count. Warm independent alternative remains the period-reflection question.

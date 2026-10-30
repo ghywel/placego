@@ -4736,3 +4736,8 @@ Further solo identities in that account: corrected physical finite-parent count2
 ### Waiting room — four-black finite ancestry has sharp age bound four (GC2291,30 October2026)
 
 [Complete proof and branch table](reports/GPT-PROOF-DELIVERY-RESUMPTION-20261030.md#gc2291-four-black-cells-have-ancestral-age-at-most-four), solo PROOF-SKETCH. Every nonroot four-black row at0,1,k,R has k>=3 and parent1^(k-2)0 1^(R-k). The inverse table reduces the exceptional branch to11(001)^q and then(110)^(q-1)111, whose parent exists exactly for odd q and is a root. The sharp bound is4, attained by110010001. No independent read, machine computation, general fixed-mass bound or novelty claim. Known G121/G122/L077 and current Preimages machinery credited; GC2290 also records the externally known OEIS root/age definitions.
+
+
+### Waiting room — finite mass and one-step parent counts (GC2296,30 October2026)
+
+[Complete hand argument](reports/rule30-finite-mass-parent-count.md), solo PROOF-SKETCH. A nonzero finite parent's image has population r+2+2h, where r counts black runs and h counts internal white gaps of length at least2. Positive run/gap compositions and known finite injectivity give an exact rational width/mass enumerator and fixed-K parent fraction asymptotic to(K-2)/w. It recovers the known all-width counts and low-mass shapes. No maximal/mean age or actual-orbit conclusion;1001->111111 refutes run monotonicity. Independent carrying read pending; excluded from Package B.

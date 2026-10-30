@@ -1,15 +1,15 @@
 {
-  "checkpoint": "GC2292",
+  "checkpoint": "GC2295",
   "status": "UNCOMPILED_SOURCE_ASSEMBLY_ONLY",
   "output": "Rule30Submission.lean",
-  "output_sha256": "55024c942cdc8d4c7c2b491bee06b63bc6e09880cb303ff7fa694223ccadaa1c",
-  "output_bytes": 30671,
+  "output_sha256": "8664d9e306f508edf8b83d56a90c63be2bb11ba6fa993bf07c7cf1916d438235",
+  "output_bytes": 30692,
   "bodies": [
     {
       "path": "Rule30FinitePastDraft.lean",
       "input_sha256": "a46243a1ac7ed1732f6bbce9986c9434152f934c1e3d62ec251dee3e8c0acf3f",
       "body_sha256": "b903959f18a1ddbdde14536e4c407400ab2bdd8c0f4b88efdfe97acf1d69182b",
-      "body_offset_bytes": 255,
+      "body_offset_bytes": 279,
       "body_length_bytes": 10070,
       "removed_lines": [
         "module",
@@ -21,7 +21,7 @@
       "path": "FiniteParentCriterionDraft.lean",
       "input_sha256": "bdf97197b9a68422ba76c5e61093e562196532f2badf1ca0427dd6d940f72801",
       "body_sha256": "78d95bfaf5d5398b3af88d24cb9399cc022b2fb8776ca0e83df85d44ee28cadc",
-      "body_offset_bytes": 10385,
+      "body_offset_bytes": 10409,
       "body_length_bytes": 3494,
       "removed_lines": [
         "module",
@@ -33,7 +33,7 @@
       "path": "NormalizedFinitePastDraft.lean",
       "input_sha256": "4cbba36a4c5e4393ad6f7d964ddfba9ad6e6bb25986b399987514762d231fe43",
       "body_sha256": "70d3eec3e15328af13160929c5725e70662bf9cbe57d74b3b046605037c5539d",
-      "body_offset_bytes": 13938,
+      "body_offset_bytes": 13962,
       "body_length_bytes": 4850,
       "removed_lines": [
         "module",
@@ -45,7 +45,7 @@
       "path": "FinitePastCountDraft.lean",
       "input_sha256": "0f44079653f03f001988d7171554533e2bde469fa43cf346883e2b2c00143e00",
       "body_sha256": "8d81aaed9a9ac394008f22a873122afcf82c0c03137f6b9328fee2012227e776",
-      "body_offset_bytes": 18842,
+      "body_offset_bytes": 18866,
       "body_length_bytes": 9160,
       "removed_lines": [
         "module",
@@ -55,13 +55,13 @@
     },
     {
       "path": "SubmissionHeadlinesDraft.lean",
-      "input_sha256": "a892d9c4b705e509e47d68819851fd07153d4b335aca222305fd99b91f0fc026",
-      "body_sha256": "837093ac98582f57989cff915a4094e15dc04eb804ddc1a3674ddf205a1abeb0",
-      "body_offset_bytes": 28060,
-      "body_length_bytes": 2611,
+      "input_sha256": "3375871f2a29a1b484d511608a66fe41dda6502efc78dad0f933b79a57c4742b",
+      "body_sha256": "83d3527b31a03f5080fb1b48b615e4c175f781aff017fd9cbc8861de932d4b4d",
+      "body_offset_bytes": 28084,
+      "body_length_bytes": 2608,
       "removed_lines": [
         "module",
-        "public import Rule30PrizeKit",
+        "public import Ruliology.CellularAutomata.Rule30Prize",
         "public import FiniteParentCriterionDraft",
         "public import FinitePastCountDraft",
         "@[expose] public section"

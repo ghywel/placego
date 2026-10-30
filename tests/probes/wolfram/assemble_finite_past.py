@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""GC2292: deterministic source assembly only; no Lean/Wolfram execution.
+"""GC2295: deterministic source assembly only; no Lean/Wolfram execution.
 
 The five pinned preparation files are concatenated after removing only the
 listed module/import/public-section lines. The shared namespace bodies and
@@ -20,8 +20,8 @@ SOURCES = [
      ['Rule30FinitePastDraft']),
     ('FinitePastCountDraft.lean', '0f44079653f03f001988d7171554533e2bde469fa43cf346883e2b2c00143e00',
      ['NormalizedFinitePastDraft']),
-    ('SubmissionHeadlinesDraft.lean', 'a892d9c4b705e509e47d68819851fd07153d4b335aca222305fd99b91f0fc026',
-     ['Rule30PrizeKit', 'FiniteParentCriterionDraft', 'FinitePastCountDraft']),
+    ('SubmissionHeadlinesDraft.lean', '3375871f2a29a1b484d511608a66fe41dda6502efc78dad0f933b79a57c4742b',
+     ['Ruliology.CellularAutomata.Rule30Prize', 'FiniteParentCriterionDraft', 'FinitePastCountDraft']),
 ]
 
 
@@ -30,9 +30,9 @@ def digest(data):
 
 
 def main():
-    output = ('module\npublic import Rule30PrizeKit\n'
+    output = ('module\npublic import Ruliology.CellularAutomata.Rule30Prize\n'
               'public import Ruliology.CellularAutomata.Rule30Realization\n\n'
-              '/-! Prepared single-file source, GC2292. UNCOMPILED; not a checker receipt. -/\n'
+              '/-! Prepared single-file source, GC2295. UNCOMPILED; not a checker receipt. -/\n'
               '@[expose] public section\n').encode()
     rows = []
     for name, expected, imports in SOURCES:
@@ -58,7 +58,7 @@ def main():
     for row in rows:
         a = row['body_offset_bytes']; b = a + row['body_length_bytes']
         assert digest(output[a:b]) == row['body_sha256']
-    manifest = {'checkpoint': 'GC2292', 'status': 'UNCOMPILED_SOURCE_ASSEMBLY_ONLY',
+    manifest = {'checkpoint': 'GC2295', 'status': 'UNCOMPILED_SOURCE_ASSEMBLY_ONLY',
                 'output': 'Rule30Submission.lean', 'output_sha256': digest(output),
                 'output_bytes': len(output), 'bodies': rows}
     (BASE / 'Rule30Submission.lean').write_bytes(output)

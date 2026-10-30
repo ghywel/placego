@@ -65,7 +65,7 @@ Column[{Grid[Prepend[countRows, {"width", "all words", "finite-parent words", "r
 
 ## What is already known, and what this interface supplies
 
-Finite injectivity is standard cellular-automaton background. The kit's `Rule30Equivalents.Preimages.eq_of_evol_one_eq_of_right` is stronger: equal images and equal sufficiently far-right tails imply equal rows. Its white-right inverse reconstruction supplies the other main ingredient. `Rule30FiniteConfigs` and `Rule30FrozenRuler` already contain the needed edge facts. The present proof bodies repeat short specialized arguments using the core Realization interface; those repetitions are credited, not discoveries. The required official statement import still includes the kit's broader import closure, which must be accounted for during validation.
+Finite injectivity is standard cellular-automaton background. The kit's `Rule30Equivalents.Preimages.eq_of_evol_one_eq_of_right` is stronger: equal images and equal sufficiently far-right tails imply equal rows. Its white-right inverse reconstruction supplies the other main ingredient. `Rule30FiniteConfigs` and `Rule30FrozenRuler` already contain the needed edge facts. The present proof bodies repeat short specialized arguments using the core Realization interface; those repetitions are credited, not discoveries. The assembled source directly imports the official Prize module and Realization; both use the kit's core Jen module. Actual resource use remains to be measured during validation.
 
 Karttunen's 2016 OEIS entries A269160 and A269162 record the finite map and inverse; A269165 and A269166 record the earliest finite ancestor and its age, including reconstruction. Positive odd integers encode our normalized words, with binary digits written left to right from most significant to least significant. The external decomposition and its objects are known. Our October6 G121 argument, carried by Local L077, already gave the exact width count and root descent.
 
@@ -75,7 +75,7 @@ The proposed contribution is a reusable physical-row formal interface joining th
 
 The seven public wrappers are `Rule30Submission.finite_root_age`, `finite_parent_test`, `normalized_ancestor_bijection`, `finite_word_enumeration`, `finite_parent_enumeration`, `finite_parent_count`, and `finite_parent_small_widths`. Their complete definitions, including `Span`, `Root`, `Normal`, `Past` and the two enumerations, must be included in the embedded module. A submission may not import these preparation files from a private checkout.
 
-The next cells are the planned formal checks. `%%LEAN_SOURCE_JSON_STRING%%` is a non-executable assembly marker, to be replaced only with a JSON-quoted, validated single module importing the official `Rule30PrizeKit` statements. This draft intentionally has no claimed `LeanEnvironment` or replay result. The final notebook uses `RULE30PRIZE_KIT` and contains its source rather than reading a local proof file.
+The next cells are the planned formal checks. `%%LEAN_SOURCE_JSON_STRING%%` is a non-executable assembly marker, to be replaced only with a JSON-quoted, validated single module importing the official `Ruliology.CellularAutomata.Rule30Prize` module. This draft intentionally has no claimed `LeanEnvironment` or replay result. The final notebook uses `RULE30PRIZE_KIT` and contains its source rather than reading a local proof file.
 
 ```wl
 Needs["Wolfram`LeanLink`"];

@@ -1,12 +1,12 @@
 module
-public import Rule30PrizeKit
+public import Ruliology.CellularAutomata.Rule30Prize
 public import FiniteParentCriterionDraft
 public import FinitePastCountDraft
 
 /-!
 UNCOMPILED public headline wrappers, GC2292. The four proof modules are local
 preparation files, not verifier imports. A later self-contained assembly must
-carry their full bodies and import the official Rule30PrizeKit statements.
+carry their full bodies and import the official Rule30Prize statements.
 Known G121/G122/L077 and Karttunen's 2016 OEIS ancestry records are credited.
 No official replay, source acceptance, notebook build or posting is claimed.
 -/

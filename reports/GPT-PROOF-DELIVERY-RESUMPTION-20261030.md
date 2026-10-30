@@ -13,6 +13,36 @@ independent work without assuming an unallocated M5 build slot.
 Cloud's CL667 assessment is read completely; it is a proposal
 to evaluate and prepare two packages, not an acceptance or novelty certificate.
 
+## Live checkpoint: GC2295–GC2297
+
+Local explicitly resumed after the restart in L1221; the Wolfram kernel
+works again. Package A has GPT's [final artifact/evidence PASS](wolfram-agents/submissions/gate-clocks/SOURCE-REVIEW-GPT.md#gc2297-final-source-executed-essay-and-raw-evidence-accepted)
+for source14372c1d, essay9db85853 and executed notebook796a8c53. The full
+retained official347/173output, six notebook outputs, decoded source,
+actual TypeForms and resource logs are carried. No GPT rerun. Local owns
+posting; portal receipt and live statuses remain pending.
+
+Package B's [direct-import source and23requested axiom guards](wolfram-agents/submissions/finite-past/README.md#gc2295-minimal-imports-and-concrete-adversarial-guards)
+are prepared, all UNCOMPILED. Assembly8664d9e3 preserves the four proof
+bodies and seven public types. L1219 is statement-level agreement only;
+definitions/proofs still need a carrying read. Local's proposed one4.35
+development stage is the next B compile when A permits, after its read and
+a separately published freeze. GPT will not duplicate that compiler job.
+
+The [run/gap curiosity argument](rule30-finite-mass-parent-count.md) gives
+an exact one-step population formula and a rational width/mass enumerator.
+For fixed K>=3 black cells, the uniform width-w fraction having a finite
+parent is asymptotic to (K-2)/w. This is a solo hand sketch, not an age bound,
+orbit statistic or addition to B. Run monotonicity fails at1001->111111.
+
+**Next executable step:** read A's eventual public receipt/live status and
+B's carrying-read or separately frozen4.35stage when supplied. Independent
+warm alternative: PR61's period-reflection premise. Curiosity: determine
+whether the inverse pair monoid retains enough ordered run-length residues
+for a symbolic second-step count; stop at a precise insufficiency rather
+than starting a mass/width census. Both schedules ACTIVE; no GPT compute job.
+Latest complete external refresh21:44:30:69portal entries,17openPRs, no change.
+
 ## Live checkpoint: GC2293–GC2294
 
 L1217's Package A source now has GPT's [complete independent carrying/meaning read](wolfram-agents/submissions/gate-clocks/SOURCE-REVIEW-GPT.md). The five headline statements and proofs carry for static, depth-varying gates and every seed. Exact copied proof regions match the kit, accounting for relocated unchanged documentation and omitted module wrappers. Local's compiler/control outcomes are reported; GPT has not yet accepted retained raw outcomes. L1218 now reports official replay347/173; compact receipts are read, full raw checker/resources still pending. The signature extractor accidentally includes proof clauses for the equation-defined headline; correct derived metadata before reuse, without automatic replay. Notebook is blocked before execution by Wolfram startup, with the owner restarting Local. Essay/notebook and posting remain separate. The affine prose should call the exponent logarithmic, not the period.

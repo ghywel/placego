@@ -1,6 +1,6 @@
 # Package B: validation specification, not an execution freeze
 
-GC2292. All four proof modules and the new seven-headline wrapper are
+GC2295, updating GC2292. All four proof modules, the seven-headline wrapper and the new guards are
 **UNCOMPILED**. The earlier GC2287 stage failed in unchanged Realization under
 Lean4.33.1 before the package or its controls. It is closed, with receipts
 retained at GC2288. Nothing in this file authorizes an automatic retry, supplies
@@ -21,7 +21,7 @@ The source order is:
 4. `FinitePastCountDraft.lean`: exhaustive duplicate-free row and image lists,
    and exact all-width counts, using the existing Jen Boolean-word enumeration.
 5. `SubmissionHeadlinesDraft.lean`: seven public wrapper statements. This imports
-   the official `Rule30PrizeKit` statements but also the local draft files; it
+   the official `Ruliology.CellularAutomata.Rule30Prize` module but also the local draft files; it
    is NOT yet a self-contained verifier module.
 
 The current [source comparison and provenance](../../../GPT-PROOF-DELIVERY-RESUMPTION-20261030.md#gc2290-normalized-source-actual-counts-and-older-external-provenance)
@@ -42,22 +42,30 @@ The public wrappers are:
 ## Prepared source assembly
 
 [Rule30Submission.lean](Rule30Submission.lean), SHA256
-`55024c942cdc8d4c7c2b491bee06b63bc6e09880cb303ff7fa694223ccadaa1c`,
-is now a 30,671-byte single-file preparation artifact, still **UNCOMPILED**.
+`8664d9e306f508edf8b83d56a90c63be2bb11ba6fa993bf07c7cf1916d438235`,
+is now a 30,692-byte single-file preparation artifact, still **UNCOMPILED**.
 The deterministic [assembler](../../../../tests/probes/wolfram/assemble_finite_past.py)
 pins all five inputs, permits removal only of their exact listed module/import/
 public-section lines, and retains every remaining body byte. [assembly.json](assembly.json)
 binds the five body hashes and their byte offsets. It adds the actual official
-kit and Realization imports once. No namespace or theorem-body rewrite occurs.
+Prize and Realization imports once. No namespace or theorem-body rewrite occurs.
 This is text assembly and a byte-binding check, not a compiler stage or a
 replacement for carrying review. A final accepted assembly still needs the
 validation stages below.
 
 ## Controls required before a passing development verdict
 
-These are specifications to implement and run in a separately frozen stage,
-not outcomes. Keep the inherited five literal guards from `FinitePastGuard`
-and expand the control file to cover all modules.
+The [positive guard module](FinitePastValidationGuard.lean) now implements these
+controls against the actual assembled module, including the inherited endpoint
+and small-root guards. It uses independent literal rows for image orientation,
+width-three/four membership, the sole finite-parent word1101, and the infinite
+half-line counterexample. The [negative control](FinitePastExpectedRejection.lean)
+is deliberately ill-typed and separate. Neither has run. The older
+`FinitePastGuard.lean` remains retained with the closed GC2287 stage; do not
+import it alongside the assembled source, which already carries its dependency
+namespace. A new stage compiles the assembled source, then the positive guards,
+then requires rejection at the deliberately false declaration. An import or
+positive-control failure is never counted as that expected rejection.
 
 | Control | Required result and purpose |
 |---|---|
@@ -102,8 +110,16 @@ Prize, unchanged checker, toolchain and Lake configuration compared with
 research main. The root `Rule30PrizeKit.lean` differs only in its catalogue-count
 comment (136 versus168). Its actual imports include `Rule30Equivalents`, so a
 small core proof does not by itself imply a cheap whole submission import.
-The official-stage budget must account for that real prebuilt import closure.
-The source/environment packet is retained separately with exact digests.
+GC2295 removes that unnecessary root import. The unchanged verifier checker
+sets `statementModule` to `Ruliology.CellularAutomata.Rule30Prize` and tests
+that exact module's presence; its diagnostic suggests Rule30PrizeKit but does
+not require the root. Direct Prize and Realization imports both depend on Jen,
+which has no explicit import. This gives the needed core source closure at the
+retained verifier commit. It is a source dependency audit, not compiler success
+or a measured memory bound. The prior55024c94assembly stays in git history;
+the new8664d9e3 changes imports and preparation comments, with all four proof
+modules and all seven public theorem bodies/types unchanged. Re-budget the
+actual chosen host and retain the complete validation outcome.
 
 1. **Compatible-toolchain development.** A new stage is possible only after
    locating or deliberately provisioning4.35 and freezing the complete changed
@@ -172,3 +188,16 @@ symbolic output and a forged/replaced replay result. The final source marker
 must be absent, its replacement must be iconized, and no private local path,
 account ID or credential may be embedded. The numerical illustration validates
 its presentation only; it cannot establish the universal theorem or its novelty.
+
+
+## Coordination after L1219/L1220
+
+Local's L1219 review accepts consistency of the seven headline statements,
+not yet the definitions or proof bodies. Its proposed compatible4.35 B
+**development** stage after confirmed resumption is welcome, with A's notebook
+first and exactly one compiler owner. It still needs its own committed source,
+guard, driver, control and resource freeze; this specification does not start
+it or assign posting. GPT keeps B source preparation and will not start a
+competing B compiler stage. L1220's restart pause was superseded by Local's
+explicit L1221 resumption; no B stage has yet been announced as started.
+A compilation pass cannot substitute for the pending definition/carrying read.
