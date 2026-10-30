@@ -10523,3 +10523,33 @@ owner wants answers to concrete questions rather than a survey.
   any finite row, which is a clean finite statement beside `CQ01_iff_no_finite_period_two`.
 
 Nothing is assigned; the owner directs. Flags: READ-LEDGER (GPT; Local on resumption).
+
+## CL659 — Cloud to the owner: the past of a finite row. A finite row has at most one finite predecessor, has one iff it begins 11 and the leftward solution lands black at its second cell (a quarter of rows), and its finite past is at most half its width deep; beyond that the past is a left-infinite periodic ocean whose period doubles going back, 1, 3, 3, 6, 6, 6, 6, 6, 6, 12, 12, 12 for the single cell (2026-10-30 14:35 GMT)
+
+The owner: the map is surrounded by zeros that are zeros only now; if a width-w row must have a valid past, what
+does that past look like? **Prior art:** §8.19 (2026-10-05, the owner's own earlier question): time runs backwards
+only leftwards, x(i-1) = y(i) XOR (x(i) OR x(i+1)) from a choice of the right end; a single cell has no finite
+parent; its parents are left-infinite (...1111|0000... and ...1111 0 1111...); the past piles up on the left with
+periods 3, 3, 6 in an exploratory look. GPT's GC2216 (solo sketch) counts finite predecessors of zero-wall rows in
+the wall frame (0, 1 or 2). Today's additions, two-sided finite rows:
+
+1. **At most one finite predecessor, and exactly when (PROVED, hand).** With the row's rightmost black at R, a finite
+   predecessor p has zero tail beyond R - 1, so solving leftwards from that tail determines p uniquely. Let the row's
+   leftmost black be L. p is finite with leftmost black exactly L + 1 iff p(L + 1) = 1 and row(L + 1) = 1: then
+   p(L) = row(L+1) XOR 1 = 0 and every further cell is forced 0; if p(L + 1) = 0, any later black of p would put the
+   row's leftmost black left of L, and all-zero would put it right of L. So: a finite row has a finite past iff it
+   begins 11 and the leftward solution is black at its second cell. Exhaustive to width 14: exactly 2^(w-3) of the
+   2^(w-2) rows with black ends, one quarter, and never two. The finite predecessor is two cells narrower, so the
+   finite past is at most floor((w-1)/2) steps deep, attained at every width (by the single cell's own rows).
+2. **The infinite past (COMPUTED, zero right tail, 400 cells of tail, 12 steps).** Going back from the single cell,
+   the left tail is periodic at every step with periods 1, 3, 3, 6, 6, 6, 6, 6, 6, 12, 12, 12: the all-black ocean
+   one step back (111 -> 0 annihilates it), the owner's period-3 crystal 001001... two steps back (the triangle
+   mechanism in reverse), then doublings at steps 4 and 10. A backward clock whose period doubles, the mirror of the
+   right edge's odometer; whether the doubling pattern has a law is a question, not a claim (§8.19's exploratory
+   periods 3, 3, 6 agree with steps 2 to 4).
+
+**For the dialogue.** The zeros around the pyramid are zeros only now. Every finite row has a past, but almost all
+of it is infinite: at most half the row's width of finite ancestors, then an ocean to the left, black or periodic,
+that has just annihilated itself into white. A width-w row with a *finite* valid past is one of the quarter that
+begin 11 and pass the second-cell test, and its finite ancestry ends at a row with no finite parent, the single
+cell's rows being the deepest chains. Nothing for the prize; a clean small fact beside §8.19. READ-LEDGER.
