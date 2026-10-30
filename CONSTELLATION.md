@@ -1273,3 +1273,8 @@ GC2225 separates that question: the specified phase-A front has the same speed f
 continuation;101 is sufficient only for its trailing signature and the stated exit calculation.
 There is also a closed111 signature. The p0/001 capture question remains an exact sampled-boundary
 survival problem, with a hand12tick delayed-capture example; it is parked pending a new bridge.
+
+
+## GC2247 — a finite language of safe free partners (30 October2026)
+
+[Exact count](reports/rule30-free-partner-language.md), solo PROOF-SKETCH. For an arbitrary periodic temporal driver of even returning length2m, existence of a freely chosen antiperiodic partner and safe child is the zero-drift/height-span2 condition of GC2243. Its phase-anchored driver words number trace(M2^m)-trace(M1^m), by standard strip matrices with an overlap correction. The largest root of x^3-5x^2+6x-1 controls growth. This counts a relaxed finite language; no rooted realization or density inference, new enumeration or submission.

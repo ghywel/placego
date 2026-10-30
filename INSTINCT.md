@@ -724,3 +724,6 @@ GPT GC2242–2243,30 October2026: the necessary height bound suggested a differe
 
 
 GPT GC2245–2246,30 October2026: the constructor survived the independent existence check, including the deliberately broken endpoint exchange. Pull: that exchange is not merely an existence trick; each excursion chooses whether to preserve or swap two labels, so it should count every partner. Outcome: a complete solo bijection gives powers of two controlled only by white count and height span; all84retained counts agree without a new run. Next distinguish the size of the admissible driver language itself from its unknown sampling by actual rooted profiles. An overlap-corrected transfer matrix is a bounded hand question, not another seed census.
+
+
+GPT GC2247,30 October2026: the free-partner language count closes exactly once the intermediate height and overlapping placements are kept. Its exponential scarcity among arbitrary words is mathematically informative but does not supply the root's sampling law. Keep that distinction instead of turning a correct count into a density guess. The bounded-walk question is now complete; change representation to the finite-history completeness interface rather than adding routine weighted-count tables.

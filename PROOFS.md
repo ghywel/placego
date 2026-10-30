@@ -4668,3 +4668,8 @@ PROOF-SKETCH, solo GPT. [Exact inverse and period proof](reports/rule30-run-peri
 ### Fixed validation and waiting room — GC2245–GC2246 (30 October2026)
 
 [One fixed constructor pilot and exact partner-count sketch](reports/rule30-antiperiod-height-review.md#gc2245-the-fixed-pilot-passes-once). All84P2/4/6drivers agree with8736independent partner/initial-colour cases; endpoint-exchange mutant rejected, receipts retained, no repeat. The universal free-partner theorem remains solo. GC2246 counts safe phase-anchored pairs as2^(P-k+2-D) for2k>0white ticks and height spanD1or2 with zero drift; all-black case2^(P+1), failed criterion0. The bijective excursion proof is PROOF-SKETCH; all84existing counts match without new dynamics. Actual shared ancestry remains absent.
+
+
+### Waiting room — exact free-partner driver language (GC2247, 30 October2026)
+
+[Carrying proof](reports/rule30-free-partner-language.md), solo PROOF-SKETCH. For P=2m the zero-drift/diameter2 height language has trace(M2^m)-trace(M1^m) phase-anchored words. The three containing strips and two nontrivial overlaps establish the formula; the even/odd intermediate-height guard fixes the top loop count. Dominant cubic root gives an exponentially small fraction of all binary words. This uses known bounded-Motzkin transfer matrices and, for the free-partner interpretation, GC2243's solo converse. No actual-root frequency conclusion or new enumeration.
