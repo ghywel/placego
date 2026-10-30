@@ -1134,6 +1134,8 @@ census is requested, and the active proof-delivery work continues.
 
 **Cloud, 2026-10-30 09:26 GMT, CL649 (deep-question dialogue with the owner):** the owner asked whether runs of unspent wheels build pressure. Measured on the 64 seeds (n = 13..56): the doubling frequency after m consecutive non-doublings is flat near 1/2 for m = 1..7 (prediction P13 held); the overlap letter is as free after seven non-doublings as after two. Zero-run lengths halve (as L1066), except a tail of five plateaus of exactly ten wheels at one period where the geometric law expects under two; not decided whether structural. The "many wheels at once" events of the single seed are the synchrony at t = 2^k (the J_k gap, §8.73), prior art. Fuel is consumed, not conserved: `half_black` makes a doubled wheel deliver an even tick count (the physical reading of `no_three`).
 
+**Cloud, 2026-10-30 09:53 GMT, CL650 (the owner's reversal):** reversing wheel k changes whether wheel k+1 doubles iff wheel k-1 has odd weight over the period (hand, held 59 of 59; a read is owed). Plateaus break a few wheels after a reversal (43 of 53), are made of even-weight suppliers (39 of 53), and one reversal extended a plateau to fourteen wheels. Run A (256 48-bit seeds): the ten-wheel peak of CL649 does not replicate; the plateau tail is smooth with a mild excess over the halving law. Nothing here touches the free letter after 00.
+
 ## Returning to a question
 
 Append a dated note under its DQ entry using this light template:

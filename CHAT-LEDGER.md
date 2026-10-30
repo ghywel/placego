@@ -9973,3 +9973,61 @@ weight parities of the two suppliers along it, to see whether a plateau is susta
 "fuel, not steering") or by free letters that happen to fall 0.
 
 No prize movement. No flag needed for paused workers; READ-LEDGER set for their resumption.
+
+## CL650 — Cloud to the owner (dialogue), Local and GPT (paused): the owner's reversal. An exact law for reversing one wheel (held 59 of 59), plateaus fragile a few wheels downstream, one reversal built a fourteen-wheel chain; run A says the ten-wheel peak was a count of five (2026-10-30 09:53 GMT)
+
+Continuing CL649's dialogue. The owner asked (in order): are the cogs meshed edge to edge or driven by a common timing
+chain; and what happens if we intentionally break a ten-wheel plateau by reversing one wheel.
+
+**Meshed and chained, both.** The drive is radius one (each wheel turned by the two inside it); the phase is common:
+by the kit's `TFunctionCycles.lift_iff` each added wheel either splits the train's cycle into two of the same length or
+doubles it, so every wheel's motion is a function of the train's phase plus one private bit, its seed bit (which split
+cycle it rides). A plateau is a run of wheels that split. In the 64 seeds of CL642 the private bits stop at wheel 24,
+and all six long plateaus of CL649 lie in or across the region beyond (starts 20, 24, 29, 34, 40, 45).
+
+**Block 5 predictions (written 2026-10-30 09:3x GMT, before any run; file header of `edge_reverse.c`, copy below).**
+Runs: A, 256 odd 48-bit seeds to n = 60 (`edge_lift48.out`, seeds in `edge_lift48.seeds`); B, the 64 24-bit seeds to
+n = 68 (in progress at the time of writing, 25-minute cap, result to follow as an addendum); C, for each of the six
+plateaus, reverse one wheel k (complement seed bit k; a T-function keeps the lower wheels and complements wheel k for
+all time) for every k from two before the plateau to its end, and recompute (`edge_reverse.out`).
+- P15 (zero-setting hypothesis): in run A the peak at nine is absent from n = 13..48 (at most one run of length 9,
+  against 1.7 expected) and long plateaus reappear beyond 48. Counterfactual: three or more runs of exactly 9 inside
+  13..48 (intrinsic), or the tail smoothing into the geometric law in both runs (chance).
+- P16 (run B): no plateau longer than 9 in n = 13..72 (cap reading); counterfactual: lengths 10..15 at the geometric rate.
+- P17 (exact, hand): reversing wheel k leaves E_j unchanged for j <= k and changes E_(k+1) iff the weight of wheel k-1
+  over the period 2^(E_k) is odd. Derivation: w(not A or B) = P - w(A) + w(A and B); subtracting w(A or B) = w(A) + w(B)
+  - w(A and B) gives P - 2w(A) - w(B) + 2w(A and B), parity w(B), P even. One contrary case kills it.
+- P18: plateaus fragile at some positions and immune at others, decided by P17; report the immune fraction.
+- PU: after a break, geometric run lengths at once (shattered) or a re-formed long plateau (locked)?
+- Record searched: L1064, L1066, GC2013, CL642, CL649, `lift_iff`. Caps: C, one process; A about two minutes, B capped
+  at 25 minutes, C 59 runs under a second each; ulimit and timeout in this container (run_capped.py's memory monitor
+  is macOS-only).
+
+**Results.**
+1. **P17 HELD, 59 of 59** (PROOF-SKETCH by hand, exact at every tested position; a carrying read is owed). The reversal
+   is felt at the next wheel only through the *older* supplier's weight parity. Nothing in it is specific to plateaus.
+2. **P18: fragile, but downstream.** Of 53 reversals inside the plateaus, 14 changed the next wheel (exactly the
+   odd-older-supplier positions), yet 43 broke the plateau before its natural end, mostly two to four wheels on, as the
+   altered tick streams compound; 10 let it run to its end. A plateau is not a locked shaft; it is a coincidence of even
+   deliveries that one knock unpicks a few wheels later. Inside the plateaus the older supplier has even weight at 39 of
+   53 positions, against about half in general (L1066's 46 of 92): plateaus are made of even-weight wheels (MEASURED).
+3. **PU: one reversal built a longer chain.** Seed 0x415459, wheel 34 reversed: the plateau did not break but ran on to
+   a run of 13 (fourteen wheels at one period), longer than anything in the untouched 64 seeds. Ten is not a cap.
+4. **Run A: the peak at nine was a count of five.** With private bits present through wheel 48 (256 seeds, 2874 runs in
+   n = 13..48) the zero-run lengths are 1491, 712, 359, 183, 61, 35, 16, 9, 4, 2, 2 for lengths 1 to 11: a smooth tail
+   with lengths 8 to 11, no peak at 9 (4 observed, 5.6 expected by the halving law; 17 of length 8 or more against 11
+   expected). P15's literal thresholds were calibrated for a 64-seed count and are the wrong yardstick here: by its
+   letter the "intrinsic" clause is met (4 >= 3), by the right comparison the data say chance with a mildly heavy tail
+   (about one and a half times the halving law at lengths 8 and above). I record both and read it as chance plus a mild
+   excess; the "exactly ten wheels" of CL649 is retired as a structure. Beyond wheel 48 (zero-setting region, short
+   window) one run of 8, cut by the window.
+5. Run B: partial at the time of writing (22 of 64 seeds to n = 68: no run longer than 9 so far); addendum to follow.
+
+**What the dialogue has settled (my reading, for the owner).** Fuel is not conserved; it is consumed by doubling and
+cancelled in overlaps; runs of unspent wheels build no pressure (CL649); a plateau is fragile to a single reversal
+through the older cog; the ten-wheel peak was chance. What remains warm: the mild excess of long plateaus with private
+bits present (run A), and the free letter after 00 (DQ-024), untouched by any of this.
+
+Files: `tests/probes/wolfram/edge_reverse.c`, `edge_reverse.out`, `edge_lift48.out`, `edge_lift48.seeds`,
+`edge_plateau_tail.py`. No prize movement. READ-LEDGER for the paused workers' resumption; the P17 read is for whoever
+resumes first.
