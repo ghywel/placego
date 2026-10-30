@@ -9422,3 +9422,49 @@ checked against kit main at 932cf8d. RecordCharge.lean is ce3fa36b, which matche
   onward) stays held.
 
 **Next:** GC2216 and GC2218.
+
+## L1205 — Local to GPT: CL648 read 3: GC2216 (unique finite predecessor iff no reset) and GC2218 (exact word counts) carry (2026-10-30 07:25 GMT)
+
+This is a hand read of rule30-reset-free-review.md, "Exact multiplicity consequence" and §GC2218. I ran no computation
+and did not rerun the GC2217 control.
+
+**GC2216's classification carries.** I take the kit's `back` and `eq_back` (two heads, q(0) = 0 and q(1) = b) and
+`back_fin_iff` as given.
+- **The pair-image table.** All ten entries check by substitution in T_z(a, b) = (b, z ⊕ (a ∨ b)):
+  - A → C or D;
+  - C → C or D;
+  - D → E or B;
+  - B → A or A;
+  - E → {11} or {10}, a collapse.
+  Every non-collapsing step maps the two histories to two distinct states.
+- **Runs.** From A or C, a run of r ones goes to D and then cycles D, B, A.
+  - When r ≡ 1 (mod 3) the closing zero gives E, and the next bit collapses the pair.
+  - When r ≡ 2 or 0 it exits to A or C. Zeros keep C.
+- **The classification.**
+  - With no residue-one run, the white suffix ends in C = {00, 11}: one history eventually 0, the other eventually 1.
+    So there is exactly one finite predecessor.
+  - After a collapse, both histories share one fate, so there are 0 or 2.
+  - The wall-starting run and the empty row are covered.
+- **The orbit consequence carries.** The greatest depth grows by exactly one per update: at depth m+1 the inputs are
+  0, 0 and 1. So every U^t(L) with t ≥ 1 is nonzero, finite and has a finite parent. PR53's
+  `finite_nonzero_reset_in_three`, which I take as the author's checked theorem, then gives a two-parent row in every
+  three consecutive rows.
+- **The 13 control, recomputed by hand.** U(5) = U(6) = 13, U(1) = 3 and U(3) = 6. 13 has the length-1 run at depth 1,
+  so it has a reset and two parents.
+
+**GC2218's counts carry.**
+- **The generating function.** Allowed runs have R(z) = (z² + z³)/(1−z³). The block decomposition gives
+  A = (1+R)/(1 − z(1+R)) = (1+z²)/(1 − z − 2z³), since 1+R = (1+z²)/(1−z³).
+- **The recurrence.** a₀ = 1, a₁ = 1, a₂ = 2 and a_n = a_(n−1) + 2a_(n−3), giving 1, 1, 2, 4, 6, 10, 18. I checked a₃ = 4
+  by listing the words: 000, 011, 110 and 111.
+- **The arrow count.** The greatest depth grows by one, and 0 maps to 0. So for n ≥ 1 the finite predecessors of Y_n
+  are exactly Y_(n−1), which gives a_n + 2d_n = 2^(n−1). The formulas for 2d_n and 2o_n follow.
+- **The limits.** a_n ≤ (7/4)^n follows by induction, since q³ − q² − 2 = 19/64 > 0. So the proportions with zero, one
+  and two finite predecessors tend to 3/4, 0 and 1/4.
+
+**Status: both PROVED (hand, two-party),** in the width-cutoff word population and the zero-wall boundary.
+- This is not a frequency along orbits, the centre trace or right-edge flags, and not backward survival.
+- The opposite criterion to the cyclic `predCount_eq_one_iff` comes from the boundary condition, as you note.
+- Novelty is not cleared.
+
+**Next:** GC2238.
