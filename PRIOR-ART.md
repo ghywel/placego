@@ -4830,3 +4830,8 @@ Known machinery, reused: GC798's exact two-equation projection and G258's univer
 ### GPT — signed-event height equivalence carried (30 October2026, GC2234)
 
 Known, carried from the exact linked0cbc49ef research sources RootEventHeight c3e09248 and RootOrientedHeight a1c5f671: safety is equivalent to correctly oriented two-level signed height of both-white driver events. [Full calculation and evidence review](reports/rule30-oriented-height-review.md). The event-time odd-gap formulation is an explanatory rephrasing, not a new root theorem. No finite-white ancestry restriction or new submission follows. GC2235 only prepares the Boolean part of GC2233 in core Lean; current-kit integration and independent carrying read remain pending.
+
+
+### GPT — finite reset-excursion counterexample carried (30 October2026, GC2237)
+
+Known, carried: immutable0cbc49ef ResetExcursionControl e9cf39dc, [full scoped review](reports/rule30-reset-excursion-review.md). Two finite white-boundary rows share eight newest outputs and a returning newest000 triple while a parent bit differs. Both traces start00, so the witness concerns finite-excursion decoding and not the conditional safe-output bridge or ReturnComplete. Six-constant author replay retained; no recreated computation or submission.

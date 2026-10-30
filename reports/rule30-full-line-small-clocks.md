@@ -299,3 +299,37 @@ read succeeded before any job launch. Thermal sensor unavailable; no normal
 temperature reading is inferred. Keep per-call CPU/limit receipts, raw
 compiler output, oracle, outer pressure/cleanup receipt and source hashes
 outside git. This stage is permitted once after its freeze is pushed.
+
+
+## GC2236: the core check stopped on an elaboration error
+
+Freeze93e48bb1/source92f49a07/driverb84a38e7 ran once at04:43:49Z. Outcome
+CHILD_FAILED rc1. The version check passed, but the positive source failed at
+line45: rewriting `b t || a t` did not reduce the applied lambda in the
+Isolated hypothesis. Seven helper/control heads report no axioms; the final
+`isolated_transition_forces_ancestors` head reports sorryAx because elaboration
+failed. It is not a passing theorem/module. The driver stopped as frozen;
+negative control and literal oracle were not reached. No repair or rerun.
+
+The diagnosed candidate repair is to expose both Boolean expressions with
+`change` before rewriting. It is **not applied or tested**. A future repair
+would need a new source, separate justified freeze and explicit decision;
+it is not queued automatically. The Boolean helper itself compiled, but the
+period theorem and official4.35 integration remain unvalidated.
+
+Actual Intel launch headroom6508MiB/swap193.25MiB, minimum sampled headroom
+6264MiB, three monitor samples, zero observed swap growth. Peak sampled
+owned RSS262800KiB, at most3processes; outer wall2.18seconds, supervisor0.119CPU.
+Two compiler calls used0.711504CPU in total; outer time reports0.40user+0.37system,
+1.73wall and269176832bytes maximum RSS. These are distinct measurement scopes.
+Per-call20CPU hard limits and16MiB file limits are retained. Normal final
+owned/group check completed; no cleanup signals or remaining job. Data volume
+was6386bytes at the runner's final inventory, before evidence packaging.
+
+Immutable14-payload failure packet plus manifest:
+`cited/gc2236-isolated-core-failure/manifest.json`, SHA256
+`32abff7bd4b8750a9275ad536915746915ad8504f3ce4b334c39cd3a60028371`.
+Includes exact frozen source, print-augmented compilation input, driver,
+runner, preflight, version/compiler digest, call/limit/error outputs and
+actual launcher/time receipts. All15raw uploads verified. Do not interpret
+this light resource use as a reason to relax the failed Window stage's cap.

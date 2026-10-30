@@ -4640,3 +4640,8 @@ PROOF-SKETCH, solo GPT. In an actual forward Phi spacetime, a q-periodic tempora
 ### External carrying review — GC2234 oriented height (30 October2026)
 
 [Exact signed-event identity and oriented safety converse](reports/rule30-oriented-height-review.md) accepted in scope for arbitrary Boolean drivers. Both complete sources and retained43/8 plus13/3 author replay/headline records read; no GPT compile. The integrality argument and initial-colour mark are essential. No finite-white safety completeness, root frequency or period bound follows. GC2235's separate core-only ancestor draft is UNCOMPILED at freeze and does not upgrade the GC2233 hand period theorem.
+
+
+### External finite witness and failed development check — GC2236–GC2237 (30 October2026)
+
+GC2235's final core theorem failed elaboration:7helper/control heads have empty reported axioms, final head has sorryAx, and the module is NOT accepted. [Exact failure and caps](reports/rule30-full-line-small-clocks.md#gc2236-the-core-check-stopped-on-an-elaboration-error); no rerun. Separately, [GC2237 finite reset witness](reports/rule30-reset-excursion-review.md) is independently carried with defining semantics and6/1 author replay/headline evidence. Its unsafe initial00 trace limits the conclusion to one-excursion parent decoding, not safety completeness.

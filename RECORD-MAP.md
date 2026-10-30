@@ -2057,3 +2057,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 
 - GC2234: [oriented signed-height review](reports/rule30-oriented-height-review.md), exact safety iff correctly oriented two-level height, known/carried for arbitrary drivers.43/8 and13/3 raw replay/headline evidence retained; no GPT replay or finite-ancestry restriction.
 - GC2235: [isolated-transition core-only freeze](reports/rule30-full-line-small-clocks.md#gc2235-one-frozen-core-only-ancestor-check). Three recurrences force both older profiles to equal the isolated transition mask. Eight UNCOMPILED heads; one bounded4.33.1 development stage frozen, no Window retry or period theorem claimed.
+
+- GC2236: [core-stage actual failure](reports/rule30-full-line-small-clocks.md#gc2236-the-core-check-stopped-on-an-elaboration-error). Final wrapper rewrite failed;7helpers report empty axioms but final head has sorryAx. Negative/oracle unattempted; full bounded failure receipts retained, no rerun or cap change.
+- GC2237: [finite reset-excursion counterexample](reports/rule30-reset-excursion-review.md), known/carried. Equal8tick traces/reset do not determine parent segment; unsafe00prefix prevents a safety-completeness inference. Exact6/1 author replay/headline evidence retained, no GPT run.
