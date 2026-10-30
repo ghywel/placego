@@ -236,3 +236,38 @@ Same source9b845ef5 and binary3957d6a8; no implementation change after the passe
 Prediction: maximum eventual period at most64, endpoint tau/j between1.2and1.4, with persistent local variation; retain any refutation. This finite result will not decide a4/3limit, a1.27limit, or an asymptotic polynomial bound. Counterfactual: any oracle/seam/buffer assertion or resource/pressure stop ends the stage and leaves its completed prefix, without widening or rerun. The same physical oracle is a necessary initialization control, not a new seed/trajectory census.
 
 Use120payload CPU/300wall/768MiB, one thread nice10, tracked tree/max2processes,16MiB/file/128MiB disk, fresh launch4096MiB free+inactive, running3072MiB and swap growth64MiB. No concurrent job or GPU. Retain actual enforcement and raw CSV by digest.
+
+## GC2266: exact left tails through100000
+
+Frozen60aa93d9, unchanged source/binary. COMPLETED rc0:11.88child wall,11.77user+0.05system seconds,1,015,808bytes peak RSS. Launch6014MiB free+inactive, sampled minimum6010MiB, zero sampled swap growth. All physical-oracle and infinite-periodic-seam checks passed. No rerun or enlargement.
+
+| j | exact least transient tau_j | least eventual period | tau_j/j |
+|---:|---:|---:|---:|
+|1024|1299|16|1.2685546875|
+|2048|2686|16|1.3115234375|
+|10000|13314|16|1.3314|
+|20000|26839|16|1.34195|
+|50000|66833|16|1.33666|
+|100000|133255|32|1.33255|
+
+Running period records are2atj3,4at8,8at29,16at400,32at87867. The old sampled printout first displayed16at416, not its first occurrence. Maximum tau through100000is133258. The weighted upper-half ratio is1.335456093. These meet the frozen predictions, are compatible with4/3, and do not decide its limit. The local fluctuations persist, so neither a finite fitted constant nor an exact rational speed is claimed.
+
+B2 and B3's finite extensions are complete. F3's running-maximum variant remains open; pointwise logarithmic exponents remain false because of infinitely many constant diagonals. F4's simple record-doubling mechanism is unsupported: the record stays16from400through87866while the front continues moving, and there is a19-step transient jump atj41085with unchanged neighboring period16. No larger extension is queued to fit a slope.
+
+### E1's exact bridge to the wall count
+
+Let Psi(r)=(r>>1) XOR(r OR(r<<1)) be the zero-wall half-line map, and T(r)=r XOR(2r OR4r) the right-aligned physical map. Direct bit algebra gives
+
+```text
+T(r) = (r mod2) + 2*Psi(r).
+```
+
+Thus a normalized physical child y with rightmost bit1 corresponds to the wall target(y-1)/2 **with the parent boundary bit r0 fixed to1**. The wall inverse instead permits r0=0or1 and propagates r_(i+1)=s_i XOR(r_i OR r_(i-1)), r_-1=0. Its0/1/2finite parents split according to that free boundary bit; restoring the lost outward cell selects at most one. This is the precise meeting point of the two counts, rather than an unexplained frame difference. Solo hand identity, using the already known two maps.
+
+## GC2267: fixed-depth structural background closure freeze
+
+The40-step finite-root census suggests a stronger question: do all possible entering pairs of the periodic-tail transducer allow only those two sequences, irrespective of root width? This changes representation, not horizon or seed count. Every finite root's first nonfinite white-right ancestor has all-black far-left tail. Starting there, enumerate **all** recurrent cycles of the four-state return map for every reachable tail word, modulo spatial rotation, through40levels. If extra sequences appear, finite-root accessibility remains a separate gap; if only two appear, the complete graph yields a finite-depth universal restriction by the known periodic-tail construction. Neither result implies an all-depth restriction.
+
+Source `tests/probes/wolfram/backward_background_closure.py`, SHA256 `f6a0f95ee9e53c24a0a6fcaa48f66c9ee788ebf357a9ecdd7752ad74495170a5`. Input backward-root receipt SHA256 `05ca324777df1762ab89ea88bfea22d77d21ebaa7dcee6f6589806787b3ed300`. Prediction: exactly two40-step period sequences and no new period beyond24. Counterfactual retained if extra profiles/sequences appear. Independent control: brute literal periodic-parent enumeration for all30binary driver words of lengths1–4, including the constant-one3cycle; all1536computed root histories must be included. Canonical rotations are checked against all rotations for lengths<=64. Record/prior art: GC2016/GC2023 four-state complete ray constructor, PR60 reset scope, current E2 proof and E3 certificates; no new arbitrary ancestry search.
+
+One process/thread, nice10,30CPU/60wall/256MiB, tree cap2,16MiB/file/128MiB stage disk; launch4096MiB, running3072MiB, swap growth64MiB. Hard logical caps4096profile/path pairs per level and period12288. Any control, logical, host or resource failure ends this one stage with retained evidence and no automatic rerun.

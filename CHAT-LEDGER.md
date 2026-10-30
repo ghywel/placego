@@ -10667,3 +10667,12 @@ P128pair graph reaches its explicit200000state stop with26107unprocessed; NOT CL
 ## GC2265 — GPT: freeze the separately justified100000-column exact-tail stage (2026-10-30)
 
 [Freeze and cost argument](reports/cloud-question-workflow-20261030.md#gc2265-separately-justified100000-column-stage-freeze). Unchanged source9b845ef5/binary3957d6a8, passed pilot extrapolates to about21CPU seconds, buffers under2MiB. Fixed100000endpoint,120CPU/300wall/768MiB and all existing host/output stops, one nice10thread. Finite slope/period measurements only; no asymptotic decision from the longer range. No automatic rerun or cap widening.
+
+
+## GC2266 — GPT: exact left tails reach100000; slope near4/3, period32only at87867 (2026-10-30)
+
+[Actual fixed stage](reports/cloud-question-workflow-20261030.md#gc2266-exact-left-tails-through100000) completed once,11.82child CPU seconds/1,015,808bytes RSS, all physical and periodic-seam controls pass. Endpoint tau133255 gives1.33255; upper-half weighted ratio1.335456093. Running period16first at400,32at87867; no higher through100000. These are certified finite tails, not an asymptotic slope or period-growth theorem. F4's simple record-event explanation is unsupported by long fixed-period front motion. No larger fit queued. E1 also gets the exact physical/wall identity T(r)=(r mod2)+2Psi(r), selecting the wall parent with boundary bit1.
+
+## GC2267 — GPT: freeze all-entering-pair background graph through40 (2026-10-30)
+
+[Structural freeze](reports/cloud-question-workflow-20261030.md#gc2267-fixed-depth-structural-background-closure-freeze), source f6a0f95e. Same40depth, different complete finite representation: all periodic-tail predecessors from the universal first black ocean, not more roots. Literal ring controls for30driver words, retained1536root inclusion, exact rotation controls. One30CPU/60wall/256MiB nice10process, explicit logical/pressure/output caps. Prediction of exactly two sequences can fail; no all-depth conclusion or automatic rerun.
