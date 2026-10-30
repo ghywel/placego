@@ -1,4 +1,4 @@
-# Quadratic edge clocks: Cloud's breaks and a shared half-rate mechanism
+# Boolean edge clocks: Cloud's breaks and a shared half-rate mechanism
 
 GC2256, 30 October 2026. Cloud CL650/CL652 hand rules are independently carried below, with explicit period guards. The broader transfer in sections 3–4 is **PROOF-SKETCH**, GPT alone. No new Lean compilation, official replay, submission or density limit is claimed.
 
@@ -16,13 +16,13 @@ Current external index refreshed successfully at10:47:52UTC: kit `a6399ef15ff409
 
 For any triangular invertible map, the next prefix period is P or 2P according to the parity of the new bit's forcing over one old prefix cycle P. This is the existing lifting theorem.
 
-**P17 (CL650), PROVED by hand, two-party in the following scope.** Reversing seed bit k preserves every lower stream and complements stream k at every time. It therefore preserves all prefix periods through k. Write A=x_k, B=x_(k-1), and use the common prefix period P=P_k in the original and reversed runs. Pointwise over F2,
+**P17 (CL650), PROVED by hand, two-party for the even-period conclusion.** Reversing seed bit k preserves every lower stream and complements stream k at every time. It therefore preserves all prefix periods through k. Write A=x_k, B=x_(k-1), and use the common prefix period P=P_k in the original and reversed runs. Pointwise over F2,
 
 ```text
 (NOT A OR B) XOR (A OR B) = 1 XOR B.
 ```
 
-Consequently the two next-doubling flags differ by `(P mod 2) XOR parity_P(B)`. At P even this is exactly Cloud's criterion. At P=1 the extra 1 is essential: seed0, reversal k=1 gives seed2; the older bit0 stays zero, but bit2 changes from constant to alternating. All59 reported controls lie in the even-period scope. This is an elementary Boolean derivative combined with known lifting, not a new source of randomness.
+Consequently the two next-doubling flags differ by `(P mod 2) XOR parity_P(B)`. At P even this is exactly Cloud's criterion. At P=1 the extra 1 is essential: seed0, reversal k=1 gives seed2; the older bit0 stays zero, but bit2 changes from constant to alternating. All59 reported controls lie in the even-period scope. The explicit period-one formula and counterexample are GPT self-checks, not a further independent review. This is an elementary Boolean derivative combined with known lifting, not a new source of randomness.
 
 **P21, PROVED by hand, two-party for the same even-period scope.** First reverse k-1, obtaining run B; compare B to B with bit k reversed. Apply P17 to B and its period P_k(B). This compares the pair-reversed run with the single-reversed run, not directly with the untouched run, and uses B's supplier weight. The period-one correction is unchanged.
 
@@ -137,7 +137,7 @@ The useful comparison is the destruction of the singleton Newton support, not an
 
 No Parry copy is needed for this step. The owner declined sourcing that paper; its unread comparison stays parked.
 
-## 7. One frozen finite control (GC2256; not yet run)
+## 7. One frozen finite control (GC2256; pre-run specification)
 
 Exact source `tests/probes/quadratic_edge_clock_control.py`, SHA256 `47b14a16401150195675b5c28b64add653f4aee25c65a1a92f4698659cc07810`; unchanged supervisor `tests/probes/wolfram/run_capped.py`, SHA256 `c8c58b49e032fc4c20b61675adc4194646713e692a51815996791ac8943ffc56`. Syntax-only py_compile passes. No numerical execution before this freeze.
 
@@ -146,3 +146,69 @@ Prediction: all80 fixed cases (eight homogeneous quadratic gates plus two prescr
 Independent controls: explicit four-entry truth tables versus a bit-parallel ANF; first actual return of each prefix versus lifting parity; direct cyclic differences for resource; integer binomial coefficients for the known domino. Unexpected check: the uncorrected period-one reversal criterion must be rejected by the explicit seed0/bit1 example. Fixed zero, single-bit, domino, separated, alternating and mixed-bit seeds keep constants and active cases distinct.
 
 Intel host measured before launch:8physical/16logical cores,16GiB RAM, about6884MiB free+inactive,161.25MiB swap used, load about2.1; no research compute job running. Exactly one Python compute process/thread, no payload subprocess creation, nice10. Its60second RLIMIT_CPU is therefore an aggregate bound on all research payload CPU, not an inferred multithread/tree budget. The supervisor and its short monitoring commands are overhead, recorded separately; no claim that the existing runner provides a hard aggregate CPU limit over that overhead. This tiny control is not a substantial multistage computation. Wall30s, RSS768MiB, file16MiB, stage disk128MiB, process-group/tree cap2 (time wrapper plus payload), launch free+inactive4096MiB, running floor3072MiB, swap growth64MiB. No concurrent job or GPU. Stop on any limit, monitor failure or failed assertion; no automatic repair/retry. All output stays in one fresh scratch stage and will be retained by digest. A stage lasting less than the sampling interval may have zero periodic monitor samples; then only launch gates and actual child measurements are claimed.
+
+## 8. GC2257: the fixed control passed once
+
+Freeze commit `9a8b4ea6`; actual execution10:59:07UTC. COMPLETED rc0. All80cases,800pair clauses (339weight0,344weight1,117weight2),6240windows and1024domino cells passed. The period-one counterexample rejects the omitted correction. No repeat or enlargement.
+
+Actual time receipt:0.09s child wall,0.07s user+0.01s system,14,688,256bytes peak RSS. Supervisor wall0.55s and CPU0.099s. Launch headroom6852MiB free+inactive,161.25MiB swap. The process ended before a periodic sample, so zero sampled RSS/pressure maxima are **not measurements of zero usage**; ongoing pressure/swap stability is not independently sampled. No leftover was detected; no cleanup signal was needed. Outputs total about32KiB before the launcher receipt.
+
+Raw files are retained, with verified TLS raw-body upload and byte-exact readback, at shared-store `cited/gc2257-quadratic-clock-control/`. Manifest SHA256 `1657a65cf54ad846f0918711d5a2d3f0f2daec27f7acd1ed71a6675f9dc1c385`. The finite control validates implementation and boundary conventions; sections3–4 remain solo hand results.
+
+## 9. GC2258: the first genuine domino branch has an exact label
+
+**PROOF-SKETCH, hand only.** This uses the known support calculus and section5, not an additional run. First eliminate apparent perturbations that merely change time: the AND orbit of3 begins3,7,11,15,19. In particular flipping just bit2,3 or4 of3 gives an already-known phase. The first single higher-bit flip outside this family is bit5, giving35.
+
+More generally the only indices j>=2 for which3 XOR 2^j belongs to the domino's forward orbit are
+
+```text
+j=2, or j=3*2^m, or j=3*2^m+1   (m>=0).
+```
+
+They are exactly the positions where o_j is a power of two, as follows from the closed form. Each temporal bit has one such spatial position. If time t has two or more set bits, at least two of those positions are black, so it cannot give a single added bit. A one-bit time gives exactly the matching position because the positive o_j are strictly increasing. This is a direct consequence of the credited domino formula.
+
+There is a simpler exact detector for the first departure. Under the AND map with x0=x1=1, write u=x2, v=x3, w=x4 and z=x5. Then
+
+```text
+u'=u XOR 1,  v'=v XOR u,  w'=w XOR uv,  z'=z XOR vw.
+C = z XOR uvw is invariant.
+```
+
+The first three equations are a three-bit binary counter. If u=0, the new product u'v'w' is vw; if u=1, it is0. In both cases the product changes by vw, exactly as z does. Thus C is a conserved **prefix branch label**, with eight states in each C-class, each forming an8cycle. It is not a spatially summed conserved density, and has no relation to a claimed conservation law for Rule30.
+
+Seed3 has C=0; seed35 has C=1. Since the six-bit quotient is invertible, these two quotient cycles never merge. The domino identity x5=x2*x3*x4 therefore detects an actual orbit-class difference, not merely a poor choice of phase.
+
+For seed35 the all-time Newton supports through j9 are obtained by multiplying B_a B_b=B_(a OR b), cancelling equal terms, then incrementing indices; insert the seed's constant term at j5:
+
+| j | support of x_j(t) |
+|---|---|
+| 0,1 | {0} |
+| 2 | {1} |
+| 3 | {2} |
+| 4 | {4} |
+| 5 | {0,7} |
+| 6 | {5,8} |
+| 7 | {6,8,9,16} |
+| 8 | {8,9,10,15,22,25} |
+| 9 | {9,10,11,12,25,27,31,32} |
+
+For the final step the forcing's index31 occurs in exactly three products: (15,16), (22,9), (25,6); it survives parity and integrates to32. All these are polynomial identities in t, not observations over a finite time window. A nonzero Newton polynomial of largest index d has least dyadic period2^bit_length(d), so the two prefix exponent histories agree through j8, namely0,0,1,2,3,3,4,5,5, but E9 is5 for seed3 and6 for seed35. This does not refute a law retaining the full upstream profiles. It shows exactly why the recorded period history alone loses information.
+
+The hoped-for two-term support class already fails at j7; six and eight terms follow. Park that specific ansatz. Reopen only with a representation that controls the actual cancellations, not a longer support list or a density fit. The prefix label and generic upper bound remain useful without deciding growth for seed35.
+
+## 10. GC2258: the upper bound actually covers every two-input Boolean gate
+
+The quadratic-coefficient-one restriction in sections3–4 is unnecessary for the **inequalities**. Write an arbitrary gate as
+
+```text
+g(b,s)=lambda*b*s XOR alpha*b XOR beta*s XOR gamma,
+lambda in {0,1}.
+```
+
+The shifted identity becomes Delta^(M+1)h=lambda*s XOR alpha, and for r>=1 becomes Delta^(M+1+r)h=lambda*Delta^r s. For reset-before with M>=2, positive old order would force Delta^(2M)h=0 for either value of lambda, contradicting the required antiperiod. For countdown, old vanishing forces new vanishing in the forward direction; no cancellation or division by lambda is used. Both implications therefore still hold when lambda=0. Reset-after is the unchanged antiperiod identity. Thus the same Path proof covers **all16** choices of g, with arbitrary time-independent spatial variation of all four coefficients. It assumes own-bit XOR and only the two older bits as inputs; arbitrary longer-memory T-functions are not covered.
+
+Equivalently, the Boolean derivative g(1 XOR b,s) XOR g(b,s) is a function of the single bit s, hence one of0,1,s,NOT s. One additional time difference removes its constant term. That is the common reason for the upper bound. The stronger exact difference-index equality for nonconstant s in section3 still requires lambda=1.
+
+For the affine subclass lambda=0 (allowing spatially varying affine coefficients), an even stronger standard linear-algebra bound applies. On n prefix bits the map is Ax+c with A unitriangular. Add one homogeneous coordinate: the resulting(n+1)-dimensional matrix is I+N with N^(n+1)=0. In characteristic2, (I+N)^(2^r)=I+N^(2^r). Hence every prefix period divides2^ceil(log2(n+1)). With c=0 the augmentation is unnecessary and n replaces n+1. This is a bound, not the exact period for every seed.
+
+This all16 extension is **PROOF-SKETCH** and has not been rerun or compiled. The finite control of section8 tested exactly the earlier ten quadratic families; it is not described as a test of the enlarged class. Known T-function, nilpotent-matrix and record-charge machinery are credited. No novelty clearance, new submission or asymptotic equality is claimed. The next useful carrying target is this generic vanishing argument, followed by a minimal reusable formalization if accepted; DQ009 remains an independent alternative.

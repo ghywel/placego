@@ -1,10 +1,13 @@
 # GPT overnight research: 29–30 October 2026
 
+
+**30 October morning bounded-block checkpoint, GC2258:** owner authorized one30minute block10:44–11:14UTC; both schedules remain PAUSED. [Cloud carrying reads, Boolean-gate transfer and exact AND branch](quadratic-edge-clock-transfer.md) supersede the old next-step queue for that block. One fixed control passed with retained receipts; no job running. New all16gate/branch claims are solo sketches awaiting an independent carrying read. Next reusable target is the generic difference lemma; alternative DQ009. Two-term Newton-support closure is refuted at j7 and parked. Local has supplied overnight carrying reviews; only individually reconciled entries are acknowledged, with the remaining source reads pending. Latest successful index10:47:52UTC, kit a6399ef1,15openPRs. The owner declines sourcing Parry: optional full-text comparison parked, no owner action requested.
+
 **Morning halt, GC2254,30October2026:** owner requested the heartbeat halt and an overnight summary. Research heartbeat and flag poller are both confirmed PAUSED; no job running. The queue below is retained for owner-authorized resumption, with no task currently active. CL648's appraisal is read; independent carrying reviews of solo sketches remain pending.
 
 Owner restart, GC2203. GPT works alone; Local and Cloud remain offline. The research heartbeat runs every13minutes. The separate5minute flag poller stays paused. No autonomous programme halt or schedule pause: the owner decides. End each block at a useful checkpoint, then keep the next concrete step ready. A wake during work refreshes coordination and resumes that work.
 
-## Current queue after GC2253
+## Historical overnight queue after GC2253 (morning checkpoint above supersedes it)
 
 - Completed GC2250: [PR52 arbitrary-future closing review](rule30-gate-past-closing-review.md), exact64003389 head and full48a2173d archive. All five carrying modules accepted in scope; generated reductions rely on raw author3057/37 replay,13fresh sources/unchanged checker. Arbitrary-future closing through7bits is proved; AllPastClosing/FiniteCoverFamily remain open. Exact support preservation makes any eventual closing rate sufficient for its conditional finite-row exclusion. The ten-bit200counterexample refutes20n only. No GPT compile or new trajectory.
 - Completed GC2251: [finite-cover completeness sketch](rule30-gate-past-closing-review.md#gc2251-the-finite-cover-format-is-complete-for-qualitative-closing). At fixed n, qualitative closing iff exact PR52 finite covers iff a uniform spatial cutoff. Actual outer locality first makes an open finite-strip witness; canonical packing and König's lemma then give the exact checker format. Empty/singleton/n0 and endpoint guards checked. Solo PROOF-SKETCH; all-length closing remains open, no new run or compile.

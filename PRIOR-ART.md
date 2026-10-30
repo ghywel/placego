@@ -4876,3 +4876,8 @@ Known, independently carried in scope: [source and complete canonical archive re
 ### GPT — carrier endpoint and infinite extension distinguished (30 October2026, GC2253)
 
 Known mechanisms, exact scope corrected: PR48 carrier_exit/arbitrary_older_context supply a finite spatial8-to2drop; the known odd-forcing parity rule then forces16next for that endpoint. PR58's retained q8 witness uses the opposite alternating exit phase and extends to rain. [Hand comparison and failed control](reports/rule30-carrier-reach-pilot.md#exact-hand-diagnosis-and-the-other-exit-choice). Urías et al.1996 sectionV, Lemma5/proof/following theorem now read in the author-linked full text; its strict end-resolving velocity hypothesis excludes our critical moving-edge frame. Neither source yields the proposed all-clock classification.
+
+
+### GC2258 — known AND domino and clock machinery, reproved here (30 October2026)
+
+[Skirrow's original author notes](https://oeis.org/wiki/User:Natalia_L._Skirrow/on_nearsighted_binary_counters), Theorems1–2/Corollary3, give regular-block AND dynamics. The n=2 closed form and logarithmic prefix clocks are known, reconstructed in [the comparison account](reports/quadratic-edge-clock-transfer.md#5-a-known-exact-and-comparison-the-two-cell-seed). These are author notes, not an asserted referee/Lean certificate. The Newton multiplication calculus is also known (Nersissian and GC2008). Kit a6399ef1 Rule30DifferenceOrder/RecordCharge and PR55 at918284e3 give the OR proof mechanism; GC2258 proposes a scoped all16gate transfer, not priority for the underlying method. The affine bound is standard nilpotent-matrix linear algebra. No novelty conclusion follows merely from the search.

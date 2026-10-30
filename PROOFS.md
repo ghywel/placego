@@ -4692,3 +4692,8 @@ PROOF-SKETCH, solo GPT. [Exact inverse and period proof](reports/rule30-run-peri
 ### GC2253 — The finite carrier exit has two different newer-clock outcomes
 
 PROOF-SKETCH, solo hand specialization of the known parity rule. [Exact equations and source-scope correction](reports/rule30-carrier-reach-pilot.md#exact-hand-diagnosis-and-the-other-exit-choice): PR48's endpoint234,170has forcingEAof odd weight, so either next initial bit gives least period16. Choosing85instead of170one step earlier joins the alternating tail and matches PR58's existing witness. No full-line16-return, new novelty claim or completed q16 computation. The failed positive control is retained.
+
+
+### Waiting room — Boolean gates and an AND branch label (GC2258,30 October2026)
+
+[Complete carrying steps and evidence](reports/quadratic-edge-clock-transfer.md). PROOF-SKETCH: own-bit-XOR triangular updates with arbitrary time-independent two-input Boolean gates satisfy the kit's record-charge window bound, hence upper clock rate and Assouad dimension at most1/2. The generic vanishing argument transfers inequalities without dividing by the quadratic coefficient. All-affine gates have a standard logarithmic bound. Separately, on AND's x0=x1=1 branch, C=x5 XOR x2*x3*x4 distinguishes two six-bit8cycles; seeds3 and35 have equal prefix clocks through j8 but different E9. Solo hand results, not compiled; the frozen80case control covered the earlier quadratic family only. Known Skirrow domino formula and kit mechanism credited. Section2 independently carries Cloud's four elementary break rules in corrected scope.

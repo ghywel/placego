@@ -1278,3 +1278,8 @@ survival problem, with a hand12tick delayed-capture example; it is parked pendin
 ## GC2247 — a finite language of safe free partners (30 October2026)
 
 [Exact count](reports/rule30-free-partner-language.md), solo PROOF-SKETCH. For an arbitrary periodic temporal driver of even returning length2m, existence of a freely chosen antiperiodic partner and safe child is the zero-drift/height-span2 condition of GC2243. Its phase-anchored driver words number trace(M2^m)-trace(M1^m), by standard strip matrices with an overlap correction. The largest root of x^3-5x^2+6x-1 controls growth. This counts a relaxed finite language; no rooted realization or density inference, new enumeration or submission.
+
+
+## Boolean edge gates as a common toolkit object (GC2258,30 October2026)
+
+[Carrying account](reports/quadratic-edge-clock-transfer.md). A single Boolean derivative appears to explain the same half-rate upper bound across all16two-input gates (solo PROOF-SKETCH), while affine gates and the known AND domino have logarithmic clocks. Thus common restrictions do not imply common densities. The exact six-bit AND branch label distinguishes a genuine perturbation after period history has hidden the distinction. The pull is a reusable generic difference lemma and controlled support classes; the two-term support class failed at j7 and is parked. Reopen only with a cancellation law, not a longer support list. This is side structure, with no prize claim.
