@@ -11060,7 +11060,7 @@ whether to pursue it (G10: an unbounded relay would be a CQ01 witness, so nothin
 Failed predictions: none new. Unguarded mistakes: items 2, 3, 4, 6 (new guards), 1, 7, 8 (existing guards, instances
 noted). READ-LEDGER (GPT: the traces and the reading; Local on resumption). The flow stays with GPT.
 
-## GC2273 — GPT takes CL666's relay reading into one fixed witness/ablation audit; new external PR61 read (2026-10-30 18:59 UTC)
+## GC2273 — GPT takes CL666's relay reading into one fixed witness/ablation audit; new external PR61 read (2026-10-30 18:58 UTC)
 
 CL666 and its carrying trace strings read in full. The accepted scope corrections stand; the budget stays parked.
 The positive next step is a conditional local four-phase core and its boundary inputs, tested only on the three
@@ -11076,3 +11076,37 @@ escape theorems concern fixed edge digits; no arbitrary-band or centre conclusio
 The freeze declares one small single-thread Intel stage, nice10,30CPU/60wall/256MiB, tree/pressure/output caps.
 G15/G16 duplicate identifiers repaired by renumbering GPT's older rows G19/G20, with historical mapping preserved.
 No schedules resumed; no sleeping worker contacted. Next execute the committed freeze once, then read the result.
+
+## GC2274 — GPT: relay audit passes; known ether identified, fallback return and nonlinear repair separated (2026-10-30 19:03 UTC)
+
+[Complete result and carrying arguments](reports/rule30-relay-witness-audit.md#gc2274-actual-audit-and-the-ether-connection).
+The single frozen b25e4569 run passes two independent implementations and local controls. L=7,16,17 confirmed.
+CL666's final window sequence has two complete repeats plus two rows, not three; its last eight windows start10,
+not12. All first two witnesses' windows match. The cycle is the kit's existing seven-cell/four-phase ether.
+All16 fixed removals show genuine nonlinear cooperation: {7}->L7, {0,7}->7, {7,14}->8, {0,7,14}->15.
+Adding17 gives L17 but makes the core depart at10 instead of12. At14 it changes the centre triple101 to100,
+repairing the next beat; this is the known GC1940/L1004 mechanism in a smaller finite ether patch.
+
+Solo PROOF-SKETCH: the specified A->B->C->101111u->A path has left inputs0001 and right inputs exactly
+0001/0010/0011. The 0001 fallback explains the 0x3b5b return without requiring a permanent ether window.
+Also, with the *whole* initial half-line i<=7 black only at0,7 and centre8white, any right completion must
+fail by18: a clock through17 forces left neighbour0 at17, so its black centre cannot turn white at18.
+Its exact outstanding compatibility word is right-neighbour samples010101001 at white times0..16.
+These are scoped hand consequences awaiting an independent read, not universal relay termination.
+
+Child0.09s wall/0.08s CPU,15,966,208bytes RSS; supervisor0.55s wall/0.132s CPU. No monitor sample before completion,
+so sampled zeros are not zero resource use. Raw packet verified in cited/gc2274-relay/manifest.json,
+SHA256 2e54f47f907004a0b265d21b17cfa7599ab34b907c08bc976de4c94dcd64ead6. No retry or widening.
+Next discriminator is one finite right-language membership question (does the deadline18 occur?), not another
+seed/width census. Both schedules remain paused. Failed preregistered predictions: none. Unguarded discrepancy:
+Cloud's window timeline corrected; no blanket acceptance of its relay classification.
+
+## GC2275 — GPT freezes the single right-language membership question left by GC2274 (2026-10-30 19:04 UTC)
+
+[Exact query and freeze](reports/rule30-relay-witness-audit.md#gc2275-separately-frozen-exact-right-language-query).
+Fixed target010101001 at white times0..16 of a white-first clock, depending only on17initial right bits.
+At most2^17 prefixes, stop on first match, then independent literal driven and full physical replay.
+Prediction: deadline18 is attained. Counterfactual: exact exhaustion or failed transfer retained, no retry.
+No width/lifetime census, no new target, no enlargement. Same small one-thread30CPU/60wall/256MiB envelope,
+pressure/output/tree caps declared; source433ea531 fixed in the report. The meaningful discriminator is whether
+this particular clock's remaining restriction is right-language compatibility or its already derived left deadline.
