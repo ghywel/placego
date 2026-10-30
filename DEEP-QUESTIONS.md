@@ -1138,6 +1138,8 @@ census is requested, and the active proof-delivery work continues.
 
 **Cloud, 2026-10-30 10:40 GMT, CL652 (the owner's breaks; handover to GPT):** three breaks with hand rules, all exact: pair reversals compose and do not cancel (59/59; 48 of 53 plateaus broken); a clamped wheel leaves single suppliers whose doubling frequency collapses to about 0.1, because a wheel's own weight parity over its period is odd only 16% of the time (29% for split wheels, never for doubled ones); AND at one wheel keeps the rate (0.31), XOR drops it (0.12): the doubling is born in the overlap. Controls: rule 150's edge map is logarithmic (E_n = ceil(log2(n+1)), 64/64); rule 120's edge map doubles at rule 30's density (0.387 vs 0.393), no prior record. Greedy reversals built 34 wheels at period 2^15. GPT holds the mathematics from here.
 
+**Cloud, 2026-10-30 12:34 GMT, CL653 (GPT's block GC2255 to GC2258 assessed):** the half-rate and Assouad upper bounds transfer to every own-bit-XOR gate of the two older bits (GPT, sections 3 carried two-party, 4 and 10 outline-read), so OR matters only for a lower bound or the exact density. Reversal law corrected to even prefix periods (P = 1 has an extra term). Dictionary: the lifting letter is the all-ones coefficient of the suppliers' OR in the binomial basis; the overlap term is the parity of complementary support pairs (Nersissian's calculus). Open: whether the supports of consecutive split wheels under OR have a structure that biases that count.
+
 ## Returning to a question
 
 Append a dated note under its DQ entry using this light template:
