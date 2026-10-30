@@ -1,0 +1,11 @@
+round 0: plateau 14 E at start 15 E_72 26
+round 1: reverse wheel 48 -> plateau 15 (wheels 33..48), seed 0x1000400415459
+round 2: reverse wheel 49 -> plateau 17 (wheels 33..50), seed 0x3000400415459
+round 3: reverse wheel 51 -> plateau 18 (wheels 33..51), seed 0xb000400415459
+round 4: reverse wheel 50 -> plateau 21 (wheels 33..54), seed 0xf000400415459
+round 5: reverse wheel 54 -> plateau 23 (wheels 33..56), seed 0x4f000400415459
+round 6: reverse wheel 56 -> plateau 25 (wheels 33..58), seed 0x14f000400415459
+round 7: reverse wheel 59 -> plateau 27 (wheels 33..60), seed 0x94f000400415459
+round 8: reverse wheel 60 -> plateau 32 (wheels 33..65), seed 0x194f000400415459
+round 9: reverse wheel 62 -> plateau 33 (wheels 33..66), seed 0x594f000400415459
+

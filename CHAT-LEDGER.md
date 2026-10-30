@@ -10085,3 +10085,70 @@ merges.
   describe the same theorems. The portal entry is unaffected.
 
 No reply posted on the PR; that waits for the owner. No research started; GPT stays paused and nothing is running.
+
+## CL652 — Cloud to the owner, and a handover to GPT (to be resumed by the owner): the greedy chain reaches 34 wheels at one period; the owner's three breaks, each with a hand rule that held at every case; the doubling lives in the overlap; the AND sibling (rule 120) doubles at rule 30's density (2026-10-30 10:40 GMT)
+
+Closing the dialogue's computational phase (CL649 to CL651). Predictions for everything below were written before the
+runs (Blocks 6 and 7, copied into `tests/probes/wolfram/edge_greedy.py` and the Block 7 text below). Program
+`edge_break.c`; outputs `edge_break1.out`, `edge_break_{c30,a30,x30,A,X}.out`; analysis `edge_break_analysis.py`;
+greedy driver `edge_greedy.py` with `edge_greedy.out` and `edge_greedy_chain.out`.
+
+**Block 6, extend the extended run (the owner's question).** Greedy single reversals from CL650's fourteen-wheel chain
+(seed 0x415459, wheel 34 reversed, E = 15): rounds 1 to 9 reversed wheels 48, 49, 51, 50, 54, 56, 59, 60, 62 and
+lengthened the chain to 15, 17, 18, 21, 23, 25, 27, 32, 33 zero letters; the run hit its 30-minute cap in round 10.
+Final seed 0x594f000400415459: **wheels 34 to 67, thirty-four wheels, share period 2^15** (checked by `edge_break` to
+n = 70; E_68 = 16). P19 (three rounds, twenty wheels) HELD with room. P20 (even-weight older suppliers at 70% or more)
+REFUTED: 15 of 33. The engineered chain is not starved; it is steered, with odd-weight suppliers whose overlaps cancel
+(Local's "fuel, not steering" of L1066 read the other way round for a chosen seed). PU: nine reversals gave 34 wheels at
+P = 2^15; Local's exact ceiling at P = 64 is 103 wheels; the ceiling at 2^15 is unknown and finite (Lemma R).
+
+**Block 7 predictions (written 10:2x GMT, before the runs).** Break 1, pair reversal (k-1, k) at the 59 positions of
+CL650: P21 (exact, composition of P17): E_(k+1) under the pair differs from E_(k+1) under the single reversal of k-1
+iff, in that single run, wheel k-1 has odd weight over 2^(E_k); P22: pairs break plateaus no less often than singles
+(counterfactual: at most half as often, "cancellation"). Break 2, clamp wheel 30 white for ever, 64 seeds to 56: P23
+(exact): d_31 = weight parity of wheel 29, d_32 = weight parity of wheel 31 (single suppliers); P24: E_30 = E_29 always,
+density over n = 33..56 within 0.04 of the unbroken value; PU: the single-supplier doubling frequencies at 31 and 32.
+Break 3, AND or XOR at wheel 30 only: P25 (exact): d_30 = overlap parity (AND) or the sum of the two own parities (XOR);
+P26: density over 33..56 within 0.04 of baseline. Controls, AND or XOR at every wheel: P27: XOR everywhere is linear
+(multiplication by 1 + t + t^2 over GF(2)), E_n = ceil(log2(n+1)) exactly; AND everywhere well below 0.41 (guess under
+0.25); counterfactual: at or above 0.38. Record searched: CL642, CL650, L1066, 920c1b/1bf4dc (rule 210), kit
+`TFunctionCycles`. Caps: C, under ten minutes in all.
+
+**Results.**
+1. **Break 1.** P21 HELD, 59 of 59: the reversal law composes sequentially (PROOF-SKETCH, exact check). P22 HELD: pairs
+   broke the plateau before its end at 48 of 53 positions (singles 43 of 53). Two adjacent reversals do not cancel.
+2. **Break 2.** P23 HELD, 64 of 64 for both wheels. P24 HELD: E_30 = E_29 in all 64; density 0.387 against 0.393. PU, the
+   surprise: with a single supplier the doubling frequency collapses to **0.09 at wheel 31 and 0.11 at wheel 32**, against
+   0.38 unbroken. Explanation, measured on the unbroken wheels 12..29 of the same data: a wheel's weight over its period is
+   odd only 185 times in 1152 (16%); never for a just-doubled wheel (0 of 510, `half_black`), and 29% for a split wheel.
+3. **Break 3.** P25 HELD, 64 of 64 for both variants. At wheel 30 the doubling frequency is 0.31 with the overlap term
+   alone (AND), 0.12 with the two own parities alone (XOR), 0.28 with the rule's OR. P26 HELD (0.396, 0.399).
+   **Reading (MEASURED, 64 seeds): the doubling is born in the overlap.** The own-parity fuel of CL649 is odd less than a
+   third of the time even for an unspent wheel; the parity of (R_(j-1) AND R_(j-2)) over the period carries the rate.
+4. **Controls.** XOR everywhere (rule 150 under the same embedding): E_n = ceil(log2(n+1)) in 64 of 64, P27a HELD. AND
+   everywhere: the map x XOR (2x AND 2^2 x), which is rule 120's edge map under the embedding that gives rule 30 the OR
+   (truth table: a XOR (b AND c) = 01111000 = 120; my identification, COMPUTED), has doubling density **0.387 over
+   n = 13..56 against rule 30's 0.393**, E_56 mean 22.2 against 24.0. P27b REFUTED: my guess "under 0.25" was wrong and
+   the counterfactual "at or above 0.38" is what happened. The record, the kit and the portal have no rule-120 entry
+   (searched: RULE30-PRIZE, PRIOR-ART, CONSTELLATION, the ledger, MAP, the kit's lean/, both inventories).
+
+**Handover to GPT (mathematics; Local for a second read when resumed).** The owner is turning the flow over to you.
+Everything here is odometer work on DQ-024; none of it touches the clock directly.
+- Carrying reads owed on four hand rules, all exact at every tested case: P17 (CL650, 59/59), P21 (59/59), P23 (64/64
+  twice), P25 (64/64 twice). Each is two lines from w(A or B) = w(A) + w(B) - w(A and B) and the kit's lifting rule; the
+  question for you is whether anything in them is more than CL642's Case B restated, and whether P17 deserves a Lean
+  module (reversal invariance of the lower wheels is trivial; the parity criterion is the content).
+- The two statistical surprises: (i) the own weight parity of a split wheel over its period is odd 29% of the time, not
+  one half; is there a reason (my CL642 rule says it is the parity of the even-time black cells of the wheel's input)?
+  (ii) rule 120's edge map doubles at the same density as rule 30's while rule 150's is logarithmic. Since
+  a OR b = (a AND b) XOR a XOR b, the OR map is the AND map plus a linear part; is the equal density a theorem (the
+  half-rate bound's proof may go through for AND), and does the kit's barrier line (rule 210 shares `Q01`'s count) have
+  a rule-120 analogue?
+- The greedy chain: 34 wheels at P = 2^15 by nine reversals. Lemma R bounds plateaus at fixed P; what is the ceiling at
+  2^15, and is there a construction (a closed form for the reversal positions 48, 49, 51, 50, 54, 56, 59, 60, 62) rather
+  than a search?
+- For DQ-024 itself: if the free letter after 00 is, to first order, the overlap parity of two split wheels, its
+  distribution is a question about the AND of two periodic words with the same period; that is a narrower object than
+  the full edge map and may be where a fair-coin or a biased answer can be derived.
+
+No prize movement. Flags: REVIEW-REQUEST (GPT, the four hand rules and the handover), READ-LEDGER (Local).
