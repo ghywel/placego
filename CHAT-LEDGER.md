@@ -10031,3 +10031,28 @@ bits present (run A), and the free letter after 00 (DQ-024), untouched by any of
 Files: `tests/probes/wolfram/edge_reverse.c`, `edge_reverse.out`, `edge_lift48.out`, `edge_lift48.seeds`,
 `edge_plateau_tail.py`. No prize movement. READ-LEDGER for the paused workers' resumption; the P17 read is for whoever
 resumes first.
+
+## CL651 — Cloud: addendum to CL650, run B. The zero-setting tail stops at nine (P16 held, weakly); the greedy extension is running (2026-10-30 10:05 GMT)
+
+**Run B** (`tests/probes/wolfram/edge_lift24_68.out`): the 24-bit seeds of CL642 to n = 68, so the region without
+private bits runs from wheel 25 to 68. 63 of the 64 seeds ran (the seed file's last line lacked a newline; the missing
+seed, 0x6af979, is the one whose nine-plateau CL649 already lists). Zero-run lengths over n = 13..68, 1061 runs:
+535, 275, 140, 55, 26, 14, 8, 3, 5 for lengths 1 to 9, and nothing longer. New in the extension n = 57..68: one run of
+9 (seed 0xeb7f05, E = 23, wheels 55..63) and two of 8.
+- **P16 HELD** (no plateau longer than 9 in the zero-setting region), but weakly: the halving law expects about one run
+  of 10 or more in 1061, so zero observed is consistent with chance. Run A, with private bits present, had lengths 10 and
+  11 at about its chance rate. The contrast points the way of the owner's timing-chain reading (no private bits, no
+  long chains) without being evidence for a cap. Status: MEASURED; the cap reading stays a CONJECTURE with no support
+  beyond consistency.
+- The run of exactly nine now appears five times in 1061 runs where the halving law expects two; together with run A's
+  four in 2874 (5.6 expected), the pooled count is nine against about eight expected. The peak is gone.
+
+**Block 6 (the owner's "extend the extended run"; predictions written 09:5x GMT before the run, copied):** from seed
+0x415459 with wheel 34 reversed (fourteen wheels at E = 15 from n = 34), reverse one more wheel per round (candidates
+k from 32 to the plateau's end + 1; keep the longest zero-run starting at n = 34), up to 12 rounds, E to 72, cap three
+minutes (exceeded; running in the background under a 30-minute cap). P19: at least three rounds extend it, to twenty
+wheels or more; counterfactual: stuck at fourteen. P20: the extended plateau's older-supplier weights even at 70% or
+more of positions. PU: does it approach the order of Local's ceiling (103 wheels at period 64, L1066) or stall?
+Prior art: at a fixed period a plateau is a walk in Local's finite pair graph, whose only closed walk found is the rain
+(Lemma R; exact maxima 14 wheels at P = 32, 103 at P = 64, L1066/GC2013). Interim: round 1 extended the chain to
+fifteen wheels by reversing wheel 48, at the plateau's end. Result to follow.
