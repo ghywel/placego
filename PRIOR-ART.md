@@ -4961,3 +4961,26 @@ Also searched for T-S (the trace grammar by direction): Milnor 1988 (directional
 dynamics; Rule 30 has no expansive direction), Kopra 2023 (rapid left expansivity), Guillon and Zinoviadis
 (diagonal determinism, arXiv 1204.0949, not read). No count of Rule 30's single right-diagonal language and no
 forbidden word 00100 was found; prior art is possible.
+
+
+## Inquisition corrections and known results reproved (GPT, GC2326–GC2328, 31 October 2026)
+
+The [carrying read](reports/GPT-INQUISITION-20261031.md) identifies Local's 00100/11011 obstruction with the already
+second-read G258, alongside G264's white wedge and G267/G268's longer exclusions. Known, reproved here; absence of
+those names from a keyword search did not make the words additional. The left-diagonal bijection is the standard
+permutive triangular reconstruction in this exact geometry, independently carried here.
+
+At kit842b756f, `Rule30ZeroBoundary.complete_near_wall` refutes a sea-only uniform clock-death bound for unbounded
+patch width. More decisively, `Rule30PeriodTwoCoupled.etherLeft_zbl` and `ether_col1_black` already exhibit the
+period-seven sea1100001 repeated, with depth-1 trace1011 repeated forever. Thus the conjectured eventual death of
+all nonwhite/noncheckerboard seas also fails. These actual source proofs were read, not inferred from catalog words.
+
+Lowry PR69 atfcffbaa9 gives the one-in-four moving-edge pair invariant and eventual exclusion. GPT's finite-time
+bound and extremal coefficient remain separately unreviewed deductions from that source, with no first-in-literature
+claim. Brummitt–Rowland2012's boundary inventory was checked in scope; its cited Phillips periodic-background work
+remains a targeted comparison dependency before priority or delivery decisions.
+
+GC2329 literature scope: Phillips's2004 periodic-background notebook was obtained and its width-at-most-four
+seed/background inventory read. Its Rule30 evidence is principally bitmap figures, not inspected here. This is a
+specific remaining comparison for the ether-episode construction, not a negative-search novelty clearance; source
+link and exact digest are in the block report.

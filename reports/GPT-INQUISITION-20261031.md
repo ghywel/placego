@@ -51,6 +51,23 @@ the state at time 3 white beyond W+3, and at time 4 white beyond W+4. Restarting
 clock's parity. Conditional on Q01, the resulting finite row therefore dies too. This gives a conditional reduction
 to finite white-tail starts, not an unconditional period-three death theorem or a converse reduction.
 
+**Stronger: even the eventual-death version fails for a known period-seven sea.** The actual current kit already
+proves `Rule30PeriodTwoCoupled.etherLeft_zbl`, `ether_col1_black`, `ether_free_bits`, and `etherLeft_eq_Theta`.
+Their complete relevant proofs and the `B4_imp_B3` masking step were read. At time phase 1, reading away from the
+white wall, the initial sea is
+
+    1100001 1100001 1100001 ... .
+
+Its depth-1 trace is `1011` repeated, hence every even tick is black forever. No nontrivial finite patch is needed.
+In the spatial-period-seven ether, B3 masks its right neighbour B4: whenever B4 is black, B3 is already black, so
+replacing B4 by the permanently white wall leaves the entire left half unchanged. The free bits alternate 0,1.
+This is the kit's existing constrained start Theta(alternating), not a new GPT discovery of an eternal row.
+
+Local's period-at-most-six census is consistent with this example, but extrapolating "only the checkerboard" is
+false. A meaningful next question is which periodic backgrounds admit a clock-supporting interface, not whether
+all non-checkerboard backgrounds die. Kit source SHA256:
+`caa2f8ba78d0a48dc8c7db6f8adf65375b1d1442b85021eb5a676c1e185f3d22`.
+
 **The first 2058 timer is already demonstrated.** The delivered
 [nested essay](wolfram-agents/submissions/gate-clocks-nested/essay-prose.md) explicitly exhibits the first 20 layers:
 11,10,11 followed by seven 01 pairs, with K=2 and M=8. GC2322 carried its executed notebook. Do not rerun the
@@ -64,8 +81,10 @@ L_k(t)=x_(k-t)(t), for k<=t. Then
     L_k(t+1) = L_(k-2)(t) XOR (L_(k-1)(t) OR L_k(t))   (k <= t),
     L_(t+1)(t+1) = 0.
 
-The two free coordinate lines can be taken at k=-1 and k=0 (a shifted version of Local's bijection). Their backward
-cones use only the initial left half, so later wall forcing does not change them. But the required clock is
+The two coordinate lines can be taken at k=-1 and k=0 (a shifted version of Local's unrestricted-row bijection).
+For the wall problem they are free except for the prescribed initial slot L_0(0)=0: at horizon n>=1 the underlying
+interval is [-2n+1,0], and fixing its rightmost bit leaves 2n-1 independent bits. Their backward cones touch the
+wall only at that initial slot, so later wall forcing does not change them. But the required clock is
 L_(2n-1)(2n)=1, and the wall lies at k=t. They move across the coordinate frame. For example the first nontrivial
 clock test is L_1(2)=L_(-1)(1) XOR L_0(1)=1. Later tests require a growing triangular region. A finite initial patch
 is also a condition on the decoded row, not a finite list of forbidden coordinate pairs.
@@ -91,6 +110,10 @@ indexed items. This is index completion, not a carrying read of every new submis
   SHA256 is `538c906ae638b8249ce7445e6d58df13aea8b04a77b7e8a7451657c4ee3fcd2a`. The different spatial-period-seven
   driven ether and its white-tail erosion estimates are not the same statement or frame.
 
+The portal snapshot has 73 entries. Package B remains Human Verified; A, the horizon package, and the nested
+package remain Lean Verified with no Human Verified tag. The status-page search cache is not substituted for this
+fresh JSON snapshot. No completed submission was recreated.
+
 **Pull:** the PR69 proof transports a local pair invariant to the edge, so it should also bound how long the pattern
 can imitate an unattached ether. **Cheap objection:** its published eventual statement hides the ticks discarded
 at each descent. **Discriminating test:** derive the exact phase-dependent dependencies, including the one backward
@@ -98,6 +121,19 @@ time dependency, then bound the resulting finite proof tree. This is an applicat
 first-in-literature or submission claim is made. Searches covered `grounding`, `ether pair`, the current kit and
 equivalents/catalogues, portal source, actual PR69 head/discussion/reviews, and primary-source web queries. No
 negative keyword search is used as novelty evidence.
+
+For the subsequent front construction, Brummitt and Rowland's
+[Boundary Growth in One-Dimensional Cellular Automata](https://ericrowland.github.io/papers/Boundary_growth_in_one-dimensional_cellular_automata.pdf)
+was checked at its introduction and Section 2: its constant-background growth inventory is not this extremal
+periodic-ether episode statement, and it explicitly distinguishes periodic backgrounds. It points to Phillips's
+periodic-background work. Its [2004 notebook](https://www.wolframscience.com/conference/2004/presentations/material/rphillips-growth.nb)
+was subsequently obtained using verified TLS: 4,215,694 bytes, SHA256
+`3b43f9af2d03dd0d457a39b426c25e938ffe236a88d06a844ec0e679512247da`.
+The readable experiment description covers 30 seeds against 30 periodic backgrounds through width four for each
+of 88 rules, so it is relevant prior numerical work and could include this background. The Rule 30 section's
+principal evidence is embedded bitmap graphics, which were not decoded or inspected here. No notebook code was
+executed. Access and a text-scope comparison are complete; an exact comparison with its Rule 30 figures remains a
+named dependency before any priority claim. Absence of a theorem in the extracted prose is not novelty evidence.
 
 ## A finite ether-window bound (GC2327, PROOF-SKETCH)
 
@@ -124,7 +160,7 @@ For a pair (u,v)=(X_(k+1),X_k), define the eight-phase predicate exactly as in t
 
 **Claim.** For any k, phase p, and starting time s>=0, this pair cannot satisfy good(t+p) throughout
 `s <= t < s + floor(2k/3) + 5`. Consequently an actual ether pair cannot agree for that many consecutive ticks.
-There is no claim of sharpness. The statement concerns fixed offsets behind a moving black edge, not Q01's fixed
+This upper bound alone does not establish sharpness; the later construction supplies its leading coefficient. The statement concerns fixed offsets behind a moving black edge, not Q01's fixed
 physical wall or the seed's fixed centre column.
 
 ### Local dependency table, derived by hand
@@ -175,6 +211,11 @@ m=floor(2k/3) and let r=(s+p+6k) mod 8 be the prospective edge phase at s. Choos
 | 5,6 | 6 | 6-r | m+3 |
 | 7 | 2 | 3 | m+1 |
 
+For a leaf at total offset a after k outward steps, its phase is h+2k+a modulo 8.
+The chosen edge phase is h=t+p+6k, so this is t+p+a modulo 8, exactly the assumed source phase.
+Also `ether_pair` in PR69 gives good(t+q+2i) for ether spatial phase i and temporal phase q; every actual
+matching ether pair therefore supplies one of the source phases covered here.
+
 The delay plus the maximum offset is at most m+4 in every row. All leaves of the proof tree therefore lie in the
 assumed source interval [s,s+m+4]. They force an impossible predicate at the edge. This proves the claimed
 exclusion, conditional only on the local dependency table just derived.
@@ -190,6 +231,19 @@ exclusion, conditional only on the local dependency table just derived.
 - This does not give a permanent defect, prevent later re-entry, prove alternating-tail exclusion, or solve Q01.
   It says every sufficiently long time window contains a failure of this particular pair predicate.
 
+**A robust consequence, still within the sketch.** Put B=floor(2k/3)+5. In every N consecutive ticks, at least
+floor(N/B) ticks fail the specified good-pair predicate: divide into disjoint B-tick intervals. An actual ether
+match implies that predicate, so there are at least as many mismatches with any fixed spatial/time ether phase.
+Thus at this fixed depth there cannot even be an ether match outside a set of times of density zero. The bound
+decays with depth and says nothing about the right-edge doubling density or an unbounded moving depth.
+
+**Why 2/3 appears.** The dependency graph contains the critical cycle
+`0 --(+1)--> 3 --(0)--> 5 --(+1)--> 0`: three outward steps require a two-tick advance. It is reachable from each
+contradictory even phase. The potential proves that no dependency path has a larger asymptotic advance per step.
+Therefore 2/3 is the exact maximum cycle mean of this particular dependency graph. It is not a measured orbit
+speed. Reducing the leading coefficient by this method needs stronger local implications or a reason to discard
+some branches of the proof tree. It does not follow that real edge orbits attain the bound.
+
 ## Frozen finite self-check (not yet run at freeze)
 
 One pilot will check the eight dependency implications by exhaustive local assignments, all 17 potential
@@ -200,3 +254,100 @@ finite self-check of a hand claim, not its independent carrying read or a proof 
 
 The source/hash, exact command and stage caps are recorded in the ledger freeze before execution. No longer
 horizon or automatic retry is authorized by this pilot. Results and next executable step will be appended here.
+
+### Actual pilot outcome (GC2328)
+
+The one run under freeze e674c2fa completed at 15:23:21 UTC and **PASSED**. All 2048 local assignments were checked
+against the eight implications (each implication had a nonempty satisfying premise set), all 17 potential edges
+passed, and 1,022 initial prefixes / 8,176 prefix-phase cases at k=0..8 obeyed the bound. The separate physical
+truth-table oracle agreed at all 86,912 compared cells. The positive infinite ether, rejection of immediate
+incompatibility, and negative-time guard controls passed. No horizon enlargement or retry occurred.
+
+The exact maximal initial good-run lengths in these finite complete prefix cubes were
+`3,4,5,6,6,7,7,8,9`. These are checks, not an inferred all-depth formula. Several witnesses begin with
+`1` followed by the repeating pattern `1110`, which is a concrete future front-propagation question; no additional
+run or attainment claim was made. Such prefixes can be extended arbitrarily because nearer edge digits evolve
+autonomously. The claim for arbitrary depth rests on the hand argument above, still awaiting independent reading.
+
+Intel resources: worker aggregate CPU 0.135153s (own CPU plus reaped thermal children), supervisor CPU 0.094s
+separately; child wall 0.14s and supervised wall 0.54s. The system time receipt reports maximum RSS 13,041,664 bytes.
+Launch free+inactive was 7041MiB, swap 0, both thermal checks passed. The job finished before the first periodic
+tree/pressure sample; sampled zeros are not a claim of zero RSS, zero processes, or continuous pressure coverage.
+Raw receipts and their digest-bound shared-store packet are retained outside git.
+The immutable raw packet is `cited/gpt-gc2328-ether-window-39063cccfa07.json`, 22,808 bytes, SHA256
+`39063cccfa07ca722363e18fc462e540f4ef3440af2b63ca216524743f1becf8`. The raw-body upload receipt and a complete
+readback matched the bytes. It contains the frozen probe, exact PR69 source, outputs, resource receipt and a fresh
+no-worker postcheck. No private configuration or credentials were included.
+
+## An actual family makes the leading coefficient sharp (GC2328, PROOF-SKETCH)
+
+This is a second solo hand step, after the frozen check. No extra simulation was used to infer an infinite family.
+It uses the same actual `ether_step` positive control, not a hypothetical permitted word.
+
+Let `E_j(t)=ether(j+3,t+1)`, with ether indices taken modulo 4 and 8 as in PR69. Initially its depth digits are
+
+    E(0) = 0,1,1,1,0,1,1,1,0,... .
+
+Take a black-edge code X with X_0(0)=1 and X_j(0)=E_j(0) for all j>=1. The reference E is a genuine two-sided
+solution of the edge-frame recurrence; it does not itself satisfy the constant-black boundary.
+
+**Masking-front lemma.** If X_j(t)=E_j(t) for every j>R, with R>=0, then they agree for every j>R+2 at time t+1.
+If additionally E_(R+1)(t)=1, they also agree at j=R+2: the OR gate there is already 1 because of the common nearer
+input at R+1, whatever the differing input at R does. Hence a valid boundary of the possible disagreement region
+advances by 1 when that reference bit is 1, and by 2 otherwise. Only columns >=2 are used, so the special depth-1
+equation and the forced depth-0 edge cause no gap in this argument.
+
+Starting at R_0=0, take R_t=floor(3t/2). The necessary reference bits are given by this complete phase check:
+
+| n mod 4 | E_(3n+1)(2n) | E_(3n+2)(2n+1) |
+|---|---|---|
+| 0 | ether(0,1)=1 | ether(1,2)=0 |
+| 1 | ether(3,3)=1 | ether(0,4)=0 |
+| 2 | ether(2,5)=1 | ether(3,6)=0 |
+| 3 | ether(1,7)=1 | ether(2,0)=0 |
+
+The table reads directly from the source words 43,202,178,172. Thus the masking-front lemma gives one layer of
+possible advance at even t and two at odd t, proving by induction
+
+    X_j(t)=E_j(t) whenever j > floor(3t/2).
+
+At depths k,k+1, this gives an actual matching ether pair at every integer time `0 <= t < 2k/3`, namely
+ceil(2k/3) consecutive ticks for k>=1. The auxiliary code had an infinite periodic tail, but the witness need not:
+truncate its initial digits after k+1 and put zeros deeper. Edge-prefix autonomy preserves every digit through
+k+1 for all future times. The resulting ordinary finite Rule 30 row therefore has exactly the same matching
+episode. No assumption about behaviour after the first possible disagreement is needed.
+
+Let M(k) be the largest length of a consecutive ether-pair episode at depths k,k+1, allowing any initial
+black-edge row, either finite or infinite, any onset, and any fixed ether spatial/time phase. The new upper sketch
+and this explicit finite-row construction give, for k>=1,
+
+    ceil(2k/3) <= M(k) <= floor(2k/3)+4,
+    hence M(k)/k tends to 2/3.
+
+The upper bound is uniform over the larger infinite-row class; the lower bound already holds in the finite-row
+class, so both classes have that same limiting coefficient. This is an extremal **episode-length** limit, not an
+orbit-density limit, a claim that every row has that speed, or exact equality of the additive constants. Both
+carrying steps remain PROOF-SKETCH pending independent review. The finite pilot preceded this construction and
+must not be described as having tested or proved this all-depth lower bound.
+
+
+## Durable queue and review boundary
+
+- **Current target:** independently carry the finite ether-episode theorem. Exact next step: read the eight local
+  implications, offset parity guard and phase identity above, then the eight-bit masking-front induction and
+  finite-prefix truncation. These are the two new carrying steps; the small pilot is only a self-check. If accepted,
+  first compare the exact quantitative statement with PR69 and Phillips's Rule 30 figures, then prepare a formal
+  statement. No submission or separate formalization owner has been assigned.
+- **Warm alternative:** the second 2058 timer's symbolic attainment. Start from the already executed first timer in
+  the nested essay; identify its next forced pair and the exact boundary condition. Do not rerun stage one.
+- **Curiosity:** characterize clock-supporting interfaces in spatially periodic backgrounds. Start with the known
+  seven-cell sea and B3/B4 masking implication, and ask which local masking identities survive phase changes.
+  This could separate a structural interface criterion from an arbitrary period census. No larger census queued.
+- **Cold approaches:** the free-left-diagonal shortcut reopens only with a specific growing-triangle or decoded-tail
+  identity; the sea-only uniform bound and all-noncheckerboard eventual-death conjecture are refuted as stated;
+  the right-diagonal forbidden-word route reopens with a word outside G258/G267/G268 or a structural language law.
+- **Unchanged open problems:** Q01, right-edge density, exact language entropy/soficity and the additive optimum
+  for M(k). Nothing here resolves these. Older GC2314/GC2321 sketches retain their separate pending reads.
+
+The owner's approximately 30-minute block ends with these passive pointers. Both schedules remain paused, Local
+has not been woken, and no research job, compilation or posting is running. Resume only on the owner's direction.

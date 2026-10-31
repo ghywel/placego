@@ -12901,7 +12901,7 @@ GPT: carrying reads requested on the three waiting-room steps (REVIEW-REQUEST fl
 Nothing outward-facing was done.
 
 
-### GC2325 — owner-requested bounded inquisition review and continuation (31 October 2026, GPT)
+## GC2325 — owner-requested bounded inquisition review and continuation (31 October 2026, GPT)
 
 The owner restarted GPT for one approximately 30-minute block, beginning 15:11 UTC, then a summary. Both recurring schedules remain PAUSED; Local remains stopped. Fetched and safely merged b580bb50, read L1254–L1257 and the full handover, and freshly read the two addressed L1257 flags. No live job or submission is dispatched.
 
@@ -12910,7 +12910,7 @@ Taking the three carrying reads, then the directional-asymmetry pull: does the f
 The external index refresh completed at this wake: kit 842b756fc7d043995e14019fee2a82ab4ec83cf7, 23 open PRs, 34 added/7 changed/2 removed indexed items. Relevant new PR/source statements are being read; a complete refresh is not a complete mathematical review. No novelty or delivery decision.
 
 
-### GC2326 — L1257 carrying reads complete; finite ether interval becomes the live pull (31 October 2026, GPT)
+## GC2326 — L1257 carrying reads complete; finite ether interval becomes the live pull (31 October 2026, GPT)
 
 All three Local hand steps have an independent carrying read, with exact scope to be written in the block report: the death-kind pairing is over the full cube supported within W, the two left diagonals give a triangular bijection, and the 0110 flip obstruction is valid. The last is already G258 (two-party, 9 October); G264/G267/G268 also carry the zero wedge and two longer forbidden words. Local's numerical census is received, not rerun.
 
@@ -12919,7 +12919,7 @@ The sea-only uniform bound is contradicted by existing kit complete_near_wall, o
 Change of direction after these cheap objections: current PR69 at fcffbaa9f28802559706095d50e847b77bd7105f gives a root-compatible pair invariant. Complete source and public description read, with empty conversation, inline-review and review-summary channels freshly checked. Its local descent appears to imply a finite-window exclusion. Prediction: phase-aware backwards dependence improves the naive 3k+4-tick bound to floor(2k/3)+5 ticks at source depth k. Counterfactual: an overlooked past dependency or phase wrap invalidates that improvement. Discriminating test is a hand derivation of all eight local implications and a 17-edge potential inequality; no computation, compilation or submission is planned. This is an application of Lowry's invariant, not a claim that we discovered the grounding theorem.
 
 
-### GC2327 — finite ether-window sketch and one frozen self-check (31 October 2026, GPT)
+## GC2327 — finite ether-window sketch and one frozen self-check (31 October 2026, GPT)
 
 [Complete carrying argument](reports/GPT-INQUISITION-20261031.md#a-finite-ether-window-bound-gc2327-proof-sketch), solo PROOF-SKETCH: Lowry's PR69 good-pair invariant cannot persist for floor(2k/3)+5 consecutive ticks at depth k behind a black edge. Eight reduced local implications and a 17-edge potential telescope control the proof tree; a parity argument prevents the single negative time step from crossing the start. This concerns a moving-edge pair, not a fixed wall, centre clock, permanent defect, or sharpness. No independent read or compilation.
 
@@ -12928,3 +12928,19 @@ One pilot is now frozen, NOT RUN at this commit. Source tests/probes/ether_pair_
 Intel launch measurement15:22UTC: load1.96/3.31/4.26; free+inactive7030MiB; swap0; thermal and scheduler limits100%, no warnings; no competing research job observed. One single-thread Python research worker at nice10; only synchronous five-second thermal-monitor children, with CPU added after reap. The worker checks its own plus reaped-child CPU against110s and wall against280s. Outer run_capped/time overhead is separately retained, not misrepresented as included in that counter; total receipts must fit120 aggregate CPU seconds. run_capped uses per-process120CPU,300wall,768MiB sampled tree RSS,16MiB/file,128MiB stage disk, launch4096/running3072MiB free+inactive,64MiB swap-growth stop, tree tracking and max3processes (time/worker/thermal check). Sampling cannot see a child born and orphaned between samples; this audited worker does not launch such children. Thermal/pressure/monitor failure stops the job, preserves evidence and redirects to hand work.
 
 Exact launch: OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python3 tests/probes/wolfram/run_capped.py --out /private/tmp/gc2327-ether-window-pilot --cpu 120 --wall 300 --rss-mib 768 --file-mib 16 --disk-mib 128 --min-free-mib 3072 --launch-free-mib 4096 --swap-growth-mib 64 --track-tree --max-procs 3 -- python3 tests/probes/ether_pair_window_check.py . No run until this freeze is pushed.
+
+
+## GC2328 — finite check PASS; an actual ether family explains the 2/3 coefficient (31 October 2026, GPT)
+
+The single frozen pilot e674c2fa PASSED: all local implications/potential edges,1,022prefixes/8,176phase cases and86,912physical-oracle comparisons. Worker aggregate CPU0.135153s, outer supervisor0.094s, child wall0.14s, maximum RSS13,041,664bytes, launch7041MiB, swap0, thermal checks passed. It finished before periodic monitoring; no continuous pressure or zero-memory claim. No retry/enlargement. Full outcomes and raw retention pointer belong in the [block report](reports/GPT-INQUISITION-20261031.md).
+
+Subsequent hand step, not part of that finite test: the actual ether E_j(t)=ether(j+3,t+1), changed only to a black edge at depth0, agrees with its unperturbed reference at every j>floor(3t/2). The eight reference bits make a masking-front bound advance alternately one and two layers. Prefix autonomy turns it into a finite-row witness at any specified depth k. Thus the longest possible ether-pair episode M(k), over arbitrary rows/onsets/phases, satisfies ceil(2k/3)<=M(k)<=floor(2k/3)+4. The same leading coefficient2/3 holds in the finite-row class. Both new hand steps are PROOF-SKETCH; no independent read, formal compilation, general orbit speed, right-edge density or Q01 conclusion. This uses and credits Lowry's exact PR69 invariant/ether.
+
+
+## GC2329 — known seven-cell sea corrects the inquisition; bounded-block checkpoint (31 October 2026, GPT)
+
+The actual kit's `Rule30PeriodTwoCoupled.etherLeft_zbl`, `ether_col1_black`, `ether_free_bits` and `etherLeft_eq_Theta` give a known counterexample to the proposed eventual-death conjecture for every nonwhite/noncheckerboard sea. Initial depths `1100001` repeated have the depth-1 trace `1011` repeated, hence a black clock at every even time forever. Read the complete relevant proofs and B4_imp_B3 masking mechanism. Local's period<=6 census does not contradict this period7 example. DQ034 now carries the correction; no larger census is queued.
+
+The [block report](reports/GPT-INQUISITION-20261031.md) contains the three completed carrying reads, the left-diagonal moving-wall obstruction, the two new ether-episode sketches and the complete finite self-check receipt. Final convention audit: the wall fixes L_0(0)=0, so the shifted pair of diagonal coordinate lines has 2n-1 free bits at horizon n, rather than the unrestricted bijection's 2n. The leading coefficient2/3 is an extremal episode limit; Q01 and right-edge density remain open. Phillips's2004 periodic-background notebook was obtained with verified TLS and its experiment description read; the Rule30 bitmap figures still need an exact comparison. No first-in-literature claim. PR68's actual new bridge bodies and author reply were read; PR69's exact source is credited. No independent read of the new sketch, formal compilation or submission is claimed.
+
+Owner requested one approximately30-minute block from15:11UTC, then a summary. This is its closing mathematical checkpoint. Both schedules remain PAUSED, Local is not woken, and no job is running. The report's compact queue names the two exact carrying steps, the second-timer warm alternative, periodic-interface curiosity and reopening conditions for parked routes. Old GC2314/GC2321 requests remain distinct. Passive pointers only; further research requires owner direction.

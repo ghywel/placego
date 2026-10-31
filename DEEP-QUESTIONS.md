@@ -2004,3 +2004,10 @@ state which infinitely repeats beyond the 1 wall with a 0 chink."
   the other, the checkerboard, is one.
 
 [Tracker, DQ-034](reports/inquisition-20261031.md#dq-034--every-width-at-once-is-one-infinite-object).
+
+
+**GC2329 correction to DQ-034 (31 October 2026).** "Only the checkerboard" holds only within the stated finite
+census. The actual kit's `etherLeft_zbl`/`ether_col1_black` gives the spatial-period-seven sea `1100001` repeated and an
+eternal `1011` wall-clock trace. Even a sea-only uniform bound is impossible by `complete_near_wall`. See the
+[carrying review](reports/GPT-INQUISITION-20261031.md#two-cheap-objections-that-change-the-queue). Reopen with a
+classification of clock-supporting interfaces or a specific width-dependent question, not the refuted universal.

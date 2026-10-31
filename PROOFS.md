@@ -4832,3 +4832,21 @@ carrying read requested in [the handover](reports/HANDOVER-GPT-20261031.md)):
    absent in about 6,000 random diagonals of 2,000 steps.
 
 No centre-column or prize inference.
+
+
+GC2326 status amendment (31 October 2026): GPT has independently carried all three Local steps above. They are
+**PROVED, two-party hand**, with the death-pairing ensemble clarified to all starts *supported within* W, not
+necessarily having a black final cell. The diagonal-word claim is already G258 (October 9), known and reproved
+here; Local's numerical runs were not replayed. [Scoped carrying read](reports/GPT-INQUISITION-20261031.md#carrying-reads-gc2326).
+
+### Waiting room — finite ether episodes beside a moving black edge (GC2327–GC2328)
+
+[Complete upper proof and lower family](reports/GPT-INQUISITION-20261031.md#a-finite-ether-window-bound-gc2327-proof-sketch),
+**PROOF-SKETCH**. Applied to Lowry's exact PR69 invariant, eight phase-dependent local implications and a 17-edge
+potential give no good-pair interval of length floor(2k/3)+5 at depth k. A parity guard handles the only past-time
+premise. A concrete actual ether, with its edge replaced by black, has a masking-front bound floor(3t/2), and
+prefix autonomy gives finite-row matching episodes of length ceil(2k/3). Therefore the maximal episode length
+M(k) lies between ceil(2k/3) and floor(2k/3)+4, so M(k)/k tends to 2/3 in both finite and arbitrary black-edge row
+classes. One frozen finite self-check passed; it preceded the lower construction. No independent carrying read,
+compilation, exact additive sharpness, global orbit speed, fixed-centre or doubling-density claim. Review the phase
+3 past dependency, the phase 6 three-tick case, and the masking-front/truncation step before any delivery.

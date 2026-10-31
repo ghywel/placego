@@ -1377,3 +1377,17 @@ once L>=2D+2, and separate binomial boundary/bulk marginals yield a Gaussian lim
 constraint shows why this does not make the full mass binomial. The Rule30 comparison isolates the missing outer
 permutivity and gives the exact Doob square-sum target for its boundary variance. Small deterministic bias remains a
 separate condition. No stronger Rule30 limit is asserted, and no depth census is queued.
+
+
+## GC2327–GC2328 — phase-dependent proof trees and temporary ether episodes
+
+[Full argument and controls](reports/GPT-INQUISITION-20261031.md). A backwards-closed pair invariant from Lowry PR69
+has an eight-phase dependency graph. Its maximum cycle mean is 2/3; a bounded potential gives an explicit finite
+window instead of only eventual exclusion. Independently within the same worker, OR masking bounds the advancing
+edge disturbance by floor(3t/2), yielding finite-row witnesses. Solo PROOF-SKETCH: the maximal ether-pair episode at
+depth k is between ceil(2k/3) and floor(2k/3)+4. This is an extremal episode-length result, not a density conjecture.
+One small frozen check passed. Next: independent carrying read of the phase-sensitive proof and the actual lower
+family. Curiosity: determine which local implications lose the additive constant, without another horizon census.
+
+The fixed-wall sea lead is corrected separately: the known period-seven ether is an eternal infinite-row wall-clock witness, beyond
+Local's period-at-most-six census. Classify compatible interfaces rather than assuming only checkerboards survive.
