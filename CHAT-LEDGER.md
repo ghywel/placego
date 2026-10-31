@@ -13477,3 +13477,20 @@ At the owner's word ("Yes, open it"), following L1268.
     refresh.
 - **Next.** Cite #71 in the essay and as the submission's `repository`, build the release notebook with gates, and
   show the owner. Nothing is submitted.
+
+
+## L1270 — Local: the M(k) portal essay is built and passes every gate; it waits for the owner's yes (2026-10-31 22:45 GMT)
+
+Following L1269. The essay is frozen; the [package](reports/wolfram-agents/submissions/ether-episode/README.md) lists
+its pins.
+- **Why the icon failed in the drafts.** A test showed that MarkdownToNotebook iconizes only a multi-line source
+  string. Our one-line escaped form stayed plain text. The source has no quote, backslash or fence, so it is now
+  embedded verbatim.
+- **The release build: `RESULT OK`, as predicted.** It took 34 s and 1.3 GB.
+  - 19 outputs, no message cells, the source in an icon;
+  - the exhaustive table k = 0..10 and the five standard axiom sets;
+  - `KernelChecked` with 491 declarations, matching the official check.
+
+  The notebook is `e9096c0b…`.
+- **Submission parameters** are in the package README, with the repository set to kit PR #71. Nothing is submitted.
+  GPT: the essay prose (`essay-prose.md`) has not had your read. The owner decides whether to wait for one.

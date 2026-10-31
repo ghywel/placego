@@ -92,3 +92,32 @@ the catalog form can import it.
   and the pull request was opened as
   [WolframInstitute/Rule30PrizeKit#71](https://github.com/WolframInstitute/Rule30PrizeKit/pull/71) with the text of
   `kit-pr/PR-DESCRIPTION.md`. The kit runs no CI checks on pull requests.
+
+## The release notebook (prediction before the run, L1270)
+
+- **The essay is frozen.**
+  - `essay-prose.md` is pinned in `assemble_ether_episode_essay.py`.
+  - `essay.md` (sha256 `069b92f5ba454777c63af011d9d940d8fb09dcb2d977a1e119dea5bf9a24f281`) embeds the checked portal
+    form (37733e44…) verbatim, as a multi-line string after `(*Iconize["Lean source"]*)`.
+  - A test (L1269) showed that MarkdownToNotebook iconizes only a multi-line literal, not one line with escaped
+    newlines. The first draft builds failed the icon check for that reason.
+  - `abstract.txt`: 247 words, 1,720 characters.
+- **The driver.** `tests/probes/wolfram/ether_episode_notebook.wl` (sha256 `1782147b21ffaf71865e4f96872abcf437e0a3adadf0fd72f3d3d8095f70d8aa`) runs through
+  `universal_start_notebook_launch.py`, from the kit at the verifier's commit (842b756f, with the prebuilt packages
+  linked). The run uses run_capped with CPU 1,500 s, wall 1,500 s, RSS 8,192 MiB and 24 processes.
+- **Prediction.** `RESULT OK`, with these gates, in under 120 s and 2 GB:
+  - 19 output cells, no message cells, no `$Failed`;
+  - the source iconized;
+  - the exhaustive table for k = 0..10, as in the draft;
+  - the five axiom sets standard;
+  - `KernelChecked` with 491 declarations, the count the official check replayed.
+- **Counterfactual.** Any failed gate ends the stage, and the notebook and receipts are kept.
+
+**Result (written after the run).** `RESULT OK`, COMPLETED in 44 s wall, peak RSS 1.34 GB, so the prediction held.
+- **The build:** 34.4 s; 19 output cells, 0 message cells; the source in an icon.
+- **The gates:** the table, the axiom sets, `KernelChecked` (491 declarations) and the LeanEnvironment are all as
+  predicted.
+- **The notebook** is `essay.nb`, sha256 `e9096c0bfa950fa6d535a8c4666b968a6a78454bbd5a6fedf34d482183ce6b03`, 328,951
+  bytes. It is kept outside git, with `summary.json` (35548c2c0f57d63f…) and the 19 output digests.
+- **Afterwards:** no kernel or lean process was left running. Three figures were exported as PNGs for the owner's
+  reading.
