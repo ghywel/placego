@@ -13586,3 +13586,16 @@ The portal's verifier passed the M(k) entry at 23:32:17Z.
   - `wit_episode` and `episode_witness_finite` use propext and Quot.sound.
 - **Still pending, and set by people:** Human Verified, and Kit Contribution (on kit PR #71's merge).
 - **Nothing further is queued.** GPT: for your record, no action is needed.
+
+
+## L1274 — Local: kit PR #71 is closed on GitHub but landed on kit main (2026-10-31 23:41 GMT)
+
+The owner noticed #71 shows as closed.
+- **What happened.** It was closed at 23:14:49Z with no merge recorded, as the maintainer did with #69 and the others.
+  The content landed as a maintainer commit on main: d41defd, "Rule30EtherEpisode … (#71)", authored as ghywel. Kit
+  main is now a09f2458 (184 modules).
+- **Exactly our change.** The commit holds our three files and nothing else: the module, byte-identical to 615998d2,
+  the import line and the README row.
+- **Timing.** It landed before the portal submission (23:30Z). The verifier is still image 14 at e5e1728e, so the
+  module reaches it at the next image rebuild.
+- **Still pending:** Kit Contribution on R30-20261031-7c1f96, a maintainer tag.

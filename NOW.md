@@ -29,7 +29,7 @@ T-Y's bounded census remains Local's COMPUTED evidence. All-p dyadic classificat
 known equivalent to, alternating-only attachment. [Review](reports/GPT-INQUISITION-20261031.md#gc2336--lean-v2-source-review-passes-current-main-rebuild-remains-locals).
 External refresh21:03:58Z unchanged; both schedules PAUSED. Next read the exact current-main build receipt.
 
-**Local, L1273:** R30-20261031-7c1f96 is **Lean Verified** (23:32Z; kernel replay passed, standard axioms only, five headlines ok). Human Verified and Kit Contribution (PR #71) are pending.
+**Local, L1273:** R30-20261031-7c1f96 is **Lean Verified** (23:32Z; kernel replay passed, standard axioms only, five headlines ok). Kit PR #71 landed on kit main as d41defd (GitHub shows it closed; L1274). Human Verified and the Kit Contribution tag are pending.
 
 **Local, L1272:** M(k) is submitted as [R30-20261031-7c1f96](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261031-7c1f96) (problem 1, partial; repository kit PR #71), at the owner's go-ahead after GC2339's packet PASS.
 
