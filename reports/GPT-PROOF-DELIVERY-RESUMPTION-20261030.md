@@ -13,7 +13,13 @@ independent work without assuming an unallocated M5 build slot.
 Cloud's CL667 assessment is read completely; it is a proposal
 to evaluate and prepare two packages, not an acceptance or novelty certificate.
 
-## Live checkpoint: GC2321–GC2322
+## Halt checkpoint: GC2323
+
+L1252 relays the owner's full halt after this submission. GC2322 final PASS was published and flagged. Both GPT
+schedules are PAUSED through the app and independently read back; saved prompts, cadences, names and target are
+unchanged. Local remains sole poster. Only delivery closeout remains; every research item below is held.
+
+## Final research checkpoint: GC2321–GC2322
 
 [Final nested artifact review PASSES](#gc2322-l1249-final-source-essay-and-executed-notebook-pass): corrected source
 5c2e96a5, assembled essay9d671428 and executed notebooka21eb79b are bound byte-for-byte. Actual official507/228 and
@@ -25,7 +31,7 @@ The independent [bipermutive control](rule30-two-step-finite-past.md#gc2321-a-bi
 is a solo PROOF-SKETCH: exact finite-image mean/variance and a D=o(W) Gaussian regime, including nonlinear rules.
 For Rule30, the precise next hand target is an O(t) conditional-martingale square-sum bound for the boundary, or an
 explicit obstruction. Bias is a separate condition. GC2313 now has Local's complete carrying read L1251; GC2314/GC2321 await carrying reads; no table extension or
-new computation is queued. Warm alternative: PR61's arbitrary-prefix period reflection. Both schedules ACTIVE.
+new computation is queued. Warm alternative, held: PR61's arbitrary-prefix period reflection. Both schedules PAUSED underGC2323.
 Complete external refresh23:58:32Z: kit7beff71c,71portal entries,17openPRs, no indexed changes.
 
 ## Historical checkpoint: GC2295–GC2297
@@ -1239,3 +1245,15 @@ status must be read after posting. No further build, changed cap or automatic re
 L1250 follow-up: the actual refreshed portal entry R30-20261030-803bc4 has status Lean Verified and tag Human Verified; A still has no Human Verified tag. This field change is not included in known_find source-diff counts. Snapshot SHA256fcd5f9f0db64f32f2fa706b240e10bc9bd25d276cd5c8ae18c6a642afa177ea1, retained with the GC2322 review packet.
 
 L1251 follow-up: complete carrying account and64-line control source read. GC2313 is now PROVED two-party hand in its W>=14 scope. The additional M5 control and W12/13 values remain Local-reported here; GPT has not retrieved raw output or rerun them. Both the Local review and GC2321 appendix are preserved across their concurrent append merge.
+
+### GC2323: owner-directed halt after delivery
+
+Owner instruction L1252 was fetched during the final merge: complete this submission, then both workers halt for
+the next discussion with Cloud. No new research was begun after reading it. GC2321 had already been completed
+and committed; GC2322 final PASS and passive pointer are delivered at3f25611e. App automation_update paused
+continue-shared-math-research and poll-local-mathematics-flags; independent readback confirms PAUSED for both, with
+all original prompt/name/cadence/target fields unchanged. No GPT job is running. Local's sole posting ownership
+continues through the authorized final submission; public receipt remains separate from this private artifact PASS.
+GC2314 andGC2321 carrying reads, the Rule30 boundary square-sum question and PR61 alternative are held.
+GC2322's four-file static-review packet is retained at cited/gc2322-artifact-review/manifest.json, SHA256
+8cea1d8237ba072499822b549a582273f68951ee2733070e7e8c9e5244e07723; all raw bodies were verified on readback.
