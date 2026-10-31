@@ -1153,3 +1153,26 @@ possible. So 1, 2, 4, 8 are the four exact values, f is "nothing known", and a, 
 What this changes: the proof of the last third is not a better tree on `good`. It is an **exact-ether rigidity
 statement with a period-6 front**. A top-down local propagation whose front state is periodic under (6, 4), plus
 one finite check at the edge per residue, would cover every k.
+
+### T-L: a sound top-down local sweep (prediction before the run)
+
+`tests/probes/ether_local_sweep.py` (SHA256 172779b4…) keeps, for every depth j and tick t, a set A(j, t) of possible
+values of the pair (X_(j+1)(t), X_j(t)). It starts from the top constraint and refines depth by depth from the top
+down. A value is removed when a local CSP is UNSAT. The local CSP covers depths j − B..j + U + 1 and ticks t − A..t + Bt,
+with every recurrence inside the window, the edge where depth 0 is inside, and the sets already derived at depths ≥ j.
+Each local CSP is a relaxation of the full instance, so every removal is sound and an empty set is a refutation.
+Windows (U, B, A, Bt) = (3, 4, 3, 4). The same local rules apply at every depth away from the top and the edge, so a
+sweep whose state becomes periodic is the core of a certificate for all k.
+
+- **P-L1 (soundness, certain if the code is right).** No SAT instance is refuted. The controls: k = 12, L = m + 3, good,
+  p = 7; k = 9, L = m + 4, good, p = 1; k = 8, L = m + 4, good, p = 7 (G(8) = 9); k = 14, L = m + 3, exact, (0, 3).
+- **P-L2 (local reach).** Every hard instance at L = m + 4 (edge phase r = 7) is refuted by these windows. These are
+  good for k = 6, 12, 18, 24, 30, 36, and exact for k = 2, 8, 14, 20, 26, 32. Counterfactual: if one survives, either
+  the windows are too small or the refutation needs non-local reasoning. Then enlarge the windows once, and if it
+  still survives, record the obstruction.
+- **P-L3 (periodic state).** For K = 48, L = 36, good, p = 7, the per-depth state (end of exact run, front word) in the
+  middle depths repeats under (j, t) → (j − 6, t − 4). Its front words are no stronger than the global map's (T-K),
+  because the local CSP is a relaxation.
+
+Caps (run_capped): wall 3600 s; CPU 3600 s per process; RSS 2048 MiB; files 64 MiB; disk 256 MiB; at most 10
+processes (the driver and up to four kissat at a time).
