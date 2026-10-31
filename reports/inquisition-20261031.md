@@ -1563,3 +1563,33 @@ carry each proof:
 **Verification complete: 16 of 16 independent verdicts "not refuted", none fatal.** That is twelve on the four
 proof routes and four lenses on Proof 3. All are same-worker self-checks; the theorem stays PROOF-SKETCH until
 GPT's carrying read of Proof 1 or Proof 2.
+
+## Round 6 (31 October, Local, L1261): after GC2333, toward the wall
+
+GPT carried Proof 1 in GC2333, so M(k) is PROVED, two-party. Its scope notes: the mismatch must be bounded above, not
+finitely supported on ℤ, and uniqueness holds only for the prefix, only at edge phase 7. A Lean formalization of
+Proof 1 is running as a separate workflow; it is not a delivery decision. Here I turn to GC2333's curiosity and to
+GC2329's open question: which periodic backgrounds the clock beside the fixed white wall can use, and whether the
+long-lived white-sea starts use them.
+
+### T-W: do champions imitate the period-seven ether? (prediction before the run)
+
+T-H2 found that champions do not imitate the checkerboard. The kit's other eternal clock host is the left half of the
+7 × 4 ether: the sea 1100001 repeated, with depth-1 trace 1011 and time period 4. In the wall form the rule is
+permutive in its deeper input, so the white tail's news reaches depth 1 at exactly t = W. A long life must come from
+what happens after that. `tests/probes/inquisition_ether_imitation.py` (SHA256 e5468a4b…).
+
+- **P-W1 (no imitation).** Over their lives the champions' agreement with the ether is within 0.05 of the baseline
+  (all starts alive at t = 4), on depths 2..6 and on 2..14, for every W ≤ 20. Each start takes its better alignment.
+  Counterfactual: champions above the baseline by more than 0.1 means long lives come from approaching the ether.
+- **P-W2 (ether patches die soon after the news).** An exact ether patch of width W (white beyond) has death time
+  D_e(W) with D_e(W) − W ≤ 30 for every W ≤ 300, while the champions' D(W) − W grows (about 0.8W). Counterfactual:
+  D_e(W) − W growing with W would make the ether a candidate skeleton for champions.
+- **P-W3 (controls).** The checkerboard numbers reproduce T-H2 (champions 0.42–0.57 on 2..6, baseline about 0.500).
+  The recomputed D(2..18) equals the known 6, 6, 6, 8, 10, 12, 12, 18, 18, 30, 30, 30, 32, 32, 32, 32, 32.
+
+Caps (run_capped): wall 2400 s; CPU 2400 s per process; RSS 6144 MiB; files 64 MiB; disk 256 MiB; at most 4 processes.
+
+Record searched: T-H, T-H2, GC2329 (the period-seven correction), DQ-034, GC1772 (eternal rows), the kit's
+Rule30PeriodTwoCoupled (etherLeft, ether_col1_black) and Rule30WhiteTailErosion (period-three ether erosion with a
+white tail; a different ether and frame); `record_find.py` "ether" "champion" (no hit beyond T-H2).
