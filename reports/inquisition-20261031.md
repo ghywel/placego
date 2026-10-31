@@ -497,6 +497,16 @@ Song–Aaron 2020 (none to N = 7).
 - Counterfactual: any consistent P for Rule 30 would contradict both papers, and would be a zoom with a shortcut for
   the projected quantity.
 
+**T-S2, added after T-S (prediction written before this run).** T-S's control P-S1 failed in two places: a single
+right diagonal cannot carry every sequence, and two rows carry 3 · 2^n patterns, not 2^(n+2). Hand reason for the
+diagonal: along a right diagonal s(t) = x(t, t), the flips are f(t) = s(t+1) XOR s(t) = x(t+1, t) OR x(t+2, t). Every
+flip depends only on cells to the diagonal's right, and s(0) does not affect them. So the diagonal's language is
+"either starting value, then a flip word that the OR of the next two diagonals can produce".
+- P-R1: every forbidden diagonal word comes with its complement (same flips); the first forbidden words have length
+  5, one flip word of length 4 (32 − 30 = 2).
+- P-R2 (independent control): along every right diagonal of 2,000 steps of Rule 30 from random rows of width 6,001,
+  no minimal forbidden word occurs, and every allowed word of length ≤ 8 occurs.
+
 ## Outcomes
 
 (Written after the runs, below this line. Predictions above are unchanged.)
