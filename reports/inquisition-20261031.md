@@ -1797,3 +1797,15 @@ T-S3 found its first failing one-depth window becomes UNSAT between b = 48 and 9
 
 Caps (run_capped): wall 3600 s; CPU 3600 s per process; RSS 6144 MiB; files 64 MiB; disk 1024 MiB; at most 10
 processes.
+
+### T-D3 results
+
+(Written after the run.) On Local's M5 under run_capped, COMPLETED: wall 29 s, RSS 194 MB, output `27b6141d`
+(t-d3-classic-ether folder).
+- **P-D6 held.** Every one of the 196 alignments of (7, 28) satisfies the one-depth onset-free window with look-behind 8
+  and some look-ahead ≤ 50 (the maximum is 50). So **M_R(k + 1) ≤ M_R(k) + 58 for every k**. With M_R(1) = 7 (T-G,
+  exhaustive), every depth has a finite episode. **No black-edge code follows the classic 7 × 4 ether at two adjacent
+  depths forever, at any depth.** This is the classic ether's counterpart of PR69's theorem for the one-in-four ether.
+  Status: COMPUTED (kissat UNSAT on every window instance, with the probe's own controls), plus the hand reduction
+  (generic model, onset-free descent, base). Not yet proof-checked: an LRAT-checked rerun with a second solver comes
+  next. The bound 58k is weak; T-G's growth is about 1 per depth.
