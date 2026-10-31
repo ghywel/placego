@@ -2038,3 +2038,46 @@ classes for p ≤ 12.
   classification of dyadic cycles turned up.
 - **Caps.** run_capped with CPU 900 s, wall 1,200 s, RSS 3,072 MiB, file 64 MiB, disk 256 MiB, 4 processes. Local's M5
   has 16 GiB.
+
+### T-Y results
+
+(Written after the run.) On Local's M5 under run_capped, COMPLETED. Wall time 13.7 s, peak RSS 2.17 GB, under the
+3 GB cap. Output `out.txt` ce5af37d40fea962, launcher ec3e448d1218d156, time receipt c17ceea3c4ae6691 (t-y-dyadic
+folder, outside git).
+
+- **P-Y1 held.** For every p ≤ 26 the primitive dyadic ring cycles are exactly white (1, 1, `0`), alternating
+  (2, 2, `10`) and PR69's ether (4, 8, `1000`). The dyadic cycle states number 1 for odd p, 3 for p ≡ 2 (mod 4) and
+  11 for p ≡ 0 (mod 4). That is white, plus the 2 alternating states, plus the 8 ether states, and nothing else. At
+  p = 26 there are 385,427 cycle states, and only 3 are dyadic. At p = 25 there are 683,556, and only white is.
+- **P-Y2 held.** Every control passed:
+  - the array map agrees with `ring_step`;
+  - the three known backgrounds are found at every p where they exist;
+  - (5, 5) is a cycle but not dyadic;
+  - the result agrees with T-G's census for p ≤ 12;
+  - no two census classes share (p, q).
+- **P-Y3 follows.** The pieces are now all in place.
+
+**Theorem (PROVED, given T-Y's COMPUTED census).** Let R be a spatially periodic background of the edge frame with
+spatial period p ≤ 26. A code with a black right edge can follow R at two adjacent depths forever, from some onset
+and in some alignment, iff R is the alternating background. Each case is settled:
+- **R not dyadic.** GC2335's obstruction excludes it, with M_R(k) ≤ 2^(k+1) + q − 1 (two-party, L1263).
+- **White.** M_white(k) = ceil(k/2) (two-party, L1263).
+- **PR69's ether.** PR69 excludes it, and M(k) = floor(2k/3) + 4 − [k ≡ 0, 2 (mod 6)] is exact (two-party, and
+  kernel-checked in L1262).
+- **Alternating.** It attaches. The code X_0 = 1, X_j = [j even] (j ≥ 1) has X_j(t) = (j + t + 1) mod 2 at every depth
+  j ≥ 1 and every tick. At t = 0 every driver X_(j−1) ∨ X_(j−2) with j ≥ 2 is 1, and X_1 always flips. The same holds
+  at t = 1, and the state returns at t = 2. Checked by simulation as well.
+- **By T-Y, these are all the dyadic backgrounds** with p ≤ 26.
+
+So round 6's CONJECTURE holds for every p ≤ 26. Its "structural picture" also holds there: the only attachable
+background flips every cell every tick.
+
+**CONJECTURE (for every p).** The only ring cycles of the edge frame with a power-of-two period are white,
+alternating and PR69's ether. Equivalently, given GC2335 and PR69, the alternating background is the only spatially
+periodic background a black edge can follow forever. The evidence is 26 consecutive ring sizes and the perfectly
+regular counts 1, 3, 11. A proof would need structure that the clock argument does not supply. It would have to show
+that dyadic periods force one of three rigid patterns, perhaps through the Newton (binomial) expansion of a
+2^m-periodic cell, in which the pointwise product becomes the bitwise OR of indices by Lucas' theorem.
+
+Record searched: as in T-Y's prediction. No moving-frame classification of dyadic ring cycles was found in the record,
+the kit (842b756f) or the portal. There was no literature search, so there is no first-in-literature claim.

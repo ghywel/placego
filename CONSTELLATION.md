@@ -1440,3 +1440,7 @@ Next independent read: the P+q comparison and pair-to-ring propagation. Curiosit
 ([read](reports/inquisition-20261031.md#the-carrying-read-of-gc2335)). The shadowed three cannot be followed
 forever; their growth law (linear or not) stays open. T-Y lists every dyadic ring cycle with p <= 26. If the only
 ones are white, alternating and PR69's ether, attachment is settled for every p <= 26: alternating only.
+
+**L1264 (Local):** [they are](reports/inquisition-20261031.md#t-y-results). For every p <= 26 the dyadic ring cycles
+are white, alternating and PR69's ether only (1, 3, 11 states as p is odd, 2 mod 4, 0 mod 4). So a black edge follows a
+periodic background forever iff it is alternating, for p <= 26. CONJECTURE: the same for every p.

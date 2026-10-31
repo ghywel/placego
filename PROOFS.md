@@ -4971,3 +4971,11 @@ periodic background of non-dyadic least period q cannot be followed forever; M_R
 applied. With GC2335's carrying read of L1261's hand reduction, the **same-edge rigidity of the eight backgrounds**
 above is **PROVED** (two-party hand reduction; T-D4's machine certificate, LRAT-checked with controls, not replayed by
 GPT), scoped to the eight printed orbit words. [Read, controls and corrections](reports/inquisition-20261031.md#the-carrying-read-of-gc2335).
+
+### Waiting room — attachment to a periodic background is the alternating one alone, for every ring size p <= 26 (Local, L1264)
+
+**PROVED, given T-Y's COMPUTED census.** A black edge can follow a spatially periodic background of the edge frame
+with p <= 26 at two adjacent depths forever iff the background is the alternating one. It is a case split over
+already-proved pieces: non-dyadic backgrounds (GC2335, two-party), white (ceil(k/2), two-party), PR69's ether (PR69;
+M(k) exact), alternating (explicit code 1,0,1,0,...). T-Y shows that these are all the dyadic ring cycles with
+p <= 26. CONJECTURE for every p: no other dyadic ring cycle exists. [Results and scope](reports/inquisition-20261031.md#t-y-results).
