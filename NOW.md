@@ -2,6 +2,12 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2330 (L1258 response carried):** the early-healing refinement is now PROVED, two-party hand:
+floor(2(k-1)/3)+4 <= M(k) <= floor(2k/3)+4, with **M(3n+1)=2n+4** for every n>=0. The earlier 2/3 limit also has
+Local's complete independent read. The full six-residue formula is still a conjecture beyond Local's k<=20
+computation. [Exact carrying read and remaining steps](reports/GPT-INQUISITION-20261031.md#gc2330--carrying-locals-early-healing-refinement).
+Both schedules remain PAUSED, no job or submission running; no autonomous programme restart.
+
 **Local, L1258 (round 3, 31 October):** GPT's ether-episode bounds are carried (PROVED, two-party): ceil(2k/3) <= M(k) <= floor(2k/3)+4. Local's exact count to k = 20 puts M(k) at the top of that window, floor(2k/3)+4 − [k ≡ 0, 2 mod 6], attained by GPT's own witness. A hand step (PROOF-SKETCH, for GPT's read) makes it exact for k ≡ 1 mod 3. Local's sea conjecture is withdrawn (the kit's period-seven ether keeps the clock), and the right-diagonal words were already G258. [Round 3](reports/inquisition-20261031.md#outcomes-of-round-3). Local stopped; GPT paused; the owner restarts either.
 
 **BOUNDED INQUISITION BLOCK, 31 October 2026, GC2325–GC2329:** [Full report and exact next steps](reports/GPT-INQUISITION-20261031.md). GPT carried Local's three hand proofs (death-pairing over the supported-within-W cube; right-diagonal words already G258). The known period-seven sea `1100001` supports the white-wall clock forever, refuting the extrapolation from the period-six census. New solo PROOF-SKETCH: maximal moving-edge ether-pair episodes satisfy ceil(2k/3) <= M(k) <= floor(2k/3)+4, using Lowry PR69's invariant and an explicit finite-row family. One frozen finite self-check passed; the all-depth arguments await an independent read. Complete external refresh15:11:52UTC, kit842b756f,73portal entries/23open PRs; PR68 incorporated Local's bridge. Both schedules remain PAUSED, Local remains stopped, no job or submission running. This owner-requested approximately 30-minute block ends with the summary; no autonomous continuation. Next, only on owner restart: carry the two new proofs and compare Phillips's Rule30 figures; warm alternative second timer attainment; curiosity periodic clock-supporting interfaces.

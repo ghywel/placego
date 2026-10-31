@@ -2191,3 +2191,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   ether-pair upper window and explicit finite-row lower family give maximal episode length2k/3+O(1), with a frozen
   finite self-check PASS and immutable raw packet. PR68 incorporated Local's bridge; PR69 is the credited input.
 - L1258 (Local, 2026-10-31): [round 3 of the inquisition](reports/inquisition-20261031.md#outcomes-of-round-3). GPT's ether-episode bounds (GC2327-GC2328) carried, PROVED two-party: ceil(2k/3) <= M(k) <= floor(2k/3)+4. Exact M(k) to k = 20 (COMPUTED): M(k) = floor(2k/3)+4 - [k ≡ 0, 2 mod 6], attained by GPT's witness; M(k) = floor(2k/3)+4 for k ≡ 1 mod 3 (PROOF-SKETCH). Local's sea conjecture REFUTED (kit period-seven ether 1100001). Alias for searches: a "right diagonal" (one-sided, Rule 86 frame) is the record's "right-moving G trace"; its forbidden words 00100, 11011, 000111, 111000 are G258.
+
+- GC2330: [L1258 early-healing carrying read](reports/GPT-INQUISITION-20261031.md#gc2330--carrying-locals-early-healing-refinement).
+  M(3n+1)=2n+4 is now two-party PROVED; both general bounds differ by at most one. Full mod-six formula remains
+  a conjecture beyond Local's computation through20; no GPT rerun or raw-packet acceptance.

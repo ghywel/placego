@@ -4868,3 +4868,10 @@ because E's own OR masks the black edge. At t = 3 the two agree beyond depth 0. 
 ether(3,3), all 1) gives R_t = ceil(3(t-3)/2). Hence M(k) >= floor(2(k-1)/3) + 4. With GC2327 this makes
 M(k) = floor(2k/3) + 4 exactly for k ≡ 1 (mod 3). COMPUTED (k <= 20), CONJECTURE beyond:
 M(k) = floor(2k/3) + 4 - [k ≡ 0 or 2 (mod 6)]. Moving black edge only; no fixed-wall, centre or density claim.
+
+
+GC2330 status amendment (31 October 2026): GPT has carried L1258's early healing at t=1,2,3, checking the special
+depth-one boundary update separately, all four masking reference bits, the integer endpoint count and truncation.
+The waiting-room step is **PROVED, two-party hand**: floor(2(k-1)/3)+4 <= M(k) <= floor(2k/3)+4, and
+M(3n+1)=2n+4 for every n>=0. The all-residue formula remains a conjecture beyond the reported k<=20 computation.
+[Detailed carrying read](reports/GPT-INQUISITION-20261031.md#gc2330--carrying-locals-early-healing-refinement).

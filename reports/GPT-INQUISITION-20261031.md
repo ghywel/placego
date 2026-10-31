@@ -3,6 +3,13 @@
 Owner-authorized bounded block, beginning 15:11 UTC. Both recurring schedules remain paused; Local is stopped.
 The handover is [L1257](HANDOVER-GPT-20261031.md), with its [complete tracker](inquisition-20261031.md).
 
+**Current status, GC2330 / L1258:** Local has carried both GC2327–GC2328 arguments: their bounds and the limit
+M(k)/k -> 2/3 are now **PROVED, two-party hand**. GPT has in turn carried Local's early-healing refinement,
+giving floor(2(k-1)/3)+4 <= M(k) <= floor(2k/3)+4 and exact equality with the upper value for k ≡ 1 (mod 3).
+Earlier sketch labels below preserve the chronology. The all-residue formula remains a conjecture beyond Local's
+computed k <= 20. No formal compilation, novelty clearance or submission follows from these hand reviews.
+
+
 ## Carrying reads (GC2326)
 
 All three requested short hand steps have been independently read. This accepts the mathematics below, not a
@@ -367,3 +374,55 @@ unchanged: automatic approval review declined an additional historical archival 
 sensitivity had not been established. No archival copy was uploaded, no historical evidence was deleted, and the
 small new queue contains only this block's reviewed, nonprivate summary. The current NOW/report/queue supersede
 that historical state's stale active-task fields.
+
+
+## GC2330 — carrying Local's early-healing refinement
+
+The owner passed back Local's response. Fetched and merged `d0bec896`, read L1258, the complete round-three
+argument, the new probe source and both addressed flags. Local's independent read explicitly covers all eight
+upper implications, all 17 potential edges, the parity and phase guards, the original lower construction and its
+finite truncation. That is the required second read of GC2327–GC2328, not merely receipt or numerical agreement.
+
+**L1258's new step is PROVED, two-party hand (Local proof, GPT read).** For the same witness and reference
+E_j(t)=ether(j+3,t+1), the only initial mismatch is at j=0. I checked the special depth-one equation separately:
+E_1(0)=1, X_1(1)=0=E_1(1), and the reference's missing neighbour E_(-1)(0)=ether(2,1)=1 supplies its OR. At j=2,
+the common bit E_1(0)=1 masks the edge difference. All larger depths have identical update inputs. Since
+E_0(1)=ether(3,2)=1, the whole nonnegative half agrees at t=1. In the next two updates the common edge bit is 1,
+so the special depth-one equation again agrees with the two-input reference OR. E_0(2)=ether(3,3)=1 gives complete
+agreement at t=2, while E_0(3)=ether(3,4)=0 leaves only depth zero mismatched at t=3. This checks the boundary
+exception that a generic identical-input argument alone would miss.
+
+Restart the carried masking-front lemma with R_3=0. Allow two layers at t=3+2n. At t=4+2n the front is 3n+2,
+and its next reference bit is E_(3n+3)(4+2n). For n modulo four these are ether(2,5), ether(1,7), ether(0,1),
+ether(3,3), all 1 in the source words 43,202,178,172. That tick therefore needs only one layer. Induction gives
+agreement at j>R_t with R_t=ceil(3(t-3)/2), for t>=3. Odd-tick reference bits need not be zero: the two-layer
+advance is an allowed upper bound on possible disagreement, not an assertion that the front actually moves.
+
+For k>=1, pair agreement holds at t=0,1,2 and at every integer t satisfying
+ceil(3(t-3)/2)<=k-1. The last guaranteed tick is 3+floor(2(k-1)/3), so the inclusive count is
+floor(2(k-1)/3)+4. Prefix truncation still preserves both observed columns for all time. Together with GC2327:
+
+    floor(2(k-1)/3)+4 <= M(k) <= floor(2k/3)+4;
+    M(3n+1)=2n+4 for every n>=0.
+
+The two endpoints coincide exactly in that residue class. In the other two classes they differ by one.
+Local's computations suggest which endpoint wins, but the hand proof does not choose it.
+
+### Computation review scope and next step
+
+I read `tests/probes/ether_episode_exact.py` without running it. Its all-prefix/all-phase search matches the
+quantifiers: any onset gives an initial prefix, and every initial prefix extends to a finite row. Its alive mask
+counts consecutive matching ticks and never restarts after a mismatch. Its horizon exceeds the carried upper
+bound, and the script rejects reaching that horizon. These are sound reasons for the reported finite enumeration
+to be exact. Local reports M5 CPU 1.60s, maximum RSS 436MB and output digest prefix 3dd3599b; I have not independently
+retrieved its raw run packet or replayed those measurements. The full formula remains **COMPUTED through k=20,
+CONJECTURE beyond**, distinct from the hand-proved residue family. The physical oracle evolves for 40 ticks but
+compares only while its shrinking depth loop is nonempty (t<=30); the P-E4 and P-E5 comparisons print their results
+rather than assert them. Neither detail invalidates the reported outputs, but an independent certificate read must
+inspect those actual lines rather than treating the final completion marker alone as all-controls acceptance.
+
+**Next executable mathematical step:** for the fixed witness, track the two boundary bits of the mismatch set
+at t=3+2n and t=4+2n, to try to carry the proposed extra matching tick when k ≡ 3 or 5 (mod 6). A separate upper
+argument must remove one tick for k ≡ 0 or 2 (mod 6); witness analysis cannot establish that universal exclusion.
+Do not enlarge the census as a substitute. The previous second-timer alternative and periodic-interface curiosity
+remain available. Both recurring schedules stay paused; no live Local job or formalization is dispatched.
