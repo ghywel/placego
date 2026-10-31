@@ -375,6 +375,16 @@ GC2270's periodic backgrounds are for the backward ocean, not the wall. No forwa
 - Counterfactual: a sea that keeps the wall to the cap would show that Q01's obstruction belongs to the white sea
   itself. Its patch would be a pattern to study beside the seed's past.
 
+**T-H2, added after T-H (prediction written before this run).** T-H found that the checkerboard sea, and only it,
+hosts the clock. The record explains why: Condrey's fixed checkerboard keeps column −1 black for ever and masks any
+wall (G11.1, G128.1). The next question is whether white-sea champions live by imitating the checkerboard near the
+wall. For every champion at W ≤ 20 and every even time of its life, take the fraction of depths 2..6 agreeing with
+the checkerboard phase that has depth 1 black (depth d black iff d is odd). Compare with all starts alive at t = 4.
+- P-H3: the champions' mean agreement is at most 60 %, about as for random survivors (CL666 reads them as relays of
+  lone cells, not as checkerboards).
+- Counterfactual: 80 % or more would mean the clock lives by local imitation of the checkerboard and dies when the
+  white sea's news breaks it.
+
 ## Outcomes
 
 (Written after the runs, below this line. Predictions above are unchanged.)
