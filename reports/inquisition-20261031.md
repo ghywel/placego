@@ -1273,3 +1273,22 @@ T-R2 makes the proof an induction, **M(k + 6) ≤ M(k) + 4**, with a finite loca
 
 Caps (run_capped): wall 3600 s; CPU 3600 s per process; RSS 2048 MiB; files 64 MiB; disk 256 MiB; at most 10
 processes.
+
+### T-RC results, first run, and the proof-checked rerun (prediction before the rerun)
+
+(Written after the first run, below this line. Predictions above are unchanged.)
+
+First run (SHA256 of the probe at a0c756b3), COMPLETED in 1.9 s, output `2a1c49a6` (t-rc-certificate folder).
+**P-C1, P-C2 and P-C3 held.**
+- TREE: F(h, n + 3) = F(h, n) + 2 from n0 = 4. The needed delay + max offset − m(k) by edge phase is r = 0: 3,
+  1: 2, 2: 1, 3: 3, 4: 2, 5: 3, 6: 2, 7: 4, exactly my hand table, so only r = 7 needs m + 5.
+- BASE: exhaustive M(2), M(6), M(8), M(12) = 4, 7, 8, 11.
+- DIRECT: rigidity holds at K = 14, 18, 20, 24, 26, 30.
+- ABSTRACT: all 80 local CSPs are UNSAT under both solvers.
+- CONTROLS: all pass. At tick L′ − 4, both depths are free for both right-end phases.
+
+The rerun adds independent proof checking. The probe is now SHA256 a71741ba…. Every UNSAT in DIRECT and ABSTRACT also
+gets a cadical LRAT proof, checked by a 40-line RUP checker in the probe. The checker is tested by rejecting a
+proof with a dropped hint, and a proof replayed against a different CNF.
+- **P-C4.** Every proof checks, and both corruption controls are rejected. Counterfactual: a failed proof check
+  means a solver's UNSAT is not trusted there.

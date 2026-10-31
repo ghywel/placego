@@ -31,6 +31,10 @@ Checks:
   5. CONTROLS: an abstract CSP equals the concrete one at K = 48 and 50 (same clauses up to renaming); dropping the
      top constraint makes each target satisfiable (the checks are not vacuous); the induction's arithmetic
      m(K)+4-4 = m(K-6)+4 is checked.
+  6. PROOFS: every UNSAT claimed in 3 and 4 also has a cadical LRAT proof checked by lrat_check() below, a short
+     independent checker (unit propagation along the hints; fails on any RAT step, satisfied hint or missing
+     conflict, and requires the empty clause). Its controls: a corrupted proof (one hint dropped from a step
+     that needs it) is rejected, and so is a proof replayed against a different CNF.
 """
 import itertools
 import os
@@ -60,6 +64,77 @@ def solve(solver, nv, cl):
         os.remove(path)
     assert p.returncode in (10, 20), (solver, p.returncode)
     return p.returncode == 10
+
+
+def lrat_proof(nv, cl):
+    """cadical's textual LRAT proof of an UNSAT CNF, as a list of lines."""
+    fd, path = tempfile.mkstemp(suffix='.cnf', dir=WORK)
+    with os.fdopen(fd, 'w') as f:
+        f.write(f"p cnf {nv} {len(cl)}\n" + ''.join(' '.join(map(str, c)) + ' 0\n' for c in cl))
+    proof = path + '.lrat'
+    try:
+        p = subprocess.run(['cadical', '-q', '--lrat=true', '--no-binary', path, proof], capture_output=True, text=True)
+        assert p.returncode == 20, ('cadical did not report UNSAT', p.returncode)
+        with open(proof) as f:
+            lines = f.read().split('\n')
+    finally:
+        os.remove(path)
+        if os.path.exists(proof):
+            os.remove(proof)
+    return [ln for ln in lines if ln.strip()]
+
+
+def lrat_check(cl, lines):
+    """Check an LRAT refutation of the clause list cl (clauses numbered 1..len(cl)). RUP steps only."""
+    db = {i + 1: list(c) for i, c in enumerate(cl)}
+    empty = False
+    for ln in lines:
+        tok = [int(x) if x != 'd' else 'd' for x in ln.split()]
+        cid = tok[0]
+        if tok[1] == 'd':
+            for x in tok[2:-1]:
+                db.pop(x, None)
+            continue
+        z = tok.index(0, 1)
+        lits, hints = tok[1:z], tok[z + 1:-1]
+        assert tok[-1] == 0 and all(h > 0 for h in hints), "RAT step or malformed line"
+        val = {}
+        for l in lits:
+            val[abs(l)] = (l < 0)            # the lemma's literals are made false
+        conflict = False
+        for h in hints:
+            c = db[h]
+            und = []
+            for l in c:
+                v = val.get(abs(l))
+                if v is None:
+                    und.append(l)
+                elif v == (l > 0):
+                    raise AssertionError("hint already satisfied")
+            if not und:
+                conflict = True
+                break
+            assert len(und) == 1, "hint not unit"
+            val[abs(und[0])] = und[0] > 0
+        assert conflict, "no conflict along the hints"
+        db[cid] = lits
+        if not lits:
+            empty = True
+            break
+    assert empty, "empty clause not derived"
+    return True
+
+
+N_PROOFS = [0]
+
+
+def certified_unsat(nv, cl):
+    """UNSAT by kissat and cadical, and cadical's LRAT proof checked here."""
+    if solve('kissat', nv, cl) or solve('cadical', nv, cl):
+        return False
+    lrat_check(cl, lrat_proof(nv, cl))
+    N_PROOFS[0] += 1
+    return True
 
 
 # ---------------------------------------------------------------- 1. GPT's tree, exact max-plus
@@ -190,7 +265,7 @@ def direct_check(K):
     for jj in (K - 6, K - 5):
         for t in range(Lp - 4):
             cl = base + [[-var(jj, t)] if val(jj, t) else [var(jj, t)]]
-            if not both_unsat(nv, cl):
+            if not certified_unsat(nv, cl):
                 bad.append((jj - K, t))
     return Lp, bad
 
@@ -211,17 +286,17 @@ def main():
     n_abs = 0
     for phi in range(8):
         for tg in ('K-6', 'K-5'):
-            assert both_unsat(*abstract_csp(phi, W, W, tg)), ('interior', phi, tg)
+            assert certified_unsat(*abstract_csp(phi, W, W, tg)), ('interior', phi, tg)
             n_abs += 1
     for phi0 in (7, 3):
         for t in range(W):
             for tg in ('K-6', 'K-5'):
-                assert both_unsat(*abstract_csp((phi0 + t) % 8, t, W, tg)), ('left', phi0, t, tg)
+                assert certified_unsat(*abstract_csp((phi0 + t) % 8, t, W, tg)), ('left', phi0, t, tg)
                 n_abs += 1
     for phiR in (2, 7):
         for rho in range(4, W):
             for tg in ('K-6', 'K-5'):
-                assert both_unsat(*abstract_csp((phiR - rho) % 8, W, rho, tg)), ('right', phiR, rho, tg)
+                assert certified_unsat(*abstract_csp((phiR - rho) % 8, W, rho, tg)), ('right', phiR, rho, tg)
                 n_abs += 1
     print(f"ABSTRACT: {n_abs} local CSPs UNSAT under both solvers (interior 16, left end 40, right end 24)")
 
@@ -253,6 +328,33 @@ def main():
             phiR = (Lp - 1 + 2 * K + 7) % 8
             assert phi0 in (7, 3) and phiR == (2 if K % 6 == 0 else 7)
     print("CONTROL: arithmetic of the step and the end phases checked for K < 400")
+    nv, cl = abstract_csp(0, W, W, 'K-6')
+    lines = lrat_proof(nv, cl)
+    assert lrat_check(cl, lines)
+    rejected = 0
+    for idx, ln in enumerate(lines):
+        tok = ln.split()
+        if tok[1] == 'd':
+            continue
+        z = tok.index('0', 1)
+        hints = tok[z + 1:-1]
+        if len(hints) < 2:
+            continue
+        bad = lines[:idx] + [' '.join(tok[:z + 1] + hints[:-1] + ['0'])] + lines[idx + 1:]
+        try:
+            lrat_check(cl, bad)
+        except (AssertionError, KeyError):
+            rejected += 1
+            break
+    assert rejected == 1, "a corrupted proof was accepted"
+    nv2, cl2 = abstract_csp(1, W, W, 'K-6')
+    try:
+        lrat_check(cl2, lines)
+        raise SystemExit("proof accepted for a different CNF")
+    except (AssertionError, KeyError):
+        pass
+    print(f"CONTROL: the LRAT checker rejects a proof with a dropped hint and a proof for a different CNF")
+    print(f"PROOFS: {N_PROOFS[0]} LRAT refutations checked (DIRECT and ABSTRACT)")
     os.rmdir(WORK)
     print("RIGIDITY_CERTIFICATE_PASS")
 
