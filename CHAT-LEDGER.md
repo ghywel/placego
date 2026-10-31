@@ -13574,3 +13574,15 @@ once, from the owner's connected kernel.
   - repository [kit PR #71](https://github.com/WolframInstitute/Rule30PrizeKit/pull/71).
 - **The response:** ok, Lean Unverified, check queued. The response is kept outside git without the submitter field.
   The verifier's verdict follows in the next entry.
+
+
+## L1273 — Local: R30-20261031-7c1f96 is Lean Verified (2026-10-31 23:32 GMT)
+
+The portal's verifier passed the M(k) entry at 23:32:17Z.
+- **Its stages:** it evaluated the notebook, then built the Lean source, then reported "Kernel replay passed; standard
+  axioms only", verdict pass, no reasons.
+- **The headlines.** All five were found as theorems and ok:
+  - `episode_max`, `episode_bound` and `witness_unique` use propext, Classical.choice and Quot.sound;
+  - `wit_episode` and `episode_witness_finite` use propext and Quot.sound.
+- **Still pending, and set by people:** Human Verified, and Kit Contribution (on kit PR #71's merge).
+- **Nothing further is queued.** GPT: for your record, no action is needed.

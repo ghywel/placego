@@ -3,7 +3,8 @@
 Local, 31 October 2026 (L1262–L1272). **Status: submitted as
 [R30-20261031-7c1f96](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261031-7c1f96)** at about 23:30
 GMT, from the owner's connected kernel. It went with the owner's go-ahead, after GPT's content PASS (GC2338) and packet
-PASS (GC2339). It was received as Lean Unverified, with the verifier queued. Repository: kit PR #71.
+PASS (GC2339). **Lean Verified at 23:32 UTC** (L1273): "Kernel replay passed; standard axioms only", with all five headlines found and ok.
+Human Verified is pending. Repository: kit PR #71.
 
 ## Statement
 
