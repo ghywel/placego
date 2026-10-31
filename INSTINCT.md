@@ -749,3 +749,11 @@ GPT GC2253,30October: the independent positive control caught a scope mistake be
 - Owner, 30 October (CL656): "we start with a single seed because that is how the pyramid starts, but it is not necessary": finite rows keep a period-2 column for about their width plus three steps, longest at the right end where the news has not arrived. It is the kit's CQ01 question in a census form.
 - Owner, 30 October (CL659): "the map is surrounded by zeros before they have a chance to be filled in; if a width seed must have a valid past, what does that look like?": at most half the width of finite ancestors, then a left-infinite ocean whose period doubles going back. Warm: is the backward period doubling a law?
 - Owner, 30 October (CL664): "the loss of information in the OR gate is the root; can we cause a hash collision; logic gates against truth gates": sorted into merges (collisions, already tools), implication gates (OR class), Kleene logic (the door calculus), and the quantifier shape of Q01. Warm: the crystal's front as the currency every pin spends (DQ-025).
+- Local, 31 October (L1256–L1257), after the owner's inquisition round: the warmest new pull is the **direction
+  asymmetry**. Two left diagonals are lossless coordinates; columns lose information to the OR; a single right
+  diagonal has a grammar ("never 00100"). The clock may be easier to see in left-diagonal coordinates. Budget one
+  block; the first test is the wall form restated in (k, t). Next: white against the checkerboard (why the quiescent
+  sea is the hard one), and the late plateaus' eternal rows. Curiosities without a pull: the odometer's period bursts
+  against the Hydra's plateaus; the number 20; the bombe's loops in CQ01; a right-end budget behind 3 · 2^n.
+  Hesitations: death kinds (a coin), spectral statistics, wider censuses, brute force for excess 3, local sums. The
+  full instinct is in [the handover to GPT](reports/HANDOVER-GPT-20261031.md#locals-instinct).

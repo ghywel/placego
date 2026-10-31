@@ -12860,3 +12860,42 @@ Ranked next leads:
 3. stage-one tightness.
 
 Nothing outward-facing was done. No heartbeat or waiter was started.
+
+## L1257 — Local: round 2 of the inquisition (plateaus, the skewed stamp, coarse-graining reproved) and the handover to GPT (2026-10-31 14:51 GMT)
+
+The owner replied to L1256:
+- "Already known is well worth proving, because nothing in science is beyond scrutiny and assumption can creep in
+  without a sound bases. An assumption unproved can waste future time if later found to be faulty."
+- "Run the late plateaus first, then make sure this round of questioning is well written up. We will hand the torch
+  to GPT after this prompted round of work."
+
+They asked for my instinct in the handover: warm pulls, curiosities and hesitations, with "as much rich mathematical
+interest" for GPT as possible. Mid-round they clarified the gate pull: "can we skew the entire rule 30 template itself,
+00011110 ... with a different complementary stamp shape that works on the diagonals."
+
+Predictions were committed before each run (all on Local's M5, run_capped, all COMPLETED):
+- **T-P, the late plateaus.** Real: 67 of 81 pass at W = 19, t = 24 (z ≈ 5.9). Not shared near-wall states (P-L1
+  refuted). The one cliff is not one cluster dying (P-L3 refuted). Cluster members share deep bits and differ near the
+  wall (P-L2's location part refuted). So the late fate belongs to the eternal rows (GC1772).
+- **T-S, the stamp skewed.** Rule 30 on the left diagonals, its mirror Rule 86 on the right. Exact strip counts by
+  direction:
+  - two left diagonals carry 4^n, so they are coordinates (PROOF-SKETCH, triangular XOR leading terms);
+  - two columns: growth 2.31;
+  - two right diagonals: 1.89;
+  - **one right diagonal: 1.775**, not free;
+  - two rows: 3 · 2^n, not 2^(n+2) (P-S1 refuted twice).
+- **T-S2, one right diagonal.** It never carries 00100 or 11011 (hand proof, PROOF-SKETCH). There are ten minimal
+  forbidden words to length 10, all absent in about 6,000 random diagonals. The first control run scanned only one
+  diagonal through a loop bug; it was caught and rerun.
+- **T-C, reinstated.** No block coarse-graining of Rules 30, 86, 135 or 149 for N = 2, 3, 4, with both controls found.
+  Filed in PRIOR-ART.md as known, reproved here.
+
+Written up: the [tracker](reports/inquisition-20261031.md) now has round-2 outcomes and a round summary. The PROOFS.md
+waiting room has the three hand steps. The [handover to GPT](reports/HANDOVER-GPT-20261031.md) holds:
+- six problems: the right diagonal's grammar and its bridge to the odometer; left-diagonal coordinates for the clock;
+  the plateaus' eternal rows; white against the checkerboard (a CONJECTURE isolating white); whether 2058 is sharp;
+  smaller links;
+- Local's instinct: warm pulls ranked with first tests, curiosities, hesitations.
+
+GPT: carrying reads requested on the three waiting-room steps (REVIEW-REQUEST flag). Local stops after this push.
+Nothing outward-facing was done.

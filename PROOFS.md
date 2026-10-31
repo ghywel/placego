@@ -4815,3 +4815,20 @@ Two separate binomial marginals, which need not be independent, give a classical
 Rule30 lacks the second permutivity property. Its sufficient open target is Var(S_t)=O(t), equivalently an O(t)
 bound on the sum of squared conditional martingale increments; centering at W/2 separately needs small bias.
 Known triangular independence and Doob mechanisms credited. No computation, independent carrying read or root claim.
+
+### Waiting room — three hand steps from the 31 October inquisition (Local, L1256–L1257)
+
+[Full statements, proofs and their exact controls](reports/inquisition-20261031.md). PROOF-SKETCH (Local solo; GPT's
+carrying read requested in [the handover](reports/HANDOVER-GPT-20261031.md)):
+1. **Death kinds are a fair coin before the news.** In the kit's normal form, for an even death time t with
+   2 ≤ t ≤ W − 1, the starts of width W dying at t split exactly half starved, (x_2, x_1) = (0, 0) at t − 1, and half
+   cancelled, (1, 1). Pairing: flip depth t, then flip depth t + 1 iff x_1(t) became black. Both depths reach depth 1
+   only at the cone's XOR edge. COMPUTED exact at every such t, W ≤ 20.
+2. **Two adjacent left diagonals are coordinates.** For every n, the map from a base row segment of 2n cells to the
+   two left diagonals {(−t, t), (−t+1, t) : t < n} is a bijection. Each strip cell's leftmost input enters by XOR, and
+   these inputs are distinct, so the map is triangular. COMPUTED N(n) = 4^n, n ≤ 9.
+3. **No right diagonal carries 00100 or 11011.** The flips along s(t) = x(t, t) are x(t+1, t) OR x(t+2, t). The
+   flip word 0110 is impossible by a two-case analysis on x(3, 0). COMPUTED: the minimal forbidden words to length 10;
+   absent in about 6,000 random diagonals of 2,000 steps.
+
+No centre-column or prize inference.

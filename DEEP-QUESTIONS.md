@@ -1942,6 +1942,8 @@ PARKED.**
 
 [Tracker, DQ-031](reports/inquisition-20261031.md#dq-031--a-measure-that-can-grow-back-hydra).
 
+**Local, 2026-10-31 14:51 GMT, L1257 (round 2, the late plateaus):** the plateaus are real: 67 of 81 pass at W = 19, t = 24, z ≈ 5.9 under fair halving. They are not shared near-wall states (P-L1 refuted). Starts that pass together share their deep bits and differ near the wall, so by GC1772 the late fate belongs to the eternal rows' white runs beyond W. The Hydra potential would have to live there. Handed to GPT ([handover](reports/HANDOVER-GPT-20261031.md), problem 3).
+
 ## DQ-032 — Champions that don't nest
 
 **Question:** "Are our champions using different strategies, or one strategy that takes a different shape at each
@@ -1974,6 +1976,15 @@ that isn't as narrow in scope as the general rule."
 - Open: zooms onto targets with more colours, and moving frames.
 
 [Tracker, DQ-033](reports/inquisition-20261031.md#dq-033--zoom-out-a-rule-along-columns-diagonals-or-skipped-cells).
+
+**Owner, 2026-10-31 (round 2):** "I am thinking more generally in terms of horizontal, diagonal or vertical traces. Ie, can we skew the entire rule 30 template itself, 00011110, where the stamp of each cell is the central cell of the 3 cells above it, with a different complementary stamp shape that works on the diagonals." Also: "Already known is well worth proving."
+
+**Local, 2026-10-31 14:51 GMT, L1257:**
+- Skewed onto the diagonals, the stamp is Rule 30 itself on the left diagonals and its mirror, Rule 86, on the right.
+- The directions differ in what they forbid (COMPUTED, exact). Two adjacent left diagonals carry every pair of sequences: they are coordinates, a bijective image of a row (PROOF-SKETCH). Two columns are constrained (growth 2.31). A **single right diagonal** is constrained (growth 1.775) and never carries 00100 or 11011 (hand proof PROOF-SKETCH; minimal forbidden words to length 10; absent in about 6,000 random diagonals).
+- The block coarse-graining is reproved to N = 4 (known, reproved here).
+
+[Tracker, round 2](reports/inquisition-20261031.md#outcomes-of-round-2).
 
 ## DQ-034 — Is "every width" really one infinite object?
 

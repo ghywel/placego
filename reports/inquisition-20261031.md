@@ -10,6 +10,9 @@ sent at about 13:00 GMT. The owner answered all eight, added three remarks, and 
 On the rhythm question the owner chose depth over harvesting partial results: "Let us sit in the discomfort of the
 unknown." A long stretch with nothing to submit is acceptable.
 
+The round summary of both rounds is at [the end](#round-summary-both-rounds); the handover to GPT is
+[reports/HANDOVER-GPT-20261031.md](HANDOVER-GPT-20261031.md).
+
 Each thread below is a deep question, DQ-026 to DQ-034 in [DEEP-QUESTIONS.md](../DEEP-QUESTIONS.md), which points
 back here. Every thread has the owner's answer verbatim, what Local takes from it, its hand equations, and a test with
 its prediction written before the run. GPT is halted, so every new hand step here is a solo PROOF-SKETCH unless the
@@ -27,9 +30,9 @@ PARKED (specified, not run, waiting on a steer or a cheaper route).
 | 028 | Can the edge get three ahead | what makes 2 a wall; push the computation further | T-D, stage-one tightness | PARKED (specified) |
 | 029 | Where is the randomness made | forgetting gates mix the next seed | T-E, the diagonal tables | COMPUTED; the left forgets itself, the right remembers itself |
 | 030 | Multiplication or simulation | diagonals are walls; a period-2 centre is a wall that connects | T-E, the reading ages | COMPUTED: the crystal covers the centre to about t = 20, then falls behind |
-| 031 | A measure that can grow back | spawning ratio of heads; are heads equal; rise and fall | T-F, the survival ratio | COMPUTED: a fair cull, then plateaus and cliffs; potential PARKED |
+| 031 | A measure that can grow back | spawning ratio of heads; are heads equal; rise and fall | T-F, T-P | COMPUTED: a fair cull, then real plateaus carried by the far bits; potential PARKED |
 | 032 | Champions that don't nest | one map of many profiles (a radar) | T-G, the champions' radar | COMPUTED: no shared shape; never nested from W = 5 |
-| 033 | Zoom out: rules along columns, diagonals or skipped cells | a pathway less narrow than the row rule | T-C, block coarse-graining | KNOWN: dropped before running |
+| 033 | Zoom out: rules along columns, diagonals or skipped cells | skew the stamp 00011110 onto diagonals or columns | T-S, T-S2, T-C | COMPUTED: left diagonals free (coordinates), right diagonal has a grammar; T-C known, reproved here |
 | 034 | Every width at once is one infinite object | the seed's past is a periodic sea with a chink | T-H, T-H2, the sea census | COMPUTED: the checkerboard is the only home; champions do not imitate it |
 
 ## Corrections and confirmations from the owner's answers
@@ -346,7 +349,9 @@ literature has it:
 - Song and Aaron (arXiv 2012.12153) pushed the same search to blocks of 7 and found 20 rules with none: the 16, plus
   the classes [37, 91] and [164, 218].
 
-So no block zoom of size ≤ 7 onto a two-colour rule exists for Rule 30. What remains open:
+So no block zoom of size ≤ 7 onto a two-colour rule exists for Rule 30.
+
+*Correction (owner, round 2):* dropping this test as "already known" broke one of the owner's earliest rules: a known result is worth proving, because an unproved assumption can waste later time. T-C was reinstated and run (round 2, below): reproduced to N = 4. What remains open:
 - zooms onto targets with more colours or wider reach (not searched in those papers, as far as the summaries go);
 - zooms along a moving frame: the centre is a moving point in the diagonal frame.
 Neither is tested.
@@ -507,7 +512,7 @@ flip depends only on cells to the diagonal's right, and s(0) does not affect the
 - P-R2 (independent control): along every right diagonal of 2,000 steps of Rule 30 from random rows of width 6,001,
   no minimal forbidden word occurs, and every allowed word of length ≤ 8 occurs.
 
-## Outcomes
+## Outcomes of round 1
 
 (Written after the runs, below this line. Predictions above are unchanged.)
 
@@ -641,16 +646,151 @@ checkerboard (period 2).
 
 ### Threads not run
 
-- **DQ-026** (the bombe's loops in CQ01) waits on a steer about which of two readings the owner meant.
+- **DQ-026** (the bombe's loops in CQ01) waits on a steer about which of two readings the owner meant. *Round 2: the
+  owner's pull was about traces, the skewed stamp (T-S); the loops stay a Local curiosity.*
 - **DQ-028** (stage-one tightness) is specified with its prediction.
-- **DQ-033**'s block zoom is KNOWN (Israeli–Goldenfeld; Song–Aaron).
+- **DQ-033**'s block zoom is KNOWN (Israeli–Goldenfeld; Song–Aaron). *Round 2: reinstated on the owner's rule and
+  reproved to N = 4 (T-C).*
 - **DQ-031**'s potential waits on a description of the late plateaus.
 
 ### Next warm leads, ranked
 
 1. **The late plateaus (DQ-031 with DQ-032).** What do the groups that pass a plateau share? It is a finite question
-   at W ≤ 20, and the first place where the Hydra's rise and fall can be seen in detail.
+   at W ≤ 20, and the first place where the Hydra's rise and fall can be seen in detail. *Round 2 (T-P): the deep
+   bits, not near-wall states.*
 2. **The white sea against the checkerboard (DQ-034).** Both are fixed points; one hosts the clock and the other is
    conjectured not to. A hand comparison of what a finite patch does at the boundary of each sea might name the
    obstruction.
 3. **Stage-one tightness (DQ-028).** Simulable, and it would halve the open part of "can the edge get three ahead".
+
+## Outcomes of round 2
+
+Every run is on Local's M5 under `run_capped`, and every one COMPLETED. Outputs are kept outside git, cited by
+SHA256 prefix:
+
+| Test | Probe (source) | Output | Caps (CPU s / wall s / RSS MiB) |
+|---|---|---|---|
+| T-P | `inquisition_plateaus.py` (`86a96b1e`) | `b51325b5` | 1200 / 1500 / 6000 |
+| T-S | `inquisition_trace_grammar.py` (`7c150e81`) | `87c809d9` | 1800 / 2400 / 6000 |
+| T-S2 | `inquisition_right_diagonal_words.py` (`91794c52`, with the control fix) | `4d78d340` | 3000 / 3600 / 6000 |
+| T-C | `inquisition_coarse_grain.py` (`3ccf5fe9`) | `a542b5c3` | 1800 / 2400 / 8000 |
+
+### T-P: the plateaus are real, but not shared near-wall states
+
+Plateau ticks with at least 16 alive: W = 16 at t = 22 and 24; W = 17 at t = 24; W = 18 and 19 at t = 24. One cliff:
+W = 18, t = 28 → 30, ratio 0.136.
+
+The plateaus are not chance. Under fair halving, 67 of 81 passing at W = 19, t = 24 is z ≈ 5.9, and 16 of 19 at
+W = 16, t = 22 has probability about 0.002.
+
+- **P-L1 REFUTED.** Plateau survivors are no more concentrated than at other late ticks: distinct 7-words per
+  survivor 0.40 against 0.31, and the largest 7-word holds 0.15 against 0.12.
+- **P-L2 split.** The largest plateau cluster's members are near-copies at W = 16 and 17 (mean Hamming 0.21 W), but
+  not at W = 18 and 19 (0.32–0.34 W). Their disagreements are **not** deep: 0.00–0.18 of them fall in the deepest
+  third of the support. The members **share their deep bits and differ near the wall**.
+- **P-L3 REFUTED.** At the one cliff, the largest 7-word cluster accounts for 0.42 of the deaths, not half.
+
+**Lesson.** The heads that pass a plateau together are different starts that have converged near the wall while
+carrying the same far news (the same deep bits). By GC1772, a start's late fate is the white run of its eternal row
+beyond W, which the deep bits govern. So the plateaus belong to the eternal rows, not to near-wall states. The next
+test is direct: compute Θ f for the survivors and read their white runs (handed to GPT, below).
+
+### T-S: the trace grammar, by direction
+
+N(n) is the number of patterns a strip of n steps can carry in any Rule 30 spacetime. Growth is N(n)/N(n−1):
+
+| Strip | N(n) | Growth at the largest n | Free? |
+|---|---|---|---|
+| one row | 2^n | 2 | yes |
+| one column | 2^n (n ≤ 13) | 2 | yes |
+| one left diagonal | 2^n (n ≤ 9) | 2 | yes |
+| **one right diagonal** | 2, 4, 8, 16, **30**, 54, 96, 170, 302, 536 (n ≤ 10) | 1.775 | **no** |
+| two rows | **3 · 2^n** (n ≥ 2) | 2 | the second row is fixed except at its right end |
+| two columns | 4, 12, 32, 80, 200, 496, …, 207,544 (n = 13) | 2.31, falling | no |
+| two right diagonals | 4, 10, 22, 50, 104, 208, 406, 774, 1466 (n = 9) | 1.89, falling | no |
+| **two left diagonals** | **4^n exactly** (n ≤ 9) | 4 | **yes, completely** |
+
+- **P-S1 REFUTED in two places.**
+  - Two rows carry 3 · 2^n, not 2^(n+2). The bottom row's right end is free only when the top row's last cell is
+    white, because the OR with the unseen cell masks it otherwise. The OR's asymmetry shows even in the simplest
+    strip.
+  - A single right diagonal is **not** free.
+- **P-S2 held.** Two adjacent left diagonals carry every pair of sequences.
+- **P-S3 held.** Columns and right diagonals are constrained, with growth below 3 by n = 8.
+
+Hand results (PROOF-SKETCH, Local solo):
+- **Two adjacent left diagonals are coordinates.** The strip of two left diagonals over n steps is a bijective image
+  of a row segment of 2n cells. Cell (−t, t) depends on base cells −2t..0, and on base cell −2t by XOR (the left edge
+  of its cone). Cell (−t+1, t) depends on −2t+1..1, with −2t+1 entering by XOR. The 2n "leftmost inputs" are distinct
+  and fill −2n+2..1. Solving from the right recovers the base row, so the map is triangular and invertible. This is
+  why N(n) = 4^n exactly, and why three left diagonals cannot be free (3n cells from 2n + 1 inputs). Two adjacent
+  columns are also a function of 2n base cells, but not onto, so the OR loses information there.
+- **A right diagonal never carries 00100 (or 11011).** Along s(t) = x(t, t), the flips are
+  f(t) = x(t+1, t) OR x(t+2, t). Write a_t, b_t, c_t, d_t for x(t+1, t), x(t+2, t), x(t+3, t), x(t+4, t). The word
+  00100 means flips 0, 1, 1, 0. Flip 0 at t = 0 and t = 3 gives a_0 = b_0 = a_3 = b_3 = 0. Then:
+  - a_1 = c_0 and b_1 = c_0 OR d_0, so f(1) = 1 forces c_0 OR d_0 = 1 and b_1 = 1.
+  - So a_2 = NOT c_0, and b_2 = NOT(c_1 OR d_1).
+  - a_3 = 0 needs b_2 OR c_2 = NOT c_0; b_3 = 0 needs c_2 OR d_2 = b_2.
+
+  Two cases:
+  - **c_0 = 1.** Then a_2 = 0, so f(2) = 1 needs b_2 = 1. But b_2 OR c_2 must equal 0. Contradiction.
+  - **c_0 = 0.** Then d_0 = 1, and c_1 = c_0 XOR (d_0 OR e_0) = 1, so b_2 = 0 and a_2 = 1. Now b_2 OR c_2 = 1 gives
+    c_2 = 1, while c_2 OR d_2 = b_2 = 0 gives c_2 = 0. Contradiction.
+
+**T-S2: the minimal forbidden words of one right diagonal, to length 10 (COMPUTED, exact).** In complement pairs:
+- 00100 / 11011 (flips 0110);
+- 111000 / 000111 (flips 00100);
+- 111110010 / 000001101 (flips 00001011);
+- 0010100000 / 1101011111 (flips 011110000);
+- 1110010100 / 0001101011 (flips 001011110).
+
+- **P-R1 held.** The words are complement-closed, and the first come at length 5 with one flip word, 0110.
+- **P-R2 held (after a fix).** The first control run scanned only one diagonal, because of a range bug in its loop.
+  That run counted for nothing and was rerun. In the rerun, none of the ten words occurs anywhere along the about
+  6,000 right diagonals of 2,000 steps in three random spacetimes. All 170 allowed words of length 8 occur, and no
+  disallowed one.
+
+**Prior art.** The record has directional entropy (Milnor 1988; Sablik: Rule 30 is left-expansive, with no expansive
+direction; Kopra 2023). A web search for Rule 30's diagonal trace subshift found nothing specific. The nearest
+framework is Guillon and Zinoviadis on diagonal determinism. So this is COMPUTED here, with prior art possible and not
+found.
+
+**Lesson for the owner's stamp question.** Skewing the stamp onto the diagonals gives back Rule 30 (left) and its
+mirror Rule 86 (right). The directions differ completely in what they forbid:
+- the left diagonals are **coordinates**: two of them carry anything, and together they are the row;
+- columns lose information to the OR;
+- a single right diagonal already has a grammar, which begins with "never 00100".
+
+In the owner's words: the left-diagonal trace is the free one, and the right diagonal is the one with rules.
+
+### T-C: block coarse-graining, known and reproved here
+
+- **P-C1 held.** Rules 90 and 150 each have 6 non-constant coarse-grainings at N = 2, including the first-cell
+  projection onto themselves.
+- **P-C2 held.** Rule 30, 86, 135 and 149 have none at N = 2, 3, 4 (all 2^(2^N) projections).
+
+This reproduces Israeli and Goldenfeld (2006) and agrees with Song and Aaron (2020, to N = 7) in the range checked.
+Filed in PRIOR-ART.md as known, reproved here.
+
+## Round summary (both rounds)
+
+The owner's eight answers and two later remarks became nine threads and nine tests. The new structure, in plain words:
+1. **How the clock dies is a coin toss.** The two cells beside the wall come into step, both white or both black,
+   exactly half each until the news from the far edge arrives (an exact pairing), and about half after.
+2. **The Hydra culls fairly, then in stairs.** Exactly half the heads go each tick until step W − 1. Then come
+   plateaus and cliffs that are not chance and not shared near-wall states. Starts that pass together share their
+   far bits: the plateaus belong to the eternal rows.
+3. **Champions are many styles.** They never nest, at any width where the record rises, and use every possible
+   near-wall shape.
+4. **The diagonals.**
+   - Every right diagonal of the seed repeats from the start (D_4 has period 8).
+   - The left crystal covers the centre for about 20 steps and then falls behind.
+   - In diagonal coordinates the rule is Rule 30 on the left and its mirror Rule 86 on the right.
+   - Two left diagonals are coordinates (they carry anything), and a single right diagonal has a grammar (never
+     00100).
+5. **The clock has one periodic home.** Of 126 small repeating seas, only the checkerboard keeps the clock, for a
+   known reason, and white-sea champions do not imitate it.
+6. **Known results, reproved.** No block zoom of Rule 30 to N = 4; the seed's two infinite parents.
+
+Five predictions were refuted outright: P-F2, P-F3, P-L1, P-L3 and P-H2. P-F1, P-E3, P-S1 and P-L2 were refuted in
+part. All are kept above. One control (P-R2) had a bug that was caught and rerun.

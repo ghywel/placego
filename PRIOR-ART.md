@@ -4939,3 +4939,25 @@ same fresh-coin argument. The Manzoni–Mariot–Menara no-boundary convention i
   every depth)**: our backward ocean's periods 1, 3, 3, 6 are this cascade seen from the two-sided finite row; Quint's Lean
   statements precede ours by a day. Our root structure (unique finite parent, depth, counts: R30-20261030-803bc4) and the 3 x 2^e
   family at every depth (GC2272, solo sketch) are not in his headlines. Added by Cloud, 2026-10-31 (CL668).
+
+## L1257 — Rule 30 has no block coarse-graining to N = 4: known, reproved here (31 October 2026)
+
+Israeli, N. and Goldenfeld, N., "Coarse-graining of cellular automata, emergence, and the predictability of complex
+systems", Phys. Rev. E 73 (2006), arXiv nlin/0508033 (read via ar5iv for this sentence): "The 16 elementary CA which we
+could not coarse-grain are rules 30, 45, 106, 154 and their symmetries." Song, Z. and Aaron, J., "An improved
+algorithm for coarse-graining cellular automata", arXiv 2012.12153 (read via ar5iv): 20 elementary CA have no
+coarse-graining up to supercell size 7, the 16 plus the classes [37, 91] and [164, 218]. The summary seen did not list
+the 16 by name.
+
+Reproved here (`tests/probes/inquisition_coarse_grain.py`, 3ccf5fe9, output a542b5c3): for N = 2, 3, 4, no
+non-constant P from N-cell blocks to one bit gives P(F^N(abc)) = g(P(a), P(b), P(c)) for any elementary g, for Rules
+30, 86, 135 and 149. Exhaustive over all 2^(2^N) projections. The controls, Rules 90 and 150 at N = 2, each have six,
+including the first-cell projection onto themselves. Local first dropped this test as "already known". The owner
+corrected that ("Already known is well worth proving"), and the result is now reproved rather than assumed. The scope
+is the one-bit, time-N definition only. Targets with more colours, or other time scales, are not covered here or, as
+far as the summaries show, in those papers.
+
+Also searched for T-S (the trace grammar by direction): Milnor 1988 (directional entropy), Sablik (directional
+dynamics; Rule 30 has no expansive direction), Kopra 2023 (rapid left expansivity), Guillon and Zinoviadis
+(diagonal determinism, arXiv 1204.0949, not read). No count of Rule 30's single right-diagonal language and no
+forbidden word 00100 was found; prior art is possible.
