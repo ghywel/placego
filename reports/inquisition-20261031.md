@@ -1478,7 +1478,16 @@ unjustified. All of these are self-checks under AGENTS.md §4, because they are 
       windowed form was also checked.
     - L′ ≥ 20 already prevents two-sided clipping (25 is conservative).
     - (R)'s hypothesis should name the r = 7 reference E_j(t) = e(t + 2j + 7).
-  - **Code, independent and definitions lenses:** [pending at the time of writing].
+  - **Independent lens: not refuted, no fatal issue.** It wrote its own encoder from PR69's definitions and rechecked
+    the rigidity at K = 32..62 with SAT (556 agreeing UNSAT verdicts) and a solver-free exact transfer-set
+    computation over the 2^16 column states. Both agree cell for cell. The rigidity also holds directly at
+    K = 14..30 and K = 1200..3008, and the bound is tight: ticks L′ − 4..L′ − 1 are free. It also gave a proof of (R)
+    for every K that does not use the 80 systems. The forward and backward transfer sets become periodic, with
+    period 8 in t, after 9 to 11 ticks, so the targets meet the same finite set of pairs in each class K mod 12.
+    It enumerated every target of every K = 32..1000 in both residues: exactly 40 (phase, left, right) triples times
+    two depths, matching the 80 systems. Its wording points are the logic lens's, plus one: counted over the 8
+    classes, the maximiser counts are 1, 2, 3, not 4, 8, 12.
+  - **Code and definitions lenses:** [pending at the time of writing].
 
 ### Prior art
 
