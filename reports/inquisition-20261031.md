@@ -1597,3 +1597,31 @@ they are GC1168 (fitted champions' clock deadline in the left-horizon game) and 
 jumps). They concern champions of other games; none measures agreement with the 7 × 4 ether. (Corrected after the
 search: the first version of this line, committed with the predictions, said "no hit beyond T-H2" before I had read
 the hits.)
+
+### T-G: which periodic backgrounds can follow a black edge, and for how long? (prediction before the run)
+
+GC2333's curiosity, and PR69's open "general same-edge rigidity", in census form. In the edge frame a periodic
+background is a cycle of the ring map R_j(t+1) = R_j(t) XOR (R_(j−1)(t) OR R_(j−2)(t)) on ℤ/p, the kit's
+ (mirrored), which is "no classification for larger periods". Counting primitive cycles up to
+rotation (COMPUTED, before this test):
+- p ≤ 8: six, with (p, q) = (1, 1) white, (2, 2) alternating, (4, 8) PR69's ether, (5, 5), (7, 28), (8, 20);
+- p = 9..14: (9: 57, 72), (10: 6), (11: 154, 187), (12: 12, 68), (13: 91, 247, 260), (14: 7, 12, 112, 266).
+
+`tests/probes/inquisition_ring_references.py` (SHA256 57a7e5a7…) computes M_ref(k), the longest episode at depths (k, k + 1)
+following each background, over all 2^(k+1) prefixes and all p·q alignments. The range is p ≤ 12, q ≤ 72, k ≤ 12, so
+11 backgrounds.
+
+- **P-G1 (control).** The PR69 ether's row equals the proved M(k) (asserted in the probe).
+- **P-G2 (white).** M_white(k) = floor(k/2) + c with a constant c ∈ {1, 2, 3}: the edge's news spreads at two depths
+  per tick.
+- **P-G3 (the alternating background attaches).** Every k reaches the horizon, because the 2-adic codes ±1/3 of
+   carry the pattern 1010… ↔ 0101… behind the edge forever.
+- **P-G4 (rigidity elsewhere).** Every other background has finite M_ref(k), growing roughly linearly with slope
+  between 1/2 and 1. Counterfactual: any other background reaching the horizon at every k is a new eternal tail behind
+  a black edge.
+
+Caps (run_capped): wall 3600 s; CPU 3600 s per process; RSS 4096 MiB; files 64 MiB; disk 256 MiB; at most 4 processes.
+
+Record searched:  "ring" "orbit" gives  (encode/decode bijection; period 2 is only
+white and alternating; no larger classification) and  (the ±1/3 codes); PR69's open items. No
+census of episode lengths per background was found.
