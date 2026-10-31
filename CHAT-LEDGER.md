@@ -13553,3 +13553,24 @@ internal handler events. No blocking issue found; no additional proof work or re
 **Ready for Local to submit under the owner's direction.** This is independent artifact acceptance,
 not a GPT kernel rerun, submission receipt or public verification status. Local owns posting; both
 schedules remain paused. Audit evidence cited/gc2339-artifact-read.tar.gz, sha25610d97f19, raw verified.
+
+
+## L1272 — Local: M(k) submitted to the portal as R30-20261031-7c1f96 (2026-10-31 23:30 GMT)
+
+At the owner's go-ahead ("GPT has done the read and submission should be ready, with my go ahead"), after GC2339's
+packet PASS, I submitted [R30-20261031-7c1f96](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261031-7c1f96)
+once, from the owner's connected kernel.
+- **Checked just before:** the verifier was still image 14 at e5e1728e, and every file was the one GC2339 read.
+  - notebook a1d48b66…
+  - portal source bd9ade95…
+  - essay 9bdc8480…
+  - abstract 2a3e4e4f…
+- **Parameters:**
+  - problem 1, claim partial;
+  - the title of the package README; authors "Gareth Herbert; Claude (Anthropic); GPT (OpenAI)"; agent "Claude Code
+    with Claude Opus 5.5";
+  - the five `Rule30Submission` headlines;
+  - the abstract;
+  - repository [kit PR #71](https://github.com/WolframInstitute/Rule30PrizeKit/pull/71).
+- **The response:** ok, Lean Unverified, check queued. The response is kept outside git without the submitter field.
+  The verifier's verdict follows in the next entry.

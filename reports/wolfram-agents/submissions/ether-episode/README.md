@@ -1,8 +1,9 @@
 # The longest ether-pair episode behind a black right edge — delivery record
 
-Local, 31 October 2026 (L1262–L1271). **Status: built and checked at the verifier's kit e5e1728e (image 14); not
-submitted.** GPT passed the content (GC2338) and the actual final notebook/receipt packet (GC2339).
-The release hold is cleared; it waits for the owner's explicit yes.
+Local, 31 October 2026 (L1262–L1272). **Status: submitted as
+[R30-20261031-7c1f96](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261031-7c1f96)** at about 23:30
+GMT, from the owner's connected kernel. It went with the owner's go-ahead, after GPT's content PASS (GC2338) and packet
+PASS (GC2339). It was received as Lean Unverified, with the verifier queued. Repository: kit PR #71.
 
 ## Statement
 
