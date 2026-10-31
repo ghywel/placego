@@ -3,7 +3,8 @@
 length floor(2k/3)+4 exists at any depth k = 0 or 2 (mod 6), k >= 1, behind a black edge (PR69 edge frame), for any
 row and any phase. It is an induction on six-depth slabs whose invariant is the exact episode itself.
 
-RUN-ON:     cpu (Python 3 + numpy + kissat and cadical), about 10 seconds
+RUN-ON:     cpu (Python 3 + numpy + kissat and cadical), about 10 seconds; every check is an explicit require(), so
+            python3 -O does not remove it (L1259 hardening after the code lens)
 COMMAND:    python3 tests/probes/ether_six_depth_descent_certificate.py
 
 Provenance (L1259): written by a sub-agent of Local in the round-5 proof workflow (route "alternative certificate")
@@ -49,6 +50,15 @@ import tempfile
 import numpy as np
 
 WORDS = (43, 202, 178, 172)
+
+
+class CheckFailed(Exception):
+    """A certificate check failed. Explicit, so the checks also run under python3 -O (no assert statements)."""
+
+
+def require(cond, msg=''):
+    if not cond:
+        raise CheckFailed(msg)
 E8 = [(43 >> s) & 1 for s in range(8)]
 INSTANCES = [(0, 10), (1, 6), (2, 6), (3, 5), (4, 5), (5, 4), (6, 4)]     # (s, look-ahead b); window 0..s+b
 DEPTH = 6
@@ -65,15 +75,15 @@ def ether(i, t):
 def check_ground():
     for i in range(4):
         for t in range(8):
-            assert ether(i, t) == E8[(t + 2 * i) % 8]
-            assert ether(i, t + 1) == ether(i, t) ^ (ether(i + 3, t) | ether(i + 2, t))       # PR69 ether_step
-            assert ether(i + 2, t + 4) == ether(i, t)                                         # glide
+            require(ether(i, t) == E8[(t + 2 * i) % 8])
+            require(ether(i, t + 1) == ether(i, t) ^ (ether(i + 3, t) | ether(i + 2, t)))       # PR69 ether_step
+            require(ether(i + 2, t + 4) == ether(i, t))                                         # glide
     for c in range(8):
         for j in range(-12, 12):
             for t in range(16):
                 E = lambda jj, tt: E8[(tt + 2 * jj + c) % 8]
-                assert E(j, t + 1) == E(j, t) ^ (E(j - 1, t) | E(j - 2, t))                   # ether solves the recurrence
-                assert E(j + 6, t + 4) == E(j, t) and E(j + 3, t + 2) == E(j, t)             # (6,4) and (3,2) symmetries
+                require(E(j, t + 1) == E(j, t) ^ (E(j - 1, t) | E(j - 2, t)))                   # ether solves the recurrence
+                require(E(j + 6, t + 4) == E(j, t) and E(j + 3, t + 2) == E(j, t))             # (6,4) and (3,2) symmetries
     # G0: edge model = generic model on initial states ...0 0 1 x_1 x_2 ...
     rng = random.Random(20261031)
     for _ in range(300):
@@ -84,7 +94,7 @@ def check_ground():
         gen.update({j: edge[j] for j in range(n + 1)})
         for t in range(20):
             for j in range(n + 1):
-                assert gen[j] == edge[j]
+                require(gen[j] == edge[j])
             ne = edge[:]
             ne[1] = 1 - edge[1]
             for j in range(2, n + 1):
@@ -106,7 +116,7 @@ def check_ground():
             for t in range(tt):
                 X = {j: X[j] ^ (X[j - 1] | X[j - 2]) for j in X if (j - 1) in X and (j - 2) in X}
             vals.append(X[jj])
-        assert vals[0] == vals[1]
+        require(vals[0] == vals[1])
     print("G: ether identities, (6,4)/(3,2) symmetries, edge = generic on ...001x (300 rows x 20 ticks), light cone: PASS")
 
 
@@ -176,7 +186,7 @@ def sat_solve(nv, cl, solver):
         p = subprocess.run([solver, '-q', '-n', path], capture_output=True, text=True)
     finally:
         os.remove(path)
-    assert p.returncode in (10, 20), (solver, p.returncode, p.stderr[-300:])
+    require(p.returncode in (10, 20), (solver, p.returncode, p.stderr[-300:]))
     return p.returncode == 10
 
 
@@ -213,18 +223,18 @@ def check_windows():
         for cp in range(8):
             pv, pn = check_packed(cp, s, b)
             uv, un = check_unpacked(cp, s, b)
-            assert pn == un, "checkers disagree on the number of exact-top assignments"
-            assert not check_sat(cp, s, b, 'kissat') and not check_sat(cp, s, b, 'cadical'), "SAT finds a violation"
+            require(pn == un, "checkers disagree on the number of exact-top assignments")
+            require(not check_sat(cp, s, b, 'kissat') and not check_sat(cp, s, b, 'cadical'), "SAT finds a violation")
             packed.append(pv)
             unpacked.append(uv)
             nsol.append(pn)
             total += 1
-        assert not any(packed) and not any(unpacked), f"window instance (s={s}, b={b}) FAILS"
+        require(not any(packed) and not any(unpacked), f"window instance (s={s}, b={b}) FAILS")
         # control: one tick less look-ahead fails for some phase (all three checkers must see it)
         ctrl = [check_packed(cp, s, b - 1)[0] for cp in range(8)]
         ctrl_u = [check_unpacked(cp, s, b - 1)[0] for cp in range(8)]
         ctrl_s = [check_sat(cp, s, b - 1, 'kissat') for cp in range(8)]
-        assert ctrl == ctrl_u and [c > 0 for c in ctrl] == ctrl_s and any(ctrl), "control failed"
+        require(ctrl == ctrl_u and [c > 0 for c in ctrl] == ctrl_s and any(ctrl), "control failed")
         print(f"W(s={s}, b={b}): window 0..{s + b}, {2 - min(-2 * (s + b), -6 - 2 * s)} digits; violations 0 in all 8 "
               f"phases (packed, unpacked, kissat, cadical); exact-top assignments per phase {nsol}; "
               f"control b={b - 1}: violations {ctrl}", flush=True)
@@ -273,7 +283,7 @@ def M_exhaustive(k):
                 alive &= (a[t] == ether(i, t + q)) & (bb[t] == ether(i + 1, t + q))
                 run += alive
             best = max(best, int(run.max()))
-    assert best < H
+    require(best < H)
     return best
 
 
@@ -301,13 +311,13 @@ def check_base():
     table = {k: M_exhaustive(k) for k in range(1, 9)}
     print(f"B: exhaustive M(k), k = 1..8 (all 2^(k+1) prefixes, all 32 phases): {[table[k] for k in range(1, 9)]}")
     for k in range(1, 9):
-        assert table[k] == Lw(k), (k, table[k], Lw(k))
+        require(table[k] == Lw(k), (k, table[k], Lw(k)))
     for k in (2, 6, 8):
         m = (2 * k) // 3
-        assert table[k] == m + 3
+        require(table[k] == m + 3)
         for solver in ('kissat', 'cadical'):
-            assert not any(edge_sat(k, m + 4, i, q, solver) for i in range(4) for q in range(8))
-            assert any(edge_sat(k, m + 3, i, q, solver) for i in range(4) for q in range(8))
+            require(not any(edge_sat(k, m + 4, i, q, solver) for i in range(4) for q in range(8)))
+            require(any(edge_sat(k, m + 3, i, q, solver) for i in range(4) for q in range(8)))
     print("B: M(k) = L_w(k) for k = 1..8; at k = 2, 6, 8 no episode of length m+4 (exhaustive; kissat and cadical "
           "UNSAT in all 32 phases, m+3 SAT): PASS")
 
@@ -317,11 +327,11 @@ def check_induction(KMAX=100000):
     m = lambda k: (2 * k) // 3
     for k in range(12, KMAX):
         if k % 6 in (0, 2):
-            assert m(k) == m(k - 6) + 4 and m(k) + 4 >= 11
+            require(m(k) == m(k - 6) + 4 and m(k) + 4 >= 11)
     for k in range(9, KMAX):
-        assert Lw(k) == Lw(k - 6) + 4 and Lw(k) + 1 >= 11
-        assert Lw(k) == m(k) + 4 - (1 if k % 6 in (0, 2) else 0)
-    assert all(Lw(k) == m(k) + 4 - (1 if k % 6 in (0, 2) else 0) for k in range(1, 9))
+        require(Lw(k) == Lw(k - 6) + 4 and Lw(k) + 1 >= 11)
+        require(Lw(k) == m(k) + 4 - (1 if k % 6 in (0, 2) else 0))
+    require(all(Lw(k) == m(k) + 4 - (1 if k % 6 in (0, 2) else 0) for k in range(1, 9)))
     print(f"I: for 12 <= k < {KMAX}, k = 0,2 mod 6: m(k) = m(k-6)+4 and m(k)+4 >= 11 (the descent applies); "
           f"for 9 <= k: L_w(k) = L_w(k-6)+4, L_w(k)+1 >= 11, L_w = m+4-[k=0,2 mod 6]: PASS")
 

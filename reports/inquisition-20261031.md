@@ -1500,7 +1500,24 @@ unjustified. All of these are self-checks under AGENTS.md §4, because they are 
     should read k ≥ 2, since M(0) = 2. I leave the file unchanged so its cited digests stay valid. NOW.md's "solved"
     is now "has a proof". Its exhaustive side check (k ≤ 18) agrees that the witness is the unique optimum at
     phase 7.
-  - **Code lens:** [pending at the time of writing].
+  - **Code lens: not refuted, no fatal issue.** It audited every clause, convention, loop and the LRAT checker. It
+    fuzzed the checker (24 crafted attacks, about 3.3 million random steps; no unimplied lemma accepted, no
+    satisfiable replay accepted), and re-refuted all 254 systems three ways, including drat-trim. Its substantive
+    point was right. **Every check in `ether_rigidity_certificate.py` was an `assert`.** Under `python3 -O` the
+    abstract stage silently did not run and the script still printed PASS; only "PROOFS: 174" instead of 254 gave
+    it away. The recorded runs used plain `python3` and their 254 count shows every check ran, so no result changes.
+    But a certificate must not depend on that. Its other points: the dropped-hint control tested a single mutant, the
+    non-vacuity control was trivially satisfiable, and two facts true for every K were checked only on finite ranges
+    (the algebra is now in the docstring). The rest is wording, matching the other lenses.
+
+**Hardening after the code lens (prediction before the rerun).** Every `assert` in `ether_rigidity_certificate.py`
+(now SHA256 af0b4d00…) and in `ether_six_depth_descent_certificate.py` (now 267efc47…) is an explicit `require()`, rewritten
+mechanically from the parse tree with the conditions and messages unchanged. The rigidity certificate adds two
+controls on every one of its 254 refutations. The system with the target unit negated must be satisfiable (the
+ether is a model), and the LRAT proof replayed on it must be rejected.
+- **P-H1.** Both certificates pass, with output unchanged apart from the new PROOFS line.
+- **P-H2.** Under `python3 -O` both still run every check: 254 proofs and 254 rejected replays.
+
 
 ### Prior art
 

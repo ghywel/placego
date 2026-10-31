@@ -33,8 +33,14 @@ Checks:
      m(K)+4-4 = m(K-6)+4 is checked.
   6. PROOFS: every UNSAT claimed in 3 and 4 also has a cadical LRAT proof checked by lrat_check() below, a short
      independent checker (unit propagation along the hints; fails on any RAT step, satisfied hint or missing
-     conflict, and requires the empty clause). Its controls: a corrupted proof (one hint dropped from a step
-     that needs it) is rejected, and so is a proof replayed against a different CNF.
+     conflict, and requires the empty clause). Controls: for EVERY such system the unflipped variant (target unit
+     negated, the ether a model) is SAT and its replayed proof is rejected; a proof with a dropped hint and a proof
+     for a different CNF are rejected. Every check is an explicit require(), so python3 -O does not remove it
+     (L1259 hardening after the code lens; before it the checks were assert statements).
+  The end phases hold for every K by algebra (K = 6a: phiR = 16a+10 = 2; K = 6a+2: phiR = 16a+15 = 7; phi0 = 2K+7 is
+  7 or 3 for even K; m(K) - 4 = m(K-6)); the code checks them for K < 400. The abstract systems are identical to the
+  concrete ones, with the same variable numbering (checked here at ten targets, and by the code lens at all 4,254
+  targets with K <= 140).
 """
 import itertools
 import os
@@ -46,6 +52,15 @@ import numpy as np
 
 E8 = (1, 1, 0, 1, 0, 1, 0, 0)
 WORDS = (43, 202, 178, 172)
+
+
+class CheckFailed(Exception):
+    """A certificate check failed. Explicit, so the checks also run under python3 -O (no assert statements)."""
+
+
+def require(cond, msg=''):
+    if not cond:
+        raise CheckFailed(msg)
 W, B = 10, 8
 WORK = tempfile.mkdtemp(prefix='rigcert-', dir=os.environ.get('CAPPED_OUT', os.getcwd()))
 
@@ -62,7 +77,7 @@ def solve(solver, nv, cl):
         p = subprocess.run([solver, '-q', '-n', path], capture_output=True, text=True)
     finally:
         os.remove(path)
-    assert p.returncode in (10, 20), (solver, p.returncode)
+    require(p.returncode in (10, 20), (solver, p.returncode))
     return p.returncode == 10
 
 
@@ -74,7 +89,7 @@ def lrat_proof(nv, cl):
     proof = path + '.lrat'
     try:
         p = subprocess.run(['cadical', '-q', '--lrat=true', '--no-binary', path, proof], capture_output=True, text=True)
-        assert p.returncode == 20, ('cadical did not report UNSAT', p.returncode)
+        require(p.returncode == 20, ('cadical did not report UNSAT', p.returncode))
         with open(proof) as f:
             lines = f.read().split('\n')
     finally:
@@ -97,7 +112,7 @@ def lrat_check(cl, lines):
             continue
         z = tok.index(0, 1)
         lits, hints = tok[1:z], tok[z + 1:-1]
-        assert tok[-1] == 0 and all(h > 0 for h in hints), "RAT step or malformed line"
+        require(tok[-1] == 0 and all(h > 0 for h in hints), "RAT step or malformed line")
         val = {}
         for l in lits:
             val[abs(l)] = (l < 0)            # the lemma's literals are made false
@@ -110,30 +125,45 @@ def lrat_check(cl, lines):
                 if v is None:
                     und.append(l)
                 elif v == (l > 0):
-                    raise AssertionError("hint already satisfied")
+                    raise CheckFailed("hint already satisfied")
             if not und:
                 conflict = True
                 break
-            assert len(und) == 1, "hint not unit"
+            require(len(und) == 1, "hint not unit")
             val[abs(und[0])] = und[0] > 0
-        assert conflict, "no conflict along the hints"
+        require(conflict, "no conflict along the hints")
         db[cid] = lits
         if not lits:
             empty = True
             break
-    assert empty, "empty clause not derived"
+    require(empty, "empty clause not derived")
     return True
 
 
 N_PROOFS = [0]
 
 
+N_REPLAYS = [0]
+
+
 def certified_unsat(nv, cl):
-    """UNSAT by kissat and cadical, and cadical's LRAT proof checked here."""
+    """UNSAT by kissat and cadical, and cadical's LRAT proof checked here. Controls on every call: the same system
+    with the target unit (always the last clause) replaced by its negation is satisfiable (the ether is a model), and
+    the proof replayed against that satisfiable system is rejected by the checker."""
     if solve('kissat', nv, cl) or solve('cadical', nv, cl):
         return False
-    lrat_check(cl, lrat_proof(nv, cl))
+    proof = lrat_proof(nv, cl)
+    lrat_check(cl, proof)
     N_PROOFS[0] += 1
+    sat_variant = cl[:-1] + [[-x for x in cl[-1]]]
+    require(len(cl[-1]) == 1 and solve('kissat', nv, sat_variant), "unflipped system not satisfiable")
+    try:
+        lrat_check(sat_variant, proof)
+        accepted = True
+    except (CheckFailed, KeyError):
+        accepted = False
+    require(not accepted, "LRAT checker accepted a proof for a satisfiable system")
+    N_REPLAYS[0] += 1
     return True
 
 
@@ -146,7 +176,7 @@ def tree_check(nmax=300):
     for n in range(1, nmax + 1):
         F.append([max(d + F[n - 1][(h + 2 + d) % 8] for d in D[h]) for h in range(8)])
     n0 = next(n for n in range(1, nmax - 3) if all(F[n + 3][h] == F[n][h] + 2 for h in range(8)))
-    assert all(F[n + 3][h] == F[n][h] + 2 for n in range(n0, nmax - 3) for h in range(8))
+    require(all(F[n + 3][h] == F[n][h] + 2 for n in range(n0, nmax - 3) for h in range(8)))
     worst = {}
     for k in range(1, nmax + 1):
         if k % 6 not in (0, 2):
@@ -156,9 +186,9 @@ def tree_check(nmax=300):
             need = best - m(k)
             worst[r] = max(worst.get(r, -99), need)
             if r == 7:
-                assert need == 4, (k, r, need)
+                require(need == 4, (k, r, need))
             else:
-                assert need <= 3, (k, r, need)
+                require(need <= 3, (k, r, need))
     print(f"TREE: F(h, n+3) = F(h, n) + 2 for all h from n0 = {n0} (so for all larger n by the recursion);"
           f" for k = 0, 2 mod 6 up to {nmax}, delay + max offset - m(k) by edge phase r: "
           f"{dict(sorted(worst.items()))}  -> r != 7 fits in m+4 ticks, r = 7 needs m+5")
@@ -195,7 +225,7 @@ def exhaustive_M(k):
                 alive &= (a[t] == ether(i, t + q)) & (b[t] == ether(i + 1, t + q))
                 run += alive
             best = max(best, int(run.max()))
-    assert best < H
+    require(best < H)
     return best
 
 
@@ -244,7 +274,7 @@ def concrete_csp(K, Lp, jj, t, top=True):
 
 def both_unsat(nv, cl):
     k, c = solve('kissat', nv, cl), solve('cadical', nv, cl)
-    assert k == c, "solvers disagree"
+    require(k == c, "solvers disagree")
     return not k
 
 
@@ -274,29 +304,29 @@ def main():
     tree_check()
 
     base = {k: exhaustive_M(k) for k in (2, 6, 8, 12)}
-    assert base == {2: 4, 6: 7, 8: 8, 12: 11}, base
-    assert all(base[k] == m(k) + 3 for k in base)
+    require(base == {2: 4, 6: 7, 8: 8, 12: 11}, base)
+    require(all(base[k] == m(k) + 3 for k in base))
     print(f"BASE: exhaustive M(k) = {base} = m(k) + 3")
 
     for K in (14, 18, 20, 24, 26, 30):
         Lp, bad = direct_check(K)
-        assert not bad, (K, bad)
+        require(not bad, (K, bad))
         print(f"DIRECT: K={K} L'={Lp}: X = E forced at depths K-6, K-5 on ticks 0..{Lp - 5} (kissat and cadical)")
 
     n_abs = 0
     for phi in range(8):
         for tg in ('K-6', 'K-5'):
-            assert certified_unsat(*abstract_csp(phi, W, W, tg)), ('interior', phi, tg)
+            require(certified_unsat(*abstract_csp(phi, W, W, tg)), ('interior', phi, tg))
             n_abs += 1
     for phi0 in (7, 3):
         for t in range(W):
             for tg in ('K-6', 'K-5'):
-                assert certified_unsat(*abstract_csp((phi0 + t) % 8, t, W, tg)), ('left', phi0, t, tg)
+                require(certified_unsat(*abstract_csp((phi0 + t) % 8, t, W, tg)), ('left', phi0, t, tg))
                 n_abs += 1
     for phiR in (2, 7):
         for rho in range(4, W):
             for tg in ('K-6', 'K-5'):
-                assert certified_unsat(*abstract_csp((phiR - rho) % 8, W, rho, tg)), ('right', phiR, rho, tg)
+                require(certified_unsat(*abstract_csp((phiR - rho) % 8, W, rho, tg)), ('right', phiR, rho, tg))
                 n_abs += 1
     print(f"ABSTRACT: {n_abs} local CSPs UNSAT under both solvers (interior 16, left end 40, right end 24)")
 
@@ -308,29 +338,29 @@ def main():
             phi = (t + 2 * K + 7) % 8
             nv2, cl2 = abstract_csp(phi, lo, hi, 'K-6' if jj == K - 6 else 'K-5')
             canon = lambda c: sorted(tuple(sorted(x)) for x in c)
-            assert nv == nv2 and canon(cl) == canon(cl2), ("abstract != concrete", K, jj, t)
+            require(nv == nv2 and canon(cl) == canon(cl2), ("abstract != concrete", K, jj, t))
     print("CONTROL: abstract CSPs equal the concrete local CSPs at K = 48, 50 (five targets each)")
     for phi in range(8):
         for tg in ('K-6', 'K-5'):
-            assert not both_unsat(*abstract_csp(phi, W, W, tg, top=False)), "vacuous check"
+            require(not both_unsat(*abstract_csp(phi, W, W, tg, top=False)), "vacuous check")
     print("CONTROL: without the top constraint every interior target can be violated (checks are not vacuous)")
     for phiR in (2, 7):
         free = [tg for tg in ('K-6', 'K-5') if not both_unsat(*abstract_csp((phiR - 3) % 8, W, 3, tg))]
-        assert free, ("one tick past the right end is forced too", phiR)
+        require(free, ("one tick past the right end is forced too", phiR))
         print(f"CONTROL: right-end phase {phiR}: at tick L'-4 (one past the claimed end) {free} not forced")
     for K in range(14, 400):
         if K % 6 in (0, 2):
-            assert m(K) + 4 - 4 == m(K - 6) + 4
+            require(m(K) + 4 - 4 == m(K - 6) + 4)
             Lp = m(K) + 4
             if K >= 32:
-                assert Lp >= 2 * W + 5
+                require(Lp >= 2 * W + 5)
             phi0 = (2 * K + 7) % 8
             phiR = (Lp - 1 + 2 * K + 7) % 8
-            assert phi0 in (7, 3) and phiR == (2 if K % 6 == 0 else 7)
+            require(phi0 in (7, 3) and phiR == (2 if K % 6 == 0 else 7))
     print("CONTROL: arithmetic of the step and the end phases checked for K < 400")
     nv, cl = abstract_csp(0, W, W, 'K-6')
     lines = lrat_proof(nv, cl)
-    assert lrat_check(cl, lines)
+    require(lrat_check(cl, lines))
     rejected = 0
     for idx, ln in enumerate(lines):
         tok = ln.split()
@@ -343,18 +373,19 @@ def main():
         bad = lines[:idx] + [' '.join(tok[:z + 1] + hints[:-1] + ['0'])] + lines[idx + 1:]
         try:
             lrat_check(cl, bad)
-        except (AssertionError, KeyError):
+        except (CheckFailed, KeyError):
             rejected += 1
             break
-    assert rejected == 1, "a corrupted proof was accepted"
+    require(rejected == 1, "a corrupted proof was accepted")
     nv2, cl2 = abstract_csp(1, W, W, 'K-6')
     try:
         lrat_check(cl2, lines)
         raise SystemExit("proof accepted for a different CNF")
-    except (AssertionError, KeyError):
+    except (CheckFailed, KeyError):
         pass
     print(f"CONTROL: the LRAT checker rejects a proof with a dropped hint and a proof for a different CNF")
-    print(f"PROOFS: {N_PROOFS[0]} LRAT refutations checked (DIRECT and ABSTRACT)")
+    print(f"PROOFS: {N_PROOFS[0]} LRAT refutations checked (DIRECT and ABSTRACT); for each, the unflipped system is "
+          f"SAT and the proof replayed on it is rejected ({N_REPLAYS[0]} replays)")
     os.rmdir(WORK)
     print("RIGIDITY_CERTIFICATE_PASS")
 
