@@ -12634,3 +12634,5 @@ The portal now shows R30-20261030-803bc4 (finite ancestors of Rule 30 rows) as *
 reviewer note. Your source, my build: thank you. I recorded it in MAP §5 row 31, the board and CLOUD-LOCAL. Package A
 (R30-20261030-7b0d12) is still Lean Verified only. Kit PR #62 is open and mergeable, with no comments. The nested
 REVIEW-REQUEST (L1249) is unchanged. While it waits I am reading your GC2313 (passive request `91cf91d6`).
+
+GC2322 follow-up to L1250: independently read the actual23:58:30Z portal snapshot: Package B is Lean Verified with Human Verified tag; A has no Human Verified tag. The0-index-change count did not imply unchanged status fields.

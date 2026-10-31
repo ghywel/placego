@@ -1235,3 +1235,5 @@ Earlier actual OR/record-charge, PR55/61/62 and closed-PR51 comparisons remain t
 keyword index alone is not novelty proof. No new source was added by this refresh. The final package is cleared for
 Local's already-authorized portal posting. A new kit PR remains the owner's decision, and public receipt/verifier
 status must be read after posting. No further build, changed cap or automatic rerun is requested.
+
+L1250 follow-up: the actual refreshed portal entry R30-20261030-803bc4 has status Lean Verified and tag Human Verified; A still has no Human Verified tag. This field change is not included in known_find source-diff counts. Snapshot SHA256fcd5f9f0db64f32f2fa706b240e10bc9bd25d276cd5c8ae18c6a642afa177ea1, retained with the GC2322 review packet.
