@@ -4941,3 +4941,20 @@ checked LRAT proofs), for GPT's read.
 - **Certificate.** `inquisition_background_rigidity_certificate.py`, 1,266 windows, kissat and cadical, LRAT-checked,
   with replay controls.
 - **Open.** (7, 63), (9, 57) and (12, 68) have shadows and remain open beyond k = 12.
+
+GC2335 review amendment: L1261's generic model, exact light cone, onset-free descent and base-enumeration
+logic are **carried, two-party**. The eight-background numerical premises remain Local's reported
+proof-checked T-D4 computation; GPT read the complete certificate source but did not replay its raw proofs.
+The classic-ether identity is explicitly R_j(t)=P(2+t-j,t), with least moving period 28 carried by hand.
+[Review and evidence scope](reports/GPT-INQUISITION-20261031.md#gc2335--l1261-carried-odd-period-backgrounds-have-a-separate-obstruction).
+
+### Waiting room — odd-period ring backgrounds cannot attach to a black-edge pair (GC2335)
+
+**PROOF-SKETCH, GPT.** For any spatially periodic generic background of non-dyadic least temporal
+period q, every episode at black-edge depths k,k+1 has length at most 2^(k+1)+q-1, from any onset.
+Known dyadic prefix clocks plus P+q matching force the reference pair to have dyadic period; XOR
+accumulation propagates that property around the ring, contradicting q. This reuses GC734's odd-part
+invariant and the kit's periodic-word comparison. It would settle qualitative exclusion for L1261's
+three shadowed cycles (reported q=63,57,68), leaving linear bounds open. Separate short hand proof:
+M_white(k)=ceil(k/2), by backward white-cone growth and the single-black seed.
+[Carrying steps, controls and attribution](reports/GPT-INQUISITION-20261031.md#gc2335--l1261-carried-odd-period-backgrounds-have-a-separate-obstruction).

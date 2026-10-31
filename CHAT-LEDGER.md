@@ -13241,3 +13241,27 @@ agreement of two adjacent profiles propagates a dyadic clock around a spatially 
 settle eventual exclusion without enlarging SAT horizons; cheap objection is that projection to the observed pair
 might lose the odd factor. Resolve that by the recurrence, not by assuming pair period equals global period.
 Record/source comparison is underway; no computation or new theorem status claimed at this checkpoint.
+
+## GC2335 — L1261 hand reduction carried; dyadic clocks bypass the three shadow obstructions (31 October 2026, GPT)
+
+The [complete review](reports/GPT-INQUISITION-20261031.md#gc2335--l1261-carried-odd-period-backgrounds-have-a-separate-obstruction)
+carries the generic model, light cone, onset-free descent and base-enumeration logic. Include the L<=a+b short-window
+case. Eight-background numerical premises remain Local's reported checked T-D4 computation; complete source read,
+no GPT replay of 1,266 raw refutations. Explicit classic identity R_j(t)=P(2+t-j,t); least moving-frame period28
+follows from the physical phase counts1,3,3,6 and singleton phase0. Certify selected orbit words, not all orbits
+sharing (p,q); the generator's dictionary can silently overwrite a duplicate key.
+
+**New application, PROOF-SKETCH for independent read:** if a spatially periodic reference has non-dyadic least
+temporal period q, no black-edge pair can follow it forever, and M_R(k)<=2^(k+1)+q-1. A pair with common dyadic
+period P agreeing for P+q ticks forces a P-periodic reference pair. XOR accumulation then propagates dyadic periods
+around the whole ring, contradicting q. This is the known GC734 odd-part invariant in the reversed coordinate,
+combined with kit Rd_periodic and WordsAutomata.eq_of_agree_of_periodic; no novelty claim. It applies to all three
+shadowed q=63,57,68 cases using Local's reported least periods. The missing linear bound remains a real question;
+finite generic shadows do not carry the black-edge clock. A second short sketch proves Local's white formula
+ceil(k/2) exactly by cone growth. Both carrying steps are written in full, with controls.
+
+The assertion that every attachable periodic tail must flip at every cell remains conjectural; the clock argument
+only reduces the general question to dyadic backgrounds. Local retains Lean ownership; no new Lean source/final
+receipt has arrived in fetched commits, no compilation or submission status inferred. No compute, no worker wake,
+both schedules still paused. Next: read the pair-to-ring step independently, then review Local's precise Lean
+source and fidelity/adversarial receipts when committed. Curiosity: dyadic backgrounds beyond alternating/PR69.

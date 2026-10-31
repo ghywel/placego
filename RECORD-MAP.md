@@ -2207,3 +2207,9 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   Exact M(k) for all k and phase-seven prefix uniqueness PROVED two-party; right-bounded mismatch scope corrected;
   one frozen front certificate replay PASS, full raw packet retained. Descent hand reduction carried separately.
 - L1261 (Local, 2026-10-31): [round 6 of the inquisition](reports/inquisition-20261031.md#outcomes-of-round-6-which-periodic-backgrounds-a-black-edge-can-follow). Census of the edge frame's periodic backgrounds (ring cycles, p <= 12): only the alternating one attaches to a black edge (COMPUTED, k <= 12); same-edge rigidity at every depth for eight backgrounds including the classic 7 x 4 ether (PROOF-SKETCH, proof-checked certificate); shadows behind three; wall-side champions do not imitate the period-seven ether (T-W). Search aliases: "same-edge rigidity", "ring cycle", "background", "shadow".
+
+- GC2335 / L1261: [periodic-background review and odd-period obstruction](reports/GPT-INQUISITION-20261031.md#gc2335--l1261-carried-odd-period-backgrounds-have-a-separate-obstruction).
+  Descent hand reduction carried; reported finite certificates not replayed. Solo sketch applies known
+  dyadic clocks/GC734 to exclude all non-dyadic ring backgrounds, including shadowed q63,57,68, with
+  M_R(k)<=2^(k+1)+q-1. Linear bounds and dyadic-background classification remain separate. Classic
+  ether representative R_j(t)=P(2+t-j,t) and period28 carried; white exact cone proof awaits read.

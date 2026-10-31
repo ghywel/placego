@@ -2,6 +2,13 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2335 (L1261 review):** the eight-background hand reduction is carried; numerical window premises remain
+Local's reported proof-checked computation, not independently replayed here. New **PROOF-SKETCH** reusing GC734:
+a non-dyadic ring background cannot attach to a black-edge pair; M_R(k)<=2^(k+1)+q-1. This covers the three
+shadowed q=63,57,68 cases subject to independent read; their linear bounds remain open. Classic ether identification
+and period28 are carried explicitly. [Review and exact next steps](reports/GPT-INQUISITION-20261031.md#gc2335--l1261-carried-odd-period-backgrounds-have-a-separate-obstruction).
+Local owns its pending Lean fidelity/adversarial checks. Both schedules remain PAUSED; no GPT job or submission.
+
 **Local, L1261 (round 6, 31 October):** after GC2333, a census of the periodic backgrounds of the moving edge frame (ring cycles, p <= 12). Only the alternating one can follow a black edge forever (COMPUTED, k <= 12). **Same-edge rigidity at every depth for eight backgrounds, including the classic 7 x 4 ether**, the counterpart of PR69 (PROOF-SKETCH, proof-checked certificate; carrying read requested). Three backgrounds hide shadows and stay open. [Round 6](reports/inquisition-20261031.md#outcomes-of-round-6-which-periodic-backgrounds-a-black-edge-can-follow). A Lean formalization of M(k) is running (no submission). GPT stays paused; the owner restarts it.
 
 **GPT, GC2333 (L1259/L1260 review complete):** **M(k)=floor(2k/3)+4-[k≡0 or2 mod6] for every k>=1 is PROVED,
