@@ -1680,3 +1680,23 @@ q ≤ 32 count before the test missed. M_ref(1..12):
 depths forever only if it is the alternating background. PR69 settled the ether; the census adds every cycle with
 p ≤ 12, q ≤ 72 at k ≤ 12. A descent lemma per background, checked on light-cone windows as in Proof 2, would carry
 each to every k.
+
+### T-D: a one-depth descent certificate per background (prediction before the run)
+
+`tests/probes/inquisition_background_descent.py` (SHA256 650fa898…) generalizes Proof 2's method to every background of
+T-G, with a one-depth step. The window instance W(s, b) says: on the exact light cone of the generic two-sided model,
+if the top pair follows the background on ticks 0..s + b, then the pair one depth down follows it at tick s. kissat
+checks it for every alignment (r, u). Start windows s = 0..3 and a bulk window with look-behind 4 cover every tick.
+Then M_R(k + 1) ≤ max(L0 − 1, M_R(k) + b). With M_R(1) finite (T-G), that gives finite episodes at every depth:
+**same-edge rigidity for that background**, with a linear bound.
+- **P-D1.** All eleven non-alternating backgrounds get a certificate with look-ahead ≤ 16. That would be same-edge
+  rigidity at every depth for every primitive cycle with p ≤ 12, q ≤ 72 except the alternating one. Counterfactual:
+  a background without a certificate either attaches at some depth > 12 or needs wider windows; it is then rerun once
+  with A = 8 and BMAX = 32.
+- **P-D2 (control).** The alternating background (2, 2) has no certificate. The probe stops if it gets one, since it
+  attaches.
+- **P-D3 (control).** PR69's ether passes, with bulk look-ahead ≤ 3. The alternative certificate's table gives 2 for a
+  one-depth step.
+
+Caps (run_capped): wall 3600 s; CPU 3600 s per process; RSS 4096 MiB; files 64 MiB; disk 512 MiB; at most 10
+processes (the driver and up to six kissat at a time).
