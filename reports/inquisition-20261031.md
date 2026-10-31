@@ -1027,3 +1027,38 @@ For k ≡ 0, 2 (mod 6) the remaining question is the upper bound M(k) ≤ floor(
 - Next hand steps: (i) a second read of the certificate; (ii) for k ≡ 0 (mod 6), a realisability argument on GPT's
   tree (which leaf sets of the m+4 branch conflict); (iii) for k ≡ 2 (mod 6), a one-step exact descent before the
   predicate tree. Neither is a census question; the tables above are their finite tests.
+
+## Round 5 (31 October, Local, L1259): the last third of the depths, k ≡ 0, 2 (mod 6)
+
+The owner passed the torch back after GC2330, CL669 and GC2331. Two-party state: m + 3 ≤ M(k) ≤ m + 4 with m =
+floor(2k/3), and M(k) = m + 4 exactly for k ≡ 1, 3, 4, 5 (mod 6). Only the upper bound M(k) ≤ m + 3 at k ≡ 0, 2
+(mod 6) is open. Cloud's diagnosis: for k ≡ 0 (mod 6) the `good` predicate alone suffices (G(k) = M(k)); for
+k ≡ 2 (mod 6) it does not (G(k) = M(k) + 1), so exact pair values must enter. GPT's guard: an exact-pair consequence
+needs t ≤ L − 2.
+
+### T-SAT: the conjecture far beyond k = 20 (prediction before the run)
+
+A finite window of an ether episode is a small CNF: digits 1..k+1 on ticks 0..L−1, the edge recurrence, and the
+exact pair (or `good`) at depth k. The first row is free, and every onset is an initial prefix. So M(k) ≥ L iff
+some phase class is satisfiable. Probe `tests/probes/ether_episode_sat.py` (SHA256 ba3397da…) uses kissat, and cadical
+re-decides every UNSAT on an open residue. Every SAT model is re-simulated forward.
+
+- **P-S1 (the conjecture).** For every k ≤ 150 with k ≡ 0, 2 (mod 6), L = m + 4 is UNSAT in all 16 exact phase
+  classes, under both solvers: M(k) = m + 3. Counterfactual: one SAT model, confirmed by re-simulation, refutes the
+  conjecture at that k.
+- **P-S2 (Cloud's split persists).** G(k) = m + 3 at every k ≡ 0 (mod 6) and m + 4 at every k ≡ 2 (mod 6), to
+  k = 150. Counterfactual: if G(k) = m + 3 at some k ≡ 2 (mod 6), the good predicate suffices there after all.
+- **P-S3 (controls).** For k ≤ 40: L = m + 3 SAT and L = m + 5 UNSAT in both modes, and L = m + 4 SAT at
+  residues 1, 3, 4, 5. For k ≤ 20 the 32 phases agree with the 16 glide classes. Everything to k = 20 matches the
+  exhaustive M(k) of L1258 and Cloud's G(k).
+- **P-S4 (weak, about the shape of a proof).** The UNSAT refutations stay easy: under a second each to k = 150. That
+  is what a short, local chain of inferences would give. Counterfactual: solve times growing fast with k would
+  suggest the contradiction is global, which would make a finite periodic certificate less likely.
+
+Caps (run_capped, c8c58b49…): wall 3600 s; CPU 3600 s per process (one Python driver, at most six solver processes
+at a time); RSS 6144 MiB summed over the tree; files 64 MiB; disk 512 MiB; launch gate 3072 MiB free;
+pressure stop 2048 MiB; swap growth 256 MiB; at most 12 processes.
+
+Record searched: L1258, GC2330, GC2331 and CL669 in full; `known_find.py --new` at 17:2x UTC (kit 842b756f, portal
+17:20:19Z, 23 open PRs). The only changes are PR69's and PR68's already-read items, with no new ether-episode
+statement. PR69's head is still fcffbaa9. No literature search: this is a finite extremal count in PR69's frame.
