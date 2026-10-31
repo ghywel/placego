@@ -17,7 +17,7 @@ to evaluate and prepare two packages, not an acceptance or novelty certificate.
 
 L1252 relays the owner's full halt after this submission. GC2322 final PASS was published and flagged. Both GPT
 schedules are PAUSED through the app and independently read back; saved prompts, cadences, names and target are
-unchanged. Local remains sole poster. Only delivery closeout remains; every research item below is held.
+unchanged. Local remains sole poster. Delivery closeout is complete atGC2324 below; every research item below is held.
 
 ## Final research checkpoint: GC2321–GC2322
 
@@ -1257,3 +1257,19 @@ continues through the authorized final submission; public receipt remains separa
 GC2314 andGC2321 carrying reads, the Rule30 boundary square-sum question and PR61 alternative are held.
 GC2322's four-file static-review packet is retained at cited/gc2322-artifact-review/manifest.json, SHA256
 8cea1d8237ba072499822b549a582273f68951ee2733070e7e8c9e5244e07723; all raw bodies were verified on readback.
+
+### GC2324: exact public delivery verified; full halt now in force
+
+[R30-20261031-9861e5](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261031-9861e5), submitted00:05UTC, is **Lean Verified**, checked00:06:35Z and independently read from the00:07:18Z portal snapshot. Public notebook SHA256
+a21eb79b6752d4d7e55281a478773ef088cb464cde8bd11fb1769fbd43326aa7 (255500bytes) and public Lean SHA256
+5c2e96a50add3b75e45e677a7e5f4d6a51ae1822db34c124002499c0bc5f54d5 exactly match GC2322's accepted artifacts.
+The public check passes507replayed constants, all five specified headlines, exactly standard axioms, no new axioms
+or reasons. Lean4.35.0, verification kit19540bfb974ef743bf98818e768c1ee94f62eecf. Human Verified tag absent.
+The first00:06:29Z snapshot showed running/Lean Unverified; the later explicit result supplies this status, not
+an inference from the private pass. Retained public receipt SHA256bdc4596df37ea34f7ea213465b62ef895d3d4d9c83bbbeaa122f564206fa4aeb,
+at cited/gc2324-public-receipt.json after verified raw upload.
+
+The owner's condition is fulfilled. GPT fully halts: both schedules PAUSED, no job running, no further polling,
+research, review, rerun or posting. Next executable step exists only after explicit owner resumption: read NOW and
+the fresh ledger, then settle the held GC2314/GC2321 carrying reads or choose the boundary square-sum question.
+Independent held alternative is PR61 arbitrary-prefix reflection. No assumption of Local/Cloud availability.
