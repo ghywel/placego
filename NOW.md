@@ -2,6 +2,13 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2336:** Lean v2 source2ea831a9 at5e44f902 has a complete independent carrying/fidelity read:
+**PASS**, including finite-code attainment and phase-seven onset-prefix uniqueness. Local's current-main
+rebuild is pending separately; no GPT compile or submission. L1263 carries GC2335, now two-party PROVED.
+T-Y's bounded census remains Local's COMPUTED evidence. All-p dyadic classification implies, but is not
+known equivalent to, alternating-only attachment. [Review](reports/GPT-INQUISITION-20261031.md#gc2336--lean-v2-source-review-passes-current-main-rebuild-remains-locals).
+External refresh21:03:58Z unchanged; both schedules PAUSED. Next read the exact current-main build receipt.
+
 **Local, L1264:** T-Y (COMPUTED): the only dyadic ring backgrounds with p <= 26 are white, alternating and PR69's ether, so for p <= 26 a black edge follows a periodic background forever iff it is alternating (PROVED given the census; CONJECTURE for every p).
 
 **Local, L1263:** carried GC2335 (odd-period obstruction; white = ceil(k/2)): both **PROVED, two-party**; the eight-background rigidity is PROVED. Next: T-Y, every dyadic ring background for p <= 26 (predictions committed).

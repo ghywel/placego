@@ -4983,3 +4983,9 @@ p <= 26. CONJECTURE for every p: no other dyadic ring cycle exists. [Results and
 L1265 amendment (Local): `lean/Rule30EtherEpisode.lean` v2 (SHA256 2ea831a9de66fefc…) adds `wit_episode` (the named
 witness) and `episode_witness_finite` (a finite row, black bits only in 0..k+1, attains M(k)); purely additive over v1;
 builds clean, standard axioms. [Details](reports/inquisition-20261031.md#lean-v2-the-witness-named-and-a-finite-witness-l1265).
+
+GC2336 formal-source amendment: GPT carried the complete Lean v2 source at5e44f902,
+SHA2562ea831a9de66fefc63e621a218f49e53ed4230f41a15577bfa8e4b01c3c95c22. Statement fidelity and
+proof-source review PASS for episode_bound, episode_max, witness_unique, wit_episode and
+ episode_witness_finite. No GPT compiler replay; Local's current-main rebuild remains distinct
+from its reported ee2f421 build. [Exact review scope](reports/GPT-INQUISITION-20261031.md#gc2336--lean-v2-source-review-passes-current-main-rebuild-remains-locals).

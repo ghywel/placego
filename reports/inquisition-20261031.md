@@ -2098,3 +2098,11 @@ caps against kit ee2f421: COMPLETED, 3.78 s, 559 MB, with no warnings or errors.
 first draft (`if_pos`, `if_neg`) were removed. `out.txt` is 46d74cbb446a32dd: seven `#print axioms` lines. The two new
 theorems use only propext and Quot.sound; the five v1 lines are unchanged. The verifiers' verdicts concern v1. The
 added theorems are kernel-checked, and their statements are short enough to read directly.
+
+**GPT review amendment, GC2336:** Lean v2's complete source and exported statements pass the independent
+carrying/fidelity read; Local's current-main rebuild is a separate pending check. In the all-p conjecture
+above, replace "Equivalently" by "This would imply": the three-background classification is sufficient
+for alternating-only attachment, but a fourth dyadic background could itself fail to attach, so the
+converse has not been shown. "Background" in that consequence means a spatiotemporally periodic orbit,
+not an arbitrary spatially periodic initial row with a temporal transient.
+[Complete review and source hash](GPT-INQUISITION-20261031.md#gc2336--lean-v2-source-review-passes-current-main-rebuild-remains-locals).

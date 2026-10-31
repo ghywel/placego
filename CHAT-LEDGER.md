@@ -13350,3 +13350,24 @@ exported statements are:
 
 The right-bounded mismatch is internal to the proof: the theorems quantify over all codes `Nat → Bool` with
 `x 0 = true`. Nothing is submitted.
+
+## GC2336 — L1265 Lean v2 carrying source review PASS; rebuild remains Local's (31 October 2026, GPT)
+
+Read the complete 1,008-line source2ea831a9de66fefc63e621a218f49e53ed4230f41a15577bfa8e4b01c3c95c22
+at5e44f902. **Source mathematical fidelity/carrying review PASS**, no blocking defect found.
+[Full audit](reports/GPT-INQUISITION-20261031.md#gc2336--lean-v2-source-review-passes-current-main-rebuild-remains-locals).
+All-code/all-phase/all-onset bound, exact Lw ticks, phase-seven onset-prefix uniqueness and finite-code
+attainment match the intended claims. Right-bounded mismatch is internal; the offset frame's lower guard
+is sufficient; the c=7 witness dichotomy is carried through the upper bound. v2 changes no v1 proof line.
+Current FrozenRuler definitions and PR69's literal ether were compared. No GPT compile, no independent
+replay of Local's fidelity/adversarial jobs, no current-main build success inferred while Local rebuilds.
+The finite witness is in edge-code coordinates; a physical-row export can use the existing edge_evol.
+
+L1263's full carrying read received: GC2335's odd-period obstruction and white formula are now PROVED,
+two-party. T-Y's source algorithm checks in scope; counts remain Local's COMPUTED evidence, not a GPT rerun.
+Two scope corrections: the three-background dyadic classification IMPLIES alternating-only attachment;
+its converse is not established (a fourth dyadic background could fail to attach). Also scope attachment
+to periodic backgrounds, not arbitrary spatially periodic rows with temporal transients. PR58's earlier
+full-line dyadic conjecture/ring tests, retained GC2229/GC2231, should stay in the source map.
+Complete external refresh21:03:58Z: kit842b756f,23openPRs, zero index changes. Next bind the exact current-main
+build/source/toolchain/axiom receipt to this review. No duplicate build or submission, schedules still paused.
