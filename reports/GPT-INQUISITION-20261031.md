@@ -1143,3 +1143,111 @@ these credits. Venue and submission remain as stated by the owner; no submission
 Independent warm alternative: the linear bounds for the shadowed backgrounds. Curiosity alternative:
 the existing PR58 dyadic-profile classification, without redoing its known ring census. Both schedules
 remain paused; no autonomous follow-on job.
+
+## GC2338 — L1270 readiness review: mathematics and essay pass; refresh the release environment
+
+**Verdict at the owner's requested submission check:** the mathematical content, exact theorem scope,
+public essay and source transformations pass this independent review. **The frozen release is not yet
+cleared for posting:** the verifier moved after Local's release build, and the raw release notebook and
+checker receipts have not been made available to this reader. These are release-validation tasks, not
+a newly found defect in the theorem. Local remains the single build/posting owner. No GPT compiler,
+Wolfram build or submission was started, and neither schedule was resumed.
+
+### Accepted content and source identity
+
+Read L1267–L1270, the full 406-line `essay-prose.md`, abstract, package README/RUN-SPEC, generators,
+notebook driver, checker wrapper and PR description. The earlier complete GC2336 carrying read applies
+to the unchanged proof source2ea831a9. This pass checked the actual public transformations:
+
+- Portal source `37733e44c5febb72abb0fd214a9839ca564f4f7ce55a4cbe566d42ee18cb584e` is exactly the
+  reviewed v2 after the enumerated import/namespace/comment changes; the 713 proof/definition code
+  lines are preserved. The source embed is byte-bound by the assembler.
+- Catalog source `615998d207a495dc2b15f69ff0ed73474303bd500868860dbcfe6d8a43b6883a` regenerates
+  byte-for-byte. The two removed blocks are the ether definition and `ether_step`; the 701 other
+  code lines are preserved. `Rule30EtherGrounding` supplies the same definition and step statement.
+- The live [PR71](https://github.com/WolframInstitute/Rule30PrizeKit/pull/71) head is
+  `dd1f09a2ba08e5c96bc4ace2ea12c0af2595e528`; its source exactly matches that catalog file.
+  It is open, with no conversation, inline comments or review-summary bodies at this check.
+- `assemble_ether_episode_essay.py --check` passes: prose
+  `bf3168efd2a18e7bde7b7443fed07af958c1a1b9713bfc9653e678b17518d580`, assembled essay
+  `069b92f5ba454777c63af011d9d940d8fb09dcb2d977a1e119dea5bf9a24f281`, abstract
+  `2a3e4e4ff07bb492f065f4fb36335770dc3b7d5867c745f3d2b2a68ae5192a4a`.
+  The abstract is 247 whitespace-delimited words and 1,720 characters.
+
+The essay correctly distinguishes the moving edge from the centre column; finite/all-code quantifiers,
+onset reduction, phase normalization, inclusive ticks, clean-tail replacement, the exceptional witness,
+and phase-seven **onset-prefix** uniqueness are consistent with the carried proof. It labels finite
+explorations as computations and limits the sharp claim to k>=1. Its proof explanation includes why
+front retreat cannot recur after tick1. The Phillips limitation and Lowry/Perez Morales/Claude credits
+are appropriate. No blocking mathematical or attribution issue was found. The finite-row realization
+is explained through the existing edge conjugacy and is not misrepresented as an additional exported
+Lean theorem. A physical-row wrapper would be useful but is not a blocker for these stated headlines.
+
+### Material change found in the fresh external check
+
+The complete `known_find.py --new` refresh has portal timestamp **2026-10-31T23:02:58Z**, 74 entries,
+16open PRs and kit `e5e1728e76b398cc6b44b9366be540821f85558b` (23 added,13 changed,55 no longer
+listed index units, largely because PRs moved into main). The new Problem3 window-bound entry is not
+an ether-episode result. Actual current `Rule30EtherGrounding` remains byte-identical to the previously
+read PR69 source, SHA256538c906a; its now-closed PR discussion was read, including the maintainer's
+acceptance comment. `Rule30EdgeClock`/`Rule30DefectClockBudget` bound quiet digits/defect escape,
+`Rule30CoupledEmptyRight` treats centre-driven empty right halves, and the `ether episode` candidate
+in PR41 concerns common-centre mismatch births. Those are different hypotheses/conclusions from M(k).
+The matching open contribution is our own PR71. This refresh does not replace the scoped Phillips
+comparison with a negative-keyword novelty claim.
+
+**The live verifier has also moved.** The freshly fetched
+[environment](https://www.wolframcloud.com/obj/rule-30-prize/Agents/api/environment) advertises:
+
+- `kit.commit = e5e1728e76b398cc6b44b9366be540821f85558b`;
+- `image = rule30-verifier:14`, Lean4.35.0, LeanLink1.2.1;
+- `Rule30EtherGrounding` and `Rule30EdgeClock` in its module list.
+
+Its nested `lastCheck` still records the **older** 842b756f check at22:09:54Z. That is historical
+check metadata, not the current image pin. Environment SHA256:
+`9898f3c67d0c3679035c7189fb0d83eb2835d89a34944c43a478f71153423a99`.
+The portal instructions remain version1.17.3, SHA256
+`1e702976f3bdd169350a7cc034161775e335d35f4badce457c03872c82bc6709`;
+their setup section identifies `kit.commit` as the verifier's target.
+
+The four-module portal import closure (`Rule30FrozenRuler`, `Rule30Realization`, `Rule30Jen`,
+`Rule30Prize`), root `Check.lean`, both toolchain files, both Lake configurations and both manifests
+are **byte-identical** at842b756f ande5e1728e. The checker remains
+`b882f2527a1d6e720828a0c729cc80c3977905ed9207d09af22f8d153a073905`.
+This is evidence against a compatibility break; it is not a claimed execution of the final portal
+notebook on image14. The catalog-form build on e5e1728e is also a different artifact from that notebook.
+
+### Exact remaining release work for Local
+
+1. Correct present-tense old-environment claims in `essay-prose.md` around its formal-proof paragraph
+   and Earlier work, `Rule30Submission.lean`'s method comment (through its generator), and README's
+   portal-form row. The first build really used842b756f; retain that as history. It is no longer true
+   that `Rule30EtherGrounding` is absent from the advertised verifier. A minimal wording is: “The
+   standalone source retains a verbatim copy of Lowry's ether; the catalog module imports it.”
+   Keeping the proven standalone copy is acceptable; changing proof architecture is unnecessary.
+   The “until the verifier includes it” sentence about **our PR71 module** remains correct.
+2. Refresh the exact verifier pin immediately before the final run, update affected source/prose/essay
+   hashes, run the unchanged official checker for the five portal headlines at that pin, and rebuild
+   the final notebook with `UseCache -> False`. Preserve the old run as a valid historical result.
+   Keep the existing table/axiom/environment/icon/kernel-replay guards. Do not silently reuse a
+   changed declaration count if the source form changes; bind it to the actual new checker output.
+3. Make the final raw notebook and its receipt packet available for the artifact read: notebook,
+   summary/output digests, official checker JSON (including `s-check.json`), and source/toolchain
+   identity. L1270 reports notebooke9096c0b/summary35548c2c and checker outputcce9100f, but only their
+   descriptions and digests are in git. Fresh listings of shared-store `cited/`, `workers/local`
+   and addressed flags did not locate them. A passive request was left; no duplicate build was
+   dispatched. The pending same-worker mutation/fidelity results can accompany them, but do not
+   substitute for the already completed independent proof read.
+
+Local's notebook driver was inspected: it requests uncached evaluation, pins the essay, requires19
+outputs, no message cells, an iconized source, the exact exhaustive table, standard headline axioms,
+a LeanEnvironment and KernelChecked491. These are well-chosen gates. Reading their implementation
+and L1270's success report is not inspecting the resulting notebook, its actual embedded source,
+outputs or privacy. Those remain **Local-reported**, not independently accepted artifacts.
+
+The evidence packet is `cited/gc2338-readiness-evidence.tar.gz`, 22,005 bytes, SHA256
+`25dbd65ec02fb808be4c00f9be8995fe0e0a7fd4a5cb08f96a4cf81f538961d4`, verified by raw upload/readback.
+It includes the current environment, instructions, exact PR discussion snapshots and dependency digest
+comparison. Once the refreshed release and raw receipts pass, no further mathematical development is
+requested by this review. Posting remains Local's step under the owner's final direction; this turn
+only makes the readiness decision and records the precise release conditions.

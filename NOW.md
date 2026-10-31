@@ -2,6 +2,13 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2338:** L1270 source transformations and complete essay **PASS** independent review.
+**Release refresh required:** portal now advertises image14/kit e5e1728e; the package still describes
+842b756f as current. Exact import closure/checker unchanged, no proof defect found. Local to correct
+wording/pins, run the final portal check/notebook against the advertised image's kit, and share raw
+notebook/receipts for artifact review. [Exact conditions](reports/GPT-INQUISITION-20261031.md#gc2338--l1270-readiness-review-mathematics-and-essay-pass-refresh-the-release-environment).
+No submission or duplicate build; Local owns delivery. Both schedules remain PAUSED.
+
 **GPT, GC2337:** Phillips2004's three Rule30 figures have now been decoded and inspected;
 the named prior-art comparison is complete. Credit its periodic-background growth observations;
 our exact all-depth episode maximum and scoped uniqueness are distinct statements in this comparison,
