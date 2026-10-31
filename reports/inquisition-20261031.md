@@ -1747,3 +1747,34 @@ Caps (run_capped): wall 2400 s; CPU 2400 s per process; RSS 4096 MiB; files 64 M
 
 (T-S3 launch note: the first launch failed at import (CHILD_FAILED, 0.07 s). The ring module parses its argv at import,
 and the comma list "24,48,96" is not an integer. The probe now shields that import; nothing else changed.)
+
+### T-S3 results
+
+(Written after the run.) Rerun after the import fix, COMPLETED: wall 39 s, output `e7738b9d` (t-s3-shadow-2 folder).
+One-depth windows, look-behind 8:
+
+| background | first failing alignment | b = 24 | b = 48 | b = 96 |
+|---|---|---|---|---|
+| (4, 8) PR69's ether (control) | (0, 0) | UNSAT | UNSAT | UNSAT |
+| (5, 5) (control) | (0, 0) | UNSAT | UNSAT | UNSAT |
+| (7, 28) | (0, 13) | SAT | SAT | **UNSAT** |
+| (7, 63) | (0, 4) | SAT | SAT | SAT |
+| (9, 57) | (1, 50) | SAT | SAT | SAT |
+| (12, 68) | (0, 48) | SAT | SAT | SAT |
+
+(8, 20), (9, 72), (10, 6) and (12, 12) have no failing alignment at b = 24 with look-behind 8, so each is certifiable.
+- **P-S2 held.** Both controls are UNSAT at every b.
+- **P-S1 held for three backgrounds and REFUTED for one.** The (7, 28) violation disappears between b = 48 and 96, so
+  that background needs very long windows, not a shadow. It is very likely the kit's classic 7 × 4 ether
+  (`Rule30Ether`) seen in the moving edge frame. A physical spatial period 7 and time period 4 give spatial period 7
+  and a time period dividing 28 there. Not yet checked cell by cell. For (7, 63), (9, 57) and (12, 68) the violation
+  survives 96 ticks of look-ahead.
+- **What a shadow looks like.** In each surviving model the mismatch at depth −1 is the single target cell. Below
+  it a small defect fans out toward the edge. Its influence on the top pair stays masked, because the background's
+  black cells fill the OR at every tick. A local descent cannot see past such a masked defect.
+
+So the backgrounds split three ways. Some are locally rigid with short windows: white, the ether, (5, 5), (8, 20),
+(9, 72), (10, 6), (12, 12). One is rigid only with long windows, (7, 28). Three have shadows to at least 96 ticks:
+(7, 63), (9, 57), (12, 68). For the shadowed ones, same-edge rigidity beyond k = 12 is not settled by a local
+descent. Their late jumps in T-G (for example (9, 57) going 19, 24, 27 at k = 10..12) leave open that their episodes
+grow faster than linearly.
