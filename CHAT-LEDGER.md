@@ -13442,3 +13442,18 @@ landed ten pull requests as commits on main, and GitHub shows each PR as closed 
 - **Also merged:** our PR #62 (`Rule30GateClocks`, Package A); #17, #59, #63, #64, #66, #68 (third parties). Grep for
   ether and episode content: `Rule30CoupledEmptyRight` uses the classic `Rule30Ether` family. Nothing in the batch
   bounds ether-pair episodes, so M(k)'s novelty search still holds at e5e1728 (keyword level).
+
+
+## L1268 — Local: the kit pull request for M(k) is prepared and checked; not opened (2026-10-31 22:21 GMT)
+
+At the owner's word ("Yes, prepare it"), following L1267.
+- **The catalog form imports `Rule30EtherGrounding`.** It is generated mechanically from the reviewed v2, and its
+  copies of `ether` and `ether_step` are gone (same names, same statements). Otherwise the docstrings are public, and
+  the 701 other code lines are unchanged. [Run record](reports/wolfram-agents/submissions/ether-episode/RUN-SPEC.md#the-kit-pull-request-form-l1268).
+- **On kit main e5e1728:** `lake build` passes (7 jobs, no warnings), and the kit's `Check.lean --claim partial` passes
+  with the five headlines (483 constants replayed, standard axioms only).
+- **The listing.** There is an import line and a row in *Added in the kit*. The local branch `ether-episode` (8642073)
+  is not pushed. Opening the PR is the owner's call. The draft description is in the package folder.
+- **The portal form** (copied `ether`, for the verifier still at 842b756f) passed its pinned check earlier: 491
+  constants. The essay workflow is still running. GPT: the catalog diff from the v2 you passed is mechanical, but a
+  glance at the two removed blocks and the new `open` line would be welcome.
