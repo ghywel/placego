@@ -1821,3 +1821,175 @@ this is small (G10).
 **Cloud, 2026-10-30 17:44 GMT, CL665:** DQ-025 as posed is refuted by known geometry (the crystal's front recedes from the column at about a quarter of light speed; it never arrives). What arrives is news: a fully finite row keeps a column alternating at most its extent plus 6 to 8 steps (widths 2 to 18, exhaustive), while the wall frame's left-finite configuration with a free right half keeps the clock about 2W. The corrected question: is D(W) an exact budget, one bit spent per two steps against a refill capped by the channel bound (0.2445 bits per visible bit)? Q01-strength (G10); handed to GPT.
 
 **Cloud, 2026-10-30 18:21 GMT, CL666:** GPT's review parks the budget argument: the early halving law holds only to T = W, the free-bit and channel constraints belong to coupled physical clocks, and a size bound is not a rate. Two things remain: GPT's named missing law (a uniform compatibility or contraction statement for the forced finite-left tail against the coupled right language), and a door my own overclaim had shut: Lowry's theorem classifies conserved local densities and does not exclude a local dissipative potential. The three maximal-excess rows read as relays of lone cells handing the clock to each other (data supplied for GPT's audit).
+
+**Local, 2026-10-31 14:13 GMT, L1256 (from DQ-030's diagonal table):** for the single seed the crystal **does** cover
+the column at first. Left diagonal k settles before the centre reads it (at t = k) for every k ≤ 19 except 18; for
+example L_10 settles at t = 6. From k = 20 to 59 it always settles later, with τ/k rising from about 1.03 to 1.44. So
+the front crosses the column at about t = 20 and then recedes, as CL665 says. COMPUTED
+([inquisition-20261031.md](reports/inquisition-20261031.md), T-E).
+
+## DQ-026 — Forgetful, but in which direction?
+
+**Question:** "OR and AND forget exactly as much as each other: each lumps three of the four input pairs together.
+With OR the coin looks wild. Would it look just as wild with AND, or does the colour of what gets lumped together
+matter?"
+
+**Origin:** Local, 2026-10-31, the inquisition round with the owner. **Status: answered for the single seed; the
+owner's bombe pull is PARKED on a steer.**
+
+**Owner's answer:** Turing's bombe, which chains machines so that the unknown middle cancels. Can a chain of gates with
+known ends carry useful "fuzz" in the middle?
+
+**Local, 2026-10-31 14:13 GMT, L1256:**
+- The colour decides everything at the seed. OR on a white sea is AND on a black sea (Rule 30 under colour swap is
+  Rule 135). AND on a white sea never fires: Rule 120 from one cell is a sliding dot.
+- The bombe maps onto the sideways reconstruction. The crib is the clock and the plugboard is column 1; the left world
+  can be undone because it enters by XOR. That is Meier and Staffelbach's 1991 break, prior art.
+- The fuzz is the start itself, bit for bit.
+- The analogy breaks usefully: Q01's derivation has no loops, so its only stop is the far edge; loops appear only in
+  CQ01.
+
+[Tracker, DQ-026](reports/inquisition-20261031.md#dq-026--forgetful-but-in-which-direction-or-or-and-and-the-bombe).
+
+## DQ-027 — Doors shutting or doors opening?
+
+**Question:** "When the clock dies, is it starved (too many doors shut) or flooded (too many open, noise pours in)?"
+
+**Origin:** Local, 2026-10-31, the inquisition round. **Status: answered for Q01 to width 20 (COMPUTED), with an exact
+symmetry (PROOF-SKETCH, Local solo).**
+
+**Owner's answer:** constructive and destructive interference, and a Fourier transform of ± amplitudes.
+
+**Local, 2026-10-31 14:13 GMT, L1256:**
+- A Q01 death is the two cells beside the wall coming into phase at an odd time: starved (both white) or cancelled
+  (both black, the owner's destructive interference).
+- An exact pairing (flip depth t, then repair x_1(t) with depth t + 1) shows that for death times t ≤ W − 1 the two
+  kinds are exactly equal.
+- After the news arrives they stay near even: 50.0 % at W = 20. The champions' kinds are mixed.
+- So the kind is a fresh coin and carries no information about the mechanism.
+- Rule 30's local rule in ±1 form is four equal waves, (−a + ab + ac + abc)/2; Rules 90 and 150 are one wave each.
+
+[Tracker, DQ-027](reports/inquisition-20261031.md#dq-027--doors-starved-or-flooded-interference-fourier).
+
+## DQ-028 — Can the edge ever get three ahead?
+
+**Question:** "Getting 3 ahead means saving up for more than 2,000 steps without spending. You're the designer and can
+pick any gate at each layer. Can a patient designer pull it off, or do the savings always leak?"
+
+**Origin:** Local, 2026-10-31, the inquisition round. **Status: open; test T-D specified, not run.**
+
+**Owner's answer:** what makes 2 a wall, and can computation push past 2000?
+
+**Local, 2026-10-31 14:13 GMT, L1256:**
+- The wall is two countdown timers in a row: at least M − 1 pairs of 01, then about 2^(ℓ+2) pairs of 10.
+- 2058 is a proved lower bound in pairs. One period at that point is 2^2060 time steps, so the search must be symbolic.
+- T-D (can the first timer run at full speed from K = 2?) is simulable. Prediction: yes.
+
+[Tracker, DQ-028](reports/inquisition-20261031.md#dq-028--can-the-edge-get-three-ahead).
+
+## DQ-029 — Where is the randomness made?
+
+**Question:** "The single black cell supplies no coins at all, yet the result looks random. Where would you point: the
+left edge, the right edge, or the mixing in the middle?"
+
+**Origin:** Local, 2026-10-31, the inquisition round. **Status: a reading, with COMPUTED tables.**
+
+**Owner's answer:** the forgetting gates. Where the input is uncertain, the next seed is an average, so each
+forgetting mixes the next link.
+
+**Local, 2026-10-31 14:13 GMT, L1256:**
+- In the diagonal frame a right diagonal sees itself through the XOR. It remembers itself, so it is periodic from
+  t = 0: an odometer.
+- A left diagonal sees itself through the OR. It forgets itself, so it settles after a transient: a crystal (Jen).
+- The random-looking region is what neither has tamed.
+- The centre is diagonal t from both edges.
+
+[Tracker, DQ-029](reports/inquisition-20261031.md#dq-029--where-is-the-randomness-made).
+
+## DQ-030 — Long multiplication or full simulation?
+
+**Question:** "Is the nth cell more like multiplication (fast in the number of digits) or more like simulation (as
+slow as n)? Do any of our structures feel like the seed of a partial shortcut?"
+
+**Origin:** Local, 2026-10-31, the inquisition round. **Status: open; tables COMPUTED.**
+
+**Owner's answer:** the diagonals are walls (periods 1, 2, 2, 4, …). The bounding walls are the seed's half-wall past
+rotated 45 degrees. A period-2 centre would be a wall that connects left and right.
+
+**Local, 2026-10-31 14:13 GMT, L1256:**
+- Every right diagonal is periodic, and D_4 has period 8.
+- The half-wall past is the all-black state one odometer tick before the seed (PROVED, one line).
+- The connecting wall is CQ01; the uncrossable one, Q01, already suffices for period 2.
+- Each fixed diagonal has a shortcut, but the centre reads diagonal k = t, a moving target.
+
+[Tracker, DQ-030](reports/inquisition-20261031.md#dq-030--long-multiplication-or-full-simulation-the-diagonals-and-the-walls).
+
+## DQ-031 — A measure that can grow back
+
+**Question:** "Do you see anything in the pictures that always goes down, even when the pattern looks like it's
+recovering?" (the Hydra)
+
+**Origin:** Local, 2026-10-31, the inquisition round. **Status: open; the survival curve COMPUTED; the potential
+PARKED.**
+
+**Owner's answer:** the spawning ratio of heads; whether some heads are more profligate; the rise and fall as a wave.
+
+**Local, 2026-10-31 14:13 GMT, L1256:**
+- Up to t = W − 1 the cull is exactly fair: half the heads per tick, no regrowth.
+- The heads are equal on average.
+- From W to D(W) come plateaus (tick ratios near 0.8) and cliffs (0.14). These are the stairs of D(W), and that is
+  where a potential would have to work.
+
+[Tracker, DQ-031](reports/inquisition-20261031.md#dq-031--a-measure-that-can-grow-back-hydra).
+
+## DQ-032 — Champions that don't nest
+
+**Question:** "Are our champions using different strategies, or one strategy that takes a different shape at each
+size?"
+
+**Origin:** Local, 2026-10-31, the inquisition round. **Status: COMPUTED to width 20.**
+
+**Owner's answer:** a radar. Each champion has its own profile; having a profile at all is the unifying theory.
+
+**Local, 2026-10-31 14:13 GMT, L1256:**
+- The nine champions of W = 19 use all four surviving near-wall patterns.
+- At every rise of D from W = 5 to 19, no new champion restricts to an old one.
+- The champion set is constant along each stair of D(W).
+
+[Tracker, DQ-032](reports/inquisition-20261031.md#dq-032--champions-that-dont-nest-the-radar).
+
+## DQ-033 — Can we zoom out to a rule along columns, diagonals or skipped cells?
+
+**Question (the owner's):** "Can we construct a logic gate sequence / rule that works vertically, or a combination of
+horizontal and vertical, or skips elements of a row. Can we 'zoom out' and find a logic gate structured pathway and
+that isn't as narrow in scope as the general rule."
+
+**Origin:** the owner, 2026-10-31, answering "OR must matter somewhere". **Status: partly KNOWN.**
+
+**Local, 2026-10-31 14:13 GMT, L1256:**
+- Three zooms are in use: the sideways rule (Q01), the two diagonal recursions, and the two-step identity (GC2313).
+- The block zoom is known to fail. Israeli and Goldenfeld (PRE 2006) could not coarse-grain rules 30, 45, 106, 154 and
+  their symmetries, and Song and Aaron (arXiv 2012.12153) found none for Rule 30 with blocks of up to 7. So T-C was
+  dropped before running.
+- Open: zooms onto targets with more colours, and moving frames.
+
+[Tracker, DQ-033](reports/inquisition-20261031.md#dq-033--zoom-out-a-rule-along-columns-diagonals-or-skipped-cells).
+
+## DQ-034 — Is "every width" really one infinite object?
+
+**Question (the owner's):** "The problem here is the width is infinite... when we say every width, we really mean the
+infinite width that alternates black and white forever. The closest we have got to this is the single seeds past
+state which infinitely repeats beyond the 1 wall with a 0 chink."
+
+**Origin:** the owner, 2026-10-31. **Status: COMPUTED census; open.**
+
+**Local, 2026-10-31 14:13 GMT, L1256:**
+- Q01 is a finite patch in a white sea beside the wall; with an infinite left half every trace can be kept (G130).
+- Of all 126 periodic seas of period ≤ 6, only the checkerboard hosts the clock to K = 160. It keeps column −1 black
+  for ever (Condrey; G11.1) and heals patches within 4 steps.
+- Every other sea, white included, kills the clock by t = 30.
+- White-sea champions do not imitate the checkerboard: agreement 0.42–0.57 against 0.50 at random.
+- So a proof must explain why white, one of the two smallest periodic fixed points of Rule 30, cannot be a home when
+  the other, the checkerboard, is one.
+
+[Tracker, DQ-034](reports/inquisition-20261031.md#dq-034--every-width-at-once-is-one-infinite-object).

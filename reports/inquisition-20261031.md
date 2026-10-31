@@ -23,14 +23,14 @@ PARKED (specified, not run, waiting on a steer or a cheaper route).
 | DQ | Thread | The owner's pull | First test | State |
 |---|---|---|---|---|
 | 026 | OR or AND: which colour is lumped | Turing's bombe: chained machines cancel the unknown middle | none run; a bombe reading of Q01 | read; loops test PARKED |
-| 027 | Doors: starved or flooded | constructive and destructive interference; Fourier | T-A, the death types | see below |
+| 027 | Doors: starved or flooded | constructive and destructive interference; Fourier | T-A, the death kinds | COMPUTED: a fair coin, exactly before the news (PROOF-SKETCH) |
 | 028 | Can the edge get three ahead | what makes 2 a wall; push the computation further | T-D, stage-one tightness | PARKED (specified) |
-| 029 | Where is the randomness made | forgetting gates mix the next seed | T-E, the diagonal tables | see below |
-| 030 | Multiplication or simulation | diagonals are walls; a period-2 centre is a wall that connects | T-E, the reading ages | see below |
-| 031 | A measure that can grow back | spawning ratio of heads; are heads equal; rise and fall | T-F, the survival ratio | see below |
-| 032 | Champions that don't nest | one map of many profiles (a radar) | T-G, the champions' radar | see below |
+| 029 | Where is the randomness made | forgetting gates mix the next seed | T-E, the diagonal tables | COMPUTED; the left forgets itself, the right remembers itself |
+| 030 | Multiplication or simulation | diagonals are walls; a period-2 centre is a wall that connects | T-E, the reading ages | COMPUTED: the crystal covers the centre to about t = 20, then falls behind |
+| 031 | A measure that can grow back | spawning ratio of heads; are heads equal; rise and fall | T-F, the survival ratio | COMPUTED: a fair cull, then plateaus and cliffs; potential PARKED |
+| 032 | Champions that don't nest | one map of many profiles (a radar) | T-G, the champions' radar | COMPUTED: no shared shape; never nested from W = 5 |
 | 033 | Zoom out: rules along columns, diagonals or skipped cells | a pathway less narrow than the row rule | T-C, block coarse-graining | KNOWN: dropped before running |
-| 034 | Every width at once is one infinite object | the seed's past is a periodic sea with a chink | T-H, the sea census | see below |
+| 034 | Every width at once is one infinite object | the seed's past is a periodic sea with a chink | T-H, T-H2, the sea census | COMPUTED: the checkerboard is the only home; champions do not imitate it |
 
 ## Corrections and confirmations from the owner's answers
 
@@ -388,3 +388,147 @@ the checkerboard phase that has depth 1 black (depth d black iff d is odd). Comp
 ## Outcomes
 
 (Written after the runs, below this line. Predictions above are unchanged.)
+
+All runs are on Local's M5 under `run_capped`, every one COMPLETED. Outputs are kept outside git, in the
+inquisition-20261031 folder of the local scratch area, cited by SHA256 prefix:
+
+| Test | Probe (source) | Output | Caps (CPU s / wall s / RSS MiB) |
+|---|---|---|---|
+| T-A, T-F, T-G | `inquisition_wall_census.py` (`a954b322`) | `21045f31` | 900 / 1200 / 6000 |
+| T-E | `inquisition_diagonals.py` (`b59b2006`) | `c132337e` | 300 / 400 / 3000 |
+| T-H | `inquisition_sea_census.py` (`3273f5be`) | `781c126e` | 600 / 800 / 3000 |
+| T-H2 | `inquisition_checker_imitation.py` (`af5bc0a5`) | `a3081850` | 900 / 1200 / 6000 |
+
+### T-A (DQ-027): the death kind is a fair coin
+
+- **P-A1 held.** The census reproduces D(2..20) exactly (asserted).
+- **P-A2 held.** The hand law held on every start of every width to 20 (asserted).
+- **P-A3 held.** Starved deaths are 50.0 % at W = 20 (262,158 starved, 262,130 cancelled), and 46.9–50.6 % at every
+  W ≥ 6.
+- **P-A4 held.** The champions' kinds are mixed: starved at W = 2, 3, 5, 7–13, 19, 20; cancelled at W = 6 and 14–18;
+  both at W = 4.
+
+**An exact symmetry explains the even split (PROOF-SKETCH, Local solo; COMPUTED exact at every death time t ≤ W − 1,
+W ≤ 20).** For an even death time t with 2 ≤ t ≤ W − 1, exactly half of the starts dying at t are starved. The proof
+uses the edge of the light cone: the deepest cell a value depends on enters by XOR. So x_1(t − 1) depends on depth t
+by XOR, x_1(t) depends on depth t + 1 by XOR, and depth-1 values at times ≤ t − 2 do not see depths t or t + 1.
+
+The pairing σ:
+1. flip depth t;
+2. if that made x_1(t) black, flip depth t + 1 as well.
+
+What σ does:
+- It leaves the life up to t − 2 unchanged.
+- It keeps the death at t.
+- It flips x_1(t − 1), which is the kind.
+- It is an involution without fixed points.
+
+The early halving law is the same argument with depth t + 1 alone. From t = W on, there are no fresh bits and the
+counts differ: at W = 20 and t = 20 they are 256 against 270.
+
+**Lesson.** In Q01, "starved or flooded" carries no information about why the clock dies. Before the news from the far
+edge arrives, the kind is a fresh coin, exactly. After it arrives, the split stays near even (late deaths at W = 20:
+526 starved, 498 cancelled). The owner's two kinds of interference happen equally often: the two cells beside the wall
+come into phase both white as often as both black.
+
+### T-F (DQ-031): the Hydra culls fairly until the news, then in plateaus and cliffs
+
+- **P-F1 held only up to t ≤ W − 1, and failed at t = W.** The survivors halve exactly at each even t ≤ W − 1, at
+  every W. At even W the tick at t = W is not a halving: 0.25 at W = 8, 0.531 at W = 10, 0.594 at W = 12. The cone
+  argument above needs depth t + 1 ≤ W, so the exact law stops one tick before my prediction said.
+- **P-F2 REFUTED.** After W the tick ratio with at least 16 alive ranges over 0.14–0.88. There are **plateaus**, where
+  most survivors pass (0.84 and 0.81 at W = 16, t = 24 and 26; 0.83 at W = 19, t = 26). There are **cliffs** (0.136
+  at W = 18, t = 30).
+- **P-F3 REFUTED.** D(11) = 30 is 10 above the halving line 2W − 2 = 20; I predicted at most 8. It was a slip against
+  a value already in the control table.
+- **P-F4 held.** Heads are equal on average: among starts alive at t = 4, the mean death time by near-wall pattern
+  spreads by at most 0.02 at W ≥ 14. Only four near-wall patterns survive to t = 4: 1100, 1010, 1101 and 1011.
+
+**Lesson for the Hydra.** Before the news there is no regrowth and the cull is exactly fair, half the heads per tick.
+The rises and falls the owner pictured are real, but they live only in the late regime, from W to D(W). There, groups
+of starts survive together over plateaus and then fall off cliffs. These are the stairs of D(W). A potential, if one
+exists, has to describe this late regime; the early regime is pure coin-flipping.
+
+### T-G (DQ-032): the radar
+
+- **P-G1 held.** The nine champions of W = 19 between them use all four near-wall patterns that survive to t = 4.
+  Their spokes:
+  - density 0.53–0.68;
+  - black runs 5–9;
+  - longest white run 1–4.
+- **P-G2 held, more strongly than predicted.** At every width where D rises (W = 5, 6, 7, 9, 11, 14, 19), **none** of
+  the new champions restricted to depths 1..W−1 is a champion of W − 1. The non-nesting starts at the smallest widths.
+- **Champions persist across widths.** The champion set is constant along each stair: 1493 and 1507 for W = 11–13;
+  11083, 11165 and 11307 for W = 14–18; nine starts for W = 19–20.
+
+So the owner's radar picture fits: champions are many profiles with no shared near-wall shape. What unites them is a
+graph, not a style. The record's candidate for that graph is GC1772/GC1773's D(W) = W + the longest white run of a
+forced row after W.
+
+### T-E (DQ-029, DQ-030): the diagonals
+
+- **P-E1 held.** Both recursions match direct Rule 30 for t < 64, and c(t) = D_t(t) = L_t(t). D_3 reads 0011.
+- **P-E2 held.** Every right diagonal is periodic from t = 0, with power-of-2 periods. D_4 = 00101101…, period 8,
+  which answers the owner's open question. The periods, D_0 to D_35:
+  1, 2, 2, 4, 8, 8, 16, 32, 32, 64 (six diagonals, D_9–D_14), 128, 256 (eight, D_16–D_23), 512, 1024, 1024, 2048,
+  2048, 4096 (five), 8192, 8192.
+  Doubling comes in irregular bursts, with long plateaus.
+- **P-E4 held, more strongly.** Every right diagonal from k = 3 on has period greater than k, so the centre reads each
+  one inside its first period.
+- **P-E3 REFUTED in two parts.**
+  - Left diagonals settle **before** the centre reads them for every k ≤ 19 except 18. For example L_10 settles at
+    t = 6 and L_17 at t = 15.
+  - From k = 20 to 59, τ(k) > k at every k. The ratio τ/k rises from about 1.03 near k = 30 to 1.44 at k = 59; it is
+    not within 1.2–1.4 throughout.
+
+  So **the left crystal covers the centre column for about its first 20 steps and then falls behind for good**. The
+  record's "the crystal recedes" (DQ-025) is the late behaviour. The crossing at about t = 20 is new to the record, as
+  far as the search went.
+
+**Lesson.** In the diagonal frame the centre is a moving reader. It reads the crystal while the crystal still covers
+it (t ≲ 20), and after that only diagonals that are mid-transient on the left and inside their first period on the
+right. Every fixed diagonal has a shortcut; the reader never stays on one.
+
+### T-H and T-H2 (DQ-034): the clock has one periodic home
+
+- **P-H1 held.** The white sea reproduces D(2..8).
+- **P-H2 REFUTED, for a known reason.** Of all 126 seas of period ≤ 6, exactly the two phases of the checkerboard
+  (…0101…) keep the wall to the cap K = 160. In phase 10 three patches of the 256 survive; in phase 01, one. Every
+  other sea, white included, kills the clock by t = 30. The next best was 011001, at 30.
+
+The mechanism is in the record. The checkerboard is a fixed point of Rule 30. With black at depth 1 it keeps column −1
+black for ever, which masks the wall entirely (Condrey's universal fixed checkerboard, G11.1, G128.1). The
+checkerboard also heals damage (§8.66). The surviving patches 99 and 125 heal into the pure checkerboard by t = 2 and
+t = 4. Patch 171 in phase 01 heals into the checkerboard except at depth 1, which then alternates, black at every even time.
+
+What is new is the census itself: no other periodic sea of period ≤ 6 hosts the clock even briefly.
+
+- **P-H3 held (T-H2).** White-sea champions do **not** imitate the checkerboard. Their mean agreement with it on
+  depths 2..6 over their lives is 0.42–0.57, against exactly 0.500 for all starts alive at t = 4 and 0.49–0.51 for
+  starts dying at t ≥ W.
+
+**Lesson for the owner's infinite object.**
+- The clock has one periodic home among small seas, the checkerboard, which keeps it trivially.
+- Q01 asks whether a finite patch in the white sea can keep it for ever.
+- The longest-lived white-sea starts get no help from imitating that home: they look like coin flips near the wall.
+
+So "every width at once" is not approached by imitating the one infinite object that works. Any proof must explain
+why the white sea, specifically, cannot be a home, when its only periodic neighbour in the census, the checkerboard,
+is one. The two are the two spatially periodic fixed points of Rule 30 of period ≤ 2: white (period 1) and the
+checkerboard (period 2).
+
+### Threads not run
+
+- **DQ-026** (the bombe's loops in CQ01) waits on a steer about which of two readings the owner meant.
+- **DQ-028** (stage-one tightness) is specified with its prediction.
+- **DQ-033**'s block zoom is KNOWN (Israeli–Goldenfeld; Song–Aaron).
+- **DQ-031**'s potential waits on a description of the late plateaus.
+
+### Next warm leads, ranked
+
+1. **The late plateaus (DQ-031 with DQ-032).** What do the groups that pass a plateau share? It is a finite question
+   at W ≤ 20, and the first place where the Hydra's rise and fall can be seen in detail.
+2. **The white sea against the checkerboard (DQ-034).** Both are fixed points; one hosts the clock and the other is
+   conjectured not to. A hand comparison of what a finite patch does at the boundary of each sea might name the
+   obstruction.
+3. **Stage-one tightness (DQ-028).** Simulable, and it would halve the open part of "can the edge get three ahead".

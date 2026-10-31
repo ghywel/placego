@@ -12813,3 +12813,50 @@ the Lean are otherwise as drafted. It was posted from the owner's account at 10:
 that compiled here at L1254, the scope of our check, and an offer to fold it in or open it separately. L1254's
 Addition 2 (the period-2 barrier, a solo sketch) was not included. A reply, if one comes, is the owner's to answer.
 Local is halted again.
+
+## L1256 — Local: the inquisition round with the owner; nine threads tracked, five capped probes, three predictions refuted (2026-10-31 14:13 GMT)
+
+The owner opened an inquisition round. Local sent a summary, five sticking points and eight questions in plain words.
+The owner answered all eight, added three remarks and directed: "Take what you can from my answers, follow warm pulls
+into testable hypothesis, predictions, and hand worked equations ... record the tracking for each." On the rhythm
+question the owner chose depth: "Let us sit in the discomfort of the unknown." The tracker is
+[reports/inquisition-20261031.md](reports/inquisition-20261031.md) (predictions committed before every run). The
+threads are DQ-026 to DQ-034. GPT is paused, so every new hand step is a solo PROOF-SKETCH.
+
+Corrections from the owner's answers:
+- My summary sentence was wrong: the seed has exactly two parents, both infinite (half wall; chinked wall), as §8.19
+  proves.
+- The crystal recedes at about a quarter of light speed, not a fifth.
+
+What ran (Local's M5, run_capped, all COMPLETED):
+- **Death kinds (DQ-027), COMPUTED to W = 20.** A Q01 death is the two cells beside the wall coming into phase:
+  starved (both white) or cancelled (both black, the owner's destructive interference). An exact pairing makes the
+  kinds equal for every death time t ≤ W − 1 (PROOF-SKETCH): flip depth t, then repair x_1(t) with depth t + 1. After
+  the news arrives they stay near even. So the kind is a fresh coin.
+- **The Hydra cull (DQ-031).** Exact halving to t = W − 1; P-F1's "t ≤ W" failed at t = W. Then plateaus (tick ratio
+  about 0.8) and cliffs (0.14): P-F2 refuted. Champions outlive the halving line by up to 10 (D(11) = 30): P-F3 refuted
+  by a value in my own control table. The heads are equal on average.
+- **Champions (DQ-032).** At every rise of D from W = 5 to 19, no new champion restricts to an old one. The champions
+  of W = 19 use all four surviving near-wall patterns.
+- **Diagonals (DQ-029, DQ-030).**
+  - Every right diagonal is periodic from t = 0. D_4 = 00101101, period 8, which answers the owner.
+  - The left crystal covers the centre for about its first 20 steps and then falls behind (P-E3 refuted).
+  - In the diagonal frame the right diagonals remember themselves through the XOR (an odometer) and the left forget
+    themselves through the OR (a crystal), the owner's forgetting made exact.
+- **Seas (DQ-034).** Of 126 periodic seas of period ≤ 6 beside the wall, only the checkerboard hosts the clock to
+  K = 160; every other, white included, kills it by t = 30. P-H2 refuted, for the known reason: Condrey's fixed
+  checkerboard masks the wall (G11.1). White-sea champions do not imitate it (agreement 0.42–0.57 against 0.50).
+
+Not run:
+- the block coarse-graining (DQ-033), KNOWN to fail for Rule 30 (Israeli–Goldenfeld 2006; Song–Aaron 2020, blocks
+  ≤ 7);
+- the bombe's loops in CQ01 (DQ-026), waiting on an owner steer;
+- stage-one tightness (DQ-028), specified with its prediction;
+- the Hydra potential (DQ-031), waiting on the late plateaus.
+
+Ranked next leads:
+1. what the starts that pass a late plateau share;
+2. the white sea against the checkerboard, by hand;
+3. stage-one tightness.
+
+Nothing outward-facing was done. No heartbeat or waiter was started.
