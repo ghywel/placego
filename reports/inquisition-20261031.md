@@ -1062,3 +1062,54 @@ pressure stop 2048 MiB; swap growth 256 MiB; at most 12 processes.
 Record searched: L1258, GC2330, GC2331 and CL669 in full; `known_find.py --new` at 17:2x UTC (kit 842b756f, portal
 17:20:19Z, 23 open PRs). The only changes are PR69's and PR68's already-read items, with no new ether-episode
 statement. PR69's head is still fcffbaa9. No literature search: this is a finite extremal count in PR69's frame.
+
+### T-SAT results
+
+(Written after the run, below this line. Predictions above are unchanged.)
+
+On Local's M5 under run_capped, COMPLETED: wall 82 s, CPU 241 s over all processes, maximum sampled tree RSS 346 MiB,
+at most 8 processes. Output `699257fa` (out.txt, t-sat-ether-episode in the inquisition-20261031 scratch folder).
+
+- **P-S1 held.** At every one of the 50 depths k ≤ 150 with k ≡ 0, 2 (mod 6), L = m + 4 is UNSAT in all 16 exact
+  phase classes, and cadical agrees on every class. **M(k) = floor(2k/3) + 3 there (COMPUTED, k ≤ 150).** With the
+  two-party results this makes M(k) = floor(2k/3) + 4 − [k ≡ 0, 2 (mod 6)] exact for every k ≤ 150, and PROVED for
+  all k in four residues.
+- **P-S2 held.** G(k) = m + 3 at all 25 depths k ≡ 0 (mod 6) to 150 (UNSAT in all 8 phases under both solvers). At
+  all 25 depths k ≡ 2 (mod 6) to 146, G(k) = m + 4 (SAT, model re-simulated). Cloud's split is not a small-k effect.
+- **P-S3 held.** For k ≤ 40, L = m + 3 is SAT and L = m + 5 UNSAT in both modes, and L = m + 4 is SAT at residues
+  1, 3, 4, 5. For k ≤ 20 the 32 phases fall into the 16 glide classes, and every value matches L1258's exhaustive
+  M(k) and Cloud's G(k). Every SAT model re-simulated correctly.
+- **P-S4 held, weakly.** The whole run took 82 s, so the refutations are easy, but individual solve times were not
+  recorded.
+
+### T-K: where the extra tick comes from (prediction before the run)
+
+A structural point first. The ether's phase pattern ψ = t + 2j (mod 8) is invariant under (j, t) → (j + 3, t + 2),
+and GPT's dependency graph has cycle length 3. So every argument built from depth-homogeneous local inference, the
+top window and the edge contradiction gives a bound depending on k mod 3 only. Yet G(6) = m + 3 while G(9) = m + 4.
+
+Under the shift, the instance for k + 3 is the instance for k with three more levels and **two extra early top
+ticks** (the window [0, L + 1] maps to [−2, L − 1]). So the period-6 effect must come from one of two places. One
+is the knowledge front's profile (the last ticks before nothing is known, at each depth). The other is the **start
+corner**: knowledge near t = 0, which propagates down along d = 0 steps whose phase has period 4 in depth. GPT's
+tree for the one hard edge phase (r = 7, target at tick 3) never uses top ticks 0, 1, 2.
+
+Probes: `ether_knowledge_map.py` (SHA256 334bd886…) computes, by SAT, the exact set of values each pair
+(X_(j+1)(t), X_j(t)) can take. `ether_core_ticks.py` (49b863d9…) finds deletion-minimal sets of top ticks that keep
+L = m + 4 UNSAT at r = 7.
+
+- **P-K1 (symmetry check, near-certain).** Without the edge, the map for K = 27 (L = 22, good, p = 5) agrees with the
+  map for K = 24 (L = 20, p = 7) at every distance d ≤ 24 from the top, after a 2-tick shift, except where K = 27's
+  two extra early ticks add knowledge.
+- **P-K2 (the front, about 50%).** In the steady state the knowledge front's profile has period 3 in depth (row
+  d + 3 equals row d shifted by 2 ticks near the front). Counterfactual: period 6 at the front means the front
+  itself carries the parity.
+- **P-K3 (the start corner, about 60%).** At k ≡ 0 (mod 6), good top, r = 7, every deletion-minimal tick set
+  contains at least one of ticks 0, 1, 2. At k ≡ 2 (mod 6), exact top, the minimal sets contain the last tick
+  L − 1 = m + 3. Counterfactual: no early tick in any minimal set means the start corner is not where the parity
+  enters.
+
+Caps (run_capped): wall 1800 s, CPU 1800 s per process, RSS 2048 MiB, files 64 MiB, disk 256 MiB, at most 4
+processes; one kissat at a time.
+
+Record searched: as for T-SAT, plus GPT's GC2327 table (r = 7 is the only edge phase needing m + 4 for k ≢ 1 (mod 3)).
