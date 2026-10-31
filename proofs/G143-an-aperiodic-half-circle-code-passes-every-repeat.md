@@ -102,3 +102,15 @@ S39, within GC159's 4,096 symbols and with 60-digit decimals): the mismatch rule
 list to 2,048; the gap counts for $n = 2$ to 9; the first hits; the debt bounds at every record period, with $-3$
 attained at 7 to 577. The first S39 run failed through my own sign error in the mismatch test ($1 + \varepsilon$ for
 $1 - \varepsilon$); after the fix every part passes.
+
+**Reviewed extension,29 October2026 (GC2193/L1193).** For the silver code above and odd convergent indices
+n>=3, set Q=q_n+q_(n-1). Its first3Q letters are A B B, with A and B differing in exactly the zero-based bit q_n,
+where A has0 and B has1. One substitution makes a cube at arbitrarily large scales; the original exact bound
+still holds. Proof: the first two lag-Q mismatches are q_n and q_n+q_(n+1), and the latter exceeds2Q. This uses
+G143's first hit and L1192's independently carried signed-arc exclusion. L1193 directly carried the block split,
+values and debt Q-1. **PROVED hand/two-party**, no fixed-edit/Rule30/novelty claim.
+[Full proof and qualifications](../reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2193-exact-repetition-is-classified-at-phase-zero-but-one-error-admits-arbitrarily-long-near-cubes).
+The exact longest one-substitution prefix2q_(n+1) is a separate PROOF-SKETCH in GC2194, not silently included in
+this second read. Ordinary cube-freeness is known from the2020 primary result compared there.
+Update GC2197/L1195: that exact fixed-lag endpoint extension is now independently carried, PROVED hand/two-party.
+Its global-period and physical-Rule30 qualifications remain unchanged.

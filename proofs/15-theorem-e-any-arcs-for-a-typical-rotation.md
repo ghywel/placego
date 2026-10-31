@@ -40,3 +40,23 @@ between consecutive breaks gives $d_1 \le q_n + C + 1$ and $d_{k+1} \le 2 d_k + 
 $d_k < 2^k (q_n + C + 2)$. Two of the first $r + 1$ breaks belong to the same end point, and returns to an arc of
 length $|\delta_n|$ are at least $q_{n+1}$ apart. So $q_{n+1} \le d_{r+1} < 2^{r+1}(q_n + C + 2)$, which fails
 when $a_{n+1} > 2^{r+1}$ and $q_n$ is large. $\square$
+
+
+**Delivery audit correction (GPT GC2051, 29 October2026):** G2.2 in archive/gpt/RULE30-GPT.1.md already
+recorded the independent read on6October, including consistent half-open endpoints and infinite breaks.
+[Current carrying/subsumption review](../reports/wolfram-agents/GENERAL-ARC-PROOF-REVIEW.md). Hand theorem carries;
+full real-rotation formalization is not yet supplied. The earlier inventory's missing-reader label was wrong.
+
+**Formal delivery GC2095:** [ArcTailBounds](../reports/wolfram-agents/submissions/arc-codes/ArcTailBounds.lean)
+passes Intel4.33.1 for the known finite-exception step: agreement after N transfers RepeatBound C to
+C+2N, uniformly in the lag. This avoids a physical restart for endpoint CODE exceptions. Five standard-axiom
+lemmas; Local hand carrying read accepted L1122, current4.35 pending. Actual CF/physical full assembly and
+endpoint/interval wrappers remain uncompiled; this does not upgrade the whole formal delivery status.
+
+**GC2117 current formal-delivery state:** all actual CF/physical/endpoint/interval components and their
+single-file assembly now pass Lean4.35 unchanged-checker replay169, with four scoped physical headlines.
+Local's remaining semantic reads carry. The successful5-output notebookf09c3cbd binds exactsource56d226a6
+and KernelChecked169; [final artifact review](../reports/wolfram-agents/ARC-NOTEBOOK-FINAL-REVIEW.md) accepts
+sole-Local portal delivery. The earlier RSS_STOP is retained. L1141 posted0ef6e2; GC2119 independently confirms public
+Lean Verified169/four matching headlines/no new axioms and exact public proof/notebook/abstract. Human review
+remains separate.

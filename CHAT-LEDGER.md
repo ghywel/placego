@@ -13002,3 +13002,47 @@ not been independently retrieved. The all-residue expression remains COMPUTED th
 The next hand questions are separate: carry an extra witness tick for k ≡ 3,5 mod6, and tighten the universal
 upper bound for k ≡ 0,2 mod6. No new computation, literature-priority claim, compiler check or submission. Both
 schedules remain PAUSED; this response does not dispatch Local or restart the autonomous programme.
+
+## CL669 — Cloud to GPT, Local and the owner: the final tick, structurally. The witness's mismatch front is exactly R*(t) = 2 floor((3t−8)/4), proved by a finite periodic-patch certificate on the two-party front lemma; hence M(k) = floor(2k/3)+4 for every k ≢ 0, 2 (mod 6). For the even residues the upper bound is diagnosed, not closed: GPT's tree is already exact for its table, and the good predicate is exact at k ≡ 0 and loose at k ≡ 2 (mod 6) (2026-10-31 17:07 GMT)
+
+Caught up: L1254 to L1258, GC2325 to GC2330, GPT's block report and Local's probe (replicated here: M(1..20) =
+4, 4, 6, 6, 7, 7, 8, 8, 10, 10, 11, 11, 12, 12, 14, 14, 15, 15, 16, 16). The owner asked whether I can finish the work:
+GC2330's two named steps were an extra witness tick for k ≡ 3, 5 (mod 6) and a sharper upper bound for k ≡ 0, 2
+(mod 6). The first is done below; the second is located and split, not closed.
+
+**1. The witness's front (PROOF-SKETCH, Cloud; certificate `tests/probes/wolfram/ether_witness_front.py`, output
+`ether_witness_front.out`; round 4 of the tracker and a waiting-room entry).** Let D(t) be the witness's mismatched
+depths against E_j(t) = ether(j+3, t+1) and R*(t) = max D(t). Then R*(0) = 0, D(1) = D(2) = ∅, R*(3) = 0, and for all
+t ≥ 4, R*(t) = 2 floor((3t−8)/4): the front is always an even depth and moves 2, 0, 2, 2 per four ticks. Proof: exact
+computation to t = 12; then a band of depths [b(t), R*(t)+1] (content 111010111 at t = 12, depths 7..15) evolves on
+its own, because X_j(t+1) reads X_(j−2)(t) only when X_(j−1)(t) is white, so the bottom rises by one when its cell is
+black and two otherwise; the cells above it are E by the two-party lemma D_j(t) = 0 for j > ceil(3(t−3)/2)
+(L1258/GC2330) together with ceil(3(t−3)/2) ≤ R*(t)+1 for all t ≥ 4; after eight ticks the band returns shifted by
+twelve, and E is invariant under (j+12, t+8) by the ether's glide ether(i+2, t+4) = ether(i, t). The certificate
+checks every step and prints the pulse: {R−2, R} at t ≡ 0, 1, {R−4, R−3, R−1, R} at t ≡ 2, {R−6, R−5, R−3,
+R−2, R−1, R} at t ≡ 3 (mod 4), then the deep part heals and the front jumps by two. Interior mismatches sit on odd
+depths; only the front is even.
+
+**2. Corollary (the final tick for k ≡ 3, 5 mod 6).** The episode at (k, k+1) ends at the first t with R*(t) ≥ k,
+and the front then lands on k or k+1, so the witness's episode length is exactly ceil((4 ceil(k/2)+8)/3) =
+floor(2k/3)+4 − [k ≡ 0 or 2 (mod 6)] (symbolic check to k = 400; equals Local's table to 20). With GC2327's
+two-party upper bound, **M(k) = floor(2k/3)+4 for every k ≡ 1, 3, 4, 5 (mod 6)**. The structural reason the even
+depths 2n never gain a tick over 2n−1 on the witness is that the front never rests on an odd depth. Guards: the
+small cases t ≤ 3 and k = 1 are explicit (G1); every number is pasted from the certificate (G22); the lemma used is
+the two-party one, not the earlier interval front (G7).
+
+**3. The even residues, diagnosed (COMPUTED).** (a) GPT's tree is already exact for its own table: the exact max-plus
+recursion F(h, j) = max over d in D(h) of d + F(h+2+d, j−1), with the worst prospective edge phase and the best
+contradictory phase, gives exactly floor(2k/3)+4 for every k ≤ 24; the potential telescoping loses nothing, so the
+missing tick is not arithmetic but realisability (the AND-tree's leaves need not coexist). (b) The good predicate's
+exact maximal runs G(k) over all prefixes equal M(k) at k ≡ 0 (mod 6) (7, 11, 15 at k = 6, 12, 18) and exceed it by
+one at k ≡ 2 (mod 6) (5, 9, 13, 17 against 4, 8, 12, 16 at k = 2, 8, 14, 20), and equal both M(k) and the bound
+elsewhere. So two different lemmas remain: for k ≡ 0 (mod 6), a realisability argument inside GPT's tree; for
+k ≡ 2 (mod 6), the exact ether pair must enter the first descent step (it gives X_(k−1)(t) = E_(k−1)(t) at every
+tick with E_k(t) = 0 and the OR of the two lower digits at every tick to L−2, which `good` forgets at the odd
+phases). I did not find either within the block and say so; the tables above are their finite tests.
+
+**Requests.** REVIEW-REQUEST (GPT or Local): the certificate's three steps (the masking rule at the band bottom; the
+inequality ceil(3(t−3)/2) ≤ R*(t)+1 by the four residues of t mod 4; the eight-tick return). Nothing assigned; both
+workers halted as the owner left them. No prize movement, no submission question raised: this is a sharpening of a
+two-party result in PR69's frame.

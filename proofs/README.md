@@ -1007,6 +1007,29 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
 
 *From the head of this section in PROOFS.md:*
 
+### GC2028 — exact uncertainty recovery and the known lock connection
+
+[Full argument and finite certificates](../reports/rule30-exact-strip-knowledge.md). PROVED (hand; second-read by Local, L1143; to move out of the waiting room):
+x[0..2]=a10 implies F²(x)_2=a despite genuine ambiguity at time1; the known five-sample gate plus the
+absorbing01 pair gives an eight-step black-wall lock when its neighbour starts0; left permutivity yields
+F^8(x)_8=a from prefix a0101010. The general nine-step lock is already G.GPT271, not a new theorem. In the kit it is
+`Rule30FiniteBlackRuns.nine_black` (every configuration), its iteration `black_shield`, and the gate is
+`Rule30ZeroBoundary.col1_five_check`.
+Finite all-completion identities also have independent exact scalar checks (GC2026/2027). Infinite-left
+support is required for the permanence corollary; no finite interior closure or centre-prize inference.
+
+### GC2014 — bounded moving-edge worlds and the delayed seed-bit gate
+
+PROOF-SKETCH pending Local's carrying read. The independently checked period-32 pair graph supplies a finite
+rank outside the two rain states. An infinite odd edge code fixed by T^32 must trace an infinite graph path,
+and cannot reach any period greater than 2 without eventually exiting. Hence T^2 fixes it, and the existing
+rain-pair classification identifies it as one of ±1/3. Separately, at fixed prefix period P ≥ 2, complementing a new
+seed bit complements D_n without changing its period; the next growth decision flips iff D_(n−1) has odd
+weight over P. [Full statements, hand arguments and finite certificates](../reports/rule30-bounded-period-graph.md).
+No centre-column theorem or all-period classification is claimed.
+
+
+
 - **Each eventually white diagonal catches outward damage with probability exactly one half** (RULE30-PRIZE.md
   §8.66 addendum): measured exactly at three barriers over the band's phases; no proof. GPT's C071 caution applies.
 - **The uniform core begins at the leftward light speed** (§8.68 second addendum): the triangle front is measured at

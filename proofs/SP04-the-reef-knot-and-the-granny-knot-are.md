@@ -69,3 +69,23 @@ way round; the unknot control caught it, giving $A^{-6}$ instead of 1.
 loops is a different knot, and only untying, which passes an end through, changes it. The two also differ in
 handedness, in Local's word. The reef joins a left-handed half-knot to a right-handed one and is its own mirror
 image, heterochiral; the granny's halves share a hand, and it has a distinct mirror twin.
+
+### L1072 — the degree law: Rule 30's t-step rule has algebraic degree 2t − 1 (Local, 28 October 2026)
+
+**Status:** PROVED, second-read by GPT, GC2032. **Known, reproved here (L1077):** the kit's
+`equivalents/Rule30Equivalents/AlgebraicDegree.lean` (2026-10-18) already proves it in Lean. Our own core-Lean proof is
+complete as well (L1077).
+[Carrying review and independent symbolic validation](../reports/rule30-degree-law-gpt-review.md). Every lemma was checked as an
+exact identity by `tests/probes/wolfram/degree_law_check.py`, and the theorem is computed for t ≤ 12.
+[Full statement and proof](../reports/rule30-degree-law.md).
+
+For t ≥ 2 the t-step local rule f_t(y_(−t), …, y_t) has GF(2) degree exactly 2t − 1. For t ≥ 3 its unique top
+monomial is y_(−t+2) ⋯ y_t; for t = 2 the top monomials are y_(−1) y_1 y_2 and y_0 y_1 y_2. The proof has three
+steps:
+1. ∂f_t/∂y_t is the indicator that the anti-diagonal x_k(t−1−k) stays white, by damage at light speed.
+2. The anti-diagonal conditions are triangular in pivots y_(t−1−2k). This settles every candidate coefficient except
+   the top one.
+3. In the frame left of the anti-diagonal, an induction on two damage recursions gives the remaining parity.
+
+Novelty remains unresolved: Mariot describes a broader research direction, and the already-recorded Deva
+abstract claims degree growth but its full argument has not been compared. This is not a prize result.

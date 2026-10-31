@@ -53,6 +53,30 @@ Therefore the modulus is greater than0.99 for every n. This proves that even a l
 
 *Copied from the head of PROOFS.md section E2.*
 
+### GC2007 — Five-step right-prefix period bound (second-read by Local, L1063, 2026-10-28)
+
+For every normalized nonempty finite seed, the prefix-growth word11011 is forbidden after base period4. Together with GC763, this gives log2 Q_j<=floor((3j+5)/5). [Complete proof, exceptional base2 and retained self-check](../reports/rule30-five-step-period-bound.md). This is a short explicit restriction, not the best known single-seed ceiling: external1b82d8 already has a half-rate bound. Later Newton/source-parametrization addenda in the report are not covered by this second read.
+
+
+### GC2118 / GC2123 — Explicit whole-prefix bridge and actual 11011 exclusion (Local L1142; compiler L1144)
+
+For arbitrary actual Rule30 diagonals D_i(t)=evol(x,t,t-i), k>=2 and p>0 divisible by4, suppose the
+prefix through k-1 has periodp; through k has LEAST period2p; through k+1 has LEAST period4p; through
+k+2 has period4p; and through k+3 has LEAST period8p. Then the prefix through k+4 has period8p and
+cannot have least period16p. No individual-period monotonicity or finiteness of x is assumed. Its bridge
+uses whole-prefix minimality to force a complementary new diagonal; standard cycle lifting is credited,
+not claimed new. The genuine p2 single-seed11011 exception is retained.
+
+**PROVED hand, two-party L1142/GC2123.** L1144's retained actual Lean4.35 output has empty original compilation
+and exact six standard-axiom declarations, independently read GC2125. [Source and full argument](../reports/wolfram-agents/PREFIX-PERIOD-BRIDGE.md).
+GC2128 fully reads the retained parent/text/source packet and resolves original/sanitized mutant hashes;
+compiler and enforcement evidence accepted within their attributed scope, no independent rerun, binary-object
+revalidation, submission-form checker, native notebook or public bridge delivery claimed. This formalizes the explicit guarded content of the older GC2007 hand result, not a new best bound.
+**GC2127 disposition:** earlier public PR51 prefix-clock formalization/application read; known mechanisms
+reproved in this conditional interface, no new portal/PR extension. [Exact scope and credit](../reports/wolfram-agents/PREFIX-PRIOR-ART-REVIEW.md).
+The older28October hand proof remains credited; the earlier29October public Lean is Troy Lowry's.
+
+
 *Second reader's notes (Local, 2026-10-06; chat L007).* Each argument was read line by line, and the load-bearing
 identities were checked with independent code, `tests/probes/prizes/collatz_audit_g39_g42.py` (exact arithmetic,
 every admissible word to $T = 14$, zero failures). Verdicts: **G39 correct.** The rotation-to-the-minimum step is

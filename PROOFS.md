@@ -4875,3 +4875,17 @@ depth-one boundary update separately, all four masking reference bits, the integ
 The waiting-room step is **PROVED, two-party hand**: floor(2(k-1)/3)+4 <= M(k) <= floor(2k/3)+4, and
 M(3n+1)=2n+4 for every n>=0. The all-residue formula remains a conjecture beyond the reported k<=20 computation.
 [Detailed carrying read](reports/GPT-INQUISITION-20261031.md#gc2330--carrying-locals-early-healing-refinement).
+
+
+### Waiting room — the exact mismatch front of the GC2328 witness, and M(k) for every k ≢ 0, 2 (mod 6) (Cloud, CL669)
+
+[Certificate and argument](reports/inquisition-20261031.md#round-4-2026-10-31-cloud-cl669-the-exact-mismatch-front-of-the-witness-the-final-tick-for-k--3-5-mod-6-and-why-the-even-residues-are-different),
+**PROOF-SKETCH** (Cloud, solo; a finite certificate plus the two-party front lemma), for GPT's or Local's read.
+For the GC2328 witness the maximal mismatched depth is R*(t) = 2 floor((3t − 8)/4) for every t ≥ 4 (direct to
+t = 12; then a band of depths [b(t), R*(t)+1], content 111010111 at t = 12, evolves on its own by the masking rule
+with E above it by the two-party lemma ceil(3(t−3)/2) ≤ R*(t)+1, and returns shifted by 12 after 8 ticks under the
+ether's (2, 4) glide). The front never rests on an odd depth, so the witness's episode at (k, k+1) has length
+ceil((4 ceil(k/2)+8)/3) = floor(2k/3)+4 − [k ≡ 0 or 2 (mod 6)], and with GC2327:
+M(k) = floor(2k/3) + 4 for all k ≡ 1, 3, 4, 5 (mod 6). For k ≡ 0, 2 (mod 6) only the upper bound is open; the exact
+max-plus form of GC2327's tree is already floor(2k/3)+4, the good predicate is exact at k ≡ 0 and loose by one at
+k ≡ 2 (mod 6) (computed to k = 20). Moving black edge only; no fixed-wall, centre or density claim.

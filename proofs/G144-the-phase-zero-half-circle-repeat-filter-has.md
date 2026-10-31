@@ -93,3 +93,11 @@ $\sqrt 2 - 1$ the even numerators 2, 12 and 70 give first hits $q_{n+1}$ and the
 $[0, 11]$); at $[0; 1, 1, 4, 4, \ldots]$ the numerators are odd and the doubled periods have first hit
 $(a-1) q_n + q_{n-1}$ and the stated debts; and at $2 - \sqrt 2$ the even mediants are unimodular, alternate in sign,
 satisfy the identity and the Legendre bound, and are exactly the convergents of $\alpha$.
+
+**Reviewed quantitative extension,29 October2026 (GC2187/L1192).** With R(n) the shortest prefix length
+containing two n-factors and rep=liminf R(n)/n, the phase-zero code has rep=2 exactly on G144's eventual-twos/
+odd-numerator class. Unbounded digits give rep=1; late digits bounded by A off that class give
+rep<=2-1/(A+2). **PROVED hand/two-party**, with original G144/L100 first-hit dependencies retained.
+[Carrying proof](../reports/wolfram-agents/UNIFORM-RECODING-DELIVERY-SCOPE.md#gc2187-hand-candidate--the-phase-zero-repetition-exponent-has-an-exact-exceptional-maximum).
+GC2193 positively credits the unbounded case to Nguyen7.4/Bugeaud–Kim10.3 at every phase; precise bounded-type
+prior-art disposition is unresolved. No formal validation, CA realization or submission claimed.

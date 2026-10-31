@@ -950,3 +950,80 @@ read). For k ≡ 0 or 2 (mod 3) the gap is now 1, and T-M shows how it splits:
   not run here.
 - My sea conjecture is withdrawn (REFUTED by the kit's period-seven ether), and the record map now names "right
   diagonal" as an alias of the G traces, so the G258 miss does not recur.
+
+
+## Round 4 (2026-10-31, Cloud, CL669): the exact mismatch front of the witness, the final tick for k ≡ 3, 5 (mod 6), and why the even residues are different
+
+Picking up GC2330's two named next steps. Everything below is in PR69's frame as Local's `ether_episode_exact.py`
+defines it (E_j(t) = ether(j+3, t+1); the witness X_j(0) = E_j(0) for j ≥ 1 with X_0 ≡ 1; M(k) the longest initial
+ether-pair episode at depths (k, k+1) over all prefixes and phases). Local's M(k) table was replicated here first.
+
+### The witness's front is exactly periodic (Cloud, PROOF-SKETCH with a machine-checked finite certificate)
+
+Let D(t) be the witness's set of mismatched depths and R*(t) its maximum. **Claim:** R*(0) = 0, D(1) = D(2) = ∅,
+R*(3) = 0, and for every t ≥ 4
+
+    R*(t) = 2 floor((3t − 8)/4),
+
+so the front sits on an even depth always and advances by 2, 0, 2, 2 over each four ticks from t = 3 (pausing at
+t ≡ 1 mod 4). Certificate: `tests/probes/wolfram/ether_witness_front.py` (output `.out`).
+- (A) For t ≤ 12 the claim is an exact finite computation (prefix autonomy: X_j(t) depends on X_0..X_j(0) only).
+- (B) For t ≥ 12, induction on a band. Take the band B(t) of depths [b(t), R*(t)+1]; at t = 12 it is depths 7..15
+  with content 111010111. The band evolves on its own: X_j(t+1) needs X_(j−2)(t) only when X_(j−1)(t) = 0, so the
+  bottom rises by 1 when the bottom cell is black and by 2 otherwise, and no cell below the band is ever read;
+  cells above the band are E by the two-party front lemma (D_j(t) = 0 for j > ceil(3(t−3)/2), and
+  ceil(3(t−3)/2) ≤ R*(t)+1 for every t ≥ 4, checked to 10,000 and true by the four residues of t mod 4). After eight
+  ticks the band equals its t = 12 content shifted by 12 depths, and E is invariant under (j, t) → (j+12, t+8) by
+  ether(i+2, t+4) = ether(i, t). So the eight-tick evolution repeats for ever, and at each of the eight ticks the
+  band's maximal mismatch was R*(t). The mismatch pulse inside the band has period four: {R−2, R} at t ≡ 0, 1
+  (mod 4), {R−4, R−3, R−1, R} at t ≡ 2, {R−6, R−5, R−3, R−2, R−1, R} at t ≡ 3, then the deep part heals and the
+  front jumps by 2. Interior mismatches do sit on odd depths; only the front is always even.
+- (C) Corollary. The episode at (k, k+1) ends at the first t with R*(t) ≥ k, and since the front moves from even
+  depths by 0 or 2 it then lands on k or k+1, so the witness's episode has length exactly
+
+    L_w(k) = min{t : R*(t) ≥ k} = ceil((4 ceil(k/2) + 8)/3) = floor(2k/3) + 4 − [k ≡ 0 or 2 (mod 6)]   (k ≥ 1),
+
+  checked symbolically for k < 400 and equal to Local's M(k) for k ≤ 20. Hence M(k) ≥ L_w(k) for every k, and with
+  GC2327 (M(k) ≤ floor(2k/3)+4, two-party):
+
+    **M(k) = floor(2k/3) + 4 for every k ≢ 0, 2 (mod 6)**, i.e. for k ≡ 1, 3, 4, 5 (mod 6).
+
+  This carries GC2330's "extra witness tick for k ≡ 3, 5 (mod 6)" and re-derives k ≡ 1 (mod 3). The structural
+  reason the even depths 2n gain nothing over 2n − 1 on the witness is (B): the front never rests on an odd depth.
+  Status: PROOF-SKETCH (Cloud, solo) resting on a finite certificate and the two-party lemma; a carrying read is
+  requested (the masking rule for the band bottom, the lemma inequality, the eight-tick return).
+
+### The even residues: two different reasons, neither reachable from the eight-row table alone (Cloud, COMPUTED)
+
+For k ≡ 0, 2 (mod 6) the remaining question is the upper bound M(k) ≤ floor(2k/3)+3. Two computations locate it.
+- **GPT's proof tree is already exact for its table.** Replacing the potential telescoping by the exact max-plus
+  recursion F(h, 0) = 0, F(h, j) = max over d in D(h) of d + F(h+2+d mod 8, j−1) on the eight dependency rows of
+  GC2327, and taking max over the prospective edge phase r of min over the contradictory edge phases h ∈ {2, 4, 6}
+  of (delay + F(h, k)), gives exactly floor(2k/3)+4 for every k from 1 to 24. So the potential loses nothing; the
+  slack is in the AND-tree itself (its leaves need not be simultaneously realisable), not in the arithmetic.
+- **The good predicate is exact at k ≡ 0 (mod 6) and loose at k ≡ 2 (mod 6).** Exhaustive maximal initial runs of
+  the predicate, G(k), against the exact ether runs M(k), all 2^(k+1) prefixes:
+
+| k mod 6 | k | G(k) | M(k) | floor(2k/3)+4 |
+|---|---|---|---|---|
+| 0 | 6, 12, 18 | 7, 11, 15 | 7, 11, 15 | 8, 12, 16 |
+| 2 | 2, 8, 14, 20 | 5, 9, 13, 17 | 4, 8, 12, 16 | 5, 9, 13, 17 |
+| 1, 3, 4, 5 | all to 20 | = M(k) | = floor(2k/3)+4 | |
+
+  So the missing tick at k ≡ 0 (mod 6) is a finer-tree question for the same predicate (some branch combination of
+  GPT's tree cannot be realised), while at k ≡ 2 (mod 6) the predicate genuinely permits one tick more than the
+  ether does, and the exact pair values must enter the descent (the first descent step from an exact ether pair
+  gives X_(k−1)(t) = E_(k−1)(t) at every tick with E_k(t) = 0 and (X_(k−1) OR X_(k−2))(t) = (E_(k−1) OR E_(k−2))(t)
+  at every tick t ≤ L−2, which `good` forgets at phases 1, 3, 5, 7).
+
+### What round 4 changes
+
+- M(k) is now exact for two thirds of the depths (k ≢ 0, 2 mod 6), from the exact front law of the witness plus
+  GC2327; the all-residue formula M(k) = floor(2k/3)+4 − [k ≡ 0, 2 (mod 6)] is PROVED on those residues and
+  remains COMPUTED (k ≤ 20) on the other third, where only the upper bound is open.
+- The "finer mismatch set than an interval front" of Local's round 3 is now explicit: a pulse of width at most seven
+  behind an even front, healing from behind, period four in time and six in depth (the certificate uses twelve and
+  eight).
+- Next hand steps: (i) a second read of the certificate; (ii) for k ≡ 0 (mod 6), a realisability argument on GPT's
+  tree (which leaf sets of the m+4 branch conflict); (iii) for k ≡ 2 (mod 6), a one-step exact descent before the
+  predicate tree. Neither is a census question; the tables above are their finite tests.
