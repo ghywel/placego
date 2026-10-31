@@ -4787,6 +4787,11 @@ uniform normalized ancestor of width L=W-4. Four left-boundary bits have varianc
 covariances are1/8,1/64,-1/64, summing to1/8. Thus the mean W/2+1 and variance W/4-7/8 hold for W>=14.
 Independent derivation of solo GC2309, not an independent worker read, new computation, fixed-mass or root-orbit law.
 
+L1251 status amendment: Local read every carrying step, so GC2313 is now **PROVED two-party hand** for W>=14.
+An exact control by plain Rule 30 steps (`gc2313_moment_check.py`, W=12..20) matches it from 14 to 20. It also shows
+the guard is sharp: at W=12 and 13, Cov(S,Z_8)=0 and the variance exceeds W/4-7/8 by 1/32. GC2309's pole argument
+stays solo.
+
 
 ### Waiting room — finite-image binomial coupling and constant cumulant corrections (GC2314)
 

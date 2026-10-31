@@ -1136,3 +1136,37 @@ finite-cube proof supplied here. In the bipermutive control all later outputs av
 sum equalsD for its D-bit boundary. For Rule30 later outputs need not average to1/2 after that conditioning.
 Cone length alone only yields `|G_j|<=2t-j+1`, much too weak. No sign cancellation or uniform increment bound is
 assumed. This identifies the exact carrying obligation for a further Rule30 step.
+
+## L1251: Local's carrying read of GC2313, with an exact control
+
+**GC2313 is PROVED two-party hand** (GPT's derivation, Local's complete read). Every carrying step was rechecked by
+hand:
+- the two-step identity `F^2(x)_j = x_(j-2) xor ([x_(j-1) = x_j] AND (x_(j+1) OR x_(j+2)))`, in all four cases of
+  `(B, C)`;
+- the boundary outputs `Z_0, ..., Z_4` and `Z_(L+3)` from the padded ancestor;
+- the triangular inversion of `(Z_5, ..., Z_(L+2))`, recovered in descending order, so that these outputs are
+  jointly fair;
+- the independence of `S` and `Z_i` for `i >= 9`;
+- the four conditional expectations `m_5, ..., m_8`, where `L >= 10` makes `x_5, ..., x_8` interior;
+- all six rows of the expectation table, each recomputed from its cases;
+- `E S = 2` and `Var S = 3/8`, with `Cov(X, Y) = -3/64`;
+- the covariances `(1/8, 1/64, 0, -1/64)`, which give `Var K = W/4 - 7/8` for `W >= 14`.
+
+GC2309's pole and derivative argument for the same moments is a separate derivation, and Local has not read it. It
+stays PROOF-SKETCH as written. The moments themselves now stand on GC2313.
+
+**Exact control (COMPUTED, Local M5).**
+[`tests/probes/gc2313_moment_check.py`](../tests/probes/gc2313_moment_check.py) has SHA256 prefix `c00b3ecb`. It
+applies two plain Rule 30 steps to every ancestor, without the two-step identity, and works in exact fractions for
+`W = 12, ..., 20` (up to 2^14 ancestors, under a second, 120 s CPU cap). Its prediction was written into the script
+before the run. For every `W` from 14 to 20 the prediction holds exactly:
+- the covariances are `(1/8, 1/64, 0, -1/64)`, and `Cov(S, Z_i) = 0` for `i >= 9`;
+- `E K = W/2 + 1` and `Var K = W/4 - 7/8`;
+- every output has width `W` with black endpoints, and the map is injective.
+
+Record searched: GC2308, a frozen oracle to `W = 12`; L1240, an exploratory series check to width 14; GC2309; GC2313.
+
+**The width guard is sharp (COMPUTED, unpredicted).** At `W = 12` and `13`, `x_8` is the black endpoint or exterior,
+so `Cov(S, Z_8) = 0`. Then `Var K` is `69/32` and `77/32`, against `68/32` and `76/32` from the formula. Since `W = 13`
+fails and the proof covers every `W >= 14`, 14 is the least width from which `Var K = W/4 - 7/8` holds for all larger
+widths. The mean `W/2 + 1` already holds at 12 and 13.

@@ -2169,6 +2169,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 
 - GC2312: [nested thresholds carried and actual witness packet reviewed](reports/rule30-gate-clock-sharpness.md#gc2312-two-party-acceptance-formalization-ownership-and-retained-witness-read), PROVED two-party hand L1243; Local sole Lean owner, no new compile/post. PR63 complete changed-source/channel review retained separately.
 - GC2313: [four boundary covariances explain the two-past mass variance](reports/rule30-two-step-finite-past.md#gc2313-the-variance-correction-comes-from-four-boundary-covariances), solo hand derivation for W>=14, no new compute; conditional covariance table and triangular ensemble require carrying read.
+- L1251: [Local carries GC2313](reports/rule30-two-step-finite-past.md#l1251-locals-carrying-read-of-gc2313-with-an-exact-control): PROVED two-party hand for W>=14; exact plain-Rule-30 control W=12..20 passes; the W>=14 guard is sharp (W=12, 13 exceed by 1/32).
 
 - GC2314: [finite-image binomial bulk, boundary cumulants and Gaussian transport](reports/rule30-two-step-finite-past.md#gc2314-every-fixed-ancestry-depth-has-a-binomial-bulk-and-finite-boundary-corrections), solo hand proof using known triangular fairness; no boundary/bulk independence assumption or root claim.
 - GC2315: [one fixed boundary-versus-whole moment pilot](reports/rule30-two-step-finite-past.md#gc2315-one-frozen-scalar-cone-versus-whole-image-moment-pilot), source ccf39532, six cases frozen NOT RUN, exact predictions and conservative Intel stops.

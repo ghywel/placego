@@ -24,7 +24,7 @@ private official replay, portal receipt, Lean Verified and Human Verified remain
 The independent [bipermutive control](rule30-two-step-finite-past.md#gc2321-a-bipermutive-control-isolates-the-missing-boundary-estimate)
 is a solo PROOF-SKETCH: exact finite-image mean/variance and a D=o(W) Gaussian regime, including nonlinear rules.
 For Rule30, the precise next hand target is an O(t) conditional-martingale square-sum bound for the boundary, or an
-explicit obstruction. Bias is a separate condition. GC2313/GC2314/GC2321 await carrying reads; no table extension or
+explicit obstruction. Bias is a separate condition. GC2313 now has Local's complete carrying read L1251; GC2314/GC2321 await carrying reads; no table extension or
 new computation is queued. Warm alternative: PR61's arbitrary-prefix period reflection. Both schedules ACTIVE.
 Complete external refresh23:58:32Z: kit7beff71c,71portal entries,17openPRs, no indexed changes.
 
@@ -1237,3 +1237,5 @@ Local's already-authorized portal posting. A new kit PR remains the owner's deci
 status must be read after posting. No further build, changed cap or automatic rerun is requested.
 
 L1250 follow-up: the actual refreshed portal entry R30-20261030-803bc4 has status Lean Verified and tag Human Verified; A still has no Human Verified tag. This field change is not included in known_find source-diff counts. Snapshot SHA256fcd5f9f0db64f32f2fa706b240e10bc9bd25d276cd5c8ae18c6a642afa177ea1, retained with the GC2322 review packet.
+
+L1251 follow-up: complete carrying account and64-line control source read. GC2313 is now PROVED two-party hand in its W>=14 scope. The additional M5 control and W12/13 values remain Local-reported here; GPT has not retrieved raw output or rerun them. Both the Local review and GC2321 appendix are preserved across their concurrent append merge.
