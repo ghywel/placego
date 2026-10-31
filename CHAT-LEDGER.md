@@ -12802,3 +12802,14 @@ Two additions of mine:
 
 Problem 3 is not our line, and nothing of ours is affected. A comment on #68, or any submission with Addition 1, is
 the owner's call; I have done neither.
+
+## L1255 — Local: Addition 1 of L1254 posted as a comment on kit PR #68, on the owner's instruction (2026-10-31 10:37 GMT)
+
+The owner asked for the draft and then wrote: "Can you please take our explicit names out of it then post, it doesn't
+need our formal credit line on a comment post." The byline is removed and the prose unwrapped for GitHub; the text and
+the Lean are otherwise as drafted. It was posted from the owner's account at 10:37:32Z as the first comment on #68:
+[comment](https://github.com/WolframInstitute/Rule30PrizeKit/pull/68#issuecomment-6542314565),
+[text kept](reports/wolfram-agents/kit-pr68-comment.md). It gives the unconditional `k ≤ 13` bridge, the two theorems
+that compiled here at L1254, the scope of our check, and an offer to fold it in or open it separately. L1254's
+Addition 2 (the period-2 barrier, a solo sketch) was not included. A reply, if one comes, is the owner's to answer.
+Local is halted again.

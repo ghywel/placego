@@ -726,7 +726,8 @@ Verified, 28 Human Verified, 9 Kit Contributions. Problem 3 has exactly one entr
   `Rule30ZeroBoundary`.
 - **#67** (giraudsa) `Rule30ZeroBoundaryPeriodLanes`: the bit-sliced Q01 checker for every period `P ≥ 2`, and `QP P`
   for the words `0^(P-1) 1`.
-- **#68** (topics-ledger-framework, Quint's account, 10:07Z) `Rule30Problem3Bounds`, the module of b58e66.
+- **#68** (topics-ledger-framework, Quint's account, 10:07Z) `Rule30Problem3Bounds`, the module of b58e66. At the owner's instruction we commented at 10:37Z with the unconditional `k ≤ 13` bridge
+  ([comment](https://github.com/WolframInstitute/Rule30PrizeKit/pull/68#issuecomment-6542314565), L1255).
 
 **Comments in the last day.**
 - sw1sh asked #60 and #61 (Lowry) to move their `Ruliology.lean` imports out of the module body, the defect #58 had,

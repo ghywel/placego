@@ -109,5 +109,6 @@ transient `2 ^ (k - 1)`.
 ## Relation to our work
 
 Problem 3 is not our line, and nothing of ours is affected. The entry's bridge goes the other way from R30-20261023-603218's
-headline 20, which repackages the kit's `Problem3 → Problem1`, so there is no duplication. A kit PR or a comment on
-#68 with Addition 1 would be outward-facing and is the owner's call. It is offered, not done.
+headline 20, which repackages the kit's `Problem3 → Problem1`, so there is no duplication. At the owner's instruction, Addition 1 was posted as a
+[comment on #68](https://github.com/WolframInstitute/Rule30PrizeKit/pull/68#issuecomment-6542314565) at 10:37Z
+([text](wolfram-agents/kit-pr68-comment.md), L1255), without a byline. Addition 2 was not included.
