@@ -1778,3 +1778,22 @@ So the backgrounds split three ways. Some are locally rigid with short windows: 
 (7, 63), (9, 57), (12, 68). For the shadowed ones, same-edge rigidity beyond k = 12 is not settled by a local
 descent. Their late jumps in T-G (for example (9, 57) going 19, 24, 27 at k = 10..12) leave open that their episodes
 grow faster than linearly.
+
+### T-D3: the classic 7 × 4 ether behind a black edge (prediction before the run)
+
+The (7, 28) background is, cell for cell, the kit's `Rule30Ether` table in the moving edge frame:
+R_j(t) = P(t − j, t) for the table P(x, φ) with x mod 7 and φ mod 4. This was checked by enumerating orientations and
+offsets against our cycle (COMPUTED). It is the object of the kit's least-period-four route (`Rule30Ether`:
+ether-and-wall traps, the `Absorption` conjecture). PR69 proved no black edge can be followed forever by its
+*one-in-four* ether. The same statement for the classic ether would be its counterpart.
+
+T-S3 found its first failing one-depth window becomes UNSAT between b = 48 and 96. Run:
+`inquisition_background_descent2.py` with D = 1, look-behind a = 8 and look-ahead up to 128, on every alignment of
+(7, 28). It is the same probe as T-D2, with only the arguments changed.
+- **P-D6.** (7, 28) gets an onset-free certificate with b ≤ 128. With M(1) finite (T-G), that gives **no black-edge
+  code following the classic 7 × 4 ether at two adjacent depths forever, at any depth**, with a linear bound on episode
+  length. Counterfactual: an alignment still failing at b = 128 leaves the classic ether's same-edge rigidity open
+  beyond k = 12.
+
+Caps (run_capped): wall 3600 s; CPU 3600 s per process; RSS 6144 MiB; files 64 MiB; disk 1024 MiB; at most 10
+processes.
