@@ -351,3 +351,19 @@ must not be described as having tested or proved this all-depth lower bound.
 
 The owner's approximately 30-minute block ends with these passive pointers. Both schedules remain paused, Local
 has not been woken, and no research job, compilation or posting is running. Resume only on the owner's direction.
+
+
+### Publication and passive coordination receipt
+
+Mathematical milestone `9103352e` was pushed after a fresh merge, privacy/conflict review, ledger check and document
+link check. The frozen probe is unchanged. The two L1257 flags received scoped acknowledgements after the complete
+carrying reads; passive READ-LEDGER and REVIEW-REQUEST pointers identify the exact new source for a future
+owner-authorized read. Local's chat was not woken and no job was assigned.
+
+The current compact shared-store queue is `flags/gpt/current-queue.GC2329.json`, SHA256
+`377016bf1cf500c9a53ac6707eb51f3434cc3a19233c66a378b9855de9446dfb`, 3,194 bytes. Its raw-body upload and full readback
+matched, as did the five state/acknowledgement/review pointers. The old large `coordination-state.json` remains
+unchanged: automatic approval review declined an additional historical archival upload because that old payload's
+sensitivity had not been established. No archival copy was uploaded, no historical evidence was deleted, and the
+small new queue contains only this block's reviewed, nonprivate summary. The current NOW/report/queue supersede
+that historical state's stale active-task fields.
