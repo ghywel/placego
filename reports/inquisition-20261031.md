@@ -794,3 +794,60 @@ The owner's eight answers and two later remarks became nine threads and nine tes
 
 Five predictions were refuted outright: P-F2, P-F3, P-L1, P-L3 and P-H2. P-F1, P-E3, P-S1 and P-L2 were refuted in
 part. All are kept above. One control (P-R2) had a bug that was caught and rerun.
+
+## Round 3 (31 October, after GPT's block GC2325–GC2329): Local's read of GPT's ether episodes
+
+The owner passed back GPT's [block report](GPT-INQUISITION-20261031.md). It carries my three hand steps and corrects
+three of my claims. It also adds two new solo PROOF-SKETCHes that need my carrying read: an upper window (GC2327) and
+a lower family (GC2328) for the longest ether-pair episode M(k) behind a moving black edge.
+
+### GPT's corrections, checked and accepted
+
+- **The right-diagonal words were already in the record.** [G258](../proofs/G258-four-forbidden-words-in-every-forward-right-moving.md)
+  (9 October) proves 00100, 11011, 000111 and 111000 absent from every right-moving trace, and its five-tick proof is
+  my own (L426). My T-S2 list agrees with it. My `Record searched:` line missed it because the record calls a right
+  diagonal a "right-moving G trace": `record_find.py "right diagonal" forbidden` does not reach G258, and `00100`
+  alone gives 991 hits. Fix: RECORD-MAP now names the alias. Known, reproved here.
+- **My sea CONJECTURE is REFUTED twice.** I conjectured that every finite patch beside the wall in a periodic sea other
+  than white and the checkerboards dies within a bound depending only on the sea. First, a checkerboard patch of
+  width H + 1 keeps the clock to time H, whatever the sea beyond (and `complete_near_wall` permits any finite depth-1
+  trace). Second, the kit's own `Rule30PeriodTwoCoupled.etherLeft_zbl` and `ether_col1_black` (kit 842b756f; read
+  here at lines 1–60 and 100–200) prove that the left half of the 7 × 4 ether is a wall orbit whose depth 1 is black
+  at every even time: the period-seven sea 1100001 hosts the clock forever. My census stopped at period 6, and the
+  kit search I ran for T-H looked for the checkerboard, not the ether. "The checkerboard is the clock's only periodic
+  home" holds only within that census. Checked numerically below (P-E5).
+- **The period-three test was empty.** Every 3-periodic row is white within three steps, so it sends no news forever.
+- **The first 2058 timer is already exhibited** in our delivered nested essay (executed notebook, GC2322). Not rerun.
+- **Left diagonals with the wall:** fixing L_0(0) = 0 leaves 2n − 1 free bits, and the wall moves across the frame.
+  Accepted.
+
+### T-M: the exact longest ether episode, independently (prediction before the run)
+
+GPT's sketches give ceil(2k/3) ≤ M(k) ≤ floor(2k/3) + 4. M(k) is the longest run of ticks in which depths k and k + 1
+behind a black right edge match PR69's one-in-four ether, over every row, onset and phase. GPT's pilot checked the
+weaker `good` predicate (initial runs, k ≤ 8), not exact matches, and preceded the lower family. Prefix autonomy makes
+M(k) an exact finite computation: every onset is an initial run from some prefix X_1..X_(k+1), so the maximum is over
+2^(k+1) prefixes and 32 phases. Probe `tests/probes/ether_episode_exact.py` (SHA256 08c50fd4…), my own implementation,
+k ≤ 20.
+
+- **P-E1 (both sketches).** ceil(2k/3) ≤ M(k) ≤ floor(2k/3) + 4 for every k ≤ 20; no run reaches floor(2k/3) + 5.
+  Counterfactual: a longer run refutes the upper sketch (then find the failing table row); M(k) < ceil(2k/3)
+  refutes the lower family.
+- **P-E2 (witness).** The GC2328 witness (X_j(0) = ether(j + 3, 1), phase i = k + 3, q = 1) runs at least ceil(2k/3)
+  for every k, and exactly ceil(2k/3) for at least two thirds of k ≤ 20: the masking front is an upper bound on the
+  disturbance, and I expect it to be nearly tight.
+- **P-E3 (the additive constant).** M(k) − ceil(2k/3) is 0, 1 or 2 for every 1 ≤ k ≤ 20. Exact matching fixes both
+  bits every tick, where `good` leaves the second bit free at odd phases, so exact episodes should sit well below
+  the predicate's ceiling. Counterfactual: M(k) ≥ floor(2k/3) + 3 for some k means the upper window is nearly tight
+  even for exact matches.
+- **P-E4 (control).** My `good`-predicate maximal initial runs for k = 0..8 equal GPT's 3, 4, 5, 6, 6, 7, 7, 8, 9.
+- **P-E5 (the kit's sea).** In the wall form, depths 1.. = 1100001 repeated gives the depth-1 trace 1011 repeated for
+  400 steps. Counterfactual: an even-time white means GPT's or my reading of `etherLeft 1` is off.
+
+Controls: PR69's `ether_step` and `ether_pair` tables, and the edge map against a literal Rule 30 row (200 random rows,
+40 steps). Caps: run_capped (c8c58b49…), CPU 300 s, wall 600 s, RSS 2048 MiB, files 16 MiB, disk 64 MiB, one process.
+
+Record searched: GPT's report GC2325–GC2329 (in full); PR69 head fcffbaa9 `Rule30EtherGrounding.lean` (in full,
+SHA256 538c906a…, matching GPT's citation); kit 842b756f `Rule30PeriodTwoCoupled.lean` (the ether theorems);
+`record_find.py` "ether" "episode" (only GPT's GC2327–GC2328 entries) and "masking front" (none); G258. No literature
+search beyond GPT's (Brummitt–Rowland 2012; Phillips 2004 still to be compared by figure).
