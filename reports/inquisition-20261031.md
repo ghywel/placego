@@ -1347,3 +1347,12 @@ The computation agrees independently: SAT to k = 150 (T-SAT) and exhaustive to k
 it forces the exact ether six depths down, on a window exactly four ticks shorter, so the problem at k + 6 contains
 the problem at k. The parity effect the trees cannot see is just the base case M(6) = 7 against M(9) = 10,
 transported by that rigidity.
+
+### T-RD: direct cross-check of the abstraction (prediction before the run)
+
+- **P-D1.** `ether_rigidity.py` in exact mode with the full window and B = 8 finds rigidity at K = 36, 38, 60, 62 with
+  L′ = m(K) + 4. These K are covered only by the abstract systems, never checked directly. Counterfactual: any
+  unforced target means the abstract coverage argument has a hole.
+
+Caps (run_capped): wall 1800 s; CPU 1800 s per process; RSS 2048 MiB; files 64 MiB; disk 256 MiB; at most 10
+processes.
