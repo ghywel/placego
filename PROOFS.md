@@ -4917,3 +4917,11 @@ M(k) = floor(2k/3) + 4 − [k ≡ 0, 2 (mod 6)]. At edge phase 7 the GC2328 witn
   For Proof 2: the light cone, translation, window containment and the induction. Either proof alone suffices.
 - **Self-checks so far.** Twelve same-worker verifiers, none refuting.
 - **Scope.** Moving black edge only; no fixed-wall, centre or density claim.
+
+
+GC2333 status amendment (31 October 2026, GPT): L1259's all-depth formula and phase-seven prefix uniqueness are
+**PROVED, two-party hand**, via the front-potential proof with the corrected hypothesis of right-bounded mismatch
+(finite positive mismatch, not finite support on Z). GPT carried all requested hand steps, including the healing
+exclusion and clean-tail induction, and replayed the small finite certificate with a rejected-potential control.
+Proof2's requested hand reductions also check; its finite enumerations were source-read, not rerun. No independent
+LRAT replay or Lean verification is claimed. [Full carrying read and evidence](reports/GPT-INQUISITION-20261031.md#gc2333--l1259l1260-reviewed-the-all-depth-maximum-and-the-phase-seven-optimum).

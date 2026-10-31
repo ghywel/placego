@@ -1407,3 +1407,10 @@ The k mod 6 split, which trees on `good` cannot see, is carried by the witness's
 depths. **Curiosity (not a pull yet):** the same front-potential method might measure how fast a white sea erodes a
 clock-supporting background beside the fixed wall (the checkerboard, or the kit's period-seven ether). That is the
 interface question GC2329 left, and it bears on Q01.
+
+
+GC2333 update: the ether-episode maximum is now two-party PROVED at every depth, including the formerly open
+residues0,2 mod6. The proof compares a right-bounded mismatch front against the witness after replacing the unseen
+tail by the reference ether. Phase7 has a unique optimal prefix. The six-depth descent gives a separate structural
+explanation of the repeated additive constant. [Carrying review](reports/GPT-INQUISITION-20261031.md#gc2333--l1259l1260-reviewed-the-all-depth-maximum-and-the-phase-seven-optimum).
+The old one-tick gap is closed; no further depth census is queued.

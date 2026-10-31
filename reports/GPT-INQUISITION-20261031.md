@@ -3,6 +3,13 @@
 Owner-authorized bounded block, beginning 15:11 UTC. Both recurring schedules remain paused; Local is stopped.
 The handover is [L1257](HANDOVER-GPT-20261031.md), with its [complete tracker](inquisition-20261031.md).
 
+**Latest, GC2333 / L1259–L1260: the all-depth formula is PROVED, two-party hand.**
+For every k>=1, M(k)=floor(2k/3)+4-[k≡0 or2 mod6]. At edge phase7 the witness is the unique optimal prefix,
+not the unique whole row or unique maximizing phase. GPT carried the front proof, replayed its small certificate
+once with a rejected-mutation control, and also carried the six-depth descent's hand reductions. The required
+mismatch condition is bounded above / finite positive tail, not finite support on all integers. No Lean verification,
+submission or novelty clearance is claimed. The older open-gap entries below are historical.
+
 **Latest, GC2331 / CL669:** Cloud's exact witness-front argument is now independently carried, with an explicit
 four-tick/six-depth band return checked by hand. Thus M(k)=floor(2k/3)+4 is **PROVED, two-party hand** for
 k congruent to 1,3,4,5 modulo 6. The full witness-length formula is proved for every k, but its optimality for
@@ -568,3 +575,182 @@ is queued. The second-timer and periodic-interface alternatives remain in the qu
 No new computation ran. A sandboxed preflight could read memory but could not obtain swap/thermal status;
 no capped job was launched or retried, and the review continued with the explicit hand tables above. No compiler,
 formal verification, submission, priority clearance or schedule restart is claimed.
+
+## GC2333 — L1259/L1260 reviewed: the all-depth maximum and the phase-seven optimum
+
+**Verdict: PROVED, two-party hand, via Proof 1 and its finite transition tables.** For every k>=1, in the moving
+black-edge frame and over every initial row, onset and ether phase,
+
+    M(k)=floor(2k/3)+4-[k≡0 or 2 (mod 6)].
+
+At edge phase c=7 the GC2328 witness is the unique optimal prefix through depth k+1. This does not mean a unique
+whole row: cells beyond the observed prefix can be arbitrary. Nor does it mean that phase 7 is the only maximizing
+phase. The theorem covers both finite rows and arbitrary tails; no fixed-wall, centre-column or density inference
+is made.
+
+The requested hand steps of Proof 2 also check, conditional on its stated finite window certificates. I read
+both enumerators and its SAT encoding, but did not rerun those larger checks. I read Proof 3's source and its
+coverage/replay guards as an additional audit, not a new independent replay of its 254 LRAT artifacts. The
+all-depth verdict above does not depend on accepting an uninspected solver trace or on the sixteen same-worker
+"not refuted" verdicts.
+
+### Scope repair: right-bounded mismatch, not finite support on all integers
+
+Put X_j=0 for j<0 and X_0=1. The generic recurrence preserves these values, and at depth one gives the required
+X_1'=X_1 XOR 1. The reference is E_j(t)=e(t+2j+c), e=(1,1,0,1,0,1,0,0), at every integer depth.
+Thus D=X XOR E has infinitely many negative-depth mismatches. Literal finite support of D on all of Z is neither
+true nor needed. The needed hypothesis is that D_j(0)=0 for all sufficiently large **positive** j. Equivalently,
+the nonnegative mismatch set is finite. Its full mismatch set is nonempty and bounded above, so R=max{j:D_j=1}
+exists. Each parity subsequence of e contains a 1, ensuring a negative mismatch at every time; there is never an
+empty full mismatch set. F(0,0)=0 keeps the mismatch bounded above under iteration.
+
+In particular the witness's full two-sided fronts at times 1,2 are -4,-2, whereas its **nonnegative** mismatch set
+is empty at those times in GC2331. These are consistent descriptions of different domains. References in the
+round-five prose to a "finite-support row" or "finite initial mismatch" must be read as finite positive mismatch
+after the tail replacement below, not as a restriction on the original row or on all integer depths.
+
+### Front rule, no-retreat step and potential
+
+Subtracting the two Boolean recurrences gives D_j'=D_j XOR F_phi(D_(j-1),D_(j-2)), with phi=t+2j+c. Directly
+substituting the two reference inputs yields OR for phi=0,6; (NOT a) AND b for phi=1,4; a AND (NOT b) for phi=2,3;
+and AND for phi=5,7. This verifies the four claimed forms without assuming a statistical law.
+
+At a front R let a=D_(R-1), b=D_(R-2), and psi=t+2R+2+c. The potential uses
+
+    g=(-3/2,0,3/2,-1,1/2,-2,-1/2,1),
+    Phi=R+g(psi)-3t/2.
+
+Since the cells above R are clean, the next mismatches at R+2 and R+1 are respectively F_(psi+2)(0,1) and
+F_psi(1,a). This gives the complete front table:
+
+| psi | front change |
+|---|---|
+| 0 | +1 |
+| 1 | 0, except retreat if a=b=1 |
+| 2 | +2 |
+| 3 | +1 if a=0; otherwise 0 |
+| 4 | +2 |
+| 5 | +1 if a=1; otherwise 0 |
+| 6,7 | +2 |
+
+In the cases where neither higher cell mismatches, substituting the update at R verifies the stay/retreat cases.
+No cell above R+2 can change. The ten non-retreat transitions have psi'=psi+1+2 delta and satisfy
+2 delta+2g(psi')-2g(psi)=3, hence preserve Phi.
+
+Only a forced +2 transition from psi=4 can enter psi'=1 without retreat; it leaves the cell just below the new
+front clean, since F_4(1,a)=0. A retreat starts at psi=1 and lands at psi'=2+2 delta, which is even for every
+negative integer delta. Consequently whenever psi(t)=1 with t>=1, its predecessor was psi=4 and its subfront
+bit is zero. It cannot retreat then. This proves no retreat in any transition t->t+1 for t>=1, and constant Phi
+from time 1 onward. The first transition is allowed to retreat, which is why time-zero floors would be wrong.
+
+### Healing and the time-one floors
+
+If all positive cells heal at time 1, their initial mismatch bits are forced recursively:
+
+    D_j(0)=F_(2j+c)(D_(j-1)(0),D_(j-2)(0)),
+    D_0(0)=1-e(c), D_(-1)(0)=e(c-2).
+
+This is a unique sequence, not a probabilistic choice. Once two consecutive bits are zero, all remaining bits
+are zero. Otherwise a repeated state (last two bits,j mod4) gives an infinite nonzero tail. Direct substitution
+makes the load-bearing exclusions explicit:
+
+| c | forced positive mismatch sequence D_1,D_2,... for complete healing at time 1 |
+|---|---|
+| 0,1,3,5,7 | all zeros |
+| 2 | 011 followed by (0111) repeated |
+| 4 | (1101) repeated |
+| 6 | 1 followed by (0111) repeated |
+
+Thus c=2,4,6 cannot heal completely after a finite positive-mismatch start. At c=7 the sole healing start is
+exactly the witness. Every other start at that phase has R(1)>=1.
+
+For H_c(t,R)=R+g(t+2R+2+c)-3t/2, increasing R by one changes H by either 0 or 4 (the latter only at psi=0,5).
+The fixed nonpositive cells at time 1 give r_c below. Apply monotonicity, and replace r_c by 1 for the excluded
+healing sequences; c=7 is separated into witness and non-witness rows:
+
+| c | r_c from nonpositive cells | lower bound on Phi(1) | minimum permitted R at t=1,2,3,4 |
+|---|---|---|---|
+| 0 | -2 | -5/2 | -2,-1,1,2 |
+| 1 | 0 | -1 | -1,1,2,4 |
+| 2 | -1 | 1/2 | 1,2,4,5 |
+| 3 | 0 | -2 | -2,0,1,3 |
+| 4 | -1 | -1/2 | 0,1,3,4 |
+| 5 | 0 | -3 | -3,-1,0,2 |
+| 6 | 0 | -3/2 | -1,0,2,3 |
+| 7, non-witness | -4 | 0 | 0,2,3,5 |
+| 7, witness | -4 | -4 | actual front -4,-2,0,2 |
+
+The minima are conservative potential bounds, not assertions of reachability. For example c=4 really has R(1)>=1,
+although the potential alone permits R=0. Substitution verifies that each listed minimum meets the floor and its
+predecessor does not. The identity H_c(t+4,R+6)=H_c(t,R) extends these four columns to every t>=1.
+They all dominate the witness front R_w; the c=7 non-witness row dominates it by at least 3. The witness cycles
+through phases 2,7,4,1 with forced front increments 2,2,2,0; the no-retreat result handles its psi=1 tick.
+This also recovers the previously carried witness law, rather than assuming it for the upper comparison.
+
+### Clean-tail reduction and uniqueness
+
+Reset an arbitrary episode onset to time zero, absorbing the time shift into c. Replace only initial cells above
+k+1 by E. Prefix autonomy preserves the observed pair at all later times. The replacement creates finite positive
+mismatch, irrespective of the original tail. If the pair matches on 0..L-1, then all cells above k+1 remain E
+throughout that interval: induct on time, using the exact pair as the two lower inputs of the unchanged tail.
+Together with pair agreement, this gives R(t)<k for every episode tick. This tail induction is necessary;
+front comparison alone would not rule out a remote mismatch above a still-matching pair in an unmodified row.
+
+At T=L_w(k), the universal comparison gives R(T)>=R_w(T)>=k. An episode with T+1 matching ticks is therefore
+impossible. The carried finite-prefix witness attains T, proving M(k)=L_w(k) for every k>=1.
+For uniqueness at c=7, suppose the prefix differs from the witness. Its modified row is non-witness, so
+R(T-1)>=R_w(T-1)+3. First arrival jumps by two onto k or k+1, hence R_w(T-1)>=k-2 and R(T-1)>=k+1.
+It cannot match for all T ticks. Since T>=4, the comparison is used only at positive time. This proves precisely
+unique prefix optimality at that phase; arbitrary deeper tails are still allowed.
+
+### Proof 2: the requested light-cone and descent reductions
+
+The generic rule's dependence interval at (j,t) is [j-2t,j], by induction on t. For a window W(s,b), let T=s+b.
+The observed top pair through T and target pair at depth -6 at tick s therefore depend on the union contained in
+[lo,1], lo=min(-2T,-6-2s). Enumerating its 2-lo digits covers every generic configuration, not a periodic or
+black-edge subset. In the source the packed and unpacked enumerators do enumerate that same full cube; the SAT
+recurrence clauses encode the same XOR-of-OR truth table. The extra four left digits in its SAT encoding cause
+no restriction on the cone. The explicit require() checks survive optimized Python.
+
+The seven windows are (s,b)=(0,10),(1,6),(2,6),(3,5),(4,5),(5,4),(6,4), each in eight phases. For L>=11 and a
+requested target tick s<=5, its required top endpoint s+b is at most10<=L-1. For 6<=s<=L-5, apply W(6,4) to
+Y_r(u)=X_(j+r)(s-6+u), with reference phase c'=c+2j+s-6. Its top window [s-6,s+4] lies inside [0,L-1], and its
+target is exactly tick s at depths j-6,j-5. All eight phases are covered. Thus the resulting window is
+0..L-5 inclusive, of length L-4: the final supplied top tick is used without inventing a successor at tick L.
+This directly respects GC2331's endpoint objection.
+
+For k>=9, a hypothetical episode of L_w(k)+1 ticks has length at least11 and descends to length
+L_w(k)+1-4=L_w(k-6)+1 at depth k-6. The equality follows immediately from ceil((k-6)/2)=ceil(k/2)-3.
+The finite bases k=1..8 therefore cover every positive k. Alternatively the open-residue induction uses bases
+2,6,8 and starts at12. These are sound hand reductions. The 56 finite assertions and base computations remain
+Local's reported certificate run (source read, no GPT solver/enumerator replay); the full theorem is already
+carried independently by Proof 1 above.
+
+### Computation, provenance and review limits
+
+The single frozen Intel replay under `1ba7cb33` completed once, without retry, at19:22:56UTC. Local's unchanged
+front certificate SHA256 `544d14c71a64c5ee1f2c77ea9aed813e65fbabc6374409f7200bc6ebb0f58ee5` passed every check;
+changing the first doubled potential value by2 was rejected by the literal transition invariant. The wrapper's
+source/hash and caps are in GC2332. Worker own+reaped-child CPU was0.394232s, supervisor CPU0.102s separately;
+command wall0.43s, supervised wall0.54s, maximum RSS16,805,888bytes. Launch free+inactive4890MiB,swap0, both thermal
+guards100%. It finished before the first periodic sample: sampled zero maxima are not zero usage or continuous
+pressure coverage. Normal completion and a fresh no-worker process check were retained.
+
+Immutable raw packet `cited/gpt-gc2333-front-review-e267b56acafc.json`,29,049bytes, SHA256
+`e267b56acafc1c6b9bd20b1e805844a55c029e1d08d4ef81a537625fa4d449a7`, contains exact sources, outputs, resource and
+cleanup receipts, and the fresh index output. Upload receipt and full raw readback matched. No Local M5 run was
+relabelled as an Intel run. I have not retrieved/replayed the 254 raw LRAT proofs, the SAT-to150 run or the sixteen
+sub-agent review artifacts. Their code and reported outcomes are supporting evidence, not a replacement for the
+carrying argument above. Proof 3's abstract-system phases and clipping reduction are consistent with its stated
+scope; no broader general rigidity claim is attributed to that single-phase route.
+
+The complete external refresh at19:21:22UTC found no indexed changes: kit842b756f,23open PRs. This does not clear
+priority, a submission package, or the outstanding Phillips figure comparison. The finite-state-front method is
+credited to the existing ether-erosion work, and the reference to Lowry's PR69. No new solver stage, Lean build,
+public submission or schedule restart was performed.
+
+**Next executable step:** on an owner-directed delivery or continuation block, first turn the now-carried
+front proof into one precise theorem statement with right-bounded mismatch, the clean-tail lemma and scoped
+phase-seven uniqueness; then finish source/prior-art comparison before deciding on a package. Independent warm
+alternative: the second 2058 timer. Curiosity: whether the six-depth exact-window rigidity extends to other
+periodic reference solutions. The all-depth ether-episode formula itself is no longer an open research target.

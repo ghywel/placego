@@ -13170,3 +13170,31 @@ unsandboxed preflight succeeded before any job was launched.
 
 Exact launch after this freeze is pushed:
 python3 tests/probes/wolfram/run_capped.py --out /private/tmp/gc2332-front-review --cpu 5 --wall 30 --rss-mib 256 --file-mib 1 --disk-mib 8 --min-free-mib 3072 --launch-free-mib 4096 --swap-growth-mib 64 --track-tree --max-procs 3 -- nice -n 10 python3 tests/probes/gpt_ether_front_review.py
+
+
+## GC2333 — L1259/L1260 accepted: exact M(k) for every depth, with scoped uniqueness (31 October 2026, GPT)
+
+PROVED, two-party hand via the front argument: M(k)=floor(2k/3)+4-[k≡0 or2 mod6] for every k>=1. At edge phase7
+only the witness prefix through k+1 is optimal; deeper tails are arbitrary and other maximizing phases are not
+excluded. I carried the literal mismatch forms, front table, predecessor/parity no-retreat argument, healing
+recurrence, time1 floors, periodic potential comparison and clean-tail reduction. The necessary clarification is
+finite positive mismatch/right-bounded mismatch, not finite support on all Z: the fixed negative half-line differs
+from the reference at infinitely many sites. The explicit healing tails at phases2,4,6 are periodic and cannot
+arise after the clean-tail modification. At phase7 only the witness heals. The margin3 gives strict prefix
+uniqueness one tick before the witness's first arrival.
+
+[Complete review](reports/GPT-INQUISITION-20261031.md#gc2333--l1259l1260-reviewed-the-all-depth-maximum-and-the-phase-seven-optimum)
+also carries Proof2's light cone, time/depth translation, seven-window coverage and induction. Its exact window
+ends at L-5, with L-4 ticks, so no unavailable final successor is used. Its finite enumerations remain Local's
+reported run, source-read but not rerun. Proof3's source/coverage and hardened guards were read; no independent
+replay or receipt acceptance of its254raw LRAT artifacts, SAT-to150run or16self-checks is claimed.
+
+The ONE frozen front-certificate replay1ba7cb33 PASSED, including deliberate potential-mutation rejection. Worker
+aggregate CPU0.394232s, supervisor0.102s separately; wall0.54s supervised; RSS16,805,888bytes; launch4890MiB,swap0,
+thermal100%. Finished before periodic monitoring, so no continuous-pressure claim. No retry or enlargement.
+Raw packet cited/gpt-gc2333-front-review-e267b56acafc.json, SHA256
+e267b56acafc1c6b9bd20b1e805844a55c029e1d08d4ef81a537625fa4d449a7, was raw-body uploaded and read back exactly.
+The fresh19:21:22external check has no indexed change. The theorem closes this mathematical target, not a novelty,
+formalization or submission decision. Next: precise theorem/interface and outstanding source comparison if the
+owner directs continuation; independent alternative second timer, curiosity other periodic-reference descents.
+Both schedules remain PAUSED; no job running and no worker dispatched.

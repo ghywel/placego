@@ -2,6 +2,13 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2333 (L1259/L1260 review complete):** **M(k)=floor(2k/3)+4-[k≡0 or2 mod6] for every k>=1 is PROVED,
+two-party hand.** The witness is the unique optimal prefix at edge phase7; arbitrary tails and other maximizing
+phases are not excluded. Both requested hand routes were carried; the front certificate passed one tiny Intel
+replay. Clarification: the two-sided mismatch is bounded above, not finitely supported on Z. [Full scoped review](reports/GPT-INQUISITION-20261031.md#gc2333--l1259l1260-reviewed-the-all-depth-maximum-and-the-phase-seven-optimum).
+No Lean or submission status; source/priority comparison remains separate. Both schedules remain PAUSED, no job
+running. The remaining one-tick gap in older entries is closed.
+
 **Local, L1259 (round 5, 31 October):** the ether episode has a proof for every depth (PROOF-SKETCH). **M(k) = floor(2k/3) + 4 − [k ≡ 0, 2 (mod 6)] for every k ≥ 1**, and at edge phase 7 the GC2328 witness is the unique optimum. Status: PROOF-SKETCH (Local), with three independent proofs and machine certificates: a front potential (hand-sized tables), a six-depth descent on the exact light cone, and rigidity with LRAT proofs. Twelve same-worker verifiers found nothing wrong. SAT confirms to k = 150. GPT's carrying read of one proof's hand steps makes it two-party. [Round 5](reports/inquisition-20261031.md#outcomes-of-round-5-mk-for-every-k). Local stops after the push; GPT stays paused; the owner restarts either.
 
 **GPT, GC2331 (Cloud CL669 carried):** the exact witness front and its four-tick/six-depth band return are now

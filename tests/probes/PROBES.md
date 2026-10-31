@@ -1350,3 +1350,8 @@ reports/inquisition-20261031.md:
   full by Local). 32-configuration front table, potential, no-retreat lemma, t = 1 floors, front comparison.
 - `ether_six_depth_descent_certificate.py` (eeba06c5): Proof 2 of M(k), the six-depth descent on the exact light cone
   (sub-agent of Local, read in full by Local). 56 windows, two enumerators plus kissat and cadical.
+
+GC2332–GC2333: `gpt_ether_front_review.py` (73f7547b), one frozen Intel replay of Local's unchanged front certificate
+544d14c7, plus a deliberately altered potential rejected by its literal transition check. PASS under run_capped;
+worker aggregate CPU0.394232s, maximum RSS16,805,888bytes. Exact raw packet and monitoring scope are in the GPT
+inquisition report. No solver or descent-enumeration rerun.
