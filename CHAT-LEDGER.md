@@ -13599,3 +13599,70 @@ The owner noticed #71 shows as closed.
 - **Timing.** It landed before the portal submission (23:30Z). The verifier is still image 14 at e5e1728e, so the
   module reaches it at the next image rebuild.
 - **Still pending:** Kit Contribution on R30-20261031-7c1f96, a maintainer tag.
+
+## CL670 — Cloud to the owner, closing 31 October: the board at midnight, and the positive steps for the morning (2026-10-31 23:59 GMT)
+
+Read: GC2331 to GC2339, L1259 to L1274, the tracker's rounds 5 to 7 and GPT's block report; the portal fetched at
+about 23:58Z (MAP section 22). Both workers are stopped for the night.
+
+**Where the day ends.**
+- *Mathematics.* M(k) = floor(2k/3) + 4 − [k ≡ 0, 2 (mod 6)] for every depth is PROVED two-party (Local's front
+  potential, carried by GPT in GC2333; Lean, 952 lines, standard axioms), with the phase-7 prefix uniqueness; my
+  CL669 front law was carried (GC2331) and is inside it. Round 6 and 7 added: the eight-background rigidity (no
+  black edge follows eight periodic backgrounds of the edge frame for ever; PROVED with LRAT-checked certificates;
+  the classic 7 x 4 ether is the counterpart of Lowry's theorem and is not in the kit or on the portal); GPT's
+  odd-period obstruction (M_R(k) <= 2^(k+1) + q − 1 for every non-dyadic background, two-party); white = ceil(k/2)
+  (known, Lowry's `Rule30EdgeClock`); and T-Y (every dyadic ring cycle with p <= 26 is white, alternating or
+  PR69's ether; known, L1066 and PR58's conjecture). Open from the day: the three shadowed backgrounds (7, 63),
+  (9, 57), (12, 68) (linear or faster episodes?), the dyadic-background conjecture for all p, and the exactness of
+  the eight linear bounds.
+- *Delivery.* Four entries in twenty-four hours: 7b0d12 (gate clocks, now a Kit Contribution through PR #62),
+  803bc4 (finite past, Human Verified), 9861e5 (nested thresholds), and 7c1f96 (M(k)), the last Lean Verified,
+  Human Verified and Kit Contribution within half an hour of posting; kit PR #71 landed on main. Ours on the page:
+  34 entries, 33 Lean Verified, 29 Human Verified, 11 Kit Contributions; the page has 76 entries and the kit 184
+  modules. Still pending and set by people: Human Verified for 7b0d12 and 9861e5; 71f858 stays Unverified.
+- *Third parties today.* Quint's two Problem-3 entries (b58e66, 781b70; Human Verified and in the kit within hours),
+  his backward-cascade pair now in the kit, Lee's alternating-driven gap exclusion, Lowry's #69 and #61 landed. The
+  maintainers now land pull requests as commits and close them on GitHub; MAP should read "closed" as "landed" when
+  the content is on main (L1274).
+- *Guards.* Two misses of the day worth a shared row, for Local's or GPT's hand since they are theirs: the "right
+  diagonal" alias of the G traces (G258 was in the record), and PR #61 open during L1263 (the white formula). Both
+  are search misses of the kind G12 and the AGENTS §2 novelty step already address; the specific rule would be: an
+  open kit PR's statements are read, not keyword-matched, before a formula is called new.
+
+**Positive steps for the morning, ranked by what they would teach, with the first test for each.** New submissions
+may move any of them; the ranking is recorded now so it can be compared with the page tomorrow.
+1. **The classic ether's exact episode law** (from T-D3). Round 6 gives 7 + 58(k − 1), "linear, not sharp". The
+   machinery that closed PR69's ether today (a mismatch front with a potential, a periodic witness, a finite
+   certificate) should give the exact M_classic(k), likely with its own slope and residue correction. First test:
+   exact M_classic(k) for k <= 16 by Local's SAT or exhaustive tooling, prediction written first (G1: the small k;
+   G3: integers). Novelty: the kit's `Rule30Ether` traps and 8d7751 are different statements (L1261); check
+   `Rule30CoupledEmptyRight` and the ten landed modules by statement (the new guard). If exact, it is a second
+   episode theorem of the same shape and a natural kit module beside `Rule30EtherEpisode`.
+2. **The three shadows.** (7, 63), (9, 57), (12, 68) resist local descent; GPT's obstruction bounds them
+   exponentially. The question "linear or faster" is the sharpest open one of the inquisition: a background that a
+   black edge can imitate for super-linearly long would be a new phenomenon. First test: exact M_R(k) for k <= 10 by
+   SAT with look-ahead, prediction: linear with a front potential as in Proof 1; counterfactual: growth faster than
+   any line through k = 10, which would make the masked defect itself the object (G5: write the potential's
+   hypotheses before claiming it transfers).
+3. **The dyadic-background conjecture** (PR58's, T-Y to p <= 26): only white, alternating and PR69's ether are
+   dyadic ring cycles. A proof would make "a black edge attaches to a periodic background iff it is alternating"
+   a theorem for every period (with GC2335 and PR69). Route named by Local and GPT: the Newton basis, where products
+   become ORs of indices (Lucas), the same dictionary as CL653/CL654. Bounded hand attempt only; it is the deepest
+   and least certain of the three (G10: say what it implies before calling it small).
+4. **The owner's currency, in the language that worked today.** Local's Proof 1 is a non-local potential
+   Φ = R + g(ψ) − 3t/2 that the OR cannot refill, exactly the object DQ-025 asked for, in the edge frame against the
+   ether. The bounded question for the wall frame: against what reference would a start's "mismatch front" be
+   measured (the forced half of its own trace, by Jen's sideways reconstruction), and does a front potential exist
+   there? This is Q01-strength if it succeeds (G10) and is proposed as a one-block exploration with predictions, not
+   as a route.
+5. **Housekeeping that unblocks the rest.** (a) Local runs `known_find.py --new` (this container cannot reach the kit's
+   PR index) and records the ten landed modules by statement; (b) PRIOR-ART rows for Karttunen (B), Phillips (M(k)),
+   Lowry #61 (white), L1066/PR58 (T-Y) are confirmed present; (c) the board §6.5 gets rows for M(k), the eight
+   rigidities and the shadows; (d) GPT's queued read of the all-root background reduction (CL663 E3') and Local's
+   owed reads (A4, E2) stay on the list.
+
+What would change this ranking tomorrow: a third-party episode theorem for the classic ether (moves 1 down to a
+comparison), a shadow background shown to attach (moves 2 to the top), or a dyadic-cycle proof on the portal
+(closes 3). No prize movement today; the structural lines moved far. Good night. READ-LEDGER for both workers on
+resumption.
