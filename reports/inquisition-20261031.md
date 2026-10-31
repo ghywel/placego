@@ -1343,6 +1343,9 @@ PROOF-SKETCH until GPT reads two steps:
 
 The computation agrees independently: SAT to k = 150 (T-SAT) and exhaustive to k = 20 (L1258).
 
+(Superseded in presentation by [the outcomes of round 5](#outcomes-of-round-5-mk-for-every-k), which give two further
+independent proofs and the verification; this section is kept as written.)
+
 **What it teaches.** The extra tick is not lost to a better tree. It is lost because an exact window is **rigid**:
 it forces the exact ether six depths down, on a window exactly four ticks shorter, so the problem at k + 6 contains
 the problem at k. The parity effect the trees cannot see is just the base case M(6) = 7 against M(9) = 10,
@@ -1361,3 +1364,136 @@ processes.
 
 (Written after the run.) COMPLETED in 1.4 s (t-rd-direct folder). **P-D1 held.** Rigidity holds directly at K = 36, 38,
 60 and 62: every target at depths K − 6 and K − 5 on ticks 0..L′ − 5 is forced, agreeing with the abstract coverage.
+
+## Outcomes of round 5: M(k) for every k
+
+(Written after every run above. Predictions above are unchanged.)
+
+**Theorem (PROOF-SKETCH by Local, with three machine certificates; carrying read requested from GPT).** For every
+k ≥ 1, the longest ether-pair episode at depths (k, k + 1) behind a black right edge is
+
+    M(k) = floor(2k/3) + 4 − [k ≡ 0 or 2 (mod 6)].
+
+The episode is taken over any row (finite or not), any onset and any phase. At edge phase 7 the GC2328 witness is the
+**unique** optimal prefix: every other prefix has an episode at least one tick shorter. Scope: a moving black edge in
+PR69's frame and invariant. There is no fixed-wall, centre-column or density claim.
+
+Three independent proofs exist. Each was found or checked in this round and each has its own certificate.
+
+### Proof 1: a front potential (the shortest to read)
+
+Found by a sub-agent of Local (route "mismatch comparison"). Local then read every step and checked it by hand and
+by an independent simulation. Certificate: `tests/probes/ether_front_potential_certificate.py`.
+
+1. **Two-sided frame.** Put X_j = 0 for j < 0. The black-edge row then obeys X_j(t+1) = X_j(t) XOR
+   (X_(j−1)(t) OR X_(j−2)(t)) at every integer j. So does the reference wave E_j(t) = e(t + 2j + c), because
+   e(p + 1) = e(p) XOR (e(p − 2) OR e(p − 4)). The mismatch D = X XOR E then satisfies
+   D_j(t+1) = D_j(t) XOR F_φ(D_(j−1)(t), D_(j−2)(t)) with φ = t + 2j + c. F_φ is OR at φ ∈ {0, 6}, (NOT a) AND b at
+   {1, 4}, a AND (NOT b) at {2, 3}, and AND at {5, 7}; always F(0, 0) = 0.
+2. **Front moves (Lemma A).** Let the front be R(t) = max{j : D_j(t) = 1}, with phase ψ = t + 2R + 2 + c (mod 8).
+   At ψ ∈ {2, 4, 6, 7} the front moves +2, and at ψ = 0 it moves +1. At ψ = 3 it moves +1 if D_(R−1) = 0, else
+   stays. At ψ = 5 it moves +1 if D_(R−1) = 1, else stays. At ψ = 1 it stays, unless D_(R−1) = D_(R−2) = 1, when it
+   retreats. All 32 configurations are checked against the literal update.
+3. **Potential.** Φ = R + g(ψ) − 3t/2, with g = (−3/2, 0, 3/2, −1, 1/2, −2, −1/2, 1), is unchanged by all ten
+   non-retreat moves.
+4. **No retreat after tick 0 (Lemma B).** This holds for rows whose initial mismatch has finite support, so that the
+   front exists. ψ = 1 is entered only from ψ = 4, by the forced +2 move, and that move leaves
+   D_(R−1) = F_4(1, ·) = 0. A retreat lands on an even phase. So R never decreases from t = 1 on, and Φ(t) = Φ(1)
+   for every t ≥ 1.
+5. **Floor at t = 1.** The cells j ≤ 0 are fixed, so Φ(1) ≥ Φ_c. The floor is −5/2, −1, 1/2, −2, −1/2, −3, −3/2
+   for c = 0..6. At c = 2 and 4 the one row that heals at t = 1 has infinite support, so it is excluded. This
+   exclusion is load-bearing: without it the comparison fails, with Rmin(2, 4) = 1 < R_w(4) = 2. At c = 6 the
+   healing row is also infinite, but there the floor is the same either way. At c = 7 the healing row is exactly
+   the witness (Φ = −4), and every other row has Φ(1) ≥ 0. These two places, the finite-support exclusion at
+   c = 2, 4 and the dichotomy at c = 7, are where the k mod 6 effect is decided.
+6. **Front comparison.** For t ≥ 1, R(t) ≥ R_w(t) for every row with a finite initial mismatch and every phase,
+   where R_w(t) = 6n − 4, 6n − 4, 6n − 2, 6n at t = 4n..4n + 3 (t ≥ 1) is the witness's front. At c = 7, every other row has
+   R(t) ≥ R_w(t) + 3. This follows from the floors through the (4, 6) periodicity of the potential.
+7. **Episodes.** Replace the row beyond depth k + 1 by the ether. Prefix autonomy keeps the pair, the mismatch stays
+   below depth k throughout the episode, and front comparison ends the episode by tick L_w(k) = min{t : R_w(t) ≥ k}.
+   That equals floor(2k/3) + 4 − [k ≡ 0, 2 (mod 6)].
+
+This reproves, as corollaries, the exact-pair half of GC2327's bound (M(k) ≤ floor(2k/3) + 4) and the CL669/GC2331
+witness front (known, reproved here). It does not reach GC2327's bound on the `good` predicate, which equals m + 4 at
+k ≡ 2 (mod 6). It also
+explains the parity. The potential has period 3 in k, except along the witness's lane, whose front stands only on
+even depths. The (3, 2)-shifted lane has the same Φ but cannot be entered: at t = 1 only the witness reaches
+Φ = −4, and no retreat can change lanes.
+
+### Proof 2: a six-depth descent (the cleanest certificate)
+
+Found by a sub-agent of Local (route "alternative certificate") and read in full by Local. Certificate:
+`tests/probes/ether_six_depth_descent_certificate.py`. In the generic two-sided model, black-edge rows are the initial
+states …0001x₁x₂…. **If the pair at depth j is the exact ether on ticks 0..L − 1 with L ≥ 11, then the pair at depth
+j − 6 is the exact ether on 0..L − 5**, for every phase. Time and depth translation reduce this to 56 windows (seven
+shapes × eight phases). The light cone limits each window to at most 22 initial digits. All 56 are checked by two
+exhaustive enumerators and by kissat and cadical. As a control, with one tick less of look-ahead each shape fails for
+some phase (shown by the two enumerators and kissat). The descent loses at most 4 ticks, and exactly 4 in five of
+the eight phase classes. So an episode of length L ≥ 11 at depth k contains one of length L − 4 at depth k − 6. The exhaustive bases M(1..8) =
+4, 4, 6, 6, 7, 7, 8, 8 finish the induction. The worst look-ahead over D depths is 2, 2, 3, 3, 4, 4, 6, 6, 7, 7, 8, 8
+for D = 1..12. That equals 2D/3 only at D ≡ 0 (mod 6), which is why the step is six.
+
+### Proof 3: Local's rigidity with LRAT proofs
+
+T-R, T-R2 and T-RC above. GPT's GC2327 tree settles every edge phase r ≠ 7. For r = 7 a free-column region of 16
+depths forces the exact ether six depths down. Its 254 local systems carry cadical LRAT proofs, checked in
+`ether_rigidity_certificate.py`. This is weaker than Proof 2 (one phase, one window length, free bottom), but the only
+one whose SAT refutations are proof-checked.
+
+Two further routes reached the same theorem by descents: "hand-k2" (a sliding 11-tick Lemma D on black-edge rows) and
+"hand-k0". The latter proves the `good` version G(6n) = 4n + 3 = floor(2k/3) + 3 by a 15-digit strip with DRAT-checked
+proofs. Their files stay in the scratch store.
+
+### Verification
+
+Two workflows of independent agents were run. Each agent was told to default to "refuted" when a step is
+unjustified. All of these are self-checks under AGENTS.md §4, because they are sub-agents of Local.
+- **Proof attempts.** Four routes (the good predicate at k ≡ 0, the exact pair at k ≡ 2, an alternative certificate,
+  and mismatch comparison) each returned a proof. Each attempt then got three verifiers: logic, coverage and
+  reproduction. **12 of 12 verdicts were "not refuted", with no fatal issue.** The verifiers rebuilt the checks in
+  their own code: a C enumerator, a BFS, independent SAT encodings with drat-trim-checked proofs, exhaustive
+  enumeration to k = 23 and 24, and exact-fraction tables. Every number matched; the certificate outputs reproduced
+  byte for byte.
+- **Their minor points, now taken into the text above:**
+  - the front statements need a finite initial mismatch, so that the front exists;
+  - the corollary is only the exact-pair half of GC2327;
+  - the theorem needs k ≥ 1 (M(0) = 2 ≠ 3);
+  - the controls of Proof 2 use three checkers, not four;
+  - the record status is PROOF-SKETCH until GPT reads the hand steps.
+- **Local's own checks.** I read both certificates line by line and reran each under run_capped: the front potential
+  gave output `f22e97bb`, the same as the coverage verifier's, and the descent `7f7b930c`. I also simulated 6000
+  random rows in my own code (every phase, up to 60 ticks, including the witness and near-witness rows): 0 violations
+  of no-retreat after tick 0, of constant Φ, or of R(t) ≥ R_w(t). My first run of that simulation cut the scan at
+  depth hi − 2t, which this frame does not need, and reported spurious violations. It is kept as a refuted control.
+- **Proof 3's four-lens verification:** [pending at the time of writing].
+
+### Prior art
+
+The method of Proof 1 (a front state with a potential certified on local patterns) is the kit's
+`Rule30EtherThreeErosion` (Luis Perez Morales and Claude, R30-20261024-1fc962, period-three ether erosion and no
+wall) and its white-tail extension. PR69 (Troy Lowry) is the source of the invariant and of eventual exclusion.
+The exact-pair half of GC2327 (M(k) ≤ floor(2k/3) + 4) and CL669/GC2331 (the witness front) are known, reproved
+here. No kit, portal or PR statement gives M(k)
+(`known_find.py`, kit 842b756f, portal 17:20:19Z, 23 open PRs; "episode", "ether pair", "front potential").
+
+### For GPT's carrying read
+
+Either proof alone makes the theorem two-party. The machine parts need no second read (AGENTS.md §4). The steps that
+carry each proof:
+
+- **Proof 1 (front potential)** checks against the literal update of `ether_front_potential_certificate.py`, parts
+  1–5. Read these:
+  - (i) the two-sided frame and the mismatch rule F_φ (four Boolean forms by phase);
+  - (ii) Lemma B: retreats land on even phases, and the only predecessor of ψ = 1 is ψ = 4 by +2, which leaves
+    D_(R−1) = F_4(1, ·) = 0;
+  - (iii) the t = 1 floors, above all that the healing row at c = 2, 4 has infinite support (the exclusion carries
+    weight) and that at c = 7 it is the witness;
+  - (iv) the modified-row reduction (prefix autonomy; the mismatch stays below depth k during an episode) and the
+    step from R(L_w(k)) ≥ k to the bound.
+- **Proof 2 (six-depth descent)** has its windows certified by exhaustive enumeration in
+  `ether_six_depth_descent_certificate.py`. Read these:
+  - (i) black-edge rows are the generic configurations …0001x₁x₂…;
+  - (ii) the light cone X_j(t) ← X_(j−2t..j)(0);
+  - (iii) translation in time (every state is an initial state) and in depth, with the phase bookkeeping;
+  - (iv) the window containments for s ≤ 5 and s ≥ 6;
+  - (v) the induction from the bases M(2) = 4, M(6) = 7, M(8) = 8.

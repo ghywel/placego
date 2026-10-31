@@ -1336,3 +1336,17 @@ L1257: `inquisition_plateaus.py` (86a96b1e, T-P): late-tick clusters by near-wal
 
 L1258: `ether_episode_exact.py` (08c50fd4, T-M): the exact longest ether-pair episode M(k) behind a black right edge, k <= 20, over all prefixes and 32 phases (prefix autonomy makes it exact). Controls: PR69 `ether_step`/`ether_pair`, the edge map against literal Rule 30, GPT's `good`-predicate pilot reproduced. Also the kit's period-seven wall sea (trace 1011 for 400 steps). Under run_capped, COMPLETED, output 3dd3599b.
 | `wolfram/ether_witness_front.py` | Cloud, 2026-10-31 (CL669): finite periodic-patch certificate that the GC2328 ether witness's mismatch front is R*(t) = 2 floor((3t-8)/4) for all t >= 4 (direct to t = 12, then an autonomous band of depths [b(t), R*(t)+1] returning shifted by 12 after 8 ticks, with the two-party front lemma above it); corollary M(k) = floor(2k/3)+4 for k not 0, 2 mod 6; `ether_witness_front.out` |
+
+L1259 (round 5 of the inquisition, M(k) for every k), all under run_capped, COMPLETED, outputs cited by digest in
+reports/inquisition-20261031.md:
+- `ether_episode_sat.py` (ba3397da, T-SAT): M(k) and G(k) by SAT (kissat; cadical re-decides every UNSAT), k <= 150.
+  Exact M(k) = m+3 at every k = 0, 2 mod 6; G(k) = m+3 at k = 0 mod 6 and m+4 at k = 2 mod 6.
+- `ether_knowledge_map.py` and `ether_core_ticks.py` (T-K): the exact pair sets a top window forces (exact-ether rigidity,
+  period-6 front), and deletion-minimal sets of top ticks.
+- `ether_local_sweep.py` (T-L): a sound top-down local propagation, periodic under (6, 4); refutes every hard instance.
+- `ether_rigidity.py` and `ether_rigidity_local.py` (T-R, T-R2): six-depth rigidity, its depth and time locality.
+- `ether_rigidity_certificate.py` (T-RC): Proof 3 of M(k), with cadical LRAT proofs checked by its own RUP checker.
+- `ether_front_potential_certificate.py` (544d14c7): Proof 1 of M(k), the front potential (sub-agent of Local, read in
+  full by Local). 32-configuration front table, potential, no-retreat lemma, t = 1 floors, front comparison.
+- `ether_six_depth_descent_certificate.py` (eeba06c5): Proof 2 of M(k), the six-depth descent on the exact light cone
+  (sub-agent of Local, read in full by Local). 56 windows, two enumerators plus kissat and cadical.

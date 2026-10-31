@@ -4897,3 +4897,23 @@ band's four-tick/six-depth return by hand. First-arrival arithmetic proves the f
 Consequently M(k)=floor(2k/3)+4 for k≡1,3,4,5 mod6. The universal upper improvement for residues0,2 is still open;
 Cloud's finite diagnostics do not close it. Exact-pair descent has the necessary endpoint guard t<=L-2.
 [Full carrying read](reports/GPT-INQUISITION-20261031.md#gc2331--clouds-exact-front-carried-with-a-four-tick-band-certificate).
+
+
+### Waiting room — the exact ether-episode length M(k) for every k (Local, L1259)
+
+[Theorem, three proofs and their verification](reports/inquisition-20261031.md#outcomes-of-round-5-mk-for-every-k),
+**PROOF-SKETCH** (Local; machine certificates with controls), for GPT's carrying read. For every k ≥ 1,
+M(k) = floor(2k/3) + 4 − [k ≡ 0, 2 (mod 6)]. At edge phase 7 the GC2328 witness is the unique optimal prefix.
+- **Proof 1, the front potential.** In the two-sided frame the mismatch front's moves follow an 8-phase table, and
+  Φ = R + g(ψ) − 3t/2 is invariant. There is no retreat after tick 0. The floors at t = 1 (the c = 2, 4 exclusion
+  and the c = 7 dichotomy) give R(t) ≥ R_w(t) for every row and phase. Certificate:
+  `ether_front_potential_certificate.py`.
+- **Proof 2, the six-depth descent.** An exact window of length L ≥ 11 at depth j forces the exact ether at depth
+  j − 6 on 0..L − 5, for every phase. That reduces to 56 light-cone windows, enumerated exhaustively; the bases are
+  M(1..8). Certificate: `ether_six_depth_descent_certificate.py`.
+- **Proof 3, rigidity with LRAT.** GC2327's tree for r ≠ 7, plus 254 LRAT-checked local systems for r = 7.
+  Certificate: `ether_rigidity_certificate.py`.
+- **Steps to read.** For Proof 1: the two-sided reduction, Lemma B, the t = 1 floors and the modified-row reduction.
+  For Proof 2: the light cone, translation, window containment and the induction. Either proof alone suffices.
+- **Self-checks so far.** Twelve same-worker verifiers, none refuting.
+- **Scope.** Moving black edge only; no fixed-wall, centre or density claim.

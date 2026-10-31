@@ -1391,3 +1391,19 @@ family. Curiosity: determine which local implications lose the additive constant
 
 The fixed-wall sea lead is corrected separately: the known period-seven ether is an eternal infinite-row wall-clock witness, beyond
 Local's period-at-most-six census. Classify compatible interfaces rather than assuming only checkerboards survive.
+
+
+## L1259 — the ether episode is solved: M(k) = floor(2k/3) + 4 − [k ≡ 0, 2 (mod 6)] for every k
+
+[Round 5 of the tracker](reports/inquisition-20261031.md#outcomes-of-round-5-mk-for-every-k). The side question
+GC2327 opened, how long two columns behind a moving black edge can copy PR69's one-in-four ether, now has an exact
+answer for every depth. There are three proofs (PROOF-SKETCH, Local; machine certificates): a front potential, a
+six-depth descent on the exact light cone, and a rigidity step with LRAT proofs. Two mechanisms stand out:
+
+- **Rigidity:** an exact window forces the exact ether six depths down, on a window exactly four ticks shorter.
+- **A conserved front potential:** Φ = R + g(ψ) − 3t/2 for the mismatch front, constant from tick 1 on.
+
+The k mod 6 split, which trees on `good` cannot see, is carried by the witness's lane: its front stands only on even
+depths. **Curiosity (not a pull yet):** the same front-potential method might measure how fast a white sea erodes a
+clock-supporting background beside the fixed wall (the checkerboard, or the kit's period-seven ether). That is the
+interface question GC2329 left, and it bears on Q01.

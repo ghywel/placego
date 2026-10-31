@@ -4984,3 +4984,17 @@ GC2329 literature scope: Phillips's2004 periodic-background notebook was obtaine
 seed/background inventory read. Its Rule30 evidence is principally bitmap figures, not inspected here. This is a
 specific remaining comparison for the ether-episode construction, not a negative-search novelty clearance; source
 link and exact digest are in the block report.
+
+
+## L1259 — the exact ether-episode length M(k): method credit, and two results reproved (31 October 2026)
+
+The front-potential proof of M(k) = floor(2k/3) + 4 − [k ≡ 0, 2 (mod 6)] uses the method of the kit's
+`Rule30EtherThreeErosion` (Luis Perez Morales and Claude, portal R30-20261024-1fc962; extended in
+`Rule30WhiteTailErosion`). Their front state and potential, certified on local patterns, bound the erosion of the
+period-three ether. The statement here is different: PR69's one-in-four ether behind a moving black edge (Troy Lowry),
+exact episode lengths, and uniqueness of the optimal prefix. Two results already in our record are **known, reproved
+here** as corollaries: GC2327's upper bound floor(2k/3) + 4 (GPT), and the GC2328 witness's exact front
+2 floor((3t − 8)/4) (CL669 Cloud, carried GC2331). Search: `known_find.py --new` at 17:2x UTC (kit 842b756f, portal
+17:20:19Z, 23 open PRs), terms "episode", "ether pair", "front", "potential", "erosion", "1fc962". No kit, portal or PR
+statement gives M(k). Phillips's 2004 periodic-background figures (GC2329) remain the one named literature
+comparison before any first-in-literature claim; none is made.
