@@ -1113,3 +1113,39 @@ Caps (run_capped): wall 1800 s, CPU 1800 s per process, RSS 2048 MiB, files 64 M
 processes; one kissat at a time.
 
 Record searched: as for T-SAT, plus GPT's GC2327 table (r = 7 is the only edge phase needing m + 4 for k ≢ 1 (mod 3)).
+
+### T-K results
+
+(Written after the run, below this line. Predictions above are unchanged.)
+
+On Local's M5 under run_capped, COMPLETED: wall 56 s, RSS 18 MB. Output `fc64d88d` (out.txt, t-k-knowledge in the
+inquisition-20261031 scratch folder). Nibble code: bit 2u + v is set when (u, v) = (X_(j+1)(t), X_j(t)) is
+possible. So 1, 2, 4, 8 are the four exact values, f is "nothing known", and a, c, 3, e, b, 7 and so on are partial.
+
+- **A good window forces the exact ether below it, not just `good`.** At distance d from the top, every pair on
+  ticks 0..e_d is the exact ether pair, even where `good` leaves a bit free. One example (phase 7, good allows
+  (1,0) and (1,1)) is excluded by a three-tick, two-level local argument: (1,1) forces X_(K−2)(t−1) = 1 and then
+  X_(K−1)(t) = 1, against ΔX_K(t) = 0. Only a front at most four ticks wide is partial. This is why exact and good
+  tops agree except near the window's end.
+- **P-K1 held.** The K = 24 and K = 27 maps agree at equal distance from the top after the 2-tick shift (for
+  example exact to 19 − (offset) and the same front words), within the range the two share away from their bottoms.
+- **P-K2 REFUTED.** The front has **period 6 in depth (moving 4 ticks), not 3**. For K = 48 the exact region ends at
+  e_d = 35, 33, 33, 32, 32, 31, then 31, 29, … and drops 2, 0, 1, 0, 1, 0 over each six depths. Far from both
+  boundaries (d = 30..42) the front words are:
+
+| d mod 6 | 0 | 1 | 2 | 3 | 4 | 5 |
+|---|---|---|---|---|---|---|
+| front after e_d | b | c3b | a7 | 3c | e | 3 |
+
+  Nearer the top (d = 6..21) the words are longer (bdb, c3a7, a7c, 3c, eb, 3e). The rows near the free bottom
+  (no edge in this map) lose knowledge. So the front itself carries the parity, and the k mod 6 split is built into
+  the knowledge that reaches the edge.
+- **P-K3 held.** Every deletion-minimal set of top ticks for the hard edge phase (r = 7) contains an early tick
+  (1 in every good set; 0 or 1 in every exact set) and the last tick L − 1, in both modes. The sets are sparse and
+  spread over the whole window. For good, k = 12: {1, 3, 5, 7, 9, 11}, exactly the ticks where `good` pins both
+  bits (even phases). Sizes grow about k/3.6: 4, 6, 7, 8, 10, 10 ticks at k = 6..36. GPT's tree for r = 7 needs
+  only ticks from 3 on; the refutation of the extra tick does not.
+
+What this changes: the proof of the last third is not a better tree on `good`. It is an **exact-ether rigidity
+statement with a period-6 front**. A top-down local propagation whose front state is periodic under (6, 4), plus
+one finite check at the edge per residue, would cover every k.
