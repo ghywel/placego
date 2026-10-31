@@ -1602,7 +1602,7 @@ the hits.)
 
 GC2333's curiosity, and PR69's open "general same-edge rigidity", in census form. In the edge frame a periodic
 background is a cycle of the ring map R_j(t+1) = R_j(t) XOR (R_(j−1)(t) OR R_(j−2)(t)) on ℤ/p, the kit's
- (mirrored), which is "no classification for larger periods". Counting primitive cycles up to
+`Rule30RingOrbits` (mirrored), which is "no classification for larger periods". Counting primitive cycles up to
 rotation (COMPUTED, before this test):
 - p ≤ 8: six, with (p, q) = (1, 1) white, (2, 2) alternating, (4, 8) PR69's ether, (5, 5), (7, 28), (8, 20);
 - p = 9..14: (9: 57, 72), (10: 6), (11: 154, 187), (12: 12, 68), (13: 91, 247, 260), (14: 7, 12, 112, 266).
@@ -1615,13 +1615,14 @@ following each background, over all 2^(k+1) prefixes and all p·q alignments. Th
 - **P-G2 (white).** M_white(k) = floor(k/2) + c with a constant c ∈ {1, 2, 3}: the edge's news spreads at two depths
   per tick.
 - **P-G3 (the alternating background attaches).** Every k reaches the horizon, because the 2-adic codes ±1/3 of
-   carry the pattern 1010… ↔ 0101… behind the edge forever.
+  `Rule30EdgeStaircases` carry the pattern 1010… ↔ 0101… behind the edge forever.
 - **P-G4 (rigidity elsewhere).** Every other background has finite M_ref(k), growing roughly linearly with slope
   between 1/2 and 1. Counterfactual: any other background reaching the horizon at every k is a new eternal tail behind
   a black edge.
 
 Caps (run_capped): wall 3600 s; CPU 3600 s per process; RSS 4096 MiB; files 64 MiB; disk 256 MiB; at most 4 processes.
 
-Record searched:  "ring" "orbit" gives  (encode/decode bijection; period 2 is only
-white and alternating; no larger classification) and  (the ±1/3 codes); PR69's open items. No
-census of episode lengths per background was found.
+Record searched: `known_find.py` "ring" "orbit" gives `Rule30RingOrbits` (encode/decode bijection; period 2 is
+only white and alternating; no larger classification) and `Rule30EdgeStaircases` (the ±1/3 codes); PR69's open
+items. No census of episode lengths per background was found. (This section's text was repaired after commit 99049aca:
+an unquoted heredoc had run the backquoted names as shell commands and dropped them. The predictions are unchanged.)
