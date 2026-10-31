@@ -1176,3 +1176,35 @@ sweep whose state becomes periodic is the core of a certificate for all k.
 
 Caps (run_capped): wall 3600 s; CPU 3600 s per process; RSS 2048 MiB; files 64 MiB; disk 256 MiB; at most 10
 processes (the driver and up to four kissat at a time).
+
+### T-L results
+
+(Written after the run, below this line. Predictions above are unchanged.)
+
+On Local's M5 under run_capped, COMPLETED: wall 102 s, RSS 17 MB. Output `d375e6b5` (t-l-sweep folder).
+- **P-L1 held.** None of the four SAT controls was refuted.
+- **P-L2 held.** All twelve hard instances (good k = 6..36, exact k = 2..32, edge phase 7) were refuted, as was K = 48.
+  The empty set is always at depth 4, tick 3 (k = 2: depth 2, tick 0).
+- **P-L3 held.** For K = 48 every middle row (depths 44 down to 12) satisfies R_(j−6)(t) = R_j(t + 4) for every tick
+  t ≥ 1, cell for cell. The tick-0 cell has period 4 in absolute depth (j mod 4 = 0, 1, 2, 3 → c, 8, 9, 6). The rows
+  are tick-0 cell, then the exact ether on [1, e_j], then a front word that cycles with the depth from the top mod 6
+  (b, c3, a7, c3c, 6e, 3). The local front is one cell weaker than the global map's in places, as it must be.
+
+### T-R: rigidity six depths down (prediction before the run)
+
+T-K's K = 48 map shows depths K − 5 and K − 6 exact on exactly [0, L′ − 5] below a window of length L′. If that is
+forced by a bounded region, then any episode of length L + 4 at depth k + 6 contains an episode of length L at depth k
+(same row, same reference, by the (6, 4) symmetry). That gives **M(k + 6) ≤ M(k) + 4**, and with the exhaustive base
+cases M(2) = 4 and M(6) = 7 it would settle every k ≡ 0, 2 (mod 6). `tests/probes/ether_rigidity.py` (SHA256 42d3795c…)
+tests the forcing by SAT in a region with no edge and only B depths below K − 6. That region is weaker than any real
+row, so a forcing there holds in every real instance whose region lies at depths ≥ 2.
+
+- **P-R1.** Rigidity holds (every target cell forced) for B = 6 at K = 12, 14, 18, 20, 24, 26 with L′ = m(K) + 4,
+  in both modes.
+- **P-R2 (locality in depth).** B = 2 already suffices. Counterfactual: if rigidity fails at tick 0 or at tick L′ − 5
+  for every small B, the induction loses a tick and the proof must go through the periodic sweep certificate.
+- **P-R3 (any window length).** It holds for every L′ from 9 to 30 at K = 20 and 26 (exact mode, B = 6). The lemma
+  must not depend on L′ = m + 4.
+
+Caps (run_capped): wall 1800 s; CPU 1800 s per process; RSS 2048 MiB; files 64 MiB; disk 256 MiB; at most 4
+processes.
