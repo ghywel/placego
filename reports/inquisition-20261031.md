@@ -1700,3 +1700,32 @@ Then M_R(k + 1) ≤ max(L0 − 1, M_R(k) + b). With M_R(1) finite (T-G), that gi
 
 Caps (run_capped): wall 3600 s; CPU 3600 s per process; RSS 4096 MiB; files 64 MiB; disk 512 MiB; at most 10
 processes (the driver and up to six kissat at a time).
+
+### T-D results
+
+(Written after the run.) On Local's M5 under run_capped, COMPLETED: wall 142 s, output `7d59cdfd`
+(t-d-background-descent folder).
+- **P-D1 REFUTED.** Only three non-alternating backgrounds have a one-depth certificate (look-behind 4, look-ahead
+  ≤ 16): white (bulk 1, so M(k+1) ≤ max(4, M(k) + 1)), PR69's ether (bulk 2) and (5, 5) (bulk 2). The other eight,
+  (7, 28), (7, 63), (8, 20), (9, 72), (9, 57), (10, 6), (12, 68) and (12, 12), fail. Their first failing windows are
+  mostly **start** windows (s = 0): the tick-0 cell one depth down is not forced by the top within 16 ticks.
+- **P-D2 held.** The alternating background has no certificate.
+- **P-D3 held.** The ether passes, with bulk look-ahead 2.
+
+So same-edge rigidity at every depth is certified here for white, the ether and (5, 5) only. The start corner is the
+obstacle, as it was for the ether in Proof 2.
+
+### T-D2: an onset-free descent (prediction before the run)
+
+An episode need not start at tick 0 (every state is an initial state). So the descent may skip the first a ticks: if
+the bulk window W(a, b) holds for every alignment, an episode of length L at depth k + D contains one of length
+L − a − b at depth k (ticks a..L − 1 − b). Hence **M_R(k + D) ≤ M_R(k) + a + b, with no start windows at all.**
+`tests/probes/inquisition_background_descent2.py` (SHA256 84457ecd…) tries D = 1..8 and a = 4, 8, with b ≤ 24, on the eight
+backgrounds that failed T-D. The base M_R(1..8) is finite from T-G.
+- **P-D4.** Each of the eight gets an onset-free certificate for some D ≤ 8. With T-D, that would be same-edge rigidity
+  at every depth for all eleven non-alternating cycles with p ≤ 12, q ≤ 72. Counterfactual: a background with none is a
+  candidate to attach at large depth or to need non-local reasoning. It then gets a SAT test of M_R(k) at larger k.
+- **P-D5 (consistency).** Each certified slope bound (a + b)/D is at least that background's growth in T-G.
+
+Caps (run_capped): wall 3600 s; CPU 3600 s per process; RSS 4096 MiB; files 64 MiB; disk 512 MiB; at most 10
+processes.
