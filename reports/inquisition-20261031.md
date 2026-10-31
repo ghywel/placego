@@ -427,6 +427,76 @@ Predictions, for W = 14..20, late ticks t ≥ W − 2 with at least 16 alive. A 
   fates. Unrelated cluster members (mean distance near W/2) would mean distinct heads converge to one near-wall state,
   an attractor, which is itself worth knowing.
 
+### T-S: the owner's stamp, skewed onto columns and diagonals (DQ-033)
+
+The owner, mid-round (their message did not get through in its first form):
+
+> "I am not thinking about an application of gates as the role affixes them. I am thinking more generally in terms of
+> horizontal, diagonal or vertical traces. Ie, can we skew the entire rule 30 template itself, 00011110, where the
+> stamp of each cell is the central cell of the 3 cells above it, with a different complementary stamp shape that
+> works on the diagonals."
+
+**Hand answer (PROOF-SKETCH, Local solo; checked by T-E's controls).** Every Rule 30 spacetime obeys one four-cell
+relation, the stamp: with a, b, c the left, centre and right cells of a row and d the cell under b,
+
+  d = a XOR (b OR c).
+
+The XOR can be solved for a (a = d XOR (b OR c)); the OR cannot be solved for b or c. Reading the same stamp in
+other coordinates gives the other rules:
+- **Rows (the usual rule).** Output d from the row above: the table 00011110 (Rule 30).
+- **Columns (the sideways rule).** Output a from the column to its right and that column's right neighbour: the same
+  four cells, with the output in the other corner. It is the stamp turned on its side. Used by Q01 and Meier–Staffelbach.
+- **Left diagonals.** In left-diagonal coordinates the stamp is L_k(t+1) = L_(k−2)(t) XOR (L_(k−1)(t) OR L_k(t)),
+  one-sided on diagonals k − 2, k − 1, k. Read in that order its table is **00011110 again**: Rule 30 itself on a
+  one-sided neighbourhood.
+- **Right diagonals.** D_k(t+1) = D_k(t) XOR (D_(k−1)(t) OR D_(k−2)(t)). In the order (k − 2, k − 1, k) its table
+  is **01010110, Rule 86**, the mirror image of Rule 30, on the same one-sided neighbourhood.
+
+So skewing the template onto the diagonals gives back Rule 30 on the left and its mirror on the right. The new
+information is in what each direction **forbids**.
+
+**Test T-S: the trace grammar.** Count every pattern that two adjacent lines can carry over n steps: two rows, two
+columns, two right diagonals, two left diagonals; single lines as controls. Exact: Rule 30 is onto, so every finite
+row has a past, and the valid patches of a window are exactly the images of every base row wide enough to cover its
+light cone. The growth rate per step, N(n + 1)/N(n), measures how much freedom the pair of traces has in that
+direction. 4 is no constraint; 2 is one line fixing the other.
+
+Hand predictions:
+- **Two left diagonals are free.** L_(k−2) is solved from L_(k−1) and L_k, and so on leftwards, so nothing constrains
+  the pair.
+- **Two right diagonals and two columns are constrained.**
+  - Right diagonals: when D_(k−1)(t) is black, D_k must flip, D_k(t+1) = NOT D_k(t).
+  - Columns: when x(j+1, t) is black, x(j+1, t+1) = NOT x(j, t). This is Meier–Staffelbach's "10 forces a 1 to its
+    left".
+  - Each forced flip alone gives growth 3. The forced values then cascade into the next line and add more
+    constraints.
+
+Record searched: "directional entropy|Milnor|expansive direction" → Milnor 1988 (Example 6.2, the causal cone of a
+left-permutive map), Sablik (Rule 30 is left-expansive with no expansive direction; overlooked-ca-survey), Kopra 2023
+(rapid left expansivity); §8.38 counts pairs of anti-diagonals along forced walks, a different object. No two-line
+census by direction in the record, the kit or the portal.
+- P-S1 (controls): two rows give N(n) = 2^(n+2) exactly; a single row, column or diagonal gives 2^n (every trace
+  occurs).
+- P-S2: two adjacent left diagonals give N(n) = 4^n exactly.
+- P-S3: two adjacent right diagonals and two adjacent columns both have N(n)/4^n → 0, with growth between 2 and 3,
+  strictly below 3 by n = 8.
+- Counterfactual: free right diagonals, or columns growing at exactly 3, would mean the forced flips do not cascade
+  and the hand picture is wrong.
+
+### T-C reinstated: block coarse-graining, reproduced (DQ-033)
+
+Israeli and Goldenfeld's definition (PRE 2006): a projection P of N-cell blocks to one bit is a coarse-graining of
+Rule 30 onto an elementary rule g if P(F^N(abc)) = g(P(a), P(b), P(c)) for all blocks a, b, c (N steps of Rule 30
+are one step of g). Constant P is excluded. Exhaustive for N ≤ 4: 2^(2^N) projections.
+Record searched: as for T-C above; Israeli–Goldenfeld 2006 (rule 30 among the 16 they could not coarse-grain),
+Song–Aaron 2020 (none to N = 7).
+- P-C1 (controls): Rule 90 and Rule 150 coarse-grain onto themselves at N = 2 with P = the first cell of a block
+  (their even sublattice runs on its own). The search must find these.
+- P-C2: Rule 30 has no non-constant coarse-graining for N = 2, 3, 4, and neither have its mirror and complement images
+  86, 135 and 149 (a consistency check by symmetry).
+- Counterfactual: any consistent P for Rule 30 would contradict both papers, and would be a zoom with a shortcut for
+  the projected quantity.
+
 ## Outcomes
 
 (Written after the runs, below this line. Predictions above are unchanged.)
