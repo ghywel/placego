@@ -272,9 +272,9 @@ floors and the witness's lane fix the constant.
 
 ## The formal proof
 
-The module is core Lean. It imports the official statements (`Rule30Prize`) and the frame (`Rule30FrozenRuler`) at the
-verifier's kit commit 842b756f. Pull request 69 is not in that build, so the module copies its `ether` verbatim and
-proves `ether_step` again. The finite facts, such as the ether's table, the gates and the 32 cases of Lemma A, are
+The module is core Lean. It imports the official statements (`Rule30Prize`), the frame (`Rule30FrozenRuler`) and the
+ether with `ether_step` (`Rule30EtherGrounding`) at the verifier's kit commit e5e1728e. The finite facts, such as the
+wave's table, the gates and the 32 cases of Lemma A, are
 proved by `decide`, which the kernel evaluates; the rest is induction, rewriting and `omega`. Lean writes depths with an
 offset, $n = j + 8$, so that the white depths are natural numbers too, and shifts the weights and floors by constants,
 `G` $= g + 4$ (the module's docstring writes the same weights as $2g + 4$ with $g$ halved) and `K` $= P_c + 20$, for
@@ -307,11 +307,11 @@ Their axioms are standard ones only:
 AssociationMap[rule30Submission["Rule30Submission." <> #]["Axioms"] &, heads]
 ```
 
-The definitions behind them: the episode length $L(k)$, the wave $e$, the ether of pull request 69, the witness $w$ and
-the witness cut after bit $k + 1$. They match `lw`, `e`, `ether` and `wit` above.
+The definitions behind them: the episode length $L(k)$, the wave $e$, the witness $w$ and the witness cut after bit
+$k + 1$. They match `lw`, `e` and `wit` above; the ether itself is `Rule30EtherGrounding.ether`, imported.
 
 ```wl
-show[{"Lw", "e", "ether", "wit", "witCut"}, "TermForm"]
+show[{"Lw", "e", "wit", "witCut"}, "TermForm"]
 ```
 
 Steps 1 and 3: the ether is the wave, the mismatch rule, and Lemma A for one step of the front, with `dR` the move
@@ -352,7 +352,7 @@ rule30Submission["Rule30Submission.episode_max"]["KernelCheck"]
   A linear front and its speed $3/2$ are not claimed as new in themselves, and we do not identify our front, measured
   in edge depth, with the boundaries he measured. What is claimed is the exact length of the longest episode, uniformly
   over edge codes, phases and onsets, its attainment and the uniqueness in class 7, with their proofs.
-- Our search for earlier bounds covered the kit at 842b756f and its later main branch e5e1728, its open pull
+- Our search for earlier bounds covered the kit at 842b756f and at e5e1728e, its open pull
   requests, the portal's list of submissions, and the boundary-growth literature cited below (Phillips; Brummitt and
   Rowland). That is a statement about our search, not a proof that no such bound exists.
 
@@ -362,8 +362,9 @@ rule30Submission["Rule30Submission.episode_max"]["KernelCheck"]
   contributed earlier. The kit's module identifies $T$ as the 2-adic right-edge map of Coven, Pivato and Yassawi
   (Proc. Amer. Math. Soc. 135, 2007).
 - **The ether.** The ether, `ether_step` and the eventual exclusion `no_eventual_ether_pair`, stated in the frame of
-  `Rule30FrozenRuler`, are Troy Lowry's kit pull request 69, `Rule30EtherGrounding`. It reached the kit's main branch on
-  31 October, after the verifier's build at 842b756f, so this module copies its `ether`. The pull request proves the exclusion through a pair invariant that every ether pair satisfies and a
+  `Rule30FrozenRuler`, are Troy Lowry's kit pull request 69, `Rule30EtherGrounding`. It joined the kit on 31 October,
+  and this module imports its `ether` and `ether_step`. The pull request proves the exclusion through a pair invariant
+  that every ether pair satisfies and a
   descent step, `local_descent`, that reads four consecutive ticks. Run on a finite window, that step would lose three
   ticks per depth, and so would bound an episode by about $3k$ ticks. The pull request does not state that bound, and
   it is not formalized here. The bound proved here has slope $2/3$ and is sharp.
@@ -377,15 +378,16 @@ rule30Submission["Rule30Submission.episode_max"]["KernelCheck"]
   on it. Brummitt and Rowland's census of boundary growth treats constant backgrounds and points to Phillips for
   periodic ones.
 
-**The kit pull request.** A catalog version of this module, `Ruliology.CellularAutomata.Rule30EtherEpisode`, which
-imports the ether from `Rule30EtherGrounding` instead of copying it, is offered to the kit as
-[pull request 71](https://github.com/WolframInstitute/Rule30PrizeKit/pull/71). Until the verifier's kit includes it,
-this essay's Lean source carries the whole proof.
+**The kit pull request.** A catalog version of this module, `Ruliology.CellularAutomata.Rule30EtherEpisode`, is
+offered to the kit as [pull request 71](https://github.com/WolframInstitute/Rule30PrizeKit/pull/71). It differs from
+this essay's Lean source only in its namespace and imports. Until the verifier's kit includes it, this essay's source
+carries the whole proof.
 
 ## References
 
 - The Rule 30 Prize kit, [WolframInstitute/Rule30PrizeKit](https://github.com/WolframInstitute/Rule30PrizeKit), at
-  commit 842b756f: the modules `Rule30Prize`, `Rule30FrozenRuler` and `Rule30EtherThreeErosion`.
+  commit e5e1728e: the modules `Rule30Prize`, `Rule30FrozenRuler`, `Rule30EtherGrounding` and
+  `Rule30EtherThreeErosion`.
 - T. Lowry, kit pull request 69, `Rule30EtherGrounding`:
   [WolframInstitute/Rule30PrizeKit/pull/69](https://github.com/WolframInstitute/Rule30PrizeKit/pull/69).
 - G. Herbert, Claude and GPT, kit pull request 71, `Rule30EtherEpisode`, the catalog form of this module:

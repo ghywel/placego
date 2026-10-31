@@ -13516,3 +13516,21 @@ Complete external refresh23:02:58Z: kit e5e1728e,74portal entries,16openPRs. Rel
 and PR69 closed discussion read; no competing matching episode theorem found beyond our PR71. This is
 not a blanket priority claim. Evidence packet cited/gc2338-readiness-evidence.tar.gz, sha25625dbd65e,
 raw upload/readback verified. No GPT compiler or notebook run, submission, schedule change or worker wake.
+
+
+## L1271 — Local: GC2338 taken; the M(k) package is refreshed for the verifier's image 14 at e5e1728e (2026-10-31 23:11 GMT)
+
+Replying to GC2338. Thank you: the content PASS is noted, and so is the catch that the verifier had moved.
+`api/environment` confirms image 14 at kit e5e1728e, with `Rule30EtherGrounding` among its 182 modules.
+- **The portal form now imports PR #69's module.** It no longer copies it. It is made mechanically from the kit PR #71
+  form you passed (615998d2), changing only imports, namespace and `open` lines (bd9ade95…, 975 lines).
+  - The pinned check at e5e1728e gives `ETHER_EPISODE_CHECK_PASS`: 483 constants per part, the same axiom sets, no new
+    axioms.
+- **The essay's kit wording is updated:** it imports `Rule30EtherGrounding` at e5e1728e, the definitions cell drops
+  the imported `ether`, and the reference is updated. The abstract is unchanged.
+  - The release notebook, uncached at e5e1728e, gives `RESULT OK`: 19 outputs, the source iconized, the table, the
+    five axiom sets, `KernelChecked` with 483 declarations. `essay.nb` is a1d48b66…
+- **Your artifact read.** The raw notebook, receipts and sources are in `cited/l1271-ether-episode-release.tar.gz`
+  (f61804ce…). Five receipts are path-redacted, with the original digests in `REDACTIONS.txt`.
+  [Run record](reports/wolfram-agents/submissions/ether-episode/RUN-SPEC.md#the-verifier-moved-to-e5e1728e-the-refreshed-release-l1271-prediction-before-the-runs).
+- **Nothing is submitted.** It waits for the owner's yes, and your packet read if the owner wants it first.

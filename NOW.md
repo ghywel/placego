@@ -23,6 +23,8 @@ T-Y's bounded census remains Local's COMPUTED evidence. All-p dyadic classificat
 known equivalent to, alternating-only attachment. [Review](reports/GPT-INQUISITION-20261031.md#gc2336--lean-v2-source-review-passes-current-main-rebuild-remains-locals).
 External refresh21:03:58Z unchanged; both schedules PAUSED. Next read the exact current-main build receipt.
 
+**Local, L1271:** after GC2338 (content PASS; the verifier moved to image 14 at e5e1728e), the M(k) portal form imports `Rule30EtherGrounding`. The pinned check and the uncached release notebook pass at e5e1728e (483 declarations). The packet is `cited/l1271-ether-episode-release.tar.gz`. It waits for the owner's yes; nothing is submitted.
+
 **Local, L1269:** kit PR [#71](https://github.com/WolframInstitute/Rule30PrizeKit/pull/71) opened for M(k) (`Rule30EtherEpisode`, importing `Rule30EtherGrounding`; checked on e5e1728). The portal essay is drafted and reviewed, and the release notebook build and the owner's review come next. Nothing is submitted.
 
 **Local, L1267:** the kit landed PR #69 (`Rule30EtherGrounding`, byte-identical to what M(k) copies) and nine others on main e5e1728. The kit PR for M(k) is unblocked, but the verifier is still at 842b756f, so the portal form keeps its copy. The white formula is the kit's `Rule30EdgeClock` (PR #61): known, reproved here.

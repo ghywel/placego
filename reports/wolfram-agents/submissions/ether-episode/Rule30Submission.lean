@@ -1,12 +1,13 @@
 import Ruliology.CellularAutomata.Rule30Prize
 import Ruliology.CellularAutomata.Rule30FrozenRuler
+import Ruliology.CellularAutomata.Rule30EtherGrounding
 
 /-!
 # Rule 30: the longest ether-pair episode behind a black right edge
 
 Read a row of rule 30 from its rightmost black cell, as in `Rule30FrozenRuler`: bit `k` of the
 edge code is the cell `k` places behind the edge cell, and `iter t x` is the code at time `t`
-(the edge map `T`). Kit pull request #69 (`Rule30EtherGrounding`) introduced in this frame the four-column,
+(the edge map `T`). `Rule30EtherGrounding` introduced in this frame the four-column,
 eight-tick ether `ether i t` (a two-sided solution, `ether_step`) and proved that no two adjacent
 depths of a black-edge code can follow it *eventually*. This module computes how long they can
 follow it. An **episode** at depths `k, k + 1` with phase `(i, q)` and onset `s` is a run of
@@ -20,8 +21,8 @@ consecutive ticks `t ≥ s` with `iter t x k = ether i (t + q)` and
   episode of `Lw k` ticks at depths `k, k + 1` for every `k ≥ 1`.
 * `episode_max`: together, **the longest episode is `M(k) = Lw k` for every `k ≥ 1`**.
 * `wit_episode` names the witness, and `episode_witness_finite` cuts it after bit `k + 1`: a code with
-  no black bit beyond `k + 1` attains `Lw k` too (prefix autonomy). Through the kit's `code` and
-  `edge_evol` such a code is the edge code of a finite row; that translation is not restated here.
+  no black bit beyond `k + 1` attains `Lw k` too (prefix autonomy). Through `code` and `edge_evol` such
+  a code is the edge code of a finite row; that translation is not restated here.
 * `witness_unique`: at phase class `7` (`s + q + 2i + 6k ≡ 7 (mod 8)`, the witness's class) every
   code with an episode of `Lw k` ticks has the witness's prefix (bits `0 .. k + 1`) at its onset.
   Bits beyond `k + 1` are free, and other phase classes may also attain `Lw k`.
@@ -59,11 +60,9 @@ column or densities.
    depth `≥ k` — through the potential floor, or along the witness lane, whose moves are forced
    (front phases `2 → 7 → 4 → 1`, moves `+2, +2, +2, 0`, front `Rw`). That contradicts step 2.
 
-**Sources.** The finite tables mirror a separate certificate of the same 32 cases. The method, a
-front state with a potential certified on local patterns, is that of the kit's
-`Rule30EtherThreeErosion` (period-three ether). The ether and `ether_step` are from kit pull
-request #69 (`Rule30EtherGrounding`, by Troy Lowry), which is not in the verifier's kit build:
-`ether` is copied here verbatim.
+**Method.** The finite tables mirror a separate certificate of the same 32 cases. The method, a front
+state with a potential certified on local patterns, is that of `Rule30EtherThreeErosion`
+(period-three ether). `ether` and `ether_step` are `Rule30EtherGrounding`'s.
 -/
 
 namespace Rule30Submission
@@ -72,14 +71,9 @@ set_option autoImplicit false
 
 open Ruliology.CellularAutomata
 open Ruliology.CellularAutomata.Rule30FrozenRuler
+open Ruliology.CellularAutomata.Rule30EtherGrounding (ether ether_step)
 
 /-! ### The ether and the wave -/
-
-/-- The ether of PR #69 (`Rule30EtherGrounding.ether`), copied verbatim: four spatial columns of the
-one-in-four ether, bit `t` read in time order. -/
-def ether (i t : Nat) : Bool :=
-  (match i % 4 with
-   | 0 => 43 | 1 => 202 | 2 => 178 | _ => 172).testBit (t % 8)
 
 /-- The episode length `floor(2k/3) + 4 - [k = 0, 2 (mod 6)]`. -/
 def Lw (k : Nat) : Nat := 2 * k / 3 + 4 - (if k % 6 = 0 ∨ k % 6 = 2 then 1 else 0)
@@ -111,17 +105,6 @@ theorem wave (p : Nat) : e (p + 5) = xor (e (p + 4)) (e (p + 2) || e p) := by
   rw [e_congr (show (p + 5) % 8 = (p % 8 + 5) % 8 by omega),
     e_congr (show (p + 4) % 8 = (p % 8 + 4) % 8 by omega),
     e_congr (show (p + 2) % 8 = (p % 8 + 2) % 8 by omega), e_mod p, h]
-
-/-- The `ether_step` of PR #69 (positive control): the ether is a two-sided solution of the edge rule. -/
-theorem ether_step (i t : Nat) :
-    ether i (t + 1) = xor (ether i t) (ether (i + 3) t || ether (i + 2) t) := by
-  rw [ether_eq, ether_eq, ether_eq, ether_eq]
-  have h := wave (t + 2 * i + 4)
-  rw [e_congr (show (t + 2 * i + 4 + 5) % 8 = (t + 1 + 2 * i) % 8 by omega),
-    e_congr (show (t + 2 * i + 4 + 4) % 8 = (t + 2 * i) % 8 by omega),
-    e_congr (show (t + 2 * i + 4 + 2) % 8 = (t + 2 * (i + 3)) % 8 by omega),
-    e_congr (show (t + 2 * i + 4) % 8 = (t + 2 * (i + 2)) % 8 by omega)] at h
-  exact h
 
 /-! ### The mismatch increment -/
 
@@ -801,7 +784,7 @@ theorem episode_bound_all (x : Nat → Bool) (hx : x 0 = true) (k i q s : Nat) :
   exact pair_clean x k i q s c u hcdef h1 h2
 
 /-- **The episode bound.** For every black-edge code `x` (finite or not), every depth `k ≥ 1`,
-every phase `(i, q)` and every onset `s`, the pair at depths `k, k + 1` is not the ether pair of PR #69
+every phase `(i, q)` and every onset `s`, the pair at depths `k, k + 1` is not the ether pair
 on the `Lw k + 1` consecutive ticks `s .. s + Lw k`. -/
 theorem episode_bound : ∀ (x : Nat → Bool), x 0 = true → ∀ k, 1 ≤ k → ∀ i q s : Nat,
     ¬ (∀ t, s ≤ t → t ≤ s + Lw k →

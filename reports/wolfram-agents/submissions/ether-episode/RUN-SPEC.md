@@ -121,3 +121,55 @@ the catalog form can import it.
   bytes. It is kept outside git, with `summary.json` (35548c2c0f57d63f…) and the 19 output digests.
 - **Afterwards:** no kernel or lean process was left running. Three figures were exported as PNGs for the owner's
   reading.
+
+## The verifier moved to e5e1728e: the refreshed release (L1271, prediction before the runs)
+
+GC2338 passed the content and held the release. The portal's `api/environment`, read again at about 23:10Z,
+advertises image 14 at kit e5e1728e, with `Rule30EtherGrounding` among its 182 modules; its lastCheck still names
+842b756f. So the portal form now imports PR #69's module instead of copying it.
+- **The new portal form.** `tests/probes/wolfram/make_ether_episode_portal.py` (sha256 `08a63db324459cd9273a1629099b0ceca9018d0bc9a77ed51835deef544f419c`) makes
+  `Rule30Submission.lean` from the kit PR #71 catalog form (615998d2, passed in GC2338).
+  - Only the frame changes: imports, namespace and `open` lines. The 701 code lines are unchanged.
+  - The result is sha256 `bd9ade9507a7c16a33fdf6d40842672adc1367ec7a6867c8f316e8b03b93e03e`, 975 lines.
+  - It supersedes the copied-ether forms (e257396c, 37733e44).
+- **The kit.** A clean detached worktree at e5e1728e, with the closure of `Rule30FrozenRuler`, `Rule30EtherGrounding`
+  and `Rule30Prize` built. The root build files and `Check.lean` are identical to 842b756f's.
+- **The check.** `check_ether_episode.sh` (sha256 `ac568144b737c11626ef095c22b958e423c22d81bb1221192c6c03acd27cefe5`) is re-pinned. Part c is the catalog form under the root
+  `EtherEpisodeCert`, and part s is the portal form. Both outputs must be empty, with the same five headlines and
+  guards.
+- **Prediction.** `ETHER_EPISODE_CHECK_PASS`, each part replaying 483 constants (the catalog form's count, L1268), with
+  standard axioms only.
+- **Counterfactual.** A name clash from the new imports, or any guard failure, ends the stage.
+
+**Result of the refreshed check (written after the run).** `ETHER_EPISODE_CHECK_PASS` at e5e1728e. Each part
+replayed 483 constants, with the official statements imported and no new axioms. The axiom sets are unchanged:
+`episode_max`, `episode_bound` and `witness_unique` use Classical.choice, Quot.sound and propext; the other two use
+Quot.sound and propext. All 104 declared constants are standard. `out.txt` ded96e1e8f832f38. The prediction held.
+
+**The refreshed essay and the release notebook (prediction before the run).**
+- **The essay.** Only its wording on the kit changed: the module imports `Rule30EtherGrounding` at e5e1728e, the
+  definitions cell drops the imported `ether`, and the kit reference is updated. The abstract is unchanged.
+- **The pins.** `essay.md` is sha256 `9bdc8480b58a624c7d1e693ea04f1b7ed0305cc69d4fe8274e8299a65f6a5988`, embedding
+  bd9ade95… verbatim. The driver is sha256 `7f3c6f5c1a0ca643d62423a61b1b2ece44262e7f229c12ee2309da9675c4720f`; its declaration gate is now 483.
+- **The kit.** The e5e1728e worktree, with the prebuilt packages linked.
+- **Prediction.** `RESULT OK`, with the same gates as L1270 and `KernelChecked` at 483 declarations, in under 120 s.
+
+**Result (written after the run).** `RESULT OK` at e5e1728e, COMPLETED in 46 s wall, peak RSS 1.34 GB, so the
+prediction held.
+- **The build:** 35.5 s; 19 output cells, 0 message cells; the source in an icon.
+- **The gates:** the table, the axiom sets, the LeanEnvironment and `KernelChecked` (483 declarations) are all as
+  predicted.
+- **The notebook** is `essay.nb`, sha256 `a1d48b66bf868e54296d3bbd386812ff45d6f374f3456ee1e6245bbed663b1b8`, 327,350
+  bytes. No process was left running.
+
+**The evidence packet for GPT's artifact read (GC2338).** It is on the shared store as
+`cited/l1271-ether-episode-release.tar.gz`: 159,180 bytes, sha256
+`f61804ce945ae241538a4befa4f3a59f1cbf00f7c0bfa641f01537240c2c139f`, with the readback verified and a line in
+`log/manifest.jsonl`.
+- **Contents:**
+  - the release `essay.nb` and `essay.md`, with `nb-receipts` (summary.json and the 19 output digests);
+  - the portal check's two checker JSONs, compile outputs and receipts;
+  - the four sources;
+  - a `MANIFEST.sha256`.
+- **Redaction.** Five receipt files had the local home path replaced by `<home>`. `REDACTIONS.txt` lists each
+  original digest.

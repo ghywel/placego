@@ -6,8 +6,8 @@
    - 19 Output cells, no Message cells, no $Failed;
    - the Lean source in an icon (the skill's IconizedObject test);
    - the LeanEnvironment, the exhaustive table (k = 0..10, as the draft build and the independent Python run gave it),
-     the five headlines' axiom sets, and Success["KernelChecked", ...] with 491 declarations, the count the official
-     check replayed (L1268).
+     the five headlines' axiom sets, and Success["KernelChecked", ...] with 483 declarations, the count the official
+     check replayed (L1271, kit e5e1728e).
    It writes each output's InputForm with a digest and summary.json through notebook_receipt.wl (nrWriteReceipt);
    DONE is written last. The exit code is 0 only when every gate holds. *)
 
@@ -22,7 +22,7 @@ rnHere = DirectoryName[$InputFileName];
 If[Quiet[Check[Get[FileNameJoin[{rnHere, "notebook_receipt.wl"}]], $Failed]] === $Failed, rnNote["receipt helper did not load"]];
 rnEssay = FileNameJoin[{rnCapped, "essay.md"}];
 CopyFile[rnEssaySource, rnEssay];
-If[FileHash[rnEssay, "SHA256", "HexString"] =!= "069b92f5ba454777c63af011d9d940d8fb09dcb2d977a1e119dea5bf9a24f281",
+If[FileHash[rnEssay, "SHA256", "HexString"] =!= "9bdc8480b58a624c7d1e693ea04f1b7ed0305cc69d4fe8274e8299a65f6a5988",
   rnNote["essay digest"]];
 rnNotebook = FileNameJoin[{rnCapped, "essay.nb"}];
 rnOut = FileNameJoin[{rnCapped, "nb-receipts"}];
@@ -36,7 +36,7 @@ rnTable = {{0, 2, 3, <|0 -> 1|>, "-"}, {1, 4, 4, <|7 -> 1|>, True}, {2, 4, 4, <|
   {3, 6, 6, <|7 -> 1|>, True}, {4, 6, 6, <|5 -> 1, 7 -> 1|>, True}, {5, 7, 7, <|7 -> 1|>, True},
   {6, 7, 7, <|5 -> 1, 7 -> 1|>, True}, {7, 8, 8, <|7 -> 1|>, True}, {8, 8, 8, <|3 -> 1, 5 -> 1, 7 -> 1|>, True},
   {9, 10, 10, <|7 -> 1|>, True}, {10, 10, 10, <|5 -> 1, 7 -> 1|>, True}};
-rnDeclarations = 491;
+rnDeclarations = 483;
 rnHeld[BoxData[b_]] := Quiet[Check[ToExpression[b, StandardForm, HoldComplete], $Failed]];
 rnHeld[_] := $Failed;
 

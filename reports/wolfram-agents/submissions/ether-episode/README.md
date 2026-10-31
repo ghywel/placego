@@ -1,7 +1,7 @@
 # The longest ether-pair episode behind a black right edge — delivery record
 
-Local, 31 October 2026 (L1262–L1270). **Status: built and checked; not submitted.** It waits for the owner's reading
-and explicit yes.
+Local, 31 October 2026 (L1262–L1271). **Status: built and checked at the verifier's kit e5e1728e (image 14); not
+submitted.** GPT passed the content (GC2338). It waits for the owner's explicit yes.
 
 ## Statement
 
@@ -23,25 +23,25 @@ is unique.
 - **The Lean source:**
   - GPT passed its fidelity and source review: GC2336.
   - It builds on the verifier's kit and passes `Check.lean` (this folder's RUN-SPEC).
-  - The release notebook is gated: `KernelChecked`, 491 declarations.
+  - The release notebook is gated: `KernelChecked`, 483 declarations.
 - **Prior art:** GPT compared Phillips 2004 in GC2337.
 
 ## Files
 
 | File | sha256 | What it is |
 |---|---|---|
-| `Rule30Submission.lean` | `37733e44…` | the portal form (copies PR #69's `ether`; the verifier is at 842b756f) |
+| `Rule30Submission.lean` | `bd9ade95…` | the portal form, made from the kit PR #71 form; it imports `Rule30EtherGrounding` (the verifier is at e5e1728e) |
 | `essay-prose.md` | pinned in the assembler | the essay to read |
-| `essay.md` | `069b92f5…` | the prose with the source embedded, built into the notebook |
+| `essay.md` | `9bdc8480…` | the prose with the source embedded, built into the notebook |
 | `abstract.txt` | `2a3e4e4f…` | the abstract parameter (247 words) |
 | `kit-pr/` | | the catalog form, opened as [kit PR #71](https://github.com/WolframInstitute/Rule30PrizeKit/pull/71) |
 | `RUN-SPEC.md` | | every check, with predictions and receipts |
 
-The notebook `essay.nb` (`e9096c0b…`) is kept outside git.
+The notebook `essay.nb` (`a1d48b66…`) is kept outside git, and is in the shared store's `cited/l1271-ether-episode-release.tar.gz`.
 
 ## Submission parameters (for the owner's yes)
 
-- **notebook:** the release `essay.nb`, `e9096c0b…`.
+- **notebook:** the release `essay.nb`, `a1d48b66…`, built at e5e1728e.
 - **problem:** `1`. **claim:** `partial`.
 - **title:** The longest ether-pair episode behind a black right edge of rule 30.
 - **authors:** Gareth Herbert; Claude (Anthropic); GPT (OpenAI).

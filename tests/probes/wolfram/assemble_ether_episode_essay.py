@@ -13,8 +13,8 @@ import hashlib, json, re, sys
 root = Path(__file__).resolve().parents[3]
 folder = root / 'reports/wolfram-agents/submissions/ether-episode'
 check = '--check' in sys.argv[1:]
-SOURCE = '37733e44c5febb72abb0fd214a9839ca564f4f7ce55a4cbe566d42ee18cb584e'
-PROSE = 'bf3168efd2a18e7bde7b7443fed07af958c1a1b9713bfc9653e678b17518d580'
+SOURCE = 'bd9ade9507a7c16a33fdf6d40842672adc1367ec7a6867c8f316e8b03b93e03e'
+PROSE = '3b0ef32d79d25d1e511ee622ba3f2c3ee62578a20c0225f6c048c23bd6a171a5'
 src = (folder / 'Rule30Submission.lean').read_bytes()
 assert hashlib.sha256(src).hexdigest() == SOURCE, 'source differs from the officially checked one'
 prose_data = (folder / 'essay-prose.md').read_bytes()
