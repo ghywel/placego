@@ -1465,7 +1465,20 @@ unjustified. All of these are self-checks under AGENTS.md §4, because they are 
   random rows in my own code (every phase, up to 60 ticks, including the witness and near-witness rows): 0 violations
   of no-retreat after tick 0, of constant Φ, or of R(t) ≥ R_w(t). My first run of that simulation cut the scan at
   depth hi − 2t, which this frame does not need, and reported spurious violations. It is kept as a refuted control.
-- **Proof 3's four-lens verification:** [pending at the time of writing].
+- **Proof 3's four-lens verification** (a second workflow, applied to the theorem section and its certificate):
+  - **Logic lens: not refuted, no fatal issue.** It rebuilt GC2327's eight dependency rows by brute force and checked
+    the 17 potential edges and the parity guard. Its corrections, accepted:
+    - **The phase classes number 8, not 16.** Since ether(i+1, t) = ether(i, t+2), the 32 PR69 phases (i, q) give
+      E_j(t) = e(t + 2j + c) with c = q + 2i − 2k, so 8 classes. T-SAT's "16 classes by the glide" was redundant,
+      checking each class twice; its conclusions stand.
+    - The (T) values 3, 2, 1, 3, 2, 3, 2 are maxima over both residues. By residue they are 3, 2, 1, 2, 1, 3, 2
+      (k ≡ 0 mod 6) and at most those maxima (k ≡ 2 mod 6).
+    - (T) needs only GC2327's own potential bound, evaluated by k mod 3, not the exact max-plus.
+    - DIRECT checks the full tick range, not the 21-tick windows. That is a larger sound relaxation, and the
+      windowed form was also checked.
+    - L′ ≥ 20 already prevents two-sided clipping (25 is conservative).
+    - (R)'s hypothesis should name the r = 7 reference E_j(t) = e(t + 2j + 7).
+  - **Code, independent and definitions lenses:** [pending at the time of writing].
 
 ### Prior art
 
