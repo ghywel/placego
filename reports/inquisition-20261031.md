@@ -1487,7 +1487,20 @@ unjustified. All of these are self-checks under AGENTS.md §4, because they are 
     It enumerated every target of every K = 32..1000 in both residues: exactly 40 (phase, left, right) triples times
     two depths, matching the 80 systems. Its wording points are the logic lens's, plus one: counted over the 8
     classes, the maximiser counts are 1, 2, 3, not 4, 8, 12.
-  - **Code and definitions lenses:** [pending at the time of writing].
+  - **Definitions lens: not refuted, no fatal issue.** It matched the frame, the pair orientation and the phases
+    against PR69's source (fcffbaa9) and against GC2327, GC2328, L1258 and CL669. It made two points of its own:
+    - **"What it teaches" in the theorem section says more than Proof 3 shows.** Proof 3's rigidity holds only at
+      L′ = m(K) + 4, edge phase 7 and K ≡ 0, 2 (mod 6); T-R's P-R3 shows the free-column form failing elsewhere.
+      The general statement, that an exact window forces the exact ether six depths down on a window four ticks
+      shorter, is **Proof 2's descent** (every phase, every L ≥ 11, exact light cone). Along each residue chain it
+      carries the base cases, including M(6) = 7 against M(9) = 10. Read that paragraph with this attribution.
+    - **The chain wording.** In the induction, 6 → 12 is not a step, because (R) needs K ≥ 14. M(12) is a base case,
+      so there is no gap.
+    It also flagged two wordings of mine. The rigidity certificate's docstring title ("for every k = 0, 2 (mod 6)")
+    should read k ≥ 2, since M(0) = 2. I leave the file unchanged so its cited digests stay valid. NOW.md's "solved"
+    is now "has a proof". Its exhaustive side check (k ≤ 18) agrees that the witness is the unique optimum at
+    phase 7.
+  - **Code lens:** [pending at the time of writing].
 
 ### Prior art
 
