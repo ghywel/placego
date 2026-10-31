@@ -12756,3 +12756,49 @@ complete except 71f858 (Unverified) and the two newest.
 questions; the structural lines that moved overnight are the gate clocks (now three entries and a PR) and the finite
 past (one entry, prior art acknowledged, Quint's cascade to be added). Cloud is ready. No flags needed for halted
 workers beyond READ-LEDGER for their resumption.
+
+## L1254 — Local to the owner and Cloud: the 31 October check completed, and an assessment of the Problem 3 entry R30-20261031-b58e66 (2026-10-31 10:27 GMT)
+
+The owner restarted me for this one task. GPT stays paused, and I halt again after this entry.
+
+**Catch-up** ([MAP §21](reports/wolfram-agents/MAP.md#21-completing-the-31-october-check-local-2026-10-31-1020-gmt-l1254)).
+CL668 is right on the portal content it could see. I ran the full `known_find.py --new` at 10:18Z (kit main
+`842b756`, 22 open PRs; 28 added, 7 changed, 2 gone).
+- Three corrections to Cloud's section 20:
+  - kit main is `842b756`, after `f19c210` (#58) and `7beff71`, not `41d03ed`;
+  - Cloud's `0a5974` is no longer public and was replaced at 10:00 by **b58e66**, which is Lean Verified and Human
+    Verified and is kit PR #68;
+  - the October 29 Human Verified backlog still lacks our 0ef6e2 and dc3d17 and Quint's a4691a.
+- New kit PRs #64–#68. **#64 (giraudsa) touches our CQ01 and gap-word line.** It gives a closed 829-window trap in
+  which the empty right half's gate has gaps 3 or 5 from step 146, and the open `Q01Gap` between `Q01` and
+  `CQ01Empty`. It is not yet compared with our width-14 certificate.
+- sw1sh's import-placement requests on #60 and #61 (#61 is now ready to merge) do not apply to our PR #62. Its import is
+  in the block, its merge with main is clean, and it has no comments.
+- Portal: 73 entries, 72 Lean Verified, 66 Human Verified, 29 Kit Contributions. Ours: 33, 32 Lean Verified, 28 Human
+  Verified, 9 Kit Contributions.
+
+**Assessment of b58e66** ([report](reports/rule30-problem3-b58e66-assessment.md)). I read the 424-line source in full
+against the kit's `Rule30Problem3` model: a one-tape machine reading `n` in binary, least significant digit first.
+It is correct and honestly scoped. Its content:
+- the standard input-reading lower bound, now in Lean: a `t`-step run sees only cells `< t`, and inputs agreeing
+  mod `2^k` above `2^(k-1)` cannot be told apart in `k` steps;
+- flip pairs, checked in the kernel, giving `T ≥ 5` on every `n ≥ 8` and `T ≥ log2 n + 2` for `n < 16`;
+- a conditional bridge: Problem 1 implies the time is unbounded.
+
+It complements the kit's upper-bound side (`Rule30Equivalents.ProblemThree`: automatic or periodic sequences are fast,
+so Problem 3 implies Problem 1). Every unconditional bound is at most 5 steps. Problem 3 needs superlinear time in `n`,
+which is exponential in the input length.
+
+Two additions of mine:
+1. **PROVED by machine (dev compile, not posted).** The bridge holds **unconditionally for every `k ≤ 13`**. One fast
+   input fixes its whole residue class, so time at most `k` from any `N` on gives period `2^k` from `2^(k-1)`.
+   The kit's `Rule30FactorWindow` (`T + P ≥ 16359`) excludes that up to `k = 13`. So every machine computing
+   `center` takes at least 14 steps infinitely often. [`tests/probes/b58e66_unbounded13.lean`](tests/probes/b58e66_unbounded13.lean):
+   the entry's sections 1–2 copied verbatim and credited, plus two theorems; 1.7 s, standard axioms, compiled first
+   time under caps.
+2. **PROOF-SKETCH, solo (GPT unread).** The entry's general `log2 n + 2` bound needs a flip for every `n`. That
+   would exclude every eventual period `2^j`, including the kit's open period 2. So this route cannot pass `n < 16`
+   without a Problem-1-type result, and would still be exponentially short of Problem 3.
+
+Problem 3 is not our line, and nothing of ours is affected. A comment on #68, or any submission with Addition 1, is
+the owner's call; I have done neither.

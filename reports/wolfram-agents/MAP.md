@@ -694,3 +694,45 @@ two hours of posting; 7b0d12 and 9861e5 await it. Third-party: 99db76, 23ac1b an
 d611aa, e324b6 and 8abb51 gained Kit Contribution tags. Kit main 41d03ed (PR #50 merged); PR #62 (Package A) open. The kit's PR
 index is not reachable from Cloud's container (HTTP 403), so `known_find.py --new` did not advance its checkpoint here; the portal
 half of the check is complete, the snapshot is kept in Cloud's scratch.
+
+## 21. Completing the 31 October check (Local, 2026-10-31 ~10:20 GMT; L1254)
+
+Section 20 is Cloud's, from a container that could not reach the kit's PR index. This completes it with
+`known_find.py --new` at 10:18Z: kit main `842b756`, the portal updated 10:18:34Z, 22 open kit PRs. Since the last
+complete check (23:50Z, 30 October) there are 28 added, 7 changed and 2 no longer listed. Cloud's text stands, with
+these corrections and additions.
+
+**Corrections to section 20.**
+- Kit main is `842b756`, not `41d03ed`. Two commits followed the PR #50 merge: `f19c210` (PR #58, `Rule30GroupCocycle`)
+  and `7beff71` (170 modules). Then `842b756` moved #58's import into the import block of `lean/Ruliology.lean`.
+- R30-20261031-0a5974 is gone. Its page now asks for a sign-in. It was replaced at 10:00 by **R30-20261031-b58e66**
+  (Quint with Gemini, Problem 3, partial), which is Lean Verified and Human Verified and lists no supersedes. It is
+  also kit PR #68. [Local's assessment](../rule30-problem3-b58e66-assessment.md).
+- The October 29 Human Verified backlog is not complete. Our 0ef6e2 and dc3d17 and Quint's a4691a still have no tag,
+  besides 71f858 (Lean Unverified) and our 7b0d12 and 9861e5.
+
+**The page at 10:18Z.** 73 entries: 72 Lean Verified, 66 Human Verified, 29 Kit Contributions. Ours are 33: 32 Lean
+Verified, 28 Human Verified, 9 Kit Contributions. Problem 3 has exactly one entry, b58e66.
+
+**New kit PRs since 30 October** (#64–#68):
+- **#64** (giraudsa, 07:53Z) `Rule30GateTrap`. A closed trap of 829 sixteen-cell windows for the gate `u R` of the
+  period-2 sideways reduction. From step 146, `u ∅` is a concatenation of `001` and `00001`, so its black cells are
+  3 or 5 apart. It introduces `Q01Gap` (**open**), a statement between `Q01` and `CQ01Empty`, and proves
+  `CQ01Empty_of_Q01Gap`. **It touches our CQ01 and gap-word line** (L590, GC1009/1011, GC2209's channel bound,
+  Bosdure's {3,5} trap) and Lee's 60990f. Not yet compared with our width-14 certificate.
+- **#65** (giraudsa) `Rule30Ether`, `Rule30EtherWallWitness`: `Lock`, weaker than Absorption, still excludes `w^∞` as
+  a tail of the center column; witnesses with a periodic left half.
+- **#66** (giraudsa): self-shielded Theorems B and D in `Rule30BlackRuns`, and Q01 as an integer iteration in
+  `Rule30ZeroBoundary`.
+- **#67** (giraudsa) `Rule30ZeroBoundaryPeriodLanes`: the bit-sliced Q01 checker for every period `P ≥ 2`, and `QP P`
+  for the words `0^(P-1) 1`.
+- **#68** (topics-ledger-framework, Quint's account, 10:07Z) `Rule30Problem3Bounds`, the module of b58e66.
+
+**Comments in the last day.**
+- sw1sh asked #60 and #61 (Lowry) to move their `Ruliology.lean` imports out of the module body, the defect #58 had,
+  fixed on main in `842b756`. #61 is fixed in `1477d42` and declared "Ready to merge" at 08:23Z.
+- #17 (calculuscalculus) was rebased on `842b756` and is "ready to merge".
+- #59 (Quint) restored its README row.
+- **Our PR #62** has no comments, and GitHub reports it mergeable. Its import sits in the import block, so it does
+  not have #58's defect. Its merge base is `a6399ef`, four commits behind main, and the textual merge with main's moved
+  import is clean.
