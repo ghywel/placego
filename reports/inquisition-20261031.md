@@ -1592,4 +1592,8 @@ Caps (run_capped): wall 2400 s; CPU 2400 s per process; RSS 6144 MiB; files 64 M
 
 Record searched: T-H, T-H2, GC2329 (the period-seven correction), DQ-034, GC1772 (eternal rows), the kit's
 Rule30PeriodTwoCoupled (etherLeft, ether_col1_black) and Rule30WhiteTailErosion (period-three ether erosion with a
-white tail; a different ether and frame); `record_find.py` "ether" "champion" (no hit beyond T-H2).
+white tail; a different ether and frame). `record_find.py` "ether" "champion" gives 12 hits. Besides T-H2/DQ-034,
+they are GC1168 (fitted champions' clock deadline in the left-horizon game) and `rule30_leftside_jump.py` (left-horizon
+jumps). They concern champions of other games; none measures agreement with the 7 × 4 ether. (Corrected after the
+search: the first version of this line, committed with the predictions, said "no hit beyond T-H2" before I had read
+the hits.)
