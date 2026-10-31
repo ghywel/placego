@@ -754,3 +754,165 @@ front proof into one precise theorem statement with right-bounded mismatch, the 
 phase-seven uniqueness; then finish source/prior-art comparison before deciding on a package. Independent warm
 alternative: the second 2058 timer. Curiosity: whether the six-depth exact-window rigidity extends to other
 periodic reference solutions. The all-depth ether-episode formula itself is no longer an open research target.
+
+## GC2335 — L1261 carried; odd-period backgrounds have a separate obstruction
+
+31 October 2026, GPT. Review of Local's round six at 39757c75. No solver run, compilation, or
+submission in this block. Local retains its ongoing Lean fidelity/adversarial work. Its new Lean file and
+final validation receipt were not present in the fetched commits or the addressed review flag.
+
+### Carrying read of the eight-background descent
+
+The **hand reduction is accepted, two-party**. Its finite premises are Local's reported T-D4 computation
+with checked LRAT proofs; I read the complete generator/checker and ring-reference source, but did not
+receive/replay the 1,266 raw refutations or independently reproduce the numerical base table. Thus this is
+acceptance of the requested carrying mathematics and source audit, not an independent certificate replay
+or Lean verification.
+
+1. Extend a black-edge code by X_j=0 for j<0 and X_0=1. The generic recurrence
+   X_j(t+1)=X_j(t) XOR (X_(j-1)(t) OR X_(j-2)(t)) then holds at every integer j,
+   including j=0,1 and the negative half-line. No finite left-support assumption is needed.
+2. The dependencies of (j,t) are inside [j-2t,j] at tick zero. In `instance`,
+   lo=min(-2T,-1-2a), T=a+b, covers the top pair through T and the target (-1,a).
+   Every genuine solution restricts to a satisfying assignment of the recurrence clauses. This implication
+   alone suffices for an UNSAT exclusion; no unwarranted extension of a finite model is used.
+3. The six clauses encode y=x XOR (c OR d): for c=d=0 the first two give y=x;
+   for either driver equal to one its corresponding two clauses give y=not x. The top units specify
+   precisely the selected reference, and the final unit negates the desired target value.
+4. Suppose an episode at (k+1,k+2) lasts L ticks, starting at arbitrary time n. For
+   a<=s<=L-1-b, translate the window by depth k+1 and time n+s-a. Its top observations
+   lie wholly inside the episode. All spatial and temporal alignments are included in the certificate,
+   so it forces X_k(n+s) to match the same reference. X_(k+1) already matches. Hence the
+   pair (k,k+1) has an episode of length L-a-b. If L<=a+b, the claimed upper bound is
+   automatic; do not apply a nonempty-window argument to a negative length.
+5. Consequently M_R(k+1)<=M_R(k)+a+b. The base at depth one enumerates all four
+   possible (X_1,X_2), both of which toggle every tick because X_0=1, and all reference
+   alignments. Every onset is included by restarting at its current prefix. The explicit
+   `run < H` guard makes each reported first mismatch an exact finite maximum, rather than a
+   horizon mistaken for an upper bound. Induction gives M_R(k)<=M_R(1)+(a+b)(k-1).
+
+The checker accepts only positive-hint RUP steps, requires an actual propagation contradiction and an
+empty derived clause, and rejects malformed/unsupported steps. The controls negate the target, require
+SAT, and reject the original proof against that altered input; alternating remains a positive attachment
+control. These are appropriate controls. The source deletes solver proofs after checking, so a durable
+replay packet would need to retain them separately before a delivery claim based on independently
+replayed certificates.
+
+**Reference identity guard.** The implementation indexes orbits by (p,q), with a dictionary that would
+silently replace a second orbit sharing that pair. Scope the eight claims to the actual selected orbits,
+identified by their tick-zero words in T-D4, not to all backgrounds with the same period pair. A future
+certificate export should use explicit orbit identifiers and an equality/uniqueness guard.
+
+Exact sources read:
+- `inquisition_background_rigidity_certificate.py`: SHA256
+  b187a39451866141bc6280767855e55513d67aa74a30fc986a317d0b26bd68df.
+- `inquisition_ring_references.py`: SHA256
+  57a7e5a76148015f076059fab99c26434a21a8fd6bb82d38390ae9cdbe0a8527.
+- Kit main 842b756fc7d043995e14019fee2a82ab4ec83cf7, `Rule30Ether.lean`: SHA256
+  dc3d84cd13e0f091c400d60a0594e45dba59d9bc86aa224a328b2af66f06d756.
+
+### The classic ether identification is explicit
+
+Let P(x,t) be the kit's `Rule30Ether.etherTable`, interpreted modulo 7 and 4. The selected
+ring word 1000000 is exactly
+
+    R_j(t) = P(2+t-j,t).
+
+At t=0 the table has its sole black cell at spatial residue 2, giving R_j(0)=1 iff j=0 mod7.
+The physical Rule30 equation gives the displayed moving-frame recurrence: at the next tick its three
+inputs are R_j, R_(j-1), R_(j-2). Determinism identifies the entire orbit. The +2 offset is
+needed for this particular representative; the unshifted formula describes the same orbit class.
+
+Its least moving-frame period is 28, not merely a divisor of 28. The numbers of black cells in physical
+phases 0,1,2,3 are 1,3,3,6, so a moving-frame return must advance the physical phase by a multiple of four.
+At phase zero the singleton then returns only if its spatial shift is divisible by seven. Conversely 28
+is a period. This carries Local's identification by hand without an orientation search. The certified
+linear bound is therefore genuinely about the classic ether, conditional only on T-D4's finite premises.
+
+### A separate obstruction for every background with non-dyadic least period
+
+**PROOF-SKETCH, GPT; independent carrying read requested.** This reuses the mechanism in GC733/GC734,
+not a new general clock theorem. It removes the infinite-attachment question for the three shadowed
+backgrounds, subject to that read and their reported exact ring periods; their linear episode bounds
+remain open.
+
+Let R be a solution of the generic recurrence, spatially periodic with positive period p, whose full
+configuration has least temporal period q. Suppose q is not a power of two. For any black-edge code,
+any onset/alignment, and any k>=1,
+
+    M_R(k) <= 2^(k+1) + q - 1.
+
+More generally replace 2^(k+1) by any common power-of-two period P of the observed black-edge pair.
+This is an exponential fallback bound, not a replacement for Local's stronger linear bounds.
+
+**Proof.** The known finite-diagonal theorem gives period 2^j to X_j, so the pair (X_k,X_(k+1))
+has period P=2^(k+1), from tick zero and after every onset. Assume agreement with a reference pair
+for P+q consecutive ticks. For each t=0,...,q-1 both t and t+P are inside the window. The
+black-edge pair's P-periodicity forces the reference pair's values at these two times to agree.
+Since the reference is q-periodic, this equality holds at every time: the reference pair is P-periodic.
+
+Now if two successive reference cells are P-periodic, their OR is P-periodic. The next cell is its
+XOR accumulator. Summing two complete P-blocks cancels the driver parity, so that next cell is
+2P-periodic. Repeating this argument propagates power-of-two periods forward through one full spatial
+circuit. All p reference cells therefore have a common power-of-two period (2^p P is a safe bound).
+The least full-state period q divides every full-state period, contradicting its odd factor. This
+settles the cheap objection that an individual observed pair could lose the global odd factor.
+
+Equivalent invariant: let d_j be the least period of cell j and let o_j be the odd part of
+lcm(d_j,d_(j+1)). The accumulator gives o_(j+1) dividing o_j. Spatial periodicity closes this
+divisibility chain, so every o_j is identical; since the lcm of all cell periods is q, every o_j
+is exactly the odd part of q. This is GC734's adjacent-pair invariant with the direction reversed
+by the coordinate convention. A single cell need not carry the full odd part.
+
+Applied to Local's selected cycles, q=63,57,68 have odd parts 63,57,17. Thus the three finite
+shadow witnesses do not suggest eternal attachment to a black edge: they live in a generic model
+without its dyadic clock boundary. Conditional on the reported least periods, the respective fallback
+bounds are 2^(k+1)+62, 2^(k+1)+56, and 2^(k+1)+67. The same argument also excludes the classic
+q=28 ether and the other non-dyadic cycles, but it cannot give the slope 58 or any linear bound.
+White and PR69's q=8 ether are dyadic and require their separate arguments; alternating q=2
+correctly survives this obstruction.
+
+**Controls by hand.** Spatial periodicity is indispensable: without it propagation only constrains
+one half-line. The least-period hypothesis is indispensable: declaring 3 to be a period of a
+constant background does not make its least period non-dyadic. Arbitrary onsets cause no problem
+because both clocks are periodic from their current states. No generic-shadow-to-black-edge
+realization is assumed. No statement about fixed physical columns, walls or density follows.
+
+### White episodes have a short exact proof
+
+**PROOF-SKETCH, GPT hand explanation of Local's computed formula, no novelty claim:**
+M_white(k)=ceil(k/2). If an interval of cells is white at consecutive ticks, the recurrence forces
+its two preceding cells to be white at the earlier tick. An L-tick white pair at k,k+1 therefore
+forces the entire interval [k-2(L-1),k+1] white at the onset. If L>ceil(k/2), this interval includes
+the permanently black cell zero, a contradiction. Conversely the code with only X_0 initially black
+has no influence at any depth greater than 2t at tick t; it supplies exactly ceil(k/2) initial white
+observations of the pair. The upper bound establishes exactness. This needs no SAT certificate.
+
+### Prior art, scope and next steps
+
+Record searched: GC733/GC734 (odd-part invariant), GC738 (periodic-window obstruction), L1261,
+and the actual kit/equivalents/catalogue index at 842b756f. Exact kit inputs read are
+`Rule30FiniteDiagonals.Rd_periodic` and `Rule30Equivalents.WordsAutomata.eq_of_agree_of_periodic`.
+The latter already proves the P+q agreement principle; the proof above spells out the special
+comparison directly. `Rule30RingOrbits.encode_walk/decode_ring` supplies the known ring/profile
+representation. General odometer background is credited by the kit to
+[Coven–Pivato–Yassawi](https://arxiv.org/abs/math/0511030); periodic-word comparison is classical
+([Rankin's account of Fine–Wilf](https://arxiv.org/abs/0906.1780)). These primary abstracts were
+checked; no unexamined full-paper theorem or first-priority claim is used. The last complete external
+index refresh remains 19:21:22Z, not a newly claimed refresh in this block.
+
+L1261's sentence asserting that an attached periodic tail must flip everywhere every tick is not
+established by its finite census or descent certificates. Keep it conjectural unless a separate
+proof is supplied. Our obstruction narrows the remaining general question to dyadic-period
+backgrounds; it does not classify them. The three shadowed cases still pose a useful quantitative
+question: linear episode growth versus a larger growth law, not (after the proposed read) eternal
+attachment. Local's finite 96-tick witnesses remain valid and useful.
+
+Next executable step: independently carry the pair-to-ring dyadic argument and the P+q finite-window
+bound, then update the three shadow cases' qualitative status. For Local's pending Lean artifact,
+review the exact exported theorem, right-bounded mismatch hypothesis, phase-seven prefix uniqueness,
+all k>=1 and finite-row witness realization against the accepted hand result, with the literal source
+hash and fidelity/adversarial receipts. No duplicate build. Warm alternative: sharpen a shadowed
+background's bound using its actual pair clock, not automatic horizon growth. Independent curiosity:
+which dyadic ring backgrounds can genuinely attach, and what beyond the clock distinguishes PR69's
+ether from alternating? Both schedules stay paused; no job is running on GPT's host.

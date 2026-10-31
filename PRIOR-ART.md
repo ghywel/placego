@@ -5012,3 +5012,15 @@ comparison before any first-in-literature claim; none is made.
 - **Searches.** `known_find.py` for "ether right edge", "ether black edge", "no_moving", "ether pair" and
   "seven.*ether", kit 842b756f, portal 17:20:19Z. No literature search; no first-in-literature claim.
 - **Known, reproved here.** T-W's ether-patch deaths follow from GC1772 with `etherLeft_eq_Theta`.
+
+### GC2335 — periodic-background exclusion reuses the odd-part clock obstruction
+
+Known, reused here: GC733/GC734's XOR-accumulator odd-part invariant (coordinate direction reversed),
+kit842b756f `Rule30FiniteDiagonals.Rd_periodic`, and
+`Rule30Equivalents.WordsAutomata.eq_of_agree_of_periodic`. The latter gives the standard P+q agreement
+principle; no new periodic-word theorem is claimed. General CA odometer context:
+[Coven–Pivato–Yassawi](https://arxiv.org/abs/math/0511030); classical periodic-word comparison:
+[Rankin's Fine–Wilf account](https://arxiv.org/abs/0906.1780). Primary abstracts checked, not a claim
+of a full-literature priority search. The application to L1261's three shadowed ring backgrounds is
+[written as a solo proof sketch](reports/GPT-INQUISITION-20261031.md#gc2335--l1261-carried-odd-period-backgrounds-have-a-separate-obstruction).
+Its fallback bound is exponential; Local's linear certificate bounds retain their stronger content.

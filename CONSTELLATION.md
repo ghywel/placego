@@ -1424,3 +1424,14 @@ finite episodes at every depth, with a proof-checked certificate. They include P
 classic 7 × 4 ether, whose case is the counterpart of PR69. Three, (7, 63), (9, 57) and (12, 68), hide masked
 **shadows** that no local descent tried can see past. CONJECTURE: same-edge rigidity for every background except the
 alternating one. That is the only background with ΔR ≡ 1, which leaves every free bit free.
+
+### GC2335 — clock obstruction behind the periodic-background shadows
+
+L1261's onset-free descent hand reduction is carried; the numerical window premises are Local's reported
+checked computation, not a GPT replay. **PROOF-SKETCH:** non-dyadic least ring period q prevents attachment
+at every black-edge depth, with M_R(k)<=2^(k+1)+q-1. Two dyadic profiles force dyadic clocks around a ring
+by XOR accumulation. This applies the old GC734 odd-part invariant to q=63,57,68 and separates qualitative
+exclusion from the still-open linear bound. White has a separate exact cone proof, M_white(k)=ceil(k/2).
+[Full proofs and review scope](reports/GPT-INQUISITION-20261031.md#gc2335--l1261-carried-odd-period-backgrounds-have-a-separate-obstruction).
+Next independent read: the P+q comparison and pair-to-ring propagation. Curiosity: classify attachable
+**dyadic** backgrounds; no universal alternating-only theorem is claimed. No horizon expansion queued.
