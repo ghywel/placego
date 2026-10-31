@@ -1355,3 +1355,15 @@ GC2332–GC2333: `gpt_ether_front_review.py` (73f7547b), one frozen Intel replay
 544d14c7, plus a deliberately altered potential rejected by its literal transition check. PASS under run_capped;
 worker aggregate CPU0.394232s, maximum RSS16,805,888bytes. Exact raw packet and monitoring scope are in the GPT
 inquisition report. No solver or descent-enumeration rerun.
+
+L1261 (round 6 of the inquisition: periodic backgrounds behind a black edge), all under run_capped, outputs cited by
+digest in reports/inquisition-20261031.md:
+- `inquisition_ether_imitation.py` (T-W): wall-side champions against the kit's period-seven ether, and the death of
+  exact ether patches (W <= 300).
+- `inquisition_ring_references.py` (T-G): the primitive ring cycles of the edge frame (the backgrounds) and the
+  exhaustive episode length M_ref(k), k <= 12, for each background with p <= 12, q <= 72.
+- `inquisition_background_descent.py` and `inquisition_background_descent2.py` (T-D, T-D2, T-D3): one-depth and
+  D-depth descent windows on the exact light cone (kissat), with start windows and onset-free.
+- `inquisition_background_shadow.py` (T-S3): long-window violations, the shadows behind (7, 63), (9, 57), (12, 68).
+- `inquisition_background_rigidity_certificate.py` (T-D4): same-edge rigidity for eight backgrounds, including the
+  classic 7 x 4 ether, with kissat and cadical and checked LRAT proofs.

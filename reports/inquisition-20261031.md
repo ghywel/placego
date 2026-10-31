@@ -1838,3 +1838,52 @@ recomputed exhaustively.
 
 Caps (run_capped): wall 3600 s; CPU 3600 s per process; RSS 6144 MiB; files 256 MiB; disk 2048 MiB; at most 16
 processes (the driver, six workers and their solver children).
+
+### T-D4 results
+
+(Written after the run.) On Local's M5 under run_capped, COMPLETED: wall 16 s, output `eedb9bb8`
+(t-d4-rigidity-certificate folder).
+- **P-R1 held.** All 1,266 window instances are UNSAT under both kissat and cadical. Every cadical LRAT proof checks
+  (the largest, 35,222 lines, is for the classic ether), and every replay on the satisfiable unflipped system is
+  rejected. M_R(1) reproduces T-G: 1, 4, 3, 6, 5, 5, 4, 7.
+- **P-R2 held.** The alternating background has satisfiable windows W(8, 50) at alignments (0, 0) and (1, 1).
+
+## Outcomes of round 6: which periodic backgrounds a black edge can follow
+
+**Theorem (PROOF-SKETCH, Local: hand reduction; machine certificate with checked proofs).** No code with a black right
+edge follows any of these eight periodic backgrounds of the moving edge frame at two adjacent depths forever, at any
+depth, from any onset and in any alignment:
+
+| background (p, q) | | episode bound |
+|---|---|---|
+| (1, 1) | white | 1 + 5(k − 1) |
+| (4, 8) | PR69's one-in-four ether | 4 + 6(k − 1) |
+| (5, 5) | | 3 + 6(k − 1) |
+| (7, 28) | the classic 7 × 4 ether (`Rule30Ether`) | 7 + 58(k − 1) |
+| (8, 20) | | 6 + 10(k − 1) |
+| (9, 72) | | 5 + 9(k − 1) |
+| (10, 6) | | 5 + 6(k − 1) |
+| (12, 12) | | 4 + 6(k − 1) |
+
+The bounds are linear, not sharp. The proof is the onset-free one-depth descent on the exact light cone (T-D4's
+docstring), with the exhaustive base M_R(1). For PR69's ether this reproves its eventual exclusion; our M(k) theorem
+gives the exact length. **For the classic 7 × 4 ether it is the counterpart of PR69's theorem.** That is not in the kit,
+the portal or the open PRs: the kit's `Rule30Ether` traps concern the right half driven by the centre column, and
+R30-20261024-8d7751 concerns right halves absorbed by the ether, both different statements. No literature search;
+no first-in-literature claim.
+
+**What else round 6 established.**
+- **The census (T-G, COMPUTED).** The backgrounds of the edge frame are ring cycles. With p ≤ 12, q ≤ 72 there are 12
+  primitive ones up to rotation, and the counts by p up to 14 are listed in T-G. Only the alternating background
+  attaches (the ±1/3 codes of `Rule30EdgeStaircases`). White is exactly ceil(k/2).
+- **Shadows (T-S3).** (7, 63), (9, 57) and (12, 68) resist every local descent tried. The resistance is a masked
+  defect below the top pair that survives 96 ticks of look-ahead. Their same-edge rigidity holds for k ≤ 12 (T-G)
+  but is open beyond. Whether their episodes stay linear is the sharpest open question here.
+- **The wall side (T-W).** Champions do not imitate the period-seven ether, and ether patches die within 15 ticks of
+  the news (GC1772, known, reproved here).
+
+**The structural picture.** A black edge can carry a periodic tail forever only if every cell of that tail flips every
+tick, which is the alternating background alone. Such a background gives the descent no information, because ΔR ≡ 1
+leaves the next depth free whenever the OR is 1. Every background with ΔR ≢ 1 tested so far either descends locally
+(eight) or shows a masked shadow (three). CONJECTURE: same-edge rigidity holds for every spatially periodic background
+other than the alternating one. The shadowed three are its test.

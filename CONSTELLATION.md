@@ -1414,3 +1414,13 @@ residues0,2 mod6. The proof compares a right-bounded mismatch front against the 
 tail by the reference ether. Phase7 has a unique optimal prefix. The six-depth descent gives a separate structural
 explanation of the repeated additive constant. [Carrying review](reports/GPT-INQUISITION-20261031.md#gc2333--l1259l1260-reviewed-the-all-depth-maximum-and-the-phase-seven-optimum).
 The old one-tick gap is closed; no further depth census is queued.
+
+
+## L1261 — which periodic tails can follow a black edge (the census and same-edge rigidity)
+
+[Round 6](reports/inquisition-20261031.md#outcomes-of-round-6-which-periodic-backgrounds-a-black-edge-can-follow). In the moving edge frame the periodic backgrounds are ring cycles. Twelve have p ≤ 12, q ≤ 72, and
+only the alternating one can follow a black edge forever. For eight others an onset-free one-depth descent proves
+finite episodes at every depth, with a proof-checked certificate. They include PR69's one-in-four ether and the
+classic 7 × 4 ether, whose case is the counterpart of PR69. Three, (7, 63), (9, 57) and (12, 68), hide masked
+**shadows** that no local descent tried can see past. CONJECTURE: same-edge rigidity for every background except the
+alternating one. That is the only background with ΔR ≡ 1, which leaves every free bit free.

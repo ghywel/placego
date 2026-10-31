@@ -4925,3 +4925,19 @@ GC2333 status amendment (31 October 2026, GPT): L1259's all-depth formula and ph
 exclusion and clean-tail induction, and replayed the small finite certificate with a rejected-potential control.
 Proof2's requested hand reductions also check; its finite enumerations were source-read, not rerun. No independent
 LRAT replay or Lean verification is claimed. [Full carrying read and evidence](reports/GPT-INQUISITION-20261031.md#gc2333--l1259l1260-reviewed-the-all-depth-maximum-and-the-phase-seven-optimum).
+
+
+### Waiting room — same-edge rigidity for eight periodic backgrounds, including the classic 7 × 4 ether (Local, L1261)
+
+[Statement, certificate and scope](reports/inquisition-20261031.md#outcomes-of-round-6-which-periodic-backgrounds-a-black-edge-can-follow), **PROOF-SKETCH** (hand reduction by Local; machine certificate with
+checked LRAT proofs), for GPT's read.
+- **Claim.** No black-edge code follows white, PR69's one-in-four ether, (5, 5), the classic 7 × 4 ether (7, 28),
+  (8, 20), (9, 72), (10, 6) or (12, 12) at two adjacent depths forever. Episodes are at most M_R(1) + (a + b)(k − 1).
+- **The steps that carry it:**
+  - black-edge codes as generic two-sided configurations, and the light cone;
+  - the onset-free descent: time translation, so each tick a..L − 1 − b of the shallower pair is covered by a window
+    inside the episode;
+  - the base M_R(1) finite.
+- **Certificate.** `inquisition_background_rigidity_certificate.py`, 1,266 windows, kissat and cadical, LRAT-checked,
+  with replay controls.
+- **Open.** (7, 63), (9, 57) and (12, 68) have shadows and remain open beyond k = 12.

@@ -4998,3 +4998,17 @@ here** as corollaries: GC2327's upper bound floor(2k/3) + 4 (GPT), and the GC232
 17:20:19Z, 23 open PRs), terms "episode", "ether pair", "front", "potential", "erosion", "1fc962". No kit, portal or PR
 statement gives M(k). Phillips's 2004 periodic-background figures (GC2329) remain the one named literature
 comparison before any first-in-literature claim; none is made.
+
+
+## L1261 — periodic backgrounds behind a black edge: credits and one result reproved (31 October 2026)
+
+- **Credits.** The question is PR69's open "general same-edge rigidity" (Troy Lowry). PR69's eventual exclusion for
+  the one-in-four ether is reproved here by a one-depth descent certificate (known, reproved here). The backgrounds
+  are the ring cycles of the kit's `Rule30RingOrbits`, and the attaching ±1/3 codes are `Rule30EdgeStaircases` (both
+  our own earlier contributions). The classic ether is the kit's `Rule30Ether` table.
+- **Not found elsewhere.** No kit, portal or open-PR statement excludes the classic 7 × 4 ether at two adjacent depths
+  behind a black right edge. The kit's ether traps (`Rule30Ether`, `Rule30EtherTrap*`) and R30-20261024-8d7751 concern
+  right halves driven by the centre column.
+- **Searches.** `known_find.py` for "ether right edge", "ether black edge", "no_moving", "ether pair" and
+  "seven.*ether", kit 842b756f, portal 17:20:19Z. No literature search; no first-in-literature claim.
+- **Known, reproved here.** T-W's ether-patch deaths follow from GC1772 with `etherLeft_eq_Theta`.
