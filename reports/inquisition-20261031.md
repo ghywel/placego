@@ -1645,3 +1645,38 @@ Record searched: `known_find.py` "ring" "orbit" gives `Rule30RingOrbits` (encode
 only white and alternating; no larger classification) and `Rule30EdgeStaircases` (the ±1/3 codes); PR69's open
 items. No census of episode lengths per background was found. (This section's text was repaired after commit 99049aca:
 an unquoted heredoc had run the backquoted names as shell commands and dropped them. The predictions are unchanged.)
+
+### T-G results
+
+(Written after the run.) On Local's M5 under run_capped, COMPLETED: wall 2.1 s, RSS 35 MB, output `dfe85805`
+(t-g-ring-references folder). With q ≤ 72 there are 12 primitive ring cycles with p ≤ 12. This adds (7, 63), which my
+q ≤ 32 count before the test missed. M_ref(1..12):
+
+| background (p, q, state at t = 0) | M_ref(1..12) |
+|---|---|
+| (1, 1) white `0` | 1 1 2 2 3 3 4 4 5 5 6 6 |
+| (2, 2) alternating `10` | every k ≥ horizon (unbounded) |
+| (4, 8) PR69's ether `1000` | 4 4 6 6 7 7 8 8 10 10 11 11 (the proved M(k); control) |
+| (5, 5) `11100` | 3 4 4 6 6 7 7 9 9 10 10 12 |
+| (7, 28) `1000000` | 7 7 8 9 10 10 12 12 16 16 17 17 |
+| (7, 63) `1010000` | 11 12 12 15 15 16 17 18 18 20 22 24 |
+| (8, 20) `11100000` | 6 7 7 8 9 11 11 12 13 14 14 15 |
+| (9, 72) `111000000` | 5 6 6 8 9 11 11 12 13 14 15 16 |
+| (9, 57) `100100000` | 12 13 13 15 15 16 16 17 17 19 24 27 |
+| (10, 6) `1110100000` | 5 6 6 8 8 9 10 11 11 12 12 14 |
+| (12, 68) `100100000000` | 23 24 24 26 26 28 28 32 32 35 36 36 |
+| (12, 12) `111110010000` | 4 4 5 6 7 7 8 9 10 10 12 12 |
+
+- **P-G1 held.** The ether's row is the proved M(k) (asserted in the probe).
+- **P-G2 REFUTED in its constant.** White gives exactly M_white(k) = ceil(k/2) = floor(k/2) + [k odd]: light speed,
+  with no constant c ≥ 1. The slope 1/2 was right.
+- **P-G3 held.** The alternating background attaches at every k.
+- **P-G4 held in its main claim.** None of the other nine reaches the horizon, so for each of them and every
+  k ≤ 12 no black-edge code ever follows it at depths (k, k + 1). That is same-edge rigidity, COMPUTED there. Their
+  growth looks linear. The slope band [1/2, 1] is not settled: (7, 63) and (9, 57) rise faster than 1 over k ≤ 12, with
+  late jumps, and long time periods need larger k before the asymptotic slope shows.
+
+**What this suggests (CONJECTURE).** Among spatially periodic backgrounds, a black edge can follow one at two adjacent
+depths forever only if it is the alternating background. PR69 settled the ether; the census adds every cycle with
+p ≤ 12, q ≤ 72 at k ≤ 12. A descent lemma per background, checked on light-cone windows as in Proof 2, would carry
+each to every k.
