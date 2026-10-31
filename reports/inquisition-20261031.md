@@ -1208,3 +1208,37 @@ row, so a forcing there holds in every real instance whose region lies at depths
 
 Caps (run_capped): wall 1800 s; CPU 1800 s per process; RSS 2048 MiB; files 64 MiB; disk 256 MiB; at most 4
 processes.
+
+### T-R results
+
+(Written after the run, below this line. Predictions above are unchanged.)
+
+The first launch stopped on the process cap after K = 12 (PROCESS_STOP): my launch line piped through grep, which
+pushed the tree past 4 processes. It was rerun unchanged with a cap of 10, COMPLETED. Output in t-r-rigidity-2.
+- **P-R1 held in part.**
+  - Exact mode at L′ = m(K) + 4 is rigid at every K tested: with B = 6 at K = 12, 20, 24, and with B = 8 at
+    K = 14, 18, 26. Tick 0 is what needs the extra depth, and K mod 4 decides which B is needed.
+  - Good mode is rigid at K = 12, 18, 24 (B = 8). At K = 14, 20, 26 (≡ 2 mod 6) it is never rigid, even at B = 10:
+    the last target tick L′ − 5 at depth K − 6 stays free. That is consistent with G(k) = m + 4 at k ≡ 2 (mod 6).
+- **P-R2 REFUTED.** B = 2 never suffices. Tick 0 needs B ≥ 6 or 8, and some interior ticks need B ≥ 4.
+- **P-R3 REFUTED.** Rigidity is not a lemma for every window length. At K = 20 it fails at the right end when
+  L′ ≡ 3 (mod 8) (L′ = 11, 19, 27) and at L′ = 9. At K = 26 with B = 6, tick 0 fails for every L′. It holds at the
+  length the induction needs, L′ = m(K) + 4, with B = 8.
+
+What survives is the route that matters. Each induction step needs only the exact mode, edge phase 7 and
+L′ = m(K) + 4. There the right end has a fixed phase within each residue class: (L′ − 1) + 2K + 7 changes by 16 when
+K → K + 6. The left end has one of two phases (K mod 12).
+
+### T-R2: is the rigidity local in time? (prediction before the run)
+
+`tests/probes/ether_rigidity_local.py` (SHA256 42dad7fd…) asks, for every target cell, the smallest half-width w of a time
+window (ticks t − w..t + w, clipped to the instance) that forces it, with B = 8 levels below.
+
+- **P-R4.** Rigidity holds with the full window at K = 48, 50, 54, 56, covering both residues and both K mod 12
+  classes in each.
+- **P-R5.** Every target is forced with w ≤ 12, and the needed w is bounded independently of K. The interior ticks
+  need w ≤ 4. Counterfactual: if an end cell's needed w grows with K, the rigidity is not a finite local check and
+  the proof must use the periodic sweep certificate.
+
+Caps (run_capped): wall 3600 s; CPU 3600 s per process; RSS 2048 MiB; files 64 MiB; disk 256 MiB; at most 10
+processes.
