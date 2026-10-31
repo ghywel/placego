@@ -1887,3 +1887,43 @@ tick, which is the alternating background alone. Such a background gives the des
 leaves the next depth free whenever the OR is 1. Every background with ΔR ≢ 1 tested so far either descends locally
 (eight) or shows a masked shadow (three). CONJECTURE: same-edge rigidity holds for every spatially periodic background
 other than the alternating one. The shadowed three are its test.
+
+### The Lean formalization of M(k) (L1262)
+
+A formalization workflow of three Local sub-agents (one formalizer, two independent verifiers) turned Proof 1 into
+`lean/Rule30EtherEpisode.lean`. The file is 952 lines, SHA256 33aff7322077fb0b…, core Lean 4.35.0, with no Mathlib.
+It imports only the kit's `Rule30FrozenRuler`, whose `T`, `iter`, `iter_agree`, `iter_zero` and `iter_add` it uses,
+and copies PR69's `ether` verbatim.
+- **Headline theorems.**
+  - `episode_bound`: no episode of Lw k + 1 ticks, for every black-edge code (finite or not), every k ≥ 1, phase and
+    onset.
+  - `episode_witness`: the GC2328 witness attains Lw k.
+  - `episode_max`: the two together, **M(k) = Lw k = floor(2k/3) + 4 − [k ≡ 0, 2 (mod 6)] for every k ≥ 1**.
+  - `witness_unique` (bonus): at phase class 7 the optimal prefix through depth k + 1 is the witness's.
+  - `episode_bound_all`: the bound for every k; it is weaker than the truth at k = 0, where M(0) = 2.
+- **Build.** Under run_capped on Local's M5 (caps: CPU 120 s, wall 300 s, RSS 4,096 MiB, 10 processes), against the
+  kit at commit ee2f421 with `cd <kit>/lean && lake env lean <file>`: COMPLETED, 3.7 s, about 540 MiB, no errors or
+  warnings. Receipts (outside git): `out.txt` c549518f35fbb127 (the five `#print axioms` lines) and
+  `time_receipt.txt` f3851cff252f1bf7. The repository copy was rebuilt from `lean/` after the copy: COMPLETED, 3.67 s,
+  and a byte-identical `out.txt` (c549518f35fbb127).
+- **Axioms.** `#print axioms` gives only propext, Classical.choice and Quot.sound (`episode_witness`: propext and
+  Quot.sound). There is no sorry, axiom, native_decide or extern.
+- **Verifiers: both "not refuted", no fatal issue.**
+  - The fidelity lens rebuilt the file. It checked the statements against the spec and PR69. It removed any trust in
+    the kit's prebuilt .olean files with a standalone re-check: the kit's lemmas pasted verbatim, no imports, the same
+    axioms.
+  - The adversarial lens reproduced the build and checked Lw against the exhaustive M(k), and the witness's episode
+    for k ≤ 25. It also ran an exhaustive Lean search giving M(k) = Lw k for k ≤ 12, found no vacuous lemma, and
+    confirmed the controls fail under mutation.
+- **Their minor points.**
+  - `episode_witness` is existential (a corollary naming `wit` would be explicit).
+  - The witness is infinite (a finitely supported one follows from `iter_agree`; checked in scratch, not in the file).
+  - Other phase classes also attain Lw k at some k: class 5 at k = 2, 4, 6, 8, 10, and class 3 at k = 8 (computed).
+- **A correction to my own spec, caught by the formalizer.** I had written that at c = 7 the witness's floor −8
+  (doubled) "suffices for the bound alone". It does not. The (3, 2)-shifted lane has the same potential, and with that
+  floor alone the front could sit at depth k − 1 at t = Lw k whenever k ≡ 0, 2 (mod 6). The witness dichotomy at
+  c = 7 is load-bearing for the bound as well, as Proof 1's steps 5–6 and GC2333 already state. The record's proof was
+  right; my summary in the spec was not.
+
+Status: **PROVED, two-party hand (GC2333) and kernel-checked in Lean.** Not submitted anywhere; that is the owner's
+decision.

@@ -13230,3 +13230,19 @@ follows your curiosity on other periodic references. Every test had its predicti
 eight periodic backgrounds". The steps are the generic model, the light cone, the onset-free descent and the base. The
 open question is whether the three shadowed backgrounds are rigid at large depth. Nothing outward-facing was done. The
 Lean formalization of Proof 1 is still running; its result will be reported separately.
+
+
+## L1262 — Local: M(k) kernel-checked in Lean (2026-10-31 20:33 GMT)
+
+Following L1261. The formalization workflow finished: `lean/Rule30EtherEpisode.lean` (952 lines, SHA256
+33aff7322077fb0b…) proves `episode_max`, **M(k) = floor(2k/3) + 4 − [k ≡ 0, 2 (mod 6)] for every k ≥ 1**, in PR69's
+frame. It has `episode_bound` for every black-edge code (finite or not), every phase and every onset, and
+`episode_witness` from GC2328. The bonus `witness_unique` is the phase-7 prefix uniqueness.
+- **Build.** Core Lean 4.35.0, importing only the kit's `Rule30FrozenRuler`. It builds in 3.7 s on the M5.
+- **Axioms.** Only propext, Classical.choice and Quot.sound.
+- **Verifiers.** Two independent sub-agents found nothing wrong. One re-checked it standalone, with no kit .olean
+  trusted.
+- **A correction to my spec.** The formalizer caught one error there: "the witness floor alone suffices at c = 7" is
+  false. The c = 7 dichotomy carries the bound, as GC2333 has it; the recorded proof was right.
+- **Not submitted.** Whether this becomes a kit PR or a portal entry is the owner's call. GPT's Phillips comparison is
+  still the named prior-art step before any priority claim.

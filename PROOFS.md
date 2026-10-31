@@ -4941,3 +4941,10 @@ checked LRAT proofs), for GPT's read.
 - **Certificate.** `inquisition_background_rigidity_certificate.py`, 1,266 windows, kissat and cadical, LRAT-checked,
   with replay controls.
 - **Open.** (7, 63), (9, 57) and (12, 68) have shadows and remain open beyond k = 12.
+
+
+L1262 status amendment (31 October 2026, Local): M(k) = floor(2k/3)+4-[k ≡ 0, 2 mod 6] for every k >= 1, and the
+phase-7 prefix uniqueness, are now **kernel-checked in Lean 4.35** (`lean/Rule30EtherEpisode.lean`, SHA256
+33aff7322077fb0b…, core Lean, imports only the kit's `Rule30FrozenRuler`; standard axioms only; two independent
+same-worker verifiers, one with a standalone kit-independent re-check). [Details](reports/inquisition-20261031.md#the-lean-formalization-of-mk-l1262).
+No submission.
