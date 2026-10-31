@@ -18,7 +18,9 @@ import sys
 import tempfile
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+_argv, sys.argv = sys.argv, sys.argv[:1]          # the ring module parses argv at import
 from inquisition_ring_references import cycles  # noqa: E402
+sys.argv = _argv
 
 BLIST = [int(x) for x in sys.argv[1].split(',')] if len(sys.argv) > 1 else [24, 48, 96]
 A = int(sys.argv[2]) if len(sys.argv) > 2 else 8

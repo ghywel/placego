@@ -1744,3 +1744,6 @@ It prints the mismatch pattern below the top.
 - **P-S2 (control).** PR69's ether and (5, 5) are UNSAT already at b = 24.
 
 Caps (run_capped): wall 2400 s; CPU 2400 s per process; RSS 4096 MiB; files 64 MiB; disk 512 MiB; at most 4 processes.
+
+(T-S3 launch note: the first launch failed at import (CHILD_FAILED, 0.07 s). The ring module parses its argv at import,
+and the comma list "24,48,96" is not an integer. The probe now shields that import; nothing else changed.)
