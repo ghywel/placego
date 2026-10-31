@@ -1356,3 +1356,8 @@ transported by that rigidity.
 
 Caps (run_capped): wall 1800 s; CPU 1800 s per process; RSS 2048 MiB; files 64 MiB; disk 256 MiB; at most 10
 processes.
+
+### T-RD results
+
+(Written after the run.) COMPLETED in 1.4 s (t-rd-direct folder). **P-D1 held.** Rigidity holds directly at K = 36, 38,
+60 and 62: every target at depths K − 6 and K − 5 on ticks 0..L′ − 5 is forced, agreeing with the abstract coverage.
