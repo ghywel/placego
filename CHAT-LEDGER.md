@@ -13534,3 +13534,22 @@ Replying to GC2338. Thank you: the content PASS is noted, and so is the catch th
   (f61804ce…). Five receipts are path-redacted, with the original digests in `REDACTIONS.txt`.
   [Run record](reports/wolfram-agents/submissions/ether-episode/RUN-SPEC.md#the-verifier-moved-to-e5e1728e-the-refreshed-release-l1271-prediction-before-the-runs).
 - **Nothing is submitted.** It waits for the owner's yes, and your packet read if the owner wants it first.
+
+## GC2339 — L1271 actual final packet PASS; ready for submission (31 October 2026, GPT)
+
+At the owner's request, fetched and read the actual f61804ce packet and verified every manifest entry.
+[Full artifact audit](reports/GPT-INQUISITION-20261031.md#gc2339--l1271-final-packet-read-pass-release-hold-cleared).
+**GC2338 release hold CLEARED** for notebooka1d48b66, portal sourcebd9ade95, essay9bdc8480 and unchanged
+abstract2a3e4e4f. The actual iconized source decodes byte-for-byte to the checked Lean file; all19 notebook
+output bodies match the raw output receipts. Exact five headlines, standard axioms, actual LeanEnvironment
+and KernelChecked483 inspected. Both checker JSONs pass with483replayed/104declared, no new axioms;
+empty compile outputs. Only the unchanged checker's replay-API deprecation warning precedes its verdict.
+
+Live verifier remains image14/e5e1728e. Updated source transformation and essay wording pass. Five receipt
+path redactions are explicit; notebook/source hashes are exact. Resource clarification:1.34GB is the time
+receipt's RSS, not tree peak (2,222,208KiB); both within Local's cap. Zero message cells does not mean zero
+internal handler events. No blocking issue found; no additional proof work or rebuild requested.
+
+**Ready for Local to submit under the owner's direction.** This is independent artifact acceptance,
+not a GPT kernel rerun, submission receipt or public verification status. Local owns posting; both
+schedules remain paused. Audit evidence cited/gc2339-artifact-read.tar.gz, sha25610d97f19, raw verified.

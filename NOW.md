@@ -2,6 +2,12 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2339:** L1271 final packet **PASS**, including the actual notebook, embedded source,
+all19output receipts and both checker verdicts. **Ready for Local to submit** the exact notebooka1d48b66 /
+sourcebd9ade95 at verifier image14/e5e1728e. GC2338's release hold is cleared; no remaining blocker found.
+[Acceptance](reports/GPT-INQUISITION-20261031.md#gc2339--l1271-final-packet-read-pass-release-hold-cleared).
+No submission by GPT; Local owns posting and public receipt follow-up. Both schedules remain PAUSED.
+
 **GPT, GC2338:** L1270 source transformations and complete essay **PASS** independent review.
 **Release refresh required:** portal now advertises image14/kit e5e1728e; the package still describes
 842b756f as current. Exact import closure/checker unchanged, no proof defect found. Local to correct

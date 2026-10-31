@@ -1251,3 +1251,84 @@ It includes the current environment, instructions, exact PR discussion snapshots
 comparison. Once the refreshed release and raw receipts pass, no further mathematical development is
 requested by this review. Posting remains Local's step under the owner's final direction; this turn
 only makes the readiness decision and records the precise release conditions.
+
+## GC2339 — L1271 final packet read: PASS, release hold cleared
+
+**Independent artifact review PASS.** At the owner's request, fetched and read the actual final packet
+`cited/l1271-ether-episode-release.tar.gz`, not just its ledger summary. The GC2338 release conditions
+are met for the exact artifacts below. **Ready for Local to submit under the owner's direction.** No
+remaining mathematical, statement-fidelity, prior-art-attribution or release-artifact blocker was found.
+This is readiness approval, not a submission receipt or a public Lean/Human Verified status.
+
+### Exact accepted release
+
+| Artifact | SHA256 |
+|---|---|
+| Packet, 159,180 bytes | `f61804ce945ae241538a4befa4f3a59f1cbf00f7c0bfa641f01537240c2c139f` |
+| Notebook, 327,350 bytes | `a1d48b66bf868e54296d3bbd386812ff45d6f374f3456ee1e6245bbed663b1b8` |
+| Portal Lean source | `bd9ade9507a7c16a33fdf6d40842672adc1367ec7a6867c8f316e8b03b93e03e` |
+| Assembled essay | `9bdc8480b58a624c7d1e693ea04f1b7ed0305cc69d4fe8274e8299a65f6a5988` |
+| Abstract, unchanged | `2a3e4e4ff07bb492f065f4fb36335770dc3b7d5867c745f3d2b2a68ae5192a4a` |
+
+Every file listed in `MANIFEST.sha256` matches. Packet sources, prose, abstract and assembled essay
+match git at9fef48a5. The new portal generator was read and its transformation checked without writing
+release files: it makes only the stated import/namespace/open changes to the already accepted PR71
+catalog form615998d2. The 701 proof/definition lines are unchanged. The imported `ether` and
+`ether_step` remain the exact definitions/statements previously carried. The revised essay removes
+the obsolete environment explanation and correctly omits the now-imported `ether` from its local
+namespace display cell. The abstract and mathematical scope are unchanged.
+
+### What was checked inside the notebook
+
+A non-evaluating lexical read of the actual `.nb` found19 Input cells,19 Output cells and no Message/MSG
+cells. The Lean source is inside the icon's `InterpretationBox`; decoding its Wolfram string escapes,
+including named/hex Unicode and line continuations, recovers **exactly** the accepted sourcebd9ade95.
+The icon is present, not merely an `Iconize` comment in a draft. All19 actual output bodies match their
+retained `cell-01.txt` through `cell-19.txt` receipts after standard serialization normalization
+(whitespace, string escapes, Association notation, machine-precision markers and numeric multiplication).
+No Wolfram expression was evaluated by this check.
+
+The outputs were read for their stated content: edge-map equality True; the ether/ring correspondence;
+the finite witness episodes at depths6and9; the complete k=0..10 maximum/prefix table; the gate and
+front-move tables; the no-retreat controls; the witness front and constant potential; the 2,048-row
+finite floor illustration; the five theorem types and their standard axiom sets; the defining and
+carrying lemmas; the actual LeanEnvironment object; and the final `Success["KernelChecked", ...]`
+with483 declarations. The finite tables retain their computational status; the unbounded claims rest
+on the carried Lean source. The summary's notebook, essay and driver digests match the actual files.
+
+The notebook has no private home paths or credential markers and no extra initialization/evaluation
+hooks found by the structural scan. This was an artifact/source/output read, not a second Wolfram
+build or a front-end page-layout rendering. The successful Local run is not relabelled as an Intel run.
+
+### Checker, environment and resource receipts
+
+Read both actual checker outputs. Each contains the unchanged checker's deprecation warning followed
+by exactly one JSON verdict: `pass`, official statements imported, no new axioms, replay483/ok, all104
+locally declared constants standard, and precisely the five requested theorem headlines accepted.
+The warning is from `Check.lean`'s deprecated replay API, not a proof failure. Both module compile
+outputs are empty. The actual notebook summary has no failing gates and the recorded run ends
+`RESULT OK`/COMPLETED with child exit0.
+
+Five checker/launcher receipt files are explicitly path-redacted. Their received hashes match the
+manifest and `REDACTIONS.txt`; their claimed original hashes are provenance supplied by Local, not
+independently verified unredacted bytes. The notebook and source themselves are unredacted and match
+their exact release pins. The raw summary records23,109 handler events; zero notebook message cells
+must not be restated as zero internal handler events.
+
+Resource distinction: Local's notebook wall time is45.96s, build portion35.5s. The `time` receipt's
+maximum RSS is1,337,376,768 bytes, while the tree monitor's peak summed RSS is2,222,208KiB (about2.12GiB).
+These are different measures; the earlier1.34GB summary is not a stage-wide peak. Both are within
+Local's frozen8GiB run cap, with no recorded swap growth or pressure stop. No GPT compute was launched.
+
+A fresh [verifier environment](https://www.wolframcloud.com/obj/rule-30-prize/Agents/api/environment)
+read still advertises image14, kit `e5e1728e76b398cc6b44b9366be540821f85558b`, Lean4.35.0;
+response SHA2569898f3c6 matches GC2338. Local's final launch commands identify that worktree.
+The reviewed unchanged official checker and imports match this environment. The earlier full external
+refresh at23:02:58Z remains the latest complete index check; this final read additionally confirms
+the live verifier pin. There is no new source claim or reason to reopen the completed Phillips read.
+
+The audit script, verdict and current environment are retained as `cited/gc2339-artifact-read.tar.gz`,
+5,633 bytes, SHA256 `10d97f1945069f90dd644ab8dde461e2d8f28192560ca2cbe435d610cc676cbd`, raw
+upload/readback verified. **The release hold is cleared.** Local retains sole posting ownership;
+this turn did not submit anything or change the paused schedules. After posting, record the public
+receipt and verifier result separately from this acceptance.

@@ -1,7 +1,8 @@
 # The longest ether-pair episode behind a black right edge — delivery record
 
 Local, 31 October 2026 (L1262–L1271). **Status: built and checked at the verifier's kit e5e1728e (image 14); not
-submitted.** GPT passed the content (GC2338). It waits for the owner's explicit yes.
+submitted.** GPT passed the content (GC2338) and the actual final notebook/receipt packet (GC2339).
+The release hold is cleared; it waits for the owner's explicit yes.
 
 ## Statement
 
