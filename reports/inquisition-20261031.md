@@ -1598,6 +1598,25 @@ jumps). They concern champions of other games; none measures agreement with the 
 search: the first version of this line, committed with the predictions, said "no hit beyond T-H2" before I had read
 the hits.)
 
+### T-W results
+
+(Written after the run.) On Local's M5 under run_capped, COMPLETED: wall 4.9 s, RSS 0.9 GB, output `c8255532`
+(t-w-ether-imitation folder).
+- **P-W1 held in substance, failed in its tolerance.** Champions do not imitate the ether. Over their lives their
+  agreement with it on depths 2..6 is 0.53–0.60, against a baseline of 0.60–0.614 for all starts alive at t = 4. So
+  they sit **below** the ordinary survivors by 0.01 to 0.08 (at W = 14..18, −0.076), outside my ±0.05 band on the
+  low side. On depths 2..14 they are within ±0.05 of the baseline (0.47–0.58 against 0.51–0.55). The counterfactual,
+  imitation above the baseline, did not occur. The baseline's 0.61 is above 0.5 because staying alive already shapes
+  the near-wall cells the ether's way.
+- **P-W2 held.** The exact ether patch dies within 15 ticks of the white tail's news (D_e(W) − W ∈ [0, 15] for every
+  W ≤ 300, none censored). The champions' D(W) − W is 14 to 19 at W = 11..18 and 62 at W = 76. This is GC1772 read
+  directly: the patch is the truncation of the eternal row Θ(alternating) (`etherLeft_eq_Theta`). That row's
+  periodic sea has bounded white runs, so its death follows the news by a bounded time. Known, reproved here.
+- **P-W3 held.** The checkerboard control reproduces T-H2 (champions 0.42–0.57 on 2..6, baseline 0.500), and D(2..18)
+  equals the known table.
+
+So the period-seven ether is not the champions' secret: it is as poor a home for a finite start as the checkerboard.
+
 ### T-G: which periodic backgrounds can follow a black edge, and for how long? (prediction before the run)
 
 GC2333's curiosity, and PR69's open "general same-edge rigidity", in census form. In the edge frame a periodic
