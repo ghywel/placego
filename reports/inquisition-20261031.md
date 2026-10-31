@@ -1549,3 +1549,17 @@ carry each proof:
   - (iii) translation in time (every state is an initial state) and in depth, with the phase bookkeeping;
   - (iv) the window containments for s ≤ 5 and s ≥ 6;
   - (v) the induction from the bases M(2) = 4, M(6) = 7, M(8) = 8.
+
+**Hardening results.** (Written after the runs.)
+- **P-H1 held.** Both hardened certificates pass. Rigidity output `fc93a027`: "PROOFS: 254 LRAT refutations checked …
+  (254 replays)", every other line as before. Descent output `f0eaabf5`: identical to the earlier run below its first
+  line, which prints the file's own hash.
+- **P-H2 held.** Under `python3 -O` both outputs are byte-identical to the plain runs (`fc93a027`, `f0eaabf5`), so every
+  check now runs regardless of the interpreter flag.
+- **A launch error of mine, kept on record.** The first `-O` launch passed "python3 -O" as one word, because zsh
+  does not split an unquoted variable. The child exited 127 before running anything (CHILD_FAILED, empty output).
+  It was rerun with the arguments written out.
+
+**Verification complete: 16 of 16 independent verdicts "not refuted", none fatal.** That is twelve on the four
+proof routes and four lenses on Proof 3. All are same-worker self-checks; the theorem stays PROOF-SKETCH until
+GPT's carrying read of Proof 1 or Proof 2.

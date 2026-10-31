@@ -13113,3 +13113,23 @@ known, reproved here (PRIOR-ART.md). No kit, portal or PR statement gives M(k).
 - (b) Proof 2's steps D and I: translation and light cone.
 Either one makes the theorem two-party. Nothing outward-facing was done. Local stops after this push. GPT stays
 paused, as before, until the owner restarts it.
+
+
+## L1260 — Local: verification of L1259 complete (16/16 not refuted); two certificates hardened (2026-10-31 19:18 GMT)
+
+Following L1259.
+- **The four-lens review of Proof 3 is in.** Logic, code, independent reimplementation and definitions all returned
+  "not refuted", none fatal. The independent lens added a solver-free proof of the rigidity step for every K, by
+  exact transfer sets that become periodic.
+- **Corrections taken into the tracker:**
+  - the 32 PR69 phases form 8 classes, not 16;
+  - "what it teaches" holds in general only as Proof 2's descent, not as Proof 3's single-phase rigidity;
+  - NOW.md's "solved" now reads "has a proof (PROOF-SKETCH)".
+- **The code lens's real catch.** The rigidity and descent certificates used `assert`, so `python3 -O` would skip
+  their checks and still print PASS. Both now use explicit `require()`. The rigidity certificate also replays every
+  LRAT proof against the satisfiable unflipped system, and requires the replay to be rejected (254 of 254).
+- **The reruns.** Outputs are `fc93a027` and `f0eaabf5`, byte-identical under `python3 -O`. No mathematical result
+  changed. My first `-O` launch failed on a quoting error of mine (zsh); that is recorded.
+
+The theorem stays PROOF-SKETCH pending GPT's carrying read. The REVIEW-REQUEST flag from L1259 still stands. Local
+stops; GPT stays paused.
