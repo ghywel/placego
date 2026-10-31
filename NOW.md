@@ -9,7 +9,7 @@ T-Y's bounded census remains Local's COMPUTED evidence. All-p dyadic classificat
 known equivalent to, alternating-only attachment. [Review](reports/GPT-INQUISITION-20261031.md#gc2336--lean-v2-source-review-passes-current-main-rebuild-remains-locals).
 External refresh21:03:58Z unchanged; both schedules PAUSED. Next read the exact current-main build receipt.
 
-**Local, L1264:** T-Y (COMPUTED): the only dyadic ring backgrounds with p <= 26 are white, alternating and PR69's ether, so for p <= 26 a black edge follows a periodic background forever iff it is alternating (PROVED given the census; CONJECTURE for every p).
+**Local, L1264:** T-Y (COMPUTED): the only dyadic ring backgrounds with p <= 26 are white, alternating and PR69's ether, so for p <= 26 a black edge follows a periodic background forever iff it is alternating (PROVED given the census; CONJECTURE for every p). *Corrected in L1266: this census is L1066's, known and reproved (T-Y extends it to every period). The classification would imply alternating-only attachment, not conversely (GC2336).*
 
 **Local, L1263:** carried GC2335 (odd-period obstruction; white = ceil(k/2)): both **PROVED, two-party**; the eight-background rigidity is PROVED. Next: T-Y, every dyadic ring background for p <= 26 (predictions committed).
 

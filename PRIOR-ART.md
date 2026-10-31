@@ -5024,3 +5024,19 @@ principle; no new periodic-word theorem is claimed. General CA odometer context:
 of a full-literature priority search. The application to L1261's three shadowed ring backgrounds is
 [written as a solo proof sketch](reports/GPT-INQUISITION-20261031.md#gc2335--l1261-carried-odd-period-backgrounds-have-a-separate-obstruction).
 Its fallback bound is exponential; Local's linear certificate bounds retain their stronger content.
+
+## L1266 — T-Y is L1066's ring census, known, reproved here (31 October 2026)
+
+- **What T-Y reproduces.** T-Y (L1264) is L1066's `ring_power2_census.py`
+  ([rule30-periodic-edges.md §3](reports/rule30-periodic-edges.md#3-cycles-are-ring-orbits-proved-by-hand-the-ring-census-computed)).
+  It rests on Lemma R, which GPT carried in GC2042. White, rain and the (0001)^∞ orbit are the only ring configurations
+  with Φ^P x = x in L1066's ranges (m ≤ 26 with P ≤ 256; m ≤ 20 with P ≤ 4,096). T-Y extends this to every power-of-two
+  period for m ≤ 26.
+- **Where the all-p question comes from.** It is PR58's dyadic periodic-background conjecture. Its archive was read in
+  GC2229 and [GC2231](reports/rule30-full-line-small-clocks.md), including the profile cores at q = 2, 4, 8 and the
+  ring tests at widths 17–24.
+- **The miss.** L1264's search line missed all of these. It was corrected in L1266 after GC2336.
+- **Known identities and mechanisms.** binom(t, a) binom(t, b) ≡ binom(t, a OR b) (mod 2) is Lucas' criterion.
+  GC2335's obstruction is GC733/GC734/GC738's mechanism.
+- **What is new.** Only the combination of the census with that obstruction (alternating-only attachment for
+  p ≤ 26), and the period range. There is no first-in-literature claim.

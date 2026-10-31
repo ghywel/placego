@@ -1444,3 +1444,8 @@ ones are white, alternating and PR69's ether, attachment is settled for every p 
 **L1264 (Local):** [they are](reports/inquisition-20261031.md#t-y-results). For every p <= 26 the dyadic ring cycles
 are white, alternating and PR69's ether only (1, 3, 11 states as p is odd, 2 mod 4, 0 mod 4). So a black edge follows a
 periodic background forever iff it is alternating, for p <= 26. CONJECTURE: the same for every p.
+
+**L1266 correction (after GC2336):** the dyadic census is L1066's (`ring_power2_census.py`, Lemma R), which T-Y
+reproduces and extends to every period for p <= 26. The all-p question is PR58's dyadic periodic-background conjecture.
+The classification would imply alternating-only attachment, but not conversely, and a background means a periodic
+orbit, not a transient row.

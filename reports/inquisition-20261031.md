@@ -2057,8 +2057,9 @@ folder, outside git).
   - no two census classes share (p, q).
 - **P-Y3 follows.** The pieces are now all in place.
 
-**Theorem (PROVED, given T-Y's COMPUTED census).** Let R be a spatially periodic background of the edge frame with
-spatial period p ≤ 26. A code with a black right edge can follow R at two adjacent depths forever, from some onset
+**Theorem (PROVED, given the COMPUTED census).** Let R be a periodic background of the edge frame with spatial period
+p ≤ 26. Here a background is a spatiotemporally periodic orbit, a ring cycle, not a spatially periodic row with a
+temporal transient (scope corrected in L1266 after GC2336). A code with a black right edge can follow R at two adjacent depths forever, from some onset
 and in some alignment, iff R is the alternating background. Each case is settled:
 - **R not dyadic.** GC2335's obstruction excludes it, with M_R(k) ≤ 2^(k+1) + q − 1 (two-party, L1263).
 - **White.** M_white(k) = ceil(k/2) (two-party, L1263).
@@ -2067,20 +2068,44 @@ and in some alignment, iff R is the alternating background. Each case is settled
 - **Alternating.** It attaches. The code X_0 = 1, X_j = [j even] (j ≥ 1) has X_j(t) = (j + t + 1) mod 2 at every depth
   j ≥ 1 and every tick. At t = 0 every driver X_(j−1) ∨ X_(j−2) with j ≥ 2 is 1, and X_1 always flips. The same holds
   at t = 1, and the state returns at t = 2. Checked by simulation as well.
-- **By T-Y, these are all the dyadic backgrounds** with p ≤ 26.
+- **These are all the dyadic backgrounds** with p ≤ 26. This is L1066's ring census, reproved by T-Y and extended
+  there to every power-of-two period (see the correction below).
 
 So round 6's CONJECTURE holds for every p ≤ 26. Its "structural picture" also holds there: the only attachable
 background flips every cell every tick.
 
 **CONJECTURE (for every p).** The only ring cycles of the edge frame with a power-of-two period are white,
-alternating and PR69's ether. Equivalently, given GC2335 and PR69, the alternating background is the only spatially
-periodic background a black edge can follow forever. The evidence is 26 consecutive ring sizes and the perfectly
+alternating and PR69's ether. This is PR58's dyadic periodic-background question, restricted to rings. Given GC2335
+and PR69, it would imply that the alternating background is the only periodic background a black edge can follow
+forever. (Corrected in L1266 after GC2336: I had written "Equivalently", but the converse is not shown, since a
+fourth dyadic background might also fail to attach.) The evidence is 26 consecutive ring sizes and the perfectly
 regular counts 1, 3, 11. A proof would need structure that the clock argument does not supply. It would have to show
 that dyadic periods force one of three rigid patterns, perhaps through the Newton (binomial) expansion of a
-2^m-periodic cell, in which the pointwise product becomes the bitwise OR of indices by Lucas' theorem.
+2^m-periodic cell, in which the pointwise product becomes the bitwise OR of indices by Lucas' theorem. That identity
+is classical, and GC2336 notes that it does not by itself classify compatible cyclic profiles.
 
 Record searched: as in T-Y's prediction. No moving-frame classification of dyadic ring cycles was found in the record,
 the kit (842b756f) or the portal. There was no literature search, so there is no first-in-literature claim.
+
+**Correction (L1266, after GC2336): T-Y is known, reproved here.** The search line above is wrong. I read only the
+first page of 1,025 record hits for "dyadic" and missed the direct prior art.
+- **L1066** ([rule30-periodic-edges.md §3](rule30-periodic-edges.md#3-cycles-are-ring-orbits-proved-by-hand-the-ring-census-computed)).
+  - It proved **Lemma R**: closed walks of length m in the pair graph G_P are exactly the ring configurations of size
+    m with Φ^P x = x. GPT carried it in GC2042.
+  - It computed the same census with `ring_power2_census.py`: m ≤ 24 with P ≤ 256, m ≤ 20 with P ≤ 4,096, m ≤ 26 with
+    P ≤ 256, and a size-27 ring at P = 16.
+  - Every completed run found exactly white, rain (01)^∞ (the alternating background) and the (0001)^∞ orbit, which is
+    PR69's ether.
+- **PR58's archive** posed the dyadic periodic-background question as a conjecture. It tested rings of widths 17–24
+  at clocks 8, 16 and 32, and its profile-core probe computed the unrestricted bi-infinite pair-graph cores at
+  q = 2, 4, 8 (6, 6 and 46 vertices). GC2229 and [GC2231](rule30-full-line-small-clocks.md) read that archive.
+  GC2231 also proves by hand that Fix(Φ⁴) = Fix(Φ²) on the full line.
+
+So T-Y reproduces L1066's census. Its only extension is the period range: for p ≤ 26 it covers every power-of-two
+period, where L1066's p ≤ 26 run stopped at P = 256. The new step in the theorem above is the combination with GC2335's
+obstruction, not the census. The ring classification and the full-line question with transient connections are
+different scopes, as GC2231 stresses. The pair-graph test I had planned as T-Z would rebuild Lemma R's G_P. Its one
+new range would be the q = 16 core, which no record entry has computed. It stays paused.
 
 ### Lean v2: the witness named, and a finite witness (L1265)
 
@@ -2106,3 +2131,43 @@ for alternating-only attachment, but a fourth dyadic background could itself fai
 converse has not been shown. "Background" in that consequence means a spatiotemporally periodic orbit,
 not an arbitrary spatially periodic initial row with a temporal transient.
 [Complete review and source hash](GPT-INQUISITION-20261031.md#gc2336--lean-v2-source-review-passes-current-main-rebuild-remains-locals).
+
+### Rebuilt against the kit's current main (L1266)
+
+At the owner's word (31 October), Local fetched the main branch of the public kit, WolframInstitute/Rule30PrizeKit:
+122 objects, 386.5 KiB. Main is 842b756f, with no later commit. The earlier builds used a local merge-trial branch at
+ee2f421, which is not on main.
+- **The same inputs.** The import closure of `Rule30FrozenRuler` is byte-identical at ee2f421 and 842b756f. It is
+  `Rule30FrozenRuler` 2ff976d1…, `Rule30Realization` da644450…, `Rule30Jen` 07009448… and `Rule30Prize` 9d6bc9de….
+  `lakefile.toml`, `lean-toolchain` (v4.35.0) and `lake-manifest.json` (no packages) are identical too. So the
+  statements mean the same on main.
+- **The builds on main**, in a fresh detached worktree at 842b756f, all under run_capped:
+  - The closure: `lake build Ruliology.CellularAutomata.Rule30FrozenRuler`, 5 jobs, 1.1 s, 318 MB.
+  - The outside file: `lake env lean` on `lean/Rule30EtherEpisode.lean` (v2, 2ea831a9…). COMPLETED, 3.78 s, 558 MB,
+    with no warnings or errors. `out.txt` is 46d74cbb446a32dd, byte-identical to the earlier v2 build.
+  - The in-tree module, as a kit PR would build it: the file placed at
+    `Ruliology/CellularAutomata/Rule30EtherEpisode.lean` and built with
+    `lake build Ruliology.CellularAutomata.Rule30EtherEpisode`. It built in 4.2 s (6 jobs, 662 MB), printing only the
+    seven axiom lines (`out.txt` 0eab9cb5b35fbd51).
+
+**Binding to GPT's review.** GC2336 passed the source and statement fidelity of exactly this file (2ea831a9…, at
+5e44f902). The receipt above is the current-main build of that same file, with the same toolchain (v4.35.0) and kit
+commit 842b756f. Two Local sub-agents are re-checking it independently: a reproduction with mutation controls, and a
+fidelity read on main. They are a self-check, reported separately when they finish.
+
+**Before any submission of M(k).** The owner asked on 31 October whether the work is submittable. The answer was
+nearly. The M(k) Lean module is complete in substance, at most a partial entry in the line of Lowry's PR69, and
+nothing here solves a prize problem. What remains:
+1. **GPT's review of the Lean statements.** Done: GC2336 PASS.
+2. **A build on the kit's current main.** Done above (L1266).
+3. **The Phillips 2004 comparison** (GC2329): the one named prior-art check before any priority claim. GPT holds the
+   notebook.
+4. **Packaging.** The docstrings cite record IDs: GC2328 (four times), GC2333, L1259, L1265, "Proof 1" and "the
+   round's". They need public wording. The credits go to Lowry (PR69) and to Perez Morales and Claude for the method
+   of `Rule30EtherThreeErosion`. A physical-row wrapper through the kit's `edge_evol` would be useful (GC2336). The portal check (`known_find.py --new`) is to be refreshed just before submitting.
+   The venue, a portal entry or a kit PR extending PR69, is the owner's decision.
+
+The other results are not ready:
+- **The eight-background rigidity, including the classic 7 × 4 ether.** Its finite premises are SAT/LRAT certificates
+  checked by Python, not Lean, and the proofs are not kept for replay.
+- **The p ≤ 26 attachment classification.** It is new, GPT has not read it, and it is a side question.

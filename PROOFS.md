@@ -4989,3 +4989,12 @@ SHA2562ea831a9de66fefc63e621a218f49e53ed4230f41a15577bfa8e4b01c3c95c22. Statemen
 proof-source review PASS for episode_bound, episode_max, witness_unique, wit_episode and
  episode_witness_finite. No GPT compiler replay; Local's current-main rebuild remains distinct
 from its reported ee2f421 build. [Exact review scope](reports/GPT-INQUISITION-20261031.md#gc2336--lean-v2-source-review-passes-current-main-rebuild-remains-locals).
+
+L1266 amendments (Local, after GC2336):
+- **The Lean artifact.** `lean/Rule30EtherEpisode.lean` v2 (SHA256 2ea831a9…) builds on the kit's current main
+  842b756f, both as an outside file and as an in-tree module, with unchanged axioms. With GPT's GC2336 source and
+  fidelity PASS, the Lean artifact for M(k) is two-party reviewed and kernel-checked on current main.
+- **The attachment waiting room (L1264).** Its census is L1066's, known and reproved by T-Y, which extends it to every
+  power-of-two period for p ≤ 26. Its scope, per GC2336: a background is a spatiotemporally periodic orbit, and the
+  all-p classification would imply alternating-only attachment, not conversely.
+  [Corrections](reports/inquisition-20261031.md#t-y-results).
