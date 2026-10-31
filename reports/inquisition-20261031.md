@@ -1809,3 +1809,32 @@ processes.
   Status: COMPUTED (kissat UNSAT on every window instance, with the probe's own controls), plus the hand reduction
   (generic model, onset-free descent, base). Not yet proof-checked: an LRAT-checked rerun with a second solver comes
   next. The bound 58k is weak; T-G's growth is about 1 per depth.
+
+### T-D2 results
+
+(Written after the run.) COMPLETED: wall 376 s, output `38bf0afd` (t-d2-onset-free folder). Four of the eight
+backgrounds that failed T-D get a one-depth onset-free certificate with look-behind 4:
+- (8, 20) with b = 6;
+- (9, 72) with b = 5;
+- (10, 6) with b = 2;
+- (12, 12) with b = 2.
+
+(7, 28), (7, 63), (9, 57) and (12, 68) get none for any D ≤ 8, a ∈ {4, 8}, b ≤ 24. (7, 28) was certified afterwards
+with longer windows (T-D3).
+- **P-D4 held for five of the eight**, counting (7, 28) through T-D3. It is **REFUTED for the three shadowed
+  backgrounds** (7, 63), (9, 57) and (12, 68). With look-ahead 96 they keep a one-depth violation (T-S3).
+- **P-D5 held.** Every certified slope bound (a + b)/D, from 6 to 58, is at least the growth T-G measured (about 1).
+
+### T-D4: one proof-checked certificate for the eight rigid backgrounds (prediction before the run)
+
+`tests/probes/inquisition_background_rigidity_certificate.py` (SHA256 b187a394…) checks the found parameters and nothing
+else. It covers white, PR69's ether, (5, 5), (8, 20), (9, 72), (10, 6), (12, 12) and the classic ether (7, 28). For
+every alignment, the onset-free window must be UNSAT under kissat and cadical, with cadical's LRAT proof checked by the
+same RUP checker as T-RC. The unflipped system must be SAT, and the proof replayed on it must be rejected. M_R(1) is
+recomputed exhaustively.
+- **P-R1.** All 1,266 window instances pass every check. M_R(1) reproduces T-G's values: white 1, ether 4, (5, 5) 3,
+  (7, 28) 7, (8, 20) 6, (9, 72) 5, (10, 6) 5, (12, 12) 4.
+- **P-R2 (control).** The alternating background has a satisfiable window at the classic ether's (8, 50).
+
+Caps (run_capped): wall 3600 s; CPU 3600 s per process; RSS 6144 MiB; files 256 MiB; disk 2048 MiB; at most 16
+processes (the driver, six workers and their solver children).
