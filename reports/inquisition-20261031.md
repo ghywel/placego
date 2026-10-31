@@ -1292,3 +1292,58 @@ gets a cadical LRAT proof, checked by a 40-line RUP checker in the probe. The ch
 proof with a dropped hint, and a proof replayed against a different CNF.
 - **P-C4.** Every proof checks, and both corruption controls are rejected. Counterfactual: a failed proof check
   means a solver's UNSAT is not trusted there.
+
+### T-RC rerun results
+
+(Written after the run, below this line.)
+
+Rerun COMPLETED in 2.9 s, output `ceafd787` (t-rc-certificate-lrat folder). **P-C4 held.** All 254 LRAT refutations
+check: 174 in DIRECT, 2·(L′ − 4) targets per K, and 80 in ABSTRACT. The checker rejects the proof with a dropped hint
+and the proof replayed against another CNF. Every earlier line of output is unchanged.
+
+### The theorem and its proof (Local, PROOF-SKETCH with a machine certificate; carrying read requested)
+
+**Theorem.** For every k ≥ 1, the longest ether-pair episode at depths (k, k + 1) behind a black right edge is
+
+    M(k) = floor(2k/3) + 4 − [k ≡ 0 or 2 (mod 6)].
+
+Moving black edge, PR69's frame and invariant; not the fixed wall, the centre column or any density.
+
+**Proof.** Write m = floor(2k/3), and let r be the ether's phase at depth 0, tick 0, so E_j(t) = e(t + 2j + r)
+with e = (1,1,0,1,0,1,0,0).
+- **Residues 1, 3, 4, 5 and the lower bound** are two-party PROVED: GC2327 (upper), and CL669 + GC2331 (the
+  witness, whose episode has length m + 4 − [k ≡ 0, 2 (mod 6)]).
+- **Remaining:** M(k) ≤ m + 3 for k ≡ 0, 2 (mod 6).
+- **(T) Every phase but one is settled by GPT's tree.** For k ≡ 0, 2 (mod 6) and r ≠ 7, the GC2327 tree whose root
+  is the cheapest contradictory edge phase needs leaves only in ticks 0..m + 3. Its delay + max offset − m is
+  3, 2, 1, 3, 2, 3, 2 for r = 0..6, by the exact max-plus recursion, whose period F(h, n + 3) = F(h, n) + 2 holds
+  from n = 4 and so for all n. So no episode of length m + 4 exists for r ≠ 7. (GC2327's parity guard keeps every
+  leaf at offset ≥ 0.)
+- **(R) Rigidity, for r = 7.** Let K ≡ 0, 2 (mod 6), K ≥ 14 and L′ = m(K) + 4. If a row has X_K = E_K and
+  X_(K+1) = E_(K+1) on ticks 0..L′ − 1, then X = E at depths K − 6 and K − 5 on ticks 0..L′ − 5. Each target cell is
+  forced by a local system: depths K − 14..K + 1, ticks t − 10..t + 10 clipped to 0..L′ − 1, the recurrence
+  (valid in every real row at depths ≥ 2), and the top pair. That system is UNSAT with the target's value flipped.
+  For K = 14..30 this is checked directly. For K ≥ 32 each local system is, clause for clause up to renaming, one
+  of 80 systems indexed by the target's phase (t + 2K + 7) mod 8, its two clip lengths and its depth. Within each
+  residue the end phases are fixed: tick 0 has phase 7 or 3, and tick L′ − 1 has phase 2 (K ≡ 0) or 7 (K ≡ 2). For
+  L′ ≥ 25 no window is clipped on both sides. All 254 systems are UNSAT under kissat and cadical, with checked LRAT
+  proofs.
+- **Induction.** The base is exhaustive: M(2) = 4, M(6) = 7, M(8) = 8, M(12) = 11, each m + 3. For K = k + 6 ≥ 14
+  in the class, suppose a row had an episode of length m(K) + 4 at depth K.
+  - If r ≠ 7, (T) excludes it.
+  - If r = 7, (R) gives the same row an episode of length m(K) + 4 − 4 = m(k) + 4 at depth k, with the same
+    reference. That contradicts M(k) ≤ m(k) + 3.
+  So M(K) ≤ m(K) + 3. The chains 6 → 12 → 18 → … and 2, 8 → 14 → 20 → … cover every k ≡ 0, 2 (mod 6). ∎
+
+**Status.** The finite checks are a machine certificate with controls: `ether_rigidity_certificate.py`, output
+`ceafd787`. The reduction from the theorem to those checks is a hand argument by Local, solo, so the whole is a
+PROOF-SKETCH until GPT reads two steps:
+1. that (T)'s per-phase table follows from GC2327's tree;
+2. that the 80 abstract systems cover every target of every K ≥ 32 (the parametrisation and the clip cases).
+
+The computation agrees independently: SAT to k = 150 (T-SAT) and exhaustive to k = 20 (L1258).
+
+**What it teaches.** The extra tick is not lost to a better tree. It is lost because an exact window is **rigid**:
+it forces the exact ether six depths down, on a window exactly four ticks shorter, so the problem at k + 6 contains
+the problem at k. The parity effect the trees cannot see is just the base case M(6) = 7 against M(9) = 10,
+transported by that rigidity.
