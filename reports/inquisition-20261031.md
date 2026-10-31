@@ -385,6 +385,48 @@ the checkerboard phase that has depth 1 black (depth d black iff d is odd). Comp
 - Counterfactual: 80 % or more would mean the clock lives by local imitation of the checkerboard and dies when the
   white sea's news breaks it.
 
+## Round 2 (owner, 31 October afternoon): the late plateaus, and no skipping of known results
+
+The owner's reply to the first write-up:
+
+> "Already known to fail - A caution preposition and one of my earliest rules to guard against. Already known is well
+> worth proving, because nothing in science is beyond scrutiny and assumption can creep in without a sound bases. An
+> assumption unproved can waste future time if later found to be faulty."
+
+> "Run the late plateaus first, then make sure this round of questioning is well written up. We will hand the torch to
+> GPT after this prompted round of work."
+
+So T-C (the block coarse-graining search) is reinstated as a reproduction of known prior art (below), and the late
+plateaus of T-F come first.
+
+### T-P: what do the starts that pass a late plateau share? (DQ-031, DQ-032)
+
+**The lens from the record.** GC1772 (hand, from the kit's reconstruction identities): every finite start L of width W
+is the truncation of an eternal row Θ f, the infinite row that keeps the clock for ever with L's own odd-time trace.
+L dies when the news of the first black cell of Θ f beyond W reaches the wall, and D(W) = W + the longest white run of
+such a row after W. So the late regime is about those eternal rows beyond W. A plateau is a stretch where most
+survivors' eternal rows keep being white. The question is whether the survivors pass a plateau **together** (one
+shared near-wall state, one fate) or **separately** (many states that happen to pass).
+
+Hand fact used below (from T-A): the 3-word on depths 1..3 at an even time t decides survival at t + 2 exactly
+(x_2 ≠ x_3). A k-word decides the next (k − 1)/2 ticks. Survivors sharing a long near-wall word share a fate.
+
+Record searched: "plateau|stair" with "survivor|death" → the stairs of D(W) (§8.3) and GC1772/GC1773 (the white-run
+identity, the move lemma for CQ01 right halves); CL666 (maximal-excess rows as relays of lone cells); no study of
+which starts pass a late tick together. known_find: no hit for plateau survivors in the kit, portal or open PRs.
+
+Predictions, for W = 14..20, late ticks t ≥ W − 2 with at least 16 alive. A plateau tick is t → t + 2 with ratio
+≥ 0.75; a cliff is ratio ≤ 0.35.
+- P-L1 (shared states): at plateau ticks the survivors occupy at most half as many distinct 7-words (depths 1..7) as
+  there are survivors, and the largest 7-word holds at least 20 % of them. At the other late ticks the distinct
+  7-words exceed half the survivors.
+- P-L2 (near-copies): within the largest 7-word cluster at a plateau tick, the members' starting rows are near-copies:
+  the mean pairwise Hamming distance is at most W/4, and the disagreements sit in the deepest third of the support.
+- P-L3 (cliffs are clusters dying together): at a cliff, at least half of the deaths come from one 7-word cluster at t.
+- Counterfactual: no difference in sharing between plateau and other late ticks would mean plateaus are not shared
+  fates. Unrelated cluster members (mean distance near W/2) would mean distinct heads converge to one near-wall state,
+  an attractor, which is itself worth knowing.
+
 ## Outcomes
 
 (Written after the runs, below this line. Predictions above are unchanged.)
