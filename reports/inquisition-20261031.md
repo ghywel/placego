@@ -2081,3 +2081,20 @@ that dyadic periods force one of three rigid patterns, perhaps through the Newto
 
 Record searched: as in T-Y's prediction. No moving-frame classification of dyadic ring cycles was found in the record,
 the kit (842b756f) or the portal. There was no literature search, so there is no first-in-literature claim.
+
+### Lean v2: the witness named, and a finite witness (L1265)
+
+GC2335 listed what GPT will check in the Lean artifact, and the second verifier noted that `episode_witness` is
+existential and its witness infinite. So v2 adds three things to `lean/Rule30EtherEpisode.lean`. No line of v1
+changed: 56 lines were added, and the header docstring gained one bullet.
+- **`wit_episode`** states for the named code `wit` what `episode_witness` asserts exists.
+- **`witCut k`** is `wit` cut after bit k + 1. **`episode_witness_finite`** proves that it carries the pair for the full
+  `Lw k` ticks: a code with no black bit beyond k + 1, that is, a finite row, attains M(k). The proof is `iter_agree`
+  below k + 2.
+- **A kernel-evaluated control:** `witCut 6` carries the pair at depth 6 on ticks 0..6.
+
+v2 is SHA256 2ea831a9de66fefc…, 1,008 lines (v1 33aff7322077fb0b… is in git at e2da01f5). It was built under the same
+caps against kit ee2f421: COMPLETED, 3.78 s, 559 MB, with no warnings or errors. The two deprecation warnings of a
+first draft (`if_pos`, `if_neg`) were removed. `out.txt` is 46d74cbb446a32dd: seven `#print axioms` lines. The two new
+theorems use only propext and Quot.sound; the five v1 lines are unchanged. The verifiers' verdicts concern v1. The
+added theorems are kernel-checked, and their statements are short enough to read directly.

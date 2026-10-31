@@ -20,6 +20,8 @@ consecutive ticks `t ≥ s` with `iter t x k = ether i (t + q)` and
 * `episode_witness`: GC2328's witness (`x 0 = 1`, `x j = ether (j + 3) 1` for `j ≥ 1`) has an
   episode of `Lw k` ticks at depths `k, k + 1` for every `k ≥ 1`.
 * `episode_max`: together, **the longest episode is `M(k) = Lw k` for every `k ≥ 1`**.
+* `wit_episode` names the witness, and `episode_witness_finite` cuts it after bit `k + 1`: a finite row
+  attains `Lw k` too (prefix autonomy).
 * `witness_unique`: at phase class `7` (`s + q + 2i + 6k ≡ 7 (mod 8)`, the witness's class) every
   code with an episode of `Lw k` ticks has the witness's prefix (bits `0 .. k + 1`) at its onset.
   Bits beyond `k + 1` are free, and other phase classes may also attain `Lw k`.
@@ -938,6 +940,56 @@ example : ¬ (iter (Lw 6) wit 6 = ether 9 (Lw 6 + 1) ∧ iter (Lw 6) wit 7 = eth
     ¬ (iter (Lw 5) wit 5 = ether 8 (Lw 5 + 1) ∧ iter (Lw 5) wit 6 = ether 9 (Lw 5 + 1)) := by
   decide
 
+/-! ### The witness named, and a finite witness (v2, L1265) -/
+
+/-- `episode_witness` with its witness named: the GC2328 code `wit` itself carries the pair. -/
+theorem wit_episode (k : Nat) (hk : 1 ≤ k) : ∀ t, t < Lw k →
+    iter t wit k = ether (k + 3) (t + 1) ∧ iter t wit (k + 1) = ether (k + 4) (t + 1) := by
+  intro t ht
+  have hD : D wit 7 (k + 8) t = false ∧ D wit 7 (k + 9) t = false := by
+    cases t with
+    | zero => exact ⟨wit_clean _ (by omega), wit_clean _ (by omega)⟩
+    | succ u =>
+      have hw := (wit_front wit wit_zero wit_clean u).1
+      have hlt := wit_arith1 k (u + 1) ht
+      exact ⟨hw.2 _ (by omega), hw.2 _ (by omega)⟩
+  obtain ⟨h1, h2⟩ := hD
+  have e1 := xor_false_eq h1
+  have e2 := xor_false_eq h2
+  rw [X_ge wit (k + 8) t (by omega), Nat.add_sub_cancel] at e1
+  rw [X_ge wit (k + 9) t (by omega), show k + 9 - 8 = k + 1 by omega] at e2
+  rw [e1, e2, ether_eq, ether_eq]
+  unfold E
+  exact ⟨e_congr (by omega), e_congr (by omega)⟩
+
+/-- The witness cut after bit `k + 1`: its black bits all lie in `0 .. k + 1`. -/
+def witCut (k j : Nat) : Bool := if j ≤ k + 1 then wit j else false
+
+/-- **A finite witness.** For every `k ≥ 1` a code with no black bit beyond `k + 1` (a finite row)
+carries PR69's ether pair at depths `k, k + 1` on the ticks `0 .. Lw k - 1`. It agrees with `wit`
+below `k + 2`, and prefix autonomy (`iter_agree`) keeps the pair. -/
+theorem episode_witness_finite (k : Nat) (hk : 1 ≤ k) :
+    ∃ x : Nat → Bool, x 0 = true ∧ (∀ j, k + 1 < j → x j = false) ∧
+      ∀ t, t < Lw k →
+        iter t x k = ether (k + 3) (t + 1) ∧ iter t x (k + 1) = ether (k + 4) (t + 1) := by
+  refine ⟨witCut k, ?_, ?_, ?_⟩
+  · simp [witCut, wit]
+  · intro j hj
+    simp only [witCut]
+    rw [ite_eq_right (by omega)]
+  · intro t ht
+    have h0 : AgreeBelow (k + 2) (witCut k) wit := by
+      intro i hi
+      simp only [witCut]
+      rw [ite_eq_left (by omega)]
+    have ag := iter_agree h0 t
+    rw [ag k (by omega), ag (k + 1) (by omega)]
+    exact wit_episode k hk t ht
+
+/-- Control: the cut witness carries the pair at depth `6` on the ticks `0 .. 6`, as `wit` does. -/
+example : ∀ t, t < 7 → iter t (witCut 6) 6 = ether 9 (t + 1) ∧ iter t (witCut 6) 7 = ether 10 (t + 1) := by
+  decide
+
 end Ruliology.CellularAutomata.Rule30EtherEpisode
 
 open Ruliology.CellularAutomata.Rule30EtherEpisode in
@@ -950,3 +1002,7 @@ open Ruliology.CellularAutomata.Rule30EtherEpisode in
 #print axioms episode_max
 open Ruliology.CellularAutomata.Rule30EtherEpisode in
 #print axioms witness_unique
+open Ruliology.CellularAutomata.Rule30EtherEpisode in
+#print axioms wit_episode
+open Ruliology.CellularAutomata.Rule30EtherEpisode in
+#print axioms episode_witness_finite

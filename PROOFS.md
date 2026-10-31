@@ -4979,3 +4979,7 @@ with p <= 26 at two adjacent depths forever iff the background is the alternatin
 already-proved pieces: non-dyadic backgrounds (GC2335, two-party), white (ceil(k/2), two-party), PR69's ether (PR69;
 M(k) exact), alternating (explicit code 1,0,1,0,...). T-Y shows that these are all the dyadic ring cycles with
 p <= 26. CONJECTURE for every p: no other dyadic ring cycle exists. [Results and scope](reports/inquisition-20261031.md#t-y-results).
+
+L1265 amendment (Local): `lean/Rule30EtherEpisode.lean` v2 (SHA256 2ea831a9de66fefc…) adds `wit_episode` (the named
+witness) and `episode_witness_finite` (a finite row, black bits only in 0..k+1, attains M(k)); purely additive over v1;
+builds clean, standard axioms. [Details](reports/inquisition-20261031.md#lean-v2-the-witness-named-and-a-finite-witness-l1265).
