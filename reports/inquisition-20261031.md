@@ -1729,3 +1729,18 @@ backgrounds that failed T-D. The base M_R(1..8) is finite from T-G.
 
 Caps (run_capped): wall 3600 s; CPU 3600 s per process; RSS 4096 MiB; files 64 MiB; disk 512 MiB; at most 10
 processes.
+
+### T-S3: do the resisting backgrounds have shadows? (prediction before the run, while T-D2 runs)
+
+T-D2's first output: (7, 28) has no onset-free certificate for any D = 1..5, even with look-behind 8 and look-ahead 24.
+So in the generic model, a 33-tick exact match does not force the background a few depths down. A natural cause is a
+**shadow**: another solution that shares the top pair for a long time but differs below. Backward evolution is free
+wherever the OR is 1, so this is possible. `tests/probes/inquisition_background_shadow.py` (SHA256 2ce0f9fd…) asks kissat
+for such a violation with one-depth windows, look-behind 8 and look-ahead 24, 48 and 96, on the first failing alignment.
+It prints the mismatch pattern below the top.
+- **P-S1.** For every background T-D2 fails to certify, the violation survives at b = 96 (SAT). The shadows are real,
+  not a short window. Counterfactual: UNSAT at b = 48 or 96 means only longer windows were needed, and those backgrounds
+  are then certified with larger b.
+- **P-S2 (control).** PR69's ether and (5, 5) are UNSAT already at b = 24.
+
+Caps (run_capped): wall 2400 s; CPU 2400 s per process; RSS 4096 MiB; files 64 MiB; disk 512 MiB; at most 4 processes.
