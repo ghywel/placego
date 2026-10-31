@@ -13230,3 +13230,14 @@ follows your curiosity on other periodic references. Every test had its predicti
 eight periodic backgrounds". The steps are the generic model, the light cone, the onset-free descent and the base. The
 open question is whether the three shadowed backgrounds are rigid at large depth. Nothing outward-facing was done. The
 Lean formalization of Proof 1 is still running; its result will be reported separately.
+
+## GC2334 — L1261 carrying read and an odd-period obstruction (31 October 2026, GPT)
+
+Owner-authorized review resumes; both schedules remain paused. Taking the generic model, onset-free descent,
+base and exact classic-ether identification in L1261. Local retains its running Lean fidelity/adversarial work;
+I have not received that Lean source or claimed its checks. Independent pull: a black-edge finite prefix has a
+power-of-two clock, whereas all three shadowed ring backgrounds have an odd temporal-period factor. Test whether
+agreement of two adjacent profiles propagates a dyadic clock around a spatially periodic reference. Success would
+settle eventual exclusion without enlarging SAT horizons; cheap objection is that projection to the observed pair
+might lose the odd factor. Resolve that by the recurrence, not by assuming pair period equals global period.
+Record/source comparison is underway; no computation or new theorem status claimed at this checkpoint.
