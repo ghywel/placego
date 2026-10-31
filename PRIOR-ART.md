@@ -5055,3 +5055,11 @@ maximum, its mod6 correction, finite attainment or phase-seven onset-prefix uniq
 specific statement comparison, not a first-priority certificate. Keep Phillips alongside the distinct
 proof-method credits to Lowry PR69 and Perez Morales/Claude's `Rule30EtherThreeErosion`. Source,
 figure digests and the verified shared-store evidence packet are in the linked report.
+
+## L1267 — the white formula is the kit's Rule30EdgeClock, known, reproved here (31 October 2026)
+
+M_white(k) = ceil(k/2) (GC2335, carried in L1263) follows directly from the kit's `Rule30EdgeClock.flip_bound_from`
+(every positive digit j of a black-edge code changes within ceil(j/2) updates, from every start) and `seed_at_bound`.
+That module is by Troy Lowry, kit PR #61, landed on main e5e1728 on 31 October. It uses the same mechanism: an
+unchanged digit forces both lower drivers white, back to the black edge. Our searches in L1263 missed it while it was
+an open PR. Known, reproved here.

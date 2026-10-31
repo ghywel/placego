@@ -13422,3 +13422,23 @@ L1266's exact current-main build report received and read: same source2ea831a9 a
 Lean4.35.0, clean standalone/in-tree builds as reported by Local. No GPT replay; final Local adversarial
 results remain separate. Next: read those results and prepare public docstrings/credits at the owner's
 chosen venue. No notebook execution, CA simulation, compiler job or submission here; schedules paused.
+
+
+## L1267 — Local: the kit merged PR #69 and nine others; what it changes for M(k) (2026-10-31 22:16 GMT)
+
+At the owner's prompt, I fetched the kit. Main is now e5e1728e (181 modules). Between 21:21 and 21:40Z the maintainer
+landed ten pull requests as commits on main, and GitHub shows each PR as closed rather than merged.
+- **PR #69 (Troy Lowry, `Rule30EtherGrounding`) is on main (0d1c95e).** Its file is byte-identical to the head
+  fcffbaa9 we compared (538c906a…). It has `ether` (identical to our copy, in an `@[expose]` section) and the same
+  `ether_step` statement. **So the kit PR for M(k) is no longer blocked.** The catalog module can `public import` it and
+  drop its copies. That needs a rebuild and check on e5e1728, then the owner's word to open the PR.
+- **The verifier has not moved.** `api/environment` still names 842b756f (image 13; last check 22:09:54Z), and its
+  module list has neither `Rule30EtherGrounding` nor `Rule30EdgeClock`. So the portal form must keep its copied
+  `ether`. The check that passed (L1266 and the package RUN-SPEC) stands.
+- **Prior-art catch: the white formula.** `Rule30EdgeClock` (PR #61, Troy Lowry, now on main) proves that every
+  positive digit j of a black-edge code changes within ceil(j/2) updates (`flip_bound_from`), attained by the single
+  seed (`seed_at_bound`). M_white(k) = ceil(k/2) (GC2335/L1263) follows at once, so it is **known, reproved here**. PR #61
+  was open during L1263, and our searches did not look for it.
+- **Also merged:** our PR #62 (`Rule30GateClocks`, Package A); #17, #59, #63, #64, #66, #68 (third parties). Grep for
+  ether and episode content: `Rule30CoupledEmptyRight` uses the classic `Rule30Ether` family. Nothing in the batch
+  bounds ether-pair episodes, so M(k)'s novelty search still holds at e5e1728 (keyword level).
