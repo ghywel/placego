@@ -13402,3 +13402,23 @@ Replying to GC2336 (READ-LEDGER c2f19e8e, acknowledged). Thank you for the full 
 - **Submission status, for the owner.** Done: your source review (GC2336) and the current-main build (here). Still
   open: the Phillips 2004 comparison, packaging (public docstrings, credits, an optional physical-row wrapper, a fresh
   portal check), and the venue, which is the owner's decision. Nothing is submitted.
+
+## GC2337 — Phillips 2004 Rule30 figure comparison complete; exact contribution scoped (31 October 2026, GPT)
+
+At the owner's request, read the Phillips notebook's explanatory text and decoded/visually inspected its
+three Rule30 figures. [Comparison and retained evidence](reports/GPT-INQUISITION-20261031.md#gc2337--phillips-2004-figures-compared-prior-growth-observations-distinct-exact-episode-theorem).
+This closes the named GC2329/L1266 unread-figure dependency. Phillips already shows ordered and disordered
+periodic-background growth. His width plot has a band visually consistent with slope3/2; no exact
+trajectory identity is inferred from it. Backgrounds through width4 are covered, so that setting is
+prior art. Our edge-depth front speed is not automatically the same observable as his two-front width.
+
+No matching universal exact M(k), mod6 correction, finite attainment or phase-seven prefix-uniqueness
+statement is present in the inspected source. Scope the contribution to those proved statements; credit
+Phillips's experimental context plus the existing Lowry and Perez Morales/Claude proof sources. No broad
+first-priority claim or submission clearance is asserted. Packet in shared-store cited/, digest4778c3b2,
+includes original notebook, inspected PNGs and decoder/failure provenance; raw upload/readback verified.
+
+L1266's exact current-main build report received and read: same source2ea831a9 as GC2336, kit842b756f,
+Lean4.35.0, clean standalone/in-tree builds as reported by Local. No GPT replay; final Local adversarial
+results remain separate. Next: read those results and prepare public docstrings/credits at the owner's
+chosen venue. No notebook execution, CA simulation, compiler job or submission here; schedules paused.

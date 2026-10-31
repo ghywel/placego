@@ -1035,3 +1035,111 @@ Next executable step: bind Local's current-main source hash, toolchain, dependen
 axiom/build receipt to this accepted file; review any changed lines before extending acceptance.
 Independent alternative: a structural dyadic-ring proof using the existing profile graph, with the
 known full-line/cycle distinction preserved. Both schedules remain paused.
+
+## GC2337 — Phillips 2004 figures compared: prior growth observations, distinct exact episode theorem
+
+**Requested source comparison COMPLETE, 31 October 2026.** This closes the unread-figure dependency in
+GC2329 and L1266. It is a comparison with this named source, not a certificate of first priority throughout
+the literature. No notebook computation, CA simulation, Lean build or submission was performed here.
+
+**Source.** Richard Phillips's 2004 presentation notebook, whose displayed title is *Growth of the
+boundaries of simple cellular automata*, is available at the
+[original conference URL](https://www.wolframscience.com/conference/2004/presentations/material/rphillips-growth.nb).
+The retained original is 4,215,694 bytes, SHA256
+`3b43f9af2d03dd0d457a39b426c25e938ffe236a88d06a844ec0e679512247da`.
+The notebook's explanatory text, including collapsed commentary, and the relevant bitmap figures were
+read. The introductory periodic-background figure is Rule107/161, not Rule30; it must not be misidentified.
+
+### What the figures actually show
+
+Line anchors below refer to that exact notebook with CRLF read as ordinary line endings; these are source
+cell positions, not published figure numbers.
+
+| Source cell | Inspected content | Bearing on our claim |
+|---|---|---|
+| 10833, under `Rule 30` | The eight Rule30 neighborhoods, with the exterior-growth cases highlighted. | The ordinary black-on-white expanding edges are known; no new edge-speed claim. |
+| 11335, under `Linear growth of rule 30` | The familiar single-black-seed space-time triangle on white. | Finite white-background growth is not the ether-pair extremal statement. |
+| 38693, under the later `Rule 30` | Superposed width histories through about 100 ticks: regular upper and middle bands, plus lower irregular curves. | Direct prior numerical evidence of both ordered and disordered growth on periodic backgrounds. |
+
+The middle band is **visually consistent** with width growth near 3/2 per tick. That is an observation
+from a raster plot, not an extracted exact law or an identified trajectory. The graph does not label each
+curve by its seed/background pair. Its title's additional numbers are not used as a decoded experiment key.
+The adjacent commentary (cell40806) states the coexistence of ordered and disordered Rule30 growth;
+it supplies no exact phase/depth formula. Accordingly we neither claim the 3/2 phenomenon as newly
+observed nor identify a plotted curve with our witness without the missing trajectory correspondence.
+
+### Hypotheses and observables compared
+
+Phillips defines the two boundaries as the extreme disagreements with the *unperturbed evolving
+background* (cell4535). His experiment uses 30 seeds against 30 periodic backgrounds, covering all
+patterns through width four, for each of 88 representative rules (cell14315). The plotted quantity is
+the width between those two boundaries. Our explicit witness's interior at its initial phase is
+`1110` repeated in increasing edge-depth order, so its spatial background size four falls within that
+background inventory. We cannot dismiss Phillips on the ground that he only studied white backgrounds.
+
+| Item | Phillips's inspected source | Our exact theorem |
+|---|---|---|
+| Initial data | A finite changed seed in a periodic background extending on both sides; finite enumerated inventory. | Every edge code with bit0 black, arbitrary finite or infinite inward tail; the physical right exterior is white. |
+| Observable | Width of the disagreement region relative to the unperturbed background. | Consecutive ticks for which the adjacent pair at fixed inward depth k follows PR69's ether, including phase and onset. |
+| Quantifiers | Displayed finite experiments and qualitative growth discussion. | Every k>=1, every code, phase and onset; sharp maximum attained by an explicit finite code. |
+| Exact conclusion | The inspected Rule30 cells do not state a universal extremal episode bound or characterize its maximizers. | M(k)=floor(2k/3)+4-[k≡0 or2 mod6], with phase-seven optimal onset-prefix uniqueness through k+1. |
+
+A moving black edge is not the same boundary as the rightmost *difference from a periodic background*.
+In particular, an ether inward half-line joined to an outward white half-line has infinitely many
+disagreements with a nonconstant ether reference. Truncating our witness gives a finite row on white,
+not automatically a finite perturbation of that ether on both sides. Finite-window observations can
+still coincide; the distinction does not prove a new propagation mechanism.
+
+There is also a coordinate guard. The witness front has edge-depth speed3/2 (CL669/GC2331);
+with physical position r(t)=r(0)+t-j(t), its corresponding physical speed is -1/2.
+Phillips plots a *width*, the difference of two physical front positions. A numerical slope3/2 there
+cannot be equated to our one-front edge-depth speed merely because the numbers agree. No new
+mathematical claim is needed for this change of coordinates.
+
+### Prior-art disposition and wording for delivery
+
+**Known and to be credited:** Phillips's numerical investigation of periodic-background boundary growth,
+including ordered/disordered Rule30 growth. The present comparison finds **no matching exact extremal
+statement in this source**. The contribution to present is the sharp, universally quantified finite
+ether-pair episode theorem and its attainment/uniqueness results. Do not present periodic-background
+growth, a visibly linear front, or the observed coefficient alone as the discovery. Do not claim
+first-in-literature priority on the strength of this comparison.
+
+Suggested public wording: “Phillips investigated boundary growth from finite perturbations of periodic
+backgrounds, including Rule30. Here we determine the sharp duration of a prescribed ether-pair episode
+behind a moving black edge, uniformly over all edge codes, phases and onset times.” Keep the separate
+credits to Troy Lowry's PR69 ether/invariant and Perez Morales and Claude's finite-state front-potential
+method from `Rule30EtherThreeErosion`. Phillips is historical experimental context, not the source of
+our universal upper-bound proof. Brummitt–Rowland2012 explicitly credits Phillips's broader background
+setting in its introduction; its own constant-background inventory remains a different comparison.
+
+**Record searched:** `record_find.py Phillips --offline --per 8` (11 record hits; zero indexed external
+name hits, not a novelty inference). Current cache is the complete21:03:58Z refresh, kit842b756f,
+23open PRs. The exact PR69 source comparison and Lean statement review are in GC2336. This pass adds
+primary-source figure inspection rather than rerunning a keyword search or dynamics census.
+
+### Retained evidence and next step
+
+The shared store contains `cited/gc2337-phillips-figures.tar.gz`, 493,214 bytes, SHA256
+`4778c3b27df200672b177213c4e09b58d7fdf1e138df0bd44e5891f04427a531`, with verified raw-body upload/readback.
+It retains the original notebook, portable decoder, four inspected PNGs, manifest and failed decoder
+attempts. Six-bit encoding/padding, MGF dimensions and every decoded row length were checked; the
+manifest records residual terminal bytes without assuming a fully parsed MGF trailer. The three
+Rule30 PNG digests, in cell order above, are:
+
+- `f49d0bc86acdc0e74e3fa87c1d10126f0adafd90c4f63c6c0eaa3c244e47b55f`
+- `c0f6899110de44eda6071151918aedfe882e5d3c4ee3ffca6cd672643bee0cbf`
+- `5e1f61f67aca1eec2a8ea0ea07f3c229d8badebd7f30dc4ddad3c6bd58d0cb77`
+
+The preliminary decoder attempts failed on an unavailable imaging dependency and then an omitted
+odd-literal padding byte; structural assertions caught the latter. The corrected standard-library
+conversion passed the row guards and was visually read. No scientific experiment was rerun.
+
+L1266's current-main build report has also been read: source2ea831a9 is unchanged from GC2336,
+kit842b756f/Lean4.35.0, standalone and in-tree builds reported clean. This is receipt of Local's report,
+not a GPT replay or a read of its still-pending adversarial results. Next executable delivery step:
+read those final results, replace internal record-ID docstrings with public explanations, and incorporate
+these credits. Venue and submission remain as stated by the owner; no submission occurred here.
+Independent warm alternative: the linear bounds for the shadowed backgrounds. Curiosity alternative:
+the existing PR58 dyadic-profile classification, without redoing its known ring census. Both schedules
+remain paused; no autonomous follow-on job.

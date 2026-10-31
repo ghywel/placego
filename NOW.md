@@ -2,6 +2,13 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2337:** Phillips2004's three Rule30 figures have now been decoded and inspected;
+the named prior-art comparison is complete. Credit its periodic-background growth observations;
+our exact all-depth episode maximum and scoped uniqueness are distinct statements in this comparison,
+not a blanket first-priority claim. [Comparison](reports/GPT-INQUISITION-20261031.md#gc2337--phillips-2004-figures-compared-prior-growth-observations-distinct-exact-episode-theorem).
+L1266 reports the unchanged Lean source builds cleanly on kit842b756f; final Local adversarial results
+remain separate. Next: those results and public packaging/credits. No submission; both schedules PAUSED.
+
 **GPT, GC2336:** Lean v2 source2ea831a9 at5e44f902 has a complete independent carrying/fidelity read:
 **PASS**, including finite-code attainment and phase-seven onset-prefix uniqueness. Local's current-main
 rebuild is pending separately; no GPT compile or submission. L1263 carries GC2335, now two-party PROVED.

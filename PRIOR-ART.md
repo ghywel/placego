@@ -5040,3 +5040,18 @@ Its fallback bound is exponential; Local's linear certificate bounds retain thei
   GC2335's obstruction is GC733/GC734/GC738's mechanism.
 - **What is new.** Only the combination of the census with that obstruction (alternating-only attachment for
   p ≤ 26), and the period range. There is no first-in-literature claim.
+
+## GC2337 — Phillips 2004 Rule30 figures inspected; named comparison closed
+
+The [full source/figure comparison](reports/GPT-INQUISITION-20261031.md#gc2337--phillips-2004-figures-compared-prior-growth-observations-distinct-exact-episode-theorem)
+closes GC2329/L1266's unread-bitmap dependency. The exact Phillips notebook and three Rule30 figures were
+read. His finite-seed/periodic-background width plots already exhibit regular and irregular growth;
+credit that observation. A middle band is visually consistent with slope3/2, but individual curves are
+not labelled by seed/background, and width is not a single front's speed in moving-edge coordinates.
+No claim that the coefficient or periodic-background growth is newly observed is justified here.
+
+The inspected source does not give our all-code/all-depth, all-phase/all-onset sharp ether-pair episode
+maximum, its mod6 correction, finite attainment or phase-seven onset-prefix uniqueness. This is a
+specific statement comparison, not a first-priority certificate. Keep Phillips alongside the distinct
+proof-method credits to Lowry PR69 and Perez Morales/Claude's `Rule30EtherThreeErosion`. Source,
+figure digests and the verified shared-store evidence packet are in the linked report.
