@@ -1242,3 +1242,34 @@ window (ticks t − w..t + w, clipped to the instance) that forces it, with B = 
 
 Caps (run_capped): wall 3600 s; CPU 3600 s per process; RSS 2048 MiB; files 64 MiB; disk 256 MiB; at most 10
 processes.
+
+### T-R2 results
+
+(Written after the run, below this line. Predictions above are unchanged.)
+
+On Local's M5 under run_capped, COMPLETED (t-r2-local folder).
+- **P-R4 held.** Rigidity holds with the full window at K = 48, 50, 54, 56: every target cell is forced.
+- **P-R5 held, with a correction to its detail.** The needed half-width is at most 10 everywhere and does not grow
+  with K. Ticks 0 needs 10 (8 at depth K − 5 for K ≡ 2 mod 4). The right end needs at most 6. Interior ticks need 4
+  or 6, not "≤ 4": ticks ≡ 0, 4, 6 (mod 8) relative to the phase need 6. The whole profile has period 8 in t and
+  depends only on K mod 4.
+
+### T-RC: the finite certificate (prediction before the run)
+
+T-R2 makes the proof an induction, **M(k + 6) ≤ M(k) + 4**, with a finite local lemma as its step.
+`tests/probes/ether_rigidity_certificate.py` (SHA256 1bf1d5d8…) runs every check the argument needs:
+- **TREE:** GC2327's exact max-plus, per edge phase r, with its period F(h, n + 3) = F(h, n) + 2.
+- **BASE:** exhaustive M(2), M(6), M(8), M(12).
+- **DIRECT:** the rigidity at K = 14, 18, 20, 24, 26, 30.
+- **ABSTRACT:** the 80 K-free local CSPs that give the rigidity for every K ≥ 32.
+- **CONTROLS:** abstract equals concrete at K = 48, 50; non-vacuity; one tick past the right end is free; the step's
+  arithmetic.
+
+- **P-C1.** Every check passes under both solvers.
+- **P-C2.** TREE confirms the per-phase table: for k ≡ 0, 2 (mod 6) every edge phase r ≠ 7 fits in m + 4 ticks, and
+  r = 7 needs exactly m + 5. Counterfactual: if some r ≠ 7 needs m + 5, rigidity must cover that class too.
+- **P-C3.** The right-end control shows tick L′ − 4 is free at one of the two depths for both end phases. So the
+  lemma is tight, and the checker does answer SAT.
+
+Caps (run_capped): wall 3600 s; CPU 3600 s per process; RSS 2048 MiB; files 64 MiB; disk 256 MiB; at most 10
+processes.
