@@ -1367,3 +1367,4 @@ digest in reports/inquisition-20261031.md:
 - `inquisition_background_shadow.py` (T-S3): long-window violations, the shadows behind (7, 63), (9, 57), (12, 68).
 - `inquisition_background_rigidity_certificate.py` (T-D4): same-edge rigidity for eight backgrounds, including the
   classic 7 x 4 ether, with kissat and cadical and checked LRAT proofs.
+- `inquisition_dyadic_backgrounds.py` (T-Y, L1263): every ring cycle of the edge frame with a power-of-two time period, p <= 26 (f^(2^p) by squaring).

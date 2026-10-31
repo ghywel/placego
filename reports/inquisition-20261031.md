@@ -1865,6 +1865,13 @@ depth, from any onset and in any alignment:
 | (10, 6) | | 5 + 6(k − 1) |
 | (12, 12) | | 4 + 6(k − 1) |
 
+Status after GC2335: GPT carried the hand reduction (generic model, light cone, onset-free descent, base), so this is
+**PROVED: two-party hand reduction with a machine certificate** (T-D4, LRAT-checked with its own controls; GPT read
+the source and did not replay the proofs). Scope, after GC2335's identity guard: the eight orbits are the ones whose
+tick-zero words T-D4 printed, `0`, `1000`, `11100`, `1000000`, `11100000`, `111000000`, `1110100000` and
+`111110010000`. No two classes of the T-G census share (p, q), so the certificate's (p, q) dictionary replaced nothing
+(COMPUTED in L1263).
+
 The bounds are linear, not sharp. The proof is the onset-free one-depth descent on the exact light cone (T-D4's
 docstring), with the exhaustive base M_R(1). For PR69's ether this reproves its eventual exclusion; our M(k) theorem
 gives the exact length. **For the classic 7 × 4 ether it is the counterpart of PR69's theorem.** That is not in the kit,
@@ -1882,8 +1889,9 @@ no first-in-literature claim.
 - **The wall side (T-W).** Champions do not imitate the period-seven ether, and ether patches die within 15 ticks of
   the news (GC1772, known, reproved here).
 
-**The structural picture.** A black edge can carry a periodic tail forever only if every cell of that tail flips every
-tick, which is the alternating background alone. Such a background gives the descent no information, because ΔR ≡ 1
+**The structural picture.** (CONJECTURE. Status corrected in L1263 after GC2335: this sentence was unlabelled and
+claimed more than the census and the certificates show.) A black edge can carry a periodic tail forever only if
+every cell of that tail flips every tick, which is the alternating background alone. Such a background gives the descent no information, because ΔR ≡ 1
 leaves the next depth free whenever the OR is 1. Every background with ΔR ≢ 1 tested so far either descends locally
 (eight) or shows a masked shadow (three). CONJECTURE: same-edge rigidity holds for every spatially periodic background
 other than the alternating one. The shadowed three are its test.
@@ -1927,3 +1935,106 @@ and copies PR69's `ether` verbatim.
 
 Status: **PROVED, two-party hand (GC2333) and kernel-checked in Lean.** Not submitted anywhere; that is the owner's
 decision.
+
+## Round 7 (31 October, Local, L1263): GPT's GC2335 read, and the dyadic backgrounds
+
+### The carrying read of GC2335
+
+GPT asked for an independent read of two hand proofs
+([GC2335](GPT-INQUISITION-20261031.md#gc2335--l1261-carried-odd-period-backgrounds-have-a-separate-obstruction)).
+I read each step and both carry.
+
+**1. The odd-period obstruction.** Let R be a two-sided solution of the generic recurrence, spatially periodic, whose
+full state has least temporal period q, and suppose q is not a power of two. Then for every black-edge code, every
+depth k, every onset and alignment, M_R(k) ≤ 2^(k+1) + q − 1. The steps I checked:
+- **(a) The dyadic clock.** X_0 = 1 is 1-periodic. Suppose X_0..X_(j−1) are P-periodic from t = 0. Then the driver
+  X_(j−1) ∨ X_(j−2) of X_j is P-periodic, its sum over any P consecutive ticks is one constant c, and
+  X_j(t + P) = X_j(t) ⊕ c. So X_j is 2P-periodic. By induction X_j has a period dividing 2^j, and the pair
+  (X_k, X_(k+1)) has period dividing P = 2^(k+1) at every t ≥ 0. This is the kit's `Rd_periodic` in the edge frame.
+- **(b) The P + q window.** Suppose the pair agrees with the reference pair on ticks s..s + P + q − 1. For t in
+  s..s + q − 1, ref(t) = X(t) = X(t + P) = ref(t + P). The reference is q-periodic, so this holds for every t, and the
+  reference pair (cells c, c + 1 of R) is P-periodic.
+- **(c) Pair to ring.** Cell c + 2 is the XOR accumulator of the P-periodic driver R_(c+1) ∨ R_c, so by (a)'s argument it
+  is 2P-periodic. Inductively every cell c + m has a power-of-two period. The accumulator runs toward larger j, the
+  direction of the recurrence in this frame. After p steps spatial periodicity closes the ring, so the full state has
+  a power-of-two period. The least period q divides every period: a contradiction.
+- Nothing uses the alignment, the onset, a finite support or a left support. The bound holds at k = 0 too.
+
+Controls (COMPUTED inline on the 12 T-G backgrounds):
+- **The invariant.** For every background, the least common period of every adjacent pair of cells has odd part
+  odd(q). This is GC2335's form of GC734's invariant.
+- **The (10, 6) background** has single cells of period 2, while its pairs keep the odd part 3. GPT remarked that one
+  observed cell can lose the odd factor; this is a real example, and it is why the argument needs the pair.
+- **The bound.** The T-G values satisfy it for the nine non-dyadic backgrounds. This is a weak check, since the
+  bound is loose.
+
+Status: **PROVED, two-party** (GPT GC2335, Local L1263). It is a known mechanism (GC733/GC734, GC738) applied to
+backgrounds, so there is no novelty claim beyond the application. The consequences:
+- **The three shadowed backgrounds cannot be followed forever.** Their bounds are 2^(k+1) + 62 for (7, 63),
+  2^(k+1) + 56 for (9, 57) and 2^(k+1) + 67 for (12, 68). Whether their episodes stay linear in k is open, and it is
+  now the sharp question about them.
+- **Only dyadic backgrounds can attach.** The exclusion covers every background whose least period is not a power of
+  two.
+
+**2. The white formula, M_white(k) = ceil(k/2).**
+- **(a)** If X_j(t) = X_j(t + 1) = 0, then X_(j−1)(t) = X_(j−2)(t) = 0.
+- **(b) The backward step.** Suppose the pair (k, k + 1) is white at tick τ and the interval [k − 2m, k + 1] is white at
+  τ + 1. Run (a) downward from cell k + 1. Each cell j ≥ k − 2m is white at τ + 1 by hypothesis and at τ by the
+  previous use of (a). So [k − 2(m + 1), k + 1] is white at τ. I wrote this induction out because the step needs each
+  cell white at both ticks.
+- **(c) The upper bound.** An episode of L ticks from onset 0 therefore forces [k − 2(L − 1), k + 1] white at tick 0.
+  Cell 0 is black, so 2(L − 1) < k, that is, L ≤ ceil(k/2).
+- **(d) The witness.** The code with only X_0 black has X_j(t) = 0 for j > 2t, so its pair is white on ticks
+  0..ceil(k/2) − 1.
+
+Status: **PROVED, two-party**. It agrees with T-G for k ≤ 12, and it replaces round 6's computed line for white with a
+proof.
+
+**3. Record corrections after GC2335.**
+- **The "structural picture" sentence.** In round 6's outcomes it stated, unlabelled, that an attached tail must
+  flip at every cell. It is now marked CONJECTURE.
+- **What is proved there.** The alternating background is the only primitive background with ΔR ≡ 1. ΔR ≡ 1 means
+  R(t + 1) = ¬R(t) with no two adjacent white cells at t or at t + 1. So R(t) has no two equal adjacent cells, and
+  p = 2.
+- **The identity guard.** It is checked: no (p, q) is shared in the census, and the eight claims are scoped to their
+  words.
+- **The short-window case** L ≤ a + b, which GC2335 asked to include, is automatic.
+- **Not done: a replay packet.** The certificate deletes its LRAT proofs after checking them. A replay packet would
+  have to keep them. This is noted for any delivery.
+
+### T-Y: which backgrounds of the edge frame are dyadic? (prediction before the run)
+
+After the read, attachment is open only for dyadic backgrounds. T-G knew three: white, alternating and PR69's ether.
+It capped q at 72, and the kit's `Rule30RingOrbits` classifies only q = 1 and q = 2 ("No classification for larger
+periods"). `tests/probes/inquisition_dyadic_backgrounds.py` (SHA256 eecace9c79aee618…) finds every dyadic ring
+cycle for every p ≤ 26, with no cap on q. A state is on a dyadic cycle iff f^(2^p)(s) = s, and f^(2^p) is p squarings
+of the ring map as an array. Five controls are listed in its docstring, among them agreement with T-G's dyadic
+classes for p ≤ 12.
+- **P-Y1.** For every p ≤ 26 the primitive dyadic ring cycles are exactly white (1, 1, `0`), alternating
+  (2, 2, `10`) and PR69's ether (4, 8, `1000`). Confidence moderate, about 60%. T-G's census saw nothing else with
+  q ≤ 72, but larger q and larger p are unexplored.
+- **P-Y2.** All controls pass.
+- **P-Y3.** If P-Y1 holds, then for every spatial period p ≤ 26 a black edge can follow a spatially periodic
+  background at two adjacent depths forever iff the background is the alternating one. The pieces:
+  - non-dyadic backgrounds: GC2335, carried above;
+  - PR69's ether: PR69, with M(k) exact;
+  - white: ceil(k/2);
+  - alternating: it attaches (`Rule30EdgeStaircases`).
+
+  Round 6's CONJECTURE would then become a theorem in that range: PROVED, given the COMPUTED census.
+- **Counterfactual.** A new dyadic class would be the first candidate for a second attachable background. The next
+  tests would be T-G's exhaustive M_ref(k) for k ≤ 12 and a T-D4 descent certificate for it.
+- **What it would teach.** Either that dyadic periods are as rare in this frame as the census suggests, which would be
+  a structural fact about rule 30 on rings that is worth a proof, or a new kind of background to test.
+- **Record searched.** `record_find.py` for "dyadic", "RingOrbits", "ring cycle" and "cycle lengths" found:
+  - RULE30-PRIZE.md §5, a physical-frame census of single-column periods on rings up to 18 cells. That is a different
+    frame and a different period: there the classic ether's columns are dyadic, while in this frame q = 28.
+  - G4, on the balance of power-of-two-period ring cycles in the physical frame.
+  - GC738, a dyadic edge diagonal against the 28-periodic ether: the same mechanism as GC2335.
+  - GC870/GC890, not relevant.
+
+  `known_find.py` "ring_period_two" found the kit's `Rule30RingOrbits` (`ring_fixed`, `ring_period_two`,
+  `alternating_even`) at kit 842b756f, and portal R30-20261029-a96cee with the same statements. No moving-frame
+  classification of dyadic cycles turned up.
+- **Caps.** run_capped with CPU 900 s, wall 1,200 s, RSS 3,072 MiB, file 64 MiB, disk 256 MiB, 4 processes. Local's M5
+  has 16 GiB.

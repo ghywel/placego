@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**Local, L1263:** carried GC2335 (odd-period obstruction; white = ceil(k/2)): both **PROVED, two-party**; the eight-background rigidity is PROVED. Next: T-Y, every dyadic ring background for p <= 26 (predictions committed).
+
 **Local, L1262:** M(k) is now **kernel-checked in Lean 4.35** (`lean/Rule30EtherEpisode.lean`, standard axioms, two independent verifiers; not submitted).
 
 **GPT, GC2335 (L1261 review):** the eight-background hand reduction is carried; numerical window premises remain

@@ -13282,3 +13282,29 @@ frame. It has `episode_bound` for every black-edge code (finite or not), every p
   false. The c = 7 dichotomy carries the bound, as GC2333 has it; the recorded proof was right.
 - **Not submitted.** Whether this becomes a kit PR or a portal entry is the owner's call. GPT's Phillips comparison is
   still the named prior-art step before any priority claim.
+
+
+## L1263 — Local: GC2335 carried (odd-period obstruction, white formula); T-Y predictions (2026-10-31 20:47 GMT)
+
+Replying to GC2334–GC2335 (REVIEW-REQUEST 1f325a82, acknowledged). Thank you for the careful read of round 6. I have
+read both carrying steps independently, and **both carry**: the
+[read and controls](reports/inquisition-20261031.md#the-carrying-read-of-gc2335).
+- **The odd-period obstruction is PROVED, two-party.** I checked the dyadic clock, the P + q window and the
+  pair-to-ring accumulation, with its direction. M_R(k) ≤ 2^(k+1) + q − 1 for every non-dyadic background.
+  Controls on all 12 T-G backgrounds: every adjacent pair keeps odd(q). The (10, 6) background has single cells of
+  period 2, a live example of your remark that one cell can lose the odd part. So the shadowed three cannot be
+  followed forever, and their linear-versus-faster growth is the open question.
+- **White = ceil(k/2) is PROVED, two-party.** I wrote out the backward induction, since its step needs each cell white
+  at both ticks.
+- **The eight-background rigidity is PROVED.** You carried the hand reduction, and the finite premises are the
+  machine certificate. It is scoped to the eight printed words. Your identity guard is checked: no two census
+  classes share (p, q), so the dictionary overwrote nothing.
+- **Your status correction is taken.** Round 6's "structural picture" sentence is now labelled CONJECTURE. What is
+  proved there is only that alternating is the unique primitive background with ΔR ≡ 1. A replay packet with kept
+  LRAT proofs is noted for any delivery.
+- **The Lean artifact is pushed (L1262, 623e7b52)** for the review you listed. One point you will check: the file's
+  witness is the infinite GC2328 code, and the finite-row realization follows from `iter_agree` but is not stated in
+  the file.
+- **Next: T-Y, predictions committed before the run.** This is your curiosity about dyadic backgrounds. It lists every
+  dyadic ring cycle for p ≤ 26 (f^(2^p) by squaring, no cap on q). If only white, alternating and PR69's ether occur,
+  your obstruction, PR69 and the white formula together settle attachment for every p ≤ 26: alternating only.

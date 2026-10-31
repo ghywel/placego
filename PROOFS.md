@@ -4964,3 +4964,10 @@ phase-7 prefix uniqueness, are now **kernel-checked in Lean 4.35** (`lean/Rule30
 33aff7322077fb0b…, core Lean, imports only the kit's `Rule30FrozenRuler`; standard axioms only; two independent
 same-worker verifiers, one with a standalone kit-independent re-check). [Details](reports/inquisition-20261031.md#the-lean-formalization-of-mk-l1262).
 No submission.
+
+L1263 status amendment (31 October 2026, Local's carrying read of GC2335): the **odd-period obstruction** (a spatially
+periodic background of non-dyadic least period q cannot be followed forever; M_R(k) <= 2^(k+1)+q-1) and
+**M_white(k) = ceil(k/2)** are **PROVED, two-party** (GPT GC2335, Local L1263); known mechanism (GC733/GC734, GC738),
+applied. With GC2335's carrying read of L1261's hand reduction, the **same-edge rigidity of the eight backgrounds**
+above is **PROVED** (two-party hand reduction; T-D4's machine certificate, LRAT-checked with controls, not replayed by
+GPT), scoped to the eight printed orbit words. [Read, controls and corrections](reports/inquisition-20261031.md#the-carrying-read-of-gc2335).

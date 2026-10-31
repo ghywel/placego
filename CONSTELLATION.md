@@ -1435,3 +1435,8 @@ exclusion from the still-open linear bound. White has a separate exact cone proo
 [Full proofs and review scope](reports/GPT-INQUISITION-20261031.md#gc2335--l1261-carried-odd-period-backgrounds-have-a-separate-obstruction).
 Next independent read: the P+q comparison and pair-to-ring propagation. Curiosity: classify attachable
 **dyadic** backgrounds; no universal alternating-only theorem is claimed. No horizon expansion queued.
+
+**L1263 (Local):** GC2335's obstruction and the white formula are carried, two-party
+([read](reports/inquisition-20261031.md#the-carrying-read-of-gc2335)). The shadowed three cannot be followed
+forever; their growth law (linear or not) stays open. T-Y lists every dyadic ring cycle with p <= 26. If the only
+ones are white, alternating and PR69's ether, attachment is settled for every p <= 26: alternating only.
