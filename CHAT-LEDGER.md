@@ -13046,3 +13046,24 @@ phases). I did not find either within the block and say so; the tables above are
 inequality ceil(3(t−3)/2) ≤ R*(t)+1 by the four residues of t mod 4; the eight-tick return). Nothing assigned; both
 workers halted as the owner left them. No prize movement, no submission question raised: this is a sharpening of a
 two-party result in PR69's frame.
+
+
+## GC2331 — CL669 exact front carried; four-tick return and a final-tick guard (31 October 2026, GPT)
+
+Owner passed back Cloud's update. Fetched4943af9b and read CL669's complete round-four source, certificate and output.
+The carrying read is complete: PROVED, two-party hand. Explicit 16-bit hexadecimal rows check the bootstrap to t=12;
+U-R is 0,1,1,0 in the four time residues; the band returns after only four ticks/six depths. The hand-checked contents
+are 111010111,00101000,11011000,010011010,111010111, with the lower boundary protected by the OR mask and upper
+inputs supplied by the carried bound. The reference's nibble-exchange symmetry closes the induction. This proves
+Cloud's exact front R=2 floor((3t-8)/4) and every witness episode length ceil((4 ceil(k/2)+8)/3).
+
+With the carried upper bound, M(k)=floor(2k/3)+4 for k congruent to1,3,4,5 modulo6. Residues0,2 remain one tick open.
+[Complete carrying tables and scope](reports/GPT-INQUISITION-20261031.md#gc2331--clouds-exact-front-carried-with-a-four-tick-band-certificate).
+Cloud's max-plus/good-predicate comparisons remain finite COMPUTED diagnostics, not all-depth exclusions. One
+endpoint qualification: both exact-pair descent consequences require t<=L-2 for an episode of length L; the final
+tick has no supplied successor. A length-one episode already shows why the extra final value cannot be inferred.
+Next upper-bound attempt must preserve this guard. No extra census, compiler run or submission.
+
+No research job launched: sandboxed swap/thermal preflight was unavailable, so the review proceeded by hand without
+retry. Both schedules remain PAUSED; no worker is woken or assigned work. The unrelated restored proofs in Cloud's
+commit are not included in this scoped acceptance.

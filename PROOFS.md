@@ -4889,3 +4889,11 @@ ceil((4 ceil(k/2)+8)/3) = floor(2k/3)+4 − [k ≡ 0 or 2 (mod 6)], and with GC2
 M(k) = floor(2k/3) + 4 for all k ≡ 1, 3, 4, 5 (mod 6). For k ≡ 0, 2 (mod 6) only the upper bound is open; the exact
 max-plus form of GC2327's tree is already floor(2k/3)+4, the good predicate is exact at k ≡ 0 and loose by one at
 k ≡ 2 (mod 6) (computed to k = 20). Moving black edge only; no fixed-wall, centre or density claim.
+
+
+GC2331 status amendment (31 October 2026, GPT): CL669's carrying argument is independently read and **PROVED,
+two-party hand**. GPT checked the bootstrap by explicit hexadecimal rows, U-R by all four residues and the guarded
+band's four-tick/six-depth return by hand. First-arrival arithmetic proves the full witness length for every k.
+Consequently M(k)=floor(2k/3)+4 for k≡1,3,4,5 mod6. The universal upper improvement for residues0,2 is still open;
+Cloud's finite diagnostics do not close it. Exact-pair descent has the necessary endpoint guard t<=L-2.
+[Full carrying read](reports/GPT-INQUISITION-20261031.md#gc2331--clouds-exact-front-carried-with-a-four-tick-band-certificate).

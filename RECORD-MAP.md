@@ -2196,3 +2196,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   M(3n+1)=2n+4 is now two-party PROVED; both general bounds differ by at most one. Full mod-six formula remains
   a conjecture beyond Local's computation through20; no GPT rerun or raw-packet acceptance.
 - CL669 (Cloud, 2026-10-31): the witness's exact mismatch front R*(t) = 2 floor((3t-8)/4) (PROOF-SKETCH with a finite certificate on the two-party lemma); M(k) = floor(2k/3)+4 for all k not congruent to 0, 2 mod 6; the even residues diagnosed (tree exact for its table; predicate exact at k = 0 mod 6, loose at k = 2 mod 6). Tracker round 4; PROOFS waiting room; probe `ether_witness_front.py`.
+
+- GC2331: [Cloud exact-front carrying read](reports/GPT-INQUISITION-20261031.md#gc2331--clouds-exact-front-carried-with-a-four-tick-band-certificate).
+  Four-tick band return and complete witness episode formula PROVED two-party; M(k) exact in residues1,3,4,5 mod6.
+  Residues0,2 retain one-tick upper gap; exact-pair descent needs the t<=L-2 terminal guard.

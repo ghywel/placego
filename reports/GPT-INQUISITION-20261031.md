@@ -3,6 +3,11 @@
 Owner-authorized bounded block, beginning 15:11 UTC. Both recurring schedules remain paused; Local is stopped.
 The handover is [L1257](HANDOVER-GPT-20261031.md), with its [complete tracker](inquisition-20261031.md).
 
+**Latest, GC2331 / CL669:** Cloud's exact witness-front argument is now independently carried, with an explicit
+four-tick/six-depth band return checked by hand. Thus M(k)=floor(2k/3)+4 is **PROVED, two-party hand** for
+k congruent to 1,3,4,5 modulo 6. The full witness-length formula is proved for every k, but its optimality for
+residues 0 and 2 remains open. The proposed exact-pair descent requires t<=L-2; it supplies no terminal-tick value.
+
 **Current status, GC2330 / L1258:** Local has carried both GC2327–GC2328 arguments: their bounds and the limit
 M(k)/k -> 2/3 are now **PROVED, two-party hand**. GPT has in turn carried Local's early-healing refinement,
 giving floor(2(k-1)/3)+4 <= M(k) <= floor(2k/3)+4 and exact equality with the upper value for k ≡ 1 (mod 3).
@@ -426,3 +431,140 @@ at t=3+2n and t=4+2n, to try to carry the proposed extra matching tick when k �
 argument must remove one tick for k ≡ 0 or 2 (mod 6); witness analysis cannot establish that universal exclusion.
 Do not enlarge the census as a substitute. The previous second-timer alternative and periodic-interface curiosity
 remain available. Both recurring schedules stay paused; no live Local job or formalization is dispatched.
+
+## GC2331 — Cloud's exact front carried with a four-tick band certificate
+
+The owner passed back CL669. GPT fetched `4943af9b` and read the complete round-four argument, the certificate
+source `tests/probes/wolfram/ether_witness_front.py` (SHA256
+`8ace97f7fb6dc43939c71d1c5add0baa31610c2031268a16927f0cf94a5320aa`) and its recorded output (SHA256
+`831dc9a3ddffa20d23d4cce883016643c07fcfdf972c1f1f6f5ebf06f7da1b36`). The carrying check below is by hand; it
+replaces the sampled arithmetic identities by residue calculations and reduces the eight-tick return to four.
+It does not rerun Cloud's computations or validate the unrelated restored proofs in that commit.
+
+**Status: PROVED, two-party hand (Cloud argument/certificate, GPT carrying read).** Write R(t)=2 floor((3t-8)/4)
+for t>=4. The actual witness has maximal mismatched depth R(t). At t=0,3 its maximal mismatch is 0, and at t=1,2
+there are no mismatches. Its pair episode length is
+
+    L_w(k)=ceil((4 ceil(k/2)+8)/3),
+
+and therefore M(k)=floor(2k/3)+4 for k congruent to 1,3,4,5 modulo 6. Only the universal upper estimate for the
+other two residues remains open. This concerns offsets behind a moving black edge, not a fixed-centre density.
+
+### Initial condition checked separately
+
+Encode depths 0..15 as the low-to-high bits of a 16-bit integer x. Prefix autonomy makes their update exact:
+
+    x_next = (x XOR ((x << 1) OR (x << 2))) AND 0xffff.
+
+The low bit stays 1, and the depth-one bit uses only depth zero, as required. Direct hexadecimal substitution
+in that identity gives the following table; the last column is x XOR the reference's 16-bit prefix.
+
+| t | x | reference E | mismatch mask |
+|---|---|---|---|
+| 0 | eeef | eeee | 0001 |
+| 1 | 1111 | 1111 | 0000 |
+| 2 | 7777 | 7777 | 0000 |
+| 3 | 8889 | 8888 | 0001 |
+| 4 | bbbf | bbbb | 0004 |
+| 5 | 4441 | 4444 | 0005 |
+| 6 | ddc7 | dddd | 001a |
+| 7 | 2259 | 2222 | 007b |
+| 8 | efaf | eeee | 0141 |
+| 9 | 1051 | 1111 | 0140 |
+| 10 | 71b7 | 7777 | 06c0 |
+| 11 | 9649 | 8888 | 1ec1 |
+| 12 | ebff | bbbb | 5044 |
+
+For 3<=t<=12, the already carried bound U(t)=ceil(3(t-3)/2)<=14 excludes any mismatch beyond this prefix.
+The earlier healing proof covers t=0,1,2. Thus the table proves the actual maximal mismatch through t=12,
+not merely a lower bound on a truncated row. At t=12 the band at depths 7..15 is `111010111`.
+
+### The guarded band and its return
+
+For t=4q+r with 0<=r<4, the two front formulas give:
+
+| r | R(t) | U(t) | U(t)-R(t) |
+|---|---|---|---|
+| 0 | 6q-4 | 6q-4 | 0 |
+| 1 | 6q-4 | 6q-3 | 1 |
+| 2 | 6q-2 | 6q-1 | 1 |
+| 3 | 6q | 6q | 0 |
+
+Consequently every cell strictly above R(t)+1 equals E. A band [b,R(t)+1] can be advanced without knowing cells
+below b: if X_b=1, its next bottom is b+1, where that 1 masks the missing input at b-1. If X_b=0, choose bottom
+b+2, whose two inputs are both already in the band. Higher required input cells come from the known ether above.
+This is a band driven by a specified upper boundary, not an assertion that it is isolated from all exterior data.
+All updated depths in the cycle below are >=8, so no special edge equation is hidden in this argument.
+
+Evaluating these short Boolean rows by hand gives the entire return (strings are ordered by increasing depth):
+
+| t | band | contents | mismatches inside band |
+|---|---|---|---|
+| 12 | 7..15 | 111010111 | 12,14 |
+| 13 | 8..15 | 00101000 | 12,14 |
+| 14 | 10..17 | 11011000 | 12,13,15,16 |
+| 15 | 11..19 | 010011010 | 12,13,15,16,17,18 |
+| 16 | 13..21 | 111010111 | 18,20 |
+
+The required reference glide is immediate from the source words: 43=0x2b and 178=0xb2 exchange nibbles, as do
+202=0xca and 172=0xac. Hence ether(i+2,t+4)=ether(i,t), and E_(j+6)(t+4)=E_j(t).
+Both R and U increase by 6 after four ticks. Thus the band contents, its bottom-update rule and its ether inputs
+at t=16 are exactly those at t=12 shifted by six depths. Induction repeats this four-tick cycle indefinitely;
+Cloud's eight-tick/twelve-depth return follows by two cycles.
+
+At each phase, the band contains a mismatch at R and agrees with E at R+1. The bound U<=R+1 excludes mismatches
+above its top. Unknown cells below its bottom lie strictly below R. Therefore R is the actual maximum, without
+assuming that the band contains the entire mismatch set. This last distinction matters: at t=12 the full mask
+5044 also contains mismatches at depths 2 and 6 below the band.
+
+### First arrival and the exact residue classes
+
+For k>=1, no pair mismatch occurs at t=0,1,2,3. Thereafter R is nondecreasing and jumps by either 0 or 2, always
+landing on an even depth. Its first arrival at a depth >=k is therefore exactly at k or k+1, and that front cell
+really is mismatched. Before this arrival both observed cells match. Solving the integer inequality gives
+
+    2 floor((3t-8)/4) >= k
+    iff 3t >= 4 ceil(k/2)+8.
+
+The first such t is at least 4, so there is no omitted early case. This t is the number of matching ticks from
+zero. The six residues make the formula, rather than a finite symbolic sample, explicit:
+
+| k | L_w(k) | carried upper bound for M(k) |
+|---|---|---|
+| 6n (n>=1) | 4n+3 | 4n+4 |
+| 6n+1 | 4n+4 | 4n+4 |
+| 6n+2 | 4n+4 | 4n+5 |
+| 6n+3 | 4n+6 | 4n+6 |
+| 6n+4 | 4n+6 | 4n+6 |
+| 6n+5 | 4n+7 | 4n+7 |
+
+Truncating the witness beyond k+1 preserves both observed cells for all time, so the same exact witness episode
+occurs in the finite-row class. Equality with M follows in four residues; witness optimality in the two remaining
+residues does not follow from this construction.
+
+### Scope of Cloud's diagnosis and the terminal-tick guard
+
+Cloud's max-plus comparison through depth 24 and its exact good-predicate comparison through depth 20 are
+COMPUTED claims, not all-depth impossibility theorems for every argument based on that table. I have not replayed
+or independently retained the raw packets for those diagnostic computations. They usefully suggest two different
+obstructions, but do not yet prove that distinction for every member of either residue class.
+
+There is one endpoint qualification to the proposed exact-pair descent. If the pair matches on ticks 0..L-1,
+its successive differences are supplied only on 0..L-2. Thus both conclusions
+
+    E_k(t)=0 implies X_(k-1)(t)=E_(k-1)(t),
+    X_(k-1)(t) OR X_(k-2)(t) = E_(k-1)(t) OR E_(k-2)(t)  (k>=2)
+
+are justified on t<=L-2, not automatically on the final tick L-1. The first follows from the depth-(k+1)
+update; the second from the depth-k update. For example, an episode of length one fixes only the pair itself,
+leaving X_(k-1)(0) arbitrary even if E_k(0)=0. The missing next pair value is precisely the information needed
+for that final inference. Any attempt to save the remaining tick must retain this endpoint restriction.
+
+**Next executable step:** formulate the two-residue upper target with the exact-pair constraints restricted to
+0..L-2, then trace which constraints can meet an impossible edge phase without asking for the unavailable final
+successor. An alternative is a joint-branch inconsistency for the good predicate in residue 0. No larger census
+is queued. The second-timer and periodic-interface alternatives remain in the queue.
+
+No new computation ran. A sandboxed preflight could read memory but could not obtain swap/thermal status;
+no capped job was launched or retried, and the review continued with the explicit hand tables above. No compiler,
+formal verification, submission, priority clearance or schedule restart is claimed.

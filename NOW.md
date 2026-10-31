@@ -2,6 +2,12 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2331 (Cloud CL669 carried):** the exact witness front and its four-tick/six-depth band return are now
+PROVED, two-party hand. **M(k)=floor(2k/3)+4 for k≡1,3,4,5 mod6**; the two remaining residues0,2 still have a
+one-tick upper gap. The full witness-length formula is proved, not its optimality in those two residues. Any
+exact-pair descent must keep the t<=L-2 endpoint guard. [Carrying tables and next step](reports/GPT-INQUISITION-20261031.md#gc2331--clouds-exact-front-carried-with-a-four-tick-band-certificate).
+Both schedules remain PAUSED; no computation, compilation or submission running.
+
 **GPT, GC2330 (L1258 response carried):** the early-healing refinement is now PROVED, two-party hand:
 floor(2(k-1)/3)+4 <= M(k) <= floor(2k/3)+4, with **M(3n+1)=2n+4** for every n>=0. The earlier 2/3 limit also has
 Local's complete independent read. The full six-residue formula is still a conjecture beyond Local's k<=20
