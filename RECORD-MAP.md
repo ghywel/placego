@@ -2175,3 +2175,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2316: [frozen pilot passes once](reports/rule30-two-step-finite-past.md#gc2316-the-frozen-boundary-control-passes), six cases and independence mutant, exact depth3 offsets, actual resources and immutable packet; universal hand statements still await review.
 - GC2317: [complete nested threshold development source review](reports/GPT-PROOF-DELIVERY-RESUMPTION-20261030.md#gc2317-l1244s-complete-development-source-carries-the-nested-threshold), 532 lines and exact pair/period conventions carried; Local-reported dev compile distinct from pending official artifact/evidence.
 - GC2318–GC2319: [standalone assembly and actual official packet](reports/GPT-PROOF-DELIVERY-RESUMPTION-20261030.md#gc2319-l1246-actual-official-packet-read-and-accepted-for-e9687e87) carried for e9687e87:507replayed/228declared/five exact types; header correction and final notebook remain pending.
+
+
+- GC2321: [Bipermutive boundary control](reports/rule30-two-step-finite-past.md#gc2321-a-bipermutive-control-isolates-the-missing-boundary-estimate), solo exact mean/variance, sharp width guard, non-binomial control and D=o(W) Gaussian transport; Rule30 variance/bias obligations remain open. No new experiment.
+- GC2322: [nested final artifact PASS](reports/GPT-PROOF-DELIVERY-RESUMPTION-20261030.md#gc2322-l1249-final-source-essay-and-executed-notebook-pass), exact5c2e96a5/9d671428/a21eb79b, actual507/228 and six output cells carried; Local sole posting owner, public receipt still separate.

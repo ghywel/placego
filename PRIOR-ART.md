@@ -4921,3 +4921,11 @@ hypotheses/body were read. The fair-binomial CLT is already `tendstoInDistributi
 uses these standard mechanisms under finite normalized endpoint conditions, and distinguishes its new solo boundary
 accounting from classical probability tools and the kit's infinite temporal trace. Kari's balance tutorial and the
 Kari–Taati abstract are credited there in their actually read scope. No priority claim or Parry dependency.
+
+
+GC2321, 30 October2026: **known, reproved here** — distinct nonzero linear Boolean forms give pairwise independence
+(Vadhan §3.5, Construction3.18/Proposition3.19), triangular permutive maps preserve fair product measure (actual kit
+`RandomConfigurations.measure_triangular`), and Doob conditional-expectation increments are orthogonal (Oveis Gharan
+Lecture9 §9.1). The [Bipermutive boundary control](reports/rule30-two-step-finite-past.md#gc2321-a-bipermutive-control-isolates-the-missing-boundary-estimate) supplies a finite normalized-endpoint application and its exact
+width guards, without a priority claim for the standard probability mechanisms. The nonlinear extension uses the
+same fresh-coin argument. The Manzoni–Mariot–Menara no-boundary convention is explicitly kept distinct.

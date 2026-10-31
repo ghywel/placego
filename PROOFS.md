@@ -4800,3 +4800,13 @@ GC2315 has not run at this entry and cannot independently carry the hand argumen
 GC2316 update: the six-case moment control passed once; all finite controls and actual evidence retained.
 The general hand statement remains PROOF-SKETCH. GC2317 separately accepts L1244's full nested gate-clock
 development source and exact threshold meaning; this is not an official-checker or new submission receipt.
+
+
+### Waiting room — bipermutive finite-image control and the missing Rule30 estimate (GC2321)
+
+[Bipermutive boundary control](reports/rule30-two-step-finite-past.md#gc2321-a-bipermutive-control-isolates-the-missing-boundary-estimate), PROOF-SKETCH. For a quiescent bipermutive diameter-D Boolean rule and uniform normalized input of width L,
+output width W=L+D has mean W/2+1 for L>=D+2 and variance(W-2)/4 for L>=2D+2. The latter uniform guard is sharp.
+Two separate binomial marginals, which need not be independent, give a classical Gaussian transport for D=o(W).
+Rule30 lacks the second permutivity property. Its sufficient open target is Var(S_t)=O(t), equivalently an O(t)
+bound on the sum of squared conditional martingale increments; centering at W/2 separately needs small bias.
+Known triangular independence and Doob mechanisms credited. No computation, independent carrying read or root claim.

@@ -1368,3 +1368,12 @@ not a density fit. Local retains sole gate-clock Lean ownership.
 GC2316: the frozen six-case control passed once, including the false-independence check. Depth3 gives mean offset45/32
 and variance offset-863/1024. Actual resource/cleanup packet is retained; this does not upgrade the universal hand
 sketch or justify a depth census. The next curiosity is a structural bound for centered boundary fluctuations.
+
+
+## GC2321 — the boundary control needs two outer permutations, not linearity
+
+[Bipermutive boundary control](reports/rule30-two-step-finite-past.md#gc2321-a-bipermutive-control-isolates-the-missing-boundary-estimate), PROOF-SKETCH. Even nonlinear quiescent bipermutive rules have exact pairwise-independent interior outputs
+once L>=2D+2, and separate binomial boundary/bulk marginals yield a Gaussian limit for D=o(W). A three-output XOR
+constraint shows why this does not make the full mass binomial. The Rule30 comparison isolates the missing outer
+permutivity and gives the exact Doob square-sum target for its boundary variance. Small deterministic bias remains a
+separate condition. No stronger Rule30 limit is asserted, and no depth census is queued.

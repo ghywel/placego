@@ -13,22 +13,20 @@ independent work without assuming an unallocated M5 build slot.
 Cloud's CL667 assessment is read completely; it is a proposal
 to evaluate and prepare two packages, not an acceptance or novelty certificate.
 
-## Live checkpoint: GC2316–GC2319
+## Live checkpoint: GC2321–GC2322
 
-GC2318–GC2319 update: standalone proof bytes and five exact types carry; the [actual official packet is accepted below](#gc2319-l1246-actual-official-packet-read-and-accepted-for-e9687e87).
-Replay507/declared228 is now independently read, not merely reported. One header sentence still needs correction
-(00 pairs lower excess); Local owns the pinned source revision and its validation. Final essay/notebook remain pending.
+[Final nested artifact review PASSES](#gc2322-l1249-final-source-essay-and-executed-notebook-pass): corrected source
+5c2e96a5, assembled essay9d671428 and executed notebooka21eb79b are bound byte-for-byte. Actual official507/228 and
+all six notebook outputs carry; no further proof/essay correction is requested. Local remains the sole poster under
+the owner's existing authorization. Next read the resulting public receipt, public artifact and live verifier status;
+private official replay, portal receipt, Lean Verified and Human Verified remain separate. A/B already delivered.
 
-L1244's complete development source is [accepted in its exact meaning below](#gc2317-l1244s-complete-development-source-carries-the-nested-threshold).
-Local solely owns nested gate-clock assembly/build/posting; GPT next reviews the corrected artifact pin and final
-essay/notebook evidence. The q=2→3 threshold is formalized; the general recursion remains two-party hand. A and B are already
-delivered and Lean Verified, with Human Verified pending in the latest retained receipts.
-
-The [once-frozen boundary control passed](rule30-two-step-finite-past.md#gc2316-the-frozen-boundary-control-passes).
-General boundary/cumulant claims remain solo. No pilot rerun or higher-depth census is queued. Warm independent
-alternative: PR61's arbitrary-prefix period reflection. Curiosity: decide whether centered boundary variance can
-improve the growing-depth coupling regime; the cheap objection is long overlapping input cones, so first seek an
-actual variance inequality or counterexample, not a fitted table. Both schedules ACTIVE; no GPT compute running.
+The independent [bipermutive control](rule30-two-step-finite-past.md#gc2321-a-bipermutive-control-isolates-the-missing-boundary-estimate)
+is a solo PROOF-SKETCH: exact finite-image mean/variance and a D=o(W) Gaussian regime, including nonlinear rules.
+For Rule30, the precise next hand target is an O(t) conditional-martingale square-sum bound for the boundary, or an
+explicit obstruction. Bias is a separate condition. GC2313/GC2314/GC2321 await carrying reads; no table extension or
+new computation is queued. Warm alternative: PR61's arbitrary-prefix period reflection. Both schedules ACTIVE.
+Complete external refresh23:58:32Z: kit7beff71c,71portal entries,17openPRs, no indexed changes.
 
 ## Historical checkpoint: GC2295–GC2297
 
@@ -1179,3 +1177,61 @@ stated the correct value. At length2M a constant stream has order2M-1, whereas a
 so "largest" is false without an explicit narrower class. A complete pass over the new section's docstrings found
 no further occurrence of this issue. This also corrects GPT's failure to call out that helper prose at GC2317.
 Local owns the final source and its revised pin/check; GPT has not changed frozen artifacts or started a build.
+
+
+### GC2322: L1249 final source, essay and executed notebook PASS
+
+**Independent carrying/artifact review PASS; not yet a public submission or public Lean verification receipt.**
+Local remains sole posting owner. Full L1248 essay-prose/abstract, notebook spec, assembler, notebook driver/builder,
+output checks and all18 adversarial-fixture definitions were read. The tooling's reported control run is distinct
+from this GPT source read and from the actual final outputs inspected below. No GPT Lean/Wolfram run was made.
+
+**Exact text and meaning.** Source5c2e96a50add3b75e45e677a7e5f4d6a51ae1822db34c124002499c0bc5f54d5 differs from
+accepted58e04ef5 only in the two identified docstrings; the runner72205a41 changes only its pin/header. Proof bodies
+and five types remain fully carried from GC2317–GC2319. Essay-prose14c2cf37, assembledessay9d671428 and abstract
+b0bd946f8449e092b0359456036d1abc77f2ae0eca58b2d4d0e1f80320b7b4ac were read and matched. Both the assembler's check
+and a separate JSON-string decode recover the exact77055-byte source, and the abstract equals the front matter.
+The three laws retain their small-period guards; the corrected Delta^(2M+1) acts on the bit. K>=2 follows from
+E(2)<=2 and the period>=2 no-three contradiction for four initial doublings. The final +1 gives2058, not2057.
+The seven01 witness pairs show only the first countdown's M-1 sharpness at K=2,M=8. Full-threshold attainment,
+general recursion, density and the centre-column problem are excluded. The current README and credited scope carry.
+
+**Actual official packet.** All11 provided files in `cited/l1248-nested-official/` were fetched and digest-verified;
+manifest4523ebbf4de8bc0ec588d6ecfe2bbdb3eb3e6641a4761ce9c1cd827fd58a0ac2. Source and unchanged Check.lean b882f252
+match. Silent compile, empty stderr, checker rc0, partial/pass, no reasons or new axioms,507 replayed and228 unique
+standard-axiom declarations. All five headline names/types were compared with source; each is found/ok with exactly
+propext,Classical.choice,Quot.sound. Partial typeMatches alone is not a statement specification. Actual toolchain is
+Lean4.35.0arm64 commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc. M5 time5.48s,4.70user+0.47sys,RSS943144960bytes;
+supervisor5.72s/10samples,peak924640KiB/3processes,launch6763/min6364MiB,zero swap growth. Process cap and cleanup
+fields are null, and CPU limits are per-process, not aggregate enforcement. Binary is digest-only; no new imported
+library binary audit is claimed. The superseded58e04ef5 packet remains Local-reported; this final exact-source
+packet supplies its own acceptance without substituting an older pass.
+
+**Actual notebook packet.** All15 provided files plus manifest in `cited/l1249-nested-notebook/` were fetched and
+verified; manifestb7490f203c764669b2313e170156b3c99bb2476705498663fb19059bc9600824. Executed notebook
+SHA256a21eb79b6752d4d7e55281a478773ef088cb464cde8bd11fb1769fbd43326aa7,255500bytes. A non-evaluating lexical
+read finds exactly6Input/6Output/0Message cells. All six outputs match their retained cells after Wolfram escape and
+whitespace normalization (semantic InterpretationBox payloads for the environment and KernelChecked). Decoding the
+actual notebook's sole import literal recovers exact5c2e96a5. All507 environment names are unique and contain every
+one of the228 official declarations. The computation is exactly exponents0,2,3,5,6,7,8,9,10,11,12 and pairs
+11,10,11,then seven01. DirectoryQ isTrue. All five displayed types were read in full and match; all five displayed
+axiom sets are exact. The actual native payload is Success[KernelChecked] for the same LeanLinkTmp module,507
+with consistent MessageParameters and template; no display-only success is accepted.
+
+Summary/raw receipt, DONE, resource provenance and messages were read. The handler contains15194 events,15137
+General::newsym, with zero printed events; zero Message cells does not mean no internal messages. Other events
+include unavailable frontend, format lookup and temporary-file cleanup notices; the retained tally matches exactly.
+The builder ran21.1s; actual process40.90s,26.18user+2.16sys,supervisor40.96s with77samples,peak2219104KiB/5processes,
+launch6464/min5751MiB,zero swap growth. Its M5 limits differ from GPT's Intel limits; no Intel run or aggregateCPU
+certificate is implied. The parser's first attempt stopped on an unmapped ScriptL prose escape; adding that known
+character mapping allowed the same static parse to complete, without evaluating or rebuilding anything.
+Sanitized byte lengths differ from original metadata for three official files and two notebook files; every supplied
+sanitized digest matches. Binary temporary artifacts remain digest-only. The notebook contains no private path or
+credential-pattern matches in GPT's scan; Local additionally performed its actual identifier scan.
+
+**Current external comparison.** Complete known_find --new at2026-10-30T23:58:32.414684Z: kit
+7beff71ceb40e67010fd0713b1a9aecdded09ef2, portalupdated23:58:30Z,71entries,17openPRs;0added/0changed/0removed.
+Earlier actual OR/record-charge, PR55/61/62 and closed-PR51 comparisons remain the carrying prior-art record; a clean
+keyword index alone is not novelty proof. No new source was added by this refresh. The final package is cleared for
+Local's already-authorized portal posting. A new kit PR remains the owner's decision, and public receipt/verifier
+status must be read after posting. No further build, changed cap or automatic rerun is requested.

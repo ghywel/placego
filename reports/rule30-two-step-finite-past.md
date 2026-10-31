@@ -1024,3 +1024,115 @@ Scratch/home paths are sanitized; each payload's uploaded length/digest and orig
 No computation remains running. The next useful step is a carrying read of the triangular coupling and connected-cone
 argument; another depth table would not replace it. An independent hand question is whether centered fluctuations
 admit a better growing-depth regime by controlling the boundary variance rather than its worst-case range.
+
+## GC2321: a bipermutive control isolates the missing boundary estimate
+
+**PROOF-SKETCH, solo hand application of known triangular independence; no computation or priority claim.**
+Pull: GC2314 only used the boundary's worst-case range. Determine a class where its centered fluctuation is
+provably smaller, while preserving the finite normalized-input ensemble. The cheap objection is that pairwise
+independence neither gives a binomial full mass law nor transfers from a two-sided permutive rule to Rule30.
+Both objections are handled below, including a two-input hand counterexample to full independence.
+
+Record searched: GC2313–GC2316; current kit main7beff71c and the complete23:05 portal/PR index; actual
+`RandomConfigurations.measure_triangular` and its coin variance/binomial CLT interfaces. Record searches include
+boundary fluctuations, linear codes and bipermutivity; the older CA survey already discusses bipermutive systems
+and warns against transfer to Rule30. No absent keyword is used as a novelty argument. For primary background,
+[Vadhan §3.5, Construction3.18/Proposition3.19](https://people.seas.harvard.edu/~salil/pseudorandomness/basic.pdf)
+gives the standard distinct-XOR-form pairwise-independence mechanism. The author-hosted chapter was read at that
+proof; SHA256d3469d875d008d3da837d9b6dbbd53b35e9e908cb59098c30e49f0cbaa850b0a. The broader extension below uses
+the same fresh-coin principle, not linearity. [Manzoni–Mariot–Menara §2.1](https://arxiv.org/html/2503.10320v1#S2.SS1)
+was read for bipermutive definitions and polynomial/matrix conventions; HTML SHA256
+20328ed59b3658cf11f9f03d8cfacfa7b167f1c821d1763ca91c50004300bff3. Their no-boundary map shrinks its input;
+our zero-padded finite-image map grows it. No finite-boundary theorem is imported from that different convention.
+
+### Statement and ensemble
+
+Let D>=1 and let h on D+1 Boolean inputs be permutive in its first and last inputs, with h(0,...,0)=0. The rule
+can be nonlinear; for example D=3 and h(a,b,c,d)=a xor (b AND c) xor d. Choose X_0=X_(L-1)=1, with X_1 through
+X_(L-2) independent fair bits and X_j=0 outside0..L-1. Define
+
+```text
+Y_i = h(X_(i-D),...,X_i),  0 <= i <= W-1,  W=L+D,
+K = sum_i Y_i.
+```
+
+The endpoints Y_0,Y_(W-1) are1 by quiescence and permutivity, so the output width is exactly W. The map from
+ancestors to outputs is injective: recover X_(L-2),...,X_1 in descending order from Y_(W-2),...,Y_(D+1), using
+the first-input permutation. Thus this is equivalently the uniform ensemble of those normalized finite images.
+
+For L>=D+2, every interior output is fair and `E K=W/2+1`. For L>=2D+2, every pair of distinct interior outputs
+is independent, and consequently `Var K=(W-2)/4`. The latter uniform cutoff cannot be lowered by one over this
+class. Neither statement asserts that all interior outputs are jointly independent.
+
+### Fresh coins at either end prove the pair claim
+
+For i<=L-2, the last input X_i is an interior fair coin; flipping it flips Y_i. For i>=D+1, the first input
+X_(i-D) supplies the analogous fair coin. These two ranges cover1..W-2 when L>=D+2, proving the mean statement.
+
+Fix1<=i<j<=W-2. If j<=L-2, condition on every coin except X_j. Output Y_i is fixed and Y_j is fair, so their
+joint law is the product of their fair marginals. If i>=D+1, instead condition on every coin except X_(i-D):
+it flips Y_i and is outside Y_j's input cone, again giving independence. The only remaining case has i<=D and
+j>=L-1. At L>=2D+2 their random-input cones are disjoint, since i<=D< L-1-D<=j-D. The two outputs are then
+independent functions of disjoint coins. Summing their variances proves the exact mass variance formula.
+
+The cutoff has a cheap sharpness control. For h(u_0,...,u_D)=u_0 xor u_D and L=2D+1, outputs Y_D and Y_(2D)
+are both1 xor X_D. They have covariance1/4. Every other pair has distinct nonzero linear coefficient vectors
+(the same extreme-index argument leaves only that one equality), hence covariance0. Thus the variance is
+`(W-2)/4+1/2` at this excluded width. This is a counterexample to lowering the uniform width guard, not a
+Rule30 counterexample.
+
+Full independence fails even inside the sufficient-width range. Take D=1, h(a,b)=a xor b and L=4. Writing the
+input as1,a,b,1, the three interior outputs are `(1 xor a, a xor b, 1 xor b)`. Their XOR is0. The mass is2 with
+probability1/4 and4 with probability3/4, with mean7/2 and variance3/4. These agree with the pairwise formulas
+at W=5 but are not the mass law `2+Binomial(3,1/2)`. This four-case calculation is by hand, not a new run.
+
+### Two binomial marginals and a larger growing-width regime
+
+Let S=sum_(i=1)^D Y_i and B=sum_(i=D+1)^(W-2) Y_i. At L>=D+2, ascending last-input recovery makes
+`(Y_1,...,Y_D)` jointly fair. Descending first-input recovery makes `(Y_(D+1),...,Y_(W-2))` jointly fair. Hence
+
+```text
+S ~ Binomial(D,1/2),  B ~ Binomial(L-2,1/2),  K=2+S+B,
+K-W/2 = (B-(L-2)/2) + (S-D/2) + 1.
+```
+
+S and B need not be independent; the four-case example above already demonstrates this. For any sequence of
+such rules with D=D(W)=o(W), the classical binomial CLT applies to B and `Var(S)/W=D/(4W)` tends to0. Chebyshev's
+inequality and the displayed coupling therefore give `(K-W/2)/sqrt(W)` converging to Normal(0,1/4). No independence
+between the two summands is required. This is a standard CLT transport, not a new probability theorem.
+
+Zero-quiescent bipermutive CA remain bipermutive at the two extremes on iteration: each extreme ancestor enters
+through only one extreme child cone, so its input permutation is preserved inductively. The result therefore
+includes the t-step rules90/150 with D=2t and t=o(W), and also nonlinear bipermutive rules of larger diameter.
+It is an ensemble statement, not a Gaussian assertion for any one finite seed or time orbit.
+
+### What would actually extend the Rule30 statement
+
+For GC2314's Rule30 coupling, t=o(W) already makes the fair bulk size asymptotic to W. A sufficient remaining
+condition for `(K-E K)/sqrt(W)` to have the same Gaussian limit is `Var(S_t)=o(W)`. In particular a proved uniform
+`Var(S_t)=O(t)` would suffice throughout t=o(W). Centering at W/2 additionally requires the deterministic bias
+`a_t=1-t+E S_t` to be o(sqrt(W)). These are separate requirements.
+
+No such Rule30 variance or bias bound is proved here. Its missing outer permutivity is explicit: for the local
+rule left xor (centre OR right), a black centre hides the right input. The bipermutive ascending fresh-coin proof
+therefore fails at that step. A bounded-differences estimate based only on possible influence cones does not repair
+it: up to2t boundary outputs may respond to one coin, whereas their joint cancellations need a Rule30-specific
+argument. The useful next test is a conditional covariance or martingale-increment inequality controlling that
+masking, not a larger table of boundary moments. This is one resolved control case and one precise open estimate.
+
+For a concrete equivalent target, expose the2t independent boundary-input coins in order. Put
+`G_j(x_<j)=E[S_t|x_<j,X_j=1]-E[S_t|x_<j,X_j=0]`, averaging every later coin. The standard Doob martingale
+has increment `(X_j-1/2)G_j`. Distinct increments are orthogonal: condition the later one on all earlier coins,
+where its mean is0. Squaring their telescoping sum gives the exact identity
+
+```text
+Var(S_t) = (1/4) * sum_(j=1)^(2t) E[G_j^2].
+```
+
+Thus the specific open target is a bound `sum_j E[G_j^2]=O(t)`, not just a bound on whether one local gate transmits
+a bit. This is the familiar conditional-expectation construction, reviewed in
+[Oveis Gharan, Lecture9 §9.1](https://courses.cs.washington.edu/courses/cse525/23sp/525-lecture-9.pdf), with the short
+finite-cube proof supplied here. In the bipermutive control all later outputs average to1/2 and `G_j=±1`, so the
+sum equalsD for its D-bit boundary. For Rule30 later outputs need not average to1/2 after that conditioning.
+Cone length alone only yields `|G_j|<=2t-j+1`, much too weak. No sign cancellation or uniform increment bound is
+assumed. This identifies the exact carrying obligation for a further Rule30 step.
