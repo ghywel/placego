@@ -13133,3 +13133,40 @@ Following L1259.
 
 The theorem stays PROOF-SKETCH pending GPT's carrying read. The REVIEW-REQUEST flag from L1259 still stands. Local
 stops; GPT stays paused.
+
+
+## GC2332 — L1259/L1260 carrying review and one frozen front-certificate replay (31 October 2026, GPT)
+
+Owner requests review of Local's long block. Fetched32629e49 and read the complete round-five arguments, the latest
+front/descent/rigidity certificate sources, hardening notes and both addressed flags. Taking both requested hand
+reductions, with particular attention to the right-bounded mismatch hypothesis, t=1 healing exclusions, the clean
+tail modification, endpoint containment and the stronger phase7 uniqueness claim. No sub-agent or worker dispatch.
+
+Record searched: GC2327–GC2331, CL669, L1258–L1260 and actual PR69-derived definitions. Fresh complete external
+refresh19:21:22UTC: kit842b756f,23open PRs, no added/changed/removed indexed items. This is a review of the claimed
+proof, not a novelty decision. Prior-art comparison with Phillips's figures remains separate.
+
+Prediction: the exact frozen front certificate passes, its eight phase floors and minima justify the hand
+comparison, and changing one potential value is rejected. Counterfactual: any mismatch in those tables, or an
+accepted mutation, blocks acceptance of that route. Other controls: literal recurrence vs mismatch update, all32
+local configurations, reference words, unique predecessor of the retreat phase, finite-state healing classification,
+and the already carried witness formula. Unexpected check: finite support on all integers is impossible here;
+only bounded-above mismatch/finite positive tail is required and will be stated explicitly.
+
+ONE short replay is frozen before execution. Original source SHA256
+544d14c71a64c5ee1f2c77ea9aed813e65fbabc6374409f7200bc6ebb0f58ee5;
+wrapper tests/probes/gpt_ether_front_review.py SHA256
+73f7547bff5b4d110d501a7f82bdd7e0a7f01b00ba454dcddbbc8845133f8bae;
+run_capped.py c8c58b49e032fc4c20b61675adc4194646713e692a51815996791ac8943ffc56.
+No SAT solver, descent enumeration, GPU, sampling expansion or retry. One single-thread worker at nice10, two
+synchronous thermal children only (each timeout5s). Worker aggregate own+reaped-child CPU guard15s, checked around
+the finite certificate; per-process CPU5s backstop, wall30s, RSS256MiB,1MiB/file,8MiB disk, max3 tracked processes.
+The outer supervisor/monitor overhead is separate and must be included in the final aggregate receipt under the
+120s pilot ceiling; a per-process cap is not asserted to be that aggregate counter. Actual work is a fixed bounded
+certificate, not an unbounded search. Launch4096/running3072MiB free+inactive; swap-growth64MiB; thermal and monitor
+failure stop the stage without retry. Preflight19:21UTC:4734MiB free+inactive,swap0, thermal/scheduler100%,load3.90/2.92/2.25;
+actual process inventory showed no competing solver/Lean/research job. Sandbox-only process visibility failed;
+unsandboxed preflight succeeded before any job was launched.
+
+Exact launch after this freeze is pushed:
+python3 tests/probes/wolfram/run_capped.py --out /private/tmp/gc2332-front-review --cpu 5 --wall 30 --rss-mib 256 --file-mib 1 --disk-mib 8 --min-free-mib 3072 --launch-free-mib 4096 --swap-growth-mib 64 --track-tree --max-procs 3 -- nice -n 10 python3 tests/probes/gpt_ether_front_review.py
