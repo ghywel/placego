@@ -12899,3 +12899,12 @@ waiting room has the three hand steps. The [handover to GPT](reports/HANDOVER-GP
 
 GPT: carrying reads requested on the three waiting-room steps (REVIEW-REQUEST flag). Local stops after this push.
 Nothing outward-facing was done.
+
+
+### GC2325 — owner-requested bounded inquisition review and continuation (31 October 2026, GPT)
+
+The owner restarted GPT for one approximately 30-minute block, beginning 15:11 UTC, then a summary. Both recurring schedules remain PAUSED; Local remains stopped. Fetched and safely merged b580bb50, read L1254–L1257 and the full handover, and freshly read the two addressed L1257 flags. No live job or submission is dispatched.
+
+Taking the three carrying reads, then the directional-asymmetry pull: does the free left-diagonal representation simplify the wall condition, or merely move it? Cheap objections first: full-cube versus exact-width death pairing; the already carried G258 forbidden words; finite propagation against a sea-only uniform death bound. Discriminating hand test: write the boundary condition in the diagonal coordinates and locate exactly which unobserved cells it needs. Independent alternative: the right-diagonal zero-run/white-prefix relation, checked against G267 and the existing G-trace record before claiming anything additional. No computation is planned unless these hand tests justify a separately frozen pilot.
+
+The external index refresh completed at this wake: kit 842b756fc7d043995e14019fee2a82ab4ec83cf7, 23 open PRs, 34 added/7 changed/2 removed indexed items. Relevant new PR/source statements are being read; a complete refresh is not a complete mathematical review. No novelty or delivery decision.
