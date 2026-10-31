@@ -12705,3 +12705,54 @@ Public source5c2e96a5 and notebooka21eb79b match the accepted artifacts byte-for
 [Exact receipt and scope](reports/GPT-PROOF-DELIVERY-RESUMPTION-20261030.md#gc2324-exact-public-delivery-verified-full-halt-now-in-force).
 L1252's condition is fulfilled. GPT is fully halted, both schedules PAUSED, no job running and no further polls or
 research until explicit owner restart. GC2314/GC2321 reads remain held. No additional work or reply is requested.
+
+## CL668 — Cloud to the owner (GPT and Local halted): the overnight caught up, three submissions and a kit pull request; the portal check: 73 entries, seven new, four third-party; Quint's backward wave cascade is prior art for our backward-ocean periods and will be cited (2026-10-31 09:59 GMT)
+
+**Overnight (GC2277 to GC2324, L1217 to L1253, both workers now halted at the owner's word).**
+- **Package A** posted as R30-20261030-7b0d12 ("Half-rate prefix clocks for every two-input gate"; five headlines, 347
+  constants, standard axioms), Lean Verified within a minute; opened as kit PR #62 (`Rule30GateClocks`, importing
+  `Rule30DifferenceOrder`, 161 constants in isolation). Our PR #50 was merged as 41d03ed.
+- **Package B** posted as R30-20261030-803bc4 ("Finite ancestors of Rule 30 rows: roots, boundary tests and exact
+  counts"; seven headlines, 196 constants), Lean Verified and **Human Verified** within two hours. GPT's prior-art
+  pass (GC2290) found that Karttunen's OEIS entries A269160 and A269162 to A269166 (2016) already record the finite
+  map, inverse, earliest ancestor and age for finite rows; B is credited formal packaging with no novelty claim, which
+  the essay says. The finite-parent law, depth and count of CL659/CL662 are its content.
+- **A third, beyond my assessment:** GC2311 and L1242 derived in parallel the nested record thresholds for every
+  two-input gate clock (excess 3 needs at least 2058 pairs), carried two-party by hand (L1243), machine-proved by
+  Local (L1244: E(2m) <= m + 2 for all m < 2058, every gate family and seed), reviewed and posted as
+  R30-20261031-9861e5 (five headlines, 507 constants), Lean Verified at 00:06 GMT. Human Verified pending for A and
+  this one.
+- Side results along the way, all solo or two-party as marked in their entries: the finite ancestral-age bounds for
+  three- and four-black rows (GC2289/GC2291), the exact two-past rational series with a seven-class quotient (GC2307,
+  carried L1240), the two-step finite-past identity (GC2313, carried L1251, W >= 14 sharp), and GPT's reads of
+  Lowry's PR61. The workers also repaired my guard numbering (G19 to G21 are theirs).
+
+**The portal check** (AGENTS §8; the kit's PR index is blocked from this container, HTTP 403, so the daily checker's
+checkpoint did not advance here; the portal index was fetched directly at about 09:58Z and compared field by field
+with the 29 October snapshot; MAP section 20). 73 entries, 71 Lean Verified, 65 Human Verified, 29 Kit
+Contributions; ours 33, 32 Lean Verified, 28 Human Verified, 9 Kit Contributions. Seven new entries, four by third
+parties, read in their abstracts and headlines:
+1. **Quint's two stripe-prefix entries (a4691a, 5beddc)** build backward operators on the zero-boundary stripe prefixes
+   and prove the backward NOR recurrence, the period-3 wave and **the doubling of the spatial period from 3 to 6 one
+   step further back** (`wave_011_to_period6_step0`). That is our backward ocean of CL659 to CL661 (1, 3, 3, 6, ...)
+   and GC2272's 3 x 2^e family, proved in Lean in the stripe frame on 29 and 30 October, before our entries. **Prior
+   art, to be cited** in PRIOR-ART and in any future write-up of E2/E4'; our lab-frame statements (finite rows, the
+   root structure, the 3 x 2^e family at every depth) are not in Quint's headlines, but the mechanism is his first.
+   Note for G7: Quint's frame is the stripe prefix with a zero boundary, ours the two-sided finite row; the map
+   between them is the GC2266 bridge, not yet written for histories.
+2. **Lee's 60990f**: the alternating-driven right orbit from the one-cell right seed has gaps 3 or 5 only and never
+   the seven-gap word 3,5,3,5,3,5,3; a new all-index exclusion beside Bosdure's trap and our gap-word prior art
+   (L590, GC1009/1011). It touches CQ01's right-half language, where our channel bound lives; nothing of ours is
+   superseded, and its 18-cell relaxation method is the one to compare with our width-14 certificate (GC2209's
+   "not a complete classifier").
+3. **Quint's 0a5974** (Problem 3, Lean Unverified at fetch): head-cone locality and residue-flip lower bounds for the
+   kit's machine model, using the kit's `Rule30LeftUnbounded`. The first Problem-3 lower-bound entry on the page;
+   not our line.
+Status changes: our five merged-PR entries are now Human Verified and Kit Contributions; the words essays Human
+Verified; six third-party entries gained Kit Contribution tags. Human Verified for the Oct 27 to 29 backlog is now
+complete except 71f858 (Unverified) and the two newest.
+
+**For the owner's new inquisition.** The record is current to 09:58Z. Nothing on the page bears on the prize
+questions; the structural lines that moved overnight are the gate clocks (now three entries and a PR) and the finite
+past (one entry, prior art acknowledged, Quint's cascade to be added). Cloud is ready. No flags needed for halted
+workers beyond READ-LEDGER for their resumption.

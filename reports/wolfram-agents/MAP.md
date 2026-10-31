@@ -657,3 +657,40 @@ our nine entries of October 27 to 29 is still pending.
 
 Update (L1227): #50 merged as `41d03ed`; kit main is now `7beff71` (170 modules). Package A's catalog module is kit PR
 [#62](https://github.com/WolframInstitute/Rule30PrizeKit/pull/62), opened on the owner's word. Our open kit PRs: #62.
+
+## 20. The page at about 09:58Z, 2026-10-31 (Cloud, 2026-10-31 09:59 GMT; CL668)
+
+Seventy-three entries, seventy-one Lean Verified; sixty-five Human Verified; twenty-nine Kit Contributions. **Ours:
+thirty-three** (thirty-two Lean Verified, 71f858 Unverified), twenty-eight Human Verified, nine Kit Contributions. Seven new since
+section 17 (66 entries, 21:41Z on 29 October), none gone:
+- **R30-20261029-a4691a** (Quint with Gemini, P1, Lean Verified): constructive backward operators on the zero-boundary stripe
+  prefixes (`bstep1`, `bstep0`, `B_shift`), the two-step backward trichotomy (clone, Type I, Type II primitive roots), the period-3
+  NOR wave `V_i = NOT (V_(i-1) OR V_(i-2))`, the `3 * 2^n + 1` shift-template law and projective orbit reduction; answers the PR #45
+  review on 8abb51. **Touches our backward-ocean line** (CL659 to CL661, GC2264/GC2270/GC2272): the backward NOR recurrence and its
+  period-3 wave are our "two steps back: the period-3 crystal" in the stripe frame.
+- **R30-20261030-60990f** (Lee with Codex and Claude Code, P1, Lean Verified, Human Verified): the alternating-driven right orbit from
+  the one-cell right seed has first-return gaps 3 or 5 only, the first three 5, and the seven-gap factor 3,5,3,5,3,5,3 at no index
+  (3,3 and 3,5,5,3 excluded from Lee's earlier work); an 18-cell nondeterministic relaxation with a 2,040-state invariant pool.
+  Touches our gap-word line (L590, GC1009/1011, the 83 cuts; Bosdure's {3,5} trap) as a new all-index exclusion for the
+  one-cell right seed.
+- **R30-20261030-5beddc** (Quint with Gemini, P1, Lean Verified, Human Verified): the universal four-stage backward wave cascade for
+  Type I primitive roots: period-3 `(100)^infty` at backward step 3, its complement `(011)^infty` one step further, then the spatial
+  period **doubling from 3 to 6** (`wave_011_to_period6_step0`, `(000101)^infty`); global injectivity of `F_shift`, disjoint clone
+  rays; defect absorption and 16-ray all-length mortality. **Prior art for the periods 3, 3, 6 of our backward ocean** (CL659's
+  1, 3, 3, 6, ... in the lab frame; GC2272's 3 x 2^e family), proved in Lean in the stripe frame before our entries; to be cited.
+- **R30-20261030-7b0d12** (ours, P1, Lean Verified, 347 constants): half-rate prefix clocks for every two-input gate (Package A,
+  section 5 row 30); kit PR #62.
+- **R30-20261030-803bc4** (ours, P1, Lean Verified, Human Verified, 196 constants): finite ancestors of Rule 30 rows (Package B,
+  row 31).
+- **R30-20261031-9861e5** (ours, P1, Lean Verified, 507 constants): nested record thresholds for every two-input gate clock
+  (row 32): E(2m) <= m + 2 for m < 2058, every gate family and seed.
+- **R30-20261031-0a5974** (Quint with Gemini, P3, Lean Unverified at fetch): head-cone locality and 2-adic transient elimination for
+  `Rule30Problem3.Machine`; unconditional step lower bounds k + 1 for inputs at least 2^(k-1) (k <= 4) and log2 n + 2 via
+  residue flips; uses `Rule30LeftUnbounded.D_period_unbounded`. Not ours; the first Problem-3 lower-bound machinery on the page.
+Status changes since section 17: our five entries of the merged kit PRs #49, #50, #51, #54, #56 (8131b1, a94f21, 7d47a9, 3ca86f,
+a96cee) are now Human Verified and Kit Contributions (`Rule30PairedColumnRuns`, `Rule30TemporalProfiles`, `Rule30RightProfiles`,
+`Rule30UniversalStart`, `Rule30RingOrbits`); 5e2b66 and f7ace9 (the words essays) Human Verified; 803bc4 Human Verified within
+two hours of posting; 7b0d12 and 9861e5 await it. Third-party: 99db76, 23ac1b and 9460e3 Human Verified; 0554f7, 4d375d, 196859,
+d611aa, e324b6 and 8abb51 gained Kit Contribution tags. Kit main 41d03ed (PR #50 merged); PR #62 (Package A) open. The kit's PR
+index is not reachable from Cloud's container (HTTP 403), so `known_find.py --new` did not advance its checkpoint here; the portal
+half of the check is complete, the snapshot is kept in Cloud's scratch.

@@ -4929,3 +4929,13 @@ GC2321, 30 October2026: **known, reproved here** — distinct nonzero linear Boo
 Lecture9 §9.1). The [Bipermutive boundary control](reports/rule30-two-step-finite-past.md#gc2321-a-bipermutive-control-isolates-the-missing-boundary-estimate) supplies a finite normalized-endpoint application and its exact
 width guards, without a priority claim for the standard probability mechanisms. The nonlinear extension uses the
 same fresh-coin argument. The Manzoni–Mariot–Menara no-boundary convention is explicitly kept distinct.
+
+- **Quint, G.P.J.W. with Gemini, "Constructive Backward Operators, the Period-3 NOR Wave Trichotomy, and Projective Orbit Laws
+  for Zero-Boundary Stripe Primitive Roots" (R30-20261029-a4691a) and "The Universal Backward Wave Cascade, Clone-Ray
+  Disjointness, and 16-Ray All-Length Mortality for Zero-Boundary Stripe Prefixes" (R30-20261030-5beddc)**, portal, Lean
+  Verified (the second Human Verified). In the zero-boundary stripe frame: the backward NOR recurrence `V_i = NOT (V_(i-1) OR
+  V_(i-2))`, its period-3 wave `(100)^infty`, the complement `(011)^infty` one step further back, and the doubling of the spatial
+  period from 3 to 6 (`wave_011_to_period6_step0`). **Known, found after our CL659 to CL661 (30 October) and GC2272 (3 x 2^e at
+  every depth)**: our backward ocean's periods 1, 3, 3, 6 are this cascade seen from the two-sided finite row; Quint's Lean
+  statements precede ours by a day. Our root structure (unique finite parent, depth, counts: R30-20261030-803bc4) and the 3 x 2^e
+  family at every depth (GC2272, solo sketch) are not in his headlines. Added by Cloud, 2026-10-31 (CL668).
