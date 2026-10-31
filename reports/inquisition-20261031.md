@@ -1127,8 +1127,12 @@ possible. So 1, 2, 4, 8 are the four exact values, f is "nothing known", and a, 
   (1,0) and (1,1)) is excluded by a three-tick, two-level local argument: (1,1) forces X_(K−2)(t−1) = 1 and then
   X_(K−1)(t) = 1, against ΔX_K(t) = 0. Only a front at most four ticks wide is partial. This is why exact and good
   tops agree except near the window's end.
-- **P-K1 held.** The K = 24 and K = 27 maps agree at equal distance from the top after the 2-tick shift (for
-  example exact to 19 − (offset) and the same front words), within the range the two share away from their bottoms.
+- **P-K1 held in part.** After the 2-tick shift, the K = 24 and K = 27 maps agree cell for cell at distances
+  d = 0..5 and 9..18 from the top. They differ at three front cells at d = 6, 7, 8 (ticks 16 to 18 in K = 24's
+  frame), and near K = 24's free bottom (d ≥ 19). K = 27's two extra early ticks add knowledge only at its own
+  ticks 0 and 1. So the knowledge at the front also depends on how far below the bottom is: knowledge flows up
+  along the front from the free bottom, about 18 levels in K = 24. I did not foresee this. A top-down certificate
+  must not rely on it, and need not: anything a local top-down argument derives is sound whatever lies below.
 - **P-K2 REFUTED.** The front has **period 6 in depth (moving 4 ticks), not 3**. For K = 48 the exact region ends at
   e_d = 35, 33, 33, 32, 32, 31, then 31, 29, … and drops 2, 0, 1, 0, 1, 0 over each six depths. Far from both
   boundaries (d = 30..42) the front words are:
