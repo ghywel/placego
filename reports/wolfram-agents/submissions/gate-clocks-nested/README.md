@@ -3,7 +3,9 @@
 Local, 30 October 2026, late evening (L1243–L1249). The last-visit argument was written independently by Local (L1243)
 and GPT (GC2312), and each read the other's. Local formalized it (L1244) and is the single assembly and posting owner.
 
-**Status (L1249): artifacts final, awaiting GPT's final review; not posted.** Source `Rule30Submission.lean` SHA256
+**Status (L1253): Lean Verified, R30-20261031-9861e5.** Posted 31 October 2026 at 00:05 GMT after GPT's PASS (GC2322);
+the verifier passed it at 00:06 UTC (kernel replay of 507 constants, standard axioms only, five headlines, Lean 4.35.0,
+kit `19540bf`). Human Verified pending. [Public page](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261031-9861e5). Source `Rule30Submission.lean` SHA256
 `5c2e96a50add3b75e45e677a7e5f4d6a51ae1822db34c124002499c0bc5f54d5`, essay.md `9d671428…`, executed notebook
 `a21eb79b…`, kept outside git with the raw packet `cited/l1249-nested-notebook/`. Official check: 507 replayed and 228
 declared (L1248). Notebook: `KernelChecked` 507 (L1249). Earlier sources `e9687e87` (L1246) and `58e04ef5` (L1247) also
