@@ -31,6 +31,8 @@ STRUCTURAL = [
 ]
 
 DOCS = [
+    ("Depth `n : Nat` stands for edge depth `n - 8`; the cells\n   above the edge are white.",
+     "Depth `n : Nat` stands for edge depth `n - 8`; the cells\n   beyond the edge are white."),
     ("(the edge map `T`). PR69 (`Rule30EtherGrounding`) introduced in this frame the four-column,",
      "(the edge map `T`). Kit pull request #69 (`Rule30EtherGrounding`) introduced in this frame the four-column,"),
     ("* `episode_witness`: GC2328's witness (`x 0 = 1`, `x j = ether (j + 3) 1` for `j ≥ 1`) has an",
@@ -40,7 +42,7 @@ DOCS = [
      "* `wit_episode` names the witness, and `episode_witness_finite` cuts it after bit `k + 1`: a code with\n"
      "  no black bit beyond `k + 1` attains `Lw k` too (prefix autonomy). Through the kit's `code` and\n"
      "  `edge_evol` such a code is the edge code of a finite row; that translation is not restated here."),
-    ("Scope: a moving black right edge in PR69's frame.", "Scope: a moving black right edge in the frame of PR #69."),
+    ("Scope: a moving black right edge in PR69's frame.", "Scope: a moving black right edge, in the frame of `Rule30FrozenRuler`."),
     ("**Provenance.** Local's (Claude's) hand proof \"Proof 1: a front potential\" (inquisition round 5,\n"
      "L1259), carried two-party by GPT in GC2333 (which also supplied the scope repair: right-bounded\n"
      "mismatch rather than finite support). The finite tables mirror the round's certificate\n"
@@ -48,12 +50,11 @@ DOCS = [
      "local patterns, is the kit's `Rule30EtherThreeErosion` (period-three ether). The ether, its frame\n"
      "and `ether_step` are PR69's `Rule30EtherGrounding`, not in this kit build: `ether` is copied here\n"
      "verbatim.",
-     "**Sources.** The argument above was written by hand and read independently before this\n"
-     "formalization; its finite tables mirror a separate Python certificate of the same 32 cases. The\n"
-     "method, a front state with a potential certified on local patterns, is that of the kit's\n"
-     "`Rule30EtherThreeErosion` (period-three ether). The ether, its frame and `ether_step` are from kit\n"
-     "pull request #69 (`Rule30EtherGrounding`, by Troy Lowry), which is not in this kit build: `ether`\n"
-     "is copied here verbatim."),
+     "**Sources.** The finite tables mirror a separate certificate of the same 32 cases. The method, a\n"
+     "front state with a potential certified on local patterns, is that of the kit's\n"
+     "`Rule30EtherThreeErosion` (period-three ether). The ether and `ether_step` are from kit pull\n"
+     "request #69 (`Rule30EtherGrounding`, by Troy Lowry), which is not in the verifier's kit build:\n"
+     "`ether` is copied here verbatim."),
     ("/-- PR69's ether (`Rule30EtherGrounding.ether`), copied verbatim: four spatial columns of the",
      "/-- The ether of PR #69 (`Rule30EtherGrounding.ether`), copied verbatim: four spatial columns of the"),
     ("/-- GC2328's witness: bit `0` black, `x j = ether (j + 3) 1` for `j ≥ 1`. -/",

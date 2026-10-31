@@ -26,7 +26,7 @@ consecutive ticks `t ≥ s` with `iter t x k = ether i (t + q)` and
   code with an episode of `Lw k` ticks has the witness's prefix (bits `0 .. k + 1`) at its onset.
   Bits beyond `k + 1` are free, and other phase classes may also attain `Lw k`.
 
-Scope: a moving black right edge in the frame of PR #69. Nothing here concerns a fixed wall, the center
+Scope: a moving black right edge, in the frame of `Rule30FrozenRuler`. Nothing here concerns a fixed wall, the center
 column or densities.
 
 **The argument** (a front with a potential). `ether i t = e (t + 2 i)` with
@@ -34,7 +34,7 @@ column or densities.
 `e (t + 2 j + c)` for one of 8 phase classes `c`, and `iter_add` moves the onset to `0`.
 
 1. *Two-sided frame* (`X`, `E`, `D`). Depth `n : Nat` stands for edge depth `n - 8`; the cells
-   above the edge are white. The black-edge state and the wave obey
+   beyond the edge are white. The black-edge state and the wave obey
    `X_n(t+1) = X_n(t) ⊕ (X_(n-1)(t) ∨ X_(n-2)(t))` at every `n ≥ 2` (`X_step`, `E_step`), so the
    mismatch `D = X ⊕ E` obeys `D_n(t+1) = D_n(t) ⊕ F_φ(D_(n-1)(t), D_(n-2)(t))`, `φ = t + 2n + c`
    (`D_step`), with `F` OR at `φ ∈ {0, 6}`, `¬a ∧ b` at `{1, 4}`, `a ∧ ¬b` at `{2, 3}`, AND at
@@ -59,12 +59,11 @@ column or densities.
    depth `≥ k` — through the potential floor, or along the witness lane, whose moves are forced
    (front phases `2 → 7 → 4 → 1`, moves `+2, +2, +2, 0`, front `Rw`). That contradicts step 2.
 
-**Sources.** The argument above was written by hand and read independently before this
-formalization; its finite tables mirror a separate Python certificate of the same 32 cases. The
-method, a front state with a potential certified on local patterns, is that of the kit's
-`Rule30EtherThreeErosion` (period-three ether). The ether, its frame and `ether_step` are from kit
-pull request #69 (`Rule30EtherGrounding`, by Troy Lowry), which is not in this kit build: `ether`
-is copied here verbatim.
+**Sources.** The finite tables mirror a separate certificate of the same 32 cases. The method, a
+front state with a potential certified on local patterns, is that of the kit's
+`Rule30EtherThreeErosion` (period-three ether). The ether and `ether_step` are from kit pull
+request #69 (`Rule30EtherGrounding`, by Troy Lowry), which is not in the verifier's kit build:
+`ether` is copied here verbatim.
 -/
 
 namespace Rule30Submission

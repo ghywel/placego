@@ -76,3 +76,19 @@ the catalog form can import it.
 - **Not run:** the full catalog build.
 - **Status.** The local branch `ether-episode` holds commit 8642073 on e5e1728, not pushed. Opening the PR needs the
   owner's word. `kit-pr/PR-DESCRIPTION.md` is the draft text.
+
+## Docstring fixes and the pull request (L1269)
+
+- **Docstring fixes.** After the essay review, three docstring fixes went into both generators: "beyond the edge"
+  instead of "above", the frame credited to `Rule30FrozenRuler`, and no sentence about how the work was done. The
+  portal form now also says PR #69 is absent only from the verifier's build. No code line changed.
+- **The portal form is re-pinned.** Its new sha256 is `37733e44c5febb72abb0fd214a9839ca564f4f7ce55a4cbe566d42ee18cb584e`
+  (992 lines). The pinned check passed again on 842b756f: `ETHER_EPISODE_CHECK_PASS`, `out.txt` cce9100fe35f7e3e.
+- **The catalog form is regenerated and re-checked.** Its new sha256 is
+  `615998d207a495dc2b15f69ff0ed73474303bd500868860dbcfe6d8a43b6883a`. It builds with no warnings and passes
+  `Check.lean` on e5e1728 (483 constants, the same checker output 5a8d131aa16bf1af). The local commit was amended
+  before any push; it is now dd1f09a.
+- **The pull request is open.** At the owner's word, branch `ether-episode` (dd1f09a) was pushed to the owner's fork,
+  and the pull request was opened as
+  [WolframInstitute/Rule30PrizeKit#71](https://github.com/WolframInstitute/Rule30PrizeKit/pull/71) with the text of
+  `kit-pr/PR-DESCRIPTION.md`. The kit runs no CI checks on pull requests.

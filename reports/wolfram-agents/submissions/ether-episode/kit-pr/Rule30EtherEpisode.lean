@@ -28,7 +28,7 @@ consecutive ticks `t ≥ s` with `iter t x k = ether i (t + q)` and
   code with an episode of `Lw k` ticks has the witness's prefix (bits `0 .. k + 1`) at its onset.
   Bits beyond `k + 1` are free, and other phase classes may also attain `Lw k`.
 
-Scope: a moving black right edge in the frame of `Rule30EtherGrounding`. Nothing here concerns a fixed wall, the center
+Scope: a moving black right edge, in the frame of `Rule30FrozenRuler`. Nothing here concerns a fixed wall, the center
 column or densities.
 
 **The argument** (a front with a potential). `ether i t = e (t + 2 i)` with
@@ -36,7 +36,7 @@ column or densities.
 `e (t + 2 j + c)` for one of 8 phase classes `c`, and `iter_add` moves the onset to `0`.
 
 1. *Two-sided frame* (`X`, `E`, `D`). Depth `n : Nat` stands for edge depth `n - 8`; the cells
-   above the edge are white. The black-edge state and the wave obey
+   beyond the edge are white. The black-edge state and the wave obey
    `X_n(t+1) = X_n(t) ⊕ (X_(n-1)(t) ∨ X_(n-2)(t))` at every `n ≥ 2` (`X_step`, `E_step`), so the
    mismatch `D = X ⊕ E` obeys `D_n(t+1) = D_n(t) ⊕ F_φ(D_(n-1)(t), D_(n-2)(t))`, `φ = t + 2n + c`
    (`D_step`), with `F` OR at `φ ∈ {0, 6}`, `¬a ∧ b` at `{1, 4}`, `a ∧ ¬b` at `{2, 3}`, AND at

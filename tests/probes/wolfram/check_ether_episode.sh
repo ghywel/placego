@@ -12,7 +12,7 @@ from pathlib import Path
 import hashlib, os, sys
 out = Path(os.environ['CAPPED_OUT'])
 pins = [('catalog', sys.argv[1], '2ea831a9de66fefc63e621a218f49e53ed4230f41a15577bfa8e4b01c3c95c22'),
-        ('submission', sys.argv[2], 'e257396cbbd35cc3a8479f73207f366ce0bb24324bee59a25502249f7063d082'),
+        ('submission', sys.argv[2], '37733e44c5febb72abb0fd214a9839ca564f4f7ce55a4cbe566d42ee18cb584e'),
         ('checker', sys.argv[3], 'b882f2527a1d6e720828a0c729cc80c3977905ed9207d09af22f8d153a073905')]
 data = {}
 for name, path, expected in pins:

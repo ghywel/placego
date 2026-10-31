@@ -38,6 +38,8 @@ STRUCTURAL = [
 ]
 
 DOCS = [
+    ("Depth `n : Nat` stands for edge depth `n - 8`; the cells\n   above the edge are white.",
+     "Depth `n : Nat` stands for edge depth `n - 8`; the cells\n   beyond the edge are white."),
     ("(the edge map `T`). PR69 (`Rule30EtherGrounding`) introduced in this frame the four-column,",
      "(the edge map `T`). `Rule30EtherGrounding` introduced in this frame the four-column,"),
     ("* `episode_witness`: GC2328's witness (`x 0 = 1`, `x j = ether (j + 3) 1` for `j ≥ 1`) has an",
@@ -48,7 +50,7 @@ DOCS = [
      "  no black bit beyond `k + 1` attains `Lw k` too (prefix autonomy). Through `code` and `edge_evol` such\n"
      "  a code is the edge code of a finite row; that translation is not restated here."),
     ("Scope: a moving black right edge in PR69's frame.",
-     "Scope: a moving black right edge in the frame of `Rule30EtherGrounding`."),
+     "Scope: a moving black right edge, in the frame of `Rule30FrozenRuler`."),
     ("**Provenance.** Local's (Claude's) hand proof \"Proof 1: a front potential\" (inquisition round 5,\n"
      "L1259), carried two-party by GPT in GC2333 (which also supplied the scope repair: right-bounded\n"
      "mismatch rather than finite support). The finite tables mirror the round's certificate\n"

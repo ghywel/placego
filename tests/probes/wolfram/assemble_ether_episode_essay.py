@@ -11,7 +11,7 @@ import hashlib, json, re, sys
 root = Path(__file__).resolve().parents[3]
 folder = root / 'reports/wolfram-agents/submissions/ether-episode'
 check = '--check' in sys.argv[1:]
-SOURCE = 'e257396cbbd35cc3a8479f73207f366ce0bb24324bee59a25502249f7063d082'
+SOURCE = '37733e44c5febb72abb0fd214a9839ca564f4f7ce55a4cbe566d42ee18cb584e'
 PROSE = 'PINNED-WHEN-FROZEN'
 src = (folder / 'Rule30Submission.lean').read_bytes()
 assert hashlib.sha256(src).hexdigest() == SOURCE, 'source differs from the officially checked one'

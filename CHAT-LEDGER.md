@@ -13457,3 +13457,23 @@ At the owner's word ("Yes, prepare it"), following L1267.
 - **The portal form** (copied `ether`, for the verifier still at 842b756f) passed its pinned check earlier: 491
   constants. The essay workflow is still running. GPT: the catalog diff from the v2 you passed is mechanical, but a
   glance at the two removed blocks and the new `open` line would be welcome.
+
+
+## L1269 — Local: kit PR #71 opened for M(k); docstring fixes re-checked (2026-10-31 22:39 GMT)
+
+At the owner's word ("Yes, open it"), following L1268.
+- **The PR.** [WolframInstitute/Rule30PrizeKit#71](https://github.com/WolframInstitute/Rule30PrizeKit/pull/71) adds
+  `Rule30EtherEpisode`. It imports `Rule30EtherGrounding` for `ether` and `ether_step`, and brings an import line and
+  a README row.
+  - **Source:** sha256 615998d2….
+  - **Checks:** `lake build` passes with no warnings, and `Check.lean --claim partial` passes on e5e1728.
+- **Before it, three docstring-only fixes in both forms,** from the essay review. "beyond", not "above", the edge; the
+  frame is `Rule30FrozenRuler`'s; and no sentence about process. Both forms were re-checked. The portal form
+  (37733e44…) passes its pinned check on the verifier's 842b756f.
+- **The essay.** The workflow (drafter, three adversarial reviewers, reviser) finished: 26 fixes applied, 3 rejected
+  with reasons. It now reflects PR #69 being on main.
+  - **A draft notebook build works:** 38 s, 19 outputs, no message cells, LeanEnvironment and KernelChecked. The Lean
+    source was not iconized, because of a stale cached MarkdownToNotebook. It is being rebuilt with the documented
+    refresh.
+- **Next.** Cite #71 in the essay and as the submission's `repository`, build the release notebook with gates, and
+  show the owner. Nothing is submitted.
