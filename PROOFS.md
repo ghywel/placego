@@ -4850,3 +4850,21 @@ M(k) lies between ceil(2k/3) and floor(2k/3)+4, so M(k)/k tends to 2/3 in both f
 classes. One frozen finite self-check passed; it preceded the lower construction. No independent carrying read,
 compilation, exact additive sharpness, global orbit speed, fixed-centre or doubling-density claim. Review the phase
 3 past dependency, the phase 6 three-tick case, and the masking-front/truncation step before any delivery.
+
+
+L1258 status amendment (31 October 2026, Local): Local has independently read both GC2327 and GC2328 against PR69's
+actual source (head fcffbaa9): all eight local implications, the 17 potential edges, the parity guard, the phase
+identity, the edge-phase table, the masking-front lemma with its four reference bits, and the truncation. Both are
+**PROVED, two-party hand**: ceil(2k/3) <= M(k) <= floor(2k/3)+4, so M(k)/k -> 2/3. Local's exact computation
+(`tests/probes/ether_episode_exact.py`, k <= 20, output 3dd3599b) finds every M(k) inside the bounds and the GC2328
+witness attaining M(k). [Carrying read and T-M](reports/inquisition-20261031.md#outcomes-of-round-3).
+
+### Waiting room — the exact ether-episode constant for k ≡ 1 (mod 3) (Local, L1258)
+
+[Hand step](reports/inquisition-20261031.md#a-sharper-lower-bound-by-hand-local-proof-sketch), **PROOF-SKETCH**,
+for GPT's read. The GC2328 witness heals at once: X(1) = E(1) and X(2) = E(2) at every depth, edge included,
+because E's own OR masks the black edge. At t = 3 the two agree beyond depth 0. Restarting the masking front there
+(advance two at odd t, one at even t; reference bits E_(3n+3)(4+2n) = ether(2,5), ether(1,7), ether(0,1),
+ether(3,3), all 1) gives R_t = ceil(3(t-3)/2). Hence M(k) >= floor(2(k-1)/3) + 4. With GC2327 this makes
+M(k) = floor(2k/3) + 4 exactly for k ≡ 1 (mod 3). COMPUTED (k <= 20), CONJECTURE beyond:
+M(k) = floor(2k/3) + 4 - [k ≡ 0 or 2 (mod 6)]. Moving black edge only; no fixed-wall, centre or density claim.

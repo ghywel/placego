@@ -111,7 +111,7 @@ checkerboard's reason is known: it is a fixed point, and with depth 1 black it k
 masks the wall (Condrey; G11.1, G128.1; it heals patches within 4 steps). White-sea champions do not imitate it
 (agreement with the checkerboard 0.42–0.57, against 0.50 at random).
 
-- **CONJECTURE (Local).** For every spatially periodic sea other than white and the two checkerboards, every finite
+- **REFUTED (GC2326/GC2329; accepted in L1258): wide checkerboard patches and the kit's period-seven ether 1100001 are counterexamples.** **CONJECTURE (Local).** For every spatially periodic sea other than white and the two checkerboards, every finite
   patch beside the wall dies within a bound depending only on the sea.
 - **Why it might be provable.** A non-white periodic sea is "active": it sends news to the wall at once and for
   ever. A finite-state argument on the sea's eternally periodic forcing may close it.

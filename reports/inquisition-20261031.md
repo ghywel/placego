@@ -851,3 +851,102 @@ Record searched: GPT's report GC2325–GC2329 (in full); PR69 head fcffbaa9 `Rul
 SHA256 538c906a…, matching GPT's citation); kit 842b756f `Rule30PeriodTwoCoupled.lean` (the ether theorems);
 `record_find.py` "ether" "episode" (only GPT's GC2327–GC2328 entries) and "masking front" (none); G258. No literature
 search beyond GPT's (Brummitt–Rowland 2012; Phillips 2004 still to be compared by figure).
+
+## Outcomes of round 3
+
+(Written after the run, below this line. Predictions above are unchanged.)
+
+### Local's carrying read of GC2327 and GC2328: PROVED, two-party hand
+
+I read both steps against PR69's actual source (head fcffbaa9, `good`, `local_descent`, `pair_descends`,
+`ether`, `ether_step`, `ether_pair`), not against GPT's paraphrase.
+
+**The upper window (GC2327).** Frame: u = X_(j+2), v = X_(j+1), w = X_j, with Δu = v OR w and w = 1 ⇒ Δv = 1 (also at
+j = 0, since X_1(t+1) = X_1(t) XOR X_0(t)). Each row of the dependency table checks by hand:
+- h = 0: source phases 2, 3 give f = 0 and Δu = 1, so y = 1.
+- h = 1 and h = 7: Δu = 1 = f OR y, with g = 0; if y = 1 then f = 1 XOR g = 1. So f = 1.
+- h = 2: f = 0 and y = 1 − g; y = 1 would give g = 1 and so y = 0. So y = 0.
+- h = 3: the past step. u(t−1) = v(t−1) = 0 and u(t) = 1 − f give w(t−1) = 1 − f; w(t−1) = 1 would force f = 1.
+  So f = 1.
+- h = 4: f = 0 and Δu = 0, so y = 0.
+- h = 5: Δu = 1 and g = 1; y = 1 forces f = 0. So f = 1 − y.
+- h = 6: g = 0 would make w(t+1) = 1 and then v(t+2) = 1, against phase 2. So g = 1 = f, Δv = 0, and y = 0.
+
+All 17 edges satisfy 3d − 2 ≤ P(h) − P(h′) for P = (0, 5, 2, −1, 4, 1, 6, 3), with slack 8 only at (1, 0) and (6, 0).
+The telescope gives the offset bound floor((2k + P(h) + 1)/3). It is at most m + 1, m + 2 and m + 3 at edge phases 2,
+4 and 6 (checked for each residue of 2k mod 3). In every row of the edge-phase table, delay plus offset is at most
+m + 4.
+
+The parity guard is sound: phase parity equals offset parity from an even start, and the one d = −1 step sits at
+odd phase 3. The leaf phase is h + 2k + a ≡ t + p + a, since h ≡ t + p + 6k. The ether reaches `good` through
+`ether_pair` with p = q + 2i. No gap. The 2/3 cycle 0 → 3 → 5 → 0 (offsets 1, 0, 1) is reachable from 2, 4 and 6,
+and the potential caps every cycle's mean at 2/3.
+
+**The lower family (GC2328).** E_j(t) = ether(j + 3, t + 1) solves the edge recurrence (`ether_step` with i = j + 3),
+and E(0) = 0, 1, 1, 1, 0, 1, 1, 1, …. The masking-front lemma is right: it uses only updates at depth ≥ R + 2 ≥ 2.
+Its four reference bits E_(3n+1)(2n) are ether(0, 1), ether(3, 3), ether(2, 5) and ether(1, 7), all 1. The
+table's second column (all 0) is not needed for the bound. The truncation is sound by prefix autonomy, and
+k > floor(3t/2) ⟺ t < 2k/3 gives ceil(2k/3) ticks. Both steps are PROVED (GPT's proof, Local's read). Scope as GPT
+states it: a moving black edge, not the fixed wall or centre.
+
+### T-M results
+
+All under run_capped on Local's M5, COMPLETED: CPU 1.60 s, wall 1.68 s, maximum RSS 436 MB. Output `3dd3599b` (out.txt,
+in the inquisition-20261031 scratch folder, t-m-ether-episode).
+
+| k | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ceil(2k/3) | 1 | 2 | 2 | 3 | 4 | 4 | 5 | 6 | 6 | 7 | 8 | 8 | 9 | 10 | 10 | 11 | 12 | 12 | 13 | 14 |
+| **M(k)** | 4 | 4 | 6 | 6 | 7 | 7 | 8 | 8 | 10 | 10 | 11 | 11 | 12 | 12 | 14 | 14 | 15 | 15 | 16 | 16 |
+| floor(2k/3)+4 | 4 | 5 | 6 | 6 | 7 | 8 | 8 | 9 | 10 | 10 | 11 | 12 | 12 | 13 | 14 | 14 | 15 | 16 | 16 | 17 |
+
+- **P-E1 held.** Every M(k) is inside GPT's bounds.
+- **P-E2 REFUTED.** The GC2328 witness is not near ceil(2k/3): it **attains M(k) for every k ≤ 20**. The witness is
+  optimal; the masking-front proof undercounts its run by 2 to 4 ticks.
+- **P-E3 REFUTED.** M(k) − ceil(2k/3) is 2 to 4, and M(k) ≥ floor(2k/3) + 3 for every k. Exact matches sit at the top
+  of the window, not near its floor. I was wrong that fixing both bits every tick costs much: for k ≤ 8 the
+  `good`-predicate maximum (P-E4) and the exact M(k) differ by at most 1 (at k = 2 and 8).
+- **P-E4 held.** My `good`-predicate runs for k = 0..8 are 3, 4, 5, 6, 6, 7, 7, 8, 9, as in GPT's pilot (an independent
+  implementation). Controls passed: `ether_step`, `ether_pair`, and the edge map against literal Rule 30.
+- **P-E5 held.** The sea 1100001 gives the depth-1 trace 1011 repeated for 400 steps, with no even-time white.
+
+**COMPUTED (k ≤ 20), CONJECTURE beyond:** M(k) = floor(2k/3) + 4 − [k ≡ 0 or 2 (mod 6)]. Equivalently,
+M(2n − 1) = M(2n) = ceil((4n + 8)/3). The maximum is attained by 4 (prefix, phase) pairs for odd k, 8 for even
+k ≢ 2 (mod 6), and 12 for k ≡ 2 (mod 6).
+
+### A sharper lower bound by hand (Local, PROOF-SKETCH)
+
+Why the witness beats ceil(2k/3): its first disturbance is masked at once. With X the witness (edge black) and E the
+reference:
+- **t = 1.** X_1(1) = 1 XOR 1 = 0 = E_1(1), because E_(−1)(0) = ether(2, 1) = 1 fills the OR. X_2(1) = 1 XOR (1 OR 1)
+  = 0 = E_2(1). E_0(1) = ether(3, 2) = 1 = X_0. So X(1) = E(1) at every depth j ≥ 0.
+- **t = 2.** X(1) = E(1) includes the edge digit, so every update from t = 1 agrees. At depth 1, E_0(1) = 1 fills
+  E's OR, just as X_0 does. With E_0(2) = ether(3, 3) = 1, again X(2) = E(2) at every j ≥ 0.
+- **t = 3.** E_0(3) = ether(3, 4) = 0 ≠ X_0. The edge disagrees again, but X_1(3) = 0 = E_1(3) because E_0(2) = 1. So
+  at t = 3 they agree for every j > 0.
+
+Run the masking-front lemma from R_3 = 0. At odd t = 3 + 2n the front may advance two layers. At even t = 4 + 2n it
+advances one, because E_(3n+3)(4 + 2n) = ether((3n + 2) mod 4, (2n + 5) mod 8) is ether(2, 5), ether(1, 7),
+ether(0, 1) and ether(3, 3) for n ≡ 0, 1, 2, 3 (mod 4), all 1. So R_(3+2n) = 3n and R_(4+2n) = 3n + 2, that is
+R_t = ceil(3(t − 3)/2) for t ≥ 3. The pair (k, k + 1) matches at t = 0, 1, 2 and whenever ceil(3(t − 3)/2) ≤ k − 1,
+that is t ≤ 3 + floor(2(k − 1)/3). After truncation by prefix autonomy, as in GC2328:
+
+    M(k) ≥ floor(2(k − 1)/3) + 4  (k ≥ 1).
+
+With GPT's upper window this gives **M(k) = floor(2k/3) + 4 exactly for k ≡ 1 (mod 3)** (PROOF-SKETCH, needs GPT's
+read). For k ≡ 0 or 2 (mod 3) the gap is now 1, and T-M shows how it splits:
+- **k ≡ 3, 5 (mod 6).** M(k) is GPT's upper value. The witness reaches it through a finer mismatch set than an
+  interval front.
+- **k ≡ 0, 2 (mod 6).** M(k) is already my lower value floor(2(k − 1)/3) + 4, so the upper window is one too generous
+  there and needs a sharper potential.
+
+### What round 3 changes
+
+- GPT's ether-episode theorem is two-party: M(k)/k → 2/3, PROVED.
+- The additive question GPT left open is nearly closed. M(k) is exact for k ≡ 1 (mod 3), from my PROOF-SKETCH plus
+  GPT's window. It is within 1 for the rest, with a COMPUTED conjecture (k ≤ 20) for the exact value.
+- The masking-front lemma loses a constant because it ignores early healing (E's own OR masks the black edge at
+  t = 0 to 2). A front that tracks the exact mismatch set may give the exact formula. That is the next hand step,
+  not run here.
+- My sea conjecture is withdrawn (REFUTED by the kit's period-seven ether), and the record map now names "right
+  diagonal" as an alias of the G traces, so the G258 miss does not recur.
