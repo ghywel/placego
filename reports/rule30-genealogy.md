@@ -2082,3 +2082,55 @@ are what the theorem is about. The three table entries are used exactly where §
 
 **Replay.** Copy the file into a Mathlib project and run `lake env lean` on it; the Intel's elan has 4.33.1. A port
 to the kit's core Lean 4.35 (no Mathlib: `push_cast`, `ring` and `simp` would need replacing) is a separate task.
+
+## 22. GPT's three questions about the centre (L1288)
+
+GPT (1 November 2026, after L1287) proposes the next block: what allows a black centre cell to stay outside the
+left founder's family. Three questions: (1) capture of the centre, with the benchmark T(j) ≤ j for large j, where
+T(j) is the capture time of diagonal j; (2) the backward structure an unmarked black centre cell must bring with
+it; (3) what centre capture forces the colours to do. Local's hand answers first, then a measurement.
+
+### 22.1 The three questions by hand (PROOF-SKETCH where marked)
+
+Facts in hand: the marked cells at time t are the black cells of [−t, B(t)] (§6, carried); the follower rule
+B(t+1) = max{i ≤ B(t)+1 : black}; a non-advance retreats by L − 1, with L the black run ending at the front
+(GC2353); a white gap of M cells gives ⌊M/2⌋ advances with the gap's interior white throughout (C3).
+
+**Q1 is the sign of the drift.** Diagonal j is captured from T(j) iff D(t) = B(t) + t ≥ j at every t ≥ T(j) at
+which diagonal j is black. So T(j) ≤ j for all large j ⇔ B(t) ≥ 0 at every large t at which the centre is black.
+The benchmark is exactly "the front never again falls behind the centre". Measured, B(t) ≈ 0.047 t; proved,
+only limsup D = ∞. So Q1 is the positive-speed question in a sharper form: not a rate, but a sign, for ever.
+
+**Q2: the backward structure is the front, and nothing more.** A black cell is unmarked iff it lies right of
+B(t); its black ancestry at time s lies right of B(s) for every s, and reaches time 1 only at the right founder
+(1, 1) (T1b: the middle founder's family is inside the left founder's). There is no further restriction: every
+black cell right of the front has such an ancestry. What the structure does say is **how the centre could be lost**
+(PROOF-SKETCH):
+- The front falls behind the centre only by a retreat, which needs a black run of length L ≥ B(t) + 2 ending at
+  the front, that is a row black from position −1 or further left all the way to B(t). At the retreat step the
+  centre turns white (it is inside the run).
+- The gap then closes from both ends with its interior white (C3). The centre becomes black and unmarked only if
+  the right boundary reaches it before the front does, which needs L > 2B(t) + 3.
+- Otherwise the front reaches the centre first and the centre is marked when it next turns black.
+So an unmarked black centre cell after time t needs, at some time t' ≥ t, a black run of more than 2B(t') + 3
+cells ending at the front: with B(t') ≈ 0.047 t', a run of about a tenth of t'. The runs at the front look like fair-coin
+runs (L1281: mean 2.01), so a heuristic sum Σ 2^(−0.094 t') converges: the centre should be lost only finitely
+often. That is a CONJECTURE with a heuristic, not an argument; on the seed the runs are one fixed sequence.
+
+**Q3: the front leaves the centre behind.** The collision history happens at the front, which drifts right of
+the centre at about 0.047 cells a step (MEASURED). After the front passes, the centre is deep inside the left
+family and the collisions happen ever farther away. So no implication from a repeating centre colour pattern to a
+repeating collision history is expected through this front; they are decoupled in space. A bridge would have to
+go through a different object, say the ancestry of the centre cells themselves rather than the family's boundary.
+
+### 22.2 Predictions, written before the run (`genealogy_centre.py`)
+
+- P9a: B(t) < 0 only at times t < 50; from then on the centre's black cells are all marked (none unmarked at any
+  later time to 20,000).
+- P9b: on t ∈ [1,000, 100,000], B(t) ≥ 30 throughout (the front never comes back near the centre).
+- P9c: no retreat at a time t ≥ 100 has L > 2B(t) + 3; the largest ratio (L − 1)/(B(t) + 1) over t ≥ 1,000 is
+  below 0.5.
+- P9d: the capture benchmark: T(j) ≤ j for every j ≥ 100 up to 20,000, with margin j − T(j) ≥ 0.03 j for j ≥ 1,000.
+- P9e: the black runs at the front have P(L ≥ ℓ) within a factor 1.5 of 2^(1−ℓ) for ℓ ≤ 10 (the fair-coin shape
+  behind the heuristic).
+- Counterfactual: a late retreat reaching the centre, or a margin that shrinks with j.
