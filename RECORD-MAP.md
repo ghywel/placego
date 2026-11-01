@@ -2309,6 +2309,11 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   front has B + t → ∞ and a non-eventually-periodic (r, L) history (two-party, hand). Seed check
   `tests/probes/genealogy_capture_seed.py`: capture at about j − 7 on the orbit. Search aliases: capture, marked
   edge, band exit, nonperiodic collision history.
+- L1285 (Local, 1 November 2026): [the gate question](reports/rule30-genealogy.md#19-the-gate-question-l1285-at-the-owners-direction).
+  Capture needs f(000) = 0, f(001) = 1, f(100) = 1 (32 rules); the lock needs left-permutivity and the shield
+  (Rules 30, 210). Census: 40 of 64 edge rules pass the bounds (COMPUTED), 8 by a second mechanism. Sensitive
+  black ancestry from the edge dies at t = 2; orphans (011 children) are a quarter of black cells. Search aliases:
+  orphan, sensitive ancestry, gate identities, rule census, Rule 210, Rule 110 capture.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 

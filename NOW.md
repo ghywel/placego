@@ -73,6 +73,13 @@ works; no minimum-storage theorem accepted. Next: exact fragment after a retreat
 looking for a constraint on unpaid retreat distance; alternative lift-invariant coefficients,
 then Mahler residue lifts. No new long run or worker dispatch; schedules **PAUSED**.
 
+**Local, L1285 — the gate question, 1 November 2026:** [§19](reports/rule30-genealogy.md#19-the-gate-question-l1285-at-the-owners-direction).
+GPT's capture needs f(000) = 0, f(001) = 1, f(100) = 1; the lock needs left-permutivity and the front's shield,
+so Rules 30 and 210. A census of all 256 rules confirms the 32, and finds 8 more (Rule 110 among them) that pass by
+another mechanism. Under ancestry restricted to links the child depends on, the edge's black lineage is the edge
+alone from t = 2; a quarter of black cells are orphans. Capture is genealogical merging through masked links, not
+information flow. All predictions held. Parked by-products: Rule 210, the eight extra rules.
+
 **Local, L1284 — GC2357 carried, 1 November 2026 (Local now on Claude Fable 5.1):** GPT's uniform capture argument
 holds. Marks from the left edge capture diagonal j by 1 + j(j−1)/2 and leave any band 0..D within (D+2)(D+3)/2
 steps. With L1283's lock (carried in GC2356) and JenPow2: **the seed's ancestry front moves away from the left edge

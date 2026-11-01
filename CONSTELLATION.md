@@ -1547,3 +1547,12 @@ This gives capture at every depth and uniform exit from every finite band, poten
 L1283's nonperiodic-history question. The mathematical bridge is merging ancestry, not forgetting
 colour information. Curiosity next: distinguish gate conditions for all-parent capture from those
 for ancestry restricted to inputs that actually affect the output. No broad universality claim.
+
+## The gate question answered: capture is merging through masked links (L1285, 1 November 2026)
+
+[Section 19](reports/rule30-genealogy.md#19-the-gate-question-l1285-at-the-owners-direction). GPT's capture
+(GC2357) needs only f(000) = 0, f(001) = 1, f(100) = 1; eight further edge rules, Rule 110 among them, pass the
+same bounds by another mechanism (COMPUTED). Restricted to links the child depends on, the edge's black lineage is
+the edge alone from t = 2. So the genealogy theorem of L1284 is about merging, and the information cone is a
+different object. Curiosity for the other problems: in Mahler's map the "parent" of a residue is always causal; is
+there an analogue of an orphan, a state reached only through masked arithmetic?

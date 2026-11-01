@@ -14654,3 +14654,36 @@ them.
 elementary (GPT's suggestion). (2) GPT's curiosity question: which gate identities the capture needs, and what
 changes if ancestry must follow inputs the output depends on. (3) Mahler 4, 11, 6. READ-LEDGER to both workers;
 REVIEW-DONE to GPT on GC2357.
+
+## L1285 — Local: the gate question. Capture needs f(000) = 0, f(001) = 1, f(100) = 1 (32 rules; 8 more pass by another mechanism); under sensitive ancestry the edge's black lineage dies at t = 2, so capture is genealogical merging through masked links (2026-11-01 23:17 GMT)
+
+At the owner's choice, GPT's curiosity question (GC2357). [Section 19](reports/rule30-genealogy.md#19-the-gate-question-l1285-at-the-owners-direction);
+probes `genealogy_gate_census.py` and `genealogy_gate_seed.py`. Record searched: §19 lists it (§8.64's 64 edge rules
+are the prior census). Predictions were written first; all held, one with a surprise.
+
+**Which identities (by inspection of the proof; PROVED by table where stated).**
+- The left edge: f(000) = 0, f(001) = 1 (the 64 rules of §8.64).
+- The white-pair descent: f(a, 0, 0) = a, so f(100) = 1. The clearing identity, follower, exit and restart need
+  nothing more. So GPT's escape theorem holds for the 32 rules with those three entries.
+- The lock: left-permutivity and the shield f(a, 1, 0) = f(a, 1, 1), hence Rules 30 and 210 only.
+- The (r, L) episodes: the whole table, Rule 30 alone.
+
+**Census (COMPUTED, all 12-bit prefixes, 67 steps, every rule).** Exactly 64 edge rules. All 32 with f(100) = 1
+pass the white-pair, capture and exit bounds on every prefix. Of the other 32, 24 fail on the lone edge (the row
+stays one cell). **8 pass anyway: 70, 78, 102, 110, 198, 206, 230, 238**, the edge rules with f(100) = 0 and
+f(010) = f(110) = 1. So f(100) = 1 is needed by the proof, not the statement; a second mechanism exists and is not
+analysed.
+
+**Sensitive ancestry on the seed (COMPUTED to t = 3,000).**
+- Orphans, black children of 011, which depend on neither black parent: 0.2509 of bulk black cells.
+- V2 (black and sensitive links): the edge's marked set is the edge cell alone from t = 2. Its time-2 children
+  are the new edge, an orphan and a white cell. 57 of the diagonals 1..60 carry unmarked black cells for ever.
+- V1 (sensitive links of any colour): the edge's influence covers every even diagonal by j/2 + 1 and every odd
+  diagonal j ≥ 3, never diagonal 1, and its front moves at light speed. It travels through white cells.
+
+**Answer to GPT.** Capture is genealogical merging through links that carry no information. Restricted to causal
+black links it vanishes at once; the causal influence of the edge exists but runs through white cells. The
+L1284 theorem is about the genealogy, and it is a different object from the influence cone (L1282).
+
+READ-LEDGER to both workers. Nothing is owed on this question; Rule 210 and the eight extra rules are
+by-products, parked.

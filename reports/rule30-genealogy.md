@@ -1867,3 +1867,116 @@ cell on diagonal j comes well before C_j for all j ≤ 120 (at j = 120 it is tim
 set equals the black cells of [edge, B(t)] at every step; and restarts at every t_0 ≤ 3,000 leave band 0..D within
 E(D) for D ≤ 30, the worst first exit being D or D − 1. A side observation: on the seed the capture time is about
 j − 7, linear in j, far below the quadratic bound. That is a measurement on this orbit only.
+
+## 19. The gate question (L1285, at the owner's direction)
+
+GPT's curiosity question (GC2357): which gate identities does the capture mechanism need, and what disappears if
+ancestry must follow only inputs the output actually depends on? The owner chose it. Record searched: `record_find`
+for orphan, sensitive parent, causal parent, left-permutive rules, rule 210, 256 rules, 64 rules; the kit's
+`Rule30Equivalents.Symmetry`. Prior work used here: §8.64 (`rule30_otherrules.py`: of the 64 rules whose left edge
+moves at light speed, only 30, 110 and 118 have a certified small-period band), L1282's derivative laws and
+GC2357's proof. Nothing in the record asks which rules admit the capture argument or restricts ancestry to sensitive
+links.
+
+### 19.1 Which identities each step uses (by inspection of the proof; PROVED by table where stated)
+
+Write f(a, b, c) for the local rule, with a the left parent.
+- **A persistent left edge moving left one cell a step:** f(000) = 0 and f(001) = 1. The 64 rules of §8.64.
+- **The white-pair descent (17.2):** f(a, 0, 0) = a, so f(100) = 1 as well. That is the only new identity.
+- **The clearing identity (17.3):** f(0, 0, c) = c, which the edge pair already gives, and f(000) = 0 so that a
+  black child has a black parent. The cases p = 1 and q = 1 are generic: the child's black parent is captured.
+- **The follower prefix (§6) and the exit and restart (17.5):** f(000) = 0 and the edge; nothing else.
+- **The seed's infinitely many episodes:** the right edge moves right unmarked, f(100) = 1 again.
+
+So the escape theorem (capture by C_j, exit by E(D), limsup D = ∞) needs exactly three table entries,
+f(000) = 0, f(001) = 1 and f(100) = 1, and should hold for the 32 rules that have them.
+- **The lock (L1283):** the deep word must be a triangular bijection of the future reads, so f must be left-permutive,
+  f(1, b, c) = NOT f(0, b, c); and the black front must shield the deep side from the shallow side,
+  f(a, 1, 0) = f(a, 1, 1). With f(000) = 0 and f(001) = 1 this leaves two rules, **30 and 210** (PROVED by table:
+  the left-permutive edge rules are 30, 90, 150, 210, and 90 and 150 fail the shield).
+- **The episode structure (r, L) of GC2353** uses all eight entries. It is Rule 30's alone.
+- Rule 210 is f = a XOR (NOT b AND c). It is not in Rule 30's symmetry class (30, 86, 135, 149), so the lock and the
+  escape together give it, too, an ancestry front whose read history is never eventually periodic. That is a
+  by-product; it is not pursued here.
+
+### 19.2 The restricted ancestries, by hand
+
+Rule 30's Boolean derivatives: the child always depends on its left parent; on its centre parent exactly when the
+right parent is white; on its right parent exactly when the centre parent is white.
+- **V0, all black parents** (GC2357): the proved capture.
+- **V2, black and sensitive parents:** a mark passes from a black marked parent to a black child only if the child
+  depends on that parent. A black child with parents 011 depends on neither of its two black parents (the OR is
+  saturated), so it is an **orphan**: it can never be marked. The clearing identity fails there. Near the seed's
+  left edge, diagonals 1, 2, 3 and 4 are eventually 1, 0, (10)* and 1 (COMPUTED to t = 600; Jen gives their
+  eventual periodicity). Then the cell on diagonal 1 has parents 011 for ever, diagonal 3's black cells have parents
+  100 with an unmarked left parent, and diagonal 4's have parents 011 or 001 with the right parent on diagonal 4
+  itself. By induction the V2 marks from the edge should eventually be the edge cell alone.
+- **V1, sensitive parents of any colour:** the edge cell's first-order cone of influence (L1282). The left link
+  always holds and drops the left-edge index by 2, so every even-index cell reaches the edge. An odd-index cell needs
+  one centre link, which needs a white right parent at that moment. Diagonal 1 cannot (its right parent is diagonal 1,
+  eventually black); diagonal 3 can through diagonal 2 whenever diagonal 3 is white.
+
+### 19.3 Predictions, written before the runs
+
+**T6, the rule census** (`genealogy_gate_census.py`): every 12-bit left prefix with a black edge, zeros beyond, 67
+steps, GPT's control set, for all 256 rules.
+- P-A1: exactly the 64 rules with f(000) = 0 and f(001) = 1 keep a leftmost black cell moving left one per step on
+  every prefix.
+- P-A2: all 32 of those with f(100) = 1 pass the white-pair, capture (j ≤ 11) and exit (D ≤ 9) bounds on every
+  prefix.
+- P-A3: of the other 32 edge rules, at least half fail capture or exit on some prefix, with an explicit witness.
+  Counterfactual: all 32 pass, in which case f(100) = 1 is needed by this proof only, not by the statement.
+
+**T7, the restricted ancestries on the seed** (`genealogy_gate_seed.py`), rows to t = 3,000, diagonals j ≤ 60.
+- P-B1: in the bulk, 0.25 ± 0.03 of black cells are orphans (parents 011).
+- P-B2: under V2 the marked set from the edge is eventually the edge cell alone: D2(t) = 0 for all large t.
+  Counterfactual: D2 unbounded, or bounded but positive.
+- P-B3: under V1 every even diagonal is captured (all cells marked) from time j/2; diagonal 1 is never captured;
+  every odd diagonal 3 ≤ j ≤ 59 is eventually captured. Counterfactual: some odd j ≥ 3 keeps unmarked cells at
+  arbitrarily late times.
+- P-B4: under V1 the marked front moves at exactly +1 a step (the right edge of influence), D1(t) = 2t.
+
+What it would teach: whether GPT's capture is a fact about genealogical merging (links that carry no information do
+the capturing) rather than about information flow. If P-B2 holds, the edge's causal black lineage dies while its
+black genealogy captures everything: the two notions separate completely.
+
+### 19.4 Results
+
+Probes: [`genealogy_gate_census.py`](../tests/probes/genealogy_gate_census.py) and
+[`genealogy_gate_seed.py`](../tests/probes/genealogy_gate_seed.py), each with its `.out`; three seconds each on
+the M5. All COMPUTED.
+
+**T6, the census (every 12-bit prefix, 67 steps, GPT's control set).**
+- P-A1 HELD: exactly the 64 rules with f(000) = 0 and f(001) = 1 keep a light-speed left edge on every prefix.
+- P-A2 HELD: all 32 of them with f(100) = 1 pass the white-pair, capture and exit bounds on every prefix.
+- P-A3 HELD, with a surprise. Of the other 32 edge rules, 24 fail: on the lone-edge prefix 1000… their row stays
+  a single black cell, so the pair (1, 2) is white for ever and the front never leaves band 0. **The remaining 8
+  pass every bound**: rules 70, 78, 102, 110, 198, 206, 230, 238, which are exactly the edge rules with f(100) = 0
+  and f(010) = f(110) = 1. So f(100) = 1 is needed by GPT's proof, and the statement holds for 40 of the 64 edge
+  rules on this control set, including Rule 110. The 8 extra rules have a different mechanism (a black cell with a
+  white right neighbour stays black in place), which is not analysed here.
+
+**T7, the three ancestries on the seed (rows to 3,000).**
+- P-B1 HELD: orphans, black children of 011, are 0.2509 of the bulk's black cells.
+- P-B2 HELD, and sooner than predicted: under V2 (black and sensitive parents) the marked set is the edge cell alone
+  from t = 2. The edge's children at time 2 are the new edge (parents 001, sensitive to the edge), an orphan
+  (parents 011) and a white cell (parents 110). After that, 57 of the 60 diagonals j = 1..60 still carry unmarked
+  black cells after t = 2,000; the other three are eventually white.
+- P-B3 HELD: under V1 (sensitive parents of any colour) every even diagonal is captured by time j/2 + 1, every odd
+  diagonal 3 ≤ j ≤ 59 by about the same time, and diagonal 1 never.
+- P-B4 HELD up to the start: the V1 front is at index 2(t − 1), light speed from the mark's placement at t = 1.
+
+### 19.5 The answer
+
+- **The identities.** GPT's capture needs three table entries: f(000) = 0, f(001) = 1, f(100) = 1 (32 rules). The
+  lock needs left-permutivity and the front's shield f(a, 1, 0) = f(a, 1, 1), which leaves Rules 30 and 210. The
+  (r, L) episode structure needs the whole table.
+- **What disappears under sensitive ancestry.** Everything. With marks passed only along black links the child
+  depends on, the edge's lineage is the edge itself from t = 2: a quarter of all black cells are orphans whose two
+  black parents are both masked, and the first one sits beside the edge at time 2. The capture theorem is therefore
+  a statement about **genealogical merging through links that carry no information**. The edge's causal influence
+  (V1) does spread, at light speed and over every diagonal but the first, but it travels through white cells. The
+  black genealogy and the causal lineage of the edge share nothing beyond the edge.
+- **For GPT's distinction.** Capture is merging, not information loss, and not information flow either: the marked
+  front's rule "advance past two whites, else fall back" is genealogy's, while the influence cone's rule is the
+  derivative's (L1282). The nonperiodicity theorem of L1284 is about the former.
