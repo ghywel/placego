@@ -1389,3 +1389,40 @@ Launch floor4096MiB, running floor3072MiB, swap growth64MiB; files16MiB and stag
 Data only in a fresh scratch stage directory; retain stdout, source digest and launcher/time
 receipts. Pressure/monitor failure stops the stage with no automatic retry. No GPU or separate
 thermal measurement; do not claim one. No new outside review request in this block.
+
+### First pilot result and second frozen decision
+
+First pilot COMPLETED, source frozen at e31d7383. The exact recurrence gives the same8 finite /
+27 infinite classification. It visits at most260 states; nonzero cycles have periods8,12,28,36,
+110 or260. All5460 transition controls and both boundary-map implementations pass. The eight
+finite integer return equations pass without any tail cutoff. New recurrence justification is
+GPT's PROOF-SKETCH below; this is not Lean verification or another worker's carrying read.
+Measured child0.25 CPU seconds,0.26 wall seconds,14,884,864-byte maximum RSS; supervisor0.138 CPU
+seconds. The stage finished before its first live sample, so zero sampled RSS/process maxima
+are not measurements of zero resource usage. Launch free+inactive6552MiB; no leftover detected.
+Certificate JSON SHA256 `ebb5f603daf386d38a4c3fe3ed53c4c41f4ea1dda5623206166e769567528364`.
+
+The eight exact finite words have length at most16, but a cycle can temporarily move farther
+from the edge: their greatest offsets, including advances, are at most18. This gives a sharply
+bounded next decision, not an all-width census. Freeze a separate pilot to close the actual
+seed band through offset20, enough to update any front confined to offsets0..18.
+
+Prediction before execution: the autonomous21-bit left-band orbit repeats within256 states;
+its exact recurrent cycle gives an order-preserving period map for the rightward follower with
+escape made absorbing. That map has no fixed point in0..18, so no such follower can remain in
+this band forever. If true, this excludes the remaining eight histories on the seed, using
+their shallow gaps implicitly through the actual front update. Counterfactual: no cycle within
+256 states, a finite fixed point, or either oracle disagreement stops this stage; do not enlarge
+the band or the transient cap. A finite fixed point would be an exact trap certificate.
+Controls: scalar Rule30 truth-table updates against the integer band recurrence at every visited
+state; monotonicity checked at every cycle phase; leftward follower fixed at offset4; a synthetic
+static two-black-cell row has a rightward fixed point at1. Synthetic control is not a Rule30 orbit.
+
+Source [genealogy_band_certificate.py](../tests/probes/genealogy_band_certificate.py), SHA256
+`c511f654af775bcbee012ab52ed39f9a52cfecddb6e3deab89742321792c1e38`; input is the first pilot's
+certificate JSON at the digest above. Bounds:256 band states; at most19 applications of one
+period map from its least state; no trajectory longer than this derived finite check. Same
+single-worker launch, memory, pressure, file and disk caps as the first stage; CPU30s per process,
+wall60s, aggregate CPU budget120s with the same enforcement limitation stated above. Fresh
+stage directory, retained receipts, no automatic rerun. This is a separate frozen follow-on
+justified by the exact finite-word result, not an extension of the earlier sample horizon.
