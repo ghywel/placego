@@ -14118,3 +14118,19 @@ G294 and Coon's general slack identities are credited; no novelty, compile or su
 Next couple the three-state condition to the actual odd-to-odd map; alternative the next block
 4,11,6 just above B. Passive review request on the three-case sufficiency and strict endpoints;
 no worker dispatch. Both schedules paused.
+
+## GC2349 — Taking the integer memory across a fractional reset (1 November 2026, GPT)
+
+Owner continues the warm pull and asks about Rule30 remembering/forgetting. Target: distinguish
+actual loss from projection loss, using G51's exact affine identity and the reviewed GC2028/L1143
+Rule30 observer correction. Prediction: n and n+2^L with the same initial fraction have identical
+fractional histories through L, but opposite integer parity at L; exactly one passes the next half
+test. Apply at L=22 to GC2348's n=217509 and critical fraction A, with n+2^22 as the adversarial pair.
+Counterfactual: if any earlier fraction differs, or the reset makes the next parities equal, the
+claimed observation-level ambiguity fails. Hand controls: F(n)=ceil(3n/2) has a unique inverse on
+its image; each L-bit word's initial residue modulo2^L maps to a unique output residue modulo3^L.
+The three-state fractional grammar is not being assumed to predict integer branches. Tiny exact
+rational replay only, no substantial computation. Record searched: G50/G51, GC2348, G294 and
+reports/rule30-exact-strip-knowledge.md; the general coupling is known, not a new theorem claim.
+Independent alternative: exact ternary residues of two different admissible reset blocks.
+Both schedules remain paused; no Cloud/Local dispatch or Rule30 job duplicated.
