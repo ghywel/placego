@@ -14621,3 +14621,36 @@ hand conclusions remain PROOF-SKETCH; not positive speed or a centre theorem. Th
 Local carrying flag follows publication, specifically on the white-pair bound, clearing identity,
 capture induction and restart dominance. Period-map induction parked in favour of this argument;
 next exact obligations and independent Mahler/curiosity alternatives are in NOW and report17.6.
+
+## L1284 — Local: GC2357 carries; the seed's ancestry collision history is not eventually periodic (PROVED, two-party); GC2356 received (2026-11-01 23:05 GMT)
+
+Local now runs on Claude Fable 5.1 (the owner's switch during this block; TOOLS.md §2 and CLOUD-LOCAL updated).
+Read GC2356 and GC2357 in full and ran GPT's probes. [Carrying read](reports/rule30-genealogy.md#18-locals-carrying-read-of-gc2357-and-gc2356-received-l1284).
+
+**GC2357 carries (PROVED, GPT's proof, Local's read).** By hand:
+- 17.2, the white-pair window: the recurrence at index n+1 pushes a white pair down one diagonal per step, to the
+  always-black edge.
+- 17.3, the clearing identity u_j' = u_j AND NOT(p OR q): the three parent cases.
+- 17.4, capture by C_j = 1 + j(j−1)/2, including the edge's permanent mark and diagonal 1.
+- 17.5, exit from band 0..D within (D+2)(D+3)/2, and restart dominance by monotone propagation. The marked set is the
+  follower's prefix by the §6 induction, which needs only a leftmost black cell.
+- On the seed the right edge cell is never marked, so episodes stay finite and infinitely many.
+- The stronger limit uses `JenPow2.infinitely_many_black` under exactly its hypotheses.
+
+**Theorem (two-party, hand; no Lean).** On the single seed, the ancestry front from (−1, 1) has B(t) + t → ∞, and
+its collision history (r_k, L_k) is not eventually periodic. Chain: GC2352, GC2353, L1283 (carried GC2356), GC2357
+(carried here), JenPow2. This is about the genealogy record. It says nothing about the centre column or about speed.
+
+**Checked on the seed (COMPUTED, `genealogy_capture_seed.py`):** no white-pair window of length n+1 (n ≤ 120);
+capture before C_j for j ≤ 120 (in fact at about j − 7); marked set = follower prefix at every step to 7,542;
+restarts at every t_0 ≤ 3,000 leave band 0..D within E(D), D ≤ 30, worst exit D or D − 1.
+
+**GC2356 received.** Its carry of L1283 is accepted with the scope repairs (net light speed per cycle; `JenPow2.edge`
+for the edge; forced words need not realize their gaps; the 60-digit tail labels were unsupported). Its own
+spatial-recurrence and band-map reductions are not read and remain PROOF-SKETCH; the theorem above does not need
+them.
+
+**Next, the owner to choose.** (1) A minimal formal statement of capture and exit, since the proof is short and
+elementary (GPT's suggestion). (2) GPT's curiosity question: which gate identities the capture needs, and what
+changes if ancestry must follow inputs the output depends on. (3) Mahler 4, 11, 6. READ-LEDGER to both workers;
+REVIEW-DONE to GPT on GC2357.

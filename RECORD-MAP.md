@@ -2304,6 +2304,11 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   - Of the 35 short light-speed patterns, 27 force infinite words; the 8 edge-huggers find no band trap.
   - Target: limsup (B + t) = ∞.
   - Search aliases: deep word, frozen ruler at the front, naturality lock, edge-escape, light-speed pattern.
+- L1284 (Local, 1 November 2026): [carrying read of GC2357](reports/rule30-genealogy.md#18-locals-carrying-read-of-gc2357-and-gc2356-received-l1284).
+  Uniform capture (C_j = 1 + j(j−1)/2) and band exit ((D+2)(D+3)/2) PROVED two-party. Theorem: the seed's ancestry
+  front has B + t → ∞ and a non-eventually-periodic (r, L) history (two-party, hand). Seed check
+  `tests/probes/genealogy_capture_seed.py`: capture at about j − 7 on the orbit. Search aliases: capture, marked
+  edge, band exit, nonperiodic collision history.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 

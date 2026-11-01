@@ -3427,6 +3427,18 @@ the left edge is bounded and periodic, not necessarily constant within a cycle. 
 unbounded limsup distance implies nonperiodicity of that pair history. The latter unboundedness
 is not proved. Prescribed deep-side histories need not satisfy the actual shallow-gap conditions.
 
+### GC2357 / L1284 — Uniform ancestry capture and band escape; the seed's collision history is not eventually periodic
+
+**PROVED (two-party: GPT's proof GC2357, Local's carrying read L1284).**
+[Proof](reports/rule30-genealogy.md#17-a-uniform-capture-argument-replaces-the-clock-induction-gc2357);
+[read](reports/rule30-genealogy.md#18-locals-carrying-read-of-gc2357-and-gc2356-received-l1284).
+For any row with a leftmost black cell, marks propagated along every black-parent edge from that cell capture
+diagonal j (left-edge coordinates) from time 1 + j(j−1)/2, and the marked front leaves band 0..D within (D+2)(D+3)/2
+updates from any start. With the entry above and `JenPow2.infinitely_many_black`: on the single seed the ancestry
+front's distance from the left edge tends to infinity, and its (r, L) collision history is not eventually periodic.
+Not a centre-column or speed statement. Replay: `tests/probes/genealogy_capture.py` (GPT) and
+`tests/probes/genealogy_capture_seed.py` (Local, on the seed).
+
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
 ### GC2356 — Exact spatial-tail closure and monotone band-trap decision
@@ -5099,7 +5111,7 @@ L1266 amendments (Local, after GC2336):
 
 ### Waiting room — uniform capture by leftmost ancestry and escape from every left band (GC2357)
 
-**PROOF-SKETCH, GPT, independent carrying read pending.** For any Rule30 initial row with a
+**Carried by Local (L1284): PROVED two-party; see the entry "GC2357 / L1284" above.** Original statement: For any Rule30 initial row with a
 leftmost black cell e, mark e and propagate along every black-parent edge. In coordinates
 j=x-e+t, every black cell on diagonal j is marked from time C_j=1+j(j-1)/2 (j>=1), with C_0=0.
 A pair of diagonals n,n+1 cannot both stay white for n+1 consecutive rows (the known B1 descent).

@@ -24,7 +24,7 @@ unavailable and finding some other solution, but i would always rather we use th
 
 | Worker | Model | Host | Suited to | Limits |
 |---|---|---|---|---|
-| **Local** | Claude Opus 5.5 (Claude Code desktop) | M5 MacBook Pro: 10 cores, 16 GiB unified memory shared by CPU and GPU | Holds the Wolfram side (§6); current-kit Lean and portal builds; SAT with verified certificates; Metal on the M5 | Runs only while the owner has a session open; memory is shared with the owner's other apps |
+| **Local** | Claude Fable 5.1 (Claude Code desktop; Opus 5.5 until 1 November 2026 23:05 GMT, L1284) | M5 MacBook Pro: 10 cores, 16 GiB unified memory shared by CPU and GPU | Holds the Wolfram side (§6); current-kit Lean and portal builds; SAT with verified certificates; Metal on the M5 | Runs only while the owner has a session open; memory is shared with the owner's other apps |
 | **GPT** | GPT (Codex) | Intel MacBook Pro: i9, 8 cores / 16 threads, 16 GiB RAM; RX 6600 eGPU with its own 8 GiB VRAM (measured, GPT-OVERNIGHT-20261029) | Hand mathematics and carrying reads; CPU and RX 6600 compute; long scheduled blocks when the owner turns them on | No Wolfram (owner, 2026-11-01); Lean 4.35 verified (GC2343); the GPU also drives a display, so keep headroom |
 | **Cloud** | Claude Fable 5.1 | Cloud sandbox, always on | Long reads and reviews, record rewriting and rotation, closing summaries, portal reading; a different reasoning style from Local's | HTTPS only (the shared store works; no SSH or home network); cannot reach the kit's pull-request index (CL670); no heavy compute |
 

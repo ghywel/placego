@@ -1,0 +1,5 @@
+(1) white-pair windows: pairs (n, n+1), n <= 120, all times to 7542: violations of the n+1 bound 0
+(2) capture on the seed (the mark is placed at time 1, so GPT's C_j is time 1 + C_j here): last unmarked black time on diagonals 0..120 all <= C_j: True; last unmarked at j = 10, 30, 60, 120: [8, 22, 51, 113] against C_j [46, 436, 1771, 7141]
+(4) marked set = all black cells of [edge, B(t)] with B the follower, at every time to 7542: mismatches 0
+(3) restarts at t0 = 1..3000, bands D = 0..30: first exit within E(D) always: True; worst first exits at D = 0, 5, 10, 20, 30: [1, 5, 10, 20, 29] against E(D) [3, 28, 78, 253, 528]
+GENEALOGY_CAPTURE_SEED_DONE

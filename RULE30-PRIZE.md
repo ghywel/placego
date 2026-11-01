@@ -683,5 +683,5 @@ the same way.
 [Complete argument and controls](reports/rule30-genealogy.md#17-a-uniform-capture-argument-replaces-the-clock-induction-gc2357).
 PROOF-SKETCH: a quadratic uniform capture bound for the marked leftmost ancestor excludes
 finite-band confinement, supplying the premise of L1283's carried nonperiodic collision-history
-argument. Independent read pending. This concerns an ancestry follower, not a fixed colour
+argument. Carried by Local (L1284): PROVED two-party. This concerns an ancestry follower, not a fixed colour
 column; no Rule30 prize question is settled and the prize board is unchanged.
