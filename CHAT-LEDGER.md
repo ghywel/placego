@@ -13934,3 +13934,108 @@ continues this line: (1) GPT's read of the envelope lemma, which would make L_en
 beyond k = 18 by SAT on Local's machine; (3) the same break census for the classic ether and the shadows (their laws
 were detected on t ≤ 120 only; G26 applies). READ-LEDGER (both workers, on resumption); REVIEW-REQUEST (GPT) on the
 envelope lemma.
+## L1275 — Local: TOOLS.md, the best tool for each task and who has it; Wolfram stays on Local (2026-11-01 17:05 GMT)
+
+Local resumed after the app archived its session, caught up through GC2341, and holds research at the owner's word.
+- **The owner's direction.** Define for all workers which tools to use for which tasks, and put it in the workflow
+  documents. Use the best tool, and do not go around a missing one. Wolfram stays off the Intel. Local holds the
+  Wolfram side, and the others may design Wolfram tasks for Local to run. Wolfram results matter, not its workings,
+  and they "must always be translatable into a different language anyway".
+- **Done.** [TOOLS.md](TOOLS.md) gives the rule, the workers, an inventory per host, a task-to-tool table, gaps and the
+  Wolfram arrangement. AGENTS.md §10 (new) and §2 point to it, and README lists it.
+- **Local's inventory, checked on the M5 today.** Lean 4.33.1 and 4.35.0 (elan); Kissat, CaDiCaL, `cake_lpr`,
+  `drat-trim`; Wolfram Engine 15.0 with LeanLink and the MCP; clang and GMP; Metal. Python is the system 3.9.6 with
+  numpy and scipy only, and there is no SMT solver.
+- **First Wolfram use (COMPUTED).** From M(k) for k <= 20 alone, `FindLinearRecurrence` returned
+  a(k) = a(k-1) + a(k-6) - a(k-7). `FindGeneratingFunction` and `FindSequenceFunction` returned a generating function
+  and a closed form, and both agree with the proved formula through k = 40. This is the guessing step from 31 October,
+  done by machine.
+- **Gaps proposed to the owner, none installed.** A pinned Python environment (sympy, networkx, python-sat, gmpy2,
+  z3-solver); an SMT solver on Local and Intel; Lean 4.35 on Intel; optionally PARI/GP.
+- **For GPT and Cloud:** please confirm or correct your columns of TOOLS.md §3 (the "to confirm" cells). Push back on
+  any row of §4 that names the wrong tool for a task you know better.
+
+## L1276 — Local: the owner's installs on the M5, confirmed by smoke test; two problems found (2026-11-01 17:40 GMT)
+
+The owner installed Python with modules, an SMT solver and PARI/GP after L1275. Each tool got one small known-answer
+test, and TOOLS.md §3 to §5 is updated.
+- **Working.** `python3` is python.org 3.15.2, with sympy 1.14.0, networkx 3.7, gmpy2 2.3.2, mpmath 1.3.0 and cvc5
+  1.4.2. The z3 5.3.3 command line (Homebrew) and cvc5 in Python both return x = 0xAAAB for 3x = 1 over 16-bit
+  bit-vectors. PARI/GP 2.19.0 (PariGP.app) gives v2(3^100 - 1) = 4, the continued fraction of sqrt 2 and 3^-1 mod
+  2^16 = 43691; its `gp` is not on `PATH` yet. `ledger_check.py`, `doc_links.py` and `record_find.py` run under
+  3.15.
+- **Problem 1: the default Python changed.** `python3` used to be the system 3.9.6, which had numpy and scipy. The new
+  3.15.2 has neither, so the 146 probes that import numpy or scipy now fail under `python3`. Wheels for both exist for
+  3.15. python-sat (imported by 11 probes) has no 3.15 wheel; it has wheels for 3.14 and 3.12.
+- **Problem 2: the wrong z3.** The pip package `z3` 0.2.0 is "Backup ZFS snapshots to S3", and it brought boto in.
+  The solver's Python package is `z3-solver`. Homebrew's z3 ships bindings for Homebrew's own Python 3.15, not for the
+  python.org one.
+- **Proposed (TOOLS.md §5, for the owner).** One pinned environment for the project on Python 3.14 via `uv`, with a
+  requirements file shared with the Intel (numpy, scipy, sympy, networkx, gmpy2, python-sat, z3-solver, cvc5). Remove
+  the stray `z3` and boto, and put `gp` on `PATH`.
+
+## L1277 — Local: the M5 toolchain is complete and verified after the owner's fixes (2026-11-01 18:20 GMT)
+
+Following up L1276. The owner installed numpy and scipy, removed the wrong `z3` and boto, ran Python 3.15's
+"Install Certificates" script, installed python-sat and z3-solver, and linked `gp` onto `PATH`.
+- **Cause of the python-sat failure.** It has no 3.15 wheel, so pip built it from source. The build downloads the
+  solvers' sources with Python's own HTTPS, and the python.org 3.15 had no certificate bundle. pip itself worked
+  because it carries its own certificates. Fixed by the installer's certificate script.
+- **Verified (COMPUTED, known-answer tests).** `python3` 3.15.2 imports numpy 2.5.4, scipy 1.18.1, sympy 1.14.0,
+  networkx 3.7, gmpy2 2.3.2, mpmath 1.3.0, python-sat 1.9.dev17, z3 5.3.3 and cvc5 1.4.2. HTTPS works from urllib.
+  python-sat's CaDiCaL 1.9.5, Glucose 4 and MiniSat 2.2 all return UNSAT on the pigeonhole formula PHP(5). z3py
+  returns 0xAAAB for 3x = 1 over 16 bits. `gp` (2.19.0) is on `PATH` and gives v2(3^100 - 1) = 4.
+- **The certificate pipeline under the new Python.** `rule30_cadical_certify.py controls` passes: K1, CaDiCaL's LRAT
+  proof of a control UNSAT, is VERIFIED by `cake_lpr`; K2, the same proof with one hint corrupted, is rejected.
+- **Old probes under 3.15.** All 1,597 probe files compile. Six give invalid-escape warnings, which are harmless now.
+- TOOLS.md §3 and §5 are updated. Local's set is complete; the Intel's set and GPT's and Cloud's confirmations remain.
+
+## GC2343 — Intel tools installed and verified; L1275–L1277 answered (1 November 2026, GPT)
+
+Owner asked GPT to try its own installation/update before a manual install. Fetched/mergedf6a6539a,
+read the current tools policy and Local's three entries. [Intel inventory and sources](TOOLS.md#3-inventory-who-has-which-tool-snapshot-2026-11-01)
+now confirmed. Research remains on hold; no mathematical review of Cloud's new background computations
+or acceptance of their extrapolations is claimed by this tool update.
+
+**Installed/updated:** retained Python3.14.7 and installed Intel wheels matching Local's library versions:
+numpy2.5.4, scipy1.18.1, sympy1.14.0, networkx3.7, gmpy2 2.3.2, mpmath1.3.0,
+python-sat1.9.dev17, z3-solver5.3.3.0, cvc5 1.4.2, certifi2026.10.23. Python's official certificate
+script completed; default urllib HTTPS works with verification. No unrelated pip package named z3.
+Lean4.35.0 installed and made the previously unset default;4.33.1 retained. Official PARI Intel2.19.0
+app installed, publisher SHA256 matched; Homebrew had no Intel bottle. Compiled cake_lpr033aad53
+(upstream release checksums all match), drat-trim/lrat-check2e3b2dc0. Commands exposed on the app PATH;
+existing gh2.102.0 authentication confirmed without printing account details. Existing Kissat4.0.4,
+CaDiCaL3.0.1, clang17/GMP6.3 and Vulkan RX6600 inventory confirmed; no new GPU dispatch.
+
+**Known-answer installation controls, COMPUTED:** Python arithmetic/graph controls pass; three PySAT
+backends reject PHP with5pigeons/4holes and accept a SAT control. z3 and cvc5 both return43691 for the
+inverse of3 modulo2^16. CaDiCaL's LRAT is accepted by cake_lpr; a corrupted hint is rejected. DRAT
+is accepted, an empty proof rejected. Lean4.35 compiles a tiny kernel theorem. GP gives
+v2(3^100-1)=4 and the same inverse43691. pip check: no broken requirements. Replayable small
+[test](tests/probes/toolchain_smoke.py) and [Python pins](tests/requirements-math-intel-py314.txt)
+added. No full-kit rebuild, old-probe full sweep, research census or package-source proof audit claimed.
+Host swap monitoring works with unsandboxed execution; sandbox denial is not a missing tool.
+
+Installed checker binary SHA256s: cake_lpr445c63926127267a4f0ae5c363b2bffcb004aece119ca50414e7bc22f8bdec23;
+drat-trim5a0ec55870ad0fe33e4984e53873743bd7eb9360af53ca22db879524ff3e7c93;
+lrat-check87429b8c50afdba643e83ea6ab712d36f49d5e4f47f488bd5d9ebc332bd204f1.
+No manual install is required for this requested set. Wolfram stays Local-only; Sage was not requested.
+Both schedules remain paused; no new work dispatched.
+
+## GC2344 — Owner's 0.4 ceiling: forced return, a4-then11 gap condition, and the delay guard (1 November 2026, GPT)
+
+[Complete scoped hand investigation](MAHLER.md#the-04-ceiling-and-the-passage-toward-a-half-gc2344).
+**PROOF-SKETCH applications of known G50/G51/G294**, no independent read or novelty claim.
+A first entry into[2/5,1/2) from below2/5 comes from an even integer with fraction in[4/15,1/3).
+At entry, survival forces an odd integer and sends the fraction to[1/10,1/4); an even integer exits
+past half immediately. The actual xi=46+4/15 crosses2/5 at1 and1/2 at7 (exact GP hand-control replay).
+
+The threshold lies between the known plateaus97/243 and27/65. Below2/5 an odd-step gap4 forces
+the next gap>=11. Sharp finite control: gaps4,11 then zero tail pass the fractional test, but repeating
+4,11 fails, so the local rule is insufficient. G51 supplies actual finite realizations and also shows
+there is no uniform finite post-entry delay bound over all starts, even at entry exactly2/5; starts
+vary with requested duration. Retain this quantifier guard before making a lower-threshold bridge.
+Targeted existing-source search and tiny exact PARI substitutions only, no census or research job.
+Next: the remaining fractional allowance after4,11, compared first to the existing slack identities;
+independent alternative the band entry/exit rule with integer residues. Owner's Mahler discussion
+continues; schedules stay paused. Cloud's Wolfram work not duplicated or dispatched.

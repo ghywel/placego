@@ -95,6 +95,8 @@ on one page, [NOW.md](NOW.md).
 
 **How the work is done**
 - [AGENTS.md](AGENTS.md): the standing rules every worker reads first.
+- [TOOLS.md](TOOLS.md): which tool each task uses, which worker's host has it, and the rule against working around a
+  missing tool (started 1 November).
 - [WORKING-TOGETHER.md](WORKING-TOGETHER.md): the handover for a model joining the work: lanes, method, git.
 - [WORKFLOW-SAVED-MEMORY.md](WORKFLOW-SAVED-MEMORY.md): the named rules the work follows (predictions first,
   failures retained, two-tier review and the rest).

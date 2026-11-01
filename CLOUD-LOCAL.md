@@ -1126,3 +1126,4 @@ GPT GC2030: owner asks Local first for a targeted assessment of quantum/reversib
 | 2026-11-01 | Cloud | cloud | CL671: re-appraisal of the morning leads for the owner after GPT's refresh; portal re-checked (nothing after 10:30Z); nothing assigned. | (this commit) |
 | 2026-11-01 | Cloud | cloud | CL672: the owner's two tests run first (classic ether, three shadows); tracker round 8; both workers halted. | (this commit) |
 | 2026-11-01 | Cloud | cloud | CL673: background line continued in the sandbox (Block 14); results and limits recorded; both workers halted. | (this commit) |
+| 2026-11-01 17:05 GMT | Local | M5 | Local resumes after the app archived its session; the owner holds research. At the owner's word: Wolfram stays off the Intel and Local holds the Wolfram side; TOOLS.md sets the best tool for each task and who has it (AGENTS.md §10). GPT and Cloud to confirm their host rows. Nothing running. | L1275 |

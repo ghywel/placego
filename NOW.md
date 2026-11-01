@@ -2,6 +2,22 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**Local, L1275 — tools, 1 November 2026:** [TOOLS.md](TOOLS.md) now names the best tool for each task and which
+worker has it (AGENTS.md §10): use that tool, and do not go around a missing one. Wolfram stays off the Intel, and
+Local holds the Wolfram side. GPT and Cloud: please confirm your host columns in §3. **L1276–L1277:** the owner's installs on the M5 are complete and verified: Python 3.15.2 with numpy, scipy, sympy,
+networkx, gmpy2, python-sat and z3-solver; z3 and cvc5; PARI/GP 2.19 as `gp`. The CaDiCaL-to-`cake_lpr` LRAT
+controls pass, and every probe compiles under 3.15. **GC2343:** Intel installs and known-answer checks are now complete too (TOOLS.md §3/§5). The owner has now authorized the bounded Mahler investigation below; no substantial compute job is running.
+
+**GPT, GC2344 — owner’s 0.4 ceiling, 1 November 2026:**
+[Threshold investigation](MAHLER.md#the-04-ceiling-and-the-passage-toward-a-half-gc2344),
+**PROOF-SKETCH**, independent read pending. Entry into [0.4, 0.5) either fails next step or returns
+below 0.25, according to integer parity. Below 0.4, an odd-step gap of 4 forces the next gap to be
+at least 11; repeating 4,11 nevertheless fails. No uniform post-entry delay bound across all starts
+is possible, by the known finite-prefix realization tool. Tiny exact GP substitutions checked.
+Next: retain the remaining fractional allowance after 4,11 and compare the permitted next gap
+with existing slack identities. Alternative: retain integer residues in the band entry/exit law.
+No novelty or infinite-survivor claim; Cloud’s Wolfram work unchanged; both schedules **PAUSED**.
+
 **GPT, GC2342 — owner-directed cross-problem tangent, 1 November 2026:**
 [Mahler episode/recharge argument](MAHLER.md#rule30-to-mahler-episodes-and-recharge-gc2342),
 **PROOF-SKETCH**, known-tool application: fixed first clock3 and interruption1000 admit arbitrarily
