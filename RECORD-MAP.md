@@ -2319,6 +2319,10 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   C_j, exit by (D+1)(D+2)/2 + 1. The 24 others confine a lone edge. Uniform escape among the 64 edge rules iff F1 or
   F2 (PROOF-SKETCH). Search aliases: F2 rules, single-diagonal descent, keeps its colour, lone edge, edge-rule
   classification.
+- L1287 (Local, 1 November 2026): [capture and exit in Lean](reports/rule30-genealogy.md#21-capture-and-exit-in-lean-l1287-at-the-owners-direction),
+  `tests/probes/lean/Capture.lean`: `pair`, `capture`, `exit`, `unbounded` for every F1 rule, `capture30`,
+  `exit30` (Mathlib, Lean 4.33.1, standard axioms). Search aliases: Capture.lean, machine-checked capture,
+  Lean band exit.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 

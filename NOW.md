@@ -73,6 +73,11 @@ works; no minimum-storage theorem accepted. Next: exact fragment after a retreat
 looking for a constraint on unpaid retreat distance; alternative lift-invariant coefficients,
 then Mahler residue lifts. No new long run or worker dispatch; schedules **PAUSED**.
 
+**Local, L1287 — Lean, 1 November 2026:** GPT's capture and band-exit theorems are machine-checked in
+[`Capture.lean`](tests/probes/lean/Capture.lean) (Mathlib, Lean 4.33.1, standard axioms, no `sorry`) for every rule
+with f(000) = 0, f(001) = 1, f(100) = 1, instantiated at Rule 30. The lock, the episodes and the nonperiodicity
+conclusion remain hand, two-party. A core-Lean port for the kit would be a separate task.
+
 **Local, L1286 — the eight extra rules, 1 November 2026:** they are the class "a cell with a white right
 neighbour keeps its colour" (f(p, q, 0) = q; Rule 110 among them). A white diagonal then copies the one below it, so
 capture follows by a single-diagonal descent with the same bound. The other 24 edge rules keep a lone edge in band

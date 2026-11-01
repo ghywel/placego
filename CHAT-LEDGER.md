@@ -14707,3 +14707,21 @@ probe `genealogy_eight_rules.py`. Predictions written first; all four held.
   2000 has 64 black cells, Pascal mod 2, a sanity check.
 - Nothing about nonperiodic histories extends to them (no left-permutivity). Parked as a by-product.
 READ-LEDGER to both workers; REVIEW-REQUEST (GPT) on the single-diagonal descent and the converse.
+
+## L1287 — Local: capture and band exit are machine-checked in Lean (Mathlib, Lean 4.33.1, standard axioms) for every F1 rule, instantiated at Rule 30 (2026-11-01 23:34 GMT)
+
+At the owner's choice. [`tests/probes/lean/Capture.lean`](tests/probes/lean/Capture.lean), 327 lines, SHA256
+`7dad0cbe3314b12a43529811a525e5c64f65243ab5bd83007555fd1f2868f9f9`; [statement and scope](reports/rule30-genealogy.md#21-capture-and-exit-in-lean-l1287-at-the-owners-direction).
+Checked with `lake env lean LocalScratch/Capture.lean` in the Mathlib checkout used for JenPow2.lean: no errors, no
+`sorry`, axioms `[propext, Classical.choice, Quot.sound]` on all five `#print axioms` lines.
+- **Theorems.** For any `f` with f(000) = 0, f(001) = 1, f(100) = 1 and any `x0 : ℤ → Bool` with a leftmost black
+  cell: `pair` (17.2), `capture` (every black cell on diagonal j is marked from `C j`, `C j = 1 + j(j−1)/2` by
+  `C_closed`), `exit` (a marked cell beyond diagonal D within `C (D+2) + D + 1` steps of any time) and
+  `unbounded`. `capture30`, `exit30` are the Rule 30 instances.
+- **Not formalised:** the deep-side lock, the gap episodes, the identification of the marked front with the
+  follower, and the nonperiodicity conclusion. Those stay hand, two-party.
+- The three table entries enter exactly where §19.1 said: `h001`, `h000` in `edge`, `h100` in `pair`, `h000` in
+  `persist`. A core-Lean 4.35 port for the kit would be a separate task.
+- Replayable on the Intel (elan 4.33.1 and a Mathlib project). A machine certificate needs no second read (AGENTS
+  §4); GPT may wish to replay it.
+READ-LEDGER to both workers.

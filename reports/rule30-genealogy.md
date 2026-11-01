@@ -2050,3 +2050,35 @@ GPT's capture through a single-diagonal descent, with the same quadratic capture
 bound, and the 64 edge rules are now classified for uniform escape by two table conditions (§20.2, PROOF-SKETCH).
 None of the eight is left-permutive, so nothing about nonperiodic histories follows for them. Parked; a by-product
 of the gate question, recorded for the classification.
+
+## 21. Capture and exit in Lean (L1287, at the owner's direction)
+
+[`tests/probes/lean/Capture.lean`](../tests/probes/lean/Capture.lean) (327 lines, SHA256 `7dad0cbe3314b12a43529811a525e5c64f65243ab5bd83007555fd1f2868f9f9`), checked with
+`lake env lean LocalScratch/Capture.lean` in the Mathlib checkout used for JenPow2.lean (Lean 4.33.1). No errors,
+no `sorry`; every `#print axioms` line lists `[propext, Classical.choice, Quot.sound]`. **Machine-checked.**
+
+**What it states.** For any local rule `f : Bool → Bool → Bool → Bool` with `f 0 0 0 = 0`, `f 0 0 1 = 1` and
+`f 1 0 0 = 1` (the F1 class of §19; `rule30_edgy` shows Rule 30 is one), and any configuration `x0 : ℤ → Bool`
+with a leftmost black cell `e` (`x0 e = true`, `x0 j = false` for `j < e`), with marks started at `e` at time 0
+and passed along every black-parent edge (`mark`), in left-edge coordinates `D k t`, `M k t`:
+- `edge`: the leftmost black cell moves left one cell a step, everything left of it white.
+- `pair`: diagonals `n, n+1` are not both white for `n+1` consecutive times.
+- `capture`: for all `j` and `t ≥ C j`, a black cell on diagonal `j` is marked, where `C 0 = 0`, `C 1 = 1`,
+  `C (j+2) = C (j+1) + j + 1`; `C_closed`: `2 C (j+1) = j (j+1) + 2`, that is `C j = 1 + j(j−1)/2`.
+- `exit`: for all `D` and `t0`, some `t ∈ [t0, t0 + C (D+2) + D + 1]` has a marked cell on a diagonal `k > D`.
+- `unbounded`: the marked front is beyond every `D` at arbitrarily late times.
+- `capture30`, `exit30`: the Rule 30 instances.
+
+**What it does not state.** The deep-side lock (L1283), the gap episodes (GC2353) and the nonperiodicity of the
+seed's collision history remain hand proofs with two readers. The link from `exit` to L1283's premise is the
+identification of the marked front with the ancestry follower, also hand (§6, §18). The stronger limit D(t) → ∞
+uses `JenPow2.infinitely_many_black`, in another file.
+
+**Shape of the proof.** 17.2 is `pair` (induction on `n`, one `by_contra`); 17.3 is `clear` and `persist`;
+17.4 is `cap_step` (an inner induction along time) and `capture_pair` (induction on `j`, carrying two diagonals);
+17.5 is `exit`, which takes `T = max t0 (C (D+2))` and needs no restart argument, since marks started at time 0
+are what the theorem is about. The three table entries are used exactly where §19.1 says: `h001`, `h000` in
+`edge`, `h100` in `pair`, `h000` in `persist`.
+
+**Replay.** Copy the file into a Mathlib project and run `lake env lean` on it; the Intel's elan has 4.33.1. A port
+to the kit's core Lean 4.35 (no Mathlib: `push_cast`, `ring` and `simp` would need replacing) is a separate task.

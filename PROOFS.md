@@ -3438,6 +3438,11 @@ updates from any start. With the entry above and `JenPow2.infinitely_many_black`
 front's distance from the left edge tends to infinity, and its (r, L) collision history is not eventually periodic.
 Not a centre-column or speed statement. Replay: `tests/probes/genealogy_capture.py` (GPT) and
 `tests/probes/genealogy_capture_seed.py` (Local, on the seed).
+**Lean (L1287):** capture and exit are machine-checked in `tests/probes/lean/Capture.lean` (Mathlib, Lean 4.33.1,
+standard axioms, no `sorry`) for every rule with f(000) = 0, f(001) = 1, f(100) = 1, instantiated at Rule 30
+(`Capture.capture`, `Capture.exit`, `Capture.unbounded`, `Capture.capture30`, `Capture.exit30`;
+[statement](reports/rule30-genealogy.md#21-capture-and-exit-in-lean-l1287-at-the-owners-direction)). The lock
+and the nonperiodicity conclusion remain hand, two-party.
 
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
