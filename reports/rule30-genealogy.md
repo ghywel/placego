@@ -601,3 +601,59 @@ On the orbit to 20,000 there are 9,464 episodes. The completed ones have Σ⌊M_
 
 The kit refresh in §9 (kit 93d98bbe) was noted. Its mortality and separator bridges concern other frontiers, as GPT
 says.
+
+## 11. What the derivatives control (L1282, at the owner's direction)
+
+The owner chose GPT's alternative queue item: the binary Boolean derivative, with its nonlinear term kept, and what
+it controls in the actual orbit.
+
+**What is already known (searched first).** Record searched: `record_find` for sensitivity, Huang, influence set,
+polarization, Rule 150, superposition, sideways, Duhamel, variation of constants, trinomial, Lucas, linear part,
+source term, Meier and 0.246; known index kit f1cb20be.
+- The kit proves Rule 30 = Rule 150 + x_p x_(p+1) and the centre's Duhamel formula
+  (`Rule30Equivalents.CenterFormulas.duhamel` and `center_duhamel`). Our §8.100, G28 and GC420 used it before the kit.
+- Portal entry R30-20261023-603218 (Lean Verified) has the degree 2t − 1, Walsh balance and the query-complexity
+  sandwich [2t − 1, 2t + 1].
+- Our L1072 degree law, carried in GC2032.
+- §8.66: the leftward damage speed is 0.246 = 1 − P(heal)·E[jump].
+- L957: the sideways front at 0.155, with its exact four-bit difference law.
+- G13: the reader's reset words.
+- Bagnoli, Rechtman and Ruffo (1992): the Boolean Jacobian and path-count Lyapunov exponent.
+
+So most of the derivative ground is charted, and none of it is claimed here.
+
+**The exact one-step laws (PROVED by exhaustion; T4 checks every case).** Write F = L + N, with L Rule 150 and
+N(x)_i = x_i x_(i+1) (the kit's split).
+- **Polarization.** F(x + y) = F(x) + F(y) + B(x, y), where B(x, y)_i = x_i y_(i+1) + x_(i+1) y_i.
+- **Forward damage.** D(t+1) = F(D) + B(x, D). Damage runs Rule 30 on itself, coupled to the orbit only through B.
+  In white surroundings it is exactly a second Rule 30 seed. Its first-order part J(x)D = L D + B(x, D) has the masks
+  1, 1 + x_(i+1) and 1 + x_i, the Boolean derivatives. Its second-order part N(D) does not depend on the orbit.
+- **Backward ("invisible") damage.** Two parent rows with the same children differ by a D with
+  D_(i−1) = (1 + x_(i+1)) D_i + (1 + x_i) D_(i+1) + D_i D_(i+1), read right to left. G13's reader ambiguity dies
+  exactly when this difference is masked. L957's sideways law has the same four cases.
+
+So one set of masks governs influence forward, recoverability backward and reconstruction sideways. That unification
+is the only new framing here, and it is labelled as framing.
+
+**T4, the test (predictions written before the run).** Flip one cell inside the single-seed pattern at time 1000, at
+positions −200, 0 and +200, and follow three left edges for 5,000 steps:
+- the actual damage edge Δ_act;
+- the edge of first-order influence Δ_sup: cells with at least one sensitivity path, which is the support of the
+  Bagnoli path counts;
+- the edge of the mod-2 tangent Δ_tan: cells with an odd number of paths.
+
+Hand rules at the edge (PROOF-SKETCH):
+- Δ_sup steps left exactly when x_(Δ−1) = 0, and steps right exactly when x_(Δ−1) = x_Δ = x_(Δ+1) = 1.
+- With independent cells that is a speed of 0.375.
+- The actual edge shares the leftward condition, because a single damaged input is exactly first order. When it does
+  not step left it reads the second-order term, so it can fall behind Δ_sup or move ahead of it.
+
+Predictions:
+- P4a: the actual edge moves left at 0.246 ± 0.01, reproducing §8.66.
+- P4b: the first-order edge moves left faster, at a speed in [0.30, 0.40], and the gap grows linearly.
+- P4c: the mod-2 tangent edge equals the first-order edge in at least 80% of steps, since path counts at the
+  extreme edge are small.
+- Counterfactual: if the first-order edge also moves at about 0.246, the derivatives control the reach of influence
+  even though they do not control its interior (T2c).
+- What it would teach: whether the Boolean derivative fixes the large-scale cone of influence, or whether the AND of
+  damages, the base-free second-order term, is already needed at the edge.

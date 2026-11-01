@@ -1,0 +1,5 @@
+(A) polarization 64/64, forward damage 64/64, backward invisible damage 512 windows: PASS
+(B) flip at -200: left-edge speeds over steps 2500..5000: actual -0.2493, first-order -0.3946, mod-2 tangent -0.2849; at step 5000: actual -1448, first-order -2176, tangent -1577 (from -200); tangent edge = first-order edge in 0.004 of steps; actual strictly ahead of first-order in 0.000
+(B) flip at +0: left-edge speeds over steps 2500..5000: actual -0.2837, first-order -0.3962, mod-2 tangent -0.3001; at step 5000: actual -1307, first-order -1971, tangent -1562 (from +0); tangent edge = first-order edge in 0.001 of steps; actual strictly ahead of first-order in 0.000
+(B) flip at +200: left-edge speeds over steps 2500..5000: actual -0.2465, first-order -0.4082, mod-2 tangent -0.3101; at step 5000: actual -1033, first-order -1819, tangent -1239 (from +200); tangent edge = first-order edge in 0.005 of steps; actual strictly ahead of first-order in 0.001
+GENEALOGY_DERIVATIVES_DONE
