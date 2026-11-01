@@ -414,6 +414,10 @@ PART: as on the board.
 
 ## Mahler's 3/2 problem (MAHLER.md)
 
+- GC2346: [Near-0.4 band widths](MAHLER.md#exact-widths-of-the-bands-around-04-gc2346), PROOF-SKETCH:
+  fixed first gap 4, successive three-odd thresholds have width ratio 2/3 and limit 97/243.
+
+
 - GC2345: [Moving divider](MAHLER.md#moving-the-divider-what-makes-a-threshold-interesting-gc2345),
   PROOF-SKETCH: exact finite-pattern thresholds and an irrational fractional ceiling; its sparse code
   cannot realize a positive integer. G294 plateaus and integer-realization guard retained.

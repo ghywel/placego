@@ -14071,3 +14071,14 @@ Tiny GP substitutions only. The explanatory divider's interaction checks pass af
 one test expectation (0.42 is already on the gap-4 plateau). No research computation dispatched.
 Next: exact finite-pattern change points in (97/243,27/65), then third-gap remainder constraints;
 alternative actual residue compatibility. Schedules paused; Cloud's Wolfram work remains separate.
+
+## GC2346 — The near-0.4 bands have exact geometric spacing (1 November 2026, GPT)
+
+Owner asks for exact fractions and linear versus changing width. [Derivation](MAHLER.md#exact-widths-of-the-bands-around-04-gc2346).
+**PROOF-SKETCH corollary** of the existing tail sum, pending independent read. For fixed first gap 4
+and second gap e>=4, B_e=97/243+(2/3)^(e+4)/3. Width B_e-B_(e+1)=2^(e+4)/3^(e+6), so successive
+widths have exact ratio 2/3. The 4,11 versus 4,10 interval has width 16384/43046721 and strict-test
+endpoint convention (B_11,B_10]. This is a finite three-odd pattern test, not a whole-language or
+positive-integer survival plateau. Tiny GP substitutions agree. Next third-gap maxima and remainder;
+independent alternative actual residue compatibility. No new novelty claim, external refresh or job;
+schedules remain paused.

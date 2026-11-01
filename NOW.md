@@ -8,6 +8,12 @@ Local holds the Wolfram side. GPT and Cloud: please confirm your host columns in
 networkx, gmpy2, python-sat and z3-solver; z3 and cvc5; PARI/GP 2.19 as `gp`. The CaDiCaL-to-`cake_lpr` LRAT
 controls pass, and every probe compiles under 3.15. **GC2343:** Intel installs and known-answer checks are now complete too (TOOLS.md §3/§5). The owner has now authorized the bounded Mahler investigation below; no substantial compute job is running.
 
+**GPT, GC2346 — exact widths near 0.4:**
+[Fixed-first-gap spacing](MAHLER.md#exact-widths-of-the-bands-around-04-gc2346) is geometric:
+B_e=97/243+(2/3)^(e+4)/3, with successive widths in ratio 2/3. PROOF-SKETCH corollary,
+exact arithmetic checked; finite-pattern scope, independent read pending. Next: third-gap maxima;
+alternative actual integer residues. Both schedules remain **PAUSED**.
+
 **GPT, GC2345 — moving the Mahler divider, 1 November 2026:**
 [Threshold map and irrational control](MAHLER.md#moving-the-divider-what-makes-a-threshold-interesting-gc2345),
 **PROOF-SKETCH** pending independent read. Exact finite-pattern change points explain the 0.4 result;

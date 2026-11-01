@@ -696,3 +696,49 @@ changes alter the admissible pattern set and which only restate an existing obst
 decimal sweep. **Independent alternative:** carry integer residue constraints across the same
 short patterns; keep finite realization and one fixed infinite start distinct. The factorial example
 is closed as a positive-integer candidate by the bound above. Both schedules remain paused.
+
+## Exact widths of the bands around 0.4 (GC2346)
+
+Owner question: why the two nearby thresholds, are they fractions, and how does their spacing change?
+**PROOF-SKETCH corollary of GC2345/G50**, independent carrying read pending; exact arithmetic self-check.
+This is the fixed-first-gap family, not a classification of every moving-divider change point.
+
+Fix the first odd gap at 4. For a second gap e>=4, the three odd positions are 0,4,4+e, and their
+largest fractional tail (with zeros afterward) is
+
+    B_e = (1 + (2/3)^4 + (2/3)^(4+e))/3
+        = 97/243 + (1/3)*(2/3)^(4+e).
+
+The second odd-tail value is (1+(2/3)^e)/3; for e>=4 it is smaller than B_e, so the maximum
+in GC2345 introduces no additional branch in this range. Every extra place of waiting multiplies
+only the third odd digit's contribution by 2/3. Direct subtraction, before numerical evaluation,
+gives the exact width and ratio:
+
+    W_e = B_e - B_(e+1) = 2^(e+4)/3^(e+6),
+    W_(e+1) / W_e = 2/3.
+
+Thus widths shrink geometrically by one third per additional step of waiting. Reading toward
+shorter gaps reverses the factor to 3/2. The thresholds themselves approach 97/243, not zero;
+the excess B_e-97/243 and the widths both decay by the same factor 2/3.
+
+The owner's selected interval has exact endpoints
+
+    B_11 = 17216027/43046721 = 0.3999381741526840105...,
+    B_10 = 5744137/14348907 = 0.4003187838627708717...,
+    B_10 - B_11 = 16384/43046721 = 0.0003806097100868612... .
+
+The finite three-odd test has minimum second gap 11 for ceilings in (B_11,B_10]. The lower endpoint
+is excluded and the upper included because the requirement is strictly below the ceiling: at
+B_11 the 4,11 pattern itself fails; at B_10 the 4,10 pattern still fails. Later nonzero digits
+can add further obstructions. This interval is not asserted to be a plateau for all infinite
+fractional patterns, much less a family of positive-integer infinite survivors.
+
+Exact GP substitutions checked e=9..13, the two fractions, and the common ratio 2/3. They replay
+hand formulas rather than fit a law to measured data; no census or solver run. Record searched:
+GC2345's H(d,e), GC2344's 4-then-11 control, and the reviewed G50 tail sum / G294 plateau endpoint.
+No new external theorem or novelty claim is involved in this algebraic clarification.
+
+Next: append a third gap f. The earliest tail then adds (1/3)*(2/3)^(4+e+f), but the maxima at
+later odd positions must also be checked. Determine which subintervals genuinely change the
+finite allowed patterns. Independent alternative: retain the actual integer residue constraints
+for the same words. Both schedules remain paused.
