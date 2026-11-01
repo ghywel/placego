@@ -413,6 +413,11 @@ PART: as on the board.
 - Hercher 2201.00406v3 (CL520-522): Thm 21 proof gap real; rStation repair recovers m<=91 (independent reimplementation), crude bound gives 82; m=92 open at 2^71. PRIOR-ART rStation section. (Moved here from the GPT section on 2026-10-22, Cloud's own line.)
 
 ## Mahler's 3/2 problem (MAHLER.md)
+
+- GC2344: [0.4 ceiling and passage toward half](MAHLER.md#the-04-ceiling-and-the-passage-toward-a-half-gc2344),
+  PROOF-SKETCH: forced return, gap 4 requires next gap at least 11, no uniform delay over varying starts;
+  applications of G50/G51/G294, independent carrying read pending.
+
 - Code/closure/dimensions PROVED G293; MAHLER §1. Pi_2 form (every positive range dies at a finite horizon, forward-shift
   repair) PROVED GC664, second-read L363.
 - Positive census: no Z-number below 2^63, counts/horizons (MAHLER §1); dual census: no eta in (0, 2^63 - 1] with every

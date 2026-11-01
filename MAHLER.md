@@ -464,3 +464,109 @@ No paywalled Parry source is required for the argument here.
 - **Back to Rule30:** distinguish a measured mismatch clock from a globally non-replenishable resource.
   The proved ether potential establishes the latter only in its exact background/frame/hypotheses.
   No Mahler conclusion is imported as a theorem about the wall or centre column.
+
+## The 0.4 ceiling and the passage toward a half (GC2344)
+
+Owner pull, 1 November 2026: lower the ceiling to0.4 and relate its breaches to reaching0.5.
+Interpretation: the narrower safe interval is[0,2/5), with[2/5,1/2) the intervening band.
+**Status:** new scoped deductions below are PROOF-SKETCH, independent carrying read pending;
+G50/G51 and the G294 window ladder are existing reviewed tools. No novelty or nonexistence claim.
+
+Write x_t=xi*(3/2)^t=n_t+u_t, where n_t is its integer part and u_t its fractional part.
+Define T_a(xi) as the first t>=0 with u_t>=a, allowing infinity. Necessarily T_(2/5)<=T_(1/2).
+The question is what happens between those two times; the two times may also be equal.
+
+### First crossing and forced return
+
+If the first crossing of2/5 occurs at time t>=1 and u_t<1/2, then the previous integer n_(t-1)
+is even and u_(t-1) belongs to[4/15,1/3). Indeed the even branch gives u_t=3u_(t-1)/2;
+an odd previous integer with u_(t-1)<2/5 either fails the half test or produces u_t<1/10.
+
+Once u_t is in[2/5,1/2), survival for one more step forces n_t odd. An even integer would
+produce a fractional part in[3/5,3/4), an immediate half breach. With n_t odd instead,
+
+    u_(t+1)=(3*u_t-1)/2 belongs to[1/10,1/4).
+
+Thus crossing the lower ceiling can force a return deep into the safe region. A rise through
+this band is not monotone progress toward half. The integer parity decides whether the next step
+escapes or returns. This is the established G50 branch law specialized to the two chosen thresholds.
+
+An actual positive-rational control is xi=46+4/15:
+
+| t | Integer part | Fractional part |
+|---|---|---|
+| 0 | 46 | 4/15 |
+| 1 | 69 | 2/5 |
+| 2 | 104 | 1/10 |
+| 3 | 156 | 3/20 |
+| 4 | 234 | 9/40 |
+| 5 | 351 | 27/80 |
+| 6 | 527 | 1/160 |
+| 7 | 790 | 163/320 |
+
+Here T_(2/5)=1 and T_(1/2)=7. The final integer is the actual floor790; the safe ceil-map
+would give791 there and is no longer the integer-part evolution after the half condition fails.
+
+### Why exactly0.4 is an interesting intermediate threshold
+
+The already proved ladder has plateaus ending at97/243 and beginning at27/65:
+
+    97/243 < 2/5 < 27/65.
+
+So0.4 lies between two simple minimum-gap descriptions. A gap d is the distance between
+consecutive odd steps: gap4 means an odd step followed by three even steps and then the next odd.
+For a hypothetical infinite survivor below2/5, every gap is at least4: two ones at distance3
+already contribute35/81>2/5 to the fractional tail. But gap4 is not itself excluded.
+
+At an odd step let u be its fraction and v the fraction at the next odd step, d positions later.
+G50's exact tail identity is
+
+    u=1/3+(2/3)^d*v.
+
+For d=4 and u<2/5 this forces v<27/80. If e is the following odd-step gap, its next odd fraction
+w is at least1/3, and hence
+
+    1/3+(2/3)^e/3 <= v < 27/80,
+    (2/3)^e < 1/80.
+
+Since80*2^10>3^10 and80*2^11<3^11, **gap4 must be followed by a gap of at least11**.
+This statement assumes the two subsequent odd steps exist and the relevant fractions remain in the
+window; it is not an unconditional claim about a truncated observed word. Positive integer infinite
+ceil-map itineraries have infinitely many odd steps.
+
+The11 is sharp at this local level: the formal word with ones only at0,4,15 has every tail below2/5.
+Its maximal tail is1/3+(2/3)^4/3+(2/3)^15/3, with margin13307/215233605 below2/5.
+G51 makes any finite prefix an actual positive-integer/fractional realization. Its eventually-zero
+formal continuation is not claimed to have a positive-integer infinite realization.
+Yet repeating gaps4,11 forever fails: the tail at the beginning of a gap4 exceeds2/5 by
+6487/71580695. Thus the local necessary rule alone is not sufficient; later gaps consume more room.
+
+### What a threshold breach cannot guarantee by itself
+
+There is no uniform finite bound, over all positive starts, on the permitted delay after a crossing
+at exactly2/5 before reaching1/2. For each prescribed finite length L, iterate the fractional rule
+b=0 below1/3 and b=1 at or above1/3, starting at u=2/5. This formal trajectory remains in[0,1/2).
+G51 realizes its first L parities by one residue r modulo2^L. Choose a positive integer n in that
+residue and also n=0 modulo3; the Chinese remainder theorem permits this because3 and2^L are coprime.
+Then xi=(2/3)*(n+2/5) starts with fractional part4/15<2/5 and reaches exactly2/5 at time1.
+It survives the half test for the prescribed further finite length. The selected n changes with L.
+This neither constructs an infinite survivor nor bounds the delay for one fixed start.
+
+### Search, arithmetic check and next step
+
+Record searched: G50/G51, G294 and the current window ladder; targeted2/5,97/243,27/80 and gap11
+searches in Coon27314bbf's source. Its centered windows and nearest-integer arcs are different sets
+from[0,2/5); no result about them was used to exclude this interval. The established integer/fraction
+method is also in Flatto–Lagarias–Pollington1995. This is a worked application, without priority claims.
+
+Before the small PARI/GP arithmetic check, hand predictions were: budget27/80, threshold gap11,
+finite4/11 prefix below2/5, periodic4/11 tail above2/5, and the displayed first-crossing orbit.
+All were confirmed by exact rational substitutions in GP2.19; eight trajectory values and four
+inequalities only, no census, solver query or statistical fit. Same-worker arithmetic is a self-check.
+
+Next executable question: retain the **remaining fractional allowance** after the4,11 pair and
+write its exact permitted next-gap condition, using the known tail identity. Compare it with Coon's
+existing slack identities before treating it as additional. In parallel as an independent direction,
+classify entry/exit branches of[2/5,1/2) with the integer residue retained. Any claim about the delay
+must name its fixed-start or bounded-start-size hypothesis. An unchanged global delay bound is cold
+because the finite-prefix construction above refutes it. Both schedules remain paused.

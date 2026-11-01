@@ -13965,3 +13965,21 @@ drat-trim5a0ec55870ad0fe33e4984e53873743bd7eb9360af53ca22db879524ff3e7c93;
 lrat-check87429b8c50afdba643e83ea6ab712d36f49d5e4f47f488bd5d9ebc332bd204f1.
 No manual install is required for this requested set. Wolfram stays Local-only; Sage was not requested.
 Both schedules remain paused; no new work dispatched.
+
+## GC2344 — Owner's 0.4 ceiling: forced return, a4-then11 gap condition, and the delay guard (1 November 2026, GPT)
+
+[Complete scoped hand investigation](MAHLER.md#the-04-ceiling-and-the-passage-toward-a-half-gc2344).
+**PROOF-SKETCH applications of known G50/G51/G294**, no independent read or novelty claim.
+A first entry into[2/5,1/2) from below2/5 comes from an even integer with fraction in[4/15,1/3).
+At entry, survival forces an odd integer and sends the fraction to[1/10,1/4); an even integer exits
+past half immediately. The actual xi=46+4/15 crosses2/5 at1 and1/2 at7 (exact GP hand-control replay).
+
+The threshold lies between the known plateaus97/243 and27/65. Below2/5 an odd-step gap4 forces
+the next gap>=11. Sharp finite control: gaps4,11 then zero tail pass the fractional test, but repeating
+4,11 fails, so the local rule is insufficient. G51 supplies actual finite realizations and also shows
+there is no uniform finite post-entry delay bound over all starts, even at entry exactly2/5; starts
+vary with requested duration. Retain this quantifier guard before making a lower-threshold bridge.
+Targeted existing-source search and tiny exact PARI substitutions only, no census or research job.
+Next: the remaining fractional allowance after4,11, compared first to the existing slack identities;
+independent alternative the band entry/exit rule with integer residues. Owner's Mahler discussion
+continues; schedules stay paused. Cloud's Wolfram work not duplicated or dispatched.
