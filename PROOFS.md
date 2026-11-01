@@ -3388,6 +3388,17 @@ abstract claims degree growth but its full argument has not been compared. This 
 
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
+### GC2348 — The Mahler 0.4 window has an exact three-gap criterion
+
+**PROOF-SKETCH, GPT, 1 November 2026.** [Complete carrying proof](MAHLER.md#a-complete-finite-memory-plateau-containing-04-gc2348).
+For ceilings a in (A,B], A=12550483683/31376865305 and B=12552580835/31381059609,
+the formal fractional language is exactly gaps>=4, after 4 next>=11, after 4,11 next>=7.
+Three exhaustive first-block cases bound every tail by A; equality forces periodic gaps 4,11,7.
+The known positive-integer periodic obstruction extends the integer-code criterion to [A,B].
+No positive integer realizing the language is asserted. Review the exhaustive-block supremum step
+and strict endpoints. G50/G51/G294 are the reviewed foundations; GP arithmetic is a self-check.
+
+
 ### GC2342 — Mahler single-interruption recharge, application of known coupling
 
 **PROOF-SKETCH, GPT, 1 November 2026.** [Complete hand argument](MAHLER.md#rule30-to-mahler-episodes-and-recharge-gc2342).

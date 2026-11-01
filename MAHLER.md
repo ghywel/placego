@@ -742,3 +742,163 @@ Next: append a third gap f. The earliest tail then adds (1/3)*(2/3)^(4+e+f), but
 later odd positions must also be checked. Determine which subintervals genuinely change the
 finite allowed patterns. Independent alternative: retain the actual integer residue constraints
 for the same words. Both schedules remain paused.
+
+## A complete finite-memory plateau containing 0.4 (GC2348)
+
+**Status: PROOF-SKETCH, GPT, 1 November 2026; independent carrying read requested.**
+This completes GC2347's hand test. It extends the reviewed G294 proof method to an explicit
+three-gap rule, using G50/G51 throughout. No novelty, infinite positive survivor, Lean compilation
+or prize claim. The earlier GC2344–46 caution remains correct for their incomplete two-gap tests;
+the complete rule below now supplies the missing sufficiency argument in this particular interval.
+
+### Statement and conventions
+
+For a binary sequence b, put r=2/3 and
+
+    U_j(b) = (1/3) * sum_(k>=0) b_(j+k) * r^k.
+
+A gap is the positive distance between consecutive ones. Let L consist of exactly the binary
+sequences satisfying these rules wherever the named successive gaps exist:
+
+1. Every gap is at least 4.
+2. A gap of 4 is followed by a gap of at least 11.
+3. Gaps 4,11 are followed by a gap of at least 7.
+
+Sequences with finitely many ones, including the zero sequence, are allowed in this formal class.
+Define the following exact numbers:
+
+    P = (1+r^4+r^15)/3,
+    A = P/(1-r^22) = 12550483683/31376865305
+      = 0.3999916359076201860...,
+    B = P+r^21/3 = 12552580835/31381059609
+      = 0.4000050027437555032... .
+
+**Fractional statement.** For every ceiling a in (A,B],
+
+    all U_j(b)<a  if and only if  b belongs to L.
+
+In particular this holds at a=2/5. The interval is a maximal interval on which this entire formal
+fractional language is unchanged: at A a critical periodic word drops out; above B a forbidden
+finite word enters. This is stronger than the finite-pattern bands of GC2346.
+
+**Ordinary-integer statement.** For every a in [A,B], a real xi>0 remains in the strict fractional
+window [0,a) forever exactly when xi=n+U_0(b(n)), where n>=1 and the parity code b(n) of
+F(n)=ceil(3*n/2) belongs to L. The endpoint A is included here because the critical equality word
+cannot be a positive-integer code. This equivalence does not assert that any such positive n exists,
+and no maximality assertion is made for the actual integer survivor sets.
+
+### Necessity: every forbidden pattern has enough fractional cost
+
+A gap at most 3 contributes at least (1+r^3)/3=35/81>B at its first one.
+Once all gaps are at least 4, a 4 followed by a gap at most 10 contributes at least
+(1+r^4+r^14)/3>B. Once those are excluded, 4,11 followed by a gap at most 6 contributes
+at least (1+r^4+r^15+r^21)/3=B. Nonnegative later terms cannot lower these costs.
+Consequently all three patterns fail every strict ceiling a<=B. This includes equality at B.
+
+### Sufficiency: three exhaustive first-block cases
+
+Let M be the supremum of U_0 over all words in L beginning with a one. Clearly M<=1.
+L is invariant under taking suffixes. A word beginning with one has one of three complete
+initial blocks, or terminates during one of these blocks:
+
+| Case | Complete initial gaps | Contribution before the next block | Maximum discount on the remaining tail |
+|---|---|---|---|
+| I | d>=5 | 1/3 | r^5 |
+| II | 4,e with e>=12 | (1+r^4)/3 | r^16 |
+| III | 4,11,f with f>=7 | P | r^22 |
+
+The rules are exhaustive: a first gap cannot be smaller than 4, and the only exceptional next
+gap after 4 is 11. After each complete block the remaining suffix is again in L. An incomplete
+terminal block contributes at most P and adds no remainder. Thus
+
+    M <= max(1/3+r^5*M, (1+r^4)/3+r^16*M, P+r^22*M).
+
+The fixed points of these three increasing affine maps are respectively
+
+    81/211, 177147/443105, A,
+
+and the first two are strictly smaller than A. If M>A, all three expressions on the right would
+be strictly smaller than M, contradicting the displayed inequality. Hence M<=A. A tail beginning
+with zeros is r^h times a tail beginning with a one, or is zero, so every U_j<=A.
+This proves sufficiency for every a>A. The repeating gap sequence (4,11,7) realizes equality:
+its binary period has length 22 and ones at positions 0,4,15. Its tail at the start of each period
+is P+r^22*P+...=A. It belongs to L, so the supremum is exactly A.
+
+### Endpoints, maximality and the integer-side guard
+
+For equality U_j=A, the first-block argument forces case III with the shortest third gap 7,
+and forces the remainder to equal A again. Iterating forces the exact periodic gap sequence
+(4,11,7) from that position onward. Cases I/II, a longer gap, or termination give strict inequality.
+Thus at a=A the formal strict language removes precisely the L words with such a periodic suffix.
+The remaining L words still have every tail strictly below A, even when their supremum is A.
+
+At the upper endpoint, the finite word with ones at 0,4,15,21 and zeros thereafter has maximum
+fractional tail exactly B: its later one-tail values are (1+r^11+r^17)/3, (1+r^6)/3 and 1/3,
+all smaller than B. It fails rule 3 but passes every ceiling a>B. These two witnesses establish
+both boundaries of the formal plateau, without assuming positive-integer infinite realizations.
+
+For the ordinary-integer endpoint, write
+
+    C = 3^21 + 2^4*3^17 + 2^15*3^6 = 12550483683,
+    D = 3^22 - 2^22 = 31376865305.
+
+One 22-step block of the critical word sends n to (3^22*n+C)/2^22. Repeating that word k times
+with integral intermediate values forces 2^(22*k) to divide D*n+C: multiply the iterated affine
+identity by D and use that 3 is odd. Repetition for every k would force D*n+C=0, impossible for
+n>=1. This is G50/G51's known periodic sign obstruction, with exact constants supplied here.
+It applies at any later age too. Therefore every positive integer code in L has U_j<A everywhere;
+G50 then supplies the real companion and proves the stated equivalence on the closed interval [A,B].
+The positive real xi with integer part zero cannot supply an extra infinite survivor (G50).
+
+### What resetting means, and what it does not mean
+
+At a=2/5, let c be the inherited strict upper bound on the fractional value at a current odd step.
+After a gap d the next odd-step bound is min(a,(c-1/3)/r^d). Starting with c=a gives
+
+    after 4:       c = 27/80,
+    after 4,11:    c = 59049/163840,
+    after 4,11,7:  uncapped c = 9700803/20971520 > a.
+
+A third gap 6 is impossible because 1/3+r^6/3 >= 59049/163840; gap 7 suffices even with any
+continuation already bounded by a. After 4,12 the uncapped bound also exceeds a. A single gap
+at least 5 does the same. The three-state description is therefore: ordinary state; after a 4;
+after 4,11. Each permitted completed block returns to the ordinary fractional bound. This is a
+reset of the inherited fractional restriction, not a reset of the actual integer or its residues.
+The proof above, rather than a finite reset calculation alone, establishes the infinite-language claim.
+
+An actual finite control retains that distinction. G51's least residue for the 22-bit critical
+period is n=217509 modulo 2^22. The positive real xi=217509+A follows that period through its
+first 22 updates with maximum fractional value A<2/5, checked directly by exact rational
+multiplication and floors. Its parity ones at times 0..21 are exactly 0,4,15.
+The value v2(D*217509+C)=24 permits the first period but forbids two complete repeats, since
+44 bits of divisibility would be needed. The fractional periodic path exists; this particular
+actual integer cannot track it indefinitely. No claim of escape time was inferred from that valuation.
+
+### Search, validation and next executable question
+
+Prediction/counterfactual and the three-case proof test were published first in GC2347 at d6b1b083.
+Record searches: GC2344–46, G50/G51/G294, and the Mahler finite-memory/plateau entries; the broad
+numeric search produced unrelated numeric matches, so the Mahler-scoped search was used to disambiguate.
+The cached Rule30 kit/portal index at f1cb20be supplied no matching Mahler statement; this is not a
+fresh portal audit or a novelty conclusion. Coon main bd92eb1 was refreshed in GC2345; the relevant
+unchanged AperiodicSlackCocycle.lean was read for `integerSlack_cocycle_eq`,
+`prefix_weighted_tail_budget` and `next_block_threshold_of_integerSlack_pos` (SHA256
+b230c1a26157b53b94e443263e6799fa50e34a4828ed6571bce6f8100faf8884).
+Those general remainder identities are prior machinery; no new generic slack law is claimed here.
+G294's extremal-periodic-word proof supplies the immediate reviewed template. The beta-hole
+literature cited in GC2345 studies related survivor plateaus with different hole conventions;
+no lower-hole theorem was silently imported.
+
+Exact PARI/GP substitutions checked A<B, A<2/5<B, the two smaller affine fixed points, all three
+forbidden-cost bounds, reset caps and the stated finite positive witness. They are self-checks of
+hand formulas, not a census or a fitted law. No substantial computation, job delegation, Lean build
+or submission. Independent review should carry the exhaustive first-block/supremum step and the
+endpoint transfer to positive integer codes; numerical substitution alone does not carry these.
+
+**Next executable step:** retain the three-state fractional condition together with the exact
+odd-to-odd integer map: d=v2(3*n+1), next odd=3^(d-1)*(3*n+1)/2^d. Compare its permitted returns
+with the known residue/slack machinery and identify a constraint that survives changes of block;
+do not infer one from the fractional reset. **Independent alternative:** move just above B and
+analyze the newly admitted 4,11,6 block with its remaining-tail constraint. The former third-gap
+sufficiency gap is closed at PROOF-SKETCH level; general integer nonexistence stays open.
+Both schedules remain paused. Passive carrying-review pointer only; no sleeping worker dispatched.

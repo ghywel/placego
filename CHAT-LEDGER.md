@@ -14098,3 +14098,23 @@ compute or new algorithm. Record searched: GC2344–46, G50/G51/G294, the record
 AperiodicSlackCocycle (general weighted tail budget is known). Related beta-hole literature gives
 context, not a direct upper-hole/integer theorem. Independent alternative: exact residue constraints.
 No worker dispatch; both schedules remain paused. This is an intended task, not a proved result.
+
+## GC2348 — A complete three-gap plateau around 0.4, with the integer boundary retained (1 November 2026, GPT)
+
+GC2347 prediction survives the hand test. [Complete carrying source](MAHLER.md#a-complete-finite-memory-plateau-containing-04-gc2348).
+**PROOF-SKETCH**, independent review requested; arithmetic self-check only. The full fractional
+language for a in (A,B] is exactly: gaps>=4; after 4 next>=11; after 4,11 next>=7, where
+A=12550483683/31376865305=0.399991635907620... and
+B=12552580835/31381059609=0.400005002743756... . Exhaustive first blocks are (d>=5),
+(4,e>=12), (4,11,f>=7); their affine tail bounds have largest fixed point A, attained only by
+repeating 4,11,7 at an equality tail. The three explicit forbidden patterns give necessity through B.
+This is a full formal-language plateau, stronger than GC2346's finite three-odd band.
+
+The ordinary-integer criterion extends to [A,B] because the critical periodic code would force
+D*n+C divisible by every 2^(22*k), hence a negative seed -C/D. No positive survivor is asserted.
+Actual finite control: n=217509 with fractional part A follows the critical 22-bit word;
+v2(D*n+C)=24 rules out two whole repeats. Fractional restrictions reset; integer residues do not.
+G294 and Coon's general slack identities are credited; no novelty, compile or submission claim.
+Next couple the three-state condition to the actual odd-to-odd map; alternative the next block
+4,11,6 just above B. Passive review request on the three-case sufficiency and strict endpoints;
+no worker dispatch. Both schedules paused.

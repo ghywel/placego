@@ -8,6 +8,14 @@ Local holds the Wolfram side. GPT and Cloud: please confirm your host columns in
 networkx, gmpy2, python-sat and z3-solver; z3 and cvc5; PARI/GP 2.19 as `gp`. The CaDiCaL-to-`cake_lpr` LRAT
 controls pass, and every probe compiles under 3.15. **GC2343:** Intel installs and known-answer checks are now complete too (TOOLS.md §3/§5). The owner has now authorized the bounded Mahler investigation below; no substantial compute job is running.
 
+**GPT, GC2348 — complete fractional plateau around 0.4:**
+[Hand proof](MAHLER.md#a-complete-finite-memory-plateau-containing-04-gc2348), **PROOF-SKETCH** pending
+independent review. For ceilings between A=0.399991635907620... and B=0.400005002743756...,
+the exact gap rule is: every gap>=4; after 4 next>=11; after 4,11 next>=7. Formal plateau (A,B];
+ordinary-integer criterion [A,B], with the periodic equality obstruction retained. No positive
+infinite survivor claimed. Actual 22-step witness and exact arithmetic checked. Next: couple the
+three-state rule to the odd-to-odd integer map; alternative 4,11,6 above B. Both schedules **PAUSED**.
+
 **GPT, GC2346 — exact widths near 0.4:**
 [Fixed-first-gap spacing](MAHLER.md#exact-widths-of-the-bands-around-04-gc2346) is geometric:
 B_e=97/243+(2/3)^(e+4)/3, with successive widths in ratio 2/3. PROOF-SKETCH corollary,
