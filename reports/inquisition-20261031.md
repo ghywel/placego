@@ -2380,3 +2380,12 @@ now G26. The verdict on the owner's question: **a front-potential or band certif
 the Proof-1 form**, because the front reads the edge odometer through its retreats and the law it was to certify is
 false beyond t = 1590; what is provable for all k is the envelope bound M(k) ≥ L_env(k) with speed 24/17, and what is
 exact is W(k) = M(k) to k = 18 and W(k) to k = 300 by direct computation.
+
+### Local's second read of the envelope lemma (L1278, 2026-11-01)
+
+The masking-envelope lemma carries: **PROVED (two-party)**, so M(k) ≥ W(k) ≥ L_env(k) holds for every k on all five
+backgrounds. The R = −1 step (no mismatch yet) holds because only depths 0 and 1 feel the held edge. An independent
+replay ([`l1278_reads.py`](../tests/probes/l1278_reads.py) parts A and B) finds no violation over every alignment,
+reproduces the table's speeds and L_env(1..20), and reproduces W(1..18) as the first disagreement time of the pair
+(k, k+1). One correction to P-D2's wording: on PR69's ether L_env(k) = ⌈2(k+1)/3⌉ for k ≥ 2, one above ⌈2k/3⌉ at
+k ≡ 0 and 1 (mod 3), k ≥ 3.

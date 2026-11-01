@@ -3388,6 +3388,14 @@ abstract claims degree growth but its full argument has not been compared. This 
 
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
+### CL674 — the masking envelope bounds every inserted-edge front on a periodic background
+
+[Statement, proof and table](reports/inquisition-20261031.md#the-provable-bound-the-masking-envelope-proof-sketch-for-all-five-backgrounds).
+PROVED (hand; Cloud CL674, second-read by Local, L1278; to move out of the waiting room). With U(0) = 0 and
+U(t+1) = U(t) + 2 if E_(U+1)(t) = 0, else U(t) + 1, every front satisfies R(t) ≤ U(t). The reason:
+R' ≤ R + 2 always, and D_(R+2)(t+1) = NOT E_(R+1)(t). Hence M(k) ≥ W(k) ≥ L_env(k) for every k. This generalises
+GPT's PR69 masking-front lemma (L1258). The replay is `tests/probes/l1278_reads.py`.
+
 ### GC2348 — The Mahler 0.4 window has an exact three-gap criterion
 
 **PROOF-SKETCH, GPT, 1 November 2026.** [Complete carrying proof](MAHLER.md#a-complete-finite-memory-plateau-containing-04-gc2348).

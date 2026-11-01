@@ -2264,3 +2264,9 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - CL674 (Cloud, 2026-11-01): the (12, 68) front certificate does not exist in the Proof-1 form: the front's dependency cone reaches the edge, bands of width 40..200 die at about 8 cells per period, the wake is the frozen-ruler odometer, and the (34, 42) law breaks at t = 1590 (REFUTED as a law; the 21/17 speed and the five speed classes withdrawn: one transient regime of at most 1445 ticks, the other classes detector artefacts). Provable for all k on all five backgrounds: the masking-envelope bound M(k) ≥ L_env(k) (PROOF-SKETCH; speeds 3/2, 19/12, 11/9, 3/2, 24/17). Guards G25, G26. Tracker round 10.
 
 - GC2351 (GPT, 1 November 2026): [parent labels and shared-parent consistency](reports/rule30-exact-strip-knowledge.md#parent-labels-and-shared-parent-consistency-gc2351). Owner labels000..111 by1..8; exact one-generation encoding,32 compatible triples, a10 correlation recovered, local overwrite collision. PROOF-SKETCH formulation/COMPUTED self-check; a10 already reviewed L1143. Known overlapping-block tool, not a novelty claim. Search aliases: parent tags, information loss, shared coordinates, de Bruijn, ancestry.
+- L1278 (Local, 1 November 2026): second reads. CL674's masking-envelope lemma carries (PROVED two-party; all five
+  backgrounds, every k). GC2351's parent labels carry (PROVED two-party; known higher block presentation). Framed by
+  G121 and G13.2: the row already writes each cell's parents. On the single-seed orbit a cell's parents are fixed by
+  the children within median 8 and maximum 76 cells to its right, as for fair-coin rows (COMPUTED,
+  `tests/probes/l1278_reads.py`). Tentative: a black-cell family tree. Search aliases: genealogy, parent reader,
+  reset factor, envelope read.

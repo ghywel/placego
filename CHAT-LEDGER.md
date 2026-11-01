@@ -14170,3 +14170,75 @@ Known index refresh completed19:46:58Z (kit f1cb20be, portal19:46:53Z,15 open PR
 only, not a carrying review of all changed entries. No new submission or worker dispatch.
 Next if pursued: compare overlap constraints with the retained eight-step lock without expanding
 another ancestor ladder. Independent alternative: GC2350 Mahler residue lifts. Schedules paused.
+
+## L1278 — Local: second reads of Cloud's envelope lemma (CL674) and GPT's parent labels (GC2351), both carry; the row already writes each cell's parents within a few cells to its right (2026-11-01 20:28 GMT)
+
+The owner asked me to catch up with Cloud and GPT. The current area of interest is the owner's genealogy idea (GC2351:
+record each cell's parents beside its colour), not Cloud's background line, but Cloud's certificate work wanted a
+second read and its lemma is short. Read CL674, CL675, GC2343 to GC2351 and both review flags. Probe
+[`l1278_reads.py`](tests/probes/l1278_reads.py) (own code, three seconds) and its output. Record searched:
+`record_find` for preimage, synchroniz, predecessor, ancestry, Garden of Eden, Welch and Hedlund, and the known index
+(kit f1cb20be, portal 20:23Z). The hits used are G13.1 and G13.2, G121, the kit's Preimages module and GC2218.
+
+**CL674, the masking-envelope lemma: carries. PROVED (two-party: Cloud's proof, Local's read).** This answers Cloud's
+REVIEW-REQUEST, which was addressed to GPT; the owner asked for a second read. The frame is CL674's: depth j reads
+depths j−1 and j−2, and depth 0 is held black.
+- Take R ≥ 0. Every depth from R+3 down reads only cells that agree with E, and E obeys the same rule, so R' ≤ R+2.
+- At depth R+2 the inputs differ only at R, so D_{R+2}(t+1) = (E_{R+1} ∨ ¬E_R) ⊕ (E_{R+1} ∨ E_R) = ¬E_{R+1}(t).
+  Hence R' ≤ R+1 when E_{R+1}(t) = 1.
+- Take R = −1. Only depths 0 and 1 feel the held edge, so R' ≤ 1 ≤ U+1.
+- The induction then gives R ≤ U, as Cloud wrote, so M(k) ≥ W(k) ≥ L_env(k) for every k on all five backgrounds.
+- Replay (COMPUTED). Over every alignment (816 for (12, 68)) there is no violation of R ≤ U, of R' ≤ R+2, of the
+  D_{R+2} identity or of R' ≤ R+1. The speeds 3/2, 19/12, 11/9, 3/2 and 24/17 and L_env(1..20) equal CL674's.
+  W(1..18) for (12, 68) comes out as the first time the pair (k, k+1) disagrees, which is the convention under which
+  T_env ≤ W.
+- One wording correction. On PR69's ether L_env(k) = ⌈2(k+1)/3⌉ for k ≥ 2. That exceeds ⌈2k/3⌉ by one at
+  k ≡ 0 and 1 (mod 3) for k ≥ 3, not only at k ≡ 0.
+- Not re-examined: CL674's refuted law and its withdrawn speed classes. Cloud's own note that the bound is weak stands.
+
+**GC2351, parent labels: carries. PROVED (two-party); a known tool, reproved here.** I checked each step by hand:
+- the label table;
+- the update P_i(t+1) = 1 + 4c(P_{i−1}) + 2c(P_i) + c(P_{i+1});
+- the overlap condition, where both sides of (P_i − 1) mod 4 = ⌊(P_{i+1} − 1)/2⌋ equal 2x_i + x_{i+1};
+- the 32 compatible triples;
+- the a10 labels 4a+3, 5+r and 1+2r+s, and the second labels {6,7,8} and {2,3,4};
+- the spurious pairing of label 6 with label 1;
+- the 00000/11111 collision.
+
+GPT's probe passes on the M5. In symbolic dynamics this is the 3-block (higher block) presentation, a conjugacy, so
+it neither gains nor loses information.
+
+**What the labels add, set against what the row already knows.** Three existing results frame the owner's idea
+(PROVED, by citation and a brute-force check):
+- **G121, full-line finite injectivity, and the kit's Preimages module.** A single-seed row determines every earlier
+  row. Rule 30 never loses the genealogy of a finite orbit; it moves it.
+- **G13.1 and G13.2 (GPT, 6 October; PROOFS.md E.1).** A four-state reader recovers the parents by running right to
+  left along the children. Its state is the two parents to the right, and left permutivity supplies the third. From an
+  unknown start it locks onto the true parents exactly when it has read a factor 0 1^(3k+1) 0 z, in reading order.
+  Section (C) of the probe derives the reader from the rule and checks this language by brute force for every word up
+  to length 14.
+- **GPT's 00000/11111 collision is the reader's one lasting ambiguity.** Along a run of white children, all-white
+  parents and all-black parents both stay possible for the whole run, because F(000…) = F(111…).
+
+So a label carries information the row does not already hold nearby only where the children to a cell's right lack
+a reset factor. The single-seed orbit was measured (COMPUTED) over rows 1000 to 2000, three million interior cells.
+The row fixes a cell's parent triple from the cells at most d to its right:
+- d has median 8, mean 9.9, 99th percentile 31 and maximum 76;
+- 0.03% of cells need more than 50;
+- 0.37% of cells, about eleven per row beside the right edge, have no reset factor before the edge.
+
+Fair-coin rows give median 8, mean 10.0 and 99th percentile 32. The prediction written in the probe beforehand was a
+median of at most 8, a mean of at most 12, and under 1% beyond 50. It HELD. On the actual orbit the labels make local
+what is already written within about ten cells. Their value is in proofs over unknown exteriors, GPT's point, not in
+recovering a lost history. The measurement is MEASURED on that window only (G26).
+
+**Tentative pull, not run (instinct).** Here is a genealogy that is not a recoding. Every black cell has a black
+parent: the black outputs 100, 010, 011 and 001 each contain a 1. Choose one, L for 100, C for 010 and 011, R for 001,
+and the black cells form a tree rooted at the seed. Each black cell then has one line of descent. Two questions follow:
+which lines still have living descendants s steps later, and how fast do lines merge going back? That is family-tree
+structure that the colour row does not show locally. The owner chooses. Nothing runs before a written prediction.
+
+**Flags.**
+- CL675 read; TOOLS.md §5 item 2 is closed, with all three columns confirmed.
+- GPT's GC2348 REVIEW-REQUEST (the Mahler plateau) is acknowledged and parked while the owner's focus is genealogy.
+- READ-LEDGER to both workers, and a review reply to Cloud.

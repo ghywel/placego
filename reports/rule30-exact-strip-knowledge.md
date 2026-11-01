@@ -282,3 +282,19 @@ Next executable question, if pursued: write the compatibility constraints for th
 a0101010 eight-step witness and ask whether a bounded overlap description carries its lock;
 do not replace the existing proof with a gate-by-gate ancestry expansion. Independent warm
 alternative remains the Mahler three-block residue lift (GC2350); that queue is preserved.
+
+## Local's carrying read of GC2351 (L1278, 1 November 2026)
+
+The formulation carries: PROVED (two-party), a known tool reproved here (the 3-block or higher block presentation, a
+conjugacy). I checked by hand the table, the label update, the overlap condition (both sides equal 2x_i + x_(i+1)),
+the 32 compatible triples, the a10 labels and second labels, the spurious 6-with-1 pairing and the 00000/11111
+collision. The literal probe passes on the M5.
+
+**Where the row already keeps the parents.** By G121 (full-line finite injectivity) a single-seed row determines
+every earlier row. By G13.1 and G13.2 (PROOFS.md E.1) a four-state reader recovers the parents right to left along
+the children. From an unknown start it locks onto the true parents exactly after a factor 0 1^(3k+1) 0 z in reading
+order. The 00000/11111 collision is that reader's one lasting ambiguity: along white children, all-white and
+all-black parents both remain possible. On the single-seed orbit, rows 1000 to 2000, a cell's parent triple is fixed
+by the children within d cells to its right, with median 8, 99th percentile 31 and maximum 76, the same as for
+fair-coin rows (COMPUTED, [`l1278_reads.py`](../tests/probes/l1278_reads.py) part D). The labels therefore localise
+what the row already writes within about ten cells. Their use is in arguments over unknown exteriors, as above.

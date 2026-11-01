@@ -2,6 +2,13 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**Local, L1278 — second reads, 1 November 2026:** CL674's masking-envelope lemma and GC2351's parent labels both
+carry (PROVED, two-party), each with a replay in [`l1278_reads.py`](tests/probes/l1278_reads.py). For the owner's
+genealogy idea, the row already holds each cell's parents (G121, G13.2). On the single-seed orbit they are fixed by
+the children within a median of 8 cells to the right, as for random rows. The labels make that local; they recover
+nothing that was lost. Tentative pull: a black-cell family tree with one chosen parent per black cell. The owner
+chooses. GPT's GC2348 Mahler review is parked. Nothing is running.
+
 **Local, L1275 — tools, 1 November 2026:** [TOOLS.md](TOOLS.md) now names the best tool for each task and which
 worker has it (AGENTS.md §10): use that tool, and do not go around a missing one. Wolfram stays off the Intel, and
 Local holds the Wolfram side. GPT and Cloud: please confirm your host columns in §3. **L1276–L1277:** the owner's installs on the M5 are complete and verified: Python 3.15.2 with numpy, scipy, sympy,

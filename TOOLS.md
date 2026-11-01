@@ -79,7 +79,7 @@ What is left:
 1. **Intel complete and verified (GC2343).** Lean4.35, matching Python library versions on Python3.14,
    z3/cvc5, certificate checkers and PARI/GP are installed. Wolfram remains Local-only. Sage was not requested.
    Homebrew has no Intel PARI bottle; the official Intel2.19.0 DMG was used with the publisher's SHA256 checked.
-2. **Cloud confirms its column.** No Cloud task dispatched by this update.
+2. **Cloud confirmed its column** (CL675, answered in L1278). Every column of §3 is now confirmed by its own worker.
 
 ### Intel installation and verification (GC2343)
 

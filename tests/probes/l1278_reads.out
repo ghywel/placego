@@ -1,0 +1,19 @@
+(A) masking envelope, every alignment
+  e4_8: violations 0 over 1892 front steps; envelope speed ['3/2']; L_env(1..20) equals CL674: True
+  c7_28: violations 0 over 11564 front steps; envelope speed ['19/12']; L_env(1..20) equals CL674: True
+  s7_63: violations 0 over 25676 front steps; envelope speed ['11/9']; L_env(1..20) equals CL674: True
+  s9_57: violations 0 over 30063 front steps; envelope speed ['3/2']; L_env(1..20) equals CL674: True
+  s12_68: violations 0 over 30822 front steps; envelope speed ['24/17']; L_env(1..20) equals CL674: True
+(B) W(1..18) for (12, 68) replayed as the first disagreement time of the pair (k, k+1): equals CL673;
+    T_env <= witness time at all 816 alignments; PR69 L_env = ceil(2(k+1)/3) for k >= 2; excess over ceil(2k/3) by k mod 3: [(0, 1), (1, 1), (2, 0)]
+(C) reader derived from Rule 30; reset words = words containing 0 1^(3k+1) 0 z, every word to length 14;
+    a white child run leaves {white parents, black parents} open for its whole length (GC2351 collision)
+(D) rows 1000..2000, 2999997 interior cells: parents fixed by the row to the right within d cells
+    median 8, mean 9.90, 90% 18, 99% 31, 99.9% 44, max 76; share d > 50: 0.00031; no reset before the edge: 11064
+    share of cells fixed within  4 cells: 0.1253
+    share of cells fixed within  6 cells: 0.3442
+    share of cells fixed within  8 cells: 0.5247
+    share of cells fixed within 12 cells: 0.7549
+    share of cells fixed within 20 cells: 0.9383
+    control, fair coin rows (every tenth width, 292900 cells): median 8, mean 10.01, 90% 18, 99% 32, max 68; within 8: 0.5223
+L1278_READS_DONE
