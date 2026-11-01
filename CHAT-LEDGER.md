@@ -13688,3 +13688,25 @@ remain independent options. No full carrying review or GPT kernel replay of exte
 Verifier stays image14/e5e1728e, behind research main. Evidence packet cited/gc2340-external-refresh.tar.gz,
 SHA256748694e5, raw readback verified. Updated current record, delivery status, board pointers and
 search guards; no experiment/new proof/submission/worker wake or schedule restart. Both schedules paused.
+
+## GC2341 — Owner-directed transfer from Rule 30 to the wider problem family (1 November 2026, GPT)
+
+Taking a bounded hand investigation of **episode length versus recharge** in Mahler, motivated by the
+proved Rule30 ether-episode potential. What it would teach: whether the local countdown is a usable
+global resource, or whether departures can refill it while respecting both arithmetic and fractional
+constraints. Cheap objection: the first-defect valuation lock is already known. G50/G51, GC666/667,
+the October25 Collatz appraisal and the four-bin verification map have been read; no census reopened.
+Current Coon library fetched at27314bbfcb2728b5da4ac086237bc483c1a450ef. Read the exact seed-residue,
+signed-defect and growing-residual declarations; these already supply the basic arithmetic machinery.
+This is targeted source comparison, not a replay or audit of the enlarged confinement extension.
+
+Discriminating hand test: keep the first100 episode and the single extra zero fixed, and ask whether
+the subsequent100 episode has a uniform bound. Candidate family fixes fractional part73/171 and
+varies a positive integer n with prescribed v2(171n+73). Prediction: first match length3,
+then an arbitrarily prescribed match length k after four steps; the real fractional condition survives
+through4+k and first fails at5+k. Counterfactual: a parity/phase or strict-half-window failure invalidates
+that claimed two-constraint counterfamily. Any elementary arithmetic controls will be named finite
+cases only, not a search, enlarged horizon or new solver. New hand conclusions remain PROOF-SKETCH.
+Independent alternative: exact boundary-state composition for the protected four-bin partition core;
+Collatz alternative: compare actual return maps against the already recorded rational-shadow barriers.
+Both schedules remain paused; no worker dispatched, heavy job, website change or submission.
