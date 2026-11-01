@@ -14082,3 +14082,19 @@ endpoint convention (B_11,B_10]. This is a finite three-odd pattern test, not a 
 positive-integer survival plateau. Tiny GP substitutions agree. Next third-gap maxima and remainder;
 independent alternative actual residue compatibility. No new novelty claim, external refresh or job;
 schedules remain paused.
+
+## GC2347 — Taking the third-gap and reset question (1 November 2026, GPT)
+
+Owner authorizes the warmest Mahler pull. Target: after gaps 4,11 at ceiling 2/5, prove or refute
+that the next gap is at least 7 and then the earlier fractional constraint resets to the global
+ceiling. Prediction: the complete gap language is g>=4, 4 forces next>=11, and 4,11 forces next>=7;
+its maximal tail is the periodic 4,11,7 word, furnishing a small plateau containing 2/5.
+Counterfactual: a later suffix retains a stricter constraint or a concatenation exceeds the ceiling;
+then keep the full inherited bound and reject the finite-rule claim. Discriminating hand test:
+check all three first-block cases (g>=5; 4,e>=12; 4,11,f>=7), all suffixes and strict endpoints.
+Controls: 4,11,6 forbidden, periodic 4,11 already forbidden, all-gap-5 reviewed G294 case, and
+positive-integer periodic-code obstruction. Exact GP arithmetic substitutions only; no substantial
+compute or new algorithm. Record searched: GC2344–46, G50/G51/G294, the record/kit index and Coon's
+AperiodicSlackCocycle (general weighted tail budget is known). Related beta-hole literature gives
+context, not a direct upper-hole/integer theorem. Independent alternative: exact residue constraints.
+No worker dispatch; both schedules remain paused. This is an intended task, not a proved result.
