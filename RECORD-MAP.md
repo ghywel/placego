@@ -2288,3 +2288,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   withdrawn. Search aliases: ratchet front, speed-limited follower, sticky front.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
+
+- GC2353: [exact ancestry-gap episodes](reports/rule30-genealogy.md#9-exact-gap-episodes-and-the-bit-retained-behind-the-front-gc2353). PROOF-SKETCH: floor(M/2) advances, trailing bit toggles, retreat=L-1; two finite-row controls refute lengths-only closure. C3 specialization,4097 scalar episodes. L1280 follower/lift scope reviewed. External index now93d98bbe: conditional mortality/SEP bridges landed; no open hypothesis proved.

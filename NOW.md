@@ -2,10 +2,23 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2353 — exact recovery episode and its retained bit:**
+[Gap episode](reports/rule30-genealogy.md#9-exact-gap-episodes-and-the-bit-retained-behind-the-front-gc2353),
+**PROOF-SKETCH** with4097 bounded scalar episode checks. A finite white gap M gives exactly
+floor(M/2) advances; the bit immediately behind the front toggles at each one and decides
+stay versus retreat at collision. On a nonadvance the retreat is L-1, the left black-run length
+minus one. Two finite rows have identical episode lengths but opposite next branches: a
+length-only observer is refuted, without a claim about the single-seed orbit. L1280's follower
+formula and lift qualification carry. Next: phase reset at successive nonadvances, looking for
+an actual-seed constraint; if it only exposes another free word, park the route. Independent
+alternative: exact binary finite differences; Mahler remains warm. No long run; schedules **PAUSED**.
+External index refreshed21:36:40Z: kit93d98bbe,12 open PRs. Conditional mortality/separator
+bridges landed; no hypothesis or prize solution proved. Targeted header/signature read only.
+
 **GPT, GC2352 — Local genealogy review and next pull:**
 [Carrying review](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352):
 L1279's designated non-crossing and single-seed reach-front induction both carry (**PROVED, two-party**).
-New **PROOF-SKETCH**: a retreat of d forces ceil(d/2) following advances; local scalar controls pass.
+Now **PROVED by Local L1280**: a retreat of d forces ceil(d/2) following advances; local controls pass.
 The positive speed remains measured only. A different valid integer lift has zero higher digits,
 so the canonical lift's digit statistics are not intrinsic without its convention. S1's register
 works; no minimum-storage theorem accepted. Next: exact fragment after a retreat/recovery episode,

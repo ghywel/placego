@@ -311,7 +311,7 @@ canonical lift because other polynomial lifts can differ. Read Bagnoli–Rechtma
 
 ### Retreats create a guaranteed recovery corridor
 
-**PROOF-SKETCH (GPT; independent carrying read pending).** Suppose B(t+1)=B(t)-d with d>=1.
+**PROVED (GPT; Local carrying read L1280).** Suppose B(t+1)=B(t)-d with d>=1.
 Write p=B(t+1). The next row is white on p+1,...,B(t), by the fallback definition. It is also
 white at B(t)+1: that site is black exactly in the advance case, which did not occur. Thus
 there are at least d+1 consecutive white cells immediately ahead of the new black front.
@@ -337,7 +337,7 @@ of the new corridor consequence; the hand argument covers all finite retreat siz
 
 ### The arithmetic carry depends on the chosen lift
 
-**PROOF-SKETCH specialization of known lift nonuniqueness; independent read pending.** Local's
+**PROVED specialization of known lift nonuniqueness; Local carrying read L1280.** Local's
 canonical polynomial P=a+b+c+bc has the asserted second-digit law. Let u=b+c-bc and instead use
 
     Q(a,b,c) = a+u-2*a*u
@@ -427,3 +427,131 @@ cell of row t+1 at depth ≥ J(t).
 - T3 is a measured sample, not a bound.
 
 S1's minimality is withdrawn above.
+
+## 9. Exact gap episodes and the bit retained behind the front (GC2353)
+
+Owner continues after Local L1280. **Carrying read:** the follower formula
+B(t+1)=max{i<=B(t)+1:x_i(t+1)=1} is PROVED, two-party: its candidate at B+1 is black
+exactly in the old advance case, and otherwise the two maxima are identical. The leftmost
+reached edge ensures existence on the seed. Local's non-multilinear lift correction also
+carries: for a=x+2h, binary x,h, a²-a=-2h modulo4, removing the a-coefficient in the higher
+digit while leaving every binary output unchanged. Thus the Boolean derivative, not every
+lift's formal derivative, is the binary invariant. The source changes P+2R in section7 remain
+correct within that specified class. Neither review imports a fair-coin law. In particular,
+the drift sign depends on the full retreat-distance distribution, not just the fraction of
+advancing steps.
+
+**Pull and bounded test written first.** At a reached black front p, keep the maximal white
+gap M ahead and the single bit z immediately behind it. Prediction: a finite M gives exactly
+floor(M/2) successive advances before a nonadvance; z toggles at each advance, so at that
+collision its parity decides stay versus retreat. Separately, a nonadvance retreats by L-1,
+where L is the black-run length ending at the front. Counterfactual: an earlier collision,
+an extra advance, or a mismatched trailing bit on any checked local cone rejects the claim.
+Controls: all1024 zero-padded ten-bit rows, every black cut with a later black cell; all such
+cuts for the black-run formula; and two explicit seven-site rows differing in just one bit.
+This is a fixed tiny scalar test, no time-series extension, solver or substantial computation.
+Record searched: L1279/L1280, GC2352, GC1974's shrinking white core and its independently driven
+lineage scope, and the current record/kit/portal search. The white-triangle mechanism is known;
+this is a front-episode specialization, not a novelty claim. The discriminating question is
+whether lengths alone form an exact observer of successive episodes.
+
+### Exact stopping time and the trailing bit
+
+**PROOF-SKETCH (GPT; independent read pending), using the known C3 white-triangle shrink theorem.**
+At time u let p=B(u) be black, and suppose the first black cell to its right is q=p+M+1.
+Write r=floor(M/2), z=x_(p-1)(u). The finite gap hypothesis matters: at the rightmost black cell
+there is no such q and this collision argument does not apply.
+
+For every 0<=s<=r, the left boundary is B(u+s)=p+s, the right gap boundary is q-s, and
+all sites strictly between those black boundaries are white. This is exactly C3: both ends
+of a white run of length>=2 become black and its interior stays white. At s=r the boundaries
+are adjacent if M is even, and enclose one white if M is odd. In either case the candidate
+at B(u+r)+1 has left input1 and at least one of centre/right input1, so it is white.
+Thus there are **exactly r** consecutive advances, followed by a nonadvance.
+
+During each advance the cell immediately behind the new front has old inputs (z_s,1,0),
+so z_(s+1)=1 XOR z_s. Consequently
+
+    z_s = z XOR (s modulo2),
+    the first nonadvance stays put iff z XOR (r modulo2) = 0,
+    otherwise it retreats.
+
+This predicts the stay/retreat branch, not the size of a retreat. It can also be viewed as
+one conserved bit z_s XOR (B(u+s) modulo2) during the advancing portion. It is an explicitly
+transported bit, not a probabilistic independence claim.
+
+### Retreat size is an exact black-run statistic
+
+Let L be the length of the consecutive black run ending at B, so a=B-L+1 is black and a-1
+is white. Suppose the next step is not an advance. Then the new row is white at a+1,...,B:
+there the old left and centre bits are both1. It is also white at B+1 by the nonadvance
+assumption. At a the old left input is0 and the centre is1, so the new cell is black.
+Therefore
+
+    B(t+1) = B(t)-(L-1).
+
+L=1 gives a stay. L>=2 gives a retreat d=L-1. This strengthens the search for the next black
+cell in the new row to a black-run length in the old row. It is a local run calculation,
+not a distribution law for L at the adaptively selected boundary.
+
+For a genuine retreat let p=B(t+1), and let a_bit=x_(p-2)(t). Since p-1 is the white left
+flank of that old black run, the new bit immediately behind p is
+
+    x_(p-1)(t+1) = 1 XOR a_bit.
+
+If M is the maximal ensuing white gap and r=floor(M/2), the next collision therefore stays
+iff a_bit = 1 XOR (r modulo2). The branch information survives the whole recovery as the
+parity of **one specified earlier bit**. M is at least d+1, recovering GC2352's bound; its
+full value, not just that lower bound, fixes the full advancing episode.
+
+### A sharp two-row control: lengths alone forget this bit
+
+Take zero outside coordinates -4,...,2 and mark all black cells at or left of B(0)=0.
+These are two finite initial rows, not two occurrences asserted in the single-seed orbit:
+
+    coordinates      -4 -3 -2 -1  0  1  2
+    first row         0  0  0  1  1  0  1
+    second row        0  1  0  1  1  0  1
+    front, first      0, -1, 0,  0
+    front, second     0, -1, 0, -1
+
+Both retreat by1, then have a maximal white gap of2 and recover by one step. The next
+collision stays in the first case and retreats in the second. Only the earlier bit at-3
+differs. Thus (retreat length, white-gap length, recovery length) is not a universally
+closed predictive state. The explicit bit above explains the failure. This neither
+refutes a special constraint on the single-seed orbit nor claims that a finite summary
+of some other selected observable is impossible.
+
+**COMPUTED self-check:** [fixed scalar probe](../tests/probes/genealogy_gap_episode.py) checks
+4097 complete finite-gap episodes and3328 nonadvance run identities across all1024 ten-bit
+finite rows, as well as the two explicit controls. No samples or longer speed measurements.
+
+**What changed / next executable step.** The requested end-of-episode fragment is now exact:
+11 or101 at the meeting, with trailing bit z XOR r. The lengths-only closure is refuted.
+Keep the one-bit phase during free motion; next derive its reset at successive nonadvances
+and check whether the single-seed constraints relate that sampled bit to the unpaid retreat
+length. The carrying question is a deterministic relation, not whether the bit looks fair.
+Do not extend an ancestor ladder to compensate for missing constraints. If the next block
+only exposes another unconstrained left word, park this episode-summary route; independent
+alternative is the binary Boolean derivative's exact finite-difference law, with its nonlinear
+term retained. Mahler GC2350 remains the separate warm lead.
+
+### External refresh during this block
+
+The index refresh completed with kit93d98bbe049177d2c1546b6b0714aa33703ae13d,
+portal timestamp2026-11-01T21:36:37Z,12 open PRs:10 added index entries,4 changed,22 no longer
+listed. These counts concern index entries, not ten new theorems. Inspected the current source
+headers and relevant declaration signatures of AlternatingTraceBridge, SurvivalBridge,
+SEPToPeriodTwo, LeftAntiPeriod and ZeroBoundaryStripeCascade, not their complete proofs.
+The new main now includes the previously open repeat-budget/mortality and separator bridges.
+`Q01_of_mortality` has the explicit Mortality hypothesis; the SEP/RW/BWH implications likewise
+retain open hypotheses. No mortality, separator hypothesis, or prize solution is supplied.
+The auxiliary frontier in those bridges is not this ancestry boundary. The changed diagonal
+and backward-stripe declarations are different observables. Portal c6ff55 is listed Lean
+Verified, while0159fa is Lean Unverified at this refresh; these are portal receipts, not our
+independent acceptance. Prior-art comparison for this block remains scoped to the known
+white-triangle mechanism and the sources above.
+
+Refresh receipt retained outside git in the shared store at `cited/gc2353-known-refresh.txt`,
+SHA256 `1a38b37b510725d7cf0eb260cecc7fe34fe67520f1bf6a6d391d77b56ffef017`.
+The exact kit commit above fixes the inspected source versions.

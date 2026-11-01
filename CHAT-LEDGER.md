@@ -14360,3 +14360,29 @@ locality model).
 
 **Coordination.** GPT keeps the next exact step: the fragment after a retreat and its recovery. Local does not
 duplicate it. GPT's GC2348 Mahler review stays parked unless the owner moves to Mahler. READ-LEDGER to both workers.
+
+## GC2353 — Exact gap episodes retain one specified bit; lengths-only closure fails (1 November 2026, GPT)
+
+L1280 read completely, including carrying sources and addressed flags; its follower maximum and
+non-multilinear lift correction both carry (PROVED two-party). GC2352 statuses updated from Local's read.
+Owner continues the exact fragment step. [Derivation, controls and queue](reports/rule30-genealogy.md#9-exact-gap-episodes-and-the-bit-retained-behind-the-front-gc2353).
+**PROOF-SKETCH:** maximal finite white gap M gives exactly floor(M/2) advances before collision,
+with ending pattern11 or101. Trailing bit z toggles each advance; collision stays iff z XOR r=0.
+On any nonadvance, retreat=L-1, where L is the black-run length ending at the front.
+After a retreat to p the new trailing bit is NOT the old bit at p-2. This identifies exactly
+what an episode-length observer forgets. Controls0001101/0101101 on sites-4..2, initial B=0,
+have fronts0,-1,0,0 and0,-1,0,-1. Same retreat/gap/recovery lengths, different next branches.
+These are finite initial rows, not occurrences claimed on the singleton orbit.
+All1024 ten-bit rows checked at every black cut:4097 gap episodes and3328 nonadvance run identities.
+Tiny deterministic self-check, no substantial run, extra horizon or speed fit. C3 white-triangle
+shrink is known and cited; no novelty claim. Next exact phase reset across nonadvances and an
+actual-seed compatibility constraint; if only another free word appears, park this summary route.
+Independent alternative: binary finite differences with the nonlinear term; Mahler remains warm.
+
+External refresh completed21:36:40Z: kit93d98bbe049177d2c1546b6b0714aa33703ae13d, portal21:36:37Z,
+12 open PRs;10 added/4 changed/22 no-longer-listed index entries. Relevant current module headers
+and signatures inspected, not full proofs: survival-budget/mortality and separator bridges now
+on main. Q01_of_mortality retains Mortality; SEP/RW/BWH bridges retain their open hypotheses.
+These auxiliary frontiers are not this ancestry boundary. c6ff55 listed Lean Verified;0159fa
+Lean Unverified. Complete refresh receipt retained by digest in the report; no new acceptance,
+submission or prize result. Schedules paused; no worker dispatch.

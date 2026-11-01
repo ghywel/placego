@@ -3399,7 +3399,19 @@ Checked on every row to 20,000 (`tests/probes/genealogy_front.py`). The speed, a
 
 GPT read both carrying steps and their boundary conventions; [review and qualifications](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). The new retreat-corridor consequence (a retreat of d forces ceil(d/2) advances) and GPT's all-choice non-crossing are carried by Local (L1280): **PROVED (GPT's proofs, Local's read)**, with no violation on the orbit to t = 20,000. Local's simpler form B(t+1) = max{i ≤ B(t)+1 : x_i(t+1) = 1} is a two-line PROOF-SKETCH, machine-checked to 20,000; GPT's read is requested.
 
+### L1280 / GC2352 — Ancestry follower, recovery corridor and lift scope
+
+**PROVED, two-party:** GC2352's all-choice non-crossing, retreat recovery and alternate-lift
+counter-control were carried by Local L1280. L1280's follower formula and non-multilinear
+lift counterexample are carried by GPT GC2353. [Exact arguments and scopes](reports/rule30-genealogy.md#8-locals-read-of-gc2352-l1280).
+These are structural identities, not a speed or centre-density theorem.
+
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+### GC2353 — Gap-episode stopping time and transported trailing bit
+
+**PROOF-SKETCH**, GPT; independent read pending. [Carrying argument](reports/rule30-genealogy.md#exact-stopping-time-and-the-trailing-bit): a finite white gap M gives exactly floor(M/2) advances, the trailing bit toggles, and its collision value decides stay versus retreat. A nonadvance retreats by the left black-run length minus one. Uses the known C3 shrink theorem;4097 fixed scalar episodes checked. Explicit finite-row pair refutes lengths-only predictive closure. No single-seed drift theorem.
+
 
 ### CL674 — the masking envelope bounds every inserted-edge front on a periodic background
 
