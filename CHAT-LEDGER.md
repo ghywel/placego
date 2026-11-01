@@ -13666,3 +13666,25 @@ What would change this ranking tomorrow: a third-party episode theorem for the c
 comparison), a shadow background shown to attach (moves 2 to the top), or a dyadic-cycle proof on the portal
 (closes 3). No prize movement today; the structural lines moved far. Good night. READ-LEDGER for both workers on
 resumption.
+
+
+## GC2340 — Kit and portal caught up; public M(k) accepted; next-inquisition map refreshed (1 November 2026, GPT)
+
+Owner requested a current launch point before considering the next inquisition. Fetched/merged through
+CL670; read L1272–L1274 and Cloud's closing assessment, and freshly read passive shared-store flags.
+[Full source dispositions, verification states and proposed queue](reports/wolfram-agents/MAP.md#23-launch-point-refresh-gpt-1-november-2026-gc2340).
+Complete known_find refresh13:58:37Z: kit f1cb20be,186 catalog modules,78 portal entries,14 openPRs.
+Ours34/33Lean/29Human/11Kit. Public M(k)7c1f96 is Lean Verified, Human Verified and Kit Contribution;
+sourcebd9ade95/notebooka1d48b66 and kit615998d2 exactly match the accepted release. Delivery complete.
+
+Read actual new/changed statements and PR65/67/70–76 discussions/review endpoints. New18ba2f gives
+spatial input-scan bounds,5da074 balanced left diagonals,f0127e guarded backward-wave laws; all three
+have Human Verified and Kit Contribution tags. WedgeParity gives gate-generic count parity.
+Open CondreyPR75/76 supply density equivalents and conditional mortality/separator reductions;
+no open hypothesis is proved. Maintainer requests their Q01 relationships. Comparison first is a
+useful new launch option; classic ether exact episodes, shadow growth and gate-parity curiosity
+remain independent options. No full carrying review or GPT kernel replay of external modules claimed.
+
+Verifier stays image14/e5e1728e, behind research main. Evidence packet cited/gc2340-external-refresh.tar.gz,
+SHA256748694e5, raw readback verified. Updated current record, delivery status, board pointers and
+search guards; no experiment/new proof/submission/worker wake or schedule restart. Both schedules paused.

@@ -5063,3 +5063,17 @@ M_white(k) = ceil(k/2) (GC2335, carried in L1263) follows directly from the kit'
 That module is by Troy Lowry, kit PR #61, landed on main e5e1728 on 31 October. It uses the same mechanism: an
 unchanged digit forces both lower drivers white, back to the black edge. Our searches in L1263 missed it while it was
 an open PR. Known, reproved here.
+
+
+## GC2340 — New kit tools and conditional bridges, 1 November 2026
+
+[MAP §23](reports/wolfram-agents/MAP.md#23-launch-point-refresh-gpt-1-november-2026-gc2340)
+records the exact current source hashes, statements and discussion links at kit f1cb20be.
+Known tools to reuse: Quint/Gemini's `Rule30LeftAntiPeriod` (anti-periods and infinitely many balanced
+left diagonals), `Rule30Problem3Bounds` spatial input horizon/RightSpan, and guarded 010 complement
+synchronization in `Rule30ZeroBoundaryStripeCascade`; Condrey/Claude's `Rule30WedgeParity`
+(gate-generic parity of admissible-row counts). None is a centre-density or all-width mortality theorem.
+Open Condrey PR75/76 add shell/energy equivalences and conditional frontier/separator implications;
+the budget, mortality, BWH/RW/SEP hypotheses stay open and their comparison with Q01 is requested by
+the maintainer. Do not claim these representations as new work here. This is a statement-level
+source comparison, not a new independent proof review or a global priority assessment.

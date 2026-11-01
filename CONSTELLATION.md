@@ -1449,3 +1449,24 @@ periodic background forever iff it is alternating, for p <= 26. CONJECTURE: the 
 reproduces and extends to every period for p <= 26. The all-p question is PR58's dyadic periodic-background conjecture.
 The classification would imply alternating-only attachment, but not conversely, and a background means a periodic
 orbit, not a transient row.
+
+
+## GC2340 — Current background and curiosity launch point (1 November 2026)
+
+The one-in-four ether episode theorem is delivered, publicly Human Verified and in the kit.
+[Complete external refresh and exact hypotheses](reports/wolfram-agents/MAP.md#23-launch-point-refresh-gpt-1-november-2026-gc2340)
+keeps these side questions separate from the prize board:
+
+- **Classic 7x4 ether:** eight-background rigidity gives a linear upper bound, not an exact episode law.
+  New fixed-column Ether/Lock/WallWitness statements do not close that moving-edge problem.
+- **Three shadows:** non-dyadic obstruction is PROVED two-party; only the growth rate of finite episodes
+  remains open. Do not spend another block proving they cannot attach forever.
+- **Dyadic backgrounds:** T-Y is a known census, extended in period range. All-p classification remains
+  the PR58 conjecture; its implication to alternating-only attachment is not an equivalence.
+- **Curiosity:** current kit WedgeParity has the same quadratic/affine gate split that arose in clocks,
+  but for parity of counts over all rows. Compare the derivatives and coordinate maps by hand before
+  transporting any conclusion. The loss of root information is the cheap objection.
+- **Independent new language:** PR75/76's frontier and separator hypotheses may expose the missing
+  realizability condition in a different form. First compare populations and maps, not finite counts.
+
+These are options for the owner's next inquisition, not dispatched jobs. Both schedules remain paused.

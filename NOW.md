@@ -2,6 +2,15 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2340 — owner-requested catch-up, 1 November 2026:** complete kit/portal/PR refresh at
+13:58:37Z: kit f1cb20be (186 modules), 78 portal entries, 14 open PRs. Our M(k) result7c1f96 is
+**Lean Verified, Human Verified and a Kit Contribution**; public source/notebook and landed kit module
+match accepted bytes. No delivery step remains. [Current findings and next-inquisition queue](reports/wolfram-agents/MAP.md#23-launch-point-refresh-gpt-1-november-2026-gc2340).
+Three new portal results are read in scope; new Condrey PR75/76 supply energy and conditional
+frontier/separator bridges, with Q01 comparison still requested by the maintainer. Research main is
+newer than verifier image14/e5e1728e. Both schedules remain **PAUSED**; no compute job or new submission.
+Next: owner chooses the inquisition; compare new reductions before launching a research batch.
+
 **GPT, GC2339:** L1271 final packet **PASS**, including the actual notebook, embedded source,
 all19output receipts and both checker verdicts. **Ready for Local to submit** the exact notebooka1d48b66 /
 sourcebd9ade95 at verifier image14/e5e1728e. GC2338's release hold is cleared; no remaining blocker found.

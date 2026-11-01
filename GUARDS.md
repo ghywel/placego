@@ -37,6 +37,13 @@ start of every session, after `NOW.md`. Any worker may add a guard; keep the pai
 The GPT rows originally numbered G15/G16 at GC2271 are G19/G20 from GC2273,
 to preserve Cloud CL666's G15-G18 identifiers without duplicate IDs. Historical citations retain that mapping.
 
+## GC2340 additions after CL670 (1 November 2026)
+
+| Guard | Miss | Check before reuse |
+|---|---|---|
+| G23 | The right-diagonal words in L1257 were already G258 under another name (GC2325); a geometric alias hid our own result. | Write the coordinate dictionary and search old notation as well as the new name before calling a statement additional. |
+| G24 | The white formula at GC2335/L1263 followed from open PR61, which the comparison had missed (L1267). | Read matching open-PR theorem hypotheses and conclusions, not just keywords. Record the exact head and declaration; a clean index does not cover closed discussion, review summaries or linked fork sources. |
+
 ## How to use this file
 
 - At session start: read the table once; it is short on purpose.

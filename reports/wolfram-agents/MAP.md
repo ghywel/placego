@@ -753,3 +753,145 @@ kit PR #71 landed on main as d41defd). Status changes: 7b0d12 (Package A) is a K
 c137e0, 230bc7, 317c64 (Bosdure), a4691a and 5beddc (Quint) gained Kit Contribution tags. Kit main a09f2458, 184 modules; ten
 pull requests landed as maintainer commits on 31 October (closed on GitHub, content on main), among them Lowry's #69
 (`Rule30EtherGrounding`) and #61 (`Rule30EdgeClock`); the verifier is image 14 at e5e1728e.
+
+
+## 23. Launch-point refresh (GPT, 1 November 2026; GC2340)
+
+**Complete index refresh:** portal timestamp **2026-11-01T13:58:31Z**, completed fetch
+**13:58:37Z**, kit **f1cb20be4c959ee1d92d99f3eafdfcaa945aa63d**, **186 catalog modules**, **14 open PRs**.
+`known_find.py --new` reports 31 added, 7 changed and 16 no-longer-listed index units against
+GC2338's last complete index; these are source/metadata units, not 31 new mathematical results.
+The actual `lean/`, `equivalents/` and catalogs were refreshed. Relative to e5e1728e, the source diff
+is eight added/changed mathematical modules plus the README and import aggregator; no equivalents
+source change. Cloud's §22 portal-only checkpoint is superseded by this complete check.
+
+The page lists **78 entries: 77 Lean Verified, 71 Human Verified, 42 Kit Contributions**.
+**Ours: 34 entries, 33 Lean Verified, 29 Human Verified, 11 Kit Contributions.** Our four
+Lean-Verified entries still awaiting Human Verified are 0ef6e2 (finite arcs), dc3d17 (uniform
+horizon), 7b0d12 (gate clocks, already a Kit Contribution), and 9861e5 (nested thresholds).
+71f858 remains Lean Unverified; its previous memory failure is not a new proof failure or a retry order.
+These are snapshot counts, not claims about later status changes.
+
+### Our episode result: public artifacts and incorporation confirmed
+
+[R30-20261031-7c1f96](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261031-7c1f96)
+is **Lean Verified, Human Verified and a Kit Contribution**. Public check: pass, all five exact
+headlines accepted, 483 constants replayed, no new axioms, checked 2026-10-31T23:32:17Z.
+Downloaded public source SHA256 **bd9ade9507a7c16a33fdf6d40842672adc1367ec7a6867c8f316e8b03b93e03e**
+and notebook SHA256 **a1d48b66bf868e54296d3bbd386812ff45d6f374f3456ee1e6245bbed663b1b8**
+match GC2339's accepted artifacts exactly. Current kit `Rule30EtherEpisode` is byte-identical
+to accepted catalog source **615998d207a495dc2b15f69ff0ed73474303bd500868860dbcfe6d8a43b6883a**.
+PR71 is closed without a GitHub merge record; actual incorporation is commit
+**d41defd8fb035104e5acb45d0549ecdc3a274b03**, present on main. No delivery work remains.
+
+The live verifier still advertises **image14 / e5e1728e / Lean4.35.0 / LeanLink1.2.1**,
+not research main f1cb20be. A new kit theorem's presence on main does not make its import available
+in that verifier image. Do not rebuild or resubmit the completed episode package for this difference.
+
+### New portal work and landed source: statement-level dispositions
+
+These are primary-source statement reads, with relevant proof steps inspected, **not GPT compiler
+replays or complete independent carrying reviews of each new module**. The public tags remain the
+portal's verification statuses. None of the inspected work resolves a prize problem.
+
+| Source | What is now available | Guard / effect on our research |
+|---|---|---|
+| [18ba2f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261101-18ba2f), Quint/Gemini; PR72, `Rule30Problem3Bounds` | `ScansBelow`, `RightSpan`, `scansBelow_iff_rightSpan_le`; input-congruence and canonical-window halting collapse with a spatial barrier, for arbitrary halting time and unbounded negative worktape. `head_unbounded_of_problem1`; unconditional `diagonal_canon_window_rightSpan_ge`. All three verification/contribution tags; 72 replayed constants. | Centre excursion theorem assumes Problem1; unconditional all-k diagonal theorem may choose a different diagonal for each k. `RightSpan` measures nonnegative input reach, not total worktape space. No linear-time bound in n. Extends the already read b58e66/781b70, not a solution to Problem3. |
+| [5da074](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261101-5da074), Quint/Gemini; PR73, `Rule30LeftAntiPeriod` | `D_period_or_antiperiodic`, `D_antiperiodic_unbounded`, exact L black cells per 2L window after an anti-period starts, `halfDensity_of_antiperiodic`, `D_infinitely_many_halfDensity`. All three tags; 85 replayed constants. | Infinitely many **left diagonals**, not every diagonal and not the centre. The proof uses first period failure and the existing white reset. Treat anti-periodicity-to-half-density as available machinery; do not rediscover it as a centre density law. |
+| [f0127e](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261101-f0127e), Quint/Gemini; PR74, `Rule30ZeroBoundaryStripeCascade` | `sync_010_complement_step1/step0`; NOR tails yield a period-six two-backward-step image; `typeII_step3_and_step4_cascade`; exact low waves and mod-three shifts of `win3pow(2+3m)` against 13. All three tags; 145 replayed constants. | Synchronization needs 010, s>=2 and an 11-free suffix. `nor_wave_B_shift_period6` requires i>=m+11 and i+6<K. This is a **period-six relation**, not a universal assertion of least period six or a density law. It strengthens the warm backward-operator lead a4691a/5beddc. |
+| PR65, `Rule30Ether` / `Rule30EtherWallWitness`, now on main | `Absorption → Lock`, `lock_excludes`, and explicit periodic-left/finite-right witnesses for least-period-four words and alternation. | Lock remains open. The witnesses show why a finite left beginning cannot be replaced by a periodic sea. Fixed-column driven-half statements do not settle the classic ether's moving-edge episode law. |
+| PR67, `Rule30ZeroBoundaryPeriodLanes`, now on main | `QP P` excludes the one-black-per-period word for every P>=2; `QP_two_iff_Q01`, `QP_three_iff_Q001`; a general period-lane checker with soundness. | `QP P` remains an assumption; this does not prove it for every width or period. For P>=10 the word exclusion was already known. Useful for DQ-023's single-pulse branch; no new all-width census is requested. |
+| PR70's extension in `Rule30Problem3Bounds`, now on main | `period_of_canon_window_time_le`, `diagonal_canon_window_time_ge`. | Maintainer explicitly excluded the finite k<=10 checks from kit scope; they stay in the portal source. Do not confuse the finite-window verification with a general centre lower bound. |
+| `Rule30WedgeParity`, Condrey/Claude, now on main | A bijection from admissible zero-wedge rows to free diagonal words; top-parity recurrence S(k+1)=κS(k), with S(1)=α XOR r for κ=1. `wedge_parity_quadratic`, affine case, `rule30_wedge_odd`, `rule180_wedge_odd`. | Counts all admissible initial rows, not the actual seed. For quadratic gates parity is α XOR r; affine counts are even from n=2. This is a useful gate-generic counterpart to our clocks, but shared parity does not imply shared orbit behaviour. |
+
+PR65/67/70/71/72/73/74 closed discussion, review-summary and inline-review endpoints were read;
+all nine inspected PRs (including75/76) had zero review-summary and inline-review objects at retrieval.
+PR65's catalog-row correction and PR67's docstring correction are reflected on current main.
+PR72–74 are closed and their results are present in current source. No inference from “closed” alone.
+
+### New open PRs: compare reductions before trying to prove their hypotheses
+
+[PR75](https://github.com/WolframInstitute/Rule30PrizeKit/pull/75), Condrey/Claude,
+head **f2ffcb543b8411dc5f17723b83e9de54bef4e121**, contains:
+
+- `Rule30P2Bridge`: four exact equivalents of Problem2, expressed as dyadic shell maxima,
+  flexible penalized block energy, ordered energy and maximum block energy. The generic equivalences
+  hold for any Boolean sequence. `weakened_hypotheses_do_not_give_densityHalf` supplies a sequence
+  with small dyadic endpoint discrepancy and vanishing **unpenalized** energy but without density1/2.
+  No actual-centre energy bound is proved. The penalty cannot be silently dropped.
+- `Rule30SurvivalBridge`: legal finite pair-frontiers, chronological guards, reconstruction,
+  `runBound`, `survival`, and `budgetAt_iff_mortalAt` / `budget_iff_mortality`. A repeat budget
+  is **equivalent to** mortality, not a budget theorem. The survival inequality is
+  r+N+1 <= 2^(D+1)(r+2) for D repeated scalar adjacencies on a successful prefix.
+- `Rule30AlternatingTraceBridge`: a left-finite row with an alternating centre produces an immortal
+  legal frontier (`immortalFromAlternating`); mortality therefore excludes eventual period two
+  for the seed. Right-realizability is not imposed on the auxiliary process, so no converse is claimed.
+
+[PR76](https://github.com/WolframInstitute/Rule30PrizeKit/pull/76), head
+**b5f4e319ca7ca9257e48a7831b1744f43ab489f5**, is stacked on75. Its four added modules prove
+`BWH + SmallRW → RW → ConstantTailSeparator ↔ OrbitSeparator → PeriodTwoExcluded`, with the
+appropriate stream/coordinate dictionaries. BWH concerns binary prefixes of length2n+2 and
+constant wedges of lengthn+2 for n>=7. SmallRW is a separate small-length hypothesis;
+RW keeps the hard-core junction and terminal symbols. None of BWH, SmallRW, RW or the separator
+is proved. The finite-origin and hard-core controls must travel with any reuse.
+
+The maintainer's [PR75 request](https://github.com/WolframInstitute/Rule30PrizeKit/pull/75#issuecomment-6557416696)
+and [PR76 request](https://github.com/WolframInstitute/Rule30PrizeKit/pull/76#issuecomment-6557416964)
+are mathematically material: specify and prove the relationships to existing Q01 (and between
+separator and mortality). The maintainer reports sandbox builds and all15/all21 headlines passing;
+that is a reported check, not a merge or proof of an open hypothesis. Our next comparison must keep
+Q01, Q01Gap, CQ01Empty, finite-row exclusion and arbitrary legal-frontier mortality separate.
+
+### Launch queue for the owner's next inquisition
+
+No experiment, formalization or research batch is started by this refresh. Both schedules remain paused.
+
+1. **New representation to compare first:** construct a coordinate-and-quantifier table for PR75/76
+   versus our Q01/visible-language and backward-reconstruction work. Does every immortal auxiliary
+   frontier have a compatible physical right half, or is that precisely the extra assumption?
+   Cheap objection: both formulations exclude period two, which does not make them equivalent.
+   First discriminating step: read the actual maps and identify each missing reverse implication;
+   freeze no solver run until the realizability and finite-origin guards are explicit.
+2. **Warm structural lead:** classic 7x4 ether exact moving-edge episode law. Its known bound
+   7+58(k-1) is not sharp; current Ether/Lock/WallWitness source is a different fixed-column statement.
+   First step: normalize the reference in our moving frame and formulate the front's finite phase
+   states before any small exact search. What it teaches: whether the successful potential mechanism
+   extends beyond the one-in-four ether. No automatic horizon enlargement.
+3. **Independent alternative:** the three shadowed backgrounds (p,q)=(7,63),(9,57),(12,68).
+   Nonattachment is already two-party proved by GC2335/L1263, with exponential finite bound;
+   **linear versus superlinear episode growth** is still open. Resolve the masked-defect geometry,
+   not another question about eventual attachment already answered.
+4. **Curiosity:** compare WedgeParity's quadratic/affine split with gate clocks. Which information
+   survives a diagonal-coordinate change while aggregate parity stays fixed? First step is a hand
+   comparison of the two derivatives and their different counted populations. Shared algebra alone
+   does not transport clocks, mortality or centre density.
+5. **Deep, parked until selected:** all-period dyadic background classification (existing PR58 conjecture),
+   and actual-centre energy control in PR75. The latter reformulates the full density problem;
+   it is not a cheap consequence of balanced left diagonals or dyadic endpoint samples.
+
+CL670's overall ranking survives for the existing episode/shadow work; the fresh PR75/76 comparison
+is inserted before reusing a supposedly new frontier or separator mechanism. Karttunen, Phillips,
+Lowry's white bound and L1066/PR58 attribution rows were confirmed present in PRIOR-ART.md.
+No new priority claim is made. Earlier broad keyword hits were narrowed to actual statements above.
+
+### Reproducibility and exact source pins
+
+Public snapshots, changed kit sources, PR75/76 head sources, relevant PR discussions/review lists,
+public episode artifacts, complete index delta and all source SHA256 values are retained in
+`cited/gc2340-external-refresh.tar.gz`, **406035 bytes**, SHA256
+**748694e5e371d0e7705ec789ad091929befc74b063139511ac8e4f265f4296ba**.
+The packet has `MANIFEST.sha256` and `source-hashes.json`; raw-body upload/readback verified.
+It contains no private flag state or credentials. Selected current-main source pins:
+
+| Module | SHA256 |
+|---|---|
+| LeftAntiPeriod | `54532363b6308b246ba924d81f7d4ad0d240a02c681e6eef81c396a9ae852a4b` |
+| Problem3Bounds | `75ccb2a3fc0a3d36ef8a57a1ca1b1fc066ac7fb54b322a3c6f96b8a6ea5ec319` |
+| ZeroBoundaryStripeCascade | `2ddb05302254f638dc7835bd7882f070ecc97fad441c9966f4f54605b7a2a053` |
+| WedgeParity | `d8aa03d31a14799a5bf739757e4b1a044c2a9f35ffc4ec8afefd57224e7d17c9` |
+| Ether | `9413bfbf7b8d53f8320160d28b1c8ec7644a12369bcc224be9405415c27e282d` |
+| EtherWallWitness | `923a87da25832b9e8bf20330b10182a663987924779398e56f2a62f67c824ad8` |
+| ZeroBoundaryPeriodLanes | `3ac492b588fd117b3d3113d7a3e1404b966e0f235b14c3060ddb04b81f0a8afd` |
+
+**Failed predictions:** none; no experiment conducted. **Unguarded mistakes:** no new mathematical
+claim promoted. The two older search misses named by CL670 are now captured by explicit GUARDS rows.
