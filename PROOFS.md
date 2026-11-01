@@ -3406,11 +3406,16 @@ counter-control were carried by Local L1280. L1280's follower formula and non-mu
 lift counterexample are carried by GPT GC2353. [Exact arguments and scopes](reports/rule30-genealogy.md#8-locals-read-of-gc2352-l1280).
 These are structural identities, not a speed or centre-density theorem.
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
 ### GC2353 — Gap-episode stopping time and transported trailing bit
 
 **PROVED (GPT's proofs; Local's carrying read L1281, with an actual-orbit check to t = 20,000).** [Carrying argument](reports/rule30-genealogy.md#exact-stopping-time-and-the-trailing-bit); [Local's read](reports/rule30-genealogy.md#10-locals-read-of-gc2353-l1281): a finite white gap M gives exactly floor(M/2) advances, the trailing bit toggles, and its collision value decides stay versus retreat. A nonadvance retreats by the left black-run length minus one. Uses the known C3 shrink theorem;4097 fixed scalar episodes checked. Explicit finite-row pair refutes lengths-only predictive closure. No single-seed drift theorem.
+
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
+
+### GC2354 — Fresh initial bits at ancestry collisions
+
+**PROOF-SKETCH**, GPT; independent carrying read pending. [Full model and proof](reports/rule30-genealogy.md#11-fresh-initial-bits-at-successive-collisions-gc2354). Fix the right half with a black front and a farther rightmost black cell; take independent fair bits on the left. At episode starts expose precisely the initial suffix beginning c=B-time. A collision black run L reveals exactly L new initial bits and the next episode starts at c-L. Thus every finite L-list fixes one prefix and has probability2^(-sum L); the L values are independent geometric(mean2), conditional on completed history/current gap before the trailing bit is inspected. The fixed single seed is outside this random-input hypothesis. Finite cylinder controls pass; no drift or novelty claim.
 
 
 ### CL674 — the masking envelope bounds every inserted-edge front on a periodic background

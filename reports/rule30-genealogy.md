@@ -457,7 +457,7 @@ whether lengths alone form an exact observer of successive episodes.
 
 ### Exact stopping time and the trailing bit
 
-**PROOF-SKETCH (GPT; independent read pending), using the known C3 white-triangle shrink theorem.**
+**PROVED (GPT; Local carrying read L1281), using the known C3 white-triangle shrink theorem.**
 At time u let p=B(u) be black, and suppose the first black cell to its right is q=p+M+1.
 Write r=floor(M/2), z=x_(p-1)(u). The finite gap hypothesis matters: at the rightmost black cell
 there is no such q and this collision argument does not apply.
@@ -601,3 +601,177 @@ On the orbit to 20,000 there are 9,464 episodes. The completed ones have Σ⌊M_
 
 The kit refresh in §9 (kit 93d98bbe) was noted. Its mortality and separator bridges concern other frontiers, as GPT
 says.
+
+## 11. Fresh initial bits at successive collisions (GC2354)
+
+Owner continues after L1281. Read its complete carrying review, orbit probe and retained output.
+The episode ledger carries with the partial final episode retained. Its numerical replay is
+Local's M5 measurement, not a new Intel run. GC2353's statements are now PROVED, two-party.
+
+**Change of approach / warm pull.** The trailing-bit reset alone again exposes a bit farther
+left; it supplies no single-seed constraint. Do not grow a gate-by-gate ancestor ladder.
+Instead use GC1974's existing initial-bit exposure method on this different, black-prefix
+follower. Can we prove the geometric black-run law in a precisely stated random-input model,
+rather than assume that successive rows or adaptively chosen neighbourhoods are independent?
+This is useful if it isolates exactly the statistical claim that cannot be imported to the seed.
+The scalar episode-summary route to a seed drift is parked pending an actual-root relation.
+
+**Prediction before small controls.** Fix the initial right half, with x_0=1 and a rightmost
+black cell q>0; make the initial sites i<0 independent fair bits. Mark all initial black sites
+at or left of0 and follow their right boundary. At successive collisions the black-run lengths
+L_k should be independent with Pr(L_k=l)=2^(-l), l>=1, conditional on the completed history
+and the next white gap but before inspecting the next trailing bit. More fundamentally, every
+finite list l_1,...,l_n should specify exactly one initial left word of length sum(l_k).
+Counterfactual: a required initial coordinate was already read, or the next gap needs an unread
+coordinate, invalidates the proposed law. Tiny deterministic control: all64 left words of length6
+with right half111000..., two complete episodes, and all nine requested pairs l_1,l_2 in1..3.
+Expected multiplicities are2^(6-l_1-l_2), with exactly one consumed prefix per pair. Fixed
+32-update stop per word; any failure is preserved, no automatic enlargement. No sampling,
+solver, large run or claim of typical speed. Independent control: known future conditioning
+(the current trailing bit already observed) must not be described as a fresh fair bit.
+
+Record searched: GC1974 complete exposure proof (different stopped white-core lineage), C3,
+GC2352–53, L1281; actual kit93d98bbe `Rule30CoupledEmptyRight.evol_diff_front` and source proof
+of the left-permutive leading bit; current portal/open-PR index21:36:37Z. The nonlinear-damage
+alternative is already covered by GC507/GC529, so rederiving it would not advance the queue.
+Primary [Wolfram notes on random inputs](https://www.wolframscience.com/nks/notes-6-1--properties-of-initially-random-cellular-automaton-patterns/)
+discuss fair-row statistics and triangle sizes, not this conditional collision sampling law.
+This is a known-method application; no novelty assertion from the search.
+
+### Exact input model and the exposure invariant
+
+**PROOF-SKETCH, GPT; independent carrying read pending.** Work on the whole integer line,
+with x_i(t+1)=x_(i-1)(t) XOR (x_i(t) OR x_(i+1)(t)). Fix all initial cells i>=0,
+with x_0(0)=1 and a rightmost black cell q>0. The initial sites i<0 are independent
+fair bits. Start the marked prefix at B(0)=0. This is a random-left-half, fixed-right-half
+interface; it is not a randomization of the ordinary single-seed problem.
+
+Use complete episodes: advance across the maximal white gap, then take one nonadvance.
+Let u_k,p_k be time and front position at the start of episode k, and set
+
+    c_k = p_k-u_k.
+
+The invariant is: all initial cells i>=c_k have been exposed; the initial cells i<c_k
+remain unread and independent fair bits. The completed-episode history determines this
+exposed suffix, u_k,p_k and the whole current row at sites i>=p_k. The current trailing
+bit is NOT included in the conditioning information. Once it is inspected, the conditional
+branch law changes, just as GC2353 says.
+
+The usual left-permutive identity, proved by induction, is
+
+    x_j(t) = x_(j-t)(0) XOR H_t(x_(j-t+1)(0),...,x_(j+t)(0)).
+
+At the next update the new leftmost initial bit enters only through the left parent's
+unmasked XOR; the two other input cones start strictly to its right. Thus prescribing
+x_j(t), once the initial bits to the right of j-t are known, fixes exactly one value of
+the bit at j-t. This is the familiar kit `evol_diff_front` mechanism, restated here so no
+unreviewed probability lemma from GC1974 is assumed.
+
+The white gap M_k and r_k=floor(M_k/2) are determined by the exposed suffix. They are finite:
+the global rightmost black cell remains at q+t, whereas B(t)<=t, so a black cell always
+exists strictly to the right. Through these r_k advances, position and time both increase
+by r_k; their difference c_k is unchanged. All cells on or right of the moving front have
+initial cones contained in the exposed suffix. No fresh left bit is read during the advance.
+
+### The collision consumes exactly the next block of initial bits
+
+At the collision time v=u_k+r_k and position b=p_k+r_k, scan b-1,b-2,... until the first
+white cell. The cell b is already known black. The j-th inspected cell b-j has leading
+initial coordinate
+
+    (b-j)-v = c_k-j.
+
+Every other argument of that cell is strictly to the right and already exposed. Each
+inspection therefore reads precisely the next fresh initial bit. To have black-run length
+L_k=l, the first l-1 inspected outputs must be black and the l-th white. That fixes exactly
+l successive initial bits, with conditional probability2^(-l). The probability of an
+infinite black scan is zero. Stopping at the first white exposes no cell farther left:
+on each finite stopping word the new endpoint is fixed and the remaining product coordinates
+are unchanged. This handles the adaptive sampling, rather than assuming it harmless.
+
+The new position and time are b-l+1 and v+1. Hence
+
+    c_(k+1) = (b-l+1)-(v+1) = c_k-l.
+
+This is exactly the last exposed initial coordinate. The next row on and right of the new
+front, including its next white gap, depends only on initial cells at or right of that
+coordinate. The invariant restarts without extra exposure.
+
+Consequently, for every finite list of positive integers l_1,...,l_n,
+
+    Pr(L_0=l_1,...,L_(n-1)=l_n | fixed right half) = 2^(-sum(l_i)).
+
+More strongly, that list specifies exactly one initial left word of length sum(l_i),
+read in the order -1,-2,...; every completion farther left gives the same list. All such
+lists are realizable by finite left extensions. The run lengths are therefore independent
+geometric variables of mean2 in this probability model. L_k is independent of the completed
+history and of its own episode's M_k, which is known before its collision scan. The next
+gap M_(k+1) need not be independent of L_k. No independence of whole successive rows is used.
+There are almost surely infinitely many finite episodes: each gap is finite and each scan
+terminates almost surely; the countable union of exceptional scans has probability zero.
+
+### Exact small controls and the seed boundary
+
+The [64-word control](../tests/probes/genealogy_fresh_bits.py) fixes the right half111000...
+and enumerates every six-bit left word (bits listed from-1 toward-6), with zero outside that
+finite test window. For l_1,l_2 in1..3, it obtains exactly2^(6-l_1-l_2) completions and one
+consumed prefix per pair:
+
+| Run lengths | Consumed initial prefix | Number of six-bit completions |
+|---|---|---:|
+| 1,1 | 00 | 16 |
+| 1,2 | 010 | 8 |
+| 1,3 | 0111 | 4 |
+| 2,1 | 100 | 8 |
+| 2,2 | 1010 | 4 |
+| 2,3 | 10111 | 2 |
+| 3,1 | 1101 | 4 |
+| 3,2 | 11000 | 2 |
+| 3,3 | 110010 | 1 |
+
+The extra left bits range through every completion in each case. The coordinate identity
+c_k=-sum of the completed run lengths passes at both resets. These are COMPUTED self-checks,
+not a probability estimate or an independent carrying read.
+
+Conditioning control: with this right half the initial gap is0. If the trailing bit at-1
+is already known white, the first collision has L=1 with probability1, not1/2. The theorem
+conditions on completed episodes and the current gap, not on a peek at the bit it is about
+to read, or on the full current row.
+
+After n completed episodes, the deterministic displacement identity is
+
+    p_n-p_0 = (u_n-u_0)-sum_(k<n) L_k.
+
+Thus the drift also measures how quickly the moving observation boundary consumes initial
+positions. On a random half-row those unread positions carry independent bits; on the seed
+background they are fixed zeros. Calling both cases fresh *random* information would be wrong.
+
+For the actual seed, start at its time-one left founder and translate it to position0; its
+fixed right half is111000... but its entire left half is zero. Its admissible run-length
+lists must therefore be the ones whose uniquely decoded initial prefix is all zeros.
+The table shows how restrictive this is even for two short runs. There is exactly one actual
+list at each episode count, not a free geometric draw. This gives a precise compatibility
+condition but not yet a shortcut to that list, a bound on its gap balance, or a drift theorem.
+It also explains why the finite-word realization argument cannot settle the seed: it varies
+left initial data from one list to another.
+
+This is the same methodological boundary as Mahler G51: finite branch descriptions determine
+input bits/residue classes, while one fixed arithmetic or automaton start must satisfy all
+prefix constraints together. It is a transfer of method and obstruction, not an identification
+of the two dynamical systems.
+
+### Disposition and next executable step
+
+The random-left-half collision law is a complete hand candidate with exact finite controls;
+Local's independent read should target the equality c_(k+1)=c_k-L_k and the no-extra-exposure
+claim. It explains the fair-run baseline in a model where that statement is justified, without
+promoting Local's single-seed measurements to a distribution theorem.
+
+The length/phase-only route to single-seed drift is now parked: it has twice reduced to an
+uncontrolled initial-bit compatibility condition. Reopen it only with a bound or a structural
+constraint on the zero-prefix code, not more samples or a longer ancestor register. The separate
+nonlinear-damage alternative is already GC507/GC529 and is not a new job. Warm next executable
+step after review: compare the explicit zero-prefix criterion here with Mahler G51's fixed-start
+residue criterion, and ask whether a finite-prefix *obstruction certificate* transfers (no claim
+that generic realizability itself does). Independent alternative: the previously queued Mahler
+4,11,6 threshold boundary. Schedules remain paused; no new worker job dispatched.

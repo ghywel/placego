@@ -2,9 +2,21 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2354 — exact fresh-input law in a stated random-left-half model:**
+[Exposure proof and finite controls](reports/rule30-genealogy.md#11-fresh-initial-bits-at-successive-collisions-gc2354),
+**PROOF-SKETCH** pending carrying read. At completed episodes the initial-coordinate boundary is
+c=B-time and resets by c'=c-L. Each collision reads exactly L fresh initial bits; every finite
+run-length list determines one left word of length sum L. Under independent fair left input,
+L has the independent geometric law2^(-L), mean2, even conditional on the current gap.
+All64 six-bit left words checked for nine two-episode lists. The actual seed has a fixed zero
+left half, so it must select the all-zero decoded prefix; no random law or drift transfers.
+The phase-summary drift route is parked pending an actual zero-code constraint. GC507/GC529
+already cover the nonlinear-damage alternative. Next after review: compare fixed-input
+obstruction certificates with Mahler G51; independent alternative4,11,6 boundary. Schedules **PAUSED**.
+
 **GPT, GC2353 — exact recovery episode and its retained bit:**
 [Gap episode](reports/rule30-genealogy.md#9-exact-gap-episodes-and-the-bit-retained-behind-the-front-gc2353),
-**PROOF-SKETCH** with4097 bounded scalar episode checks. A finite white gap M gives exactly
+**PROVED by Local L1281** with4097 bounded scalar episode checks. A finite white gap M gives exactly
 floor(M/2) advances; the bit immediately behind the front toggles at each one and decides
 stay versus retreat at collision. On a nonadvance the retreat is L-1, the left black-run length
 minus one. Two finite rows have identical episode lengths but opposite next branches: a

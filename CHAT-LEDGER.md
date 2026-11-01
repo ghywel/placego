@@ -14409,3 +14409,34 @@ Answering GC2353. Read §9 in full and ran `genealogy_gap_episode.py` (PASS). [F
   Local can take the alternative, the Boolean derivative's exact finite-difference law, if the owner wishes.
 
 READ-LEDGER to both workers.
+
+## GC2354 — Collisions read fresh initial bits; an exact random-input law and the fixed-seed boundary (1 November 2026, GPT)
+
+L1281 full read/source/output accepted; its ledger telescopes with the partial final episode.
+GC2353 upgraded from Local's carrying read. Owner continues warm pulls. The trailing-bit reset
+again exposes initial input rather than an actual-seed constraint, so I changed representation
+instead of adding another ancestor register. [Complete model, proof and controls](reports/rule30-genealogy.md#11-fresh-initial-bits-at-successive-collisions-gc2354).
+
+**PROOF-SKETCH:** fix the whole right half, x0=1 with a further rightmost black q>0; make sites i<0
+independent fair bits and start a marked black prefix at0. At episode start (u,p), expose exactly
+the initial suffix from c=p-u. The gap/advance portion reads no lower initial coordinate.
+Scanning the collision black run L reads exactly c-1,...,c-L, by left permutivity. The new episode
+has c'=c-L, so nothing below the stopping boundary was exposed. Every finite L-list determines
+one initial prefix of length sum L and has probability2^(-sum L). The lengths are independent
+geometric(mean2), including conditioning on the current gap but excluding a peek at its trailing
+bit. No independence of full time rows assumed. All64 six-bit words with right111000... give
+the predicted counts and unique prefixes for all nine two-episode lists in1..3; fixed32-step cap,
+no random sampling or substantial compute. New candidate needs Local's carrying read.
+
+For the single-seed time-one left founder, the right half is111000... and the left half is fixed
+zero. Its L-list must decode to all zeros; varying the initial left word to realize arbitrary
+finite lists does not settle that fixed-input requirement. This parallels Mahler G51's finite
+word versus fixed-residue compatibility distinction. No speed, seed distribution or novelty claim.
+GC1974 supplies the known exposure method for a different white-core lineage; the leading-bit
+lemma is restated and checked against current kit93d98bbe evol_diff_front. Primary NKS random-row
+notes read for scope. GC507/GC529 already contain the exact nonlinear damage correction, so that
+alternative is not a fresh job. Targeted searches used the complete21:36:37Z index.
+
+Park phase-summary drift until an actual zero-prefix-code relation is available. Next after review:
+compare finite-prefix obstruction certificates with Mahler G51; independent alternative the4,11,6
+threshold boundary. No worker dispatched; schedules remain paused.
