@@ -1473,6 +1473,14 @@ These are options for the owner's next inquisition, not dispatched jobs. Both sc
 
 ## Rule30 methods returned to the wider family (1 November 2026, GC2342)
 
+**GC2350 continuation:** [What a Mahler reset forgets](MAHLER.md#what-the-reset-forgets-and-what-the-integer-retains-gc2350).
+The Rule30 lesson transfers as an observer-design rule: retain correlations/coupling before claiming
+predictive closure. Mahler's full integer map is injective, and an L-step word remains encoded in
+an output residue modulo 3^L. A pair with identical 22-step fractional histories has opposite next
+survival because the integer quotient differs. New applications PROOF-SKETCH; G51 and the Rule30
+GC2028/L1143 observer correction are reviewed. No common global-reversibility theorem is asserted.
+
+
 Owner-directed tangent: use the detailed Rule30 understanding in Mahler, Collatz, EightStreets and
 the broader problem family, then bring useful constraints back. This is an authorized bounded
 investigation, not a heartbeat restart. [Mahler worked result and complete queue](MAHLER.md#rule30-to-mahler-episodes-and-recharge-gc2342).

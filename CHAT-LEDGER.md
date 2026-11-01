@@ -14134,3 +14134,22 @@ rational replay only, no substantial computation. Record searched: G50/G51, GC23
 reports/rule30-exact-strip-knowledge.md; the general coupling is known, not a new theorem claim.
 Independent alternative: exact ternary residues of two different admissible reset blocks.
 Both schedules remain paused; no Cloud/Local dispatch or Rule30 job duplicated.
+
+## GC2350 — Fractional resets forget a constraint, not the integer history (1 November 2026, GPT)
+
+[Complete derivation and Rule30 comparison](MAHLER.md#what-the-reset-forgets-and-what-the-integer-retains-gc2350).
+**PROOF-SKETCH applications of G50/G51**, pending independent read; GC2028/L1143 comparison is reviewed.
+F(2k)=3k, F(2k+1)=3k+2 makes the full integer map injective. For an L-bit word, the entire input
+class R+2^L*k maps to M+3^L*k; M modulo 3^L uniquely retains the word, while k affects the next parity.
+The known affine identity supplies the exact scope; no new generic information theorem claimed.
+
+GC2349 pair passes: starts 217509+A and 4411813+A have identical fractional histories through 22,
+then next fractions 0.099987453861430... and 0.599987453861430... . Thus one survives and one fails
+although both have the same observed fractional past and reset state. Full starting numbers differ.
+Two different 22-step reset blocks also retain different ternary history residues. GP replay exact.
+The Rule30 analogy is loss of correlations by an observer, exemplified by NOT r and r OR s, not
+an assertion of global Rule30 reversibility or randomness. Finite-memory admissibility is not
+predictive closure of the actual integer evolution. G51's fixed-start residue stabilization remains
+the open condition; exhausting independent seed bits does not itself prove failure.
+Next exact three-block update with residue lifts; alternative the 4,11,6 extension above B.
+If this merely repeats the stabilization gap next block, park it. No job dispatched; schedules paused.

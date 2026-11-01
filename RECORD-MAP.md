@@ -414,6 +414,11 @@ PART: as on the board.
 
 ## Mahler's 3/2 problem (MAHLER.md)
 
+- GC2350: [Reset and retained arithmetic memory](MAHLER.md#what-the-reset-forgets-and-what-the-integer-retains-gc2350),
+  PROOF-SKETCH G51 applications: ternary history residue plus quotient; same 22-step fractional
+  history with opposite next survival. Rule30 observer analogy scoped; stabilization still open.
+
+
 - GC2348: [Complete 0.4 plateau](MAHLER.md#a-complete-finite-memory-plateau-containing-04-gc2348),
   PROOF-SKETCH: exact three-gap rule on (0.399991635907620...,0.400005002743756...];
   integer criterion includes lower endpoint, no positive survivor claimed. Carrying review pending.

@@ -902,3 +902,150 @@ do not infer one from the fractional reset. **Independent alternative:** move ju
 analyze the newly admitted 4,11,6 block with its remaining-tail constraint. The former third-gap
 sufficiency gap is closed at PROOF-SKETCH level; general integer nonexistence stays open.
 Both schedules remain paused. Passive carrying-review pointer only; no sleeping worker dispatched.
+
+## What the reset forgets and what the integer retains (GC2350)
+
+Owner asks to continue GC2348 and compare Rule30 remembering/forgetting. **PROOF-SKETCH applications
+of reviewed G50/G51**, independent carrying read pending; the referenced Rule30 observer correction
+was carried by Local in L1143. Prediction and counterfactual were published as GC2349 at 6cd9f3bc.
+No new generic conjugacy, novelty or nonexistence claim. This section separates a sufficient
+summary of *fractional admissibility* from a sufficient state for *actual future prediction*.
+
+### Full integer evolution does not merge distinct pasts
+
+While the half condition holds, the whole numbers evolve by F(n)=ceil(3*n/2). Directly,
+
+    F(2k)=3k,       F(2k+1)=3k+2.
+
+Its image contains residues 0 and 2 modulo 3, never 1. On that image its unique inverse is
+
+    n = 2m/3       when m=0 modulo 3,
+    n = (2m-1)/3   when m=2 modulo 3.
+
+Thus F is injective on nonnegative integers. A valid current integer has only one predecessor,
+and at a specified elapsed time determines its whole earlier integer history. The full real
+update xi -> 3*xi/2 is also injective. No claim that Rule30's full map is injective is being made.
+The fractional map, or a summary of its remaining upper bound, is a different observation.
+
+### Exact transport from an input binary residue to an output ternary residue
+
+For an L-bit parity word w, let C_0=0 and C_(t+1)=3*C_t+w_t*2^t. G51 gives
+
+    2^L*n_L = 3^L*n_0 + C_L.
+
+Let R be its least compatible input residue modulo 2^L, and let
+M=(3^L*R+C_L)/2^L. Then all nonnegative integer realizations of that word obey exactly
+
+    n_0 = R + 2^L*k  <=>  n_L = M + 3^L*k,     k>=0.
+
+Here 0<=M<3^L: use 0<=R<2^L and 0<=C_L<=3^L-2^L. In particular,
+
+    M = 2^(-L)*C_L modulo 3^L.
+
+Different L-bit words have different M. To recover the word from M modulo 3^L, its residue
+modulo 3 determines the last parity (0 for output residue 0, 1 for residue 2). The inverse formula
+above then determines the preceding integer modulo 3^(L-1); repeat. Changing the representative
+M by a multiple of 3^L changes that predecessor by a multiple of 3^(L-1), so this reconstruction
+is well-defined. Thus a fractional reset does not erase the preceding word from the actual
+integer: it is encoded in a ternary residue. This is an elementary consequence of the known affine
+coupling, not a claim that the history is stored as independent ternary digits without carries.
+
+The quotient k remains important as well. Since 3^L is odd, the next integer parity is
+
+    b_L = (M+k) modulo 2.
+
+Keeping the residue M while forgetting the quotient can therefore change the next branch.
+Two different admissible reset blocks of the same length illustrate history retention:
+
+| 22-step gap block | C_L | R modulo 2^22 | M modulo 3^22 |
+|---|---|---|---|
+| 4,11,7 | 12550483683 | 217509 | 1627367841 |
+| 5,5,5,7 | 12043134675 | 2907189 | 21751089894 |
+
+Both finish in the ordinary fractional state of GC2348; their output history residues differ.
+The first word is its critical 22-bit word; the second has all gaps at least 5 and is covered by
+G294's stronger ceiling. The table's residues were checked by exact GP modular arithmetic.
+
+### An exact same-observation, different-future witness
+
+For any L, two real starts differing by 2^L have differences
+
+    x'_t-x_t = 3^t*2^(L-t)    for 0<=t<=L.
+
+These are integers throughout, so their fractional histories are exactly identical through L.
+For t<L the difference is even, so the integer parities also agree. At t=L it is odd, so the
+parities are opposite. If the shared fraction u_L is in [0,1/2), exactly one of the two next
+steps passes the half condition: the even integer requires u_L<1/3, and the odd integer requires
+u_L>=1/3. This is a fixed family of exact pairs, not an assumed random missing bit.
+
+Specialize to the actual reset in GC2348. With
+
+    A = 12550483683/31376865305,
+    x_0 = 217509+A,
+    x'_0 = 4411813+A = x_0+2^22,
+
+both fractional histories stay below 2/5 through time 22, with identical values and identical
+parity word at times 0..21. At time 22 the whole numbers are 1627367841 and 33008427450,
+respectively odd and even, and their common fraction is A. At time 23:
+
+    frac(x_23)  = 3137292872/31376865305 = 0.099987453861430...,
+    frac(x'_23) = 37651451049/62753730610 = 0.599987453861430... .
+
+One survives this next step and the other breaches the half. No infinite survival is asserted.
+Direct exact-rational multiplication and floor extraction independently replayed these finite
+histories. The difference at time 22 is 3^22=31381059609, as predicted before the check.
+This refutes predictive closure from even the complete finite fractional history, and therefore
+also from the three-state fractional summary, over this class of varying positive starts.
+It is not an ambiguity for a specified exact starting number.
+
+### The connection to Rule30: information omitted by the observer
+
+In the reviewed [GC2028/L1143 Rule30 analysis](reports/rule30-exact-strip-knowledge.md#locals-carrying-read-l1143-29-october-2026),
+initial cells a10 give F^2(x)_2=a despite arbitrary exterior bits. The relevant intermediate
+expressions include NOT r and r OR s. Each can be unknown individually, yet their OR is always 1.
+Replacing them by independent unknowns loses their shared dependence and misses the returned bit.
+That was a representation error, not evidence that the true system destroyed the relation.
+The result is about all specified completions of a patch; it is not a randomness theorem for
+the one fixed single-seed orbit.
+
+The analogous Mahler omission is the coupling between fractional branch, integer residue and
+quotient. The three-state grammar correctly says which fractional continuations are allowed;
+it does not say which one the actual integer will select. Both systems warn us to retain the
+relation that carries a future constraint. The two mechanisms are not claimed identical: the
+Mahler whole-number map is injective, whereas the cited Rule30 theorem concerns a local observer.
+
+### What this changes in the research question
+
+G51 already makes every finite admissible prefix realizable by some positive integer. Searching
+for a new finite fractional word forbidden solely by ordinary-integer existence, while allowing
+arbitrarily large starts, cannot close the gap. The obstruction must retain a single fixed start
+(or an explicitly bounded set of starts) across arbitrarily long prefixes.
+
+For a chosen fractional word, let R_L be its least input residue. Successive extensions give
+R_(L+1)=R_L+epsilon_L*2^L with epsilon_L in {0,1}. A fixed positive integer realizes the word
+exactly when these residues eventually stabilize at that integer (G51). More explicitly,
+
+    n_0 = R_L + 2^L*k_L,
+    epsilon_L = (b_L-M_L) modulo 2,
+    k_(L+1) = (k_L-epsilon_L)/2.
+
+For a fixed n_0 this is its actual binary quotient, which eventually becomes zero. That does not
+force a fractional failure: the subsequent branches are determined by M_L and still have to be
+analyzed. It forbids treating new seed bits as an independent, inexhaustible supply of choices.
+The three-state plateau makes the fractional part finite-memory; it does not by itself prove
+that every nonzero compatible residue path must keep lifting. This is the remaining inference.
+
+Search/controls: G50/G51/G294, GC2348, the full GC2028/L1143 carrying source, record searches for
+Mahler injectivity/forgetting/residue history, and current Coon source matches for residue and
+orbit identities. Relevant literature is the classical integer/beta decomposition (Flatto 1992;
+Flatto–Lagarias–Pollington 1995), already credited in this record. No new source theorem is
+needed for the elementary affine corollaries here. No full portal refresh, build or novelty claim.
+Only the frozen pair and the two named block residues were evaluated in GP; no random samples,
+horizon enlargement, solver job or worker delegation. Exact computations are self-checks.
+
+**Next executable step:** retain (fractional state,R_L,M_L) under one of the three permitted
+blocks and ask for a provable obstruction to eventual zero lifts, comparing existing stabilization
+and two-sided residue constraints first. Do not call state merging or fractional reset a decrease
+of arithmetic memory. **Independent alternative:** the exact four-odd continuation constraints
+above GC2348's upper endpoint B. If the next block merely restates unbounded-residue necessity
+without a new bound, park the stabilization route and take that alternative. Both schedules paused.

@@ -8,6 +8,15 @@ Local holds the Wolfram side. GPT and Cloud: please confirm your host columns in
 networkx, gmpy2, python-sat and z3-solver; z3 and cvc5; PARI/GP 2.19 as `gp`. The CaDiCaL-to-`cake_lpr` LRAT
 controls pass, and every probe compiles under 3.15. **GC2343:** Intel installs and known-answer checks are now complete too (TOOLS.md §3/§5). The owner has now authorized the bounded Mahler investigation below; no substantial compute job is running.
 
+**GPT, GC2350 — memory across the Mahler reset:**
+[Exact pair and Rule30 comparison](MAHLER.md#what-the-reset-forgets-and-what-the-integer-retains-gc2350),
+**PROOF-SKETCH** applications of reviewed G51. The full integer map is injective; an L-step word
+is retained modulo 3^L at its output. Two actual starts have identical fractional history through
+22 but one fails the next half test and the other survives. The three-state summary omits arithmetic
+constraints, as the reviewed Rule30 observer omitted correlations. Next: residue lifts across the
+three blocks; if no new bound beyond stabilization appears, switch to the 4,11,6 boundary alternative.
+No infinite-survivor or novelty claim. Both schedules **PAUSED**.
+
 **GPT, GC2348 — complete fractional plateau around 0.4:**
 [Hand proof](MAHLER.md#a-complete-finite-memory-plateau-containing-04-gc2348), **PROOF-SKETCH** pending
 independent review. For ceilings between A=0.399991635907620... and B=0.400005002743756...,
