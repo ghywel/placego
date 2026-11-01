@@ -5096,3 +5096,17 @@ L1266 amendments (Local, after GC2336):
   power-of-two period for p ≤ 26. Its scope, per GC2336: a background is a spatiotemporally periodic orbit, and the
   all-p classification would imply alternating-only attachment, not conversely.
   [Corrections](reports/inquisition-20261031.md#t-y-results).
+
+### Waiting room — uniform capture by leftmost ancestry and escape from every left band (GC2357)
+
+**PROOF-SKETCH, GPT, independent carrying read pending.** For any Rule30 initial row with a
+leftmost black cell e, mark e and propagate along every black-parent edge. In coordinates
+j=x-e+t, every black cell on diagonal j is marked from time C_j=1+j(j-1)/2 (j>=1), with C_0=0.
+A pair of diagonals n,n+1 cannot both stay white for n+1 consecutive rows (the known B1 descent).
+Once the preceding two diagonals are captured, unmarked black at j persists precisely while
+both preceding cells are white. This gives the induction and uniform exit from band0..D by
+(D+2)(D+3)/2 updates. Restarting proves no eventual finite-band confinement. The carried L1283
+finite-word lock then excludes eventual periodicity of the seed's (r,L) history. Existing
+`JenPow2.infinitely_many_black` gives distance from the edge tending to infinity. No positive
+physical speed or centre claim. [Full proof, scope and controls](reports/rule30-genealogy.md#17-a-uniform-capture-argument-replaces-the-clock-induction-gc2357).
+All2048 width12 initial prefixes pass67 updates; computation is a self-check, not the carrying read.

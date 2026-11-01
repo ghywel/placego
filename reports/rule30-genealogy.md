@@ -1755,3 +1755,56 @@ Launch floor4096MiB, running floor3072MiB, swap-growth stop64MiB, files16MiB, st
 Fresh scratch directory and retained failures; any pressure/monitor failure stops the stage
 without automatic retry. No GPU or thermal measurement. Flag Local only after the block,
 as the owner requested, with the carrying step and controls together.
+
+### 17.6 Control outcome, adversarial scope and review handoff
+
+The frozen pilot at3420dc04 **COMPLETED**. All2048 initial prefixes passed all67 updates:
+137216 packed/scalar step comparisons, all12 local clearing cases, capture deadlines at
+j=0..11, white-pair windows at n=0..10, and exits at D=0..9. The latest observed first exits
+were1,3,3,4,5,7,10,10,11,12, all below the stated universal bounds. The last unmarked-black
+times were -1,0,0,1,3,3,4,5,7,10,10,11. These smaller values suggest slack in the bounds;
+they are not a new linear capture law. No widening or second stage was run.
+
+Intel receipt: child1.85 user +0.02 system CPU seconds,1.88 wall seconds,12,619,776-byte
+maximum RSS; supervisor0.129 CPU seconds and2.21 wall seconds. The child reports1.820715
+process CPU seconds for its main work. These are different measurement scopes. Tree samples
+peaked at12756KiB and2 processes; launch free+inactive6476MiB, observed floor6472MiB, observed
+swap growth0. No pressure stop. The declared120s aggregate budget was comfortably met by the
+retained receipts; the launcher's per-process cap was not an aggregate CPU enforcement mechanism.
+
+Raw output, launcher/time receipts and exact probe source are retained in the shared store at
+`cited/gpt/gc2357-capture-controls-20261101.zip`,3734 bytes, SHA256
+`0fb27659bc17f7f6b0607ff1a4d8188b86afe80812ba038238f3790799ed8237`.
+Raw-body upload receipt and byte-for-byte readback verified with TLS enabled.
+
+The adversarial pass distinguishes four claims:
+
+- Capture means every black cell on a fixed left-edge diagonal eventually has the marked
+  leftmost ancestor. It need not have that ancestor exclusively. It is not Boolean sensitivity.
+- The same uniform argument works for every initial right half because these prefixes are
+  autonomous. An interior founder without a marked leftmost edge is outside the hypotheses.
+- The exit theorem is a bound on a visit to a fixed band, allowing later returns. The stronger
+  limit D(t)->infinity uses the separate existing theorem about arbitrarily deep permanently
+  black diagonals. A clock-period estimate is unnecessary for the exit theorem.
+- Nonperiodicity concerns the infinite list of advance counts and collision lengths (r,L).
+  For the seed's time-one row111, the rightmost black cell starts unmarked. Its advancing
+  right edge has only that edge's black parent, so it stays unmarked and strictly ahead of the
+  marked front. Every encountered white gap is therefore finite and closes by the carried gap
+  law, so collisions continue. This is neither colour-column nonperiodicity nor positive speed.
+
+**Specific carrying question for Local:** check17.2's time-window induction,17.3's clearing
+identity under captured predecessors, then17.4's C_j induction and17.5's restart/dominance
+argument. Does this close L1283's all-D escape premise and hence its actual-seed nonperiodic
+pair-history conclusion? Separately check the stronger limit against the exact hypotheses of
+`JenPow2.infinitely_many_black`. No new statement is promoted before that read. GC2356's
+spatial-tail and monotone-map reductions also remain pending, but the present proof does not
+need their computed classification or the unreviewed converse.
+
+Next executable step after the read: resolve any scope/indexing objection, then prepare a
+minimal formal statement of capture and band exit if the proof carries. Independent warm
+alternative: Mahler's4,11,6 strict threshold boundary. Curiosity: which gate identities suffice
+for this capture mechanism, and which disappear if ancestry must follow only inputs on which
+the output actually depends? That would distinguish genealogical merging from information
+loss, without another long trajectory. The period-map width induction is parked because this
+proof bypasses it; reopen only if the uniform argument fails or a quantitative clock comparison
+would answer a different stated question. Both schedules remain paused.

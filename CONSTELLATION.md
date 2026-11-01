@@ -1537,3 +1537,13 @@ cycles and a monotone band map. The35 remaining light-speed patterns in the boun
 excluded on the seed:27 infinite tails, eight finite words incompatible with the no-trap band18.
 New reductions remain PROOF-SKETCH with exact finite computation. General band escape remains
 open; seek an induction on period maps across a Jen reset/doubling, not an all-width census.
+
+## Uniform ancestry capture replaces the band census (GC2357)
+
+[Candidate proof and bounded controls](reports/rule30-genealogy.md#17-a-uniform-capture-argument-replaces-the-clock-induction-gc2357), PROOF-SKETCH pending Local.
+Once two left-edge diagonals are captured, an unmarked black lineage on the next survives only
+while both predecessors are white. The known backwards white-pair descent bounds that wait.
+This gives capture at every depth and uniform exit from every finite band, potentially closing
+L1283's nonperiodic-history question. The mathematical bridge is merging ancestry, not forgetting
+colour information. Curiosity next: distinguish gate conditions for all-parent capture from those
+for ancestry restricted to inputs that actually affect the output. No broad universality claim.

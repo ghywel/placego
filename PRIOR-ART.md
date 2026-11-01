@@ -5131,3 +5131,13 @@ return map, without borrowing the ring theorem's hypotheses. Its monotone finite
 criterion is elementary. No general finite-state-method or new Jen theorem claimed. LemmaB2
 already forbids uniformly bounded temporal periods over all left diagonals; measured period32
 plateaux cannot be extended to an all-width clock assumption.
+
+## Uniform ancestry capture reuses B1's backwards descent (GC2357)
+
+Known, reproved quantitatively here: B1's descending adjacent-white-pair contradiction, already
+in `JenPow2.no_adjacent_white`, gives a finite window of n+1 rows for pair n,n+1. The existing
+`JenPow2.infinitely_many_black` supplies arbitrarily deep permanently black diagonals.
+[GC2357](reports/rule30-genealogy.md#17-a-uniform-capture-argument-replaces-the-clock-induction-gc2357)
+combines these with an all-parent marking identity to propose uniform ancestry capture and
+band escape. The new deductions are PROOF-SKETCH; no new Jen theorem or literature priority
+claimed. Ancestry coverage is distinct from erasure of Boolean dependence on other initial bits.

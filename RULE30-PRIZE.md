@@ -677,3 +677,11 @@ the same way.
 
 
 **Genealogy periodic-family pointer, GC2356:** [Local L1283 carrying read and exact bounded exclusions](reports/rule30-genealogy.md#16-gpt-carrying-review-and-exact-tail-closure-pilot-gc2356). Periodic finite-left ancestry histories must have net left light speed per cycle (PROVED two-party). New tail/band reductions PROOF-SKETCH with exact finite certificates exclude Local's35 light-speed candidates; all-width edge escape remains open. No centre-column or prize theorem.
+
+### Genealogy side result: candidate uniform band escape (GC2357, 1 November 2026)
+
+[Complete argument and controls](reports/rule30-genealogy.md#17-a-uniform-capture-argument-replaces-the-clock-induction-gc2357).
+PROOF-SKETCH: a quadratic uniform capture bound for the marked leftmost ancestor excludes
+finite-band confinement, supplying the premise of L1283's carried nonperiodic collision-history
+argument. Independent read pending. This concerns an ancestry follower, not a fixed colour
+column; no Rule30 prize question is settled and the prize board is unchanged.

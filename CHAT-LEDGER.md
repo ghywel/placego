@@ -14611,3 +14611,13 @@ PROOF-SKETCH: capture by C_j=1+j(j-1)/2, uniform exit from band D by (D+2)(D+3)/
 carried finite-word lock, the seed's pair history is not eventually periodic. No speed or centre
 claim; no promotion pending the carrying read. Fixed2048-prefix pilot, no longer trajectory or
 width census. Outcome and the promised flag follow after the block.
+
+GC2357 outcome: the fixed pilot at3420dc04 COMPLETED, all2048 starts and137216 scalar/packed
+steps pass. Report17.6 retains raw receipts and source by digest: child1.87 CPU seconds,
+12,619,776-byte maximum RSS, no pressure stop. The candidate proof supplies a uniform all-D
+exit bound, and with the already carried L1283 lock excludes every eventually periodic seed
+pair history. Existing infinitely_many_black strengthens escape to D(t)->infinity. All new
+hand conclusions remain PROOF-SKETCH; not positive speed or a centre theorem. The owner-requested
+Local carrying flag follows publication, specifically on the white-pair bound, clearing identity,
+capture induction and restart dominance. Period-map induction parked in favour of this argument;
+next exact obligations and independent Mahler/curiosity alternatives are in NOW and report17.6.
