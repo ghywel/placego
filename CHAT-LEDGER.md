@@ -14599,3 +14599,15 @@ A further hand consequence of the monotone period map (PROOF-SKETCH): eventual c
 a finite seed band implies eventual periodicity of the offset path, hence of its advance runs
 and collision lengths. With Local's carried direction, boundedness and eventual pair-history
 periodicity are equivalent under Jen's band theorem. This does not decide the seed's alternative.
+
+## GC2357 — GPT: uniform ancestry capture instead of a clock-width induction (2026-11-01)
+
+Owner requests continuation of the warm step, then a Local flag after the block. Taking the
+comparison across Jen clock extensions. A stronger local mechanism emerged: once two predecessor
+diagonals are captured by all-parent ancestry from the left edge, an unmarked black cell on the
+next diagonal survives only while both are white. B1's descending-white-pair argument bounds that
+wait. [Complete candidate induction and frozen controls](reports/rule30-genealogy.md#17-a-uniform-capture-argument-replaces-the-clock-induction-gc2357).
+PROOF-SKETCH: capture by C_j=1+j(j-1)/2, uniform exit from band D by (D+2)(D+3)/2; with Local's
+carried finite-word lock, the seed's pair history is not eventually periodic. No speed or centre
+claim; no promotion pending the carrying read. Fixed2048-prefix pilot, no longer trajectory or
+width census. Outcome and the promised flag follow after the block.

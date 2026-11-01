@@ -1623,3 +1623,135 @@ If it merely repeats the unknown no-fixed-point condition, park the uniform rout
 increase the band. Independent alternative remains Mahler's4,11,6 threshold boundary. No new
 review request or worker dispatch; this is a passive, consolidated response to the owner's
 supplied Local analysis, and both schedules remain paused.
+
+## 17. A uniform capture argument replaces the clock induction (GC2357)
+
+**PROOF-SKETCH, GPT, 1 November 2026; independent carrying read required.** The owner asked to
+continue the warm step and flag Local after this block. Trying to compare adjacent-width period
+maps led instead to a local ancestry argument. It gives a uniform exit bound without assuming
+periodicity of any diagonal. The subsequent stronger escape limit uses the already proved
+`JenPow2.infinitely_many_black`, not a new clock bound.
+
+Record searched: the complete GC2356/L1283 arguments and sources; L1279/GC2352's all-parent
+black-prefix reach property; B1's `no_adjacent_white` and its descending-pair proof;
+`tests/probes/lean/JenPow2.lean` actual `edge`, `D_succ`, `jen_pow2`,
+`no_adjacent_white`, `infinitely_many_white`, `white_then_black`, `infinitely_many_black`.
+Record/kit/portal searches for ancestry or descendants with leftmost/eventual/capture and for
+adjacent white diagonals found these tools, not a matching quantitative ancestry claim.
+Kit93d98bbe and the21:36:37Z portal index remain the last complete snapshot at the start of
+the block. Targeted primary-literature web searches returned no matched ancestry theorem;
+negative search is not a novelty certificate. B1's old argument is credited explicitly below.
+
+### 17.1 Fixed frame and the meaning of a mark
+
+Take any Rule30 row with leftmost black cell e. The right half can be arbitrary, even infinite.
+Use left-edge coordinates a_j(t)=x_(e-t+j)(t), j>=0, with negative indices zero. The edge is
+always black. Mark only that edge cell at time0, and propagate a mark along **every black-parent
+edge**. Thus m_j(t)=1 exactly when this black cell has at least one black ancestry path back
+to the initially marked edge. It is not an exclusive family label, a bit-flip influence, or
+an arbitrary choice of one parent. The exact recurrences are
+
+    a_j(t+1) = a_(j-2)(t) XOR (a_(j-1)(t) OR a_j(t)),
+    m_j(t+1) = a_j(t+1) AND (m_(j-2)(t) OR m_(j-1)(t) OR m_j(t)).
+
+Always m<=a and m_0=a_0=1. Call a diagonal *captured from time T* if m_j(t)=a_j(t) for every
+t>=T: every black cell there has the marked ancestor. White cells satisfy this vacuously.
+
+### 17.2 A quantitative version of the known white-pair descent
+
+**Claim.** For n>=0 and any starting time T, the adjacent diagonals n,n+1 cannot both be white
+at all n+1 times T,...,T+n. Equivalently some member of the pair is black during that window.
+
+Proof by induction on n. For n=0 the edge itself is black. If a_n and a_(n+1) are both zero
+through T+n, their recurrence at index n+1 implies a_(n-1)(t)=0 at times T,...,T+n-1, since
+the other two inputs and the next output are zero. Hence the pair n-1,n is zero for n times,
+contrary to induction. This is the finite-window version of B1's existing backwards descent;
+no independence, periodicity or assertion about a long measured run enters it.
+
+### 17.3 A black predecessor clears an unmarked lineage
+
+Suppose diagonals j-2,j-1 are captured from time T. Set u_j=a_j AND NOT m_j. The two recurrences
+give, for t>=T,
+
+    u_j(t+1) = u_j(t) AND NOT(a_(j-2)(t) OR a_(j-1)(t)).
+
+If the two preceding cells are white, the current cell merely copies its colour and mark.
+If the left predecessor is black, a black child can only be the100 case and is marked; if
+the middle predecessor is black, any black child has that marked parent. Otherwise the child
+is white. These cases prove the identity. Thus once u_j becomes zero it cannot restart, and
+the first black event in the predecessor pair clears it permanently.
+
+The all-parent qualification matters: for011 with only the middle parent marked, the child
+is marked under this rule, but choosing its unmarked right parent would give an unmarked child.
+The argument does not assert capture for arbitrary designated-parent trees.
+
+### 17.4 Every fixed diagonal is captured in quadratic time
+
+Define C_0=0 and C_j=1+j(j-1)/2 for j>=1. **Claim:** diagonal j is captured from time C_j,
+uniformly over the entire initial right half.
+
+The edge is captured initially; diagonal1 is captured after one update because its parents
+include the always marked black edge. For j>=2, both predecessors are captured by C_(j-1),
+since C is nondecreasing. Claim17.2 applied to the pair j-2,j-1 finds a black input between
+C_(j-1) and C_(j-1)+j-2. Claim17.3 therefore clears u_j by C_(j-1)+j-1=C_j, permanently.
+This completes the induction. The bound is not asserted sharp.
+
+This is ancestry coverage, not loss of other information. A cell can have the marked edge
+ancestor and other black ancestors simultaneously, and its colour may still depend on other
+initial bits. The argument does not make the colour evolution independent of its initial row.
+
+### 17.5 Uniform escape and nonperiodic collision histories
+
+Let B(t) be the rightmost marked black descendant and D(t)=B(t)-e+t. The marked set is finite
+at each time, and contains the left edge. By the carried black-prefix property, its boundary
+is the rightward follower under discussion. For an arbitrary band limit D, both diagonals
+D+1,D+2 are captured by C_(D+2). Claim17.2 supplies a black cell on this pair by a further
+D+1 steps. It is a marked black cell outside the band. Therefore the first exit occurs by
+
+    E(D) = C_(D+2)+D+1 = (D+2)(D+3)/2.
+
+The argument may be restarted at **any** physical time with the then-leftmost black cell.
+Any rightward marked-prefix front includes that cell, hence dominates the front freshly
+started from it. Thus no such front can remain in a band0..D for E(D) consecutive updates.
+In particular it cannot be eventually confined to any fixed left band. This uniform statement
+does not use Jen periodicity or a census over D. It supplies the strict-drift/no-fixed-point
+property of every eventual clipped period map from §16, rather than assuming it in an induction.
+
+For the seed's left founder, restart at its time-one row. Its distance from the edge is B(t)+t.
+Unbounded limsup of this distance, together with Local's now carried finite-word proposition,
+rules out **every eventually periodic (r,L) collision history**, not merely the35 bounded
+patterns. This consequence remains PROOF-SKETCH until the new capture/exit argument is carried.
+It is not a centre-column nonperiodicity theorem or a Rule30 prize solution.
+
+A stronger qualitative conclusion uses the existing `JenPow2.infinitely_many_black`: for
+every N there is j>=N that is permanently black after some time. Claim17.4 eventually marks
+all its black cells, so D(t)>=j for every sufficiently large t. Hence D(t) tends to infinity,
+not merely along a subsequence. No growth rate or positive physical speed follows: even a
+distance growing very slowly from the left edge would satisfy this conclusion. In particular,
+this does not prove B(t) tends to positive infinity or reaches the centre eventually.
+
+### Frozen finite controls before execution
+
+Prediction: all2048 width12 initial left-band prefixes with a black edge satisfy the capture
+bounds at depths0..11, the white-pair bounds at n=0..10, and first-exit bounds for D=0..9.
+Evolve exactly67 updates; compare a packed integer colour/mark update with literal scalar
+Rule30 truth-table and parent-graph updates at every step. This covers every possible initial
+prefix in the stated width; deeper right cells cannot affect it. The universal proof is the
+induction above, not extrapolation from this test.
+
+Counterfactual: any late unmarked black cell, overlong white-pair run, late first exit or oracle
+disagreement stops the stage and refutes the claimed proof/implementation as appropriate.
+Controls: all12 local marked-parent cases satisfying the captured-predecessor hypothesis;
+011 right-parent-only selection fails that rule as expected; without the black-edge hypothesis
+an all-white pair can persist. No random rows, density measurement, width or horizon enlargement.
+
+Source [genealogy_capture.py](../tests/probes/genealogy_capture.py), SHA256
+`ae86833ec9a338d6b0d74cb86fa7b72b80353e2fc13cf045242406775079fe6b`.
+One Intel worker, nice10, no subprocesses or library threads; fixed2048*67 updates. Aggregate
+CPU budget120s, child CPU check20s, launcher hard per-process30s, wall60s, tree RSS768MiB,
+max2 tracked processes. As previously, per-process caps are not general aggregate enforcement;
+retain actual receipts and supervisor CPU. Launch free+inactive about6517MiB, load3.46.
+Launch floor4096MiB, running floor3072MiB, swap-growth stop64MiB, files16MiB, stage128MiB.
+Fresh scratch directory and retained failures; any pressure/monitor failure stops the stage
+without automatic retry. No GPU or thermal measurement. Flag Local only after the block,
+as the owner requested, with the carrying step and controls together.
