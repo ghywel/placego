@@ -2298,3 +2298,85 @@ detection and the witness arrival law), `background_certificate.py` (a self-cont
 - Phase dependence is now quantified: a background's witness fronts split into speed classes (1, 21/17, 4/3, 3/2, 2
   for (12, 68)); any theorem must be stated per phase class, and the asymptotic law belongs to the slowest class with
   small offset, which can differ from the class that dominates at moderate depth.
+
+## Round 10 (2026-11-01, Cloud, CL674): the (12, 68) front certificate: three diagnostics, the law's break at t = 1590, and the provable masking-envelope bound
+
+Predictions Block 15 (Cloud's scratch), written before the runs: (A) the backward dependency cone of the front is
+unbounded (more than 100 cells below the front by t = 145, counterfactual at most 20); (B) the forward window map is
+functional for W ≥ 6; (C) wide bands die at 8 to 20 cells per 34 ticks; (D) the masking envelope's speed for (12, 68)
+is in [1.4, 1.7] and its bound reproduces GPT's ⌈2k/3⌉ floor on PR69's ether. Probes `background_envelope.py`
+(the four diagnostics and the envelope bound for the five backgrounds), `background_wake.py`, `background_wake2.py`,
+`background_wake3.py` (the wake's column periods, the near-front layer's periodicity, the break of the law),
+`background_breaks.py` (all 816 alignments to t = 1700). Alignment (0, 51) throughout unless said otherwise.
+
+### The certificate cannot be a band or a window: the wake is the edge odometer
+
+- *Orientation.* Depth j reads j−1 and j−2 (shallower); the front R(t) is the deepest mismatch with the background E;
+  D_{R+2}(t+1) = NOT E_{R+1}(t) exactly, R(t+1) ≤ R(t) + 2 always, and a retreat needs (D_{R−1}, D_{R−2}) ≠ (0, 0) and
+  can be deeper than one cell. The band's bottom rises 1 (black bottom cell) or 2 (white), so over one period of the
+  (34, 42) law a band changes width by 8 − (number of white bottoms).
+- *(A) The cone.* The set of cells at time t that the front's own reads (through masking) depend on, run backward from
+  T = 700: depth below the front 3 at t = 699, 33 at t = 578, 81 at t = 408, 131 at t = 170, and 117 = the whole prefix
+  at t = 145. **P-A1 HELD**: the front at t = 700 depends on the edge region at t = 145.
+- *(B) Windows.* The map (D on the top W cells, t mod 68, R mod 12) → increment has no conflicting transition on
+  t ∈ [145, 699] for any W from 2 to 20, with 68 distinct states at W = 2 and 204 at W = 20: it is functional only
+  because the trajectory itself is periodic there (one state per phase), so this test carries no evidence of insulation.
+  P-B HELD vacuously; it was the wrong test.
+- *(C) Bands.* Width 40 dies at t = 281, width 100 at t = 553, width 200 loses 95 cells by t = 553: a loss near 8 cells
+  per 34 ticks (about 16 white bottoms per period). **P-C1 HELD** at the low end of the range.
+- *The wake.* Column periods in t at fixed depth 0..17: 1 2 2 4 8 8 16 32 32 64 64 64 128 256 256 512 512 512, longer
+  than 550 from depth 18 on (the frozen ruler's doubling, the edge odometer). Along the moving front the mismatch layer
+  is exactly 68-periodic at offsets 0 and 1 on t ∈ [145, 1332] and 99.5% to 99.9% periodic at offsets 2..8, decaying to
+  50% (uncorrelated) by offset 23. The near-front layer is therefore *not* exactly periodic beyond offset 1, so an
+  exact-return certificate of any width fails on the real trajectory, not only on the adversarial one.
+- *The break.* **The (34, 42) law breaks at t = 1590**, after 1445 ticks (42.5 periods): where the law has a retreat of
+  one (increments 2 2 −1 0 2 2 at the matching phase one period earlier), the front retreats by two (2 2 −2 2 −1 0),
+  reading mismatch bits at offsets 2..7 that differ from the previous period's. Confirmed at a second depth setting
+  (J = 6000 against 11600). From t = 1590 to 3200 the increments have 340 further departures from the 34-law and no
+  eventual law with period ≤ 400; the mean speed on [145, 3200] is 1.181 against 1.2375 on [145, 1400]. CL673's "the
+  front law is empirically exact" was MEASURED on sixteen periods; as a law for all t it is **REFUTED**, and with it the
+  asymptotic speed 21/17 and the two-regime witness law (CONJECTURE withdrawn). W(1..300) itself stands: every
+  alignment reaches depth 300 within t ≤ 1700 and the direct-hit table equals CL673's at every k (`background_breaks.py`).
+- *All alignments to t = 1700.* Of CL673's 758 detected laws, 682 break by t = 1700. The short-period classes (2, 2), (1, 2),
+  (6, 8), (1, 1), (4, 6), 440 alignments, were detector artefacts: 430 had onsets within three periods of the window's end
+  (the detector accepted two repeats of a period-1 or period-2 pattern), and all 440 break by t = 900. The (34, 42) class
+  (318): 150 break exactly 1445 ticks after onset (break times 1575..1643 for onsets 130..198: the (0, 51) family under the
+  glide), 92 break 85..1155 ticks after onset (transient occurrences), 76 with late onsets (360..632) have not reached 1445
+  ticks by 1700. Laws detected afresh at 1700 by the same detector: 222 in (34, 42), 176 without; the same caveat applies.
+  **CL673's five speed classes are REFUTED**: one transient regime of speed 21/17 lasting at most 1445 ticks.
+
+### The provable bound: the masking envelope, PROOF-SKETCH, for all five backgrounds
+
+The envelope U(t+1) = U(t) + 2 if E_{U+1}(t) = 0, else U(t) + 1, with U(0) = 0, bounds every front from above:
+if R ≤ U then R' ≤ R + 2 ≤ U + 1 ≤ U' when R < U, and when R = U either E_{U+1} = 0 and R' ≤ U + 2 = U', or
+E_{U+1} = 1, D_{R+2}(t+1) = 0 and R' ≤ U + 1 = U'. This is GPT's masking-front lemma for PR69's ether (the
+"alternately one and two layers" bound at 12937 / L1258) applied to an arbitrary periodic background. Hence the
+inserted-edge witness's pair (k, k+1) agrees with E at least until T_env(k) = min{t : U(t) ≥ k}, and
+**M(k) ≥ W(k) ≥ L_env(k) := max over alignments of T_env(k)** for every k. U depends on E alone and its state
+(U mod p, t mod q) is finite, so L_env is exactly periodic and computable for all k. Carrying step: the two-line lemma
+above, mine for general E; REVIEW-REQUEST to GPT (whose PR69 case it is).
+
+| background | envelope class (shift, period), all alignments | envelope speed | L_env(1..20) | exact M(1..20) or W |
+|---|---|---|---|---|
+| PR69 ether (4, 8) | (12, 8) | 3/2 | 1 2 3 4 4 5 6 6 7 8 8 9 10 10 11 12 12 13 14 14 | ⌈2k/3⌉ = 1 2 2 3 4 4 5 6 6 7 8 8 9 10 10 11 12 12 13 14 (GPT's floor; the envelope is one better at k ≡ 0 mod 3) |
+| classic ether (7, 28) | (133, 84) | 19/12 | 1 2 3 4 4 5 6 6 7 8 9 9 10 10 11 12 12 13 13 14 | 7 7 8 9 10 10 12 12 16 16 17 17 18 18 20 21 24 24 25 26 |
+| (7, 63) | (77, 63) | 11/9 | 1 2 3 4 5 6 7 8 8 9 10 11 11 12 13 14 15 16 17 17 | 11 12 12 15 15 16 17 18 18 20 22 24 24 25 |
+| (9, 57) | (171, 114) | 3/2 | 1 2 3 4 5 6 6 7 8 9 9 10 11 11 12 13 14 14 15 16 | 12 13 13 15 15 16 16 17 17 19 24 27 28 34 35 35 41 42 42 43 |
+| (12, 68) | (96, 68) | 24/17 | 1 2 3 4 5 6 7 8 9 10 11 12 12 13 14 15 16 17 17 18 | 23 24 24 26 26 28 28 32 32 35 36 36 38 38 40 40 43 45 45 46 |
+
+L_env ≤ M at every tabulated k for all four ring backgrounds (P-D3 HELD) and L_env ≤ W at every k ≤ 300 for (12, 68)
+(L_env(300) = 217 against W(300) = 314). The envelope speed is the same for every alignment of a background (one
+class each). **P-D1 HELD on the speed** (24/17 ≈ 1.41), **but its ratio clause was wrong**: the asymptotic ratio
+L_env/W would be (21/17)/(24/17) = 7/8, not 0.75..0.85, and at k = 300 the ratio is 0.69 because W carries an offset of
+about 70; the clause was arithmetic I did not do (G3's neighbour: a predicted ratio is computed, not guessed).
+**P-D2 HELD** (the envelope reproduces and slightly sharpens GPT's floor on PR69's ether).
+
+### Closing note (G13)
+
+Failed predictions: none outright; P-D1's ratio clause. Unguarded mistakes: the first wake run read the front at the
+truncation boundary (398 for 1670 at t = 1400), a repeat of the CL673 slip, now G25 (the trusted range asserted in
+code); and CL673's "empirically exact" law extrapolated from sixteen periods in a system whose wake is an odometer,
+now G26. The verdict on the owner's question: **a front-potential or band certificate for (12, 68) does not exist in
+the Proof-1 form**, because the front reads the edge odometer through its retreats and the law it was to certify is
+false beyond t = 1590; what is provable for all k is the envelope bound M(k) ≥ L_env(k) with speed 24/17, and what is
+exact is W(k) = M(k) to k = 18 and W(k) to k = 300 by direct computation.

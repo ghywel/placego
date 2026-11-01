@@ -1,0 +1,8 @@
+first breaks of the (34, 42) law (t with inc[t] != inc[t-34]): [1590, 1591, 1592, 1593, 1594, 1597, 1598, 1604, 1605, 1606, 1611, 1616, 1624, 1625, 1626, 1638, 1639, 1640, 1641, 1642] count 340
+around the first break t=1590: fronts R[1584..1598] = [np.int64(1896), np.int64(1897), np.int64(1899), np.int64(1901), np.int64(1901), np.int64(1903), np.int64(1905), np.int64(1903), np.int64(1905), np.int64(1904), np.int64(1904), np.int64(1906), np.int64(1908), np.int64(1910), np.int64(1910)] incs [np.int64(1), np.int64(2), np.int64(2), np.int64(0), np.int64(2), np.int64(2), np.int64(-2), np.int64(2), np.int64(-1), np.int64(0), np.int64(2), np.int64(2), np.int64(2), np.int64(0)] vs 34 earlier [np.int64(1), np.int64(2), np.int64(2), np.int64(0), np.int64(2), np.int64(2), np.int64(-1), np.int64(0), np.int64(2), np.int64(2), np.int64(0), np.int64(2), np.int64(2), np.int64(2)]
+  D below the front at t-1, t, t+1 (offsets 0..12): [[np.uint8(1), np.uint8(1), np.uint8(0), np.uint8(0), np.uint8(0), np.uint8(1), np.uint8(1), np.uint8(0), np.uint8(1), np.uint8(1), np.uint8(0), np.uint8(1), np.uint8(1)], [np.uint8(1), np.uint8(1), np.uint8(0), np.uint8(1), np.uint8(0), np.uint8(1), np.uint8(1), np.uint8(1), np.uint8(1), np.uint8(1), np.uint8(1), np.uint8(1), np.uint8(0)], [np.uint8(1), np.uint8(0), np.uint8(1), np.uint8(1), np.uint8(0), np.uint8(1), np.uint8(0), np.uint8(0), np.uint8(0), np.uint8(0), np.uint8(0), np.uint8(1), np.uint8(0)]]
+  E_{R+1}, E_R, E_{R-1} at t-1, t: [(0, 1, 1), (1, 0, 1)]
+eventual law on [145, T] (start offset from 145, period, shift): (3050, 2, 2)
+R(3200) = 3724; mean speed on [145, T] = 1.1807; on [145, 1400] = 1.2375
+breaks per 500-tick window: [0, 0, 22, 70, 32, 216, 0]
+BG_WAKE3_DONE

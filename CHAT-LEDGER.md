@@ -13877,3 +13877,60 @@ reciprocal of the slowest phase speed with small offset. Next, in order, if the 
 certificate for (12, 68)'s (34, 42) class (Local's `ether_front_potential_certificate.py` generalised to period 68),
 which would make W(k) ≥ M(k) a theorem on that class; (2) the upper side for (12, 68) beyond k = 18 by SAT; (3) the
 two-phase object of (9, 57) as its own front problem. READ-LEDGER (both workers, on resumption).
+
+## CL674 — Cloud to the owner (GPT and Local halted): the (12, 68) front certificate. Verdict: no band or potential certificate exists in the Proof-1 form, because the front reads the edge odometer and the (34, 42) law itself breaks at t = 1590; the provable statement is the masking-envelope bound M(k) ≥ L_env(k), speed 24/17, for all k and all five backgrounds (2026-11-01 18:47 GMT)
+
+At the owner's word ("continue with the front-potential certificate for (12, 68)"), in the sandbox. Predictions
+Block 15 first; round 10 of the tracker has the tables and the lemma; probes `background_envelope.py`,
+`background_wake.py`, `background_wake2.py`, `background_wake3.py`, `background_breaks.py` and outputs are filed.
+
+**What the certificate would have needed, and why it cannot have it (COMPUTED).**
+- The front's own reads, traced backward through the masking from t = 700, reach 131 cells below the front by
+  t = 170 and the whole prefix at t = 145: the front at t = 700 depends on the edge region. Bands of width 40, 100 and
+  200 die (at t = 281, 553, and about 1000), losing close to 8 cells per 34-tick period. The wake at fixed depth is the
+  frozen ruler: column periods 1 2 2 4 8 8 16 32 32 64 64 64 128 256 256 512 512 512 for depths 0..17, longer than
+  550 from depth 18. Along the moving front the mismatch layer is exactly 68-periodic only at offsets 0 and 1
+  (99.5..99.9% at offsets 2..8, uncorrelated by offset 23). No exact-return band or window exists at any width.
+- **The (34, 42) law breaks at t = 1590** (42.5 periods after it began): a retreat of two where the law had a retreat
+  of one, through mismatch bits at offsets 2..7 that differ from the previous period's. Confirmed at a second depth
+  setting. After the break: 340 further departures to t = 3200, no eventual law with period ≤ 400, mean speed 1.181
+  on [145, 3200] against 1.2375 on [145, 1400]. CL673's "empirically exact" law is MEASURED on [145, 1590) and
+  **REFUTED as a law**; the speed 21/17 and the two-regime witness law are withdrawn. W(1..300) stands as a direct
+  computation: every alignment reaches depth 300 within t ≤ 1700 and the direct-hit table equals CL673's at every k.
+- *All 816 alignments to t = 1700* (`background_breaks.py`, `background_breaks2.py`). Of the 758 "laws" CL673 detected on t ≤ 700,
+  682 are broken by t = 1700. The five short-period classes (speeds 2, 1, 4/3, 3/2; 440 alignments) were **artefacts of the
+  detector**, which accepted two repeats of a short period at the window's end: 430 of the 440 had their onset within three
+  periods of t = 700, and all 440 break by t = 900. Only the (34, 42) class was a real repetition. Within it, 150 alignments
+  break exactly 1445 ticks after their onset (the (0, 51) family under the background's glide), 92 break earlier (85 to
+  1155 ticks after onset: the pattern also occurs transiently), and 76 whose onset was late have not yet reached 1445 ticks by
+  t = 1700. So CL673's "five speed classes" is REFUTED along with the law: (12, 68) has one long transient regime of speed
+  21/17 lasting at most 1445 ticks, and no eventual periodic front law found to t = 3200.
+
+**What is provable (PROOF-SKETCH, carrying step two lines, REVIEW-REQUEST to GPT).** The masking envelope
+U(t+1) = U(t) + 2 if E_{U+1}(t) = 0 else U(t) + 1 bounds every front from above (R ≤ U is preserved because
+R' ≤ R + 2 always and R' ≤ R + 1 when E_{R+1}(t) = 1, since D_{R+2}(t+1) = NOT E_{R+1}(t)). This is GPT's masking-front
+lemma for PR69's ether (12937 / L1258) on an arbitrary periodic background. So M(k) ≥ W(k) ≥ L_env(k) :=
+max over alignments of min{t : U(t) ≥ k}, for every k, with U a function of E alone and exactly periodic. Envelope
+speeds, one class per background: PR69 ether 3/2 (reproducing GPT's ⌈2k/3⌉ floor, one better at k ≡ 0 mod 3), classic
+ether 19/12, (7, 63) 11/9, (9, 57) 3/2, (12, 68) 24/17. L_env ≤ M at every tabulated k, and ≤ W at every k ≤ 300 for
+(12, 68) (217 against 314 at k = 300). It is a weak bound (the exact slopes are 1 to 2.3 against 0.63 to 0.82) but it
+is a for-all-k statement on the lower side for each of the five backgrounds, where everything else is finite.
+
+**Failed predictions** (G13): the ratio clause of P-D1 (the asymptotic ratio is 7/8, not 0.75..0.85; the clause was
+not computed). **Unguarded mistakes:** (1) the first wake run read the front at the truncation boundary (398 for 1670
+at t = 1400), the CL673 slip repeated, now **G25**: the trusted range is asserted in code before any print; (2) CL673
+called a sixteen-period repetition "empirically exact" in a system whose wake is an odometer with doubling periods,
+and extrapolated from it, and its detector accepted two repeats of a short period at the window's end as a "class" (the
+printed onset maximum of 698 should have stopped me, G11), now **G26**: a law found by repetition on a window is MEASURED
+on that window and nothing more; a detector demands a stated minimum of repeats and span and prints the onsets; run at
+least twice the window before using the word, never extrapolate arrival times from it.
+
+**Where the line stands.** The owner's question is answered in the negative with the reason: (12, 68) is not PR69.
+PR69's witness front outruns its wake by masking (Proof 1's "no retreat"); (12, 68)'s retreats read the odometer, so
+its witness arrival law for large k is a question about Rule 30's edge itself. What remains exact: W(k) = M(k) to
+k = 18 and W(k) to k = 300 by computation. What remains provable for all k: the envelope bound. Next, if the owner
+continues this line: (1) GPT's read of the envelope lemma, which would make L_env PROVED for all five backgrounds
+(a small Lean module is plausible: finite envelope automaton plus the two-line lemma); (2) the (12, 68) upper side
+beyond k = 18 by SAT on Local's machine; (3) the same break census for the classic ether and the shadows (their laws
+were detected on t ≤ 120 only; G26 applies). READ-LEDGER (both workers, on resumption); REVIEW-REQUEST (GPT) on the
+envelope lemma.
