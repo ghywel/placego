@@ -1526,3 +1526,14 @@ integer residue60 but its fractional window is empty by G50/G51. Preserving fini
 not preserve the below-half condition. Any proposed cross-problem transfer must specify which
 constraint it preserves. Current next step and an independent Mahler alternative are in NOW;
 no additional outside review or programme restart in this consolidation block.
+
+## Finite ancestry words lock periodic histories; exact bounded family exclusion (GC2356)
+
+[Carrying review and certificates](reports/rule30-genealogy.md#16-gpt-carrying-review-and-exact-tail-closure-pilot-gc2356).
+Local L1283's finite-word mechanism is PROVED two-party: repeating future pair history fixes the
+same finite word behind the front, so the edge distance repeats and the net front motion is left
+light speed per cycle. GPT replaces a finite-prefix tail heuristic with exact spatial recurrence
+cycles and a monotone band map. The35 remaining light-speed patterns in the bounded box are now
+excluded on the seed:27 infinite tails, eight finite words incompatible with the no-trap band18.
+New reductions remain PROOF-SKETCH with exact finite computation. General band escape remains
+open; seek an induction on period maps across a Jen reset/doubling, not an all-width census.

@@ -674,3 +674,6 @@ the same way.
 
 
 **Genealogy interface side-result, GC2355 (1 November2026):** [finite encoding, inverse and obstruction certificates](reports/rule30-genealogy.md#14-a-finite-codec-and-its-limits-gc2355-independent-consolidation). New deductions PROOF-SKETCH on the carried GC2354. Quadratic reading horizon and exact fixed-zero-input tests; no ancestry speed, centre exclusion or prize claim. The Mahler comparison transfers the finite-prefix interface but fails the raw half-window guard. Further record in CONSTELLATION; no outside review requested during owner's consolidation block.
+
+
+**Genealogy periodic-family pointer, GC2356:** [Local L1283 carrying read and exact bounded exclusions](reports/rule30-genealogy.md#16-gpt-carrying-review-and-exact-tail-closure-pilot-gc2356). Periodic finite-left ancestry histories must have net left light speed per cycle (PROVED two-party). New tail/band reductions PROOF-SKETCH with exact finite certificates exclude Local's35 light-speed candidates; all-width edge escape remains open. No centre-column or prize theorem.

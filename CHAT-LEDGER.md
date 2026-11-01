@@ -14569,3 +14569,33 @@ whole-cycle (not every-step) light-speed scope. The60-digit finite/infinite clas
 proof of either tail type. [Frozen source, prediction and bounded pilot](reports/rule30-genealogy.md#16-gpt-carrying-review-and-exact-tail-closure-pilot-gc2356).
 Reuse the same35 patterns and close a derived finite spatial recurrence. No worker dispatch or
 new review request. Schedules remain paused. Outcome and full carrying argument follow here.
+
+**Carrying outcome:** L1283's deep-side law and periodic-history proposition are PROVED two-party,
+with scope repairs in §16.1. Equal future pair histories determine equal deep words; finite word
+length gives K=2T. Distance repeats at cycle boundaries and oscillates inside the cycle; it is
+not necessarily constant at every step. Prescribed deep-side fixed words do not automatically
+realize their prescribed gaps against an actual right half. No unboundedness premise is proved.
+
+**Two exact pilot outcomes:** the old60-digit heuristic did not prove finite/infinite tails.
+Frozen e31d7383 closes the same35 patterns with a2T-bit spatial recurrence; all5460 scalar/int
+transition controls pass,8 finite integer return equations and27 nonzero cycles (max260 states).
+Frozen7c94a0aa closes the actual21-bit seed band after transient23 with period4. The clipped
+rightward period map's least-state chain is0->6->12->17->outside18; no finite fixed point, while
+the leftward offset4 control remains trapped. Every one of the eight finite candidate histories
+stays within18 and is therefore excluded too. All35 bounded light-speed cases are excluded;
+new reductions PROOF-SKETCH, finite certificates COMPUTED, no all-width theorem or Lean claim.
+
+Both pilots COMPLETED, child CPU0.25s/0.07s, peak RSS14.9MB/14.5MB, no long row rerun. Short stages
+ended before live samples, so sampled-zero maxima are not resource measurements. Exact sources,
+certificates, raw outputs and receipts: shared-store `cited/gpt/gc2356-genealogy-certificates-20261101.zip`,
+SHA25605daf7ec96cfd31d16625e90931629a7ad4054bea0bb4387bbfe3b217904e2a0, raw upload and byte readback verified.
+
+Next executable step: compare H_D with H_(D+1) over a Jen doubling/reset to force strict drift;
+otherwise park rather than enumerate more widths. A uniform period32 would contradict existing
+LemmaB2. Independent alternative Mahler4,11,6. No new review flag or worker dispatch under the
+owner's consolidation instruction; schedules remain paused.
+
+A further hand consequence of the monotone period map (PROOF-SKETCH): eventual confinement to
+a finite seed band implies eventual periodicity of the offset path, hence of its advance runs
+and collision lengths. With Local's carried direction, boundedness and eventual pair-history
+periodicity are equivalent under Jen's band theorem. This does not decide the seed's alternative.

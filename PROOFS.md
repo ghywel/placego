@@ -3416,17 +3416,32 @@ These are structural identities, not a speed or centre-density theorem.
 **PROVED (GPT's proof; Local's carrying read L1282, with an independent exhaustive check on three right halves).** [Full model and proof](reports/rule30-genealogy.md#11-fresh-initial-bits-at-successive-collisions-gc2354); [Local's read](reports/rule30-genealogy.md#13-locals-read-of-gc2354-l1282). Fix the right half with a black front and a farther rightmost black cell; take independent fair bits on the left. At episode starts expose precisely the initial suffix beginning c=B-time. A collision black run L reveals exactly L new initial bits and the next episode starts at c-L. Thus every finite L-list fixes one prefix and has probability2^(-sum L); the L values are independent geometric(mean2), conditional on completed history/current gap before the trailing bit is inspected. The fixed single seed is outside this random-input hypothesis. Finite cylinder controls pass; no drift or novelty claim.
 
 
+### L1283 / GC2356 — Deep-side clock and finite-word periodicity obstruction
+
+**PROVED, Local's hand argument carried by GPT GC2356.**
+[Precise carrying read](reports/rule30-genealogy.md#161-carrying-verdict-on-locals-two-hand-steps).
+For infinitely many finite ancestry episodes, the deep word obeys
+L=1+lead1(Phi^r(w)), w_next=shift^L(Phi^(r+1)(w)). An eventually periodic pair history
+on a configuration with a leftmost black cell has sum L=2 sum(r+1) per cycle. Its distance from
+the left edge is bounded and periodic, not necessarily constant within a cycle. Consequently
+unbounded limsup distance implies nonperiodicity of that pair history. The latter unboundedness
+is not proved. Prescribed deep-side histories need not satisfy the actual shallow-gap conditions.
+
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
-### L1283 — Deep-side odometer law, and periodic collision histories must retreat at light speed
+### GC2356 — Exact spatial-tail closure and monotone band-trap decision
 
-**PROOF-SKETCH, Local, 1 November 2026; GPT's carrying read requested.** [Arguments](reports/rule30-genealogy.md#15-locals-answer-to-gpts-inquisition-l1283).
-(a) While the ancestry front is black, the cells behind it (the deep word w) evolve by the right-edge map Φ. Hence
-L_k = 1 + lead1(Φ^(r_k) w^(k)) and w^(k+1) = σ^(L_k) Φ^(r_k+1) w^(k). Checked on 2,413 seed episodes.
-(b) On any configuration with an eventually white left half, an eventually periodic (r, L) history has ΣL = 2Σ(r+1)
-per period. Proof: the deep word is an injective function of the future reads, and its length is the distance to the
-left edge.
-Corollary: if limsup (B(t) + t) = ∞ on the seed, its collision history is not eventually periodic.
+**PROOF-SKETCH, GPT; two separately frozen finite certificate pilots COMPUTED.**
+[Spatial recurrence](reports/rule30-genealogy.md#162-why-the-new-spatial-recurrence-closes-the-tail-exactly)
+and [band map](reports/rule30-genealogy.md#163-the-monotone-period-map-and-an-exact-no-trap-band).
+A light-speed deep-word return with T physical steps has a deterministic2T-bit spatial tail
+recurrence outside a finite boundary layer. Its closed nonzero cycles replace the unsupported
+60-digit infinity inference. The same35 patterns give8 exact finite fixed words and27 nonzero
+cycles. The seed band through offset20 closes at time23 with period4; the clipped monotone front
+map has least-state chain0->6->12->17->exit18. Thus none of the eight finite patterns is compatible
+with the seed's shallow side. Exact bounded family exclusion, not all-width escape. Data, controls,
+source hashes and monitoring limitations are retained in the report. No Lean or outside read claimed. The same monotone-map argument gives the converse: eventual finite-band confinement forces eventual pair-history periodicity under Jen. This new equivalence remains PROOF-SKETCH.
+
 
 ### GC2355 — Adaptive genealogy codec and finite obstruction bound
 

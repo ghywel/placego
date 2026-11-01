@@ -1426,3 +1426,200 @@ single-worker launch, memory, pressure, file and disk caps as the first stage; C
 wall60s, aggregate CPU budget120s with the same enforcement limitation stated above. Fresh
 stage directory, retained receipts, no automatic rerun. This is a separate frozen follow-on
 justified by the exact finite-word result, not an extension of the earlier sample horizon.
+
+### 16.1 Carrying verdict on Local's two hand steps
+
+**PROVED, two-party:** §15.1's deep-side law and §15.3's periodic-history implication, with the
+following precise wording. The front is a black-prefix follower with infinitely many finite
+episodes. Write a for the initial leftmost black position and D(t)=B(t)-a+t for its distance
+from the moving left edge. On an eventually periodic pair history (r,L), let
+
+    T = sum(r+1),    K = sum L
+
+over one episode period. Then K=2T, D is eventually periodic in physical time with period T,
+and B(t+T)=B(t)-T from a cycle boundary onward. Thus D is bounded. It need not be constant
+inside the cycle, and the front need not move left at every individual step. In particular,
+r>0 includes rightward advances. This is net light speed per complete cycle.
+
+**Carrying step (a).** The first deep digit updates by complement, because its OR input includes
+the black front; the second does too. All later digits follow the homogeneous triangular rule.
+Therefore the exact deep-word map, with digit1 as the least significant bit, is
+
+    Phi(w) = w XOR ((w << 1) OR (w << 2) OR 3).
+
+This formula is valid for finite words and for infinite binary words. The black-front boundary
+remains valid through every forced advance and through the collision's old row. At that row
+the scan reads1^(L-1)0, and after the update the new front sits L digits farther into the
+co-moving word. Hence Local's two displayed formulas hold, including L=1 and r=0.
+
+**Carrying step (b), spelling out uniqueness.** With all r values prescribed, each scan fixes
+the next L initial digits through a triangular bijection. Applying Phi once more and dropping
+the L already read digits leaves a triangular bijection on the unread tail, conditional on
+those digits. Repeating fixes at least one new initial digit per episode. Thus the whole
+future pair history determines at most one deep word. Two episode boundaries one period apart
+have the same future pair history, so their deep words coincide. For an eventually white left
+tail these are finite nonnegative integers, and their bit length is exactly D (zero when the
+front is the leftmost black cell). The edge persists and moves left by one by `JenPow2.edge`;
+left-permutivity alone is not the reason for this left-edge assertion. Finally
+
+    D(next cycle)-D(this cycle) = 2T-K = 0.
+
+The intermediate r advances and collision displacements repeat too, proving bounded periodic
+D at all times. This carries the stated implication from unbounded limsup D to nonperiodic
+pair history. It proves no unboundedness hypothesis itself. Family2's P_d=z_d identification
+is restricted to depths initially white, as in §14; the deep-side law already handles the
+needed black-front cancellation.
+
+**Control scope correction.** A forced infinite word for prescribed (r,L) is a solution of the
+deep-side equations. It need not realize the prescribed r values against a fixed actual right
+half. For example (0,1) forever fixes deep word0101..., but with right half111 the first update
+leaves two whites ahead of the front, forcing the next r=1, not0. Thus the random-left control
+illustrates removal of the finite-word obstruction; it is not a full prescribed-gap realization
+theorem. The main necessary-condition proof only uses histories that actually occur and survives.
+
+### 16.2 Why the new spatial recurrence closes the tail exactly
+
+**PROOF-SKETCH, GPT;** exact finite cycles computed below. Let F be one complete prescribed
+deep-word return: apply Phi^(r+1) and drop L for each block. Reads immediately before each
+drop must be1^(L-1)0. In a light-speed pattern K=2T. Let G be the boundary-free rule on a
+two-sided sequence, G(w)_j=w_j XOR(w_(j-1) OR w_(j-2)).
+
+For output index j>2T, the backwards cone of F(w)_j cannot reach any inserted black-front
+boundary. To see this in original word coordinates, the final output sits at j+K; at any
+intermediate time at most2T coordinates are lost travelling backwards, whereas every inserted
+boundary sits at a dropped-prefix coordinate at most K. Thus this cone stays strictly beyond
+all inserted boundaries. Its value is (G^T w)_(j+K), depending on exactly the window j,...,j+K.
+
+The highest digit passes through with XOR coefficient1. If h_T is that output with the highest
+input digit set to0, the fixed-point equation F(w)=w becomes
+
+    w_(j+K) = w_j XOR h_T(w_j,...,w_(j+K-1)),       j>2T.
+
+This is a deterministic recurrence on K-bit windows. There are only2^K states. A repeated state
+fixes the entire future; its eventual cycle is either the all-zero state, giving a finite word,
+or contains a1, giving infinitely many ones. This is the missing implication in T5c. A long
+observed zero or nonzero suffix alone could not supply it.
+
+The pilot starts with Local's same60 uniquely forced digits. It directly checks every return
+equation whose dependency window is within that prefix. For later equations the recurrence
+applies, since60-K>2T for every tested pattern. The initial read guards are also checked.
+Thus the generated eventually periodic word solves the complete return equation and the guards;
+by the carried uniqueness argument it is the forced word, not just a plausible continuation.
+Independent scalar-array and integer implementations agree on the initial boundary equations,
+the bulk transitions and a full period of the generated tail. The finite cases additionally
+satisfy F(w)=w as exact integers without any truncation.
+
+The27 nonzero cycles have spatial periods drawn from8,12,28,36,110,260. The maximum visited
+state count is260, far below the frozen4096-state bound. The eight finite results are:
+
+| Phased pair pattern (r,L) | Initial word length D | Greatest D within its cycle |
+|---|---:|---:|
+| (0,2) | 1 | 1 |
+| (1,4) | 4 | 6 |
+| (0,1),(0,3) | 4 | 5 |
+| (0,3),(0,1) | 5 | 5 |
+| (0,3),(2,5) | 14 | 17 |
+| (0,4),(2,4) | 16 | 18 |
+| (2,4),(0,4) | 14 | 18 |
+| (2,5),(0,3) | 13 | 17 |
+
+These are phased patterns, not35 distinct cycles modulo rotation. Neither the classification
+nor the band match supplies the missing shallow gaps; that is the next certificate.
+
+### 16.3 The monotone period map and an exact no-trap band
+
+**PROOF-SKETCH, GPT; finite certificate COMPUTED with controls.** In left-edge coordinates
+a_j(t)=x_(a-t+j)(t), the update is
+
+    a_j(t+1)=a_(j-2)(t) XOR(a_(j-1)(t) OR a_j(t)),   a_j=0 for j<0.
+
+The prefix through index D+2 is autonomous: no cell to its right affects it. A rightward
+prefix front at distance s from the edge has the exact next distance
+
+    f_t(s) = max{j<=s+2 : a_j(t+1)=1}.
+
+This function is nondecreasing in s, since the search intervals are nested; it is not claimed
+that the physical distance always increases. The black edge ensures the set is nonempty.
+For the question of staying inside0,...,D forever, replace any exit by an absorbing symbol
+top=D+1. This preserves order. Once the band is periodic with period P, compose P such maps
+to obtain H_D on the finite ordered set0,...,D,top.
+
+A perpetual trap in this band exists exactly when H_D has a finite fixed point. A finite fixed
+point gives a safe repeating path. Conversely an orbit that never exits eventually cycles in
+this finite set, and an order-preserving map of a finite chain has no cycles longer than one.
+Alternatively, iterate H_D from0: it can only increase, and either reaches top or stabilizes
+at a fixed point. Every other initial front dominates it. This is an all-state criterion;
+one empirical trajectory over one period would not have established it. Earlier times cause
+no difficulty: any hypothetical forever-trapped front eventually reaches the periodic regime.
+
+**Actual certificate at D=18.** The21-bit seed band, started from integer1, closes after27
+distinct states: transient23, period4. Its four recurrent rows, encoded with offset0 as the
+least significant bit, are
+
+    759419, 1173267, 1340283, 866835.
+
+The explicit autonomous transition sends the last back to the first, so this is an exact
+infinite repetition, not a period fit. At that first phase, the clipped four-step map on
+states0,...,18 is
+
+    [6,6,6,6,6,6,12,12,15,15,15,17,17,17,top,top,top,top,top].
+
+It has no finite fixed point; the least-state chain is0->6->12->17->top. Thus every rightward
+prefix front in this band exits it within16 steps when started at that phase. Aligning an
+arbitrary recurrent phase costs at most3 further steps. Reentry after an exit is allowed;
+this proves that no front stays in the band forever or eventually stays there forever.
+The other three phase maps were checked as controls and also have no finite fixed point.
+The leftward follower at offset4 remains fixed at every phase, so the direction matters.
+
+**Consequence for Local's family.** Each of the eight finite forced words would confine its
+front to offsets at most18. The band certificate excludes that. Together with the27 exact
+infinite tails, all35 light-speed patterns in the stated box are excluded on the actual seed.
+By Local's carried implication, this also excludes eventual pair histories of period at most2
+with r<=2 and L<=6 that fail the light-speed equation. The claim is about this bounded family,
+not every period or every band width. The new general recurrence and monotone-map reductions
+await an independent carrying read; no Lean verification or submission is claimed.
+
+Second pilot COMPLETED at frozen source7c94a0aa: child0.07 CPU seconds,0.07 wall seconds,
+14,467,072-byte maximum RSS; supervisor0.130 CPU seconds. Launch free+inactive6536MiB. Again
+the run ended before a live sampling interval; no pressure-trajectory measurement is claimed.
+Both stages and both exact source versions, raw outputs, certificates and receipts are retained
+in the shared store at `cited/gpt/gc2356-genealogy-certificates-20261101.zip`,10136 bytes,
+SHA256 `05daf7ec96cfd31d16625e90931629a7ad4054bea0bb4387bbfe3b217904e2a0`.
+Raw-body upload receipt and byte-for-byte readback both verified with TLS enabled.
+
+### 16.4 The remaining uniform question is sharper, but still open
+
+The proper all-width target is: for each D, take a proved eventual period of the actual band
+through D+2; its clipped rightward period map H_D has no finite fixed point. Equivalently,
+H_D(s)>s for every finite state. This formulates precisely what a computation or an induction
+must certify. Jen supplies eventual band periodicity, not this strict inequality.
+
+There is also a converse to Local's reduction (**PROOF-SKETCH, GPT**). If a seed follower is
+eventually confined to some finite band, choose a Jen period P for that band through D+2.
+Its stroboscopic positions iterate the monotone finite map H_D without exiting. They therefore
+eventually reach a fixed point, so its full offset path is eventually P-periodic. An advance
+is exactly an offset increment of2, and a collision with length L has increment2-L. A bounded
+periodic path cannot consist entirely of advances; its repeating runs of advances and its
+nonadvance increments consequently give an eventually periodic (r,L) history. Together with
+Local's carried direction, this gives the candidate equivalence on the seed:
+
+    eventual periodicity of the pair history  <=>  eventual confinement to a finite left band.
+
+Thus unbounded limsup distance is also necessary for nonperiodicity, under the stated Jen
+input. This is a reformulation of the remaining problem, not a proof that either alternative
+holds. It avoids importing a stationary distribution or measured speed.
+
+The observed bound32 on small band periods cannot be assumed at all depths. Our already proved
+LemmaB2 says the periods are unbounded, so a globally bounded power-of-two clock would contradict
+known work. A useful uniform argument might exploit how H_D changes when the temporal period
+doubles, together with the new diagonal's reset equation. Merely proving more finite plateaux,
+or checking successive D, does not give that argument. Escaping D once also does not by itself
+bootstrap escape from D+1: the front may return.
+
+Next executable step: attempt a hand comparison between H_D and H_(D+1) across one Jen
+period-doubling/reset extension, identifying the extra hypothesis that would force strict drift.
+Use the exact D=18 map as a positive control and the offset4 leftward map as a negative control.
+If it merely repeats the unknown no-fixed-point condition, park the uniform route rather than
+increase the band. Independent alternative remains Mahler's4,11,6 threshold boundary. No new
+review request or worker dispatch; this is a passive, consolidated response to the owner's
+supplied Local analysis, and both schedules remain paused.

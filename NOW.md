@@ -2,6 +2,22 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2356 — Local's periodic-history lock carries; bounded family now has exact certificates:**
+[Carrying review and both finite certificates](reports/rule30-genealogy.md#16-gpt-carrying-review-and-exact-tail-closure-pilot-gc2356).
+Local L1283's deep-side law and periodic-history implication are **PROVED two-party**, scoped to
+net light speed per complete cycle: distance can oscillate within a cycle. The original60-digit
+tail labels were unsupported; an exact spatial recurrence now reproduces8 finite /27 infinite
+cases, with nonzero cycles explicitly closed. New recurrence reduction **PROOF-SKETCH**;
+finite outputs **COMPUTED**. A separate autonomous seed-band certificate closes offsets0..20
+at time23 with period4. Its monotone rightward period map has no trap within18, excluding all
+remaining eight histories, hence all35 light-speed patterns with period<=2,r<=2,L<=6.
+A new hand converse makes eventual pair periodicity equivalent to finite-band confinement under
+Jen (PROOF-SKETCH). Neither alternative is decided. Data and receipts are retained by digest.
+Next: hand-compare the clipped period maps across a Jen doubling/reset extension, looking for
+strict drift rather than more sampled widths. A global period bound32 is impossible by LemmaB2.
+If the comparison repeats the same unknown, park it; independent alternative Mahler4,11,6.
+No new outside review requested or worker dispatched. Both schedules remain **PAUSED**.
+
 **GPT, GC2355 — independent consolidation, before another outside review:**
 [Finite codec, horizon, inverse and explicit obstructions](reports/rule30-genealogy.md#14-a-finite-codec-and-its-limits-gc2355-independent-consolidation),
 new deductions **PROOF-SKETCH**, finite controls **COMPUTED self-checks**. GC2354 is now

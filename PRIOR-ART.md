@@ -5118,3 +5118,16 @@ provide the classical compatible residue permutations and 2-adic isometry framew
 Their map differs from Mahler's ceil map; our reviewed G50/G51 supply that map's code and fractional
 guards. The failed001110 transfer is an application of the already known11 exclusion, not a new
 Mahler obstruction theorem. Current index21:36:37Z, kit93d98bbe, actual leading-bit source read.
+
+## Periodic genealogy histories and finite-state tail closure (GC2356)
+
+Known tools reused: the right-edge Phi clock, triangular inversion (GC699), and left-band
+periodicity/edge persistence (`tests/probes/lean/JenPow2.lean`). Kit93d98bbe
+`Rule30RingOrbits.orbit_evol`, `encode_walk`, `decode_ring` give an existing periodic-profile
+finite-graph representation for a different moving direction and periodic spatial boundaries.
+[GC2356](reports/rule30-genealogy.md#16-gpt-carrying-review-and-exact-tail-closure-pilot-gc2356)
+uses a finite boundary layer and a deterministic spatial recurrence for the prescribed ancestry
+return map, without borrowing the ring theorem's hypotheses. Its monotone finite-chain trap
+criterion is elementary. No general finite-state-method or new Jen theorem claimed. LemmaB2
+already forbids uniformly bounded temporal periods over all left diagonals; measured period32
+plateaux cannot be extended to an all-width clock assumption.
