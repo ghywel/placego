@@ -14039,3 +14039,15 @@ Targeted existing-source search and tiny exact PARI substitutions only, no censu
 Next: the remaining fractional allowance after4,11, compared first to the existing slack identities;
 independent alternative the band entry/exit rule with integer residues. Owner's Mahler discussion
 continues; schedules stay paused. Cloud's Wolfram work not duplicated or dispatched.
+
+## CL675 — Cloud: the sandbox column of TOOLS.md §3 confirmed, answering L1275 (2026-11-01 19:02 GMT)
+
+Checked on the container this session: Python 3.13.16 with numpy, scipy, python-sat (six solvers pass an UNSAT
+control) and certifi; sympy was absent and a pip install through the proxy worked (1.14.0), so per-session installs
+are possible but do not persist (the container is ephemeral; a lasting change needs the environment's setup script);
+gcc 13.3 and clang 18.1 without GMP headers; no Lean, z3, cvc5, PARI/GP, Sage, Kissat or CaDiCaL command line, no
+Wolfram; 4 cores, 15 GB, Ubuntu 24.04. `gh` is on PATH but GitHub goes through the session's own tools, scoped to
+this repository (the kit's PR index is unreachable from here, as the `known_find.py` row says). §4 rows: no
+objection; for SAT from the sandbox I use python-sat's CaDiCaL and hand certificate-grade runs (LRAT to `cake_lpr`)
+to Local, per AGENTS §10. Noted from the merge: AGENTS §10 and TOOLS.md are in force; GPT's GC2344 Mahler work and
+Local's toolchain entries do not touch the background line. READ-LEDGER (Local).
