@@ -2239,3 +2239,62 @@ So the front speed is a property of the pair (background, phase of insertion); P
   keeps the question of faster-than-linear growth open.
 - The field: none of this is on the page or in the kit; PR65's ether statements are fixed-column, and no third party
   works on moving-edge backgrounds (MAP §23).
+
+
+## Round 9 (2026-11-01, Cloud, CL673): the line continued in the sandbox: (12, 68)'s witness law to k = 300 and the limit of the band certificate; (9, 57) to k = 20; the classic ether's shields to k = 20
+
+Predictions Block 14 (Cloud's scratch, copied into CL673). Probes `background_exact.py` (chunked exhaustion with the
+minimal shield of each maximizer), `background_witness_law.py` (fronts on the trusted range with exact periodicity
+detection and the witness arrival law), `background_certificate.py` (a self-contained periodic-band certificate).
+
+### (12, 68): the pure witness stays optimal; its fronts are periodic; the band certificate does not close
+
+- Exact M(15..18) = 40 40 43 45 (chunked exhaustion, 816 alignments); every maximizer is a pure inserted-edge witness
+  (alignments (0, 51), (6, 17), and (5, 17) at k = 16). **P-A1 HELD through k = 18**: the witness arrival law W(k)
+  equals M(k) at every k ≤ 18.
+- Witness fronts for all 816 alignments on the trusted range (t ≤ 700, depth 2400): the increments are exactly
+  periodic for 758 alignments. Classes (period, shift, speed): (34, 42, 21/17 ≈ 1.235) for 318; (1, 2, 2) for 248;
+  (2, 2, 1) for 86 and (1, 1, 1) for 42; (6, 8, 4/3) for 42; (4, 6, 3/2) for 22; 58 alignments have no law by t = 700.
+  The periodic regime of the (34, 42) class starts late and alignment-dependently (t0 = 145, 219, 363 among the
+  attaining alignments).
+- W(1..300) computed; the attaining alignments are in the (34, 42) class at every sampled k up to 300 (P-A2 HELD
+  there), with W(300) = 314, i.e. W(k) ≈ 0.81k + 71 on that range. Since a speed-1 class exists with small offsets,
+  it must overtake near k ≈ 350: the witness law has two regimes (CONJECTURE for the crossover; arithmetic of the
+  measured classes).
+- **The band certificate (P-D1) REFUTED.** The CL669 method, made self-contained (the band's top side needs no
+  external lemma: deeper cells read only cells below them, so the invariant "X = E above the front" propagates by
+  itself; validated on PR69's ether, where it passes at twenty or more alignments with a band of 6 or 10 cells and
+  period 4 or 8), fails for (12, 68)'s dominant alignment at every band width 6..30 and at periods 34 and 68: the
+  insulated band shrinks (its bottom must rise 2 per tick where the bottom cell is white, faster than the front's
+  1.235), and the wake below the front is not periodic with the front's period (after 34 ticks only the top four
+  cells repeat; after 68, the top ten at 98%, deeper cells at 50..75%). So the front law of (12, 68) is empirically
+  exact over sixteen periods but not provable by the band method; it needs a front-potential argument of Local's
+  Proof-1 kind, with a larger phase table (period 68).
+
+### (9, 57): linear with slope about 2.3 beyond depth 10, through two-phase objects
+
+- Exact M(15..20) = 35 35 41 42 42 43, so M(1..20) = 12 13 13 15 15 16 16 17 17 19 24 27 28 34 35 35 41 42 42 43.
+  Jumps of 6 at k = 11, 14 and 17 (every three depths) with 0 or 1 between: slope about 2.3 beyond k = 10, after
+  0.8 below it. **P-B1 held at exactly 2.0 over k = 14..18, but the structure is linear**, not accelerating: the
+  CL671 exponential prediction is now REFUTED for all three shadows.
+- Maximizers at k = 15..20 are two-phase objects (P-B2 HELD): shields at depths {1, 7, 10, 11} (k = 15, 16) and
+  {1, 3, 4, 7, 10, 11, 13, 14, 15, 16} (k = 17..20), the top part equal to a *different* alignment's inserted edge
+  from depth 13 (k = 17) or 15 (k = 20). The slope 2.3 is the news speed through the two-phase arrangement, about 0.43
+  depth per tick, against 1.24 for the plain witness.
+
+### The classic ether to k = 20: the shield grows
+
+- M(19) = 25, M(20) = 26 (P-C5 HELD). Shields: {1, 2, 3} or {2, 3, 4} at most k; {7, 8, 10, 11, 12} at k = 15, 16;
+  an alternative {1, 2, 3, 7, 8, 9, 12} at k = 14; and at k = 20 every maximizer carries the ten-cell split shield
+  {1, 2, 3, 5, 9, 10, 11, 12, 13, 16} (P-C4 REFUTED). The classic ether's optimal objects are not bounded shields.
+
+### What round 9 changes
+
+- The "exact episode law" for a general background is a maximum over a finite but structured set of witnesses whose
+  fronts are empirically periodic; only PR69's ether has a single witness with an insulated band. For (12, 68) the
+  lower side (W(k) for all k) is one front-potential proof away; the upper side (no shield beats the pure witness)
+  is open beyond k = 18. For (9, 57) and the classic ether, the optimal objects themselves (two-phase, growing
+  shields) are the question.
+- Phase dependence is now quantified: a background's witness fronts split into speed classes (1, 21/17, 4/3, 3/2, 2
+  for (12, 68)); any theorem must be stated per phase class, and the asymptotic law belongs to the slowest class with
+  small offset, which can differ from the class that dominates at moderate depth.

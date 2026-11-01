@@ -13837,3 +13837,43 @@ pair (background, insertion phase), so any theorem must fix the phase class firs
 alignment class plus the potential upper bound, the same recipe as M(k). (2) (9, 57) to k = 20 by SAT, prediction first,
 to decide linear against faster. (3) The classic ether: characterise the shield (why depths 1..4 at most k and 7..12 at
 k = 16) before any theorem is attempted. No prize movement; nothing outward-facing; READ-LEDGER for both workers.
+
+## CL673 — Cloud to the owner (GPT and Local halted): the background line continued in the sandbox. (12, 68): the pure witness optimal to k = 18, periodic fronts in five speed classes, W(k) to 300, and the band certificate shown not to close; (9, 57) to k = 20: linear, slope 2.3, two-phase; the classic ether's shield grows to ten cells at k = 20 (2026-11-01 17:48 GMT)
+
+At the owner's word, in the sandbox, to keep the local machine free. Predictions Block 14 first; round 9 of the
+tracker has the tables; probes `background_exact.py`, `background_witness_law.py`, `background_certificate.py` and
+outputs are filed.
+
+**Results (COMPUTED).**
+- *(12, 68).* M(15..18) = 40 40 43 45, every maximizer the pure inserted-edge witness (P-A1 HELD to 18). All 816
+  witness fronts computed on the trusted range (t ≤ 700): 758 exactly periodic, in classes of speed 21/17 (318
+  alignments, period 34, shift 42), 2, 1, 4/3 and 3/2; the periodic regime starts as late as t = 363. W(1..300)
+  computed; the 21/17 class attains it through k = 300 (W(300) = 314), and the speed-1 class must overtake near
+  k ≈ 350: a two-regime witness law (the crossover is arithmetic on measured classes, CONJECTURE as a law).
+- *The certificate.* I rewrote the CL669 band certificate without its external lemma (deeper cells read only
+  shallower ones, so "X = E above the front" propagates on its own) and validated it on PR69's ether (twenty-plus
+  alignments pass with bands of 6 or 10 cells). For (12, 68)'s dominant alignment it **fails at every width and
+  period tried**: the insulated band shrinks because the bottom must rise two per tick where its cell is white,
+  faster than the front's 1.235, and the wake below the front is not periodic with the front's period (four cells
+  repeat after 34 ticks, ten after 68 at 98%). P-D1 REFUTED. The front law is empirically exact over sixteen periods;
+  its proof needs Local's front-potential method with a period-68 phase table, not a band.
+- *(9, 57).* M(15..20) = 35 35 41 42 42 43: jumps of 6 every three depths, slope about 2.3 beyond k = 10. The
+  maximizers are two-phase objects (another alignment's inserted edge above depth 13..15, a ten-cell shield below).
+  P-B1 held at exactly 2.0 over 14..18, P-B2 held; **the exponential reading of CL671 is now refuted for all three
+  shadows**: (9, 57) is linear with the news crossing its two-phase arrangement at about 0.43 depth per tick.
+- *Classic ether.* M(19) = 25, M(20) = 26 (P-C5 HELD); at k = 20 every maximizer carries a ten-cell split shield
+  (P-C4 REFUTED).
+
+**Failed predictions** (G13): P-D1, P-C4, the exponential reading for (9, 57); P-A2 held only with the crossover
+caveat. **Unguarded mistakes:** the first law detector read the depth-window truncation at the end of each front as a
+period-1 law; caught before any number was quoted by reading the sequences (G11), and the trusted range made explicit
+in the probe. A side remark worth a line: the CL669 certificate's use of the two-party front lemma was unnecessary;
+the self-contained form proves the same law (validated here), which simplifies GC2331's reading.
+
+**Where the line stands.** PR69's ether is the only background with a single insulated witness; (12, 68) has a
+single optimal witness but a non-periodic wake, so its exact law needs the potential method; (9, 57) and the classic
+ether have composite optimal objects. The general statement is per phase class: the asymptotic episode slope is the
+reciprocal of the slowest phase speed with small offset. Next, in order, if the owner continues: (1) a front-potential
+certificate for (12, 68)'s (34, 42) class (Local's `ether_front_potential_certificate.py` generalised to period 68),
+which would make W(k) ≥ M(k) a theorem on that class; (2) the upper side for (12, 68) beyond k = 18 by SAT; (3) the
+two-phase object of (9, 57) as its own front problem. READ-LEDGER (both workers, on resumption).
