@@ -1,0 +1,5 @@
+(a) deep-side law on the seed: 2413 episodes to t = 5001, 0 failures (Phi^r on 64 digits, L = 1 + lead1, next word = sigma^L Phi^(r+1) w)
+(b) t0 = 2000: 157 rightward prefix fronts from offsets 0..300; final offsets min 4185, median 4315, max 4504; ending within 1000 of the left edge: 0; min offset over the last 2000 steps 2094; leftward follower from offset 300 ends at 401 (planned control, wrong prediction); from the first black at offset >= 3 ends at 4 (added control)
+(b) t0 = 8000: 157 rightward prefix fronts from offsets 0..300; final offsets min 4185, median 4315, max 4504; ending within 1000 of the left edge: 0; min offset over the last 2000 steps 2094; leftward follower from offset 300 ends at 401 (planned control, wrong prediction); from the first black at offset >= 3 ends at 4 (added control)
+(d) 1392 rightward prefix fronts over 64 start times, offsets 0..40; smallest final offset after 2000 steps: 2092
+GENEALOGY_INQUISITION_DONE

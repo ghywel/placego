@@ -1177,3 +1177,172 @@ predictive compression. Independent warm alternative: Mahler's4,11,6 threshold b
 strict endpoints. Curiosity alternative: characterize which finite-state adaptive query clocks
 make a triangular inverse itself finite-state; first separate that restricted class from the
 unbounded gaps here. No new outside review has been requested in this consolidation block.
+
+## 15. Local's answer to GPT's inquisition (L1283)
+
+1 November 2026. The owner asked Local to bring in GC2355 and to answer GPT's inquisition directly: three families of
+relation (clocks at collision times, cancellations between neighbouring tallies, uniform obstructions for structured
+families), aiming at a relation that turns the seed's white initial ribbon into a reusable restriction. GC2355 was
+read in full (§14).
+- Its codec, horizon bound and verifier stand as PROOF-SKETCH pending a carrying read. Local has not done that read
+  in this block.
+- §14.6's qualification of L1282's speed sentence is accepted. A speed of 1 − 2/d needs D_n/n → d and control
+  between endpoints, so L1282 overstated it.
+
+Record searched for this answer:
+- **The right-edge clocks.** The frozen ruler and edge odometer. G249 proves right-prefix periods
+  Q_j ≤ 2^⌈(2j−1)/3⌉ for every finite seed. §8.73 proves the right-edge triangles form a ruler sequence. Coven, Pivato
+  and Yassawi (2007) cover edge odometers (GC808/GC810).
+- **The left band.** Left diagonals are eventually periodic with power-of-two periods (Jen 1986; Rowland §5; our
+  JenPow2.lean, L541, band k ≤ j+2 with period 2^j). Lemmas B1–B3 are PROVED, §8.59. The staircase P_e ≤ 32 is
+  MEASURED to about 98,300 diagonals (L383).
+- §8.74: the order ends near x/t = −0.25 (MEASURED).
+- §8.18/§8.29: every climb on black reaches the origin.
+- The record needed for the argument below: GC2353, GC2354, GC2355, G13 and G121.
+
+### 15.1 The clock at the front (family 1): the black front is a copy of the right edge
+
+**Lemma (PROOF-SKETCH, Local).** Work in the depth frame z_d(t) of §14.3. Let the front sit at depth J during an
+episode, from its start u to its collision time v = u + r. Let w = (w_1, w_2, …) be the **deep word**, w_j = z_(J+j),
+the cells behind the front.
+- While z_J = 1, every depth J+j ≥ J+1 updates as w_j ← w_j XOR (w_(j−1) OR w_(j−2)), with w_0 = 1. Depth J+1 reads J
+  and J−1, and the black J saturates the OR; depth J+2 reads J+1 and J.
+- This is exactly the dynamics Φ of the cells below the seed's own right edge. Φ(0)^n is the frozen ruler at time n.
+- The front is black from u to v, and its collision update also reads z_J(v) = 1.
+- So, writing lead1 for the number of leading 1s:
+
+      L_k = 1 + lead1(Φ^(r_k) w^(k)),        w^(k+1) = σ^(L_k) Φ^(r_k+1) w^(k),
+
+  where σ drops leading digits. On the seed, w^(0) = 0, the white ribbon behind the left founder.
+- The first digit of Φ toggles every step. That is GC2353's trailing bit. Digits 1..n of Φ^r(w) depend only on
+  w_1..w_n and on r modulo the level-n period of Φ, a power of two.
+
+**So collisions do read a known clock, with bounded clock information per collision**: L_k digits and r_k modulo a
+power of two set by L_k. But the digits of w carry the history (this is GC2355's codec in odometer form). The
+irregular input is r_k, the white triangles met on the shallow side. No known clock reaches there: the front sits at
+depth about 0.95t, beyond the right-edge ruler's settled depths and outside the left ordered band. On its own,
+family 1 therefore repackages. Its value is the deep-side law, which family 3 uses.
+
+### 15.2 Cancellations (family 2)
+
+On the seed P_d(v) = z_d(v), because the start is zero. So the tallies are the column values, and adjacent tallies
+satisfy
+
+    P_d(v) XOR P_(d+1)(v) = XOR_(t<v) [NOT z_(d−1)(t) AND (z_(d−2)(t) XOR z_d(t))]
+
+(from (a OR b) XOR (c OR a) = (b XOR c) AND NOT a). The black front cancels every contribution to the depth just
+below it during a residence. That cancellation is exactly 15.1's odometer. What survives lives at collisions and in
+the shallow wake, which is the same uncontrolled input as before. Ranked lowest: it adds nothing that 15.1 lacks.
+
+### 15.3 A uniform obstruction from the white ribbon (family 3)
+
+**Proposition (PROOF-SKETCH, Local; GPT's carrying read requested).**
+- Let the initial configuration have an eventually white left half; the seed is one.
+- If the ancestry front's (r_k, L_k) history is eventually periodic, with period p from episode k_0, then over each
+  period ΣL = 2Σ(r + 1).
+- So the front eventually retreats at exactly light speed, at a constant distance from the pattern's left edge.
+
+*Proof.*
+1. Given the r's, the deep-side law of 15.1 makes the deep word an injective function of the future reads. The first
+   L reads fix w_1..w_L through the level-L bijection Φ^r. The next reads fix the next digits of Φ^(r+1) w, and so
+   on. So the deep words at k_0 and k_0 + p are the same 2-adic word.
+2. On a configuration with a white left tail, the deep word is a natural number. Its top digit is the leftmost black
+   cell, which moves left by exactly one cell each step (left permutivity). So its length is the front's distance to
+   the left edge, B(u) + u on the seed.
+3. Equal words have equal length. So over each period the front moves by −(elapsed time). ∎
+
+- **Control (why this uses the ribbon).** In GC2354's random-left-half model the deep word is a general 2-adic
+  integer. A periodic history is then realized by its forced fixed point, which has infinitely many 1s. The example
+  (r = 0, L = 1)^∞ forces w = 0101…. So this is precisely the "fixed white ribbon → reusable restriction" GPT asked
+  for. Every eventually periodic continuation fails the same lock unless it retreats at light speed. The lock is the
+  finiteness of the deep word.
+- **What remains.** Light-speed patterns keep the front at a fixed distance from the left edge. On the seed that
+  distance eventually falls inside the ordered left band, where Jen's theorem makes every diagonal eventually
+  periodic. Excluding them is a question about **traps** in the left band: can a rightward reach front hold a bounded
+  distance from the left edge?
+
+**T5, the test (predictions written before the run).**
+- (a) Check the deep-side law on the actual orbit. At every episode start to t = 5,000, take the first 64 digits of
+  w from the row. Check L = 1 + lead1(Φ^r w), and check the next deep word against σ^L Φ^(r+1) w on its determined
+  digits. Prediction: no failure.
+- (b) Traps. In the seed's left band at t_0 = 2,000 and t_0 = 8,000, start a rightward prefix front at every black
+  cell within 300 of the left edge, and run it 4,000 steps.
+  - Prediction: every one escapes, ending more than 1,000 cells from the left edge.
+  - Positive control: the leftward follower of the right founder, min{i ≥ L−1 : black}, does stay trapped, at offset
+    4 (T1c measured this).
+  - Counterfactual: a rightward front that stays within a bounded distance would make the light-speed case realizable
+    in the band. The obstruction would then need the band's actual pattern, not this argument.
+
+**Control correction, written after T5's first run and before rerunning.** The planned positive control was a
+leftward follower started 300 cells from the left edge. It did not pin at offset 4: it ended at offset 401 at both
+t_0. So that control prediction was wrong (kept here). T1c's offset-4 pinning came from a follower started next to
+the edge. Added control: a leftward follower started at the first black cell at offset ≥ 3. Prediction: it ends at
+offset 4. If it does not, the trap detector is unvalidated and T5(b) shows only that no trap was found.
+
+**T5c, written after T5(a)–(b) and before its own run.** For every light-speed pattern of period at most 2 (r ≤ 2,
+L ≤ 6, ΣL = 2Σ(r+1)), compute the forced deep word w* to 60 digits, using the read bijection one digit at a time.
+- Prediction: every forced word is either infinite (a non-zero tail within 60 digits) or finite. A finite word puts
+  the front at a fixed distance D_0 = |w*| from the left edge.
+- For the seed's band, no finite w* matches the band behind any front position in 64 consecutive late rows, so all
+  these patterns are excluded on the seed.
+- Example by hand: (r = 0, L = 2)^∞ forces w* = 1 0 0 0 …, a front one cell from the edge. The edge cell is black,
+  so this needs the band's offset 3 to be black at every step. T5(b) suggests it is not.
+
+**T5c result, and T5d written before its run.** T5c's prediction is REFUTED.
+- Of the 35 light-speed patterns, 27 force an infinite deep word. No finite-left configuration can follow them.
+- The other 8 force finite words of length 1 to 16. Every one matches the seed's left band in some late rows, for
+  example (0, 2) → w* = 1, the two black edge cells.
+- So naturality alone excludes all non-light-speed patterns and 27 of 35 light-speed ones. The 8 edge-hugging
+  patterns can only be excluded on the shallow side, through the gaps.
+
+T5d: start rightward prefix fronts at every black cell at offsets 0..40 at each of 64 consecutive start times
+(t_0 = 3000..3063), and run each for 2,000 steps. Prediction: none ends within 100 cells of the left edge. Scope:
+64 phases. The band's full period at these offsets is bounded by JenPow2, but this does not prove it is at most 64.
+
+### 15.4 Results, and the relation to freeze next
+
+Probes: [`genealogy_inquisition.py`](../tests/probes/genealogy_inquisition.py) and
+[`genealogy_lightspeed.py`](../tests/probes/genealogy_lightspeed.py), each with its `.out`. Everything is COMPUTED on
+the M5 in seconds.
+
+**Results.**
+- **T5(a), HELD.** The deep-side law holds in all 2,413 episodes of the seed to t = 5,000 on 64 digits, with no
+  failure.
+- **T5(b), HELD.** All 157 rightward prefix fronts started within 300 cells of the left edge escape at t_0 = 2,000 and
+  8,000, ending 4,185 to 4,504 cells from the edge, about the main front's +0.04 in space. The results at the two
+  start times are identical, consistent with band periods dividing 6,000 there.
+  - The planned control (leftward follower from offset 300) was a wrong prediction: it ended at 401.
+  - The added control (from offset ≥ 3) ends at offset 4, so the detector does register a trap.
+- **T5c, prediction REFUTED.** Naturality excludes 27 of the 35 light-speed patterns; 8 short edge-hugging patterns
+  match the band.
+- **T5d, HELD.** 1,392 fronts at 64 phases from offsets 0..40 all escape, the nearest ending 2,092 cells away.
+
+**The answer to the inquisition, in one line.** The white ribbon becomes a reusable restriction through the
+**finiteness of the deep word**: on the seed, the cells behind the front form a natural number whose length is the
+front's distance to the left edge. That one feature rejects every eventually periodic collision history that does not
+retreat at light speed (Proposition 15.3). Short patterns that do retreat at light speed must hug the left edge, inside
+Jen's proved-periodic band. Hence:
+
+**Reduction (PROOF-SKETCH).** If limsup_t (B(t) + t) = ∞, meaning the left founder's black descendants are not
+eventually confined to a bounded band at the left edge, then the seed's (r, L) collision history is not eventually
+periodic.
+
+This is a Jen-type statement for the genealogy record. The hypothesis is about the seed's own reach, not about
+generic inputs. Measured: B(t) + t ≈ 1.047t to t = 100,000 (MEASURED). No trap was found at any tested band phase
+(COMPUTED).
+
+**The relation to freeze (for the next computation).**
+- **Statement (the edge-escape relation).** For every bound D, no rightward prefix front in the seed's left band stays
+  within D of the left edge for all time.
+- **Assumptions.** Each band diagonal is eventually periodic, with known power-of-two bounds (Jen 1986, JenPow2). So
+  for fixed D the statement is a finite check over one band period.
+- **Failure condition.** A trapped front at some phase. The leftward offset-4 control validates the detector.
+- **Controls.** Random left rows, where there is no edge and the notion is void. Altered white ribbons of finite
+  length, where the deep word is still natural but the band differs.
+- **What a proof needs.** Something uniform in D. For example, the band's small staircase periods (P_e ≤ 32,
+  MEASURED, L383) would turn it into one finite band automaton, if they can be proved.
+
+Family ranking after this block:
+1. Family 3, now with a concrete lock.
+2. Family 1, the source of the deep-side law.
+3. Family 2, subsumed by family 1.

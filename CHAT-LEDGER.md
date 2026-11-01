@@ -14511,3 +14511,52 @@ using existing edge clocks; a generic parity renaming does not suffice. The exac
 adversarial control. If unchanged, park as an interface and return to the Mahler4,11,6 boundary;
 curiosity alternative is restricted finite-state adaptive decoders. No further review request or
 flag is sent, following the owner's instruction to consolidate first. Schedules remain paused.
+
+## L1283 — Local answers GPT's inquisition: the black front is a copy of the right edge (deep-side odometer law); the white ribbon locks out every periodic collision history except light-speed edge-hugging ones (2026-11-01 22:39 GMT)
+
+At the owner's request: update with GC2355, then answer GPT's inquisition directly. GC2355 was read in full.
+- Its codec, horizon, verifier and failed raw Mahler transfer stand as PROOF-SKETCH; the carrying read is still
+  open.
+- Its qualification of L1282's speed sentence is accepted: the speed formula needs convergence of episode durations
+  and control between endpoints.
+
+[Full answer](reports/rule30-genealogy.md#15-locals-answer-to-gpts-inquisition-l1283). Probes:
+`genealogy_inquisition.py` and `genealogy_lightspeed.py`.
+
+**Family 1, clocks (PROOF-SKETCH; checked on 2,413 seed episodes).**
+- While the front is black, it acts exactly like the pattern's right edge. The cells behind it (the deep word w) run
+  the right-edge map Φ (the frozen ruler; G249; Coven, Pivato and Yassawi).
+- So L_k = 1 + lead1(Φ^(r_k) w^(k)) and w^(k+1) = σ^(L_k) Φ^(r_k+1) w^(k). GC2353's trailing bit is Φ's first digit.
+- Each collision needs bounded clock information: L digits and r modulo a power of two.
+- The digits themselves carry the history, so this alone is GC2355's codec in odometer form. The irregular input r_k
+  comes from the shallow side, which no known clock reaches.
+
+**Family 2, cancellations.** On the seed the tallies are column values. Adjacent ones differ by
+XOR_t [NOT z_(d−1) AND (z_(d−2) XOR z_d)]. The black front cancels the depth just below it, which is family 1's
+odometer, and the rest is the shallow wake. Ranked lowest.
+
+**Family 3, a uniform obstruction (PROOF-SKETCH; carrying read requested).**
+- **The proposition.** On any configuration with an eventually white left half, an eventually periodic (r, L) history
+  must have ΣL = 2Σ(r+1): the front retreats at light speed.
+  - Given the r's, the deep word is an injective function of the future reads.
+  - On such configurations the deep word is a natural number whose length is the distance to the left edge.
+- **The control.** In GC2354's random-left model, periodic histories are realized by infinite forced words, for
+  example (0, 1)^∞ forces 0101….
+- **Of the 35 light-speed patterns** of period at most 2:
+  - 27 force infinite words (excluded);
+  - 8 short edge-hugging ones match the seed's band. My T5c prediction that none would match was REFUTED.
+  - In the band, no rightward prefix front is trapped: 157 fronts at two phases, and 1,392 at 64 phases from offsets
+    0..40, all escape.
+  - My planned control prediction (leftward follower from offset 300 pins at 4) was wrong; it ended at 401.
+  - The corrected control (from offset ≥ 3) pins at 4, so the detector works.
+- **Reduction.** If limsup (B(t) + t) = ∞ on the seed, its collision history is not eventually periodic. That is a
+  Jen-type target for the genealogy record, about the seed's own reach.
+
+**The relation to freeze next.** Edge-escape: for every D, no rightward prefix front in the seed's left band stays
+within D of the edge.
+- Assumption: JenPow2 band periodicity.
+- Failure condition: a trap, with the offset-4 control.
+- A proof needs uniformity in D, for example proved staircase periods.
+
+**REVIEW-REQUEST (GPT).** The deep-side law (a) and the periodic-history proposition (b) in PROOFS.md's waiting room
+(L1283). READ-LEDGER to both workers.

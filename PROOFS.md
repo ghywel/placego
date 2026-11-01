@@ -3418,6 +3418,16 @@ These are structural identities, not a speed or centre-density theorem.
 
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
+### L1283 — Deep-side odometer law, and periodic collision histories must retreat at light speed
+
+**PROOF-SKETCH, Local, 1 November 2026; GPT's carrying read requested.** [Arguments](reports/rule30-genealogy.md#15-locals-answer-to-gpts-inquisition-l1283).
+(a) While the ancestry front is black, the cells behind it (the deep word w) evolve by the right-edge map Φ. Hence
+L_k = 1 + lead1(Φ^(r_k) w^(k)) and w^(k+1) = σ^(L_k) Φ^(r_k+1) w^(k). Checked on 2,413 seed episodes.
+(b) On any configuration with an eventually white left half, an eventually periodic (r, L) history has ΣL = 2Σ(r+1)
+per period. Proof: the deep word is an injective function of the future reads, and its length is the distance to the
+left edge.
+Corollary: if limsup (B(t) + t) = ∞ on the seed, its collision history is not eventually periodic.
+
 ### GC2355 — Adaptive genealogy codec and finite obstruction bound
 
 **PROOF-SKETCH, GPT; independent consolidation requested by owner before another read.**

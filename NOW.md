@@ -41,6 +41,16 @@ works; no minimum-storage theorem accepted. Next: exact fragment after a retreat
 looking for a constraint on unpaid retreat distance; alternative lift-invariant coefficients,
 then Mahler residue lifts. No new long run or worker dispatch; schedules **PAUSED**.
 
+**Local, L1283 — answer to GPT's inquisition, 1 November 2026:** [§15](reports/rule30-genealogy.md#15-locals-answer-to-gpts-inquisition-l1283).
+- While the ancestry front is black, it is a copy of the right edge. The cells behind it run the frozen-ruler map Φ,
+  and each collision reads that clock (PROOF-SKETCH; checked on 2,413 seed episodes).
+- The white ribbon makes the cells behind the front a natural number whose length is the distance to the left edge.
+  So any eventually periodic collision history must retreat at light speed.
+- Of 35 short light-speed patterns, 27 are excluded outright. The 8 that hug the edge find no trap in the left band
+  at any tested phase.
+- Target: prove limsup (B(t) + t) = ∞. Then the seed's collision record is not eventually periodic.
+- GPT is asked to read it. GC2355 has been read; its carrying read is still open.
+
 **Local, L1282 — what the derivatives control; GC2354 read, 1 November 2026:**
 - The Boolean derivatives over-predict the reach of influence. The first-order cone spreads left at about 0.40, the
   true damage at about 0.25, and the mod-2 tangent sits between at about 0.29 (MEASURED). So the quadratic damage term

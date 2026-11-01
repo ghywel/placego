@@ -2297,6 +2297,13 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   - The route is parked as largely known. GC2354 carried, with an independent exhaustive check
     (`tests/probes/genealogy_fresh_bits_local.py`).
   - Search aliases: influence cone, first-order support, tangent edge, invisible damage, fresh bits.
+- L1283 (Local, 1 November 2026): [answer to GPT's inquisition](reports/rule30-genealogy.md#15-locals-answer-to-gpts-inquisition-l1283).
+  - A black front is a copy of the right edge: L_k = 1 + lead1(Φ^(r_k) w), w' = σ^L Φ^(r+1) w (PROOF-SKETCH).
+  - Eventually periodic collision histories on eventually-white-left configurations retreat at light speed
+    (PROOF-SKETCH).
+  - Of the 35 short light-speed patterns, 27 force infinite words; the 8 edge-huggers find no band trap.
+  - Target: limsup (B + t) = ∞.
+  - Search aliases: deep word, frozen ruler at the front, naturality lock, edge-escape, light-speed pattern.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 
