@@ -13837,3 +13837,82 @@ test, and TOOLS.md §3 to §5 is updated.
 - **Proposed (TOOLS.md §5, for the owner).** One pinned environment for the project on Python 3.14 via `uv`, with a
   requirements file shared with the Intel (numpy, scipy, sympy, networkx, gmpy2, python-sat, z3-solver, cvc5). Remove
   the stray `z3` and boto, and put `gp` on `PATH`.
+## CL672 — Cloud to the owner (GPT and Local halted): the two tests run first, as directed. The classic ether's exact episodes to k = 18 and the three shadows to k = 14: the optimal prefixes are shielded witnesses (classic, (7, 63)), pure inserted edges ((12, 68)) or two-phase objects ((9, 57)); front speeds depend on the phase of insertion; the exponential prediction is refuted for two shadows and open for (9, 57) (2026-11-01 17:09 GMT)
+
+Run under the owner's instruction to work our own lines first (nobody on the page works moving-edge backgrounds, MAP
+§23). Predictions written first (Block 13), results in round 8 of the tracker, probes `background_episode.py`,
+`background_maximizers.py`, `background_fronts.py` with outputs. Conventions are Local's T-G exactly; T-G's tables to
+k = 12 were reproduced before extending them.
+
+**Results (COMPUTED, exhaustive over prefixes; fronts to t = 120 at depth 400).**
+- Classic ether (7, 28): M(1..18) = 7 7 8 9 10 10 12 12 16 16 17 17 18 18 20 21 24 24. Increments over 13..18 average
+  1.17 (P-C1 HELD). From k = 4 no maximizer is a pure inserted-edge witness (P-C2 REFUTED): the maximizers are the
+  background with a shield of three or four cells, at depths 1..4 for most k and at depths 7..12 for k = 16. The family
+  "inserted edge with depths 1..8 free" reproduces the table except at k = 16.
+- (12, 68): M(1..14) = 23 24 24 26 26 28 28 32 32 35 36 36 38 38; every maximizer is a pure inserted-edge witness and the
+  family reproduces the table exactly. PR69's structure: its exact law for all k is the natural second theorem, by the
+  CL669 certificate and Proof 1's potential (period-34 fronts in the main class).
+- (7, 63): M(1..14) = 11 12 12 15 15 16 17 18 18 20 22 24 24 25; shielded maximizers; family exact except k = 10.
+- (9, 57): M(1..14) = 12 13 13 15 15 16 16 17 17 19 24 27 28 34; at k = 11, 12, 14 the maximizers are two-phase objects
+  (one background phase above depth 9, another arrangement below), Local's shadow made explicit.
+- Fronts: for every background and alignment the inserted-edge front is eventually periodic in the moving frame, but
+  the mean speed depends on the phase of insertion (classic: speed 1 with the period-8 pattern 2, 2, 2, 0, 2, −2, 2, 0
+  for 140 of 196 alignments, 1.12..1.19 for the rest; (9, 57): 0.76..1.36; (12, 68): 0.62..1.31). P-C3 REFUTED.
+
+**Failed predictions** (G13): P-C2, P-C3, P-S4 for (7, 63) and (12, 68), P-S5 for (12, 68). My CL671 prediction that the
+shadowed episodes grow exponentially is refuted for two of the three; for (9, 57) it is undecided (increments 5, 3, 1,
+6; slope 0.8 to k = 10 then 3.75 to k = 14). **Unguarded mistakes:** none found in this block; the first front fit used
+a window that the depth truncation contaminated, caught by reading the sequence (G11) and rerun at depth 400 before any
+number was quoted.
+
+**What it means.** "The classic ether's exact episode law" is not one witness's front law as M(k) was; it is a maximum
+over shielded witnesses, with the shield's depth not uniformly bounded in the data. The clean second theorem is
+(12, 68)'s law, where the pure inserted edge is optimal. The three shadows split: (12, 68) plain, (7, 63) shielded,
+(9, 57) two-phase and the only one where faster-than-linear growth is still possible; its exact values to k = 18 or 20
+need Local's SAT tooling (exhaustive is 2^19 prefixes times 513 alignments here). Front speeds are a property of the
+pair (background, insertion phase), so any theorem must fix the phase class first.
+
+**Next, in order, if the owner continues this line.** (1) (12, 68): the exact law for all k by a certificate per
+alignment class plus the potential upper bound, the same recipe as M(k). (2) (9, 57) to k = 20 by SAT, prediction first,
+to decide linear against faster. (3) The classic ether: characterise the shield (why depths 1..4 at most k and 7..12 at
+k = 16) before any theorem is attempted. No prize movement; nothing outward-facing; READ-LEDGER for both workers.
+
+## CL673 — Cloud to the owner (GPT and Local halted): the background line continued in the sandbox. (12, 68): the pure witness optimal to k = 18, periodic fronts in five speed classes, W(k) to 300, and the band certificate shown not to close; (9, 57) to k = 20: linear, slope 2.3, two-phase; the classic ether's shield grows to ten cells at k = 20 (2026-11-01 17:48 GMT)
+
+At the owner's word, in the sandbox, to keep the local machine free. Predictions Block 14 first; round 9 of the
+tracker has the tables; probes `background_exact.py`, `background_witness_law.py`, `background_certificate.py` and
+outputs are filed.
+
+**Results (COMPUTED).**
+- *(12, 68).* M(15..18) = 40 40 43 45, every maximizer the pure inserted-edge witness (P-A1 HELD to 18). All 816
+  witness fronts computed on the trusted range (t ≤ 700): 758 exactly periodic, in classes of speed 21/17 (318
+  alignments, period 34, shift 42), 2, 1, 4/3 and 3/2; the periodic regime starts as late as t = 363. W(1..300)
+  computed; the 21/17 class attains it through k = 300 (W(300) = 314), and the speed-1 class must overtake near
+  k ≈ 350: a two-regime witness law (the crossover is arithmetic on measured classes, CONJECTURE as a law).
+- *The certificate.* I rewrote the CL669 band certificate without its external lemma (deeper cells read only
+  shallower ones, so "X = E above the front" propagates on its own) and validated it on PR69's ether (twenty-plus
+  alignments pass with bands of 6 or 10 cells). For (12, 68)'s dominant alignment it **fails at every width and
+  period tried**: the insulated band shrinks because the bottom must rise two per tick where its cell is white,
+  faster than the front's 1.235, and the wake below the front is not periodic with the front's period (four cells
+  repeat after 34 ticks, ten after 68 at 98%). P-D1 REFUTED. The front law is empirically exact over sixteen periods;
+  its proof needs Local's front-potential method with a period-68 phase table, not a band.
+- *(9, 57).* M(15..20) = 35 35 41 42 42 43: jumps of 6 every three depths, slope about 2.3 beyond k = 10. The
+  maximizers are two-phase objects (another alignment's inserted edge above depth 13..15, a ten-cell shield below).
+  P-B1 held at exactly 2.0 over 14..18, P-B2 held; **the exponential reading of CL671 is now refuted for all three
+  shadows**: (9, 57) is linear with the news crossing its two-phase arrangement at about 0.43 depth per tick.
+- *Classic ether.* M(19) = 25, M(20) = 26 (P-C5 HELD); at k = 20 every maximizer carries a ten-cell split shield
+  (P-C4 REFUTED).
+
+**Failed predictions** (G13): P-D1, P-C4, the exponential reading for (9, 57); P-A2 held only with the crossover
+caveat. **Unguarded mistakes:** the first law detector read the depth-window truncation at the end of each front as a
+period-1 law; caught before any number was quoted by reading the sequences (G11), and the trusted range made explicit
+in the probe. A side remark worth a line: the CL669 certificate's use of the two-party front lemma was unnecessary;
+the self-contained form proves the same law (validated here), which simplifies GC2331's reading.
+
+**Where the line stands.** PR69's ether is the only background with a single insulated witness; (12, 68) has a
+single optimal witness but a non-periodic wake, so its exact law needs the potential method; (9, 57) and the classic
+ether have composite optimal objects. The general statement is per phase class: the asymptotic episode slope is the
+reciprocal of the slowest phase speed with small offset. Next, in order, if the owner continues: (1) a front-potential
+certificate for (12, 68)'s (34, 42) class (Local's `ether_front_potential_certificate.py` generalised to period 68),
+which would make W(k) ≥ M(k) a theorem on that class; (2) the upper side for (12, 68) beyond k = 18 by SAT; (3) the
+two-phase object of (9, 57) as its own front problem. READ-LEDGER (both workers, on resumption).

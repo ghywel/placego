@@ -1,0 +1,11 @@
+c7_28: p=7 q=28; inserted-edge front mean speed over t=60..118 by alignment: distinct [0.966, 1.0, 1.034, 1.121, 1.155, 1.172, 1.19]
+  increment-pattern periods found: Counter({8: 140, 52: 21, 44: 14, 58: 14, 56: 7})
+  alignment (0, 0): speed 1.034, period 8, one period of increments [np.int64(2), np.int64(2), np.int64(2), np.int64(0), np.int64(2), np.int64(-2), np.int64(2), np.int64(0)]
+  alignment (0, 1): speed 1.034, period 8, one period of increments [np.int64(2), np.int64(2), np.int64(0), np.int64(2), np.int64(-2), np.int64(2), np.int64(0), np.int64(2)]
+  alignment (0, 2): speed 1.0, period 8, one period of increments [np.int64(2), np.int64(0), np.int64(2), np.int64(-2), np.int64(2), np.int64(0), np.int64(2), np.int64(2)]
+  patched-witness family (depths 1..8 free) arrival time vs exact M(k):
+   k      :   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
+   family :   7   7   8   9  10  10  12  12  16  16  17  17  18  18  20  20  24  24
+   exact  :   7   7   8   9  10  10  12  12  16  16  17  17  18  18  20  21  24  24
+   equal  : False
+BG_FRONTS_DONE

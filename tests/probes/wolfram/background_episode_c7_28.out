@@ -1,0 +1,23 @@
+background c7_28: p=7 q=28 state0=1000000
+k= 1 M=  7 (horizon 111) maximizers listed 7, of which inserted-edge witnesses 7
+k= 2 M=  7 (horizon 114) maximizers listed 14, of which inserted-edge witnesses 14
+k= 3 M=  8 (horizon 117) maximizers listed 7, of which inserted-edge witnesses 7
+k= 4 M=  9 (horizon 120) maximizers listed 7, of which inserted-edge witnesses 0
+k= 5 M= 10 (horizon 123) maximizers listed 7, of which inserted-edge witnesses 0
+k= 6 M= 10 (horizon 126) maximizers listed 14, of which inserted-edge witnesses 0
+k= 7 M= 12 (horizon 129) maximizers listed 7, of which inserted-edge witnesses 0
+k= 8 M= 12 (horizon 132) maximizers listed 14, of which inserted-edge witnesses 0
+k= 9 M= 16 (horizon 135) maximizers listed 7, of which inserted-edge witnesses 0
+k=10 M= 16 (horizon 138) maximizers listed 14, of which inserted-edge witnesses 0
+k=11 M= 17 (horizon 141) maximizers listed 7, of which inserted-edge witnesses 0
+k=12 M= 17 (horizon 144) maximizers listed 14, of which inserted-edge witnesses 0
+k=13 M= 18 (horizon 147) maximizers listed 7, of which inserted-edge witnesses 0
+k=14 M= 18 (horizon 150) maximizers listed 21, of which inserted-edge witnesses 0
+k=15 M= 20 (horizon 153) maximizers listed 21, of which inserted-edge witnesses 0
+k=16 M= 21 (horizon 156) maximizers listed 7, of which inserted-edge witnesses 0
+k=17 M= 24 (horizon 159) maximizers listed 7, of which inserted-edge witnesses 0
+k=18 M= 24 (horizon 162) maximizers listed 14, of which inserted-edge witnesses 0
+M(1..18) = 7 7 8 9 10 10 12 12 16 16 17 17 18 18 20 21 24 24
+inserted-edge witness front speeds (slope of R*(t) over t=30..60), distinct values: [0.984, 0.995, 0.998, 1.005, 1.056, 1.142, 1.158, 1.283, 1.285]
+witness episode lengths at k=18: max 23 (exact M(18) = 24) attained by alignments [(0, 6), (0, 26), (1, 6), (1, 14), (2, 14), (2, 22), (3, 2), (3, 22)]
+BG_EPISODE_DONE

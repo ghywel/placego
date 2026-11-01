@@ -2171,3 +2171,130 @@ The other results are not ready:
 - **The eight-background rigidity, including the classic 7 × 4 ether.** Its finite premises are SAT/LRAT certificates
   checked by Python, not Lean, and the proofs are not kept for replay.
 - **The p ≤ 26 attachment classification.** It is new, GPT has not read it, and it is a side question.
+
+
+## Round 8 (2026-11-01, Cloud, CL672): the classic ether's episode law and the three shadows, run first at the owner's word
+
+Conventions exactly as T-G (`inquisition_ring_references.py`): ring cycles of the edge frame, alignment (r, s) means
+X_k(t) = R_(k+r)(t+s), M(k) over all 2^(k+1) prefixes and all p·q alignments. Predictions were written before the runs
+(Block 13 in Cloud's scratch, copied into CL672). Probes `background_episode.py` (exact M(k), maximizer test, witness
+fronts), `background_maximizers.py` (the maximizing prefixes against the inserted-edge prefix), `background_fronts.py`
+(fronts to t = 120 at depth 400 with periodicity detection; the patched-witness family), outputs beside them.
+
+### Exact episode lengths (COMPUTED, exhaustive)
+
+| background | M(1..) |
+|---|---|
+| (7, 28) classic ether | 7 7 8 9 10 10 12 12 16 16 17 17 **18 18 20 21 24 24** (k ≤ 18; T-G had k ≤ 12) |
+| (7, 63) | 11 12 12 15 15 16 17 18 18 20 22 24 **24 25** (k ≤ 14) |
+| (9, 57) | 12 13 13 15 15 16 16 17 17 19 24 27 **28 34** (k ≤ 14) |
+| (12, 68) | 23 24 24 26 26 28 28 32 32 35 36 36 **38 38** (k ≤ 14) |
+
+### Who attains them: the inserted edge, a patched edge, or a two-phase object
+
+The *inserted-edge witness* of alignment (r, s) is the background with the black edge put at depth 0 (X_j(0) = R_(j+r)(s)
+for j ≥ 1), the object that is optimal at every depth for PR69's ether (M(k)).
+- **(12, 68):** every maximizer at every k ≤ 14 is an inserted-edge witness, and the family of inserted-edge witnesses
+  with depths 1..8 free reproduces the exact table exactly. The same law as PR69's ether: a finite-certificate proof of
+  its exact M(k) for all k is in reach by the CL669/Proof-1 method, with a period-34 front (= q/2) in its main class.
+- **(7, 28), the classic ether:** from k = 4 on no maximizer is a pure inserted-edge witness. The maximizers are the
+  inserted edge of the *same* alignment with a patch at depths 1..4 (patterns `.^^^` and `^^^.` below the pair), except at
+  k = 16, where the patch sits at depths 7, 8, 10, 11, 12, five below the pair. The eight-cell patched family reproduces
+  the table except at k = 16 (20 against 21). So the classic ether's optimal objects are the background plus a shield
+  placed to slow the edge's news, not a single witness.
+- **(7, 63):** maximizers are patched inserted edges (depths 2..4 and 8 at k = 12, 14); the family matches except at k = 10
+  (19 against 20), where the patch spans depths 1..8 against a different alignment above depth 6.
+- **(9, 57):** at k = 11, 12, 14 the maximizers are two-phase objects: the background in one phase above depth 9 (a
+  different alignment from the one the pair follows) and a different arrangement below. The family fails at those k
+  (23, 25, 32 against 24, 27, 34). This is Local's shadow (T-S3: a masked defect below the top pair) made explicit as an
+  optimal prefix.
+
+### The inserted-edge fronts (COMPUTED, t ≤ 120, depth 400)
+
+For every background and every alignment the mismatch front R*(t) becomes periodic in the moving frame, but the speed
+depends on the alignment, not only on the background:
+- classic (7, 28): 140 of 196 alignments have the period-8 pattern (2, 2, 2, 0, 2, −2, 2, 0) (one retreat per period),
+  mean speed exactly 1; the other 56 have periods 44..58 and speeds 1.12 to 1.19.
+- (7, 63): periods 54, 57, 58; speeds 0.95 to 1.26. (9, 57): periods 19 (= q/3), 38, 57; speeds 0.76 to 1.36.
+  (12, 68): periods 34 (= q/2) and 53..58; speeds 0.62 to 1.31.
+So the front speed is a property of the pair (background, phase of insertion); PR69's ether, whose witness has speed
+3/2 at every phase, is the simple case.
+
+### Predictions
+
+- P-C1 HELD: the classic ether's increments over k = 13..18 average 1.17.
+- P-C2 REFUTED: from k = 4 the maximizers are patched, not pure inserted-edge witnesses.
+- P-C3 REFUTED: the speeds are alignment-dependent (1 and 1.12..1.19 for the classic ether).
+- P-S4 (CL671's "exponential" prediction) REFUTED for (7, 63) (increments 0, 1) and (12, 68) (2, 0); UNDECIDED for
+  (9, 57), whose increments 5, 3, 1, 6 over k = 10..14 are irregular and larger than any other background's; its slope rose
+  from about 0.8 (k ≤ 10) to about 3.75 (k = 10..14). Exact values to k = 18 or 20 by SAT would decide.
+- P-S5 HELD for (7, 63) and (9, 57), REFUTED for (12, 68) (all maximizers are inserted-edge witnesses).
+
+### What this changes
+
+- The "exact episode law" splits by background. (12, 68) has PR69's structure and is the natural second theorem. The
+  classic ether's law is a maximum over shielded witnesses, with the shield's position not uniformly bounded (k = 16);
+  a theorem needs either a bound on the shield depth or a direct potential argument like Proof 1.
+- The shadows are not one phenomenon: (12, 68) is plain; (7, 63) is patched; (9, 57) is two-phase, and only (9, 57)
+  keeps the question of faster-than-linear growth open.
+- The field: none of this is on the page or in the kit; PR65's ether statements are fixed-column, and no third party
+  works on moving-edge backgrounds (MAP §23).
+
+
+## Round 9 (2026-11-01, Cloud, CL673): the line continued in the sandbox: (12, 68)'s witness law to k = 300 and the limit of the band certificate; (9, 57) to k = 20; the classic ether's shields to k = 20
+
+Predictions Block 14 (Cloud's scratch, copied into CL673). Probes `background_exact.py` (chunked exhaustion with the
+minimal shield of each maximizer), `background_witness_law.py` (fronts on the trusted range with exact periodicity
+detection and the witness arrival law), `background_certificate.py` (a self-contained periodic-band certificate).
+
+### (12, 68): the pure witness stays optimal; its fronts are periodic; the band certificate does not close
+
+- Exact M(15..18) = 40 40 43 45 (chunked exhaustion, 816 alignments); every maximizer is a pure inserted-edge witness
+  (alignments (0, 51), (6, 17), and (5, 17) at k = 16). **P-A1 HELD through k = 18**: the witness arrival law W(k)
+  equals M(k) at every k ≤ 18.
+- Witness fronts for all 816 alignments on the trusted range (t ≤ 700, depth 2400): the increments are exactly
+  periodic for 758 alignments. Classes (period, shift, speed): (34, 42, 21/17 ≈ 1.235) for 318; (1, 2, 2) for 248;
+  (2, 2, 1) for 86 and (1, 1, 1) for 42; (6, 8, 4/3) for 42; (4, 6, 3/2) for 22; 58 alignments have no law by t = 700.
+  The periodic regime of the (34, 42) class starts late and alignment-dependently (t0 = 145, 219, 363 among the
+  attaining alignments).
+- W(1..300) computed; the attaining alignments are in the (34, 42) class at every sampled k up to 300 (P-A2 HELD
+  there), with W(300) = 314, i.e. W(k) ≈ 0.81k + 71 on that range. Since a speed-1 class exists with small offsets,
+  it must overtake near k ≈ 350: the witness law has two regimes (CONJECTURE for the crossover; arithmetic of the
+  measured classes).
+- **The band certificate (P-D1) REFUTED.** The CL669 method, made self-contained (the band's top side needs no
+  external lemma: deeper cells read only cells below them, so the invariant "X = E above the front" propagates by
+  itself; validated on PR69's ether, where it passes at twenty or more alignments with a band of 6 or 10 cells and
+  period 4 or 8), fails for (12, 68)'s dominant alignment at every band width 6..30 and at periods 34 and 68: the
+  insulated band shrinks (its bottom must rise 2 per tick where the bottom cell is white, faster than the front's
+  1.235), and the wake below the front is not periodic with the front's period (after 34 ticks only the top four
+  cells repeat; after 68, the top ten at 98%, deeper cells at 50..75%). So the front law of (12, 68) is empirically
+  exact over sixteen periods but not provable by the band method; it needs a front-potential argument of Local's
+  Proof-1 kind, with a larger phase table (period 68).
+
+### (9, 57): linear with slope about 2.3 beyond depth 10, through two-phase objects
+
+- Exact M(15..20) = 35 35 41 42 42 43, so M(1..20) = 12 13 13 15 15 16 16 17 17 19 24 27 28 34 35 35 41 42 42 43.
+  Jumps of 6 at k = 11, 14 and 17 (every three depths) with 0 or 1 between: slope about 2.3 beyond k = 10, after
+  0.8 below it. **P-B1 held at exactly 2.0 over k = 14..18, but the structure is linear**, not accelerating: the
+  CL671 exponential prediction is now REFUTED for all three shadows.
+- Maximizers at k = 15..20 are two-phase objects (P-B2 HELD): shields at depths {1, 7, 10, 11} (k = 15, 16) and
+  {1, 3, 4, 7, 10, 11, 13, 14, 15, 16} (k = 17..20), the top part equal to a *different* alignment's inserted edge
+  from depth 13 (k = 17) or 15 (k = 20). The slope 2.3 is the news speed through the two-phase arrangement, about 0.43
+  depth per tick, against 1.24 for the plain witness.
+
+### The classic ether to k = 20: the shield grows
+
+- M(19) = 25, M(20) = 26 (P-C5 HELD). Shields: {1, 2, 3} or {2, 3, 4} at most k; {7, 8, 10, 11, 12} at k = 15, 16;
+  an alternative {1, 2, 3, 7, 8, 9, 12} at k = 14; and at k = 20 every maximizer carries the ten-cell split shield
+  {1, 2, 3, 5, 9, 10, 11, 12, 13, 16} (P-C4 REFUTED). The classic ether's optimal objects are not bounded shields.
+
+### What round 9 changes
+
+- The "exact episode law" for a general background is a maximum over a finite but structured set of witnesses whose
+  fronts are empirically periodic; only PR69's ether has a single witness with an insulated band. For (12, 68) the
+  lower side (W(k) for all k) is one front-potential proof away; the upper side (no shield beats the pure witness)
+  is open beyond k = 18. For (9, 57) and the classic ether, the optimal objects themselves (two-phase, growing
+  shields) are the question.
+- Phase dependence is now quantified: a background's witness fronts split into speed classes (1, 21/17, 4/3, 3/2, 2
+  for (12, 68)); any theorem must be stated per phase class, and the asymptotic law belongs to the slowest class with
+  small offset, which can differ from the class that dominates at moderate depth.
