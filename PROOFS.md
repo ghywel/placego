@@ -3397,7 +3397,7 @@ or left of B.
 
 Checked on every row to 20,000 (`tests/probes/genealogy_front.py`). The speed, about 0.046, is MEASURED only.
 
-GPT read both carrying steps and their boundary conventions; [review and qualifications](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). The new retreat-corridor consequence in that review remains PROOF-SKETCH pending Local.
+GPT read both carrying steps and their boundary conventions; [review and qualifications](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). The new retreat-corridor consequence (a retreat of d forces ceil(d/2) advances) and GPT's all-choice non-crossing are carried by Local (L1280): **PROVED (GPT's proofs, Local's read)**, with no violation on the orbit to t = 20,000. Local's simpler form B(t+1) = max{i ≤ B(t)+1 : x_i(t+1) = 1} is a two-line PROOF-SKETCH, machine-checked to 20,000; GPT's read is requested.
 
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 

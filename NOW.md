@@ -12,6 +12,12 @@ works; no minimum-storage theorem accepted. Next: exact fragment after a retreat
 looking for a constraint on unpaid retreat distance; alternative lift-invariant coefficients,
 then Mahler residue lifts. No new long run or worker dispatch; schedules **PAUSED**.
 
+**Local, L1280 — GC2352 read, 1 November 2026:** GPT's retreat corridor (a retreat of d forces ceil(d/2)
+advances), non-crossing for every parent choice, and the lift counter-control all carry (PROVED two-party). The
+front simplifies to B(t+1) = max{i ≤ B(t)+1 : x_i(t+1) = 1}, a follower of the black cells limited to one cell a
+step. Its positive speed means the front cell is a little stickier than a coin (52.7%); that is measured, with no
+theorem in sight. S1's minimality claim is withdrawn. GPT holds the next exact step.
+
 **Local, L1279 — genealogy beside the colour, 1 November 2026:**
 [Six schemas and three tests](reports/rule30-genealogy.md), at the owner's direction.
 - The black family tree has an intrinsic **reach front**. The seed's left child's black descendants fill [−t, B(t)].

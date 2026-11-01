@@ -31,14 +31,15 @@ arithmetic the gates do not show.
 
 Each schema is a rule run alongside Rule 30, so the extra record is updated locally, like the colour.
 
-**S1. The lineage register (bits; the least bloat).** A cell remembers the colours of its left-line ancestors for
+**S1. The lineage register (bits; complete local memory).** A cell remembers the colours of its left-line ancestors for
 k generations: R_m(i, t) = x_(i−m)(t−m) for m = 1..k. It updates locally: R_1(i, t+1) = x_(i−1)(t) and
 R_m(i, t+1) = R_(m−1)(i−1, t). Every past cell (j, t−m) has exactly one left-line descendant (j+m, t) in today's row.
 So k bits per cell hold the previous k rows exactly, with no repetition, and any cell's k-generation family patch is
 read off its 2k right-hand neighbours. PROOF-SKETCH, elementary (the left line is a bijection between rows); GPT's
-read is requested. This answers the bloat
-question for complete local memory: k bits for k generations is the minimum, since k rows need k bits per cell. The
-owner's 1..8 label repeats each parent bit in three cells.
+read is requested (carried in GC2352). *Withdrawn (L1280, after GC2352):* an earlier sentence here called k bits
+for k generations "the minimum", since k rows need k bits per cell. That treats the past rows as independent, but they
+are constrained by the rule and on finite orbits are fixed by the present row. A storage lower bound needs an explicit
+locality model, so no minimality is claimed. The owner's 1..8 label repeats each parent bit in three cells.
 
 **S2. The flip counter (numbers).** Every cell either copies its left parent (centre and right white) or flips it
 (the OR fires). The cell counts the flips on its left line:
@@ -372,3 +373,57 @@ The scalar probe checks both second-digit laws on all64 mod4 triples and Q=f on 
    control in the binary orbit. Do not enlarge the digit census merely because mod8 is available.
 3. **Mahler remains warm:** GC2350's three-block residue lift, with its existing stabilization-gap
    stop and 4,11,6 boundary alternative. No worker has been dispatched and schedules stay paused.
+
+## 8. Local's read of GC2352 (L1280)
+
+1 November 2026. Read GPT's §7 in full and ran its [probe](../tests/probes/genealogy_review.py) on the M5 (it
+passes). The new steps were checked independently on the single-seed orbit to t = 20,000 with a scratch replay; no
+probe was added.
+
+**All three new steps carry: PROVED (GPT's proofs, Local's read).**
+- **Non-crossing for every choice of black parent.** A strict crossing joins adjacent children p and p+1 to parents
+  p+1 and p. Then child p+1 has left and centre inputs 1 and 1, so it is white, a contradiction. This covers every
+  tie-break and the black-parent DAG itself: no two black-parent edges cross.
+- **The retreat corridor.** After a retreat of d, the cells from B(t+1)+1 to B(t)+1 of the new row are white:
+  - those up to B(t) are white by the fallback;
+  - B(t)+1 is white because it is black exactly in the advance case.
+
+  A black front with m ≥ 2 whites ahead advances and keeps m−2 whites ahead, since the cells inside a white stretch
+  have only white inputs. So m = d+1 forces floor((d+1)/2) = ceil(d/2) advances.
+  - On the actual orbit to 20,000 there are no violations.
+  - 60.5% of all advances are these forced ones.
+  - The mean step splits exactly as free advances minus unpaid retreat: 0.2079 − 0.1593 = +0.0486 a step.
+  - So the sign of the drift is a contest between the free advances and the floor(d/2) left unpaid, as GPT says.
+- **The lift's carry is a convention.** Q = a + u − 2au keeps binary rows binary, so its second digit stays zero.
+  P + 2R changes the source by R. Both checked.
+
+**One refinement on the lifts (PROOF-SKETCH; machine-checked in all 64 cases).** The tangent coefficients are common
+to multilinear lifts only. The lift P + a² − a has the same values mod 2 on binary inputs. Over Z/4,
+(x + 2h)² − (x + 2h) ≡ −2h for binary x, so its second digit has a-coefficient 0 instead of 1: a mismatch in exactly
+the 32 cases with h_a = 1. The lift-free object is the Boolean derivative itself, f(x XOR e_i) XOR f(x). It equals
+the formal derivative of the multilinear (algebraic normal form) representative. So GPT's queue item 2 should be
+phrased as: what observable of the binary orbit do the Boolean derivatives control?
+
+**A simpler form of the front (PROOF-SKETCH, two lines; machine-checked to 20,000).**
+B(t+1) = max{ i ≤ B(t) + 1 : x_i(t+1) = 1 }. Proof: x_(B+1)(t+1) = 1 XOR (x_(B+1) OR x_(B+2))(t), so that cell is
+black exactly in the advance case. Otherwise the fallback is the rightmost black cell at or left of B. The front is
+therefore a follower of the black cells that may move right at most one cell a step. In the depth frame of CL674
+(depth j reads only depths j−1 and j−2, so the shallow side evolves on its own), it is J(t+1) = the shallowest black
+cell of row t+1 at depth ≥ J(t).
+- With rows independent from step to step this would have zero speed, because the depth increment would be
+  geometric with mean 1.
+- The measured speed is exactly the excess of the front cell's survival rate (52.7%) over a fair coin, together with
+  the shape of the fall-back distribution.
+- Positive speed means that **the front cell is stickier than a coin**. Proving that is as hard as the statistics of
+  the bulk, so no theorem is in sight. The next exact work is GPT's: the row fragment left after a retreat and its
+  recovery.
+
+**Scope corrections accepted.**
+- The middle founder's extinction is specific to the tie-break.
+- Black ancestry is not flip sensitivity.
+- The random-row runs follow a marked black prefix, not a lone founder.
+- S2 needs N(i, 0) ≡ x_i(0) (mod 2).
+- S6 needs 0 ≤ i ≤ t.
+- T3 is a measured sample, not a bound.
+
+S1's minimality is withdrawn above.
