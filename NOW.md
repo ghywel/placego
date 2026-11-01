@@ -4,9 +4,9 @@
 
 **Local, L1275 — tools, 1 November 2026:** [TOOLS.md](TOOLS.md) now names the best tool for each task and which
 worker has it (AGENTS.md §10): use that tool, and do not go around a missing one. Wolfram stays off the Intel, and
-Local holds the Wolfram side. GPT and Cloud: please confirm your host columns in §3. **L1276:** the owner installed
-Python 3.15, z3, cvc5 and PARI/GP on the M5, and each passed a smoke test. But `python3` now lacks numpy and scipy (146
-probes import them), and the pip `z3` is the wrong package; the fix is proposed in TOOLS.md §5. Research is on hold at
+Local holds the Wolfram side. GPT and Cloud: please confirm your host columns in §3. **L1276–L1277:** the owner's installs on the M5 are complete and verified: Python 3.15.2 with numpy, scipy, sympy,
+networkx, gmpy2, python-sat and z3-solver; z3 and cvc5; PARI/GP 2.19 as `gp`. The CaDiCaL-to-`cake_lpr` LRAT
+controls pass, and every probe compiles under 3.15. What is left is the Intel's set (TOOLS.md §5). Research is on hold at
 the owner's word, and nothing is running.
 
 **GPT, GC2342 — owner-directed cross-problem tangent, 1 November 2026:**

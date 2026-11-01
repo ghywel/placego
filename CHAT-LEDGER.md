@@ -13917,3 +13917,19 @@ test, and TOOLS.md §3 to §5 is updated.
 - **Proposed (TOOLS.md §5, for the owner).** One pinned environment for the project on Python 3.14 via `uv`, with a
   requirements file shared with the Intel (numpy, scipy, sympy, networkx, gmpy2, python-sat, z3-solver, cvc5). Remove
   the stray `z3` and boto, and put `gp` on `PATH`.
+
+## L1277 — Local: the M5 toolchain is complete and verified after the owner's fixes (2026-11-01 18:20 GMT)
+
+Following up L1276. The owner installed numpy and scipy, removed the wrong `z3` and boto, ran Python 3.15's
+"Install Certificates" script, installed python-sat and z3-solver, and linked `gp` onto `PATH`.
+- **Cause of the python-sat failure.** It has no 3.15 wheel, so pip built it from source. The build downloads the
+  solvers' sources with Python's own HTTPS, and the python.org 3.15 had no certificate bundle. pip itself worked
+  because it carries its own certificates. Fixed by the installer's certificate script.
+- **Verified (COMPUTED, known-answer tests).** `python3` 3.15.2 imports numpy 2.5.4, scipy 1.18.1, sympy 1.14.0,
+  networkx 3.7, gmpy2 2.3.2, mpmath 1.3.0, python-sat 1.9.dev17, z3 5.3.3 and cvc5 1.4.2. HTTPS works from urllib.
+  python-sat's CaDiCaL 1.9.5, Glucose 4 and MiniSat 2.2 all return UNSAT on the pigeonhole formula PHP(5). z3py
+  returns 0xAAAB for 3x = 1 over 16 bits. `gp` (2.19.0) is on `PATH` and gives v2(3^100 - 1) = 4.
+- **The certificate pipeline under the new Python.** `rule30_cadical_certify.py controls` passes: K1, CaDiCaL's LRAT
+  proof of a control UNSAT, is VERIFIED by `cake_lpr`; K2, the same proof with one hint corrupted, is rejected.
+- **Old probes under 3.15.** All 1,597 probe files compile. Six give invalid-escape warnings, which are harmless now.
+- TOOLS.md §3 and §5 are updated. Local's set is complete; the Intel's set and GPT's and Cloud's confirmations remain.

@@ -31,20 +31,20 @@ unavailable and finding some other solution, but i would always rather we use th
 ## 3. Inventory: who has which tool (snapshot 2026-11-01)
 
 Local's column was checked on the machine on 2026-11-01 (L1275), and again after the owner's installs the same day,
-with a smoke test of each new tool (L1276). GPT's and Cloud's columns hold only what the record shows; their workers
+with a smoke test of each new tool (L1276), and once more after the fixes (L1277). GPT's and Cloud's columns hold only what the record shows; their workers
 confirm or correct them.
 
 | Tool | Local (M5) | GPT (Intel) | Cloud (sandbox) |
 |---|---|---|---|
-| Python 3 | `python3` is now python.org **3.15.2**, with sympy 1.14.0, networkx 3.7, gmpy2 2.3.2, mpmath 1.3.0 and cvc5 1.4.2. **Missing there:** numpy and scipy (146 probes import them), z3-solver, and python-sat (no 3.15 wheel; 11 probes import it). See §5. The old system 3.9.6 (`/usr/bin/python3`) still has numpy and scipy | to confirm | to confirm |
+| Python 3 | `python3` is python.org **3.15.2** (certificate bundle installed): numpy 2.5.4, scipy 1.18.1, sympy 1.14.0, networkx 3.7, gmpy2 2.3.2, mpmath 1.3.0, python-sat 1.9.dev17 (built from source), z3-solver 5.3.3.0, cvc5 1.4.2, certifi. All 1,597 probe files compile under 3.15; six give harmless invalid-escape warnings. The old system 3.9.6 (`/usr/bin/python3`) is no longer the default | to confirm | to confirm |
 | C | Apple clang; GMP (Homebrew) | to confirm (record: C probes run) | to confirm |
 | GPU compute | Metal on the M5 GPU (`.metal` kernels in `tests/probes`) | RX 6600, selected explicitly (record); API to confirm | none |
-| SAT solvers | Kissat, CaDiCaL | to confirm (record: one Intel certificate replay, GC2333) | to confirm |
+| SAT solvers | Kissat, CaDiCaL (command line); python-sat's CaDiCaL 1.9.5, Glucose 4 and MiniSat 2.2 in Python. The CaDiCaL LRAT to `cake_lpr` pipeline passes its controls (a true proof verified, a corrupted one rejected) | to confirm (record: one Intel certificate replay, GC2333) | to confirm |
 | Proof-certificate checkers | `cake_lpr` (verified LRAT checker), `drat-trim` | to confirm | none |
 | Lean 4 | `elan` with 4.33.1 and **4.35.0** (the kit's version) | **4.33.1 only** (record) | to confirm |
 | Wolfram | Wolfram Engine 15.0, `wolframscript`, LeanLink, the Wolfram MCP | **none, by the owner's decision** | none |
-| SMT (z3, cvc5) | z3 5.3.3 command line (Homebrew); cvc5 1.4.2 as Python bindings in `python3`, with no command line. Both solved a 16-bit bit-vector test (the inverse of 3 mod 2^16) | to confirm | to confirm |
-| PARI/GP | **2.19.0** (PariGP.app). The `gp` binary is `/Applications/PariGP.app/Contents/Resources/bin/gp-2.19`, not yet on `PATH`; it passed a valuation, continued-fraction and modular-inverse test | to confirm | to confirm |
+| SMT (z3, cvc5) | z3 5.3.3: command line (Homebrew) and Python (z3-solver); cvc5 1.4.2 in Python only, with no command line. All three solved a 16-bit bit-vector test (the inverse of 3 mod 2^16) | to confirm | to confirm |
+| PARI/GP | **2.19.0** (PariGP.app), on `PATH` as `gp` through a link in `/opt/homebrew/bin` to the app's `gp-2.19`; remake the link when the app's version changes. It passed a valuation, continued-fraction and modular-inverse test | to confirm | to confirm |
 | Sage | not installed | to confirm | to confirm |
 | `gh` (GitHub CLI) | signed in | to confirm | none |
 | `record_find.py`, `known_find.py --new` | yes | yes (GC2340 complete refresh) | portal only; the kit's PR index is unreachable |
@@ -72,19 +72,15 @@ confirm or correct them.
 
 ## 5. Gaps: proposed installs, waiting for the owner
 
-The owner installed Python 3.15.2 with its modules, z3, cvc5 and PARI/GP on Local on 2026-11-01 (L1276). What is
-left:
+**Local's set is complete** (L1276, L1277). The owner installed Python 3.15.2 with the modules in §3, the
+certificate bundle, z3 and its Python package, cvc5 and PARI/GP, and removed a wrong pip package named `z3` (an
+unrelated ZFS-to-S3 backup tool) and its boto. Every tool passed a known-answer test, and §3 records the versions.
+What is left:
 
-1. **Finish the Python set on Local.** `python3` (3.15.2) lacks numpy and scipy, so the 146 probes that import them
-   now fail under `python3`. The pip package named `z3` (0.2.0) is an unrelated ZFS-to-S3 backup tool, and it pulled
-   in boto; the solver's package is **z3-solver**. python-sat has no wheel for 3.15, but has one for 3.14 and 3.12.
-   Proposal: one pinned environment for the project on Python 3.14 (`uv`), with exact versions in a requirements file,
-   so that every module, python-sat included, comes from a wheel. The Intel would use the same file. Remove the
-   stray `z3` and boto.
-2. **Put `gp` on `PATH`**, or give the probes its full path.
-3. **The Intel's set.** Lean 4.35 so that GPT can validate against the kit's version (until then current-kit
-   validation is Local's), the same Python environment, and an SMT solver.
-4. **GPT and Cloud confirm their columns in §3.**
+1. **The Intel's set.** Lean 4.35 so that GPT can validate against the kit's version (until then current-kit
+   validation is Local's); Python modules matching §3's versions where the platform allows; an SMT solver. Install
+   `z3-solver` from pip, not `z3`. A python.org Python needs its "Install Certificates" script run once.
+2. **GPT and Cloud confirm their columns in §3.**
 
 ## 6. Wolfram (the owner, 2026-11-01)
 
