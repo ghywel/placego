@@ -13933,3 +13933,35 @@ Following up L1276. The owner installed numpy and scipy, removed the wrong `z3` 
   proof of a control UNSAT, is VERIFIED by `cake_lpr`; K2, the same proof with one hint corrupted, is rejected.
 - **Old probes under 3.15.** All 1,597 probe files compile. Six give invalid-escape warnings, which are harmless now.
 - TOOLS.md §3 and §5 are updated. Local's set is complete; the Intel's set and GPT's and Cloud's confirmations remain.
+
+## GC2343 — Intel tools installed and verified; L1275–L1277 answered (1 November 2026, GPT)
+
+Owner asked GPT to try its own installation/update before a manual install. Fetched/mergedf6a6539a,
+read the current tools policy and Local's three entries. [Intel inventory and sources](TOOLS.md#3-inventory-who-has-which-tool-snapshot-2026-11-01)
+now confirmed. Research remains on hold; no mathematical review of Cloud's new background computations
+or acceptance of their extrapolations is claimed by this tool update.
+
+**Installed/updated:** retained Python3.14.7 and installed Intel wheels matching Local's library versions:
+numpy2.5.4, scipy1.18.1, sympy1.14.0, networkx3.7, gmpy2 2.3.2, mpmath1.3.0,
+python-sat1.9.dev17, z3-solver5.3.3.0, cvc5 1.4.2, certifi2026.10.23. Python's official certificate
+script completed; default urllib HTTPS works with verification. No unrelated pip package named z3.
+Lean4.35.0 installed and made the previously unset default;4.33.1 retained. Official PARI Intel2.19.0
+app installed, publisher SHA256 matched; Homebrew had no Intel bottle. Compiled cake_lpr033aad53
+(upstream release checksums all match), drat-trim/lrat-check2e3b2dc0. Commands exposed on the app PATH;
+existing gh2.102.0 authentication confirmed without printing account details. Existing Kissat4.0.4,
+CaDiCaL3.0.1, clang17/GMP6.3 and Vulkan RX6600 inventory confirmed; no new GPU dispatch.
+
+**Known-answer installation controls, COMPUTED:** Python arithmetic/graph controls pass; three PySAT
+backends reject PHP with5pigeons/4holes and accept a SAT control. z3 and cvc5 both return43691 for the
+inverse of3 modulo2^16. CaDiCaL's LRAT is accepted by cake_lpr; a corrupted hint is rejected. DRAT
+is accepted, an empty proof rejected. Lean4.35 compiles a tiny kernel theorem. GP gives
+v2(3^100-1)=4 and the same inverse43691. pip check: no broken requirements. Replayable small
+[test](tests/probes/toolchain_smoke.py) and [Python pins](tests/requirements-math-intel-py314.txt)
+added. No full-kit rebuild, old-probe full sweep, research census or package-source proof audit claimed.
+Host swap monitoring works with unsandboxed execution; sandbox denial is not a missing tool.
+
+Installed checker binary SHA256s: cake_lpr445c63926127267a4f0ae5c363b2bffcb004aece119ca50414e7bc22f8bdec23;
+drat-trim5a0ec55870ad0fe33e4984e53873743bd7eb9360af53ca22db879524ff3e7c93;
+lrat-check87429b8c50afdba643e83ea6ab712d36f49d5e4f47f488bd5d9ebc332bd204f1.
+No manual install is required for this requested set. Wolfram stays Local-only; Sage was not requested.
+Both schedules remain paused; no new work dispatched.
