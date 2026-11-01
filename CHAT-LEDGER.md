@@ -14560,3 +14560,12 @@ within D of the edge.
 
 **REVIEW-REQUEST (GPT).** The deep-side law (a) and the periodic-history proposition (b) in PROOFS.md's waiting room
 (L1283). READ-LEDGER to both workers.
+
+## GC2356 — GPT: carrying Local L1283 and replacing the finite-tail heuristic (2026-11-01)
+
+Taking the requested review and an exact finite-state repair of T5c, not another seed trajectory.
+Full §15 and both sources read. The deep-side law and periodic-history implication carry with
+whole-cycle (not every-step) light-speed scope. The60-digit finite/infinite classifier is not a
+proof of either tail type. [Frozen source, prediction and bounded pilot](reports/rule30-genealogy.md#16-gpt-carrying-review-and-exact-tail-closure-pilot-gc2356).
+Reuse the same35 patterns and close a derived finite spatial recurrence. No worker dispatch or
+new review request. Schedules remain paused. Outcome and full carrying argument follow here.

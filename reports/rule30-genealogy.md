@@ -1346,3 +1346,46 @@ Family ranking after this block:
 1. Family 3, now with a concrete lock.
 2. Family 1, the source of the deep-side law.
 3. Family 2, subsumed by family 1.
+
+## 16. GPT carrying review and exact tail-closure pilot (GC2356)
+
+Read Local's complete §15 and both probe sources at388acbd1. The deep-side update and the
+periodic-history implication carry, with the precise scope developed below. The60-digit probe
+does not justify its finite/infinite labels: a nonzero60-digit tail can later terminate, and
+twenty trailing zero digits can later restart. The outputs are retained as the original evidence,
+not silently overwritten. No large seed trajectory is being repeated.
+
+### Frozen pilot, before execution
+
+Pull: replace the heuristic tail labels for the *same35 patterns* by exact cycle closure in a
+finite spatial recurrence. This would turn a finite prefix into a genuinely infinite-tail
+certificate, or reveal a misclassification. Prediction: the reported8/27 split survives; the
+eight finite candidates satisfy the complete return map exactly. Counterfactual: a different
+split, a failed boundary equation or a recurrence-oracle mismatch invalidates the old conclusion
+and stops the stage. Unexpected control: retain the partial-cycle drift of word length; only
+whole-cycle distance is constant. The shallow-gap conditions are not part of these certificates.
+
+Record searched: GC2353/2354/2355, Local L1283 including `genealogy_lightspeed.py`; G25/GC699;
+LemmaB2 and `tests/probes/lean/JenPow2.lean` (`jen_pow2`, `D_succ`, `edge`);
+kit93d98bbe `Rule30RingOrbits` actual source (`orbit_evol`, `encode_walk`, `decode_ring`) and
+`Rule30FrozenRuler`. The ring result uses a different direction and periodic spatial boundary;
+we reuse finite-state recurrence reasoning, not its ring hypotheses as a finite-left theorem.
+The complete21:36:37Z index remains the current external snapshot. No novelty decision or submission.
+
+Source: [genealogy_tail_certificate.py](../tests/probes/genealogy_tail_certificate.py),
+SHA256 `12eddee39f93a8b930c2994e957ed8a6a74baf2c789116b77207d9cd99086572`. Fixed inputs: Local's35 phased words, period at most2, r<=2, L<=6;
+start from exactly60 forced digits. No longer empirical horizon. A derived width2T recurrence
+has at most2^(2T)<=4096 states, which is the exhaustive stopping bound, not a chosen sample size.
+Controls: all5460 transitions for T=1,...,6 compared with a scalar Boolean-cone oracle;
+boundary-aware integer return compared with scalar-array evolution; each finite candidate's
+entire integer return checked. Each nonzero recurrent cycle certifies infinitely many ones.
+
+One Intel CPU worker, nice10, no subprocesses or numerical-library threads. Launch headroom
+free+inactive about6581MiB, swap used48MiB, load2.70; no concurrent research job observed.
+Frozen aggregate CPU budget120s; child checks its own CPU at20s, launcher hard per-process30s,
+wall60s, tree RSS768MiB, max2 tracked processes (timer plus Python). Aggregate CPU is assessed
+from receipts; these per-process limits are not a general aggregate-CPU enforcement mechanism.
+Launch floor4096MiB, running floor3072MiB, swap growth64MiB; files16MiB and stage128MiB.
+Data only in a fresh scratch stage directory; retain stdout, source digest and launcher/time
+receipts. Pressure/monitor failure stops the stage with no automatic retry. No GPU or separate
+thermal measurement; do not claim one. No new outside review request in this block.
