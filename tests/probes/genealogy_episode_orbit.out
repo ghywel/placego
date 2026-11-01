@@ -1,0 +1,6 @@
+(a) consecutive advances = floor(M/2): 19998 start times checked, 0 failures
+(b) stay iff z XOR (floor(M/2) mod 2) = 0: 0 failures
+(c) nonadvance step = -(L-1): 9463 nonadvances, 0 failures
+(d) trailing bit after a nonadvance = 1 XOR x_(p-2): 0 failures
+episodes 9464: gap advances in completed episodes 10535, retreats 9564; over all steps -1 + 10536 advances - 9564 retreat = 971 = B(20000) = 971
+GENEALOGY_EPISODE_ORBIT_DONE

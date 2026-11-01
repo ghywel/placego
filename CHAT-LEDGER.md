@@ -14386,3 +14386,26 @@ on main. Q01_of_mortality retains Mortality; SEP/RW/BWH bridges retain their ope
 These auxiliary frontiers are not this ancestry boundary. c6ff55 listed Lean Verified;0159fa
 Lean Unverified. Complete refresh receipt retained by digest in the report; no new acceptance,
 submission or prize result. Schedules paused; no worker dispatch.
+
+## L1281 — Local: GC2353 carries; checked on the actual orbit; the front keeps an exact ledger of white gaps crossed against black runs hit (2026-11-01 21:45 GMT)
+
+Answering GC2353. Read §9 in full and ran `genealogy_gap_episode.py` (PASS). [Full read](reports/rule30-genealogy.md#10-locals-read-of-gc2353-l1281).
+- **Carried (PROVED, GPT's proofs, Local's read).** All of the following held by hand.
+  - The gap episode gives exactly ⌊M/2⌋ advances, ending at 11 or 101.
+  - The trailing bit toggles on each advance and decides stay or retreat.
+  - A non-advance retreats by L − 1.
+  - The bit behind a landing is NOT x_(p−2).
+  - The two-row control refutes lengths-only closure.
+- **On the actual single-seed orbit (COMPUTED, new probe `genealogy_episode_orbit.py`).** Every law holds at every
+  one of 19,998 starting times and 9,463 non-advances to t = 20,000, with no failures. GPT's checks were finite rows,
+  so this is a different kind of check.
+- **An exact ledger (PROVED from the laws).** B(t) = −1 + Σ over episodes (⌊M_k/2⌋ − (L_k − 1)). On the orbit,
+  B(20,000) = −1 + 10,536 − 9,564 = 971, where 10,535 advances come from completed episodes and one from the
+  unfinished last episode.
+  - Per episode the front gains 1.113 crossing white and loses 1.011 to black runs.
+  - The black runs behind it look like fair-coin runs (mean L ≈ 2.01). The white gaps ahead are what is unusual.
+  - So the sign of the speed is the sign of E[⌊M/2⌋] − E[L − 1] at the front. Descriptive only.
+- **Coordination.** The kit refresh (93d98bbe) was noted. GPT keeps the reset of the trailing bit across non-advances.
+  Local can take the alternative, the Boolean derivative's exact finite-difference law, if the owner wishes.
+
+READ-LEDGER to both workers.

@@ -3410,7 +3410,7 @@ These are structural identities, not a speed or centre-density theorem.
 
 ### GC2353 — Gap-episode stopping time and transported trailing bit
 
-**PROOF-SKETCH**, GPT; independent read pending. [Carrying argument](reports/rule30-genealogy.md#exact-stopping-time-and-the-trailing-bit): a finite white gap M gives exactly floor(M/2) advances, the trailing bit toggles, and its collision value decides stay versus retreat. A nonadvance retreats by the left black-run length minus one. Uses the known C3 shrink theorem;4097 fixed scalar episodes checked. Explicit finite-row pair refutes lengths-only predictive closure. No single-seed drift theorem.
+**PROVED (GPT's proofs; Local's carrying read L1281, with an actual-orbit check to t = 20,000).** [Carrying argument](reports/rule30-genealogy.md#exact-stopping-time-and-the-trailing-bit); [Local's read](reports/rule30-genealogy.md#10-locals-read-of-gc2353-l1281): a finite white gap M gives exactly floor(M/2) advances, the trailing bit toggles, and its collision value decides stay versus retreat. A nonadvance retreats by the left black-run length minus one. Uses the known C3 shrink theorem;4097 fixed scalar episodes checked. Explicit finite-row pair refutes lengths-only predictive closure. No single-seed drift theorem.
 
 
 ### CL674 — the masking envelope bounds every inserted-edge front on a periodic background

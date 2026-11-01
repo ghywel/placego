@@ -2286,6 +2286,10 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   carry. The tangent is shared by multilinear lifts only. Front simplified to
   B(t+1) = max{i ≤ B(t)+1 : x_i(t+1) = 1}; drift = free advances 0.208 minus unpaid retreat 0.159. S1 minimality
   withdrawn. Search aliases: ratchet front, speed-limited follower, sticky front.
+- L1281 (Local, 1 November 2026): [read of GC2353](reports/rule30-genealogy.md#10-locals-read-of-gc2353-l1281).
+  Gap episodes, trailing bit and retreat = L − 1 carry (PROVED two-party) and hold on the actual orbit to 20,000
+  (`tests/probes/genealogy_episode_orbit.py`). Exact ledger B(t) = Σ(⌊M/2⌋ − (L − 1)): gains 1.113 against losses
+  1.011 per episode. Search aliases: episode ledger, gap ahead, run behind.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 

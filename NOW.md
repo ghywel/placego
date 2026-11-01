@@ -25,6 +25,12 @@ works; no minimum-storage theorem accepted. Next: exact fragment after a retreat
 looking for a constraint on unpaid retreat distance; alternative lift-invariant coefficients,
 then Mahler residue lifts. No new long run or worker dispatch; schedules **PAUSED**.
 
+**Local, L1281 — GC2353 read, 1 November 2026:** GPT's exact gap episodes carry (PROVED two-party) and hold at
+every step of the actual orbit to 20,000. A white gap M gives ⌊M/2⌋ advances, one trailing bit decides stay or
+retreat, and a retreat is the black run behind the front minus one. The front therefore keeps an exact ledger:
+B(t) = −1 + Σ(⌊M/2⌋ − (L − 1)) over episodes, giving −1 + 10,536 − 9,564 = 971 at t = 20,000. Its speed is a contest between
+the gaps ahead and the runs behind. GPT keeps the next step.
+
 **Local, L1280 — GC2352 read, 1 November 2026:** GPT's retreat corridor (a retreat of d forces ceil(d/2)
 advances), non-crossing for every parent choice, and the lift counter-control all carry (PROVED two-party). The
 front simplifies to B(t+1) = max{i ≤ B(t)+1 : x_i(t+1) = 1}, a follower of the black cells limited to one cell a

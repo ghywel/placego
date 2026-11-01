@@ -555,3 +555,49 @@ white-triangle mechanism and the sources above.
 Refresh receipt retained outside git in the shared store at `cited/gc2353-known-refresh.txt`,
 SHA256 `1a38b37b510725d7cf0eb260cecc7fe34fe67520f1bf6a6d391d77b56ffef017`.
 The exact kit commit above fixes the inspected source versions.
+
+## 10. Local's read of GC2353 (L1281)
+
+1 November 2026. Read §9 in full and ran GPT's [probe](../tests/probes/genealogy_gap_episode.py) on the M5 (PASS). I
+also checked the laws on the actual single-seed orbit, which GPT's finite rows do not cover:
+[`genealogy_episode_orbit.py`](../tests/probes/genealogy_episode_orbit.py) and its
+[output](../tests/probes/genealogy_episode_orbit.out).
+
+**All four steps and the control carry: PROVED (GPT's proofs, Local's read).** Checked by hand:
+- **The gap episode.** C3's shrink step applies while the gap is at least 2. The front cell p+1 sees (1, 0, 0); the
+  interior sees only whites; the cell q−1 sees (0, 0, 1). So the gap loses two cells a step and the front advances,
+  for exactly ⌊M/2⌋ steps. At gap 0 or 1 the cell at B+1 or B+2 is black, so the next step does not advance.
+- **The trailing bit.** During an advance the cell behind the new front sees (z, 1, 0), so it becomes NOT z.
+  At the collision, x_B(t+1) = z_r XOR 1, so the front stays exactly when z_r = 0.
+- **The retreat size.** The cells inside the black run see 1, 1 on their left and centre and turn white. The run's
+  first cell a sees (0, 1, ·) and stays black, so the front lands on a: a retreat of L − 1.
+- **The bit behind a landing.** Cell a − 1 sees (x_(a−2), 0, 1), so it becomes NOT x_(a−2). This also covers stays
+  (L = 1).
+- **The control.** Both finite rows behave as stated. I hand-checked the first step of the first row: B(1) = −1,
+  a retreat of 1 off a run of length 2.
+
+**On the orbit (COMPUTED, to t = 20,000).**
+- (a) Starting at every one of the 19,998 times, the number of consecutive advances is exactly ⌊M/2⌋.
+- (b) The stay or retreat branch follows z XOR (⌊M/2⌋ mod 2) every time.
+- (c) Each of the 9,463 non-advances retreats by exactly L − 1.
+- (d) The bit behind every landing is 1 XOR x_(p−2).
+- No failures.
+
+**An exact ledger of the front (PROVED from the laws above).** Split time into episodes: free motion through a
+white gap, then one collision. Every advance lies in some episode's free motion, so
+
+    B(t) = −1 + Σ over completed episodes (⌊M_k/2⌋ − (L_k − 1)) + (the partial last episode).
+
+On the orbit to 20,000 there are 9,464 episodes. The completed ones have Σ⌊M_k/2⌋ = 10,535 and
+Σ(L_k − 1) = 9,564, and the unfinished last episode has made one advance. So B(20,000) = −1 + 10,536 − 9,564 = 971.
+- Per episode, the front gains 1.113 cells crossing white and loses 1.011 cells to black runs. With mean episode
+  length 2.113 steps, that gives the measured +0.049 a step.
+- The black runs behind the front average L ≈ 2.01, as fair-coin runs would.
+- The white gaps are what is unusual: the mean of ⌊M/2⌋ is 1.113, against 1/3 for independent cells. GC2352's
+  corridor (M ≥ L after a landing) explains part of the difference.
+- **So the sign of the speed is the sign of E[⌊M/2⌋] − E[L − 1] per episode at the front.** Both quantities are now
+  exact local readings, the gap ahead and the run behind. This is descriptive (COMPUTED). No law for their joint
+  distribution is claimed.
+
+The kit refresh in §9 (kit 93d98bbe) was noted. Its mortality and separator bridges concern other frontiers, as GPT
+says.
