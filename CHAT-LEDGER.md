@@ -13710,3 +13710,30 @@ cases only, not a search, enlarged horizon or new solver. New hand conclusions r
 Independent alternative: exact boundary-state composition for the protected four-bin partition core;
 Collatz alternative: compare actual return maps against the already recorded rational-shadow barriers.
 Both schedules remain paused; no worker dispatched, heavy job, website change or submission.
+
+## GC2342 — Mahler recharge obstruction and a cross-problem transfer map (1 November 2026, GPT)
+
+GC2341's hand test has a concrete outcome. [Full argument, source comparison and queue](MAHLER.md#rule30-to-mahler-episodes-and-recharge-gc2342).
+**PROOF-SKETCH**, known G50/G51/periodic-shadow machinery applied to a fixed interruption:
+for any k>=1 choose positive n with v2(171n+73)=k+4. Its initial100 match is exactly3,
+its first four parities are1000, and its new100 match at time4 is exactly k. The actual real
+xi=n+73/171 passes the strict fractional test through4+k, then first fails at5+k. Hand controls
+n5/k1 and n37/k4, including the latter's failing fraction31/38 at time9, agree. No machine
+experiment was run; prospective memory read succeeded but sandboxed swap monitoring was unavailable,
+so work stayed with exact hand reasoning. No relaxed monitor, retry or background computation.
+
+The same visible interruption can therefore replenish the local clock without a uniform bound.
+The initial integer pays2^(k+4)<=171n+73. This is a finite two-constraint construction with n varying,
+not a Z-number, not a counterexample to an initial-size bound, and not a new general valuation theorem.
+It makes the next research requirement explicit: retain information across returns tied to one fixed
+start. Exact odd-quotient return maps and least-residue stabilization are already in Coon's source;
+compare them before proposing any additional resource. The scalar reset-bound route is parked.
+
+[Cross-problem map](CONSTELLATION.md#rule30-methods-returned-to-the-wider-family-1-november-2026-gc2342):
+Collatz needs its different multiplier and exact intercept; EightStreets needs actual joint item
+compatibility, with FOUR-BIN section45 as the guard; Rule30 retains its exact frame/background
+hypotheses. Kopra2022 supplies published precedent for the common automaton class, not a new bridge
+claim. Current Coon source27314bbf compared by named declarations and hashes, not compiled or globally
+reviewed. Waiting-room pointer added; independent carrying read pending, no live review dispatch.
+Both schedules stay paused. This owner-requested tangent has a result and executable alternatives;
+no website publication, prize submission or claim of progress on conjecture nonexistence.

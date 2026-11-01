@@ -11,6 +11,11 @@ PRIOR-ART.md ("Mahler's 3/2 problem: survey at the room switch").*
 
 **No proof, nothing claimed.**
 
+**1 November 2026, GC2342:** the owner reopened cross-problem transfer from Rule30.
+[The episode/recharge investigation below](#rule30-to-mahler-episodes-and-recharge-gc2342)
+gives an explicit obstruction to a local countdown argument, using known coupling tools.
+It is a solo PROOF-SKETCH application, not a new conjecture solution or novelty claim.
+
 **The problem (Mahler 1968).** Is there a real xi > 0 with every fractional part {xi (3/2)^n} in [0, 1/2), a
 *Z-number*? Mahler conjectured there is none. It carries no cash prize.
 
@@ -312,3 +317,150 @@ below is changed. The proofs this room cites have pages in plain words:
        common prefix of a0's code and (100)^infinity.
    - Nothing here touches Mahler's conjecture itself, and the author says so: the wall is the same one, the gap
      between the 2-adic set and one positive integer.
+
+## Rule30 to Mahler: episodes and recharge (GC2342)
+
+**Status:** PROOF-SKETCH, GPT, 1 November 2026; independent carrying read pending.
+An explicit application of known G50/G51 and the known periodic-shadow valuation law.
+No new general theorem, literature priority, kernel replay or submission is claimed.
+
+### The pull and the question
+
+The Rule30 ether-episode work succeeded by tracking the first disagreement with a periodic background,
+then proving that a suitable quantity cannot be replenished along the relevant evolution. Import the
+question, not the Rule30 Boolean identity: **can the arithmetic countdown for a Mahler periodic pattern
+be replenished by a short interruption?** If yes, any global argument needs more memory than that clock.
+GC2341 records the prediction and counterfactual before the carrying derivation was written here.
+
+An *episode* here is a consecutive run of parities matching a specified periodic word, with its starting
+position fixed. A *phase* says which position in that word is next. A *reset* below means the explicit
+four-step word1000, not a claim that the full dynamical state forgets its past. Bits1/0 mean odd/even.
+Write F(n)=ceil(3n/2). For a nonzero integer z, v2(z) is the number of factors of2 dividing z.
+The clock v2(19n+9) is exactly the number of initial parities matching100100... (known machinery).
+
+### A fixed interruption permits unbounded recharge
+
+For every integer k>=1 there is a positive integer n such that:
+
+1. Its initial match to100100... has length exactly3.
+2. Its first four parities are1000, and at time4 its match to100100... has length exactly k.
+3. The actual positive real number xi=n+73/171 stays in the required fractional half-interval
+   through time4+k and first leaves it at time5+k.
+
+Thus this is not merely a formal bit word, nor an arithmetic example that already failed the fractional
+test. It has both forms of finite compatibility. The integer n changes with k; no single infinite
+survivor is constructed.
+
+**Construction.** Put L=k+4. Choose n in the unique residue class
+
+    171*n+73 = 2^L (mod 2^(L+1)).
+
+The inverse of171 exists modulo every power of2 because171 is odd. The least residue n is positive
+and odd, and n<2^(k+5). The congruence gives v2(171n+73)=L. Reducing modulo32 gives n=5 (mod32),
+so3n+1 has exactly four factors of2. The first four parities are therefore1000 and
+
+    F^4(n)=(81*n+27)/16,
+    9*(19*n+9)=(171*n+73)+8,
+    19*F^4(n)+9=9*(171*n+73)/16.
+
+Consequently the first clock equals3, while the clock after the four-step interruption equals k.
+This already refutes a uniform recharge bound depending only on that first clock, phase and interruption.
+
+**Fractional and endpoint guard.** Use the infinite formal word1000(100)^infinity. Its fractional
+values, obtained from G50's tail sum, start
+
+    u0=73/171, u1=8/57, u2=4/19, u3=6/19,
+    u4=9/19, u5=4/19, u6=6/19, followed by this three-cycle.
+
+Every value is strictly below1/2 and nonnegative. The negative rational a_t=-u_t follows the corresponding
+integer branches (parity for an odd-denominator rational means numerator parity after reduction).
+Initially n-a0=n+73/171 has valuation L. While the two parities agree, their difference is multiplied
+by3/2, reducing this valuation by exactly one. Induction gives agreement for t<L and opposite parity
+at t=L. Until time L, the identities n_t+u_t=xi*(3/2)^t hold. At the next step, the opposite parity
+changes the fractional part by1/2 modulo1. It is u_(L+1)+1/2, which lies in[1/2,1). This proves the
+claimed first failure at L+1, not merely an eventual failure.
+
+**Hand control.** Take n=37. Then171n+73=6400=2^8*25, hence k=4. Its integer orbit begins
+
+    37,56,84,126,189,284,426,639,959.
+
+The parities are100010011: first disagreement with100100... at time3, followed by exactly four
+matches from time4 before disagreement at time8. For xi=37+73/171 the fractional part at time9 is
+6/19+1/2=31/38, the first failure. The smaller control n=5 gives L=5 and k=1. These are hand
+substitutions, not a machine census. No numerical research job was launched: a prospective host
+preflight could read free/inactive memory but its sandboxed swap query was unavailable; the block
+continued with the exact hand argument instead of relaxing monitoring or launching a job.
+
+**What pays for a long return?** Necessarily
+
+    2^(k+4) <= 171*n+73.
+
+The initial integer must grow at least exponentially with the desired return length. This is the
+information discarded by recording only the three-tick first episode and the extra zero. The construction
+does not defeat a bound that retains initial size, a full residue or other information tied to the start.
+
+### Which further constraints are already known
+
+G51 says that any T-bit word determines exactly one integer residue modulo2^T. Every finite
+concatenation of100 and1000 extends to an infinite fractional word with one-gaps at least3, so every
+tail is at most9/19. It therefore has a positive-integer realization for its finite duration. This is
+a **known consequence of G50/G51**, not an additional discovery: excluding a finite word merely because
+it is a difficult arrangement of these episodes cannot work uniformly over all starting integers.
+
+The fixed-start question is different. For a single infinite word, its least compatible residues r_T
+obey r_(T+1)=r_T or r_T+2^T. An ordinary nonnegative integer realizes the whole word exactly when these
+residues eventually stop changing. A useful global resource must constrain this continuing choice,
+or something equally strong; local admissibility plus a decreasing within-episode clock is insufficient.
+Even the infinite tail1000(100)^infinity itself has no positive integer realization: it would require
+171n+73 divisible by every power of2. Its finite positive witnesses are not an infinite witness.
+
+### Source comparison and exact scope
+
+Record searched: G50/G51; GC666/667 and GC929; MAHLER's contributor section; COLLATZ-PRIZE sections5/9;
+the October25 [Collatz appraisal](reports/rstation/GPT-COLLATZ-TO-RULE30-APPRAISAL-20261025.md);
+Rule30 episode report and actual kit `Rule30EtherEpisode`/`Rule30EtherGrounding` at the GC2340
+complete snapshot f1cb20be4c959ee1d92d99f3eafdfcaa945aa63d; website trio/carry/technical pages;
+targeted residue, periodic-prefix, reset and valuation searches. The kit/portal snapshot was completed
+at13:58:37Z on1November; this entry does not claim another complete external refresh.
+
+Coon's current [source at27314bbf](https://github.com/jjc16/mahler-3-2-lean4/tree/27314bbfcb2728b5da4ac086237bc483c1a450ef)
+was fetched. Relevant already-existing declarations include `orbit_parity_eq_upto_iff_mod_two_pow`,
+`exists_pos_seed_iff_seedResidue_stabilizes_pos`, `local_prefix_first_defect_valuation_lock`,
+`single_block_signed_defect_identity` and `defectCocycle_residual_eq_growing_boundary_affInv`.
+In particular the latter explicitly identifies a growing boundary quantity, not a descending rank.
+The targeted source read is not a complete carrying read or compilation of this newer repository;
+the historical clean-build receipts above remain pinned to their older commits.
+
+| Source at27314bbf | SHA256 |
+|---|---|
+| SparseDefectCocycleAndValuationLock.lean | 978aeb0a56a21b63732c1f63e109b7d9da234ac156e94770497caf45ba1be041 |
+| ExactSeedResidueTreeAndStabilization.lean | b005a032ad4f483845bac8518ded93c27c740364b9564ae1c0517fb92b794a05 |
+| AperiodicSlackCocycle.lean | b230c1a26157b53b94e443263e6799fa50e34a4828ed6571bce6f8100faf8884 |
+
+The broader bridge is already primary literature: [Kopra2022](https://arxiv.org/html/2202.13809v1)
+places Rule30 and fractional multiplication automata in a common expansive class and explicitly
+transfers number-theoretic ideas to automata. [Kari–Kopra2017](https://www.numdam.org/item/ITA_2017__51_4_191_0/)
+uses automaton traces to study fractional multiplication. These are precedent for the programme,
+not proofs that our binary local identities transfer to the six-symbol multiplication automaton.
+Flatto–Lagarias–Pollington1995 remains prior art for the underlying integer/fraction separation.
+No paywalled Parry source is required for the argument here.
+
+### Durable queue
+
+- **Current result:** the displayed unbounded recharge application awaits an independent carrying read,
+  especially the strict fractional endpoint and the quantifier that n varies with k.
+- **Next executable investigation:** write the exact returns on the *odd quotients* for successive
+  odd-step gaps3 and4, then compare every proposed resource against the existing theorem
+  `odd_quotient_transition_identity`: 2^(c_next)*u_next=3^c*u+1. Test any proposed descent first on
+  the displayed family and the fixed-start residue condition. The discriminating requirement is a
+  cross-return constraint absent from a single valuation, not another repeat bound or longer census.
+- **Cold:** scalar episode-clock recharge bounds; reopen only with an additional state variable or
+  a genuinely restrictive hypothesis that excludes this family. Finite survival is not infinite survival.
+- **Warm alternative:** Collatz return-map compositions, retaining the number of odd steps and the
+  exact affine intercept; compare the known positive-integer shadows before proposing a descent.
+- **Independent curiosity:** EightStreets' protected partition core: can a finite boundary description
+  retain contested items and counts under an actual reduction? Use FOUR-BIN-PARTITIONS section45's
+  shared-zero obstruction as an adversarial control; scalar slack alone is already inadequate.
+- **Back to Rule30:** distinguish a measured mismatch clock from a globally non-replenishable resource.
+  The proved ether potential establishes the latter only in its exact background/frame/hypotheses.
+  No Mahler conclusion is imported as a theorem about the wall or centre column.

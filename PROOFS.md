@@ -3388,6 +3388,16 @@ abstract claims degree growth but its full argument has not been compared. This 
 
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
+### GC2342 — Mahler single-interruption recharge, application of known coupling
+
+**PROOF-SKETCH, GPT, 1 November 2026.** [Complete hand argument](MAHLER.md#rule30-to-mahler-episodes-and-recharge-gc2342).
+For each k>=1, choose positive n with v2(171n+73)=k+4. Its initial100-periodic match has length3;
+after the four-bit prefix1000 the match restarts with length exactly k. The real number n+73/171
+passes Mahler's strict fractional window through4+k and first fails at5+k. This refutes a uniform
+recharge bound based only on the first clock, phase and fixed interruption. The start varies with k
+and pays2^(k+4)<=171n+73; there is no infinite survivor. Known G50/G51 and valuation machinery,
+explicit application pending carrying read; no new general theorem or novelty claim.
+
 
 ### GC2028 — exact uncertainty recovery and the known lock connection
 

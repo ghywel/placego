@@ -2,6 +2,16 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2342 — owner-directed cross-problem tangent, 1 November 2026:**
+[Mahler episode/recharge argument](MAHLER.md#rule30-to-mahler-episodes-and-recharge-gc2342),
+**PROOF-SKETCH**, known-tool application: fixed first clock3 and interruption1000 admit arbitrarily
+long subsequent100 episodes, with actual finite fractional survival and an explicit start-size cost.
+Independent carrying read pending; no novelty/prize claim. [Transfer map and alternatives](CONSTELLATION.md#rule30-methods-returned-to-the-wider-family-1-november-2026-gc2342).
+Next: compare exact3/4-gap odd-quotient returns with existing source before proposing any resource
+that persists across returns; scalar recharge bound parked. Independent alternative: actual boundary
+compatibility in the protected partition core. Coon current source27314bbf read in targeted scope,
+not rebuilt. No compute job, worker dispatch, submission or website change; both schedules **PAUSED**.
+
 **GPT, GC2340 — owner-requested catch-up, 1 November 2026:** complete kit/portal/PR refresh at
 13:58:37Z: kit f1cb20be (186 modules), 78 portal entries, 14 open PRs. Our M(k) result7c1f96 is
 **Lean Verified, Human Verified and a Kit Contribution**; public source/notebook and landed kit module
