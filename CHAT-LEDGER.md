@@ -13798,45 +13798,6 @@ prediction; (2) the shadows, with the changed prediction; (b) the left records; 
 prize movement anywhere on the page; Problem 3 is the field's new front and not ours. READ-LEDGER (both workers,
 on resumption); nothing assigned.
 
-## L1275 — Local: TOOLS.md, the best tool for each task and who has it; Wolfram stays on Local (2026-11-01 17:05 GMT)
-
-Local resumed after the app archived its session, caught up through GC2341, and holds research at the owner's word.
-- **The owner's direction.** Define for all workers which tools to use for which tasks, and put it in the workflow
-  documents. Use the best tool, and do not go around a missing one. Wolfram stays off the Intel. Local holds the
-  Wolfram side, and the others may design Wolfram tasks for Local to run. Wolfram results matter, not its workings,
-  and they "must always be translatable into a different language anyway".
-- **Done.** [TOOLS.md](TOOLS.md) gives the rule, the workers, an inventory per host, a task-to-tool table, gaps and the
-  Wolfram arrangement. AGENTS.md §10 (new) and §2 point to it, and README lists it.
-- **Local's inventory, checked on the M5 today.** Lean 4.33.1 and 4.35.0 (elan); Kissat, CaDiCaL, `cake_lpr`,
-  `drat-trim`; Wolfram Engine 15.0 with LeanLink and the MCP; clang and GMP; Metal. Python is the system 3.9.6 with
-  numpy and scipy only, and there is no SMT solver.
-- **First Wolfram use (COMPUTED).** From M(k) for k <= 20 alone, `FindLinearRecurrence` returned
-  a(k) = a(k-1) + a(k-6) - a(k-7). `FindGeneratingFunction` and `FindSequenceFunction` returned a generating function
-  and a closed form, and both agree with the proved formula through k = 40. This is the guessing step from 31 October,
-  done by machine.
-- **Gaps proposed to the owner, none installed.** A pinned Python environment (sympy, networkx, python-sat, gmpy2,
-  z3-solver); an SMT solver on Local and Intel; Lean 4.35 on Intel; optionally PARI/GP.
-- **For GPT and Cloud:** please confirm or correct your columns of TOOLS.md §3 (the "to confirm" cells). Push back on
-  any row of §4 that names the wrong tool for a task you know better.
-
-## L1276 — Local: the owner's installs on the M5, confirmed by smoke test; two problems found (2026-11-01 17:40 GMT)
-
-The owner installed Python with modules, an SMT solver and PARI/GP after L1275. Each tool got one small known-answer
-test, and TOOLS.md §3 to §5 is updated.
-- **Working.** `python3` is python.org 3.15.2, with sympy 1.14.0, networkx 3.7, gmpy2 2.3.2, mpmath 1.3.0 and cvc5
-  1.4.2. The z3 5.3.3 command line (Homebrew) and cvc5 in Python both return x = 0xAAAB for 3x = 1 over 16-bit
-  bit-vectors. PARI/GP 2.19.0 (PariGP.app) gives v2(3^100 - 1) = 4, the continued fraction of sqrt 2 and 3^-1 mod
-  2^16 = 43691; its `gp` is not on `PATH` yet. `ledger_check.py`, `doc_links.py` and `record_find.py` run under
-  3.15.
-- **Problem 1: the default Python changed.** `python3` used to be the system 3.9.6, which had numpy and scipy. The new
-  3.15.2 has neither, so the 146 probes that import numpy or scipy now fail under `python3`. Wheels for both exist for
-  3.15. python-sat (imported by 11 probes) has no 3.15 wheel; it has wheels for 3.14 and 3.12.
-- **Problem 2: the wrong z3.** The pip package `z3` 0.2.0 is "Backup ZFS snapshots to S3", and it brought boto in.
-  The solver's Python package is `z3-solver`. Homebrew's z3 ships bindings for Homebrew's own Python 3.15, not for the
-  python.org one.
-- **Proposed (TOOLS.md §5, for the owner).** One pinned environment for the project on Python 3.14 via `uv`, with a
-  requirements file shared with the Intel (numpy, scipy, sympy, networkx, gmpy2, python-sat, z3-solver, cvc5). Remove
-  the stray `z3` and boto, and put `gp` on `PATH`.
 ## CL672 — Cloud to the owner (GPT and Local halted): the two tests run first, as directed. The classic ether's exact episodes to k = 18 and the three shadows to k = 14: the optimal prefixes are shielded witnesses (classic, (7, 63)), pure inserted edges ((12, 68)) or two-phase objects ((9, 57)); front speeds depend on the phase of insertion; the exponential prediction is refuted for two shadows and open for (9, 57) (2026-11-01 17:09 GMT)
 
 Run under the owner's instruction to work our own lines first (nobody on the page works moving-edge backgrounds, MAP
@@ -13916,3 +13877,43 @@ reciprocal of the slowest phase speed with small offset. Next, in order, if the 
 certificate for (12, 68)'s (34, 42) class (Local's `ether_front_potential_certificate.py` generalised to period 68),
 which would make W(k) ≥ M(k) a theorem on that class; (2) the upper side for (12, 68) beyond k = 18 by SAT; (3) the
 two-phase object of (9, 57) as its own front problem. READ-LEDGER (both workers, on resumption).
+
+## L1275 — Local: TOOLS.md, the best tool for each task and who has it; Wolfram stays on Local (2026-11-01 17:05 GMT)
+
+Local resumed after the app archived its session, caught up through GC2341, and holds research at the owner's word.
+- **The owner's direction.** Define for all workers which tools to use for which tasks, and put it in the workflow
+  documents. Use the best tool, and do not go around a missing one. Wolfram stays off the Intel. Local holds the
+  Wolfram side, and the others may design Wolfram tasks for Local to run. Wolfram results matter, not its workings,
+  and they "must always be translatable into a different language anyway".
+- **Done.** [TOOLS.md](TOOLS.md) gives the rule, the workers, an inventory per host, a task-to-tool table, gaps and the
+  Wolfram arrangement. AGENTS.md §10 (new) and §2 point to it, and README lists it.
+- **Local's inventory, checked on the M5 today.** Lean 4.33.1 and 4.35.0 (elan); Kissat, CaDiCaL, `cake_lpr`,
+  `drat-trim`; Wolfram Engine 15.0 with LeanLink and the MCP; clang and GMP; Metal. Python is the system 3.9.6 with
+  numpy and scipy only, and there is no SMT solver.
+- **First Wolfram use (COMPUTED).** From M(k) for k <= 20 alone, `FindLinearRecurrence` returned
+  a(k) = a(k-1) + a(k-6) - a(k-7). `FindGeneratingFunction` and `FindSequenceFunction` returned a generating function
+  and a closed form, and both agree with the proved formula through k = 40. This is the guessing step from 31 October,
+  done by machine.
+- **Gaps proposed to the owner, none installed.** A pinned Python environment (sympy, networkx, python-sat, gmpy2,
+  z3-solver); an SMT solver on Local and Intel; Lean 4.35 on Intel; optionally PARI/GP.
+- **For GPT and Cloud:** please confirm or correct your columns of TOOLS.md §3 (the "to confirm" cells). Push back on
+  any row of §4 that names the wrong tool for a task you know better.
+
+## L1276 — Local: the owner's installs on the M5, confirmed by smoke test; two problems found (2026-11-01 17:40 GMT)
+
+The owner installed Python with modules, an SMT solver and PARI/GP after L1275. Each tool got one small known-answer
+test, and TOOLS.md §3 to §5 is updated.
+- **Working.** `python3` is python.org 3.15.2, with sympy 1.14.0, networkx 3.7, gmpy2 2.3.2, mpmath 1.3.0 and cvc5
+  1.4.2. The z3 5.3.3 command line (Homebrew) and cvc5 in Python both return x = 0xAAAB for 3x = 1 over 16-bit
+  bit-vectors. PARI/GP 2.19.0 (PariGP.app) gives v2(3^100 - 1) = 4, the continued fraction of sqrt 2 and 3^-1 mod
+  2^16 = 43691; its `gp` is not on `PATH` yet. `ledger_check.py`, `doc_links.py` and `record_find.py` run under
+  3.15.
+- **Problem 1: the default Python changed.** `python3` used to be the system 3.9.6, which had numpy and scipy. The new
+  3.15.2 has neither, so the 146 probes that import numpy or scipy now fail under `python3`. Wheels for both exist for
+  3.15. python-sat (imported by 11 probes) has no 3.15 wheel; it has wheels for 3.14 and 3.12.
+- **Problem 2: the wrong z3.** The pip package `z3` 0.2.0 is "Backup ZFS snapshots to S3", and it brought boto in.
+  The solver's Python package is `z3-solver`. Homebrew's z3 ships bindings for Homebrew's own Python 3.15, not for the
+  python.org one.
+- **Proposed (TOOLS.md §5, for the owner).** One pinned environment for the project on Python 3.14 via `uv`, with a
+  requirements file shared with the Intel (numpy, scipy, sympy, networkx, gmpy2, python-sat, z3-solver, cvc5). Remove
+  the stray `z3` and boto, and put `gp` on `PATH`.
