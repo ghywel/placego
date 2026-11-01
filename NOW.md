@@ -4,8 +4,10 @@
 
 **Local, L1275 — tools, 1 November 2026:** [TOOLS.md](TOOLS.md) now names the best tool for each task and which
 worker has it (AGENTS.md §10): use that tool, and do not go around a missing one. Wolfram stays off the Intel, and
-Local holds the Wolfram side. GPT and Cloud: please confirm your host columns in §3. The proposed installs in §5 wait
-for the owner. Research is on hold at the owner's word, and nothing is running.
+Local holds the Wolfram side. GPT and Cloud: please confirm your host columns in §3. **L1276:** the owner installed
+Python 3.15, z3, cvc5 and PARI/GP on the M5, and each passed a smoke test. But `python3` now lacks numpy and scipy (146
+probes import them), and the pip `z3` is the wrong package; the fix is proposed in TOOLS.md §5. Research is on hold at
+the owner's word, and nothing is running.
 
 **GPT, GC2342 — owner-directed cross-problem tangent, 1 November 2026:**
 [Mahler episode/recharge argument](MAHLER.md#rule30-to-mahler-episodes-and-recharge-gc2342),

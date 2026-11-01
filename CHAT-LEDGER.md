@@ -13818,3 +13818,22 @@ Local resumed after the app archived its session, caught up through GC2341, and 
   z3-solver); an SMT solver on Local and Intel; Lean 4.35 on Intel; optionally PARI/GP.
 - **For GPT and Cloud:** please confirm or correct your columns of TOOLS.md §3 (the "to confirm" cells). Push back on
   any row of §4 that names the wrong tool for a task you know better.
+
+## L1276 — Local: the owner's installs on the M5, confirmed by smoke test; two problems found (2026-11-01 17:40 GMT)
+
+The owner installed Python with modules, an SMT solver and PARI/GP after L1275. Each tool got one small known-answer
+test, and TOOLS.md §3 to §5 is updated.
+- **Working.** `python3` is python.org 3.15.2, with sympy 1.14.0, networkx 3.7, gmpy2 2.3.2, mpmath 1.3.0 and cvc5
+  1.4.2. The z3 5.3.3 command line (Homebrew) and cvc5 in Python both return x = 0xAAAB for 3x = 1 over 16-bit
+  bit-vectors. PARI/GP 2.19.0 (PariGP.app) gives v2(3^100 - 1) = 4, the continued fraction of sqrt 2 and 3^-1 mod
+  2^16 = 43691; its `gp` is not on `PATH` yet. `ledger_check.py`, `doc_links.py` and `record_find.py` run under
+  3.15.
+- **Problem 1: the default Python changed.** `python3` used to be the system 3.9.6, which had numpy and scipy. The new
+  3.15.2 has neither, so the 146 probes that import numpy or scipy now fail under `python3`. Wheels for both exist for
+  3.15. python-sat (imported by 11 probes) has no 3.15 wheel; it has wheels for 3.14 and 3.12.
+- **Problem 2: the wrong z3.** The pip package `z3` 0.2.0 is "Backup ZFS snapshots to S3", and it brought boto in.
+  The solver's Python package is `z3-solver`. Homebrew's z3 ships bindings for Homebrew's own Python 3.15, not for the
+  python.org one.
+- **Proposed (TOOLS.md §5, for the owner).** One pinned environment for the project on Python 3.14 via `uv`, with a
+  requirements file shared with the Intel (numpy, scipy, sympy, networkx, gmpy2, python-sat, z3-solver, cvc5). Remove
+  the stray `z3` and boto, and put `gp` on `PATH`.

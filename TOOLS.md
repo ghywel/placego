@@ -30,20 +30,22 @@ unavailable and finding some other solution, but i would always rather we use th
 
 ## 3. Inventory: who has which tool (snapshot 2026-11-01)
 
-Local's column was checked on the machine on 2026-11-01 (L1275). GPT's and Cloud's columns hold only what the record
-shows; their workers confirm or correct them.
+Local's column was checked on the machine on 2026-11-01 (L1275), and again after the owner's installs the same day,
+with a smoke test of each new tool (L1276). GPT's and Cloud's columns hold only what the record shows; their workers
+confirm or correct them.
 
 | Tool | Local (M5) | GPT (Intel) | Cloud (sandbox) |
 |---|---|---|---|
-| Python 3 | system 3.9.6 with numpy 2.0.2 and scipy 1.13.1 only (no sympy, networkx, python-sat, gmpy2, z3); Homebrew 3.12 and 3.14 and `uv` present but unused by the probes | to confirm | to confirm |
+| Python 3 | `python3` is now python.org **3.15.2**, with sympy 1.14.0, networkx 3.7, gmpy2 2.3.2, mpmath 1.3.0 and cvc5 1.4.2. **Missing there:** numpy and scipy (146 probes import them), z3-solver, and python-sat (no 3.15 wheel; 11 probes import it). See §5. The old system 3.9.6 (`/usr/bin/python3`) still has numpy and scipy | to confirm | to confirm |
 | C | Apple clang; GMP (Homebrew) | to confirm (record: C probes run) | to confirm |
 | GPU compute | Metal on the M5 GPU (`.metal` kernels in `tests/probes`) | RX 6600, selected explicitly (record); API to confirm | none |
 | SAT solvers | Kissat, CaDiCaL | to confirm (record: one Intel certificate replay, GC2333) | to confirm |
 | Proof-certificate checkers | `cake_lpr` (verified LRAT checker), `drat-trim` | to confirm | none |
 | Lean 4 | `elan` with 4.33.1 and **4.35.0** (the kit's version) | **4.33.1 only** (record) | to confirm |
 | Wolfram | Wolfram Engine 15.0, `wolframscript`, LeanLink, the Wolfram MCP | **none, by the owner's decision** | none |
-| SMT (z3, cvc5) | not installed (§5) | to confirm | to confirm |
-| PARI/GP, Sage | not installed | to confirm | to confirm |
+| SMT (z3, cvc5) | z3 5.3.3 command line (Homebrew); cvc5 1.4.2 as Python bindings in `python3`, with no command line. Both solved a 16-bit bit-vector test (the inverse of 3 mod 2^16) | to confirm | to confirm |
+| PARI/GP | **2.19.0** (PariGP.app). The `gp` binary is `/Applications/PariGP.app/Contents/Resources/bin/gp-2.19`, not yet on `PATH`; it passed a valuation, continued-fraction and modular-inverse test | to confirm | to confirm |
+| Sage | not installed | to confirm | to confirm |
 | `gh` (GitHub CLI) | signed in | to confirm | none |
 | `record_find.py`, `known_find.py --new` | yes | yes (GC2340 complete refresh) | portal only; the kit's PR index is unreachable |
 | `run_capped.py` | yes | yes (record) | not applicable |
@@ -58,8 +60,8 @@ shows; their workers confirm or correct them.
 | A finite "does such a configuration exist?" question | SAT: Kissat or CaDiCaL; for UNSAT, an LRAT proof checked by `cake_lpr`, with `drat-trim` as a second checker | Local; GPT once §3 is confirmed | SAT: the witness checks itself. UNSAT: a machine proof of that finite case once the certificate checks |
 | Guessing a law from exact data (a closed form, recurrence or generating function) | Wolfram `FindSequenceFunction`, `FindLinearRecurrence`, `FindGeneratingFunction`, `FindFormula` | Local | CONJECTURE until proved |
 | Exact symbolic work: recurrences and sums, real inequalities, exact intervals, polynomials over GF(2), Boolean normal forms | Wolfram (`RSolve`, `Reduce`, `Resolve`, `CylindricalDecomposition`, `Interval`, `GroebnerBasis[..., Modulus -> 2]`, `BooleanConvert`) | Local | COMPUTED: no certificate; it becomes PROVED through a hand proof or Lean |
-| Exact number theory: big integers, 2-adic valuations, residues, continued fractions, lattice reduction | Wolfram to explore; the replayable probe in Python (sympy or gmpy2, §5) or C with GMP | Local explores; anyone replays | COMPUTED |
-| Finite questions about arithmetic with carries (Collatz, Mahler, the 3/2 map) as constraints | SMT over bit-vectors (z3 or cvc5) once installed (§5); a claim that needs a certificate is re-encoded as SAT with LRAT | Local, GPT | COMPUTED; certified via SAT and LRAT |
+| Exact number theory: big integers, 2-adic valuations, residues, continued fractions, lattice reduction | Wolfram to explore; PARI/GP as the fast open cross-check; the replayable probe in Python (sympy, gmpy2) or C with GMP | Local explores; anyone replays | COMPUTED |
+| Finite questions about arithmetic with carries (Collatz, Mahler, the 3/2 map) as constraints | SMT over bit-vectors: z3 (command line or Python) or cvc5 (Python); a claim that needs a certificate is re-encoded as SAT with LRAT | Local; GPT once §3 is confirmed | COMPUTED; certified via SAT and LRAT |
 | A formal proof for the kit or the portal | Lean 4.35, core, against a kit checkout at a recorded commit; standard axioms only | Local; GPT for development only until 4.35 is installed | machine proof of the stated theorem |
 | A portal notebook build and check | LeanLink in `WolframKernel -script` under `run_capped.py --track-tree` | Local only | — |
 | Hand proofs written in TeX | TeX, checked with `mathcheck/check.py FILE` | anyone | PROOF-SKETCH until the second read (AGENTS.md §4) |
@@ -70,17 +72,19 @@ shows; their workers confirm or correct them.
 
 ## 5. Gaps: proposed installs, waiting for the owner
 
-Nothing in this list is installed yet. Each item says what it would replace.
+The owner installed Python 3.15.2 with its modules, z3, cvc5 and PARI/GP on Local on 2026-11-01 (L1276). What is
+left:
 
-1. **A pinned Python environment on Local and Intel**, with exact versions in a requirements file: sympy, networkx,
-   python-sat, gmpy2 and z3-solver beside numpy and scipy. Today's system Python 3.9.6 has only numpy and scipy, which
-   pushes probes towards hand-rolled substitutes.
-2. **An SMT solver (z3, or cvc5) on Local and Intel**, for constraints with carries. Today these get hand-encoded as
-   SAT, which is the "going around" this page exists to stop.
-3. **Lean 4.35 on Intel**, so that GPT can validate against the kit's version. Until then, current-kit validation is
-   Local's.
+1. **Finish the Python set on Local.** `python3` (3.15.2) lacks numpy and scipy, so the 146 probes that import them
+   now fail under `python3`. The pip package named `z3` (0.2.0) is an unrelated ZFS-to-S3 backup tool, and it pulled
+   in boto; the solver's package is **z3-solver**. python-sat has no wheel for 3.15, but has one for 3.14 and 3.12.
+   Proposal: one pinned environment for the project on Python 3.14 (`uv`), with exact versions in a requirements file,
+   so that every module, python-sat included, comes from a wheel. The Intel would use the same file. Remove the
+   stray `z3` and boto.
+2. **Put `gp` on `PATH`**, or give the probes its full path.
+3. **The Intel's set.** Lean 4.35 so that GPT can validate against the kit's version (until then current-kit
+   validation is Local's), the same Python environment, and an SMT solver.
 4. **GPT and Cloud confirm their columns in §3.**
-5. Optional: **PARI/GP** as a fast open-source cross-check for Wolfram's number theory.
 
 ## 6. Wolfram (the owner, 2026-11-01)
 
