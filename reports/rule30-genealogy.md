@@ -3,6 +3,10 @@
 *Local, L1279, 1 November 2026, at the owner's direction. Builds on GPT's GC2351 (the 1..8 parent labels) and
 Local's L1278 (where the row already keeps each cell's parents).*
 
+**Review update (GC2352):** the two section6 hand steps are now PROVED, two-party.
+Section7 records the carrying read, qualifications to storage/speed claims, and two new
+PROOF-SKETCH consequences. The original account below is preserved.
+
 ## 1. The owner's question
 
 The owner, 1 November 2026: "what extra information can we encode alongside a cell's color which enriches our
@@ -241,3 +245,130 @@ edge cell.
 Induction from B(1) = −1 gives the rule and the interval property. Section 5 checks both on every row to 20,000.
 The mirror argument for a leftmost front needs only x_(L−2) = 0, one white cell instead of two. That is the asymmetry
 in two lines.
+
+## 7. GPT carrying review and next discriminating step (GC2352)
+
+1 November 2026. Read L1278/L1279, the complete report, both complete genealogy probes and
+retained outputs, L1278's parent-reader source, and the addressed review flag at 89573330.
+No long M5 run was replayed or reattributed to the Intel.
+
+**The two requested hand steps carry: PROVED (Local proof, GPT independent read).**
+For the designated C-at-011 tree the non-crossing argument is correct. More generally, a strict
+crossing could only join adjacent children p,p+1 to parents p+1,p respectively. Both parents would
+be black, so the child p+1 has left and centre inputs1,1 and must be white, a contradiction.
+Children at distance two can meet at a parent but cannot strictly cross. This also covers the R
+and coin tie-breaks. Family intervals mean intervals in the ordered list of black cells; white
+holes remain. The reach-front induction is correct: the bullet about cell B is conditional on
+that child being black. The left edge remains reached, so the fallback maximum always exists
+on this single-seed trajectory. It does not require an assumed distribution of neighbourhoods.
+The stronger all-choice non-crossing formulation above is a PROOF-SKETCH extension of the
+requested C-choice theorem until Local reads it.
+
+**Scope corrections for using the results.**
+- The middle founder dies at time2 only in the C-at-011 designated tree. The all-parent graph
+  retains its descendants; the R-at-011 output also retains that family through1500.
+- A black-parent connection records a possible line of black ancestry, not necessarily sensitivity
+  to a flip. At011 the right input is black but changing it does not change the output1.
+- The measured +0.045/+0.047 agreement is evidence, not a typical-speed theorem. B(t) tending to
+  infinity would imply eventual coverage of black centre cells, not coverage at every earlier
+  time, and would not itself prove how often the centre is black.
+- On arbitrary initial rows, the front rule describes the reach of an initially marked black
+  prefix (all black sites at or left of B), provided the fallback exists. It does not generally
+  describe descendants of the single black site B. In a solid five-black block the middle
+  founder has no black children at all, whereas the prefix front survives. The random-row
+  experiments compare a prefix interface with the seed's special left-founder interface;
+  they are not a single-founder survival experiment. The small probe includes this control.
+- S1's register construction is correct, but its claimed minimum is not established by saying
+  that k past rows require k independent bits. The rows are dynamically constrained; on finite
+  orbits the present whole row already determines them. A storage lower bound needs an explicit
+  locality/decoding model. The patch uses neighbouring registers, not just the register at one cell.
+- S2 requires N(i,0) congruent to x_i(0) modulo2, as the code correctly initializes it. S6's
+  centre departure formula has domain 0 <= i <= t.
+- T3 is a measured sample of minimal reconstruction widths for its stipulated all-completion
+  reader, not an information-theoretic storage bound or an all-depth linear-growth theorem.
+
+**Pull for the next step.** The intrinsic reach front is the warmest lead: it does not require
+choosing an arbitrary parent when two are available. Its observed advance bias invites a
+short exact explanation before any longer speed measurement. Does a retreat itself create a
+white corridor that forces subsequent advances? Separately, does the extra arithmetic digit
+belong to binary Rule30 or to the selected integer extension?
+
+Prediction before small controls: a retreat of d>=1 forces at least ceil(d/2) following +1 steps;
+and a different integer polynomial with exactly the same binary truth table can leave the
+second digit identically zero from binary starts. Counterfactual: one local finite-support
+front violating the corridor bound, or one binary triple on which the alternative polynomial
+is not the actual Rule30 bit, rejects that claim. Controls: all512 nine-bit zero-padded rows,
+every black cut point in each; all64 inputs to each mod4 identity; all16 four-bit crossing
+windows. Fixed tiny scalar truth-table checks only, no sampling, speed fit or substantial run.
+Record searched: L1279; GC2351/L1143; G121/G13; record_find and actual known index at kit f1cb20be,
+portal19:46:53Z (six integer-lift hits concern arc-code displacements, not this lift); GC1974's
+white-triangle argument concerns a different lineage and probability space. PRIOR-ART already
+records the companion paper: it was not wholly new to our record. Read Nersissian's actual
+[section3, Definitions1–2](https://arxiv.org/html/2609.25078v1#S3), which explicitly fixes the
+canonical lift because other polynomial lifts can differ. Read Bagnoli–Rechtman–Ruffo's
+[Boolean-derivative discussion](https://arxiv.org/html/cond-mat/9811159v1#S2). No novelty claim.
+
+### Retreats create a guaranteed recovery corridor
+
+**PROOF-SKETCH (GPT; independent carrying read pending).** Suppose B(t+1)=B(t)-d with d>=1.
+Write p=B(t+1). The next row is white on p+1,...,B(t), by the fallback definition. It is also
+white at B(t)+1: that site is black exactly in the advance case, which did not occur. Thus
+there are at least d+1 consecutive white cells immediately ahead of the new black front.
+
+If a black front p has m>=2 whites ahead, its next position is p+1. At that next time the sites
+p+2,...,p+m-1 are white, since all their inputs were white. This leaves at least m-2 whites
+ahead of the new front. Iterate: m whites guarantee floor(m/2) consecutive advances. Substituting
+m=d+1 proves
+
+    B(t+1+s) = B(t+1)+s,  0 <= s <= ceil(d/2).
+
+In particular **every retreat, including a one-cell retreat, is immediately followed by an
+advance**. Local's observation for retreats of at least two was correct but weaker than needed.
+The forced recovery offsets at least half the retreat distance, rounded up. It does not pay
+all the debt: the complete retreat-plus-guaranteed-recovery block has net displacement
+-floor(d/2). Nor does this imply that every syntactically allowed sequence of such blocks is
+realizable on the seed. It supplies neither a drift sign nor a speed theorem.
+
+The [independent scalar probe](../tests/probes/genealogy_review.py) checked every black cut in
+all512 nine-bit finite-support rows: 2304 cuts, 640 retreats (largest7) and769 forced subsequent
+advances. It separately checked non-crossing on16 four-bit windows. This is a bounded self-check
+of the new corridor consequence; the hand argument covers all finite retreat sizes.
+
+### The arithmetic carry depends on the chosen lift
+
+**PROOF-SKETCH specialization of known lift nonuniqueness; independent read pending.** Local's
+canonical polynomial P=a+b+c+bc has the asserted second-digit law. Let u=b+c-bc and instead use
+
+    Q(a,b,c) = a+u-2*a*u
+             = a+b+c-bc-2ab-2ac+2abc.
+
+On binary inputs u is exactly b OR c, and a+u-2au is exactly their XOR as an integer0 or1.
+Consequently Q maps binary rows to binary rows for all time, even when evaluated modulo4.
+Its higher digit is identically zero when initialized zero. Expanding at a=x_a+2h_a, etc.,
+modulo4 gives the same tangent coefficients as P but no source term:
+
+    h' = h_a + (1+x_c)*h_b + (1+x_b)*h_c  (mod2).
+
+For P the source is kappa=[exactly two black parents]. More generally replacing P by P+2R
+changes that source by R(x_a,x_b,x_c) modulo2 while retaining the colour and those tangent
+coefficients. Any Boolean source table can be chosen this way. This is not a defect in the
+canonical convention; it rules out interpreting its digit statistics as an intrinsic extra
+observable without specifying and justifying that convention. Nersissian section3 explicitly
+makes the convention and warns about nonuniqueness. The companion source was already partially
+read in our 7 October prior-art entry; Local's fresh search was not its first appearance here.
+The scalar probe checks both second-digit laws on all64 mod4 triples and Q=f on all8 binary triples.
+
+### Recommendation and executable queue
+
+1. **Current target: ancestry-front excursions.** Use the exact front law and white corridor,
+   without an independent-cell assumption. Next derive the exact row fragment remaining at the
+   end of a retreat's guaranteed recovery; determine which part is fixed by d and which still
+   depends on unrevealed outside bits. The useful outcome would be an exact return description
+   or a deterministic bound on the unpaid retreat distance. A larger speed fit does not decide it.
+   If two blocks only rediscover an uncontrolled outside word, park this description until a new
+   compatible-root constraint or bound is available.
+2. **Independent algebraic alternative:** classify what is common to the specified lifts (here,
+   the first-order coefficients), and ask for an observable that those coefficients actually
+   control in the binary orbit. Do not enlarge the digit census merely because mod8 is available.
+3. **Mahler remains warm:** GC2350's three-block residue lift, with its existing stabilization-gap
+   stop and 4,11,6 boundary alternative. No worker has been dispatched and schedules stay paused.

@@ -2,6 +2,16 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2352 — Local genealogy review and next pull:**
+[Carrying review](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352):
+L1279's designated non-crossing and single-seed reach-front induction both carry (**PROVED, two-party**).
+New **PROOF-SKETCH**: a retreat of d forces ceil(d/2) following advances; local scalar controls pass.
+The positive speed remains measured only. A different valid integer lift has zero higher digits,
+so the canonical lift's digit statistics are not intrinsic without its convention. S1's register
+works; no minimum-storage theorem accepted. Next: exact fragment after a retreat/recovery episode,
+looking for a constraint on unpaid retreat distance; alternative lift-invariant coefficients,
+then Mahler residue lifts. No new long run or worker dispatch; schedules **PAUSED**.
+
 **Local, L1279 — genealogy beside the colour, 1 November 2026:**
 [Six schemas and three tests](reports/rule30-genealogy.md), at the owner's direction.
 - The black family tree has an intrinsic **reach front**. The seed's left child's black descendants fill [−t, B(t)].
@@ -29,7 +39,7 @@ controls pass, and every probe compiles under 3.15. **GC2343:** Intel installs a
 [Exact labels and overlap](reports/rule30-exact-strip-knowledge.md#parent-labels-and-shared-parent-consistency-gc2351).
 Labels1..8 recover immediate parents; neighbour consistency recovers the reviewed a10 identity.
 Overwriting the labels can lose older ancestry: 00000/11111 give first centre tags1/8, then both1.
-All32 local windows checked; hand formulation PROOF-SKETCH, underlying L1143 identity reviewed.
+All32 local windows checked; formulation now PROVED by Local L1278, underlying L1143 identity reviewed.
 Next, if pursued: test the description against the retained eight-step lock without rebuilding
 an ancestry ladder. Mahler residue-lift alternative below remains warm. Schedules **PAUSED**.
 

@@ -2281,3 +2281,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   - Probes: `genealogy_schemas.py` and `genealogy_front.py`.
   - Search aliases: genealogy, family tree, dynasty, reach front, black lineage, Z/4 lift, dual numbers, carry
     digit, lineage register.
+
+- GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.

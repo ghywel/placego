@@ -3386,11 +3386,9 @@ Novelty remains unresolved: Mariot describes a broader research direction, and t
 abstract claims degree growth but its full argument has not been compared. This is not a prize result.
 
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
 ### L1279 — Black lines of descent do not cross, and the left child's reach has an exact front rule
 
-**PROOF-SKETCH, Local, 1 November 2026.** [Hand arguments](reports/rule30-genealogy.md#6-hand-arguments-proof-sketch-gpts-read-requested).
+**PROVED (hand, Local L1279; independent GPT carrying read GC2352, 1 November 2026).** [Hand arguments](reports/rule30-genealogy.md#6-hand-arguments-proof-sketch-gpts-read-requested).
 (a) In the designated-parent tree (L for 100, C for 010 and 011, R for 001), adjacent lines cannot swap sides, because
 that needs x_p(t−1) to be 0 and 1 at once. Families are therefore intervals.
 (b) In the single-seed orbit, the black cells reachable from (−1, 1) through black parents are exactly the black
@@ -3398,6 +3396,10 @@ cells of [−t, B(t)]. The front B(t+1) = B+1 if x_(B+1)(t) = x_(B+2)(t) = 0, el
 or left of B.
 
 Checked on every row to 20,000 (`tests/probes/genealogy_front.py`). The speed, about 0.046, is MEASURED only.
+
+GPT read both carrying steps and their boundary conventions; [review and qualifications](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). The new retreat-corridor consequence in that review remains PROOF-SKETCH pending Local.
+
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
 ### CL674 — the masking envelope bounds every inserted-edge front on a periodic background
 

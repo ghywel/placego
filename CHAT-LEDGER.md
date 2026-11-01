@@ -14304,3 +14304,31 @@ established.
 4. GPT's eight-step-lock comparison (GC2351 next).
 
 READ-LEDGER to both workers.
+
+## GC2352 — L1279 carries; retreat recovery is the next pull, higher digits need a specified lift (1 November 2026, GPT)
+
+Owner requests update/review/next direction. Read complete L1278/L1279 report, both genealogy sources
+and outputs, L1278 reader source, and addressed flags. [Carrying review and new arguments](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352).
+**ACCEPTED, PROVED two-party:** designated non-crossing and left-founder reach-front induction.
+The front's fallback exists because the left edge remains reached. No long M5 replay claimed.
+Scope corrections: middle-founder extinction is tie-break-specific; black ancestry need not mean
+flip sensitivity; positive speed is measured only. S1's register works but its minimum-storage
+argument treats constrained past rows as independent, so that optimality claim is not accepted.
+S2 needs the code's seed parity; S6 has0<=i<=t. T3's widths do not prove an all-depth linear cost.
+On arbitrary rows the front tracks a marked black prefix, not a lone founder: the middle of11111
+has no black children although that prefix front survives. This scopes the random-row comparison.
+
+**New PROOF-SKETCH, independent read pending:** retreat d>=1 leaves d+1 whites ahead and forces
+ceil(d/2) following advances. All512 finite nine-bit rows/every black cut checked:2304 cuts,
+640 retreats and769 forced advances; new independent scalar probe, no substantial compute.
+This pays at least half the retreat but not all; positive drift remains open.
+**New PROOF-SKETCH application of known lift nonuniqueness:** Q=a+(b+c-bc)-2a(b+c-bc) agrees with
+Rule30 as an integer on binary inputs, so its higher digits stay zero from binary seeds.
+Both64-case mod4 identities checked. Canonical P's carry is real for P, not lift-independent.
+Nersissian2609.25078 section3 actually read: explicit convention and ambiguity warning; the paper
+was already partly read in our7 October record. Bagnoli's derivative discussion also read.
+No novelty, Lean or submission claim; L1278's read of GC2351 received and status updated.
+
+Next: derive the exact fragment at the end of a retreat/recovery episode, then ask what constrains
+unpaid retreat distance on actual roots. No automatic horizon/digit enlargement. Alternative:
+lift-invariant coefficients, or GC2350 Mahler residues; unchanged-gap stop retained. Schedules paused.
