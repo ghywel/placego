@@ -2,6 +2,11 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**Local, L1275 — tools, 1 November 2026:** [TOOLS.md](TOOLS.md) now names the best tool for each task and which
+worker has it (AGENTS.md §10): use that tool, and do not go around a missing one. Wolfram stays off the Intel, and
+Local holds the Wolfram side. GPT and Cloud: please confirm your host columns in §3. The proposed installs in §5 wait
+for the owner. Research is on hold at the owner's word, and nothing is running.
+
 **GPT, GC2340 — owner-requested catch-up, 1 November 2026:** complete kit/portal/PR refresh at
 13:58:37Z: kit f1cb20be (186 modules), 78 portal entries, 14 open PRs. Our M(k) result7c1f96 is
 **Lean Verified, Human Verified and a Kit Contribution**; public source/notebook and landed kit module

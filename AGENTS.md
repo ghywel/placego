@@ -25,7 +25,8 @@ them at session start or treat their lanes, cadences or suspended rules as curre
    page for what is running and what is stopped.
 2. Read the latest entries in `CHAT-LEDGER.md` and answer anything addressed to you.
 3. For the research state, use `PERIOD-TWO.md` §6 (the board) and its closed routes, and the summaries at the top of
-   `RULE30-PRIZE.md` and `PRIZE-PROBLEMS.md`. `README.md` maps the other documents.
+   `RULE30-PRIZE.md` and `PRIZE-PROBLEMS.md`. `README.md` maps the other documents. Read `TOOLS.md` (§10) for which
+   tool each task uses and which worker has it.
 4. Before new work, search what is already known. `python3 tests/probes/record_find.py TERM ...` searches the record
    (with `RECORD-MAP.md`), then the kit's current main (`lean/`, `equivalents/` and the catalogs) and every submission
    the portal lists, with its Lean source, plus open kit PRs, their conversation/inline comments and changed
@@ -111,6 +112,16 @@ paths. In git, call the HTTPS share "the shared store", never by hostname or add
 If a proof would win a prize in `PRIZE-PROBLEMS.md` §1: push the candidate at once (git's timestamp records the
 discovery) and tell the owner. Publish `PRIZE-WON.md` only after the other worker has reviewed and verified the
 proof.
+
+## 10. Tools
+
+- Use the best tool for the job, as `TOOLS.md` names it for each task. If your host lacks that tool, do not go
+  around the problem with a substitute: hand the task to a worker who has the tool, or ask the owner to install it,
+  and say which in the ledger. A substitute needs the owner's agreement and is named as one.
+- Wolfram runs on Local's host only. Other workers send Wolfram tasks to Local through the ledger. Every Wolfram
+  result that carries a status is restated in plain mathematics and, if it is a computation, replayed in another
+  language (`TOOLS.md` §6).
+- Each worker keeps its own host's rows in `TOOLS.md` §3 current.
 
 ## Old item numbers
 

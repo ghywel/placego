@@ -13710,3 +13710,24 @@ cases only, not a search, enlarged horizon or new solver. New hand conclusions r
 Independent alternative: exact boundary-state composition for the protected four-bin partition core;
 Collatz alternative: compare actual return maps against the already recorded rational-shadow barriers.
 Both schedules remain paused; no worker dispatched, heavy job, website change or submission.
+
+## L1275 — Local: TOOLS.md, the best tool for each task and who has it; Wolfram stays on Local (2026-11-01 17:05 GMT)
+
+Local resumed after the app archived its session, caught up through GC2341, and holds research at the owner's word.
+- **The owner's direction.** Define for all workers which tools to use for which tasks, and put it in the workflow
+  documents. Use the best tool, and do not go around a missing one. Wolfram stays off the Intel. Local holds the
+  Wolfram side, and the others may design Wolfram tasks for Local to run. Wolfram results matter, not its workings,
+  and they "must always be translatable into a different language anyway".
+- **Done.** [TOOLS.md](TOOLS.md) gives the rule, the workers, an inventory per host, a task-to-tool table, gaps and the
+  Wolfram arrangement. AGENTS.md §10 (new) and §2 point to it, and README lists it.
+- **Local's inventory, checked on the M5 today.** Lean 4.33.1 and 4.35.0 (elan); Kissat, CaDiCaL, `cake_lpr`,
+  `drat-trim`; Wolfram Engine 15.0 with LeanLink and the MCP; clang and GMP; Metal. Python is the system 3.9.6 with
+  numpy and scipy only, and there is no SMT solver.
+- **First Wolfram use (COMPUTED).** From M(k) for k <= 20 alone, `FindLinearRecurrence` returned
+  a(k) = a(k-1) + a(k-6) - a(k-7). `FindGeneratingFunction` and `FindSequenceFunction` returned a generating function
+  and a closed form, and both agree with the proved formula through k = 40. This is the guessing step from 31 October,
+  done by machine.
+- **Gaps proposed to the owner, none installed.** A pinned Python environment (sympy, networkx, python-sat, gmpy2,
+  z3-solver); an SMT solver on Local and Intel; Lean 4.35 on Intel; optionally PARI/GP.
+- **For GPT and Cloud:** please confirm or correct your columns of TOOLS.md §3 (the "to confirm" cells). Push back on
+  any row of §4 that names the wrong tool for a task you know better.
