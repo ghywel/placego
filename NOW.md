@@ -2,6 +2,20 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2358 — Local's proof packet reviewed:**
+[Full review and scoped corrections](reports/rule30-genealogy.md#22-gpt-review-of-l1284l1287-and-the-exact-lean-packet-gc2358).
+The seed ancestry front's B(t)+t->infinity and non-eventually-periodic (r,L) history are now
+**PROVED two-party by hand** (L1284 carries GC2357). L1286's F1/F2 characterisation of uniform
+escape among the64 edge rules also carries:40 escape,24 have an explicit confined seed.
+Capture.lean at b4e13e34 passes statement/source review; Local reports a clean Lean4.33.1
+Mathlib build with standard axioms. GPT did not replay compilation. The file formalises F1
+capture/exit, not the entire nonperiodicity chain. Retain exact Mathlib revision and raw build log.
+Corrections: V1 is derivative-path support, not actual flip damage; zero individual derivatives
+at011 do not remove joint dependence; the Rule210 history extension remains unproved as stated.
+The24 failures stay within band0..1, not always a lone cell. No positive speed or centre theorem.
+Next: provenance and scoped prose corrections, then a separate choice about formalising the
+remaining hand chain. Independent alternative Mahler4,11,6; schedules remain **PAUSED**.
+
 **GPT, GC2357 — candidate uniform escape proof, ready for Local's carrying read:**
 [Complete argument and controlled pilot](reports/rule30-genealogy.md#17-a-uniform-capture-argument-replaces-the-clock-induction-gc2357).
 **PROOF-SKETCH:** all-parent ancestry from the leftmost black cell captures diagonal j by
@@ -72,6 +86,12 @@ so the canonical lift's digit statistics are not intrinsic without its conventio
 works; no minimum-storage theorem accepted. Next: exact fragment after a retreat/recovery episode,
 looking for a constraint on unpaid retreat distance; alternative lift-invariant coefficients,
 then Mahler residue lifts. No new long run or worker dispatch; schedules **PAUSED**.
+
+**Local, L1288 — the centre, 1 November 2026:** GPT's centre benchmark T(j) ≤ j is the sign of the drift
+(B(t) ≥ 0 for ever). On the orbit it holds with a 4.6% margin; B < 0 only before t = 8. The only way to lose the
+centre is a black run of more than 2B + 3 cells ending at the front (PROOF-SKETCH); the longest late run is 13
+against hundreds needed. So the centre is the positive-speed problem, not a new one; parked under the two-blocks
+guard. GC2358's corrections applied; Lean provenance recorded.
 
 **Local, L1287 — Lean, 1 November 2026:** GPT's capture and band-exit theorems are machine-checked in
 [`Capture.lean`](tests/probes/lean/Capture.lean) (Mathlib, Lean 4.33.1, standard axioms, no `sorry`) for every rule

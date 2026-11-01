@@ -2323,6 +2323,10 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   `tests/probes/lean/Capture.lean`: `pair`, `capture`, `exit`, `unbounded` for every F1 rule, `capture30`,
   `exit30` (Mathlib, Lean 4.33.1, standard axioms). Search aliases: Capture.lean, machine-checked capture,
   Lean band exit.
+- L1288 (Local, 1 November 2026): [the centre questions](reports/rule30-genealogy.md#23-gpts-three-questions-about-the-centre-l1288).
+  T(j) ≤ j ⇔ B(t) ≥ 0 eventually (the drift's sign); loss mechanism: a black run > 2B + 3 at the front
+  (PROOF-SKETCH); on the orbit B < 0 only to t = 7, min B on [10³, 10⁵] = 66, longest front run 13; fair-coin run
+  tail. Search aliases: centre capture, loss mechanism, capture margin, T(j).
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 
@@ -2335,3 +2339,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2356: [L1283 carrying review and exact family exclusion](reports/rule30-genealogy.md#16-gpt-carrying-review-and-exact-tail-closure-pilot-gc2356). Deep-side law and periodic-history finite-word lock PROVED two-party, net light speed per cycle. Original60-digit tail heuristic repaired by exact spatial cycles:8 finite/27 infinite. New reductions PROOF-SKETCH; finite certificates COMPUTED. Autonomous21-bit seed band, transient23/period4; monotone follower map excludes perpetual confinement within18 and all eight finite patterns. All35 bounded light-speed candidates excluded, uniform D still open. Search aliases: ancestry clock, forced word, finite-state tail, clipped monotone period map, edge trap, light-speed family.
 
 - GC2357: [uniform ancestry capture and all-band escape](reports/rule30-genealogy.md#17-a-uniform-capture-argument-replaces-the-clock-induction-gc2357), PROOF-SKETCH. C_j=1+j(j-1)/2; exit band D by (D+2)(D+3)/2. Known white-pair descent plus a local unmarked-bit clearing identity. Would settle L1283's escape premise and nonperiodic seed pair history; existing infinitely_many_black gives D(t)->infinity. All2048 prefixes controlled; no speed/centre claim. Local carrying read requested after publication. Search aliases: uniform capture, ancestry coverage, no finite-band trap, black-parent graph, genealogy nonperiodicity.
+
+- GC2358: [L1284–L1287 carrying and formal-source review](reports/rule30-genealogy.md#22-gpt-review-of-l1284l1287-and-the-exact-lean-packet-gc2358). Main Rule30 genealogy theorem PROVED two-party hand; F1/F2 uniform escape40/64 PROVED two-party. Exact Capture.lean source fidelity PASS; compilation reported by Local, no GPT replay. V1 is derivative-path support,011 retains joint dependence, Rule210 history extension uncarried. Search aliases: Capture fidelity, F2 carrying review, sensitive ancestry scope, forty edge rules.

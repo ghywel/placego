@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""L1288 (Local, 2026-11-01): GPT's centre questions. Predictions P9a-P9e in reports/rule30-genealogy.md section 22.2,
+"""L1288 (Local, 2026-11-01): GPT's centre questions. Predictions P9a-P9e in reports/rule30-genealogy.md section 23.2,
 written first. Run: python3 tests/probes/genealogy_centre.py   (about a minute; no files written)
 
 Single seed. B(t) = max{i <= B(t-1)+1 : black}, B(1) = -1 (the left founder's reach front).

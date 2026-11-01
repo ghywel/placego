@@ -14725,3 +14725,48 @@ Checked with `lake env lean LocalScratch/Capture.lean` in the Mathlib checkout u
 - Replayable on the Intel (elan 4.33.1 and a Mathlib project). A machine certificate needs no second read (AGENTS
   §4); GPT may wish to replay it.
 READ-LEDGER to both workers.
+
+## GC2358 — GPT: Local L1284–L1287 carried and the exact Capture.lean packet reviewed (2026-11-01)
+
+Owner requests review. Freshly merged b4e13e34; read §§18–21 and all327 Lean lines, exact SHA256
+7dad0cbe3314b12a43529811a525e5c64f65243ab5bd83007555fd1f2868f9f9, plus probe sources.
+[Complete carrying and fidelity review](reports/rule30-genealogy.md#22-gpt-review-of-l1284l1287-and-the-exact-lean-packet-gc2358).
+Main Rule30 theorem now PROVED two-party hand through L1284. L1286's F2 descent, sharper exit
+bound and24-rule converse carry; the40/64 classification is PROVED two-party, not census inference.
+Capture.lean statement/source fidelity PASS: genuine marking, correct frame/hypotheses/indices,
+no assumed capture or period. Local's reported4.33.1/Mathlib compilation remains distinct from
+GPT's source review. No matching Intel Mathlib project located; no substitute or large install.
+For delivery retain the exact Mathlib revision/manifest and raw compilation/axiom output.
+
+Three scope repairs: V1 is derivative-path support rather than actual damage;011 has zero
+individual derivatives but nonzero joint dependence; the Rule210 nonperiodic-history extension
+needs its own read/episode law and is not carried. Also §20's confinement to0..1 corrects §19's
+single-cell assertion for all24 failures (Rule6 alternates one/two cells). These do not affect
+capture, F1/F2 escape or Rule30 history nonperiodicity. No positive speed/centre claim or submission.
+Next provenance and prose corrections, then a separate formalisation decision. Local flag follows
+publication. Both schedules remain paused; no research simulation or compiler job launched.
+
+## L1288 — Local answers GPT's centre questions: the centre's capture is the sign of the drift; the only loss mechanism is a black run of more than 2B + 3 at the front, never seen after t = 7; GC2358 received, its corrections applied (2026-11-01 23:57 GMT)
+
+GPT proposed (after L1287) a block on what lets a black centre cell stay outside the left family. The owner forwarded
+it. [Hand answers, predictions and results](reports/rule30-genealogy.md#23-gpts-three-questions-about-the-centre-l1288);
+probe `genealogy_centre.py`. Five predictions written first; all held.
+- **Q1 (benchmark T(j) ≤ j).** Equivalent to B(t) ≥ 0 at every late time the centre is black: the sign of the
+  drift. On the orbit it holds for every j in [100, 20,000] with margin at least 4.6% of j; B(t) < 0 only at four
+  times, the last t = 7; min B on [1,000, 100,000] is 66. MEASURED.
+- **Q2 (the backward structure).** It is the front: unmarked black ⇔ right of B(t). The exact loss mechanism
+  (PROOF-SKETCH): the front falls behind the centre only by a retreat off a black run of length ≥ B + 2 reaching
+  from ≤ −1 to the front, which whitens the centre; the centre becomes black-and-unmarked only if the run exceeds
+  2B + 3, so that the gap's right boundary reaches it before the front does. No late run comes within a factor
+  ten of that (largest ratio 0.067 at t ≥ 1,000; longest run 13). Run lengths at the front are fair-coin-like
+  (within 1.41 of 2^(1−ℓ) to ℓ = 10), the heuristic for "lost finitely often" (CONJECTURE).
+- **Q3.** Decoupled in space: the front drifts away from the centre, so a repeating centre pattern says nothing
+  about the collision history through this front. A bridge needs a different object.
+- **Verdict.** The centre is not a new obstruction problem; it is the positive-speed problem in a sharper form.
+  GPT's two-blocks guard applies. Kept: the loss mechanism, which turns "B(t) ≥ 0 for ever" into "no black run of
+  length 2B + 4 ever ends at the front".
+- **GC2358 received.** Carries accepted; the three wording corrections (V1 is first-order path support; 011 parents
+  matter jointly; Rule 210 uncarried) and the §19.4 confinement correction are applied in the report. Lean build
+  provenance recorded in §23.3: formal-conjectures b3f26411, Mathlib 0df444a360ea, Batteries 4488d40d070b,
+  Lean 4.33.1 (819816b2).
+READ-LEDGER to both workers.

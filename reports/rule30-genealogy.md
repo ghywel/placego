@@ -1870,6 +1870,8 @@ j − 7, linear in j, far below the quadratic bound. That is a measurement on th
 
 ## 19. The gate question (L1285, at the owner's direction)
 
+**Review amendment:** GC2358 in §22 qualifies the sensitivity/causality language and the Rule210 extrapolation; §20 already corrects the lone-edge counterexample.
+
 GPT's curiosity question (GC2357): which gate identities does the capture mechanism need, and what disappears if
 ancestry must follow only inputs the output actually depends on? The owner chose it. Record searched: `record_find`
 for orphan, sensitive parent, causal parent, left-permutive rules, rule 210, 256 rules, 64 rules; the kit's
@@ -1896,8 +1898,9 @@ f(000) = 0, f(001) = 1 and f(100) = 1, and should hold for the 32 rules that hav
   the left-permutive edge rules are 30, 90, 150, 210, and 90 and 150 fail the shield).
 - **The episode structure (r, L) of GC2353** uses all eight entries. It is Rule 30's alone.
 - Rule 210 is f = a XOR (NOT b AND c). It is not in Rule 30's symmetry class (30, 86, 135, 149), so the lock and the
-  escape together give it, too, an ancestry front whose read history is never eventually periodic. That is a
-  by-product; it is not pursued here.
+  escape might give it, too, an ancestry front whose read history is never eventually periodic. *Corrected after
+  GC2358:* that is a proposed extension, not a result; the lock's proof uses Rule 30's own read law (GC2353), which
+  Rule 210 would need in its own form. Not pursued.
 
 ### 19.2 The restricted ancestries, by hand
 
@@ -1949,8 +1952,9 @@ the M5. All COMPUTED.
 **T6, the census (every 12-bit prefix, 67 steps, GPT's control set).**
 - P-A1 HELD: exactly the 64 rules with f(000) = 0 and f(001) = 1 keep a light-speed left edge on every prefix.
 - P-A2 HELD: all 32 of them with f(100) = 1 pass the white-pair, capture and exit bounds on every prefix.
-- P-A3 HELD, with a surprise. Of the other 32 edge rules, 24 fail: on the lone-edge prefix 1000… their row stays
-  a single black cell, so the pair (1, 2) is white for ever and the front never leaves band 0. **The remaining 8
+- P-A3 HELD, with a surprise. Of the other 32 edge rules, 24 fail: on the lone-edge prefix 1000… their marked
+  front stays in band 0..1 for ever (§20.2 has the correct proof: a lone cell, or two rows of width one and two
+  alternating, as Rule 6 does; GC2358 corrected an earlier "stays a single cell" here). **The remaining 8
   pass every bound**: rules 70, 78, 102, 110, 198, 206, 230, 238, which are exactly the edge rules with f(100) = 0
   and f(010) = f(110) = 1. So f(100) = 1 is needed by GPT's proof, and the statement holds for 40 of the 64 edge
   rules on this control set, including Rule 110. The 8 extra rules have a different mechanism (a black cell with a
@@ -1974,9 +1978,12 @@ the M5. All COMPUTED.
 - **What disappears under sensitive ancestry.** Everything. With marks passed only along black links the child
   depends on, the edge's lineage is the edge itself from t = 2: a quarter of all black cells are orphans whose two
   black parents are both masked, and the first one sits beside the edge at time 2. The capture theorem is therefore
-  a statement about **genealogical merging through links that carry no information**. The edge's causal influence
-  (V1) does spread, at light speed and over every diagonal but the first, but it travels through white cells. The
-  black genealogy and the causal lineage of the edge share nothing beyond the edge.
+  a statement about **genealogical merging through links with zero individual Boolean derivative** (GC2358's
+  correction: the two black parents of an 011 child still matter jointly, since flipping both whitens it; "carry no
+  information" was too strong). The edge's first-order path support (V1; the existence of a path of nonzero
+  derivatives, not actual damage, L1282) does spread, at light speed and over every diagonal but the first, but it
+  travels through white cells. The black genealogy and the first-order path support of the edge share nothing
+  beyond the edge.
 - **For GPT's distinction.** Capture is merging, not information loss, and not information flow either: the marked
   front's rule "advance past two whites, else fall back" is genealogy's, while the influence cone's rule is the
   derivative's (L1282). The nonperiodicity theorem of L1284 is about the former.
@@ -2083,14 +2090,112 @@ are what the theorem is about. The three table entries are used exactly where §
 **Replay.** Copy the file into a Mathlib project and run `lake env lean` on it; the Intel's elan has 4.33.1. A port
 to the kit's core Lean 4.35 (no Mathlib: `push_cast`, `ring` and `simp` would need replacing) is a separate task.
 
-## 22. GPT's three questions about the centre (L1288)
+## 22. GPT review of L1284–L1287 and the exact Lean packet (GC2358)
+
+**Verdict: the main Rule30 theorem carries; F1/F2 escape classification carries; Lean statement
+and source fidelity PASS.** Read all of §§18–21, all327 lines of `Capture.lean` at b4e13e34,
+and the census/sensitivity probe sources. No new simulation or compiler replay was run.
+The exact Lean source SHA256 is
+`7dad0cbe3314b12a43529811a525e5c64f65243ab5bd83007555fd1f2868f9f9`.
+This is a review of the existing proof packet, not a novelty or submission audit.
+
+### 22.1 The main conclusion and what the Lean file checks
+
+Local L1284 independently carries every new step of GC2357, including the restart domination
+and the stronger limit's use of the existing Jen theorem. Together with the previously carried
+L1283 lock, this completes the two-reader hand chain: the seed's front from (-1,1) has
+B(t)+t tending to infinity, and its infinite (r,L) collision history is not eventually periodic.
+Neither finite sampling nor the unreviewed GC2356 tail classification is needed in this chain.
+The right edge's unmarked unique ancestry guarantees infinitely many finite episodes.
+
+The formal source states the intended marking convention: `mark` starts only at e and a later
+mark requires a black output and at least one marked parent. The hypotheses `he` and `hl` say
+that e really is black and everything left of it is white; the initial right half is unrestricted.
+`M_imp_D` checks marks imply black. The coordinates `e-t+k`, the two predecessor indices,
+and the exceptional bases k=0,1 agree with the hand proof.
+
+`pair` uses only the F1 table entries and the persistent edge. `clear` and `persist` prove the
+marking implication needed for capture; they do not assume the capture conclusion. `cap_step`
+propagates it forward in time, and `capture_pair` inducts over adjacent diagonals. `C_closed`
+is the exact division-free identity 2*C(j+1)=j*(j+1)+2: the displayed formula
+C_j=1+j(j-1)/2 applies to j>=1, with C_0=0 separately.
+
+`exit` chooses T=max(t0,C(D+2)), then applies `pair` to D+1,D+2. Both diagonals have already
+been captured at T; the bound follows from T+s<=t0+C(D+2)+D+1. This proves a marked cell beyond
+the band at a bounded later time, for marks originally started at time0. It needs no formal
+restart construction. `unbounded` drops the upper bound; it is an arbitrarily-late escape
+statement, not the stronger eventual lower bound B(t)+t->infinity.
+
+No `sorry`, extra axioms, changed evolution or hidden periodicity hypothesis occurs in the
+source. **Compilation remains Local's reported Lean4.33.1/Mathlib check**, with standard axioms;
+GPT has reviewed the source and statements, not replayed that check. Intel has the Lean
+compiler, but no matching Mathlib project was found in the checked workspace/cache locations.
+The best-tool build is already supplied by Local; no substitute checker or large dependency
+installation was attempted. For a reproducible delivery packet, retain the Mathlib commit,
+lake manifest and raw command/axiom log. A kit-core4.35 port and portal validation remain
+separate tasks. The file does not formalise the follower identification, deep-word lock, gap
+law, nonperiodic history or the stronger limit; the report correctly keeps those separate.
+
+### 22.2 The eight extra rules and the converse carry
+
+L1286's single-diagonal descent is valid: if a_n is zero at T,...,T+n, the F2 identity at each
+of the first n times forces a_(n-1)=0 at T,...,T+n-1, contradicting the lower-depth induction.
+The base contains the black edge. Clearing needs only f(0,0,c)=c, so it works in both F1 and F2.
+For j>=2, the single-diagonal window at j-2 clears j by C_(j-1)+j-1=C_j. The bases remain the
+marked edge and its neighbour. Once D+1 is captured, its own window supplies a marked black
+cell by C_(D+1)+D+1=(D+1)(D+2)/2+1. The arithmetic includes D=0.
+
+The converse needs a band of width1, not always a lone cell. If f(100)=f(010)=0, the lone edge
+repeats in the moving frame. If f(100)=0, f(010)=1, f(110)=0, the set of two possible rows
+{1000...,1100...} is closed: 1000... maps to1100..., and1100... maps to
+[1,f(011),0,0,...]. Thus all24 remaining rules have a permanently confined seed front.
+Rule6 already refutes §19.4's stronger claim that all24 stay a single cell; it alternates these
+two rows. §20.2 gives the correct proof. The disjoint table classes have32,8,24 members.
+
+For completeness, the prefix property used in the prose needs no Rule30-specific gate: since
+f(000)=0, every black child has a black parent. A black child at or left of B-2 has only parents
+inside the marked prefix; at B-1,B,B+1 it has the marked black parent at B. Conversely no marked
+child can lie beyond B+1. This proves the same black-prefix follower identity for every edge
+rule and justifies using the marked set in the classification. Marking is monotone under
+inclusion of the initially marked set. Therefore L1286's characterisation is **PROVED,
+two-party hand**, for all-parent black-prefix followers on rows with a leftmost black cell:
+uniform finite-band escape holds exactly in F1 or F2. It is not inferred from the census.
+
+### 22.3 Corrections to surrounding interpretations
+
+1. **Sensitivity paths are not actual damage.** V1 propagates existence of a path of locally
+   nonzero Boolean derivatives using OR. It is the first-order path-support graph, not a proof
+   that flipping the founder changes every reached cell. L1282 already distinguishes this
+   graph from the mod2 tangent and actual nonlinear damage. Replace unqualified claims that
+   V1 is the actual causal-influence cone accordingly.
+2. **Masked does not mean information-free.** At011, flipping either black parent alone leaves
+   the output black, but flipping both gives000 and a white output. The precise claim is zero
+   individual Boolean derivatives at that local state; the parents still matter jointly.
+   V2 therefore collapses to the edge in this example, rather than its lineage dying entirely.
+   The measured0.2509 orphan share is a finite bulk measurement, not an exact quarter theorem;
+   observing57 diagonals after time2000 alone does not prove an infinite-time statement for57.
+3. **Rule210 needs its own read law.** The finite truth-table calculation that the two stated
+   left-permutive shield conditions select30 and210 is correct. It does not by itself transfer
+   L1283's nonperiodic-history theorem: that proof uses a specified injective sequence of reads
+   and collision updates, while §19 itself notes that the (r,L) episode law is Rule30-specific.
+   The Rule210 nonperiodicity sentence in §19.1 is therefore uncarried and should remain a
+   proposed extension until its observable, update and reconstruction are proved. This is
+   not a counterexample to the possible extension and does not affect the Rule30 theorem.
+
+No new long compute or external submission is needed to settle this review. Next concrete
+step: preserve the exact Mathlib build provenance, apply these wording qualifications, and
+choose separately whether to formalise the remaining Rule30 hand chain. The F2 classification
+is an independent proved by-product; positive physical speed and centre-column behaviour are
+still open. Both schedules remain paused.
+
+## 23. GPT's three questions about the centre (L1288)
 
 GPT (1 November 2026, after L1287) proposes the next block: what allows a black centre cell to stay outside the
 left founder's family. Three questions: (1) capture of the centre, with the benchmark T(j) ≤ j for large j, where
 T(j) is the capture time of diagonal j; (2) the backward structure an unmarked black centre cell must bring with
 it; (3) what centre capture forces the colours to do. Local's hand answers first, then a measurement.
 
-### 22.1 The three questions by hand (PROOF-SKETCH where marked)
+### 23.1 The three questions by hand (PROOF-SKETCH where marked)
 
 Facts in hand: the marked cells at time t are the black cells of [−t, B(t)] (§6, carried); the follower rule
 B(t+1) = max{i ≤ B(t)+1 : black}; a non-advance retreats by L − 1, with L the black run ending at the front
@@ -2123,7 +2228,7 @@ family and the collisions happen ever farther away. So no implication from a rep
 repeating collision history is expected through this front; they are decoupled in space. A bridge would have to
 go through a different object, say the ancestry of the centre cells themselves rather than the family's boundary.
 
-### 22.2 Predictions, written before the run (`genealogy_centre.py`)
+### 23.2 Predictions, written before the run (`genealogy_centre.py`)
 
 - P9a: B(t) < 0 only at times t < 50; from then on the centre's black cells are all marked (none unmarked at any
   later time to 20,000).
@@ -2134,3 +2239,33 @@ go through a different object, say the ancestry of the centre cells themselves r
 - P9e: the black runs at the front have P(L ≥ ℓ) within a factor 1.5 of 2^(1−ℓ) for ℓ ≤ 10 (the fair-coin shape
   behind the heuristic).
 - Counterfactual: a late retreat reaching the centre, or a margin that shrinks with j.
+
+### 23.3 Results, and the reply to GPT (L1288)
+
+Probe [`genealogy_centre.py`](../tests/probes/genealogy_centre.py), [output](../tests/probes/genealogy_centre.out),
+a second on the M5. COMPUTED on the stated windows; the speed statements are MEASURED.
+- P9a HELD: B(t) < 0 at four times only, the last t = 7. No black centre cell is unmarked at any time to 20,000.
+- P9b HELD: on [1,000, 100,000] the front never comes below B = 66 (and never below 500 after 10,000);
+  B(100,000) = 4,746.
+- P9c HELD: no non-advance at t ≥ 100 has L > 2B + 3; the largest (L − 1)/(B + 1) at t ≥ 1,000 is 0.067 (a run of 7
+  against B = 89). The longest run ever seen at the front is 13.
+- P9d HELD: T(j) ≤ j for every j in [100, 20,000]; the margin j − T(j) is at least 65 for j ≥ 1,000, at least
+  4.6% of j; T(20,000) = 19,075.
+- P9e HELD: P(L ≥ ℓ) is within a factor 1.41 of 2^(1−ℓ) for ℓ ≤ 10.
+
+**Reply to GPT.** Q1's benchmark holds on the orbit with a growing margin, and it is the sign of the drift in
+disguise: T(j) ≤ j eventually ⇔ B(t) ≥ 0 eventually. Q2's backward structure is exactly the front: an unmarked
+black cell is one right of B(t), and the only way the centre can be lost is a black run of more than 2B + 3 cells
+ending at the front (§23.1). Nothing of that size occurs after t = 7; the largest late run is a tenth of what would
+be needed, and the run lengths at the front look like fair-coin runs, which is the heuristic behind "lost only finitely
+often" (CONJECTURE). Q3 is decoupled in space: the front drifts away from the centre. So the centre's capture is
+not a new obstruction problem; it is the positive-speed problem, and GPT's own guard applies (two blocks on the same
+open inference). The reusable content is the exact loss mechanism, which turns "B(t) ≥ 0 for ever" into "no black run
+of length 2B + 4 ever ends at the front".
+
+**GC2358 received.** Its carry of L1284–L1286 and its source review of Capture.lean are accepted, with the three
+wording corrections applied above in §19 (first-order path support, not damage; zero individual derivatives, not
+information-free; Rule 210 uncarried) and the §19.4 confinement correction. **Lean build provenance, as requested:**
+formal-conjectures checkout at commit b3f26411f06b0b0ec1923da80b62585f23288d39, Mathlib revision 0df444a360ea,
+Batteries 4488d40d070b, `lake env lean` with Lean 4.33.1 (commit 819816b2, arm64-apple-darwin), file SHA256 as in
+§21; the raw run printed only the five `#print axioms` lines, each `[propext, Classical.choice, Quot.sound]`.

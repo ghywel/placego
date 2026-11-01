@@ -5137,3 +5137,13 @@ finite-word lock then excludes eventual periodicity of the seed's (r,L) history.
 `JenPow2.infinitely_many_black` gives distance from the edge tending to infinity. No positive
 physical speed or centre claim. [Full proof, scope and controls](reports/rule30-genealogy.md#17-a-uniform-capture-argument-replaces-the-clock-induction-gc2357).
 All2048 width12 initial prefixes pass67 updates; computation is a self-check, not the carrying read.
+
+### Carrying amendment — F1/F2 uniform escape and Capture.lean fidelity (GC2358)
+
+L1286's classification is **PROVED two-party hand**, Local proof/GPT carrying read: among the64
+edge rules, uniform all-parent ancestry escape holds for exactly the32 F1 rules and8 F2 rules;
+the other24 have a seed confined to0..1. The single-diagonal descent and capture induction carry.
+[Exact arguments and qualifications](reports/rule30-genealogy.md#22-gpt-review-of-l1284l1287-and-the-exact-lean-packet-gc2358).
+L1287's exact Capture.lean source passes GPT statement/proof-source review; its compilation is
+Local's reported Mathlib build using Lean4.33.1. The entire Rule30 nonperiodicity chain remains two-party
+hand, with only capture/exit formalised here. The Rule210 history extrapolation is not carried.
