@@ -1,0 +1,36 @@
+T0  S2 flip counter mod 2 = colour (t = 10, 500, 1500); S6 wheel-stamp identity on sampled right-half cells: PASS
+T1  designated-step shares L, C, R in the bulk: all 0.250 0.501 0.249; left 0.249 0.503 0.248; right 0.250 0.500 0.250
+T1  founder shares of black cells (left, middle, right founder at t = 1): t=250: 0.523 0.000 0.477; t=500: 0.478 0.000 0.522; t=1000: 0.539 0.000 0.461; t=1500: 0.531 0.000 0.469
+    black cells at t = 10: 11; of them with descendants at t = 1500: 3
+T1  central window |i|<=100 of row 1500: 92 black cells; distinct ancestors at s = 1:61 2:55 4:42 8:36 16:30 32:24 64:17 128:14 256:11 512:8 1024:6 1499:2; first single ancestor at s = None
+    whole row 1500: 1500 black cells; distinct ancestors at s = 1:930 4:678 16:441 64:262 256:144 1024:30 1499:2
+T1  centre lineages (centre black cells t = 1000..1500), displacement mean/std at lag s: s=10: +0.11/2.55 (std/sqrt s 0.81); s=30: -0.30/4.46 (std/sqrt s 0.81); s=100: -4.27/9.47 (std/sqrt s 0.95); s=300: -10.06/13.73 (std/sqrt s 0.79); s=500: -21.33/18.93 (std/sqrt s 0.85)
+    post hoc: label changes along each row t = 2..1500: max 1, rows with exactly one 1.0000; middle family last alive at t = -
+    dynasty boundary at t = 100: position +9.0
+    dynasty boundary at t = 250: position +18.0
+    dynasty boundary at t = 500: position +21.0
+    dynasty boundary at t = 750: position +51.0
+    dynasty boundary at t = 1000: position +67.5
+    dynasty boundary at t = 1250: position +90.0
+    dynasty boundary at t = 1500: position +96.0
+    boundary increments: mean +0.0638, std 0.751; values [-4.5, -4.0, -3.0, -2.5, -2.0, -1.5, -1.0, -0.5, 0.0, 0.5, 1.0, 1.5]
+    centre black cells t = 2..1500: share from the left founder 1.000, right 0.000, middle 0.000
+T1b tie-break C: middle family last alive t = 1; row 1500 family shares L/M/R 0.531/0.000/0.469, label changes 1; single-boundary rows 1499, last boundary +96.0, mean step +0.0638; centre black cells L/M/R 1.000/0.000/0.000, switches 0
+T1b tie-break R: middle family last alive t = 1500; row 1500 family shares L/M/R 0.001/0.001/0.999, label changes 2; single-boundary rows 0; centre black cells L/M/R 0.000/0.001/0.999, switches 1
+T1b tie-break coin seed 1: middle family last alive t = 1; row 1500 family shares L/M/R 0.449/0.000/0.551, label changes 1; single-boundary rows 1499, last boundary -163.5, mean step -0.1095; centre black cells L/M/R 0.001/0.000/0.999, switches 1
+T1b tie-break coin seed 2: middle family last alive t = 1; row 1500 family shares L/M/R 0.443/0.000/0.557, label changes 1; single-boundary rows 1499, last boundary -174.5, mean step -0.1168; centre black cells L/M/R 0.006/0.000/0.994, switches 1
+T1b tie-break coin seed 3: middle family last alive t = 5; row 1500 family shares L/M/R 0.450/0.000/0.550, label changes 1; single-boundary rows 1495, last boundary -161.0, mean step -0.1081; centre black cells L/M/R 0.006/0.004/0.990, switches 4
+T1b black-parent DAG, row 1500: all three 0.530, left+middle 0.001, left only 0.001, right only 0.469
+T2  Z/4 second digit = Boolean-derivative tangent + carry [two parents black]; dual numbers = tangent: 64/64 PASS
+T2  sensitivity-path growth per step from five cells: 0.6558 0.6626 0.6587 0.6575 0.6595 (ln 2 = 0.6931)
+    tangent mod 2 versus actual damage after 300 steps: agreement over the damage region 0.511 0.469 0.476 0.544 0.456; right-edge diagonal cell damaged in both: [np.True_, np.True_, np.True_, np.True_, np.True_]
+T2  Z/4 lift of the single seed: colour reproduces Rule 30 for 1500 rows; second-digit density in the middle half (rows 1000..1500) 0.4998
+    centre column (colour, second digit) frequencies, Z/4 lift: (0,0) 0.255 (0,1) 0.267 (1,0) 0.227 (1,1) 0.251
+    centre column (colour, second digit) frequencies, flip counter: (0,0) 0.273 (0,1) 0.249 (1,0) 0.223 (1,1) 0.255
+T3  exact patch cost d_k over 150 interior cells (rows 1200..1500): k=1: mean 10.0, median 8, max 38, n 150; k=2: mean 21.1, median 19, max 62, n 150; k=3: mean 29.8, median 29, max 62, n 150; k=4: mean 40.8, median 38, max 72, n 150; k=5: mean 49.8, median 49, max 89, n 150
+    least-squares slope of mean d_k against k: 9.93
+T1c rows 2..1500: rightmost cell reached from the left founder differs from the C-tie-break boundary on 0 rows
+    B(t) = rightmost black cell reached from (-1,1): t=100: 8 (0.0800); t=250: 10 (0.0400); t=500: 20 (0.0400); t=1000: 66 (0.0660); t=1500: 95 (0.0633); t=2000: 144 (0.0720); t=3000: 197 (0.0657); t=4000: 250 (0.0625); t=5000: 262 (0.0524); t=6000: 339 (0.0565); t=7000: 379 (0.0541); t=8000: 420 (0.0525); t=9000: 449 (0.0499); t=10000: 508 (0.0508); t=11000: 551 (0.0501); t=12000: 617 (0.0514); t=13000: 653 (0.0502); t=14000: 719 (0.0514); t=15000: 777 (0.0518); t=16000: 785 (0.0491); t=17000: 827 (0.0486); t=18000: 879 (0.0488); t=19000: 918 (0.0483); t=20000: 971 (0.0486)
+    left end of the right founder's reach, measured from the left edge -t: 100:4 250:4 500:4 1000:4 1500:4 2000:4 3000:4 4000:4 5000:4 6000:4 7000:4 8000:4 9000:4 10000:4 11000:4 12000:4 13000:4 14000:4 15000:4 16000:4 17000:4 18000:4 19000:4 20000:4
+    reach of the middle founder (0,1) [min, max]: 100:(np.int64(-99), np.int64(8)) 1500:(np.int64(-1499), np.int64(95)) 5000:(np.int64(-4999), np.int64(262)) 10000:(np.int64(-9999), np.int64(508)) 20000:(np.int64(-19999), np.int64(971))
+GENEALOGY_SCHEMAS_DONE

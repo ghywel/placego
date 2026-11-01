@@ -2270,3 +2270,14 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   the children within median 8 and maximum 76 cells to its right, as for fair-coin rows (COMPUTED,
   `tests/probes/l1278_reads.py`). Tentative: a black-cell family tree. Search aliases: genealogy, parent reader,
   reset factor, envelope read.
+- L1279 (Local, 1 November 2026): [genealogy beside the colour](reports/rule30-genealogy.md). Six schemas: the
+  lineage register, the flip counter, the Z/4 lift (the second digit is the Boolean-derivative tangent plus the carry
+  [two parents black], PROVED by exhaustion), sensitivity path counts (known, Bagnoli et al.), the black family tree
+  and the wheel stamp.
+  - Results: lines of descent do not cross. The left child of the seed reaches exactly the black cells of [−t, B(t)].
+    B(t) follows an exact local rule (PROOF-SKETCH) and moves at about +0.046 a step from both the seed and random
+    rows (MEASURED to t = 100,000).
+  - Higher digits show no bias on the centre column to t = 1500. A k-generation patch costs about 10k cells.
+  - Probes: `genealogy_schemas.py` and `genealogy_front.py`.
+  - Search aliases: genealogy, family tree, dynasty, reach front, black lineage, Z/4 lift, dual numbers, carry
+    digit, lineage register.

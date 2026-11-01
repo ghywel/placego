@@ -14242,3 +14242,65 @@ structure that the colour row does not show locally. The owner chooses. Nothing 
 - CL675 read; TOOLS.md §5 item 2 is closed, with all three columns confirmed.
 - GPT's GC2348 REVIEW-REQUEST (the Mahler plateau) is acknowledged and parked while the owner's focus is genealogy.
 - READ-LEDGER to both workers, and a review reply to Cloud.
+
+## L1279 — Local: genealogy beside the colour, six schemas and three tests; the black family tree has an intrinsic reach front moving at about +0.046 cells a step; lifts to Z/4 put the Boolean derivative in the carry digit (2026-11-01 21:05 GMT)
+
+The owner asked (answering L1278's questions) what extra information a cell could carry beside its colour to "enrich
+our information space, relieve forgetting and provide numeric/algebraic pathways" beyond the gates, mentioning
+grandparent patches, the kicked-wheel phase and the black family tree. Taken on by Local. The full account, with
+predictions written before each run, is in [the genealogy report](reports/rule30-genealogy.md). The probes are
+`genealogy_schemas.py` and `genealogy_front.py`, each with its output; everything runs in seconds on the M5.
+Record searched: the report §4 lists it, including the kicked wheel (§8.4–§8.57, Theorem E), GC2258, L1071, G97, G106,
+DQ-010 and Bagnoli, Rechtman and Ruffo (1992). No family tree of black cells and no Z/4 lift appear in the record or
+the known index (kit f1cb20be).
+
+**Six schemas (report §3).**
+- S1, the lineage register: a cell keeps its left-line ancestors' colours. k bits per cell hold the previous k rows
+  exactly, so this is the least-bloat complete local memory. PROOF-SKETCH, elementary.
+- S2, the flip counter: an integer count of OR flips on the left line, with colour = count mod 2.
+- S3, the lift to Z/4: evaluate a + b + c + bc in Z/4. The second digit is h' = h_a + (1+x_c)h_b + (1+x_b)h_c + κ,
+  with κ = [exactly two parents black]. That is Rule 30's Boolean derivative (the tangent map) plus a carry source.
+  Over the dual numbers there is no κ. PROVED by exhaustion over all 64 cases.
+- S4, sensitivity path counts: known, the Lyapunov exponent of Bagnoli, Rechtman and Ruffo.
+- S5, the black family tree.
+- S6, the wheel stamp: x_i(t) = x_0(t−i) XOR the flips on its left line, so every right-half cell is a centre cell
+  printed at time t−i and then enciphered.
+
+**Results (COMPUTED; MEASURED where a speed is read off a window, G26).**
+- **The family tree has an intrinsic front.** Lines of descent never cross (PROOF-SKETCH, report §6), so families are
+  intervals of the row. With no tie-break, the black cells reachable from the seed's left child (−1, 1) are exactly
+  the black cells of [−t, B(t)]. The right child reaches all but a four-cell strip at the left edge.
+- **B(t) moves by an exact local rule** (PROOF-SKETCH, checked on every row to 20,000): advance one if the two cells
+  ahead are white, else drop to the rightmost black cell of the next row at or behind it. It advances in 52.7% of
+  steps, and B(t)/t is 0.0475 at t = 100,000. From fair-coin rows the speed is +0.045 ± 0.002. So it is a typical
+  Rule 30 speed, not the seed's.
+- **Rule 30's chirality in its genealogy.** Black descent steps right only past two whites (the OR off) but left past
+  one white. It spreads left freely and right at about 0.046 a step. Independent-cell reasoning predicts −0.5. The
+  front reads a correlated neighbourhood, as Cloud's masking fronts do.
+- **Algebraic lifts.** Sensitivity paths grow at 0.656 to 0.663 per step, below ln 2. The mod-2 tangent matches the
+  actual damage on about half of the damage region.
+- **Higher digits on the centre column.** In both the Z/4 lift and the flip counter the second digit is independent
+  of the colour within ±0.03 to t = 1500. No hidden bias appears at this length.
+- **Patch cost.** The exact cost of a k-generation family patch from the row alone is about 10k cells (slope 9.93),
+  one reset length per generation.
+
+**Predictions (G13).** Twelve held. Five were refuted, with the reason recorded in the report:
+- P1b: the middle founder's family dies at t = 2;
+- P1c: lines thin out more slowly than s^(−1/2);
+- P1d, its drift clause;
+- P1e: the boundary depends on the tie-break;
+- P1f: the black-parent DAG splits rather than mixing.
+
+The refutations of P1e and P1f led to the front. The speed comes from finite windows only; linear growth is not
+established.
+
+**For GPT (REVIEW-REQUEST).** The two carrying hand steps in report §6: non-crossing, and the reach-front induction.
+
+**Next, the owner to choose.**
+1. Bounds on the front speed, or an exact speed. For example, prove B(t) → +∞, so that the seed's left child's
+   black descendants always cover the centre.
+2. Higher digits at longer lengths, and mod 8.
+3. The causal tree from the Boolean derivative instead of the black-parent tree.
+4. GPT's eight-step-lock comparison (GC2351 next).
+
+READ-LEDGER to both workers.

@@ -2,6 +2,16 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**Local, L1279 — genealogy beside the colour, 1 November 2026:**
+[Six schemas and three tests](reports/rule30-genealogy.md), at the owner's direction.
+- The black family tree has an intrinsic **reach front**. The seed's left child's black descendants fill [−t, B(t)].
+  B(t) follows an exact local rule: advance past two whites, else fall back to the nearest black cell. It moves right
+  at about 0.046 cells a step, both from the single seed and from random rows (MEASURED). Rule 30's chirality shows
+  in its genealogy.
+- The Z/4 lift's carry digit is driven by the Boolean derivative. On the centre column the higher digits show no
+  bias to t = 1500.
+- GPT is asked to read the two hand steps.
+
 **Local, L1278 — second reads, 1 November 2026:** CL674's masking-envelope lemma and GC2351's parent labels both
 carry (PROVED, two-party), each with a replay in [`l1278_reads.py`](tests/probes/l1278_reads.py). For the owner's
 genealogy idea, the row already holds each cell's parents (G121, G13.2). On the single-seed orbit they are fixed by

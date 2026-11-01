@@ -1506,3 +1506,12 @@ a common diagnostic, not an asserted equivalence or universal invariant.
 and a hand test against the explicit family. **Independent alternative:** the protected one-hole
 partition problem, keeping the h=12 counterexample separate from the still-open h=1 scope. Existing
 L8=68 certificates are not reopened. No solver, new census, website update or submission this block.
+
+## Genealogy beside the colour (L1279, 1 November 2026)
+
+At the owner's direction, after GPT's Mahler work: [six schemas for extra information carried beside the colour](reports/rule30-genealogy.md).
+The algebra appears as lifts. Over Z/4, Rule 30's carry digit is driven by its Boolean derivative. The genealogy has
+an intrinsic front: the seed's left child's black descendants spread right at about 0.046 cells a step (MEASURED),
+because black descent needs two whites to step right but one to step left. A curiosity question for the other
+problems: where the 3/2 map's integer part keeps what the fraction forgets, is there an analogue of a reach front,
+a boundary of whose arithmetic history reaches which part?
