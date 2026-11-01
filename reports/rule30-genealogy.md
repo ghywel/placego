@@ -917,3 +917,263 @@ positive exactly when the mean episode lasts more than two steps, that is when E
 1.113 is consistent with that. On the seed itself the L-list is the single list that decodes to zeros, so no
 probability statement transfers. GPT's parking of the drift route stands. GPT's next step is to compare the
 zero-prefix criterion with Mahler G51's fixed-start residue criterion.
+
+## 14. A finite codec and its limits (GC2355, independent consolidation)
+
+The owner asks for a connected body of work before another outside read. This section develops the
+already carried GC2354, rather than opening another review exchange. New deductions below are
+**PROOF-SKETCH** until a carrying read; finite replays are self-checks. Schedules remain paused.
+
+### Pull, searches and frozen small controls
+
+The pull is the difference between recording an arbitrary past and recognizing the particular empty
+past of the seed. Can the collision record be decoded with an explicit finite cost, and can a failed
+candidate carry a small, checkable reason? A successful construction supplies a practical exact
+interface; it need not supply a speed theorem. Cheap objection: this may just be old triangular
+reconstruction in new coordinates. That objection is partly correct and is retained explicitly.
+
+Record searched: GC2353/2354 and Local L1281/1282; G25/G130/GC547/GC699's diagonal reconstruction
+and finite-left obstruction; G50/G51's Mahler residue and fractional-window conditions; GC1221/1224's
+code isometry; current known index kit93d98bbe049177d2c1546b6b0714aa33703ae13d,
+portal21:36:37Z on 1 November 2026, twelve open PRs. The query
+`tree.automorph|prefix.preserv|triangular.*(biject|cod)` finds existing triangular recodings;
+no general coding novelty is claimed. The kit's `Rule30CoupledEmptyRight.evol_diff_front`
+is the leading-bit mechanism. [Bernstein and Lagarias, *The 3x+1 Conjugacy Map* (1996)](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6975BB4A8C46CF6842217043AAF9EC13/S0008414X0004606Xa.pdf/3x_1_conjugacy_map.pdf),
+introduction and Appendix A, provide the classical residue-compatible permutation/isometry
+framework; their Collatz map is different from Mahler's ceil map. G51 is our exact source for the latter.
+
+Prediction, written before the probe: with fixed right half111000..., the first eight collision
+scan bits permute all256 eight-bit initial left words, respecting every shorter prefix. A triangular
+right-edge implementation and an ordinary finite-set Rule30 truth-table implementation agree.
+The time bound derived below is24 updates for these eight bits. For all64 three-episode lists
+with entries1..4, the zero ribbon accepts exactly(1,1,4), rejecting others at the first contradictory
+scan bit within their separate bounds. Explicit controls include(1,1,3) and(1,1,5).
+Counterfactual: any disagreement, repeated output prefix or bound violation refutes the implementation
+or the deduction; preserve the failure and do not extend the horizon automatically. Unexpected check:
+the code001110 has a Mahler integer residue but an empty fractional window.
+
+This is a small scalar control, not a substantial research run: one Python process, at most256
+eight-bit words and64 three-episode candidates, no random samples, files or horizon enlargement.
+The ordinary oracle uses at most24 updates for the encoding controls; candidate controls use only
+the independently derived bound for their specified list (total length at most12).
+
+Additional prediction before implementing the inverse: GC699's constant-column repair should invert
+all256 eight-bit outputs, with the same24-update bound. Each newly constructed diagonal is driven
+only by its two already fixed neighbours; complementing that entire diagonal enforces its requested
+scan bit. This adds256 tiny deterministic inverse checks, no longer horizon or new sample family.
+
+### 14.1 What is being encoded
+
+Fix the right half as in §11: x0=1, a further rightmost black site q>0, and white beyond q.
+Let a_j=x_(-j)(0), j=1,2,... be the left ribbon, read outwards from the front. At each collision
+inspect cells immediately behind the known black front, stopping at the first white cell. A
+collision of length L records L-1 ones followed by a zero. Concatenate these words; call the
+result y. Thus lengths(1,1,4) record `0 | 0 | 1110`, or001110.
+
+An arbitrary prefix may end before the terminating zero. Keeping such unfinished runs is essential:
+otherwise a fixed eight-bit input need not give a whole number of episodes.
+
+**Prefix encoding theorem (PROOF-SKETCH, corollary of the carried GC2354).** For each j there is a
+Boolean function h_j of the earlier input bits and the fixed right half such that
+
+    y_j = a_j XOR h_j(a_1,...,a_(j-1)).
+
+Indeed, suppose j-1 bits have been read. The completed lengths, the current scan offset and its
+time are fixed by those outputs. If an episode has just ended, the gap and its forced advances
+are determined by the exposed suffix. The next inspected cell has leading initial coordinate
+-j, even when its space/time location was chosen adaptively. Left permutivity makes its value
+a_j XOR a function of initial coordinates strictly greater than -j. The choice of the query
+does not depend on a_j. This proves the formula by induction, without independent time rows.
+
+Consequences:
+
+- Every length-S input prefix gives one length-S output prefix, and vice versa: solve the displayed
+  equation successively for a_j. Two inputs first differing at bit j have outputs first differing
+  at precisely j. Later differences can never repair that first mismatch.
+- Regard bits as least-significant-first digits of an integer modulo2^S. The map is a permutation
+  at every S, and these permutations agree when the last digits are removed. In the infinite
+  binary setting it is a **2-adic isometry**: distance is measured by the first differing digit,
+  and that distance is preserved. Equivalently it permutes the branches of the tree of finite
+  binary words while preserving their parent/child relation. This is the familiar triangular-code
+  principle, not a new general isometry theorem.
+- Fair input gives fair independent output bits, hence the geometric L law. It does not make the
+  output of the single fixed zero ribbon a fair sample. There is no information loss in this
+  entire record when the right half is retained. A small local observer can still lack the key
+  or the earlier bits needed to decode its latest observation.
+
+There is an exceptional infinite-input convention. A scan can encounter an infinite black run;
+then record an infinite tail of ones and make no subsequent physical update. In that case a
+finite next ancestry front need not exist. The prefix codec remains defined, and consistent
+finite prefixes define the infinite isometry. This exception has probability zero for the fair
+input model; finite-left configurations, including the seed, cannot contain such a run at finite
+time. Do not claim that every infinite ribbon has infinitely many completed physical episodes.
+
+### 14.2 Geometry bounds the time needed to read a prefix
+
+At an episode start (t,B), let s be the number of initial bits already consumed. GC2354 gives
+B-t=-s. The rightmost black cell is q+t, so the distance from that edge to the front is
+
+    J = q+t-B = q+s.
+
+The nearest black cell on the right is no farther away than this edge. Thus the white gap M
+satisfies M<=J-1. An episode's r=floor(M/2) advances and one collision update take at most
+
+    r+1 <= floor((q+s+1)/2)
+
+steps. For a proposed list ell_1,...,ell_n of positive lengths, put s_0=0,
+s_k=ell_1+...+ell_k, and S=s_n. Any realization completes this list by
+
+    H(ell) = sum_(k=1..n) floor((q+s_(k-1)+1)/2).
+
+The s_(k-1) are distinct members of0,...,S-1. All summands are nonnegative, so
+
+    H(ell) <= H_q(S) = sum_(j=0..S-1) floor((q+j+1)/2).
+
+The same coarse bound covers reading S scan bits when the last run is unfinished: add its
+start to the set of completed-episode starts and omit its unneeded collision update. An
+infinite scan only makes further reads at the same physical time. No infinite waiting time
+is being hidden inside the encoding theorem.
+
+The assumption of a further rightmost black q>0 is essential, not cosmetic. If q=0, the marked
+front is itself the right edge and advances forever through whites: B(t)=t, with no collision
+bits at all, regardless of the left ribbon. It cannot encode that ribbon. At the smallest allowed
+q=1 the first gap is zero, the first query is at time0, and its collision update takes one step,
+exactly consistent with the bound. Length1 is likewise included: its recorded word is a single
+zero and its collision is a stay. No positive-gap or genuine-retreat assumption enters the proof.
+
+For fixed q, H_q(S)=S^2/4+O((q+1)S). This is a bound on *how far to evolve to read S bits*,
+not a period bound or an efficient prediction theorem for a large requested physical time.
+For q=2 and S=8 it gives24. It is not asserted sharp. Large retreats increase J and hence
+the possible next gap; their cost is explicitly charged to previously consumed bits.
+
+### 14.3 An exact verifier and inverse, with obstruction certificates
+
+Use coordinates measured leftwards from the moving right edge:
+
+    z_d(t)=x_(q+t-d)(t),  d>=0;  z_(-1)=z_(-2)=0.
+    z_d(t+1)=z_d(t) XOR (z_(d-1)(t) OR z_(d-2)(t)).
+
+This is the established right-edge triangular map. In particular, depths greater than D cannot
+affect depths0,...,D. At episode start the front has depth J=q+s; forced advances leave J
+unchanged. At collision time v, the requested length ell means
+
+    z_(J+j)(v)=1 for 1<=j<ell, and z_(J+ell)(v)=0.
+
+For the zero ribbon, initialize depths0,...,q from the fixed right half and depthsq+1,...,q+S
+to zero. Evolve only this prefix. Check the requested bits in order, rejecting at the first
+mismatch. On a successful block update once and replace J by J+ell. Induction on successful
+blocks identifies the computed prefix with the true row, so this is necessary and sufficient
+for the proposed finite list. A rejected longer run is rejected at its premature white cell;
+a rejected shorter run is rejected at its falsely requested white flank. Neither needs a scan
+past the proposed S. The first mismatch occurs by H(ell), because until it the episodes agree.
+
+A certificate consists of the requested list and fixed right half, the first bad episode and
+scan index j, its time v and depth d, and the requested and actual bits. Its checker recomputes
+the bounded triangular prefix. This is an exact finite certificate with a compact witness;
+it is not a claim that checking takes constant time or avoids evolution. Scalar verification
+costs O((q+S) H(ell)) time and O(q+S) space, including gap scans within these bounds. With q
+fixed this is at most cubic time and linear space in S.
+
+For an inverse construction, use the known GC699 diagonal repair. Once shallower diagonals are
+fixed, a new depth d has the form
+
+    z_d(v) = z_d(0) XOR P_d(v),
+    P_d(v) = XOR_(0<=t<v) (z_(d-1)(t) OR z_(d-2)(t)).
+
+Construct its history with initial value0. At the query time v chosen by the earlier outputs,
+the unique required initial bit is y_j XOR P_d(v). If this is1, complement the **entire history**
+of the diagonal, not just its queried cell. This enforces Rule30 at every time while preserving
+all earlier queries and shallower diagonals. After a zero the new gap uses only fixed columns,
+so the construction continues. Store histories through H_q(S); the straightforward inverse
+uses O((q+S)H_q(S)) time and space. This is a concrete application of GC699 to an adaptive
+clock. No claim of a minimal-memory inverse is made.
+
+For a zero initial ribbon, the decoded bits must all vanish: the requested scan bits must
+equal these accumulated OR parities. That is the exact algebraic constraint. It still contains
+the nonlinear evolution in P_d; merely naming the parity has not solved or compressed it.
+
+### 14.4 Finite controls and explicit rejected histories
+
+**COMPUTED self-checks, Intel;** [probe](../tests/probes/genealogy_codec.py), small scalar execution:
+
+- All256 eight-bit inputs: the triangular prefix and the ordinary truth-table CA agree on
+  output bits and query locations/times. At each length0,...,8, the prefix map is bijective.
+  Latest query time is13, within the declared24 bound.
+- All256 output words: the independent column-repair inverse recovers the input producing it.
+- All64 three-episode lists with entries1..4: both implementations return identical acceptance
+  or first-mismatch records. Only(1,1,4) belongs to the zero ribbon.
+
+| Requested lengths | Recorded code | Decoded initial left prefix | Zero-ribbon decision |
+|---|---|---|---|
+| 1,1,3 | 00110 | 00001 | Reject at initial index5, time4, depth7: requested0, actual1 |
+| 1,1,4 | 001110 | 000000 | Accept; third episode completes at time5 |
+| 1,1,5 | 0011110 | 0000010 | Reject at initial index6, time4, depth8: requested1, actual0 |
+
+Each of these lists has H(ell)=5. Each decoded prefix, extended by zeros, independently
+reproduces its requested list in the ordinary CA. Thus the rejections do not say that a length
+list is impossible in general. They say precisely which initially white site would need to
+be black to make it possible. This is the fixed-input distinction the random model omitted.
+
+### 14.5 What transfers to Mahler, and a transfer that fails
+
+The useful common interface is now exact: a finite observed word determines one initial binary
+prefix/residue; a fixed initial condition is a compatibility test against that prefix. G51 already
+gives this for Mahler's integer map T(n)=ceil(3n/2), using the parity bits of its successive integer
+states. The present result supplies the analogous interface for the genealogy's adaptive scans.
+
+Both encodings preserve the first differing bit. One can therefore compose the genealogy encoder
+with the inverse Mahler parity encoder as maps of infinite binary strings. This does **not** show
+that Rule30 physical steps correspond to Mahler iterations, or that an ordinary finite integer
+maps to another one. It is a code correspondence, not a proved conjugacy of these dynamics.
+
+There is an earlier obstruction even before the infinite integer question. The actual zero-ribbon
+code starts001110. Mahler's integer start60 realizes that prefix:
+
+    60 -> 90 -> 135 -> 203 -> 305 -> 458,
+    parity: 0, 0, 1, 1, 1, 0.
+
+Yet it cannot have a real fractional companion staying in[0,1/2) through those steps. Write the
+fraction as u. An odd integer step needs u>=1/3 and then sends it to(3u-1)/2<1/4. Another odd
+step immediately afterwards would need it to be at least1/3. Hence11 is forbidden, as already
+proved in G50. G51 gives the exact empty window for001110: its lower endpoint is76/243,
+its upper endpoint2/9. Already0011 has lower20/81>2/9.
+
+So the most direct raw-code transfer fails on the seed's first three collisions. This is a
+specific failed transfer, not evidence that no cross-problem technique can work. What exports
+successfully is the separation between finite coding, a fixed initial input, and an additional
+admissibility constraint. A useful future transfer must preserve that constraint, or explicitly
+identify what replaces it. Inserting zeros into an arbitrary code would repair the easiest
+forbidden word but would change the clock and would not establish fixed-integer compatibility.
+
+### 14.6 What this body settles, and the next genuinely open step
+
+The whole collision record, with the fixed right half known, does not forget the initial ribbon.
+It reveals one bit at a time behind a reversible mask. The uncertain part of the seed problem
+is now the structure of those masks on the *one all-zero input*, not how many generic inputs
+can produce a proposed history. The polynomial horizon and explicit inverse make that statement
+operational. They do not bound the long-term imbalance between gaps and retreats.
+
+A cheap adversarial test explains why. For any prescribed infinite word b, the map a_j -> a_j XOR b_j
+has the same prefix-bijection and first-difference properties, but sends the zero ribbon to b.
+Even restricting to very easy such maps allows constant, alternating and nonperiodic outputs.
+Thus these coding properties alone cannot constrain the zero-input output. A successful next
+argument must use the actual Rule30 drives P_d and the actual collision schedule. This objection
+rules out promoting a generic information-preservation statement into a seed-statistics theorem.
+
+There is also a qualification to §13's informal speed sentence. Let D_n be total duration of n
+completed episodes and S_n their total L. Exactly B(D_n)=D_n-S_n. In the random-input model,
+S_n/n tends to2 almost surely. **If** D_n/n tends to a finite d, the speed at episode endpoints
+is1-2/d; an all-time limit additionally requires control between endpoints. The current work
+does not establish a stationary gap law, convergence of D_n/n, or an expectation formula for d.
+The geometric L law alone does not justify these extra assertions or the seed's measured speed.
+
+Next executable step: use the *existing* dyadic edge-clock results on P_d(v), with v restricted
+to these collision times, to ask whether their parity cancellations yield a relation on the
+zero ribbon beyond direct replay. First test any proposed relation against the explicit inverse
+and the three histories above; an arbitrary-input identity alone will not constrain the seed.
+Do not replace this question with a longer trajectory or a frequency fit. If no cancellation
+uses the actual collision clock, park this representation as an exact interface rather than a
+predictive compression. Independent warm alternative: Mahler's4,11,6 threshold boundary and its
+strict endpoints. Curiosity alternative: characterize which finite-state adaptive query clocks
+make a triangular inverse itself finite-state; first separate that restricted class from the
+unbounded gaps here. No new outside review has been requested in this consolidation block.

@@ -14479,3 +14479,35 @@ derivative route unless a question needs the quadratic term.
 - GPT's parking of the drift route and its Mahler G51 comparison stand.
 
 READ-LEDGER to both workers.
+
+## GC2355 — GPT: independent consolidation of the ancestry code (2026-11-01)
+
+At the owner's request, continue beyond a one-in/one-out exchange before another outside review.
+Taking the finite code, explicit horizon/obstruction certificates and a guarded Mahler comparison;
+predictions and scope in [section14](reports/rule30-genealogy.md#14-a-finite-codec-and-its-limits-gc2355-independent-consolidation).
+Local L1282's GC2354 carrying read is received and read, including its independent probe source.
+The fresh-bit law is now PROVED two-party. No new review flag or worker dispatch in this block;
+the owner explicitly wants the body developed first. The derivative route remains Local's parked work.
+
+
+**Consolidated outcome:** new deductions remain PROOF-SKETCH. The scan records1^(L-1)0 and
+bijects initial prefixes, preserving the first differing bit. The right edge bounds an episode
+by floor((q+s+1)/2) steps, giving a quadratic horizon in total consumed bits. A bounded triangular
+verifier rejects a proposed zero-ribbon list at its first mismatch; GC699's constant-column repair
+inverts it. All256 eight-bit words agree with ordinary truth-table evolution and invert exactly;
+all64 specified three-episode candidates give matching certificates. Only1,1,4 passes the zero
+ribbon.1,1,3 needs bit5 black;1,1,5 needs bit6 black. Partial final runs and q>0 are essential;
+q=0 yields an ever-advancing edge and no code. No large run or additional random samples.
+
+The raw seed code001110 has Mahler residue60 but empty fractional window[76/243,2/9), already
+excluded by G50's11 guard. Thus fixed-prefix compatibility transfers as an interface; the real
+half-window does not transfer under raw code identification. General triangular coding is known
+(G25/GC699; Bernstein-Lagarias1996 Appendix A), not a novelty claim. §14.6 also qualifies L1282's
+speed remark: convergence of episode durations and between-endpoint control are extra hypotheses,
+not consequences of iid collision lengths. No seed speed or dynamics conjugacy established.
+
+Next executable step: seek a collision-clock-specific cancellation of the accumulated OR parities
+using existing edge clocks; a generic parity renaming does not suffice. The exact inverse is the
+adversarial control. If unchanged, park as an interface and return to the Mahler4,11,6 boundary;
+curiosity alternative is restricted finite-state adaptive decoders. No further review request or
+flag is sent, following the owner's instruction to consolidate first. Schedules remain paused.

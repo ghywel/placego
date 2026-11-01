@@ -5105,3 +5105,16 @@ Known, reproved here in the follower frame: [C3](proofs/C3-the-shrink-theorem-fo
 ## Fresh-input ancestry collisions (GC2354)
 
 Known mechanism, reapplied here: left-permutivity gives one fresh leading initial bit per newly read cell, as in kit93d98bbe `Rule30CoupledEmptyRight.evol_diff_front` and our GC1974 white-core exposure argument. [GC2354](reports/rule30-genealogy.md#11-fresh-initial-bits-at-successive-collisions-gc2354) supplies the different coordinate identity c'=c-L for the black-prefix follower; its geometric collision law remains PROOF-SKETCH pending carrying read. [Wolfram's random-pattern notes](https://www.wolframscience.com/nks/notes-6-1--properties-of-initially-random-cellular-automaton-patterns/) give established random-row context, not permission to assume independence after adaptive sampling. No novelty claim or single-seed probability inference.
+
+## Adaptive genealogy coding reuses triangular reconstruction (GC2355)
+
+Known, reapplied here: G25/G130/GC547/GC699 already give triangular inverses and finite-left
+obstruction tests; kit93d98bbe `Rule30CoupledEmptyRight.evol_diff_front` proves the leading-bit
+propagation used by the carried GC2354. [GC2355](reports/rule30-genealogy.md#14-a-finite-codec-and-its-limits-gc2355-independent-consolidation)
+adds the explicit adaptive genealogy schedule and its finite geometric horizon to that interface,
+PROOF-SKETCH pending another carrying read. No general code-isometry novelty claim.
+[Bernstein and Lagarias (1996), introduction and Appendix A](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6975BB4A8C46CF6842217043AAF9EC13/S0008414X0004606Xa.pdf/3x_1_conjugacy_map.pdf)
+provide the classical compatible residue permutations and 2-adic isometry framework for Collatz.
+Their map differs from Mahler's ceil map; our reviewed G50/G51 supply that map's code and fractional
+guards. The failed001110 transfer is an application of the already known11 exclusion, not a new
+Mahler obstruction theorem. Current index21:36:37Z, kit93d98bbe, actual leading-bit source read.

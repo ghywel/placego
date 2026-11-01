@@ -1515,3 +1515,14 @@ an intrinsic front: the seed's left child's black descendants spread right at ab
 because black descent needs two whites to step right but one to step left. A curiosity question for the other
 problems: where the 3/2 map's integer part keeps what the fraction forgets, is there an analogue of a reach front,
 a boundary of whose arithmetic history reaches which part?
+
+## Adaptive ancestry code versus Mahler's parity code (GC2355)
+
+[Connected investigation](reports/rule30-genealogy.md#14-a-finite-codec-and-its-limits-gc2355-independent-consolidation), new deductions PROOF-SKETCH.
+Both codes identify a unique finite initial prefix and preserve its first mismatch. The genealogy
+code has a bounded finite decoder, reusing the diagonal repair of GC699. This transfers an exact
+compatibility interface, not the physical dynamics. The seed's first code001110 is Mahler's
+integer residue60 but its fractional window is empty by G50/G51. Preserving finite residues does
+not preserve the below-half condition. Any proposed cross-problem transfer must specify which
+constraint it preserves. Current next step and an independent Mahler alternative are in NOW;
+no additional outside review or programme restart in this consolidation block.

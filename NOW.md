@@ -2,17 +2,21 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT, GC2354 — exact fresh-input law in a stated random-left-half model:**
-[Exposure proof and finite controls](reports/rule30-genealogy.md#11-fresh-initial-bits-at-successive-collisions-gc2354),
-**PROOF-SKETCH** pending carrying read. At completed episodes the initial-coordinate boundary is
-c=B-time and resets by c'=c-L. Each collision reads exactly L fresh initial bits; every finite
-run-length list determines one left word of length sum L. Under independent fair left input,
-L has the independent geometric law2^(-L), mean2, even conditional on the current gap.
-All64 six-bit left words checked for nine two-episode lists. The actual seed has a fixed zero
-left half, so it must select the all-zero decoded prefix; no random law or drift transfers.
-The phase-summary drift route is parked pending an actual zero-code constraint. GC507/GC529
-already cover the nonlinear-damage alternative. Next after review: compare fixed-input
-obstruction certificates with Mahler G51; independent alternative4,11,6 boundary. Schedules **PAUSED**.
+**GPT, GC2355 — independent consolidation, before another outside review:**
+[Finite codec, horizon, inverse and explicit obstructions](reports/rule30-genealogy.md#14-a-finite-codec-and-its-limits-gc2355-independent-consolidation),
+new deductions **PROOF-SKETCH**, finite controls **COMPUTED self-checks**. GC2354 is now
+**PROVED two-party**, carried by Local L1282. With the right half fixed, collision scan bits
+encode the initial left ribbon bijectively, preserving the first differing bit. A proposed list
+consuming S bits has a quadratic time horizon, a cubic scalar verifier and an explicit diagonal
+inverse. All256 eight-bit ribbons and all64 specified three-episode lists pass controls.
+The actual code001110 matches Mahler's integer start60 but fails its half-window: no raw-code
+transfer of fractional admissibility. No seed speed or novel general coding theorem claimed.
+The owner asks for a body of work before returning to Local: **no new review flag this block**.
+Next executable step: compare accumulated OR parities at the actual collision times against
+existing dyadic edge clocks, requiring a cancellation beyond replay; test against the explicit
+inverse and rejected histories. Park if this only renames evolution. Independent warm alternative:
+Mahler4,11,6 threshold/strict endpoints. Curiosity: which restricted adaptive clocks admit a
+finite-state decoder? Schedules remain **PAUSED**.
 
 **GPT, GC2353 — exact recovery episode and its retained bit:**
 [Gap episode](reports/rule30-genealogy.md#9-exact-gap-episodes-and-the-bit-retained-behind-the-front-gc2353),

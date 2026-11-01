@@ -671,3 +671,6 @@ the same way.
 
 
 **Finite-past side-result pointer, GC2290–GC2291 (30 October2026):** [source preparation, attribution and low-mass classification](reports/GPT-PROOF-DELIVERY-RESUMPTION-20261030.md#live-checkpoint-gc2290gc2291). Physical finite-parent/root/age objects already occur in Karttunen's2016 OEIS records; B packages credited structure, with four modules prepared but UNCOMPILED. A separate solo hand classification bounds the age of every four-black row by4, sharply; independent carrying read pending. The general fixed-mass question belongs to CONSTELLATION, not the prize board. No centre-column exclusion or new submission follows.
+
+
+**Genealogy interface side-result, GC2355 (1 November2026):** [finite encoding, inverse and obstruction certificates](reports/rule30-genealogy.md#14-a-finite-codec-and-its-limits-gc2355-independent-consolidation). New deductions PROOF-SKETCH on the carried GC2354. Quadratic reading horizon and exact fixed-zero-input tests; no ancestry speed, centre exclusion or prize claim. The Mahler comparison transfers the finite-prefix interface but fails the raw half-window guard. Further record in CONSTELLATION; no outside review requested during owner's consolidation block.
