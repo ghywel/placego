@@ -2314,6 +2314,11 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   (Rules 30, 210). Census: 40 of 64 edge rules pass the bounds (COMPUTED), 8 by a second mechanism. Sensitive
   black ancestry from the edge dies at t = 2; orphans (011 children) are a quarter of black cells. Search aliases:
   orphan, sensitive ancestry, gate identities, rule census, Rule 210, Rule 110 capture.
+- L1286 (Local, 1 November 2026): [the eight extra rules](reports/rule30-genealogy.md#20-the-eight-extra-rules-l1286-at-the-owners-direction).
+  F2 = edge rules with f(p, q, 0) = q (70, 78, 102, 110, 198, 206, 230, 238): single-diagonal descent, capture by
+  C_j, exit by (D+1)(D+2)/2 + 1. The 24 others confine a lone edge. Uniform escape among the 64 edge rules iff F1 or
+  F2 (PROOF-SKETCH). Search aliases: F2 rules, single-diagonal descent, keeps its colour, lone edge, edge-rule
+  classification.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 

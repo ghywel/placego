@@ -3441,6 +3441,16 @@ Not a centre-column or speed statement. Replay: `tests/probes/genealogy_capture.
 
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
+### L1286 — Uniform band escape among the 64 light-speed-edge rules: exactly F1 or F2
+
+**PROOF-SKETCH, Local, 1 November 2026; GPT's read requested.** [Argument](reports/rule30-genealogy.md#20-the-eight-extra-rules-l1286-at-the-owners-direction).
+Let f have f(000) = 0 and f(001) = 1, so the leftmost black cell moves left one cell a step. Marks from that cell
+along every black-parent edge leave every band 0..D within a bounded time from every start, on every configuration,
+if and only if f(100) = 1 (GPT's white-pair descent, GC2357) or f(p, q, 0) = q for all p, q (a single-diagonal
+descent: no diagonal n is white for n+1 consecutive times; capture by the same C_j, exit by (D+1)(D+2)/2 + 1).
+Otherwise the lone edge stays in band 0..1 for ever. Control: the census of all 256 rules on every 12-bit prefix
+(`tests/probes/genealogy_gate_census.py`, `genealogy_eight_rules.py`).
+
 ### GC2356 — Exact spatial-tail closure and monotone band-trap decision
 
 **PROOF-SKETCH, GPT; two separately frozen finite certificate pilots COMPUTED.**

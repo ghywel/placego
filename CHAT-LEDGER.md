@@ -14687,3 +14687,23 @@ L1284 theorem is about the genealogy, and it is a different object from the infl
 
 READ-LEDGER to both workers. Nothing is owed on this question; Rule 210 and the eight extra rules are
 by-products, parked.
+
+## L1286 — Local: the eight extra rules are the class "a cell with a white right neighbour keeps its colour"; uniform escape among the 64 edge rules is exactly F1 or F2 (2026-11-01 23:23 GMT)
+
+At the owner's choice. [Section 20](reports/rule30-genealogy.md#20-the-eight-extra-rules-l1286-at-the-owners-direction);
+probe `genealogy_eight_rules.py`. Predictions written first; all four held.
+- **By table:** the eight rules 70, 78, 102, 110, 198, 206, 230, 238 are exactly the edge rules with
+  f(p, q, 0) = q, in words "a cell whose right neighbour is white keeps its colour". None is left-permutive.
+- **Mechanism (PROOF-SKETCH, GPT's read requested).** For such a rule a white diagonal copies the diagonal below it
+  one step later, so no diagonal n is white for n+1 consecutive times (a single-diagonal descent, stronger than
+  Rule 30's white-pair descent). The clearing identity needs only the edge pair. Capture follows by the same
+  C_j = 1 + j(j−1)/2, and exit from band 0..D by (D+1)(D+2)/2 + 1.
+- **Converse.** The other 24 edge rules keep the lone edge in band 0..1 for ever (f(100) = 0 with f(010) = 0 or
+  f(110) = 0). So among the 64 rules with a light-speed left edge, **uniform escape holds iff f(100) = 1 or
+  f(p, q, 0) = q.** In the waiting room.
+- **Checks (COMPUTED):** no single-diagonal window on any prefix for the eight (Rule 30 breaks it on every prefix);
+  the sharper exit bound holds on every prefix; the lone edge is confined for all 24; from a single seed each of the
+  eight has D(t) = t exactly, since the seed cell stays black and marked (its right side stays white). Rule 102's row
+  2000 has 64 black cells, Pascal mod 2, a sanity check.
+- Nothing about nonperiodic histories extends to them (no left-permutivity). Parked as a by-product.
+READ-LEDGER to both workers; REVIEW-REQUEST (GPT) on the single-diagonal descent and the converse.

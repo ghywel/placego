@@ -1980,3 +1980,73 @@ the M5. All COMPUTED.
 - **For GPT's distinction.** Capture is merging, not information loss, and not information flow either: the marked
   front's rule "advance past two whites, else fall back" is genealogy's, while the influence cone's rule is the
   derivative's (L1282). The nonperiodicity theorem of L1284 is about the former.
+
+## 20. The eight extra rules (L1286, at the owner's direction)
+
+The census of §19 found eight edge rules with f(100) = 0 that pass GPT's capture and exit bounds anyway: 70, 78,
+102, 110, 198, 206, 230, 238. By table they are exactly the edge rules with **f(p, q, 0) = q** for all p, q,
+that is f(000) = 0, f(010) = 1, f(100) = 0, f(110) = 1, with f(011), f(101), f(111) free (2³ = 8). None is
+left-permutive. In words: **a cell whose right neighbour is white keeps its colour.** The 64 edge rules therefore
+split into three classes:
+- F1, f(100) = 1 (32 rules, Rule 30 among them): a cell with white centre and right copies its left neighbour.
+- F2, f(p, q, 0) = q (8 rules, Rule 110 among them).
+- The rest (24 rules): f(100) = 0 and f(010) = 0 or f(110) = 0.
+
+Record searched: §19's searches, plus `record_find` for "rule 110" and "copies its"; nothing on this split. Rule
+110's single seed and its left-growing pattern are classical; nothing here concerns its computational universality.
+
+### 20.1 The F2 mechanism (PROOF-SKETCH, Local; GPT's read requested)
+
+In left-edge coordinates the child at index j has parents (a_(j−2), a_(j−1), a_j), and for an F2 rule
+a_j(t+1) = a_(j−1)(t) whenever a_j(t) = 0.
+- **Single-diagonal descent.** No diagonal n is white for n+1 consecutive times. Proof: if a_n(t) = 0 at times
+  T..T+n, then a_(n−1)(t) = a_n(t+1) = 0 at times T..T+n−1, and so on down to a_0 = 0 at time T, against the black
+  edge. This is stronger than Rule 30's white-pair descent, which needs both n and n+1 white.
+- **Clearing.** As in §19.1, the clearing identity u_j(t+1) = u_j(t) AND NOT(a_(j−2) OR a_(j−1)) needs only
+  f(0, 0, c) = c and f(000) = 0, which every edge rule has.
+- **Capture.** With j−2 and j−1 captured from C_(j−1), diagonal j−2 is black within the j−1 times
+  C_(j−1)..C_(j−1)+j−2, so u_j is cleared by C_(j−1) + j − 1 = C_j. The same C_j = 1 + j(j−1)/2 as GPT's.
+- **Exit.** Diagonal D+1 is captured by C_(D+1) and black within D+2 further times, so band 0..D is left by
+  C_(D+1) + D + 1 = (D+1)(D+2)/2 + 1, below GPT's (D+2)(D+3)/2. Restart and dominance are as in 17.5.
+
+### 20.2 The converse for the other 24 (PROOF-SKETCH, Local)
+
+Take the lone edge, one black cell. The next row has the new edge (parents 001) and, at index 1, f(010); index 2
+has parents 100, so it is white, and so is everything beyond. If f(010) = 0 the row is a lone edge again, for ever.
+If f(010) = 1 and f(110) = 0, the next row is [1, f(011), 0, 0, …]: either the lone edge again or [1, 1, 0, …]
+again. In every case the marked front stays in band 0..1 for all time. So uniform escape fails.
+
+**Characterisation (PROOF-SKETCH, both directions; the census is its control).** Among the 64 rules whose
+leftmost black cell moves left one cell a step, every band 0..D is left within a bounded time from every start on
+every configuration **if and only if** f(100) = 1 or f(p, q, 0) = q.
+
+The lock of L1283 needs left-permutivity, which no F2 rule has, so the nonperiodic-history theorem does not extend
+to them. For F2 rules the deep word is not even an injective function of the reads: f(0, 0, c) = f(1, 0, c) = c when
+c = 0, so the left parent is invisible behind a white pair.
+
+### 20.3 Predictions, written before the run (`genealogy_eight_rules.py`)
+
+- P8a: on every 12-bit prefix and 67 steps, no F2 rule has a diagonal n ≤ 10 white for n+1 consecutive times.
+  Rule 30 does: on the seed, diagonal 2 is white for ever (§19.2), so the mechanisms differ.
+- P8b: every F2 rule leaves band 0..D within (D+1)(D+2)/2 + 1 steps from every start ≤ 20, D ≤ 9, on every prefix.
+- P8c: every one of the 24 other edge rules keeps the lone edge's front in band 0..1 for all 67 steps.
+- P8d: from a single seed, each F2 rule's marked front has D(2000) ≥ 200. Counterfactual: a rule whose single-seed
+  front grows more slowly than a tenth of light speed; escape says only that it is unbounded.
+
+### 20.4 Results (COMPUTED, [`genealogy_eight_rules.py`](../tests/probes/genealogy_eight_rules.py), half a second)
+
+- P8a HELD: no F2 rule has a diagonal n ≤ 10 white for n+1 consecutive times on any of the 2,048 prefixes over 67
+  steps. Rule 30 violates that window on every prefix, so the two mechanisms are genuinely different.
+- P8b HELD: every F2 rule leaves band 0..D within (D+1)(D+2)/2 + 1 steps from every start ≤ 20, D ≤ 9, on every
+  prefix.
+- P8c HELD: under each of the 24 other edge rules the lone edge's front stays in band 0..1 for all 67 steps.
+- P8d HELD, and exactly: from a single seed every F2 rule has D(t) = t, because f(100) = 0 keeps the right side white
+  and f(p, q, 0) = q then keeps the seed cell black, marked by itself, for ever (one-line induction). Rule 102 is the
+  additive rule q XOR c, and its row 2000 has 2^6 = 64 black cells, as Pascal's triangle mod 2 requires: a sanity
+  check on the code.
+
+**Disposition.** The eight rules are the class "a cell with a white right neighbour keeps its colour". They admit
+GPT's capture through a single-diagonal descent, with the same quadratic capture time and a slightly better exit
+bound, and the 64 edge rules are now classified for uniform escape by two table conditions (§20.2, PROOF-SKETCH).
+None of the eight is left-permutive, so nothing about nonperiodic histories follows for them. Parked; a by-product
+of the gate question, recorded for the classification.

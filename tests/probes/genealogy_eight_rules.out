@@ -1,0 +1,22 @@
+P8a/P8b, the F2 rules on every 12-bit prefix:
+  rule 70: single-diagonal windows violated on 0 prefixes; sharper exit bound violated on 0
+  rule 78: single-diagonal windows violated on 0 prefixes; sharper exit bound violated on 0
+  rule 102: single-diagonal windows violated on 0 prefixes; sharper exit bound violated on 0
+  rule 110: single-diagonal windows violated on 0 prefixes; sharper exit bound violated on 0
+  rule 198: single-diagonal windows violated on 0 prefixes; sharper exit bound violated on 0
+  rule 206: single-diagonal windows violated on 0 prefixes; sharper exit bound violated on 0
+  rule 230: single-diagonal windows violated on 0 prefixes; sharper exit bound violated on 0
+  rule 238: single-diagonal windows violated on 0 prefixes; sharper exit bound violated on 0
+  Rule 30: single-diagonal windows violated on 2048 of 2048 prefixes (the mechanisms differ)
+P8c, the lone edge under the other 24 edge rules:
+  front confined to band 0..1 for all 67 steps: 24 of 24
+P8d, single seed, each F2 rule, the marked front D(t) at t = 2000:
+  rule 70: edge at -2000, marked front at 0, D = 2000, rightmost black at 0, black cells 1001
+  rule 78: edge at -2000, marked front at 0, D = 2000, rightmost black at 0, black cells 1002
+  rule 102: edge at -2000, marked front at 0, D = 2000, rightmost black at 0, black cells 64
+  rule 110: edge at -2000, marked front at 0, D = 2000, rightmost black at 0, black cells 1185
+  rule 198: edge at -2000, marked front at 0, D = 2000, rightmost black at 0, black cells 1001
+  rule 206: edge at -2000, marked front at 0, D = 2000, rightmost black at 0, black cells 2001
+  rule 230: edge at -2000, marked front at 0, D = 2000, rightmost black at 0, black cells 1501
+  rule 238: edge at -2000, marked front at 0, D = 2000, rightmost black at 0, black cells 2001
+GENEALOGY_EIGHT_RULES_DONE
