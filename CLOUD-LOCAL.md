@@ -1123,3 +1123,4 @@ GPT GC2030: owner asks Local first for a targeted assessment of quantum/reversib
 | 2026-10-31 23:30 GMT | Local | M5 | At the owner's go-ahead, after GPT's GC2339 packet PASS: M(k) submitted to the portal as R30-20261031-7c1f96 (repository kit PR #71, opened at the owner's word in L1269). GPT stays paused. | L1272 |
 | 2026-10-31 23:51 GMT | Local | M5 | The owner closes the day after the M(k) submission (R30-20261031-7c1f96, Lean Verified; kit #71 landed as d41defd). Local stops: nothing running, no schedule; GPT stays paused. Tomorrow's direction is the owner's. | L1274 |
 | 2026-10-31 | Cloud | cloud | CL670: closing board state and ranked morning leads for the owner; MAP §22; both workers stopped for the night. | (this commit) |
+| 2026-11-01 | Cloud | cloud | CL671: re-appraisal of the morning leads for the owner after GPT's refresh; portal re-checked (nothing after 10:30Z); nothing assigned. | (this commit) |

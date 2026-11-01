@@ -13737,3 +13737,63 @@ claim. Current Coon source27314bbf compared by named declarations and hashes, no
 reviewed. Waiting-room pointer added; independent carrying read pending, no live review dispatch.
 Both schedules stay paused. This owner-requested tangent has a result and executable alternatives;
 no website publication, prize submission or claim of progress on conjecture nonexistence.
+
+## CL671 — Cloud to the owner: last night's five leads re-appraised against the morning's page and kit (GC2340's refresh confirmed current at 16:5xZ: 78 entries, nothing after 10:30Z); two sharpened, one superseded by the field, one parked, one discharged; three new leads from the landed modules (2026-11-01 16:48 GMT)
+
+Read: GC2340 to GC2342 and MAP §23 (GPT's complete refresh at 13:58Z: kit f1cb20be, 186 modules, 14 open PRs,
+78 entries, ours 34/33/29/11); the portal fetched again at about 16:50Z (78 entries, latest submitted 10:30Z, the
+maintainers' template test withdrawn, no status changes since last night); the kit fetched into my clone at
+f1cb20be and the new modules' statements read (`Rule30WedgeParity`, `Rule30LeftAntiPeriod`, the extended
+`Rule30ZeroBoundaryStripeCascade` and `Rule30Problem3Bounds`, `Rule30Ether`, `Rule30EtherWallWitness`,
+`Rule30ZeroBoundaryPeriodLanes`); GPT's guards G23/G24 and PRIOR-ART rows. Nothing newer than the record.
+
+**What the field is doing (the consensus of the 78 entries and 14 open PRs, by statement).** (i) Problem 3
+lower-bound machinery: Quint's three entries in two days (b58e66, 781b70, 18ba2f), all Human Verified and in the
+kit; a new front nobody else is on. (ii) Backward operators and stripe cascades in the zero-boundary frame (Quint:
+a4691a, 5beddc, f0127e), our backward-ocean prior art, now with 010-synchronisation and the 3 -> 6 doubling as
+theorems. (iii) Ethers, traps and grounding for periods 2 to 4 (Lowry's #69 and #61, Bosdure, Perez Morales'
+erosion, PR65's `Rule30Ether`/`EtherWallWitness`, our M(k)). (iv) Conditional reduction chains for Q01: Condrey's
+open PR75/76 (dyadic-shell and energy equivalents of Problem 2; a repeat budget equivalent to mortality; alternating
+centre -> immortal legal frontier; BWH + SmallRW -> RW -> separator -> period two excluded), with the maintainer
+asking for their relationships to Q01; and PR67's `QP P` period lanes. (v) Left-diagonal structure: Quint's
+anti-periodicity and infinitely many density-1/2 left diagonals (5da074), beside our left-wheel work. (vi)
+Gate-generic tools: Condrey's `Rule30WedgeParity` and our gate clocks. **Nobody is on:** exact episode laws beyond
+the one-in-four ether, the shadowed backgrounds, the dyadic-background classification, the finite-row lifetime
+census (CQ01's shadow), or DQ-024's doubling density.
+
+**Last night's leads, re-appraised.**
+
+| CL670 lead | New information | Verdict | The sharpened question |
+|---|---|---|---|
+| 1. The classic 7 x 4 ether's exact episode law | PR65's `Rule30Ether` and `EtherWallWitness` are fixed-column driven-half statements (traps, locks, periodic-left witnesses), not the moving-edge law; `Rule30EtherThreeErosion` is the period-3 front method; GPT's queue keeps it as the warm structural lead. Nobody else is on moving-edge episodes. | **Sharper; still ours alone.** | In the moving frame the classic ether is the ring cycle (7, 28), so the front has a 28-phase move table where PR69's had 8. First test, prediction before the run: simulate the mismatch front of the natural witness (the edge placed into the classic ether at depth 0) and read its exact speed c and residue pattern; predict M_classic(k) = k/c + const with a small residue correction, and that c is not 3/2 (the reference's black density differs). Then the potential and a certificate as for M(k). Novelty check by statement in `Rule30Ether`, `Rule30CoupledEmptyRight`, 8d7751 and the ten landed modules (G24). |
+| 2. The three shadowed backgrounds (7,63), (9,57), (12,68) | GPT's queue item 3: nonattachment is two-party, the exponential bound 2^(k+1)+q-1 stands, "resolve the masked-defect geometry". No third party touches periodic backgrounds of the edge frame. | **Sharper, and my prediction has changed.** | Local's shadows resist every local descent to look-ahead 96 because a defect below the top pair stays masked by the background's black cells; the odd-period obstruction's bound is dyadic. So the honest prediction is now that the shadowed episodes are **exponential**, of the order of the prefix's dyadic clock, not linear: a black edge imitating an odd-period background for about 2^k ticks would be a new phenomenon. First test: exact M_R(k) for (7,63) at k = 1..8 by SAT (Local's tooling), prediction M_R(k+1)/M_R(k) near 2 beyond the first few; counterfactual: linear with a front potential as in Proof 1. Either way the shadows become a theorem target: exponential needs the masked defect named; linear needs its potential. |
+| 3. The dyadic-background conjecture (PR58's; T-Y to p <= 26) | GPT parks it ("deep, until selected"). Quint's cascades are backward waves in the stripe frame, not ring cycles. Nobody is on it. | **Parked, with a weaker target that suffices.** | GC2336's scope note: the classification would imply "attaches iff alternating" but is not needed for it. The weaker, more tractable statement is the direct one: a black edge attaches at two adjacent depths for ever to a spatiotemporally periodic background only if the background is alternating, by the descent machinery alone (the odd-period obstruction handles non-dyadic q; what remains is dyadic q with a white cell somewhere, where the descent should pass information). A bounded hand attempt on that, not on the classification. |
+| 4. The owner's currency as a front potential in the wall frame | Condrey's PR75/76 is exactly a budget-and-mortality formulation of Q01 (a repeat budget equivalent to mortality, the survival inequality r + N + 1 <= 2^(D+1)(r + 2), conditional separator chains), and the maintainer asks for the relationships to Q01. GPT's queue puts the comparison first. | **Superseded as an exploration; replaced by the comparison the field is asking for.** | Not "find a potential" but: write the coordinate-and-quantifier table between Condrey's legal pair-frontiers/budget and the kit's `Rule30ZeroBoundary` objects we know exactly (the death table, `count_constrained`, the free bits, the forced halves, the channel bound), and answer two questions the maintainer's request contains: is every immortal legal frontier a wall-frame survivor class, and is his survival inequality a statement about D(W)? G6 and G16 apply: both frames and both ensembles written out before any equivalence is claimed; nothing of his is "ours". If the dictionary closes, a bridge theorem is a kit-level contribution he asked for; if it does not, the missing reverse implication is the finding. |
+| 5. Housekeeping | GPT ran the complete refresh, confirmed the PRIOR-ART rows (Karttunen, Phillips, Lowry's white bound, L1066/PR58), added guards G23/G24, updated the board pointers. | **Discharged**, except Local's owed reads (A4, E2, the all-root reduction) and the verifier image lag, which is not ours to fix. | — |
+
+**New leads from the landed modules (not in last night's list).**
+- **(a) Wedge parity against gate clocks** (GPT's curiosity item 4). Condrey's `Rule30WedgeParity` proves, for every
+  left-permutive rule a XOR g(b,c) with g = γ XOR αb XOR βc XOR κbc, that the parity of the zero-wedge row count obeys
+  S(k+1) = κ S(k): the product coefficient carries the parity, affine rules have even counts from n = 2. Our gate
+  clocks (7b0d12, 9861e5) say the product coefficient carries the half-rate memory and affine gates are logarithmic.
+  Two "the product term is everything" theorems about different populations (admissible rows against edge codes).
+  Sharp question: is there a one-page lemma relating the wedge count's parity recurrence to the prefix-clock doubling
+  letter (both are XOR-accumulations of a quadratic term over a window)? If yes it is a small bridge nobody has; if no,
+  GPT's caution stands (shared algebra does not transport clocks).
+- **(b) Quint's left anti-periodicity against our left wheels.** `D_period_or_antiperiodic`: when D(j+1) is eventually
+  white and D(j) has eventual period L, D(j+2) is L-periodic or L-anti-periodic (period doubles) by the parity of D(j)
+  over L. That is the odometer's lifting rule on the left, available only across an eventually white wheel, which is
+  exactly where CL649's amnesia switches off. With our 0616de (no two adjacent eventually white wheels) and GC2266's
+  record positions 3, 8, 29, 400, 87867, the sharp prediction: every running-maximum period record of the left wheels
+  sits two wheels past an eventually white wheel whose inner neighbour has odd parity over its period, and the slow
+  growth is the product of the white-wheel density and the odd-parity rate. First test: list the eventually white wheels
+  to j = 10^5 from the exact tails (Local's constructor) and check the five records against them. Nobody is on the
+  record positions.
+- **(c) The Q01 bridge the maintainer asked for** is lead 4's replacement, above; it is the one item where the field's
+  consensus and our exact knowledge of the wall frame meet.
+
+**Re-ranked for the morning, if the owner directs:** (4') the Condrey comparison, because it is what the field is
+asking for and uses what we know exactly; (1) the classic ether's exact law, ours alone and one block from a
+prediction; (2) the shadows, with the changed prediction; (b) the left records; (a) wedge parity; (3) parked. No
+prize movement anywhere on the page; Problem 3 is the field's new front and not ours. READ-LEDGER (both workers,
+on resumption); nothing assigned.

@@ -2234,3 +2234,4 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   n varies and grows with k; no infinite witness or novelty claim. Current Coon source27314bbf
   compared by targeted declarations, not rebuilt. [Cross-problem transfer map](CONSTELLATION.md#rule30-methods-returned-to-the-wider-family-1-november-2026-gc2342).
   Search aliases: recharge, periodic shadow, fixed interruption, seed residue stabilization, shared-item compatibility.
+- CL671 (Cloud, 2026-11-01): last night's leads re-appraised against the morning's page and kit: the classic ether's exact law sharpened (28-phase front, speed first); the shadows re-predicted as exponential; the dyadic classification parked in favour of the direct attachment statement; the currency exploration superseded by the Condrey PR75/76 comparison the maintainer asked for; housekeeping discharged. New: wedge parity against gate clocks; Quint's left anti-periodicity against our left-wheel records.
