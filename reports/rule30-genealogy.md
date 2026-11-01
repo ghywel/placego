@@ -1870,6 +1870,8 @@ j − 7, linear in j, far below the quadratic bound. That is a measurement on th
 
 ## 19. The gate question (L1285, at the owner's direction)
 
+**Review amendment:** GC2358 in §22 qualifies the sensitivity/causality language and the Rule210 extrapolation; §20 already corrects the lone-edge counterexample.
+
 GPT's curiosity question (GC2357): which gate identities does the capture mechanism need, and what disappears if
 ancestry must follow only inputs the output actually depends on? The owner chose it. Record searched: `record_find`
 for orphan, sensitive parent, causal parent, left-permutive rules, rule 210, 256 rules, 64 rules; the kit's
@@ -2082,3 +2084,101 @@ are what the theorem is about. The three table entries are used exactly where §
 
 **Replay.** Copy the file into a Mathlib project and run `lake env lean` on it; the Intel's elan has 4.33.1. A port
 to the kit's core Lean 4.35 (no Mathlib: `push_cast`, `ring` and `simp` would need replacing) is a separate task.
+
+## 22. GPT review of L1284–L1287 and the exact Lean packet (GC2358)
+
+**Verdict: the main Rule30 theorem carries; F1/F2 escape classification carries; Lean statement
+and source fidelity PASS.** Read all of §§18–21, all327 lines of `Capture.lean` at b4e13e34,
+and the census/sensitivity probe sources. No new simulation or compiler replay was run.
+The exact Lean source SHA256 is
+`7dad0cbe3314b12a43529811a525e5c64f65243ab5bd83007555fd1f2868f9f9`.
+This is a review of the existing proof packet, not a novelty or submission audit.
+
+### 22.1 The main conclusion and what the Lean file checks
+
+Local L1284 independently carries every new step of GC2357, including the restart domination
+and the stronger limit's use of the existing Jen theorem. Together with the previously carried
+L1283 lock, this completes the two-reader hand chain: the seed's front from (-1,1) has
+B(t)+t tending to infinity, and its infinite (r,L) collision history is not eventually periodic.
+Neither finite sampling nor the unreviewed GC2356 tail classification is needed in this chain.
+The right edge's unmarked unique ancestry guarantees infinitely many finite episodes.
+
+The formal source states the intended marking convention: `mark` starts only at e and a later
+mark requires a black output and at least one marked parent. The hypotheses `he` and `hl` say
+that e really is black and everything left of it is white; the initial right half is unrestricted.
+`M_imp_D` checks marks imply black. The coordinates `e-t+k`, the two predecessor indices,
+and the exceptional bases k=0,1 agree with the hand proof.
+
+`pair` uses only the F1 table entries and the persistent edge. `clear` and `persist` prove the
+marking implication needed for capture; they do not assume the capture conclusion. `cap_step`
+propagates it forward in time, and `capture_pair` inducts over adjacent diagonals. `C_closed`
+is the exact division-free identity 2*C(j+1)=j*(j+1)+2: the displayed formula
+C_j=1+j(j-1)/2 applies to j>=1, with C_0=0 separately.
+
+`exit` chooses T=max(t0,C(D+2)), then applies `pair` to D+1,D+2. Both diagonals have already
+been captured at T; the bound follows from T+s<=t0+C(D+2)+D+1. This proves a marked cell beyond
+the band at a bounded later time, for marks originally started at time0. It needs no formal
+restart construction. `unbounded` drops the upper bound; it is an arbitrarily-late escape
+statement, not the stronger eventual lower bound B(t)+t->infinity.
+
+No `sorry`, extra axioms, changed evolution or hidden periodicity hypothesis occurs in the
+source. **Compilation remains Local's reported Lean4.33.1/Mathlib check**, with standard axioms;
+GPT has reviewed the source and statements, not replayed that check. Intel has the Lean
+compiler, but no matching Mathlib project was found in the checked workspace/cache locations.
+The best-tool build is already supplied by Local; no substitute checker or large dependency
+installation was attempted. For a reproducible delivery packet, retain the Mathlib commit,
+lake manifest and raw command/axiom log. A kit-core4.35 port and portal validation remain
+separate tasks. The file does not formalise the follower identification, deep-word lock, gap
+law, nonperiodic history or the stronger limit; the report correctly keeps those separate.
+
+### 22.2 The eight extra rules and the converse carry
+
+L1286's single-diagonal descent is valid: if a_n is zero at T,...,T+n, the F2 identity at each
+of the first n times forces a_(n-1)=0 at T,...,T+n-1, contradicting the lower-depth induction.
+The base contains the black edge. Clearing needs only f(0,0,c)=c, so it works in both F1 and F2.
+For j>=2, the single-diagonal window at j-2 clears j by C_(j-1)+j-1=C_j. The bases remain the
+marked edge and its neighbour. Once D+1 is captured, its own window supplies a marked black
+cell by C_(D+1)+D+1=(D+1)(D+2)/2+1. The arithmetic includes D=0.
+
+The converse needs a band of width1, not always a lone cell. If f(100)=f(010)=0, the lone edge
+repeats in the moving frame. If f(100)=0, f(010)=1, f(110)=0, the set of two possible rows
+{1000...,1100...} is closed: 1000... maps to1100..., and1100... maps to
+[1,f(011),0,0,...]. Thus all24 remaining rules have a permanently confined seed front.
+Rule6 already refutes §19.4's stronger claim that all24 stay a single cell; it alternates these
+two rows. §20.2 gives the correct proof. The disjoint table classes have32,8,24 members.
+
+For completeness, the prefix property used in the prose needs no Rule30-specific gate: since
+f(000)=0, every black child has a black parent. A black child at or left of B-2 has only parents
+inside the marked prefix; at B-1,B,B+1 it has the marked black parent at B. Conversely no marked
+child can lie beyond B+1. This proves the same black-prefix follower identity for every edge
+rule and justifies using the marked set in the classification. Marking is monotone under
+inclusion of the initially marked set. Therefore L1286's characterisation is **PROVED,
+two-party hand**, for all-parent black-prefix followers on rows with a leftmost black cell:
+uniform finite-band escape holds exactly in F1 or F2. It is not inferred from the census.
+
+### 22.3 Corrections to surrounding interpretations
+
+1. **Sensitivity paths are not actual damage.** V1 propagates existence of a path of locally
+   nonzero Boolean derivatives using OR. It is the first-order path-support graph, not a proof
+   that flipping the founder changes every reached cell. L1282 already distinguishes this
+   graph from the mod2 tangent and actual nonlinear damage. Replace unqualified claims that
+   V1 is the actual causal-influence cone accordingly.
+2. **Masked does not mean information-free.** At011, flipping either black parent alone leaves
+   the output black, but flipping both gives000 and a white output. The precise claim is zero
+   individual Boolean derivatives at that local state; the parents still matter jointly.
+   V2 therefore collapses to the edge in this example, rather than its lineage dying entirely.
+   The measured0.2509 orphan share is a finite bulk measurement, not an exact quarter theorem;
+   observing57 diagonals after time2000 alone does not prove an infinite-time statement for57.
+3. **Rule210 needs its own read law.** The finite truth-table calculation that the two stated
+   left-permutive shield conditions select30 and210 is correct. It does not by itself transfer
+   L1283's nonperiodic-history theorem: that proof uses a specified injective sequence of reads
+   and collision updates, while §19 itself notes that the (r,L) episode law is Rule30-specific.
+   The Rule210 nonperiodicity sentence in §19.1 is therefore uncarried and should remain a
+   proposed extension until its observable, update and reconstruction are proved. This is
+   not a counterexample to the possible extension and does not affect the Rule30 theorem.
+
+No new long compute or external submission is needed to settle this review. Next concrete
+step: preserve the exact Mathlib build provenance, apply these wording qualifications, and
+choose separately whether to formalise the remaining Rule30 hand chain. The F2 classification
+is an independent proved by-product; positive physical speed and centre-column behaviour are
+still open. Both schedules remain paused.

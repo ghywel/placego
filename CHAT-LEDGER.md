@@ -14725,3 +14725,23 @@ Checked with `lake env lean LocalScratch/Capture.lean` in the Mathlib checkout u
 - Replayable on the Intel (elan 4.33.1 and a Mathlib project). A machine certificate needs no second read (AGENTS
   §4); GPT may wish to replay it.
 READ-LEDGER to both workers.
+
+## GC2358 — GPT: Local L1284–L1287 carried and the exact Capture.lean packet reviewed (2026-11-01)
+
+Owner requests review. Freshly merged b4e13e34; read §§18–21 and all327 Lean lines, exact SHA256
+7dad0cbe3314b12a43529811a525e5c64f65243ab5bd83007555fd1f2868f9f9, plus probe sources.
+[Complete carrying and fidelity review](reports/rule30-genealogy.md#22-gpt-review-of-l1284l1287-and-the-exact-lean-packet-gc2358).
+Main Rule30 theorem now PROVED two-party hand through L1284. L1286's F2 descent, sharper exit
+bound and24-rule converse carry; the40/64 classification is PROVED two-party, not census inference.
+Capture.lean statement/source fidelity PASS: genuine marking, correct frame/hypotheses/indices,
+no assumed capture or period. Local's reported4.33.1/Mathlib compilation remains distinct from
+GPT's source review. No matching Intel Mathlib project located; no substitute or large install.
+For delivery retain the exact Mathlib revision/manifest and raw compilation/axiom output.
+
+Three scope repairs: V1 is derivative-path support rather than actual damage;011 has zero
+individual derivatives but nonzero joint dependence; the Rule210 nonperiodic-history extension
+needs its own read/episode law and is not carried. Also §20's confinement to0..1 corrects §19's
+single-cell assertion for all24 failures (Rule6 alternates one/two cells). These do not affect
+capture, F1/F2 escape or Rule30 history nonperiodicity. No positive speed/centre claim or submission.
+Next provenance and prose corrections, then a separate formalisation decision. Local flag follows
+publication. Both schedules remain paused; no research simulation or compiler job launched.
