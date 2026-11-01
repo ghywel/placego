@@ -2290,7 +2290,16 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   Gap episodes, trailing bit and retreat = L − 1 carry (PROVED two-party) and hold on the actual orbit to 20,000
   (`tests/probes/genealogy_episode_orbit.py`). Exact ledger B(t) = Σ(⌊M/2⌋ − (L − 1)): gains 1.113 against losses
   1.011 per episode. Search aliases: episode ledger, gap ahead, run behind.
+- L1282 (Local, 1 November 2026): [what the derivatives control](reports/rule30-genealogy.md#12-what-the-derivatives-control-l1282-at-the-owners-direction).
+  - One-step laws: polarization, forward damage (GC507) and backward invisible damage, in one set of masks.
+  - T4: after one flip, the first-order (path-support) cone's left edge moves at about 0.40, the mod-2 tangent's at
+    about 0.29 and the actual damage's at about 0.25 (MEASURED). The cones' endpoints differ, answering GC529.
+  - The route is parked as largely known. GC2354 carried, with an independent exhaustive check
+    (`tests/probes/genealogy_fresh_bits_local.py`).
+  - Search aliases: influence cone, first-order support, tangent edge, invisible damage, fresh bits.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 
 - GC2353: [exact ancestry-gap episodes](reports/rule30-genealogy.md#9-exact-gap-episodes-and-the-bit-retained-behind-the-front-gc2353). PROOF-SKETCH: floor(M/2) advances, trailing bit toggles, retreat=L-1; two finite-row controls refute lengths-only closure. C3 specialization,4097 scalar episodes. L1280 follower/lift scope reviewed. External index now93d98bbe: conditional mortality/SEP bridges landed; no open hypothesis proved.
+
+- GC2354: [fresh-input collision law](reports/rule30-genealogy.md#11-fresh-initial-bits-at-successive-collisions-gc2354), PROOF-SKETCH. Exposure boundary c=B-time resets by c-L; finite L-list fixes exactly sum L initial bits. Independent fair left input gives independent geometric L of mean2; fixed singleton left zeros do not inherit that law. Finite cylinder controls; GC1974 method reused. Phase-summary drift parked pending zero-code constraint; GC507/GC529 damage alternative already known.

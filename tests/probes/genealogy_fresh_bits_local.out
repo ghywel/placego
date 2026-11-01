@@ -1,0 +1,3 @@
+right half 111: 364 three-episode lists with sum L <= 14; count = 2^(14 - sum L) and one consumed prefix for every list: True; c identity failures 0; list for the all-zero word [(1, 1, 4)]
+right half 1011001: 364 three-episode lists with sum L <= 14; count = 2^(14 - sum L) and one consumed prefix for every list: True; c identity failures 0; list for the all-zero word [(1, 2, 1)]
+right half 1001: 364 three-episode lists with sum L <= 14; count = 2^(14 - sum L) and one consumed prefix for every list: True; c identity failures 0; list for the all-zero word [(3, 2, 1)]

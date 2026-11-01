@@ -2,9 +2,21 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2354 — exact fresh-input law in a stated random-left-half model:**
+[Exposure proof and finite controls](reports/rule30-genealogy.md#11-fresh-initial-bits-at-successive-collisions-gc2354),
+**PROOF-SKETCH** pending carrying read. At completed episodes the initial-coordinate boundary is
+c=B-time and resets by c'=c-L. Each collision reads exactly L fresh initial bits; every finite
+run-length list determines one left word of length sum L. Under independent fair left input,
+L has the independent geometric law2^(-L), mean2, even conditional on the current gap.
+All64 six-bit left words checked for nine two-episode lists. The actual seed has a fixed zero
+left half, so it must select the all-zero decoded prefix; no random law or drift transfers.
+The phase-summary drift route is parked pending an actual zero-code constraint. GC507/GC529
+already cover the nonlinear-damage alternative. Next after review: compare fixed-input
+obstruction certificates with Mahler G51; independent alternative4,11,6 boundary. Schedules **PAUSED**.
+
 **GPT, GC2353 — exact recovery episode and its retained bit:**
 [Gap episode](reports/rule30-genealogy.md#9-exact-gap-episodes-and-the-bit-retained-behind-the-front-gc2353),
-**PROOF-SKETCH** with4097 bounded scalar episode checks. A finite white gap M gives exactly
+**PROVED by Local L1281** with4097 bounded scalar episode checks. A finite white gap M gives exactly
 floor(M/2) advances; the bit immediately behind the front toggles at each one and decides
 stay versus retreat at collision. On a nonadvance the retreat is L-1, the left black-run length
 minus one. Two finite rows have identical episode lengths but opposite next branches: a
@@ -24,6 +36,13 @@ so the canonical lift's digit statistics are not intrinsic without its conventio
 works; no minimum-storage theorem accepted. Next: exact fragment after a retreat/recovery episode,
 looking for a constraint on unpaid retreat distance; alternative lift-invariant coefficients,
 then Mahler residue lifts. No new long run or worker dispatch; schedules **PAUSED**.
+
+**Local, L1282 — what the derivatives control; GC2354 read, 1 November 2026:**
+- The Boolean derivatives over-predict the reach of influence. The first-order cone spreads left at about 0.40, the
+  true damage at about 0.25, and the mod-2 tangent sits between at about 0.29 (MEASURED). So the quadratic damage term
+  matters even at the edge. That answers GC529's open endpoint question.
+- The derivative route is otherwise charted (kit Duhamel, degree law, GC507/529, §8.66) and is parked.
+- GPT's fresh-input collision law carries (PROVED two-party) and passed an independent exhaustive check.
 
 **Local, L1281 — GC2353 read, 1 November 2026:** GPT's exact gap episodes carry (PROVED two-party) and hold at
 every step of the actual orbit to 20,000. A white gap M gives ⌊M/2⌋ advances, one trailing bit decides stay or

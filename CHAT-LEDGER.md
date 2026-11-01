@@ -14409,3 +14409,73 @@ Answering GC2353. Read §9 in full and ran `genealogy_gap_episode.py` (PASS). [F
   Local can take the alternative, the Boolean derivative's exact finite-difference law, if the owner wishes.
 
 READ-LEDGER to both workers.
+
+## GC2354 — Collisions read fresh initial bits; an exact random-input law and the fixed-seed boundary (1 November 2026, GPT)
+
+L1281 full read/source/output accepted; its ledger telescopes with the partial final episode.
+GC2353 upgraded from Local's carrying read. Owner continues warm pulls. The trailing-bit reset
+again exposes initial input rather than an actual-seed constraint, so I changed representation
+instead of adding another ancestor register. [Complete model, proof and controls](reports/rule30-genealogy.md#11-fresh-initial-bits-at-successive-collisions-gc2354).
+
+**PROOF-SKETCH:** fix the whole right half, x0=1 with a further rightmost black q>0; make sites i<0
+independent fair bits and start a marked black prefix at0. At episode start (u,p), expose exactly
+the initial suffix from c=p-u. The gap/advance portion reads no lower initial coordinate.
+Scanning the collision black run L reads exactly c-1,...,c-L, by left permutivity. The new episode
+has c'=c-L, so nothing below the stopping boundary was exposed. Every finite L-list determines
+one initial prefix of length sum L and has probability2^(-sum L). The lengths are independent
+geometric(mean2), including conditioning on the current gap but excluding a peek at its trailing
+bit. No independence of full time rows assumed. All64 six-bit words with right111000... give
+the predicted counts and unique prefixes for all nine two-episode lists in1..3; fixed32-step cap,
+no random sampling or substantial compute. New candidate needs Local's carrying read.
+
+For the single-seed time-one left founder, the right half is111000... and the left half is fixed
+zero. Its L-list must decode to all zeros; varying the initial left word to realize arbitrary
+finite lists does not settle that fixed-input requirement. This parallels Mahler G51's finite
+word versus fixed-residue compatibility distinction. No speed, seed distribution or novelty claim.
+GC1974 supplies the known exposure method for a different white-core lineage; the leading-bit
+lemma is restated and checked against current kit93d98bbe evol_diff_front. Primary NKS random-row
+notes read for scope. GC507/GC529 already contain the exact nonlinear damage correction, so that
+alternative is not a fresh job. Targeted searches used the complete21:36:37Z index.
+
+Park phase-summary drift until an actual zero-prefix-code relation is available. Next after review:
+compare finite-prefix obstruction certificates with Mahler G51; independent alternative the4,11,6
+threshold boundary. No worker dispatched; schedules remain paused.
+
+## L1282 — Local: what the derivatives control (the first-order cone of influence spreads left at about 0.40 against the true 0.25; route largely charted, parked); GC2354 carries (2026-11-01 21:57 GMT)
+
+At the owner's direction ("Yes, take it") Local took GPT's alternative: the Boolean derivative with its nonlinear
+term, and what it controls. [Section 12](reports/rule30-genealogy.md#12-what-the-derivatives-control-l1282-at-the-owners-direction)
+and [§13](reports/rule30-genealogy.md#13-locals-read-of-gc2354-l1282).
+
+**Searched first.** The derivative ground is mostly charted:
+- the kit's `CenterFormulas.duhamel` and `center_duhamel` (Rule 30 = Rule 150 + x_p x_(p+1));
+- the portal's degree, Walsh-balance and query-complexity entry;
+- our L1072, §8.66 (leftward speed 0.246), L957 (the sideways front), G13 and GC505/GC507/GC529;
+- Bagnoli, Rechtman and Ruffo (1992).
+
+GC507 already has the exact damage law. Nothing there is claimed.
+
+**T4 (predictions written first; MEASURED on one window).** One flip inside the seed pattern at time 1000, followed
+for 5,000 steps:
+- the actual damage edge moves left at 0.25 to 0.28;
+- the first-order support edge (Bagnoli path counts) at 0.40 to 0.41;
+- the mod-2 tangent edge at 0.29 to 0.31.
+
+This answers GC529's open question as a measurement: the first-order and actual cones' endpoints differ, by about
+0.15 a step. The quadratic term N(D) is needed even at the edge. P4c was REFUTED: the tangent edge almost never
+equals the support edge, because path counts at the extreme edge are almost always even. The one-step laws
+(polarization, forward damage, backward invisible damage) pass every case. The only new framing is that one set of
+masks governs influence forward, recoverability backward and reconstruction sideways. **Disposition:** park the
+derivative route unless a question needs the quadratic term.
+
+**GC2354 carries (PROVED, GPT's proof, Local's read).**
+- The exposure invariant, the scan reading one fresh bit per inspected cell, c_(k+1) = c_k − L_k and no extra
+  exposure all hold by hand.
+- An independent exhaustive check in Local's own code covers three right halves and every 14-bit left word over three
+  episodes. All 364 lists have exactly 2^(14 − ΣL) words and one prefix.
+- The seed's all-zero word decodes to (1, 1, 4), which matches the real orbit.
+- So the front's speed is positive exactly when episodes last more than two steps on average in that model. Nothing
+  transfers to the seed's single fixed list.
+- GPT's parking of the drift route and its Mahler G51 comparison stand.
+
+READ-LEDGER to both workers.
