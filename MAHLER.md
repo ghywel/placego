@@ -570,3 +570,129 @@ existing slack identities before treating it as additional. In parallel as an in
 classify entry/exit branches of[2/5,1/2) with the integer residue retained. Any claim about the delay
 must name its fixed-start or bounded-start-size hypothesis. An unchanged global delay bound is cold
 because the finite-prefix construction above refutes it. Both schedules remain paused.
+
+## Moving the divider: what makes a threshold interesting (GC2345)
+
+Owner pull, 1 November 2026: keep the half fixed and vary the lower ceiling, allowing rational
+and irrational choices. **Status:** applications and the explicit irrational example below are
+PROOF-SKETCH, independent carrying read pending. G50/G51/G294 remain the reviewed foundations.
+No new Mahler exclusion, priority claim, large computation or full external-library review.
+
+### A divider labels a run; requiring confinement changes the question
+
+For 1/3 <= a < 1/2, retain both first-crossing times T_a and T_(1/2). Merely moving a changes
+our description of the same actual orbit. Requiring u_t < a at every time instead selects a
+smaller class of runs. These are distinct uses of the divider.
+For every such a, a first entry from below a into [a,1/2) at a positive time comes from an even
+integer with previous fraction in [2*a/3,1/3). Once inside, an even integer fails the half test
+next, whereas an odd integer returns to [(3*a-1)/2,1/4). This is GC2344 with a variable bound,
+by the same two branches. The return law varies continuously with a; it does not make 2/5 singular.
+The intrinsic branch boundary is 1/3. Staying strictly below it forever would force all integer
+parts even; their initial value must then be divisible by every power of 2, and hence zero.
+The fractional part must also be zero to stay bounded under repeated multiplication by 3/2.
+Thus no positive start survives that strict window; this elementary special case is already known.
+
+### Exact pattern thresholds, rather than a grid of convenient decimals
+
+Put r=2/3. For a finite binary word w of length L, followed by zeros, define
+
+    H(w) = max_(0 <= j < L) sum_(j <= k < L) w_k * r^(k-j) / 3.
+
+All its fractional tails are strictly below a exactly when H(w)<a. Every H(w) is rational.
+If H(w)<1/2, G51 realizes every required finite segment with a suitable positive integer start;
+the infinite zero continuation is not a positive-integer realization. Later nonzero digits can
+only increase these tail costs. Therefore H(w) is also an exact finite obstruction when H(w)>=a,
+not a sufficient test for an arbitrary infinite continuation.
+
+For three odd digits at positions 0,d,d+e the complete finite-word threshold is
+
+    H(d,e) = max((1+r^d+r^(d+e))/3, (1+r^e)/3).
+
+At d=4 and e>=4 the first term is the maximum. This gives the nearby change points:
+
+| First gap, second gap | Exact threshold | Approximation |
+|---|---|---|
+| 4,10 | 5744137/14348907 | 0.400318783863 |
+| 4,11 | 17216027/43046721 | 0.399938174153 |
+| 4,12 | 51615313/129140163 | 0.399684434346 |
+
+At equality the strict window excludes the pattern. Thus 0.4 separates the 4,10 and 4,11
+patterns but is not itself one of these change points. The selected pair threshold alone does
+not determine admissibility of the full language. Repeating 4,11 has the different geometric-series
+threshold (1+r^4)/(3*(1-r^15)) = 0.400090624993..., already above 0.4 (GC2344).
+
+G294 supplies whole intervals of ceilings with the same ordinary-integer criterion: e.g.
+[81/211,97/243] means all odd gaps at least 5, and [27/65,35/81] means all odd gaps at least 4.
+The lower endpoint removes an equality periodic word on the purely fractional side, but that
+word cannot belong to a positive ordinary integer anyway. These are criteria, not claims that
+any positive integer satisfies them. If Mahler nonexistence holds, the positive survivor sets
+are all empty even though the fractional pattern sets change richly with a.
+
+### An explicit irrational threshold on the fractional side
+
+An infinite word b has ceiling H(b)=sup_j sum_(k>=0) b_(j+k)*r^k/3. If a>H(b), it survives;
+if a<H(b), it fails. At equality, strict survival depends on whether the supremum is attained.
+Rationality alone does not settle any of these questions.
+
+Concrete example: put ones at s_0=0 and s_k=4*k! for k>=1, namely 0,4,8,24,96,480,...,
+and zeros elsewhere. Let
+
+    A = (1 + sum_(k>=1) r^(4*k!)) / 3.
+
+Its successive gaps 4,4,16,72,... are nondecreasing. From any later one, each subsequent one
+is at least as far away as the corresponding one from position zero. Termwise comparison gives
+every later odd-tail value <=A; tails starting with zeros are smaller. Hence H(b)=A, attained at
+zero. All gaps are at least 4, so A<=27/65<1/2. With
+P=(1+r^4+r^8+r^24)/3, the elementary geometric remainder bound gives P<A<P+r^96, or
+
+    0.41220290323340593130... < A < 0.41220290323340594376... .
+
+To see A is irrational, truncate after s_m to A_m, whose denominator divides 3^(s_m+1).
+The strictly positive remainder is at most r^s_(m+1). If A=p/q were rational, a nonzero difference
+would be at least 1/(q*3^(s_m+1)). But s_(m+1)=(m+1)*s_m, so eventually the remainder upper bound
+is smaller than that lower bound, a contradiction. This is the classical fast rational-approximation
+argument, not a new irrationality method. A is a genuine right-sided change point for the fractional
+survivor set: this word is excluded at A and included for every ceiling greater than A.
+
+**Adversarial control: this word is excluded on the integer side.** If its first integer were n>0,
+then n_t+1 <= (3/2)^t*(n+1). At an odd step t with next odd gap D, the next integer is divisible
+by 2^(D-1), so 2^(D-1) <= (3*n_t+1)/2 < (3/2)^(t+1)*(n+1). For t=s_m and
+D=s_(m+1)-s_m=m*s_m this is impossible for large m. This is the known sparse-gap obstruction
+(GC667) applied explicitly. The example demonstrates an irrational structural threshold, not a
+candidate Z-number. Finite realizations still exist separately by G51.
+
+### Search and exact scope of the external update
+
+Record searched: G50, G51, G294, GC667, GC2344, the window-ladder and threshold entries; the
+Rule30 kit/portal cached index at f1cb20be (13:58Z refresh) had no relevant match in this scope.
+No new Rule30 novelty claim or full portal refresh was made in this Mahler discussion.
+Coon's Mahler remote was freshly fetched: main advanced from 27314bbf to
+bd92eb17692e6257084eb39142419fdd6d1fd285. Targeted source read of
+[BetaShiftThreeHalvesDictionary.lean](https://github.com/jjc16/mahler-3-2-lean4/blob/bd92eb17692e6257084eb39142419fdd6d1fd285/BetaShiftThreeHalvesDictionary.lean)
+(SHA256 f49ad1a88f13a18e255709f1379c52ec55a764a963a81e6ee3714757de1a647f):
+`fract_dynamics_conj_betaMap`, `halfBetaStep_in_half_interval` and its iterate proof carry the
+known rescaling y=2*u to y'=frac(3*y/2); the file also contains finite itinerary realization and
+periodic sign obstruction statements. No rebuild or complete carrying read of the new modules.
+The rescaling is also already in our MAHLER summary, credited to Flatto 1992.
+
+The related literature calls changes in survivor sets *bifurcations*: the set of starting points
+that avoid a forbidden region changes with its boundary. [Kalle–Kong–Langeveld–Li](https://arxiv.org/abs/1803.07338)
+and [Baker–Kong](https://arxiv.org/abs/1904.07007) study lower holes at zero. Our rescaled ceiling
+is an upper hole [2*a,1); do not transfer their theorems or endpoint conventions without a proved
+translation. Their fractional survivor sets do not impose Mahler's positive-integer realization.
+The irrational example uses the standard lacunary-series rational-approximation mechanism; compare
+[Marques–Ramirez–Silva, introduction](https://doi.org/10.1017/S0004972715001239) for that classical context,
+not as a theorem about this specific ceiling.
+
+Tiny PARI/GP substitutions evaluated the displayed rational formulas and the rigorous irrational
+bracket; no search, horizon enlargement or proof by rounded decimals. The interactive explanation
+uses exact integer comparisons for its decimal divider and three-odd pattern test. Its test harness
+initially expected second gap 5 at 0.42; the correct reviewed gap-4 plateau requires 4, and the
+harness expectation was corrected. No mathematics or display code was altered to conceal that check.
+
+**Next executable step:** classify the exact finite-pattern change points between 97/243 and
+27/65, starting with H(4,e), then append a third gap while retaining the remainder bound. Ask which
+changes alter the admissible pattern set and which only restate an existing obstruction. No brute
+decimal sweep. **Independent alternative:** carry integer residue constraints across the same
+short patterns; keep finite realization and one fixed infinite start distinct. The factorial example
+is closed as a positive-integer candidate by the bound above. Both schedules remain paused.

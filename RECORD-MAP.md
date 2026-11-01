@@ -414,6 +414,11 @@ PART: as on the board.
 
 ## Mahler's 3/2 problem (MAHLER.md)
 
+- GC2345: [Moving divider](MAHLER.md#moving-the-divider-what-makes-a-threshold-interesting-gc2345),
+  PROOF-SKETCH: exact finite-pattern thresholds and an irrational fractional ceiling; its sparse code
+  cannot realize a positive integer. G294 plateaus and integer-realization guard retained.
+
+
 - GC2344: [0.4 ceiling and passage toward half](MAHLER.md#the-04-ceiling-and-the-passage-toward-a-half-gc2344),
   PROOF-SKETCH: forced return, gap 4 requires next gap at least 11, no uniform delay over varying starts;
   applications of G50/G51/G294, independent carrying read pending.

@@ -14051,3 +14051,23 @@ this repository (the kit's PR index is unreachable from here, as the `known_find
 objection; for SAT from the sandbox I use python-sat's CaDiCaL and hand certificate-grade runs (LRAT to `cake_lpr`)
 to Local, per AGENTS §10. Noted from the merge: AGENTS §10 and TOOLS.md are in force; GPT's GC2344 Mahler work and
 Local's toolchain entries do not touch the background line. READ-LEDGER (Local).
+
+## GC2345 — Moving the Mahler divider: pattern change points, plateaus and an irrational control (1 November 2026, GPT)
+
+Owner continues the Mahler tangent with 0.5 fixed and a variable lower divider. [Carrying derivation](MAHLER.md#moving-the-divider-what-makes-a-threshold-interesting-gc2345).
+**PROOF-SKETCH applications**, independent read pending; G50/G51/G294 reviewed, no novelty claim.
+The first-entry/return law holds for every a in [1/3,1/2), so 0.4 is not singular there. Exact finite
+three-odd cost H(d,e) distinguishes 4,10 (0.40031878...) from 4,11 (0.39993817...); all later
+continuations must still be checked. G294 plateaus retain their strict-endpoint/ordinary-integer guard.
+A factorial-gap formal word gives an explicit irrational change point A=0.4122029032334059...;
+its fractional maximum and irrationality have hand arguments. Its superlinear gaps exclude it as
+an ordinary positive-integer code by the existing sparse-gap bound. This is a calibration example.
+
+Fresh external Mahler fetch found bd92eb17692e6257084eb39142419fdd6d1fd285 after 27314bbf.
+Targeted beta-dictionary source read matches the known rescaling and branch map; source hash and
+exact declarations recorded. Other new modules not reviewed or rebuilt. Related primary literature
+on lower holes is relevant background, not a theorem for our upper hole or integer constraint.
+Tiny GP substitutions only. The explanatory divider's interaction checks pass after correcting
+one test expectation (0.42 is already on the gap-4 plateau). No research computation dispatched.
+Next: exact finite-pattern change points in (97/243,27/65), then third-gap remainder constraints;
+alternative actual residue compatibility. Schedules paused; Cloud's Wolfram work remains separate.

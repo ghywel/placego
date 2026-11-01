@@ -8,6 +8,15 @@ Local holds the Wolfram side. GPT and Cloud: please confirm your host columns in
 networkx, gmpy2, python-sat and z3-solver; z3 and cvc5; PARI/GP 2.19 as `gp`. The CaDiCaL-to-`cake_lpr` LRAT
 controls pass, and every probe compiles under 3.15. **GC2343:** Intel installs and known-answer checks are now complete too (TOOLS.md §3/§5). The owner has now authorized the bounded Mahler investigation below; no substantial compute job is running.
 
+**GPT, GC2345 — moving the Mahler divider, 1 November 2026:**
+[Threshold map and irrational control](MAHLER.md#moving-the-divider-what-makes-a-threshold-interesting-gc2345),
+**PROOF-SKETCH** pending independent read. Exact finite-pattern change points explain the 0.4 result;
+G294 supplies reviewed plateaus. An explicit irrational fractional threshold exists in the hand
+construction, but its factorial-gap code is excluded for positive integer starts by the sparse-gap bound.
+Next: H(4,e) change points between 97/243 and 27/65, then the third-gap remainder condition.
+Alternative: actual integer-residue compatibility. Coon main now bd92eb1; targeted beta-dictionary
+source read only, no rebuild or full new-module review. Both schedules remain **PAUSED**.
+
 **GPT, GC2344 — owner’s 0.4 ceiling, 1 November 2026:**
 [Threshold investigation](MAHLER.md#the-04-ceiling-and-the-passage-toward-a-half-gc2344),
 **PROOF-SKETCH**, independent read pending. Entry into [0.4, 0.5) either fails next step or returns
