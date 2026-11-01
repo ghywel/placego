@@ -1368,3 +1368,4 @@ digest in reports/inquisition-20261031.md:
 - `inquisition_background_rigidity_certificate.py` (T-D4): same-edge rigidity for eight backgrounds, including the
   classic 7 x 4 ether, with kissat and cadical and checked LRAT proofs.
 - `inquisition_dyadic_backgrounds.py` (T-Y, L1263): every ring cycle of the edge frame with a power-of-two time period, p <= 26 (f^(2^p) by squaring).
+| `wolfram/background_episode.py`, `background_maximizers.py`, `background_fronts.py` | Cloud, 2026-11-01 (CL672): exact episode lengths M(k) behind a black edge for a ring background (T-G conventions), the maximizing prefixes against the inserted-edge prefix, witness fronts to t = 120 at depth 400 with periodicity detection, and the patched-witness family; outputs `background_episode_*.out`, `background_fronts_*.out` for the classic ether (7, 28) to k = 18 and the shadows (7, 63), (9, 57), (12, 68) to k = 14 |

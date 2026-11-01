@@ -1,0 +1,19 @@
+background s9_57: p=9 q=57 state0=100100000
+k= 1 M= 12 (horizon 198) maximizers listed 3, of which inserted-edge witnesses 3
+k= 2 M= 13 (horizon 201) maximizers listed 3, of which inserted-edge witnesses 3
+k= 3 M= 13 (horizon 204) maximizers listed 6, of which inserted-edge witnesses 6
+k= 4 M= 15 (horizon 207) maximizers listed 3, of which inserted-edge witnesses 3
+k= 5 M= 15 (horizon 210) maximizers listed 6, of which inserted-edge witnesses 6
+k= 6 M= 16 (horizon 213) maximizers listed 3, of which inserted-edge witnesses 3
+k= 7 M= 16 (horizon 216) maximizers listed 6, of which inserted-edge witnesses 6
+k= 8 M= 17 (horizon 219) maximizers listed 3, of which inserted-edge witnesses 3
+k= 9 M= 17 (horizon 222) maximizers listed 6, of which inserted-edge witnesses 6
+k=10 M= 19 (horizon 225) maximizers listed 3, of which inserted-edge witnesses 3
+k=11 M= 24 (horizon 228) maximizers listed 3, of which inserted-edge witnesses 0
+k=12 M= 27 (horizon 231) maximizers listed 3, of which inserted-edge witnesses 0
+k=13 M= 28 (horizon 234) maximizers listed 3, of which inserted-edge witnesses 3
+k=14 M= 34 (horizon 237) maximizers listed 3, of which inserted-edge witnesses 0
+M(1..14) = 12 13 13 15 15 16 16 17 17 19 24 27 28 34
+inserted-edge witness front speeds (slope of R*(t) over t=30..60), distinct values: [0.933, 0.937, 0.977, 0.979, 0.981, 0.988, 0.994, 1.0, 1.004, 1.015, 1.036, 1.041, 1.059, 1.077, 1.083, 1.096, 1.109, 1.121, 1.141, 1.164, 1.175, 1.177, 1.19, 1.207, 1.237, 1.243, 1.246, 1.248, 1.249, 1.25, 1.253, 1.254, 1.255, 1.257, 1.258, 1.262, 1.264, 1.266, 1.267, 1.268, 1.269, 1.271, 1.272, 1.273, 1.274, 1.275, 1.276, 1.278, 1.279, 1.281, 1.282, 1.286, 1.287, 1.29, 1.296, 1.298, 1.308, 1.328, 1.355]
+witness episode lengths at k=14: max 29 (exact M(14) = 34) attained by alignments [(0, 18), (3, 56), (6, 37)]
+BG_EPISODE_DONE

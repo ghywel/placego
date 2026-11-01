@@ -2171,3 +2171,71 @@ The other results are not ready:
 - **The eight-background rigidity, including the classic 7 × 4 ether.** Its finite premises are SAT/LRAT certificates
   checked by Python, not Lean, and the proofs are not kept for replay.
 - **The p ≤ 26 attachment classification.** It is new, GPT has not read it, and it is a side question.
+
+
+## Round 8 (2026-11-01, Cloud, CL672): the classic ether's episode law and the three shadows, run first at the owner's word
+
+Conventions exactly as T-G (`inquisition_ring_references.py`): ring cycles of the edge frame, alignment (r, s) means
+X_k(t) = R_(k+r)(t+s), M(k) over all 2^(k+1) prefixes and all p·q alignments. Predictions were written before the runs
+(Block 13 in Cloud's scratch, copied into CL672). Probes `background_episode.py` (exact M(k), maximizer test, witness
+fronts), `background_maximizers.py` (the maximizing prefixes against the inserted-edge prefix), `background_fronts.py`
+(fronts to t = 120 at depth 400 with periodicity detection; the patched-witness family), outputs beside them.
+
+### Exact episode lengths (COMPUTED, exhaustive)
+
+| background | M(1..) |
+|---|---|
+| (7, 28) classic ether | 7 7 8 9 10 10 12 12 16 16 17 17 **18 18 20 21 24 24** (k ≤ 18; T-G had k ≤ 12) |
+| (7, 63) | 11 12 12 15 15 16 17 18 18 20 22 24 **24 25** (k ≤ 14) |
+| (9, 57) | 12 13 13 15 15 16 16 17 17 19 24 27 **28 34** (k ≤ 14) |
+| (12, 68) | 23 24 24 26 26 28 28 32 32 35 36 36 **38 38** (k ≤ 14) |
+
+### Who attains them: the inserted edge, a patched edge, or a two-phase object
+
+The *inserted-edge witness* of alignment (r, s) is the background with the black edge put at depth 0 (X_j(0) = R_(j+r)(s)
+for j ≥ 1), the object that is optimal at every depth for PR69's ether (M(k)).
+- **(12, 68):** every maximizer at every k ≤ 14 is an inserted-edge witness, and the family of inserted-edge witnesses
+  with depths 1..8 free reproduces the exact table exactly. The same law as PR69's ether: a finite-certificate proof of
+  its exact M(k) for all k is in reach by the CL669/Proof-1 method, with a period-34 front (= q/2) in its main class.
+- **(7, 28), the classic ether:** from k = 4 on no maximizer is a pure inserted-edge witness. The maximizers are the
+  inserted edge of the *same* alignment with a patch at depths 1..4 (patterns `.^^^` and `^^^.` below the pair), except at
+  k = 16, where the patch sits at depths 7, 8, 10, 11, 12, five below the pair. The eight-cell patched family reproduces
+  the table except at k = 16 (20 against 21). So the classic ether's optimal objects are the background plus a shield
+  placed to slow the edge's news, not a single witness.
+- **(7, 63):** maximizers are patched inserted edges (depths 2..4 and 8 at k = 12, 14); the family matches except at k = 10
+  (19 against 20), where the patch spans depths 1..8 against a different alignment above depth 6.
+- **(9, 57):** at k = 11, 12, 14 the maximizers are two-phase objects: the background in one phase above depth 9 (a
+  different alignment from the one the pair follows) and a different arrangement below. The family fails at those k
+  (23, 25, 32 against 24, 27, 34). This is Local's shadow (T-S3: a masked defect below the top pair) made explicit as an
+  optimal prefix.
+
+### The inserted-edge fronts (COMPUTED, t ≤ 120, depth 400)
+
+For every background and every alignment the mismatch front R*(t) becomes periodic in the moving frame, but the speed
+depends on the alignment, not only on the background:
+- classic (7, 28): 140 of 196 alignments have the period-8 pattern (2, 2, 2, 0, 2, −2, 2, 0) (one retreat per period),
+  mean speed exactly 1; the other 56 have periods 44..58 and speeds 1.12 to 1.19.
+- (7, 63): periods 54, 57, 58; speeds 0.95 to 1.26. (9, 57): periods 19 (= q/3), 38, 57; speeds 0.76 to 1.36.
+  (12, 68): periods 34 (= q/2) and 53..58; speeds 0.62 to 1.31.
+So the front speed is a property of the pair (background, phase of insertion); PR69's ether, whose witness has speed
+3/2 at every phase, is the simple case.
+
+### Predictions
+
+- P-C1 HELD: the classic ether's increments over k = 13..18 average 1.17.
+- P-C2 REFUTED: from k = 4 the maximizers are patched, not pure inserted-edge witnesses.
+- P-C3 REFUTED: the speeds are alignment-dependent (1 and 1.12..1.19 for the classic ether).
+- P-S4 (CL671's "exponential" prediction) REFUTED for (7, 63) (increments 0, 1) and (12, 68) (2, 0); UNDECIDED for
+  (9, 57), whose increments 5, 3, 1, 6 over k = 10..14 are irregular and larger than any other background's; its slope rose
+  from about 0.8 (k ≤ 10) to about 3.75 (k = 10..14). Exact values to k = 18 or 20 by SAT would decide.
+- P-S5 HELD for (7, 63) and (9, 57), REFUTED for (12, 68) (all maximizers are inserted-edge witnesses).
+
+### What this changes
+
+- The "exact episode law" splits by background. (12, 68) has PR69's structure and is the natural second theorem. The
+  classic ether's law is a maximum over shielded witnesses, with the shield's position not uniformly bounded (k = 16);
+  a theorem needs either a bound on the shield depth or a direct potential argument like Proof 1.
+- The shadows are not one phenomenon: (12, 68) is plain; (7, 63) is patched; (9, 57) is two-phase, and only (9, 57)
+  keeps the question of faster-than-linear growth open.
+- The field: none of this is on the page or in the kit; PR65's ether statements are fixed-column, and no third party
+  works on moving-edge backgrounds (MAP §23).

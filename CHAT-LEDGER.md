@@ -13797,3 +13797,43 @@ asking for and uses what we know exactly; (1) the classic ether's exact law, our
 prediction; (2) the shadows, with the changed prediction; (b) the left records; (a) wedge parity; (3) parked. No
 prize movement anywhere on the page; Problem 3 is the field's new front and not ours. READ-LEDGER (both workers,
 on resumption); nothing assigned.
+
+## CL672 — Cloud to the owner (GPT and Local halted): the two tests run first, as directed. The classic ether's exact episodes to k = 18 and the three shadows to k = 14: the optimal prefixes are shielded witnesses (classic, (7, 63)), pure inserted edges ((12, 68)) or two-phase objects ((9, 57)); front speeds depend on the phase of insertion; the exponential prediction is refuted for two shadows and open for (9, 57) (2026-11-01 17:09 GMT)
+
+Run under the owner's instruction to work our own lines first (nobody on the page works moving-edge backgrounds, MAP
+§23). Predictions written first (Block 13), results in round 8 of the tracker, probes `background_episode.py`,
+`background_maximizers.py`, `background_fronts.py` with outputs. Conventions are Local's T-G exactly; T-G's tables to
+k = 12 were reproduced before extending them.
+
+**Results (COMPUTED, exhaustive over prefixes; fronts to t = 120 at depth 400).**
+- Classic ether (7, 28): M(1..18) = 7 7 8 9 10 10 12 12 16 16 17 17 18 18 20 21 24 24. Increments over 13..18 average
+  1.17 (P-C1 HELD). From k = 4 no maximizer is a pure inserted-edge witness (P-C2 REFUTED): the maximizers are the
+  background with a shield of three or four cells, at depths 1..4 for most k and at depths 7..12 for k = 16. The family
+  "inserted edge with depths 1..8 free" reproduces the table except at k = 16.
+- (12, 68): M(1..14) = 23 24 24 26 26 28 28 32 32 35 36 36 38 38; every maximizer is a pure inserted-edge witness and the
+  family reproduces the table exactly. PR69's structure: its exact law for all k is the natural second theorem, by the
+  CL669 certificate and Proof 1's potential (period-34 fronts in the main class).
+- (7, 63): M(1..14) = 11 12 12 15 15 16 17 18 18 20 22 24 24 25; shielded maximizers; family exact except k = 10.
+- (9, 57): M(1..14) = 12 13 13 15 15 16 16 17 17 19 24 27 28 34; at k = 11, 12, 14 the maximizers are two-phase objects
+  (one background phase above depth 9, another arrangement below), Local's shadow made explicit.
+- Fronts: for every background and alignment the inserted-edge front is eventually periodic in the moving frame, but
+  the mean speed depends on the phase of insertion (classic: speed 1 with the period-8 pattern 2, 2, 2, 0, 2, −2, 2, 0
+  for 140 of 196 alignments, 1.12..1.19 for the rest; (9, 57): 0.76..1.36; (12, 68): 0.62..1.31). P-C3 REFUTED.
+
+**Failed predictions** (G13): P-C2, P-C3, P-S4 for (7, 63) and (12, 68), P-S5 for (12, 68). My CL671 prediction that the
+shadowed episodes grow exponentially is refuted for two of the three; for (9, 57) it is undecided (increments 5, 3, 1,
+6; slope 0.8 to k = 10 then 3.75 to k = 14). **Unguarded mistakes:** none found in this block; the first front fit used
+a window that the depth truncation contaminated, caught by reading the sequence (G11) and rerun at depth 400 before any
+number was quoted.
+
+**What it means.** "The classic ether's exact episode law" is not one witness's front law as M(k) was; it is a maximum
+over shielded witnesses, with the shield's depth not uniformly bounded in the data. The clean second theorem is
+(12, 68)'s law, where the pure inserted edge is optimal. The three shadows split: (12, 68) plain, (7, 63) shielded,
+(9, 57) two-phase and the only one where faster-than-linear growth is still possible; its exact values to k = 18 or 20
+need Local's SAT tooling (exhaustive is 2^19 prefixes times 513 alignments here). Front speeds are a property of the
+pair (background, insertion phase), so any theorem must fix the phase class first.
+
+**Next, in order, if the owner continues this line.** (1) (12, 68): the exact law for all k by a certificate per
+alignment class plus the potential upper bound, the same recipe as M(k). (2) (9, 57) to k = 20 by SAT, prediction first,
+to decide linear against faster. (3) The classic ether: characterise the shield (why depths 1..4 at most k and 7..12 at
+k = 16) before any theorem is attempted. No prize movement; nothing outward-facing; READ-LEDGER for both workers.
