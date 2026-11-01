@@ -1470,3 +1470,31 @@ keeps these side questions separate from the prize board:
   realizability condition in a different form. First compare populations and maps, not finite counts.
 
 These are options for the owner's next inquisition, not dispatched jobs. Both schedules remain paused.
+
+## Rule30 methods returned to the wider family (1 November 2026, GC2342)
+
+Owner-directed tangent: use the detailed Rule30 understanding in Mahler, Collatz, EightStreets and
+the broader problem family, then bring useful constraints back. This is an authorized bounded
+investigation, not a heartbeat restart. [Mahler worked result and complete queue](MAHLER.md#rule30-to-mahler-episodes-and-recharge-gc2342).
+
+The shared method is **exact local behaviour plus compatibility with one whole object**. A locally
+possible fragment need not extend to the required fixed integer, finite row or disjoint partition.
+Our successful ether episode proof adds a further useful distinction: a clock that decreases during
+one episode is not automatically a resource that decreases across interruptions.
+
+| Destination | Concrete transfer | Required guard / next discriminating question |
+|---|---|---|
+| Mahler | Periodic reference, exact first-disagreement clock, explicit return map | GC2342 gives a fixed1000 interruption with arbitrarily large new clock, while passing the real window for the claimed finite time. Retain the fixed start and its compatible residues. |
+| Collatz | Compose complete excursions, including their affine intercepts | The coefficient is3^a/2^q, where a counts odd steps among q; Mahler instead has3^q/2^q. Positive and negative periodic reference cycles differ; the1–2 cycle is a legitimate positive orbit. Compare the existing October25 shadow obstruction first. |
+| EightStreets / partitions | Replace a large finite search by actual reduction maps and a finite certificate of boundary cases | Keep exact shared-item compatibility. FOUR-BIN-PARTITIONS section45 has a positive parent and an individually feasible first choice whose two remaining bins both demand the same0. Total slack is not a partition certificate. |
+| Rule30 return | Test whether an apparent countdown survives every allowed reset | The ether potential succeeds under its proved hypotheses; no transfer to the wall or centre merely from a similar formula. |
+
+**Curiosity question:** what information must be retained so that small pieces really compose? In the
+Mahler example it includes arithmetic information beyond the visible interruption; in the partition
+example it includes ownership of a contested item. These are different mathematical structures with
+a common diagnostic, not an asserted equivalence or universal invariant.
+
+**Cold route:** another local-clock bound without a reset law. Reopen on a specified new state variable
+and a hand test against the explicit family. **Independent alternative:** the protected one-hole
+partition problem, keeping the h=12 counterexample separate from the still-open h=1 scope. Existing
+L8=68 certificates are not reopened. No solver, new census, website update or submission this block.

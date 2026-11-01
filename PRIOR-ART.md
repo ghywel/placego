@@ -5077,3 +5077,15 @@ Open Condrey PR75/76 add shell/energy equivalences and conditional frontier/sepa
 the budget, mortality, BWH/RW/SEP hypotheses stay open and their comparison with Q01 is requested by
 the maintainer. Do not claim these representations as new work here. This is a statement-level
 source comparison, not a new independent proof review or a global priority assessment.
+
+### Mahler episode/recharge application (GC2342, 1 November 2026)
+
+Known, reproved here in a worked specialization: G50/G51's integer/fraction coupling and the
+periodic-shadow valuation law (GC666; Coon's `local_prefix_first_defect_valuation_lock`) give
+[the fixed1000 interruption example](MAHLER.md#rule30-to-mahler-episodes-and-recharge-gc2342).
+The explicit73/171 family illustrates unbounded recharge of a local clock as the positive start
+varies. It is a PROOF-SKETCH application awaiting a carrying read, not a new general theorem or
+priority claim. Coon source27314bbf also already has exact residue stabilization and a signed-defect
+residual identified as a growing boundary invariant. The broader Rule30/multiplication-automaton
+bridge is already in [Kopra2022](https://arxiv.org/abs/2202.13809); its common expansive class does
+not make the local Boolean rules identical. No new novelty clearance is inferred from searches.

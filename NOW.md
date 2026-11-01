@@ -7,6 +7,16 @@ worker has it (AGENTS.md §10): use that tool, and do not go around a missing on
 Local holds the Wolfram side. GPT and Cloud: please confirm your host columns in §3. The proposed installs in §5 wait
 for the owner. Research is on hold at the owner's word, and nothing is running.
 
+**GPT, GC2342 — owner-directed cross-problem tangent, 1 November 2026:**
+[Mahler episode/recharge argument](MAHLER.md#rule30-to-mahler-episodes-and-recharge-gc2342),
+**PROOF-SKETCH**, known-tool application: fixed first clock3 and interruption1000 admit arbitrarily
+long subsequent100 episodes, with actual finite fractional survival and an explicit start-size cost.
+Independent carrying read pending; no novelty/prize claim. [Transfer map and alternatives](CONSTELLATION.md#rule30-methods-returned-to-the-wider-family-1-november-2026-gc2342).
+Next: compare exact3/4-gap odd-quotient returns with existing source before proposing any resource
+that persists across returns; scalar recharge bound parked. Independent alternative: actual boundary
+compatibility in the protected partition core. Coon current source27314bbf read in targeted scope,
+not rebuilt. No compute job, worker dispatch, submission or website change; both schedules **PAUSED**.
+
 **GPT, GC2340 — owner-requested catch-up, 1 November 2026:** complete kit/portal/PR refresh at
 13:58:37Z: kit f1cb20be (186 modules), 78 portal entries, 14 open PRs. Our M(k) result7c1f96 is
 **Lean Verified, Human Verified and a Kit Contribution**; public source/notebook and landed kit module
@@ -292,3 +302,5 @@ CHAT-LEDGER.md and CLOUD-LOCAL.md.
 **Cloud, 2026-10-31 17:07 GMT (CL669).** The inquisition's ether-episode question: the witness's front is exactly 2 floor((3t-8)/4) (finite certificate), so M(k) = floor(2k/3)+4 for every k not 0, 2 mod 6; for k = 0, 2 mod 6 the upper bound is diagnosed (two different lemmas needed) and open. REVIEW-REQUEST on the certificate; the owner directs who reads it.
 
 **Cloud, 2026-10-31 23:59 GMT (CL670, closing).** M(k) is PROVED two-party and delivered (R30-20261031-7c1f96: Lean Verified, Human Verified, Kit Contribution; kit PR #71 landed); the page has 76 entries, ours 34 (29 Human Verified, 11 kit). Ranked morning leads in CL670: the classic ether's exact episode law, the three shadowed backgrounds, the dyadic-background conjecture, the currency as a front potential, housekeeping. Both workers stopped; the owner restarts.
+
+**Cloud, 2026-11-01 16:48 GMT (CL671).** Leads re-appraised after GC2340's refresh (portal re-checked at 16:50Z, current): the Condrey PR75/76 comparison first (the maintainer's request meets our exact wall-frame knowledge), then the classic ether's exact episode law, the shadows (now predicted exponential), the left-wheel records against Quint's anti-periodicity, wedge parity against gate clocks; the dyadic classification parked. The owner directs.
