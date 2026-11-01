@@ -194,3 +194,91 @@ Both pending hand derivations carry. Status: PROVED (hand, two-party).
 substance the kit's `black_shield`. What remains ours is elementary: the two-step identity, the one-step
 improvement through `col1_five_check`, and the returned bit. Disposition: record-only. These are small
 corollaries of kit lemmas and need no separate submission.
+
+## Parent labels and shared-parent consistency (GC2351)
+
+1 November 2026.
+
+Owner's pull: store the parent triple as an integer from 1 through 8 alongside each cell's
+ordinary colour. Would this retain what a gate masks? The precise test is whether these labels
+recover the reviewed a10 example, and whether a fresh label also retains older ancestry.
+
+Prediction before the tiny check: the label decodes the immediate parents exactly; compatible
+neighbouring labels recover a10; independent sets of labels still admit false combinations.
+Counterfactual: any colour mismatch on the 32 five-bit windows, or any compatible a10 completion
+with the wrong output, refutes the proposed representation. Unexpected/negative control:
+00000 and 11111 lose their distinction at the second centre label. This is a fixed 32-window,
+512-tag-triple scalar check, not a substantial run or growing-horizon experiment.
+Record searched: this report's GC2026/GC2028 and carrying read L1143; PRIOR-ART's GC794/Powley
+transfer-matrix discussion; current kit/portal/open-PR index (kit f1cb20be, complete refresh
+2026-11-01T19:46:58Z, portal timestamp 19:46:53Z, 15 open PRs). The parent-label/de Bruijn query's
+PR48 comment is not an equivalent claim. General overlapping-word representations are known:
+[Wolfram's constraint-network note](https://www.wolframscience.com/nks/notes-5-7--1d-systems-based-on-constraints/)
+describes compatible block sequences as paths. No novelty or full review of changed portal entries
+is claimed. The purpose is to identify exactly what the owner's representation buys.
+
+### Exact representation
+
+Status: PROOF-SKETCH for this formulation pending independent carrying read; the underlying
+two-step a10 identity remains PROVED by L1143. Scalar verification below is a self-check.
+
+Let f(a,b,c)=a XOR (b OR c), and set p(a,b,c)=1+4a+2b+c. The table is:
+
+| Parents | Label | Colour |
+|---|---:|---:|
+| 000 | 1 | 0 |
+| 001 | 2 | 1 |
+| 010 | 3 | 1 |
+| 011 | 4 | 1 |
+| 100 | 5 | 1 |
+| 101 | 6 | 0 |
+| 110 | 7 | 0 |
+| 111 | 8 | 0 |
+
+Write c(q) for the table's colour. If P_i(t) encodes the parents of x_i(t), then
+
+    x_i(t) = c(P_i(t)),
+    P_i(t+1) = 1 + 4*c(P_(i-1)(t)) + 2*c(P_i(t)) + c(P_(i+1)(t)).
+
+The colours obey precisely the original Rule30. A label contains the entire three-bit parent
+word, so the colour need not be stored separately. Labels on adjacent sites must satisfy
+
+    (P_i - 1) modulo 4 = floor((P_(i+1) - 1)/2).
+
+This equates their shared two parent bits. Three neighbouring labels encode (a,b,c), (b,c,d),
+(c,d,e): 32 compatible possibilities, not 512 independent possibilities. A complete valid label
+row also recovers the entire preceding binary row by taking each label's centre bit. This is
+an exact change of representation with a one-step history, not an altered colour evolution.
+
+### A concrete benefit, and the limit
+
+For the reviewed initial patch a10, let the next exterior bits be r,s. The three time-one labels
+at positions 1,2,3 are 4a+3, 5+r, 1+2r+s. Their colours are NOT a, NOT r, r OR s. Matching the
+shared r gives (NOT r) OR r OR s = 1, hence the second output is a. More explicitly, the possible
+second labels are {6,7,8} for a=0 (all colour0), and {2,3,4} for a=1 (all colour1).
+
+If one retains only three independent sets of possible labels, the middle label6 can be combined
+with right label1. This asks r to be both1 and0. It creates a spurious opposite output. Thus the
+benefit is not just the larger alphabet: the shared-coordinate constraint is doing real work.
+In a single exact simulation it is automatic; in a proof over unknown exteriors it must be retained.
+
+The labels do not preserve unlimited ancestry when overwritten. Initial five-cell patches
+00000 and 11111 give first centre labels1 and8 respectively, both colour0. Each gives three zero
+children, hence second centre label1. Both initial patches have finite-support completions; their
+outer outputs need not agree. This is a collision of local observations, not a claim that the
+full finite-support evolution is noninjective. Nor does it concern two runs from the same seed.
+
+Keeping every label forever would retain the history. Encoding parent *labels* recursively
+would also retain more ancestry, but the fixed eight-value alphabet would no longer suffice
+for that literal encoding. Shared ancestry can be deduplicated, so an exponentially growing
+tree is not necessary. None of this rules out a smaller exact summary for a specific observable.
+
+COMPUTED self-check: [literal probe](../tests/probes/rule30_parent_tags.py) passes all eight table
+entries, all 32 compatible tag triples against all 512 candidates, all 32 two-step binary windows,
+all eight a10 completions and the overwrite collision. No sampling, solver or substantive compute.
+
+Disposition: useful observer clarification and known-tool application, no prize/novelty claim.
+Next executable question, if pursued: write the compatibility constraints for the retained
+a0101010 eight-step witness and ask whether a bounded overlap description carries its lock;
+do not replace the existing proof with a gate-by-gate ancestry expansion. Independent warm
+alternative remains the Mahler three-block residue lift (GC2350); that queue is preserved.

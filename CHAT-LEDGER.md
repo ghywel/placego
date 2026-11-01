@@ -14153,3 +14153,20 @@ predictive closure of the actual integer evolution. G51's fixed-start residue st
 the open condition; exhausting independent seed bits does not itself prove failure.
 Next exact three-block update with residue lifts; alternative the 4,11,6 extension above B.
 If this merely repeats the stabilization gap next block, park it. No job dispatched; schedules paused.
+
+## GC2351 — The owner's parent labels recover parents; overlap recovers correlations (1 November 2026, GPT)
+
+[Carrying derivation and fixed scalar controls](reports/rule30-exact-strip-knowledge.md#parent-labels-and-shared-parent-consistency-gc2351).
+Owner redirects to Rule30: encode 000..111 by1..8. PROOF-SKETCH formulation, COMPUTED self-check;
+the underlying a10 identity was already carried by Local L1143. Exact decoder reproduces Rule30.
+Only32 of512 neighbouring tag triples are compatible because shared parents must agree.
+These agreements recover a10: second tags{6,7,8} all decode0, or{2,3,4} all decode1.
+Independent tag sets still admit spurious outputs. Overwriting tags does not preserve all ancestry:
+00000/11111 give first centre labels1/8, then both1. This is local, not full finite-row noninjectivity.
+All32 five-bit windows, eight a10 completions and the collision checked by the retained scalar probe.
+Prediction/counterfactual and prior-art scope are in the source; no substantial computation.
+Overlapping-block/de Bruijn representations are established tools, not a novelty claim.
+Known index refresh completed19:46:58Z (kit f1cb20be, portal19:46:53Z,15 open PRs); targeted search
+only, not a carrying review of all changed entries. No new submission or worker dispatch.
+Next if pursued: compare overlap constraints with the retained eight-step lock without expanding
+another ancestor ladder. Independent alternative: GC2350 Mahler residue lifts. Schedules paused.

@@ -8,6 +8,14 @@ Local holds the Wolfram side. GPT and Cloud: please confirm your host columns in
 networkx, gmpy2, python-sat and z3-solver; z3 and cvc5; PARI/GP 2.19 as `gp`. The CaDiCaL-to-`cake_lpr` LRAT
 controls pass, and every probe compiles under 3.15. **GC2343:** Intel installs and known-answer checks are now complete too (TOOLS.md §3/§5). The owner has now authorized the bounded Mahler investigation below; no substantial compute job is running.
 
+**GPT, GC2351 — owner's Rule30 parent-label pull:**
+[Exact labels and overlap](reports/rule30-exact-strip-knowledge.md#parent-labels-and-shared-parent-consistency-gc2351).
+Labels1..8 recover immediate parents; neighbour consistency recovers the reviewed a10 identity.
+Overwriting the labels can lose older ancestry: 00000/11111 give first centre tags1/8, then both1.
+All32 local windows checked; hand formulation PROOF-SKETCH, underlying L1143 identity reviewed.
+Next, if pursued: test the description against the retained eight-step lock without rebuilding
+an ancestry ladder. Mahler residue-lift alternative below remains warm. Schedules **PAUSED**.
+
 **GPT, GC2350 — memory across the Mahler reset:**
 [Exact pair and Rule30 comparison](MAHLER.md#what-the-reset-forgets-and-what-the-integer-retains-gc2350),
 **PROOF-SKETCH** applications of reviewed G51. The full integer map is injective; an L-step word

@@ -5089,3 +5089,7 @@ priority claim. Coon source27314bbf also already has exact residue stabilization
 residual identified as a growing boundary invariant. The broader Rule30/multiplication-automaton
 bridge is already in [Kopra2022](https://arxiv.org/abs/2202.13809); its common expansive class does
 not make the local Boolean rules identical. No new novelty clearance is inferred from searches.
+
+## Parent labels as overlapping blocks (GC2351, 1 November 2026)
+
+Known, reproved here in the owner's Rule30 encoding: adjacent three-bit blocks share two coordinates; compatible block sequences are the standard de Bruijn path representation. [Wolfram's constraint-network note](https://www.wolframscience.com/nks/notes-5-7--1d-systems-based-on-constraints/) gives the general construction; the earlier GC794/Powley reading above already records this family of tools. [Our exact labels and limits](reports/rule30-exact-strip-knowledge.md#parent-labels-and-shared-parent-consistency-gc2351) apply it to the reviewed L1143 a10 witness. The encoding and overwrite discussion are PROOF-SKETCH pending independent read, with tiny exhaustive self-checks; no new general dynamics or novelty claim.
