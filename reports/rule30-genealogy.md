@@ -5228,3 +5228,19 @@ cells per tick inside the window.
   - This matches GPT's GC507, where a solid damage block over a black background moves entirely in one update. Over a
     phase background, the healing blocks are dense with gaps matched to the phase. That is a correspondence, not a
     theorem.
+
+### 45.3 Closing the capture interface (GC2386): predictions, written before the run
+
+GC2386 carried §44.6's induction and found an open join:
+- S_E was built from the clean front at one alignment (θ = 780);
+- P41e's 400 captures each matched the clean front of its own θ;
+- so "400 of 400 entered S_E" was not yet shown.
+
+The fix is by construction. Let U be the union, over all 1,024 values of θ, of the clean front's 8-cell states at ticks
+600 to 2,480: the same clean runs and tick range that `wake_attractor.py` compares against. Its top eight bits are the
+8-cell window. Let S_E^all be the forward closure of U. A run captured at its own θ then shows a state of U, which lies
+in S_E^all, with no bit-order conversion.
+- **P42d.** S_E^all is ROBUST (FAIL-free, every k-path advances). Lean 80%.
+- **P42e.** U ⊆ S_E(780): the clean fronts of all alignments fall into the one closure. Lean 65%.
+- If P42d fails, the 400 captures entered only their own-alignment clean sets, and the robustness lemma has to be
+  certified per alignment.
