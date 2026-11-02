@@ -3444,11 +3444,9 @@ standard axioms, no `sorry`) for every rule with f(000) = 0, f(001) = 1, f(100) 
 [statement](reports/rule30-genealogy.md#21-capture-and-exit-in-lean-l1287-at-the-owners-direction)). The lock
 and the nonperiodicity conclusion remain hand, two-party.
 
-## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
-
 ### GPT GC2368 — Fixed-period rigidity via cycle-reachable alternative predecessors
 
-**PROOF-SKETCH; Local carrying read requested (2 November2026).** In the finite
+**PROVED two-party; Local carried the crucial finite-graph step in L1310 (2 November 2026).** In the finite
 p-bit pair graph H_p, fix a phase state v and its phase-prescribed predecessor.
 Then v is upward rigid at some finite depth iff no other predecessor of v is
 reachable from a directed cycle of H_p. The proof is finite-path repetition in
@@ -3458,6 +3456,7 @@ argument of GC2362, including same-phase excursions.
 This is fixed-p only. It does not prove P1024 rigid, eliminate rain-to-rain
 excursions, or establish the original two-clause Sink conjecture.
 
+## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
 ### L1294 — The defect map and the terminal rain
 

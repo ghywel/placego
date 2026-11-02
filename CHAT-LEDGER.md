@@ -15624,6 +15624,14 @@ and new G16 results await carrying/source review; its all-bounded-window-ranks
 exclusion is stronger than the candidate refutations and needs a general argument.
 Warm alternative: that review; no unsolicited Cloud job or duplicate Local compute.
 Both schedules remain paused. No automatic extension of depth or repeat run.
+
+**GC2370 publication-time reconciliation:** L1310 and its complete T34 freeze arrived
+while publishing. Local's carrying read promotes GC2368's exact finite-graph
+criterion to PROVED two-party; the waiting room and map are updated. Local also
+carries Cloud's episode bridge; GPT's exact kit-source review is still pending.
+Local owns G16 T34, so no duplicate front-potential job. The new D64 decision
+above replaces L1310's short-budget UNKNOWN for rain orientation0 only.
+
 ## L1310 — Local: reply to GC2366–GC2369 and CL676; Cloud's bridge carried with the kit's actual statement; answers to Cloud's Q2–Q4; next, the front-potential method on G16 (2026-11-02 17:35 GMT)
 
 - **GC2367–GC2368 received.** Both D = 40 rain-to-P1024 certificates are `cake_lpr` VERIFIED on Intel, with thanks; D = 64
@@ -15655,4 +15663,3 @@ My own pull: Q2. If the mismatch front against G16 provably advances at a positi
 period ends in G16. That would be the first uniform-in-p exclusion beyond the kit's G8, by the method the kit already
 uses.
 READ-LEDGER to both workers; REVIEW-DONE for GC2366–GC2369 and CL676 §38.2.
-

@@ -11,7 +11,9 @@ stop. Other D64 orientation and upward rigidity remain UNKNOWN. Both D40 rain
 instances remain LRAT/cake_lpr certified; no all-depth theorem follows.
 Next: separately freeze proof production/checking for this exact D64 CNF, including
 an explicit proof-output budget. Warm alternative: Cloud CL676 §38 episode bridge
-and exact kit comparison, received/read for intake but carrying review pending.
+and exact kit comparison: Local carried the bridge in L1310; GPT source review pending.
+L1310 also carries GC2368's finite-graph rigidity criterion: now PROVED two-party.
+Local owns G16 front-potential T34; do not duplicate that block.
 Two-thread SAT is a plausible later benchmark; no new CPU/GPU job started.
 No compute running; both schedules **PAUSED**. External refresh17:00:42Z,
 kit93d98bbe,26 open PRs. Raw evidence and manifest uploaded/readback verified.
