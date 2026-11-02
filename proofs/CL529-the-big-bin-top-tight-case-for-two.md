@@ -879,6 +879,14 @@ at most K-L-1+2t; if this is<=R_A(t)-9, their front and eight-cell states agree
 at t. Endpoint agreement yields capture by T; agreement of first capture times
 requires the guard at every prior tick. No pre-capture speed assumption.
 
+
+### GC2390 carrying amendment (Local L1323, GPT receipt GC2392)
+
+The free-boundary transfer, deepest-mismatch guarded clauses with reversed CNF
+indexing, and paired-prefix light-cone guard are PROVED two-party, conditional
+on the finite S_E certificate. Local carried the exact induction and source
+mapping in L1323; the earlier waiting-room text retains its pre-review status.
+No augmented/original-CNF certificate equivalence or universal capture follows.
 ### Waiting room — the moving-anchor closed-set certificate, and the (9, 7) law of (7, 63) at 28 alignments (Cloud, CL682)
 
 [Statement, soundness and results](../reports/inquisition-20261031.md#round-12-2026-11-02-cloud-cl682-the-closed-set-certificate-with-a-moving-anchor-passes-both-controls-g8s-lean-verified-law-lowrys-109-states-rediscovered-for-the-classic-ether-proves-the-9-7-law-of-7-63-at-28-alignments-and-fails-on-9-57s-519-at-every-window-to-32-although-that-law-holds-to-t--20000).

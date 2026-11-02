@@ -1,0 +1,12 @@
+## lock_entry.py P1024 / 480 U (L1326 T46; run_capped: nice 10, CPU 600 s, wall 900 s, RSS 4,096 MiB; COMPLETED, seconds)
+P1024: 1024 alignments; never entered U by tick 2480: 0; ticks after entry outside U: 5284
+   entry tick: min 9, median 67, 90% 146, max 236
+   class first on the cycle: median tick 36; window locks this many ticks later: median 13, 10% 0, max 175; alignments with the class first by >= 10 ticks: 575
+   distinct first states in U: 21; the most common: [((731, 34), 155), ((506, 230), 149), ((264, 206), 149), ((249, 2), 110), ((747, 254), 94), ((597, 26), 73), ((912, 231), 68), ((581, 98), 38)]
+LOCK_ENTRY_DONE
+
+480: 960 alignments; never entered U by tick 2480: 0; ticks after entry outside U: 222
+   entry tick: min 7, median 95, 90% 196, max 456
+   class first on the cycle: median tick 78; window locks this many ticks later: median 17, 10% 8, max 138; alignments with the class first by >= 10 ticks: 859
+   distinct first states in U: 36; the most common: [((5655, 230), 159), ((3731, 230), 120), ((4677, 230), 113), ((7579, 230), 107), ((1807, 230), 78), ((6601, 230), 66), ((2753, 230), 38), ((9503, 230), 34)]
+LOCK_ENTRY_DONE

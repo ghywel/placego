@@ -5484,3 +5484,222 @@ successor function of §44, independent of GPT's literal reconstruction):
     cells at the gateway's phase?
   - T43 says that typical rows do so within ~300 (P1024) or ~500 (480) ticks of leaving the prefix, whatever the prefix
     length.
+
+## 48. Is capture decided by the bottom of the prefix? (T44, L1324)
+
+### 48.1 Setting and predictions, written before the run (`capture_locality.py`)
+
+**Question.** T43 found that capture times don't depend on the prefix length. Is that because only the bottom L cells
+of the prefix matter? Take a base row A and a variant B that keeps A's bottom L cells and redraws the upper K − L.
+- **The control.** GC2390's cone guard (carried in L1323) makes some pairs agree automatically. If b + 2t ≤ R_A(t) − 9
+  for every t ≤ T_A, with b = K − L − 1, the front states agree through A's capture tick T_A.
+- **The informative pairs** are those with L < L*, where L* = K + 8 + max over t ≤ T_A of (2t − R_A(t)). For them the
+  redrawn cells can reach the front's window before capture. Whether the front then still behaves identically is
+  dynamical shielding: the front ignoring information that has reached it.
+
+**Setting.** P1024 and 480, K = 80 and 160, 100 base rows per K and phase, 4 variants per (base row, L), with
+L ∈ {4, 8, 12, 16, 24, 32, 48, 64, 96, 128}, L < K, and Random(44).
+- Capture is the first S_E state at R ≥ 12.
+- After capture every tick is checked: an alarm below depth 10, an alarm outside S_E, and the minimum depth recorded
+  (GC2390's coverage fix).
+- Recorded for each informative pair:
+  - whether the front history is identical through T_A;
+  - whether the capture tick is the same;
+  - the lag from the cone's arrival at the window to the first difference;
+  - T_B − T_A.
+
+**Predictions.**
+- **H1 (control, certain if the code is right).** Every protected pair is identical through T_A, and no informative pair
+  differs before the cone arrives. Any failure is a bug.
+- **H2.** L* is typically 40–80: P1024 median near 8 + 0.69 · T_A ≈ 60, 480 near 8 + 0.33 · T_A ≈ 40, with the
+  per-run cone. Lean 55%.
+- **H3 (shielding).** Among informative pairs, the share with the same capture tick rises with L and reaches ≥ 90% by
+  L = 24 in both phases. Lean 50%.
+- **H4.** When the front history does differ, the first difference comes well after the cone's arrival (median lag ≥ 10
+  ticks): the front ignores most of what reaches its window. Lean 45%.
+- **H5 (coverage).** No post-capture alarm, and the minimum post-capture depth is ≥ 10 in every captured run. Lean 95%.
+- **Counterfactual.** If the same-capture share stays low even at L just below L*, and differences appear as soon as
+  the cone arrives, then capture is not front-local beyond the light cone. A certificate would have to carry the whole
+  cone's history, and GPT's compatibility condition would need the full prefix, not a short window.
+- **What it teaches if H3–H4 hold.** The history that a capture certificate must remember is short (L cells at the
+  start, plus whatever the front ignores). That sizes GPT's generated-history condition.
+
+Record searched: GC2390's guard (the cone lemma); T40/T41 decoupling (single flips behind a clean front: none reach it
+in 480, gaps ≤ 7 in P1024); T43 (§46). `record_find.py locality "bottom L"` finds only these. Sampled pairs say nothing
+about a uniform L for every prefix (GC2390).
+
+### 48.2 Results ([output](../tests/probes/capture_locality.out))
+
+The share of informative pairs with the same capture tick (and the same front history through T_A), 400 pairs per L
+less the protected ones:
+
+| L | P1024 K=80 | P1024 K=160 | 480 K=80 | 480 K=160 |
+|---|---|---|---|---|
+| 4 | 13% (0%) | 16% (0%) | 41% (1%) | 54% (1%) |
+| 8 | 23% (2%) | 29% (4%) | 64% (7%) | 70% (7%) |
+| 16 | 51% (38%) | 56% (38%) | 86% (55%) | 91% (63%) |
+| 24 | 80% (73%) | 78% (70%) | 92% (82%) | 95% (86%) |
+| 32 | 89% (85%) | 89% (84%) | 96% (90%) | 98% (94%) |
+| 48 | 99% (99%) | 99% (97%) | 99% (92%) | 100% (96%) |
+| 64 | 100% (100%) | 99% (99%) | 100% (98%) | 99% (97%) |
+
+- **H1 HELD (the control).** No protected pair differs, no pair differs before the cone reaches the window, and no
+  alarm fires.
+- **H5 HELD.** No post-capture alarm in any run; the minimum post-capture depth is 80 or more.
+- **H2 HELD in its range.** The median L* is 76–80 in both phases. My 480 estimate (~40) used the post-capture speed
+  and was too low, as GC2390 warned.
+- **H3 REFUTED for P1024, HELD for 480.** At L = 24, P1024 is at 78–80%; it passes 89% at L = 32 and 99% at L = 48. 480
+  passes 90% by L = 16–24.
+- **H4 HELD where it means anything (L ≥ 16).** The median lag from the cone's arrival at the window to the first
+  difference is 28–56 ticks (P1024) and 35–86 ticks (480). At L ≤ 8 the edited cells already lie inside the initial
+  window (the front starts near K − 1), so a lag of 0 there is not shielding. L = 12 is borderline (9–16).
+- **So the front shields itself.** For pairs whose edits reach the window before capture, keeping 48 cells (P1024) or
+  24 (480) fixes the capture tick in 92–100% of samples. That is about half the light-cone bound L*.
+
+**An unexpected regularity: capture is driven by the background.** Even with only 4 cells kept, 480 rows sharing an
+alignment are captured on the same tick in 41–54% of pairs, and the median T_B − T_A is 0 at every L in both phases.
+The explanation is already in the algebra.
+- **The look-ahead lemma (PROVED; the mask lemma, §44.1, CL679 P-K2).** At an interior front, the deepest new cell is
+  D_{R+2}(t + 1) = ¬E_{R+1}(t), whatever the window holds. So the front advances by 2 exactly when E_{R+1}(t) = 0,
+  and otherwise by at most 1.
+- E_{R+1}(t) is a function of the class: bit (c + 195) of the base column for P1024, and column (R + 1 + a) at time
+  (t + q) for 480.
+- **Hence the front's move is window-independent at every "open" class.** The window matters only at "blocked"
+  classes (look-ahead bit 1).
+- **Check (COMPUTED).** Round P1024's 52-cycle, the advance is 2 at exactly the 31 open classes. It is −1, 0 or 1 at the
+  21 blocked ones (13 zeros, 7 ones, one −1).
+- So GPT's clock theorem has a mechanism: inside S_E, the blocked classes' windows are such that even their advances
+  are fixed.
+
+**What T44 teaches.**
+- The history a capture certificate must keep is short in practice: about 48 cells for P1024 and 24 for 480, at the
+  start, in samples. Not a uniform bound.
+- The front's motion depends on its window only at blocked classes. A certificate can therefore follow the front's
+  class walk, with the window consulted only at blocked ticks.
+- That suggests a quotient for GPT's compatibility condition: track the class walk exactly, and the window only
+  through its effect at blocked classes.
+
+## 49. How far behind the front does a blocked move read? (T45, L1325)
+
+### 49.1 Setting and predictions, written before the run (`blocked_reading.py`)
+
+**Exact structure first (COMPUTED, no simulation).**
+- P1024 has 501 open classes of 1,024 (look-ahead bit 0).
+- Under the forced open move c ↦ c + 391, the open runs have lengths 1 (128 runs), 2 (69), 3 (37), 4 (15), 5 (6), 6 (3),
+  7 (1) and 9 (1). So a front meets a blocked class about every other tick.
+
+**Question.** At a blocked tick the move depends on the cells behind the front. By the algebra:
+- a = 1 reads E_R, E_{R−1} and D_{R−1};
+- a = 0 reads D_{R−1} and D_{R−2};
+- only a retreat reads deeper.
+
+The **reading depth** of a tick is the least k such that D_{R−1} .. D_{R−k} (the actual values) fix the move for every
+completion of the cells behind them, out to depth 10. It is reported as "> 10" if the cells out to 10 do not fix it.
+
+**Setting.** P1024 and 480, K = 80, 200 random prefixes each, Random(45). Every tick at R ≥ 12 before capture, and
+the first 300 ticks after it, using the exported S_E.
+
+**Predictions.**
+- **J1 (control).** At every open tick the move is +2 with reading depth 0. This is PROVED, so a failure is a bug.
+- **J2.** At pre-capture blocked ticks the reading depth is ≤ 2 in at least 75%, and retreats (a < 0) are at most 15% of
+  blocked ticks. Lean 55%.
+- **J3.** A reading depth above 8 (beyond the 8-cell window) occurs at no more than 1% of pre-capture blocked ticks.
+  Lean 70%.
+- **J4.** After capture the reading depth is at most 4 at every blocked tick (S_E's only retreat is −1). Lean 70%.
+- **Counterfactual.** Frequent deep reads before capture would mean the front's move draws on cells far behind. A
+  capture certificate would then need a long history.
+- **What it teaches.** It measures the true memory of the front's motion at blocked ticks. With T44's shielding, it says
+  how small a state GPT's compatibility condition might get away with.
+
+Record searched: §44.1 (the mask lemma), §48 (T44), GC2389's clock; nothing earlier measures reading depth.
+
+### 49.2 Results ([output](../tests/probes/blocked_reading.out))
+
+| | P1024 before capture | P1024 after | 480 before | 480 after |
+|---|---|---|---|---|
+| blocked ticks | 7,503 | 24,326 | 7,935 | 10,015 |
+| reading depth 0 / 1 / 2 | 16.7 / 67.9 / 4.3% | 19.1 / 71.5 / 4.5% | 20.6 / 67.8 / 3.2% | 0 / 100 / 0% |
+| reading depth 3–4 / 5–8 / > 8 | 10.0 / 1.2 / 0% | 4.8 / 0 / 0% | 7.6 / 0.7 / 0% | 0 / 0 / 0% |
+| retreats (new front below R) | 11.7% (deepest −6) | 4.8% (only −1) | 8.9% (deepest −6) | none (every blocked move is 0) |
+
+- **J1 HELD (the control).** At all 45,018 (P1024) and 62,082 (480) open ticks the move is +2 and reads nothing.
+- **J2 HELD.** Before capture, 89% (P1024) and 92% (480) of blocked moves read at most 2 cells behind the front. Retreats
+  are 12% and 9% of blocked ticks.
+- **J3 HELD, strongly.** No move in 15,438 pre-capture blocked ticks reads beyond 8 cells; the deepest read is 8
+  (P1024, twice) and 7 (480). So in every sampled real tick the 8-cell window, with no help from the unknown bits behind
+  it, fixed the move. The bad core's unbounded retreats need window contents that these evolutions never put behind
+  the front.
+- **J4 HELD.** After capture the reading depth is at most 3. In 480 every blocked move is 0 and reads exactly one cell,
+  so inside S_E its blocked classes all see D_{R−1} = 0 (or the value that gives 0).
+
+**The front plus two cells is closed along +2 moves.** It follows from the update rule.
+- After a +2 move, the new front's two cells behind are D_{R+1}(t + 1) and D_R(t + 1). They are functions of E and
+  the old D_{R−1}, D_{R−2} alone.
+- A +1 move pulls in one deeper cell (D_{R−3}). A 0 pulls in two, and a retreat of r pulls in about r + 2.
+- So the front's state (class, D_{R−1}, D_{R−2}) evolves autonomously along open stretches. Memory enters only at
+  blocked ticks, and then mostly one or two cells at a time.
+
+**What T45 teaches.** The move's memory is shallow: about 2 cells usually, 8 at most in samples. What remains deep is
+the window's own evolution. Each non-+2 move draws one or more cells from behind into the front's reach. A certificate
+that tracks (class, two cells) exactly, and treats the cells drawn in at blocked ticks as inputs with history, is the
+small state the measurements point to. That is the quotient offered to GPT in L1324.
+
+## 50. How does every alignment lock onto one orbit? (T46, L1326)
+
+### 50.1 Predictions, written before the run (`lock_entry.py`)
+
+**Question.** In both phases every alignment's clean front, the black edge on the clean tail, ends on the same orbit U:
+52 states for P1024 (L1319) and 288 for 480 (L1321). How does it get there?
+- Does it enter U through a few gateways, or anywhere?
+- Does it find the cycle of classes before its window locks?
+- How long does locking take?
+
+For every alignment (1,024 θ for P1024; one per class of 480's 960) the clean front is run to tick 2,480, recording:
+- the first tick its 8-cell state lies in U, and that state;
+- the first tick its class lies on U's class cycle;
+- whether it ever leaves U after entering.
+
+**Predictions.**
+- **K1.** Every alignment enters U before tick 600 (the start of the range U was built from), with a median entry tick
+  of 100–300. Lean 70%.
+- **K2.** Entry is through at most 4 distinct first states, plausibly singleton fibres such as P1024's (23, 76). Lean
+  35%.
+- **K3.** In most alignments the class reaches the cycle at least 10 ticks before the window locks: the class locks
+  first, and the window follows. Lean 50%.
+- **K4 (control).** No alignment leaves U after entering it. U's closure is S_E, but U itself need not be closed. A
+  departure would show that U is only the support of the eventual orbit, not an invariant set. Lean 60% that none leave.
+- **Counterfactual.** Many distinct first states spread round the cycle would mean the lock is a basin covering the
+  whole orbit, with no special gateway. Then why the lock is unique has to be a global argument about the class walk.
+
+Record searched: L1319 (one 52-state U for all θ), L1321 (one 288-state U for all 480 classes), GC2389 (clock and
+gateways), §49 (front plus two cells); no earlier measurement of entry. Budget: one block.
+
+### 50.2 Results ([output](../tests/probes/lock_entry.out))
+
+| | P1024 (1,024 θ) | 480 (960 classes) |
+|---|---|---|
+| entry tick into U: min / median / 90% / max | 9 / 67 / 146 / 236 | 7 / 95 / 196 / 456 |
+| class first on the cycle: median tick | 36 | 78 |
+| window locks after the class: median / max | 13 / 175 | 17 / 138 |
+| alignments whose class leads by ≥ 10 ticks | 575 (56%) | 859 (89%) |
+| distinct first states in U | 21 | 36 |
+| ticks outside U after first entry | 5,284 | 222 |
+
+- **K1 HELD in part.** Every alignment enters U long before tick 600. Its median-range part (100–300) is REFUTED:
+  locking is faster, with medians of 67 and 95.
+- **K2 REFUTED.** There is no small set of gateways: 21 and 36 distinct first states. Entry is concentrated, though.
+  - In P1024 three states take 44% of entries: (731, 34), (506, 230) and the singleton fibre (264, 206). Only one of the
+    top eight is a singleton fibre; the others' fibres have 3 to 10 states.
+  - In 480 every one of the eight commonest first states has window 230, at different classes.
+- **K3 HELD.** The class reaches the cycle first, and the window follows a median 13–17 ticks later. In most alignments
+  the class leads by 10 ticks or more.
+- **K4 REFUTED.** Fronts leave U after first entering it (5,284 and 222 ticks in all, all before tick 600 by U's
+  definition). U is the support of the eventual orbit, not an invariant set; the closed set is S_E.
+
+**What T46 teaches.** The lock is a two-stage convergence, the class first and then the window, through many entry
+points. Why the eventual orbit is unique is therefore a property of the whole basin, not of a gateway. The window 230
+shared by 480's commonest entries (D_{R−1} = 0, the move "0" seen in every blocked tick of 480's S_E in §49) suggests
+the class walk reaches the cycle and the two cells behind the front then fall into place.
+- **Next form of the question (logged, not taken).** Is the class cycle the unique attracting cycle of the class walk
+  when each blocked choice follows the front-plus-two-cells dynamics? If it is, uniqueness becomes a finite statement
+  about a 1,024-class (or 15,360-class) walk.
