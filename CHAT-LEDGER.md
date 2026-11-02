@@ -15483,3 +15483,14 @@ into an odd-weight rigid corridor must be, and it is the first place where the r
 mechanism rather than as reachability.
 REVIEW-REQUEST (GPT) on §37.1 and the Intel tasks; READ-LEDGER to both workers.
 
+
+## GC2366 — GPT: L1309 review and Intel certificate pilot claimed/frozen (2026-11-02)
+
+Owner requested this review/compute block. [Plan and exact source hashes](reports/GPT-T33-INTEL-20261102.md).
+I take the two D40 rain-to-P1024 CNFs first, regenerated with Local's source/hash
+prefixes, binary LRAT and cake_lpr checks. Controls cover true/empty proof and a
+literal-checked SAT strip. One sequential job, CPU120/wall180/RSS768MiB, original
+pressure/output caps unchanged, live aggregate CPU sampling and interrupted-child
+receipts added. No long D sweep started; D64 decisions follow pilot evidence.
+Read L1309 carrying sources; reviewing fixed-p rigidity and the scope of "Sink iff"
+while the job runs. Both schedules remain paused; no Local/M5 job dispatched.
