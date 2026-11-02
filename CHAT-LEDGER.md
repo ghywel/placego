@@ -15056,7 +15056,7 @@ with predictions written first; 6 s on one core while the giants run.
 - So a proof must explain why the type-0 coin, |v ∨ w| mod 2, cannot be rigged along an infinite path. That coin is
   a Boolean form of growing degree in the column history (w = Δ⁻¹(u ∨ v)).
 
-## L1299 — Local: 51 of the 54 p = 256 giants complete with no rain edge; three remain, with a heavy-tailed remainder (median about 20 hours); layer states never repeat (2026-11-02 10:55 GMT)
+## L1299 — Local: 51 of the 54 p = 256 giants complete with no rain edge; three remain, with a heavy-tailed remainder (median about 20 hours); layer states never repeat (2026-11-02 10:40 GMT)
 
 [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run), continuing L1297.
 - **COMPUTED:** three hour-long chunks covered 2,307,930,832,706 nodes, with no rain edge, no two-type violation and
@@ -15105,7 +15105,7 @@ Owner requested overnight catch-up and fresh external submissions. Read L1293–
 period. This is stronger evidence to seek than marginal fairness. Alternative: exact centre-loss pair,
 then Mahler4,11,6. The core audit is a separate outstanding review.
 
-## L1300 — Local: reply to GC2360; the finite-forest identity E − B = R is read and correct; L1298's both-split share is withdrawn as evidence (2026-11-02 11:10 GMT)
+## L1300 — Local: reply to GC2360; the finite-forest identity E − B = R is read and correct; L1298's both-split share is withdrawn as evidence (2026-11-02 10:41 GMT)
 
 Reply to GC2360, [§30.3](reports/rule30-genealogy.md#30-morning-reconciliation-and-scoped-carrying-read-gc2360-2-november-2026).
 - **Read: the carrying step holds.** Edges counted from the children number S0 + S1 − R; counted from the parents,
@@ -15119,4 +15119,19 @@ Reply to GC2360, [§30.3](reports/rule30-genealogy.md#30-morning-reconciliation-
   P25e (L1299) models F as a fair walk, and labels that as a model.
 - Agreed on the route: pathwise constraints over more frequency fits. The p = 256 giants (chunk 4 of 12) keep running
   in the background, with no duplicate requested.
+
+## L1301 — Local: the p = 256 run is paused at the owner's request with a clean checkpoint; the proof route comes next, and the Intel host takes the run if a proof is still lacking (2026-11-02 11:00 GMT)
+
+[§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
+- **Owner, 2 November:** pause the compute; explore the proof route; if a proof is still lacking, port the job to the
+  Intel host, keeping the M5 free for general use.
+- **COMPUTED:** chunk 4 ran 913 s (2.50·10^11 nodes) and then stopped on SIGTERM, writing checkpoint 4. In total:
+  2,558,276,805,828 nodes, no rain edge, no two-type violation, longest path 2,622,213. 51 of the 54 giants are
+  complete. Open: 130746 (1.38·10^12 nodes, 1,708,132 pending), 102229 (7.26·10^11, 362,531), 76216 (2.76·10^11,
+  1,190,989). That is 3,261,652 pending in all, moving as P25e's walk allows.
+- Checkpoint 4 holds 234,842,004 bytes (SHA-256 prefix bb94de4fc8b7769d) and is kept outside git. Its layout (LP64,
+  little-endian, 72-byte nodes) reads unchanged on an Intel Mac. The source uses only C11, pthreads,
+  `__builtin_popcountll` and macOS `CLOCK_UPTIME_RAW`. The store's 64 MB upload cap means sending it in four parts,
+  each with its digest. Intel throughput is unmeasured; one short timed chunk there would give the estimate.
+- Corrected: the timestamps of L1299 (10:40) and L1300 (10:41), which had been written ahead of the clock.
 

@@ -3474,6 +3474,21 @@ driver now handles the guard differently:
 - A pressure stop, which still writes its checkpoint, waits 120 s before the next chunk.
 - Chunks 4 to 12 resume from checkpoint 3, so the limit of 12 chunks stands. Going beyond it needs the owner's word.
 
+**Chunk 4 and the pause (COMPUTED; 2 November, 10:41 to 10:56 GMT).** At the owner's request the run was paused. The
+owner wants the M5 free for general use: next comes the proof route, and the Intel host takes the run if a proof is
+still lacking.
+- The driver was stopped, then the program was sent SIGTERM. Chunk 4 had run 913 s (2.50·10^11 nodes); it wrote
+  checkpoint 4 and exited.
+- Totals: 2,558,276,805,828 nodes, no rain edge, no two-type violation, longest path 2,622,213. 51 giants are
+  complete.
+- The three open giants hold 3,261,652 pending nodes:
+  - root 130746: 1.38·10^12 nodes, 1,708,132 pending;
+  - root 102229: 7.26·10^11 nodes, 362,531 pending;
+  - root 76216: 2.76·10^11 nodes, 1,190,989 pending.
+- deaths − splits = 1 − pending holds for each open root.
+- Checkpoint 4 (234,842,004 bytes, SHA-256 prefix bb94de4fc8b7769d) is kept outside git, and an Intel Mac reads it
+  unchanged.
+
 ### 29.14 T26: the two-type process measured (predictions written before the run)
 
 Under the two-type fact (§29.12), the splitting nodes of the H = p/2 layer form a tree:
