@@ -4025,3 +4025,68 @@ Predictions:
 - **P28c (control).** On T_64's top layer and on the retained longest T_128 path, valuations below the front stay at
   most L/2 − 2. The geometric law predicts this, so it is a consistency check, not evidence.
 
+### 33.2 T28 results ([`valuation_cycles.py`](../tests/probes/valuation_cycles.py), [output](../tests/probes/valuation_cycles.out); 15 s)
+
+- **P28a HELD: (O2) fails locally.**
+  - The state (8bb01460, 744feb9f) has valuations 0 and 0, and its OR is all ones, so its child is the alternating
+    column (valuation 30).
+  - The state (e66be4d6, bcbffb6e) has valuations 0 and 3; its child ab555554 has valuation exactly 7, a nested
+    front.
+  - So S is not inherited by any local rule. On defect descendants it can hold only through their origin.
+- **P28b HELD, weakly.**
+  - 1.5·10^6 states were explored from 40,000 random roots, and Tarjan's algorithm found 4 nontrivial components: the
+    rain, G16 (128 states, L-periodic at p = 32, valuations 16 to 19), and the 480-state phase twice (its two
+    time-parity classes).
+  - Both copies of the only least-period-32 phase found contain valuation 7. There is no counterexample to the cycle
+    lemma, but the search found just one such phase. With G8 at p = 8 and G16 at p = 16, the lemma stands on three
+    phases.
+  - In every known phase the largest valuation is exactly L/2 − 1: G8 has 1 in every column, G16 has 3, and the
+    480-state phase has 7, with no value in 5 or 6.
+- **P28c HELD, just.**
+  - T_64's top layer stays at valuation 10 or less below the front (the band starts at 15).
+  - Across all 1,118,828 top-layer nodes of T_128 the largest valuation is 30, and the band starts at 31.
+  - But 30 occurs 34 times, far above the geometric tail. All 34 are the first column below a layer root whose column
+    above is itself a front of T_64. That led to §33.3.
+
+### 33.3 The valuation passes through the front (PROOF, Local; hand; checked)
+
+**Claim.** Let (x, y) be a layer root of T_(2L): x = c_(j0−1) has period dividing L, and y = c_(j0) is the front,
+y(t+L) = ¬y(t). Let x' be x on one half-period, as a ring of length L, and assume x is not all ones.
+- The root splits ⇔ v_L(x') ≥ 1, that is, x' has even weight.
+- If it splits, both children w satisfy **v(w) = v_L(x') − 1**.
+
+**Proof.**
+- Let d = x ∨ y. Pointwise, d ⊕ rot_L d = (x ∨ y) ⊕ (x ∨ ¬y) = ¬x, so τ^L d = ¬x.
+- ¬x is L-periodic, so v_(2L)(¬x) = L + v_L(¬x'). Since x is not all ones, v(d) < L, so v(τ^L d) = L + v(d).
+- Hence v(d) = v_L(¬x') = v_L(x'). Here ¬x' = x' + τ^(L−1), and v_L(x') < L − 1 except in the edge case x' = 0, which
+  needs no separate treatment.
+- The node splits iff d has even weight, iff v(d) ≥ 1. Both integrals w of d satisfy τw = d and differ by τ^(2L−1),
+  so v(w) = v(d) − 1. ∎
+
+**Checked** at every layer root of T_16, T_32, T_64 and T_128:
+- the root dies at once in 2, 0, 17 and 689 cases;
+- the children satisfy the law in 0, 4, 32 and 1,306 cases, with no exception.
+
+Note that 1,342 − 689 = 653 is GC2360's R, the number of splitting roots.
+
+**Consequence: the entrance obligation (O1) is inherited from the level below.**
+- x is the column of a node of T_L whose cycle length is exactly L: a top-layer column of T_L, or T_L's own front.
+- If T_L's top layer satisfies S (valuations at most L/4 − 2 below its front, and L/2 − 1 at its front), then every
+  entrance of T_(2L) has valuation at most L/4 − 3, or exactly L/2 − 2 when x is itself a front (a "double front").
+- That is one below the nested-front value L/2 − 1, and it explains all 34 boundary cases of T_128.
+
+### 33.4 What T28 teaches
+
+1. **The entrance is exact and inductive.** A layer's first valuations are fixed by the previous layer's, through
+   the front. This is the first exact boundary-to-tail statement on this route. It is small, but it is a
+   compatibility lemma of the kind GC2362 asked for.
+2. **Inheritance inside a layer fails locally,** with explicit witnesses. So S holds on defect descendants, if at all,
+   only through their origin. The tree side remains Collatz-shaped: its valuations fall off geometrically.
+3. **The cycle lemma is the clean open statement:** every cycle of least period 2L contains a column of valuation
+   exactly L/2 − 1.
+   - It concerns phases only, with no reachability in it.
+   - It holds on all three phases known, and in each the largest valuation is exactly L/2 − 1.
+   - If it is true, any infinite top-layer path has to climb from its entrance, at most L/2 − 2, to exactly L/2 − 1.
+     A double front enters one step below that value.
+   - A proof, or a counterexample from a wider search for phases, is the next target.
+

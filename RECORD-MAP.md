@@ -2374,6 +2374,10 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   The halving identity F_(2L)(z) = F_L(z) ⊕ F_L(c^L z), and the layer coin as a derivative along the damage. Influence
   ½ inside a 1.24L cone; the only departure is at the front. Search aliases: window function, influence profile,
   lambda_window, boundary route, Grassberger speed.
+- L1306 (Local, 2 November 2026): [T28, a valuation separator tested on cycles](reports/rule30-genealogy.md#33-a-valuation-separator-tested-on-cycles-t28-l1306).
+  GC2362's corrections accepted. The valuation passes through the front, v = v_L(x') − 1 (PROOF). Local inheritance
+  fails; the cycle lemma (valuation L/2 − 1 in every least-period-2L cycle) is open. Search aliases: nested front,
+  tau-adic valuation, cycle lemma, valuation_cycles, transfer law.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 

@@ -1,0 +1,14 @@
+== P28a: state (u, v) = (8bb01460, 744feb9f): v(u) = 0, v(v) = 0, |u OR v| = 32; child column w = aaaaaaaa has v = 30
+   a state in S whose child is a nested front: (e66be4d6, bcbffb6e), valuations 0, 3 -> child ab555554, valuation 7
+== P28b: roots used up to the cap; explored states 1500000
+nontrivial strongly connected components: 4
+      1 x rain
+      1 x size 128, column least periods [16], valuations {16: 80, 18: 16, 19: 32}
+      2 x size 480, column least periods [32], valuations {0: 256, 1: 48, 2: 80, 3: 48, 4: 32, 7: 16}
+least-period-32 components with no column of valuation 7 (cycle-lemma counterexamples): 0
+== P28c: T_64 top layer, 2651 nodes: valuations {0: 1334, 1: 658, 2: 266, 3: 188, 4: 80, 5: 34, 6: 26, 7: 14, 8: 16, 10: 2, 31: 33}; largest below the front 10 (band starts at 15)
+== P28c: T_128 top layer, 1118828 nodes: valuations {0: 560166, 1: 278976, 2: 138664, 3: 69826, 4: 34842, 5: 17648, 6: 8792, 7: 4214, 8: 2062, 9: 1176, 10: 590, 11: 264, 12: 124, 13: 54, 14: 26, 15: 6, 16: 10, 17: 4, 18: 2, 19: 4, 21: 2, 30: 34, 63: 1342}; largest below the front 30 (band starts at 31)
+== P28d: T_16 layer roots: root dies at once 2; children with v = v_L(x) - 1: 0, exceptions 0
+== P28d: T_32 layer roots: root dies at once 0; children with v = v_L(x) - 1: 4, exceptions 0
+== P28d: T_64 layer roots: root dies at once 17; children with v = v_L(x) - 1: 32, exceptions 0
+== P28d: T_128 layer roots: root dies at once 689; children with v = v_L(x) - 1: 1306, exceptions 0

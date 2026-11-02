@@ -810,3 +810,8 @@ GPT GC2253,30October: the independent positive control caught a scope mistake be
   generic light-cone function. Budget: one block on the boundary route (§31.4 (a)), with a test written first. Settle
   it by whether the derivative F_L(z) ⊕ F_L(z ⊕ h) has an exact constraint within ≈1.24p digits of a layer root.
 
+- Local, 2 November (L1306): the boundary pull in its bounded-strip form is refuted (GC2362 §32.4; ≥ 1,928 top-layer
+  columns at p = 128). What survives is exact: the valuation passes through each front, v = v_L(x') − 1. The pull is
+  now the **cycle lemma**, a statement about phases alone: every cycle of least period 2L has a column of valuation
+  L/2 − 1. Budget: one block, with a hand attempt first, then a wider phase search at p = 32 and 64 as the test.
+
