@@ -4802,3 +4802,38 @@ alignment classes, for 6K + 60 ticks (`edge_fuel_exhaustive.py`).
    - a mechanism and strong evidence for G16, with the exact reason a local certificate fails (prepared fuel, the
      pinned top) and the shape of the global lemma that would succeed.
 
+## 42. Which phases can be excluded at every period? Wake type and front certificates (T37, L1314)
+
+At the owner's direction ("the proof is the target ... continue with your warm pulls, whilst considering the broader
+structural questions Cloud is working on").
+
+### 42.1 Connection to Cloud's speed law (M2, CL678), and the proposal
+
+- Depth speed in the edge frame equals 1 + the lab leftward news speed of the leftmost mismatch.
+  - Cloud's G16 value of 0.224 corresponds to my clean-start depth speed of 1.19 to 1.22 (T36).
+  - G8's exact 1/2 corresponds to the kit's 3/2 (potential 2R − 3t).
+  - The classic ether's exact 0 is a depth speed of exactly 1.
+- Cloud's dichotomy (CL674, CL678): a periodic wake has a rational speed with an exact law; an odometer wake has no
+  law.
+- **Proposal (CONJECTURE, Local):** a finite front certificate (§39, with GC2374's correction) exists for a phase
+  exactly when its black-edge wake is periodic.
+  - G8 is periodic and certified at window 5. G16 is an odometer wake: its drawdown grows with preparation (T35), and
+    no certificate exists at W ≤ 10.
+  - If this holds, the phase-by-phase route proves exclusions for periodic-wake phases and meets the Collatz shape for
+    odometer-wake phases. The wake dichotomy would be the boundary of what can be proved.
+- **Test on the other known phases**, the 480-state phase (p = 32) and P1024 (p = 1,024). Neither is excluded at
+  every period by any method so far. A certificate for either would be a new theorem, uniform in the period.
+
+### 42.2 Predictions, written before the run (T37)
+
+- **(a) Wake type** (`wake_type.py`). Clean starts: each phase directly below the edge, run for 4,000 ticks over
+  alignments (all 30 × 32 for the 480-state phase, 64 values of θ for P1024). Measure speed, drawdown, and whether the
+  window of 256 mismatch cells above the front recurs with a shift (a periodic wake).
+- **(b) Certificates** (`front_cert.py`). Fixed so that CERTIFIED requires no FAIL edge (GC2374). Run it on the
+  480-state phase (classes (n mod 480, t mod 32), W ≤ 6) and on P1024 (classes θ = t + 195n mod 1024, W ≤ 8).
+- **P37a.** Both wakes are odometer-like (no periodic recurrence of the front window), with speeds strictly between 1
+  and 1.5. Lean 65%. Both phases are richer than G8.
+- **P37b.** Neither phase is certified at these windows. Lean 70%.
+- **Counterfactual.** A periodic wake, or a certificate, for either phase. A certificate proves that no eternal point
+  of any period ends in that phase. For P1024 that would be the first exclusion of it by any method.
+

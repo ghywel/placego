@@ -83,4 +83,5 @@ if __name__ == '__main__':
             print('   FAIL edges present (a retreat can leave the window): no certificate; the non-FAIL part is still tested', flush=True)
         k, trace = certify(NS, src, dst, adv)
         print('   least advance over paths of length k: %s' % trace, flush=True)
-        print('   %s' % (('CERTIFIED: every path of length %d advances' % k) if k else 'NOT CERTIFIED'), flush=True)
+        print('   %s' % (('CERTIFIED: no FAIL edge and every path of length %d advances' % k) if (k and fails == 0) else
+                           ('NOT CERTIFIED (FAIL edges present; the non-FAIL part advances on every %d-path)' % k if k else 'NOT CERTIFIED')), flush=True)
