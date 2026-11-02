@@ -5673,3 +5673,33 @@ For every alignment (1,024 θ for P1024; one per class of 480's 960) the clean f
 
 Record searched: L1319 (one 52-state U for all θ), L1321 (one 288-state U for all 480 classes), GC2389 (clock and
 gateways), §49 (front plus two cells); no earlier measurement of entry. Budget: one block.
+
+### 50.2 Results ([output](../tests/probes/lock_entry.out))
+
+| | P1024 (1,024 θ) | 480 (960 classes) |
+|---|---|---|
+| entry tick into U: min / median / 90% / max | 9 / 67 / 146 / 236 | 7 / 95 / 196 / 456 |
+| class first on the cycle: median tick | 36 | 78 |
+| window locks after the class: median / max | 13 / 175 | 17 / 138 |
+| alignments whose class leads by ≥ 10 ticks | 575 (56%) | 859 (89%) |
+| distinct first states in U | 21 | 36 |
+| ticks outside U after first entry | 5,284 | 222 |
+
+- **K1 HELD in part.** Every alignment enters U long before tick 600. Its median-range part (100–300) is REFUTED:
+  locking is faster, with medians of 67 and 95.
+- **K2 REFUTED.** There is no small set of gateways: 21 and 36 distinct first states. Entry is concentrated, though.
+  - In P1024 three states take 44% of entries: (731, 34), (506, 230) and the singleton fibre (264, 206). Only one of the
+    top eight is a singleton fibre; the others' fibres have 3 to 10 states.
+  - In 480 every one of the eight commonest first states has window 230, at different classes.
+- **K3 HELD.** The class reaches the cycle first, and the window follows a median 13–17 ticks later. In most alignments
+  the class leads by 10 ticks or more.
+- **K4 REFUTED.** Fronts leave U after first entering it (5,284 and 222 ticks in all, all before tick 600 by U's
+  definition). U is the support of the eventual orbit, not an invariant set; the closed set is S_E.
+
+**What T46 teaches.** The lock is a two-stage convergence, the class first and then the window, through many entry
+points. Why the eventual orbit is unique is therefore a property of the whole basin, not of a gateway. The window 230
+shared by 480's commonest entries (D_{R−1} = 0, the move "0" seen in every blocked tick of 480's S_E in §49) suggests
+the class walk reaches the cycle and the two cells behind the front then fall into place.
+- **Next form of the question (logged, not taken).** Is the class cycle the unique attracting cycle of the class walk
+  when each blocked choice follows the front-plus-two-cells dynamics? If it is, uniqueness becomes a finite statement
+  about a 1,024-class (or 15,360-class) walk.

@@ -2552,3 +2552,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   No pre-capture move read beyond 8 cells (15,438 blocked ticks); 89-92% read at most 2; (class, D_(R-1), D_(R-2)) is closed
   along +2 moves. GC2392's anchor/front identity carried. Search aliases: reading depth, blocked_reading, open stretch,
   front plus two cells, anchor offset.
+- L1326 (Local, 2 November 2026): [T46, how every alignment locks onto one orbit](reports/rule30-genealogy.md#50-how-does-every-alignment-lock-onto-one-orbit-t46-l1326).
+  Class first, window after; 21 (P1024) and 36 (480) entry states; U is not invariant (S_E is). Search aliases: lock,
+  lock_entry, entry state, phase locking, one orbit, basin.
