@@ -60,3 +60,68 @@ G16 W=8: clean states 499; forward closure 375952 states, 809728 edges, FAIL edg
    NOT ROBUST (FAIL edges in the closure)
 G16 W=12: clean states 513; forward closure 3000000 states (CAPPED at 3000000: closure incomplete), 5952997 edges, FAIL edges 0, advances [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2]
 G16 W=16: clean states 513; forward closure 3000000 states (CAPPED at 3000000: closure incomplete), 5654831 edges, FAIL edges 0, advances [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2]
+
+## L1319 (GC2386's capture interface): python3 tests/probes/front_closure.py P1024 8 --all-theta --export=PREFIX, under run_capped (nice 10; CPU 1,200 s, wall 1,200 s, RSS 3,072 MiB): COMPLETED. Exported files on the shared store: cited/local/l1319-P1024-W8-S_E_all.txt (file SHA-256 eeb62a45f0dc278d887b63bed66c1d65f8e25f360431fc05963c601c96928e47) and cited/local/l1319-P1024-W8-U.txt (bf6ad11cff5601a5c5e57cd982316b870caea1909fefb1e5a82f2f0fc32e1fcb), readback verified.
+P1024 W=8: clean states 52; forward closure 389 states, 520 edges, FAIL edges 0, advances [-1, 0, 1, 2]
+   least advance over paths of length k: [(3, 1)]
+   ROBUST: no FAIL edge in the closure and every path of length 3 advances
+P1024 W=8, all 1,024 thetas, ticks 600..2480: U 52 states; S_E^all 389 states, 520 edges, FAIL edges 0, advances [-1, 0, 1, 2]
+   least advance over paths of length k: [(3, 1)]; ROBUST: every path of length 3 advances
+   S_E(theta 780) 389 states; U inside S_E(780): 52 of 52; S_E(780) inside S_E^all: True
+   S_E_all: 389 states, SHA-256 of its lines c5c5f2515b5c97eb3f249377a0585ed867a00b2f930aaa3813d10260ddc4fc2c (lines "class window", window printed bit W-1 first)
+   U: 52 states, SHA-256 of its lines 9c4cead6bd8308462fab5ab16c6833b52ce56447e866f6e3a481646e20284220 (lines "class window", window printed bit W-1 first)
+
+## L1321 T43 (480 all alignments, and the P1024 regression with the new fall bound): python3 tests/probes/front_closure.py PHASE 8 --all-theta --export=PREFIX, under run_capped (nice 10; CPU 1,800 s, wall 2,400 s, RSS 4,096 MiB): COMPLETED, 2-4 s each. Exports in local data (not in git); P1024's files are byte-identical to L1319's.
+480 W=8: clean states 288; forward closure 416 states, 512 edges, FAIL edges 0, advances [0, 2]
+   least advance over paths of length k: [(2, 2)]
+   ROBUST: no FAIL edge in the closure and every path of length 2 advances
+480 W=8: 960 alignments, 1 distinct clean-state sets, sizes [288]
+480 W=8, all 960 alignments, ticks 600..2480: U 288 states; S_E^all 416 states, 512 edges, FAIL edges 0, advances [0, 2]
+   least advance over paths of length k: [(2, 2)]; ROBUST: every path of length 2 advances
+   largest fall below a running maximum along paths of S_E^all: 0
+   S_E(base alignment) 416 states; U inside S_E(base): 288 of 288; S_E(base) inside S_E^all: True
+   S_E_all: 416 states, SHA-256 of its lines 571a18473752ce87a26827acf4b12024318f9481da099e9bf55b4c59f3b65016 (lines "class window", window printed bit W-1 first)
+   U: 288 states, SHA-256 of its lines 0ae533423d49fcaf836f0d3fd86c90f15b533295fb29e40691c3bcc11f35f96c (lines "class window", window printed bit W-1 first)
+P1024 W=8: clean states 52; forward closure 389 states, 520 edges, FAIL edges 0, advances [-1, 0, 1, 2]
+   least advance over paths of length k: [(3, 1)]
+   ROBUST: no FAIL edge in the closure and every path of length 3 advances
+P1024 W=8: 1024 alignments, 1 distinct clean-state sets, sizes [52]
+P1024 W=8, all 1024 alignments, ticks 600..2480: U 52 states; S_E^all 389 states, 520 edges, FAIL edges 0, advances [-1, 0, 1, 2]
+   least advance over paths of length k: [(3, 1)]; ROBUST: every path of length 3 advances
+   largest fall below a running maximum along paths of S_E^all: 1
+   S_E(base alignment) 389 states; U inside S_E(base): 52 of 52; S_E(base) inside S_E^all: True
+   S_E_all: 389 states, SHA-256 of its lines c5c5f2515b5c97eb3f249377a0585ed867a00b2f930aaa3813d10260ddc4fc2c (lines "class window", window printed bit W-1 first)
+   U: 52 states, SHA-256 of its lines 9c4cead6bd8308462fab5ab16c6833b52ce56447e866f6e3a481646e20284220 (lines "class window", window printed bit W-1 first)
+
+## L1322 (carrying read of GC2389): python3 tests/probes/front_closure.py PHASE 8 --all-theta --clock, under run_capped (nice 10; CPU 600 s, wall 900 s, RSS 4,096 MiB): COMPLETED, seconds each. Predictions K1-K4 in genealogy section 47.1.
+P1024 W=8: clean states 52; forward closure 389 states, 520 edges, FAIL edges 0, advances [-1, 0, 1, 2]
+   least advance over paths of length k: [(3, 1)]
+   ROBUST: no FAIL edge in the closure and every path of length 3 advances
+P1024 W=8: 1024 alignments, 1 distinct clean-state sets, sizes [52]
+P1024 W=8, all 1024 alignments, ticks 600..2480: U 52 states; S_E^all 389 states, 520 edges, FAIL edges 0, advances [-1, 0, 1, 2]
+   least advance over paths of length k: [(3, 1)]; ROBUST: every path of length 3 advances
+   largest fall below a running maximum along paths of S_E^all: 1
+   clock: 52 classes in S_E^all; every class has one (next class, advance) over all its edges: True
+   one cycle through all classes: True; length 52, total advance 68, least period of the advance word 52
+   advance word from class 8: -1,0,2,2,2,0,2,2,2,0,2,2,2,0,2,2,0,2,2,1,1,0,2,1,2,1,2,1,2,1,1,2,0,2,2,0,2,0,2,2,0,2,2,0,2,0,2,2,2,2,0,2
+   potential: 13*advance - 17 summed round the cycle returns to 0; its range (max - min) 55
+   singleton fibres (class, window): [(23, 76), (264, 206), (656, 121), (897, 178)]; longest wait from any class to one: 47
+   states with window 0: [(882, 0)]
+   S_E(base alignment) 389 states; U inside S_E(base): 52 of 52; S_E(base) inside S_E^all: True
+   S_E_all: 389 states, SHA-256 of its lines c5c5f2515b5c97eb3f249377a0585ed867a00b2f930aaa3813d10260ddc4fc2c (lines "class window", window printed bit W-1 first)
+   U: 52 states, SHA-256 of its lines 9c4cead6bd8308462fab5ab16c6833b52ce56447e866f6e3a481646e20284220 (lines "class window", window printed bit W-1 first)
+480 W=8: clean states 288; forward closure 416 states, 512 edges, FAIL edges 0, advances [0, 2]
+   least advance over paths of length k: [(2, 2)]
+   ROBUST: no FAIL edge in the closure and every path of length 2 advances
+480 W=8: 960 alignments, 1 distinct clean-state sets, sizes [288]
+480 W=8, all 960 alignments, ticks 600..2480: U 288 states; S_E^all 416 states, 512 edges, FAIL edges 0, advances [0, 2]
+   least advance over paths of length k: [(2, 2)]; ROBUST: every path of length 2 advances
+   largest fall below a running maximum along paths of S_E^all: 0
+   clock: 288 classes in S_E^all; every class has one (next class, advance) over all its edges: True
+   one cycle through all classes: True; length 288, total advance 480, least period of the advance word 18
+   advance word from class 13: 2,0,2,2,2,2,0,2,2,2,2,0,2,2,2,2,2,2,2,0,2,2,2,2,0,2,2,2,2,0,2,2,2,2,2,2,2,0,2,2,2,2,0,2,2,2,2,0,2,2,2,2,2,2,2,0,2,2,2,2,0,2,2,2,2,0,2,2,2,2,2,2,2,0,2,2,2,2,0,2,2,2,2,0,2,2,2,2,2,2,2,0,2,2,2,2,0,2,2,2,2,0,2,2,2,2,2,2,2,0,2,2,2,2,0,2,2,2,2,0,2,2,2,2,2,2,2,0,2,2,2,2,0,2,2,2,2,0,2,2,2,2,2,2,2,0,2,2,2,2,0,2,2,2,2,0,2,2,2,2,2,2,2,0,2,2,2,2,0,2,2,2,2,0,2,2,2,2,2,2,2,0,2,2,2,2,0,2,2,2,2,0,2,2,2,2,2,2,2,0,2,2,2,2,0,2,2,2,2,0,2,2,2,2,2,2,2,0,2,2,2,2,0,2,2,2,2,0,2,2,2,2,2,2,2,0,2,2,2,2,0,2,2,2,2,0,2,2,2,2,2,2,2,0,2,2,2,2,0,2,2,2,2,0,2,2,2,2,2,2,2,0,2,2,2,2,0,2,2,2,2,0,2,2,2,2,2,2
+   singleton fibres (class, window): [(13, 194), (78, 142), (144, 169), (209, 157), (274, 104), (339, 90), (470, 178), (535, 218), (600, 102), (731, 126), (796, 250), (861, 230), (926, 150), (991, 194), (1024, 142), (1090, 169), (1155, 157), (1220, 104), (1285, 90), (1416, 178), (1481, 218), (1546, 102), (1677, 126), (1742, 250), (1807, 230), (1872, 150), (1937, 194), (2002, 142), (2068, 169), (2133, 157), (2198, 104), (2263, 90), (2394, 178), (2459, 218), (2524, 102), (2655, 126), (2688, 250), (2753, 230), (2818, 150), (2883, 194), (2948, 142), (3014, 169), (3079, 157), (3144, 104), (3209, 90), (3340, 178), (3405, 218), (3470, 102), (3601, 126), (3666, 250), (3731, 230), (3796, 150), (3861, 194), (3926, 142), (3992, 169), (4057, 157), (4122, 104), (4187, 90), (4318, 178), (4383, 218), (4416, 102), (4547, 126), (4612, 250), (4677, 230), (4742, 150), (4807, 194), (4872, 142), (4938, 169), (5003, 157), (5068, 104), (5133, 90), (5264, 178), (5329, 218), (5394, 102), (5525, 126), (5590, 250), (5655, 230), (5720, 150), (5785, 194), (5850, 142), (5916, 169), (5981, 157), (6046, 104), (6111, 90), (6210, 178), (6275, 218), (6340, 102), (6471, 126), (6536, 250), (6601, 230), (6666, 150), (6731, 194), (6796, 142), (6862, 169), (6927, 157), (6992, 104), (7057, 90), (7188, 178), (7253, 218), (7318, 102), (7449, 126), (7514, 250), (7579, 230), (7644, 150), (7709, 194), (7774, 142), (7808, 169), (7873, 157), (7938, 104), (8003, 90), (8134, 178), (8199, 218), (8264, 102), (8395, 126), (8460, 250), (8525, 230), (8590, 150), (8655, 194), (8720, 142), (8786, 169), (8851, 157), (8916, 104), (8981, 90), (9112, 178), (9177, 218), (9242, 102), (9373, 126), (9438, 250), (9503, 230), (9536, 150), (9601, 194), (9666, 142), (9732, 169), (9797, 157), (9862, 104), (9927, 90), (10058, 178), (10123, 218), (10188, 102), (10319, 126), (10384, 250), (10449, 230), (10514, 150), (10579, 194), (10644, 142), (10710, 169), (10775, 157), (10840, 104), (10905, 90), (11036, 178), (11101, 218), (11166, 102), (11265, 126), (11330, 250), (11395, 230), (11460, 150), (11525, 194), (11590, 142), (11656, 169), (11721, 157), (11786, 104), (11851, 90), (11982, 178), (12047, 218), (12112, 102), (12243, 126), (12308, 250), (12373, 230), (12438, 150), (12503, 194), (12568, 142), (12634, 169), (12699, 157), (12764, 104), (12829, 90), (12928, 178), (12993, 218), (13058, 102), (13189, 126), (13254, 250), (13319, 230), (13384, 150), (13449, 194), (13514, 142), (13580, 169), (13645, 157), (13710, 104), (13775, 90), (13906, 178), (13971, 218), (14036, 102), (14167, 126), (14232, 250), (14297, 230), (14362, 150), (14427, 194), (14492, 142), (14558, 169), (14623, 157), (14656, 104), (14721, 90), (14852, 178), (14917, 218), (14982, 102), (15113, 126), (15178, 250), (15243, 230), (15308, 150)]; longest wait from any class to one: 2
+   states with window 0: []
+   S_E(base alignment) 416 states; U inside S_E(base): 288 of 288; S_E(base) inside S_E^all: True
+   S_E_all: 416 states, SHA-256 of its lines 571a18473752ce87a26827acf4b12024318f9481da099e9bf55b4c59f3b65016 (lines "class window", window printed bit W-1 first)
+   U: 288 states, SHA-256 of its lines 0ae533423d49fcaf836f0d3fd86c90f15b533295fb29e40691c3bcc11f35f96c (lines "class window", window printed bit W-1 first)

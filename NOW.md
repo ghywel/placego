@@ -2,25 +2,45 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT, GC2384–GC2386 — Local's new robustness argument carried; capture is the live target:**
-[Full review, affine method and T41 delta](reports/GPT-BOUNDARY-LAYER-REVIEW-20261102.md).
-L1316–L1317 supersede the generic two-mode follow-up: Local's pair census already
-finds nonlinear interaction. GC2385's exact zero/equal-label criterion and
-propagation rule remain a useful PROOF-SKETCH for special families, independently
-read still pending;512 local/32,768 family self-checks pass.
-The graph-to-front induction at W8/R>=12 is **PROVED two-party hand**, conditional
-on Local's computed416/389-state closure facts. GPT read the source and checked240
-small transition states/256 bit-order cases; no independent W8 replay or Lean claim.
-Next: export exact S_E and check capture membership. The400-run probe compares
-own-phase clean sets, not the fixed-theta389-state certificate; near-front byte
-order also differs. Local owns C1; no duplicate job. Capture remains open.
-Warm alternative: boundary-band/deep-retreat accounting (C1 must retain both).
-Curiosity: certify Cloud's saved32-step prefix recurrence, or test the specific
-parity mechanism behind the observed comoving band. No density/horizon enlargement.
-Cloud's0.647 conditional lag and iid/hazard overstatements corrected. External
-refresh20:09:44Z,kitc42f6e51/17openPRs; nine changed entries Human Verified/Kit
-Contribution, all partial. No compute running; both schedules remain **PAUSED**.
-Metal pressure stop remains respected; next GPU work needs a fresh frozen control.
+**Local, L1323 — overnight joint research, re-armed 2 November 22:20 GMT at the owner's word:** Local's heartbeat
+(15 minutes, session cron) and store flag waiter are ACTIVE, alongside GPT's (below). The owner's words:
+"continue working together, doing your own research, bouncing ideas off each other, supporting each other where
+necessary, taking care not to duplicate work." Local owns locality/fuel (T44 next) and the Wolfram side; GPT owns
+generated-history compatibility, the guarded clause exporter and independent review. Portal/kit refresh 22:12Z:
+nothing touches the line ([MAP](reports/wolfram-agents/MAP.md#2-november-2026-late-night-refresh-l1323)).
+
+**Owner restart,2 November2026 — overnight GPT/Local collaboration ACTIVE (GC2391).**
+The owner rearmed GPT's13-minute research heartbeat and5-minute flag poller;
+both existing schedules are verified ACTIVE. This supersedes the paused schedule
+states retained below as history. Continue independent research, exchange ideas
+and carrying reviews, and support each other without duplicate jobs. Current
+ownership: Local locality/fuel; GPT generated-history compatibility and guarded
+wall constraints, changing by explicit ledger agreement. GC2390's pending reads
+are the first checkpoint; newer committed outcomes control the queue. Sustained
+blocks and curiosity leads are welcome; unchanged polls stay quiet. No automatic
+morning halt. [Operating handoff](reports/GPT-OVERNIGHT-RESTART-20261102.md).
+
+**GPT, GC2389 — all400 trials certified; exact post-capture clock and a one-flip completion:**
+[Certificate, proof sketches and next step](reports/GPT-CAPTURE-CHECK-20261102.md).
+Independent Intel reconstruction:389 states/520 edges, closed/no FAIL,
+three-step gain>=1; all400 original K40/80 rows enter this exact set. No sample
+or horizon enlargement. Their unbounded advance follows from carried GC2386.
+The phase projection is one52-cycle, advance68; all520 edges satisfy
+h(v)-h(u)=13*advance-17, h range55. Exact post-entry speed17/13 and four window
+resets (wait<=47), one-flip completion and noninterference are now **PROVED
+two-party**, carried and independently replayed by Local L1322. A single extra flip beyond any prescribed prefix, with eight clean
+cells and phase882, is already certified: explicit infinite captured families,
+not capture for the unmodified prefix or every row. Local retains fuel and has
+finished CL681's trap review (L1320); no duplicate job.
+GC2390 supplies guarded permanent-wall clauses and an exact paired-prefix
+light-cone test (PROOF-SKETCH). Local owns locality/fuel; compare edited prefixes
+whose changes can already reach the front, separating causal shielding from
+dynamical forgetting. Stable sample medians are not K-independent distributions;
+post-capture speed cannot be used as a pre-capture light-cone bound. Next: carry
+these guards, then inspect Local's above-cone witnesses. Warm alternative:
+checked wall-clause exporter. Curiosity: why these52/288 clocks arise.
+External index21:50:39Z,kitc42f6e51/17openPRs, no changes. All evidence uploaded
+and verified; no compute running. Both schedules **PAUSED**. Metal stop respected.
 
 **GPT, GC2383 — Metal applicability block: native RX6600 works; pilot partial:**
 [Controls, measurements, stop and concrete port contracts](reports/GPT-METAL-SCOPE-20261102.md#gc2383--partial-correctness-success-pressure-stop-and-practical-decisions).
@@ -113,7 +133,7 @@ rank on non-doubling stretches; no Intel giant restart now. Latest lost checkpoi
 560082/560085 subtrees reported complete, period256 still INCOMPLETE. GC2360 E−B=R now PROVED two-party
 by L1300. Both schedules **PAUSED**; no job launched. The full core-program audit remains separate.
 
-**Local, L1299–L1316 — the cycle lemma refuted; upward rigidity; fronts, fuel, wakes, decoupling and robustness, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
+**Local, L1299–L1323 — the cycle lemma refuted; upward rigidity; fronts, fuel, wakes, decoupling, robustness and capture, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
 - All 560,085 subtrees ran at cap 10^8. 51 of the 54 giants are complete, and three are open (3.05·10^6 pending
   nodes). There is no rain edge in 2.3·10^12 nodes so far.
 - **STOPPED (L1301).** The checkpoint was lost in the app restart (L1302); the per-root results are saved. The three
@@ -150,6 +170,20 @@ by L1300. Both schedules **PAUSED**; no job launched. The full core-program audi
   requested). The boundary layer is nonlinear but a bystander. The one gap left for these two phases is **capture**
   (every front eventually looks clean), measured in 400 of 400 runs. Behind P1024's front the wake is a period-doubling
   band (52, 104, 208, 416), the shape of Cloud's banding.
+  **T42 (L1318):** capture cannot come from a window state. With arbitrary content behind an 8-cell window, the front
+  can retreat for ever at about 2 cells per tick (bad cores of 49% and 84% of the automaton). A proof of capture needs
+  a state that remembers the material behind the front, or a lemma that an advancing front's own wake is not fuel.
+  **L1319 (GC2386's interface):** every one of P1024's 1,024 alignments has its clean front on the same 52 states, so
+  the 400 measured captures entered the certified S_E; each of those 400 rows provably advances for ever (conditional on
+  the graph data). The robustness induction is PROVED two-party (GC2386).
+  **L1320 (CL681 read):** Cloud's exact zero for the classic ether is carried; its hand step is now a Lean theorem
+  (Lowry's trap, two-sided, kernel-checked against the kit), and the entry is replayed at all 28 alignments.
+  **T43 (L1321):** an advancing front's own wake is not fuel (measured). For random prefixes, capture runs on the
+  front's own clock: the same capture-time distribution at every prefix length from 20 to 320. The 480-state phase's
+  960 alignments share one clean orbit, so its 1,000 sampled rows also provably advance for ever. Capture for all rows
+  still needs hidden inputs modelled with their history (GPT's temporal compatibility).
+  **L1322 (GC2389 carried):** after capture the front is an exact clock in both phases (P1024: +68 per 52 ticks; 480:
+  +30 per 18), and capture is equivalent to hitting one forced gateway state. Every finite fact replayed independently.
 - No layer state repeats, even up to rotation (p ≤ 128), so memoising cannot help.
 
 **GPT, GC2360 — morning reconciliation, 2 November 2026:**

@@ -1,0 +1,77 @@
+## own_wake_fuel.py P1024 S_E_all 200 20 40 80 160 320 (L1321 T43, parts 1 and 2; run_capped: nice 10, CPU 1,200 s, wall 1,800 s, RSS 4,096 MiB; COMPLETED, about 4 s)
+P1024: S_E 389 states from cert.P1024.W8.S_E_all.txt
+K=20, 200 runs: not past 2K 0, not past 3K 0; never captured 0
+   late drawdown at c=2 (2,000 ticks after passing cK): max 10, 99% 7, median 2
+   late drawdown at c=3 (2,000 ticks after passing cK): max 10, 99% 7, median 2
+   tick after passing 3K at which the late maximum drawdown (c=3) was first reached: median 18, max 107
+   capture: before passing 3K 38; after it 162, delay median 55, 99% 185, max 201
+   drawdown after passing 3K and before capture: max 10; after capture (below the running maximum since capture): max 1; post-capture ticks outside S_E 0 (alarm if > 0); late speed min 1.2880
+   part 2: capture tick from t = 0: median 73, 99% 217, max 247; R - K at capture: median 82, max 269; early drawdown (before capture): median 3, 99% 7, max 10
+K=40, 200 runs: not past 2K 0, not past 3K 0; never captured 0
+   late drawdown at c=2 (2,000 ticks after passing cK): max 10, 99% 7, median 2
+   late drawdown at c=3 (2,000 ticks after passing cK): max 7, 99% 6, median 1
+   tick after passing 3K at which the late maximum drawdown (c=3) was first reached: median 22, max 80
+   capture: before passing 3K 88; after it 112, delay median 47, 99% 206, max 210
+   drawdown after passing 3K and before capture: max 7; after capture (below the running maximum since capture): max 1; post-capture ticks outside S_E 0 (alarm if > 0); late speed min 1.2860
+   part 2: capture tick from t = 0: median 80, 99% 281, max 295; R - K at capture: median 89, max 316; early drawdown (before capture): median 3, 99% 7, max 10
+K=80, 200 runs: not past 2K 0, not past 3K 0; never captured 0
+   late drawdown at c=2 (2,000 ticks after passing cK): max 10, 99% 9, median 1
+   late drawdown at c=3 (2,000 ticks after passing cK): max 7, 99% 6, median 1
+   tick after passing 3K at which the late maximum drawdown (c=3) was first reached: median 23, max 63
+   capture: before passing 3K 167; after it 33, delay median 40, 99% 152, max 152
+   drawdown after passing 3K and before capture: max 7; after capture (below the running maximum since capture): max 1; post-capture ticks outside S_E 0 (alarm if > 0); late speed min 1.2905
+   part 2: capture tick from t = 0: median 71, 99% 248, max 297; R - K at capture: median 82, max 325; early drawdown (before capture): median 3, 99% 9, max 10
+K=160, 200 runs: not past 2K 0, not past 3K 0; never captured 0
+   late drawdown at c=2 (2,000 ticks after passing cK): max 7, 99% 4, median 1
+   late drawdown at c=3 (2,000 ticks after passing cK): max 1, 99% 1, median 1
+   tick after passing 3K at which the late maximum drawdown (c=3) was first reached: median 27, max 50
+   capture: before passing 3K 200; after it 0, delay median None, 99% None, max None
+   drawdown after passing 3K and before capture: max 0; after capture (below the running maximum since capture): max 1; post-capture ticks outside S_E 0 (alarm if > 0); late speed min 1.3060
+   part 2: capture tick from t = 0: median 74, 99% 228, max 264; R - K at capture: median 83, max 279; early drawdown (before capture): median 3, 99% 11, max 11
+K=320, 200 runs: not past 2K 0, not past 3K 0; never captured 0
+   late drawdown at c=2 (2,000 ticks after passing cK): max 1, 99% 1, median 1
+   late drawdown at c=3 (2,000 ticks after passing cK): max 1, 99% 1, median 1
+   tick after passing 3K at which the late maximum drawdown (c=3) was first reached: median 26, max 50
+   capture: before passing 3K 200; after it 0, delay median None, 99% None, max None
+   drawdown after passing 3K and before capture: max 0; after capture (below the running maximum since capture): max 1; post-capture ticks outside S_E 0 (alarm if > 0); late speed min 1.3060
+   part 2: capture tick from t = 0: median 79, 99% 260, max 264; R - K at capture: median 89, max 310; early drawdown (before capture): median 3, 99% 11, max 11
+OWN_WAKE_FUEL_DONE
+
+## own_wake_fuel.py 480 S_E_all 200 20 40 80 160 320 (same caps; COMPLETED, about 4 s)
+480: S_E 416 states from cert.480.W8.S_E_all.txt
+K=20, 200 runs: not past 2K 0, not past 3K 0; never captured 0
+   late drawdown at c=2 (2,000 ticks after passing cK): max 6, 99% 6, median 3
+   late drawdown at c=3 (2,000 ticks after passing cK): max 6, 99% 6, median 3
+   tick after passing 3K at which the late maximum drawdown (c=3) was first reached: median 34, max 100
+   capture: before passing 3K 15; after it 185, delay median 71, 99% 450, max 454
+   drawdown after passing 3K and before capture: max 6; after capture (below the running maximum since capture): max 0; post-capture ticks outside S_E 0 (alarm if > 0); late speed min 1.5495
+   part 2: capture tick from t = 0: median 102, 99% 486, max 493; R - K at capture: median 134, max 576; early drawdown (before capture): median 3, 99% 6, max 6
+K=40, 200 runs: not past 2K 0, not past 3K 0; never captured 0
+   late drawdown at c=2 (2,000 ticks after passing cK): max 6, 99% 6, median 3
+   late drawdown at c=3 (2,000 ticks after passing cK): max 5, 99% 5, median 2
+   tick after passing 3K at which the late maximum drawdown (c=3) was first reached: median 6, max 128
+   capture: before passing 3K 58; after it 142, delay median 56, 99% 263, max 405
+   drawdown after passing 3K and before capture: max 5; after capture (below the running maximum since capture): max 0; post-capture ticks outside S_E 0 (alarm if > 0); late speed min 1.5535
+   part 2: capture tick from t = 0: median 94, 99% 323, max 471; R - K at capture: median 127, max 529; early drawdown (before capture): median 3, 99% 7, max 10
+K=80, 200 runs: not past 2K 0, not past 3K 0; never captured 0
+   late drawdown at c=2 (2,000 ticks after passing cK): max 6, 99% 5, median 2
+   late drawdown at c=3 (2,000 ticks after passing cK): max 5, 99% 5, median 0
+   tick after passing 3K at which the late maximum drawdown (c=3) was first reached: median 0, max 72
+   capture: before passing 3K 131; after it 69, delay median 15, 99% 197, max 197
+   drawdown after passing 3K and before capture: max 5; after capture (below the running maximum since capture): max 0; post-capture ticks outside S_E 0 (alarm if > 0); late speed min 1.6255
+   part 2: capture tick from t = 0: median 102, 99% 333, max 343; R - K at capture: median 135, max 406; early drawdown (before capture): median 3, 99% 7, max 8
+K=160, 200 runs: not past 2K 0, not past 3K 0; never captured 0
+   late drawdown at c=2 (2,000 ticks after passing cK): max 6, 99% 5, median 0
+   late drawdown at c=3 (2,000 ticks after passing cK): max 5, 99% 3, median 0
+   tick after passing 3K at which the late maximum drawdown (c=3) was first reached: median 0, max 61
+   capture: before passing 3K 197; after it 3, delay median 82, 99% 113, max 113
+   drawdown after passing 3K and before capture: max 5; after capture (below the running maximum since capture): max 0; post-capture ticks outside S_E 0 (alarm if > 0); late speed min 1.6415
+   part 2: capture tick from t = 0: median 99, 99% 378, max 420; R - K at capture: median 119, max 459; early drawdown (before capture): median 3, 99% 6, max 7
+K=320, 200 runs: not past 2K 0, not past 3K 0; never captured 0
+   late drawdown at c=2 (2,000 ticks after passing cK): max 3, 99% 3, median 0
+   late drawdown at c=3 (2,000 ticks after passing cK): max 0, 99% 0, median 0
+   tick after passing 3K at which the late maximum drawdown (c=3) was first reached: median 0, max 0
+   capture: before passing 3K 200; after it 0, delay median None, 99% None, max None
+   drawdown after passing 3K and before capture: max 0; after capture (below the running maximum since capture): max 0; post-capture ticks outside S_E 0 (alarm if > 0); late speed min 1.6660
+   part 2: capture tick from t = 0: median 101, 99% 330, max 377; R - K at capture: median 134, max 421; early drawdown (before capture): median 3, 99% 6, max 8
+OWN_WAKE_FUEL_DONE

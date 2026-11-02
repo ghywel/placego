@@ -2415,6 +2415,13 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   The clean fronts of the 480-state phase and P1024 are robust (8-cell window certificate); the layer is nonlinear but
   never reaches the front; capture is the one gap; P1024's wake is a period-doubling band. Search aliases: robustness
   lemma, front_closure, layer_linear, capture, riding particle, superposition, tangent map, period-doubling band.
+- L1318 (Local, 2 November 2026): [T42, capture route C1, the bad core](reports/rule30-genealogy.md#45-capture-route-c1-the-bad-core-of-the-window-automaton-t42-l1318).
+  The window over-approximation allows unlimited steady retreat, so capture needs memory of the material behind the
+  front; the deep-retreat windows are dense damage blocks (compare GC507). Search aliases: bad core, capture_core,
+  greatest fixed point, unlimited fuel, deep retreat, FAIL windows.
+- L1319 (Local, 2 November 2026): [the capture interface closed for P1024](reports/rule30-genealogy.md#45-capture-route-c1-the-bad-core-of-the-window-automaton-t42-l1318).
+  All 1,024 alignments' clean fronts share one 52-state orbit; the 400 captures entered the certified 389-state S_E;
+  certificate exported. Search aliases: all-theta, capture interface, S_E export, 52-state orbit, GC2386.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 
@@ -2503,3 +2510,29 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   retain COMPUTED M5 status. Own-phase capture sets need exact membership in the
   fixed certificate; reverse the top eight capture bits. C1 must retain boundary
   revisits as well as FAIL retreats. Generic affine replay superseded by T41.
+- L1320 (Local, 2 November 2026): [CL681 corollary carried; Lowry's trap in two-sided form, kernel-checked](PROOFS.md#cl681-corollary--the-classic-ether-absorbs-a-black-edge-news-speed-exactly-zero-clouds-proof-locals-carrying-read-l1320-the-two-sided-step-kernel-checked-2026-11-02).
+  `trap_two_sided`, `news_bounded` (tests/probes/lean/EtherTwoSided.lean, kit c42f6e5); entry replayed at all 28 kit alignments;
+  no column left of -37 is ever disturbed. Search aliases: ether-wall trap, two-sided trap, classic ether, exact zero,
+  ether_trap_replay, Lowry, news speed.
+- GC2389: [P1024 capture certificate, exact front clock and one-flip completion](reports/GPT-CAPTURE-CHECK-20261102.md).
+  COMPUTED Intel:389 states/520 edges and400/400 original entries, independently
+  checked; phase clock52/68 and potential range55. PROOF-SKETCH: all-future
+  exact speed17/13, four reset fibres, noninterference, and a single extra flip
+  at phase882 gives a captured completion of any prescribed prefix. Universal
+  capture remains open. Search aliases: gateway, phase882, one-flip marker,
+  prefix topology, capture membership, displacement potential, reset window.
+- L1321 (Local, 2 November 2026): [T43, the own wake is not fuel; capture on the front's own clock](reports/rule30-genealogy.md#46-is-an-advancing-fronts-own-wake-fuel-t43-l1321).
+  Late drawdown bounded and falling with K; capture tick independent of K (light cone accounted for); 480's 960 alignments
+  share one 288-state clean orbit, closure the certified 416. Search aliases: own wake, fuel, late drawdown, capture time,
+  own_wake_fuel, all-alignment 480, phase locking, one orbit.
+- L1322 (Local, 2 November 2026): [carrying read of GC2389; 480's exact clock](reports/rule30-genealogy.md#47-locals-carrying-read-of-gc2389-the-exact-front-clock-and-the-one-flip-completion-l1322).
+  GC2389's clock, speed bound, resets, single-flip completion and noninterference carried; every finite fact replayed by an
+  independent generator. 480: one 288-class cycle, R(t+18) = R(t)+30 after capture, window re-forced within 2 ticks.
+  Search aliases: front clock, gateway, singleton fibre, single-flip completion, noninterference, --clock, exact speed.
+
+- GC2390: [Free-boundary wall obstruction and exact locality guard](reports/GPT-CAPTURE-CHECK-20261102.md#gc2390--use-the-certificate-as-a-guarded-wall-obstruction),
+  PROOF-SKETCH. S_E avoidance clause retains the deepest-mismatch suffix guard;
+  paired-prefix equality follows from K-L-1+2t<=R_A(t)-9, without assuming the
+  eventual speed before capture. L1321's stable samples do not prove equal
+  distributions; F3 median-factor criterion fails for480's selected late group.
+  Local retains locality/fuel; GC2389 is carried by L1322.

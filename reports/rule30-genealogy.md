@@ -5173,3 +5173,314 @@ and 600,000 exact ticks with random wakes behind the window, none leaving S_E or
   through fresh phase never writes them.
 
 **G16** stays outside: not robust (§44.5), coupled to its wake (T40), with an odometer wake (T37).
+
+## 45. Capture, route C1: the bad core of the window automaton (T42, L1318)
+
+### 45.1 Predictions, written before the run (`capture_core.py`)
+
+Build the whole W = 8 window automaton of §39 for the 480-state phase (245,760 states) and P1024 (262,144) with
+`front_cert.py`'s `build_generic`. Re-derive S_E inside it as the set reachable from the clean front's states. The
+**bad core** B is the largest set of states outside S_E from which some FAIL-free path stays in the set for ever: a
+greatest fixed point, computed by deleting states with no successor left in it.
+- **P42a (consistency).** The re-derived S_E has exactly 416 and 389 states. It is an independent route to §44.5's sets,
+  through `build_generic` instead of `front_closure.py`'s own successor function. Lean 95%.
+- **P42b.** B is non-empty in both phases and contains a cycle of non-positive total advance. Lean 85%: `front_cert`
+  found such cycles at W = 4 to 8, and they cannot lie in S_E.
+- **P42c.** The states lying on non-positive cycles are under 1% of B. Lean 50%.
+- **What it teaches.**
+  - If B's cycles all advance, a front that avoids capture with a bounded position must make infinitely many retreats
+    of more than W cells, and capture reduces to C3.
+  - If non-positive cycles are numerous, an 8-cell window plus arbitrary content behind it is too coarse to force
+    capture, and C2 must use the clean band's known order.
+  - The cycles' windows say which kind of stall the over-approximation allows, and so what a finer state must
+    remember.
+
+### 45.2 Results ([`capture_core.py`](../tests/probes/capture_core.py), [output](../tests/probes/capture_core.out))
+
+| phase | whole automaton (W = 8) | S_E re-derived | bad core B | least advance over 600 ticks in B | greedy witness cycle |
+|---|---|---|---|---|---|
+| 480-state phase | 3,932,160 states (480 × 32 classes), 21.3 million edges, 1,408 FAIL | **416** | 1,911,888 (48.6%) | −1,329 | 224 ticks, advance −480 |
+| P1024 | 262,144 states, 1.41 million edges, 85 FAIL | **389** | 219,722 (83.8%) | −1,105 | 45 ticks, advance −79 |
+
+- **P42a HELD.** `build_generic` reproduces S_E exactly (416 and 389 states), an independent route to §44.5's closures.
+  - The prediction's state count for the 480-state phase was wrong: it has 480 columns, so 15,360 classes, not 960.
+    The 960 of T38 are classes up to its twist.
+- **P42b HELD.** B is large in both phases and full of non-positive cycles.
+- **P42c REFUTED, decisively.** Every state of B has a 600-tick path with total advance ≤ 0. The least such advance is
+  a retreat of about 1.8 to 2.2 cells per tick, sustained.
+
+**What it teaches.** With arbitrary content behind the window, the over-approximation lets the front eat its way upward
+for ever. It is fuel without limit, and it needs no deep retreat (no FAIL edge): the witness cycles retreat 2 to 8
+cells per tick inside the window.
+- A real front cannot do this for ever, because the mismatch's top is pinned (§40.1): fuel is finite in any one row.
+  But no window state records how much retreatable material lies behind.
+- So **C1 is closed as a route**. Capture cannot follow from a window state alone, at any W where arbitrary content is
+  allowed behind.
+- C3 loses its point in this form: deep retreats are not needed for unlimited retreat in the over-approximation.
+- **A proof of capture needs a state that remembers the material behind the front**, or a lemma that the material an
+  advancing front writes is not fuel ("self-written wake is not fuel"), which is what the robustness lemma shows for the
+  clean front.
+- This is GPT's point 5 of GC2384 met in practice: the entrance statement is separate, and it is the hard part.
+- **The deep-retreat windows (route C3's listing, P1024, W = 8).**
+  - 85 FAIL edges leave from 66 states, all in B and none in S_E, with 80 distinct (mismatch, phase) patterns.
+  - The twelve most frequent all have 7 or 8 ones among their 10 mismatch bits (for example 1011011011 and
+    0110111011): dense, near-solid damage blocks.
+  - This matches GPT's GC507, where a solid damage block over a black background moves entirely in one update. Over a
+    phase background, the healing blocks are dense with gaps matched to the phase. That is a correspondence, not a
+    theorem.
+
+### 45.3 Closing the capture interface (GC2386): predictions, written before the run
+
+GC2386 carried §44.6's induction and found an open join:
+- S_E was built from the clean front at one alignment (θ = 780);
+- P41e's 400 captures each matched the clean front of its own θ;
+- so "400 of 400 entered S_E" was not yet shown.
+
+The fix is by construction. Let U be the union, over all 1,024 values of θ, of the clean front's 8-cell states at ticks
+600 to 2,480: the same clean runs and tick range that `wake_attractor.py` compares against. Its top eight bits are the
+8-cell window. Let S_E^all be the forward closure of U. A run captured at its own θ then shows a state of U, which lies
+in S_E^all, with no bit-order conversion.
+- **P42d.** S_E^all is ROBUST (FAIL-free, every k-path advances). Lean 80%.
+- **P42e.** U ⊆ S_E(780): the clean fronts of all alignments fall into the one closure. Lean 65%.
+- If P42d fails, the 400 captures entered only their own-alignment clean sets, and the robustness lemma has to be
+  certified per alignment.
+
+### 45.4 Results: the interface is closed for P1024 ([output](../tests/probes/front_closure.out), last section)
+
+- **P42e HELD, in the strongest form.** Over all 1,024 alignments θ and ticks 600 to 2,480, the clean fronts' 8-cell
+  states form **one set U of 52 states**, the set already found at θ = 780.
+  - Every alignment's clean front settles on the same 52-state orbit in class coordinates.
+- **P42d HELD.** The closure of U is S_E(780) itself: 389 states, FAIL-free, every 3-path advancing.
+- **So P41e's 400 captures entered the certified S_E.**
+  - A captured run's 32-cell window and class equal its own alignment's clean pair at some tick in [600, 2,480].
+  - The top eight cells of that window are therefore a state of U.
+  - The run's front was at depth ≥ 120 at that tick.
+  - By the robustness lemma (graph-to-front transfer carried in GC2386; graph COMPUTED here), **each of those 400
+    rows has a front that advances for ever**. That is an exact statement about 400 sampled rows, conditional on the
+    finite graph data. It is not capture for all rows.
+- **Export.** The 389 states and the 52 clean states are on the shared store
+  (`cited/local/l1319-P1024-W8-S_E_all.txt`, SHA-256 `eeb62a45…8e47`; `cited/local/l1319-P1024-W8-U.txt`,
+  `bf6ad11c…1fcb`). One state per line: θ class, then the window printed bit W − 1 first, where bit j − 1 = D_(R−j).
+  The edges are regenerated by `front_closure.py` from these.
+- **The 480-state phase** has no capture data yet (T39 and P41e were P1024 only). Its S_E is certified at one
+  alignment. An all-alignment union over its 15,360 classes is the same check, if a capture run for it is wanted.
+
+## 46. Is an advancing front's own wake fuel? (T43, L1321)
+
+### 46.1 Setting and predictions, written before the run (`own_wake_fuel.py`; `front_closure.py --all-theta` for 480)
+
+**Question.** Once the front has passed well beyond the prefix (depth cK, c = 2 and 3), how far can it still retreat?
+The material behind it is then mostly the wake it wrote itself. If the late drawdown is bounded independently of K, the
+prefix's fuel is spent before the front gets there, and its own wake supplies none beyond a constant. If it grows with
+K, the wake carries the prefix's fuel forward.
+
+**What this cannot decide (GC2378).** A bounded late drawdown says nothing about a front that never passes cK (a hovering
+front). That case is exactly a periodic D-orbit with bounded support, the object the conjecture excludes. So this is a
+test of how a proof of capture can be split, not a proof of capture.
+
+**Setting.** As in T36 and T39: the edge frame, P1024 at a random θ, and the 480-state phase at a random alignment (a, q)
+of its 960 classes. Random digits at depths 0 .. K−1 sit above the clean tail. K = 20, 40, 80, 160, 320, with 200 runs per
+K and phase. Each run lasts until 2,000 ticks after the front first passes 3K (cap 6K + 2,400 ticks).
+- **Late drawdown at c:** the largest (running maximum of R) − R over the 2,000 ticks after R first reaches cK. The
+  horizon is fixed so that K does not lengthen it.
+- **Capture:** the first tick at which R ≥ 12 and the 8-cell state (class, window) lies in the all-alignment S_E.
+  - P1024: the exported 389 states.
+  - 480: a new all-alignment union, built first by `front_closure.py --all-theta 480 8` from the clean starts of all 960
+    classes.
+- The drawdown after the passing tick is split into before and after capture.
+
+**Predictions.**
+- **F1 (P1024).** The late drawdown at c = 2 and at c = 3 is bounded independently of K, with a maximum over all runs ≤ 20
+  (the T38 prepared-region maximum). Lean 65%.
+- **F2 (480).** The same, ≤ 20. Lean 65%.
+- **F3.** The capture delay after passing 3K does not grow with K: the medians stay within a factor of 2 across K, and
+  every run is captured within 600 ticks of passing. Lean 55%.
+- **F4 (control, a soundness alarm if it fails).** After capture every run stays in S_E for the rest of the run.
+  - P1024: its drawdown after capture is ≤ 1, S_E's own largest fall below a running maximum, computed from its graph.
+  - 480: it is 0, since S_E's advances are 0 and 2.
+  - Lean 95%.
+- **F5 (480 union).** The union U over all 960 classes has a FAIL-free closure in which every 2-path advances. Lean 70%.
+  Whether U is one orbit, as P1024's 52 states were, I hold at 40%.
+- **Counterfactual.** A late drawdown or capture delay that grows with K (for example linearly) would mean the wake
+  carries the prefix's fuel past the front's passage. A capture proof would then need a K-dependent, global bound
+  rather than a local one after passing.
+
+**What it teaches if F1–F3 hold.** A proof of capture splits into two parts.
+- (i) The front passes a depth beyond the prefix. This is the hovering question, which stays open.
+- (ii) After passing, capture follows in bounded time with bounded retreat, independently of K. This is a local
+  statement, and GPT's temporal-compatibility condition (GC2387: hidden inputs that keep their history) is the natural
+  instrument for proving it.
+
+Record searched: `record_find.py "late drawdown" "own wake" "capture delay"` (no hit in the record, the kit at c42f6e51,
+the portal or the open kit PRs); `drawdown` (T35 §40, T36 §41, T38 §43, GC2378's hovering caveat); `front retreat`
+(CL673's G16 odometer retreat; the kit PR's retreat-after-tick-1 explanation, which is about the centre column, not
+this).
+
+### 46.2 Results, part 1 ([`own_wake_fuel.py`](../tests/probes/own_wake_fuel.py), [output](../tests/probes/own_wake_fuel.out); `front_closure.py --all-theta`, [output](../tests/probes/front_closure.out), last sections)
+
+Each phase took about 4 seconds on the M5, 1,000 runs per phase.
+
+| | K = 20 | 40 | 80 | 160 | 320 |
+|---|---|---|---|---|---|
+| P1024, late drawdown max at c = 2 / c = 3 | 10 / 10 | 10 / 7 | 10 / 7 | 7 / 1 | 1 / 1 |
+| P1024, captured before passing 3K (of 200) | 38 | 88 | 167 | 200 | 200 |
+| P1024, delay after passing 3K: median / max | 55 / 201 | 47 / 210 | 40 / 152 | — | — |
+| 480, late drawdown max at c = 2 / c = 3 | 6 / 6 | 6 / 5 | 6 / 5 | 6 / 5 | 3 / 0 |
+| 480, captured before passing 3K (of 200) | 15 | 58 | 131 | 197 | 200 |
+| 480, delay after passing 3K: median / max | 71 / 454 | 56 / 405 | 15 / 197 | 82 / 113 | — |
+
+- **F1 and F2 HELD.** The late drawdown is bounded, and it falls with K rather than growing: at K ≥ 160 the only late
+  fall left in P1024 is the 1 that S_E itself allows.
+- **F3 HELD, with its framing wrong.** No run takes more than 454 ticks after passing 3K. But for long prefixes the
+  front is captured before it reaches 3K at all: all 200 runs for P1024 at K ≥ 160 and for 480 at K = 320. So K is not
+  the scale of capture.
+- **F4 HELD (the control).** Over all 2,000 runs, no tick after capture lies outside S_E. The fall below the running
+  maximum after capture is at most 1 for P1024 and 0 for 480. These are exactly the graph constants that
+  `front_closure.py` computes for S_E^all: 1, and 0 since 480's advances are only 0 or 2.
+- **F5 HELD, including the 40% part.** For the 480-state phase, all 960 alignment classes have the same 288 clean
+  states.
+  - Their closure is the 416-state S_E of the base alignment: FAIL-free, every 2-path advancing, and no fall at all.
+  - Digests of the lines: S_E^all `571a1847…5016`, U `0ae53342…f96c`.
+  - So both periodic-wake phases lock their clean front to a single orbit whatever the alignment.
+  - The P1024 rerun reproduces L1319's files byte for byte.
+- **Consequence (an exact statement about samples, conditional on the COMPUTED graph data).** Each of the 2,000 sampled
+  rows, 1,000 per phase, has a front that advances for ever.
+- **Not shown.** This is capture for sampled rows only. A prefix built to carry fuel may behave differently: T38's
+  prepared regions have drawdowns growing with r. The hovering case of §46.1 is untouched.
+
+*Correction (GC2390, accepted in L1323).* F3's factor-two median criterion **failed** for 480's post-3K group (medians
+15–82; that group shrinks and is selected differently as more rows capture before 3K). F3 held only in its maximum-delay
+part, so "all eight held" in L1321 is withdrawn: seven held, and F3 held in part. Also, the post-capture alarm above runs
+only at R ≥ 12, so it could miss a later tick at R = 10 or 11. T44 checks every post-capture tick at R ≥ 8 and records
+the minimum depth.
+
+### 46.3 Part 2, predictions written before the run: is capture timed by the front's own clock?
+
+The same runs with the same seed. The measurement is extended (no new random draws, so part 1's lines must recur
+exactly):
+- the capture tick counted from t = 0;
+- R − K at capture;
+- the early drawdown, the largest fall below the running maximum before capture.
+
+**Predictions.**
+- **F6.** The capture tick from t = 0 is bounded independently of K: medians within a factor of 2 across K = 20 .. 320,
+  and a maximum ≤ 600, in both phases. Lean 60%.
+- **F7.** At capture, R − K is bounded independently of K, at most 600. Capture then happens within a bounded distance
+  after the front leaves the prefix, so the material behind it at capture is still mostly the prefix's own. Lean 55%.
+- **F8.** The early drawdown is bounded independently of K for random prefixes, at most 25. Lean 50%. T38's prepared
+  regions show that an adversarial prefix can do more.
+- **Counterfactual.** A capture tick or an early drawdown growing with K would mean the prefix's chaos delays capture in
+  proportion to its size. That chaos spreads deeper at speed 2, faster than either front (17/13 and 5/3), so it can
+  reach the front.
+- **What it teaches if F6–F8 hold.** For typical prefixes, capture is decided by the front's first few hundred ticks in
+  the clean tail. The prefix's chaos never catches up with the front, even though its light cone does: that is
+  decoupling (T40, T41) at the scale of the whole prefix. A proof of capture would then need only the front's local
+  entry into S_E plus a bound on what the prefix can do to it, not the whole of the prefix's evolution.
+
+### 46.4 Results, part 2: capture is timed by the front's own clock ([output](../tests/probes/own_wake_fuel.out))
+
+Part 1's lines recur exactly, as they must, since there are no new random draws.
+
+| | K = 20 | 40 | 80 | 160 | 320 |
+|---|---|---|---|---|---|
+| P1024, capture tick from t = 0: median / max | 73 / 247 | 80 / 295 | 71 / 297 | 74 / 264 | 79 / 264 |
+| P1024, R − K at capture: median / max | 82 / 269 | 89 / 316 | 82 / 325 | 83 / 279 | 89 / 310 |
+| P1024, early drawdown: median / max | 3 / 10 | 3 / 10 | 3 / 10 | 3 / 11 | 3 / 11 |
+| 480, capture tick from t = 0: median / max | 102 / 493 | 94 / 471 | 102 / 343 | 99 / 420 | 101 / 377 |
+| 480, R − K at capture: median / max | 134 / 576 | 127 / 529 | 135 / 406 | 119 / 459 | 134 / 421 |
+| 480, early drawdown: median / max | 3 / 6 | 3 / 10 | 3 / 8 | 3 / 7 | 3 / 8 |
+
+- **F6 HELD, and more strongly than predicted.** The capture tick's distribution does not depend on K at all. The medians
+  are 71 to 80 for P1024 and 94 to 102 for 480, from K = 20 to K = 320. A prefix sixteen times longer neither delays nor
+  hastens capture.
+- **F7 HELD.** Capture comes within 325 cells (P1024) and 576 cells (480) of the prefix's end, with medians of about 85
+  and 130.
+- **F8 HELD.** The fall below the running maximum before capture is at most 11 at every K, with a median of 3.
+
+**What T43 teaches.**
+- For typical prefixes, **capture is a front-local event.** The front starts at the prefix's deepest mismatch, a few
+  cells above its end. It runs into the clean tail, and its window joins the locked clean orbit (U) within about 75–100
+  ticks, at most about 500.
+- *(GC2390: the n/(2 − v) figures below use the post-capture speed and are approximate. An exact per-run cone needs the actual pre-capture path: b + 2t ≤ R(t) − 9 with b = K − L − 1.)*
+- **The light cone, accounted for (Local's correction, written before this section was pushed).** A prefix cell n cells
+  above the front's start reaches the front's depth only after about n/(2 − v) ticks, with v the front speed. That is
+  1.45n ticks for P1024 and 3n for 480.
+  - By P1024's median capture tick (about 75), only the bottom ~52 prefix cells can have influenced the front; by its
+    largest (297), the bottom ~205. For 480 these are ~33 and ~163 cells.
+  - So at K ≥ 160 most of the prefix is causally cut off at capture, and K-independence there is a light-cone fact, not
+    decoupling.
+  - The informative cases are K = 20 and 40. There the whole prefix, and the edge above it, lie inside the light cone
+    before capture, and the capture times are the same.
+  - What T43 shows is therefore narrower than "the chaos never catches up". Capture happens within a bounded time,
+    hence it depends on a bounded bottom part of the prefix, and a short prefix with the edge close behind does not
+    slow it.
+- **The own wake is not fuel**, in the measured sense. After capture the front falls at most S_E's own constant (1, or
+  0), and before capture it falls at most 11, whatever K is.
+- **Where this leaves capture.**
+  - The certificate shape is front-local, but C1 (§45) showed that a window over-approximation cannot see it. Arbitrary
+    content behind the window gives arbitrary fuel.
+  - The real content behind the front has history: it is the prefix's evolution plus the front's own wake. The capture
+    times bound how much of it can matter: at most the bottom (2 − v) × (capture time) cells of the prefix.
+  - So the next certificate must model the hidden inputs as a dynamical system with history, not as adversarial bits.
+    This is GPT's temporal-compatibility condition (GC2387), and route C3's characterisation of deep-retreat windows
+    belongs to it.
+  - A concrete test of locality comes first. Is the capture tick determined by the prefix's bottom L cells alone (the
+    upper K − L cells re-randomised), and for which L? A small L would make capture a finite question over (alignment,
+    L cells).
+- **Not shown.** These are random prefixes. A prefix built to carry fuel (T38's prepared regions) may delay capture in
+  proportion to its size. The hovering case of §46.1 is untouched.
+
+## 47. Local's carrying read of GC2389: the exact front clock and the one-flip completion (L1322)
+
+### 47.1 The read, and predictions for the finite replay (written before the run)
+
+GC2389 ([report](GPT-CAPTURE-CHECK-20261102.md#gc2389--post-run-certificate-read-the-phase-clock-and-its-reset-states))
+asks for a carrying read of three hand steps. Each is sound given its finite facts.
+- **Clock transfer.** Once the front is in S_E at R ≥ 12, the actual transition is always one of the graph's edges
+  (GC2386). The class moves by c ↦ c + 1 + 195a. If every edge out of a class has the same advance a, the actual
+  advance is a function of the class alone. The class then walks the projected cycle whatever the window does, and
+  R(t + 52) = R(t) + 68.
+- **The speed bound.** It telescopes 13a − 17 along the actual path. Since a is a function of the class, the potential
+  can be taken on the 52 classes (partial sums round the cycle, which return to 13·68 − 17·52 = 0). The bound is their
+  range.
+- **The resets.** At a class whose S_E fibre is a single window, the actual window is forced.
+- **The single flip.** The prefix lies at depths ≤ K − 1 ≤ R − 9. The only mismatch at depth ≥ K is the flip at R, so
+  the state is (θ + 195R mod 1024, 0). Since 195 · (−21) = −4,095 ≡ 1 (mod 1024), R ≡ 21(θ − 882) gives class 882. The
+  guard R ≥ max(K + 8, 12) gives the eight zero cells and the edge guard.
+- **Noninterference.** Equal class and front give equal future advances by the clock, so the mutual mismatch is
+  confined to depths < R. At a singleton reset both windows are the forced one, so the mismatch lies at least nine cells
+  behind.
+
+**Predictions for the replay with Local's own generator** (`front_closure.py P1024 8 --all-theta --clock`, the
+successor function of §44, independent of GPT's literal reconstruction):
+- **K1.** Every class has one (next class, advance). The 52 classes form one cycle, total advance 68, least period 52.
+- **K2.** The potential range is 55.
+- **K3.** The singleton fibres are (23, 76), (264, 206), (656, 121) and (897, 178), and the longest wait is 47.
+- **K4.** (882, 0) is the only window-0 state.
+- **Counterfactual.** Any difference would mean the two independent generators disagree on S_E's edges, a soundness
+  question for one of them.
+- **The same test on 480 (new, Lean 60%).** Its advances are 0 or 2, and I expect the same determinism: one cycle of
+  288 classes with total advance 480. That would be an exact clock of speed 5/3 for the second phase.
+
+### 47.2 Results ([output](../tests/probes/front_closure.out), last section)
+
+- **K1–K4 HELD, exactly.** Local's generator gives the same 52 classes, the same deterministic projection, one cycle
+  of total advance 68, the same advance word (least period 52), potential range 55, the same four singleton fibres
+  with longest wait 47, and (882, 0) as the only window-0 state. Two independent generators agree on every finite fact
+  GC2389 uses. With the hand steps of §47.1, **GC2389's clock and single-flip completion are PROVED two-party**,
+  conditional on the shared finite data. PROOFS.md entry filed as carried.
+- **The 480-state phase has an exact clock too.**
+  - All 288 classes of its S_E^all have one (next class, advance), and they form one cycle of total advance 480.
+  - The advance word repeats every 18 ticks (2,0,2,2,2,2,0,2,2,2,2,0,2,2,2,2,2,2: +30). So after capture
+    R(t + 18) = R(t) + 30 exactly, and |3(R(t + n) − R(t)) − 5n| ≤ 7, the range of the potential 3a − 5 round the
+    cycle.
+  - 208 of the 288 classes are singleton fibres, using 13 distinct windows, and the longest wait to one is 2 ticks. The
+    window is re-forced almost every tick.
+  - There is no window-0 state, so 480's one-flip completion needs a few flips: any singleton state, written below the
+    prefix, does the same job.
+- **What it adds to capture.** In both phases, entry into S_E is equivalent to hitting one forced gateway at depth ≥ 12
+  (GC2389's remark, now in both phases). After entry the front is an exact clock that ignores its older wake.
+  - So the open question is purely an entrance question: does every row's front eventually write the gateway's eight
+    cells at the gateway's phase?
+  - T43 says that typical rows do so within ~300 (P1024) or ~500 (480) ticks of leaving the prefix, whatever the prefix
+    length.

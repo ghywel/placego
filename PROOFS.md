@@ -5267,7 +5267,22 @@ edges and two-step gain>=2. Local's416/389-state enumeration is COMPUTED M5;
 GPT source review and240-state transition comparison are not an independent
 reconstruction. [Full hypotheses and capture-interface qualification](reports/GPT-BOUNDARY-LAYER-REVIEW-20261102.md#gc2386--locals-new-robustness-certificate-changes-the-live-target).
 Entry from arbitrary finite prefixes remains open.
-### Waiting room — the classic ether absorbs a black edge: news speed exactly zero (Cloud, CL681; on the kit's `trap_invariant`)
+### CL681 corollary — the classic ether absorbs a black edge: news speed exactly zero (Cloud's proof, Local's carrying read L1320, the two-sided step kernel-checked; 2026-11-02)
+
+*Status (Local, L1320, 2026-11-02):* PROVED, computer-assisted, two parties. The eternal part is a Lean theorem: Lowry's trap in its
+two-sided form, `trap_two_sided` and `news_bounded` in [tests/probes/lean/EtherTwoSided.lean](tests/probes/lean/EtherTwoSided.lean),
+kernel-checked against the kit's `Rule30Ether` at kit main c42f6e5 (Lean 4.35.0; axioms `propext` and `Quot.sound` only; source
+SHA-256 f5d8afce…19b2). The hand step below is that theorem's induction: the kit's, with the prescribed column 0 replaced by the
+induction hypothesis on every column left of the B3. When the B3 is black, its right input is masked (a ⊕ (1 ∨ r) = ¬a); when it is
+white, `wall_facts` makes the wall's head the ether's B4. The finite part (entry) is COMPUTED by two independent programs:
+Cloud's `ether_trap_check.py` and Local's [`ether_trap_replay.py`](tests/probes/ether_trap_replay.py) ([output](tests/probes/ether_trap_replay.out)).
+The replay compares against the kit's own ether (not a frame-built one) over every column inside the left light cone. It
+enumerates the 28 kit alignments (7 spatial × 4 temporal), which cover Cloud's 196. All 28 enter by t = 222, at the entry
+times Cloud found. Before entry the leftmost mismatch is never left of −37, so Cloud's window from −40 was wide enough, by
+three cells. After entry, 2,000 exact ticks show no mismatch at or left of the B3; 60 random right halves beside a wall state
+do the same. **A uniform bound follows:** at every alignment, no column x ≤ −38 is ever disturbed (least B3 at entry −38).
+Not formalised: the 28 entries (a Lean version needs a light-cone lemma and a `decide` over the first 222 rows).
+
 
 [Argument and checks](reports/inquisition-20261031.md#round-11-2026-11-02-cloud-cl681-the-classic-ethers-exact-zero-the-inserted-edge-enters-lowrys-ether-wall-trap-at-every-alignment-so-the-ether-is-never-disturbed-beyond-a-bounded-distance-news-speed-exactly-zero-proved-on-the-kits-trap_invariant).
 **Statement.** For every alignment of the classic ether (the kit's `Rule30Ether`: spatial period 7, temporal period 4), a black
@@ -5282,3 +5297,41 @@ B3), the B3 reads the wall's head only when white and that head is then the ethe
 state is in the set for either right value; so all columns up to the B3 stay ether for ever. Prior art: the trap and the ether
 are Lowry's (PR65); the kit uses the trap to exclude ether walls beside a periodic centre column. The entry of the inserted
 edge, the exact zero of the news speed, and the velocity-spectrum reading are ours. Lab frame; no claim about the centre column.
+
+
+### GC2389 — certified front clock and single-flip completion (GPT's proof, Local's carrying read L1322; 2026-11-02)
+
+*Status (Local, L1322):* PROVED two-party, computer-assisted. Local read the clock transfer, the telescoped speed bound, the
+singleton resets, the single-flip congruence (195 · (−21) ≡ 1 mod 1024) with its depth guard, and the noninterference corollary.
+All are sound given the finite facts. Local's own generator (`front_closure.py P1024 8 --all-theta --clock`, independent of GPT's
+literal reconstruction) reproduces every finite fact exactly: the per-class advance is unique, there is one 52-cycle with total
+advance 68, the advance word has least period 52 and is identical to GPT's, the potential range is 55, the four singleton fibres
+have a longest wait of 47, and (882, 0) is the only window-0 state ([genealogy §47](reports/rule30-genealogy.md#47-locals-carrying-read-of-gc2389-the-exact-front-clock-and-the-one-flip-completion-l1322)).
+The same test gives the 480-state phase an exact clock as well: 288 classes in one cycle, total advance 480, advance word of least
+period 18 (+30), longest wait to a forced window 2, and no window-0 state.
+
+
+[Complete statements, proof and finite certificate](reports/GPT-CAPTURE-CHECK-20261102.md).
+COMPUTED independently on Intel:389-state S_E closed,520 edges, all400 original
+rows enter; phase projection one52-cycle, total advance68; four singleton
+fibres, reached within47 steps. Existing GC2386 supplies unbounded advance.
+PROVED two-party after Local L1322: after entry R(t+52)=R(t)+68 and
+|13(R(t+n)-R(t))-17n|<=55; front motion ignores older wake. For any prescribed
+K-cell prefix/alignment theta, choose R>=max(K+8,12) with
+R=21*(theta-882) modulo1024; background beyondK with a single flip at R is
+already in S_E. The first such R is at most1023 cells farther. This gives
+captured completions of every prefix, not capture of each unmodified row.
+No whole-wake periodicity, all-prefix capture, centre theorem or Lean claim.
+
+
+### Waiting room — free-boundary front transfer, guarded wall clauses and exact locality (GC2390)
+
+[Statements and proof obligations](reports/GPT-CAPTURE-CHECK-20261102.md#gc2390--use-the-certificate-as-a-guarded-wall-obstruction).
+PROOF-SKETCH: the certified front induction only needs the rule at depths>=2,
+so arbitrary time-dependent shallow columns are allowed. Permanent-tail strips
+therefore avoid S_E at a deepest mismatch of depth>=12; exact clauses must keep
+the deeper-suffix guard. The reversed upward-rigidity indexing is supplied.
+For paired K-prefixes sharing their bottom L<K cells, mutual differences reach
+at most K-L-1+2t; if this is<=R_A(t)-9, their front and eight-cell states agree
+at t. Endpoint agreement yields capture by T; agreement of first capture times
+requires the guard at every prior tick. No pre-capture speed assumption.

@@ -849,3 +849,12 @@ GPT GC2253,30October: the independent positive control caught a scope mistake be
     171–177; 45 for the 480-state phase) may sit at its doubling boundaries. Budget when taken: one block, comoving cell
     periods per gap first.
 - Cloud, 2026-11-02 20:29 GMT (CL681): the ether's exact-zero pull **taken and settled** at the owner's word: it is Lowry's ether-wall trap (kit `Rule30Ether`), entered by the inserted edge at every alignment; PROVED on `trap_invariant` with a two-sided corollary in the waiting room. New pull from it: the closed-set certificate shape (a finite set of strip states closed under every outside input) for the other exact laws of the velocity spectrum, (9, 57)'s 5/19 and (7, 63)'s 2/9 first, and for the phases of the eternal-cycle line. Budget: one block each.
+- Local, 2 November (L1321): the fuel pull is spent (the own wake is not fuel, as measured; capture runs on the front's
+  own clock). Two pulls logged:
+  - **Taken next:** the locality of capture (bottom L cells against re-randomised upper cells), then the attractor of S_E
+    in the window automaton. It is the bridge between "capture is fast" and a certificate with history.
+  - **Logged, warm, not taken now: one orbit for every alignment.** In both periodic-wake phases every alignment's clean
+    front locks to the same orbit in class coordinates (52 states for P1024, 288 for 480). That is a phase-locking of the
+    front to the background with a unique locked state. Why it is unique, and whether the lock's basin is the whole
+    window space minus the bad core, may be the real content of capture. Budget when taken: one block, starting from
+    the clean fronts' transients at a few alignments.
