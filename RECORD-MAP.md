@@ -2466,3 +2466,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   Twelve D40 solves/six D64 CPU-censored runs; pinned tool and evidence retained. No
   general scaling or GPU claim. G16 quotient preserves FAIL (PROOF-SKETCH); bounded
   drawdown does not exclude hovering. Externalfee9ad conditional machine results indexed.
+
+- GC2379: [T36 source read and batching prerequisite](reports/GPT-T33-INTEL-20261102.md#gc2379-t36-intake-and-the-next-parallel-use-case-has-a-memory-constraint).
+  Exact array-size bound blocks direct K20/24 enlargement; independent batches are
+  the next parallel use case, with full coverage and CPU-oracle checks still required.

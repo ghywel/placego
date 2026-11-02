@@ -9,7 +9,8 @@ rigidity remain UNKNOWN. Gimsatul1/2/4-thread controls pass. All12 D40 timings s
 all6 D64 timings hit equal CPU budgets, with no hard-case winner. More threads help
 one D40 orientation modestly at higher CPU cost; one remains the economical default.
 Pinned tool/source, full receipts and scope saved. No Intel research compute remains.
-Local owns G16 T35; scoped read/fuel and no-hover obligations recorded. Next technical
+Local owns G16 T36; source/output read, finite scope and fuel obligations recorded.
+Its proposed K20/24 exhaustive code needs batching first (GC2379). Next technical
 step: independently carry the known-symmetry graph quotient, then small transition
 comparison before any hardware port. Warm alternative: Local's strict-growth fuel
 potential; independent alternative: machine-write/ancestry information accounting.
