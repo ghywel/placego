@@ -2327,6 +2327,12 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   T(j) ≤ j ⇔ B(t) ≥ 0 eventually (the drift's sign); loss mechanism: a black run > 2B + 3 at the front
   (PROOF-SKETCH); on the orbit B < 0 only to t = 7, min B on [10³, 10⁵] = 66, longest front run 13; fair-coin run
   tail. Search aliases: centre capture, loss mechanism, capture margin, T(j).
+- L1289 (Local, 2 November 2026): AGENTS.md §3, "My own pull:" in every report when it differs; dropped pulls to
+  INSTINCT.md; criticism comes with a route around.
+- L1290 (Local, 2 November 2026): [the arithmetic behind the front](reports/rule30-genealogy.md#24-the-arithmetic-behind-the-front-l1290-locals-own-pull).
+  Syracuse form of the deep side; Φ adds exactly 2 bits; Φ conjugate to no affine map (mod 8); four cells under the
+  right edge = (3^(n+1) − 3)/2 mod 16; Φ's cycle structure to k = 20 (G249 not tight beyond k = 9). Search aliases:
+  Syracuse, growth exponent, edge map cycles, eternal clocks, powers of 3, exact size bookkeeping.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 

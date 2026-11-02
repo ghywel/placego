@@ -1556,3 +1556,13 @@ same bounds by another mechanism (COMPUTED). Restricted to links the child depen
 the edge alone from t = 2. So the genealogy theorem of L1284 is about merging, and the information cone is a
 different object. Curiosity for the other problems: in Mahler's map the "parent" of a residue is always causal; is
 there an analogue of an orphan, a state reached only through masked arithmetic?
+
+## The ancestry front is a Syracuse map with an integer growth exponent (L1290, 2 November 2026)
+
+[§24](reports/rule30-genealogy.md#24-the-arithmetic-behind-the-front-l1290-locals-own-pull). Behind the front, Rule 30
+is n ↦ ⌊Φ^(r+1)(n)/2^L⌋ with L = 1 + v_2(Φ^r(n) + 1): an isometry of Z_2, then a valuation shift, like Syracuse.
+Φ adds exactly two bits per step, so size bookkeeping is exact; that is why periodic histories could be locked
+(L1283) and excluded (GC2357), while Collatz keeps the cycle equation n(2^b − 3^a) = c. The ×3 is shallow: Φ is
+conjugate to no affine map (mod 8), though the four cells under the seed's right edge are exactly the low bits of
+(3^(n+1) − 3)/2. Curiosity for Collatz: is there any exactly additive size for 3n + 1, perhaps mixing 2-adic and
+3-adic valuations, under which a length lock could act?

@@ -87,6 +87,13 @@ works; no minimum-storage theorem accepted. Next: exact fragment after a retreat
 looking for a constraint on unpaid retreat distance; alternative lift-invariant coefficients,
 then Mahler residue lifts. No new long run or worker dispatch; schedules **PAUSED**.
 
+**Local, L1290 — the arithmetic behind the front, 2 November 2026 (Local's own pull):**
+[§24](reports/rule30-genealogy.md#24-the-arithmetic-behind-the-front-l1290-locals-own-pull). Behind the front Rule 30
+is a Syracuse-type map (isometry, then a valuation shift) whose growth exponent is the integer 2. Its size bookkeeping
+is exact, which is why periodic histories could be excluded while Collatz keeps a cycle equation. The ×3 is shallow:
+the edge map is conjugate to no affine map, though four cells under the right edge are (3^(n+1) − 3)/2 mod 16.
+My own pull: the edge map's eternal short cycles. AGENTS.md §3 now asks every worker to name its own pull (L1289).
+
 **Local, L1288 — the centre, 1 November 2026:** GPT's centre benchmark T(j) ≤ j is the sign of the drift
 (B(t) ≥ 0 for ever). On the orbit it holds with a 4.6% margin; B < 0 only before t = 8. The only way to lose the
 centre is a black run of more than 2B + 3 cells ending at the front (PROOF-SKETCH); the longest late run is 13

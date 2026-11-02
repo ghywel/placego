@@ -1,0 +1,27 @@
+P10a: 2409 episodes to t = 4991: Syracuse form reproduces the whole next deep word (exact integers) with 0 failures; bit length = B(u) + u at every start: 0 failures
+P10b: x in [1, 2^16): Phi adds exactly 2 to the bit length except in 0 cases
+P10c: Phi on Z/8 has cycle type [4, 2, 2]; affine maps x -> ax+b with that type: []; affine types seen: [(1, 1, 1, 1, 1, 1, 1, 1), (2, 2, 1, 1, 1, 1), (2, 2, 2, 1, 1), (2, 2, 2, 2), (4, 4), (8,)]
+P10d: orbit of 0 under Phi vs 3x+3: first disagreement at modulus 2^5, step n = 3; agree mod 8 for n <= 64: True; first values Phi: [0, 3, 12, 55, 200, 891], 3x+3: [0, 3, 12, 39, 120, 363]
+P10e: Phi on Z/2^k: k, number of cycles, longest, G249 bound 2^ceil((2k-1)/3), all lengths powers of 2, lengths histogram (length: count)
+  k= 1: cycles      1, longest      2, bound      2, orbit of 0      2, powers of 2 True; 2:1
+  k= 2: cycles      2, longest      2, bound      2, orbit of 0      2, powers of 2 True; 2:2
+  k= 3: cycles      3, longest      4, bound      4, orbit of 0      4, powers of 2 True; 2:2 4:1
+  k= 4: cycles      4, longest      8, bound      8, orbit of 0      8, powers of 2 True; 2:2 4:1 8:1
+  k= 5: cycles      6, longest      8, bound      8, orbit of 0      8, powers of 2 True; 2:2 4:1 8:3
+  k= 6: cycles      8, longest     16, bound     16, orbit of 0     16, powers of 2 True; 2:2 4:1 8:3 16:2
+  k= 7: cycles     10, longest     32, bound     32, orbit of 0     32, powers of 2 True; 2:2 4:1 8:3 16:2 32:2
+  k= 8: cycles     14, longest     32, bound     32, orbit of 0     32, powers of 2 True; 2:2 4:1 8:3 16:2 32:6
+  k= 9: cycles     20, longest     64, bound     64, orbit of 0     64, powers of 2 True; 2:2 4:1 8:3 16:2 32:10 64:2
+  k=10: cycles     32, longest     64, bound    128, orbit of 0     64, powers of 2 True; 2:2 4:1 8:3 16:2 32:18 64:6
+  k=11: cycles     52, longest     64, bound    128, orbit of 0     64, powers of 2 True; 2:2 4:1 8:3 16:2 32:26 64:18
+  k=12: cycles     78, longest    128, bound    256, orbit of 0     64, powers of 2 True; 2:2 4:1 8:3 16:2 32:34 64:26 128:10
+  k=13: cycles    114, longest    256, bound    512, orbit of 0     64, powers of 2 True; 2:2 4:1 8:3 16:2 32:42 64:34 128:24 256:6
+  k=14: cycles    170, longest    256, bound    512, orbit of 0     64, powers of 2 True; 2:2 4:1 8:3 16:2 32:52 64:43 128:41 256:26
+  k=15: cycles    252, longest    512, bound   1024, orbit of 0    128, powers of 2 True; 2:2 4:1 8:3 16:2 32:58 64:58 128:56 256:66 512:6
+  k=16: cycles    376, longest    512, bound   2048, orbit of 0    256, powers of 2 True; 2:2 4:1 8:3 16:2 32:64 64:71 128:74 256:125 512:34
+  k=17: cycles    578, longest   1024, bound   2048, orbit of 0    256, powers of 2 True; 2:2 4:1 8:3 16:2 32:64 64:97 128:107 256:190 512:106 1024:6
+  k=18: cycles    902, longest   1024, bound   4096, orbit of 0    256, powers of 2 True; 2:2 4:1 8:3 16:2 32:64 64:141 128:153 256:264 512:224 1024:48
+  k=19: cycles   1396, longest   2048, bound   8192, orbit of 0    256, powers of 2 True; 2:2 4:1 8:3 16:2 32:64 64:181 128:213 256:386 512:369 1024:159 2048:16
+  k=20: cycles   2180, longest   2048, bound   8192, orbit of 0    256, powers of 2 True; 2:2 4:1 8:3 16:2 32:64 64:229 128:287 256:565 512:577 1024:358 2048:92
+P10f: per episode on the seed: mean change of D (bit length) 2.1806, of B 0.1092; Collatz Syracuse step for random n: log2(3) - 2 = -0.4150 bits
+DEEP_ARITHMETIC_DONE

@@ -2269,3 +2269,100 @@ information-free; Rule 210 uncarried) and the §19.4 confinement correction. **L
 formal-conjectures checkout at commit b3f26411f06b0b0ec1923da80b62585f23288d39, Mathlib revision 0df444a360ea,
 Batteries 4488d40d070b, `lake env lean` with Lean 4.33.1 (commit 819816b2, arm64-apple-darwin), file SHA256 as in
 §21; the raw run printed only the five `#print axioms` lines, each `[propext, Classical.choice, Quot.sound]`.
+
+## 24. The arithmetic behind the front (L1290; Local's own pull)
+
+The pull, noticed at L1283 and dropped until the owner caught it (INSTINCT.md, L1289): the cells behind the ancestry
+front (the deep word w) run the right-edge map Φ and are read and shifted at each collision. That is a 2-adic
+isometry followed by a digit-reading shift, the shape of the Collatz and Mahler maps. What does the arithmetic say?
+
+Record searched: `record_find` for Terras, Syracuse, Bernstein, bit length, cycle equation, 2^b − 3^a, Anashin;
+GC2355 already cites Bernstein and Lagarias (1996) for the residue-compatible isometry framework; COLLATZ-PRIZE.md
+and G50/G51 for Mahler. Known: the Terras/Bernstein–Lagarias coding (parity vectors ↔ 2-adic integers) and its
+analogue here, GPT's codec (GC2355).
+
+### 24.1 By hand (PROOF-SKETCH, Local)
+
+Write the deep word as a 2-adic integer, bit 0 the cell just behind the front. GPT's form (GC2356):
+Φ(x) = x XOR ((x≪1) OR (x≪2) OR 3).
+- **Syracuse form of the deep-side law.** L1283's law is, exactly,
+
+      L = 1 + v_2(Φ^r(w) + 1),      w' = ⌊Φ^(r+1)(w) / 2^L⌋,
+
+  since the scan reads the trailing ones of Φ^r(w) and the shift drops L digits. Compare the Syracuse map
+  n ↦ (3n + 1) / 2^(v_2(3n+1)): an isometry of Z_2, then a shift by a valuation.
+- **Exact growth.** For every natural number x ≥ 1, Φ adds exactly 2 to the bit length: the top bit m of x puts a 1
+  at m + 2 through x≪2 and nothing above. So on a finite-left row the deep word's bit length D obeys, per episode,
+
+      D' = D + 2(r + 1) − L,
+
+  exactly. Collatz's analogue is log₂ n changing by log₂ 3 − v + log₂(1 + 1/(3n)) per Syracuse step: an irrational
+  rate plus a correction. **Rule 30's deep side is a Syracuse-type map whose growth exponent is the integer 2 and
+  whose size bookkeeping is exact.** This is why L1283's cycle lock worked: a periodic history must return the bit
+  length exactly, ΣL = 2Σ(r+1), with no correction term. For Collatz the same bookkeeping gives the cycle equation
+  n(2^b − 3^a) = c, which constrains but does not forbid.
+- **Where ×3 lives, and how little.** Mod 4, Φ(x) = x XOR 3 = 3 − x ≡ 3x + 3. That is a two-bit accident (XOR with 11
+  is subtraction from 3, and −1 ≡ 3 mod 4). Mod 8, Φ has the cycles (0 3 4 7), (1 6), (2 5); 3x + 3 has the same
+  orbit of 0 but joins the rest into one 4-cycle (1 6 5 2).
+
+### 24.2 Predictions, written before the run (`deep_arithmetic.py`)
+
+- P10a: on the seed to t = 5,000, the Syracuse form reproduces the whole next deep word (as an exact integer, every
+  bit) at every episode, and the bit length at each episode start equals B(u) + u.
+- P10b: Φ adds exactly 2 to the bit length of every x in [1, 2^16).
+- P10c: no affine map x ↦ ax + b (a odd) on Z/8 has cycle type (4, 2, 2). So Φ is not conjugate to any affine map of
+  Z_2, already at level 3. Counterfactual: one does, and the ×3 resemblance could be a change of coordinates.
+- P10d: Φ's orbit of 0 (the frozen ruler) agrees with 3x + 3's mod 8 for all n and first disagrees mod 16 or mod 32.
+- P10e: Φ on Z/2^k, k ≤ 20: every cycle length is a power of 2; the longest is 2^⌈(2k−1)/3⌉ (G249's bound,
+  attained by the orbit of 0); the number of cycles is at least 2^k / 2^⌈(2k−1)/3⌉. Beyond that bound I do not know
+  how the count grows; that is the measurement.
+- P10f: on the seed the mean per-episode change of D is about 2.2 bits and of B about 0.10, against Collatz's mean
+  −0.415 bits per Syracuse step for random n.
+
+### 24.3 Results (COMPUTED, [`deep_arithmetic.py`](../tests/probes/deep_arithmetic.py), [output](../tests/probes/deep_arithmetic.out), under a second)
+
+- **P10a HELD.** On the seed to t = 4,991, the Syracuse form L = 1 + v_2(Φ^r(w) + 1), w' = ⌊Φ^(r+1)(w)/2^L⌋
+  reproduces the whole next deep word, as an exact integer of up to about 5,000 bits, at all 2,409 episodes. The bit
+  length at every episode start is B(u) + u.
+- **P10b HELD.** Φ adds exactly 2 to the bit length of every x in [1, 2^16), as the hand argument says for all x.
+- **P10c HELD.** No affine map x ↦ ax + b (a odd) on Z/8 has Φ's cycle type (4, 2, 2). The affine types are (8),
+  (4, 4), (2, 2, 2, 2), (2, 2, 2, 1, 1), (2, 2, 1, 1, 1, 1) and (1⁸). So Φ is conjugate to no affine map of Z_2,
+  already modulo 8. This complements GPT's GC2212, which showed Φ is nowhere uniformly differentiable modulo 16.
+- **P10d HELD.** The orbit of 0 under Φ and under 3x + 3 first disagree modulo 32, at step 3 (55 against 39). Both
+  are periodic modulo 16 with period 8 and agree on a whole period. So, **exactly and for all n, the four cells just
+  below the seed's right edge at time n are the low four bits of (3^(n+1) − 3)/2** (PROVED by finite check of one
+  period). The fifth cell breaks it. Cloud's COLLATZ-PRIZE §8 compared the edge's diagonal periods with the bits of
+  3^t; this is an exact identity at four depths, and only there.
+- **P10e: partly REFUTED.**
+  - Held: every cycle length of Φ on Z/2^k (k ≤ 20) is a power of 2, and the cycle count is at least
+    2^k / 2^⌈(2k−1)/3⌉.
+  - Refuted: the longest cycle attains G249's bound 2^⌈(2k−1)/3⌉ only for k ≤ 9. From k = 10 it falls below
+    (2,048 against 8,192 at k = 20).
+  - Refuted: the orbit of 0 is not the longest cycle. Its period stalls at 64 for k = 9..14 and at 256 for
+    k = 16..20, because at t = 2^m a white triangle opens below the right edge (§8.73's ruler). G249 is an upper
+    bound and stays true; it is not tight beyond nine digits.
+  - The measurement: cycle counts 1, 2, 3, 4, 6, 8, 10, 14, 20, 32, 52, 78, 114, 170, 252, 376, 578, 902, 1,396,
+    2,180 for k = 1..20, growing by about 1.55 a level. Φ is far from transitive: the edge clock shatters into many
+    short clocks.
+  - Persistent short cycles (2, 2, 4, 8, 8, 8, 16, 16, then 64 of length 32 from k = 16 on) are 2-adic periodic
+    points of Φ: configurations behind a black front that repeat exactly for ever.
+- **P10f HELD.** Per episode on the seed, the bit length D grows by 2.18 on average and B by 0.109. A Syracuse step
+  of the Collatz map on a random n changes log₂ n by log₂ 3 − 2 = −0.415.
+
+### 24.4 What the arithmetic teaches
+
+| | Syracuse (Collatz) | The deep side of the ancestry front |
+|---|---|---|
+| Isometry of Z_2 | n ↦ 3n + 1, affine | Φ, conjugate to no affine map; equals 3x + 3 only mod 4, and on the edge's own orbit mod 16 |
+| Digit read | v = v_2(3n + 1) | L = 1 + v_2(Φ^r(w) + 1), r from the shallow side |
+| Size change per step | log₂ 3 − v + log₂(1 + 1/3n), irrational, inexact | 2(r + 1) − L bits, exact integer |
+| Coding theorem | Terras: parity vectors ↔ 2-adic integers | GPT's codec (GC2355) |
+| Periodic histories | the cycle equation n(2^b − 3^a) = c | exact length lock: ΣL = 2Σ(r+1) (L1283), then killed by capture (GC2357) |
+
+**The transfer lesson.** Rule 30's deep side is a Syracuse-type map whose growth exponent is the integer 2, so its
+size bookkeeping is exact. That is precisely why its periodic histories could be locked and then excluded, while
+Collatz's periodic orbits survive as the cycle equation. The obstruction for Collatz in this light is the inexact
+size: log₂ 3 is irrational and 3n + 1 changes bit length by 1 or 2 depending on n. The ×3 in Rule 30 is a shallow
+two- to four-digit coincidence, not a conjugacy. This is an explanation, not a Collatz result. It belongs with the
+window principle of COLLATZ-PRIZE §5, which already says both problems repeat a trace block only if the state is
+large enough.
