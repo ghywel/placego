@@ -1141,3 +1141,17 @@ PRs (17 at 20:09Z).
   31 October closures of PRs 17, 59 and 61–69 (old news; most landed on main). The head of the printed diff was cut off
   by an output filter. The checkpoint advanced, so the list above was rebuilt from the refreshed cache and from GitHub
   directly (`gh pr list`, `gh pr view`), not from that diff.
+
+## 2 November 2026 near-midnight refresh (L1336)
+
+Local's complete `known_find.py --new` at 23:37Z (portal timestamp), with the full output saved in local data. It reports
+9 added, 0 changed and 0 no longer listed since L1323's check. Kit main is unchanged at c42f6e51. There are 19 open PRs.
+- **New portal entry [75bd53](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261102-75bd53)**
+  (Lean Verified; Problem 1, partial). It covers universal 11-freeness of even right germs, dual even-step white
+  corridors and u R pulse-drought bounds, for the right half driven by the alternating column (`Rule30CoupledGerms`,
+  core Lean 4.35.0).
+- **Its kit PR [97](https://github.com/WolframInstitute/Rule30PrizeKit/pull/97)** (topics-ledger-framework) is new.
+- **New comments on PRs 84 and 88–91** confirm the rebases onto c42f6e5 with `lake build`, and README row updates.
+- **Relevance.** 75bd53 concerns the driven right half (the centre-column, period-two side), which the record's banding
+  and integration-parity work (Cloud) already cites as known (GC2404). It does not touch the light-speed capture line
+  (P1024, 480), the ether trap, or the front-clock results.
