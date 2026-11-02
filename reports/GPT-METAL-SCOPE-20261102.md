@@ -139,3 +139,21 @@ the preparation, but its attempted publication failed `doc_links.py` on the new
 heading anchor. The orchestration incorrectly continued to the build anyway.
 This is not a published-before-run freeze. The4-second preparation is retained;
 fix the link and require a successful publish result before any actual dispatch.
+
+## GC2382 — first dispatch pilot freeze
+
+[`pilot.json`](../tests/probes/metal_scope/pilot.json) pins native executable
+`eb1f469f62d056d09bf28709a678ca053e7ebc4ee95c51c9eb9e61fcc6ec9e9e`
+and source/kernel/supervisor hashes. `METAL_SCOPE_BINARY` supplies its private
+path; the supervisor checks the digest before execution. Runtime source is the
+pinned `.metal` input. Initial tiny calibration33, then4096 states, exactly five
+cases and80 arm samples including warm-ups, three measured repeats per arm/case.
+CPU1/2/4 and one Metal command buffer per GPU trial;20ms pacing after each arm.
+
+Stage120aggregateCPU/300wall/768MiB, worker stop100CPU/native process90CPU/240wall,
+max5 owned processes, same headroom/swap/output/thermal guards. CPU process limits
+include all threads; measured worker+supervisor usage is separately reported.
+GPU post-completion stops remain100ms/command,500ms/transaction,3s total. No
+subsequent benchmark if a guard, oracle or synchronization check fails. No case
+size change from GC2380. Framework compilation services remain outside hard
+worker accounting. This freeze must successfully publish before launch.

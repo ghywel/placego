@@ -15958,3 +15958,12 @@ GPU dispatch. Retained failure. Separate source-hashed build now uses Apple's
 runtime shader compiler (Metal2.3), explicitly selects RX6600 and prepares pipelines
 without dispatch. Same120CPU/180wall/768MiB guards. No component download needed
 if this succeeds; driver-service accounting limitation is explicit.
+
+## GC2382 — GPT: RX6600 pipelines prepared; exact-output pilot frozen (2026-11-02)
+
+[Native pilot and source/binary pins](reports/GPT-METAL-SCOPE-20261102.md#gc2382--first-dispatch-pilot-freeze).
+Runtime preparation succeeded on the removable RX6600; initial setup772ms,
+execution width32. Now five tiny/small cases, all CPU1/2/4 and Metal outputs checked,
+120aggregateCPU/300wall/768MiB plus one-in-flight GPU and latency/allocation guards.
+Preparation publication deviation is explicitly retained in GC2381; this dispatch
+will wait for successful publication. No actual research search or schedule change.

@@ -20,7 +20,7 @@ plan=json.loads(Path(sys.argv[1]).read_text());stop=[];records=[]
 for sig in (signal.SIGINT,signal.SIGTERM):signal.signal(sig,lambda s,f:stop.append(s))
 def save(n,x):(out/n).write_text(json.dumps(x,indent=2)+'\n')
 def run(job):
-    args=[a.replace('{out}',str(out)) for a in job['args']]
+    args=[a.replace('{out}',str(out)).replace('{binary}',os.environ.get('METAL_SCOPE_BINARY','')) for a in job['args']]
     if stop or cpu()>=plan['worker_stop']:raise RuntimeError('STAGE_STOP')
     thermal();t=time.monotonic();last=0;rc=None;reason='EXIT';use=None
     def limit():resource.setrlimit(resource.RLIMIT_CPU,(job['cpu'],job['cpu']))
@@ -60,6 +60,8 @@ def run(job):
     thermal()
 try:
     for p,h in plan['input_sha256'].items():assert hashlib.sha256(Path(p).read_bytes()).hexdigest()==h,p
+    if 'binary_sha256' in plan:
+        assert hashlib.sha256(Path(os.environ['METAL_SCOPE_BINARY']).read_bytes()).hexdigest()==plan['binary_sha256'],'binary'
     for job in plan['jobs']:run(job)
     save('output_hashes.json',{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in out.iterdir() if p.is_file() and (p.suffix in ('.air','.metallib') or p.name=='scope')})
 except BaseException as e:stop.append(repr(e));raise
