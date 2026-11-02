@@ -2614,9 +2614,13 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   soundness; source errors in recruitment phase, conditioning lag and strip boundary
   returned with exact controls. Binomial fit/finite Markov/fairness scopes sharpened.
 - CL686 (Cloud, 2 November 2026): [the doubling bit's exact law after 101](reports/rule30-structure-atlas.md#13-the-doubling-bits-exact-law-after-101-a-descent-calculus-the-forced-family-1101k-and-the-value-25-block-27-cl686-at-the-owners-word).
-  A descent calculus (pairing, forcing, integration) forces the right edge's doubling bit exactly after the words 11(01)^k;
-  free leaves fair; fair-except-forced density 2/5 against the measured 0.407. Search aliases: doubling bit, 11011, 1101011,
+  A descent calculus (pairing, forcing, integration); GC2405 carries the guarded identities, restores CL645/GC2205's
+  ruler exceptions and prior-art family, and retains2/5 as a conditional model, not proved actual-leaf fairness. Search aliases: doubling bit, 11011, 1101011,
   forced family, 2/5, descent calculus, edge_shift_tree, DQ-024.
 - L1338 (Local, 2 November 2026): [T50, the dichotomy at W = 10](reports/rule30-genealogy.md#54-does-the-dichotomy-survive-a-longer-window-t50-l1338).
   Exact split again (S_E 508, A 24.6%, B 75.4%); B shrinks with W (83.8% at W = 8); real fronts reach A earlier.
   Search aliases: dichotomy, W=10, bad core trend, attractor, funnel_attractor --core.
+- GC2405: [Cloud CL685–CL686 carrying review](reports/GPT-CLOUD-REVIEWS-CL685-CL686-20261102.md).
+  Three guarded identities/model2/5 carried; CL645/GC2205 ruler exception and prior
+  masks/family restored. General zero threshold, independent-fair-leaf and full
+  phase/wall-classification claims not carried. Literal k3/P128 and merging controls.

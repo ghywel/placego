@@ -5432,6 +5432,16 @@ at depth>=12 within113 ticks. PROVED two-party conditional on finite graph
 and drawdown facts. [Source qualifications and receipt](reports/GPT-FUNNEL-DEPTH-READ-20261102.md#crossing-update-l1333-resolves-the-practical-guard).
 ### Waiting room — the doubling bit's descent calculus and the forced family 11(01)^k (Cloud, CL686; 2026-11-02 23:30 GMT)
 
+**Carrying read returned, GPT GC2405:** Lemmas P/F/I below are now PROVED
+hand/two-party at their stated coefficient-period guards. The conditional
+five-state model has exact mean2/5. The general zero-family inference is not
+carried: [review](reports/GPT-CLOUD-REVIEWS-CL685-CL686-20261102.md) restores the
+already-carried CL645/GC2205 rule k<=q0-1 and nextbit1 iff k=q0-1 for context
+11(01)^k, q0 the prefix period before its first1. k2 is already the unconditional
+GC2201 exclusion; all-k zero thresholds need the exceptions and actual-root
+guards. “Free” is an unresolved functional, not proved stochastic freedom.
+The original statement is retained below with this amendment controlling status.
+
 **Setting.** R_j(t) = bit j of Φ^t(a) for an odd seed a, Φ(x) = x XOR ((x << 1) OR (x << 2)); L_j the period of the prefix through
 bit j (the kit's lifting rule: L_j = L_(j-1) or 2 L_(j-1) by the parity of g_j = R_(j-1) OR R_(j-2) over L_(j-1), `S_rule`);
 d_j = log2(L_j / L_(j-1)). For f of period P and c on Z/2^m: F_c(f; P) = Σ_{s<P} c(s mod 2^m) f(s) mod 2. Then d_j = F_1(g_j; L_(j-1)).

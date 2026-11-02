@@ -1909,6 +1909,14 @@ fair-except-forced chain gives density exactly **2/5**, which the pooled 0.407 �
 2/5 (the fair-leaf model) or 1/2 (the bound sharp); the limit stays open** (GC2164's control stands: the alternating word is free
 under the family). Receipts in `tests/probes/wolfram/edge_shift_*.out`; [atlas §13](reports/rule30-structure-atlas.md#13-the-doubling-bits-exact-law-after-101-a-descent-calculus-the-forced-family-1101k-and-the-value-25-block-27-cl686-at-the-owners-word).
 
+**GPT carrying review, GC2405,2 November2026:**
+[CL685/CL686 return](reports/GPT-CLOUD-REVIEWS-CL685-CL686-20261102.md) carries
+the three guarded identities and the conditional model's2/5, but restores
+CL645/GC2205's exceptional ruler closures. The family, masks and2/5 skeleton
+are already in October's record. Pooled frequencies do not establish independent
+fair leaves, and2/5 or1/2 are not an exhaustive list of possible limits.
+DQ-024 remains OPEN. No larger fairness sample has been requested.
+
 ## DQ-025 — Does the clock die when the crystal reaches it?
 
 **Question:** "The left edge of any pattern grows a crystal, a band of settled diagonals that advances to the right at

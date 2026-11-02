@@ -18,6 +18,17 @@ errors. Section11's negative(9,57) conclusion is historical and withdrawn by
 CL683–684. The episode bridge, two-sided trap and corrected abstract closed-set
 soundness have carrying reads. Original text below is retained as the research record.
 
+**Further review amendment, GPT GC2405 (CL685–CL686):**
+[Full carrying read and corrections](GPT-CLOUD-REVIEWS-CL685-CL686-20261102.md).
+The three guarded descent identities and the conditional random model's2/5
+are carried. The family/binomial selectors/2/5 skeleton were already recorded
+in CL645/GC2201/GC2205, including the exceptional closing1. The new all-k
+zero threshold is not carried; actual free-leaf fairness and density remain
+open. A finite graph alone does not classify every bi-infinite path as a wall
+between simple cycles, and “no wall leaves rain” is weaker than “all walls end
+in rain”. The left map does merge inputs; single-step image counts do not prove
+geometric decay under iteration. Historical text is retained below.
+
 ## 1. One rule, two primitives, and the sentence everything else hangs on
 
 Rule 30 is one lossless copy and one lossy mask: the left neighbour is copied (XOR, invertible, speed +1), and the

@@ -1,0 +1,83 @@
+{
+  "review": "GC2405",
+  "source_head": "7cdef651c438dd45ceb336a3a2bd0d4c1b02afdb",
+  "kit": "c42f6e5133f61a47e99289fd4b6e0536fd8a0453",
+  "last_full_external_refresh": "2026-11-02T23:25:18Z",
+  "closed_PR51": {
+    "head": "5d4cc975534cb09cd424646696de2488838afb52",
+    "state": "closed",
+    "merged": false,
+    "conversation_and_review_summaries_freshly_read": true,
+    "linked_archives": "Previously carried source pointers; no fresh whole-archive read claimed"
+  },
+  "files": {
+    "tests/probes/wolfram/left_map.py": {
+      "sha256": "1c8e4fa8765de2b3964efc5d03bb5fa7968bb6c8b2da68431f5c6aaa4ffe552c",
+      "bytes": 2387
+    },
+    "tests/probes/wolfram/left_map.out": {
+      "sha256": "aa48dc101596e518ebf7afe12332157677251753a3640a5e648866f95bd3624c",
+      "bytes": 1682
+    },
+    "tests/probes/wolfram/front_markov_k.py": {
+      "sha256": "d405864c578db6785a2b7412b21813177bc9d7e0197811bfe62be1835823083b",
+      "bytes": 2226
+    },
+    "tests/probes/wolfram/front_markov_k.out": {
+      "sha256": "10109a34f1f05d24cf4da2ac033e0a56ac15cb8ee37ef54bd2a241d7e757a565",
+      "bytes": 526
+    },
+    "tests/probes/wolfram/edge_shift_tree.c": {
+      "sha256": "8bb6ca0b591229de36d16d7165ea860840fe99394154fd4a4f637ae1556ba107",
+      "bytes": 3628
+    },
+    "tests/probes/wolfram/edge_shift_tree.out": {
+      "sha256": "099f771fca0846783a10240b0d1902ca1fea1d3765a6628c6eccdd01ec04406b",
+      "bytes": 7443
+    },
+    "tests/probes/wolfram/edge_shift_tree64.out": {
+      "sha256": "92c16d800a2d5b7e77d737c6a5283753195f5c3bfb37a9e7a2e5e9bd88b3ef28",
+      "bytes": 104800
+    },
+    "tests/probes/wolfram/edge_shift_model.py": {
+      "sha256": "9a0a9064e50102b383cc76bbd42503f7556074a4a3f0013a32624e52019ee9ae",
+      "bytes": 6172
+    },
+    "tests/probes/wolfram/edge_shift_model.out": {
+      "sha256": "ca3c316454014101ab4e3b00f62d7490add7ae727ff3b2194ee0727c24272004",
+      "bytes": 1925
+    },
+    "reports/rule30-structure-atlas.md": {
+      "sha256": "73d156963ca63ee8c94d727bcd02da2ce4f2ccb9644d07688e91cd429a1db5b2",
+      "bytes": 49343
+    },
+    "reports/wolfram-agents/RIGHT-PROFILE-DELIVERY-SPEC.md": {
+      "sha256": "f004709f54483a1b5b16076d0d9617820731c06d0de25106e82ef7d2a8de8ecb",
+      "bytes": 39133
+    },
+    "reports/rule30-genealogy.md": {
+      "sha256": "05ad67279df4162076bb0619c85ade899225d4bf679ae93de76a9105bea65cb7",
+      "bytes": 438068
+    },
+    "tests/probes/cloud_descent_review_controls.py": {
+      "sha256": "13de68c1164009356e1201facb3ad67f52c200d40ef50fcd2a1a9bd8c7835c97",
+      "bytes": 4060
+    },
+    "kit/lean/Ruliology/CellularAutomata/Rule30RightPeriods.lean": {
+      "sha256": "9ef3c374ff394f9727706b54f25a7d8fa1dce329efc6cd4f6c4821f6c03975ad",
+      "bytes": 50477
+    },
+    "kit/lean/Ruliology/CellularAutomata/Rule30RightProfiles.lean": {
+      "sha256": "014be30fa094111eb9bdd9d457ccb82c9c46220c908cdf7eaa5fe74951889ac1",
+      "bytes": 12037
+    },
+    "kit/lean/Ruliology/CellularAutomata/Rule30DifferenceOrder.lean": {
+      "sha256": "96f50d141b6631838fe61caf0d81a56a36bb89e171e21d3fea926cdd8f271224",
+      "bytes": 9721
+    },
+    "kit/equivalents/Rule30Equivalents/PeriodicPoints.lean": {
+      "sha256": "dd7e300baf996d52dabe789ce8537f1a5fb03c59504c233f37544bbd17843f57",
+      "bytes": 14807
+    }
+  }
+}

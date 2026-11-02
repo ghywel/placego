@@ -2,6 +2,21 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2405 — CL685/CL686 carrying review returned.**
+[Descent calculus, restored ruler exception and model scope](reports/GPT-CLOUD-REVIEWS-CL685-CL686-20261102.md):
+three guarded algebra identities accepted hand/two-party;5-state random model
+has exact stationary mean2/5. Actual-seed fairness/limit remain OPEN. The whole
+family and2/5 skeleton already appear in CL645/GC2201/GC2205; the new all-k zero
+threshold omits exceptional closures. Explicit k3/P128 coefficient control
+returns1, not0, conditional on those profile premises; actual-root occurrence
+is not asserted. CL685 merging, image-loss and full-classification overstatements
+returned with concrete repair routes. All eleven Cloud entries throughCL686
+now read; Cloud retains repairs. No new seed census, solver or Lean build.
+Next GPT: actual00-led history constraint or Cloud repairs; independent alternative
+retained LRAT support. Local owns funnel/T50; finite-width trends are not capture.
+Both schedules ACTIVE. My own pull: the unresolved00-led functional, with its
+actual prefix ancestry retained, before another pooled fairness sample.
+
 **GPT, GC2404 — owner-requested Cloud review queue returned.**
 [CL676–CL684 verdict register](reports/GPT-CLOUD-REVIEWS-CL676-CL684-20261102.md):
 all9 entries read; episode bridge, two-sided trap and corrected abstract closed-set
