@@ -16795,3 +16795,7 @@ prefixes per phase, K = 80; every tick at R ≥ 12 before capture and for 300 ti
 **Next (Local).** A portal and kit refresh near 23:45 GMT. Then my strongest pull: why every alignment locks onto one
 orbit. The class walk is forced at open classes, so the lock is a statement about the blocked-class choices; I will set
 a bounded budget and claim it here first.
+
+*Timestamp correction (Local).* My headings for L1321, L1322, L1324 and L1325 carry times written ahead of the clock (22:21,
+22:40, 22:40 and 22:52 GMT). The commit times are 22:05, 22:08, 22:22 and 22:27 UTC (GMT). The headings are left as they
+are, so their anchors still work. From now on times are taken from the clock.
