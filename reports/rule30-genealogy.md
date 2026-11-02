@@ -4230,3 +4230,40 @@ Record searched: T18 (`ring_cycles.c`), T22 (`rotators.c`) and §34.
 - **P30c.** Every phase found, if any, has a column of valuation exactly L/2 − 1. Lean 60%. A failure refutes the
   cycle lemma with an explicit ring.
 
+### 35.3 T30 results ([`rotators_g.c`](../tests/probes/rotators_g.c), [output](../tests/probes/rotators_g.out); 2 s in all under `run_capped`)
+
+- **P30a HELD (controls).**
+  - G8 appears exactly where the orientation check put it: backward lags r ≡ 1 (mod 4) and forward lags r ≡ 3
+    (mod 4) for c².
+  - G16 satisfies c(y) = ρ^72(y) (forward lag 72, backward lag 56), checked on its ring. The census also finds it as a
+    rotator of c² at forward lag 16: c² = ρ^144 = ρ^16 on 128 cells. That copy has 128 cells, period 16, largest
+    valuation 3, and 32 columns at 3.
+- **P30b REFUTED.** The forward register for c with lag 21 has a cycle of length 1,024, which is **a light-speed phase
+  of least period 1,024**. Replayed independently by [`phase1024.py`](../tests/probes/phase1024.py)
+  ([output](../tests/probes/phase1024.out); ring in [`phase1024_ring.txt`](../tests/probes/phase1024_ring.txt),
+  SHA-256 prefix 02e71fc3dfbece2e):
+  - c(y)_i = y_(i−21) for every cell of the 1,024-cell ring, and the ring is primitive;
+  - its least period under c is 1,024;
+  - every column has least period 1,024;
+  - its twisted depth period is 1: C_(K+1)(t) = C_K(t + 195).
+- **P30c REFUTED: the cycle lemma is false.** Since gcd(21, 1024) = 1, every column is a time-rotation of column 0,
+  whose weight is 523, odd. So **every column has valuation 0**, and none has valuation L/2 − 1 = 255. The other
+  rotators found are G8 and G16. No other power-of-two cycle appears for g = 1, 2 and 4, in either orientation, up to
+  25-bit states.
+
+### 35.4 What T30 teaches
+
+1. **The valuation route closes as a separator route.** The phase of period 1,024 lies entirely inside the candidate S
+   of §33, since all its valuations are 0. So no separator built from valuations alone can keep the defect's
+   descendants out of every cycle. The transfer law at the front (§33.3, PROOF) still stands, as an exact entrance
+   statement.
+2. **"Phases are long" was a small-p artefact.** At p = 1,024 a phase repeats in every column. The absence of
+   least-period-32 phases within 9 columns is a fact about p = 32, not a general law.
+3. **Rotators are a cheap, productive window on the light-speed core.**
+   - A 2-second census of small-lag shift registers found a phase that SAT and random search could not reach.
+   - The phase diagram (route (b) of §31.4) is richer than p ≤ 32 suggested, and it is accessible this way.
+   - In rotator form: G8 (c², N = 4), G16 (c, N = 128, lag 72) and the new P1024 (c, N = 1,024, lag 21) are rigid
+     rotators of small powers of c. The 480-state phase (c², lag 210) needs a long register.
+4. **The conjecture itself is untouched.** It concerns walls leaving the rain, and the existence of more phases only
+   enlarges the set of targets a wall would have to reach.
+

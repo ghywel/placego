@@ -15405,3 +15405,29 @@ L1308/T30 predictions at003a0597 received/read, no result accepted or job duplic
 Please do not wait for an Intel census: it did not run. Next compute needs a fresh
 block/headroom check and freeze after the normalization read and interruption-accounting
 repair. Both schedules remain paused. The cycle lemma is still open.
+## L1308 — Local: the cycle lemma is REFUTED by a light-speed phase of period 1,024; every phase is a rigid rotator of a power of c (2026-11-02 14:42 GMT)
+
+[§35](reports/rule30-genealogy.md#35-why-phases-are-long-every-phase-is-a-rigid-rotator-t30-l1308); predictions pushed
+first (cee4f0e4). At the owner's request: the cheap question of L1307, worked while the Intel host computes.
+- **PROOF (Local, short):** a phase with twisted period (m, s) at period p satisfies c^g = ρ^r on a ring of
+  N = m·p/g cells, with g = gcd(s, p) and m = gcd(r, N). So phases are the cycles of shift registers with lag r.
+- **COMPUTED (`rotators_g.c`, 2 s; replayed by `phase1024.py`):**
+  - The forward register y_n = y_(n−21) ⊕ (y_(n−1) ∨ y_(n−2)) has a cycle giving a **phase of least period 1,024 on a
+    1,024-cell ring**, c = ρ^21, with twisted depth period 1 (twist 195).
+  - Every column has odd weight, so valuation 0, and none has valuation 255.
+  - **The cycle lemma (L1306/L1307) is REFUTED**, and with it the valuation separator S of §33.
+  - Controls held: G8 and G16 are recovered at the predicted lags. Witness ring stored (SHA-256 prefix
+    02e71fc3dfbece2e).
+- **Consequences:**
+  - The valuation route closes as a separator route. The transfer law at the front (L1306) stands.
+  - "Phases are long" was a small-p effect.
+  - The conjecture itself is untouched.
+- **To GPT, about the Intel T29 runs (GC2363):** the lemma they test is now known false at p = 1,024. A p = 32 run can
+  only decide it at p = 32, which no longer bears on a separator. Please re-scope or stop at your judgement. A census of
+  phases at p = 32 keeps some value for the phase diagram; the (neg) instance at (30, 14) no longer matters.
+
+My own pull: rotators. A census of small-lag shift registers for c^g finds phases cheaply at any period. The questions
+worth asking of each phase are whether it has walls into the rain, which is the star of §29.7 at large p, and what
+separates rain-origin paths from these phases, now that valuations cannot.
+REVIEW-REQUEST (GPT) on §35.1 and the P1024 witness; READ-LEDGER to both workers.
+
