@@ -4,6 +4,8 @@ window? reports/rule30-genealogy.md section 44. Run: python3 tests/probes/front_
 (PHASE: G8, G16, 480 or P1024)
 --all-theta (P1024; L1318, GC2386): the clean states of every theta at ticks 600 .. 2,480, the runs and range that
 wake_attractor.py --win compares against, their closure S_E^all, its verdict and digests; --export=PREFIX writes them.
+L1321 (T43): --all-theta also for 480, over one alignment (a, q) per class of its 960 (a in 0..29, q in 0..31), with the
+class ((R + a) mod 480) * 32 + (t + q) mod 32; it also counts the distinct clean-state sets (orbits) over the alignments.
 --control=N: N exact checks per W. At a random tick of the clean run, every mismatch bit more than W behind the front
 is replaced by a random bit; the row is evolved exactly for 3,000 ticks; each tick's (class, window) must lie in the
 closure, and every k ticks must advance the front by at least 1 (k from the verdict). A failure is a soundness alarm.
@@ -156,24 +158,49 @@ for W in Ws:
         print('   control: %d random wakes behind the window, %d exact ticks: states outside the closure %d, '
               '%d-tick stretches without advance in %d runs' % (NCTL, ticks, bad_state, k, bad_adv), flush=True)
 
-if '--all-theta' in sys.argv and name == 'P1024':
+if '--all-theta' in sys.argv and name in ('P1024', '480'):
     # L1318 T42 part 2 (GC2386's capture interface): U = the clean front's W-cell states at ticks 600 .. 2,480 for every
     # theta, the clean runs and tick range of wake_attractor.py; S_E^all = the forward closure of U.
     import hashlib
     TA = 2480; DA = 2 * TA + 16; MA = (1 << DA) - 1
-    base = [sum(((col0 >> ((k + 195 * n) % p)) & 1) << n for n in range(DA)) for k in range(p)]
+    if name == 'P1024':
+        base = [sum(((col0 >> ((k + 195 * n) % p)) & 1) << n for n in range(DA)) for k in range(p)]
+        aligns = [(th, 0) for th in range(p)]
+        def arow(al, t):
+            return base[(al[0] + t) % p]
+        def acls(al, R, t):
+            return (al[0] + t + 195 * R) % p
+    else:
+        # L1321 T43 (480): one alignment (a, q) per class of the 960 cosets of <(30, 14), (0, 32)>: a in 0..29, q in 0..31
+        pat = [''.join(str((cols[n] >> k) & 1) for n in range(NC)) for k in range(p)]
+        reps = DA // NC + 2
+        abase = {}
+        def arow(al, t):
+            key = (al[0], (t + al[1]) % p)
+            if key not in abase:
+                s0 = pat[key[1]]; s0 = (s0[key[0]:] + s0[:key[0]]) * reps
+                abase[key] = int(s0[:DA][::-1], 2)
+            return abase[key]
+        def acls(al, R, t):
+            return ((R + al[0]) % NC) * p + (t + al[1]) % p
+        aligns = [(a, q) for a in range(30) for q in range(p)]
+        assert all(arow((a0, q0), t) & ((1 << depth) - 1) == erow(t) for t in range(3)), 'the 480 row builder disagrees with erow'
     for W in Ws:
         rev = [int(format(b, '0%db' % W)[::-1], 2) for b in range(1 << W)]   # bit W-1 = D_(R-1)  ->  bit 0 = D_(R-1)
         U = set(); per_theta_in = 0
         S780 = None
-        for th in range(p):
-            x = base[th]; own = set()
+        orbits = {}
+        for al in aligns:
+            x = arow(al, 0); own = set()
             for t in range(TA + 1):
-                d = x ^ base[(th + t) % p]; R = d.bit_length() - 1
+                d = x ^ arow(al, t); R = d.bit_length() - 1
                 if t >= 600:
-                    own.add(((th + t + 195 * R) % p, rev[(d >> (R - W)) & ((1 << W) - 1)]))
+                    own.add((acls(al, R, t), rev[(d >> (R - W)) & ((1 << W) - 1)]))
                 x = (x ^ ((x << 1) | (x << 2) | 3)) & MA
             U |= own
+            orbits[frozenset(own)] = orbits.get(frozenset(own), 0) + 1
+        print('%s W=%d: %d alignments, %d distinct clean-state sets, sizes %s' % (
+            name, W, len(aligns), len(orbits), sorted(set(len(o) for o in orbits))), flush=True)
         # the closure from U, and from theta 780's states alone, by the same breadth-first search
         def closure(start):
             index = {}; q = deque(); src = []; dst = []; adv = []; fails = 0
@@ -192,18 +219,33 @@ if '--all-theta' in sys.argv and name == 'P1024':
         k, trace = fc['certify'](len(idx_all), np.array(src, dtype=np.int64), np.array(dst, dtype=np.int64),
                                  np.array(adv, dtype=np.int64))
         idx780 = closure(clean_states[W])[0]
-        print('P1024 W=%d, all 1,024 thetas, ticks 600..%d: U %d states; S_E^all %d states, %d edges, FAIL edges %d, '
-              'advances %s' % (W, TA, len(U), len(idx_all), len(src), fails, sorted(set(adv))), flush=True)
+        print('%s W=%d, all %d alignments, ticks 600..%d: U %d states; S_E^all %d states, %d edges, FAIL edges %d, '
+              'advances %s' % (name, W, len(aligns), TA, len(U), len(idx_all), len(src), fails, sorted(set(adv))), flush=True)
         print('   least advance over paths of length k: %s; %s' % (trace, (
             'ROBUST: every path of length %d advances' % k) if (k and fails == 0) else 'NOT ROBUST'), flush=True)
+        # L1321 T43: the largest fall below a running maximum along paths of S_E^all (f' = max(f - advance, 0) from f = 0)
+        out_e = {}
+        for i, j, a in zip(src, dst, adv):
+            out_e.setdefault(i, []).append((j, a))
+        seen_f = {(i, 0) for i in range(len(idx_all))}; frontier = list(seen_f); fmax = 0
+        while frontier and fmax <= 200:
+            nxt_f = []
+            for i, f in frontier:
+                for j, a in out_e.get(i, []):
+                    f2 = max(f - a, 0)
+                    if (j, f2) not in seen_f:
+                        seen_f.add((j, f2)); nxt_f.append((j, f2)); fmax = max(fmax, f2)
+            frontier = nxt_f
+        print('   largest fall below a running maximum along paths of S_E^all: %s' % (fmax if fmax <= 200 else '> 200'), flush=True)
         if idx780 is not None:
-            print('   S_E(theta 780) %d states; U inside S_E(780): %d of %d; S_E(780) inside S_E^all: %s' % (
+            print('   S_E(base alignment) %d states; U inside S_E(base): %d of %d; S_E(base) inside S_E^all: %s' % (
                 len(idx780), sum(1 for s in U if s in idx780), len(U), all(s in idx_all for s in idx780)), flush=True)
         for nm, st in (('S_E_all', idx_all), ('U', U)):
             txt = ''.join('%d %s\n' % (c, format(w, '0%db' % W)) for c, w in sorted(st)).encode()
             path = next((a[9:] for a in sys.argv if a.startswith('--export=')), None)
             if path:
-                with open('%s.P1024.W%d.%s.txt' % (path, W, nm), 'wb') as f:
-                    f.write(b'# one state per line: theta class, then the window printed bit W-1 first, where bit j-1 = D_(R-j)\n' + txt)
+                with open('%s.%s.W%d.%s.txt' % (path, name, W, nm), 'wb') as f:
+                    f.write((b'# one state per line: theta class' if name == 'P1024' else b'# one state per line: class (R + a mod 480) * 32 + (t + q mod 32)') +
+                        b', then the window printed bit W-1 first, where bit j-1 = D_(R-j)\n' + txt)
             print('   %s: %d states, SHA-256 of its lines %s (lines "class window", window printed bit W-1 first)' % (
                 nm, len(st), hashlib.sha256(txt).hexdigest()), flush=True)
