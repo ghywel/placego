@@ -2536,3 +2536,9 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   eventual speed before capture. L1321's stable samples do not prove equal
   distributions; F3 median-factor criterion fails for480's selected late group.
   Local retains locality/fuel; GC2389 is carried by L1322.
+
+- GC2392: [Moving-anchor versus actual-front review](reports/GPT-MOVING-ANCHOR-REVIEW-20261102.md).
+  Cloud c7379a15 positive control summary conflicts with committed0-pass output;
+  matching source/receipt requested. PROOF-SKETCH: F=A+d gives bounded-error
+  front motion; exact recurrence requires offset control, available by the same
+  graph's endpoint-corrected path score. GC2390 carried by Local L1323.
