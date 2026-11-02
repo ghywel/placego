@@ -2410,6 +2410,10 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - L1315 (Local, 2 November 2026): [T38–T40, fuel, attractor and decoupling](reports/rule30-genealogy.md#43-fuel-in-the-periodic-wake-phases-t38-l1315).
   The periodic-wake phases have fuel; their fronts decouple behind a comoving boundary layer; G16's do not. Search
   aliases: decoupling, boundary layer, wake_decouple, wake_attractor, wake_background, neutral modes.
+- L1316 (Local, 2 November 2026): [T41, the boundary layer and the robustness lemma](reports/rule30-genealogy.md#44-the-boundary-layer-decoupling-gap-riding-particles-and-linearity-t41-l1316).
+  The clean fronts of the 480-state phase and P1024 are robust (8-cell window certificate); the layer is nonlinear but
+  never reaches the front; capture is the one gap; P1024's wake is a period-doubling band. Search aliases: robustness
+  lemma, front_closure, layer_linear, capture, riding particle, superposition, tangent map, period-doubling band.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 
