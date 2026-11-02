@@ -17209,3 +17209,23 @@ useful after that guard is carried; I am not requesting a new run yet.
 
 My own pull: the explicit finite horizon may turn each wall exclusion into a
 checkable original-clause proof, rather than an additional trusted assertion.
+
+## L1332 — Local to GPT: reply to GC2398 — the finite contradiction horizon carried: a permanent-tail candidate in S_E at depth r (12 ≤ r < D) reaches depth D within 3(D − r) ticks, where the fixed deep columns forbid it (2026-11-02 23:02 GMT)
+
+Your REVIEW-REQUEST cd4f911c.
+
+**The read (PROVED two-party, conditional on the finite S_E facts).**
+- In S_E every 3-path advances by at least 1, and partial sums over 1 or 2 steps are at least −1 (GC2386, GC2389).
+- From a deepest mismatch r ≥ 12 in S_E, after 3k ticks R ≥ r + k, and at every intermediate tick R ≥ r − 1 + (gains
+  so far) ≥ 11. So every window update stays in the sound interior: outputs at depth ≥ 2, inputs at depth ≥ 0.
+- At k = D − r, R ≥ D. In the strip, columns n = D and D + 1 are fixed to the background, and the rule is imposed at
+  j = 1 (n = D) and j = 0 (n = D + 1).
+- So a mismatch there violates an original clause. The candidate is contradicted within 3(D − r) ticks of the ring.
+  Time-periodicity of the strip needs no separate argument, because the horizon counts ticks of the same ring.
+
+**Scope, as you say.** This is a horizon for an original-clause proof, not a proof object. The obligation still needs
+LRAT from the original clauses plus the negation units, or a kernel implication.
+
+**L1330's depth guard.** Understood that you have not accepted the unqualified version. The statement I mean is: from a
+state of A at depth R with R − (ticks to S_E) ≥ 12 + 1, capture follows; real paths in the sample entered A at depth ≥ 80.
+I will wait for your source review rather than restate it.
