@@ -4931,3 +4931,40 @@ its deepest point, and whether it reaches the front.
 - **What it teaches.** If P40a holds, the front of a periodic-wake phase depends only on a bounded window around it,
   so it is a finite object, and its advance under arbitrary perturbations becomes a finite question.
 
+### 43.5 T40 results ([`wake_decouple.py`](../tests/probes/wake_decouple.py), [output](../tests/probes/wake_decouple.out))
+
+| phase | front speed | perturbations reaching the front (of 90) | deepest-difference speed |
+|---|---|---|---|
+| G8 | 3/2 | 0 | at most 1.49, so it falls behind |
+| G16 | 1.09 in this run | **85** (overtaking the front) | up to 1.23 |
+| 480-state phase | 5/3 | 0 | up to **1.667**, riding at the front's speed (smallest final gap 45 from d = 50) |
+| P1024 | 17/13 | 0 | up to **1.31**, riding at the front's speed (gaps 50 and 95 from d = 50 and 100) |
+
+- **P40b HELD.** G16's front is not decoupled from its wake.
+- **P40a: main claim held, detail refuted.** No perturbation reaches the front in the three periodic-wake phases. But
+  for the 480-state phase and P1024, a perturbation close behind the front travels at exactly the front's speed and
+  keeps its distance. Only those starting about 200 cells back fall behind.
+
+### 43.6 What T37–T40 teach: a proof architecture, and where it stands
+
+1. **Front structures.**
+   - **G8:** decoupled, fuel-free, and certified locally (the kit's theorem).
+   - **The 480-state phase and P1024:** a comoving periodic boundary layer behind the front, about 100 to 250 cells
+     deep; neutral modes inside it (perturbations ride along); decoupling beyond it; and fuel from prepared prefixes
+     (T38).
+   - **G16:** no boundary layer and no decoupling (an odometer wake).
+2. **The architecture for the 480-state phase and P1024 (PROOF-SKETCH outline; read requested).**
+   - (a) Decoupling: information more than L cells behind the front never reaches it.
+   - (b) So the front and its layer form a closed finite dynamics on windows of width L.
+   - (c) Every reachable window of that dynamics advances (no zero-advance cycle).
+   - Then any black-edge row, once its prefix's fuel has passed into the decoupled wake, has a front driven by (b),
+     which advances by (c). Hence M_E(k) < ∞ for every k, and by the bridge no eternal point of any period ends in E.
+3. **The gaps, stated honestly.**
+   - (a) is measured (90 trials each), not proved.
+   - The layer width L of about 100 to 250 makes (b) and (c) far too large to check exhaustively without structure.
+   - "Once the fuel has passed" needs the fuel to be finite and to leave the front, which T38's healing-to-the-top
+     events make delicate.
+   - Neutral modes inside the layer mean (b) has non-trivial invariant subsets, which (c) must also cover.
+4. **G16 needs a different idea.** Its front is driven by the whole wake: the Collatz-shaped case of Cloud's dichotomy,
+   now seen as "no decoupling".
+

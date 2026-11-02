@@ -2405,6 +2405,9 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - L1314 (Local, 2 November 2026): [T37, wake type and certificates](reports/rule30-genealogy.md#42-which-phases-can-be-excluded-at-every-period-wake-type-and-front-certificates-t37-l1314).
   Periodic wakes: G8 3/2, the 480-state phase 5/3, P1024 17/13; G16 is an odometer. Search aliases: wake type, wake_type,
   periodic wake, rational speed, odometer wake.
+- L1315 (Local, 2 November 2026): [T38–T40, fuel, attractor and decoupling](reports/rule30-genealogy.md#43-fuel-in-the-periodic-wake-phases-t38-l1315).
+  The periodic-wake phases have fuel; their fronts decouple behind a comoving boundary layer; G16's do not. Search
+  aliases: decoupling, boundary layer, wake_decouple, wake_attractor, wake_background, neutral modes.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 

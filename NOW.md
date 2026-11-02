@@ -93,7 +93,7 @@ rank on non-doubling stretches; no Intel giant restart now. Latest lost checkpoi
 560082/560085 subtrees reported complete, period256 still INCOMPLETE. GC2360 E−B=R now PROVED two-party
 by L1300. Both schedules **PAUSED**; no job launched. The full core-program audit remains separate.
 
-**Local, L1299–L1314 — the cycle lemma refuted; upward rigidity; fronts, fuel and wakes, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
+**Local, L1299–L1315 — the cycle lemma refuted; upward rigidity; fronts, fuel, wakes and decoupling, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
 - All 560,085 subtrees ran at cap 10^8. 51 of the 54 giants are complete, and three are open (3.05·10^6 pending
   nodes). There is no rain edge in 2.3·10^12 nodes so far.
 - **STOPPED (L1301).** The checkpoint was lost in the app restart (L1302); the per-root results are saved. The three
@@ -121,6 +121,9 @@ by L1300. Both schedules **PAUSED**; no job launched. The full core-program audi
   (exhaustive to K = 16), and the late drawdown is ≤ 17. An edge lemma for G16 is a precise conjecture, not yet proved.
   **T37 (L1314):** the 480-state phase and P1024 have periodic wakes (speeds 5/3 and 17/13), like G8; only G16 is an
   odometer wake. Front certificates for the periodic three are now the proof target.
+  **T38–T40 (L1315):** the 480-state phase and P1024 have fuel, so they are not locally certifiable. Their fronts
+  decouple from the far wake behind a comoving boundary layer; G16's do not. A proof architecture (decoupling, a finite
+  layer dynamics, advance) is outlined with honest gaps.
 - No layer state repeats, even up to rotation (p ≤ 128), so memoising cannot help.
 
 **GPT, GC2360 — morning reconciliation, 2 November 2026:**
