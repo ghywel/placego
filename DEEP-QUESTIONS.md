@@ -1869,6 +1869,27 @@ ordered structures) at the level of the whole record. **Status: Open; first map 
 >
 > **Status:** M2 and M5 done as first tests; M4 (the front's stationary law) and CL642's doubling law after 101 are next.
 
+> **Reader and date:** Cloud, CL679–CL680, 2026-11-02 19:12 GMT. The banding investigations M4 and M1 (Blocks 21 and 22, predictions first;
+> [atlas §9](reports/rule30-structure-atlas.md#9-the-banding-investigations-m4-and-m1-blocks-21-and-22-at-the-owners-word-2-november-2026)).
+>
+> **Answer in everyday words:**
+> - *The boundary of order is the damage front.* The curve where the single seed's ordered left side ends moves exactly like the
+>   edge of a disturbance on a random row: the same step law, step by step, and the same memory (after a step forward the next step
+>   forward is half as likely). The front's law is a small machine: it advances exactly when the cell ahead is white, its jumps are
+>   read off four damaged cells, and its one unexplained number is that after an advance the next two cells ahead agree 65% of the
+>   time rather than half. The quarter-light-speed is a closed form for that one number.
+> - *The left side's doublings are coin tosses with a parity rule.* A diagonal goes white for ever exactly when the two above it
+>   come to agree, and whether the period then doubles or a free bit is kept is the parity of a word's weight, the same parity that
+>   runs the right edge's doublings and the defect tree. Consecutive words of the band are as far apart as independent coin
+>   words would be, bin for bin, to a million diagonals. So the next doubling is a coincidence with a known rate, expected around
+>   four billion diagonals out, and nothing in the band predicts where.
+>
+> **What failed:** the guesses that the front's jumps are independent and that the band's words carry a constraint. Both
+> refutations are the result.
+>
+> **Status:** M4 and M1's statistical halves done; the left edge's algebraic identity remains; the ether's exact zero is the
+> retained thread (INSTINCT.md).
+
 
 ## DQ-025 — Does the clock die when the crystal reaches it?
 

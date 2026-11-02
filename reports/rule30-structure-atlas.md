@@ -284,4 +284,35 @@ conditioning on the front's position is what biases it).
 
 ### 9.2 M1, the left side's doubling law as a coincidence of consecutive diagonals (`band_coincidence.py`)
 
-*(Running at the time of this commit; the result follows in the ledger and here.)*
+Hand (Block 22, elementary; Rowland's §5 and 8.27/8.31, known): from the left-frame rule L_e(t+1) = L_(e−2)(t) XOR (L_(e−1)(t) OR
+L_e(t)), diagonal e is eventually white iff the two diagonals above it eventually coincide; then L_(e+1) is the running XOR of
+L_(e−1), so the period doubles at e + 1 iff L_(e−1) has odd weight per period, else the integration constant is free (a branch).
+That parity is the same **integration parity** as the right edge's doubling bit (kit `e_step`: a diagonal doubles iff the cell at
+its return time is black, i.e. the weight parity of the diagonal two back, CL642) and the defect tree's type (L1296: the OR
+column's weight parity decides whether both children split or both die). One object in three frames.
+
+Predictions written first: P-J1 (control) the eventually-white diagonals to 10^6 are exactly 2, 7, 28, 399, 53,207, 58,286, 87,866
+with doublings at the five and branches at the two by the parity; P-J2 the Hamming distance between consecutive settled words is
+not binomial, with P(d ≤ 2) above Binomial(P, 1/2) by a factor over 1.5 in the period-16 regime (lean 55%); P-J3 no coincidence in
+the period-32 regime and minimum distance at least 3 (lean 70%).
+
+Result (COMPUTED; the band to depth 10^6 on the autonomous left-frame system run to t = 1.45 × 10^6; every diagonal 32-periodic
+over the last 64 rows; the 64 settled rows kept as a checkpoint outside git, SHA-256 prefix d859972086b3dd17):
+
+- **P-J1 HELD exactly.** The seven events, and only they; the weights of L_(e−1) per period are 1, 1, 3, 3, 5 at the doublings
+  (odd) and 6, 10 at the branches (even). The integration parity decides every event in the record.
+- **P-J2 REFUTED, cleanly.** In the period-16 regime (87,465 consecutive pairs) the Hamming distance between consecutive words is
+  Binomial(16, 1/2) bin by bin: 0.0002/0.0002, 0.0016/0.0018, 0.009/0.0085, 0.028/0.028, 0.067/0.067, 0.123/0.122, 0.174/0.175,
+  0.199/0.196 for d = 1..8 (observed/binomial), mean 7.98 against 8, and the cumulative ratios at d ≤ 1..4 are 0.97, 0.91, 1.02,
+  1.02; the two coincidences in the regime (53,207 and 58,286) against 1.3 expected. In the period-32 regime (912,132 pairs) the
+  mean is 16.007 against 16, the minimum distance is 3, and the ratios at d ≤ 3, 4 are 0.86, 0.91. **P-J3 HELD.**
+
+What M1 now says: **consecutive words of the universal left side are, for the coincidence statistic, independent uniform
+P-periodic words.** The 2^(−P) law is therefore a fair-coin law, not a constraint: the next eventually-white diagonal (and with
+odd parity the next doubling, to period 64) is expected near 87,866 + c·2^32 with c of order one, about 4 × 10^9 diagonals, and
+nothing in the words' statistics to 10^6 predicts where. This answers row 1's "where is the next doubling" in the only way the
+statistics allow: it is a coincidence event with a known rate. It also puts the ordered band beside the crystal parity (§8.2):
+a deterministic periodic structure whose words are pairwise indistinguishable from chance, with its order carried entirely by
+the parity rule. The left edge's *algebraic* identity (which automaton the left wheel map is, and what its orbit closures are)
+remains the open half of M1, for Local's kind of day.
+

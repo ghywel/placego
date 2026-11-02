@@ -16080,3 +16080,36 @@ perturbations riding at the front's speed looks like an invariant subspace, poss
 perturbation dynamics is linear, (b) and (c) become rank computations rather than enumerations.
 REVIEW-REQUEST (GPT, Cloud) on §43.6's architecture; READ-LEDGER to both workers.
 
+
+## CL680 — Cloud to the owner: the banding investigations, second half. M1: the left side's seven eventually-white diagonals to 10^6 are each decided by the integration parity (odd weight doubles, even branches), the same object as the right edge's doubling bit and the defect tree's type; consecutive band words are binomially far apart, so the next doubling is a fair-coin coincidence expected near 87,866 + 2^32 (2026-11-02 19:12 GMT)
+
+Continuing CL679 (Block 22, predictions first); [atlas §9.2](reports/rule30-structure-atlas.md#92-m1-the-left-sides-doubling-law-as-a-coincidence-of-consecutive-diagonals-band_coincidencepy);
+probe `band_coincidence.py` (the band to depth 10^6 on the autonomous left-frame big-integer system, run to t = 1.45 × 10^6;
+the 64 settled rows checkpointed outside git, SHA-256 prefix d859972086b3dd17).
+
+**COMPUTED.** Every diagonal to 10^6 is 32-periodic over the last 64 rows. The eventually-white diagonals are exactly 2, 7,
+28, 399, 53,207, 58,286, 87,866 (**P-J1 HELD**), and at each the weight of L_(e−1) per period is 1, 1, 3, 3, 6, 10, 5: odd at
+the five doublings, even at the two branches, as the hand reading says (Rowland's §5, 8.27, 8.31: known; the parity is the
+integration parity of the right edge's `e_step` and the defect tree's type, one object in three frames). The Hamming
+distance between consecutive settled words is **Binomial(P, 1/2) bin by bin**: in the period-16 regime (87,465 pairs) the
+histogram matches to the third decimal with mean 7.98 against 8 and cumulative ratios 0.97, 0.91, 1.02, 1.02 at d ≤ 1..4;
+in the period-32 regime (912,132 pairs) the mean is 16.007 against 16, the minimum distance 3, no coincidence (**P-J3
+HELD**). **P-J2 REFUTED**: there is no constraint; consecutive words of the universal left side are, for this statistic,
+independent uniform P-periodic words.
+
+**What it teaches.** The left side's doublings are a coincidence process with a known rate: the next eventually-white
+diagonal, and with odd parity the doubling to period 64, is expected near 87,866 + c·2^32 (about 4 × 10^9 diagonals, c of
+order one), and nothing in the band to 10^6 predicts where. That answers row 1's "where is the next doubling" the only way
+the statistics allow (CONJECTURE as a law; the rate COMPUTED). With M5's crystal parity it makes a pattern: the ordered band
+is a deterministic periodic structure whose words are pairwise indistinguishable from chance, its order carried entirely by
+the parity rule. The open half of M1 is algebraic: which automaton the left wheel map L_e′ = L_(e−2) XOR (L_(e−1) OR L_e) is,
+and what its orbit closures are, for Local's kind of day.
+
+**State of the atlas's tests.** M2, M5, M4 and M1's statistical half are done (CL678–CL680); M3 (the budget dictionary) and
+M6 (the classification, one conjecture away) remain, with M1's algebraic half and M4's one number (0.647) as hand questions.
+Failed predictions (G13): P-J2. Unguarded: the first census spent twelve minutes extracting bits by big-integer shifts (an
+O(n) operation per bit); stopped and rewritten in numpy with a checkpoint; a self-kill of the shell on the way (a pkill
+pattern matching its own command line) cost one relaunch and no result. READ-LEDGER to both workers.
+
+My own pull: the classic ether's exact zero (INSTINCT.md), now that the banding statistics are in; second, the one number
+0.647 of M4, which a hand computation on the mask lemma with the uniform row might give exactly.

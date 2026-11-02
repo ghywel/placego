@@ -1,0 +1,17 @@
+band to E=1000000: diagonals not 32-periodic over the last 64 rows: 0 (expected 0 up to E; the last 64 may be unsettled)
+eventually-white diagonals to E: [2, 7, 28, 399, 53207, 58286, 87866]
+  e=2: period before 1, after 2; weight of L_(e-1) per period 1 -> doubling
+  e=7: period before 2, after 4; weight of L_(e-1) per period 1 -> doubling
+  e=28: period before 4, after 8; weight of L_(e-1) per period 3 -> doubling
+  e=399: period before 8, after 16; weight of L_(e-1) per period 3 -> doubling
+  e=53207: period before 16, after 16; weight of L_(e-1) per period 6 -> branch
+  e=58286: period before 16, after 16; weight of L_(e-1) per period 10 -> branch
+  e=87866: period before 16, after 32; weight of L_(e-1) per period 5 -> doubling
+regime period 16, e in [399, 87866): 87465 pairs; mean d 7.981 (binomial 8.0); min d 0; count d=0: 2
+  P(d<=k) observed / binomial for k=0..4: [(2.3e-05, np.float64(1.5e-05), 1.5), (0.000252, np.float64(0.000259), 0.97), (0.001898, np.float64(0.00209), 0.91), (0.010873, np.float64(0.010635), 1.02), (0.039159, np.float64(0.038406), 1.02)]
+  d histogram (first 10 bins): [0.0, 0.0002, 0.0016, 0.009, 0.0283, 0.0674, 0.123, 0.174, 0.1989, 0.1742] binomial: [0.0, 0.0002, 0.0018, 0.0085, 0.0278, 0.0667, 0.1222, 0.1746, 0.1964, 0.1746]
+regime period 32, e in [87866, 1000000): 912132 pairs; mean d 16.007 (binomial 16.0); min d 3; count d=0: 0
+  P(d<=k) observed / binomial for k=0..4: [(0.0, np.float64(0.0), 0.0), (0.0, np.float64(0.0), 0.0), (0.0, np.float64(0.0), 0.0), (1e-06, np.float64(1e-06), 0.86), (9e-06, np.float64(1e-05), 0.91)]
+  d histogram (first 10 bins): [0.0, 0.0, 0.0, 0.0, 0.0, 0.0001, 0.0002, 0.0007, 0.0025, 0.0065] binomial: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0002, 0.0008, 0.0024, 0.0065]
+BAND_COINCIDENCE_DONE
+EXIT 0
