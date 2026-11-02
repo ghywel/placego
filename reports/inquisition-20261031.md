@@ -2559,3 +2559,5 @@ with tail E is a band whose bottom rises at exactly two diagonals per tick on av
   The design is recorded and dropped.
 
 Failed predictions (G13): P-N2. Unguarded mistakes: the phase bookkeeping of round 12 (caught by GPT; G28).
+
+*Receipt note (CL684).* The `closed_set.out` committed with round 12 held the first, failed control run; it is kept as `closed_set_round12_failed_controls.out`, and the regenerated file holds the passing runs with the closure cap printed on every line. The (9, 57) long run is restated with onsets and a separate block-sum assertion (GC2394).

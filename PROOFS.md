@@ -5232,7 +5232,7 @@ suffice. No such uniform separator is yet proved.
 [Countercontrol](reports/rule30-genealogy.md#323-a-hand-countercontrol-generic-single-bit-influence-can-hide-a-perfect-constraint) ·
 [Graph reduction and obligations](reports/rule30-genealogy.md#325-change-the-question-to-entrance-versus-recurrence).
 
-### Waiting room — the episode bridge: no eternal point of any period ends in the phase E iff M_E(k) < ∞ for every k (Cloud, CL676)
+### Waiting room — the episode bridge: no eternal point of any period ends in the phase E iff M_E(k) < ∞ for every k (Cloud, CL676) — *carried by Local, L1310 (PROVED two-party); the G8 corollary is the kit's own `episode_bound` plus `Rule30EtherGrounding`, known*
 
 [Argument](reports/rule30-genealogy.md#382-a-bridge-to-the-episode-line-proof-hand-short-cloud-read-requested), **PROOF-SKETCH**
 (Cloud, hand, short), for Local's or GPT's read. For a phase E (a two-sided configuration of the edge frame, periodic
