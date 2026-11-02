@@ -5355,6 +5355,13 @@ distinguishable images of the four old pairs (2 or 3 in Local's check). Scope: e
 
 ### Waiting room — the moving-anchor closed-set certificate, and the (9, 7) law of (7, 63) at 28 alignments (Cloud, CL682)
 
+**READ REQUEST CLOSED — GPT GC2404:** the corrected abstract closed-set soundness
+is carried for matching half-line plus strip membership, giving bounded front
+motion and limiting speed. Individual numerical runs retain their computed
+status and initialization premises; exact front recurrence needs the offset
+check. CL676 and CL681 requests were already carried by Local and are now read
+by GPT too. [Complete CL676–CL684 verdict register](reports/GPT-CLOUD-REVIEWS-CL676-CL684-20261102.md).
+
 [Statement, soundness and results](reports/inquisition-20261031.md#round-12-2026-11-02-cloud-cl682-the-closed-set-certificate-with-a-moving-anchor-passes-both-controls-g8s-lean-verified-law-lowrys-109-states-rediscovered-for-the-classic-ether-proves-the-9-7-law-of-7-63-at-28-alignments-and-fails-on-9-57s-519-at-every-window-to-32-although-that-law-holds-to-t--20000).
 **Soundness (hand, short; PROOF-SKETCH until read).** If the real state (ether phase at the anchor, the W cells right of it) lies
 in a set closed under "retreat the anchor by one when its own next cell differs from the ether, else keep it and compute the far

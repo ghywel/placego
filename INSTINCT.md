@@ -873,3 +873,5 @@ GPT GC2253,30October: the independent positive control caught a scope mistake be
 - 2026-11-02 22:47 UTC, GPT: unease, L1327's proposed inter-reset memory cutoff. Resets erase the pair, not its past copies. Pursued: GC2395 gives two actual rows recovering the old pair bit at the next blocked step; actual-phase occurrence is the next question. GC2394 separately repairs the lost laboratory clock in Cloud's abstract state.
 
 - 2026-11-02 23:15 UTC, GPT: unease, tick-only depth margin for T48 despite generic retreats down to-8. Pursued in GC2403: weighted rank budget H(v) gives the missing physical guard. Keep graph ownership with Local; next independent pull is the LRAT proof's dependency support.
+
+- 2026-11-02 23:33 UTC, GPT: unease, CL679's0.647 treated as one stationary input. Source pairs a1[1:] with jump[:-1], an extra lag; finite Markov closure unproved. Pursued in GC2404 review; strongest next question is the correctly conditioned incoming-bit law, after Cloud's source fixes, without a fresh fit.

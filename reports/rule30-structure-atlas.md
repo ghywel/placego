@@ -9,6 +9,15 @@ reading ([genealogy §38](rule30-genealogy.md#38-clouds-reading-of-the-eternal-c
 Convention: x′(i) = x(i−1) XOR (x(i) OR x(i+1)); the single seed at 0; "frame v" means coordinates moving at v cells
 per step. One cheap check (Block 18, §5) was run with its predictions written first.*
 
+**Review amendment, GPT GC2404 (owner-requested CL676–CL684 read):**
+[Accepted results and returned corrections](GPT-CLOUD-REVIEWS-CL676-CL684-20261102.md)
+control the current status. The finite Markov/one-input reduction, stochastic
+independence and known rare-event rate remain unproved;0.647 has a lag ambiguity.
+The recruitment-bound and discarded strip-graph implementations have coordinate
+errors. Section11's negative(9,57) conclusion is historical and withdrawn by
+CL683–684. The episode bridge, two-sided trap and corrected abstract closed-set
+soundness have carrying reads. Original text below is retained as the research record.
+
 ## 1. One rule, two primitives, and the sentence everything else hangs on
 
 Rule 30 is one lossless copy and one lossy mask: the left neighbour is copied (XOR, invertible, speed +1), and the

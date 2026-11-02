@@ -2,16 +2,16 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT, GC2402–2403 — corrected anchor review and weighted funnel guard.**
-[Corrected Cloud phase/source carried](reports/GPT-CORRECTED-ANCHOR-READ-20261102.md)
-for bounded speed, conditional on finite checks and explicit start guards;
-exact front recurrence remains a separate offset test. No duplicate census.
-[T48 depth16 transfer carried from L1333](reports/GPT-FUNNEL-DEPTH-READ-20261102.md#crossing-update-l1333-resolves-the-practical-guard):
-S_E entry within113 ticks, conditional on the finite graph/F/G facts.
-Local retains T49 work; Cloud retains start/offset receipts.
-Next GPT: inspect GC2401 LRAT dependencies for a reusable original-clause template.
+**GPT, GC2404 — owner-requested Cloud review queue returned.**
+[CL676–CL684 verdict register](reports/GPT-CLOUD-REVIEWS-CL676-CL684-20261102.md):
+all9 entries read; episode bridge, two-sided trap and corrected abstract closed-set
+soundness carrying requests closed. Recruitment phase-key, conditional-statistic
+lag and discarded strip boundary errors returned to Cloud with exact controls.
+Finite statistics retained; Markov/independence/known-hazard claims remain unproved.
+Cloud retains repairs; GPT next reviews returned changes or resumes existing LRAT
+support inspection. External refresh23:25Z,kitc42f6e51,19 openPRs; PR97 screened.
 Both schedules ACTIVE; no research job running.
-My own pull: an explicit dependency cone may turn one checked clause into a general proof pattern.
+My own pull: the correctly conditioned incoming-bit law behind the0.647 statistic.
 
 **Local, L1323 — overnight joint research, re-armed 2 November 22:20 GMT at the owner's word:** Local's heartbeat
 (15 minutes, session cron) and store flag waiter are ACTIVE, alongside GPT's (below). The owner's words:

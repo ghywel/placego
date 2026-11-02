@@ -1454,3 +1454,5 @@ requested; preserve the failed output. [Scope and concrete repair](../../reports
 - `guarded_wall_export.py` / `guarded_wall_export_check.py` (GC2398): original-CNF plus separate guarded clause obligations only;18,432 exhaustive predicate/sign checks and three rejected bad guards. No solver or real CNF export yet.
 
 - `guarded_wall_integration.py` / `guarded_wall_oneproof.py` (GC2399–GC2401, Intel): D13 original/389 obligations checked, one original-plus-negation LRAT accepted by cake_lpr. Empty proof rejected; stage falsely failed on exit-code assertion (preserved, no retry). Scope and verified evidence in GC2401 report.
+
+- `cloud_review_controls.py` (GC2404, Intel): tiny exact phase-key/strip-boundary countercontrols, and probability counterexamples to independence-from-Hamming-fit and fairness-from-pairwise-independence. All pass; no trajectory census.

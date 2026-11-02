@@ -2608,3 +2608,8 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - L1334 (Local, 2 November 2026): [T49, what decides the exit from the bad core](reports/rule30-genealogy.md#53-what-decides-the-exit-from-the-bad-core-t49-l1334).
   Every exit from B is decided beyond the window; in real runs the pair at R-9, R-10 decides 81%, often at a stall or a
   one-cell retreat. Search aliases: exit, bad core, unknown pair, funnel_attractor --exits.
+
+- GC2404: [Cloud CL676–CL684 review return](reports/GPT-CLOUD-REVIEWS-CL676-CL684-20261102.md).
+  All9 reviewed,3 carrying requests closed. Accepted bridge/trap/corrected closed-set
+  soundness; source errors in recruitment phase, conditioning lag and strip boundary
+  returned with exact controls. Binomial fit/finite Markov/fairness scopes sharpened.
