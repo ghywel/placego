@@ -1,0 +1,22 @@
+## front_cert.py P1024 4 6 8
+P1024 W=4: states 16384, edges 78432, FAIL edges 165, advances [-4, -3, -2, -1, 0, 1, 2]
+   FAIL edges present (a retreat can leave the window): no certificate; the non-FAIL part is still tested
+   least advance over paths of length k: [(10, -25), (25, -40), (50, -39), (100, -58), (200, -87), (300, -120), (600, -229)]
+   NOT CERTIFIED
+P1024 W=6: states 65536, edges 336256, FAIL edges 122, advances [-6, -5, -4, -3, -2, -1, 0, 1, 2]
+   FAIL edges present (a retreat can leave the window): no certificate; the non-FAIL part is still tested
+   least advance over paths of length k: [(10, -47), (25, -82), (50, -137), (100, -256), (200, -479), (300, -710), (600, -1388)]
+   NOT CERTIFIED
+P1024 W=8: states 262144, edges 1409280, FAIL edges 85, advances [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2]
+   FAIL edges present (a retreat can leave the window): no certificate; the non-FAIL part is still tested
+   least advance over paths of length k: [(10, -48), (25, -82), (50, -129), (100, -220), (200, -409), (300, -570), (600, -1105)]
+   NOT CERTIFIED
+## front_cert.py 480 4 5
+480 W=4: states 245760, edges 1178368, FAIL edges 2496, advances [-4, -3, -2, -1, 0, 1, 2]
+   FAIL edges present (a retreat can leave the window): no certificate; the non-FAIL part is still tested
+   least advance over paths of length k: [(10, -27), (25, -27), (50, -30), (100, -34), (200, -35), (300, -33), (600, -27)]
+   NOT CERTIFIED
+480 W=5: states 491520, edges 2444800, FAIL edges 2240, advances [-5, -4, -3, -2, -1, 0, 1, 2]
+   FAIL edges present (a retreat can leave the window): no certificate; the non-FAIL part is still tested
+   least advance over paths of length k: [(10, -32), (25, -63), (50, -118), (100, -222), (200, -435), (300, -652), (600, -1296)]
+   NOT CERTIFIED

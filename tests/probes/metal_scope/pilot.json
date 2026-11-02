@@ -1,0 +1,21 @@
+{
+  "worker_stop": 100,
+  "input_sha256": {
+    "tests/probes/metal_scope/scope.mm": "47360a43060e3643b18eb4a6ae828fbe6fe1acaeeb059e37bd61913e292b82d0",
+    "tests/probes/metal_scope/kernels.metal": "108e1885e80396bc45bcd4d8b27765b64dd607fdbc4373d0cb79e70d6690f809",
+    "tests/probes/metal_scope/stage.py": "ba9696782abbee65ffcd3433e78848f1de82647a4f8033ab1e6a5c6cbdaaa09a"
+  },
+  "binary_sha256": "eb1f469f62d056d09bf28709a678ca053e7ebc4ee95c51c9eb9e61fcc6ec9e9e",
+  "jobs": [
+    {
+      "name": "pilot",
+      "cpu": 90,
+      "wall": 240,
+      "args": [
+        "{binary}",
+        "tests/probes/metal_scope/kernels.metal",
+        "pilot"
+      ]
+    }
+  ]
+}

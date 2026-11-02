@@ -4802,3 +4802,169 @@ alignment classes, for 6K + 60 ticks (`edge_fuel_exhaustive.py`).
    - a mechanism and strong evidence for G16, with the exact reason a local certificate fails (prepared fuel, the
      pinned top) and the shape of the global lemma that would succeed.
 
+## 42. Which phases can be excluded at every period? Wake type and front certificates (T37, L1314)
+
+At the owner's direction ("the proof is the target ... continue with your warm pulls, whilst considering the broader
+structural questions Cloud is working on").
+
+### 42.1 Connection to Cloud's speed law (M2, CL678), and the proposal
+
+- Depth speed in the edge frame equals 1 + the lab leftward news speed of the leftmost mismatch.
+  - Cloud's G16 value of 0.224 corresponds to my clean-start depth speed of 1.19 to 1.22 (T36).
+  - G8's exact 1/2 corresponds to the kit's 3/2 (potential 2R − 3t).
+  - The classic ether's exact 0 is a depth speed of exactly 1.
+- Cloud's dichotomy (CL674, CL678): a periodic wake has a rational speed with an exact law; an odometer wake has no
+  law.
+- **Proposal (CONJECTURE, Local):** a finite front certificate (§39, with GC2374's correction) exists for a phase
+  exactly when its black-edge wake is periodic.
+  - G8 is periodic and certified at window 5. G16 is an odometer wake: its drawdown grows with preparation (T35), and
+    no certificate exists at W ≤ 10.
+  - If this holds, the phase-by-phase route proves exclusions for periodic-wake phases and meets the Collatz shape for
+    odometer-wake phases. The wake dichotomy would be the boundary of what can be proved.
+- **Test on the other known phases**, the 480-state phase (p = 32) and P1024 (p = 1,024). Neither is excluded at
+  every period by any method so far. A certificate for either would be a new theorem, uniform in the period.
+
+### 42.2 Predictions, written before the run (T37)
+
+- **(a) Wake type** (`wake_type.py`). Clean starts: each phase directly below the edge, run for 4,000 ticks over
+  alignments (all 30 × 32 for the 480-state phase, 64 values of θ for P1024). Measure speed, drawdown, and whether the
+  window of 256 mismatch cells above the front recurs with a shift (a periodic wake).
+- **(b) Certificates** (`front_cert.py`). Fixed so that CERTIFIED requires no FAIL edge (GC2374). Run it on the
+  480-state phase (classes (n mod 480, t mod 32), W ≤ 6) and on P1024 (classes θ = t + 195n mod 1024, W ≤ 8).
+- **P37a.** Both wakes are odometer-like (no periodic recurrence of the front window), with speeds strictly between 1
+  and 1.5. Lean 65%. Both phases are richer than G8.
+- **P37b.** Neither phase is certified at these windows. Lean 70%.
+- **Counterfactual.** A periodic wake, or a certificate, for either phase. A certificate proves that no eternal point
+  of any period ends in that phase. For P1024 that would be the first exclusion of it by any method.
+
+### 42.3 T37 results ([`wake_type.py`](../tests/probes/wake_type.py), [output](../tests/probes/wake_type.out); [`front_cert.py`](../tests/probes/front_cert.py), [output](../tests/probes/front_cert_t37.out))
+
+- **P37a REFUTED: three of the four known non-rain phases have periodic wakes.** From clean starts, 32 alignments
+  each, 4,000 ticks:
+
+  | phase | wake | speed (depth per tick) | largest drawdown |
+  |---|---|---|---|
+  | G8 (control) | periodic: period 64, advance 96 | exactly 3/2 | 0 |
+  | G16 | no recurrence at any alignment (odometer) | 1.06 to 1.22 | 10 |
+  | 480-state phase | periodic at every alignment: period 288, advance 480 | exactly **5/3** | 5 |
+  | P1024 | periodic at every alignment: period 208, advance 272 | exactly **17/13** | 4 |
+
+  Recurrence is tested on the 256 mismatch bits above the front together with the front's class. It is a heuristic
+  for a periodic wake, but it is convincing at every alignment with one common (period, advance).
+- **P37b HELD.** Neither phase is certified by the window automaton.
+  - P1024 at W = 4, 6, 8: FAIL edges 165, 122, 85; at W = 8 the non-FAIL part retreats about 1.8 cells per tick.
+  - The 480-state phase at W = 4, 5: FAIL edges 2,496 and 2,240; at W = 5 it retreats about 2.2 cells per tick.
+  - Given the periodic wakes, these failures are more likely the over-approximation's coarseness (long wake periods
+    need wide windows) than the dynamics.
+
+### 42.4 What T37 teaches
+
+1. **Cloud's wake dichotomy splits the known phases 3 to 1:**
+   - periodic wakes with rational speeds, G8 3/2, the 480-state phase 5/3 and P1024 17/13 (lab news speeds 1/2, 2/3 and
+     4/13);
+   - an odometer wake, G16.
+2. **Under the proposal of §42.1,** G8, the 480-state phase and P1024 belong to the class where a front-potential
+   exclusion at every period should exist. G16 alone is in the Collatz-shaped class.
+   - The kit proves G8. For the other two, the missing piece is a certificate fine enough for their long wakes.
+   - The decisive test is whether prepared regions can fuel long retreats (T35 style). If the drawdown stays bounded,
+     as for G8, a certificate at a moderate window should exist.
+3. A rational speed of 17/13 for P1024's wake, with period 208 = 16 · 13, is curious in itself: the wake period
+   carries the factor 13.
+
+## 43. Fuel in the periodic-wake phases (T38, L1315)
+
+### 43.1 Predictions, written before the run
+
+`drawdown.py`, extended:
+- the 480-state phase over all 960 alignment classes, the cosets of ⟨(30, 14), (0, 32)⟩;
+- P1024 over its classes θ = t + 195n mod 1024 (all 1,024 for r ≤ 10, 256 sampled for r = 14).
+
+The prepared mismatch regions of width r = 6, 10 and 14 are all enumerated, with no edge, exactly as in T35.
+- **P38a.** For both phases the largest drawdown stays bounded (≤ 8) for every r: no fuel, as for G8 (5 at every r).
+  Lean 60%.
+- **Counterfactual.** A drawdown that grows like r, as for G16. A periodic wake from clean starts would then not imply
+  freedom from fuel, and even periodic-wake phases would need a fuel term in their certificates. That would weaken the
+  proposal of §42.1.
+
+### 43.2 T38 results ([output](../tests/probes/drawdown_t38.out))
+
+- **P38a REFUTED: both periodic-wake phases have fuel.**
+  - The 480-state phase (all 960 classes): largest drawdown 12, 16 and 20 at r = 6, 10 and 14.
+  - P1024 (all 1,024 classes at r ≤ 10, 256 sampled at r = 14): 11, 19 and 20; at r = 10 the front heals all the way
+    back to the pinned top.
+  - Like G16 (11, 14, 19, 22), unlike G8 (5 at every r).
+- **So a periodic wake from a clean start does not mean freedom from fuel.** G8 is the only known phase without fuel,
+  and a local front certificate needs exactly that. The proposal of §42.1 fails in its strong form: a periodic wake is
+  not sufficient for a local certificate.
+
+**T39, predictions written before the run (`wake_attractor.py`).** For P1024, 200 random prefixes at each of K = 40
+and 80 run at random θ for 6K + 2,000 ticks. After the front passes depth 3K, is the window above the front eventually
+periodic with the clean-start wake's period and advance (208, 272), at speed exactly 17/13?
+- **P39a.** Every run converges to the clean-start wake: the clean-start wake is a global attractor. Lean 55%.
+- **What it teaches.** If P39a holds, a two-stage proof shape appears for P1024: the prefix's fuel is spent, then the
+  front is captured by a periodic wake whose advance is a finite fact. If it fails (other periods, other speeds, or no
+  recurrence), even periodic-wake phases have several or chaotic attractors.
+
+### 43.3 T39 results, and the premise check (T40 part 1)
+
+- **T39** ([`wake_attractor.py`](../tests/probes/wake_attractor.py), [output](../tests/probes/wake_attractor.out); P1024,
+  200 random prefixes each at K = 40 and 80).
+  - The late speed lies between 1.29 and 1.31 in every run, around 17/13 = 1.3077.
+  - An exact recurrence of the clean-start wake (208, 272) appears in only 25 and 58 runs within the horizon, plus one
+    at the half period (104, 136), which has the same speed. The rest show no recurrence within 2,240 or 2,480 ticks.
+  - **P39a REFUTED for exact capture, held for the speed.**
+- **Premise check** ([`wake_background.py`](../tests/probes/wake_background.py)). For G8, P1024 and the 480-state phase,
+  the middle of the clean-start wake satisfies neither the moving-frame recurrence nor any depth period.
+  - So the "periodic wake" of T37 is periodicity of the neighbourhood of the front, not a periodic background filling
+    the wake.
+  - The architecture's premise has to be stated as **decoupling**: no information from behind reaches the front.
+
+### 43.4 T40, decoupling: predictions written before the run (`wake_decouple.py`)
+
+Clean starts for G8, G16, the 480-state phase and P1024. At tick 600, flip 1 to 4 random bits at a distance d ∈ {50, 100,
+200} behind the front (30 trials per d). Track the difference between the perturbed and unperturbed runs to tick 2,600:
+its deepest point, and whether it reaches the front.
+- **P40a.** For G8, P1024 and the 480-state phase, no perturbation reaches the front: the gap between the difference's
+  deepest point and the front grows linearly. Lean 60%.
+- **P40b.** For G16 some perturbations reach the front. Lean 60%: its front speed of 1.22 is below a typical damage
+  depth speed of about 1.25.
+- **What it teaches.** If P40a holds, the front of a periodic-wake phase depends only on a bounded window around it,
+  so it is a finite object, and its advance under arbitrary perturbations becomes a finite question.
+
+### 43.5 T40 results ([`wake_decouple.py`](../tests/probes/wake_decouple.py), [output](../tests/probes/wake_decouple.out))
+
+| phase | front speed | perturbations reaching the front (of 90) | deepest-difference speed |
+|---|---|---|---|
+| G8 | 3/2 | 0 | at most 1.49, so it falls behind |
+| G16 | 1.09 in this run | **85** (overtaking the front) | up to 1.23 |
+| 480-state phase | 5/3 | 0 | up to **1.667**, riding at the front's speed (smallest final gap 45 from d = 50) |
+| P1024 | 17/13 | 0 | up to **1.31**, riding at the front's speed (gaps 50 and 95 from d = 50 and 100) |
+
+- **P40b HELD.** G16's front is not decoupled from its wake.
+- **P40a: main claim held, detail refuted.** No perturbation reaches the front in the three periodic-wake phases. But
+  for the 480-state phase and P1024, a perturbation close behind the front travels at exactly the front's speed and
+  keeps its distance. Only those starting about 200 cells back fall behind.
+
+### 43.6 What T37–T40 teach: a proof architecture, and where it stands
+
+1. **Front structures.**
+   - **G8:** decoupled, fuel-free, and certified locally (the kit's theorem).
+   - **The 480-state phase and P1024:** a comoving periodic boundary layer behind the front, about 100 to 250 cells
+     deep; neutral modes inside it (perturbations ride along); decoupling beyond it; and fuel from prepared prefixes
+     (T38).
+   - **G16:** no boundary layer and no decoupling (an odometer wake).
+2. **The architecture for the 480-state phase and P1024 (PROOF-SKETCH outline; read requested).**
+   - (a) Decoupling: information more than L cells behind the front never reaches it.
+   - (b) So the front and its layer form a closed finite dynamics on windows of width L.
+   - (c) Every reachable window of that dynamics advances (no zero-advance cycle).
+   - Then any black-edge row, once its prefix's fuel has passed into the decoupled wake, has a front driven by (b),
+     which advances by (c). Hence M_E(k) < ∞ for every k, and by the bridge no eternal point of any period ends in E.
+3. **The gaps, stated honestly.**
+   - (a) is measured (90 trials each), not proved.
+   - The layer width L of about 100 to 250 makes (b) and (c) far too large to check exhaustively without structure.
+   - "Once the fuel has passed" needs the fuel to be finite and to leave the front, which T38's healing-to-the-top
+     events make delicate.
+   - Neutral modes inside the layer mean (b) has non-trivial invariant subsets, which (c) must also cover.
+4. **G16 needs a different idea.** Its front is driven by the whole wake: the Collatz-shaped case of Cloud's dichotomy,
+   now seen as "no decoupling".
+

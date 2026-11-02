@@ -1,0 +1,65 @@
+{
+  "worker_stop": 100,
+  "input_sha256": {
+    "tests/probes/metal_scope/scope.mm": "6375c72a185b42cd7a8e8aba3d0ffa050cb3d6e6d88a4ed3653fe78cdd362213",
+    "tests/probes/metal_scope/kernels.metal": "108e1885e80396bc45bcd4d8b27765b64dd607fdbc4373d0cb79e70d6690f809",
+    "tests/probes/metal_scope/stage.py": "7c1abe662b199ca82432c83c797af571f9259d27f7eb0bddd1dc864c477adf57"
+  },
+  "jobs": [
+    {
+      "name": "native-build",
+      "cpu": 40,
+      "wall": 70,
+      "args": [
+        "/usr/bin/clang++",
+        "-std=c++17",
+        "-O3",
+        "-march=native",
+        "-fobjc-arc",
+        "-framework",
+        "Foundation",
+        "-framework",
+        "Metal",
+        "tests/probes/metal_scope/scope.mm",
+        "-o",
+        "{out}/scope"
+      ]
+    },
+    {
+      "name": "metal-build",
+      "cpu": 25,
+      "wall": 40,
+      "args": [
+        "xcrun",
+        "metal",
+        "-std=macos-metal2.3",
+        "-c",
+        "tests/probes/metal_scope/kernels.metal",
+        "-o",
+        "{out}/scope.air"
+      ]
+    },
+    {
+      "name": "metallib",
+      "cpu": 10,
+      "wall": 20,
+      "args": [
+        "xcrun",
+        "metallib",
+        "{out}/scope.air",
+        "-o",
+        "{out}/scope.metallib"
+      ]
+    },
+    {
+      "name": "inventory",
+      "cpu": 10,
+      "wall": 20,
+      "args": [
+        "{out}/scope",
+        "{out}/scope.metallib",
+        "inventory"
+      ]
+    }
+  ]
+}

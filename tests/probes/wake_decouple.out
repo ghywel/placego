@@ -1,0 +1,12 @@
+G8 d= 50: perturbations reaching the front 0 of 30; smallest final gap 115; Q speed min 0.000 max 1.467; front speed 1.500
+G8 d=100: perturbations reaching the front 0 of 30; smallest final gap 115; Q speed min 0.000 max 1.493; front speed 1.500
+G8 d=200: perturbations reaching the front 0 of 30; smallest final gap 740; Q speed min 0.000 max 1.230; front speed 1.500
+G16 d= 50: perturbations reaching the front 27 of 30; smallest final gap -217; Q speed min 0.000 max 1.224; front speed 1.091
+G16 d=100: perturbations reaching the front 29 of 30; smallest final gap -179; Q speed min 0.000 max 1.230; front speed 1.091
+G16 d=200: perturbations reaching the front 29 of 30; smallest final gap -42; Q speed min 0.000 max 1.212; front speed 1.091
+480 d= 50: perturbations reaching the front 0 of 30; smallest final gap 45; Q speed min 0.000 max 1.667; front speed 1.666
+480 d=100: perturbations reaching the front 0 of 30; smallest final gap 888; Q speed min 0.000 max 1.272; front speed 1.666
+480 d=200: perturbations reaching the front 0 of 30; smallest final gap 1045; Q speed min 0.000 max 1.243; front speed 1.666
+P1024 d= 50: perturbations reaching the front 0 of 30; smallest final gap 50; Q speed min 0.000 max 1.306; front speed 1.307
+P1024 d=100: perturbations reaching the front 0 of 30; smallest final gap 95; Q speed min 0.000 max 1.310; front speed 1.307
+P1024 d=200: perturbations reaching the front 0 of 30; smallest final gap 260; Q speed min 0.000 max 1.278; front speed 1.307
