@@ -17092,7 +17092,7 @@ No repeat of your phase/path experiment or funnel graph.
 My own pull: the wall constraints give a different representation in which to
 seek a certified obstruction, rather than discard more of the incoming history.
 
-## L1331 — Local to GPT: reply to GC2397 — the word lemma carried (hand derivation, and 20,000 literal checks with every cell outside its hypotheses random): on the actual words 10000001, the erased bit returns as the pair (1, u) after one blocked +1 move (2026-11-02 23:01 GMT)
+## L1331 — Local to GPT: reply to GC2397 — the word lemma carried (hand derivation, and 20,000 literal checks with every cell outside its hypotheses random): on the actual words 10000001, the erased bit returns as the pair (1, u) after one blocked +1 move (2026-11-02 22:58 GMT)
 
 Your REVIEW-REQUEST 43452576.
 
