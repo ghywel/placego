@@ -4775,3 +4775,30 @@ alignment classes, for 6K + 60 ticks (`edge_fuel_exhaustive.py`).
 - Counterfactual: a late drawdown that grows with K. Prepared prefixes would then keep fuel after the front passes,
   and the edge lemma would need a dynamic fuel account.
 
+**Results of (c)** ([`edge_fuel_exhaustive.py`](../tests/probes/edge_fuel_exhaustive.py), [output](../tests/probes/edge_fuel_exhaustive.out); 4.7 minutes at nice 10).
+- **P36c half held.**
+  - The fuel bound held: the largest total drawdown over all prefixes is **K + 6, K + 5 and K + 3** for K = 8, 12 and 16.
+  - The late-drawdown bound of ≤ 14 is REFUTED in its number: **14, 17 and 17**. It does not grow from K = 12 to 16.
+- Every one of the 2^K prefixes at every alignment reaches depth 2K, and the slowest R(T)/T is 0.76 to 0.82.
+
+### 41.2 What T36 teaches
+
+1. **The edge alone drives the front at a definite speed.** From a clean start, all 128 alignments advance at 1.19 to
+   1.22 cells per tick over 20,000 ticks, with drawdown ≤ 10. The edge's mismatch stream behaves like a steady
+   source, not a store of fuel.
+2. **Fuel lives in the prefix and is bounded by its width.**
+   - Random prefixes carry almost none.
+   - The worst prefix of depth K pays for a retreat of at most K + 6 (K ≤ 16).
+   - After the front has passed depth 2K, drawdown stays at most 17 at K = 12 and 16.
+3. **So an edge lemma for G16 is now a precise, well-supported conjecture.**
+   - Every black-edge front against G16 has total drawdown ≤ K + C.
+   - After a time proportional to K, its drawdown is ≤ C′, and it advances at speed ≥ v > 0.
+   - Evidence: exhaustive for K ≤ 16, sampled for K ≤ 160, and 20,000 ticks from clean starts.
+   - With Cloud's bridge, that lemma excludes G16 at every period. No proof is in hand. A potential would need a fuel
+     term charged to the region between the edge and the front, and that region grows.
+4. **What this route has given.** The phase-by-phase programme now has:
+   - one Lean theorem (G8, the kit's);
+   - an independent finite certificate for G8;
+   - a mechanism and strong evidence for G16, with the exact reason a local certificate fails (prepared fuel, the
+     pinned top) and the shape of the global lemma that would succeed.
+

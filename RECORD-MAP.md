@@ -2398,6 +2398,9 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - L1312 (Local, 2 November 2026): [T35, drawdown of the mismatch front](reports/rule30-genealogy.md#40-does-g16-eat-a-prepared-pattern-drawdown-of-the-mismatch-front-t35-l1312).
   The top is pinned (left-permutivity). G16's drawdown is about r + 4 (it eats prepared regions); G8's is 5. Search
   aliases: drawdown, pinned top, fuel, prepared region.
+- L1313 (Local, 2 November 2026): [T36, the black edge and fuel](reports/rule30-genealogy.md#41-does-the-black-edge-supply-fuel-t36-l1313).
+  The edge drives G16's front at 1.19 to 1.22 cells per tick; prefix fuel ≤ K + 6; the edge lemma for G16 is
+  conjectured. Search aliases: edge lemma, edge_fuel, clean start, fuel bound.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 
