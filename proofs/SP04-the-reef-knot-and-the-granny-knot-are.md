@@ -89,3 +89,62 @@ steps:
 
 Novelty remains unresolved: Mariot describes a broader research direction, and the already-recorded Deva
 abstract claims degree growth but its full argument has not been compared. This is not a prize result.
+
+
+### L1279 — Black lines of descent do not cross, and the left child's reach has an exact front rule
+
+**PROVED (hand, Local L1279; independent GPT carrying read GC2352, 1 November 2026).** [Hand arguments](../reports/rule30-genealogy.md#6-hand-arguments-proof-sketch-gpts-read-requested).
+(a) In the designated-parent tree (L for 100, C for 010 and 011, R for 001), adjacent lines cannot swap sides, because
+that needs x_p(t−1) to be 0 and 1 at once. Families are therefore intervals.
+(b) In the single-seed orbit, the black cells reachable from (−1, 1) through black parents are exactly the black
+cells of [−t, B(t)]. The front B(t+1) = B+1 if x_(B+1)(t) = x_(B+2)(t) = 0, else the rightmost black cell of row t+1 at
+or left of B.
+
+Checked on every row to 20,000 (`tests/probes/genealogy_front.py`). The speed, about 0.046, is MEASURED only.
+
+GPT read both carrying steps and their boundary conventions; [review and qualifications](../reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). The new retreat-corridor consequence (a retreat of d forces ceil(d/2) advances) and GPT's all-choice non-crossing are carried by Local (L1280): **PROVED (GPT's proofs, Local's read)**, with no violation on the orbit to t = 20,000. Local's simpler form B(t+1) = max{i ≤ B(t)+1 : x_i(t+1) = 1} is a two-line PROOF-SKETCH, machine-checked to 20,000; GPT's read is requested.
+
+### L1280 / GC2352 — Ancestry follower, recovery corridor and lift scope
+
+**PROVED, two-party:** GC2352's all-choice non-crossing, retreat recovery and alternate-lift
+counter-control were carried by Local L1280. L1280's follower formula and non-multilinear
+lift counterexample are carried by GPT GC2353. [Exact arguments and scopes](../reports/rule30-genealogy.md#8-locals-read-of-gc2352-l1280).
+These are structural identities, not a speed or centre-density theorem.
+
+### GC2353 — Gap-episode stopping time and transported trailing bit
+
+**PROVED (GPT's proofs; Local's carrying read L1281, with an actual-orbit check to t = 20,000).** [Carrying argument](../reports/rule30-genealogy.md#exact-stopping-time-and-the-trailing-bit); [Local's read](../reports/rule30-genealogy.md#10-locals-read-of-gc2353-l1281): a finite white gap M gives exactly floor(M/2) advances, the trailing bit toggles, and its collision value decides stay versus retreat. A nonadvance retreats by the left black-run length minus one. Uses the known C3 shrink theorem;4097 fixed scalar episodes checked. Explicit finite-row pair refutes lengths-only predictive closure. No single-seed drift theorem.
+
+
+### GC2354 — Fresh initial bits at ancestry collisions
+
+**PROVED (GPT's proof; Local's carrying read L1282, with an independent exhaustive check on three right halves).** [Full model and proof](../reports/rule30-genealogy.md#11-fresh-initial-bits-at-successive-collisions-gc2354); [Local's read](../reports/rule30-genealogy.md#13-locals-read-of-gc2354-l1282). Fix the right half with a black front and a farther rightmost black cell; take independent fair bits on the left. At episode starts expose precisely the initial suffix beginning c=B-time. A collision black run L reveals exactly L new initial bits and the next episode starts at c-L. Thus every finite L-list fixes one prefix and has probability2^(-sum L); the L values are independent geometric(mean2), conditional on completed history/current gap before the trailing bit is inspected. The fixed single seed is outside this random-input hypothesis. Finite cylinder controls pass; no drift or novelty claim.
+
+
+### L1283 / GC2356 — Deep-side clock and finite-word periodicity obstruction
+
+**PROVED, Local's hand argument carried by GPT GC2356.**
+[Precise carrying read](../reports/rule30-genealogy.md#161-carrying-verdict-on-locals-two-hand-steps).
+For infinitely many finite ancestry episodes, the deep word obeys
+L=1+lead1(Phi^r(w)), w_next=shift^L(Phi^(r+1)(w)). An eventually periodic pair history
+on a configuration with a leftmost black cell has sum L=2 sum(r+1) per cycle. Its distance from
+the left edge is bounded and periodic, not necessarily constant within a cycle. Consequently
+unbounded limsup distance implies nonperiodicity of that pair history. The latter unboundedness
+is not proved. Prescribed deep-side histories need not satisfy the actual shallow-gap conditions.
+
+### GC2357 / L1284 — Uniform ancestry capture and band escape; the seed's collision history is not eventually periodic
+
+**PROVED (two-party: GPT's proof GC2357, Local's carrying read L1284).**
+[Proof](../reports/rule30-genealogy.md#17-a-uniform-capture-argument-replaces-the-clock-induction-gc2357);
+[read](../reports/rule30-genealogy.md#18-locals-carrying-read-of-gc2357-and-gc2356-received-l1284).
+For any row with a leftmost black cell, marks propagated along every black-parent edge from that cell capture
+diagonal j (left-edge coordinates) from time 1 + j(j−1)/2, and the marked front leaves band 0..D within (D+2)(D+3)/2
+updates from any start. With the entry above and `JenPow2.infinitely_many_black`: on the single seed the ancestry
+front's distance from the left edge tends to infinity, and its (r, L) collision history is not eventually periodic.
+Not a centre-column or speed statement. Replay: `tests/probes/genealogy_capture.py` (GPT) and
+`tests/probes/genealogy_capture_seed.py` (Local, on the seed).
+**Lean (L1287):** capture and exit are machine-checked in `tests/probes/lean/Capture.lean` (Mathlib, Lean 4.33.1,
+standard axioms, no `sorry`) for every rule with f(000) = 0, f(001) = 1, f(100) = 1, instantiated at Rule 30
+(`Capture.capture`, `Capture.exit`, `Capture.unbounded`, `Capture.capture30`, `Capture.exit30`;
+[statement](../reports/rule30-genealogy.md#21-capture-and-exit-in-lean-l1287-at-the-owners-direction)). The lock
+and the nonperiodicity conclusion remain hand, two-party.

@@ -2354,11 +2354,12 @@ E_{U+1} = 1, D_{R+2}(t+1) = 0 and R' ≤ U + 1 = U'. This is GPT's masking-front
 inserted-edge witness's pair (k, k+1) agrees with E at least until T_env(k) = min{t : U(t) ≥ k}, and
 **M(k) ≥ W(k) ≥ L_env(k) := max over alignments of T_env(k)** for every k. U depends on E alone and its state
 (U mod p, t mod q) is finite, so L_env is exactly periodic and computable for all k. Carrying step: the two-line lemma
-above, mine for general E; REVIEW-REQUEST to GPT (whose PR69 case it is).
+above, mine for general E; REVIEW-REQUEST to GPT (whose PR69 case it is). *Carried by Local in L1278 (PROVED two-party), with
+one correction: on PR69's ether L_env(k) = ⌈2(k+1)/3⌉ for k ≥ 2, which exceeds ⌈2k/3⌉ at k ≡ 0 and 1 (mod 3), not only at k ≡ 0.*
 
 | background | envelope class (shift, period), all alignments | envelope speed | L_env(1..20) | exact M(1..20) or W |
 |---|---|---|---|---|
-| PR69 ether (4, 8) | (12, 8) | 3/2 | 1 2 3 4 4 5 6 6 7 8 8 9 10 10 11 12 12 13 14 14 | ⌈2k/3⌉ = 1 2 2 3 4 4 5 6 6 7 8 8 9 10 10 11 12 12 13 14 (GPT's floor; the envelope is one better at k ≡ 0 mod 3) |
+| PR69 ether (4, 8) | (12, 8) | 3/2 | 1 2 3 4 4 5 6 6 7 8 8 9 10 10 11 12 12 13 14 14 | ⌈2k/3⌉ = 1 2 2 3 4 4 5 6 6 7 8 8 9 10 10 11 12 12 13 14 (GPT's floor; the envelope is one better at k ≡ 0 and 1 mod 3, k ≥ 3: L1278's correction) |
 | classic ether (7, 28) | (133, 84) | 19/12 | 1 2 3 4 4 5 6 6 7 8 9 9 10 10 11 12 12 13 13 14 | 7 7 8 9 10 10 12 12 16 16 17 17 18 18 20 21 24 24 25 26 |
 | (7, 63) | (77, 63) | 11/9 | 1 2 3 4 5 6 7 8 8 9 10 11 11 12 13 14 15 16 17 17 | 11 12 12 15 15 16 17 18 18 20 22 24 24 25 |
 | (9, 57) | (171, 114) | 3/2 | 1 2 3 4 5 6 6 7 8 9 9 10 11 11 12 13 14 14 15 16 | 12 13 13 15 15 16 16 17 17 19 24 27 28 34 35 35 41 42 42 43 |

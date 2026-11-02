@@ -1,0 +1,11 @@
+# run 1: budget 300000 conflicts per instance, N = 64..1024, stopped after 15 minutes inside N = 256
+N=64: 0 SAT lags, 0 undecided (budget 300000 conflicts), 1 s
+N=128: 1 SAT lags, 0 undecided (budget 300000 conflicts), 9 s
+  r=72 time period 16 weight 65 verified True ring[:64]=1111110010111010110110011011000111101000001100111010100100000011
+# run 2: budget 3000 conflicts per instance, N = 256..2048, stopped inside N = 2048
+N=256: 0 SAT lags, 168 undecided (budget 3000 conflicts), 27 s
+  undecided lags: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 34, 35, 36, 39, 40, 41, 45, 46, 47, 48, 49, 54, 55, 56, 58, 59, 60]
+N=512: 0 SAT lags, 426 undecided (budget 3000 conflicts), 99 s
+  undecided lags: [9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49]
+N=1024: 0 SAT lags, 941 undecided (budget 3000 conflicts), 340 s
+  undecided lags: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49]

@@ -1,0 +1,18 @@
+G16 ring: N=128, time period q=16, weight 65
+k= 1 M=  8 (horizon 75) maximizers listed 16, inserted-edge witnesses among them 16; at horizon: False
+k= 2 M=  8 (horizon 78) maximizers listed 48, inserted-edge witnesses among them 32; at horizon: False
+k= 3 M=  9 (horizon 81) maximizers listed 16, inserted-edge witnesses among them 16; at horizon: False
+k= 4 M= 11 (horizon 84) maximizers listed 16, inserted-edge witnesses among them 0; at horizon: False
+k= 5 M= 12 (horizon 87) maximizers listed 16, inserted-edge witnesses among them 0; at horizon: False
+k= 6 M= 13 (horizon 90) maximizers listed 16, inserted-edge witnesses among them 0; at horizon: False
+k= 7 M= 13 (horizon 93) maximizers listed 32, inserted-edge witnesses among them 0; at horizon: False
+k= 8 M= 16 (horizon 96) maximizers listed 16, inserted-edge witnesses among them 16; at horizon: False
+k= 9 M= 17 (horizon 99) maximizers listed 16, inserted-edge witnesses among them 16; at horizon: False
+k=10 M= 19 (horizon 102) maximizers listed 16, inserted-edge witnesses among them 0; at horizon: False
+k=11 M= 19 (horizon 105) maximizers listed 48, inserted-edge witnesses among them 16; at horizon: False
+k=12 M= 21 (horizon 108) maximizers listed 16, inserted-edge witnesses among them 0; at horizon: False
+k=13 M= 21 (horizon 111) maximizers listed 48, inserted-edge witnesses among them 0; at horizon: False
+k=14 M= 22 (horizon 114) maximizers listed 16, inserted-edge witnesses among them 0; at horizon: False
+M_G16(1..14) = 8 8 9 11 12 13 13 16 17 19 19 21 21 22
+G16_EPISODE_DONE
+EXIT 0

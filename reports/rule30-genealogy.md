@@ -4418,3 +4418,143 @@ Predictions:
     refuting the Sink conjecture, though not the light-speed recurrence conjecture.
 - Caps: 600 s per instance, nice 10, `run_capped` with CPU 3,000 s and RSS 4 GiB.
 
+
+## 38. Cloud's reading of the eternal-cycle line, a bridge to the episode line, and what a proof needs (CL676)
+
+*Cloud, 2 November 2026, at the owner's request ("check in with Local and provide your analysis ... what is needed to
+reach the proof intended"). Read: L1278–L1308, GC2351–GC2365, §§23–37 of this report, the inquisition of L1303, and the
+T29 Intel report. Predictions for the two tests below were written first (Cloud's scratch, Blocks 16 and 17, copied in
+§38.3 and §38.4). Probes `phase_family_sat.py` and `g16_episode.py` in `tests/probes/wolfram/`.*
+
+### 38.1 The conjecture as I read it, and its standing
+
+The light-speed recurrence conjecture (L1291): the only periodic points of the edge map Φ on Z_2 are the two phases of
+black-edged rain. Equivalent forms the record has proved: ψ = Φ∘c has no finite orbit (§29.2, PROVED two-party);
+at period p, no path from the defect state reaches a cycle of the pair graph H_p (§26.1, PROVED two-party); with the
+kit's `PeriodicPoints`, every nonzero right-finite row that recurs exactly up to a shift is white or black-edged rain.
+
+Standing: PROVED for every p dividing 128 (two independent implementations; GPT's third through 64); p = 256 has
+560,082 of 560,085 subtrees complete and three giants open, so it is **not yet verified** (G26 applies: a run that stops
+at a cap is not a verification). The tree is a critical two-type branching process whose only coin is |v ∨ w| mod 2
+at type-0 nodes, fair to within 0.002, with the Galton–Watson tail constant 0.80 over eighteen binary orders (L1297,
+L1298). Every phase (cycle of H_p) is a rigid rotator c^g = ρ^r (§35.1, PROOF). Known phases: the rain, G8, G16, the
+480-state phase at p = 32, and P1024 (c = ρ^21 on 1,024 cells). G8, G16 and the 480-state phase are upward rigid
+(T32), so no eternal point of period 8, 16 or 32 ends in them; P1024 is not upward rigid to D = 32, and no wall of
+length ≤ 40 joins the rain to it at p = 1,024 (T33).
+
+Refuted on the way, and usefully: double-or-die (GPT's period-8 plateau); the valuation separator and the cycle lemma
+(P1024, L1308); per-state orders (T21); bounded-window coins (T27, with GC2362's correction). These refutations
+constrain the shape of any proof, which is the point of §38.5.
+
+### 38.2 A bridge to the episode line (PROOF, hand, short; Cloud; read requested)
+
+Take a phase E other than the rain, as a two-sided configuration in the edge frame (depth j ∈ Z, time t ∈ Z/p), and
+the episode length M_E(k) of CL672: the longest time, over every row of depth k + 1 behind a black edge and every
+alignment of E, for which the pair of columns (k, k+1) agrees with E from time 0.
+
+**Claim.** No eternal point of any period has deep tail E ⇔ M_E(k) < ∞ for every k.
+
+- (⇒, contrapositive) If M_E(k) = ∞ for some k, some prefix of depth k + 1 behind the black edge keeps its pair
+  (k, k+1) equal to E's for ever. Every deeper cell, initialised to E, then stays E (it reads only the two cells above
+  it, and E obeys the rule). The prefix [0, k+1] is autonomous (prefix autonomy), finite, hence eventually periodic in
+  time, with a power-of-two period P because the finite edge map is triangular. From the first periodic time the whole
+  row is periodic in the light frame with period lcm(P, p): an eternal point whose tail is E, and not the rain since
+  E is not.
+- (⇐, contrapositive) An eternal point with tail E beyond depth d gives, for every k ≥ d, a prefix (its first k + 2
+  cells at any time) whose pair (k, k+1) agrees with E for ever: M_E(k) = ∞. ∎
+
+**Consequences.**
+1. For E = G8, which is PR69's ether (one black cell on a four-cell ring, period 8; CL672 reproduced PR69's law from
+   it), the kit theorem `Rule30EtherEpisode` (R30-20261031-7c1f96, kit PR #71: M(k) = ⌊2k/3⌋ + 4 − [k ≡ 0, 2 mod 6]
+   over all rows and alignments) says M_{G8}(k) < ∞ for every k. So **no eternal point of any period ends in G8**:
+   PROVED, Lean, uniform in p. T32's rigidity of G8 and the p = 8, 16 cores are finite shadows of it. This is the first
+   wall exclusion in the record that is uniform in the period.
+2. The same method decides, for a given phase and a given wall depth, every period at once: M_E(k) for k ≤ K is one
+   exhaustive computation (2^(k+1) prefixes, all alignments, horizon 3k + 3p + 24), where T32/T33 work at one period.
+   It also covers eternal points whose wall has a longer period than the tail (period 2p with tail P1024, say), which
+   the pair graph at p does not see, and where P1024 is no longer a rigid corridor (its columns have even weight at 2p).
+3. The upper side of M_E, "every prefix's mismatch front reaches depth k by time f(k)", is exactly Proof 1's potential
+   floor (L1258/L1263 for G8). So the uniform-in-p statement for a phase E is a front-potential theorem about E, of the
+   kind the kit already holds for G8. CL674's negative result was about a non-phase background ((12, 68), period 68,
+   where no eternal point can live by L1291's power-of-two lemma); for phases the front behaviour is a fresh question.
+
+### 38.3 Test 1: the phase G16's episode law (Block 17; `g16_episode.py`)
+
+Predictions, written first: P-F1 M_{G16}(k) finite at every k ≤ 14 (lean 90%; counterfactual, a prefix agreeing to the
+horizon, to be run on and, if it never deviates, an eternal point with tail G16); P-F2 at most linear growth, slope in
+[0.6, 1.6] on k = 6..14 (lean 60%); P-F3 the maximizers are not all pure inserted edges (lean 55%).
+
+Result (COMPUTED, 128-cell ring with c = ρ^72, time period 16, all 2,048 alignments, horizon 3k + 72):
+
+    k        : 1  2  3  4  5  6  7  8  9 10 11 12 13 14
+    M_G16(k) : 8  8  9 11 12 13 13 16 17 19 19 21 21 22
+
+All finite, far below the horizon (P-F1 HELD); slope 1.1 on k = 6..14 (P-F2 HELD); the maximizers at k = 4..7, 10, 12
+and 13 are not inserted edges, at k = 1, 3, 8 and 9 all are (P-F3 HELD). So **no eternal point of any period ends in G16
+with a wall of depth ≤ 14** (COMPUTED), and G16's law looks like the classic ether's (slope about 1, shields), not like
+G8's (slope 2/3, no shield). The same computation is cheap for the 480-state phase (480 cells, period 32) and, with its
+rotator symmetry collapsing the alignments to 1,024, for P1024 (horizon about 3,100); both are proposed below.
+
+### 38.4 Test 2: is P1024 sporadic? Single-column phases by SAT (Block 16; `phase_family_sat.py`)
+
+A single-column phase with odd twist is a ring y on N = 2^k cells with c(y) = ρ^r(y). T30/T31 enumerated the shift
+registers for lags r ≤ 30 (forward) and ≤ 28 (backward) at every N. SAT tests every lag r < N at a fixed N: N variables,
+7N clauses and a primitivity clause (y ≠ ρ^(N/2) y). Predictions: P-E1 further lags at N = 1,024 beyond 21 (lean 60%);
+P-E2 a primitive solution with time period ≥ 16 at N = 2,048 (lean 65%); controls r = 72 at N = 128 (G16) and r = 21 at
+N = 1,024.
+
+Result (COMPUTED, CaDiCaL, conflict budgets stated; an undecided instance is neither SAT nor UNSAT):
+At N = 64 no primitive solution; at N = 128 exactly one lag, r = 72, the phase G16 (control HELD). Beyond that the census
+is **inconclusive**: at 300,000 conflicts per instance N = 256 did not finish its 255 lags in fifteen minutes; at 3,000
+conflicts N = 256 decided 87 lags UNSAT with 168 undecided, N = 512 had 426 of 511 undecided, and at N = 1,024 the control
+lag 21 itself was undecided (941 of 1,023 undecided), so that budget cannot find even the known phase. P-E1 and P-E2 are
+NOT TESTED, not refuted. The lesson is about the tool: plain CDCL on these cyclic instances is far weaker than Local's
+shift-register enumeration (2 s to lag 30) and than a structured (pos) query with (m, s) fixed; a census beyond lag 30
+needs the register enumeration in C with bitsets (lags to about 40) or a SAT encoding with symmetry breaking.
+
+### 38.5 What a proof needs: my perspective
+
+1. **The quantifier is the whole difficulty.** At fixed p the conjecture is a finite statement, decided at cost about
+   2^(0.16p) nodes (2^11, 2^17, 2^27, 2^41 at p = 32..256). Uniformity needs either an induction on p or a p-free
+   invariant. The induction frame exists (T_{p/2} ⊂ T_p; the new content is the top layer, entered at anti-periodic roots
+   of weight p/2; §28, §29.12), and inside the top layer the only unexplained event is the coin |v ∨ w| mod 2. A uniform
+   rank would have to predict that coin along every path, and T27 (as corrected) shows the coin is a generic light-cone
+   function deep in a layer; T21 and T28/T30 show no per-state or valuation rank exists. So the record's own refutations
+   rule out every rank that is a function of a bounded window of the state. That is the Collatz shape named in L1294,
+   and I would say it plainly: **no uniform proof by ranks is in sight**, and more separator candidates of the same
+   kind will meet the same end. The heuristic that the conjecture is nevertheless true is strong (a critical tree is
+   finite with probability one; a reachable cycle is a 2^(−Θ(p)) event), but a heuristic proves nothing.
+
+2. **The phase-by-phase route is the one with proved pieces.** The Sink picture (§29.7) says the conjecture is "no
+   wall from the edge into any phase". By §38.2 that is, per phase E, the episode statement M_E(k) < ∞ for all k, and
+   for G8 it is already a Lean theorem. What is needed on this route: (a) for each phase, a front-potential theorem
+   (Proof 1's kind) or at least the exhaustive M_E(k) to a depth that the wall's possible depth cannot exceed; (b) a
+   handle on the *set* of phases: if phases are sporadic (G8, G16, the 480 phase, P1024 and nothing else to some large
+   bound), the conjecture at every p whose phases are known reduces to finitely many episode theorems plus the
+   classification; if they form infinite families, a family-wise episode theorem is needed. The classification of
+   phases is a question about ring gliders of Rule 30 (rings y with c^g(y) = ρ^r(y)), a finite-ring object with no
+   edge, which SAT and the shift-register census can map and which the kit's finite-ring machinery might reach. I think
+   this is the most productive next question, because every answer is usable: a new phase is a new target with a cheap
+   test, and a proved scarcity is half the theorem.
+
+3. **What cannot be skipped.** p = 256 is not done until the three giants finish or the question is re-scoped; the
+   record should say COMPUTED to p = 128 only. Solver-reported UNSAT answers (T29, T32, T33) are not certificates;
+   the ones that carry weight (T33's rain-to-P1024 exclusion, T32's rigidity of the 480 phase) want LRAT and
+   `cake_lpr`, as TOOLS.md says. And eternal points with tail P1024 at periods 2,048 and beyond are outside T33's
+   encoding; the episode test covers them for small wall depths.
+
+4. **A realistic deliverable now.** The line already holds a coherent package of understanding: the reduction to the
+   pair graph and to ψ (PROVED two-party); power-of-two periods (PROVED); the rotator form of phases (PROOF, Local);
+   the episode bridge and the uniform G8 exclusion (this section, read wanted); the exact cores at p = 8, 16; the
+   conjecture verified to p = 128 with the critical-branching structure measured; the catalogue of phases. That is a
+   submission-grade statement of what light-speed recurrence in Rule 30 looks like, with the conjecture clearly
+   labelled, and it is not on the board's prize path (none of Problems 1 to 3 follows from it or implies it, as far as
+   I can see; L1283/L1284's non-periodic ancestry history was proved without it). The owner decides whether to spend
+   the next days on the proof or to record the package and move on; my recommendation is to run the three cheap tests
+   (480-phase and P1024 episodes, the phase census at N ≤ 4,096), then decide.
+
+5. **Questions for Local and GPT.** Q1 Read §38.2 (both directions, the autonomy and power-of-two steps). Q2 Does
+   Local's `ether_front_potential_certificate.py` method run on G16's 128-cell ring (a 16 × 128 phase table) and does a
+   floor emerge? A machine floor for G16 would be the second uniform wall exclusion. Q3 For P1024, which of M_P1024(k)
+   for k ≤ 8 and the p = 2,048 pair graph is the right next test? Q4 Is any phase other than a rotator of c or c²
+   known, i.e. g ≥ 3 with no smaller g?

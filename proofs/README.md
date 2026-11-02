@@ -1007,6 +1007,110 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
 
 *From the head of this section in PROOFS.md:*
 
+### L1294 — The defect map and the terminal rain
+
+**PROOF, Local (hand), 2 November 2026; GPT's read requested.** [§29.2](../reports/rule30-genealogy.md#292-the-defect-map-proof-local-hand), [§29.8](../reports/rule30-genealogy.md#298-the-rain-is-terminal-proof-local-hand).
+(a) Φ is generator a of automaton 2369 of the Bondarenko–Grigorchuk–Kravchenko–Muntyan–Nekrashevych–Savchuk–Šunić
+atlas (a = σ(b, a), b = σ(c, a), c = (c, a)). Return sections give: Φ has a non-rain finite orbit iff ψ = a∘c,
+z ↦ Φ(z ⊕ ((z≪1) | (z≪2))), has a finite orbit. Confirmed by cycle lifting of ψ for q ≤ 32
+(`tests/probes/defect_map.py`: every tree count and depth reproduced).
+(b) The non-rain successors of rain states are exactly the defect states, so the conjecture at period p is equivalent
+to: no wall of the two-sided light-speed core leaves the rain. At p = 16 the whole core is computed
+(`tests/probes/lightspeed_core.c`): phases white, rain, G8 and G16, and four walls, all into the rain.
+(c) (L1296, [§29.12](../reports/rule30-genealogy.md#2912-t24-the-period-256-run-stopped-at-its-cap-the-new-layer-root-by-root-predictions-written-before-the-run))
+In the H = p/2 layer, a splitting node (u, v) has children (v, w) and (v, w̄). Their parities satisfy
+s₀ + s₁ ≡ |v| (mod 2), since |v ∨ w| + |v ∨ w̄| = |v| + p, and both children have type |w| mod 2. So a node with
+odd |v| has exactly one splitting child. Checked with no violation at p ≤ 128 (`tests/probes/defect_layer.c`).
+
+### L1293 — Toward every period: the first doubled column is anti-periodic, and a unique-predecessor lemma suffices
+
+**PROOF-SKETCH, Local, 2 November 2026; GPT's read requested.** [§28.2 and §28.4](../reports/rule30-genealogy.md#282-the-induction-what-holds-what-fails-and-the-reduction-local).
+(a) For an eternal point of least period p ≥ 4, the first column of least period p satisfies
+c(t + p/2) = NOT c(t), and the half-differences are a p/2-periodic damage front under L1282's damage law.
+(b) If every state reachable from the defect has at most one reachable predecessor and the defect has none, no cycle
+is reachable. Together with no return to the rain, that proves the conjecture at period p. Checked for p ≤ 64.
+(c) Unique predecessors are equivalent to: a damage front between two valid configurations never has two
+consecutive zero columns below it.
+
+### L1292 — Light-speed recurrence behind a black cell: only the rain, for every period dividing 128
+
+**Machine-checked for p | 64 (Local, two implementations; GPT GC2359 independent) and p | 128 (Local, L1293,
+`tests/probes/eternal_dfs.c`); the reduction is PROVED two-party (GC2359 carried it).**
+[Reduction and results](../reports/rule30-genealogy.md#26-a-proof-attempt-for-the-light-speed-recurrence-conjecture-l1292).
+Eternal points of the right-edge map with period dividing p are the infinite paths of a finite pair graph on
+p-periodic columns. Every non-rain path passes through the defect state (a, a) or its time shift. For p = 2, …, 64
+the graph from the defect is acyclic and never re-enters the rain (`tests/probes/eternal_proof.py`; control: state
+counts agree with `eternal_cycles.py`). So the only rows with a black rightmost cell recurring exactly at light speed
+with period dividing 64 are the black-edged rain. Open for larger periods.
+
+### L1286 — Uniform band escape among the 64 light-speed-edge rules: exactly F1 or F2
+
+**PROOF-SKETCH, Local, 1 November 2026; GPT's read requested.** [Argument](../reports/rule30-genealogy.md#20-the-eight-extra-rules-l1286-at-the-owners-direction).
+Let f have f(000) = 0 and f(001) = 1, so the leftmost black cell moves left one cell a step. Marks from that cell
+along every black-parent edge leave every band 0..D within a bounded time from every start, on every configuration,
+if and only if f(100) = 1 (GPT's white-pair descent, GC2357) or f(p, q, 0) = q for all p, q (a single-diagonal
+descent: no diagonal n is white for n+1 consecutive times; capture by the same C_j, exit by (D+1)(D+2)/2 + 1).
+Otherwise the lone edge stays in band 0..1 for ever. Control: the census of all 256 rules on every 12-bit prefix
+(`tests/probes/genealogy_gate_census.py`, `genealogy_eight_rules.py`).
+
+### GC2356 — Exact spatial-tail closure and monotone band-trap decision
+
+**PROOF-SKETCH, GPT; two separately frozen finite certificate pilots COMPUTED.**
+[Spatial recurrence](../reports/rule30-genealogy.md#162-why-the-new-spatial-recurrence-closes-the-tail-exactly)
+and [band map](../reports/rule30-genealogy.md#163-the-monotone-period-map-and-an-exact-no-trap-band).
+A light-speed deep-word return with T physical steps has a deterministic2T-bit spatial tail
+recurrence outside a finite boundary layer. Its closed nonzero cycles replace the unsupported
+60-digit infinity inference. The same35 patterns give8 exact finite fixed words and27 nonzero
+cycles. The seed band through offset20 closes at time23 with period4; the clipped monotone front
+map has least-state chain0->6->12->17->exit18. Thus none of the eight finite patterns is compatible
+with the seed's shallow side. Exact bounded family exclusion, not all-width escape. Data, controls,
+source hashes and monitoring limitations are retained in the report. No Lean or outside read claimed. The same monotone-map argument gives the converse: eventual finite-band confinement forces eventual pair-history periodicity under Jen. This new equivalence remains PROOF-SKETCH.
+
+
+### GC2355 — Adaptive genealogy codec and finite obstruction bound
+
+**PROOF-SKETCH, GPT; independent consolidation requested by owner before another read.**
+[Complete body](../reports/rule30-genealogy.md#14-a-finite-codec-and-its-limits-gc2355-independent-consolidation):
+GC2354's scan bits give a prefix-preserving bijection of initial left ribbons, including unfinished runs.
+For fixed rightmost black q>0, a list with partial sums s_k finishes by
+sum_k floor((q+s_(k-1)+1)/2), at most quadratic in total consumed bits. The triangular right-edge
+map gives a finite zero-ribbon verifier and GC699-style inverse, with concrete first-obstruction
+certificates. All256 eight-bit words and64 three-episode candidates checked by two evolutions;
+these are self-checks. The raw seed code001110 fails Mahler's known11 fractional guard despite
+its integer residue60. General triangular coding and the Mahler guards are known tools reused.
+No speed theorem, physical-time conjugacy, Lean verification or novelty claim.
+
+
+### CL674 — the masking envelope bounds every inserted-edge front on a periodic background
+
+[Statement, proof and table](../reports/inquisition-20261031.md#the-provable-bound-the-masking-envelope-proof-sketch-for-all-five-backgrounds).
+PROVED (hand; Cloud CL674, second-read by Local, L1278; to move out of the waiting room). With U(0) = 0 and
+U(t+1) = U(t) + 2 if E_(U+1)(t) = 0, else U(t) + 1, every front satisfies R(t) ≤ U(t). The reason:
+R' ≤ R + 2 always, and D_(R+2)(t+1) = NOT E_(R+1)(t). Hence M(k) ≥ W(k) ≥ L_env(k) for every k. This generalises
+GPT's PR69 masking-front lemma (L1258). The replay is `tests/probes/l1278_reads.py`.
+
+### GC2348 — The Mahler 0.4 window has an exact three-gap criterion
+
+**PROOF-SKETCH, GPT, 1 November 2026.** [Complete carrying proof](../MAHLER.md#a-complete-finite-memory-plateau-containing-04-gc2348).
+For ceilings a in (A,B], A=12550483683/31376865305 and B=12552580835/31381059609,
+the formal fractional language is exactly gaps>=4, after 4 next>=11, after 4,11 next>=7.
+Three exhaustive first-block cases bound every tail by A; equality forces periodic gaps 4,11,7.
+The known positive-integer periodic obstruction extends the integer-code criterion to [A,B].
+No positive integer realizing the language is asserted. Review the exhaustive-block supremum step
+and strict endpoints. G50/G51/G294 are the reviewed foundations; GP arithmetic is a self-check.
+
+
+### GC2342 — Mahler single-interruption recharge, application of known coupling
+
+**PROOF-SKETCH, GPT, 1 November 2026.** [Complete hand argument](../MAHLER.md#rule30-to-mahler-episodes-and-recharge-gc2342).
+For each k>=1, choose positive n with v2(171n+73)=k+4. Its initial100-periodic match has length3;
+after the four-bit prefix1000 the match restarts with length exactly k. The real number n+73/171
+passes Mahler's strict fractional window through4+k and first fails at5+k. This refutes a uniform
+recharge bound based only on the first clock, phase and fixed interruption. The start varies with k
+and pays2^(k+4)<=171n+73; there is no infinite survivor. Known G50/G51 and valuation machinery,
+explicit application pending carrying read; no new general theorem or novelty claim.
+
+
 ### GC2028 — exact uncertainty recovery and the known lock connection
 
 [Full argument and finite certificates](../reports/rule30-exact-strip-knowledge.md). PROVED (hand; second-read by Local, L1143; to move out of the waiting room):

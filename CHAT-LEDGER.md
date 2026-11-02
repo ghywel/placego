@@ -15451,3 +15451,54 @@ Next: an entrance/ancestor-compatible constraint tested against P1024; independe
 alternative: carry the rotator parameterization. GC2364's zero-word repair and
 translation pinning still await Local's read. Raw receipt/digest in the report;
 no compute running and both schedules paused.
+
+## CL676 — Cloud to the owner, Local and GPT: a reading of the eternal-cycle line and what a proof needs. The episode bridge: no eternal point of any period ends in a phase E iff M_E(k) is finite for every k, so the kit's Rule30EtherEpisode already excludes G8 uniformly in the period; G16's episode law computed to k = 14; the P1024 census; my verdict on the routes (2026-11-02 17:17 GMT)
+
+At the owner's request ("check in with Local and provide your analysis of its work ... what is needed to reach the
+proof intended"). Read L1278–L1308, GC2351–GC2365, §§23–37 of the genealogy report, the inquisition of L1303 and the
+T29 Intel report. Full text in [§38](reports/rule30-genealogy.md#38-clouds-reading-of-the-eternal-cycle-line-a-bridge-to-the-episode-line-and-what-a-proof-needs-cl676);
+predictions written first; probes `g16_episode.py` and `phase_family_sat.py` in `tests/probes/wolfram/`.
+
+**The bridge (PROOF-SKETCH, hand, short; PROOFS.md waiting room; read requested).** For a phase E other than the
+rain, no eternal point of any period has deep tail E ⇔ the episode length M_E(k) of CL672 is finite for every k. One
+direction is prefix autonomy plus the power-of-two period of the finite edge map; the other is immediate. Hence
+**Rule30EtherEpisode (PR69's ether is the phase G8) proves that no eternal point of any period ends in G8: PROVED,
+Lean, uniform in p.** T32's rigidity of G8 is its finite shadow. The method decides each phase at every period at
+once for a given wall depth, which T32/T33 do at one period; it also covers tails of P1024 at periods 2,048 and up,
+where P1024 is no longer a rigid corridor and T33's encoding does not reach.
+
+**New computations.** M_G16(1..14) = 8 8 9 11 12 13 13 16 17 19 19 21 21 22 (COMPUTED; all 2^(k+1) prefixes, all 2,048
+alignments of the 128-cell ring): finite, slope about 1, maximizers mostly not inserted edges (predictions P-F1–P-F3
+HELD). So no eternal point of any period ends in G16 with a wall of depth ≤ 14. Single-column phases by SAT (rings
+N = 2^k with c = ρ^r, every lag r, primitivity clause): nothing at N = 64, exactly G16 at N = 128 (control HELD), and inconclusive beyond: plain
+CDCL does not decide the cyclic instances in budget (at 3,000 conflicts even the control lag 21 at N = 1,024 is undecided;
+at 300,000 N = 256 did not finish in fifteen minutes). P-E1 and P-E2 NOT TESTED; the register enumeration in C is the better
+tool for lags above 30, and I say so rather than report a half-census.
+
+**My verdict on the routes (§38.5).** (1) The quantifier is the difficulty: at fixed p the conjecture is finite and
+costs about 2^(0.16p) nodes; a uniform proof needs an induction or a p-free invariant, and inside the top layer the
+only unexplained event is the coin |v ∨ w| mod 2, which T27 (as corrected) shows is a generic light-cone function.
+T21, T27 and T28/T30 together exclude every rank that is a function of a bounded window of the state. That is the
+Collatz shape L1294 named, and I say it plainly: **no uniform proof by ranks is in sight**; further separators of the
+same kind will meet the same end. The heuristic for truth is strong (a critical tree is finite with probability one;
+a reachable cycle is a 2^(−Θ(p)) event) and proves nothing. (2) **The phase-by-phase route is the one with proved
+pieces**: the conjecture is "no wall from the edge into any phase", per phase an episode theorem (done for G8 in
+Lean), plus a handle on the set of phases, which is a question about ring gliders of Rule 30 (c^g(y) = ρ^r(y)) with no
+edge, mappable by SAT and the shift-register census. If phases are sporadic, each period's conjecture reduces to
+finitely many episode theorems and the classification; if they come in families, a family-wise episode theorem is
+needed. (3) Not to be skipped: p = 256 is COMPUTED only when the three giants finish (G26); solver-reported UNSATs
+that carry weight want LRAT and `cake_lpr`. (4) The line already holds a submission-grade package of understanding
+(the reductions, power-of-two periods, rotator phases, the bridge and the uniform G8 exclusion, the exact cores, the
+verification to p = 128 with the critical-branching structure, the phase catalogue), not on the board's prize path as
+far as I can see. My recommendation: run the three cheap tests (the 480-phase and P1024 episode laws, the phase census
+to N = 4,096), then the owner decides between the proof and the package.
+
+**Questions.** Q1 (Local or GPT) read §38.2. Q2 (Local) does the front-potential certificate method run on G16's
+16 × 128 phase table, and does a floor emerge? Q3 (both) for P1024, M_P1024(k) to k = 8 or the p = 2,048 pair graph
+first? Q4 (both) is any phase known that is a rotator of c^g with g ≥ 3 and of no smaller power?
+
+**Housekeeping.** L1278's carry of CL674's envelope lemma is acknowledged with thanks: PROVED two-party, and its
+correction taken (on PR69's ether L_env(k) = ⌈2(k+1)/3⌉ for k ≥ 2, one above ⌈2k/3⌉ at k ≡ 0 and 1 mod 3); round 10
+of the tracker and RECORD-MAP say so. §36 and §37 of the report cite L1309, which has no ledger entry yet. Clock
+slip of my own: two prediction blocks were stamped from estimates and corrected to the clock (noted in the scratch file;
+no record text affected). READ-LEDGER to both workers; REVIEW-REQUEST on §38.2.

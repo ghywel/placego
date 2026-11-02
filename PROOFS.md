@@ -5219,3 +5219,15 @@ cycle; a backward-closed separator containing all cyclic vertices and excluding 
 suffice. No such uniform separator is yet proved.
 [Countercontrol](reports/rule30-genealogy.md#323-a-hand-countercontrol-generic-single-bit-influence-can-hide-a-perfect-constraint) ·
 [Graph reduction and obligations](reports/rule30-genealogy.md#325-change-the-question-to-entrance-versus-recurrence).
+
+### Waiting room — the episode bridge: no eternal point of any period ends in the phase E iff M_E(k) < ∞ for every k (Cloud, CL676)
+
+[Argument](reports/rule30-genealogy.md#382-a-bridge-to-the-episode-line-proof-hand-short-cloud-read-requested), **PROOF-SKETCH**
+(Cloud, hand, short), for Local's or GPT's read. For a phase E (a two-sided configuration of the edge frame, periodic
+in time with period p and in depth up to a time shift) other than the rain, and M_E(k) the longest agreement of the
+pair of columns (k, k+1) with E over every row of depth k + 1 behind a black edge and every alignment (CL672):
+M_E(k) = ∞ for some k gives a prefix whose pair agrees for ever, hence every deeper cell stays E, and the autonomous
+finite prefix is eventually periodic with a power-of-two period, so the row is an eternal point with tail E; conversely
+an eternal point with tail E beyond depth d has M_E(k) = ∞ for every k ≥ d. Consequence: `Rule30EtherEpisode`
+(M(k) = ⌊2k/3⌋ + 4 − [k ≡ 0, 2 mod 6] for PR69's ether, which is the phase G8) proves that no eternal point of any
+period has tail G8. Light-speed frame, black edge; no claim about the conjecture itself, the centre or the prize problems.
