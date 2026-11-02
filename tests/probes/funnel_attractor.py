@@ -85,6 +85,9 @@ if '--core' in sys.argv:
         if new.sum() == aliveB.sum():
             break
         aliveB = new
+    savep = next((a[7:] for a in sys.argv if a.startswith('--save=')), None)
+    if savep:
+        np.savez_compressed(savep, SE=SE, A=(rank > 0), B=aliveB, W=W)   # L1340 T51: masks for refine_check.py (local data)
     print('   bad core B: %d states (%.2f%%); S_E + A + B = %d of %d; A and B disjoint: %s' % (
         int(aliveB.sum()), 100.0 * aliveB.sum() / NS, int(SE.sum() + A.sum() + aliveB.sum()), NS,
         not bool((A & aliveB).any())), flush=True)

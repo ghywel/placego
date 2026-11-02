@@ -6010,3 +6010,34 @@ The same probes and the same 200 rows are used, with the guard now at floors W +
   finite W. The real funnel is then the limit of the window abstractions: a real front is in the forced region of a
   wide enough window long before capture.
 - W = 14 (16.8 million states) would be an Intel-sized job and is not run here.
+
+## 55. Why does the bad core shrink with the window? (T51, L1340)
+
+### 55.1 A refinement lemma, and predictions written before the run (`funnel_attractor.py --save`, `refine_check.py`)
+
+**Note first (from T42's output).** At W = 8 every state of B has a 600-step path of total advance ≤ 0 (100% of B, §45.2).
+So B holds no merely "advancing but not yet in S_E" states that would be harmless. All of B is dangerous in the
+over-approximation, and "capture = leaving B" is the right statement.
+
+**Refinement lemma (PROOF-SKETCH).** A (W + 2)-state v′ = (c, w, u) refines the W-state v = (c, w), where u is the pair
+D_{R−W−1}, D_{R−W−2}.
+- The W automaton branches over u and computes outputs at offsets ≥ −W.
+- On every branch where v's W-update does not FAIL, v′'s update with the same u gives the same advance. It also gives a
+  new (W + 2)-window whose first W cells are among v's branch windows (v's free cells are now partly determined).
+- So, when v has no FAIL branch, every successor of v′, cut back to W cells, is a successor of v.
+- Consequences:
+  - by induction on rank, refinements of A_W states lie in A_{W+2} ∪ (refinements of S_E_W);
+  - B_{W+2} projects into B_W ∪ (refinements of S_E_W).
+- The open point is the refinements of S_E_W. They form a robust closed set at W + 2 (every path advances), which
+  contains S_E_{W+2}. Some of them might never enter S_E_{W+2}, and those would sit in B_{W+2} although harmless.
+
+**Predictions (P1024, W = 8 → 10).**
+- **R1.** Every refinement of an A_8 state lies in A_10 ∪ S_E_10. Lean 90%.
+- **R2.** Every refinement of an S_E_8 state lies in A_10 ∪ S_E_10 (no harmless robust states in B_10). Lean 70%.
+- **R3.** Every B_10 state projects into B_8. This follows from R1 and R2. Lean 70%.
+- **R4.** Of each B_8 state's 4 refinements, a mean of about 3.6 stay in B_10 (the ×0.90 trend). The distribution is
+  concentrated at 4, with a minority of B_8 states partly resolved. Lean 50% on the shape.
+- **Counterfactual.** If R2 fails, B_{W+2} contains harmless robust states, and the "bad core" overstates the danger at
+  larger W. A cleaner core (states with a non-advancing infinite path) would then be needed.
+
+Record searched: §45, §52, §54; no earlier refinement comparison.
