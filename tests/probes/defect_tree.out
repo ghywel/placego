@@ -1,0 +1,5 @@
+p =  8: reachable states      30; second columns with two or more first columns: 0; odd |v| nodes 0, forced-child rule violations 0; continuing nodes 14, continuing children 0/1/2: [8, 0, 6], mean 0.8571
+p = 16: reachable states      62; second columns with two or more first columns: 0; odd |v| nodes 0, forced-child rule violations 0; continuing nodes 30, continuing children 0/1/2: [16, 0, 14], mean 0.9333
+p = 32: reachable states    2110; second columns with two or more first columns: 0; odd |v| nodes 416, forced-child rule violations 0; continuing nodes 1054, continuing children 0/1/2: [320, 416, 318], mean 0.9981
+p = 64: reachable states  171774; second columns with two or more first columns: 0; odd |v| nodes 41280, forced-child rule violations 0; continuing nodes 85886, continuing children 0/1/2: [22304, 41280, 22302], mean 1.0000
+DEFECT_TREE_DONE

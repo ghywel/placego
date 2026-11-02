@@ -14935,3 +14935,51 @@ So Fix(Φ^128) = {−1/3, −2/3}. Predictions: P13a held; P13b held except its 
 evolving under the damage law, appears in both the tree property and the period doubling. Second: period 256 in
 C, about 10^11 paths at the observed growth, tens of minutes under caps. REVIEW-REQUEST (GPT) on L1293 (a)–(c);
 READ-LEDGER to both workers.
+
+## L1294 — Local: the damage-front lemma has the Collatz shape; the conjecture is one element of automaton group 2369 and "no wall leaves the rain"; the complete light-speed core at period 16 is a star into the rain (2026-11-02 01:45 GMT)
+
+At the owner's direction ("Yes, damage-front lemma"). [§29](reports/rule30-genealogy.md#29-the-damage-front-lemma-the-automaton-group-and-the-defect-map-l1294).
+
+**Prior art.**
+- Φ is generator a of automaton **2369** in the atlas of Bondarenko, Grigorchuk, Kravchenko, Muntyan, Nekrashevych,
+  Savchuk and Šunić (arXiv math/0612178): a = σ(b, a), b = σ(c, a), c = (c, a).
+- The atlas records our L1290 fact, "+2 bit length per application", as its proof that a has infinite order (known,
+  reproved). G2369 is not contracting. Entry in `PRIOR-ART.md`.
+
+**PROOF (hand, Local; GPT's read requested):**
+- (a) the conjecture ⇔ **ψ = Φ∘c has no finite orbit on Z_2**, by return sections: a² = (ab, ba), ab = (ac, ba),
+  ba = (ab, ca);
+- (b) ⇔ **no two-sided light-speed wall leaves the rain**, because the rain's only non-rain successors are the defect
+  states.
+- T14 confirms (a) by cycle lifting of ψ: every pair-graph count and depth is reproduced (P14a and P14b held).
+
+**The damage-front lemma.**
+- Lemma U′ holds through p = 64 (COMPUTED): a reachable column determines its whole history. It is stronger than U.
+- No hand proof. The random model predicts U′ and the tree's finiteness with no mechanism: log₂ N ≈ 0.2p, collisions
+  about N²/2^p. In the orbit tree each period layer is a critical branching forest, whose size goes like the square of
+  the previous layer's deaths. **The Collatz shape.**
+- P15c was vacuous: the mean offspring of a finite two-rooted tree is forced to be 1 − 2/N. Recorded as a failed test
+  design.
+
+**Route around: the light-speed phase diagram.**
+- Rings to 28 cells: the only primitive light-speed gliders of power-of-two period are white, the rain and **G8**
+  (one black cell on a 4-cell ring, period 8).
+- G8's defect trees are finite, but 8 of their edges enter the rain: a **G8 | rain wall** (P19b refuted).
+- **The complete core at p = 16** (2^32 states, 78 s, cross-checked at p = 8):
+  - phases white, rain, G8 and **G16**, a 128-cell ring pattern that one c step rotates by 56 cells (a rigid
+    rotator; P20a refuted);
+  - four walls, white | rain (the black edge), G8 | rain ×2 and G16 | rain, **all into the rain, none out**.
+- So the conjecture is confirmed at p | 16 by a method with no reachability assumption.
+- Revised conjecture (Sink): every wall ends in the rain, and white's only wall is the edge.
+
+**Machine.**
+- New orbit enumeration (`defect_orbits.c`, one node per ψ-orbit) reproduces p ≤ 128 in 0.03 s.
+- The p = 256 run (8 threads, caps stated in §29.3) is in progress. Its result will follow in a separate entry. The
+  model says p = 512 is out of reach.
+
+**My own pull:** the star. Find an order on light-speed phases in which walls only go up and the rain is on top. That
+would explain both halves of the star, and its "none out" half is the conjecture. Second: rigid rotators as
+shift-register cycles (G16 is one). Logged in `INSTINCT.md` with the cocycle route not taken.
+
+REVIEW-REQUEST (GPT) on L1294 (a) and (b) and on the p = 16 core program (`lightspeed_core.c`). READ-LEDGER to both
+workers.

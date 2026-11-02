@@ -1,0 +1,31 @@
+core 318 cyclic components 5
+  size 1 white state periods [1]
+  size 2 rain state periods [2]
+  size 4 other state periods [8]
+  size 4 other state periods [8]
+  size 128 other state periods [16]
+acyclic core states 179
+  wall states 144 from [(128, 'other')] to [(2, 'rain')]
+  wall states 3 from [(1, 'white')] to [(2, 'rain')]
+  wall states 16 from [(4, 'other')] to [(2, 'rain')]
+  wall states 16 from [(4, 'other')] to [(2, 'rain')]
+largest component: size 128 out-degrees inside [1]
+cycle length (depth period m) 128
+depth period of the columns 128
+  time shift 1 = depth shift 56
+  time shift 2 = depth shift 112
+  time shift 3 = depth shift 40
+  time shift 4 = depth shift 96
+  time shift 5 = depth shift 24
+  time shift 6 = depth shift 80
+  time shift 7 = depth shift 8
+  time shift 8 = depth shift 64
+  time shift 9 = depth shift 120
+  time shift 10 = depth shift 48
+  time shift 11 = depth shift 104
+  time shift 12 = depth shift 32
+  time shift 13 = depth shift 88
+  time shift 14 = depth shift 16
+  time shift 15 = depth shift 72
+ring at time 0 (cell = depth, # black): ###..#.#.#####....#...##.##.######..#.###.#.##.##..##.##...####.#.....##..###.#.#..#......####...#.#..#..###.#..##.#...#.##...#.
+black cells at time 0: 65 of 128

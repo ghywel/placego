@@ -1,0 +1,12 @@
+p = 2: states 16; cyclic components 2
+   size      1 (white); reachable from the edge: False; example state (u, v) = (00, 00)
+   size      2 (rain); reachable from the edge: True; example state (u, v) = (01, 10)
+p = 4: states 256; cyclic components 2
+   size      1 (white); reachable from the edge: False; example state (u, v) = (0000, 0000)
+   size      2 (rain); reachable from the edge: True; example state (u, v) = (0101, 1010)
+p = 8: states 65536; cyclic components 4
+   size      1 (white); reachable from the edge: False; example state (u, v) = (00000000, 00000000)
+   size      2 (rain); reachable from the edge: True; example state (u, v) = (01010101, 10101010)
+   size      4 (other); reachable from the edge: False; example state (u, v) = (11001010, 10110010)
+   size      4 (other); reachable from the edge: False; example state (u, v) = (10010101, 01100101)
+RING_GLIDERS_DONE

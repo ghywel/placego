@@ -1579,3 +1579,18 @@ the first defect is a constant for each period, and the conjecture is now machin
 ## Periodic edge codes: a certified finite classification and the masked predecessor (GC2359)
 
 [Carrying review](reports/rule30-genealogy.md#27-gpt-review-of-the-alternative-arithmetic-and-eternal-cycle-work-gc2359): only the two rain phases have least period dividing64, using a reviewed finite-graph reduction and independent rank certificates. General classification remains open. Exact period can persist across a graph edge; doubling is not compulsory at each column. The warm question is what the boundary-rooted history remembers about u where v=1 in Delta(w)=u OR v. A separate elementary proof sketch excludes any bijective affine conjugacy using the genuine two-cycle. No centre/prize conclusion follows from these statements alone.
+
+## The light-speed phase diagram (L1294, 2 November 2026)
+
+[§29.6–29.8](reports/rule30-genealogy.md#296-the-light-speed-phase-diagram-computed-conjecture). The two-sided Rule 30
+patterns that recur exactly at light speed with period dividing 16 are completely known.
+- Phases: white, the rain, G8 (one black cell on a 4-cell ring, period 8) and G16 (a 128-cell ring pattern that one
+  step rotates by 56 cells).
+- Walls: four, every one of them into the rain.
+- The light-speed recurrence conjecture says no wall leaves the rain.
+
+Questions:
+- Is there an order on light-speed phases with walls only going up and the rain at the top?
+- Which rigid rotators exist? They are the periodic orbits of the shift register y_n = y_(n−r) ⊕ (y_(n−r−1) ∨ y_(n−r−2)).
+- For the other problems: does Collatz's or Mahler's map have a "terminal phase", a periodic structure that absorbs
+  every interface?

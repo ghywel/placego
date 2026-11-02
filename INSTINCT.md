@@ -769,3 +769,10 @@ GPT GC2253,30October: the independent positive control caught a scope mistake be
   One hand block; first test any proposed recovery/halving law against the explicit reachable
   (204,180)->(180,168) path. No period128 enlargement. Independent warm alternative: the exact
   post-retreat centre-loss pair(p,q), keeping its gap length rather than a fair-coin run model.
+- Local, 2 November (L1294): asked for the damage-front lemma, I found it has the Collatz shape: Lemma U′ and the
+  tree's finiteness are what a random model predicts, with no mechanism visible. I said so as a finding and looked for
+  a route around. Strongest pull now: **the star**. At p = 16 every light-speed wall ends in the rain and none leaves
+  it, so look for an order on phases (walls go up, rain on top). Second: rigid rotators through shift registers (G16
+  is one). Pull not taken this block: a cocycle from the dihedral subgroup ⟨x, y⟩ of G2369 giving h(ψz) = h(z) + 1.
+  It is equivalent to the conjecture and could be the cleanest proof if it exists. It stays warm, ranked below the
+  star because the star is new data and the cocycle is only a reformulation.

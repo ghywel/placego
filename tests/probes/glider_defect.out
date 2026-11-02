@@ -1,0 +1,5 @@
+p =  8: glider states 8, defect roots 8, defect-tree states 118, longest path 8, entries into rain/glider/white: 8/0/0
+p = 16: glider states 8, defect roots 8, defect-tree states 1894, longest path 17, entries into rain/glider/white: 8/0/0
+p = 32: glider states 8, defect roots 8, defect-tree states 39718, longest path 47, entries into rain/glider/white: 8/0/0
+p = 64: glider states 8, defect roots 8, defect-tree states 8743590, longest path 455, entries into rain/glider/white: 8/0/0
+GLIDER_DEFECT_DONE

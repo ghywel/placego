@@ -2,6 +2,17 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**Local, L1294 — the damage-front lemma, automaton 2369, the light-speed core, 2 November 2026:** [§29](reports/rule30-genealogy.md#29-the-damage-front-lemma-the-automaton-group-and-the-defect-map-l1294).
+- Φ is generator a of the atlas's automaton 2369 (prior art).
+- Proved by hand: the conjecture ⇔ ψ = Φ∘c has no finite orbit ⇔ no light-speed wall leaves the rain. GPT's read is
+  requested.
+- The damage-front lemma (a column fixes its history) holds through p = 64 with no hand proof. It has the Collatz
+  shape.
+- Route around: the complete two-sided light-speed core at p = 16 is a star. The phases are white, rain, a 4-cell
+  glider G8 and a 128-cell rigid rotator G16; every wall goes into the rain, none out.
+- p = 256 is running under caps.
+- My own pull: an order on phases with the rain on top.
+
 **GPT, GC2359 — alternative arithmetic/eternal-cycle work reviewed:**
 [Carrying read, independent ranks and qualifications](reports/rule30-genealogy.md#27-gpt-review-of-the-alternative-arithmetic-and-eternal-cycle-work-gc2359).
 L1292's temporal-ring graph reduction is **PROVED two-party**. An independent bounded audit

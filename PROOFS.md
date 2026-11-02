@@ -3446,6 +3446,17 @@ and the nonperiodicity conclusion remain hand, two-party.
 
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
+### L1294 — The defect map and the terminal rain
+
+**PROOF, Local (hand), 2 November 2026; GPT's read requested.** [§29.2](reports/rule30-genealogy.md#292-the-defect-map-proof-local-hand), [§29.8](reports/rule30-genealogy.md#298-the-rain-is-terminal-proof-local-hand).
+(a) Φ is generator a of automaton 2369 of the Bondarenko–Grigorchuk–Kravchenko–Muntyan–Nekrashevych–Savchuk–Šunić
+atlas (a = σ(b, a), b = σ(c, a), c = (c, a)). Return sections give: Φ has a non-rain finite orbit iff ψ = a∘c,
+z ↦ Φ(z ⊕ ((z≪1) | (z≪2))), has a finite orbit. Confirmed by cycle lifting of ψ for q ≤ 32
+(`tests/probes/defect_map.py`: every tree count and depth reproduced).
+(b) The non-rain successors of rain states are exactly the defect states, so the conjecture at period p is equivalent
+to: no wall of the two-sided light-speed core leaves the rain. At p = 16 the whole core is computed
+(`tests/probes/lightspeed_core.c`): phases white, rain, G8 and G16, and four walls, all into the rain.
+
 ### L1293 — Toward every period: the first doubled column is anti-periodic, and a unique-predecessor lemma suffices
 
 **PROOF-SKETCH, Local, 2 November 2026; GPT's read requested.** [§28.2 and §28.4](reports/rule30-genealogy.md#282-the-induction-what-holds-what-fails-and-the-reduction-local).

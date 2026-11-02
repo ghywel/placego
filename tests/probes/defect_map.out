@@ -1,0 +1,13 @@
+a o c: q =  1: sum F =      1, last level with F > 0 =   0, F(0..8) = [1]
+a o c: q =  2: sum F =      3, last level with F > 0 =   1, F(0..8) = [1, 2]
+a o c: q =  4: sum F =     15, last level with F > 0 =   3, F(0..8) = [1, 2, 4, 8]
+a o c: q =  8: sum F =     31, last level with F > 0 =   4, F(0..8) = [1, 2, 4, 8, 16]
+a o c: q = 16: sum F =   1055, last level with F > 0 =  14, F(0..8) = [1, 2, 4, 8, 16, 32, 64, 64, 128]
+a o c: q = 32: sum F =  85887, last level with F > 0 = 103, F(0..8) = [1, 2, 4, 8, 16, 32, 64, 128, 256]
+c o a: q =  1: sum F =      1, last level with F > 0 =   0, F(0..8) = [1]
+c o a: q =  2: sum F =      3, last level with F > 0 =   1, F(0..8) = [1, 2]
+c o a: q =  4: sum F =     15, last level with F > 0 =   3, F(0..8) = [1, 2, 4, 8]
+c o a: q =  8: sum F =     31, last level with F > 0 =   4, F(0..8) = [1, 2, 4, 8, 16]
+c o a: q = 16: sum F =   1055, last level with F > 0 =  14, F(0..8) = [1, 2, 4, 8, 16, 32, 64, 64, 128]
+c o a: q = 32: sum F =  85887, last level with F > 0 = 103, F(0..8) = [1, 2, 4, 8, 16, 32, 64, 128, 256]
+DEFECT_MAP_DONE

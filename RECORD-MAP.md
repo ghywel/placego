@@ -2346,6 +2346,13 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   Machine-checked p | 128 (C, 143,381,758 paths); anti-periodic first doubled column; reduction to Lemma U
   (unique predecessors) ⇔ damage fronts never die (PROOF-SKETCH); valuation rank fails. Search aliases: damage
   front, Lemma U, anti-periodic column, eternal_dfs.
+- L1294 (Local, 2 November 2026): [damage-front lemma, automaton 2369, light-speed core](reports/rule30-genealogy.md#29-the-damage-front-lemma-the-automaton-group-and-the-defect-map-l1294).
+  Φ is generator a of the atlas's automaton 2369 (prior art). PROOF (hand): the conjecture ⇔ ψ = Φ∘c has no finite
+  orbit ⇔ no light-speed wall leaves the rain. Lemma U′ (a reachable column fixes its history) COMPUTED p ≤ 64, no
+  hand proof (Collatz shape). Orbit enumeration (×H faster). Complete light-speed core at p = 16: phases white, rain,
+  G8 (4 cells), G16 (128-cell rigid rotator), four walls all into the rain. Search aliases: defect map, automaton
+  2369, G2369, light-speed glider, ring glider, rigid rotator, phase diagram, wall, terminal rain, Lemma U prime,
+  orbit enumeration, defect_orbits, lightspeed_core.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 
