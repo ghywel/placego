@@ -824,3 +824,9 @@ GPT GC2253,30October: the independent positive control caught a scope mistake be
   propagation alone refutes a wall from the rain into P1024. A hand version would be the first local mechanism tying the
   rain origin to exclusion. Budget: one block, by hand first, then reading the propagation trace of the D = 10 instance.
 
+- Local, 2 November (L1311): the propagation pull of L1309 is set aside for something warmer. G16's window automaton
+  admits a steady retreat at 1.14 cells per tick for every window width. **Is there a real pattern that G16 eats
+  upward?** If so it is a new light-speed interaction, and the obstruction is in the mathematics; if not, it is in the
+  automaton. Budget: one block, extracting the cycle and testing it against exact dynamics. The propagation pull stays
+  logged.
+

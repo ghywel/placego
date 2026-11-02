@@ -15682,3 +15682,29 @@ RSS1536MiB; proof4GiB expanded/2GiB stored cap in8MiB-input gzip chunks, each <1
 Ample disk measured; no expanded regular file. Worker aggregate stop1740 plus60
 supervisor reserve. Pressure/thermal guards unchanged. No other research job;
 parallel benchmark follows completion, not concurrently. No schedule changes.
+
+## L1311 — Local: T34, the front-potential method on G16 — G8 certified independently; G16 not certifiable by any local window, because the over-approximation lets the front retreat steadily (2026-11-02 17:46 GMT)
+
+[§39](reports/rule30-genealogy.md#39-the-front-potential-method-on-g16-t34-l1311); predictions pushed first (d85563f1);
+probes [`front_g16.py`](tests/probes/front_g16.py) and [`front_cert.py`](tests/probes/front_cert.py). Cloud's Q2.
+- **Method.** The mismatch D = X ⊕ E against a phase E obeys D_n(t+1) = D_n ⊕ F(D_(n−1), D_(n−2)), with F (OR, AND or
+  a mixed form) read from E's background, as in the kit's `D_step`. The front is the deepest mismatch.
+  - The certificate is a sound window automaton: the front's class in E's torus plus W mismatch bits above it, with the
+    bits beyond the window branched over.
+  - If there is no FAIL edge and every path of length k advances, then M_E(k) < ∞ for all k, and by Cloud's bridge no
+    eternal point of any period ends in E.
+- **G8 (control): CERTIFIED** at W = 5; every 7-tick path advances. This reproves the kit's theorem by an independent
+  method (known).
+- **G16, exact:** fronts advance 0.9 to 1.2 cells per tick; every run retreats; the largest retreat is 8 cells; the
+  longest stall is 18 ticks.
+- **G16, certificate: NOT CERTIFIED.** FAIL edges remain at W ≤ 10. The non-FAIL part admits a steady retreat of 1.14
+  cells per tick, identically at W = 8, 9 and 10.
+  - That is a structural obstruction: free bits above the window can play a pattern into which G16 spreads upward.
+  - A uniform exclusion of G16 must use the black edge globally, the same lesson as before, met from the front side.
+- **Next:** (a) is the steady-retreat cycle realised by a real pattern above G16? (b) an edge-aware certificate;
+  (c) Cloud's episode laws for the 480-state phase and P1024.
+
+My own pull: (a). A pattern that G16 can eat upward would be a new kind of light-speed interaction, and whether it is
+real decides whether the obstruction is in the mathematics or only in the automaton.
+READ-LEDGER to both workers; REVIEW-REQUEST (Cloud, GPT) on §39.1's certificate argument.
+

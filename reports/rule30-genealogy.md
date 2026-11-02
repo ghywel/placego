@@ -4631,3 +4631,43 @@ M_G16(k) < ∞ for all k, uniformly in the period.
 - **Counterfactual.** A non-positive cycle for every w ≤ 10. Its exact replay would show either a real stall (a long
   episode) or an over-approximation artefact. Either answer is informative.
 
+### 39.3 T34 results ([`front_g16.py`](../tests/probes/front_g16.py), [`front_cert.py`](../tests/probes/front_cert.py), [output](../tests/probes/front_cert.out))
+
+- **P34a HELD.** Exact fronts against G16 (400 runs, K = 40, 300 ticks): R(T)/T is 1.06 to 1.39 (median 1.24). Net of the
+  starting depth of about 37, that is 0.9 to 1.2 cells per tick, matching Cloud's slope of about 1.1 for M_G16.
+- **P34b HELD.** Every run retreats after time 1 (7,526 retreats in 400 runs). The longest stall is 18 ticks. In a
+  further 600 runs of 400 ticks, the largest single-step retreat is **8 cells**, also after tick 20.
+- **Control: G8 is certified.**
+  - At window 5 there is no FAIL edge, and every 7-tick path of the over-approximation advances.
+  - This reproves the kit's ether theorem by an independent finite method: no eternal point of any period ends in G8.
+    Known, reproved here.
+- **P34c REFUTED, for a structural reason.**
+  - FAIL edges remain at every window tried (224, 144 and 112 at W = 6, 8 and 10), as they must below W = 9 given real
+    retreats of 8.
+  - Even the non-FAIL part does not certify. Its least advance over length-k paths falls linearly, and **identically
+    for W = 8, 9 and 10** (−54, −83, −140, −254 and −368 at k = 25, 50, 100, 200 and 300): a steady retreat of 1.14 cells
+    per tick that does not depend on the window.
+
+### 39.4 What T34 teaches
+
+1. **The kit's front-potential method becomes a finite certificate for any phase.** For G8 it works at window 5,
+   reproving the kit independently.
+2. **For G16 a local window cannot work.**
+   - The over-approximation lets bits above the window be chosen freely, and with them the front can retreat at a
+     steady 1.14 cells per tick, however wide the window. That is the signature of a pattern above the front into
+     which G16 would spread upward.
+   - With a black edge on top the retreat is bounded, because the front cannot rise above the edge region. But the
+     automaton tracks the front only modulo G16's period and cannot see that bound.
+   - So **a uniform exclusion of G16 must use the black edge globally.** This is the same lesson as the orphan control
+     of §2.2 and the boundary findings, met from the front side.
+3. **The evidence that G16 is excluded stays strong, but computed rather than proved.**
+   - Exact fronts advance at about 1 cell per tick, with stalls of at most 18 ticks.
+   - Cloud's M_G16(k) is finite to k = 14.
+   - G16 is upward rigid at its own period (T32).
+4. **Next routes:**
+   - (a) extract the steady-retreat cycle and test whether it is realised by a real pattern Q above G16, which would be
+     a structure into which G16 spreads (curious in itself), or is an artefact of free bits;
+   - (b) an edge-aware certificate that keeps the distance from the front to the edge, or a two-stage argument (the
+     edge's mismatch emission, then the front);
+   - (c) Cloud's episode laws for the 480-state phase and P1024, which are computations, not proofs.
+
