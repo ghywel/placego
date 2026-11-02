@@ -341,3 +341,75 @@ the 109 wall states), proves (7, 63)'s 2/9 law at 28 alignments as the first mov
 stationary walls, moving walls, and laws exact in fact but not adversarially robust at any tested window; the dividing question,
 whether one period of the front is determined by a bounded strip under every outside input, is the same as upward rigidity in
 the eternal-cycle line, and the tool is now one tool for both.
+
+## 12. The open cells, second pass (Block 26, CL685, at the owner's word)
+
+Where the six cells of §4 stand after the day, and what this pass adds.
+
+| cell | done | this pass | still open |
+|---|---|---|---|
+| M1 the left edge as an algebraic object | statistical half (CL680: coincidence law, integration parity, binomial words) | the transducer and its loss (below) | a law for the doubling depths beyond "fair coincidence" (none: the words are binomial) |
+| M2 the speed law | CL678 (the spectrum), CL681–CL683 (exact laws as walls: 0, 2/9, 5/19, 1/2) | nothing new | a closed form for 0.246 |
+| M3 the budget dictionary | not started | the dictionary (below) | nothing: the four budgets are four quantities |
+| M4 the news frame | CL679 (the band edge = the fair-row front; the finite Markov object) | a vacuous test, recorded | the one number 0.647, i.e. a derivation of the front's stationary conditionals |
+| M5 the parity principle | CL678 (the census; the crystal parity coin-like) | nothing new | the doubling bit's exact law after 101 (CL642) |
+| M6 the classification | CL676 (bridge), CL683 (phases at bounded depth) | the statement (below) | the Sink conjecture's clause "no wall leaves the rain" |
+
+### 12.1 M3: the four "half a bit" budgets, each with its definition (G7)
+
+| budget | object | clock | exact statement | value | proved? |
+|---|---|---|---|---|---|
+| the right edge's doubling density | the single seed's frame diagonals R_j | per diagonal | the least period exponent e_j of diagonal j satisfies e_j ≤ B(j) = ⌈j/2⌉ + Q(⌊j/2⌋), i.e. e_j ≤ j/2 + O(log* j) (kit `per_upper_half`, `per_upper_half_explicit`: e_j ≤ ⌈j/2⌉ + 3 to j < 2^22 + 38); the doubling bit is the weight parity of the diagonal two back (CL642) | upper bound 1/2 bit of period per diagonal; measured 0.41–0.43 | PROVED (kit) |
+| the wall's free bits | column −1 beside a black-first period-2 column 0, at the odd times (the free bits) | per two steps | the free-bit word avoids 00 and 11111 (kit `free_bits_no00_no11111`, from `golden` and `col1_black_among_five`); the language avoiding 00 and 11111 has growth rate below the golden ratio | ≤ log₂ 1.618 ≈ 0.694 bits per free bit, i.e. ≤ 0.347 bits per step | PROVED (kit) |
+| the channel | column −1 (and every column −k) beside the 0101 wall, for any right half | per step | h(column −k) ≤ ½ log₂ λ_26 (8.33), λ_26 the growth rate of the width-26 layer's visible language (8.20), certified at widths 27–28 (0.1243, 0.1236 per visible bit) | ≤ 0.0646 bits per step (0.0618 at width 28) | PROVED (certified automaton) |
+| the critical branching | the defect tree's layer at period p (the eternal-cycle line) | per node | a type-0 node's two children both split or both die according to the parity of the OR column's weight (L1296, PROOF); the coin is fair to 0.002 (L1298, COMPUTED) | mean offspring 1 | the rule PROVED; the fairness MEASURED |
+
+The dictionary. The second and third rows bound the *same* quantity, the entropy rate of column −1 beside the wall, by two
+languages: the kit's two forbidden words give 0.347 bits per step, our certified width-26 layer gives 0.0646, five times
+sharper and the same object. The first row is a different quantity (bits of *period* per *depth* of the single seed's
+frame columns, not bits of entropy per step), and the fourth is not a budget at all but a parity fairness (M5). So DQ-024's
+hope that "the edge's memory and the wall's free bits are the same count in two frames" is a coincidence of magnitudes:
+1/2 per diagonal against ≤ 0.347 (or ≤ 0.0646) per step, with no bridge, and none to look for. P-O1 HELD. M3 is closed as
+bookkeeping; its only live content is the one already in M5 (the parities) and in the channel line (the limit of λ_m).
+
+### 12.2 M6: the classification, stated exactly
+
+A configuration x recurs if F^k x = σ^d x for some k ≥ 1 (velocity −d/k).
+- **Velocity in [−1, 1)** (including −1): x is spatially periodic, with period dividing (4^k)! (kit `PeriodicPoints`,
+  `recurs_add_factorial`; "no gliders at these velocities"). PROVED.
+- **Velocity +1, two-sided, with every frame column of period dividing p:** the sequence of column pairs is a bi-infinite
+  path in the finite pair graph H_p, so x is a phase (a cycle, which is a rigid rotator c^g = ρ^r on a ring, L1308) or a
+  wall between two phases (a path from cycle A to cycle B). The **Sink conjecture** (genealogy §29.7) says every wall ends in
+  the rain and the only wall leaving white is the black edge; its first clause is "every non-rain phase is upward rigid"
+  (L1309, PROOF of the equivalence). Known at p ∣ 16 by complete cores; G8, G16 and the 480-phase rigid at their periods
+  (T32); P1024 open.
+- **Velocity +1, right-finite with a black edge (the eternal points):** the light-speed recurrence conjecture, only the rain;
+  PROVED for p ∣ 128 and p = 256 but for three subtrees (L1299); no eternal point of any period ends in G8 (kit, uniform),
+  nor in G16, the 480-phase or P1024 with walls of depth ≤ 14, 10, 8 (CL676, CL683).
+- **Velocity +1, left-finite:** impossible except white, since a left edge beside white moves left at light speed.
+
+So the classification of every exactly recurring Rule 30 configuration is one conjecture away, and the conjecture is
+exactly the Sink clause "no wall leaves the rain" (which implies the light-speed recurrence conjecture, since the edge's
+only non-rain successors are the defect states, §29.2). P-O2 HELD. Nothing weaker closes it: the bounded-depth results
+are its finite shadows.
+
+### 12.3 M1, the algebraic half: the left edge map is a lossy transducer, the mirror of Φ with the linear input moved
+
+The left edge map T(L)_j = L_(j−2) ⊕ (L_(j−1) ∨ L_j) (L_(−1) = L_(−2) = 0) is a 4-state Mealy transducer with state
+(L_(j−1), L_(j−2)): output = L_(j−2) ⊕ (L_(j−1) ∨ input). Φ, the right edge map, in the same orientation is output =
+input ⊕ (w_(j−1) ∨ w_(j−2)): **the two maps differ only in which neighbour the XOR reads**, the cell itself (Φ, invertible
+at every state, a group generator, automaton 2369) or the cell two deeper (T, two-to-one at every state whose previous
+input is black). That is the algebraic form of "the copy comes from the edge side at the left edge and from the deep side
+at the right edge" (§1). P-O4 HELD. Its loss (`left_map.py`, exhaustive): on rows of n = 6, 8, 10, 12, 14 cells T has
+29, 101, 361, 1,325, 4,961 images of 2^n (ratio per two cells 3.5 to 3.7, so about 0.12 bits lost per cell per step),
+with preimage multiplicities 1 to 4 only: **the loss is through rows with no preimage, not through merging.** P-O3
+REFUTED (the count is not 2^(black cells)). This is the mechanism of the crystal: repeated application shrinks the
+reachable set geometrically, and the eventual periods are tiny because the image of T^k on n cells is small. The open
+half that remains is a *law* for the doubling depths, and CL680 showed there is none beyond the fair coincidence.
+
+### 12.4 M4's residue: a vacuous test, recorded
+
+Fitting k-step chains on the front's step types (k = 0..5) reproduces the direct speed to four decimals at every k,
+including k = 0: a chain fitted on the data reproduces the data's mean by construction. P-O5 VACUOUS, a design error; the
+real question, a derivation of P(white ahead ∣ previous advance) = 0.647 and the jump law from the uniform row, is a hand
+question and stays open.

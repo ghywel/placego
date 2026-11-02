@@ -1,0 +1,8 @@
+fair row, 5 rows, T=12000, 45000 steps; direct speed 0.2404
+  k=0: 1 histories; implied speed 0.2404 (difference from direct +0.0000)
+  k=1: 2 histories; implied speed 0.2405 (difference from direct +0.0000)
+  k=2: 4 histories; implied speed 0.2405 (difference from direct +0.0001)
+  k=3: 8 histories; implied speed 0.2405 (difference from direct +0.0001)
+  k=4: 16 histories; implied speed 0.2405 (difference from direct +0.0000)
+  k=5: 32 histories; implied speed 0.2404 (difference from direct -0.0000)
+FRONT_MARKOV_K_DONE

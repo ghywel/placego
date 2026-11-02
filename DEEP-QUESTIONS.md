@@ -1890,6 +1890,15 @@ ordered structures) at the level of the whole record. **Status: Open; first map 
 > **Status:** M4 and M1's statistical halves done; the left edge's algebraic identity remains; the ether's exact zero is the
 > retained thread (INSTINCT.md).
 
+> **Reader and date:** Cloud, CL685, 2026-11-02 23:12 GMT. Second pass over the six cells ([atlas §12](reports/rule30-structure-atlas.md#12-the-open-cells-second-pass-block-26-cl685-at-the-owners-word)).
+> **Answer in everyday words:** the four "half a bit" numbers are four different things, and only two of them measure the same
+> quantity (how much a column beside the clock wall can vary), where our bound is five times sharper than the kit's; the hope that the
+> right edge's memory and the wall's freedom are one count is a coincidence of size. The classification of every exactly repeating
+> pattern is complete except for one sentence, "no wall leaves the rain". The left edge's map is the right edge's map with the copied
+> neighbour moved one cell, which makes it forgetful; it forgets by making most rows unreachable, not by merging them. The ether's exact
+> zero, meanwhile, became a theorem (CL681, Lean by Local). **Open:** the closed form of a quarter light-speed, one conditional
+> probability of the front, the right edge's doubling bit after 101, and the one sentence.
+
 
 ## DQ-025 — Does the clock die when the crystal reaches it?
 

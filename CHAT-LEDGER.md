@@ -17181,3 +17181,36 @@ position within these three ticks. It agrees with T47 (L1329), where one-cell fl
 Your move to the guarded wall-clause exporter is noted, and the pair-only quotient is parked. My L1330 dichotomy (capture
 = leaving the bad core B) crossed with GC2397. The offer of B's minimal avoiding cycles and their hidden-bit words stands
 if they help the wall representation; I will not start it without your word.
+
+## CL685 — Cloud to the owner: the atlas's open cells, second pass. M3 closed as bookkeeping (the four budgets are four quantities; the kit's free-bits language and our channel bound the same entropy, ours five times sharper); M6 stated exactly (one conjecture away: the Sink clause "no wall leaves the rain"); M1's algebraic half (the left edge map is Φ with the linear input moved, lossy through unreachable rows); M4's residue test vacuous (2026-11-02 23:12 GMT)
+
+At the owner's word ("tackle the remaining atlas's open cells"). Predictions Block 26 first; [atlas §12](reports/rule30-structure-atlas.md#12-the-open-cells-second-pass-block-26-cl685-at-the-owners-word);
+probes `left_map.py`, `front_markov_k.py`.
+
+**Where the six cells stand** (atlas §12's table). M2, M4, M5 done as statistical statements (CL678, CL679); M1's statistical
+half done (CL680); M3 now closed; M6 stated; the residues open are the three "one number" questions (0.246's closed form,
+the 0.647 conditional, the doubling bit after 101) and the one conjecture (Sink).
+
+- **M3 (G7, PROVED pieces assembled).** The right edge's 1/2 is the kit's `per_upper_half` (bits of *period* per *depth*
+  of the single seed's frame columns); the wall's free bits are the kit's `free_bits_no00_no11111` (column −1 at odd times
+  avoids 00 and 11111: ≤ 0.347 bits per step); our channel is 8.33's h(column −k) ≤ ½ log₂ λ_26 ≤ 0.0646 bits per step; the
+  critical mean 1 is a parity fairness, not a budget. The second and third bound the same entropy, ours five times sharper;
+  the first is a different quantity; DQ-024's hope of one count in two frames is a coincidence of magnitudes. P-O1 HELD.
+- **M6.** Velocity in [−1, 1): spatially periodic (kit `PeriodicPoints`, PROVED). Velocity +1 two-sided with bounded
+  column periods: a phase (a rotator, L1308) or a wall between phases; the Sink conjecture says every wall ends in the rain.
+  Right-finite: the light-speed recurrence conjecture. Left-finite: impossible but white. The classification is exactly one
+  clause away, "no wall leaves the rain", and nothing weaker closes it. P-O2 HELD.
+- **M1, algebraic.** T(L)_j = L_(j−2) ⊕ (L_(j−1) ∨ L_j) is a 4-state transducer that differs from Φ only in which neighbour
+  the XOR reads (the cell two deeper instead of the cell itself): the algebraic form of "the copy comes from the edge side".
+  It is two-to-one at every state whose previous input is black, and its loss is through rows with no preimage: 29, 101,
+  361, 1,325, 4,961 images of 2^n for n = 6..14, multiplicities never above 4 (COMPUTED, exhaustive). P-O4 HELD, P-O3
+  REFUTED. That is the crystal's mechanism in one line: the reachable set shrinks geometrically under T.
+- **M4's residue.** k-step chains fitted on the front's data give the direct speed at every k including k = 0: vacuous by
+  construction, a design error recorded (G13). The one number stays a hand question.
+
+Failed predictions: P-O3; unguarded: the vacuous test design (no new guard: G11 covers "a statistic whose answer is forced
+by its definition"). READ-LEDGER to both workers.
+
+My own pull: with M3 closed and M6 stated, the live residues are the Sink clause (Local's capture line) and the two hand
+numbers; mine is the doubling bit's exact law after 101 (M5's residue, CL642), one block, because it is the only constrained
+parity in the record and the right edge's rate is where a non-uniform constant first appears.
