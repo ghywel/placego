@@ -5866,3 +5866,31 @@ behind the window. The advance of an edge is recovered from its classes: a ≡ �
     follows A's edges, and enters S_E at depth ≥ 12 within 113 ticks, whatever lies behind the window. From there
     GC2386 applies.
   - So a real front at depth ≥ 16 is captured exactly when its 8-cell state ever leaves B.
+
+## 53. What decides the exit from the bad core? (T49, L1334)
+
+### 53.1 Predictions, written before the run (`funnel_attractor.py --exits`)
+
+**Structural fact (by definition).** Every state v of the bad core B has an edge into B. So when a real front's state
+leaves B (into A or S_E), at least one branch of v (a choice of the two unknown cells R − 9, R − 10, or of the free
+cells after a retreat) would have stayed in B. **Every exit from B is decided by cells beyond the 8-cell window.**
+Capture is always triggered from outside the window.
+
+**Question.** Which cells decide it in real runs?
+- The two cells just beyond the window, on a move with advance ≥ 0. Then no window cell is freed.
+- Or cells drawn in by a retreat.
+
+For each real exit tick (P1024, W = 8, the 200 rows of T48) the record is:
+- the advance of the real move;
+- how many of v's (unknown-pair, free-bit) branches lead into A ∪ S_E against B;
+- whether the exit depended only on the unknown pair. It does when every branch with the real unknown pair leaves B and
+  some branch with another pair stays.
+
+**Predictions.**
+- **X1.** At least 80% of real exits happen on moves with advance ≥ 0, decided by the two cells R − 9, R − 10. Lean 60%.
+- **X2.** At a typical exit, at most half of v's branches stay in B: the exit is likely given the window, not a rare
+  choice. Lean 50%.
+- **Counterfactual.** Exits mostly on retreats would mean capture is triggered by deep cells pulled in by the front's own
+  fall, which is a longer history.
+
+Record searched: §52 (A, B, the guard), §45 (bad core), T45 (reading depth); exits from B not measured before.

@@ -24,6 +24,7 @@ for line in open(sefile):
     if not line.startswith('#') and line.strip():
         c, w = line.split(); assert len(w) == W; SE[(int(c) << W) | int(w, 2)] = True
 src, dst = [], []; fail = np.zeros(NS, dtype=bool)
+EXITS = '--exits' in sys.argv; br = {}
 for cl in range(p):
     E = {o: (col0 >> ((cl + 195 * o) % p)) & 1 for o in range(-W - 2, 3)}
     for win in range(1 << W):
@@ -44,6 +45,8 @@ for cl in range(p):
             known = [Nn[a - j] if a - j >= -W else None for j in range(1, W + 1)]
             free = [i for i, x in enumerate(known) if x is None]
             c2 = (cl + 1 + 195 * a) % p
+            if EXITS:
+                br.setdefault(v, []).append((unk, a, len(free), [None]))
             for f in range(1 << len(free)):
                 w2 = 0
                 for i, x in enumerate(known):
@@ -51,6 +54,8 @@ for cl in range(p):
                         x = (f >> free.index(i)) & 1
                     w2 |= x << i
                 outs.add((c2 << W) | w2)
+                if EXITS:
+                    br[v][-1][3].append((c2 << W) | w2)
         for u in outs:
             src.append(v); dst.append(u)
 src = np.array(src, dtype=np.int64); dst = np.array(dst, dtype=np.int64)
@@ -96,16 +101,23 @@ T = 6 * K + 2400; depth = 2 * T + K + 16; mask = (1 << depth) - 1
 bits = [(col0 >> i) & 1 for i in range(p)]
 base = [int(''.join(str(bits[(k + 195 * n) % p]) for n in range(depth))[::-1], 2) for k in range(p)]
 rev = [int(format(v, '0%db' % W)[::-1], 2) for v in range(1 << W)]
-guard_rows = []
+guard_rows = []; exit_rows = []
+Bset = ~(SE | A)
+def prev_unk(d, R):
+    return ((d >> (R - W - 1)) & 1) | (((d >> (R - W - 2)) & 1) << 1)
 rng = random.Random(48); leads = []; inA_share = []; alarms = 0; entry_ranks = []; uncapt = 0
 for it in range(N):
     th = rng.randrange(p)
     x = rng.getrandbits(K) | (base[th] >> K << K)
     first = None; capt = None; nticks = 0; nA = 0
+    prev = None
     for t in range(T + 1):
         d = (x ^ base[(th + t) % p]) & mask; R = d.bit_length() - 1
         if R >= 12:
             v = (((th + t + 195 * R) % p) << W) | rev[(d >> (R - W)) & ((1 << W) - 1)]
+            if EXITS and prev is not None and Bset[prev[0]] and not Bset[v]:
+                exit_rows.append((prev[0], prev[1], R - prev[2]))
+            prev = (v, prev_unk(d, R), R)
             if SE[v]:
                 capt = t; break
             nticks += 1
@@ -132,6 +144,23 @@ print('   real paths (%d prefixes, K=%d): not captured %d; entered A before capt
           N, K, uncapt, len(entry_ranks), pct(leads, 0.5), pct(leads, 0.9), max(leads), pct(entry_ranks, 0.5),
           max(entry_ranks) if entry_ranks else None, alarms), flush=True)
 print('   share of pre-capture ticks spent in A: median %.3f, max %.3f' % (pct(inA_share, 0.5), max(inA_share)), flush=True)
+if EXITS:
+    from collections import Counter
+    advs = Counter(); pair_only = 0; stay_frac = []
+    for v, u_real, a_real in exit_rows:
+        bl = [(unk, a, [x for x in succ[1:]]) for unk, a, nf, succ in br[v]]
+        brs = [(unk, x) for unk, a, xs in bl for x in xs]
+        stay = [Bset[x] for unk, x in brs]
+        stay_frac.append(sum(stay) / len(stay))
+        real_pair = [Bset[x] for unk, x in brs if unk == u_real]
+        other = [Bset[x] for unk, x in brs if unk != u_real]
+        if real_pair and not any(real_pair) and any(other):
+            pair_only += 1
+        advs[a_real] += 1
+    print('   exits from B on real paths: %d; real advance at exit: %s; decided by the unknown pair alone: %d (%.1f%%); '
+          'share of branches staying in B at the exit state: median %.2f' % (
+              len(exit_rows), sorted(advs.items()), pair_only, 100.0 * pair_only / max(1, len(exit_rows)),
+              sorted(stay_frac)[len(stay_frac) // 2] if stay_frac else -1), flush=True)
 if GUARD:
     print('   real entries into A: %d; satisfying the depth guard of their state: %d; least margin (R - required) %d' % (
         len(guard_rows), sum(1 for R_, q in guard_rows if R_ >= q), min(R_ - q for R_, q in guard_rows)), flush=True)
