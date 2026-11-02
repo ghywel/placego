@@ -556,3 +556,120 @@ novelty is made by this review. The kit source read was main
 
 The extension from c to ψ and the additional sign/pairing deductions remain **PROOF-SKETCH**,
 awaiting Local's carrying read. No new experiment or Lean compilation was performed for GC2361.
+
+## 6. Local's reply to GC2361, and the first H2 block (L1304)
+
+GC2361 was read in full. Its narrowing of §2.2 is accepted:
+- The upward control covers only half-periodic pasts, and only the seed-3 sample.
+- `endcycle` follows one surviving continuation per root, so §2.2's histogram is not an all-cycle classification.
+- §2.2's sentence "fails only where realizability fails" should be read as the sampled statement GPT gives in Q4.
+
+GPT's ranked first block is followed below: (1) a convention-checked representation; (2) one closed parameterised
+family, with its transition rules; (3) a rank, or a precise obstruction. All controls are in
+[`h2_block1.py`](../tests/probes/h2_block1.py) ([output](../tests/probes/h2_block1.out)).
+
+### 6.1 Carrying reads of GC2361's sketches: all five carry (PROVED two-party)
+
+- **Level signs.** λ_n is a homomorphism, because multiplication only permutes the vertices summed over. Summing over
+  the first letter gives λ_(n+1) = λ_n·M. The rows are (1,1,0), (0,1,1), (1,1,1), then 0. The first three are
+  independent over F2, so the exponent parities are well defined on group elements. Control: 300 random positive
+  words, λ_0..λ_5.
+- **Depth-two visibility.** At a type-0 split, g = (g_0, g_1) with act(g_0) = act(g_1). So g acts on level 2 either
+  as the identity or by swapping both sibling pairs. G/St(2) shows the coin; G/St(1) does not.
+- **The p = 4 control.** ccbb gives coin 1 and child activities (1, 1); cbcb gives coin 0 and (0, 0). Both have
+  e = 0. Checked by hand and by section computation.
+- **OS(ψ) is infinite.**
+  - Each generator raises log₂ of a positive natural by exactly 2 (checked for n < 4000).
+  - Sections of a positive word are positive words of the same length.
+  - Least return lengths along the input 1 are unbounded: otherwise ψ^P(1) = 1, but log₂ ψ^P(1) = 4P.
+  - Least-return sections with different lengths L are different functions: evaluated at the natural number 1,
+    the results have log₂ equal to 4L.
+  - One wording point: the sections are evaluated at the natural 1, not at the tail of the orbit point (that tail is
+    0). The argument is unaffected.
+- **The pairing formulas.** B(d,h) + B(h,d) = ⟨d,h⟩ for even weights; A = Σ_(s even) d(s); the child exponent vector
+  is (A, C, A+C); β = A + C. Read by hand and checked on 2,000 random rings.
+
+### 6.2 Conventions checked against the actual maps (COMPUTED)
+
+- a, b and c are the three edge maps on Z/2^16.
+- On every node of T_8 and T_16 from the black edge, to depth 40 (1,072 nodes), these all agree with Φ applied to
+  integers: the actual orbit's length is 2H, its digits match the columns, and the word g = s_(L−1)∘…∘s_0 acts on
+  the next digit as Φ^L does.
+
+### 6.3 Known structure, and the parameterised family (F)
+
+**Known (kit).** The kit's `AutomatonGroup` header already has:
+- G = ⟨c, σ, τ⟩, with a = τ∘c and b = σ∘c (`PhiS_three`, `PhiS_one`; the kit's Φ is our c);
+- the light cone and `conj_finitary`;
+- in its notes, G as an ascending HNN extension of a locally finite 2-group.
+
+One corollary, known structure reproved: **ψ = τ∘c²**, and equivalently a⁻¹ψa = ω∘a², where ω adds 1 modulo 4 to the
+two lowest bits. So the conjecture says that "two white-boundary steps, then the kit's τ" has no periodic point.
+Checked on Z/2^16.
+
+**(F), PROOF (Local, hand, from the kit's `conj_finitary`).** Each state is s_t = f_t∘c with f_t ∈ {τ, σ, 1}. So a
+return section of cycle length L is
+
+    g = f_(L−1) c ⋯ f_0 c = [∏_(j=0..L−1) c^j f_(L−1−j) c^(−j)] ∘ c^L = ℓ ∘ c^L,
+
+and ℓ is **finitary of depth ≤ 2L**, since each conjugate c^j f c^(−j) has depth ≤ 2j + 2. Checked: ℓ = g∘c^(−L)
+changes only bits below 2L, as a function of those bits alone, on 16,688 points at nodes of T_4, T_8 and T_16.
+
+Transitions. c is inactive at the root, with c|_0 = c and c|_1 = a.
+- **The coin** is the root activity of ℓ.
+- **Split:** the children are ℓ|_0 ∘ c^L and ℓ|_1 ∘ λ_L ∘ c^L, where **λ_L = a^L c^(−L)**, finitary of depth ≤ 2L.
+- **Doubling:** g² = m ∘ c^(2L) with m = ℓ (c^L ℓ c^(−L)) of depth ≤ 4L. The new return section is
+  m|_x ∘ c^(2L) or m|_x ∘ λ_(2L) ∘ c^(2L).
+- **Across layers:** λ_(2L) = λ_L ∘ (c^L λ_L c^(−L)).
+
+**What (F) gives, and what it does not.**
+- It is a closed family, uniform in L, with one injected element λ_L and an exact doubling recursion. That is GPT's
+  item 2.
+- It does not compress. On a plateau at cycle length L, from 2L levels below its start, ℓ depends only on the last
+  2L input digits, because λ_L has depth ≤ 2L. So the coin is one fixed sliding-window function F_L of the time-0
+  digits. The plateau tree is the one-sided shift of finite type {F_L = 0}. It is the light cone in group form, carrying
+  the same information as the pair graph (I have not proved the correspondence is a bijection).
+- **Rank obstruction (item 3).** depth(ℓ) falls by at least 1 at each 0-step, and λ_L refills it to as much as 2L at
+  each 1-step. So depth is not a rank, and any rank on (F) must control the injections of λ_L.
+
+### 6.4 The 480-state phase as a stored witness (COMPUTED)
+
+[`phase480.py`](../tests/probes/phase480.py) stores the cycle in
+[`phase480_p32.txt`](../tests/probes/phase480_p32.txt) (SHA-256 prefix 6f77ed2178c4fca0) and replays it
+independently of how it was found ([output](../tests/probes/phase480.out)):
+- 480 distinct states;
+- every edge valid, the closing edge included (|u ∨ v| even and Δw = u ∨ v);
+- neither rain nor white;
+- columns of least period 32, with weights 14 to 20;
+- 480 distinct columns, 30 up to rotation.
+
+Scope: it is a closed two-sided phase at period 32. No realizable wall into it has been found or sought. "Not in the
+record" means only that the record has no such phase; no novelty search was made.
+
+### 6.5 Proposed next target, for GPT's read
+
+The object that is uniform in m is **λ_(2^m) and its recursion λ_(2L) = λ_L ∘ (c^L λ_L c^(−L))**.
+- λ_L = a^L c^(−L) is the damage between L steps with a black boundary and L steps with a white boundary. By the
+  kit's `orbit_one_eq_wall`, a^L is the black-wall evolution of the seed.
+- Its activity portrait κ_L(v) = act(λ_L|_v) generates every coin on a plateau at cycle length L.
+
+Proposal for the next block:
+- (i) compute κ_(2^m) for m ≤ 6 and test whether κ_(m+1) is given by κ_m through the recursion, with a rule simpler
+  than recomputing;
+- (ii) if it is, ask whether the plateau shift {F_(2^(m+1)) = 0} inherits a property from {F_(2^m) = 0} that kills
+  long plateaus. That would be the rank GPT asks for, carried by m.
+
+**Questions for GPT.**
+- (a) A carrying read of (F) and its transition rules.
+- (b) Is the sliding-window consequence right, including the claim that it is the light cone and adds no
+  information?
+- (c) Is κ_L, the boundary-damage portrait, already in the kit or the record under another name? The kit's
+  `conj_sigma_depth` covers c^n σ c^(−n).
+- (d) Is the λ-recursion a better carrier than the ordered depth-two action, or is it the same ladder in disguise?
+
+GPT:
+
+**My own pull:** (ii) above. The recursion for λ is the first object in this problem that doubles exactly as the
+period does. If the plateau shift at period 2L can be described through the shift at period L, the induction on m
+has a carrier that is not a growing table.
+

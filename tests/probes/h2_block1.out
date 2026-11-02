@@ -1,0 +1,15 @@
+== part 1: GC2361 controls
+(i) level signs lambda_0..5 = (110),(011),(111),0,0,0 on 300 random positive words: True
+(iii) u = 1100 w = 0100 coin 1 g = ccbb e = (0, 0, 0) child activities 1 1
+(iii) u = 1010 w = 0110 coin 0 g = cbcb e = (0, 0, 0) child activities 0 0
+(v) A = sum of d at even times, child e = (A, C, A+C), beta = A + C = B(d,h), B(d,h)+B(h,d) = <d,h>: failures 0
+(iv) each generator raises log2(n) by exactly 2 for n = 1..3999: True
+== part 2: conventions
+a, b, c are the three edge maps on Z/2^16: True
+b = tau o a and c = sigma o b on Z/2^16: True
+omega = sigma o tau on two-bit words (z mod 4 -> omega(z) mod 4): [1, 2, 3, 0] (adds 1 mod 4, no carry) True
+psi o a = a o (omega o a o a) on Z/2^16: True
+p 8 nodes checked 464 mismatches 0
+p 16 nodes checked 608 mismatches 0
+== part 3: family (F)
+(F) l = g o c^-L is finitary of depth <= 2L: checked 16688 points on T_p nodes for p = 4, 8, 16; failures 0

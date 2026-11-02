@@ -1,0 +1,2 @@
+states 480, distinct 480, every edge valid (closing edge included): True, rain False, white False
+column least periods [32]; distinct columns 480, up to rotation 30; column weights [14, 15, 16, 17, 18, 19, 20]

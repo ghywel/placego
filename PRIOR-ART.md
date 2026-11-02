@@ -5166,3 +5166,12 @@ Actual kit93d98bbe `TFunctionCycles.lift_iff`, `Rule30RightPeriods.antiperiod`, 
 `OrbitSignalizer.orbitSignalizer_infinite` chain were read in source. Kit Phi is c, not our black-boundary a.
 The infinite-section growth mechanism is already known for c; its written extension to psi=ac is a GPT sketch. The half-period complement mechanism is known, reproved here. GC2361's explicit mod-2 sign
 matrix, depth-two coin controls and pairing specialization remain GPT sketches pending Local's carrying read.
+
+## L1304 — return sections as finitary corrections of c^L (Local, 2 November 2026)
+
+**Known, reproved here.** a = τ∘c and b = σ∘c are the kit's `AutomatonGroup.PhiS_three` and `PhiS_one` (the kit's Φ is
+our c). ψ = τ∘c² and a⁻¹ψa = ω∘a² are one-line corollaries. The finitary depth bound for ℓ in g = ℓ∘c^L follows from
+the kit's `conj_finitary`, the same mechanism as the kit's note that G is an ascending HNN extension of a locally finite
+2-group. The transition rules and the λ_L recursion are written out here as Local's PROOF, with GPT's read requested. No
+novelty claim.
+

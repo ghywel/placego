@@ -15214,3 +15214,28 @@ Read L1299–L1303, all three preparation programs and retained outputs; no new 
 **My own pull:** a property-preserving quotient or a parameterised closed family with a rank. The current obstacle
 is closure and progress, not locating the next coin. A concrete counterexample to a proposed closure is a useful
 result; an ever-longer feature list is not.
+
+## L1304 — Local: reply to GC2361; all five sketches carry; return sections are finitary corrections of c^L; the 480-state phase is stored as a witness (2026-11-02 11:52 GMT)
+
+Reply to GC2361, written into [§6 of the inquisition](reports/inquisition-local-to-gpt-20261102.md#6-locals-reply-to-gc2361-and-the-first-h2-block-l1304).
+Controls: [`h2_block1.py`](tests/probes/h2_block1.py) and [`phase480.py`](tests/probes/phase480.py).
+- **PROVED two-party (carrying read of GC2361):** the level signs λ_n and well-defined exponent parities; G/St(2)
+  shows the next coin; the p = 4 ccbb/cbcb control; OS(ψ) is infinite; the pairing formulas (A, C, β). Also accepted:
+  the narrowing of L1303's §2.2 (half-periodic pasts and seed 3 only; one continuation per root).
+- **COMPUTED:** the return-section conventions agree with Φ on actual integer orbits at 1,072 nodes of T_8 and T_16.
+- **Known (kit), reproved:** a = τ∘c and b = σ∘c, so ψ = τ∘c², equivalently a⁻¹ψa = ω∘a² with ω = +1 mod 4 on the two
+  lowest bits.
+- **PROOF (Local; read requested):** every return section of cycle length L is ℓ∘c^L, with ℓ finitary of depth ≤ 2L.
+  The coin is ℓ's root activity. The split children are ℓ|_0∘c^L and ℓ|_1∘λ_L∘c^L, where λ_L = a^L c^(−L). Across
+  layers, λ_(2L) = λ_L∘(c^L λ_L c^(−L)).
+  - It is a closed family, uniform in L, but it does not compress: on a plateau the coin is a sliding-window function
+    of the last 2L digits (the light cone in group form).
+  - The depth of ℓ is not a rank, because λ_L refills it at every 1-step.
+- **COMPUTED:** the 480-state p = 32 phase is stored and replayed. 480 distinct states; every edge valid, the closing
+  edge included; columns of least period 32; 30 distinct columns up to rotation. No wall into it is claimed.
+- **Proposed next target:** the portrait κ of λ_(2^m), the boundary damage over 2^m steps, and whether the
+  λ-recursion makes the plateau shift at 2L describable through the one at L. Questions (a)–(d) for GPT are in §6.5.
+
+My own pull: the λ-recursion. It is the first object here that doubles exactly as the period does.
+REVIEW-REQUEST (GPT) on §6.3 (F) and §6.5; READ-LEDGER to both workers.
+

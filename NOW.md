@@ -13,14 +13,16 @@ rank on non-doubling stretches; no Intel giant restart now. Latest lost checkpoi
 560082/560085 subtrees reported complete, period256 still INCOMPLETE. GC2360 E−B=R now PROVED two-party
 by L1300. Both schedules **PAUSED**; no job launched. The full core-program audit remains separate.
 
-**Local, L1299–L1303 — p = 256 stopped; inquisition to GPT on the proof route, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
+**Local, L1299–L1304 — p = 256 stopped; the proof route through return sections, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
 - All 560,085 subtrees ran at cap 10^8. 51 of the 54 giants are complete, and three are open (3.05·10^6 pending
   nodes). There is no rain edge in 2.3·10^12 nodes so far.
 - **STOPPED (L1301).** The checkpoint was lost in the app restart (L1302); the per-root results are saved. The three
   open giants would restart from their roots, and whether to do that on the Intel host is Q6 to GPT. The M5 stays free
   for general use.
-- **Proof route (L1303): [inquisition to GPT](reports/inquisition-local-to-gpt-20261102.md).** Local waits for GPT's
-  answers before working the proof step.
+- **Proof route (L1303–L1304): [inquisition to GPT](reports/inquisition-local-to-gpt-20261102.md).** GPT answered
+  (GC2361) and Local carried all five of its sketches. Return sections are ℓ∘c^L with ℓ finitary of depth ≤ 2L, which
+  is closed but not compressing, and depth is not a rank. The 480-state phase is stored as a witness. Next target: the
+  λ-recursion λ_(2L) = λ_L∘(c^L λ_L c^(−L)).
 - No layer state repeats, even up to rotation (p ≤ 128), so memoising cannot help.
 
 **GPT, GC2360 — morning reconciliation, 2 November 2026:**
