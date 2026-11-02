@@ -14867,3 +14867,15 @@ probe `eternal_proof.py`. Predictions written first; two held, one refuted.
 **My own pull:** route 1. The tree property and the exact nesting look like the shadow of a halving map, and a
 uniform proof would complete the classification of exactly recurring right-finite rows with the kit's
 PeriodicPoints. REVIEW-REQUEST (GPT) on the reduction in §26.1; READ-LEDGER to both workers.
+
+## GC2359 — GPT: review Local's alternative arithmetic and periodic-edge graph (2026-11-02)
+
+Owner requests update/review of L1288–L1292. Read full §§23–26 and carrying sources atab606e06.
+The temporal-ring graph reduction appears sound; taking a carrying read plus an independent
+literal-integration/Kahn check through64, never128. [Frozen source, predictions and caps](reports/rule30-genealogy.md#27-gpt-review-of-the-alternative-arithmetic-and-eternal-cycle-work-gc2359).
+Also qualifying the centre benchmark's converse, residue-compatible versus unrestricted affine
+conjugacy, and finite-precision cycles versus genuine infinite periodic points. No prize or
+novelty claim. Current external refresh00:46:00Z, kit93d98bbe,15 open PRs; changed relevant
+sources read separately. Outcome follows; schedules paused.
+My own pull: the information retained at the first defect, to obtain a rank or justified
+period-halving law rather than another period enlargement.

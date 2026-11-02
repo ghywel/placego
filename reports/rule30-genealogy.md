@@ -2545,3 +2545,45 @@ Routes:
 2. A counting identity on the time-depth torus. A cycle would be a doubly periodic pattern, and on it each column is
    black and white equally often at the times its driver fires. Find a contradiction away from the rain.
 3. A C bitset search under `run_capped.py` to extend the machine check to p = 128.
+
+## 27. GPT review of the alternative arithmetic and eternal-cycle work (GC2359)
+
+Owner asks to update and review Local L1288–L1292. Taking the finite-graph carrying read and an
+independent capped check through p=64 only. The main question is whether a non-alternating
+right-edge code can support an infinite spatial continuation at fixed temporal period.
+The period128 search is not repeated or enlarged.
+
+Record searched: §§23–26 and the complete `deep_arithmetic.py`, `eternal_cycles.py`,
+`eternal_cycles_128.py`, `eternal_proof.py` sources and retained outputs; the current actual kit
+`Rule30Equivalents.PeriodicPoints` hypotheses and proof interface, and `Rule30FrozenRuler`.
+External refresh completed 2026-11-02T00:46:00Z, kit93d98bbe049177d2c1546b6b0714aa33703ae13d,
+15 open PRs. The velocity restriction in `PeriodicPoints` excludes +1 as Local says; its source
+SHA256 is dd7e300baf996d52dabe789ce8537f1a5fb03c59504c233f37544bbd17843f57. This is a review of
+existing work, not a novelty certificate. The new PR80–82 sources are a separate scoped read.
+
+### Frozen independent finite check
+
+Prediction: literal integration of each temporal ring and Kahn's indegree deletion reproduce
+Local's six reachable-state counts2,6,30,62,2110,171774, with no return to rain and no cycle.
+Retain a decreasing integer rank for every visited state, rather than just the word `False`.
+Counterfactual: any successor mismatch, larger count, cycle, rain return or violated rank stops
+the stage and requires revisiting the classification. Controls: every pair of rings at p=2,4,8
+against the original packed integration; the rain is a positive cycle control, an odd driver
+must fail closure, and an injected self-loop must be rejected. Unexpected structural check:
+look for an exact-period-p state with an exact-period-p successor at p<=16, to test the literal
+one-step doubling proposal. No automatic width/period increase.
+
+Source `tests/probes/eternal_review.py`, SHA256
+`aee252ca970bd6f6734399274ac423b3605a5255fde34f31b4107df17e6ae0f0`.
+Local source SHA256 f6b155ecac74545c98400ea5fdbf93f746ecccadd71ba0cb004664835db02302.
+One Intel job at nice10, one Python thread, no packages or children. Fixed p=2,4,8,16,32,64,
+200000 states per graph;120 aggregate CPU seconds,90s child CPU guard,100s hard per-process
+CPU,180s wall,768MiB tree RSS, max2 tracked processes,16MiB/file and128MiB stage disk.
+Observed free+inactive6364MiB, load2.19; launch floor4096MiB, running floor3072MiB,
+swap-growth stop64MiB. Use run_capped with tree tracking. Per-process limits do not enforce
+aggregate CPU; retain child and supervisor receipts. No GPU or thermal measurement. A failed
+pressure/monitor/resource stage is retained and not automatically retried.
+
+My own pull: find what information a first defect retains when OR masks one of its inputs.
+That may supply a decreasing rank or a rigorous period-halving relation. The observed nesting
+alone does not supply that relation; I favour this local information question over period128.
