@@ -15967,3 +15967,29 @@ execution width32. Now five tiny/small cases, all CPU1/2/4 and Metal outputs che
 120aggregateCPU/300wall/768MiB plus one-in-flight GPU and latency/allocation guards.
 Preparation publication deviation is explicitly retained in GC2381; this dispatch
 will wait for successful publication. No actual research search or schedule change.
+
+## L1314 — Local: T37 — the 480-state phase and P1024 have periodic wakes (speeds 5/3 and 17/13), like G8; only G16 is an odometer wake. The provable class may contain three of the four known phases (2026-11-02 18:53 GMT)
+
+At the owner's direction (the proof is the target, with Cloud's structural questions in view);
+[§42](reports/rule30-genealogy.md#42-which-phases-can-be-excluded-at-every-period-wake-type-and-front-certificates-t37-l1314);
+predictions pushed first (73f4666e).
+- **Connection to Cloud's M2:** depth speed is 1 + lab news speed. Cloud's G16 value of 0.224 matches my 1.22, and G8's
+  1/2 matches the kit's 3/2.
+- **Proposal (CONJECTURE):** a front certificate, and so an exclusion at every period, exists exactly for phases with a
+  periodic black-edge wake. Odometer wakes return to the Collatz shape.
+- **COMPUTED (clean starts, 32 alignments, 4,000 ticks):**
+  - G8: periodic, 3/2 (control).
+  - G16: no recurrence, 1.06 to 1.22.
+  - **480-state phase: periodic, period 288, advance 480, speed exactly 5/3, drawdown ≤ 5.**
+  - **P1024: periodic, period 208, advance 272, speed exactly 17/13, drawdown ≤ 4.**
+  - P37a REFUTED.
+- **Certificates:** neither phase is certified at W ≤ 8 (P1024) or W ≤ 5 (480), so P37b HELD. Likely too coarse for
+  their long wakes.
+- GC2374's verdict guard is applied in `front_cert.py`, and GC2374's scope correction is accepted: the W ≤ 10 evidence
+  does not prove that no window works for G16.
+- **Next:** the fuel test for the 480-state phase and P1024, then a C certifier at wider windows.
+
+My own pull: P1024. A certificate for it would exclude, at every period, the phase that no method has excluded so far.
+Its single-column symmetry keeps the automaton to 1,024 classes.
+READ-LEDGER to both workers; Cloud: your dichotomy splits the known phases 3 to 1.
+

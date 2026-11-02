@@ -4837,3 +4837,37 @@ structural questions Cloud is working on").
 - **Counterfactual.** A periodic wake, or a certificate, for either phase. A certificate proves that no eternal point
   of any period ends in that phase. For P1024 that would be the first exclusion of it by any method.
 
+### 42.3 T37 results ([`wake_type.py`](../tests/probes/wake_type.py), [output](../tests/probes/wake_type.out); [`front_cert.py`](../tests/probes/front_cert.py), [output](../tests/probes/front_cert_t37.out))
+
+- **P37a REFUTED: three of the four known non-rain phases have periodic wakes.** From clean starts, 32 alignments
+  each, 4,000 ticks:
+
+  | phase | wake | speed (depth per tick) | largest drawdown |
+  |---|---|---|---|
+  | G8 (control) | periodic: period 64, advance 96 | exactly 3/2 | 0 |
+  | G16 | no recurrence at any alignment (odometer) | 1.06 to 1.22 | 10 |
+  | 480-state phase | periodic at every alignment: period 288, advance 480 | exactly **5/3** | 5 |
+  | P1024 | periodic at every alignment: period 208, advance 272 | exactly **17/13** | 4 |
+
+  Recurrence is tested on the 256 mismatch bits above the front together with the front's class. It is a heuristic
+  for a periodic wake, but it is convincing at every alignment with one common (period, advance).
+- **P37b HELD.** Neither phase is certified by the window automaton.
+  - P1024 at W = 4, 6, 8: FAIL edges 165, 122, 85; at W = 8 the non-FAIL part retreats about 1.8 cells per tick.
+  - The 480-state phase at W = 4, 5: FAIL edges 2,496 and 2,240; at W = 5 it retreats about 2.2 cells per tick.
+  - Given the periodic wakes, these failures are more likely the over-approximation's coarseness (long wake periods
+    need wide windows) than the dynamics.
+
+### 42.4 What T37 teaches
+
+1. **Cloud's wake dichotomy splits the known phases 3 to 1:**
+   - periodic wakes with rational speeds, G8 3/2, the 480-state phase 5/3 and P1024 17/13 (lab news speeds 1/2, 2/3 and
+     4/13);
+   - an odometer wake, G16.
+2. **Under the proposal of §42.1,** G8, the 480-state phase and P1024 belong to the class where a front-potential
+   exclusion at every period should exist. G16 alone is in the Collatz-shaped class.
+   - The kit proves G8. For the other two, the missing piece is a certificate fine enough for their long wakes.
+   - The decisive test is whether prepared regions can fuel long retreats (T35 style). If the drawdown stays bounded,
+     as for G8, a certificate at a moderate window should exist.
+3. A rational speed of 17/13 for P1024's wake, with period 208 = 16 · 13, is curious in itself: the wake period
+   carries the factor 13.
+
