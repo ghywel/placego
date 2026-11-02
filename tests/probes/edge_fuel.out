@@ -1,0 +1,5 @@
+(a) clean starts, 128 alignment classes, 20000 ticks: speed min 1.191 median 1.219 max 1.223; largest drawdown 10; longest stall 18
+(b) K= 20, 300 runs, 360 ticks: early drawdown max 20 (median 0); late drawdown max 11 (median 5); runs not past depth 2K: 0; speed min 0.978
+(b) K= 40, 300 runs, 520 ticks: early drawdown max 7 (median 3); late drawdown max 14 (median 5); runs not past depth 2K: 0; speed min 1.046
+(b) K= 80, 300 runs, 840 ticks: early drawdown max 7 (median 3); late drawdown max 13 (median 6); runs not past depth 2K: 0; speed min 1.032
+(b) K=160, 300 runs, 1480 ticks: early drawdown max 13 (median 5); late drawdown max 13 (median 7); runs not past depth 2K: 0; speed min 1.102

@@ -4730,3 +4730,75 @@ control.
    - (i) can be tested further at larger r by SAT. (ii) is the global ingredient that §39 and the orphan control both
      pointed to.
 
+## 41. Does the black edge supply fuel? (T36, L1313)
+
+At the owner's go-ahead ("Yes, go on"), step (ii) of §40.4.
+
+### 41.1 Setting and predictions, written before the run
+
+A black-edge row has white above depth −1, black at −1, and the digits below. Against G16 the mismatch above the edge
+never ends, so there is no pinned top. The edge region keeps sending mismatch down towards the front. The question
+is whether that stream carries retreat fuel, or whether all the fuel comes from the prepared prefix.
+
+`edge_fuel.py`:
+- **(a) Clean starts:** the prefix equals G16's own digits, so at time 0 the only mismatch is the edge region. All 128
+  alignment classes run for 20,000 ticks, recording speed, largest drawdown and longest stall.
+- **(b) Prepared prefixes:** random digits at depths 0 … K − 1 above the clean G16 tail, for K = 20, 40, 80 and 160 (300
+  random prefixes each, random alignments), run for 8K + 200 ticks. The drawdown is split into early (before the front
+  first passes depth 2K) and late (after).
+
+Predictions:
+- **P36a.** Clean starts at all 128 alignments advance at speed ≥ 0.8 over 20,000 ticks, with largest drawdown ≤ 10.
+  Lean 75%.
+- **P36b.** With prepared prefixes, the early drawdown grows with K, but the late drawdown stays ≤ 12 whatever K is.
+  Lean 55%.
+  - Counterfactual: a late drawdown that grows with K. The evolved prefix would then keep its fuel after the front has
+    passed, and a fuel account would have to follow the region above the front over time.
+- **What it teaches.** If P36a and P36b hold, the target is an **edge lemma for G16**: after a time proportional to the
+  prefix depth, every black-edge front has bounded drawdown. That lemma, with a stall bound, gives the exclusion of
+  G16 at every period.
+
+**Results of (a) and (b)** ([`edge_fuel.py`](../tests/probes/edge_fuel.py), [output](../tests/probes/edge_fuel.out); 56 s).
+- **P36a HELD.** Clean starts at all 128 alignment classes over 20,000 ticks have speed 1.191 to 1.223, a strikingly
+  uniform value. The largest drawdown is 10 and the longest stall 18.
+- **P36b half held.**
+  - The late drawdown stays at 11, 14, 13 and 13 for K = 20, 40, 80 and 160, so bounded and independent of K.
+  - The early drawdown does not grow with K (20, 7, 7, 13): random prefixes carry almost no fuel, and T35's long
+    retreats need prepared regions. "Early drawdown grows with K" is REFUTED for random prefixes.
+  - All 1,200 runs passed depth 2K. The slowest run averaged 0.98 cells per tick.
+
+**P36c, written before the exhaustive run.** Under the black edge, take all 2^K prefixes for K = 8, 12 and 16 at all 128
+alignment classes, for 6K + 60 ticks (`edge_fuel_exhaustive.py`).
+- The largest total drawdown is ≤ K + 10, the fuel bound under the edge.
+- The largest late drawdown (after the front first passes depth 2K) is ≤ 14, the same as for random prefixes.
+- Lean 60%.
+- Counterfactual: a late drawdown that grows with K. Prepared prefixes would then keep fuel after the front passes,
+  and the edge lemma would need a dynamic fuel account.
+
+**Results of (c)** ([`edge_fuel_exhaustive.py`](../tests/probes/edge_fuel_exhaustive.py), [output](../tests/probes/edge_fuel_exhaustive.out); 4.7 minutes at nice 10).
+- **P36c half held.**
+  - The fuel bound held: the largest total drawdown over all prefixes is **K + 6, K + 5 and K + 3** for K = 8, 12 and 16.
+  - The late-drawdown bound of ≤ 14 is REFUTED in its number: **14, 17 and 17**. It does not grow from K = 12 to 16.
+- Every one of the 2^K prefixes at every alignment reaches depth 2K, and the slowest R(T)/T is 0.76 to 0.82.
+
+### 41.2 What T36 teaches
+
+1. **The edge alone drives the front at a definite speed.** From a clean start, all 128 alignments advance at 1.19 to
+   1.22 cells per tick over 20,000 ticks, with drawdown ≤ 10. The edge's mismatch stream behaves like a steady
+   source, not a store of fuel.
+2. **Fuel lives in the prefix and is bounded by its width.**
+   - Random prefixes carry almost none.
+   - The worst prefix of depth K pays for a retreat of at most K + 6 (K ≤ 16).
+   - After the front has passed depth 2K, drawdown stays at most 17 at K = 12 and 16.
+3. **So an edge lemma for G16 is now a precise, well-supported conjecture.**
+   - Every black-edge front against G16 has total drawdown ≤ K + C.
+   - After a time proportional to K, its drawdown is ≤ C′, and it advances at speed ≥ v > 0.
+   - Evidence: exhaustive for K ≤ 16, sampled for K ≤ 160, and 20,000 ticks from clean starts.
+   - With Cloud's bridge, that lemma excludes G16 at every period. No proof is in hand. A potential would need a fuel
+     term charged to the region between the edge and the front, and that region grows.
+4. **What this route has given.** The phase-by-phase programme now has:
+   - one Lean theorem (G8, the kit's);
+   - an independent finite certificate for G8;
+   - a mechanism and strong evidence for G16, with the exact reason a local certificate fails (prepared fuel, the
+     pinned top) and the shape of the global lemma that would succeed.
+

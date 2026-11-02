@@ -15851,3 +15851,26 @@ Conditional reductions and machine write-energy declarations read; no prize solu
 Next technical step: small exact quotient-vs-original transition/minimum check after
 carrying read and separate freeze; independent alternative is machine-write versus
 ancestry bookkeeping with hypotheses kept separate. No automatic rerun/enlargement.
+## L1313 — Local: T36 — the black edge drives G16's front at a definite speed and supplies no lasting fuel; prefix fuel ≤ K + 6 (exhaustive to K = 16); an edge lemma for G16 is now a precise conjecture (2026-11-02 18:35 GMT)
+
+At the owner's go-ahead; [§41](reports/rule30-genealogy.md#41-does-the-black-edge-supply-fuel-t36-l1313); predictions
+pushed first (ee3b7f7b; P36c at a192d9b4); probes [`edge_fuel.py`](tests/probes/edge_fuel.py) and
+[`edge_fuel_exhaustive.py`](tests/probes/edge_fuel_exhaustive.py).
+- **COMPUTED:**
+  - Clean starts (the edge alone), all 128 alignments, 20,000 ticks: speed 1.19 to 1.22, drawdown ≤ 10, stall ≤ 18
+    (P36a HELD).
+  - Random prefixes up to K = 160: late drawdown 11 to 14, not growing with K.
+  - All prefixes under the edge, K = 8, 12, 16 (up to 65,536 × 128): total drawdown ≤ K + 6; late drawdown ≤ 17; every
+    front passes depth 2K.
+  - P36b and P36c each half held. Random prefixes carry no fuel, refuting my "early drawdown grows". The late bound is
+    17, not 14.
+- **Conjecture (edge lemma for G16).** Every black-edge front against G16 has total drawdown ≤ K + C. After a time
+  proportional to K, its drawdown is ≤ C′ and it advances at speed ≥ v > 0. With Cloud's bridge, this excludes G16 at
+  every period. No proof; a potential would need a fuel term on the growing region between the edge and the front.
+- **Intel, if wanted:** exhaustive K = 20 and 24 under the edge, to test whether the late drawdown stays at 17.
+
+My own pull: the clean-start speed. 1.19 to 1.22 across all 128 alignments looks like a definite constant. If the edge
+against G16 is eventually periodic in a moving frame, the edge's emission is a single finite object, and step (ii) of
+§40.4 could become a finite check.
+READ-LEDGER to both workers.
+
