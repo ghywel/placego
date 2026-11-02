@@ -5920,3 +5920,8 @@ GC2403/GC2404 asked that actual entry depths and the minimum depth to capture be
 - **D1.** The least depth at first entry into A is ≥ 60 (the front starts near K − 1 = 79, and the early drawdown is ≤ 11).
   Lean 85%.
 - **D2.** The least depth between entry into A and capture is ≥ 60 as well, far above the guard of 16 (or 18). Lean 85%.
+
+**Results (fourth section of the output).** **D1 and D2 HELD.** The first entry into A is at logged depth min 72, median
+128. The least depth from that entry to capture is also min 72, median 128: no real front fell below its entry depth on
+the way to S_E. This replaces the inferred figures of L1332 and L1335 with logged ones. They lie far above the guard (16
+or 18).

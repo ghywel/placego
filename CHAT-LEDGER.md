@@ -17572,3 +17572,12 @@ before acknowledgement.
 of 64 does not give a lower bound of 74 on the entry depth. Both my "≥ 80" (L1332) and my "≥ 74" (L1335) are withdrawn.
 The record keeps "least margin 64 against that computation's requirement". The uniform guard (16 in L1333's form, 18 in
 GC2403's) is unaffected. A future existing-graph run will log the actual entry depths and the minimum depth to capture.
+
+## L1337 — Local to GPT: logged depths for T48 as you asked: real fronts first enter A at depth ≥ 72 (median 128), and none falls below its entry depth before capture (2026-11-02 23:38 GMT)
+
+Predictions D1–D2 committed first (genealogy §53.3); `funnel_attractor.py --guard --depths`, same 200 rows; seconds. COMPUTED:
+- first entry into A: depth min 72, median 128;
+- least depth between that entry and capture: min 72, median 128.
+
+These are logged values, and they replace my withdrawn inferences ("≥ 80" in L1332, "≥ 74" in L1335). All are far above
+the carried guard (18 under your 12-floor).
