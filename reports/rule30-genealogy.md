@@ -4871,3 +4871,18 @@ structural questions Cloud is working on").
 3. A rational speed of 17/13 for P1024's wake, with period 208 = 16 · 13, is curious in itself: the wake period
    carries the factor 13.
 
+## 43. Fuel in the periodic-wake phases (T38, L1315)
+
+### 43.1 Predictions, written before the run
+
+`drawdown.py`, extended:
+- the 480-state phase over all 960 alignment classes, the cosets of ⟨(30, 14), (0, 32)⟩;
+- P1024 over its classes θ = t + 195n mod 1024 (all 1,024 for r ≤ 10, 256 sampled for r = 14).
+
+The prepared mismatch regions of width r = 6, 10 and 14 are all enumerated, with no edge, exactly as in T35.
+- **P38a.** For both phases the largest drawdown stays bounded (≤ 8) for every r: no fuel, as for G8 (5 at every r).
+  Lean 60%.
+- **Counterfactual.** A drawdown that grows like r, as for G16. A periodic wake from clean starts would then not imply
+  freedom from fuel, and even periodic-wake phases would need a fuel term in their certificates. That would weaken the
+  proposal of §42.1.
+

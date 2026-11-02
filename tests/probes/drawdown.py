@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """L1312 T35 (Local, 2026-11-02): the drawdown of the mismatch front against a phase, from prepared mismatch regions.
-reports/rule30-genealogy.md section 40 (predictions written first). Run: python3 tests/probes/drawdown.py PHASE R [R ...]
+reports/rule30-genealogy.md section 40 (predictions written first). Run: python3 tests/probes/drawdown.py PHASE R [R ...]   (PHASE: G8, G16, 480, P1024)
 
 No edge. E = the phase (G8 or G16), two-sided, at every alignment class (cosets of its twist lattice). The initial
 mismatch D(0) is supported on depths 0 .. r-1 with both ends 1, over all 2^(r-2) interiors. D evolves exactly:
@@ -16,7 +16,17 @@ import numpy as np
 here = os.path.dirname(os.path.abspath(__file__))
 g = runpy.run_path(os.path.join(here, 'upward_rigid.py'), run_name='lib')
 name = sys.argv[1]; p, cols, _ = g['phases']()[name]; NC = len(cols)
-classes = [(0, q) for q in range(8)] if name == 'G8' else [(a, q) for a in range(8) for q in range(16)]
+if name == 'G8':
+    classes = [(0, q) for q in range(8)]
+elif name == 'G16':
+    classes = [(a, q) for a in range(8) for q in range(16)]
+elif name == '480':
+    classes = [(a, q) for a in range(30) for q in range(32)]          # cosets of <(30, 14), (0, 32)>
+else:                                                                    # P1024: C_K(t) = C_0(t + 195 K); classes theta
+    import random as _r
+    classes = [(0, q) for q in range(p)]
+    if len(sys.argv) > 2 and int(sys.argv[2]) > 10:
+        classes = [(0, q) for q in _r.Random(38).sample(range(p), 256)]
 OFF = 4
 for r in [int(x) for x in sys.argv[2:]]:
     T = 3 * r + 30; Dm = OFF + r + 2 * T + 4; P = 1 << (r - 2)
