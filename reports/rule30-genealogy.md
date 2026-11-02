@@ -4730,3 +4730,31 @@ control.
    - (i) can be tested further at larger r by SAT. (ii) is the global ingredient that §39 and the orphan control both
      pointed to.
 
+## 41. Does the black edge supply fuel? (T36, L1313)
+
+At the owner's go-ahead ("Yes, go on"), step (ii) of §40.4.
+
+### 41.1 Setting and predictions, written before the run
+
+A black-edge row has white above depth −1, black at −1, and the digits below. Against G16 the mismatch above the edge
+never ends, so there is no pinned top. The edge region keeps sending mismatch down towards the front. The question
+is whether that stream carries retreat fuel, or whether all the fuel comes from the prepared prefix.
+
+`edge_fuel.py`:
+- **(a) Clean starts:** the prefix equals G16's own digits, so at time 0 the only mismatch is the edge region. All 128
+  alignment classes run for 20,000 ticks, recording speed, largest drawdown and longest stall.
+- **(b) Prepared prefixes:** random digits at depths 0 … K − 1 above the clean G16 tail, for K = 20, 40, 80 and 160 (300
+  random prefixes each, random alignments), run for 8K + 200 ticks. The drawdown is split into early (before the front
+  first passes depth 2K) and late (after).
+
+Predictions:
+- **P36a.** Clean starts at all 128 alignments advance at speed ≥ 0.8 over 20,000 ticks, with largest drawdown ≤ 10.
+  Lean 75%.
+- **P36b.** With prepared prefixes, the early drawdown grows with K, but the late drawdown stays ≤ 12 whatever K is.
+  Lean 55%.
+  - Counterfactual: a late drawdown that grows with K. The evolved prefix would then keep its fuel after the front has
+    passed, and a fuel account would have to follow the region above the front over time.
+- **What it teaches.** If P36a and P36b hold, the target is an **edge lemma for G16**: after a time proportional to the
+  prefix depth, every black-edge front has bounded drawdown. That lemma, with a stall bound, gives the exclusion of
+  G16 at every period.
+
