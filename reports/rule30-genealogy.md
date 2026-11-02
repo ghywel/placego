@@ -5978,3 +5978,14 @@ or can avoid it for ever. A longer window moves about 9% of the states from B in
 region earlier. So the window abstraction converges towards the real funnel as W grows, but slowly. Retreats into unseen
 cells still feed B (§45), so B cannot vanish at any finite W. The rate at which B's share falls is the measurable trend.
 W = 12 (4.2 million states, about two minutes) would give a third point.
+
+### 54.3 A third point, W = 12 (L1339), predictions written before the run
+
+P1024, W = 12: 4,194,304 states. S_E^all comes from the clean starts of all θ (at θ = 780 alone it had 391 states, §44.5).
+The same probes and the same 200 rows are used, with the guard now at floors W + 2 and W + 4.
+- **E5.** The split is exact again. Lean 80%.
+- **E6.** B's share continues to fall, to between 60% and 72% (it was 83.8% and 75.4%). Lean 55%.
+- **E7.** Real paths enter A earlier still, with a median lead above 33. Lean 55%.
+- **Counterfactual.** If B's share stops falling (≥ 74%), the W = 10 drop was a one-off, and the window abstraction has
+  converged as far as it will. If it falls fast (< 60%), a moderately larger window might leave a small, analysable
+  core.
