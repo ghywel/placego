@@ -2338,6 +2338,10 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   digits for p ≤ 32 or 23 digits for p = 64 (COMPUTED); period-64 family at 63 digits = transients. Conjecture: rain
   is the only light-speed recurrer behind a black cell; complements the kit's PeriodicPoints. Search aliases:
   eternal cycle, light-speed recurrence, black-edged rain, half-black front, defect doubling.
+- L1292 (Local, 2 November 2026): [proof attempt](reports/rule30-genealogy.md#26-a-proof-attempt-for-the-light-speed-recurrence-conjecture-l1292).
+  Reduction to a finite pair graph per period; machine-checked for p | 64 (rain only). Post-defect lifetimes 1, 2, 4,
+  5, 15, 104; the graph is a tree nested by period. L1291's lifetime reading corrected. General case open. Search
+  aliases: pair graph, defect state, nested trees, light-speed recurrence proof.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 

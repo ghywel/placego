@@ -2447,9 +2447,11 @@ shrinking at depth 127 (long-lived transients, no eternal period-64 points), or 
   digit 8 survive. At 127 digits they are gone. The projections to K = 16 fall from 776 (survival depth 63) to 456
   (depth 100) to 2 (depth 127), the rain alone. Every survivor at depth 127 agrees with the rain on at least 23
   digits, and no core leaves it within 2 digits.
-  - So the family is long-lived transients. A branch survives roughly four to six times as many digits as it first
-    followed the rain (MEASURED on these windows). That fits the half-black-front picture: the rain shields what lies
-    behind it for a time proportional to its length, but nothing closes up.
+  - So the family is long-lived transients. *Corrected in §26.1 (L1292):* an earlier sentence here said a branch
+    survives "four to six times as many digits as it first followed the rain". That misread the data. What happens
+    after a branch leaves the rain depends only on its first defect, not on the rain's length. The post-defect
+    lifetime is a constant for each period, at most 104 digits at period 64 (§26.3). The rain prefix only delays the
+    defect.
 - **P11d:** the only eternal cycle found, the rain, has periodic digits.
 
 **Conjecture (light-speed recurrence).** The black front followed by rain, in its two phases, is the only eternal
@@ -2469,3 +2471,77 @@ digits for period 64.
   periods, and so is not eternal.
 - This is a finite induction on the defect's neighbourhood. The measured lifetimes suggest it is true but not
   immediate.
+
+## 26. A proof attempt for the light-speed recurrence conjecture (L1292)
+
+At the owner's go-ahead ("Yes, try the proof").
+
+### 26.1 Reduction to a finite graph for each period (PROOF-SKETCH, Local)
+
+Let x be an eternal point of period dividing p = 2^m. Each column c_k (digit k as a function of time) is then a
+p-periodic binary sequence, a ring of length p, and the edge map reads, column by column,
+
+    c_k(t+1) = c_k(t) XOR (c_(k−1)(t) OR c_(k−2)(t)),    with c_(−1) ≡ 1 (the front) and c_(−2) ≡ 0.
+
+So c_k is the running XOR of the ring c_(k−1) OR c_(k−2), started from the free bit c_k(0). It is p-periodic exactly
+when that OR ring has even weight. The pair (c_(k−1), c_k) is therefore a state in a finite graph: from (u, v) go to
+(v, w), where w is one of the two integrals of u OR v, an edge existing only if u OR v has even weight. Eternal points
+of period dividing p are exactly the infinite paths from the start (0, 1).
+- Let a be the alternating ring (0101…) and ā its complement. The rain is the cycle (a, ā) ↔ (ā, a). From a rain
+  state the OR is all ones, so the next column is a or ā: back into the rain, or into an in-phase pair (a, a) or
+  (ā, ā), the **first defect**.
+- Every non-rain point passes through a first defect, and (ā, ā) is (a, a) shifted by one step in time, which is a
+  symmetry. So **what happens after a defect does not depend on how long the rain lasted above it.** That corrects
+  §25.3: the period-64 transients do not survive "about five times their rain prefix". The data fit a constant
+  post-defect lifetime of roughly 85 to 120 digits (survivors that diverged before digit 16 reach depth 100 but not
+  127).
+- The conjecture at period p is therefore equivalent to: **from the defect state (a, a), the reachable graph has no
+  cycle and no edge back into the rain.** That is a finite check, and an exact proof for that p.
+
+### 26.2 Predictions, written before the run (`eternal_proof.py`)
+
+- P12a: for p = 2, 4, 8, 16, 32 and 64 the defect's reachable graph is acyclic and never re-enters the rain. So the
+  black-edged rain is the only eternal cycle of period dividing p, for every p ≤ 64 (machine-checked).
+- P12b: the longest path from the defect at p = 64 (the most digits a configuration can follow after its first
+  defect while keeping period 64) lies between 85 and 120.
+- P12c: the longest path grows about linearly in p, with ratio between 1 and 3.
+- Counterfactual: a cycle in any of these graphs is a non-rain eternal cycle and refutes the conjecture.
+
+### 26.3 Results (machine-checked; [`eternal_proof.py`](../tests/probes/eternal_proof.py), [output](../tests/probes/eternal_proof.out), 20 seconds)
+
+| period p | states reachable from the defect | edges back into the rain | cycle | longest path after the defect |
+|---:|---:|---:|---|---:|
+| 2 | 2 | 0 | none | 1 |
+| 4 | 6 | 0 | none | 2 |
+| 8 | 30 | 0 | none | 4 |
+| 16 | 62 | 0 | none | 5 |
+| 32 | 2,110 | 0 | none | 15 |
+| 64 | 171,774 | 0 | none | 104 |
+
+- **P12a HELD.** **Theorem (machine-checked).** For every p dividing 64, the only rows with a black rightmost cell
+  (white beyond it) that recur exactly at light speed with period p are the two phases of black-edged rain.
+  Equivalently, the only periodic points of the right-edge map of period dividing 64 are −1/3 and −2/3.
+  - The proof is the finite check of §26.1. The start state is asserted to reach both the rain and the defect.
+  - Independent control: the state counts plus the two rain states equal the solution counts of L1291's separate
+    computation (2,112 at p = 32 to 60 digits; 171,776 at p = 64 to 127 digits).
+  - The 104-digit maximum explains L1291's observation that every survivor at digit 127 followed the rain for at
+    least 23 digits.
+- **P12b HELD:** 104 lies in [85, 120].
+- **P12c REFUTED:** the longest path is 1, 2, 4, 5, 15, 104, neither linear nor smooth.
+- **Period 128 is out of reach by brute force:** the search passed the 20-million-state cap.
+
+**Two structural facts (COMPUTED for p = 8, 16, 32; exploration, not a recorded test).**
+- The graph from the defect is a tree: no state is reached by two paths. That is also why the counts match L1291 one
+  for one.
+- The tree for p contains the tree for p/2 exactly, as its states of joint period ≤ p/2 (15 = 1 + 2 + 12 for p = 8;
+  16 new states of period 16; 1,024 of period 32). The new states hang off the edges where the OR ring has odd weight
+  over p/2, so the integral doubles its period.
+
+**Status of the conjecture.** Proved for periods dividing 64; open in general. A uniform proof would show that the
+exact-period-p part of the tree is finite for every p, presumably by an induction on p that halves a period-p state.
+Routes:
+1. Induction on the nesting T_(p/2) ⊂ T_p. Show that a state of exact period p has a successor of exact period 2p or
+   none, never one that returns. The tree property suggests the depth recursion is injective on reachable states.
+2. A counting identity on the time-depth torus. A cycle would be a doubly periodic pattern, and on it each column is
+   black and white equally often at the times its driver fires. Find a contradiction away from the rain.
+3. A C bitset search under `run_capped.py` to extend the machine check to p = 128.

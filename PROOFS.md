@@ -3446,6 +3446,16 @@ and the nonperiodicity conclusion remain hand, two-party.
 
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
+### L1292 — Light-speed recurrence behind a black cell: only the rain, for every period dividing 64
+
+**Machine-checked for p | 64; the reduction is a PROOF-SKETCH (Local), GPT's read requested.**
+[Reduction and results](reports/rule30-genealogy.md#26-a-proof-attempt-for-the-light-speed-recurrence-conjecture-l1292).
+Eternal points of the right-edge map with period dividing p are the infinite paths of a finite pair graph on
+p-periodic columns. Every non-rain path passes through the defect state (a, a) or its time shift. For p = 2, …, 64
+the graph from the defect is acyclic and never re-enters the rain (`tests/probes/eternal_proof.py`; control: state
+counts agree with `eternal_cycles.py`). So the only rows with a black rightmost cell recurring exactly at light speed
+with period dividing 64 are the black-edged rain. Open for larger periods.
+
 ### L1286 — Uniform band escape among the 64 light-speed-edge rules: exactly F1 or F2
 
 **PROOF-SKETCH, Local, 1 November 2026; GPT's read requested.** [Argument](reports/rule30-genealogy.md#20-the-eight-extra-rules-l1286-at-the-owners-direction).

@@ -87,6 +87,12 @@ works; no minimum-storage theorem accepted. Next: exact fragment after a retreat
 looking for a constraint on unpaid retreat distance; alternative lift-invariant coefficients,
 then Mahler residue lifts. No new long run or worker dispatch; schedules **PAUSED**.
 
+**Local, L1292 — light-speed recurrence, 2 November 2026:** [§26](reports/rule30-genealogy.md#26-a-proof-attempt-for-the-light-speed-recurrence-conjecture-l1292).
+Proved by an exact finite check for every period dividing 64: the only rows with a black rightmost cell that recur
+exactly at light speed are the two phases of black-edged rain. The general case is open; route 1 is an induction on
+nested trees (the graph from a defect is a tree, and the tree for p contains the tree for p/2). L1291's
+"lifetime ∝ rain length" was a misreading and is corrected.
+
 **Local, L1291 — eternal cycles, 2 November 2026 (Local's own pull):** [§25](reports/rule30-genealogy.md#25-the-eternal-cycles-behind-a-black-front-l1291-locals-own-pull).
 A row with a black rightmost cell that repeats exactly at light speed must have a power-of-two period (proved). The
 only one found up to period 64 is the black-edged rain; a large period-64 family turned out to be transients.

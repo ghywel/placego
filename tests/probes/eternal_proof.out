@@ -1,0 +1,8 @@
+p=   2: states reachable from the defect         2; edges back into the rain 0; cycle False; longest path after the defect 1 columns
+p=   4: states reachable from the defect         6; edges back into the rain 0; cycle False; longest path after the defect 2 columns
+p=   8: states reachable from the defect        30; edges back into the rain 0; cycle False; longest path after the defect 4 columns
+p=  16: states reachable from the defect        62; edges back into the rain 0; cycle False; longest path after the defect 5 columns
+p=  32: states reachable from the defect      2110; edges back into the rain 0; cycle False; longest path after the defect 15 columns
+p=  64: states reachable from the defect    171774; edges back into the rain 0; cycle False; longest path after the defect 104 columns
+p=128: state cap reached
+ETERNAL_PROOF_DONE

@@ -14840,3 +14840,30 @@ argument here explains. READ-LEDGER to both workers.
 below the rain persists and makes the period double at its depth. If the doubling provably propagates deeper, every
 non-rain code has unbounded periods. It looks like a finite induction. GPT may see the propagation step faster.
 READ-LEDGER to both workers.
+
+## L1292 — Local: the light-speed recurrence conjecture is proved for every period dividing 64 by an exact finite check; L1291's lifetime reading corrected; the general case is open, with three routes (2026-11-02 00:43 GMT)
+
+At the owner's go-ahead. [Section 26](reports/rule30-genealogy.md#26-a-proof-attempt-for-the-light-speed-recurrence-conjecture-l1292);
+probe `eternal_proof.py`. Predictions written first; two held, one refuted.
+- **Reduction (PROOF-SKETCH; GPT's read requested).** For period dividing p each digit's history is a p-periodic
+  ring, and the edge map makes each ring the running XOR of the OR of the two above. Eternal points are then the
+  infinite paths of a finite graph on pairs of rings. Every non-rain path passes through the first defect (an
+  in-phase pair), which is one state up to a time shift. So the conjecture at period p is: no cycle and no return
+  to the rain from the defect.
+- **Machine-checked for p = 2, 4, 8, 16, 32, 64.** No cycle, no return. The black-edged rain is the only row with a
+  black rightmost cell that recurs exactly at light speed with any period dividing 64. Control: the reachable state
+  counts plus the rain equal L1291's independently computed solution counts (2,112 and 171,776).
+- **Correction to L1291.** "Each transient survives roughly five times its rain prefix" was a misreading. After the
+  first defect the future does not depend on the rain's length. The post-defect lifetime is a constant per period:
+  1, 2, 4, 5, 15 and 104 digits for p = 2..64. The CONSTELLATION question is amended. The report's §25.3 sentence is
+  marked corrected.
+- **Structure (COMPUTED, p ≤ 32):** the defect's graph is a tree (no merges), and the tree for p contains the tree
+  for p/2 as its states of smaller period.
+- **Open:** every period. Brute force passes 20 million states at p = 128. Routes:
+  1. an induction on the nesting of the trees;
+  2. a counting identity on the time-depth torus (each column black and white equally often when its driver fires);
+  3. a C bitset run for p = 128 under `run_capped.py`.
+
+**My own pull:** route 1. The tree property and the exact nesting look like the shadow of a halving map, and a
+uniform proof would complete the classification of exactly recurring right-finite rows with the kit's
+PeriodicPoints. REVIEW-REQUEST (GPT) on the reduction in §26.1; READ-LEDGER to both workers.

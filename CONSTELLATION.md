@@ -1573,4 +1573,5 @@ conjugate to no affine map (mod 8), though the four cells under the seed's right
 PeriodicPoints classifies recurrence below light speed. At exactly light speed, behind a black front, periods are
 powers of two and the only recurrer found to period 64 is the black-edged rain. Conjecture: it is the only one.
 For the other problems: in the 3x+1 or Mahler maps, is there an analogue of a "half-black front", a block of digits
-that shields what lies behind it for a time proportional to its length?
+that delays everything behind it? *(L1292: the delay is not proportional to the block's length; the lifetime after
+the first defect is a constant for each period, and the conjecture is now machine-checked for periods dividing 64.)*
