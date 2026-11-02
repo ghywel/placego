@@ -4592,3 +4592,42 @@ needs the register enumeration in C with bitsets (lags to about 40) or a SAT enc
    floor emerge? A machine floor for G16 would be the second uniform wall exclusion. Q3 For P1024, which of M_P1024(k)
    for k ≤ 8 and the p = 2,048 pair graph is the right next test? Q4 Is any phase other than a rotator of c or c²
    known, i.e. g ≥ 3 with no smaller g?
+
+## 39. The front-potential method on G16 (T34, L1311)
+
+At the owner's direction ("update, then continue with your warmest pulls"); Cloud's Q2 of CL676.
+
+### 39.1 The method, transferred from the kit's ether proof (Local)
+
+- **The mismatch.** Let E be a phase written two-sided in the edge frame (depth n ∈ Z, time t), and X a black-edge
+  configuration. The mismatch D = X ⊕ E obeys
+  D_n(t+1) = D_n(t) ⊕ [((E_(n−1) ⊕ D_(n−1)) ∨ (E_(n−2) ⊕ D_(n−2))) ⊕ (E_(n−1) ∨ E_(n−2))].
+  - With background bits (E_(n−1), E_(n−2)) = (0,0), (1,0), (0,1), (1,1), the update F is a ∨ b, a ∧ ¬b, ¬a ∧ b or
+    a ∧ b, with F(0,0) = 0. This is the kit's `D_step`, with E's own table in place of the ether's.
+- **The front.** Let R(t) be the deepest mismatch. Below it D = 0, and the cells there stay clean until R reaches them.
+  The next front is R + 2 if F_(R+2)(0, 1) = 1; else R + 1 if F_(R+1)(1, D_(R−1)) = 1; else R if
+  D_R ⊕ F_R(D_(R−1), D_(R−2)) = 1; else a retreat. So a step depends on E's background at R … R + 2 and on the
+  mismatch just above the front.
+- **The consequence.** If R(t) ≥ v·t − C for every black-edge configuration, with v > 0, then M_E(k) < ∞ for every k,
+  and by the bridge (§38.2) no eternal point of any period ends in E. For the ether, the kit proves this with
+  v = 3/2 (potential 2R + g2(ψ) − 3t, no retreat after time 1).
+
+### 39.2 Predictions, written before the run (T34)
+
+**Part 1, exact fronts** (`front_g16.py`). Random black-edge prefixes of depth K = 40 have the clean G16 tail below,
+over random alignments among G16's 2,048 (128 depths × 16 times). The row is evolved by Φ for 300 ticks, tracking
+R(t), the retreats, and the longest stall (ticks without a new maximum of R).
+- **P34a.** The front's mean speed is between 0.8 and 1.2 cells per tick, matching Cloud's slope of about 1.1 for
+  M_G16. Lean 65%.
+- **P34b.** Retreats occur after time 1, unlike the ether. Lean 60%.
+
+**Part 2, a sound certificate.** The state is the front's class in G16's torus (R mod 128, t mod 16) together with a
+window of w mismatch bits above the front. Bits beyond the window are treated as free (a nondeterministic
+over-approximation), and a retreat out of the window counts as a failure. If no cycle of this finite automaton has
+total advance ≤ 0, the front advances at a positive minimum mean speed for every configuration, which proves
+M_G16(k) < ∞ for all k, uniformly in the period.
+- **P34c.** A certificate exists for some w ≤ 10. Lean 35%: G16 is richer than the ether, and retreats may need an
+  unbounded window.
+- **Counterfactual.** A non-positive cycle for every w ≤ 10. Its exact replay would show either a real stall (a long
+  episode) or an over-approximation artefact. Either answer is informative.
+
