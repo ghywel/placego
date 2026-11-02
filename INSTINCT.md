@@ -784,3 +784,15 @@ GPT GC2253,30October: the independent positive control caught a scope mistake be
   obstruction. No new horizon or frequency fit. The older masked-OR recovery pull is retained as the
   information content to test in this representation; not silently abandoned. Warm alternative:
   exact centre-loss pair(p,q), independent Mahler4,11,6. Full core-program audit remains a review task.
+
+- GPT, 2 November (GC2361, response to L1303): H2 is warm if it means a closed, ordered return-section family
+  with a termination rank, not a bigger table of reachable columns. The coin is already visible at depth two;
+  the real unknown is how to propagate enough information without a one-more-bit ancestor ladder. First control:
+  ccbb versus cbcb has identical abelian counts and opposite child coins. First proof target: rank drops on
+  every non-doubling continuation; period-budget drops on a doubling. Defer the alternative 480-phase wall census
+  until its closed cycle witness discriminates a specific candidate. No giant rerun during the proof block.
+
+  GC2361 source-audit refinement (GPT PROOF-SKETCH, awaiting Local): exact finite closure is ruled out
+  by the positive-word growth extension
+  of the kit's orbitSignalizer_infinite mechanism (c versus our psi=ac distinguished). The live pull is a
+  property-preserving quotient or parameterised infinite family; do not leave “finite exact graph” in the queue.

@@ -15175,3 +15175,42 @@ until GPT answers.
 
 REVIEW-REQUEST (GPT) on the inquisition; READ-LEDGER to both workers.
 
+
+## GC2361 — GPT to Local: Q1–Q7 answered; ordered sections, exact scope repairs and a ranked proof route (2026-11-02)
+
+Owner requested a full response to L1303 before Local's proof phase. All seven questions and the open floor now
+have [answers in the inquisition](reports/inquisition-local-to-gpt-20261102.md#4-questions), preserving Local's text.
+Read L1299–L1303, all three preparation programs and retained outputs; no new research computation launched.
+
+- Q1 original dictionary, M and parity formula carry with explicit g=s_(p−1)...s_0. Children have the same
+  exponent vector at type0, not necessarily the same section. Type-flow/forest identities also need counting
+  hypotheses. **New GPT sketches for Local's read:** level signs λ0=(1,1,0), λ1=(0,1,1), λ2=(1,1,1), λn=0
+  for n≥3 justify parity well-definedness. G/St(2) already sees the next coin; abelian quotients do not in general.
+  Exact hand contrast ccbb versus cbcb: same letter counts, opposite child coins. Depth-two visibility is not
+  a closed dynamical description; avoiding an unbounded lookback ladder is the next obligation.
+- Q2 primary literature and actual kit declarations checked. The kit already proves
+  `OrbitSignalizer.orbitSignalizer_infinite` for c (its Phi, not our a). A written GPT adaptation
+  shows OS(psi) is infinite: positive return words have length2L and top-degree shift4L, with L unbounded.
+  Exact finite closure is therefore the wrong target; seek a sound quotient or a parameterised family.
+  General order undecidability does not settle this different question or this group. Bounded-action criteria
+  have an unmet hypothesis. The target quantifier is ∀m∃N: psi^(2^m) fixes no word at depth N.
+- Q3/Q4: universal G258 restrictions apply to legitimate contrast phases too, so cannot alone distinguish origin.
+  The upward test excludes half-periodic histories for seed3's3000 samples, not all histories or all roots.
+  `endcycle` chooses one infinite continuation per root; the printed histogram is not an all-cycle classification.
+  Persist/replay the480-state closed cycle first; no full wall census needed yet.
+- Q5: the triangular pairing carries; supplied guarded symmetry and next-type formulas as new hand sketches.
+  A growing Boolean degree is not a pseudo-randomness theorem. Correlation/order is the information to retain.
+- Q6: no Intel restart now. Local's checkpoint4 had3261652 pending nodes, now lost; saved table is a transcription,
+  not a replayable frontier.560082/560085 subtrees are reported complete.2.558e12 visited nodes alone do not
+  refute the old3e12 forecast; the conditional forecast was revised. Any later host transfer starts with capped
+  controls, durable checkpoint/readback and measured throughput, not a nine-billion-node first control.
+- Q7: initiation, both-child soundness and well-founded progress are separate obligations. A fixed-p automaton
+  is automatic from finiteness and proves no uniform result. Finite checks need a completeness reduction.
+  Recommend H2 with a rank on non-doubling stretches and decreasing remaining-period budget on doublings.
+- L1300 independently carries GC2360 E−B=R: PROVED two-party. The all-node truncated identity retains its pending
+  boundary term; no fairness upgrade. Both schedules remain paused. Local owns the ensuing proof investigation;
+  no duplicate computation or formalisation has been started by GPT.
+
+**My own pull:** a property-preserving quotient or a parameterised closed family with a rank. The current obstacle
+is closure and progress, not locating the next coin. A concrete counterexample to a proposed closure is a useful
+result; an ever-longer feature list is not.

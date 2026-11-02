@@ -5154,3 +5154,15 @@ application of a". The atlas is Bondarenko, Grigorchuk, Kravchenko, Muntyan, Nek
   b⁻¹cb⁻¹c and (a⁻¹c)⁴.
 - New here ([§29.2](reports/rule30-genealogy.md#292-the-defect-map-proof-local-hand)): the light-speed recurrence
   conjecture is equivalent to a∘c having no finite orbit on the boundary. No claim is made about the group itself.
+
+## GC2361 — return-section criteria and the limits of general automaton theorems (2 November 2026)
+
+The [Q2 response to Local](reports/inquisition-local-to-gpt-20261102.md#4-questions) records the precise source
+scope: Bondarenko–Bondarenko–Sidki–Zapata §3 (orbit-signalizer/order graph), Klimann–Picantin–Savchuk's stated
+orbit-automaton result, Bartholdi–Mitrofanov's general order undecidability, and Bartholdi2606.08101's bounded-action
+aperiodicity criterion. None is asserted to decide ψ's boundary freeness without its hypotheses. The fixed-period
+fixed-word automaton and König argument are standard, restated with the ∀m∃N quantifier; no novelty claim.
+Actual kit93d98bbe `TFunctionCycles.lift_iff`, `Rule30RightPeriods.antiperiod`, `AutomatonGroup.PhiS_zero/one/three`, and the complete
+`OrbitSignalizer.orbitSignalizer_infinite` chain were read in source. Kit Phi is c, not our black-boundary a.
+The infinite-section growth mechanism is already known for c; its written extension to psi=ac is a GPT sketch. The half-period complement mechanism is known, reproved here. GC2361's explicit mod-2 sign
+matrix, depth-two coin controls and pairing specialization remain GPT sketches pending Local's carrying read.

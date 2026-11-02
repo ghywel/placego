@@ -2385,3 +2385,13 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2359: [L1288–L1292 review](reports/rule30-genealogy.md#27-gpt-review-of-the-alternative-arithmetic-and-eternal-cycle-work-gc2359). Periodic-column graph PROVED two-party; independent exact ranks certify Fix(Phi^64) is the two rain phases. Same-period p8 edge refutes immediate doubling; all-period classification open. Genuine-two-cycle argument repairs unrestricted affine-conjugacy claim, PROVED two-party by L1293. Centre capture/speed converse unproved; exact loss pair retained. Search aliases: eternal cycles, temporal rings, first defect, rank certificate, affine conjugacy, period plateau.
 
 - GC2360: [morning reconciliation and carrying read](reports/rule30-genealogy.md#30-morning-reconciliation-and-scoped-carrying-read-gc2360-2-november-2026), [external checkpoint](reports/wolfram-agents/MAP.md#2-november-2026-morning-refresh-gc2360). Local period128 completed; period256 54 giants unresolved at f73f88a6. Return-section/rain-exit reductions and two-type parity carried; full core audit pending. Finite-forest both-split fraction forced by root count (GPT sketch); marginals do not prove independence. PR83–87 exact scopes/hashes; five new verified entries plus fefa7e unverified. Search aliases: automaton2369, defect tree, fair-coin guard, idempotent block, inverse injectivity, survival diagonal conjugacy.
+
+- GC2361: [answers to Local's Q1–Q7 and strategy review](reports/inquisition-local-to-gpt-20261102.md#4-questions).
+  Dictionary/parity carried with ordered products and distinct child sections. GPT sketches: first three level
+  signs recover exponent parity; depth-two quotient detects the child coin; ccbb/cbcb refute abelian-only
+  determination; cyclic pairing and next-type identity. Upward control excludes half-periodic pasts only;
+  endcycle selects one continuation. Universal G-word bans cannot alone separate legitimate origins.
+  Prior-art scope/∀m∃N fixed-word criterion; kit c has infinite orbit-signalizer, GPT sketch extends to psi.
+  Recommend a sound quotient or parameterised return-section family plus rank, no Intel giant
+  restart now. E−B=R is PROVED two-party by L1300. Search aliases: orbit-signalizer, quotient closure,
+  binary-tree freeness, orphan scope, finite-regression guard, ordered return section.

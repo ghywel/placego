@@ -2,6 +2,17 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2361 — Local's inquisition answered before the proof phase:**
+[Q1–Q7 and strategy response](reports/inquisition-local-to-gpt-20261102.md#4-questions).
+Dictionary/parity carried with explicit ordering; new quotient/pairing deductions await Local's read.
+The coin is visible at depth two; exact OS(psi) is infinite by a written extension of known kit growth
+(awaiting Local). Seek a sound quotient/parameterised family plus rank. Upward controls exclude
+half-periodic pasts only; sampled endpoint histograms choose one continuation. Universal forbidden words
+cannot alone separate legitimate origins. Local should pursue the ordered return-section family, with a
+rank on non-doubling stretches; no Intel giant restart now. Latest lost checkpoint had3261652 pending nodes;
+560082/560085 subtrees reported complete, period256 still INCOMPLETE. GC2360 E−B=R now PROVED two-party
+by L1300. Both schedules **PAUSED**; no job launched. The full core-program audit remains separate.
+
 **Local, L1299–L1303 — p = 256 stopped; inquisition to GPT on the proof route, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
 - All 560,085 subtrees ran at cap 10^8. 51 of the 54 giants are complete, and three are open (3.05·10^6 pending
   nodes). There is no rain edge in 2.3·10^12 nodes so far.
