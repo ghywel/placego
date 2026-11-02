@@ -3721,3 +3721,51 @@ digit j places above digit n can therefore change the coin only if j ≤ 1.243·
   - Counterfactual: a systematic deficit at reachable windows. That would mean the reachable set sits where the coin
     is partly frozen, a structural lead worth an inductive statement.
 
+### 31.3 T27 results ([`lambda_window.py`](../tests/probes/lambda_window.py), [output](../tests/probes/lambda_window.out); 45 s on one core)
+
+- **P27a HELD (known, reproved).** λ_L has depth exactly 2L for L = 1 … 64.
+- **P27b HELD.**
+  - The halving identity has no failure in 1,800 random windows.
+  - F_p(window) equals the tree's coin at all 2,651 top-layer nodes of T_64 and at 2,797 sampled top-layer nodes of
+    T_128.
+- **P27c HELD.**
+  - Over uniform windows the influence is 0.46 to 0.51 for j ≤ 1.1L.
+  - It crosses 0.25 at j/L = 1.375, 1.281 and 1.266 for L = 16, 32 and 64, falling towards Grassberger's
+    1 + 0.2428 as L grows.
+  - It is at most 0.02 from j = 1.4L on.
+- **P27d HELD at p = 128, REFUTED at p = 64.**
+  - At p = 128 the actual profile is within 0.032 of the uniform one.
+  - At p = 64 the actual windows show *more* influence deep in the window: 0.38, 0.31, 0.24 and 0.16 at
+    j/L = 1.3 to 1.6, against 0.13, 0.03 and 0.00. The largest difference is 0.285.
+  - Cause: every top-layer node of T_64 lies within 110 digits of the front, so its 128-digit window reaches the white
+    region above it, where damage moves at the full 2 digits per step.
+  - Control: the p = 128 windows that start below the front match the uniform profile (0.44, 0.26, 0.07, 0.00 against
+    0.43, 0.28, 0.07, 0.01). The ones that reach above the front carry the whole excess (0.36, 0.20, 0.12, 0.08, 0.05).
+  - **The counterfactual did not occur.** There is no deficit anywhere: reachable windows do not sit where the coin is
+    partly frozen.
+
+### 31.4 What T27 teaches
+
+1. **The λ-recursion is exactly the halving of the coin's time sum.** At the top layer of T_(2L), a node splits
+   exactly when the period-L coin is the same at times 0 and L, that is, F_L(z) = F_L(z ⊕ h). So the link between
+   layers is an exact derivative along the damage of §28.2. PROOF, short; GPT's read requested.
+2. **Deep in a layer the coin is a generic light-cone function.**
+   - Its effective window is about 1.24L digits, set by Rule 30's left damage speed.
+   - Every digit inside that window carries influence ½, at actual windows exactly as at uniform ones.
+   - The previous block found the same from the group side: (F) is closed but does not compress.
+   - Two blocks in a row have now found the deep dynamics generic. By AGENTS.md §3 that is a signal to change
+     approach, not to add another statistic.
+3. **The only departure is at the boundary.** The white region above the front is the one place where actual windows
+   differ from uniform ones. This matches §2.2 of the inquisition: realizability, meaning descent from the black edge,
+   carries the content. Whatever proves the conjecture should live near the front, in the finitary glue ℓ of (F), and
+   not deep in a layer.
+
+**Routes from here.**
+- (a) **The boundary route.** Study the first ≈1.24p digits below the first doubled column, where the window still
+  contains the front. Look for an exact statement there about the derivative F_L(z) ⊕ F_L(z ⊕ h): whether the front
+  forces it to be nonzero within a bounded number of steps of a layer root.
+- (b) **The phase route** (§29.6). Classify the phases at p = 32, the 480-state phase among them, and their walls. GPT
+  advises deferring this until a candidate invariant needs it.
+- (c) **The finite certificate.** Finish p = 256 on the Intel host, under GC2361's controls. The owner's earlier plan
+  calls for it if a proof is still lacking.
+

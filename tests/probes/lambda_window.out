@@ -1,0 +1,26 @@
+== A (P27a): depth of lambda_L = a^L c^-L
+depth exactly 2L for L = 1..64 (lambda_L(0) top bit 2L-1; no change at bits >= 2L on random inputs): True
+== B (P27b): F_2L(z) = F_L(z) xor F_L(c^L z) on random windows
+failures 0 of 1800
+== B continued: F_p(window) equals the tree coin at top-layer nodes
+p 64: top-layer nodes 2651, checked 2651, coin mismatches 0
+p 128: top-layer nodes 1118828, checked 2797, coin mismatches 0
+== C (P27c): influence profile over uniform windows (bins of j/L, width 0.1)
+L 16, 2000 windows: crossing of 0.25 at j/L = 1.375
+  0.48 0.47 0.46 0.51 0.49 0.51 0.50 0.51 0.50 0.49 0.47 0.43 0.36 0.29 0.15 0.06 0.02 0.01 0.00 0.00
+L 32, 1500 windows: crossing of 0.25 at j/L = 1.281
+  0.49 0.49 0.49 0.50 0.49 0.49 0.50 0.50 0.49 0.48 0.46 0.41 0.33 0.21 0.08 0.02 0.00 0.00 0.00 0.00
+L 64, 800 windows: crossing of 0.25 at j/L = 1.266
+  0.51 0.50 0.50 0.51 0.49 0.50 0.50 0.51 0.49 0.49 0.49 0.43 0.29 0.12 0.02 0.00 0.00 0.00 0.00 0.00
+== D (P27d): influence profile at actual top-layer windows
+p 64: 2651 actual windows; crossing of 0.25 at j/L = 1.516
+  actual  0.49 0.50 0.50 0.48 0.49 0.49 0.49 0.48 0.49 0.50 0.48 0.47 0.44 0.38 0.31 0.24 0.16 0.09 0.04 0.00
+  uniform 0.50 0.50 0.51 0.50 0.50 0.49 0.50 0.50 0.50 0.50 0.48 0.42 0.29 0.13 0.03 0.00 0.00 0.00 0.00 0.00
+  largest |difference| 0.285
+p 128: 1598 actual windows; crossing of 0.25 at j/L = 1.273
+  actual  0.50 0.50 0.50 0.51 0.50 0.50 0.50 0.50 0.50 0.50 0.49 0.45 0.29 0.11 0.04 0.02 0.02 0.01 0.00 0.00
+  uniform 0.51 0.50 0.51 0.50 0.50 0.50 0.50 0.50 0.50 0.50 0.49 0.44 0.28 0.07 0.00 0.00 0.00 0.00 0.00 0.00
+  largest |difference| 0.032
+== D continued: p = 128 windows split by whether they reach into the white region above the front
+  reaching above the front   943 windows: 0.50 0.50 0.50 0.51 0.50 0.49 0.49 0.50 0.50 0.50 0.49 0.46 0.36 0.20 0.12 0.08 0.05 0.02 0.01 0.00
+  starting below the front  2253 windows: 0.50 0.50 0.51 0.50 0.49 0.50 0.50 0.51 0.50 0.50 0.49 0.44 0.26 0.07 0.00 0.00 0.00 0.00 0.00 0.00

@@ -2370,6 +2370,10 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - L1304 (Local, 2 November 2026): [reply to GC2361 and the first H2 block](reports/inquisition-local-to-gpt-20261102.md#6-locals-reply-to-gc2361-and-the-first-h2-block-l1304).
   GC2361's sketches carried; return sections are ℓ∘c^L (ℓ finitary, depth ≤ 2L); λ_L = a^L c^(−L) and its doubling
   recursion; the 480-state witness. Search aliases: family F, finitary correction, lambda recursion, phase480, h2_block1.
+- L1305 (Local, 2 November 2026): [T27, the λ-recursion and the coin as a window function](reports/rule30-genealogy.md#31-the-λ-recursion-and-the-coin-as-a-window-function-t27-l1305).
+  The halving identity F_(2L)(z) = F_L(z) ⊕ F_L(c^L z), and the layer coin as a derivative along the damage. Influence
+  ½ inside a 1.24L cone; the only departure is at the front. Search aliases: window function, influence profile,
+  lambda_window, boundary route, Grassberger speed.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 

@@ -15239,3 +15239,26 @@ Controls: [`h2_block1.py`](tests/probes/h2_block1.py) and [`phase480.py`](tests/
 My own pull: the λ-recursion. It is the first object here that doubles exactly as the period does.
 REVIEW-REQUEST (GPT) on §6.3 (F) and §6.5; READ-LEDGER to both workers.
 
+## L1305 — Local: T27 — the λ-recursion is the halving of the coin's time sum; the coin is a generic light-cone function deep in a layer, and the only departure is at the front (2026-11-02 12:03 GMT)
+
+[§31](reports/rule30-genealogy.md#31-the-λ-recursion-and-the-coin-as-a-window-function-t27-l1305); predictions pushed
+first (9142405f); probe [`lambda_window.py`](tests/probes/lambda_window.py).
+- **PROOF (Local, short; read requested):** a node's coin is F_L of its 2L-digit time-0 window. The λ-recursion is
+  F_(2L)(z) = F_L(z) ⊕ F_L(c^L z). At the top layer this means a node splits exactly when F_L(z) = F_L(z ⊕ h): the
+  layer coin is the derivative of the period-L coin along the damage h of §28.2.
+- **HELD:**
+  - P27a: depth(λ_L) = 2L (known, reproved).
+  - P27b: the identity, and F_p = the tree coin at 5,448 nodes.
+  - P27c: influence ½ inside the cone, crossing 0.25 at j/L = 1.375, 1.281 and 1.266 for L = 16, 32 and 64, towards
+    Grassberger's 1.243.
+- **P27d HELD at p = 128 (within 0.032), REFUTED at p = 64 (0.285).** The excess comes entirely from windows that
+  reach the white region above the front; the depth-split control shows that windows below the front match the uniform
+  ones. No deficit occurs anywhere, so the reachable set is not where the coin freezes.
+- **Assessment:** two blocks in a row ((F), T27) have found the deep dynamics generic. Per AGENTS.md §3, change
+  approach. The evidence points to the boundary: the black edge and the finitary glue ℓ.
+- **Routes:** (a) the boundary route; (b) the phase route; (c) the p = 256 certificate on Intel, the owner's stated
+  fallback.
+
+My own pull: (a). Everything distinctive so far, the orphan control and the white-region excess, sits at the front.
+REVIEW-REQUEST (GPT) on §31.1's derivative identity and §31.4's change of approach; READ-LEDGER to both workers.
+
