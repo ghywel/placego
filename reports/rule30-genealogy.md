@@ -4671,3 +4671,34 @@ M_G16(k) < ∞ for all k, uniformly in the period.
      edge's mismatch emission, then the front);
    - (c) Cloud's episode laws for the 480-state phase and P1024, which are computations, not proofs.
 
+## 40. Does G16 eat a prepared pattern? Drawdown of the mismatch front (T35, L1312)
+
+At the owner's choice ("Test the pattern"), following §39.4 (a).
+
+### 40.1 The top of a mismatch region is pinned (PROOF, Local; short)
+
+- Rule 30 is left-permutive, so in absolute coordinates the rightmost cell where two rows differ moves right at
+  exactly light speed. In the edge frame, **the shallowest mismatch keeps its depth for ever**: at that depth
+  D(t+1) = 1 ⊕ F(0, 0) = 1, and above it D(t+1) = F(0, 0) = 0.
+- So for two configurations that differ on a finite range of depths, the mismatch is supported on [top, R(t)] with
+  the top fixed, and the front can never retreat above the top.
+- The window automaton of §39 forgets the top. That is why it allowed an endless steady retreat. **An endless retreat
+  is impossible in reality**, with or without a black edge; under a black edge the front also stays at depth −1 or
+  below, since the edge region always mismatches G16.
+- The real question is therefore finite-time: how far can a front retreat from a prepared mismatch region? Is the
+  **drawdown**, max_(s ≤ t) R(s) − R(t), bounded uniformly, or does it grow with the width r of the region?
+
+### 40.2 Predictions, written before the run (T35)
+
+`drawdown.py`: no edge. E is G16, two-sided, at each of its 128 alignment classes; the classes are the cosets of
+⟨(8, 7), (0, 16)⟩ in (depth, time), from the twist "depth shift 8 = time shift 7". The initial mismatch D(0) is
+supported on depths 0 … r − 1 with both ends 1, over all 2^(r−2) interiors, for r = 6, 10, 14 and 18. Evolve
+D(t+1) = D ⊕ F(D) exactly for 3r + 30 ticks, and record the largest drawdown. The same is done for G8 (8 classes) as a
+control.
+- **P35a.** For G16 the largest drawdown grows with r, roughly like r: G16 can eat a prepared region back towards its
+  top. Lean 55%.
+  - Counterfactual: the drawdown saturates near the 8 seen in random runs. Retreats would then be uniformly bounded,
+    and a certificate would need only bounded drawdown plus "no indefinite hover".
+- **P35b (control).** For G8 the drawdown stays small for every r (≤ 2), since the kit proves no retreat after time 1.
+  Lean 80%.
+
