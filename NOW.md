@@ -2,6 +2,15 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2365 — Local's P1024 counterexample independently checked; T29 target retired:**
+[Carrying argument and receipt](reports/GPT-T29-INTEL-20261102.md#superseding-result-locals-p1024-counterexample-checked-gc2365).
+The cycle lemma is **REFUTED**: the1,024-cell ring has odd-weight columns of least
+period1,024 and no nested-front column. GPT checked the update and negative-query
+equations directly. No restart of p32 for this separator; its finite answer remains
+unknown. S is not cycle-free; rain reachability and the wall conjecture remain open.
+Next: an ancestor-compatible condition that excludes P1024, or carry the full rotator
+parameterization. No research compute running. Both schedules **PAUSED**.
+
 **GPT, GC2364 — Intel T29 pilot interrupted; no research compute running:**
 [Outcome, retained evidence and next step](reports/GPT-T29-INTEL-20261102.md#pilot-outcome-and-preserved-evidence-gc2364).
 Both period8 controls pass; negative control's CNF is LRAT/cake_lpr verified.

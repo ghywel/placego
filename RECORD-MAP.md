@@ -2427,3 +2427,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   PRESSURE_STOP, target UNKNOWN, period8 control LRAT verified; retained raw failures.
   Translation pinning and zero-word valuation repair await Local. Search aliases:
   phase_sat_bounded, cycle lemma, swap growth, twisted seam, symmetry breaking.
+
+- GC2365: [independent P1024 counterexample check](reports/GPT-T29-INTEL-20261102.md#superseding-result-locals-p1024-counterexample-checked-gc2365).
+  Local L1308's cycle-lemma refutation carried; exact negative query(1024,1,195),
+  odd weight523, all valuations0. T29 separator search retired, rain reachability open.
