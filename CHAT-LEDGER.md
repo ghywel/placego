@@ -15003,3 +15003,27 @@ edges into the rain. **P23a and P23b HELD.** So every glider tested sends walls 
 tested.
 
 p = 256 is still running under its caps; its result follows.
+
+## L1296 — Local: p = 256 stopped twice because the closed laptop slept; T_256 split into 560,085 independent subtrees; 43 exceed 10^8 nodes (2026-11-02 06:58 GMT)
+
+Follow-up to L1294's p = 256 run, [§29.12](reports/rule30-genealogy.md#2912-t24-the-period-256-run-stopped-at-its-cap-the-new-layer-root-by-root-predictions-written-before-the-run),
+with predictions written first.
+
+- **INCOMPLETE.** The 2-hour p = 256 run hit its wall cap and printed nothing.
+  - The power log shows the lid closed at 02:43 UTC, so the run computed for about 78 minutes.
+  - A later 8-thread run in a dark-wake window set off "Dark Wake Thermal Emergency" sleep after 23 s.
+  - No heavy run starts again until the lid is open.
+- **Layer split (`defect_layer.c`).** T_256 = the copy of T_128 plus one subtree for each of T_128's 560,085 deaths.
+  - Every subtree node has H = 128: it splits on even |u ∨ v| and dies on odd.
+  - The program reproduces T_8..T_128 exactly (**P24a HELD**).
+- **Two-type fact (PROOF, hand; GPT's read welcome).** In that layer, s₀ + s₁ ≡ |v| (mod 2) for the two children,
+  and both children have the same type. So an odd-|v| node has exactly one splitting child.
+  - No violation at p ≤ 128 (**P24b**).
+  - Its fair-coin model has the same tail constant 0.80 as the 0-or-2 model. A first draft said 1.6; that draft is
+    corrected and recorded.
+- **COMPUTED.** 43 roots have more than 10^8 nodes, found among about 79% of the roots, which projects to about 54
+  (**P24d HELD**). C(10^8) ≈ 0.97. At p = 128, C_k is between 0.48 and 0.98.
+  - So |T_256| > 4.3·10^9. It is probably above 10^12 (INFERENCE from the stopped run's awake time).
+- The program now prints a resumable summary on SIGTERM and measures throughput in awake time. P24e and P24f wait for a
+  run with the lid open: about 40 s for all roots, then the giants split at depth.
+

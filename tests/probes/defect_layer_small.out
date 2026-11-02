@@ -1,0 +1,79 @@
+p=8 phase 1 (copy of T_4): nodes 2 splits 0 doublings 2 deaths 0 into_rain 0 longest 2 roots 1
+p=8 phase 2: roots run 1, cap 1000000000 nodes per root: completed 1, capped 0
+completed roots: nodes 3 deaths 2 splits 1 longest (absolute depth) 4
+all roots: into_rain 0 depth-cap hits 0 two-type violations 0
+T_8 complete: orbits 5 (copy 2 + layer 3)
+tail: k, roots with N >= 2^k, C_k = share * 2^(k/2)
+   0 1 1.000
+   1 1 1.414
+largest subtrees (root, nodes, capped, deepest): (0, 3, 0, 4)
+
+p=16 phase 1 (copy of T_8): nodes 5 splits 1 doublings 4 deaths 0 into_rain 0 longest 4 roots 2
+p=16 phase 2: roots run 2, cap 1000000000 nodes per root: completed 2, capped 0
+completed roots: nodes 2 deaths 2 splits 0 longest (absolute depth) 5
+all roots: into_rain 0 depth-cap hits 0 two-type violations 0
+T_16 complete: orbits 7 (copy 5 + layer 2)
+tail: k, roots with N >= 2^k, C_k = share * 2^(k/2)
+   0 2 1.000
+largest subtrees (root, nodes, capped, deepest): (0, 1, 0, 5) (1, 1, 0, 5)
+
+p=32 phase 1 (copy of T_16): nodes 7 splits 1 doublings 6 deaths 0 into_rain 0 longest 5 roots 2
+p=32 phase 2: roots run 2, cap 1000000000 nodes per root: completed 2, capped 0
+completed roots: nodes 64 deaths 33 splits 31 longest (absolute depth) 15
+all roots: into_rain 0 depth-cap hits 0 two-type violations 0
+T_32 complete: orbits 71 (copy 7 + layer 64)
+tail: k, roots with N >= 2^k, C_k = share * 2^(k/2)
+   0 2 1.000
+   1 2 1.414
+   2 1 1.000
+   3 1 1.414
+   4 1 2.000
+   5 1 2.828
+largest subtrees (root, nodes, capped, deepest): (0, 61, 0, 15) (1, 3, 0, 7)
+
+p=64 phase 1 (copy of T_32): nodes 71 splits 32 doublings 39 deaths 0 into_rain 0 longest 15 roots 33
+p=64 phase 2: roots run 33, cap 1000000000 nodes per root: completed 33, capped 0
+completed roots: nodes 2651 deaths 1342 splits 1309 longest (absolute depth) 104
+all roots: into_rain 0 depth-cap hits 0 two-type violations 0
+T_64 complete: orbits 2722 (copy 71 + layer 2651)
+tail: k, roots with N >= 2^k, C_k = share * 2^(k/2)
+   0 33 1.000
+   1 16 0.686
+   2 8 0.485
+   3 7 0.600
+   4 5 0.606
+   5 4 0.686
+   6 2 0.485
+   7 2 0.686
+   8 2 0.970
+   9 2 1.371
+  10 1 0.970
+largest subtrees (root, nodes, capped, deepest): (10, 1539, 0, 104) (19, 913, 0, 79) (5, 61, 0, 24) (32, 37, 0, 19) (23, 27, 0, 22) (25, 15, 0, 19) (15, 11, 0, 19) (31, 7, 0, 10) (16, 3, 0, 17) (2, 3, 0, 13) (6, 3, 0, 15) (17, 3, 0, 17)
+
+p=128 phase 1 (copy of T_64): nodes 2722 splits 1341 doublings 1381 deaths 0 into_rain 0 longest 104 roots 1342
+p=128 phase 2: roots run 1342, cap 1000000000 nodes per root: completed 1342, capped 0
+completed roots: nodes 1118828 deaths 560085 splits 558743 longest (absolute depth) 2033
+all roots: into_rain 0 depth-cap hits 0 two-type violations 0
+T_128 complete: orbits 1121550 (copy 2722 + layer 1118828)
+tail: k, roots with N >= 2^k, C_k = share * 2^(k/2)
+   0 1342 1.000
+   1 653 0.688
+   2 325 0.484
+   3 279 0.588
+   4 223 0.665
+   5 165 0.696
+   6 124 0.739
+   7 82 0.691
+   8 56 0.668
+   9 42 0.708
+  10 32 0.763
+  11 29 0.978
+  12 17 0.811
+  13 13 0.877
+  14 9 0.858
+  15 3 0.405
+  16 2 0.382
+  17 2 0.540
+  18 2 0.763
+largest subtrees (root, nodes, capped, deepest): (929, 492797, 0, 2033) (553, 308695, 0, 1323) (100, 42133, 0, 538) (1045, 29919, 0, 584) (655, 29511, 0, 458) (1029, 28203, 0, 315) (1036, 20433, 0, 277) (1288, 18037, 0, 290) (1039, 17097, 0, 399) (191, 13485, 0, 419) (1163, 10645, 0, 364) (639, 8631, 0, 273)
+

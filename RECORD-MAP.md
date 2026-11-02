@@ -2353,6 +2353,10 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   G8 (4 cells), G16 (128-cell rigid rotator), four walls all into the rain. Search aliases: defect map, automaton
   2369, G2369, light-speed glider, ring glider, rigid rotator, phase diagram, wall, terminal rain, Lemma U prime,
   orbit enumeration, defect_orbits, lightspeed_core.
+- L1296 (Local, 2 November 2026): [p = 256 by layers](reports/rule30-genealogy.md#2912-t24-the-period-256-run-stopped-at-its-cap-the-new-layer-root-by-root-predictions-written-before-the-run).
+  T_256 = the copy of T_128 plus 560,085 independent H = 128 subtrees; 43 have more than 10^8 nodes; INCOMPLETE (the
+  machine slept; thermal emergency in dark wake). Two-type fact s₀ + s₁ ≡ |v| (PROOF, hand). Search aliases: new
+  layer, subtree size, Galton–Watson, defect_layer, clamshell, thermal emergency.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 

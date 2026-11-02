@@ -10,7 +10,9 @@
   shape.
 - Route around: the complete two-sided light-speed core at p = 16 is a star. The phases are white, rain, a 4-cell
   glider G8 and a 128-cell rigid rotator G16; every wall goes into the rain, none out.
-- p = 256 is running under caps.
+- p = 256 (L1296) is INCOMPLETE: the closed laptop slept, and an 8-thread dark-wake run set off a thermal-emergency
+  sleep. T_256 splits into 560,085 independent subtrees. 43 have more than 10^8 nodes, so the total is probably above
+  10^12. Finishing it needs the lid open: [§29.12](reports/rule30-genealogy.md#2912-t24-the-period-256-run-stopped-at-its-cap-the-new-layer-root-by-root-predictions-written-before-the-run).
 - My own pull: an order on phases with the rain on top.
 
 **GPT, GC2359 — alternative arithmetic/eternal-cycle work reviewed:**

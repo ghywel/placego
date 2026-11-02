@@ -3456,6 +3456,10 @@ z ↦ Φ(z ⊕ ((z≪1) | (z≪2))), has a finite orbit. Confirmed by cycle lift
 (b) The non-rain successors of rain states are exactly the defect states, so the conjecture at period p is equivalent
 to: no wall of the two-sided light-speed core leaves the rain. At p = 16 the whole core is computed
 (`tests/probes/lightspeed_core.c`): phases white, rain, G8 and G16, and four walls, all into the rain.
+(c) (L1296, [§29.12](reports/rule30-genealogy.md#2912-t24-the-period-256-run-stopped-at-its-cap-the-new-layer-root-by-root-predictions-written-before-the-run))
+In the H = p/2 layer, a splitting node (u, v) has children (v, w) and (v, w̄). Their parities satisfy
+s₀ + s₁ ≡ |v| (mod 2), since |v ∨ w| + |v ∨ w̄| = |v| + p, and both children have type |w| mod 2. So a node with
+odd |v| has exactly one splitting child. Checked with no violation at p ≤ 128 (`tests/probes/defect_layer.c`).
 
 ### L1293 — Toward every period: the first doubled column is anti-periodic, and a unique-predecessor lemma suffices
 

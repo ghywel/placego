@@ -3276,3 +3276,103 @@ that leaves the cycle, as T19 did for G8.
 - **P23a HELD.** The trees are finite: 1,310 states (longest 14) at p = 16, and 18,238 states (longest 41) at p = 32.
 - **P23b HELD.** At both periods the only exits are 16 edges into the rain. None goes into G16, G8 or white.
 - With T19 (G8 at p = 8..64), every glider tested sends walls only into the rain, at every period tested.
+
+### 29.12 T24: the period-256 run stopped at its cap; the new layer root by root (predictions written before the run)
+
+**The p = 256 run of §29.3 is INCOMPLETE.** `defect_orbits_par.c` ran on 8 threads until the 7,200 s wall cap
+(exit `WALL_STOP`, maximum RSS 207 MB). It printed nothing, because it reports only at the end. So P16b is
+untested, and the stopped run gives no count. That was a design fault: a long enumeration must leave a resumable
+partial result.
+
+The repair uses the layer structure of §29.3. T_256 is the copy of T_128 (nodes with H < 128; the 560,085 deaths of
+T_128 become doublings), plus one subtree for each of those doublings. Every node of a subtree has H = 128, so it
+splits if d = u | v has even weight over the whole ring and dies if the weight is odd. The subtrees are independent.
+[`defect_layer.c`](../tests/probes/defect_layer.c) enumerates the copy, numbers the roots in DFS order, then runs each
+root's subtree to completion or to a per-root node cap, on 8 threads. It can resume on a list of root numbers.
+
+A two-type fact, found while writing the program (PROOF, Local; hand). In the H = p/2 layer, the children of a
+splitting node (u, v) are (v, w) and (v, w̄), where w̄ is the complement on the ring. Then
+|v ∨ w| + |v ∨ w̄| = |v| + p, so their parities satisfy s₀ + s₁ ≡ |v| (mod 2), since p is even. Also |w| + |w̄| = p, so
+the two children have the same type |w| mod 2. A node whose v has odd weight therefore has exactly one splitting
+child. When v has even weight, the two children both split or both die. So the layer is a two-type branching process,
+not the independent 0-or-2 process of §29.3's model.
+
+Record searched: `record_find.py Galton "subtree size" "new layer"` found no hit in the record, the kit (main
+@93d98bbe), the portal or the open kit PRs. §29.3 holds the model.
+
+Predictions:
+- P24a: phase 1 at p = 256 finds 1,121,550 copy nodes and 560,085 roots. At p = 64 and p = 128 the same program
+  reproduces the new layers 2,651 (33 roots) and 1,118,828 (1,342 roots) exactly.
+- P24b: no split node violates s₀ + s₁ ≡ |v| (mod 2). This only checks the program; the fact is proved above.
+- P24c: subtree sizes have a tail P(N ≥ n) ≈ C·n^(−1/2) for n from 10 to 10^6, with C between 0.4 and 1.6. The
+  0-or-2 model gives C = √(2/π) ≈ 0.80.
+- P24d: with a per-root cap of 10^8 nodes, about 45 roots hit the cap (range 15 to 120).
+- P24e: no completed subtree enters the rain or reaches the depth cap of 10^7.
+- P24f: the completed subtrees hold about 9·10^9 nodes in total (range 3·10^9 to 3·10^10).
+- Counterfactuals. A steep tail with almost no capped roots would leave the stopped run unexplained, unless
+  throughput is far below what is measured. Many more than 120 capped roots, or a tail flatter than n^(−1/2), would
+  point to supercritical growth, and so to a candidate infinite path: the thing the conjecture forbids.
+- The run reports nodes per second per thread. That turns the stopped run into an estimated lower bound on |T_256|.
+  This is a MEASURED inference, not a count.
+- Caps, stated before the run: CPU 3,600 s, wall 900 s, RSS 2,048 MiB, file 64 MiB, disk 64 MiB, minimum free memory
+  4,096 MiB, swap growth 256 MiB. A second stage on the capped roots gets its own caps, written before it starts.
+
+**T24 results** ([`defect_layer.c`](../tests/probes/defect_layer.c), source SHA256 at this commit in
+`tests/probes/PROBES.md`; outputs [p ≤ 128](../tests/probes/defect_layer_small.out) and
+[p = 256, stopped](../tests/probes/defect_layer256a.out)).
+
+**Why both p = 256 runs stopped: the machine was asleep (MEASURED, from the system power log).**
+- The laptop's lid was closed at 02:43:13 UTC ("Clamshell Sleep"). After that it ran only in dark-wake windows of a few
+  seconds to a minute.
+- The 2-hour run (01:25 to 03:25 UTC) therefore computed for about 78 minutes, not 120.
+- The layer run started at 06:30:26 during such a window. 23 s later the system slept with reason
+  **"Dark Wake Thermal Emergency"**: eight busy threads in a closed laptop overheated it. The run's own samples stop at
+  24 s and resume at 944 s.
+- Lesson, recorded: a heavy run needs the lid open and the machine awake. Check `AppleClamshellState` (ioreg) before
+  launching. The layer program now measures throughput on `CLOCK_UPTIME_RAW`, which stops during sleep.
+
+**Results.**
+- **P24a HELD.**
+  - At p = 256, phase 1 finds the copy of T_128: 1,121,550 nodes, 560,084 splits, 561,466 = 1,381 + 560,085
+    doublings, no death, no rain edge, longest 2,033, and **560,085 roots**.
+  - At p = 8..128 the program reproduces T_p exactly: 5, 7, 71, 2,722 and 1,121,550 orbits, longest 4, 5, 15, 104 and
+    2,033. The layers are 2,651 nodes on 33 roots and 1,118,828 nodes on 1,342 roots.
+- **P24b HELD for p ≤ 128.** No split node anywhere violates s₀ + s₁ ≡ |v|. A 3-second test at p = 256 (12,288
+  completed roots) found none either.
+- **P24c.**
+  - At p = 128, C_k = (share of roots with N ≥ 2^k)·2^(k/2) lies between 0.48 and 0.98 for k = 2..14 (1,342 roots).
+    That fits the 0-or-2 model's 0.80.
+  - The two-type process with independent fair-coin types predicts the same constant. Its splitting nodes have 0, 1 or
+    2 splitting children with probabilities 1/4, 1/2 and 1/4, which is exactly the law of the 0-or-2 model, so C is
+    again 0.80. The data cannot tell the two models apart.
+    - A first draft of this section claimed C ≈ 1.6 for the two-type model. That draft forgot the factor 1/2 for the
+      root splitting. It was corrected before commit and is recorded here as a failed derivation.
+  - At p = 256 only the cap point is measured: 43 roots over 10^8 among about 443,500 dispatched, so C(10^8) ≈ 0.97.
+- **P24d HELD on the part run.** 43 capped roots among about 79% of the roots projects to about 54, inside 15 to 120.
+  The capped roots are listed in the output, and each certainly has more than 10^8 nodes (COMPUTED).
+- **P24e and P24f untested.** The summary was lost at the stop. The program now catches run_capped's SIGTERM, prints
+  the summary for completed roots and names the roots to resume. Tested by a stop after 3 s.
+- Throughput: 6.0·10^7 nodes per awake second on one thread, and at least 3.7·10^7 per thread on eight.
+
+**What follows (COMPUTED lower bound; the rest INFERENCE).**
+- |T_256| > 4.3·10^9, from the 43 capped roots alone.
+- The 2-hour program ran about 78 awake minutes on 8 threads without finishing. At comparable throughput it walked
+  on the order of 10^12 nodes, so |T_256| is probably above 10^12. That is the top of the branching model's range
+  (3·10^10 to 10^12).
+- Under the model's n^(−1/2) tail, the about 54 roots above 10^8 hold almost all of T_256. The largest is likely
+  10^11 to 10^13 nodes, which is one to ten hours of 8-thread work with the lid open.
+- One giant root cannot be parallelised by the root queue. Stage 2 must split a capped root at a fixed depth into its
+  frontier nodes and queue those.
+
+**Routes (each lands work, not a pause).**
+1. **Finish p = 256 when the machine can run awake.**
+   - First, all roots at cap 10^8 (about 40 awake seconds), for P24b, P24e and P24f.
+   - Then the capped roots, split at depth, at caps 10^10 and 10^12. Each stage is resumable from the printed root
+     list.
+2. **The two-type process.** In the H = p/2 layer a node of odd |v| has exactly one splitting child. Criticality then
+   rests on the even-|v| nodes alone: both children split or both die, at even odds.
+   - Measure the type frequencies and the both-split share at p = 64 and 128; this is cheap.
+   - Look for an involution on the even-|v| nodes that swaps "both split" with "both die". Such an involution would
+     prove criticality, which is the model's one assumption.
+3. **Lean.** The layer decomposition and the two-type fact are short and exact, so they are good first targets in
+   the formalisation route of §29.5.
