@@ -5925,3 +5925,26 @@ GC2403/GC2404 asked that actual entry depths and the minimum depth to capture be
 128. The least depth from that entry to capture is also min 72, median 128: no real front fell below its entry depth on
 the way to S_E. This replaces the inferred figures of L1332 and L1335 with logged ones. They lie far above the guard (16
 or 18).
+
+## 54. Does the dichotomy survive a longer window? (T50, L1338)
+
+### 54.1 Predictions, written before the run (`front_closure.py P1024 10 --all-theta`, `funnel_attractor.py ... 10 --core`)
+
+**Question.** At W = 8 the window automaton splits exactly into S_E, A (forced into S_E) and the bad core B (§52). At W =
+10 the window holds the two cells that decide most exits (T49). Does the split stay exact, and does B shrink as the window
+sees more of the real history?
+
+**Setting.** P1024, W = 10: 1,048,576 states. S_E^all at W = 10 is built from the clean starts of all 1,024 θ. B is
+computed independently as a greatest fixed point (FAIL branches are not edges), A as before, and the guard and logged
+depths as in §52–53. The same 200 rows (Random(48)).
+
+**Predictions.**
+- **E1.** S_E^all at W = 10 is robust (FAIL-free, every 3-path advancing), with between 300 and 600 states. Lean 80%.
+- **E2.** The split is exact again: S_E + A + B = all states. Lean 75%.
+- **E3.** B stays large, at least 75% of the automaton, because retreats into unseen cells still give arbitrary fuel
+  (C1, §45). Lean 65%.
+- **E4.** All 200 real paths enter A, and their lead before capture is longer than at W = 8 (median > 26). Lean 55%.
+- **Counterfactual.** If B shrinks sharply with W, the window abstraction converges towards real dynamics, and a finite
+  W might certify capture for all but a small core. If B stays large, history beyond any fixed window is essential.
+
+Record searched: §45 (C1 bad core at W = 8 only), §52–53; W = 10 not computed before.

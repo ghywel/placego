@@ -75,6 +75,19 @@ while len(frontier):
     new = cand[(need[cand] == 0) & (rank[cand] < 0) & (~fail[cand]) & (outdeg[cand] > 0)]
     rank[new] = r; frontier = new
 A = (rank > 0)
+if '--core' in sys.argv:
+    # L1338 T50: the bad core B computed independently (greatest set outside S_E in which every state has an edge into the set)
+    aliveB = ~SE.copy()
+    while True:
+        ok = aliveB[src] & aliveB[dst]
+        has = np.zeros(NS, dtype=bool); has[src[ok]] = True
+        new = aliveB & has
+        if new.sum() == aliveB.sum():
+            break
+        aliveB = new
+    print('   bad core B: %d states (%.2f%%); S_E + A + B = %d of %d; A and B disjoint: %s' % (
+        int(aliveB.sum()), 100.0 * aliveB.sum() / NS, int(SE.sum() + A.sum() + aliveB.sum()), NS,
+        not bool((A & aliveB).any())), flush=True)
 print('   attractor A of S_E (outside S_E): %d states (%.2f%% of the automaton); largest rank %d; rank counts (first 12): %s' % (
     int(A.sum()), 100.0 * A.sum() / NS, int(rank.max()), np.bincount(rank[rank > 0])[1:13].tolist()), flush=True)
 # L1333: the depth guard. Edge advances from classes (a = -21 (c' - c - 1) mod 1024, in -512 .. 511); F = largest fall
