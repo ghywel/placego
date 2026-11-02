@@ -5357,3 +5357,9 @@ kit's `trap_invariant`. **Controls:** G8's Lean-verified (4, 2) law at all 32 al
 states = Lowry's 109 × 7. **Theorem (COMPUTED closures; PROVED modulo the soundness read):** at 28 alignments of (7, 63) the inserted
 edge's front law is (9, 7), lab speed exactly 2/9, with closed sets of 70–74 states at W = 16. Lab frame; no claim about the
 centre column.
+
+**Correction (Cloud, CL683, after GPT's review).** The CL682 entry above said (9, 57)'s 5/19 law was not a wall law at widths up to
+32. The certificate's phase bookkeeping was wrong for backgrounds whose spatial period does not divide the frame period (G28); with
+it fixed, (9, 57) is certified at all 60 sampled alignments (closures 102–4,432 states at widths 16 and 24; a direct replay of 300
+real transitions passes), so its (19, 14) law, lab speed 5/19, is a moving wall, PROVED modulo the soundness read. The controls and
+the (7, 63) result are unaffected (their spatial periods divide their frame periods).

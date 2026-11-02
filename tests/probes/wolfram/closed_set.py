@@ -20,8 +20,8 @@ def transitions(state, r, s, W):
     """Lowry's anchor: the window's left column moves left only when its own cell becomes a mismatch (a retreat, one successor,
     no branch); otherwise it stays and the strip's far cell needs the cell beyond (two successors). Returns [(newstate, motion)],
     or None if the strip holds no mismatch (the front is beyond the window)."""
-    (tq, xq, strip) = state; L = len(strip)
-    def Eb(i, dt=0): return orb[(tq + dt + s) % q][((tq + dt - (xq + i)) + r) % N]
+    (tq, dq, strip) = state; L = len(strip)          # dq = (t - x_B) mod N: the ether's phase at the anchor
+    def Eb(i, dt=0): return orb[(tq + dt + s) % q][((dq + dt - i) + r) % N]
     outs = []
     for b in (0, 1):
         def cell(i):
@@ -30,12 +30,12 @@ def transitions(state, r, s, W):
             return b
         new = {i: rule(cell(i - 1), cell(i), cell(i + 1)) for i in range(0, L + 1)}
         if new[0] != Eb(0, 1):
-            ns = tuple(new[i] for i in range(0, L)); nxq = (xq - 1) % N; mv = -1          # retreat, independent of b
+            ns = tuple(new[i] for i in range(0, L)); ndq = (dq + 2) % N; mv = -1          # retreat, independent of b
         else:
-            ns = tuple(new[i] for i in range(1, L + 1)); nxq = xq; mv = 0
-        def Enew(i): return orb[(tq + 1 + s) % q][((tq + 1 - (nxq + i)) + r) % N]
+            ns = tuple(new[i] for i in range(1, L + 1)); ndq = (dq + 1) % N; mv = 0
+        def Enew(i): return orb[(tq + 1 + s) % q][((ndq - i) + r) % N]
         if not any(ns[i] != Enew(i + 1) for i in range(len(ns))): return None   # no mismatch in the window
-        outs.append((((tq + 1) % q, nxq, ns), mv))
+        outs.append((((tq + 1) % q, ndq, ns), mv))
         if mv == -1: break
     return outs
 def certify(r, s, t0, W, T):
@@ -46,7 +46,7 @@ def certify(r, s, t0, W, T):
     for t in range(t0): a, bb = step(a), step(bb)
     d = np.flatnonzero(a ^ bb); xmin = int(d.min()) - c; xB = xmin - 1
     strip = tuple(int(v) for v in bb[c + xB + 1: c + xB + 1 + W])
-    start = (t0 % q, xB % N, strip)
+    start = (t0 % q, (t0 - xB) % N, strip)
     # closure
     seen = {start: 0}; dq = deque([start]); edges = {}
     while dq:

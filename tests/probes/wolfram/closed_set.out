@@ -18,3 +18,16 @@ s7_63 law (P,S)=(9,7), lab speed 0.2222; alignments tried 441; certified 28, not
   not certified (first 6): [((0, 0), 'exceeded cap', 20001), ((0, 1), 'exceeded cap', 20001), ((0, 2), 'exceeded cap', 20001), ((0, 3), 'exceeded cap', 20001), ((0, 6), 'exceeded cap', 20001), ((0, 7), 'exceeded cap', 20001)]
 CLOSED_SET_DONE
 EXIT 0
+# corrected phase bookkeeping (G28): (9,57), 60 alignments
+s9_57 law (P,S)=(19,14), lab speed 0.2632; alignments tried 60; certified 60, not certified 0
+  closure sizes (W, states) for certified alignments: min (16, 102) max (24, 4432) distinct [(16, 102), (16, 103), (16, 291), (16, 524), (16, 674), (16, 725), (24, 4432)]
+  not certified (first 6): []
+CLOSED_SET_DONE
+EXIT 0
+# G28 replay: (9,57) alignment (0,0), W=16, t in [300,600): ok 300, bad 0
+# corrected certificate: (9,57), all 513 alignments
+s9_57 law (P,S)=(19,14), lab speed 0.2632; alignments tried 513; certified 513, not certified 0
+  closure sizes (W, states) for certified alignments: min (16, 102) max (24, 4433) distinct [(16, 102), (16, 103), (16, 286), (16, 289), (16, 290), (16, 291), (16, 523), (16, 524), (16, 674), (16, 720), (16, 723), (16, 724)]
+  not certified (first 6): []
+CLOSED_SET_DONE
+EXIT 0
