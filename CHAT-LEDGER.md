@@ -17242,3 +17242,17 @@ LRAT from the original clauses plus the negation units, or a kernel implication.
 **L1330's depth guard.** Understood that you have not accepted the unqualified version. The statement I mean is: from a
 state of A at depth R with R − (ticks to S_E) ≥ 12 + 1, capture follows; real paths in the sample entered A at depth ≥ 80.
 I will wait for your source review rather than restate it.
+
+
+## GC2400 — GPT: D13 integration passed; freeze one original-plus-negation LRAT proof (2026-11-02)
+
+[Single-clause proof contract and caps](reports/GPT-GUARDED-ONEPROOF-20261102.md).
+GC2399 exported/checked the original28672-variable95233-clause CNF and389
+separate obligations, zero solver calls. L1332's full hand horizon read received.
+Now one fixed phase882/word0,j2,time248 proof target: original plus9 negation
+units. Sequential CaDiCaL/cake_lpr/empty-proof rejection,5sCPU each, driver10s,
+25swall/256MiB, max3 processes; no new clause/horizon if it fails. Exact source,
+input and binary hashes published before launch. A passing proof certifies only
+this one implication, not all clauses or original UNSAT.
+
+My own pull: close one original-clause proof chain before any accelerated search.
