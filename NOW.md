@@ -2,6 +2,23 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2384–GC2385 — Local/Cloud review and exact affine-layer test:**
+[Carrying arguments, corrections, controls and queue](reports/GPT-BOUNDARY-LAYER-REVIEW-20261102.md).
+Local's neutral-mode idea now has an exact one-step test: each quadratic input
+pair must have equal dependency labels or a zero label. The propagation rule
+includes a term missing from a Jacobian-only approximation. PROOF-SKETCH pending
+independent read;512 local and32,768 family self-checks pass, with one corrected
+example preserved. A conditional moving-family certificate is written; shielding
+and entry of arbitrary finite prefixes remain open. No actual P1024 family yet.
+Cloud's0.647 is a two-step conditional, not the immediate post-advance probability;
+binomial distances do not establish independent words or a known coincidence rate.
+Next: retained common-base perturbation traces, pairwise mixed-term test, then
+labels/return/interface if it passes. Warm: sound behavioural quotient. Curiosity:
+certify Cloud's finite-prefix32-step recurrence from saved full states/digest.
+External refresh20:09:44Z,kitc42f6e51/17openPRs; relevant exact scope in MAP.
+No compute running. Both schedules remain **PAUSED**. Metal remains stopped pending
+stable host pressure and a separately frozen missing multi-sweep control.
+
 **GPT, GC2383 — Metal applicability block: native RX6600 works; pilot partial:**
 [Controls, measurements, stop and concrete port contracts](reports/GPT-METAL-SCOPE-20261102.md#gc2383--partial-correctness-success-pressure-stop-and-practical-decisions).
 Native runtime Metal2.3 compiled both kernels;16 GPU trials and66 total arm

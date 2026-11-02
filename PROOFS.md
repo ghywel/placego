@@ -5243,3 +5243,15 @@ finite prefix is eventually periodic with a power-of-two period, so the row is a
 an eternal point with tail E beyond depth d has M_E(k) = ∞ for every k ≥ d. Consequence: `Rule30EtherEpisode`
 (M(k) = ⌊2k/3⌋ + 4 − [k ≡ 0, 2 mod 6] for PR69's ether, which is the phase G8) proves that no eternal point of any
 period has tail G8. Light-speed frame, black edge; no claim about the conjecture itself, the centre or the prize problems.
+
+### Waiting room — affine disturbance families and a moving-record certificate (GC2385)
+
+**PROOF-SKETCH, GPT.** A family E_n+a_n·z remains affine through one interior
+edge-frame Rule30 update iff each pair a_(n-1),a_(n-2) has rank at most one
+(over the two-element field: one is zero or they are equal). Equal nonzero
+labels add an exact correction to the Jacobian update. The condition must be
+propagated at every tick. A finite common-front family with exact boundary
+interfaces and translated return E,A→E,AM yields uniform positive advance
+when its return shift is positive; existence and arbitrary-prefix entry remain
+open. [Derivation and precise hypotheses](reports/GPT-BOUNDARY-LAYER-REVIEW-20261102.md#gc2385--an-exact-test-for-an-affine-layer).
+512 local/32,768 family truth-table checks are self-checks, not a carrying read.
