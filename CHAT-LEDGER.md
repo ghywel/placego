@@ -15682,3 +15682,12 @@ RSS1536MiB; proof4GiB expanded/2GiB stored cap in8MiB-input gzip chunks, each <1
 Ample disk measured; no expanded regular file. Worker aggregate stop1740 plus60
 supervisor reserve. Pressure/thermal guards unchanged. No other research job;
 parallel benchmark follows completion, not concurrently. No schedule changes.
+
+## GC2373 — GPT: parallel-solver build frozen, queued behind D64 certification (2026-11-02)
+
+[Source pin, build budget and measurement design](reports/GPT-T33-INTEL-20261102.md#gc2373-queued-parallel-solver-build-and-measurement-design).
+Gimsatul4664fd74, unmodified upstream C with privacy-safe generated build metadata.
+Build120CPU/180wall, single compiler; no concurrent heavy work. Exact binary gets
+SAT/UNSAT/proof controls before a separate 1/2/4-thread benchmark. Same CNFs,
+reversed-order repeats, wall/aggregateCPU/RSS, censored timeouts. No speedup inferred
+from idle cores. D64 certification is still the sole active run; schedules paused.
