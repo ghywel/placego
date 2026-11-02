@@ -5829,3 +5829,83 @@ L1321/INSTINCT; not computed before.
 - So the whole capture gap is now a statement about B: **a real evolution cannot stay in the bad core for ever.**
 - This sharpens GPT's target. The history condition need not fix the whole path. It only has to show that B's
   avoiding cycles need behind-window content that an actual row cannot keep supplying.
+
+### 52.3 The depth guard for A (L1333), predictions written before the run (`funnel_attractor.py --guard`)
+
+GC2398 does not accept §52.2's unqualified "capture is exactly leaving B" until the depth guard is settled. The window
+over-approximation is sound only while every update's outputs lie at depth ≥ 2, that is, while R ≥ 10. Capture's
+robustness lemma needs entry into S_E at R ≥ 12.
+
+For each state v of A, define two quantities over its paths to S_E:
+- **F(v):** the largest fall below the starting depth. F(v) = max over edges (v → u, advance a) of −a + max(0, F(u)),
+  with F = 0 on S_E.
+- **G(v):** the largest net fall at the entry into S_E.
+
+Then **a front at state v ∈ A with depth R ≥ max(10 + F(v), 12 + G(v)) is captured within rank(v) ticks**, whatever lies
+behind the window. The advance of an edge is recovered from its classes: a ≡ −21 (c′ − c − 1) (mod 1024), since 195 ·
+(−21) ≡ 1.
+
+**Predictions.**
+- **G1.** max F over A ≤ 20, so a uniform guard "R ≥ 30" suffices. Lean 60%.
+- **G2.** Every one of T48's 200 real entries into A satisfies its state's guard. Lean 90%.
+- **Counterfactual.** If some A states can fall by tens of cells, the guard is state-dependent and large, and real
+  entries near the prefix could violate it.
+
+### 52.4 Results: the guard is 16 ([output](../tests/probes/funnel_attractor.out), second section)
+
+- **G1 HELD.** Over A the largest fall on the way to S_E is F = 6. The largest net fall at entry is G = 4. A's edges
+  have advances from −8 to +2.
+  - The printed median of max(10 + F, 12 + G) is 9. It does not clip F at 0, and F is negative when every path rises at
+    once. The correct requirement, max(10 + max(0, F), 12 + G), has maximum 16 either way.
+- **G2 HELD.** All 200 real entries satisfy their state's guard, with least margin 64.
+- **The qualified dichotomy (P1024, W = 8).**
+  - **The finite part (COMPUTED, M5):** every state outside S_E lies in A or in B, every state of A has F ≤ 6 and
+    G ≤ 4, and ranks are ≤ 113.
+  - **The transfer (PROOF-SKETCH, a carrying read requested):** it is GC2386's over-approximation argument, applied to
+    paths of A instead of S_E. A real front whose 8-cell state lies in A at depth R ≥ 16 stays at depth ≥ 10 while it
+    follows A's edges, and enters S_E at depth ≥ 12 within 113 ticks, whatever lies behind the window. From there
+    GC2386 applies.
+  - So a real front at depth ≥ 16 is captured exactly when its 8-cell state ever leaves B.
+
+## 53. What decides the exit from the bad core? (T49, L1334)
+
+### 53.1 Predictions, written before the run (`funnel_attractor.py --exits`)
+
+**Structural fact (by definition).** Every state v of the bad core B has an edge into B. So when a real front's state
+leaves B (into A or S_E), at least one branch of v (a choice of the two unknown cells R − 9, R − 10, or of the free
+cells after a retreat) would have stayed in B. **Every exit from B is decided by cells beyond the 8-cell window.**
+Capture is always triggered from outside the window.
+
+**Question.** Which cells decide it in real runs?
+- The two cells just beyond the window, on a move with advance ≥ 0. Then no window cell is freed.
+- Or cells drawn in by a retreat.
+
+For each real exit tick (P1024, W = 8, the 200 rows of T48) the record is:
+- the advance of the real move;
+- how many of v's (unknown-pair, free-bit) branches lead into A ∪ S_E against B;
+- whether the exit depended only on the unknown pair. It does when every branch with the real unknown pair leaves B and
+  some branch with another pair stays.
+
+**Predictions.**
+- **X1.** At least 80% of real exits happen on moves with advance ≥ 0, decided by the two cells R − 9, R − 10. Lean 60%.
+- **X2.** At a typical exit, at most half of v's branches stay in B: the exit is likely given the window, not a rare
+  choice. Lean 50%.
+- **Counterfactual.** Exits mostly on retreats would mean capture is triggered by deep cells pulled in by the front's own
+  fall, which is a longer history.
+
+Record searched: §52 (A, B, the guard), §45 (bad core), T45 (reading depth); exits from B not measured before.
+
+### 53.2 Results ([output](../tests/probes/funnel_attractor.out), third section)
+
+- There are 166 real exits from B: 34 of the 200 rows were already outside B at their first tick with R ≥ 12.
+- The real advance at the exit is 0 in 76, +1 in 22, −1 in 43 and −2 to −6 in 25.
+- **X1 split.** The exit was decided by the unknown pair (R − 9, R − 10) alone in 134 of 166 (80.7%): every branch with
+  the real pair left B, and some branch with another pair stayed. That part held. But only 98 of 166 (59%) exits came on
+  moves with advance ≥ 0, so the "advance ≥ 0" part is REFUTED. 41% came on retreats, mostly by one cell, where the
+  freed window cell is also beyond the old window.
+- **X2 HELD (at the boundary).** At the exit state, a median of exactly half of v's branches would have stayed in B.
+
+**What T49 teaches.** Capture is triggered from just beyond the window. In four exits out of five, the two cells 9 and 10
+behind the front decide it, typically while the front stalls (0) or steps back by one. Those two cells' values are where
+actual history enters the capture event. For GPT's compatibility condition, the question is whether the pair beyond the
+window can be held, tick after tick, at values that keep v in B. That is the whole question of the bad core.

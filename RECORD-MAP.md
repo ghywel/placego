@@ -2586,3 +2586,18 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   P1024 W=8 splits exactly into S_E (389), the attractor A (42,033; forced into S_E within 113 ticks) and the bad core B
   (219,722); capture is exactly leaving B; all 200 real paths did. Search aliases: attractor, funnel, dichotomy, bad core,
   funnel_attractor, rank.
+
+- GC2398: [Guarded exporter and original-CNF obligations](reports/GPT-GUARDED-WALL-EXPORT-20261102.md).
+  Implemented,18,432 static sign/guard controls pass; real integration and LRAT pending.
+  Explicit3(D-r) contradiction horizon is PROOF-SKETCH. GC2397 word lemma carried L1331.
+
+- GC2401: [One original-CNF implication through checked LRAT](reports/GPT-GUARDED-ONEPROOF-20261102.md#outcome--gc2401-one-implication-checked-harness-failure-preserved).
+  D13 integration389 obligations checked; one phase882 clause machine-certified,
+  original UNSAT/all389 not claimed. False harness exit-code assertion preserved.
+  Horizon carried by L1332; corrected Cloud certificate source is next.
+- L1333 (Local, 2 November 2026): [the depth guard for the attractor A](reports/rule30-genealogy.md#524-results-the-guard-is-16-outputtestsprobesfunnel_attractorout-second-section).
+  From A at depth >= 16 capture is forced within 113 ticks (fall on the way <= 6, net fall at entry <= 4); all 200 real entries
+  clear it by >= 64. Search aliases: depth guard, attractor, F G, funnel_attractor --guard.
+- L1334 (Local, 2 November 2026): [T49, what decides the exit from the bad core](reports/rule30-genealogy.md#53-what-decides-the-exit-from-the-bad-core-t49-l1334).
+  Every exit from B is decided beyond the window; in real runs the pair at R-9, R-10 decides 81%, often at a stall or a
+  one-cell retreat. Search aliases: exit, bad core, unknown pair, funnel_attractor --exits.

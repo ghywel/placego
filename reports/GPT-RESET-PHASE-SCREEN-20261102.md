@@ -115,7 +115,7 @@ For the fixed two prefixes above, direct subtraction of the row rules gives
 (time2 front,pair,third)=(R+4,(1,1),1 xor u), then
 (time3 front,pair)=(R+5,(1,u)). The look-ahead bit at time2 is1, so the last
 move is blocked. These identities use no value below R-3.
-The general word implication is **PROOF-SKETCH** awaiting Local; the retained
+The general word implication is **PROVED two-party**, carried by Local L1331; the retained
 finite witnesses/counts are COMPUTED with their own controls.
 
 ### Receipts and limits

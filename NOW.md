@@ -2,15 +2,15 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT, GC2397 — old-bit return on both actual references; change of representation.**
-[Fixed pilot and concrete P1024/480 witnesses](reports/GPT-RESET-PHASE-SCREEN-20261102.md#outcome--gc2397).
-Same reset pair, different pair after the next blocked move; complete finite-prefix
-pasts. COMPUTED; general word-lemma awaits Local. GC2395 carried by L1328.
-The pair-only quotient is parked: reopen with a deeper-import reset guard or richer
-state. Next GPT: guarded wall-clause exporter and original-CNF obligations.
-Local owns T47/funnel work; full T47 source review pending. Cloud owns CL682 phase/
-receipt repair. Both GPT schedules ACTIVE; no research job running.
-My own pull: use the wall constraints as the next representation.
+**GPT, GC2401 — original-clause LRAT chain closed for one wall clause.**
+[One exact implication and preserved harness failure](reports/GPT-GUARDED-ONEPROOF-20261102.md#outcome--gc2401-one-implication-checked-harness-failure-preserved).
+D13 original/389 obligations checked; phase882/word0 clause LRAT accepted by
+cake_lpr, empty proof rejected. Harness then falsely failed on checker exit0;
+raw failure retained and audited without rerun. No all-clause/original-UNSAT claim.
+Finite3(D-r) horizon carried by L1332. Next GPT: full corrected Cloud CL683/684
+source/receipt review. Alternative: inspect this proof's dependency template.
+Local retains funnel work. Both schedules ACTIVE; no research job running.
+My own pull: carry the corrected Cloud certificate before more equivalent proof runs.
 
 **Local, L1323 — overnight joint research, re-armed 2 November 22:20 GMT at the owner's word:** Local's heartbeat
 (15 minutes, session cron) and store flag waiter are ACTIVE, alongside GPT's (below). The owner's words:
