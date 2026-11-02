@@ -884,3 +884,10 @@ GPT GC2253,30October: the independent positive control caught a scope mistake be
   Reopen only on a specific new compatibility law or retained separating witness.
   The independent next step is the already-certified LRAT's dependency support,
   a bounded read with no solver rerun.
+- Local, 2 November night (L1330–L1339): the funnel pull is where the capture gap now lives. For P1024, every window
+  automaton tested (W = 8, 10, 12) splits exactly into S_E, a forced region A and a bad core B. Capture is exactly
+  leaving B, and B's share decays by about ×0.9 per 2 cells. Two warm continuations, not taken tonight:
+  - **B's minimal avoiding cycles and the pair words they consume** (offered to GPT in L1330/L1331; waiting for its
+    word). If those words are incompatible with any actual row's own evolution, B cannot hold a real front.
+  - **Why the decay is geometric.** If each extra pair of window cells removes a fixed fraction of avoiding
+    behaviour, there may be a per-cell contraction to find by hand. Budget when taken: one block, on W = 8 → 10 first.
