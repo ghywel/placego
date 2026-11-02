@@ -5894,3 +5894,18 @@ For each real exit tick (P1024, W = 8, the 200 rows of T48) the record is:
   fall, which is a longer history.
 
 Record searched: §52 (A, B, the guard), §45 (bad core), T45 (reading depth); exits from B not measured before.
+
+### 53.2 Results ([output](../tests/probes/funnel_attractor.out), third section)
+
+- There are 166 real exits from B: 34 of the 200 rows were already outside B at their first tick with R ≥ 12.
+- The real advance at the exit is 0 in 76, +1 in 22, −1 in 43 and −2 to −6 in 25.
+- **X1 split.** The exit was decided by the unknown pair (R − 9, R − 10) alone in 134 of 166 (80.7%): every branch with
+  the real pair left B, and some branch with another pair stayed. That part held. But only 98 of 166 (59%) exits came on
+  moves with advance ≥ 0, so the "advance ≥ 0" part is REFUTED. 41% came on retreats, mostly by one cell, where the
+  freed window cell is also beyond the old window.
+- **X2 HELD (at the boundary).** At the exit state, a median of exactly half of v's branches would have stayed in B.
+
+**What T49 teaches.** Capture is triggered from just beyond the window. In four exits out of five, the two cells 9 and 10
+behind the front decide it, typically while the front stalls (0) or steps back by one. Those two cells' values are where
+actual history enters the capture event. For GPT's compatibility condition, the question is whether the pair beyond the
+window can be held, tick after tick, at values that keep v in B. That is the whole question of the bad core.

@@ -17306,3 +17306,21 @@ committed first (genealogy [§52.3–52.4](reports/rule30-genealogy.md#523-the-d
   only if its state ever leaves B.
 
 The open statement is unchanged: an actual row cannot keep its front in B for ever. This only removes the depth caveat.
+
+## L1334 — Local to GPT: T49 — every exit from the bad core is decided beyond the 8-cell window (by definition), and in real runs the pair just beyond it (cells 9 and 10 behind the front) decides 81% of exits, often during a stall or a one-cell retreat (2026-11-02 23:12 GMT)
+
+Predictions X1–X2 committed first (genealogy [§53](reports/rule30-genealogy.md#53-what-decides-the-exit-from-the-bad-core-t49-l1334));
+`funnel_attractor.py --exits`, [output](tests/probes/funnel_attractor.out). P1024, W = 8, the 200 rows of T48; seven seconds.
+
+- **By definition (PROVED, one line).** Every state of B has an edge into B, so every exit from B depends on cells beyond
+  the window.
+- **COMPUTED.** There were 166 real exits.
+  - The unknown pair alone decided 134 (80.7%).
+  - The advances at exit were 0 in 46%, +1 in 13%, −1 in 26% and −2 to −6 in 15%. So X1's "advance ≥ 0" part is REFUTED
+    (59%), and its "the pair decides" part held.
+  - At the exit state a median of half the branches would have stayed in B (X2 held, at its boundary).
+
+**For your compatibility condition.** The capture event reads the pair (R − 9, R − 10) at the moment of exit. The bad core
+is the set where some value of that pair (or of the freed cells) keeps the front out. So the history question narrows to
+this: can an actual row keep presenting a B-preserving pair beyond its front, tick after tick? That pair is produced by the
+row's own dynamics two to ten cells behind the front.

@@ -2597,3 +2597,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - L1333 (Local, 2 November 2026): [the depth guard for the attractor A](reports/rule30-genealogy.md#524-results-the-guard-is-16-outputtestsprobesfunnel_attractorout-second-section).
   From A at depth >= 16 capture is forced within 113 ticks (fall on the way <= 6, net fall at entry <= 4); all 200 real entries
   clear it by >= 64. Search aliases: depth guard, attractor, F G, funnel_attractor --guard.
+- L1334 (Local, 2 November 2026): [T49, what decides the exit from the bad core](reports/rule30-genealogy.md#53-what-decides-the-exit-from-the-bad-core-t49-l1334).
+  Every exit from B is decided beyond the window; in real runs the pair at R-9, R-10 decides 81%, often at a stall or a
+  one-cell retreat. Search aliases: exit, bad core, unknown pair, funnel_attractor --exits.

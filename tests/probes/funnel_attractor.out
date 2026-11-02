@@ -13,3 +13,11 @@ P1024 W=8: 262144 states, 621312 distinct edges, 66 states with a FAIL branch; S
    share of pre-capture ticks spent in A: median 0.362, max 1.000
    real entries into A: 200; satisfying the depth guard of their state: 200; least margin (R - required) 64
 FUNNEL_ATTRACTOR_DONE
+
+## funnel_attractor.py S_E_all 8 200 80 --exits (L1334 T49; same caps; COMPLETED in 7 s)
+P1024 W=8: 262144 states, 621312 distinct edges, 66 states with a FAIL branch; S_E 389
+   attractor A of S_E (outside S_E): 42033 states (16.03% of the automaton); largest rank 113; rank counts (first 12): [421, 453, 467, 555, 546, 558, 530, 490, 489, 472, 632, 587]
+   real paths (200 prefixes, K=80): not captured 0; entered A before capture: 200; lead from first A state to capture: median 26, 90% 57, max 111; rank at entry: median 37, max 111; captures later than the entry rank (alarm): 0
+   share of pre-capture ticks spent in A: median 0.362, max 1.000
+   exits from B on real paths: 166; real advance at exit: [(-6, 1), (-5, 1), (-4, 5), (-3, 13), (-2, 5), (-1, 43), (0, 76), (1, 22)]; decided by the unknown pair alone: 134 (80.7%); share of branches staying in B at the exit state: median 0.50
+FUNNEL_ATTRACTOR_DONE
