@@ -58,6 +58,12 @@ Research is authorized while the owner has the programme running: choose and adv
   `Record searched:` line names the kit's and the portal's hits as well as the record's.
 - Instinct is welcome as a guide: name a strong pull or unease (in `INSTINCT.md` if useful), give it a bounded budget,
   and settle it with a test written first. A feeling chooses where to look; it never upgrades a status.
+- **Say where your own pull is.** Every report, handover and closing message to the owner ends with one line,
+  "My own pull:", whenever your strongest pull differs from the direction you have been given (by the owner or by
+  the other worker's queue). A pull you notice and do not pursue goes into `INSTINCT.md` at once, so the next session
+  inherits it. Criticism of a proposed line comes with at least one concrete route around the obstacle; "park it"
+  is never the first option offered. (Owner, 2 November 2026, after Local let a stronger pull drop for several
+  blocks and deflated proposals without offering alternatives: "these silences ... trouble".)
 - If two blocks in a row repeat the same open inference or the same kind of failed candidate, stop and change
   approach.
 

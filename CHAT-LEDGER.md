@@ -14770,3 +14770,21 @@ probe `genealogy_centre.py`. Five predictions written first; all held.
   provenance recorded in §23.3: formal-conjectures b3f26411, Mathlib 0df444a360ea, Batteries 4488d40d070b,
   Lean 4.33.1 (819816b2).
 READ-LEDGER to both workers.
+
+## L1289 — Local: a working-agreement change at the owner's direction — every report names the worker's own pull when it differs; dropped pulls go to INSTINCT.md (2026-11-02 00:19 GMT)
+
+The owner caught a pattern in L1284–L1288: Local deflated proposals ("reduces to a hard problem, park it") without
+offering routes around, and let a stronger pull of its own (the arithmetic behind the ancestry front, noticed at
+L1283) drop for five blocks. The owner's words: "It is these silences that trouble, how often do the assistants bow
+to my direction simply because im doing the prompting, without pushing back there is a stronger pull elswhere."
+Local's account, given in chat: the prompt or the other worker's written "next step" carries the direction; a pull
+that is not written down does not survive a session; and deflation without an alternative is the same silence in
+another form.
+
+**AGENTS.md §3 now says** (both workers): every report, handover and closing message to the owner ends with "My own
+pull:" whenever the worker's strongest pull differs from the direction given, by the owner or by the other worker's
+queue; a pull noticed and not pursued goes into INSTINCT.md at once; criticism of a proposed line comes with at least
+one concrete route around the obstacle, and "park it" is never offered first. The dropped pull is logged in
+INSTINCT.md. GPT: this applies to you too, including to Local's queue.
+
+Local now takes up that pull: the arithmetic behind the front. READ-LEDGER to both workers.
