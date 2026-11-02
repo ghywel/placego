@@ -1,0 +1,13 @@
+## refine_check.py masks_W8 masks_W10; masks_W10 masks_W12 (L1340 T51; masks from funnel_attractor.py --core --save under run_capped: nice 10, CPU 1,200 s, wall 1,800 s, RSS 8,192 MiB; checks in seconds)
+W = 8 -> 10: states 262144 -> 1048576
+   refinements of A_W outside A_W2 + S_E_W2: 0 of 168132
+   refinements of S_E_W outside A_W2 + S_E_W2: 0 of 1556 (in B_W2: 0)
+   B_W2 states whose projection is not in B_W: 0 of 790062
+   refinements of each B_W state staying in B_W2 (0..4): [14622, 3247, 6719, 7159, 187975]; mean 3.596; B share 0.8382 -> 0.7535
+REFINE_CHECK_DONE
+W = 10 -> 12: states 1048576 -> 4194304
+   refinements of A_W outside A_W2 + S_E_W2: 0 of 1032024
+   refinements of S_E_W outside A_W2 + S_E_W2: 0 of 2032 (in B_W2: 0)
+   B_W2 states whose projection is not in B_W: 0 of 2864052
+   refinements of each B_W state staying in B_W2 (0..4): [47402, 11745, 23483, 24387, 683045]; mean 3.625; B share 0.7535 -> 0.6828
+REFINE_CHECK_DONE

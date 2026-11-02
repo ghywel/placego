@@ -6041,3 +6041,29 @@ D_{R−W−1}, D_{R−W−2}.
   larger W. A cleaner core (states with a non-advancing infinite path) would then be needed.
 
 Record searched: §45, §52, §54; no earlier refinement comparison.
+
+### 55.2 Results ([output](../tests/probes/refine_check.out))
+
+- **R1 HELD.** All 168,132 (8 → 10) and 1,032,024 (10 → 12) refinements of A-states lie in A ∪ S_E at the larger W.
+- **R2 HELD.** All 1,556 and 2,032 refinements of S_E-states lie in A ∪ S_E; none is in B. No harmless robust states hide
+  in B.
+- **R3 HELD.** No state of B_{W+2} projects outside B_W: 0 of 790,062 and 0 of 2,864,052.
+- **R4 HELD.** Of each B_W state's 4 refinements, the number staying bad has mean 3.596 (8 → 10) and 3.625 (10 → 12).
+
+  | refinements staying in B (of 4) | 0 | 1 | 2 | 3 | 4 |
+  |---|---|---|---|---|---|
+  | B_8 → B_10 (219,722 states) | 6.7% | 1.5% | 3.1% | 3.3% | 85.6% |
+  | B_10 → B_12 (790,062 states) | 6.0% | 1.5% | 3.0% | 3.1% | 86.5% |
+
+**What T51 teaches.**
+- **The window abstractions form a nested sequence.** The refinement lemma (PROOF-SKETCH in §55.1) is confirmed with no
+  exception. Good states stay good, and the bad core at a larger window lies over the bad core at the smaller one.
+- **The decay has a stable mechanism.** At each 2-cell step about 86% of bad states stay wholly bad, about 6% are
+  resolved completely, and the rest partly. The ratio, about 0.9 per step, is nearly the same at both steps.
+- **A CONJECTURE (two steps of data).** Pick the cells behind the front at random (uniform product measure), given the
+  class and the 8 cells.
+  - The probability that no finite window forces capture would then be 0.838 × 0.9^{(W−8)/2} → 0. Capture would be
+    generic: almost every behind-front content is forced into S_E by some finite window.
+  - This is not universal capture. The exceptional set (bad at every W) could be nonempty and could contain real rows.
+  - It does say exactly what a counterexample must be: a row whose content behind the front lies, at every time, in
+    this measure-zero "bad at every W" set.
