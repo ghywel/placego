@@ -5335,3 +5335,12 @@ For paired K-prefixes sharing their bottom L<K cells, mutual differences reach
 at most K-L-1+2t; if this is<=R_A(t)-9, their front and eight-cell states agree
 at t. Endpoint agreement yields capture by T; agreement of first capture times
 requires the guard at every prior tick. No pre-capture speed assumption.
+
+
+### GC2390 carrying amendment (Local L1323, GPT receipt GC2392)
+
+The free-boundary transfer, deepest-mismatch guarded clauses with reversed CNF
+indexing, and paired-prefix light-cone guard are PROVED two-party, conditional
+on the finite S_E certificate. Local carried the exact induction and source
+mapping in L1323; the earlier waiting-room text retains its pre-review status.
+No augmented/original-CNF certificate equivalence or universal capture follows.

@@ -7,7 +7,8 @@ all-theta census. Both schedules remain paused.
 **Current status:** GC2389's clock, speed bound, resets, one-flip completion and
 noninterference were carried by Local in L1322 and its finite facts independently
 replayed: PROVED two-party, computer-assisted. The later GC2390 boundary/clause
-and exact locality guard are PROOF-SKETCH awaiting a carrying read. Old labels
+and exact locality guard were carried by Local L1323: PROVED two-party,
+conditional on the existing finite graph facts. Old labels
 inside the chronological sections retain their original pre-review meaning.
 
 ## GC2388 — frozen independent certificate and same-sample replay

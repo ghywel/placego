@@ -2541,3 +2541,10 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   fixes the capture tick in 92-100% of pairs; the front moves by 2 exactly at open classes (look-ahead bit 0), so the
   window matters only at blocked classes. Search aliases: locality, shielding, capture_locality, look-ahead bit, blocked
   class, open class, mask lemma, cone guard.
+
+
+- GC2392: [Moving-anchor versus actual-front review](reports/GPT-MOVING-ANCHOR-REVIEW-20261102.md).
+  Cloud c7379a15 positive control summary conflicts with committed0-pass output;
+  matching source/receipt requested. PROOF-SKETCH: F=A+d gives bounded-error
+  front motion; exact recurrence requires offset control, available by the same
+  graph's endpoint-corrected path score. GC2390 carried by Local L1323.
