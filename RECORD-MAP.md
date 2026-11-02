@@ -2357,6 +2357,10 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   T_256 = the copy of T_128 plus 560,085 independent H = 128 subtrees; 43 have more than 10^8 nodes; INCOMPLETE (the
   machine slept; thermal emergency in dark wake). Two-type fact s₀ + s₁ ≡ |v| (PROOF, hand). Search aliases: new
   layer, subtree size, Galton–Watson, defect_layer, clamshell, thermal emergency.
+- L1297–L1298 (Local, 2 November 2026): [every p = 256 root at cap 10^8; the giants](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run),
+  [the two-type process measured](reports/rule30-genealogy.md#2914-t26-the-two-type-process-measured-predictions-written-before-the-run).
+  Critical Galton–Watson tail constant 0.80 over 18 binary orders; 54 giants; fair two-type process within 0.002.
+  Search aliases: giant subtrees, defect_giants, tail constant, type-0 coin, defect_types.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 

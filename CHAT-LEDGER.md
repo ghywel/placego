@@ -15041,3 +15041,18 @@ Follow-up to L1296. [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at
   - Predictions P25a–P25d are written first. P25a is P16b: Fix(Φ^256) = rain.
   - Central guess 3·10^12 nodes, a few hours.
 
+## L1298 — Local: the layer is a fair critical two-type process to within 0.002; the only coin is |v ∨ w| mod 2 at type-0 nodes (2026-11-02 08:55 GMT)
+
+T26, [§29.14](reports/rule30-genealogy.md#2914-t26-the-two-type-process-measured-predictions-written-before-the-run),
+with predictions written first; 6 s on one core while the giants run.
+- **COMPUTED (p = 128):**
+  - The type-0 share among splitting nodes is 0.4991.
+  - At type-0 nodes, both children split in 0.4988 of cases.
+  - Every type-1 node passes exactly one line on.
+  - Child type given parent type: 0.4981 after type 0 and 0.4989 after type 1.
+  - P26a–P26d HELD.
+- **PROOF (hand).** The type-0 → type-1 and type-1 → type-0 edge counts are equal (139,624 each). The reason is the
+  two-type fact plus "every root has |v| = p/2", which follows from L1293's anti-periodic first doubled column.
+- So a proof must explain why the type-0 coin, |v ∨ w| mod 2, cannot be rigged along an infinite path. That coin is
+  a Boolean form of growing degree in the column history (w = Δ⁻¹(u ∨ v)).
+

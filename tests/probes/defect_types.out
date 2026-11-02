@@ -1,0 +1,13 @@
+p=64: roots 33, layer nodes 2651, splitting 1309; roots that split 16 (q = 0.4848)
+  type-0 share among splitting nodes f = 0.5073 (664 of 1309)
+  type 0: both children split 324, both die 340, share both = 0.4880
+  type 1: exactly one splits 645; violations of the two-type fact 0
+  splitting child's type given parent type: from 0 -> (0: 342, 1: 306), from 1 -> (0: 306, 1: 339); P(child 0 | parent 0) = 0.5278, P(child 0 | parent 1) = 0.4744
+  model constant 1.128 q / sqrt(f) = 0.768
+p=128: roots 1342, layer nodes 1118828, splitting 558743; roots that split 653 (q = 0.4866)
+  type-0 share among splitting nodes f = 0.4991 (278855 of 558743)
+  type 0: both children split 139101, both die 139754, share both = 0.4988
+  type 1: exactly one splits 279888; violations of the two-type fact 0
+  splitting child's type given parent type: from 0 -> (0: 138578, 1: 139624), from 1 -> (0: 139624, 1: 140264); P(child 0 | parent 0) = 0.4981, P(child 0 | parent 1) = 0.4989
+  model constant 1.128 q / sqrt(f) = 0.777
+DEFECT_TYPES_DONE

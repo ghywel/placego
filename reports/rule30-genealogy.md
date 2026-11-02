@@ -3428,3 +3428,52 @@ n nodes.
     minimum free memory 4,096 MiB, swap growth 256 MiB.
   - Run under `caffeinate -i`. The lid state and the thermal log are checked between chunks.
   - At most 12 chunks (about 10 hours) without a new word from the owner.
+
+### 29.14 T26: the two-type process measured (predictions written before the run)
+
+Under the two-type fact (§29.12), the splitting nodes of the H = p/2 layer form a tree:
+- a type-1 node (odd |v|) has exactly one splitting child;
+- a type-0 node has two splitting children or none.
+
+If the root splits with probability q, a fraction f of the splitting nodes have type 0, and each type-0 node keeps
+both children with probability 1/2, then the internal tree has offspring variance f. The standard critical tail then
+gives C = √(2/π)·√2·q/√f = 1.128·q/√f.
+
+The measured q = 279,807/560,085 = 0.4996 and C ≈ 0.81 (§29.13) therefore predict f ≈ 0.48.
+[`defect_types.py`](../tests/probes/defect_types.py) walks every layer node at p = 64 and 128 (2,651 and 1,118,828
+nodes) and counts types and outcomes.
+- P26a: the share f of type-0 nodes among splitting nodes lies between 0.45 and 0.55.
+- P26b: among type-0 splitting nodes, the share whose two children both split lies between 0.45 and 0.55.
+- P26c: every type-1 splitting node has exactly one splitting child. This is the program check of the proved fact.
+- P26d: a child's type is independent of its parent's type. The four conditional shares lie within 0.05 of 1/2.
+- Counterfactual: f far from 1/2, together with C = 0.80, would mean that the type-0 outcome is not a fair coin. That
+  would point to an exact pairing, or to its failure, and tell us where to look for structure.
+
+**T26 results** ([`defect_types.py`](../tests/probes/defect_types.py), [output](../tests/probes/defect_types.out); 6 s on
+one core).
+- **P26a HELD.** f = 0.4991 at p = 128 (278,855 of 558,743 splitting nodes) and 0.5073 at p = 64.
+- **P26b HELD.** Among type-0 splitting nodes, 139,101 keep both children and 139,754 lose both: a share of 0.4988.
+  At p = 64 the share is 0.4880.
+- **P26c HELD.** All 279,888 type-1 splitting nodes have exactly one splitting child.
+- **P26d HELD.** P(child type 0 | parent type 0) = 0.4981 and P(child type 0 | parent type 1) = 0.4989.
+- The model constant 1.128·q/√f is 0.777 (with q = 0.4866 at p = 128), close to the directly measured tail constant
+  0.80.
+
+**An exact identity in the data, explained (PROOF, Local; hand).** The number of type-0 → type-1 edges between
+splitting nodes equals the number of type-1 → type-0 edges, both at p = 64 (306 each) and at p = 128 (139,624 each).
+- Let N_ab count the non-root splitting nodes whose parent has type a and which have type b.
+- By the two-type fact, each type-1 splitting node has exactly one splitting child. Counting type-1 nodes by their
+  children and by their parents gives N_10 + N_11 = N_01 + N_11 + r₁, where r₁ is the number of splitting roots of
+  type 1.
+- Every root has type 0. A root's v is the first doubled column, which is anti-periodic (L1293:
+  v(t + p/2) = NOT v(t)), so |v| = p/2, which is even for p ≥ 4.
+- Hence r₁ = 0 and N_01 = N_10.
+
+**What T26 teaches.** The layer behaves exactly like a fair critical two-type branching process. Type-1 nodes pass
+one line on. A type-0 node keeps two lines or none, by the parity of |v ∨ w|, as if by a fair coin. Children's types
+are independent of their parents'. Every measured statistic sits within 0.002 of its fair value at p = 128.
+- This is the Collatz shape again, now located precisely: the only "coin" is the parity of |v ∨ w| at type-0 nodes.
+- A proof that the trees are finite must explain why that coin cannot be rigged forever along one path. The next
+  structural question is what |v ∨ w| mod 2 is as a function of the column history. If it is a fixed linear
+  (Boolean) form of the last few columns, a finite automaton argument might apply. If it is not, the parity is
+  "pseudo-random", which is what the statistics suggest.
