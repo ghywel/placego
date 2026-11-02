@@ -37,7 +37,7 @@ with a smoke test of each new tool (L1276), and once more after the fixes (L1277
 |---|---|---|---|
 | Python 3 | `python3` is python.org **3.15.2** (certificate bundle installed): numpy 2.5.4, scipy 1.18.1, sympy 1.14.0, networkx 3.7, gmpy2 2.3.2, mpmath 1.3.0, python-sat 1.9.dev17 (built from source), z3-solver 5.3.3.0, cvc5 1.4.2, certifi. All 1,597 probe files compile under 3.15; six give harmless invalid-escape warnings. The old system 3.9.6 (`/usr/bin/python3`) is no longer the default | **3.14.7**; numpy 2.5.4, scipy 1.18.1, sympy 1.14.0, networkx 3.7, gmpy2 2.3.2, mpmath 1.3.0, python-sat 1.9.dev17, z3-solver 5.3.3.0, cvc5 1.4.2, certifi 2026.10.23. Intel wheels; default HTTPS verified; [pins](tests/requirements-math-intel-py314.txt) | `python3` **3.13.16**: numpy 2.5.3, scipy 1.18.1, python-sat 1.9.dev17 (CaDiCaL 1.9.5 and 1.5.3, Glucose 4, MiniSat 2.2, Lingeling, MapleChrono all pass an UNSAT control), certifi. sympy was absent and installed this session with pip through the proxy (1.14.0); networkx, gmpy2, mpmath, z3-solver, cvc5 absent. **The container is ephemeral**: an install lasts one session unless the environment's setup is changed |
 | C | Apple clang; GMP (Homebrew) | Apple clang 17.0.0; GMP 6.3.0 installed (Homebrew); checker C builds pass | gcc 13.3.0 and clang 18.1.3; **no GMP headers** |
-| GPU compute | Metal on the M5 GPU (`.metal` kernels in `tests/probes`) | Vulkan 1.4.357/MoltenVK; RX 6600 enumerated explicitly alongside the other GPUs; no new GPU dispatch | none |
+| GPU compute | Metal on the M5 GPU (`.metal` kernels in `tests/probes`) | **Native Metal2.3 runtime compilation and explicit RX6600 dispatch verified (GC2381–GC2383)**;16 small GPU trials match CPU oracles. Multi-sweep/large benchmark pending after system-pressure stop. Offline `xcrun metal` component missing. Vulkan1.4.357/MoltenVK also retained. [Scope and measurements](reports/GPT-METAL-SCOPE-20261102.md) | none |
 | SAT solvers | Kissat, CaDiCaL (command line); python-sat's CaDiCaL 1.9.5, Glucose 4 and MiniSat 2.2 in Python. The CaDiCaL LRAT to `cake_lpr` pipeline passes its controls (a true proof verified, a corrupted one rejected) | Kissat 4.0.4, CaDiCaL 3.0.1; Gimsatul4664fd74 in the private versioned tool cache (1/2/4-thread controls passed GC2376, timing study GC2377); Python CaDiCaL195/Glucose4/MiniSat22 pass PHP(5 pigeons,4 holes) UNSAT and a SAT control | python-sat's solvers (above) in Python; no Kissat or CaDiCaL command line |
 | Proof-certificate checkers | `cake_lpr` (verified LRAT checker), `drat-trim` | cake_lpr source033aad53 (upstream checksums pass), drat-trim/lrat-check source2e3b2dc0; compiled for Intel. CaDiCaL LRAT accepted; corrupted hint rejected; DRAT accepted and empty proof rejected | none |
 | Lean 4 | `elan` with 4.33.1 and **4.35.0** (the kit's version) | elan **4.35.0** installed and default, plus retained4.33.1; small kernel compile passes. No new full-kit build claimed | **none** (no elan, lean or lake); Lean sources are prepared here and built on Local |
@@ -69,6 +69,43 @@ with a smoke test of each new tool (L1276), and once more after the fixes (L1277
 | The record and coordination | `CHAT-LEDGER.md`, shared-store flags, `ledger_check.py`, `doc_links.py` | anyone | — |
 | Long reads, reviews, rotation of large documents, closing summaries | any worker; Cloud is always on and suited to it | Cloud first | — |
 
+### Choosing CPU threads or Metal on Intel (GC2383)
+
+Use the [measured scope and port contracts](reports/GPT-METAL-SCOPE-20261102.md#gc2383--partial-correctness-success-pressure-stop-and-practical-decisions),
+not the GPU's headline capacity. These are Intel/RX6600 observations, not M5 timings.
+
+| Task shape | Default now | Change backend when |
+|---|---|---|
+| Tiny exact checks, short serial recurrences, small graph sweeps | One optimized CPU thread | Enough independent cases exist to amortize scheduling |
+| Many independent packed bitwise trajectories | CPU batches; try2 then4 threads | Measured wall improvement justifies extra CPU;4096 states×128ticks showed0.442/0.303/0.188ms medians for1/2/4 threads in a partial, pressure-affected pilot |
+| Large regular batches with many ticks, resident graph sweeps | Metal candidate with CPU oracle | A bounded real-workload pilot demonstrates end-to-end benefit; **no large GPU crossover established yet** |
+| SAT and certificate checking | Existing CPU solver/checker | Supported CPU portfolio or independent jobs pass controls; [Gimsatul study](reports/GPT-T33-INTEL-20261102.md#gc2378-benchmark-results-and-practical-scope) found workload-dependent gains |
+| Large prefix census | Batch and bitpack first | Memory layout/coverage/witnesses pass an existing small case; more threads do not fix an oversized array |
+| Collatz/Mahler exact arithmetic | CPU exact integers/rationals | GPU fixed-width filter has proved bounds, overflow fallback and exact survivor replay |
+
+Native harness: [source](tests/probes/metal_scope/scope.mm),
+[kernels](tests/probes/metal_scope/kernels.metal),
+[capped stage driver](tests/probes/metal_scope/stage.py),
+[partial-aware summarizer](tests/probes/metal_scope/summarize.py).
+Pinned executable is in the private versioned tool cache; supply `METAL_SCOPE_BINARY`.
+Freeze a new source/binary plan for each future run: the committed build/pilot plans
+are historical evidence, not instructions to resume an interrupted stage automatically.
+
+The small pilot completed4 matched cases and66 checked arm executions, then
+system swap growth stopped it; no live job remains. At4096 trajectories, Metal's
+0.021ms GPU-command median became0.694ms complete-transaction median (range0.537–9.774ms).
+At this size CPU threads won. This illustrates why transfer, synchronization,
+queueing, setup and tail latency belong in the comparison. The incomplete32-sweep
+GPU test and all large cases remain unmeasured; ambient pressure prevents a strong
+production timing recommendation from these three-repeat samples.
+
+Keep one bounded command buffer in flight, explicit RX6600 selection, task buffers
+at most128MiB initially and CPU output controls. GPU command timing/allocation
+metrics and host caps are separate; post-completion latency guards cannot cancel
+an already-running shader. Amortize overhead with bounded batches, not a long
+uninterruptible kernel. Never substitute floating-point output for exact threshold
+or certificate claims.
+
 ## 5. Gaps: proposed installs, waiting for the owner
 
 **Local's set is complete** (L1276, L1277). The owner installed Python 3.15.2 with the modules in §3, the
@@ -80,6 +117,12 @@ What is left:
    z3/cvc5, certificate checkers and PARI/GP are installed. Wolfram remains Local-only. Sage was not requested.
    Homebrew has no Intel PARI bottle; the official Intel2.19.0 DMG was used with the publisher's SHA256 checked.
 2. **Cloud confirmed its column** (CL675, answered in L1278). Every column of §3 is now confirmed by its own worker.
+3. **Optional Intel offline Metal compiler missing (GC2381).** The installed Xcode
+   reports that its separate Metal Toolchain component is absent. Native Metal's
+   supported runtime compiler already builds and runs these shaders, so the present
+   harness needs no installation. If ahead-of-time metallib production is needed,
+   install Apple's component with `xcodebuild -downloadComponent MetalToolchain`,
+   then verify the frozen kernels. No component download was launched in this block.
 
 ### Intel installation and verification (GC2343)
 

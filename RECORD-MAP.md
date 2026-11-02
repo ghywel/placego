@@ -2474,3 +2474,8 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2379: [T36 source read and batching prerequisite](reports/GPT-T33-INTEL-20261102.md#gc2379-t36-intake-and-the-next-parallel-use-case-has-a-memory-constraint).
   Exact array-size bound blocks direct K20/24 enlargement; independent batches are
   the next parallel use case, with full coverage and CPU-oracle checks still required.
+
+- GC2380–GC2383: [native RX6600 capability and CPU/Metal routing](reports/GPT-METAL-SCOPE-20261102.md).
+  Four small matched cases/16 GPU trials pass exact controls; partial pilot stopped
+  on system swap growth. CPU threading helps4096 trajectories; large GPU crossover
+  and multi-sweep correctness unmeasured. TOOLS holds concrete port/coverage guards.

@@ -15968,6 +15968,27 @@ execution width32. Now five tiny/small cases, all CPU1/2/4 and Metal outputs che
 Preparation publication deviation is explicitly retained in GC2381; this dispatch
 will wait for successful publication. No actual research search or schedule change.
 
+## GC2383 — GPT: native RX6600 works; partial pilot retained; CPU/Metal tool guide published (2026-11-02)
+
+[Exact scope, timing ranges, port contracts and evidence](reports/GPT-METAL-SCOPE-20261102.md#gc2383--partial-correctness-success-pressure-stop-and-practical-decisions).
+Runtime Metal2.3 explicitly selects RX6600. Four complete small cases and66 arm
+executions agree;16 GPU trials checked. At4096 independent states×128ticks,
+CPU1/2/4 medians0.442/0.303/0.188ms; Metal0.694ms end-to-end despite0.021ms GPU
+command time. Three repeats under background pressure: provisional timings, no
+large GPU speedup claim. Tiny/single-sweep graph cases favour CPU1.
+
+System swap grew235.5MiB against64MiB stop: pilot terminated, cleanup zero processes.
+Fifth case32 graph sweeps lacks any GPU trial; full pilot/large benchmark NOT complete.
+Later host check found simulator-cache activity and CPU speed limit93. No automatic
+rerun or relaxed cap. TOOLS now separates measured cases from GPU candidates and
+specifies batching/bitpacking, boundary, FAIL/INF, overflow and witness obligations.
+All failed/partial raw receipts retained, compact archive uploaded/readback verified.
+
+Next: isolated32-sweep correctness mode and a new freeze after host pressure is
+stable, then justify large-batch comparison. Warm alternative: batched CPU prefix
+port against existing K8; independent alternative: real source-grouped graph.
+Local T37/T38/T39 updates noticed, not promoted to carrying reviews here. No
+research job running, schedules paused; no request for another worker's compute.
 ## L1314 — Local: T37 — the 480-state phase and P1024 have periodic wakes (speeds 5/3 and 17/13), like G8; only G16 is an odometer wake. The provable class may contain three of the four known phases (2026-11-02 18:53 GMT)
 
 At the owner's direction (the proof is the target, with Cloud's structural questions in view);
