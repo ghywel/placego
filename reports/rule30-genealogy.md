@@ -3672,3 +3672,52 @@ with a genuine deterministic or measure-to-every-path argument.
 **My own pull:** the return-section description now looks more promising than another marginal frequency.
 It identifies precisely where a path departs from rain, and gives a compact language in which to ask why
 that departure cannot preserve a finite temporal period forever.
+
+## 31. The λ-recursion and the coin as a window function (T27, L1305)
+
+Following the [inquisition's §6.5](inquisition-local-to-gpt-20261102.md#65-proposed-next-target-for-gpts-read),
+at the owner's go-ahead ("Yes, go on").
+
+### 31.1 Setting (PROOF, Local; short)
+
+- **Time-0 digits.** Write the time-0 digits behind the front as z_0 z_1 …, and prepend the front and the white
+  region above it: …0 0 1 z_0 z_1 …. The white-boundary map c on this whole sequence acts on z exactly as Φ = a does.
+  This is the kit's `Phi_two_mul_add_one`.
+- **The coin as a window function.** Take a node at depth n with cycle length L. Its coin is the parity of the
+  number of times t < L at which digit n−1 or digit n is 1. By the light cone, those two digits at times t < L
+  depend only on the 2L time-0 digits at depths n−2L+1 … n. So **the coin is F_L(window)**: evolve the window by c
+  for L − 1 steps (anything may enter below it), and take the parity of the OR of its top two bits over t < L.
+- **The λ-recursion is the halving of this time sum:**
+
+      F_(2L)(z) = F_L(z) ⊕ F_L(c^L z).
+
+  This is λ_(2L) = λ_L ∘ (c^L λ_L c^(−L)) read in digits. At a top-layer node of T_(2L), c^L z = z ⊕ h, where h is
+  the half-difference of §28.2. So **the top-layer coin is the derivative of the period-L coin along the damage**:
+  a node splits exactly when F_L(z) = F_L(z ⊕ h).
+- The portrait κ_(2L) is therefore fixed by κ_L through this identity. Nothing simpler is claimed; whether the
+  derivative form gives an inductive handle is the open question.
+
+### 31.2 Predictions, written before the run (T27)
+
+Record searched:
+- `record_find.py` for "damage front", "cone of influence", "spreads left" and Lyapunov, with no kit or portal hit.
+- The record's left damage speed of Rule 30 is 0.2428 (Grassberger, cited in Wolfram 1986; ledger correction near
+  §8.66).
+- The kit's `testBit_orbit_one_two_mul` and `conj_sigma_depth`.
+
+In the frame of the front, damage occupies depths from its own depth to its own depth + 1.243·t after t steps. A
+digit j places above digit n can therefore change the coin only if j ≤ 1.243·(L−1), up to fluctuations of order √L.
+
+- **P27a (known, reproved):** depth(λ_L) is exactly 2L. λ_L(0) = a^L(0), and the kit sets its bit 2L − 1. Checked
+  for L ≤ 64.
+- **P27b (control):** the identity F_(2L)(z) = F_L(z) ⊕ F_L(c^L z) holds on random windows. F_p(window) equals the
+  tree's coin at every node checked (p = 64, and p = 128 sampled).
+- **P27c:** over uniform windows, the influence I_L(j) of the digit j above the top lies between 0.4 and 0.6 for
+  j ≤ 1.1L. For L = 64 it crosses 0.25 at j/L = 1.243 ± 0.08, and it is below 0.05 by j = 1.5L.
+  - Counterfactual: flat influence out to 2L (damage at the maximum speed), or influence far below ½ inside the cone
+    (a coin insensitive to the window).
+- **P27d:** at actual top-layer windows (p = 64 and 128), the influence profile agrees with the uniform one to within
+  ±0.05 in every bin.
+  - Counterfactual: a systematic deficit at reachable windows. That would mean the reachable set sits where the coin
+    is partly frozen, a structural lead worth an inductive statement.
+
