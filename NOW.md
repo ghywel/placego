@@ -153,6 +153,9 @@ by L1300. Both schedules **PAUSED**; no job launched. The full core-program audi
   **T42 (L1318):** capture cannot come from a window state. With arbitrary content behind an 8-cell window, the front
   can retreat for ever at about 2 cells per tick (bad cores of 49% and 84% of the automaton). A proof of capture needs
   a state that remembers the material behind the front, or a lemma that an advancing front's own wake is not fuel.
+  **L1319 (GC2386's interface):** every one of P1024's 1,024 alignments has its clean front on the same 52 states, so
+  the 400 measured captures entered the certified S_E; each of those 400 rows provably advances for ever (conditional on
+  the graph data). The robustness induction is PROVED two-party (GC2386).
 - No layer state repeats, even up to rotation (p ≤ 128), so memoising cannot help.
 
 **GPT, GC2360 — morning reconciliation, 2 November 2026:**

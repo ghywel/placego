@@ -2,6 +2,8 @@
 """L1316 T41 part 2 (Local, 2026-11-02): is the clean front of a periodic-wake phase robust to everything behind its
 window? reports/rule30-genealogy.md section 44. Run: python3 tests/probes/front_closure.py PHASE W [W ...] [--cap=N]
 (PHASE: G8, G16, 480 or P1024)
+--all-theta (P1024; L1318, GC2386): the clean states of every theta at ticks 600 .. 2,480, the runs and range that
+wake_attractor.py --win compares against, their closure S_E^all, its verdict and digests; --export=PREFIX writes them.
 --control=N: N exact checks per W. At a random tick of the clean run, every mismatch bit more than W behind the front
 is replaced by a random bit; the row is evolved exactly for 3,000 ticks; each tick's (class, window) must lie in the
 closure, and every k ticks must advance the front by at least 1 (k from the verdict). A failure is a soundness alarm.
@@ -153,3 +155,55 @@ for W in Ws:
                 bad_adv += 1
         print('   control: %d random wakes behind the window, %d exact ticks: states outside the closure %d, '
               '%d-tick stretches without advance in %d runs' % (NCTL, ticks, bad_state, k, bad_adv), flush=True)
+
+if '--all-theta' in sys.argv and name == 'P1024':
+    # L1318 T42 part 2 (GC2386's capture interface): U = the clean front's W-cell states at ticks 600 .. 2,480 for every
+    # theta, the clean runs and tick range of wake_attractor.py; S_E^all = the forward closure of U.
+    import hashlib
+    TA = 2480; DA = 2 * TA + 16; MA = (1 << DA) - 1
+    base = [sum(((col0 >> ((k + 195 * n) % p)) & 1) << n for n in range(DA)) for k in range(p)]
+    for W in Ws:
+        rev = [int(format(b, '0%db' % W)[::-1], 2) for b in range(1 << W)]   # bit W-1 = D_(R-1)  ->  bit 0 = D_(R-1)
+        U = set(); per_theta_in = 0
+        S780 = None
+        for th in range(p):
+            x = base[th]; own = set()
+            for t in range(TA + 1):
+                d = x ^ base[(th + t) % p]; R = d.bit_length() - 1
+                if t >= 600:
+                    own.add(((th + t + 195 * R) % p, rev[(d >> (R - W)) & ((1 << W) - 1)]))
+                x = (x ^ ((x << 1) | (x << 2) | 3)) & MA
+            U |= own
+        # the closure from U, and from theta 780's states alone, by the same breadth-first search
+        def closure(start):
+            index = {}; q = deque(); src = []; dst = []; adv = []; fails = 0
+            for s in sorted(start):
+                index[s] = len(index); q.append(s)
+            while q:
+                s = q.popleft(); i = index[s]
+                succ, f = successors(s[0], s[1], W); fails += f
+                for (c2, w2, a) in sorted(succ):
+                    t2 = (c2, w2)
+                    if t2 not in index:
+                        index[t2] = len(index); q.append(t2)
+                    src.append(i); dst.append(index[t2]); adv.append(a)
+            return index, src, dst, adv, fails
+        idx_all, src, dst, adv, fails = closure(U)
+        k, trace = fc['certify'](len(idx_all), np.array(src, dtype=np.int64), np.array(dst, dtype=np.int64),
+                                 np.array(adv, dtype=np.int64))
+        idx780 = closure(clean_states[W])[0]
+        print('P1024 W=%d, all 1,024 thetas, ticks 600..%d: U %d states; S_E^all %d states, %d edges, FAIL edges %d, '
+              'advances %s' % (W, TA, len(U), len(idx_all), len(src), fails, sorted(set(adv))), flush=True)
+        print('   least advance over paths of length k: %s; %s' % (trace, (
+            'ROBUST: every path of length %d advances' % k) if (k and fails == 0) else 'NOT ROBUST'), flush=True)
+        if idx780 is not None:
+            print('   S_E(theta 780) %d states; U inside S_E(780): %d of %d; S_E(780) inside S_E^all: %s' % (
+                len(idx780), sum(1 for s in U if s in idx780), len(U), all(s in idx_all for s in idx780)), flush=True)
+        for nm, st in (('S_E_all', idx_all), ('U', U)):
+            txt = ''.join('%d %s\n' % (c, format(w, '0%db' % W)) for c, w in sorted(st)).encode()
+            path = next((a[9:] for a in sys.argv if a.startswith('--export=')), None)
+            if path:
+                with open('%s.P1024.W%d.%s.txt' % (path, W, nm), 'wb') as f:
+                    f.write(b'# one state per line: theta class, then the window printed bit W-1 first, where bit j-1 = D_(R-j)\n' + txt)
+            print('   %s: %d states, SHA-256 of its lines %s (lines "class window", window printed bit W-1 first)' % (
+                nm, len(st), hashlib.sha256(txt).hexdigest()), flush=True)

@@ -2418,6 +2418,9 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   The window over-approximation allows unlimited steady retreat, so capture needs memory of the material behind the
   front; the deep-retreat windows are dense damage blocks (compare GC507). Search aliases: bad core, capture_core,
   greatest fixed point, unlimited fuel, deep retreat, FAIL windows.
+- L1319 (Local, 2 November 2026): [the capture interface closed for P1024](reports/rule30-genealogy.md#45-capture-route-c1-the-bad-core-of-the-window-automaton-t42-l1318).
+  All 1,024 alignments' clean fronts share one 52-state orbit; the 400 captures entered the certified 389-state S_E;
+  certificate exported. Search aliases: all-theta, capture interface, S_E export, 52-state orbit, GC2386.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 
