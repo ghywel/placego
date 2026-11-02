@@ -2472,3 +2472,52 @@ Failed predictions (G13): P-L3 (both certificates), P-L5 (not an ether phase), P
 detector accepted two repeats (G26 repeated, caught by the absurd "light-speed" class); the ether function in the first
 certificate used frame coordinates at every time (caught by its own failures); the first diagonal certificate's "pass" was not an
 induction (caught before any claim by writing the induction out). The G8 control was the instrument every time.
+
+## Round 12 (2026-11-02, Cloud, CL682): the closed-set certificate with a moving anchor. Passes both controls (G8's Lean-verified law; Lowry's 109 states rediscovered for the classic ether), proves the (9, 7) law of (7, 63) at 28 alignments, and fails on (9, 57)'s 5/19 at every window to 32 although that law holds to t = 20,000
+
+*At the owner's word ("take the closed-set certificate on (9, 57) and (7, 63)"). Predictions Block 24 written first; the certificate
+was redesigned twice before any claim, each time because a control failed. Probes `closed_set.py` (`closed_set.out`: controls and
+shadows) and `long_s9_57.py`.*
+
+### 12.1 The certificate
+
+State: the ether's phase at the anchor and the W cells right of it. The anchor x_A is a column with every cell to its left equal
+to the ether; it moves left only when its own next cell differs from the ether (a retreat, one successor, no branch), else it
+stays and the strip's far cell is computed for both values of the cell beyond (two successors). The closure of the real state at
+t0 is searched; the law is checked on the recurrent part (states reachable after as many steps as the closure has): every path of
+length P must move the anchor by exactly S − P, and every strip must hold a mismatch. **Soundness (hand, short; waiting room):**
+cells left of the anchor read only ether cells and the ether is an orbit; the anchor reads the strip's first cell; the strip's
+next contents are exact except the far cell, which is computed both ways; so the real state stays in the closure for ever, the
+leftmost mismatch stays within W of the anchor, and the anchor's motion is the law's. For a stationary anchor this is Lowry's
+`trap_invariant` with the head condition absorbed into the transition. Two earlier designs were wrong and are recorded: branching
+on every step (free bits accumulated, closures of order 2^W) and re-anchoring at the last ether column each step (the strip
+shrank to nothing on every heal).
+
+### 12.2 Results (COMPUTED; the certified laws PROVED modulo the soundness read)
+
+| background | law (P, S), lab speed | alignments | certified | closure | reading |
+|---|---|---|---|---|---|
+| G8 (control) | (4, 2), 1/2 | 32 | **32** | 10–11 states at W = 8 | the Lean-verified law reproduced |
+| classic ether (control) | (8, 8), 0 | 196 | **196** | 763–771 states at W = 13 | Lowry's 109 wall states × the 7 frame phases |
+| (7, 63) | (9, 7), 2/9 | 441 (91 with the law) | **28** | 70–74 states at W = 16 | **the first proved moving walls**; 63 law-holders not certified (most exceed the 20,000-state cap at W ≤ 32) |
+| (9, 57) | (19, 14), 5/19 | 60 sampled | **0** | > 60,000 states, or the recurrent part admits other motions, at W = 16, 24, 32 | not a wall law at these windows |
+
+P-M1 HELD. **P-M3 partly HELD**: 28 alignments of (7, 63) have their 2/9 law certified as a moving wall, a closed set of 70–74
+states; this is the first exact moving-front law in the record proved by a closed set, and 2/9 is also the universal healing
+bound for (7, 63) (round 11), so on those alignments the edge attains the bound by a wall. **P-M2 REFUTED**: (9, 57)'s 5/19 is not
+certifiable at any window up to 32: under adversarial far cells the anchor's motion over a period is not fixed, so the law, which
+holds at all 513 alignments to t = 1,500 and at four alignments to t = 20,000 with no departure after the onset (`long_s9_57.py`;
+P-M4's break clause REFUTED), rests on the wake's own structure beyond the window, like (12, 68)'s law before it broke. Whether it
+breaks later or has a wall of width above 32 is open; G26 says treat it as MEASURED.
+
+### 12.3 What it teaches
+
+The velocity spectrum now has three kinds of exact law: stationary walls (the classic ether, Lowry's trap), moving walls
+((7, 63) at 2/9 on 28 alignments; G8 at 1/2, whose closed set is tiny), and laws that are exact in fact but not adversarially
+robust at any tested window ((9, 57), and (12, 68) which broke). The dividing line is whether the front's motion over one period
+is determined by a bounded strip under every outside input. That is the same question as upward rigidity for the phases of the
+eternal-cycle line (genealogy §37: G16 and the 480-phase rigid, P1024 not), now with one tool for both: the moving-anchor closed
+set in the lab frame, or in diagonal coordinates for the light-speed objects.
+
+Failed predictions (G13): P-M2, P-M4's break clause, half of P-M3. Unguarded mistakes: two certificate designs that could not
+work (both caught by the G8 and classic controls before any claim); a shell self-kill by a process pattern (one relaunch).

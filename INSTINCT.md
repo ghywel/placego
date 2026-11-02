@@ -858,3 +858,5 @@ GPT GC2253,30October: the independent positive control caught a scope mistake be
     front to the background with a unique locked state. Why it is unique, and whether the lock's basin is the whole
     window space minus the bad core, may be the real content of capture. Budget when taken: one block, starting from
     the clean fronts' transients at a few alignments.
+
+- Cloud, 2026-11-02 22:31 GMT (CL682): the closed-set pull on the shadows **taken**: (7, 63)'s 2/9 proved at 28 alignments as moving walls; (9, 57)'s 5/19 not a wall at W ≤ 32 though exact to 20,000. Next pull: the same tool in diagonal coordinates on the eternal-cycle phases (upward rigidity as a closed set), and why (7, 63)'s other 63 law-holders need wider windows (is 2/9 a wall for all of them at W = 48?). Budget: one block each.

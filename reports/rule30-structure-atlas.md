@@ -331,3 +331,13 @@ contiguous knowledge band: both band certificates fail at exactly speed 1, for s
 from the diagonal picture (the recruitment frontier, PROVED): the leftward damage speed of *any* perturbation at x ≥ 0 is at most
 1 minus the frontier's climb rate, exact per background (1/2, 7/12, 2/9, 9/19, 6/17..15/34), attained by the inserted edge on G8
 and (7, 63), not on the classic ether, (9, 57) or (12, 68). The spectrum table is in the tracker.
+
+## 11. The closed-set certificate on the shadows (Block 24, CL682)
+
+Full account in [round 12 of the tracker](inquisition-20261031.md#round-12-2026-11-02-cloud-cl682-the-closed-set-certificate-with-a-moving-anchor-passes-both-controls-g8s-lean-verified-law-lowrys-109-states-rediscovered-for-the-classic-ether-proves-the-9-7-law-of-7-63-at-28-alignments-and-fails-on-9-57s-519-at-every-window-to-32-although-that-law-holds-to-t--20000).
+Lowry's trap generalised to a moving anchor passes both controls (G8's Lean-verified law; the classic ether, where it rediscovers
+the 109 wall states), proves (7, 63)'s 2/9 law at 28 alignments as the first moving walls (70–74 states), and cannot certify
+(9, 57)'s 5/19 at any window to 32, although that law holds to t = 20,000. The spectrum's exact laws therefore sort into
+stationary walls, moving walls, and laws exact in fact but not adversarially robust at any tested window; the dividing question,
+whether one period of the front is determined by a bounded strip under every outside input, is the same as upward rigidity in
+the eternal-cycle line, and the tool is now one tool for both.

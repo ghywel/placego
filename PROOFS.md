@@ -5335,3 +5335,17 @@ For paired K-prefixes sharing their bottom L<K cells, mutual differences reach
 at most K-L-1+2t; if this is<=R_A(t)-9, their front and eight-cell states agree
 at t. Endpoint agreement yields capture by T; agreement of first capture times
 requires the guard at every prior tick. No pre-capture speed assumption.
+
+### Waiting room — the moving-anchor closed-set certificate, and the (9, 7) law of (7, 63) at 28 alignments (Cloud, CL682)
+
+[Statement, soundness and results](reports/inquisition-20261031.md#round-12-2026-11-02-cloud-cl682-the-closed-set-certificate-with-a-moving-anchor-passes-both-controls-g8s-lean-verified-law-lowrys-109-states-rediscovered-for-the-classic-ether-proves-the-9-7-law-of-7-63-at-28-alignments-and-fails-on-9-57s-519-at-every-window-to-32-although-that-law-holds-to-t--20000).
+**Soundness (hand, short; PROOF-SKETCH until read).** If the real state (ether phase at the anchor, the W cells right of it) lies
+in a set closed under "retreat the anchor by one when its own next cell differs from the ether, else keep it and compute the far
+cell for both values of the cell beyond", with every strip holding a mismatch, then the state stays in the set for ever (cells
+left of the anchor read only ether cells; the anchor reads the strip's head; the strip's next contents are exact but for the far
+cell), so the leftmost mismatch stays within W of the anchor, and if every path of length P in the recurrent part moves the
+anchor by S − P, the front stays within a bounded distance of a line of slope (S − P)/P. With a stationary anchor this is the
+kit's `trap_invariant`. **Controls:** G8's Lean-verified (4, 2) law at all 32 alignments; the classic ether at all 196 with 763
+states = Lowry's 109 × 7. **Theorem (COMPUTED closures; PROVED modulo the soundness read):** at 28 alignments of (7, 63) the inserted
+edge's front law is (9, 7), lab speed exactly 2/9, with closed sets of 70–74 states at W = 16. Lab frame; no claim about the
+centre column.

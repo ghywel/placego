@@ -7,3 +7,14 @@ c7_28 law (P,S)=(8,8), lab speed 0.0000; alignments tried 196; certified 0, not 
   not certified (first 6): [((0, 0), 'undetermined', 26), ((0, 1), 'undetermined', 25), ((0, 2), 'undetermined', 24), ((0, 3), 'undetermined', 23), ((0, 4), 'undetermined', 26), ((0, 5), 'undetermined', 27)]
 CLOSED_SET_DONE
 EXIT 0
+# (9,57), 60 alignments, W = 16, 24, 32, cap 60,000
+s9_57 law (P,S)=(19,14), lab speed 0.2632; alignments tried 60; certified 0, not certified 60
+  not certified (first 6): [((2, 34), 'exceeded cap', 60001), ((8, 18), 'law fails', 2969), ((4, 46), 'exceeded cap', 60001), ((6, 56), 'law fails', 6034), ((6, 28), 'law fails', 36321), ((2, 30), 'law fails', 16672)]
+CLOSED_SET_DONE
+EXIT 0
+# (7,63), all 441 alignments, W = 16, 24, 32, cap 20,000
+s7_63 law (P,S)=(9,7), lab speed 0.2222; alignments tried 441; certified 28, not certified 413
+  closure sizes (W, states) for certified alignments: min (16, 70) max (16, 74) distinct [(16, 70), (16, 73), (16, 74)]
+  not certified (first 6): [((0, 0), 'exceeded cap', 20001), ((0, 1), 'exceeded cap', 20001), ((0, 2), 'exceeded cap', 20001), ((0, 3), 'exceeded cap', 20001), ((0, 6), 'exceeded cap', 20001), ((0, 7), 'exceeded cap', 20001)]
+CLOSED_SET_DONE
+EXIT 0

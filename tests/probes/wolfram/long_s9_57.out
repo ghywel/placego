@@ -1,0 +1,5 @@
+alignment (0,0): x_min range over [200, 20000]: [-5255, -43]; breaks of the 19-law after t=200: 0 (first [])
+alignment (3,11): x_min range over [200, 20000]: [-5266, -54]; breaks of the 19-law after t=200: 0 (first [])
+alignment (5,40): x_min range over [200, 20000]: [-5256, -45]; breaks of the 19-law after t=200: 0 (first [])
+alignment (8,50): x_min range over [200, 20000]: [-5265, -49]; breaks of the 19-law after t=200: 19 (first [209, 210, 213, 214, 228])
+LONG_ZERO_DONE
