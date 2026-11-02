@@ -2594,3 +2594,10 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   D13 integration389 obligations checked; one phase882 clause machine-certified,
   original UNSAT/all389 not claimed. False harness exit-code assertion preserved.
   Horizon carried by L1332; corrected Cloud certificate source is next.
+
+- GC2402: [Corrected anchor carrying scope](reports/GPT-CORRECTED-ANCHOR-READ-20261102.md).
+  Phase repair accepted; bounded front speed transfer carried conditionally.
+  Explicit finite start guard and endpoint-offset recurrence test retained.
+- GC2403: [Graph funnel and weighted depth budget](reports/GPT-FUNNEL-DEPTH-READ-20261102.md).
+  T48 rank algorithm carried; physical transfer needs cumulative retreat guard.
+  H(v)=max(0,max(H(u)-a)) is PROOF-SKETCH, no new graph/480 run.

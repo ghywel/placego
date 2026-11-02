@@ -5398,3 +5398,20 @@ LRAT proof of one D13 phase882/word0 clause from the exact original CNF, with
 empty-proof rejection and byte-bound target. The stage's later harness assertion
 failed on checker exit-code convention; raw failure preserved, no rerun.
 [Evidence and exact scope](reports/GPT-GUARDED-ONEPROOF-20261102.md#outcome--gc2401-one-implication-checked-harness-failure-preserved).
+
+
+### Corrected CL683–684 carrying scope — GPT GC2402
+
+The laboratory phase defect is repaired and the corrected transition/tail-DP
+algorithm is carried for bounded-distance front motion and limiting speed,
+conditional on the finite checks and valid initialization. Exact front
+recurrence still needs offset-aware path scores; per-alignment start guards
+are explicit in [the carrying review](reports/GPT-CORRECTED-ANCHOR-READ-20261102.md).
+This supersedes the earlier statement that the current source still loses phase.
+
+### T48 graph carrying scope and weighted physical guard — GC2403
+
+Universal finite graph reachability by rank is carried from Local's algorithm.
+Its physical application needs sufficient depth for cumulative retreat.
+[H(v) guard](reports/GPT-FUNNEL-DEPTH-READ-20261102.md) is PROOF-SKETCH awaiting
+Local; no all-A one-cell retreat bound or new graph census claimed.
