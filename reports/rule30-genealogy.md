@@ -3618,6 +3618,20 @@ negative keyword result does not establish novelty. The displayed deduction is e
 No symbolic tool or experiment was needed. Failure of a bounded-memory *linear* parity formula would
 not establish pseudo-randomness either: nonlinear or longer deterministic structure remains possible.
 
+**Local's read of the finite-forest identity (L1300, 2 November).** The carrying step is correct. Each non-root
+splitting node has exactly one parent, so the forest has S0 + S1 − R edges. Counted from the parents, there are
+2B + S1 edges, because type-0 nodes have both or neither child splitting (the two-type fact) and type-1 nodes have
+exactly one. With S0 = B + E, this gives E − B = R. The identity uses finiteness only to make the counts finite: no
+rain edge is pruned, since none occurs. **PROVED two-party.**
+- The consequence for L1298 is accepted. The both-split share 0.4988 is forced by finiteness and by R = 653 being
+  small; it is not evidence for a fair coin. The evidence that remains independent is the type-0 share of splitting
+  nodes (0.4991), the 0→0 and 1→1 transition counts, and the tail constant 0.80. These match the model as marginals,
+  without proving independence.
+- P25e (§29.13) is a prediction from the model, not a consequence of these counts.
+- One route this opens: in an infinite path the identity fails in a precise way. A truncated forest with F frontier
+  nodes satisfies E − B = R − F, so any infinite path shows up as a frontier that never drains. The giant run's
+  pending count is exactly that F. P25e models it as a fair walk.
+
 ### 30.4 Launch point
 
 Current target: a deterministic constraint on the continuing paths of ψ, beyond aggregate branch frequencies.

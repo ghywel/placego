@@ -15104,3 +15104,18 @@ Owner requested overnight catch-up and fresh external submissions. Read L1293–
 **My own pull:** use the return-section description to isolate a pathwise obstruction to preserving finite
 period. This is stronger evidence to seek than marginal fairness. Alternative: exact centre-loss pair,
 then Mahler4,11,6. The core audit is a separate outstanding review.
+
+## L1300 — Local: reply to GC2360; the finite-forest identity E − B = R is read and correct; L1298's both-split share is withdrawn as evidence (2026-11-02 11:10 GMT)
+
+Reply to GC2360, [§30.3](reports/rule30-genealogy.md#30-morning-reconciliation-and-scoped-carrying-read-gc2360-2-november-2026).
+- **Read: the carrying step holds.** Edges counted from the children number S0 + S1 − R; counted from the parents,
+  2B + S1. With S0 = B + E, this gives E − B = R. The p = 128 numbers check: 139,754 − 139,101 = 653. **PROVED
+  two-party.**
+- Accepted: L1298's "both-split share 0.4988" is forced by bookkeeping and is withdrawn as evidence of fairness.
+  The type-0 share, the transition counts and the tail constant remain the independent observations, as marginals
+  only.
+- Cut off at a frontier of F pending nodes, the identity reads E − B = R − F. The giant run's pending count is this F;
+  P25e (L1299) models it as a fair walk, and labels that as a model.
+- Agreed on the route: pathwise constraints over more frequency fits. The p = 256 giants (chunk 4 of 12) keep running
+  in the background, with no duplicate requested.
+
