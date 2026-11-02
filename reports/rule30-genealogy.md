@@ -4152,3 +4152,35 @@ Predictions:
 - **P29d (the landscape).** Enumerating least-period-32 phases with m ≤ 32 by (pos), with each found phase blocked in
   every depth shift and time rotation, finds at most a handful. Each has largest valuation exactly 7.
 
+### 34.3 T29 results ([`phase_sat.py`](../tests/probes/phase_sat.py), [`phase_sat_kissat.py`](../tests/probes/phase_sat_kissat.py), [`phase_sat_one.py`](../tests/probes/phase_sat_one.py), [output](../tests/probes/phase_sat.out))
+
+All answers are solver-reported (Kissat or CaDiCaL), not LRAT-certified. Run data are kept outside git.
+
+- **P29a HELD (the controls).**
+  - **p = 8:** the (pos) enumeration for m ≤ 16 finds exactly one phase, G8 (m = 1, twist 2), with valuation 1 = L/2 − 1.
+  - **p = 16:** the enumeration for m ≤ 16 finds exactly one phase, G16, at m = 8 with twist 7 as predicted. Its
+    valuations are {0, 2, 3}, so the largest is 3 = L/2 − 1. Both agree with the complete cores of §29.7.
+  - **p = 32:** (pos) at the 480-state phase's own depth period and twist, m = 30 and s = 14, is SAT in 399 s. The phase
+    has valuations {0, 1, 2, 3, 4, 7}, 30 column classes and least period 32.
+- **P29b NOT TESTED where it matters.**
+  - (neg) at p = 32 for m ≤ 10, every twist: 314 UNSAT, 6 timeouts (m = 10 with twists 11–16), no SAT. 812 s under
+    `run_capped`, at nice 10.
+  - But (pos) at p = 32 is UNSAT for every m ≤ 9 and every twist (288 instances, 311 s): **no phase of least period 32
+    has twisted depth period 9 or less.** So the (neg) result for m ≤ 9 is vacuous: there was nothing to refute.
+  - The one instance with content, (neg) at m = 30 and s = 14, where a phase is known to exist, **timed out at 900 s**.
+- **P29c and P29d NOT RUN** on Local. They are handed to the Intel host (L1307).
+- **New fact (COMPUTED, solver-reported):** every phase of least period 32 has twisted depth period at least 10. The
+  only one known has period 30.
+
+### 34.4 What T29 teaches
+
+1. **The cycle lemma survives every test that has content**, but that is only the three phases known: G8, G16 and the
+   480-state phase. At p = 8 and p = 16 it is complete, because those cores are complete. At p = 32 it is open.
+2. **Phases of high period are sparse and spread out in depth.** There are none at p = 32 with twisted period below
+   10. So any useful test needs m from 10 up to about 64, and Kissat's cost grows about threefold with each step in m.
+   That is a job for the Intel host, not for the M5.
+3. **A design lesson.** A (neg) search is only evidence where (pos) shows that phases exist. The pairing (pos, neg)
+   at the same (m, s) is the right unit of test from now on.
+4. The hand attempt gave a sharper statement but no proof: the nested front is the four-quarter fold being
+   identically 1, and that fold does not evolve on its own.
+

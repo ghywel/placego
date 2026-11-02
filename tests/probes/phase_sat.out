@@ -1,0 +1,34 @@
+# T29 outputs (L1307). Solver answers are Kissat/CaDiCaL-reported, not LRAT-certified.
+## controls: phase_sat.py pos 8 16 and pos 16 16 (CaDiCaL)
+pos p=8 m<=16: 1 distinct phases; first found at m=1 s=2: 1 column class, least periods [8], valuations [1], largest 1 (L/2-1 = 1)
+pos p=16 m<=16: 1 distinct phases (183 s); first found at m=8 s=7: 8 column classes, least periods [16], valuations [0, 2, 3], largest 3 (L/2-1 = 3)
+## timing probes (CaDiCaL, 2e5-conflict budget): (16,8,7) neg UNSAT 0.06 s, pos SAT; (16,20,3) and (16,30,5) budget; (32,10,5) neg and pos UNSAT < 1 s; (32,16,3) and (32,30,11) budget
+## Kissat: (16,20,3) neg UNSAT 8 s; (32,16,3) neg UNSAT 32 s
+## phase_sat_kissat.py neg 32 1 10 60 (run_capped, nice 10)
+m=1 done: {'SAT': 0, 'UNSAT': 32, 'TIMEOUT': 0}, elapsed 0 s
+m=2 done: {'SAT': 0, 'UNSAT': 64, 'TIMEOUT': 0}, elapsed 1 s
+m=3 done: {'SAT': 0, 'UNSAT': 96, 'TIMEOUT': 0}, elapsed 1 s
+m=4 done: {'SAT': 0, 'UNSAT': 128, 'TIMEOUT': 0}, elapsed 4 s
+m=5 done: {'SAT': 0, 'UNSAT': 160, 'TIMEOUT': 0}, elapsed 8 s
+m=6 done: {'SAT': 0, 'UNSAT': 192, 'TIMEOUT': 0}, elapsed 16 s
+m=7 done: {'SAT': 0, 'UNSAT': 224, 'TIMEOUT': 0}, elapsed 36 s
+m=8 done: {'SAT': 0, 'UNSAT': 256, 'TIMEOUT': 0}, elapsed 94 s
+m=9 done: {'SAT': 0, 'UNSAT': 288, 'TIMEOUT': 0}, elapsed 325 s
+m=10 done: {'SAT': 0, 'UNSAT': 314, 'TIMEOUT': 6}, elapsed 811 s
+neg p=32 m=1..10: {'SAT': 0, 'UNSAT': 314, 'TIMEOUT': 6}; undecided (m, s): [(10, 11), (10, 12), (10, 13), (10, 14), (10, 15), (10, 16)]
+## phase_sat_kissat.py pos 32 1 9 60
+m=1 done: {'SAT': 0, 'UNSAT': 32, 'TIMEOUT': 0}, elapsed 0 s
+m=2 done: {'SAT': 0, 'UNSAT': 64, 'TIMEOUT': 0}, elapsed 1 s
+m=3 done: {'SAT': 0, 'UNSAT': 96, 'TIMEOUT': 0}, elapsed 1 s
+m=4 done: {'SAT': 0, 'UNSAT': 128, 'TIMEOUT': 0}, elapsed 3 s
+m=5 done: {'SAT': 0, 'UNSAT': 160, 'TIMEOUT': 0}, elapsed 7 s
+m=6 done: {'SAT': 0, 'UNSAT': 192, 'TIMEOUT': 0}, elapsed 14 s
+m=7 done: {'SAT': 0, 'UNSAT': 224, 'TIMEOUT': 0}, elapsed 31 s
+m=8 done: {'SAT': 0, 'UNSAT': 256, 'TIMEOUT': 0}, elapsed 86 s
+m=9 done: {'SAT': 0, 'UNSAT': 288, 'TIMEOUT': 0}, elapsed 310 s
+pos p=32 m=1..9: {'SAT': 0, 'UNSAT': 288, 'TIMEOUT': 0}; undecided (m, s): []
+## phase_sat_one.py pos 32 30 14 600
+pos p=32 m=30 s=14: SAT in 399 s
+   valuations [0, 1, 2, 3, 4, 7], least periods [32], 30 column classes
+## phase_sat_one.py neg 32 30 14 900
+neg p=32 m=30 s=14: TIMEOUT in 900 s

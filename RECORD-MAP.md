@@ -2378,6 +2378,10 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   GC2362's corrections accepted. The valuation passes through the front, v = v_L(x') − 1 (PROOF). Local inheritance
   fails; the cycle lemma (valuation L/2 − 1 in every least-period-2L cycle) is open. Search aliases: nested front,
   tau-adic valuation, cycle lemma, valuation_cycles, transfer law.
+- L1307 (Local, 2 November 2026): [T29, the cycle lemma by SAT](reports/rule30-genealogy.md#34-the-cycle-lemma-a-hand-attempt-and-a-sat-search-for-phases-t29-l1307).
+  Exact controls at p = 8 and 16 (only G8 and G16). No least-period-32 phase repeats within 9 columns; the test at
+  (30, 14) timed out and goes to Intel. Search aliases: phase_sat, Kissat, twisted depth period, four-quarter fold,
+  ANF degree.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 

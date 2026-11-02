@@ -26,7 +26,7 @@ rank on non-doubling stretches; no Intel giant restart now. Latest lost checkpoi
 560082/560085 subtrees reported complete, period256 still INCOMPLETE. GC2360 E−B=R now PROVED two-party
 by L1300. Both schedules **PAUSED**; no job launched. The full core-program audit remains separate.
 
-**Local, L1299–L1306 — p = 256 stopped; the proof route through return sections and valuations, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
+**Local, L1299–L1307 — p = 256 stopped; the proof route through return sections and valuations, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
 - All 560,085 subtrees ran at cap 10^8. 51 of the 54 giants are complete, and three are open (3.05·10^6 pending
   nodes). There is no rain edge in 2.3·10^12 nodes so far.
 - **STOPPED (L1301).** The checkpoint was lost in the app restart (L1302); the per-root results are saved. The three
@@ -39,7 +39,9 @@ by L1300. Both schedules **PAUSED**; no job launched. The full core-program audi
   Deep in a layer the coin is a generic light-cone function; the only departure is at the front. GC2362 corrected T27 (a
   bit-pattern depth test, now withdrawn) and reframed the target as entrance versus cycle. T28 (L1306): the valuation
   passes through each layer's front exactly, v = v_L(x') − 1 (PROOF). Inheritance inside a layer fails locally. The open
-  target is the cycle lemma: every cycle of least period 2L has a column of valuation L/2 − 1.
+  target is the cycle lemma: every cycle of least period 2L has a column of valuation L/2 − 1. T29 (L1307): exact
+  controls at p = 8 and 16; at p = 32 no phase repeats within 9 columns, and the one real test, at (m, s) = (30, 14),
+  timed out. It is handed to the Intel host.
 - No layer state repeats, even up to rotation (p ≤ 128), so memoising cannot help.
 
 **GPT, GC2360 — morning reconciliation, 2 November 2026:**

@@ -15337,3 +15337,31 @@ My own pull: the cycle lemma. It is a statement about phases alone, with no reac
 "no wall leaves the rain" into "no defect descendant climbs from L/2 − 2 to L/2 − 1".
 REVIEW-REQUEST (GPT) on §33.3 and on whether the cycle lemma is known or plausible; READ-LEDGER to both workers.
 
+## L1307 — Local: T29, the cycle lemma — exact controls at p = 8 and 16; at p = 32 the small range has no phases, and the one real test needs the Intel host (2026-11-02 14:22 GMT)
+
+[§34](reports/rule30-genealogy.md#34-the-cycle-lemma-a-hand-attempt-and-a-sat-search-for-phases-t29-l1307); predictions
+pushed first (38fcc7a8), run plan revised before the main run (8f9db6e2).
+- **Hand attempt (no proof).** The valuation equals 2L − 1 minus the top ANF index in the time digits. A nested front
+  is a column whose four-quarter fold is identically 1. The fold does not evolve on its own (as with G185).
+- **SAT encoding.** A phase is a configuration repeating in depth up to a time rotation, C_(K+m)(t) = C_K(t+s).
+  (pos) asks for some column of least period p; (neg) adds that no column is a nested front.
+- **HELD (controls):** p = 8 has exactly G8; p = 16 has exactly G16, at (m, s) = (8, 7) as predicted; at p = 32, (pos)
+  at (30, 14) finds a phase with largest valuation 7 in 399 s.
+- **COMPUTED:**
+  - No least-period-32 phase has twisted depth period ≤ 9 (288 instances UNSAT). So (neg) at p = 32 for m ≤ 10 (314
+    UNSAT, 6 timeouts) is vacuous where it was decided.
+  - The one instance with content, (neg) at (32, 30, 14), timed out at 900 s.
+  - All answers are solver-reported, not LRAT-certified.
+- **Request to GPT (Intel host; the owner keeps the M5 free of long runs).** Order and scale under Intel's own caps:
+  1. `phase_sat_one.py neg 32 30 14 <limit> <cnf>`; if UNSAT, certify it by CaDiCaL LRAT and `cake_lpr`.
+  2. (pos) at p = 32 for m = 10 … 40 and every twist (`phase_sat_kissat.py pos 32 10 40 <limit>`), to map the phases.
+     For every (m, s) found SAT, run (neg) at the same (m, s).
+  3. If time allows, the same at p = 64 for small m.
+  A SAT answer to any (neg) is a counterexample: please store its columns.
+- Questions for GPT: is the vacuity reading right, and is the cycle lemma plausible, or known for automaton 2369?
+
+My own pull: wait for the Intel map of phases at p = 32 before any further hand work. The lemma is worth a proof only
+if it survives a real (pos, neg) census. While waiting, a cheap hand question: why does no least-period-32 phase repeat
+within 9 columns?
+REVIEW-REQUEST (GPT) with the Intel task above; READ-LEDGER to both workers.
+
