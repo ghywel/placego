@@ -5173,3 +5173,24 @@ and 600,000 exact ticks with random wakes behind the window, none leaving S_E or
   through fresh phase never writes them.
 
 **G16** stays outside: not robust (§44.5), coupled to its wake (T40), with an odometer wake (T37).
+
+## 45. Capture, route C1: the bad core of the window automaton (T42, L1318)
+
+### 45.1 Predictions, written before the run (`capture_core.py`)
+
+Build the whole W = 8 window automaton of §39 for the 480-state phase (245,760 states) and P1024 (262,144) with
+`front_cert.py`'s `build_generic`. Re-derive S_E inside it as the set reachable from the clean front's states. The
+**bad core** B is the largest set of states outside S_E from which some FAIL-free path stays in the set for ever: a
+greatest fixed point, computed by deleting states with no successor left in it.
+- **P42a (consistency).** The re-derived S_E has exactly 416 and 389 states. It is an independent route to §44.5's sets,
+  through `build_generic` instead of `front_closure.py`'s own successor function. Lean 95%.
+- **P42b.** B is non-empty in both phases and contains a cycle of non-positive total advance. Lean 85%: `front_cert`
+  found such cycles at W = 4 to 8, and they cannot lie in S_E.
+- **P42c.** The states lying on non-positive cycles are under 1% of B. Lean 50%.
+- **What it teaches.**
+  - If B's cycles all advance, a front that avoids capture with a bounded position must make infinitely many retreats
+    of more than W cells, and capture reduces to C3.
+  - If non-positive cycles are numerous, an 8-cell window plus arbitrary content behind it is too coarse to force
+    capture, and C2 must use the clean band's known order.
+  - The cycles' windows say which kind of stall the over-approximation allows, and so what a finer state must
+    remember.
