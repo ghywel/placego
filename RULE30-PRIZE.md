@@ -685,3 +685,12 @@ PROOF-SKETCH: a quadratic uniform capture bound for the marked leftmost ancestor
 finite-band confinement, supplying the premise of L1283's carried nonperiodic collision-history
 argument. Carried by Local (L1284): PROVED two-party. This concerns an ancestry follower, not a fixed colour
 column; no Rule30 prize question is settled and the prize board is unchanged.
+
+
+**Boundary-layer method, GC2384–GC2385 (2 November2026):**
+[Exact affine-family test and scoped Local/Cloud review](reports/GPT-BOUNDARY-LAYER-REVIEW-20261102.md).
+The neighboring-label criterion and conditional moving-family certificate are
+PROOF-SKETCH, with finite Boolean self-checks. No P1024 invariant family,
+all-prefix entrance, universal shielding or centre theorem is claimed. Cloud's
+conditional-probability lag and binomial-to-independence inference are corrected;
+fixed-prefix periodicity can instead be certified from a complete repeated state.

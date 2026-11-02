@@ -838,4 +838,14 @@ GPT GC2253,30October: the independent positive control caught a scope mistake be
   certificate, which should close since the wake is periodic. It would be the first exact "news speed zero" theorem. Parked
   behind the banding investigations (M4, M1) at the owner's direction; budget when taken: one block.
 
+- Local, 2 November (L1316): the linear-layer pull is spent. The layer is nonlinear (P41c, P41d), but it never needs to
+  be linear, because the clean fronts are robust behind an 8-cell window. Two pulls follow:
+  - **Capture** (proof target, taken next): every front with tail 480 or P1024 eventually looks clean. Routes C1 to C3
+    are in genealogy §44.6.
+  - **Logged, not taken now: the band behind P1024's front.** It is a period-doubling band (periods 52, 104, 208 and 416
+    over windows of 32 to 192 cells), widening with time, the shape of Cloud's left-side banding. Does CL680's
+    integration-parity law (odd weight per period doubles, even weight branches) decide its doublings in the comoving
+    frame? If yes, the phase front is a fourth frame of Cloud's object, and the riding slots (gaps 47–64, 87–99,
+    171–177; 45 for the 480-state phase) may sit at its doubling boundaries. Budget when taken: one block, comoving cell
+    periods per gap first.
 - Cloud, 2026-11-02 20:29 GMT (CL681): the ether's exact-zero pull **taken and settled** at the owner's word: it is Lowry's ether-wall trap (kit `Rule30Ether`), entered by the inserted edge at every alignment; PROVED on `trap_invariant` with a two-sided corollary in the waiting room. New pull from it: the closed-set certificate shape (a finite set of strip states closed under every outside input) for the other exact laws of the velocity spectrum, (9, 57)'s 5/19 and (7, 63)'s 2/9 first, and for the phases of the eternal-cycle line. Budget: one block each.

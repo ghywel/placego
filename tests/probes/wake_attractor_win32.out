@@ -1,0 +1,5 @@
+# L1316 T41 P41e (Local, 2026-11-02): python3 tests/probes/wake_attractor.py --win=32 200 40 80, under run_capped (nice 10; CPU 1,200 s, wall 1,200 s, RSS 2,048 MiB): COMPLETED
+window 32, K=40, 200 runs, 2240 ticks: {'window equals a clean-front window': 200, 'clean-start near-front period (52, 68) or a multiple': 200}; late speed min 1.2940 max 1.3090 (17/13 = 1.3077)
+   ticks from passing depth 3K to the first clean-front window: median 125, max 313
+window 32, K=80, 200 runs, 2480 ticks: {'window equals a clean-front window': 200, 'clean-start near-front period (52, 68) or a multiple': 200}; late speed min 1.2905 max 1.3087 (17/13 = 1.3077)
+   ticks from passing depth 3K to the first clean-front window: median 59, max 344

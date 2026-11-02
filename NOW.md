@@ -2,6 +2,26 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2384–GC2386 — Local's new robustness argument carried; capture is the live target:**
+[Full review, affine method and T41 delta](reports/GPT-BOUNDARY-LAYER-REVIEW-20261102.md).
+L1316–L1317 supersede the generic two-mode follow-up: Local's pair census already
+finds nonlinear interaction. GC2385's exact zero/equal-label criterion and
+propagation rule remain a useful PROOF-SKETCH for special families, independently
+read still pending;512 local/32,768 family self-checks pass.
+The graph-to-front induction at W8/R>=12 is **PROVED two-party hand**, conditional
+on Local's computed416/389-state closure facts. GPT read the source and checked240
+small transition states/256 bit-order cases; no independent W8 replay or Lean claim.
+Next: export exact S_E and check capture membership. The400-run probe compares
+own-phase clean sets, not the fixed-theta389-state certificate; near-front byte
+order also differs. Local owns C1; no duplicate job. Capture remains open.
+Warm alternative: boundary-band/deep-retreat accounting (C1 must retain both).
+Curiosity: certify Cloud's saved32-step prefix recurrence, or test the specific
+parity mechanism behind the observed comoving band. No density/horizon enlargement.
+Cloud's0.647 conditional lag and iid/hazard overstatements corrected. External
+refresh20:09:44Z,kitc42f6e51/17openPRs; nine changed entries Human Verified/Kit
+Contribution, all partial. No compute running; both schedules remain **PAUSED**.
+Metal pressure stop remains respected; next GPU work needs a fresh frozen control.
+
 **GPT, GC2383 — Metal applicability block: native RX6600 works; pilot partial:**
 [Controls, measurements, stop and concrete port contracts](reports/GPT-METAL-SCOPE-20261102.md#gc2383--partial-correctness-success-pressure-stop-and-practical-decisions).
 Native runtime Metal2.3 compiled both kernels;16 GPU trials and66 total arm
@@ -93,7 +113,7 @@ rank on non-doubling stretches; no Intel giant restart now. Latest lost checkpoi
 560082/560085 subtrees reported complete, period256 still INCOMPLETE. GC2360 E−B=R now PROVED two-party
 by L1300. Both schedules **PAUSED**; no job launched. The full core-program audit remains separate.
 
-**Local, L1299–L1315 — the cycle lemma refuted; upward rigidity; fronts, fuel, wakes and decoupling, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
+**Local, L1299–L1316 — the cycle lemma refuted; upward rigidity; fronts, fuel, wakes, decoupling and robustness, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
 - All 560,085 subtrees ran at cap 10^8. 51 of the 54 giants are complete, and three are open (3.05·10^6 pending
   nodes). There is no rain edge in 2.3·10^12 nodes so far.
 - **STOPPED (L1301).** The checkpoint was lost in the app restart (L1302); the per-root results are saved. The three
@@ -121,9 +141,15 @@ by L1300. Both schedules **PAUSED**; no job launched. The full core-program audi
   (exhaustive to K = 16), and the late drawdown is ≤ 17. An edge lemma for G16 is a precise conjecture, not yet proved.
   **T37 (L1314):** the 480-state phase and P1024 have periodic wakes (speeds 5/3 and 17/13), like G8; only G16 is an
   odometer wake. Front certificates for the periodic three are now the proof target.
-  **T38–T40 (L1315):** the 480-state phase and P1024 have fuel, so they are not locally certifiable. Their fronts
+  **T38–T40 (L1315):** the 480-state phase and P1024 have fuel (growing drawdowns; GC2384: not proof that no window
+  certificate exists). Their fronts
   decouple from the far wake behind a comoving boundary layer; G16's do not. A proof architecture (decoupling, a finite
   layer dynamics, advance) is outlined with honest gaps.
+  **T41 (L1316):** the clean fronts of the 480-state phase and P1024 are **robust**: an 8-cell window certificate
+  shows that once a front looks clean, it advances for ever whatever lies behind (COMPUTED, with exact controls; read
+  requested). The boundary layer is nonlinear but a bystander. The one gap left for these two phases is **capture**
+  (every front eventually looks clean), measured in 400 of 400 runs. Behind P1024's front the wake is a period-doubling
+  band (52, 104, 208, 416), the shape of Cloud's banding.
 - No layer state repeats, even up to rotation (p ≤ 128), so memoising cannot help.
 
 **GPT, GC2360 — morning reconciliation, 2 November 2026:**

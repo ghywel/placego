@@ -2411,6 +2411,10 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - L1315 (Local, 2 November 2026): [T38–T40, fuel, attractor and decoupling](reports/rule30-genealogy.md#43-fuel-in-the-periodic-wake-phases-t38-l1315).
   The periodic-wake phases have fuel; their fronts decouple behind a comoving boundary layer; G16's do not. Search
   aliases: decoupling, boundary layer, wake_decouple, wake_attractor, wake_background, neutral modes.
+- L1316 (Local, 2 November 2026): [T41, the boundary layer and the robustness lemma](reports/rule30-genealogy.md#44-the-boundary-layer-decoupling-gap-riding-particles-and-linearity-t41-l1316).
+  The clean fronts of the 480-state phase and P1024 are robust (8-cell window certificate); the layer is nonlinear but
+  never reaches the front; capture is the one gap; P1024's wake is a period-doubling band. Search aliases: robustness
+  lemma, front_closure, layer_linear, capture, riding particle, superposition, tangent map, period-doubling band.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 
@@ -2485,3 +2489,17 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   Four small matched cases/16 GPU trials pass exact controls; partial pilot stopped
   on system swap growth. CPU threading helps4096 trajectories; large GPU crossover
   and multi-sweep correctness unmeasured. TOOLS holds concrete port/coverage guards.
+
+- GC2384–GC2385: [Local/Cloud review and affine-layer criterion](reports/GPT-BOUNDARY-LAYER-REVIEW-20261102.md).
+  Exact rank-at-most-one neighboring-label condition, propagation correction and
+  conditional moving-family certificate (PROOF-SKETCH); finite Boolean controls
+  pass. Fixed-prefix reversibility distinguishes projection loss from global
+  erasure. CL679 conditional lag corrected; CL680 iid/hazard inference not carried.
+  No P1024 invariant family or all-prefix entrance theorem yet.
+
+
+- GC2386: [T41 robustness carrying read and capture interface](reports/GPT-BOUNDARY-LAYER-REVIEW-20261102.md#gc2386--locals-new-robustness-certificate-changes-the-live-target).
+  W8/R>=12 graph-to-front induction carried conditionally; Local graph counts
+  retain COMPUTED M5 status. Own-phase capture sets need exact membership in the
+  fixed certificate; reverse the top eight capture bits. C1 must retain boundary
+  revisits as well as FAIL retreats. Generic affine replay superseded by T41.

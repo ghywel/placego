@@ -4896,6 +4896,10 @@ The prepared mismatch regions of width r = 6, 10 and 14 are all enumerated, with
 - **So a periodic wake from a clean start does not mean freedom from fuel.** G8 is the only known phase without fuel,
   and a local front certificate needs exactly that. The proposal of §42.1 fails in its strong form: a periodic wake is
   not sufficient for a local certificate.
+- *Correction (GC2384, L1317).* Three growing maxima refute the numerical bound ≤ 8; they do not prove that the
+  drawdown is unbounded, nor that no window certificate of any kind exists. G8's all-period exclusion comes from the
+  kit's certificate, not from the measured 5. §44.6 later gives a window certificate of a different kind, for fronts
+  that already look clean.
 
 **T39, predictions written before the run (`wake_attractor.py`).** For P1024, 200 random prefixes at each of K = 40
 and 80 run at random θ for 6K + 2,000 ticks. After the front passes depth 3K, is the window above the front eventually
@@ -4913,6 +4917,9 @@ periodic with the clean-start wake's period and advance (208, 272), at speed exa
   - An exact recurrence of the clean-start wake (208, 272) appears in only 25 and 58 runs within the horizon, plus one
     at the half period (104, 136), which has the same speed. The rest show no recurrence within 2,240 or 2,480 ticks.
   - **P39a REFUTED for exact capture, held for the speed.**
+  - *Correction (GC2384, L1317).* The half-period recurrence (104, 136) appeared once at each K, so twice in all, not
+    once. Non-capture within 2,240 or 2,480 ticks is horizon-limited; it does not refute eventual capture, which §44.4
+    then found in all 400 runs under a strict test.
 - **Premise check** ([`wake_background.py`](../tests/probes/wake_background.py)). For G8, P1024 and the 480-state phase,
   the middle of the clean-start wake satisfies neither the moving-frame recurrence nor any depth period.
   - So the "periodic wake" of T37 is periodicity of the neighbourhood of the front, not a periodic background filling
@@ -4944,6 +4951,8 @@ its deepest point, and whether it reaches the front.
 - **P40a: main claim held, detail refuted.** No perturbation reaches the front in the three periodic-wake phases. But
   for the 480-state phase and P1024, a perturbation close behind the front travels at exactly the front's speed and
   keeps its distance. Only those starting about 200 cells back fall behind.
+- *Correction (GC2384, L1317).* The 1 to 4 flips were sampled with replacement, so some perturbations may have been
+  null; a zero reported speed can be one. §44.4's census uses single flips at distinct gaps, and pairs at distinct gaps.
 
 ### 43.6 What T37–T40 teach: a proof architecture, and where it stands
 
@@ -4968,3 +4977,199 @@ its deepest point, and whether it reaches the front.
 4. **G16 needs a different idea.** Its front is driven by the whole wake: the Collatz-shaped case of Cloud's dichotomy,
    now seen as "no decoupling".
 
+
+## 44. The boundary layer: decoupling gap, riding particles and linearity (T41, L1316)
+
+### 44.1 The algebra behind the test
+
+The edge map is quadratic: F(x)_n = x_n ⊕ x_(n−1) ⊕ x_(n−2) ⊕ x_(n−1)x_(n−2). A disturbance δ of a base run X therefore
+evolves by
+
+δ_n(t+1) = δ_n ⊕ δ_(n−1)·¬X_(n−2) ⊕ δ_(n−2)·¬X_(n−1) ⊕ δ_(n−1)δ_(n−2),
+
+a linear part with coefficients read from the base run (the tangent map), plus one quadratic term. Two consequences:
+- **The deepest disturbed cell m obeys the mask lemma** (Cloud's P-K2, CL679): δ_(m+2)(t+1) = ¬X_(m+1)(t), so m
+  advances by 2 exactly when the base cell ahead is white. The main front R is the same kind of object: it is the
+  deepest cell of the disturbance D = X ⊕ E of the phase E, so R advances by 2 exactly when E_(R+1) = 0.
+- **Two disturbances superpose exactly until their supports touch.** The second derivative of F is
+  a_(n−1)b_(n−2) ⊕ a_(n−2)b_(n−1), so the interaction I = Δ_AB ⊕ Δ_A ⊕ Δ_B of two flips A and B is born only where
+  the two responses are adjacent. This is G12.2's four-case test (the ab coefficient), applied to the layer.
+- A disturbance changes the main front exactly when its deepest cell reaches the front (m ≥ R); before that,
+  X ⊕ δ ⊕ E has the same deepest 1 as D.
+
+So the questions of §43.6 become questions about damage fronts racing a front: (a) asks which disturbances never
+catch R, and the "linear layer" asks whether the interaction of two riding disturbances is itself left behind.
+
+### 44.2 Predictions, written before the run (`layer_linear.py`)
+
+P1024 (wake period 208, advance 272) and the 480-state phase (288, 480), clean starts at one random alignment each.
+Flips are made at eight comoving phases t0 = 5·period + j·period/8 (j = 0..7), at every gap g = 1..400 behind the front.
+Each run lasts ten wake periods after the flip.
+- **P41a (decoupling reaches down to a small gap).** For both phases, the gaps whose single flip ever changes the main
+  front form a short initial set, all g ≤ 6; every flip at g ≥ 7 rides or falls behind. Lean 50%.
+  - Counterfactual: flips at gaps of 20 to 200 sometimes change the front. Then the layer drives the front, the riding
+    of T40 was sampling luck, and (a)'s L is the layer depth.
+- **P41b (riding disturbances are a finite catalogue of particles).** Every flip still within 400 of the front at the
+  end has an eventually periodic deep end. In the comoving frame, (the gap R − m, the 64 disturbance bits above m)
+  recurs after one or two wake periods. At most 12 distinct riding gaps occur per phase. Lean 50%.
+  - Counterfactual: deep ends that drift slowly, or aperiodic deep-end patterns; then "neutral modes" are not particles
+    and (b) has no finite catalogue.
+- **P41c (the layer is linear where it matters).** For 200 random pairs of riding flips (j = 0), the pair's run never
+  changes the front. The interaction I is either zero or has its deepest cell at least as far behind the front as the
+  deeper of the two single responses. Lean 45%.
+  - Counterfactual: a pair of individually harmless flips changes the front, or its interaction rides closer to the
+    front than either flip. The layer is then nonlinear exactly where (b) and (c) need it linear.
+- **P41d (the tangent map is not enough).** For single flips, the purely linear tangent evolution (the quadratic term
+  dropped) puts its deepest cell at a different place from the true disturbance within one wake period, for most
+  gaps. Lean 75%. By §44.1, the two deep-end rules differ whenever δ_(m−1) = 1 and the cell ahead is black.
+- **P41e (T39's missing captures are riding particles).** Rerun T39 (`wake_attractor.py`, the same 200 prefixes at
+  K = 40 and 80) with the recurrence window cut from 256 cells to 32. Then at least 190 of 200 runs per K show the
+  clean-start recurrence (208, 272), or a multiple of it. Lean 65%.
+  - Counterfactual: still well under half. Then the front itself has other near-front orbits, and the two-stage shape
+    (fuel, then capture) fails near the front, not only in the layer.
+
+**What it would teach.** If P41a, P41c and P41e hold, then:
+- the front's future is a function of a window of a few cells, the phase ahead, and the fuel still unspent;
+- the layer's particles are bystanders;
+- (b) and (c) shrink from windows of width 100 to 250 to a small window plus the fuel question.
+
+If P41a fails, the layer is genuinely coupled, and the linear-algebra route (P41c) becomes the main hope.
+Record searched: record and kit term by term (superposition, damage front, boundary layer, neutral, linearis): G12.2
+(the four-case superposition test, at a hole), GC505 and Cloud's CL679 (damage-front bias and the mask lemma); no kit,
+portal or open-PR hit for a boundary layer or a front-decoupling theorem (kit main @c42f6e51).
+
+### 44.3 Part 2, predictions written before the run (`front_closure.py`)
+
+The census (§44.4) found the clean fronts immune to single flips beyond a few cells. A sound version of that statement
+can be checked finitely. Take the window automaton of §39, which branches over everything deeper than W behind the
+front. Explore only its forward closure from the clean front's own states (front class, window) at ticks 600 to
+600 + 4 wake periods. A FAIL-free closure in which every k-path advances proves: **any row whose front ever shows a
+clean-front state advances for ever, whatever lies behind the window** (a ROBUST verdict).
+- **P41f.** ROBUST for the 480-state phase at some W ≤ 16 (lean 45%), and for P1024 at some W ≤ 24 (lean 35%).
+- **Control.** G8 is ROBUST at W = 5, where its whole automaton is certified (§39).
+- **Counterfactual.** FAIL edges in the closure at every W tried. Then arbitrary content behind the window can pull
+  the clean front back, and its measured immunity rests on the actual structure of the wake (the band of §44.4), not
+  on the window alone. The proof would then need that band, which is Cloud's banding object in a new frame.
+
+### 44.4 Results, part 1 ([`layer_linear.py`](../tests/probes/layer_linear.py), [output](../tests/probes/layer_linear.out); [`wake_attractor.py`](../tests/probes/wake_attractor.py) `--win=32`, [output](../tests/probes/wake_attractor_win32.out))
+
+**Unexpected first: the wake behind P1024's front is a period-doubling band (COMPUTED).** This was found in the smoke
+test, after the predictions. It is the least period of the W-cell window above the clean front:
+
+| window W | P1024 (ticks, advance) | 480-state phase |
+|---|---|---|
+| 32 | (52, 68) from tick 400 | (288, 480) from tick 400 |
+| 64 | (104, 136) from tick 400 | (288, 480) |
+| 128 | (208, 272) from tick 800 | (288, 480) from tick 800 |
+| 192 | (416, 544) from tick 1,600 | (288, 480) from tick 800 |
+| 256 | (416, 544) from tick 2,400 | (288, 480) from tick 800 |
+| 320 | none by tick 2,400 | (288, 480) from tick 1,440 |
+
+- Behind P1024's front the period doubles three times within 192 cells. The ordered region widens with time.
+- The 480-state phase keeps the one period 288 over a band that also widens with time.
+- So T37's "periodic wake" (208, 272) was the 128-to-256-cell reading of a cascade, and §43.3's aperiodic middle is the
+  part of the band not yet ordered.
+- This is the shape of Cloud's banding on the single seed's left side: an ordered band behind a moving boundary,
+  with period doubling across diagonals (CL679/CL680, atlas §9). The comoving frame of a phase front may be a fourth
+  frame of that object. This is a CONJECTURE: the integration-parity law of CL680 has not been tested here.
+
+**The predictions:**
+- **P41a: substance HELD, the literal bound REFUTED by one gap.**
+  - 480-state phase: no single flip at any gap 1 to 400, at any of the eight comoving phases, ever changes the front.
+    That is stronger than predicted.
+  - P1024: flips change the front only at gaps ≤ 7. At even j only gap 1 does; at odd j, gaps 1, 2, 3, 4, 6 and 7.
+    Gap 7 breaks the predicted g ≤ 6.
+- **P41b: HELD for the 480-state phase, REFUTED as stated for P1024.**
+  - 480-state phase: every riding flip comes from a gap ≤ 45, and all 29 end at exactly gap 45, at every j; the other
+    371 fall behind. **One slot**: a disturbance closer than 45 cells drifts back to 45 cells behind the front and
+    rides there; anything farther back falls away.
+  - P1024: at most five riding gaps at each final tick (near 47–50, 58–64, 87–99 and 171–177); 17 over the eight final
+    ticks, because those fall at different comoving phases.
+  - P1024: 116 to 164 flips per j neither recur within two wake periods nor fall steadily behind. Most end at the
+    171-to-199 slot, whose 64-bit deep end reaches into the band that is not yet periodic.
+- **P41c: the front part HELD, the linearity part REFUTED.**
+  - No pair of riding flips (200 per phase) ever changes the front.
+  - The interaction I is non-zero at the end in all 400 pairs. In 32 pairs (480) and 69 pairs (P1024) it runs ahead of
+    both single responses at some tick, by up to 13 and 41 cells.
+  - **The layer is nonlinear, and its nonlinearity stays behind the front.**
+- **P41d: HELD.** At all 400 gaps in both phases, the tangent map's deepest cell leaves the true one within one wake
+  period, typically within 2 to 15 ticks. The quadratic term is active at the deep end immediately.
+- **P41e: HELD in substance, under a stricter test than written.**
+  - As worded, P41e named (208, 272), which turned out not to be the 32-cell period; the clean front's 32-cell window
+    repeats with (52, 68).
+  - The test was therefore made strict: does each run's 32-cell window, with its front class, equal one of the clean
+    front's own pairs at the same alignment?
+  - All 400 runs (200 at K = 40, 200 at K = 80) are **captured**, within at most 344 ticks (median 125 and 59) of the
+    front passing depth 3K.
+  - So T39's missing recurrences were bystander particles deeper in the 256-cell window.
+
+### 44.5 Results, part 2: the clean fronts are robust ([`front_closure.py`](../tests/probes/front_closure.py), [output](../tests/probes/front_closure.out))
+
+| phase | W | clean states | forward closure | FAIL edges | every path of k ticks advances | exact control (random wakes behind the window) |
+|---|---|---|---|---|---|---|
+| G8 (control) | 5, 8 | 8 | 10, 22 | 0 | k = 2 | 50 runs, 150,000 ticks: 0 states outside, 0 stalls |
+| 480-state phase | 8, 12, 16, 24 | 288 | 416, 576, 352, 560 | 0 | k = 2 (advances 0 or 2 only) | 100 runs per W (8, 16), 300,000 ticks each: 0 outside, 0 stalls |
+| P1024 | 8, 12, 16, 24 | 52 | 389, 391, 342, 503 | 0 | k = 3 (advances −1 to 2) | 100 runs per W (8, 16), 300,000 ticks each: 0 outside, 0 stalls |
+| G16 (counter-control) | 8 | 499 | 375,952 | 64 | no: least advance −713 over 600 ticks | — |
+
+- **P41f HELD for both phases, at the smallest window tried (W = 8).**
+- The G8 control agrees with §39.
+- The counter-control discriminates: G16, whose front T40 found coupled to its wake, is not robust.
+- A first version of the exact control ran its rows past the clean run's depth bound and reported states outside the
+  closure; it was a bug in the control, not in the closure. Fixed by giving the control its own depth; recorded here as
+  a failure caught by the G8 control.
+
+### 44.6 What T41 teaches: the robustness lemma, and the one gap left
+
+**Robustness lemma (COMPUTED certificate with exact controls; GPT's read of the closure code requested).**
+
+Let E be the 480-state phase (respectively P1024). Let S_E be the forward closure, at W = 8, of the clean front's
+states (416 and 389 states respectively). Suppose a black-edge row with tail E, at some tick, has its front at depth
+R ≥ 12 showing a state of S_E. Then from that tick on:
+- the front's (class, window) stays in S_E;
+- every 2 consecutive ticks (respectively 3) advance the front by at least 1;
+- in particular the front goes to infinity at speed at least 1/2 (respectively 1/3).
+
+This holds whatever the row holds more than 8 cells behind its front.
+
+*Proof.* Take a tick at which the window automaton's computed range R − W .. R + 2 lies at depths ≥ 2. The automaton's
+one-tick edges include the real step, because the real deeper bits are one of the branches; this is §39's
+over-approximation, whose soundness GPT carried for `front_cert.py` (GC2374). The successor function here is the same
+construction. S_E is forward-closed, has no FAIL edge, and every path of length k in it advances by at least 1. So by
+induction the real state stays in S_E. Within any k − 1 ticks the front falls by at most k − 1 cells (the least
+one-tick advance is −1), so it stays at depth ≥ 10 = W + 2, and the over-approximation stays valid. ∎ (The
+certificate itself is a finite computation. Its controls: G8, which agrees with §39; G16, which comes out not robust;
+and 600,000 exact ticks with random wakes behind the window, none leaving S_E or stalling.)
+
+**What it changes.**
+1. **§43.6's (a), (b) and (c) collapse into this lemma.**
+   - The layer of 100 to 250 cells does not need to be enumerated: the band and its riding particles are bystanders.
+   - Only 8 cells behind the front and the phase ahead matter, once the front looks clean.
+   - The linear-algebra route of my last pull is closed (P41c, P41d: the layer is nonlinear), but it is no longer needed.
+2. **A necessary condition for walls.** An eternal periodic point with tail E (480 or P1024) has a front that never
+   shows one of these 416 (respectively 389) states at depth ≥ 12.
+3. **The one gap left is capture**, which is the fuel question made exact.
+   - *Capture:* every black-edge row with tail E either has an unbounded front, or at some tick shows a state of S_E at
+     depth ≥ 12.
+   - Capture implies M_E(k) < ∞ for every k, and with the bridge (§38.2) no eternal point of any period ends in E.
+   - It is measured in 400 of 400 random prefixes (P41e). It is not proved.
+   - Its form for the prefix: write a prefixed row as the clean row XOR a damage Δ born above depth K. The row shows a
+     clean state as soon as Δ's deepest cell lies more than 8 cells behind the clean front. So capture is a race of
+     two damage fronts in known environments: Δ's deep end by the mask lemma in the clean band, and the clean front in
+     E. Single flips lose that race beyond gap 7 (P41a).
+
+**Routes for capture, in the order I would take them.**
+- **(C1) The bad core.** In the whole W-window automaton (W = 8 to 10, which is cheap), find the states with an
+  infinite FAIL-free path avoiding S_E.
+  - If every cycle there advances, a front avoids capture with a bounded position only by infinitely many retreats
+    of more than W cells. Fuel then becomes an accounting of deep retreats.
+  - If zero-advance cycles remain, test each for realisability as a wall with the SAT encoding (§36): a real one would
+    be a counterexample, a spurious one shows what the over-approximation must remember.
+- **(C2) The race automaton.** States: the comoving phase of the clean band, plus Δ's bits in a window around the clean
+  front. The goal state "Δ = 0 within 8 cells of the clean front" is absorbing by the lemma. This differs from (C1) by
+  using the clean band's known periodic order (52 to 288 ticks) in place of arbitrary window contents.
+- **(C3) Deep retreats need special windows.** A FAIL edge needs the front and its whole window to heal in one tick;
+  only 85 of P1024's 1.4 million edges at W = 8 do. Characterise those windows by hand, and show that an advancing front
+  through fresh phase never writes them.
+
+**G16** stays outside: not robust (§44.5), coupled to its wake (T40), with an odometer wake (T37).

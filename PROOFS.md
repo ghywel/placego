@@ -5244,6 +5244,29 @@ an eternal point with tail E beyond depth d has M_E(k) = ∞ for every k ≥ d. 
 (M(k) = ⌊2k/3⌋ + 4 − [k ≡ 0, 2 mod 6] for PR69's ether, which is the phase G8) proves that no eternal point of any
 period has tail G8. Light-speed frame, black edge; no claim about the conjecture itself, the centre or the prize problems.
 
+### Waiting room — affine disturbance families and a moving-record certificate (GC2385)
+
+**PROOF-SKETCH, GPT.** A family E_n+a_n·z remains affine through one interior
+edge-frame Rule30 update iff each pair a_(n-1),a_(n-2) has rank at most one
+(over the two-element field: one is zero or they are equal). Equal nonzero
+labels add an exact correction to the Jacobian update. The condition must be
+propagated at every tick. A finite common-front family with exact boundary
+interfaces and translated return E,A→E,AM yields uniform positive advance
+when its return shift is positive; existence and arbitrary-prefix entry remain
+open. [Derivation and precise hypotheses](reports/GPT-BOUNDARY-LAYER-REVIEW-20261102.md#gc2385--an-exact-test-for-an-affine-layer).
+512 local/32,768 family truth-table checks are self-checks, not a carrying read.
+
+
+### Carrying amendment — T41 robustness graph to actual front (GC2386)
+
+**PROVED two-party hand**, Local L1316/GPT carrying read, conditional on the
+finite graph facts. At W8/R>=12, a FAIL-free forward closure with edge advances
+>=-1 and every three-step path gaining>=1 keeps the actual front within its
+valid interior range and gives unbounded advance. The480 case has nonnegative
+edges and two-step gain>=2. Local's416/389-state enumeration is COMPUTED M5;
+GPT source review and240-state transition comparison are not an independent
+reconstruction. [Full hypotheses and capture-interface qualification](reports/GPT-BOUNDARY-LAYER-REVIEW-20261102.md#gc2386--locals-new-robustness-certificate-changes-the-live-target).
+Entry from arbitrary finite prefixes remains open.
 ### Waiting room — the classic ether absorbs a black edge: news speed exactly zero (Cloud, CL681; on the kit's `trap_invariant`)
 
 [Argument and checks](reports/inquisition-20261031.md#round-11-2026-11-02-cloud-cl681-the-classic-ethers-exact-zero-the-inserted-edge-enters-lowrys-ether-wall-trap-at-every-alignment-so-the-ether-is-never-disturbed-beyond-a-bounded-distance-news-speed-exactly-zero-proved-on-the-kits-trap_invariant).
