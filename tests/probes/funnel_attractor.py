@@ -72,11 +72,31 @@ while len(frontier):
 A = (rank > 0)
 print('   attractor A of S_E (outside S_E): %d states (%.2f%% of the automaton); largest rank %d; rank counts (first 12): %s' % (
     int(A.sum()), 100.0 * A.sum() / NS, int(rank.max()), np.bincount(rank[rank > 0])[1:13].tolist()), flush=True)
+# L1333: the depth guard. Edge advances from classes (a = -21 (c' - c - 1) mod 1024, in -512 .. 511); F = largest fall
+# below the start on paths to S_E, G = largest net fall at entry; computed in rank order.
+GUARD = '--guard' in sys.argv
+if GUARD:
+    a_e = ((-21 * ((dst >> W) - (src >> W) - 1)) % p + 512) % p - 512
+    Ff = np.full(NS, -1, dtype=np.int64); Gg = np.full(NS, -1, dtype=np.int64)
+    Ff[SE] = 0; Gg[SE] = 0
+    order_s = np.argsort(src, kind='stable'); s_src, s_dst, s_a = src[order_s], dst[order_s], a_e[order_s]
+    sptr = np.zeros(NS + 1, dtype=np.int64); np.add.at(sptr, s_src + 1, 1); sptr = np.cumsum(sptr)
+    for rr in range(1, int(rank.max()) + 1):
+        for v in np.flatnonzero(rank == rr):
+            us = s_dst[sptr[v]:sptr[v + 1]]; aa = s_a[sptr[v]:sptr[v + 1]]
+            Ff[v] = int(np.max(-aa + np.maximum(0, Ff[us])))
+            Gg[v] = int(np.max(-aa + Gg[us]))
+    need_R = np.maximum(10 + Ff, 12 + Gg)
+    print('   depth guard over A: F (largest fall on the way) max %d, median %d; G (net fall at entry) max %d; '
+          'required depth max(10 + F, 12 + G): max %d, median %d; advances seen on A edges: %s' % (
+              int(Ff[A].max()), int(np.median(Ff[A])), int(Gg[A].max()), int(need_R[A].max()), int(np.median(need_R[A])),
+              sorted(set(a_e.tolist()))[:16]), flush=True)
 # real paths
 T = 6 * K + 2400; depth = 2 * T + K + 16; mask = (1 << depth) - 1
 bits = [(col0 >> i) & 1 for i in range(p)]
 base = [int(''.join(str(bits[(k + 195 * n) % p]) for n in range(depth))[::-1], 2) for k in range(p)]
 rev = [int(format(v, '0%db' % W)[::-1], 2) for v in range(1 << W)]
+guard_rows = []
 rng = random.Random(48); leads = []; inA_share = []; alarms = 0; entry_ranks = []; uncapt = 0
 for it in range(N):
     th = rng.randrange(p)
@@ -93,6 +113,8 @@ for it in range(N):
                 nA += 1
                 if first is None:
                     first = (t, int(rank[v]))
+                    if GUARD:
+                        guard_rows.append((R, int(need_R[v])))
         x = (x ^ ((x << 1) | (x << 2) | 3)) & mask
     if capt is None:
         uncapt += 1; continue
@@ -110,4 +132,7 @@ print('   real paths (%d prefixes, K=%d): not captured %d; entered A before capt
           N, K, uncapt, len(entry_ranks), pct(leads, 0.5), pct(leads, 0.9), max(leads), pct(entry_ranks, 0.5),
           max(entry_ranks) if entry_ranks else None, alarms), flush=True)
 print('   share of pre-capture ticks spent in A: median %.3f, max %.3f' % (pct(inA_share, 0.5), max(inA_share)), flush=True)
+if GUARD:
+    print('   real entries into A: %d; satisfying the depth guard of their state: %d; least margin (R - required) %d' % (
+        len(guard_rows), sum(1 for R_, q in guard_rows if R_ >= q), min(R_ - q for R_, q in guard_rows)), flush=True)
 print('FUNNEL_ATTRACTOR_DONE')

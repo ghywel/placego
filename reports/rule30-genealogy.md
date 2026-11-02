@@ -5829,3 +5829,24 @@ L1321/INSTINCT; not computed before.
 - So the whole capture gap is now a statement about B: **a real evolution cannot stay in the bad core for ever.**
 - This sharpens GPT's target. The history condition need not fix the whole path. It only has to show that B's
   avoiding cycles need behind-window content that an actual row cannot keep supplying.
+
+### 52.3 The depth guard for A (L1333), predictions written before the run (`funnel_attractor.py --guard`)
+
+GC2398 does not accept §52.2's unqualified "capture is exactly leaving B" until the depth guard is settled. The window
+over-approximation is sound only while every update's outputs lie at depth ≥ 2, that is, while R ≥ 10. Capture's
+robustness lemma needs entry into S_E at R ≥ 12.
+
+For each state v of A, define two quantities over its paths to S_E:
+- **F(v):** the largest fall below the starting depth. F(v) = max over edges (v → u, advance a) of −a + max(0, F(u)),
+  with F = 0 on S_E.
+- **G(v):** the largest net fall at the entry into S_E.
+
+Then **a front at state v ∈ A with depth R ≥ max(10 + F(v), 12 + G(v)) is captured within rank(v) ticks**, whatever lies
+behind the window. The advance of an edge is recovered from its classes: a ≡ −21 (c′ − c − 1) (mod 1024), since 195 ·
+(−21) ≡ 1.
+
+**Predictions.**
+- **G1.** max F over A ≤ 20, so a uniform guard "R ≥ 30" suffices. Lean 60%.
+- **G2.** Every one of T48's 200 real entries into A satisfies its state's guard. Lean 90%.
+- **Counterfactual.** If some A states can fall by tens of cells, the guard is state-dependent and large, and real
+  entries near the prefix could violate it.
