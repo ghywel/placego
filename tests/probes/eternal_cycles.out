@@ -1,0 +1,32 @@
+p, deepest level reached, solutions there, projections to K = 8, 16, 24, 32, 40 of the deepest solutions
+  p=   1: level 60,        0 solutions; projections K=8:0 K=16:0 K=24:0 K=32:0 K=40:0
+  p=   2: level 60,        4 solutions; projections K=8:2 K=16:2 K=24:2 K=32:2 K=40:2
+  p=   4: level 60,        8 solutions; projections K=8:2 K=16:2 K=24:2 K=32:2 K=40:2
+  p=   8: level 60,       32 solutions; projections K=8:2 K=16:2 K=24:2 K=32:2 K=40:2
+  p=  16: level 60,       64 solutions; projections K=8:2 K=16:2 K=24:2 K=32:2 K=40:2
+  p=  32: level 60,     2112 solutions; projections K=8:2 K=16:2 K=24:2 K=32:2 K=40:2
+  p=  64: level 60,    99584 solutions; projections K=8:136 K=16:776 K=24:1928 K=32:4296 K=40:7112
+  p= 128: level 54,  1538816 solutions; projections K=8:136 K=16:2088 K=24:10792 K=32:29280 K=40:73504
+eternal points by exact period (from the deepest level; exact period measured at that level):
+  p=2: 4 points of exact period 2, 2 orbits at level 60
+    orbit rep digits 0..39: 0101010101010101010101010101010101010101  eventual digit period/offset: None
+    orbit rep digits 0..39: 1010101010101010101010101010101010101010  eventual digit period/offset: (2, 0)
+  p=4: 4 points of exact period 4, 1 orbits at level 60
+    orbit rep digits 0..39: 1010101010101010101010101010101010101010  eventual digit period/offset: None
+  p=8: 24 points of exact period 8, 3 orbits at level 60
+    orbit rep digits 0..39: 1010101010101010101010101010101010101010  eventual digit period/offset: None
+    orbit rep digits 0..39: 0101010101010101010101010101010101010101  eventual digit period/offset: None
+    orbit rep digits 0..39: 0101010101010101010101010101010101010101  eventual digit period/offset: None
+  p=16: 32 points of exact period 16, 2 orbits at level 60
+    orbit rep digits 0..39: 0101010101010101010101010101010101010101  eventual digit period/offset: None
+    orbit rep digits 0..39: 1010101010101010101010101010101010101010  eventual digit period/offset: None
+  p=32: 2048 points of exact period 32, 64 orbits at level 60
+    orbit rep digits 0..39: 1010101010101010101010101010101010101010  eventual digit period/offset: None
+    orbit rep digits 0..39: 0101010101010101010101010101010101010101  eventual digit period/offset: None
+    orbit rep digits 0..39: 0101010101010101010101010101010101010101  eventual digit period/offset: None
+    orbit rep digits 0..39: 0101010101010101010101010101010101010101  eventual digit period/offset: None
+    orbit rep digits 0..39: 1010101010101010101010101010101010101010  eventual digit period/offset: None
+    orbit rep digits 0..39: 1010101010101010101010101010101010101010  eventual digit period/offset: None
+    orbit rep digits 0..39: 0101010101010101010101010101010101010101  eventual digit period/offset: None
+    orbit rep digits 0..39: 1010101010101010101010101010101010101010  eventual digit period/offset: None
+ETERNAL_CYCLES_DONE

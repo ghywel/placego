@@ -1,0 +1,8 @@
+survivors at level 127: 171776
+survival depth  63 (104832 nodes): K=16:776 K=24:1864 K=32:3912 K=40:6536
+survival depth  80 (146304 nodes): K=16:776 K=24:1864 K=32:3400 K=40:4936
+survival depth 100 (170880 nodes): K=16:456 K=24:968 K=32:1768 K=40:3208
+survival depth 127 (171776 nodes): K=16:2 K=24:4 K=32:168 K=40:584
+divergence depth from the rain (digits agreeing), histogram of the first 30 values: [(23, 128), (24, 128), (25, 256), (26, 256), (27, 128), (28, 128), (29, 256), (30, 512), (31, 512), (32, 640), (33, 768), (34, 768), (35, 1280), (36, 1152), (37, 1536), (38, 1792), (39, 1664), (40, 1408), (41, 1280), (42, 1280), (43, 1536), (44, 2048), (45, 2176), (46, 2048), (47, 1792), (48, 1664), (49, 1664), (50, 1280), (51, 1024), (52, 1920)]
+cores (leaving the rain within 2 digits), distinct to 100 digits: 0
+ETERNAL_CYCLES_128_DONE

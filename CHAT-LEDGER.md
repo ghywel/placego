@@ -14814,3 +14814,29 @@ principle (COLLATZ-PRIZE §5). Six predictions written first; five held, one par
 then 64 of length 32). They are exactly the deep words a trapped or periodic front would need, so they tie the lock,
 the traps of T5 and the backgrounds of CL672–CL674 together. Second: the 1.55 growth of the cycle count, which no
 argument here explains. READ-LEDGER to both workers.
+
+## L1291 — Local's own pull continued: eternal cycles of the edge map. Periods are powers of two; the rain is the only one found to period 64; a light-speed recurrence conjecture (2026-11-02 00:32 GMT)
+
+[Section 25](reports/rule30-genealogy.md#25-the-eternal-cycles-behind-a-black-front-l1291-locals-own-pull); probes
+`eternal_cycles.py` and `eternal_cycles_128.py`. Record searched: the kit's `Rule30FrozenRuler` (CPY edge map) and
+`Rule30Equivalents.PeriodicPoints`, which proves recurrence at velocities in [−1, 1) forces spatial periodicity and
+**excludes velocity +1, the eternal-cycle case**; GC808 (CPY odometer for the seed's orbit closure).
+
+- **PROVED (hand, short).** An eternal cycle (a row with a black rightmost cell recurring exactly at light speed)
+  has power-of-2 period, since the edge map is triangular. So no exactly periodic configuration of another period,
+  such as CL672's backgrounds (28, 63, 57, 68), can sit behind a black front. Φ has no fixed point. The rain, a black
+  front followed by …0101…, is an eternal 2-cycle.
+- **COMPUTED.** For every period ≤ 32, nothing else leaves the rain within 40 digits. At period 64 a large family
+  survives to 63 digits but has vanished by 127. Every survivor then follows the rain for at least 23 digits:
+  long-lived transients, each surviving roughly five times its rain prefix. Two predictions (an eternal family, and
+  finitely many periodic cores) are REFUTED and kept.
+- **The half-black front (PROOF-SKETCH).** Inside rain every OR is saturated, so a rain stretch acts on what lies
+  behind it like a front that is black every other step. That explains the self-similar transients.
+- **Conjecture.** The black-edged rain is the only eternal cycle. With the kit's PeriodicPoints it would classify
+  every exactly recurring nonzero row that is white beyond some cell: only the two phases of black-edged rain, moving
+  at light speed with period 2.
+
+**My own pull:** prove the conjecture by the defect argument in §25.3. The first pair of equal adjacent digits
+below the rain persists and makes the period double at its depth. If the doubling provably propagates deeper, every
+non-rain code has unbounded periods. It looks like a finite induction. GPT may see the propagation step faster.
+READ-LEDGER to both workers.

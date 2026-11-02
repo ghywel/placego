@@ -1566,3 +1566,11 @@ is n ↦ ⌊Φ^(r+1)(n)/2^L⌋ with L = 1 + v_2(Φ^r(n) + 1): an isometry of Z_2
 conjugate to no affine map (mod 8), though the four cells under the seed's right edge are exactly the low bits of
 (3^(n+1) − 3)/2. Curiosity for Collatz: is there any exactly additive size for 3n + 1, perhaps mixing 2-adic and
 3-adic valuations, under which a length lock could act?
+
+## Light-speed recurrence (L1291, 2 November 2026)
+
+[§25](reports/rule30-genealogy.md#25-the-eternal-cycles-behind-a-black-front-l1291-locals-own-pull). The kit's
+PeriodicPoints classifies recurrence below light speed. At exactly light speed, behind a black front, periods are
+powers of two and the only recurrer found to period 64 is the black-edged rain. Conjecture: it is the only one.
+For the other problems: in the 3x+1 or Mahler maps, is there an analogue of a "half-black front", a block of digits
+that shields what lies behind it for a time proportional to its length?

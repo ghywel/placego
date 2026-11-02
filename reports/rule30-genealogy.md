@@ -2366,3 +2366,106 @@ size: log₂ 3 is irrational and 3n + 1 changes bit length by 1 or 2 depending o
 two- to four-digit coincidence, not a conjugacy. This is an explanation, not a Collatz result. It belongs with the
 window principle of COLLATZ-PRIZE §5, which already says both problems repeat a trace block only if the state is
 large enough.
+
+## 25. The eternal cycles behind a black front (L1291; Local's own pull)
+
+An **eternal cycle** is a 2-adic integer x with Φ^p(x) = x: an infinite configuration behind a permanently black
+front cell that repeats exactly every p steps in the front's frame. As a configuration of the line it is a row with a
+black rightmost cell, white beyond, that recurs at velocity +1: F^p x = σ^(−p) x.
+
+Record searched: the kit's `Rule30FrozenRuler` (the edge map T, citing Coven, Pivato and Yassawi 2007) and
+`Rule30Equivalents.PeriodicPoints` (kit ee2f421 locally, f1cb20be indexed). PeriodicPoints proves that a
+configuration recurring at any velocity in [−1, 1) is spatially periodic, and that Rule 30 has exactly three fixed
+points (white and the two phases of …0101…). **It excludes velocity +1, which is exactly the eternal-cycle case.**
+GC808 (GPT, 9 October) carried the CPY odometer for the single seed's orbit closure and gave T's three-state decoder
+(states 00, 01, and 10 or 11). `record_find` for eternal, periodic point, black-edge code: nothing on periodic points
+of the edge map.
+
+### 25.1 By hand (PROOF-SKETCH, Local)
+
+- **Periods are powers of two.** Φ is triangular, so on Z/2^k every cycle length is a power of 2 (a cycle lifts to
+  one cycle of twice the length or two of the same length). A 2-adic periodic point's period is the limit of its
+  level periods, hence a power of 2. **So no row with a black rightmost cell recurs at light speed with a period
+  that is not a power of two.** In particular the ring backgrounds of CL672 (time periods 28, 63, 57, 68) cannot sit
+  exactly behind a black front.
+- **No fixed point.** Bit 0 always flips.
+- **Period 2 is the rain.** For x = …0101 (−1/3) and x = …1010 (−2/3), every OR from bit 2 on sees an alternating
+  pair, so it is 1, and the two boundary bits flip too: Φ swaps them. These are the black front followed by the
+  fixed point …0101… of PeriodicPoints, one cell in.
+- **The light-speed condition is a constraint, not a determination.** For velocity in [−1, 1) the kit uses left
+  permutivity to solve for the leftmost cell. At velocity +1 that cell cancels: F^p(x)_i = x_(i−p) XOR H(x_(i−p+1..i+p))
+  must equal x_(i−p), so the condition is H = 0 on every window of 2p cells. The light-speed recurrers of period p are
+  therefore a subshift of finite type, which may be finite or uncountable. That is the question.
+
+### 25.2 Predictions, written before the run (`eternal_cycles.py`)
+
+The solutions of Φ^p(x) ≡ x mod 2^k are found level by level. Both lifts of a solution survive or both die, since
+bit k of Φ^p(x) is bit k of x XOR a function of the lower bits. Count the projections to level K of the solutions
+that survive to level 60, for p = 1, 2, …, 128.
+- P11a: period 1, none; period 2, exactly the rain orbit {−1/3, −2/3}.
+- P11b: every eternal point has power-of-2 period (the hand argument).
+- P11c: for p ≤ 32 the projections stabilize in K: finitely many eternal points, at most eight orbits of period at
+  most 32 in all. Counterfactual: projections growing with K, an uncountable set of eternal configurations
+  (light-speed recurrence with positive entropy).
+- P11d: every eternal point found has eventually periodic digits: a spatially periodic interior behind the front.
+  Counterfactual: an aperiodic eternal cycle, a configuration that is not spatially periodic yet repeats exactly at
+  light speed, which PeriodicPoints shows cannot happen at any slower velocity.
+
+**T11 follow-up, written after the first output and before its run.** Up to period 32, every solution surviving to
+digit 60 agrees with the rain on its first 40 digits, so the rain is the only eternal cycle there. At period 64,
+thousands of branches that leave the rain early survive to digit 60. To see whether they are eternal or long-lived
+transients:
+- count the period-64 survivors' projections to K = 8, 16, 24, 32 for survival depths 40, 48, 56 and 63;
+- test the deepest survivors' digits for an eventual period.
+
+Prediction: the projections at fixed K stay the same as the survival depth grows, so the branches are eternal; and
+their digits are eventually periodic, so they are spatially periodic backgrounds with a permanently black column.
+Counterfactual: the projections shrink with depth (transients), or the digits are aperiodic.
+
+**T11 second follow-up, written after the 63-digit output and before its run.** The 63-digit survivors are mostly
+rain for d digits and then a deviation. By hand (PROOF-SKETCH): inside rain the two cells any deeper cell reads are
+complementary, so their OR is 1. The cell just past a rain stretch therefore sees a saturated OR, exactly as behind
+a black front, and the cell after it sees a boundary that is black every other step. So a rain stretch acts as a
+half-black front of period 2, the same at every depth up to parity. Hence the hypothesis: the period-64 eternal
+points form a self-similar family "front, rain to depth d, then a core Y", one member for every admissible d,
+accumulating at the rain point. The test, with 128-bit arithmetic:
+- the projections to K = 16, 24, 32, 40 of period-64 survivors, for survival depths 63, 80, 100 and 127;
+- the survivors that leave the rain at digit 1 or 2 (the cores), and whether their digits are eventually periodic.
+
+Prediction: the projections stabilize by survival depth 100, so the family is genuinely eternal; there are
+finitely many cores, at most eight; and their digits are eventually periodic. Counterfactual: projections still
+shrinking at depth 127 (long-lived transients, no eternal period-64 points), or aperiodic cores.
+
+### 25.3 Results (COMPUTED; probes [`eternal_cycles.py`](../tests/probes/eternal_cycles.py) and [`eternal_cycles_128.py`](../tests/probes/eternal_cycles_128.py), with outputs)
+
+- **P11a HELD.** Φ has no fixed point, and the rain orbit {−1/3, −2/3} is an eternal 2-cycle.
+- **P11b** is the hand argument; nothing contradicts it.
+- **P11c HELD for p ≤ 32.** Every 2-adic solution of Φ^p(x) ≡ x that survives to digit 60 agrees with the rain on its
+  first 40 digits. No other eternal cycle of period ≤ 32 leaves the rain within 40 digits.
+- **Period 64, first prediction REFUTED (an eternal family), second prediction REFUTED (finitely many eternal cores
+  with periodic digits).** At 63-digit precision, thousands of period-64 branches that leave the rain as early as
+  digit 8 survive. At 127 digits they are gone. The projections to K = 16 fall from 776 (survival depth 63) to 456
+  (depth 100) to 2 (depth 127), the rain alone. Every survivor at depth 127 agrees with the rain on at least 23
+  digits, and no core leaves it within 2 digits.
+  - So the family is long-lived transients. A branch survives roughly four to six times as many digits as it first
+    followed the rain (MEASURED on these windows). That fits the half-black-front picture: the rain shields what lies
+    behind it for a time proportional to its length, but nothing closes up.
+- **P11d:** the only eternal cycle found, the rain, has periodic digits.
+
+**Conjecture (light-speed recurrence).** The black front followed by rain, in its two phases, is the only eternal
+cycle of the edge map. Evidence: none other leaves the rain within 40 digits for any period ≤ 32, or within 23
+digits for period 64.
+- Combined with the kit's PeriodicPoints, which forbids non-periodic recurrence below light speed, it would say:
+  **the only nonzero rows that are white beyond some cell and recur exactly, F^p x = σ^d x, are the two phases of
+  rain behind a black cell. They move right at light speed with period 2.**
+- That is a light-speed counterpart of the kit's classification of fixed points.
+- It would also say why no exactly periodic background can ever sit behind a black front: only rain can.
+
+**A route to a proof (my own pull).**
+- A non-rain edge code has a first **defect**, two equal adjacent digits. Above it is rain, whose OR is saturated.
+- At the defect the OR alternates in time, so the period doubles there. The equal pair itself persists, because both
+  digits toggle together under the rain above.
+- If the defect can be shown to propagate a doubling to ever deeper digits, every non-rain code has unbounded level
+  periods, and so is not eternal.
+- This is a finite induction on the defect's neighbourhood. The measured lifetimes suggest it is true but not
+  immediate.

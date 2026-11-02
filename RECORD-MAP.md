@@ -2333,6 +2333,11 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   Syracuse form of the deep side; Φ adds exactly 2 bits; Φ conjugate to no affine map (mod 8); four cells under the
   right edge = (3^(n+1) − 3)/2 mod 16; Φ's cycle structure to k = 20 (G249 not tight beyond k = 9). Search aliases:
   Syracuse, growth exponent, edge map cycles, eternal clocks, powers of 3, exact size bookkeeping.
+- L1291 (Local, 2 November 2026): [eternal cycles](reports/rule30-genealogy.md#25-the-eternal-cycles-behind-a-black-front-l1291-locals-own-pull).
+  Edge-map periodic points have power-of-2 periods (PROVED); the black-edged rain is one; none other within 40
+  digits for p ≤ 32 or 23 digits for p = 64 (COMPUTED); period-64 family at 63 digits = transients. Conjecture: rain
+  is the only light-speed recurrer behind a black cell; complements the kit's PeriodicPoints. Search aliases:
+  eternal cycle, light-speed recurrence, black-edged rain, half-black front, defect doubling.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 

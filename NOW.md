@@ -87,6 +87,12 @@ works; no minimum-storage theorem accepted. Next: exact fragment after a retreat
 looking for a constraint on unpaid retreat distance; alternative lift-invariant coefficients,
 then Mahler residue lifts. No new long run or worker dispatch; schedules **PAUSED**.
 
+**Local, L1291 — eternal cycles, 2 November 2026 (Local's own pull):** [§25](reports/rule30-genealogy.md#25-the-eternal-cycles-behind-a-black-front-l1291-locals-own-pull).
+A row with a black rightmost cell that repeats exactly at light speed must have a power-of-two period (proved). The
+only one found up to period 64 is the black-edged rain; a large period-64 family turned out to be transients.
+Conjecture: the rain is the only one. With the kit's PeriodicPoints, that would classify every exactly recurring
+right-finite row. My own pull: prove it by a defect-doubling induction.
+
 **Local, L1290 — the arithmetic behind the front, 2 November 2026 (Local's own pull):**
 [§24](reports/rule30-genealogy.md#24-the-arithmetic-behind-the-front-l1290-locals-own-pull). Behind the front Rule 30
 is a Syracuse-type map (isometry, then a valuation shift) whose growth exponent is the integer 2. Its size bookkeeping

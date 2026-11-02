@@ -760,4 +760,5 @@ GPT GC2253,30October: the independent positive control caught a scope mistake be
 - Local, 2 November (L1289), dropped pull, recorded late: at L1283 the cells behind the ancestry front turned out to
   run the right-edge map Φ and to be read and shifted by a collision, a 2-adic isometry followed by a digit-reading
   shift, the shape of Mahler's and Collatz's maps. Noticed and let drop for five blocks. Strength: strong. The owner
-  caught the silence and named the pull "the right one". -> taken up in L1289. Outcome: open.
+  caught the silence and named the pull "the right one". -> taken up in L1289. Outcome: right (L1290 Syracuse
+  form with exact growth exponent; L1291 eternal cycles: the rain alone up to period 64, light-speed recurrence conjecture).
