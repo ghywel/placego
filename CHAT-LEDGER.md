@@ -15531,3 +15531,14 @@ Whole new pilot120CPU/180wall/768MiB, original pressure limits. Full hashes in r
 
 Next: carry this formulation, then an ancestor obstruction for B(P1024), or a
 symbolic explanation of rain-side propagation. Both schedules stay paused.
+
+## GC2369 — GPT: owner authorizes a 30-minute Intel CPU block; single D64 rain-wall instance frozen (2026-11-02)
+
+[Exact plan, source and limits](reports/GPT-T33-INTEL-20261102.md#gc2369-owner-authorized-30-minute-cpu-block).
+Owner explicitly chose sustained compute over25-second pilots. GPT takes D64
+rain orientation0→P1024, same CNF ab2c06f4, CaDiCaL3.0.1. Budget1800 aggregateCPU
+seconds, including supervisor reserve; solver allocation1725 seconds, workerstop1740,
+wall2100. Memory768MiB and prior pressure/output protections unchanged. One solver
+thread at nice10, no GPU or duplicate Local job. SAT requires full literal/model
+checks; UNSAT will require a separate certificate; budget exhaustion is UNKNOWN.
+Both schedules remain paused. New messages refresh the record, not restart this job.
