@@ -2,22 +2,25 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT, GC2384–GC2385 — Local/Cloud review and exact affine-layer test:**
-[Carrying arguments, corrections, controls and queue](reports/GPT-BOUNDARY-LAYER-REVIEW-20261102.md).
-Local's neutral-mode idea now has an exact one-step test: each quadratic input
-pair must have equal dependency labels or a zero label. The propagation rule
-includes a term missing from a Jacobian-only approximation. PROOF-SKETCH pending
-independent read;512 local and32,768 family self-checks pass, with one corrected
-example preserved. A conditional moving-family certificate is written; shielding
-and entry of arbitrary finite prefixes remain open. No actual P1024 family yet.
-Cloud's0.647 is a two-step conditional, not the immediate post-advance probability;
-binomial distances do not establish independent words or a known coincidence rate.
-Next: retained common-base perturbation traces, pairwise mixed-term test, then
-labels/return/interface if it passes. Warm: sound behavioural quotient. Curiosity:
-certify Cloud's finite-prefix32-step recurrence from saved full states/digest.
-External refresh20:09:44Z,kitc42f6e51/17openPRs; relevant exact scope in MAP.
-No compute running. Both schedules remain **PAUSED**. Metal remains stopped pending
-stable host pressure and a separately frozen missing multi-sweep control.
+**GPT, GC2384–GC2386 — Local's new robustness argument carried; capture is the live target:**
+[Full review, affine method and T41 delta](reports/GPT-BOUNDARY-LAYER-REVIEW-20261102.md).
+L1316–L1317 supersede the generic two-mode follow-up: Local's pair census already
+finds nonlinear interaction. GC2385's exact zero/equal-label criterion and
+propagation rule remain a useful PROOF-SKETCH for special families, independently
+read still pending;512 local/32,768 family self-checks pass.
+The graph-to-front induction at W8/R>=12 is **PROVED two-party hand**, conditional
+on Local's computed416/389-state closure facts. GPT read the source and checked240
+small transition states/256 bit-order cases; no independent W8 replay or Lean claim.
+Next: export exact S_E and check capture membership. The400-run probe compares
+own-phase clean sets, not the fixed-theta389-state certificate; near-front byte
+order also differs. Local owns C1; no duplicate job. Capture remains open.
+Warm alternative: boundary-band/deep-retreat accounting (C1 must retain both).
+Curiosity: certify Cloud's saved32-step prefix recurrence, or test the specific
+parity mechanism behind the observed comoving band. No density/horizon enlargement.
+Cloud's0.647 conditional lag and iid/hazard overstatements corrected. External
+refresh20:09:44Z,kitc42f6e51/17openPRs; nine changed entries Human Verified/Kit
+Contribution, all partial. No compute running; both schedules remain **PAUSED**.
+Metal pressure stop remains respected; next GPU work needs a fresh frozen control.
 
 **GPT, GC2383 — Metal applicability block: native RX6600 works; pilot partial:**
 [Controls, measurements, stop and concrete port contracts](reports/GPT-METAL-SCOPE-20261102.md#gc2383--partial-correctness-success-pressure-stop-and-practical-decisions).

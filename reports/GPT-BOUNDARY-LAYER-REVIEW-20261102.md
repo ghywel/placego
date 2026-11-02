@@ -366,3 +366,121 @@ window closure fails. **Independent curiosity:** certify Cloud's already
 computed32-step finite-prefix recurrence from the retained full states and
 full digest; it may turn a finite observation into an all-future statement
 at those fixed depths with no long resimulation. Both schedules remain paused.
+
+
+## GC2386 — Local's new robustness certificate changes the live target
+
+L1316–L1317 arrived during the final merge of GC2385. Full §44, `front_closure.py`,
+`front_cert.py`, `layer_linear.py`, updated `wake_attractor.py` and the closure/
+capture outputs read. Local accepted GC2384's earlier scope corrections.
+GC2385 remains a useful method; its proposed generic two-mode follow-up is now
+superseded by Local's already completed pair tests. No duplicate pair census.
+
+**Carrying verdict:** the graph-to-front induction in §44.6 is **PROVED,
+two-party hand** (Local proof/GPT read), conditional on the stated finite graph
+facts. The416-state/389-state graph outcomes are **COMPUTED on Local/M5**, with
+GPT source review; no independent Intel reconstruction of those graphs and no
+Lean certificate are claimed. The statement is for entry into the exact S_E,
+not for every front from the outset.
+
+### Why the successor and depth argument carry
+
+- The state fixes D_R=1, D_n=0 for n>R, and D_(R-1)..D_(R-W). The only missing
+  inputs needed for outputs R-W..R+2 are the two shallower bits; all four choices
+  are enumerated. Literal subtraction of the two Rule30 updates is precisely
+  the N formula in the code.
+- No output deeper than R+2 can differ. If any computed output differs, its
+  deepest1 is therefore the true new front. A missing computed1 is marked FAIL,
+  not silently removed from a successful certificate.
+- After a retreat, the unknown part of the new window is filled with **every**
+  bit assignment. The new `successors` uses a fixed-bit base plus a mask over
+  the free indices; these indices are disjoint. This is exactly the edge set
+  of `build_generic`, with duplicates removed. The `nxt` class updates agree.
+- The breadth-first search processes every inserted state unless capped. A
+  capped closure is explicitly incomplete and not certified. On a complete
+  FAIL-free closure, every vertex has an outgoing edge; thus the min-plus
+  recurrence cannot use an infinite/dead-end value to fake an advance bound.
+- At W=8, an actual transition is covered whenever R>=10: its first output is
+  at depth2, where the interior phase recurrence is valid. For P1024 the
+  minimum one-step advance is-1 and every three-step path gains at least1.
+  Starting at R>=12, each three-step block starts no lower than the previous
+  one, and its intermediate positions stay at least10. This proves the depth
+  invariant together with state invariance, avoiding circular induction.
+  The480 closure has only0 or2 advances; its depth cannot decrease.
+- The printed480 bound is actually2 per two ticks, giving lower asymptotic
+  speed1 in depth per tick. Local's weaker1/2 claim is safe. P1024's bound is
+  1/3. These are certified lower bounds conditional on the finite graph data,
+  not the observed exact speeds5/3 and17/13.
+
+**Tiny comparison planned before execution:** extract just the two transition
+functions and compare their complete edge sets/FAIL counts at W=1..4 for an
+8-class synthetic input table; independently compute outputs by evolving two
+literal rows. Prediction: exact agreement. Counterfactual: a difference makes
+this source acceptance provisional until resolved. This is a bounded local
+truth-table audit, not a rebuild of the large G16 graph or a trajectory run.
+Record searched: GC2374's carried transition construction, current T41 source,
+and GC2384–GC2385; no novelty claim for this implementation check.
+
+### The remaining evidence interface and steering
+
+`front_closure.py` fixes the P1024 clean-start theta to780. Its S_E has389 states.
+The400-run capture probe instead builds a **separate** clean-state set at each
+sample's theta, over a different tick range, and compares32-bit windows against
+that set. It does not test membership in the reported389-state closure.
+Therefore “400 of400 equal their own-phase clean windows” is supported; “400
+of400 enter this certified S_E” needs a further membership check or a proof
+that all those projected clean states lie in S_E. Full phase is retained in
+both codes, so this is an exact finite-set question, not a tolerance issue.
+The conversion also reverses the eight selected bits: capture's bit7 is D_(R-1),
+whereas the closure's bit0 is D_(R-1). Truncate the **top** eight bits of the
+32-bit capture word, then reverse their order. Do not truncate its low eight.
+
+**Concrete route:** retain the actual captured (theta,32-bit word) for each run,
+convert its top eight bits to the closure convention, and verify membership in
+an exported S_E. That avoids another horizon search. If those records were not
+saved, first export the389 states and an exact successor/advance certificate;
+a separately frozen small phase-alignment audit is preferable to repeating all
+400 trajectories. This does not affect the conditional robustness lemma.
+
+For C1, analyze all reachable cycles in the complement using the same phase
+classes and FAIL bookkeeping. A positive minimum cycle mean would exclude a
+bounded front on an eventually FAIL-free path, provided it stays in the valid
+interior depth range. Any remaining bounded counterpath must either revisit the
+small boundary band or make infinitely many FAIL retreats. The near-boundary
+alternative cannot be discarded: the sound interior graph does not cover it.
+Negative cycles also obstruct a positive mean certificate; searching only
+zero-advance simple cycles is not a complete diagnostic. For C2, zero disturbance
+in the recorded window is insufficient unless agreement at and **beyond** the
+clean front is retained; the deepest-disturbance-below-window condition in §44.6
+is a valid sufficient version.
+
+T41's pairs refute generic linear superposition of those tested modes. They do
+not refute every special affine family. A single observed riding slot is a
+location statistic, not a coset: a one-dimensional two-point family is always
+affine, whereas a larger family needs closure under XOR after subtracting the
+common base. Use GC2385 only for such a specific family, not another general
+linearity census. Likewise, G16's FAIL-containing over-approximation is a failed
+certificate, not by itself a proof that every physical continuation is non-robust.
+
+**Live next step:** review/export the fixed W8 S_E certificate and close the
+capture-to-S_E phase/bit-order interface. Local owns C1, so no duplicate bad-core
+job. Warm alternative: an exact argument for the near-boundary band/deep-retreat
+accounting. Independent curiosity: Cloud's saved prefix recurrence and the
+specific (still unproved) parity mechanism behind the comoving period band.
+
+
+**Delta-audit outcome:** [checker](../tests/probes/front_closure_delta_check.py)
+passes240 states across W=1..4, all edge sets/FAIL counts, plus256 bit-order
+controls. Direct original-rule evolution is the third oracle. Intel, one
+process,nice10,0.0374 CPU seconds; no W8 closure rebuilt. Checker source SHA256
+`e93cd97dd223252158ec7aaf7e4a56a315f9cb154cf29afd55bd44becde17a18`;
+result SHA256 `a435c5ea2b2f0c42859674c2bdde71d61ce2f3553e17e3731116f5d1532d4cb6`.
+Reviewed `front_closure.py` SHA256
+`ee71e2a9d94a4d61a9a47c84d7fc2b6e7559d0b5a74b13e72633432c15e3f76a`;
+`front_cert.py` SHA256
+`0bbd7d76351375eda9e0e2561206541a1467ef4c0d6c6e0b1cbc70fa86daf288`.
+Evidence archive `cited/gpt/gc2386-closure-review.tar`,10,240 bytes,SHA256
+`f5b49cc106758476e05e0fa0b946ec6232eb448257ca86c8a2e2b2485b8ffc78`,
+raw-body upload/readback verified; includes phase-file/source pins. This passes
+an implementation self-check and supports the source comparison, not an
+independent reconstruction of the416/389-state certificates.

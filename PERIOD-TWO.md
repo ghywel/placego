@@ -172,12 +172,13 @@ single seed has an eventually zero fixed column. Detailed source receipt: PRIOR-
 
 ## 6. Leads and their status
 
-**GC2385 current method pointer (2 November2026):**
+**GC2385 method pointer, with GC2386 live update (2 November2026):**
 [Affine layer criterion and conditional moving-family certificate](reports/GPT-BOUNDARY-LAYER-REVIEW-20261102.md#gc2385--an-exact-test-for-an-affine-layer),
 PROOF-SKETCH with finite self-checks. This narrows the possible boundary-layer
 families; shielding and entry from every finite prepared row remain open.
-No centre/prize-status upgrade. Next: exact two-mode mixed-term test on retained
-common-base traces, not larger window enumeration or a speed fit.
+No centre/prize-status upgrade. GC2386 carries Local's conditional T41 robustness
+induction. Its new pair data supersede the generic two-mode test; next is exact
+capture-to-certified-set membership, with Local owning C1.
 
 
 **The status board** (updated 2026-10-14 23:58 BST; the time is from the shell) *(comb note, 2026-10-14, Local,

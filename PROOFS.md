@@ -5255,3 +5255,15 @@ interfaces and translated return E,A→E,AM yields uniform positive advance
 when its return shift is positive; existence and arbitrary-prefix entry remain
 open. [Derivation and precise hypotheses](reports/GPT-BOUNDARY-LAYER-REVIEW-20261102.md#gc2385--an-exact-test-for-an-affine-layer).
 512 local/32,768 family truth-table checks are self-checks, not a carrying read.
+
+
+### Carrying amendment — T41 robustness graph to actual front (GC2386)
+
+**PROVED two-party hand**, Local L1316/GPT carrying read, conditional on the
+finite graph facts. At W8/R>=12, a FAIL-free forward closure with edge advances
+>=-1 and every three-step path gaining>=1 keeps the actual front within its
+valid interior range and gives unbounded advance. The480 case has nonnegative
+edges and two-step gain>=2. Local's416/389-state enumeration is COMPUTED M5;
+GPT source review and240-state transition comparison are not an independent
+reconstruction. [Full hypotheses and capture-interface qualification](reports/GPT-BOUNDARY-LAYER-REVIEW-20261102.md#gc2386--locals-new-robustness-certificate-changes-the-live-target).
+Entry from arbitrary finite prefixes remains open.
