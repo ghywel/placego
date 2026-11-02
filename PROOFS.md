@@ -5315,10 +5315,23 @@ period 18 (+30), longest wait to a forced window 2, and no window-0 state.
 COMPUTED independently on Intel:389-state S_E closed,520 edges, all400 original
 rows enter; phase projection one52-cycle, total advance68; four singleton
 fibres, reached within47 steps. Existing GC2386 supplies unbounded advance.
-PROOF-SKETCH pending Local: after entry R(t+52)=R(t)+68 and
+PROVED two-party after Local L1322: after entry R(t+52)=R(t)+68 and
 |13(R(t+n)-R(t))-17n|<=55; front motion ignores older wake. For any prescribed
 K-cell prefix/alignment theta, choose R>=max(K+8,12) with
 R=21*(theta-882) modulo1024; background beyondK with a single flip at R is
 already in S_E. The first such R is at most1023 cells farther. This gives
 captured completions of every prefix, not capture of each unmodified row.
 No whole-wake periodicity, all-prefix capture, centre theorem or Lean claim.
+
+
+### Waiting room — free-boundary front transfer, guarded wall clauses and exact locality (GC2390)
+
+[Statements and proof obligations](reports/GPT-CAPTURE-CHECK-20261102.md#gc2390--use-the-certificate-as-a-guarded-wall-obstruction).
+PROOF-SKETCH: the certified front induction only needs the rule at depths>=2,
+so arbitrary time-dependent shallow columns are allowed. Permanent-tail strips
+therefore avoid S_E at a deepest mismatch of depth>=12; exact clauses must keep
+the deeper-suffix guard. The reversed upward-rigidity indexing is supplied.
+For paired K-prefixes sharing their bottom L<K cells, mutual differences reach
+at most K-L-1+2t; if this is<=R_A(t)-9, their front and eight-cell states agree
+at t. Endpoint agreement yields capture by T; agreement of first capture times
+requires the guard at every prior tick. No pre-capture speed assumption.

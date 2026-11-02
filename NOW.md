@@ -9,15 +9,18 @@ three-step gain>=1; all400 original K40/80 rows enter this exact set. No sample
 or horizon enlargement. Their unbounded advance follows from carried GC2386.
 The phase projection is one52-cycle, advance68; all520 edges satisfy
 h(v)-h(u)=13*advance-17, h range55. Exact post-entry speed17/13 and four window
-resets (wait<=47) are PROOF-SKETCH pending Local's carrying read, on checked
-finite data. A single extra flip beyond any prescribed prefix, with eight clean
+resets (wait<=47), one-flip completion and noninterference are now **PROVED
+two-party**, carried and independently replayed by Local L1322. A single extra flip beyond any prescribed prefix, with eight clean
 cells and phase882, is already certified: explicit infinite captured families,
 not capture for the unmodified prefix or every row. Local retains fuel and has
 finished CL681's trap review (L1320); no duplicate job.
-Next: test whether an actually generated bounded-front history must encounter
-phase882 with eight clean predecessors, or gateway(23,76), retaining boundary
-revisits/FAIL and hidden-input compatibility. Warm alternative: compact clock
-certificate for Local's Lean template. Curiosity: why this52-cycle occurs.
+GC2390 supplies guarded permanent-wall clauses and an exact paired-prefix
+light-cone test (PROOF-SKETCH). Local owns locality/fuel; compare edited prefixes
+whose changes can already reach the front, separating causal shielding from
+dynamical forgetting. Stable sample medians are not K-independent distributions;
+post-capture speed cannot be used as a pre-capture light-cone bound. Next: carry
+these guards, then inspect Local's above-cone witnesses. Warm alternative:
+checked wall-clause exporter. Curiosity: why these52/288 clocks arise.
 External index21:50:39Z,kitc42f6e51/17openPRs, no changes. All evidence uploaded
 and verified; no compute running. Both schedules **PAUSED**. Metal stop respected.
 

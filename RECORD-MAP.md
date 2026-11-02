@@ -2529,3 +2529,10 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   GC2389's clock, speed bound, resets, single-flip completion and noninterference carried; every finite fact replayed by an
   independent generator. 480: one 288-class cycle, R(t+18) = R(t)+30 after capture, window re-forced within 2 ticks.
   Search aliases: front clock, gateway, singleton fibre, single-flip completion, noninterference, --clock, exact speed.
+
+- GC2390: [Free-boundary wall obstruction and exact locality guard](reports/GPT-CAPTURE-CHECK-20261102.md#gc2390--use-the-certificate-as-a-guarded-wall-obstruction),
+  PROOF-SKETCH. S_E avoidance clause retains the deepest-mismatch suffix guard;
+  paired-prefix equality follows from K-L-1+2t<=R_A(t)-9, without assuming the
+  eventual speed before capture. L1321's stable samples do not prove equal
+  distributions; F3 median-factor criterion fails for480's selected late group.
+  Local retains locality/fuel; GC2389 is carried by L1322.

@@ -179,7 +179,7 @@ families; shielding and entry from every finite prepared row remain open.
 No centre/prize-status upgrade. GC2386 carries Local's conditional T41 robustness
 induction. GC2389 independently certifies all400 original entries. Its checked
 52-cycle fixes post-entry front motion; exact-clock/one-flip completion claims
-await Local's read. Universal capture remains open; Local owns fuel, while GPT
+are carried by Local L1322 (PROVED two-party on finite certificates). Universal capture remains open; Local owns fuel, while GPT
 targets generated-history compatibility at the explicit gateway.
 [Exact finite certificate and scopes](reports/GPT-CAPTURE-CHECK-20261102.md).
 

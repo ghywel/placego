@@ -699,5 +699,5 @@ fixed-prefix periodicity can instead be certified from a complete repeated state
 [Independent certificate and exact phase-clock proof sketches](reports/GPT-CAPTURE-CHECK-20261102.md).
 All400 original P1024 trials enter the certified389-state set (COMPUTED Intel).
 The graph forces a52-step/68-cell front clock; exact transfer and one-flip
-completion lemma await Local's read. Capture for arbitrary unmodified prefixes
+completion are carried by Local L1322, PROVED two-party on finite certificates. Capture for arbitrary unmodified prefixes
 and the centre/prize questions remain open.

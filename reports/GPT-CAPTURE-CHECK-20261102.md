@@ -4,6 +4,12 @@ GPT, 2 November2026. Owner-requested sustained capture block; Local owns
 self-written-wake/fuel and the CL681 trap read. No duplicate bad-core or
 all-theta census. Both schedules remain paused.
 
+**Current status:** GC2389's clock, speed bound, resets, one-flip completion and
+noninterference were carried by Local in L1322 and its finite facts independently
+replayed: PROVED two-party, computer-assisted. The later GC2390 boundary/clause
+and exact locality guard are PROOF-SKETCH awaiting a carrying read. Old labels
+inside the chronological sections retain their original pre-review meaning.
+
 ## GC2388 — frozen independent certificate and same-sample replay
 
 **Pull:** close the400-trial membership question with an independent checker,
@@ -304,3 +310,189 @@ restricted moving-front phase clock. Conversely our restricted S_E potential
 makes no claim to a conserved local density on arbitrary Rule30 rows.
 The single-flip congruence/depth guard also passes5120 cheap arithmetic
 self-checks (all1024 alignments, K=0,3,4,40,80); these are not trajectory data.
+
+## GC2390 — use the certificate as a guarded wall obstruction
+
+**Pull:** turn the new simple sufficient entry into an exact reusable constraint
+for permanent-tail/periodic-wall searches. The cheap objection is that an
+isolated-looking cell might not be the deepest mismatch. A second objection
+is that `upward_rigid.py` has free shallow boundary columns, not a prescribed
+black edge. Both guards must be settled before adding anything to a solver.
+No SAT job or change to an existing certified CNF is made here.
+
+**Record searched:** GC2386, genealogy§39/§44.6/§45, and the full current
+`upward_rigid.py:cnf` source. The earlier robustness proof already excludes
+eternal walls that enter S_E. What follows makes its boundary independence and
+its exact clause translation explicit; it is not an independent new exclusion
+of P1024. The current kit comparisons are above.
+
+### Boundary-independent transfer (PROOF-SKETCH)
+
+Let X_n(t), n>=0, be any binary array satisfying the edge-frame Rule30 equation
+for every n>=2 and t>=0. **The two shallow columns X_0 and X_1 may be arbitrary
+functions of time.** Let E be P1024 at the chosen alignment. Suppose the
+mismatch has a deepest position R(t0)>=12 and the associated state lies in S_E.
+Then the same robustness conclusion holds as in GC2386: every later state lies
+in S_E and the front advances without bound.
+
+*Proof.* The real one-step window is still among the graph's branches: the
+construction treats the older cells as arbitrary and uses the update equation
+only in its interior output range. On a three-tick block the certified advances
+have total at least1; at its intermediate ticks they lose at most2. Starting
+at depth12 therefore keeps every required output at depth>=2 (W=8, front
+floor10), exactly as in the carried induction. Repeat block by block. No rule
+for X_0 or X_1, and no finite-prefix or eventual-period premise, enters this
+induction. Once the front outruns any proposed fixed tail boundary, that
+boundary is contradicted. ∎
+
+Thus a strip with its two deep boundary columns fixed to E for all time cannot
+contain such a state away from its shallow boundary. To see the whole tail,
+extend X by E beyond those two fixed columns; the update equation is then
+satisfied there too. This addresses the free shallow boundary in the existing
+upward-rigidity encoding. It does not say that a strip necessarily enters S_E.
+
+### Exact constraint in mismatch bits
+
+Assume X_n(t)=E_n(t) for all n>=D and all t. At a candidate front depth
+12<=r<D write d_i=X_i(t) XOR E_i(t), and c=theta+t+195r modulo1024.
+For each certified `(c,w)`, a permanent-tail candidate must satisfy
+
+`(NOT d_r) OR (OR over r<i<D of d_i) OR`
+`(OR over h=1..8 of [d_(r-h) != bit_(h-1)(w)])`.
+
+The clause is false exactly when r is the deepest mismatch and its eight-cell
+window is the certified word w. Such entry is impossible by the preceding
+transfer. In the simple case c=882,w=0 it says: a deepest mismatch at that phase
+must have another mismatch among the eight cells immediately behind it.
+
+**Why the suffix guard matters.** Take d_r=1, all eight recorded predecessors
+zero, but d_(r+1)=1. A clause without the second disjunction would reject this
+assignment just from the local pattern. The guarded clause accepts it: r is
+not the front. This is an encoding countercontrol, not a claimed periodic-wall
+solution. Near-boundary r<12 is also outside the stated certificate.
+
+### Translation to the existing upward-rigidity CNF
+
+In `upward_rigid.py:cnf(p,cols,k,D)`, U_j is column k−j; U_0 and U_1 are fixed,
+and the rule applies to U_j with parents U_(j+1),U_(j+2) for0<=j<D.
+Use depth n=D+1−j. Then the shallow boundary is n=0,1, while the fixed deep
+columns are n=D,D+1. A candidate deepest mismatch is U_j with
+**2<=j<=D−11** (equivalently12<=n<=D−1). Its phase is
+`c=t+195*(k-j) (mod1024)`. The correct clause is
+
+`(NOT d_j) OR (OR over 2<=i<j of d_i) OR`
+`(OR over h=1..8 of [d_(j+h) != bit_(h-1)(w)])`.
+
+Here d_i=U_i(t) XOR background_column_(k-i)(t). The fixed d_0=d_1=0 are omitted.
+For a SAT literal ell_i that is true exactly when d_i=1, emit `-ell_j`, then
+`ell_i` for2<=i<j, and `ell_(j+h)` if the target bit is0, otherwise
+`-ell_(j+h)`. The variable U_i(t) has ID `i*p+t+1` in that source. Its mismatch
+literal changes sign when the known background bit is1. No new variable is
+needed. The P1024 phase formula assumes that source's exact195 dictionary;
+other phases need their own dictionary.
+
+These are mathematically implied constraints **if the carrying argument is
+accepted**. A solver proof for an augmented CNF alone certifies only that
+augmented CNF. To preserve certification of the original problem, either
+kernel-formalize/use the implication or produce an independently checkable
+proof of the added clauses from the original CNF; do not relabel an augmented
+UNSAT receipt as an unchanged-original certificate. No clause has yet been
+installed and no new UNSAT claim is made.
+
+**Next executable step:** Local's review first on the free-boundary induction
+and the reversed CNF indexing, alongside GC2389's clock/one-flip read. Then
+implement a separately tested clause exporter, comparing augmented/unaugmented
+known SAT controls before any hard instance. Universal capture still requires
+a generated-history argument; a tail-avoidance clause is a useful consequence,
+not that argument. Local continues the fuel route; no duplicate computation.
+
+## GC2390 — Local's carrying read received; fuel observations and an exact locality guard
+
+L1322's complete§47 proof, generator amendment and output have now been read.
+Local independently reproduced every P1024 clock fact and carried the clock,
+potential bound, resets, one-flip completion and noninterference. **Those GC2389
+claims are now PROVED two-party, computer-assisted**, conditional on their
+finite certificates. Earlier PROOF-SKETCH labels above record the pre-review
+state. The new GC2390 free-boundary/clause and locality claims remain sketches.
+
+The480 clock transfer also carries by the same argument, conditional on
+Local's416-state graph computation: its288-class cycle's advance word has
+least period18 and total advance30 per18 ticks, so R(t+18)=R(t)+30. Direct
+arithmetic on the printed18-word gives range7 for the partial sums of3a−5.
+The208 singleton fibres include every time residue modulo32 (six or seven
+per residue). Thus at fixed alignment(a,q), a finite completion must choose a
+singleton with time residue q, then set R to its spatial residue minus a,
+large enough to leave the given prefix behind. One cannot select an arbitrary
+singleton with the wrong time coordinate. No window0 state means no *immediate
+one-flip entry in this certificate*; it does not rule out eventual capture
+from one flip. GPT has reviewed the source/argument, not independently rebuilt
+the480 graph on Intel. Local's new per-alignment set comparison also now
+establishes the stronger identical-clean-set claim, beyond the older union fact.
+
+L1321's full `own_wake_fuel.py` and results have also been read. Its successful
+entries are meaningful finite facts. Four qualifications sharpen the next test:
+
+- Similar sampled medians and maxima do not prove the capture-time distribution
+  is independent of K. Replace "the same distribution" by the reported finite
+  ranges; a uniform-in-K theorem remains open.
+- F3's maximum-delay condition holds in the samples, but its factor-two median
+  condition does **not** hold for480's remaining post-3K group: medians15 to82.
+  That group is also selected differently as more rows capture before3K.
+  "All eight predictions held" needs this split, even though F6's separately
+  measured absolute capture times are stable across the sampled K values.
+- The pre-capture light-cone claim cannot insert the **post-capture** speed v
+  into n/(2−v) as an exact bound. The actual pre-capture path is required.
+- The post-capture alarm currently runs only inside `if R>=12`; it would skip
+  a later tick at R=10 or11, which the robustness induction permits. Either
+  retain a verified minimum depth or check the state at every post-capture
+  tick with R>=8 and separately alarm below the certified floor10. This is a
+  control-coverage issue, not evidence that the reported trajectories escaped.
+
+### Exact paired-prefix locality lemma (PROOF-SKETCH)
+
+Take two black-edge rows A,B with the same P1024 (or480) background alignment,
+identical tails from depthK onwards, and identical bottom L cells of their
+K-cell prefixes (depthsK−L throughK−1), where L<K. Their initial mutual
+mismatch is confined to depths<=b=K−L−1. Under the radius-two one-sided update,
+its deepest cell at time t is at most **b+2t**: an output beyond that reads only
+three equal inputs. This is an induction on t, not a speed assumption.
+
+Let R_A(t) be A's actual deepest mismatch from the background. If
+
+`b+2t <= R_A(t)-9`,
+
+then A and B agree at and beyond R_A(t)−8. Hence B has the same deepest
+mismatch R_A(t), the same eight-cell window and the same front phase at t.
+In particular if A is certified captured at time T, this inequality at T
+proves B is captured **by** T; B may have entered earlier. If it holds at
+**every** t from0 through T, their recorded front states and first capture
+times agree through T. If A already has no mismatch at some time, use an
+explicit separate case rather than inserting a nonexistent front into the
+inequality. For L=K the two rows are identical outright.
+
+A sufficient number of retained bottom cells for matching the entire
+pre-capture front history is therefore
+
+`L >= max(0, K+8+max_(0<=t<=T)(2t-R_A(t)))`,
+
+when this is smaller than K. For entry by T alone replace the maximum by
+`2T-R_A(T)`. If the expression reaches K, the cone argument supplies no
+nontrivial upper-prefix freedom; do not report it as locality beyond the
+identical-row case. This formula must be evaluated per run: medians of T and
+R(T) cannot be combined into an exact per-run cutoff.
+
+**Discriminating instruction for Local's existing locality test:** retain
+`max(2t-R(t))` and the endpoint value alongside the capture time, and separate
+pairs protected by this exact cone from pairs where altered upper cells can
+already reach the recorded window. Equality in the first group is a control,
+not evidence of dynamical forgetting. The second group is the informative one.
+Keep nontrivial upper edits and distinguish first-capture equality from entry
+by the baseline time. A finite pair sample still does not establish a uniform
+L for every prefix.
+
+No extra run is needed to prove this guard. The guarded-wall formula passed
+4096 Boolean sign/guard checks and the reversed-coordinate identities for
+D12/13/40/64; these are self-checks. Local retains the locality/fuel execution.
+GPT's next executable step is review of the above-cone witnesses or a certificate
+that respects their initial-bit history, with the guarded wall constraints as
+a separate useful alternative. No additional horizon or seed enlargement.
