@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """L1311 T34 part 2 (Local, 2026-11-02): a sound window automaton for the mismatch front against a phase.
-reports/rule30-genealogy.md section 39. Run: python3 tests/probes/front_cert.py PHASE W [W ...]   (PHASE: G8 or G16)
+reports/rule30-genealogy.md section 39. Run: python3 tests/probes/front_cert.py PHASE W [W ...]   (PHASE: G8, G16, 480 or P1024)
 
 State: (R mod NC, t mod p, window) with window = mismatch bits D_(R-1) .. D_(R-W) above the front R (D_R = 1, D below R
 are 0). One tick: D_n(t+1) = D_n xor [((E_(n-1) xor D_(n-1)) | (E_(n-2) xor D_(n-2))) xor (E_(n-1) | E_(n-2))] for
@@ -21,39 +21,53 @@ here = os.path.dirname(os.path.abspath(__file__))
 g = runpy.run_path(os.path.join(here, 'upward_rigid.py'), run_name='lib')
 
 
-def build(p, cols, W):
-    NC = len(cols); NS = NC * p * (1 << W)
+def build_generic(NCL, bg, nxt, W):
+    """Window automaton over NCL front classes. bg(cls, o) is the phase's bit at depth R + o at the current time;
+    nxt(cls, a) is the class after one tick when the front moves by a."""
+    NS = NCL * (1 << W)
     src, dst, adv = [], [], []; fails = 0
-    for rn in range(NC):
-        for tt in range(p):
-            E = {o: (cols[(rn + o) % NC] >> tt) & 1 for o in range(-W - 2, 3)}
-            for win in range(1 << W):
-                base = (rn * p + tt) << W
-                for unk in range(4):
-                    D = {o: 0 for o in range(-W - 2, 3)}
-                    D[0] = 1
-                    for j in range(1, W + 1):
-                        D[-j] = (win >> (j - 1)) & 1
-                    D[-W - 1] = unk & 1; D[-W - 2] = (unk >> 1) & 1
-                    N = {}
-                    for o in range(-W, 3):
-                        e1, e2 = E[o - 1], E[o - 2]
-                        N[o] = D[o] ^ (((e1 ^ D[o - 1]) | (e2 ^ D[o - 2])) ^ (e1 | e2))
-                    ones = [o for o in range(-W, 3) if N[o]]
-                    if not ones:
-                        fails += 1; continue
-                    a = max(ones)
-                    known = [N[a - j] if a - j >= -W else None for j in range(1, W + 1)]
-                    free = [i for i, v in enumerate(known) if v is None]
-                    for f in range(1 << len(free)):
-                        w2 = 0
-                        for i, v in enumerate(known):
-                            if v is None:
-                                v = (f >> free.index(i)) & 1
-                            w2 |= v << i
-                        s2 = ((((rn + a) % NC) * p + (tt + 1) % p) << W) | w2
-                        src.append(base | win); dst.append(s2); adv.append(a)
+    for cl in range(NCL):
+        E = {o: bg(cl, o) for o in range(-W - 2, 3)}
+        base = cl << W
+        for win in range(1 << W):
+            for unk in range(4):
+                D = {o: 0 for o in range(-W - 2, 3)}
+                D[0] = 1
+                for j in range(1, W + 1):
+                    D[-j] = (win >> (j - 1)) & 1
+                D[-W - 1] = unk & 1; D[-W - 2] = (unk >> 1) & 1
+                N = {}
+                for o in range(-W, 3):
+                    e1, e2 = E[o - 1], E[o - 2]
+                    N[o] = D[o] ^ (((e1 ^ D[o - 1]) | (e2 ^ D[o - 2])) ^ (e1 | e2))
+                ones = [o for o in range(-W, 3) if N[o]]
+                if not ones:
+                    fails += 1; continue
+                a = max(ones)
+                known = [N[a - j] if a - j >= -W else None for j in range(1, W + 1)]
+                free = [i for i, v in enumerate(known) if v is None]
+                c2 = nxt(cl, a)
+                for f in range(1 << len(free)):
+                    w2 = 0
+                    for i, v in enumerate(known):
+                        if v is None:
+                            v = (f >> free.index(i)) & 1
+                        w2 |= v << i
+                    src.append(base | win); dst.append((c2 << W) | w2); adv.append(a)
     return NS, np.array(src, dtype=np.int64), np.array(dst, dtype=np.int64), np.array(adv, dtype=np.int64), fails
+
+
+def build(p, cols, W):
+    """Classes (R mod NC, t mod p), for phases given by their columns (G8, G16, the 480-state phase)."""
+    NC = len(cols)
+    return build_generic(NC * p, lambda cl, o: (cols[(cl // p + o) % NC] >> (cl % p)) & 1,
+                         lambda cl, a: ((cl // p + a) % NC) * p + (cl % p + 1) % p, W)
+
+
+def build_single_column(col0, P, s, W):
+    """A single-column phase C_K(t) = col0(t + s*K) (P1024: P = 1024, s = 195). Class theta = (t + s*R) mod P."""
+    return build_generic(P, lambda th, o: (col0 >> ((th + s * o) % P)) & 1,
+                         lambda th, a: (th + 1 + s * a) % P, W)
 
 
 def certify(NS, src, dst, adv, kmax=600):
@@ -76,7 +90,10 @@ if __name__ == '__main__':
     name = sys.argv[1]
     p, cols, _ = g['phases']()[name]
     for W in [int(x) for x in sys.argv[2:]]:
-        NS, src, dst, adv, fails = build(p, cols, W)
+        if name == 'P1024':
+            NS, src, dst, adv, fails = build_single_column(cols[0], p, 195, W)
+        else:
+            NS, src, dst, adv, fails = build(p, cols, W)
         print('%s W=%d: states %d, edges %d, FAIL edges %d, advances %s' % (
             name, W, NS, len(src), fails, sorted(set(adv.tolist()))), flush=True)
         if fails:

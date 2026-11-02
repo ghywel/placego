@@ -4837,3 +4837,71 @@ structural questions Cloud is working on").
 - **Counterfactual.** A periodic wake, or a certificate, for either phase. A certificate proves that no eternal point
   of any period ends in that phase. For P1024 that would be the first exclusion of it by any method.
 
+### 42.3 T37 results ([`wake_type.py`](../tests/probes/wake_type.py), [output](../tests/probes/wake_type.out); [`front_cert.py`](../tests/probes/front_cert.py), [output](../tests/probes/front_cert_t37.out))
+
+- **P37a REFUTED: three of the four known non-rain phases have periodic wakes.** From clean starts, 32 alignments
+  each, 4,000 ticks:
+
+  | phase | wake | speed (depth per tick) | largest drawdown |
+  |---|---|---|---|
+  | G8 (control) | periodic: period 64, advance 96 | exactly 3/2 | 0 |
+  | G16 | no recurrence at any alignment (odometer) | 1.06 to 1.22 | 10 |
+  | 480-state phase | periodic at every alignment: period 288, advance 480 | exactly **5/3** | 5 |
+  | P1024 | periodic at every alignment: period 208, advance 272 | exactly **17/13** | 4 |
+
+  Recurrence is tested on the 256 mismatch bits above the front together with the front's class. It is a heuristic
+  for a periodic wake, but it is convincing at every alignment with one common (period, advance).
+- **P37b HELD.** Neither phase is certified by the window automaton.
+  - P1024 at W = 4, 6, 8: FAIL edges 165, 122, 85; at W = 8 the non-FAIL part retreats about 1.8 cells per tick.
+  - The 480-state phase at W = 4, 5: FAIL edges 2,496 and 2,240; at W = 5 it retreats about 2.2 cells per tick.
+  - Given the periodic wakes, these failures are more likely the over-approximation's coarseness (long wake periods
+    need wide windows) than the dynamics.
+
+### 42.4 What T37 teaches
+
+1. **Cloud's wake dichotomy splits the known phases 3 to 1:**
+   - periodic wakes with rational speeds, G8 3/2, the 480-state phase 5/3 and P1024 17/13 (lab news speeds 1/2, 2/3 and
+     4/13);
+   - an odometer wake, G16.
+2. **Under the proposal of §42.1,** G8, the 480-state phase and P1024 belong to the class where a front-potential
+   exclusion at every period should exist. G16 alone is in the Collatz-shaped class.
+   - The kit proves G8. For the other two, the missing piece is a certificate fine enough for their long wakes.
+   - The decisive test is whether prepared regions can fuel long retreats (T35 style). If the drawdown stays bounded,
+     as for G8, a certificate at a moderate window should exist.
+3. A rational speed of 17/13 for P1024's wake, with period 208 = 16 · 13, is curious in itself: the wake period
+   carries the factor 13.
+
+## 43. Fuel in the periodic-wake phases (T38, L1315)
+
+### 43.1 Predictions, written before the run
+
+`drawdown.py`, extended:
+- the 480-state phase over all 960 alignment classes, the cosets of ⟨(30, 14), (0, 32)⟩;
+- P1024 over its classes θ = t + 195n mod 1024 (all 1,024 for r ≤ 10, 256 sampled for r = 14).
+
+The prepared mismatch regions of width r = 6, 10 and 14 are all enumerated, with no edge, exactly as in T35.
+- **P38a.** For both phases the largest drawdown stays bounded (≤ 8) for every r: no fuel, as for G8 (5 at every r).
+  Lean 60%.
+- **Counterfactual.** A drawdown that grows like r, as for G16. A periodic wake from clean starts would then not imply
+  freedom from fuel, and even periodic-wake phases would need a fuel term in their certificates. That would weaken the
+  proposal of §42.1.
+
+### 43.2 T38 results ([output](../tests/probes/drawdown_t38.out))
+
+- **P38a REFUTED: both periodic-wake phases have fuel.**
+  - The 480-state phase (all 960 classes): largest drawdown 12, 16 and 20 at r = 6, 10 and 14.
+  - P1024 (all 1,024 classes at r ≤ 10, 256 sampled at r = 14): 11, 19 and 20; at r = 10 the front heals all the way
+    back to the pinned top.
+  - Like G16 (11, 14, 19, 22), unlike G8 (5 at every r).
+- **So a periodic wake from a clean start does not mean freedom from fuel.** G8 is the only known phase without fuel,
+  and a local front certificate needs exactly that. The proposal of §42.1 fails in its strong form: a periodic wake is
+  not sufficient for a local certificate.
+
+**T39, predictions written before the run (`wake_attractor.py`).** For P1024, 200 random prefixes at each of K = 40
+and 80 run at random θ for 6K + 2,000 ticks. After the front passes depth 3K, is the window above the front eventually
+periodic with the clean-start wake's period and advance (208, 272), at speed exactly 17/13?
+- **P39a.** Every run converges to the clean-start wake: the clean-start wake is a global attractor. Lean 55%.
+- **What it teaches.** If P39a holds, a two-stage proof shape appears for P1024: the prefix's fuel is spent, then the
+  front is captured by a periodic wake whose advance is a finite fact. If it fails (other periods, other speeds, or no
+  recurrence), even periodic-wake phases have several or chaotic attractors.
+

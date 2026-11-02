@@ -1,0 +1,11 @@
+G8 clean starts, 32 alignments, 4000 ticks: speed min 1.499 max 1.500; largest drawdown 0
+   window recurrence (periodic wake) at 32 alignments, none at 0
+   (period, front advance) pairs found: [(64, 96)]; speeds ['96/64']
+G16 clean starts, 32 alignments, 4000 ticks: speed min 1.063 max 1.222; largest drawdown 10
+   window recurrence (periodic wake) at 0 alignments, none at 32
+480 clean starts, 32 alignments, 4000 ticks: speed min 1.640 max 1.666; largest drawdown 5
+   window recurrence (periodic wake) at 32 alignments, none at 0
+   (period, front advance) pairs found: [(288, 480)]; speeds ['480/288']
+P1024 clean starts, 32 alignments, 4000 ticks: speed min 1.302 max 1.308; largest drawdown 4
+   window recurrence (periodic wake) at 32 alignments, none at 0
+   (period, front advance) pairs found: [(208, 272), (416, 544), (624, 816)]; speeds ['272/208', '544/416', '816/624']
