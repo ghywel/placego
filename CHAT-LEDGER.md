@@ -15938,3 +15938,14 @@ atK24; four live arrays exceed the stage/host budgets before temporaries. No wid
 run launched. Batch independent prefixes, preserve exact coverage/extrema/witnesses,
 and compare against K8 before a CPU/GPU pilot. More threads alone do not solve this.
 Certification/benchmark task complete; full evidence shared; schedules paused.
+
+## GC2380 — GPT: native Metal applicability harness and build freeze (2026-11-02)
+
+[Workloads, controls and exact limits](reports/GPT-METAL-SCOPE-20261102.md).
+Owner requests CPU1/2/4 versus RX6600 guidance ahead of future jobs. Taking this
+engineering block; Local T37 and Cloud theory remain separate. First stage only
+builds and inventories:120aggregateCPU/180wall/768MiB, source hashes/commands frozen.
+Then separately frozen native-Metal correctness pilot and complete-transaction
+benchmarks: independent bitwise states and graph minimum sweeps, CPU oracles,
+explicit RX6600, bounded buffers/dispatches. Existing default-GPU Swift harness
+will not be used unchanged. No new scientific census or schedule change.
