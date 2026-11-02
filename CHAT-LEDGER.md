@@ -15761,3 +15761,57 @@ My own pull: (a). A pattern that G16 can eat upward would be a new kind of light
 real decides whether the obstruction is in the mathematics or only in the automaton.
 READ-LEDGER to both workers; REVIEW-REQUEST (Cloud, GPT) on §39.1's certificate argument.
 
+
+## CL678 — Cloud to the owner: M2 and M5 run. The speed law: the leftward news speed of an inserted edge is a velocity spectrum, exactly 0 on the classic ether, 5/19 on (9, 57), 1/2 on G8, 0.17–0.25 on the odometer-wake backgrounds and 0.246–0.252 on a fair row, and no low-order statistic of the background predicts it. The parity census: every parity coin in the record is fair, the crystal's parity included, except the one with a named constraint (2026-11-02 18:42 GMT)
+
+At the owner's word ("run the speed law and parity census tests first"). Predictions Blocks 19 and 20 written first;
+results in [atlas §8](reports/rule30-structure-atlas.md#8-first-results-of-m2-and-m5-blocks-19-and-20-run-at-the-owners-word-2-november-2026);
+probes `speed_law.py` and `parity_census.py` with outputs; DQ-027 updated.
+
+**M2, the speed law (COMPUTED, lab frame, T = 6,000, five alignments per background, the G8 control exact).** Lab
+leftward speed of the leftmost mismatch for an inserted black edge: G8 exactly 1/2 at every alignment (the PROVED
+law; P(heal) = 1/4, jumps 2 only); the classic ether (7, 28) **exactly 0** at every alignment (P(heal) = 3/8, jumps
+2 and 4: the wake's left end is pinned in the lab, which is CL672's slope-1 episode law read in the lab); (9, 57)
+exactly 5/19 (P(heal) = 7/19, jumps 2 only, the period-19 law of CL672); (7, 63) 0.136 or 0.222 by alignment; (12, 68)
+0.174 and G16 0.224, both odometer wakes with no law; a fair row 0.246 ± 0.008 (edge) and 0.252 ± 0.005 (single
+flip), with P(heal) = 0.405 and E[jump | heal] = 1.85, agreeing with 8.30, 8.74 and Grassberger. The mean-field law
+1 − 2ρ is wrong everywhere and P(heal) is never the background's density (1/4, 3/8, 7/19, 0.40 against 0.46–0.52);
+five backgrounds of density one half have speeds 0.17, 0.22, 0.25, 0.26, 0.50. Predictions: P-H1 held for seven
+of eight rows and was refuted for G16 (M(k)'s slope is the slowest prefix's, and the inserted edge is faster);
+P-H2's G8 clause refuted (G8's torus density is 1/2, not its initial row's 1/4) and its failure clause held; P-H3
+held. **What it teaches:** the velocity spectrum is real and includes zero; where the wake is periodic the speed is a
+rational with an exact law, where it is the odometer there is no law (CL674's dichotomy); a closed form for 0.246 is
+a closed form for the two stationary numbers 0.405 and 1.85 of the front's own Markov structure (M4's object, now
+named); T1 passes weakly (the seed's boundary speed is the uniform value) and fails strongly (no low-order statistic
+predicts a background's speed).
+
+**M5, the parity census (COMPUTED, single seed to t = 32,768, 32,641 samples).** The centre column, the crystal
+parity (the XOR of the OR-events along the past diagonal over the settled samples e ≤ t/3), the news parity, the
+core parity and the settling-zone parity all have density 0.497–0.501, autocorrelations below 0.013 at lags 1–8 and
+run laws within 6% of 2^(−l) to l = 7. P-I1, P-I3, P-I4 HELD; **P-I2's second clause REFUTED: the parity of the
+settled crystal, a sum of samples of periodic strips, is indistinguishable from a fair coin**, because the set of
+terms grows (about 21 new periodic terms every 64 steps) and a parity over a growing set of periodic terms is
+coin-like. Two consequences: coin-like tests cannot tell order from the core, and the centre column's fairness is
+what the parity principle predicts whatever the core does. The census of the record's coins: every parity coin is
+fair (centre, crystal, news, core, the type-0 coin of L1298) except the doubling bit of the right diagonals
+(0.41–0.43), which is the one with named constraints (`no_three`, the 101 shift law); the non-parity observables
+take uniform-measure values (the OR density 3/4, L1288's run lengths). T3 survives its first test; its next step is
+CL642's open hand question, the exact law of the doubling bit after 101.
+
+**Failed predictions** (G13): P-H1 for G16; P-H2's G8 clause; P-I2's coin-like clause. **Unguarded mistakes:** the
+first speed prediction conflated the current front with the first-arrival front (G9 missed; the G8 control caught
+it); the first two lab runs forced the array's ends white, a defect whose damage travels right at light speed and
+corrupted every ring background behind the wake (new **G27**; the G8 control caught it, and a periodic-boundary repair
+then let the white region wrap and failed the k_min assertion, caught by the assertion); the debug script's frame
+model lacked the trusted-range assertion (G25 again, caught by the disagreement between models). Nothing wrong was
+quoted; three runs were discarded.
+
+**Next, in the atlas's order.** M5: the doubling bit's law after 101 (hand, CL642). M2 → M4: the front's stationary
+law on a fair row (the renewal statistics of heal and jump) as a Markov chain on the front's local state, which is
+where 0.246 lives. M1: the left edge's algebra (Local's kind of day). READ-LEDGER to both workers.
+
+My own pull: the classic ether's exact zero. A black edge inserted into the (7, 28) ether disturbs a lab region whose
+left end never moves, with P(heal) = 3/8 and jumps of 2 and 4 cancelling the drift exactly; no other background
+tested is rigid in this way, and the ether is the kit's own `Rule30Ether`. I would look for the lab-frame invariant
+that pins the wake's left end (a wall in the lab), by hand first, then by the band certificate of CL673, which should
+close there since the wake is periodic. It is one block, and it would be the first exact "news speed zero" theorem.

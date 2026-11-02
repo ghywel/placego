@@ -1,0 +1,11 @@
+T=6000, alignments per background 5; speeds over [T/2, T]; plain arrays, left margin 2T+100 (the boundary wave moves right at light speed), right margin T+60
+G8: N=4 q=8 rho=0.5000 mean-field 1-2rho=+0.000; v_cur by alignment [0.5, 0.5, 0.5, 0.5, 0.5]; mean 0.5000; v_max by alignment [0.5, 0.5, 0.5, 0.5, 0.5]; mean 0.5000; P(heal) 0.2500; E[jump|heal] 2.0000; jump hist (0..5) [11250, 0, 3750, 0, 0, 0]
+classic_7_28: N=7 q=28 rho=0.4643 mean-field 1-2rho=+0.071; v_cur by alignment [0.0, 0.0, 0.0, 0.0, 0.0]; mean 0.0000; v_max by alignment [0.0, 0.0, 0.0, 0.0, 0.0]; mean 0.0000; P(heal) 0.3750; E[jump|heal] 2.6667; jump hist (0..5) [9375, 0, 3750, 0, 1875, 0]
+s7_63: N=7 q=63 rho=0.5238 mean-field 1-2rho=-0.048; v_cur by alignment [0.1367, 0.136, 0.2223, 0.1367, 0.136]; mean 0.1535; v_max by alignment [0.1357, 0.1357, 0.222, 0.1357, 0.136]; mean 0.1530; P(heal) 0.3924; E[jump|heal] 2.1635; jump hist (0..5) [9114, 1184, 3185, 925, 592, 0]
+s9_57: N=9 q=57 rho=0.5088 mean-field 1-2rho=-0.018; v_cur by alignment [0.2633, 0.2633, 0.2627, 0.2633, 0.2633]; mean 0.2632; v_max by alignment [0.2633, 0.2633, 0.263, 0.2633, 0.263]; mean 0.2632; P(heal) 0.3684; E[jump|heal] 2.0000; jump hist (0..5) [9474, 0, 5526, 0, 0, 0]
+s12_68: N=12 q=68 rho=0.5025 mean-field 1-2rho=-0.005; v_cur by alignment [0.1743, 0.171, 0.192, 0.168, 0.163]; mean 0.1737; v_max by alignment [0.18, 0.1707, 0.1923, 0.167, 0.1597]; mean 0.1739; P(heal) 0.3992; E[jump|heal] 2.0700; jump hist (0..5) [9012, 964, 3964, 862, 126, 41]
+G16: N=128 q=16 rho=0.5078 mean-field 1-2rho=-0.016; v_cur by alignment [0.2237, 0.2223, 0.2217, 0.2253, 0.2253]; mean 0.2237; v_max by alignment [0.2253, 0.2217, 0.2217, 0.2243, 0.224]; mean 0.2234; P(heal) 0.3998; E[jump|heal] 1.9418; jump hist (0..5) [9003, 1408, 4060, 176, 176, 177]
+uniform (edge): rho=0.5 mean-field 0.000; v_cur by sample [0.274, 0.2153, 0.251, 0.2407, 0.2477]; mean 0.2457 +- 0.0084; v_max mean 0.2458 +- 0.0084; P(heal) 0.4093; E[jump|heal] 1.8425; jump hist (0..5) [8860, 2265, 3172, 335, 192, 144]
+uniform (flip): rho=0.5 mean-field 0.000; v_cur by sample [0.255, 0.2363, 0.2567, 0.2463, 0.2663]; mean 0.2521 +- 0.0045; v_max mean 0.2510 +- 0.0049; P(heal) 0.4029; E[jump|heal] 1.8565; jump hist (0..5) [8957, 2072, 3315, 325, 168, 130]
+SPEED_LAW_DONE
+EXIT 0

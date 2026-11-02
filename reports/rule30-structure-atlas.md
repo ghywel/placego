@@ -143,7 +143,102 @@ with no bridge between T2 and T1.
 
 ## 7. What this suggests for the programme
 
-Run M2 and M5 first: both are cheap, both decide between the theories, and both reuse code in hand (the healing
+*(Run on 2 November at the owner's word; results in §8.)* Run M2 and M5 first: both are cheap, both decide between the theories, and both reuse code in hand (the healing
 identity's factors from `rule30_damage_speed.py` and CL674's envelope; the coin list from the record). Then M1, which
 is a day of Local's kind of work. M3 is bookkeeping with a guard. M4 and M6 are the long ones. None of this is prize
 work; all of it is the structure the owner asked for, and each test has a prediction, a counterfactual and a kill.
+
+## 8. First results of M2 and M5 (Blocks 19 and 20, run at the owner's word, 2 November 2026)
+
+### 8.1 M2, the speed law (`speed_law.py`, lab frame, T = 6,000, five alignments per background)
+
+Predictions written first (Block 19), then corrected twice before the run that counts: the first prediction conflated the
+*current* damage front (8.66's object, which recedes when the deep wake heals) with the *first-arrival* front (the episode
+theorem's object; guard G9), and the first two runs forced the array's end cells white, a defect whose damage travels right at
+light speed and corrupted the backgrounds behind the wake (now guard G27). The G8 control, whose law is PROVED, exposed both.
+The run below has a left margin of 2T + 100, T = 6,000, speeds over [T/2, T], five alignments; v is the lab leftward speed
+of the leftmost mismatch; P(heal) and E[jump | heal] are the factors of the healing identity on the diagonal index.
+
+| background | torus density ρ | 1 − 2ρ | v (current) | v (first arrival) | P(heal) | E[jump∣heal] | jumps seen | note |
+|---|---|---|---|---|---|---|---|---|
+| G8 (PR69's ether) | 0.500 | 0.000 | **0.5000** every alignment | 0.5000 | 1/4 | 2 | 2 only | the PROVED law, 3/2 in the frame; no retreat |
+| classic ether (7, 28) | 0.464 | +0.071 | **0.0000** every alignment | 0.0000 | 3/8 | 8/3 | 2, 4 | an exact periodic law: the wake's left edge is pinned in the lab |
+| (7, 63) | 0.524 | −0.048 | 0.136 (×4), 0.222 (×1) | same | 0.39 | 2.16 | 1–4 | alignment classes |
+| (9, 57) | 0.509 | −0.018 | **0.2632** every alignment | 0.2632 | 7/19 | 2 | 2 only | an exact periodic law: 5/19 (period 19, CL672) |
+| (12, 68) | 0.503 | −0.005 | 0.174 (0.16–0.19) | 0.174 | 0.40 | 2.07 | 1–5 | odometer wake, no law (CL674) |
+| G16 | 0.508 | −0.016 | 0.224 (0.222–0.225) | 0.223 | 0.40 | 1.94 | 1–5 | odometer wake |
+| uniform, inserted edge | 0.5 | 0.000 | 0.246 ± 0.008 | 0.246 | 0.409 | 1.84 | 1–5 | 8.30's 0.246, 8.74's 0.2437, Grassberger's 0.243 |
+| uniform, single flip | 0.5 | 0.000 | 0.252 ± 0.005 | 0.251 | 0.403 | 1.86 | 1–5 | the same within error |
+
+P-H1 HELD for the uniform background (edge and flip agree within error and with the record), for G8 (exactly 1/2), the
+classic ether (exactly 0), (7, 63), (9, 57) and (12, 68); **REFUTED for G16** (0.224, predicted 0.03–0.17 from the
+episode slope: M(k) is the *slowest* prefix's first arrival, and the inserted edge's own front is faster; the same
+lesson as for the classic ether's slope, where the inserted edge happens to be the slowest). **P-H2's G8 clause
+REFUTED and its failure clause HELD**: the mean-field law 1 − 2ρ is wrong everywhere (G8's torus density is 1/2, not
+the 1/4 of its initial row; its front sees white ahead exactly a quarter of the time because it advances into white
+cells), and P(heal) is never the density: 1/4, 3/8, 7/19, 0.40 against densities 0.46–0.52. **P-H3 HELD**: five
+backgrounds with density within 0.02 of one half have speeds 0.17, 0.22, 0.25, 0.26 and 0.50.
+
+What M2 teaches, in order of weight:
+1. **The velocity spectrum is real and includes zero.** The leftward news speed of an inserted edge is a property of the
+   pair (background, perturbation), not of the background's density: 0 on the classic ether, 5/19 on (9, 57), 1/2 on
+   G8, about 0.17–0.25 on the odometer-wake backgrounds, 0.246–0.252 on a fair row. The classic ether's zero is the
+   sharpest: a black edge inserted into the (7, 28) ether disturbs it only in a region whose left end never moves in
+   the lab (P(heal) = 3/8 with jumps 2 and 4, exactly cancelling the light-speed drift). This is CL672's slope-1 episode
+   law read in the lab, and it says the (7, 28) ether is rigid against the edge the way no other background tested is.
+2. **Where the wake is periodic the speed is a rational with an exact law** (G8, the classic ether, (9, 57)); where the
+   wake is the odometer the speed is a long-run average with no law (G16, (12, 68); CL674). So the speed law splits by
+   the wake's type, and the type is decided by whether the front's retreats read the odometer, exactly the dichotomy of
+   CL674 and §38 of the genealogy report.
+3. **The healing identity's factors on a fair row are 0.405 and 1.85**, both stationary statistics of the news frame
+   (M4): the front finds white ahead 40% of the time, not 50%, because it advanced into white; and heals in jumps of 1
+   (38%), 2 (54%), 3 and more (8%). A closed form for 0.246 is a closed form for these two numbers, which is a
+   renewal computation on the front's own Markov structure, not on the background. That is M4's object, now named.
+4. **T1's first test is passed in the weak sense and failed in the strong sense**: the single seed's boundary speed
+   equals the uniform value (8.74), so the core is uniform-like for this observable; but no low-order statistic of a
+   background predicts its speed, so "a functional of the measure" means a functional of the front's stationary law,
+   which is a different and harder object. T2 gains a datum: the backgrounds with exact laws have periodic wakes and
+   those without have the odometer, i.e. the 2-adic algebra decides the class.
+
+### 8.2 M5, the parity census (`parity_census.py`, single seed to t = 32,768)
+
+Predictions written first (Block 20): P-I1 the centre column is coin-like (control); P-I2 the crystal parity P_c(t), the XOR
+of the OR-events along the past diagonal over the settled samples e ≤ t/3, has density in [0.45, 0.55] but is *not* coin-like
+(some run length deviates by more than 20% or some autocorrelation exceeds 0.05; lean 65%); P-I3 the news parity
+x_0 ⊕ P_c is coin-like; P-I4 the core parity alone is coin-like.
+
+Result (COMPUTED, 32,641 samples per column; one standard error 0.0028 on a density):
+
+| column | density | largest autocorrelation, lags 1..8 | run law against 2^(−l), l ≤ 7 | longest run |
+|---|---|---|---|---|
+| the centre column x_0 | 0.4987 | 0.011 | within 4% | 15 |
+| the crystal parity P_c (settled samples) | 0.5010 | 0.010 | within 6% | 15 |
+| the news parity x_0 ⊕ P_c | 0.4989 | 0.006 | within 2% | 14 |
+| the core parity alone (s ≥ 0.8 t) | 0.4991 | 0.007 | within 3% | 15 |
+| the settling-zone parity alone | 0.4970 | 0.013 | within 6% | 13 |
+
+P-I1, P-I3 and P-I4 HELD. **P-I2's second clause REFUTED**: the parity of the settled crystal, a sum of samples of
+periodic strips of period at most 32, is indistinguishable from a fair coin by density, autocorrelation and run law.
+That is the parity principle in its sharpest form: a parity over a growing set of periodic terms is coin-like although
+every term is periodic (each term is a periodic function of t of period at most 64; the set of terms grows by about 21
+every 64 steps, and that growth is what randomises the sum). Two consequences. First, "coin-like" tests cannot tell
+deterministic order from the core: the crystal passes them. Second, the centre column's fairness (Problem 2's
+measurements) is exactly what the parity principle predicts whatever the core does, so a proof of Problem 2 along this
+line would have to show the *constraints* vanish, not that the core is random.
+
+The census of the record's coins, with this result:
+
+| coin | a parity of a long word? | measured | deviation from 1/2 | the constraint, if named |
+|---|---|---|---|---|
+| the centre column (Problem 2) | yes (OR-events along the past diagonal) | 0.4987 here; 8.34, 8.35 | none seen | none known |
+| the crystal parity | yes | 0.5010 | none | none (the periodic terms are the structure, and the parity hides it) |
+| the news and core parities | yes | 0.4989, 0.4991 | none | none |
+| the type-0 coin of the defect tree, \|v ∨ w\| mod 2 (L1298) | yes | 0.4988–0.4991 | none | none (criticality follows) |
+| the doubling bit of the right diagonals (DQ-024, CL642) | yes (weight parities of diagonals) | 0.41–0.43 | yes, 0.07–0.09 | `no_three` and the 101 shift law: two forced zeros; CL642's 3/7 is the first estimate and the exact law after 101 is open |
+| `half_black` (kit) | not a coin: exact 1/2 on every newly doubling diagonal | exactly 1/2 | none | anti-periodicity: balance from order |
+| the OR-event density per segment (Block 18) | no (a density) | 0.74–0.77 | from 3/4: none | a uniform-measure value in the crystal too |
+| the run lengths at the ancestry front (L1288) | no (a distribution) | within 1.41 of 2^(1−l) | small | none |
+
+So every coin in the record that is a parity is fair except the doubling bit, and the doubling bit is the one with a
+named constraint. T3's prediction survives its first test, and M5's next step is CL642's open hand question: the exact
+law of the doubling bit after the letters 101, which is where the constraint lives.

@@ -1848,6 +1848,27 @@ ordered structures) at the level of the whole record. **Status: Open; first map 
 > **Status and what would make another visit useful:** a map, not a result. Run M2 and M5 first (cheap, decisive between the
 > theories), then M1. Revisit when one of the six cells is filled or one theory is killed.
 
+> **Reader and date:** Cloud, CL678, 2026-11-02 18:42 GMT. M2 and M5 run at the owner's word (Blocks 19 and 20, predictions first;
+> [atlas §8](reports/rule30-structure-atlas.md#8-first-results-of-m2-and-m5-blocks-19-and-20-run-at-the-owners-word-2-november-2026)).
+>
+> **Answer in everyday words:**
+> - *The speed law.* How fast a black edge's disturbance spreads into a background is a property of the pair, not of the
+>   background's density: exactly zero on the classic ether (the disturbance's left end never moves), 5/19 on one shadow, 1/2
+>   on PR69's ether, about a fifth to a quarter on the odometer-wake backgrounds, and 0.246–0.252 on a random row, the same
+>   from an inserted edge and from a single flipped cell. Where the wake behind the front is periodic the speed is an exact
+>   fraction; where the wake is the odometer there is no law. The number 0.246 is two stationary numbers of the front itself
+>   (it finds white ahead 40% of the time and heals in jumps averaging 1.85), not of the background.
+> - *The parity census.* Every fair coin in the record that is a parity of a long word is fair, including the parity of the
+>   settled crystal, a sum of samples of periodic strips that no coin test can tell from chance. The one unfair parity, the
+>   doubling bit of the right edge (0.41–0.43), is the one with named constraints. So "coin-like" is not evidence of
+>   disorder, and the structure is in the constraints, as the parity principle says.
+>
+> **What failed:** the G16 speed prediction (the episode slope is the slowest prefix's, not the edge's); the mean-field
+> density law (wrong everywhere); the guess that the crystal's parity would betray its order. Three lab runs were discarded
+> for a boundary defect (new guard G27) before the G8 control passed exactly.
+>
+> **Status:** M2 and M5 done as first tests; M4 (the front's stationary law) and CL642's doubling law after 101 are next.
+
 
 ## DQ-025 — Does the clock die when the crystal reaches it?
 
