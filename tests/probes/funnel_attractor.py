@@ -104,9 +104,9 @@ if GUARD:
             us = s_dst[sptr[v]:sptr[v + 1]]; aa = s_a[sptr[v]:sptr[v + 1]]
             Ff[v] = int(np.max(-aa + np.maximum(0, Ff[us])))
             Gg[v] = int(np.max(-aa + Gg[us]))
-    need_R = np.maximum(10 + Ff, 12 + Gg)
+    need_R = np.maximum(W + 2 + np.maximum(0, Ff), W + 4 + Gg)   # L1338: floors W + 2 on the way, W + 4 at entry; F clipped at 0
     print('   depth guard over A: F (largest fall on the way) max %d, median %d; G (net fall at entry) max %d; '
-          'required depth max(10 + F, 12 + G): max %d, median %d; advances seen on A edges: %s' % (
+          'required depth max(W + 2 + max(0, F), W + 4 + G): max %d, median %d; advances seen on A edges: %s' % (
               int(Ff[A].max()), int(np.median(Ff[A])), int(Gg[A].max()), int(need_R[A].max()), int(np.median(need_R[A])),
               sorted(set(a_e.tolist()))[:16]), flush=True)
 # real paths
