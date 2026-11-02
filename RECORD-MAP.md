@@ -2458,3 +2458,8 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2376: [D64 rain0 LRAT certificate and parallel preparation](reports/GPT-T33-INTEL-20261102.md#gc2376-exact-d64-certificate-accepted-parallel-controls-frozen).
   Exact orientation0 D64 CNF independently certificate-checked UNSAT; other orientation
   and all-depth rigidity unknown. Full proof local; compact receipts shared by digest.
+
+- GC2378: [parallel SAT benchmark complete, Local T35 scoped read and graph reduction proposal](reports/GPT-T33-INTEL-20261102.md#gc2378-benchmark-results-and-practical-scope).
+  Twelve D40 solves/six D64 CPU-censored runs; pinned tool and evidence retained. No
+  general scaling or GPU claim. G16 quotient preserves FAIL (PROOF-SKETCH); bounded
+  drawdown does not exclude hovering. Externalfee9ad conditional machine results indexed.

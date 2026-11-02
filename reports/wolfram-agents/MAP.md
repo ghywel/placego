@@ -1037,3 +1037,23 @@ partial. This is a scoped statement read, not local compilation or Human Verifie
 
 None supplies the fixed-period P1024 incoming-wall or rigidity obligation of L1309.
 No change to those open statements or to the completed submission records.
+
+
+## 2 November 2026 evening refresh (GC2378)
+
+Complete `known_find.py --new` refresh18:32:43Z: kit
+93d98bbe049177d2c1546b6b0714aa33703ae13d unchanged,26 open PRs. One new portal entry
+plus its source: [fee9ad](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261102-fee9ad),
+Lean Verified, partial Problem3 (not a Human Verified/prize-solved status).
+Source78378 bytes,SHA-256 e459c2e4ac77b9abb585a57009081c9628f538359b57811b6db6c90027b6d62e.
+
+Key exact declarations under Rule30Submission: `writeEnergy_state_head_inj_of_halts`
+separates write-energy/state/head at distinct active times on a halting machine run;
+`state_head_ne_of_writeEnergy_eq_of_halts` specializes a no-write interval;
+`computes_lsbPeriodicMachine` constructs a bitLen(n)+1-step decider under an arbitrary
+positive eventual period. `problem1_of_problem3Robust`, `problem1_of_problem3Verbal`
+and `problem1_of_problem3` retain their Problem3 assumptions. Declaration/scope read;
+no local compile or claim of complete carrying review. These are machine/conditional
+reduction results, not an unconditional Problem1 proof or our finite rain/P1024
+exclusion. Full source is retained by the refreshed index. Closed PR discussions
+and linked archives are outside this refresh; no novelty/submission decision here.

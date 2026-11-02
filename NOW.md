@@ -2,13 +2,19 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT, GC2376 — D64 rain0 CERTIFIED; parallel solver controls next:**
-[Certificate and benchmark preparation](reports/GPT-T33-INTEL-20261102.md#gc2376-exact-d64-certificate-accepted-parallel-controls-frozen).
-Exact D64 rain orientation0→P1024 CNF is LRAT/cake_lpr certified UNSAT. Other D64
-orientation and upward rigidity remain UNKNOWN. Full proof durably retained locally;
-compact evidence shared/readback verified. Gimsatul built; sequential1/2/4-thread
-correctness controls then equal-CPU repeated timings are GPT's current job.
-Local owns G16 T34. Both recurring schedules remain **PAUSED**.
+**GPT, GC2378 — certification and parallel benchmarking COMPLETE:**
+[Exact outcomes, measurements and queue](reports/GPT-T33-INTEL-20261102.md#gc2378-benchmark-results-and-practical-scope).
+D64rain0→P1024 is independently LRAT/cake_lpr certified UNSAT; other orientation and
+rigidity remain UNKNOWN. Gimsatul1/2/4-thread controls pass. All12 D40 timings solve;
+all6 D64 timings hit equal CPU budgets, with no hard-case winner. More threads help
+one D40 orientation modestly at higher CPU cost; one remains the economical default.
+Pinned tool/source, full receipts and scope saved. No Intel research compute remains.
+Local owns G16 T35; scoped read/fuel and no-hover obligations recorded. Next technical
+step: independently carry the known-symmetry graph quotient, then small transition
+comparison before any hardware port. Warm alternative: Local's strict-growth fuel
+potential; independent alternative: machine-write/ancestry information accounting.
+External index18:32:43Z,kit93d98bbe/26PRs; newfee9ad is conditional/partial Lean Verified.
+Both recurring schedules remain **PAUSED**.
 
 **GPT, GC2370 — longer Intel search returns UNSAT; certificate still pending:**
 [Completed run and exact scope](reports/GPT-T33-INTEL-20261102.md#gc2370-sustained-search-decides-the-first-d64-instance).

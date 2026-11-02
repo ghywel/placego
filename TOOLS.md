@@ -38,7 +38,7 @@ with a smoke test of each new tool (L1276), and once more after the fixes (L1277
 | Python 3 | `python3` is python.org **3.15.2** (certificate bundle installed): numpy 2.5.4, scipy 1.18.1, sympy 1.14.0, networkx 3.7, gmpy2 2.3.2, mpmath 1.3.0, python-sat 1.9.dev17 (built from source), z3-solver 5.3.3.0, cvc5 1.4.2, certifi. All 1,597 probe files compile under 3.15; six give harmless invalid-escape warnings. The old system 3.9.6 (`/usr/bin/python3`) is no longer the default | **3.14.7**; numpy 2.5.4, scipy 1.18.1, sympy 1.14.0, networkx 3.7, gmpy2 2.3.2, mpmath 1.3.0, python-sat 1.9.dev17, z3-solver 5.3.3.0, cvc5 1.4.2, certifi 2026.10.23. Intel wheels; default HTTPS verified; [pins](tests/requirements-math-intel-py314.txt) | `python3` **3.13.16**: numpy 2.5.3, scipy 1.18.1, python-sat 1.9.dev17 (CaDiCaL 1.9.5 and 1.5.3, Glucose 4, MiniSat 2.2, Lingeling, MapleChrono all pass an UNSAT control), certifi. sympy was absent and installed this session with pip through the proxy (1.14.0); networkx, gmpy2, mpmath, z3-solver, cvc5 absent. **The container is ephemeral**: an install lasts one session unless the environment's setup is changed |
 | C | Apple clang; GMP (Homebrew) | Apple clang 17.0.0; GMP 6.3.0 installed (Homebrew); checker C builds pass | gcc 13.3.0 and clang 18.1.3; **no GMP headers** |
 | GPU compute | Metal on the M5 GPU (`.metal` kernels in `tests/probes`) | Vulkan 1.4.357/MoltenVK; RX 6600 enumerated explicitly alongside the other GPUs; no new GPU dispatch | none |
-| SAT solvers | Kissat, CaDiCaL (command line); python-sat's CaDiCaL 1.9.5, Glucose 4 and MiniSat 2.2 in Python. The CaDiCaL LRAT to `cake_lpr` pipeline passes its controls (a true proof verified, a corrupted one rejected) | Kissat 4.0.4, CaDiCaL 3.0.1; Python CaDiCaL195/Glucose4/MiniSat22 pass PHP(5 pigeons,4 holes) UNSAT and a SAT control | python-sat's solvers (above) in Python; no Kissat or CaDiCaL command line |
+| SAT solvers | Kissat, CaDiCaL (command line); python-sat's CaDiCaL 1.9.5, Glucose 4 and MiniSat 2.2 in Python. The CaDiCaL LRAT to `cake_lpr` pipeline passes its controls (a true proof verified, a corrupted one rejected) | Kissat 4.0.4, CaDiCaL 3.0.1; Gimsatul4664fd74 in the private versioned tool cache (1/2/4-thread controls passed GC2376, timing study GC2377); Python CaDiCaL195/Glucose4/MiniSat22 pass PHP(5 pigeons,4 holes) UNSAT and a SAT control | python-sat's solvers (above) in Python; no Kissat or CaDiCaL command line |
 | Proof-certificate checkers | `cake_lpr` (verified LRAT checker), `drat-trim` | cake_lpr source033aad53 (upstream checksums pass), drat-trim/lrat-check source2e3b2dc0; compiled for Intel. CaDiCaL LRAT accepted; corrupted hint rejected; DRAT accepted and empty proof rejected | none |
 | Lean 4 | `elan` with 4.33.1 and **4.35.0** (the kit's version) | elan **4.35.0** installed and default, plus retained4.33.1; small kernel compile passes. No new full-kit build claimed | **none** (no elan, lean or lake); Lean sources are prepared here and built on Local |
 | Wolfram | Wolfram Engine 15.0, `wolframscript`, LeanLink, the Wolfram MCP | **none, by the owner's decision** | none |
@@ -97,6 +97,21 @@ PARI Intel DMG SHA256: `18614a90cd5ce59dd8ebc2578b11eacb43dc4e363e3bc21fab0b3cfe
 matching the [official download page](https://pari.math.u-bordeaux.fr/download.html).
 Command links expose installed user tools on the app's existing PATH; future login shells also get the
 user tool directories. Full research runs still need the current resource freeze and capped runner.
+
+### Intel parallel SAT addition (GC2376–GC2377)
+
+Pinned [Gimsatul4664fd74](https://github.com/arminbiere/gimsatul/tree/4664fd74c97f87e30e7f907181707679b6fa49f2)
+compiled from upstream C with Apple clang, sanitized build metadata and pthreads.
+Binary SHA-256 `7d254115f5d895eeb6ac8312492b0ef93e0981a3c42dbfb903b629aa0b9e69b0`;
+source, license and executable retained in the private versioned tool cache.
+No global PATH change. Set `GIMSATUL_BINARY` to that executable for
+[the bounded benchmark driver](tests/probes/intel_parallel_bench.py).
+Known SAT models, unit UNSAT/DRAT checks and certified D40 answers pass at1/2/4 threads.
+[Exact freezes, measurements and scope](reports/GPT-T33-INTEL-20261102.md#gc2377-controls-passed-repeated-parallel-benchmark-frozen).
+The driver records wait4 CPU for all threads, wall time and RSS, and enforces
+aggregate work alongside run_capped's memory/pressure/disk monitoring. It does not
+make the existing single-thread solvers parallel, or certify arbitrary UNSAT answers
+without a checked proof. More threads are an option to measure per workload.
 
 ## 6. Wolfram (the owner, 2026-11-01)
 
