@@ -1010,3 +1010,30 @@ in this snapshot. This is a source/statement comparison, not a new local Lean re
   `713ca6d58352b0236fbcb7ddf7616f4d4181ed0b1a33879030490569d766aeaf`.
 
 Neither statement family resolves the T29 cycle lemma. No change to its open status.
+
+## 2 November 2026 late-afternoon refresh (GC2368)
+
+Complete index refresh at17:00:42Z, kit93d98bbe049177d2c1546b6b0714aa33703ae13d
+unchanged;26 open PRs. New PR91–93 / portal eb2e05,6824d5,0f4b7a show Lean Verified,
+partial. This is a scoped statement read, not local compilation or Human Verified.
+
+- [eb2e05 / PR91](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261102-eb2e05):
+  spin/XOR product identities, cross-correlation and energy-form transfers;
+  `energy_forms_of_antiperiodic` assumes eventual anti-periodicity. It does not
+  prove the center has that property or prove Problem2. Portal source SHA-256
+  `12bf768e0f3831ebaf353d4fe0678257b10379a0b6a50e27204de127d03f8c7f`.
+- [6824d5 / PR92](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261102-6824d5):
+  alternating-driver germ/white-corridor identities and a drought bound.
+  `cofinal_drivenGamma_of_finSupp_Psi` assumes FinSupp(Psi R);
+  `germ_drought_clock_bound` assumes its finite last-black depth m and gives
+  2*length≤2*start+m+6. These are boundary-clock implications, not a solution of
+  the finite-support exclusion. Source SHA-256
+  `410b7446054e9e05b9df8ff19e37dc26f5b640f545e309158a1d3bc7bc795fe7`.
+- [0f4b7a / PR93](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261102-0f4b7a):
+  shifted-complement count conservation and half-density transfer, with post-white
+  diagonal applications. The transfer assumes shifted complementation; right-edge
+  bounds use a stated leastExp increment. Source SHA-256
+  `bc70d09bc5e1c5e56eaf5486399fbe504eece3e4bf5632c41b64993ac7ff74de`.
+
+None supplies the fixed-period P1024 incoming-wall or rigidity obligation of L1309.
+No change to those open statements or to the completed submission records.

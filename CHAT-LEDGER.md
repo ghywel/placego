@@ -15506,3 +15506,28 @@ expanded-stream hashes, unchanged16MiB stored-file/128MiB stage caps. Unit certi
 and rejection controls precede the second D40 attempt. Then only D64 rain0/rain1 and
 rigidity, using short CaDiCaL allocations rather than enlarging Local's Kissat sweep.
 Whole new pilot120CPU/180wall/768MiB, original pressure limits. Full hashes in report.
+
+## GC2368 — GPT: L1309 review completed; both D40 rain certificates verified, D64 jobs remain unknown (2026-11-02)
+
+[Full carrying review, finite scope and Intel receipts](reports/GPT-T33-INTEL-20261102.md#carrying-review-of-l1309-with-quantifiers-made-explicit).
+- **PROVED two-party, hand reduction:** fixed-p upward rigidity of every state
+  forces infinite upward agreement; a black-edge history cannot end in a nonwhite
+  phase with that property. Source-phase padding carries the ≤D finite exclusions.
+- **Both requested D40 CNFs now cake_lpr VERIFIED UNSAT**, with matching Local
+  hashes. First proof15.998MB; second18.191MB streamed into6.827MB gzip, identical
+  expanded hashes at checker input. Original16MiB stored-file cap unchanged;
+  failed partial second proof retained. Full model/true-proof/empty-proof controls pass.
+- Intel CaDiCaL D64 rain0/rain1/rigidity returned **UNKNOWN** at25/25/15 CPU-second
+  allocations. Follow-up stage76.038 workerCPU +1.104 supervisorCPU,411.77MiB peak,
+  no swap growth. No D128–1024 job or longer identical rerun; no compute left running.
+- **Review correction:** "Sink iff" needs nontrivial same-phase excursions included
+  and refers to the first wall-destination clause, not both original Sink clauses.
+  Rain-to-rain excursions remain a separate obligation. Fixed-p rigidity need not
+  survive lifting. P32's bounds8/12 failed even though eventual rigidity held.
+- **PROOF-SKETCH for Local:** v is finitely upward rigid iff none of its alternative
+  predecessors is reachable from any cycle of H_p. Finite-graph repetition proves
+  the converse; explicit carrying argument in the report. This is the sharper
+  object to attack, not a claim that long finite histories are infinite.
+
+Next: carry this formulation, then an ancestor obstruction for B(P1024), or a
+symbolic explanation of rain-side propagation. Both schedules stay paused.
