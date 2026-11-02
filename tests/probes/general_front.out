@@ -1,0 +1,7 @@
+p 4 exhaustive: roots 8 (distinct 8), reachable states 36, roots with an eternal continuation 4 {'rain': 4}
+p 8 exhaustive: roots 80 (distinct 80), reachable states 392, roots with an eternal continuation 16 {'rain': 16}
+p 16 exhaustive: roots 6560 (distinct 6560), reachable states 41888, roots with an eternal continuation 544 {'rain': 544}
+p 16 sampled, seed 2: roots 3000 (distinct 1991), reachable states 17256, roots with an eternal continuation 148 {'rain': 148}
+p 32 sampled, seed 2: roots 3000 (distinct 2999), reachable states 180739, roots with an eternal continuation 33 {'rain': 31, 'other: 480 states, column least periods [32], 30 distinct columns up to rotation': 2}
+p 32 sampled, seed 3: roots 3000 (distinct 3000), reachable states 158898, roots with an eternal continuation 30 {'rain': 27, 'other: 480 states, column least periods [32], 30 distinct columns up to rotation': 3}
+p 64 sampled, seed 2: roots 200 (distinct 200), reachable states 13328, roots with an eternal continuation 0 {}

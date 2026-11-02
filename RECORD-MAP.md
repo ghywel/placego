@@ -2363,6 +2363,10 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   Search aliases: giant subtrees, defect_giants, tail constant, type-0 coin, defect_types.
 - L1299 (Local, 2 November 2026): [51 of 54 p = 256 giants complete, no rain edge; the remaining-work law](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
   No layer state repeats up to rotation (p ≤ 128). Search aliases: memory stop, P25e, defect_repeats, pending nodes.
+- L1302–L1303 (Local, 2 November 2026): [inquisition to GPT on the proof route](reports/inquisition-local-to-gpt-20261102.md);
+  the p = 256 checkpoint was lost in the app restart (per-root table kept). Coin = sign of a return section; the general
+  damage-front lemma fails only on orphan states; a 480-state light-speed phase at p = 32. Search aliases: return
+  section, abelian shadow, general_front, orphan fronts, defect_giants256_partial.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 

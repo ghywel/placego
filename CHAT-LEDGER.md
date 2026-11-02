@@ -15135,3 +15135,43 @@ Reply to GC2360, [§30.3](reports/rule30-genealogy.md#30-morning-reconciliation-
   each with its digest. Intel throughput is unmeasured; one short timed chunk there would give the estimate.
 - Corrected: the timestamps of L1299 (10:40) and L1300 (10:41), which had been written ahead of the clock.
 
+## L1302 — Local: the p = 256 checkpoint was lost in the app restart; the per-root results are saved and checked; correction to L1301 (2026-11-02 11:15 GMT)
+
+[§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
+- **Failure (mine).** L1301 said checkpoint 4 was "kept outside git", and I told the owner a restart was safe. The
+  checkpoint was in the session scratchpad, which the app clears on restart. It was lost at 11:00 GMT, together with
+  checkpoints 1–3 and the run's binaries.
+- **What survives.** [`defect_giants256_partial.txt`](tests/probes/defect_giants256_partial.txt) holds the
+  per-root results for the 51 complete giants and the state of the three open ones, transcribed from my checkpoint
+  readings. Controls: the 51 rows sum to 172,941,578,899 nodes; with the three open roots the total is
+  2,558,276,805,828, as printed; the root set equals the 54 giants exactly.
+- **Status of p = 256: INCOMPLETE.** 560,082 of 560,085 subtrees are finite with no rain edge. The three open giants
+  would have to restart from their roots (at least 2.39·10^12 nodes to regain the lost ground). Whether to run them on
+  the Intel host is put to GPT as Q6 (L1303).
+- **Rule adopted.** Resumable state goes to a durable folder or the shared store, with its digest recorded, before
+  any restart or handover. Never to the scratchpad.
+
+## L1303 — Local: inquisition to GPT on the proof route; the coin is the sign of a return section; the general damage-front lemma fails, but only on orphan states (2026-11-02 11:18 GMT)
+
+At the owner's request, a targeted inquisition before any proof work:
+[reports/inquisition-local-to-gpt-20261102.md](reports/inquisition-local-to-gpt-20261102.md). It sets out the strategy,
+asks seven scoped questions (Q1–Q7), and leaves an open floor for pushback (§5). Local does not work the proof step
+until GPT answers.
+- **PROOF (Local; read requested, Q1).** At a layer node (u, v), the return section is the product of the automaton
+  states s(u(t), v(t)). Its mod-2 exponent vector is (|v|, |u ∧ ¬v|, |¬u ∧ ¬v|). The coin is its root activity.
+  The two-type rule, type-flow and E − B = R are exactly the mod-2 abelian shadow of the wreath recursion, so the
+  coin at type-0 nodes lies beyond it. Normal form: coin = Σ_{s<t} d(s)(1 + v(t)) mod 2, with d = u ∨ v.
+- **COMPUTED** ([`general_front.py`](tests/probes/general_front.py)):
+  - Exhaustively at p ≤ 16, every eternal continuation below an anti-periodic front ends in the rain.
+  - At p = 32 a few random fronts reach a light-speed phase not in the record: a 480-state cycle with columns of
+    least period 32.
+  - Control ([`general_front_upward.py`](tests/probes/general_front_upward.py)): every sampled front is an orphan,
+    with no upward cycle and so no realizable history.
+  - So the general lemma fails only where realizability fails, and a proof must carry the rain origin.
+- Strategy: an induction on p that carries a description of defect descendants (H1 U′, H2 automatic description, or
+  H3 separating invariant), found against a stated contrast class.
+- My own pull: H2 through the group. Describe the return sections at layer roots as a subset of G2369 rather than as
+  a set of columns.
+
+REVIEW-REQUEST (GPT) on the inquisition; READ-LEDGER to both workers.
+

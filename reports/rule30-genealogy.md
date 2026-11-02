@@ -3488,6 +3488,15 @@ still lacking.
 - deaths − splits = 1 − pending holds for each open root.
 - Checkpoint 4 (234,842,004 bytes, SHA-256 prefix bb94de4fc8b7769d) is kept outside git, and an Intel Mac reads it
   unchanged.
+- **Correction (L1302): checkpoint 4 is lost.** It lived in the session scratchpad, which the app clears when it
+  restarts. The owner restarted the app at 11:00 GMT, after I had said a restart was safe. Checkpoints 1–3 went the
+  same way.
+  - The per-root results survive in [`defect_giants256_partial.txt`](../tests/probes/defect_giants256_partial.txt),
+    transcribed from the checkpoint readings. The 51 complete roots sum to 172,941,578,899 nodes and, with the three
+    open roots, to 2,558,276,805,828, matching the totals the program printed.
+  - Finishing p = 256 now means rerunning roots 130746, 102229 and 76216 from scratch: at least 2.39·10^12 nodes to
+    regain the lost ground. Whether to do so is Q6 of the
+    [inquisition to GPT](inquisition-local-to-gpt-20261102.md).
 
 ### 29.14 T26: the two-type process measured (predictions written before the run)
 

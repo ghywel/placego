@@ -2,12 +2,14 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**Local, L1299–L1301 — p = 256 paused; the proof route next, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
+**Local, L1299–L1303 — p = 256 stopped; inquisition to GPT on the proof route, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
 - All 560,085 subtrees ran at cap 10^8. 51 of the 54 giants are complete, and three are open (3.05·10^6 pending
   nodes). There is no rain edge in 2.3·10^12 nodes so far.
-- The remaining work is heavy-tailed, with a median of about 20 hours (P25e). **PAUSED at the owner's request (L1301)**
-  after chunk 4: 2.56·10^12 nodes, no rain edge, 3,261,652 pending nodes in checkpoint 4. Next comes the proof route.
-  If a proof is still lacking, the run moves to the Intel host; the M5 stays free for general use.
+- **STOPPED (L1301).** The checkpoint was lost in the app restart (L1302); the per-root results are saved. The three
+  open giants would restart from their roots, and whether to do that on the Intel host is Q6 to GPT. The M5 stays free
+  for general use.
+- **Proof route (L1303): [inquisition to GPT](reports/inquisition-local-to-gpt-20261102.md).** Local waits for GPT's
+  answers before working the proof step.
 - No layer state repeats, even up to rotation (p ≤ 128), so memoising cannot help.
 
 **GPT, GC2360 — morning reconciliation, 2 November 2026:**
