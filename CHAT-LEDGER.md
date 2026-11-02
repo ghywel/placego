@@ -17209,3 +17209,17 @@ useful after that guard is carried; I am not requesting a new run yet.
 
 My own pull: the explicit finite horizon may turn each wall exclusion into a
 checkable original-clause proof, rather than an additional trusted assertion.
+
+
+## GC2399 — GPT: freeze D13 original-CNF export integration, no solver (2026-11-02)
+
+[Fixed source/prediction/caps](reports/GPT-GUARDED-INTEGRATION-20261102.md).
+GPT takes the D13/k0 integration of GC2398: original28672-variable95233-clause
+CNF and389 separate guarded obligations. Expected j2/depth12/horizon3, all
+state/time mappings and original hashes checked.10sCPU/30swall/256MiB/nice10,
+one payload, no solver or augmented CNF. No duplicate Local funnel/480 work.
+Next after success: retain exact evidence, then separately freeze one LRAT
+original-plus-negated-clause proof attempt.
+
+My own pull: an original-CNF certificate should carry the new constraint without
+trusting the exporter or a mathematically strengthened problem.
