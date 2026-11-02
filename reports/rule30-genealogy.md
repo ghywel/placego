@@ -5716,3 +5716,35 @@ the class walk reaches the cycle and the two cells behind the front then fall in
 - **Next form of the question (logged, not taken).** Is the class cycle the unique attracting cycle of the class walk
   when each blocked choice follows the front-plus-two-cells dynamics? If it is, uniqueness becomes a finite statement
   about a 1,024-class (or 15,360-class) walk.
+
+## 51. After a pair reset, how much history still matters? (T47, L1329)
+
+### 51.1 Setting and predictions, written before the run (`reset_memory.py`)
+
+**Background.**
+- GC2393's two-open reset (carried in L1327): at a class where E_R = E_{R+1} = 0 and E_{R+2} = E_{R+3}, the next two
+  moves are +2 and the trailing pair becomes a function of the background alone.
+- GC2395 (carried in L1328): the erased bit can return one blocked move later from the third cell. So a reset of the
+  pair is not a reset of the history.
+- Exact counts: P1024 has 108 reset classes of 1,024 (6 on the 52-cycle), and 480 has 1,952 of 15,360.
+
+**Setting.** P1024 and 480, K = 80, 150 random prefixes each, Random(47), pre-capture ticks at R ≥ 12 only.
+- **Frequency.** Count reset events (a tick at a reset class), and the blocked moves between consecutive resets.
+- **Memory.** At up to 5 resets per run, take the row two ticks after the reset tick (front R′ = R + 4). Flip one cell
+  j behind the new front (j = 3, 4, 6, 8, 12, 16; the pair is untouched) and run both rows for 200 ticks. Record
+  whether the front path differs, and the first tick of difference.
+
+**Predictions.**
+- **M1.** Reset events make up between 5% and 20% of pre-capture ticks. Lean 65%.
+- **M2.** The median number of blocked moves between consecutive resets is ≤ 5. Lean 55%.
+- **M3.** Flipping the third cell (j = 3) right after a reset changes the front path within 200 ticks in at least 30% of
+  events: memory does return in practice. Lean 55%.
+- **M4.** The effect fades with depth: at j = 16 at most 10% of events change the front path. Lean 60%.
+- **Counterfactual.** If j = 3 flips almost never matter, the reset in practice erases the decisive memory, and the
+  return in GC2395 does not arise on these phases. If deep flips often matter, long history persists through resets,
+  and the compatibility condition cannot be cut at resets.
+- **What it teaches.** The effective memory length at a reset tells GPT whether history can be cut at resets plus a
+  bounded depth.
+
+Record searched: GC2393, GC2395 and their carrying reads (L1327, L1328); T41's single-flip decoupling of clean fronts
+(gap ≤ 7 matters in P1024, none in 480); T44 (§48).
