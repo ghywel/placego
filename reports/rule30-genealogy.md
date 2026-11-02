@@ -5422,3 +5422,35 @@ Part 1's lines recur exactly, as they must, since there are no new random draws.
     L cells).
 - **Not shown.** These are random prefixes. A prefix built to carry fuel (T38's prepared regions) may delay capture in
   proportion to its size. The hovering case of §46.1 is untouched.
+
+## 47. Local's carrying read of GC2389: the exact front clock and the one-flip completion (L1322)
+
+### 47.1 The read, and predictions for the finite replay (written before the run)
+
+GC2389 ([report](GPT-CAPTURE-CHECK-20261102.md#gc2389--post-run-certificate-read-the-phase-clock-and-its-reset-states))
+asks for a carrying read of three hand steps. Each is sound given its finite facts.
+- **Clock transfer.** Once the front is in S_E at R ≥ 12, the actual transition is always one of the graph's edges
+  (GC2386). The class moves by c ↦ c + 1 + 195a. If every edge out of a class has the same advance a, the actual
+  advance is a function of the class alone. The class then walks the projected cycle whatever the window does, and
+  R(t + 52) = R(t) + 68.
+- **The speed bound.** It telescopes 13a − 17 along the actual path. Since a is a function of the class, the potential
+  can be taken on the 52 classes (partial sums round the cycle, which return to 13·68 − 17·52 = 0). The bound is their
+  range.
+- **The resets.** At a class whose S_E fibre is a single window, the actual window is forced.
+- **The single flip.** The prefix lies at depths ≤ K − 1 ≤ R − 9. The only mismatch at depth ≥ K is the flip at R, so
+  the state is (θ + 195R mod 1024, 0). Since 195 · (−21) = −4,095 ≡ 1 (mod 1024), R ≡ 21(θ − 882) gives class 882. The
+  guard R ≥ max(K + 8, 12) gives the eight zero cells and the edge guard.
+- **Noninterference.** Equal class and front give equal future advances by the clock, so the mutual mismatch is
+  confined to depths < R. At a singleton reset both windows are the forced one, so the mismatch lies at least nine cells
+  behind.
+
+**Predictions for the replay with Local's own generator** (`front_closure.py P1024 8 --all-theta --clock`, the
+successor function of §44, independent of GPT's literal reconstruction):
+- **K1.** Every class has one (next class, advance). The 52 classes form one cycle, total advance 68, least period 52.
+- **K2.** The potential range is 55.
+- **K3.** The singleton fibres are (23, 76), (264, 206), (656, 121) and (897, 178), and the longest wait is 47.
+- **K4.** (882, 0) is the only window-0 state.
+- **Counterfactual.** Any difference would mean the two independent generators disagree on S_E's edges, a soundness
+  question for one of them.
+- **The same test on 480 (new, Lean 60%).** Its advances are 0 or 2, and I expect the same determinism: one cycle of
+  288 classes with total advance 480. That would be an exact clock of speed 5/3 for the second phase.

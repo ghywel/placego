@@ -6,6 +6,8 @@ window? reports/rule30-genealogy.md section 44. Run: python3 tests/probes/front_
 wake_attractor.py --win compares against, their closure S_E^all, its verdict and digests; --export=PREFIX writes them.
 L1321 (T43): --all-theta also for 480, over one alignment (a, q) per class of its 960 (a in 0..29, q in 0..31), with the
 class ((R + a) mod 480) * 32 + (t + q) mod 32; it also counts the distinct clean-state sets (orbits) over the alignments.
+L1322: --clock (with --all-theta) replays GC2389's finite clock facts on S_E^all: one (next class, advance) per class,
+the class cycle, its advance word and least period, the potential range (P1024), singleton fibres and window-0 states.
 --control=N: N exact checks per W. At a random tick of the clean run, every mismatch bit more than W behind the front
 is replaced by a random bit; the row is evolved exactly for 3,000 ticks; each tick's (class, window) must lie in the
 closure, and every k ticks must advance the front by at least 1 (k from the verdict). A failure is a soundness alarm.
@@ -237,6 +239,43 @@ if '--all-theta' in sys.argv and name in ('P1024', '480'):
                         seen_f.add((j, f2)); nxt_f.append((j, f2)); fmax = max(fmax, f2)
             frontier = nxt_f
         print('   largest fall below a running maximum along paths of S_E^all: %s' % (fmax if fmax <= 200 else '> 200'), flush=True)
+        if '--clock' in sys.argv:
+            # L1322 (Local's carrying read of GC2389): GPT's finite clock facts, replayed with this generator. Predictions in
+            # genealogy section 47.1. Per class: the set of (next class, advance) over every edge out of S_E^all.
+            keys = list(idx_all)
+            proj = {}
+            for i, j, a in zip(src, dst, adv):
+                proj.setdefault(keys[i][0], set()).add((keys[j][0], a))
+            det = all(len(v) == 1 for v in proj.values())
+            print('   clock: %d classes in S_E^all; every class has one (next class, advance) over all its edges: %s' % (
+                len(proj), det), flush=True)
+            if det:
+                nxt_c = {c: next(iter(v)) for c, v in proj.items()}
+                c0 = min(nxt_c); cyc = [c0]
+                while nxt_c[cyc[-1]][0] != c0 and len(cyc) <= len(nxt_c):
+                    cyc.append(nxt_c[cyc[-1]][0])
+                word = [nxt_c[c][1] for c in cyc]
+                L = len(cyc); tot = sum(word)
+                per = next(d for d in range(1, L + 1) if L % d == 0 and all(word[i] == word[(i + d) % L] for i in range(L)))
+                print('   one cycle through all classes: %s; length %d, total advance %d, least period of the advance word %d' % (
+                    L == len(nxt_c), L, tot, per), flush=True)
+                print('   advance word from class %d: %s' % (c0, ','.join(map(str, word))), flush=True)
+                if name == 'P1024':
+                    ps = [0]
+                    for a in word:
+                        ps.append(ps[-1] + 13 * a - 17)
+                    print('   potential: 13*advance - 17 summed round the cycle returns to %d; its range (max - min) %d' % (
+                        ps[-1], max(ps) - min(ps)), flush=True)
+                fib = {}
+                for (c, w) in keys:
+                    fib.setdefault(c, []).append(w)
+                single = sorted((c, fib[c][0]) for c in fib if len(fib[c]) == 1)
+                pos = {c: i for i, c in enumerate(cyc)}
+                sp = [pos[c] for c, _ in single]
+                wait = max(min((q - i) % L for q in sp) for i in range(L)) if sp else None
+                print('   singleton fibres (class, window): %s; longest wait from any class to one: %s' % (single, wait), flush=True)
+                zero = sorted((c, w) for (c, w) in keys if w == 0)
+                print('   states with window 0: %s' % zero, flush=True)
         if idx780 is not None:
             print('   S_E(base alignment) %d states; U inside S_E(base): %d of %d; S_E(base) inside S_E^all: %s' % (
                 len(idx780), sum(1 for s in U if s in idx780), len(U), all(s in idx_all for s in idx780)), flush=True)
