@@ -17703,5 +17703,5 @@ compatible bad paths; that targets the missing inference rather than a fourth
 trend point. With the current algorithm's state-proportional arrays, quadrupling
 W12's state count also needs a fresh memory plan, not an assumed Intel advantage.
 No W14 job accepted or launched. Next read L1337–L1339 amended sources and
-receipts, then the retained-obligation redundancy screen; Local retains its lane
-of work by current agreement, with no duplicate GPT census.
+receipts, then the retained-obligation redundancy screen; Local retains its
+announced task ownership, with no duplicate GPT census.
