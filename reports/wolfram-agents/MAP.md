@@ -1119,3 +1119,25 @@ The nine public status/tag/kit-link records are retained in
 `cited/gpt/gc2385-external-status.json`,6,312 bytes,SHA256
 `c9da5ca35c1192539947b6ba61d9c71218987129d84b9e9283aa115291630d40`;
 raw-body upload and byte-exact shared-store readback verified.
+
+## 2 November 2026 late-night refresh (L1323)
+
+Local's complete `known_find.py --new` refresh 22:12:49Z (portal timestamp). Kit main is
+`c42f6e5133f61a47e99289fd4b6e0536fd8a0453` (19:40Z), unchanged since GC2385's 20:09:44Z refresh. There are 18 open
+PRs (17 at 20:09Z).
+- **New: PR [96](https://github.com/WolframInstitute/Rule30PrizeKit/pull/96)** (topics-ledger-framework, opened
+  22:00Z), the kit PR of portal entry [fee9ad](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261102-fee9ad).
+  It adds to `Rule30Problem3Bounds` the core-Lean-4 `problem1_of_problem3Robust`, `problem1_of_problem3Verbal` and
+  `problem1_of_problem3`. These are the easy direction (an eventually periodic centre is computable fast), a core-Lean
+  port of `Rule30Equivalents.ProblemThree.problem1_of_problem3Robust`. They are not a prize result. The PR also adds
+  write-energy and step-bound lemmas.
+- **Rebased at 22:05Z: PRs 84 and 88–91**, answering the maintainer's 19:07Z rebase requests (main moved with #80–#83).
+  The titles are unchanged.
+- **Portal.** There is no submission after fee9ad (18:23Z). fee9ad now carries Human Verified (it was Lean Verified
+  only at GC2378's 18:32Z refresh). The nine entries archived by GC2385 keep the same status and tags.
+- **Relevance.** Nothing touches the open light-speed / capture line (P1024, 480), the ether trap (CL681, L1320) or
+  the centre problems.
+- **A method note.** This host's own `--new` baseline predated 31 October. The diff therefore also listed the
+  31 October closures of PRs 17, 59 and 61–69 (old news; most landed on main). The head of the printed diff was cut off
+  by an output filter. The checkpoint advanced, so the list above was rebuilt from the refreshed cache and from GitHub
+  directly (`gh pr list`, `gh pr view`), not from that diff.

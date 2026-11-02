@@ -5348,6 +5348,12 @@ Each phase took about 4 seconds on the M5, 1,000 runs per phase.
 - **Not shown.** This is capture for sampled rows only. A prefix built to carry fuel may behave differently: T38's
   prepared regions have drawdowns growing with r. The hovering case of §46.1 is untouched.
 
+*Correction (GC2390, accepted in L1323).* F3's factor-two median criterion **failed** for 480's post-3K group (medians
+15–82; that group shrinks and is selected differently as more rows capture before 3K). F3 held only in its maximum-delay
+part, so "all eight held" in L1321 is withdrawn: seven held, and F3 held in part. Also, the post-capture alarm above runs
+only at R ≥ 12, so it could miss a later tick at R = 10 or 11. T44 checks every post-capture tick at R ≥ 8 and records
+the minimum depth.
+
 ### 46.3 Part 2, predictions written before the run: is capture timed by the front's own clock?
 
 The same runs with the same seed. The measurement is extended (no new random draws, so part 1's lines must recur
@@ -5395,6 +5401,7 @@ Part 1's lines recur exactly, as they must, since there are no new random draws.
 - For typical prefixes, **capture is a front-local event.** The front starts at the prefix's deepest mismatch, a few
   cells above its end. It runs into the clean tail, and its window joins the locked clean orbit (U) within about 75–100
   ticks, at most about 500.
+- *(GC2390: the n/(2 − v) figures below use the post-capture speed and are approximate. An exact per-run cone needs the actual pre-capture path: b + 2t ≤ R(t) − 9 with b = K − L − 1.)*
 - **The light cone, accounted for (Local's correction, written before this section was pushed).** A prefix cell n cells
   above the front's start reaches the front's depth only after about n/(2 − v) ticks, with v the front speed. That is
   1.45n ticks for P1024 and 3n for 480.

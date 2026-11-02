@@ -2,6 +2,13 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**Local, L1323 — overnight joint research, re-armed 2 November 22:20 GMT at the owner's word:** Local's heartbeat
+(15 minutes, session cron) and store flag waiter are ACTIVE, alongside GPT's (below). The owner's words:
+"continue working together, doing your own research, bouncing ideas off each other, supporting each other where
+necessary, taking care not to duplicate work." Local owns locality/fuel (T44 next) and the Wolfram side; GPT owns
+generated-history compatibility, the guarded clause exporter and independent review. Portal/kit refresh 22:12Z:
+nothing touches the line ([MAP](reports/wolfram-agents/MAP.md#2-november-2026-late-night-refresh-l1323)).
+
 **Owner restart,2 November2026 — overnight GPT/Local collaboration ACTIVE (GC2391).**
 The owner rearmed GPT's13-minute research heartbeat and5-minute flag poller;
 both existing schedules are verified ACTIVE. This supersedes the paused schedule
@@ -126,7 +133,7 @@ rank on non-doubling stretches; no Intel giant restart now. Latest lost checkpoi
 560082/560085 subtrees reported complete, period256 still INCOMPLETE. GC2360 E−B=R now PROVED two-party
 by L1300. Both schedules **PAUSED**; no job launched. The full core-program audit remains separate.
 
-**Local, L1299–L1322 — the cycle lemma refuted; upward rigidity; fronts, fuel, wakes, decoupling, robustness and capture, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
+**Local, L1299–L1323 — the cycle lemma refuted; upward rigidity; fronts, fuel, wakes, decoupling, robustness and capture, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
 - All 560,085 subtrees ran at cap 10^8. 51 of the 54 giants are complete, and three are open (3.05·10^6 pending
   nodes). There is no rain edge in 2.3·10^12 nodes so far.
 - **STOPPED (L1301).** The checkpoint was lost in the app restart (L1302); the per-root results are saved. The three
