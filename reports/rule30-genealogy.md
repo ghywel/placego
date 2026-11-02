@@ -5578,3 +5578,37 @@ The explanation is already in the algebra.
   class walk, with the window consulted only at blocked ticks.
 - That suggests a quotient for GPT's compatibility condition: track the class walk exactly, and the window only
   through its effect at blocked classes.
+
+## 49. How far behind the front does a blocked move read? (T45, L1325)
+
+### 49.1 Setting and predictions, written before the run (`blocked_reading.py`)
+
+**Exact structure first (COMPUTED, no simulation).**
+- P1024 has 501 open classes of 1,024 (look-ahead bit 0).
+- Under the forced open move c ↦ c + 391, the open runs have lengths 1 (128 runs), 2 (69), 3 (37), 4 (15), 5 (6), 6 (3),
+  7 (1) and 9 (1). So a front meets a blocked class about every other tick.
+
+**Question.** At a blocked tick the move depends on the cells behind the front. By the algebra:
+- a = 1 reads E_R, E_{R−1} and D_{R−1};
+- a = 0 reads D_{R−1} and D_{R−2};
+- only a retreat reads deeper.
+
+The **reading depth** of a tick is the least k such that D_{R−1} .. D_{R−k} (the actual values) fix the move for every
+completion of the cells behind them, out to depth 10. It is reported as "> 10" if the cells out to 10 do not fix it.
+
+**Setting.** P1024 and 480, K = 80, 200 random prefixes each, Random(45). Every tick at R ≥ 12 before capture, and
+the first 300 ticks after it, using the exported S_E.
+
+**Predictions.**
+- **J1 (control).** At every open tick the move is +2 with reading depth 0. This is PROVED, so a failure is a bug.
+- **J2.** At pre-capture blocked ticks the reading depth is ≤ 2 in at least 75%, and retreats (a < 0) are at most 15% of
+  blocked ticks. Lean 55%.
+- **J3.** A reading depth above 8 (beyond the 8-cell window) occurs at no more than 1% of pre-capture blocked ticks.
+  Lean 70%.
+- **J4.** After capture the reading depth is at most 4 at every blocked tick (S_E's only retreat is −1). Lean 70%.
+- **Counterfactual.** Frequent deep reads before capture would mean the front's move draws on cells far behind. A
+  capture certificate would then need a long history.
+- **What it teaches.** It measures the true memory of the front's motion at blocked ticks. With T44's shielding, it says
+  how small a state GPT's compatibility condition might get away with.
+
+Record searched: §44.1 (the mask lemma), §48 (T44), GC2389's clock; nothing earlier measures reading depth.
