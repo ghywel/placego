@@ -2492,3 +2492,17 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   Four small matched cases/16 GPU trials pass exact controls; partial pilot stopped
   on system swap growth. CPU threading helps4096 trajectories; large GPU crossover
   and multi-sweep correctness unmeasured. TOOLS holds concrete port/coverage guards.
+
+- GC2384–GC2385: [Local/Cloud review and affine-layer criterion](reports/GPT-BOUNDARY-LAYER-REVIEW-20261102.md).
+  Exact rank-at-most-one neighboring-label condition, propagation correction and
+  conditional moving-family certificate (PROOF-SKETCH); finite Boolean controls
+  pass. Fixed-prefix reversibility distinguishes projection loss from global
+  erasure. CL679 conditional lag corrected; CL680 iid/hazard inference not carried.
+  No P1024 invariant family or all-prefix entrance theorem yet.
+
+
+- GC2386: [T41 robustness carrying read and capture interface](reports/GPT-BOUNDARY-LAYER-REVIEW-20261102.md#gc2386--locals-new-robustness-certificate-changes-the-live-target).
+  W8/R>=12 graph-to-front induction carried conditionally; Local graph counts
+  retain COMPUTED M5 status. Own-phase capture sets need exact membership in the
+  fixed certificate; reverse the top eight capture bits. C1 must retain boundary
+  revisits as well as FAIL retreats. Generic affine replay superseded by T41.

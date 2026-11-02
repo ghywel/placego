@@ -1057,3 +1057,65 @@ no local compile or claim of complete carrying review. These are machine/conditi
 reduction results, not an unconditional Problem1 proof or our finite rain/P1024
 exclusion. Full source is retained by the refreshed index. Closed PR discussions
 and linked archives are outside this refresh; no novelty/submission decision here.
+
+
+## 2 November 2026 later-evening refresh (GC2385)
+
+Complete `known_find.py --new` refresh20:09:44Z: kit
+`c42f6e5133f61a47e99289fd4b6e0536fd8a0453`,17 open PRs. Six added/19 changed
+index items;20 no longer listed in the open index. Closing a PR removes its
+index item, not the mathematics. Relevant closed PR83/93 discussions and
+review summaries were separately inspected; source content is now present in
+main. Their API states are CLOSED with null merge commits, so no claim about
+GitHub's merge mechanism is made. PR88–91 have maintainer rebase requests.
+
+Nine changed portal status entries (a2fefb,c646f6,0f4b7a,121ada,6824d5,715db1,
+924d87,b8e784,bf1582) show Lean Verified and explicitly carry both **Human
+Verified** and **Kit Contribution** tags in this snapshot. These are partial
+results, not solved prize problems. Portal tags are distinct from a local
+compilation or a complete GPT carrying read, neither of which is claimed here.
+The relevant actual statements read for the current task are:
+
+- `Rule30TopCoefficient.top_coefficient_rows`, `rule30_top_coefficient`,
+  `rule180_top_coefficient`: for quadratic left-permutive rules and n=m+2,
+  the specified degree2n−1 monomial has coefficient1+alpha+beta. Rule30 gives1,
+  Rule180 gives0. This source does **not** prove a generic maximal-degree
+  upper bound; it concerns arbitrary initial rows, not the lone-seed centre.
+- `Rule30Rule180LoneSeed.evolve_seed`, `center_eq`, `center_white`: the Rule180
+  lone seed has centre1,1,0,0,..., despite its related wedge-parity structure.
+  This is a concrete guard against transferring generic parity to seed behaviour.
+- `Rule30SurvivalBridge.pureScan_diagFrontier`, `iterPureScan_diagFrontier`
+  and false-branch versions: exact canonical frontier/scan transfer and prefix
+  autonomy. `diagFrontier_not_evPer` retains the canonical source restriction;
+  arbitrary finite states are not silently substituted.
+- `Rule30LeftAntiPeriod.D_post_white_twin_winCount_sum`,
+  `D_post_white_halfDensity_iff`, `D_post_white_interleave_halfDensity`:
+  shifted-complement count conservation/half-density transfers. The interleaved
+  pair statement is not the seed's centre-density statement. The right-period
+  doubling result retains its leastExp increment condition.
+
+Source SHA256 pins, respectively:
+
+| Source | SHA256 |
+|---|---|
+| Rule30TopCoefficient | `0e5d74b35c3aafbea85aba974fbe23d90f7482933370ace4173d71e2d3d28107` |
+| Rule30Rule180LoneSeed | `b7438fd590c0ee3ec00a916359b64f8373a29ab4dec0514c451cc077e0b598b6` |
+| Rule30SurvivalBridge | `dc94e605e866b02dde654cb169ca2b756ca41ec8110fa5cc93523a590ff61968` |
+| Rule30LeftAntiPeriod | `71148427b732592d1ac6b4dbcae92451c079dd93b22546c4646e7207b8777434` |
+
+Closed PR83 head `6a035d80c5a0034db2f5a1b6e0c368da151ac0b0`;
+PR93 head `dbd8d2261c9a65bb44c0ccf2c3346b93317c9ba5`. Their body/head and
+empty conversation/review-summary results were inspected. GC2385 also compared
+current `Rule30XorRigidity` with closed PR12/32 (heads
+`e7d1e3a03dff9c57a0c78e94b7bf9e4df1c0bd36` and
+`a22829dbc3a5a0428f9136d80a5c6f833d509815`) for known polarization/collision
+prior art. Complete current external sources remain in the index cache; a
+six-source digest manifest is retained with the small GC2385 evidence archive.
+Other changed modules were indexed but not given a full carrying read in this
+block. No new submission or novelty claim, and no change to the open P1024
+shielding/entrance or centre problems.
+
+The nine public status/tag/kit-link records are retained in
+`cited/gpt/gc2385-external-status.json`,6,312 bytes,SHA256
+`c9da5ca35c1192539947b6ba61d9c71218987129d84b9e9283aa115291630d40`;
+raw-body upload and byte-exact shared-store readback verified.

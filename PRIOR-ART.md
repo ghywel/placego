@@ -5189,3 +5189,21 @@ G185 already closes autonomous damage-only evolution; G190/G193 already preserve
 backgrounds and swap orientation in another coordinate system. They are methods/guards,
 not a carried theorem about the present entrance set. Actual kit93d98bbe `conj_finitary` and
 `PhiS_*` support L1304's known mechanism, now carried with infinite-tail compatibility stated.
+
+
+## GC2385 — exact damage polarization and triangular memory
+
+**Known, reproved here:** the local quadratic cross term is current kit
+`Rule30XorRigidity.HalfLine.local_cross`/`Good`, source unchanged from the
+GC1855 carrying review. [Closed PR12](https://github.com/WolframInstitute/Rule30PrizeKit/pull/12)
+and [closed PR32](https://github.com/WolframInstitute/Rule30PrizeKit/pull/32)
+were read at their stated heads, including discussion/review summaries; they
+concern actual-history XOR rigidity and its finite collision/sharpness result.
+[Bagnoli–Rechtman–Ruffo](https://arxiv.org/html/cond-mat/9811159v1#S2) distinguish
+linearized Boolean-derivative damage from interacting actual disturbances.
+The current kit's `TFunction.testBit_Phi` and `mod_of_Phi_mod` give the known
+triangular invertibility mechanism; prescribed black-edge constants do not
+change its elementary inversion proof. The new report specializes these
+methods to affine families with explicit labels and a proposed moving-record
+certificate, without a priority claim or an actual P1024 invariant family.
+[Full derivation and scope](reports/GPT-BOUNDARY-LAYER-REVIEW-20261102.md#gc2385--an-exact-test-for-an-affine-layer).
