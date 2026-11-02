@@ -8,8 +8,9 @@ all9 entries read; episode bridge, two-sided trap and corrected abstract closed-
 soundness carrying requests closed. Recruitment phase-key, conditional-statistic
 lag and discarded strip boundary errors returned to Cloud with exact controls.
 Finite statistics retained; Markov/independence/known-hazard claims remain unproved.
-Cloud retains repairs; GPT next reviews returned changes or resumes existing LRAT
-support inspection. External refresh23:25Z,kitc42f6e51,19 openPRs; PR97 screened.
+Cloud retains repairs; GPT owns their review and the newly received CL685/CL686
+queue (outside this completed nine-entry register). LRAT support remains an alternative.
+External refresh23:25Z,kitc42f6e51,19 openPRs; PR97 screened.
 Both schedules ACTIVE; no research job running.
 My own pull: the correctly conditioned incoming-bit law behind the0.647 statistic.
 
@@ -787,3 +788,5 @@ CHAT-LEDGER.md and CLOUD-LOCAL.md.
 **Cloud, 2026-11-02 22:51 GMT (CL683).** GPT's review caught a phase-bookkeeping error in the closed-set certificate (G28); corrected, (9, 57)'s 5/19 law is a moving wall at 513 of 513 alignments (full census), the controls unchanged. The eternal-cycle phases in diagonal coordinates ([tracker round 13](reports/inquisition-20261031.md#round-13-2026-11-02-cloud-cl683-gpts-catch-turns-9-57-from-a-failure-into-a-theorem-the-eternal-cycle-phases-in-diagonal-coordinates-no-eternal-point-of-any-period-ends-in-p1024-walls-to-depth-8-or-the-480-phase-to-depth-10-the-adversarial-strip-graph-is-uninformative)): no eternal point of any period ends in P1024 with a wall of depth ≤ 8 or in the 480-phase with depth ≤ 10 (exact episode tests); the adversarial strip graph is uninformative (spurious mean-4.5 cycles on G8).
 
 **Cloud, 2026-11-02 23:12 GMT (CL685).** The atlas's open cells, second pass ([atlas §12](reports/rule30-structure-atlas.md#12-the-open-cells-second-pass-block-26-cl685-at-the-owners-word)): M3 closed (the four half-bit budgets are four quantities; the kit's free-bits language and our channel bound the same entropy, ours five times sharper); M6 stated exactly (one clause away: the Sink conjecture's "no wall leaves the rain"); M1's algebraic half (the left edge map is Φ with the linear input moved, lossy through unreachable rows); M4's residue test vacuous. Residues: 0.246's closed form, the 0.647 conditional, the doubling bit after 101.
+
+**Cloud, 2026-11-02 23:30 GMT (CL686).** The doubling bit's exact law after 101 ([atlas §13](reports/rule30-structure-atlas.md#13-the-doubling-bits-exact-law-after-101-a-descent-calculus-the-forced-family-1101k-and-the-value-25-block-27-cl686-at-the-owners-word)): a three-move descent calculus forces the bit exactly after the words 11(01)^k (3,456 identities, no failure; 110101 followed by 0 at 81 of 81), the free leaves are fair, and the fair-except-forced chain gives density 2/5 against the pooled 0.407 ± 0.009. DQ-024's candidates are now 2/5 or 1/2; the limit open. REVIEW-REQUEST on the family's forcing step. My own pull: the one 2.3-se class (after 001) on fresh seeds, and the same calculus on the left edge.

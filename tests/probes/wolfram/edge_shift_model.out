@@ -1,0 +1,48 @@
+stationary (approx exact): {'F': 0.2, 'H': 0.2, 'Z': 0.3, 'A': 0.2, 'B': 0.1}  density 0.4
+hand: weights F,H,Z,A,B = 2,2,3,2,1 over 10, density 2/5; no_three alone: 3/7 = 0.42857142857142855
+simulation n=10000000: density 0.4001
+  P(1 | ...101) = 0.1670  (n=1500782)
+  P(1 | ...0101) = 0.2504  (n=1000669)
+  P(1 | ...10101) = 0.0997  (n=624909)
+  P(1 | ...00101) = 0.5011  (n=375760)
+  P(1 | ...1011) = 0.0000  (n=250588)
+  P(1 | ...110101) = 0.0000  (n=249968)
+  P(1 | ...11) = 0.0000  (n=1000150)
+  P(1 | ...001) = 0.4996  (n=1500336)
+  P(1 | ...0) = 0.5003  (n=5998730)
+  P(1 | ...1) = 0.2500  (n=4001269)
+  P(1 | ...01) = 0.3333  (n=3001118)
+  P(1 | ...10) = 0.5001  (n=3001118)
+  P(1 | ...00) = 0.5005  (n=2997612)
+
+rows 3584 from 2 file(s); seeds 64
+P1 identities checked 3456 (j >= 3), failures 0 []
+leaf types: {'BOTTOM': 128, 'FREE_G': 2593, 'FORCED': 832, 'SMALL_G': 29, 'SMALL_R': 2}
+forced (backward word, constant K): count
+            11 K=0: 429
+          1011 K=0: 187
+          1011 K=1: 64
+        101011 K=0: 81
+      10101011 K=0: 42
+    1010101011 K=0: 18
+  101010101011 K=0: 7
+  10101010101011 K=0: 3
+  1010101010101011 K=0: 1
+P2: forward 110101 with e_(j-4) >= 4: 81 occurrences, followed by 1 in 0 []
+P3 free-leaf classes (n >= 13): leaf, backward word, n, doubling frequency
+  FREE_G              0 n= 1655 f=0.511
+  FREE_G            100 n=  440 f=0.555
+  FREE_G          10100 n=   88 f=0.511
+  FREE_G        1010100 n=   15 f=0.667
+P3 violations: 0
+P4 pooled density n=13..56: 0.4070 (n=2816, binomial se 0.0094); model 2/5
+  data P(1 | ...101) = 0.136 (n=420)
+  data P(1 | ...0101) = 0.220 (n=259)
+  data P(1 | ...10101) = 0.070 (n=171)
+  data P(1 | ...00101) = 0.511 (n=88)
+  data P(1 | ...1011) = 0.000 (n=55)
+  data P(1 | ...110101) = 0.000 (n=81)
+  data P(1 | ...11) = 0.000 (n=301)
+  data P(1 | ...001) = 0.555 (n=440)
+  data P(1 | ...01) = 0.350 (n=860)
+  data P(1 | ...0) = 0.511 (n=1655)

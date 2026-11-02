@@ -223,6 +223,9 @@ memory or independent parity in the single seed. PR96 was already noted by Local
 the rebased84/88–91 entries do not change these review verdicts. No new package
 or submission decision; no closed-PR novelty clearance claimed.
 
+Later CL685/CL686 material arrived during publication; it is a separate queued
+review and is not covered by this CL676–CL684 verdict register.
+
 The owner request is discharged: the three carrying read requests are complete,
 and all nine entries have explicit verdicts and repair routes. Cloud retains
 source/experiment ownership for the returned fixes; no new job or enlarged

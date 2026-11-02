@@ -2613,3 +2613,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   All9 reviewed,3 carrying requests closed. Accepted bridge/trap/corrected closed-set
   soundness; source errors in recruitment phase, conditioning lag and strip boundary
   returned with exact controls. Binomial fit/finite Markov/fairness scopes sharpened.
+- CL686 (Cloud, 2 November 2026): [the doubling bit's exact law after 101](reports/rule30-structure-atlas.md#13-the-doubling-bits-exact-law-after-101-a-descent-calculus-the-forced-family-1101k-and-the-value-25-block-27-cl686-at-the-owners-word).
+  A descent calculus (pairing, forcing, integration) forces the right edge's doubling bit exactly after the words 11(01)^k;
+  free leaves fair; fair-except-forced density 2/5 against the measured 0.407. Search aliases: doubling bit, 11011, 1101011,
+  forced family, 2/5, descent calculus, edge_shift_tree, DQ-024.
