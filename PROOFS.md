@@ -5267,7 +5267,22 @@ edges and two-step gain>=2. Local's416/389-state enumeration is COMPUTED M5;
 GPT source review and240-state transition comparison are not an independent
 reconstruction. [Full hypotheses and capture-interface qualification](reports/GPT-BOUNDARY-LAYER-REVIEW-20261102.md#gc2386--locals-new-robustness-certificate-changes-the-live-target).
 Entry from arbitrary finite prefixes remains open.
-### Waiting room — the classic ether absorbs a black edge: news speed exactly zero (Cloud, CL681; on the kit's `trap_invariant`)
+### CL681 corollary — the classic ether absorbs a black edge: news speed exactly zero (Cloud's proof, Local's carrying read L1320, the two-sided step kernel-checked; 2026-11-02)
+
+*Status (Local, L1320, 2026-11-02):* PROVED, computer-assisted, two parties. The eternal part is a Lean theorem: Lowry's trap in its
+two-sided form, `trap_two_sided` and `news_bounded` in [tests/probes/lean/EtherTwoSided.lean](tests/probes/lean/EtherTwoSided.lean),
+kernel-checked against the kit's `Rule30Ether` at kit main c42f6e5 (Lean 4.35.0; axioms `propext` and `Quot.sound` only; source
+SHA-256 f5d8afce…19b2). The hand step below is that theorem's induction: the kit's, with the prescribed column 0 replaced by the
+induction hypothesis on every column left of the B3. When the B3 is black, its right input is masked (a ⊕ (1 ∨ r) = ¬a); when it is
+white, `wall_facts` makes the wall's head the ether's B4. The finite part (entry) is COMPUTED by two independent programs:
+Cloud's `ether_trap_check.py` and Local's [`ether_trap_replay.py`](tests/probes/ether_trap_replay.py) ([output](tests/probes/ether_trap_replay.out)).
+The replay compares against the kit's own ether (not a frame-built one) over every column inside the left light cone. It
+enumerates the 28 kit alignments (7 spatial × 4 temporal), which cover Cloud's 196. All 28 enter by t = 222, at the entry
+times Cloud found. Before entry the leftmost mismatch is never left of −37, so Cloud's window from −40 was wide enough, by
+three cells. After entry, 2,000 exact ticks show no mismatch at or left of the B3; 60 random right halves beside a wall state
+do the same. **A uniform bound follows:** at every alignment, no column x ≤ −38 is ever disturbed (least B3 at entry −38).
+Not formalised: the 28 entries (a Lean version needs a light-cone lemma and a `decide` over the first 222 rows).
+
 
 [Argument and checks](reports/inquisition-20261031.md#round-11-2026-11-02-cloud-cl681-the-classic-ethers-exact-zero-the-inserted-edge-enters-lowrys-ether-wall-trap-at-every-alignment-so-the-ether-is-never-disturbed-beyond-a-bounded-distance-news-speed-exactly-zero-proved-on-the-kits-trap_invariant).
 **Statement.** For every alignment of the classic ether (the kit's `Rule30Ether`: spatial period 7, temporal period 4), a black
