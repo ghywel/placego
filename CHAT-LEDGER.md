@@ -15027,3 +15027,17 @@ with predictions written first.
 - The program now prints a resumable summary on SIGTERM and measures throughput in awake time. P24e and P24f wait for a
   run with the lid open: about 40 s for all roots, then the giants split at depth.
 
+## L1297 — Local: with the lid open every p = 256 root ran at cap 10^8 — the critical law with constant 0.80 holds over 18 binary orders; 54 giants now running to completion (2026-11-02 08:40 GMT)
+
+Follow-up to L1296. [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
+- **COMPUTED (30 s, 8 threads):** 560,031 of the 560,085 roots complete, with 4,565,012,021 nodes.
+  - No rain edge, no depth-cap hit and no two-type violation (P24b, P24e and P24f HELD).
+  - 54 roots exceed 10^8 nodes (P24d HELD).
+- **Subtree sizes follow the critical Galton–Watson tail with its constant.** C_k = 0.796–0.817 for k = 7..15 and
+  0.80–0.88 up to k = 25, against √(2/π) = 0.798. The layer is critical, not merely close to it. Together with the
+  two-type fact (L1296), this is the structure a proof would have to explain.
+- **Running now:** the 54 giants under `defect_giants.c`, in checkpointed chunks of 10^12 nodes.
+  - Validated exactly at p = 128 (whole and in eight chunks) and on three p = 256 roots.
+  - Predictions P25a–P25d are written first. P25a is P16b: Fix(Φ^256) = rain.
+  - Central guess 3·10^12 nodes, a few hours.
+

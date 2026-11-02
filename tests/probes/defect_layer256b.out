@@ -1,0 +1,90 @@
+# p = 256, 8 threads, per-root cap 10^8, lid open, under run_capped (CPU 3,600 s, wall 900 s, RSS 2,048 MiB): COMPLETED
+# 30.2 s wall, 223 s user CPU, 86 MB maximum RSS. stderr timing line:
+# timing: phase 2 30.0 s wall, 30.0 s awake, 9965012021 nodes, 4.16e+07 nodes per awake second per thread
+p=256 phase 1 (copy of T_128): nodes 1121550 splits 560084 doublings 561466 deaths 0 into_rain 0 longest 2033 roots 560085
+capped root 6358 after 100000000 nodes (deepest so far 28863)
+capped root 26756 after 100000000 nodes (deepest so far 47591)
+capped root 50257 after 100000000 nodes (deepest so far 58482)
+capped root 59623 after 100000000 nodes (deepest so far 36077)
+capped root 76216 after 100000000 nodes (deepest so far 39845)
+capped root 80175 after 100000000 nodes (deepest so far 15693)
+capped root 94177 after 100000000 nodes (deepest so far 46011)
+capped root 102229 after 100000000 nodes (deepest so far 25055)
+capped root 103681 after 100000000 nodes (deepest so far 28059)
+capped root 105847 after 100000000 nodes (deepest so far 68461)
+capped root 121985 after 100000000 nodes (deepest so far 54216)
+capped root 129059 after 100000000 nodes (deepest so far 31132)
+capped root 130746 after 100000000 nodes (deepest so far 38032)
+capped root 142429 after 100000000 nodes (deepest so far 47933)
+capped root 144602 after 100000000 nodes (deepest so far 31629)
+capped root 156535 after 100000000 nodes (deepest so far 26818)
+capped root 191005 after 100000000 nodes (deepest so far 21412)
+capped root 201065 after 100000000 nodes (deepest so far 25290)
+capped root 217599 after 100000000 nodes (deepest so far 42409)
+capped root 220640 after 100000000 nodes (deepest so far 43131)
+capped root 236333 after 100000000 nodes (deepest so far 44928)
+capped root 255589 after 100000000 nodes (deepest so far 33087)
+capped root 262106 after 100000000 nodes (deepest so far 25917)
+capped root 263391 after 100000000 nodes (deepest so far 26859)
+capped root 267688 after 100000000 nodes (deepest so far 18713)
+capped root 275798 after 100000000 nodes (deepest so far 25200)
+capped root 295747 after 100000000 nodes (deepest so far 29727)
+capped root 307274 after 100000000 nodes (deepest so far 21663)
+capped root 317333 after 100000000 nodes (deepest so far 31587)
+capped root 328332 after 100000000 nodes (deepest so far 29664)
+capped root 333917 after 100000000 nodes (deepest so far 22947)
+capped root 344740 after 100000000 nodes (deepest so far 30501)
+capped root 348288 after 100000000 nodes (deepest so far 25090)
+capped root 349570 after 100000000 nodes (deepest so far 26772)
+capped root 352612 after 100000000 nodes (deepest so far 35869)
+capped root 364048 after 100000000 nodes (deepest so far 33716)
+capped root 378769 after 100000000 nodes (deepest so far 21585)
+capped root 389507 after 100000000 nodes (deepest so far 25552)
+capped root 396289 after 100000000 nodes (deepest so far 41190)
+capped root 396994 after 100000000 nodes (deepest so far 22661)
+capped root 403285 after 100000000 nodes (deepest so far 51600)
+capped root 413397 after 100000000 nodes (deepest so far 30434)
+capped root 420591 after 100000000 nodes (deepest so far 35801)
+capped root 422930 after 100000000 nodes (deepest so far 64069)
+capped root 423922 after 100000000 nodes (deepest so far 43724)
+capped root 424440 after 100000000 nodes (deepest so far 35066)
+capped root 436642 after 100000000 nodes (deepest so far 25963)
+capped root 448208 after 100000000 nodes (deepest so far 34373)
+capped root 459791 after 100000000 nodes (deepest so far 24871)
+capped root 479624 after 100000000 nodes (deepest so far 27911)
+capped root 499353 after 100000000 nodes (deepest so far 35956)
+capped root 545629 after 100000000 nodes (deepest so far 31988)
+capped root 552721 after 100000000 nodes (deepest so far 32769)
+capped root 559922 after 100000000 nodes (deepest so far 35529)
+p=256 phase 2: roots run 560085, cap 100000000 nodes per root: completed 560031, capped 54
+completed roots: nodes 4565012021 deaths 2282786026 splits 2282225995 longest (absolute depth) 38077
+all roots: into_rain 0 depth-cap hits 0 two-type violations 0
+tail: k, roots with N >= 2^k, C_k = share * 2^(k/2)
+   0 560085 1.000
+   1 279807 0.707
+   2 140197 0.501
+   3 122572 0.619
+   4 102301 0.731
+   5 76064 0.768
+   6 55143 0.788
+   7 39395 0.796
+   8 28116 0.803
+   9 19956 0.806
+  10 14178 0.810
+  11 9984 0.807
+  12 7079 0.809
+  13 5008 0.809
+  14 3564 0.815
+  15 2527 0.817
+  16 1838 0.840
+  17 1311 0.847
+  18 942 0.861
+  19 675 0.873
+  20 483 0.883
+  21 325 0.840
+  22 226 0.826
+  23 155 0.802
+  24 117 0.856
+  25 85 0.879
+  26 66 0.965
+largest subtrees (root, nodes, capped, deepest): (267688, 100000000, 1, 18713) (499353, 100000000, 1, 35956) (552721, 100000000, 1, 32769) (103681, 100000000, 1, 28059) (344740, 100000000, 1, 30501) (413397, 100000000, 1, 30434) (349570, 100000000, 1, 26772) (307274, 100000000, 1, 21663) (352612, 100000000, 1, 35869) (378769, 100000000, 1, 21585) (420591, 100000000, 1, 35801) (59623, 100000000, 1, 36077)

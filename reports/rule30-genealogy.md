@@ -3350,7 +3350,7 @@ Predictions:
   - At p = 256 only the cap point is measured: 43 roots over 10^8 among about 443,500 dispatched, so C(10^8) ≈ 0.97.
 - **P24d HELD on the part run.** 43 capped roots among about 79% of the roots projects to about 54, inside 15 to 120.
   The capped roots are listed in the output, and each certainly has more than 10^8 nodes (COMPUTED).
-- **P24e and P24f untested.** The summary was lost at the stop. The program now catches run_capped's SIGTERM, prints
+- **P24e and P24f untested here; both HELD in the rerun of §29.13.** The summary was lost at the stop. The program now catches run_capped's SIGTERM, prints
   the summary for completed roots and names the roots to resume. Tested by a stop after 3 s.
 - Throughput: 6.0·10^7 nodes per awake second on one thread, and at least 3.7·10^7 per thread on eight.
 
@@ -3376,3 +3376,55 @@ Predictions:
      prove criticality, which is the model's one assumption.
 3. **Lean.** The layer decomposition and the two-type fact are short and exact, so they are good first targets in
    the formalisation route of §29.5.
+
+### 29.13 T25: every root at cap 10^8, then the 54 giants to completion (L1297; predictions written before the giant run)
+
+With the lid open, all 560,085 roots of §29.12 were rerun at a per-root cap of 10^8, on 8 threads under
+`run_capped.py` with the caps stated in §29.12. The run COMPLETED in 30.2 s wall (223 s CPU, 86 MB maximum RSS).
+Output: [`defect_layer256b.out`](../tests/probes/defect_layer256b.out). The capped roots are listed in
+[`defect_layer256_giants.txt`](../tests/probes/defect_layer256_giants.txt).
+
+**Results for the predictions of §29.12 (COMPUTED).**
+- 560,031 roots completed and 54 hit the cap.
+- **P24b HELD**: no split node violates the two-type identity.
+- **P24d HELD**: 54 capped roots, inside the predicted 15 to 120.
+- **P24e HELD**: no completed subtree enters the rain or reaches the depth cap. The deepest completed node is at
+  absolute depth 38,077.
+- **P24f HELD**: the completed subtrees hold 4,565,012,021 nodes (2,282,786,026 deaths and 2,282,225,995 splits), inside
+  3·10^9 to 3·10^10. Deaths minus splits is 560,031, one per completed root, as the tree identity requires.
+- **P24c HELD, and sharply.** C_k (the share of roots with N ≥ 2^k, times 2^(k/2)) is 0.796, 0.803, 0.806, 0.810,
+  0.807, 0.809, 0.809, 0.815 and 0.817 for k = 7..15. It then drifts between 0.80 and 0.88 for k = 16..25, where 85
+  to 1,838 roots remain. The 0-or-2 critical model predicts √(2/π) = 0.798.
+  - So over 18 binary orders of magnitude the subtree sizes follow the critical Galton–Watson law, including its
+    constant. The process is critical, not just near it.
+
+**T25: the giants.** [`defect_giants.c`](../tests/probes/defect_giants.c) runs the subtrees of a list of roots, sharing
+work across threads. At the end of a chunk it writes every pending node, with the running totals, to a checkpoint,
+and the next chunk resumes from there.
+- Validation (COMPUTED):
+  - The 1,342 roots of T_128's layer, run whole and run in eight chunks of about 10^5 nodes, give 1,118,828 nodes,
+    560,085 deaths, 558,743 splits and longest path 2,033, exactly.
+  - Three p = 256 roots, run in four chunks, give 45,243,961, 16,032,647 and 10,309,883 nodes and depth 16,418, as
+    the per-root run does.
+
+Predictions, written before the giant run. They use the measured tail: about 4.54·10^5·n^(−1/2) roots with at least
+n nodes.
+- **P25a (= P16b):** all 54 giant subtrees are finite, and none enters the rain. Then T_256 is finite with no rain
+  edge, so Fix(Φ^256) = {−1/3, −2/3}, and the light-speed recurrence conjecture is machine-checked for every period
+  dividing 256 (lean 95%).
+- **P25b:** the largest giant has between 4·10^10 and 2·10^13 nodes. That is the 80% range of the maximum under the
+  tail law, with median 4·10^11.
+  - The giants together hold 1.5 to 3 times the largest.
+  - My central guess is 3·10^12. The stopped 2-hour run (§29.12) suggests at least 10^12.
+- **P25c:** the longest path is about 3.5·√(largest giant), within a factor of 2. The ratio is 2.9 at p = 128 and
+  about 3.8 among the completed p = 256 roots.
+- **P25d:** no two-type violation.
+- Counterfactual: a rain edge, or a giant that grows without end (more than about 10^14 nodes, or a path deeper than
+  10^8), would be a candidate non-rain periodic point of period 256. Its path would be extracted and Φ^256 tested on
+  the 2-adic word it defines.
+- **Caps per chunk, stated before the run:**
+  - Budget: 10^12 nodes per chunk, about 50 minutes at the measured 3.3·10^8 nodes per second.
+  - `run_capped.py`: CPU 32,000 s, wall 4,000 s, RSS 4,096 MiB, file 2,048 MiB (the checkpoint), disk 64 MiB,
+    minimum free memory 4,096 MiB, swap growth 256 MiB.
+  - Run under `caffeinate -i`. The lid state and the thermal log are checked between chunks.
+  - At most 12 chunks (about 10 hours) without a new word from the owner.
