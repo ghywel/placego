@@ -5370,3 +5370,55 @@ exactly):
   the clean tail. The prefix's chaos never catches up with the front, even though its light cone does: that is
   decoupling (T40, T41) at the scale of the whole prefix. A proof of capture would then need only the front's local
   entry into S_E plus a bound on what the prefix can do to it, not the whole of the prefix's evolution.
+
+### 46.4 Results, part 2: capture is timed by the front's own clock ([output](../tests/probes/own_wake_fuel.out))
+
+Part 1's lines recur exactly, as they must, since there are no new random draws.
+
+| | K = 20 | 40 | 80 | 160 | 320 |
+|---|---|---|---|---|---|
+| P1024, capture tick from t = 0: median / max | 73 / 247 | 80 / 295 | 71 / 297 | 74 / 264 | 79 / 264 |
+| P1024, R − K at capture: median / max | 82 / 269 | 89 / 316 | 82 / 325 | 83 / 279 | 89 / 310 |
+| P1024, early drawdown: median / max | 3 / 10 | 3 / 10 | 3 / 10 | 3 / 11 | 3 / 11 |
+| 480, capture tick from t = 0: median / max | 102 / 493 | 94 / 471 | 102 / 343 | 99 / 420 | 101 / 377 |
+| 480, R − K at capture: median / max | 134 / 576 | 127 / 529 | 135 / 406 | 119 / 459 | 134 / 421 |
+| 480, early drawdown: median / max | 3 / 6 | 3 / 10 | 3 / 8 | 3 / 7 | 3 / 8 |
+
+- **F6 HELD, and more strongly than predicted.** The capture tick's distribution does not depend on K at all. The medians
+  are 71 to 80 for P1024 and 94 to 102 for 480, from K = 20 to K = 320. A prefix sixteen times longer neither delays nor
+  hastens capture.
+- **F7 HELD.** Capture comes within 325 cells (P1024) and 576 cells (480) of the prefix's end, with medians of about 85
+  and 130.
+- **F8 HELD.** The fall below the running maximum before capture is at most 11 at every K, with a median of 3.
+
+**What T43 teaches.**
+- For typical prefixes, **capture is a front-local event.** The front starts at the prefix's deepest mismatch, a few
+  cells above its end. It runs into the clean tail, and its window joins the locked clean orbit (U) within about 75–100
+  ticks, at most about 500.
+- **The light cone, accounted for (Local's correction, written before this section was pushed).** A prefix cell n cells
+  above the front's start reaches the front's depth only after about n/(2 − v) ticks, with v the front speed. That is
+  1.45n ticks for P1024 and 3n for 480.
+  - By P1024's median capture tick (about 75), only the bottom ~52 prefix cells can have influenced the front; by its
+    largest (297), the bottom ~205. For 480 these are ~33 and ~163 cells.
+  - So at K ≥ 160 most of the prefix is causally cut off at capture, and K-independence there is a light-cone fact, not
+    decoupling.
+  - The informative cases are K = 20 and 40. There the whole prefix, and the edge above it, lie inside the light cone
+    before capture, and the capture times are the same.
+  - What T43 shows is therefore narrower than "the chaos never catches up". Capture happens within a bounded time,
+    hence it depends on a bounded bottom part of the prefix, and a short prefix with the edge close behind does not
+    slow it.
+- **The own wake is not fuel**, in the measured sense. After capture the front falls at most S_E's own constant (1, or
+  0), and before capture it falls at most 11, whatever K is.
+- **Where this leaves capture.**
+  - The certificate shape is front-local, but C1 (§45) showed that a window over-approximation cannot see it. Arbitrary
+    content behind the window gives arbitrary fuel.
+  - The real content behind the front has history: it is the prefix's evolution plus the front's own wake. The capture
+    times bound how much of it can matter: at most the bottom (2 − v) × (capture time) cells of the prefix.
+  - So the next certificate must model the hidden inputs as a dynamical system with history, not as adversarial bits.
+    This is GPT's temporal-compatibility condition (GC2387), and route C3's characterisation of deep-retreat windows
+    belongs to it.
+  - A concrete test of locality comes first. Is the capture tick determined by the prefix's bottom L cells alone (the
+    upper K − L cells re-randomised), and for which L? A small L would make capture a finite question over (alignment,
+    L cells).
+- **Not shown.** These are random prefixes. A prefix built to carry fuel (T38's prepared regions) may delay capture in
+  proportion to its size. The hovering case of §46.1 is untouched.

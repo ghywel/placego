@@ -10,6 +10,8 @@ Per run, until 2,000 ticks after R first reaches 3K (cap 6K + 2,400 ticks):
   --export; bit j-1 of the window = D_(R-j)); after capture every tick's state must stay in S_E (a soundness alarm if not),
   and the fall below the running maximum since capture is recorded;
 - the drawdown after passing 3K split at capture.
+Part 2 (section 46.3): the capture tick from t = 0, R - K at capture, and the early drawdown (the largest fall below the
+running maximum before capture); no new random draws, so part 1's lines recur exactly.
 """
 import os
 import random
@@ -48,7 +50,7 @@ rng = random.Random(43)
 for K in Ks:
     Tcap = 6 * K + 2400; depth = 2 * Tcap + K + 16; mask = (1 << depth) - 1
     dd = {2: [], 3: []}; ddat = []; notpass = {2: 0, 3: 0}; capd = []; precap = []; postcap = []; exits = 0; uncapt = 0
-    before = 0; speeds = []
+    before = 0; speeds = []; ctick = []; cdepth = []; early = []
     for it in range(N):
         if name == 'P1024':
             th = rng.randrange(p)
@@ -69,6 +71,7 @@ for K in Ks:
                 return ((R + a) % NC) * p + (t + q) % p
         x = rng.getrandbits(K) | (erow(0) >> K << K)
         best = -2; passed = {2: None, 3: None}; ddc = {2: 0, 3: 0}; capt = None; best_c = None; post = 0; pre = 0; at = 0
+        ear = 0
         t = 0
         while t <= Tcap:
             d = (x ^ erow(t)) & mask
@@ -85,13 +88,15 @@ for K in Ks:
             if R >= 12:
                 st = (cls(R, t), rev[(d >> (R - W)) & ((1 << W) - 1)])
                 if capt is None and st in SE:
-                    capt = t; best_c = R
+                    capt = t; best_c = R; ctick.append(t); cdepth.append(R - K)
                 elif capt is not None:
                     if st not in SE:
                         exits += 1
                     best_c = max(best_c, R); post = max(post, best_c - R)
             if passed[3] is not None and capt is None:
                 pre = max(pre, best - R)
+            if capt is None and best >= 0:
+                ear = max(ear, best - R)
             if passed[3] is not None and t >= passed[3][0] + H:
                 break
             x = (x ^ ((x << 1) | (x << 2) | 3)) & mask
@@ -104,6 +109,7 @@ for K in Ks:
         if passed[3] is not None:
             ddat.append(at); precap.append(pre)
             speeds.append((R - passed[3][1]) / max(1, t - passed[3][0]))
+        early.append(ear)
         if capt is None:
             uncapt += 1
         else:
@@ -127,4 +133,9 @@ for K in Ks:
           'capture): max %s; post-capture ticks outside S_E %d (alarm if > 0); late speed min %.4f' % (
               max(precap) if precap else None, max(postcap) if postcap else None, exits, min(speeds) if speeds else -1),
           flush=True)
+    if ctick:      # L1321 T43 part 2 (section 46.3): capture timed from the start
+        print('   part 2: capture tick from t = 0: median %d, 99%% %d, max %d; R - K at capture: median %d, max %d; '
+              'early drawdown (before capture): median %d, 99%% %d, max %d' % (
+                  pct(ctick, 0.5), pct(ctick, 0.99), max(ctick), pct(cdepth, 0.5), max(cdepth), pct(early, 0.5),
+                  pct(early, 0.99), max(early)), flush=True)
 print('OWN_WAKE_FUEL_DONE')

@@ -2514,3 +2514,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   `trap_two_sided`, `news_bounded` (tests/probes/lean/EtherTwoSided.lean, kit c42f6e5); entry replayed at all 28 kit alignments;
   no column left of -37 is ever disturbed. Search aliases: ether-wall trap, two-sided trap, classic ether, exact zero,
   ether_trap_replay, Lowry, news speed.
+- L1321 (Local, 2 November 2026): [T43, the own wake is not fuel; capture on the front's own clock](reports/rule30-genealogy.md#46-is-an-advancing-fronts-own-wake-fuel-t43-l1321).
+  Late drawdown bounded and falling with K; capture tick independent of K (light cone accounted for); 480's 960 alignments
+  share one 288-state clean orbit, closure the certified 416. Search aliases: own wake, fuel, late drawdown, capture time,
+  own_wake_fuel, all-alignment 480, phase locking, one orbit.
