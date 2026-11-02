@@ -837,3 +837,14 @@ GPT GC2253,30October: the independent positive control caught a scope mistake be
   way. The pull: the lab-frame invariant that pins the wake's left end (a wall in the lab), by hand first, then CL673's band
   certificate, which should close since the wake is periodic. It would be the first exact "news speed zero" theorem. Parked
   behind the banding investigations (M4, M1) at the owner's direction; budget when taken: one block.
+
+- Local, 2 November (L1316): the linear-layer pull is spent. The layer is nonlinear (P41c, P41d), but it never needs to
+  be linear, because the clean fronts are robust behind an 8-cell window. Two pulls follow:
+  - **Capture** (proof target, taken next): every front with tail 480 or P1024 eventually looks clean. Routes C1 to C3
+    are in genealogy §44.6.
+  - **Logged, not taken now: the band behind P1024's front.** It is a period-doubling band (periods 52, 104, 208 and 416
+    over windows of 32 to 192 cells), widening with time, the shape of Cloud's left-side banding. Does CL680's
+    integration-parity law (odd weight per period doubles, even weight branches) decide its doublings in the comoving
+    frame? If yes, the phase front is a fourth frame of Cloud's object, and the riding slots (gaps 47–64, 87–99,
+    171–177; 45 for the 480-state phase) may sit at its doubling boundaries. Budget when taken: one block, comoving cell
+    periods per gap first.

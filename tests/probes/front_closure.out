@@ -1,0 +1,62 @@
+# L1316 T41 part 2 (Local, 2026-11-02): front_closure.py. Runs under run_capped (nice 10; CPU 1,200 s, wall 1,200 s, RSS 3,072 MiB), all COMPLETED; the G8 control run directly (nice 10, timeout 900 s).
+
+## python3 tests/probes/front_closure.py G8 5 --control=50
+G8 W=5: clean states 8; forward closure 10 states, 12 edges, FAIL edges 0, advances [0, 2]
+   least advance over paths of length k: [(2, 2)]
+   ROBUST: no FAIL edge in the closure and every path of length 2 advances
+   control: 50 random wakes behind the window, 150000 exact ticks: states outside the closure 0, 2-tick stretches without advance in 0 runs
+
+## python3 tests/probes/front_closure.py 480 8 12 16 24
+480 W=8: clean states 288; forward closure 416 states, 512 edges, FAIL edges 0, advances [0, 2]
+   least advance over paths of length k: [(2, 2)]
+   ROBUST: no FAIL edge in the closure and every path of length 2 advances
+480 W=12: clean states 288; forward closure 576 states, 688 edges, FAIL edges 0, advances [0, 2]
+   least advance over paths of length k: [(2, 2)]
+   ROBUST: no FAIL edge in the closure and every path of length 2 advances
+480 W=16: clean states 288; forward closure 352 states, 400 edges, FAIL edges 0, advances [0, 2]
+   least advance over paths of length k: [(2, 2)]
+   ROBUST: no FAIL edge in the closure and every path of length 2 advances
+480 W=24: clean states 288; forward closure 560 states, 640 edges, FAIL edges 0, advances [0, 2]
+   least advance over paths of length k: [(2, 2)]
+   ROBUST: no FAIL edge in the closure and every path of length 2 advances
+
+## python3 tests/probes/front_closure.py P1024 8 12 16 24
+P1024 W=8: clean states 52; forward closure 389 states, 520 edges, FAIL edges 0, advances [-1, 0, 1, 2]
+   least advance over paths of length k: [(3, 1)]
+   ROBUST: no FAIL edge in the closure and every path of length 3 advances
+P1024 W=12: clean states 52; forward closure 391 states, 529 edges, FAIL edges 0, advances [-1, 0, 1, 2]
+   least advance over paths of length k: [(3, 1)]
+   ROBUST: no FAIL edge in the closure and every path of length 3 advances
+P1024 W=16: clean states 52; forward closure 342 states, 464 edges, FAIL edges 0, advances [-1, 0, 1, 2]
+   least advance over paths of length k: [(3, 1)]
+   ROBUST: no FAIL edge in the closure and every path of length 3 advances
+P1024 W=24: clean states 52; forward closure 503 states, 675 edges, FAIL edges 0, advances [-1, 0, 1, 2]
+   least advance over paths of length k: [(3, 1)]
+   ROBUST: no FAIL edge in the closure and every path of length 3 advances
+
+## python3 tests/probes/front_closure.py 480 8 16 --control=100
+480 W=8: clean states 288; forward closure 416 states, 512 edges, FAIL edges 0, advances [0, 2]
+   least advance over paths of length k: [(2, 2)]
+   ROBUST: no FAIL edge in the closure and every path of length 2 advances
+   control: 100 random wakes behind the window, 300000 exact ticks: states outside the closure 0, 2-tick stretches without advance in 0 runs
+480 W=16: clean states 288; forward closure 352 states, 400 edges, FAIL edges 0, advances [0, 2]
+   least advance over paths of length k: [(2, 2)]
+   ROBUST: no FAIL edge in the closure and every path of length 2 advances
+   control: 100 random wakes behind the window, 300000 exact ticks: states outside the closure 0, 2-tick stretches without advance in 0 runs
+
+## python3 tests/probes/front_closure.py P1024 8 16 --control=100
+P1024 W=8: clean states 52; forward closure 389 states, 520 edges, FAIL edges 0, advances [-1, 0, 1, 2]
+   least advance over paths of length k: [(3, 1)]
+   ROBUST: no FAIL edge in the closure and every path of length 3 advances
+   control: 100 random wakes behind the window, 300000 exact ticks: states outside the closure 0, 3-tick stretches without advance in 0 runs
+P1024 W=16: clean states 52; forward closure 342 states, 464 edges, FAIL edges 0, advances [-1, 0, 1, 2]
+   least advance over paths of length k: [(3, 1)]
+   ROBUST: no FAIL edge in the closure and every path of length 3 advances
+   control: 100 random wakes behind the window, 300000 exact ticks: states outside the closure 0, 3-tick stretches without advance in 0 runs
+
+## python3 tests/probes/front_closure.py G16 8 12 16
+G16 W=8: clean states 499; forward closure 375952 states, 809728 edges, FAIL edges 64, advances [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2]
+   least advance over paths of length k: [(10, -30), (25, -54), (50, -83), (100, -138), (200, -254), (300, -368), (600, -713)]
+   NOT ROBUST (FAIL edges in the closure)
+G16 W=12: clean states 513; forward closure 3000000 states (CAPPED at 3000000: closure incomplete), 5952997 edges, FAIL edges 0, advances [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2]
+G16 W=16: clean states 513; forward closure 3000000 states (CAPPED at 3000000: closure incomplete), 5654831 edges, FAIL edges 0, advances [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2]
