@@ -5913,3 +5913,10 @@ Record searched: §52 (A, B, the guard), §45 (bad core), T45 (reading depth); e
 behind the front decide it, typically while the front stalls (0) or steps back by one. Those two cells' values are where
 actual history enters the capture event. For GPT's compatibility condition, the question is whether the pair beyond the
 window can be held, tick after tick, at values that keep v in B. That is the whole question of the bad core.
+
+### 53.3 Logged depths (L1337), predictions written before the run (`funnel_attractor.py --guard --depths`)
+
+GC2403/GC2404 asked that actual entry depths and the minimum depth to capture be logged, not inferred. Same 200 rows (Random(48)).
+- **D1.** The least depth at first entry into A is ≥ 60 (the front starts near K − 1 = 79, and the early drawdown is ≤ 11).
+  Lean 85%.
+- **D2.** The least depth between entry into A and capture is ≥ 60 as well, far above the guard of 16 (or 18). Lean 85%.

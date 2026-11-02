@@ -101,7 +101,7 @@ T = 6 * K + 2400; depth = 2 * T + K + 16; mask = (1 << depth) - 1
 bits = [(col0 >> i) & 1 for i in range(p)]
 base = [int(''.join(str(bits[(k + 195 * n) % p]) for n in range(depth))[::-1], 2) for k in range(p)]
 rev = [int(format(v, '0%db' % W)[::-1], 2) for v in range(1 << W)]
-guard_rows = []; exit_rows = []
+guard_rows = []; exit_rows = []; entry_R = []; minR_after = []
 Bset = ~(SE | A)
 def prev_unk(d, R):
     return ((d >> (R - W - 1)) & 1) | (((d >> (R - W - 2)) & 1) << 1)
@@ -127,6 +127,9 @@ for it in range(N):
                     first = (t, int(rank[v]))
                     if GUARD:
                         guard_rows.append((R, int(need_R[v])))
+                    entry_R.append(R); minR_after.append(R)
+            if first is not None:
+                minR_after[-1] = min(minR_after[-1], R)
         x = (x ^ ((x << 1) | (x << 2) | 3)) & mask
     if capt is None:
         uncapt += 1; continue
@@ -164,4 +167,7 @@ if EXITS:
 if GUARD:
     print('   real entries into A: %d; satisfying the depth guard of their state: %d; least margin (R - required) %d' % (
         len(guard_rows), sum(1 for R_, q in guard_rows if R_ >= q), min(R_ - q for R_, q in guard_rows)), flush=True)
+if '--depths' in sys.argv:
+    print('   logged depths: first entry into A at depth min %d, median %d; least depth from that entry to capture: min %d, median %d' % (
+        min(entry_R), sorted(entry_R)[len(entry_R) // 2], min(minR_after), sorted(minR_after)[len(minR_after) // 2]), flush=True)
 print('FUNNEL_ATTRACTOR_DONE')
