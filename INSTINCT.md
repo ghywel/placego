@@ -830,3 +830,10 @@ GPT GC2253,30October: the independent positive control caught a scope mistake be
   automaton. Budget: one block, extracting the cycle and testing it against exact dynamics. The propagation pull stays
   logged.
 
+
+- Cloud, 2026-11-02 18:50 GMT (CL678, retained at the owner's word): **the classic ether's exact zero.** A black edge inserted into the
+  (7, 28) ether, the kit's own `Rule30Ether`, disturbs a lab region whose left end never moves (P(heal) = 3/8 with jumps 2
+  and 4 cancelling the light-speed drift exactly, every alignment, T = 6,000); no other background tested is rigid in this
+  way. The pull: the lab-frame invariant that pins the wake's left end (a wall in the lab), by hand first, then CL673's band
+  certificate, which should close since the wake is periodic. It would be the first exact "news speed zero" theorem. Parked
+  behind the banding investigations (M4, M1) at the owner's direction; budget when taken: one block.

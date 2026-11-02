@@ -242,3 +242,46 @@ The census of the record's coins, with this result:
 So every coin in the record that is a parity is fair except the doubling bit, and the doubling bit is the one with a
 named constraint. T3's prediction survives its first test, and M5's next step is CL642's open hand question: the exact
 law of the doubling bit after the letters 101, which is where the constraint lives.
+
+## 9. The banding investigations: M4 and M1 (Blocks 21 and 22, at the owner's word, 2 November 2026)
+
+### 9.1 M4, the news frame as a renewal process (`band_edge.py`, `front_markov.py`)
+
+Predictions written first (Block 21): P-K1 the single seed's band edge B(t) (8.74's exact curve, computed on the autonomous
+left-frame system to t = 2^16 with lag 2^10) has the same step distribution as the fair-row damage front's jumps of the
+diagonal index (Block 19) within 0.03 per bin (lean 55%); P-K2 the mask lemma as a control (the front advances iff the cell
+ahead is white); P-K3 the jumps are nearly independent (lean 55%); P-K4 the bias "white ahead 59.5% of the time" comes from
+the heals, not the advances (lean 60%).
+
+Result (COMPUTED):
+
+| step or jump | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | mean | P(move ∣ previous move) | P(move ∣ previous none) |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| the band edge of the single seed, steps of B(t), t ∈ [2^14, 2^16] | 0.592 | 0.148 | 0.217 | 0.022 | 0.010 | 0.009 | 0.0014 | 0.0004 | 0.747 | 0.267 | 0.506 |
+| the fair-row front, jumps of k_min, five rows, 45,005 steps | 0.591 | 0.145 | 0.219 | 0.023 | 0.011 | 0.009 | 0.0018 | 0.0005 | 0.758 | 0.265 | 0.509 |
+
+**P-K1 HELD, far inside its tolerance: the two distributions agree within 0.004 in every bin, and so do their one-step
+memories.** The single seed's boundary of order is, statistically, the damage front of a fair row: not only its speed (8.30,
+8.74) but its whole step law and its Markov signature. This is T1's strongest evidence so far, for the one observable the
+core shows the left side. (8.74's x/t = −0.2520 at 2^16 and the mean step 0.747 ↔ speed 0.253 agree with that section.)
+
+**P-K2 HELD exactly** (45,000 steps: advance iff the cell ahead is white; the two exceptions in ten thousand are the four
+junctions where one row's record meets the next, an artefact of concatenation). **P-K3 REFUTED**: the jumps have a strong
+one-step memory, P(heal ∣ previous heal) = 0.265 against P(heal ∣ previous advance) = 0.509 (lag-1 autocorrelation −0.21 in the
+band's steps); a two-state chain with these two numbers has stationary P(heal) = 0.409, the measured value. **P-K4 REFUTED in
+its direction**: the bias is after the *advances*: P(white ahead ∣ previous advance) = 0.647, P(white ahead ∣ previous heal) =
+0.510, while the cells two and three ahead are fair (0.495, 0.499): after the front steps into a white cell, the next two cells
+ahead agree with each other 65% of the time. The jump size given a heal is nearly a deterministic function of the four
+damaged cells at the front (patterns 0010, 0011, 1000, 1100 → jump 1; 0111, 1101 → 2; 0110, 1001 → 3, each within 0.02).
+
+What M4 now is: **a finite object with one measured input.** The front's law is a Markov chain on (previous step type, the
+four damaged cells, the cell ahead) with the mask lemma as its advance rule and a near-deterministic jump table; its one
+non-trivial input is the stationary law of the cells ahead of a front that has just advanced (0.647 agreement where a fair
+row would give 0.5), which is where the selection by the front's own history lives. A closed form for 0.246 is a closed form
+for that one number. That is a hand question of the kind GPT and Local take: the stationary measure of a two-step-memory chain
+driven by the mask lemma on a surjective CA's invariant uniform row (the unperturbed row is uniform at every time; the
+conditioning on the front's position is what biases it).
+
+### 9.2 M1, the left side's doubling law as a coincidence of consecutive diagonals (`band_coincidence.py`)
+
+*(Running at the time of this commit; the result follows in the ledger and here.)*

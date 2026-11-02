@@ -15938,3 +15938,44 @@ atK24; four live arrays exceed the stage/host budgets before temporaries. No wid
 run launched. Batch independent prefixes, preserve exact coverage/extrema/witnesses,
 and compare against K8 before a CPU/GPU pilot. More threads alone do not solve this.
 Certification/benchmark task complete; full evidence shared; schedules paused.
+
+## CL679 — Cloud to the owner: the banding investigations, first half. M4: the single seed's boundary of order is the fair-row damage front, step law within 0.004 per bin and the same one-step memory; the front's law is a finite Markov object with one measured input, the white-ahead bias after advances (0.647). M1 running; the ether's exact zero retained in INSTINCT.md (2026-11-02 19:07 GMT)
+
+At the owner's word ("continue with the atlas's order ... retain the ether's exact zero ... the general banding
+investigations first"). Predictions Blocks 21 and 22 written first; results in [atlas §9](reports/rule30-structure-atlas.md#9-the-banding-investigations-m4-and-m1-blocks-21-and-22-at-the-owners-word-2-november-2026);
+probes `band_edge.py`, `front_markov.py` (and `band_coincidence.py`, running) with outputs. The ether zero is in
+INSTINCT.md with its budget.
+
+**M4 (COMPUTED).** The single seed's band edge B(t) (8.74's exact curve, recomputed on the autonomous left-frame system
+to t = 2^16, lag 2^10) and the fair-row damage front (single flip, five rows, 45,005 steps) have the same step law:
+0.592/0.591, 0.148/0.145, 0.217/0.219, 0.022/0.023, 0.010/0.011, 0.009/0.009 for steps 0..5, means 0.747 and 0.758,
+and the same one-step memory, P(move | previous move) = 0.267/0.265 against P(move | previous none) = 0.506/0.509.
+**P-K1 HELD far inside its tolerance**: the boundary of order on the single seed is, statistically, the damage front
+of a fair row, in its whole step law and memory, not only its speed. P-K2 (the mask lemma: advance iff the cell ahead
+is white) HELD exactly over 45,000 steps. **P-K3 REFUTED**: the jumps are a Markov chain, not independent (after a
+heal the next heal is half as likely; the two conditional numbers give the stationary P(heal) = 0.409 exactly).
+**P-K4 REFUTED in its direction**: the white-ahead bias (0.591 against 0.5) sits after the *advances* (0.647), not the
+heals (0.510), while the cells two and three ahead are fair; and the jump given a heal is a near-deterministic
+function of the four damaged cells (patterns 0010, 0011, 1000, 1100 give 1; 0111, 1101 give 2; 0110, 1001 give 3).
+So M4 is now a finite object: a Markov chain on (previous step, the four damaged cells, the cell ahead) with the mask
+lemma as its advance rule and a jump table, whose one non-trivial input is the stationary law of the cells ahead of a
+front that has just advanced. A closed form for 0.246 is a closed form for that one number: a hand question for GPT
+or Local (the unperturbed row is uniform at every time, since Rule 30 is surjective; the bias is the selection by the
+front's own history).
+
+**M1 (hand, before the run).** From the left-frame rule L_e(t+1) = L_(e−2)(t) XOR (L_(e−1)(t) OR L_e(t)): diagonal e
+is eventually white iff the two above it eventually coincide, and then L_(e+1) is the running XOR of L_(e−1), so the
+period doubles at e+1 iff L_(e−1) has odd weight per period, else a free constant (a branch). This is Rowland's §5 and
+8.27/8.31 (known), and the parity is the same integration parity as the right edge's doubling bit (kit `e_step`) and
+the defect tree's type (L1296): **one object in three frames**, which the atlas's T2 and T3 predicted. The heuristic
+law (CONJECTURE, new here): coincidences of consecutive P-periodic words at rate about 2^(−P) per diagonal; the record's
+seven events (2, 7, 28, 399 doublings; 53,207, 58,286 branches; 87,866 doubling) have gaps 1.25, 1.31, 1.45 × 2^P for
+periods 2, 4, 8 and a mean 0.44 × 2^16 at period 16. The census to depth 10^6 tests whether consecutive band words are
+binomially far apart (then the next doubling is expected near 87,866 + 2^32) or carry a constraint; its result follows
+in the next entry.
+
+Failed predictions (G13): P-K3, P-K4's direction. No unguarded mistake in this block; the first census run was
+stopped for speed (big-integer bit extraction rewritten in numpy, with a checkpoint of the settled rows).
+READ-LEDGER to both workers.
+
+My own pull: unchanged, the classic ether's exact zero (INSTINCT.md), behind M1 by the owner's order.

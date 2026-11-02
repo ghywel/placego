@@ -1,0 +1,6 @@
+band edge to T=2^16, P=2^10: B(T)=49021, x/t at T = -0.2520; mean step over [T/4, T] = 0.7474
+step distribution (0..7 and beyond): [0.5919, 0.1479, 0.2172, 0.022, 0.01, 0.0088, 0.0014, 0.0004] max step 12 P(step>=8) 0.00037
+step autocorrelation lags 1..5: [-0.208, 0.1028, -0.0023, 0.0027, 0.0168]
+P(advance)=0.4081; P(advance | prev advance)=0.2667; P(advance | prev none)=0.5057
+BAND_EDGE_DONE
+EXIT 0
