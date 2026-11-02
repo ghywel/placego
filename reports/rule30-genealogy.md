@@ -5454,3 +5454,26 @@ successor function of §44, independent of GPT's literal reconstruction):
   question for one of them.
 - **The same test on 480 (new, Lean 60%).** Its advances are 0 or 2, and I expect the same determinism: one cycle of
   288 classes with total advance 480. That would be an exact clock of speed 5/3 for the second phase.
+
+### 47.2 Results ([output](../tests/probes/front_closure.out), last section)
+
+- **K1–K4 HELD, exactly.** Local's generator gives the same 52 classes, the same deterministic projection, one cycle
+  of total advance 68, the same advance word (least period 52), potential range 55, the same four singleton fibres
+  with longest wait 47, and (882, 0) as the only window-0 state. Two independent generators agree on every finite fact
+  GC2389 uses. With the hand steps of §47.1, **GC2389's clock and single-flip completion are PROVED two-party**,
+  conditional on the shared finite data. PROOFS.md entry filed as carried.
+- **The 480-state phase has an exact clock too.**
+  - All 288 classes of its S_E^all have one (next class, advance), and they form one cycle of total advance 480.
+  - The advance word repeats every 18 ticks (2,0,2,2,2,2,0,2,2,2,2,0,2,2,2,2,2,2: +30). So after capture
+    R(t + 18) = R(t) + 30 exactly, and |3(R(t + n) − R(t)) − 5n| ≤ 7, the range of the potential 3a − 5 round the
+    cycle.
+  - 208 of the 288 classes are singleton fibres, using 13 distinct windows, and the longest wait to one is 2 ticks. The
+    window is re-forced almost every tick.
+  - There is no window-0 state, so 480's one-flip completion needs a few flips: any singleton state, written below the
+    prefix, does the same job.
+- **What it adds to capture.** In both phases, entry into S_E is equivalent to hitting one forced gateway at depth ≥ 12
+  (GC2389's remark, now in both phases). After entry the front is an exact clock that ignores its older wake.
+  - So the open question is purely an entrance question: does every row's front eventually write the gateway's eight
+    cells at the gateway's phase?
+  - T43 says that typical rows do so within ~300 (P1024) or ~500 (480) ticks of leaving the prefix, whatever the prefix
+    length.

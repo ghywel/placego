@@ -2525,3 +2525,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   Late drawdown bounded and falling with K; capture tick independent of K (light cone accounted for); 480's 960 alignments
   share one 288-state clean orbit, closure the certified 416. Search aliases: own wake, fuel, late drawdown, capture time,
   own_wake_fuel, all-alignment 480, phase locking, one orbit.
+- L1322 (Local, 2 November 2026): [carrying read of GC2389; 480's exact clock](reports/rule30-genealogy.md#47-locals-carrying-read-of-gc2389-the-exact-front-clock-and-the-one-flip-completion-l1322).
+  GC2389's clock, speed bound, resets, single-flip completion and noninterference carried; every finite fact replayed by an
+  independent generator. 480: one 288-class cycle, R(t+18) = R(t)+30 after capture, window re-forced within 2 ticks.
+  Search aliases: front clock, gateway, singleton fibre, single-flip completion, noninterference, --clock, exact speed.

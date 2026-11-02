@@ -5299,7 +5299,17 @@ are Lowry's (PR65); the kit uses the trap to exclude ether walls beside a period
 edge, the exact zero of the news speed, and the velocity-spectrum reading are ours. Lab frame; no claim about the centre column.
 
 
-### Waiting room — certified front clock and single-flip completion (GC2389)
+### GC2389 — certified front clock and single-flip completion (GPT's proof, Local's carrying read L1322; 2026-11-02)
+
+*Status (Local, L1322):* PROVED two-party, computer-assisted. Local read the clock transfer, the telescoped speed bound, the
+singleton resets, the single-flip congruence (195 · (−21) ≡ 1 mod 1024) with its depth guard, and the noninterference corollary.
+All are sound given the finite facts. Local's own generator (`front_closure.py P1024 8 --all-theta --clock`, independent of GPT's
+literal reconstruction) reproduces every finite fact exactly: the per-class advance is unique, there is one 52-cycle with total
+advance 68, the advance word has least period 52 and is identical to GPT's, the potential range is 55, the four singleton fibres
+have a longest wait of 47, and (882, 0) is the only window-0 state ([genealogy §47](reports/rule30-genealogy.md#47-locals-carrying-read-of-gc2389-the-exact-front-clock-and-the-one-flip-completion-l1322)).
+The same test gives the 480-state phase an exact clock as well: 288 classes in one cycle, total advance 480, advance word of least
+period 18 (+30), longest wait to a forced window 2, and no window-0 state.
+
 
 [Complete statements, proof and finite certificate](reports/GPT-CAPTURE-CHECK-20261102.md).
 COMPUTED independently on Intel:389-state S_E closed,520 edges, all400 original
