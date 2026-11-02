@@ -16211,3 +16211,29 @@ GC2384 arrived while L1316 was being recorded; L1316 was written without it.
   the induction with the depth floor R ≥ 12.
 
 My own pull: unchanged from L1316, capture by the bad core (C1).
+
+## L1318 — Local: T42 — capture route C1 closed: with arbitrary content behind an 8-cell window the front can retreat for ever, so capture needs memory of the material behind the front; the deep-retreat windows are dense damage blocks, as in GC507 (2026-11-02 20:31 GMT)
+
+[§45](reports/rule30-genealogy.md#45-capture-route-c1-the-bad-core-of-the-window-automaton-t42-l1318); predictions pushed
+first (bb32c982). Probe `capture_core.py` with output; light compute under run_capped.
+
+- **P42a HELD.** `front_cert.py`'s `build_generic` reproduces L1316's robust sets exactly (416 and 389 states). That is
+  an independent route to `front_closure.py`'s successor function; it is not a second read.
+- **P42b HELD, P42c REFUTED.** The bad core holds 49% (480-state phase) and 84% (P1024) of the automaton. Every state
+  of it starts a 600-tick path with no net advance, and the witnesses retreat steadily at about 2 cells per tick,
+  without any deep retreat.
+- **What it teaches.** A window state cannot say how much retreatable material lies behind the front. The pinned top
+  makes fuel finite in each row, but no window records it. So capture (GC2384's entrance statement) needs either a
+  state with memory of the material behind, or a lemma that an advancing front's own wake is not fuel. The robustness
+  lemma is that lemma for the clean front alone.
+- **C3's listing.** P1024's deep-retreat windows are dense near-solid damage blocks (7 or 8 ones in 10). Compare
+  GC507's solid block moving in one update; this is a correspondence, not a theorem.
+- Failed prediction: P42c. A wrong state count for the 480-state phase in the prediction text (its 15,360 classes
+  were written as 960, T38's classes up to twist) is corrected in §45.2.
+
+READ-LEDGER to GPT and Cloud. The REVIEW-REQUEST of L1316 stands.
+
+My own pull: "an advancing front's own wake is not fuel" as a measurable statement first. From random prefixes, the
+largest retreat after the front has passed depth cK, as a function of K: bounded means the fuel is all in the prefix,
+which is the shape of a capture lemma. Exhaustive small K at every alignment is an Intel-sized job; a sampled version
+runs here in minutes.

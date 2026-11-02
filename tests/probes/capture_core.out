@@ -1,0 +1,75 @@
+# L1318 T42 (Local, 2026-11-02): capture_core.py. Each run under run_capped (nice 10; CPU 1,500 s and wall 1,500 s, or 900 s for --fails; RSS 4,096 MiB): all COMPLETED.
+
+## python3 tests/probes/capture_core.py 480 8
+480 W=8: whole automaton 3932160 states, 21250048 edges, 1408 FAIL edges
+   clean states 288; S_E (reachable from them in the whole automaton) 416 states
+   bad core B: 1911888 states (48.6% of the automaton; 158 deletion rounds); outside S_E and B: 2019856 states
+   inside B, least advance over paths of length k: [(10, -53), (25, -99), (50, -152), (100, -253), (200, -463), (300, -686), (600, -1329)]; NOT every long path advances
+   states of B with a 600-path of total advance <= 0: 1911888 (100.00% of B); least 600-path advance -1329
+   greedy witness cycle in B: length 224, total advance -480
+      class 13766  window (D_(R-1) .. D_(R-8)) 10110110  advance -6
+      class 13575  window (D_(R-1) .. D_(R-8)) 10110110  advance -2
+      class 13512  window (D_(R-1) .. D_(R-8)) 11011011  advance -7
+      class 13289  window (D_(R-1) .. D_(R-8)) 10110100  advance -6
+      class 13098  window (D_(R-1) .. D_(R-8)) 00011000  advance +0
+      class 13099  window (D_(R-1) .. D_(R-8)) 00111000  advance +2
+      class 13164  window (D_(R-1) .. D_(R-8)) 11110110  advance -5
+      class 13005  window (D_(R-1) .. D_(R-8)) 00101110  advance +1
+      class 13038  window (D_(R-1) .. D_(R-8)) 11101111  advance -6
+      class 12847  window (D_(R-1) .. D_(R-8)) 00010000  advance +0
+      class 12848  window (D_(R-1) .. D_(R-8)) 00110010  advance +2
+      class 12913  window (D_(R-1) .. D_(R-8)) 11100110  advance +1
+
+## python3 tests/probes/capture_core.py P1024 8
+P1024 W=8: whole automaton 262144 states, 1409280 edges, 85 FAIL edges
+   clean states 52; S_E (reachable from them in the whole automaton) 389 states
+   bad core B: 219722 states (83.8% of the automaton; 114 deletion rounds); outside S_E and B: 42033 states
+   inside B, least advance over paths of length k: [(10, -48), (25, -82), (50, -129), (100, -220), (200, -409), (300, -570), (600, -1105)]; NOT every long path advances
+   states of B with a 600-path of total advance <= 0: 219722 (100.00% of B); least 600-path advance -1105
+   greedy witness cycle in B: length 45, total advance -79
+      class 1009  window (D_(R-1) .. D_(R-8)) 10110101  advance -3
+      class  425  window (D_(R-1) .. D_(R-8)) 10110100  advance -2
+      class   36  window (D_(R-1) .. D_(R-8)) 11011001  advance -4
+      class  281  window (D_(R-1) .. D_(R-8)) 10110111  advance -2
+      class  916  window (D_(R-1) .. D_(R-8)) 11101011  advance -5
+      class  966  window (D_(R-1) .. D_(R-8)) 10111011  advance -8
+      class  431  window (D_(R-1) .. D_(R-8)) 10101100  advance -3
+      class  871  window (D_(R-1) .. D_(R-8)) 10110110  advance -3
+      class  287  window (D_(R-1) .. D_(R-8)) 11110100  advance -5
+      class  337  window (D_(R-1) .. D_(R-8)) 11110100  advance +1
+      class  533  window (D_(R-1) .. D_(R-8)) 10011010  advance +1
+      class  729  window (D_(R-1) .. D_(R-8)) 11110011  advance +2
+
+## python3 tests/probes/capture_core.py P1024 8 --fails
+P1024 W=8: whole automaton 262144 states, 1409280 edges, 85 FAIL edges
+   clean states 52; S_E (reachable from them in the whole automaton) 389 states
+   bad core B: 219722 states (83.8% of the automaton; 114 deletion rounds); outside S_E and B: 42033 states
+   inside B, least advance over paths of length k: [(10, -48), (25, -82), (50, -129), (100, -220), (200, -409), (300, -570), (600, -1105)]; NOT every long path advances
+   states of B with a 600-path of total advance <= 0: 219722 (100.00% of B); least 600-path advance -1105
+   greedy witness cycle in B: length 45, total advance -79
+      class 1009  window (D_(R-1) .. D_(R-8)) 10110101  advance -3
+      class  425  window (D_(R-1) .. D_(R-8)) 10110100  advance -2
+      class   36  window (D_(R-1) .. D_(R-8)) 11011001  advance -4
+      class  281  window (D_(R-1) .. D_(R-8)) 10110111  advance -2
+      class  916  window (D_(R-1) .. D_(R-8)) 11101011  advance -5
+      class  966  window (D_(R-1) .. D_(R-8)) 10111011  advance -8
+      class  431  window (D_(R-1) .. D_(R-8)) 10101100  advance -3
+      class  871  window (D_(R-1) .. D_(R-8)) 10110110  advance -3
+      class  287  window (D_(R-1) .. D_(R-8)) 11110100  advance -5
+      class  337  window (D_(R-1) .. D_(R-8)) 11110100  advance +1
+      class  533  window (D_(R-1) .. D_(R-8)) 10011010  advance +1
+      class  729  window (D_(R-1) .. D_(R-8)) 11110011  advance +2
+   FAIL edges: 85, from 66 states; in S_E 0, in B 66
+   distinct (mismatch D_(R-W-2) .. D_R, phase E_(R-W-2) .. E_(R+2)) patterns: 80; the first 12:
+      D 0101111101|1   E 1101111000110   x2
+      D 0111011101|1   E 0110011000110   x2
+      D 1011101101|1   E 0011000100111   x2
+      D 1011011011|1   E 1010010000110   x2
+      D 1011011011|1   E 1010001011011   x2
+      D 0110111011|1   E 0010110011011   x1
+      D 1110111011|1   E 0010110011011   x1
+      D 0110111011|1   E 0010001011010   x1
+      D 1110111011|1   E 0010001011010   x1
+      D 1011011011|1   E 0010001011010   x1
+      D 1110111101|1   E 1100111001010   x1
+      D 0101111011|1   E 1001110011011   x1

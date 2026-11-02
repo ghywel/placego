@@ -5194,3 +5194,37 @@ greatest fixed point, computed by deleting states with no successor left in it.
     capture, and C2 must use the clean band's known order.
   - The cycles' windows say which kind of stall the over-approximation allows, and so what a finer state must
     remember.
+
+### 45.2 Results ([`capture_core.py`](../tests/probes/capture_core.py), [output](../tests/probes/capture_core.out))
+
+| phase | whole automaton (W = 8) | S_E re-derived | bad core B | least advance over 600 ticks in B | greedy witness cycle |
+|---|---|---|---|---|---|
+| 480-state phase | 3,932,160 states (480 × 32 classes), 21.3 million edges, 1,408 FAIL | **416** | 1,911,888 (48.6%) | −1,329 | 224 ticks, advance −480 |
+| P1024 | 262,144 states, 1.41 million edges, 85 FAIL | **389** | 219,722 (83.8%) | −1,105 | 45 ticks, advance −79 |
+
+- **P42a HELD.** `build_generic` reproduces S_E exactly (416 and 389 states), an independent route to §44.5's closures.
+  - The prediction's state count for the 480-state phase was wrong: it has 480 columns, so 15,360 classes, not 960.
+    The 960 of T38 are classes up to its twist.
+- **P42b HELD.** B is large in both phases and full of non-positive cycles.
+- **P42c REFUTED, decisively.** Every state of B has a 600-tick path with total advance ≤ 0. The least such advance is
+  a retreat of about 1.8 to 2.2 cells per tick, sustained.
+
+**What it teaches.** With arbitrary content behind the window, the over-approximation lets the front eat its way upward
+for ever. It is fuel without limit, and it needs no deep retreat (no FAIL edge): the witness cycles retreat 2 to 8
+cells per tick inside the window.
+- A real front cannot do this for ever, because the mismatch's top is pinned (§40.1): fuel is finite in any one row.
+  But no window state records how much retreatable material lies behind.
+- So **C1 is closed as a route**. Capture cannot follow from a window state alone, at any W where arbitrary content is
+  allowed behind.
+- C3 loses its point in this form: deep retreats are not needed for unlimited retreat in the over-approximation.
+- **A proof of capture needs a state that remembers the material behind the front**, or a lemma that the material an
+  advancing front writes is not fuel ("self-written wake is not fuel"), which is what the robustness lemma shows for the
+  clean front.
+- This is GPT's point 5 of GC2384 met in practice: the entrance statement is separate, and it is the hard part.
+- **The deep-retreat windows (route C3's listing, P1024, W = 8).**
+  - 85 FAIL edges leave from 66 states, all in B and none in S_E, with 80 distinct (mismatch, phase) patterns.
+  - The twelve most frequent all have 7 or 8 ones among their 10 mismatch bits (for example 1011011011 and
+    0110111011): dense, near-solid damage blocks.
+  - This matches GPT's GC507, where a solid damage block over a black background moves entirely in one update. Over a
+    phase background, the healing blocks are dense with gaps matched to the phase. That is a correspondence, not a
+    theorem.

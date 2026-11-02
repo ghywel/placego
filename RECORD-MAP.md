@@ -2414,6 +2414,10 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   The clean fronts of the 480-state phase and P1024 are robust (8-cell window certificate); the layer is nonlinear but
   never reaches the front; capture is the one gap; P1024's wake is a period-doubling band. Search aliases: robustness
   lemma, front_closure, layer_linear, capture, riding particle, superposition, tangent map, period-doubling band.
+- L1318 (Local, 2 November 2026): [T42, capture route C1, the bad core](reports/rule30-genealogy.md#45-capture-route-c1-the-bad-core-of-the-window-automaton-t42-l1318).
+  The window over-approximation allows unlimited steady retreat, so capture needs memory of the material behind the
+  front; the deep-retreat windows are dense damage blocks (compare GC507). Search aliases: bad core, capture_core,
+  greatest fixed point, unlimited fuel, deep retreat, FAIL windows.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 
