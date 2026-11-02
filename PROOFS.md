@@ -5344,6 +5344,15 @@ indexing, and paired-prefix light-cone guard are PROVED two-party, conditional
 on the finite S_E certificate. Local carried the exact induction and source
 mapping in L1323; the earlier waiting-room text retains its pre-review status.
 No augmented/original-CNF certificate equivalence or universal capture follows.
+### GC2393 — the two-open reset of the front's trailing pair (GPT's proof, Local's carrying read L1327; 2026-11-02)
+
+[Statement and proof](reports/GPT-OPEN-STRETCH-REVIEW-20261102.md). *Status:* PROVED two-party. Local re-derived it by hand and
+checked it on 16,000 random literal rows with its own code (L1327). If the deepest mismatch is at R and the background at depths
+R−2 .. R+3 reads d c 0 0 z z, the next two moves are both +2. The two cells behind the new front become (¬c ∧ ¬z, c ∨ d),
+whatever the old pair and every deeper cell were. E_R = 0 is also necessary: with E_R = 1 two open moves keep at least two
+distinguishable images of the four old pairs (2 or 3 in Local's check). Scope: erasure of the trailing pair only, not of the
+8-cell window, not S_E entry, and no claim that every front meets the block.
+
 ### Waiting room — the moving-anchor closed-set certificate, and the (9, 7) law of (7, 63) at 28 alignments (Cloud, CL682)
 
 [Statement, soundness and results](reports/inquisition-20261031.md#round-12-2026-11-02-cloud-cl682-the-closed-set-certificate-with-a-moving-anchor-passes-both-controls-g8s-lean-verified-law-lowrys-109-states-rediscovered-for-the-classic-ether-proves-the-9-7-law-of-7-63-at-28-alignments-and-fails-on-9-57s-519-at-every-window-to-32-although-that-law-holds-to-t--20000).
