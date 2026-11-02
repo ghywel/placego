@@ -1,0 +1,169 @@
+{
+  "mode": "benchmark",
+  "worker_cpu_stop": 1740,
+  "binary_sha256": "7d254115f5d895eeb6ac8312492b0ef93e0981a3c42dbfb903b629aa0b9e69b0",
+  "jobs": [
+    {
+      "name": "D40-rain0-r1-t1",
+      "cnf": "/private/tmp/gc2366-cert-pilot/rain0-D40.cnf",
+      "sha256": "47f4950ce4b2e29db65a92e1b905e2cb58ffc2327e5d55b1cce64df0577b21a9",
+      "threads": 1,
+      "cpu": 20,
+      "wall": 30,
+      "known_unsat": true
+    },
+    {
+      "name": "D40-rain0-r1-t2",
+      "cnf": "/private/tmp/gc2366-cert-pilot/rain0-D40.cnf",
+      "sha256": "47f4950ce4b2e29db65a92e1b905e2cb58ffc2327e5d55b1cce64df0577b21a9",
+      "threads": 2,
+      "cpu": 20,
+      "wall": 30,
+      "known_unsat": true
+    },
+    {
+      "name": "D40-rain0-r1-t4",
+      "cnf": "/private/tmp/gc2366-cert-pilot/rain0-D40.cnf",
+      "sha256": "47f4950ce4b2e29db65a92e1b905e2cb58ffc2327e5d55b1cce64df0577b21a9",
+      "threads": 4,
+      "cpu": 20,
+      "wall": 30,
+      "known_unsat": true
+    },
+    {
+      "name": "D40-rain1-r1-t1",
+      "cnf": "/private/tmp/gc2366-cert-pilot/rain1-D40.cnf",
+      "sha256": "e27f6aad335bcf8cab64ca91dc78e0943cefc4449efae777fa12780e53d29f05",
+      "threads": 1,
+      "cpu": 20,
+      "wall": 30,
+      "known_unsat": true
+    },
+    {
+      "name": "D40-rain1-r1-t2",
+      "cnf": "/private/tmp/gc2366-cert-pilot/rain1-D40.cnf",
+      "sha256": "e27f6aad335bcf8cab64ca91dc78e0943cefc4449efae777fa12780e53d29f05",
+      "threads": 2,
+      "cpu": 20,
+      "wall": 30,
+      "known_unsat": true
+    },
+    {
+      "name": "D40-rain1-r1-t4",
+      "cnf": "/private/tmp/gc2366-cert-pilot/rain1-D40.cnf",
+      "sha256": "e27f6aad335bcf8cab64ca91dc78e0943cefc4449efae777fa12780e53d29f05",
+      "threads": 4,
+      "cpu": 20,
+      "wall": 30,
+      "known_unsat": true
+    },
+    {
+      "name": "D64-rain0-r1-t1",
+      "cnf": "/private/tmp/gc2369-long-rain0-D64/rain0-D64-long.cnf",
+      "sha256": "ab2c06f4ae3f2a8a3092c048a2a53f7bc34eb4d06dcd29fe1ecb2380c8495042",
+      "threads": 1,
+      "cpu": 240,
+      "wall": 310,
+      "known_unsat": true
+    },
+    {
+      "name": "D64-rain0-r1-t2",
+      "cnf": "/private/tmp/gc2369-long-rain0-D64/rain0-D64-long.cnf",
+      "sha256": "ab2c06f4ae3f2a8a3092c048a2a53f7bc34eb4d06dcd29fe1ecb2380c8495042",
+      "threads": 2,
+      "cpu": 240,
+      "wall": 310,
+      "known_unsat": true
+    },
+    {
+      "name": "D64-rain0-r1-t4",
+      "cnf": "/private/tmp/gc2369-long-rain0-D64/rain0-D64-long.cnf",
+      "sha256": "ab2c06f4ae3f2a8a3092c048a2a53f7bc34eb4d06dcd29fe1ecb2380c8495042",
+      "threads": 4,
+      "cpu": 240,
+      "wall": 310,
+      "known_unsat": true
+    },
+    {
+      "name": "D40-rain0-r2-t4",
+      "cnf": "/private/tmp/gc2366-cert-pilot/rain0-D40.cnf",
+      "sha256": "47f4950ce4b2e29db65a92e1b905e2cb58ffc2327e5d55b1cce64df0577b21a9",
+      "threads": 4,
+      "cpu": 20,
+      "wall": 30,
+      "known_unsat": true
+    },
+    {
+      "name": "D40-rain0-r2-t2",
+      "cnf": "/private/tmp/gc2366-cert-pilot/rain0-D40.cnf",
+      "sha256": "47f4950ce4b2e29db65a92e1b905e2cb58ffc2327e5d55b1cce64df0577b21a9",
+      "threads": 2,
+      "cpu": 20,
+      "wall": 30,
+      "known_unsat": true
+    },
+    {
+      "name": "D40-rain0-r2-t1",
+      "cnf": "/private/tmp/gc2366-cert-pilot/rain0-D40.cnf",
+      "sha256": "47f4950ce4b2e29db65a92e1b905e2cb58ffc2327e5d55b1cce64df0577b21a9",
+      "threads": 1,
+      "cpu": 20,
+      "wall": 30,
+      "known_unsat": true
+    },
+    {
+      "name": "D40-rain1-r2-t4",
+      "cnf": "/private/tmp/gc2366-cert-pilot/rain1-D40.cnf",
+      "sha256": "e27f6aad335bcf8cab64ca91dc78e0943cefc4449efae777fa12780e53d29f05",
+      "threads": 4,
+      "cpu": 20,
+      "wall": 30,
+      "known_unsat": true
+    },
+    {
+      "name": "D40-rain1-r2-t2",
+      "cnf": "/private/tmp/gc2366-cert-pilot/rain1-D40.cnf",
+      "sha256": "e27f6aad335bcf8cab64ca91dc78e0943cefc4449efae777fa12780e53d29f05",
+      "threads": 2,
+      "cpu": 20,
+      "wall": 30,
+      "known_unsat": true
+    },
+    {
+      "name": "D40-rain1-r2-t1",
+      "cnf": "/private/tmp/gc2366-cert-pilot/rain1-D40.cnf",
+      "sha256": "e27f6aad335bcf8cab64ca91dc78e0943cefc4449efae777fa12780e53d29f05",
+      "threads": 1,
+      "cpu": 20,
+      "wall": 30,
+      "known_unsat": true
+    },
+    {
+      "name": "D64-rain0-r2-t4",
+      "cnf": "/private/tmp/gc2369-long-rain0-D64/rain0-D64-long.cnf",
+      "sha256": "ab2c06f4ae3f2a8a3092c048a2a53f7bc34eb4d06dcd29fe1ecb2380c8495042",
+      "threads": 4,
+      "cpu": 240,
+      "wall": 310,
+      "known_unsat": true
+    },
+    {
+      "name": "D64-rain0-r2-t2",
+      "cnf": "/private/tmp/gc2369-long-rain0-D64/rain0-D64-long.cnf",
+      "sha256": "ab2c06f4ae3f2a8a3092c048a2a53f7bc34eb4d06dcd29fe1ecb2380c8495042",
+      "threads": 2,
+      "cpu": 240,
+      "wall": 310,
+      "known_unsat": true
+    },
+    {
+      "name": "D64-rain0-r2-t1",
+      "cnf": "/private/tmp/gc2369-long-rain0-D64/rain0-D64-long.cnf",
+      "sha256": "ab2c06f4ae3f2a8a3092c048a2a53f7bc34eb4d06dcd29fe1ecb2380c8495042",
+      "threads": 1,
+      "cpu": 240,
+      "wall": 310,
+      "known_unsat": true
+    }
+  ]
+}

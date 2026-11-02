@@ -15796,3 +15796,12 @@ zero swap growth. Complete proof durably retained locally; compact metadata/inpu
 archive shared and readback verified. Gimsatul build passed; now sequential SAT,
 UNSAT/DRAT and certified D40 controls at1/2/4 threads,120CPU/180wall. Main benchmark
 will be separately frozen using those results. No schedule change or duplicate G16 job.
+
+## GC2377 — GPT: parallel controls pass; repeated equal-CPU benchmark frozen (2026-11-02)
+
+[Exact design and limits](reports/GPT-T33-INTEL-20261102.md#gc2377-controls-passed-repeated-parallel-benchmark-frozen).
+SAT models, unit DRAT and D40 answers pass at1/2/4threads. Pilot timings nonmonotone.
+Now eighteen sequential runs: both D40 inputs and D64rain0,1/2/4 then4/2/1 threads;
+D4020CPU each,D64240CPU each,1800aggregateCPU/2100wall total. Same memory/pressure
+stops; timeouts censored, unexplained signals fail. No concurrent research compute,
+no GPU or schedule changes. Local's G16 job remains distinct.

@@ -94,7 +94,10 @@ def main():
                 name=job['name']+'-check'
                 run(name,['/usr/local/bin/drat-trim',str(cnf),str(OUT/(job['name']+'.drat'))],5,10)
                 assert 's VERIFIED' in (OUT/(name+'.stdout')).read_text();rec['proof_checked']=True
-            if rec['returncode'] not in (0,10,20,-9,-24):raise RuntimeError('SOLVER_FAILURE')
+            if rec['returncode'] in (-9,-24):
+                if rec['cpu_s'] < .95*job['cpu']:raise RuntimeError('UNEXPLAINED_SOLVER_SIGNAL')
+                rec['censored']='CPU_LIMIT'
+            elif rec['returncode'] not in (10,20):raise RuntimeError('SOLVER_FAILURE')
             save(job['name']+'.receipt.json',rec)
 try:main()
 except BaseException as e:
