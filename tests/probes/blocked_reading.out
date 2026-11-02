@@ -1,0 +1,15 @@
+## blocked_reading.py P1024 S_E_all 200 80 (L1325 T45; run_capped: nice 10, CPU 900 s, wall 1,200 s, RSS 4,096 MiB; COMPLETED in 54 s)
+P1024 K=80, 200 runs (0 not captured): open ticks 45018, of which not (+2, depth 0): 0
+   before capture, blocked ticks 7503; reading depth: 0: 1255 (16.7%), 1: 5094 (67.9%), 2: 320 (4.3%), 3: 329 (4.4%), 4: 417 (5.6%), 5: 51 (0.7%), 6: 18 (0.2%), 7: 17 (0.2%), 8: 2 (0.0%)
+      moves (new front offset; None = beyond depth 10): -6: 15 (0.2%), -5: 9 (0.1%), -4: 36 (0.5%), -3: 133 (1.8%), -2: 327 (4.4%), -1: 352 (4.7%), 0: 4065 (54.2%), 1: 2566 (34.2%)
+   after capture (300 ticks), blocked ticks 24326; reading depth: 0: 4648 (19.1%), 1: 17404 (71.5%), 2: 1104 (4.5%), 3: 1170 (4.8%)
+      moves: -1: 1170 (4.8%), 0: 14992 (61.6%), 1: 8164 (33.6%)
+BLOCKED_READING_DONE
+
+## blocked_reading.py 480 S_E_all 200 80 (same caps; COMPLETED in 62 s)
+480 K=80, 200 runs (0 not captured): open ticks 62082, of which not (+2, depth 0): 0
+   before capture, blocked ticks 7935; reading depth: 0: 1633 (20.6%), 1: 5383 (67.8%), 2: 256 (3.2%), 3: 305 (3.8%), 4: 300 (3.8%), 5: 47 (0.6%), 6: 1 (0.0%), 7: 10 (0.1%)
+      moves (new front offset; None = beyond depth 10): -6: 5 (0.1%), -5: 6 (0.1%), -4: 28 (0.4%), -3: 159 (2.0%), -2: 259 (3.3%), -1: 242 (3.0%), 0: 3738 (47.1%), 1: 3498 (44.1%)
+   after capture (300 ticks), blocked ticks 10015; reading depth: 1: 10015 (100.0%)
+      moves: 0: 10015 (100.0%)
+BLOCKED_READING_DONE

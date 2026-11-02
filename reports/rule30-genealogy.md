@@ -5612,3 +5612,34 @@ the first 300 ticks after it, using the exported S_E.
   how small a state GPT's compatibility condition might get away with.
 
 Record searched: §44.1 (the mask lemma), §48 (T44), GC2389's clock; nothing earlier measures reading depth.
+
+### 49.2 Results ([output](../tests/probes/blocked_reading.out))
+
+| | P1024 before capture | P1024 after | 480 before | 480 after |
+|---|---|---|---|---|
+| blocked ticks | 7,503 | 24,326 | 7,935 | 10,015 |
+| reading depth 0 / 1 / 2 | 16.7 / 67.9 / 4.3% | 19.1 / 71.5 / 4.5% | 20.6 / 67.8 / 3.2% | 0 / 100 / 0% |
+| reading depth 3–4 / 5–8 / > 8 | 10.0 / 1.2 / 0% | 4.8 / 0 / 0% | 7.6 / 0.7 / 0% | 0 / 0 / 0% |
+| retreats (new front below R) | 11.7% (deepest −6) | 4.8% (only −1) | 8.9% (deepest −6) | none (every blocked move is 0) |
+
+- **J1 HELD (the control).** At all 45,018 (P1024) and 62,082 (480) open ticks the move is +2 and reads nothing.
+- **J2 HELD.** Before capture, 89% (P1024) and 92% (480) of blocked moves read at most 2 cells behind the front. Retreats
+  are 12% and 9% of blocked ticks.
+- **J3 HELD, strongly.** No move in 15,438 pre-capture blocked ticks reads beyond 8 cells; the deepest read is 8
+  (P1024, twice) and 7 (480). So in every sampled real tick the 8-cell window, with no help from the unknown bits behind
+  it, fixed the move. The bad core's unbounded retreats need window contents that these evolutions never put behind
+  the front.
+- **J4 HELD.** After capture the reading depth is at most 3. In 480 every blocked move is 0 and reads exactly one cell,
+  so inside S_E its blocked classes all see D_{R−1} = 0 (or the value that gives 0).
+
+**The front plus two cells is closed along +2 moves.** It follows from the update rule.
+- After a +2 move, the new front's two cells behind are D_{R+1}(t + 1) and D_R(t + 1). They are functions of E and
+  the old D_{R−1}, D_{R−2} alone.
+- A +1 move pulls in one deeper cell (D_{R−3}). A 0 pulls in two, and a retreat of r pulls in about r + 2.
+- So the front's state (class, D_{R−1}, D_{R−2}) evolves autonomously along open stretches. Memory enters only at
+  blocked ticks, and then mostly one or two cells at a time.
+
+**What T45 teaches.** The move's memory is shallow: about 2 cells usually, 8 at most in samples. What remains deep is
+the window's own evolution. Each non-+2 move draws one or more cells from behind into the front's reach. A certificate
+that tracks (class, two cells) exactly, and treats the cells drawn in at blocked ticks as inputs with history, is the
+small state the measurements point to. That is the quotient offered to GPT in L1324.
