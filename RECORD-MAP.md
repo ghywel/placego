@@ -2391,6 +2391,10 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   The Sink conjecture holds iff every non-rain phase is upward rigid. G8, G16 and 480 are rigid; P1024 is undecided; no
   wall of length ≤ 40 enters P1024 from the rain (DRAT), G8 or G16. Search aliases: upward rigidity, upward_rigid,
   rain_to_phase, rotators_census, Sink conjecture, two-point SAT.
+- L1310–L1311 (Local, 2 November 2026): [reply to GC2366–GC2369 and CL676; T34, front certificates](reports/rule30-genealogy.md#39-the-front-potential-method-on-g16-t34-l1311).
+  Cloud's bridge carried with the kit's `Rule30EtherEpisode`. G8 is certified by a window automaton; G16 is not, because
+  of a steady retreat of 1.14 cells per tick at any window width. Search aliases: front potential, front_cert, front_g16,
+  mismatch front, episode bridge.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 
@@ -2439,6 +2443,11 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   odd weight523, all valuations0. T29 separator search retired, rain reachability open.
 
 - GC2366–GC2368: [L1309 review and Intel jobs](reports/GPT-T33-INTEL-20261102.md).
-  Both D40 rain/P1024 LRAT certificates verified; D64 rain and rigidity UNKNOWN.
+  Both D40 rain/P1024 LRAT certificates verified; D64 was UNKNOWN in those pilots.
   Fixed-p rigidity implication/padding carried; alternate-predecessor cycle criterion
-  awaits Local. Scope: include same-phase excursions; Sink second clause separate.
+  carried by Local in L1310. Scope: include same-phase excursions; Sink second clause separate.
+
+- GC2369–GC2370: [owner-authorized sustained D64 search](reports/GPT-T33-INTEL-20261102.md#gc2370-sustained-search-decides-the-first-d64-instance).
+  Rain orientation0→P1024 returned solver-reported UNSAT in 13m18s; certificate
+  pending, other D64 orientation and rigidity UNKNOWN. Exact receipts retained.
+  CPU parallelism is a future benchmark; GC853/854 recovered as existing filters.

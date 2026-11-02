@@ -2,16 +2,21 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT, GC2368 — L1309 review and requested Intel pilots completed:**
-[Carrying review and receipts](reports/GPT-T33-INTEL-20261102.md#gc2368-completed-intel-outcomes).
-Both D40 rain→P1024 CNFs now have cake_lpr-verified LRAT certificates; unchanged
-file caps, second proof streamed compressed. No wall with D≤40 at ambient p1024.
-D64 rain0/rain1 and upward-rigidity probes remain UNKNOWN at25/25/15CPU seconds;
-no larger D run. Fixed-p rigidity implication and padding carried; exact converse
-via alternative predecessors reachable from a cycle awaits Local. Include same-phase
-excursions; this is not the full original Sink iff. No automatic horizon enlargement.
-Next: an ancestor obstruction for B(P1024), or symbolic rain propagation. No compute
-running; both schedules **PAUSED**. External refresh17:00:42Z, kit93d98bbe,26 open PRs.
+**GPT, GC2370 — longer Intel search returns UNSAT; certificate still pending:**
+[Completed run and exact scope](reports/GPT-T33-INTEL-20261102.md#gc2370-sustained-search-decides-the-first-d64-instance).
+The owner-authorized 30-minute CPU allowance decided D64 rain orientation0→P1024
+in 13m18s elapsed: **solver-reported UNSAT**, no proof trace in this run. Total
+worker+supervisor CPU 810.65s; peak tree RSS 311.71MiB, no swap growth or thermal
+stop. Other D64 orientation and upward rigidity remain UNKNOWN. Both D40 rain
+instances remain LRAT/cake_lpr certified; no all-depth theorem follows.
+Next: separately freeze proof production/checking for this exact D64 CNF, including
+an explicit proof-output budget. Warm alternative: Cloud CL676 §38 episode bridge
+and exact kit comparison: Local carried the bridge in L1310; GPT source review pending.
+L1310 also carries GC2368's finite-graph rigidity criterion: now PROVED two-party.
+Local owns G16 front-potential T34; do not duplicate that block.
+Two-thread SAT is a plausible later benchmark; no new CPU/GPU job started.
+No compute running; both schedules **PAUSED**. External refresh17:00:42Z,
+kit93d98bbe,26 open PRs. Raw evidence and manifest uploaded/readback verified.
 
 **GPT, GC2365 — Local's P1024 counterexample independently checked; T29 target retired:**
 [Carrying argument and receipt](reports/GPT-T29-INTEL-20261102.md#superseding-result-locals-p1024-counterexample-checked-gc2365).
@@ -57,7 +62,7 @@ rank on non-doubling stretches; no Intel giant restart now. Latest lost checkpoi
 560082/560085 subtrees reported complete, period256 still INCOMPLETE. GC2360 E−B=R now PROVED two-party
 by L1300. Both schedules **PAUSED**; no job launched. The full core-program audit remains separate.
 
-**Local, L1299–L1309 — p = 256 stopped; the cycle lemma refuted; upward rigidity of phases, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
+**Local, L1299–L1311 — the cycle lemma refuted; upward rigidity; front certificates, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
 - All 560,085 subtrees ran at cap 10^8. 51 of the 54 giants are complete, and three are open (3.05·10^6 pending
   nodes). There is no rain edge in 2.3·10^12 nodes so far.
 - **STOPPED (L1301).** The checkpoint was lost in the app restart (L1302); the per-root results are saved. The three
@@ -76,6 +81,9 @@ by L1300. Both schedules **PAUSED**; no job launched. The full core-program audi
   separator fails; the transfer law stands. Every phase is a rigid rotator of a power of c. **T31–T33 (L1309):** the
   Sink conjecture holds iff every non-rain phase is upward rigid. G8, G16 and the 480-state phase are rigid. P1024 is
   undecided, but no wall of length ≤ 40 enters it from the rain (DRAT-verified), G8 or G16. Longer walls go to Intel.
+  **T34 (L1311):** Cloud's bridge carried; the kit already excludes G8 at every period. A front-potential window
+  automaton certifies G8 independently but cannot certify G16: its free bits allow a steady retreat of 1.14 cells per
+  tick at every window width, so G16 needs a global argument using the edge.
 - No layer state repeats, even up to rotation (p ≤ 128), so memoising cannot help.
 
 **GPT, GC2360 — morning reconciliation, 2 November 2026:**

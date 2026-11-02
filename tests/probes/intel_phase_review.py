@@ -104,22 +104,53 @@ def proof_stream(name, reading):
     fifo=OUT/(name+'.pipe')
     fifo.unlink(missing_ok=True);os.mkfifo(fifo)
     target=OUT/(name+'.lrat.gz'); receipt={}
+    chunk_bytes=PLAN.get('proof_chunk_mib',0)*1024*1024
+    expanded_limit=PLAN.get('proof_expanded_mib',128)*1024*1024
     def transfer():
-        h=hashlib.sha256(); count=0
+        h=hashlib.sha256(); count=0; parts=[]
         try:
-            source=open(fifo,'rb') if reading else gzip.open(target,'rb')
-            with source:
-                dest=gzip.open(target,'wb',compresslevel=1) if reading else open(fifo,'wb')
-                with dest:
-                    while True:
-                        block=source.read(65536)
-                        if not block:break
-                        count+=len(block)
-                        if count>128*1024*1024:raise RuntimeError('EXPANDED_PROOF_LIMIT')
-                        h.update(block);dest.write(block)
-            receipt.update(bytes=count,sha256=h.hexdigest(),complete=True)
+            if chunk_bytes:
+                if reading:
+                    with open(fifo,'rb') as source:
+                        while True:
+                            block=source.read(chunk_bytes)
+                            if not block:break
+                            count+=len(block)
+                            if count>expanded_limit:raise RuntimeError('EXPANDED_PROOF_LIMIT')
+                            h.update(block)
+                            part=OUT/(name+'.lrat.%05d.gz'%len(parts))
+                            with gzip.open(part,'wb',compresslevel=1) as dest:dest.write(block)
+                            parts.append({'name':part.name,'bytes':part.stat().st_size,
+                                          'sha256':hashlib.sha256(part.read_bytes()).hexdigest()})
+                    save(name+'-parts.json',parts)
+                else:
+                    parts=json.loads((OUT/(name+'-parts.json')).read_text())
+                    with open(fifo,'wb') as dest:
+                        for part in parts:
+                            path=OUT/part['name']
+                            assert hashlib.sha256(path.read_bytes()).hexdigest()==part['sha256']
+                            with gzip.open(path,'rb') as source:
+                                while True:
+                                    block=source.read(65536)
+                                    if not block:break
+                                    count+=len(block)
+                                    if count>expanded_limit:raise RuntimeError('EXPANDED_PROOF_LIMIT')
+                                    h.update(block);dest.write(block)
+            else:
+                source=open(fifo,'rb') if reading else gzip.open(target,'rb')
+                with source:
+                    dest=gzip.open(target,'wb',compresslevel=1) if reading else open(fifo,'wb')
+                    with dest:
+                        while True:
+                            block=source.read(65536)
+                            if not block:break
+                            count+=len(block)
+                            if count>expanded_limit:raise RuntimeError('EXPANDED_PROOF_LIMIT')
+                            h.update(block);dest.write(block)
+            receipt.update(bytes=count,sha256=h.hexdigest(),complete=True,parts=len(parts))
         except BaseException as e:
-            receipt.update(bytes=count,error=repr(e),complete=False);STOP.append('PROOF_STREAM_FAILURE')
+            receipt.update(bytes=count,error=repr(e),complete=False,parts=len(parts));STOP.append('PROOF_STREAM_FAILURE')
+        finally:save(name+('-compress.json' if reading else '-decompress.json'),receipt)
     th=threading.Thread(target=transfer,daemon=True);th.start()
     return fifo,th,receipt
 
@@ -128,7 +159,7 @@ def main():
     global OUT,PLAN
     OUT=Path(os.environ['CAPPED_OUT']); PLAN=json.loads(Path(sys.argv[1]).read_text())
     for s in (signal.SIGTERM,signal.SIGINT):signal.signal(s,lambda s,f:STOP.append(s))
-    resource.setrlimit(resource.RLIMIT_CPU,(15,PLAN['process_cpu_cap']))
+    resource.setrlimit(resource.RLIMIT_CPU,(PLAN.get('driver_cpu_cap',15),PLAN['process_cpu_cap']))
     results=[]
     try:
         thermal(); ph=phases()
@@ -175,7 +206,7 @@ def main():
             if status=='UNSAT' and job.get('proof'):
                 proofpath=OUT/(name+'.lrat')
                 if job.get('compressed'):proofpath,th,unstream=proof_stream(name,False)
-                check=command(name+'-check',['/usr/local/bin/cake_lpr','--CML_HEAP_SIZE=384','--CML_STACK_SIZE=64',str(path),str(proofpath)],job['check_cpu'],job['check_wall'])
+                check=command(name+'-check',['/usr/local/bin/cake_lpr','--CML_HEAP_SIZE=%d'%job.get('check_heap_mib',384),'--CML_STACK_SIZE=64',str(path),str(proofpath)],job['check_cpu'],job['check_wall'])
                 if job.get('compressed'):
                     th.join(timeout=3);save(name+'-decompress.json',unstream)
                     assert not th.is_alive() and unstream.get('complete') and unstream['sha256']==stream['sha256']
