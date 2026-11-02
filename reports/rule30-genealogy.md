@@ -4142,6 +4142,13 @@ Predictions:
     the cycle lemma and the valuation separator of §33.
 - **P29c (the lemma at p = 64).** (neg) is UNSAT for every m ≤ 32 and every s ∈ Z/64, as far as time allows (cap one
   hour of CPU in all). Lean 55%.
+- **Run plan, revised before the main run (timing probes only).** At p = 16 and m ≥ 20, CaDiCaL exhausts a budget of
+  2·10^5 conflicts on single instances. Kissat decides (p, m, s) = (16, 20, 3) in 8 s and (32, 16, 3) in 32 s (both
+  UNSAT). The owner wants the M5 kept free of long runs, so on Local:
+  - only (neg) at p = 32 for m ≤ 10 and every twist runs, through Kissat (`phase_sat_kissat.py`), 60 s per instance;
+  - it runs under `run_capped.py` at nice 10, with CPU 1,200 s, wall 1,500 s, RSS 2,048 MiB and file 64 MiB;
+  - m ≤ 64 at p = 32 and the p = 64 range (P29c) are handed to the Intel host through the ledger.
+  P29b's lean applies to whatever range is decided.
 - **P29d (the landscape).** Enumerating least-period-32 phases with m ≤ 32 by (pos), with each found phase blocked in
   every depth shift and time rotation, finds at most a handful. Each has largest valuation exactly 7.
 
