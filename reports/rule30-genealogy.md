@@ -4364,3 +4364,36 @@ Predictions:
 - **Counterfactual.** If some state stays SAT up to D = 16, upward deviations persist. That could be a wall into the
   phase; its source would then be followed.
 
+### 37.3 T32 results ([`upward_rigid.py`](../tests/probes/upward_rigid.py), [output](../tests/probes/upward_rigid.out))
+
+- **P32a HELD, with a larger depth than predicted.**
+  - G8 (p = 8) is upward rigid at depth 4.
+  - All 8 state classes of G16 (p = 16) are upward rigid, at depths 25, 26, 19, 4, 31, 15, 4 and 7. That is the
+    infinite form the complete core implies, by an independent method; my bound D ≤ 8 was wrong.
+  - Every phase checked satisfies its column equations (a control).
+- **P32b HELD.** All 30 state classes of the 480-state phase are upward rigid, at depths up to 67 (22 s). So no eternal
+  point under a black edge ends in it. That was already known at p = 32 from T_32's finiteness; this is an independent
+  method.
+- **P32c UNDECIDED.**
+  - P1024 has deviating upward histories at D = 4, 8, 16 and 32 (SAT; 6 s at D = 32).
+  - Kissat timed out at D = 64, 128, 256 and 512 (600 s each; 2,410 s under `run_capped`, RSS 2.7 GB).
+  - A decoded D = 32 deviation grows by about 15 to 20 bits per level, from 5 differing bits two levels up to about
+    half the bits (uncorrelated with the phase) by level 25.
+  - So P1024 behaves unlike G16 and the 480-state phase, whose deviations die within 31 and 67 levels.
+
+### 37.4 T33: a wall from the rain into P1024? Predictions, written before the run
+
+- **Question.** If P1024 is not upward rigid, its long deviations either die (it is rigid at some larger D), lead up to
+  another phase, or lead up to the rain. The last would be a wall leaving the rain into P1024. The black edge sits
+  above every rain state (via (1, a)), so that wall would give an eternal point of period 1,024 under a black edge that
+  is not the rain: **a counterexample to the conjecture at p = 1,024.**
+- **Two-point encoding** (`rain_to_phase.py`). The top two columns are a rain state, (a, ā) or (ā, a). The bottom two
+  are a fixed P1024 state; all P1024 states are time-rotations of one, so fixing it loses nothing up to the rain's two
+  phases. D columns in between obey Δc_j = c_(j−2) ∨ c_(j−1).
+- For D = 2 … 40, Kissat runs at 120 s per instance, nice 10, under `run_capped` (CPU 2,400 s).
+- **P33a.** UNSAT for every D ≤ 40 and both rain phases. Lean 90%.
+  - Counterfactual: SAT, which is an explicit wall from the rain into P1024. It would be verified column by column,
+    extended upward by the black edge and downward by P1024, and checked for least period, before any claim.
+- What it teaches either way: whether the conjecture is threatened at p = 1,024 by short walls into this one rigid
+  corridor. It says nothing about long walls or other phases.
+

@@ -1,0 +1,42 @@
+G8 p=8 state k=0: upward rigid at depth D=4
+== G8: 1 of 1 state classes upward rigid; largest D needed 4; 0 s
+G16 p=16 state k=0: upward rigid at depth D=25
+G16 p=16 state k=1: upward rigid at depth D=26
+G16 p=16 state k=2: upward rigid at depth D=19
+G16 p=16 state k=3: upward rigid at depth D=4
+G16 p=16 state k=4: upward rigid at depth D=31
+G16 p=16 state k=5: upward rigid at depth D=15
+G16 p=16 state k=6: upward rigid at depth D=4
+G16 p=16 state k=7: upward rigid at depth D=7
+== G16: 8 of 8 state classes upward rigid; largest D needed 31; 1 s
+480 p=32 state k=0: upward rigid at depth D=18
+480 p=32 state k=1: upward rigid at depth D=35
+480 p=32 state k=2: upward rigid at depth D=4
+480 p=32 state k=3: upward rigid at depth D=35
+480 p=32 state k=4: upward rigid at depth D=21
+480 p=32 state k=5: upward rigid at depth D=20
+480 p=32 state k=6: upward rigid at depth D=21
+480 p=32 state k=7: upward rigid at depth D=17
+480 p=32 state k=8: upward rigid at depth D=7
+480 p=32 state k=9: upward rigid at depth D=19
+480 p=32 state k=10: upward rigid at depth D=29
+480 p=32 state k=11: upward rigid at depth D=9
+480 p=32 state k=12: upward rigid at depth D=67
+480 p=32 state k=13: upward rigid at depth D=51
+480 p=32 state k=14: upward rigid at depth D=15
+480 p=32 state k=15: upward rigid at depth D=20
+480 p=32 state k=16: upward rigid at depth D=4
+480 p=32 state k=17: upward rigid at depth D=8
+480 p=32 state k=18: upward rigid at depth D=9
+480 p=32 state k=19: upward rigid at depth D=7
+480 p=32 state k=20: upward rigid at depth D=11
+480 p=32 state k=21: upward rigid at depth D=16
+480 p=32 state k=22: upward rigid at depth D=22
+480 p=32 state k=23: upward rigid at depth D=25
+480 p=32 state k=24: upward rigid at depth D=4
+480 p=32 state k=25: upward rigid at depth D=12
+480 p=32 state k=26: upward rigid at depth D=9
+480 p=32 state k=27: upward rigid at depth D=7
+480 p=32 state k=28: upward rigid at depth D=47
+480 p=32 state k=29: upward rigid at depth D=21
+== 480: 30 of 30 state classes upward rigid; largest D needed 67; 22 s
