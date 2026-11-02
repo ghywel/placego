@@ -1,18 +1,27 @@
+# closed_set.py receipts, regenerated after GC2394 (the phase bookkeeping corrected; the cap printed on every line)
 # controls
-G8 law (P,S)=(4,2), lab speed 0.5000; alignments tried 32; certified 0, not certified 32
-  not certified (first 6): [((0, 0), 'undetermined', 77), ((0, 1), 'undetermined', 76), ((0, 2), 'undetermined', 75), ((0, 3), 'undetermined', 68), ((0, 4), 'undetermined', 77), ((0, 5), 'undetermined', 68)]
+G8 law (P,S)=(4,2), lab speed 0.5000; widths [8]; closure cap 60000; alignments tried 32; certified 32, not certified 0
+  closure sizes (W, states) for certified alignments: min (8, 10) max (8, 11) distinct [(8, 10), (8, 11)]
+  not certified (first 6): []
+CLOSED_SET_DONE
+c7_28 law (P,S)=(8,8), lab speed 0.0000; widths [13]; closure cap 60000; alignments tried 196; certified 196, not certified 0
+  closure sizes (W, states) for certified alignments: min (13, 763) max (13, 771) distinct [(13, 763), (13, 764), (13, 765), (13, 766), (13, 768), (13, 769), (13, 771)]
+  not certified (first 6): []
+CLOSED_SET_DONE
+# (9,57), 60 sampled alignments, cap 60000
+s9_57 law (P,S)=(19,14), lab speed 0.2632; alignments tried 60; certified 60, not certified 0
+  closure sizes (W, states) for certified alignments: min (16, 102) max (24, 4432) distinct [(16, 102), (16, 103), (16, 291), (16, 524), (16, 674), (16, 725), (24, 4432)]
+  not certified (first 6): []
 CLOSED_SET_DONE
 EXIT 0
-c7_28 law (P,S)=(8,8), lab speed 0.0000; alignments tried 196; certified 0, not certified 196
-  not certified (first 6): [((0, 0), 'undetermined', 26), ((0, 1), 'undetermined', 25), ((0, 2), 'undetermined', 24), ((0, 3), 'undetermined', 23), ((0, 4), 'undetermined', 26), ((0, 5), 'undetermined', 27)]
+# (9,57), all 513 alignments, cap 60000
+s9_57 law (P,S)=(19,14), lab speed 0.2632; alignments tried 513; certified 513, not certified 0
+  closure sizes (W, states) for certified alignments: min (16, 102) max (24, 4433) distinct [(16, 102), (16, 103), (16, 286), (16, 289), (16, 290), (16, 291), (16, 523), (16, 524), (16, 674), (16, 720), (16, 723), (16, 724)]
+  not certified (first 6): []
 CLOSED_SET_DONE
 EXIT 0
-# (9,57), 60 alignments, W = 16, 24, 32, cap 60,000
-s9_57 law (P,S)=(19,14), lab speed 0.2632; alignments tried 60; certified 0, not certified 60
-  not certified (first 6): [((2, 34), 'exceeded cap', 60001), ((8, 18), 'law fails', 2969), ((4, 46), 'exceeded cap', 60001), ((6, 56), 'law fails', 6034), ((6, 28), 'law fails', 36321), ((2, 30), 'law fails', 16672)]
-CLOSED_SET_DONE
-EXIT 0
-# (7,63), all 441 alignments, W = 16, 24, 32, cap 20,000
+# G28 replay (replay_state.py): (9,57) alignment (0,0), W=16, t in [300,600): ok 300, bad 0
+# (7,63), all 441 alignments, cap 20000 (corrected phase bookkeeping; unchanged since 7 divides 63)
 s7_63 law (P,S)=(9,7), lab speed 0.2222; alignments tried 441; certified 28, not certified 413
   closure sizes (W, states) for certified alignments: min (16, 70) max (16, 74) distinct [(16, 70), (16, 73), (16, 74)]
   not certified (first 6): [((0, 0), 'exceeded cap', 20001), ((0, 1), 'exceeded cap', 20001), ((0, 2), 'exceeded cap', 20001), ((0, 3), 'exceeded cap', 20001), ((0, 6), 'exceeded cap', 20001), ((0, 7), 'exceeded cap', 20001)]

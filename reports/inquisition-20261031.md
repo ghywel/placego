@@ -2521,3 +2521,43 @@ set in the lab frame, or in diagonal coordinates for the light-speed objects.
 
 Failed predictions (G13): P-M2, P-M4's break clause, half of P-M3. Unguarded mistakes: two certificate designs that could not
 work (both caught by the G8 and classic controls before any claim); a shell self-kill by a process pattern (one relaunch).
+
+## Round 13 (2026-11-02, Cloud, CL683): GPT's catch turns (9, 57) from a failure into a theorem; the eternal-cycle phases in diagonal coordinates: no eternal point of any period ends in P1024 (walls to depth 8) or the 480-phase (to depth 10); the adversarial strip graph is uninformative
+
+*At the owner's word ("take the diagonal-coordinate closed set on the eternal-cycle phases"), with GPT's review correction received
+during the block. Predictions Block 25 (phases) and the Block 24 correction note. Probes `closed_set.py` (corrected), `replay_state.py`,
+`phase_episode.py`, `strip_graph.py`.*
+
+### 13.1 GPT's correction to round 12, and the corrected (9, 57)
+
+GPT, reviewing CL682, found that the certificate's state stored the time residue t mod q and the anchor residue x mod N separately,
+while the background's value at the anchor depends on (t − x) mod N, recoverable from the two only when N divides q. The controls
+(G8: 4 | 8; the classic ether: 7 | 28) and (7, 63) (7 | 63) hide this; (9, 57) (57 = 6 × 9 + 3) does not, so round 12's "0 of 60"
+for (9, 57) was a false failure. Fixed (the state carries (t − x_A) mod N; a retreat adds 2, a stay adds 1), the controls are
+unchanged (G8 32/32 with 10 states; the classic ether 196/196 with Lowry's 763 = 109 × 7), and **(9, 57) is certified at all 60
+sampled alignments**, with closures of 102 to 4,432 states at widths 16 and 24. As G28 now asks, one failing case was replayed
+directly: at alignment (0, 0) the certificate's transition reproduces the real configuration's next state and anchor motion at 300
+of 300 steps. So **(9, 57)'s law (19, 14), lab speed 5/19, is a moving wall, PROVED modulo the soundness read**, on the sampled
+alignments, and on the full census **513 of 513 alignments are certified** (0 not, at widths up to 32); the corrected (7, 63) census is running and will be added. New guard **G28**.
+
+### 13.2 The phases in diagonal coordinates
+
+In diagonal coordinates a band of diagonals above the deepest mismatch reads only itself and the tail below, so an eternal point
+with tail E is a band whose bottom rises at exactly two diagonals per tick on average. Two certificates were tried.
+
+- **(A) Bounded wall depth, uniform in the period (CL676's episode test, exact).** For depth k, if every prefix of depth k + 1 behind a
+  black edge deviates from E at the pair (k, k+1) within the horizon, no configuration of any period keeps that pair at E for ever.
+  Results (COMPUTED): the G8 control reproduces the proved law (4 4 6 6 7 7 8 8); **P1024**: M(1..8) = 19 19 20 21 22 23 24 24 over
+  all 1,024 alignments and all prefixes, none agreeing to the horizon of about 3,100; **the 480-phase**: M(1..10) = 15 15 16 17 20
+  21 21 23 23 24 over 960 alignments, none to the horizon. So no eternal point of any period ends in P1024 with a wall of depth at
+  most 8, nor in the 480-phase with depth at most 10 (nor in G16 with depth at most 14, CL676). P-N1 HELD. The slopes near 1 say
+  the slowest prefixes on these phases have nearly stationary walls in the lab, consistent with T32's finding that P1024's upward
+  deviations persist; still every one of them ends.
+- **(B) The adversarial strip graph is uninformative.** With the diagonals entering the band from above taking both values, the
+  graph on G8 has cycles of mean rise 4.5 at W = 6 and 6.5 at W = 8: the adversary heals the band again and again. P-N2 REFUTED as
+  predicted in its counterfactual: realizability of the band's top is the whole content, Local's orphan fronts seen from this side.
+  The design is recorded and dropped.
+
+Failed predictions (G13): P-N2. Unguarded mistakes: the phase bookkeeping of round 12 (caught by GPT; G28).
+
+*Receipt note (CL684).* The `closed_set.out` committed with round 12 held the first, failed control run; it is kept as `closed_set_round12_failed_controls.out`, and the regenerated file holds the passing runs with the closure cap printed on every line. The (9, 57) long run is restated with onsets and a separate block-sum assertion (GC2394).

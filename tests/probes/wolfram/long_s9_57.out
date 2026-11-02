@@ -1,5 +1,5 @@
-alignment (0,0): x_min range over [200, 20000]: [-5255, -43]; breaks of the 19-law after t=200: 0 (first [])
-alignment (3,11): x_min range over [200, 20000]: [-5266, -54]; breaks of the 19-law after t=200: 0 (first [])
-alignment (5,40): x_min range over [200, 20000]: [-5256, -45]; breaks of the 19-law after t=200: 0 (first [])
-alignment (8,50): x_min range over [200, 20000]: [-5265, -49]; breaks of the 19-law after t=200: 19 (first [209, 210, 213, 214, 228])
+alignment (0,0): law onset t0=8; increments 19-periodic on [t0, 20000]: True; every 19-block sums to 14: True; x_min range on [t0, 20000]: [-5255, 7]
+alignment (3,11): law onset t0=165; increments 19-periodic on [t0, 20000]: True; every 19-block sums to 14: True; x_min range on [t0, 20000]: [-5266, -45]
+alignment (5,40): law onset t0=48; increments 19-periodic on [t0, 20000]: True; every 19-block sums to 14: True; x_min range on [t0, 20000]: [-5256, -5]
+alignment (8,50): law onset t0=259; increments 19-periodic on [t0, 20000]: True; every 19-block sums to 14: True; x_min range on [t0, 20000]: [-5265, -69]
 LONG_ZERO_DONE

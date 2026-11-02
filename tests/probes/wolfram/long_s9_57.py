@@ -16,6 +16,12 @@ for (r, s) in [(0, 0), (3, 11), (5, 40), (8, 50)]:
     for t in range(T + 1):
         d = np.flatnonzero(a ^ b); km[t] = int(d.min()) - c + t
         if t < T: a, b = step(a), step(b)
-    inc = np.diff(km); breaks = [t for t in range(200 + 8, T) if inc[t] != inc[t - 19]]
-    print(f"alignment ({r},{s}): x_min range over [200, {T}]: [{int((km - np.arange(T+1))[200:].min())}, {int((km - np.arange(T+1))[200:].max())}]; breaks of the 19-law after t=200: {len(breaks)} (first {breaks[:5]})", flush=True)
+    inc = np.diff(km); P, Ssum = 19, 14
+    # onset: the first t from which inc is P-periodic to the end (GC2394: state the onset, assert the sum separately)
+    onset = T - 2*P
+    while onset > 0 and inc[onset - 1] == inc[onset - 1 + P]: onset -= 1
+    periodic = all(inc[t] == inc[t - P] for t in range(onset + P, T))
+    sums_ok = all(int(inc[t:t+P].sum()) == Ssum for t in range(onset, T - P, P))
+    xm = km - np.arange(T + 1)
+    print(f"alignment ({r},{s}): law onset t0={onset}; increments {P}-periodic on [t0, {T}]: {periodic}; every {P}-block sums to {Ssum}: {sums_ok}; x_min range on [t0, {T}]: [{int(xm[onset:].min())}, {int(xm[onset:].max())}]", flush=True)
 print("LONG_ZERO_DONE")

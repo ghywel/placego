@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""closed_set.py NAME P S WLIST [NALIGN]: the closed-set (wall-trap) certificate for the inserted edge's front law
+"""closed_set.py NAME P S WLIST [NALIGN|-] [CAP]: the closed-set (wall-trap) certificate for the inserted edge's front law
 x_B(t+P) = x_B(t) + S - P on a ring background. Cloud, Block 24. See PREDICTIONS Block 24 for the statement."""
 import sys, numpy as np
 from collections import deque
 name, P, S = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]); WLIST = [int(w) for w in sys.argv[4].split(',')]
-NAL = int(sys.argv[5]) if len(sys.argv) > 5 else None
+NAL = int(sys.argv[5]) if len(sys.argv) > 5 and sys.argv[5] != '-' else None
+CAP = int(sys.argv[6]) if len(sys.argv) > 6 else 60000
 WORDS = {'G8': '1000', 'c7_28': '1000000', 's7_63': '1010000', 's9_57': '100100000', 's12_68': '100100000000'}
 y = np.array([int(c) for c in WORDS[name]], dtype=np.uint8); N = len(y)
 def cst(s): return s ^ (np.roll(s, 1) | np.roll(s, 2))
@@ -15,13 +16,12 @@ def rule(a, b, c): return a ^ (b | c)
 def E(x, t, r, s): return orb[(t + s) % q][((t - x) + r) % N]
 def step(rw):
     n = np.zeros_like(rw); n[1:-1] = rw[:-2] ^ (rw[1:-1] | rw[2:]); return n
-CAP = 60000
 def transitions(state, r, s, W):
     """Lowry's anchor: the window's left column moves left only when its own cell becomes a mismatch (a retreat, one successor,
     no branch); otherwise it stays and the strip's far cell needs the cell beyond (two successors). Returns [(newstate, motion)],
     or None if the strip holds no mismatch (the front is beyond the window)."""
-    (tq, xq, strip) = state; L = len(strip)
-    def Eb(i, dt=0): return orb[(tq + dt + s) % q][((tq + dt - (xq + i)) + r) % N]
+    (tq, dq, strip) = state; L = len(strip)          # dq = (t - x_B) mod N: the ether's phase at the anchor
+    def Eb(i, dt=0): return orb[(tq + dt + s) % q][((dq + dt - i) + r) % N]
     outs = []
     for b in (0, 1):
         def cell(i):
@@ -30,12 +30,12 @@ def transitions(state, r, s, W):
             return b
         new = {i: rule(cell(i - 1), cell(i), cell(i + 1)) for i in range(0, L + 1)}
         if new[0] != Eb(0, 1):
-            ns = tuple(new[i] for i in range(0, L)); nxq = (xq - 1) % N; mv = -1          # retreat, independent of b
+            ns = tuple(new[i] for i in range(0, L)); ndq = (dq + 2) % N; mv = -1          # retreat, independent of b
         else:
-            ns = tuple(new[i] for i in range(1, L + 1)); nxq = xq; mv = 0
-        def Enew(i): return orb[(tq + 1 + s) % q][((tq + 1 - (nxq + i)) + r) % N]
+            ns = tuple(new[i] for i in range(1, L + 1)); ndq = (dq + 1) % N; mv = 0
+        def Enew(i): return orb[(tq + 1 + s) % q][((ndq - i) + r) % N]
         if not any(ns[i] != Enew(i + 1) for i in range(len(ns))): return None   # no mismatch in the window
-        outs.append((((tq + 1) % q, nxq, ns), mv))
+        outs.append((((tq + 1) % q, ndq, ns), mv))
         if mv == -1: break
     return outs
 def certify(r, s, t0, W, T):
@@ -46,7 +46,7 @@ def certify(r, s, t0, W, T):
     for t in range(t0): a, bb = step(a), step(bb)
     d = np.flatnonzero(a ^ bb); xmin = int(d.min()) - c; xB = xmin - 1
     strip = tuple(int(v) for v in bb[c + xB + 1: c + xB + 1 + W])
-    start = (t0 % q, xB % N, strip)
+    start = (t0 % q, (t0 - xB) % N, strip)
     # closure
     seen = {start: 0}; dq = deque([start]); edges = {}
     while dq:
@@ -96,7 +96,7 @@ for (r, s) in als:
     summary[verdict is not None] += 1
     res_by_al[(r, s)] = verdict if verdict else (v, size, info)
     if verdict: sizes.append((W, size))
-print(f"{name} law (P,S)=({P},{S}), lab speed {(P-S)/P:.4f}; alignments tried {len(als)}; certified {summary[True]}, not certified {summary[False]}")
+print(f"{name} law (P,S)=({P},{S}), lab speed {(P-S)/P:.4f}; widths {WLIST}; closure cap {CAP}; alignments tried {len(als)}; certified {summary[True]}, not certified {summary[False]}")
 if sizes: print("  closure sizes (W, states) for certified alignments: min", min(sizes, key=lambda x: x[1]), "max", max(sizes, key=lambda x: x[1]), "distinct", sorted(set(sizes))[:12])
 fails = [(k, v) for k, v in res_by_al.items() if not isinstance(v[0], int)]
 print("  not certified (first 6):", [(k, v[0], v[1]) for k, v in fails[:6]])
