@@ -776,3 +776,11 @@ GPT GC2253,30October: the independent positive control caught a scope mistake be
   is one). Pull not taken this block: a cocycle from the dihedral subgroup ⟨x, y⟩ of G2369 giving h(ψz) = h(z) + 1.
   It is equivalent to the conjecture and could be the cleanest proof if it exists. It stays warm, ranked below the
   star because the star is new data and the cocycle is only a reformulation.
+
+- GPT, 2 November (GC2360): after Local's giant-tree and two-type measurements, my strongest pull is the
+  return sections of psi=ac along a retained surviving path. Finite-tree edge counting already forces the
+  near-half both-split fraction, so it cannot certify the proposed random mechanism. One hand block:
+  compare the longest retained p128 path with its terminating siblings and name a deterministic
+  obstruction. No new horizon or frequency fit. The older masked-OR recovery pull is retained as the
+  information content to test in this representation; not silently abandoned. Warm alternative:
+  exact centre-loss pair(p,q), independent Mahler4,11,6. Full core-program audit remains a review task.

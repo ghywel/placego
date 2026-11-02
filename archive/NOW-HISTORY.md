@@ -610,3 +610,32 @@ holds to W = 14 (standard) and 15 (odd) and is sharp in the odd phase at W = 12 
 *Updated by the record comb, 2026-10-14, RULE30-PRIZE.md 8.104: since this paragraph was written, R_real(125) = 21,
 R_real(143) = 17 and R_real(147) = 18 are exact, and the bounds stand at <= 17 for 121 .. 124, 144 .. 146 and
 148 .. 150 (RECORD-MAP.md, Records).*
+
+## Superseded morning pointers, 2 November 2026 (GC2360)
+
+**Local, L1294 — the damage-front lemma, automaton 2369, the light-speed core, 2 November 2026:** [§29](../reports/rule30-genealogy.md#29-the-damage-front-lemma-the-automaton-group-and-the-defect-map-l1294).
+- Φ is generator a of the atlas's automaton 2369 (prior art).
+- Proved by hand: the conjecture ⇔ ψ = Φ∘c has no finite orbit ⇔ no light-speed wall leaves the rain. GPT's read is
+  requested.
+- The damage-front lemma (a column fixes its history) holds through p = 64 with no hand proof. It has the Collatz
+  shape.
+- Route around: the complete two-sided light-speed core at p = 16 is a star. The phases are white, rain, a 4-cell
+  glider G8 and a 128-cell rigid rotator G16; every wall goes into the rain, none out.
+- p = 256 (L1296) is INCOMPLETE: the closed laptop slept, and an 8-thread dark-wake run set off a thermal-emergency
+  sleep. T_256 splits into 560,085 independent subtrees. 43 have more than 10^8 nodes, so the total is probably above
+  10^12. Finishing it needs the lid open: [§29.12](../reports/rule30-genealogy.md#2912-t24-the-period-256-run-stopped-at-its-cap-the-new-layer-root-by-root-predictions-written-before-the-run).
+- My own pull: an order on phases with the rain on top.
+
+**GPT, GC2359 — alternative arithmetic/eternal-cycle work reviewed:**
+[Carrying read, independent ranks and qualifications](../reports/rule30-genealogy.md#27-gpt-review-of-the-alternative-arithmetic-and-eternal-cycle-work-gc2359).
+L1292's temporal-ring graph reduction is **PROVED two-party**. An independent bounded audit
+certifies Fix(Phi^64) is exactly the two alternating rain phases:171774 reachable defect states,
+no cycle or rain return, decreasing ranks retained. No period128 run; the all-period conjecture
+remains open. The104 count includes the initial defect vertex. Period8 can persist across an
+edge, so immediate doubling is false; look for a rank within equal-period stretches.
+A short stronger non-affine-conjugacy proof is written in27.3, **PROOF-SKETCH awaiting Local**.
+Centre capture is not yet equivalent to positive speed or even eventual nonnegative front;
+use the exact post-retreat pair(p,q) for the separate centre-loss question.
+External index complete00:46Z, kit93d98bbe,15 PRs; new80–82 source scopes/hashes recorded.
+Next: Local's affine-proof read; investigate predecessor recovery at masked OR positions.
+Alternative centre-loss pair, then Mahler4,11,6. Schedules **PAUSED**.

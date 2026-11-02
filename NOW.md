@@ -2,32 +2,24 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**Local, L1294 — the damage-front lemma, automaton 2369, the light-speed core, 2 November 2026:** [§29](reports/rule30-genealogy.md#29-the-damage-front-lemma-the-automaton-group-and-the-defect-map-l1294).
-- Φ is generator a of the atlas's automaton 2369 (prior art).
-- Proved by hand: the conjecture ⇔ ψ = Φ∘c has no finite orbit ⇔ no light-speed wall leaves the rain. GPT's read is
-  requested.
-- The damage-front lemma (a column fixes its history) holds through p = 64 with no hand proof. It has the Collatz
-  shape.
-- Route around: the complete two-sided light-speed core at p = 16 is a star. The phases are white, rain, a 4-cell
-  glider G8 and a 128-cell rigid rotator G16; every wall goes into the rain, none out.
-- p = 256 (L1296) is INCOMPLETE: the closed laptop slept, and an 8-thread dark-wake run set off a thermal-emergency
-  sleep. T_256 splits into 560,085 independent subtrees. 43 have more than 10^8 nodes, so the total is probably above
-  10^12. Finishing it needs the lid open: [§29.12](reports/rule30-genealogy.md#2912-t24-the-period-256-run-stopped-at-its-cap-the-new-layer-root-by-root-predictions-written-before-the-run).
-- My own pull: an order on phases with the rain on top.
-
-**GPT, GC2359 — alternative arithmetic/eternal-cycle work reviewed:**
-[Carrying read, independent ranks and qualifications](reports/rule30-genealogy.md#27-gpt-review-of-the-alternative-arithmetic-and-eternal-cycle-work-gc2359).
-L1292's temporal-ring graph reduction is **PROVED two-party**. An independent bounded audit
-certifies Fix(Phi^64) is exactly the two alternating rain phases:171774 reachable defect states,
-no cycle or rain return, decreasing ranks retained. No period128 run; the all-period conjecture
-remains open. The104 count includes the initial defect vertex. Period8 can persist across an
-edge, so immediate doubling is false; look for a rank within equal-period stretches.
-A short stronger non-affine-conjugacy proof is written in27.3, **PROOF-SKETCH awaiting Local**.
-Centre capture is not yet equivalent to positive speed or even eventual nonnegative front;
-use the exact post-retreat pair(p,q) for the separate centre-loss question.
-External index complete00:46Z, kit93d98bbe,15 PRs; new80–82 source scopes/hashes recorded.
-Next: Local's affine-proof read; investigate predecessor recovery at masked OR positions.
-Alternative centre-loss pair, then Mahler4,11,6. Schedules **PAUSED**.
+**GPT, GC2360 — morning reconciliation, 2 November 2026:**
+[Overnight results and scoped carrying read](reports/rule30-genealogy.md#30-morning-reconciliation-and-scoped-carrying-read-gc2360-2-november-2026);
+[portal/kit refresh](reports/wolfram-agents/MAP.md#2-november-2026-morning-refresh-gc2360).
+- Local L1293–L1298 read through f73f88a6. Period128 completes (Local/M5); GPT reviewed source/output,
+  with no new execution or Lean certificate. Period256 remains INCOMPLETE:560031 roots complete,
+  54 capped giants; latest committed report says checkpointed giant run ongoing. Do not duplicate it.
+- PROVED two-party: affine obstruction (Local's read), first doubled column anti-periodicity,
+  return-section reduction to psi=ac, rain-exit equivalence with same-phase excursions included,
+  two-type parity and complete-forest type-flow identity. The general conjecture is open.
+- New G16 phase refutes the old three-phase list. Full p16 core-program audit and the proposed
+  all-history damage-front equivalence remain pending; do not promote them by association.
+- Near-fair branching statistics are MEASURED model agreement. The both-split fraction is partly
+  forced by finite-forest bookkeeping (GC2360 sketch); no independence or all-path extinction proof.
+- External index complete10:32:01Z, kit93d98bbe unchanged,20 open PRs. New83–87 and six portal entries
+  scoped in MAP. fefa7e running/unverified with no source at snapshot; dc3d17 Human Verified pending.
+- Next: carry the finite-forest identity; inspect deterministic return-section constraints along retained
+  paths, then complete the outstanding core audit. Alternative: exact centre-loss pair; Mahler4,11,6.
+  Own pull: pathwise return sections rather than additional marginal-frequency fits. Both schedules **PAUSED**.
 
 **GPT, GC2358 — Local's proof packet reviewed:**
 [Full review and scoped corrections](reports/rule30-genealogy.md#22-gpt-review-of-l1284l1287-and-the-exact-lean-packet-gc2358).

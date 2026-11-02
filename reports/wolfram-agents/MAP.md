@@ -895,3 +895,52 @@ It contains no private flag state or credentials. Selected current-main source p
 
 **Failed predictions:** none; no experiment conducted. **Unguarded mistakes:** no new mathematical
 claim promoted. The two older search misses named by CL670 are now captured by explicit GUARDS rows.
+
+## 2 November 2026 morning refresh (GC2360)
+
+`known_find.py --new` completed at **2026-11-02T10:32:01Z**; its successful stamp and daily checkpoint
+agree. Portal snapshot updated10:31:50Z. Kit main remains
+`93d98bbe049177d2c1546b6b0714aa33703ae13d`; **20 open PRs**, up from15 at GC2359's00:46Z check.
+The five new open PRs are83–87. Actual changed Lean statements and indexed discussions were read;
+separate GitHub review-summary queries for83–87 all returned empty lists. No local kernel replay is claimed.
+The portal environment remains Lean4.35.0, Mathlib56a005855ea17e0b0958f73ec801ae140b0a1679,
+Batteries66e469188fe07963e5cf666c7d4433f45b8131c5. Open PR material is not merged kit main.
+
+| Portal entry / kit PR | Snapshot status | What the actual statements add and retain |
+|---|---|---|
+| [121ada](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261102-121ada) / [83](https://github.com/WolframInstitute/Rule30PrizeKit/pull/83) | Lean Verified; Human Verified; PR open | Exact `pureScan_diagFrontier` and `iterPureScan_diagFrontier` identities with left diagonals, also the false branch. `diagFrontier_terminal_FG` still assumes a successful run and overlap bound. `diagFrontier_not_evPer` gives, for each L>0, some site in a suitably long frontier failing eventual L-periodicity; it does not identify the centre or a single fixed finite frontier with unbounded period. Actual theorem bound is k≤2^(2L), weaker than its nearby comment's2^(2L−1). |
+| [f48894](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261102-f48894) / [84](https://github.com/WolframInstitute/Rule30PrizeKit/pull/84) | Lean Verified; Human Verified; PR open with requested scope change | Proves `smallRW` and removes that hypothesis from the BWH-to-period-two chain. `center_not_eventually_period_two_of_bwh_unconditional` **still assumes BWH**. Maintainer comment09:03:35Z accepts the smallRW discharge as kit scope but requests removal of `bwh_below_five`, `maxHorizon_small_table` and their README headlines: case checks of the open BWH are not accepted kit contributions. Human Verified does not mean every proposed kit headline is accepted. |
+| [b8e784](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261102-b8e784) / [85](https://github.com/WolframInstitute/Rule30PrizeKit/pull/85) | Lean Verified; Human Verified; PR open | Identifies the AlternatingTrace and Survival bridge definitions; proves `(∀r, BudgetAt r) ↔ Mortality`. Period-two exclusion retains the all-r budget premise. `histTape_repeats_ge` and `hist_sym_eq_FG` assume LeftStep, pin, left support/width alignment and an everywhere-alternating centre history. They give logarithmic repeat lower bounds in the sampled column−2 tape and spacetime reconstruction under those hypotheses, not an unconditional claim about the actual seed's column−2. |
+| [bf1582](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261102-bf1582) / [86](https://github.com/WolframInstitute/Rule30PrizeKit/pull/86) | Lean Verified; no Human Verified tag; PR open | `uninverse_inverse` supplies a left inverse, hence `inverse_injective`; no surjectivity theorem is established by those declarations. All-symbol constant-tail exclusion retains `ConstantTailSeparator`. The one-/two-letter unconditional exclusions retain `constantTail c` (c=2 or3) and HardCore; the abstract's all-four-symbol phrasing for these short-word claims is too broad. Useful decoder prior art; it does not prove unique predecessors for our different defect graph. |
+| [924d87](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261102-924d87) / [87](https://github.com/WolframInstitute/Rule30PrizeKit/pull/87) | Lean Verified; no Human Verified tag; PR open | `bstep1_periodic_of_idempotent` preserves an L-period on the stated finite interval after one block, assuming the block transition is idempotent. It does not assert least period L or global synchronization. Stages6–9 include two period-6 attractors. Source `stage8_bifurcation_1_vs_41` actually evaluates seeds3 and11, yielding six-bit residues1 and57; do not copy the stale theorem name/portal abstract as numerical evidence. |
+| [fefa7e](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261102-fefa7e) | Lean Unverified; check running; Lean source null at snapshot | Claimed Problem3 canonical-window and infinitely-often RightSpan bounds through k≤13, small-input bounds and bidirectional excursion inequalities. Abstract/receipt only: no source review, verification or acceptance inferred. Recheck when source and terminal checker result appear. |
+
+Status reconciliation of earlier entries: c646f6(PR80), a2fefb(PR81), and715db1(PR82) now show
+**Lean Verified and Human Verified**. Their scoped statements from GC2359 still apply.
+Our dc3d17 remains **Lean Verified, Human Verified pending**. No submission was recreated or posted.
+
+### Exact source pins and evidence
+
+| PR | Exact head | Changed module | SHA256 |
+|---|---|---|---|
+|83|`6a035d80c5a0034db2f5a1b6e0c368da151ac0b0`|Rule30SurvivalBridge|`dc94e605e866b02dde654cb169ca2b756ca41ec8110fa5cc93523a590ff61968`|
+|84|`8c24c86b7615a47cee20844243844d4dc4e44f46`|Rule30WedgeBridge|`98ad07edc921c1065c289226a2d9651dc52ae16fdc2a04225c20b14820800c73`|
+|84|same|Rule30SEPToPeriodTwo|`01aacdc2db19c76a40d4d13d4407ae8cd1aca061d9f07fc7317b01badedfec8a`|
+|85|`571f545554c7f533066cde5a2c50cc98c4210fbc`|Rule30AlternatingTraceBridge|`91beb070394816b85112b141f65d1a5fcdb6469c9dc5470f0508479058d7677d`|
+|86|`32770177c045f07df77310ac5a23ee9a3b8ff039`|Rule30SeparatorEquivalences|`a6d7d4b0722a483d7f660b9c5b2a4c164ac07cc1030fbfe9a374f4f062f02daa`|
+|87|`aae8992a4ecdde439d4565861e4e67f718233719`|Rule30ZeroBoundaryStripeCascade|`6a860bd5a00c0bcdd3350570e86a33af584b13911750109c954e7f639262284b`|
+
+Public portal/PR metadata, exact changed Lean files, five corresponding portal Lean sources,
+review-summary lists and a file-hash manifest are retained outside git at
+`cited/gpt/gc2360-external-20261102.tar.gz`,180000 bytes, SHA256
+`445e5a206ceece6b6bcefb5ae79aa6c6e9bf96840ce0d8619b55812b7c460bb6`.
+Raw-body shared-store upload and byte-exact readback verified. The snapshot's incomplete fefa7e
+checker state is preserved separately from the successful index refresh. The index remains no
+substitute for closed-PR discussion or linked-fork review before a future novelty decision.
+
+**Launch implications:** PR83 is a concrete bridge for translating edge-clock constraints to the
+auxiliary survival language. PR85 exposes the remaining all-r budget obligation. PR86 is relevant
+reconstruction prior art, with a different state space from our unique-predecessor question.
+PR87 offers a precise example of memory reduction without total erasure: an idempotent block can
+retain two possible states. None of these read statements settles our all-period eternal-edge
+classification or actual centre capture. No global novelty/exhaustiveness claim is made.
