@@ -35,7 +35,7 @@ for r in [int(x) for x in sys.argv[2:]]:
     for (a, q) in classes:
         def erow(t):
             return np.array([(cols[(j - OFF + a) % NC] >> ((t + q) % p)) & 1 for j in range(-2, Dm)], dtype=np.uint8)
-        Er = [erow(t) for t in range(p)]
+        Er = [erow(t) for t in range(min(p, T + 1))]          # only the ticks used
         D = np.zeros((P, Dm), dtype=np.uint8)
         D[:, OFF] = 1; D[:, OFF + r - 1] = 1; D[:, OFF + 1:OFF + r - 1] = inter
         def front(D):

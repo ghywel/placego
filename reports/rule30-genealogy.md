@@ -4886,3 +4886,22 @@ The prepared mismatch regions of width r = 6, 10 and 14 are all enumerated, with
   freedom from fuel, and even periodic-wake phases would need a fuel term in their certificates. That would weaken the
   proposal of §42.1.
 
+### 43.2 T38 results ([output](../tests/probes/drawdown_t38.out))
+
+- **P38a REFUTED: both periodic-wake phases have fuel.**
+  - The 480-state phase (all 960 classes): largest drawdown 12, 16 and 20 at r = 6, 10 and 14.
+  - P1024 (all 1,024 classes at r ≤ 10, 256 sampled at r = 14): 11, 19 and 20; at r = 10 the front heals all the way
+    back to the pinned top.
+  - Like G16 (11, 14, 19, 22), unlike G8 (5 at every r).
+- **So a periodic wake from a clean start does not mean freedom from fuel.** G8 is the only known phase without fuel,
+  and a local front certificate needs exactly that. The proposal of §42.1 fails in its strong form: a periodic wake is
+  not sufficient for a local certificate.
+
+**T39, predictions written before the run (`wake_attractor.py`).** For P1024, 200 random prefixes at each of K = 40
+and 80 run at random θ for 6K + 2,000 ticks. After the front passes depth 3K, is the window above the front eventually
+periodic with the clean-start wake's period and advance (208, 272), at speed exactly 17/13?
+- **P39a.** Every run converges to the clean-start wake: the clean-start wake is a global attractor. Lean 55%.
+- **What it teaches.** If P39a holds, a two-stage proof shape appears for P1024: the prefix's fuel is spent, then the
+  front is captured by a periodic wake whose advance is a finite fact. If it fails (other periods, other speeds, or no
+  recurrence), even periodic-wake phases have several or chaotic attractors.
+
