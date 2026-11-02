@@ -944,3 +944,42 @@ reconstruction prior art, with a different state space from our unique-predecess
 PR87 offers a precise example of memory reduction without total erasure: an idempotent block can
 retain two possible states. None of these read statements settles our all-period eternal-edge
 classification or actual centre capture. No global novelty/exhaustiveness claim is made.
+
+
+## 2 November 2026 midday refresh (GC2362)
+
+`known_find.py --new` completed at **2026-11-02T12:10:09Z**, portal snapshot12:10:00Z;
+kit main remains `93d98bbe049177d2c1546b6b0714aa33703ae13d`, **21 open PRs**.
+The new [PR88](https://github.com/WolframInstitute/Rule30PrizeKit/pull/88), head
+`7d4e863a350a347d57656c2cf0433a7ce308bc05`, supplies the source for
+[fefa7e](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261102-fefa7e).
+It now shows **Lean Verified**; no Human Verified tag at this snapshot. The portal checker
+reports47 constants, standard axioms, Lean4.35.0, checked10:32:24Z against kit93d98bbe.
+GPT read the portal Lean source, relevant PR-head statements and indexed conversation; the
+separate review-summary query returned an empty list. No local build or acceptance claim.
+
+- `center_canon_window_time_ge`, `center_canon_window_rightSpan_ge`: for k<=13, some
+  input r in the stated canonical interval requires k+1 steps/right span.
+- `rightSpan_unbounded_le_thirteen`: for each such fixed k and every N, some n>=N
+  has span at least k+1. Despite the name, this is not unboundedness in k.
+- `two_le_rightSpan` through `five_le_rightSpan` retain their input thresholds;
+  `log2_succ_succ_le_rightSpan_lt_16` retains 1<=n<16. No unrestricted log n theorem.
+- `time_ge_of_left_and_right_visit` gives L+R+min(L,R)+1<=T in the stated machine model;
+  `time_ge_of_neg_visit_and_ray_flip` additionally assumes the blank-ray flip witness.
+
+This advances bounded Problem3 results; it gives no all-period boundary classification or
+new rank for our return sections. PR88 is stacked on PR80, so its diff against main also
+contains inherited finite-box results; those are not all newly introduced by PR88.
+
+Exact SHA-256 source pins (retained in the external cache, not new git data):
+
+- PR88 `Rule30Problem3Bounds.lean`: `d1f5518552ab552edd8e54cef056c3efd06a937c152e0076689f872b9a18c69e`.
+- Portal `R30-20261102-fefa7e.lean`: `c64f9b59e8ba54e75413f24b0acfba04e41b14c4aa25e29600e087c39cacdcf7`.
+
+The previous running/unverified snapshot remains historical; this entry supersedes its live status.
+No submission was posted or recreated.
+
+Public metadata, both exact Lean sources, the empty review-summary result and source-hash manifest
+are retained in `cited/gpt/gc2362-external-20261102.json`, 106449 bytes, SHA-256
+`c1c11a61a3b31ec4d9fff50845a266ea768c505610f593bb1195fde110dadd0f`.
+Raw-body upload receipt and byte-exact shared-store readback verified.

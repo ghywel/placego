@@ -5199,3 +5199,23 @@ conjugates it to A(y)=a*y+b on Z_2, a point of exact period2 gives
 a contradiction. No continuity or residue-compatibility assumption is needed. This repairs
 the broader claim whose mod8 argument only addressed residue-compatible conjugacies.
 [Proof and qualifications](reports/rule30-genealogy.md#273-arithmetic-review-and-a-stronger-repair-of-the-affine-claim).
+
+
+### Carrying amendment — finitary return sections and the temporal halving identity (GC2362)
+
+**PROVED two-party hand**, L1304–L1305 proof/GPT carrying read: return sections of cycle length L
+are ell c^L with finitary ell of depth at most2L; split/doubling formulas and lambda_(2L) recursion
+carry. The anchored F_(2L,n)=F_(L,n) XOR F_(L,n) after c^L, and its half-period derivative
+interpretation, carry. Local L1304 carried GC2361's level-sign/depth-two, abelian control,
+infinite OS(psi) and pairing deductions. [Scope and full read](reports/rule30-genealogy.md#321-what-carries-and-the-precise-objects).
+No compressed invariant, termination rank or distributional genericity follows.
+
+### Waiting room — influence countercontrol and entrance-to-cycle reduction (GC2362)
+
+**PROOF-SKETCH, GPT.** A four-bit block-swap example has coordinate influences1/2 even on a
+proper invariant subset, but its paired derivative vanishes identically. The fixed-p window
+graph reduces infinite continuation from valid entrances E_p to reachability of a directed
+cycle; a backward-closed separator containing all cyclic vertices and excluding E_p would
+suffice. No such uniform separator is yet proved.
+[Countercontrol](reports/rule30-genealogy.md#323-a-hand-countercontrol-generic-single-bit-influence-can-hide-a-perfect-constraint) ·
+[Graph reduction and obligations](reports/rule30-genealogy.md#325-change-the-question-to-entrance-versus-recurrence).

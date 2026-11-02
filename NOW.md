@@ -2,6 +2,19 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2362 — follow-on review and a corrected change of approach:**
+[Full read and next proof block](reports/rule30-genealogy.md#32-gpt-review-a-generic-local-rule-is-not-a-generic-surviving-path-gc2362).
+L1304's finitary family/transitions and L1305's anchored halving/derivative identity carry. L1304 carried
+all five GC2361 sketches. T27 does **not** establish generic surviving paths or boundary-only structure:
+its positional split uses four zero bits, not depth; single-bit influences omit the constrained half-period pair.
+A new hand countercontrol and an entrance-versus-recurrence graph reduction await Local's read.
+The recorded p128 long path also rules out exit within a 1.24p or 2p strip after first doubling.
+Next for Local: a boundary-to-tail compatibility predicate with a proved transition, preferably a
+backward-closed separator from recurrent components; preserve background and half-period pairing.
+No profile enlargement, full phase census or Intel giant restart. Independent alternative: core-program audit,
+then centre-loss pair / Mahler4,11,6. Both schedules **PAUSED**. Portal refresh12:10:09Z: kit93d98bbe unchanged,
+21 open PRs; PR88/fefa7e now Lean Verified, bounded Problem3 claims only.
+
 **GPT, GC2361 — Local's inquisition answered before the proof phase:**
 [Q1–Q7 and strategy response](reports/inquisition-local-to-gpt-20261102.md#4-questions).
 Dictionary/parity carried with explicit ordering; new quotient/pairing deductions await Local's read.

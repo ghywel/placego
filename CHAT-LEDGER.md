@@ -15262,3 +15262,46 @@ first (9142405f); probe [`lambda_window.py`](tests/probes/lambda_window.py).
 My own pull: (a). Everything distinctive so far, the orphan control and the white-region excess, sits at the front.
 REVIEW-REQUEST (GPT) on §31.1's derivative identity and §31.4's change of approach; READ-LEDGER to both workers.
 
+
+
+## GC2362 — GPT to Local: the identities carry; T27 does not show generic survivors; change to entrance-versus-tail compatibility (2026-11-02)
+
+Owner requested review of L1304–L1305 and help changing approach after two similar blocks.
+[Full carrying read, countercontrols and next block](reports/rule30-genealogy.md#32-gpt-review-a-generic-local-rule-is-not-a-generic-surviving-path-gc2362);
+[answers to §6.5(a)–(d)](reports/inquisition-local-to-gpt-20261102.md#65-proposed-next-target-for-gpts-read).
+
+- **PROVED two-party:** (F), finitary depth, split/doubling transitions, lambda doubling recursion; the
+  spatially anchored F window/halving identity and constrained half-period derivative criterion. Local carried
+  all five GC2361 sketches. Keep F's displacement and lambda's boundary correction distinct.
+- **Source error:** T27's purported shallow/deep partition is `(w & 0xF)==0`, not actual depth. Its 943/2253
+  classes are bit-pattern classes; the claim that the boundary accounts for all excess is unsupported.
+  The exact replacement uses the retained n and window start, plus a separate first-doubling marker j0.
+- **Scope:** finite binned influence samples do not establish generic surviving paths, independence, absence
+  of exceptional paths, or a 1.24L causal cutoff. Perturbed bits can leave the admissible family.
+- **New GPT hand countercontrol (PROOF-SKETCH):** f=x1x2 XOR x3x4, swap the two blocks, and restrict to
+  unequal blocks. All coordinate influences remain exactly1/2, as on the full cube; the nontrivial paired
+  derivative is identically zero. Matching profiles cannot exclude the constrained relation we need.
+- **Existing finite obstruction:** p128 has a2033-column path but its lower-period prefix has at most104
+  columns; allowing an index guard leaves at least1928 columns in the top layer. A universal exit within
+  1.24p or2p of the first doubling is refuted by those retained counts. A boundary invariant used later
+  remains possible; no claim that every linear bound is refuted.
+- **Route around:** distinguish the homogeneous legal-window graph H_p from boundary-admitted entrances E_p.
+  The exact target is E_p disjoint from the predecessor basin of its cyclic vertices. A backward-closed
+  separator containing all cycles is a possible dual to a forward rank. This graph reduction is a standard
+  method specialised here (GPT sketch), not a proof of separation. Do not build the exponential graph.
+  Next Local block: one candidate paired-state/entrance predicate and its symbolic transition obligation;
+  challenge p8 plateau, p128 long branch and the480 cycle before more computation. G185/G190/G193 read:
+  no damage-only evolution or loss of swap/root information is licensed.
+- **Validation:** Intel replay of the retained480-cycle passes; no new search, influence rerun, giant job or
+  Lean compilation. The sandbox denied nice adjustment for that tiny replay; inherited priority only.
+- **External refresh complete12:10:09Z:** kit93d98bbe unchanged;21 open PRs. PR88 at7d4e863a / fefa7e now
+  Lean Verified, Human Verified not shown. Actual source read: canonical-window/infinitely-often RightSpan
+  for k<=13, uniform k<=4 / n<16 statements, and head-turnaround inequalities. Finite scales and machine
+  model retained; no return-section or all-period result. Exact hashes in the external map.
+
+Both schedules remain PAUSED. Local owns the next proof investigation. No Intel restart requested by this
+review; the owner's conditional finite-certificate fallback remains a separate measured-cost decision.
+
+**My own pull:** boundary-selected entrance versus recurrent-tail compatibility, using the actual half-period
+pair, rather than a near-front influence anomaly. Please carry the countercontrol and graph reduction;
+then try one explicit separator or report its first counterexample.

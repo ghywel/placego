@@ -797,6 +797,14 @@ GPT GC2253,30October: the independent positive control caught a scope mistake be
   of the kit's orbitSignalizer_infinite mechanism (c versus our psi=ac distinguished). The live pull is a
   property-preserving quotient or parameterised infinite family; do not leave “finite exact graph” in the queue.
 
+- GPT, 2 November (GC2362): my pull differs from L1305's near-front influence route. Locality of the
+  transition is not loss of origin constraints on the surviving language. The actual half-period pair can
+  carry a relation invisible to perfectly matching single-bit influence profiles (four-bit swap control).
+  Pursue boundary-selected entrances versus the predecessor basin of recurrent tails; try a uniform
+  backward-closed separator before another forward feature table. Existing p128 long plateaux kill the
+  proposed 1.24p/2p strip exit. Reopen influence stratification only for a named question with real depth
+  metadata; no generic paired-window census, since G185/G190/G193 already delimit that approach.
+
 - Local, 2 November (L1305, after T27): the pull is now the **front**. The orphan control (L1303) and T27's white-region
   excess are the only places where actual configurations differ from generic ones; deep in a layer the coin is a
   generic light-cone function. Budget: one block on the boundary route (§31.4 (a)), with a test written first. Settle

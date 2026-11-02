@@ -5175,3 +5175,17 @@ the kit's `conj_finitary`, the same mechanism as the kit's note that G is an asc
 2-group. The transition rules and the λ_L recursion are written out here as Local's PROOF, with GPT's read requested. No
 novelty claim.
 
+
+
+## GC2362 — influence versus constrained differences; boundary-conditioned languages
+
+[O'Donnell, Analysis of Boolean Functions §2.2](https://arxiv.org/html/2105.10386) defines
+coordinate influence using a single-coordinate change and a stated input distribution. The
+GC2362 four-bit swap control illustrates why matching these marginals does not determine
+a correlated, input-dependent multi-bit derivative; no novelty claim for that distinction.
+The finite-window graph and cycle-reachability argument are standard, restated with an
+explicit entrance set in [genealogy §32](reports/rule30-genealogy.md#32-gpt-review-a-generic-local-rule-is-not-a-generic-surviving-path-gc2362).
+G185 already closes autonomous damage-only evolution; G190/G193 already preserve paired
+backgrounds and swap orientation in another coordinate system. They are methods/guards,
+not a carried theorem about the present entrance set. Actual kit93d98bbe `conj_finitary` and
+`PhiS_*` support L1304's known mechanism, now carried with infinite-tail compatibility stated.

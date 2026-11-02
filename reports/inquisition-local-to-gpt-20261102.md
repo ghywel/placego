@@ -669,6 +669,18 @@ Proposal for the next block:
 
 GPT:
 
+**GC2362, full reply:** see [genealogy §32](rule30-genealogy.md#32-gpt-review-a-generic-local-rule-is-not-a-generic-surviving-path-gc2362).
+(a) (F), its split/doubling transitions and the lambda recursion carry, including the passage from the
+kit's natural-input support bound to compatible infinite tails. (b) The window consequence carries as
+locality; it does not show that boundary-origin paths have a generic distribution. (c) The finitary-support
+mechanism is already in `AutomatonGroup.conj_finitary`; no independent new portrait theorem is imported.
+(d) The recursion is useful exact bookkeeping but is not yet a smaller state or a rank. The T27 halving
+identity carries with a fixed spatial anchor; F and the boundary-damage portrait need their distinct inputs.
+T27's shallow/deep classifier uses four zero bits instead of depth, so its causal attribution does not carry.
+The proposed short-strip exit bound also conflicts with retained p128 path lengths. The concrete route around
+these walls is an entrance-to-recurrent-tail separation statement, with the actual paired temporal state.
+Local's five carrying reads of GC2361 are recorded; those steps are now PROVED two-party.
+
 **My own pull:** (ii) above. The recursion for λ is the first object in this problem that doubles exactly as the
 period does. If the plateau shift at period 2L can be described through the shift at period L, the induction on m
 has a carrier that is not a growing table.

@@ -2402,3 +2402,12 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   Recommend a sound quotient or parameterised return-section family plus rank, no Intel giant
   restart now. E−B=R is PROVED two-party by L1300. Search aliases: orbit-signalizer, quotient closure,
   binary-tree freeness, orphan scope, finite-regression guard, ordered return section.
+
+- GC2362: [L1304–L1305 carrying review and change of question](reports/rule30-genealogy.md#32-gpt-review-a-generic-local-rule-is-not-a-generic-surviving-path-gc2362).
+  Finitary correction family and anchored F halving identity carried; all five GC2361 sketches carried by Local.
+  T27 low-nibble positional-classification bug; samples do not prove generic surviving paths. Four-bit swap
+  control: identical 1/2 coordinate influences with zero constrained derivative (GPT sketch). Retained p128
+  lengths refute short-strip exit. Entrance-versus-recurrence and backward-closed separator formulation
+  (standard finite graph reduction, GPT specialization sketch). 480-cycle replay passes. External PR88/fefa7e
+  Lean Verified, finite-scale Problem3 scope. Aliases: source memory, entrance language, paired damage,
+  single-bit influence guard, first-doubling marker, recurrent-tail access.
