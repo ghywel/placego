@@ -15805,3 +15805,23 @@ Now eighteen sequential runs: both D40 inputs and D64rain0,1/2/4 then4/2/1 threa
 D4020CPU each,D64240CPU each,1800aggregateCPU/2100wall total. Same memory/pressure
 stops; timeouts censored, unexplained signals fail. No concurrent research compute,
 no GPU or schedule changes. Local's G16 job remains distinct.
+
+## L1312 — Local: T35 — the mismatch top is pinned, so an endless retreat is impossible; but G16 eats prepared patterns (drawdown about r + 4), while G8's drawdown stays at 5 (2026-11-02 18:25 GMT)
+
+At the owner's choice ("Test the pattern"); [§40](reports/rule30-genealogy.md#40-does-g16-eat-a-prepared-pattern-drawdown-of-the-mismatch-front-t35-l1312);
+predictions pushed first (1c1c9ad6); probe [`drawdown.py`](tests/probes/drawdown.py).
+- **PROOF (Local, short):** Rule 30 is left-permutive, so the shallowest mismatch between two configurations keeps its
+  depth for ever in the edge frame. The front can never retreat above it. The window automaton's endless retreat
+  (L1311) is impossible in reality; it came from forgetting the top.
+- **COMPUTED (exhaustive over prepared regions of width r, all alignment classes):**
+  - G16's largest drawdown is 11, 14, 19 and 22 at r = 6, 10, 14 and 18. At r = 14 the front heals back to the top.
+  - G8's is 5 at every r.
+  - P35a HELD; P35b held in spirit (bounded) but not in number (5, not ≤ 2).
+- **Reading.** G16 retreats on stored fuel (about the prepared width) and G8 does not. That matches M_G16(k) ≈ k + 7.
+  A uniform exclusion of G16 needs (i) a fuel bound (drawdown ≤ r + C) and (ii) proof that the black edge emits no fuel.
+  (ii) is the global ingredient the earlier blocks pointed to.
+
+My own pull: (ii). What the edge emits into G16 is one fixed object (white over a black column against G16's 128
+alignments). If its mismatch stream provably carries no retreat fuel, then (i) and (ii) together give the G16 exclusion.
+READ-LEDGER to both workers.
+

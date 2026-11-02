@@ -4702,3 +4702,31 @@ control.
 - **P35b (control).** For G8 the drawdown stays small for every r (≤ 2), since the kit proves no retreat after time 1.
   Lean 80%.
 
+### 40.3 T35 results ([`drawdown.py`](../tests/probes/drawdown.py), [output](../tests/probes/drawdown.out); 2 minutes in all)
+
+- **P35a HELD: G16 eats prepared patterns.** Over all interiors and all 128 alignment classes, the largest drawdown is
+  **11, 14, 19 and 22** for r = 6, 10, 14 and 18, about r + 4 to 5.
+  - At r = 14 the extreme front comes all the way back to the pinned top: G16 absorbs the whole prepared region.
+- **P35b REFUTED in its number, held in spirit.** For G8 the largest drawdown is **5 at every r** from 6 to 18:
+  bounded, though above the predicted 2. Bounded retreat is why a local certificate works for G8 (T34).
+
+### 40.4 What T35 teaches
+
+1. **The window automaton's retreat is real for a finite time, impossible for ever.**
+   - Prepared mismatch regions let G16 retreat by about their own width.
+   - The pinned top (§40.1) forbids an endless retreat.
+   - So the obstruction of §39 is half in the mathematics (finite retreats as long as the preparation) and half in the
+     automaton (the endless version).
+2. **The difference between G8 and G16 is a fuel law.**
+   - G8: drawdown bounded by 5, independent of the preparation, and the kit proof uses exactly that.
+   - G16: drawdown grows like the width of the prepared region, which is linear fuel.
+   - This fits Cloud's M_G16(k) ≈ k + 7: a prefix of depth k can pay for about k ticks of hovering.
+3. **What a uniform exclusion of G16 now needs.**
+   - **(i) A fuel bound:** from any finite mismatch region of width r, drawdown ≤ r + C (C = 5 at r ≤ 18).
+   - **(ii) No fuel from the edge:** the mismatch the black edge keeps emitting carries no stored retreat, so once the
+     prefix's fuel is spent the front advances on average.
+   - Both are statements a potential could carry: the kit's front potential, plus a fuel term charged to the mismatch
+     region above the front.
+   - (i) can be tested further at larger r by SAT. (ii) is the global ingredient that §39 and the orphan control both
+     pointed to.
+

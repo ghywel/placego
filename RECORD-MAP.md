@@ -2395,6 +2395,9 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   Cloud's bridge carried with the kit's `Rule30EtherEpisode`. G8 is certified by a window automaton; G16 is not, because
   of a steady retreat of 1.14 cells per tick at any window width. Search aliases: front potential, front_cert, front_g16,
   mismatch front, episode bridge.
+- L1312 (Local, 2 November 2026): [T35, drawdown of the mismatch front](reports/rule30-genealogy.md#40-does-g16-eat-a-prepared-pattern-drawdown-of-the-mismatch-front-t35-l1312).
+  The top is pinned (left-permutivity). G16's drawdown is about r + 4 (it eats prepared regions); G8's is 5. Search
+  aliases: drawdown, pinned top, fuel, prepared region.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 
