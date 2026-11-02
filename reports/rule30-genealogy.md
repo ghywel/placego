@@ -4267,3 +4267,38 @@ Record searched: T18 (`ring_cycles.c`), T22 (`rotators.c`) and §34.
 4. **The conjecture itself is untouched.** It concerns walls leaving the rain, and the existence of more phases only
    enlarges the set of targets a wall would have to reach.
 
+## 36. The rotator census extended: a catalogue of light-speed phases (T31, L1309)
+
+At the owner's direction ("continue with your pulls"). The aim is to map the light-speed phases through their rotator
+form (§35.1), and to sharpen the separation question with the catalogue.
+
+### 36.1 What a phase's types say (PROOF, Local; short)
+
+- At a node of a phase, the type is the weight parity of its newer column (§29.12). A type-1 node has exactly one
+  splitting child, and inside a phase that child is the continuation, so its other child dies (doubles).
+- So **a phase whose columns all have odd weight is a rigid corridor: no wall leaves it at its own period.** P1024 is
+  one: all its columns have odd weight.
+- Walls can leave a phase only at its type-0 nodes (even-weight columns), where both children split.
+- Walls *into* a phase are the other direction. Entering at (c_k, c_(k+1)) needs a predecessor (x, c_k) with
+  x ∨ c_k = c_(k−1) ∨ c_k and x ≠ c_(k−1). That exists iff c_k has a 1 where the driver does.
+
+### 36.2 Predictions, written before the run (T31)
+
+`rotators_census.c` covers:
+- the forward registers for c^g (g = 1, 2, 4), which are permutations, enumerated by bitset up to 30-bit states;
+- the backward registers up to 28-bit states (a bitset plus an on-path bitset).
+
+For each cycle whose rotation order is a power of two, it evolves the ring under c, up to 2^14 steps and
+M·P ≤ 2^27 cell-steps, to its least period P. It writes every ring with P ≥ 16 for analysis in Python: twisted period,
+column valuations, the share of odd-weight columns, and exits.
+
+Record searched: T18, T22, T30 (§35), and §29.7 (the p = 16 core: G16 has out-degree 1 inside its component, and walls
+leave it at even-weight columns).
+
+- **P31a.** New phases (not G8, G16, P1024, nor their lifts) appear, at periods ≥ 64. Lean 75%.
+- **P31b.** Every phase found whose columns are all rotations of one column (a "single-column" phase: ring 2^k, odd
+  lag, g = 1) has all columns of odd weight, a rigid corridor like P1024. Lean 55%.
+- **P31c.** The share of phases that are rigid corridors grows with the period. Weak, descriptive; lean 50%.
+- Counterfactual to P31a: no new phase up to 30-bit states. Small-lag rotators would then be exhausted at G8, G16 and
+  P1024, which would make P1024 look sporadic.
+
