@@ -15949,3 +15949,12 @@ Then separately frozen native-Metal correctness pilot and complete-transaction
 benchmarks: independent bitwise states and graph minimum sweeps, CPU oracles,
 explicit RX6600, bounded buffers/dispatches. Existing default-GPU Swift harness
 will not be used unchanged. No new scientific census or schedule change.
+
+## GC2381 — GPT: Metal compiler gap diagnosed; runtime preparation frozen (2026-11-02)
+
+[Failure and revised method](reports/GPT-METAL-SCOPE-20261102.md#gc2381--offline-compiler-missing-explicit-runtime-compiler-build).
+Native harness compiled; offline Metal Toolchain missing, stage stopped with no
+GPU dispatch. Retained failure. Separate source-hashed build now uses Apple's
+runtime shader compiler (Metal2.3), explicitly selects RX6600 and prepares pipelines
+without dispatch. Same120CPU/180wall/768MiB guards. No component download needed
+if this succeeds; driver-service accounting limitation is explicit.

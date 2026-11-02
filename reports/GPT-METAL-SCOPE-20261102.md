@@ -103,3 +103,39 @@ Warm alternative: a batched CPU port of Local's actual prefix/front work, preser
 coverage and witnesses, then small cross-check before any Metal port. Independent
 alternative: existing SAT threading results, where irregular search has no tested
 Metal implementation. Current task does not depend on a mathematical review.
+
+## GC2381 — offline compiler missing; explicit runtime-compiler build
+
+Build freeze cc45071b retained unchanged. Native C++ built successfully, but
+`xcrun metal` exited1: the separate Metal Toolchain component is missing. Stopped
+before metallib/inventory. Receipt:4.37wall,2.661199 workerCPU +0.147supervisor,
+peak144996KiB sampled tree, no swap growth; no shader dispatched. Failed-stage
+source remains available at that commit; its old build.json hashes intentionally
+identify that version, not subsequent revisions.
+
+**Change of method:** use Metal's supported `newLibraryWithSource:options:error:`
+with fixed language version2.3, then construct both pipelines. This is still native
+Metal on the explicitly selected RX6600. It avoids an unnecessary component
+installation and preserves a future offline-metallib input option. Runtime compiler
+setup is reported separately from steady-state timings. See
+[Apple library creation](https://developer.apple.com/documentation/metal/mtldevice/makelibrary(source:options:)).
+
+Separate freeze: [`runtime-build.json`](../tests/probes/metal_scope/runtime-build.json)
+contains revised exact source hashes and commands: native build40CPU/70wall,
+inventory10CPU/20wall, runtime library/pipeline preparation30CPU/60wall. No GPU
+command buffer submitted. Same120aggregateCPU/180wall/768MiB, worker stop100,
+8-process cap, pressure/thermal/output guards as GC2380. No limit was relaxed.
+Runtime compiler/driver service CPU and cache files outside the process tree/output
+directory are not fully metered. This limitation is separate from measured worker
+CPU. Next, freeze a dispatch pilot only after successful preparation.
+
+**Preparation outcome:** successful,3.89wall,2.638620 workerCPU +0.152supervisor,
+peak165872KiB sampled tree, zero swap growth. RX6600 is removable, non-unified;
+both pipelines have execution width32. Initial runtime preparation772.43ms;
+current Metal allocation544768bytes. No command buffer was dispatched.
+
+**Procedure deviation retained:** the revised source/hash plan was on disk before
+the preparation, but its attempted publication failed `doc_links.py` on the new
+heading anchor. The orchestration incorrectly continued to the build anyway.
+This is not a published-before-run freeze. The4-second preparation is retained;
+fix the link and require a successful publish result before any actual dispatch.

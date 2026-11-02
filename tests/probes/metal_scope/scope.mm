@@ -113,18 +113,26 @@ static void bench(id<MTLDevice> dev,id<MTLCommandQueue> queue,id<MTLComputePipel
     }
 }
 int main(int argc,char**argv){@autoreleasepool{try{
-    require(argc==3,"usage: scope metallib inventory|pilot|benchmark");
+    require(argc==3,"usage: scope metal-source-or-metallib inventory|prepare|pilot|benchmark");
     NSArray<id<MTLDevice>> *devices=MTLCopyAllDevices();id<MTLDevice> dev=nil;
     for(id<MTLDevice> d in devices){emit(@{@"event":@"device",@"name":d.name,@"low_power":@(d.lowPower),@"removable":@(d.removable),@"unified_memory":@(d.hasUnifiedMemory),@"recommended_working_set_bytes":@(d.recommendedMaxWorkingSetSize),@"current_allocated_bytes":@(d.currentAllocatedSize)});if([d.name containsString:@"RX 6600"]){require(!dev,"AMBIGUOUS_RX6600");dev=d;}}
     require(dev!=nil,"RX6600_NOT_FOUND");
     if(std::string(argv[2])=="inventory")return 0;
-    require(std::string(argv[2])=="pilot"||std::string(argv[2])=="benchmark","BAD_MODE");
+    require(std::string(argv[2])=="prepare"||std::string(argv[2])=="pilot"||std::string(argv[2])=="benchmark","BAD_MODE");
     NSError *error=nil;double setup=wall();
-    id<MTLLibrary> lib=[dev newLibraryWithURL:[NSURL fileURLWithPath:@(argv[1])] error:&error];require(lib!=nil,"LIBRARY_LOAD_FAILED");
+    id<MTLLibrary> lib=nil;
+    if([@(argv[1]) hasSuffix:@".metal"]){
+        NSString *source=[NSString stringWithContentsOfFile:@(argv[1]) encoding:NSUTF8StringEncoding error:&error];require(source!=nil,"SOURCE_READ_FAILED");
+        MTLCompileOptions *options=[MTLCompileOptions new];options.languageVersion=MTLLanguageVersion2_3;
+        lib=[dev newLibraryWithSource:source options:options error:&error];
+    }else lib=[dev newLibraryWithURL:[NSURL fileURLWithPath:@(argv[1])] error:&error];
+    if(!lib)emit(@{@"event":@"compiler_error",@"error":error.localizedDescription?:@"unknown"});
+    require(lib!=nil,"LIBRARY_COMPILE_OR_LOAD_FAILED");
     id<MTLComputePipelineState> tp=[dev newComputePipelineStateWithFunction:[lib newFunctionWithName:@"trajectories"] error:&error];
     id<MTLComputePipelineState> gp=[dev newComputePipelineStateWithFunction:[lib newFunctionWithName:@"graph_min"] error:&error];require(tp&&gp,"PIPELINE_COMPILE_FAILED");
     id<MTLCommandQueue> q=[dev newCommandQueue];require(q!=nil,"QUEUE_FAILED");
     emit(@{@"event":@"setup",@"selected":dev.name,@"setup_ms":@((wall()-setup)*1000),@"trajectory_execution_width":@(tp.threadExecutionWidth),@"graph_execution_width":@(gp.threadExecutionWidth),@"current_allocated_bytes":@(dev.currentAllocatedSize)});
+    if(std::string(argv[2])=="prepare")return 0;
     bool pilot=std::string(argv[2])=="pilot";
     // Non-multiple of group and CPU partition sizes checks padded boundaries.
     bench(dev,q,tp,true,33,128,pilot?3:5);bench(dev,q,gp,false,33,1,pilot?3:5);
