@@ -5804,3 +5804,28 @@ Record searched: GC2393, GC2395 and their carrying reads (L1327, L1328); T41's s
 
 Record searched: §45 (bad core, C1), §44.6 (routes C1–C3), GC2389 (gateways); attractor of S_E listed as a pull in
 L1321/INSTINCT; not computed before.
+
+### 52.2 Results ([output](../tests/probes/funnel_attractor.out))
+
+- The automaton has 262,144 states and 621,312 distinct edges. 66 states have a FAIL branch.
+- A, outside S_E, has **42,033 states (16.0%)**. Its ranks run up to 113, spread fairly evenly (421, 453, 467, … states
+  at ranks 1, 2, 3, …).
+- **F1 REFUTED.** A is larger than the predicted 10%.
+- **F2 REFUTED.** All 200 real paths enter A before capture, with a median lead of 26 ticks (90%: 57; max 111). On
+  average they spend 36% of their pre-capture time in A. The window abstraction sees the funnel well before its end,
+  but not from the start.
+- **F3 HELD (the control).** Every path that entered A was captured within its entry rank (median 37, max 111), with no
+  alarm. Once inside A a real path cannot leave it except into S_E, since A's successors all lie in S_E ∪ A.
+- **An exact dichotomy (COMPUTED).** §45's bad core B (219,722 states, the states with an infinite FAIL-free path
+  avoiding S_E) leaves exactly 42,033 states outside S_E ∪ B, and those are exactly A. So **every state outside S_E is
+  either forced into S_E within at most 113 ticks, whatever lies behind the window, or lies in the bad core**. No state
+  is undecided, and all 66 FAIL states lie in B.
+
+**What T48 teaches.**
+- **Capture is exactly "leaving the bad core".** A real front is captured if and only if its 8-cell state ever leaves B
+  at depth ≥ 12 (plus the soundness margin). It is then in A, and S_E follows within its rank.
+- Real paths spend a median 64% of their pre-capture time in B and then leave it. B is where the window abstraction
+  fails: adversarial content behind the window can keep a state in B for ever, as §45 found.
+- So the whole capture gap is now a statement about B: **a real evolution cannot stay in the bad core for ever.**
+- This sharpens GPT's target. The history condition need not fix the whole path. It only has to show that B's
+  avoiding cycles need behind-window content that an actual row cannot keep supplying.

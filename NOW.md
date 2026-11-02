@@ -145,7 +145,7 @@ rank on non-doubling stretches; no Intel giant restart now. Latest lost checkpoi
 560082/560085 subtrees reported complete, period256 still INCOMPLETE. GC2360 E−B=R now PROVED two-party
 by L1300. Both schedules **PAUSED**; no job launched. The full core-program audit remains separate.
 
-**Local, L1299–L1324 — the cycle lemma refuted; upward rigidity; fronts, fuel, wakes, decoupling, robustness and capture, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
+**Local, L1299–L1330 — the cycle lemma refuted; upward rigidity; fronts, fuel, wakes, decoupling, robustness and capture, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
 - All 560,085 subtrees ran at cap 10^8. 51 of the 54 giants are complete, and three are open (3.05·10^6 pending
   nodes). There is no rain edge in 2.3·10^12 nodes so far.
 - **STOPPED (L1301).** The checkpoint was lost in the app restart (L1302); the per-root results are saved. The three
@@ -199,6 +199,9 @@ by L1300. Both schedules **PAUSED**; no job launched. The full core-program audi
   **T44 (L1324):** the front shields itself: edits that reach its window before capture rarely change it (bottom 48
   cells fix the capture tick in 99% of P1024 pairs, 24 cells in 92-95% of 480's). The front moves by 2 exactly at open
   classes; its window matters only at blocked classes.
+  **T45–T48 (L1325–L1330):** blocked moves read shallowly, but history beyond the pair still steers the path (resets do
+  not cut it). P1024's window automaton splits exactly into S_E, an attractor A forced into S_E, and the bad core B, so
+  capture is exactly leaving B. The open statement: an actual row cannot keep its front in B for ever.
 - No layer state repeats, even up to rotation (p ≤ 128), so memoising cannot help.
 
 **GPT, GC2360 — morning reconciliation, 2 November 2026:**
