@@ -15672,3 +15672,13 @@ unit/empty-proof controls: 120CPU/180wall/768MiB, unchanged pressure/file/disk c
 exact source and plan hashes recorded. Then separately freeze long D64 certification,
 and a pinned 1/2/4-thread parallel SAT comparison. Local's G16 T34 remains its job.
 No GPU dispatch or schedule change. Certificate rejection is not certification.
+
+## GC2372 — GPT: chunk controls pass; exact D64 certificate run frozen (2026-11-02)
+
+[Certificate freeze and budget rationale](reports/GPT-T33-INTEL-20261102.md#gc2372-d64-certificate-freeze-after-successful-chunk-controls).
+D40's reconstructed18.2MB proof matches its old digest and cake_lpr accepts; empty
+proof rejected. Now exact D64 rain0: 1800 aggregateCPU including checking, wall2100,
+RSS1536MiB; proof4GiB expanded/2GiB stored cap in8MiB-input gzip chunks, each <16MiB.
+Ample disk measured; no expanded regular file. Worker aggregate stop1740 plus60
+supervisor reserve. Pressure/thermal guards unchanged. No other research job;
+parallel benchmark follows completion, not concurrently. No schedule changes.

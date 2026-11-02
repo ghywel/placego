@@ -1,0 +1,26 @@
+{
+  "process_cpu_cap": 1800,
+  "driver_cpu_cap": 1800,
+  "worker_cpu_stop": 1740,
+  "proof_chunk_mib": 8,
+  "proof_expanded_mib": 4096,
+  "jobs": [
+    {
+      "name": "D64-rain0-cert",
+      "kind": "wall",
+      "phase": "P1024",
+      "D": 64,
+      "rain": 0,
+      "hash_prefix": "ab2c06f4ae3f2a8a3092c048a2a53f7bc34eb4d06dcd29fe1ecb2380c8495042",
+      "solver": "/usr/local/bin/cadical",
+      "cpu": 1350,
+      "wall": 1750,
+      "proof": true,
+      "compressed": true,
+      "check_cpu": 250,
+      "check_wall": 330,
+      "check_heap_mib": 768,
+      "expected": "UNSAT"
+    }
+  ]
+}

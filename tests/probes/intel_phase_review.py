@@ -206,7 +206,7 @@ def main():
             if status=='UNSAT' and job.get('proof'):
                 proofpath=OUT/(name+'.lrat')
                 if job.get('compressed'):proofpath,th,unstream=proof_stream(name,False)
-                check=command(name+'-check',['/usr/local/bin/cake_lpr','--CML_HEAP_SIZE=384','--CML_STACK_SIZE=64',str(path),str(proofpath)],job['check_cpu'],job['check_wall'])
+                check=command(name+'-check',['/usr/local/bin/cake_lpr','--CML_HEAP_SIZE=%d'%job.get('check_heap_mib',384),'--CML_STACK_SIZE=64',str(path),str(proofpath)],job['check_cpu'],job['check_wall'])
                 if job.get('compressed'):
                     th.join(timeout=3);save(name+'-decompress.json',unstream)
                     assert not th.is_alive() and unstream.get('complete') and unstream['sha256']==stream['sha256']
