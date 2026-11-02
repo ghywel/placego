@@ -49,7 +49,9 @@ recurrence. That needs invariance of the offset after P steps. An abstract
 constant anchor and offset alternating1,2 demonstrates the logical gap; it is
 not asserted to be a realizable Rule30 counterexample.
 
-Status: PROOF-SKETCH, elementary endpoint identity awaiting a carrying read.
+Status: PROVED two-party: Local L1325 carried the endpoint identity and its
+speed/recurrence distinction. This does not certify Cloud's graph or resolve
+the success-output provenance discrepancy.
 The distinction leaves an exact speed certificate useful even when a proposed
 exact front clock fails. In the script, s=S-P, so `(P-S)/P` is leftward speed;
 label it as such if the coordinate x increases rightward.

@@ -2556,3 +2556,9 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - L1326 (Local, 2 November 2026): [T46, how every alignment locks onto one orbit](reports/rule30-genealogy.md#50-how-does-every-alignment-lock-onto-one-orbit-t46-l1326).
   Class first, window after; 21 (P1024) and 36 (480) entry states; U is not invariant (S_E is). Search aliases: lock,
   lock_entry, entry state, phase locking, one orbit, basin.
+
+- GC2393: [Two-open reset and T44–T46 source review](reports/GPT-OPEN-STRETCH-REVIEW-20261102.md).
+  PROOF-SKETCH: background dc00zz erases both trailing mismatch bits in two +2 moves;
+  64 literal self-controls pass. Censored lag, first-visit versus permanent lock,
+  and unresolved reading-depth sentinel distinguished; finite sample counts preserved.
+  Search aliases: open stretch, two-bit reset, generated history, blocked imports.

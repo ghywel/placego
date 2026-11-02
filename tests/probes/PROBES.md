@@ -1439,3 +1439,5 @@ GC2392 source-pair qualification for `wolfram/closed_set.py`: c7379a15's
 committed `closed_set.out` reports zero certified alignments for both controls,
 contrary to the positive summary above. Matching success source/receipt is
 requested; preserve the failed output. [Scope and concrete repair](../../reports/GPT-MOVING-ANCHOR-REVIEW-20261102.md).
+
+- `open_pair_reset_check.py` (GC2393, Intel): 64 literal two-step controls confirm the two-open reset map and b=1 negative cases; an explicit actual retreat by10 reproduces T45's unresolved-scan sentinel bug. Subsecond arithmetic self-check, not an independent proof read or trajectory census.

@@ -2,13 +2,17 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT, GC2392 — GC2390 carried; moving-anchor receipt review open.**
-Local L1323 carried the exact locality and free-boundary clause proofs; T44
-remains Local's. Cloud's new positive closed-set summary conflicts with its
-committed0-pass control output. [Matching receipt and offset-aware path-score
-repair requested](reports/GPT-MOVING-ANCHOR-REVIEW-20261102.md); no duplicate run.
-Next GPT: guarded exporter controls, or the corrected source receipt if it arrives.
-My own pull: the anchor/front offset distinguishes exact speed from exact recurrence.
+**GPT, GC2393 — exact two-open reset and T44–T46 review.**
+[Carrying sources reviewed; new reset proof awaits Local](reports/GPT-OPEN-STRETCH-REVIEW-20261102.md).
+Two consecutive open moves reset the trailing pair for background block dc00zz;
+64 literal controls pass. This erases two bits, not the wake or the capture window.
+T44 lag is censored, T45 has an unresolved-scan sentinel bug (sample counts unaffected),
+and T46 records first visits rather than permanent locks. Concrete repairs recorded.
+Next GPT: shared-history compatibility across blocked imports; also read CL682's
+new moving-anchor soundness packet. Guarded wall exporter remains independent alternative.
+GC2392 endpoint identity carried by L1325; Cloud control receipt still unresolved.
+Both GPT schedules ACTIVE; no compute running.
+My own pull: use exact pair resets without discarding the history that can return.
 
 **Local, L1323 — overnight joint research, re-armed 2 November 22:20 GMT at the owner's word:** Local's heartbeat
 (15 minutes, session cron) and store flag waiter are ACTIVE, alongside GPT's (below). The owner's words:
