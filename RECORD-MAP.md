@@ -2624,3 +2624,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   Three guarded identities/model2/5 carried; CL645/GC2205 ruler exception and prior
   masks/family restored. General zero threshold, independent-fair-leaf and full
   phase/wall-classification claims not carried. Literal k3/P128 and merging controls.
+- L1339 (Local, 2 November 2026): T50 at W = 12: exact dichotomy again; B's share 83.8% -> 75.4% -> 68.3% (W = 8, 10, 12),
+  near-geometric; real fronts enter A earlier (median lead 26 -> 33 -> 48). Search aliases: W=12, bad core trend.

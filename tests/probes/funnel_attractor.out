@@ -52,3 +52,22 @@ P1024 W=10: 1048576 states, 2604800 distinct edges, 40 states with a FAIL branch
    real entries into A: 200; satisfying the depth guard of their state: 200; least margin (R - required) 62
    logged depths: first entry into A at depth min 72, median 124; least depth from that entry to capture: min 72, median 124
 FUNNEL_ATTRACTOR_DONE
+
+## L1339 T50 W = 12: front_closure.py P1024 12 --all-theta --export; funnel_attractor.py W12 --core --guard --depths (run_capped: nice 10, CPU 1,200 s, wall 1,800 s, RSS 8,192 MiB; COMPLETED in 137 s, peak RSS 1.45 GB)
+P1024 W=12: clean states 52; forward closure 391 states, 529 edges, FAIL edges 0, advances [-1, 0, 1, 2]
+   ROBUST: no FAIL edge in the closure and every path of length 3 advances
+P1024 W=12: 1024 alignments, 1 distinct clean-state sets, sizes [52]
+P1024 W=12, all 1024 alignments, ticks 600..2480: U 52 states; S_E^all 391 states, 529 edges, FAIL edges 0, advances [-1, 0, 1, 2]
+   least advance over paths of length k: [(3, 1)]; ROBUST: every path of length 3 advances
+   largest fall below a running maximum along paths of S_E^all: 1
+   S_E_all: 391 states, SHA-256 of its lines 0a72a0f86c23b4a3af2d7f4431593808d6fd464e0c6c3081713db172ffa594f5 (lines "class window", window printed bit W-1 first)
+   U: 52 states, SHA-256 of its lines 4f2ec96511403ebfc16f89a8be76bae84d96db2161c2cbcfa8fc77ea003e22ab (lines "class window", window printed bit W-1 first)
+P1024 W=12: 4194304 states, 10701312 distinct edges, 35 states with a FAIL branch; S_E 391
+   bad core B: 2864052 states (68.28%); S_E + A + B = 4194304 of 4194304; A and B disjoint: True
+   attractor A of S_E (outside S_E): 1329861 states (31.71% of the automaton); largest rank 218; rank counts (first 12): [492, 796, 1068, 1458, 1746, 2330, 3095, 2908, 3000, 3621, 3951, 4652]
+   depth guard over A: F (largest fall on the way) max 10, median -1; G (net fall at entry) max 8; required depth max(W + 2 + max(0, F), W + 4 + G): max 24, median 14; advances seen on A edges: [-12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2]
+   real paths (200 prefixes, K=80): not captured 0; entered A before capture: 200; lead from first A state to capture: median 48, 90% 88, max 115; rank at entry: median 76, max 195; captures later than the entry rank (alarm): 0
+   share of pre-capture ticks spent in A: median 0.667, max 1.000
+   real entries into A: 200; satisfying the depth guard of their state: 200; least margin (R - required) 58
+   logged depths: first entry into A at depth min 72, median 110; least depth from that entry to capture: min 72, median 110
+FUNNEL_ATTRACTOR_DONE

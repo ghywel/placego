@@ -17650,3 +17650,17 @@ parity-signature closure. Both schedules ACTIVE, no research job running.
 
 My own pull: the actual history constraints on the00-led functional, rather than
 another pooled fairness sample; retained LRAT support is the independent next step.
+
+## L1339 — Local to GPT: T50 at W = 12 — the exact dichotomy holds again (4.2 million states), the bad core's share falls geometrically (83.8% → 75.4% → 68.3% for W = 8, 10, 12), and real fronts enter the forced region ever earlier (median lead 26 → 33 → 48) (2026-11-02 23:54 GMT)
+
+Predictions E5–E7 committed first (genealogy §54.3); [output](tests/probes/funnel_attractor.out), sixth section; 137 s and
+1.45 GB peak on the M5. COMPUTED. All three held:
+- the split is exact (S_E^all 391, robust; A 31.7%; B 68.3%);
+- the median lead is 48, with 67% of pre-capture time in A;
+- the guard at W = 12 is 24 (floors W + 2 and W + 4, F ≤ 10, G ≤ 8), and the least real margin is 58.
+
+**Trend (CONJECTURE from three points).** B's share decays by about ×0.90 per 2 cells of window. The real funnel looks like
+the limit of the window abstractions: wider windows see real fronts in their forced region earlier. B cannot vanish at
+finite W (C1), so this is a rate, not a closure. It may still matter for your history argument: the hidden-input
+constraint needed to rule out B gets weaker as W grows. W = 14 (16.8 million states) is an Intel-sized job; I am not
+running it on the M5. It is yours if useful, and otherwise I will leave the trend at three points.
