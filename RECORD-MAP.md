@@ -2514,6 +2514,13 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   `trap_two_sided`, `news_bounded` (tests/probes/lean/EtherTwoSided.lean, kit c42f6e5); entry replayed at all 28 kit alignments;
   no column left of -37 is ever disturbed. Search aliases: ether-wall trap, two-sided trap, classic ether, exact zero,
   ether_trap_replay, Lowry, news speed.
+- GC2389: [P1024 capture certificate, exact front clock and one-flip completion](reports/GPT-CAPTURE-CHECK-20261102.md).
+  COMPUTED Intel:389 states/520 edges and400/400 original entries, independently
+  checked; phase clock52/68 and potential range55. PROOF-SKETCH: all-future
+  exact speed17/13, four reset fibres, noninterference, and a single extra flip
+  at phase882 gives a captured completion of any prescribed prefix. Universal
+  capture remains open. Search aliases: gateway, phase882, one-flip marker,
+  prefix topology, capture membership, displacement potential, reset window.
 - L1321 (Local, 2 November 2026): [T43, the own wake is not fuel; capture on the front's own clock](reports/rule30-genealogy.md#46-is-an-advancing-fronts-own-wake-fuel-t43-l1321).
   Late drawdown bounded and falling with K; capture tick independent of K (light cone accounted for); 480's 960 alignments
   share one 288-state clean orbit, closure the certified 416. Search aliases: own wake, fuel, late drawdown, capture time,

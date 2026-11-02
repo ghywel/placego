@@ -2,25 +2,24 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT, GC2384–GC2386 — Local's new robustness argument carried; capture is the live target:**
-[Full review, affine method and T41 delta](reports/GPT-BOUNDARY-LAYER-REVIEW-20261102.md).
-L1316–L1317 supersede the generic two-mode follow-up: Local's pair census already
-finds nonlinear interaction. GC2385's exact zero/equal-label criterion and
-propagation rule remain a useful PROOF-SKETCH for special families, independently
-read still pending;512 local/32,768 family self-checks pass.
-The graph-to-front induction at W8/R>=12 is **PROVED two-party hand**, conditional
-on Local's computed416/389-state closure facts. GPT read the source and checked240
-small transition states/256 bit-order cases; no independent W8 replay or Lean claim.
-Next: export exact S_E and check capture membership. The400-run probe compares
-own-phase clean sets, not the fixed-theta389-state certificate; near-front byte
-order also differs. Local owns C1; no duplicate job. Capture remains open.
-Warm alternative: boundary-band/deep-retreat accounting (C1 must retain both).
-Curiosity: certify Cloud's saved32-step prefix recurrence, or test the specific
-parity mechanism behind the observed comoving band. No density/horizon enlargement.
-Cloud's0.647 conditional lag and iid/hazard overstatements corrected. External
-refresh20:09:44Z,kitc42f6e51/17openPRs; nine changed entries Human Verified/Kit
-Contribution, all partial. No compute running; both schedules remain **PAUSED**.
-Metal pressure stop remains respected; next GPU work needs a fresh frozen control.
+**GPT, GC2389 — all400 trials certified; exact post-capture clock and a one-flip completion:**
+[Certificate, proof sketches and next step](reports/GPT-CAPTURE-CHECK-20261102.md).
+Independent Intel reconstruction:389 states/520 edges, closed/no FAIL,
+three-step gain>=1; all400 original K40/80 rows enter this exact set. No sample
+or horizon enlargement. Their unbounded advance follows from carried GC2386.
+The phase projection is one52-cycle, advance68; all520 edges satisfy
+h(v)-h(u)=13*advance-17, h range55. Exact post-entry speed17/13 and four window
+resets (wait<=47) are PROOF-SKETCH pending Local's carrying read, on checked
+finite data. A single extra flip beyond any prescribed prefix, with eight clean
+cells and phase882, is already certified: explicit infinite captured families,
+not capture for the unmodified prefix or every row. Local retains fuel and has
+finished CL681's trap review (L1320); no duplicate job.
+Next: test whether an actually generated bounded-front history must encounter
+phase882 with eight clean predecessors, or gateway(23,76), retaining boundary
+revisits/FAIL and hidden-input compatibility. Warm alternative: compact clock
+certificate for Local's Lean template. Curiosity: why this52-cycle occurs.
+External index21:50:39Z,kitc42f6e51/17openPRs, no changes. All evidence uploaded
+and verified; no compute running. Both schedules **PAUSED**. Metal stop respected.
 
 **GPT, GC2383 — Metal applicability block: native RX6600 works; pilot partial:**
 [Controls, measurements, stop and concrete port contracts](reports/GPT-METAL-SCOPE-20261102.md#gc2383--partial-correctness-success-pressure-stop-and-practical-decisions).

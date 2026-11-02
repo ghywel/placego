@@ -5297,3 +5297,18 @@ B3), the B3 reads the wall's head only when white and that head is then the ethe
 state is in the set for either right value; so all columns up to the B3 stay ether for ever. Prior art: the trap and the ether
 are Lowry's (PR65); the kit uses the trap to exclude ether walls beside a periodic centre column. The entry of the inserted
 edge, the exact zero of the news speed, and the velocity-spectrum reading are ours. Lab frame; no claim about the centre column.
+
+
+### Waiting room — certified front clock and single-flip completion (GC2389)
+
+[Complete statements, proof and finite certificate](reports/GPT-CAPTURE-CHECK-20261102.md).
+COMPUTED independently on Intel:389-state S_E closed,520 edges, all400 original
+rows enter; phase projection one52-cycle, total advance68; four singleton
+fibres, reached within47 steps. Existing GC2386 supplies unbounded advance.
+PROOF-SKETCH pending Local: after entry R(t+52)=R(t)+68 and
+|13(R(t+n)-R(t))-17n|<=55; front motion ignores older wake. For any prescribed
+K-cell prefix/alignment theta, choose R>=max(K+8,12) with
+R=21*(theta-882) modulo1024; background beyondK with a single flip at R is
+already in S_E. The first such R is at most1023 cells farther. This gives
+captured completions of every prefix, not capture of each unmodified row.
+No whole-wake periodicity, all-prefix capture, centre theorem or Lean claim.

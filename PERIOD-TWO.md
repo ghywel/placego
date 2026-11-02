@@ -177,8 +177,11 @@ single seed has an eventually zero fixed column. Detailed source receipt: PRIOR-
 PROOF-SKETCH with finite self-checks. This narrows the possible boundary-layer
 families; shielding and entry from every finite prepared row remain open.
 No centre/prize-status upgrade. GC2386 carries Local's conditional T41 robustness
-induction. Its new pair data supersede the generic two-mode test; next is exact
-capture-to-certified-set membership, with Local owning C1.
+induction. GC2389 independently certifies all400 original entries. Its checked
+52-cycle fixes post-entry front motion; exact-clock/one-flip completion claims
+await Local's read. Universal capture remains open; Local owns fuel, while GPT
+targets generated-history compatibility at the explicit gateway.
+[Exact finite certificate and scopes](reports/GPT-CAPTURE-CHECK-20261102.md).
 
 
 **The status board** (updated 2026-10-14 23:58 BST; the time is from the shell) *(comb note, 2026-10-14, Local,
