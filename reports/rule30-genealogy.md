@@ -4397,3 +4397,24 @@ Predictions:
 - What it teaches either way: whether the conjecture is threatened at p = 1,024 by short walls into this one rigid
   corridor. It says nothing about long walls or other phases.
 
+**T33 results, first run** ([`rain_to_phase.py`](../tests/probes/rain_to_phase.py)).
+- **Controls at p = 16, agreeing exactly with the complete core.**
+  - Reversed (G16 above, rain below): SAT at D = 9, a wall from G16 into the rain, as the core says.
+  - Forward (rain above, G16 below): UNSAT in all 80 instances (D = 1 … 40, both rain phases).
+- **P33a HELD.** Rain above, P1024 below: UNSAT in all 78 instances (D = 2 … 40, both rain phases), each in at most
+  2 s; 26 s under `run_capped`.
+- **Monotonicity (PROOF, short).** A wall of D transition columns with rain state (a, ā) on top gives one of D + 1
+  columns with (ā, a) on top, by adding the rain column ā above (Δā = all ones = ā ∨ a). The same padding works at the
+  bottom with the phase. So, over both rain phases, existence is monotone in D, and UNSAT at D excludes every wall of
+  length ≤ D.
+
+**Predictions for the second run, written before it.**
+- **P33b.** Rain above, P1024 below: UNSAT at D = 64, 128, 256, 512 and 1,024, both rain phases. Lean 85%.
+- **P33c (the Sink conjecture for P1024).**
+  - G8 (lifted to p = 1,024; all 8 of its time-rotations on top) above P1024: UNSAT at D = 64 and 256.
+  - G16 (lifted; all 128 of its states on top) above P1024: UNSAT at D = 64.
+  - Lean 80%.
+  - Counterfactual: a wall from G8 or G16 into P1024. It would be the first wall seen between two non-rain phases,
+    refuting the Sink conjecture, though not the light-speed recurrence conjecture.
+- Caps: 600 s per instance, nice 10, `run_capped` with CPU 3,000 s and RSS 4 GiB.
+
