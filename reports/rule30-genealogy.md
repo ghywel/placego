@@ -4090,3 +4090,58 @@ Note that 1,342 − 689 = 653 is GC2360's R, the number of splitting roots.
      A double front enters one step below that value.
    - A proof, or a counterexample from a wider search for phases, is the next target.
 
+## 34. The cycle lemma: a hand attempt and a SAT search for phases (T29, L1307)
+
+At the owner's go-ahead ("Yes, cycle lemma"). **Cycle lemma (conjecture):** every cycle of the period-2L pair graph
+that has a column of least period 2L contains a column of τ-adic valuation exactly L/2 − 1. In every known phase that
+is also the largest valuation (§33.2).
+
+### 34.1 Hand attempt: a reformulation, no proof (Local)
+
+- **Valuations as ANF degree.** Index time t ∈ Z/2L by its binary digits t_0 … t_(m−1), with 2L = 2^m. The Newton
+  basis C(t, j) mod 2 is, by Lucas's theorem, the monomial in the digits of j, and Δ = τ lowers its index by one. So
+  **v(c) = 2L − 1 − N(c)**, where N(c) is the largest integer index of a monomial in c's algebraic normal form.
+  - The period thresholds are the top digits: v ≥ L means c does not depend on t_(m−1); v = L − 1 means
+    c = t_(m−1) ⊕ (lower), a front.
+  - Reduction mod τ^q is the fold to period q, f_q(c)(s) = Σ_j c(s + jq). So v(c) ≥ q ⇔ f_q(c) = 0, and
+    v(c) = q − 1 ⇔ f_q(c) is all ones.
+- **A nested front** (v = L/2 − 1) is a column whose four-quarter fold g = f_(L/2)(c) is identically 1. In ANF terms
+  the coefficient of t_(m−1)t_(m−2) is the constant 1.
+- **The fold commutes with integration but not with OR:** τ g_(k+1) = f_(L/2)(c_(k−1) ∨ c_k), and the fold of an OR
+  is not a function of the folds. So the first-doubled-column argument does not transfer to g. This is the same
+  obstruction as G185 (damage alone does not evolve).
+- No proof. The lemma is put to a test that could refute it.
+
+### 34.2 Predictions, written before the run (T29)
+
+**Encoding.** A phase is a configuration C_K(t) for K ∈ Z and t ∈ Z/2L satisfying the recursion
+C_(K+1)(t+1) ⊕ C_(K+1)(t) = C_(K−1)(t) ∨ C_K(t). It repeats in depth up to a time rotation:
+C_(K+m)(t) = C_K(t + s), for a depth period m and a twist s. The SAT instance has variables C_k(t) for 0 ≤ k < m, the
+recursion with twisted wrap-around, and one of the following:
+- **(neg)** some column has least period 2L, and no column has fold g identically 1. A solution refutes the lemma.
+- **(pos)** some column has least period 2L. This enumerates phases.
+
+The solver is CaDiCaL through python-sat. UNSAT results are solver-reported, not certified by LRAT; a result that
+carries weight will be certified with `cake_lpr`, as TOOLS.md requires.
+
+Record searched:
+- §29.6–29.11 (the core at p = 8 and 16: G8 and G16 are the only cycles of least period p);
+- T22 (shift-register rigid rotators, r ≤ 22);
+- §33 (the 480-state phase is a rigid rotator with 30 distinct columns up to rotation);
+- the SAT rows of TOOLS.md.
+
+Predictions:
+- **P29a (controls).**
+  - At p = 8 and p = 16 (complete cores), (neg) is UNSAT for every m ≤ 64 and every twist s.
+  - (pos) finds G8 at p = 8 and G16 at p = 16; G16 has depth period 8 with twist 7, from its time shift 7 = depth
+    shift 8.
+  - At p = 32, (pos) finds the 480-state phase at m = 30.
+  - A failed control means an encoding error, not a mathematical result.
+- **P29b (the lemma at p = 32).** (neg) is UNSAT for every m ≤ 64 and every s ∈ Z/32. Lean 60%.
+  - Counterfactual: a solution, which is an explicit phase of least period 32 without a nested front. That refutes
+    the cycle lemma and the valuation separator of §33.
+- **P29c (the lemma at p = 64).** (neg) is UNSAT for every m ≤ 32 and every s ∈ Z/64, as far as time allows (cap one
+  hour of CPU in all). Lean 55%.
+- **P29d (the landscape).** Enumerating least-period-32 phases with m ≤ 32 by (pos), with each found phase blocked in
+  every depth shift and time rotation, finds at most a handful. Each has largest valuation exactly 7.
+
