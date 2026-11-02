@@ -1,0 +1,6 @@
+parsed etherTable [[0, 0, 1, 1], [0, 1, 1, 0], [1, 1, 0, 1], [0, 1, 0, 1], [0, 0, 1, 1], [0, 0, 0, 1], [0, 0, 0, 1]] and 109 wall states
+wallOK replayed: True
+alignments mapped onto the kit's ether: 196 of 196; entered the trap by T=400: 196 of 196
+  entry times: min 4, median 13, max 222; (x_B, x_min at entry) examples: [(0, 2), (-1, 1), (-2, 0), (-3, -1), (-4, -2), (-5, -3)]
+  alignments not entering: []
+ETHER_TRAP_DONE

@@ -1,0 +1,6 @@
+alignment (0,0): x_min range over [200, 20000]: [1, 4]; breaks of the 8-law after t=200: 0 (first [])
+alignment (3,11): x_min range over [200, 20000]: [0, 3]; breaks of the 8-law after t=200: 0 (first [])
+alignment (5,20): x_min range over [200, 20000]: [0, 3]; breaks of the 8-law after t=200: 0 (first [])
+alignment (6,27): x_min range over [200, 20000]: [1, 4]; breaks of the 8-law after t=200: 0 (first [])
+LONG_ZERO_DONE
+EXIT 0

@@ -316,3 +316,18 @@ a deterministic periodic structure whose words are pairwise indistinguishable fr
 the parity rule. The left edge's *algebraic* identity (which automaton the left wheel map is, and what its orbit closures are)
 remains the open half of M1, for Local's kind of day.
 
+
+## 10. The classic ether's exact zero is Lowry's trap entered (Block 23, CL681)
+
+Full account in [round 11 of the inquisition tracker](inquisition-20261031.md#round-11-2026-11-02-cloud-cl681-the-classic-ethers-exact-zero-the-inserted-edge-enters-lowrys-ether-wall-trap-at-every-alignment-so-the-ether-is-never-disturbed-beyond-a-bounded-distance-news-speed-exactly-zero-proved-on-the-kits-trap_invariant).
+The classic ether is the kit's `Rule30Ether` (lab period 4, spatial period 7). A black edge inserted into it enters, at every
+one of the 196 alignments by t = 222, the kit's ether-wall trap (Lowry, PR65: 109 states of a 13-cell strip closed under every
+right input), and `trap_invariant` keeps the ether to the left for ever: **the leftward news speed is exactly zero, PROVED**
+(modulo a two-sided reading of the kit's induction, in the waiting room). Three things the atlas takes from it. (1) The velocity
+spectrum's zero is a *wall*: eight period-8 columns beside the chaotic wake, not an ether phase, insulated by a closed set of
+strip states, the same object as the kit's walls beside a periodic centre column, here entered naturally instead of excluded.
+(2) The certificate shape for masked structures is a finite closed set of strip states under every outside input, not a
+contiguous knowledge band: both band certificates fail at exactly speed 1, for stated reasons. (3) A universal healing bound
+from the diagonal picture (the recruitment frontier, PROVED): the leftward damage speed of *any* perturbation at x ≥ 0 is at most
+1 minus the frontier's climb rate, exact per background (1/2, 7/12, 2/9, 9/19, 6/17..15/34), attained by the inserted edge on G8
+and (7, 63), not on the classic ether, (9, 57) or (12, 68). The spectrum table is in the tracker.

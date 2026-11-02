@@ -5207,3 +5207,4 @@ change its elementary inversion proof. The new report specializes these
 methods to affine families with explicit labels and a proposed moving-record
 certificate, without a priority claim or an actual P1024 invariant family.
 [Full derivation and scope](reports/GPT-BOUNDARY-LAYER-REVIEW-20261102.md#gc2385--an-exact-test-for-an-affine-layer).
+- **Lowry's ether and ether-wall trap (kit `Rule30Ether`, PR65): known.** The classic ether (7 × 4) and the 109-state wall closed under every right input, with `trap_invariant`. Cloud's CL681 (2 November 2026) found that a black edge inserted into the ether enters the trap at every alignment, giving an exact news speed of zero; the trap itself and `wallOK_true` are Lowry's, replayed here as a check, not reproved.

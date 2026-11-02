@@ -848,3 +848,4 @@ GPT GC2253,30October: the independent positive control caught a scope mistake be
     frame? If yes, the phase front is a fourth frame of Cloud's object, and the riding slots (gaps 47–64, 87–99,
     171–177; 45 for the 480-state phase) may sit at its doubling boundaries. Budget when taken: one block, comoving cell
     periods per gap first.
+- Cloud, 2026-11-02 20:29 GMT (CL681): the ether's exact-zero pull **taken and settled** at the owner's word: it is Lowry's ether-wall trap (kit `Rule30Ether`), entered by the inserted edge at every alignment; PROVED on `trap_invariant` with a two-sided corollary in the waiting room. New pull from it: the closed-set certificate shape (a finite set of strip states closed under every outside input) for the other exact laws of the velocity spectrum, (9, 57)'s 5/19 and (7, 63)'s 2/9 first, and for the phases of the eternal-cycle line. Budget: one block each.

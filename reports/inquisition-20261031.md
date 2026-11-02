@@ -2390,3 +2390,85 @@ replay ([`l1278_reads.py`](../tests/probes/l1278_reads.py) parts A and B) finds 
 reproduces the table's speeds and L_env(1..20), and reproduces W(1..18) as the first disagreement time of the pair
 (k, k+1). One correction to P-D2's wording: on PR69's ether L_env(k) = ⌈2(k+1)/3⌉ for k ≥ 2, one above ⌈2k/3⌉ at
 k ≡ 0 and 1 (mod 3), k ≥ 3.
+
+## Round 11 (2026-11-02, Cloud, CL681): the classic ether's exact zero. The inserted edge enters Lowry's ether-wall trap at every alignment, so the ether is never disturbed beyond a bounded distance: news speed exactly zero, PROVED on the kit's `trap_invariant`
+
+*At the owner's word ("do the exact zero work"). Predictions Block 23 (Cloud's scratch), written first and amended before each
+run; probes `ether_zero.py`, `front_laws.py`, `healing_bound.py`, `wall_structure.py`, `long_zero.py`, `ether_trap_check.py` with
+outputs in `tests/probes/wolfram/`. Record searched: CL672–CL678, 8.66, 8.77, the kit's `Rule30Ether` (Lowry, PR65) read in
+full at f1cb20be, `Rule30EtherWallWitness` (header), L1278.*
+
+### 11.1 The facts (COMPUTED)
+
+- **The classic ether is lab-periodic with period 4 and spatial period 7.** On the frame ring '1000000' (period 28 under the
+  frame rule c), c⁴ = ρ⁴ and c⁸ = ρ¹, so in the lab the pattern repeats every 4 steps. It is exactly the kit's `Rule30Ether`
+  (columns B1 B2 B3 B4 B5 c c = 0011, 0110, 1101, 0101, 0011, 0001, 0001 at the four phases); every one of the 196 frame
+  alignments maps onto the kit's labelling (`ether_trap_check.py`). P-L1 HELD, sharper than predicted.
+- **The front law is (8, 8) at every alignment.** With a black edge inserted at x = 0 (ether to the left, white to the right),
+  the leftmost mismatch x_min(t) is eventually 8-periodic with increments of the diagonal index k = x + t summing to 8, i.e.
+  lab speed exactly 0, at all 196 alignments to t = 1,500 (`front_laws.py`; the first detector accepted two repeats and was fixed
+  to three or more over 240 ticks, G26). Four alignments run to t = 20,000 keep x_min inside a window of four cells with no
+  departure from the 8-law after t = 200 (`long_zero.py`; P-L7 HELD, 2,475 periods).
+- **The structure behind the front** (`wall_structure.py`, alignment (0, 0), t = 1,500): columns x ≤ 0 are the ether (period 4);
+  columns 1..8 have period 8 and are *not* the ether in any alignment (P-L5 REFUTED: this is not a domain wall between ether
+  phases); from column 9 on, no period up to 128 over 512 rows. The settled region does not grow (P-L8 REFUTED): a wall of
+  eight period-8 columns sits directly against the chaotic wake and stays exactly periodic.
+- **Both knowledge-band certificates fail at exactly frame speed 1, for structural reasons.** CL673's edge-frame band: its bottom
+  rises 1 (black) or 2 (white) per tick against a front rising 1, so it returns only if the bottom cell is black at every tick,
+  a permanently black lab column, which forces the alternating fixed point to its left (x_c ≡ 1 needs x_(c−1) ≡ 0 needs
+  x_(c−2) ≡ 1, and so on), impossible beside the ether. A band of diagonals k = x + t is autonomous from above (8.66's identity)
+  and masks its own past where the diagonal below is black, but unknown diagonals are recruited at most one per tick, while the
+  front rises one per tick on average; so no fixed-width band returns (a one-period "pass" of my first diagonal certificate at
+  width 8 was not an induction and is withdrawn). P-L3 REFUTED in both forms.
+- **A universal bound from the diagonal picture (PROVED, short).** The recruitment frontier K(t+1) = K(t) + 1 iff the ether cell
+  (K − t, t) is black, else K(t): every recruited diagonal equals the ether (the first known value is ¬E_(k−2) = E_k when E_(k−1)
+  is black, and ether values propagate), so for *any* perturbation confined to x ≥ 0 at t = 0, the damage never lies below the
+  frontier, and the leftward damage speed is at most 1 minus the frontier's long-run climb rate, an exact periodic walk on the
+  background's torus (`healing_bound.py`): G8 1/2 (attained by the edge), classic ether 7/12, (7, 63) 2/9 (attained: its (9, 7)
+  law gives 2/9 at 91 of 441 alignments), (9, 57) 9/19 against the edge's 5/19, (12, 68) 6/17 to 15/34 by phase against 4/17.
+  For G8, the classic ether and (7, 63) the bound coincides with CL674's masking envelope; for (9, 57) and (12, 68) it is sharper.
+
+### 11.2 The mechanism is Lowry's trap, and the theorem
+
+The kit's `Rule30Ether` (Lowry, PR65) defines, beside this ether, a **wall**: 109 states of the 13-cell strip to the right of a
+B3 column, closed under every value of the cell to its right, and such that whenever B3 is white the strip's first cell carries
+the ether value B4 (`wallOK_true`, a kernel check). `trap_invariant` (Lean) then says: for any rule-30 evolution on the columns
+p ≥ 0 whose column 0 is kept at the ether, if at some t1 columns 1..k carry the ether with column k a B3 and columns k+1..k+13
+form a wall state, this stays true for ever. Lowry uses it to exclude ether walls beside a periodic centre column
+(`ether_wall_trap`, with masked Jen). Here the trap is *entered*.
+
+- `ether_trap_check.py` parses the ether table and the 109 states from the Lean source, replays `wallOK` with its own rule 30
+  (head condition and closure under both right inputs: true), checks the ether is a rule-30 orbit, maps every alignment onto the
+  kit's labelling, and finds the first time the inserted-edge configuration has ether columns up to a B3 and a wall state on the
+  next 13 cells. **All 196 alignments enter the trap**, at t = 4 to 222 (median 13). P-L9 HELD.
+- **Two-sided corollary (hand, short; read requested).** With the whole left half-line at the ether at t1 in place of a
+  prescribed column 0, the kit's induction goes through unchanged: every column left of the B3 reads three ether cells at time
+  t (its right neighbour is at most the B3), the B3 reads the wall's head only when white and that head is then the ether's B4
+  (`wall_facts`), and the strip's next state is in the set for either right value. So all columns up to the B3 stay at the ether
+  for ever.
+- **Theorem (the classic ether absorbs a black edge; PROVED on the kit's `trap_invariant` and `wallOK_true`, the finite entry
+  checks replayed here, the two-sided corollary PROOF-SKETCH until read).** For every alignment of the (7, 28) ether, a black edge
+  inserted at x = 0 with white to its right never disturbs the ether left of a fixed column x_B (the B3 column of the trap
+  entered at t1 ≤ 222): x_min(t) ≥ x_B + 1 for all t ≥ t1. The leftward news speed of the inserted edge on the classic ether is
+  exactly zero, and the measured 8-periodic oscillation of x_min inside [x_B + 1, x_B + 4] is the wall's own cycle.
+- The lesson for certificates: a masked structure beside chaos is certified not by a contiguous knowledge band (which dies) but
+  by a **finite set of strip states closed under every outside input** (Lowry's shape). That is the shape to try on the other
+  exact laws of the velocity spectrum ((9, 57)'s 5/19, (7, 63)'s 2/9, G8's 1/2 again) and, in diagonal or edge coordinates, on
+  the phases of the eternal-cycle line (§38 of the genealogy report: upward rigidity is a closed-set statement of this kind).
+
+### 11.3 The velocity spectrum, as it now stands
+
+| background | lab period × spatial | edge's front law (P, S), alignments | lab speed | universal healing bound | certified? |
+|---|---|---|---|---|---|
+| G8 | 8 × 4 | (4, 2), 32/32 | 1/2 | 1/2 (attained) | PROVED (kit `Rule30EtherEpisode`; CL669) |
+| classic ether (7, 28) | 4 × 7 | (8, 8), 196/196 | **0** | 7/12 | **PROVED this round** (Lowry's trap entered) |
+| (7, 63) | 63 × 7 | (9, 7), 91/441 (the rest no law by 1,500) | 2/9 | 2/9 (attained where the law holds) | no |
+| (9, 57) | 171 × 9 | (19, 14), 513/513 | 5/19 | 9/19 | no |
+| (12, 68) | 102 × 12 | (34, 26), 626/816 to 1,500; breaks later (CL674) | 4/17 transient | 6/17 to 15/34 | no (REFUTED as a law) |
+| G16 | 16 × 128 | no law to 1,500 | 0.224 measured | not computed | no |
+| fair row | — | — | 0.246–0.252 | 1/2 (the envelope) | no |
+
+Failed predictions (G13): P-L3 (both certificates), P-L5 (not an ether phase), P-L8 (no cascade). Unguarded mistakes: the law
+detector accepted two repeats (G26 repeated, caught by the absurd "light-speed" class); the ether function in the first
+certificate used frame coordinates at every time (caught by its own failures); the first diagonal certificate's "pass" was not an
+induction (caught before any claim by writing the induction out). The G8 control was the instrument every time.
