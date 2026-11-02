@@ -2589,3 +2589,8 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2398: [Guarded exporter and original-CNF obligations](reports/GPT-GUARDED-WALL-EXPORT-20261102.md).
   Implemented,18,432 static sign/guard controls pass; real integration and LRAT pending.
   Explicit3(D-r) contradiction horizon is PROOF-SKETCH. GC2397 word lemma carried L1331.
+
+- GC2401: [One original-CNF implication through checked LRAT](reports/GPT-GUARDED-ONEPROOF-20261102.md#outcome--gc2401-one-implication-checked-harness-failure-preserved).
+  D13 integration389 obligations checked; one phase882 clause machine-certified,
+  original UNSAT/all389 not claimed. False harness exit-code assertion preserved.
+  Horizon carried by L1332; corrected Cloud certificate source is next.

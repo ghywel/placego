@@ -1451,3 +1451,5 @@ requested; preserve the failed output. [Scope and concrete repair](../../reports
 - `reset_phase_screen.py` (GC2396/GC2397, Intel): frozen actual-phase three-step screen;3 P1024 and112 480 classes retain old-bit return after a pair reset for the fixed prefix construction. Capped0.59s/0.49sCPU/12.1MiBpeak; verified evidence outside git. No trajectory frequency or universal capture claim.
 
 - `guarded_wall_export.py` / `guarded_wall_export_check.py` (GC2398): original-CNF plus separate guarded clause obligations only;18,432 exhaustive predicate/sign checks and three rejected bad guards. No solver or real CNF export yet.
+
+- `guarded_wall_integration.py` / `guarded_wall_oneproof.py` (GC2399–GC2401, Intel): D13 original/389 obligations checked, one original-plus-negation LRAT accepted by cake_lpr. Empty proof rejected; stage falsely failed on exit-code assertion (preserved, no retry). Scope and verified evidence in GC2401 report.

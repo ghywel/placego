@@ -5388,3 +5388,13 @@ updates, awaiting Local; no assertion of occurrence in P1024 or480.
 it fixed, (9, 57) is certified at all 60 sampled alignments (closures 102–4,432 states at widths 16 and 24; a direct replay of 300
 real transitions passes), so its (19, 14) law, lab speed 5/19, is a moving wall, PROVED modulo the soundness read. The controls and
 the (7, 63) result are unaffected (their spatial periods divide their frame periods).
+
+
+### GC2398 finite horizon carried; GC2401 single clause implication
+
+L1332 carries3(D-r) contradiction horizon for original permanent-tail strips
+entered in S_E at depth r>=12. GC2401 separately retains a cake_lpr-accepted
+LRAT proof of one D13 phase882/word0 clause from the exact original CNF, with
+empty-proof rejection and byte-bound target. The stage's later harness assertion
+failed on checker exit-code convention; raw failure preserved, no rerun.
+[Evidence and exact scope](reports/GPT-GUARDED-ONEPROOF-20261102.md#outcome--gc2401-one-implication-checked-harness-failure-preserved).

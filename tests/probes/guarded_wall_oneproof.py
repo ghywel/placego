@@ -53,7 +53,9 @@ rc,text=command('check',['/usr/local/bin/cake_lpr','--CML_HEAP_SIZE=64','--CML_S
 assert rc == 0 and 's VERIFIED UNSAT' in text
 empty=out/'empty.lrat';empty.write_bytes(b'')
 rc,text=command('reject-empty',['/usr/local/bin/cake_lpr','--CML_HEAP_SIZE=64','--CML_STACK_SIZE=32',str(target),str(empty)])
-assert 's VERIFIED UNSAT' not in text and rc != 0
+# cake_lpr's rejection diagnostic can have rc0; match the established smoke-test
+# contract (acceptance marker required) and require this explicit negative case.
+assert 's VERIFIED UNSAT' not in text and 'empty clause not derived' in text
 report['status']='ONE_CLAUSE_IMPLICATION_LRAT_CHECKED'
 report['proof_sha256']=hashlib.sha256(proof.read_bytes()).hexdigest()
 report['proof_bytes']=proof.stat().st_size

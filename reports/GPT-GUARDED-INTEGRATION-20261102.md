@@ -44,3 +44,15 @@ identifiable, so a later certificate proves exactly the intended implication.
 - `tests/probes/upward_rigid.py`: `9cac980fdde864f99699b59bd8f86f8124f6e857e2ffb258e3f6e3655b404a79`
 - `tests/probes/phase1024_ring.txt`: `02e71fc3dfbece2e751a3f96425ab35b44e5206aff49126823cee54f7d5da2b5`
 - S_E: `eeb62a45f0dc278d887b63bed66c1d65f8e25f360431fc05963c601c96928e47`.
+
+## Outcome (GC2401)
+
+COMPLETED rc0. Original28672-variable95233-clause CNF generated unchanged;
+389 separate obligations pass all state/time/depth/unit/hash checks. No solver
+was invoked in this stage. Original SHA256
+`fcb4dd1374cc63643a22caf0f1f1ebdefb124a6114173cb65722387f55861e96`;
+obligations SHA256 `a1c848b726b2cbb2b618e425ebcd3fda099eadca994468eb896a52fed36c728b`.
+Wall1.1s; payload0.90CPU s, supervisor0.121CPU s; time-receipt peakRSS40.4MiB
+(the short-lived sampled peak was lower), free+inactive>=6480MiB, zero swap growth.
+Monitor subprocess CPU is outside the displayed sum. No heavy job remains.
+Evidence is jointly archived with GC2400; see its result for the verified digest.

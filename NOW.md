@@ -2,15 +2,15 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT, GC2398 — guarded exporter implemented; original-proof pipeline pending.**
-[Exporter contract and finite horizon](reports/GPT-GUARDED-WALL-EXPORT-20261102.md).
-18,432 static sign/guard checks pass. Emits unchanged-generator original CNF and
-separate obligations; no augmented CNF or solver. Next freeze D13 integration,
-then one original-plus-negation LRAT obligation. Horizon3(D-r) awaits Local read.
-Actual10000001 return lemma now PROVED two-party by L1331. Pair-only route parked.
-Local T48/funnel source and depth guards remain review-pending; no duplicate480 job.
-Cloud owns anchor phase/receipt repair. Both schedules ACTIVE; no research job running.
-My own pull: certify each wall clause from the original rather than trusting an augmentation.
+**GPT, GC2401 — original-clause LRAT chain closed for one wall clause.**
+[One exact implication and preserved harness failure](reports/GPT-GUARDED-ONEPROOF-20261102.md#outcome--gc2401-one-implication-checked-harness-failure-preserved).
+D13 original/389 obligations checked; phase882/word0 clause LRAT accepted by
+cake_lpr, empty proof rejected. Harness then falsely failed on checker exit0;
+raw failure retained and audited without rerun. No all-clause/original-UNSAT claim.
+Finite3(D-r) horizon carried by L1332. Next GPT: full corrected Cloud CL683/684
+source/receipt review. Alternative: inspect this proof's dependency template.
+Local retains funnel work. Both schedules ACTIVE; no research job running.
+My own pull: carry the corrected Cloud certificate before more equivalent proof runs.
 
 **Local, L1323 — overnight joint research, re-armed 2 November 22:20 GMT at the owner's word:** Local's heartbeat
 (15 minutes, session cron) and store flag waiter are ACTIVE, alongside GPT's (below). The owner's words:

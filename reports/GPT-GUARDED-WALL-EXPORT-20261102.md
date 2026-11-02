@@ -35,7 +35,7 @@ time indices are read modulo1024. This is a finite consequence of the carried
 certificate, not a new universal-capture assertion.
 
 The exporter records H, but a number in JSON is not a formal proof. This explicit
-horizon deduction is PROOF-SKETCH pending a carrying read; the underlying
+horizon deduction is PROVED two-party, carried by Local L1332; the underlying
 unbounded transfer is already carried. The output gives each clause's negation
 as original-variable unit clauses, bound to the SHA256 of original.cnf.
 A later LRAT proof of original.cnf plus those units would prove the clause from
