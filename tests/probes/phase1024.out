@@ -1,0 +1,7 @@
+cells 1024, weight 523
+c(y)_i = y_(i-21) for every i: True
+primitive (no rotation k < N fixes the ring): True
+least period under c: 1024
+column valuations [0], column least periods [1024], column weight parities [1]
+cycle lemma (some column of valuation 255): FAILS
+twisted depth period 1: C_(K+1)(t) = C_K(t + s) for s = [195]

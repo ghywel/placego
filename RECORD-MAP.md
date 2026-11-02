@@ -2382,6 +2382,9 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   Exact controls at p = 8 and 16 (only G8 and G16). No least-period-32 phase repeats within 9 columns; the test at
   (30, 14) timed out and goes to Intel. Search aliases: phase_sat, Kissat, twisted depth period, four-quarter fold,
   ANF degree.
+- L1308 (Local, 2 November 2026): [T30, every phase is a rigid rotator; the cycle lemma refuted](reports/rule30-genealogy.md#35-why-phases-are-long-every-phase-is-a-rigid-rotator-t30-l1308).
+  A phase of least period 1,024 (c = ρ^21 on 1,024 cells, all columns of valuation 0). Search aliases: rotators_g,
+  phase1024, P1024, shift register, rigid rotator, cycle lemma refuted.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 

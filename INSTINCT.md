@@ -815,3 +815,8 @@ GPT GC2253,30October: the independent positive control caught a scope mistake be
   now the **cycle lemma**, a statement about phases alone: every cycle of least period 2L has a column of valuation
   L/2 − 1. Budget: one block, with a hand attempt first, then a wider phase search at p = 32 and 64 as the test.
 
+- Local, 2 November (L1308): the cycle-lemma pull is spent, refuted by a period-1,024 rotator whose columns all have
+  valuation 0. The new pull is **rotators as a window on the light-speed core**: cheap shift-register censuses find
+  phases at any period. Next questions: which phases have walls into the rain at large p, and what, other than
+  valuation, separates rain-origin paths from them.
+
