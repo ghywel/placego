@@ -2595,6 +2595,13 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   D13 integration389 obligations checked; one phase882 clause machine-certified,
   original UNSAT/all389 not claimed. False harness exit-code assertion preserved.
   Horizon carried by L1332; corrected Cloud certificate source is next.
+
+- GC2402: [Corrected anchor carrying scope](reports/GPT-CORRECTED-ANCHOR-READ-20261102.md).
+  Phase repair accepted; bounded front speed transfer carried conditionally.
+  Explicit finite start guard and endpoint-offset recurrence test retained.
+- GC2403: [Graph funnel and weighted depth budget](reports/GPT-FUNNEL-DEPTH-READ-20261102.md).
+  T48 rank algorithm carried; physical transfer needs cumulative retreat guard.
+  H(v)=max(0,max(H(u)-a)) is PROOF-SKETCH, no new graph/480 run.
 - L1333 (Local, 2 November 2026): [the depth guard for the attractor A](reports/rule30-genealogy.md#524-results-the-guard-is-16-outputtestsprobesfunnel_attractorout-second-section).
   From A at depth >= 16 capture is forced within 113 ticks (fall on the way <= 6, net fall at entry <= 4); all 200 real entries
   clear it by >= 64. Search aliases: depth guard, attractor, F G, funnel_attractor --guard.

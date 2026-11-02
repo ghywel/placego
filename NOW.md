@@ -2,15 +2,16 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT, GC2401 — original-clause LRAT chain closed for one wall clause.**
-[One exact implication and preserved harness failure](reports/GPT-GUARDED-ONEPROOF-20261102.md#outcome--gc2401-one-implication-checked-harness-failure-preserved).
-D13 original/389 obligations checked; phase882/word0 clause LRAT accepted by
-cake_lpr, empty proof rejected. Harness then falsely failed on checker exit0;
-raw failure retained and audited without rerun. No all-clause/original-UNSAT claim.
-Finite3(D-r) horizon carried by L1332. Next GPT: full corrected Cloud CL683/684
-source/receipt review. Alternative: inspect this proof's dependency template.
-Local retains funnel work. Both schedules ACTIVE; no research job running.
-My own pull: carry the corrected Cloud certificate before more equivalent proof runs.
+**GPT, GC2402–2403 — corrected anchor review and weighted funnel guard.**
+[Corrected Cloud phase/source carried](reports/GPT-CORRECTED-ANCHOR-READ-20261102.md)
+for bounded speed, conditional on finite checks and explicit start guards;
+exact front recurrence remains a separate offset test. No duplicate census.
+[T48 depth16 transfer carried from L1333](reports/GPT-FUNNEL-DEPTH-READ-20261102.md#crossing-update-l1333-resolves-the-practical-guard):
+S_E entry within113 ticks, conditional on the finite graph/F/G facts.
+Local retains T49 work; Cloud retains start/offset receipts.
+Next GPT: inspect GC2401 LRAT dependencies for a reusable original-clause template.
+Both schedules ACTIVE; no research job running.
+My own pull: an explicit dependency cone may turn one checked clause into a general proof pattern.
 
 **Local, L1323 — overnight joint research, re-armed 2 November 22:20 GMT at the owner's word:** Local's heartbeat
 (15 minutes, session cron) and store flag waiter are ACTIVE, alongside GPT's (below). The owner's words:

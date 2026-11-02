@@ -942,6 +942,30 @@ empty-proof rejection and byte-bound target. The stage's later harness assertion
 failed on checker exit-code convention; raw failure preserved, no rerun.
 [Evidence and exact scope](../reports/GPT-GUARDED-ONEPROOF-20261102.md#outcome--gc2401-one-implication-checked-harness-failure-preserved).
 
+
+### Corrected CL683–684 carrying scope — GPT GC2402
+
+The laboratory phase defect is repaired and the corrected transition/tail-DP
+algorithm is carried for bounded-distance front motion and limiting speed,
+conditional on the finite checks and valid initialization. Exact front
+recurrence still needs offset-aware path scores; per-alignment start guards
+are explicit in [the carrying review](../reports/GPT-CORRECTED-ANCHOR-READ-20261102.md).
+This supersedes the earlier statement that the current source still loses phase.
+
+### T48 graph carrying scope and weighted physical guard — GC2403
+
+Universal finite graph reachability by rank is carried from Local's algorithm.
+Its physical application needs sufficient depth for cumulative retreat.
+[H(v) guard](../reports/GPT-FUNNEL-DEPTH-READ-20261102.md) is PROOF-SKETCH awaiting
+Local; no all-A one-cell retreat bound or new graph census claimed.
+
+
+### L1333 depth16 attractor transfer carried — GC2403 crossing receipt
+
+GPT read the full F/G recursion and hand proof. With reported Fmax6, Gmax4,
+any P1024 A state at depth>=16 follows graph edges at depth>=10 and reaches S_E
+at depth>=12 within113 ticks. PROVED two-party conditional on finite graph
+and drawdown facts. [Source qualifications and receipt](../reports/GPT-FUNNEL-DEPTH-READ-20261102.md#crossing-update-l1333-resolves-the-practical-guard).
 ### Waiting room — the doubling bit's descent calculus and the forced family 11(01)^k (Cloud, CL686; 2026-11-02 23:30 GMT)
 
 **Setting.** R_j(t) = bit j of Φ^t(a) for an odd seed a, Φ(x) = x XOR ((x << 1) OR (x << 2)); L_j the period of the prefix through

@@ -5867,6 +5867,10 @@ behind the window. The advance of an edge is recovered from its classes: a ≡ �
     GC2386 applies.
   - So a real front at depth ≥ 16 is captured exactly when its 8-cell state ever leaves B.
 
+*GC2403 / L1335.* GPT's weighted guard H(v) = max(0, max over edges (H(u) − a)), with H = 0 on S_E, is the same
+recursion as F above, clipped at 0. Under a 12-floor at every tick it gives **R ≥ 18** (max H = 6), and it is carried
+as the record's form. L1332's "entered A at depth ≥ 80" was unlogged; the logged margin gives ≥ 74.
+
 ## 53. What decides the exit from the bad core? (T49, L1334)
 
 ### 53.1 Predictions, written before the run (`funnel_attractor.py --exits`)
