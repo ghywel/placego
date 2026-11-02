@@ -2,17 +2,15 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT, GC2394–GC2395 — phase repair and returning memory.**
-[CL682 source review](reports/GPT-ANCHOR-PHASE-REVIEW-20261102.md): abstract speed
-transfer carried, but (9,57) loses spatial phase in the current state encoding.
-Tiny coordinate controls confirm the repair; Cloud owns source/receipt correction.
-[Two-open reset](reports/GPT-OPEN-STRETCH-REVIEW-20261102.md) now PROVED two-party
-by L1327. [A bit can return at the next blocked step](reports/GPT-RESET-MEMORY-RETURN-20261102.md)
-from the deeper wake: new PROOF-SKETCH with explicit actual rows and six-step check.
-Next GPT: screen actual phase reset-to-blocked words and their incoming third bit;
-no independent-fresh-input approximation. Local owns T47 reset/import measurement.
-Guarded wall exporter remains alternative. Both GPT schedules ACTIVE; no job running.
-My own pull: follow the old bit outside the reset pair, then back into it.
+**GPT, GC2397 — old-bit return on both actual references; change of representation.**
+[Fixed pilot and concrete P1024/480 witnesses](reports/GPT-RESET-PHASE-SCREEN-20261102.md#outcome--gc2397).
+Same reset pair, different pair after the next blocked move; complete finite-prefix
+pasts. COMPUTED; general word-lemma awaits Local. GC2395 carried by L1328.
+The pair-only quotient is parked: reopen with a deeper-import reset guard or richer
+state. Next GPT: guarded wall-clause exporter and original-CNF obligations.
+Local owns T47/funnel work; full T47 source review pending. Cloud owns CL682 phase/
+receipt repair. Both GPT schedules ACTIVE; no research job running.
+My own pull: use the wall constraints as the next representation.
 
 **Local, L1323 — overnight joint research, re-armed 2 November 22:20 GMT at the owner's word:** Local's heartbeat
 (15 minutes, session cron) and store flag waiter are ACTIVE, alongside GPT's (below). The owner's words:
@@ -145,7 +143,7 @@ rank on non-doubling stretches; no Intel giant restart now. Latest lost checkpoi
 560082/560085 subtrees reported complete, period256 still INCOMPLETE. GC2360 E−B=R now PROVED two-party
 by L1300. Both schedules **PAUSED**; no job launched. The full core-program audit remains separate.
 
-**Local, L1299–L1324 — the cycle lemma refuted; upward rigidity; fronts, fuel, wakes, decoupling, robustness and capture, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
+**Local, L1299–L1330 — the cycle lemma refuted; upward rigidity; fronts, fuel, wakes, decoupling, robustness and capture, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
 - All 560,085 subtrees ran at cap 10^8. 51 of the 54 giants are complete, and three are open (3.05·10^6 pending
   nodes). There is no rain edge in 2.3·10^12 nodes so far.
 - **STOPPED (L1301).** The checkpoint was lost in the app restart (L1302); the per-root results are saved. The three
@@ -199,6 +197,9 @@ by L1300. Both schedules **PAUSED**; no job launched. The full core-program audi
   **T44 (L1324):** the front shields itself: edits that reach its window before capture rarely change it (bottom 48
   cells fix the capture tick in 99% of P1024 pairs, 24 cells in 92-95% of 480's). The front moves by 2 exactly at open
   classes; its window matters only at blocked classes.
+  **T45–T48 (L1325–L1330):** blocked moves read shallowly, but history beyond the pair still steers the path (resets do
+  not cut it). P1024's window automaton splits exactly into S_E, an attractor A forced into S_E, and the bad core B, so
+  capture is exactly leaving B. The open statement: an actual row cannot keep its front in B for ever.
 - No layer state repeats, even up to rotation (p ≤ 128), so memoising cannot help.
 
 **GPT, GC2360 — morning reconciliation, 2 November 2026:**

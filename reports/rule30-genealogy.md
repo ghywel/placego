@@ -5748,3 +5748,84 @@ the class walk reaches the cycle and the two cells behind the front then fall in
 
 Record searched: GC2393, GC2395 and their carrying reads (L1327, L1328); T41's single-flip decoupling of clean fronts
 (gap ≤ 7 matters in P1024, none in 480); T44 (§48).
+
+### 51.2 Results ([output](../tests/probes/reset_memory.out))
+
+| | P1024 | 480 |
+|---|---|---|
+| reset ticks among pre-capture ticks | 1,386 of 13,414 (10.3%) | 2,729 of 14,550 (18.8%) |
+| blocked moves between consecutive resets: median / 90% / max | 2 / 10 / 28 | 1 / 6 / 25 |
+| a flip j cells behind the front, 2 ticks after a reset, changes the front path within 200 ticks: j = 3 / 4 / 6 / 8 / 12 / 16 | 84 / 81 / 67 / 52 / 37 / 23% | 64 / 48 / 42 / 31 / 16 / 9% |
+| first difference, median ticks: j = 3 / 8 / 16 | 9 / 24 / 55 | 7 / 26 / 61 |
+
+- **M1 HELD.** Resets are 10% and 19% of pre-capture ticks.
+- **M2 HELD.** The median number of blocked moves between resets is 2 (P1024) and 1 (480).
+- **M3 HELD, strongly.** A flip of the third cell right after a reset changes the front path in 84% and 64% of events,
+  with the first difference after a median 7–9 ticks. GC2395's return is the rule on these phases, not an exception.
+- **M4 REFUTED for P1024, HELD for 480.** At j = 16, P1024's front path still changes in 23% of events (480: 9%). The
+  effect fades with depth, about halving every 4–6 cells, but slowly.
+
+**What T47 teaches.**
+- **Pair resets do not cut the history.** Resets are frequent, but the cells behind the pair carry information that
+  returns to the front within tens of ticks. A single cell 16 back still steers P1024's front a quarter of the time.
+  The compatibility condition cannot cut history at resets plus a short depth; GPT's import-history line is the
+  necessary one.
+- **Changing the path is not changing the capture.** Combine this with T44 (bottom 48 cells fix the capture tick in 99%
+  of P1024 pairs). The front's path is sensitive to deep cells, but where it ends up, captured, is not. The robust object
+  is the entrance into S_E, not the path. That points away from path-level certificates and towards an argument that
+  every path is funnelled into S_E. The funnel is the open question.
+
+## 52. Is the funnel into S_E visible in the window automaton? (T48, L1330)
+
+### 52.1 Setting and predictions, written before the run (`funnel_attractor.py`)
+
+**Question.**
+- T44 and T47 show that the front's path depends on deep cells, while its entrance into S_E is robust.
+- Is that robustness already visible to the 8-cell window automaton (§39), with arbitrary content behind the window?
+- The attractor A of S_E answers this. It is the least set of states, outside S_E and with no FAIL branch, whose every
+  successor lies in S_E ∪ A.
+- From a state of A every continuation reaches S_E within rank(v) ticks, whatever lies behind the window. (This is
+  sound while the front stays at depth ≥ 10 + the retreats on the way; the real check below uses R ≥ 12 and records any
+  violation.)
+
+**Setting.**
+- P1024 only, W = 8: the whole automaton, 262,144 states.
+- 480's automaton (3.9 million states) is too heavy for the M5 under the owner's light-use rule.
+- Real paths: 200 random prefixes, K = 80, Random(48), every tick at R ≥ 12 until capture.
+
+**Predictions.**
+- **F1.** A is small: at most 10% of the automaton. Lean 55%. The bad core (84% of the automaton, §45) cannot lie in A.
+- **F2.** Real paths reach A ∪ S_E only a median ≤ 15 ticks before capture: the window abstraction sees the funnel only
+  at its very end. Lean 55%.
+- **F3 (control, a soundness alarm).** Every real path that enters A at a state of rank r reaches S_E within r ticks.
+- **Counterfactual.** If real paths enter A long before capture (median lead ≥ 50 ticks), the window abstraction
+  already explains much of the funnel, and a capture proof could aim at "every path reaches A". If the lead is short,
+  the funnel lives in the history, and GPT's line is the one that can reach it.
+
+Record searched: §45 (bad core, C1), §44.6 (routes C1–C3), GC2389 (gateways); attractor of S_E listed as a pull in
+L1321/INSTINCT; not computed before.
+
+### 52.2 Results ([output](../tests/probes/funnel_attractor.out))
+
+- The automaton has 262,144 states and 621,312 distinct edges. 66 states have a FAIL branch.
+- A, outside S_E, has **42,033 states (16.0%)**. Its ranks run up to 113, spread fairly evenly (421, 453, 467, … states
+  at ranks 1, 2, 3, …).
+- **F1 REFUTED.** A is larger than the predicted 10%.
+- **F2 REFUTED.** All 200 real paths enter A before capture, with a median lead of 26 ticks (90%: 57; max 111). On
+  average they spend 36% of their pre-capture time in A. The window abstraction sees the funnel well before its end,
+  but not from the start.
+- **F3 HELD (the control).** Every path that entered A was captured within its entry rank (median 37, max 111), with no
+  alarm. Once inside A a real path cannot leave it except into S_E, since A's successors all lie in S_E ∪ A.
+- **An exact dichotomy (COMPUTED).** §45's bad core B (219,722 states, the states with an infinite FAIL-free path
+  avoiding S_E) leaves exactly 42,033 states outside S_E ∪ B, and those are exactly A. So **every state outside S_E is
+  either forced into S_E within at most 113 ticks, whatever lies behind the window, or lies in the bad core**. No state
+  is undecided, and all 66 FAIL states lie in B.
+
+**What T48 teaches.**
+- **Capture is exactly "leaving the bad core".** A real front is captured if and only if its 8-cell state ever leaves B
+  at depth ≥ 12 (plus the soundness margin). It is then in A, and S_E follows within its rank.
+- Real paths spend a median 64% of their pre-capture time in B and then leave it. B is where the window abstraction
+  fails: adversarial content behind the window can keep a state in B for ever, as §45 found.
+- So the whole capture gap is now a statement about B: **a real evolution cannot stay in the bad core for ever.**
+- This sharpens GPT's target. The history condition need not fix the whole path. It only has to show that B's
+  avoiding cycles need behind-window content that an actual row cannot keep supplying.

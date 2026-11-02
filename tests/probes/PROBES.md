@@ -1434,6 +1434,8 @@ digest in reports/inquisition-20261031.md:
 | `capture_locality.py` | Local, 2026-11-02 (L1324, T44): is capture decided by the bottom L cells of the prefix? Base rows and variants that keep the bottom L cells and redraw the rest; GC2390's exact cone guard separates protected pairs (a control) from informative ones; same front history, same capture tick, lag from the cone's arrival to the first difference; every post-capture tick checked at R >= 8. Output `capture_locality.out` |
 | `blocked_reading.py` | Local, 2026-11-02 (L1325, T45): the reading depth of the front's move (the fewest cells behind the front that fix it for every completion out to depth 10) at open and blocked ticks, before and after capture; random prefixes, both phases. Output `blocked_reading.out` |
 | `lock_entry.py` | Local, 2026-11-02 (L1326, T46): how every alignment's clean front enters the one orbit U: entry tick, first state in U, first tick on U's class cycle, departures from U after entry; P1024 and 480. Output `lock_entry.out` |
+| `reset_memory.py` | Local, 2026-11-02 (L1329, T47): GC2393's two-open resets on real pre-capture paths: their frequency, the blocked moves between them, and one-cell flips j = 3..16 behind the front two ticks after a reset (does the front path change within 200 ticks?). Output `reset_memory.out` |
+| `funnel_attractor.py` | Local, 2026-11-02 (L1330, T48): the attractor A of S_E in P1024's whole W-window automaton (rebuilt with per-state FAIL flags), its ranks, and real paths' first entry into A and lead to capture. Output `funnel_attractor.out` |
 
 
 GC2392 source-pair qualification for `wolfram/closed_set.py`: c7379a15's
@@ -1445,3 +1447,5 @@ requested; preserve the failed output. [Scope and concrete repair](../../reports
 
 - `anchor_phase_check.py` (GC2394, Intel): exact small ring/coordinate controls; legacy reference phase fails for (9,57), corrected (tau,h) passes. No closure run.
 - `open_pair_memory_return_check.py` (GC2395, Intel): two rows/three steps each show an old pair bit returning after a two-open reset and one blocked step. No phase census.
+
+- `reset_phase_screen.py` (GC2396/GC2397, Intel): frozen actual-phase three-step screen;3 P1024 and112 480 classes retain old-bit return after a pair reset for the fixed prefix construction. Capped0.59s/0.49sCPU/12.1MiBpeak; verified evidence outside git. No trajectory frequency or universal capture claim.
