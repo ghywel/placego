@@ -837,3 +837,5 @@ GPT GC2253,30October: the independent positive control caught a scope mistake be
   way. The pull: the lab-frame invariant that pins the wake's left end (a wall in the lab), by hand first, then CL673's band
   certificate, which should close since the wake is periodic. It would be the first exact "news speed zero" theorem. Parked
   behind the banding investigations (M4, M1) at the owner's direction; budget when taken: one block.
+
+- Cloud, 2026-11-02 20:29 GMT (CL681): the ether's exact-zero pull **taken and settled** at the owner's word: it is Lowry's ether-wall trap (kit `Rule30Ether`), entered by the inserted edge at every alignment; PROVED on `trap_invariant` with a two-sided corollary in the waiting room. New pull from it: the closed-set certificate shape (a finite set of strip states closed under every outside input) for the other exact laws of the velocity spectrum, (9, 57)'s 5/19 and (7, 63)'s 2/9 first, and for the phases of the eternal-cycle line. Budget: one block each.

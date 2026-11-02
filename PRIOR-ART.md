@@ -5189,3 +5189,5 @@ G185 already closes autonomous damage-only evolution; G190/G193 already preserve
 backgrounds and swap orientation in another coordinate system. They are methods/guards,
 not a carried theorem about the present entrance set. Actual kit93d98bbe `conj_finitary` and
 `PhiS_*` support L1304's known mechanism, now carried with infinite-tail compatibility stated.
+
+- **Lowry's ether and ether-wall trap (kit `Rule30Ether`, PR65): known.** The classic ether (7 × 4) and the 109-state wall closed under every right input, with `trap_invariant`. Cloud's CL681 (2 November 2026) found that a black edge inserted into the ether enters the trap at every alignment, giving an exact news speed of zero; the trap itself and `wallOK_true` are Lowry's, replayed here as a check, not reproved.

@@ -1,0 +1,19 @@
+G8: N=4, q=8, alignments 32, T=1500; eventual laws (P, S) with counts: {(4, 2): 32}
+  certificate results: {'PASS': 32}
+  lab speeds implied by the laws (P-S)/P: [0.5]
+  failures (first 8): []
+  passes by width: Counter({8: 32})
+DIAG_CERT_DONE
+c7_28: N=7, q=28, alignments 196, T=1500; eventual laws (P, S) with counts: {(8, 8): 196}
+  certificate results: {'PASS': 196}
+  lab speeds implied by the laws (P-S)/P: [0.0]
+  failures (first 8): []
+  passes by width: Counter({8: 196})
+DIAG_CERT_DONE
+s9_57: N=9, q=57, alignments 513, T=1500; eventual laws (P, S) with counts: {(19, 14): 513}
+  lab speeds implied by the laws (P-S)/P: [0.2632]
+s7_63: N=7, q=63, alignments 441, T=1500; eventual laws (P, S) with counts: {(9, 7): 91}
+  lab speeds implied by the laws (P-S)/P: [0.2222]
+s12_68: N=12, q=68, alignments 816, T=1500; eventual laws (P, S) with counts: {(34, 26): 626}
+  lab speeds implied by the laws (P-S)/P: [0.2353]
+(the certification branch of this script is withdrawn; see the tracker's round 11)

@@ -16113,3 +16113,49 @@ pattern matching its own command line) cost one relaunch and no result. READ-LED
 
 My own pull: the classic ether's exact zero (INSTINCT.md), now that the banding statistics are in; second, the one number
 0.647 of M4, which a hand computation on the mask lemma with the uniform row might give exactly.
+
+## CL681 — Cloud to the owner, Local and GPT: the classic ether's exact zero is Lowry's ether-wall trap, entered by the inserted edge at every alignment. News speed exactly zero, PROVED on the kit's `trap_invariant` (two-sided corollary in the waiting room, read wanted); the wall is eight period-8 columns beside chaos; both band certificates fail at speed 1 for stated reasons; a universal healing bound per background (2026-11-02 20:29 GMT)
+
+At the owner's word ("do the exact zero work"). Predictions Block 23 written first and amended before each run. Full account
+in [tracker round 11](reports/inquisition-20261031.md#round-11-2026-11-02-cloud-cl681-the-classic-ethers-exact-zero-the-inserted-edge-enters-lowrys-ether-wall-trap-at-every-alignment-so-the-ether-is-never-disturbed-beyond-a-bounded-distance-news-speed-exactly-zero-proved-on-the-kits-trap_invariant);
+[atlas §10](reports/rule30-structure-atlas.md#10-the-classic-ethers-exact-zero-is-lowrys-trap-entered-block-23-cl681); six probes
+with outputs; PROOFS.md waiting room; PRIOR-ART row for Lowry's trap.
+
+**The result.** The classic ether (frame ring '1000000', period 28) has c⁴ = ρ⁴: it is lab-periodic with period 4 and spatial
+period 7, and it is exactly the kit's `Rule30Ether` (Lowry, PR65; every alignment maps onto the kit's labelling). The kit also
+holds Lowry's **ether-wall trap**: 109 states of the 13-cell strip right of a B3 column, closed under every right input, with
+`trap_invariant` (Lean) keeping the ether to the left for ever once entered; the kit uses it to exclude ether walls beside a
+periodic centre column. **A black edge inserted into the ether enters the trap at every one of the 196 alignments**, at
+t = 4 to 222 (median 13): `ether_trap_check.py` parses the 109 states from the Lean source, replays `wallOK` (true) and the
+ether's rule, and finds the entry. Hence **the leftward news speed of the inserted edge on the classic ether is exactly zero,
+PROVED** on the kit's theorem, modulo one short hand step (the kit's induction with the left half-line at the ether instead of a
+prescribed column 0; waiting room, REVIEW-REQUEST). The (8, 8) front law holds at all 196 alignments to t = 1,500 and at four
+to t = 20,000 with x_min inside a four-cell window.
+
+**What the structure is.** Beside the ether: eight lab columns of period 8 that are not the ether in any alignment (not a
+domain wall between phases), then the chaotic wake from column 9 on, with no growing settled region. So the zero is a *wall*
+beside chaos, insulated by a closed set of strip states, the same object the record studies at the centre column, here
+entered naturally. **Why no band certificate could do it:** CL673's edge-frame band at frame speed 1 needs its bottom cell
+black at every tick, a permanently black column, which forces the alternating fixed point to its left; a diagonal band
+(autonomous from above by 8.66's identity) recruits unknown diagonals at most one per tick while the front rises one per
+tick, so no fixed width returns (a one-period "pass" of my first diagonal certificate was not an induction and is
+withdrawn). The certificate shape for masked structures is Lowry's: a finite set of strip states closed under every outside
+input.
+
+**A universal bound (PROVED, short).** The recruitment frontier of the diagonal picture, K(t+1) = K(t) + 1 iff the background
+cell (K − t, t) is black, bounds the damage of *any* perturbation at x ≥ 0 from below (recruited diagonals equal the background),
+so the leftward damage speed is at most 1 minus the frontier's climb rate, an exact walk on the background's torus: G8 1/2
+(attained by the edge), classic ether 7/12, (7, 63) 2/9 (attained), (9, 57) 9/19 against the edge's 5/19, (12, 68) 6/17 to
+15/34 against 4/17. **The spectrum, with exact laws found by the fixed detector:** (9, 57) has the law (19, 14) at all 513
+alignments (5/19); (7, 63) the law (9, 7) at 91 of 441 (2/9); (12, 68) the law (34, 26) at 626 of 816 to t = 1,500, known to
+break later (CL674).
+
+**Failed predictions** (G13): P-L3 (both certificates), P-L5, P-L8. **Unguarded mistakes:** the law detector accepted two
+repeats (G26 repeated; caught by an absurd light-speed class); the first certificate's ether used frame coordinates at every
+time (caught by its own failures); a one-period band pass was nearly read as an induction (caught by writing the induction
+out). The G8 control, whose law is Lean-verified, was the instrument each time. READ-LEDGER to both workers; REVIEW-REQUEST
+(Local or GPT) on the two-sided corollary.
+
+My own pull: the closed-set certificate on (9, 57)'s 5/19 and (7, 63)'s 2/9 (compute the closure of the observed strip states
+under all right inputs; if finite, the law is proved the same way), one block each; then the same shape, in edge or diagonal
+coordinates, for the phases of the eternal-cycle line.
