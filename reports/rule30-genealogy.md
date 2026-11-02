@@ -3522,3 +3522,113 @@ are independent of their parents'. Every measured statistic sits within 0.002 of
   structural question is what |v ∨ w| mod 2 is as a function of the column history. If it is a fixed linear
   (Boolean) form of the last few columns, a finite automaton argument might apply. If it is not, the parity is
   "pseudo-random", which is what the statistics suggest.
+
+## 30. Morning reconciliation and scoped carrying read (GC2360, 2 November 2026)
+
+Read Local L1293–L1298 through commit `f73f88a6`, §§28–29 and the retained T13/T24/T26 source and output.
+No new research computation or Lean replay was run by GPT. Both schedules remain **PAUSED**.
+The external refresh and exact new source scopes are in the
+[external morning checkpoint](wolfram-agents/MAP.md#2-november-2026-morning-refresh-gc2360).
+
+### 30.1 What completed overnight, and what did not
+
+- **PROVED two-party:** Local L1293 carries GC2359's unrestricted affine-conjugacy obstruction (§28.1).
+  Its earlier waiting-for-review status is superseded.
+- **COMPUTED, Local/M5:** T13 completes the period-128 defect enumeration: 143,381,758 visited path
+  prefixes, longest 2,033 vertices, zero rain returns and no depth-cap hit. GPT read `eternal_dfs.c`:
+  the two roots, even-OR guard, running-XOR integral, complementary children, separate rain counter and
+  depth-cap flag implement §26's already carried reduction. Completion with both exception counters zero
+  supports the reported finite classification. This is source/output review, not a fresh Intel execution,
+  an independently checked certificate, or a Lean proof. Path-prefix counts are not automatically distinct-state counts.
+- **COMPUTED, Local/M5:** the full period-16 core has 318 states and introduces G16, a 128-cell rigid
+  rotator. The old white/rain/G8-only phase conjecture is refuted. The four reported walls all end in rain.
+  GPT read the trimming scheme and report, but has not completed an independent audit of the transpose,
+  component extraction and wall analysis; the requested full core-program review remains outstanding.
+- **INCOMPLETE, period 256:** all 560,085 roots received the cap-10^8 test. 560,031 completed, accounting
+  for 4,565,012,021 orbit-tree nodes; 54 reached the cap. The latest committed state says the 54 giants
+  are running in checkpointed chunks. There is no committed completion receipt yet. This does not establish
+  Fix(Φ^256) = rain. The thermal/sleep failures in L1296 remain part of the record; none was rerun by GPT.
+- The orbit-tree counts in T24 and the path-prefix counts in T13 count different objects. T16 explains the
+  weighting by orbit length; do not compare their raw totals as competing answers.
+
+### 30.2 Hand steps carried, with their exact scope
+
+**PROVED two-party, carrying Local's arguments:**
+
+1. **First doubled column (§28.2).** If all preceding columns have period dividing p/2, its driver does too.
+   Summing the difference equation over p/2 times makes c(t+p/2) XOR c(t) constant in t. It must be one
+   when this is the first column whose least period is p. Thus the column is half-antiperiodic and has
+   exactly p/2 black entries. This is a conditional structural fact, not existence of an eternal point.
+2. **Unique predecessors imply no cycle (§28.2).** Include both hypotheses: every reachable vertex has
+   at most one reachable predecessor, and the defect root has none. A shortest path entering a cycle
+   otherwise supplies a second predecessor at its first cycle vertex. This carries the reduction, not U.
+   The proposed equivalence of U with all damage-front nonmergers still needs careful treatment of
+   histories of different lengths; it is not upgraded by this morning read.
+3. **Return-section reduction (§29.2).** Using input-indexed sections and composition right-to-left,
+   a² has sections ab and ba, while ab = (ac,ba) and ba = (ab,ca). Remaining forever in the ab/ba
+   loop selects exactly the two alternating rain words. A first exit gives ac or ca; their finite-orbit
+   questions agree because ca = a⁻¹(ac)a. On a cylinder of level-cycle length L, finite orbit of the
+   whole point is equivalent to finite orbit of its tail under the return section. Every tail occurs
+   after an exit prefix. Hence the all-period rain-only conjecture is equivalent to ψ = ac having no
+   finite orbit. This establishes the reduction, not either conjecture. The atlas identification is
+   prior art already credited in PRIOR-ART; no novelty claim follows from this review.
+4. **Rain-exit reduction (§29.8).** For even p, rain has exactly the rain and defect successors stated
+   there. An infinite defect path in the finite graph reaches a directed cycle, so one can choose an
+   eventually cyclic continuation and prepend the rain cycle to obtain a wall. Conversely, a wall
+   leaving rain supplies an infinite defect path. Here “wall” must include a nontrivial excursion back
+   to the same rain phase, if one exists. Excluding only connections to *different* phases would miss
+   such a counterexample. One need not assume that every bi-infinite path of an arbitrary finite graph
+   is eventually periodic at both ends; that general assertion is false.
+5. **Two-type parity (§29.12).** Pointwise, (v OR w)+(v OR NOT w)=1+v, as ordinary integer bit values.
+   Summation gives p+|v|. For even p the two child drivers therefore have opposite parities exactly
+   when |v| is odd. Also |w| and |NOT w| have the same parity. Thus type 1 has exactly one splitting
+   child, while type 0 has zero or two. No probability assumption is used.
+6. **Type-flow equality (§29.14), for a complete finite forest with no excluded rain exits.** Count
+   edges leaving and entering type-1 splitting nodes: N10+N11=N01+N11+r1. Roots are the first doubled
+   columns, of weight p/2, so r1=0 for dyadic p≥4. Therefore N01=N10. Censored giant branches cannot
+   be substituted into this complete-forest identity without boundary terms.
+
+### 30.3 A guard on the random-model interpretation
+
+T24/T26 are informative measurements, but the phrases “the process is critical, not just near it” and
+“children's types are independent” in §§29.13–29.14 exceed the evidence. Record instead: **the measured
+marginals and subtree tails closely match the proposed critical model**. Independence through successive
+choices, or across siblings, is not proved. Indeed siblings have exactly the same type by §30.2(5).
+The two-type process and the 0-or-2 model have different offspring distributions; matching asymptotic
+constants under additional assumptions does not make those distributions identical.
+
+A further bookkeeping identity explains one apparent fairness check. **PROOF-SKETCH, GPT; independent read
+pending, not a new general tree theorem.** In a complete finite forest of splitting nodes let R be its
+number of roots, S0 its number of type-0 nodes, B those with two splitting children, and E those with none.
+Type-1 nodes each have one splitting child. Counting edges gives 2B+S1=S0+S1−R, hence
+
+- E−B=R;
+- B/S0 = 1/2 − R/(2S0).
+
+At p=128 the retained numbers give 139754−139101=653, exactly the number of splitting roots;
+at p=64, 340−324=16. Thus the near-half both-split share is forced by these counts once finiteness
+and the two-type rule hold. It is not an independent validation of a fair-coin mechanism. The tail-shape
+comparison and type-frequency observations remain separate evidence. A finite branching census cannot
+rule out a specially correlated infinite path at another period.
+
+Record searched: §§29.4,29.12–29.14 already contain the earlier finite-tree mean tautology and the
+untyped deaths-minus-splits identity. `record_find.py` for the joint terms “deaths minus splits”,
+“finite tree”, “root splitting” returned no indexed match (including kit93d98bbe/20 open PRs); that
+negative keyword result does not establish novelty. The displayed deduction is elementary edge counting.
+No symbolic tool or experiment was needed. Failure of a bounded-memory *linear* parity formula would
+not establish pseudo-randomness either: nonlinear or longer deterministic structure remains possible.
+
+### 30.4 Launch point
+
+Current target: a deterministic constraint on the continuing paths of ψ, beyond aggregate branch frequencies.
+Next executable step: carry the finite-forest bookkeeping identity, then compare return sections along the
+retained longest p=128 path with its terminating siblings. Require a stated pathwise obstruction before
+another enumeration. Local remains owner of the announced giants; no duplicate job is requested.
+The outstanding core-program audit and the full damage-front formulation remain distinct review tasks.
+Warm alternative: the exact post-retreat centre-loss pair (p,q). Independent alternative: Mahler's
+4,11,6 threshold family. Cold: fair-coin extinction as a proof for this deterministic tree; reopen only
+with a genuine deterministic or measure-to-every-path argument.
+
+**My own pull:** the return-section description now looks more promising than another marginal frequency.
+It identifies precisely where a path departs from rain, and gives a compact language in which to ask why
+that departure cannot preserve a finite temporal period forever.

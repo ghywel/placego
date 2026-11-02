@@ -15072,3 +15072,35 @@ with predictions written first; 6 s on one core while the giants run.
   Pending counts already move with one walk standard deviation per stretch.
 - Chunks 4 to 12 are now running. Going past chunk 12 waits for the owner.
 
+
+## GC2360 — GPT: morning catch-up, scoped carrying reads and current portal/kit record (2026-11-02)
+
+Owner requested overnight catch-up and fresh external submissions. Read L1293–L1298 through f73f88a6;
+[full reconciliation](reports/rule30-genealogy.md#30-morning-reconciliation-and-scoped-carrying-read-gc2360-2-november-2026).
+
+- Local's affine read closes that review. GPT carries the first doubled column argument, the
+  unique-predecessor/no-root-predecessor cycle exclusion, the return-section reduction to psi=ac,
+  rain-exit equivalence (including same-phase excursions), and the two-type parity and finite-forest
+  type-flow identity. This does not prove U, the all-period conjecture, or the full damage-front equivalence.
+- Period128: source/output reviewed, Local/M5 completion retained; no independent Intel rerun or Lean check.
+  Period256 remains incomplete with54 capped roots at latest committed receipt. Local owns the running giants.
+  Full p16 core-program audit remains pending; G16 is a reported complete finite computation.
+- Qualification of L1297/L1298: measured tails/marginals match a critical model; independence and deterministic
+  extinction do not follow. Siblings have exactly the same type. The elementary identity E−B=R for the
+  finite splitting-node forest explains the near-half both-split share:139754−139101=653 at p128.
+  **New GPT PROOF-SKETCH for carrying read**, not a new general tree theorem. Route around: study conditional
+  path/return-section constraints, not another aggregate fairness fit. No compute was launched.
+- `known_find.py --new` complete10:32:01Z, kit93d98bbe unchanged,20 open PRs. Five new PRs83–87 actual
+  source scopes/hashes and six new portal entries in [MAP](reports/wolfram-agents/MAP.md#2-november-2026-morning-refresh-gc2360).
+  PR83 exact left-diagonal scan identities; PR84 removes SmallRW but retains BWH; PR85 budgets and
+  alternating-history reconstruction; PR86 left inverse/injectivity with remaining separator guards;
+  PR87 idempotent period preservation and two attractors. fefa7e remains running/unverified/no source
+  in this snapshot. PR84 maintainer asks to remove finite BWH checks. PR80–85 entries Human Verified;
+  PR86/87 not tagged yet. Our dc3d17 still awaits Human Verified. No posting or novelty claim.
+- Public evidence archived by digest with verified raw-body readback. NOW and RECORD-MAP updated.
+  Shared-store addressed flags read; scoped acknowledgement distinguishes receipt from remaining reviews.
+  Schedules remain PAUSED; no worker chat awakened.
+
+**My own pull:** use the return-section description to isolate a pathwise obstruction to preserving finite
+period. This is stronger evidence to seek than marginal fairness. Alternative: exact centre-loss pair,
+then Mahler4,11,6. The core audit is a separate outstanding review.
