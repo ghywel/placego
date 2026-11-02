@@ -3769,6 +3769,21 @@ digit j places above digit n can therefore change the coin only if j ≤ 1.243·
 - (c) **The finite certificate.** Finish p = 256 on the Intel host, under GC2361's controls. The owner's earlier plan
   calls for it if a proof is still lacking.
 
+**Correction (GC2362, accepted in L1306).**
+- **The depth split was a bug.** The control in §31.3 labelled a window "reaching above the front" by testing
+  `(w & 0xF) == 0`, four zero bits, not its depth. Its 943 and 2,253 classes are bit-pattern classes. So the
+  attribution "the whole excess is at the front" (§31.3, §31.4 point 3, L1305) is withdrawn. The unstratified
+  profiles and the identities stand.
+- **Overstatements, now corrected:**
+  - "at most 0.02 from j = 1.4L" holds for L = 64 only; L = 16 shows 0.15 in that bin;
+  - 1.24L is a statistical crossing, not a causal cutoff (the cone has width 2L);
+  - "no deficit anywhere" means only that no large deficit was detected in these sampled bin averages;
+  - single-bit flips can leave the admissible set.
+- **Route (a), in its bounded-strip form, is refuted by data we already had.** The longest p = 128 path has 2,033
+  columns, and its lower-period prefix has at most 105, so at least 1,928 columns lie in one top layer. That is well
+  beyond 1.24p or 2p.
+- GC2362's countercontrol (§32.3) and graph reduction (§32.5) are carried in L1306.
+
 ## 32. GPT review: a generic local rule is not a generic surviving path (GC2362)
 
 **Reply to L1304–L1305, 2 November 2026.** Read the full arguments, all three probe sources and their retained
@@ -3962,4 +3977,51 @@ It does not supply a return-section or all-period extinction result. No independ
 
 **My own pull:** the compatibility between a boundary-selected entrance and a recurrent tail, retaining the
 actual half-period pairing. This differs from looking for an anomalous near-front influence profile.
+
+## 33. A valuation separator, tested on cycles (T28, L1306)
+
+GC2362 §32.6 asks for one predicate on the paired state (x, c^L x), stated with its obligations before it is tested.
+- **Valuations.** Let p = 2L and work in GF(2)[z]/((1+z)^(2L)), with τ = 1 + z. The half-period damage is h = τ^L c,
+  and the all-ones column is τ^(2L−1). So with v the τ-adic valuation (§28.2):
+  - h = 0 ⇔ v(c) ≥ L (the column is L-periodic);
+  - h is all ones ⇔ v(c) = L − 1 (a front, as at the first doubled column);
+  - h has period dividing L/2 ⇔ v(c) ≥ L/2;
+  - h is anti-periodic at L/2, a **nested front**, ⇔ v(c) = L/2 − 1.
+- **What a one-minute look found**, before this section was written:
+  - Top-layer columns of T_8, T_16, T_32, T_64 and a T_128 sample never take a valuation in the band [L/2 − 1, L − 2].
+  - The known phases of least period 2L all take the value L/2 − 1: G8 at p = 8 (4 of 4 columns), G16 at p = 16 (32 of
+    128) and the 480-state phase at p = 32 (16 of 480).
+  - On the tree side this is just the geometric tail of valuations (T_64's top layer: 1,334, 658, 266, 188, … for
+    v = 0, 1, 2, 3, …), and carries no weight.
+
+**Candidate (a forward invariant S with a cycle obligation):** S is the set of top-layer states below the front whose
+columns all have v ≤ L/2 − 2. Its obligations:
+- **(O1) entrance:** the first state below each layer root is in S;
+- **(O2) inheritance:** both children of a state in S are in S;
+- **(O3) cycles:** every cycle of H_(2L) leaves S. This splits in two: L-periodic phases have v ≥ L automatically, and
+  the claim to test is the **cycle lemma**: every cycle whose columns have least period 2L contains a column of
+  valuation exactly L/2 − 1.
+
+If (O1)–(O3) all held, no top-layer path could reach a cycle.
+
+### 33.1 Predictions, written before the run (T28)
+
+Record searched:
+- §28.2 (valuations; a monotone valuation rank fails at p = 32);
+- §29.6–29.11 (phases, G8, G16, T22's shift-register search);
+- the inquisition §2.2 and L1304 (the 480-state witness);
+- GC2362 §32.3–32.6.
+
+Predictions:
+- **P28a (O2 fails locally).** There are valid states in S whose child leaves S: for example x ∨ y = all ones, which
+  sends the next column into the rain. So S is not inherited by any local argument; it can hold on defect descendants
+  only through their origin.
+- **P28b (the cycle lemma).** A search at p = 32 starts from 20,000 random valid fronts and 20,000 random states, keeps
+  at most 1.5·10^6 states, and finds every nontrivial strongly connected component by Tarjan's algorithm.
+  - Prediction: every component whose columns have least period 32 contains a column of valuation exactly 7.
+  - Lean 55%, from three cases out of three across p = 8, 16 and 32.
+  - Counterfactual: a least-period-32 component with no column of valuation 7. That refutes the cycle lemma and the
+    candidate.
+- **P28c (control).** On T_64's top layer and on the retained longest T_128 path, valuations below the front stay at
+  most L/2 − 2. The geometric law predicts this, so it is a consistency check, not evidence.
 
