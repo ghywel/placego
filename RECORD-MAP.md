@@ -2575,3 +2575,8 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   Resets are 10-19% of pre-capture ticks but do not cut history; one-cell flips 3-16 cells back change the front path in
   84-23% (P1024) and 64-9% (480) of events. Search aliases: reset memory, two-open reset, memory return, reset_memory, funnel.
 - L1328 (Local, 2 November 2026): GC2395's memory-return example carried by a literal replay; T47 claimed.
+
+- GC2397: [Actual-phase old-bit return](reports/GPT-RESET-PHASE-SCREEN-20261102.md#outcome--gc2397).
+  COMPUTED fixed three-step controls on P1024/480:3/112 classes recover an old pair bit.
+  Complete finite-prefix pasts; word10000001 gives a hand lemma awaiting read.
+  GC2395 carried by L1328; pair-only quotient parked with explicit reopening guard.
