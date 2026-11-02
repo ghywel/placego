@@ -4905,3 +4905,29 @@ periodic with the clean-start wake's period and advance (208, 272), at speed exa
   front is captured by a periodic wake whose advance is a finite fact. If it fails (other periods, other speeds, or no
   recurrence), even periodic-wake phases have several or chaotic attractors.
 
+### 43.3 T39 results, and the premise check (T40 part 1)
+
+- **T39** ([`wake_attractor.py`](../tests/probes/wake_attractor.py), [output](../tests/probes/wake_attractor.out); P1024,
+  200 random prefixes each at K = 40 and 80).
+  - The late speed lies between 1.29 and 1.31 in every run, around 17/13 = 1.3077.
+  - An exact recurrence of the clean-start wake (208, 272) appears in only 25 and 58 runs within the horizon, plus one
+    at the half period (104, 136), which has the same speed. The rest show no recurrence within 2,240 or 2,480 ticks.
+  - **P39a REFUTED for exact capture, held for the speed.**
+- **Premise check** ([`wake_background.py`](../tests/probes/wake_background.py)). For G8, P1024 and the 480-state phase,
+  the middle of the clean-start wake satisfies neither the moving-frame recurrence nor any depth period.
+  - So the "periodic wake" of T37 is periodicity of the neighbourhood of the front, not a periodic background filling
+    the wake.
+  - The architecture's premise has to be stated as **decoupling**: no information from behind reaches the front.
+
+### 43.4 T40, decoupling: predictions written before the run (`wake_decouple.py`)
+
+Clean starts for G8, G16, the 480-state phase and P1024. At tick 600, flip 1 to 4 random bits at a distance d ∈ {50, 100,
+200} behind the front (30 trials per d). Track the difference between the perturbed and unperturbed runs to tick 2,600:
+its deepest point, and whether it reaches the front.
+- **P40a.** For G8, P1024 and the 480-state phase, no perturbation reaches the front: the gap between the difference's
+  deepest point and the front grows linearly. Lean 60%.
+- **P40b.** For G16 some perturbations reach the front. Lean 60%: its front speed of 1.22 is below a typical damage
+  depth speed of about 1.25.
+- **What it teaches.** If P40a holds, the front of a periodic-wake phase depends only on a bounded window around it,
+  so it is a finite object, and its advance under arbitrary perturbations becomes a finite question.
+

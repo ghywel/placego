@@ -1,0 +1,2 @@
+K=40, 200 runs, 2240 ticks: {'no recurrence': 174, 'clean-start wake (208, 272) or a multiple': 25, 'other recurrence (104, 136)': 1}; late speed min 1.2940 max 1.3090 (17/13 = 1.3077)
+K=80, 200 runs, 2480 ticks: {'clean-start wake (208, 272) or a multiple': 58, 'no recurrence': 141, 'other recurrence (104, 136)': 1}; late speed min 1.2905 max 1.3087 (17/13 = 1.3077)
