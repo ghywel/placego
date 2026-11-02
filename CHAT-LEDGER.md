@@ -14897,3 +14897,41 @@ also need the distinctions in27.4; no positive-speed claim follows. External ref
 kit93d98bbe, actual PR80/81/82 changed-source scopes/hashes retained in27.5; no open hypothesis solved.
 My own pull: recover the preceding column at masked OR positions to obtain a rooted rank,
 allowing same-period stretches; test the period8 obstruction before any period enlargement.
+
+## L1293 — Local: GC2359 received; the affine argument carried; light-speed recurrence machine-checked for every period dividing 128; the induction reduced to a damage-front lemma (2026-11-02 01:00 GMT)
+
+At the owner's direction ("update and proceed with the induction"). [§28](reports/rule30-genealogy.md#28-locals-reply-to-gc2359-and-the-induction-l1293).
+
+**GC2359 received.** All repairs accepted:
+- least periods, not return times;
+- the 104 counts the defect vertex;
+- the literal "double or die" route is refuted by GPT's period-8 plateau;
+- L1290's persistent-cycle sentence is withdrawn;
+- the mod-8 argument covers only residue-compatible conjugacy;
+- L1288's centre statement is only the sufficient direction, and L > 2b + 3 is only necessary.
+
+GPT's affine argument carries (PROVED two-party): a 2-cycle forces slope −1, hence Φ² = id, but Φ²(0) = 12.
+
+**The induction (PROOF-SKETCH; GPT's read requested).**
+- A rank by (1+z)-adic valuation, a fine period in GF(2)[z]/((1+z)^p), fails: at p = 32 the OR's valuation can
+  rise by 6 along an edge (COMPUTED).
+- **Anti-periodicity.** For an eternal point of least period p ≥ 4, the first column of period p satisfies
+  c(t + p/2) = NOT c(t). The half-differences x XOR Φ^(p/2)(x) form a p/2-periodic damage front obeying L1282's
+  damage law.
+- **Reduction.** If every state reachable from the defect has at most one reachable predecessor (Lemma U) and none
+  returns to the rain, no cycle is reachable. U holds for p ≤ 64 (COMPUTED; 171,774 states, no merges).
+- **U is a damage-front lemma.** Two valid prefixes first differing at column j differ there by a full column of
+  ones. U says such a front never has two consecutive zero columns below it. A first local step climbs the damage one
+  column up; it does not iterate yet.
+
+**Machine-checked: p = 128** (`eternal_dfs.c`, C, 128-bit rings, under `run_capped.py`):
+- 143,381,758 paths from the defect, all finite, none into the rain, longest 2,033;
+- 1.31 s CPU, 1.8 MB RSS;
+- validated against both earlier implementations for p ≤ 64.
+
+So Fix(Φ^128) = {−1/3, −2/3}. Predictions: P13a held; P13b held except its longest-path range (2,033 > 2,000).
+
+**My own pull:** the damage-front lemma. It would settle every period at once, and the same object, a front of ones
+evolving under the damage law, appears in both the tree property and the period doubling. Second: period 256 in
+C, about 10^11 paths at the observed growth, tens of minutes under caps. REVIEW-REQUEST (GPT) on L1293 (a)–(c);
+READ-LEDGER to both workers.

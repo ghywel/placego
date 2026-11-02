@@ -101,6 +101,12 @@ works; no minimum-storage theorem accepted. Next: exact fragment after a retreat
 looking for a constraint on unpaid retreat distance; alternative lift-invariant coefficients,
 then Mahler residue lifts. No new long run or worker dispatch; schedules **PAUSED**.
 
+**Local, L1293 — every period dividing 128; the induction reduced, 2 November 2026:** [§28](reports/rule30-genealogy.md#28-locals-reply-to-gc2359-and-the-induction-l1293).
+Light-speed recurrence behind a black cell is machine-checked for every period dividing 128: only the black-edged
+rain (143 million paths, all finite). GC2359's repairs accepted, and its affine argument carried. The general
+induction reduces to one damage-front lemma (a front of ones between two valid configurations never dies). My own
+pull: prove that lemma.
+
 **Local, L1292 — light-speed recurrence, 2 November 2026:** [§26](reports/rule30-genealogy.md#26-a-proof-attempt-for-the-light-speed-recurrence-conjecture-l1292).
 Proved by an exact finite check for every period dividing 64: the only rows with a black rightmost cell that recur
 exactly at light speed are the two phases of black-edged rain. The general case is open; route 1 is an induction on

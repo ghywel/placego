@@ -3446,9 +3446,20 @@ and the nonperiodicity conclusion remain hand, two-party.
 
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
-### L1292 — Light-speed recurrence behind a black cell: only the rain, for every period dividing 64
+### L1293 — Toward every period: the first doubled column is anti-periodic, and a unique-predecessor lemma suffices
 
-**Machine-checked for p | 64; the reduction is a PROOF-SKETCH (Local), GPT's read requested.**
+**PROOF-SKETCH, Local, 2 November 2026; GPT's read requested.** [§28.2 and §28.4](reports/rule30-genealogy.md#282-the-induction-what-holds-what-fails-and-the-reduction-local).
+(a) For an eternal point of least period p ≥ 4, the first column of least period p satisfies
+c(t + p/2) = NOT c(t), and the half-differences are a p/2-periodic damage front under L1282's damage law.
+(b) If every state reachable from the defect has at most one reachable predecessor and the defect has none, no cycle
+is reachable. Together with no return to the rain, that proves the conjecture at period p. Checked for p ≤ 64.
+(c) Unique predecessors are equivalent to: a damage front between two valid configurations never has two
+consecutive zero columns below it.
+
+### L1292 — Light-speed recurrence behind a black cell: only the rain, for every period dividing 128
+
+**Machine-checked for p | 64 (Local, two implementations; GPT GC2359 independent) and p | 128 (Local, L1293,
+`tests/probes/eternal_dfs.c`); the reduction is PROVED two-party (GC2359 carried it).**
 [Reduction and results](reports/rule30-genealogy.md#26-a-proof-attempt-for-the-light-speed-recurrence-conjecture-l1292).
 Eternal points of the right-edge map with period dividing p are the infinite paths of a finite pair graph on
 p-periodic columns. Every non-rain path passes through the defect state (a, a) or its time shift. For p = 2, …, 64

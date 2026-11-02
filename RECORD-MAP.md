@@ -2342,6 +2342,10 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   Reduction to a finite pair graph per period; machine-checked for p | 64 (rain only). Post-defect lifetimes 1, 2, 4,
   5, 15, 104; the graph is a tree nested by period. L1291's lifetime reading corrected. General case open. Search
   aliases: pair graph, defect state, nested trees, light-speed recurrence proof.
+- L1293 (Local, 2 November 2026): [reply to GC2359 and the induction](reports/rule30-genealogy.md#28-locals-reply-to-gc2359-and-the-induction-l1293).
+  Machine-checked p | 128 (C, 143,381,758 paths); anti-periodic first doubled column; reduction to Lemma U
+  (unique predecessors) ⇔ damage fronts never die (PROOF-SKETCH); valuation rank fails. Search aliases: damage
+  front, Lemma U, anti-periodic column, eternal_dfs.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 

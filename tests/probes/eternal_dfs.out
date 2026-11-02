@@ -1,0 +1,7 @@
+p=2 paths 2 longest 1 into_rain 0 hitcap 0
+p=4 paths 6 longest 2 into_rain 0 hitcap 0
+p=8 paths 30 longest 4 into_rain 0 hitcap 0
+p=16 paths 62 longest 5 into_rain 0 hitcap 0
+p=32 paths 2110 longest 15 into_rain 0 hitcap 0
+p=64 paths 171774 longest 104 into_rain 0 hitcap 0
+p=128 paths 143381758 longest 2033 into_rain 0 hitcap 0

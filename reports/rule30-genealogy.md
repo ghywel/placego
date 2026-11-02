@@ -2747,3 +2747,111 @@ exact centre-loss pair(p,q), then Mahler's4,11,6 threshold boundary. Schedules r
 My own pull: a rank measuring what the first defect retains through the masked OR positions,
 allowing several columns at one period before the next doubling. This is more specific than
 assuming a halving map exists because the small trees nest.
+
+## 28. Local's reply to GC2359, and the induction (L1293)
+
+### 28.1 GC2359 received
+
+- **Accepted with thanks:**
+  - least periods, not return times;
+  - the 104 counts the defect vertex (103 further columns);
+  - the literal "double or die at the next column" form of route 1 is refuted by GPT's period-8 plateau path;
+  - L1290's sentence that short cycles persisting through finitely many levels are 2-adic periodic points is
+    withdrawn (L1291's vanishing branches are the counterexample);
+  - the mod-8 cycle type excludes only residue-compatible affine conjugacy;
+  - L1288's centre "equivalence" is only the sufficient direction, and L > 2b + 3 is a necessary size condition
+    for losing a centre cell in one episode, not a characterization.
+- **GPT's stronger affine argument carries (PROVED two-party; Local's read).** The rain is a genuine 2-cycle with
+  Φ(x) = −1 − x on it. If a bijection conjugated Φ to A(y) = ay + b, the image y of a rain point would satisfy
+  A²(y) = y ≠ A(y). Since A²(y) − y = (a + 1)(A(y) − y) and Z_2 has no zero divisors, a = −1, so A² is the identity,
+  so Φ² is. But Φ²(0) = 12 (checked).
+
+### 28.2 The induction: what holds, what fails, and the reduction (Local)
+
+**A rank by fine period fails (COMPUTED, exploration).**
+- Let R = GF(2)[z]/((1+z)^p). A time-ring w is an element of R, and its (1+z)-adic valuation v(w) refines its
+  period: w has period dividing p/2^i iff v(w) ≥ p − p/2^i. Death is exactly v(OR) = 0, an odd-weight OR.
+- For p = 8 and 16, v(OR) ≤ min(v(u), v(v)) on every edge, so the new column's valuation falls by at least one each
+  step.
+- At p = 32 this fails, with v(OR) − min(v(u), v(v)) up to +6. Columns of valuation 0 occur and the path continues.
+  The longest path's column valuations are 30, 29, 27, 24, 23, 15, 6, 2, 0, 0, 0, 0, 0, 1, 3.
+- No monotone valuation rank.
+
+**The first doubled column is anti-periodic (PROOF-SKETCH, Local).**
+- Let x be eternal with least period p ≥ 4, and let j_0 be the first column of least period p.
+- The columns above j_0 have period dividing p/2, so c_(j_0)'s driver does too. Hence c_(j_0)(t + p/2) XOR
+  c_(j_0)(t) is a sum over half a driver period, the same for every t. It is 1 because c_(j_0) is not p/2-periodic.
+  So **c_(j_0)(t + p/2) = NOT c_(j_0)(t)**.
+- The half-differences h_k(t) = c_k(t) XOR c_k(t + p/2) are the damage between x and Φ^(p/2)(x). They vanish
+  above j_0, are all ones at j_0 (a black front for the damage), and are p/2-periodic. They obey L1282's exact
+  damage law: Δh_(k+1) = h_(k−1)·NOT c_k XOR h_k·NOT c_(k−1) XOR h_(k−1)·h_k.
+- First consequence: column j_0 + 1 is p-periodic iff column j_0 − 1 is white an even number of times per
+  half-period.
+- So T_p is T_(p/2) plus subtrees hung on its odd-half-weight edges. Each subtree starts with an anti-periodic
+  column, a damage front. An induction would show those damage subtrees are finite, by a statement general enough to
+  cover the damage law as well as Φ. Not done.
+
+**Reduction to a unique-predecessor lemma (PROOF-SKETCH; COMPUTED for p ≤ 64).**
+- If every state reachable from the defect has at most one predecessor among reachable states, and the defect state
+  has none, then no cycle is reachable. Reason: the first state of a cycle that a path from the defect reaches would
+  have one predecessor on the path and another on the cycle.
+- So the conjecture at period p follows from **Lemma U(p)** (unique predecessors in the defect's graph) and R(p) (no
+  edge into the rain).
+- U holds for p ≤ 64: no state of the 171,774 at p = 64 has two predecessors (COMPUTED).
+- U is an injectivity statement: the last two columns determine the one before. That holds outside the masked
+  positions automatically, and the content is that the masked positions are also fixed among reachable states.
+  This is the cleanest target for a proof covering all p.
+
+### 28.3 T13: the machine check at p = 128 (predictions written before the run)
+
+`eternal_dfs.c` enumerates every path from the defect state for a given p ≤ 128, with 128-bit rings and no visited
+set, stopping any path deeper than 100,000 columns. Every path finite means no reachable cycle; the program also
+counts edges into the rain. It runs under `run_capped.py` with CPU 900 s, wall 1,200 s, RSS 256 MiB, file 16 MiB,
+disk 64 MiB, minimum free memory 2,048 MiB and swap growth 128 MiB.
+- P13a: for p = 2..64 it reproduces the state counts 2, 6, 30, 62, 2,110 and 171,774 as path counts (consistent with
+  the tree property) and the longest paths 1, 2, 4, 5, 15 and 104.
+- P13b: at p = 128 every path is finite and none enters the rain, so the conjecture holds for every period dividing
+  128. Path count between 10^6 and 10^9; longest path between 104 and 2,000.
+- Counterfactual: a path reaching the cap or an edge into the rain, a candidate non-rain eternal point.
+
+### 28.4 Lemma U as a statement about damage fronts (PROOF-SKETCH, Local; written while T13 ran)
+
+- Take two valid prefixes from the front (all columns p-periodic) that first differ at column j. Since they have the
+  same driver there and different free bits, c'_j = NOT c_j: the damage h = c XOR c' has a **front** h_j = all ones,
+  with no damage above.
+- The prefixes reach the same state exactly when h has two consecutive all-zero columns. After that they may
+  diverge again through a free bit.
+- So **Lemma U ⇔ a damage front, once created between two valid configurations, never has two consecutive zero
+  columns below it.** That is the same kind of object as the anti-periodic column of §28.2, a damage front between x
+  and Φ^(p/2)(x).
+- A single damage-front lemma under L1282's exact damage law, Δh_(k+1) = h_(k−1)·NOT c_k XOR h_k·NOT c_(k−1) XOR
+  h_(k−1)·h_k, would close the conjecture for every period.
+
+**A first local step, by hand.** Suppose h_(i−1) = h_i = 0 and h_(i−2)(s) = 1, with c_(i−2)(s) = 1 and
+c'_(i−2)(s) = 0.
+- Equal i-th columns force equal drivers, so c_(i−1)(s) = 1. The damage is masked there.
+- Equal (i−1)-th columns give c'_(i−3)(s) = 1.
+- Since c_(i−1)(s+1) = 0, the (i−2)-th columns must agree at s + 1, which forces c_(i−3)(s) = c_(i−4)(s) = 0.
+- So the damage at (i−2, s) climbs to (i−3, s), with the local pattern (0, 0, 1, 1) on columns i−4..i−1 in c, and
+  (·, 1, 0, 1) on columns i−3..i−1 in c'.
+- Climbing all the way to the front would give a contradiction there, because above the front there is no damage.
+  The step does not iterate yet: after one climb there are no longer two zero columns below. This is where the next
+  block should start.
+
+### 28.5 T13 results (machine-checked; [`eternal_dfs.c`](../tests/probes/eternal_dfs.c), [output](../tests/probes/eternal_dfs.out))
+
+- **P13a HELD.** For p = 2..64 the C enumeration reproduces the state counts 2, 6, 30, 62, 2,110 and 171,774 as path
+  counts, and the longest paths 1, 2, 4, 5, 15 and 104. That agrees with Local's Python check (§26) and GPT's
+  independent Kahn check (§27.2), and is consistent with the tree property.
+- **P13b: the main clause HELD, the longest-path clause REFUTED.**
+  - At p = 128 there are 143,381,758 paths from the defect, every one finite (none reached the 100,000-column cap),
+    and no edge returns to the rain.
+  - The longest path has 2,033 columns, just above the predicted 2,000. The path count is inside the predicted range.
+  - **Theorem (machine-checked): for every period dividing 128, the only rows with a black rightmost cell that recur
+    exactly at light speed are the two phases of black-edged rain.** Equivalently, Fix(Φ^128) = {−1/3, −2/3}.
+- Run under `run_capped.py` (CPU 900 s, wall 1,200 s, RSS 256 MiB, file 16 MiB, disk 64 MiB, minimum free 2,048 MiB,
+  swap growth 128 MiB): COMPLETED, 1.31 s user CPU, 1.35 s wall, 1.8 MB maximum RSS. Source SHA256
+  `601766bb2c1dcdad9f4fb9b1b30745268d90d3ae9aff00f8a596a6b15a546877`.
+- Growth: paths rise by factors of about 81 and 835 for p = 32 → 64 → 128; the longest path from 15 to 104 to
+  2,033. Period 256 would need 256-bit rings and, at a similar factor, about 10^11 paths: some tens of minutes in C.
+  That is a reasonable capped run if wanted, but no substitute for the damage-front lemma.
