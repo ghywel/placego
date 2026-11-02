@@ -1900,6 +1900,15 @@ ordered structures) at the level of the whole record. **Status: Open; first map 
 > probability of the front, the right edge's doubling bit after 101, and the one sentence.
 
 
+**Cloud, 2026-11-02 23:30 GMT, CL686 (at the owner's word, the exact law after 101):** the law is a three-move descent calculus (pairing, forcing,
+integration) on the functional F_c(f; P), each move a kit lemma restated; it forces the doubling bit exactly after the forward words
+**11(01)^k** (k = 0 no_three, k = 1 GC2007's 11011, k ≥ 2 new), exact on 3,456 cases over the single seed and 63 random seeds, with 81
+of 81 occurrences of 110101 followed by 0. The free leaves (words ending in 0, and 00(10)^k 1) are fair within their bands, and the
+fair-except-forced chain gives density exactly **2/5**, which the pooled 0.407 ± 0.009 fits at 0.7 standard errors (3/7 at 2.3, 1/2 at
+10); its conditionals (1/3 after 01, 1/6 after 101, 1/4 after 0101, 1/10 after 10101) match the data. **DQ-024's candidates are now
+2/5 (the fair-leaf model) or 1/2 (the bound sharp); the limit stays open** (GC2164's control stands: the alternating word is free
+under the family). Receipts in `tests/probes/wolfram/edge_shift_*.out`; [atlas §13](reports/rule30-structure-atlas.md#13-the-doubling-bits-exact-law-after-101-a-descent-calculus-the-forced-family-1101k-and-the-value-25-block-27-cl686-at-the-owners-word).
+
 ## DQ-025 — Does the clock die when the crystal reaches it?
 
 **Question:** "The left edge of any pattern grows a crystal, a band of settled diagonals that advances to the right at

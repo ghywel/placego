@@ -5398,3 +5398,34 @@ LRAT proof of one D13 phase882/word0 clause from the exact original CNF, with
 empty-proof rejection and byte-bound target. The stage's later harness assertion
 failed on checker exit-code convention; raw failure preserved, no rerun.
 [Evidence and exact scope](reports/GPT-GUARDED-ONEPROOF-20261102.md#outcome--gc2401-one-implication-checked-harness-failure-preserved).
+
+### Waiting room — the doubling bit's descent calculus and the forced family 11(01)^k (Cloud, CL686; 2026-11-02 23:30 GMT)
+
+**Setting.** R_j(t) = bit j of Φ^t(a) for an odd seed a, Φ(x) = x XOR ((x << 1) OR (x << 2)); L_j the period of the prefix through
+bit j (the kit's lifting rule: L_j = L_(j-1) or 2 L_(j-1) by the parity of g_j = R_(j-1) OR R_(j-2) over L_(j-1), `S_rule`);
+d_j = log2(L_j / L_(j-1)). For f of period P and c on Z/2^m: F_c(f; P) = Σ_{s<P} c(s mod 2^m) f(s) mod 2. Then d_j = F_1(g_j; L_(j-1)).
+
+**Lemma P (pairing).** If a(s + P/2) = NOT a(s), b(s + P/2) = b(s) and 2^m | P/2, then F_c(a OR b; P) = Σ_{s<P/2} c(s) + F_c(b; P/2).
+*Proof.* Pair s with s + P/2; c agrees on the pair; (a OR b) + (NOT a OR b) is 2 where b = 1 and 1 where b = 0. ∎
+
+**Lemma F (forcing).** If a(s + P/2) = NOT a(s) and 2^m | P/2, then F_c(a; P) = Σ_{s<P/2} c(s). *Proof.* a + NOT a = 1 on each pair. ∎
+
+**Lemma I (integration).** If R(s) = R(0) XOR Σ_{u<s} g(u) with 2^m | P, then F_c(R; P) = R(0)·Σ_{s<P} c(s) + F_{c'}(g; P) with
+c'(u) = Σ_{u<s<P} c(s mod 2^m) mod 2, which depends on u only through u mod 2^(m+1). *Proof.* Exchange the two sums; the tail sum is
+the total minus the prefix Σ_{s≤u} c(s mod 2^m), and a full block of 2^m contributes Σ c, so the parity is 2^(m+1)-periodic in u. ∎
+
+**Applicability.** When d_(j-1) = 1, R_(j-1) has antiperiod L_(j-2) = L_(j-1)/2 (the kit's `antiperiod`: an odd-weight integrand over
+its period) and R_(j-2) has period L_(j-2); when d_idx = 0, R_idx = R_idx(0) XOR the running XOR of g_idx, of period L_idx (`R_step`).
+So reading the letters backwards from d_(j-1), with the object alternating between an OR (level G) and a diagonal (level R):
+a 1 at level G applies P and moves to the lower diagonal at half the period; a 1 at level R applies F and stops (FORCED);
+a 0 at level R applies I and moves to the OR one level down at resolution m + 1; a 0 at level G stops (FREE).
+
+**Theorem (the forced family; PROOF-SKETCH).** The descent reaches FORCED exactly when the backward word is 1(01)^k 1, k ≥ 0, i.e.
+when the forward word d_(j-2k-2) … d_(j-1) is 11(01)^k, and then d_j equals the accumulated constant, which is 0 once the periods are
+large enough: for k = 0, L_(j-2) ≥ 4 (no_three); for k = 1, L_(j-4) ≥ 8 (GC2007's 11011 after base 4; the constant q/2 + q/4 is 1 at
+q = 4); for k = 2, L_(j-4) ≥ 16 (new: 1101011 forbidden). *What a reader should check:* Lemma P's use of the coefficient vector
+(the period condition 2^m | P/2 at each pairing), and the general-k period condition, derived here only to k = 2 (the code carries
+every constant; all 832 forced leaves in the data matched d_j, including the 64 forced ones).
+
+**Not claimed.** Nothing about the density limit: the free leaves are measured fair (CL686) and the fair-except-forced chain's 2/5 is
+a model value. The alternating word is free under the family (GC2164).

@@ -2601,3 +2601,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - L1334 (Local, 2 November 2026): [T49, what decides the exit from the bad core](reports/rule30-genealogy.md#53-what-decides-the-exit-from-the-bad-core-t49-l1334).
   Every exit from B is decided beyond the window; in real runs the pair at R-9, R-10 decides 81%, often at a stall or a
   one-cell retreat. Search aliases: exit, bad core, unknown pair, funnel_attractor --exits.
+- CL686 (Cloud, 2 November 2026): [the doubling bit's exact law after 101](reports/rule30-structure-atlas.md#13-the-doubling-bits-exact-law-after-101-a-descent-calculus-the-forced-family-1101k-and-the-value-25-block-27-cl686-at-the-owners-word).
+  A descent calculus (pairing, forcing, integration) forces the right edge's doubling bit exactly after the words 11(01)^k;
+  free leaves fair; fair-except-forced density 2/5 against the measured 0.407. Search aliases: doubling bit, 11011, 1101011,
+  forced family, 2/5, descent calculus, edge_shift_tree, DQ-024.

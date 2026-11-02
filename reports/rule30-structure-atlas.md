@@ -413,3 +413,52 @@ Fitting k-step chains on the front's step types (k = 0..5) reproduces the direct
 including k = 0: a chain fitted on the data reproduces the data's mean by construction. P-O5 VACUOUS, a design error; the
 real question, a derivation of P(white ahead ∣ previous advance) = 0.647 and the jump law from the uniform row, is a hand
 question and stays open.
+
+## 13. The doubling bit's exact law after 101: a descent calculus, the forced family 11(01)^k, and the value 2/5 (Block 27, CL686, at the owner's word)
+
+M5's residue was the one unfair parity in the census, the right edge's doubling bit, and CL642's open hand question was its
+exact law after the letters 101. The law is a calculus. Write F_c(f; P) = sum over s < P of c(s mod 2^m) f(s), mod 2, for a
+sequence f of period P and a coefficient vector c on Z/2^m. The doubling bit is d_j = F_1(g_j; L_(j-1)) with g_j = R_(j-1) OR
+R_(j-2) (the kit's `S_rule`, m = 0). Reading the earlier letters d_(j-1), d_(j-2), ... backwards, three exact moves rewrite
+the functional, each a restatement of a kit lemma and each carrying a constant:
+
+- **Pairing** (a doubling letter at an OR): if a has antiperiod P/2, b has period P/2 and 2^m | P/2, then
+  F_c(a OR b; P) = sum over s < P/2 of c(s), plus F_c(b; P/2). The object becomes the lower diagonal at half the period.
+- **Forcing** (a doubling letter at a diagonal): F_c(a; P) = sum over s < P/2 of c(s), a constant.
+- **Integration** (a non-doubling letter at a diagonal): with R(s) = R(0) + sum over u < s of g(u) and 2^m | P,
+  F_c(R; P) = R(0)·(sum of c over P) + F_(c')(g; P), where c'(u) = sum over u < s < P of c(s) is a function of u mod 2^(m+1).
+  The object becomes the OR one level down, at the same period, one bit finer.
+- A non-doubling letter at an OR stops the descent: that leaf is a free parity, F_c of an OR of two diagonals of the same period.
+
+Known cases fall out: no_three (two doublings: constant P/4), CL642's even-time rule (c' = (1, 0)), the 101 shift law
+(our R30-20261029-7d47a9: the mod-4 form `E_mod4` is the vector (1, 1, 0, 0)), and GC2007's forbidden 11011 with its
+"after base 4" exception as the constant q/2 + q/4, which is 1 at q = 4 and 0 for q ≥ 8. **New:** the descent forces the bit
+exactly when the backward word is 1(01)^k 1, so the forward word **11(01)^k is always followed by 0** once the periods are
+large enough (p_(j-4) ≥ 2^(k+2) by hand for k ≤ 2; the code carries the constants for every k). The free leaves are the words
+ending in 0 (Case B) and 00(10)^k 1. The coefficient vectors are the iterated prefix-parities of the all-ones vector
+(C(u + m, m) mod 2 up to the constants, a Pascal-triangle-mod-2 pattern; PROOF-SKETCH, an aside).
+
+**Checked exactly (`edge_shift_tree.c`; the single seed to j = 56 and CL642's 63 random 24-bit seeds to n = 56; prefix
+periods by the kit's lifting rule, which the calculus needs rather than least periods): P1 HELD,** 3,456 identities, no
+failure (leaves: 2,593 free, 832 forced, 31 too small for their resolution and still exact). Forced words seen (backward):
+11 (429), 1011 (251, of which 64 with constant 1 at q = 4, one per seed at the universal start), 101011 (81), 10101011 (42),
+then 18, 7, 3, 1 up to k = 7; every forced constant equalled d_j. **P2 HELD:** 81 occurrences of the forward word 110101 with
+p_(j-4) ≥ 16, none followed by 1.
+
+**The bridge (T2 to T3). P3 HELD:** every free-leaf class is fair within its band: after a 0, 0.511 (n = 1,655); after 001,
+0.555 (n = 440, the one class above two standard errors, 2.3); after 00101, 0.511 (n = 88); after 0010101, 0.667 (n = 15).
+So on this data every constraint the census sees on the doubling bit is an identity of the 2-adic algebra, and what the algebra
+leaves free is a coin. **P4 HELD:** the chain "fair except that 11(01)^k forces the next 0" has five states (forced, after the
+forced zero, after 00, a free 1 after a 0, a free 0 after that) with stationary weights 2, 2, 3, 2, 1 over 10 and doubling
+density exactly **2/5** (hand; replay 0.4001 over 10^7 letters, `edge_shift_model.py`). The data: pooled 0.407 ± 0.009 (0.7
+standard errors from 2/5; 3/7 is 2.3 away, 1/2 ten); the single seed's 0.42 over j = 5..92 (0.4 away). The conditionals,
+data against model: after 01, 0.350 against 1/3; after 101, 0.136 against 1/6; after 0101, 0.220 against 1/4; after 10101,
+0.070 against 1/10; after 00101, 0.511 against 1/2; after 11, 1011, 110101, 0 against 0.
+
+**Status.** The three moves and the family: PROOF-SKETCH single-party, exact on 3,456 cases; they are a restatement of
+`S_rule`, `antiperiod` and the running XOR, and the family extends GC2007's five-step word to every k. The value 2/5:
+a model value, COMPUTED and MEASURED to agree at one standard error; the limit stays a CONJECTURE, and GC2164's control
+stands (the alternating word 0101... is free under the family and has density 1/2, so the family alone bounds nothing).
+What changed in the atlas: M5's residue is closed as a mechanism, and this is the first cell where the algebra (T2) produces
+a number the observables (T3) see. The remaining open hand question is why the free leaves are fair, which is the same
+question as the centre column's.

@@ -1,0 +1,120 @@
+# # Block 27 (Cloud): the doubling bit's exact law after 101 (DQ-024, CL642 residue), at the owner's word
+# 
+# Record searched: "doubling bit", "101 shift law", "11011", "forbidden word", "iterated integral", "E_mod4", "eta_four" in the record
+# (record_find.py); the kit/portal index (cached, PR index 403): the 101 shift law is ours (R30-20261029-7d47a9, PR51 merged:
+# shift_law, E_mod4, eta_false_of_antiperiod, eta_four, eta_false_of_period_half); GC2007/L1063 (11011 forbidden after base 4,
+# five-step bound 3/5); CL642 (three parity rules, 3/7 fair model, 0.135 after 101, 0 of 160 after 1011); GC2164 (the alternating
+# word 0101... obeys both forced zeros and has density 1/2). No hit for a family of forbidden words beyond 111 and 11011, nor for a
+# value 2/5.
+# 
+# ## The hand calculus (PROOF-SKETCH, single-party, before the run)
+# 
+# For a sequence f of period P, a resolution m and a coefficient vector c on Z/2^m, write F_c(f; P) = sum_{s<P} c(s mod 2^m) f(s) mod 2.
+# The doubling bit is d_j = F_1(g_j; p_(j-1)) with g_j = R_(j-1) OR R_(j-2) (kit S_rule; m = 0, c = (1)). Three exact moves, each a
+# restatement of a kit lemma, read the letters d backwards from j-1:
+# 
+# - **Pairing (letter 1 at an OR).** If a has antiperiod P/2, b has period P/2 and 2^m | P/2:
+#   F_c(a OR b; P) = sum_{s<P/2} c(s) + F_c(b; P/2). (Pair s with s + P/2: the OR gives 2 where b is black, 1 where white.)
+#   The constant is (P/2^(m+1)) * sum(c). The object becomes the lower diagonal b = R_(idx-2) at period P/2.
+# - **Forcing (letter 1 at a diagonal).** If a has antiperiod P/2 and 2^m | P/2: F_c(a; P) = sum_{s<P/2} c(s), a constant.
+# - **Integration (letter 0 at a diagonal).** If R(s) = R(0) + sum_{u<s} g(u) with 2^m | P:
+#   F_c(R; P) = R(0) * sum_{s<P} c(s) + F_(c')(g; P) with c'(u) = sum_{u<s<P} c(s) = total + sum_{s<=u} c(s mod 2^m) mod 2,
+#   a function of u mod 2^(m+1). The object becomes g = R_(idx-1) OR R_(idx-2) at the same period, resolution m+1.
+# - **A 0 at an OR** (both inputs of the same period) stops the descent: the leaf is a free parity.
+# 
+# Consequences read off the calculus (each to be checked exactly by the code, which carries the constants):
+# 1. Letter 1, then 1: no_three (constant P/4, even for P >= 8). Letter 1, 0: d_j = even-time parity of g_(j-2) (CL642's omega rule,
+#    c' = (1,0)). Letters 1, 0, 1: d_j = q/4 + E_q(R_(j-4)) ... the 101 shift law. Letters 1,0,1,1: forced (GC2007's 11011, value
+#    q_2/2 + q_2/4 with q_2 = p_(j-4): 1 at q_2 = 4, 0 for q_2 >= 8: the "after base 4" exception recovered).
+# 2. **New: the forced family.** The descent forces the bit exactly when the backward word is 1 (0 1)^k 1, i.e. the forward word
+#    11(01)^k is always followed by 0 once the periods are large enough (p_(j-4) >= 2^(k+2), to be confirmed by the constants). k = 0
+#    is no_three, k = 1 is 11011, k = 2 gives **1101011 forbidden**, k = 3 gives 110101011 forbidden. The free leaves are the words
+#    ending in 0 (Case B) and 00(10)^k 1.
+# 3. **The fair-except-forced model.** Letters fair except that 11(01)^k forces the next 0: a five-state chain (F forced, H after the
+#    forced zero, Z after 00, A a free 1 after a 0, B a free 0 after A) with stationary weights 2, 2, 3, 2, 1 over 10 gives the doubling
+#    density exactly **2/5 = 0.400** (hand), against CL642's 3/7 (no_three alone) and the measured pooled 0.407 +- 0.009. Its
+#    conditionals: after 101 1/6 = 0.167 (measured 0.135, n = 423), after 0101 1/4 (measured 0.217), after 10101 1/10 (measured 0.07),
+#    after 00101 1/2 (not yet measured), after 1011 0.
+# 
+# ## Predictions (lean % in brackets)
+# 
+# - **P1 (exact identity) [85]:** for the single seed (j = 4..56, rows t < 2^24) and the 64 seeds of CL642 (n = 4..56), at every j the
+#   calculus's value (constant plus the leaf functional, evaluated by one streamed pass) equals d_j. Counterfactual: one failure; then
+#   the slip is found in the code first, and if the hand lemma is wrong the block says so.
+# - **P2 (new forced word) [80]:** every occurrence of 1101011's premise (forward 110101 ending at j-1 with p_(j-4) >= 16) is followed
+#   by d_j = 0, in all data; the code's constant at those leaves is 0. Counterfactual: one occurrence followed by 1 with the period
+#   condition met.
+# - **P3 (the bridge: free leaves are fair) [60]:** in the pooled 64-seed data (n = 13..56), every free-leaf class (keyed by leaf type
+#   and the backward word consumed) with at least 100 samples has doubling frequency within 0.10 of 1/2; classes with 30..99 samples
+#   within 0.18. Counterfactual: a class with >= 100 samples at <= 0.35 or >= 0.65: the algebra does not exhaust the bias and that
+#   class is the next object.
+# - **P4 (the value) [60]:** the fair-except-forced chain's density is 2/5 by hand; a 10^7-letter replay gives 0.400 +- 0.001; the
+#   pooled data's 0.407 +- 0.009 is within 1.5 sigma of 2/5 and the single seed's density over j = 5..92 (0.42) within 2 sigma.
+#   Counterfactual: the data at 3 sigma or more from 2/5 (that would say the free leaves are biased, see P3).
+# - **PU (unexpected):** the distribution of the descent depth at free leaves; whether the single seed's forced constants at small
+#   periods (the q = 4 exceptions) include a forced 1 beyond 11011 at j = 7.
+# 
+# What it teaches if it holds: T2's algebra (pairing and integration on 2-adic diagonals) produces every constraint T3's observables see,
+# and the measured 0.41 is the fair value 2/5 of a chain with one forced family. The limit stays a CONJECTURE (the alternating word
+# is free under the family, GC2164); the family itself would be PROOF-SKETCH pending a read.
+# 
+# Caps: Cloud CPU, one C process per data set, under five minutes; periods to 2^27; no Wolfram.
+# Output of ./edge_shift_tree 0x1 56 (the single seed):
+# seed=0x1 N=56
+j e_j d_j word leaf m depth K val check
+1 1 1 - BOTTOM 0 0 0 -1 -1
+2 1 0 - BOTTOM 0 0 0 -1 -1
+3 2 1 0 FREE_G 0 1 0 1 ok
+4 3 1 101 SMALL_G 1 3 0 1 ok
+5 3 0 11 FORCED 0 2 0 0 ok
+6 4 1 0 FREE_G 0 1 0 1 ok
+7 5 1 1011 FORCED 1 4 1 1 ok
+8 5 0 11 FORCED 0 2 0 0 ok
+9 6 1 0 FREE_G 0 1 0 1 ok
+10 6 0 1011 FORCED 1 4 0 0 ok
+11 6 0 0 FREE_G 0 1 0 0 ok
+12 6 0 0 FREE_G 0 1 0 0 ok
+13 6 0 0 FREE_G 0 1 0 0 ok
+14 6 0 0 FREE_G 0 1 0 0 ok
+15 7 1 0 FREE_G 0 1 0 1 ok
+16 8 1 100 FREE_G 1 3 0 1 ok
+17 8 0 11 FORCED 0 2 0 0 ok
+18 8 0 0 FREE_G 0 1 0 0 ok
+19 8 0 0 FREE_G 0 1 0 0 ok
+20 8 0 0 FREE_G 0 1 0 0 ok
+21 8 0 0 FREE_G 0 1 0 0 ok
+22 8 0 0 FREE_G 0 1 0 0 ok
+23 8 0 0 FREE_G 0 1 0 0 ok
+24 9 1 0 FREE_G 0 1 0 1 ok
+25 10 1 100 FREE_G 1 3 0 1 ok
+26 10 0 11 FORCED 0 2 0 0 ok
+27 11 1 0 FREE_G 0 1 0 1 ok
+28 11 0 1011 FORCED 1 4 0 0 ok
+29 12 1 0 FREE_G 0 1 0 1 ok
+30 12 0 101011 FORCED 2 6 0 0 ok
+31 12 0 0 FREE_G 0 1 0 0 ok
+32 12 0 0 FREE_G 0 1 0 0 ok
+33 12 0 0 FREE_G 0 1 0 0 ok
+34 13 1 0 FREE_G 0 1 0 1 ok
+35 13 0 100 FREE_G 1 3 0 0 ok
+36 14 1 0 FREE_G 0 1 0 1 ok
+37 15 1 10100 FREE_G 2 5 0 1 ok
+38 15 0 11 FORCED 0 2 0 0 ok
+39 16 1 0 FREE_G 0 1 0 1 ok
+40 16 0 1011 FORCED 1 4 0 0 ok
+41 17 1 0 FREE_G 0 1 0 1 ok
+42 17 0 101011 FORCED 2 6 0 0 ok
+43 18 1 0 FREE_G 0 1 0 1 ok
+44 18 0 10101011 FORCED 3 8 0 0 ok
+45 18 0 0 FREE_G 0 1 0 0 ok
+46 18 0 0 FREE_G 0 1 0 0 ok
+47 18 0 0 FREE_G 0 1 0 0 ok
+48 19 1 0 FREE_G 0 1 0 1 ok
+49 20 1 100 FREE_G 1 3 0 1 ok
+50 20 0 11 FORCED 0 2 0 0 ok
+51 21 1 0 FREE_G 0 1 0 1 ok
+52 21 0 1011 FORCED 1 4 0 0 ok
+53 21 0 0 FREE_G 0 1 0 0 ok
+54 22 1 0 FREE_G 0 1 0 1 ok
+55 23 1 100 FREE_G 1 3 0 1 ok
+56 23 0 11 FORCED 0 2 0 0 ok
