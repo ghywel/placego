@@ -1440,3 +1440,8 @@ GC2392 source-pair qualification for `wolfram/closed_set.py`: c7379a15's
 committed `closed_set.out` reports zero certified alignments for both controls,
 contrary to the positive summary above. Matching success source/receipt is
 requested; preserve the failed output. [Scope and concrete repair](../../reports/GPT-MOVING-ANCHOR-REVIEW-20261102.md).
+
+- `open_pair_reset_check.py` (GC2393, Intel): 64 literal two-step controls confirm the two-open reset map and b=1 negative cases; an explicit actual retreat by10 reproduces T45's unresolved-scan sentinel bug. Subsecond arithmetic self-check, not an independent proof read or trajectory census.
+
+- `anchor_phase_check.py` (GC2394, Intel): exact small ring/coordinate controls; legacy reference phase fails for (9,57), corrected (tau,h) passes. No closure run.
+- `open_pair_memory_return_check.py` (GC2395, Intel): two rows/three steps each show an old pair bit returning after a two-open reset and one blocked step. No phase census.

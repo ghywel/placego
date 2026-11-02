@@ -5550,6 +5550,9 @@ less the protected ones:
   and was too low, as GC2390 warned.
 - **H3 REFUTED for P1024, HELD for 480.** At L = 24, P1024 is at 78–80%; it passes 89% at L = 32 and 99% at L = 48. 480
   passes 90% by L = 16–24.
+- *(GC2393, carried in L1327: H4 is NOT SHOWN. The lag list mixes observed first differences with censored values T_A + 1 −
+  t_reach from pairs that never differed, which dominate at large L. The cone's arrival is also only permission, not a
+  real discrepancy at the window. An uncensored split is needed. The capture-agreement fractions stand.)*
 - **H4 HELD where it means anything (L ≥ 16).** The median lag from the cone's arrival at the window to the first
   difference is 28–56 ticks (P1024) and 35–86 ticks (480). At L ≤ 8 the edited cells already lie inside the initial
   window (the front starts near K − 1), so a lag of 0 there is not shielding. L = 12 is borderline (9–16).
@@ -5615,6 +5618,11 @@ Record searched: §44.1 (the mask lemma), §48 (T44), GC2389's clock; nothing ea
 
 ### 49.2 Results ([output](../tests/probes/blocked_reading.out))
 
+*Correction (GC2393, carried in L1327).* The reading-depth wrapper labelled an unresolved move (new front 9 or more cells
+behind) as depth 10, because at k = 10 the single completion always equals itself. No sampled move was unresolved (every
+reported offset is concrete, −6 to +1), so the counts below are unchanged. The wrapper now returns "unresolved" before
+minimising.
+
 | | P1024 before capture | P1024 after | 480 before | 480 after |
 |---|---|---|---|---|
 | blocked ticks | 7,503 | 24,326 | 7,935 | 10,015 |
@@ -5676,6 +5684,11 @@ gateways), §49 (front plus two cells); no earlier measurement of entry. Budget:
 
 ### 50.2 Results ([output](../tests/probes/lock_entry.out))
 
+*Correction (GC2393, carried in L1327).* T46 measures first visits to U and to its class cycle, not permanent locks; its
+own later departures (K4) show that the first visit is not the locking time. "Locks" below means "first reaches". The
+last departure, which is the true lock time, was not measured, and a no-departure claim for all future time needs the
+closed certificate S_E.
+
 | | P1024 (1,024 θ) | 480 (960 classes) |
 |---|---|---|
 | entry tick into U: min / median / 90% / max | 9 / 67 / 146 / 236 | 7 / 95 / 196 / 456 |
@@ -5703,3 +5716,35 @@ the class walk reaches the cycle and the two cells behind the front then fall in
 - **Next form of the question (logged, not taken).** Is the class cycle the unique attracting cycle of the class walk
   when each blocked choice follows the front-plus-two-cells dynamics? If it is, uniqueness becomes a finite statement
   about a 1,024-class (or 15,360-class) walk.
+
+## 51. After a pair reset, how much history still matters? (T47, L1329)
+
+### 51.1 Setting and predictions, written before the run (`reset_memory.py`)
+
+**Background.**
+- GC2393's two-open reset (carried in L1327): at a class where E_R = E_{R+1} = 0 and E_{R+2} = E_{R+3}, the next two
+  moves are +2 and the trailing pair becomes a function of the background alone.
+- GC2395 (carried in L1328): the erased bit can return one blocked move later from the third cell. So a reset of the
+  pair is not a reset of the history.
+- Exact counts: P1024 has 108 reset classes of 1,024 (6 on the 52-cycle), and 480 has 1,952 of 15,360.
+
+**Setting.** P1024 and 480, K = 80, 150 random prefixes each, Random(47), pre-capture ticks at R ≥ 12 only.
+- **Frequency.** Count reset events (a tick at a reset class), and the blocked moves between consecutive resets.
+- **Memory.** At up to 5 resets per run, take the row two ticks after the reset tick (front R′ = R + 4). Flip one cell
+  j behind the new front (j = 3, 4, 6, 8, 12, 16; the pair is untouched) and run both rows for 200 ticks. Record
+  whether the front path differs, and the first tick of difference.
+
+**Predictions.**
+- **M1.** Reset events make up between 5% and 20% of pre-capture ticks. Lean 65%.
+- **M2.** The median number of blocked moves between consecutive resets is ≤ 5. Lean 55%.
+- **M3.** Flipping the third cell (j = 3) right after a reset changes the front path within 200 ticks in at least 30% of
+  events: memory does return in practice. Lean 55%.
+- **M4.** The effect fades with depth: at j = 16 at most 10% of events change the front path. Lean 60%.
+- **Counterfactual.** If j = 3 flips almost never matter, the reset in practice erases the decisive memory, and the
+  return in GC2395 does not arise on these phases. If deep flips often matter, long history persists through resets,
+  and the compatibility condition cannot be cut at resets.
+- **What it teaches.** The effective memory length at a reset tells GPT whether history can be cut at resets plus a
+  bounded depth.
+
+Record searched: GC2393, GC2395 and their carrying reads (L1327, L1328); T41's single-flip decoupling of clean fronts
+(gap ≤ 7 matters in P1024, none in 480); T44 (§48).

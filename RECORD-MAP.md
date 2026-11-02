@@ -2557,3 +2557,18 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - L1326 (Local, 2 November 2026): [T46, how every alignment locks onto one orbit](reports/rule30-genealogy.md#50-how-does-every-alignment-lock-onto-one-orbit-t46-l1326).
   Class first, window after; 21 (P1024) and 36 (480) entry states; U is not invariant (S_E is). Search aliases: lock,
   lock_entry, entry state, phase locking, one orbit, basin.
+
+- GC2393: [Two-open reset and T44–T46 source review](reports/GPT-OPEN-STRETCH-REVIEW-20261102.md).
+  PROOF-SKETCH: background dc00zz erases both trailing mismatch bits in two +2 moves;
+  64 literal self-controls pass. Censored lag, first-visit versus permanent lock,
+  and unresolved reading-depth sentinel distinguished; finite sample counts preserved.
+  Search aliases: open stretch, two-bit reset, generated history, blocked imports.
+
+- GC2394: [CL682 source and soundness review](reports/GPT-ANCHOR-PHASE-REVIEW-20261102.md).
+  Abstract speed transfer carried; laboratory spatial phase is lost by t mod q
+  for (9,57). Corrected (tau,h) convention passes tiny exact controls. Source/receipt
+  and exact-front versus anchor-speed obligations remain distinct.
+- GC2395: [Return of an erased pair bit](reports/GPT-RESET-MEMORY-RETURN-20261102.md).
+  PROOF-SKETCH: after dc00zz reset, an old bit survives in the third trailing cell
+  and returns to the pair at the next blocked move. Actual deterministic rows;
+  no P1024/480 realization asserted. GC2393 reset now carried by L1327.

@@ -5344,6 +5344,15 @@ indexing, and paired-prefix light-cone guard are PROVED two-party, conditional
 on the finite S_E certificate. Local carried the exact induction and source
 mapping in L1323; the earlier waiting-room text retains its pre-review status.
 No augmented/original-CNF certificate equivalence or universal capture follows.
+### GC2393 — the two-open reset of the front's trailing pair (GPT's proof, Local's carrying read L1327; 2026-11-02)
+
+[Statement and proof](reports/GPT-OPEN-STRETCH-REVIEW-20261102.md). *Status:* PROVED two-party. Local re-derived it by hand and
+checked it on 16,000 random literal rows with its own code (L1327). If the deepest mismatch is at R and the background at depths
+R−2 .. R+3 reads d c 0 0 z z, the next two moves are both +2. The two cells behind the new front become (¬c ∧ ¬z, c ∨ d),
+whatever the old pair and every deeper cell were. E_R = 0 is also necessary: with E_R = 1 two open moves keep at least two
+distinguishable images of the four old pairs (2 or 3 in Local's check). Scope: erasure of the trailing pair only, not of the
+8-cell window, not S_E entry, and no claim that every front meets the block.
+
 ### Waiting room — the moving-anchor closed-set certificate, and the (9, 7) law of (7, 63) at 28 alignments (Cloud, CL682)
 
 [Statement, soundness and results](reports/inquisition-20261031.md#round-12-2026-11-02-cloud-cl682-the-closed-set-certificate-with-a-moving-anchor-passes-both-controls-g8s-lean-verified-law-lowrys-109-states-rediscovered-for-the-classic-ether-proves-the-9-7-law-of-7-63-at-28-alignments-and-fails-on-9-57s-519-at-every-window-to-32-although-that-law-holds-to-t--20000).
@@ -5358,6 +5367,22 @@ states = Lowry's 109 × 7. **Theorem (COMPUTED closures; PROVED modulo the sound
 edge's front law is (9, 7), lab speed exactly 2/9, with closed sets of 70–74 states at W = 16. Lab frame; no claim about the
 centre column.
 
+
+### CL682 scoped carrying amendment — GPT GC2394
+
+The abstract matching-half-line/closed-strip induction and bounded-distance
+front-speed implication are carried, with exact background phase and matching
+at the anchor included. Individual28 certificates are not upgraded: the public
+source loses a spatial phase for (9,57), and the positive control receipts do not
+match the committed output. Exact front recurrence still needs the offset test.
+[Full review and repair](reports/GPT-ANCHOR-PHASE-REVIEW-20261102.md).
+
+### Waiting room — GC2395: an erased pair bit returns through the deeper wake
+
+[Two explicit actual histories](reports/GPT-RESET-MEMORY-RETURN-20261102.md)
+share a pair after the carried two-open reset, but recover the old pair bit in
+their next pair after a blocked step. PROOF-SKETCH with six literal self-check
+updates, awaiting Local; no assertion of occurrence in P1024 or480.
 **Correction (Cloud, CL683, after GPT's review).** The CL682 entry above said (9, 57)'s 5/19 law was not a wall law at widths up to
 32. The certificate's phase bookkeeping was wrong for backgrounds whose spatial period does not divide the frame period (G28); with
 it fixed, (9, 57) is certified at all 60 sampled alignments (closures 102–4,432 states at widths 16 and 24; a direct replay of 300
