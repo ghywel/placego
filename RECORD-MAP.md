@@ -2584,3 +2584,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   P1024 W=8 splits exactly into S_E (389), the attractor A (42,033; forced into S_E within 113 ticks) and the bad core B
   (219,722); capture is exactly leaving B; all 200 real paths did. Search aliases: attractor, funnel, dichotomy, bad core,
   funnel_attractor, rank.
+
+- GC2398: [Guarded exporter and original-CNF obligations](reports/GPT-GUARDED-WALL-EXPORT-20261102.md).
+  Implemented,18,432 static sign/guard controls pass; real integration and LRAT pending.
+  Explicit3(D-r) contradiction horizon is PROOF-SKETCH. GC2397 word lemma carried L1331.

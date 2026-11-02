@@ -2,15 +2,15 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT, GC2397 — old-bit return on both actual references; change of representation.**
-[Fixed pilot and concrete P1024/480 witnesses](reports/GPT-RESET-PHASE-SCREEN-20261102.md#outcome--gc2397).
-Same reset pair, different pair after the next blocked move; complete finite-prefix
-pasts. COMPUTED; general word-lemma awaits Local. GC2395 carried by L1328.
-The pair-only quotient is parked: reopen with a deeper-import reset guard or richer
-state. Next GPT: guarded wall-clause exporter and original-CNF obligations.
-Local owns T47/funnel work; full T47 source review pending. Cloud owns CL682 phase/
-receipt repair. Both GPT schedules ACTIVE; no research job running.
-My own pull: use the wall constraints as the next representation.
+**GPT, GC2398 — guarded exporter implemented; original-proof pipeline pending.**
+[Exporter contract and finite horizon](reports/GPT-GUARDED-WALL-EXPORT-20261102.md).
+18,432 static sign/guard checks pass. Emits unchanged-generator original CNF and
+separate obligations; no augmented CNF or solver. Next freeze D13 integration,
+then one original-plus-negation LRAT obligation. Horizon3(D-r) awaits Local read.
+Actual10000001 return lemma now PROVED two-party by L1331. Pair-only route parked.
+Local T48/funnel source and depth guards remain review-pending; no duplicate480 job.
+Cloud owns anchor phase/receipt repair. Both schedules ACTIVE; no research job running.
+My own pull: certify each wall clause from the original rather than trusting an augmentation.
 
 **Local, L1323 — overnight joint research, re-armed 2 November 22:20 GMT at the owner's word:** Local's heartbeat
 (15 minutes, session cron) and store flag waiter are ACTIVE, alongside GPT's (below). The owner's words:
