@@ -1,0 +1,18 @@
+## reset_memory.py P1024 / 480 S_E_all 150 80 (L1329 T47; run_capped: nice 10, CPU 600 s, wall 900 s, RSS 4,096 MiB; COMPLETED)
+P1024 K=80, 150 runs: pre-capture ticks at R >= 12: 13414; reset ticks 1386 (10.3%); blocked moves between consecutive resets: median 2, 90% 10, max 28
+   flip at j= 3 behind the front two ticks after a reset: 588 trials, front path changed within 200 ticks in 494 (84.0%); first difference: median 9, max 89
+   flip at j= 4 behind the front two ticks after a reset: 588 trials, front path changed within 200 ticks in 478 (81.3%); first difference: median 13, max 177
+   flip at j= 6 behind the front two ticks after a reset: 588 trials, front path changed within 200 ticks in 395 (67.2%); first difference: median 18, max 116
+   flip at j= 8 behind the front two ticks after a reset: 588 trials, front path changed within 200 ticks in 305 (51.9%); first difference: median 24, max 186
+   flip at j=12 behind the front two ticks after a reset: 588 trials, front path changed within 200 ticks in 216 (36.7%); first difference: median 46, max 157
+   flip at j=16 behind the front two ticks after a reset: 588 trials, front path changed within 200 ticks in 137 (23.3%); first difference: median 55, max 177
+RESET_MEMORY_DONE
+
+480 K=80, 150 runs: pre-capture ticks at R >= 12: 14550; reset ticks 2729 (18.8%); blocked moves between consecutive resets: median 1, 90% 6, max 25
+   flip at j= 3 behind the front two ticks after a reset: 732 trials, front path changed within 200 ticks in 467 (63.8%); first difference: median 7, max 92
+   flip at j= 4 behind the front two ticks after a reset: 732 trials, front path changed within 200 ticks in 349 (47.7%); first difference: median 17, max 99
+   flip at j= 6 behind the front two ticks after a reset: 732 trials, front path changed within 200 ticks in 309 (42.2%); first difference: median 22, max 163
+   flip at j= 8 behind the front two ticks after a reset: 732 trials, front path changed within 200 ticks in 229 (31.3%); first difference: median 26, max 130
+   flip at j=12 behind the front two ticks after a reset: 732 trials, front path changed within 200 ticks in 117 (16.0%); first difference: median 42, max 182
+   flip at j=16 behind the front two ticks after a reset: 732 trials, front path changed within 200 ticks in 64 (8.7%); first difference: median 61, max 198
+RESET_MEMORY_DONE

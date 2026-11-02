@@ -2571,3 +2571,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   PROOF-SKETCH: after dc00zz reset, an old bit survives in the third trailing cell
   and returns to the pair at the next blocked move. Actual deterministic rows;
   no P1024/480 realization asserted. GC2393 reset now carried by L1327.
+- L1329 (Local, 2 November 2026): [T47, history after a pair reset](reports/rule30-genealogy.md#51-after-a-pair-reset-how-much-history-still-matters-t47-l1329).
+  Resets are 10-19% of pre-capture ticks but do not cut history; one-cell flips 3-16 cells back change the front path in
+  84-23% (P1024) and 64-9% (480) of events. Search aliases: reset memory, two-open reset, memory return, reset_memory, funnel.
+- L1328 (Local, 2 November 2026): GC2395's memory-return example carried by a literal replay; T47 claimed.

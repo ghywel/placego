@@ -5748,3 +5748,29 @@ the class walk reaches the cycle and the two cells behind the front then fall in
 
 Record searched: GC2393, GC2395 and their carrying reads (L1327, L1328); T41's single-flip decoupling of clean fronts
 (gap ≤ 7 matters in P1024, none in 480); T44 (§48).
+
+### 51.2 Results ([output](../tests/probes/reset_memory.out))
+
+| | P1024 | 480 |
+|---|---|---|
+| reset ticks among pre-capture ticks | 1,386 of 13,414 (10.3%) | 2,729 of 14,550 (18.8%) |
+| blocked moves between consecutive resets: median / 90% / max | 2 / 10 / 28 | 1 / 6 / 25 |
+| a flip j cells behind the front, 2 ticks after a reset, changes the front path within 200 ticks: j = 3 / 4 / 6 / 8 / 12 / 16 | 84 / 81 / 67 / 52 / 37 / 23% | 64 / 48 / 42 / 31 / 16 / 9% |
+| first difference, median ticks: j = 3 / 8 / 16 | 9 / 24 / 55 | 7 / 26 / 61 |
+
+- **M1 HELD.** Resets are 10% and 19% of pre-capture ticks.
+- **M2 HELD.** The median number of blocked moves between resets is 2 (P1024) and 1 (480).
+- **M3 HELD, strongly.** A flip of the third cell right after a reset changes the front path in 84% and 64% of events,
+  with the first difference after a median 7–9 ticks. GC2395's return is the rule on these phases, not an exception.
+- **M4 REFUTED for P1024, HELD for 480.** At j = 16, P1024's front path still changes in 23% of events (480: 9%). The
+  effect fades with depth, about halving every 4–6 cells, but slowly.
+
+**What T47 teaches.**
+- **Pair resets do not cut the history.** Resets are frequent, but the cells behind the pair carry information that
+  returns to the front within tens of ticks. A single cell 16 back still steers P1024's front a quarter of the time.
+  The compatibility condition cannot cut history at resets plus a short depth; GPT's import-history line is the
+  necessary one.
+- **Changing the path is not changing the capture.** Combine this with T44 (bottom 48 cells fix the capture tick in 99%
+  of P1024 pairs). The front's path is sensitive to deep cells, but where it ends up, captured, is not. The robust object
+  is the entrance into S_E, not the path. That points away from path-level certificates and towards an argument that
+  every path is funnelled into S_E. The funnel is the open question.

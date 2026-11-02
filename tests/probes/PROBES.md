@@ -1433,6 +1433,7 @@ digest in reports/inquisition-20261031.md:
 | `capture_locality.py` | Local, 2026-11-02 (L1324, T44): is capture decided by the bottom L cells of the prefix? Base rows and variants that keep the bottom L cells and redraw the rest; GC2390's exact cone guard separates protected pairs (a control) from informative ones; same front history, same capture tick, lag from the cone's arrival to the first difference; every post-capture tick checked at R >= 8. Output `capture_locality.out` |
 | `blocked_reading.py` | Local, 2026-11-02 (L1325, T45): the reading depth of the front's move (the fewest cells behind the front that fix it for every completion out to depth 10) at open and blocked ticks, before and after capture; random prefixes, both phases. Output `blocked_reading.out` |
 | `lock_entry.py` | Local, 2026-11-02 (L1326, T46): how every alignment's clean front enters the one orbit U: entry tick, first state in U, first tick on U's class cycle, departures from U after entry; P1024 and 480. Output `lock_entry.out` |
+| `reset_memory.py` | Local, 2026-11-02 (L1329, T47): GC2393's two-open resets on real pre-capture paths: their frequency, the blocked moves between them, and one-cell flips j = 3..16 behind the front two ticks after a reset (does the front path change within 200 ticks?). Output `reset_memory.out` |
 
 
 GC2392 source-pair qualification for `wolfram/closed_set.py`: c7379a15's
