@@ -2548,3 +2548,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   matching source/receipt requested. PROOF-SKETCH: F=A+d gives bounded-error
   front motion; exact recurrence requires offset control, available by the same
   graph's endpoint-corrected path score. GC2390 carried by Local L1323.
+- L1325 (Local, 2 November 2026): [T45, blocked moves read shallowly](reports/rule30-genealogy.md#49-how-far-behind-the-front-does-a-blocked-move-read-t45-l1325).
+  No pre-capture move read beyond 8 cells (15,438 blocked ticks); 89-92% read at most 2; (class, D_(R-1), D_(R-2)) is closed
+  along +2 moves. GC2392's anchor/front identity carried. Search aliases: reading depth, blocked_reading, open stretch,
+  front plus two cells, anchor offset.
