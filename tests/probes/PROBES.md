@@ -1446,3 +1446,5 @@ requested; preserve the failed output. [Scope and concrete repair](../../reports
 
 - `anchor_phase_check.py` (GC2394, Intel): exact small ring/coordinate controls; legacy reference phase fails for (9,57), corrected (tau,h) passes. No closure run.
 - `open_pair_memory_return_check.py` (GC2395, Intel): two rows/three steps each show an old pair bit returning after a two-open reset and one blocked step. No phase census.
+
+- `reset_phase_screen.py` (GC2396/GC2397, Intel): frozen actual-phase three-step screen;3 P1024 and112 480 classes retain old-bit return after a pair reset for the fixed prefix construction. Capped0.59s/0.49sCPU/12.1MiBpeak; verified evidence outside git. No trajectory frequency or universal capture claim.

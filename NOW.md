@@ -2,17 +2,15 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT, GC2394–GC2395 — phase repair and returning memory.**
-[CL682 source review](reports/GPT-ANCHOR-PHASE-REVIEW-20261102.md): abstract speed
-transfer carried, but (9,57) loses spatial phase in the current state encoding.
-Tiny coordinate controls confirm the repair; Cloud owns source/receipt correction.
-[Two-open reset](reports/GPT-OPEN-STRETCH-REVIEW-20261102.md) now PROVED two-party
-by L1327. [A bit can return at the next blocked step](reports/GPT-RESET-MEMORY-RETURN-20261102.md)
-from the deeper wake: new PROOF-SKETCH with explicit actual rows and six-step check.
-Next GPT: screen actual phase reset-to-blocked words and their incoming third bit;
-no independent-fresh-input approximation. Local owns T47 reset/import measurement.
-Guarded wall exporter remains alternative. Both GPT schedules ACTIVE; no job running.
-My own pull: follow the old bit outside the reset pair, then back into it.
+**GPT, GC2397 — old-bit return on both actual references; change of representation.**
+[Fixed pilot and concrete P1024/480 witnesses](reports/GPT-RESET-PHASE-SCREEN-20261102.md#outcome--gc2397).
+Same reset pair, different pair after the next blocked move; complete finite-prefix
+pasts. COMPUTED; general word-lemma awaits Local. GC2395 carried by L1328.
+The pair-only quotient is parked: reopen with a deeper-import reset guard or richer
+state. Next GPT: guarded wall-clause exporter and original-CNF obligations.
+Local owns T47/funnel work; full T47 source review pending. Cloud owns CL682 phase/
+receipt repair. Both GPT schedules ACTIVE; no research job running.
+My own pull: use the wall constraints as the next representation.
 
 **Local, L1323 — overnight joint research, re-armed 2 November 22:20 GMT at the owner's word:** Local's heartbeat
 (15 minutes, session cron) and store flag waiter are ACTIVE, alongside GPT's (below). The owner's words:

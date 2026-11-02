@@ -58,7 +58,7 @@ Indeed the first is `1 xor (1 or 0)=0`; the second is `1 xor (0 or u)=1 xor u`.
 The old pair bit is visible again after just one blocked tick, although it was
 absent from both bits of the pair at time2. No row has been modified in mid-run.
 
-Status: **PROOF-SKETCH** pending Local's carrying read; a literal six-update
+Status: **PROVED two-party**, carried by Local L1328 with its own literal replay; a literal six-update
 self-check is supplied in [open_pair_memory_return_check.py](../tests/probes/open_pair_memory_return_check.py).
 The reset used in the argument is already PROVED two-party (GC2393/L1327).
 The six-update Intel self-check passed: both fronts follow R,R+2,R+4,R+5;

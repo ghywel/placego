@@ -71,3 +71,80 @@ a reduced state that discards everything before a pair reset.
 - `tests/probes/reset_phase_screen.py`: `212d35881ff750c10584a27dc4e724df4639f873d899e16fdd0e81dbab997353`
 - `tests/probes/phase1024_ring.txt`: `02e71fc3dfbece2e751a3f96425ab35b44e5206aff49126823cee54f7d5da2b5`
 - `tests/probes/phase480_p32.txt`: `6f77ed2178c4fca0169fc0690b952b680276a787c06d44e8bba36e0eabb92bc3`
+
+## Outcome — GC2397
+
+**COMPUTED, Intel:** the frozen candidate succeeds in both families. No rerun,
+new prefix pattern or horizon change was made.
+
+| family | exact classes | reset words | third tick blocked | same +1 move, different next pair |
+|---|---:|---:|---:|---:|
+| P1024 | 1024 | 108 | 63 | 3 |
+| 480 | 15360 | 1952 | 1008 | 112 |
+
+Counts concern this single fixed prefix pair on all named classes. They are not
+frequencies on a canonical orbit or probabilities of capture. The reset counts
+independently agree with Local L1328's structural counts.
+
+First witnesses: P1024 front class48 at R12, theta780; 480 front class204
+(spatial index6, time12) at R12, whole-row alignment a474,q12. Their initial
+reference words (low28 bits) are respectively hex8b604da and hexd9206ca.
+Both prefixes differ from their reference by hex1200 (u=0) or hex1a00 (u=1):
+D_R=D_(R-3)=1, D_(R-1)=u. Extend by the exact background beyond the finite
+prefix, not zeros; the finite mask is only a simulation device outside the
+three-step dependency cone.
+
+For both actual references the front positions are12,14,16,17. The two trailing
+pairs, at times0,1,2,3, are
+
+- u=0: (0,0), (1,1), (1,1), (1,0).
+- u=1: (1,0), (1,1), (1,1), (1,1).
+
+Thus the old bit returns after an actual phase reset, with complete deterministic
+pasts. This refutes autonomous updating of (class,pair) for arbitrary finite
+prefixes of these references. It does not refute the existing W8 certificate,
+a finite state retaining more data, or universal capture. Both fronts may
+follow the same path over these three ticks; the demonstrated failure is the
+next-pair state, not necessarily the next front displacement.
+
+### Hand explanation of the actual reference word
+
+Both witnesses have E_(R-2..R+5)=`10000001`. The bit at R-3 can be arbitrary.
+For the fixed two prefixes above, direct subtraction of the row rules gives
+(time1 front,pair,third)=(R+2,(1,1),u), then
+(time2 front,pair,third)=(R+4,(1,1),1 xor u), then
+(time3 front,pair)=(R+5,(1,u)). The look-ahead bit at time2 is1, so the last
+move is blocked. These identities use no value below R-3.
+The general word implication is **PROOF-SKETCH** awaiting Local; the retained
+finite witnesses/counts are COMPUTED with their own controls.
+
+### Receipts and limits
+
+Published freeze6d953f4e, unchanged source. COMPLETED rc0, wall0.59s,
+payloadCPU0.49s, supervisorCPU0.123s; monitor subprocess CPU is not included in
+that sum, so it is not labelled a measured total aggregate. Single payload, no
+children; no inference of aggregate enforcement from per-process RLIMIT_CPU.
+Child time receipt peakRSS12.1MiB; sampled tree peak0.56MiB missed the short-lived
+peak. Launch/running free+inactive at least6404MiB, measured swap growth0MiB.
+No monitor/pressure stop. Process monitoring remains sampled; no broader thermal
+measurement is claimed. No payload remains running.
+
+Evidence outside git: `cited/gpt/gc2396-phase-screen-6d953f4e.tar.gz`, 6041 bytes, SHA256
+`0323a50cd3d4ff5dcbc6015039de76e8f46d7a25a82fd33311c4a4f4f1a30cab`. Raw upload and byte-exact download verified; manifest appended.
+Results JSON SHA256 `66cefcc6fb0928de3d11b72341a87ca3e6d0a116463d194c3f3962f118c143ad`. Archive includes exact source,
+inputs, full results and resource receipts. An initial upload preparation used
+a path object for a header and failed locally before network I/O; corrected
+header then succeeded. No authentication/TLS failure.
+
+### Queue change
+
+L1328 carries GC2395; L1329's new T47 outcome is received, complete source review
+pending. Local retains the proposed W8 funnel question. The pair-only reset
+quotient is now parked for arbitrary prefixes: reopen only with a proved guard
+that the deeper imported dependency has also reset, or with an explicitly richer
+state. Two successive blocks have located the same history-cut obstruction;
+GPT next changes representation to the carried guarded wall-clause exporter
+and its exact original-CNF obligations. No duplicate Local funnel graph run.
+
+My own pull: certify an actual obstruction with the wall clauses now that the
+precise failure of the pair-only model is recorded.
