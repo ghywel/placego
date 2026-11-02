@@ -5527,3 +5527,54 @@ L ∈ {4, 8, 12, 16, 24, 32, 48, 64, 96, 128}, L < K, and Random(44).
 Record searched: GC2390's guard (the cone lemma); T40/T41 decoupling (single flips behind a clean front: none reach it
 in 480, gaps ≤ 7 in P1024); T43 (§46). `record_find.py locality "bottom L"` finds only these. Sampled pairs say nothing
 about a uniform L for every prefix (GC2390).
+
+### 48.2 Results ([output](../tests/probes/capture_locality.out))
+
+The share of informative pairs with the same capture tick (and the same front history through T_A), 400 pairs per L
+less the protected ones:
+
+| L | P1024 K=80 | P1024 K=160 | 480 K=80 | 480 K=160 |
+|---|---|---|---|---|
+| 4 | 13% (0%) | 16% (0%) | 41% (1%) | 54% (1%) |
+| 8 | 23% (2%) | 29% (4%) | 64% (7%) | 70% (7%) |
+| 16 | 51% (38%) | 56% (38%) | 86% (55%) | 91% (63%) |
+| 24 | 80% (73%) | 78% (70%) | 92% (82%) | 95% (86%) |
+| 32 | 89% (85%) | 89% (84%) | 96% (90%) | 98% (94%) |
+| 48 | 99% (99%) | 99% (97%) | 99% (92%) | 100% (96%) |
+| 64 | 100% (100%) | 99% (99%) | 100% (98%) | 99% (97%) |
+
+- **H1 HELD (the control).** No protected pair differs, no pair differs before the cone reaches the window, and no
+  alarm fires.
+- **H5 HELD.** No post-capture alarm in any run; the minimum post-capture depth is 80 or more.
+- **H2 HELD in its range.** The median L* is 76–80 in both phases. My 480 estimate (~40) used the post-capture speed
+  and was too low, as GC2390 warned.
+- **H3 REFUTED for P1024, HELD for 480.** At L = 24, P1024 is at 78–80%; it passes 89% at L = 32 and 99% at L = 48. 480
+  passes 90% by L = 16–24.
+- **H4 HELD where it means anything (L ≥ 16).** The median lag from the cone's arrival at the window to the first
+  difference is 28–56 ticks (P1024) and 35–86 ticks (480). At L ≤ 8 the edited cells already lie inside the initial
+  window (the front starts near K − 1), so a lag of 0 there is not shielding. L = 12 is borderline (9–16).
+- **So the front shields itself.** For pairs whose edits reach the window before capture, keeping 48 cells (P1024) or
+  24 (480) fixes the capture tick in 92–100% of samples. That is about half the light-cone bound L*.
+
+**An unexpected regularity: capture is driven by the background.** Even with only 4 cells kept, 480 rows sharing an
+alignment are captured on the same tick in 41–54% of pairs, and the median T_B − T_A is 0 at every L in both phases.
+The explanation is already in the algebra.
+- **The look-ahead lemma (PROVED; the mask lemma, §44.1, CL679 P-K2).** At an interior front, the deepest new cell is
+  D_{R+2}(t + 1) = ¬E_{R+1}(t), whatever the window holds. So the front advances by 2 exactly when E_{R+1}(t) = 0,
+  and otherwise by at most 1.
+- E_{R+1}(t) is a function of the class: bit (c + 195) of the base column for P1024, and column (R + 1 + a) at time
+  (t + q) for 480.
+- **Hence the front's move is window-independent at every "open" class.** The window matters only at "blocked"
+  classes (look-ahead bit 1).
+- **Check (COMPUTED).** Round P1024's 52-cycle, the advance is 2 at exactly the 31 open classes. It is −1, 0 or 1 at the
+  21 blocked ones (13 zeros, 7 ones, one −1).
+- So GPT's clock theorem has a mechanism: inside S_E, the blocked classes' windows are such that even their advances
+  are fixed.
+
+**What T44 teaches.**
+- The history a capture certificate must keep is short in practice: about 48 cells for P1024 and 24 for 480, at the
+  start, in samples. Not a uniform bound.
+- The front's motion depends on its window only at blocked classes. A certificate can therefore follow the front's
+  class walk, with the window consulted only at blocked ticks.
+- That suggests a quotient for GPT's compatibility condition: track the class walk exactly, and the window only
+  through its effect at blocked classes.
