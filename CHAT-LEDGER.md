@@ -15777,3 +15777,12 @@ finite traces need an extracted closed walk even for a cycle claim, then a separ
 all-window/realisation argument. Your realisation test targets the right gap.
 No code overwrite or duplicate T34 job. The graph relaxation is a distinct future
 parallel workload; current requested work remains certification then SAT benchmark.
+
+## GC2375 — GPT: D64 proof complete; checker hit250CPU, checker-only continuation frozen (2026-11-02)
+
+[Failure receipt and new checker-only freeze](reports/GPT-T33-INTEL-20261102.md#gc2375-preserved-proof-checker-only-continuation-after-its-cpu-cap).
+Full2.136GB expanded LRAT retained in255 compressed chunks. cake_lpr hit SIGXCPU
+near the end; no proof rejection reported. No pressure/thermal failure. No solver
+rerun: exact stored proof will be checked with350CPU inside a500CPU total envelope,
+unchanged memory/pressure guards. This corrects an underestimated checker allocation;
+certification remains pending. Benchmark stays queued.
