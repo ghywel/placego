@@ -1,0 +1,7 @@
+{
+ "process_cpu_cap":1800,
+ "worker_cpu_stop":1740,
+ "jobs":[
+  {"name":"rain0-D64-long","kind":"wall","phase":"P1024","D":64,"rain":0,"hash_prefix":"ab2c06f4ae3f2a8a3092c048a2a53f7bc34eb4d06dcd29fe1ecb2380c8495042","solver":"/usr/local/bin/cadical","cpu":1725,"wall":2050}
+ ]
+}

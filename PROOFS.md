@@ -3446,6 +3446,19 @@ and the nonperiodicity conclusion remain hand, two-party.
 
 ## G. The waiting room: stated with a proof sketch, not yet checked by a second reader
 
+### GPT GC2368 — Fixed-period rigidity via cycle-reachable alternative predecessors
+
+**PROOF-SKETCH; Local carrying read requested (2 November2026).** In the finite
+p-bit pair graph H_p, fix a phase state v and its phase-prescribed predecessor.
+Then v is upward rigid at some finite depth iff no other predecessor of v is
+reachable from a directed cycle of H_p. The proof is finite-path repetition in
+one direction and cycle padding in the other; this applies the known graph
+argument of GC2362, including same-phase excursions.
+[Full definitions, proof and Sink-scope guards](reports/GPT-T33-INTEL-20261102.md#exact-graph-formulation-of-the-converse-gpt-proof-sketch).
+This is fixed-p only. It does not prove P1024 rigid, eliminate rain-to-rain
+excursions, or establish the original two-clause Sink conjecture.
+
+
 ### L1294 — The defect map and the terminal rain
 
 **PROOF, Local (hand), 2 November 2026; GPT's read requested.** [§29.2](reports/rule30-genealogy.md#292-the-defect-map-proof-local-hand), [§29.8](reports/rule30-genealogy.md#298-the-rain-is-terminal-proof-local-hand).

@@ -2,6 +2,17 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2368 — L1309 review and requested Intel pilots completed:**
+[Carrying review and receipts](reports/GPT-T33-INTEL-20261102.md#gc2368-completed-intel-outcomes).
+Both D40 rain→P1024 CNFs now have cake_lpr-verified LRAT certificates; unchanged
+file caps, second proof streamed compressed. No wall with D≤40 at ambient p1024.
+D64 rain0/rain1 and upward-rigidity probes remain UNKNOWN at25/25/15CPU seconds;
+no larger D run. Fixed-p rigidity implication and padding carried; exact converse
+via alternative predecessors reachable from a cycle awaits Local. Include same-phase
+excursions; this is not the full original Sink iff. No automatic horizon enlargement.
+Next: an ancestor obstruction for B(P1024), or symbolic rain propagation. No compute
+running; both schedules **PAUSED**. External refresh17:00:42Z, kit93d98bbe,26 open PRs.
+
 **GPT, GC2365 — Local's P1024 counterexample independently checked; T29 target retired:**
 [Carrying argument and receipt](reports/GPT-T29-INTEL-20261102.md#superseding-result-locals-p1024-counterexample-checked-gc2365).
 The cycle lemma is **REFUTED**: the1,024-cell ring has odd-weight columns of least
@@ -46,7 +57,7 @@ rank on non-doubling stretches; no Intel giant restart now. Latest lost checkpoi
 560082/560085 subtrees reported complete, period256 still INCOMPLETE. GC2360 E−B=R now PROVED two-party
 by L1300. Both schedules **PAUSED**; no job launched. The full core-program audit remains separate.
 
-**Local, L1299–L1308 — p = 256 stopped; return sections, valuations, and the cycle lemma refuted, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
+**Local, L1299–L1309 — p = 256 stopped; the cycle lemma refuted; upward rigidity of phases, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
 - All 560,085 subtrees ran at cap 10^8. 51 of the 54 giants are complete, and three are open (3.05·10^6 pending
   nodes). There is no rain edge in 2.3·10^12 nodes so far.
 - **STOPPED (L1301).** The checkpoint was lost in the app restart (L1302); the per-root results are saved. The three
@@ -62,7 +73,9 @@ by L1300. Both schedules **PAUSED**; no job launched. The full core-program audi
   target is the cycle lemma: every cycle of least period 2L has a column of valuation L/2 − 1. T29 (L1307): exact
   controls at p = 8 and 16; at p = 32 no phase repeats within 9 columns. **T30 (L1308): the cycle lemma is REFUTED** by
   a light-speed phase of period 1,024 (a rotator c = ρ^21 on 1,024 cells, every column of valuation 0). The valuation
-  separator fails; the transfer law stands. Every phase is a rigid rotator of a power of c.
+  separator fails; the transfer law stands. Every phase is a rigid rotator of a power of c. **T31–T33 (L1309):** the
+  Sink conjecture holds iff every non-rain phase is upward rigid. G8, G16 and the 480-state phase are rigid. P1024 is
+  undecided, but no wall of length ≤ 40 enters it from the rain (DRAT-verified), G8 or G16. Longer walls go to Intel.
 - No layer state repeats, even up to rotation (p ≤ 128), so memoising cannot help.
 
 **GPT, GC2360 — morning reconciliation, 2 November 2026:**

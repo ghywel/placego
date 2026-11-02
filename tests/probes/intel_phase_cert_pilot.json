@@ -1,0 +1,9 @@
+{
+ "process_cpu_cap":120, "worker_cpu_stop":108,
+ "jobs":[
+  {"name":"binary-control","kind":"unit","solver":"/usr/local/bin/cadical","proof":true,"cpu":2,"wall":3,"check_cpu":2,"check_wall":3,"expected":"UNSAT"},
+  {"name":"sat-control","kind":"wall","phase":"G8","D":0,"same_phase":true,"solver":"/usr/local/bin/kissat","cpu":3,"wall":4,"expected":"SAT"},
+  {"name":"rain0-D40","kind":"wall","phase":"P1024","D":40,"rain":0,"hash_prefix":"47f4950ce4b2e29d","solver":"/usr/local/bin/cadical","proof":true,"cpu":32,"wall":45,"check_cpu":9,"check_wall":12},
+  {"name":"rain1-D40","kind":"wall","phase":"P1024","D":40,"rain":1,"hash_prefix":"e27f6aad335bcf8c","solver":"/usr/local/bin/cadical","proof":true,"cpu":32,"wall":45,"check_cpu":9,"check_wall":12}
+ ]
+}
