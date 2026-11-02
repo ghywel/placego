@@ -1,0 +1,9 @@
+{
+  "aggregate_cpu_ceiling": 120,
+  "stage_wall": 130,
+  "jobs": [
+    {"name":"control-pos8", "mode":"pos", "p":8, "m":1, "s":2, "solver":"/usr/local/bin/kissat", "cpu":4, "wall":4, "expected":"SAT"},
+    {"name":"control-neg8", "mode":"neg", "p":8, "m":1, "s":2, "solver":"/usr/local/bin/cadical", "cpu":4, "wall":4, "expected":"UNSAT", "proof":true},
+    {"name":"target-neg32", "mode":"neg", "p":32, "m":30, "s":14, "solver":"/usr/local/bin/kissat", "cpu":90, "wall":90}
+  ]
+}
