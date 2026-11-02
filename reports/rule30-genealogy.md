@@ -4418,3 +4418,36 @@ Predictions:
     refuting the Sink conjecture, though not the light-speed recurrence conjecture.
 - Caps: 600 s per instance, nice 10, `run_capped` with CPU 3,000 s and RSS 4 GiB.
 
+**T33 results, second and third runs** ([output](../tests/probes/rain_to_phase.out)).
+- **P33b NOT DECIDED.** Rain above, P1024 below, at D = 64: both rain phases timed out at 600 s. The owner chose to stop
+  the run there and to put the source phases first, since longer D would also have timed out. Walls longer than 40
+  are handed to the Intel host.
+- **P33c HELD at D = 40** (the plan revised by the owner's choice; D = 64 and 256 not run). Walls into P1024 from all 8
+  lifted G8 states and all 128 lifted G16 states are UNSAT, with no timeout, in 237 s. Padding with the source phase
+  above makes this monotone too, so **no wall of length ≤ 40 leads into P1024 from G8 or G16.**
+- **Certificates.** The two rain instances at D = 40 have CaDiCaL DRAT proofs (8.6 MB and 10.1 MB). `drat-trim` reports
+  VERIFIED for both, in 0.6 s and 0.8 s. CNF SHA-256 prefixes are 47f4950ce4b2e29d and e27f6aad335bcf8c. The `cake_lpr`
+  LRAT check is requested from GPT, on the Intel host where it is built.
+- **Propagation.** At D = 10 Kissat refutes the rain-to-P1024 instance with no conflict and no decision: unit
+  propagation from the two fixed ends alone. At D = 40 it needs about 20,000 conflicts. Part of the reason is
+  elementary: from the defect, column periods at most double per column, so least period 1,024 needs at least 9
+  doublings.
+
+### 37.5 What T31–T33 teach
+
+1. **The Sink conjecture is a property of each phase on its own.** "Every wall ends in the rain" holds iff every
+   non-rain phase is upward rigid (§37.1). The light-speed recurrence conjecture follows from it together with "no
+   excursion from the rain returns to the rain".
+   - Upward rigidity has no reachability in it. It is checked phase by phase with local constraints.
+   - G8, G16 and the 480-state phase are upward rigid, at depths up to 4, 31 and 67.
+2. **P1024 is different.** It is a rigid corridor downward, with no exits at its own period. Upward it is loose: there
+   are deviating histories at least 32 columns long, and their difference from the phase spreads by about 15 to 20
+   bits per column.
+   - Yet no wall of length ≤ 40 reaches it from the rain (DRAT-verified), from G8 or from G16.
+   - So its long upward histories either die beyond depth 32, which makes it rigid at a larger depth, or come from
+     somewhere not yet tested.
+3. **The open questions are now sharp and finite at each length.** Is P1024 upward rigid, and at what depth? Is there
+   any wall into it from the rain longer than 40? Both are Intel-scale SAT questions.
+4. **A local question for a hand proof:** why do short walls from the rain fail by propagation alone? A hand version
+   of that propagation would bound the wall length needed to reach any odd-weight rigid corridor.
+

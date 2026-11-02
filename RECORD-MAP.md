@@ -2385,6 +2385,10 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - L1308 (Local, 2 November 2026): [T30, every phase is a rigid rotator; the cycle lemma refuted](reports/rule30-genealogy.md#35-why-phases-are-long-every-phase-is-a-rigid-rotator-t30-l1308).
   A phase of least period 1,024 (c = ρ^21 on 1,024 cells, all columns of valuation 0). Search aliases: rotators_g,
   phase1024, P1024, shift register, rigid rotator, cycle lemma refuted.
+- L1309 (Local, 2 November 2026): [T31–T33, upward rigidity of phases](reports/rule30-genealogy.md#37-upward-rigidity-of-phases-t32-l1309).
+  The Sink conjecture holds iff every non-rain phase is upward rigid. G8, G16 and 480 are rigid; P1024 is undecided; no
+  wall of length ≤ 40 enters P1024 from the rain (DRAT), G8 or G16. Search aliases: upward rigidity, upward_rigid,
+  rain_to_phase, rotators_census, Sink conjecture, two-point SAT.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 

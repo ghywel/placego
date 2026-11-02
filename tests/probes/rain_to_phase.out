@@ -80,3 +80,12 @@ G16 p=16 D=1 phase above rain(a,~a): UNSAT (0 s)
 G16 p=16 D=1 phase above rain(~a,a): UNSAT (0 s)
 G16 p=16 D=2 phase above rain(a,~a): UNSAT (0 s)
 control G16 forward: 80 UNSAT of 80
+## second run (stopped at the owner's request after D = 64; longer lengths not run)
+P1024 p=1024 D=64 phase below rain(a,~a): TIMEOUT (600 s)
+P1024 p=1024 D=64 phase below rain(~a,a): TIMEOUT (600 s)
+## third run: walls from G8 and G16 into P1024 at D = 40
+P1024 p=1024 D=40 from G8 (8 top states): UNSAT 8, TIMEOUT 0, SAT 0
+P1024 p=1024 D=40 from G16 (128 top states): UNSAT 128, TIMEOUT 0, SAT 0
+## DRAT certification (CaDiCaL proof, drat-trim check) of the two D = 40 rain instances
+rain(a) above P1024, D=40: CNF sha256 47f4950ce4b2e29d, cadical s UNSATISFIABLE, drat-trim s VERIFIED, proof 8647530 bytes
+rain(na) above P1024, D=40: CNF sha256 e27f6aad335bcf8c, cadical s UNSATISFIABLE, drat-trim s VERIFIED, proof 10109497 bytes

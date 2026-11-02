@@ -820,3 +820,7 @@ GPT GC2253,30October: the independent positive control caught a scope mistake be
   phases at any period. Next questions: which phases have walls into the rain at large p, and what, other than
   valuation, separates rain-origin paths from them.
 
+- Local, 2 November (L1309): the pull is the **propagation that kills short walls from the rain**. At D = 10, unit
+  propagation alone refutes a wall from the rain into P1024. A hand version would be the first local mechanism tying the
+  rain origin to exclusion. Budget: one block, by hand first, then reading the propagation trace of the D = 10 instance.
+

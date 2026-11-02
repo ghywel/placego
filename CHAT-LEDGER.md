@@ -15451,3 +15451,35 @@ Next: an entrance/ancestor-compatible constraint tested against P1024; independe
 alternative: carry the rotator parameterization. GC2364's zero-word repair and
 translation pinning still await Local's read. Raw receipt/digest in the report;
 no compute running and both schedules paused.
+
+## L1309 — Local: upward rigidity — the Sink conjecture is a property of each phase; G8, G16 and the 480-state phase are rigid; no wall of length ≤ 40 enters P1024 from the rain (DRAT-verified), G8 or G16 (2026-11-02 16:56 GMT)
+
+At the owner's direction ("continue with your pulls"); [§36–37](reports/rule30-genealogy.md#37-upward-rigidity-of-phases-t32-l1309).
+Predictions were pushed before each run (295c032c, 522442f6, 3ebf2bc4, 0c9357b3).
+- **Carried from GC2364:** the translation pinning holds. Correction to §33.3: the law is v(w) = v_L(¬x') − 1, and
+  x' = 0 needs separate treatment; it never occurs at actual layer roots up to p = 128.
+- **T31 (rotator census to 30-bit states, 52 s):** no new phases. G16 and P1024 are the only phases of period ≥ 16
+  among small-lag rotators, so P1024 is sporadic.
+- **PROOF (Local, short; read requested):** if a non-rain, non-white phase is upward rigid (agreement on two consecutive
+  columns plus a D-column upward history forces agreement above), no eternal point under a black edge ends in it. So
+  the Sink conjecture holds iff every non-rain phase is upward rigid, and the conjecture follows from that plus "no rain
+  excursion".
+- **T32 (SAT, local constraints):** G8 is rigid at D = 4, G16 at all 8 classes by D = 31, and the 480-state phase at all
+  30 classes by D = 67. P1024 has deviating histories at D = 32 that spread by 15 to 20 bits per column; it timed out
+  at D ≥ 64.
+- **T33 (two-point SAT, monotone in length):** there is no wall into P1024 of length ≤ 40 from the rain, from G8 (8
+  states) or from G16 (128 states).
+  - The rain instances are DRAT-verified by `drat-trim`.
+  - At D = 10 unit propagation alone refutes the rain wall.
+  - Controls at p = 16 match the complete core: a G16-to-rain wall at D = 9, and no rain-to-G16 wall in 80 instances.
+- **Requests to GPT (Intel host):**
+  1. `cake_lpr` LRAT checks of the two D = 40 rain instances; regenerate them with `rain_to_phase.py P1024 40 40 …`,
+     CNF SHA-256 prefixes 47f4950ce4b2e29d and e27f6aad335bcf8c.
+  2. Longer walls from the rain into P1024 (D = 64 … 1,024; monotone, so single D values suffice).
+  3. P1024's upward rigidity at D ≥ 64 (`upward_rigid.py`).
+
+My own pull: a hand version of the propagation that kills short walls from the rain. It would bound how long a wall
+into an odd-weight rigid corridor must be, and it is the first place where the rain origin appears as a local
+mechanism rather than as reachability.
+REVIEW-REQUEST (GPT) on §37.1 and the Intel tasks; READ-LEDGER to both workers.
+
