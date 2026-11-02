@@ -5315,3 +5315,58 @@ Record searched: `record_find.py "late drawdown" "own wake" "capture delay"` (no
 the portal or the open kit PRs); `drawdown` (T35 §40, T36 §41, T38 §43, GC2378's hovering caveat); `front retreat`
 (CL673's G16 odometer retreat; the kit PR's retreat-after-tick-1 explanation, which is about the centre column, not
 this).
+
+### 46.2 Results, part 1 ([`own_wake_fuel.py`](../tests/probes/own_wake_fuel.py), [output](../tests/probes/own_wake_fuel.out); `front_closure.py --all-theta`, [output](../tests/probes/front_closure.out), last sections)
+
+Each phase took about 4 seconds on the M5, 1,000 runs per phase.
+
+| | K = 20 | 40 | 80 | 160 | 320 |
+|---|---|---|---|---|---|
+| P1024, late drawdown max at c = 2 / c = 3 | 10 / 10 | 10 / 7 | 10 / 7 | 7 / 1 | 1 / 1 |
+| P1024, captured before passing 3K (of 200) | 38 | 88 | 167 | 200 | 200 |
+| P1024, delay after passing 3K: median / max | 55 / 201 | 47 / 210 | 40 / 152 | — | — |
+| 480, late drawdown max at c = 2 / c = 3 | 6 / 6 | 6 / 5 | 6 / 5 | 6 / 5 | 3 / 0 |
+| 480, captured before passing 3K (of 200) | 15 | 58 | 131 | 197 | 200 |
+| 480, delay after passing 3K: median / max | 71 / 454 | 56 / 405 | 15 / 197 | 82 / 113 | — |
+
+- **F1 and F2 HELD.** The late drawdown is bounded, and it falls with K rather than growing: at K ≥ 160 the only late
+  fall left in P1024 is the 1 that S_E itself allows.
+- **F3 HELD, with its framing wrong.** No run takes more than 454 ticks after passing 3K. But for long prefixes the
+  front is captured before it reaches 3K at all: all 200 runs for P1024 at K ≥ 160 and for 480 at K = 320. So K is not
+  the scale of capture.
+- **F4 HELD (the control).** Over all 2,000 runs, no tick after capture lies outside S_E. The fall below the running
+  maximum after capture is at most 1 for P1024 and 0 for 480. These are exactly the graph constants that
+  `front_closure.py` computes for S_E^all: 1, and 0 since 480's advances are only 0 or 2.
+- **F5 HELD, including the 40% part.** For the 480-state phase, all 960 alignment classes have the same 288 clean
+  states.
+  - Their closure is the 416-state S_E of the base alignment: FAIL-free, every 2-path advancing, and no fall at all.
+  - Digests of the lines: S_E^all `571a1847…5016`, U `0ae53342…f96c`.
+  - So both periodic-wake phases lock their clean front to a single orbit whatever the alignment.
+  - The P1024 rerun reproduces L1319's files byte for byte.
+- **Consequence (an exact statement about samples, conditional on the COMPUTED graph data).** Each of the 2,000 sampled
+  rows, 1,000 per phase, has a front that advances for ever.
+- **Not shown.** This is capture for sampled rows only. A prefix built to carry fuel may behave differently: T38's
+  prepared regions have drawdowns growing with r. The hovering case of §46.1 is untouched.
+
+### 46.3 Part 2, predictions written before the run: is capture timed by the front's own clock?
+
+The same runs with the same seed. The measurement is extended (no new random draws, so part 1's lines must recur
+exactly):
+- the capture tick counted from t = 0;
+- R − K at capture;
+- the early drawdown, the largest fall below the running maximum before capture.
+
+**Predictions.**
+- **F6.** The capture tick from t = 0 is bounded independently of K: medians within a factor of 2 across K = 20 .. 320,
+  and a maximum ≤ 600, in both phases. Lean 60%.
+- **F7.** At capture, R − K is bounded independently of K, at most 600. Capture then happens within a bounded distance
+  after the front leaves the prefix, so the material behind it at capture is still mostly the prefix's own. Lean 55%.
+- **F8.** The early drawdown is bounded independently of K for random prefixes, at most 25. Lean 50%. T38's prepared
+  regions show that an adversarial prefix can do more.
+- **Counterfactual.** A capture tick or an early drawdown growing with K would mean the prefix's chaos delays capture in
+  proportion to its size. That chaos spreads deeper at speed 2, faster than either front (17/13 and 5/3), so it can
+  reach the front.
+- **What it teaches if F6–F8 hold.** For typical prefixes, capture is decided by the front's first few hundred ticks in
+  the clean tail. The prefix's chaos never catches up with the front, even though its light cone does: that is
+  decoupling (T40, T41) at the scale of the whole prefix. A proof of capture would then need only the front's local
+  entry into S_E plus a bound on what the prefix can do to it, not the whole of the prefix's evolution.
