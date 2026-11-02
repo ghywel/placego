@@ -5484,3 +5484,46 @@ successor function of §44, independent of GPT's literal reconstruction):
     cells at the gateway's phase?
   - T43 says that typical rows do so within ~300 (P1024) or ~500 (480) ticks of leaving the prefix, whatever the prefix
     length.
+
+## 48. Is capture decided by the bottom of the prefix? (T44, L1324)
+
+### 48.1 Setting and predictions, written before the run (`capture_locality.py`)
+
+**Question.** T43 found that capture times don't depend on the prefix length. Is that because only the bottom L cells
+of the prefix matter? Take a base row A and a variant B that keeps A's bottom L cells and redraws the upper K − L.
+- **The control.** GC2390's cone guard (carried in L1323) makes some pairs agree automatically. If b + 2t ≤ R_A(t) − 9
+  for every t ≤ T_A, with b = K − L − 1, the front states agree through A's capture tick T_A.
+- **The informative pairs** are those with L < L*, where L* = K + 8 + max over t ≤ T_A of (2t − R_A(t)). For them the
+  redrawn cells can reach the front's window before capture. Whether the front then still behaves identically is
+  dynamical shielding: the front ignoring information that has reached it.
+
+**Setting.** P1024 and 480, K = 80 and 160, 100 base rows per K and phase, 4 variants per (base row, L), with
+L ∈ {4, 8, 12, 16, 24, 32, 48, 64, 96, 128}, L < K, and Random(44).
+- Capture is the first S_E state at R ≥ 12.
+- After capture every tick is checked: an alarm below depth 10, an alarm outside S_E, and the minimum depth recorded
+  (GC2390's coverage fix).
+- Recorded for each informative pair:
+  - whether the front history is identical through T_A;
+  - whether the capture tick is the same;
+  - the lag from the cone's arrival at the window to the first difference;
+  - T_B − T_A.
+
+**Predictions.**
+- **H1 (control, certain if the code is right).** Every protected pair is identical through T_A, and no informative pair
+  differs before the cone arrives. Any failure is a bug.
+- **H2.** L* is typically 40–80: P1024 median near 8 + 0.69 · T_A ≈ 60, 480 near 8 + 0.33 · T_A ≈ 40, with the
+  per-run cone. Lean 55%.
+- **H3 (shielding).** Among informative pairs, the share with the same capture tick rises with L and reaches ≥ 90% by
+  L = 24 in both phases. Lean 50%.
+- **H4.** When the front history does differ, the first difference comes well after the cone's arrival (median lag ≥ 10
+  ticks): the front ignores most of what reaches its window. Lean 45%.
+- **H5 (coverage).** No post-capture alarm, and the minimum post-capture depth is ≥ 10 in every captured run. Lean 95%.
+- **Counterfactual.** If the same-capture share stays low even at L just below L*, and differences appear as soon as
+  the cone arrives, then capture is not front-local beyond the light cone. A certificate would have to carry the whole
+  cone's history, and GPT's compatibility condition would need the full prefix, not a short window.
+- **What it teaches if H3–H4 hold.** The history that a capture certificate must remember is short (L cells at the
+  start, plus whatever the front ignores). That sizes GPT's generated-history condition.
+
+Record searched: GC2390's guard (the cone lemma); T40/T41 decoupling (single flips behind a clean front: none reach it
+in 480, gaps ≤ 7 in P1024); T43 (§46). `record_find.py locality "bottom L"` finds only these. Sampled pairs say nothing
+about a uniform L for every prefix (GC2390).
