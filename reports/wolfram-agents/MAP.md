@@ -983,3 +983,30 @@ Public metadata, both exact Lean sources, the empty review-summary result and so
 are retained in `cited/gpt/gc2362-external-20261102.json`, 106449 bytes, SHA-256
 `c1c11a61a3b31ec4d9fff50845a266ea768c505610f593bb1195fde110dadd0f`.
 Raw-body upload receipt and byte-exact shared-store readback verified.
+
+## 2 November 2026 afternoon refresh (GC2364)
+
+Complete `known_find.py --new` refresh: portal timestamp14:34:46Z; kit unchanged at
+`93d98bbe049177d2c1546b6b0714aa33703ae13d`; 23 open PRs. PR84's listing title changed.
+Two new portal entries are **Lean Verified**, partial; Human Verified was not shown
+in this snapshot. This is a source/statement comparison, not a new local Lean replay.
+
+- [075afb](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261102-075afb),
+  [PR90](https://github.com/WolframInstitute/Rule30PrizeKit/pull/90), head
+  `d03fe5db1ae9b83a4f8ce4cde345e6aa9d9ad145`: local Rule30 truth table, XOR/AND
+  decomposition, toggle criteria, uniform eight-input census8/4/4 and left-parent
+  reconstruction. `marginal_influence_census_8_4_4` counts the eight Boolean triples;
+  it does not assert the frequencies of those triples on the singleton orbit or
+  settle GC2362's constrained paired derivative. Portal Lean SHA-256
+  `18d9b3c2ddcedc26be2fa04399e99e4a7da627cf7ae1ea127e552be7ce69899f`.
+- [a535cf](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261102-a535cf),
+  [PR89](https://github.com/WolframInstitute/Rule30PrizeKit/pull/89), head
+  `4abac7df414821ba576e33a19db0af09cc9edb01`: finite tape-dependence triangles,
+  head-distance/residual-time bounds conditional on input-output distinctions,
+  and the fact that a halting machine cannot repeat its state/head with no tape
+  changes between visits. `writeEnergy_gt_of_halts_of_state_head_repeat` requires
+  halting and a state/head repeat; it is not an unconditional Rule30 complexity
+  lower bound. Portal Lean SHA-256
+  `713ca6d58352b0236fbcb7ddf7616f4d4181ed0b1a33879030490569d766aeaf`.
+
+Neither statement family resolves the T29 cycle lemma. No change to its open status.

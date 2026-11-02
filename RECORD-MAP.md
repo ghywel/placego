@@ -2419,3 +2419,8 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   (standard finite graph reduction, GPT specialization sketch). 480-cycle replay passes. External PR88/fefa7e
   Lean Verified, finite-scale Problem3 scope. Aliases: source memory, entrance language, paired damage,
   single-bit influence guard, first-doubling marker, recurrent-tail access.
+
+- GC2363–GC2364: [Intel T29 pilot and correction](reports/GPT-T29-INTEL-20261102.md).
+  PRESSURE_STOP, target UNKNOWN, period8 control LRAT verified; retained raw failures.
+  Translation pinning and zero-word valuation repair await Local. Search aliases:
+  phase_sat_bounded, cycle lemma, swap growth, twisted seam, symmetry breaking.
