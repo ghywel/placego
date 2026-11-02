@@ -4758,3 +4758,20 @@ Predictions:
   prefix depth, every black-edge front has bounded drawdown. That lemma, with a stall bound, gives the exclusion of
   G16 at every period.
 
+**Results of (a) and (b)** ([`edge_fuel.py`](../tests/probes/edge_fuel.py), [output](../tests/probes/edge_fuel.out); 56 s).
+- **P36a HELD.** Clean starts at all 128 alignment classes over 20,000 ticks have speed 1.191 to 1.223, a strikingly
+  uniform value. The largest drawdown is 10 and the longest stall 18.
+- **P36b half held.**
+  - The late drawdown stays at 11, 14, 13 and 13 for K = 20, 40, 80 and 160, so bounded and independent of K.
+  - The early drawdown does not grow with K (20, 7, 7, 13): random prefixes carry almost no fuel, and T35's long
+    retreats need prepared regions. "Early drawdown grows with K" is REFUTED for random prefixes.
+  - All 1,200 runs passed depth 2K. The slowest run averaged 0.98 cells per tick.
+
+**P36c, written before the exhaustive run.** Under the black edge, take all 2^K prefixes for K = 8, 12 and 16 at all 128
+alignment classes, for 6K + 60 ticks (`edge_fuel_exhaustive.py`).
+- The largest total drawdown is ≤ K + 10, the fuel bound under the edge.
+- The largest late drawdown (after the front first passes depth 2K) is ≤ 14, the same as for random prefixes.
+- Lean 60%.
+- Counterfactual: a late drawdown that grows with K. Prepared prefixes would then keep fuel after the front passes,
+  and the edge lemma would need a dynamic fuel account.
+
