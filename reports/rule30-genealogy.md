@@ -4968,3 +4968,63 @@ its deepest point, and whether it reaches the front.
 4. **G16 needs a different idea.** Its front is driven by the whole wake: the Collatz-shaped case of Cloud's dichotomy,
    now seen as "no decoupling".
 
+
+## 44. The boundary layer: decoupling gap, riding particles and linearity (T41, L1316)
+
+### 44.1 The algebra behind the test
+
+The edge map is quadratic: F(x)_n = x_n ⊕ x_(n−1) ⊕ x_(n−2) ⊕ x_(n−1)x_(n−2). A disturbance δ of a base run X therefore
+evolves by
+
+δ_n(t+1) = δ_n ⊕ δ_(n−1)·¬X_(n−2) ⊕ δ_(n−2)·¬X_(n−1) ⊕ δ_(n−1)δ_(n−2),
+
+a linear part with coefficients read from the base run (the tangent map), plus one quadratic term. Two consequences:
+- **The deepest disturbed cell m obeys the mask lemma** (Cloud's P-K2, CL679): δ_(m+2)(t+1) = ¬X_(m+1)(t), so m
+  advances by 2 exactly when the base cell ahead is white. The main front R is the same kind of object: it is the
+  deepest cell of the disturbance D = X ⊕ E of the phase E, so R advances by 2 exactly when E_(R+1) = 0.
+- **Two disturbances superpose exactly until their supports touch.** The second derivative of F is
+  a_(n−1)b_(n−2) ⊕ a_(n−2)b_(n−1), so the interaction I = Δ_AB ⊕ Δ_A ⊕ Δ_B of two flips A and B is born only where
+  the two responses are adjacent. This is G12.2's four-case test (the ab coefficient), applied to the layer.
+- A disturbance changes the main front exactly when its deepest cell reaches the front (m ≥ R); before that,
+  X ⊕ δ ⊕ E has the same deepest 1 as D.
+
+So the questions of §43.6 become questions about damage fronts racing a front: (a) asks which disturbances never
+catch R, and the "linear layer" asks whether the interaction of two riding disturbances is itself left behind.
+
+### 44.2 Predictions, written before the run (`layer_linear.py`)
+
+P1024 (wake period 208, advance 272) and the 480-state phase (288, 480), clean starts at one random alignment each.
+Flips are made at eight comoving phases t0 = 5·period + j·period/8 (j = 0..7), at every gap g = 1..400 behind the front.
+Each run lasts ten wake periods after the flip.
+- **P41a (decoupling reaches down to a small gap).** For both phases, the gaps whose single flip ever changes the main
+  front form a short initial set, all g ≤ 6; every flip at g ≥ 7 rides or falls behind. Lean 50%.
+  - Counterfactual: flips at gaps of 20 to 200 sometimes change the front. Then the layer drives the front, the riding
+    of T40 was sampling luck, and (a)'s L is the layer depth.
+- **P41b (riding disturbances are a finite catalogue of particles).** Every flip still within 400 of the front at the
+  end has an eventually periodic deep end. In the comoving frame, (the gap R − m, the 64 disturbance bits above m)
+  recurs after one or two wake periods. At most 12 distinct riding gaps occur per phase. Lean 50%.
+  - Counterfactual: deep ends that drift slowly, or aperiodic deep-end patterns; then "neutral modes" are not particles
+    and (b) has no finite catalogue.
+- **P41c (the layer is linear where it matters).** For 200 random pairs of riding flips (j = 0), the pair's run never
+  changes the front. The interaction I is either zero or has its deepest cell at least as far behind the front as the
+  deeper of the two single responses. Lean 45%.
+  - Counterfactual: a pair of individually harmless flips changes the front, or its interaction rides closer to the
+    front than either flip. The layer is then nonlinear exactly where (b) and (c) need it linear.
+- **P41d (the tangent map is not enough).** For single flips, the purely linear tangent evolution (the quadratic term
+  dropped) puts its deepest cell at a different place from the true disturbance within one wake period, for most
+  gaps. Lean 75%. By §44.1, the two deep-end rules differ whenever δ_(m−1) = 1 and the cell ahead is black.
+- **P41e (T39's missing captures are riding particles).** Rerun T39 (`wake_attractor.py`, the same 200 prefixes at
+  K = 40 and 80) with the recurrence window cut from 256 cells to 32. Then at least 190 of 200 runs per K show the
+  clean-start recurrence (208, 272), or a multiple of it. Lean 65%.
+  - Counterfactual: still well under half. Then the front itself has other near-front orbits, and the two-stage shape
+    (fuel, then capture) fails near the front, not only in the layer.
+
+**What it would teach.** If P41a, P41c and P41e hold, then:
+- the front's future is a function of a window of a few cells, the phase ahead, and the fuel still unspent;
+- the layer's particles are bystanders;
+- (b) and (c) shrink from windows of width 100 to 250 to a small window plus the fuel question.
+
+If P41a fails, the layer is genuinely coupled, and the linear-algebra route (P41c) becomes the main hope.
+Record searched: record and kit term by term (superposition, damage front, boundary layer, neutral, linearis): G12.2
+(the four-case superposition test, at a hole), GC505 and Cloud's CL679 (damage-front bias and the mask lemma); no kit,
+portal or open-PR hit for a boundary layer or a front-decoupling theorem (kit main @c42f6e51).
