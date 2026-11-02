@@ -4302,3 +4302,65 @@ leave it at even-weight columns).
 - Counterfactual to P31a: no new phase up to 30-bit states. Small-lag rotators would then be exhausted at G8, G16 and
   P1024, which would make P1024 look sporadic.
 
+### 36.3 T31 results ([`rotators_census.c`](../tests/probes/rotators_census.c), [`rotators_census.py`](../tests/probes/rotators_census.py), [output](../tests/probes/rotators_census.out); 52 s under `run_capped`)
+
+- **Coverage:** forward registers for g = 1, 2, 4 up to 30-bit states, and backward registers up to 28-bit states.
+- **P31a REFUTED.** The only rings with P ≥ 16 are G16 (as a rotator of c² at lag 16) and P1024 (c at lag 21). The
+  registers have very few cycles, 7 to 50 over as many as 2^30 states, and power-of-two rotation orders are rare.
+  Among small-lag rotators, P1024 is sporadic.
+- **P31b HELD, trivially.** P1024 is the only single-column phase found, and it is a rigid corridor.
+- **P31c: no data.**
+- **Scope note.** m = gcd(r, M) is the twisted period only for the smallest g with c^g a rotation. For G16 found as a
+  rotator of c² it reports 16; its true twisted period is 8, from c = ρ^72.
+- **Carried from GC2364 (L1309):**
+  - Translation pinning is valid. A depth shift moves a least-period-p column to index 0, a time shift then gives
+    C_0(0) = 0 and C_0(L) = 1, and both moves preserve (m, s) and the queries.
+  - **Correction to §33.3:** the law is v(w) = v_L(¬x') − 1. It equals v_L(x') − 1 only for x' ≠ 0, and the edge case
+    x' = 0 does need separate treatment (at p = 8, x = 0 gives a child of valuation 2, not 3). The check over 1,342
+    children would have flagged x' = 0, so that case never occurs at actual layer roots up to p = 128.
+
+## 37. Upward rigidity of phases (T32, L1309)
+
+### 37.1 The reduction (PROOF, Local; short; read requested)
+
+- Call a state (c_(k−1), c_k) of a phase P **upward rigid at depth D** if every configuration that agrees with P on
+  columns k − 1 and k, and extends D columns upward, has column k − 2 equal to P's.
+  - Upward, each column is fixed by a difference: Δc_j = c_(j−2) ∨ c_(j−1). So the constraints are local in time,
+    with no integration.
+- If every state of P is upward rigid at some depth, then any configuration with an infinite upward history that
+  agrees with P on two consecutive columns agrees with P at every depth above them.
+  - Induction: rigidity at the next state up applies, because an infinite history is valid at every finite length.
+- An eternal point of period dividing p under a black edge has an infinite upward history: the front, then white.
+  If it ended in P, it would equal P everywhere above, but the front column is all ones and is not a column of P,
+  unless P is the white or rain phase.
+- **So if a phase P (not the rain, not white) is upward rigid at every state, no eternal point under a black edge
+  ends in P.** If that holds for every such phase of H_p, the conjecture holds at p.
+- For a single-column phase every state is a time-rotation of one, so one test settles it. For the 480-state phase
+  there are 30 classes, for G16 8, and for G8 1.
+- At p = 8 and 16 the complete cores (§29.7) have no wall into any phase but the rain, which is the infinite form of
+  this property. Upward rigidity is a reading of the star's "nothing enters a phase" half.
+
+### 37.2 Predictions, written before the run (T32)
+
+**Encoding** (`upward_rigid.py`): columns U_0 = c_k and U_1 = c_(k−1) are fixed to P's. U_2 … U_(D+1) are unknown
+time-rings, with ΔU_j = U_(j+2) ∨ U_(j+1) for j = 0 … D − 1, and with U_2 ≠ P's column k − 2. UNSAT means the state
+is upward rigid at depth D.
+- Kissat runs at 120 s per instance and 20 minutes in all, at nice 10.
+- D increases until UNSAT, up to D = 16.
+- An UNSAT answer that carries a theorem (P1024) is certified by CaDiCaL LRAT and `cake_lpr` (TOOLS.md).
+
+Record searched:
+- §29.7–29.11 (the cores, walls only into the rain, G16's defect trees);
+- §35–36 (rotators, P1024);
+- the inquisition §2.2 and GC2362's upward control (random fronts are orphans within a few columns);
+- G185 (do not evolve damage alone; here the full configuration is kept).
+
+Predictions:
+- **P32a (controls).** G8 (p = 8) and G16 (p = 16) are upward rigid at every state with D ≤ 8. Lean 80%. The complete
+  cores imply the infinite form, not a bound on D.
+- **P32b.** The 480-state phase is upward rigid at all 30 classes with D ≤ 12. Lean 60%.
+- **P32c.** P1024 is upward rigid with D ≤ 12. Lean 55%. If so, then after certification no eternal point of period
+  dividing 1,024 under a black edge ends in P1024.
+- **Counterfactual.** If some state stays SAT up to D = 16, upward deviations persist. That could be a wall into the
+  phase; its source would then be followed.
+

@@ -1,0 +1,149 @@
+g=1 f r= 3: states 2^3, cycles 3, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 f r= 4: states 2^4, cycles 2, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 f r= 5: states 2^5, cycles 4, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 f r= 6: states 2^6, cycles 2, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 f r= 7: states 2^7, cycles 4, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 f r= 8: states 2^8, cycles 4, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 f r= 9: states 2^9, cycles 4, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 f r=10: states 2^10, cycles 6, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 f r=11: states 2^11, cycles 6, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 f r=12: states 2^12, cycles 8, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 f r=13: states 2^13, cycles 6, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 f r=14: states 2^14, cycles 6, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 f r=15: states 2^15, cycles 12, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 f r=16: states 2^16, cycles 10, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 f r=17: states 2^17, cycles 10, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 f r=18: states 2^18, cycles 8, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 f r=19: states 2^19, cycles 12, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 f r=20: states 2^20, cycles 10, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 f r=21: states 2^21, cycles 14, power-of-two rotation order 3, rings with P>=16 written 1, not evolved 0
+g=1 f r=22: states 2^22, cycles 10, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 f r=23: states 2^23, cycles 14, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 f r=24: states 2^24, cycles 16, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 f r=25: states 2^25, cycles 12, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 f r=26: states 2^26, cycles 14, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 f r=27: states 2^27, cycles 20, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 f r=28: states 2^28, cycles 14, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 f r=29: states 2^29, cycles 16, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 f r=30: states 2^30, cycles 12, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=2 f r= 5: states 2^5, cycles 2, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=2 f r= 6: states 2^6, cycles 6, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=2 f r= 7: states 2^7, cycles 6, power-of-two rotation order 3, rings with P>=16 written 0, not evolved 0
+g=2 f r= 8: states 2^8, cycles 8, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=2 f r= 9: states 2^9, cycles 6, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=2 f r=10: states 2^10, cycles 10, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=2 f r=11: states 2^11, cycles 8, power-of-two rotation order 3, rings with P>=16 written 0, not evolved 0
+g=2 f r=12: states 2^12, cycles 8, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=2 f r=13: states 2^13, cycles 8, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=2 f r=14: states 2^14, cycles 10, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=2 f r=15: states 2^15, cycles 14, power-of-two rotation order 3, rings with P>=16 written 0, not evolved 0
+g=2 f r=16: states 2^16, cycles 14, power-of-two rotation order 3, rings with P>=16 written 1, not evolved 0
+g=2 f r=17: states 2^17, cycles 14, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=2 f r=18: states 2^18, cycles 22, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=2 f r=19: states 2^19, cycles 14, power-of-two rotation order 3, rings with P>=16 written 0, not evolved 0
+g=2 f r=20: states 2^20, cycles 18, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=2 f r=21: states 2^21, cycles 14, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=2 f r=22: states 2^22, cycles 20, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=2 f r=23: states 2^23, cycles 14, power-of-two rotation order 3, rings with P>=16 written 0, not evolved 0
+g=2 f r=24: states 2^24, cycles 18, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=2 f r=25: states 2^25, cycles 22, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=2 f r=26: states 2^26, cycles 26, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=2 f r=27: states 2^27, cycles 24, power-of-two rotation order 3, rings with P>=16 written 0, not evolved 0
+g=2 f r=28: states 2^28, cycles 28, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=2 f r=29: states 2^29, cycles 28, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=2 f r=30: states 2^30, cycles 34, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=4 f r= 9: states 2^9, cycles 4, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=4 f r=10: states 2^10, cycles 10, power-of-two rotation order 4, rings with P>=16 written 0, not evolved 0
+g=4 f r=11: states 2^11, cycles 18, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=4 f r=12: states 2^12, cycles 16, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=4 f r=13: states 2^13, cycles 8, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=4 f r=14: states 2^14, cycles 20, power-of-two rotation order 4, rings with P>=16 written 0, not evolved 0
+g=4 f r=15: states 2^15, cycles 8, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=4 f r=16: states 2^16, cycles 24, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=4 f r=17: states 2^17, cycles 12, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=4 f r=18: states 2^18, cycles 28, power-of-two rotation order 4, rings with P>=16 written 0, not evolved 0
+g=4 f r=19: states 2^19, cycles 20, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=4 f r=20: states 2^20, cycles 22, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=4 f r=21: states 2^21, cycles 18, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=4 f r=22: states 2^22, cycles 30, power-of-two rotation order 4, rings with P>=16 written 0, not evolved 0
+g=4 f r=23: states 2^23, cycles 22, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=4 f r=24: states 2^24, cycles 24, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=4 f r=25: states 2^25, cycles 32, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=4 f r=26: states 2^26, cycles 36, power-of-two rotation order 4, rings with P>=16 written 0, not evolved 0
+g=4 f r=27: states 2^27, cycles 32, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=4 f r=28: states 2^28, cycles 34, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=4 f r=29: states 2^29, cycles 28, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=4 f r=30: states 2^30, cycles 50, power-of-two rotation order 4, rings with P>=16 written 0, not evolved 0
+g=1 b r= 1: states 2^3, cycles 2, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 b r= 2: states 2^4, cycles 2, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 b r= 3: states 2^5, cycles 2, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 b r= 4: states 2^6, cycles 2, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 b r= 5: states 2^7, cycles 3, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 b r= 6: states 2^8, cycles 2, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 b r= 7: states 2^9, cycles 5, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 b r= 8: states 2^10, cycles 2, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 b r= 9: states 2^11, cycles 3, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 b r=10: states 2^12, cycles 3, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 b r=11: states 2^13, cycles 4, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 b r=12: states 2^14, cycles 4, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 b r=13: states 2^15, cycles 6, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 b r=14: states 2^16, cycles 5, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 b r=15: states 2^17, cycles 5, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 b r=16: states 2^18, cycles 4, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 b r=17: states 2^19, cycles 7, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 b r=18: states 2^20, cycles 4, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 b r=19: states 2^21, cycles 7, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 b r=20: states 2^22, cycles 2, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 b r=21: states 2^23, cycles 6, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 b r=22: states 2^24, cycles 11, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 b r=23: states 2^25, cycles 7, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 b r=24: states 2^26, cycles 12, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=1 b r=25: states 2^27, cycles 13, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=1 b r=26: states 2^28, cycles 7, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=2 b r= 1: states 2^5, cycles 3, power-of-two rotation order 3, rings with P>=16 written 0, not evolved 0
+g=2 b r= 2: states 2^6, cycles 3, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=2 b r= 3: states 2^7, cycles 2, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=2 b r= 4: states 2^8, cycles 5, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=2 b r= 5: states 2^9, cycles 4, power-of-two rotation order 3, rings with P>=16 written 0, not evolved 0
+g=2 b r= 6: states 2^10, cycles 2, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=2 b r= 7: states 2^11, cycles 3, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=2 b r= 8: states 2^12, cycles 7, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=2 b r= 9: states 2^13, cycles 6, power-of-two rotation order 3, rings with P>=16 written 0, not evolved 0
+g=2 b r=10: states 2^14, cycles 7, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=2 b r=11: states 2^15, cycles 4, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=2 b r=12: states 2^16, cycles 9, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=2 b r=13: states 2^17, cycles 7, power-of-two rotation order 3, rings with P>=16 written 0, not evolved 0
+g=2 b r=14: states 2^18, cycles 6, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=2 b r=15: states 2^19, cycles 9, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=2 b r=16: states 2^20, cycles 6, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=2 b r=17: states 2^21, cycles 7, power-of-two rotation order 3, rings with P>=16 written 0, not evolved 0
+g=2 b r=18: states 2^22, cycles 4, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=2 b r=19: states 2^23, cycles 10, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=2 b r=20: states 2^24, cycles 11, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=2 b r=21: states 2^25, cycles 14, power-of-two rotation order 3, rings with P>=16 written 0, not evolved 0
+g=2 b r=22: states 2^26, cycles 15, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=2 b r=23: states 2^27, cycles 12, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=2 b r=24: states 2^28, cycles 14, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=4 b r= 1: states 2^9, cycles 2, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=4 b r= 2: states 2^10, cycles 5, power-of-two rotation order 4, rings with P>=16 written 0, not evolved 0
+g=4 b r= 3: states 2^11, cycles 6, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=4 b r= 4: states 2^12, cycles 3, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=4 b r= 5: states 2^13, cycles 2, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=4 b r= 6: states 2^14, cycles 8, power-of-two rotation order 4, rings with P>=16 written 0, not evolved 0
+g=4 b r= 7: states 2^15, cycles 2, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=4 b r= 8: states 2^16, cycles 5, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=4 b r= 9: states 2^17, cycles 5, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=4 b r=10: states 2^18, cycles 11, power-of-two rotation order 4, rings with P>=16 written 0, not evolved 0
+g=4 b r=11: states 2^19, cycles 2, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=4 b r=12: states 2^20, cycles 5, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=4 b r=13: states 2^21, cycles 8, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=4 b r=14: states 2^22, cycles 15, power-of-two rotation order 4, rings with P>=16 written 0, not evolved 0
+g=4 b r=15: states 2^23, cycles 8, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=4 b r=16: states 2^24, cycles 18, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+g=4 b r=17: states 2^25, cycles 8, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=4 b r=18: states 2^26, cycles 18, power-of-two rotation order 4, rings with P>=16 written 0, not evolved 0
+g=4 b r=19: states 2^27, cycles 9, power-of-two rotation order 1, rings with P>=16 written 0, not evolved 0
+g=4 b r=20: states 2^28, cycles 14, power-of-two rotation order 2, rings with P>=16 written 0, not evolved 0
+rings analysed 2; distinct phases (by ring size, period, odd-column count, valuations) 2
+P=   16 ring M=    128  m=gcd(r,M)=   16  odd-weight columns      80 of     128 (has exits)  sampled valuations [0, 3]  column least periods [16]  classes(sampled) 4  checks ok  found as g2f r16
+P= 1024 ring M=   1024  m=gcd(r,M)=    1  odd-weight columns    1024 of    1024 (rigid corridor)  sampled valuations [0]  column least periods [1024]  classes(sampled) 1  checks ok  found as g1f r21
