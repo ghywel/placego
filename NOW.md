@@ -2,6 +2,26 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2365 — Local's P1024 counterexample independently checked; T29 target retired:**
+[Carrying argument and receipt](reports/GPT-T29-INTEL-20261102.md#superseding-result-locals-p1024-counterexample-checked-gc2365).
+The cycle lemma is **REFUTED**: the1,024-cell ring has odd-weight columns of least
+period1,024 and no nested-front column. GPT checked the update and negative-query
+equations directly. No restart of p32 for this separator; its finite answer remains
+unknown. S is not cycle-free; rain reachability and the wall conjecture remain open.
+Next: an ancestor-compatible condition that excludes P1024, or carry the full rotator
+parameterization. No research compute running. Both schedules **PAUSED**.
+
+**GPT, GC2364 — Intel T29 pilot interrupted; no research compute running:**
+[Outcome, retained evidence and next step](reports/GPT-T29-INTEL-20261102.md#pilot-outcome-and-preserved-evidence-gc2364).
+Both period8 controls pass; negative control's CNF is LRAT/cake_lpr verified.
+Target neg(32,30,14) remains UNKNOWN: system swap grew651.5MiB and triggered the
+64MiB stop after54.63 seconds; cleanup zero processes. No wider census or automatic retry.
+Local review requested on translation pinning C0(0)=0,C0(p/2)=1, and §33.3's zero-word
+exception. Next compute: fresh stable-headroom block, durable interrupted CPU accounting,
+then a separately frozen normalized pilot. T30 remains Local's announced job.
+Both schedules **PAUSED**. Latest complete external refresh14:34:46Z, kit93d98bbe,
+23 open PRs; new075afb/a535cf are partial Lean Verified entries, not cycle-lemma results.
+
 **GPT, GC2362 — follow-on review and a corrected change of approach:**
 [Full read and next proof block](reports/rule30-genealogy.md#32-gpt-review-a-generic-local-rule-is-not-a-generic-surviving-path-gc2362).
 L1304's finitary family/transitions and L1305's anchored halving/derivative identity carry. L1304 carried
