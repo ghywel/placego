@@ -4,6 +4,8 @@ Single-process solvers only. Live child CPU + reaped children + driver sampled;
 external TERM/INT and every child receipt are persisted before returning.
 """
 import gc
+import gzip
+import threading
 import hashlib
 import json
 import os
@@ -97,6 +99,31 @@ def literal_check(cols,p,kind,fixed):
         assert all((b(j,t)^b(j,t+1))==(b(j+2,t)|b(j+1,t)) for j in range(len(cols)-2) for t in range(p))
 
 
+def proof_stream(name, reading):
+    """Bounded gzip transport, never an expanded regular proof file."""
+    fifo=OUT/(name+'.pipe')
+    fifo.unlink(missing_ok=True);os.mkfifo(fifo)
+    target=OUT/(name+'.lrat.gz'); receipt={}
+    def transfer():
+        h=hashlib.sha256(); count=0
+        try:
+            source=open(fifo,'rb') if reading else gzip.open(target,'rb')
+            with source:
+                dest=gzip.open(target,'wb',compresslevel=1) if reading else open(fifo,'wb')
+                with dest:
+                    while True:
+                        block=source.read(65536)
+                        if not block:break
+                        count+=len(block)
+                        if count>128*1024*1024:raise RuntimeError('EXPANDED_PROOF_LIMIT')
+                        h.update(block);dest.write(block)
+            receipt.update(bytes=count,sha256=h.hexdigest(),complete=True)
+        except BaseException as e:
+            receipt.update(bytes=count,error=repr(e),complete=False);STOP.append('PROOF_STREAM_FAILURE')
+    th=threading.Thread(target=transfer,daemon=True);th.start()
+    return fifo,th,receipt
+
+
 def main():
     global OUT,PLAN
     OUT=Path(os.environ['CAPPED_OUT']); PLAN=json.loads(Path(sys.argv[1]).read_text())
@@ -127,7 +154,14 @@ def main():
             save(name+'.input.json',dict(job,cnf_sha256=digest,variables=nv,clauses=len(cl)))
             args=[job['solver'],'-q',str(path)]
             if job.get('proof'):args=[job['solver'],'-q','--lrat',str(path),str(OUT/(name+'.lrat'))]
+            if job.get('compressed'):
+                fifo,th,stream=proof_stream(name,True);args[-1]=str(fifo)
             rec=command(name,args,job['cpu'],job['wall'])
+            if job.get('compressed'):
+                th.join(timeout=3);save(name+'-compress.json',stream)
+                if th.is_alive() or not stream.get('complete'):raise RuntimeError('PROOF_STREAM_FAILURE')
+                fifo.unlink()
+
             status='SAT' if rec['returncode']==10 else 'UNSAT' if rec['returncode']==20 else 'UNKNOWN'
             result=dict(job,status=status,cnf_sha256=digest)
             if status=='SAT':
@@ -139,7 +173,14 @@ def main():
                 result.update(columns_hex=list(map(hex,cs)),literal_checked=True,model_checked=True)
             del cl;gc.collect()
             if status=='UNSAT' and job.get('proof'):
-                check=command(name+'-check',['/usr/local/bin/cake_lpr','--CML_HEAP_SIZE=384','--CML_STACK_SIZE=64',str(path),str(OUT/(name+'.lrat'))],job['check_cpu'],job['check_wall'])
+                proofpath=OUT/(name+'.lrat')
+                if job.get('compressed'):proofpath,th,unstream=proof_stream(name,False)
+                check=command(name+'-check',['/usr/local/bin/cake_lpr','--CML_HEAP_SIZE=384','--CML_STACK_SIZE=64',str(path),str(proofpath)],job['check_cpu'],job['check_wall'])
+                if job.get('compressed'):
+                    th.join(timeout=3);save(name+'-decompress.json',unstream)
+                    assert not th.is_alive() and unstream.get('complete') and unstream['sha256']==stream['sha256']
+                    proofpath.unlink()
+
                 result['certificate_verified']=check['returncode']==0 and 's VERIFIED UNSAT' in (OUT/(name+'-check.stdout')).read_text()
                 if not result['certificate_verified']:raise RuntimeError('CERTIFICATE_NOT_VERIFIED')
                 if kind=='unit':

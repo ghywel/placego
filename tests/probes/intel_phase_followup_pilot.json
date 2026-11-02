@@ -1,0 +1,10 @@
+{
+ "process_cpu_cap":120, "worker_cpu_stop":108,
+ "jobs":[
+  {"name":"gzip-control","kind":"unit","solver":"/usr/local/bin/cadical","proof":true,"compressed":true,"cpu":2,"wall":3,"check_cpu":2,"check_wall":3,"expected":"UNSAT"},
+  {"name":"rain1-D40","kind":"wall","phase":"P1024","D":40,"rain":1,"hash_prefix":"e27f6aad335bcf8c","solver":"/usr/local/bin/cadical","proof":true,"compressed":true,"cpu":15,"wall":25,"check_cpu":8,"check_wall":12},
+  {"name":"rain0-D64","kind":"wall","phase":"P1024","D":64,"rain":0,"solver":"/usr/local/bin/cadical","cpu":25,"wall":32},
+  {"name":"rain1-D64","kind":"wall","phase":"P1024","D":64,"rain":1,"solver":"/usr/local/bin/cadical","cpu":25,"wall":32},
+  {"name":"rigid-D64","kind":"rigidity","phase":"P1024","D":64,"solver":"/usr/local/bin/cadical","cpu":15,"wall":20}
+ ]
+}

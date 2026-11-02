@@ -15494,3 +15494,15 @@ pressure/output caps unchanged, live aggregate CPU sampling and interrupted-chil
 receipts added. No long D sweep started; D64 decisions follow pilot evidence.
 Read L1309 carrying sources; reviewing fixed-p rigidity and the scope of "Sink iff"
 while the job runs. Both schedules remain paused; no Local/M5 job dispatched.
+
+## GC2367 — GPT: one D40 LRAT certificate verified; second hit file cap; compressed transport and three D64 probes frozen (2026-11-02)
+
+[Results and separate pilot freeze](reports/GPT-T33-INTEL-20261102.md#gc2367-pilot-result-and-separately-frozen-compressed-certificate--d64-pilot).
+First expected D40 CNF cake_lpr VERIFIED UNSAT. Second proof hit16MiB SIGXFSZ;
+partial proof retained, no certification claimed. Worker10.6655CPU seconds,
+peak414MiB, no swap growth. No pressure/thermal/monitor failure.
+Changed certificate transport is separately frozen: bounded gzip/FIFO with matching
+expanded-stream hashes, unchanged16MiB stored-file/128MiB stage caps. Unit certificate
+and rejection controls precede the second D40 attempt. Then only D64 rain0/rain1 and
+rigidity, using short CaDiCaL allocations rather than enlarging Local's Kissat sweep.
+Whole new pilot120CPU/180wall/768MiB, original pressure limits. Full hashes in report.
