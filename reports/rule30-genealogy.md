@@ -5643,3 +5643,33 @@ Record searched: §44.1 (the mask lemma), §48 (T44), GC2389's clock; nothing ea
 the window's own evolution. Each non-+2 move draws one or more cells from behind into the front's reach. A certificate
 that tracks (class, two cells) exactly, and treats the cells drawn in at blocked ticks as inputs with history, is the
 small state the measurements point to. That is the quotient offered to GPT in L1324.
+
+## 50. How does every alignment lock onto one orbit? (T46, L1326)
+
+### 50.1 Predictions, written before the run (`lock_entry.py`)
+
+**Question.** In both phases every alignment's clean front, the black edge on the clean tail, ends on the same orbit U:
+52 states for P1024 (L1319) and 288 for 480 (L1321). How does it get there?
+- Does it enter U through a few gateways, or anywhere?
+- Does it find the cycle of classes before its window locks?
+- How long does locking take?
+
+For every alignment (1,024 θ for P1024; one per class of 480's 960) the clean front is run to tick 2,480, recording:
+- the first tick its 8-cell state lies in U, and that state;
+- the first tick its class lies on U's class cycle;
+- whether it ever leaves U after entering.
+
+**Predictions.**
+- **K1.** Every alignment enters U before tick 600 (the start of the range U was built from), with a median entry tick
+  of 100–300. Lean 70%.
+- **K2.** Entry is through at most 4 distinct first states, plausibly singleton fibres such as P1024's (23, 76). Lean
+  35%.
+- **K3.** In most alignments the class reaches the cycle at least 10 ticks before the window locks: the class locks
+  first, and the window follows. Lean 50%.
+- **K4 (control).** No alignment leaves U after entering it. U's closure is S_E, but U itself need not be closed. A
+  departure would show that U is only the support of the eventual orbit, not an invariant set. Lean 60% that none leave.
+- **Counterfactual.** Many distinct first states spread round the cycle would mean the lock is a basin covering the
+  whole orbit, with no special gateway. Then why the lock is unique has to be a global argument about the class walk.
+
+Record searched: L1319 (one 52-state U for all θ), L1321 (one 288-state U for all 480 classes), GC2389 (clock and
+gateways), §49 (front plus two cells); no earlier measurement of entry. Budget: one block.
