@@ -5208,3 +5208,16 @@ methods to affine families with explicit labels and a proposed moving-record
 certificate, without a priority claim or an actual P1024 invariant family.
 [Full derivation and scope](reports/GPT-BOUNDARY-LAYER-REVIEW-20261102.md#gc2385--an-exact-test-for-an-affine-layer).
 - **Lowry's ether and ether-wall trap (kit `Rule30Ether`, PR65): known.** The classic ether (7 × 4) and the 109-state wall closed under every right input, with `trap_invariant`. Cloud's CL681 (2 November 2026) found that a black edge inserted into the ether enters the trap at every alignment, giving an exact news speed of zero; the trap itself and `wallOK_true` are Lowry's, replayed here as a check, not reproved.
+
+### GC2389 — finite-graph potentials reused for the P1024 front clock (2 November2026)
+
+Known, reused here: exact edge weights of the form h(v)-h(u) telescope along
+paths; on a finite state set their cumulative contribution stays bounded.
+Cycle-mean methods are already recorded at G8/G194; see
+[Karp's original report](https://digicoll.lib.berkeley.edu/record/138411/files/ERL-m-77-47.pdf).
+[The present application](reports/GPT-CAPTURE-CHECK-20261102.md) checks
+13*advance-17 on every edge of a particular389-state robust front graph. The
+52-phase deterministic projection and one-flip sufficient entry are specific
+certificate facts, not a new general potential theorem. Current kit c42f6e51's
+local-density/product-parity/group-cocycle classifications concern different,
+unrestricted word spaces; exact declaration comparison is in the report.
