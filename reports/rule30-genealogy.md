@@ -5774,3 +5774,33 @@ Record searched: GC2393, GC2395 and their carrying reads (L1327, L1328); T41's s
   of P1024 pairs). The front's path is sensitive to deep cells, but where it ends up, captured, is not. The robust object
   is the entrance into S_E, not the path. That points away from path-level certificates and towards an argument that
   every path is funnelled into S_E. The funnel is the open question.
+
+## 52. Is the funnel into S_E visible in the window automaton? (T48, L1330)
+
+### 52.1 Setting and predictions, written before the run (`funnel_attractor.py`)
+
+**Question.**
+- T44 and T47 show that the front's path depends on deep cells, while its entrance into S_E is robust.
+- Is that robustness already visible to the 8-cell window automaton (§39), with arbitrary content behind the window?
+- The attractor A of S_E answers this. It is the least set of states, outside S_E and with no FAIL branch, whose every
+  successor lies in S_E ∪ A.
+- From a state of A every continuation reaches S_E within rank(v) ticks, whatever lies behind the window. (This is
+  sound while the front stays at depth ≥ 10 + the retreats on the way; the real check below uses R ≥ 12 and records any
+  violation.)
+
+**Setting.**
+- P1024 only, W = 8: the whole automaton, 262,144 states.
+- 480's automaton (3.9 million states) is too heavy for the M5 under the owner's light-use rule.
+- Real paths: 200 random prefixes, K = 80, Random(48), every tick at R ≥ 12 until capture.
+
+**Predictions.**
+- **F1.** A is small: at most 10% of the automaton. Lean 55%. The bad core (84% of the automaton, §45) cannot lie in A.
+- **F2.** Real paths reach A ∪ S_E only a median ≤ 15 ticks before capture: the window abstraction sees the funnel only
+  at its very end. Lean 55%.
+- **F3 (control, a soundness alarm).** Every real path that enters A at a state of rank r reaches S_E within r ticks.
+- **Counterfactual.** If real paths enter A long before capture (median lead ≥ 50 ticks), the window abstraction
+  already explains much of the funnel, and a capture proof could aim at "every path reaches A". If the lead is short,
+  the funnel lives in the history, and GPT's line is the one that can reach it.
+
+Record searched: §45 (bad core, C1), §44.6 (routes C1–C3), GC2389 (gateways); attractor of S_E listed as a pull in
+L1321/INSTINCT; not computed before.
