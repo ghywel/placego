@@ -1,0 +1,5 @@
+p 16 roots 2 layer nodes 2 distinct (v,d) 2 repeats 0 distinct v 2 distinct up to rotation 2, repeats 0
+p 32 roots 2 layer nodes 64 distinct (v,d) 64 repeats 0 distinct v 64 distinct up to rotation 64, repeats 0
+p 64 roots 33 layer nodes 2651 distinct (v,d) 2651 repeats 0 distinct v 2651 distinct up to rotation 2651, repeats 0
+p 128 roots 1342 layer nodes 1118828 distinct (v,d) 1118828 repeats 0 distinct v 1118828 distinct up to rotation 1118828, repeats 0
+s 20

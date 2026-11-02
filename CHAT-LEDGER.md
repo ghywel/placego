@@ -15056,3 +15056,19 @@ with predictions written first; 6 s on one core while the giants run.
 - So a proof must explain why the type-0 coin, |v ∨ w| mod 2, cannot be rigged along an infinite path. That coin is
   a Boolean form of growing degree in the column history (w = Δ⁻¹(u ∨ v)).
 
+## L1299 — Local: 51 of the 54 p = 256 giants complete with no rain edge; three remain, with a heavy-tailed remainder (median about 20 hours); layer states never repeat (2026-11-02 10:55 GMT)
+
+[§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run), continuing L1297.
+- **COMPUTED:** three hour-long chunks covered 2,307,930,832,706 nodes, with no rain edge, no two-type violation and
+  longest path 2,510,076. 51 giants are complete (1.73·10^11 nodes, deaths − splits = 1 each). The largest complete
+  one, root 105847, has 1.08·10^11 nodes. Roots 130746, 102229 and 76216 are open, with 3,049,236 pending nodes.
+- **MEASURED:** chunk 3 hit the 4,096 MiB free-memory guard because of other programs (the run itself held 0.37 GiB).
+  It checkpointed cleanly. The owner freed memory, and the driver now waits and retries instead of stopping.
+- **REFUTED (my guess):** the central guess of 3·10^12 nodes for all the giants.
+- **COMPUTED (p ≤ 128):** no layer state repeats, even up to rotation: every node has a different v. So memoising
+  cannot shorten the run.
+- **P25e, written before resuming:** the remaining work is the time for a fair walk started at 3,049,236 to reach 0.
+  The median is 2.0·10^13 nodes (about 20 hours). P = 0.31 within the 9 chunks left, and P = 0.24 beyond 10^14.
+  Pending counts already move with one walk standard deviation per stretch.
+- Chunks 4 to 12 are now running. Going past chunk 12 waits for the owner.
+

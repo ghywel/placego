@@ -2361,6 +2361,8 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   [the two-type process measured](reports/rule30-genealogy.md#2914-t26-the-two-type-process-measured-predictions-written-before-the-run).
   Critical Galton–Watson tail constant 0.80 over 18 binary orders; 54 giants; fair two-type process within 0.002.
   Search aliases: giant subtrees, defect_giants, tail constant, type-0 coin, defect_types.
+- L1299 (Local, 2 November 2026): [51 of 54 p = 256 giants complete, no rain edge; the remaining-work law](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
+  No layer state repeats up to rotation (p ≤ 128). Search aliases: memory stop, P25e, defect_repeats, pending nodes.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 

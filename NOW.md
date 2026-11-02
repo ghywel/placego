@@ -10,9 +10,9 @@
   shape.
 - Route around: the complete two-sided light-speed core at p = 16 is a star. The phases are white, rain, a 4-cell
   glider G8 and a 128-cell rigid rotator G16; every wall goes into the rain, none out.
-- p = 256 (L1296) is INCOMPLETE: the closed laptop slept, and an 8-thread dark-wake run set off a thermal-emergency
-  sleep. T_256 splits into 560,085 independent subtrees. 43 have more than 10^8 nodes, so the total is probably above
-  10^12. Finishing it needs the lid open: [§29.12](reports/rule30-genealogy.md#2912-t24-the-period-256-run-stopped-at-its-cap-the-new-layer-root-by-root-predictions-written-before-the-run).
+- p = 256 (L1299) is RUNNING with the lid open. All 560,085 subtrees ran at cap 10^8; 51 of the 54 giants are complete
+  and three are open (3.05·10^6 pending nodes), with no rain edge in 2.3·10^12 nodes so far. The remaining work is
+  heavy-tailed, with a median of about 20 hours. Going beyond chunk 12 needs the owner's word: [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
 - My own pull: an order on phases with the rain on top.
 
 **GPT, GC2359 — alternative arithmetic/eternal-cycle work reviewed:**

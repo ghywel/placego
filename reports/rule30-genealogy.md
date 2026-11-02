@@ -3429,6 +3429,51 @@ n nodes.
   - Run under `caffeinate -i`. The lid state and the thermal log are checked between chunks.
   - At most 12 chunks (about 10 hours) without a new word from the owner.
 
+**Chunks 1–3 and a memory stop (COMPUTED and MEASURED; 2 November, 08:14 to 10:35 GMT).**
+- Chunks 1 and 2 each ran their full 10^12-node budget, in 3,624 and 3,689 awake seconds: 3.4·10^7 nodes per
+  second per thread on 8 threads. No thermal or performance warning was logged.
+- Chunk 3 ended after 1,135 s with PRESSURE_STOP: free plus inactive memory fell to 3,791 MiB, below the 4,096 MiB
+  guard. The run itself held 0.37 GiB and swap did not grow; other programs had taken the memory. The stop signal made
+  the program write its checkpoint, so nothing was lost. Chunk 4 was refused at launch (4,056 MiB free), and the
+  driver stopped. The owner then closed some programs, freeing about 6 GiB.
+- After three chunks: 2,307,930,832,706 nodes, no rain edge, no two-type violation, longest path 2,510,076.
+- **51 of the 54 giants are complete**: 172,941,578,899 nodes, and deaths minus splits is 1 for each, as a finite
+  binary tree requires. The largest is root 105847, with 107,710,643,975 nodes and longest path 693,230. Across the
+  51, longest path / √nodes runs from 1.41 to 3.75 (median 2.39).
+- Three are open:
+  - root 130746: 1.21·10^12 nodes so far, 1,254,320 pending;
+  - root 102229: 6.50·10^11 nodes, 737,457 pending;
+  - root 76216: 2.72·10^11 nodes, 1,057,459 pending.
+- P25b so far: the largest giant already exceeds 1.2·10^12, still inside the predicted range. **My central guess of
+  3·10^12 for all the giants failed.** Meeting it would need the 3.05·10^6 pending nodes to finish within 7·10^11
+  more nodes, which has probability 3·10^−4 under the law in P25e below.
+
+**State repeats (COMPUTED, p ≤ 128).** A layer node's subtree depends only on (v, u ∨ v). The layer is also
+equivariant under rotation of the ring: the split test is rotation-invariant, and rotating d rotates the pair
+{w, w̄}. If states recurred, memoising subtrees would shorten the run. They do not recur. At p = 16, 32, 64 and 128,
+every layer node has a different v, even up to rotation: 1,118,828 nodes at p = 128.
+[`defect_repeats.py`](../tests/probes/defect_repeats.py), output
+[`defect_repeats.out`](../tests/probes/defect_repeats.out), 20 s on one core. Memoising cannot help, so the run
+continues as it is.
+
+**P25e, written before the run resumes: the remaining work.** In a depth-first search, the pending nodes are the
+roots of the unexplored subtrees. So the remaining work R is the size of a forest of k = 3,049,236 critical trees.
+Take offspring 0 or 2, each with probability ½ (effective variance 1, which the tail constant 0.80 above confirms).
+Then R is the first time a fair ±1 walk started at k reaches 0, and P(R ≤ t) = erfc(k/√(2t)).
+- The median is 2.0·10^13 nodes, about 20 hours at 10^12 nodes per hour.
+- P(R ≤ 9·10^12, the nine chunks left) = 0.31. P(R ≤ 2.4·10^13, about a day) = 0.53. P(R > 10^14) = 0.24.
+- The pending counts already move like this walk. Root 130746 went from 1,336,130 to 1,698,155 to 1,254,320 pending
+  over 6.6·10^11 and then 1.8·10^11 nodes, steps of about one walk standard deviation (8.1·10^5 and 4.2·10^5).
+- Counterfactual: if these subtrees were subcritical, the run would end much sooner. Finishing within 10^12 more
+  nodes has probability 0.002 under the walk law, so that would count against the critical model in this range.
+  Growth without end is P25a's counterfactual.
+
+**Resumption caps, stated before chunk 4.** The caps are as above, including the 4,096 MiB free-memory guard. The
+driver now handles the guard differently:
+- A refused launch waits 120 s and retries, at most 30 times.
+- A pressure stop, which still writes its checkpoint, waits 120 s before the next chunk.
+- Chunks 4 to 12 resume from checkpoint 3, so the limit of 12 chunks stands. Going beyond it needs the owner's word.
+
 ### 29.14 T26: the two-type process measured (predictions written before the run)
 
 Under the two-type fact (§29.12), the splitting nodes of the H = p/2 layer form a tree:
