@@ -1,0 +1,17 @@
+p = 8: core 46, phase states 11
+   phase of    1 states: Z values [8]
+   phase of    2 states: Z values [0]
+   phase of    4 states: Z values [2]
+   phase of    4 states: Z values [2]
+   walls (paths cycle -> cycle through the wall) 10; with Z rising somewhere 0
+p = 16: core 318, phase states 139
+   phase of    1 states: Z values [16]
+   phase of    2 states: Z values [0]
+   phase of    4 states: Z values [4]
+   phase of    4 states: Z values [4]
+   phase of  128 states: Z values [2, 4, 6]
+   wall with Z rising: Z along it [4, 4, 8, 6, 8, 8, 6, 6, 0, 0, 0]
+   wall with Z rising: Z along it [4, 4, 8, 6, 8, 8, 6, 6, 0, 0, 0]
+   wall with Z rising: Z along it [4, 4, 8, 6, 8, 8, 6, 6, 0, 0, 0]
+   walls (paths cycle -> cycle through the wall) 26; with Z rising somewhere 16
+LIGHTSPEED_ORDER_DONE

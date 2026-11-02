@@ -1,0 +1,60 @@
+states with even OR: 32896
+round 1: core candidates 2546
+round 2: core candidates 432
+round 3: core candidates 254
+round 4: core candidates 210
+round 5: core candidates 158
+round 6: core candidates 102
+round 7: core candidates 86
+round 8: core candidates 70
+round 9: core candidates 62
+round 10: core candidates 54
+round 11: core candidates 46
+round 12: core candidates 46
+core states: 46
+  (u, v) = (00000, 00000) -> w0 notw0
+  (u, v) = (00000, 000ff) -> w0 notw0
+  (u, v) = (00015, 000ea) -> notw0
+  (u, v) = (0002a, 000d5) -> w0 
+  (u, v) = (0002b, 00035) -> w0 
+  (u, v) = (0002b, 000ca) -> w0 notw0
+  (u, v) = (00035, 0002a) -> notw0
+  (u, v) = (00045, 000ba) -> notw0
+  (u, v) = (0004d, 0008a) -> notw0
+  (u, v) = (00051, 000ae) -> notw0
+  (u, v) = (00053, 000a2) -> notw0
+  (u, v) = (00054, 000ab) -> notw0
+  (u, v) = (00055, 000aa) -> notw0
+  (u, v) = (00056, 0006a) -> w0 
+  (u, v) = (00056, 00095) -> w0 notw0
+  (u, v) = (00057, 000aa) -> notw0
+  (u, v) = (00059, 00056) -> w0 notw0
+  (u, v) = (00059, 000a9) -> notw0
+  (u, v) = (0005d, 000aa) -> notw0
+  (u, v) = (00065, 00059) -> w0 notw0
+  (u, v) = (00065, 000a6) -> notw0
+  (u, v) = (0006a, 00054) -> notw0
+  (u, v) = (00075, 000aa) -> notw0
+  (u, v) = (0008a, 00075) -> w0 
+  (u, v) = (00095, 00065) -> w0 notw0
+  (u, v) = (00095, 0009a) -> notw0
+  (u, v) = (0009a, 00015) -> w0 
+  (u, v) = (000a2, 0005d) -> w0 
+  (u, v) = (000a6, 00045) -> w0 
+  (u, v) = (000a8, 00057) -> w0 
+  (u, v) = (000a9, 00051) -> w0 
+  (u, v) = (000aa, 00055) -> w0 
+  (u, v) = (000ab, 00055) -> w0 
+  (u, v) = (000ac, 0002b) -> w0 notw0
+  (u, v) = (000ac, 000d4) -> w0 
+  (u, v) = (000ae, 00055) -> w0 
+  (u, v) = (000b2, 00053) -> w0 
+  (u, v) = (000b2, 000ac) -> w0 notw0
+  (u, v) = (000ba, 00055) -> w0 
+  (u, v) = (000ca, 0004d) -> w0 
+  (u, v) = (000ca, 000b2) -> w0 notw0
+  (u, v) = (000d4, 000a8) -> notw0
+  (u, v) = (000d5, 000aa) -> notw0
+  (u, v) = (000ea, 00055) -> w0 
+  (u, v) = (000ff, 00055) -> w0 
+  (u, v) = (000ff, 000aa) -> notw0

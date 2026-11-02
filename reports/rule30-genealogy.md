@@ -3211,3 +3211,68 @@ Proof.
 "none out" half. The "all into" half is the new observation, the rain absorbing every other light-speed phase. A
 mechanism for either half would probably explain the other: some order on phases in which walls only go up, with the
 rain at the top.
+
+### 29.9 T21: an order on phases? (predictions written before the run)
+
+The rain is the unique light-speed phase in which every cell flips at every step.
+- In a two-sided pattern, let Z(u, v) = |NOT u ∧ NOT v| be the number of times in a period that both columns of a
+  state are white. That is the number of steps on which the next column does not flip.
+- If Z = 0 at every depth, every column alternates and consecutive columns differ, which is the rain.
+- So if Z never increased with depth along walls, no wall could leave the rain. That is the conjecture (§29.8).
+- L1293's search found the OR weight is not monotone along defect-tree edges. Those paths die, though; walls are
+  two-sided, and they may behave differently.
+
+Predictions:
+- P21a: along every wall of the p = 8 and p = 16 cores, Z is non-increasing from shallow to deep (lean 45%).
+- P21b: the phase values order as W = p > G8 > 0 = R and G16 > 0, with G8 and G16 strictly between.
+- Counterfactual: a wall on which Z rises somewhere refutes this order. The next candidates would be quantities
+  averaged over several columns, or the number of flips of a column (its driver's weight) rather than of a pair.
+
+**T21 results** ([`lightspeed_order.py`](../tests/probes/lightspeed_order.py), [output](../tests/probes/lightspeed_order.out)).
+- **P21a REFUTED.**
+  - At p = 8, Z is non-increasing on all 10 wall paths.
+  - At p = 16, 16 of the 26 wall paths, all leaving G16, have Z rising before it falls to 0. One path reads
+    4, 4, 8, 6, 8, 8, 6, 6, 0, 0, 0.
+- **P21b holds only on average.**
+  - W = p, G8 = p/4 at both periods, R = 0.
+  - G16 is not constant along its own cycle: Z takes the values 2, 4 and 6.
+- So a per-state white-pair count is no order. If an order exists, it must be averaged over a phase's cycle, or be a
+  different quantity.
+- This is the first refuted candidate for the star's order. A second refuted candidate of the same kind (per-state
+  weights) should end that kind of search, by the two-blocks rule.
+
+### 29.10 T22: rigid rotators from shift registers (predictions written before the run)
+
+`rotators.c` finds every cycle of the shift register y_n = y_(n−r) ⊕ (y_(n−r−1) ∨ y_(n−r−2)) for r = 1..22 (state:
+the last r + 2 bits). Each cycle of period m is a rigid rotator on m cells: one step of c_m rotates it by r. It is a
+light-speed glider of power-of-two period L = m / gcd(m, r) exactly when L is a power of two.
+- P22a: besides the rain (r = 1, m = 2), at least one such glider exists for some r ≤ 22 (lean 60%). T20 is complete
+  for periods dividing 16, so any glider found has L ≥ 32.
+- P22b: G16 (m = 128, r = 56) does not appear, since 56 > 22. A glider with L ≤ 16 appearing would contradict T20 and
+  so would point to a bug.
+- What it teaches: whether new gliders keep appearing as the period grows (a rich phase diagram), or stop.
+
+**T22 results** ([`rotators.c`](../tests/probes/rotators.c), [output](../tests/probes/rotators.out)). The run took
+0.1 s for r = 1..22.
+- **P22a REFUTED.** For every r ≤ 22, the only light-speed rigid rotators are white (m = 1, every r) and the rain
+  (m = 2, odd r).
+- The registers have 2 to 11 cycles each. Every other cycle has a period L = m / gcd(m, r) that is not a power of two.
+- **P22b HELD.** Nothing with L ≤ 16 appears beyond white and the rain, consistent with T20. G16 (r = 56) lies outside
+  the range searched.
+- So rigid gliders are rare: none with a small rotation, and the one found by T20 rotates by 56 of 128 cells. Whether
+  more gliders appear at periods 32 and above is open. A census of the period-32 core is out of reach (2^64 states),
+  but the gliders on rings up to 28 cells (T18) and the rotators with r ≤ 22 (T22) are complete.
+
+### 29.11 T23: G16's defect trees at p = 32 (predictions written before the run)
+
+`glider16_defect.py` rebuilds G16's 128 states from its ring (§29.7), lifts them to p = 32, and follows every child
+that leaves the cycle, as T19 did for G8.
+- P23a: the trees are finite.
+- P23b: their only exits into cycles are into the rain, the first clause of the Sink conjecture at p = 32 for G16
+  (lean 75%).
+- Counterfactual: an exit into G8, G16 or white, or an infinite tree, would be a new kind of wall.
+
+**T23 results** ([`glider16_defect.py`](../tests/probes/glider16_defect.py), [output](../tests/probes/glider16_defect.out)).
+- **P23a HELD.** The trees are finite: 1,310 states (longest 14) at p = 16, and 18,238 states (longest 41) at p = 32.
+- **P23b HELD.** At both periods the only exits are 16 edges into the rain. None goes into G16, G8 or white.
+- With T19 (G8 at p = 8..64), every glider tested sends walls only into the rain, at every period tested.

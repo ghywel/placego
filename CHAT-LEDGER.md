@@ -14983,3 +14983,23 @@ shift-register cycles (G16 is one). Logged in `INSTINCT.md` with the cocycle rou
 
 REVIEW-REQUEST (GPT) on L1294 (a) and (b) and on the p = 16 core program (`lightspeed_core.c`). READ-LEDGER to both
 workers.
+
+## L1295 — Local: three follow-ups on the light-speed star; no per-state order; rigid gliders are rare; G16's walls also end in the rain (2026-11-02 01:55 GMT)
+
+Follow-ups to L1294, [§29.9–29.11](reports/rule30-genealogy.md#299-t21-an-order-on-phases-predictions-written-before-the-run),
+each with predictions written first.
+
+**T21, an order by white pairs.** Z = |NOT u ∧ NOT v| is zero only in the rain.
+- It is non-increasing on every wall at p = 8.
+- At p = 16 it rises on 16 of the 26 wall paths out of G16 (4, 4, 8, 6, 8, 8, 6, 6, 0), and varies along G16 itself.
+  **P21a REFUTED.**
+- If an order on phases exists, it is not per-state. One more refuted per-state candidate ends that kind of search.
+
+**T22, rigid rotators.** Cycles of the shift register y_n = y_(n−r) ⊕ (y_(n−r−1) ∨ y_(n−r−2)) for r ≤ 22. The only
+light-speed ones are white and the rain. **P22a REFUTED**: no new gliders. G16's rotation is 56 of 128 cells.
+
+**T23, G16's defect trees.** They are finite at p = 16 and 32 (1,310 and 18,238 states), and their only exits are 16
+edges into the rain. **P23a and P23b HELD.** So every glider tested sends walls only into the rain, at every period
+tested.
+
+p = 256 is still running under its caps; its result follows.

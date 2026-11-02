@@ -1,0 +1,55 @@
+  r=1 glider: m=1 L=1 seq=0
+  r=1 glider: m=2 L=2 seq=10
+r= 1 cycles 2, light-speed gliders 2
+  r=2 glider: m=1 L=1 seq=0
+r= 2 cycles 2, light-speed gliders 1
+  r=3 glider: m=1 L=1 seq=0
+  r=3 glider: m=2 L=2 seq=10
+r= 3 cycles 2, light-speed gliders 2
+  r=4 glider: m=1 L=1 seq=0
+r= 4 cycles 2, light-speed gliders 1
+  r=5 glider: m=1 L=1 seq=0
+  r=5 glider: m=2 L=2 seq=01
+r= 5 cycles 3, light-speed gliders 2
+  r=6 glider: m=1 L=1 seq=0
+r= 6 cycles 2, light-speed gliders 1
+  r=7 glider: m=1 L=1 seq=0
+  r=7 glider: m=2 L=2 seq=01
+r= 7 cycles 5, light-speed gliders 2
+  r=8 glider: m=1 L=1 seq=0
+r= 8 cycles 2, light-speed gliders 1
+  r=9 glider: m=1 L=1 seq=0
+  r=9 glider: m=2 L=2 seq=01
+r= 9 cycles 3, light-speed gliders 2
+  r=10 glider: m=1 L=1 seq=0
+r=10 cycles 3, light-speed gliders 1
+  r=11 glider: m=1 L=1 seq=0
+  r=11 glider: m=2 L=2 seq=01
+r=11 cycles 4, light-speed gliders 2
+  r=12 glider: m=1 L=1 seq=0
+r=12 cycles 4, light-speed gliders 1
+  r=13 glider: m=1 L=1 seq=0
+  r=13 glider: m=2 L=2 seq=01
+r=13 cycles 6, light-speed gliders 2
+  r=14 glider: m=1 L=1 seq=0
+r=14 cycles 5, light-speed gliders 1
+  r=15 glider: m=1 L=1 seq=0
+  r=15 glider: m=2 L=2 seq=01
+r=15 cycles 5, light-speed gliders 2
+  r=16 glider: m=1 L=1 seq=0
+r=16 cycles 4, light-speed gliders 1
+  r=17 glider: m=1 L=1 seq=0
+  r=17 glider: m=2 L=2 seq=01
+r=17 cycles 7, light-speed gliders 2
+  r=18 glider: m=1 L=1 seq=0
+r=18 cycles 4, light-speed gliders 1
+  r=19 glider: m=1 L=1 seq=0
+  r=19 glider: m=2 L=2 seq=01
+r=19 cycles 7, light-speed gliders 2
+  r=20 glider: m=1 L=1 seq=0
+r=20 cycles 2, light-speed gliders 1
+  r=21 glider: m=1 L=1 seq=0
+  r=21 glider: m=2 L=2 seq=01
+r=21 cycles 6, light-speed gliders 2
+  r=22 glider: m=1 L=1 seq=0
+r=22 cycles 11, light-speed gliders 1
