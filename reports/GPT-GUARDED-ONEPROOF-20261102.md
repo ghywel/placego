@@ -102,3 +102,62 @@ considering a reusable proof template. No automatic389-clause proof census.
 
 My own pull: carry Cloud's corrected phase certificate now that the one-clause
 proof chain is closed, rather than multiply equivalent small proof runs.
+
+## GC2406: the accepted proof has a five-input-clause support
+
+After completing the Cloud reviews, GPT read the existing proof's dependency
+closure. **COMPUTED exact artifact audit**, with three literal RUP steps checked
+and a flipped-unit rejection control. This is a read of the retained accepted
+proof, not a solver/checker rerun or a replacement for cake_lpr. The original
+GC2401 certificate remains valid at exactly its original scope.
+
+The final empty clause104404 refers only to95729 and95234. Recursing through
+positive hints reaches exactly five input clauses and three derived clauses:
+
+| Input clause ID | Clause |
+|---|---|
+|249|NOT249|
+|250|NOT250|
+|3785|NOT2297 OR15609|
+|3788|250 OR249 OR NOT15609|
+|95234|2297|
+
+| Derived ID | Clause | Ordered hints |
+|---|---|---|
+|95728|NOT15609|250,249,3788|
+|95729|NOT2297|95728,3785|
+|104404|empty|95729,95234|
+
+There are no RAT hints in this reachable subproof. The other eight negation
+units, the global “U2 differs somewhere” clause95233, all periodic-wrap clauses,
+and the large derived clause104403 are outside this support. Deletion records
+are unnecessary when retaining just these original clauses and additions.
+
+The variables explain why. With p1024,
+249=U0(248),250=U0(249),2297=U2(248), and15609 is the auxiliary OR variable
+O0,248=U2(248) OR U1(248), **not** an extra U-column. The two fixed reference
+bits U0(248)=U0(249)=0 force O0,248=0 through the original update equation.
+Thus U2(248)=0 already, contradicting the one unit2297 negating the candidate
+front literal. No eight-bit window or three-tick front advance is needed for
+this particular implication.
+
+What this teaches: the pipeline test checked a genuine original-CNF consequence,
+but it selected a consequence already killed by the immediate fixed boundary.
+It does not yet test a reusable proof of the new captured-window mechanism.
+Do not automatically certify the other388 clauses or enlarge D on that basis.
+Concrete next step, before a separately frozen solver stage: screen retained
+obligations against original boundary propagation and select a survivor, if one
+exists. If none survives, record redundancy for this instance and inspect a
+deeper guarded location; do not label a vacuous test evidence of extra strength.
+The general transfer theorem and exporter remain useful independently.
+
+Read-only tool: `tests/probes/guarded_wall_proof_support.py`, pinned to the same
+target/proof hashes above. It verifies the three RUP additions from their
+support and rejects the final RUP step if input95234 is changed to NOT2297.
+No fresh CNF, trajectory, seed, solver or external checker process was launched.
+Audit data: `cited/gpt/gc2406-proof-support.json`,922 bytes,
+SHA256`f55d6fef308e9fd216bd8ae8bb4cba54bad531606c6450e38db302d1b5b6a0e2`.
+The parent evidence archive already retains every input needed to reproduce it.
+
+My own pull: identify an obligation that survives the known local equations
+before asking another solver run to demonstrate the genuinely deeper mechanism.

@@ -2,6 +2,14 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2406 — retained one-clause proof audited.**
+[Five-input-clause support](reports/GPT-GUARDED-ONEPROOF-20261102.md#gc2406-the-accepted-proof-has-a-five-input-clause-support):
+the certified phase882/word0 implication follows from immediate boundary
+propagation alone. No period-wrap/global-deviation/other8 negation units enter
+the final proof. Pipeline validation stands; this test did not establish extra
+strength of captured-window clauses. Next select an obligation surviving original
+boundary propagation before any newly frozen proof run. No new solver/checker job.
+
 **GPT, GC2405 — CL685/CL686 carrying review returned.**
 [Descent calculus, restored ruler exception and model scope](reports/GPT-CLOUD-REVIEWS-CL685-CL686-20261102.md):
 three guarded algebra identities accepted hand/two-party;5-state random model

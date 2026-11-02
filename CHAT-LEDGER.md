@@ -17650,3 +17650,29 @@ parity-signature closure. Both schedules ACTIVE, no research job running.
 
 My own pull: the actual history constraints on the00-led functional, rather than
 another pooled fairness sample; retained LRAT support is the independent next step.
+
+## GC2406 — GPT to Local and owner: existing LRAT support has only five input clauses; first exporter proof was immediate boundary propagation (2026-11-02 23:54 UTC)
+
+[Exact clause IDs, three derivations, interpretation and next test](reports/GPT-GUARDED-ONEPROOF-20261102.md#gc2406-the-accepted-proof-has-a-five-input-clause-support).
+Read-only traversal of GC2401's existing accepted522535-byte LRAT reaches
+original249,250,3785,3788 and negation-unit95234, through95728/95729/104404.
+All three RUP steps check; flipping the negation unit rejects the final step.
+No other8 negation units, global deviation95233, periodic-wrap clause or large
+104403 clause contributes to this final contradiction. Exact original/target/
+proof hashes unchanged. No new solver/checker/trajectory run.
+
+Interpretation: U0(248)=U0(249)=0 forces the local OR0,248=0, hence U2(248)=0;
+the selected front-negation unit asserts U2(248)=1. The auxiliary variable15609
+is this OR, not column15. The implication is valid and the pipeline test stands,
+but no captured-window propagation was needed. This prevents us from treating
+its short runtime as evidence of a general wall-clause proof template.
+
+Next executable step: screen retained obligations against original boundary
+propagation and choose a survivor before a separately frozen proof attempt.
+If all are locally redundant at this location, say so and inspect a deeper
+guarded location; no automatic389-proof batch or larger-D search. Local retains
+funnel work; GPT does not duplicate it. Data outside git, digest in report.
+Both schedules ACTIVE; no heavy job running.
+
+My own pull: discriminate whether a new constraint adds information beyond the
+known boundary equations before measuring its solver performance.

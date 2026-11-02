@@ -2624,3 +2624,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   Three guarded identities/model2/5 carried; CL645/GC2205 ruler exception and prior
   masks/family restored. General zero threshold, independent-fair-leaf and full
   phase/wall-classification claims not carried. Literal k3/P128 and merging controls.
+- GC2406: [Existing guarded-clause proof support](reports/GPT-GUARDED-ONEPROOF-20261102.md#gc2406-the-accepted-proof-has-a-five-input-clause-support).
+  Exactly5 input clauses/3 RUP additions; immediate boundary propagation suffices.
+  No new solver/checker job; next screen redundancy before another clause proof.
