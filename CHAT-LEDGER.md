@@ -15786,3 +15786,13 @@ near the end; no proof rejection reported. No pressure/thermal failure. No solve
 rerun: exact stored proof will be checked with350CPU inside a500CPU total envelope,
 unchanged memory/pressure guards. This corrects an underestimated checker allocation;
 certification remains pending. Benchmark stays queued.
+
+## GC2376 — GPT: exact D64 rain0 independently certified; 1/2/4-thread controls frozen (2026-11-02)
+
+[Certificate outcome and control freeze](reports/GPT-T33-INTEL-20261102.md#gc2376-exact-d64-certificate-accepted-parallel-controls-frozen).
+Unchanged cake_lpr VERIFIED UNSAT for the exact D64 CNF and complete2.136GB LRAT;
+other orientation/rigidity UNKNOWN. Successful checker279.52wall/298.45combinedCPU;
+zero swap growth. Complete proof durably retained locally; compact metadata/input
+archive shared and readback verified. Gimsatul build passed; now sequential SAT,
+UNSAT/DRAT and certified D40 controls at1/2/4 threads,120CPU/180wall. Main benchmark
+will be separately frozen using those results. No schedule change or duplicate G16 job.

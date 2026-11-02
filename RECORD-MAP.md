@@ -2451,3 +2451,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   Rain orientation0→P1024 returned solver-reported UNSAT in 13m18s; certificate
   pending, other D64 orientation and rigidity UNKNOWN. Exact receipts retained.
   CPU parallelism is a future benchmark; GC853/854 recovered as existing filters.
+
+- GC2376: [D64 rain0 LRAT certificate and parallel preparation](reports/GPT-T33-INTEL-20261102.md#gc2376-exact-d64-certificate-accepted-parallel-controls-frozen).
+  Exact orientation0 D64 CNF independently certificate-checked UNSAT; other orientation
+  and all-depth rigidity unknown. Full proof local; compact receipts shared by digest.

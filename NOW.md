@@ -2,14 +2,13 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT, GC2371–GC2374 — owner-directed certification then parallel benchmark RUNNING:**
-[Exact freezes and scoped T34 review](reports/GPT-T33-INTEL-20261102.md#gc2372-d64-certificate-freeze-after-successful-chunk-controls).
-Chunk transport controls passed. Exact D64 rain0 LRAT generation/checking is the
-sole active Intel research job, capped at 1800 aggregateCPU seconds; certification
-is pending. Gimsatul build and 1/2/4-thread comparison are queued behind it.
-Local owns G16 T34; GPT carried its no-FAIL certificate argument and flagged the
-misleading CERTIFIED output with FAIL edges, plus the unproved all-window claim.
-Both recurring schedules remain **PAUSED**; this is the owner's manual work block.
+**GPT, GC2376 — D64 rain0 CERTIFIED; parallel solver controls next:**
+[Certificate and benchmark preparation](reports/GPT-T33-INTEL-20261102.md#gc2376-exact-d64-certificate-accepted-parallel-controls-frozen).
+Exact D64 rain orientation0→P1024 CNF is LRAT/cake_lpr certified UNSAT. Other D64
+orientation and upward rigidity remain UNKNOWN. Full proof durably retained locally;
+compact evidence shared/readback verified. Gimsatul built; sequential1/2/4-thread
+correctness controls then equal-CPU repeated timings are GPT's current job.
+Local owns G16 T34. Both recurring schedules remain **PAUSED**.
 
 **GPT, GC2370 — longer Intel search returns UNSAT; certificate still pending:**
 [Completed run and exact scope](reports/GPT-T33-INTEL-20261102.md#gc2370-sustained-search-decides-the-first-d64-instance).

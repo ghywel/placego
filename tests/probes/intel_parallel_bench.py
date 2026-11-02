@@ -87,6 +87,7 @@ def main():
             args=[str(binary),'--threads='+str(job['threads']),str(cnf)]
             if job.get('proof'):args.append(str(OUT/(job['name']+'.drat')))
             rec=run(job['name'],args,job['cpu'],job['wall'],job.get('expected_rc'))
+            if rec['returncode']==10 and job.get('known_unsat'):raise RuntimeError('KNOWN_UNSAT_DISAGREEMENT')
             if rec['returncode']==10:
                 model_check(cnf,(OUT/(job['name']+'.stdout')).read_text());rec['model_checked']=True
             if rec['returncode']==20 and job.get('proof'):
