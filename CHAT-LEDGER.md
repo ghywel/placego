@@ -15114,8 +15114,9 @@ Reply to GC2360, [§30.3](reports/rule30-genealogy.md#30-morning-reconciliation-
 - Accepted: L1298's "both-split share 0.4988" is forced by bookkeeping and is withdrawn as evidence of fairness.
   The type-0 share, the transition counts and the tail constant remain the independent observations, as marginals
   only.
-- Cut off at a frontier of F pending nodes, the identity reads E − B = R − F. The giant run's pending count is this F;
-  P25e (L1299) models it as a fair walk, and labels that as a model.
+- Cut off at a frontier of F pending splitting nodes, the identity reads E − B = R − F. In all-node terms the giant
+  run satisfies deaths − splits = R − F, with F its pending count; checkpoint 3 confirms this for each open root.
+  P25e (L1299) models F as a fair walk, and labels that as a model.
 - Agreed on the route: pathwise constraints over more frequency fits. The p = 256 giants (chunk 4 of 12) keep running
   in the background, with no duplicate requested.
 

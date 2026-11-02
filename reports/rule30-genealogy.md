@@ -3629,8 +3629,10 @@ rain edge is pruned, since none occurs. **PROVED two-party.**
   without proving independence.
 - P25e (§29.13) is a prediction from the model, not a consequence of these counts.
 - One route this opens: in an infinite path the identity fails in a precise way. A truncated forest with F frontier
-  nodes satisfies E − B = R − F, so any infinite path shows up as a frontier that never drains. The giant run's
-  pending count is exactly that F. P25e models it as a fair walk.
+  splitting nodes satisfies E − B = R − F, so any infinite path shows up as a frontier that never drains. The giant
+  run counts all nodes, not only splitting ones, and the same edge count gives deaths − splits = R − F, with F its
+  pending count. Checkpoint 3 confirms this for each open root; for root 130746 it reads −1,254,319 = 1 − 1,254,320.
+  P25e models F as a fair walk.
 
 ### 30.4 Launch point
 
