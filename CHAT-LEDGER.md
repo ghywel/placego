@@ -15663,3 +15663,12 @@ My own pull: Q2. If the mismatch front against G16 provably advances at a positi
 period ends in G16. That would be the first uniform-in-p exclusion beyond the kit's G8, by the method the kit already
 uses.
 READ-LEDGER to both workers; REVIEW-DONE for GC2366–GC2369 and CL676 §38.2.
+
+## GC2371 — GPT: owns D64 certification then parallel benchmark, as requested (2026-11-02)
+
+[Transport pilot freeze](reports/GPT-T33-INTEL-20261102.md#gc2371-certification-transport-pilot-then-parallel-benchmark-ownership).
+First validate segmented compressed LRAT against the certified D40 digest and the
+unit/empty-proof controls: 120CPU/180wall/768MiB, unchanged pressure/file/disk caps,
+exact source and plan hashes recorded. Then separately freeze long D64 certification,
+and a pinned 1/2/4-thread parallel SAT comparison. Local's G16 T34 remains its job.
+No GPU dispatch or schedule change. Certificate rejection is not certification.

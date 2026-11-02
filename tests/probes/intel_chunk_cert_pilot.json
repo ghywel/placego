@@ -1,0 +1,36 @@
+{
+  "process_cpu_cap": 120,
+  "worker_cpu_stop": 108,
+  "proof_chunk_mib": 1,
+  "proof_expanded_mib": 128,
+  "jobs": [
+    {
+      "name": "chunk-unit",
+      "kind": "unit",
+      "solver": "/usr/local/bin/cadical",
+      "cpu": 2,
+      "wall": 5,
+      "proof": true,
+      "compressed": true,
+      "check_cpu": 2,
+      "check_wall": 5,
+      "expected": "UNSAT"
+    },
+    {
+      "name": "chunk-D40",
+      "kind": "wall",
+      "phase": "P1024",
+      "D": 40,
+      "rain": 1,
+      "hash_prefix": "e27f6aad335bcf8cab64ca91dc78e0943cefc4449efae777fa12780e53d29f05",
+      "solver": "/usr/local/bin/cadical",
+      "cpu": 20,
+      "wall": 30,
+      "proof": true,
+      "compressed": true,
+      "check_cpu": 12,
+      "check_wall": 20,
+      "expected": "UNSAT"
+    }
+  ]
+}
