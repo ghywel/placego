@@ -4184,3 +4184,49 @@ All answers are solver-reported (Kissat or CaDiCaL), not LRAT-certified. Run dat
 4. The hand attempt gave a sharper statement but no proof: the nested front is the four-quarter fold being
    identically 1, and that fold does not evolve on its own.
 
+## 35. Why phases are long: every phase is a rigid rotator (T30, L1308)
+
+The owner asked for work on the cheap question of L1307, why no least-period-32 phase repeats within 9 columns, while
+the Intel host runs the T29 census.
+
+### 35.1 Every phase is a rotator of a power of c (PROOF, Local; short)
+
+- A phase with twisted period (m, s) at period p is invariant under the lattice Λ spanned by (m, s) and (0, p), in
+  (depth, time) coordinates.
+- Let g = gcd(s, p), and choose a with a·s ≡ g (mod p). Then (r, g) = a·(m, s) − b·(0, p) lies in Λ, with r = a·m.
+- So **c^g(y) = ρ^r(y)** on the ring of N = m·p/g cells (the spatial period), and m = gcd(r, N).
+- Hence every phase is a cycle of the shift register y_n = y_(n−r) ⊕ K_g(previous 2g bits). Here c^g(y)_n = y_n ⊕ K_g,
+  because c, and so c^g, is linear (XOR) in the deepest bit. There are two orientations of the lag.
+- The known phases:
+  - G8: g = 2, r = 1, N = 4;
+  - G16: g = 1, r = 56, N = 128, with r = 7m;
+  - the 480-state phase: g = 2, r = 210, N = 480, with r = 7m.
+  - Both large ones have relative twist s/g = 7 modulo p/g = 16. That is an observation with two cases, not a claim.
+
+**The "no phase within 9 columns" fact, decomposed.**
+- With m ≤ 9 at p = 32, N = 32m/g.
+- If g ≥ 16, or g = 8 with m ≤ 7, then N ≤ 28, and T18's complete ring census (white, rain and G8 are the only
+  power-of-two cycles on rings of up to 28 cells) already excludes a least-period-32 phase.
+- The other cases (g ≤ 4, or g = 8 with m = 8 or 9) rest on T29's SAT answers.
+- So the question "why" becomes: why do the shift registers of small lag have no power-of-two cycles beyond white, the
+  rain and G8? T22 answered that for g = 1, one orientation, r ≤ 22.
+
+### 35.2 Predictions, written before the run (T30)
+
+`rotators_g.c` enumerates every cycle of the register for g = 1, 2 and 4, in both orientations:
+- forward: y_n = y_(n−r) ⊕ K_g(y_(n−2g) … y_(n−1)), a permutation of r-bit states;
+- backward: y_n = H_g(y_(n−r−2g) … y_(n−r)), T22's form.
+
+Lags run up to the largest state of 25 bits. For each cycle whose rotation order M/gcd(M, r) is a power of two, it
+builds the ring configuration (if M ≤ 4,096), measures its true least period under c, and reports any phase of least
+period 2L ≥ 8 with its twisted period (m, s) and valuations.
+
+Record searched: T18 (`ring_cycles.c`), T22 (`rotators.c`) and §34.
+
+- **P30a (controls).** G16's ring satisfies the forward or the backward recurrence with g = 1 at lag 56 or 72. G8
+  reappears, as a lift, in the g = 2 registers whose lag r ≡ ±1 (mod 4).
+- **P30b.** No phase of least period ≥ 16 appears other than lifts of G8, white and the rain. Lean 55%.
+  - Counterfactual: a new phase, which is a new data point for the cycle lemma and for the relative-twist pattern.
+- **P30c.** Every phase found, if any, has a column of valuation exactly L/2 − 1. Lean 60%. A failure refutes the
+  cycle lemma with an explicit ring.
+
