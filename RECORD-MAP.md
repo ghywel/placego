@@ -2617,3 +2617,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   A descent calculus (pairing, forcing, integration) forces the right edge's doubling bit exactly after the words 11(01)^k;
   free leaves fair; fair-except-forced density 2/5 against the measured 0.407. Search aliases: doubling bit, 11011, 1101011,
   forced family, 2/5, descent calculus, edge_shift_tree, DQ-024.
+- L1338 (Local, 2 November 2026): [T50, the dichotomy at W = 10](reports/rule30-genealogy.md#54-does-the-dichotomy-survive-a-longer-window-t50-l1338).
+  Exact split again (S_E 508, A 24.6%, B 75.4%); B shrinks with W (83.8% at W = 8); real fronts reach A earlier.
+  Search aliases: dichotomy, W=10, bad core trend, attractor, funnel_attractor --core.

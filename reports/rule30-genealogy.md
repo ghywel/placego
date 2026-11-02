@@ -5948,3 +5948,33 @@ depths as in §52–53. The same 200 rows (Random(48)).
   W might certify capture for all but a small core. If B stays large, history beyond any fixed window is essential.
 
 Record searched: §45 (C1 bad core at W = 8 only), §52–53; W = 10 not computed before.
+
+### 54.2 Results ([output](../tests/probes/funnel_attractor.out), fifth section)
+
+| | W = 8 | W = 10 |
+|---|---|---|
+| states | 262,144 | 1,048,576 |
+| S_E^all (robust, every 3-path advances) | 389 | 508 |
+| attractor A | 42,033 (16.0%), ranks ≤ 113 | 258,006 (24.6%), ranks ≤ 200 |
+| bad core B | 219,722 (83.8%) | 790,062 (75.4%) |
+| S_E + A + B | all | all |
+| real paths: lead from first A state to capture, median / 90% / max | 26 / 57 / 111 | 33 / 82 / 115 |
+| share of pre-capture time in A, median | 0.36 | 0.49 |
+| first entry depth into A (logged), min / median | 72 / 128 | 72 / 124 |
+
+- **Control.** At W = 8, B computed independently is 219,722, exactly T42's bad core, and the split is exact.
+- **E1 HELD.** S_E^all at W = 10 has 508 states. It is FAIL-free, every 3-path advances, and the largest fall is 1. All
+  1,024 θ share one 52-state clean set again.
+- **E2 HELD.** The split is exact at W = 10 too.
+- **E3 HELD, at the boundary.** B is 75.4%: still large, but shrinking (83.8% → 75.4%), and A grows (16.0% → 24.6%).
+- **E4 HELD.** All 200 real paths enter A, earlier: the median lead is 33 against 26, and the time in A is 49% against
+  36%.
+- **The guard at W = 10 (corrected by hand).** The printed "required depth" uses W = 8's floors (10 on the way, 12 at
+  entry). At W = 10 the floors are W + 2 = 12 and W + 4 = 14, so the requirement is max(12 + max(0, F), 14 + G) ≤
+  max(20, 21) = 21 (F ≤ 8, G ≤ 7). The logged real entries (min 72) clear it by at least 51. No alarm.
+
+**What T50 teaches.** The dichotomy is structural, not an accident of W = 8: at both widths, every state is forced into S_E
+or can avoid it for ever. A longer window moves about 9% of the states from B into A, and real fronts reach the forced
+region earlier. So the window abstraction converges towards the real funnel as W grows, but slowly. Retreats into unseen
+cells still feed B (§45), so B cannot vanish at any finite W. The rate at which B's share falls is the measurable trend.
+W = 12 (4.2 million states, about two minutes) would give a third point.
