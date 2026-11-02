@@ -15592,3 +15592,49 @@ wall2100. Memory768MiB and prior pressure/output protections unchanged. One solv
 thread at nice10, no GPU or duplicate Local job. SAT requires full literal/model
 checks; UNSAT will require a separate certificate; budget exhaustion is UNKNOWN.
 Both schedules remain paused. New messages refresh the record, not restart this job.
+
+## CL677 — Cloud to the owner: the structures pieced together. One lemma already proved in four frames; a grid of three frames against four kinds of object with six visibly empty cells, each with a test; the centre column as a parity along its past diagonal (checked to t = 8,192); three candidate unifying theories with kill tests (2026-11-02 17:51 GMT)
+
+At the owner's question ("can we begin to piece together the structures we know about, to either indicate structures we
+don't yet know about but are visibly missing in the gaps, or some unifying theory"). The map is
+[reports/rule30-structure-atlas.md](reports/rule30-structure-atlas.md); the question is DQ-027 in DEEP-QUESTIONS.md
+(a DQ-026 already existed); one cheap check (Block 18) with predictions first; probe `diagonal_segments.py`. A
+synthesis, not a result: every row cites its status.
+
+**What the record already unifies without saying so.** Rule 30 is a lossless copy from the left and a lossy mask from
+the right, and every ordered structure is where the mask is forced. The run rule (L1000), the agreement rule, 8.66's
+damage front, CL669's band bottom and CL674's masking envelope are one lemma, proved in four frames: *a difference
+passes a cell exactly where the cell's nearer input is white.* Second, the odometer is not an edge phenomenon: it runs
+behind every light-speed black front (L1283's deep-side law, the triangles' right sides, the universal ruler), and the
+triangle census is its statistical face. Third, the episode bridge of CL676 makes the eternal-cycle line and the
+background line one object. Fourth, the centre column is the parity of the OR-events along its own past diagonal, which
+crosses white, the settled crystal, the settling zone and the core in fixed proportions (a half, a sixth, two
+fifteenths, a fifth, from 8.74's boundary and row 11's slope). **COMPUTED (Block 18):** the identity holds at every t to
+8,192; the settled samples are exactly a function of (diagonal, time mod 32), 1.86 million samples with no exception
+(P-G1 HELD); the OR-event density is about 3/4 in every segment, crystal included (P-G2 half REFUTED: the crystal is
+balanced for this observable too). So the segments differ in determinism, not density, and Problem 1 is whether the
+last fifth of the path can keep the parity from repeating; this is the wall-and-kicks picture (8.5, 8.9) read at the
+centre.
+
+**The grid** (atlas §2): frames v = +1 (right edge: Φ, eternal cycles, episodes, the doubling density), v = −1 (left
+edge: the wheel map, the universal left side, the settling front, the boundary of order), v = 0 (the sideways rule,
+the walls, the channel, the gates), v = −0.246 (the news frame) and rings, against maps, periodic points, fronts and
+counts. Six cells are visibly empty, and each is a test (atlas §4): **M1** the left edge as an algebraic object (the
+mirror of Φ and of the ruler: what automaton, what periodic points, why 2, 7, 28, 399, 87,866); **M2** a law for the
+fronts' lab speeds on each background (0, 0.1, 0.235, 0.5; 0.246 uniform) from the healing identity, and a closed form
+for 0.246; **M3** a dictionary between the four half-bit budgets measured in four frames (G7: different definitions);
+**M4** the dynamics in the frame where the boundary of order stands still; **M5** the parity principle (every exactly
+fair coin in the record is a parity of a long word, and the deviations are the constraints); **M6** the classification
+of all space-time periodic patterns, one conjecture away (kit `PeriodicPoints` + the rotator lemma + light-speed
+recurrence).
+
+**Three candidate theories, ranked** (atlas §6): T1 the mask theorem with a uniform core (measure; kill test: a local
+core observable off the uniform value, the doubling density 0.41–0.43 being the candidate); T2 one 2-adic algebra at
+both ends (algebra; kill test: M1); T3 the parity principle (observables; kill test: M5). A complete theory would say
+how the algebra produces the measure the observables see; the record has pieces of all three and no bridge between
+the first two.
+
+**Recommendation.** Run M2 and M5 first (cheap, decisive, code in hand), then M1 (a day of Local's kind of work). None
+is prize work; all of it is the structure the owner asked for. Unguarded slip of my own, caught by the identity check
+before any number was quoted: the first diagonal path was one cell to the left (recorded in the scratch block).
+READ-LEDGER to both workers.
