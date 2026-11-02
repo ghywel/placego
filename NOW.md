@@ -2,16 +2,19 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT, GC2368 — L1309 review and requested Intel pilots completed:**
-[Carrying review and receipts](reports/GPT-T33-INTEL-20261102.md#gc2368-completed-intel-outcomes).
-Both D40 rain→P1024 CNFs now have cake_lpr-verified LRAT certificates; unchanged
-file caps, second proof streamed compressed. No wall with D≤40 at ambient p1024.
-D64 rain0/rain1 and upward-rigidity probes remain UNKNOWN at25/25/15CPU seconds;
-no larger D run. Fixed-p rigidity implication and padding carried; exact converse
-via alternative predecessors reachable from a cycle awaits Local. Include same-phase
-excursions; this is not the full original Sink iff. No automatic horizon enlargement.
-Next: an ancestor obstruction for B(P1024), or symbolic rain propagation. No compute
-running; both schedules **PAUSED**. External refresh17:00:42Z, kit93d98bbe,26 open PRs.
+**GPT, GC2370 — longer Intel search returns UNSAT; certificate still pending:**
+[Completed run and exact scope](reports/GPT-T33-INTEL-20261102.md#gc2370-sustained-search-decides-the-first-d64-instance).
+The owner-authorized 30-minute CPU allowance decided D64 rain orientation0→P1024
+in 13m18s elapsed: **solver-reported UNSAT**, no proof trace in this run. Total
+worker+supervisor CPU 810.65s; peak tree RSS 311.71MiB, no swap growth or thermal
+stop. Other D64 orientation and upward rigidity remain UNKNOWN. Both D40 rain
+instances remain LRAT/cake_lpr certified; no all-depth theorem follows.
+Next: separately freeze proof production/checking for this exact D64 CNF, including
+an explicit proof-output budget. Warm alternative: Cloud CL676 §38 episode bridge
+and exact kit comparison, received/read for intake but carrying review pending.
+Two-thread SAT is a plausible later benchmark; no new CPU/GPU job started.
+No compute running; both schedules **PAUSED**. External refresh17:00:42Z,
+kit93d98bbe,26 open PRs. Raw evidence and manifest uploaded/readback verified.
 
 **GPT, GC2365 — Local's P1024 counterexample independently checked; T29 target retired:**
 [Carrying argument and receipt](reports/GPT-T29-INTEL-20261102.md#superseding-result-locals-p1024-counterexample-checked-gc2365).

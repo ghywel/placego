@@ -2438,6 +2438,11 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   odd weight523, all valuations0. T29 separator search retired, rain reachability open.
 
 - GC2366–GC2368: [L1309 review and Intel jobs](reports/GPT-T33-INTEL-20261102.md).
-  Both D40 rain/P1024 LRAT certificates verified; D64 rain and rigidity UNKNOWN.
+  Both D40 rain/P1024 LRAT certificates verified; D64 was UNKNOWN in those pilots.
   Fixed-p rigidity implication/padding carried; alternate-predecessor cycle criterion
   awaits Local. Scope: include same-phase excursions; Sink second clause separate.
+
+- GC2369–GC2370: [owner-authorized sustained D64 search](reports/GPT-T33-INTEL-20261102.md#gc2370-sustained-search-decides-the-first-d64-instance).
+  Rain orientation0→P1024 returned solver-reported UNSAT in 13m18s; certificate
+  pending, other D64 orientation and rigidity UNKNOWN. Exact receipts retained.
+  CPU parallelism is a future benchmark; GC853/854 recovered as existing filters.

@@ -15592,3 +15592,35 @@ wall2100. Memory768MiB and prior pressure/output protections unchanged. One solv
 thread at nice10, no GPU or duplicate Local job. SAT requires full literal/model
 checks; UNSAT will require a separate certificate; budget exhaustion is UNKNOWN.
 Both schedules remain paused. New messages refresh the record, not restart this job.
+
+## GC2370 — GPT: the longer Intel run decides D64 rain0→P1024 in 13m18s; solver-reported UNSAT, certificate pending (2026-11-02)
+
+[Exact result, resource receipt and retained evidence](reports/GPT-T33-INTEL-20261102.md#gc2370-sustained-search-decides-the-first-d64-instance).
+CaDiCaL3.0.1 returned exit20 and UNSAT for the frozen CNF ab2c06f4, 137,216 variables /
+477,184 clauses. This replaces the short pilot's UNKNOWN for this single instance.
+No proof trace was requested, so **not yet independently certified**. Other D64
+rain orientation and upward rigidity remain UNKNOWN; both D40 rain instances
+remain cake_lpr certified. No general wall exclusion follows.
+
+Actual Intel stage: 798.32 wall seconds, 799.780958 workerCPU +10.87 supervisorCPU
+=810.650958 total, within the owner's 1,800-second envelope. Peak tree RSS311.71MiB,
+minimum headroom5,467MiB, swap growth0; thermal/scheduler limits100%. Normal exit,
+retained solver PID absent afterwards. Archive17 files, 2.624MB, manifest and raw
+readbacks verified in the shared store. No compute remains running.
+
+Owner's threading/Metal question: a two-thread parallel SAT benchmark is plausible,
+not a measured speedup. Gimsatul shares clauses and can emit DRAT; GPU SAT exists,
+but the inspected GpuShareSat uses CUDA, not a ready RX6600/Metal path. No new job.
+The immediate next step is a separate D64 certificate-production/checking freeze,
+including output-size planning; the successful decision run should not be discarded.
+
+Existing GC853/854 are exactly the first two/three upward equations here and restrict
+initial deviations to falling ticks, then a subset; their period310 counts121/56
+must not be imported as P1024 counts. Reuse this already known filter, not a blind
+new equation ladder. Full ancestry remains the missing condition.
+
+Fresh main e3a01a89/Cloud CL676 §38 read for intake. Episode bridge, kit-source match
+and new G16 results await carrying/source review; its all-bounded-window-ranks
+exclusion is stronger than the candidate refutations and needs a general argument.
+Warm alternative: that review; no unsolicited Cloud job or duplicate Local compute.
+Both schedules remain paused. No automatic extension of depth or repeat run.
