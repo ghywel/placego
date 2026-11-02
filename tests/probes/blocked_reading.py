@@ -43,6 +43,8 @@ def new_front(Eo, Db):
 def reading_depth(Eo, Dfull):
     """Dfull[j] = actual D_(R-j), j = 1 .. NB. Least k with the move fixed by Dfull[1..k] for every completion."""
     a_true = new_front(Eo, Dfull)
+    if a_true is None:                          # GC2393: unresolved within depth 10; never minimised (was mislabelled 10)
+        return None, None
     for k in range(0, NB + 1):
         ok = True
         for comp in range(1 << (NB - k)):
