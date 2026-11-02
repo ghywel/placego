@@ -1,0 +1,26 @@
+## front_g16.py 400 40 300
+G16 fronts: 400 runs, prefix depth K = 40, 300 ticks
+speed R(T)/T: min 1.057, median 1.243, max 1.390
+runs with a retreat after time 1: 400 of 400 (retreats in all 7526); longest stall 18 ticks
+slowest run (alignment a=88, q=3), R(t) for t < 40: [37, 34, 33, 34, 33, 34, 35, 37, 39, 41, 43, 43, 45, 45, 47, 44, 46, 46, 48, 49, 50, 52, 54, 51, 48, 49, 47, 49, 49, 51, 51, 53, 54, 55, 56, 58, 58, 60, 62, 64]
+## front_cert.py G8 4 5
+G8 W=4: states 512, edges 2240, FAIL edges 4, advances [-4, -3, -2, -1, 0, 1, 2]
+   FAIL edges present (a retreat can leave the window): no certificate; the non-FAIL part is still tested
+   least advance over paths of length k: [(4, 1)]
+   CERTIFIED: every path of length 4 advances
+G8 W=5: states 1024, edges 4736, FAIL edges 0, advances [-5, -4, -3, -2, -1, 0, 1, 2]
+   least advance over paths of length k: [(7, 1)]
+   CERTIFIED: every path of length 7 advances
+## front_cert.py G16 6 8 10 (nice 10)
+G16 W=6: states 131072, edges 678912, FAIL edges 224, advances [-6, -5, -4, -3, -2, -1, 0, 1, 2]
+   FAIL edges present (a retreat can leave the window): no certificate; the non-FAIL part is still tested
+   least advance over paths of length k: [(10, -39), (25, -76), (50, -146), (100, -274), (200, -543), (300, -810), (600, -1610)]
+   NOT CERTIFIED
+G16 W=8: states 524288, edges 2850816, FAIL edges 144, advances [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2]
+   FAIL edges present (a retreat can leave the window): no certificate; the non-FAIL part is still tested
+   least advance over paths of length k: [(10, -35), (25, -54), (50, -83), (100, -140), (200, -254), (300, -368), (600, -713)]
+   NOT CERTIFIED
+G16 W=10: states 2097152, edges 11714560, FAIL edges 112, advances [-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2]
+   FAIL edges present (a retreat can leave the window): no certificate; the non-FAIL part is still tested
+   least advance over paths of length k: [(10, -35), (25, -54), (50, -83), (100, -140), (200, -254), (300, -368), (600, -713)]
+   NOT CERTIFIED

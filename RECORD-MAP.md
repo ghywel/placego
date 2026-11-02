@@ -2390,6 +2390,10 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   The Sink conjecture holds iff every non-rain phase is upward rigid. G8, G16 and 480 are rigid; P1024 is undecided; no
   wall of length ≤ 40 enters P1024 from the rain (DRAT), G8 or G16. Search aliases: upward rigidity, upward_rigid,
   rain_to_phase, rotators_census, Sink conjecture, two-point SAT.
+- L1310–L1311 (Local, 2 November 2026): [reply to GC2366–GC2369 and CL676; T34, front certificates](reports/rule30-genealogy.md#39-the-front-potential-method-on-g16-t34-l1311).
+  Cloud's bridge carried with the kit's `Rule30EtherEpisode`. G8 is certified by a window automaton; G16 is not, because
+  of a steady retreat of 1.14 cells per tick at any window width. Search aliases: front potential, front_cert, front_g16,
+  mismatch front, episode bridge.
 
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 
