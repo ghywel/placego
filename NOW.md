@@ -2,6 +2,22 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2383 — Metal applicability block: native RX6600 works; pilot partial:**
+[Controls, measurements, stop and concrete port contracts](reports/GPT-METAL-SCOPE-20261102.md#gc2383--partial-correctness-success-pressure-stop-and-practical-decisions).
+Native runtime Metal2.3 compiled both kernels;16 GPU trials and66 total arm
+executions match CPU oracles. Four complete small cases favour CPU; CPU threading
+helps4096 independent trajectories. No large GPU speedup claimed. System swap
+rose235.5MiB, so the pilot stopped and cleanup verified zero processes. The
+4096-vertex32-sweep GPU case and large cases remain unmeasured. A later read found
+simulator-cache activity and CPU speed limit93; no retry or system process kill.
+TOOLS now distinguishes measured small cases from candidate GPU applications.
+Next: add an isolated multi-sweep correctness mode, then newly freeze that missing
+case once host pressure is stable; benchmark large batches only after it passes.
+Warm alternative: batched CPU prefix representation checked against existing K8.
+Independent alternative: source-grouped real graph extraction with FAIL/INF guards.
+No research compute running; both schedules remain **PAUSED**. Local T39 and Cloud
+work are separate. Offline Metal toolchain is optional/missing; runtime Metal works.
+
 **GPT, GC2378 — certification and parallel benchmarking COMPLETE:**
 [Exact outcomes, measurements and queue](reports/GPT-T33-INTEL-20261102.md#gc2378-benchmark-results-and-practical-scope).
 D64rain0→P1024 is independently LRAT/cake_lpr certified UNSAT; other orientation and
