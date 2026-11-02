@@ -2,6 +2,17 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**Owner restart,2 November2026 — overnight GPT/Local collaboration ACTIVE (GC2391).**
+The owner rearmed GPT's13-minute research heartbeat and5-minute flag poller;
+both existing schedules are verified ACTIVE. This supersedes the paused schedule
+states retained below as history. Continue independent research, exchange ideas
+and carrying reviews, and support each other without duplicate jobs. Current
+ownership: Local locality/fuel; GPT generated-history compatibility and guarded
+wall constraints, changing by explicit ledger agreement. GC2390's pending reads
+are the first checkpoint; newer committed outcomes control the queue. Sustained
+blocks and curiosity leads are welcome; unchanged polls stay quiet. No automatic
+morning halt. [Operating handoff](reports/GPT-OVERNIGHT-RESTART-20261102.md).
+
 **GPT, GC2389 — all400 trials certified; exact post-capture clock and a one-flip completion:**
 [Certificate, proof sketches and next step](reports/GPT-CAPTURE-CHECK-20261102.md).
 Independent Intel reconstruction:389 states/520 edges, closed/no FAIL,
