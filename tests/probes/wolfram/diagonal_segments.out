@@ -1,0 +1,9 @@
+parity identity x_0(t) = XOR of OR-events: holds 8129, fails 0
+band samples: 1864334 (e <= t/3); distinct (e, s mod 32) keys 86368; keys with conflicting values 0 (0.0000)
+  conflicting e values (first 30): [] max e None
+t=1024: OR-event density by segment (white, settled band, settling zone, core): [0.002, 0.747, 0.745, 0.766]
+t=2048: OR-event density by segment (white, settled band, settling zone, core): [0.001, 0.751, 0.722, 0.741]
+t=4096: OR-event density by segment (white, settled band, settling zone, core): [0.0, 0.74, 0.747, 0.757]
+t=8192: OR-event density by segment (white, settled band, settling zone, core): [0.0, 0.743, 0.767, 0.749]
+DIAG_DONE
+EXIT 0

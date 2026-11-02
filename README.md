@@ -56,6 +56,8 @@ on one page, [NOW.md](NOW.md).
 - [PERIOD-TWO.md](PERIOD-TWO.md): the period-2 question in full, the chain of statements, the closed routes and the
   status board.
 - [CONSTELLATION.md](CONSTELLATION.md): questions worth asking for their own sake, beside the three the prize poses.
+- [reports/rule30-structure-atlas.md](reports/rule30-structure-atlas.md): the ordered structures of Rule 30 on one grid, what is
+  visibly missing, and three candidate unifying theories (2 November 2026, DQ-027).
 - [COLLATZ-PRIZE.md](COLLATZ-PRIZE.md), [MAHLER.md](MAHLER.md),
   [FOUR-BIN-PARTITIONS.md](FOUR-BIN-PARTITIONS.md): one record per problem.
 - [PRIZE-SWARM.md](PRIZE-SWARM.md): twelve agents on twelve of Erdős's smallest open prize problems, one report each.

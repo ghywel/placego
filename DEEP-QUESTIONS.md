@@ -105,6 +105,7 @@ This tracker is not a launch queue or a proof register. Existing holds and revie
 | DQ-023 | Can a natural staircase keep the centre clock running through changing support? | GC1951: fixed-cut49 optimum52 accepted with retained witness; original six cuts also resolved. GC1952: known laws bound support bars to3/5/7/9 and replacement gaps to4/6/8/10. Endless compatible renewal and a universal staircase representation remain open; no wider test agreed. |
 | DQ-024 | Does the right edge forget at exactly half speed? | Open; Cloud's question from the synthesis of 29 October (CL640): the doubling density of the right-diagonal periods is at most one half (AIOvernight's theorem) and measured 0.50 over k = 24..34;40 forecast already in Rowland2006, GC2151 |
 | DQ-025 | Does the clock die when the crystal reaches it? Corrected: is the death time an exact budget, the pins spending one bit per two steps and the right half refilling at most the channel bound? | REFUTED as posed (CL665); the budget argument of CL665(a) parked at GPT's bridge (GC2271: a uniform compatibility or contraction law for the forced finite-left tail against the coupled right language is what is missing); a local dissipative potential is not excluded by Lowry's theorem (CL666); lab-frame excess 6 to 8 to width 18, the maximal rows reading as relays of lone cells |
+| DQ-027 | Can the known structures be pieced together, to show what is missing or what unifies them? | Open; first map written (CL677, [the structure atlas](reports/rule30-structure-atlas.md)): one mask lemma proved in four frames; three frames against four object types; six visibly missing structures with tests; three candidate theories with kill tests; the centre column as a parity along its past diagonal, checked to t = 8,192 |
 
 ## DQ-001 — Changing an exception while preserving its essential behaviour
 
@@ -1797,6 +1798,56 @@ about other periods or eventual periodicity. [Result and visual evidence](report
 ### DQ-023 — GC2214: remove optional pulses before attempting the strong exclusion
 
 New PR57 precisely identifies when the original and effective drivers preserve the same left half, but its all-period exclusion remains an assumption. [Source review and solo reduction](reports/rule30-periodic-mask-review.md): remove isolated black pulses if the effective boundary is nonzero; if it is zero, keep only one pulse per period. It suffices to exclude these two driver classes for the strong left-only assertion. The zero-mask branch asks whether a finite left start can keep the neighbour black on one arithmetic progression, not whether its full trace is periodic. This preserves the one finite left beginning, but does not construct a physical right side. No period excluded; no new census.
+
+## DQ-027 — Can the known structures be pieced together, to show what is missing or what unifies them?
+
+**Owner's framing, 2 November 2026:** "The work teaches more about the rule's structure, and the more we understand structure,
+the more we can understand relationship between structure. It therefore follows, can we begin to piece together the structures
+we know about, to either indicate structures we don't yet know about but are visibly missing in the gaps, or some unifying theory
+that connects the structures to each other, rather than being isolated interesting cases." Continues DQ-022 (one rule behind the
+ordered structures) at the level of the whole record. **Status: Open; first map written.**
+
+> **Reader and date:** Cloud, CL677, 2026-11-02 17:51 GMT. A synthesis of the record, the kit and the portal, with one cheap check;
+> no new theorem. Full map: [The structure atlas](reports/rule30-structure-atlas.md).
+>
+> **Version of the question examined:** lay every ordered structure in the record on one grid (the frame it lives in against
+> the kind of object it is), read off the empty cells, and name the theories that would fill them.
+>
+> **Answer in everyday words:**
+> - One sentence already unifies more than it seems: Rule 30 is a lossless copy from the left plus a lossy mask from the
+>   right, and every ordered structure is where the mask is forced. The record has proved that sentence in four frames (the run
+>   rule, the agreement rule, the damage front, the masking envelope); they are one lemma.
+> - The structures sort into three frames: the right edge (the odometer, the eternal cycles, the episodes), the left edge (the
+>   crystal, the universal left side, the boundary of order), and the centre (the walls, the wheel, the channel). The right edge
+>   is where everything arrives and nothing is lost; the left edge is where nothing from the core ever arrives, because news
+>   travels left at a quarter of light speed and the edge outruns it. That one fact is why the picture is ordered on one side
+>   and not on the other.
+> - The odometer is not an edge phenomenon: it runs behind every light-speed black front in the picture, including the family
+>   tree of the centre cell. The triangles' census (the uniform measure's to three decimals) is its statistical face.
+> - The centre column is the parity of the OR-events along its own past diagonal; that diagonal crosses white, the settled
+>   crystal, a settling zone and the core in fixed proportions (a half, a sixth, two fifteenths, a fifth). The settled part is
+>   exactly periodic in the sample index. The whole of Problem 1 is whether the last fifth can stop the parity repeating.
+> - Visibly missing (six cells of the grid): the left edge as an algebraic object (the mirror of the right edge's 2-adic map
+>   and of its ruler); a law for the fronts' speeds on each background, and a closed form for the quarter-light-speed; a
+>   dictionary between the four "half a bit" budgets measured in four frames; the frame in which the boundary of order stands
+>   still; the parity principle (every exactly fair coin in the record is a parity of a long word); and the classification of
+>   all space-time periodic patterns, one conjecture away.
+> - Three candidate theories, ranked: the mask theorem with a uniform core (measure), one 2-adic algebra at both ends
+>   (algebra), and the parity principle (observables). Each has a kill test in the atlas. A complete theory would say how the
+>   algebra produces the measure that the observables see; the record has pieces of all three and no bridge between the first two.
+>
+> **Exact scope and evidence:** every row of the atlas cites its status and its section; the diagonal decomposition is
+> elementary (left-permutivity) with its geometry MEASURED (8.74's boundary, row 11's slope) and checked on the single seed to
+> t = 8,192 (Block 18). Nothing here changes a status or bears on the prize questions directly.
+>
+> **What failed, or remains unknown:** the first diagonal check used the wrong cell and failed; corrected before any number was
+> quoted. P-G2's second half was refuted: the OR-event density is about 3/4 in the settled crystal as well as in the core (0.74 to
+> 0.77 in every segment), so the crystal is balanced for this observable too (row 8's balance without randomness). Whether any of
+> the three theories is more than a description is exactly what the six tests decide.
+>
+> **Status and what would make another visit useful:** a map, not a result. Run M2 and M5 first (cheap, decisive between the
+> theories), then M1. Revisit when one of the six cells is filled or one theory is killed.
+
 
 ## DQ-025 — Does the clock die when the crystal reaches it?
 
