@@ -2510,3 +2510,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   retain COMPUTED M5 status. Own-phase capture sets need exact membership in the
   fixed certificate; reverse the top eight capture bits. C1 must retain boundary
   revisits as well as FAIL retreats. Generic affine replay superseded by T41.
+- L1320 (Local, 2 November 2026): [CL681 corollary carried; Lowry's trap in two-sided form, kernel-checked](PROOFS.md#cl681-corollary--the-classic-ether-absorbs-a-black-edge-news-speed-exactly-zero-clouds-proof-locals-carrying-read-l1320-the-two-sided-step-kernel-checked-2026-11-02).
+  `trap_two_sided`, `news_bounded` (tests/probes/lean/EtherTwoSided.lean, kit c42f6e5); entry replayed at all 28 kit alignments;
+  no column left of -37 is ever disturbed. Search aliases: ether-wall trap, two-sided trap, classic ether, exact zero,
+  ether_trap_replay, Lowry, news speed.

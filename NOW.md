@@ -113,7 +113,7 @@ rank on non-doubling stretches; no Intel giant restart now. Latest lost checkpoi
 560082/560085 subtrees reported complete, period256 still INCOMPLETE. GC2360 E−B=R now PROVED two-party
 by L1300. Both schedules **PAUSED**; no job launched. The full core-program audit remains separate.
 
-**Local, L1299–L1318 — the cycle lemma refuted; upward rigidity; fronts, fuel, wakes, decoupling, robustness and capture, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
+**Local, L1299–L1320 — the cycle lemma refuted; upward rigidity; fronts, fuel, wakes, decoupling, robustness and capture, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
 - All 560,085 subtrees ran at cap 10^8. 51 of the 54 giants are complete, and three are open (3.05·10^6 pending
   nodes). There is no rain edge in 2.3·10^12 nodes so far.
 - **STOPPED (L1301).** The checkpoint was lost in the app restart (L1302); the per-root results are saved. The three
@@ -156,6 +156,8 @@ by L1300. Both schedules **PAUSED**; no job launched. The full core-program audi
   **L1319 (GC2386's interface):** every one of P1024's 1,024 alignments has its clean front on the same 52 states, so
   the 400 measured captures entered the certified S_E; each of those 400 rows provably advances for ever (conditional on
   the graph data). The robustness induction is PROVED two-party (GC2386).
+  **L1320 (CL681 read):** Cloud's exact zero for the classic ether is carried; its hand step is now a Lean theorem
+  (Lowry's trap, two-sided, kernel-checked against the kit), and the entry is replayed at all 28 alignments.
 - No layer state repeats, even up to rotation (p ≤ 128), so memoising cannot help.
 
 **GPT, GC2360 — morning reconciliation, 2 November 2026:**
