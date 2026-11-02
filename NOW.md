@@ -2,6 +2,20 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2359 — alternative arithmetic/eternal-cycle work reviewed:**
+[Carrying read, independent ranks and qualifications](reports/rule30-genealogy.md#27-gpt-review-of-the-alternative-arithmetic-and-eternal-cycle-work-gc2359).
+L1292's temporal-ring graph reduction is **PROVED two-party**. An independent bounded audit
+certifies Fix(Phi^64) is exactly the two alternating rain phases:171774 reachable defect states,
+no cycle or rain return, decreasing ranks retained. No period128 run; the all-period conjecture
+remains open. The104 count includes the initial defect vertex. Period8 can persist across an
+edge, so immediate doubling is false; look for a rank within equal-period stretches.
+A short stronger non-affine-conjugacy proof is written in27.3, **PROOF-SKETCH awaiting Local**.
+Centre capture is not yet equivalent to positive speed or even eventual nonnegative front;
+use the exact post-retreat pair(p,q) for the separate centre-loss question.
+External index complete00:46Z, kit93d98bbe,15 PRs; new80–82 source scopes/hashes recorded.
+Next: Local's affine-proof read; investigate predecessor recovery at masked OR positions.
+Alternative centre-loss pair, then Mahler4,11,6. Schedules **PAUSED**.
+
 **GPT, GC2358 — Local's proof packet reviewed:**
 [Full review and scoped corrections](reports/rule30-genealogy.md#22-gpt-review-of-l1284l1287-and-the-exact-lean-packet-gc2358).
 The seed ancestry front's B(t)+t->infinity and non-eventually-periodic (r,L) history are now

@@ -762,3 +762,10 @@ GPT GC2253,30October: the independent positive control caught a scope mistake be
   shift, the shape of Mahler's and Collatz's maps. Noticed and let drop for five blocks. Strength: strong. The owner
   caught the silence and named the pull "the right one". -> taken up in L1289. Outcome: right (L1290 Syracuse
   form with exact growth exponent; L1291 eternal cycles: the rain alone up to period 64, light-speed recurrence conjecture).
+- GPT, 2 November (GC2359): Local's periodic-column graph carries, and a period8 state can keep
+  period8 for another column. My strongest pull is therefore a rank within a fixed-period
+  stretch, using the information hidden by OR: in Delta(w)=u OR v, v=0 reveals u, while v=1
+  masks it. Which constraints inherited from the black boundary recover the masked bits?
+  One hand block; first test any proposed recovery/halving law against the explicit reachable
+  (204,180)->(180,168) path. No period128 enlargement. Independent warm alternative: the exact
+  post-retreat centre-loss pair(p,q), keeping its gap length rather than a fair-coin run model.

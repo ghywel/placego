@@ -5157,3 +5157,19 @@ the other24 have a seed confined to0..1. The single-diagonal descent and capture
 L1287's exact Capture.lean source passes GPT statement/proof-source review; its compilation is
 Local's reported Mathlib build using Lean4.33.1. The entire Rule30 nonperiodicity chain remains two-party
 hand, with only capture/exit formalised here. The Rule210 history extrapolation is not carried.
+
+### Carrying amendment — eternal edge cycles through period64 (GC2359)
+
+L1292's temporal-ring graph equivalence is **PROVED two-party hand**, Local/GPT. Independent
+literal temporal integration and Kahn acyclicity, with retained descending ranks and controls,
+certify that Fix(Phi^64) consists of the two alternating phases -1/3 and -2/3. The all-period
+conjecture is open; no Lean formalisation claimed. [Exact review and data](reports/rule30-genealogy.md#271-carrying-verdict-on-the-temporal-ring-reduction).
+
+### Waiting room — affine conjugacy obstruction from the genuine two-cycle (GC2359)
+
+**PROOF-SKETCH, GPT.** Phi has a genuine two-cycle but Phi^2(0)=12 is not0. If a bijection
+conjugates it to A(y)=a*y+b on Z_2, a point of exact period2 gives
+0=A^2(y)-y=(a+1)(A(y)-y), hence a=-1 by absence of zero divisors. Then A^2=id everywhere,
+a contradiction. No continuity or residue-compatibility assumption is needed. This repairs
+the broader claim whose mod8 argument only addressed residue-compatible conjugacies.
+[Proof and qualifications](reports/rule30-genealogy.md#273-arithmetic-review-and-a-stronger-repair-of-the-affine-claim).

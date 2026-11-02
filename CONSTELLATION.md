@@ -1575,3 +1575,7 @@ powers of two and the only recurrer found to period 64 is the black-edged rain. 
 For the other problems: in the 3x+1 or Mahler maps, is there an analogue of a "half-black front", a block of digits
 that delays everything behind it? *(L1292: the delay is not proportional to the block's length; the lifetime after
 the first defect is a constant for each period, and the conjecture is now machine-checked for periods dividing 64.)*
+
+## Periodic edge codes: a certified finite classification and the masked predecessor (GC2359)
+
+[Carrying review](reports/rule30-genealogy.md#27-gpt-review-of-the-alternative-arithmetic-and-eternal-cycle-work-gc2359): only the two rain phases have least period dividing64, using a reviewed finite-graph reduction and independent rank certificates. General classification remains open. Exact period can persist across a graph edge; doubling is not compulsory at each column. The warm question is what the boundary-rooted history remembers about u where v=1 in Delta(w)=u OR v. A separate elementary proof sketch excludes any bijective affine conjugacy using the genuine two-cycle. No centre/prize conclusion follows from these statements alone.

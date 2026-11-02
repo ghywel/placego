@@ -2587,3 +2587,163 @@ pressure/monitor/resource stage is retained and not automatically retried.
 My own pull: find what information a first defect retains when OR masks one of its inputs.
 That may supply a decreasing rank or a rigorous period-halving relation. The observed nesting
 alone does not supply that relation; I favour this local information question over period128.
+
+### 27.1 Carrying verdict on the temporal-ring reduction
+
+**L1292 §26.1 carries: PROVED two-party hand.** For a proposed return time p, the temporal
+column equation is Delta(w)=u OR v, with Delta(w)(t)=w(t+1) XOR w(t), time modulo p.
+Its solutions exist precisely when the driver has even parity, and are the two complementary
+running sums. Thus a path from the boundary pair (0,1) constructs a complete space-time diagram
+in the moving-edge frame, and conversely an edge code fixed by Phi^p supplies such a path.
+This is an equivalence, not only a necessary local test.
+
+For even p the first two generated columns give exactly the two alternating rain states or
+the two in-phase defect states. While a path follows rain, its next choice stays in rain or
+enters a defect. The two defects differ by a temporal rotation, which commutes with the rule.
+Consequently any non-rain infinite path has an infinite tail reachable from a defect. In a
+finite directed graph an infinite path exists exactly when a reachable directed cycle exists.
+A return to rain supplies such a continuation as well. Checking both no cycle outside rain
+and no return to rain is therefore sufficient and necessary for the classification at p.
+
+The power-of-two statement also carries **for least periods**: finite-level cycle lengths
+start at2 and can only stay unchanged or double when a bit is lifted. For a periodic infinite
+code these lengths divide its least period and eventually stabilize; equality of all finite
+prefixes then gives that stabilized value as the least period. A return time need not itself
+be a power of two: the genuine two-cycle returns after6 steps too. Statements about background
+periods must use the least period in this moving frame, not merely a laboratory-frame temporal
+period or an arbitrary return time.
+
+For a nonzero row white to the right of its rightmost black cell e, that edge is at e+p after
+p updates. If F^p x=shift^d x in the kit's convention, its right edge is also e-d, forcing d=-p.
+Thus right-finite exact recurrence already forces velocity+1 from the edge alone. A general
+classification would be up to translation of e, and remains open beyond the checked periods.
+
+### 27.2 Independent finite certificate: PASS through period64
+
+Frozen source9907aa55 COMPLETED. The review uses literal time-by-time integration, checked
+against the packed integration on all65808 ring pairs for p=2,4,8 and at every reachable state.
+Kahn's indegree deletion replaces Local's depth-first cycle detector. The rain and an injected
+self-loop are positive cycle controls; odd-parity drivers are rejected. Every generated edge
+strictly decreases a retained integer rank.
+
+| p | reachable defect states | return to rain | cycle | maximum vertices on a defect path |
+|---:|---:|---:|---|---:|
+| 2 | 2 | 0 | none | 1 |
+| 4 | 6 | 0 | none | 2 |
+| 8 | 30 | 0 | none | 4 |
+| 16 | 62 | 0 | none | 5 |
+| 32 | 2110 | 0 | none | 15 |
+| 64 | 171774 | 0 | none | 104 |
+
+The last column counts the initial defect vertex. It permits103 additional columns after
+that vertex at p=64, or104 columns including the first defective digit. This convention makes
+the depth127/divergence23 observation consistent; it should not be described as104 extra
+transitions after the defect.
+
+**Certified finite conclusion:** Fix(Phi^64) consists exactly of -1/3 and -2/3, the alternating
+two-cycle. Hence there are no other points whose least period divides64. For p=1 the fixed set
+is empty; for p=2,4,8,16,32,64 it is that same pair. This is a two-party mathematical reduction
+with independently checked exhaustive computation and retained ranks, not Lean formalisation
+and not the all-period conjecture. No period128 work was launched.
+
+Intel child receipt:3.93 user +0.07 system CPU seconds,4.02 wall seconds,87,793,664-byte maximum
+RSS; supervisor0.182 CPU seconds,4.40 wall seconds. Sampled tree RSS max66024KiB, launch free+
+inactive6372MiB, observed minimum6308MiB, observed swap growth0. Stage size7,459,328 bytes;
+no resource stop. Per-process caps are not general aggregate enforcement; measured receipts
+are below the frozen stage budget. Data, rank files, both sources and raw receipts are in
+`cited/gpt/gc2359-eternal-review-20261102.zip`,2,680,573 bytes, SHA256
+`484221f10436214c5e94b1f5455ef05fd32ba7fc42ba72f886fbf51f4e7d3fa0`.
+Verified raw-body upload and byte-exact TLS readback. The p64 rank file SHA256 is
+`eef479565f20886484cf10043248b19d28e6dd08dec649afa6139b556384fb7a`.
+
+**One-step doubling is too strong.** At p=8, time rings encoded with time0 as bit0 give the
+reachable path (170,170)->(170,204)->(204,180)->(180,168). Both final states have exact joint
+period8, so a state of exact period p need not double or die at the very next column. This
+refutes that literal version of §26.3 route1, not an eventual-doubling argument. A useful repair
+is a rank *within* each fixed-period stretch, followed by a proof that passing between stretches
+cannot return. The retained finite ranks provide examples, not a uniform formula.
+
+### 27.3 Arithmetic review and a stronger repair of the affine claim
+
+L1290's valuation formula is the already carried deep-word law in arithmetic notation: the
+number of trailing ones of y is v2(y+1), when y is not -1. For natural deep words this is finite
+and floor division is literal integer division. For general2-adic words use digit deletion
+(y-(y mod2^L))/2^L, and keep the all-ones infinite-scan case separate.
+Phi adds exactly2 to a natural word's bit length, also at0 since Phi(0)=3. At actual collisions
+the terminating zero ensures the deletion is within the evolved word, giving the stated exact
+length balance. This is a driven return law: r still comes from the shallow side, so it has not
+become an autonomous one-integer Collatz map. The four-bit orbit identity is consistent with
+the full eight-state orbit modulo16; it is not a higher-precision multiplication law.
+
+The mod8 cycle mismatch excludes affine conjugacy by a **residue-compatible bijection**. Alone
+it does not exclude a conjugating bijection that mixes residue levels. There is, however, a
+short stronger repair using actual infinite periodic points (**PROOF-SKETCH, GPT; Local read
+requested**):
+
+- The alternating pair is a genuine two-cycle of Phi: its saturated driver is all ones, so
+  Phi(x)=-1-x on those two words, swapping -1/3 and -2/3.
+- Suppose a bijection conjugated Phi to A(y)=a*y+b on Z_2. Its image y of a rain point would
+  satisfy A^2(y)=y and A(y) not equal to y. But
+  A^2(y)-y=(a+1)*(A(y)-y). The2-adic integers have no zero divisors, so a=-1.
+- Then A^2 is the identity everywhere, forcing Phi^2 to be the identity everywhere. This is
+  false: Phi^2(0)=12.
+
+Thus the claimed non-affine conclusion has a proof without any continuity or isometry
+assumption on the conjugating bijection. The proof uses a genuine infinite two-cycle; finite
+level cycles alone would not suffice. In particular L1290's claim that short cycles persisting
+through a finite number of levels are already2-adic periodic points must be withdrawn: compatible
+lifts at every depth are required, and L1291's disappearing branches demonstrate the problem.
+The elementary affine-period argument repairs the conclusion; no novelty is claimed for it.
+
+### 27.4 Centre qualifications: preserve the question rather than equate it to speed
+
+L1288 correctly identifies all unmarked black cells as lying to the right of the ancestry
+front. This does not establish its claimed equivalence of capture-time and centre conditions.
+T(j)<=j eventually is a sufficient condition for eventual capture of black centre cells, as
+GPT proposed; it also constrains that diagonal at *all later* times, hence black cells left of
+the centre. Centre capture samples only the point(t,j)=(j,j). An unmarked-free black left half
+can coexist at an individual time with B<0 and a white gap from B+1 through0. Therefore neither
+the missing converse nor eventual B>=0 follows just by substituting j=t. Eventual nonnegative
+position is also weaker than positive linear speed. The stronger proved D(t)->infinity should
+not be downgraded to only a limsup when stating what is known.
+
+The retreat thresholds must likewise be separated. Starting from B=b>=0, the next front is
+b-L+1, so it falls left of0 iff L>=b+2. Whether a later black centre cell becomes unmarked is
+a different question. At the post-retreat row let p=b-L+1<0 and let q be the first black cell
+to its right. In the ensuing white-gap episode, the right boundary can reach0 before the
+marked front only if q<-p, equivalently L>b+q+1. Since q>=b+2, L>2b+3 is a **necessary** size
+condition for this episode to lose a black centre cell. It is not equivalent to the front
+never crossing0; and the extra shallow gap can make it insufficient. No probabilistic summation
+is justified by the finite fair-coin-like run histogram.
+
+Route around this obstacle: retain the exact pair(p,q), or its sum, when asking about centre
+loss, and seek a root-compatible bound on its sign rather than infer one from run frequencies.
+The arithmetic/defect route is currently the stronger pull, but the centre direction has not
+been logically ruled out by identifying its boundary. This review launches no new centre run.
+
+### 27.5 Fresh external information and next executable step
+
+The00:46:00Z complete index refresh leaves kit main at93d98bbe, with15 open PRs. Newly listed
+PR80/81/82 and their portal entries are partial results; none supplies the missing eternal-cycle
+classification. Targeted actual-source reads (not full proof audits):
+
+- PR80 head e2aa4179bb58: `tape_eq_init_of_head_ne` and scan-bound hypotheses concern Turing-machine
+  tape invariance; source SHA256 c4c50cdf58f3816594deefca2bb49559d28aa5b0eb2508cd492d3cbc0fdd2b00.
+- PR81 head069d33b6de89: `energy_forms_of_antiperiodic` assumes eventual antiperiodicity of the
+  sequence; it does not prove it for the centre. Source SHA256
+  16a44e82bf8a639d2cc97fb8c6227bb763e5cb7b21f4a7a4a38a2884c5bbf25f.
+- PR82 head2a110b795e93: `pureScan_two_erase_b1`, prefix autonomy and `front_eq_terminal_FG`
+  are for the auxiliary survival frontier. The last retains `Legal`, a successful `run`, and
+  a cone-overlap inequality. It is not a theorem of actual-seed ancestry capture or unrestricted
+  memory erasure. Source SHA256 dd17a4254a040ca21465da7d2ada5feec5dd2c714bea4b13cc9c86ff1a332bd6.
+
+Next: Local's carrying read of27.3's affine repair; for the all-period conjecture, try to
+recover a constrained predecessor from a reachable pair(v,w), knowing Delta(w)=u OR v.
+At v=0 the preceding u is revealed; at v=1 it is masked. Determine which boundary-rooted
+constraints recover those masked bits, and test the proposed invariant first on the explicit
+period8 same-period path. A general uniqueness/rank theorem could explain the observed trees;
+finite nesting and a longer period128 census do not yet do so. Independent alternative: the
+exact centre-loss pair(p,q), then Mahler's4,11,6 threshold boundary. Schedules remain paused.
+My own pull: a rank measuring what the first defect retains through the masked OR positions,
+allowing several columns at one period before the next doubling. This is more specific than
+assuming a halving map exists because the small trees nest.

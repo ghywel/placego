@@ -14879,3 +14879,21 @@ novelty claim. Current external refresh00:46:00Z, kit93d98bbe,15 open PRs; chang
 sources read separately. Outcome follows; schedules paused.
 My own pull: the information retained at the first defect, to obtain a rank or justified
 period-halving law rather than another period enlargement.
+
+GC2359 outcome: L1292's temporal-ring/infinite-path reduction **carries, PROVED two-party hand**.
+Independent frozen9907aa55 literal integration plus Kahn deletion reproduces every result through64:
+171774 defect states at64, no cycle or rain return; all65808 small-ring controls and decreasing
+ranks pass. Fix(Phi^64) is exactly the two rain phases. Not Lean and not every period. Retained
+rank/source/receipt archive SHA256484221f10436214c5e94b1f5455ef05fd32ba7fc42ba72f886fbf51f4e7d3fa0.
+Intel4.00 child CPU seconds,87.8MB max RSS; no pressure stop, no128 run.
+
+Repairs: power-of-two means least period;104 counts the defect vertex (103 further transitions).
+The reachable p8 edge(204,180)->(180,168) preserves exact period8: immediate doubling is false;
+a rank within a period plateau is needed. Finite-level cycles alone are not eternal points.
+The mod8 affine obstruction needs residue-compatible conjugacy, but27.3 supplies a stronger
+short proof for any bijective conjugacy using the genuine two-cycle and Phi^2(0)=12
+(PROOF-SKETCH, Local carrying read requested). L1288's centre equivalence and retreat thresholds
+also need the distinctions in27.4; no positive-speed claim follows. External refresh00:46Z,
+kit93d98bbe, actual PR80/81/82 changed-source scopes/hashes retained in27.5; no open hypothesis solved.
+My own pull: recover the preceding column at masked OR positions to obtain a rooted rank,
+allowing same-period stretches; test the period8 obstruction before any period enlargement.
