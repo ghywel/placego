@@ -87,13 +87,17 @@ def main():
             args=[str(binary),'--threads='+str(job['threads']),str(cnf)]
             if job.get('proof'):args.append(str(OUT/(job['name']+'.drat')))
             rec=run(job['name'],args,job['cpu'],job['wall'],job.get('expected_rc'))
+            if rec['returncode']==10 and job.get('known_unsat'):raise RuntimeError('KNOWN_UNSAT_DISAGREEMENT')
             if rec['returncode']==10:
                 model_check(cnf,(OUT/(job['name']+'.stdout')).read_text());rec['model_checked']=True
             if rec['returncode']==20 and job.get('proof'):
                 name=job['name']+'-check'
                 run(name,['/usr/local/bin/drat-trim',str(cnf),str(OUT/(job['name']+'.drat'))],5,10)
                 assert 's VERIFIED' in (OUT/(name+'.stdout')).read_text();rec['proof_checked']=True
-            if rec['returncode'] not in (0,10,20,-9,-24):raise RuntimeError('SOLVER_FAILURE')
+            if rec['returncode'] in (-9,-24):
+                if rec['cpu_s'] < .95*job['cpu']:raise RuntimeError('UNEXPLAINED_SOLVER_SIGNAL')
+                rec['censored']='CPU_LIMIT'
+            elif rec['returncode'] not in (10,20):raise RuntimeError('SOLVER_FAILURE')
             save(job['name']+'.receipt.json',rec)
 try:main()
 except BaseException as e:

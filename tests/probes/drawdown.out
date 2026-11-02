@@ -1,0 +1,10 @@
+## drawdown.py G8 6 10 14 18
+G8 r= 6: patterns 16 x 8 alignment classes, 48 ticks: largest drawdown 5 (alignment a=0 q=5, interior 1110, front came to 0 cells below the pinned top)
+G8 r=10: patterns 256 x 8 alignment classes, 60 ticks: largest drawdown 5 (alignment a=0 q=5, interior 11101000, front came to 4 cells below the pinned top)
+G8 r=14: patterns 4096 x 8 alignment classes, 72 ticks: largest drawdown 5 (alignment a=0 q=5, interior 111010000000, front came to 8 cells below the pinned top)
+G8 r=18: patterns 65536 x 8 alignment classes, 84 ticks: largest drawdown 5 (alignment a=0 q=5, interior 1110100000000000, front came to 12 cells below the pinned top)
+## drawdown.py G16 6 10 14 18
+G16 r= 6: patterns 16 x 128 alignment classes, 48 ticks: largest drawdown 11 (alignment a=6 q=11, interior 0110, front came to 5 cells below the pinned top)
+G16 r=10: patterns 256 x 128 alignment classes, 60 ticks: largest drawdown 14 (alignment a=6 q=13, interior 00000001, front came to 9 cells below the pinned top)
+G16 r=14: patterns 4096 x 128 alignment classes, 72 ticks: largest drawdown 19 (alignment a=7 q=5, interior 100010010010, front came to 0 cells below the pinned top)
+G16 r=18: patterns 65536 x 128 alignment classes, 84 ticks: largest drawdown 22 (alignment a=2 q=1, interior 1101111111110010, front came to 17 cells below the pinned top)

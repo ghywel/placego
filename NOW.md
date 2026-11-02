@@ -2,6 +2,21 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2378 — certification and parallel benchmarking COMPLETE:**
+[Exact outcomes, measurements and queue](reports/GPT-T33-INTEL-20261102.md#gc2378-benchmark-results-and-practical-scope).
+D64rain0→P1024 is independently LRAT/cake_lpr certified UNSAT; other orientation and
+rigidity remain UNKNOWN. Gimsatul1/2/4-thread controls pass. All12 D40 timings solve;
+all6 D64 timings hit equal CPU budgets, with no hard-case winner. More threads help
+one D40 orientation modestly at higher CPU cost; one remains the economical default.
+Pinned tool/source, full receipts and scope saved. No Intel research compute remains.
+Local owns G16 T36; source/output read, finite scope and fuel obligations recorded.
+Its proposed K20/24 exhaustive code needs batching first (GC2379). Next technical
+step: independently carry the known-symmetry graph quotient, then small transition
+comparison before any hardware port. Warm alternative: Local's strict-growth fuel
+potential; independent alternative: machine-write/ancestry information accounting.
+External index18:32:43Z,kit93d98bbe/26PRs; newfee9ad is conditional/partial Lean Verified.
+Both recurring schedules remain **PAUSED**.
+
 **GPT, GC2370 — longer Intel search returns UNSAT; certificate still pending:**
 [Completed run and exact scope](reports/GPT-T33-INTEL-20261102.md#gc2370-sustained-search-decides-the-first-d64-instance).
 The owner-authorized 30-minute CPU allowance decided D64 rain orientation0→P1024
@@ -62,7 +77,7 @@ rank on non-doubling stretches; no Intel giant restart now. Latest lost checkpoi
 560082/560085 subtrees reported complete, period256 still INCOMPLETE. GC2360 E−B=R now PROVED two-party
 by L1300. Both schedules **PAUSED**; no job launched. The full core-program audit remains separate.
 
-**Local, L1299–L1311 — the cycle lemma refuted; upward rigidity; front certificates, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
+**Local, L1299–L1313 — the cycle lemma refuted; upward rigidity; front certificates, fuel and the edge, 2 November 2026:** [§29.13](reports/rule30-genealogy.md#2913-t25-every-root-at-cap-108-then-the-54-giants-to-completion-l1297-predictions-written-before-the-giant-run).
 - All 560,085 subtrees ran at cap 10^8. 51 of the 54 giants are complete, and three are open (3.05·10^6 pending
   nodes). There is no rain edge in 2.3·10^12 nodes so far.
 - **STOPPED (L1301).** The checkpoint was lost in the app restart (L1302); the per-root results are saved. The three
@@ -84,6 +99,10 @@ by L1300. Both schedules **PAUSED**; no job launched. The full core-program audi
   **T34 (L1311):** Cloud's bridge carried; the kit already excludes G8 at every period. A front-potential window
   automaton certifies G8 independently but cannot certify G16: its free bits allow a steady retreat of 1.14 cells per
   tick at every window width, so G16 needs a global argument using the edge.
+  **T35 (L1312):** the mismatch top is pinned, so an endless retreat is impossible. But G16 eats prepared regions
+  (drawdown about r + 4) while G8's drawdown stays at 5. A G16 exclusion needs a fuel bound plus "the edge emits no
+  fuel". **T36 (L1313):** the edge alone drives the front at 1.19 to 1.22 cells per tick; prefix fuel is ≤ K + 6
+  (exhaustive to K = 16), and the late drawdown is ≤ 17. An edge lemma for G16 is a precise conjecture, not yet proved.
 - No layer state repeats, even up to rotation (p ≤ 128), so memoising cannot help.
 
 **GPT, GC2360 — morning reconciliation, 2 November 2026:**

@@ -1,0 +1,94 @@
+{
+  "mode": "controls",
+  "worker_cpu_stop": 108,
+  "binary_sha256": "7d254115f5d895eeb6ac8312492b0ef93e0981a3c42dbfb903b629aa0b9e69b0",
+  "jobs": [
+    {
+      "name": "sat-t1",
+      "cnf": "/private/tmp/gc2366-cert-pilot/sat-control.cnf",
+      "sha256": "a7774899d20bd6639ace31f0ef5fbb4944fcccf867e2f9537a551566556b62c0",
+      "threads": 1,
+      "cpu": 2,
+      "wall": 5,
+      "expected_rc": 10,
+      "proof": false
+    },
+    {
+      "name": "unsat-t1",
+      "cnf": "/private/tmp/gc2371-chunk-control/chunk-unit.cnf",
+      "sha256": "ac42a371b5a124286c410ed5dfa2e3be7ee7d5b1feac6f08e7e1715f0c3669a8",
+      "threads": 1,
+      "cpu": 2,
+      "wall": 5,
+      "expected_rc": 20,
+      "proof": true
+    },
+    {
+      "name": "D40-t1",
+      "cnf": "/private/tmp/gc2366-cert-pilot/rain0-D40.cnf",
+      "sha256": "47f4950ce4b2e29db65a92e1b905e2cb58ffc2327e5d55b1cce64df0577b21a9",
+      "threads": 1,
+      "cpu": 12,
+      "wall": 18,
+      "known_unsat": true
+    },
+    {
+      "name": "sat-t2",
+      "cnf": "/private/tmp/gc2366-cert-pilot/sat-control.cnf",
+      "sha256": "a7774899d20bd6639ace31f0ef5fbb4944fcccf867e2f9537a551566556b62c0",
+      "threads": 2,
+      "cpu": 2,
+      "wall": 5,
+      "expected_rc": 10,
+      "proof": false
+    },
+    {
+      "name": "unsat-t2",
+      "cnf": "/private/tmp/gc2371-chunk-control/chunk-unit.cnf",
+      "sha256": "ac42a371b5a124286c410ed5dfa2e3be7ee7d5b1feac6f08e7e1715f0c3669a8",
+      "threads": 2,
+      "cpu": 2,
+      "wall": 5,
+      "expected_rc": 20,
+      "proof": true
+    },
+    {
+      "name": "D40-t2",
+      "cnf": "/private/tmp/gc2366-cert-pilot/rain0-D40.cnf",
+      "sha256": "47f4950ce4b2e29db65a92e1b905e2cb58ffc2327e5d55b1cce64df0577b21a9",
+      "threads": 2,
+      "cpu": 12,
+      "wall": 18,
+      "known_unsat": true
+    },
+    {
+      "name": "sat-t4",
+      "cnf": "/private/tmp/gc2366-cert-pilot/sat-control.cnf",
+      "sha256": "a7774899d20bd6639ace31f0ef5fbb4944fcccf867e2f9537a551566556b62c0",
+      "threads": 4,
+      "cpu": 2,
+      "wall": 5,
+      "expected_rc": 10,
+      "proof": false
+    },
+    {
+      "name": "unsat-t4",
+      "cnf": "/private/tmp/gc2371-chunk-control/chunk-unit.cnf",
+      "sha256": "ac42a371b5a124286c410ed5dfa2e3be7ee7d5b1feac6f08e7e1715f0c3669a8",
+      "threads": 4,
+      "cpu": 2,
+      "wall": 5,
+      "expected_rc": 20,
+      "proof": true
+    },
+    {
+      "name": "D40-t4",
+      "cnf": "/private/tmp/gc2366-cert-pilot/rain0-D40.cnf",
+      "sha256": "47f4950ce4b2e29db65a92e1b905e2cb58ffc2327e5d55b1cce64df0577b21a9",
+      "threads": 4,
+      "cpu": 12,
+      "wall": 18,
+      "known_unsat": true
+    }
+  ]
+}
