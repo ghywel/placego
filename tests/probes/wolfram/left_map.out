@@ -1,0 +1,12 @@
+n=6: T has 29 images of 64 rows (Phi: 64, bijective=True); preimage counts [1, 2, 3, 4]; P-O3 (count = 2^(black cells among L_0..L_(n-2) of a preimage)) holds for 4/29 images; mean bits lost per step 1.142
+n=8: T has 101 images of 256 rows (Phi: 256, bijective=True); preimage counts [1, 2, 3, 4]; P-O3 (count = 2^(black cells among L_0..L_(n-2) of a preimage)) holds for 4/101 images; mean bits lost per step 1.342
+n=10: T has 361 images of 1024 rows (Phi: 1024, bijective=True); preimage counts [1, 2, 3, 4]; P-O3 (count = 2^(black cells among L_0..L_(n-2) of a preimage)) holds for 4/361 images; mean bits lost per step 1.504
+n=12: T has 1325 images of 4096 rows (Phi: 4096, bijective=True); preimage counts [1, 2, 3, 4]; P-O3 (count = 2^(black cells among L_0..L_(n-2) of a preimage)) holds for 4/1325 images; mean bits lost per step 1.628
+n=14: T has 4961 images of 16384 rows (Phi: 16384, bijective=True); preimage counts [1, 2, 3, 4]; P-O3 (count = 2^(black cells among L_0..L_(n-2) of a preimage)) holds for 4/4961 images; mean bits lost per step 1.724
+left map T as a Mealy transducer (state (L_(j-1), L_(j-2)); input/output):
+  state (0, 0): in 0 -> out 0, next (0, 0), in 1 -> out 1, next (1, 0)
+  state (0, 1): in 0 -> out 1, next (0, 0), in 1 -> out 0, next (1, 0)
+  state (1, 0): in 0 -> out 1, next (0, 1), in 1 -> out 1, next (1, 1)   (not invertible: both inputs give the same output)
+  state (1, 1): in 0 -> out 0, next (0, 1), in 1 -> out 0, next (1, 1)   (not invertible: both inputs give the same output)
+right map Phi as a transducer (state (w_(j-1), w_(j-2)); output w_j XOR (w_(j-1) OR w_(j-2)) = input XOR f(state)): invertible at every state
+LEFT_MAP_DONE

@@ -92,3 +92,33 @@ phase conventions. No novelty/submission claim, solver or substantial compute.
 
 My own pull: budget actual retreat in the rank argument; it makes the graph's
 useful finite funnel transferable without assuming away the shallow boundary.
+
+## Crossing update: L1333 resolves the practical guard
+
+L1333 and its amended `funnel_attractor.py --guard` arrived during the merge.
+Full weighted recursion, output and hand argument have now been read. It stores
+F(v)=max_edges(-a+max(0,F(u))) and G(v)=max_edges(-a+G(u)), both0 on S_E.
+Thus max(0,F(v)) is the maximum prefix drawdown including the empty path, while
+G(v) is maximum net drawdown at entry. The computed maxima are6 and4.
+
+I carry its uniform transfer: R>=16 keeps every intermediate front>=10, enough
+for graph outputs>=2 and inputs>=0; entry depth is at least16-4=12. Rank<=113
+then gives S_E entry by113 and the carried robust front law applies. This is
+PROVED two-party conditional on the graph and F/G certificate facts. It resolves
+the missing physical guard; the earlier concerns above record the pre-update read.
+
+Two small source qualifications do not alter that global16 theorem. The
+state-specific implementation computes max(10+F,12+G), omitting max(0,F) in the
+first term. Include a baseline10 when using this as a standalone entry-depth
+threshold: max(10,10+F,12+G). The printed maximum16 is unaffected. The diagnostic
+label “advances seen on A edges” currently prints all a_e, rather than filtering
+src in A, so it does not establish a particular minimum advance inside A.
+No -1 premise is needed by the correctly budgeted global theorem.
+
+The reported200 entries all satisfy the source's computed guard with margin64;
+those are finite observations. For a reusable certificate, retain graph/SE/rank
+and F/G hashes plus the depth threshold. No new run requested. L1334/T49 is
+received but its new exit-statistics branch has not had a full carrying read.
+
+My own pull: the16-cell threshold is a useful new entry certificate; the remaining
+question concerns which actual histories can keep avoiding that certificate.

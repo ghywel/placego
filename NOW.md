@@ -6,9 +6,9 @@
 [Corrected Cloud phase/source carried](reports/GPT-CORRECTED-ANCHOR-READ-20261102.md)
 for bounded speed, conditional on finite checks and explicit start guards;
 exact front recurrence remains a separate offset test. No duplicate census.
-[T48 graph attractor carried; depth budget proposed](reports/GPT-FUNNEL-DEPTH-READ-20261102.md).
-Tick-only margin needs a one-cell retreat bound; H(v) handles actual edge weights.
-Local retains graph/depth work; Cloud retains start/offset receipts.
+[T48 depth16 transfer carried from L1333](reports/GPT-FUNNEL-DEPTH-READ-20261102.md#crossing-update-l1333-resolves-the-practical-guard):
+S_E entry within113 ticks, conditional on the finite graph/F/G facts.
+Local retains T49 work; Cloud retains start/offset receipts.
 Next GPT: inspect GC2401 LRAT dependencies for a reusable original-clause template.
 Both schedules ACTIVE; no research job running.
 My own pull: an explicit dependency cone may turn one checked clause into a general proof pattern.
@@ -785,3 +785,5 @@ CHAT-LEDGER.md and CLOUD-LOCAL.md.
 **Cloud, 2026-11-02 22:31 GMT (CL682).** The closed-set certificate with a moving anchor ([tracker round 12](reports/inquisition-20261031.md#round-12-2026-11-02-cloud-cl682-the-closed-set-certificate-with-a-moving-anchor-passes-both-controls-g8s-lean-verified-law-lowrys-109-states-rediscovered-for-the-classic-ether-proves-the-9-7-law-of-7-63-at-28-alignments-and-fails-on-9-57s-519-at-every-window-to-32-although-that-law-holds-to-t--20000)): passes G8 (32/32) and the classic ether (196/196, Lowry's 109 states × 7); proves (7, 63)'s 2/9 law at 28 alignments, the first moving walls (70–74 states); fails on (9, 57)'s 5/19 at every window to 32 although that law holds to t = 20,000 (MEASURED, not a wall law). Soundness in the waiting room, read wanted.
 
 **Cloud, 2026-11-02 22:51 GMT (CL683).** GPT's review caught a phase-bookkeeping error in the closed-set certificate (G28); corrected, (9, 57)'s 5/19 law is a moving wall at 513 of 513 alignments (full census), the controls unchanged. The eternal-cycle phases in diagonal coordinates ([tracker round 13](reports/inquisition-20261031.md#round-13-2026-11-02-cloud-cl683-gpts-catch-turns-9-57-from-a-failure-into-a-theorem-the-eternal-cycle-phases-in-diagonal-coordinates-no-eternal-point-of-any-period-ends-in-p1024-walls-to-depth-8-or-the-480-phase-to-depth-10-the-adversarial-strip-graph-is-uninformative)): no eternal point of any period ends in P1024 with a wall of depth ≤ 8 or in the 480-phase with depth ≤ 10 (exact episode tests); the adversarial strip graph is uninformative (spurious mean-4.5 cycles on G8).
+
+**Cloud, 2026-11-02 23:12 GMT (CL685).** The atlas's open cells, second pass ([atlas §12](reports/rule30-structure-atlas.md#12-the-open-cells-second-pass-block-26-cl685-at-the-owners-word)): M3 closed (the four half-bit budgets are four quantities; the kit's free-bits language and our channel bound the same entropy, ours five times sharper); M6 stated exactly (one clause away: the Sink conjecture's "no wall leaves the rain"); M1's algebraic half (the left edge map is Φ with the linear input moved, lossy through unreachable rows); M4's residue test vacuous. Residues: 0.246's closed form, the 0.647 conditional, the doubling bit after 101.
