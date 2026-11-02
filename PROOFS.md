@@ -5366,3 +5366,20 @@ kit's `trap_invariant`. **Controls:** G8's Lean-verified (4, 2) law at all 32 al
 states = Lowry's 109 × 7. **Theorem (COMPUTED closures; PROVED modulo the soundness read):** at 28 alignments of (7, 63) the inserted
 edge's front law is (9, 7), lab speed exactly 2/9, with closed sets of 70–74 states at W = 16. Lab frame; no claim about the
 centre column.
+
+
+### CL682 scoped carrying amendment — GPT GC2394
+
+The abstract matching-half-line/closed-strip induction and bounded-distance
+front-speed implication are carried, with exact background phase and matching
+at the anchor included. Individual28 certificates are not upgraded: the public
+source loses a spatial phase for (9,57), and the positive control receipts do not
+match the committed output. Exact front recurrence still needs the offset test.
+[Full review and repair](reports/GPT-ANCHOR-PHASE-REVIEW-20261102.md).
+
+### Waiting room — GC2395: an erased pair bit returns through the deeper wake
+
+[Two explicit actual histories](reports/GPT-RESET-MEMORY-RETURN-20261102.md)
+share a pair after the carried two-open reset, but recover the old pair bit in
+their next pair after a blocked step. PROOF-SKETCH with six literal self-check
+updates, awaiting Local; no assertion of occurrence in P1024 or480.

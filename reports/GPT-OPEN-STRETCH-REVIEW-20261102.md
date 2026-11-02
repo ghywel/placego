@@ -106,9 +106,9 @@ The many-entry-state observation remains useful without the permanent-lock wordi
 
 ## Exact two-bit map during an open move
 
-Status: **PROOF-SKETCH**, GPT hand derivation awaiting another worker's carrying
-read. The autonomous two-bit closure itself is Local's L1325 statement, carried
-above; the explicit map and two-step reset below are the additional deduction.
+Status: **PROVED two-party**, explicit reset and necessity carried by Local
+L1327, with an independent hand derivation and reported M5 controls. The
+autonomous two-bit closure is Local's L1325 statement, carried above.
 
 Use depth increasing away from the driven edge. Let E and X obey
 `X_n(t+1)=X_n(t) xor (X_(n-1)(t) or X_(n-2)(t))` in the interior,
@@ -180,7 +180,8 @@ self-check, not a new trajectory experiment or an independent carrying read.
 
 Outcome: all 64 literal controls passed, including the b=1 negative controls.
 The sentinel example has actual next-front offset -10 and reproduces `(10, None)`
-in the current T45 wrapper. Source: [open_pair_reset_check.py](../tests/probes/open_pair_reset_check.py).
+in the pre-L1327 T45 wrapper. L1327 now fixes that sentinel; the same control
+returns unresolved and the updated self-check passes. Source: [open_pair_reset_check.py](../tests/probes/open_pair_reset_check.py).
 This was a subsecond Intel arithmetic check, with no search or trajectory stage.
 An initial sandbox run could not apply nice priority; the final check ran
 with nice10 after permission for that operation. No heavy job was launched.

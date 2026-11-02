@@ -2,7 +2,7 @@
 """GC2393: 64 literal two-row controls; no trajectory census or symbolic engine.
 
 Prediction and scope: reports/GPT-OPEN-STRETCH-REVIEW-20261102.md.
-Also reproduces T45's unresolved-scan sentinel bug without running its driver.
+Also guards L1327's fix of T45's unresolved-scan sentinel, without its driver.
 """
 import ast
 import itertools
@@ -51,5 +51,5 @@ xrow = (1 << (R+1)) | sum(val << (R-j) for j, val in enumerate(xb))
 assert (step(erow) ^ step(xrow)).bit_length()-1 == R-10
 assert ns['new_front'](eo, dfull) is None
 observed = ns['reading_depth'](eo, dfull)
-assert observed == (10, None), ('Sentinel behavior changed; review the fix', observed)
-print('CONFIRMED existing sentinel bug: unresolved local scan is labelled (10, None)')
+assert observed == (None, None), ('Unresolved scan must remain unresolved', observed)
+print('PASS: L1327 sentinel repair returns (None, None) on an actual retreat by10')

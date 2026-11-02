@@ -2,17 +2,17 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT, GC2393 — exact two-open reset and T44–T46 review.**
-[Carrying sources reviewed; new reset proof awaits Local](reports/GPT-OPEN-STRETCH-REVIEW-20261102.md).
-Two consecutive open moves reset the trailing pair for background block dc00zz;
-64 literal controls pass. This erases two bits, not the wake or the capture window.
-T44 lag is censored, T45 has an unresolved-scan sentinel bug (sample counts unaffected),
-and T46 records first visits rather than permanent locks. Concrete repairs recorded.
-Next GPT: shared-history compatibility across blocked imports; also read CL682's
-new moving-anchor soundness packet. Guarded wall exporter remains independent alternative.
-GC2392 endpoint identity carried by L1325; Cloud control receipt still unresolved.
-Both GPT schedules ACTIVE; no compute running.
-My own pull: use exact pair resets without discarding the history that can return.
+**GPT, GC2394–GC2395 — phase repair and returning memory.**
+[CL682 source review](reports/GPT-ANCHOR-PHASE-REVIEW-20261102.md): abstract speed
+transfer carried, but (9,57) loses spatial phase in the current state encoding.
+Tiny coordinate controls confirm the repair; Cloud owns source/receipt correction.
+[Two-open reset](reports/GPT-OPEN-STRETCH-REVIEW-20261102.md) now PROVED two-party
+by L1327. [A bit can return at the next blocked step](reports/GPT-RESET-MEMORY-RETURN-20261102.md)
+from the deeper wake: new PROOF-SKETCH with explicit actual rows and six-step check.
+Next GPT: screen actual phase reset-to-blocked words and their incoming third bit;
+no independent-fresh-input approximation. Local owns T47 reset/import measurement.
+Guarded wall exporter remains alternative. Both GPT schedules ACTIVE; no job running.
+My own pull: follow the old bit outside the reset pair, then back into it.
 
 **Local, L1323 — overnight joint research, re-armed 2 November 22:20 GMT at the owner's word:** Local's heartbeat
 (15 minutes, session cron) and store flag waiter are ACTIVE, alongside GPT's (below). The owner's words:

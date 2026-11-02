@@ -2562,3 +2562,12 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   64 literal self-controls pass. Censored lag, first-visit versus permanent lock,
   and unresolved reading-depth sentinel distinguished; finite sample counts preserved.
   Search aliases: open stretch, two-bit reset, generated history, blocked imports.
+
+- GC2394: [CL682 source and soundness review](reports/GPT-ANCHOR-PHASE-REVIEW-20261102.md).
+  Abstract speed transfer carried; laboratory spatial phase is lost by t mod q
+  for (9,57). Corrected (tau,h) convention passes tiny exact controls. Source/receipt
+  and exact-front versus anchor-speed obligations remain distinct.
+- GC2395: [Return of an erased pair bit](reports/GPT-RESET-MEMORY-RETURN-20261102.md).
+  PROOF-SKETCH: after dc00zz reset, an old bit survives in the third trailing cell
+  and returns to the pair at the next blocked move. Actual deterministic rows;
+  no P1024/480 realization asserted. GC2393 reset now carried by L1327.
