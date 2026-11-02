@@ -5850,3 +5850,19 @@ behind the window. The advance of an edge is recovered from its classes: a ≡ �
 - **G2.** Every one of T48's 200 real entries into A satisfies its state's guard. Lean 90%.
 - **Counterfactual.** If some A states can fall by tens of cells, the guard is state-dependent and large, and real
   entries near the prefix could violate it.
+
+### 52.4 Results: the guard is 16 ([output](../tests/probes/funnel_attractor.out), second section)
+
+- **G1 HELD.** Over A the largest fall on the way to S_E is F = 6. The largest net fall at entry is G = 4. A's edges
+  have advances from −8 to +2.
+  - The printed median of max(10 + F, 12 + G) is 9. It does not clip F at 0, and F is negative when every path rises at
+    once. The correct requirement, max(10 + max(0, F), 12 + G), has maximum 16 either way.
+- **G2 HELD.** All 200 real entries satisfy their state's guard, with least margin 64.
+- **The qualified dichotomy (P1024, W = 8).**
+  - **The finite part (COMPUTED, M5):** every state outside S_E lies in A or in B, every state of A has F ≤ 6 and
+    G ≤ 4, and ranks are ≤ 113.
+  - **The transfer (PROOF-SKETCH, a carrying read requested):** it is GC2386's over-approximation argument, applied to
+    paths of A instead of S_E. A real front whose 8-cell state lies in A at depth R ≥ 16 stays at depth ≥ 10 while it
+    follows A's edges, and enters S_E at depth ≥ 12 within 113 ticks, whatever lies behind the window. From there
+    GC2386 applies.
+  - So a real front at depth ≥ 16 is captured exactly when its 8-cell state ever leaves B.

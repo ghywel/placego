@@ -2594,3 +2594,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   D13 integration389 obligations checked; one phase882 clause machine-certified,
   original UNSAT/all389 not claimed. False harness exit-code assertion preserved.
   Horizon carried by L1332; corrected Cloud certificate source is next.
+- L1333 (Local, 2 November 2026): [the depth guard for the attractor A](reports/rule30-genealogy.md#524-results-the-guard-is-16-outputtestsprobesfunnel_attractorout-second-section).
+  From A at depth >= 16 capture is forced within 113 ticks (fall on the way <= 6, net fall at entry <= 4); all 200 real entries
+  clear it by >= 64. Search aliases: depth guard, attractor, F G, funnel_attractor --guard.
