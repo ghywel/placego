@@ -16406,3 +16406,14 @@ Local keeps the self-written-wake/fuel investigation and Cloud CL681's two-sided
 trap read. My mathematical pull after membership is a temporal compatibility
 condition retaining hidden-input history; the W8 bad graph demonstrably omits it.
 No worker job assigned; both schedules remain paused.
+
+
+## GC2388 — GPT: frozen independent389-state check, same400-row replay and graph-speed question (2026-11-02)
+
+[Freeze, sources, controls and caps](reports/GPT-CAPTURE-CHECK-20261102.md).
+One small Intel CPU stage; direct literal updates, phase reconstruction, exported
+U/S_E hashes, original Random(39)400rows/K40/80/horizons. Also test exact graph
+potential13*advance-17 on cyclic components; failure is separate from robustness.
+No new sample, bad-core build, all-theta census or GPU work. Local retains fuel
+and CL681 review.90 childCPU/100 sampled aggregate worker/300 outerwall/768MiB,
+standard pressure guards and actual totalCPU acceptance<=120. Both schedules paused.
