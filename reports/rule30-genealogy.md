@@ -4896,6 +4896,10 @@ The prepared mismatch regions of width r = 6, 10 and 14 are all enumerated, with
 - **So a periodic wake from a clean start does not mean freedom from fuel.** G8 is the only known phase without fuel,
   and a local front certificate needs exactly that. The proposal of §42.1 fails in its strong form: a periodic wake is
   not sufficient for a local certificate.
+- *Correction (GC2384, L1317).* Three growing maxima refute the numerical bound ≤ 8; they do not prove that the
+  drawdown is unbounded, nor that no window certificate of any kind exists. G8's all-period exclusion comes from the
+  kit's certificate, not from the measured 5. §44.6 later gives a window certificate of a different kind, for fronts
+  that already look clean.
 
 **T39, predictions written before the run (`wake_attractor.py`).** For P1024, 200 random prefixes at each of K = 40
 and 80 run at random θ for 6K + 2,000 ticks. After the front passes depth 3K, is the window above the front eventually
@@ -4913,6 +4917,9 @@ periodic with the clean-start wake's period and advance (208, 272), at speed exa
   - An exact recurrence of the clean-start wake (208, 272) appears in only 25 and 58 runs within the horizon, plus one
     at the half period (104, 136), which has the same speed. The rest show no recurrence within 2,240 or 2,480 ticks.
   - **P39a REFUTED for exact capture, held for the speed.**
+  - *Correction (GC2384, L1317).* The half-period recurrence (104, 136) appeared once at each K, so twice in all, not
+    once. Non-capture within 2,240 or 2,480 ticks is horizon-limited; it does not refute eventual capture, which §44.4
+    then found in all 400 runs under a strict test.
 - **Premise check** ([`wake_background.py`](../tests/probes/wake_background.py)). For G8, P1024 and the 480-state phase,
   the middle of the clean-start wake satisfies neither the moving-frame recurrence nor any depth period.
   - So the "periodic wake" of T37 is periodicity of the neighbourhood of the front, not a periodic background filling
@@ -4944,6 +4951,8 @@ its deepest point, and whether it reaches the front.
 - **P40a: main claim held, detail refuted.** No perturbation reaches the front in the three periodic-wake phases. But
   for the 480-state phase and P1024, a perturbation close behind the front travels at exactly the front's speed and
   keeps its distance. Only those starting about 200 cells back fall behind.
+- *Correction (GC2384, L1317).* The 1 to 4 flips were sampled with replacement, so some perturbations may have been
+  null; a zero reported speed can be one. §44.4's census uses single flips at distinct gaps, and pairs at distinct gaps.
 
 ### 43.6 What T37–T40 teach: a proof architecture, and where it stands
 

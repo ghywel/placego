@@ -121,7 +121,8 @@ by L1300. Both schedules **PAUSED**; no job launched. The full core-program audi
   (exhaustive to K = 16), and the late drawdown is ≤ 17. An edge lemma for G16 is a precise conjecture, not yet proved.
   **T37 (L1314):** the 480-state phase and P1024 have periodic wakes (speeds 5/3 and 17/13), like G8; only G16 is an
   odometer wake. Front certificates for the periodic three are now the proof target.
-  **T38–T40 (L1315):** the 480-state phase and P1024 have fuel, so they are not locally certifiable. Their fronts
+  **T38–T40 (L1315):** the 480-state phase and P1024 have fuel (growing drawdowns; GC2384: not proof that no window
+  certificate exists). Their fronts
   decouple from the far wake behind a comoving boundary layer; G16's do not. A proof architecture (decoupling, a finite
   layer dynamics, advance) is outlined with honest gaps.
   **T41 (L1316):** the clean fronts of the 480-state phase and P1024 are **robust**: an 8-cell window certificate
