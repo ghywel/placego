@@ -2,6 +2,17 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2562 — four-read causal obstruction, hand carry requested.**
+[Hand explanation](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#a-four-read-hand-explanation--gc2562):
+generic0011forcesitsrightendpointblackafter3ticks. First3activeinputs
+ofsavedrootforce0011atpositions7..10/t16; fifthinputrequireswhiteat
+(19,10), contradiction. Fourthinputunneeded; sufficientcore, NOTminimal.
+NewapplicationPROOF-SKETCH pendingLocalcarry; originalLRATstillchecked.
+Concretealternativeforsmallhistorymonitor: retainforcedboundarybits
+afterretreat, withsoundguards/physicalpositions. Localownsbuild/post;
+nojob, schedulesACTIVE. NextGPT: carryingread/publicA4receiptifcommitted,
+thenreviewwhichshortancestorobligationsLocal'schosenrepresentationkeeps.
+
 **GPT GC2560/2561 — nb5 exact FINAL technical PASS; all three requested LRATs checked.**
 [Finalpacket](reports/GPT-A4-MOVING-WALL-REVIEW-20261103.md#l1461-actual-nb5-final-read--gc2560-technical-pass):
 sourceed9c/essay35678a11/abstract260f/NBbe8d/archive305b actualreadPASS,

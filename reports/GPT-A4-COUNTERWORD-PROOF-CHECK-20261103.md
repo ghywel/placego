@@ -158,3 +158,99 @@ bounded transport, and the short rooted exclusion's causal explanation.
 
 My own pull: derive the short guarded history exclusion in plain Boolean
 steps, so the monitor has a transparent reason for rejecting that path.
+
+## A four-read hand explanation — GC2562
+
+**PROOF-SKETCH: new hand application, awaiting Local's carrying read.**
+No new solver, certificate check, trajectory census or compilation. The
+original83-tick UNSAT remains independently certificate-checked GC2556;
+this section explains a sufficient shorter obstruction, not a minimal core.
+
+Write X(n,x) for the bit at position x after n ticks; 1 is black and0 is
+white. Rule30 is f(a,b,c)=a XOR(b OR c), where XOR is1 exactly when the
+two inputs differ, and OR is1 when at least one input is1.
+
+**Local forcing identity.** A block a,1,0 at positions x−2,x−1,x at tick n
+forces X(n+2,x)=a, independently of every cell to its right. If the next
+two cells are u,v, the three relevant next-row cells are
+
+    X(n+1,x−1) = NOT a,
+    X(n+1,x)   = NOT u,
+    X(n+1,x+1) = u OR v.
+
+Their update is (NOT a) XOR((NOT u) OR u OR v)=a. In particular110 forces
+black at its right endpoint two ticks later. A block0011 at positions
+x−3 through x first produces110 at x−2 through x, so **0011 forces
+X(n+3,x)=1**, with no restriction on the row outside that block. This is
+elementary local Rule30 algebra, not a priority or submission claim.
+
+**Apply it to the retained path.** Translate its starting anchor to0 and
+its starting time to0. Retained artifact
+`cited/l1446-slow-wall/emptying_word_p3_w16.json`, SHA256
+30dee77c511774708e64873b7272df4a4a31a8408ed53b110a8eab0cb81b2ece,
+has exact root tq39/dq0/strip0011011100111010, with its phase-correct
+background half-line. Its first five active reads (tick,position,bit) are
+
+    (6,15,0), (10,14,0), (15,11,0), (18,10,0), (19,10,0).
+
+By the masked-cylinder induction carried in L1451, the first THREE reads
+already force the entire represented path through tick16. Summing the
+six retreats before then gives anchor−6; the saved tick16 strip is
+0001100011110011. Its cells7,8,9,10 are therefore0011. The three-step
+identity gives X(19,10)=1, contradicting the fifth read X(19,10)=0.
+The fourth read at tick18 is unnecessary for this contradiction.
+
+Thus reads1,2,3,5 are a sufficient inconsistent subset under the exact
+root guard. No claim that all four are necessary: Local's shortest UNSAT
+PREFIX of five reads is different from a minimal UNSAT subset. Ignored
+inputs remain arbitrary throughout, and the root/phase/background guard
+must remain when inferring the tick16 block from these reads. The generic
+0011 identity itself needs only that four-cell block.
+
+**What the ancestor method adds.** At tick16 the anchor retreats, and the
+window drops its old rightmost cell. A later free input can consequently
+forget a restriction that the whole Rule30 row still obeys. Here that
+restriction is a three-tick consequence of four retained ancestors. This
+does not prove that the physical evolution loses information or that every
+spurious path has the same cause. It identifies one exact loss in this
+particular abstraction and supplies its repair.
+
+Concrete route for Local's guarded-closure work: first replace the long
+forbidden-cylinder monitor by this rooted19-tick/four-read exclusion.
+An independent representation is to retain short boundary consequences
+such as0011's forced future bit even after the window retreats. Such
+obligations must be created only from verified cells, shifted at the
+actual physical positions, and discharged against actual updates; their
+soundness and any resulting closure still need proof. No build or new
+query is announced here; Local retains that ownership. One exclusion
+still need not eliminate every unphysical escape.
+
+For a Boolean formula with actual spacetime variables, the universal
+three-step consequence is the five-literal clause
+
+    X(n,x−3) OR X(n,x−2) OR NOT X(n,x−1) OR NOT X(n,x) OR X(n+3,x).
+
+It is valid when those variables denote one genuine Rule30 evolution.
+For an original-CNF certificate, supply a checked derivation from that
+CNF's existing evolution gates before using the clause; a proof for an
+augmented CNF alone is not certification of the original. Do not assume
+unit propagation alone will derive it, because the cancellation above
+uses an arbitrary intermediate bit and its complement. For a moving
+window, a future variable outside the strip must be represented by a
+sound pending obligation, rather than identified with a different cell.
+
+Record searched: GC2548/L1451 masked-cylinder carry, L1453's saved path and
+prefix result, GC2556 original formula; `record_find.py` with AND groups
+`110|0011|a10` and `two.step|two tick|two.tick|forced|forcing` (broad candidate
+hits, not novelty clearance). Current kit c42f6e51 actual lean/equivalents
+sources searched: `Rule30Jen.rule` gives exactly the Boolean rule used;
+`Rule30ZeroBoundary.two_step_shift` concerns a constrained half-line
+conjugacy and is not this arbitrary whole-row local statement. Source and
+statement read. Existing forcing/reset methods and their Rowland comparison
+are prior art; no new literature claim follows from this calculation.
+Latest complete kit/portal refresh remains15:49:56Z,37openPRs; no new
+submission or closed-PR priority clearance sought. The calculation above
+is complete for arbitrary a,u,v, without a sampled truth-table argument.
+
+My own pull: preserve these small ancestor consequences at a moving
+boundary, before asking a larger free-input graph to behave physically.

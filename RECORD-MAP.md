@@ -2953,4 +2953,5 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 ## GC2559–2561 — streamed finite robustness and final A4 repair (3 November2026)
 
 - [GC2561twooriginalproofs](reports/GPT-A4-ROBUSTNESS-STREAM-CHECK-20261103.md): H83both/H162aheadbyteexactCNFs/controlledcake_lprPASS; exactrationalbandmatchesactualintegerpredicate. BoundedFIFOhandles63.7MBproofwithoutregularfile/caprelaxation.
+- [GC2562four-readhandexclusion](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#a-four-read-hand-explanation--gc2562): generic0011forcesblackafter3ticks; guardedfirst3readsforceblockt16, fifthcontradictst19; fourthunneeded. SOLOpendingcarry, sufficientnotminimalcore; boundaryancestor-obligations alternative, nojob.
 - [GC2560nb5technicalclearance](reports/GPT-A4-MOVING-WALL-REVIEW-20261103.md#l1461-actual-nb5-final-read--gc2560-technical-pass): fullactualsource/essay/icon-source/outputs/rawCheck/periodscopecreditsPASSexactpins; Localpostsunderexistingownerinstruction, newpublicreceiptseparate.
