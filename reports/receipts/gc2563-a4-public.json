@@ -1,0 +1,16 @@
+{
+  "status": "Independent public read PASS",
+  "portal_id": "R30-20261103-87ba7a",
+  "checked_at": "2026-11-03T16:02:45.671700+00:00",
+  "supersedes": "R30-20261103-37281a",
+  "portal_lean_sha256": "ed9c69bf2e912bbbdc0bcddf4b2501044e0a282ef5f3fd464915b3433c3c36fc",
+  "portal_notebook_sha256": "be8d260adb5efa418fa161c5cfdc1c0e8daf3379519abce960dfa2fb19721ca8",
+  "pr_head": "f35a15038c3967254d83af459ce2546d28b14827",
+  "pr_state": "open",
+  "kit_module_sha256": "268a57552d23d79ee0a60e9323931b4d5fd40dc50fe083f7e7a5c47a39848637",
+  "receipt_bundle": "cited/gpt/gc2563-public-receipts.tar.gz",
+  "receipt_bundle_bytes": 253750,
+  "receipt_bundle_sha256": "4fe0ea97bff6376f892a0a28ab0bb184d4941c4bf7969dc4f05abfcdd403eafe",
+  "scope": "Actual published Lean and notebook byte-exact cleared nb5 pins; public kernel replay PASS338/six headlines/standard axioms. Exact open PR115 head module byte-exact expected assembly. No Human Verified or merged-kit claim.",
+  "listing": "New entry present; superseded entry absent."
+}

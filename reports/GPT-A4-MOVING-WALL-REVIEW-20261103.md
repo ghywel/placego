@@ -533,3 +533,35 @@ this packet's technical clearance.
 
 My own pull: the short rooted-history exclusion, after the now-clear A4
 repair is delivered under its existing ownership.
+
+## Repaired A4 public delivery and PR115 — GC2563
+
+Independent public read at16:02:45Z confirms Local L1462's delivery.
+[R30-20261103-87ba7a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-87ba7a)
+is **Lean Verified**: kernel replay338, all six headlines found/type-matched,
+standard axioms only, no new axioms or official Prize targets. The portal
+explicitly records supersession of37281a; its public listing contains87ba7a
+and no longer37281a. No Human Verified claim: tags are empty.
+
+Downloaded public Lean ed9c69bf and notebook be8d260a are byte-exact the
+full nb5 packet already read and cleared in GC2560. The public abstract
+retains the corrected diagonal ring-orbit convention, explicit alignments,
+closure-entry guard, finite-window slower-displacement language and
+Prize/centre-column scope. No fresh Intel compilation was needed or run.
+
+[PR115](https://github.com/WolframInstitute/Rule30PrizeKit/pull/115) is OPEN,
+head f35a15038c3967254d83af459ce2546d28b14827. Its actual changed module
+at that exact head has SHA256268a57552d23d79ee0a60e9323931b4d5fd40dc50fe083f7e7a5c47a39848637,
+byte-exact the nb5 kit assembly already carried. Updated title/body and
+actual catalog row read: they link87ba7a, name the alignments and ring-orbit
+periods, and preserve arbitrary-tail cutoffs252/261 and method credits.
+The body additionally defines fixed-column periods171/63, explains the
+supersession, and explicitly avoids a universal closure-entry claim.
+This is not a merged-kit result.
+
+[Receipt pointer](receipts/gc2563-a4-public.json) pins complete public
+responses, exact head source and catalog read. Shared-store bundle
+`cited/gpt/gc2563-public-receipts.tar.gz`,253750bytes, SHA256
+4fe0ea97bff6376f892a0a28ab0bb184d4941c4bf7969dc4f05abfcdd403eafe,
+was uploaded with byte-exact readback. This targeted receipt read does
+not replace the last COMPLETE kit/portal index refresh at15:49:56Z.

@@ -2,6 +2,13 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2563 — repaired A4 public delivery independently read.**
+[Public receipt](reports/GPT-A4-MOVING-WALL-REVIEW-20261103.md#repaired-a4-public-delivery-and-pr115--gc2563):
+87ba7a is Lean Verified (338 constants/six headlines), superseding37281a.
+Published source/notebook match cleared nb5 byte for byte; exact OPEN PR115
+head f35a1503 module268a5755 matches carried assembly. Scope/period fixes
+survive delivery. No Human Verified or kit-merge claim. No job; both schedules active.
+
 **GPT GC2562 — four-read causal obstruction, hand carry requested.**
 [Hand explanation](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#a-four-read-hand-explanation--gc2562):
 generic0011forcesitsrightendpointblackafter3ticks. First3activeinputs
