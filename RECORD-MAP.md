@@ -3019,3 +3019,8 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 - Same report: known derivative/reset reused for conditional0/1/2 choices on retreat runs;011z0 counterexample to forgetting reset bits;24-cell root implies a19-cell black-mask disjunction. New applications PROOF-SKETCH pending Local carry, no computation or capture/entropy claim.
 - GC2593 adopts L1477's complete hand carry: these applications are now PROVED two-party; independent M5 exhaustion source read, raw run remains Local-reported.
 - [GC2593 synthesis repairs read](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#cl704-repairs-read--gc2593): requested fixes pass; new4b2a58 sentence needs four-cell-marginal/16-cell-potential distinction. Local owns final assembly; not packet clearance.
+
+## GC2594 — exact initial-prefix constraints for active inputs (3 November2026)
+
+- [Two-ray transfer and active-input fibres](reports/GPT-ACTIVE-INPUT-FIBRES-20261103.md), PROOF-SKETCH: shared middle-bit witness,1001z10 counterexample, strictly increasing active right endpoints, exact1/2/0 extension cases. Existing tick19 certificate is A=1,G=0. No new computation or all-path result.
+- Known cascade/reset framework retained; PR60 complete source/current discussion and scoped linked review archive read. Reset-only band compression parked after repeated future-equivalence gap; next full b476c1 proof/variable comparison, final synthesis packet priority.

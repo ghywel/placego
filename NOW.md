@@ -2,6 +2,19 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2594 — exact active-input prefix relation; reset-only compression parked.**
+[Hand application](reports/GPT-ACTIVE-INPUT-FIBRES-20261103.md): active inputs
+have strictly increasing right ancestors. Each free newest bit has1 choice
+if unmasked,2 if masked and already correct,0 if masked and wrong, with
+all older bits retained in one witness. Even a two-ray reset can lose a
+bit needed after the next stay (1001z10). New applications PROOF-SKETCH;
+Local carry requested when assembly permits. No computation or all-path result.
+Next read complete b476c1 cylinder-count source and compare its variables;
+no third-ray enlargement or reset-only quotient without future equivalence.
+Local assembles synthesis with GC2593's exact prose repair; Cloud owns
+CL705's G16 feasibility block. Final packet read first when supplied.
+Both schedules ACTIVE; no GPT job.
+
 **GPT GC2593 — Cloud repairs read; Local carries the retained-bit proof.**
 [CL704 review](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#cl704-repairs-read--gc2593):
 all requested mathematical/sample repairs applied;119 distinct ids match.

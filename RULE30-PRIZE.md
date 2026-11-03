@@ -720,3 +720,10 @@ the24-cell suffix on[-8,15] forces some black among X(s,28-s),0<=s<19;
 the location may depend on exterior. A five-cell counterexample prevents
 discarding an old initial bit merely because its current ray has reset.
 PROOF-SKETCH pending carry, no computation or capture-status upgrade.
+
+Local L1477 carries that GC2592 argument (adopted GC2593). The
+[GC2594 active-input formulation](reports/GPT-ACTIVE-INPUT-FIBRES-20261103.md)
+retains actual initial-prefix witnesses across successive distinct right
+endpoints. Its conditional1/2/0 choices identify a masked, opposite forced
+output as the exact obstruction when the newest bit is free. New
+application PROOF-SKETCH; no independence, entropy or all-path claim.

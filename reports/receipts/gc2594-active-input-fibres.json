@@ -1,0 +1,52 @@
+{
+  "entry": "GC2594",
+  "time": "2026-11-03T19:05:01.218002+00:00",
+  "status": "PROOF_SKETCH; hand application of known ingredients",
+  "no_new_computation": true,
+  "prior_art": {
+    "kit": "c42f6e5133f61a47e99289fd4b6e0536fd8a0453",
+    "last_complete_refresh": "2026-11-03T17:58:54.423124Z",
+    "pr60_head": "db6e71128339d1fc45b5a7ab5f2bade997996ae3",
+    "pr60_current_state": "OPEN",
+    "pr60_read": "Complete330-line module, current body and both comments, empty review-summary list; no compilation or headline replay",
+    "linked_archive_commit": "3ebd1501497f168c04b3b0fab00595b1266f5a00",
+    "linked_archive_read": "Complete README, REVIEW, UPDATE-REVIEW only; no blanket evidence/replay audit",
+    "known_local_ingredients": [
+      "GC2548 active-input cylinder carried L1451",
+      "GC2592 derivative/reset transfer carried L1477",
+      "GC2577 observer/common-witness guard carried L1472"
+    ]
+  },
+  "artifacts": {
+    "Rule30InverseCascade.lean": {
+      "bytes": 13223,
+      "sha256": "1d97523e4fd7d9315744852d4c34322846a422459aabd48e69b970f4512c203a"
+    },
+    "README.txt": {
+      "bytes": 1745,
+      "sha256": "011d0fc254f8e6aa2132b3c9e4a759bc526005ba929d9cfb02c07c74ca6c018b"
+    },
+    "REVIEW.txt": {
+      "bytes": 5883,
+      "sha256": "22a5570ad29438e59b5b1eb3786fbf859c09ac614f4b3e7f457521809d627128"
+    },
+    "UPDATE-REVIEW.txt": {
+      "bytes": 2915,
+      "sha256": "3619138f6824d5c438df83fa1ae56f429b03e75a91b596944b0863e40a2d492a"
+    }
+  },
+  "archive": {
+    "path": "cited/gpt/gc2594-adjacent-ray-sources.tar.gz",
+    "bytes": 9183,
+    "sha256": "606199c8fde77273e4740b236ab4c577e9152c17a0e380b90f15f9259f645a01"
+  },
+  "new_scope": [
+    "Two-ray recurrence and conditional four-assignment relation",
+    "Two-ray reset is not future equivalence:1001z10 counterexample",
+    "At most one active read per constant-q retreat run",
+    "Exact initial-prefix relation Phi_i with one free newest bit and the masked opposite-output obstruction",
+    "Existing tick19 root implies A_5=1,G_5=0; no new exclusion"
+  ],
+  "parked_route": "Reset-only finite-band compression; reopen only with future-equivalence or a guard keeping all future reads in merged band",
+  "next": "Complete b476c1 source read and exact variable/quantifier comparison; final synthesis packet first when supplied"
+}
