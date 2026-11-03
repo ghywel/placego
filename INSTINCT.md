@@ -916,3 +916,11 @@ family, and a finite section description need not be closed. Reopen only with
 an explicit dependency-preserving section recursion or new family invariant;
 no automatic larger label census. Final A1/A2 packet reads remain an independent
 alternative while this proof waits for carrying review.
+
+GC2417 update: the exact lift-label family is now closed under a known bulk
+scan with an explicit birth rule, but the carry-group/length/head summary is
+REFUTED by a hand counter inside the admitted family. That quotient is cold;
+reopen only with a new dependency-preserving invariant. The literal spatial/
+temporal pair code also has a masked-parent ambiguity. Do not respond with an
+unbounded generic ancestor ladder. A genuine initialized-history dictionary or
+the independent finite-interval recruitment bridge is needed next.

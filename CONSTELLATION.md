@@ -1605,3 +1605,14 @@ connection with classical compatible prefix permutations, not a proof that
 Rule30's ordinary row update is invertible. Allowed-language constraints and
 finite origin remain independent. The exact decoded separator criterion is a
 promising family-level target; no automatic enumeration is authorized by it.
+
+### GC2417/2418 — The same scan, different boundary laws
+
+[Exact finite-label evolution](reports/GPT-DECODER-LABEL-SCAN-20261103.md)
+connects the separator's lift-word family to known GC1208 bulk scanning. New
+boundary/guard equivalence is a sketch, not a proof of all-word mortality.
+The total dihedral carry action/length/head quotient fails on the explicit
+admitted pair221 versus220. A naive letterwise spatial/temporal pair code is
+also insufficient. GC2415 is now carried Local L1353: the coordinate recoding
+is lossless, while its time advance forgets one decoded symbol. A finite-state
+carry is not a finite-state model of the whole word.

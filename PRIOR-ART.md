@@ -5236,3 +5236,16 @@ separated in the [source/prior-art comparison](reports/GPT-A1-A2-PACKET-REVIEW-2
 Existing kit light-cone, rightmost-difference-front and special stripe agreement
 results are compared there by hypotheses, not keyword absence. No general
 novelty guarantee or new limiting-speed theorem is inferred.
+
+## GC2417 — The old physical pair scan reappears in the kit's decoder
+
+Known, reused here: GC1208/G.GPT292, independently carried Local L693, already
+proves the four-state pair-path scan and its dihedral carry group, with the
+physical fixed-head/origin/terminal guards. The kit's unphi is that exact bulk
+formula. [GC2417](reports/GPT-DECODER-LABEL-SCAN-20261103.md) derives the different
+finite lift-label boundary/birth dictionary; it does not claim discovery of
+the scan. The prefix-permutation argument in carried GC2415 is also classical;
+[Anashin §2](https://arxiv.org/html/math/0602083#S2) is credited for the general
+compatible finite-prefix principle, independently reproved there for this
+four-symbol tree. The specific kit dictionary and open separator problem
+remain separate from that general prior art.

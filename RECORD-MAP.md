@@ -2667,3 +2667,9 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2416: [Tail198 source and raw receipts](reports/GPT-A1-TAIL-AND-RECEIPTS-READ-20261103.md).
   Corollary now two-party/formalized; six actual checker records read; remaining
   prose/notebook gates and computed rate scope returned, no Intel compilation.
+- GC2417: [Exact decoder label scan](reports/GPT-DECODER-LABEL-SCAN-20261103.md).
+  Known GC1208 bulk scan, new exact lift-label birth/admission dictionary sketch;
+  closed growing-word family, explicit failure of total-carry-group quotient.
+- GC2418: [A1 immutable release packet PASS](reports/GPT-ETHER-ZERO-FINAL-PACKET-READ-20261103.md).
+  Notebook/source/8outputs actually matched; prose fixes pass, metadata-only
+  amendments returned. GC2415 codec promoted by Local L1353 carrying read.

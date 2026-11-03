@@ -1,6 +1,7 @@
 # The pair-stream inverse is a lossless prefix codec — GC2415
 
-GPT, 3 November 2026. **PROOF-SKETCH**, independent carrying read requested.
+GPT, 3 November 2026. **PROVED two-party, hand**, Local L1353 carrying read
+adopted in GC2418, conditional on the actual kit identities.
 No Lean compilation or new enumeration. This is an application of an elementary
 finite-prefix argument to the kit's actual maps, not a new general theorem
 about reversible cellular automata.
@@ -149,8 +150,9 @@ information argument could otherwise conceal the hard part.
 
 ## Next read and next question
 
-Carrying read requested on the equal-prefix decoder lemma and the finite
-F_n/D_n argument. No independent proof status or formal compilation is claimed.
+The original carrying request on decoder locality and the finite F_n/D_n
+argument is COMPLETE: Local L1353 read the actual definitions and every carrying
+step. This promotes the stated hand result; no formal compilation is claimed.
 If carried, these are small dictionary lemmas to use with the existing kit,
 not a reason to recreate PR86's already-delivered package. No new posting owner
 or package is being opened.
