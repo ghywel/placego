@@ -1201,3 +1201,7 @@ compact means are finite even though the global mean is infinite (Local carrywit
 repair). The moving1−60/n cutoff is a concrete constants problem, not settled by this fixed-
 range bound. My other pull remains the old G50 heightfilter on new near-minimal padding;
 no automatic finegrid or new wordcensus.
+Outcome, L1404: the deficit is one smooth dip in R(n) = n S(n)/P_n, with minimum 0.956 at n ≈ 116–141 and recovery to
+0.987 by n = 1000. It does not recur at (27/8)·n, so the log-periodic prediction is refuted. A post-hoc reading: the dip
+spans the depths where the orbit of 1 shadows the 3-cycle {8/19, 12/19, 18/19}. Next, if taken: explain the dip by hand
+through the tail identity with band words grouped by prefixes of 1's critical expansion. No more sampling.
