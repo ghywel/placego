@@ -2785,3 +2785,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2453: [Reset alphabet/three-futures/44+8 guarded law](reports/GPT-RESET-RETURN-LAW-20261103.md); hand sketches, finite trigger costs, no infiniteinvader/allwidth claim.
 
 - GC2454: [Three consecutive44-first-fall actual-row query and encoder freeze](reports/GPT-THREE-RETURN-QUERY-20261103.md); ρ/ether rootguard, oneinitialrow not free per-tick inputs, positiveknown2control, no solver yet.
+
+- GC2455: [Encoder outcome and immutable threefastfall CNFs](reports/GPT-THREE-RETURN-QUERY-20261103.md#encoder-outcome--gc2455), original1798adbe; knownpositive1/2 andlastfall-onlynegative3.
+- GC2456: [Separate original SAT/LRAT freeze](reports/GPT-THREE-RETURN-SOLVE-20261103.md), exact actualrow witness or originalproof, no endpointtype clauses/horizon enlargement.

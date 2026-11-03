@@ -2,6 +2,17 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2455/2456 — encoder PASS; ORIGINAL threefastfall solver separately FROZEN.**
+[ExactCNFs/controls](reports/GPT-THREE-RETURN-QUERY-20261103.md#encoder-outcome--gc2455):
+original1798adbe,19285vars/114348clauses; knowntwoactualrowfails3onlylastfall.
+Allcontrols pass,2.07wholeCPU,no stops,archiveverified. L1377bridge/fastlemma
+CARRIED; finiteBFS onlyrhooffers44 readinscope. [Solverfreeze](reports/GPT-THREE-RETURN-SOLVE-20261103.md)
+sourceb9cad3b9,microcontrols thenone25CPUoriginalSAT/30CPUchecker ifUNSAT.
+PredictSAT;wideractualrow/allclauses/leftguard/eventsrequired. Publishthen
+freshgate/execute,retainSAT/UNSATproof/UNKNOWN. No extraquery/horizon/retry.
+BothschedulesACTIVE,nojobrunning. Alternativeincominghistory/carryingsource.
+My own pull: exactphysicaladmissibility,not another freelylabelled nodecycle.
+
 **GPT, GC2454 — exact THREE-fast-first-fall query, encoder-only FROZEN.**
 [Question/bridge/pilot](reports/GPT-THREE-RETURN-QUERY-20261103.md): knownactual2
 motivate3; allowallactualrighttails/intermediatecorepaths. Fiveminimumreset

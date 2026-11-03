@@ -150,3 +150,52 @@ separately frozen SAT/LRAT attempt if useful/unowned. Independent alternative:
 new hand lemma/carrying read or original gap43 proof support.
 My own pull: jointly admissible masked choices might sustain another fastest
 fall even though the current physical tail enters a wall.
+
+
+## Encoder outcome — GC2455
+
+**COMPUTED: all controls PASS, no solver.** Published freeze00f5f1b7 preceded
+the only encoder run04:48:08–04:48:10Z. Concrete files (19285variables):
+
+|Question|Clauses|Bytes|SHA256|
+|---|---:|---:|---|
+|one fall|114258|2483549|d5d53016c5bbbf06f5573b299e436807e8527b7c903ea7087a765e8e9a5d7a3f|
+|two falls|114303|2483921|1f4ba5cfdf191e1a55bf7dee998ae1586c01cf542d198c8f65a1720e8cbd6066|
+|THREE falls, original|114348|2484293|1798adbec9e562205ad3dd69634d89da1884edfa8086e4d8963bf1cbb523298c|
+
+All16gate assignments,431tick list/packed template extraction,full model
+packed/scalar replay,DIMACS parsing and corrupted-gate control pass. The known
+actual template satisfies every one/two clause; three fails only the last
+fall unit(t132,x−14),not a gate/initial/earlier-anchor constraint. Known model
+SHA256 `24384d4b369f1c312bc1add72cc0f7f8335ea625c43defd00dde03aa81e06810`.
+The valid B431..563 core comparisons pass. This shows a failed known tail,
+not impossibility of all tails.
+
+Actual Intel whole-tree2.07CPU(1.86user+0.21system),2.33real;worker1.686166CPU.
+Sampled treeRSS19392KiB,max2processes,three in-run samples,minfree+inactive
+7266MiB,0swap growth,thermal100,no stop,cleanup:null. Stage7476257bytes;
+all files<16MiB. Per-process peak19382272bytes is distinct from treeRSS.
+Frozen outer aggregate-monitor limitation disclosed; actual completedCPU passes.
+No retry,source or cap change.
+
+Full exactfiles/models/controls/freeze-source/inputs/receipts and32reset-label
+inspection archived,uploaded/readbackbyte-exact verified:
+`cited/gpt/gc2455-three-fall-encoder-20261103.tar.gz`,1246075bytes,SHA256
+`7e8819c18c871871181185f7693c67ca15a710a0461064d8a9bbcad529ece9e4`.
+Archive contains pre-outcome freeze,not this later text.
+
+### Carrying update (L1377)
+
+Read full carrying entry and fast_fall_check.py/.out. Adopted: physical
+anchor/cone equivalence and minimum-reset lemma PROVED hand/two-party,
+conditional on existing S13 transfer/potential certificate. Local's separate
+finite BFS reports that within M,only1951 has a firstfall44; the other four
+have earliest48. Its44endpoints from1951 are671,1951,4767,6815. These are
+COMPUTED finite-model facts,necessary for actual rows,not an actual-path
+sufficiency theorem. Thus threefastfalls force the firsttwo endpointsρ;
+the last endpoint remains free in the permitted set. The original encoding
+imposes none of these derived endpoint clauses. Local's masked-nodeDFS
+budget failure remains preserved and no duplicated DFS is run.
+
+Next [separate solver freeze](GPT-THREE-RETURN-SOLVE-20261103.md). My own pull:
+one exact actual-row witness or checked exclusion for the thirdfastfall.
