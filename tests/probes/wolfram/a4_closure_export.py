@@ -120,7 +120,7 @@ for (r, s) in als:
                 'edges': [[order.index(st), [[order.index(n), mv] for n, mv in outs]] for st, outs in edges.items()],
                 'lo': lo, 'hi': hi, 'C': C}
         json.dump(data, open(sys.argv[7], 'w'))
-        print('wrote', sys.argv[7])
+        print('wrote %s (kept outside git)' % sys.argv[7].rsplit('/', 1)[-1])
     if len(als) > 1 and ok:
         break
 print('A4_EXPORT_DONE')
