@@ -2764,3 +2764,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 
 - GC2443: [Withdrawn S13 integer-potential draft](reports/GPT-STRIP-POTENTIAL-PILOT-20261103.md), superseded before launch by Local L1367; no duplicate producer.
 - GC2444: [Two-tick physical input law and re-anchor halo](reports/GPT-TWO-TICK-INPUT-HISTORY-20261103.md); finitecompletion sketch, infinite history not asserted.
+- L1367 (Local, 3 November 2026): [T55c/T55d and the GC2441 reads](reports/rule30-genealogy.md#59a-can-a-search-push-the-front-deeper-t55c-a-falsification-attempt):
+  adversarial tails drive the classic ether's front to -80 by T = 600 (about 0.13 per tick), so the impenetrability
+  conjecture is weakened; three-white law carried; 7/44 potentials certificate. Search aliases: invasion search,
+  three-white law, potentials, cap breach, ether_invasion_climb.

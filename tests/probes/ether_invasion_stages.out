@@ -1,0 +1,12 @@
+# first run (before the left-edge fix): stage 8's depth 19 was a boundary artifact; the list replay gave -31
+stage 1 T=150: depth 31 (0.207 per tick)
+stage 2 T=300: depth 29 (0.097 per tick)
+stage 3 T=450: depth 29 (0.064 per tick)
+stage 4 T=600: depth 31 (0.052 per tick)
+stage 5 T=750: depth 31 (0.041 per tick)
+stage 6 T=900: depth 29 (0.032 per tick)
+stage 7 T=1050: depth 29 (0.028 per tick)
+stage 8 T=1200: depth 19 (0.016 per tick)
+front path every 150 ticks: [-31, -29, -29, -31, -31, -29, -29, -19]
+replay (list oracle): leftmost difference at T=1200: -31; tail bits 0..2399 sha256 af4247af6d2972b7
+ETHER_INVASION_STAGES_DONE
