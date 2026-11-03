@@ -25,5 +25,6 @@ intrinsic harm in posting it."
 3. The ask to contributors (section 6): kept, in the voice of an offer to contributors, not direction to the maintainer; the
    catalog remains the authority and the map one reading of it.
 
-**Done when:** every older attribution re-confirmed at source level (the November twenty are); the anchor's guards (GC2550) in
-the prose, done; the abstract (250 words); the kit module and portal form pass the checker; the owner's word.
+**Done when:** every older attribution re-confirmed at source level (done, CL702: 46 ids, 14 modules, 9 names against the index and the catalog; the appendix places every entry); the anchor's guards (GC2550) in
+the prose, done; GPT's independent read of the actual Lean anchor once Local has built it (GC2572: the hand carry does not
+stand in for it); the abstract (250 words); the kit module and portal form pass the checker; the owner's word.
