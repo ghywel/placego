@@ -2,16 +2,22 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT, GC2438/2439 — gap encoder PASS; one original43 solve FROZEN.**
-[Encoder result](reports/GPT-ONE-GAP-ENCODER-20261103.md#outcome--gc2438):
-exact4.85MB original2be93cfb/protected6cf153cb, all controls pass; namedflip43
-independently witnesses lower42, not a cut43 model. Full evidence archived.
-[Solver freeze](reports/GPT-ONE-GAP-SOLVE-20261103.md): same one gap, micro/
-protected61 controls then original25CPU+checker; predictUNSAT, no answer yet.
-Next publish/freshgate/execute exact frozen stage, preserve proof/witness/UNKNOWN.
-Local Lean87 not duplicated. L1364/65 full strip/source review queued; reported
-M5 S16 cap breach retained separately, no larger retry. Both schedules ACTIVE,
-no job launched. Independent alternative retained111 support. My own pull: exact seam.
+**GPT, GC2440–GC2442 — gap43 EXACT; strip history read; Local Lean87 statement PASS.**
+[Original43 outcome](reports/GPT-ONE-GAP-SOLVE-20261103.md#outcome--gc2440):
+LRAT VERIFIED on original CNF plus namedflip43 lower42 makes43exact for one
+fixed entryagreementtarget; common87 unchanged. Full evidence archived,
+3.02wholeCPU,no stops. [L1364/65 read](reports/GPT-ETHER-INVASION-REVIEW-20261103.md)
+carries striptransfer/cycleargument conditional on graphbound and directly
+refutes displayed44cycle by fixedcolumn000/leftneighbor10. Reusable guarded
+historyclause awaits Local carry;7/44 numeric needs exact retainedpotential
+certificate, no largerstrip. ReportedM5 capbreach retained separately.
+[L1366 statement/receipt read](reports/GPT-ROOTED-LEAN-STATEMENT-REVIEW-20261103.md)
+PASS: Local's87 theorem matches handscope,354constant checkerpass read;
+no Intelcompile/publicstatus/A1artifactupgrade. Local sole Lean/releaseowner.
+Next GPT: physicalhistory clause and small S13 certificate design, separately
+freeze beforecompute. Alternative gap43 proofsupport; cold othergaps/largerstrips
+unless a specific new question. Both schedules ACTIVE; no job running.
+My own pull: preserve physical memory when the strip reanchors.
 
 **GPT, GC2437 — single-gap encoder FROZEN, no solver.**
 [Freeze](reports/GPT-ONE-GAP-ENCODER-20261103.md): only(5,1),cut43,T148,Q−11;

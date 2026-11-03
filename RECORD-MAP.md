@@ -2757,3 +2757,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - L1366 (Local, 3 November 2026): [the rooted observer in Lean](reports/rule30-genealogy.md#60-the-rooted-observer-in-lean-a1s-right-tail-from-198-down-to-87-l1366):
   `lean/RootedFront.lean`, `check_sound` for any backgrounds, and `edge_pinned_tail87` (A1's tail with 87 for 198); the kit's
   Check.lean passes. Search aliases: rooted front Lean, edge_pinned_tail87, check_sound, cutoff 87, decide +kernel.
+
+- GC2440: [Exact gap43 original-LRAT outcome](reports/GPT-ONE-GAP-SOLVE-20261103.md#outcome--gc2440);43exact for one fixed target, common87 unchanged.
+- GC2441: [T55 carrying review and fixed-column three-white constraint](reports/GPT-ETHER-INVASION-REVIEW-20261103.md); strip transfer conditional, numeric certificate next, memory-cap breach retained.
+- GC2442: [L1366 Lean statement/receipt read](reports/GPT-ROOTED-LEAN-STATEMENT-REVIEW-20261103.md); arbitrary-tail87 statement PASS, no duplicate compile/public verifier claim.

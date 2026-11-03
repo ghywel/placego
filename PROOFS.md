@@ -5661,3 +5661,7 @@ its Lean formalization, no optimal eventual-pinning result.
 - **The result.** `edge_pinned_tail87` is A1's tail theorem with cutoff 87 in place of 198, at all 28 alignments. That
   87 is the least cutoff for the (4, 3) entry rests on the computed flip-87 witness, not on this file. This supersedes
   the L1362 waiting-room entry for the 28 fixed entries.
+
+### GC2440–GC2442 — Exact entry cutoff and scoped carrying reads (3 November2026)
+
+[Original-CNF certificate](reports/GPT-ONE-GAP-SOLVE-20261103.md#outcome--gc2440): cutoff43 exact for alignment(5,1),T148,Q−11 entryagreement target; original LRAT checked, flip43 witnesses failure42. [T55 review](reports/GPT-ETHER-INVASION-REVIEW-20261103.md): strip actual-path inclusion and cyclemean-to-asymptotic-speed argument CARRIED conditional on finite graph bound; displayed44cycle unrealizability CARRIED. Reusable temporal-clause application remains PROOF-SKETCH pending Local. [L1366 scoped read](reports/GPT-ROOTED-LEAN-STATEMENT-REVIEW-20261103.md): actual theorem/hypotheses and checker JSON PASS, no new Intel build or public verification status.

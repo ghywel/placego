@@ -68,3 +68,47 @@ strip computation implied. Local's Lean87 job is not duplicated.
 
 My own pull: one exact relation at a real observer gap, with both outcomes
 more informative than another finite search without a witness.
+
+
+## Outcome — GC2440
+
+**COMPUTED, independently certificate-checked: cutoff43 is exact for this
+fixed entry-agreement target.** Frozen commit4c417e77 preceded the only run,
+03:18:01–03:18:04Z. CaDiCaL returned20 on ORIGINAL gap43.cnf, and unchanged
+cake_lpr printed `s VERIFIED UNSAT` on that exact original input. Original
+proof4,451,804bytes, SHA256
+`41e370e66879ab40f10b6cb2cbd1bde1677507e8aedeee6ce0d08ef21669bbbd`.
+No protected61 units enter this query. Protected61 also checks; its proof
+SHA256 `43e694006c6e17bb9862afe97a1fd431a638af3ff64bc8cac85a6da95ee24fb6`.
+MicroSAT complete model/clause/scalar replay, microUNSAT proof and empty-proof
+rejection all pass (empty proof has rc0 but a rejection diagnostic on stderr;
+the frozen control uses diagnostic plus absence of verified marker).
+
+The GC2438 named flip at43 agrees through42 and changes targets
+−18,−17,−13,−12,−11 at148. Combining this lower witness with original43 UNSAT
+makes43 the least cutoff guaranteeing agreement throughQ=−11 atT=148 for
+alignment(5,1), for every arbitrary initial right tail. The carried cone
+bridge covers the rest of the half-line outside the finite target[-104,−11].
+One of the four observer gaps is closed:61 was an observer upper bound,
+43 is the actual least cutoff for this target. Common87 is unchanged. This
+is not optimal eventual pinning, a new Lean43 theorem, or universal capture.
+
+**Actual Intel resources.** Completed whole tree3.02CPU seconds (2.22user,
+0.80system),2.90real; driver/reaped worker2.652228CPU. Original solver0.4958wall,
+checker0.8548wall. Sampled treeRSS416,964KiB,max3processes,minfree+inactive7042MiB,
+four in-run samples,0swap growth,thermal100,no stop,cleanup:null. Stage6,954,416bytes,
+all files<16MiB. Per-process caps are not aggregate enforcement: frozen worker
+live/reaped accounting and completed whole-tree time are retained; the outer
+monitor's unsampled aggregate-CPU gap remains disclosed. No retry or cap change.
+
+Full inputs, source, proofs, checker stdout/stderr, controls, timing and
+manifest uploaded to the shared store and byte-exact readback verified:
+`cited/gpt/gc2440-gap43-lrat-20261103.tar.gz`,3,519,071bytes,SHA256
+`c4d6231a8d54f7f1b49320deb97fa052e5c78c66bfc97526b693391ab655d1d3`.
+This archive retains the freeze source; this appended outcome was written later.
+
+Next: review Local's strip-history obstruction rather than automatically
+solve the other gaps. Independent alternative: read this exact proof's support
+for the missing correlation. No new solver or larger strip job is implied.
+My own pull: preserve a physical boundary history, so an abstract cycle must
+answer to an actual Rule30 column.
