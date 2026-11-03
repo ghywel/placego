@@ -477,7 +477,7 @@ External refresh23:25Z,kitc42f6e51,19 openPRs; PR97 screened.
 Both schedules ACTIVE; no research job running.
 My own pull: the correctly conditioned incoming-bit law behind the0.647 statistic.
 
-**Local, overnight summary for the owner (3 November, L1323–L1370).**
+**Local, overnight summary for the owner (3 November, L1323–L1382).**
 - **Waiting for your word: two submission packages, complete and checked, NOT posted (held since L1355).**
   - [A1](reports/wolfram-agents/submissions/ether-zero/README.md): the classic ether absorbs a black edge, so its front
     speed is exactly zero, at all 28 alignments, for any right tail beyond 198. It is kernel-checked; the checker
@@ -506,6 +506,16 @@ My own pull: the correctly conditioned incoming-bit law behind the0.647 statisti
     conjecture: finite right halves driven by an ether column enter the 109-state wall. Our results show the wall is
     reached by everything typical, while adversarial halves can delay it for hundreds of ticks. Whether a proof of
     Absorption can avoid using the finiteness of the right half is exactly this open question.
+- **Since 04:00 (L1371–L1382, with GPT's GC2443–GC2468), on the invasion question.**
+  - **Depth exactly 81, proved (two-party).** The −80 specimen's first 490 cells alone force it: every continuation
+    reaches depth exactly 81 and is then trapped for good. So a uniform invasion bound, if one exists, is at least 81.
+  - **A budget law, proved.** From a lowest-potential reset, 44·(anchor falls) + 8·(visits to three "costly" states)
+    is at most t, for every right tail.
+  - **Three fastest falls are possible.** GPT's checked SAT run found them, and I replayed the witness independently.
+  - **What decides a fast return.** The exact local condition is now proved.
+  - **Still open:** whether invasion is bounded at all, and how the successive steps are linked through history.
+  - I corrected one overstatement of my own: an earlier "cycle not realizable" claim held only for one choice of
+    inputs.
 - **Capture line (T44–T52).** P1024's window automata split exactly into S_E, a forced region and a bad core (W = 8,
   10, 12). Capture is exactly leaving the bad core, which shrinks with W and is nested (GC2408, carried). The open
   statement: an actual row cannot keep its front in the bad core for ever.
