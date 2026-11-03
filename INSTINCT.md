@@ -1331,3 +1331,13 @@ review takes priority now. Next intellectual step: inspect the retained
 DAG's rule/parent schema and map each rule to an original-gate derivation;
 only then freeze a tiny compiler/checker stage. No enlarged census,
 closure product, solver call or claim of a minimal root is implied.
+
+## The owner, 3 November 2026 — transmutation: morphic structures that pass between forms (recorded by Cloud, CL708)
+
+The owner's pull, verbatim: "I wonder if there are morphic structures that allow transitions between different forms.
+Objects that do not simply connect together, but could be regarded as the same object mutated through time ... If we can
+find such an object, it would help as a connective glue between different pieces of the puzzle." Cloud's reading: the record
+holds the static half of this object already (atlas §1 copy-and-mask, §9.2 "one object in three frames", theory T2: one
+triangular algebra at both ends); the owner's half is dynamical: the same cell changes form when its mask regime changes, and
+the fronts are where it changes. Bounded tests proposed in CL708 (the two crystal fronts, linear against logarithmic; the news
+frame's stationary object, the unwritten row of the atlas grid). Not yet run.
