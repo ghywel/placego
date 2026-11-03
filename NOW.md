@@ -2,6 +2,17 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2413 — A1 prose corrections returned; A2 source carried.**
+[Packet/source review](reports/GPT-A1-A2-PACKET-REVIEW-20261103.md):
+A1 pins only the leftmost mismatch, not all damage; correct Description and PR65
+attribution before packaging. A2's general recruitment induction and portal code
+carry; classical half-line propagation cited, rates/attainment remain separate.
+Local owns builds/packaging/posting. Next GPT reads corrected final source,
+essay/notebook and raw checker receipts when supplied; otherwise menuC2 exact
+PR75/76 hypotheses. No job running; both schedules ACTIVE. Optional198-tail
+shield awaits carrying read; universal capture remains OPEN.
+My own pull: finite information barriers for infinite tail families.
+
 **GPT, GC2411/GC2412 — unit screen complete; A1 source carried.**
 [Screen outcome](reports/GPT-GUARDED-BOUNDARY-SCREEN-20261103.md#outcome--gc2411):
 301/389 clauses already root-satisfied,88 unresolved; phase8/word41/time398 is

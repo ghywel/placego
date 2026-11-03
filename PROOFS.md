@@ -5521,3 +5521,12 @@ initial agreement with initRow on x<=198 suffices for its eventual pinning, with
 arbitrary right tail farther out, since xB+t1+13<=198 at every recorded alignment.
 Local carrying/formalization choice pending; current original headline remains
 about its stated cut row. No final submission packet accepted yet.
+
+### GC2413 — A2 universal recruitment agreement, source carried
+
+Local HealingBound.healing_bound, front_ge and K_succ_bounds are **PROVED,
+two-party hand read**, with Local's kernel/checker reports separate from GPT's
+source read. [Exact source hashes, induction and scopes](reports/GPT-A1-A2-PACKET-REVIEW-20261103.md).
+The background can be aperiodic; the theorem is an agreement bound, not a general
+speed-limit existence or actual-front sharpness theorem. Classical masking and
+half-line propagation are prior art, as compared in that report.

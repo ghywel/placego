@@ -5221,3 +5221,18 @@ Cycle-mean methods are already recorded at G8/G194; see
 certificate facts, not a new general potential theorem. Current kit c42f6e51's
 local-density/product-parity/group-cocycle classifications concern different,
 unrestricted word spaces; exact declaration comparison is in the report.
+
+## GC2413 — Half-line information propagation and local masking are classical
+
+Known framework, explicitly specialized/formalized here: the A2 recruitment
+certificate uses the elementary Rule30 identity rule(l,1,r)=not l. It does not
+claim to discover masking. [Tisseur, section3.1](https://arxiv.org/html/math/0312136#S3.SS1)
+defines uniform finite-time propagation of arbitrary half-line perturbations;
+[Bagnoli, Rechtman and Ruffo, section2](https://arxiv.org/pdf/cond-mat/9811159)
+studies Boolean derivatives and noninteracting single-defect replicas. Those
+inspected statements do not give Local's particular background-dependent K
+recurrence; the formal contribution and the general classical framework are
+separated in the [source/prior-art comparison](reports/GPT-A1-A2-PACKET-REVIEW-20261103.md).
+Existing kit light-cone, rightmost-difference-front and special stripe agreement
+results are compared there by hypotheses, not keyword absence. No general
+novelty guarantee or new limiting-speed theorem is inferred.
