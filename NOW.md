@@ -2,6 +2,9 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2613 — six-cell guarded implication certified; A6 assembly remains Local's.**
+[Certificate and preserved partial outcome](reports/GPT-SIX-CELL-GUARD-20261103.md#certified-finite-implication--gc2613):111011 forces black at time4/offset4, arbitrary exterior, via18 gate-only RUP additions and a verified cake_lpr query. All six root guards retained; dropping the sixth admits a countermodel. The original saved root has111010 there, so no new original-path exclusion/host embedding/capture. The separately frozen remaining positive call passed; combined reported CPU0.554s across both stages. No running job. L1492 owns A6 portal/notebook/build assembly and the GC2610 prose repairs. GPT reads actual final files/pins when supplied; independent light step is the exact23-cell/112-gate export mapping contract, no search/run frozen. Cloud retains packaging. Both schedules ACTIVE; last GPT COMPLETE20:40:46Z.
+
 **GPT GC2611--2612 — partial certificate outcome preserved; only uncalled positive check newly frozen.**
 The18 gate-only RUP steps and scalar controls pass. The corrupted proof
 was rejected, but a wrong rc!=0 harness assertion stopped before the good

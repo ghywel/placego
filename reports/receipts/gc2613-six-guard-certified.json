@@ -1,0 +1,76 @@
+{
+  "entry": "GC2613",
+  "freeze_commit": "e2e7b319",
+  "status": "VERIFIED finite Boolean implication by cake_lpr; gate-only prefix provenance self-replayed in GC2611; physical interpretation carried GC2607/L1491",
+  "input_cnf_sha256": "b3e6d4b9cd6767d5556856f61eff5e8ac5981b82c33aeb46d3756fe684c9441e",
+  "input_lrat_sha256": "ecee5483d6a52affdd2a7cf0c87a97290f23a4f66309d81576d0a34df10d086e",
+  "gate_only_prefix_sha256": "7d2c42659d2b0014df0cdafa9ded9de909745e39cce69f0b6db81f570a58c0dd",
+  "checker_sha256": "445c63926127267a4f0ae5c363b2bffcb004aece119ca50414e7bc22f8bdec23",
+  "resources": {
+    "driver_aggregate_cpu_s": 0.139736,
+    "outer_supervisor_cpu_s": 0.077,
+    "combined_cpu_s": 0.216736,
+    "wall_s": 0.55,
+    "time_maxrss_bytes": 17367040,
+    "launch_free_inactive_mib": 5674,
+    "launch_swap_mib": 1160.75,
+    "tree_samples": 0,
+    "sampling_note": "Finished before first tree sample; zeros are not zero usage."
+  },
+  "artifact": {
+    "path": "cited/gpt/gc2613-six-guard-certified.tar.gz",
+    "bytes": 1730,
+    "sha256": "bc160db88d69e7df0d146db68643333e73e80f3f968bb697895045286a6adb97"
+  },
+  "members": {
+    "launcher.json": {
+      "bytes": 1055,
+      "sha256": "49d4351a1fa077a2b7f7d5c4801e3d1248369bc8a6bec841fb36a041f9597445"
+    },
+    "live.json": {
+      "bytes": 106,
+      "sha256": "17842247e3ac4abea0f61c98286705a7f484ec347cc4574aa94ee1be56098fc4"
+    },
+    "out.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "output_hashes.json": {
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    "retained-good.receipt.json": {
+      "bytes": 270,
+      "sha256": "11b7346d950557000d5608ece97fbe3b0f95ad67f70d8b8f6da35c8f0100ca5a"
+    },
+    "retained-good.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "retained-good.stdout": {
+      "bytes": 17,
+      "sha256": "c680d3bd38a04c7beee7d54999f8f00b43051f75a53cf2bd170ae0cc5f99eb5f"
+    },
+    "summary.json": {
+      "bytes": 387,
+      "sha256": "3c45b1e832db1cc996e2e2b9732fa3ae649946b552e0b7bf758e27bc21a082fb"
+    },
+    "thermal.txt": {
+      "bytes": 669,
+      "sha256": "9594dfbddfde66cd3aa15fa490056381825fccf01329e479ccdcf4989533a9bb"
+    },
+    "time_receipt.txt": {
+      "bytes": 777,
+      "sha256": "c39d17e6f830b10d6d61b6ebbb98be7f5f26a60832b4898a7a2b5659bb39c1be"
+    }
+  },
+  "not_claimed": [
+    "Lean Verified",
+    "Human Verified",
+    "host original-CNF embedding",
+    "original-root applicability",
+    "minimal guard set",
+    "complete observer",
+    "capture"
+  ]
+}

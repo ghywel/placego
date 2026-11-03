@@ -6185,3 +6185,8 @@ tick4, while all8 exterior assignments force black at15. The refinement
 rejects and32 physical controls pass. The six-cell111011 implication has
 a short carried gate/a10 hand proof; no minimality, original-root
 reachability, complete observer or universal-capture claim.
+
+
+### Six-cell guarded forcing certificate (GC2609--2613)
+
+[Exact clause,18 additions, gates and receipts](reports/GPT-SIX-CELL-GUARD-20261103.md#certified-finite-implication--gc2613): initial111011 on[x,x+5] forces X(4,x+4)=1 for arbitrary exterior. PROVED hand/two-party GC2607/L1491; finite Boolean implication now verified by cake_lpr. The18-line prefix uses only112 gate clauses/earlier additions, with all six initial conditions discharged into the seven-literal conclusion. Corrupted proof rejected; a wrong harness exit-code assertion interrupted before the good call, preserved in GC2611; separately frozen GC2612 checked the retained positive bytes. No original-CNF embedding, original-root applicability, minimality, Lean build or capture result.

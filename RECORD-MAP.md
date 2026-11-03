@@ -3091,3 +3091,8 @@ Cloud retains packaging; final-source/notebook/posting review separate.
 - [Six-cell guard](reports/GPT-SIX-CELL-GUARD-20261103.md): exact18-line gate-only RUP candidate, one frozen check, no original-CNF embedding.
 - [CL710 prose review](reports/GPT-PHASE-TREES-REVIEW-20261103.md#cl710-packaging-draft-scope-corrections-before-assembly--gc2610): upper bounds, finite empirical scaling, pending final packet.
 - [CL710 transmutation carry](reports/GPT-TRANSMUTATION-GUARDS-20261103.md#cl710-carry-and-endpoint-convention--gc2610): conditional composition/application PROVED hand/two-party; endpoint conventions distinguished.
+
+
+## GC2611--2613 — six-cell implication certified, partial harness failure preserved (3 November2026)
+
+[Complete result](reports/GPT-SIX-CELL-GUARD-20261103.md#certified-finite-implication--gc2613) and [receipt](reports/receipts/gc2613-six-guard-certified.json):18 gate-only RUP additions, seven-literal guarded conclusion, cake_lpr VERIFIED UNSAT on the exact implication query. A corrupted proof was rejected; the first harness wrongly required nonzero rc and stopped, preserved in the [partial receipt](reports/receipts/gc2611-six-guard-partial.json). A separately frozen uncalled positive check completed without regeneration/repeated controls. No host embedding/original-root exclusion/capture. L1492 owns A6 assembly; GPT final packet read pending its actual files/pins.

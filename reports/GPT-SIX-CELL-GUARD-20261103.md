@@ -3,8 +3,9 @@
 GPT, 3 November 2026. The physical implication is **PROVED hand/two-party**
 by GC2607/L1491: initial 111011 on [x,x+5] forces X(4,x+4)=1, with
 arbitrary exterior. This report gives an explicit 18-addition positive-RUP
-candidate for that implication. Its numeric encoding was **NOT YET CHECKED**
-at this freeze; GC2611 below records the partial outcome. No shortest antecedent or novel word mechanism is claimed.
+candidate for that implication. **GC2613: the finite implication now has a
+verified cake_lpr certificate**, following the partial GC2611 outcome and
+separately frozen GC2612 positive call. The original freeze follows. No shortest antecedent or novel word mechanism is claimed.
 
 ## Gate support and the guarded clause
 
@@ -182,3 +183,46 @@ swap/thermal gates:4096 launch,3072 running,64swap. Preflight20:56 about
 recheck at launch. This is a separately justified call on existing bytes,
 not a larger experiment or entitlement to repeat a failed job. GPT owns
 it; Local/Cloud phase work is unchanged. No original-host embedding.
+
+
+## Certified finite implication — GC2613
+
+The separately frozen positive call e2e7b319 completed at20:58:04Z,
+normal exit0, stdout exactly `s VERIFIED UNSAT` and empty stderr.
+The retained CNF/proof/checker pins matched; no bytes were regenerated
+and neither completed control was repeated. Together with GC2611's
+restricted replay of all18 additions, the certificate proves the stated
+seven-literal implication from the112 gate clauses. The final query has
+119 clauses:112 gates and seven negated-conclusion units. The18-step
+prefix is followed by one empty-clause addition. Every prefix hint uses
+only a gate or an earlier prefix addition, never the query units.
+
+[Successful-call receipt](receipts/gc2613-six-guard-certified.json).
+Evidence `cited/gpt/gc2613-six-guard-certified.tar.gz`,1730bytes,SHA256
+bc160db88d69e7df0d146db68643333e73e80f3f968bb697895045286a6adb97;
+raw-body transfer and manifest verified. Driver aggregate0.139736 plus
+outer0.077 gives0.216736CPU seconds,wall0.55s,time maxRSS17,367,040bytes.
+Launch free+inactive5674MiB,swap1160.75MiB,thermal100/100. No tree sample
+before completion; no pressure stop, repeat or remaining job. Combined
+reported driver+outer CPU across the two separately frozen stages is
+0.553766s. The first harness failure remains part of the evidence.
+
+The guard test also gives a hand-checkable reason to retain the sixth
+initial literal: initial111010011 on[0,8] evolves on the shrinking cone
+as 0001111,01100,101,0. It meets the first five antecedent bits but has
+a white target. This particular tableau is a hand self-check here; the
+frozen512-row test establishes existence independently. No minimality
+claim for all six literals is made.
+
+Status: verified finite Boolean implication; physical encoding interpreted
+by the carried GC2607/L1491 proof and independent scalar gate checks.
+No Lean build, portal Lean Verified/Human Verified label, original-host
+CNF embedding, original-root applicability or universal-capture result.
+The host composition obligations above remain mandatory.
+
+Next executable step: read Local's actual A6 portal Lean, notebook and
+receipts when supplied, checking the corrected upper-bound language and
+literal provenance. While that assembly is owned by Local, the independent
+light step is to specify how a caller maps this clause's23 physical cells
+and112 gate IDs into a candidate host CNF, rejecting any unsupported
+placement before emitting additions. No host search or new run is frozen.
