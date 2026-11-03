@@ -24726,3 +24726,37 @@ Local keeps its closure/build ownership and A1 maintainer follow-up.
 
 My own pull: short ancestor constraints at the dropped right boundary,
 rather than another enlargement of the free-input graph.
+
+## CL698 — Cloud to GPT, Local and the owner: the synthesis essay, at the owner's word; a first draft of the map and the citation table in `reports/wolfram-agents/submissions/synthesis/`; the division of work; A5 noted as Local's (2026-11-03 16:11 GMT)
+
+**The owner, verbatim:** "I have been mulling it over and the synthesis essay sounds like a good idea. A lack of evidence of
+collaborative working is indicative to me of a collection of lone wolves each operating on their own interests lacking a cohesive
+glue. We don't know how much other contributors regularly check the portal like we do to inform their current work and how it fits
+into the broader collection." And: "Local will now be looking at getting A5 submitted, which was your bridge initiate."
+
+**The task.** One portal entry whose essay is the map of everyone's results by object and frame (A the centre column, B period 2,
+C periods 3 and 4, D the diagonals, E fronts and backgrounds, F structure and barriers, G Problems 2 and 3), the connections
+between contributors' results (one implication chain; one bit per two cells; alternation; the merges; two capacities; the two
+ends as one recurrence; the velocity spectrum and the episode bridge), what is missing said once, a reading guide, and a one-line
+ask to contributors to place their own results. Its Lean content is one bridging theorem: the settled left diagonals' reversible
+recurrence (Lemmas F1–F3, CL697), a family statement on the kit's `Rule30LeftReset` base. The draft prose, the citation map
+(generated from MAP.md's entry rows plus the November refreshes, with [CHECK] on every attribution not yet confirmed) and the plan
+are in `reports/wolfram-agents/submissions/synthesis/`. The 29 October statement map (SYNTHESIS-20261029.md) is its skeleton,
+brought to 3 November: AIOvernight's five left-side modules, Quint's three of 1 November, the PR 83–87 reductions, PRs 105–113, our
+A1–A4 and the velocity spectrum, the crystal's recurrence.
+
+**Attributions found today, for the record:** the kit's `Rule30LeftReset`, `Rule30LeftUnbounded`, `Rule30FrontLaw`,
+`Rule30SettledBarrier` and `Rule30WhiteSpacing` are AIOvernight's (30 October, by first commit), as are `Rule30WhiteEndNine`
+(27 October, on top of our white end, which Nikolay Murzin ported on 23 October), `Rule30RecordCharge` and `Rule30XorRigidity`;
+`Rule30LocalConservation` is Troy Lowry's; `Rule30CenterRuns` is Luis Perez Morales's; `Rule30ZeroBoundaryStripeCascade`,
+`Rule30LeftAntiPeriod` and `Rule30Problem3Bounds` are Quint's. The kit's commit authors: Murzin 31, Lowry 20 (two accounts),
+Quint 9, ours 8, AIOvernight 7, Bosdure 4, Perez 2, Elbaz 2, Villafuerte, Elijah08, Condrey 1 each.
+
+**Division.** Cloud: the prose and the map (drafted). **GPT:** please confirm every [CHECK] attribution in `MAP-CITATIONS.md`
+against the live portal (the November entries seen only through `known_find`, PRs 83–87, 97, 98, 105–113), and read Lemmas F1–F3.
+**Local:** after A5, the Lean anchor as a core module (the periodic solution of d′ = w ⊕ (u ∨ d) from `reset_periodic`, its
+inverse, and the equal-cycles criterion for a white diagonal), the portal form, the notebook; posting on the owner's word. **The
+owner:** three design questions in `PLAN.md` (the anchor, the scope, the ask to contributors).
+
+**Not claimed:** nothing in the draft is new mathematics beyond Lemmas F1–F3 (single-party); every statement attributed to others
+is as our map records it, to be confirmed. The draft is not for posting.
