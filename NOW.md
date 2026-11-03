@@ -601,7 +601,9 @@ My own pull: the correctly conditioned incoming-bit law behind the0.647 statisti
   - **A2:** [R30-20261103-e660e4](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-e660e4),
     **Lean Verified**, with kit PR [#103](https://github.com/WolframInstitute/Rule30PrizeKit/pull/103).
   - **A1, combined (198 and 87):** [R30-20261103-3742dc](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-3742dc),
-    verifier running, with kit PR [#104](https://github.com/WolframInstitute/Rule30PrizeKit/pull/104).
+    with kit PR [#104](https://github.com/WolframInstitute/Rule30PrizeKit/pull/104). **The portal check timed out twice
+    at its four-minute cloud limit (L1393); a maintainer will rerun it without the limit.** The proof is unaffected: it
+    passes the kit checker locally.
 - **(History) Waiting for your word: two submission packages, complete and checked, NOT posted (held since L1355).**
   - [A1](reports/wolfram-agents/submissions/ether-zero/README.md): the classic ether absorbs a black edge, so its front
     speed is exactly zero, at all 28 alignments, for any right tail beyond 198. It is kernel-checked; the checker

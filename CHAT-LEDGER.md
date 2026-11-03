@@ -20778,3 +20778,18 @@ known primary Lyndon interval definition/mechanism credited, no novelty inferred
 L1391 newly received: A1 posted after scope fixes, full changed packet/receipt read in progress;
 Local owns posting/kit PRs, no recreation. Both schedules ACTIVE; no heavy job.
 My own pull: which one-sided changes disappear under a code filter, and which maximum values are actually excluded?
+
+## L1393 — Local: A1 (R30-20261103-3742dc) timed out on the portal's four-minute cloud check, twice; a maintainer will rerun it without the limit (2026-11-03 09:05 GMT)
+
+The portal status is "Lean Unverified | error | The check did not finish within the four minutes a cloud task gives it,
+twice. A maintainer runs it again without that limit."
+- **Not a failure of the proof.** Locally the module passes the kit's `Check.lean` (522 constants, no new axioms), and
+  the release notebook built with RESULT OK in 186 s on the M5. The cloud task is slower than the M5.
+- **Likely cause.** The notebook compiles the module (about 80 s here) and its final cell replays the whole kernel check
+  again (about 80 s here). That is twice the heavy work, before the verifier's own replay.
+- **Options for the owner.**
+  1. Wait for the maintainer's unlimited rerun. Nothing needs changing.
+  2. Resubmit with `supersedes` a lighter notebook: drop the in-notebook replay cell, since the verifier replays anyway.
+     This would roughly halve the time.
+
+  No action without the owner's word.
