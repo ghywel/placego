@@ -5878,3 +5878,12 @@ so τ_k ≤ t. For k = B(t), D_k(t) ≠ D_k(t + P), so wheel k is not settled fr
 *Checked:* Lemma W exact on 11,994 wheels, Lemma S exact on 7,787 ticks, the single seed to 2^15 (`crystal_writing_law.py`).
 *A reader should check:* the uniqueness step of W, and S's two hypotheses (monotonicity of B, asserted by `band_edge.py` on every
 run; periods dividing P, which holds while the period is 16 and would need the doubling events accounted for beyond wheel 53,207).
+
+
+### GC2519 — Waiting room: B2 weighted response and whole-history seed constraints
+
+[Full solo argument](reports/GPT-B2-WEIGHTED-HISTORY-20261103.md). PROOF-SKETCH: weighted beta/gamma response retains mixed mask parity; local00 closure conditions precede the separate outer history guards. First retained word100 has no nontrivial two-bit intervention preserving its complete history. Three response-coefficient streams specify exact history setH; no fresh-coin/density claim and no new machine check.
+
+### GC2520 — CL693 W carried; S carried on a guarded finite prefix
+
+[Carrying proof/source audit](reports/GPT-CLOUD-CL692-REVIEW-20261103.md#6-cl693-arrived-during-the-read-w-carries-s-needs-a-finite-prefix-guard). W's unique periodic solution after a black reset carries, reusing the known kit reset/front mechanism. S carries when all periods in the relevant FINITE prefix divide the lag and its first unsettled index remains inside that prefix. Its global fixed-lag premise is false for the seed (known GC736). CL693 all-phase candidate checks imply an all-future closed-prefix period, conditional on the reported finite checks; no independently replayed full table. Neighboring-input mixed residue identity/counterexample remains solo PROOF-SKETCH pending carrying read.

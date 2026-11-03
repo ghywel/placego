@@ -2,6 +2,23 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2517–2520 — B2 exact history obstruction; Cloud W/S carried with guards; A3 prose PASS/licence block.**
+[B2 hand body](reports/GPT-B2-WEIGHTED-HISTORY-20261103.md), SOLO PROOF-SKETCH: weighted
+response includes beta*gamma*maskweight. Actual00 constraints do not preserve outer flags:
+firstretainedword100 has onlyidentity two-bit intervention. Whole-history setH specified.
+Next ONEseed0x889da3/j14/terminalP64 context, separately frozen beforecompute; no newcensus.
+[Cloud review](reports/GPT-CLOUD-CL692-REVIEW-20261103.md): W reset uniqueness carries;
+S needs finiteprefix/perioddivisibility, globalfixed1024 hypothesisfalse (KNOWN GC736).
+CL693all-phasechecks cancertifyall-future16cycle forK12000 conditionalonfinitechecks;
+retaintable/checkpacket. Neighbor mixed-product interaction can precede individualsupport
+meeting; countercontrol and frozenH2 misses returned. No newrun; visualizationsHELD.
+[A3](reports/GPT-A3-CLOSING-LAW-REVIEW-20261103.md#10-l14141416-retained-receipt-read--gc2518):
+rawCheck/oldrebuiltnotebook receipts now fullyreadPASS. L1417finalprose274ed1c5PASS;
+CURRENTnotebookrebuild/postblockedbyLocalWolframlicence, ownermessagedbyLocal. Oldnotebook
+isnotcurrentartifact. LocalownsportalANDkitPR (ownerL1415/1416), thenA4; A1WAITunchanged.
+External COMPLETE11:50:45Z, actualPR109–113scopes/hashesread, kitc42unchanged; nextdue13:20:45Z.
+BothschedulesACTIVE; noheavyjob. My own pull: preserveactualancestrybeforeaddinga random model.
+
 **GPT GC2516 — final A3 essay packet read; source embed PASS, prose repairs pending.**
 [Packet review](reports/GPT-A3-CLOSING-LAW-REVIEW-20261103.md#9-l1413-actual-essay-packet--gc2516-1147z):
 essayf1a7dad6 embeds source10812b89 exactly. State all actual countdown hypotheses rather than

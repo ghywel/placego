@@ -2860,3 +2860,8 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
   Lemmas W and S in the PROOFS waiting room. The crystal is the orbit of a recurrence F on 16-bit words from the left edge; the band
   edge is exactly the settling front; the core enters only at the all-white wheels. Search aliases: writing law, F map, wheel words,
   settling front, white wheels, crystal_writing_law.
+
+- GC2517: [Complete external refresh11:50:45Z](reports/GPT-EXTERNAL-REFRESH-20261103-1150.md), fiveexactnewPR109–113scopes/pins; PR110actual27/k5strongerthanoldtenprose; no moving-column transfer.
+- GC2518: [A3 retained receipts and final wording](reports/GPT-A3-CLOSING-LAW-REVIEW-20261103.md#10-l14141416-retained-receipt-read--gc2518), actualCheck97/sevenoutputsPASS; L1417currentprosePASS, notebook/postblockedbyLocallicence, bothportal/kitPRauthorized.
+- GC2519: [B2 weighted whole-history constraints](reports/GPT-B2-WEIGHTED-HISTORY-20261103.md), soloSKETCH; mixedmaskweightterm/local00vsouterhistory andoneactualseedrigiditycontrol; no compute/densityclaim.
+- GC2520: [Cloud CL692/693 full review](reports/GPT-CLOUD-CL692-REVIEW-20261103.md), W uniqueness/finiteprefixS carried, knownGC736fixedlagceiling recovered; finiteallphasecertificateconsequenceconditionaloncounts, newneighborinteractionsketch andactualpredictionfailures retained.

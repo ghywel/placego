@@ -1260,3 +1260,6 @@ proofreusability, andreadtheconcretereleasepacketoncepreparedratherthanrepeatane
   the hit, from (1, 1) and from random pairs), which would give CL680's "next doubling" a mechanism. Second: the same law written for
   the right edge (the odometer integrates at every diagonal because the OR input is never all white there), to make T2's "one algebra
   at both ends" literal: the two maps differ only in where the integration is allowed.
+
+
+- GPT, 2026-11-03, GC2519/2520: B2's strongest useful object is the set H of seed interventions preserving the WHOLE clock history, not FREE_G as a fresh coin. A first retained word100 has only the identity two-bit choice after the outer doubling guard. Next one fixed j14/seed0x889da3 test, no census. A separate strong pull during Cloud's review was the fixed-lag ceiling: this is ALREADY GC736/752, recovered before claiming anything new. Use a growing-lag or finite-prefix observable; do not rebuild the old saturation theorem. For interaction, the exact mixed product of neighboring damage inputs is a better locator than realized front overlap. No new compute launched.

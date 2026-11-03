@@ -326,3 +326,88 @@ Verdict: mathematical source and embedding PASS; final release prose needs
 these repairs and retained receipt inspection remains open. A3 is not yet
 cleared for posting by this packet read. No additional permission gate is
 introduced. Both schedules remain active; GPT continues B2 independently.
+
+
+## 10. L1414–1416 retained receipt read — GC2518
+
+L1414 repaired passages/abstract/assembler/driver read in full. The main
+countdown section now includes M>=2, s periodM, b antiperiodM, h period2M,
+recurrence and source-order guard; the picture's only-once claim is now
+explicitly limited to22letters. q0 is BEFOREfirstdoubling. Source10812b89
+is unchanged and the repaired essay embeds it byte-exactly.
+
+Downloaded immutable `cited/l1414-closing-law/a3-receipts-l1414.tar.gz`,
+25555bytes, SHA256
+`8c518ed016b6cbafac92f231c9956c80de704e0cd0a3b11fd1f862cda68388f5`.
+Safe regular-file extraction only; every MANIFEST hash verified. Read the
+ENTIRE raw Check output, seven output cells, summary JSON/raw WL, DONE,
+manifest and time receipt. Actual notebook text read by a literal path scan;
+notebook/proof-source pins and current essay/driver hashes verified.
+No Intel build/replay is claimed.
+
+Raw Check fdf966cf verdictPASS:97replayed constants, no new axioms, imported
+statements, all five headlines found/type-matched/ok,18declared items on
+standard axioms. The deprecated replay API warning is retained, not a kernel
+error. The notebook's17visible constants exclude a generated auxiliary;
+the97declaration kernel replay is the relevant replay count, not17.
+
+Rebuilt notebook SHA256
+`8247707432f45ffabb4b41867a02f41ed64337d7b500c3745438435ff1d9f169`,
+107083bytes. Seven outputs read: exact22letters/five-run table, True kit
+cell, LeanEnvironment, all five complete headline types, standard-axiom
+sets, Quadratic term and the actual KernelChecked97 object. Summary pins
+current essaycda79713 and driver1591a3c5; reasons empty, zero MESSAGE CELLS.
+The handler recorded15165events, so this is not a claim of zero handler
+events. Internal build19.8s; outer time30.83s, user22.50/sys1.97, maxRSS
+1332920320bytes on Local. This is receipt inspection, not an independent
+stage-wide resource-monitor audit. No literal local path patterns from
+usual user/temp/application roots were found in the released notebook.
+
+**Receipt/source/embed inspection PASS.** Two remaining literal wording
+fixes were sent immediately through the review flag, without another
+permission request:
+
+- Change "the equality fails there" for constant streams to "the equality
+  CAN fail there". Countercontrol: M2,s=false,OR,b=0011,h=0001 satisfies
+  the other recurrence/period assumptions and has sourceorder1, outputorder0,
+  so the equality actually HOLDS despite the excluded constant source. The
+  true-constant counterexample in §2 shows it is not universally guaranteed.
+- The abstract's "under the periods that pair carries" must also mention
+  the nonconstant-source guard; the Description should say "under the
+  stated hypotheses". Those guards are already correct in the main prose
+  and Lean source. Local owns the minimal pinned prose repair/rebuild.
+
+L1415 and L1416 complete owner instructions read: Local is authorized to
+post to the PORTAL after the review passes, then open the KIT PR citing
+that receipt. No fresh owner permission is required. The code/checker gates
+are clear; final prose repair/rebuilt artifact pin remains the only current
+packet issue. No public A3receipt or public-verifier status is invented.
+
+
+### L1417 outcome: final prose PASS; current notebook rebuild blocked by licence
+
+L1417 complete entry and ALL changed prose/abstract/assembler pins read.
+Both final wording repairs are applied. Current prose
+`faab16d44fb0973b7230393623662b862e37ec736af30daa34d2887ec4b71738`,
+essay `274ed1c5e003db9b108e50fe1c9a3b86f2747f9f867d8f084ffb86f6609aeb96`,
+abstract `d5d13b23295f81cee3e52a27fd8effc75b4850f4c0c432adffb48ec22db154b6`.
+Exact unchanged source embed rechecked. **Final mathematical/prose review PASS.**
+
+Local reports the new notebook rebuild fails immediately with a Wolfram
+Engine activation/licence error, twice with preserved failures. The owner
+has already been asked. No current-prose notebook exists yet; the previously
+passed82477074 notebook belongs to the earliercda79713 essay and must not
+be presented as the current rebuilt artifact. The portal submit step also
+needs the licensed kernel. A3 therefore remains NOT POSTED. This is a
+licence-dependent release obstruction, not a new proof or permission issue.
+
+Full54-line kit-module generator read. Read-only reconstruction gives
+`04d4e03191c4822407109806de2a6a986cc1abfe65e953940741b40a423d5076`,
+matching Local's reported module; its declaration/proof body equals carried
+cdf38552. No generator execution against a kit checkout or Intel build.
+Local reports kit Check PASS97 and full Ruliology build199jobs; those raw
+new kit receipts have not been independently inspected here. Local owns
+portal post followed by kit PR, both owner-authorized L1415/L1416. Once the
+licence is restored, the next gate is the exact current-essay rebuilt
+notebook/receipts, then the authorized post and public receipt inspection.
+No additional routine owner permission round is introduced by this review.
