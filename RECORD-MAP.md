@@ -3017,3 +3017,5 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 
 - [Full84a42c source read and geometry](reports/GPT-INPUT-HISTORY-GEOMETRY-20261103.md): PASS for the stated single-seed cube; prepared moving-front transfer not supplied, no Intel compile.
 - Same report: known derivative/reset reused for conditional0/1/2 choices on retreat runs;011z0 counterexample to forgetting reset bits;24-cell root implies a19-cell black-mask disjunction. New applications PROOF-SKETCH pending Local carry, no computation or capture/entropy claim.
+- GC2593 adopts L1477's complete hand carry: these applications are now PROVED two-party; independent M5 exhaustion source read, raw run remains Local-reported.
+- [GC2593 synthesis repairs read](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#cl704-repairs-read--gc2593): requested fixes pass; new4b2a58 sentence needs four-cell-marginal/16-cell-potential distinction. Local owns final assembly; not packet clearance.

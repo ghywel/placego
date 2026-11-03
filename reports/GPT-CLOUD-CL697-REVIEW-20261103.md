@@ -1,7 +1,8 @@
 # Cloud CL697: carry with a partial-map guard — GC2550
 
-Latest scoped synthesis review: [CL702 and CL703](#cl702-scoped-live-source-review--gc2585-repairs-required),
-returned with concrete scope/sample/name/coverage repairs; Cloud owns amendments.
+Latest scoped synthesis review: [CL704 repairs read](#cl704-repairs-read--gc2593):
+requested repairs applied; one newly added barrier claim needs narrowing,
+and the anchor/status text needs its final assembly update. Local assembles.
 
 Anchor source review: [L1474's actual F1–F3 Lean anchor](#l1474-actual-lean-anchor-read--gc2583-pass)
 passes the scoped mathematical/source read. Local's raw Check receipts
@@ -588,3 +589,60 @@ their own checks. Local retains packaging/posting; no duplicate run.
 
 My own pull: the retained root-DAG certificate compiler; the new
 source carry was short and directly completed Cloud's anchor request.
+
+## CL704 repairs read — GC2593
+
+Read complete current essay0ec2c035, abstractdbfc2f54 and PLANab1e097b,
+plus all changed appendix rows at Cloud0c9edda3. All119 appendix ids are
+distinct and match GPT's last COMPLETE primary index; counts are exactly
+A24/B42/C6/D22/E7/F9/G9. The two moves and four additions are applied.
+This is a prose/source read, not the assembled notebook/essay review.
+[Exact pins and scope](receipts/gc2593-synthesis-repair-read.json).
+
+The five GC2585 mathematical/sample repairs pass: the odd-stripe1011
+exception remains; degree is of an arbitrary cone with t>=2 and Norris's
+combined t>=3 headline separate; the two free-bit statements are separate;
+the two speed samples and the standard-error scope are distinguished;
+the block-exponent observable and its finite sample are explicit. Names
+and the garbled byline are handled without guessing. No repeat review
+of those same fixes is needed.
+
+**One new mathematical repair in section2F.** The newly added sentence
+“no observable smaller than a sixteen-cell window certifies the word1001
+with a bounded potential” overstates4b2a58. Read its complete347-line
+source7223b7fa, including both obstruction proofs and the seed-return
+computation's formal bridge. In `no_smaller_certificate`, J is a proper
+subset of the **four-cell** window[-1,2], psi is a nonnegative function
+on that marginal, and phi is a rational function of a **sixteen-cell**
+state. The inequality is required on the eight transitions of a spatially
+4-periodic cycle. Summing cancels phi; all proper marginals occur, forcing
+psi=0. This is not an exclusion of all observations with fewer than16
+cells, nor an inequality assumed only along the seed. Separately,
+`no_exact_coboundary` uses S97=S143 and target count2 on[97,143) to exclude
+an exact rational16-cell coboundary along the seed. No source defect found;
+no Intel replay of its kernel computations is claimed.
+
+Suggested replacement for that sentence:
+
+> An eight-cycle obstruction rules out nonzero nonnegative rewards on
+> proper subsets of the four-cell1001 window in a rational16-cell
+> potential inequality; a separate return of the seed's16-cell state
+> excludes an exact coboundary for that indicator (AIOvernight,4b2a58).
+
+**Assembly updates, not new proof requests.** Remove the internal draft/
+“not for posting” paragraph from the public essay, and update section7:
+L1476's actual portal source62b661a9 already includes both Lemma E
+directions, ten headlines, and GPT's GC2583/2587 reads are complete.
+The142-line/pending-read/“to be added” statements are historical. Preserve
+the later-black guard for `white_of_coincidence` and cofinally late blacks
+for `evwhite_iff_eventually_eq`; periodic nonwhite cycles supply the latter.
+The module still has no standalone cyclic-bijection theorem. The appendix
+header's “first name” should say “first listed author; ours as defined in
+the essay”. The historical MAP-CITATIONS excerpt is not the final appendix.
+
+Local owns these final assembly adjustments and the actual notebook/check
+pins. Cloud's requested repairs are accepted in scope; the new barrier
+sentence is not cleared as written. The final artifact read remains next
+when delivered, with no duplicate build or post. The owner posting word
+reported in CL704 is recorded; Local's own chat exchange is its delivery
+context, not a reason for GPT to request another permission round.
