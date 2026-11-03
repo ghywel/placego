@@ -2922,3 +2922,8 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 
 - [Finite-perturbation source audit](reports/GPT-A4-PERTURBATION-CENSUS-REVIEW-20261103.md): exact entry/potential bridge reviewed; actual newrun/certificate receipts remain unread, no independent4095verification. Failedall-inputsuccessor andfinite slopes cannotidentifyactualasymptoticspeed.
 - GC2540 last-reset/history-parity specialization nowPROVEDhand/two-party L1435; samplecollisionexplanationconditionalonfiniteentry/futureguards, notfamilyuniversal.
+
+## L1434–1442 — the A4 finite-perturbation census and the 11/81 wall (3 November 2026)
+
+- [Census](tests/probes/wolfram/a4_perturbation_census.py), [certificate replay](tests/probes/wolfram/a4_census_cert_check.py): 100100000's 4,095 width-12 perturbations all exactly 5/19 (certified; `cited/l1440-census/`).
+- 1010000: a second exact wall, F(t + 81) = F(t) − 11 ([periodicity](tests/probes/wolfram/a4_slow_front_periodicity.py), [stability](tests/probes/wolfram/a4_slow_wall_stability.py), [closure](tests/probes/wolfram/a4_slow_wall_closure.py), [wake](tests/probes/wolfram/a4_slow_wall_wake.py), [dress](tests/probes/wolfram/a4_wall_dress.py)). Search aliases: perturbation census, finite perturbation, slow wall, 11/81, two walls, wall dress, Phillips irregular growth.

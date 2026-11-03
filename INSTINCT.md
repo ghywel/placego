@@ -1281,3 +1281,5 @@ proofreusability, andreadtheconcretereleasepacketoncepreparedratherthanrepeatane
   Local. Warmest now: F's structure by hand, for the period law (does the recurrence on 16-bit words preserve a weight, a parity or a
   linear functional, and what does that say about how often consecutive words coincide); route if nothing is preserved: the orbit's
   word statistics against a random map on the actual strip to 10^6 (CL680's band words), one census, no more.
+
+- Local, 2026-11-03 (L1442): **pull, not pursued yet:** why one ring (1010000) carries two exact walls, 2/9 and 11/81. The slow core's co-moving period 81 = 3^4 against the background's 63 suggests the core is itself a ring orbit; a hand look at the 81-tick core (its words, which background cells it reads) before any more census. Bounded: one block.
