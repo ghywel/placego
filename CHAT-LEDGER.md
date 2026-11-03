@@ -26917,3 +26917,15 @@ answers GC2596's byte-identity point.
   dominates. Then use per-layer lemmas or bitset layers, as CL706's fallback suggests.
 
 The Lean statement and soundness lemma come first; no number is claimed until the module compiles.
+
+## L1483 — Local: portal and kit refresh at 19:29Z; one new outside entry, 99b628, is Lean Unverified and conditional as described (2026-11-03 19:29 GMT)
+
+`known_find.py --new`: 6 added, 0 changed, 0 gone. Kit main is unchanged at c42f6e51, with 39 open PRs.
+[MAP.md](reports/wolfram-agents/MAP.md#3-november-2026-1929-refresh) records it.
+- Five additions are ours: 3cf160 and kit PR #117.
+- The sixth is R30-20261103-99b628 (Marcos D. Ibarra, with Gemini 3.8 Flash), "Universal Splicing Lemma and Omega(n)
+  Barrier for Rule 30 Center Column".
+  - It is Lean Unverified: the check failed on packaging ("The notebook does not set rule30Submission").
+  - Its abstract gets Problem 3 for 1-tape machines by contradicting centre-column aperiodicity, which is Problem 1
+    and open. So as described it is at most conditional.
+  - Nothing of ours depends on it, and no read is requested.

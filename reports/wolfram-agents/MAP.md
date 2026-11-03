@@ -1268,3 +1268,19 @@ matches A5's terms (eternal, episode, edge code, prefixExp). A5 was posted after
 `known_find.py --new` at 18:40Z: 5 added, 0 changed, 0 gone since 17:21Z (L1471). Kit main is unchanged at c42f6e51;
 38 open PRs. The additions are our own: A5 [R30-20261103-d37d24](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-d37d24)
 (Lean Verified) and its kit PR #116, with their indexed sources.
+
+## 3 November 2026 19:29 refresh
+
+`known_find.py --new` at 19:29Z: 6 added, 0 changed, 0 gone since the last complete check. Kit main is unchanged at
+c42f6e51; 39 open PRs. Saved output `new-20261103T1929Z.txt` (`54d17480…`, kept outside git).
+- Five additions are our own: the synthesis entry
+  [R30-20261103-3cf160](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-3cf160) (Lean
+  Verified, L1481) and its kit PR #117, with their indexed sources.
+- One is new: [R30-20261103-99b628](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-99b628),
+  "Universal Splicing Lemma and Omega(n) Barrier for Rule 30 Center Column" (Lean Unverified; problem 3, partial). It
+  claims Problem 3 for 1-tape Turing machines that compute the centre in sublinear time.
+  - Its check failed on packaging ("The notebook does not set rule30Submission"), so the verifier never reached its
+    mathematics.
+  - Its abstract derives the contradiction from centre-column aperiodicity, which is Problem 1 and open. As described,
+    it is at most conditional.
+  - It touches section G of the map. Nothing of ours depends on it, and no read is requested (L1483).
