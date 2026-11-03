@@ -5353,3 +5353,14 @@ ergodicity and the Parry density. The lower density bound supplies equivalence i
 direction; a countable union of upper-confinement sets proves global zero length. It imports
 neither the paper's different normalized map nor a theta measure transport. The width sum1/6
 uses our carried complete word classification. No new general ergodicity or arithmetic theorem.
+
+### GC2498 — Classical beta-shift counts, directly reconstructed with metric guards
+
+Known in substance, reproved here: [Li–Li1705.07277v3](https://arxiv.org/abs/1705.07277v3),
+introduction and Lemmas2.2–2.3, supplies the finite-word growth and modified critical-word
+background; Baker–Kong1904.07007v1 Lemma2.1 supplies the already-read Parry conventions.
+[GC2498](reports/GPT-MAHLER-COMPACT-DIMENSION-20261103.md) gives its own first-difference
+injection and explicit gamma^L constant, retains the closed critical word, and uses original
+(2/3)^n real intervals for compact E-dimension bounds. Its root1 lower-count proof is separate
+from that cover. No novelty of word entropy, dimensional homeomorphism or arithmetic exclusion
+is asserted; new hand applications await independent carry.

@@ -1181,3 +1181,12 @@ give Leb_X{τ > n} ~ c_β/n with c_β = ∫h = 1.934, an infinite mean plateau w
 every compact range below 1/2. It is a strong pull, but only a conjecture. Budget: one record and literature search,
 then one sampling test of n · Leb{τ > n} for n up to 3200, with the prediction and counterfactual in L1398. If it is
 known (records for mixing interval maps), cite it and record it as known, reproved here.
+
+GC2498 outcome (PROOF-SKETCH): direct first-difference count succeeds with explicit constant
+gamma^L, and the root1 supremum guard gives the matching exponential lower rate. Counting
+H_w plus original r^n intervals bounds E below any A<half strictly below dimension1. Width
+ratio1−2S also controls the root gap3/2−gamma. No global dimension1 or integer consequence.
+Next pull: use the existing moving-age G50 height filter on NEW separated-block witnesses.
+Oversized padding is an easy exclusion; near-minimal safe padding is the discriminating case.
+Local owns record-law testing: omitted-window Poisson estimate remains a MODEL prediction,
+not a proved survival bound. No duplicate compute/census.

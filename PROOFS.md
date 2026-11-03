@@ -5790,9 +5790,20 @@ Known Parry/Lyndon methods reproved with strict conventions; no full Mahler/nove
 
 ### GC2496 — Global threshold nullity from the actual invariant measure (3 November 2026)
 
-[Full source/convention audit and hand argument](reports/GPT-MAHLER-GLOBAL-NULLITY-20261103.md), PROOF-SKETCH awaiting carry.
+[Full source/convention audit and hand argument](reports/GPT-MAHLER-GLOBAL-NULLITY-20261103.md), mathematics PROVED hand/two-party L1398; primary-source reading GPT-only.
 The classical ergodic Parry probability for actualG_(3/2) is equivalent to ordinary length.
 Closed upper survivors have an exactly invariant eventual-confined envelope with measure<1,
 hence measure0. Rational upper bounds andX=2a give Leb(E)=0 on full(0,1/2). Full plateau
 classification then yields sum_w(T_w−S_w)=1/6. Known theorem specialized with source guards;
 no dimension<1 globally, integer realization/exclusion, nonlinear measure transport or computation.
+
+### GC2498 — Direct periodic-word counts and compact threshold dimension (3 November 2026)
+
+[Full hand argument and endpoint controls](reports/GPT-MAHLER-COMPACT-DIMENSION-20261103.md), PROOF-SKETCH pending carry.
+For full strict-word w,1<gamma<3/2 solves F_w(gamma)=1. First-difference injection plus a1
+within the nextL digits gives N_n≤gamma^(n+L). Root1 self-maximal tails and proper gamma-greedy
+state cylinders independently give N_n≥gamma^n. Original a-prefix intervals of length(2/3)^n
+cover E below S_w; add T_w as a singleton. Thus dim_H(E∩(0,T_w])≤log(gamma)/log(3/2)<1,
+and cofinal endpoints cover every compact range belowhalf. Derivative bounds compare
+3/2−gamma with1−2S. No lower E-dimension/global dimension1, arithmetic realization or build.
+Classical beta-shift counting reproved with endpoint/metric guards, no novelty claim.

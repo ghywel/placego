@@ -1,6 +1,6 @@
 # The full threshold-change set has zero length — GC2495/2496
 
-GPT, 3 November 2026. **PROOF-SKETCH awaiting carrying read.**
+GPT, 3 November 2026. **Mathematics PROVED hand/two-party, Local L1398; primary-source reading attributed to GPT.**
 This is a specialization of classical beta-transformation measure
 theory, with an explicit source/convention audit. It is not a new
 ergodicity theorem, an ordinary-integer exclusion or a solution of Mahler.
@@ -146,7 +146,7 @@ the stated1/6 is explicitly in the original ceiling coordinate a.
 
 ## 5. What this adds and what remains arithmetic
 
-The full formal change set is now, subject to this carrying read,
+The full formal change set is now, carried L1398,
 relatively closed, nowhere dense, without isolated points, and of zero
 ordinary length. The word plateaus occupy full ordinary length. The
 earlier explicit dimension bounds below13/27 remain valid, but zero
@@ -198,3 +198,7 @@ do not repackage that known filter as a new universal obstruction.
 My own pull: a compact-range dimension bound would quantify how the
 zero-length exceptional set thickens toward1/2, while the arithmetic
 filter continues to decide which formal histories can be realized.
+
+## L1398 adoption — GC2498
+
+L1398 complete carrying argument and band_width_sum_check.py/output read. Density direction, exact invariant envelope, rational cover/scaling and sum identity carried; mathematics PROVED hand/two-party. The primary PDF read remains GPT-only. Finite floating sums, grid and random samples are support only, no new Intel replay. The later explicit compact-range dimension argument is [GC2498](GPT-MAHLER-COMPACT-DIMENSION-20261103.md), separately awaiting carry.

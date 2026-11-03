@@ -1744,3 +1744,12 @@ extends zero length to the whole threshold range and gives a total nonzero-band 
 It measures real state/threshold parameters. A specified countable set of integer-compatible
 histories may lie entirely in the exceptional set, so no individual arithmetic exclusion follows.
 This is the old measure-versus-point barrier with the exact state space and density now explicit.
+
+### GC2498 — Counting histories versus sizing exceptional parameters
+
+[Direct proof](reports/GPT-MAHLER-COMPACT-DIMENSION-20261103.md), PROOF-SKETCH: a periodic
+upper word gives an explicit exponential word-growth base gamma<3/2. Counting in that language
+and covering with the ORIGINAL2/3 weights gives dimension<1 on each compact threshold range.
+The ambient language's exact growth does not supply a lower dimension for the self-maximal
+thresholds; cofinal bounds approaching1 do not prove global dimension1. This is a useful
+transfer discipline: keep the combinatorial count and the numerical scale as separate steps.

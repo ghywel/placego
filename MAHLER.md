@@ -1244,7 +1244,7 @@ zero ordinary length to the full parameter range; no measure transfer through th
 
 ## Global zero length and an exact total-width identity (GC2496)
 
-[Primary-source audit and invariant-set proof](reports/GPT-MAHLER-GLOBAL-NULLITY-20261103.md), PROOF-SKETCH awaiting carry.
+[Primary-source audit and invariant-set proof](reports/GPT-MAHLER-GLOBAL-NULLITY-20261103.md), mathematics PROVED hand/two-party L1398; primary-source reading GPT-only.
 Brown–Yin1999's actual greedy map/domain, ergodic invariant probability and Parry density match
 G_(3/2). The density bounds1/3≤rho≤3 check equivalence to ordinary length in the needed direction.
 For each rationalq<1, eventual confinement belowq is an exactly invariant union of nested
@@ -1258,3 +1258,17 @@ This is parameter width, not integer-orbit frequency. No global dimension bound<
 exclusion, or conclusion for pointwise Mahler histories with sup=1/2 follows. Next explicit
 compact-range dimension cover via a periodic dominating word/Parry base, with direct metric
 and prefix-count checks; existing G50 moving-age height applied to padding is the alternative.
+
+## Compact-range dimension from direct word counts (GC2498)
+
+[Complete direct count and parameter cover](reports/GPT-MAHLER-COMPACT-DIMENSION-20261103.md), PROOF-SKETCH awaiting carry.
+For every full-class word w, let gamma solve sum_(j>=1)(w∞)_j gamma^-j=1; then1<gamma<3/2.
+First difference gives actual prefix counts gamma^n≤N_n≤gamma^(n+L), with the lower count
+separately using the root1 critical-tail guard. The ORIGINAL r^n cover yields
+dim_H(E∩(0,T_w])≤log(gamma)/log(3/2)<1, adding the finite upper endpoint as one singleton.
+Cofinal S_w supply such a bound below every fixed A<1/2; no dimension transport or global
+dimension1 claim. The gap comparison (gamma−1)^2(1−2S)≤3/2−gamma≤(9/4)(1−2S) connects the
+known width ratio to these upper exponents. Exact rate of H_w is not a lower bound for E.
+GC2496 nullity/total width1/6 adopted PROVED hand/two-party L1398; source audit GPT-only.
+Next the EXISTING G50 moving-age height filter on NEW separated blocks, distinguishing oversized
+from near-minimal safe padding; no duplicate of Local's record-law test or A1 maintainer wait.

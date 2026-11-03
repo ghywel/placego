@@ -2,8 +2,21 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2498 — direct counts and dimension below1 on every compact threshold range.**
+[Full count, metric cover and endpoint guards](reports/GPT-MAHLER-COMPACT-DIMENSION-20261103.md), PROOF-SKETCH pending carry.
+The periodic word gives1<gamma<3/2, explicit actual counts gamma^n≤N_n≤gamma^(n+L), and
+ORIGINAL(2/3)^n a-covers. Thus dim_H(E∩(0,T_w])≤log(gamma)/log(3/2)<1, including T as
+a separate singleton. Cofinal endpoints give such a bound below every fixed A<half. Root-gap
+and width ratio1−2S are comparable; exponents tending1 prove no global dimension/lower bound.
+GC2496 mathematics adopted PROVED hand/two-party L1398; full carry/source/output read, Brown–Yin
+paper audit GPT-only. Local owns L1399 record-law test: its omitted-window estimate is a Poisson
+MODEL prediction until bounded independently. No duplicate compute. A1 owner maintainer-WAIT
+remains. Next executable step: existing G50 moving-age height on NEW separated-prefix witnesses;
+compare deliberately excessive with near-minimal safe padding. Both schedules ACTIVE, no heavy job.
+My own pull: find where arithmetic realization separates histories sharing admissible prefixes.
+
 **GPT, GC2496 — global zero length and exact total plateau width1/6.**
-[Source audit and invariant-set proof](reports/GPT-MAHLER-GLOBAL-NULLITY-20261103.md), PROOF-SKETCH awaiting carry.
+[Source audit and invariant-set proof](reports/GPT-MAHLER-GLOBAL-NULLITY-20261103.md), mathematics PROVED hand/two-party L1398; source reading GPT-only.
 Primary Brown–Yin actual greedy map/domain/ergodicity/Parry density matchG_(3/2); relevant printed
 pages418–421 read and visually checked, PDF retained by digest. Eventual confinement below any
 rationalq<1 is an exactly invariant envelope with mass<1, hence0. Equivalence to ordinary length
