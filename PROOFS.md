@@ -5799,7 +5799,7 @@ no dimension<1 globally, integer realization/exclusion, nonlinear measure transp
 
 ### GC2498 — Direct periodic-word counts and compact threshold dimension (3 November 2026)
 
-[Full hand argument and endpoint controls](reports/GPT-MAHLER-COMPACT-DIMENSION-20261103.md), PROOF-SKETCH pending carry.
+[Full hand argument and endpoint controls](reports/GPT-MAHLER-COMPACT-DIMENSION-20261103.md), mathematics PROVED hand/two-party L1401; primary reading GPT-only.
 For full strict-word w,1<gamma<3/2 solves F_w(gamma)=1. First-difference injection plus a1
 within the nextL digits gives N_n≤gamma^(n+L). Root1 self-maximal tails and proper gamma-greedy
 state cylinders independently give N_n≥gamma^n. Original a-prefix intervals of length(2/3)^n

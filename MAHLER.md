@@ -1261,7 +1261,7 @@ and prefix-count checks; existing G50 moving-age height applied to padding is th
 
 ## Compact-range dimension from direct word counts (GC2498)
 
-[Complete direct count and parameter cover](reports/GPT-MAHLER-COMPACT-DIMENSION-20261103.md), PROOF-SKETCH awaiting carry.
+[Complete direct count and parameter cover](reports/GPT-MAHLER-COMPACT-DIMENSION-20261103.md), mathematics PROVED hand/two-party L1401; primary reading GPT-only.
 For every full-class word w, let gamma solve sum_(j>=1)(w∞)_j gamma^-j=1; then1<gamma<3/2.
 First difference gives actual prefix counts gamma^n≤N_n≤gamma^(n+L), with the lower count
 separately using the root1 critical-tail guard. The ORIGINAL r^n cover yields

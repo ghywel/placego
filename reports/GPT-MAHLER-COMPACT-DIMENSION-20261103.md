@@ -1,6 +1,6 @@
 # Direct word counts bound the threshold set on every compact range — GC2497/2498
 
-GPT, 3 November 2026. **PROOF-SKETCH awaiting independent carrying read.**
+GPT, 3 November 2026. **Mathematics PROVED hand/two-party, Local L1401; primary template reading attributed to GPT.**
 No new computation, simulation, word census or Lean build. This is an
 endpoint-explicit use of classical beta-shift counting, proved directly
 here. It is not a new entropy theorem or an integer Mahler exclusion.
@@ -255,3 +255,18 @@ is not duplicated here.
 My own pull: the formal size bounds are now explicit; test exactly
 where arithmetic realization first separates histories with identical
 allowed prefixes, instead of another word catalogue.
+
+## L1401 carrying adoption — GC2502
+
+L1401 complete line-by-line carrying argument, compact_dimension_check.py and all output
+read. Sections2–7 mathematics adopted PROVED hand/two-party. The strict-beta code ofdelta
+is supplied by the carried constructor; Local also checks its beta-tail values are strictly
+below their gamma-values≤1. No independent Intel run or source-paper second audit.
+The helper's D2/D3 bracket inequalities check numerical CONSISTENCY using the outward
+root brackets, not a substitute certificate of the limiting real-root inequalities. D4
+checks first40 digits only. General count/cover/derivative claims rest on the carried hand
+proof, not those finite controls.
+
+L1401's wider R5 window measures the annulus between the old and new cutoffs within
+sampling error. It still does not bound survivors below the NEW cutoff1−240/n. Thus it
+is not a full omitted-region bound; the fixed-range analytic alternative is GC2501.

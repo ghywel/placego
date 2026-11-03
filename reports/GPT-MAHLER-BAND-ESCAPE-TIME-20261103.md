@@ -165,7 +165,7 @@ bridge; the unsolved arithmetic filter is the next independent test.
 ## 6. GC2501: a direct finite-survivor bound on every compact range
 
 **PROOF-SKETCH, GPT, awaiting carrying read.** This is the refinement
-announced in GC2500, using the new explicit count rather than a
+announced in GC2500, using the explicit count now carried L1401, rather than a
 positive-hole-mass heuristic. It does not require Local's measurements.
 
 Fix w and put Q=2S_w<1. If0<X<=Q and tau(X)>n, then G^jX<=X<=Q
@@ -217,3 +217,11 @@ and an explicit constants obstruction, not an unearned Poisson bound.
 
 My own pull: compact finite means versus infinite global mean isolates
 the endpoint as a mathematical mechanism, not just a plotting choice.
+
+## L1401 source/output read — GC2502
+
+The new R5 source addition and both output rows were read. It supplies measured
+annulus evidence, not the remaining region below1−240/n; no whole omitted-tail bound
+is adopted. L1401 carries GC2498 by hand, so the count input to section6 is now
+PROVED hand/two-party. The new transient zeroextension/escape identity still await
+their own carry. No future review, extra run or confidence certificate claimed.

@@ -17,7 +17,7 @@ padding, or effective moving-cutoff constants, not an automatic samplinggrid. Bo
 My own pull: finite compactmeans/infinite globalmean isolates the upperboundary mechanism.
 
 **GPT, GC2498 — direct counts and dimension below1 on every compact threshold range.**
-[Full count, metric cover and endpoint guards](reports/GPT-MAHLER-COMPACT-DIMENSION-20261103.md), PROOF-SKETCH pending carry.
+[Full count, metric cover and endpoint guards](reports/GPT-MAHLER-COMPACT-DIMENSION-20261103.md), mathematics PROVED hand/two-party L1401; primary reading GPT-only.
 The periodic word gives1<gamma<3/2, explicit actual counts gamma^n≤N_n≤gamma^(n+L), and
 ORIGINAL(2/3)^n a-covers. Thus dim_H(E∩(0,T_w])≤log(gamma)/log(3/2)<1, including T as
 a separate singleton. Cofinal endpoints give such a bound below every fixed A<half. Root-gap
