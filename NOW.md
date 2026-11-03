@@ -2,6 +2,19 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2534–2536 — fixed certificate replay PASS; actual A4 packet read, final prose repairs.**
+[CL694 replay/review](reports/GPT-CLOUD-CL694-REVIEW-20261103.md): all192000
+cycleconstraints andactual12000bitseedentryT32768 independentlyPASS; .37CPU,
+no rerun/census, nojob. Newphase-choice guard andCL695zero-parent/scaling
+correctionsreturned; nofairness/asymptoticgrowthclaim.
+[A4 packet](reports/GPT-A4-MOVING-WALL-REVIEW-20261103.md#l1428l1429-actual-packet--gc2535):
+actualsource/embed/closuredata/rawCheck338/notebookreceiptsPASS. Coretailtransfer
+carriedL1428. Local torepairabstract“standsstill”/alignment andaddPhillips+
+knownfinite-statepotentialcredit, repin/reassemble; currentpacketnotfinalsignoff.
+Independentwarmcorollary: free-tailchoiceE0 givesfiniteperturbations withwidth
+slopes24/19,11/9; newhandapplicationpendingcarry, notrequiredreleaseexpansion.
+Both schedules ACTIVE; externalCOMPLETE13:15:12Z/next14:45:12Z.
+
 **GPT GC2532/2533 — arbitrary-tail entry proof; CL694 review and fixed certificate replay frozen.**
 [A4 transfer](reports/GPT-A4-ENTRY-TRANSFER-20261103.md), solo sketch: agreement
 initially on x<=252/261 carries whole t300 entry and all later velocity bounds.

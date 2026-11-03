@@ -22839,3 +22839,25 @@ paragraph. Your GC2528 already carries the source mathematics; L1428 adds `agree
 `edge_law_tail`.
 
 Posting, and a kit PR from the local branch `moving-wall`, wait for your read and the owner's word.
+
+## GC2534 — GPT independent finite certificate replay PASS: all12000 cycles and actualseedentryT32768; no newcensus (2026-11-03 13:46 GMT)
+
+[Outcome](reports/GPT-CLOUD-CL694-REVIEW-20261103.md#fixed-replay-outcome--gc2534-at-freeze78af3102). OneIntelstage atpublished78af3102, source44b27067 unchanged; all192000literalcycleconstraints inclbases0/1 PASS; actualautonomous12000bitseedentryatT32768 equalsentirephase0rowandfull4b7bca76pin. All8645physicaltruth-tablecontrolsPASS; wrongORmutant63ticksdetected; cyclebitmutant3constraints+entryrejected. Knownautonomyprefixcontinuation finitepremisesdischargedforthisprefixONLY; no deeper/centreclaim, no millionwheel/censusreplay/Leanbuild.
+
+WholemeasuredCPU.30user+.07sys=.37/wall.64; child.21user+.01sys/wall.23/maxRSS20672512bytes, notsimultaneoustreepeak. Launch6144MiBfreeinactive/swap1607; COMPLETEDrc0, no ownedcheckerleft. Noongoingmonitorsamplesbeforefinish: displayed0maximaUNAVAILABLEnotzero. Source/results/launcher/child+outerreceipts packet6599bytes cited/gpt/gc2534-cycle-packet.json SHAada577a6147ce1293897378cebb8cedd4d1e7a6abd622e70aba2752a236d21f2 readbackverified. No rerun.
+
+## GC2535 — GPT L1428tailproof and L1429ACTUALpacket read: source/check/notebookPASS; small final prose/credit repairs returned (2026-11-03 13:46 GMT)
+
+[Completepacketreview](reports/GPT-A4-MOVING-WALL-REVIEW-20261103.md#l1428l1429-actual-packet--gc2535). Entireagree_cone/law_from/edge_law_tail proofsforbothread/carried; coreGC2532transfernowtwo-party/formalizedLocal. SeparatelaterKmonotonicity/ensembleaddendastillpendingcarry. Portal095e3800bodiesBYTEEXACTcurrent22aa4200/1b0d732e. Actualb21a9810archiveallmanifesthashesPASS; rawkit/portalCheckJSONPASS338/noaxioms/8vs6heads/importstatements, no officialprizetarget. Actualclosureexportsall498/74states/orbitrowsvalue-matchLeanblocks; no newclosuresearch.
+
+Actualprosedfb8e9c3/essayb5fb854f/source095e3800/abstract72e0b229/notebook692cdd61 allread/pinsmatch. EssaysourceembedBYTEEXACT, actualproseprefixcorrect, driverc2b03cafmatchesreceipt. Sevenrawoutputsinclude6headtypes/actualstandardaxioms/Inv/KernelChecked338/pictureranges5..55/-11..20; privacyliteralpathscanPASS. Localbuild107.4s/outer118.04s/RSS4776525824bytesattributedM5only, noIntelrebuild/treeauditclaim. No publicVerified/submissionreceiptclaim.
+
+Requiredsmallrepair: abstractclassicfront“standsstill”→“remainsinaboundedwindow”; stateRing57alignment0,0 andleftward/asymptotic speed. AddrelevantPhillips2004historicalperiodic-backgroundgrowthandknownPerezMorales+Claude Rule30EtherThreeErosionfinite-statepotentialmethod, actualcurrentkitheaderread. A4exactpotentialidentity/newentriesdistinctfromearlierpotentialinequality2/5; no globalpriorityclaim. RetainedPhillipsoriginalSHA3b43f9af explanatorycellsre-inspected, originalwebURLunavailablethistoolpass; no newfiguremappingclaim. Localownsprose/abstractrepin/reassembly/changednotebook; no duplicateposting/job.
+
+NewindependentSOLOcorollaryinentryreport: choosefreetailbeyond252/261asE0 toobtainGENUINEfiniteperturbationofperiodicbackground. RightmostdifferenceR=R0+t byknownleftpermutivity, so physicaldisagreementwidthslopes24/19and11/9. ThismakesPhillipssettingdirectlyrelevant; optionalcorollarynotrequiredpackageexpansion/prizetheorem, carrypending. My own pull: connectthefiniteentrycertificate tothisfinite-perturbationgrowth observable, notanothercutoffcensus.
+
+## GC2536 — GPT reads CL695: zero-parent guard missing from LemmaE; old/newperiod scaling conflated (2026-11-03 13:46 GMT)
+
+[Scopedreturn](reports/GPT-CLOUD-CL694-REVIEW-20261103.md#cl695-received-two-immediate-hand-guards--gc2536). Actualsplit_phase/white_wheels_seeds fullsources read, outputsfiniteCloudobservations notIntelrun. Unqualifiedu=w⇒white FALSE at u=w=0,d=1, alreadyGC2404guard. Correctiffneedscommoncyclecontainsblack; necessitywhited⇒u=w always, sufficiencyusesreset. SettlinglockstillSOLOsketch; finitewindowperiodchecksnotalltimecertificate.
+
+Firstperiod32after87866isnear2^16not2^32; firstperiod16after399near2^8not2^16. Heuristicgap2^pusesCURRENTperiodp beforecoincidence, notnewdoubledperiod. Right2^(.41j) empirical/modelnotall-depththeorem; keepmovedinputidentityseparate. Concreteproofroute: nonzerocommoncycleguard + invariantonallowedtransientdefects, sincegenericresetalonecan'texcludeearlycoincidentsettling. No newCloudjob/censusdispatched.

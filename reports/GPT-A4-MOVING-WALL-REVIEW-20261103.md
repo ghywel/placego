@@ -171,3 +171,90 @@ that template, refusing a mismatch. Local reports both generated outputs
 byte-exact; GPT did not rerun generation. The source-repeatability objection
 has been addressed. Actual combined source, raw official checker receipt,
 essay/abstract and source embed remain the next concrete release review.
+
+## L1428/L1429 actual packet — GC2535
+
+**Source/receipt read PASS; final prose repair requested.** Complete new
+`agree_cone`, `law_from`, `edge_law_tail` proof bodies read and carried for
+both backgrounds. Current source hashes are
+22aa42009ff730da04fd1cd323f4a0dd8b33b215e43d3f009f1d2305f669657c and
+1b0d732e701a031934ec6fab421ee8f1cb264ee27a5d30183ddad737eb9e09fa.
+Their bodies are byte-exact in the actual portal source, modulo outer
+namespace/import packaging: source095e3800 below. The full inclusive entry
+transport is correct. This discharges the central entry-transfer proof's
+independent read; GC2532's separate monotonicity/ensemble corollaries still
+await an explicit carry.
+
+The actual b21a98107c93f822c1f1182d760425ae75b5ed0012987265f82e9cbec6297395
+archive was downloaded and all its manifest hashes checked, including both
+closure exports. Both raw unchanged-Check JSONs were read: partial/PASS,
+338 replayed constants, no new axioms, official statements imported; all
+headlines found/typeMatches/ok with standard axioms. Kit form has eight
+headlines, portal form six. Neither verifies an official prize target.
+
+Actual packet pins:
+
+| Artifact | SHA256 |
+|---|---|
+| Portal source, 59780 bytes |095e3800341d85e14990390c5b1871f9dcafb42dd62a154dd2f76b36b4a50e14|
+| Prose |dfb8e9c38ff5a067d981db935dfe32f48d77dc1c83f42b57a6a1e4c07920e413|
+| Assembled essay |b5fb854f71fb11f68c2a73dbb94bb6021bced14baa1f75f5d231221baf466f66|
+| Abstract |72e0b229c1951399d8aa4c4144fef73ab1bc6765c032bee69c3c006ec6793355|
+| Actual notebook, 260880 bytes |692cdd6171d78e563df93895006da1244a374d799e23efd370cdf18c644fb40a|
+
+The actual essay embeds the entire exact source; the actual prose is its
+prefix. The assembler, portal converter and full notebook driver were read.
+Driver c2b03caf matches the receipt pin. All seven raw output receipts were
+read/inspected, including type displays, six actual axiom sets, invariant,
+KernelChecked338 and picture ranges [5,55]/[-11,20]. The manifest and summary
+agree on their digests, source icon, seven outputs, no message cells and no
+failure reasons. Literal notebook private-path scan passes. The picture's
+sampled errors fit the theorem bounds; its displayed finite region stays
+inside the cone. Local build107.4s/outer118.04s and RSS4776525824 bytes are
+Local-host receipts, not Intel measurements or an audited tree-resource
+claim. No Intel notebook/Lean rebuild was performed.
+
+### Concrete final wording and credit repairs
+
+1. The abstract calls the classic-ether front “stands still”. The theorem is
+   zero asymptotic speed with a bounded front, not literal constancy. Say
+   “remains in a bounded window”. State alignment (0,0) for Ring57 there too,
+   as the essay's table already does; make leftward/asymptotic speed explicit.
+2. Add the already-inspected Phillips2004 periodic-background growth work
+   as historical context. Its source uses extreme disagreements from the
+   unperturbed evolving background, so its observable is relevant here.
+   GC2337 read its Rule30 figures and found no matching exact quantified
+   theorem in that source. Do not imply periodic-background growth or the
+   use of fronts is itself new. The original notebook was re-inspected from
+   the retained SHA3b43f9af source; the conference URL did not open through
+   web tooling on this pass. No new figure identification is claimed.
+3. Credit the existing finite-state potential method in
+   `Rule30EtherThreeErosion` (Luis Perez Morales and Claude), already in kit
+   c42f6e51 and explicitly used by our earlier EtherEpisode work. Its actual
+   header/`wake_good` mechanism gives a potential inequality and speed lower
+   bound2/5 for a different ether/front problem. A4 uses an exact potential
+   identity on its moving-anchor closures and explicit entries. This is a
+   meaningful difference, not a reason to omit the predecessor method.
+
+Suggested related-work text: “Phillips investigated growth from finite
+perturbations of periodic backgrounds, including Rule30. The kit also has
+finite-state front potentials in Rule30EtherThreeErosion (Perez Morales
+and Claude). Here exact potential identities on moving-anchor closures,
+with checked entries, give the stated all-time bounds on these two aligned
+backgrounds.” Cite the actual source links. This is a scoped comparison,
+not a first-in-literature claim.
+
+The mathematical bounds, finite-tail extension, corrected26/17-cell prose,
+actual source/embedding and retained Check/notebook receipts otherwise pass
+this read. Local owns small prose/abstract repair, repinning/reassembly and
+any changed notebook. No duplicate post/build, no public LeanVerified or
+submission receipt, and no future final-artifact acceptance is claimed.
+
+Additional source provenance check: both actual closure exports were decoded
+and their orbit words, encoded (key,potential) lists and lo=hi compared with
+the current Lean data blocks: byte-value equality for all498/74 states and
+57/63 orbit rows. Reported edge counts855/125 and entry parameters match.
+This is a provenance comparison, not another closure search or Lean replay.
+
+Primary pointers for the credit repair: [Phillips2004 notebook](https://www.wolframscience.com/conference/2004/presentations/material/rphillips-growth.nb)
+and [Rule30EtherThreeErosion at the actual kit main](https://github.com/WolframInstitute/Rule30PrizeKit/blob/c42f6e5133f61a47e99289fd4b6e0536fd8a0453/lean/Ruliology/CellularAutomata/Rule30EtherThreeErosion.lean).
