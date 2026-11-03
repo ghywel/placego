@@ -8,13 +8,15 @@ import sys
 import numpy as np
 
 T = int(sys.argv[1]) if len(sys.argv) > 1 else 3000
-y = np.array([1, 0, 0, 1, 0, 0, 0, 0, 0], dtype=np.uint8)
+# optional: WORD SOFF A0 P S LO HI W (default the (9, 57) case: 100100000 0 -72 19 14 -14 22 24)
+WORD, SOFF, A0, P, S, LOB, HIB, W = (sys.argv[2], *map(int, sys.argv[3:10])) if len(sys.argv) > 9 else ('100100000', 0, -72, 19, 14, -14, 22, 24)
+y = np.array([int(ch) for ch in WORD], dtype=np.uint8); NN = len(y)
 cst = lambda s: s ^ (np.roll(s, 1) | np.roll(s, 2))
 orb = [y.copy()]; cur = cst(y)
 while not np.array_equal(cur, y):
     orb.append(cur.copy()); cur = cst(cur)
 q = len(orb)
-E = lambda t, x: int(orb[t % q][(t - x) % 9])
+E = lambda t, x: int(orb[(t + SOFF) % q][(t - x) % NN])
 WL = 2 * T + 100; WR = T + 50; c = WL                # the truncated ends spoil one more cell per tick
 row = np.array([E(0, x) if x < 0 else int(x == 0) for x in range(-WL, WR)], dtype=np.uint8)
 ref = np.array([E(0, x) for x in range(-WL, WR)], dtype=np.uint8)
@@ -29,8 +31,8 @@ for t in range(T + 1):
     if t > 0:
         row = step(row); ref = step(ref)
     if t == 300:
-        A = -72
-        assert all(row[c + x] == E(300, x) for x in range(-(WL - 300) + 1, -71))
+        A = A0
+        assert all(row[c + x] == E(300, x) for x in range(-(WL - 300) + 1, A0 + 1))
     elif t > 300:
         if row[c + A] != ref[c + A]:
             A -= 1
@@ -38,12 +40,12 @@ for t in range(T + 1):
         d = np.flatnonzero((row ^ ref)[t + 1: len(row) - t - 1]) + t + 1 - c   # the exact region only
         assert A > -WL + t + 1, 'anchor left the exact region'
         F = int(d.min())
-        ok = F > A and F <= A + 24
-        v = 19 * (A + 72) + 5 * (t - 300)
+        ok = F > A and F <= A + W
+        v = P * (A - A0) + (P - S) * (t - 300)
         lo_v = min(lo_v, v); hi_v = max(hi_v, v); bad += not ok
         if t % 500 == 0:
             fronts.append((t, A, F))
-print('replay to T = %d: 19 (A + 72) + 5 (t - 300) ranges over [%d, %d] (kernel bound [-14, 22]); front outside (A, A + 24]: %d times'
-      % (T, lo_v, hi_v, bad))
+print('%s, s = %d: replay to T = %d: %d (A - A0) + %d (t - 300) ranges over [%d, %d] (kernel bound [%d, %d]); front outside (A, A + %d]: %d times'
+      % (WORD, SOFF, T, P, P - S, lo_v, hi_v, LOB, HIB, W, bad))
 print('(t, A, F) every 500 ticks:', fronts)
 print('A4_REPLAY_DONE')
