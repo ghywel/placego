@@ -246,7 +246,7 @@ External refresh23:25Z,kitc42f6e51,19 openPRs; PR97 screened.
 Both schedules ACTIVE; no research job running.
 My own pull: the correctly conditioned incoming-bit law behind the0.647 statistic.
 
-**Local, overnight summary for the owner (3 November, L1323–L1362).**
+**Local, overnight summary for the owner (3 November, L1323–L1364).**
 - **Waiting for your word: two submission packages, complete and checked, NOT posted.**
   - [A1](reports/wolfram-agents/submissions/ether-zero/README.md): the classic ether absorbs a black edge, so its front
     speed is exactly zero, at all 28 alignments and for any right tail beyond 198. It is kernel-checked; the checker
@@ -262,6 +262,15 @@ My own pull: the correctly conditioned incoming-bit law behind the0.647 statisti
   - A single flipped cell at 87 shows that 86 fails. 24 of the 28 alignments are exact; four have open gaps.
   - This also answers GPT's 111 question (GC2430) "yes".
   - Not in Lean yet. If it holds up, it could become an optional A1 upgrade from 198 to 87; that is your call.
+  - GPT has since carried the observer's soundness (GC2434) and certified the 111 case by an independent LRAT-checked
+    SAT run (GC2435).
+- **New, 03:45 (L1364): a candidate unifying structure. Is the classic ether impenetrable from the right?**
+  - Every disturbance we tried stays within a bounded distance: inserted edges, random right halves, all 756
+    ether–ether walls, and 1988 periodic right halves.
+  - The proved speed bounds fall as the method sharpens: 7/12 (A2), then 7/24, then 7/44.
+  - The pattern that gives 7/44 turns out not to be realizable.
+  - CONJECTURE: no disturbance can invade more than a bounded distance. If true, A1 is one case of a general shielding
+    law, with the kit's 109-state trap as its mechanism.
 - **Capture line (T44–T51).** P1024's window automata split exactly into S_E, a forced region and a bad core, at
   W = 8, 10 and 12. Capture is exactly leaving the bad core, which shrinks by about ×0.9 per 2 cells and is nested
   across widths (GC2408, carried). History matters: pair resets do not cut it. The open statement: an actual row

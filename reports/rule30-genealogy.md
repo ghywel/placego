@@ -6321,3 +6321,116 @@ The evidence, which is not a proof, points to the random cliffs as the true thre
 32, 21 and 18 cells) are its own loss, probably Kleene's X XOR X = X, and not hidden rare tails. A SAT query at the
 cliff of the smallest case, (5, 1) at cut 43 with t1 = 148, would decide it. The same Q + 3 margin at four different
 entries is a pull worth a look: it may be one structural barrier rather than four accidents.
+
+## 59. How fast can any damage invade the classic ether? (T55, L1364)
+
+A2 bounds the leftward speed of every disturbance of a periodic background by one minus the frontier's climb rate,
+which is 7/12 for the classic ether. A1 shows one particular disturbance, the inserted black edge, has speed exactly 0.
+Between them lies the question: **what is the largest leftward speed of the left front of any disturbance of the
+classic ether?** T54's rooted observer, run over the periodic background, is a finite graph:
+- **Nodes** are (phase t mod 4, column L mod 7, ternary window w of width W).
+- **Edges** carry the drift L′ − L. When the scan runs past the window, the edges are to (L + W + 1 + i, unknown
+  word) for i = 0..6. Larger jumps of the same residue add 7 and are dominated.
+
+Any actual front path decomposes into cycles plus a bounded remainder, so L(t) − L(0) ≥ μ_W t − C, where μ_W is the
+minimum cycle mean (Karp). The leftward speed is therefore at most v_W = max(0, −μ_W). Lower ends come from actual
+disturbances: random right halves run for 2000 ticks at every alignment, and the inserted edge as a control (speed 0).
+
+Record searched: A2 (`healing_bound`, `healing_rate_replay.py`: 7/12), A1 (edge speed 0), T54 (rooted observer),
+GC529/GC530 (Tisseur's and Baetens–Gravner's Lyapunov exponents and profiles, which are measure-theoretic and
+shift-maximized, not this worst case over disturbances of one ether), `record_find.py` for "news speed",
+"leftward speed", "damage speed", "invasion speed", "front speed" and "left front" (no hits in the record, the kit,
+the portal or the open kit PRs).
+
+Predictions, written before the run:
+- v_4 < 7/12 (about 70%).
+- v_4 ≥ 1/4 (about 60%).
+- Random right halves get trapped, so their long-run speed is near 0 (about 65%).
+- v_W does not increase with W (it must not; a sharper observer cannot give a larger bound). A rise is a bug alarm.
+
+Counterfactual: if v_W = 7/12 for every W, the rooted window adds nothing on a periodic background, and A2 is already
+sharp there. Caps: as in T54 (120 s CPU, 1 GiB, nice 10).
+
+**First outcome (COMPUTED, M5, capped; `ether_news_speed.out`).**
+- **The bound by window width.**
+
+| W | 0 | 1 | 2 | 3 | 4 |
+|---|---|---|---|---|---|
+| nodes | 28 | 84 | 252 | 756 | 2268 |
+| minimum cycle mean | −7/12 | −7/20 | −7/20 | −7/20 | −7/24 |
+| speed bound | 7/12 (= A2) | 7/20 | 7/20 | 7/20 | 7/24 |
+
+  W = 0 reproduces A2's 7/12 exactly, the bound never rises with W, and it has not converged at W = 4. The
+  predictions v_4 < 7/12 and v_4 ≥ 1/4 held so far.
+- **Actual fronts.** Every inserted edge and every random right half, at all 28 alignments, is trapped. The front
+  oscillates with period 2 at a fixed place from t = 500 to 2000, so its speed is 0. The prediction held.
+- **Next.** The adversarial case random sampling misses is a domain wall, with the right half another alignment of
+  the ether. Prediction: some of the 28 × 27 ether–ether walls move left at positive speed (about 55%), and none
+  faster than the rooted bound. If none moves, "news speed into the classic ether is 0 for every disturbance" becomes
+  a live conjecture, and the rooted bound at larger W is the way to test it.
+
+**Second outcome (COMPUTED, M5; `ether_walls.out`, and a reachable-subgraph rerun recorded with T55's final
+probe).**
+- **All 756 ether–ether walls are pinned.** The left front oscillates with period 2 at a fixed place from t = 500 to
+  2000. The prediction that some move was REFUTED.
+- **The rooted graph saturates.** Restricted to nodes reachable from the starts (t mod 4, L mod 7, unknown word),
+  which is where every actual disturbance begins (a half-line state), the graph has 57 nodes for every W ≥ 4. Its bound
+  stays at 7/24 for W = 4..12, because three-valued knowledge never reaches more than about four cells past the front.
+- **So:** the observed speed is 0, and the Kleene bound plateaus at 7/24.
+
+**T55b, the exact strip with a free input (predictions written before the run).** Anchor a: a B3 column with
+G = E on x ≤ a. State: (t mod 4, the exact S = 13 cells a + 1 .. a + 13). Each tick the cell a + 14 is a free input,
+chosen by the adversary, which is sound. If the anchor cell changes, re-anchor at a − 7. The new strip a − 6 .. a + 6
+is fully known: six ether cells, the changed cell, and the old strip's first six. That step has drift −7; otherwise
+the drift is 0. The kit's 109 wall states are a closed set of this graph (`wallOK_true`, a control).
+- If no re-anchoring edge lies on a cycle, every path re-anchors a bounded number of times. Then **every disturbance
+  confined to a right half-line invades the classic ether only a bounded distance**, uniformly. That would be A1's
+  pinning for all disturbances at once.
+- Prediction: no re-anchoring edge on a cycle at S = 13 (about 45%). If there are such cycles, a larger S (14–16) or
+  other anchor columns may remove them. Persistent cycles at every S would point to a real invading pattern, and a
+  witness search should follow it.
+
+**T55b outcome (COMPUTED, M5; `ether_strip.out`, `ether_strip_cycle.out`, `ether_rooted_reach.out`,
+`ether_periodic_right.out`).**
+- **C1, the control, held.** The kit's 109 wall states are closed under both inputs, with no re-anchoring.
+- **C2 failed.** Re-anchoring edges lie on cycles at every S tested (13, 14, 15, 16), all in one component of 1975,
+  3053, 4195 and 6112 nodes. My prediction of none at S = 13 is REFUTED.
+- **C3.** The minimum cycle mean is −7/44 at S = 13, 14, 15 and 16. So **every disturbance confined to a right
+  half-line invades the classic ether at asymptotic speed at most 7/44 ≈ 0.159**. Compare A2's 7/12 and the rooted
+  observer's 7/24 (its reachable graph saturates at 57 nodes for W ≥ 4).
+- **Status of 7/44.** PROOF-SKETCH: the strip abstraction is exact on the strip, and the free input over-approximates
+  any right half. A path's drift is at least μ · t − C by the cycle decomposition. A carrying read is requested.
+- **The extremal cycle is not real.** Its 44-tick cycle with one re-anchoring is not realizable by any right half,
+  not even for one period. The exact bit-by-bit search finds that the cycle's inputs force the bits 0, 0, 0, 1, and
+  then the cell a + 14 at tick 4 is 1 whatever lies beyond, while the cycle needs 0.
+- **Why the strip is loose.** The free input forgets that the input column is itself a rule-30 column: when u(t) = 1,
+  u(t + 1) = NOT G(t, a + S) is forced. Each re-anchoring also drops seven known cells.
+- **Every tested disturbance is pinned:**
+  - the inserted edge at all 28 alignments;
+  - one random right half at each alignment;
+  - all 756 ether–ether walls;
+  - 1988 periodic right halves (all 71 primitive words of period ≤ 8, at all 28 alignments; 4 heal).
+
+  The deepest front is −57, from the word 00101101 at alignment (6, 3). The speed over t = 400..1200 is at most
+  1/800, from one-cell oscillation.
+
+**CONJECTURE (Local, labelled; instinct): the classic ether is impenetrable from the right.** Every disturbance
+confined to a right half-line invades it only a bounded distance: L(t) ≥ −C for all t, for a uniform C.
+- **Where it stands.** Proved bounds: speed ≤ 7/44 (sketch above). The evidence is the four families above.
+- **What it would unify.** It would make A1's pinning, the kit's 109-state trap and the rigid edge fronts of the A1
+  essay's comparison one phenomenon. The trap is then not special to the inserted edge: it is how the classic ether
+  meets anything.
+- **Routes to it.**
+  1. A strip model that keeps the input column's own constraint, for example states over the backward light cone of
+     the input, or an exact search over right halves bounded by the rooted observer.
+  2. A SAT query for a space-time pattern invading at a fixed rational speed: periodic in the frame
+     (t + P, x − 7r), with ether on the left and an unconstrained right edge.
+  3. Show that from every strip state some input-independent descent reaches the 109 wall states within bounded
+     re-anchoring.
+- **Climb correction (GC2436).** The first `rooted_front_climb.py` said witnesses were "replayed independently on a
+  fresh wide row". In fact it re-scored with the same oracle and kept no witness bits. It now replays by a separate
+  scalar list oracle and prints each witness's free bits, digest and changed targets. The four control witnesses (cuts
+  50, 48, 44 and 42) replay, and the gap outcomes are unchanged.
+- **One cap breach.** The S = 16 run peaked at 1.5 GB resident against my stated 1 GiB cap, and `run_capped.py`
+  did not stop it (rc 0). The run is retained, nothing larger will run on the M5, and S > 16 belongs to the Intel
+  host.
