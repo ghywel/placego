@@ -1099,7 +1099,7 @@ No theorem transfers before that dictionary and its endpoint exceptions are prov
 
 ## An exact upper-ceiling to lower-map dictionary, with an applicability guard (GC2476)
 
-[Hand dictionary and primary-source scope](reports/GPT-MAHLER-LAZY-DICTIONARY-20261103.md), PROOF-SKETCH awaiting carry,
+[Hand dictionary and primary-source scope](reports/GPT-MAHLER-LAZY-DICTIONARY-20261103.md), mathematical dictionary/arithmetic PROVED hand/two-party L1386; source-range reading attributed to GPT,
 specializes known beta reflection: x=2U follows the greedy map G at beta=3/2; y=1−x follows the lower
 map L=T^-_(3/2,1/2) on (0,1]. The branch at y=1/3 maps to 1, and L(1)=1. All U_j<a is exactly
 all L^j(y)>1−2a. It is a strict lower threshold, not a closed-survivor condition. Integer compatibility
@@ -1110,3 +1110,25 @@ the lower itinerary of 1 is 1 forever, so the named greedy-base conversion requi
 than a value in its printed (1,2). This blocks an unqualified invocation, not every possible theorem
 transfer. The final journal treatment and later construction remain to be audited. The nested GC2475
 family is separately carried by L1385, whose complete proof/source/output were read.
+
+
+## Direct strict-hole doubling code, without dropping endpoint words (GC2479)
+
+[Complete hand construction](reports/GPT-MAHLER-DOUBLING-CODE-20261103.md), PROOF-SKETCH awaiting carry.
+For every 0<a<1/2, let kappa(a) be the greedy beta=3/2 word of X=2a and theta(a) its complemented
+binary value. The formal all-tail ceiling language is exactly the shifted lexicographic bound
+sigma^j(b)<kappa(a). A first-difference supremum proof establishes this even for initially arbitrary
+binary words, so no unproved greedy-code assumption is used.
+
+Complemented binary evaluation gives an exact time-preserving conjugacy to the LOWER doubling map
+on (0,1], with every iterate strictly greater than theta. For the usual doubling map on [0,1), it
+is exactly the infinite-one part of the original language. The lost lower-map points are precisely
+surviving dyadics, corresponding to finite-one words. Positive integer parity codes have infinitely
+many ones, so their endpoint discrepancy disappears, while their integer-residue compatibility
+condition remains fully in force. Quantitative first-difference separation proves continuity both
+ways; no distance, measure, dimension or integer-existence equality is asserted.
+
+GC2476's map/sign/arithmetic claims are carried L1386; the version-specific source-range reading
+remains GPT's lookup. The direct construction bypasses that corollary, without claiming a corrected
+journal theorem. Next match one precise doubling-hole result to this strict convention. The specific
+Lyndon-word interval candidate and its parameter-map caveat are retained in INSTINCT.

@@ -2810,3 +2810,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2474/2475: [Nested Mahler transition plateaus](reports/GPT-MAHLER-NESTED-PLATEAUS-20261103.md), midpoint count-only counterexample and all f≥5,h≥5 five-case sketch, strict endpoints, h=4 failed join and fixed-code limit. GC2473 separately CARRIED L1384.
 
 - GC2476: [Endpoint-exact reflected Mahler dictionary](reports/GPT-MAHLER-LAZY-DICTIONARY-20261103.md), known greedy/lower beta reflection specialized with strict endpoints and a v1 source-conversion applicability obstruction; PROOF-SKETCH. GC2475 separately CARRIED L1385.
+
+- GC2478: [07:28 external refresh and scoped PR98/ea30e7 comparison](reports/wolfram-agents/MAP.md#3-november-2026-0725-refresh-l1387), source hashes and actual A2 frontier distinction; owner-held package unchanged.
+- GC2477/2479: [Direct strict-hole doubling code](reports/GPT-MAHLER-DOUBLING-CODE-20261103.md), arbitrary-code lexicographic lemma, endpoint-exact binary coding, dyadic/finite-one distinction and continuity; PROOF-SKETCH. GC2476 mathematics carried L1386, source lookup separately attributed.

@@ -1043,3 +1043,17 @@ strict ceiling becomes a strict lower threshold. The named source's endpoint-iti
 would demand beta'=2 at our lazy boundary. Next read its construction and any final correction;
 do not silently widen the printed range or confuse exact language with dimension. GC2475's nested
 family is now carried L1385. This is a new representation, not another threshold sample.
+
+
+GC2479 outcome: direct lexicographic/doubling proof written, awaiting carry; non-greedy words handled
+by a supremum, not assumed away. The usual doubling map matches exactly after excluding finite-one
+codes, automatically excluded for a positive integer. Metric scales remain different.
+
+Specific next curiosity, noticed but not pursued: complement the critical period word whose one-gaps
+are (4,11,6,f), or (4,11,6,f,h). Its unique shortest gap is 4, suggesting the original word is strictly
+largest among rotations and its complement is a Lyndon word (a finite word strictly smaller than
+its nontrivial rotations). Check this by hand, then read one primary doubling-hole Lyndon-interval
+statement. Candidate hole endpoints are the finite binary value of that complemented word and its
+periodic value, with exact strict/open conventions to verify. This could identify our plateau
+families as explicit instances of a known word calculus. Do not infer novelty, parameter-surjectivity,
+or continuity of a -> theta(a); greedy digit coding can jump at finite expansions. No new grid.

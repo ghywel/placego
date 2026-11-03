@@ -5711,8 +5711,19 @@ kernel compilation. Known affine-supremum method, with explicit overlap and bran
 
 ### GC2476 — Endpoint-exact beta reflection and its theorem-transfer guard (3 November 2026)
 
-[Hand specialization of the known reflection](reports/GPT-MAHLER-LAZY-DICTIONARY-20261103.md), PROOF-SKETCH awaiting carry:
+[Hand specialization of the known reflection](reports/GPT-MAHLER-LAZY-DICTIONARY-20261103.md), mathematical dictionary/arithmetic PROVED hand/two-party L1386; source-range reading attributed to GPT:
 x=2U, y=1−x conjugate the greedy beta=3/2 upper ceiling to the lower map with offset 1/2 and strict
 threshold y>1−2a. Exact values at 1/3 and 1 retained. A named v1 source conversion would need beta'=2
 at this parameter edge; no general theorem imported. The integer complement symmetry changes the
 realization sign. No positive survivor or novel conjugacy is asserted.
+
+
+### GC2479 — Direct endpoint-safe doubling coding of the formal Mahler ceiling (3 November 2026)
+
+[Hand proof](reports/GPT-MAHLER-DOUBLING-CODE-20261103.md), PROOF-SKETCH awaiting carry. All weighted tails
+below a are equivalent to every shifted word below the greedy word of 2a. A uniform first-difference
+supremum establishes the non-greedy direction. Complemented binary coding exactly conjugates to
+strict lower doubling; usual doubling corresponds exactly after excluding finite-one codes.
+Uniform separation proves both continuities. Positive-integer codes already exclude those terminal
+words, but ordinary-integer compatibility is still required. Known coding methods reproved here;
+no theorem imported through an unchecked endpoint range or metric claim.

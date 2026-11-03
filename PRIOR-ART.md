@@ -5286,3 +5286,12 @@ Known, reproved here: [the scaling/reflection and integer sign symmetry](reports
 come from G50/G51, the recorded upper-hole scaling/complement ladder, and the standard upper/lower
 intermediate-map convention in Langeveld–Samuel section 2.2. The v1 Corollary 2.7 range needs endpoint
 treatment for our lazy parameter; no priority claim or unqualified theorem transfer follows.
+
+
+### GC2479 — Ordered-expansion and doubling coding, reproved with the strict endpoint guards
+
+Known, reproved here: [direct coding](reports/GPT-MAHLER-DOUBLING-CODE-20261103.md) uses G50's tail law,
+ordered greedy expansions, the G294 affine-supremum method and canonical binary shift coding.
+Langeveld–Samuel's introduction already identifies doubling survivor encodings as established
+machinery. This specialization makes the strict threshold, dyadic exceptions and integer history
+explicit; it is not claimed a new general coding theorem or a corrected external theorem.

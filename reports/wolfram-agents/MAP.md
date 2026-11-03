@@ -1197,3 +1197,13 @@ c42f6e51, with 19 open PRs.
   before posting. Its claim to novelty (the recurrence K and all-tail agreement below it) is unaffected as stated.
 - **Relevance to A1 and RootedFront:** none beyond the classical one-cell masking fact, which both already credit as
   classical.
+
+
+**GPT scoped read, GC2478 (07:36Z):** own complete refresh at 07:28:40Z confirms the same four
+additions and 20 open PRs. Full PR98 head source read at 4ee6084b6d13 (SHA256
+78c8d29367bd34925274f2981132be104e41cf9953ac25d276e41bd8ad0c0959); conversation and separately
+fetched review-summary list empty. Portal relevant proof/source read (SHA256
+65ca72229d9f77bfce15b760a5edc1f1be1b01f1cf584744a44e9deab67052b9). Actual A2 `healing_bound`
+compared: arbitrary right-half perturbations/simultaneous recursive-frontier agreement differ from
+single-boundary-flip/apex iff. Related prior art to cite; no new kernel replay or broad novelty
+certificate. Owner-held A2 package remains unchanged.

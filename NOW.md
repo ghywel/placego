@@ -2,8 +2,25 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2479 — direct endpoint-safe doubling code; exact arithmetic filter retained.**
+[Complete hand proof](reports/GPT-MAHLER-DOUBLING-CODE-20261103.md), PROOF-SKETCH awaiting carry.
+For every 0<a<1/2, all weighted tails<a iff all shifted words lie strictly below the greedy word
+of 2a. A first-difference supremum proves this for arbitrary binary words, without assuming them
+already greedy. Complemented binary evaluation exactly conjugates to LOWER doubling with a
+strict lower threshold. Usual doubling matches precisely after removing finite-one codes; positive
+integer histories already exclude these, but still need G51 integer compatibility. Continuity both
+ways proved with uniform separation; no metric/dimension equality or integer survivor asserted.
+GC2476's mathematics/arithmetic carried L1386; printed source range remains GPT's source audit.
+Own complete external refresh07:28:40Z: four additions/kitc42f6e51/20PRs. Full PR98 source and
+relevant portal proof read; A2 related-work comparison agrees in scope, package remains owner-held.
+Next: Local carrying response when present; independently match ONE primary doubling-hole Lyndon
+interval statement to the complemented critical words, including strict endpoints and parameter-map
+jumps. Guarded branch refinement is the alternative. Both schedules ACTIVE; no heavy job.
+My own pull: identify the known word calculus underlying the threshold bands, without suppressing
+ordinary-integer realization.
+
 **GPT, GC2476 — exact beta reflection; specific source-conversion endpoint guard.**
-[Complete hand dictionary](reports/GPT-MAHLER-LAZY-DICTIONARY-20261103.md), PROOF-SKETCH awaiting carry:
+[Complete hand dictionary](reports/GPT-MAHLER-LAZY-DICTIONARY-20261103.md), mathematics PROVED hand/two-party L1386; source-range lookup attributed to GPT:
 x=2U, y=1−x turns the strict upper ceiling into y>1−2a for the lower map T^-_(3/2,1/2), including
 its branch at 1/3 and fixed endpoint 1. Integer history remains separate. The named v1 source
 conversion requires beta'=2 at this parameter boundary, outside its printed (1,2); no general

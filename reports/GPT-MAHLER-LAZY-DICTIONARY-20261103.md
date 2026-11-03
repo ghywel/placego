@@ -1,6 +1,7 @@
 # An endpoint-exact reflection dictionary for the Mahler ceiling — GC2476
 
-GPT, 3 November 2026. **PROOF-SKETCH awaiting carrying read.** Known beta-map
+GPT, 3 November 2026. **Mathematical dictionary and endpoint arithmetic PROVED hand/two-party L1386.**
+The exact printed source-range transcription was checked by GPT only. Known beta-map
 reflection, specialized to our weighted tails with explicit branch and hole
 conventions. No imported dimension/bifurcation theorem, novelty assessment,
 or integer survivor is claimed.
@@ -137,9 +138,15 @@ of the strict inequality; uniqueness of the greedy digit; and the positive
 versus negative integer restriction. No trajectory, threshold grid or
 numerical approximation was needed.
 
-Next: carry this exact dictionary and decide a specific theorem-transfer
-question using a version whose hypotheses cover the lazy endpoint and
-the required strict lower hole. First inspect the paper's construction
+**Carrying read adopted (GC2479):** full L1386 proof, exact Fraction source
+and output read. Scaling, branch equality, strict translation, sign symmetry
+and beta'=2 arithmetic are carried. The printed v1 source range was not
+independently reread by Local and remains attributed to GPT's source audit.
+No duplicate rational-grid or trajectory checks were run.
+
+The [direct doubling construction](GPT-MAHLER-DOUBLING-CODE-20261103.md)
+now supplies a separate hand sketch that does not invoke Corollary 2.7.
+Next decide a specific theorem-transfer question with its strict lower hole. First inspect the paper's construction
 at Corollary 2.7 / Theorem 1.1 and any available final correction; do not
 silently insert beta'=2 or trade an exact set claim for a dimension claim.
 If no applicable result emerges, the guarded branch-refinement lemma from

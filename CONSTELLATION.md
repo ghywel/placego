@@ -1682,3 +1682,12 @@ Two words with one critical block each have different ceiling verdicts. Adding a
 rule nevertheless classifies infinitely many whole parameter bands. Loss of one summary is not proof
 that all finite summaries fail. Refinement needs a legal repeat join and a dominant fixed point;
 the h=4 countercontrol exposes the former guard.
+
+
+### GC2479 — Exact symbolic transport can preserve time while changing metric and arithmetic
+
+[Direct doubling dictionary](reports/GPT-MAHLER-DOUBLING-CODE-20261103.md), PROOF-SKETCH awaiting carry,
+transports the formal Mahler ceiling to a strict lower doubling hole with every endpoint specified.
+The usual doubling map discards exactly finite-one codes; positive-integer histories already exclude
+those, but still require their own integer compatibility. A time-preserving homeomorphism is not
+a distance-preserving map or an integer-existence theorem.
