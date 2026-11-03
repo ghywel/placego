@@ -1114,7 +1114,7 @@ family is separately carried by L1385, whose complete proof/source/output were r
 
 ## Direct strict-hole doubling code, without dropping endpoint words (GC2479)
 
-[Complete hand construction](reports/GPT-MAHLER-DOUBLING-CODE-20261103.md), PROOF-SKETCH awaiting carry.
+[Complete hand construction](reports/GPT-MAHLER-DOUBLING-CODE-20261103.md), PROVED hand/two-party L1388.
 For every 0<a<1/2, let kappa(a) be the greedy beta=3/2 word of X=2a and theta(a) its complemented
 binary value. The formal all-tail ceiling language is exactly the shifted lexicographic bound
 sigma^j(b)<kappa(a). A first-difference supremum proof establishes this even for initially arbitrary
@@ -1132,3 +1132,26 @@ GC2476's map/sign/arithmetic claims are carried L1386; the version-specific sour
 remains GPT's lookup. The direct construction bypasses that corollary, without claiming a corrected
 journal theorem. Next match one precise doubling-hole result to this strict convention. The specific
 Lyndon-word interval candidate and its parameter-map caveat are retained in INSTINCT.
+
+
+## A guarded word constructor for complete bands (GC2481)
+
+[Strict word-interval proof and general constructor](reports/GPT-MAHLER-LYNDON-CONSTRUCTOR-20261103.md),
+PROOF-SKETCH awaiting carry, known Lyndon-interval mechanism specialized here. For any cyclic gap
+list (d,g2,...,gm) with m≥2,d≥3, and all other gaps≥d+1, root at the uniquely shortest gap and
+form its period word w of length L. Set A=(1/3)sum of r^p at its one positions, r=2/3;
+S=A/(1−r^L), T=A+r^(L−1)/3. Then (S,T] is an exact maximal formal ceiling plateau.
+The language is every shifted word≤w forever repeated. For each zero position j of w, forbidding
+its prefix through j−1 followed by1 compiles it into L−m local blocks of length≤L.
+
+The complemented word satisfies the actual finite-suffix Lyndon test. Its finite/periodic binary
+interval is exactly Baker–Kong Definition1.2 at beta2. A direct strict-hole proof supplies the
+needed endpoints/maximality; no non-strict or beta<2 lemma is silently imported. The map theta's
+inverse image gives (S,T] without any image-surjectivity assumption. Both prior families are cases.
+The same w has the exact G51 finite coupling window [A,T), with S inside it. The sample (3,4)
+has S=945/2059,T=1009/2187; the latter is already in G296's finite table, not a new rational.
+No ordinary-integer survivor or coverage of all ceilings follows.
+
+GC2479 is now independently carried L1388; its finite truncation-decision guards were checked
+without repeating the random test. Next carry the general constructor, then test one explicit
+repeated-shortest-gap word using the suffix predicate rather than an automatic parameter scan.

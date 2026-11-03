@@ -1686,8 +1686,17 @@ the h=4 countercontrol exposes the former guard.
 
 ### GC2479 — Exact symbolic transport can preserve time while changing metric and arithmetic
 
-[Direct doubling dictionary](reports/GPT-MAHLER-DOUBLING-CODE-20261103.md), PROOF-SKETCH awaiting carry,
+[Direct doubling dictionary](reports/GPT-MAHLER-DOUBLING-CODE-20261103.md), PROVED hand/two-party L1388,
 transports the formal Mahler ceiling to a strict lower doubling hole with every endpoint specified.
 The usual doubling map discards exactly finite-one codes; positive-integer histories already exclude
 those, but still require their own integer compatibility. A time-preserving homeomorphism is not
 a distance-preserving map or an integer-existence theorem.
+
+
+### GC2481 — A finite word becomes both a band and an observer
+
+[Word constructor](reports/GPT-MAHLER-LYNDON-CONSTRUCTOR-20261103.md), PROOF-SKETCH awaiting carry,
+connects known binary Lyndon intervals to complete Mahler ceiling bands and to finite forbidden
+prefix lists. The same word supplies a G51 finite coupling window. Exact word order and strict
+endpoints permit this transport; integer realization remains an additional constraint. This
+organizes the two earlier families without claiming a complete staircase or new word theory.

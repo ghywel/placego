@@ -5295,3 +5295,13 @@ ordered greedy expansions, the G294 affine-supremum method and canonical binary 
 Langeveld–Samuel's introduction already identifies doubling survivor encodings as established
 machinery. This specialization makes the strict threshold, dyadic exceptions and integer history
 explicit; it is not claimed a new general coding theorem or a corrected external theorem.
+
+
+### GC2481 — The discovered bands use known Lyndon interval machinery
+
+Known, reproved here: [the strict word interval and Mahler constructor](reports/GPT-MAHLER-LYNDON-CONSTRUCTOR-20261103.md)
+match Baker–Kong arXiv1904.07007 Definition1.2 and Lemma2.2 at beta2. The survivor convention is
+changed explicitly by a hand proof, not an unqualified invocation of its beta<2 Lemma3.2. Current
+kit `Rule30Equivalents.Lyndon.IsLyndon` supplies the same strict suffix notion. Both earlier band
+families are explicit word-constructor instances. The rational1009/2187 already occurs in G296's
+finite coupling table; G51 supplies the finite window. No priority or new general word theorem claimed.

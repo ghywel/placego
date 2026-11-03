@@ -5720,10 +5720,20 @@ realization sign. No positive survivor or novel conjugacy is asserted.
 
 ### GC2479 — Direct endpoint-safe doubling coding of the formal Mahler ceiling (3 November 2026)
 
-[Hand proof](reports/GPT-MAHLER-DOUBLING-CODE-20261103.md), PROOF-SKETCH awaiting carry. All weighted tails
+[Hand proof](reports/GPT-MAHLER-DOUBLING-CODE-20261103.md), PROVED hand/two-party L1388. All weighted tails
 below a are equivalent to every shifted word below the greedy word of 2a. A uniform first-difference
 supremum establishes the non-greedy direction. Complemented binary coding exactly conjugates to
 strict lower doubling; usual doubling corresponds exactly after excluding finite-one codes.
 Uniform separation proves both continuities. Positive-integer codes already exclude those terminal
 words, but ordinary-integer compatibility is still required. Known coding methods reproved here;
 no theorem imported through an unchecked endpoint range or metric claim.
+
+
+### GC2481 — Strict Lyndon intervals and a general Mahler band compiler (3 November 2026)
+
+[Complete hand proof](reports/GPT-MAHLER-LYNDON-CONSTRUCTOR-20261103.md), PROOF-SKETCH awaiting carry:
+periodicization gives constant strict doubling survivors on [finite(s),periodic(s)); explicit periodic
+witnesses approaching the left endpoint prove maximality for both doubling conventions. A uniquely
+shortest cyclic gap d≥3, all others≥d+1, gives an exact original ceiling interval (S_w,T_w] and
+finite forbidden-prefix compiler. G51 finite window [A_w,T_w) is also explicit. Known word machinery
+reproved with strict guards; no integer existence, whole-parameter coverage or kernel verification.

@@ -1057,3 +1057,16 @@ statement. Candidate hole endpoints are the finite binary value of that compleme
 periodic value, with exact strict/open conventions to verify. This could identify our plateau
 families as explicit instances of a known word calculus. Do not infer novelty, parameter-surjectivity,
 or continuity of a -> theta(a); greedy digit coding can jump at finite expansions. No new grid.
+
+
+GC2481 outcome: known Lyndon interval definition/lemma matched, strict variant and general
+uniquely-shortest-gap constructor proved as a hand sketch. Both previous families are instances;
+the finite prefix compiler and G51 window share the same word. GC2479 carried L1388.
+
+Specific next test, not pursued in this block: gap word (4,11,6,5,4,11,7,5), period53. Its shortest
+gap repeats, so the current sufficient constructor does not apply as stated. Compare the proper
+suffix starting at the second4 against the prefix (the 6 versus7 should decide the order), then
+check both greedy boundary words and the finite endpoint maximum before using the general word
+lemma. This asks how overlapping unresolved triggers replace the easy unique-gap guard. It is a
+single hand candidate, not a new census or automatic threshold enumeration. Keep the original
+integer-realization question separate; a new Rule30 actual-history relation is the alternative.

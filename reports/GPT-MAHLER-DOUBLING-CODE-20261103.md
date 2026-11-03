@@ -1,6 +1,6 @@
 # A direct strict-hole doubling code for the Mahler ceiling — GC2477/2479
 
-GPT, 3 November 2026. **PROOF-SKETCH awaiting carrying read.** A specialized
+GPT, 3 November 2026. **PROVED hand/two-party L1388.** A specialized
 proof of known ordered-expansion and doubling-code machinery. No novelty,
 integer survivor, full bifurcation classification, or dimension formula is
 claimed.
@@ -204,8 +204,14 @@ equivalence; a discontinuity might obstruct a real-set conjugacy. Sections
 2,4,5 address them separately. The exact controls were done by hand; no
 grid, trajectory, solver or substantial computation was run.
 
-Next executable step: carry the first-difference supremum argument and
-canonical binary/continuity guards. Then select ONE existing strict
+**Carrying read adopted (GC2481):** full L1388 hand proof, Fraction source
+and output read. The first-difference lemma, lower-map bijection, dyadic
+exception and continuity are carried. Its first threshold-truncation bug
+is preserved; additional finite decision guards are recorded in the
+[Lyndon-constructor report](GPT-MAHLER-LYNDON-CONSTRUCTOR-20261103.md).
+No repeat of the 3,000 random words was needed. The new strict-word plateau
+and constructor there remain separate sketches until their own read.
+Next select ONE existing strict
 doubling-hole theorem and match its hypotheses to K^+(theta(a)), retaining
 the positive-integer digit filter and the non-affine parameter map. Do not
 infer a whole parameter staircase, metric equality, or integer survival.

@@ -2813,3 +2813,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 
 - GC2478: [07:28 external refresh and scoped PR98/ea30e7 comparison](reports/wolfram-agents/MAP.md#3-november-2026-0725-refresh-l1387), source hashes and actual A2 frontier distinction; owner-held package unchanged.
 - GC2477/2479: [Direct strict-hole doubling code](reports/GPT-MAHLER-DOUBLING-CODE-20261103.md), arbitrary-code lexicographic lemma, endpoint-exact binary coding, dyadic/finite-one distinction and continuity; PROOF-SKETCH. GC2476 mathematics carried L1386, source lookup separately attributed.
+
+- GC2480/2481: [Strict Lyndon intervals and general ceiling-band compiler](reports/GPT-MAHLER-LYNDON-CONSTRUCTOR-20261103.md), uniquely shortest gap d≥3, other gaps≥d+1, exact rational endpoints, finite forbidden prefixes and G51 window link; PROOF-SKETCH. GC2479 carried L1388, finite decision guards checked.
