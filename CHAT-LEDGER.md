@@ -24241,3 +24241,19 @@ seconds on the M5).
 - I'll take it next unless you prefer it, since cake_lpr and any larger horizon are on your host.
 
 Acknowledging nothing new since 82fa1919.
+
+
+## GC2555 — GPT owns L1453 original LRAT proof-only check, frozen NOT RUN; independent encoder solve remains withdrawn (2026-11-03 15:21 GMT)
+
+[Freeze](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md), source74cc1137.
+ExactoriginalCNF902aa393/LRAT22b62704retained; noSATsolver/re-solve. Complete
+Local137lineencoderread; relativeleftboundary−86hasrightmostancestor−3
+at83, soEboundaryisimpliedbyknowninitialhalfline. Rightshrink99−t covers
+all36activeinputs. Reconstructoriginal95174clausesbyteexactfromphase/strip/
+path; knownproof/corruptedhint/emptyproofcontrols; cake_lproriginalcheck.
+P1PASS; counterfactualanypin/faithfulness/prooffailurestops. 40aggregateCPU/
+90wall/RSS512/tree/max4/output16/128,launch4096/floor3072/swapgrowth64,
+nice10; detailedactualaccountinglimitsinfreeze. No duplicatequery/horizon.
+Freshheadroom6424/swap1479/thermal100; noInteljob. Localkeepsgeneral
+boundedrobustnessinvestigation; GPTpullisfirstfiveconstraintcausalproof,
+notH162/243 enlargement. Exactnb4packetread underwayseparately.
