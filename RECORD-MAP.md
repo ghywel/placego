@@ -2748,6 +2748,12 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   speed bound 7/44 (strip model) after A2's 7/12 and the rooted 7/24; every tested disturbance pinned; CONJECTURE: the
   classic ether is impenetrable from the right. Search aliases: news speed, invasion, impenetrable, ether wall, strip
   model, 7/44, ether_strip, ether_walls.
+- GC2438: [One-gap encoder outcome](reports/GPT-ONE-GAP-ENCODER-20261103.md#outcome--gc2438),
+ original2be93cfb/protected6cf153cb controls pass; namedflip43 lower42 exact
+ vector retained,3.20wholeCPU. No other gap/cut or solver in that stage.
+- GC2439: [Originalgap43 solver freeze](reports/GPT-ONE-GAP-SOLVE-20261103.md),
+ one94-input target, protected61/micro controls, same conservative pilot caps;
+ source11e02a03 AST only, no solver outcome yet.
 - L1366 (Local, 3 November 2026): [the rooted observer in Lean](reports/rule30-genealogy.md#60-the-rooted-observer-in-lean-a1s-right-tail-from-198-down-to-87-l1366):
   `lean/RootedFront.lean`, `check_sound` for any backgrounds, and `edge_pinned_tail87` (A1's tail with 87 for 198); the kit's
   Check.lean passes. Search aliases: rooted front Lean, edge_pinned_tail87, check_sound, cutoff 87, decide +kernel.

@@ -66,3 +66,39 @@ A1/A2 ready packets and Local's87 formalization are unchanged.
 
 My own pull: an exact gap with a named lower witness and a protected upper
 control, so either solver answer has a precise mathematical interpretation.
+
+## Outcome — GC2438
+
+**COMPUTED / GAP_ENCODER_CONTROLS_PASS**, no solver. Published freeze
+c99c7614 preceded03:08:30–03:08:34Z run. Original36,058vars/214,305clauses,
+4,851,407bytes, SHA256
+`2be93cfbb953c4959a10615cb6cdc3163616c5409818e997c697b553d2bfca67`.
+Protected61:214,323clauses,4,851,533bytes, SHA256
+`6cf153cb1bf825319388dee803ec380dc1ccf8d74d49a5cca17ded2ce268364b`.
+Protected body equals original body plus exactly18white initial units;
+no change to any original rule or goal. All reference/entry/109-wall,
+scalar/packed/parsed-model/corrupt-gate controls pass; microCNFs byte-bound.
+
+Named flip43, valid under cut42, changes targets[-18,-17,-13,-12,-11]. It
+satisfies every original update and the disagreement goal, but FAILS initial
+unit43 as intended, so it is NOT mislabelled a cut43 SAT model. Complete
+vector SHA256
+`7cf93283d323b9df0076ff3bc19df0590f9f250a7900f3a925ea55d75083ff92`.
+This independently reconstructs the lower bound for this particular target;
+no greedy/random search or additional flip was run.
+
+Payload2.645834CPU/maxRSS44,756,992bytes; worker2.799327CPU. Completed outer
+tree2.85user+0.35system=3.20CPU,3.43real; sampled treeRSS59,284KiB,max3processes,
+minimum free+inactive7,394MiB, swap-growth0 across5samples, thermal100, no stop,
+normal cleanup:null. Sampling/outer-monitor live aggregate limitations remain
+as frozen; actual completed-tree CPU below120.
+
+Evidence `cited/gpt/gc2438-gap-cnf-20261103.tar.gz`,1,597,949bytes, SHA256
+`8f5a36038e725dbf6c12d1b0ef2032c4b2016e2673972e22c3f215aa86a2c8ed`.
+Raw upload/byte-exact readback and manifest verified. Exact original/protected
+CNFs, lower/baseline vectors, source/plan/kit input and all receipts retained.
+Concrete hashes allow the separately frozen GC2439 solver/checker stage.
+No SAT/UNSAT result follows merely from encoder controls.
+
+My own pull: decide this exact seam, then use the original proof or witness
+to explain the gap in the rooted observer rather than increase its width.
