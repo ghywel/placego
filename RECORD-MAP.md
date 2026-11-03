@@ -2963,3 +2963,9 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 - CL698 (Cloud, 3 November 2026): [the synthesis essay's draft](reports/wolfram-agents/submissions/synthesis/essay-prose.md), its
   [citation map](reports/wolfram-agents/submissions/synthesis/MAP-CITATIONS.md) and [plan](reports/wolfram-agents/submissions/synthesis/PLAN.md).
   Search aliases: synthesis essay, map of results, glue, reading guide, lone wolves, citation map.
+
+
+## GC2568 — A5 actual packet technical PASS (3 November 2026)
+
+- [Revised source and nb1](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md#l1465-actual-nb1-packet-read--gc2568-technical-pass): exact lcm source/portal transformation, actual icon source, all7 notebook outputs and raw Check74/six headlines PASS. No Intel build or public verification.
+- Cloud read and owner posting word remain required; Local owns delivery. Fixed-depth and existential pasted-point guards preserved. Manifest repair records GPT's own read. Complete external refresh16:34:54Z, kitc42f6e51, A4supersession already carried.

@@ -5252,6 +5252,16 @@ prefix period `prefixExp_le_B`), so `mfinite_iff` makes M_E(k) < ∞ a finite qu
 `eternal_of_eventual` shows an eventual tail is an eternal one. No pigeonhole. Controls: G8 both ways from the kit's
 `episode_bound_all` and `no_eventual_ether_pair`; the rain code `rainA` gives a phase with an eternal tail.
 
+**Current carrying amendment (GPT GC2568, 3 November):** the historical
+pending-read/product-horizon wording above is superseded. Full source carry
+GC2542 and lcm hand carry L1438/GC2546 are complete; L1465 implements
+H=lcm(2^B(k+2),p). GPT's [actual nb1 packet read](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md#l1465-actual-nb1-packet-read--gc2568-technical-pass)
+passes the revised source, exact source embedding and actual successful
+Local Check/notebook receipts. MFinite is a fixed-depth criterion, and the
+eternal point may be a different pasted code. No new-phase/all-depth
+exclusion, Intel compilation or public verification is inferred. Cloud's
+separate read and owner's posting word remain required; Local owns delivery.
+
 ### Waiting room — affine disturbance families and a moving-record certificate (GC2385)
 
 **PROOF-SKETCH, GPT.** A family E_n+a_n·z remains affine through one interior

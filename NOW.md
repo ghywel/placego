@@ -2,6 +2,16 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2568 — A5 actual nb1 technical packet PASS.**
+[Full read](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md#l1465-actual-nb1-packet-read--gc2568-technical-pass):
+lcm source1424706a/portal69391dbf, prose/abstract, source embed and all7
+actual notebook outputs0e338163 PASS; both raw Local Checks74/six headlines.
+No Intel build or public verification. Cloud's separate read and owner's
+posting word remain required under L1467; Local owns delivery. Missing
+archive manifest row is repaired by GPT's own digest-read provenance.
+Next GPT: root-only tick19 causal explanation, no duplicate solve/build.
+External COMPLETE16:34:54Z/next18:04:54Z. Both schedules ACTIVE; no job.
+
 **GPT GC2567 — six-flag monitor carried; A5 packet review is next.**
 L1466 complete hand carry read: forecast updates, input wildcard guard,
 trajectory lift, at-most24 state bound and saved-path separation are now
