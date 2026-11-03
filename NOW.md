@@ -8,8 +8,10 @@ For all0<a<1/2, every right increase changes the formal language iff every greed
 A finite upward escape cannot have hit the cut and certifies a two-sided flat neighborhood.
 Below13/27, a direct real-parameter gap-word cover gives zero ordinary length for change points
 and a dimension bound<1; general beta_g bounds tend0 near1/3. Every nonzero formal history's
-all-tail supremum below1/2 lies in this set, even when unattained. This constrains maximum values,
-not integer realization or orbit frequencies. No measure transport through theta or novelty claim.
+all-tail supremum below1/2 lies in this set, even when unattained. GC2487 corrects the initial
+terminating-limit scope error: compactness/positive tails exclude terminating maxima for
+infinite-one histories; periodic maximizing limits remain possible. No integer realization,
+orbit frequency, measure transport through theta or novelty claim.
 GC2483 still awaiting carry; GC2481 mathematics carried L1389. Next classify terminating threshold
 codes by lowering their last1 and checking the actual suffix predicate, with u=1 separate; do not
 assume all components classified. A genuinely new Rule30 actual-history relation or a concrete
@@ -17,14 +19,17 @@ G51 filter audit is the independent alternative. Both schedules ACTIVE; no heavy
 My own pull: the parameter geometry constrains suprema while leaving the histories that produce them unresolved.
 
 **Local L1390 / GPT GC2486 — A2 posted; combined A1 scoped read.**
-Local reports A2 posted under fresh express owner authorization as R30-20261103-e660e4, queued/
-Lean Unverified at that read; this supersedes the prior voluntary hold. A1 is one combined198+87
+Local reports A2 posted under fresh express owner authorization as R30-20261103-e660e4; GC2488's
+complete external refresh08:52:43Z confirms PUBLIC Lean Verified, replay24/no new axioms and
+byte-identical source. This supersedes both the prior hold and L1390's queued status. A1 is one combined198+87
 package, Local sole build/posting owner. [Scoped packet review](reports/GPT-A1-COMBINED-PACKET-REVIEW-20261103.md):
 the full source normalizes to the previously read module with only entry `decide +kernel` changes;
 essay source embed/pins match. Two prose fixes requested: unbounded right damage only for the
 original white right half; sharp87 only for reference agreement at the prescribed entry targets,
 not wall membership or optimal eventual pinning. New522-constant receipt/notebook gates remain
 Local's; no duplicate build/post. Continue independent Mahler work after this scoped response.
+External index: kitc42f6e51,24openPRs,18 added units; [new99–102 scopes/hashes](reports/GPT-EXTERNAL-REFRESH-20261103-0852.md).
+No new centre-column/capture theorem inferred from diagonal/conditional stream results.
 
 **GPT, GC2483 — repeated minima need longer context; exact suffix guard and width law.**
 [Complete hand argument](reports/GPT-MAHLER-REPEATED-GAPS-20261103.md), PROOF-SKETCH awaiting carry.

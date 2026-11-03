@@ -192,11 +192,31 @@ word, with equality at its root. Thus E is exactly the set of these
 possible largest approached values of formal histories below1/2.
 
 The covering bounds therefore constrain possible suprema, not merely
-an unrelated set of slider positions. They do not recover the history:
-a nonterminating history can have a terminating word as a limit of
-shifts. In particular, excluding terminating or periodic INTEGER codes
-does not by itself exclude such codes as threshold maxima or limiting
-maximizers. Arithmetic realization is still a separate problem.
+an unrelated set of slider positions. They do not recover the history.
+
+**Correction GC2487:** the initial GC2485 draft incorrectly allowed a
+terminating maximizing limit for an infinite-one history. Under the
+uniform bound s<1/2 that assertion is REFUTED. Here is the missing guard.
+Choose shifts whose root values tend to s. Compactness of binary words
+(successively extract a subsequence fixing each finite prefix) gives a
+limiting word c. The weighted sums are continuous, so U_0(c)=s and every
+U_j(c)<=s. Since s<1/2, this is a proper greedy word of2s. If it terminates
+at a finite word u ending1, a sufficiently close shift of b shares u.
+If b has infinitely many ones, that shift has another1 later. Its value
+is therefore STRICTLY greater than the finite value U_0(u0∞)=s, a
+contradiction. Thus an infinite-one history has a NONTERMINATING
+threshold maximizer below1/2. No rate of convergence or computation is
+needed for this argument.
+
+Periodic maximizing limits remain possible for nonperiodic histories.
+For a formal example, concatenate gap blocks `3^n,4`, n=1,2,3,... . All
+gaps are at least3, so every tail is at most9/19. Arbitrarily long runs
+of gap3 make the supremum exactly9/19. Each actual tail eventually sees
+a gap4, so is strictly below9/19; no tail attains the supremum. Its
+threshold maximizer is the periodic word100100..., although the given
+history is nonperiodic. This is a formal code example, not an integer
+realization. G50/G51's exclusion of periodic ACTUAL positive-integer
+codes therefore cannot be applied to all periodic maximizing limits.
 
 ## 5. Exact hand controls and endpoint objections
 
@@ -221,7 +241,9 @@ maximizers. Arithmetic realization is still a separate problem.
    positive-integer histories. Even the nonperiodic exceptional codes
    still need the exact arithmetic realization filter. A zero-length
    set of real ceilings need not avoid a specified countable arithmetic
-   set. None of these covers supplies a new integer-residue bound.
+   set. The preceding compactness lemma does exclude terminating
+   maxima for infinite-one histories, but not periodic limit maxima.
+   None of these covers supplies a new integer-residue bound.
 
 ## 6. Sources, status and next step
 
