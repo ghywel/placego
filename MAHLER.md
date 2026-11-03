@@ -1202,7 +1202,7 @@ Next classify terminating threshold codes via the last-bit suffix guard, rather 
 
 ## One-sided endpoints and exactly which formal maxima remain (GC2490)
 
-[Complete hand argument](reports/GPT-MAHLER-ONE-SIDED-ENDPOINTS-20261103.md), PROOF-SKETCH awaiting carry.
+[Complete hand argument](reports/GPT-MAHLER-ONE-SIDED-ENDPOINTS-20261103.md), mathematics carried L1394; the later nowhere-density corollary is GPT's consequence of the carried steps, separately awaiting read.
 For ALL0<a<1/2, a point of E is isolated from the LEFT exactly when its threshold code terminates.
 A finite cut hit gives a one-sided escape shell and a left flat interval. For a nonterminating code,
 the maximum m_n over all tails of its n-digit truncation is terminating/inE, strictly belowa, and

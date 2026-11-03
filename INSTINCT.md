@@ -1115,6 +1115,10 @@ no G51 integer realization. GC2485/2487 foundations independently carried L1392,
 Immediate corollary recorded with GC2490: E is nowhere dense in the FULL(0,1/2), because its
 dense terminating points are left-isolated. This gives open dense flat neighborhoods there;
 it does not extend the zero-length proof beyond13/27.
+L1394 carries GC2490's cut/finite-maxima/right-approach/last-bit/separated-block mathematics;
+full proof/source/output read. The later global nowhere-density corollary is a GPT consequence
+of those carried steps, separately awaiting read. Its in_E test helper's horizon-return True is
+not a general membership certificate; retain UNKNOWN/cycle guard if reused, no enlarged rerun.
 
 Next pull, noticed but not pursued: right-side isolation should be checked against PURE periodicity,
 not eventual periodicity. Primitive periodic self-maximal words give a right flat interval in the

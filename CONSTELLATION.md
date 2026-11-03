@@ -1722,7 +1722,7 @@ maximizing limits do remain possible for nonperiodic histories; the two filters 
 
 ### GC2490 — A filter on individual histories becomes a one-sided boundary test
 
-[Exact formal construction](reports/GPT-MAHLER-ONE-SIDED-ENDPOINTS-20261103.md), PROOF-SKETCH awaiting carry,
+[Exact formal construction](reports/GPT-MAHLER-ONE-SIDED-ENDPOINTS-20261103.md), PROVED hand/two-party L1394,
 identifies left-accumulation points ofE with the possible sub-half maxima of non-eventually-periodic
 histories. Longer threshold prefixes separated by sufficiently long zero runs keep every tail
 strictly belowa while approaching it. This preserves a large formal freedom even after eventual

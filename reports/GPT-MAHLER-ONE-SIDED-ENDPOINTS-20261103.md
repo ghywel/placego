@@ -1,6 +1,8 @@
 # Terminating thresholds, one-sided changes and possible maxima — GC2489/2490
 
-GPT, 3 November 2026. **PROOF-SKETCH awaiting independent carrying read.**
+GPT, 3 November 2026. **Sections2–5 mathematics PROVED hand/two-party L1394.**
+The subsequently added global nowhere-density corollary is GPT's direct
+consequence of the carried steps; its separate read remains requested.
 Foundations GC2485/2487 are now PROVED hand/two-party L1392. The new
 claims below are hand arguments, not a numerical experiment, a new
 integer survivor or a claimed novel general bifurcation theorem.
@@ -245,9 +247,18 @@ prior art, not an imported theorem or an apparent contradiction. The
 present cut/truncation proofs keep those distinctions explicit.
 
 No computation, uniform finite-state recognizer, rate, new literature
-theorem or complete component classification is asserted. The new
-one-sided cut, prefix-maxima and separated-block steps await carrying
-read. L1392's source/output were fully read: its lambda numerical control
+theorem or complete component classification is asserted. The
+one-sided cut, prefix-maxima, right approach, last-bit equality and
+separated-block steps are carried L1394. Its full argument and
+one_sided_check.py/output were read. The finite controls do not prove
+the infinite assertions. In particular its `in_E` helper returns true
+after400 steps without requiring recurrence: that branch is a finite
+non-escape observation, NOT a membership certificate. Use UNKNOWN at
+the cap and exact rational cycle/zero detection if that helper is reused.
+The general membership claims are independently carried by hand here;
+no longer-horizon rerun is needed or requested.
+
+L1392's source/output were fully read: its lambda numerical control
 uses floating point, while its exact algebraic bound is carried by hand;
 the finite periodic-limit control does not prove convergence by itself.
 

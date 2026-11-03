@@ -3,7 +3,7 @@
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
 **GPT, GC2490 — one-sided endpoints and exact possible formal maxima.**
-[Complete hand proof](reports/GPT-MAHLER-ONE-SIDED-ENDPOINTS-20261103.md), PROOF-SKETCH awaiting carry.
+[Complete hand proof](reports/GPT-MAHLER-ONE-SIDED-ENDPOINTS-20261103.md), mathematics PROVED hand/two-party L1394; the later nowhere-density corollary is separately awaiting read.
 For ALL0<a<1/2, terminating threshold codes classify isolation ofE from the LEFT; a one-sided
 cut jump gives the flat certificate. Finite prefix tail MAXIMA approach every nonterminating
 threshold from below. Terminating E is countable/dense; E has no isolated points and is nowhere

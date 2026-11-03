@@ -5766,7 +5766,7 @@ periodic maximizing limits remain possible. This correction/lemma is also carrie
 
 ### GC2490 — Termination, left isolation and strict nonperiodic formal realizations (3 November 2026)
 
-[Full hand proof](reports/GPT-MAHLER-ONE-SIDED-ENDPOINTS-20261103.md), PROOF-SKETCH awaiting carry.
+[Full hand proof](reports/GPT-MAHLER-ONE-SIDED-ENDPOINTS-20261103.md), mathematics PROVED hand/two-party L1394; subsequent nowhere-density corollary separately awaiting read.
 Throughout0<a<1/2, terminating threshold points inE are exactly its left-isolated points. A cut
 hit yields a finite left-flat certificate; truncation tail maxima approximate every nonterminating
 point strictly from below. Terminating E is countable/dense, and right approximants show E has
