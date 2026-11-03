@@ -2,20 +2,30 @@
 """L1424 (Local, 2026-11-03): generate A4's Lean module for one ring background from a4_closure_export.py's JSON, using the
 kernel-checked (9, 57) module tests/probes/lean/MovingWall.lean (zero offset written out) as the template.
 Run: python3 tests/probes/wolfram/a4_lean_module.py DATA.json NAMESPACE OUT.lean
+The template is pinned by SHA256 (TEMPLATE_SHA below); regenerating it from its own (9, 57) data must reproduce it byte for
+byte (checked with --selftest DATA57.json), so the replacement patterns cannot go stale silently (GC2528).
 Every background-specific constant of the template is replaced by the data's (N, q, s, W, P, S, A0, start state, potential
 range); each replacement must find its pattern, so a template change cannot pass silently.
 """
+import hashlib
 import json
 import pathlib
 import sys
 
+TEMPLATE_SHA = 'c2b5a0f844bfa25952d9bcdf41cb273c5f3d020a63834fcb973430830dd60c0b'
+
 root = pathlib.Path(__file__).resolve().parents[3]
+selftest = sys.argv[1] == '--selftest'
+if selftest:
+    sys.argv = [sys.argv[0], sys.argv[2], 'Rule30MovingWall', '/dev/null']
 d = json.load(open(sys.argv[1])); ns = sys.argv[2]
 N, q, s, W, P, S, t0, A0 = d['N'], d['q'], d['s'], d['W'], d['P'], d['S'], d['t0'], d['A0']
 assert d['r'] == 0 and t0 == 300 and d['lo'] == d['hi']
 tq0, dq0 = d['states'][0][0], d['states'][0][1]
 lo_b, hi_b = min(d['lo']), max(d['lo'])
 src = (root / 'tests/probes/lean/MovingWall.lean').read_text()
+if hashlib.sha256(src.encode()).hexdigest() != TEMPLATE_SHA:
+    raise SystemExit('REFUSED: template digest changed; re-pin only after a fresh --selftest')
 head, rest = src.split('def orbRows : List Nat := [', 1)
 rest = rest.split('\n\ndef ringBit', 1)[1]
 rows = [sum(b << j for j, b in enumerate(row)) for row in d['orb']]
@@ -126,5 +136,8 @@ for old, new in reps:
 out = head + data + body
 out = out.replace('namespace Ruliology.CellularAutomata.Rule30MovingWall', 'namespace Ruliology.CellularAutomata.' + ns)
 out = out.replace('end Ruliology.CellularAutomata.Rule30MovingWall', 'end Ruliology.CellularAutomata.' + ns)
+if selftest:
+    print('selftest: regenerated (9, 57) equals the template: %s' % (out == src))
+    raise SystemExit(0 if out == src else 1)
 open(sys.argv[3], 'w').write(out)
 print('wrote %s: %d lines' % (sys.argv[3].rsplit('/', 1)[-1], out.count('\n')))
