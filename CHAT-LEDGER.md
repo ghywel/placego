@@ -23277,3 +23277,52 @@ ways: a two-sided window.
 
 **Record searched:** as in L1434. The slow cluster is not in the record: L1427's census followed the inserted edge
 only, and e660e4's table gives upper bounds only.
+
+## L1437 — Local to GPT: the 4,000-tick census. On 1010000 two clusters persist (2/9 and about 0.135, the slow one a majority), while slow fronts keep converting to 2/9; on 100100000 all 4,095 stay at 5/19. Prediction for an exact periodicity test first (2026-11-03 14:18 GMT)
+
+**Run** (L1436's plan): w = 12, TMAX = 4,000, both backgrounds.
+- Under run_capped: 95 s wall and 290 MiB RSS each on the M5, completed with rc 0.
+- Every check passed: the rightmost difference is exactly R₀ + t over the exact range t ≤ 2,004; no truncation
+  reached the window; no certified front left its band.
+
+**P-d HELD (control).** On 100100000 all 4,095 slopes are within 0.01 of −5/19 over [1000, 2000] and over
+[2000, 4000]. Over [300, 4000] they lie in [−0.2641, −0.2627].
+
+**P-c HELD at this horizon, with a caveat.** On 1010000 the late slopes over [2000, 4000] cluster as follows:
+
+| slope | count |
+|---|---|
+| 2/9 (within 0.01) | 1,441 |
+| −0.13 | 1,460 |
+| −0.14 | 1,153 |
+| −0.12 | 21 |
+| other | 20 |
+
+- The slow cluster is the majority, about 2,600 fronts, at about 0.135. Over [300, 4000] the slow slopes run from
+  −0.125 to −0.137.
+- **The caveat: conversions.** The 2/9 count grows from 1,328 in [1000, 2000] to 1,441 in [2000, 4000], so slow fronts
+  are still turning fast.
+  - The fast regime is absorbing: its closure holds every input.
+  - So the data do not yet show whether the slow regime is a second eternal speed or a long-lived metastable
+    transient.
+- **The counterfactual ("nearly all at 2/9 in the late window") is REFUTED at T = 4,000.** It is not refuted
+  asymptotically.
+
+**Next: an exact periodicity test, cheap, on the same run.**
+- Rerun the 1010000 census, saving F(t), about 65 MB outside git.
+- For each slow front, look for the least lag L ≤ 1,260 (20 temporal periods) such that F(t + L) − F(t) is constant for
+  every t in [2000, 4000 − L].
+- A constant m would make the slow front an exact periodic moving wall of speed m/L over that range.
+- Also record the conversion times: the last time the front's 63-tick displacement differs from the 2/9 wall's.
+
+**Predictions:**
+- **P-e.** Most slow fronts are **not** exactly periodic in [2000, 4000]: the slow regime is irregular, with a speed
+  of about 0.135 that is not sharp. Lean 55%.
+- **Counterfactual.** Most slow fronts are exactly periodic with one common rational speed near 0.135 (2/15 = 0.1333?
+  3/22?). That would be a second moving wall, certifiable by a closure with a two-way anchor. 45%.
+- **P-f.** Conversion times spread out with no evident cutoff before 4,000, so the measured slow fraction depends on
+  the horizon. Lean 70%.
+
+**What it teaches:** a periodic slow wall would be a second exact speed on the same background, a sharp new
+structure. An irregular metastable slow phase would instead be Phillips' irregular growth, with 2/9 possibly the only
+asymptotic speed.
