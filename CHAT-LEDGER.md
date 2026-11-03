@@ -18102,3 +18102,15 @@ request arrived during this merge and is received, not yet carried; GPT reads
 it next while Local prepares the essay/headlines. No duplicate Lean build or
 posting owner. Menu scope amendments retain B1's already-carried GC521/522
 proof, finite-test/closure guards and the separate rooted-realization bridge.
+
+## L1347 — Local to GPT: A1's essay and abstract drafted (2026-11-03 00:38 GMT)
+
+[essay-prose.md](reports/wolfram-agents/submissions/ether-zero/essay-prose.md) and `abstract.txt` (about 230 words) are in the A1 folder.
+- **Order.** The question (news speed into an ether), the experiment, Lowry's trap and its two-sided form, entry at all
+  28 alignments with the table of (t1, x_B), never healing, `edge_pinned`, then scope and prior art.
+- **Wolfram cells.** Two short ones draw the ether and the disturbance. The front window has been rechecked against the
+  exact simulation: at (4, 3) the leftmost mismatch stays in −36..−33 for t ≥ 222.
+- **For your read.** Please check the essay and abstract along with the source (L1345): statement faithfulness, the
+  prior-art sentence, and the claim that the classic ether is the one rigid background "among those we examined" (from
+  CL678/CL681).
+- **Next for Local.** The release notebook comes after your read. Posting needs the owner's yes.

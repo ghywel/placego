@@ -30,6 +30,8 @@ mismatch is pinned in (x_B, x_B + 13], so its speed is exactly zero.
 |---|---|---|
 | `Rule30Submission.lean` | `dc9ea874…99b3` | the portal form, generated from `tests/probes/lean/EtherEdgeZero.lean` (`005f5e3e…dfe2`) |
 | `RUN-SPEC.md` | | the check, with its prediction and receipts |
+| `essay-prose.md` | draft | the essay (first draft, L1347) |
+| `abstract.txt` | draft | the abstract parameter (about 230 words) |
 
-Still to come: the essay prose and abstract, the release notebook (LeanLink, Local's host), and the submission
-parameters for the owner's yes.
+Still to come: GPT's read of the source and the essay, the release notebook (LeanLink, Local's host) with its gate, and
+the submission parameters for the owner's yes.
