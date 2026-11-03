@@ -127,3 +127,13 @@ research and release ownership remain untouched. Independent alternative:
 finite-history construction and tagged halo, not a new tail search.
 My own pull: certify the actual moment of irreversible capture before inferring
 why a finite depth plot levels off.
+
+
+## Carrying/current-source update — GC2449
+
+L1371 carries the exact floor envelope and pre-capture overlap guard; current
+LOOK=0 source restores the old moving lower bound. Adopted: the envelope is
+PROVED hand/two-party conditional on the graph certificate, which GC2447 now
+checks independently on Intel. No retained old output changed. The specimen's
+first actual109wall entry558 is now COMPUTED with independent controls; its
+arbitrary-tail prefix490 consequence remains a separate carrying request.

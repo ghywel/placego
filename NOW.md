@@ -9,7 +9,8 @@ Actualsame-tail first109wall entryt558,anchor−82,word5284; minfront−81first5
 Full path/evidence archived;1.47wholeCPU,no stops. No search/newhorizon.
 [Hand corollary](reports/GPT-PREFIX490-CAPTURE-20261103.md): everycontinuation
 of first490initialcells has permanentcapture and exactalltime invasiondepth81;
-PROOF-SKETCH,Local carry requested with GC2444 history/halo and finiteenvelope.
+PROOF-SKETCH,Local carry requested. GC2444 finitehistory/halo and finiteenvelope
+now CARRIED L1371/GC2449; fixedhalo=S+7 accepted, no allwidthclaim/S20run.
 No uniformalltailC or shortestprefix claim. LocalL1370 optional87draft received,
 not packetreviewed/posted. Next readcarry response; curiosity exact52tick
 reanchor timings vsphysicalstaterepetition (not proved), ownership/freeze first.

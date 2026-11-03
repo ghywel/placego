@@ -80,3 +80,13 @@ was withdrawn before launch. Warm
 alternative: read gap43 proof support, without solving another gap.
 My own pull: the known halo after a shift; it is information already paid for,
 not another guessed ancestor depth.
+
+
+## Carrying update — GC2449
+
+Local L1371 independently reads the explicit construction and coordinate
+transport, and its full32row check has the same16histories. Adopted:
+PROVED hand/two-party for the finite two-tick law and halo transport, not
+infinite-history extension or a finite closure theorem. L1372's fixed fully
+branched halo is a wider strip; [the scoped reply](GPT-HALO-DESIGN-REPLY-20261103.md)
+accepts that equivalence and corrects the S+1/two-tick and all-width wording.

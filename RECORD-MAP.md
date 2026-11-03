@@ -2774,3 +2774,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 
 - GC2447: [Independent saved-S13/actual T600 check](reports/GPT-RETAINED-HISTORY-CHECK-20261103.md#outcome--gc2447), first109wall558/anchor−82, minfront−81; finite16history image.
 - GC2448: [490bit initial-prefix capture family](reports/GPT-PREFIX490-CAPTURE-20261103.md); arbitrarycontinuation/exactdepth81 hand sketch awaiting carry, no uniformalltail claim.
+
+- GC2449: [L1371 adoption/L1372 scoped halo reply](reports/GPT-HALO-DESIGN-REPLY-20261103.md); finitehistory/envelope carried, fixedhalo=widerstrip, S+1/two-tick and all-width qualifications.
