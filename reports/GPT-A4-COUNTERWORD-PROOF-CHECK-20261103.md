@@ -261,3 +261,135 @@ is complete for arbitrary a,u,v, without a sampled truth-table argument.
 
 My own pull: preserve these small ancestor consequences at a moving
 boundary, before asking a larger free-input graph to behave physically.
+
+## Six flags for a three-tick boundary memory — GC2564
+
+New monitor/lift argument **PROOF-SKETCH pending Local carry**. Small
+algebraic component compilation is frozen below, NOT RUN at publication.
+This is a finite proof-state refinement, not a claim that the physical
+wake has six bits of memory. L1463's complete hand carry is now read:
+GC2562's saved-path contradiction is PROVED hand/two-party. Its generic
+identity was already GC2026/L1143, as credited above. Local separately
+reports that the single read X(19,10)=0 is UNSAT even without the other
+reads. That new original-CNF/DRAT/LRAT evidence has not been independently
+checked here; it is not needed for this monitor's soundness.
+
+Let B(t)=A(t)+W be the window's right endpoint. One step has motion
+m=B(t+1)−B(t) in {0,−1}; the incoming cell is at B(t)+1. Assume W>=6.
+The base state provides the actual colours through B(t), using its known
+background half-line and finite strip. For each d in {−2,−1,0}, set g_d
+when the four cells ending at B(t)+d are0011. These six inspected cells
+are all INSIDE the window. The already known local identity gives
+
+    g_d implies X(t+3, B(t)+d)=1.
+
+Store six flags (a−,a0,a+,b0,b+,c). Their meaning at time t is:
+
+| Flag | Due after | Position relative to B(t) | Required value |
+|---|---:|---:|---:|
+| a− | 2 ticks | −1 | 1 |
+| a0 | 2 ticks | 0 | 1 |
+| a+ | 2 ticks | 1 | 1 |
+| b0 | 1 tick | 0 | 1 |
+| b+ | 1 tick | 1 | 1 |
+| c | now | 1 | 1 |
+
+A false flag makes no assertion. Start all six false; every true flag
+means the named future cell is black. Deadlines are physical times and
+positions; a retreat shifts the relative position right by1, not left.
+After generating g at t, the complete update to t+1 is
+
+    stay:    (a−,a0,a+,b0,b+,c)' = (g_−1,g_0,0, a0,a+,b+)
+    retreat: (a−,a0,a+,b0,b+,c)' = (g_−2,g_−1,g_0, a−,a0,b0).
+
+These formulas discard other forecasts. Discarding a true implication
+only weakens the observer, so cannot exclude a physical trajectory.
+More explicitly, retained two-tick offsets are −1,0,1, retained one-tick
+offsets0,1, and the retained due offset is1. The rules decrement the
+deadline and subtract m from the relative position. They never create a
+forecast by treating an unknown value as a known cell.
+
+**Due-input guard.** If c=1, the physical incoming bit must be1. On a
+base transition whose input is active, reject an edge labelled0. On an
+ignored input, retain the edge even if its canonical printed digit is0:
+there is a physical representative with bit1 and the same successor.
+In Boolean notation, with active indicating an input that changes the
+base successor, the exact existential filter is
+
+    allowed(c,active,b) = (NOT c) OR (NOT active) OR b.
+
+It is equivalent to existence of a physical bit u such that active implies
+u=b, and c implies u=1. This distinction preserves the carried wildcard
+semantics. Applying c=>b blindly to the saved zero representative would
+wrongly delete ignored transitions. The forecast update and the g tests
+use only the current strip and motion, so do not distinguish the ignored
+input's representatives. If later refinements inspect that input, their
+quotient must be justified afresh.
+
+**Whole-trajectory lift, by induction.** For any genuine evolution and any
+valid base anchor path, choose its actual incoming bit before quotienting.
+Empty flags are valid initially. Generated flags are true future facts by
+0011. Transport retains the SAME physical cells with the correct deadlines,
+so the six-flag invariant remains true. A due flag forces the actual input
+to1, so every actual step passes the existential filter. Hence the product
+still contains every physical trajectory covered by the base semantics.
+This argument is independent of the background, phases or the saved root;
+those are needed for the base anchor semantics, not for the local forecast.
+It proves sound overapproximation, not that every surviving product path
+has a whole-row realization. A closure/potential on ALL surviving edges
+is still required for a speed or permanent-survival theorem.
+
+**Fixed saved-path separation.** The t16 trailing0011 generates g_0=1.
+The saved motions at16,17,18 are retreat,stay,stay. Therefore a+=1 at17,
+b+=1 at18, and c=1 at19. The active zero at19 is rejected, regardless of
+the tick18 input and all other forecast flags. No arbitrary ignored
+input is constrained to its printed zero. This is the same carried
+four-read explanation in a reusable, unrooted local monitor.
+
+There are at most64 flag states. In fact at most24 arise from empty flags:
+0011 cannot overlap another copy at a displacement1 or2, so at most one
+of g_−2,g_−1,g_0 is true. Each a band and b band thus has at most one true
+flag. Choices are (empty or one of3) times (empty or one of2) times2,
+giving24. This is a combinatorial upper bound, not a claim that all24 are
+reachable or that a product with a large base graph fits a given budget.
+No product graph has been built.
+
+Record searched: GC2026/L1143, GC2351/L1278, GC549's older shared-variable
+cancellation, GC2548/L1451 and GC2558/2562; actual kit c42f6e51 lean and
+equivalents search and already-read exact PR115 head f35a1503, not a claim
+that the unmerged module is on main. Complete external refresh remains
+15:49:56Z. The [NKS constraint-network note](https://www.wolframscience.com/nks/notes-5-7--1d-systems-based-on-constraints/)
+was reread: overlapping blocks and compatible graph paths are established
+methods. No priority claim for finite-state products or local forcing.
+
+### Frozen standalone Lean component check
+
+Source [BoundaryForecast.lean](../tests/probes/lean/BoundaryForecast.lean),
+SHA256 a88c8e40facfa0ebefd539bfaa84a03fc1d3ae862b9aef20b3b5a6d9f9b572ad;
+driver [boundary_forecast_check.py](../tests/probes/wolfram/boundary_forecast_check.py),
+SHA256 951955fc3f5109fb79f48d025702480c2c8cdaf1b6b4f5ab900b19ad7e441de5.
+One Lean4.35.0/core-Std check, no kit build, no solver or trajectory run.
+The file proves the known Boolean identity, its0011 corollary, conditional
+forecast-coordinate transport, the existential ignored-input filter and
+propagation along the three saved motions. The physical lift above and
+the24-state bound are hand proofs, not formal theorems in this file.
+
+Prediction: compilation succeeds and all six printed carrying component
+lemmas have no axioms. Counterfactual: any elaboration/axiom/output/monitor
+failure stops and is recorded; no automatic rerun. Controls are the ignored
+printed-zero acceptance, active due-zero rejection, and universal arbitrary
+a,u,v/context variables. Unexpected check: the due flag after the fixed
+retreat/stay/stay schedule is independent of all other flags and new g's.
+
+One Intel stage, nice10, Lean -j1/-M384, child15CPU/25wall; driver10soft/
+90hard CPU and unchanged helper11e02a03's aggregate-worker95 stop, plus
+25CPU reserve for supervision:120 aggregate budget, actual whole command
+and supervisor accounted without double-counting overlapping worker CPU.
+run_capped tree tracking/max4, outer wall60/RSS512MiB,16MiB/file/128MiB disk,
+launch4096/running3072MiB headroom,64MiB swap-growth stop. Thermal/monitor
+failure stops; per-process limits alone are not aggregate enforcement.
+No child process creation in the Lean source; driver launches only Lean
+and its existing CPU/thermal monitors. Measured free+inactive6034MiB,
+current swap2077MiB baseline, thermal100/100; no other research job.
+Publish and flag ownership before launch. Local retains A5 packaging and
+closure/build work; this is only a separate small component self-check.

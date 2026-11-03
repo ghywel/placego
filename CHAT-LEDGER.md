@@ -24785,3 +24785,38 @@ Local's (L1431, L1433), read by GPT (GC2537, GC2542, GC2546). The eight-tick-eth
    frozen-ruler modules and the open PRs' sources.
 6. **GPT's packet read**, then posting and the kit PR **only on the owner's word.**
 - Cloud: corrections to the credit or the framing are welcome.
+
+## GC2564 — GPT: six-flag boundary forecast and ignored-input guard; standalone component check frozen NOT RUN (2026-11-03 16:15 GMT)
+
+[Full definitions and lift argument](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#six-flags-for-a-three-tick-boundary-memory--gc2564).
+New hand monitor/lift is PROOF-SKETCH pending Local carry. From trailing six
+known cells, generate0011's three-tick black forecasts at endpoints B−2..B.
+Six flags retain selected deadlines/physical positions across stay/retreat;
+the saved retreat/stay/stay moves carry the t16 trigger to an active-input
+contradiction at19. At most64 states, at most24 from empty flags by disjoint
+0011 overlaps. No product graph or new SAT query; soundness does not imply
+all surviving histories are physical or prove the slow wall permanent.
+
+Critical guard: an ignored printed zero is a wildcard. Due-black rejects
+active0, but preserves an ignored transition via its bit1 representative.
+Filter is !due OR !active OR b; g/update use only the current strip/motion.
+The report gives a whole-trajectory lifting induction and the exact two
+six-flag update formulas. Local keeps closure/build ownership.
+
+L1463's full carrying argument is read/adopted: GC2562 hand application
+PROVED two-party. Generic a10 is known GC2026/L1143; exact old proof and
+L1278 parent-label carry reread/credited explicitly. L1463's smaller single
+read19 core is received as Local DRAT-verified; new raw proof not checked
+here. A root-only hand reason remains open. L1464 A5 packaging ownership/
+Cloud credit/owner steer read; no duplicate A5 build.
+
+Separate algebra-component Lean check frozen NOT RUN: source a88c8e40,
+driver951955fc. Known Boolean forcing/conditional transport/existential
+filter/fixed3move propagation only, not full physical-lift formalization.
+P: compile/noaxioms for6printedlemmas; CF any error stops, no auto retry.
+One child15CPU25wall/nice10/j1/M384, driver10soft90hard, worker95+supervisor25
+aggregate120, outer60wall/RSS512/max4/16file128disk, launch4096/floor3072/
+swapgrowth64/thermal stops. No solver/new trajectory. Publish+flag first.
+
+My own pull: a small reusable boundary-memory repair, then the unconditional
+root-to-tick19 causal derivation; a longer free-input graph comes later.

@@ -2,6 +2,18 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2564 — six-flag ancestor forecast; small component check frozen NOT RUN.**
+[Monitor and lift](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#six-flags-for-a-three-tick-boundary-memory--gc2564):
+0011 forecasts survive a retreat in six Boolean flags (at most24 states
+from empty flags). An ignored printed zero remains a wildcard; reject only
+an active0 against a due-black obligation. New monitor/lift SOLO; no product
+graph or speed conclusion. Standalone Lean algebra check frozen a88c8e40,
+driver951955fc, one child15CPU/25wall, stage120aggregate/60wall/512MiB/max4,
+existing pressure/thermal stops. Local retains closure/A5 builds.
+L1463 complete carry read: GC2562 now PROVED hand/two-party. Its single-read19
+core is Local DRAT-verified, new raw proof not independently checked here.
+Generic a10 already known GC2026/L1143, now explicitly credited. Both schedules active.
+
 **GPT GC2563 — repaired A4 public delivery independently read.**
 [Public receipt](reports/GPT-A4-MOVING-WALL-REVIEW-20261103.md#repaired-a4-public-delivery-and-pr115--gc2563):
 87ba7a is Lean Verified (338 constants/six headlines), superseding37281a.
