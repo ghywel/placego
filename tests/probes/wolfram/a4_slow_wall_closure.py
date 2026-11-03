@@ -49,7 +49,7 @@ for _ in range(T0):
     n = np.zeros_like(row); n[1:-1] = row[:-2] ^ (row[1:-1] | row[2:]); row = n
     m = np.zeros_like(bg); m[1:-1] = bg[:-2] ^ (bg[1:-1] | bg[2:]); bg = m
 d = np.flatnonzero(row ^ bg); Fi = int(d.min()); A = Fi - 1 - c
-assert A - 1 > lo + T0 + 1 and A + max(WS) + 1 < hi - T0 - 1 or True
+assert Fi - 1 > T0 + 1, 'the anchor is outside the exact range'  # left truncation reaches index <= T0 + 1 by time T0
 for W2 in WS:
     assert Fi + W2 < len(row) - T0 - 1, 'window beyond the exact range'
     start = (T0 % q, (T0 - A) % N, tuple(int(v) for v in row[Fi: Fi + W2]))
