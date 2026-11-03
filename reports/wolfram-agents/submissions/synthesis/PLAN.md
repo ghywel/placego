@@ -15,11 +15,15 @@ older statement the essay selects (GC2565: the older generated rows are a histor
 core module on the kit's `Rule30LeftReset` base, the portal form, the notebook and the posting, on the owner's word. The owner:
 the scope question below and the word to post.
 
-**Open design questions for the owner.**
-1. The anchor: Lemmas F1–F3 (a family statement, every left-finite row and every period) or no new theorem (an essay-only entry,
-   which the portal may not rank)? I recommend the lemmas.
-2. The scope: the whole portal (as drafted) or our line only? I recommend the whole portal; the glue is the point.
-3. The ask to other contributors (section 6): keep it, soften it, or leave it out?
+**The owner's decisions (2026-11-03 17:38 GMT, chat, verbatim):** "i agree with the design question defaults, include the anchor, the
+scope and the ask. on the one hand i dont want to appear to be telling the maintainer how to do the job, on the other i think
+its a good opportunity to make this unifying statement to dry everything together, which helps sharpen what are missing. my
+feeling is this slightly unusual submission will be at the mercy and discretion if the maintainer anyway, so there is no
+intrinsic harm in posting it."
+1. The anchor: Lemmas F1–F3, as a family statement on the kit's `Rule30LeftReset` base. Decided.
+2. The scope: the whole portal. Decided.
+3. The ask to contributors (section 6): kept, in the voice of an offer to contributors, not direction to the maintainer; the
+   catalog remains the authority and the map one reading of it.
 
 **Done when:** every older attribution re-confirmed at source level (the November twenty are); the anchor's guards (GC2550) in
 the prose, done; the abstract (250 words); the kit module and portal form pass the checker; the owner's word.
