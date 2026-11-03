@@ -7,7 +7,7 @@ Description: A partial result proved in core Lean: an inserted black edge on the
 Abstract: See abstract.txt.
 Keywords: [rule 30, Rule 30 Prize, background orbit, ether, front speed, moving wall, closed set, potential, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]
-Links: ["[Rule 30 Prizes](https://rule30prize.org/)", "[R30-20261103-3742dc: the classic ether absorbs a black edge](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-3742dc)", "[R30-20261103-e660e4: the universal healing bound](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-e660e4)"]
+Links: ["[Rule 30 Prizes](https://rule30prize.org/)", "[Phillips, growth from perturbations of periodic backgrounds (NKS 2004)](https://www.wolframscience.com/conference/2004/presentations/material/rphillips-growth.nb)", "[R30-20261103-3742dc: the classic ether absorbs a black edge](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-3742dc)", "[R30-20261103-e660e4: the universal healing bound](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-e660e4)"]
 ---
 
 ## The question
@@ -96,18 +96,24 @@ The simulated row is wide enough on the left that its truncated end never reache
 
 ## Related work and what is new
 
+- **Literature.** Phillips investigated growth from finite perturbations of periodic backgrounds, Rule 30 included, by
+  following the extreme disagreements with the unperturbed evolving background (Wolfram Science Conference 2004, linked
+  above). Neither growth on periodic backgrounds nor the use of fronts is new here.
 - **The kit.** `Rule30Ether` proves that the classic ether's 109 wall states are closed under every input from the right
-  (`trap_invariant`): a stationary wall. Here the wall moves, and the closed set carries a moving anchor and an exact
-  potential, so it gives an exact nonzero speed rather than speed zero.
+  (`trap_invariant`): a stationary wall. `Rule30EtherThreeErosion` (Luis Perez Morales and Claude) uses a finite-state
+  front potential, an inequality, to show that a finite perturbation of the period-3 ether's wake moves left at average
+  speed at least `2/5`. Here the wall moves, and exact potential identities on moving-anchor closures, with checked
+  entries, give the stated all-time two-sided bounds on these two aligned backgrounds.
 - **The portal.** [R30-20261103-3742dc](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-3742dc)
   proves that on the classic ether an inserted edge has front speed exactly zero.
   [R30-20261103-e660e4](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-e660e4) proves a
   universal upper bound on the leftward speed of any change confined to the right half-line, whose periodic table lists
   $1/2$ for `100100000` and $2/9$ for `1010000`. On `1010000` the inserted edge attains that bound; on `100100000` it moves
   strictly slower.
-- **New here.** Exact nonzero front speeds of an inserted edge on two ring backgrounds, with all-time explicit bounds,
-  for every right tail beyond a cutoff, kernel-checked. The closed-set method with a moving anchor was developed in the
-  record linked above; it generalizes the kit's stationary trap.
+- **New here, as a scoped comparison rather than a first-in-literature claim.** Exact nonzero front speeds of an inserted
+  edge on these two aligned ring backgrounds, with all-time explicit bounds, for every right tail beyond a cutoff,
+  kernel-checked. The closed-set method with a moving anchor was developed in the record linked above; it generalizes the
+  kit's stationary trap.
 - **Scope.** Two backgrounds, one alignment each. Other alignments and other ring backgrounds are not covered here; a
   census of alignments is computed in the record but not formalized. The theorems bound the anchor and hence the front;
   they do not assert an exact periodic recurrence of the front itself. Nothing here concerns the centre column of the

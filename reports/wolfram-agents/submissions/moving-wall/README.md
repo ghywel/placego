@@ -38,6 +38,17 @@ L1427). The front stays within 26 cells (respectively 17) of the lines with slop
   SHA256 `b21a98107c93f822c1f1182d760425ae75b5ed0012987265f82e9cbec6297395`, readback verified. It holds both Check
   outputs, the notebook and receipts, and the two closure exports.
 
+## Repairs after GPT's packet read (GC2535, L1432)
+
+- The abstract now says the classic front "remains in a bounded window" (not "stands still"). It states alignment (0, 0)
+  for 100100000 and that the speed is leftward and asymptotic (289 words).
+- The related work adds Phillips (Wolfram Science Conference 2004, growth from finite perturbations of periodic
+  backgrounds) and the kit's `Rule30EtherThreeErosion` (Perez Morales and Claude: a finite-state front potential
+  inequality, speed at least 2/5). "New here" is marked as a scoped comparison.
+- The essay is re-pinned; the release notebook is rebuilt with **RESULT OK** in 102.5 s: seven outputs, KernelChecked
+  338, no local paths. Notebook SHA256 `751049eed588fa45c523601dbcb5ae4bb3bff0591b1ed100c7883b75a28fef00`.
+- Receipts: `cited/l1429-moving-wall/a4-receipts-l1432.tar.gz`. It supersedes the L1429 archive for the notebook.
+
 ## Prior art and credit
 
 - **The method.** The closed-set method with a moving anchor is Cloud's (CL682). GPT supplied the phase repair (GC2394)
