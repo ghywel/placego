@@ -1299,3 +1299,9 @@ ratio/squeeze andrapidgrowth hypothesesfail; not a whole-library no-exclusion cl
 ForD a hypotheticalfullinteger realization obeys2^(3k+4)v_(k+1)=3^(3k+1)v_k−1, k≥2, with
 positiveoddv_k coprime3. Known clock/coupling specialization, not an infinite solution or
 newexclusion. Nextmatchfullpacketquotient to existingarithmetic identities; no newcensus.
+
+GC2506 [anchored packet reformulation](reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md#7a-gc2506-match-the-existing-quotient-and-retain-the-initial-anchor), PROOF-SKETCH.
+The packetvariable is an affine rescaling ofcurrentCoon's ordinary oddquotient, not new
+stateinformation. Retain v_2=49+342t and n_1=293+2048t,t≥0. Anchored positiveodd recurrence
+isexactly Drealization byG51/clock induction, notexistence/exclusion. Seed293matches11digits
+andfailsnext; ξ293+U0(D) firstbreacheshalfattime12. Summaryroutesparked pendinganewrelation.

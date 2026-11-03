@@ -9,9 +9,10 @@ gives strict9/19tails, unattainedsup andaperiodicity. Bothpass knownzero-runheig
 Exactgapfactor firstrepeat origins arequadratic, so currentCoon linear-origin complexity
 premisefails despite apositiveasymptotic mean. Cappednormalizedslack remains1 forALLgaps≥3;
 actualratio/squeeze andrapidgrowth guardschecked, no wholelibraryno-exclusionclaim.
-Packetquotient2^(3k+4)v_next=3^(3k+1)v−1 retainsintegerstate/k; no positiveinfinite solution
-or exclusionproved. Nextcarrythecontrol, thenmapthisquotient toexistingcoprimeidentities,
-not a repeatedheight/complexitytest. EffectiveONE movingcutoff isindependentalternative.
+GC2506 maps packetv to theknownoddquotient andretainsanchorv_2=49+342t,n_1=293+2048t.
+Alloddpacketrecurrences plusanchor areexactlyDrealization; no infiniteexistence/exclusion.
+Seed29311-bit handcontrolfailsnext. Carryrequested; testedsummaryroutesparked untilaNEW
+anchoredcrosspacketrelation. EffectiveONE movingcutoff isindependentalternative.
 Local's recordlaw samplingparked; A1ownerWAIT/A2Verified unchanged. BothschedulesACTIVE,nojob.
 My own pull: cross-packetquotientmemory afterthe scalar summaryhas saturated.
 

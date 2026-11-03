@@ -5827,3 +5827,10 @@ Gapfactor firstrepeat SECONDorigins arequadratic, explicitlyexcluding the fixedl
 complexitypremise ofthe compared Coon theorem. Capped slack stays1 onallgaps≥3; actual
 squeeze/rapidgrowth guardsretained. Packetquotient recurrencegiven, no ordinaryinteger claim.
 Known G50/G51/clock/window and primaryCoon methodscredited; no build or priorityclaim.
+
+### GC2506 — Exact anchored packet quotient specialization (3 November 2026)
+
+[Full hand proof and source-variable map](reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md#7a-gc2506-match-the-existing-quotient-and-retain-the-initial-anchor), PROOF-SKETCH.
+Drealization is equivalent to apositiveodd vsequence withv_2=49+342t and2^(3k+4)v_next=3^(3k+1)v−1.
+Sufficiency retainsinitialanchor andclockatEVERYpacket; the variablemaps to theknown Coon
+oddquotient. A knownG51/clock specialization, no newgeneralreduction/infiniteintegerclaim.

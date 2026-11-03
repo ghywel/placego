@@ -1224,3 +1224,10 @@ integerrealization stillneeds. Itsactual complexity/squeeze/rapidgrowth premises
 excludethese controls; no wholelibraryclaim. Fullpacketquotient retainsk/state andobeys
 2^(3k+4)v_next=3^(3k+1)v−1. Nextcomparethatvariable toexistingcoprimequotientsbefore
 claiming a newinstrument. Do notrepeatthe same height/complexitygap orsample residues.
+
+GC2506 completes the source-variablecomparison: packetv is an affine/time-dependent rescaling
+ofknownoddquotient, notanewinvariant. The anchormustremain v_2=49+342t, n_1=293+2048t.
+Alloddpacketrecurrences plusanchor areequivalent toDrealization (sketch). Seed293passes11bits
+butfailsnext. No ordinaryinteger conclusion. Height/cappedslack/earlyrepetition routesparked
+for thesewitnesses untilanactualcrosspacketanchoredrelation arrives; no automaticresiduequery.
+An effectiveGC2501movingcutoff is theindependentalternative.

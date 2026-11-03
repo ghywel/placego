@@ -326,6 +326,87 @@ those failed tests as a new block.
 Do not enlarge a residue census or announce a new search: each finite
 prefix already has an integer residue by G51.
 
+## 7a. GC2506: match the existing quotient and retain the initial anchor
+
+**PROOF-SKETCH, a specialization of the known coupling/clock tools.**
+The current Coon ValidBlockChain definition uses the odd quotient
+q_m=(3*odd_state_m+1)/2^s_m and the recurrence
+
+`2^(s_(m+1))*q_(m+1)=3^s_m*q_m+1`.
+
+Actual declarations read: BridgeThreeMixedBlocks.ValidBlockChain and
+CoprimeQuotientPhaseLock.coprime_quotient_recurrence; the latter's
+use in CoprimeRemainderSlack.coprime_quotient_m_step_identity was also
+read. These are known tools. For D, packet k starts at odd-gap origin
+m_k=T_(k-1). For k>=2 its first gap is3, and our packet variable obeys
+
+`q_(m_k)=(27*8^(k-1)*v_k-1)/19`.
+
+So v_k is an affine, packet-dependent RESCALING of the existing odd
+quotient, not a fresh independent quantity to which its descent theorem
+can be transferred by changing the letter. The minus1 in our packet
+recurrence reflects the shift by9 in19n+9. No new invariant follows
+from this change of coordinates alone.
+
+There is also an initial anchor that must not be discarded. The first
+packet is1000, with n_2=(81*n_1+27)/16. Consequently
+
+`19*n_2+9=9*(171*n_1+73)/16`.
+
+Since19n_2+9=9*64*v_2, necessarily
+
+`171*n_1+73=1024*v_2`,
+
+so v_2 is a positive odd integer satisfying v_2=49 modulo171. Equivalently
+
+`v_2=49+342*t`, `n_1=293+2048*t`, `t>=0`.
+
+The anchor and ALL odd-quotient steps are an exact reformulation:
+D is realized by one positive ordinary integer if and only if there
+is a positive odd sequence(v_k)_(k>=2), with this initial congruence,
+satisfying the recurrence of section7 at every k>=2. Coprimality to3
+is automatic at the initial value and after each step.
+
+Necessity was proved above. For sufficiency, form the positive odd
+n_1 from the anchor and define n_k=(9*8^k*v_k-9)/19 from k=2 on.
+The anchor ensures integrality of n_2 and the actual1000 prefix: it
+gives19n_1+9=8*(128v_2+1)/9, of exact2-valuation3. For the induction,
+v_k odd gives v2(19n_k+9)=3k, hence exactly k copies of100 followed
+by the required extra0. Its actual endpoint has clock
+(3*27^k*(9v_k)-9)/2=9*8^(k+1)*v_(k+1), by the displayed recurrence.
+Thus it is n_(k+1), an integer, and the induction continues. Positivity
+holds throughout, and the given fractional tails supply the companion
+by G50. This proves equivalence, not existence or impossibility.
+
+A hand control catches the missing-anchor/future distinction. The
+smallest anchored value v_2=49 gives n_1=293. Its integer orbit starts
+
+`293,440,660,990,1485,2228,3342,5013,7520,11280,16920,25380`.
+
+It realizes the first11 digits10001001000 of D. At time11 D demands1
+but25380 is even. Equivalently2187*49-1=107162 is not divisible by1024
+(remainder666), so the next packet quotient is not integral. Normalized
+slack1 and the successful height tests do not certify this seed.
+The real number293+U_0(D) first breaches the half-interval at time12:
+before the mismatch the integer/fractional recurrences agree, while
+the opposite bit at11 adds1/2 to the next prescribed fraction. This
+is the existing first-mismatch mechanism, applied to this hand control.
+
+No residue census or experiment was run. BridgeThreeMixedBlocks.lean
+SHA1c9acd813ce39831b00c55cd625acb0415723e5fcb37779812cb9898e2e437af;
+CoprimeRemainderSlack.lean SHA
+7aa87b9a2f1e1f351b3a16a5bc3ed75da1039b11190168784b81694e7a5eb09c.
+CoprimeQuotientPhaseLock.lean SHA
+93b1eb7d54f7d3c57733b68012643a59d6a0826166c038e4b2133a6bc8ea209a.
+The exact current quotient declaration retains the ValidBlockChain
+hypothesis; no free positive sequence is silently substituted for it.
+
+Next discriminating question: can an anchored odd sequence satisfy
+ALL packet congruences? It is the specified G51 realization problem
+in explicit coordinates. This block supplies no arithmetic bound that
+settles it. Park repeated height/capped-slack/early-repeat tests here;
+reopen them only with a relation retaining the anchor across packets.
+
 ## 8. Controls, status and alternatives
 
 Hand controls: B's first two packet lengths are7 and13; its first
