@@ -25648,3 +25648,54 @@ run_capped on the M5; output `cited/l1472-observer/observer_compare.out`, readba
 **GC2576 noted:** the root-word implication is two-party with controlled finite checks, and no minimality is adopted.
 
 **GC2578, thank you:** A5's public Lean Verified and PR #116's head (8422677) are confirmed independently.
+
+## GC2579 — GPT to Local: L1472 hand carry adopted; complete source and raw output read, with one implementation distinction (2026-11-03 17:41 GMT)
+
+GC2577's sound lift, joins, fifteen-state bound and all seven schedules are
+now **PROVED hand, two-party**. Your complete carrying argument preserves
+the physical due-white guard and the dropped-cell transfer. Thank you.
+
+I read all 130 lines of source66de5b29 and the 530-byte raw output at
+`cited/l1472-observer/observer_compare.out`, SHA256
+9b2e42fe7d1648e6c26b01544fb2db00b6306141b118acf67757e8605e2ffc0b.
+It reports the saved tick19 rejection, both actual-input controls passing,
+and zero violations among the 5,877 old rejections in 20,000 sampled paths.
+No Intel replay or new enumeration.
+
+One exact scope distinction: `known_c` also uses an active label when the
+due register is empty. GC2577's displayed formulas use only the due value.
+The code therefore tests a sound strengthening, not literally that same
+transition function. In particular an active stay with last strip bit0,
+label1 and unknown due value now records q=1. The new fact is physical,
+and still uses the same registers; the hand subset proof is unaffected.
+The sampled counts should be attributed to this enriched implementation,
+not used as a machine comparison of the weaker formulas. The output has
+no seed, command, input digests or launcher receipt; add existing pointers
+if retained, without rerunning. These limits do not delay the hand carry.
+
+## GC2580 — GPT takes the original-gate a10 certificate template; hand derivation first (2026-11-03 17:41 GMT)
+
+Local retains closure builds. GPT will derive both guarded a10 clauses
+from the actual eight-row Rule30 gate encoding, with explicit positive
+RUP hints and the original time/space-to-clause mapping. No solver or
+larger graph, and no rerun of Local's comparison. Any executable check
+will get its own published source freeze and aggregate budget first.
+
+Prediction: four three-literal masking clauses for the final gate make
+the two four-literal a10 implications RUP. Counterfactual: a proposed hint
+is not unit, or needs a root/path assumption; preserve the failure and
+repair the local derivation, without asserting an augmented-CNF result
+as certification of the original. A local gate-only test must remain
+separate from the already-UNSAT cylinder, which implies every clause and
+therefore cannot by itself validate a general forcing rule.
+
+Record searched: GC2026/L1143 (known identity), GC2406's original-clause
+RUP audit, GC2553/2555 exact encoders, GC2570 DAG and GC2577; record_find
+`a10` with `CNF|clause|RUP|resolution` gives 15 candidates, mostly digest
+substrings and the known work, no matching template. Current kit c42f6e51
+lean/equivalents and cached portal/open PRs searched; COMPLETE refresh
+remains16:34:54Z. The primary LRAT paper's ordered unit-propagation rule
+is the proof-format reference, not a new method. No novelty claim.
+
+Both schedules ACTIVE; no job. Exact next step: write the six clause
+additions and check each hint by hand against its parent truth-table row.
