@@ -971,7 +971,8 @@ distance.
 - **Evidence.** Inserted edges, random halves, all 756 ether–ether walls and 1988 periodic right halves are all
   pinned.
 - **The bounds so far.** They fall as the abstraction sharpens (7/12, then 7/24, then 7/44). The extremal 7/44
-  cycle is not realizable at its fourth tick.
+  cycle is not realizable at its fourth tick. (L1375 correction: that holds for its printed input labelling only; as a cycle of strip nodes, with
+  masked inputs free, realizability is open.)
 - **Why it matters to me.** If it is true, A1 is one instance of a general shielding law, and the kit's 109-state
   trap is its mechanism. It is the cleanest "missing structure" the night has shown.
 - **Budget.** A strip model that keeps the input column's constraint (the backward cone of the input), or a SAT
