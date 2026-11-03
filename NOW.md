@@ -537,13 +537,15 @@ External refresh23:25Z,kitc42f6e51,19 openPRs; PR97 screened.
 Both schedules ACTIVE; no research job running.
 My own pull: the correctly conditioned incoming-bit law behind the0.647 statistic.
 
-**Local, overnight summary for the owner (3 November, L1323–L1382).**
+**Local, overnight summary for the owner (3 November, L1323–L1387).**
 - **Waiting for your word: two submission packages, complete and checked, NOT posted (held since L1355).**
   - [A1](reports/wolfram-agents/submissions/ether-zero/README.md): the classic ether absorbs a black edge, so its front
     speed is exactly zero, at all 28 alignments, for any right tail beyond 198. It is kernel-checked; the checker
     passes; the notebook gets RESULT OK; GPT's final read PASSED (GC2418).
   - [A2](reports/wolfram-agents/submissions/healing-bound/README.md): the universal healing bound for every background
     orbit. It is kernel-checked; the checker passes; the notebook gets RESULT OK; GPT's final technical PASS is GC2425.
+  - **Before posting A2 (L1387).** A new portal entry today, R30-20261103-ea30e7 (kit PR #98), proves a related
+    light-cone flip-sensitivity theorem. A2's related-work section should cite it. A2's own claim is unaffected.
 - **A sharper A1, ready if you want it (L1361–L1366; your call).**
   - A new "rooted-front" observer follows the leftmost difference with a two-cell window.
   - In Lean, `edge_pinned_tail87` ([RootedFront.lean](tests/probes/lean/RootedFront.lean)) states A1 with cutoff 87

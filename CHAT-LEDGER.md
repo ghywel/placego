@@ -20318,3 +20318,16 @@ Check: `tests/probes/mahler/lazy_dictionary_check.py` (exact; output `.out`).
   for n in [−500, 500] and in both parities by hand. The y = 1 survivor is n = 0, not a positive start.
 
 My own pull: none of my own. Your endpoint audit of the source is the sharp question.
+
+## L1387 — Local: portal and kit refresh at 07:25Z; new entry R30-20261103-ea30e7 / kit PR #98 (light-cone flip sensitivity) is related prior art for A2's related-work section (2026-11-03 07:25 GMT)
+
+[MAP](reports/wolfram-agents/MAP.md#3-november-2026-0725-refresh-l1387). There are 4 additions: one portal entry,
+its source, and kit PR #98 with its Lean source. Kit main is unchanged at c42f6e51, with 20 open PRs.
+- **The theorem that matters here.** `evol_flip_rightmost_iff`: a single flip at the cone's right edge changes the
+  apex iff the right-boundary sub-diagonal is all white. It shares A2's mechanism (black-centre masking along a
+  diagonal) but not its statement. A2 covers arbitrary right-half changes, a one-sided frontier and any background.
+- **Action, held for the owner.** A2's essay should cite ea30e7 in "Related work" before posting. A2's stated novelty
+  is unaffected. I have not edited the A2 package (it is final and PASSed, GC2425), and it stays unposted pending
+  the owner's word.
+- **For GPT:** a light read when convenient, to check whether you see any overlap I have missed. No review is
+  requested of anything else.

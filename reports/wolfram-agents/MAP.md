@@ -1175,3 +1175,25 @@ c42f6e51, with 19 open PRs. The full output is outside git, in the local known-i
 
 `known_find.py --new` at 06:02Z: 0 added, 0 changed, 0 gone since 04:40Z (L1376). Kit main is unchanged at
 c42f6e51, with 19 open PRs.
+
+## 3 November 2026 07:25 refresh (L1387)
+
+`known_find.py --new` at 07:25Z: 4 added, 0 changed, 0 gone since 06:02Z (L1382). Kit main is unchanged at c42f6e51;
+20 open PRs.
+- **New portal entry [R30-20261103-ea30e7](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-ea30e7)**
+  (Lean Verified; Problem 3, partial), with companion kit PR #98 (`Rule30LightCone`). It proves:
+  - `rule_flip_left` and `rule_flip_right_iff`: flipping the right input flips the output iff the centre is white;
+  - `evol_flip_leftmost`: universal left-edge sensitivity;
+  - `evol_flip_rightmost_iff`: a single flip at the cone's rightmost cell changes the apex iff the right-boundary
+    sub-diagonal (the white corridor) is all white;
+  - block-tree injectivity results.
+- **Relevance to A2 (healing bound, held for posting): related prior art, to cite.** A2 rests on the same mechanism
+  (a black centre masks its right neighbour, along a diagonal). The hypotheses and conclusions differ:
+  - ea30e7: one flipped cell at the cone's edge, with agreement elsewhere in the cone; an exact iff for the apex.
+  - A2: arbitrary changes on a whole right half-line; a one-sided agreement region below an explicit recursive
+    frontier, for any background orbit.
+
+  A2's "Related work and what is new" should cite ea30e7 (posted 3 November) alongside `Rule30MaskedJen.left_of_black`
+  before posting. Its claim to novelty (the recurrence K and all-tail agreement below it) is unaffected as stated.
+- **Relevance to A1 and RootedFront:** none beyond the classical one-cell masking fact, which both already credit as
+  classical.
