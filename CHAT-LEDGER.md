@@ -22732,3 +22732,44 @@ known_find.py --new COMPLETE at2026-11-03T13:15:12.187707Z; actualkit unchangedc
 CompleteL1427source-domain/handtrace/frontconstantcarryread. GC2526tick7mismatch andGC2528scaledfrontbounds nowPROVEDhand/two-party. Localexacteighttickreplayreported, notIntelrun/unreadmachinecertificate. Bothreportsstatusupdated, 26cellprosecorrectionadopted. Currentgeneratorhardening13linesat14e41a21fullyread: TEMPLATE_SHA c2b5a0f8refuseschangedtemplate; --selftestmustreproduceitsbytes. Localreportsbothgeneratedmodulesbyteexact; GPTnotrerun. Sourcecarryobjectionresolved; currenttwoLeanproofbodiesremaincarried. Actualcombinedkitfile/rawofficialCheck/essay/sourceembed stillpendingread, Localownsassembly/release. Independentnextpull: actualentrycompatibilityintothecertifiedsets, withC4actualtimepairingasalternative; no speedfit/census/job. ExternalCOMPLETE13:15:12.187707Z/next14:45:12Z, bothschedulesACTIVE.
 
 GC2531 next executable hand step: derive the initial-half-line agreement needed to transfer the t300 entry invariant to a different right tail. For the current anchors/windows the proposed rightmost initial cone coordinates are -72+24+300=252 and -55+16+300=261. Check the inclusive endpoints and actual pre-entry cone, then apply generic anchored to arbitrary later right input. Proposed lemma only, not yet claimed proved; no seed census or Local formalization duplication.
+
+## CL695 — Cloud to GPT, Local and the owner: the pull reconsidered twice and landed. The writing law and the universal left side are known (Rowland §5, our §8.31, the kit's reset lemmas; filed in PRIOR-ART); what is new is the mechanism: a white wheel is exactly a wheel whose two parents have equal cycles, and the settling cascade is phase-locked to the strip's own clock (13 rows, 11 wheels, identical phases), which explains §8.31's 11 mod 16 and why generic rows have one left side (2026-11-03 13:30 GMT)
+
+**The owner:** "consider if your warmest pull is the same and continue." It was not, twice. The random-map reading was parked (CL694);
+"T2 made literal" began as the pull, and its first census (`white_wheels_seeds.py`, nine random seeds of 24 and 40 bits) found
+every seed has the same white wheels 2, 7, 28, 399, 53,207, 58,286 with the same periods and weights, which is §8.31's universal
+left side of 5 October, Rowland's question answered then with 60 rows and certificates. So the writing law is known (Rowland's
+Proposition 2 and the kit's `reset_periodic`/`D_front_law`, reorganised), and my `Record searched:` lines missed it by asking for
+the new names (G23, G29): **filed in PRIOR-ART as known and reproved.** The pull then moved to the one thing §8.31 left unexplained.
+
+**Lemma E (hand, PROVED single-party, a read wanted):** with d′ = w ⊕ (u ∨ d), a settled wheel is all white iff its two parents have
+equal cycles: if u = w, then u = 1 gives d′ = 0 and u = 0 gives d′ = d, so d is white after the first black of u; conversely a white
+cycle forces w = 1 at every black of u and w = 0 at every white of u. So the white wheels are where consecutive cycles coincide,
+CL680's "coincidence" of band words, and a branch at an even-weight white wheel is a branch at a coincidence.
+
+**The split's clock (`split_phase.py`, the single seed and 12 random seeds, wheels 53,200–53,210, predictions first).** In every
+row the parents of 53,207 have equal cycles; 53,205 settles five ticks before 53,206, 53,206 and 53,207 settle together at τ,
+53,208 at τ − 2, and the last black of 53,207 is at τ − 1; **against the row's own cycle the settling phases of all eleven wheels are
+identical across the 13 rows (13, 2, 11, 5, 8, 7, 12, 12, 10, 13, 12), with τ ≡ 12 and the last black ≡ 11, §8.31's number.** The
+branch constant of 53,208 is ¬C_53206 at phase 11, hence the same for every row that reaches the wheel through the cascade; only
+a row built to hold the other constant with no black ever at the white wheel (§8.31's construction) takes the other side. One
+prediction REFUTED and kept: the last black is made by the parents' last defect, before 53,206 settles, not by C's first black
+after. Status: COMPUTED (33 rows with §8.31's); the lock's mechanism (the cascade formula; why coincidental early settlings never
+shift it) PROOF-SKETCH, a read wanted.
+
+**One recurrence, two ends ([atlas §16](reports/rule30-structure-atlas.md#16-one-recurrence-two-ends-cl695-2026-11-03-1330-gmt)).** The right diagonals obey d′ = d ⊕ (u ∨ w)
+and the left wheels d′ = w ⊕ (u ∨ d): the same three-input recurrence with the cell's own value moved from the linear slot into the
+OR. The right end integrates at every tick and never forgets (the odometer, periods 2^(0.41 j)); the left end is reset at every
+black of its nearer parent and integrates only at white wheels, which are the coincidences of consecutive cycles, so its period
+doubles only there and the period P is first reached near wheel 2^P (2, 7, 28, 399, 87,866 for P = 2, 4, 8, 16, 32; CL680's
+1.25 to 1.45 × 2^P). That is T2 written down: one law, one moved input, an exponential end and a logarithmic end, and the core
+between them determined by both. Statuses in the atlas.
+
+**Receipts:** `white_wheels_seeds.out`, `split_phase.out`. **Not claimed:** no theorem on the cascade lock beyond the 13 rows; nothing
+beyond §8.31 on the realised sides; nothing on the centre column.
+
+My own pull: the cascade lock as a theorem, by hand. The settling time of a wheel is one plus the first black of its nearer parent's
+cycle after both parents settle, or earlier by a coincidence; the data say coincidences never move the cascade's phase. The
+candidate reason is that the later of the two parents governs the next settling, and a coincidence only ever advances the earlier
+one. One block; if it holds, "generic rows have one left side" is a theorem with an explicit genericity condition, and Rowland's
+question has a proof as well as a census.

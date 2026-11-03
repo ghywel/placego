@@ -553,3 +553,31 @@ the four early white wheels have odd weights 1, 1, 3, 3 over their least periods
 (`crystal_shadow.py`). The band edge B_P is the fixed-lag frontier of 8.74 with GC736's scope: exact settling front for periods
 dividing P below wheel 12,000 (Lemma S on that prefix), and it saturates at the first wheel whose period does not divide P. Lemma W
 is two-party, with the kit's `reset_periodic` and `D_front_law` as the mechanism's prior art.
+
+## 16. One recurrence, two ends (CL695, 2026-11-03 13:30 GMT)
+
+*Prior art first:* the universal left side is Rowland's §5 and our §8.31; the writing law is his Proposition 2 and the kit's reset
+lemmas (PRIOR-ART, CL695). This section is the synthesis the atlas asked for in §6 (T2), with what this fortnight added.
+
+**The law.** Right diagonals: d′ = d ⊕ (u ∨ w). Left wheels: d′ = w ⊕ (u ∨ d). One three-input recurrence; the cell's own value sits in
+the linear slot on the right and inside the OR on the left.
+- **Right (the odometer).** The cell integrates the OR of its two edge-side neighbours at every tick and never forgets (the map is a
+  bijection, the kit's T-function); the period doubles whenever the integrand has odd weight over the parents' period (the kit's
+  S_rule, density about 0.41 per diagonal): periods 2^(0.41 j), PROVED (kit).
+- **Left (the crystal).** The cell is reset to ¬w at every black of u and integrates w only between blacks, so once the parents have
+  settled its cycle is forced, C_k = F(C_(k−1), C_(k−2)) (Lemma W, two-party), and the strip is one deterministic orbit from
+  (C_0, C_1) = (1, 1) for every left-finite row. A wheel is all white iff its parents have equal cycles (Lemma E), and only there
+  can the period double (odd weight) or the strip branch (even weight, the complement choice). At a doubling the two choices are
+  half-period shifts, so the strip is universal up to phase below the first even-weight white wheel, 53,207 (Rowland's first
+  possible split); at 53,207 and 58,286 the choice is a complement, and generic rows take the one fixed by the cascade's clock
+  (§8.31's 11 mod 16; CL695: the settling phases of eleven consecutive wheels identical across 13 rows). Periods: P is first
+  reached near wheel 2^P, the white wheels being the coincidences of consecutive words (CL680; a random-map order of magnitude).
+- **The core.** Between the two ends every cell is both the k-th wheel and the j-th diagonal with k + j = 2t: determined from the
+  left by the strip (the wheels below it) and from the right by the odometer (the diagonals nearer the edge). The band edge is the
+  strip's settling front for a named lag (Lemma S on a finite prefix; GC736's saturation beyond), moving at the fair-row front's
+  speed because it is a damage front (the mask law); the centre column reads each diagonal once at birth and each wheel before its
+  parents settle, and the crystal's cycles carry nothing of it (CL694's shadow test).
+
+**What T2 now says, and what it does not.** One algebra at both ends is literal: the same recurrence, one input moved. The moved
+input is why one end keeps everything and the other forgets everything except the branch choices at its coincidences. It does not
+say how the core's measure arises (T1) or why its parities are fair (T3); those stay open, with the census now on the seed (§15.2).

@@ -5911,3 +5911,25 @@ black-parent row, the integral and parity at every white-parent row, the base C_
 T = 2^15 together prove that the whole prefix has exactly those cycles for all times ≥ T; the packet is `crystal_table_12000.txt`.
 **Extension beyond the data (COMPUTED, two independent computations):** F's orbit from wheels 11,998–11,999 with two branch bits
 reproduces the seed's white wheels 53,207, 58,286, 87,866 and their weights 6, 10, 5 found by CL680's direct census to 10^6.
+
+### Waiting room — Lemma E (white wheels are coincidences) and the cascade lock (Cloud, CL695; 2026-11-03 13:30 GMT)
+
+**Lemma E.** In the left-frame recurrence d′ = w ⊕ (u ∨ d) with parents in cycles u, w (common period p), a settled wheel's cycle is
+all white iff u = w as cycles. *Proof.* If u = w: at a black of u, d′ = 1 ⊕ 1 = 0; at a white of u, d′ = d ⊕ 0 = d; so d = 0 from the
+first black of u on (and if u ≡ 0 too, d is constant; the all-white case is then d = 0 from any white start, or the row's constant).
+Conversely if d ≡ 0 on the cycle: at a black of u, 0 = w ⊕ 1 forces w = 1; at a white of u, 0 = 0 ⊕ w forces w = 0; so w = u. ∎
+*Checked:* the 13 rows of `split_phase.py` (parents of 53,207 equal in every row) and CL680's band words (d = 0 exactly at the white
+wheels).
+
+**Corollary (up to phase).** At a doubling wheel (u ≡ 0, w of odd weight) the two continuations are complements of an antiperiodic
+cycle, hence half-period shifts of each other; since the recurrence commutes with time shifts and u ≡ 0 is shift-invariant, the
+whole subsequent strip is shifted. So for every left-finite row the eventual cycles below the first even-weight white wheel are the
+universal strip's up to a time shift (Lemma W plus induction, with C_0 = C_1 = 1 for every such row). *Scope:* Rowland §5 located the
+first possible split at that wheel; whether his argument already contains this corollary is for the reader (PRIOR-ART, CL695).
+
+**The cascade lock (PROOF-SKETCH, COMPUTED on 13 rows).** With τ_k the settling time of wheel k, τ_k ≤ 1 + the first black of C_(k−1) at
+or after max(τ_(k−1), τ_(k−2)), with equality unless wheel k already agrees with its cycle then (a coincidence). Measured against the
+row's own cycle phase, τ_k mod 16 is the same for all 13 rows at wheels 53,200 to 53,210 (13, 2, 11, 5, 8, 7, 12, 12, 10, 13, 12), so
+the branch at 53,208, ¬C_53206 at the last black of 53,207 (τ_53206 − 1 ≡ 11), is the same for all. *What a reader should check:*
+whether a coincidental early settling of one wheel can ever change the first-black time that governs the next (the data say it
+does not; the candidate reason is that the later parent governs and a coincidence only advances the earlier one).
