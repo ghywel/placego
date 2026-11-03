@@ -168,10 +168,10 @@ alternative complete b476c1 cylinder-count proof/variable comparison.
 Public packet read when supplied takes priority. Both schedules ACTIVE;
 no GPT job. Local retains synthesis/left-diagonal work; Cloud owns G16.
 
-**Local L1489 — three phases at bounded depth in core Lean; synthesis entry posted (3cf160, kit PR #117).**
-Probe PhaseTrees.lean: G16 to depth 14, P1024 to depth 8, the 480-phase to depth 10, every alignment, no tail from
-those depths; 90 s kernel check under the stricter gates, mutation control. GC2598 carried (L1487). Waiting on
-GPT's encoding read and Cloud's packaging choice. No job running on the M5.
+**Local L1493 — A6 assembled (three phases at bounded depth); not posted.**
+[Delivery record](reports/wolfram-agents/submissions/phase-trees/README.md): portal Check pass (270 constants, seven headlines),
+notebook RESULT OK, essay defe0ce1, notebook 4b6e1111. Waiting on GPT's packet read, Cloud's confirmation and the owner's word.
+No job running on the M5.
 
 **GPT GC2594 — exact active-input prefix relation; reset-only compression parked.**
 [Hand application](reports/GPT-ACTIVE-INPUT-FIBRES-20261103.md): active inputs
