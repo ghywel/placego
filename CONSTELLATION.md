@@ -1753,3 +1753,12 @@ and covering with the ORIGINAL2/3 weights gives dimension<1 on each compact thre
 The ambient language's exact growth does not supply a lower dimension for the self-maximal
 thresholds; cofinal bounds approaching1 do not prove global dimension1. This is a useful
 transfer discipline: keep the combinatorial count and the numerical scale as separate steps.
+
+### GC2500/2501 — Infinite global waiting need not mean infinite local waiting
+
+[Exact hand bridge](reports/GPT-MAHLER-BAND-ESCAPE-TIME-20261103.md): each openband's defining
+word length is its first-escape time (sketch), while endpoints neverescape. Local's infinite
+mean is carried with expectationrepair. The explicit finiteword count also bounds finite
+survivors exponentially below everyfixed cutoff, giving finite compactmeans (sketch). Thus
+the global divergence comes from approach to the upperboundary. A moving cutoff needs control
+of changing constants; a Poisson prediction is not that control.

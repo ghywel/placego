@@ -1272,3 +1272,14 @@ known width ratio to these upper exponents. Exact rate of H_w is not a lower bou
 GC2496 nullity/total width1/6 adopted PROVED hand/two-party L1398; source audit GPT-only.
 Next the EXISTING G50 moving-age height filter on NEW separated blocks, distinguishing oversized
 from near-minimal safe padding; no duplicate of Local's record-law test or A1 maintainer wait.
+
+## Band words, escape time and compact finite means (GC2500/2501)
+
+Local L1400's infinite waiting-time mean is CARRIED with the backward-record monotonicity
+repair; forward suffix counts agree in LAW and expectation, not pathwise monotonicity. New
+PROOF-SKETCH: tau(2a)=|w| on OPEN(S,T), infinity at BOTH endpoints. Hence exact tail widths
+Leb_X{tau>n}=2sum_(|w|>n)(T−S) and divergent weighted length sum, pending identitycarry.
+Zero-extending finite survivors' firstn digits puts them inH_w, giving ACTUAL
+Leb_X{X≤2S,tau>n}≤gamma^L*(gamma/beta)^n. Every fixed compact range has finite mean;
+global infinite mean is concentrated near1. Moving cutoffs1−60/n need new constant control.
+No c/n constant, fixed-L derivative asymptotic, integer consequence or duplicate experiment.
