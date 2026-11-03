@@ -3,7 +3,7 @@ Template: ComputationalEssay
 Name: Moving walls in Rule 30: exact front speeds 5/19 and 2/9
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-11-03
-Description: A partial result proved in core Lean: an inserted black edge on the Rule 30 ring backgrounds 100100000 (temporal period 57, alignment (0, 0)) and 1010000 (temporal period 63, alignment (0, 4)) has a front that moves left at exactly 5/19 and 2/9 cell per tick, with explicit all-time bounds from t = 300, for every right tail beyond a fixed cutoff; the proof is a kernel-checked closed set of window states with a moving anchor and an exact potential.
+Description: A partial result proved in core Lean: an inserted black edge on the Rule 30 ring backgrounds 100100000 (ring orbit of period 57, alignment (0, 0)) and 1010000 (ring orbit of period 63, alignment (0, 4)) has a front that moves left at exactly 5/19 and 2/9 cell per tick, with explicit all-time bounds from t = 300, for every right tail beyond a fixed cutoff; the proof is a kernel-checked closed set of window states with a moving anchor and an exact potential.
 Abstract: See abstract.txt.
 Keywords: [rule 30, Rule 30 Prize, background orbit, ether, front speed, moving wall, closed set, potential, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]
@@ -19,13 +19,14 @@ right, and follow the leftmost cell where the evolution differs from the backgro
 On the kit's classic ether the answer is zero: the inserted edge is absorbed by a wall and the front stays in a fixed
 window for ever. On other backgrounds the front keeps moving. This essay proves exact nonzero speeds for two of them:
 
-| ring word | temporal period | alignment | front speed |
-|---|---|---|---|
-| `100100000` | 57 | $(0, 0)$ | exactly $5/19$ |
-| `1010000` | 63 | $(0, 4)$ | exactly $2/9$ |
+| ring word | orbit period $q$ | period at a fixed column | alignment | front speed |
+|---|---|---|---|---|
+| `100100000` | 57 | 171 | $(0, 0)$ | exactly $5/19$ |
+| `1010000` | 63 | 63 | $(0, 4)$ | exactly $2/9$ |
 
-The background is $E(t, x) = \mathrm{orb}[(t + s) \bmod q][(t - x) \bmod N]$, with the ring orbit `orb` of period $q$ and
-alignment $(0, s)$.
+The background is $E(t, x) = \mathrm{orb}[(t + s) \bmod q][j \bmod N]$ with $j = t - x$, the ring orbit `orb` of period $q$
+and alignment $(0, s)$. So $q$ is the orbit's period in the diagonal coordinate $j$; at a fixed column $x$ the background
+repeats every 171 ticks for `100100000` (57 shifts $j$ by $3 \bmod 9$) and every 63 ticks for `1010000`.
 
 ## A window with a moving anchor
 
@@ -144,9 +145,10 @@ import Ruliology.CellularAutomata.Rule30Jen
 # Moving walls: exact front speeds of an inserted edge on two ring backgrounds
 
 Take a spatially periodic background orbit of rule 30 (a ring word `w`, evolved on the whole line) and insert one black
-cell, with white to its right. On the ring backgrounds `100100000` (temporal period 57) and `1010000` (temporal period 63)
+cell, with white to its right. On the ring backgrounds `100100000` and `1010000`, at the alignments `(0, 0)` and `(0, 4)`,
 the leftmost difference from the background moves left at an exact rational speed, for all time and whatever the damage
-behind it does:
+behind it does. (The ring orbits have periods 57 and 63 in the diagonal coordinate `t - x`; at a fixed column the
+backgrounds repeat every 171 and 63 ticks.)
 
 * `Ring57.edge_law`: for every `t ≥ 300` there is an anchor `A` with the background intact at and left of `A`, a
   difference within the 24 cells right of `A`, and `-14 ≤ 19 (A + 72) + 5 (t - 300) ≤ 22`: speed exactly `5/19`.
@@ -160,8 +162,13 @@ the weight `P * motion + (P - S)` changes the potential by itself on every edge,
 function of the current state. `step_sound` shows that one tick of the window is sound on every rule-30 evolution of the
 whole line, whatever the cell beyond the window; `anchored` carries the invariant through any checked closure, and
 `entry_inv` puts the inserted edge into the closure at `t = 300` by a bit-mask simulation. Because the closure contains
-every successor under both values of the cell beyond the window, the speed is the front's own law on the background,
-independent of the wake. Nothing here concerns the centre column.
+every successor under both values of the cell beyond the window, the law holds for every front whose state enters the
+closure, whatever lies behind it. It does not say that every front on these backgrounds enters it.
+
+The method, a finite front state with a potential certified on local patterns, is that of `Rule30EtherThreeErosion`
+(there an inequality for the period-three ether); here the potential is an exact identity and the anchor moves.
+`Rule30Ether`'s `trap_invariant` is the stationary case. Growth from finite perturbations of periodic backgrounds was
+studied by Phillips (Wolfram Science Conference 2004). Nothing here concerns the centre column.
 -/
 
 namespace Rule30Submission
@@ -1093,7 +1100,7 @@ theorem law_from {H : Nat → Int → Bool} (hH : IsR30Z H) (hinv : Inv H 300 (-
   rw [show 300 + (t - 300) = t by omega] at hI
   refine ⟨A, hI.2.2.1, mismatch_of_ne hI hne', ?_, ?_⟩ <;> push_cast [show ((t - 300 : Nat) : Int) = (t : Int) - 300 by omega] at hψ <;> omega
 
-/-- **The front law of the inserted edge on the ring background `100100000` (temporal period 57).** For every `t ≥ 300`
+/-- **The front law of the inserted edge on the ring background `100100000` (ring orbit of period 57).** For every `t ≥ 300`
 there is an anchor `A` with the background intact at and left of `A`, a mismatch within the 24 cells right of it, and
 `-14 ≤ 19 (A + 72) + 5 (t - 300) ≤ 22`. So the leftmost difference moves left at exactly `5/19` cell per tick. -/
 theorem edge_law : ∀ t : Nat, 300 ≤ t → ∃ A : Int, (∀ x, x ≤ A → Gedge t x = E t x) ∧
@@ -1617,7 +1624,7 @@ theorem law_from {H : Nat → Int → Bool} (hH : IsR30Z H) (hinv : Inv H 300 (-
   rw [show 300 + (t - 300) = t by omega] at hI
   refine ⟨A, hI.2.2.1, mismatch_of_ne hI hne', ?_, ?_⟩ <;> push_cast [show ((t - 300 : Nat) : Int) = (t : Int) - 300 by omega] at hψ <;> omega
 
-/-- **The front law of the inserted edge on the ring background `1010000` (temporal period 63).** For every `t ≥ 300`
+/-- **The front law of the inserted edge on the ring background `1010000` (ring orbit of period 63).** For every `t ≥ 300`
 there is an anchor `A` with the background intact at and left of `A`, a mismatch within the 16 cells right of it, and
 `-20 ≤ 9 (A + 55) + 2 (t - 300) ≤ 4`. So the leftmost difference moves left at exactly `2/9` cell per tick. -/
 theorem edge_law : ∀ t : Nat, 300 ≤ t → ∃ A : Int, (∀ x, x ≤ A → Gedge t x = E t x) ∧

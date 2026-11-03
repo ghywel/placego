@@ -3,7 +3,7 @@ Template: ComputationalEssay
 Name: Moving walls in Rule 30: exact front speeds 5/19 and 2/9
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-11-03
-Description: A partial result proved in core Lean: an inserted black edge on the Rule 30 ring backgrounds 100100000 (temporal period 57, alignment (0, 0)) and 1010000 (temporal period 63, alignment (0, 4)) has a front that moves left at exactly 5/19 and 2/9 cell per tick, with explicit all-time bounds from t = 300, for every right tail beyond a fixed cutoff; the proof is a kernel-checked closed set of window states with a moving anchor and an exact potential.
+Description: A partial result proved in core Lean: an inserted black edge on the Rule 30 ring backgrounds 100100000 (ring orbit of period 57, alignment (0, 0)) and 1010000 (ring orbit of period 63, alignment (0, 4)) has a front that moves left at exactly 5/19 and 2/9 cell per tick, with explicit all-time bounds from t = 300, for every right tail beyond a fixed cutoff; the proof is a kernel-checked closed set of window states with a moving anchor and an exact potential.
 Abstract: See abstract.txt.
 Keywords: [rule 30, Rule 30 Prize, background orbit, ether, front speed, moving wall, closed set, potential, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]
@@ -19,13 +19,14 @@ right, and follow the leftmost cell where the evolution differs from the backgro
 On the kit's classic ether the answer is zero: the inserted edge is absorbed by a wall and the front stays in a fixed
 window for ever. On other backgrounds the front keeps moving. This essay proves exact nonzero speeds for two of them:
 
-| ring word | temporal period | alignment | front speed |
-|---|---|---|---|
-| `100100000` | 57 | $(0, 0)$ | exactly $5/19$ |
-| `1010000` | 63 | $(0, 4)$ | exactly $2/9$ |
+| ring word | orbit period $q$ | period at a fixed column | alignment | front speed |
+|---|---|---|---|---|
+| `100100000` | 57 | 171 | $(0, 0)$ | exactly $5/19$ |
+| `1010000` | 63 | 63 | $(0, 4)$ | exactly $2/9$ |
 
-The background is $E(t, x) = \mathrm{orb}[(t + s) \bmod q][(t - x) \bmod N]$, with the ring orbit `orb` of period $q$ and
-alignment $(0, s)$.
+The background is $E(t, x) = \mathrm{orb}[(t + s) \bmod q][j \bmod N]$ with $j = t - x$, the ring orbit `orb` of period $q$
+and alignment $(0, s)$. So $q$ is the orbit's period in the diagonal coordinate $j$; at a fixed column $x$ the background
+repeats every 171 ticks for `100100000` (57 shifts $j$ by $3 \bmod 9$) and every 63 ticks for `1010000`.
 
 ## A window with a moving anchor
 

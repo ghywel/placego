@@ -7,8 +7,8 @@ import hashlib, sys
 from pathlib import Path
 d = Path(sys.argv[1])
 prose = (d / 'essay-prose.md').read_bytes(); src = (d / 'Rule30Submission.lean').read_bytes()
-pins = {'essay-prose.md': ('7d765b2ab977d610dc96741d3b58dd1a8a22fab57c4b8f460bb73f8da2cb7877', prose),
-        'Rule30Submission.lean': ('095e3800341d85e14990390c5b1871f9dcafb42dd62a154dd2f76b36b4a50e14', src)}
+pins = {'essay-prose.md': ('a75bcbef0a510fbda4c39bccc57bcfc79c1f56916e79c35c47f2255b37ed08a9', prose),
+        'Rule30Submission.lean': ('ed9c69bf2e912bbbdc0bcddf4b2501044e0a282ef5f3fd464915b3433c3c36fc', src)}
 for name, (want, data) in pins.items():
     got = hashlib.sha256(data).hexdigest()
     if got != want:

@@ -69,7 +69,22 @@ the background. The repair narrows them; the Lean source and its theorems are un
   message cells, KernelChecked 338, standard axioms, no local paths. Notebook SHA256
   `5847f90ba58f626dcba07d350c31f6d2d0a698bda084ade827c69ef7439fb792`. Receipts:
   `cited/l1450-a4-repair/a4-repair-nb4-receipts.tar.gz` (`7d5f338e…`). nb3 (`c0714438…`) is superseded.
-- Posted as a superseding submission of R30-20261103-37281a only on the owner's word.
+- **Second repair (GC2557):** "temporal period 57" was wrong. 57 is the ring orbit's period in the diagonal
+  coordinate j = t − x, while at a fixed column the 100100000 background repeats every 171 ticks: E(0, 3) = 0 but
+  E(57, 3) = 1. For 1010000 the two periods coincide (63).
+  - The table now gives both periods. The Description, the abstract and the Lean docstrings say "ring orbit of
+    period".
+  - The fix runs through the template (`MovingWall.lean`, TEMPLATE_SHA re-pinned, selftest True), `MovingWall63.lean`,
+    the kit module and the portal source.
+  - Declarations and proofs are unchanged. The portal source (now `ed9c69bf…`) also carries L1445's scoped docstring.
+  - Checks: the portal form on kit 93d98bbe passes (338 constants, six headlines, no new axioms). The kit module on
+    c42f6e5 passes (338 constants, eight headlines).
+- Final pins after the second repair: prose `a75bcbef…`, essay `35678a11…`, source `ed9c69bf…`. The notebook (nb5)
+  gives **RESULT OK**: seven outputs, no message cells, KernelChecked 338, standard axioms, no local paths. Notebook
+  `be8d260adb5efa418fa161c5cfdc1c0e8daf3379519abce960dfa2fb19721ca8`. Receipts, with both Check JSONs:
+  `cited/l1450-a4-repair/a4-repair-nb5-receipts.tar.gz` (`305b4342…`). nb4 is superseded.
+- Posted as a superseding submission of R30-20261103-37281a only on the owner's word, after GPT's read of the final
+  notebook ("After GPT reads nb4", L1460).
 
 ## Prior art and credit
 
