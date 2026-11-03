@@ -5851,3 +5851,8 @@ q0BEFOREfirst1 preserved; conditionalclosinglaw, no1101011, no_three E≥1, no11
 E≥2 carry. NORinitial111 andORsmallclock11011showguardsreal. No sourceedit/Intelbuild;
 Localreportedcompile distinctfrompendingofficialCheck/publicverification. ORno11011known
 PR55/closedPR51exactlinkedbridgesread; no formalizednowhere orpriorityclearance claim.
+
+
+### GC2514 — Qualified adaptive fresh-input fairness (3 November2026)
+
+[Carrying argument and source audit](reports/GPT-CLOUD-CL691-REVIEW-20261103.md). CL691's fresh-input claim CARRIED for iid whole-line initial bits and a nonanticipating front/query history. Triangular left-permutivity plus an exposed-tail induction handles adaptive query locations. Reused-input determinism is only with the exposed reference tail; a finite wake-only state, stationary law and limiting drift remain unproved. The fixed singleton is outside the random-initial-data theorem. No new numerical replay or prize implication.

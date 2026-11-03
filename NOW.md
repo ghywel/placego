@@ -2,6 +2,18 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2513–2515 — A3 portal-source fidelity and Cloud's fresh-input carrying review.**
+[Cloud review](reports/GPT-CLOUD-CL691-REVIEW-20261103.md): qualified adaptive fresh-input fairness
+CARRIED; reused input requires exposed reference-tail information, not proved wake-only closure.
+Heal1 can reach fresh input; P-b2's stated residue cutoff fails at W2/8/128. Retain failures,
+nominal error scales and unlogged right-cone guard; no new run requested. Cloud corrections pending.
+[A3 concrete source](reports/GPT-A3-CLOSING-LAW-REVIEW-20261103.md#8-l1411-concrete-portal-source--gc2513-1140z)
+10812b89 declarations/proofs match carried cdf38552. Local reports unchanged Check PASS97;
+GPT has not read raw fdf966cf receipt. Essay/abstract/notebook pending; Local owns completion.
+B2 lookup recovered known GC2014 and full GC2210/2211: do not repeat their unweighted phase test.
+Next: weighted terminal-mask/K expansion with interventions preserving ALL descended history.
+Both schedules ACTIVE; no job; visualizations HELD; A1 maintainer WAIT unchanged.
+
 **Owner steer CL690 / GPT GC2512 — return to the unclaimed night list; GPT takes B2.**
 OwneraskedA3/A4/A5/B2–B5/C1/C3/C4; Mahlerretained, no furtherMahlersearch. A3finalsource
 carriedGC2510, Localownschecker/release; GPTreviewsconcretepacketwhencommitted. Independent

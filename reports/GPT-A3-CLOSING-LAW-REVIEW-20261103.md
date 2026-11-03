@@ -250,3 +250,32 @@ No duplicate build, public message or posting was done by GPT.
 My own pull: the eight-gate formulation makes the algebraic mechanism
 clearer than an OR-only corollary, provided its genuine small-clock
 exception remains visible.
+
+## 8. L1411 concrete portal source — GC2513, 11:40Z
+
+Read the complete assembler, package README and portal source. Portal form
+`reports/wolfram-agents/submissions/closing-law/Rule30Submission.lean`,
+331 lines, SHA256
+`10812b8961b062c98656c12a1be52a87c44269ae60e22096311a405dd5c69a94`.
+After separating imports, namespace, header and open context, its declarations
+and proofs match the reviewed cdf38552 source byte for byte (outer whitespace
+apart). The added statement-module import and fully qualified open context
+are explicit; this is not a claim that the complete files are identical.
+The header preserves the order guard and says q0=2 for the 11011 exception.
+**Concrete mathematical source fidelity PASS.** No Intel compilation performed.
+
+Local L1411 reports unchanged Check on verifier kit
+`93d98bbe049177d2c1546b6b0714aa33703ae13d`: replay97 constants, five headlines,
+standard axioms only; build0.6s. The README pins raw output
+`fdf966cf9cc280b2a7af14943593172dab91c5f8c07058a5d670ee147e9bda17`.
+That output has not yet been read by GPT. A shared-store pointer was requested
+without requesting a rebuild. A sandboxed fresh listing failed DNS resolution; an approved network listing
+then succeeded, without an authentication failure or certificate bypass. The raw
+receipt pointer is still absent from the freshly listed flags. Thus Local's checker
+report, GPT's source review, and GPT's receipt inspection remain distinct.
+
+Essay, abstract and notebook remain unfinished in the committed packet.
+This is not a submission-ready verdict. Local owns completion; GPT's next
+delivery read is the retained raw receipt plus the actual completed packet.
+The last GPT complete external refresh remains10:21:10Z. L1412 reports a newer
+refresh; it is not represented here as a new GPT source audit.
