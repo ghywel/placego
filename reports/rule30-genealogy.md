@@ -6160,3 +6160,63 @@ in B has not been measured before.
   actual row", which is a statement about history. The abstraction cannot give it (B has retreating cycles), and the
   samples do not refute it. It is a concrete target for GPT's compatibility line: show that the hidden inputs needed to
   keep a front in B without gain for 30 ticks cannot be produced by the row's own past. Not a proof; 200 rows only.
+
+## 57. Is GC2430's 87-input reduction exact? (T53, L1361)
+
+GPT asks (GC2430) whether every whole-line row agreeing with the A1 reference E at alignment (4, 3) on x ≤ 111 also
+agrees with E on x ≤ −24 at time 222, and reduces it to one finite circuit: 87 target cells, the cone [−332, 198],
+444 fixed and 87 free inputs. Local carries only the bridge. The probe `tests/probes/exact_tail_bridge.py` checks
+it by a route of its own (whole-line rows of width 1801 with random junk beyond 198, against the cone circuit alone).
+
+Record searched: GC2421/GC2423 (the 112 thresholds), GC2427–GC2430, `ether_shield_one_flip.py` (its mismatch
+assertion, lines 57–61), L1358–L1360; the kit's `Rule30LightCone.evol_window` is the locality used.
+
+Predictions, written before the run:
+- **B1.** The counts reproduce exactly: 87, [−332, 198], 444, 87, 531, 68,907, 68,376.
+- **B2–B4.** No sample differs at x ≤ −111; the whole line and the cone circuit agree on every target in every
+  sample; no protected sample (112 fixed to E) differs at a target.
+- **B5.** The report's prose identity has its masks swapped (δ_centre should be masked by NOT right, δ_right by NOT
+  centre: OR with a black right neighbour hides the centre). The code's assertion has the right form. Prediction:
+  code form 64 of 64, prose form fewer.
+- **Byproduct.** Random 111-tails giving a target difference: I expect none in 1000 (weak, about 60%). A hit would be
+  a replayable witness settling the SAT side, and GPT's solve would no longer be needed for it.
+
+Counterfactual: a B1–B3 failure means the cone or the quantifier bridge is wrong as stated; a B4 failure means E is
+reconstructed wrongly here or the 112 result fails; prose 64 of 64 means I misread the identity.
+
+**Outcome (COMPUTED, M5, 0.4 s; `exact_tail_bridge.out`).**
+- **B1–B4 held as predicted.** The counts reproduce (87; [−332, 198]; 444 + 87 = 531 inputs; 68,907 cells; 68,376
+  constraints). In 1000 samples no cell x ≤ −111 differed, the whole line (junk at 199..900) and the cone circuit
+  agreed on every target, and no protected sample (112 fixed) differed.
+- **B5 held as predicted.** The code form of the mismatch identity holds in 64 of 64 cases, the report's prose form in
+  48. The prose swaps the masks: δ_centre is masked by NOT right and δ_right by NOT centre. GC2428's assertion
+  (`ether_shield_one_flip.py` line 57) is correct, so only the report's prose needs the fix. GC2430's two-flip example
+  (baseline 000) is unaffected.
+- **Byproduct.** No random 111-tail of 1000 differed at a target, as predicted.
+- **B6, the detector control, and the cliff.** With x ≤ b fixed and random cone inputs beyond:
+
+| b | 0 | 40 | 60 | 70 | 80 | 84 | 85 | 86 | 87 … 110 |
+|---|---|---|---|---|---|---|---|---|---|
+| samples differing | 300/300 | 299/300 | 229/300 | 29/300 | 41/300 | 916/3000 | 789/3000 | 1486/3000 | 0 |
+
+  The single flip at 87 alone changes the target −24 at 222. Flips at 86, 88, 89, 100, 111 and 112 do not. So
+  agreement through 86 does not suffice: this is a replayable witness. The least sufficient cutoff for GC2430's
+  target lies in [87, 112]. Random tails say nothing about the worst case in that interval.
+- **The A2 frontier reproduces GC2421/GC2423.** K started at b, over E: K(222) = 172 for b = 80–87, 179 for b = 88–97,
+  186 for b = 98–111, and 199 for b = 112. The frontiers coalesce in blocks of about 7, and 112 is the first cutoff whose
+  bound reaches −24 (p111 = −36, p112 = −23, as in GC2421).
+
+**Why the cheap observers stop at 112 (PROVED, elementary).** The A2 recurrence is exactly Kleene three-valued
+simulation with an unknown right half-line. The unknown region stays a right half-line, because an unknown left
+neighbour makes the XOR unknown. Its edge cell m keeps its value only if E(t, m) is black, so m(t+1) = m(t) − 1 +
+E(t, m(t)), which is A2. (The record has used the three-valued observer before: L698, L912.) GC2423's H_0 = 112 is
+therefore that observer's exact least cutoff, and deciding 111 needs relations between unknowns. This is GC2430's
+point.
+
+**The rooted front has more information than A2.** Let L(t) be the leftmost difference, with E's values as the
+coefficients. Then:
+- L moves left exactly when E(t, L − 1) is white, as A2's edge does.
+- When E(t, L − 1) is black, L stays only if NOT E(t, L + 1) XOR (E(t, L) AND δ(t, L + 1)) = 1.
+
+When E(t, L) is white, staying is decided by E alone, and A2 does not use that. So branching on the front, with a
+ternary word to its right, is a sound observer sharper than A2 and cheaper than the full SAT query. T54 tests it.

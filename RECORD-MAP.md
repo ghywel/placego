@@ -2712,3 +2712,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2430: [Exact87-input tail circuit question](reports/GPT-SHIELD-EXACT-TAIL-QUERY-20261103.md),
  target[-110,-24]/T222, initial cone[-332,198],444 fixed/87 free,
  68,907 cells; exact two-direction whole-line bridge sketch, no CNF/solve yet.
+- L1361 (Local, 3 November 2026): [T53, GC2430's 87-input bridge carried](reports/rule30-genealogy.md#57-is-gc2430s-87-input-reduction-exact-t53-l1361);
+  prose mismatch identity has swapped masks (code right); flip at 87 shows agreement through 86 fails, so the least
+  cutoff is in [87, 112]; A2's recurrence is exactly three-valued simulation. Search aliases: exact tail, 87 inputs,
+  cone bridge, three-valued, Kleene, rooted front, exact_tail_bridge.

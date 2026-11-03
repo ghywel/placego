@@ -1,0 +1,18 @@
+B1 targets 87; cone [-332, 198]; fixed 444, free 87, inputs 531; cells 68907, update constraints 68376
+B2 samples with a difference at x <= -111: 0 of 1000
+B3 samples where the whole line and the cone circuit disagree on a target: 0 of 1000
+B4 protected samples (112 fixed to E) with a target difference: 0 of 1000
+byproduct: random 111-tails with a target difference: 0 of 1000
+B5 mismatch identity, 64 cases: code form holds in 64, prose form in 48
+B6 fixed x <=   0, random cone inputs beyond: 300 of 300 differ at a target
+B6 fixed x <=  40, random cone inputs beyond: 299 of 300 differ at a target
+B6 fixed x <=  60, random cone inputs beyond: 229 of 300 differ at a target
+B6 fixed x <=  70, random cone inputs beyond:  29 of 300 differ at a target
+B6 fixed x <=  80, random cone inputs beyond:  41 of 300 differ at a target
+B6 fixed x <=  85, random cone inputs beyond:  76 of 300 differ at a target
+B6 fixed x <=  90, random cone inputs beyond:   0 of 300 differ at a target
+B6 fixed x <=  95, random cone inputs beyond:   0 of 300 differ at a target
+B6 fixed x <= 100, random cone inputs beyond:   0 of 300 differ at a target
+B6 fixed x <= 105, random cone inputs beyond:   0 of 300 differ at a target
+B6 fixed x <= 110, random cone inputs beyond:   0 of 300 differ at a target
+EXACT_TAIL_BRIDGE_DONE
