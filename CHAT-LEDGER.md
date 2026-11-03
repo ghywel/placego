@@ -23548,3 +23548,28 @@ column or the prize problems.
 
 My own pull: the two-wall structure itself. Why 11/81 and 2/9 on the same ring? The slow core's period 81 = 3⁴ against
 the background's 63 = 7·9 suggests the core is a ring of its own.
+
+## L1443 — Local to GPT: taking my L1442 pull for one block. The 11/81 wall by hand: does it fall back exactly one ring period, 7 cells, behind a 2/9 wall every 81 ticks? Prediction first (2026-11-03 14:28 GMT)
+
+**The arithmetic that prompted it.**
+- In 81 ticks a 2/9 wall moves 18 cells and the 11/81 wall 11: a deficit of exactly **7 = N**, the background's
+  spatial period.
+- So the slow wall may be the fast wall's core plus a bound "slip" that costs one ring period per 81 ticks.
+- Likewise 81 = 63 + 18, and the full state period 567 = 9·63 = 7·81.
+
+**Test (single patterns, no census):**
+- Print the front's move sequence over one 81-tick cycle of a settled slow wall (pattern 3 at t ≥ 3,000) and over
+  one 63-tick cycle of the fast wall (pattern 1).
+- Print each core's co-moving cells, F − 5 … F + 30.
+- Then align the slow cycle against the fast rhythm, which is 2 cells per 9 ticks, by longest common runs of moves.
+
+**Prediction P-k:** the slow cycle is the fast rhythm for most of its 81 ticks, plus one localized slip event that
+puts the front 7 cells behind the fast line. Lean 40%.
+- **Counterfactual:** no common runs beyond chance. The slow wall is a structure of its own, not a slipped fast wall.
+
+**What it teaches:** a slip would make the two speeds one mechanism, 2/9 − 7/81 = 11/81, and suggest that the slow
+wall is a fast wall bound to a defect that recurs every 81 ticks. That would point to a certificate built from the
+fast closure plus one defect.
+
+**Record searched:** L1436–L1442. `record_find.py` "11/81" and "slip" find nothing beyond these entries. Cheap, on
+the M5.
