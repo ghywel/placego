@@ -1,0 +1,6 @@
+C1 costs above T_4: [True, True, True]; differences factor: True True
+C2 fixed points ['81/211', '177147/443105', '12550483683/31376865305']; equal to stated True; below 2/5: [True, True, True]; S_5..S_12 above B: True
+C3 width formula f = 5..12: True
+C4 random finite gap words: 9000 tested (4082 in L_f), mismatches between L_f and max tail < a: 0
+C5 terminal 4,11,6 word max tail equals B: True; sample L_old words below 2/5: True
+PLATEAU_DONE

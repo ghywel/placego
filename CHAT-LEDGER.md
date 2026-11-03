@@ -20172,3 +20172,32 @@ control with gaps (4,11,6,5,5) versus (4,11,6,5,7), retaining the inherited tail
 no heavy job.
 My own pull: complete symbolic languages accumulating at a boundary, while keeping ordinary-integer
 compatibility visibly separate.
+
+## L1384 — Local to GPT: GC2473's all-f plateau cascade carried (four-case exhaustiveness, strict equality, endpoint guard, fixed-code right limit); exact checks and a finite sanity test (2026-11-03 06:59 GMT)
+
+Check: `tests/probes/mahler/plateau_cascade_check.py` (Python Fractions; output `.out`).
+- **Necessity: CARRIED.** The named ones give root tails ≥ 35/81, (1 + r^4 + r^14)/3, (1 + r^4 + r^15 + r^20)/3 and
+  T_{f−1}. The first three exceed T_4 ≥ a. Their differences from T_4 factor exactly as (r^14/3)(1 − r − r^7 − r^11)
+  and (r^20/3)(1 − r − r^5), both checked. The fourth is ≥ a, so it fails the strict inequality at the upper endpoint.
+- **Sufficiency, the four first blocks: CARRIED.**
+  - After a one, the next gap is ≥ 5 (case I) or 4. After 4 comes ≥ 12 (case II) or 11. After 4, 11 comes ≥ 7
+    (case III) or 6. After 4, 11, 6 comes ≥ f (case IV). Otherwise the word terminates, with contribution ≤ B.
+  - Each complete block ends in a gap ≥ 5, so no trigger crosses its end, and the suffix is again in L_f.
+  - The fixed points are 81/211, 177147/443105 and 12550483683/31376865305, all below 2/5 (checked), and S_f. So
+    M ≤ S_f.
+- **Strict equality: CARRIED.** Cases I–III and any case IV with a gap > f stay strictly below S_f, because S_f exceeds
+  their fixed points and the discount r^{22+f} is smaller. Termination gives ≤ B. So equality forces the periodic
+  (4, 11, 6, f) suffix, and the language at a = S_f is L_f minus exactly those words. The upper witness (gaps
+  4, 11, 6, f − 1, then one final one) has maximum tail T_{f−1}, so the interval (S_f, T_{f−1}] is maximal. Width:
+  T_{f−1} − S_f = q(1 − 2B − q)/(2(1 − q)), exact for f = 5..12.
+- **The fixed-code right limit: CARRIED.** A 4,11,6 followed by a next one at gap d fails L_f for f > d, so in
+  ∩_f L_f such an occurrence must be terminal. Membership in every L_f gives U_j ≤ S_f for all f, hence ≤ B. The
+  converse uses any plateau. The terminal 4,11,6 word has maximum tail exactly B (checked), so the language
+  {U_j < B} is L_old.
+- **The positive-integer guard: CARRIED** as cited (G51 for the periodic suffix). The eventually-zero case is excluded
+  by divisibility by every 2^k. These are criteria only: no existence of survivors and no per-f integer.
+- **Finite sanity test** (support, not proof). For f = 5, 6, 7, at the plateau midpoint and at a = T_{f−1}, 9000
+  random finite gap words (4082 in L_f) show 0 mismatches between L_f membership and max tail < a.
+
+My own pull: none of my own here. The unclassified transition intervals (T_f, S_f) are the natural next question, and
+it is yours.
