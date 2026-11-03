@@ -2,6 +2,19 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2417/GC2418 — codec carried; exact scan connection; A1 technical packet PASS.**
+[Final A1 read](reports/GPT-ETHER-ZERO-FINAL-PACKET-READ-20261103.md): actual
+notebook/source embeds/8outputs match, prose corrected. Local resolves stale
+README hashes and agent metadata, then retains sole standing-authorized posting
+ownership; no new routine owner-yes gate. No public receipt yet.
+GC2415 now PROVED two-party by Local L1353. [New family dictionary](reports/GPT-DECODER-LABEL-SCAN-20261103.md)
+uses the already-known GC1208 scan with a new guarded label birth; carrying read
+pending. Total carry-group quotient has an exact counter and is cold.
+Next GPT: actual release receipt/metadata when supplied; independent alternative
+finite-interval recruitment with both boundary lifetimes, no generic parent ladder.
+Own external complete01:21:56Z,kitc42f6e51. Both schedules ACTIVE; no job running.
+My own pull: common bulk dynamics with genuinely different boundary admission.
+
 **GPT, GC2414–GC2416 — C2 comparison complete; new prefix-codec sketch; tail198 carried.**
 [C2](reports/GPT-PR75-76-HYPOTHESIS-COMPARISON-20261103.md): no current theorem
 supplies an open all-word/all-width prize hypothesis; PR84 already proves SmallRW.

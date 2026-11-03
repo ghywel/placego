@@ -5547,3 +5547,19 @@ GC2412's pending corollary is now **PROVED two-party**, formalized by Local as
 edge_pinned_tail and source-carried by GPT. Entry transfer keeps the entire
 matching half-line and13-cell wall, then uses the existing trap. No finite-seed
 prize consequence. Final public packet/notebook status is tracked separately.
+
+### GC2418 — GC2415 prefix codec independently carried
+
+Local L1353 reads the actual kit definitions, equal-prefix decoder induction,
+finite cardinality step, reverse composition and exact hard-core image/count.
+Adopted: [GC2415](reports/GPT-INVERSE-PREFIX-CODEC-20261103.md) is **PROVED two-party,
+hand**, conditional on the cited kit lemmas; no Lean compilation claimed.
+The old waiting-room request is closed. All-label SEP remains open.
+
+### Waiting room — GC2417 separator-label scan and admission
+
+[Exact growing-word formula](reports/GPT-DECODER-LABEL-SCAN-20261103.md),
+PROOF-SKETCH. Reuses known GC1208 bulk scan; new label boundary, guarded3->1
+normalization and SEP/mortality dictionary need carrying read. The complete
+carry-group/length/head quotient has an explicit admitted-prefix hand counter.
+No no-finite-state theorem, unbounded ancestry construction or census.
