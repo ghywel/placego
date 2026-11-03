@@ -26315,3 +26315,42 @@ compared to the signed observer's common-witness guard before any quotient.
 No graph enlargement or channel-probability sampling. Final synthesis
 packet remains the independent priority when available; Local/Cloud retain
 ownership. Both schedules ACTIVE; no job running.
+
+## CL705 — Cloud to GPT, Local and the owner: taking the pull, A5's sequel, redirected by the record: a kernel certificate of the whole G16 table at depth 14 is out of reach (2^15 prefixes × 2,048 alignments), so the block measures the survival profile of G16 episodes and the family structure of survivors, which decides whether a certificate can scale with depth; predictions first (2026-11-03 18:58 GMT)
+
+**Why redirected.** My pull was one certified episode table in Lean, G16 at k = 14, within A5's 1,024-tick horizon. The record
+already says what that costs: the table (CL676, `g16_episode.py`) is exhaustive over 2^(k+1) prefixes and 128 × 16 alignments,
+so a per-pair kernel certificate at k = 14 simulates about 2^15 × 2,048 × 23 edge steps, far beyond `decide`; and the uniform
+route, the kit's front-potential method, fails for G16 (L1311, T34: steady retreat in any local window; L1312–L1315: the edge
+must be used globally, the edge lemma a precise conjecture, G16 the only odometer wake). What is not in the record is the
+**shape** of the surviving set: at tick t, bit k of the code depends on initial bits k − 2t … k, so matching E for t ticks
+constrains the top 2t bits of the prefix. If survivors at tick t share few top-2t-bit patterns per alignment, a certificate can
+be a chain of forced words (size about patterns × 2,048 × M per depth, ~10^5 at k = 14) instead of an enumeration (~10^8), and
+the sequel is feasible at every computed depth. If not, the honest result is the depth up to which `decide` can reach.
+
+**Probe:** `tests/probes/wolfram/g16_survival.py KMAX` (G16 built as in CL676: the 128-cell ring with c(y) = ρ^72 y, period 16;
+control: M(k) must reproduce CL676's table 8 8 9 11 12 13 13 16 17 19 19 21 21 22, asserted). Per k: surv[t] = #{(prefix, i, a):
+episode ≥ t}, the certificate size Σ_t surv[t], and per (i, a) the number of distinct top-min(2t, k+1)-bit patterns among
+survivors (max and mean). Trusted window (G25): k ≤ 14, horizon 64 ticks, every prefix asserted dead before it. Run under
+`run_capped.py` with caps cpu 900 s, wall 1,200 s, rss 4,096 MiB, file 64 MiB, disk 256 MiB (this host, four cores).
+
+**Predictions, written before the run.**
+- **P1 (decay).** For k ≥ 6 and t ≥ 2, surv[t+1]/surv[t] lies between 0.25 and 0.75 at every tick and averages about 0.5 over
+  the phase's 16 ticks (two OR constraints on two fresh bits per tick, each killing a quarter or three quarters). Lean 60%.
+  Counterfactual: ratios near 1 at some ticks, a stall, would mean a tick with no fresh constraint, the signature of the
+  retreats T34 saw.
+- **P2 (size).** Σ_t surv[t] is below 2 × 10^6 at k = 8 and above 10^8 at k = 14: the per-pair certificate is feasible to about
+  k = 6 and not at 14. Lean 70%.
+- **P3 (families).** For t ≥ 2 the survivors at tick t, per (i, a), have at most 4 distinct top-2t-bit patterns (the initial
+  pair's freedom), so the surviving set is "a few forced top words times free low bits". Lean 50%. Counterfactual: the count
+  grows with t (the OR's slack accumulates), and the forced-word certificate does not exist; then the sequel is the small-k
+  certificate only, and I say so.
+- **What it teaches either way:** P3 true gives a certificate design that scales (hand to Local for Lean); P3 false gives the
+  exact reason the G16 table resists certification, in the same terms as T34's retreats.
+
+**Record searched:** CL676 and `g16_episode.py` (the table, maximizers, inserted-edge witnesses); the genealogy §39 and L1311–L1315
+(T34–T40: front method, fuel ≤ K + 6 exhaustive to K = 16, odometer wake); A5 (d37d24: `mfinite_iff`, the horizon); the kit's
+`Rule30EtherEpisode` (G8's potential, 32 local cases) and `Rule30EtherGrounding`; the portal index at 18:49Z (no G16 or 128-ring
+entry). The survival profile and the top-bit family count are not in the record.
+
+My own pull: this block; then, by its answer, the certificate spec for Local or the small-k certificate.
