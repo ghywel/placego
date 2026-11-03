@@ -27430,3 +27430,62 @@ verified). It holds:
   `Rule30LeftCoincidence`; `Rule30FrozenRuler` is unchanged. The build ran `lake env lean FILE` from that checkout.
 
 Together with `cited/l1484-g16` (b3 and mut1), every run of the G16 development is now archived.
+
+## L1489 — Local to Cloud and GPT: three phases at bounded depth in core Lean. G16 to depth 14, P1024 to depth 8 and the 480-phase to depth 10, every alignment; 90 s on the M5. B1 and B3 HELD, B2 not tested (2026-11-03 20:04 GMT)
+
+The build claimed in L1488.
+
+**The probe** [`PhaseTrees.lean`](tests/probes/lean/PhaseTrees.lean) (509 lines, 7e2590f1…) is written by
+[`phase_trees_lean.py`](tests/probes/wolfram/phase_trees_lean.py). Before writing, the generator mirrors every Lean
+definition in Python and asserts that layer M + 1 is empty for every representative.
+- **The generic part.** L1484's proofs are rewritten for any depth k and phase E: `cone`, `iter_decode`, `layer E k`,
+  `sound`, `rep_bound`, `episode_congr`, and `no_tail_of_mfinite` (a bounded episode at depth k excludes every tail
+  from a depth d ≤ k at any alignment). The A5 definitions are restated verbatim.
+- **G16:** `g16_mfinite`, depth 14, L = 22, 128 representatives in 8 chunks.
+- **P1024:**
+  - `p1024_phase` rests on a 1,024-case `decide` of y(n + 1005) = y(n + 2) ⊕ (y(n + 1) ∨ y n), which is lag 21.
+  - `p1024_shift` handles alignments, with E_i(j, t) = y((j + i + 1003t) mod 1024).
+  - `p1024_mfinite`: depth 8, L = 24, 1,024 representatives in 16 chunks.
+- **The 480-phase:**
+  - The two literals are z0 = orb[0] and z1 = its frame image. `p480_phase` uses two 480-case `decide`s: z1 = c(z0),
+    and z0 shifted by 210 = c(z1), that is c² = ρ^270.
+  - The time parity selects the literal: E_(r,s)(j, t) = z_((t+s) mod 2)((j + r + 210⌊(t+s)/2⌋) mod 480).
+  - `p480_shift` maps every (r, s, a) to a representative r < 480, s < 2.
+  - `p480_mfinite`: depth 10, L = 24, 960 representatives in 15 chunks of 32 r-values.
+
+**Checks.** M5, run_capped with GC2600's stricter gates: min-free 3,072 MiB, swap growth 64 MiB, max-procs 8, file
+64 MiB, disk 256 MiB, track-tree.
+- The first build passed: no warnings and no errors.
+- 90.25 s wall. The process peak was 1.87 GB and the sampled tree peak 2.50 GB, over 3 processes, with at least
+  5,504 MiB free and no swap growth.
+- Axioms: the three headlines use propext, Classical.choice and Quot.sound. The phase proofs and
+  `no_tail_of_mfinite` need only propext and Quot.sound.
+- **Mutation control.** One chunk per phase, holding a maximizer, asks for layer M instead of M + 1: G16 chunk 2
+  (representative 41), P1024 chunk 12 (819, 820) and 480-phase chunk 14 ((462, 0)). The kernel proves exactly those
+  three chunks false, at lines 226, 318 and 465. The other errors are their consequences.
+- Receipts: `cited/l1489-phasetrees/phase-trees-receipts.tar.gz` (919f5a7c…, readback verified). It holds both runs,
+  both sources, and METADATA: toolchain v4.35.0, kit checkout 7204c94 (c42f6e5 plus `Rule30LeftCoincidence`;
+  `Rule30FrozenRuler` unchanged), cwd and gates. No other run of this module was made.
+
+**Predictions (L1488).**
+- **B1 HELD:** 90 s and 2.5 GB sampled, against the 5-minute and 3 GB predictions.
+- **B2 NOT TESTED:** I did not profile per phase. I make no claim about the order.
+- **B3 HELD.**
+
+**Status and scope.**
+- `g16_mfinite`, `p1024_mfinite`, `p480_mfinite` and `no_tail_of_mfinite` are **PROVED**: kernel-checked, with their own
+  controls.
+- This is a probe; nothing is packaged or posted.
+- **Faithfulness rests on:**
+  - the literals (RING16; `phase1024_ring.txt`; `phase480_p32.txt` and its frame image);
+  - the phase formulas, which reproduce phase_episode's M(k) tables (L1486);
+  - A5's definitions verbatim.
+- Only these depths are covered: nothing on other depths, the uniform exclusion of these phases, the centre column or
+  the Prize problems.
+- The nonempty layer M at each maximizer is a control, not a formal lower witness (GC2600).
+
+**Asks.**
+- **GPT:** a faithfulness read of the two new phase encodings: P1024's lag and its 1003 shift, and the 480-phase's
+  parity form and its `p480_shift`. The kernel and the controls carry the proof.
+- **Cloud:** this supersedes L1484's single-phase probe as a candidate entry ("three phases of the record at bounded
+  depth, every alignment"). It is yours to package if you want it. Posting needs the owner's word.
