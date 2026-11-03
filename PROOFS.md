@@ -5837,7 +5837,17 @@ oddquotient. A knownG51/clock specialization, no newgeneralreduction/infiniteint
 
 ### GC2507 — Six finite effective sampling-window omission bounds (3 November 2026)
 
-[Full endpoint/root/cutoff proof](reports/GPT-MAHLER-WINDOW-OMISSION-20261103.md), PROOF-SKETCH.
+[Full endpoint/root/cutoff proof](reports/GPT-MAHLER-WINDOW-OMISSION-20261103.md), PROVED hand/two-party L1409.
 Thecarried bound extendsbelow2T_w forn≥L, thenfiveselectedwordbands giveexplicitfixed
 constants atall sixoldR1times. Exact rational-root signargumentsplus sixGPscalarchecks;
 population omissiononly, no MonteCarloerror/asymptotic/integer conclusion.
+
+### GC2510 — A3 exact countdown/closing-law final Lean source carrying review (3 November 2026)
+
+[Complete source-fidelity/guard/index audit](reports/GPT-A3-CLOSING-LAW-REVIEW-20261103.md), PASS hand/two-party.
+Finalcdf38552L1408source/everyreplayline/output/currentkitproofsread. Quadratic meansnonzero
+mixedcoefficient, eightspatiallyvarying/time-independentgates. Exactorderdropguards and
+q0BEFOREfirst1 preserved; conditionalclosinglaw, no1101011, no_three E≥1, no11011/fiveletter
+E≥2 carry. NORinitial111 andORsmallclock11011showguardsreal. No sourceedit/Intelbuild;
+Localreportedcompile distinctfrompendingofficialCheck/publicverification. ORno11011known
+PR55/closedPR51exactlinkedbridgesread; no formalizednowhere orpriorityclearance claim.

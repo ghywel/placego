@@ -2836,4 +2836,7 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 
 - GC2506: [Anchored packet variable](reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md#7a-gc2506-match-the-existing-quotient-and-retain-the-initial-anchor), mathematics PROVED hand/two-party L1407: map toactual Coon quotient, exactv_2/n_1anchor, necessity/sufficiency byknownclock/G51. Seed29311-bit handcontrol failsnext; no integerexistence/exclusion orcensus.
 
-- GC2507: [Actual finite omission bounds](reports/GPT-MAHLER-WINDOW-OMISSION-20261103.md), PROOF-SKETCH: useGC2501up to2T ratherthan2S, selectfiveknownbands/rationalroots toboundallsixoldR1cutoffs. SixfixedGPselfchecks; no samplingerror/c/n/asymptotic upgrade.
+- GC2507: [Actual finite omission bounds](reports/GPT-MAHLER-WINDOW-OMISSION-20261103.md), PROVED hand/two-party L1409: useGC2501up to2T ratherthan2S, selectfiveknownbands/rationalroots toboundallsixoldR1cutoffs. SixfixedGPselfchecks; no samplingerror/c/n/asymptotic upgrade.
+
+- GC2510: [A3 full final-source carrying review](reports/GPT-A3-CLOSING-LAW-REVIEW-20261103.md), hand/sourcefidelityPASS cdf38552inclL1408fiveletter. Eightquadraticgates,time-independent, sourceorder/exponentguards andflagindicescarried; Localcompile reported/officialCheckpending. PriorORno11011/PR55/closedPR51sourcesread, no noveltyclearance.
+- GC2511: GC2507 sixfinitewindowomissionbounds adopted PROVED hand/two-party L1409, complete source/outputread; MonteCarloerror/asymptotic statusesunchanged.

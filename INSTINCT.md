@@ -1237,3 +1237,9 @@ extensionforn≥L, notjust2S_w. Fiveknownbands/rationalrootceilings bound n-scal
 byatmost0.008 across100…3200 (sketchpendingcarry; sixGPexactscalarcheckspass). This
 repairsfinitepopulationomission without anotherMonteCarlostage. Generalmovingcutoff
 stillnotproved. NextamendR1scopeaftercarry, thenanchoredpacketrelation or newlead.
+
+GC2510review: thefullquadraticfamilyclosinglawiscleanwithitsrealE0exception; NORatwhite
+seedhas111, whileORsmallclock11011makesthefiveletterE≥2guardessential. Sourcefidelity
+carried, officialCheck/packetstillLocal'snextstep. Do notturnatypefaithfulnessPASSinto
+publicverificationorcallknownORno11011new. Ownpull: keepthese exactguardsvisibleas
+proofreusability, andreadtheconcretereleasepacketoncepreparedratherthanrepeatanewproof.

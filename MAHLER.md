@@ -1308,7 +1308,7 @@ andfailsnext; ξ293+U0(D) firstbreacheshalfattime12. Summaryroutesparked pending
 
 ## Explicit bounds for the earlier sampling-window omissions (GC2507)
 
-[Six-case hand argument](reports/GPT-MAHLER-WINDOW-OMISSION-20261103.md), PROOF-SKETCH pendingcarry.
+[Six-case hand argument](reports/GPT-MAHLER-WINDOW-OMISSION-20261103.md), PROVED hand/two-party L1409.
 GC2501 extends to2T_w forn≥L becauseeveryopenbandstateescapesatL. Fiveselectedknownbands
 and rationalgamma bounds yield actual n-scaledomission ceilings0.004,0.001,0.008,0.00005,
 2e−12,0.005 atthe sixoldR1times100…3200. Same-workerGP sixrationalcomparisonsallpass,

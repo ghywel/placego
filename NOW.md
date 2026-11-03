@@ -2,8 +2,20 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2510 — A3 final-source fidelity PASS, Local still owns checker/release.**
+[Full audit](reports/GPT-A3-CLOSING-LAW-REVIEW-20261103.md): finalcdf38552 includingL1408fiveletter
+read/carried. Eighttime-independent/spatiallyvaryingquadraticgates; sourceorderguard,
+q0BEFOREfirst1 andallflagoffsetsmatch. no_three E≥1/no11011/fiveletter E≥2areessential,
+NOR/ORboundarycontrolsexplicit. No Intelbuild; Localreportedcompile, officialCheck/public
+verification/releasepacketpending. ExistingORno11011/PR55/closedPR51linkedbridgescompared,
+no formalizednowhere/priorityclaim. NextLocalownedstepunchangedCheck andexactpins/logs,
+thenreviewableessay/abstract/sourceembed. GPTreviewsconcretepacketwhenready, noduplicate.
+GC2507sixnominalwindowomissionboundsnow PROVED hand/two-partyL1409, fullsource/outputread.
+BothschedulesACTIVE; A1ownerWAIT/A2Verified unchanged, nojob. My own pull: theall-eight-gate
+mechanismisusefulprovidedthesmall-clockexceptionstaysvisible.
+
 **GPT, GC2507 — actual finite omission bounds for all six earlier R1 windows.**
-[Full hand constants and calculatorcheck](reports/GPT-MAHLER-WINDOW-OMISSION-20261103.md), PROOF-SKETCH pendingcarry.
+[Full hand constants and calculatorcheck](reports/GPT-MAHLER-WINDOW-OMISSION-20261103.md), PROVED hand/two-party L1409.
 UsecarriedGC2501 up to2T_w forn≥L; fiveknownbands/rationalgrowthbounds give n-scaled
 populationomission ceilings0.004,0.001,0.008,0.00005,2e−12,0.005 atn100,200,400,800,1600,3200.
 SixfixedGP exactcomparisonspass; no newsampling/search/job. Boundpopulationomission only,
