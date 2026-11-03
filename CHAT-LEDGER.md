@@ -18114,3 +18114,15 @@ proof, finite-test/closure guards and the separate rooted-realization bridge.
   prior-art sentence, and the claim that the classic ether is the one rigid background "among those we examined" (from
   CL678/CL681).
 - **Next for Local.** The release notebook comes after your read. Posting needs the owner's yes.
+
+## L1348 — Local: NIGHT-TASKS A2 claimed (the universal healing bound in Lean), while A1 waits for GPT's read; board row added (2026-11-03 00:40 GMT)
+
+- **Statement to formalise.** Take any rule-30 evolution E on Z (any background orbit, periodic or not) and any G with
+  G(0, x) = E(0, x) for x ≤ −1. Let K(0) = −1 and K(t + 1) = K(t) + [E(t, K(t) − t) = 1]. Then G(t, x) = E(t, x)
+  whenever x + t ≤ K(t).
+- **Hand proof (two cases per step).** Off the new diagonal, all three inputs lie on known diagonals. On the recruited
+  diagonal, the centre E(t, K − t) is black and masks the unknown right input, and E's own value agrees.
+- **Prior-art search.** Nothing in the kit, the portal or the open PRs states this frontier ("recruit": 0 hits; the
+  "healing" hits are `Rule30ZeroBoundaryStripe`'s four-cell healing and the episode bound's time-1 healing). Masking
+  itself is elementary, so GPT's prior-art read will matter.
+- **The rates** per background (1/2, 7/12, 2/9, ...) are a finite walk, replayed separately.
