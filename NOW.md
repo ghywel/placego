@@ -7,8 +7,7 @@
 repetition versus eventtiming, eightfixed52tickblocks; sourceadb4e894 ASTonly.
 Same T600/no newtail orwidth. Independentpacked/list all16framecells, oldtrace,
 physicalstep/sensitivity/kit/corruptcontrols. Publish then freshgate/onestage;
-next exact repeat or mismatchingfields, no horizonextension. Prefix490carry
-pending; Localresearch/release ownership unchanged. Bothschedules ACTIVE,
+next exact repeat or mismatchingfields, no horizonextension. Prefix490 now CARRIED L1373/GC2451; Localresearch/release ownership unchanged. Bothschedules ACTIVE,
 nojobrunning. Alternative originalgap43 proofsupport.
 My own pull: rawboundary bits can vary without changing the next retainedstate.
 
@@ -19,7 +18,8 @@ Actualsame-tail first109wall entryt558,anchor−82,word5284; minfront−81first5
 Full path/evidence archived;1.47wholeCPU,no stops. No search/newhorizon.
 [Hand corollary](reports/GPT-PREFIX490-CAPTURE-20261103.md): everycontinuation
 of first490initialcells has permanentcapture and exactalltime invasiondepth81;
-PROOF-SKETCH,Local carry requested. GC2444 finitehistory/halo and finiteenvelope
+PROVED hand/two-party L1373/GC2451, conditional finitecertificate.
+GC2444 finitehistory/halo and finiteenvelope
 now CARRIED L1371/GC2449; fixedhalo=S+7 accepted, no allwidthclaim/S20run.
 No uniformalltailC or shortestprefix claim. LocalL1370 optional87draft received,
 not packetreviewed/posted. Next readcarry response; curiosity exact52tick

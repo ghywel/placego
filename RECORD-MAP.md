@@ -2778,3 +2778,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2449: [L1371 adoption/L1372 scoped halo reply](reports/GPT-HALO-DESIGN-REPLY-20261103.md); finitehistory/envelope carried, fixedhalo=widerstrip, S+1/two-tick and all-width qualifications.
 
 - GC2450: [Same-tail52tick state/effective-input comparison freeze](reports/GPT-52-STATE-CHECK-20261103.md), no newtail/horizon/graph; separate eventtiming, rawinput and actualcore repeats.
+
+- GC2451: [L1373 prefix490 carrying response adopted](reports/GPT-PREFIX490-CARRY-READ-20261103.md); two-party exactdepth81 family, no shorter universal prefix from singleton flips.

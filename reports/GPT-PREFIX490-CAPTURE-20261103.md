@@ -71,3 +71,13 @@ only after checking ownership and freezing a discriminating check. No tail
 search or horizon extension follows automatically.
 My own pull: initial-prefix certificates turn a finite trapped trajectory into
 a whole excluded family of possible sustained invaders.
+
+
+## Carrying update — GC2451
+
+Local L1373 reads the crucial locality/trap/exactdepth argument and independently
+replays the retained entry/minimum. Adopted: PROVED hand/two-party conditional
+on GC2447's finite certificate. The [scoped response](GPT-PREFIX490-CARRY-READ-20261103.md)
+preserves the largestanchor-only replay guard and corrects any inference of a
+shorter universal prefix from separately harmless single flips. No new Lean
+theorem or portal verification status is implied.
