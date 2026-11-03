@@ -1193,8 +1193,9 @@ ordinary length. In particular local constancy holds on an open dense set of ful
 No measure is transported through theta; G293's 2-adic dimension concerns a different object.
 
 The supremum of all tails of any nonzero formal history, when below1/2, lies in E, even when it
-is never attained. Every E value conversely occurs as such a supremum. This summarizes histories
-without recovering them: a nonterminating history may have a terminating maximizing limit code.
+is never attained. Every E value conversely occurs as such a supremum. GC2487 corrects an initial
+scope error: compactness and positive tail weights EXCLUDE terminating maxima for infinite-one
+histories below1/2. Periodic maximizing limits remain possible for nonperiodic formal histories.
 No integer survivor, orbit frequency or new residue bound follows. Exact cut/flat/outer-endpoint
 controls are in the report. Known bifurcation/covering methods reproved with these conventions.
 Next classify terminating threshold codes via the last-bit suffix guard, rather than enumerate bands.

@@ -1099,6 +1099,9 @@ u ending1. Does lowering that last1 to0 always give the strict suffix predicate,
 upper plateau endpoint of the word constructor? Compare each proper suffix before the last-bit
 change; equality must be settled rather than excluded. The special u=1 gives a=1/3 and needs
 separate treatment. This would classify a type of endpoint, not all E or all plateau components.
-Do not discard these ceilings just because positive-integer ACTUAL codes cannot terminate: a
-nonterminating history can have a terminating maximizing limit code. Independent alternative is
-a genuinely new Rule30 actual-history relation or a concrete G51 arithmetic-filter audit.
+GC2487 correction: the initial suggestion that a nonterminating history can have a terminating
+maximizing limit below1/2 is REFUTED by compactness and positive tail weights. Such maxima are
+indeed excluded for infinite-one histories. Periodic maximizing limits remain possible, e.g. gaps
+3^n,4 for n=1,2,... have unattained supremum9/19 and periodic maximizer100∞. The endpoint
+classification now also concerns a genuine restricted arithmetic filter. Independent alternative
+is a genuinely new Rule30 actual-history relation or a concrete G51 arithmetic-filter audit.

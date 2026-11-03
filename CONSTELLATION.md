@@ -1716,5 +1716,6 @@ Rule30 memory law or integer-realization result is inferred.
 A finite upward escape certifies a whole interval with unchanged formal language. Possible all-tail
 suprema below13/27 lie in a zero-length real parameter set, even when the supremum is not attained.
 This is a constraint on maximum values, not an inverse reconstruction of histories or an integer
-existence theorem. A terminating threshold code can be a limiting maximizer of a nonterminating
-history; arithmetic restrictions on actual codes do not automatically restrict their closure.
+existence theorem. GC2487 corrects the initial terminating-limit claim: uniform sub-half bounds
+and positive weights exclude terminating maximizing limits for infinite-one histories. Periodic
+maximizing limits do remain possible for nonperiodic histories; the two filters differ.

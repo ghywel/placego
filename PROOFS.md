@@ -5757,3 +5757,9 @@ the non-local-constancy set and the set of possible all-tail suprema below1/2 fo
 Below beta_g, g≥3, the direct gap-word cover gives zero ordinary length and dimension at most
 log(lambda_g)/log(3/2)<1. No metric transport, ordinary-integer existence or frequency assertion.
 Known self-survival/covering machinery, independently specialized; exact controls are self-checks.
+
+GC2487 correction: the initial terminating-maximizer scope claim is REFUTED. Compactness gives
+a maximizing limit word with all tails≤s<1/2; if it terminates at u, a shift of an infinite-one
+history sharing u has a positive extra tail, contradicting the bound s. Terminating maxima are
+therefore excluded for infinite-one histories. Nonperiodic formal gap histories3^n,4 show that
+periodic maximizing limits remain possible. This correction/lemma also awaits carrying read.
