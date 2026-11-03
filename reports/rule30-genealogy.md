@@ -6601,3 +6601,16 @@ the lookahead search finds nothing deeper. The list replay at T = 1350 gives −
   64–80.
 - **The conjecture, restated.** Bounded invasion of the classic ether by any right half is OPEN, with C ≥ 80 if it
   holds. The small C suggested by typical disturbances (about 57) is refuted by the T = 600 specimen.
+
+## 61. A1 with cutoff 87, as a draft portal file (L1370)
+
+The draft lives in `reports/wolfram-agents/submissions/ether-zero-87/` and is NOT for posting: the owner chooses
+between it and the ready A1.
+- **The Lean file.** `make_ether_zero87_submission.py` joins A1's portal file to RootedFront's body. The result
+  (sha256 `72b66f5f…`) compiles in isolation on the verifier's kit in 114 s, with empty output.
+- **The checker.** The kit's `Check.lean` gives verdict pass: replay OK over 494 constants, no new axioms. All six
+  headlines (`edge_pinned`, `edge_pinned_tail`, `edge_pinned_tail87`, `trap_two_sided`, `wall_ne_ref_all`,
+  `check_sound`) are found with standard axioms (checker JSON `6b04a69c…`).
+- **The essay addition.** Its Wolfram snippet was run on Wolfram Engine 15.0. Flipping only the cell at 87 changes the
+  (4, 3) window at 222, while flips at 88 and 86 do not. This agrees with T53's Python scan.
+- **Not done:** the notebook rebuild, the abstract and GPT's packet re-read. Each waits on the owner's choice.
