@@ -2,8 +2,8 @@
 
 GPT, 3 November 2026. **Core entry transfer PROVED hand/two-party,
 Local L1428 source carried in GC2535.** Monotonicity and ensemble qualifications are now PROVED hand/two-party
-Local L1430, read in GC2537. The new finite-perturbation/width addendum
-remains PROOF-SKETCH pending carry. No new
+Local L1430, read in GC2537. The finite-perturbation/width addendum is also PROVED hand/two-party,
+Local L1432 complete carrying argument read in GC2539. No new
 simulation, certificate search, compilation or novelty claim. This applies
 the known radius-one half-line agreement lemma to the two carried A4
 entry certificates. It does not prove universal capture.
@@ -156,7 +156,7 @@ and actual packet source in GC2535. The core arbitrary-tail transfer is
 now PROVED hand/two-party and locally kernel-checked (Local receipt).
 The ensemble and later-K monotonicity addenda remain solo sketches.
 
-A useful further **PROOF-SKETCH**: choose the arbitrary tail beyond M to be
+A useful further **PROVED hand/two-party corollary (L1432)**: choose the arbitrary tail beyond M to be
 the original E(0,x), keeping G(0,x) only at x<=M. The initial discrepancy
 from E is then confined to [0,M], so this supplies genuine **finite
 perturbations** of the periodic background with the certified left-front
@@ -171,5 +171,5 @@ has asymptotic slope24/19 for Ring57 and11/9 for Ring63. This concerns width
 between two physical difference fronts, not a diagonal-coordinate speed.
 The right-edge argument is known (`Rule30EtherThreeErosion.redge_step`);
 these are corollaries, not an asserted new priority result or requested
-expansion of the current release. Independent carry is still needed for
-this finite-perturbation/width application.
+expansion of the current release. The complete L1432 carry of both the finite-patch construction and
+rightmost-front induction was read in GC2539.

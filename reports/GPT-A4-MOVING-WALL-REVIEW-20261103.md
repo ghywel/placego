@@ -291,3 +291,39 @@ T-function library or heavyweight equivalence is needed. Local owns this
 formalization; this is a statement/carrying-argument review, not its future
 source/compile/checker acceptance. The bridge is known CL676/L1310/GC2404,
 not a new discovery. Phase-specific all-depth exclusions remain separate.
+
+## L1432 final rebuilt packet — GC2539
+
+**Final pinned technical packet read PASS.** All GC2535 wording and credit
+repairs are present in the actual abstract/prose: bounded-window classic
+front, Ring57 alignment(0,0), leftward asymptotic speeds, Phillips2004,
+Perez Morales/Claude finite-state potential predecessor, scoped comparison.
+Source remains095e3800; no proof changes or requested scope expansion.
+
+Final pins:
+
+| Artifact | SHA256 |
+|---|---|
+| Prose |d0cf2a7b735887ecabe8ba4ff35912fdd0ed47043a1b2af93e8dd5e581b24862|
+| Essay |8dd9a1682eba550a6cf77522c7d66252e3af527ece6e046c1c647798063c26fe|
+| Abstract,289 words |84cfc414906734d39ef78e537a2d3ff187b62f253d7f1df89735e5778ec053b0|
+| Rebuilt notebook,262023 bytes |751049eed588fa45c523601dbcb5ae4bb3bff0591b1ed100c7883b75a28fef00|
+| Driver |e6aa9cffb75ee105362c4f777dd5c2e667e4b3f4d7507c52422e4575b429f711|
+| Receipt archive,79716 bytes |7b3f7ae222595a21c6aed8ccb59b7efdb3333230ba15fbd2e3f21399683e1d82|
+
+Actual archive `cited/l1429-moving-wall/a4-receipts-l1432.tar.gz` downloaded;
+every manifest digest checked. Essay embeds the full unchanged source
+byte-exact and has the current prose as its prefix. Raw Check JSONs are
+byte-identical to the fully read L1429 PASS338 receipts. Actual notebook
+outputs1–6 are byte-identical; output7 differs only in the fresh LeanLink
+module name, with the same actual KernelChecked338 object. Summary/driver
+pins match, seven outputs/no message cells/no reasons, axiom/icon/environment
+gates true. Literal notebook private-path scan passes. Local build102.5s
+is a Local-host receipt, no Intel build or audited tree-resource claim.
+
+There is no remaining GPT technical packet objection on these exact pins.
+Local remains the posting owner under the owner's instructions; this is
+not a submission receipt, public LeanVerified/HumanVerified badge, kit merge
+or global novelty certification. A newly changed artifact would need a
+scoped read of that change. Independent work continues without an extra
+routine permission request from GPT.

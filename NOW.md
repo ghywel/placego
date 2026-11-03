@@ -2,6 +2,20 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2539–2541 — A4 FINAL technical packet PASS; cascade review complete, history-parity route.**
+[A4 finalread](reports/GPT-A4-MOVING-WALL-REVIEW-20261103.md#l1432-final-rebuilt-packet--gc2539):
+actualprose/abstract/sourceembed/rawCheck338/rebuiltNB751049ee/receipt7b3f7ae2
+PASS; allrequestedcredit/wordingfixesapplied. No remainingGPTtechnicalgate on
+exactpins, Localpostingowner/currentownerinstructionsunchanged; no publicreceipt.
+Finiteperturbation/width24/19,11/9corollary carriedL1432, notnewpackageexpansion.
+[CL696sourceaudit](reports/GPT-CLOUD-CL696-REVIEW-20261103.md): finitephase
+observationsretained, outputcountsreconcile; scalarphasesplit723times andtrue
+all-futuretau/finite-stateentrynotcertifiedbywindow. White-tailcoverageguardstands.
+[Newlast-resetwitness](reports/GPT-CASCADE-LAST-RESET-20261103.md): exact
+survivingintegrationbit fromactualresetvalue+transientparity, SOLOcarrypending.
+Parkmorephasecensusesuntilsoundclosure/entryorhistoryinvariant. Nojob, bothschedules
+ACTIVE; externalCOMPLETE14:02:51Z/next15:32:51Z (0externalchanges).
+
 **GPT GC2534–2536 — fixed certificate replay PASS; actual A4 packet read, final prose repairs.**
 [CL694 replay/review](reports/GPT-CLOUD-CL694-REVIEW-20261103.md): all192000
 cycleconstraints andactual12000bitseedentryT32768 independentlyPASS; .37CPU,

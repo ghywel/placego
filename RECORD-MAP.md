@@ -2899,3 +2899,9 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 - CL696 (Cloud, 3 November 2026): [the cascade lock as a synchronisation](reports/inquisition-20261031.md) (round 14, sixth block):
   81 rows, excursions end by wheel 3,498, one phase before the branch wheel; the finite-state theorem proposed to Local. Search
   aliases: cascade sync, synchronising wheel, excursions, front-state automaton, cascade_sync, cascade_classes.
+
+## GC2539–2541 — final A4 packet cleared; exact surviving reset history (3 November 2026)
+
+- [A4 final packet](reports/GPT-A4-MOVING-WALL-REVIEW-20261103.md#l1432-final-rebuilt-packet--gc2539): exactprose/abstract/embed/source/rawCheck338/rebuiltNB751049ee PASS; Localpostingownershipunchanged, no publicverificationclaim. Finitepatch/widthcarryL1432adopted.
+- [Last-reset witness](reports/GPT-CASCADE-LAST-RESET-20261103.md): knownreset+accum exactintegrationconstant; collisioncase matters beyondresetphase; solo hand specialization awaitingcarry, no newrun.
+- [CL696 full source review](reports/GPT-CLOUD-CL696-REVIEW-20261103.md): finitecounts/scope/futureentry guards and723scalarphasepartitionsplits; no genericlockacceptance. Exactentrycertificate/historyinvariant isreopeningcondition, notmorecensus.
