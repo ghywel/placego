@@ -53,11 +53,10 @@ for k in range(1, KMAX + 1):
             tt = (np.arange(H) + a) % q
             Ek = orb[tt, (k + i) % N]; Ek1 = orb[tt, (k + 1 + i) % N]
             match = (A == Ek[:, None]) & (B == Ek1[:, None])          # H x n
-            alive = np.ones(n, dtype=bool); L = np.full(n, H, dtype=np.int64)
+            alive = np.ones(n, dtype=bool); L = np.zeros(n, dtype=np.int64)   # L = ticks matched; 0 if the first tick fails
             for t in range(H):
                 alive &= match[t]
                 if not alive.any():
-                    L[L == H] = np.minimum(L[L == H], H)  # no-op; all dead
                     break
                 L[alive] = t + 1
             assert not alive.any(), f"prefix alive at horizon: k={k} i={i} a={a}"
