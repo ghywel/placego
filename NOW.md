@@ -2,34 +2,26 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT GC2570/2571 — root-only tick19 explanation found; independent carry requested.**
-[Two-rule tableau](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#root-only-implication-found--gc2570):
-ordinary masking+a10 prove target black from a25-cell word alone; no
-path reads or final strip bit16. Fixed extraction/check PASS,0.21whole CPU;
-new arbitrary-exterior word statement awaits Local carry. No solver/job.
-[Signed monitor sketch](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#signed-two-tick-boundary-forecasts--gc2571-proof-sketch-not-built):
-at most15 states, white/black obligations, joint-input conflict guard when
-composed with0011 monitor. Not built, no all-path closure. Local owns builds.
-Next GPT: read requested carries/A5 replies; inspect existing proof's
-boundary crossings to choose obligations before any new product test.
-Both schedules ACTIVE; external COMPLETE16:34:54Z.
+**GPT GC2570–2572 — root-only explanation found; new A5 nb2 received.**
+[Root tableau](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#root-only-implication-found--gc2570):
+a 25-cell word forces the tick-19 black cell, arbitrary outside the word,
+with no path reads. Frozen finite derivation PASS, 0.21 whole-stage CPU;
+new word implication and signed 15-state monitor await Local's carrying read.
+No running job; Local owns closure builds. GC2569's single run is complete.
 
-**GPT GC2569 — one fixed root-only forcing trace frozen, NOT RUN.**
-[Prediction and limits](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#root-only-forcing-trace-extraction--gc2569-freeze-not-run):
-ordinary masking plus known a10 on the backward cone of (19,10), no path
-reads or solver. Source69572b84; worker3CPU, runner30wall/256MiB/max3,
-existing pressure stops and whole-stage accounting. Publish before launch.
-A5 technical PASS stands; Cloud read/owner word separate. Local owns builds.
-
-**GPT GC2568 — A5 actual nb1 technical packet PASS.**
-[Full read](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md#l1465-actual-nb1-packet-read--gc2568-technical-pass):
-lcm source1424706a/portal69391dbf, prose/abstract, source embed and all7
-actual notebook outputs0e338163 PASS; both raw Local Checks74/six headlines.
-No Intel build or public verification. Cloud's separate read and owner's
-posting word remain required under L1467; Local owns delivery. Missing
-archive manifest row is repaired by GPT's own digest-read provenance.
-Next GPT: root-only tick19 causal explanation, no duplicate solve/build.
-External COMPLETE16:34:54Z/next18:04:54Z. Both schedules ACTIVE; no job.
+[Cloud review adoption](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md#cl699-wording-correction-adopted--gc2572):
+CL699 caught the ambiguous "below some depth" wording I missed in GC2568.
+Its old prose clearance is superseded; the mathematical checks stand.
+Local L1468 has applied the repair and optional credits/scope, rebuilt A5,
+and supplied nb2. **GPT now owns the changed-source/actual-nb2 re-read**;
+receipt is not acceptance. Local retains build/posting; owner word separate.
+[CL700 synthesis read](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#cl700-revised-synthesis-read--gc2572):
+major corrections accepted; restore actual-anchor review in PLAN, qualify
+introductory verification scope, pin the two empirical constants' samples.
+Cloud owns prose and the older source audit. No duplicate anchor build.
+Next independent route: inspect existing proof boundary crossings to select
+coloured obligations before any product test. No new census/solver/retry.
+Both schedules ACTIVE; last external COMPLETE 16:34:54Z, next 18:04:54Z.
 
 **GPT GC2567 — six-flag monitor carried; A5 packet review is next.**
 L1466 complete hand carry read: forecast updates, input wildcard guard,

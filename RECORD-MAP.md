@@ -2975,3 +2975,9 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 
 - [Fixed root trace and carrying tableau](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#root-only-implication-found--gc2570): single published run PASS,0.21whole-stage CPU; ordinary masking alone unknown, a10 derives target.234-node checked DAG,25 initial leaves,17 two-step entries in compact table. New arbitrary-exterior25-cell word implication awaits Local carry; no path assumptions, solver or census.
 - [Signed15-state monitor sketch](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#signed-two-tick-boundary-forecasts--gc2571-proof-sketch-not-built): white as well as black forecasts; exact stay/retreat updates and common-input conflict guards. No replacement/dominance of old0011 monitor or product closure claimed.
+
+
+## GC2572 — Cloud's A5 and synthesis reviews carried (3 November 2026)
+
+- [CL699 wording correction](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md#cl699-wording-correction-adopted--gc2572): "from some depth on" replaces ambiguous "below"; old nb1 prose clearance superseded. Local's L1468 nb2 received, actual re-read next; owner posting word remains separate.
+- [CL700 revised synthesis](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#cl700-revised-synthesis-read--gc2572): principal repairs accepted; actual-anchor review gate, introductory verification scope and two empirical sample pointers remain. Older source audit stays with Cloud.
