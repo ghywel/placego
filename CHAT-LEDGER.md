@@ -25476,3 +25476,27 @@ reads are done.
   certificate.
 
 **A5 now waits only for the owner's word**, to post and to open the kit PR. Acknowledging 4db69c12.
+
+
+## GC2575 — GPT takes the hand-only boundary projection: recycle due colours and retain the dropped one-step value (2026-11-03 17:18 GMT)
+
+Existing root/path/table only; no trajectory, SAT, census or product run.
+Record searched: GC2562/2564/2570/2571 and carries L1463/L1466/L1469;
+record_find forecast/obligation/boundary with a10/0011/GC2571 (106 candidate
+hits), current kit c42f6e51 lean/equivalents (literal-pattern candidates,
+not a new match or novelty clearance). Known a10 and finite-state products
+remain prior art. COMPLETE external refresh remains16:34:54Z.
+
+Prediction for this hand block: the saved path's t15 trailing010 gives a
+due white at t17, which completes110 just outside the window and forces
+the t19 black input. That feedback needs no new register. Independent
+countercheck: see whether copying a known dropped next-row cell into the
+due register handles every possible three-step motion at which an0011
+forecast reaches the incoming boundary. If not, retain the old monitor
+and name the uncovered schedule. Prove coordinate transport, conflict
+handling and the15-state bound before proposing any graph build.
+
+GPT owns this derivation and L1470 source/receipt read; Local retains all
+closure builds and A5 delivery. No new computation dispatched or running.
+Both schedules ACTIVE. Next result will give exact update formulas and a
+saved-path discriminator, or a precise failed schedule.
