@@ -6578,3 +6578,26 @@ stay fixed. The search is at alignment (0, 0).
 - **Reading.** Invasion lasts exactly as long as the tail is built for it. Nothing here shows a limit to how long a
   tail can be built. An invader for all time needs every finite prefix of the tail to keep the front out of a wall
   state, which is a compactness-style question.
+
+### 59b. A receding-horizon invader (T55e)
+
+The staged build of T55d committed each stage's bits, and the front trapped after stage 1. T55e looks ahead instead.
+At stage k it optimises the bits up to 0.9 · (T_k + Δ) for depth at T_k + Δ, and then commits only the bits below
+0.9 · T_k. The next stage starts from the uncommitted remainder. Δ = 150, T_k = 150 k, k = 1..8, at alignment (0, 0).
+- **Prediction (about 55%).** The committed tail's front depth at T_k keeps growing, roughly linearly at about
+  0.1 · T_k, to around 100 or more by T = 1200. That would be sustained invasion over the whole run.
+- **Counterfactual.** If the depth plateaus, as in T55d, then designed invasion is a finite-horizon effect of each
+  search. Bounded invasion would then come back into play, with a larger C.
+- **Caps.** 145 s CPU, 1 GiB, nice 10.
+
+**T55e outcome (COMPUTED, M5, capped; `ether_invasion_stages.out`).** The committed tail's front is at −25, −48, −66,
+−64, −64, −66, −66, −64 and −64 at T = 150, …, 1350. It reaches −66 by T = 450 and then holds there: from stage 3 on,
+the lookahead search finds nothing deeper. The list replay at T = 1350 gives −64.
+- **The prediction (sustained linear growth) is REFUTED** for this design.
+- **The evidence across all adversarial searches.** The best depths are 31 (T = 150), 48 (300), 80 (600), 59 (1200
+  joint) and 66 (1350 receding). None exceeds 80, and the deepest fronts trap soon after.
+- **This corrects L1367's lean.** L1367 said the evidence "leans towards unbounded invasion". With T55e it is mixed,
+  and if anything leans the other way. Adversarial tails reach depth 80, but every design tried plateaus around
+  64–80.
+- **The conjecture, restated.** Bounded invasion of the classic ether by any right half is OPEN, with C ≥ 80 if it
+  holds. The small C suggested by typical disturbances (about 57) is refuted by the T = 600 specimen.

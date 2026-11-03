@@ -272,7 +272,7 @@ External refresh23:25Z,kitc42f6e51,19 openPRs; PR97 screened.
 Both schedules ACTIVE; no research job running.
 My own pull: the correctly conditioned incoming-bit law behind the0.647 statistic.
 
-**Local, overnight summary for the owner (3 November, L1323–L1368).**
+**Local, overnight summary for the owner (3 November, L1323–L1369).**
 - **Waiting for your word: two submission packages, complete and checked, NOT posted (held since L1355).**
   - [A1](reports/wolfram-agents/submissions/ether-zero/README.md): the classic ether absorbs a black edge, so its front
     speed is exactly zero, at all 28 alignments, for any right tail beyond 198. It is kernel-checked; the checker
@@ -294,11 +294,12 @@ My own pull: the correctly conditioned incoming-bit law behind the0.647 statisti
   - Every typical disturbance is trapped: inserted edges, random right halves, all 756 ether–ether walls, and 1988
     periodic right halves.
   - But an adversarial right half, found by search, drives the front steadily to −80 by time 600, about 0.13 cells per
-    tick, before it traps. So the ether is not a universal shield.
+    tick, before it traps. Searches designed to keep going plateau at −64 to −66 (L1369). So whether *any* right half
+    can invade without limit is open. If invasion is bounded, the bound is at least 80 cells.
   - **Why it matters for the Prize.** The kit reduces the period-4 case of Problem 1 to its open `Absorption`
-    conjecture: finite right halves driven by an ether column enter the 109-state wall. Our results say any proof must
-    use finiteness or genericity of the right half, because arbitrary infinite halves can invade. That is a concrete
-    constraint on the route.
+    conjecture: finite right halves driven by an ether column enter the 109-state wall. Our results show the wall is
+    reached by everything typical, while adversarial halves can delay it for hundreds of ticks. Whether a proof of
+    Absorption can avoid using the finiteness of the right half is exactly this open question.
 - **Capture line (T44–T52).** P1024's window automata split exactly into S_E, a forced region and a bad core (W = 8,
   10, 12). Capture is exactly leaving the bad core, which shrinks with W and is nested (GC2408, carried). The open
   statement: an actual row cannot keep its front in the bad core for ever.

@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """L1367 T55d (Local, 2026-11-03): is the classic ether invaded at positive speed by some right half?
-reports/rule30-genealogy.md section 59a. Run: python3 tests/probes/ether_invasion_stages.py SECONDS_PER_STAGE STEP STAGES
+reports/rule30-genealogy.md section 59a. Run: python3 tests/probes/ether_invasion_stages.py SECONDS_PER_STAGE STEP STAGES [LOOKAHEAD]
+With LOOKAHEAD (T55e, section 59b): receding horizon; stage k optimises for depth at STEP*k + LOOKAHEAD and then commits
+only the bits below 0.9 * STEP * k; the uncommitted bits seed the next stage.
 
 One tail is built stage by stage at alignment (0, 0): stage k has horizon T_k = STEP * k; its free bits are the
 positions in [0.9 T_(k-1) - 40, 0.9 T_k + 40) (bits beyond about 0.9 T cannot reach a front near -0.15 T by time T),
@@ -14,9 +16,10 @@ import sys
 import time
 
 SECS, STEP, K = float(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3])
+LOOK = int(sys.argv[4]) if len(sys.argv) > 4 else 0   # T55e: optimise for depth at T_k + LOOK, commit bits below 0.9 T_k
 TAB = [[0, 0, 1, 1], [0, 1, 1, 0], [1, 1, 0, 1], [0, 1, 0, 1], [0, 0, 1, 1], [0, 0, 0, 1], [0, 0, 0, 1]]
 c0, c1 = 0, 0
-TMAX = STEP * K
+TMAX = STEP * K + LOOK
 LO, HI = -2 * TMAX - 20, 2 * TMAX + 20   # the left edge's garbage must stay left of any front (L1367 fix)
 n = HI - LO + 1; mask = (1 << n) - 1
 ref0 = sum(TAB[(x + c0) % 7][c1] << (x - LO) for x in range(LO, HI + 1))
@@ -43,16 +46,17 @@ def depth(a, T):
 
 
 tail = 0                                         # bits of the right half, as offsets from x = 0
+commit = 0                                       # bits below this offset are fixed
 for k in range(1, K + 1):
-    T = STEP * k
-    lo_b = max(0, int(0.9 * STEP * (k - 1)) - 40); hi_b = int(0.9 * T) + 40
+    T = STEP * k + LOOK
+    lo_b = max(0, commit - 40 if LOOK == 0 else commit); hi_b = int(0.9 * T) + 40
     bits = list(range(lo_b, hi_b))
     base = left | (tail << (0 - LO))
     t0 = time.time(); best = (depth(base, T), tail)
     while time.time() - t0 < SECS:
         tl = best[1]
         for x in bits:                           # restart: re-randomise the new block only (keep the old part)
-            if x >= int(0.9 * STEP * (k - 1)) and rng.random() < 0.5:
+            if x >= max(commit, int(0.9 * STEP * (k - 1))) and rng.random() < 0.5:
                 tl ^= 1 << x
         a = left | (tl << (0 - LO)); s = depth(a, T); stall = 0
         while stall < 200 and time.time() - t0 < SECS:
@@ -66,7 +70,13 @@ for k in range(1, K + 1):
         if s > best[0]:
             best = (s, tl)
     s, tail = best
-    print('stage %d T=%d: depth %d (%.3f per tick)' % (k, T, s, s / T), flush=True)
+    if LOOK:
+        commit = int(0.9 * STEP * k)
+        Lk = front(left | (tail << (0 - LO)), STEP * k)[STEP * k]
+        print('stage %d: depth %d at the lookahead T=%d; committed bits < %d; front at T_k=%d: %s' % (
+            k, s, T, commit, STEP * k, Lk), flush=True)
+    else:
+        print('stage %d T=%d: depth %d (%.3f per tick)' % (k, T, s, s / T), flush=True)
 path = front(left | (tail << (0 - LO)), TMAX, marks=tuple(range(STEP, TMAX + 1, STEP)))
 print('front path every %d ticks: %s' % (STEP, [path[t] for t in sorted(path)]))
 L = -2 * TMAX - 5
