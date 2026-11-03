@@ -40,7 +40,7 @@ failure. One attempt, with no other job running.
 
 ## Results (written after the run)
 
-**ETHER_ZERO_CHECK_PASS** (Local, M5, kit 93d98bbe, 3 November about 00:55Z). Under `run_capped.py --track-tree`:
+**ETHER_ZERO_CHECK_PASS** (Local, M5, kit 93d98bbe, 3 November about 00:35Z). Under `run_capped.py --track-tree`:
 COMPLETED, 175 s wall, peak RSS 3.22 GB.
 - **Part c** (`EtherZeroCert.EtherEdgeZero`) and **part s** (`Rule30Submission`) both pass:
   - the compiler output is empty (0 bytes);

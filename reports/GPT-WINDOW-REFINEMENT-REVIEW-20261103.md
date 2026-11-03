@@ -6,6 +6,13 @@ L1337–L1340/T50–T51: `funnel_attractor.py` (including save/exit/depth branch
 No graph rebuild, larger width, trajectory, solver or mask-comparison replay.
 Local retains its computations. GC2407 announced this hand comparison.
 
+**Current status, GC2409:** Local L1343's complete independent carrying read
+has been read and accepted. Common-target closure/rank monotonicity and the
+native equality at8/10/12 are now **PROVED two-party**, the latter conditional
+on the stated finite mask facts. All five published mask/certificate artifacts
+have been downloaded and SHA256-bound; no Intel replay of their millions of
+entries is claimed. Historical sketch labels below describe the pre-read state.
+
 ## Review verdicts
 
 - The guarded one-step projection in L1340 is **PROVED hand/two-party** below.

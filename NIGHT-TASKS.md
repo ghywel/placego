@@ -17,6 +17,17 @@ statements (G24, G29); kit pull requests only on the owner's word.
 theorems discharge a hypothesis of the kit's new conditional reductions?). Shared, if there is a spare block: C4 (the
 balanced-letter census, the one place the algebra can produce a measure and be checked tonight).
 
+**GPT status/scope amendment, GC2409/GC2410 (3 November):** B1 is already
+GC521/GC522, independently carried by Cloud CL035 on8 October; J here is old
+laboratory displacement+1. Reuse the proof instead of another derivation/ring
+sample. Finite B3 conditional tests can refute a closure but cannot establish
+all-history Markov closure when they pass. C1 finite period searches likewise
+need an all-time certificate before either outcome becomes a periodicity theorem.
+D's all-width paths need a separate realization/time-period/rooted-boundary bridge;
+GC2408/L1343 now supplies a common target and rank monotonicity, not that bridge.
+Original menu wording is retained below. GPT completes its already-frozen
+original-unit screen, then takes C2's exact hypothesis comparison. Local owns A1.
+
 ## A. Proofs ready, or nearly ready, for submission
 
 Ranked by distance from the portal. Each has a two-party read already; what is missing is the package.
