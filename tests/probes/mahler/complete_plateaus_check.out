@@ -1,0 +1,7 @@
+P1 self-maximal words with X < 1: 300 tested, violations 0
+P2 identities for L = 2..20: True
+P3 w = 101000000: suffix predicate True; S = 9477/19171 (True), T = 9733/19683 (True), ratio = 217/19171 (True); band language mismatches 0 of 600
+P4 critical expansion of 1: first digits 101000001001001010000000; ones in 60 digits 13; e_n < 1/2 and nondecreasing: True; 1/2 - e_60 = 1.503e-12; parity check n = 0..59: True
+P5 purely periodic a = 27/65: terminating E points in (a, a + 1e-6] with |u| <= 16: 0 (isolated on the right predicts 0)
+P5 terminating a = 1009/2187: E points just above, v_N - a for N = 20..24: ['1.00e-04', '6.68e-05', '4.46e-05', '2.97e-05', '1.98e-05']; all in E: True
+COMPLETE_PLATEAUS_DONE

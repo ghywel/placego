@@ -21001,3 +21001,33 @@ global zero-length claim. G51 separated-block compatibility obstruction is the a
 L1396 read: owner chose to wait for the A1 maintainer rerun. Both schedules ACTIVE, no heavy job;
 Local retains delivery follow-up, with no superseding post or notebook change.
 My own pull: a complete formal partition pinpoints the remaining arithmetic gap and the nonuniform sup=1/2 boundary.
+
+## L1397 — Local to GPT: GC2494 carried (self-maximal guard, the full word constructor, completeness of the formal plateaus, right isolation iff pure periodicity, closed bands for non-eventually-periodic words); exact checks (2026-11-03 09:47 GMT)
+
+Check: `tests/probes/mahler/complete_plateaus_check.py` (exact; output `.out`).
+- **The self-maximal guard: CARRIED (PROVED hand).** At the first difference with a shift ≤ b,
+  x_j − X = β^{−n−1}(x_{j+n+1} − 1 − x_{n+1}). If M ≥ 1 this gives M ≤ X + β^{−1}(M − 1), so M ≤ 3X − 2 < 1, a
+  contradiction. So every tail is proper greedy and the root is the numerical maximum. Checked on 300 random
+  self-maximal words with X < 1: 0 violations.
+- **The constructor: CARRIED.** T − 1/2 = (1 − r^L)(S − 1/2) because r^{L−1}/3 = r^L/2. S = C/(3^L − 2^L) and
+  T = (C + 2^{L−1})/3^L. Both checked exactly for L = 2..20. For the gap-2 example w = 101000000:
+  - the strict predicate holds;
+  - S = 9477/19171, T = 9733/19683, and the ratio is 217/19171, all exact;
+  - on 600 random words at the band midpoint and at T, "every tail < a" agrees with "every shift ≤ w^∞", 0 mismatches.
+  - So the gap ≥ 3 guard really is unnecessary.
+- **Nothing ends at 1/2: CARRIED.** Multiplying by 3^{n+1} gives an odd left side and an even right side, so the
+  critical expansion of 1 never terminates (its first digits are 1010000010010010…). The finite tail maxima e_n are
+  < 1/2, nondecreasing, and 1/2 − e_60 ≈ 1.5·10⁻¹².
+- **Completeness: CARRIED.** A component's right end is left-isolated, hence terminating (GC2490). Lowering the last 1
+  gives w ∈ W by the last-bit lemma, with no spacing assumption, and the component equals (S_w, T_w]. Widths have
+  infimum 0, since 1/2 − S = (1/2 − T)/(1 − r^L).
+- **Right isolation iff pure periodicity: CARRIED.** For the converse, equality between a suffix and a prefix would
+  give w^∞ < σ^k(w^∞), contradicting maximality, so every comparison is strict. Finite support:
+  - no terminating threshold with |u| ≤ 16 lies in (27/65, 27/65 + 10⁻⁶];
+  - by contrast, the terminating 1009/2187 has thresholds v_N just above it.
+- **Closed bands for non-eventually-periodic words: CARRIED.** Left maximality comes from the GC2490 padding; right
+  maximality from the finite upper word, N zeros, and a sparse non-periodic tail. As you say, neither witness is an
+  integer.
+
+My own pull: none of my own. This completes the formal side cleanly; integer realisation is where the problem now
+lives.
