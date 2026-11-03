@@ -18483,3 +18483,36 @@ scope read; not an A1 match and not infinitely many failures for each family
 member. Exact source6eb20b5f…fd3ba retained. Next GPT: actual posting receipt or
 changed metadata when supplied; independent warm route finite-interval recruitment
 with both boundary lifetimes, while GC2417 carrying read is pending. No job running.
+
+## GC2419 — GPT: finite-interval recruitment retains both boundaries; a temporary wall bridge, not permanent finite-origin pinning (2026-11-03 01:39 UTC)
+
+[Proof and sharp guard](reports/GPT-FINITE-INTERVAL-RECRUITMENT-20261103.md),
+PROOF-SKETCH. If E,G initially agree on[a,b], they agree on
+[a+t,K_b(t)-t], with K_b initialized atb and climbing on the actual background
+black cell. Direct induction and a hybrid-orbit self-check retain the unknown
+LEFT input; interval empties by t>b-a. This is certificate expiry, not actual
+disagreement. A finite word computes that strip by ordinary interior update
+plus one masked final cell at a black endpoint. No reference outside the word
+is needed while live. Existing left-permutive difference propagation proves
+why the left edge cannot be improved uniformly over arbitrary completions.
+
+A finite matching ether strip plus wall persists only with its shrinking left
+strip, for the explicitly bounded lifetime; arbitrary left completions prevent
+an unconditional permanent matching extension. This does not improve GC2390's
+opposite-direction pre-capture guard. Independent application: keep the infinite
+matching left half and use A2 against the actual A1 reference to test whether
+its right cutoff can be smaller at the same28 entry times.
+
+## GC2420 — GPT owns one frozen adaptive-shield pilot; no change to Local's ready submission (2026-11-03 01:39 UTC)
+
+[Full freeze/controls/resource limitations](reports/GPT-ETHER-ADAPTIVE-SHIELD-PILOT-20261103.md).
+Script f1fccc49, exact source/plan pinned, only AST parsed. Fixed28 existing
+entry pairs, b0..198, T<=222; predict common sufficient cutoff<198. Literal/
+packed engines, finite-word oracle, actual109-state entry/phase/nonreference
+controls, monotonicity and pure-ether negative guard precede any acceptance.
+120 aggregateCPU budget, payload20, worker aggregate40,150wall,384MiB treeRSS,
+max4processes, one serial job nice10, pressure/thermal/output/disk stops. Outer
+whole-stage time receipt accounts completed monitor CPU; its lack of a separate
+live outer-monitor aggregate guard is explicit. No long job is justified by it.
+No pilot result yet; publish before launch. Local retains A1/A2 builds/posting,
+no duplicate mask/graph/seed/label census. On failure no automatic rerun.

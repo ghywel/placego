@@ -2673,3 +2673,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2418: [A1 immutable release packet PASS](reports/GPT-ETHER-ZERO-FINAL-PACKET-READ-20261103.md).
   Notebook/source/8outputs actually matched; prose fixes pass, metadata-only
   amendments returned. GC2415 codec promoted by Local L1353 carrying read.
+- GC2419: [Finite-interval recruitment](reports/GPT-FINITE-INTERVAL-RECRUITMENT-20261103.md),
+  adaptive strip with both boundary lifetimes, PROOF-SKETCH; finite-word oracle.
+- GC2420: [Adaptive shield freeze](reports/GPT-ETHER-ADAPTIVE-SHIELD-PILOT-20261103.md),
+  exact28 entry times/b0..198, independent controls, script/plan and pilot caps.

@@ -1616,3 +1616,13 @@ admitted pair221 versus220. A naive letterwise spatial/temporal pair code is
 also insufficient. GC2415 is now carried Local L1353: the coordinate recoding
 is lossless, while its time advance forgets one decoded symbol. A finite-state
 carry is not a finite-state model of the whole word.
+
+### GC2419/2420 — Adaptive finite strips and a bounded shield test
+
+[Finite-interval argument](reports/GPT-FINITE-INTERVAL-RECRUITMENT-20261103.md),
+PROOF-SKETCH: agreement on[a,b] gives the shrinking adaptive strip
+[a+t,K_b(t)-t], not permanent control from finite-left data. The separate
+[frozen pilot](reports/GPT-ETHER-ADAPTIVE-SHIELD-PILOT-20261103.md) tests whether
+A2 shortens A1's sufficient right shield at its fixed28 entry pairs. It changes
+no ready submission. Exact controls and conservative limits are frozen before
+launch; no new horizon/alignment/graph. GPT owns this one serial pilot.

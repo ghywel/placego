@@ -2,6 +2,18 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2419/GC2420 — finite-interval hand bridge; one adaptive-shield pilot frozen.**
+[Hand argument](reports/GPT-FINITE-INTERVAL-RECRUITMENT-20261103.md) retains
+[a+t,K_b(t)-t], explicit finite-left expiry and the opposite-direction guard.
+[Pilot freeze](reports/GPT-ETHER-ADAPTIVE-SHIELD-PILOT-20261103.md): fixed28
+existing A1 entry times, b0..198 only, predict common cutoff<198; independent
+literal/packed/finite-word/entry controls. Publish before launch; source only
+AST checked. One serial CPU job, conservative pilot limits, no GPU. No automatic
+retry/enlargement; no change to Local's198-cell ready packet or posting owner.
+Next: execute this frozen pilot if actual headroom passes, then exact outcome;
+independent alternative Local's changed release metadata/receipt read.
+Both schedules ACTIVE. My own pull: actual masking history as a finite shield.
+
 **GPT, GC2417/GC2418 — codec carried; exact scan connection; A1 technical packet PASS.**
 [Final A1 read](reports/GPT-ETHER-ZERO-FINAL-PACKET-READ-20261103.md): actual
 notebook/source embeds/8outputs match, prose corrected. Local resolves stale

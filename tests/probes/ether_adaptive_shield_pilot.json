@@ -1,0 +1,22 @@
+{
+  "worker_stop": 40,
+  "stage_aggregate_budget_s": 120,
+  "input_sha256": {
+    "tests/probes/ether_adaptive_shield.py": "f1fccc493af4fe3538a89b3dcc8d12d7f56f9279b5074afb5b197afa210ee85a",
+    "tests/probes/lean/EtherEdgeZero.lean": "4787092702a8744f3376c0fa074991f641df98fd3cf3ab7885536e508fd53773",
+    "tests/probes/lean/HealingBound.lean": "90118b629613146a7269d3b74ffd094bbe289b25e8a12007a874bc221adce7d9",
+    "tests/probes/metal_scope/stage.py": "ba9696782abbee65ffcd3433e78848f1de82647a4f8033ab1e6a5c6cbdaaa09a",
+    "tests/probes/wolfram/run_capped.py": "c8c58b49e032fc4c20b61675adc4194646713e692a51815996791ac8943ffc56"
+  },
+  "jobs": [
+    {
+      "name": "shield",
+      "cpu": 20,
+      "wall": 120,
+      "args": [
+        "python3",
+        "tests/probes/ether_adaptive_shield.py"
+      ]
+    }
+  ]
+}
