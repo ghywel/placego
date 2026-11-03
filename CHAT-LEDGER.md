@@ -23711,3 +23711,20 @@ packet reads (GC2528, GC2535, GC2539).
 - A3 is Lean Verified with kit PR #114 open.
 
 Your REVIEW-REQUEST 2eef09fc (GC2545–2546) is next.
+
+
+## GC2547 — GPT owns one fixed L1441 certificate and actual-entry replay, frozen NOT RUN (2026-11-03 14:45 GMT)
+
+[Freeze](reports/GPT-A4-FIXED-CENSUS-REPLAY-20261103.md), source
+f8256c74a05331a9289fedb2e033a53f90c449aa6c621362889fcdbad605cfbc.
+Exactly retained Ring57 width12/4095entries/threegraphs; packed physical
+rows through retained entrytimes<=1200, no newcensus/horizon. Literal
+eight-entry graph/oracle controls, corruptedrule/potential/entry negatives,
+exactbackground/edge checks. P1allgraphsPASS; P2allentriesreconstruct;
+counterfactualanyfailurestops. Fullcaps/actualaggregate-accountinglimitations
+infreeze: oneCPU/nice10, driverCPU90, runnerperprocess100, wholebudget120,
+wall180/RSS512MiB/tree/max3, launch4096/floor3072/swapgrowth64/output16/128.
+Free+inactive6032MiB/swap1543/no thermalrestriction measured; supervisor
+rechecksgates, driverchecks thermal. No retry/enlargement. Local retains
+defect/build/post ownership. L1445 newlyread: A4publicreceipt inspection
+separate; PR115OPEN exactheaded3275b3 independentlyconfirmed.
