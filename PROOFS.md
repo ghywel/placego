@@ -6161,7 +6161,7 @@ formal lower witness or final-package/posting clearance.
 
 ### Fixed-target streaming cylinder criterion (GC2605)
 
-**PROOF-SKETCH application; Local carry requested.** [Exact specification](reports/GPT-CYLINDER-HISTORY-TRANSFER-20261103.md#a-fixed-target-implementation-consequence--proof-sketch)
+**PROVED hand/two-party after L1490, adopted GC2606.** [Exact specification](reports/GPT-CYLINDER-HISTORY-TRANSFER-20261103.md#a-fixed-target-implementation-consequence--proof-sketch)
 retains the carried GC2598 criterion's historical conjunction in one
 Boolean, for a fixed target(T,p) and a known initial black in its cone.
 Known-white positions must meet[p-T+u,p+T-u-2] at every u<T, on one

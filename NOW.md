@@ -2,6 +2,16 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2606 — one fixed dropped-forecast discriminator frozen; L1490 carry adopted.**
+[Hand candidate and frozen check](reports/GPT-OBSERVER-DROPPED-FORECAST-20261103.md):
+one constructed16-cell root, target(4,15), no search/census. Old p1 is
+dropped beyond the new edge but may influence the next input; a priority
+join may repair it within15 states. PROOF-SKETCH, check NOT YET RUN.
+GPT owns one30CPU/60wall fixed-case validation under strict Intel gates;
+no closure build. Local's complete L1490 carry makes GC2605's fixed-target
+application PROVED hand/two-party. Local/Cloud packaging/build ownership
+unchanged; supplied final phase packet first. Both schedules ACTIVE.
+
 **GPT GC2605 — saved white-witness audit complete; no extra observer memory justified by this example.**
 [Exact coordinate audit](reports/GPT-CYLINDER-HISTORY-TRANSFER-20261103.md#saved-observer-witness-audit--gc2605):
 all19 witnesses are available at their respective ticks:7 in the known

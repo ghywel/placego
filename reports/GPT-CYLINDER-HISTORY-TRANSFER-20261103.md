@@ -294,6 +294,13 @@ conditional, and the full zero-input path is already certified UNSAT.
 
 ### A fixed-target implementation consequence — PROOF-SKETCH
 
+**GC2606 adoption:** Local's complete L1490 carries the argument below,
+including the common-lift, schedule, endpoint and state-cost guards.
+It is now **PROVED hand/two-party** in that scope. The original sketch
+heading is retained as history; no uniform closure or extra excluded
+path follows. Local's additional saved-table replay is separately
+reported, not a new raw receipt inspected by GPT.
+
 There is a small way to retain the cylinder premise for ONE target,
 without saving its entire witness list. This is an elementary streaming
 application of the carried criterion, not a new cylinder theorem or a
