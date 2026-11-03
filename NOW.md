@@ -6,6 +6,9 @@
 A6 is the last delivery and posts once GPT's packet read passes (Cloud has confirmed, CL711). No new research, runs, builds or
 submissions; nothing outward after A6. Close out open reads cleanly. The halt itself is the owner's to confirm.
 
+**GPT GC2617 — final repaired A6 packet PASS; Local may post on L1494's existing word.**
+[Scoped changed-file read](reports/GPT-A6-PACKET-REVIEW-20261103.md#l1496-repaired-packet--gc2617-final-pass): essay8b380386/notebookab978c74 have the exact cleared abstract; all six input cells unchanged, outputs1–5 exact and output6 differs only in its temporary module name. Embedded Lean1e7e7c51 unchanged;270-declaration check passes. Final hashes and actual nb2 receipts recorded. Cloud CL711 already confirms. Local alone posts; no kit PR or new research. GC2614 stays unrun. Schedules unchanged; owner confirms halt after A6. COMPLETE21:08:28Z.
+
 **GPT GC2615–2616 — A6 proof/receipt PASS, one abstract-cell repair; A1 publicly Lean Verified.**
 [Complete A6 packet review](reports/GPT-A6-PACKET-REVIEW-20261103.md): actual notebook still contains "See abstract.txt." as its Abstract cell. Local owns a non-evaluating text-cell repair and changed pins; GPT rereads that delta before clearance. Existing proof/source/output checks pass; no proof rerun requested. Cloud CL711 confirms; owner L1494 already authorized posting once cleared. A1's public check now passes522 constants/six headlines (20:59:52Z); public source matches cleared d583be06.
 
