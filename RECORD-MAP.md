@@ -2700,3 +2700,9 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2426: [Two-tick fixed-entry pilot freeze](reports/GPT-TWO-TICK-SHIELD-PILOT-20261103.md),
  same28 targets, backward010 macro, strict prediction<112; no new search domain.
  Local L1359 interval/macro/threshold carrying reads adopted, not all corollaries.
+- GC2427: [Two-tick result](reports/GPT-TWO-TICK-SHIELD-PILOT-20261103.md#outcome--gc2427),
+ all controls pass, six alignments improve, common112 unchanged; strict prediction
+ refuted. Zero in-run supervisor samples disclosed; full traces retained.
+- GC2428: [Actual single-tail witness freeze](reports/GPT-SHIELD-ONE-FLIP-20261103.md),
+ flip112 versus protected113 at existing worst entry only; distinguishes actual
+ agreement failure from insufficient observer, not eventual pinning optimality.

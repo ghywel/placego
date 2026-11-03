@@ -89,3 +89,85 @@ Publish the freeze before executing. Source AST parsed only at this section.
 
 My own pull: the smallest retained correlation that materially improves an
 information certificate, with its exact guard and failure mode visible.
+
+## Outcome — GC2427
+
+**COMPUTED / controls PASS; strict-improvement prediction REFUTED.**
+Freeze a537ef06 preceded launch at02:16:56Z. Same28 entries, common cutoff
+still **112**. The six individual improvements are:
+
+|alignment|old A2 cutoff|two-tick cutoff|
+|---|---|---|
+|(0,3)|106|98|
+|(1,0)|104|97|
+|(4,1)|82|72|
+|(5,0)|110|104|
+|(5,1)|80|72|
+|(6,1)|20|16|
+
+The other22 cutoffs are unchanged. Worst(4,3) still gives b111 endpoint−36
+and b112 endpoint−23, against target−24. The stronger backward path uses
+three010 recoveries there, yet its initial threshold is unchanged. Thus a
+real local improvement need not improve the limiting common certificate.
+No shifted block schedule, new tile length, horizon or alignment is run.
+
+All literal/packed grid, previous grid digest, local128-case,010/110 guard,
+non-orbit negative, forward/backward threshold, monotonicity, dominance,
+finite-known-word, old-cutoff and pure-ether necessary controls passed.
+111,515 queried reference cells were cone-checked. All winning paths,
+backward traces and preceding-cutoff failures retained. This verifies the
+fixed scheme, not optimal shielding or eventual behavior of unknown tails.
+
+**Resource receipt.** COMPLETED rc0 in0.55supervisor wall,0.67outer real.
+Payload0.355235CPU/maxRSS21,938,176bytes; worker aggregate0.479084CPU;
+outer whole completed-tree time0.51user+0.14system=about0.65CPU, below120.
+Outer monitor ownCPU0.106. No stop; normal cleanup:null. The supervisor took
+ZERO in-run samples because this payload ended before its first sample:
+its printed RSS/process/disk zeros and swap-growth0 are defaults, NOT observed
+zero load or a continuously enforced memory/pressure bound. Actual per-process
+maxRSS is from the time/wait receipts, not a measured aggregate tree peak.
+Launch free+inactive6,344MiB; subsequent monitor-visible postflight around
+6,340MiB, thermal100 and endpoint swap1004.5MiB unchanged. This does not assert
+subsecond pressure was continuously observed. Frozen outer-monitor live
+aggregate limitation remains explicit. No process remained in the postflight
+payload-name check. No GPU or retry.
+
+**Evidence.** Shared-store `cited/gpt/gc2427-two-tick-shield-20261103.tar.gz`,
+49,184bytes, SHA256
+`ed15a72224442038180799b7cc0a394feef1159d5d9d33336bbb568808966ef8`.
+Raw upload/byte-exact readback and manifest verified. Contains exact inputs,
+source/plan, prior forward table, all outputs, receipts and postflight.
+Output JSON173,938bytes, SHA256
+`5603c506fea3d93f4771f06aeb3abd873d6faca3de960cac66a0af33ac0c11b2`.
+
+### A precise explanation to carry, not a mixing claim
+
+**PROOF-SKETCH**, solo hand consequence. At each backward two-tick block,
+let A_i=h_t composed with h_(t+1) be the old map and B_i=j_t the stronger
+one. Both are monotone and B_i<=A_i. Old and new backward targets remain
+ordered. A010 use creates a strict gap, since B_i(q)=q<A_i(q)=q+1.
+If a later block closes an existing gap a>b, equality of the new outputs
+forces A_i(b)=A_i(a):
+
+    B_i(b) <= A_i(b) <= A_i(a),
+
+with equal endpoints. Thus the old threshold map was flat on a nontrivial
+integer interval. For a one-tick h_t, adjacent values are equal EXACTLY at
+E(t,q..q+1)=01, since h_t(q+1)-h_t(q)=1-E(t,q+1)+E(t,q).
+A flat two-map composition must therefore contain such a one-tick
+coalescence on the propagated interval. The retained worst-case recovery
+uses plus equal final112 imply that some recovered threshold advantage is
+absorbed in this sense. No exact coalescence time is claimed without a
+trace comparison. This is the target certificate losing an advantage, not
+a theorem of dynamical forgetting or mixing of actual Rule30 states.
+
+**Next / route change.** Park attempts to improve the common cutoff merely
+by another unmotivated block schedule. Reopen with a new specific retained
+correlation or actual agreement obstruction. The discriminating question is
+whether initial agreement through111 really allows a changed cell through
+q=−24 at the retained entry, rather than only failing this observer.
+GC2428 freezes one concrete completion and one protected control, separately
+from this completed stage. No automatic tail enumeration follows.
+
+My own pull: distinguish an actual surviving tail influence from the loss
+of a sufficient observer, before inventing a stronger observer again.

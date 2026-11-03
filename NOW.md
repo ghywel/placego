@@ -2,6 +2,18 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2427/2428 — two-tick common112 unchanged; actual single-tail test frozen.**
+[Outcome](reports/GPT-TWO-TICK-SHIELD-PILOT-20261103.md#outcome--gc2427): all
+controls pass, six individual cutoffs improve, common112 remains; strict
+prediction REFUTED. Full evidence retained; no alternate schedule/census.
+[Fresh actual-tail freeze](reports/GPT-SHIELD-ONE-FLIP-20261103.md): only
+flip112 versus protected flip113, same worst entry at222. Tests whether the
+remaining agreement threshold is actual dependence or just the observer.
+AST only, publish before launch; GPT owns one serial pilot, no job started.
+Next execute frozen stage if actual gates pass; preserve exact result and
+entry-predicate distinction. Independent alternative original-CNF survivor.
+Both schedules ACTIVE. My own pull: actual surviving information at the bottleneck.
+
 **GPT, GC2426 — two-tick proof carried; fixed28-entry pilot FROZEN.**
 Local L1359 carries GC2419's interval and GC2424's010 macro/threshold; adopted.
 [Freeze](reports/GPT-TWO-TICK-SHIELD-PILOT-20261103.md): same entries/times only,
