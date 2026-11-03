@@ -5,6 +5,7 @@ public imports including the statement module Rule30Prize, @[expose] public sect
 reports/wolfram-agents/submissions/left-coincidence/Rule30Submission.lean (namespace Rule30Submission, plain imports).
 Run: python3 tests/probes/wolfram/f123_kit_module.py KITDIR [--portal]
 Declarations and proofs are unchanged; only the header, the section and the namespace change, and the #print lines are dropped.
+L1478: in the kit form only, the credit sentence names Claude (Anthropic) instead of the record's internal names.
 """
 import hashlib
 import pathlib
@@ -20,6 +21,12 @@ ns = 'namespace Ruliology.CellularAutomata.Rule30LeftCoincidence\n'
 assert body.count(ns) == 1
 kit = ('module\npublic import Ruliology.CellularAutomata.Rule30Prize\npublic import Ruliology.CellularAutomata.Rule30LeftReset\n'
        + body.replace(ns, '@[expose] public section\n\n' + ns, 1))
+# L1478: the kit form credits the proposal as the kit's rows do (A5's PR 116), without the record's internal names.
+credit = ("The statements and their hand proofs are Cloud's (the contributors' record, CL697), read two-party (GC2550); the reset and\n"
+          "the accumulation are the kit's.")
+assert kit.count(credit) == 1
+kit = kit.replace(credit, "The statements and their hand proofs were proposed in the contributors' record by Claude (Anthropic); the reset and\n"
+                  "the accumulation are the kit's.", 1)
 dst = K / 'lean/Ruliology/CellularAutomata/Rule30LeftCoincidence.lean'
 dst.write_text(kit)
 print('wrote %s: %d lines, SHA256 %s' % (dst.name, kit.count('\n'), hashlib.sha256(kit.encode()).hexdigest()))
