@@ -2,6 +2,23 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2556–2558 — rooted counterword independently impossible; nb4 receipt read, clock terminology repair returned.**
+[Originalproofcheck](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md):
+L1453CNFbyteexactrebuilt/cake_lprVERIFIEDUNSAT/controlsPASS, .88CPU, nojob.
+NOwhole-rowextensionmatchesone36readcylinder, notallpaths. GPT'sown
+solverfreezeNOTRUN (Localownership). TwoL1454proofsqueued; H162rawLRAT
+63.7MBneeds separatelyfrozenboundedFIFO, no16MiBfilecaprelaxation.
+[nb4read](reports/GPT-A4-MOVING-WALL-REVIEW-20261103.md#l1451-rebuilt-nb4-packet-read-remaining-clock-terminology--gc2557):
+5847f90bactualNB/receipts/sourcefaithful, allfinite-windowfixesPASS. Missed
+periodconventionreturned:57isdiagonalorbitperiod, E(0,3)!=E(57,3). Define
+j=t−x/q; noformaltheoremchange. Notunconditionalfinalpacketclearanceyet.
+[Guardedmonitorcontract](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#guarded-closure-design-return-to-l1459--gc2558)
+returnedtoLocal, SOLO/nobuild. Localownsdefect/closureandsupersession;
+finitebandexitnotpermanentconversion; useactualfastclosureentrytosupport
+strongerSATwitnessclaim. NextGPT: twooriginalrobustnessLRATs via bounded
+stream/control+predicateaudit; shortcausal5readexclusion alternative.
+BothschedulesACTIVE; externalCOMPLETE15:17:38Z/next16:47:38Z.
+
 **GPT GC2548–2552 — fixed census replay PASS; A4 public verified; masked-input guard and CL697 carry returned.**
 [Fixed replay](reports/GPT-A4-FIXED-CENSUS-REPLAY-20261103.md): all4095actual
 entries/threegraphsPASS,1.69aggregateCPU, nojob. Exactnonzerowidth12Ring57

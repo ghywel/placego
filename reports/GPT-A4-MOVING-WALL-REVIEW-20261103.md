@@ -393,3 +393,71 @@ removes the ambiguity. The raw current-source scope counts were read as
 Local's observations; the full new census output is not independently
 replayed here. Local owns reassembly/supersession; current public37281a
 remains the verified version until a new public receipt is actually read.
+
+## L1451 rebuilt nb4 packet read; remaining clock terminology — GC2557
+
+Complete L1451 carry/source amendment read: GC2548's active-input rule and
+same-path cylinder are now PROVED hand/two-party. Exact nb4 archive
+`cited/l1450-a4-repair/a4-repair-nb4-receipts.tar.gz`,71873bytes,
+SHA7d5f338e8981632437ce0fffe5efb94c859f052a43db313598612d40579df96b,
+downloaded and read. All three requested finite-window wording changes
+are applied. Prose/sourceembed/driver pins, actual outputs and summary:
+
+| Item | SHA256 |
+|---|---|
+| Prose10051bytes |7d765b2ab977d610dc96741d3b58dd1a8a22fab57c4b8f460bb73f8da2cb7877|
+| Essay71372bytes |327cae3bd939d27d2506a5b03837f5a9fadf0897f20b1a9708a045305856b00d|
+| Abstract296words |57f080b2f0d85c281d22f39228196afc2de75ad589e1d5efd40809b0438782c7|
+| Source59780bytes, unchanged |095e3800341d85e14990390c5b1871f9dcafb42dd62a154dd2f76b36b4a50e14|
+| Driver |f9c24ede112e5d828ff873b76fb9ff08f8315a5dde9fcbfe7e87d3de3415583c|
+| Actual notebook264149bytes |5847f90ba58f626dcba07d350c31f6d2d0a698bda084ade827c69ef7439fb792|
+
+Essay embed is byte-exact source. Actual notebook's67157-byte iconized
+input-source region is byte-exact the previously fully read751049ee
+notebook (region digest1b6b617cf48ea536f7f4d3efc289dc1fbb337370f3f10d9a041a4fa9b265e1e2).
+Outputs1–6 are byte-exact old receipts; all seven new output digests verify.
+New output7's actual InterpretationBox contains Success[KernelChecked]
+for338declarations of the new temporary module. Summary:7outputs,
+0messages, standardaxioms/environment/icon/kernelcheck alltrue, no reasons.
+No literal home paths in the actual notebook. Sanitized Local launcher
+COMPLETED rc0; build103.8seconds on M5, wall114.76, swapgrowth0. This is
+an artifact/receipt read, not a new Intel Wolfram build. The original
+unchanged-checker338-constant receipts remain applicable to the identical
+source; no future changed source is silently cleared.
+
+**One additional convention error found during this full read, which I
+missed earlier:** the prose/description/abstract/table call57 a temporal
+period of the whole-line background. In the actual convention
+
+    E(t,x)=R_(t modulo57)((t-x) modulo9), R_0=9,
+
+that is the period of the stored **diagonal orbit**, not of E at a fixed
+physical column. Hand counterexample: E(0,3)=R_0(6)=0, whereas
+E(57,3)=R_0(0)=1. So57 is not a fixed-column time period. A valid such
+period is171 (divisible by both57 and9); leastness is not needed here.
+This counterexample is a solo hand read awaiting Local carry; it uses
+the actual checked row0 and `E`, and changes no theorem or source proof.
+
+Concrete prose repair before final packet clearance: label the table
+“diagonal-orbit period q,” and after the displayed E definition say that
+q counts returns of the stored ring row in coordinates j=t−x and need
+not be a fixed-column time period. In description/abstract either use
+“diagonal-orbit period” or omit those parenthetical periods. Make the same
+convention explicit for “temporal period” in the existing source header;
+it can be explained by the essay without changing any Lean declaration.
+Do not relabel the data/module Ring57 as a171-state orbit.
+
+Thus nb4's build/faithfulness and finite-window repairs PASS, but this
+remaining prose convention needs correction; no unconditional final-packet
+clearance on nb4 is claimed. Current public37281a's Lean Verified status
+and the mathematical proofs remain valid. Local owns reassembly/posting,
+and no new owner-permission round is introduced by this technical read.
+
+External refresh COMPLETE2026-11-03T15:17:38.683632Z, kitc42f6e51,
+37openPRs; five additions are the already-read A4 public entry/source
+andPR115 module/import/metadata. Source hashes095e3800/62838b45 match.
+No other changed statement; no global priority claim or newly completed
+closed-channel survey. Next scheduled refresh16:47:38.683632Z.
+
+My own pull: retain the physical-coordinate clock distinction, then use
+the short forbidden input history to refine the window model.

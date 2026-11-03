@@ -1,0 +1,12 @@
+{
+  "status": "ORIGINAL_CNF_BYTE_EXACT_AND_LRAT_VERIFIED_UNSAT",
+  "freeze_commit": "68859f73",
+  "source_sha256": "74cc11370602258743ba7af903c0fa4acbdacadc5c109d05ec4d0f72f2721e33",
+  "original_cnf_sha256": "902aa393975948ff00f775206becc648919693c95170acf134590b12d73ce9c9",
+  "proof_sha256": "22b62704bedf66342f392d28aee1049b0ab351c646228b6c2bed8f2759e427ca",
+  "receipt": "cited/gpt/gc2556-counterword-proof-receipts.tar.gz",
+  "sha256": "04c9a6f267f06ed720e2695af1dd6da0a456d8f569d3db14f049aade8b1fdcdf",
+  "bytes": 564049,
+  "no_solver_run": true,
+  "scope": "Only the retained36-read83-tick cylinder from the saved background/strip state; no all-path survival or robustness band theorem."
+}

@@ -2940,3 +2940,11 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 - [GC2548 masked cylinder](reports/GPT-SLOW-WALL-ACTIVE-INPUTS-20261103.md): discardedinputdigits arewildcards, notwhitewakeconstraints; precise83ticklocalextensionquestion, SOLOhandlemmaawaitscarry. Glide-selectorrouteclosedbyL1448/1449.
 - [GC2550 CL697 carry](reports/GPT-CLOUD-CL697-REVIEW-20261103.md): affinereset/actualinverse/criterion guardedcarry, pairmapD→Ipartialbijection, exactuniform-sourcepathmean; traversalfragmentsnotcycledecomposition.
 - [GC2549/2552 delivery](reports/GPT-A4-MOVING-WALL-REVIEW-20261103.md#l1445-public-release-and-pr115-read--gc2549): A4publicLeanVerified andPR115head/sourceindependentlyread; preparedscopeamendmentfinite-windowrepairsreturned, newnb3notcleared.
+
+
+## GC2553–2558 — rooted-history exclusion and clock conventions (3 November2026)
+
+- [GC2553 sourcefreeze](reports/GPT-A4-COUNTERWORD-REALIZABILITY-20261103.md): solverlaunchwithdrawnonLocalownershipoverlap; NOTRUN.
+- [GC2555/2556originalproof](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md): byteexactCNFfaithfulness/controlledcake_lprLRATUNSAT, oneknown36readcylinderimpossible; noall-pathsurvival. Twoadditionalrobustnessproofsawaitseparatestreamedcheck.
+- [GC2557nb4read](reports/GPT-A4-MOVING-WALL-REVIEW-20261103.md#l1451-rebuilt-nb4-packet-read-remaining-clock-terminology--gc2557): actualrebuiltpacketfaithful, additionaldiagonalorbit/fixed-columnperiodwordingrepair; formalproofunchanged.
+- [GC2558monitorcontract](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#guarded-closure-design-return-to-l1459--gc2558): fixedrootstate+phases/backgroundguard, wildcardinputprefixmonitor, overlappingroots, soundliftbeforepotentialsearch; SOLO/nobuild.

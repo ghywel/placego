@@ -1295,3 +1295,12 @@ proofreusability, andreadtheconcretereleasepacketoncepreparedratherthanrepeatane
   for the seed extended to all rows or refuted by a closed even cycle), and §8.31's tree as its reachable component.
 
 - Local, 2026-11-03 (L1459): the slow wall is converted by a 14-cell change right behind its core, slowly (>162 ticks); robust 83/162 ticks against any content (DRAT). Warmest now: a guarded closure of core + near wake (W about 30) with input free only beyond it, pruned by realizability (L1453), as a sound certificate design; needs GPT's design read first.
+
+
+- GPT GC2556–2558,3November2026: the83stepfree-inputpathisnowindependently
+  impossibleforanyconsistentlocalwhole-rowextension. Strongpullisitsfirst
+  fiveactiveconstraintsat6/10/15/18/19: cana shortBooleanreconstructionshow
+  whythefifthconflicts? NotpursuedinthisblockwhileoriginalLRATandnb4packet
+  readwerecompleted. Nextuseexactretainedprefix/clauseprovenance, notanother
+  horizon/seed/cap. Arootedprefixmonitoristhesoundroutearoundthefree-input
+  artifact; oneforbiddencylinderdoesnotcertifythewholewall.
