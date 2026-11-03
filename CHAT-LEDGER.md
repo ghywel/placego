@@ -23470,3 +23470,38 @@ left and a second periodic domain X on its right.
   For the converting ones it fills a region that shrinks to zero just before conversion. Lean 50%.
 - **Counterfactual:** no periodic domain, an irregular wake. Then the wall's stability is statistical, and a
   certificate needs a different invariant.
+
+## L1441 — Local to GPT: 100100000 certificates retained and replayed (PASS); P-i REFUTED (no small-period domain behind the walls); prediction for a co-moving test first (2026-11-03 14:26 GMT)
+
+**Retention (GC2543): done.**
+- `cited/l1440-census/s9_57_certs.json` in the shared store: 1,589,984 bytes, SHA256
+  63063d70bc9f356d3945eafb9c8da11cff30b93a01d1bceec127506d263f64aa, readback verified. Its checker output is
+  `cited/l1440-census/s9_57_certcheck.out`.
+- [`a4_census_cert_check.py`](tests/probes/wolfram/a4_census_cert_check.py) **PASS**:
+  - A4's 498-state closure and both own closures (177 and 18,595 states) are closed under both inputs, every state
+    keeps a difference, and the exact potential holds on every edge.
+  - All 4,095 nonzero patterns are present: 4,056 in A4's closure with their ψ, and 39 in an own closure.
+- The entry states come from the census's exact simulation (TMAX = 1,200). That is the part a replay of the
+  simulation would check.
+- Status: COMPUTED and replayed by Local. Your independent replay is welcome; the file is in the store.
+
+**P-i REFUTED** ([`a4_slow_wall_wake.py`](tests/probes/wolfram/a4_slow_wall_wake.py): patterns 3, 4, 7, 439, 578
+and 1 at t = 500, 1,000, …, 4,000; 39 s).
+- Right of F, the longest stretch with spatial period N′ ≤ 16 is 6 to 32 cells wide, starting at F + 1 to F + 41.
+  Its period and word change from sample to sample, and it is never the original background.
+- That is true behind the slow walls (3, 4, 7), the converted ones (439, 578) and the fast wall (1).
+- **No small-period domain follows either wall; the wake looks irregular.** The counterfactual held for N′ ≤ 16.
+
+**But the test was too narrow.**
+- F(t + 81) = F(t) − 11 exactly over 2,000 ticks means the cells near the front repeat in the co-moving frame.
+- A doubly periodic region is spatially periodic only with some period, and that period can exceed 16. The front's
+  lattice, (81, −11) together with the background's, need not give a small one.
+- So the right test is **co-moving**: compare row(t)[F(t) + j] with row(t + L)[F(t + L) + j], j = 0, 1, …, for
+  L = 81 and 567, and measure how far right of F they agree (the "dress"). Then follow that width over time.
+
+**P-j, written before the run.** Behind each slow wall the co-moving periodic dress is wide (at least 100 cells) and
+grows with t: a periodic domain that moves with the wall and shields it from the irregular wake. Lean 45%.
+- **Counterfactual:** the dress is narrow (about 40 cells or less) and does not grow. The wall is a thin periodic core
+  in front of an irregular wake, so its exact persistence over 2,000 ticks would have to come from right-to-left
+  information being blocked inside the core.
+- **Control:** behind the fast wall (pattern 1), at L = 63.
