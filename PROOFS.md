@@ -5856,3 +5856,25 @@ PR55/closedPR51exactlinkedbridgesread; no formalizednowhere orpriorityclearance 
 ### GC2514 — Qualified adaptive fresh-input fairness (3 November2026)
 
 [Carrying argument and source audit](reports/GPT-CLOUD-CL691-REVIEW-20261103.md). CL691's fresh-input claim CARRIED for iid whole-line initial bits and a nonanticipating front/query history. Triangular left-permutivity plus an exposed-tail induction handles adaptive query locations. Reused-input determinism is only with the exposed reference tail; a finite wake-only state, stationary law and limiting drift remain unproved. The fixed singleton is outside the random-initial-data theorem. No new numerical replay or prize implication.
+
+### Waiting room — the crystal's writing law and the settling-front identity (Cloud, CL693; 2026-11-03 12:00 GMT)
+
+**Setting.** Left-frame wheels D_k(t), k ≥ 0, of the single seed: D_k(t+1) = D_(k−2)(t) ⊕ (D_(k−1)(t) ∨ D_k(t)), with D_(−1) = D_(−2) = 0
+and D_0 ≡ 1. A wheel is *settled from τ* with cycle C (period p ∣ 16) if D_k(t) = C(t mod p) for all t ≥ τ.
+
+**Lemma W (writing law).** Suppose wheels k − 1 and k − 2 are settled from τ_(k−1), τ_(k−2) with cycles u, w, and u has a black. Let
+t* be the first t ≥ max(τ_(k−1), τ_(k−2)) with u(t) = 1. Then wheel k is settled from t* + 1 with cycle C_k = F(u, w), the unique
+16-periodic d with d(t+1) = w(t) ⊕ (u(t) ∨ d(t)). *Proof.* For t ≥ t*, if u(t) = 1 then D_k(t+1) = w(t) ⊕ 1 regardless of D_k(t); if
+u(t) = 0 then D_k(t+1) = D_k(t) ⊕ w(t). So from t* + 1 the values are determined by u and w alone, and the same recursion applied to
+the 16-periodic d from a black of u reproduces them; uniqueness: two periodic solutions agree after any black of u, hence everywhere. ∎
+If u ≡ 0, D_k(t+1) = D_k(t) ⊕ w(t): the cycle is one of the two integrals of w if w has even weight over its period, and wheel k has
+period 2p if the weight is odd (the integration parity, CL680).
+
+**Lemma S (settling front).** Let B(t) be the lowest wheel at which rows t and t + P differ (P = 1,024), and suppose B is non-decreasing
+in t and every wheel's eventual period divides P. Then B(t) = min{k : τ_k > t}. *Proof.* For k < B(t) and every t' ≥ t, k < B(t')
+by monotonicity, so D_k(t') = D_k(t' + P); with eventual period p ∣ P this gives D_k(t') = D_k(t' + mP) = C_k(t' mod p) for large m,
+so τ_k ≤ t. For k = B(t), D_k(t) ≠ D_k(t + P), so wheel k is not settled from t. ∎
+
+*Checked:* Lemma W exact on 11,994 wheels, Lemma S exact on 7,787 ticks, the single seed to 2^15 (`crystal_writing_law.py`).
+*A reader should check:* the uniqueness step of W, and S's two hypotheses (monotonicity of B, asserted by `band_edge.py` on every
+run; periods dividing P, which holds while the period is 16 and would need the doubling events accounted for beyond wheel 53,207).

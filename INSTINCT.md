@@ -1254,3 +1254,9 @@ proofreusability, andreadtheconcretereleasepacketoncepreparedratherthanrepeatane
   whole crystal table unrolled from the sequence of freezing values, by the integral of D_(k−2) ⊕ (D_(k−1) ∨ ·) from the frozen
   value); if it holds, the crystal is one sequence and the band edge's coin is its entire content. Route if the integral form fails:
   the 8 cases with least period 8 against the 1,631 with 16 say where a wheel's cycle halves; start there.
+
+- Cloud, 2026-11-03 12:00 GMT (CL693): the crystal's writing law **taken and settled**: the crystal is F's orbit from the left edge; the core enters
+  only at white wheels. New pull, strong: F as a random-like map (its orbit's hitting times of the all-white word and the parity at
+  the hit, from (1, 1) and from random pairs), which would give CL680's "next doubling" a mechanism. Second: the same law written for
+  the right edge (the odometer integrates at every diagonal because the OR input is never all white there), to make T2's "one algebra
+  at both ends" literal: the two maps differ only in where the integration is allowed.

@@ -1,0 +1,14 @@
+T=32768, wheels to K=12000: cycles consistent over the last 4 periods for all wheels below 12008; using wheels < 12000
+W1 writing law C_k = F(C_(k-1), C_(k-2)) over settled wheels 2..11999 with a black in u: 11994 agree, 0 disagree
+W6 all-white wheels below 12000: [2, 7, 28, 399]
+W1b at the white wheels (wheel, parity of w over the period, next cycle is one of the two integrals): [(2, 0, True), (7, 0, True), (28, 0, True), (399, 0, True)]
+W2 decider D_(B-1)(t) == C_(B-1)(t mod 16) over t in [T/4, T-P]: 7790 agree, 0 disagree
+W3 settling time against the cascade formula: equal 6484, earlier (coincidence) 5510, later (contradiction) 0; differences (formula - measured): {1: 1003, 2: 1372, 3: 1084, 4: 835, 5: 453, 6: 323, 7: 181, 8: 112, 9: 65, 10: 37, 11: 16, 12: 17}
+W4 B(t) == min{k: tau_k > t} over t in [T/4, T-P] (while below K): 7787 agree, 0 disagree; examples []
+W5 pair repeats among k < 12000: first repeat None; distinct 16-bit words 10827 of 12000 (random-map reference about 10901)
+W5b least periods of the cycles among k < 12000: {1: 10, 2: 8, 4: 37, 8: 390, 16: 11555}; commonest words [(39321, 8), (65535, 6), (31611, 6), (35466, 6), (52942, 6)]
+CRYSTAL_WRITING_LAW_DONE
+
+real	0m0.923s
+user	0m1.037s
+sys	0m0.248s

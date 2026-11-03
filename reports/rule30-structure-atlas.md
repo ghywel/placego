@@ -522,3 +522,13 @@ on a fair row (`probe_pair.py`), and no word of the centre column repeats anywhe
 (`coin_repeats.py`: 35 bits, as an iid control). Statuses: the mask law and the freezing law COMPUTED on 2^14 ticks, the mechanism
 PROOF-SKETCH (the mask lemma plus the monotonicity of B), the rest COMPUTED. For T1: the "core" is what the band edge has not yet
 frozen; for T3: the band edge's coin is the core's value at the instant of freezing, and no tell or repeat separates it from a coin.
+
+### 15.1 Correction and the writing law (CL693, 2026-11-03 12:00 GMT)
+
+§15's "the core's values freeze into the crystal" is withdrawn. The writing law (`crystal_writing_law.py`, exact on 11,994 wheels):
+with wheels k − 1, k − 2 in cycles u, w, a black of u resets wheel k to ¬w and a white lets it integrate w, so after the first reset
+C_k = F(C_(k−1), C_(k−2)) and nothing of the core survives. The crystal is the orbit of F from (C_0, C_1) = (1, 1); the band edge is
+exactly the settling front, B(t) = min{k : τ_k > t} (7,787 of 7,787 ticks), and reads the table (7,790 of 7,790). The core enters
+only at the all-white wheels (2, 7, 28, 399 below 12,000), one integration constant each, with CL680's parity doubling (even all four
+times). The word sequence has a random map's count of distinct words (10,827 of 12,000 against 10,901) and no repeated pair. For T2:
+the left end's algebra is F, a map on 32-bit states; for T3: the crystal is a fake coin in the wheel direction as well.

@@ -2864,3 +2864,77 @@ period-16 wheels are the known repeats, each a tell of its region; the centre co
 **Standing after the block.** Q1: the meeting point is the band edge, with a mechanism (PROOF-SKETCH) and an exact law (COMPUTED).
 Q2: no generic tell, no repeat, and the rule-native reading of the band edge's coin is "the core's value at the instant of freezing".
 Q5: the front is blind to the crystal; the wake split stands; the drift is a hand problem. Held: visualisations.
+
+### Round 14, third block (2026-11-03 11:58 GMT): the crystal's writing law, at the owner's word ("Continue with the pull, the crystal's writing law")
+
+**By hand (PROOF-SKETCH, before the run).** Let wheels k − 1 and k − 2 be in their cycles u(t), w(t) (period dividing 16). The rule
+D_k(t+1) = w(t) ⊕ (u(t) ∨ D_k(t)) reads: **when u(t) = 1, D_k(t+1) = ¬w(t), a reset that forgets wheel k's own past; when u(t) = 0,
+D_k(t+1) = D_k(t) ⊕ w(t), an integration.** So from the first reset after both drivers settle, wheel k's values are a function of u and
+w alone: its cycle C_k is the unique 16-periodic solution of d(t+1) = w(t) ⊕ (u(t) ∨ d(t)), fixed by d = ¬w at any black of u and
+propagated by integration between blacks. The core's values before the reset are forgotten entirely. Consequences:
+1. **The crystal is autonomous from the left edge:** C_k = F(C_(k−1), C_(k−2)), a second-order recurrence on 16-bit words, started
+   from C_0 ≡ 1 and C_1 ≡ 1 (D_1(t+1) = 0 ⊕ (1 ∨ ·) = 1). So CL692's phrase "the core's values freeze into the crystal" is wrong as
+   written and is corrected here: the core sets *when* a wheel freezes, not *what* it freezes to.
+2. **The only door for the core** is a wheel whose cycle is all white (u ≡ 0): then C_k integrates w with a free constant, one bit from
+   the core, and the period doubles iff w has odd weight over its period (CL680's integration parity, the left end's doubling law).
+   Below 12,000 the record's eventually-white wheels are 2, 7, 28, 399 (the next, 53,207).
+3. **Settling times cascade through the crystal's own blacks:** wheel k is in its cycle from τ̂_k = 1 + the first t ≥ max(τ_(k−1),
+   τ_(k−2)) with C_(k−1)(t mod 16) = 1, or earlier only by coincidence (an integration from a value that already agrees stays in
+   agreement until the next reset and after).
+4. **The band edge is exactly the settling front:** since B is non-decreasing (band_edge.py's assertion), every wheel below B(t) agrees
+   with its 1,024-shift for ever after t, and a wheel whose eventual period divides 1,024 and agrees with its shift from t on is in its
+   cycle from t on. So B(t) = min{k : τ_k > t}, with τ_k the first time from which wheel k is in its cycle. The mask law then says: the
+   first unsettled wheel settles next tick iff its settled neighbour is black now, which is the reset; the jump size is one plus the run
+   of black unsettled wheels beyond it (each black resets the next) plus a geometric tail of coincidental agreements.
+
+**Predictions, before the run (`crystal_writing_law.py`, the single seed to T = 2^15 on the left-frame system, wheels to K = 12,000,
+cycles read from the last 64 ticks and confirmed over four periods).**
+- **P-W1 [90%]:** C_k = F(C_(k−1), C_(k−2)) for every settled k ≤ K whose left neighbour's cycle has a black; no exception.
+- **P-W1b [85%]:** at each all-white wheel the next wheel's cycle is one of the two integrals of w, and w's weight over the period is even.
+- **P-W2 [85%]:** the band edge's decider is the table: D_(B(t)−1)(t) = C_(B(t)−1)(t mod 16) at every t in [T/4, T − 1,024].
+- **P-W3 [70%]:** τ_k ≤ τ̂_k for every k (no exception), with equality for at least 90% of wheels; the rest settle early by coincidence.
+- **P-W4 [85%]:** B(t) = min{k : τ_k > t} at every t in [T/4, T − 1,024]: the band edge is exactly the settling front.
+- **P-W5 [60%]:** no repeated pair (C_(k−1), C_k) among k ≤ K (the word recurrence has not cycled); **P-W6 [85%]:** the all-white
+  wheels below K are exactly 2, 7, 28, 399. **PU:** the number of distinct 16-bit words among the C_k against a random-map reference
+  (about K − K²/2^17 ≈ 10,900), and the distribution of τ_k − τ̂_k where they differ.
+Counterfactuals: W1 failing means the law is not local and the core writes more than one bit per white wheel; W4 failing means the
+band edge is not the settling front and CL692's claim is withdrawn. Record searched: CL680 (integration parity, the doubling depths),
+left_settle (periods ≤ 16, τ_j ≈ 1.27 j), band_edge.py (B non-decreasing), M1 (the left map), "writing law" (no hit).
+
+#### Outcomes of the third block (2026-11-03 12:00 GMT; `crystal_writing_law.py 15 12000`, one second; receipt `crystal_writing_law.out`)
+
+The single seed to T = 2^15 on the left-frame system; the 12,000 lowest wheels are all in cycles consistent over the last four periods
+(the first inconsistent wheel is 12,008, at the settling front).
+- **P-W1 HELD, exact: C_k = F(C_(k−1), C_(k−2)) for all 11,994 settled wheels whose left neighbour has a black; 0 exceptions.** The
+  crystal is the orbit of a second-order recurrence on 16-bit words from (C_0, C_1) = (1, 1).
+- **P-W6 HELD:** the all-white wheels below 12,000 are exactly 2, 7, 28, 399. **P-W1b HELD:** at each, the next wheel's cycle is one of
+  the two integrals of w and w's weight over the period is even (no doubling; the period stays 16, as the 1,631 of 1,639 said).
+- **P-W2 HELD, exact:** the band edge's decider equals the table, D_(B(t)−1)(t) = C_(B(t)−1)(t mod 16), at all 7,790 ticks tested.
+  (H1b's original claim was right; its backward test asked the wheel to be periodic before it had settled.)
+- **P-W3: the inequality HELD (τ_k ≤ τ̂_k, 0 contradictions in 11,994 wheels); the equality rate REFUTED:** equal for 6,484 wheels
+  (54%), earlier by coincidence for 5,510 (46%), with the gap 1 to 12 ticks, mode 2. The mechanism stands and the coincidence rate is
+  what a fair chance of agreement at the drivers' settling time gives, not the "under 10%" I wrote; a wrong estimate, kept.
+- **P-W4 HELD, exact: B(t) = min{k : τ_k > t} at all 7,787 ticks.** The band edge is the settling front, cell for cell.
+- **P-W5 HELD:** no repeated pair (C_(k−1), C_k) among 12,000 wheels; 10,827 distinct words of 12,000 against a random-map reference of
+  10,901. **PU:** least periods 16 for 11,555 wheels, 8 for 390, 4 for 37, 2 for 8, 1 for 10; the commonest word occurs 8 times.
+
+**What it says, in plain words.** The crystal writes itself. Once two neighbouring wheels have settled, the next wheel's cycle is
+forced by theirs: a black in the nearer neighbour resets it to the complement of the farther one, a white lets it integrate. Nothing
+of the core survives the first reset. So the whole crystal is one deterministic recurrence F on 16-bit words run from the left edge,
+and the band edge is exactly the front at which F has reached. The core enters the crystal only at the all-white wheels (2, 7, 28,
+399, then 53,207), one integration constant each, and the period doubles there iff the integrated neighbour has odd weight; it was
+even all four times, which is why the period is still 16 at wheel 12,000. The sequence of wheel words has the statistics of a random
+map's orbit (no repeat, the random count of distinct words), so the crystal is itself a fake coin in the wheel direction: a
+deterministic map whose orbit passes the count test. Under that reading the eventually-white wheels are the orbit's hits on the
+all-white word, which a random map on 2^16 words hits about once in 65,000 steps; the observed gaps 371, 52,808, 5,079 and 29,580
+are of that order (CONJECTURE, a model reading).
+
+**Corrections to CL692 and atlas §15.** "The core's values freeze into the crystal" is withdrawn: the core decides *when* a wheel
+freezes (through the reset timing and the coincidences) and contributes one bit at each all-white wheel; the content is F's. The
+"meeting point" is still the band edge, but it is a one-way door: the crystal is autonomous from the left edge and drives the core
+(D_k depends on k − 1, k − 2 to its left), and the core never writes back except through the white wheels.
+
+**Statuses.** The writing law: PROVED by hand (the unique periodic solution of d(t+1) = w ⊕ (u ∨ d) when u has a black; two
+integrals when u ≡ 0), single-party, a read wanted; exact on 11,994 wheels. The settling-front identity B(t) = min{k : τ_k > t}:
+PROOF-SKETCH (monotonicity of B plus eventual periodicity with period dividing 1,024), exact on 7,787 ticks. The random-map reading
+of the white wheels: CONJECTURE.

@@ -824,7 +824,12 @@ enumerates the 28 kit alignments (7 spatial × 4 temporal), which cover Cloud's 
 times Cloud found. Before entry the leftmost mismatch is never left of −37, so Cloud's window from −40 was wide enough, by
 three cells. After entry, 2,000 exact ticks show no mismatch at or left of the B3; 60 random right halves beside a wall state
 do the same. **A uniform bound follows:** at every alignment, no column x ≤ −38 is ever disturbed (least B3 at entry −38).
-Not formalised: the 28 entries (a Lean version needs a light-cone lemma and a `decide` over the first 222 rows).
+*Update (Local, L1345, 3 November):* now formalised in full. `edge_pinned` in
+[tests/probes/lean/EtherEdgeZero.lean](../tests/probes/lean/EtherEdgeZero.lean) proves, for all 28 alignments, that from a
+finite time on the ether is undisturbed at and left of x_B and the disturbance never heals within the next 13 cells.
+The 28 entries and the never-heals table are kernel `decide`s, with the light cone and the simulation bridge as lemmas.
+It is kernel-checked against kit main c42f6e5 with standard axioms (propext, Classical.choice, Quot.sound); the build
+takes 34 s, 2.6 GB peak, on the M5. Source SHA-256 005f5e3e…dfe2. Awaiting GPT's source read (NIGHT-TASKS A1).
 
 
 [Argument and checks](../reports/inquisition-20261031.md#round-11-2026-11-02-cloud-cl681-the-classic-ethers-exact-zero-the-inserted-edge-enters-lowrys-ether-wall-trap-at-every-alignment-so-the-ether-is-never-disturbed-beyond-a-bounded-distance-news-speed-exactly-zero-proved-on-the-kits-trap_invariant).
@@ -1014,6 +1019,22 @@ every constant; all 832 forced leaves in the data matched d_j, including the 64 
 **Not claimed.** Nothing about the density limit: the free leaves are measured fair (CL686) and the fair-except-forced chain's 2/5 is
 a model value. The alternating word is free under the family (GC2164).
 
+### Waiting room — GC2408 common-target window refinement (GPT,3 November2026)
+
+**Carried, Local L1343; adopted GPT GC2409:** the common-target closure,
+rank monotonicity and native8/10/12 equality are PROVED two-party at the
+stated finite-fact/physical-depth premises. Downloaded artifact digests are in
+[the source manifest](../reports/GPT-CLOUD-REPAIRS-REVIEW-20261103-sources.json).
+The dated sketch wording below is retained as history.
+
+[Complete statement, FAIL case and rank proof](../reports/GPT-WINDOW-REFINEMENT-REVIEW-20261103.md).
+Local L1340's guarded W->W+2 projection is now PROVED hand/two-party. New corollary
+PROOF-SKETCH: target at width W all refinements of certified S_E8; its universal
+attractor C_W lifts into C_(W+2), with nonincreasing ranks. Native good G_W is
+contained in C_W; if the lifted target lies in G_W then equality holds. T51's
+finite mask facts supply this at8/10/12. No new set computation, all-width decay,
+measure-zero theorem or universal rooted capture. Physical use retains width/
+drawdown/entry guards. Local carrying read requested; no duplicate job.
 ### CL686 waiting-room amendment after GPT's GC2405 (Cloud, CL687; 2026-11-03 00:04 GMT)
 
 Lemmas P, F and I above are **PROVED hand/two-party** (GC2405 supplies the XOR-pair derivations). The **"forced family" theorem is
@@ -1024,3 +1045,379 @@ forbidden outright, 11011 closes with 1 exactly at q0 = 2 (the universal start),
 context occurred (no actual-root occurrence is asserted; the retained k = 3 examples start at q ≥ 256, and the code stops SMALL_R at
 that boundary rather than certifying a zero). The descent calculus is an alternative organisation of that result; its forced
 constants reproduce the exceptions it can reach. Nothing here concerns the density limit.
+
+### Waiting room — GC2409 finite-path bound and guarded healed-strip010 corollary
+
+[Exact statements and scopes](../reports/GPT-CLOUD-REPAIRS-REVIEW-20261103.md).
+PROOF-SKETCH: max integer weight M over all K-edge paths gives every cycle mean
+<=M/K; repaired G8 graph bounds are conditional on its retained output integers,
+with one-step-rise<=W guard. Separately, an old mismatch at L and agreement of
+the images on(L,Y) excludes common010 starting at L<q with q+2<Y, by actual kit
+Preimages.eq_of_evol_one_eq_on_of_window.010 at L remains allowed. New guarded
+application awaiting independent read; known GC521/522 jump laws already carried.
+
+### Waiting room — GC2412 arbitrary right tails beyond198 for the ether edge
+
+[Source read and light-cone consequence](../reports/GPT-ETHER-EDGE-ZERO-SOURCE-READ-20261103.md).
+The original380-line EtherEdgeZero source is carried. New corollary PROOF-SKETCH:
+initial agreement with initRow on x<=198 suffices for its eventual pinning, with
+arbitrary right tail farther out, since xB+t1+13<=198 at every recorded alignment.
+Local carrying/formalization choice pending; current original headline remains
+about its stated cut row. No final submission packet accepted yet.
+
+### GC2413 — A2 universal recruitment agreement, source carried
+
+Local HealingBound.healing_bound, front_ge and K_succ_bounds are **PROVED,
+two-party hand read**, with Local's kernel/checker reports separate from GPT's
+source read. [Exact source hashes, induction and scopes](../reports/GPT-A1-A2-PACKET-REVIEW-20261103.md).
+The background can be aperiodic; the theorem is an agreement bound, not a general
+speed-limit existence or actual-front sharpness theorem. Classical masking and
+half-line propagation are prior art, as compared in that report.
+
+### Waiting room — GC2415 exact prefix codec and separator decoder criterion
+
+[Carrying proof sketch](../reports/GPT-INVERSE-PREFIX-CODEC-20261103.md).
+For the actual kit inverse/uninverse pair, decoder output j needs only input0..j.
+Known D F=id and equal finite prefix alphabets give F D=id, prefix isometry and
+exact membership v in F(HardCore) iff HardCore(D(v)). The generic finite-prefix
+principle is known; this specific consequence awaits independent carrying read.
+No all-label separator, physical-origin or random-seed conclusion.
+
+### GC2416 — The ether edge with arbitrary right tails beyond198
+
+[Revised source and actual checker receipts](../reports/GPT-A1-TAIL-AND-RECEIPTS-READ-20261103.md).
+GC2412's pending corollary is now **PROVED two-party**, formalized by Local as
+edge_pinned_tail and source-carried by GPT. Entry transfer keeps the entire
+matching half-line and13-cell wall, then uses the existing trap. No finite-seed
+prize consequence. Final public packet/notebook status is tracked separately.
+
+### GC2418 — GC2415 prefix codec independently carried
+
+Local L1353 reads the actual kit definitions, equal-prefix decoder induction,
+finite cardinality step, reverse composition and exact hard-core image/count.
+Adopted: [GC2415](../reports/GPT-INVERSE-PREFIX-CODEC-20261103.md) is **PROVED two-party,
+hand**, conditional on the cited kit lemmas; no Lean compilation claimed.
+The old waiting-room request is closed. All-label SEP remains open.
+
+### Waiting room — GC2417 separator-label scan and admission
+
+[Exact growing-word formula](../reports/GPT-DECODER-LABEL-SCAN-20261103.md),
+PROOF-SKETCH. Reuses known GC1208 bulk scan; new label boundary, guarded3->1
+normalization and SEP/mortality dictionary need carrying read. The complete
+carry-group/length/head quotient has an explicit admitted-prefix hand counter.
+No no-finite-state theorem, unbounded ancestry construction or census.
+
+### GC2421 — GC2417 dictionary independently carried; finite adaptive strip pending
+
+Local L1356 carries [GC2417](../reports/GPT-DECODER-LABEL-SCAN-20261103.md):
+exact growing-word identities, admission, guarded normalization and explicit
+quotient counter now PROVED two-party, hand. This closes that waiting-room
+read, not all-label mortality. Its bulk scan is known GC1208.
+
+[GC2419](../reports/GPT-FINITE-INTERVAL-RECRUITMENT-20261103.md) and the
+[GC2421 translated wall-entry bridge](../reports/GPT-ETHER-ADAPTIVE-SHIELD-PILOT-20261103.md#outcome--gc2421)
+remain PROOF-SKETCH. The computed112 cutoff is conditional on that hand
+transfer; it does not replace the ready formal198 theorem.
+
+### Waiting room — GC2423 exact backward threshold of the adaptive boundary
+
+[Three-case inequality and composition](../reports/GPT-BACKWARD-SHIELD-THRESHOLD-20261103.md).
+For f_t(p)=p−1+E(t,p), h_t(q)=q at black E(t,q), else q+1,
+f_t(p)>=q iff p>=h_t(q). Reverse-time composition gives the exact least
+initial cutoff for a target inequality. PROOF-SKETCH awaiting carrying read;
+standard order-adjunction principle specialized, no inverse Rule30 assertion.
+
+### Waiting room — GC2424 correlated two-tick prefix recruitment
+
+[Exact suffix guard, monotone macro and backward threshold](../reports/GPT-TWO-TICK-RECRUITMENT-20261103.md).
+Known GC2026/L1143 a10 identity is already carried. New application: two orbits
+agreeing through p with suffix010 still agree through p after two ticks; A2
+alone retains p−1. Suffix110 leaves an unknown gap and is not enough. The
+actual-orbit macro is monotone and lowers the backward target threshold by1
+exactly when010 ends at that target. PROOF-SKETCH for these applications;
+no computation, optimal-tiling claim or new formal source.
+
+### GC2425 — Optional112 wall transfer and backward threshold carried
+
+Local L1358 carries [GC2421's translated agreement and wall entry](../reports/GPT-ETHER-ADAPTIVE-SHIELD-PILOT-20261103.md#independent-carrying-read-adopted--gc2425)
+and [GC2423's threshold equivalence/composition](../reports/GPT-BACKWARD-SHIELD-THRESHOLD-20261103.md).
+Now PROVED two-party hand, conditional on finite entry/threshold certificates;
+Local independently recomputed all28 on M5. No Lean112 theorem, no claim to
+optimal robust shielding. The separate finite-left GC2419 and correlated
+GC2424 macro remain sketches; A2's final packet passes independently of them.
+
+### GC2426 — Finite interval and correlated010 macro carried
+
+Local L1359 independently reads [GC2419's finite-interval agreement](../reports/GPT-FINITE-INTERVAL-RECRUITMENT-20261103.md)
+and [GC2424's prefix joining, monotone actual-orbit macro and threshold](../reports/GPT-TWO-TICK-RECRUITMENT-20261103.md).
+These are PROVED two-party hand; M5 finite checks separate. The later finite-left
+wall corollary is not promoted by inference. A separately frozen same-table
+pilot will test whether the stronger certificate reduces the common112 cutoff.
+
+### GC2429 — Backward-threshold coalescence carried
+
+Local L1360 carries [GC2427's one-tick01 merge and ordered-gap criterion](../reports/GPT-TWO-TICK-SHIELD-PILOT-20261103.md#outcome--gc2427).
+PROVED two-party hand for certificate maps, not dynamical mixing. Two safe
+actual singleton completions remain COMPUTED finite examples, not all-tail
+agreement. [GC2430's exact87-input whole-line bridge](../reports/GPT-SHIELD-EXACT-TAIL-QUERY-20261103.md)
+is a separate PROOF-SKETCH awaiting carrying read; no solver status inferred.
+
+### Waiting room — L1362 rooted-front observer: exact cutoff 87 for GC2430's target, common cutoff 87 (Local, 3 November 2026)
+
+[T54: observer, soundness sketch, controls and outcome](../reports/rule30-genealogy.md#58-does-a-rooted-front-certify-more-than-a2-t54-l1362).
+The observer branches on the leftmost difference L and keeps a three-valued window of width W to its right, with E's
+values as the coefficients of the exact mismatch identity. Half-line states and pruned states are certified by A2's
+threshold (GC2423, carried).
+- **Soundness (PROOF-SKETCH, carrying read requested).** Every actual trajectory heals, becomes A2-certified, or stays
+  matched by a live state.
+- **Computed with W ≥ 2 at (4, 3), under this soundness.** Agreement through 87 suffices for agreement through −24 at
+  222 for every tail, and the flip at 87 shows that 86 fails. So 87 is exact, and GC2430's 111 question is answered
+  "yes".
+- **Computed over the 28 entries.** The common cutoff is exactly 87 (A2: 112). 24 entries are exact; four have open
+  gaps.
+- **Not claimed.** No eventual-pinning optimality, and nothing in Lean.
+
+### GC2434 — L1362 rooted-front observer carried
+
+[Complete GPT carrying read](../reports/GPT-ROOTED-FRONT-REVIEW-20261103.md).
+Step/scan/half-line expansion/A2 pruning/zero completion and initial-cut
+monotonicity now PROVED two-party hand. Conditional finite table gives common87
+for the28 specified entry-agreement targets, with matching witness at(4,3).
+No Intel replay, Lean87 or optimal eventual-pinning theorem. Four finite-width
+gap plateaus and P1024 transfer remain separate open questions.
+
+### GC2435 — Exact original111 circuit independently LRAT certified
+
+[Proof/input/checker hashes and scope](../reports/GPT-TAIL-SOLVE-PILOT-20261103.md#outcome--gc2435).
+Original68907-variable CNF063ae6ae is MACHINE-CERTIFIED UNSAT by CaDiCaL LRAT
+and unchanged cake_lpr; protected unit kept out of original. Via the carried
+cone bridge/controlled literal encoding, all initial tails after111 preserve
+the retained(4,3) agreement target. Corroborates the rooted87 observer; not
+its Lean formalization, no optimal eventual-pinning result.
+
+### L1366 — Rooted-front observer and A1's cutoff 87, kernel-checked (Local, 3 November 2026)
+
+[Section 60](../reports/rule30-genealogy.md#60-the-rooted-observer-in-lean-a1s-right-tail-from-198-down-to-87-l1366):
+`tests/probes/lean/RootedFront.lean`. **PROVED (Lean, standard axioms; the kit's Check.lean passes).**
+- **The general theorem.** `check_sound` and `tick_sound` formalise the observer GC2434 carried by hand, for every
+  pair of whole-line rule-30 evolutions, with the thresholds as untrusted data.
+- **The result.** `edge_pinned_tail87` is A1's tail theorem with cutoff 87 in place of 198, at all 28 alignments. That
+  87 is the least cutoff for the (4, 3) entry rests on the computed flip-87 witness, not on this file. This supersedes
+  the L1362 waiting-room entry for the 28 fixed entries.
+
+### GC2440–GC2442 — Exact entry cutoff and scoped carrying reads (3 November2026)
+
+[Original-CNF certificate](../reports/GPT-ONE-GAP-SOLVE-20261103.md#outcome--gc2440): cutoff43 exact for alignment(5,1),T148,Q−11 entryagreement target; original LRAT checked, flip43 witnesses failure42. [T55 review](../reports/GPT-ETHER-INVASION-REVIEW-20261103.md): strip actual-path inclusion and cyclemean-to-asymptotic-speed argument CARRIED conditional on finite graph bound; displayed44cycle unrealizability CARRIED. Reusable temporal-clause application remains PROOF-SKETCH pending Local. [L1366 scoped read](../reports/GPT-ROOTED-LEAN-STATEMENT-REVIEW-20261103.md): actual theorem/hypotheses and checker JSON PASS, no new Intel build or public verification status.
+
+### GC2447/2448 — Certified wall entry and a guarded prefix family (3 November2026)
+
+[Completed finite check](../reports/GPT-RETAINED-HISTORY-CHECK-20261103.md#outcome--gc2447): Local's S13 exact7/44potential/cycle checked independently onIntel; actual retainedtail firstenters109wall at558,anchor−82,phase2/word5284, minfront−81. [Arbitrary continuation corollary](../reports/GPT-PREFIX490-CAPTURE-20261103.md) is PROOF-SKETCH pendingLocal carry: first490initialcells force permanentcapture/exactdepth81 with sameinitialleftether. No uniformalltail or shortestprefix assertion.
+
+### GC2451–GC2453 — Prefix490 carried; reset/return-law sketches (3 November2026)
+
+[L1373 scoped adoption](../reports/GPT-PREFIX490-CARRY-READ-20261103.md): prefix490 exactdepth81 arbitrarycontinuation family PROVED hand/two-party, conditional finiteentrycertificate. [Finite52frame export](../reports/GPT-52-STATE-CHECK-20261103.md#outcome--gc2452) checked actualreset1951 but refuted repeatedpaths. [Universalreset and guarded return/family arguments](../reports/GPT-RESET-RETURN-LAW-20261103.md) remain PROOF-SKETCH awaitingcarry, with exactfinitecosttable and existingpotential theorem as premises.
+
+### GC2458 — Endpoint-free budget from a critical reset (3 November2026)
+
+[Full guarded hand argument](../reports/GPT-CRITICAL-RESET-BUDGET-20261103.md), PROVED hand/two-party L1378: 44R+8C≤t for every actual right tail when the initial core has global-minimum potential; the complete finite certificate and carried strip transfer are premises. No frequency/capture claim or new Lean verification.
+
+### GC2460/2461 — Three fastest falls exist; continuation-family sketch (3 November 2026)
+
+[Complete original-model/physical check](../reports/GPT-THREE-FAST-FALLS-RESULT-20261103.md): CHECKED SAT, independently replayed L1379, an actual ether-left/core1951 row falls at 44,88,132 with endpoint cores 1951,1951,4767. The original 114,348 clauses and wider scalar/packed replay pass; no infinite repetition claim. The finite-prefix consequence (all continuations beyond118 preserve the three falls; beyond124 also preserve endpoint4767) is PROVED hand/two-party L1379, conditional finite witness.
+
+### GC2462 — A fixed actual-row map for fast returns (3 November 2026)
+
+[Hand reformulation](../reports/GPT-FAST-RETURN-MAP-20261103.md), PROVED hand/two-party L1380, conditional carried budget/transfer: F(r)(x)=Q^44(r)(x−7); from ether-left/core1951, F(r) has the same prefix exactly when the first fall is44 and returns to1951. Nested survivor sets use sufficient prefix13+37n. The checked three-fall row lies in K2 but not K3; no third same-core return, infinite survivor, finite-state closure or periodic tail is supplied. Moving frames and compactness are known background.
+
+### GC2463/2464 — Exact pre-return packet and a conditional mask (3 November 2026)
+
+[Hand proof](../reports/GPT-RESET-PREIMAGE-PACKET-20261103.md), PROVED hand/two-party L1381: phase2 ether-left B3 gives a fall/core1951 iff its first seven right cells are10011pq with p∨q=1. This yields five units/one OR as an exact next-return condition. It is not implied by previous returns alone. If the last packet has p=1, prefix12+37n suffices for n same-core returns. Existing witnesses instantiate a49-cell one-return family and86-cell two-return family; no minimality or later-motion claim. Local's16384-case check and Intel's128-parent self-check are separate computations; the independent hand read carries the general statements.
+
+### GC2471 — Mahler post-B continuation boundaries (3 November2026)
+
+[Complete hand application](../reports/GPT-MAHLER-POST-B-BOUNDARY-20261103.md), PROVED hand/two-party L1383: under the exact4,11,6 prefix and B<a≤T4, finite feasibility is a>T_f and acceptance of every already-a-admissible tail is a≥S_f. Constructive finite repeats prove necessity without a density assumption. The first feasible next gap diverges as a↓B but at most one extra step resets the fractional bound. Generic geometric recovery/tail identities are known; no positive-integer survivor or complete new-language classification in this prefix theorem.
+
+### GC2473 — Infinite plateau family and fixed-code right limit (3 November2026)
+
+[Complete hand argument](../reports/GPT-MAHLER-PLATEAU-CASCADE-20261103.md#completed-argument--gc2473), PROVED hand/two-party L1384: all f≥5 give exact L_f formal language on(S_f,T_(f−1)], with four exhaustive first blocks, lower periodic/upper finite witnesses, equality classification and closed lower criterion for integer codes. IntersectionallL_f has exactly terminal eventually-zero extras over the old language; no exchange of fixed and varying integers. Generic affine-supremum method known; no actual integer existence or kernel compilation.
+
+
+### GC2475 — A nested two-parameter Mahler plateau family (3 November 2026)
+
+[Complete five-case hand argument](../reports/GPT-MAHLER-NESTED-PLATEAUS-20261103.md), PROVED hand/two-party L1385.
+For all f≥5,h≥5, L_f plus the next-gap rule after (4,11,6,f) gives the exact language on
+(R_(f,h),V_(f,h−1)]. These intervals lie inside (T_f,S_f); periodic/finite witnesses give maximality,
+and the fixed-code right limit has only stated terminal extras over L_(f+1). h=4 fails the repeat-join
+control. The specified midpoint words refute critical-block count alone. No integer existence or
+kernel compilation. Known affine-supremum method, with explicit overlap and branch-dominance guards.
+
+
+### GC2476 — Endpoint-exact beta reflection and its theorem-transfer guard (3 November 2026)
+
+[Hand specialization of the known reflection](../reports/GPT-MAHLER-LAZY-DICTIONARY-20261103.md), mathematical dictionary/arithmetic PROVED hand/two-party L1386; source-range reading attributed to GPT:
+x=2U, y=1−x conjugate the greedy beta=3/2 upper ceiling to the lower map with offset 1/2 and strict
+threshold y>1−2a. Exact values at 1/3 and 1 retained. A named v1 source conversion would need beta'=2
+at this parameter edge; no general theorem imported. The integer complement symmetry changes the
+realization sign. No positive survivor or novel conjugacy is asserted.
+
+
+### GC2479 — Direct endpoint-safe doubling coding of the formal Mahler ceiling (3 November 2026)
+
+[Hand proof](../reports/GPT-MAHLER-DOUBLING-CODE-20261103.md), PROVED hand/two-party L1388. All weighted tails
+below a are equivalent to every shifted word below the greedy word of 2a. A uniform first-difference
+supremum establishes the non-greedy direction. Complemented binary coding exactly conjugates to
+strict lower doubling; usual doubling corresponds exactly after excluding finite-one codes.
+Uniform separation proves both continuities. Positive-integer codes already exclude those terminal
+words, but ordinary-integer compatibility is still required. Known coding methods reproved here;
+no theorem imported through an unchecked endpoint range or metric claim.
+
+
+### GC2481 — Strict Lyndon intervals and a general Mahler band compiler (3 November 2026)
+
+[Complete hand proof](../reports/GPT-MAHLER-LYNDON-CONSTRUCTOR-20261103.md), mathematics PROVED hand/two-party L1389; primary-source comparison attributed to GPT:
+periodicization gives constant strict doubling survivors on [finite(s),periodic(s)); explicit periodic
+witnesses approaching the left endpoint prove maximality for both doubling conventions. A uniquely
+shortest cyclic gap d≥3, all others≥d+1, gives an exact original ceiling interval (S_w,T_w] and
+finite forbidden-prefix compiler. G51 finite window [A_w,T_w) is also explicit. Known word machinery
+reproved with strict guards; no integer existence, whole-parameter coverage or kernel verification.
+
+
+### GC2483 — Exact suffix guard for repeated minimum gaps, and a width ratio (3 November 2026)
+
+[Full proof](../reports/GPT-MAHLER-REPEATED-GAPS-20261103.md), PROOF-SKETCH awaiting carry. Complement strict
+suffix order plus cyclic gaps≥3 replaces the convenient unique-minimum assumption. A terminal gap2
+is controlled by13/27 and the finite root is maximal by a suffix argument. The period53 example
+has exactly two extra forbidden gap blocks over L_5; a single next-gap bound provably cannot suffice.
+(T−S)/(T−A)=1−2S gives uniform same-word width bounds. Known word machinery specialized here;
+no integer existence, actual-integer maximality, whole-parameter coverage or kernel verification.
+
+### GC2485 — Threshold self-survival, finite flat certificates and real parameter covers (3 November 2026)
+
+[Full hand proof](../reports/GPT-MAHLER-THRESHOLD-SET-20261103.md), PROVED hand/two-party L1392, including GC2487's correction.
+For all0<a<1/2, every right increase changes C_a iff every greedy G^j(2a)≤2a. A finite upward
+escape, with the cut excluded by its zero future, certifies a two-sided flat interval. E is exactly
+the non-local-constancy set and the set of possible all-tail suprema below1/2 for nonzero words.
+Below beta_g, g≥3, the direct gap-word cover gives zero ordinary length and dimension at most
+log(lambda_g)/log(3/2)<1. No metric transport, ordinary-integer existence or frequency assertion.
+Known self-survival/covering machinery, independently specialized; exact controls are self-checks.
+
+GC2487 correction: the initial terminating-maximizer scope claim is REFUTED. Compactness gives
+a maximizing limit word with all tails≤s<1/2; if it terminates at u, a shift of an infinite-one
+history sharing u has a positive extra tail, contradicting the bound s. Terminating maxima are
+therefore excluded for infinite-one histories. Nonperiodic formal gap histories3^n,4 show that
+periodic maximizing limits remain possible. This correction/lemma is also carried L1392.
+
+### GC2490 — Termination, left isolation and strict nonperiodic formal realizations (3 November 2026)
+
+[Full hand proof](../reports/GPT-MAHLER-ONE-SIDED-ENDPOINTS-20261103.md), mathematics PROVED hand/two-party L1394; nowhere-density corollary carried L1395.
+Throughout0<a<1/2, terminating threshold points inE are exactly its left-isolated points. A cut
+hit yields a finite left-flat certificate; truncation tail maxima approximate every nonterminating
+point strictly from below. Terminating E is countable/dense, and right approximants show E has
+no isolated points. Below13/27 the exact last-bit suffix test recovers upper plateau endpoints.
+Their density and left isolation imply empty interior ofE, hence open dense flat neighborhoods
+throughout(0,1/2); no full-range zero-length assertion is made.
+Separated prefix blocks with unbounded zero padding give strict non-eventually-periodic formal
+histories with any nonterminating E maximum; these are exactly their possible sub-half suprema.
+G51 arithmetic realization remains separate. GC2485/2487 foundations carried L1392.
+
+### GC2494 — Full formal plateaus, self-maximal admissibility and right isolation (3 November 2026)
+
+[Complete hand proof](../reports/GPT-MAHLER-COMPLETE-PLATEAUS-20261103.md), mathematics PROVED hand/two-party L1397; source comparisons attributed to GPT.
+Self-maximal word + sub-half root forces greedy admissibility by a supremum. All strict suffix
+words withS<1/2 yield exact(S,T] bands/G51[A,T) windows. Cofinal terminating E points exclude an
+unbounded final flat component; the carried left-isolation criterion makes every component's
+right endpoint finite and its left endpoint periodic. Right isolation iff pure periodicity.
+The non-eventually-periodic formal filter gives maximal closed[S,T] bands; integer realizability
+and maximality remain separate. Global width ratio infimum0; no gap3-only uniform lower bound.
+Known Parry/Lyndon methods reproved with strict conventions; no full Mahler/novelty/build claim.
+
+### GC2496 — Global threshold nullity from the actual invariant measure (3 November 2026)
+
+[Full source/convention audit and hand argument](../reports/GPT-MAHLER-GLOBAL-NULLITY-20261103.md), mathematics PROVED hand/two-party L1398; primary-source reading GPT-only.
+The classical ergodic Parry probability for actualG_(3/2) is equivalent to ordinary length.
+Closed upper survivors have an exactly invariant eventual-confined envelope with measure<1,
+hence measure0. Rational upper bounds andX=2a give Leb(E)=0 on full(0,1/2). Full plateau
+classification then yields sum_w(T_w−S_w)=1/6. Known theorem specialized with source guards;
+no dimension<1 globally, integer realization/exclusion, nonlinear measure transport or computation.
+
+### GC2498 — Direct periodic-word counts and compact threshold dimension (3 November 2026)
+
+[Full hand argument and endpoint controls](../reports/GPT-MAHLER-COMPACT-DIMENSION-20261103.md), mathematics PROVED hand/two-party L1401; primary reading GPT-only.
+For full strict-word w,1<gamma<3/2 solves F_w(gamma)=1. First-difference injection plus a1
+within the nextL digits gives N_n≤gamma^(n+L). Root1 self-maximal tails and proper gamma-greedy
+state cylinders independently give N_n≥gamma^n. Original a-prefix intervals of length(2/3)^n
+cover E below S_w; add T_w as a singleton. Thus dim_H(E∩(0,T_w])≤log(gamma)/log(3/2)<1,
+and cofinal endpoints cover every compact range belowhalf. Derivative bounds compare
+3/2−gamma with1−2S. No lower E-dimension/global dimension1, arithmetic realization or build.
+Classical beta-shift counting reproved with endpoint/metric guards, no novelty claim.
+
+### GC2500/2501 — Band escape length, stationary record mean and finite compact tails (3 November 2026)
+
+[Full hand proof and carrying repair](../reports/GPT-MAHLER-BAND-ESCAPE-TIME-20261103.md).
+L1400 infinite mean PROVED hand/two-party after applying monotone convergence to backward
+record counts and transferring expectations. New open-band tau=L identity/tail normalization
+and finite-survivor zeroextension cover PROOF-SKETCH pending carry. Explicit compact bound
+gamma^L*(gamma/beta)^n proves finite compact means; no moving-cutoff uniformity or c/n law.
+
+GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics PROVED hand/two-party, including endpoint exceptions, exact tail identity, infinite weighted length and finite compact means. L1404 full scan source/output read as M5 measurements; no Intel rerun or cap-receipt audit. Its log-periodic prediction is refuted on the sampled range, c/n remains conjectural. New near-minimal G50 padding control is retained in INSTINCT, still a sketch.
+
+### GC2505 — Two padded histories, height controls and exact gap-repeat delay (3 November 2026)
+
+[Full carrying argument and current-source comparison](../reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md), mathematics PROVED hand/two-party L1407; source comparison GPT-only.
+Oneinsertedzero per(100)^kpacket suffices for strict9/19tails/unattainedsup/aperiodicity;
+the generic3k+1padding is least only for its crude bound. Bothpass necessaryheight tests.
+Gapfactor firstrepeat SECONDorigins arequadratic, explicitlyexcluding the fixedlinear-origin
+complexitypremise ofthe compared Coon theorem. Capped slack stays1 onallgaps≥3; actual
+squeeze/rapidgrowth guardsretained. Packetquotient recurrencegiven, no ordinaryinteger claim.
+Known G50/G51/clock/window and primaryCoon methodscredited; no build or priorityclaim.
+
+### GC2506 — Exact anchored packet quotient specialization (3 November 2026)
+
+[Full hand proof and source-variable map](../reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md#7a-gc2506-match-the-existing-quotient-and-retain-the-initial-anchor), mathematics PROVED hand/two-party L1407.
+Drealization is equivalent to apositiveodd vsequence withv_2=49+342t and2^(3k+4)v_next=3^(3k+1)v−1.
+Sufficiency retainsinitialanchor andclockatEVERYpacket; the variablemaps to theknown Coon
+oddquotient. A knownG51/clock specialization, no newgeneralreduction/infiniteintegerclaim.
+
+### GC2507 — Six finite effective sampling-window omission bounds (3 November 2026)
+
+[Full endpoint/root/cutoff proof](../reports/GPT-MAHLER-WINDOW-OMISSION-20261103.md), PROVED hand/two-party L1409.
+Thecarried bound extendsbelow2T_w forn≥L, thenfiveselectedwordbands giveexplicitfixed
+constants atall sixoldR1times. Exact rational-root signargumentsplus sixGPscalarchecks;
+population omissiononly, no MonteCarloerror/asymptotic/integer conclusion.
+
+### GC2510 — A3 exact countdown/closing-law final Lean source carrying review (3 November 2026)
+
+[Complete source-fidelity/guard/index audit](../reports/GPT-A3-CLOSING-LAW-REVIEW-20261103.md), PASS hand/two-party.
+Finalcdf38552L1408source/everyreplayline/output/currentkitproofsread. Quadratic meansnonzero
+mixedcoefficient, eightspatiallyvarying/time-independentgates. Exactorderdropguards and
+q0BEFOREfirst1 preserved; conditionalclosinglaw, no1101011, no_three E≥1, no11011/fiveletter
+E≥2 carry. NORinitial111 andORsmallclock11011showguardsreal. No sourceedit/Intelbuild;
+Localreportedcompile distinctfrompendingofficialCheck/publicverification. ORno11011known
+PR55/closedPR51exactlinkedbridgesread; no formalizednowhere orpriorityclearance claim.
+
+
+### GC2514 — Qualified adaptive fresh-input fairness (3 November2026)
+
+[Carrying argument and source audit](../reports/GPT-CLOUD-CL691-REVIEW-20261103.md). CL691's fresh-input claim CARRIED for iid whole-line initial bits and a nonanticipating front/query history. Triangular left-permutivity plus an exposed-tail induction handles adaptive query locations. Reused-input determinism is only with the exposed reference tail; a finite wake-only state, stationary law and limiting drift remain unproved. The fixed singleton is outside the random-initial-data theorem. No new numerical replay or prize implication.
+
+### Waiting room — the crystal's writing law and the settling-front identity (Cloud, CL693; 2026-11-03 12:00 GMT)
+
+**Setting.** Left-frame wheels D_k(t), k ≥ 0, of the single seed: D_k(t+1) = D_(k−2)(t) ⊕ (D_(k−1)(t) ∨ D_k(t)), with D_(−1) = D_(−2) = 0
+and D_0 ≡ 1. A wheel is *settled from τ* with cycle C (period p ∣ 16) if D_k(t) = C(t mod p) for all t ≥ τ.
+
+**Lemma W (writing law).** Suppose wheels k − 1 and k − 2 are settled from τ_(k−1), τ_(k−2) with cycles u, w, and u has a black. Let
+t* be the first t ≥ max(τ_(k−1), τ_(k−2)) with u(t) = 1. Then wheel k is settled from t* + 1 with cycle C_k = F(u, w), the unique
+16-periodic d with d(t+1) = w(t) ⊕ (u(t) ∨ d(t)). *Proof.* For t ≥ t*, if u(t) = 1 then D_k(t+1) = w(t) ⊕ 1 regardless of D_k(t); if
+u(t) = 0 then D_k(t+1) = D_k(t) ⊕ w(t). So from t* + 1 the values are determined by u and w alone, and the same recursion applied to
+the 16-periodic d from a black of u reproduces them; uniqueness: two periodic solutions agree after any black of u, hence everywhere. ∎
+If u ≡ 0, D_k(t+1) = D_k(t) ⊕ w(t): the cycle is one of the two integrals of w if w has even weight over its period, and wheel k has
+period 2p if the weight is odd (the integration parity, CL680).
+
+**Lemma S (settling front).** Let B(t) be the lowest wheel at which rows t and t + P differ (P = 1,024), and suppose B is non-decreasing
+in t and every wheel's eventual period divides P. Then B(t) = min{k : τ_k > t}. *Proof.* For k < B(t) and every t' ≥ t, k < B(t')
+by monotonicity, so D_k(t') = D_k(t' + P); with eventual period p ∣ P this gives D_k(t') = D_k(t' + mP) = C_k(t' mod p) for large m,
+so τ_k ≤ t. For k = B(t), D_k(t) ≠ D_k(t + P), so wheel k is not settled from t. ∎
+
+*Checked:* Lemma W exact on 11,994 wheels, Lemma S exact on 7,787 ticks, the single seed to 2^15 (`crystal_writing_law.py`).
+*A reader should check:* the uniqueness step of W, and S's two hypotheses (monotonicity of B, asserted by `band_edge.py` on every
+run; periods dividing P, which holds while the period is 16 and would need the doubling events accounted for beyond wheel 53,207).

@@ -2856,3 +2856,7 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
   Mask law exact for the band edge; wheels freeze into period 16 exactly when the edge passes; no echo for a probe front; two probes'
   residue a coin; no repeat of the centre column's words. Search aliases: band edge coin, growth front, freezing, settling frontier,
   probe sonar, echolocation, repeat test, second coin.
+- CL693 (Cloud, 3 November 2026): [the crystal's writing law](reports/rule30-structure-atlas.md#151-correction-and-the-writing-law-cl693-2026-11-03-1200-gmt);
+  Lemmas W and S in the PROOFS waiting room. The crystal is the orbit of a recurrence F on 16-bit words from the left edge; the band
+  edge is exactly the settling front; the core enters only at the all-white wheels. Search aliases: writing law, F map, wheel words,
+  settling front, white wheels, crystal_writing_law.
