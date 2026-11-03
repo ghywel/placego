@@ -6,6 +6,8 @@
 supersedes = If[Length[$ScriptCommandLine] >= 7, $ScriptCommandLine[[7]], None];
 If[$CloudBase === Automatic, $CloudBase = "https://www.wolframcloud.com/"];
 If[!TrueQ[$CloudConnected], Print["NOT CONNECTED"]; Exit[1]];
+(* L1497 (GC2615; the owner, 3 November): a notebook whose Abstract cell is still the front-matter placeholder is refused. *)
+If[StringContainsQ[ReadString[nb], "See abstract.txt"], Print["REFUSED: the notebook still holds the abstract placeholder"]; Exit[1]];
 utf8 = FromCharacterCode[ToCharacterCode[#, "UTF-8"]] &;
 title = StringTrim[Import[titleFile, "Text", CharacterEncoding -> "UTF-8"]];
 abstract = StringTrim[Import[absFile, "Text", CharacterEncoding -> "UTF-8"]];
