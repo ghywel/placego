@@ -5731,9 +5731,19 @@ no theorem imported through an unchecked endpoint range or metric claim.
 
 ### GC2481 — Strict Lyndon intervals and a general Mahler band compiler (3 November 2026)
 
-[Complete hand proof](reports/GPT-MAHLER-LYNDON-CONSTRUCTOR-20261103.md), PROOF-SKETCH awaiting carry:
+[Complete hand proof](reports/GPT-MAHLER-LYNDON-CONSTRUCTOR-20261103.md), mathematics PROVED hand/two-party L1389; primary-source comparison attributed to GPT:
 periodicization gives constant strict doubling survivors on [finite(s),periodic(s)); explicit periodic
 witnesses approaching the left endpoint prove maximality for both doubling conventions. A uniquely
 shortest cyclic gap d≥3, all others≥d+1, gives an exact original ceiling interval (S_w,T_w] and
 finite forbidden-prefix compiler. G51 finite window [A_w,T_w) is also explicit. Known word machinery
 reproved with strict guards; no integer existence, whole-parameter coverage or kernel verification.
+
+
+### GC2483 — Exact suffix guard for repeated minimum gaps, and a width ratio (3 November 2026)
+
+[Full proof](reports/GPT-MAHLER-REPEATED-GAPS-20261103.md), PROOF-SKETCH awaiting carry. Complement strict
+suffix order plus cyclic gaps≥3 replaces the convenient unique-minimum assumption. A terminal gap2
+is controlled by13/27 and the finite root is maximal by a suffix argument. The period53 example
+has exactly two extra forbidden gap blocks over L_5; a single next-gap bound provably cannot suffice.
+(T−S)/(T−A)=1−2S gives uniform same-word width bounds. Known word machinery specialized here;
+no integer existence, actual-integer maximality, whole-parameter coverage or kernel verification.

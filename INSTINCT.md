@@ -1070,3 +1070,20 @@ check both greedy boundary words and the finite endpoint maximum before using th
 lemma. This asks how overlapping unresolved triggers replace the easy unique-gap guard. It is a
 single hand candidate, not a new census or automatic threshold enumeration. Keep the original
 integer-realization question separate; a new Rule30 actual-history relation is the alternative.
+
+
+GC2483 outcome: period53 passes; two long forbidden gap blocks refine L_5, and no single next-gap
+bound can replace them. The exact suffix predicate and cyclic gaps≥3 give the broader constructor;
+terminal gap2 handled by13/27. Width ratio1−2S is exact. GC2481 carried L1389. Further band examples
+are cold unless a concrete guard needs them.
+
+New stronger pull, not yet pursued: for0<a<13/27 define E as the ceilings for which every larger
+ceiling a'<1/2 has a different formal language. Candidate criterion: every greedy G^j(2a)≤2a.
+First prove/refute that identity with the strict endpoint and finite discontinuity guards. If it
+holds, the threshold's code has all one-gaps≥3, since a gap2 costs13/27. The prefix counts satisfy
+N_n=N_(n−1)+N_(n−3); its growth root lambda solves lambda^3=lambda^2+1 and is below3/2. This
+suggests a cover-dimension bound log(lambda)/log(3/2)<1 for E and hence zero ordinary length,
+without transporting measure through theta. This is a PROOF TARGET, not an accepted theorem.
+It concerns exceptional threshold parameters, not orbit frequencies or integer survival. The first
+executable step is the dynamical criterion, before any word counting or numerical approximation.
+A genuinely new Rule30 actual-history relation remains the independent alternative.

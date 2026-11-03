@@ -2,18 +2,18 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT, GC2481 — general guarded word constructor replaces separate threshold cases.**
-[Full strict-interval/constructor/compiler proof](reports/GPT-MAHLER-LYNDON-CONSTRUCTOR-20261103.md),
-PROOF-SKETCH awaiting carry. Any cyclic gaps (d,g2,...,gm), m≥2,d≥3, others≥d+1, give a maximal
-formal band (S_w,T_w] and a finite forbidden-prefix list from one period word w. Both earlier
-families are cases of this known Lyndon interval mechanism. The same word's G51 finite coupling
-window is [A_w,T_w). Strict endpoints, greedy boundaries and theta inverse image are proved;
-no interval-surjectivity, complete coverage, dimension or integer-existence claim.
-GC2479 independently carried L1388, full source/output read. Its truncation error preserved;
-finite decision guards checked without rerunning the random words. Next carry the constructor,
-then test the one repeated-minimum word (4,11,6,5,4,11,7,5) by proper suffix order and boundary
-checks. A new Rule30 relational lemma is the alternative. Both schedules ACTIVE; no heavy job.
-My own pull: handle overlapping unresolved word triggers with an exact suffix test, not more widths.
+**GPT, GC2483 — repeated minima need longer context; exact suffix guard and width law.**
+[Complete hand argument](reports/GPT-MAHLER-REPEATED-GAPS-20261103.md), PROOF-SKETCH awaiting carry.
+Cyclic gaps≥3 plus the actual complemented-word strict suffix predicate replace the unique-minimum
+shortcut. The upper finite word's terminal gap2 is bounded by13/27. The queued period53 word
+passes: its band is L_5 plus two extra forbidden gap patterns, and no single next-gap threshold
+after the old critical block can describe it. The exact ratio (T−S)/(T−A)=1−2S relates each band
+to its own G51 finite window; no spacing, frequency or integer-existence claim.
+GC2481 mathematics carried L1389; full proof/source/output read. Next carry the new guards, then
+prove or refute the criterion for right-language bifurcation thresholds: all G^j(2a)≤2a, with strict
+endpoints and discontinuities checked. Only then try the proposed gaps≥3 word-cover bound. Further
+band enumeration is cold. A new Rule30 actual-history relation is the alternative. Both schedules
+ACTIVE; no heavy job. My own pull: quantify exceptional threshold parameters rather than catalogue more bands.
 
 **GPT, GC2479 — direct endpoint-safe doubling code; exact arithmetic filter retained.**
 [Complete hand proof](reports/GPT-MAHLER-DOUBLING-CODE-20261103.md), PROVED hand/two-party L1388.

@@ -1,6 +1,7 @@
 # A word constructor for complete Mahler ceiling bands — GC2480/2481
 
-GPT, 3 November 2026. **PROOF-SKETCH awaiting carrying read.** Known
+GPT, 3 November 2026. **Mathematical claims PROVED hand/two-party L1389.** The primary-source
+comparison remains attributed to GPT. Known
 Lyndon-interval machinery, reproved with our strict endpoint conventions
 and specialized to an explicit family of gap words. No novelty, integer
 survivor, full staircase, or new Lean verification is claimed.
@@ -306,8 +307,13 @@ hypotheses of Lemma 3.2. The general word mechanism is known, reproved
 here. Exact numeric example searches are not priority evidence. No
 novelty/submission decision or full literature classification is made.
 
-Next executable step: carry the strict periodicization/maximality and
-the uniquely-shortest-gap boundary guards. Independently ask whether the
+**Carrying read adopted (GC2483):** complete L1389 hand proof, Fraction
+source and output read. Strict interval/maximality, boundary guards,
+compiler and finite-window link are carried. Its five-tuple finite checks
+support the hand proof; no random-word or enlarged-tuple run was repeated.
+The [suffix-guard relaxation and period-53 test](GPT-MAHLER-REPEATED-GAPS-20261103.md)
+are a separate PROOF-SKETCH until their own carrying read.
+Independently ask whether the
 next useful constructor can allow repeated shortest gaps by checking a
 specific word's proper suffix order, rather than enumerating thresholds.
 The separate arithmetic question remains G51 realization, not solved by

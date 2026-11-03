@@ -5305,3 +5305,13 @@ changed explicitly by a hand proof, not an unqualified invocation of its beta<2 
 kit `Rule30Equivalents.Lyndon.IsLyndon` supplies the same strict suffix notion. Both earlier band
 families are explicit word-constructor instances. The rational1009/2187 already occurs in G296's
 finite coupling table; G51 supplies the finite window. No priority or new general word theorem claimed.
+
+
+### GC2483 — The exact Lyndon predicate replaces a sufficient gap shortcut
+
+Known, reapplied: [the general word guard](reports/GPT-MAHLER-REPEATED-GAPS-20261103.md) uses the actual
+Lyndon suffix predicate, the carried GC2481 strict interval and G51 window. G294 is recovered when
+there is one one per period. Coon mainb6876a5 already uses13/27 in
+`backward_archimedean_survival_dichotomy`, under a different backward-block hypothesis; its statement
+and proof were read. No new constant or general word theory is claimed. The specific period53
+language makes its two longer contexts explicit, without claiming priority or an integer survivor.

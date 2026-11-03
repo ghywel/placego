@@ -1137,7 +1137,7 @@ Lyndon-word interval candidate and its parameter-map caveat are retained in INST
 ## A guarded word constructor for complete bands (GC2481)
 
 [Strict word-interval proof and general constructor](reports/GPT-MAHLER-LYNDON-CONSTRUCTOR-20261103.md),
-PROOF-SKETCH awaiting carry, known Lyndon-interval mechanism specialized here. For any cyclic gap
+mathematics PROVED hand/two-party L1389; primary-source comparison attributed to GPT, known Lyndon-interval mechanism specialized here. For any cyclic gap
 list (d,g2,...,gm) with m≥2,d≥3, and all other gaps≥d+1, root at the uniquely shortest gap and
 form its period word w of length L. Set A=(1/3)sum of r^p at its one positions, r=2/3;
 S=A/(1−r^L), T=A+r^(L−1)/3. Then (S,T] is an exact maximal formal ceiling plateau.
@@ -1155,3 +1155,24 @@ No ordinary-integer survivor or coverage of all ceilings follows.
 GC2479 is now independently carried L1388; its finite truncation-decision guards were checked
 without repeating the random test. Next carry the general constructor, then test one explicit
 repeated-shortest-gap word using the suffix predicate rather than an automatic parameter scan.
+
+
+## Repeated minimum gaps, two extra constraints and a uniform width law (GC2483)
+
+[Complete hand argument](reports/GPT-MAHLER-REPEATED-GAPS-20261103.md), PROOF-SKETCH awaiting carry.
+The constructor needs the actual complemented-word strict suffix predicate, not a unique minimum.
+All cyclic gaps≥3 suffice for the boundary guard: the upper finite word can have one terminal gap2,
+whose tail is at most13/27<1/2. Suffix order puts that finite root at its maximum. The same (S,T]
+language/finite compiler and G51 window [A,T) follow, including G294's cases with a single 1 per period.
+
+For the queued gaps (4,11,6,5,4,11,7,5), L=53 and one positions0,4,15,21,26,30,41,48. The second4's
+suffix is decided by6 versus7 at relative index21. Its band lies strictly between V_(5,4) and S_5.
+The exact language is L_5 plus exclusions of gap words (4,11,6,5,4,11,6) and (4,11,6,5,4,11,7,4).
+No single next-gap threshold after (4,11,6,5) describes it: allowing4 admits the old inadmissible
+critical repeat; forbidding4 excludes the new admissible period. Finite earlier context must persist.
+
+The exact ratio (T−S)/(T−A)=1−2S lies in [1/19,1/3), giving uniform geometric width bounds over
+this constructor class. This is a same-word window comparison, not spacing or frequency information.
+GC2481 mathematics independently carried L1389. Next consider the set of ceilings where the
+language actually changes, with an explicit discontinuity-safe criterion and a word-cover bound;
+no further band enumeration is authorized by this observation alone.

@@ -2815,3 +2815,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2477/2479: [Direct strict-hole doubling code](reports/GPT-MAHLER-DOUBLING-CODE-20261103.md), arbitrary-code lexicographic lemma, endpoint-exact binary coding, dyadic/finite-one distinction and continuity; PROOF-SKETCH. GC2476 mathematics carried L1386, source lookup separately attributed.
 
 - GC2480/2481: [Strict Lyndon intervals and general ceiling-band compiler](reports/GPT-MAHLER-LYNDON-CONSTRUCTOR-20261103.md), uniquely shortest gap d≥3, other gaps≥d+1, exact rational endpoints, finite forbidden prefixes and G51 window link; PROOF-SKETCH. GC2479 carried L1388, finite decision guards checked.
+
+- GC2482/2483: [Repeated minimum gaps and exact suffix guard](reports/GPT-MAHLER-REPEATED-GAPS-20261103.md), general cyclic gaps≥3 boundary lemma, period53/two extra forbidden blocks, failure of a single next-gap threshold and same-word width ratio; PROOF-SKETCH. GC2481 mathematics carried L1389.
