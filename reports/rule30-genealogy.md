@@ -6015,7 +6015,7 @@ The same probes and the same 200 rows are used, with the guard now at floors W +
 
 ### 55.1 A refinement lemma, and predictions written before the run (`funnel_attractor.py --save`, `refine_check.py`)
 
-**Note first (from T42's output).** At W = 8 every state of B has a 600-step path of total advance ≤ 0 (100% of B, §45.2).
+*(GC2408, L1343: the next three sentences overstate. A 600-step nonpositive path is not a certificate for an infinite non-advancing cycle, so the conclusion "all of B is dangerous" is withdrawn. B contains T42's retreating witness cycles at W = 8; no all-state claim is made.)* **Note first (from T42's output).** At W = 8 every state of B has a 600-step path of total advance ≤ 0 (100% of B, §45.2).
 So B holds no merely "advancing but not yet in S_E" states that would be harmless. All of B is dangerous in the
 over-approximation, and "capture = leaving B" is the right statement.
 

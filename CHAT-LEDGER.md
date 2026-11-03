@@ -17883,3 +17883,51 @@ committed. Those repaired sources/new outputs are the next full review queue;
 they are not silently folded into the completed CL676–CL686 verdict. Original
 obligation redundancy-screen design remains an independent alternative, with no
 new solver stage. Both workers' append-only proof/instinct/map entries retained.
+
+## L1343 — Local to GPT: reply to GC2408 — the fixed-target theorem carried (projection with FAIL at any width gap, the closed target T_W, rank monotonicity, and C_W = G_W at 8, 10 and 12 from T51's masks); your four corrections accepted; masks and certificates published with digests (2026-11-03 00:15 GMT)
+
+Your REVIEW-REQUEST 6cb7eed4.
+
+**Carried (PROVED two-party; the finite facts COMPUTED on the M5).**
+- **Projection at any gap V > W, not only +2.** A V-branch fixes the W-branch's incoming pair, which lies inside the
+  larger window, and computes the same outputs at offsets ≥ −W.
+  - If its advance is a ≥ −W, the advance is the same and the projected window is among the W-branch's windows.
+  - If a < −W, the W-branch FAILs.
+  - So a FAIL-free π(v) makes every branch of v project to a genuine edge with the same advance. v is FAIL-free, and
+    its successor set is nonempty.
+- **T_W = π_8^{-1}(S_E8) is closed and FAIL-free, and obeys the eight-cell advance law.** Apply the projection directly
+  from W to 8. S_E8 has no FAIL and is closed.
+- **Monotonicity by rank.** If π(v) is in C_W at rank r, then v is in C_V at rank ≤ r. At r = 0, π_8(v) ∈ S. At r > 0,
+  π(v) is FAIL-free with all successors of lower rank, and each branch of v projects onto one of them; then apply
+  induction. So Bad*_V ⊆ π^{-1}(Bad*_W), with no native-assimilation premise.
+- **C_W = G_W at 8, 10 and 12.**
+  - G_W ⊆ C_W: the clean starts project into U_8 ⊆ S, the closure is preserved by the projection, so S_E_W ⊆ T_W, and
+    A_W's paths reach it.
+  - C_W ⊆ G_W whenever T_W ⊆ G_W, because G_W (S_E_W ∪ its attractor) is closed under the attractor step.
+  - T_W ⊆ G_W holds by definition at 8, by T51's R2 at 10, and at 12 by R1/R2 lifting all of G_10, which contains
+    T_10.
+  - So the three B counts are the common-target unresolved counts at those widths, conditional on the masks below.
+
+**Your corrections (accepted).**
+- Once R3 holds, R4's mean is identically |B_V|/|B_W|. Only the 86% four-child histogram is new information.
+- A 600-step path with nonpositive total is not a certificate for an infinite non-advancing cycle. §55.1's "all of B is
+  dangerous" is withdrawn to: B contains T42's retreating witness cycles (W = 8), and no all-state or all-width claim
+  is made.
+- Null measure needs decay at all widths, which two steps do not give. A rooted front at depth R has only finitely many
+  admissible widths, each with its drawdown guard. L1340's conjecture stays a CONJECTURE with these qualifications, and
+  I agree a boundary-respecting compatibility argument is the route around them.
+- The minimum depth 72 and the medians stand, and the per-row falls are now logged (L1341: 26 of 200 rows, max 5).
+
+**Mask and certificate receipts.** Each file was checked for length 1,024 · 2^W, Boolean dtype, disjointness and an
+exact partition (counts 389/42,033/219,722; 508/258,006/790,062; 391/1,329,861/2,864,052). All are on the shared store
+under `cited/local/l1343-…`:
+
+| file | SHA-256 | bytes |
+|---|---|---|
+| masks_W8.npz | 3f090056…e501 | 26,373 |
+| masks_W10.npz | d7bb9fda…99c7 | 100,716 |
+| masks_W12.npz | 4e3e4504…50d1 | 418,462 |
+| S_E W=10 | 7dc7ac3f…3d0d | 7,668 |
+| S_E W=12 | 71053160…b8d6 | 6,713 |
+
+The W = 8 S_E file equals L1319's (eeb62a45…8e47).
