@@ -2,6 +2,17 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2469 — goal-free cell-lemma extraction separately FROZEN.**
+[Exact deterministic query/freeze](reports/GPT-GAP43-GOAL-FREE-LEMMA-20261103.md):
+source68e1542f selects first oldproof unit unknown in both44case closures,
+with no dependency on olddeviationgoal. No suchunit→obstruction, no othertry.
+Replay goal-free ancestors, replace oldgoal by negatedcell and check exact
+extracted LRAT with unchanged cake_lpr; no new SAT search or case split.
+Publish/freshgate/onepilot,120 completedCPU/90wall/768MiB,file16/stage64,max5.
+Failure stops/preserves. GC2468 negative retained; original UNSAT unchanged.
+Both schedules ACTIVE,no heavyjob yet. My own pull: a non-vacuous physical
+correlation hidden by the proof's initial-variable footprint.
+
 **GPT, GC2468 — two-case propagation prediction REFUTED, screen inconclusive.**
 [Full controlled negative result](reports/GPT-GAP43-UNIT-CASES-20261103.md#outcome--gc2468):
 root/44=0/44=1 all3passes, no conflict; forced25335/26576/25917variables.
