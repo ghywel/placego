@@ -3,7 +3,7 @@ Template: ComputationalEssay
 Name: Moving walls in Rule 30: exact front speeds 5/19 and 2/9
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-11-03
-Description: A partial result proved in core Lean: an inserted black edge on the Rule 30 ring backgrounds 100100000 (temporal period 57) and 1010000 (temporal period 63) has a front that moves left at exactly 5/19 and 2/9 cell per tick, with explicit all-time bounds from t = 300, for every right tail beyond a fixed cutoff; the proof is a kernel-checked closed set of window states with a moving anchor and an exact potential.
+Description: A partial result proved in core Lean: an inserted black edge on the Rule 30 ring backgrounds 100100000 (temporal period 57, alignment (0, 0)) and 1010000 (temporal period 63, alignment (0, 4)) has a front that moves left at exactly 5/19 and 2/9 cell per tick, with explicit all-time bounds from t = 300, for every right tail beyond a fixed cutoff; the proof is a kernel-checked closed set of window states with a moving anchor and an exact potential.
 Abstract: See abstract.txt.
 Keywords: [rule 30, Rule 30 Prize, background orbit, ether, front speed, moving wall, closed set, potential, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]
@@ -56,9 +56,10 @@ The front $F$ lies in $(A, A + W]$, so $5 \le 19(F + 72) + 5(t - 300) \le 478$ a
 the front stays within 26 cells, respectively 17 cells, of the lines of slopes $-5/19$ and $-2/9$. The speeds are
 exactly $5/19$ and $2/9$; they are statements about the long run, not about each tick.
 
-Because the closed set contains every successor under both values of the cell beyond the window, the speed is a property
-of the front and the background. Whatever the disturbed region behind the window does, it cannot change the speed; it
-only selects which state of the closure occurs.
+Because the closed set contains every successor under both values of the cell beyond the window, the law holds for every
+front whose state enters the closure. Whatever the disturbed region behind the window does, it cannot change that front's
+speed; it only selects which state of the closure occurs. The closure does not say that every front on these backgrounds
+enters it: on `1010000` other alignments of the inserted edge settle on a slower wall (see Scope).
 
 ## Any right tail
 
@@ -108,14 +109,17 @@ The simulated row is wide enough on the left that its truncated end never reache
   proves that on the classic ether an inserted edge has front speed exactly zero.
   [R30-20261103-e660e4](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-e660e4) proves a
   universal upper bound on the leftward speed of any change confined to the right half-line, whose periodic table lists
-  $1/2$ for `100100000` and $2/9$ for `1010000`. On `1010000` the inserted edge attains that bound; on `100100000` it moves
-  strictly slower.
+  $1/2$ for `100100000` and $2/9$ for `1010000`. At the alignment $(0, 4)$ the inserted edge on `1010000` attains that
+  bound; on `100100000` it moves strictly slower.
 - **New here, as a scoped comparison rather than a first-in-literature claim.** Exact nonzero front speeds of an inserted
   edge on these two aligned ring backgrounds, with all-time explicit bounds, for every right tail beyond a cutoff,
   kernel-checked. The closed-set method with a moving anchor was developed in the record linked above; it generalizes the
   kit's stationary trap.
-- **Scope.** Two backgrounds, one alignment each. Other alignments and other ring backgrounds are not covered here; a
-  census of alignments is computed in the record but not formalized. The theorems bound the anchor and hence the front;
+- **Scope.** Two backgrounds, one alignment each. Other alignments and other ring backgrounds are not covered here, and
+  the alignment matters. In the record's census of the inserted edge at every alignment (computed to $t = 3000$, not
+  formalized), `100100000` runs at $5/19$ at all 513 alignments, but `1010000` runs at $2/9$ at only 91 of its 441
+  alignments and at $11/81$ at 336, with 14 not yet periodic. So the $2/9$ law belongs to the stated alignment, not to the
+  background. The theorems bound the anchor and hence the front;
   they do not assert an exact periodic recurrence of the front itself. Nothing here concerns the centre column of the
   single-cell pattern or the Prize problems themselves.
 

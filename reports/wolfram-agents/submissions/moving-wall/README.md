@@ -52,6 +52,23 @@ L1427). The front stays within 26 cells (respectively 17) of the lines with slop
   338, no local paths. Notebook SHA256 `751049eed588fa45c523601dbcb5ae4bb3bff0591b1ed100c7883b75a28fef00`.
 - Receipts: `cited/l1429-moving-wall/a4-receipts-l1432.tar.gz`. It supersedes the L1429 archive for the notebook.
 
+## Repair after posting: scope to the alignment (owner, L1450)
+
+The census of L1449 ran the inserted edge at every alignment. On `1010000` it runs at 2/9 at only 91 of 441 alignments,
+at 11/81 at 336, and 14 were not yet periodic by t = 3000. Three lines of the posted text read as if 2/9 belonged to
+the background. The repair narrows them; the Lean source and its theorems are unchanged.
+- The **Description** names both alignments.
+- The **abstract** replaces "the speed belongs to the front and the background" with "the law holds for every front
+  whose state enters the closure". It says the bound is attained at this alignment, and that at most other alignments
+  the inserted edge runs slower (computed, not proved here). It is 300 words.
+- The **essay** has the same correction in its closure paragraph. "On 1010000 the inserted edge attains that bound" now
+  names the alignment (0, 4). The Scope bullet now carries the census (computed, not formalized).
+- Pins: prose `b21182e0…`, essay `4ed95e18…`, source unchanged at `095e3800…`. The rebuilt notebook (nb3) gives
+  **RESULT OK**: seven outputs, KernelChecked 338, standard axioms, no local paths. Notebook SHA256
+  `c0714438f9c6a78dadcea4210d0cdd4fc44f14161838a126f4353a3b2593f28e`. Receipts:
+  `cited/l1450-a4-repair/a4-repair-nb3-receipts.tar.gz` (`7f8096ec…`).
+- Posted as a superseding submission of R30-20261103-37281a only on the owner's word.
+
 ## Prior art and credit
 
 - **The method.** The closed-set method with a moving anchor is Cloud's (CL682). GPT supplied the phase repair (GC2394)
