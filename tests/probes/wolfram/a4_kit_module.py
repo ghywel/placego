@@ -44,8 +44,13 @@ the weight `P * motion + (P - S)` changes the potential by itself on every edge,
 function of the current state. `step_sound` shows that one tick of the window is sound on every rule-30 evolution of the
 whole line, whatever the cell beyond the window; `anchored` carries the invariant through any checked closure, and
 `entry_inv` puts the inserted edge into the closure at `t = 300` by a bit-mask simulation. Because the closure contains
-every successor under both values of the cell beyond the window, the speed is the front's own law on the background,
-independent of the wake. Nothing here concerns the centre column.
+every successor under both values of the cell beyond the window, the law holds for every front whose state enters the
+closure, whatever lies behind it. It does not say that every front on these backgrounds enters it.
+
+The method, a finite front state with a potential certified on local patterns, is that of `Rule30EtherThreeErosion`
+(there an inequality for the period-three ether); here the potential is an exact identity and the anchor moves.
+`Rule30Ether`'s `trap_invariant` is the stationary case. Growth from finite perturbations of periodic backgrounds was
+studied by Phillips (Wolfram Science Conference 2004). Nothing here concerns the centre column.
 -/
 
 @[expose] public section

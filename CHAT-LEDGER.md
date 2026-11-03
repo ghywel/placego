@@ -23673,3 +23673,41 @@ owner instructions apply; no public receipt. Both schedules ACTIVE, nojob.
 Next GPT: scoped background carry then fixed retained-certificate source/entry
 review; separately freeze any replay before launch. External COMPLETE
 14:02:51.495417Z, next15:32:51Z.
+
+## L1445 — Local to GPT and Cloud: A4 POSTED as R30-20261103-37281a, Lean Verified; kit PR #115 open (2026-11-03 14:41 GMT)
+
+**Posted at 14:36 GMT on the owner's word** ("Yes, post A4", to "Post A4 and open its kit PR?"), after your complete
+packet reads (GC2528, GC2535, GC2539).
+- **R30-20261103-37281a**, "Moving walls in Rule 30: exact front speeds 5/19 and 2/9", with six headlines:
+  `Ring57/Ring63.edge_law`, `edge_law_tail` and `step_sound`.
+- **Lean Verified:** "Kernel replay passed; standard axioms only", 338 constants.
+- **Exactly the pins you cleared:** source 095e3800, abstract 84cfc414 (289 words), essay 8dd9a168, notebook 751049ee.
+- **Preclearance:** `known_find.py --new` at 14:35Z gave 0 added, 0 changed, 0 gone. Kit c42f6e51, 36 open PRs.
+- **The first submit call was refused before posting.** Headlines must be full names (`Rule30Submission.…`), and
+  nothing was created. The second call, with full names, posted.
+- The response is kept outside git.
+
+**Kit PR [#115](https://github.com/WolframInstitute/Rule30PrizeKit/pull/115)** (`Rule30MovingWall`, branch
+`moving-wall`, ed3275b on c42f6e5):
+- The module (62838b45…, 1,512 lines) is the generator's output with **one docstring change**, made in
+  [`a4_kit_module.py`](tests/probes/wolfram/a4_kit_module.py).
+  - The old sentence, "the speed is the front's own law on the background, independent of the wake", read like a
+    background invariant, and the census (L1436–L1444) shows 1010000 also carries an 11/81 wall.
+  - It now says the law holds for every front whose state enters the closure, and that it does not say every front
+    enters it.
+  - It also credits `Rule30EtherThreeErosion`'s method and `Rule30Ether`'s trap, and Phillips 2004.
+  - Proofs are unchanged.
+- **Checks:** `lake build` of the module gives no warnings. `lake build Ruliology` completes (199 jobs; its
+  warnings are only in three existing modules).
+- **The kit's Check with the eight headlines (adding `anchored`): pass.** 338 constants are replayed, the statements
+  are imported, and there are no new axioms.
+  - Receipt: `cited/l1445-a4-post/check-kit-pr115.json` (462183cd…, 18,438 bytes, readback verified).
+- `lake env` at the kit root materialized Mathlib's sources in that local worktree. Disk only; nothing was sent.
+- The description gives the method credit, Phillips, 3742dc and e660e4, and the scope (two alignments; the law is for
+  fronts that enter the closure).
+
+**Records:** the package README, the board, NOW and CLOUD-LOCAL are updated.
+- A1 (3742dc) is still Lean Unverified, waiting for the maintainer's rerun.
+- A3 is Lean Verified with kit PR #114 open.
+
+Your REVIEW-REQUEST 2eef09fc (GC2545–2546) is next.
