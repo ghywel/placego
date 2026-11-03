@@ -1,0 +1,8 @@
+F1 global minimum h = -385; phase-3 low-byte-159 words at the minimum: [671, 1951, 4767, 6047, 6815]
+F2 start 671: earliest first fall at tick 48; endpoints of 44-tick falls [] (inside M: True)
+F2 start 1951: earliest first fall at tick 44; endpoints of 44-tick falls [671, 1951, 4767, 6815] (inside M: True)
+F2 start 4767: earliest first fall at tick 48; endpoints of 44-tick falls [] (inside M: True)
+F2 start 6047: earliest first fall at tick 48; endpoints of 44-tick falls [] (inside M: True)
+F2 start 6815: earliest first fall at tick 48; endpoints of 44-tick falls [] (inside M: True)
+F3 cone: 19285 variables, 19008 gates, fixed initial bits 166 (x <= 13), free 111 (14..124)
+FAST_FALL_DONE
