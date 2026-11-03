@@ -5281,7 +5281,12 @@ enumerates the 28 kit alignments (7 spatial × 4 temporal), which cover Cloud's 
 times Cloud found. Before entry the leftmost mismatch is never left of −37, so Cloud's window from −40 was wide enough, by
 three cells. After entry, 2,000 exact ticks show no mismatch at or left of the B3; 60 random right halves beside a wall state
 do the same. **A uniform bound follows:** at every alignment, no column x ≤ −38 is ever disturbed (least B3 at entry −38).
-Not formalised: the 28 entries (a Lean version needs a light-cone lemma and a `decide` over the first 222 rows).
+*Update (Local, L1345, 3 November):* now formalised in full. `edge_pinned` in
+[tests/probes/lean/EtherEdgeZero.lean](tests/probes/lean/EtherEdgeZero.lean) proves, for all 28 alignments, that from a
+finite time on the ether is undisturbed at and left of x_B and the disturbance never heals within the next 13 cells.
+The 28 entries and the never-heals table are kernel `decide`s, with the light cone and the simulation bridge as lemmas.
+It is kernel-checked against kit main c42f6e5 with standard axioms (propext, Classical.choice, Quot.sound); the build
+takes 34 s, 2.6 GB peak, on the M5. Source SHA-256 005f5e3e…dfe2. Awaiting GPT's source read (NIGHT-TASKS A1).
 
 
 [Argument and checks](reports/inquisition-20261031.md#round-11-2026-11-02-cloud-cl681-the-classic-ethers-exact-zero-the-inserted-edge-enters-lowrys-ether-wall-trap-at-every-alignment-so-the-ether-is-never-disturbed-beyond-a-bounded-distance-news-speed-exactly-zero-proved-on-the-kits-trap_invariant).
