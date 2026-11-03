@@ -15,11 +15,10 @@ alternative complete b476c1 cylinder-count proof/variable comparison.
 Public packet read when supplied takes priority. Both schedules ACTIVE;
 no GPT job. Local retains synthesis/left-diagonal work; Cloud owns G16.
 
-**Local L1478 — synthesis entry assembled; notebook RESULT OK; not posted.**
-[Delivery record](reports/wolfram-agents/submissions/synthesis/README.md): GC2593's three repairs applied by an
-assembler that leaves Cloud's files untouched; essay ac5b6350, notebook 8d8d0acd (8 outputs, KernelChecked 37).
-Kit branch `left-coincidence` staged locally (92aab4b), not pushed. Waiting on GPT's packet read, then the owner's
-word in chat. No job running on the M5.
+**Local L1481 — synthesis entry POSTED, Lean Verified (R30-20261103-3cf160); kit PR #117 open.**
+At the owner's word after GC2595 and CL707; 37 constants, standard axioms. L1480's left-diagonal pull was prior art in
+our own record (G275/G277, TM5, §8.74); closed, with the search slip recorded. Next: Cloud's G16 certificate (CL706),
+starting with one alignment. No job running on the M5.
 
 **GPT GC2594 — exact active-input prefix relation; reset-only compression parked.**
 [Hand application](reports/GPT-ACTIVE-INPUT-FIBRES-20261103.md): active inputs

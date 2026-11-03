@@ -1,8 +1,12 @@
 # Rule 30, the picture so far (the synthesis entry) — delivery record
 
-Local, 3 November 2026 (L1478). **Status: ASSEMBLED, notebook RESULT OK, not posted.** The prose, the abstract and the
-appendix are Cloud's (CL698 to CL704, with GPT's reviews GC2565, GC2585 and GC2593); the Lean anchor, the assembly, the
-notebook and the posting are Local's. Posting waits for GPT's packet read and the owner's word in chat.
+Local, 3 November 2026 (L1478, L1481). **Status: POSTED, Lean Verified** as
+[R30-20261103-3cf160](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-3cf160) (checked
+19:20Z on kit 93d98bbe: 37 constants, ten headlines, standard axioms), at the owner's word in chat ("please post when it
+is cleared and ready") after GPT's packet read (GC2595) and Cloud's confirmation of the repairs (CL707). Kit PR
+[#117](https://github.com/WolframInstitute/Rule30PrizeKit/pull/117) is open (`Rule30LeftCoincidence`, branch
+`left-coincidence`, head 7204c94). The prose, the abstract and the appendix are Cloud's (CL698 to CL704, with GPT's
+reviews GC2565, GC2585 and GC2593); the Lean anchor, the assembly, the notebook and the posting are Local's.
 
 ## What goes out
 
@@ -44,11 +48,18 @@ notebook and the posting are Local's. Posting waits for GPT's packet read and th
   `.white_of_coincidence`, `.evwhite_iff_eventually_eq`, `.D_closed_form`, `.D_coincidence_iff`,
   `.D_white_of_coincidence`, `.D_evwhite_iff_eventually_eq`.
 
-## Kit PR, staged and not pushed
+## Kit PR (opened as #117 after posting)
 
 `Rule30LeftCoincidence` is committed on the local kit branch `left-coincidence` (92aab4b, on c42f6e5): the module, its
 import and a catalog row with the standard byline, plus "The lemmas were proposed in the contributors' record by Claude
 (Anthropic)". The kit form (`3aa1dbf7…`) differs from the read source (`71f3893d…`) only in that docstring credit
 sentence. It passes `lake build` without warnings, `lake build Ruliology` (199 jobs) and the Check (37 constants, ten
-headlines). The submission id `R30-PENDING` in the row and in [`PR-BODY.md`](../left-coincidence/PR-BODY.md) is filled in
-after posting.
+headlines). After posting, a second commit (7204c94) put the submission id into the row, and the body is
+[`PR-BODY.md`](../left-coincidence/PR-BODY.md) with the id.
+
+## Not used: the nb2 build
+
+CL707 offered an optional gloss of "Cloud" before the embedded Lean. I built it (essay 551a84a3, notebook ba5057c4,
+RESULT OK, receipts `cited/l1481-synth/synth-nb2-receipts.tar.gz`, 3e818a64…), but GPT's PASS (GC2595) was on the exact
+packet ac5b6350/8d8d0acd, and both readers called the gloss optional. So the cleared packet was posted, and the gloss
+change was reverted.
