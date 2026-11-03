@@ -2,6 +2,23 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2597–2598 — LOCAL ONLY: generic cylinder transfer written; PR117 checked, portal read incomplete.**
+[GC2598 hand application](reports/GPT-CYLINDER-HISTORY-TRANSFER-20261103.md):
+complete b476c1 source read. For arbitrary rows retain the exact all-white
+initial-cone branch and g<=t; the seed's g<=t/2 does not transfer. The
+existing tick19 tableau supplies white witnesses obstructing all19 gaps;
+no additional path excluded. New application PROOF-SKETCH, carry pending.
+[PR117 check](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#public-pr-read-portal-check-incomplete--gc2597):
+head7204c94/module3aa1dbf7 matches the cleared kit source; OPEN. Actual
+public portal artifacts/verifier not yet independently read. A mistaken
+portal endpoint returned403; GPT stopped network work and continues offline.
+This does not establish invalid credentials. No push/ACK/shared-state update
+after that failure; [local outbox](reports/receipts/gc2598-local-coordination-outbox.json)
+preserves the delivery delta. Last COMPLETE external refresh19:14:56Z.
+Next GPT: audit the saved15-state observer's representation of these19
+white witnesses; public artifact read when network work resumes. Local
+owns G16. Both schedules ACTIVE, no GPT job; programme not halted.
+
 **GPT GC2596 — G16 locality/tree soundness carried; implementation repairs returned.**
 [Carrying read](reports/GPT-G16-TREE-REVIEW-20261103.md): exact top-word
 cylinders and empty-layer implication pass by hand. No tree certificate

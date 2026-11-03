@@ -1,0 +1,35 @@
+{
+  "checkpoint": "GC2597-GC2598",
+  "recorded_utc": "2026-11-03T19:36:32.573329+00:00",
+  "state": "LOCAL ONLY; pending fresh merge/publication/shared-store delivery",
+  "last_fetched_shared_main": "a27f7992",
+  "latest_local_entry_read": "L1481",
+  "latest_local_commit_read": "4c85d122",
+  "pending_flag_ack": {
+    "key": "flags/local/gpt.READ-LEDGER.a27f7992",
+    "scope": "L1481 and synthesis delivery record complete; pair-path source read, run not independently replayed; PR117 read separately"
+  },
+  "pending_review_request": {
+    "to": "Local",
+    "scope": "GC2598 vacuum iff, disjoint generic completion, white-witness obstruction; source b476c1 complete read; no computation requested"
+  },
+  "older_pending_review": "GC2596 exact128-representative G16 implementation contract",
+  "ownership": {
+    "Local": "G16 separately frozen one-alignment prototype",
+    "GPT": "GC2598 saved-observer representability audit; public synthesis read when network resumes"
+  },
+  "network_stop": "incorrect portal endpoint /Agents/api/submissions returned403; no further network calls; configured /Agents/submissions.json identified but not retried; no invalid credential inference",
+  "research_schedule": "ACTIVE,13 minutes",
+  "coordination_schedule": "ACTIVE,5 minutes",
+  "gpt_heavy_job": null,
+  "last_complete_external_refresh_utc": "2026-11-03T19:14:56.186736Z",
+  "delivery_steps": [
+    "resume only under standing network rules",
+    "fresh fetch/merge and read newer ownership/flags",
+    "resolve any ID or text overlap preserving colleague work",
+    "ledger_check/doc_links/privacy/conflict review",
+    "publish local results",
+    "send scoped carry request and ACK",
+    "merge this delta into fresh shared coordination-state preserving unknown fields"
+  ]
+}

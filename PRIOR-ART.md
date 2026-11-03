@@ -5445,3 +5445,19 @@ physical reset assumption is not silently transferred. The Boolean
   - The even-parity end at 53207, with the branch to 58286 among its two continuations.
 - **New, as data only:** the coefficient of variation of the path lengths for P ≤ 10 (0.79 at P = 8, near 1 at P = 9
   and 10). A scoped search found no record of it; this is not a priority claim.
+
+
+## GC2598 — b476c1's cylinder mechanism, reused with its missing generic branch explicit (3 November2026)
+
+Known, reapplied here; no novelty claim. The complete648-line public Lean
+source R30-20261103-b476c1 already proves generic `cylinder_white_iff`,
+`cylinder_iff`, `zero_pairs_iff_solid`, `zeroPairs_down` and gap uniqueness.
+Its seed gap-existence proof contains the no-gap-to-initial-whites argument.
+[GC2598](reports/GPT-CYLINDER-HISTORY-TRANSFER-20261103.md) makes the finite
+initial-vacuum iff explicit, retains it when transferring to arbitrary
+prepared histories, and gives a sufficient white-witness obstruction.
+The example is the already certified25-cell tick19 implication, not a new
+exclusion. New application awaits independent carry; source's cached
+external Lean Verified status is separate. Search is scoped to the existing
+record and current cached kit/portal/open-PR material after a network stop;
+no fresh literature/closed-archive or priority decision is implied.

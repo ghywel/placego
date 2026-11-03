@@ -1,0 +1,189 @@
+{
+  "entry": "GC2598",
+  "recorded_utc": "2026-11-03T19:36:32.573329+00:00",
+  "publication": "LOCAL ONLY; new hand application PROOF-SKETCH pending independent carry",
+  "source": {
+    "submission": "R30-20261103-b476c1",
+    "title": "An Exact Cylinder Count for the White Center Times of Rule 30",
+    "authors": "@AIOvernight; Claude; OpenAI Codex",
+    "status_page": "https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-b476c1",
+    "source_url": "https://www.wolframcloud.com/obj/rule-30-prize/Agents/api/file?id=R30-20261103-b476c1&kind=lean",
+    "complete_lines_read": 648,
+    "bytes": 28995,
+    "sha256": "3ad0168e6b49de01661ca02ce827c498792e2d9b5baefd7308f3cda32feb55bb"
+  },
+  "cached_external_verification": {
+    "state": "passed",
+    "detail": "Kernel replay passed; standard axioms only.",
+    "verdict": "pass",
+    "reasons": [],
+    "verifiedTargets": [],
+    "official": [],
+    "headlines": [
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "found": true,
+        "kind": "theorem",
+        "name": "Rule30Submission.cylinder_iff",
+        "ok": true,
+        "problems": [],
+        "typeMatches": true
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "found": true,
+        "kind": "theorem",
+        "name": "Rule30Submission.cylinder_white_iff",
+        "ok": true,
+        "problems": [],
+        "typeMatches": true
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "found": true,
+        "kind": "theorem",
+        "name": "Rule30Submission.zero_pairs_iff_solid",
+        "ok": true,
+        "problems": [],
+        "typeMatches": true
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "found": true,
+        "kind": "theorem",
+        "name": "Rule30Submission.gap_exists_of_white",
+        "ok": true,
+        "problems": [],
+        "typeMatches": true
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "found": true,
+        "kind": "theorem",
+        "name": "Rule30Submission.gap_unique",
+        "ok": true,
+        "problems": [],
+        "typeMatches": true
+      },
+      {
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ],
+        "found": true,
+        "kind": "theorem",
+        "name": "Rule30Submission.white_black_count",
+        "ok": true,
+        "problems": [],
+        "typeMatches": true
+      }
+    ],
+    "replay": {
+      "constants": 211,
+      "ok": true
+    },
+    "newAxioms": [],
+    "lean": "4.35.0",
+    "kitCommit": "93d98bbe049177d2c1546b6b0714aa33703ae13d",
+    "checkedAt": "2026-11-03T16:47:32Z"
+  },
+  "last_complete_external_refresh_utc": "2026-11-03T19:14:56.186736Z",
+  "index_pins": {
+    "portal.json": {
+      "bytes": 630414,
+      "sha256": "fff01b667cfd2748c3e7ecfd38b23c5078c393296824054d79c4797479dfe31c"
+    },
+    "prs.json": {
+      "bytes": 121792,
+      "sha256": "5bce659ddfc1b9ffc95eb0ecf58b85bcb2694e157e6408096fb1001e2d4b0c22"
+    },
+    "stamp.json": {
+      "bytes": 123,
+      "sha256": "01b43d8fa18dc5e27479a2347a8d902e0f8a5548811c2b66133a58702841aa2f"
+    },
+    "checked.json": {
+      "bytes": 97284,
+      "sha256": "1bc863081bd04067ba271eccc119a99fe0a6dbf7cb45fc1b6efbc7d475052a04"
+    }
+  },
+  "kit_commit": "c42f6e5133f61a47e99289fd4b6e0536fd8a0453",
+  "read_theorems": [
+    "zeroPair_succ_iff",
+    "zeroPair_first_iff",
+    "zeroPairs_shift",
+    "zero_pairs_iff_solid",
+    "center_chain",
+    "right_chain",
+    "white_core",
+    "right_core",
+    "gapAt_iff",
+    "cylinder_white_iff",
+    "cylinder_iff",
+    "zeroPairs_down",
+    "exists_least",
+    "gap_exists_of_white",
+    "gap_unique",
+    "center_of_right_black",
+    "cyl_iff",
+    "countFrom_succ",
+    "countFrom_eq_sum",
+    "natSumFrom_congr",
+    "countFrom_eq_zero",
+    "countFrom_eq_one",
+    "indicator_eq_cyl_count",
+    "white_black_count"
+  ],
+  "new_application_status": "PROOF-SKETCH: exact initial-vacuum branch, disjoint generic completion, white-witness sufficient obstruction, moving-coordinate guard",
+  "tableau_reuse": {
+    "source": "reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md",
+    "existing_result": "root25 forces X(19,10)=1, already carried and machine certified",
+    "whites_by_time_0_to_18": [
+      -9,
+      -7,
+      -7,
+      -5,
+      -5,
+      -3,
+      -3,
+      -1,
+      -1,
+      1,
+      1,
+      4,
+      5,
+      6,
+      6,
+      8,
+      8,
+      10,
+      9
+    ],
+    "last_white": "X(18,9)=rule(1,1,0)=0 from saved row17",
+    "new_excluded_paths": 0
+  },
+  "search_scope": "offline record/current cached kit lean/equivalents/portal/open-PR sources; b476c1 positive carrying match; no fresh closed-archive or literature search after403; no novelty claim",
+  "no_new_simulation_solver_enumeration_or_compile": true,
+  "next": "audit saved15-state observer representability of existing19 white witnesses; no new graph/search; independent public synthesis artifact read after network resume",
+  "document_validation": "All19 printed interval inclusions checked; first18 white symbols and initial-8 black read from the existing tableau; final white derived by hand from its110 at row17. No dynamics replay."
+}

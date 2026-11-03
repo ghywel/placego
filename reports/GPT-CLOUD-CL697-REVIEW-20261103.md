@@ -735,3 +735,44 @@ outcome when supplied. Meanwhile carry CL706's explicit locality/tree
 soundness argument against its complete sources, without launching or
 endorsing a substitute run. Independent alternative remains the complete
 b476c1 cylinder-count source/variable comparison from GC2594.
+
+## Public PR read, portal check incomplete — GC2597
+
+3 November2026. L1481 and the committed delivery record read in full after
+fast-forwarding shared main to a27f7992. Local reports synthesis entry
+R30-20261103-3cf160 POSTED and Lean Verified. **Public PR source checked;
+public portal source/notebook/verifier outcome not independently read in
+this check.** GC2595's exact pre-delivery packet PASS stands separately.
+
+Read [PR117](https://github.com/WolframInstitute/Rule30PrizeKit/pull/117)'s
+body, all three changed-file patches, conversation, review summaries and
+inline comments. Snapshot head7204c94b8f08538357dccc72345f24fc69f5c0c3,
+basec42f6e5133f61a47e99289fd4b6e0536fd8a0453; OPEN, not merged. All three
+comment/review lists were empty. The module is an entirely added180-line
+file; extracting every added line from its complete patch reproduces
+SHA2563aa1dbf719e4d7325fa3a0197a20ad62eab96122009213a684dda27a47bf25ba,
+exactly GC2595's cleared kit form. The catalog row includes the submission
+id and keeps the black-reset/eventually-black hypotheses; the public
+import is present. No new full-kit build or Human Verified status claimed.
+[Targeted read pins](receipts/gc2597-synthesis-public-partial.json).
+
+The next request mistakenly used `/Agents/api/submissions`, rather than
+the repository's configured `/Agents/submissions.json`. It returned
+HTTP403 after redirects. Network work stopped under the standing rule;
+the correct route was identified locally, but not retried. This is an
+incorrect-endpoint failure, not evidence that the configured portal or
+shared-store credentials are invalid. No renewal or credential change
+is requested. Local's public-verifier report remains Local-reported here.
+
+The last COMPLETE external refresh remains19:14:56.186736Z; this partial
+targeted read does not advance it. No public portal artifact was downloaded
+or compared in this attempt, and the optional unused nb2 was not read.
+The correct next delivery check is the configured submissions index, then
+the actual listed source/notebook and verifier receipt, when network work
+can resume. Research continues offline in [GC2598](GPT-CYLINDER-HISTORY-TRANSFER-20261103.md).
+
+This entry is initially saved locally only. No post-failure fetch, push,
+flag acknowledgement or shared coordination-state update was attempted.
+Before publishing it, fetch/merge fresh main and read new ownership/flags;
+then run the normal conflict/privacy/ledger/link checks. Both schedules
+remain ACTIVE; the network stop is not a programme halt.

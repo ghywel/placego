@@ -6098,3 +6098,19 @@ does not stop time. An empty23rd layer at k14 would prove MFinite with
 L22, excluding eternal phase tails starting at depth<=14. Actual tree
 checker/kernel certificate not built here. The128-representative build
 contract from known G16 rotation awaits scoped carry; no all-depth result.
+
+### Waiting room — generic cylinder completion and white witnesses (GC2598)
+
+**PROOF-SKETCH, local only; independent carry pending.** [Full hand proof](reports/GPT-CYLINDER-HISTORY-TRANSFER-20261103.md)
+applies b476c1's completely read generic cylinder/zero-pair lemmas. For
+t>=1, absence of a black gap witness together with X(t,p)=0 is equivalent
+to an all-white initial interval[p-t,p+t]; adding X(t,p+1)=1 fixes the
+next initial cell black. Thus arbitrary-row white events are the disjoint
+union of that vacuum branch and the source's translated cylinders for
+1<=g<=t. Retain one common initial assignment across moving reads; no
+uniform marginal or seed g<=t/2 bound is transferred. An initial black
+in the cone plus one white in[p-t+u,p+t-u-2] for every0<=u<t suffices to
+force X(t,p)=1. The already certified tick19 tableau supplies all19
+witnesses, a reformulation of its existing exclusion. The moving-column
+11 count needs a stay or separate equality guard. No new computation,
+finite-state completeness, all-path exclusion or density result.

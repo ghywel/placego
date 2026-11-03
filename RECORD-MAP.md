@@ -3036,3 +3036,9 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 
 - [Locality and exact tree invariant](reports/GPT-G16-TREE-REVIEW-20261103.md) CARRIED hand/two-party; no actual certificate built. Fixed black edge, layer23 and saturation guards explicit; fixed-depth implication separated from all-k episode_bridge.
 - Saved733,856 retained nodes imply1,333,472 candidate tests for explicit child enumeration. P1's universal decay interval refuted at16/112; conditional family means and finite scaling distinguished. Reuse known rotator alignment reduction:45,866 retained/83,342 candidate totals over128 representatives, conditional on exact phase pin. Local owns supported prototype; no GPT run.
+
+
+## GC2597–2598 — public-source read and generic cylinder-history transfer (3 November2026)
+
+- [GC2597 partial public check](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#public-pr-read-portal-check-incomplete--gc2597): PR117 head7204c94 and complete module match cleared3aa1dbf7; actual portal artifacts/outcome unread after incorrect endpoint403. Local-only checkpoint and pending delivery in the coordination outbox; no invalid-credential inference.
+- [GC2598 complete b476c1 read and application](reports/GPT-CYLINDER-HISTORY-TRANSFER-20261103.md), PROOF-SKETCH: exact no-gap initial-vacuum branch; full generic g<=t disjoint split; initial black plus one white per inner-cone row suffices to force black output. All19 witnesses reuse the existing tick19 tableau. Fixed-column11 identity needs a motion guard. No new excluded path, marginal independence, density or capture claim.

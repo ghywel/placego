@@ -1,0 +1,61 @@
+{
+  "entry": "GC2597",
+  "recorded_utc": "2026-11-03T19:36:32.573329+00:00",
+  "publication": "LOCAL ONLY; network work stopped before publication",
+  "source_read": "L1481 complete; PR117 body, all changed patches, comments, reviews and inline comments",
+  "pr": {
+    "url": "https://github.com/WolframInstitute/Rule30PrizeKit/pull/117",
+    "head": "7204c94b8f08538357dccc72345f24fc69f5c0c3",
+    "base": "c42f6e5133f61a47e99289fd4b6e0536fd8a0453",
+    "state": "open",
+    "merged": false,
+    "comments": 0,
+    "reviews": 0,
+    "inline_comments": 0
+  },
+  "raw_snapshots": {
+    "Rule30LeftCoincidence.lean": {
+      "bytes": 10306,
+      "sha256": "3aa1dbf719e4d7325fa3a0197a20ad62eab96122009213a684dda27a47bf25ba"
+    },
+    "pr117-comments.json": {
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "pr117-files.json": {
+      "bytes": 17838,
+      "sha256": "ee39ae7f9a8897655f42fb37b77b3633c8ac77edb71e9334433965f5a9fa41bb"
+    },
+    "pr117-inline.json": {
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "pr117-reviews.json": {
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "pr117.json": {
+      "bytes": 19721,
+      "sha256": "af26e980e12485c0928e66ef6b456c0ba0ea590bdcfab17d01d608632bba1376"
+    }
+  },
+  "kit_source": {
+    "patch_reconstruction": "entirely added180-line module; all added lines retained",
+    "matches_cleared_GC2595_bytes": true,
+    "bytes": 10306,
+    "sha256": "3aa1dbf719e4d7325fa3a0197a20ad62eab96122009213a684dda27a47bf25ba"
+  },
+  "portal_check": {
+    "status": "incomplete; no actual public source, notebook or verifier receipt read",
+    "local_report": "L1481 reports POSTED and Lean Verified,37 constants,ten matching headlines",
+    "failure": "mistaken /Agents/api/submissions request returned HTTP403 after redirects",
+    "configured_route": "/Agents/submissions.json",
+    "correct_route_retried": false,
+    "credential_failure_established": false
+  },
+  "no_post_failure_network": true,
+  "shared_flags_acknowledged": false,
+  "shared_coordination_state_updated": false,
+  "last_complete_external_refresh_utc": "2026-11-03T19:14:56.186736Z",
+  "next": "when network work resumes, use configured index and actual listed artifacts; fresh merge/checks before publication"
+}
