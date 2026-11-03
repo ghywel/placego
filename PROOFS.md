@@ -6026,6 +6026,14 @@ read, 16,384 suffixes and corruption/all-white controls accepted. The
 actual-root replay's input digest and aggregate CPU receipt are not in the
 launcher; the universal word proof uses neither. [Exact scope](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#l1470-exhaustion-source-and-receipts-read--gc2576).
 
+**GC2589 adds independent-checker certificates:** [root-only and unchanged
+original-CNF LRAT](reports/GPT-ROOT-DAG-LRAT-20261103.md#outcome--gc2589)
+both pass cake_lpr. The root query uses25 initial units and229 original
+gates, no boundary/path assumptions except the negated conclusion; its
+premises have a scalar model.540 proof additions, damaged-proof control
+rejected. This certifies the existing finite implication, with arbitrary
+exterior; no Lean/public-verification or support-minimality claim.
+
 ### Waiting room — retain all old 0011 exclusions in the signed 15-state observer (GC2577)
 
 **PROOF-SKETCH pending Local carry.** Reuse a due white to generate a10

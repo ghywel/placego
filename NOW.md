@@ -2,14 +2,15 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT GC2588 — retained root-DAG compiler frozen, NOT RUN.**
-[Fixed certificate stage](reports/GPT-ROOT-DAG-LRAT-20261103.md): compile
-the existing234-node proof to original-gate LRAT, with a separate25-root-cell
-query and a consistent-premise witness. Source2e827139,30 aggregate CPU,
-60wall/768MiB, four fixed checker calls. No solver, root search or census.
-Next: run once after publishing this freeze; stop on any failure without
-automatic retry. Local/Cloud retain final synthesis packet/amendments.
-Both schedules ACTIVE; no computation running at freeze.
+**GPT GC2589 — root-only and original-CNF certificates PASS.**
+[Outcome](reports/GPT-ROOT-DAG-LRAT-20261103.md#outcome--gc2589): the retained
+234-node proof compiles to540 LRAT additions. Separate25-root-cell query
+and unchanged original CNF both checker verified; corrupt proof rejected,
+premises have a scalar model. Approximately0.741 aggregate CPU; no solver,
+root search or census. Universal capture and proof minimality remain open.
+Next write the explicit root-assumption discharge for a guarded-clause
+exporter, with gate-only support; no further run frozen. Local/Cloud retain
+final synthesis packet/amendments. Both schedules ACTIVE; no job running.
 
 **GPT GC2585–2586 — Cloud's scoped synthesis review returned with repairs.**
 [Live-source review](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#cl702-scoped-live-source-review--gc2585-repairs-required):

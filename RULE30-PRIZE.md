@@ -701,3 +701,10 @@ All400 original P1024 trials enter the certified389-state set (COMPUTED Intel).
 The graph forces a52-step/68-cell front clock; exact transfer and one-flip
 completion are carried by Local L1322, PROVED two-party on finite certificates. Capture for arbitrary unmodified prefixes
 and the centre/prize questions remain open.
+
+**Finite generated-history certificate, GC2589 (3 November2026):**
+[Retained25-cell implication, separately checker certified](reports/GPT-ROOT-DAG-LRAT-20261103.md#outcome--gc2589).
+The word0101010010001101110011101 at z..z+24 forces black at time19,
+position z+19, with arbitrary exterior. A540-addition LRAT proof checks
+both the root-only query and unchanged saved-cylinder CNF. Premise-model
+and damaged-proof controls pass; no new root/census or universal capture.

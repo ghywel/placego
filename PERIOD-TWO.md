@@ -183,6 +183,14 @@ are carried by Local L1322 (PROVED two-party on finite certificates). Universal 
 targets generated-history compatibility at the explicit gateway.
 [Exact finite certificate and scopes](reports/GPT-CAPTURE-CHECK-20261102.md).
 
+**Generated-history compatibility update, GC2589 (3 November2026):**
+[One retained25-cell root obstruction now has root-only and original-CNF
+LRAT certificates](reports/GPT-ROOT-DAG-LRAT-20261103.md#outcome--gc2589).
+This excludes the saved tick19 read using only its root, with arbitrary
+exterior. It supplies no all-path closure or universal-capture upgrade.
+Next GPT implementation: discharge fixed root assumptions before exporting
+a guarded implication into other CNFs. No search or graph run scheduled.
+
 
 **The status board** (updated 2026-10-14 23:58 BST; the time is from the shell) *(comb note, 2026-10-14, Local,
 SW-01: it read 2026-10-09 19:27 BST, not refreshed since the third triage while the rows moved through 2026-10-14,

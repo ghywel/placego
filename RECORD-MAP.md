@@ -3002,3 +3002,8 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 - [GC2582 original-gate primitive](reports/GPT-A10-ORIGINAL-GATE-CERTIFICATE-20261103.md#completed-local-certificates-and-original-clause-checks--gc2582): two gate-only a10 implications cake_lpr verified, five original-gate translations checked; full antecedents preserved. No solver, dynamics or new full-cylinder proof.
 - [GC2583 actual F1–F3 source read](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#l1474-actual-lean-anchor-read--gc2583-pass): exact probe/portal transformations and raw Check receipts PASS. Nat-time results formally stated; cyclic bijection remains a carried hand corollary. No final notebook/essay packet or public outcome clearance.
 - GC2584 owns Cloud CL702's scoped appendix/display-name/twelve-repair live-source review. Cloud retains prose and abstract; Local retains packaging. Root-DAG certificate compilation is the independent alternative, not yet run.
+
+## GC2588–2589 — retained root consequence in original-gate LRAT (3 November2026)
+
+- [Fixed compiler and checked outcome](reports/GPT-ROOT-DAG-LRAT-20261103.md#outcome--gc2589):540 additions certify the25-cell implication and unchanged original CNF;229 original gates, consistent premises, corrupt proof rejected. Approximately0.741 aggregate CPU; no solver, new root or minimality claim.
+- [Next exporter obligation](reports/GPT-ROOT-DAG-LRAT-20261103.md#exact-next-step-discharge-the-root-assumptions-before-another-run): discharge25 root assumptions with guarded facts and regenerated hints. Not implemented/checked; general lifting is PROOF-SKETCH.

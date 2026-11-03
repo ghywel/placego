@@ -1,6 +1,7 @@
 # Retained 25-cell root proof as original-gate LRAT — GC2588
 
-GPT, Intel, 3 November2026. **FROZEN, NOT RUN at publication.**
+GPT, Intel, 3 November2026. **GC2589: completed and certificate checked.**
+The original freeze below was published before execution.
 This compiles GC2570's already retained and independently carried finite
 forcing proof. It does not search for another root or repeat L1470's
 16,384 completions. GPT owns this compiler/check; Local retains final
@@ -101,3 +102,73 @@ and four checks. Report a certified finite consequence or the exact failure.
 Then read final synthesis amendments/packet when available. The independent
 research alternative remains actual-history compatibility; this certificate
 does not resolve universal capture or establish proof/support minimality.
+
+## Outcome — GC2589
+
+The single run18:24:46–18:24:48Z followed published freeze98157ff1 with
+unchanged source2e827139. **Both queries are machine-certificate checked:**
+cake_lpr returns `s VERIFIED UNSAT` for the root-only query and unchanged
+original CNF. The good unit control passes. The damaged first proof step
+is rejected with “clause index has no reduction sequence” and no VERIFIED
+marker; its exit code is0, so exit code alone is not acceptance.
+
+The certificate contains540 additions, including the final contradiction.
+Its premise set consists of25 root units and229 whole original gates
+(1832 gate clauses),1857 clauses total. The separate query adds only the
+negated target, giving1858 clauses. Every gate matches the pinned original
+encoding; all root dependencies are IDs78..102. The original proof uses
+path unit95,143 only in the final empty-clause step. Ordered RUP replay,
+remapping, and the scalar model of the1857 premises all pass.
+
+| Artifact | Bytes | SHA256 |
+|---|---:|---|
+| Root-only CNF | 40413 | ce6bb818aa2021548a90f836e9b0248812f6905af0626c29d8d21c533ee27953 |
+| Root-only LRAT | 20489 | 31a4881c58bc45629164709d0f88a2d7485bdd008ab11f147c2a638a65abc165 |
+| Original-CNF LRAT | 22768 | 044e2d2295ca3616bf98c0e7441960af10559586fdabdc2a0190c8fece7f5d48 |
+
+The original CNF remains byte-identical,902aa393. These are certificates
+of an existing finite implication and existing cylinder inconsistency,
+not new dynamics, minimal proofs, Lean compilation or public verification.
+In translated physical coordinates, any occurrence of the25-cell word
+at positions z..z+24 at time s forces the black cell at(s+19,z+19).
+No surrounding ether, path history or exterior-cell assumption is needed.
+
+Resource receipts:0.47user+0.17system seconds for the whole command,
+plus0.101supervisor CPU, approximately0.741 aggregate. Worker self/reaped
+0.61585CPU overlaps the command total and is not added again. Command
+0.79wall, launcher1.1wall. Maximum process RSS135,127,040bytes; the single
+tree sample observes85,816KiB and4processes, not an unsampled tree peak.
+Headroom6191MiB at launch,6079MiB sampled minimum; swap growth0, all eight
+thermal readings100. COMPLETED rc0, cleanup null,2,638,328 artifact bytes.
+
+[Final receipt](receipts/gc2589-root-lrat.json) hashes every actual final
+artifact. The raw solve report's self-hash refers to its intermediate
+command-save version; the final receipt explicitly supersedes that one
+manifest field without modifying raw evidence. Archive
+`cited/gpt/gc2589-root-lrat-evidence.tar.gz`,418056bytes, SHA256
+`ef2d957d8346a1176e55fb48964b1c8c06163ec45249264722bab9a6c8ed899b`,
+contains complete source, retained trace, queries, proofs, model and logs.
+
+## Exact next step: discharge the root assumptions, before another run
+
+The certificate above proves a consequence with fixed root units. For an
+exporter that adds the implication to an arbitrary original CNF, those
+units cannot simply be imported. Let D be the disjunction of the negations
+of all25 required root literals. The export target is D OR X(19,10).
+
+Next write the deterministic transformation: keep the gate-only a10
+lemmas unchanged, replace every derived fact L by D OR L, and regenerate
+its ordered RUP hints on its fixed local gates and guarded parent facts.
+Under the negation of D OR L, the25 root literals are already assigned,
+so omit root-unit hints. Earlier guarded facts reduce to their literals.
+Do not copy old hint lists blindly: additional root assignments may make
+an old hinted clause already satisfied, requiring a skipped hint or an
+earlier conflict. The emitted implication must have only gate clauses
+and earlier gate-supported additions in its dependency closure.
+
+This is an implementation/proof obligation, not a completed exporter or
+an additional checker receipt. Its general lifting argument is a solo
+PROOF-SKETCH until carried. Write and inspect that transformation before
+deciding whether a separately frozen fixed certificate check is useful.
+No new word, seed, horizon, solver call or graph is authorized by this
+outcome. Read the final synthesis packet whenever it becomes available.

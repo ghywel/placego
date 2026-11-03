@@ -1,0 +1,165 @@
+{
+  "entry": "GC2589",
+  "freeze_commit": "98157ff12344b174aefd0ac0e1fe200bfcf61471",
+  "source_sha256": "2e827139bdee0e79d8f217b6eefa93a336982b527f123f8a20f524b777c06a81",
+  "status": "ROOT_CONSEQUENCE_AND_ORIGINAL_CNF_LRAT_VERIFIED",
+  "artifact_manifest": {
+    "cpu-live.json": {
+      "bytes": 69,
+      "sha256": "28cb5d1e699a156d913fd17fe8a9457b7724d25c2ce21ed1f6515389444bf379"
+    },
+    "launcher.json": {
+      "bytes": 1388,
+      "sha256": "1d9d45c3f7c344534255e557e04a35559d56c114356af94918f91cca61278191"
+    },
+    "original-good.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "original-good.stdout": {
+      "bytes": 17,
+      "sha256": "c680d3bd38a04c7beee7d54999f8f00b43051f75a53cf2bd170ae0cc5f99eb5f"
+    },
+    "original.cnf": {
+      "bytes": 2312533,
+      "sha256": "902aa393975948ff00f775206becc648919693c95170acf134590b12d73ce9c9"
+    },
+    "original.lrat": {
+      "bytes": 22768,
+      "sha256": "044e2d2295ca3616bf98c0e7441960af10559586fdabdc2a0190c8fece7f5d48"
+    },
+    "out.txt": {
+      "bytes": 4002,
+      "sha256": "5487d63034681e5755e971068bfce5c5398e930df6a5c0c014a187fd8493b671"
+    },
+    "premise-model.json": {
+      "bytes": 134551,
+      "sha256": "86608c9007e26332fc2c9ad3ce33cb4413fe69dfec847f1add91629309cf2b17"
+    },
+    "root-bad.lrat": {
+      "bytes": 20481,
+      "sha256": "153a66bfd62333c7a517d060f592461b3ebeea06af072a5139e2166bc5b5a7c4"
+    },
+    "root-bad.stderr": {
+      "bytes": 82,
+      "sha256": "c6e9224ac0de7ff29b6d04e0d5e25163d0be1c237279e418d43087b2562340d3"
+    },
+    "root-bad.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "root-good.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "root-good.stdout": {
+      "bytes": 17,
+      "sha256": "c680d3bd38a04c7beee7d54999f8f00b43051f75a53cf2bd170ae0cc5f99eb5f"
+    },
+    "root.cnf": {
+      "bytes": 40413,
+      "sha256": "ce6bb818aa2021548a90f836e9b0248812f6905af0626c29d8d21c533ee27953"
+    },
+    "root.lrat": {
+      "bytes": 20489,
+      "sha256": "31a4881c58bc45629164709d0f88a2d7485bdd008ab11f147c2a638a65abc165"
+    },
+    "solve.json": {
+      "bytes": 4002,
+      "sha256": "5487d63034681e5755e971068bfce5c5398e930df6a5c0c014a187fd8493b671"
+    },
+    "support-map.json": {
+      "bytes": 76074,
+      "sha256": "dfe0609bd5468507fc1d440286869fcff3156925bc51b882ba86d43a5e9fe295"
+    },
+    "thermal.txt": {
+      "bytes": 2007,
+      "sha256": "2884bf22ef12b8868e463112ae8b65e2287fe59727de6cfa0127dac6af4544ef"
+    },
+    "time_receipt.txt": {
+      "bytes": 777,
+      "sha256": "305ed611e9f2e6ecb149224452edb91f380079f9b1e6c32a2dc394bbff539011"
+    },
+    "unit-good.lrat": {
+      "bytes": 10,
+      "sha256": "2e9bf73f333fd3624376d1eb676ce8d6240ba39924936c22bc1a522bfb01b8cc"
+    },
+    "unit-good.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "unit-good.stdout": {
+      "bytes": 17,
+      "sha256": "c680d3bd38a04c7beee7d54999f8f00b43051f75a53cf2bd170ae0cc5f99eb5f"
+    },
+    "unit.cnf": {
+      "bytes": 19,
+      "sha256": "ac42a371b5a124286c410ed5dfa2e3be7ee7d5b1feac6f08e7e1715f0c3669a8"
+    }
+  },
+  "manifest_note": "This final manifest supersedes solve.json artifacts.solve.json, which hashes the intermediate command-save version before the final report save. Raw output retained unchanged.",
+  "archive": {
+    "path": "cited/gpt/gc2589-root-lrat-evidence.tar.gz",
+    "bytes": 418056,
+    "sha256": "ef2d957d8346a1176e55fb48964b1c8c06163ec45249264722bab9a6c8ed899b"
+  },
+  "checker_results": [
+    {
+      "name": "unit-good",
+      "returncode": 0,
+      "reason": "EXIT",
+      "wall_s": 0.009048681997228414,
+      "aggregate_worker_increment_s": 0.009607000000000032
+    },
+    {
+      "name": "root-bad",
+      "returncode": 0,
+      "reason": "EXIT",
+      "wall_s": 0.0810109389713034,
+      "aggregate_worker_increment_s": 0.027266999999999986
+    },
+    {
+      "name": "root-good",
+      "returncode": 0,
+      "reason": "EXIT",
+      "wall_s": 0.08065474597970024,
+      "aggregate_worker_increment_s": 0.028660999999999992
+    },
+    {
+      "name": "original-good",
+      "returncode": 0,
+      "reason": "EXIT",
+      "wall_s": 0.24696299899369478,
+      "aggregate_worker_increment_s": 0.21591300000000008
+    }
+  ],
+  "counts": {
+    "dag_nodes": 234,
+    "root_leaves": 25,
+    "a10_nodes": 55,
+    "gate_nodes": 154,
+    "proof_additions": 540,
+    "used_original_gates": 229,
+    "support_clauses": 1857,
+    "reduced_clauses": 1858
+  },
+  "resources": {
+    "start_utc": "2026-11-03T18:24:46Z",
+    "end_utc": "2026-11-03T18:24:48Z",
+    "worker_self_and_children_cpu_s": 0.61585,
+    "supervisor_cpu_s": 0.101,
+    "rounded_time_user_plus_sys_s": 0.64,
+    "rounded_time_plus_supervisor_cpu_s": 0.741,
+    "launcher_wall_s": 1.1,
+    "time_real_s": 0.79,
+    "time_max_process_rss_bytes": 135127040,
+    "sampled_tree_rss_kib": 85816,
+    "sample_count": 1,
+    "launch_headroom_mib": 6191,
+    "minimum_sampled_headroom_mib": 6079,
+    "sampled_swap_growth_mib": 0,
+    "exit_reason": "COMPLETED",
+    "cleanup": null
+  },
+  "scope": "Existing 25-cell implication now separately LRAT certified; new certificate of unchanged original CNF. No universal capture, Lean/public verification or minimality claim."
+}
