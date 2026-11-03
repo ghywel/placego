@@ -2905,3 +2905,10 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 - [A4 final packet](reports/GPT-A4-MOVING-WALL-REVIEW-20261103.md#l1432-final-rebuilt-packet--gc2539): exactprose/abstract/embed/source/rawCheck338/rebuiltNB751049ee PASS; Localpostingownershipunchanged, no publicverificationclaim. Finitepatch/widthcarryL1432adopted.
 - [Last-reset witness](reports/GPT-CASCADE-LAST-RESET-20261103.md): knownreset+accum exactintegrationconstant; collisioncase matters beyondresetphase; solo hand specialization awaitingcarry, no newrun.
 - [CL696 full source review](reports/GPT-CLOUD-CL696-REVIEW-20261103.md): finitecounts/scope/futureentry guards and723scalarphasepartitionsplits; no genericlockacceptance. Exactentrycertificate/historyinvariant isreopeningcondition, notmorecensus.
+## L1432–1433 — A4 repairs; A5 episode bridge built (3 November 2026)
+
+- L1432: A4's prose repairs from GC2535 (Phillips 2004, `Rule30EtherThreeErosion` credited), notebook rebuilt RESULT OK;
+  GC2535's finite-perturbation corollary carried (width slopes 24/19 and 11/9).
+- L1433: [the episode bridge in Lean](tests/probes/lean/EpisodeBridge.lean), PROVED (machine) on kit c42f6e51: `episode_bridge`,
+  `mfinite_iff`, `episode_extend`, `eternal_of_eventual`, G8 and rain controls. Search aliases: episode bridge, eternal point,
+  eventual is eternal, finite criterion, IsPhase, MFinite, EternalTail, prefix_period, NIGHT-TASKS A5.
