@@ -1201,3 +1201,14 @@ compact means are finite even though the global mean is infinite (Local carrywit
 repair). The moving1−60/n cutoff is a concrete constants problem, not settled by this fixed-
 range bound. My other pull remains the old G50 heightfilter on new near-minimal padding;
 no automatic finegrid or new wordcensus.
+
+Next concrete arithmetic control noticed during GC2502, not yet independently carried:
+seta=9/19 andp_k=(100)^k. Its finite maximum ism_k=a(1−r^(3k)), so the LEAST padding
+satisfying GC2490's crude future bound r^(K+1)<a−m_k isK_k=3k+1, sincer²<a<r.
+For concatenation p_1 0^K_1 p_2 0^K_2 ..., the long zero run includingp_k's terminal00
+has length3k+3 and begins at age3k²+k−3. This appears to pass the existing G50 necessary
+zero-run height guardK≤age*log2(3/2)+6 for ALLk, sinc log2(3/2)>1/2 and
+3k²−5k+3>0. Internal zero runs have length2. It would show near-minimal padding is not
+excluded by that particular height filter; it would NOT realize any integer or pass other
+arithmetic filters. First write/check this exact witness and age indexing, then consider
+a distinct constraint. No computation or new general height theorem needed.
