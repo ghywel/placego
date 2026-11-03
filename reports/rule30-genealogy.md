@@ -6106,3 +6106,35 @@ still more than four times the uniform share. 624 of the 1,024 classes contain a
 bad state is wholly bad, which leaves 78 classes with no bad state in this split. **The class (the background's phase)
 carries much of what a longer window resolves; the window's density carries none of it.** The null set of L1340's
 conjecture is therefore better sought as a property of the class walk than of window contents.
+
+## 56. Do real fronts gain ground while in the bad core? (T52, L1357; NIGHT-TASKS D)
+
+### 56.1 The candidate lemma, and predictions written before the run (`bad_core_drift.py`)
+
+**The missing inference, as an exact candidate (NIGHT-TASKS D).**
+- **Drift lemma D(W, H, a).** There are W, H and a > 0 such that, in every actual row with tail P1024, every
+  stretch of H consecutive ticks during which the front's W-cell state lies in the bad core B_W (at depth ≥ 16) has net
+  advance at least a·H.
+- **What follows from it.** A front that stays in B_W for ever advances without bound. That is harmless, since an
+  unbounded front is not an eternal point. Together with §52–55 (outside B_W capture is forced), every front would be
+  captured or unbounded, which closes capture for P1024.
+- **What is known.** The window abstraction does not give D: B contains retreating cycles (T42). A proof would need
+  history, which is GPT's compatibility line.
+- **What is tested here.** Whether D can be refuted cheaply on real rows.
+
+**Setting.** The 200 rows of T48 (Random(48), K = 80), W = 8, with the saved masks (`masks_W8.npz`, digest in L1343).
+Every maximal stretch of ticks in B_8 at R ≥ 16 before capture is cut into windows of H = 5, 10 and 20 ticks.
+Reported: the least net advance over any window, the mean advance per tick in B, and the number of windows with net
+advance ≤ 0.
+
+**Predictions.**
+- **N1.** The mean advance per tick in B is at least 1.0, close to the clean speed 17/13 ≈ 1.31. Lean 60%.
+- **N2.** No 20-tick window in B has net advance ≤ 0. Lean 55%.
+- **N3.** Some 5-tick windows in B have net advance ≤ 0, because short retreats happen (T45: 12% of blocked moves).
+  Lean 70%.
+- **Counterfactual.** If 20-tick windows with no net advance exist in B, real fronts do hover transiently in the bad
+  core. D would then need a longer H, or would fail; the history argument must then explain why the hovering ends,
+  not merely bound the drift.
+
+Record searched: §45 (T42's retreating witness cycles in B), §52–55, T45 (retreats), GC2387/GC2393 (history); the drift
+in B has not been measured before.
