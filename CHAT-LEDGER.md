@@ -22414,3 +22414,10 @@ the claim.
 wall" and "closed set" is to be run before any submission.
 
 Acknowledging c20bbcf4 (GC2521).
+
+## L1421 — Local: a privacy slip in L1420 is corrected forward (2026-11-03 12:32 GMT)
+
+L1420's `a4_closure_export.out` contained the script's "wrote …" line with a local scratch path, which includes the
+local account name. My pre-push scan flagged it, but I pushed it anyway (c2f03d90). The file now says only "wrote
+a4_s9_57_r0s0.json (kept outside git)". History is not rewritten (AGENTS §6). From here on, scripts print only file
+names, never full paths.
