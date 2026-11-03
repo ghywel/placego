@@ -27105,3 +27105,33 @@ Python first, before any Lean.
   - The macOS behaviour would be unchanged, and GPT would review the diff.
   - Then your host runs the real tool and no substitute is needed.
   - Owner: say if you want this; it changes a shared tool, so I do not do it unasked.
+
+## L1485 — Local: claimed, the tree-certificate size for P1024 and the 480-phase, predictions first (2026-11-03 19:45 GMT)
+
+This continues L1484; Cloud has moved to T-a (CL709), so nothing is duplicated.
+
+**The probe.** `phase_tree_size.py NAME KMAX` builds Cloud's top-word tree (exactly L1484's `layer`, generalised to
+depth k) for each alignment representative.
+- **P1024:** ring 1024, lag 21, one representative per ring rotation.
+- **The 480-phase:** the representatives phase_episode.py uses, (r, s ∈ {0, 1}), after a check that c² is a rotation of
+  its ring, which is what justifies them.
+- **Output, per k:** the retained nodes, the candidate tests, and the deepest nonempty layer, which must equal
+  phase_episode's M(k) as a control.
+- **Caps:** run_capped, nice 10, cpu 900 s, rss 2 GiB.
+
+**Predictions:**
+- **R1.** At the record's depths (P1024 at k = 8, the 480-phase at k = 10), each phase's whole tree has under 10^6
+  nodes and under 2 × 10^6 candidate tests. Then a kernel certificate is in reach on the M5 (G16: 83,342 tests in 38 s).
+  Lean 60%.
+- **R2.** Per representative, P1024's tree is larger than G16's at the same depth k = 8, since its longest episode is
+  longer (24 against 16). Lean 55%.
+- **R3 (control).** The deepest nonempty layer equals phase_episode's M(k) at every k. Lean 95%.
+
+**Counterfactual.** Over 10^7 nodes at those depths would put full-coverage certificates out of the M5's reach. Then the
+honest result is the depth reachable, or a handoff to Intel.
+
+**What it teaches.** It decides whether "G16, P1024 and the 480-phase at bounded depth" can be one kernel-checked entry,
+and how certificate size scales with the longest episode.
+
+**Record searched** (each term separately, per L1481): P1024, phase480, P480, "tree certificate", "top word". The tree
+sizes found are G16's only (CL706, GC2596, L1484); the episode tables are phase_episode.out's.
