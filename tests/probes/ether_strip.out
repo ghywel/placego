@@ -1,0 +1,16 @@
+C1 control: 109 wall states, closed under both inputs without re-anchoring: True
+S=13 anchor column 2: 32768 nodes, 30676 components; re-anchoring edges 8192, of which on a cycle: 224
+   C3: re-anchoring cycles in 1 component(s), sizes [1975]
+   C3: component of 1975 nodes: minimum cycle mean -7/44, leftward speed bound 7/44 (0.1591)
+S=14 anchor column 2: 65536 nodes, 62290 components; re-anchoring edges 16384, of which on a cycle: 320
+   C3: re-anchoring cycles in 1 component(s), sizes [3053]
+   C3: component of 3053 nodes: minimum cycle mean -7/44, leftward speed bound 7/44 (0.1591)
+ETHER_STRIP_DONE
+# python3 tests/probes/ether_strip.py 15 16 (peak memory 1.5 GB, above the stated 1 GiB cap; the cap did not stop it)
+S=15 anchor column 2: 131072 nodes, 126530 components; re-anchoring edges 32768, of which on a cycle: 380
+   C3: re-anchoring cycles in 1 component(s), sizes [4195]
+   C3: component of 4195 nodes: minimum cycle mean -7/44, leftward speed bound 7/44 (0.1591)
+S=16 anchor column 2: 262144 nodes, 255482 components; re-anchoring edges 65536, of which on a cycle: 504
+   C3: re-anchoring cycles in 1 component(s), sizes [6112]
+   C3: component of 6112 nodes: minimum cycle mean -7/44, leftward speed bound 7/44 (0.1591)
+ETHER_STRIP_DONE

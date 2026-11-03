@@ -1,0 +1,35 @@
+W=0: 28 nodes, 90 edges; minimum cycle mean -7/12; leftward speed bound 7/12 (0.5833); A2 7/12 = 0.5833
+W=1: 84 nodes, 174 edges; minimum cycle mean -7/20; leftward speed bound 7/20 (0.3500); A2 7/12 = 0.5833
+W=2: 252 nodes, 483 edges; minimum cycle mean -7/20; leftward speed bound 7/20 (0.3500); A2 7/12 = 0.5833
+W=3: 756 nodes, 1419 edges; minimum cycle mean -7/20; leftward speed bound 7/20 (0.3500); A2 7/12 = 0.5833
+W=4: 2268 nodes, 4126 edges; minimum cycle mean -7/24; leftward speed bound 7/24 (0.2917); A2 7/12 = 0.5833
+(0,0) inserted edge fronts at t=500..2000: [-17, -15, -17, -15]; random right half: [-1, -3, -1, -3]
+(0,1) inserted edge fronts at t=500..2000: [-2, -4, -2, -4]; random right half: [-9, -11, -9, -11]
+(0,2) inserted edge fronts at t=500..2000: [6, 4, 6, 4]; random right half: [-15, -17, -15, -17]
+(0,3) inserted edge fronts at t=500..2000: [-25, -23, -25, -23]; random right half: [-9, -11, -9, -11]
+(1,0) inserted edge fronts at t=500..2000: [-25, -23, -25, -23]; random right half: [-23, -25, -23, -25]
+(1,1) inserted edge fronts at t=500..2000: [-5, -3, -5, -3]; random right half: [-12, -10, -12, -10]
+(1,2) inserted edge fronts at t=500..2000: [5, 3, 5, 3]; random right half: [-2, -4, -2, -4]
+(1,3) inserted edge fronts at t=500..2000: [4, 2, 4, 2]; random right half: [-10, -12, -10, -12]
+(2,0) inserted edge fronts at t=500..2000: [4, 2, 4, 2]; random right half: [-10, -12, -10, -12]
+(2,1) inserted edge fronts at t=500..2000: [-6, -4, -6, -4]; random right half: [-11, -13, -11, -13]
+(2,2) inserted edge fronts at t=500..2000: [-3, -5, -3, -5]; random right half: [-3, -5, -3, -5]
+(2,3) inserted edge fronts at t=500..2000: [3, 1, 3, 1]; random right half: [-6, -4, -6, -4]
+(3,0) inserted edge fronts at t=500..2000: [3, 1, 3, 1]; random right half: [-6, -4, -6, -4]
+(3,1) inserted edge fronts at t=500..2000: [2, 0, 2, 0]; random right half: [-7, -5, -7, -5]
+(3,2) inserted edge fronts at t=500..2000: [-4, -6, -4, -6]; random right half: [-4, -6, -4, -6]
+(3,3) inserted edge fronts at t=500..2000: [2, 0, 2, 0]; random right half: [-7, -5, -7, -5]
+(4,0) inserted edge fronts at t=500..2000: [2, 0, 2, 0]; random right half: [-14, -12, -14, -12]
+(4,1) inserted edge fronts at t=500..2000: [-20, -22, -20, -22]; random right half: [-6, -8, -6, -8]
+(4,2) inserted edge fronts at t=500..2000: [0, 2, 0, 2]; random right half: [2, 0, 2, 0]
+(4,3) inserted edge fronts at t=500..2000: [-34, -36, -34, -36]; random right half: [-8, -6, -8, -6]
+(5,0) inserted edge fronts at t=500..2000: [-34, -36, -34, -36]; random right half: [-15, -13, -15, -13]
+(5,1) inserted edge fronts at t=500..2000: [-21, -23, -21, -23]; random right half: [-21, -23, -21, -23]
+(5,2) inserted edge fronts at t=500..2000: [-1, 1, -1, 1]; random right half: [-1, 1, -1, 1]
+(5,3) inserted edge fronts at t=500..2000: [-2, 0, -2, 0]; random right half: [-9, -7, -9, -7]
+(6,0) inserted edge fronts at t=500..2000: [-2, 0, -2, 0]; random right half: [-2, 0, -2, 0]
+(6,1) inserted edge fronts at t=500..2000: [-10, -8, -10, -8]; random right half: [-10, -8, -10, -8]
+(6,2) inserted edge fronts at t=500..2000: [-2, 0, -2, 0]; random right half: [0, -2, 0, -2]
+(6,3) inserted edge fronts at t=500..2000: [-17, -15, -17, -15]; random right half: [-8, -10, -8, -10]
+random right halves: leftward speed over t = 500..2000: max 0.0013, median 0.0013
+ETHER_NEWS_SPEED_DONE

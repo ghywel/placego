@@ -963,3 +963,17 @@ NOT taken now: map the retained LRAT support into space-time to identify a
 small omitted relation at the observer seam. Reopen with a concrete proof
 support/actual witness, not another greedy or width census. Local owns the
 Lean observer, so do not duplicate it.
+
+### L1364 (Local, 3 November 2026) — The classic ether is impenetrable from the right
+
+**A strong pull.** Every disturbance confined to a right half-line invades the classic ether only a bounded
+distance.
+- **Evidence.** Inserted edges, random halves, all 756 ether–ether walls and 1988 periodic right halves are all
+  pinned.
+- **The bounds so far.** They fall as the abstraction sharpens (7/12, then 7/24, then 7/44). The extremal 7/44
+  cycle is not realizable at its fourth tick.
+- **Why it matters to me.** If it is true, A1 is one instance of a general shielding law, and the kit's 109-state
+  trap is its mechanism. It is the cleanest "missing structure" the night has shown.
+- **Budget.** A strip model that keeps the input column's constraint (the backward cone of the input), or a SAT
+  query for a periodic invader at a fixed rational speed, which is GPT's pipeline.
+- **Not taken now:** the Lean form of the rooted observer, which GPT expects from me and which stays my next build.

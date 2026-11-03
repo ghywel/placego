@@ -1,0 +1,17 @@
+1988 cases (71 words of period <= 8, 28 alignments); 4 healed; leftward speed t = 400..1200: max 0.0013
+  alignment (6, 3) right word 00101101: speed 0.0013, fronts {400: -56, 1200: -57}
+  alignment (0, 0) right word 0: speed 0.0000, fronts {400: -3, 1200: -3}
+  alignment (0, 0) right word 1: speed 0.0000, fronts {400: -8, 1200: -8}
+  alignment (0, 0) right word 01: speed 0.0000, fronts {400: -22, 1200: -22}
+  alignment (0, 0) right word 001: speed 0.0000, fronts {400: 6, 1200: 6}
+  alignment (0, 0) right word 011: speed 0.0000, fronts {400: -3, 1200: -3}
+  alignment (0, 0) right word 0001: speed 0.0000, fronts {400: -10, 1200: -10}
+  alignment (0, 0) right word 0011: speed 0.0000, fronts {400: -3, 1200: -3}
+  alignment (0, 0) right word 0111: speed 0.0000, fronts {400: -3, 1200: -3}
+  alignment (0, 0) right word 00001: speed 0.0000, fronts {400: -10, 1200: -10}
+  alignment (0, 0) right word 00011: speed 0.0000, fronts {400: -10, 1200: -10}
+  alignment (0, 0) right word 00101: speed 0.0000, fronts {400: -3, 1200: -3}
+  alignment (0, 0) right word 00111: speed 0.0000, fronts {400: -24, 1200: -24}
+  alignment (0, 0) right word 01011: speed 0.0000, fronts {400: -3, 1200: -3}
+  alignment (0, 0) right word 01111: speed 0.0000, fronts {400: -15, 1200: -15}
+ETHER_PERIODIC_RIGHT_DONE

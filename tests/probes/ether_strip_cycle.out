@@ -1,0 +1,47 @@
+cycle: 44 ticks, 1 re-anchorings, mean drift -7/44
+ph 3  ether..a 11111011111101 | strip 1111100111100 | input 0
+ph 0  ether..a 00000010000001 | strip 0000011100010 | input 0
+ph 1  ether..a 10000111000011 | strip 1000110010111 | input 0
+ph 2  ether..a 01001100100110 | strip 0101101110100 | input 0
+ph 3  ether..a 11111011111101 | strip 1101001000110 | input 0
+ph 0  ether..a 00000010000001 | strip 0001111101101 | input 0
+ph 1  ether..a 10000111000011 | strip 1011000001001 | input 0
+ph 2  ether..a 01001100100110 | strip 0010100011111 | input 0
+ph 3  ether..a 11111011111101 | strip 0110110110000 | input 0
+ph 0  ether..a 00000010000001 | strip 0100100101000 | input 1
+ph 1  ether..a 10000111000011 | strip 0111111101101 | input 0
+ph 2  ether..a 01001100100110 | strip 0100000001001 | input 0
+ph 3  ether..a 11111011111101 | strip 1110000011111 | input 0
+ph 0  ether..a 00000010000001 | strip 0001000110000 | input 0
+ph 1  ether..a 10000111000011 | strip 1011101101000 | input 1
+ph 2  ether..a 01001100100110 | strip 0010001001101 | input 0
+ph 3  ether..a 11111011111101 | strip 0111011111001 | input 0
+ph 0  ether..a 00000010000001 | strip 0100010000111 | input 0
+ph 1  ether..a 10000111000011 | strip 0110111001100 | input 0
+ph 2  ether..a 01001100100110 | strip 0100100111010 | input 0
+ph 3  ether..a 11111011111101 | strip 1111111100011 | input 0
+ph 0  ether..a 00000010000001 | strip 0000000010110 | input 1
+ph 1  ether..a 10000111000011 | strip 1000000110100 | input 0
+ph 2  ether..a 01001100100110 | strip 0100001100110 | input 1
+ph 3  ether..a 11111011111101 | strip 1110011011100 | input 0
+ph 0  ether..a 00000010000001 | strip 0001110010010 | input 0
+ph 1  ether..a 10000111000011 | strip 1011001111111 | input 0
+ph 2  ether..a 01001100100110 | strip 0010111000000 | input 0
+ph 3  ether..a 11111011111101 | strip 0110100100000 | input 0
+ph 0  ether..a 00000010000001 | strip 0100111110000 | input 0
+ph 1  ether..a 10000111000011 | strip 0111100001000 | input 1
+ph 2  ether..a 01001100100110 | strip 0100010011101 | input 0
+ph 3  ether..a 11111011111101 | strip 1110111110001 | input 0
+ph 0  ether..a 00000010000001 | strip 0000100001011 | input 0
+ph 1  ether..a 10000111000011 | strip 1001110011010 | input 0
+ph 2  ether..a 01001100100110 | strip 0111001110011 | input 0
+ph 3  ether..a 11111011111101 | strip 1100111001110 | input 1
+ph 0  ether..a 00000010000001 | strip 0011100111000 | input 0
+ph 1  ether..a 10000111000011 | strip 1110011100100 | input 0
+ph 2  ether..a 01001100100110 | strip 0001110011110 | input 1
+ph 3  ether..a 11111011111101 | strip 0011001110000 | input 1
+ph 0  ether..a 00000010000001 | strip 1110111001001 | input 0
+ph 1  ether..a 10000111000011 | strip 0000100111111 | input 0
+ph 2  ether..a 01001100100110 | strip 1001111100000 | input 0  re-anchor -7
+periods 1: NOT realizable; DFS nodes 5; deepest bit 4 of 44; 0.0 s
+periods 3: NOT realizable; DFS nodes 5; deepest bit 4 of 118; 0.0 s

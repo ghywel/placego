@@ -5,9 +5,12 @@ gaps of reports/rule30-genealogy.md section 58 (58a). Run: python3 tests/probes/
 For entry (c0, c1) with time t1 and target Q = xB + 13, and a cut b, a tail is the initial bits b+1 .. b+2*t1 (bits
 beyond cannot reach any cell x <= Q by t1; E elsewhere). Objective: the leftmost difference L(t1) from E (lower is
 better; a healed row scores +inf). Single-bit flips are tried in random order and kept when L(t1) does not increase
-(sideways moves allowed); a restart after 400 non-improving tries. L(t1) <= Q is a witness that b does not suffice,
-replayed independently on a fresh wide row before it is reported.
+(sideways moves allowed); a restart after 400 non-improving tries. L(t1) <= Q is a witness that b does not suffice.
+A witness is replayed by a separate scalar oracle (lists of cells, rule applied cell by cell on a fresh row, not the
+big-integer step used by the search), and its free bits (hex), SHA-256 and changed target cells are printed.
+(Corrected after GC2436: the first version only re-scored with the same oracle and kept no witness bits.)
 """
+import hashlib
 import random
 import sys
 import time
@@ -33,6 +36,18 @@ for (c0, c1), (T, xB, lo_end, rooted) in sorted(GAPS.items()):
     base = sum(E0(x) << (x - LO) for x in range(LO, HI + 1))
     ref = ev(base, T)
     valid = sum(1 << i for i in range(T + 1, n - T - 1))
+
+    def scalar_changed(a, b):
+        """Independent scalar replay: target cells x <= Q that differ from E at t1 (lists, cell by cell)."""
+        lo = Q - T - 1
+        hi = b + 2 * T + 2
+        g = [((a >> (x - LO)) & 1) for x in range(lo, hi + 1)]
+        e = [E0(x) for x in range(lo, hi + 1)]
+        for _ in range(T):
+            g = [g[i - 1] ^ (g[i] | g[i + 1]) for i in range(1, len(g) - 1)]
+            e = [e[i - 1] ^ (e[i] | e[i + 1]) for i in range(1, len(e) - 1)]
+            lo += 1
+        return [x for x in range(lo, Q + 1) if g[x - lo] != e[x - lo]]
 
     def score(a):
         d = (ev(a, T) ^ ref) & valid
@@ -63,8 +78,14 @@ for (c0, c1), (T, xB, lo_end, rooted) in sorted(GAPS.items()):
             best = s if best is None else min(best, s)
             if s <= Q:
                 assert all(((a >> (x - LO)) & 1) == E0(x) for x in range(LO, b + 1))
-                if score(a) <= Q:                           # replay
+                if scalar_changed(a, b) and score(a) <= Q:
                     wit = a
+        if wit is not None:
+            bits = ''.join(str((wit >> (x - LO)) & 1) for x in free)
+            ch = scalar_changed(wit, b)
+            print('   witness (%d,%d) cut %d: free bits %d..%d = %s (hex %x), sha256 %s, changed targets %s' % (
+                c0, c1, b, free[0], free[-1], bits, int(bits[::-1], 2), hashlib.sha256(bits.encode()).hexdigest()[:16],
+                ch), flush=True)
         found.append('%d:%s' % (b, 'W' if wit is not None else 'best L %s (Q %d)' % (best, Q)))
         if wit is None:
             break                                           # the first cut without a witness ends this entry
