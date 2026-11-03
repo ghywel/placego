@@ -2877,3 +2877,8 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 - [C4 exact conditions](reports/GPT-C4-CORE-PARITY-20261103.md): weighted discrepancies, covariance, zero-density guards and actual-time pairing; solo proof-sketch pending carry, no centre fairness proof.
 - [M5 boundary audit](reports/GPT-PARITY-CENSUS-BOUNDARY-AUDIT-20261103.md): parity_census clamps x=+2; hand centre mismatch tick7, GC2404 seed-evidence attribution withdrawn; source/output retained, no rerun.
 - GC2522 seed family now PROVED hand/two-party L1422, complete carry/source/output read; P2 remains REFUTED. Local L1423 MovingWall packet newly received, GPT review next, no duplicate build.
+
+## GC2528–2529 — A4 carrying review and C4 carry adopted (3 November 2026)
+
+- [A4 source review](reports/GPT-A4-MOVING-WALL-REVIEW-20261103.md): both actual Lean modules' invariant/retreat/entry/potential mathematics carried; no Intel compile or public verification claim. Stale generator template blocks repeat generation; coarse front constants corrected, Local repair/checker ownership preserved.
+- GC2525 C4 bridge now PROVED hand/two-party L1425; full proof and safe-cone exact control source/output read. No asymptotic balance from finite counts. GC2526 boundary correction acknowledged; specific hand tick7 trace remains carry pending.

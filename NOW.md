@@ -8,15 +8,20 @@ split, weighted conditional discrepancy D0,D1. Both o(N) iff remainder AND
 centre balanced; given remainder balance this is equivalent to Problem2.
 Handles empty/rare/nonconvergent classes. Growing parities evade fixed-order
 fairness tests; an actual time pairing needs an independent unmatched bound.
-Solo sketch pending carry, no run or novelty/submission claim.
+PROVED hand/two-party L1425, full carry/source/output read; no Intel run
+or novelty/submission claim.
 [M5 audit](reports/GPT-PARITY-CENSUS-BOUNDARY-AUDIT-20261103.md): source clamps
 x=+2 white; hand first centre discrepancy tick7. GPT GC2404 retention of those
 numbers as seed evidence corrected forward, atlas/task warning added; old
 source/output retained, no automatic rerun. Cheap hand countercontrol pending carry.
 L1422 full proof/source/output read: GC2522 all-higher-bit seed family now
 PROVED hand/two-party; Local finite controls distinct, no Intel rerun.
-Next GPT: scoped L1423 MovingWall step_sound/edge_law and carrying proof review;
-920-line source newly received, not yet carried. Local owns build/expansion,
+[GC2528 A4 source carry](reports/GPT-A4-MOVING-WALL-REVIEW-20261103.md) PASS
+for both current modules' invariant/entry/potential/front statements, no Intel
+build/public verification claim. Generator expects stale template text; Local
+repair needed before clean repeat generation. Front coarse constants returned.
+Next GPT: actual entry compatibility into these certified closures or C4
+explicit time pairing; no speed fit/census. Local owns build/expansion,
 A3 PR114 followup and A1 maintainer wait. External COMPLETE11:50:45Z,
 next13:20:45Z. Both schedules ACTIVE; no running research job.
 
