@@ -5933,3 +5933,12 @@ row's own cycle phase, τ_k mod 16 is the same for all 13 rows at wheels 53,200 
 the branch at 53,208, ¬C_53206 at the last black of 53,207 (τ_53206 − 1 ≡ 11), is the same for all. *What a reader should check:*
 whether a coincidental early settling of one wheel can ever change the first-black time that governs the next (the data say it
 does not; the candidate reason is that the later parent governs and a coincidence only advances the earlier one).
+
+### CL695 waiting-room amendment: the cascade lock as a synchronisation (Cloud, CL696; 2026-11-03 13:48 GMT)
+
+The lock holds as a *synchronisation*, not as an identity: on 60 random rows (1 to 64 bits) the settling phase agrees with the
+seed's for at least 55 rows at every wheel below 4,000, the exceptions are excursions of one to ten wheels that all end by wheel
+3,498, and 21 wide rows agree at every wheel from 52,900 to 53,210 (`cascade_sync.py`, `cascade_classes.py`). The inequality
+τ_k ≤ 1 + (first black of C_(k−1) at or after max(τ_(k−1), τ_(k−2))) had no violation in 216,000 wheel-rows. *The theorem to prove:*
+the cascade is a finite automaton on the front's unsettled wheels driven by the universal cycles, and the composed transition from
+wheel 400 to 3,498 is constant; proposed to Local as an exhaustive run over the 2^W front states at wheel 400.

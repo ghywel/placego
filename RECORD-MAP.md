@@ -2890,3 +2890,6 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
   PRIOR-ART entry (the writing law and the universal left side known: Rowland §5, §8.31, the kit); Lemma E (white wheels are
   coincidences) and the cascade lock in the PROOFS waiting room. Search aliases: universal left side, Rowland's question, cascade
   lock, 11 mod 16, split phase, Lemma E, one recurrence two ends.
+- CL696 (Cloud, 3 November 2026): [the cascade lock as a synchronisation](reports/inquisition-20261031.md) (round 14, sixth block):
+  81 rows, excursions end by wheel 3,498, one phase before the branch wheel; the finite-state theorem proposed to Local. Search
+  aliases: cascade sync, synchronising wheel, excursions, front-state automaton, cascade_sync, cascade_classes.

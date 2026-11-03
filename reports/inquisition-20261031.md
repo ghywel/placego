@@ -3076,3 +3076,45 @@ vary while the last black's phase does not; then the lock is C's white run, and 
   wheel through the cascade; only a row built to hold the other constant with no black ever at the white wheel (8.31's construction)
   takes the other side. COMPUTED on 13 rows here and 20 in 8.31; the lock's proof (why coincidental early settlings never shift the
   cascade) is the open hand step, PROOF-SKETCH.
+
+### Round 14, sixth block (2026-11-03 13:39 GMT): the cascade lock, by hand and by a synchronisation test (the owner: "Good pull please continue")
+
+**By hand (PROOF-SKETCH).** Write τ_k for the settling time of wheel k and T_k = max(τ_(k−1), τ_(k−2)). After T_k the defect
+δ_k = D_k ⊕ C_k obeys δ_k(t+1) = δ_k(t)·[C_(k−1)(t) = 0]: it persists through the nearer parent's whites and dies at its first black.
+So τ_k = 1 + b_(k−1)(T_k) if δ_k(T_k) = 1, where b_(k−1)(T) is the first black of C_(k−1) at or after T, and τ_k ≤ T_k otherwise (a
+coincidence). **The phase map.** When the nearer parent settles later (T_k = τ_(k−1)) and δ_k(T_k) = 1, the settling phase obeys
+φ_k = b_(k−1)(φ_(k−1)) + 1 mod p: a map that sends every phase in a white gap of C_(k−1) to the black that ends it, hence
+many-to-one. Composed along the strip, these maps collapse all starting phases onto one orbit within a few wheels: that is the
+synchronisation, and it is why §8.31's 20 rows and CL695's 13 agree. **The coincidence bit.** If the parent's last defect tick is a
+black (C_(k−1)(τ_(k−1) − 1) = 0, so D_(k−1) = 1 there), wheel k is reset at that tick to ¬C_(k−2)(τ_(k−1) − 1), and then
+δ_k(τ_(k−1)) = ¬C_k(τ_(k−1) − 1): universal. If the parent's last defect is a missing black, wheel k's value at τ_(k−1) comes from its
+last reset inside the parent's defect window [T_(k−1), τ_(k−1)), where the parent reads ¬C_(k−1), a universal window once the
+earlier phases are; the chain breaks only if that window holds no black of the parent, and then one more window back is needed.
+So the lock is an induction whose only risk is a window with no reset; the test below asks whether any row ever escapes.
+
+**Predictions (`cascade_sync.py`: 60 random rows of widths 1 to 64 bits plus the single seed, wheels to 4,000, cycles from the
+certificate table aligned to each row's own clock, settling times by the backward scan; the synchronisation wheel of a row is the
+first wheel from which its settling phases agree with the single seed's for every later wheel tested).** P-L1 [60%]: every row
+synchronises by wheel 100. P-L2 [65%]: no row desynchronises once synchronised (no coincidence ever shifts the cascade's phase
+afterwards). PU: the distribution of synchronisation wheels; how often the parent's last defect is a black (the universal sub-case)
+against a missing black along the single seed's strip. Counterfactual: a row that disagrees at some late wheel after agreeing,
+which would be a generic second left side's cascade and would bound the lock to a density statement.
+
+#### Outcomes of the sixth block (2026-11-03 13:48 GMT; receipts `cascade_sync.out`, `cascade_classes.out`; the certificate table is now outside git by GPT's GC2533 with its receipt, and both scripts take a regenerated copy's path as an argument)
+
+- **P-L1 REFUTED, P-L2 REFUTED as stated, and the structure found is sharper than either.** Sixty random rows of widths 1 to 64 bits,
+  wheels to 4,000: at every wheel at least 55 of the 60 rows share the seed's settling phase; the few others are rows on a short
+  excursion (an early settling by coincidence sets one wheel's phase off, and the cascade re-locks within one to ten wheels: 151
+  excursion runs, 90 of them one wheel long). Every row's last excursion ends by wheel 3,498 (median 3,469), and from there to
+  4,000 all sixty agree at every wheel. **Before the branch wheel, 21 wide rows (40 to 64 bits) share one settling phase at every one
+  of the 311 wheels 52,900 to 53,210.** So the cascade synchronises: the seed's transient produces excursions whose rate falls to
+  zero (about 1.5% per wheel and row below 4,000, none in 6,500 wheel-rows at 52,900), and the branch at 53,208 is universal because
+  the cascade is locked there. The cascade formula's inequality (τ_k ≤ 1 + the first black of C_(k−1) after both parents settle) had
+  no violation in 60 × 3,600 wheel-rows. The parent's last defect is a black in 49% of wheels and a missing black in 51%, with no
+  preference at the excursion wheels, so the sub-case is not the discriminator; the excursions are the seed's memory.
+- *Slip, kept:* the first class test read settling times through a window that ended above them, clamping every τ to the window's
+  start, so rows with a nonzero clock shift seemed to disagree everywhere (G25: assert the trusted range in code; now asserted).
+- *Status.* The synchronisation: COMPUTED (81 rows across the three tests, with §8.31's 20). The mechanism (the phase map that
+  collapses each white gap of a parent's cycle, and the universal reset when the parent's last defect is a black): PROOF-SKETCH. A
+  theorem needs the finite-state form: the cascade as a front-state automaton driven by the universal cycles, synchronised from
+  every front state at some wheel by 3,498. That is an exhaustive computation over 2^W front states, Local-sized.
