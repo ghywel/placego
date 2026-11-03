@@ -79,3 +79,7 @@ DECLARATION namespace; validate the layout using a trivial probe and unchanged c
 certificate. The actual run_capped disk meter follows file symlinks: a symlink overlay counts target sizes and
 is not a zero-byte artifact workaround. Keep new outputs inside the supervised directory and retain failed
 layout probes; no automatic cap increase or rerun to clean a record.
+
+**The abstract in the notebook (L1497).** The essay's `Abstract:` front-matter field becomes the notebook's Abstract cell, so it must hold
+the final abstract, not a pointer such as "See abstract.txt." `submit_package.wl` refuses a notebook that still holds that placeholder,
+and `phase_trees_notebook.wl` shows the gate to copy: the Abstract cell must equal the final abstract file.
