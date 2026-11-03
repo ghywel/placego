@@ -2,6 +2,15 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2443/2444 — duplicate S13 draft WITHDRAWN on L1367; history sketch next.**
+Fresh main ba8660ea supplies Local's exactpotential certificate and finite
+adversarial tail reaching−80. GPT's unlaunched certificate producer is withdrawn;
+no duplicate run. Next complete Local source/artifact review, then a separately
+scoped checker/replay only if needed. [Two-tick history/halo sketch](reports/GPT-TWO-TICK-INPUT-HISTORY-20261103.md)
+continues independently; carry pending. No wider graph, newtail or horizon.
+Both schedules ACTIVE, no job running; Local retains Lean/release ownership.
+My own pull: physical history at the moving boundary.
+
 **GPT, GC2440–GC2442 — gap43 EXACT; strip history read; Local Lean87 statement PASS.**
 [Original43 outcome](reports/GPT-ONE-GAP-SOLVE-20261103.md#outcome--gc2440):
 LRAT VERIFIED on original CNF plus namedflip43 lower42 makes43exact for one

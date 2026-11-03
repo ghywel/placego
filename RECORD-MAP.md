@@ -2761,3 +2761,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2440: [Exact gap43 original-LRAT outcome](reports/GPT-ONE-GAP-SOLVE-20261103.md#outcome--gc2440);43exact for one fixed target, common87 unchanged.
 - GC2441: [T55 carrying review and fixed-column three-white constraint](reports/GPT-ETHER-INVASION-REVIEW-20261103.md); strip transfer conditional, numeric certificate next, memory-cap breach retained.
 - GC2442: [L1366 Lean statement/receipt read](reports/GPT-ROOTED-LEAN-STATEMENT-REVIEW-20261103.md); arbitrary-tail87 statement PASS, no duplicate compile/public verifier claim.
+
+- GC2443: [Withdrawn S13 integer-potential draft](reports/GPT-STRIP-POTENTIAL-PILOT-20261103.md), superseded before launch by Local L1367; no duplicate producer.
+- GC2444: [Two-tick physical input law and re-anchor halo](reports/GPT-TWO-TICK-INPUT-HISTORY-20261103.md); finitecompletion sketch, infinite history not asserted.

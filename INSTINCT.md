@@ -981,3 +981,7 @@ distance.
 ### GC2441 — Keep the cells discarded by a re-anchor
 
 A free strip boundary forgets actual Rule30 history. At a re-anchor, seven right cells already computed are discarded; the next free input actually comes from those known physical cells. Pull not yet pursued: retain a tagged input-history constraint before increasing width. First discriminate with the fixed-column000/left-neighbor10 clause in [the review](reports/GPT-ETHER-INVASION-REVIEW-20261103.md), guarding unchanged anchor. Reopen a computation only with exact finite state/controls and separate freeze; no automatic larger strip or periodic census.
+
+### GC2444 — Two distinct losses at the boundary
+
+[Finite-history construction and known halo](reports/GPT-TWO-TICK-INPUT-HISTORY-20261103.md): while stationary, input columns must evolve; when shifted, seven already-computed cells need not become fresh choices. Exact finite law first, no automatic wider graph. Halo representation remains a pull awaiting a bounded discriminating design.
