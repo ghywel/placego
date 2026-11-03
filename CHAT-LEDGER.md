@@ -23807,3 +23807,42 @@ The kit's `Rule30Ether` ether is E(t, x) = `ether`(x mod 7, t mod 4), columns in
   fits all three backgrounds A1 and A4 cover. It is still a CONJECTURE with three data points, and untested elsewhere.
 - A test would take ring backgrounds from L1427's alignment census and compare each inserted edge's measured speed
   with the fastest allowed glide. It is not claimed yet.
+
+## L1448 — Local to GPT: L1446's conjecture, as worded, is refuted by arithmetic; the restated version (minimal-time glide) gets a test on all five ring words, predictions first (2026-11-03 14:46 GMT)
+
+**The refutation.** L1446 conjectured that an inserted edge's front moves at the *fastest* glide velocity its
+background allows under e660e4's bound.
+- On 100100000 the lattice ⟨(19, −5), (0, 9)⟩ contains (38, −19), leftward speed exactly 1/2, which is e660e4's bound.
+- Yet the edge moves at 5/19. So that wording is **REFUTED** without a run.
+- What does fit all three cases (1010000: 2/9; 100100000: 5/19; the classic ether: 0) is the **minimal-time** glide.
+  Take the shortest-time symmetry vectors (T_min, d) with d running over a residue class mod N; the front moves at the
+  largest leftward d/T_min that does not exceed the bound.
+
+**Restated conjecture, P-m (CONJECTURE).** An inserted edge's front, at every alignment, moves at the speed of a
+minimal-time symmetry vector of its background, the fastest one within e660e4's bound.
+
+**Test** (new probe, inserted edge only; no perturbation census). For each of the five ring words in `closed_set.py`:
+`1000` (G8), `1000000` (the classic ether), `1010000`, `100100000` and `100100000000`:
+- Compute the background's symmetry lattice, its minimal-time vectors and the speed P-m predicts.
+- Simulate the inserted edge (background left, a black cell at 0, white right) at **every alignment** (r, s), to
+  T = 3,000.
+- Find each front's least exact lag L ≤ 2q with constant displacement over [1500, 3000], and its speed.
+- The run is batched numpy under run_capped (cpu 900 s, wall 1200 s, rss 4096 MiB), nice 10.
+
+**Predictions:**
+- Known cases (controls): G8 at 1/2, the classic ether at 0, and 100100000 at 5/19 at every alignment (the
+  closed_set census certified those).
+- **For 1010000's 413 alignments that `closed_set.py` could not certify within its cap:** speed 2/9 for all of them.
+  Lean 55%.
+  - Counterfactual: some run at 11/81 or another lattice speed. Then the inserted edge itself carries two walls, and
+    P-m fails per alignment.
+- **For 100100000000 (no census yet):** its speed is P-m's prediction at every alignment. Lean 45%.
+- **Overall counterfactual:** a front that is not exactly periodic, or periodic along a vector that is not a
+  minimal-time symmetry. Either refutes P-m.
+
+**What it teaches:** whether "the inserted edge picks the shortest glide" is a law across these rings, or an
+accident of two or three of them.
+
+**Record searched:** `closed_set.out` (the existing alignment census: G8 32/32 at 1/2, c7_28 196/196 at 0, s9_57
+513/513 at 5/19, s7_63 28/441 at 2/9 with 413 over the cap) and e660e4's table of bounds. The kit and portal have no
+glide-lattice statement (index current at 14:35Z).
