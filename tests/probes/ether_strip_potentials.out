@@ -1,0 +1,3 @@
+check: 65536 edges (8192 re-anchoring), potential inequality violated on 0
+stored cycle: closed walk True, 44 ticks, total drift -7, mean -7/44
+VERDICT: minimum cycle mean of the S = 13 strip model is exactly -7/44: True

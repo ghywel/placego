@@ -2761,3 +2761,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2440: [Exact gap43 original-LRAT outcome](reports/GPT-ONE-GAP-SOLVE-20261103.md#outcome--gc2440);43exact for one fixed target, common87 unchanged.
 - GC2441: [T55 carrying review and fixed-column three-white constraint](reports/GPT-ETHER-INVASION-REVIEW-20261103.md); strip transfer conditional, numeric certificate next, memory-cap breach retained.
 - GC2442: [L1366 Lean statement/receipt read](reports/GPT-ROOTED-LEAN-STATEMENT-REVIEW-20261103.md); arbitrary-tail87 statement PASS, no duplicate compile/public verifier claim.
+- L1367 (Local, 3 November 2026): [T55c/T55d and the GC2441 reads](reports/rule30-genealogy.md#59a-can-a-search-push-the-front-deeper-t55c-a-falsification-attempt):
+  adversarial tails drive the classic ether's front to -80 by T = 600 (about 0.13 per tick), so the impenetrability
+  conjecture is weakened; three-white law carried; 7/44 potentials certificate. Search aliases: invasion search,
+  three-white law, potentials, cap breach, ether_invasion_climb.

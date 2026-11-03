@@ -6524,3 +6524,46 @@ stay fixed. The search is at alignment (0, 0).
 - **Counterfactual.** A depth that saturates (for example below about 80 by T = 1200) keeps the conjecture alive and
   makes T55c's growth a transient.
 - **Caps.** 140 s CPU, 1 GiB, nice 10.
+
+**T55c at larger horizons and T55d (COMPUTED, M5, capped; `ether_invasion_climb.out`, `ether_invasion_stages.out`).**
+- **The best depth grows with the horizon.** A joint search at alignment (0, 0) gives depth 80 at T = 600. Its front
+  path is −21, −43, −62 and −80 at t = 150, 300, 450 and 600: a steady descent of about 0.13 per tick over 600
+  ticks. Depths so far are 31 at T = 150, 48 at T = 300 and 80 at T = 600.
+- **The larger horizon is not conclusive.** At T = 1200 the search afforded only about a quarter of the restarts and
+  found depth 59, a tail whose front pinned after t ≈ 600. That says the search was weaker, not that the depth is
+  bounded.
+- **The staged search (T55d) was not decisive.** One tail was extended stage by stage. Its front was trapped at about
+  −30 after the first stage, and new bits could not unpin it: the trap is closed under every right input
+  (`trap_two_sided`).
+  - A bug of mine: the first run's stage 8 reported depth 19 because the row's left edge was too close. The list
+    replay gives −31. The probe is fixed (the left edge now sits at −2·T_max) and the record keeps the faulty output.
+- **Predictions.** T55d's prediction of linear growth is neither confirmed nor refuted by that design. T55c's
+  "bounded by about 80" holds only marginally (80 is reached).
+- **What this changes.** The conjecture as I wrote it (bounded invasion, with a small C) is now doubtful. An
+  adversarial infinite right half can drive the front at about 0.13 per tick for at least 600 ticks, below the proved
+  rate 7/44 ≈ 0.159. Typical disturbances (random, periodic, walls, inserted edges) are all pinned. The open question
+  is whether the depth is bounded at all over all right halves. A sustained invader would be a tail built so that no
+  wall state ever forms.
+- **Status of the conjecture: OPEN, weakened.** The evidence now leans towards unbounded invasion by adversarial
+  infinite tails. It does not touch the kit's `Absorption`, which concerns finite right halves with a held driver.
+
+**GC2441 reads (Local's carrying read).**
+- **The three-white law is CARRIED.** On a fixed column p with U_t = G(t, p) and A_t = G(t, p − 1):
+  U_t = U_{t+1} = U_{t+2} = 0 forces A_t ≤ A_{t+1}.
+  - Proof: U_{t+1} = A_t XOR (U_t OR R_t) = A_t XOR R_t = 0 gives R_t = A_t. Likewise R_{t+1} = A_{t+1}. And
+    R_{t+1} = U_t XOR (R_t OR ·) ≥ R_t. So A_{t+1} = R_{t+1} ≥ R_t = A_t.
+  - The exhaustive check over all 32 rows of five cells finds 0 violations.
+  - The clause is U_t ∨ U_{t+1} ∨ U_{t+2} ∨ ¬A_t ∨ A_{t+1}. It applies only on one physical column, with no
+    re-anchoring across the two ticks. It explains why the extremal cycle dies at tick 4.
+- **The 7/44 certificate (GC2441's request).** `ether_strip_potentials.py` exports integer potentials π for
+  w = 44 · drift + 7 on the S = 13 graph. Bellman–Ford converges in 72 iterations, with π from −385 to 0. A separately
+  written step checks π(v) ≤ π(u) + w on all 65,536 edges (8192 re-anchoring) with 0 violations, and checks that the
+  stored 44-tick cycle closes with total drift −7. So the S = 13 model's minimum cycle mean is exactly −7/44
+  (COMPUTED with an independent check). Potentials are on the shared store at
+  `cited/local/l1367-strip13-potentials.json.gz` (sha256 `f935aa2fd9f5de55…`).
+- **The S = 16 cap breach, diagnosed.**
+  - The run lasted 3.2 s.
+  - `run_capped.py` sampled resident memory about once a second. Its last sample was 983,760 KiB at 3.1 s, under
+    the 1 GiB cap. The 1.5 GB peak fell between samples.
+  - The receipt, with paths redacted, is on the store at `cited/local/l1364-s16-capbreach.tar.gz`.
+  - Lesson: a short burst can escape a 1 s sampler. Memory-heavy steps need a hard `RLIMIT` or a smaller design.

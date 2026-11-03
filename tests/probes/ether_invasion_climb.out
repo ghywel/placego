@@ -5,3 +5,9 @@ T=300 alignment (4,3): best depth 44 (396 restarts); replay leftmost difference 
 T=300 alignment (0,0): best depth 48 (414 restarts); replay leftmost difference at T: -48; front path [-15, -23, -37, -48]; tail sha256 909a184fdfe533ae
 T=300 alignment (6,1): best depth 45 (426 restarts); replay leftmost difference at T: -45; front path [-9, -24, -27, -45]; tail sha256 3b039c70c84e60f2
 ETHER_INVASION_CLIMB_DONE
+# python3 tests/probes/ether_invasion_climb.py 135 600 (alignment (0,0) only)
+T=600 alignment (0,0): best depth 80 (903 restarts); replay leftmost difference at T: -80; front path [-21, -43, -62, -80]; tail sha256 5e9e0870f9730666
+ETHER_INVASION_CLIMB_DONE
+# python3 tests/probes/ether_invasion_climb.py 135 1200 (alignment (0,0) only)
+T=1200 alignment (0,0): best depth 59 (246 restarts); replay leftmost difference at T: -59; front path [-38, -59, -57, -59]; tail sha256 c4ac82a044367975
+ETHER_INVASION_CLIMB_DONE

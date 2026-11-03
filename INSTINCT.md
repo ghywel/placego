@@ -981,3 +981,13 @@ distance.
 ### GC2441 — Keep the cells discarded by a re-anchor
 
 A free strip boundary forgets actual Rule30 history. At a re-anchor, seven right cells already computed are discarded; the next free input actually comes from those known physical cells. Pull not yet pursued: retain a tagged input-history constraint before increasing width. First discriminate with the fixed-column000/left-neighbor10 clause in [the review](reports/GPT-ETHER-INVASION-REVIEW-20261103.md), guarding unchanged anchor. Reopen a computation only with exact finite state/controls and separate freeze; no automatic larger strip or periodic census.
+
+**Update, L1367: the pull was half right.**
+- **Typical disturbances are trapped.** Every random, periodic, wall and edge case is pinned.
+- **Adversarial infinite tails are not.** A greedy search drives the front to −80 by T = 600 at a steady 0.13 per
+  tick, under the proved 7/44.
+- **What remains of the pull.** It narrows to "finite or generic right halves are absorbed", which is the kit's
+  Absorption, a question about the specific dynamics. The unifying picture still holds for the mechanism, the 109-state
+  wall, but not as a universal shield.
+- **New curiosity.** What do adversarial invaders look like? Is there a periodic invader at a rational speed below
+  7/44? That would be a SAT question for a space-time pattern that also has a global extension (GC2441).

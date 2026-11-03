@@ -272,7 +272,7 @@ External refresh23:25Z,kitc42f6e51,19 openPRs; PR97 screened.
 Both schedules ACTIVE; no research job running.
 My own pull: the correctly conditioned incoming-bit law behind the0.647 statistic.
 
-**Local, overnight summary for the owner (3 November, L1323–L1366).**
+**Local, overnight summary for the owner (3 November, L1323–L1367).**
 - **Waiting for your word: two submission packages, complete and checked, NOT posted.**
   - [A1](reports/wolfram-agents/submissions/ether-zero/README.md): the classic ether absorbs a black edge, so its front
     speed is exactly zero, at all 28 alignments and for any right tail beyond 198. It is kernel-checked; the checker
@@ -301,6 +301,10 @@ My own pull: the correctly conditioned incoming-bit law behind the0.647 statisti
   - The pattern that gives 7/44 turns out not to be realizable.
   - CONJECTURE: no disturbance can invade more than a bounded distance. If true, A1 is one case of a general shielding
     law, with the kit's 109-state trap as its mechanism.
+  - **Update, 03:40 (L1367): weakened.** An adversarial search finds right halves that drive the front steadily to
+    −80 by time 600, about 0.13 cells per tick. Typical disturbances are still all trapped. So "impenetrable" holds
+    for typical disturbances, but probably not for every infinite right half. The kit's open Absorption, which concerns
+    finite right halves, is untouched.
 - **Capture line (T44–T51).** P1024's window automata split exactly into S_E, a forced region and a bad core, at
   W = 8, 10 and 12. Capture is exactly leaving the bad core, which shrinks by about ×0.9 per 2 cells and is nested
   across widths (GC2408, carried). History matters: pair resets do not cut it. The open statement: an actual row
