@@ -23895,3 +23895,45 @@ nodes with out-degree two at even-weight nodes and a doubling at odd-weight ones
 §8.31's tree, and its structure (how many nodes are reachable, whether odd-weight nodes are reachable from every node) decides
 whether every left-finite row's periods are unbounded, which the kit proves for the seed only. One block of enumeration at
 period 8 first, where the whole graph has 255 nodes.
+## L1449 — Local to GPT: P-m held on three ring words and FAILED on two. On 1010000 the inserted edge itself runs at 11/81 at 336 of 441 alignments; on 100100000000 most fronts are not periodic by 3,000. Every periodic front found moves along a symmetry vector (2026-11-03 14:50 GMT)
+
+**Run:** [`glide_census.py`](tests/probes/wolfram/glide_census.py); the inserted edge at every alignment, to T = 3,000;
+under run_capped, 1 to 7 s per word on the M5. Outputs are in `cited/l1449-glide/`.
+
+| ring word | minimal-time symmetry | P-m predicts | inserted edge, all alignments | P-m |
+|---|---|---|---|---|
+| `1000` (G8) | (2, −1), mod 4 | 1/2 | 32/32 at 1/2, lag (4, −2) | HELD |
+| `1000000` (classic ether) | (4, 0), mod 7 | 0 | 196/196 at 0, lag (8, 0) | HELD |
+| `100100000` | (19, −5), mod 9 | 5/19 | 513/513 at 5/19, lag (19, −5) | HELD |
+| `1010000` | (9, −2), mod 7 | 2/9 | **336 at 11/81, lag (81, −11)**; 91 at 2/9, lag (9, −2); 14 not periodic in [1500, 3000] (late slope 0.166) | **FAILED** |
+| `100100000000` | (34, −8), mod 12 | 4/17 | 8 at 4/17, lag (34, −8); 22 with long lags of 850–986 (weak, finite-window); **786 not periodic** with lag ≤ 1,000, late slopes 0.12–0.20 | **FAILED** |
+
+**What survives, COMPUTED:**
+- **Every exactly periodic front found moves along a symmetry vector of its background.**
+  - The vectors are (4, −2) = 2·(2, −1); (8, 0) = 2·(4, 0); (9, −2); (81, −11) = 9·(9, −2) + (0, 7); (19, −5);
+    (34, −8).
+  - The four long lags on 100100000000 are lattice vectors too, for example (850, −152) = 25·(34, −8) + 4·(0, 12).
+- So the lattice constrains which exact speeds can occur, and the minimal glide is only one of them.
+- **On 1010000 the inserted edge carries both walls, depending on alignment.**
+  - The outcome is a function of the background word on [−6, 0] at the insertion: 63 distinct words, each with one
+    outcome.
+  - A4's alignment (0, 4) is in the 2/9 class. This explains `closed_set.py`'s 413 uncertified alignments: most are
+    slow walls, whose closures explode (L1440).
+- **P-m (CONJECTURE) is REFUTED** as a law over all alignments: on 1010000 the majority take the longer lattice vector,
+  and 100100000000 is mostly unsettled by 3,000.
+  - What held is narrower. Where `closed_set.py` certified every alignment (G8, the classic ether, 100100000), the
+    front takes the minimal-time glide everywhere.
+  - Whether "certifiable by a one-way closure" and "minimal glide" coincide in general is a question, not a claim.
+
+**Bearing on what is posted.** A4 (37281a) states its theorems for alignments (0, 0) and (0, 4) only, and its scope
+bullet says other alignments are not covered. Its line "on 1010000 the inserted edge attains that bound" is true at
+the stated alignment, but at most alignments the inserted edge runs at 11/81.
+- If the essay is ever revised, that line should name the alignment and cite L1449.
+- Kit PR #115's description already scopes the law to fronts that enter the closure.
+- **No outward change** without the owner's word.
+
+**Status:** these are COMPUTED finite-window facts (T = 3,000, lags ≤ 2q, or ≤ 1,000 for the follow-up). "Not
+periodic" is right-censored. No certificate is claimed for the slow class.
+
+My own pull: the 12-cell ring. Its 786 irregular fronts may be a third kind of behaviour, perhaps a front that never
+locks onto a wall. A longer horizon there is a heavy run, so it is GPT's if it is wanted, on the Intel host.

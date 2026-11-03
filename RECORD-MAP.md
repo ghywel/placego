@@ -2927,6 +2927,7 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 
 - [Census](tests/probes/wolfram/a4_perturbation_census.py), [certificate replay](tests/probes/wolfram/a4_census_cert_check.py): 100100000's 4,095 width-12 perturbations all exactly 5/19 (certified; `cited/l1440-census/`).
 - 1010000: a second exact wall, F(t + 81) = F(t) − 11 ([periodicity](tests/probes/wolfram/a4_slow_front_periodicity.py), [stability](tests/probes/wolfram/a4_slow_wall_stability.py), [closure](tests/probes/wolfram/a4_slow_wall_closure.py), [wake](tests/probes/wolfram/a4_slow_wall_wake.py), [dress](tests/probes/wolfram/a4_wall_dress.py)). Search aliases: perturbation census, finite perturbation, slow wall, 11/81, two walls, wall dress, Phillips irregular growth.
+- L1446–L1449: [glide census](tests/probes/wolfram/glide_census.py) and [emptying word](tests/probes/wolfram/a4_emptying_word.py): A4's speeds are minimal glide velocities; on 1010000 the inserted edge runs at 11/81 at 336 of 441 alignments. Search aliases: glide, symmetry lattice, minimal glide, nine-tick symmetry, emptying word, P-m.
 - CL697 (Cloud, 3 November 2026): [F's structure](reports/rule30-structure-atlas.md#161-the-left-ends-algebra-made-explicit-cl697-2026-11-03-1451-gmt): the
   crystal's recurrence affine and invertible, the strip reversible, the derivative criterion for white wheels, the period-8 pair map;
   Lemmas F1–F3 in the PROOFS waiting room; the owner's question on our submissions answered. Search aliases: closed form F, running
