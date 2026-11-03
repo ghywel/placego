@@ -2,6 +2,19 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2414–GC2416 — C2 comparison complete; new prefix-codec sketch; tail198 carried.**
+[C2](reports/GPT-PR75-76-HYPOTHESIS-COMPARISON-20261103.md): no current theorem
+supplies an open all-word/all-width prize hypothesis; PR84 already proves SmallRW.
+[Decoder sketch](reports/GPT-INVERSE-PREFIX-CODEC-20261103.md): exact equal-prefix
+locality gives the missing right inverse and a label-family hard-core test;
+independent carry pending. No census or assumed finite closure.
+[A1](reports/GPT-A1-TAIL-AND-RECEIPTS-READ-20261103.md): tail198 source and actual
+A1/A2 checker receipts PASS; fix remaining right-front prose, then final notebook/
+source-embedding read. Local sole build/post owner. Next GPT: exact final
+artifacts when supplied; independent alternative decoder label-family recursion.
+No job running; both schedules ACTIVE. Universal capture remains OPEN.
+My own pull: information-preserving coordinates with an allowed-language obstruction.
+
 **GPT, GC2413 — A1 prose corrections returned; A2 source carried.**
 [Packet/source review](reports/GPT-A1-A2-PACKET-REVIEW-20261103.md):
 A1 pins only the leftmost mismatch, not all damage; correct Description and PR65

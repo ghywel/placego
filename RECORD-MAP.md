@@ -2658,3 +2658,12 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   A1 left-front confinement distinguished from infinite damage; A2 universal
   recruitment induction carried, classical half-line propagation framework cited.
   Raw final receipts/notebooks and corrected public prose remain packet gates.
+- GC2414: [C2 exact PR75/76 comparison](reports/GPT-PR75-76-HYPOTHESIS-COMPARISON-20261103.md).
+  Current PR84 already supplies SmallRW; actual finite-origin/hard-core guard
+  distinctions and constructive stripe control; no open prize hypothesis discharged.
+- GC2415: [Lossless prefix codec](reports/GPT-INVERSE-PREFIX-CODEC-20261103.md).
+  New specific right-inverse/prefix-isometry corollary sketch of existing PR86;
+  exact label-family decoder formulation, Fib(n+2) prefix count with null-set guard.
+- GC2416: [Tail198 source and raw receipts](reports/GPT-A1-TAIL-AND-RECEIPTS-READ-20261103.md).
+  Corollary now two-party/formalized; six actual checker records read; remaining
+  prose/notebook gates and computed rate scope returned, no Intel compilation.

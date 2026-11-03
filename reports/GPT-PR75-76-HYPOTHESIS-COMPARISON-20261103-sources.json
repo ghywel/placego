@@ -1,0 +1,225 @@
+{
+  "kit": "c42f6e5133f61a47e99289fd4b6e0536fd8a0453",
+  "index_complete": "2026-11-03T00:35:06Z",
+  "sources": [
+    {
+      "file": "75-metadata.json",
+      "sha256": "5d2a276d71f7cb797b8a17d01506424c84071db858246ff108837d855b65d73b"
+    },
+    {
+      "file": "75-comments.json",
+      "sha256": "7563f924004f808a1cc1cd5c11dffbe94a2cfad2297d71589475eeef70a89fd1"
+    },
+    {
+      "file": "75-reviews.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "file": "75-files.json",
+      "sha256": "020844527a04773dee24506566b1a0b5c891d8c017df650cd8459140ec8bc3ce"
+    },
+    {
+      "file": "75-Ruliology.lean",
+      "url": "https://raw.githubusercontent.com/WolframInstitute/Rule30PrizeKit/f131449bf08949cbf0d815b678f6d6dc431524ad/lean/Ruliology.lean",
+      "sha256": "b375935f9dfa274f9e5fdcf4847e8e20ee3452d1979cb5cd5d24c851747f7c5c",
+      "current_main_identical": false
+    },
+    {
+      "file": "75-Rule30AlternatingTraceBridge.lean",
+      "url": "https://raw.githubusercontent.com/WolframInstitute/Rule30PrizeKit/f131449bf08949cbf0d815b678f6d6dc431524ad/lean/Ruliology/CellularAutomata/Rule30AlternatingTraceBridge.lean",
+      "sha256": "e5cba9dd88d056c067ed34c77a0de3605219da8662ef414cee0adc100a19d5a9",
+      "current_main_identical": false
+    },
+    {
+      "file": "75-Rule30P2Bridge.lean",
+      "url": "https://raw.githubusercontent.com/WolframInstitute/Rule30PrizeKit/f131449bf08949cbf0d815b678f6d6dc431524ad/lean/Ruliology/CellularAutomata/Rule30P2Bridge.lean",
+      "sha256": "72beac1b3dd306ac8ed133943c398ff6d6a7c60c28efe098e39e26bc71ff80aa",
+      "current_main_identical": false
+    },
+    {
+      "file": "75-Rule30SurvivalBridge.lean",
+      "url": "https://raw.githubusercontent.com/WolframInstitute/Rule30PrizeKit/f131449bf08949cbf0d815b678f6d6dc431524ad/lean/Ruliology/CellularAutomata/Rule30SurvivalBridge.lean",
+      "sha256": "7bd2885215f2e3422725ae619e98ad98b05cd31a8f396168d37c24caf6edfdea",
+      "current_main_identical": false
+    },
+    {
+      "file": "76-metadata.json",
+      "sha256": "a8a9e1f54201f7e21679c331d7547a0348ddb18b1f81d5b76bde3c0218002e78"
+    },
+    {
+      "file": "76-comments.json",
+      "sha256": "ed67595f94954fcfc33af1ec8d4cd30cf02612d02e7c46f27442d348c06b4618"
+    },
+    {
+      "file": "76-reviews.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "file": "76-files.json",
+      "sha256": "2089dbff9c824ed8a7f4f9838f4485a7e8dab2b5aafb5a0d3b9167a3e65a783f"
+    },
+    {
+      "file": "76-Ruliology.lean",
+      "url": "https://raw.githubusercontent.com/WolframInstitute/Rule30PrizeKit/fa511089735aa73643560165f1cc2dceffa2420c/lean/Ruliology.lean",
+      "sha256": "b7a801c9737a0b00c78f848a77da1f25e96a11857923d443a5f4cc6df9049fcb",
+      "current_main_identical": false
+    },
+    {
+      "file": "76-Rule30AlternatingTraceBridge.lean",
+      "url": "https://raw.githubusercontent.com/WolframInstitute/Rule30PrizeKit/fa511089735aa73643560165f1cc2dceffa2420c/lean/Ruliology/CellularAutomata/Rule30AlternatingTraceBridge.lean",
+      "sha256": "e5cba9dd88d056c067ed34c77a0de3605219da8662ef414cee0adc100a19d5a9",
+      "current_main_identical": false
+    },
+    {
+      "file": "76-Rule30P2Bridge.lean",
+      "url": "https://raw.githubusercontent.com/WolframInstitute/Rule30PrizeKit/fa511089735aa73643560165f1cc2dceffa2420c/lean/Ruliology/CellularAutomata/Rule30P2Bridge.lean",
+      "sha256": "72beac1b3dd306ac8ed133943c398ff6d6a7c60c28efe098e39e26bc71ff80aa",
+      "current_main_identical": false
+    },
+    {
+      "file": "76-Rule30SEPToPeriodTwo.lean",
+      "url": "https://raw.githubusercontent.com/WolframInstitute/Rule30PrizeKit/fa511089735aa73643560165f1cc2dceffa2420c/lean/Ruliology/CellularAutomata/Rule30SEPToPeriodTwo.lean",
+      "sha256": "722af79ed0d0c7d135722cb7658ea829654bb00f3a0d245fa4b3e680f3ec4bf0",
+      "current_main_identical": true
+    },
+    {
+      "file": "76-Rule30SeparatorBridge.lean",
+      "url": "https://raw.githubusercontent.com/WolframInstitute/Rule30PrizeKit/fa511089735aa73643560165f1cc2dceffa2420c/lean/Ruliology/CellularAutomata/Rule30SeparatorBridge.lean",
+      "sha256": "1c12038e507ccc74362406a0b138362f100af68c42f78da2990d880a9c8a8bce",
+      "current_main_identical": true
+    },
+    {
+      "file": "76-Rule30SeparatorEquivalences.lean",
+      "url": "https://raw.githubusercontent.com/WolframInstitute/Rule30PrizeKit/fa511089735aa73643560165f1cc2dceffa2420c/lean/Ruliology/CellularAutomata/Rule30SeparatorEquivalences.lean",
+      "sha256": "d613e056efca3bbda433893d597eaefccc1b72f7e9cd24f542ca42e0325a79aa",
+      "current_main_identical": false
+    },
+    {
+      "file": "76-Rule30SurvivalBridge.lean",
+      "url": "https://raw.githubusercontent.com/WolframInstitute/Rule30PrizeKit/fa511089735aa73643560165f1cc2dceffa2420c/lean/Ruliology/CellularAutomata/Rule30SurvivalBridge.lean",
+      "sha256": "7bd2885215f2e3422725ae619e98ad98b05cd31a8f396168d37c24caf6edfdea",
+      "current_main_identical": false
+    },
+    {
+      "file": "76-Rule30WedgeBridge.lean",
+      "url": "https://raw.githubusercontent.com/WolframInstitute/Rule30PrizeKit/fa511089735aa73643560165f1cc2dceffa2420c/lean/Ruliology/CellularAutomata/Rule30WedgeBridge.lean",
+      "sha256": "3bfa4e3b5f4a6d4a431eae6a9e5eba713b20f76b4934c20b95d22a8e416c7f40",
+      "current_main_identical": true
+    },
+    {
+      "file": "84-Rule30WedgeBridge.lean",
+      "sha256": "4b8d2d15e735d301a636f299727de6e3f710c5ad4cdfd51e738fe398ba67c55e",
+      "url": "https://raw.githubusercontent.com/WolframInstitute/Rule30PrizeKit/bfea77af5dbd44ba4ece5c643cdde4ef8386d851/lean/Ruliology/CellularAutomata/Rule30WedgeBridge.lean"
+    },
+    {
+      "file": "84-Rule30SEPToPeriodTwo.lean",
+      "sha256": "01aacdc2db19c76a40d4d13d4407ae8cd1aca061d9f07fc7317b01badedfec8a",
+      "url": "https://raw.githubusercontent.com/WolframInstitute/Rule30PrizeKit/bfea77af5dbd44ba4ece5c643cdde4ef8386d851/lean/Ruliology/CellularAutomata/Rule30SEPToPeriodTwo.lean"
+    },
+    {
+      "file": "86-Rule30SeparatorEquivalences.lean",
+      "sha256": "a6d7d4b0722a483d7f660b9c5b2a4c164ac07cc1030fbfe9a374f4f062f02daa",
+      "url": "https://raw.githubusercontent.com/WolframInstitute/Rule30PrizeKit/32770177c045f07df77310ac5a23ee9a3b8ff039/lean/Ruliology/CellularAutomata/Rule30SeparatorEquivalences.lean"
+    },
+    {
+      "current_kit": "Rule30SurvivalBridge.lean",
+      "sha256": "dc94e605e866b02dde654cb169ca2b756ca41ec8110fa5cc93523a590ff61968"
+    },
+    {
+      "current_kit": "Rule30AlternatingTraceBridge.lean",
+      "sha256": "91beb070394816b85112b141f65d1a5fcdb6469c9dc5470f0508479058d7677d"
+    },
+    {
+      "current_kit": "Rule30WedgeBridge.lean",
+      "sha256": "3bfa4e3b5f4a6d4a431eae6a9e5eba713b20f76b4934c20b95d22a8e416c7f40"
+    },
+    {
+      "current_kit": "Rule30SeparatorBridge.lean",
+      "sha256": "1c12038e507ccc74362406a0b138362f100af68c42f78da2990d880a9c8a8bce"
+    },
+    {
+      "current_kit": "Rule30SeparatorEquivalences.lean",
+      "sha256": "a6d7d4b0722a483d7f660b9c5b2a4c164ac07cc1030fbfe9a374f4f062f02daa"
+    },
+    {
+      "current_kit": "Rule30SEPToPeriodTwo.lean",
+      "sha256": "722af79ed0d0c7d135722cb7658ea829654bb00f3a0d245fa4b3e680f3ec4bf0"
+    },
+    {
+      "current_kit": "Rule30GateTrap.lean",
+      "sha256": "20e8c3284bb0393bf8ca5b26d459b0aad82409c589a7f66f7de428a91982b8c2"
+    },
+    {
+      "current_kit": "Rule30PeriodTwoSideways.lean",
+      "sha256": "d08b1d0d0ea35051855323fbf1e8a88f01ab39a89ad0361b76f161437c206b54"
+    }
+  ],
+  "api_receipts": [
+    {
+      "name": "75-comments.json",
+      "sha256": "7563f924004f808a1cc1cd5c11dffbe94a2cfad2297d71589475eeef70a89fd1"
+    },
+    {
+      "name": "75-files.json",
+      "sha256": "020844527a04773dee24506566b1a0b5c891d8c017df650cd8459140ec8bc3ce"
+    },
+    {
+      "name": "75-metadata.json",
+      "sha256": "5d2a276d71f7cb797b8a17d01506424c84071db858246ff108837d855b65d73b"
+    },
+    {
+      "name": "75-reviews.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "76-comments.json",
+      "sha256": "ed67595f94954fcfc33af1ec8d4cd30cf02612d02e7c46f27442d348c06b4618"
+    },
+    {
+      "name": "76-files.json",
+      "sha256": "2089dbff9c824ed8a7f4f9838f4485a7e8dab2b5aafb5a0d3b9167a3e65a783f"
+    },
+    {
+      "name": "76-metadata.json",
+      "sha256": "a8a9e1f54201f7e21679c331d7547a0348ddb18b1f81d5b76bde3c0218002e78"
+    },
+    {
+      "name": "76-reviews.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "84-comments.json",
+      "sha256": "bcb100e23e4b3749044ac974f9dac8e4f495a72492082fc76d2a4e2827cea62d"
+    },
+    {
+      "name": "84-metadata.json",
+      "sha256": "dd352e78de1d1c598ab355731c9b8f6d291c5a335f47dddf2653450724940156"
+    },
+    {
+      "name": "84-reviews.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "86-comments.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "name": "86-files.json",
+      "sha256": "cd9bb2c720f982275226a9e5292641529be43abc3eaa618be46062cc5a41bf43"
+    },
+    {
+      "name": "86-metadata.json",
+      "sha256": "41318ad6f97bde40829b8de655acb19ee23145547481319fd1248dc27fdae40a"
+    },
+    {
+      "name": "86-reviews.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "evidence_archive": {
+    "path": "cited/gpt/gc2414-source-comparison.tar.gz",
+    "bytes": 217728,
+    "sha256": "992a625207673e81c4ca2983a68bdac1286bd61ffe5bfd153b431bc701eb42a6",
+    "raw_upload_and_readback": "verified"
+  }
+}

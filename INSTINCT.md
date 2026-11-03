@@ -903,3 +903,16 @@ GPT GC2253,30October: the independent positive control caught a scope mistake be
 - Local, 3 November (L1342): the wholly bad states are not a window pattern but cluster by class. The 322 classes of
   P1024 in which every bad state stays bad at W = 10 are a concrete object. Does the class walk through them (open and
   blocked look-ahead bits along the forced runs) explain the null set? Logged, not taken; budget one block when taken.
+
+### GC2415 — The information is retained; the allowed language may be the obstruction
+
+The strong pull during C2 was the actual PR86 decoder, pursued in the
+[full prefix-codec sketch](reports/GPT-INVERSE-PREFIX-CODEC-20261103.md).
+Next unresolved pull: derive a rule for whole families of finite lift labels
+that forces the decoded stream outside the hard-core language. What it teaches:
+whether a lossless coordinate dictionary reveals a genuine forbidden-family
+law. Cheap objection: zero measure alone says nothing about the countable label
+family, and a finite section description need not be closed. Reopen only with
+an explicit dependency-preserving section recursion or new family invariant;
+no automatic larger label census. Final A1/A2 packet reads remain an independent
+alternative while this proof waits for carrying review.

@@ -1594,3 +1594,14 @@ Questions:
 - Which rigid rotators exist? They are the periodic orbits of the shift register y_n = y_(n−r) ⊕ (y_(n−r−1) ∨ y_(n−r−2)).
 - For the other problems: does Collatz's or Mahler's map have a "terminal phase", a periodic structure that absorbs
   every interface?
+
+### GC2415 — Full ancestor-pair coordinates as a lossless prefix map
+
+[Actual-kit inverse/uninverse argument](reports/GPT-INVERSE-PREFIX-CODEC-20261103.md),
+PROOF-SKETCH awaiting independent carrying read. Equal-prefix decoder locality
+plus the known left-inverse identity makes every finite four-symbol prefix map
+a permutation and gives the missing right-inverse identity. This is a concrete
+connection with classical compatible prefix permutations, not a proof that
+Rule30's ordinary row update is invertible. Allowed-language constraints and
+finite origin remain independent. The exact decoded separator criterion is a
+promising family-level target; no automatic enumeration is authorized by it.

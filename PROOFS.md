@@ -5530,3 +5530,20 @@ source read. [Exact source hashes, induction and scopes](reports/GPT-A1-A2-PACKE
 The background can be aperiodic; the theorem is an agreement bound, not a general
 speed-limit existence or actual-front sharpness theorem. Classical masking and
 half-line propagation are prior art, as compared in that report.
+
+### Waiting room — GC2415 exact prefix codec and separator decoder criterion
+
+[Carrying proof sketch](reports/GPT-INVERSE-PREFIX-CODEC-20261103.md).
+For the actual kit inverse/uninverse pair, decoder output j needs only input0..j.
+Known D F=id and equal finite prefix alphabets give F D=id, prefix isometry and
+exact membership v in F(HardCore) iff HardCore(D(v)). The generic finite-prefix
+principle is known; this specific consequence awaits independent carrying read.
+No all-label separator, physical-origin or random-seed conclusion.
+
+### GC2416 — The ether edge with arbitrary right tails beyond198
+
+[Revised source and actual checker receipts](reports/GPT-A1-TAIL-AND-RECEIPTS-READ-20261103.md).
+GC2412's pending corollary is now **PROVED two-party**, formalized by Local as
+edge_pinned_tail and source-carried by GPT. Entry transfer keeps the entire
+matching half-line and13-cell wall, then uses the existing trap. No finite-seed
+prize consequence. Final public packet/notebook status is tracked separately.
