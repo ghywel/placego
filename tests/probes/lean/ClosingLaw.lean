@@ -215,6 +215,79 @@ theorem no_1101011 (g : Nat → Bool → Bool → Bool) (x : Nat → Bool) (hq :
 theorem quadratic_or : Quadratic (fun b s => b || s) := by
   unfold Quadratic deriv; decide
 
+/-- No three consecutive doublings once the prefix period is at least `2` (the `m = 0` case). -/
+theorem no_three_at (g : Nat → Bool → Bool → Bool) (x : Nat → Bool) (hq : ∀ j, Quadratic (g j)) {p : Nat}
+    (hE : 1 ≤ prefixExp g x p) :
+    prefixExp g x (p + 1) = prefixExp g x p ∨ prefixExp g x (p + 2) = prefixExp g x (p + 1) ∨
+      prefixExp g x (p + 3) = prefixExp g x (p + 2) := by
+  rcases prefixExp_succ_cases g x p with h0 | h1
+  · exact Or.inl h0
+  rcases prefixExp_succ_cases g x (p + 1) with h0' | h2
+  · exact Or.inr (Or.inl h0')
+  have hc := closing_law g x hq (n := p) (m := 0) h1 (fun i hi => absurd hi (Nat.not_lt_zero i))
+    (by rw [show p + 1 + 2 * 0 + 1 = p + 1 + 1 by omega, show p + 1 + 2 * 0 = p + 1 by omega]; exact h2)
+  rw [show p + 1 + 2 * 0 + 1 + 1 = p + 3 by omega, show p + 1 + 2 * 0 + 1 = p + 2 by omega] at hc
+  have hpow : 1 < 2 ^ prefixExp g x p := Nat.one_lt_two_pow (by omega)
+  rcases prefixExp_succ_cases g x (p + 2) with h0'' | h3
+  · exact Or.inr (Or.inr h0'')
+  · have := hc.2.mp h3; omega
+
+/-- `11011` needs prefix period `2` before it (the `m = 1` case). -/
+theorem no_11011_at (g : Nat → Bool → Bool → Bool) (x : Nat → Bool) (hq : ∀ j, Quadratic (g j)) {p : Nat}
+    (hE : 2 ≤ prefixExp g x p) :
+    prefixExp g x (p + 1) = prefixExp g x p ∨ prefixExp g x (p + 2) = prefixExp g x (p + 1) ∨
+      prefixExp g x (p + 3) = prefixExp g x (p + 2) + 1 ∨ prefixExp g x (p + 4) = prefixExp g x (p + 3) ∨
+      prefixExp g x (p + 5) = prefixExp g x (p + 4) := by
+  rcases prefixExp_succ_cases g x p with h0 | h1
+  · exact Or.inl h0
+  rcases prefixExp_succ_cases g x (p + 1) with h0 | h2
+  · exact Or.inr (Or.inl h0)
+  rcases prefixExp_succ_cases g x (p + 2) with h3 | h3'
+  · rcases prefixExp_succ_cases g x (p + 3) with h0 | h4
+    · exact Or.inr (Or.inr (Or.inr (Or.inl h0)))
+    have hpair : ∀ i, i < 1 → prefixExp g x (p + 1 + 2 * i + 1) = prefixExp g x (p + 1 + 2 * i) + 1 ∧
+        prefixExp g x (p + 1 + 2 * i + 1 + 1) = prefixExp g x (p + 1 + 2 * i + 1) := by
+      intro i hi
+      have hi0 : i = 0 := by omega
+      subst hi0
+      exact ⟨h2, h3⟩
+    have hc := closing_law g x hq (n := p) (m := 1) h1 hpair
+      (by rw [show p + 1 + 2 * 1 + 1 = p + 3 + 1 by omega, show p + 1 + 2 * 1 = p + 3 by omega]; exact h4)
+    rw [show p + 1 + 2 * 1 + 1 + 1 = p + 5 by omega, show p + 1 + 2 * 1 + 1 = p + 4 by omega] at hc
+    have hpow : 2 ^ 2 ≤ 2 ^ prefixExp g x p := Nat.pow_le_pow_right (by decide) hE
+    have h4' : (2 : Nat) ^ 2 = 4 := rfl
+    rcases prefixExp_succ_cases g x (p + 4) with h0 | h5
+    · exact Or.inr (Or.inr (Or.inr (Or.inr h0)))
+    · have := hc.2.mp h5; omega
+  · exact Or.inr (Or.inr (Or.inl h3'))
+
+/-- **Five letters, at most three doublings** (GC2007's bound). Once the prefix period is at least `4`, any five
+consecutive columns raise the exponent by at most `3`, for every quadratic gate family. -/
+theorem five_letter (g : Nat → Bool → Bool → Bool) (x : Nat → Bool) (hq : ∀ j, Quadratic (g j)) {n : Nat}
+    (hE : 2 ≤ prefixExp g x n) :
+    prefixExp g x (n + 5) ≤ prefixExp g x n + 3 := by
+  have c0 := prefixExp_succ_cases g x n
+  have c1 := prefixExp_succ_cases g x (n + 1)
+  have c2 := prefixExp_succ_cases g x (n + 2)
+  have c3 := prefixExp_succ_cases g x (n + 3)
+  have c4 := prefixExp_succ_cases g x (n + 4)
+  simp only [Nat.add_assoc, Nat.reduceAdd] at c1 c2 c3 c4
+  have e1 : 1 ≤ prefixExp g x (n + 1) := by rcases c0 with h | h <;> omega
+  have e2 : 1 ≤ prefixExp g x (n + 2) := by rcases c1 with h | h <;> omega
+  have t0 := no_three_at g x hq (p := n) (by omega)
+  have t1 := no_three_at g x hq (p := n + 1) e1
+  have t2 := no_three_at g x hq (p := n + 2) e2
+  have f0 := no_11011_at g x hq (p := n) hE
+  simp only [Nat.add_assoc, Nat.reduceAdd] at t1 t2
+  rcases c0 with h0 | h0 <;> rcases c1 with h1 | h1 <;> rcases c2 with h2 | h2 <;> rcases c3 with h3 | h3 <;>
+    rcases c4 with h4 | h4 <;>
+    first
+    | omega
+    | (rcases t0 with h | h | h <;> omega)
+    | (rcases t1 with h | h | h <;> omega)
+    | (rcases t2 with h | h | h <;> omega)
+    | (rcases f0 with h | h | h | h | h <;> omega)
+
 /-- Rule 30's right edge: the closing law for the OR family. -/
 theorem closing_law_or (x : Nat → Bool) {n m : Nat}
     (h1 : prefixExp (fun _ b s => b || s) x (n + 1) = prefixExp (fun _ b s => b || s) x n + 1)
@@ -234,3 +307,4 @@ end Ruliology.CellularAutomata.Rule30ClosingLaw
 #print axioms Ruliology.CellularAutomata.Rule30ClosingLaw.closing_law
 #print axioms Ruliology.CellularAutomata.Rule30ClosingLaw.no_1101011
 #print axioms Ruliology.CellularAutomata.Rule30ClosingLaw.order_countdown_exact
+#print axioms Ruliology.CellularAutomata.Rule30ClosingLaw.five_letter

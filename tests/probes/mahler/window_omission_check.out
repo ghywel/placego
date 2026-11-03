@@ -1,0 +1,9 @@
+10000     n= 100: strict True, S<1/2 True, S,T match True, P(g)=13/243>0 True, gamma in (1.324718, 1.324718) < g=4/3, Q=2/5 <= 2T=194/243 True; n g^L (2g/3)^n = 3.232e-03 < 1/250 True; with gamma: 1.636e-03
+1000      n= 200: strict True, S<1/2 True, S,T match True, P(g)=61/625>0 True, gamma in (1.380278, 1.380278) < g=7/5, Q=7/10 <= 2T=70/81 True; n g^L (2g/3)^n = 7.814e-04 < 1/1000 True; with gamma: 4.324e-05
+1001000   n= 400: strict True, S<1/2 True, S,T match True, P(g)=171169889/1280000000>0 True, gamma in (1.443269, 1.443269) < g=29/20, Q=17/20 <= 2T=2018/2187 True; n g^L (2g/3)^n = 6.956e-03 < 1/125 True; with gamma: 1.047e-03
+100       n= 800: strict True, S<1/2 True, S,T match True, P(g)=13/3375>0 True, gamma in (1.465571, 1.465571) < g=22/15, Q=37/40 <= 2T=26/27 True; n g^L (2g/3)^n = 3.928e-05 < 1/20000 True; with gamma: 2.156e-05
+100       n=1600: strict True, S<1/2 True, S,T match True, P(g)=13/3375>0 True, gamma in (1.465571, 1.465571) < g=22/15, Q=77/80 <= 2T=26/27 True; n g^L (2g/3)^n = 1.223e-12 < 1/500000000000 True; with gamma: 3.692e-13
+101000000 n=3200: strict True, S<1/2 True, S,T match True, P(g)=192282066297806221363/3814697265625000000000>0 True, gamma in (1.490873, 1.490873) < g=373/250, Q=157/160 <= 2T=19466/19683 True; n g^L (2g/3)^n = 4.338e-03 < 1/200 True; with gamma: 3.841e-04
+ALL SIX CASES PASS
+cutoff margin at n = 1600: 2T - Q = 1/2160
+WINDOW_OMISSION_DONE
