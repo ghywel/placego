@@ -12,7 +12,7 @@ import json
 import pathlib
 import sys
 
-TEMPLATE_SHA = '22aa42009ff730da04fd1cd323f4a0dd8b33b215e43d3f009f1d2305f669657c'
+TEMPLATE_SHA = '7b89b444efa63ec54d171b0830715fd767d8b32310888a7acc39fefcca270198'
 
 root = pathlib.Path(__file__).resolve().parents[3]
 selftest = sys.argv[1] == '--selftest'
@@ -123,8 +123,8 @@ reps = [
      'theorem entry_inv : Inv Gedge 300 (%d) %d %d (startKey %% 2 ^ %d) ∧ startKey %% 2 ^ %d ≠ refMask %d %d ∧\n    keyOf %d %d (startKey %% 2 ^ %d) = startKey := by' % (A0, tq0, dq0, W, W, tq0, dq0, tq0, dq0, W)),
     ('have hx : lo + ((629 + i : Nat) : Int) = -72 + 1 + (i : Int)', 'have hx : lo + ((%d + i : Nat) : Int) = %d + 1 + (i : Int)' % (A0 + 701, A0)),
     ('have hk : closure.lookup (keyOf 15 3 (startKey % 2 ^ 24)) = some 0', 'have hk : closure.lookup (keyOf %d %d (startKey %% 2 ^ %d)) = some 0' % (tq0, dq0, W)),
-    ('/-- **The front law of the inserted edge on the ring background `100100000` (temporal period 57).** For every `t ≥ 300`',
-     '/-- **The front law of the inserted edge on the ring background `%s` (temporal period %d).** For every `t ≥ 300`' % (word, q)),
+    ('/-- **The front law of the inserted edge on the ring background `100100000` (ring orbit of period 57).** For every `t ≥ 300`',
+     '/-- **The front law of the inserted edge on the ring background `%s` (ring orbit of period %d).** For every `t ≥ 300`' % (word, q)),
     ('there is an anchor `A` with the background intact at and left of `A`, a mismatch within the 24 cells right of it, and\n`-14 ≤ 19 (A + 72) + 5 (t - 300) ≤ 22`. So the leftmost difference moves left at exactly `5/19` cell per tick. -/',
      'there is an anchor `A` with the background intact at and left of `A`, a mismatch within the %d cells right of it, and\n`%d ≤ %d (A + %d) + %d (t - 300) ≤ %d`. So the leftmost difference moves left at exactly `%d/%d` cell per tick. -/' % (W, lo_b, P, -A0, P - S, hi_b, P - S, P)),
     ('x ≤ A + 24 ∧ ', 'x ≤ A + %d ∧ ' % W),

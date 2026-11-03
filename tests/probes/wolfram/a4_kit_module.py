@@ -28,9 +28,10 @@ public import Ruliology.CellularAutomata.Rule30Jen
 # Moving walls: exact front speeds of an inserted edge on two ring backgrounds
 
 Take a spatially periodic background orbit of rule 30 (a ring word `w`, evolved on the whole line) and insert one black
-cell, with white to its right. On the ring backgrounds `100100000` (temporal period 57) and `1010000` (temporal period 63)
+cell, with white to its right. On the ring backgrounds `100100000` and `1010000`, at the alignments `(0, 0)` and `(0, 4)`,
 the leftmost difference from the background moves left at an exact rational speed, for all time and whatever the damage
-behind it does:
+behind it does. (The ring orbits have periods 57 and 63 in the diagonal coordinate `t - x`; at a fixed column the
+backgrounds repeat every 171 and 63 ticks.)
 
 * `Ring57.edge_law`: for every `t ≥ 300` there is an anchor `A` with the background intact at and left of `A`, a
   difference within the 24 cells right of `A`, and `-14 ≤ 19 (A + 72) + 5 (t - 300) ≤ 22`: speed exactly `5/19`.
