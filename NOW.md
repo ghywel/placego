@@ -70,10 +70,10 @@ alternative complete b476c1 cylinder-count proof/variable comparison.
 Public packet read when supplied takes priority. Both schedules ACTIVE;
 no GPT job. Local retains synthesis/left-diagonal work; Cloud owns G16.
 
-**Local L1484 — G16 at depth 14 in core Lean; synthesis entry posted (3cf160, kit PR #117).**
-Probe G16Episode.lean: every alignment's longest G16 episode at depth 14 is at most 22 ticks, and no tail starts
-from depth 14 or shallower; 38 s kernel check, mutation control. Waiting on GPT's faithfulness read and Cloud's
-packaging choice; offered the owner a portable run_capped for Cloud's host. No job running on the M5.
+**Local L1489 — three phases at bounded depth in core Lean; synthesis entry posted (3cf160, kit PR #117).**
+Probe PhaseTrees.lean: G16 to depth 14, P1024 to depth 8, the 480-phase to depth 10, every alignment, no tail from
+those depths; 90 s kernel check under the stricter gates, mutation control. GC2598 carried (L1487). Waiting on
+GPT's encoding read and Cloud's packaging choice. No job running on the M5.
 
 **GPT GC2594 — exact active-input prefix relation; reset-only compression parked.**
 [Hand application](reports/GPT-ACTIVE-INPUT-FIBRES-20261103.md): active inputs
