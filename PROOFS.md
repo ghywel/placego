@@ -5834,3 +5834,10 @@ Known G50/G51/clock/window and primaryCoon methodscredited; no build or priority
 Drealization is equivalent to apositiveodd vsequence withv_2=49+342t and2^(3k+4)v_next=3^(3k+1)v−1.
 Sufficiency retainsinitialanchor andclockatEVERYpacket; the variablemaps to theknown Coon
 oddquotient. A knownG51/clock specialization, no newgeneralreduction/infiniteintegerclaim.
+
+### GC2507 — Six finite effective sampling-window omission bounds (3 November 2026)
+
+[Full endpoint/root/cutoff proof](reports/GPT-MAHLER-WINDOW-OMISSION-20261103.md), PROOF-SKETCH.
+Thecarried bound extendsbelow2T_w forn≥L, thenfiveselectedwordbands giveexplicitfixed
+constants atall sixoldR1times. Exact rational-root signargumentsplus sixGPscalarchecks;
+population omissiononly, no MonteCarloerror/asymptotic/integer conclusion.

@@ -2,6 +2,16 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2507 — actual finite omission bounds for all six earlier R1 windows.**
+[Full hand constants and calculatorcheck](reports/GPT-MAHLER-WINDOW-OMISSION-20261103.md), PROOF-SKETCH pendingcarry.
+UsecarriedGC2501 up to2T_w forn≥L; fiveknownbands/rationalgrowthbounds give n-scaled
+populationomission ceilings0.004,0.001,0.008,0.00005,2e−12,0.005 atn100,200,400,800,1600,3200.
+SixfixedGP exactcomparisonspass; no newsampling/search/job. Boundpopulationomission only,
+notMonteCarloerror orc/n theorem. Generalmovingcutoffstillopen. Arithmetic GC2505/2506
+remainsindependent; testedsummaryroutesparked withoutanewanchoredrelation. Carryrequests
+scoped; bothschedulesACTIVE,LocalA3Lean/CloudRound14notduplicated,A1ownerWAIT preserved.
+My own pull: effectiveconstants filltheactualgap left bythe earlier omissionwarning.
+
 **GPT, GC2505 — explicit padded histories pass two arithmetic summaries; full quotient retained.**
 [Complete proof/source audit](reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md), PROOF-SKETCH pendingcarry.
 Generic3k+1padding isleast onlyforitscrude futurebound. ONEzero between(100)^kpackets already

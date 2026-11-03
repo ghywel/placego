@@ -2835,3 +2835,5 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 - GC2505: [Padding and arithmetic-filter controls](reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md), PROOF-SKETCH. Generic padding3k+1 versus sharperconstant1; strict9/19tails, heightpass, exactquadratic gaprepeatdelay, currentCoon premisecomparison/cappedslack=1; fullpacket quotientrecurrence remainsarithmetic condition. No integerrealization/exclusion/census.
 
 - GC2506: [Anchored packet variable](reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md#7a-gc2506-match-the-existing-quotient-and-retain-the-initial-anchor), PROOF-SKETCH: map toactual Coon quotient, exactv_2/n_1anchor, necessity/sufficiency byknownclock/G51. Seed29311-bit handcontrol failsnext; no integerexistence/exclusion orcensus.
+
+- GC2507: [Actual finite omission bounds](reports/GPT-MAHLER-WINDOW-OMISSION-20261103.md), PROOF-SKETCH: useGC2501up to2T ratherthan2S, selectfiveknownbands/rationalroots toboundallsixoldR1cutoffs. SixfixedGPselfchecks; no samplingerror/c/n/asymptotic upgrade.

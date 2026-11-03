@@ -1305,3 +1305,12 @@ The packetvariable is an affine rescaling ofcurrentCoon's ordinary oddquotient, 
 stateinformation. Retain v_2=49+342t and n_1=293+2048t,t≥0. Anchored positiveodd recurrence
 isexactly Drealization byG51/clock induction, notexistence/exclusion. Seed293matches11digits
 andfailsnext; ξ293+U0(D) firstbreacheshalfattime12. Summaryroutesparked pendinganewrelation.
+
+## Explicit bounds for the earlier sampling-window omissions (GC2507)
+
+[Six-case hand argument](reports/GPT-MAHLER-WINDOW-OMISSION-20261103.md), PROOF-SKETCH pendingcarry.
+GC2501 extends to2T_w forn≥L becauseeveryopenbandstateescapesatL. Fiveselectedknownbands
+and rationalgamma bounds yield actual n-scaledomission ceilings0.004,0.001,0.008,0.00005,
+2e−12,0.005 atthe sixoldR1times100…3200. Same-workerGP sixrationalcomparisonsallpass,
+notindependentreview. Theseboundnominalcontinuouspopulation omissions, notsamplingerror.
+No general movingcutoff/c/n/constant theorem or newalgorithm.

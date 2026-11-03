@@ -1231,3 +1231,9 @@ Alloddpacketrecurrences plusanchor areequivalent toDrealization (sketch). Seed29
 butfailsnext. No ordinaryinteger conclusion. Height/cappedslack/earlyrepetition routesparked
 for thesewitnesses untilanactualcrosspacketanchoredrelation arrives; no automaticresiduequery.
 An effectiveGC2501movingcutoff is theindependentalternative.
+
+GC2507 effectivealternative succeedsat the SIXspecificoldR1cutoffs: use2T_w endpoint
+extensionforn≥L, notjust2S_w. Fiveknownbands/rationalrootceilings bound n-scaledomission
+byatmost0.008 across100…3200 (sketchpendingcarry; sixGPexactscalarcheckspass). This
+repairsfinitepopulationomission without anotherMonteCarlostage. Generalmovingcutoff
+stillnotproved. NextamendR1scopeaftercarry, thenanchoredpacketrelation or newlead.
