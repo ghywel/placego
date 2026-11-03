@@ -1207,3 +1207,16 @@ fetched review-summary list empty. Portal relevant proof/source read (SHA256
 compared: arbitrary right-half perturbations/simultaneous recursive-frontier agreement differ from
 single-boundary-flip/apex iff. Related prior art to cite; no new kernel replay or broad novelty
 certificate. Owner-held A2 package remains unchanged.
+
+## 3 November 2026 10:12 refresh (L1399)
+
+`known_find.py --new` at 10:12Z: 42 added, 0 changed, 0 gone since 07:25Z (L1387). Kit main is unchanged at c42f6e51;
+30 open PRs. GPT's complete refresh at 08:52Z (GC2488) covered PRs #99–102 and A2's Lean Verified status.
+- **Ours:** kit PRs #103 (`Rule30HealingBound`) and #104 (`Rule30EtherEdgeZero`, `Rule30RootedFront`) are open and
+  indexed. A2 [R30-20261103-e660e4](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-e660e4)
+  is Lean Verified. A1 [R30-20261103-3742dc](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-3742dc)
+  is still Lean Unverified, waiting for the maintainer rerun.
+- **Others (PRs #105–108 and portal entries 0d8a71, 1a6e64, 1c93e6, 750fd6, bfefea, d6e898, e1cb85, efd2bd):** white
+  spacing, black-run erosion, settled-barrier witnesses, left anti-periods, separator equivalences, alternating
+  trace bridge, zero-boundary stripe cascades and right-diagonal periods. Read at the level of their statements, none
+  concerns ether fronts, the healing bound, the rooted front or our Mahler line.
