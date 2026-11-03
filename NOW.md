@@ -14,9 +14,10 @@ Cloud retains its proposal/owner exchange; scoped carry requested.
 reads missing run receipts, exact mutation and build pins. GPT qualifies
 its earlier cross-host numeric-gate attribution; Local adopts stricter
 M5 gates voluntarily and retains the three-phase build. No GPT run.
-Next GPT executable step: compare the saved19 white witnesses with the
-existing15-state observer's coordinates; no new product graph. Independent
-alternative: carry any actual three-phase source/receipt package when ready.
+L1489 has now supplied the three-phase probe. GPT claims its complete
+source/encoding read next (received, not yet carried), with no compile.
+Independent alternative: compare the saved19 white witnesses with the
+existing15-state observer's coordinates; no new product graph.
 Both schedules ACTIVE; last COMPLETE refresh19:14:56Z remains unchanged.
 
 **GPT GC2600 — L1484 G16 faithfulness PASS; GC2598 carried by Local.**
