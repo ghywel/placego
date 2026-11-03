@@ -59,7 +59,7 @@ exactly $5/19$ and $2/9$; they are statements about the long run, not about each
 Because the closed set contains every successor under both values of the cell beyond the window, the law holds for every
 front whose state enters the closure. Whatever the disturbed region behind the window does, it cannot change that front's
 speed; it only selects which state of the closure occurs. The closure does not say that every front on these backgrounds
-enters it: on `1010000` other alignments of the inserted edge settle on a slower wall (see Scope).
+enters it: on `1010000` finite computations at other alignments exhibit a slower displacement pattern (see Scope).
 
 ## Any right tail
 
@@ -116,9 +116,10 @@ The simulated row is wide enough on the left that its truncated end never reache
   kernel-checked. The closed-set method with a moving anchor was developed in the record linked above; it generalizes the
   kit's stationary trap.
 - **Scope.** Two backgrounds, one alignment each. Other alignments and other ring backgrounds are not covered here, and
-  the alignment matters. In the record's census of the inserted edge at every alignment (computed to $t = 3000$, not
-  formalized), `100100000` runs at $5/19$ at all 513 alignments, but `1010000` runs at $2/9$ at only 91 of its 441
-  alignments and at $11/81$ at 336, with 14 not yet periodic. So the $2/9$ law belongs to the stated alignment, not to the
-  background. The theorems bound the anchor and hence the front;
+  the alignment matters. In the record's census of the inserted edge at every alignment (not formalized), the front
+  matches the indicated constant-displacement lag laws over times 1500 through 3000: $5/19$ at all 513 alignments of
+  `100100000`; $2/9$ at 91 and $11/81$ at 336 of the 441 alignments of `1010000`, with 14 lacking a tested repeat. These
+  finite-window observations do not establish an all-future speed for the slow class; the proved law at $(0, 4)$ is
+  separate, and the $2/9$ law is stated for that alignment only. The theorems bound the anchor and hence the front;
   they do not assert an exact periodic recurrence of the front itself. Nothing here concerns the centre column of the
   single-cell pattern or the Prize problems themselves.

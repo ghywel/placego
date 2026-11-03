@@ -79,6 +79,19 @@ print('the actual evolution\'s inputs over the same %d ticks:         %s' % (len
 agree = sum(1 for i in range(len(word)) if word[i] == act[i])
 first = next((i for i in range(len(word)) if word[i] != act[i]), None)
 print('agreement with the actual inputs: %d of %d; first difference at tick %s' % (agree, len(word), first))
+# GC2548: the successor reads b only when the anchor stays and the last strip cell is white; mark the ignored inputs
+states = [st for st, _, _ in path] + [found[0]]
+read = [(step1(st, 0)[0] != step1(st, 1)[0]) or (step1(st, 0)[2] != step1(st, 1)[2]) for st in states]
+rule_read = [st[2][-1] == 0 and step1(st, 0)[1] == 0 for st in states]
+assert read == rule_read, 'the read rule (anchor stays and last strip cell white) does not match the successors'
+masked = ''.join(str(word[i]) if read[i] else '*' for i in range(len(word)))
+print('the same word with ignored inputs masked (*): %s' % masked)
+act_pos = [i for i in range(len(word)) if read[i]]
+print('active inputs: %d of %d; their values: %s; actual values there: %s; agreement %d of %d' % (
+    len(act_pos), len(word), ''.join(str(word[i]) for i in act_pos), ''.join(str(act[i]) for i in act_pos),
+    sum(word[i] == act[i] for i in act_pos), len(act_pos)))
+first_act = next((i for i in act_pos if word[i] != act[i]), None)
+print('first causal mismatch with the actual evolution: tick %s' % first_act)
 json.dump({'pattern': PAT, 'T0': T0, 'W': W, 'start': enc(start), 'word': word, 'actual_inputs': act[:len(word)],
            'path': [[enc(s_), b, mv] for s_, b, mv in path] + [[enc(found[0]), found[1], None]]}, open(OUT, 'w'))
 print('wrote %s (kept outside git)' % OUT.rsplit('/', 1)[-1])

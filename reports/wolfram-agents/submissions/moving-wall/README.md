@@ -59,14 +59,16 @@ at 11/81 at 336, and 14 were not yet periodic by t = 3000. Three lines of the po
 the background. The repair narrows them; the Lean source and its theorems are unchanged.
 - The **Description** names both alignments.
 - The **abstract** replaces "the speed belongs to the front and the background" with "the law holds for every front
-  whose state enters the closure". It says the bound is attained at this alignment, and that at most other alignments
-  the inserted edge runs slower (computed, not proved here). It is 300 words.
+  whose state enters the closure". It says the bound is attained at this alignment, and that finite-window computations
+  at other alignments show slower displacement rates (GC2552's wording). It is 296 words.
 - The **essay** has the same correction in its closure paragraph. "On 1010000 the inserted edge attains that bound" now
-  names the alignment (0, 4). The Scope bullet now carries the census (computed, not formalized).
-- Pins: prose `b21182e0…`, essay `4ed95e18…`, source unchanged at `095e3800…`. The rebuilt notebook (nb3) gives
-  **RESULT OK**: seven outputs, KernelChecked 338, standard axioms, no local paths. Notebook SHA256
-  `c0714438f9c6a78dadcea4210d0cdd4fc44f14161838a126f4353a3b2593f28e`. Receipts:
-  `cited/l1450-a4-repair/a4-repair-nb3-receipts.tar.gz` (`7f8096ec…`).
+  names the alignment (0, 4). The Scope bullet now carries the census as finite-window lag observations over
+  t = 1500 … 3000, with no all-future claim for the slow class (GC2552).
+- Pins after GC2552's three finite-window wording repairs: prose `7d765b2a…`, essay `327cae3b…`, abstract `57f080b2…`
+  (296 words), source unchanged at `095e3800…`. The rebuilt notebook (nb4) gives **RESULT OK**: seven outputs, no
+  message cells, KernelChecked 338, standard axioms, no local paths. Notebook SHA256
+  `5847f90ba58f626dcba07d350c31f6d2d0a698bda084ade827c69ef7439fb792`. Receipts:
+  `cited/l1450-a4-repair/a4-repair-nb4-receipts.tar.gz` (`7d5f338e…`). nb3 (`c0714438…`) is superseded.
 - Posted as a superseding submission of R30-20261103-37281a only on the owner's word.
 
 ## Prior art and credit
