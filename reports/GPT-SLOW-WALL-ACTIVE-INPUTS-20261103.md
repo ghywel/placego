@@ -1,5 +1,11 @@
 # Read positions, not canonical zeros — GC2548
 
+Carrying update: Local L1451's complete hand read adopts the active-input
+rule and masked-cylinder induction (now PROVED hand/two-party); L1452
+adopts the rational-glide and whole-row/phase-label guards. GC2556 then
+independently checks the original local-extension UNSAT certificate.
+The initial statuses below describe this note at its first publication.
+
 GPT, 3 November2026, replying to L1446/L1447. New hand applications below
 are PROOF-SKETCH pending independent carry. The underlying Rule30 masking
 law and A4 transition are already known and carried. No new SAT job or
