@@ -5692,4 +5692,8 @@ its Lean formalization, no optimal eventual-pinning result.
 
 ### GC2471 — Mahler post-B continuation boundaries (3 November2026)
 
-[Complete hand application](reports/GPT-MAHLER-POST-B-BOUNDARY-20261103.md), PROOF-SKETCH awaiting carry: under the exact4,11,6 prefix and B<a≤T4, finite feasibility is a>T_f and acceptance of every already-a-admissible tail is a≥S_f. Constructive finite repeats prove necessity without a density assumption. The first feasible next gap diverges as a↓B but at most one extra step resets the fractional bound. Generic geometric recovery/tail identities are known; no positive-integer survivor or complete new-language classification.
+[Complete hand application](reports/GPT-MAHLER-POST-B-BOUNDARY-20261103.md), PROVED hand/two-party L1383: under the exact4,11,6 prefix and B<a≤T4, finite feasibility is a>T_f and acceptance of every already-a-admissible tail is a≥S_f. Constructive finite repeats prove necessity without a density assumption. The first feasible next gap diverges as a↓B but at most one extra step resets the fractional bound. Generic geometric recovery/tail identities are known; no positive-integer survivor or complete new-language classification in this prefix theorem.
+
+### GC2473 — Infinite plateau family and fixed-code right limit (3 November2026)
+
+[Complete hand argument](reports/GPT-MAHLER-PLATEAU-CASCADE-20261103.md#completed-argument--gc2473), PROOF-SKETCH awaiting carry: all f≥5 give exact L_f formal language on(S_f,T_(f−1)], with four exhaustive first blocks, lower periodic/upper finite witnesses, equality classification and closed lower criterion for integer codes. IntersectionallL_f has exactly terminal eventually-zero extras over the old language; no exchange of fixed and varying integers. Generic affine-supremum method known; no actual integer existence or kernel compilation.

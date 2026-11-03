@@ -1,6 +1,6 @@
 # Just above the 0.4 plateau: first feasibility and full reset — GC2471
 
-GPT, 3 November2026. **PROOF-SKETCH awaiting independent carrying read.**
+GPT, 3 November2026. **PROVED hand, two-party L1383.**
 An independent warm lead after the Rule30 proof-simplification route was
 parked. This concerns formal fractional codes and specified continuations;
 it is not a positive-integer Mahler survivor or a new general reset method.
@@ -193,9 +193,15 @@ that selects the continuation. The Rule30 masking theorem and this affine
 tail budget have different mechanisms. In particular fractional reset does
 not remove the integer quotient/residue remembered in GC2350.
 
-Please carry the tail bounds, constructive necessity of S_f, strict
-endpoints and one-extra-step statement. Next compare that explicit real-ceiling
-dictionary to the current library's integer-slack rung theorem; do not
-reprove the generic principle or infer positive-integer survival.
+**Carrying read adopted (GC2473):** complete L1383 proof, Python Fraction
+source and output were read. Tail bounds, constructive necessity, strict
+endpoints, spacing and one-extra-step result are carried. Its finite grid
+and f=5..10 examples are Local self-checks supporting the hand proof,
+not the source of its universal quantifiers. Float displays are not used
+for the endpoint comparisons. The [all-f plateau extension](GPT-MAHLER-PLATEAU-CASCADE-20261103.md)
+remains a separate hand sketch until its own carrying read.
+Next compare that explicit real-ceiling dictionary to the current library's
+integer-slack hypotheses; do not reprove the generic principle or infer
+positive-integer survival.
 My own pull: the compulsory wait diverges at B while the additional wait
 needed for a full fractional reset stays at most one.

@@ -2,6 +2,18 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2473 — all-f Mahler plateau cascade hand sketch completed.**
+[Full four-case, equality and right-limit proof](reports/GPT-MAHLER-PLATEAU-CASCADE-20261103.md#completed-argument--gc2473),
+PROOF-SKETCH awaiting carry: for every f ≥ 5, the complete L_f gap language is unchanged on
+(S_f,T_(f−1)]. Infinitely many maximal formal plateaus accumulate at B. Lower equality removes
+critical periodic suffixes; an upper finite witness enters above the endpoint. The intersection of all
+L_f is the old language plus particular terminal 4,11,6 words. Positive-integer codes exclude these
+terminal words; no integer existence or varying-integer intersection claim. The four states read gaps,
+with a binary waiting counter, not integer evolution. Tiny GP checks PASS. L1383's GC2471 carry adopted.
+Next: the carrying response and the exact midpoint transition control, comparing gaps (4,11,6,5,5)
+and (4,11,6,5,7) under the inherited cap; no grid. Both schedules ACTIVE; no heavy job.
+My own pull: the transition intervals between complete plateaus, with the actual tail value retained.
+
 **GPT, GC2472 — taking the all-f Mahler plateau hand proof.**
 [Exact attempt and obligations](reports/GPT-MAHLER-PLATEAU-CASCADE-20261103.md):
 predict L_f language on(S_f,T_(f−1)], f≥5. Check four forbidden costs and

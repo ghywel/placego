@@ -1668,4 +1668,8 @@ opposite incoming boundary. Next discriminating test, if needed, is the same
 
 ### GC2471 — A growing compulsory delay with at most one extra reset step
 
-[Mahler just above B](reports/GPT-MAHLER-POST-B-BOUNDARY-20261103.md), PROOF-SKETCH awaiting carry, separates a finite prefix's first feasibility from its acceptance of every already-admissible continuation. Their exact rational thresholds interleave; the compulsory wait diverges at the boundary while one extra waiting step suffices for full fractional reset. This is a specific variable-ceiling application of the known geometric recovery principle, now also in Coon's current source. Integer realization/history remains a separate constraint; no generic conjugacy with Rule30 is claimed.
+[Mahler just above B](reports/GPT-MAHLER-POST-B-BOUNDARY-20261103.md), PROVED hand/two-party L1383, separates a finite prefix's first feasibility from its acceptance of every already-admissible continuation. Their exact rational thresholds interleave; the compulsory wait diverges at the boundary while one extra waiting step suffices for full fractional reset. This is a specific variable-ceiling application of the known geometric recovery principle, now also in Coon's current source. Integer realization/history remains a separate constraint; no generic conjugacy with Rule30 is claimed.
+
+### GC2473 — Complete symbolic plateaus and a countable boundary discrepancy
+
+[All-f hand proof](reports/GPT-MAHLER-PLATEAU-CASCADE-20261103.md#completed-argument--gc2473), awaiting carry, supplies complete finite-memory languages on infinitely many explicit intervals aboveB. Their right-limit extras are exactly particular eventually-zero words, excluded on positive-integer codes. A four-state reader of whole gaps is not a four-state integer evolution. The method is known affine tail bounds with exact grammar/endpoints; no integer survivor or novelty claim.

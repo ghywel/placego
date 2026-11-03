@@ -1052,7 +1052,7 @@ without a new bound, park the stabilization route and take that alternative. Bot
 
 ## Just above B: first feasibility versus full continuation reset (GC2471)
 
-The independent4,11,6 continuation lead now has a [complete hand application](reports/GPT-MAHLER-POST-B-BOUNDARY-20261103.md), PROOF-SKETCH awaiting carry. Put r=2/3 and B=12552580835/31381059609. For B<a≤T4, define
+The independent4,11,6 continuation lead now has a [complete hand application](reports/GPT-MAHLER-POST-B-BOUNDARY-20261103.md), PROVED hand/two-party L1383. Put r=2/3 and B=12552580835/31381059609. For B<a≤T4, define
 
 `T_f=B+r^(21+f)/3`, `S_f=B/(1−r^(21+f))`, f≥5.
 
@@ -1063,3 +1063,13 @@ The feasibility widths have ratio2/3 exactly. The full-reset widths have ratio `
 **Current source refresh:** Coon main is b6876a5f6e2772aa356a0440c8766b0ffbbd4dfe,93files changed sincebd92eb1. Targeted statement/proof comparison finds `subCeiling_survival_rung_unique_and_trichotomy` already supplies the generic geometric recovery principle; it is credited as known. AperiodicSlackCocycle is unchanged at hashb230c1a2. The full new library and kernel builds have not been reviewed here. The particular variable-ceiling prefix/strict-endpoint dictionary stays separate from that generic prior art.
 
 Next executable step: carry the constructive full-reset necessity and endpoint treatment, then test the CONJECTURE that each `(S_f,T_(f−1)]`, f≥5, is a complete finite-memory plateau with gap rules≥4,4→≥11,4,11→≥6,4,11,6→≥f. Use the four exhaustive first-block cases and forbidden costs; overlap/equality cases are the cheap objection. The prefix theorem alone does not establish this. Compare the exact integer-slack hypotheses before treating a general principle as additional. Do not rerun integer-residue stabilization without a new bound or start a threshold grid/census. Independent alternative: a genuinely new Rule30 relational lemma from Local. The current overnight programme/schedules are ACTIVE by the2November owner restart; older paused checkpoints above are historical.
+
+## An infinite family of complete plateaus accumulating at B (GC2473)
+
+The conjecture above now has a [full hand proof](reports/GPT-MAHLER-PLATEAU-CASCADE-20261103.md#completed-argument--gc2473), PROOF-SKETCH awaiting carry. For every f≥5, the formal language is exactly the four gap rules of L_f throughout `(S_f,T_(f−1)]`. Four forbidden costs give necessity; four first-block affine bounds give supremum S_f. Periodic lower/finite upper witnesses establish maximality and strict endpoints. Ordinary-integer criteria include the lower endpoint by G51's periodic obstruction, with no existence or integer-maximality assertion.
+
+The gap reader has four states, while a binary reader needs a bounded waiting counter; an explicit nonminimal list has f+17 forbidden binaryblocks, all lengths≤21+f. No uniform memory bound independent of f, and no finite-state predictor of an actual integer's next gap, is claimed.
+
+The fixed-code right limit is exact: intersection of all L_f equals the old three-rule language plus words with a unique terminal4,11,6 and no further ones. It is exactly the closed-ceiling condition allU_j≤B. Strict ceilingB removes those terminal extras; positive-integer parity codes cannot have finitely many ones. This does not exchange “one fixed integer for all f” with “a possibly different integer for each f.”
+
+Next executable step: read the carrying response, then examine the transition interval at the exact midpoint a=(T5+S5)/2. Before proposing a count-only reset model, compare finite words with gaps4,11,6,5,5 and4,11,6,5,7 via the exact inherited cap; they have the same number of short critical blocks. This is a specified hand control, not a threshold grid. Independent alternative: an actual new relational lemma from Local's Rule30 work.

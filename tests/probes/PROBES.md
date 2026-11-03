@@ -1495,3 +1495,5 @@ requested; preserve the failed output. [Scope and concrete repair](../../reports
 
 - `gap43_goal_free_unit.py` (GC2469/2470, Intel): deterministic goal-dependency scan of the retained RUP proof against both44case closures.450 root-new goal-free unit additions,0 outside bothcases; no candidate/newCNF/checker.0.75wholeCPU, controlled negative preserved, unary/case route parked.
 - `mahler/gpt_post_b_check.gp` (GC2471, Intel): tiny exact rational bounds/threshold widths and one named two-block counterexample above the4,11,6 birth threshold. Corrected vector-based helper PASS with stderr guard; first function-definition/type failure retained in archive. Same-worker arithmetic, not a carrying read.
+
+- `mahler/gpt_plateau_cascade_check.gp` (GC2473, Intel): tiny exact arithmetic for the four-case hand proof: fixed-point/dominance and forbidden-cost identities, then interval/width identities at f=5,6. PASS with rc0/empty-stderr/marker guard; no census or all-f inference from the two substitutions.

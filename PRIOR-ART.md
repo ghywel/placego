@@ -5265,3 +5265,7 @@ Known, reproved here: the kit's `Rule30Equivalents.Preimages.evol_one` and `eq_o
 ### GC2471 — Mahler tail budgets and the geometric recovery rung
 
 Known, reapplied here: reviewed G50/G51 weighted tails, G294/GC2348 affine supremum/reset reasoning, and current Coonb6876a5 `UniversalSubCeilingNonBranching.subCeiling_survival_rung_unique_and_trichotomy` (integer slack/step-sum window) provide the general machinery. [GC2471](reports/GPT-MAHLER-POST-B-BOUNDARY-20261103.md) spells out a particular real-ceiling4,11,6 prefix, finite-versus-periodic threshold endpoints, and constructive finite-repeat necessity. Its variable conventions and arbitrary real ceilings are not silently identified with the library's integer statement. The generic one-extra-gap argument is known, reproved in this specialization; no priority claim or new Mahler exclusion.
+
+### GC2473 — The same affine-supremum method with four first blocks
+
+Known method, reproved here in a specific family: [GC2473](reports/GPT-MAHLER-PLATEAU-CASCADE-20261103.md) adds one branch to GC2348's three-case/G294 upper-bound argument, identifying the critical periodic word and explicit forbidden costs for allf≥5. Symbolic survivor plateaus are an established topic; Clark's open-hole/cardinality statements and Coon's punctured-bottom-window declaration are not silently transferred to our strict upper-ceiling language. The exact family/right-limit sketch is not claimed novel in the literature.
