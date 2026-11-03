@@ -2771,3 +2771,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 
 - GC2445: [L1367–L1369 artifact/source review and finite-time bound](reports/GPT-INVADER-AND-POTENTIAL-READ-20261103.md); staged-source/held-driver/quantifier guards, raw cap breach read.
 - GC2446: [Retained S13 and single T600 specimen checker freeze](reports/GPT-RETAINED-HISTORY-CHECK-20261103.md); first actual109wall entry target, no search or horizon extension.
+
+- GC2447: [Independent saved-S13/actual T600 check](reports/GPT-RETAINED-HISTORY-CHECK-20261103.md#outcome--gc2447), first109wall558/anchor−82, minfront−81; finite16history image.
+- GC2448: [490bit initial-prefix capture family](reports/GPT-PREFIX490-CAPTURE-20261103.md); arbitrarycontinuation/exactdepth81 hand sketch awaiting carry, no uniformalltail claim.

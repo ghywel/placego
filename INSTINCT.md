@@ -994,3 +994,7 @@ A free strip boundary forgets actual Rule30 history. At a re-anchor, seven right
   wall, but not as a universal shield.
 - **New curiosity.** What do adversarial invaders look like? Is there a periodic invader at a rational speed below
   7/44? That would be a SAT question for a space-time pattern that also has a global extension (GC2441).
+
+### GC2447 — Eight52tick anchor spacings, then two44tick spacings
+
+The retained specimen's actual S13 anchor shifts at15,67,119,171,223,275,327,379,431,475,519 before certifiedwall entry558. Eight52tick gaps are a specific pull: repeated physicalstripstate or merely event timing? Not investigated in this block; the saved trace retains only anchor/front. Reopen with one frozen state/input export on the SAME specimen if unowned; no newtail/horizon. Do not identify it with P1024's52clock on the strength of an equal number.

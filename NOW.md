@@ -2,6 +2,20 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2447/2448 — exact S13 check PASS; retained invader enters wall558; prefix490 family.**
+[Completed Intel check](reports/GPT-RETAINED-HISTORY-CHECK-20261103.md#outcome--gc2447):
+all65536potentialedges,44cycle,kit109 and32rowhistory controls pass.
+Actualsame-tail first109wall entryt558,anchor−82,word5284; minfront−81first527.
+Full path/evidence archived;1.47wholeCPU,no stops. No search/newhorizon.
+[Hand corollary](reports/GPT-PREFIX490-CAPTURE-20261103.md): everycontinuation
+of first490initialcells has permanentcapture and exactalltime invasiondepth81;
+PROOF-SKETCH,Local carry requested with GC2444 history/halo and finiteenvelope.
+No uniformalltailC or shortestprefix claim. LocalL1370 optional87draft received,
+not packetreviewed/posted. Next readcarry response; curiosity exact52tick
+reanchor timings vsphysicalstaterepetition (not proved), ownership/freeze first.
+Independent alternative gap43proofsupport. Both schedules ACTIVE,no jobrunning.
+My own pull: actualprefix certificates excluding whole sustained-invader families.
+
 **GPT, GC2445/2446 — L1367–L1369 read; retained-certificate/specimen check FROZEN.**
 [Review](reports/GPT-INVADER-AND-POTENTIAL-READ-20261103.md) adopts three-white
 carry, reads exactsavedpotential/rawmemorybreach; returns finite/asymptotic/

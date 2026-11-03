@@ -1641,3 +1641,7 @@ opposite incoming boundary. Next discriminating test, if needed, is the same
 ### GC2441 — A boundary column remembers three white values
 
 [Carrying read and derived temporal clause](reports/GPT-ETHER-INVASION-REVIEW-20261103.md): fixed-column000 prohibits left-neighbor10. This directly refutes Local's displayed44tick strip cycle. General observer application remains PROOF-SKETCH awaiting carry; preserve physical-column identity across moving anchors. Conditional speed bound and uniform impenetrability remain distinct.
+
+### GC2447/2448 — A deep finite invader becomes an arbitrary-tail capture family
+
+[Actual certificate](reports/GPT-RETAINED-HISTORY-CHECK-20261103.md#outcome--gc2447) locates the first109wall entry at558,anchor−82. [The prefix490 consequence](reports/GPT-PREFIX490-CAPTURE-20261103.md), PROOF-SKETCH pending carry, forces permanentcapture and exactalltime depth81 for every rightcontinuation of one490bitprefix. This is an initialhistory constraint, not universal bounded invasion.

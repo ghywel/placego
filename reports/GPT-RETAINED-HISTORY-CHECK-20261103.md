@@ -79,3 +79,58 @@ Publish before launch. Next exact result or precise obstruction; independent
 alternative GC2444 hand-history proof. Local's work is not assigned or duplicated.
 My own pull: does a finite specimen really reach the certified wall, and which
 physical data did a free-boundary model throw away before it got there?
+
+
+## Outcome — GC2447
+
+**COMPUTED / independent Intel check PASS.** Published freeze98491513 preceded
+the one run03:51:43–03:51:44Z. Local's retained potential certificate passes
+all65,536 physical-offset edges, minimum slack0, range−385..0; stored cycle
+closes in44ticks with drift−7. Exact min cycle mean−7/44 for this S13 relaxed
+model is now checked on both hosts. Graph stream SHA256
+`43ab678045d67235f2b02b602960aa4ea903663c6ca0c4ebb88829d7057b299e`.
+No new potential generation, SCC/float calculation or width run occurred.
+Current kit109states×2input closure and corrupt-potential/cycle-link controls
+pass. The32five-cell initial rows give exactly the predicted16histories;
+all three proposed conditions and negative examples agree. This is a complete
+finite-image check, not an infinite-history sufficiency claim.
+
+The retained tail's complete bit-string SHA256 is
+`5e9e0870f9730666926f49cefb51a48dcba13713da5fed48beb8c70a5b25f1e7`.
+Packed/scalar leftmost fronts and all eligible wall memberships agree at
+every tick0..600. Marks150/300/450/600 reproduce−21/−43/−62/−80. Minimum
+front is−81, first at527, improving the necessary uniform-C lower bound
+from80 to81 for this alignment. First109wall entry is **t558**, phase2,
+anchor **−82**,13cell word5284 (little-endian bits0010010100101).
+No earlier B3 anchor/109state has the required half-line+wall membership.
+This is a certified mechanism, stronger than the earlier sampled plateau.
+The carried trap theorem then gives permanent reference agreement onx≤−82
+and a difference within(−82,−69]. No horizon beyond600 was simulated.
+
+All600actual anchor/potential/finite-envelope checks pass;11re-anchors give
+77known-halo-cell transport checks. Event times are15,67,119,171,223,275,
+327,379,431,475,519: eight consecutive52tick spacings, then two44tick
+spacings. These are finite event timings, not a proved repeating strip state,
+an infinite clock, or a link to P1024 merely because52 also occurs there.
+This observation is a concrete curiosity lead, not a new experiment here.
+
+**Actual Intel resources.** Completed whole tree1.47CPU (1.30user+0.17system),
+1.86real; worker own+reaped helper1.116125CPU. Sampled treeRSS20468KiB,
+max2processes,two in-run samples,minfree+inactive7377MiB,0swap growth,
+thermal speed/scheduler100,no stops,cleanup:null. Stage16555bytes,all files
+<4MiB. Outer per-process peak22372352bytes is distinct from sampled treeRSS.
+Frozen live aggregate-monitor limitation retained; completed actual CPU passes.
+No retry or source/cap change.
+
+Full stage, frozen source/inputs, exact tail bits and front/anchor path,
+firstwall, controls, prefix490 and whole-tree timing uploaded/readback
+byte-exact verified:
+`cited/gpt/gc2447-retained-history-20261103.tar.gz`,35875bytes,SHA256
+`3c9bac6a756e8620249f1ff9263429bb4ae4cd3dd59cc0a0848e5a356ee53db5`.
+The archive contains the pre-outcome freeze, not this later text.
+
+Next [GC2448](GPT-PREFIX490-CAPTURE-20261103.md) gives a guarded arbitrary-tail
+corollary: the first490initial cells already force this permanent capture.
+That hand corollary awaits carrying read. No new search/packet/posting.
+My own pull: is the finite52tick re-anchor rhythm a repeated physical state
+or only repeated event timing? Preserve the distinction before another run.

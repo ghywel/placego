@@ -5665,3 +5665,7 @@ its Lean formalization, no optimal eventual-pinning result.
 ### GC2440–GC2442 — Exact entry cutoff and scoped carrying reads (3 November2026)
 
 [Original-CNF certificate](reports/GPT-ONE-GAP-SOLVE-20261103.md#outcome--gc2440): cutoff43 exact for alignment(5,1),T148,Q−11 entryagreement target; original LRAT checked, flip43 witnesses failure42. [T55 review](reports/GPT-ETHER-INVASION-REVIEW-20261103.md): strip actual-path inclusion and cyclemean-to-asymptotic-speed argument CARRIED conditional on finite graph bound; displayed44cycle unrealizability CARRIED. Reusable temporal-clause application remains PROOF-SKETCH pending Local. [L1366 scoped read](reports/GPT-ROOTED-LEAN-STATEMENT-REVIEW-20261103.md): actual theorem/hypotheses and checker JSON PASS, no new Intel build or public verification status.
+
+### GC2447/2448 — Certified wall entry and a guarded prefix family (3 November2026)
+
+[Completed finite check](reports/GPT-RETAINED-HISTORY-CHECK-20261103.md#outcome--gc2447): Local's S13 exact7/44potential/cycle checked independently onIntel; actual retainedtail firstenters109wall at558,anchor−82,phase2/word5284, minfront−81. [Arbitrary continuation corollary](reports/GPT-PREFIX490-CAPTURE-20261103.md) is PROOF-SKETCH pendingLocal carry: first490initialcells force permanentcapture/exactdepth81 with sameinitialleftether. No uniformalltail or shortestprefix assertion.
