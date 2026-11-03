@@ -24,7 +24,7 @@ base = [int(''.join(str(bits[(k + 195 * n) % p]) for n in range(depth))[::-1], 2
 rev = [int(format(v, '0%db' % W)[::-1], 2) for v in range(1 << W)]
 rng = random.Random(48)
 HS = [5, 10, 20]
-win_adv = {H: [] for H in HS}; per_tick = []; in_B_ticks = 0
+win_adv = {H: [] for H in HS}; per_tick = []; in_B_ticks = 0; longest_holder = [0]
 for it in range(N):
     th = rng.randrange(p)
     x = rng.getrandbits(K) | (base[th] >> K << K)
@@ -45,6 +45,12 @@ for it in range(N):
     if len(run) > 1:
         runs.append(run)
     for r in runs:
+        # N4: the longest window inside this run with net advance <= 0
+        L = len(r)
+        for i in range(L):
+            for j in range(L - 1, i + longest_holder[0], -1):
+                if r[j] <= r[i]:
+                    longest_holder[0] = max(longest_holder[0], j - i); break
         per_tick.extend(r[i + 1] - r[i] for i in range(len(r) - 1))
         for H in HS:
             win_adv[H].extend(r[i + H] - r[i] for i in range(len(r) - H))
@@ -55,4 +61,5 @@ for H in HS:
     print('   H=%2d: %d windows inside B; least net advance %d; windows with net advance <= 0: %d (%.2f%%); median %d' % (
         H, len(a), int(a.min()) if len(a) else 0, int((a <= 0).sum()), 100.0 * (a <= 0).mean() if len(a) else 0,
         int(np.median(a)) if len(a) else 0), flush=True)
+print('   longest window inside B with net advance <= 0: %d ticks' % longest_holder[0], flush=True)
 print('BAD_CORE_DRIFT_DONE')

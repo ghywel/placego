@@ -6138,3 +6138,16 @@ advance ≤ 0.
 
 Record searched: §45 (T42's retreating witness cycles in B), §52–55, T45 (retreats), GC2387/GC2393 (history); the drift
 in B has not been measured before.
+
+**Results, first part ([output](../tests/probes/bad_core_drift.out)).**
+- 10,650 ticks were in B at R ≥ 16 before capture. The mean advance per tick there is 1.176 (17/13 ≈ 1.308).
+- **N1 HELD.**
+- **N2 REFUTED.** 10 of 7,552 twenty-tick windows in B have net advance ≤ 0 (least −5).
+- **N3 HELD.** 272 of 9,830 five-tick windows (2.8%) have net advance ≤ 0, and 27 of 9,021 ten-tick windows.
+- So D(8, 20, a) is false on real rows: real fronts do hover in the bad core for 20 ticks.
+
+**Follow-up prediction (written before the extension).**
+- **N4.** The longest window inside B with net advance ≤ 0 is at most 40 ticks in every run. So D(8, H, a) for some
+  H ≤ 60 and small a remains possible on these samples. Lean 55%.
+- **Counterfactual.** Non-advancing windows of 60 or more ticks would mean hovering in B on the scale of the
+  capture time itself (median about 75). The drift form of D would then be the wrong statement.
