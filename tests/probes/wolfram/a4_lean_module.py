@@ -1,21 +1,31 @@
 #!/usr/bin/env python3
 """L1424 (Local, 2026-11-03): generate A4's Lean module for one ring background from a4_closure_export.py's JSON, using the
-kernel-checked (9, 57) module tests/probes/lean/MovingWall.lean as the template.
+kernel-checked (9, 57) module tests/probes/lean/MovingWall.lean (zero offset written out) as the template.
 Run: python3 tests/probes/wolfram/a4_lean_module.py DATA.json NAMESPACE OUT.lean
+The template is pinned by SHA256 (TEMPLATE_SHA below); regenerating it from its own (9, 57) data must reproduce it byte for
+byte (checked with --selftest DATA57.json), so the replacement patterns cannot go stale silently (GC2528).
 Every background-specific constant of the template is replaced by the data's (N, q, s, W, P, S, A0, start state, potential
 range); each replacement must find its pattern, so a template change cannot pass silently.
 """
+import hashlib
 import json
 import pathlib
 import sys
 
+TEMPLATE_SHA = 'c2b5a0f844bfa25952d9bcdf41cb273c5f3d020a63834fcb973430830dd60c0b'
+
 root = pathlib.Path(__file__).resolve().parents[3]
+selftest = sys.argv[1] == '--selftest'
+if selftest:
+    sys.argv = [sys.argv[0], sys.argv[2], 'Rule30MovingWall', '/dev/null']
 d = json.load(open(sys.argv[1])); ns = sys.argv[2]
 N, q, s, W, P, S, t0, A0 = d['N'], d['q'], d['s'], d['W'], d['P'], d['S'], d['t0'], d['A0']
 assert d['r'] == 0 and t0 == 300 and d['lo'] == d['hi']
 tq0, dq0 = d['states'][0][0], d['states'][0][1]
 lo_b, hi_b = min(d['lo']), max(d['lo'])
 src = (root / 'tests/probes/lean/MovingWall.lean').read_text()
+if hashlib.sha256(src.encode()).hexdigest() != TEMPLATE_SHA:
+    raise SystemExit('REFUSED: template digest changed; re-pin only after a fresh --selftest')
 head, rest = src.split('def orbRows : List Nat := [', 1)
 rest = rest.split('\n\ndef ringBit', 1)[1]
 rows = [sum(b << j for j, b in enumerate(row)) for row in d['orb']]
@@ -33,13 +43,13 @@ body = '\n\ndef ringBit' + rest
 reps = [
     ('τ < 57', 'τ < %d' % q), ('j < 9', 'j < %d' % N), ('((τ + 1) % 57)', '((τ + 1) %% %d)' % q),
     ('((j + 1) % 9)', '((j + 1) %% %d)' % N), ('((j + 8) % 9)', '((j + %d) %% %d)' % (N - 1, N)),
-    ('/-- The background at alignment `(0, 0)`: `E t x` is the ring orbit\'s row `t mod 57` at diagonal index `(t - x) mod 9`. -/',
+    ('/-- The background at alignment `(0, 0)`: `E t x` is the ring orbit\'s row `(t + 0) mod 57` at diagonal index `(t - x) mod 9`. -/',
      '/-- The background at alignment `(0, %d)`: `E t x` is the ring orbit\'s row `(t + %d) mod %d` at diagonal index `(t - x) mod %d`. -/' % (s, s, q, N)),
-    ('def E (t : Nat) (x : Int) : Bool := ringBit (t % 57) (((t : Int) - x) % 9).toNat',
+    ('def E (t : Nat) (x : Int) : Bool := ringBit ((t + 0) % 57) (((t : Int) - x) % 9).toNat',
      'def E (t : Nat) (x : Int) : Bool := ringBit ((t + %d) %% %d) (((t : Int) - x) %% %d).toNat' % (s, q, N)),
-    ('have h := ring_table (t % 57) (Nat.mod_lt _ (by decide)) (((t : Int) - x) % 9).toNat (by omega)',
+    ('have h := ring_table ((t + 0) % 57) (Nat.mod_lt _ (by decide)) (((t : Int) - x) % 9).toNat (by omega)',
      'have h := ring_table ((t + %d) %% %d) (Nat.mod_lt _ (by decide)) (((t : Int) - x) %% %d).toNat (by omega)' % (s, q, N)),
-    ('have e1 : (t + 1) % 57 = (t % 57 + 1) % 57 := by omega', 'have e1 : (t + 1 + %d) %% %d = ((t + %d) %% %d + 1) %% %d := by omega' % (s, q, s, q, q)),
+    ('have e1 : (t + 1 + 0) % 57 = ((t + 0) % 57 + 1) % 57 := by omega', 'have e1 : (t + 1 + %d) %% %d = ((t + %d) %% %d + 1) %% %d := by omega' % (s, q, s, q, q)),
     ('have e2 : ((((t + 1 : Nat) : Int) - x) % 9).toNat = ((((t : Int) - x) % 9).toNat + 1) % 9 := by omega',
      'have e2 : ((((t + 1 : Nat) : Int) - x) %% %d).toNat = ((((t : Int) - x) %% %d).toNat + 1) %% %d := by omega' % (N, N, N)),
     ('have e3 : (((t : Int) - (x - 1)) % 9).toNat = ((((t : Int) - x) % 9).toNat + 1) % 9 := by omega',
@@ -48,11 +58,10 @@ reps = [
      'have e4 : (((t : Int) - (x + 1)) %% %d).toNat = ((((t : Int) - x) %% %d).toNat + %d) %% %d := by omega' % (N, N, N - 1, N)),
     ('/-- The background at column `A + i`, from the phases `tq = t mod 57` and `dq = (t - A) mod 9`. -/',
      '/-- The background at column `A + i`, from the phases `tq = t mod %d` and `dq = (t - A) mod %d`. -/' % (q, N)),
-    ('def refAt (tq dq : Nat) (i : Int) : Bool := ringBit tq (((dq : Int) - i) % 9).toNat',
+    ('def refAt (tq dq : Nat) (i : Int) : Bool := ringBit ((tq + 0) % 57) (((dq : Int) - i) % 9).toNat',
      'def refAt (tq dq : Nat) (i : Int) : Bool := ringBit ((tq + %d) %% %d) (((dq : Int) - i) %% %d).toNat' % (s, q, N)),
     ('theorem refAt_spec {t tq dq : Nat} {A : Int} (htq : tq = t % 57) (hdq : dq = (((t : Int) - A) % 9).toNat) (i : Int) :',
      'theorem refAt_spec {t tq dq : Nat} {A : Int} (htq : tq = t %% %d) (hdq : dq = (((t : Int) - A) %% %d).toNat) (i : Int) :' % (q, N)),
-    ('  unfold refAt E; subst htq; congr 1; omega', '  unfold refAt E; subst htq; congr 1 <;> omega'),
     ('def mask : Nat := 2 ^ 24 - 1', 'def mask : Nat := 2 ^ %d - 1' % W),
     ('/-- The background\'s 24 cells', '/-- The background\'s %d cells' % W),
     ('refAt tq dq ((i : Int) + 1)) 24', 'refAt tq dq ((i : Int) + 1)) %d' % W),
@@ -103,7 +112,7 @@ reps = [
      'Nat.testBit_lt_two_pow (Nat.lt_of_lt_of_le hm (Nat.pow_le_pow_right (by decide) (by omega)))\n    have h2'),
     ('simp [show ¬ i < 24 by omega]', 'simp [show ¬ i < %d by omega]' % W),
     ('show i < 24 from hi]', 'show i < %d from hi]' % W),
-    ('/-- The start check at `t = 300`: columns `-400 .. -72` are the background, and columns `-71 .. -48` are the strip of',
+    ('/-- The start check at `t = 300`: columns `-300 .. -72` are the background, and columns `-71 .. -48` are the strip of',
      '/-- The start check at `t = 300`: columns `-300 .. %d` are the background, and columns `%d .. %d` are the strip of' % (A0, A0 + 1, A0 + W)),
     ('(List.range 229).all', '(List.range %d).all' % (A0 + 301)),
     ('(List.range 24).all (fun j => r.testBit (629 + j) == (startKey % 2 ^ 24).testBit j)',
@@ -127,5 +136,8 @@ for old, new in reps:
 out = head + data + body
 out = out.replace('namespace Ruliology.CellularAutomata.Rule30MovingWall', 'namespace Ruliology.CellularAutomata.' + ns)
 out = out.replace('end Ruliology.CellularAutomata.Rule30MovingWall', 'end Ruliology.CellularAutomata.' + ns)
+if selftest:
+    print('selftest: regenerated (9, 57) equals the template: %s' % (out == src))
+    raise SystemExit(0 if out == src else 1)
 open(sys.argv[3], 'w').write(out)
 print('wrote %s: %d lines' % (sys.argv[3].rsplit('/', 1)[-1], out.count('\n')))

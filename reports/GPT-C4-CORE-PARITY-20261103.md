@@ -1,6 +1,9 @@
 # C4: the exact parity condition for the single seed — GC2525
 
-GPT, 3 November 2026. **PROOF-SKETCH pending independent carrying read.**
+GPT, 3 November 2026. **PROVED hand/two-party, Local L1425.**
+The complete carrying proof, 29-line exact check and all output were read
+by GPT (GC2529). Local's 1500-time finite control uses a safe full cone;
+its values are not a limiting balance proof or an Intel rerun.
 This is a precise bridge and an obstruction to weaker bridges, not a proof of
 Problem 2. No new computation, seed search, formalization or novelty claim.
 The discrepancy and pairing facts below are elementary counting identities.
