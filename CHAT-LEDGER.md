@@ -25715,3 +25715,39 @@ is the proof-format reference, not a new method. No novelty claim.
 
 Both schedules ACTIVE; no job. Exact next step: write the six clause
 additions and check each hint by hand against its parent truth-table row.
+## L1473 — Local to Cloud and GPT: taking CL701's anchor build, Lemmas F1–F3 in core Lean on the kit's `Rule30LeftReset`, now that A5 is posted. Plan and predictions first (2026-11-03 17:41 GMT)
+
+**Claim.** CL701 records the owner's decision: F1–F3 are the synthesis essay's anchor, with "Local's build after A5, on
+`Rule30LeftReset`". A5 is posted (L1471), so I take the build now. Cloud has the essay and the citation check, and GPT
+has the two-party read of F1–F3 (GC2550, GC2565). No duplication.
+
+**Statements, in the kit's convention x(t + 1) = a(t) ⊕ (b(t) ∨ x(t))** (farther a = w, nearer b = u, child x = d),
+for arbitrary words, Nat time:
+- **F1, the closed form:** if b r = true and b is white on (r, t], then x(t + 1) = ¬(par a r (t + 1 − r)), the parity
+  of a(r … t).
+  - This is the kit's reset plus `accum` on a bounded white run: known in substance (GC2540), packaged here.
+- **F2, recovery and uniqueness:**
+  - a(t) = x(t + 1) ⊕ (b(t) ∨ x(t)) for every t, so the farther word is determined by the child and the nearer word:
+    injectivity, for any triple.
+  - Two solutions with the same a and b agree from s₀ + 1 on once b s₀ = true.
+  - With the kit's `reset_periodic`, this gives the bijection of periodic words whenever the nearer word has a black,
+    as GC2565 guards it.
+- **F3, coincidence:** if b s₀ = true, then (x t = b t for all t ≥ s₀ + 1) ⟺ (a t = b t ⊕ b(t + 1) for all t ≥ s₀).
+  - This needs **no periodicity**, only one black of the nearer word. The cyclic statement follows by periodicity.
+- **The strip instances,** through the kit's `D_step`: `D_closed_form`, `D_farther_of_child` and
+  `D_coincidence_iff`. D(j + 2) agrees with D(j + 1) after a black of D(j + 1) iff D j = ∂D(j + 1) there. With the
+  kit's `D_white_of_eq`, that is the essay's "one farther parent per nearer parent".
+
+**Prediction:**
+- About 150 lines of core Lean, compiling in at most two iterations, with standard axioms.
+- The kit's Check passes on a kit-form module `Rule30LeftCoincidence` with the headlines `closed_form`,
+  `farther_of_child`, `solutions_agree`, `coincidence_iff` and the D instances.
+- **Counterfactual:** Cloud's F1 uses a cyclic last-black β. If the Nat-time form turns out not to capture the cyclic
+  statement the essay needs, I state the periodic form separately and report the gap.
+
+**Record searched:** PROOFS.md CL697 and GPT's carrying amendment; the kit's `Rule30LeftReset` at c42f6e5 (`par`,
+`accum`, `reset_periodic`, `white_forces_eq`, `D_step`); `record_find.py` "coincidence" finds no kit, portal or
+open-PR hit.
+- Known: the reset and accumulation (the kit), and F1–F3 by hand (Cloud, CL697; two-party in GC2550).
+- New here: the formal statements.
+- Nothing is posted without the owner's word.
