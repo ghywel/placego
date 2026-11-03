@@ -120,3 +120,107 @@ assessment were not audited in this mathematical review.
 
 My own pull: preserve the exact source-to-terminal paths and their branch
 entry data, rather than replace their inherited distribution by uniformity.
+
+## CL698 synthesis: attribution audit and carrying guards — GC2565
+
+Complete194-line essay draft,24-line plan and57-line original citation map
+read. The owner's synthesis authorization and division are recorded in
+CL698. GPT takes this audit; Cloud retains prose/map ownership and Local
+the anchor/build after A5. No posting or new theorem clearance is given.
+
+**All four November attribution placeholders are resolved.** Fresh public
+metadata for all20 named entries says `G.P.J.W. Quint; Gemini (Google)`.
+Their current status is Lean Verified. In particular, the five November
+extensions of AIOvernight's left-side modules belong to Quint/Gemini, not
+to the original module author. Original file-addition commits confirm
+AIOvernight added LeftReset/LeftUnbounded/FrontLaw/SettledBarrier/WhiteSpacing
+in37a3d844 on30 October. DefectClockBudget is different: Troyusrex added
+it in a5ad97fa on31 October. Both actual addition commits were read.
+The citation map has the20 exact portal ids, correct PR links and objects.
+The former eight-entry PR105–108 group actually spans PR99–102 and105–108.
+DefectClockBudget concerns the right-edge clock, not left settled diagonals.
+
+The live listing at16:17:59Z has114 entries,112 Lean Verified and2 Lean
+Unverified. Its fefa7e entry is now Lean Verified, not still checking.
+Neither that count nor the source read makes every portal entry a checked
+new theorem. Quote a dated count or omit the introductory number80.
+
+**Integration is checked separately from PR status.** PR83/85/86/87 are
+closed with merged=false, but each exact changed Lean module is byte-exact
+on current kit main c42f6e51. Their portal entries carry Human Verified and
+Kit Contribution. Thus they are adopted source, not pending open work;
+GitHub's merged field alone would give the wrong research status. Closed
+issue conversations and review-summary bodies were freshly read (empty
+for those four). PR84 remains open. Its maintainer discussion and exact
+current sources show the requested finite BWH checks have been removed;
+SmallRW is proved, but the period-two theorem still explicitly takes hb:BWH.
+
+Fresh exact heads and changed Lean sources were retained for PR83–87,
+97–102 and105–113; discussions/review bodies were read. This is attribution
+and targeted statement audit, not an independent full proof carry of all
+those modules. PR101 now supplies inverse_uninverse and inverse_bijective
+on all streams and word-length<=3 separators; do not attribute that new
+right inverse to older PR86. PR110's current title/public abstract still
+mention minus10, while the exact current head also states the stronger
+minus27 onset for k>=5. Cite a specific declaration/snapshot if using the
+number, rather than reading a title as its formal theorem.
+
+### The anchor's hand read already exists, with guards
+
+GC2550 above is the complete independent F1–F3 carry. It is PROVED
+hand/two-party for positive common period and a nearer parent u containing
+a black; not single-party as the new draft says. Time-labelled cycles and
+cyclic wrap are required. At a black of u, e(t+1)=w(t), not0: the inclusive
+running-parity formula counts that reset value. The inverse for an ACTUAL
+triple remains valid when u is white; a unique forward periodic F there
+does not. Coincidence/white-child equivalence uses the nonwhite guard.
+
+The pair map is a bijection D→I with D={(a,b):b!=0} and I={(a,b):a!=0}.
+It is not a permutation D→D. A fixed-u count of one predecessor among2^p
+is exact counting, not a1/2^p hazard along a deterministic orbit. The
+uniform-source mean bound is not a seed-path bound. Existing p8 exploration
+fragments were not a cycle decomposition. These corrections from GC2550
+are needed in essay sections2D,3.6,7 and the atlas; adding a family theorem
+in Lean does not establish the statistical claims or novelty over the
+known reset/integration literature and kit base.
+
+### Other necessary prose repairs, with concrete alternatives
+
+* Section0: some entries are unverified; say the portal collects submissions
+  at different verification stages, not that every entry is a theorem with
+  a certificate. Recent dates/counts should be pinned.
+* Sections1/2E: exact rightward speed1 needs an actual rightmost discrepancy
+  and agreement beyond it. A pair with arbitrary unbounded difference has
+  no such edge. State that finite-edge guard explicitly.
+* Sections2E/5: replace old A4 id37281a by87ba7a, preserve its alignments
+  and closure-entry/arbitrary-tail guards. A1's public check still timed out;
+  say locally kernel-checked, portal maintainer rerun pending, rather than
+  present it with the same public status as A2/A4.
+* Sections2F/4: the absence of additive conservation laws does not exclude
+  monotone rank functions, non-additive potentials, clock-dependent ranks
+  or proof-state refinements. DefectClockBudget itself uses such a rank.
+  Describe the exact excluded conservation class and leave other potential
+  methods open; do not infer that Q01 cannot have a local potential.
+* Sections3.2/3.5: a shared numerical half-bit rate is not an equality of
+  languages or of four information quantities. Supply the exact map and
+  hypotheses for a comparison, and preserve the earlier audited capacity
+  distinction. A finite14-cell upper bound is not an all-width rate.
+* Sections3.6/4:0.41,2^p spacing, generic synchronization and a universal
+  fair core remain observations/conjectures with specified sample regimes.
+  Keep them separate from the proved periodic reset law and affine inverse.
+  “Passed every generic tell” should name the finite tests and horizon.
+
+The older generated citation table also contains truncated statements and
+mixed column meanings; it is retained as a historical excerpt, not cleared
+for publication. The checked November table is usable for attribution.
+A whole-portal essay still needs source-level checks of each additional
+statement it selects; this audit does not certify every older row.
+
+[Attribution/source receipt](receipts/gc2565-synthesis-attribution.json)
+pins the20 live portal reads,20 current PR heads and the actual addition
+commits. Raw public responses/source files are retained in
+`cited/gpt/gc2565-attribution-receipts.tar.gz`,836276bytes, SHA256
+095647edca5f4c7770e6f15320af726ab9dcb6366b1b3c944202a3d3ff3afe3c,
+with byte-exact upload/readback. The same live listing still shows A1 as
+Lean Unverified/error. Last COMPLETE known_find refresh stays15:49:56Z;
+this targeted audit does not advance that timestamp.

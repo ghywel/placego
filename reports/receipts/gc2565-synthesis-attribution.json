@@ -1,0 +1,330 @@
+{
+  "status": "20 November attribution checks PASS; targeted statement/source audit, not whole-essay clearance",
+  "portal_updated": "2026-11-03T16:17:59Z",
+  "entry_count": 114,
+  "entries": [
+    {
+      "id": "R30-20261102-121ada",
+      "authors": "G.P.J.W. Quint; Gemini (Google)",
+      "status": "Lean Verified",
+      "tags": [
+        "Human Verified",
+        "Kit Contribution"
+      ]
+    },
+    {
+      "id": "R30-20261102-f48894",
+      "authors": "G.P.J.W. Quint; Gemini (Google)",
+      "status": "Lean Verified",
+      "tags": [
+        "Human Verified"
+      ]
+    },
+    {
+      "id": "R30-20261102-b8e784",
+      "authors": "G.P.J.W. Quint; Gemini (Google)",
+      "status": "Lean Verified",
+      "tags": [
+        "Human Verified",
+        "Kit Contribution"
+      ]
+    },
+    {
+      "id": "R30-20261102-bf1582",
+      "authors": "G.P.J.W. Quint; Gemini (Google)",
+      "status": "Lean Verified",
+      "tags": [
+        "Human Verified",
+        "Kit Contribution"
+      ]
+    },
+    {
+      "id": "R30-20261102-924d87",
+      "authors": "G.P.J.W. Quint; Gemini (Google)",
+      "status": "Lean Verified",
+      "tags": [
+        "Human Verified",
+        "Kit Contribution"
+      ]
+    },
+    {
+      "id": "R30-20261102-75bd53",
+      "authors": "G.P.J.W. Quint; Gemini (Google)",
+      "status": "Lean Verified",
+      "tags": []
+    },
+    {
+      "id": "R30-20261103-ea30e7",
+      "authors": "G.P.J.W. Quint; Gemini (Google)",
+      "status": "Lean Verified",
+      "tags": []
+    },
+    {
+      "id": "R30-20261103-462dc9",
+      "authors": "G.P.J.W. Quint; Gemini (Google)",
+      "status": "Lean Verified",
+      "tags": []
+    },
+    {
+      "id": "R30-20261103-0ad6ff",
+      "authors": "G.P.J.W. Quint; Gemini (Google)",
+      "status": "Lean Verified",
+      "tags": []
+    },
+    {
+      "id": "R30-20261103-0a9bde",
+      "authors": "G.P.J.W. Quint; Gemini (Google)",
+      "status": "Lean Verified",
+      "tags": []
+    },
+    {
+      "id": "R30-20261103-050b68",
+      "authors": "G.P.J.W. Quint; Gemini (Google)",
+      "status": "Lean Verified",
+      "tags": []
+    },
+    {
+      "id": "R30-20261103-e742c0",
+      "authors": "G.P.J.W. Quint; Gemini (Google)",
+      "status": "Lean Verified",
+      "tags": []
+    },
+    {
+      "id": "R30-20261103-0d8a71",
+      "authors": "G.P.J.W. Quint; Gemini (Google)",
+      "status": "Lean Verified",
+      "tags": []
+    },
+    {
+      "id": "R30-20261103-1a6e64",
+      "authors": "G.P.J.W. Quint; Gemini (Google)",
+      "status": "Lean Verified",
+      "tags": []
+    },
+    {
+      "id": "R30-20261103-1c93e6",
+      "authors": "G.P.J.W. Quint; Gemini (Google)",
+      "status": "Lean Verified",
+      "tags": []
+    },
+    {
+      "id": "R30-20261103-750fd6",
+      "authors": "G.P.J.W. Quint; Gemini (Google)",
+      "status": "Lean Verified",
+      "tags": []
+    },
+    {
+      "id": "R30-20261103-bfefea",
+      "authors": "G.P.J.W. Quint; Gemini (Google)",
+      "status": "Lean Verified",
+      "tags": []
+    },
+    {
+      "id": "R30-20261103-d6e898",
+      "authors": "G.P.J.W. Quint; Gemini (Google)",
+      "status": "Lean Verified",
+      "tags": []
+    },
+    {
+      "id": "R30-20261103-e1cb85",
+      "authors": "G.P.J.W. Quint; Gemini (Google)",
+      "status": "Lean Verified",
+      "tags": []
+    },
+    {
+      "id": "R30-20261103-efd2bd",
+      "authors": "G.P.J.W. Quint; Gemini (Google)",
+      "status": "Lean Verified",
+      "tags": []
+    }
+  ],
+  "pr_heads": [
+    {
+      "number": 83,
+      "head": "6a035d80c5a0034db2f5a1b6e0c368da151ac0b0",
+      "state": "closed",
+      "merged": false
+    },
+    {
+      "number": 84,
+      "head": "d7082790198650eecb34786269073381d11e13f5",
+      "state": "open",
+      "merged": false
+    },
+    {
+      "number": 85,
+      "head": "571f545554c7f533066cde5a2c50cc98c4210fbc",
+      "state": "closed",
+      "merged": false
+    },
+    {
+      "number": 86,
+      "head": "32770177c045f07df77310ac5a23ee9a3b8ff039",
+      "state": "closed",
+      "merged": false
+    },
+    {
+      "number": 87,
+      "head": "aae8992a4ecdde439d4565861e4e67f718233719",
+      "state": "closed",
+      "merged": false
+    },
+    {
+      "number": 97,
+      "head": "15d6b3d26e8c1c62ba55c16bfbe1894f5980125f",
+      "state": "open",
+      "merged": false
+    },
+    {
+      "number": 98,
+      "head": "4ee6084b6d13c6233eb4578f3575dd03a26c26b5",
+      "state": "open",
+      "merged": false
+    },
+    {
+      "number": 99,
+      "head": "c04daf07e6da93d62385452eb3be287f0ece15a4",
+      "state": "open",
+      "merged": false
+    },
+    {
+      "number": 100,
+      "head": "1c179725fdf57d9c634c22d4f654526469f15b66",
+      "state": "open",
+      "merged": false
+    },
+    {
+      "number": 101,
+      "head": "34dcb2f90d7acf483482f307bb8aeb3db9b20d91",
+      "state": "open",
+      "merged": false
+    },
+    {
+      "number": 102,
+      "head": "62acaa662113cc5d95e0e48e4d2decb4605804c0",
+      "state": "open",
+      "merged": false
+    },
+    {
+      "number": 105,
+      "head": "430161243c37fee33e5970ffde6e7f0e34354931",
+      "state": "open",
+      "merged": false
+    },
+    {
+      "number": 106,
+      "head": "c93e3e495080a7258be79d1624bacb81b485e6bb",
+      "state": "open",
+      "merged": false
+    },
+    {
+      "number": 107,
+      "head": "f56af5f34c2ea5fd2d54747234ed1a9e12e11e96",
+      "state": "open",
+      "merged": false
+    },
+    {
+      "number": 108,
+      "head": "941882ac8b70e394e869367c098d182e1fc88169",
+      "state": "open",
+      "merged": false
+    },
+    {
+      "number": 109,
+      "head": "74b57c708402d310e0b75a5ecda93239c11fa056",
+      "state": "open",
+      "merged": false
+    },
+    {
+      "number": 110,
+      "head": "5a06134123747de0ec73fc41f51380eecab2afe0",
+      "state": "open",
+      "merged": false
+    },
+    {
+      "number": 111,
+      "head": "b37040ea1225d2d6c3ae540bbe0f54d315ab1f01",
+      "state": "open",
+      "merged": false
+    },
+    {
+      "number": 112,
+      "head": "2b2012ccfd7a8956d1b9234f21e5146029860051",
+      "state": "open",
+      "merged": false
+    },
+    {
+      "number": 113,
+      "head": "e4cbe4fd7dc128f7b6be4a6212049a173a419b39",
+      "state": "open",
+      "merged": false
+    }
+  ],
+  "kit_main": "c42f6e5133f61a47e99289fd4b6e0536fd8a0453",
+  "module_additions": [
+    {
+      "module": "Rule30LeftReset",
+      "oldest_returned_commit": "37a3d844129f82be2a545d99b021f7cfb058d972",
+      "author": "AIOvernight",
+      "date": "2026-10-30T09:21:52Z",
+      "login": "AIOvernight",
+      "commit_count": 1,
+      "message": "Rule30SettledBarrierEffective, Rule30WhiteSpacing: log log margins for center runs (#46)\n\nFor every constant block [a, a + L) of the center column, 5L + 18 log2(log2 a) <= 3a + 51 for black blocks from a >= 16 and L + 6 log2(log2 a) <= a + 17 for white ones from a >= 256, through backward erosion (the bound of submission R30-20261025-0554f7), reset recurrences and settling times of the left diagonals, and the spacing of the eventually white ones.\n\nCloses #46"
+    },
+    {
+      "module": "Rule30LeftUnbounded",
+      "oldest_returned_commit": "37a3d844129f82be2a545d99b021f7cfb058d972",
+      "author": "AIOvernight",
+      "date": "2026-10-30T09:21:52Z",
+      "login": "AIOvernight",
+      "commit_count": 1,
+      "message": "Rule30SettledBarrierEffective, Rule30WhiteSpacing: log log margins for center runs (#46)\n\nFor every constant block [a, a + L) of the center column, 5L + 18 log2(log2 a) <= 3a + 51 for black blocks from a >= 16 and L + 6 log2(log2 a) <= a + 17 for white ones from a >= 256, through backward erosion (the bound of submission R30-20261025-0554f7), reset recurrences and settling times of the left diagonals, and the spacing of the eventually white ones.\n\nCloses #46"
+    },
+    {
+      "module": "Rule30FrontLaw",
+      "oldest_returned_commit": "37a3d844129f82be2a545d99b021f7cfb058d972",
+      "author": "AIOvernight",
+      "date": "2026-10-30T09:21:52Z",
+      "login": "AIOvernight",
+      "commit_count": 1,
+      "message": "Rule30SettledBarrierEffective, Rule30WhiteSpacing: log log margins for center runs (#46)\n\nFor every constant block [a, a + L) of the center column, 5L + 18 log2(log2 a) <= 3a + 51 for black blocks from a >= 16 and L + 6 log2(log2 a) <= a + 17 for white ones from a >= 256, through backward erosion (the bound of submission R30-20261025-0554f7), reset recurrences and settling times of the left diagonals, and the spacing of the eventually white ones.\n\nCloses #46"
+    },
+    {
+      "module": "Rule30SettledBarrier",
+      "oldest_returned_commit": "37a3d844129f82be2a545d99b021f7cfb058d972",
+      "author": "AIOvernight",
+      "date": "2026-10-30T09:21:52Z",
+      "login": "AIOvernight",
+      "commit_count": 1,
+      "message": "Rule30SettledBarrierEffective, Rule30WhiteSpacing: log log margins for center runs (#46)\n\nFor every constant block [a, a + L) of the center column, 5L + 18 log2(log2 a) <= 3a + 51 for black blocks from a >= 16 and L + 6 log2(log2 a) <= a + 17 for white ones from a >= 256, through backward erosion (the bound of submission R30-20261025-0554f7), reset recurrences and settling times of the left diagonals, and the spacing of the eventually white ones.\n\nCloses #46"
+    },
+    {
+      "module": "Rule30WhiteSpacing",
+      "oldest_returned_commit": "37a3d844129f82be2a545d99b021f7cfb058d972",
+      "author": "AIOvernight",
+      "date": "2026-10-30T09:21:52Z",
+      "login": "AIOvernight",
+      "commit_count": 1,
+      "message": "Rule30SettledBarrierEffective, Rule30WhiteSpacing: log log margins for center runs (#46)\n\nFor every constant block [a, a + L) of the center column, 5L + 18 log2(log2 a) <= 3a + 51 for black blocks from a >= 16 and L + 6 log2(log2 a) <= a + 17 for white ones from a >= 256, through backward erosion (the bound of submission R30-20261025-0554f7), reset recurrences and settling times of the left diagonals, and the spacing of the eventually white ones.\n\nCloses #46"
+    },
+    {
+      "module": "Rule30DefectClockBudget",
+      "oldest_returned_commit": "a5ad97fa0051bad5b1cbf0a5f7115471c8ea1c4d",
+      "author": "Troyusrex",
+      "date": "2026-10-31T21:21:43Z",
+      "login": "Troyusrex",
+      "commit_count": 1,
+      "message": "Rule30EdgeClock, Rule30DefectClockBudget: bounds on right-edge clocks and recurrent defect escape (#61)\n\nA right-edge clock flips within an explicit bound from every seed, and a budget on defect clocks gives recurrent two-layer and four-layer escape at every source depth.\n\nCloses #61"
+    }
+  ],
+  "main_byte_exact_pr_modules": [
+    83,
+    85,
+    86,
+    87
+  ],
+  "receipt_bundle": "cited/gpt/gc2565-attribution-receipts.tar.gz",
+  "receipt_bundle_bytes": 836276,
+  "receipt_bundle_sha256": "095647edca5f4c7770e6f15320af726ab9dcb6366b1b3c944202a3d3ff3afe3c",
+  "scope": "Public metadata and targeted statements, module file-addition provenance, current exact PR source files and discussions. No independent full proof compilation/review of every module, no essay publication or novelty clearance."
+}

@@ -1,0 +1,26 @@
+{
+  "status": "FAILED: Lean internal memory limit; no successful component verification",
+  "source_sha256": "a88c8e40facfa0ebefd539bfaa84a03fc1d3ae862b9aef20b3b5a6d9f9b572ad",
+  "driver_sha256": "951955fc3f5109fb79f48d025702480c2c8cdaf1b6b4f5ab900b19ad7e441de5",
+  "freeze_commit": "b1452272",
+  "receipt_bundle": "cited/gpt/gc2564-forecast-failure.tar.gz",
+  "receipt_bundle_bytes": 6759,
+  "receipt_bundle_sha256": "7202f827a60c8546dfb3187b696f4778b71fc9cc4caae94d1d4a8da2d8836149",
+  "stage": {
+    "start": "2026-11-03T16:15:42Z",
+    "wall_s": 6.6,
+    "command_cpu_s": 2.71,
+    "supervisor_cpu_s": 0.18,
+    "aggregate_cpu_s_approx": 2.89,
+    "worker_cpu_s_overlapping": 2.68871,
+    "sampled_tree_rss_kib": 436812,
+    "child_maxrss_bytes": 433131520,
+    "free_launch_mib": 5835,
+    "free_floor_mib": 5269,
+    "swap_growth_mib": 0,
+    "sampled_processes_max": 3,
+    "exit": "CHILD_FAILED rc1"
+  },
+  "scope": "Internal -M384 limit hit while importing/using Std; later compiler errors and axiom-print placeholders are not verified lemmas. External pressure/thermal stops did not fire. No retry/cap increase, no job remains. Hand monitor/lift remains SOLO, GC2562 earlier independent hand carry unaffected.",
+  "next_compile_condition": "Only after reducing imports/generated code, freezing new exact source and a separately justified check within retained budgets. No blind memory-cap enlargement."
+}

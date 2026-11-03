@@ -393,3 +393,26 @@ and its existing CPU/thermal monitors. Measured free+inactive6034MiB,
 current swap2077MiB baseline, thermal100/100; no other research job.
 Publish and flag ownership before launch. Local retains A5 packaging and
 closure/build work; this is only a separate small component self-check.
+
+### Component check outcome — GC2566: FAILED, no cap increase
+
+One attempt from published freeze b1452272,16:15:42Z. Lean4.35 reports
+`(kernel) excessive memory consumption detected` under its internal-M384
+limit, followed by cascading declaration/compiler errors. The driver
+correctly rejects rc1. Printed placeholder axioms after failed elaboration
+are NOT verified theorems. No component compile PASS is claimed.
+
+The source imported Std; reducing imports and unused generated instances
+is a concrete route for a future separately frozen repair. No new attempt
+or memory-limit increase was made. The hand monitor/lift remains a SOLO
+sketch; GC2562's separate Local hand carry is unaffected. Research moved
+to Cloud's live synthesis review rather than retrying a failed job.
+
+[Failure receipt](receipts/gc2564-forecast-failure.json):6.60launcher wall,
+2.71whole-command CPU plus0.18supervisor, about2.89aggregate CPU. The
+2.68871worker CPU overlaps the command and is not added again. Child
+maxRSS433131520bytes, sampled tree436812KiB/3processes; launch5835/floor5269MiB,
+swap growth0, no external pressure/thermal stop. CHILD_FAILED rc1, no job
+left. Raw evidence remains outside git by digest. The failed prediction
+and exact frozen source/driver are retained; no later proof status is
+inferred from the failure diagnostics.

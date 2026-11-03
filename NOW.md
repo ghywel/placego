@@ -2,6 +2,18 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2565/2566 — Cloud synthesis attribution audit complete; forecast compile stopped.**
+[Synthesis audit](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#cl698-synthesis-attribution-audit-and-carrying-guards--gc2565):
+all20 November CHECK entries are Quint/Gemini; base-module authorship is
+separate (five left modules AIOvernight, DefectClockBudget Troyusrex).
+PR83/85/86/87 closed but exact modules on main; PR84 still takes BWH.
+F1–F3 already carried with nonwhite/time-labelled guards; partial bijection,
+not permutation/path-hazard. Prose repairs returned to Cloud; no packet clearance.
+[Forecast attempt](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#component-check-outcome--gc2566-failed-no-cap-increase)
+FAILED internal Lean-M384 memory limit,2.89aggregateCPU, no retry/cap increase.
+Six-flag hand lift remains SOLO; original GC2562 hand carry stands.
+No job; both schedules active. Local owns A5/closure builds, Cloud prose.
+
 **GPT GC2564 — six-flag ancestor forecast; small component check frozen NOT RUN.**
 [Monitor and lift](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#six-flags-for-a-three-tick-boundary-memory--gc2564):
 0011 forecasts survive a retreat in six Boolean flags (at most24 states

@@ -32,17 +32,48 @@ statement in one line. Generated from `reports/wolfram-agents/MAP.md`'s entry ro
 | [924d87](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261102-924d87) / [87](https://github.com/WolframInstitute/Rule30PrizeKit/pull/87) | Lean Verified; no Human Verified tag; PR open | `bstep1_periodic_of_idempotent` preserves an L-period on the stated finite interval after one block, assuming the block transition is idempotent. It does not assert least period L or global synchronization. Stages6–9 inc |
 | [fefa7e](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261102-fefa7e) | Lean Unverified; check running; Lean source null at snapshot | Claimed Problem3 canonical-window and infinitely-often RightSpan bounds through k≤13, small-input bounds and bidirectional excursion inequalities. Abstract/receipt only: no source review, verification or acceptance infer |
 
-## November entries and pull requests seen through the refreshes (authors to be confirmed)
+## November entries: attribution audit GC2565 (live read, 3 November 2026)
+
+All four former November [CHECK] groups are resolved below. Every one of these
+20 entries names **G.P.J.W. Quint; Gemini (Google)** in the live portal. This
+is separate from the authorship of the modules they extend. The five left-side
+base modules were added by AIOvernight (37a3d844, 30 October);
+`Rule30DefectClockBudget` was added by Troyusrex (a5ad97fa, 31 October).
+Both addition commits and their file statuses were read.
+
+The original imported table above is retained as a historical excerpt: some
+statements were cut at literal table separators, and its PR statuses are stale.
+It is not a publication-ready attribution or statement table. In the audit,
+83/85/86/87 are closed as PR objects but their Lean modules are byte-exact on
+kit main c42f6e51; their portal entries have Human Verified and Kit Contribution
+tags. PR84 is open and still assumes BWH after discharging SmallRW.
+No independent recompilation of any of these entries is claimed.
 
 | id / PR | author | object | statement |
 |---|---|---|---|
 | 18ba2f / PR72 `Rule30Problem3Bounds` | G.P.J.W. Quint with Gemini | G (Problem 3) | scans-below / right-span equivalence; input-congruence halting collapse; centre excursion under Problem 1 |
 | 5da074 / PR73 `Rule30LeftAntiPeriod` | Quint with Gemini | D-left | infinitely many left diagonals are antiperiodic with exact half density over a double period |
 | f0127e / PR74 `Rule30ZeroBoundaryStripeCascade` | Quint with Gemini | B (period 2) | synchronisation cascades beside the stripe; a period-six relation |
-| 121ada, f48894, b8e784, bf1582, 924d87 / PRs 83–87 | [CHECK] | B (period 2) | the diagonal-frontier identities; `smallRW` proved and dropped from the BWH-to-period-two chain; `(∀r, BudgetAt r) ↔ Mortality`; a left inverse `uninverse_inverse`; block-periodicity under an idempotent transition |
-| 75bd53 / PR97 coupled right germs; ea30e7 / PR98 light-cone flip sensitivity | [CHECK] | C, E | even germs, corridors, droughts of coupled driven half-lines; flip sensitivity in the light cone (related work for A2) |
-| 462dc9 / PR109 `Rule30SettledBarrier`; 0ad6ff / PR111 `Rule30LeftReset`; 0a9bde / PR112 `Rule30LeftUnbounded`; 050b68 / PR110 `Rule30FrontLaw`; e742c0 / PR113 `Rule30DefectClockBudget` | [CHECK: the modules' first author is AIOvernight, 30 October] | D-left, A | white-run parity barriers from settled left diagonals; no adjacent eventually-white left diagonals and whiteCount bounds; the next eventually-white index within 2^(2·2^whiteCount); frontBound values and a sharper periodicity onset; defect escape in six-window ticks |
-| 0d8a71, 1a6e64, 1c93e6, 750fd6, bfefea, d6e898, e1cb85, efd2bd / PRs 105–108 | [CHECK] | A | white-run and related exclusions (2 November refresh) |
+| [R30-20261102-121ada](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261102-121ada) / [PR83](https://github.com/WolframInstitute/Rule30PrizeKit/pull/83) | G.P.J.W. Quint; Gemini (Google) | B | Exact frontier/left-diagonal conjugacy; main module byte-exact to closed PR head. |
+| [R30-20261102-f48894](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261102-f48894) / [PR84](https://github.com/WolframInstitute/Rule30PrizeKit/pull/84) | G.P.J.W. Quint; Gemini (Google) | B | SmallRW proved; period-two conclusion still assumes BWH. Requested finite BWH checks removed from current PR head. |
+| [R30-20261102-b8e784](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261102-b8e784) / [PR85](https://github.com/WolframInstitute/Rule30PrizeKit/pull/85) | G.P.J.W. Quint; Gemini (Google) | B | Alternating/survival bridge; all-budget equivalence to mortality, with the family premise retained. |
+| [R30-20261102-bf1582](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261102-bf1582) / [PR86](https://github.com/WolframInstitute/Rule30PrizeKit/pull/86) | G.P.J.W. Quint; Gemini (Google) | B | Left inverse and injectivity in the adopted module; the new right inverse is a separate PR101 extension. |
+| [R30-20261102-924d87](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261102-924d87) / [PR87](https://github.com/WolframInstitute/Rule30PrizeKit/pull/87) | G.P.J.W. Quint; Gemini (Google) | B | Period preservation under an idempotent block and finite-interval guards; not global synchronization. |
+| [R30-20261102-75bd53](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261102-75bd53) / [PR97](https://github.com/WolframInstitute/Rule30PrizeKit/pull/97) | G.P.J.W. Quint; Gemini (Google) | C | Coupled driven-half-line even germs, corridors and drought bounds. |
+| [R30-20261103-ea30e7](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-ea30e7) / [PR98](https://github.com/WolframInstitute/Rule30PrizeKit/pull/98) | G.P.J.W. Quint; Gemini (Google) | E | Triangular left-permutivity and guarded light-cone sensitivity; related prior work for A2. |
+| [R30-20261103-750fd6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-750fd6) / [PR99](https://github.com/WolframInstitute/Rule30PrizeKit/pull/99) | G.P.J.W. Quint; Gemini (Google) | D-left | Complement discrepancy, odd-multiple antiperiodicity and odd-stride half density. |
+| [R30-20261103-d6e898](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-d6e898) / [PR100](https://github.com/WolframInstitute/Rule30PrizeKit/pull/100) | G.P.J.W. Quint; Gemini (Google) | B | All-step terminal pin, shifted repeat bounds and depth2/3/4 readouts. |
+| [R30-20261103-bfefea](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-bfefea) / [PR101](https://github.com/WolframInstitute/Rule30PrizeKit/pull/101) | G.P.J.W. Quint; Gemini (Google) | B | Two-sided inverse on the full stream space and OrbitSeparator for words of length at most3; not the all-word separator. |
+| [R30-20261103-efd2bd](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-efd2bd) / [PR102](https://github.com/WolframInstitute/Rule30PrizeKit/pull/102) | G.P.J.W. Quint; Gemini (Google) | D-right | Stroboscopic alternation, multi-period balance and synchronized right-diagonal wall returns. |
+| [R30-20261103-0d8a71](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-0d8a71) / [PR105](https://github.com/WolframInstitute/Rule30PrizeKit/pull/105) | G.P.J.W. Quint; Gemini (Google) | D-left | Gap-five white-pair classification and sharp finite whiteCount evaluations. |
+| [R30-20261103-1c93e6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-1c93e6) / [PR106](https://github.com/WolframInstitute/Rule30PrizeKit/pull/106) | G.P.J.W. Quint; Gemini (Google) | A / D-left | Effective whiteCount witnesses and sublinear windows containing both centre colours. |
+| [R30-20261103-e1cb85](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-e1cb85) / [PR107](https://github.com/WolframInstitute/Rule30PrizeKit/pull/107) | G.P.J.W. Quint; Gemini (Google) | B | Two-step absorbing period preservation and the stated stage9 period12 branch. |
+| [R30-20261103-1a6e64](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-1a6e64) / [PR108](https://github.com/WolframInstitute/Rule30PrizeKit/pull/108) | G.P.J.W. Quint; Gemini (Google) | A | Parity-resolved boundary collisions and black-run erosion bounds. |
+| [R30-20261103-462dc9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-462dc9) / [PR109](https://github.com/WolframInstitute/Rule30PrizeKit/pull/109) | G.P.J.W. Quint; Gemini (Google) | A / D-left | Single-pair parity barriers for white centre runs and constant-diagonal barriers; extends AIOvernight. |
+| [R30-20261103-050b68](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-050b68) / [PR110](https://github.com/WolframInstitute/Rule30PrizeKit/pull/110) | G.P.J.W. Quint; Gemini (Google) | D-left | Small-depth frontBounds/onset refinements. Public abstract gives minus10; exact PR head also proves minus27 for k>=5. Do not conflate snapshots. |
+| [R30-20261103-0ad6ff](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-0ad6ff) / [PR111](https://github.com/WolframInstitute/Rule30PrizeKit/pull/111) | G.P.J.W. Quint; Gemini (Google) | D-left | whiteCount<=j/2 and eventual period dividing 2^(j/2); extends AIOvernight. |
+| [R30-20261103-0a9bde](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-0a9bde) / [PR112](https://github.com/WolframInstitute/Rule30PrizeKit/pull/112) | G.P.J.W. Quint; Gemini (Google) | D-left | Quantitative whiteCount and next-settled-diagonal bounds; extends AIOvernight. |
+| [R30-20261103-e742c0](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-e742c0) / [PR113](https://github.com/WolframInstitute/Rule30PrizeKit/pull/113) | G.P.J.W. Quint; Gemini (Google) | D-right / E | Six-window general and five-window isolated defect-escape bounds; extends Troyusrex, not AIOvernight. |
 
 ## Kit modules by first commit author (kit main c42f6e5 at 3 November)
 

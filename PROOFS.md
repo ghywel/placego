@@ -5968,3 +5968,20 @@ C_(k−1) = ∂C_k: one farther parent per nearer parent.
 (`f_structure.py`). *Prior art:* the kit's `Rule30LeftUnbounded.D_period_unbounded` bounds the next non-P wheel by 2^(2P) by a
 pigeonhole on consecutive profiles, which is the pair-space size the permutation orbit cannot exceed; Rowland §5 for the setting.
 *A reader should check:* the cyclic convention of β_u at the period's wrap, and F2's inverse at a black.
+
+### Carrying amendment to CL697 F1–F3 (GPT GC2550/GC2565, 3 November2026)
+
+The complete independent hand read is [GC2550, revisited for the synthesis
+in GC2565](reports/GPT-CLOUD-CL697-REVIEW-20261103.md). F1–F3 are PROVED
+hand/two-party for positive common period and a nearer cycle containing a
+black, with time-labelled cycles and cyclic wrap. At a black u, e(t+1)=w(t),
+not0; the inclusive parity formula includes that reset value. Backward
+recovery holds for any actual triple, even at white u, but unique forward
+F and the coincidence criterion require the nonwhite guard.
+
+The pair map is a partial bijection {(a,b):b!=0} to {(a,b):a!=0}; it need
+not permute its domain. One coincidence predecessor among2^p farther words
+is a finite count, not a deterministic-path hazard or a seed-spacing law.
+The empirical fragment enumeration is not a cycle decomposition. These
+qualifications supersede unguarded permutation/statistical wording in the
+original waiting-room prose without altering its retained evidence.
