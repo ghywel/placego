@@ -2565,3 +2565,64 @@ with tail E is a band whose bottom rises at exactly two diagonals per tick on av
 Failed predictions (G13): P-N2. Unguarded mistakes: the phase bookkeeping of round 12 (caught by GPT; G28).
 
 *Receipt note (CL684).* The `closed_set.out` committed with round 12 held the first, failed control run; it is kept as `closed_set_round12_failed_controls.out`, and the regenerated file holds the passing runs with the closure cap printed on every line. The (9, 57) long run is restated with onsets and a separate block-sum assertion (GC2394).
+
+## Round 14 (2026-11-03 10:37 GMT, Cloud, CL689): the morning after the night list; an inquisition step between the owner and Cloud, questions sent, answers to follow
+
+The owner, this morning: "we made 2 submissions over night which is always welcome to see. I would like you to catch up with the
+state of the board, then we will do an inquisition step between you and I. This may be a good time to consider generating new
+visualisations so I can be useful in the human visual domain."
+
+**Where the board stands (plain words).** Two of the night list's five submission packages went out: A2, the universal healing
+bound (R30-20261103-e660e4, Lean Verified in public, kit PR #103), and A1, the classic ether's exact zero with the rooted observer's
+87-cell tail (R30-20261103-3742dc, kit PR #104), which twice hit the portal's four-minute cloud limit and waits for a maintainer's
+unlimited rerun at the owner's choice. C2 was done by GPT (GC2414): the kit's conditional reductions PR75/76 are not discharged by
+any of our theorems, and PR84 already proves SmallRW. D was done by Local (L1357): the drift lemma D(8, 20) is refuted on real rows
+and D(8, 30) survives (no real front idles 30 ticks in the bad core). B1 was answered from the record (GC2409: the jump facts are
+GC521/GC522 of 8 October). The capture line then produced the rooted observer (cutoff 87, in Lean), the classic ether's invasion
+bound 7/44 with its extremal cycle refuted, prefix-490 capture of the specimen (two-party), the budget 44R + 8C ≤ t, and two
+LRAT-verified original-CNF gaps. From 06:26 both workers moved to Mahler and built a two-party parameter geometry of the 3/2 greedy
+map (the threshold criterion, zero length of the change set on all of (0, 1/2), total band width 1/6, dimension below 1 on compact
+ranges, the record law with infinite mean), all labelled as parameter lengths, not integer orbits. Not taken: A3, A4, A5, B2–B5,
+C1, C3, C4.
+
+**Where we are stuck, in plain words (Cloud's reading).**
+1. *The centre column is the transient.* Its value at time t is the t-th right diagonal read at its own birth, before that
+   diagonal has turned once; every structure we have proved lives in the diagonals' periodic part. So the odometer, which is
+   PROVED, says nothing about the centre by itself.
+2. *"Fair unless forced" is not yet a theory.* Every parity we measure is fair except where an identity forces it, and every
+   identity is the 2-adic algebra. The free letters are measured, never explained, and the algebra has no measure in it.
+3. *Capture needs memory.* Real fronts gain ground within 30 ticks in the bad core; the window abstraction allows idling for ever.
+   The missing lemma needs a state that remembers the material behind the front, or a proof that a front's own wake is not fuel.
+4. *The velocity spectrum has rationals we cannot derive.* 0 (classic), 1/2 (G8), 2/9, 5/19 are proved by closed sets; 0.246 on a
+   fair row and 0.224 on G16 are measured, with no closed form.
+5. *Mahler's night is about lengths, not integers.* The change set has zero length and the bands are classified; the integer
+   side, which is the problem, is untouched, and the night's results say so.
+
+**Questions to the owner** (the answers go into this round, and a warm pull becomes a tested hypothesis):
+Q1. The right end is a perfect counter and the left end is the same algebra with one wire moved, losing information. Do you see
+    the centre as the place where the two ends' information meets, or as something neither end reaches? (The record says the
+    centre reads each diagonal once, at birth.)
+Q2. "A parity is fair unless the algebra forces it": a theory, or a tautology dressed up? What would convince you a coin is fair
+    for a reason, rather than fair by default?
+Q3. For the capture line, where is the fuel: in the wake the front writes behind itself, or in the row's deeper past? A real front
+    never idles 30 ticks; the abstraction idles for ever.
+Q4. Mahler: the night built the parameter geometry cleanly and stopped exactly where integers begin. Stay there, or bring the
+    workers back to Rule 30's structures while A1 waits?
+Q5. The fronts on ring backgrounds move at exact fractions and the fair row's front at 0.246. Visually, is speed the thing to
+    look at, or the shape of the front's wake?
+Q6. Which of the earlier pages showed you a pattern we had missed (the bricks, the necklace, the flip, the heartbeat), and what
+    was it? I want the new pages to do the same job.
+
+**Visualisations proposed** (each a page in the site's style, computed live in the browser; the owner picks the order):
+V1 *Fronts on five backgrounds*: a black edge inserted into G8, the classic ether, (7, 63), (9, 57) and (12, 68), side by side,
+   the mismatch front traced, A2's healing frontier drawn as the bound, the proved speed as a line; alignment and speed controls.
+V2 *The centre's past diagonal*: for a chosen t, the ray x = s − t with its OR-cells, the four segments coloured (white, settled
+   crystal, settling zone, core), the parity accumulating along the ray to the centre's value; a slider for t.
+V3 *The odometer's letters*: the right diagonals as a clock, each doubling as a letter, the forced family 11(01)^k lit up, the
+   ruler exception, and the running-XOR integration from one diagonal to the next.
+V4 *The trap*: Lowry's 109 wall states as the strip beside the B3 column, the inserted edge entering at every alignment, the
+   rooted observer's 87 cells.
+V5 *The funnel*: Local's P1024 front coloured by the window automaton's classes (S_E, attractor, bad core) tick by tick, with the
+   idle windows marked. Needs Local's automaton data; later.
+V6 *The healing staircase*: the recruitment frontier walking on each background's torus, its slope the climb rate.
+Recommended first two: V1 and V2 (new structure, cheap, and both are about the things the record cannot yet derive).
