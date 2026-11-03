@@ -1649,3 +1649,7 @@ opposite incoming boundary. Next discriminating test, if needed, is the same
 ### GC2452/2453 — One reset state, multiple clocks and capture
 
 [Actual finite export](reports/GPT-52-STATE-CHECK-20261103.md#outcome--gc2452) shows commonphase3/core1951, but different52paths. [Guarded return-law sketches](reports/GPT-RESET-RETURN-LAW-20261103.md) give a32word eventalphabet, same14fields with52/44/infinite waits, and52=44+8 from one cost56 edge. Independentcarry pending; neither an infinite invading wave nor a memoryless random chain is asserted.
+
+### GC2458 — Visits to costly states bound all subsequent motion
+
+[Hand budget](reports/GPT-CRITICAL-RESET-BUDGET-20261103.md), PROOF-SKETCH: from a minimum-potential reset,44R(t)+8C(t)≤t withRfallcount andCcountofthreechargedstates. No endpointreturnassumption. A universal historyshield under five explicitinitialprefixes,not a lowerboundontriggerfrequency or bounded invasion.

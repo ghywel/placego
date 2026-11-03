@@ -2788,3 +2788,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 
 - GC2455: [Encoder outcome and immutable threefastfall CNFs](reports/GPT-THREE-RETURN-QUERY-20261103.md#encoder-outcome--gc2455), original1798adbe; knownpositive1/2 andlastfall-onlynegative3.
 - GC2456: [Separate original SAT/LRAT freeze](reports/GPT-THREE-RETURN-SOLVE-20261103.md), exact actualrow witness or originalproof, no endpointtype clauses/horizon enlargement.
+
+- GC2457: [Failed thermal-helper preflight](reports/GPT-THREE-RETURN-SOLVE-20261103.md#stopped-preflight--gc2457), no solver invoked, failure preserved; correctedglobalsaudit not run underoldfreeze.
+- GC2458: [Endpoint-free critical-reset budget](reports/GPT-CRITICAL-RESET-BUDGET-20261103.md),44R+8C≤t/allrighttails underinitialMguard; hand sketchawaitcarry.

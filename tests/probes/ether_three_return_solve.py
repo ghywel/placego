@@ -10,6 +10,9 @@ import json
 import os
 from pathlib import Path
 import resource
+import re
+import symtable
+import builtins
 import signal
 import subprocess
 import time
@@ -27,6 +30,25 @@ names={'save','cpu','thermal','command','check_proof','parse_model','load_encode
 sel=[n for n in ast.parse(p.read_bytes()).body if isinstance(n,ast.FunctionDef) and n.name in names]
 assert len(sel)==8
 exec(compile(ast.Module(body=sel,type_ignores=[]),str(p),'exec'),globals())
+
+
+def helper_missing_globals(namespace):
+    table=symtable.symtable(ast.unparse(ast.Module(body=sel,type_ignores=[])),str(p),'exec')
+    missing=set()
+    def visit(scope):
+        for symbol in scope.get_symbols():
+            if symbol.is_referenced() and symbol.is_global():
+                name=symbol.get_name()
+                if name not in namespace and not hasattr(builtins,name):missing.add(name)
+        for child in scope.get_children():visit(child)
+    visit(table)
+    return missing
+
+
+# Pure dependency audit before any tool command; omission control reproduces GC2457.
+assert helper_missing_globals(globals())==set(),'MISSING_HELPER_GLOBAL'
+assert helper_missing_globals({k:v for k,v in globals().items() if k!='re'})=={'re'},'DEPENDENCY_NEGATIVE_CONTROL'
+
 
 
 def query_module():

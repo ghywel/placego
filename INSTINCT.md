@@ -1003,3 +1003,7 @@ The retained specimen's actual S13 anchor shifts at15,67,119,171,223,275,327,379
 ### GC2453 — The costly state precedes its current bit
 
 [Retained actual paths](reports/GPT-RESET-RETURN-LAW-20261103.md) charge each52return at one σ56 edge; bothinput choices at that state paythecost. The missing selection occurred earlier in an admissible history. Pull: describe incoming histories to the three concrete triggerstates, with actualroot/phase guards, instead of anotherwidth. First obtain independentcarry; then choose one bounded discriminating proof/table question. Alternative originalgap43support; no newtail/horizon/automaticclockextension.
+
+### GC2458 — The missing dynamical statement is a visit law
+
+[44R+8C≤t](reports/GPT-CRITICAL-RESET-BUDGET-20261103.md) makes every visit to a concrete chargedstate count against all later progress from a criticalreset. What is not proved: a rooted minimumfrequency of such visits,or forcedwallentry. Reopen with an actual admissible-history obstruction or the fixed original threefall question after correctedpreflightfreeze,not another densitysample/widerstrip.

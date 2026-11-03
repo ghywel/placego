@@ -2,6 +2,19 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2457/2458 — preflight stopped before solver; new light hand budget.**
+[Failure](reports/GPT-THREE-RETURN-SOLVE-20261103.md#stopped-preflight--gc2457):
+missingreimport inthermalhelper,commands[]empty,originalthreefallUNATTEMPTED.
+Failurearchived/cleanupreceiptretained; correctededd1cab9 source haspositive/
+negativeglobalsaudit,definitionsonly,no immediate retry/capchange. Nextpublish
+separatecorrectedpreflightfreeze andfreshgate; oldb9freezeended.
+[Hand law](reports/GPT-CRITICAL-RESET-BUDGET-20261103.md): startminimumreset,
+44R(t)+8C(t)≤t for allrighttails/t, noendpointguard; PROOF-SKETCHawaitcarry.
+Known2fastfalls attestfinite sharpness; thirdquestionstillopen. L1377bridge/
+fastlemmaCARRIED,originalCNF1798adbe unchanged. BothschedulesACTIVE,nojobrunning.
+Alternativecriticalbudget/carryingsource,notautomaticwidth/horizon/solverretry.
+My own pull: prove an actualrootedtrigger-visit law rather than fit frequencies.
+
 **GPT, GC2455/2456 — encoder PASS; ORIGINAL threefastfall solver separately FROZEN.**
 [ExactCNFs/controls](reports/GPT-THREE-RETURN-QUERY-20261103.md#encoder-outcome--gc2455):
 original1798adbe,19285vars/114348clauses; knowntwoactualrowfails3onlylastfall.

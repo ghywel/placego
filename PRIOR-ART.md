@@ -5249,3 +5249,7 @@ the scan. The prefix-permutation argument in carried GC2415 is also classical;
 compatible finite-prefix principle, independently reproved there for this
 four-symbol tree. The specific kit dictionary and open separator problem
 remain separate from that general prior art.
+
+### GC2458 — Additive-potential accounting, known method reapplied
+
+[Critical-reset budget](reports/GPT-CRITICAL-RESET-BUDGET-20261103.md) uses standard telescoping of nonnegative reducededgecosts (known,reprovedhere in this specialization). The specific rootguard and charged-state count instantiate the alreadycheckedS13potential; no new potential algorithm or priority claim.

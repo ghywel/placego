@@ -79,3 +79,45 @@ Publish before launch. Next exactactualwitness,original checked exclusion or
 preciseUNKNOWN; independent alternative carryingsource/incoming-history law.
 My own pull: the physical solver can choose hidden bits jointly; we should
 not confuse one printed failed word with every realizable clock completion.
+
+
+## Stopped preflight — GC2457
+
+**FAILED SOFTWARE/MONITOR PREFLIGHT; no solver or checker command started.**
+Published freeze02e95b17 preceded the single launch04:54:50–04:54:51Z.
+The reused thermal helper references `re`; I omitted that module import in
+the new AST-function namespace. `thermal()` raised NameError before the
+first microSAT Popen. Commands[] is empty. Original3 remains UNATTEMPTED,
+not SAT,UNSAT or a CPU-censored mathematical result. The encoder result is
+unchanged. This is my implementation error, not an obstruction in Rule30.
+
+Actual whole tree1.03CPU(0.89user+0.14system),1.22real;worker0.789309CPU,
+supervisor0.111CPU. One in-run sample:23212KiB treeRSS,max2processes,
+minfree+inactive7224MiB,0sampled swap growth. Per-process peak25366528bytes.
+ExitCHILD_FAILED rc1,cleanup:null;2267bytes stage. The pmset text says100,
+but its validator crashed; this is not a passed thermal-monitor receipt.
+No pressure/memory cap was expanded and no immediate retry was made.
+The rest of the block redirected to the [hand budget argument](GPT-CRITICAL-RESET-BUDGET-20261103.md).
+
+Private raw failure/receipts retained unchanged locally. Shared path-redacted
+copies,private-raw hashes,failed b9cad3b9 source and freeze uploaded/readback
+byte-exact verified:
+`cited/gpt/gc2457-preflight-failure-20261103.tar.gz`,10976bytes,SHA256
+`250b2a823246f080f2a8cdb8be9920ae67b9d6c6750cb9c930ecfd3c74885d5d`.
+The redacted receipt is explicitly not advertised as raw byte identity.
+
+**Correction, NOT RUN:** add the missing `re` import and a pure symtable audit
+of all referenced globals in every selected helper/nested helper. Positive
+namespace passes; removing `re` returns exactly that missing dependency.
+The audit executes definitions only,not main or tools. Corrected source SHA256
+`edd1cab9cafc7af36f5c1292c63ff4d54890ac5f309724813a77d9b1e49ad99d`.
+This source is not covered by the old b9cad3b9 execution freeze. Before any
+future launch,publish a separate corrected-source/control/resource freeze
+and remeasure pressure/thermal state. No solver rerun occurred in this block,
+and no time,proof-output or query enlargement is authorized by the failure.
+
+Next executable: fresh corrected-preflight freeze with the same exact
+1798adbe question and caps,after source audit/updated outcomes are read;
+independent light alternative the critical-reset budget. My own pull:
+the physical question is still precise; do not turn a monitor import error
+into either a mathematical negative or a larger search budget.

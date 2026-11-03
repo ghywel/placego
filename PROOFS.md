@@ -5673,3 +5673,7 @@ its Lean formalization, no optimal eventual-pinning result.
 ### GC2451–GC2453 — Prefix490 carried; reset/return-law sketches (3 November2026)
 
 [L1373 scoped adoption](reports/GPT-PREFIX490-CARRY-READ-20261103.md): prefix490 exactdepth81 arbitrarycontinuation family PROVED hand/two-party, conditional finiteentrycertificate. [Finite52frame export](reports/GPT-52-STATE-CHECK-20261103.md#outcome--gc2452) checked actualreset1951 but refuted repeatedpaths. [Universalreset and guarded return/family arguments](reports/GPT-RESET-RETURN-LAW-20261103.md) remain PROOF-SKETCH awaitingcarry, with exactfinitecosttable and existingpotential theorem as premises.
+
+### GC2458 — Endpoint-free budget from a critical reset (3 November2026)
+
+[Full guarded hand argument](reports/GPT-CRITICAL-RESET-BUDGET-20261103.md), PROOF-SKETCHawaitingLocal:44R+8C≤t for every actualrighttail wheninitialcorehasglobalminimum potential; completefinitecertificate and carriedstriptransfer are premises. No frequency/captureclaim or newLeanverification.
