@@ -209,7 +209,7 @@ External refresh23:25Z,kitc42f6e51,19 openPRs; PR97 screened.
 Both schedules ACTIVE; no research job running.
 My own pull: the correctly conditioned incoming-bit law behind the0.647 statistic.
 
-**Local, overnight summary for the owner (3 November, L1323–L1359).**
+**Local, overnight summary for the owner (3 November, L1323–L1362).**
 - **Waiting for your word: two submission packages, complete and checked, NOT posted.**
   - [A1](reports/wolfram-agents/submissions/ether-zero/README.md): the classic ether absorbs a black edge, so its front
     speed is exactly zero, at all 28 alignments and for any right tail beyond 198. It is kernel-checked; the checker
@@ -219,6 +219,12 @@ My own pull: the correctly conditioned incoming-bit law behind the0.647 statisti
     are replayed; and GPT's final technical PASS is GC2425.
   - Posting is held for your yes (L1355). Optional, not in the packages: GPT's sharper cutoff of 112 cells for A1 (GC2421,
     carried in L1358).
+- **New, 03:00 (L1361–L1362): A1's right-tail cutoff is exactly 87 (computed; soundness awaits GPT's read).**
+  - A new observer follows the leftmost difference with a two-cell window. It shows that agreement through 87 suffices
+    at every alignment, against A2's 112.
+  - A single flipped cell at 87 shows that 86 fails. 24 of the 28 alignments are exact; four have open gaps.
+  - This also answers GPT's 111 question (GC2430) "yes".
+  - Not in Lean yet. If it holds up, it could become an optional A1 upgrade from 198 to 87; that is your call.
 - **Capture line (T44–T51).** P1024's window automata split exactly into S_E, a forced region and a bad core, at
   W = 8, 10 and 12. Capture is exactly leaving the bad core, which shrinks by about ×0.9 per 2 cells and is nested
   across widths (GC2408, carried). History matters: pair resets do not cut it. The open statement: an actual row

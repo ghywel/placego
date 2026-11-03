@@ -6220,3 +6220,82 @@ coefficients. Then:
 
 When E(t, L) is white, staying is decided by E alone, and A2 does not use that. So branching on the front, with a
 ternary word to its right, is a sound observer sharper than A2 and cheaper than the full SAT query. T54 tests it.
+
+## 58. Does a rooted front certify more than A2? (T54, L1362)
+
+GC2430 asks whether agreement through 111 suffices for the A1 reference at (4, 3) (target: L(222) ≥ −23, where L is
+the leftmost difference). T53 showed A2's recurrence is three-valued simulation with an unknown right half-line, whose
+least cutoff is 112, and that agreement through 86 fails. T54 keeps the front explicitly: a state at time t is
+(L, w), meaning δ = 0 left of L, δ(L) = 1, a ternary word w of width W on L + 1 .. L + W, and unknown beyond. One
+tick evaluates δ with E's values as coefficients, by the exact mismatch identity, three-valued over every completion
+of the unknowns. It then branches on unknown cells until the new front is found. A run of zeros past the window is
+expanded into rooted states until A2 certifies the remaining half-line state. A state is pruned when A2 from "zero up
+to L − 1" already certifies, and is safe at 222 when L ≥ −23. Every real trajectory lies in some branch, so
+"no unsafe branch" proves the agreement for every tail.
+
+Record searched: L1361/T53 (A2 equals three-valued simulation), GC2423 (backward thresholds), GC2427/L1360
+(coalescence), L698/L912 (the record's three-valued observer); the healing and front-automaton probes
+(`healing_rate_replay.py`, `front_closure.py`). None branches on a rooted front over a non-periodic background.
+
+Predictions, written before the run:
+- **Soundness controls (must hold).** At cut 112 everything is certified. At cut 86 the observer must not certify,
+  because the flip at 87 is a real witness. In a containment replay at every tick, for random tails at several cuts and
+  for the flip-87 witness, the actual (L, window) must lie in a live state or in an A2-pruned one.
+- **W = 0.** I expect it not to certify 111 (about 60%).
+- **W = 8.** I expect it to certify 111 (about 55%), with its least certified cut somewhere in 95–111.
+- **Larger W (12).** Should certify no less than W = 8.
+
+Counterfactual: if W = 12 still leaves branches with L(222) ≤ −24 at cut 111, then deciding 111 needs correlations
+wider than the front window, GPT's SAT query is the right tool, and the open branches' L-paths show where they are.
+Caps: under `run_capped.py` with 120 s CPU, 150 s wall, 1024 MiB RSS and 16 MiB file, at nice 10. A run that hits a
+cap is retained as a failure, not extended silently.
+
+**Outcome (COMPUTED, M5, under `run_capped.py`, each run under 1 s CPU and 15 MB; `rooted_front.out`,
+`rooted_front_all.out`).**
+- **Soundness controls held.** thr[0] = 112 as in GC2423. Cut 112 is certified and cut 86 is not. In the containment
+  replay, 13 actual trajectories at each W (the flip-87 witness, and random tails at cuts 86, 100 and 111) are all
+  covered at every tick.
+- **(4, 3).** Least certified cuts are 98 for W = 0 (the cut-by-cut scan of the all-entries run; the detailed run
+  tests only cuts 100 and 95), and 87 for W = 2, 4, 8 and 12. The flip at 87 is a real witness
+  that cut 86 fails. So **the least cutoff for GC2430's target is exactly 87**, given the observer's soundness (below).
+  In particular every tail beyond 111 agrees through −24 at 222: GC2430's question is answered "yes" (its CNF would be
+  UNSAT). Peak live states: 46 at cut 87.
+- **The prediction about W = 0 was REFUTED.** I expected W = 0 not to certify 111, but tracking the front alone,
+  with no window, already certifies down to 98.
+- **The prediction about W = 8 held,** but its range (95–111) was too cautious: the least certified cut is 87.
+- **All 28 entries (W = 0, 2, 4).** At 24 of the 28 entries, the W = 4 cut b equals the position of the largest
+  single-flip witness: b is certified, and the flip at b shows that b − 1 fails. So 24 thresholds are exact.
+- **The common cutoff over the 28 entries is exactly 87** (A2: 112). It is attained at (4, 3), where it is exact.
+  (5, 0) goes from 110 to 85, also exact.
+- **Four gaps remain open.** For four entries the observer stalls at W = 4, 8, 12 and 16, above the witnesses. The
+  random-tail cliffs (400 tails per cut) raise the lower ends:
+
+| entry | A2 cut | rooted cut (W = 4–16) | largest failing cut found | least cutoff lies in |
+|---|---|---|---|---|
+| (0, 3) | 106 | 83 | 50 (flip at 51; random tails) | [51, 83] |
+| (1, 0) | 104 | 81 | 48 (random tails; single flips give 47) | [49, 81] |
+| (4, 1) | 82 | 66 | 44 (random tails; single flips give 41) | [45, 66] |
+| (5, 1) | 80 | 61 | 42 (flip at 43; random tails) | [43, 61] |
+
+  The window width is not what loses the information. The likely loss is Kleene's independence of unknowns
+  (X XOR X = X). A SAT query at one of these cuts would show whether the observer or the random search is short.
+
+**Soundness of the observer (PROOF-SKETCH, carrying read requested).** Let δ = G XOR E, and L(t) the leftmost
+difference.
+- **The step.** δ obeys the exact identity of T53/B5 with E's values as coefficients. Every three-valued value
+  computed from inputs consistent with the actual δ is consistent with the actual δ′.
+- **Left of the window.** Cells left of L − 1 stay 0.
+- **The scan.** It follows the actual δ′ from L − 1: it emits the actual new front with a consistent window, or (all
+  zero through L + W) it reaches the half-line state at L + W.
+- **Half-line states.** The half-line state at m is rooted(m + 1) ∪ half-line(m + 1). It stops at the first m with
+  thr[t] ≤ m.
+- **A2-certified states.** A pruned or stopped state has δ = 0 on x ≤ m with m ≥ thr[t]. A2's one-tick step,
+  m ↦ m − 1 + E(t, m), is nondecreasing. Since f_t(p) ≥ q when p ≥ h_t(q) (the carried GC2423), δ(T, x) = 0 for
+  x ≤ Q.
+- **Conclusion.** So every actual trajectory either heals, becomes A2-certified at some tick, or stays matched by a live
+  state. A live set at T with every L ≥ Q + 1 proves agreement on x ≤ Q for every tail.
+
+**What this teaches.** A2's slack is almost all in forgetting that the front cell is a difference: the front alone
+(W = 0) recovers 14 of the 25 cells at (4, 3). Two cells of window recover the rest. So for these entries the healing
+law is a rooted front with a window of two, over the background's own values. That is the same shape as the capture
+line's edge-frame front states (§46–§56), here on a non-periodic background.

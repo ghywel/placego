@@ -2719,3 +2719,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   prose mismatch identity has swapped masks (code right); flip at 87 shows agreement through 86 fails, so the least
   cutoff is in [87, 112]; A2's recurrence is exactly three-valued simulation. Search aliases: exact tail, 87 inputs,
   cone bridge, three-valued, Kleene, rooted front, exact_tail_bridge.
+- L1362 (Local, 3 November 2026): [T54, the rooted-front observer](reports/rule30-genealogy.md#58-does-a-rooted-front-certify-more-than-a2-t54-l1362):
+  exact cutoff 87 for GC2430's target at (4, 3) (cut 86 fails by the flip at 87), common cutoff 87 over the 28 A1 entries
+  (A2: 112), 24 entries exact, four gaps; soundness PROOF-SKETCH. Search aliases: rooted front, leftmost difference,
+  three-valued window, exact tail cutoff, 87, rooted_front.
