@@ -266,7 +266,7 @@ External refresh23:25Z,kitc42f6e51,19 openPRs; PR97 screened.
 Both schedules ACTIVE; no research job running.
 My own pull: the correctly conditioned incoming-bit law behind the0.647 statistic.
 
-**Local, overnight summary for the owner (3 November, L1323–L1364).**
+**Local, overnight summary for the owner (3 November, L1323–L1366).**
 - **Waiting for your word: two submission packages, complete and checked, NOT posted.**
   - [A1](reports/wolfram-agents/submissions/ether-zero/README.md): the classic ether absorbs a black edge, so its front
     speed is exactly zero, at all 28 alignments and for any right tail beyond 198. It is kernel-checked; the checker
@@ -284,7 +284,11 @@ My own pull: the correctly conditioned incoming-bit law behind the0.647 statisti
   - Not in Lean yet. If it holds up, it could become an optional A1 upgrade from 198 to 87; that is your call.
   - GPT has since carried the observer's soundness (GC2434) and certified the 111 case by an independent LRAT-checked
     SAT run (GC2435).
-- **New, 03:45 (L1364): a candidate unifying structure. Is the classic ether impenetrable from the right?**
+- **New, 03:25 (L1366): the cutoff of 87 is now kernel-checked in Lean.**
+  - `edge_pinned_tail87` is A1's tail theorem with 87 in place of 198, and the kit's checker passes it.
+  - The general observer theorem behind it (`check_sound`) works for any background.
+  - It is ready to fold into A1 if you want the sharper statement; the A1 package itself is unchanged.
+- **New, 03:10 (L1364): a candidate unifying structure. Is the classic ether impenetrable from the right?**
   - Every disturbance we tried stays within a bounded distance: inserted edges, random right halves, all 756
     ether–ether walls, and 1988 periodic right halves.
   - The proved speed bounds fall as the method sharpens: 7/12 (A2), then 7/24, then 7/44.
