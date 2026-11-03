@@ -1,0 +1,5 @@
+T1 a = 5/12: first escape n = 4, v = 1/96; (beta^4 + 1) delta < v: True; branch margins: True; flat [333/800, 1001/2400]; gap-4 band (27/65, 35/81]; inside: True
+T1 a = 1/3: escape None; a = 13/27: escape None, greedy code [1, 0, 1, 0, 0, 0, 0, 0]
+T2 counts (direct to n = 16), bound N_n <= g lambda_g^n (to 40), 1 < lambda_g < 3/2, g = 3..6: True; beta_3 = 13/27: True
+T3 gaps 3^n,4 (n = 1..12): max tail 0.473684176414 < 9/19 = 0.473684210526: True; periodic 100 root = 9/19: True
+THRESHOLD_DONE
