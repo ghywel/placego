@@ -1,0 +1,5 @@
+W1 witness, white beyond 124: falls [(44, -7, 1951), (88, -14, 1951), (132, -21, 4767)]
+W2 cells beyond 118 random: 10 of 10 give first falls exactly 44, 88, 132
+W3 cells beyond 124 random: 10 of 10 give falls 44, 88, 132 with cores 1951, 1951, 4767
+W4 the word on 14..61, black from 62: falls [(44, -7, 1951), (88, -14, 1951), (132, -21, 4767)]
+THREE_FALLS_DONE
