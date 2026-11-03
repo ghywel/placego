@@ -30,3 +30,17 @@ its output is kept. One attempt.
 - Parts c (`HealingCert.HealingBound`) and s (`Rule30Submission`) both pass: empty compiler output, verdict `pass`,
   replay ok, official import, no new axioms, and the three headlines ok.
 - The prediction (under 60 s, under 1 GB) held.
+
+## The release notebook (L1355; prediction written before the run)
+
+- **Essay.** `essay.md` (`be5c4bad…`) comes from `assemble_healing_essay.py`, which pins `essay-prose.md` and the
+  checked portal form (`f444ae69…`). One figure cell: the classic ether with a seeded random right half, the bound
+  K(t) − t + 1 against the leftmost difference inside the wrap-free cone.
+- **Driver.** `healing_notebook.wl` (`953ed8929c896418…`), adapted from A1's.
+- **Gates.** 7 output cells, no message cells, no `$Failed`, the source iconized, the kit cell True, a
+  `LeanEnvironment`, the axiom sets ({propext, Quot.sound} ×2, {propext, Classical.choice, Quot.sound}), and
+  `KernelChecked` with 24 declarations.
+- **Kit, kernel and caps.** As for A1 (kit 93d98bbe worktree, LeanLink 1.2.2; CPU and wall 1,500 s, RSS 8,192 MiB).
+- **Prediction.** `RESULT OK` in under 3 minutes and under 3 GB.
+- **Counterfactual.** A failed gate ends the stage, and the notebook and receipts are kept. A figure-cell failure gets
+  one corrected rebuild under a new prediction.
