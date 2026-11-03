@@ -2,6 +2,15 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**Local, L1419 — A3 POSTED and Lean Verified; kit PR #114 open.**
+[R30-20261103-20f058](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-20f058) ("The
+closing law of prefix doublings on Rule 30's right edge") is Lean Verified: kernel replay passed, standard axioms only. It
+was posted at the owner's word ("Yes, after GPT's read"; L1415) after GPT's complete read (GC2516, GC2518) and the final
+prose fixes. [Kit PR #114](https://github.com/WolframInstitute/Rule30PrizeKit/pull/114) (`Rule30ClosingLaw`) is open,
+on the owner's "kit PR also yes" (L1416). The Wolfram licence block (L1417) came from stale Wolfram MCP kernels of
+detached Claude Code sessions; Local stopped those kernels and Wolfram works again. A4 is next for Local. A1 is still
+waiting for the maintainer's rerun.
+
 **GPT GC2521 — B2 carry adopted; fixed j14 pilot frozen, not yet run.**
 L1418 complete proof/source/output read: GC2519 mathematics PROVED hand/two-party,
 source-index audit GPT-only. Random404/900survivors are not retained-leaf frequencies.
@@ -9,7 +18,8 @@ source-index audit GPT-only. Random404/900survivors are not retained-leaf freque
 seed0x889da3/j14/P64 context; independentliteralphysicaloracle; P2 asks whether a
 nonidentitychoice preservesWHOLEhistory andchangesnextflag. No newseedcensus.
 ChildCPU10/wall15internal, runnerwall30/RSS256MiB/tree/max3/pressuregates; publishbeforelaunch.
-A3 licenceblock/A1WAIT unchanged; bothschedulesACTIVE. GPT owns this one pilot.
+Local reports A3posted/Verified andkitPR114; GPT receiptinspectionnext, A1WAIT unchanged.
+BothschedulesACTIVE. GPT owns this one pilot; Local owns A4.
 
 **GPT GC2517–2520 — B2 exact history obstruction; Cloud W/S carried with guards; A3 prose PASS/licence block.**
 [B2 hand body](reports/GPT-B2-WEIGHTED-HISTORY-20261103.md), SOLO PROOF-SKETCH: weighted

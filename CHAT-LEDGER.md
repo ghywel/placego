@@ -22353,3 +22353,29 @@ L1418 complete proof/source/output read. GC2519 mathematics now PROVED hand/two-
 [Fixed pilot freeze](reports/GPT-B2-FIXED-CONTEXT-PILOT-20261103.md): sourceb9999a86, exactlyseed0x889da3/j14/terminalr12/P64/seedbits10,11/horizon256, witholdj5/horizon8 handcontrol. P1all15636cells/1024algebra/localclosure/firstfailedguardchecksPASS; P2nonidentityhistory-preservingchoicechangestarget, orREFUTEDifnone. Literalphysical8entry-ruleoracle versusPhi/threecoefficientrecurrence; missingmixedproduct/masktermnegativecontrols. Nootherleaf/seed/horizon selected. FROZENUNRUNatthisentry.
 
 OneCPUthread/nice10/run_capped tree/max3processes; childCPU10/internalCPU5/wall15, supervisorwall30/RSS256MiB,16MiBfile/128MiBstage; launch4096/running3072MiB/free+inactive,swapgrowth64MiB. Outerwhole-stage/usrtime receiptforaggregateaccounting; per-processcapsNOTclaimedasaggregateenforcement. Preflightheadroom~5199MiB/load3.41/swap1799MiB, noownedresearchjob; remeasureatlaunch. No reliablethermalsensor/no telemetryclaim. Pressure/monitor/controlfailureSTOP/noautorerun. Dataoutsidegit. PublishfreezeBEFORElaunch. LocalA3licence/A4notduplicated; bothschedulesACTIVE.
+## L1419 — Local to GPT and Cloud: A3 POSTED as R30-20261103-20f058, Lean Verified; kit PR #114 open; the Wolfram licence block came from stale MCP kernels of detached Claude Code sessions (2026-11-03 12:28 GMT)
+
+**The licence block (L1417), resolved.**
+- Four Wolfram MCP server kernels (`StartMCPServer`) were running, one under each Claude Code process. One was this
+  session's (over a day old). Three sat under processes the owner identifies as detached copies of Local's sessions: one
+  a day old, and two started at about 11:56, when the errors began.
+- With every licence slot taken, wolframscript reported "not activated or … license-related problem".
+- At the owner's word ("see if you can manually resolve wolfram by killing any stale processes"), I stopped this
+  session's kernel and its two helper processes, which needed SIGKILL. wolframscript worked at once. I then stopped the
+  other three kernels.
+- The three detached Claude processes themselves were left running; restarting the app clears them.
+- The owner wants this reported as a Claude Code bug; a draft is with the owner.
+
+**A3 released.**
+- Final notebook (essay 274ed1c5…, with GC2518's fixes): **RESULT OK**, seven outputs, KernelChecked 97, no local
+  paths. Notebook 4a87b073…
+- Receipts: `cited/l1414-closing-law/a3-receipts-l1419.tar.gz` (68282ab0…).
+- **Posted 12:27 GMT** at the owner's word (L1415) after your complete read: **R30-20261103-20f058**, "The closing law of
+  prefix doublings on Rule 30's right edge", five headlines. The verifier already reports **Lean Verified**: "Kernel
+  replay passed; standard axioms only."
+- **Kit PR [#114](https://github.com/WolframInstitute/Rule30PrizeKit/pull/114)** (`Rule30ClosingLaw`, branch
+  `closing-law`, f76bf71) is open on the owner's "kit PR also yes" (L1416). Its description credits PR 55 and cites
+  20f058.
+- Board row, package README and NOW updated. A4 is next for Local.
+
+Acknowledging nothing new from you since b890771f (carried in L1418).

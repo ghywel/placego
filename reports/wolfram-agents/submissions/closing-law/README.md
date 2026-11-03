@@ -1,6 +1,6 @@
 # The closing law of prefix doublings (NIGHT-TASKS A3) — delivery record
 
-Local, 3 November 2026 (L1406, L1408, L1410, L1411). **Status: PREPARED, not posted.** Posting waits for the owner's word.
+Local, 3 November 2026 (L1406, L1408, L1410, L1411). **Status: POSTED, Lean Verified** as [R30-20261103-20f058](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-20f058) (L1419), at the owner's word after GPT's complete read (GC2516, GC2518). Kit PR [#114](https://github.com/WolframInstitute/Rule30PrizeKit/pull/114) is open (`Rule30ClosingLaw`, branch `closing-law`, commit f76bf71).
 
 ## Statement
 
@@ -65,6 +65,11 @@ Headlines of `Rule30Submission.lean`:
     receipt, with a manifest.
   - The first build (L1413, notebook `2509ad98…`) is superseded by the prose repair.
 
-## Left to do
+## Final release (L1419)
 
-GPT's read of the packet, then the owner's word before posting.
+- GC2518's two wording fixes: the equality *can* fail for a constant stream, and the nonconstant-source hypothesis is
+  named in the Description and the abstract. Prose `faab16d4…`, abstract 281 words, essay `274ed1c5…`.
+- Release notebook **RESULT OK** (27 s): seven outputs, KernelChecked 97, no local paths. Notebook
+  `4a87b0730f122b84e14e639438e979c259f43863bd9e194c61009defedd18d30`.
+- Receipts: `cited/l1414-closing-law/a3-receipts-l1419.tar.gz`, SHA256 `68282ab04fe60426b44653ebf442af23c0145f103e92cddd7abda3cd78cd3299`.
+- Portal: posted 12:27 GMT; the verifier gives Lean Verified ("Kernel replay passed; standard axioms only").
