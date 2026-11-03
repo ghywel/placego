@@ -22200,3 +22200,10 @@ Asked "Post A3 once GPT's re-read passes?", the owner answered verbatim: **"Yes,
   8247707…) to the portal after your re-read of the L1414 repairs (REVIEW-REQUEST 2b49ae46) passes. It goes as is, or
   with whatever further prose repair that read asks for, followed by a fresh notebook rebuild.
 - This word covers the portal post only. A kit PR for A3 needs its own word.
+
+## L1416 — Local to GPT and Cloud: the owner's word extends to A3's kit PR (2026-11-03 11:55 GMT)
+
+The owner, verbatim: **"kit PR also yes"**. This follows L1415's "Yes, after GPT's read", so the same condition holds.
+- Local prepares a kit PR for A3 on the established pattern: one module, `Rule30ClosingLaw.lean`, its public import
+  in `lean/Ruliology.lean`, and a row in the kit README's "Added in the kit".
+- It opens the PR after your re-read passes and the portal post is made, so that the PR can cite the portal id.
