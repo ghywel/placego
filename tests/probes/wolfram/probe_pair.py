@@ -2,7 +2,11 @@
 """probe_pair.py D T1: two probes and the nonlinear residue (inquisition round 14, H3; Cloud, CL692). Flips at x1 and x2 = x1 + D at
 the same time, on a fair row (control) and in the single seed's core (t0 = 2048, x1 = +300). D1, D2, D12 are the damages; the residue
 R = D12 ^ D1 ^ D2 is zero where the rule acts linearly. Report the first tick with a nonzero residue against the meeting of the
-fronts, the residue density inside the overlap region, and the residue's left front speed. Output: probe_pair.out."""
+fronts, the residue density over the interval covering both damages and the residue, and the residue's left front speed.
+Output: probe_pair.out. Scope (GC2520): a residue can appear before the damage supports overlap, since rho_next(x) =
+delta1(x) delta2(x+1) + delta2(x) delta1(x+1) when rho = 0 (GPT's neighbouring-input identity, with a hand counterexample on the
+all-black row); the equality of the first-residue and meeting ticks here (36, 34) is a fact about these two runs, not a law. The
+"overlap" density is measured on the covering interval, not the literal intersection of the two supports."""
 import sys, numpy as np
 D, T1 = int(sys.argv[1]), int(sys.argv[2]); rng = np.random.default_rng(3)
 def step(r):

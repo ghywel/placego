@@ -2,7 +2,9 @@
 """probe_sonar.py T0 T1: echolocation on the single seed (inquisition round 14, H2; Cloud, CL692). Flip one cell at time T0 and lab
 offset delta from the band edge x_B(T0) = -T0 + B(T0) (B from the left-frame locator, P = 1024); follow the damage's left front for
 T1 ticks; report its leftward speed, P(stay) and the speed over the last half. Predictions in the tracker: core probes move at the
-fair-row speed 0.246, probes inside the crystal lock, the transition sits at the band edge. Output: probe_sonar.out."""
+fair-row speed 0.246, probes inside the crystal lock, the transition sits at the band edge. Output: probe_sonar.out.
+Outcome (GC2520): mixed in the core (three of six offsets outside 0.246 +- 0.04), no lock and no transition inside the crystal; a
+vacuous assert removed 2026-11-03 (CL694); the 40-cell frame check below is the real control."""
 import sys, numpy as np
 T0, T1 = int(sys.argv[1]), int(sys.argv[2]); P = 1024
 # band edge at T0 from the left-frame system
@@ -19,7 +21,6 @@ def step(r):
     n = np.zeros_like(r); n[1:-1] = r[:-2] ^ (r[1:-1] | r[2:]); return n
 a = np.zeros(W, dtype=np.uint8); a[c] = 1
 for t in range(T0): a = step(a)
-assert int(a[c + xB] == 0) == 0 or True
 # consistency: the lab row at T0 read from the left edge equals the left-frame row
 left = np.array([(rows[T0] >> k) & 1 for k in range(0, 40)], dtype=np.uint8)
 assert np.array_equal(left, a[c - T0: c - T0 + 40]), "left-frame and lab rows disagree"

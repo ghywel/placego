@@ -52,19 +52,22 @@ w1_ok = w1_bad = 0; white = []; w1b = []
 for k in range(2, K):
     u, w, c = C[k - 1], C[k - 2], tuple(int(x) for x in C[k])
     if not u.any():
-        white.append(k - 1); par = int(w.sum()) % 2
-        # integrals of w: d(t+1) = d(t) ^ w(t): two solutions if parity even
+        white.append(k - 1)
+        pw = next(pp for pp in (1, 2, 4, 8, 16) if all(w[r] == w[(r + pp) % 16] for r in range(16)))   # least period of w
+        par = int(w[:pw].sum()) % 2                                                                    # weight over the least period
+        # integrals of w: d(t+1) = d(t) ^ w(t): two solutions of period pw if the weight is even, else antiperiodic at pw (period 2pw)
         d0 = [0] * 16
         for r in range(15): d0[r + 1] = d0[r] ^ int(w[r])
         d1 = [1 - x for x in d0]
-        w1b.append((k - 1, par, c == tuple(d0) or c == tuple(d1)))
+        pc = next(pp for pp in (1, 2, 4, 8, 16) if all(c[r] == c[(r + pp) % 16] for r in range(16)))
+        w1b.append((k - 1, pw, par, pc, c == tuple(d0) or c == tuple(d1)))
         continue
     f = F(u, w)
     if f == c: w1_ok += 1
     else: w1_bad += 1
 print(f"W1 writing law C_k = F(C_(k-1), C_(k-2)) over settled wheels 2..{K-1} with a black in u: {w1_ok} agree, {w1_bad} disagree")
 print(f"W6 all-white wheels below {K}: {white}")
-print(f"W1b at the white wheels (wheel, parity of w over the period, next cycle is one of the two integrals): {w1b}")
+print(f"W1b at the white wheels (wheel, least period of w, weight parity over it, least period of the next cycle, next cycle is an integral): {w1b}")
 # W2: the band edge's decider is the table
 B = {}
 for t in range(0, T - P + 1):
@@ -117,4 +120,13 @@ for k in range(K):
     for per in (1, 2, 4, 8, 16):
         if all(c[r] == c[(r + per) % 16] for r in range(16)): percount[per] += 1; break
 print(f"W5b least periods of the cycles among k < {K}: {dict(sorted(percount.items()))}; commonest words {collections.Counter(words).most_common(5)}")
+# the closed-prefix certificate packet (GC2520): the C table, the pin of the row at T on the prefix, and the checks
+import hashlib
+pin = hashlib.sha256((rows[T] & ((1 << K) - 1)).to_bytes((K + 7) // 8, 'little')).hexdigest()
+with open(f"crystal_table_{K}.txt", "w") as fh:
+    fh.write(f"# crystal_writing_law.py: the single seed's left wheels 0..{K-1} at T={T}; one line per wheel: the 16 cycle values at t mod 16 = 0..15\n")
+    fh.write(f"# pin: sha256 of the row at T restricted to the {K} wheels = {pin}\n")
+    fh.write(f"# checks: all-phase consistency over the last 4 periods for every wheel; W1 {w1_ok} agree 0 disagree; white wheels {white}; settling front {w4_ok} agree 0 disagree\n")
+    for k in range(K): fh.write(''.join(str(int(x)) for x in C[k]) + "\n")
+print(f"certificate packet written: crystal_table_{K}.txt (pin {pin[:16]}...)")
 print("CRYSTAL_WRITING_LAW_DONE")

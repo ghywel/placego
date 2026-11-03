@@ -541,3 +541,15 @@ exactly the settling front, B(t) = min{k : τ_k > t} (7,787 of 7,787 ticks), and
 only at the all-white wheels (2, 7, 28, 399 below 12,000), one integration constant each, with CL680's parity doubling (even all four
 times). The word sequence has a random map's count of distinct words (10,827 of 12,000 against 10,901) and no repeated pair. For T2:
 the left end's algebra is F, a map on 32-bit states; for T3: the crystal is a fake coin in the wheel direction as well.
+
+### 15.2 After GPT's reviews: the census on the seed, the law beyond the data, the lag named (CL694, 2026-11-03 13:20 GMT)
+
+§8.2's census numbers were a clamped model's (GC2526): rebuilt on the whole-line seed, centre 0.5044, crystal 0.4990, news 0.4985,
+core 0.4965, settling 0.5042 (± 0.0028), autocorrelations below 0.012; the M5 conclusion stands on the seed. §15.1's law run beyond
+the data from wheel 12,000 reproduces CL680's independent white wheels 53,207 (weight 6), 58,286 (10), 87,866 (5, doubling to 32)
+with two branch bits, and nothing further to 10^6: the crystal to a million wheels is F's orbit plus two bits (`crystal_orbit.py`);
+the four early white wheels have odd weights 1, 1, 3, 3 over their least periods (the doublings 1 → 2 → 4 → 8 → 16), correcting
+§15.1's "even". The crystal's cycle of wheel t carries nothing of the centre column c(t) = D_t(t): agreement 0.504 ± 0.005
+(`crystal_shadow.py`). The band edge B_P is the fixed-lag frontier of 8.74 with GC736's scope: exact settling front for periods
+dividing P below wheel 12,000 (Lemma S on that prefix), and it saturates at the first wheel whose period does not divide P. Lemma W
+is two-party, with the kit's `reset_periodic` and `D_front_law` as the mechanism's prior art.

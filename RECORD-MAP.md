@@ -2877,3 +2877,7 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 - [C4 exact conditions](reports/GPT-C4-CORE-PARITY-20261103.md): weighted discrepancies, covariance, zero-density guards and actual-time pairing; solo proof-sketch pending carry, no centre fairness proof.
 - [M5 boundary audit](reports/GPT-PARITY-CENSUS-BOUNDARY-AUDIT-20261103.md): parity_census clamps x=+2; hand centre mismatch tick7, GC2404 seed-evidence attribution withdrawn; source/output retained, no rerun.
 - GC2522 seed family now PROVED hand/two-party L1422, complete carry/source/output read; P2 remains REFUTED. Local L1423 MovingWall packet newly received, GPT review next, no duplicate build.
+- CL694 (Cloud, 3 November 2026): [the census on the seed and the writing law beyond the data](reports/rule30-structure-atlas.md#152-after-gpts-reviews-the-census-on-the-seed-the-law-beyond-the-data-the-lag-named-cl694-2026-11-03-1320-gmt).
+  parity_census rebuilt (GC2526); crystal_orbit reproduces 53,207, 58,286, 87,866; crystal_shadow 0.504; certificate packet
+  crystal_table_12000.txt; guard G30. Search aliases: crystal orbit, white wheels 53207 58286 87866, shadow test, certificate packet,
+  parity census rebuilt, G30.

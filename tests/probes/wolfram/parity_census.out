@@ -1,8 +1,13 @@
-single seed to T=32768; 32641 samples per column
-centre                      : density 0.4987 (+-0.0028); autocorr lags 1..8 [0.0016, 0.0019, 0.0002, -0.0058, 0.0012, -0.0076, 0.0108, 0.0022]; run-law deviation (obs/exp - 1) l=1..10 [np.float64(0.0), np.float64(0.002), np.float64(-0.028), np.float64(0.018), np.float64(0.041), np.float64(0.033), np.float64(0.029), np.float64(0.131), np.float64(-0.277), np.float64(-0.183)]; longest run 15
-crystal e<=t/3              : density 0.5010 (+-0.0028); autocorr lags 1..8 [-0.0046, -0.0032, 0.0027, 0.0016, -0.0045, 0.0054, 0.0065, 0.0096]; run-law deviation (obs/exp - 1) l=1..10 [np.float64(0.001), np.float64(0.006), np.float64(0.018), np.float64(-0.045), np.float64(-0.055), np.float64(-0.005), np.float64(0.046), np.float64(-0.094), np.float64(-0.126), np.float64(0.374)]; longest run 15
-news (centre XOR crystal)   : density 0.4989 (+-0.0028); autocorr lags 1..8 [-0.0048, -0.0006, -0.0036, -0.0049, 0.0023, -0.0035, -0.0056, -0.0018]; run-law deviation (obs/exp - 1) l=1..10 [np.float64(0.004), np.float64(-0.005), np.float64(0.005), np.float64(0.017), np.float64(-0.013), np.float64(-0.083), np.float64(-0.126), np.float64(0.077), np.float64(-0.063), np.float64(-0.126)]; longest run 14
-core (s>=0.8t)              : density 0.4991 (+-0.0028); autocorr lags 1..8 [-0.0026, 0.0006, -0.0066, -0.0055, -0.0039, -0.0063, -0.0001, -0.0025]; run-law deviation (obs/exp - 1) l=1..10 [np.float64(0.003), np.float64(-0.01), np.float64(0.004), np.float64(0.009), np.float64(0.023), np.float64(0.029), np.float64(-0.054), np.float64(-0.077), np.float64(0.033), np.float64(-0.374)]; longest run 15
-settling (2t/3..0.8t)       : density 0.4970 (+-0.0028); autocorr lags 1..8 [-0.0051, -0.0049, 0.0126, 0.0022, -0.0071, 0.0002, 0.0088, -0.0021]; run-law deviation (obs/exp - 1) l=1..10 [np.float64(0.0), np.float64(0.023), np.float64(-0.03), np.float64(-0.004), np.float64(-0.058), np.float64(-0.025), np.float64(0.007), np.float64(0.092), np.float64(0.124), np.float64(-0.064)]; longest run 13
+control T=300: packed evolution equals the direct array; identity and segment parities agree at every t
+single seed on [-32768, 32768] to T=32768; row digest at T: bd56f608b2ce9929
+32641 samples per column (t >= 128); the identity sum of events = centre holds at every t
+centre                      : density 0.5044 (binomial reference +-0.0028); autocorr lags 1..8 [-0.0017, 0.0035, 0.0049, 0.0047, -0.0038, -0.0114, 0.0007, -0.0045]; run-law deviation (obs/exp - 1) l=1..10 [0.005, 0.005, -0.011, -0.018, -0.088, -0.037, 0.175, -0.107, 0.378, 0.128]; longest run 19
+crystal e<=t/3              : density 0.4990 (binomial reference +-0.0028); autocorr lags 1..8 [-0.0012, -0.0066, 0.0027, 0.0033, -0.0037, -0.0079, -0.0033, 0.0061]; run-law deviation (obs/exp - 1) l=1..10 [-0.005, 0.017, 0.012, -0.029, -0.017, -0.037, -0.068, -0.044, 0.065, 0.379]; longest run 18
+news (centre XOR crystal)   : density 0.4985 (binomial reference +-0.0028); autocorr lags 1..8 [0.0064, -0.0049, -0.0004, 0.0042, -0.0017, -0.0042, -0.0078, -0.006]; run-law deviation (obs/exp - 1) l=1..10 [-0.011, 0.013, 0.004, -0.003, 0.052, -0.009, 0.05, 0.089, 0.105, -0.053]; longest run 15
+core (s>=0.8t)              : density 0.4965 (binomial reference +-0.0028); autocorr lags 1..8 [0.0011, 0.0012, 0.0038, 0.0082, -0.0053, -0.0022, -0.0036, 0.0029]; run-law deviation (obs/exp - 1) l=1..10 [0.0, 0.011, -0.04, -0.008, 0.089, -0.058, 0.068, 0.052, 0.036, 0.131]; longest run 15
+settling (2t/3..0.8t)       : density 0.5042 (binomial reference +-0.0028); autocorr lags 1..8 [-0.0005, -0.0022, 0.0027, 0.0008, 0.001, 0.0038, 0.005, 0.0113]; run-law deviation (obs/exp - 1) l=1..10 [-0.002, 0.011, -0.006, -0.031, 0.037, -0.016, -0.075, 0.003, 0.223, 0.066]; longest run 16
 PARITY_CENSUS_DONE
-EXIT 0
+
+real	0m9.345s
+user	0m7.566s
+sys	0m2.123s

@@ -1,0 +1,11 @@
+lab x = -2 (wheel t + x at time t): P(cell = its wheel's eventual cycle value) = 0.4969 over 11596 times (binomial se 0.0046)
+lab x = -1 (wheel t + x at time t): P(cell = its wheel's eventual cycle value) = 0.4954 over 11596 times (binomial se 0.0046)
+lab x =  0 (wheel t + x at time t): P(cell = its wheel's eventual cycle value) = 0.5041 over 11596 times (binomial se 0.0046)
+lab x =  1 (wheel t + x at time t): P(cell = its wheel's eventual cycle value) = 0.5093 over 11596 times (binomial se 0.0046)
+lab x =  2 (wheel t + x at time t): P(cell = its wheel's eventual cycle value) = 0.4963 over 11596 times (binomial se 0.0046)
+lab x =  3 (wheel t + x at time t): P(cell = its wheel's eventual cycle value) = 0.4991 over 11596 times (binomial se 0.0046)
+CRYSTAL_SHADOW_DONE
+
+real	0m0.187s
+user	0m0.545s
+sys	0m0.020s

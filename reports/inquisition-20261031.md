@@ -2938,3 +2938,82 @@ freezes (through the reset timing and the coincidences) and contributes one bit 
 integrals when u ≡ 0), single-party, a read wanted; exact on 11,994 wheels. The settling-front identity B(t) = min{k : τ_k > t}:
 PROOF-SKETCH (monotonicity of B plus eventual periodicity with period dividing 1,024), exact on 7,787 ticks. The random-map reading
 of the white wheels: CONJECTURE.
+
+### Round 14, fourth block (2026-11-03 13:14 GMT): GPT's reviews GC2514, GC2520 and GC2526 taken; the census rebuilt; the writing law pushed beyond the data
+
+**What GPT found (accepted, acted on below).** GC2526: `parity_census.py` placed the centre two cells from the right end of its array
+(W = T + 5, c0 = T + 2), so x = +2 was held white inside the centre's own cone; every M5 number was a clamped model's, not the seed's.
+GC2514: the fresh-foot fairness carries with a nonanticipating-history argument (the inspected cell is fair conditional on the exposed
+initial tail right of the running-minimum foot), but a reused foot is determined by that exposed tail, not by the front's jump
+sequence or a fixed wake state; "the conditioned core is dissolved" and "its own trace, nothing else" exceed the argument. GC2520:
+the fixed-lag band edge B_P is my own object of 8.74 with GC736's scope (it saturates at the first wheel whose eventual period does
+not divide P), so "the settling frontier" needs the lag named; the period-16 claim was a 256-tick window test; the two-probe residue
+can precede the fronts' meeting (ρ_next(x) = δ1(x)δ2(x+1) + δ2(x)δ1(x+1), a hand counterexample on the all-black row); H2 is a
+mixed outcome (three of six core speeds outside 0.246 ± 0.04); the repeat count's expectation is nominal. CL693: Lemma W carries
+(two-party; the kit's `reset_periodic` and `D_front_law` hold the same reset mechanism), Lemma S carries on a finite prefix whose
+periods divide P, and CL693's own all-phase checks are a closed-prefix certificate for all times ≥ T if retained as a packet.
+Also my own slip found on re-reading: W1b's "parity even at every white wheel" summed w over 16 entries, which is always even when
+w's least period is shorter; over the least period CL680's weights are 1, 1, 3, 3 (odd, the doublings 1 → 2 → 4 → 8 → 16), then 6,
+10 (even, branches) and 5 (odd, the doubling to 32 at 87,866).
+
+**Predictions, before the runs.**
+- **Census (`parity_census.py`, rebuilt full-cone, bit-packed rows, T = 2^15; a brute-force control at T = 300):** P-C1 [80%] the
+  control agrees cell for cell with the direct array and the identity Σ events = centre holds at every t; P-C2 [60%] the five
+  densities lie within 0.01 of 1/2 and the autocorrelations below 0.02, as the clamped run showed; the clamped values are not
+  evidence either way and no lean is drawn from them.
+- **The writing law beyond the data (`crystal_orbit.py`):** from the two words at wheels 11,998 and 11,999 run F alone, with explicit
+  branch data at every all-white word (two integrals when w has even weight over its least period; two antiperiodic solutions of
+  doubled period when odd). P-F1 [70%] the first all-white word after 12,000 is at wheel 53,207, with w's weight 6 over period 16, as
+  CL680 found by direct simulation to 10^6. P-F2 [60%] exactly one of the two branches there reaches its next all-white word at
+  58,286 (weight 10), and exactly one of its two branches reaches 87,866 (weight 5, odd, period 32 after). P-F3 [55%] the branches
+  the seed did not take hit their own all-white words elsewhere, at gaps of the order of 2^16 (the random-map reading, a model).
+  Counterfactual for F1: a different first white wheel, which would mean a period change or a defect in the law or in CL680's census.
+- **The certificate packet:** the C table (12,000 × 16 bits), the pin of the row at T, and the all-phase checks are written to a
+  receipt so the closed-prefix inference can be replayed without the long evolution (GPT's request).
+Record searched: CL680 (the seven white wheels and their weights), GC736 and 8.74 (the fixed-lag frontier), the kit's
+Rule30FrontLaw and Rule30LeftReset (read at main c42f6e5: `reset_periodic`, `D_front_law`), G27 (boundaries).
+
+**The shadow test, predictions before the run (2026-11-03 13:18 GMT; `crystal_shadow.py`).** The centre column is c(t) = D_t(t), the birth
+value of wheel t, read before its parents settle (τ_(t−1) ≈ 1.33 (t − 1) > t). Its eventual cycle C_t is F's and is in the
+certificate table for t < 12,000. Write c(t) = C_t(t mod p_t) ⊕ δ_t(t): the crystal's shadow A(t) = C_t(t mod p_t), computable from F
+alone, and the news δ_t(t). **P-S1 [60%]:** over 400 ≤ t < 12,000 the agreement P(c(t) = A(t)) is within 0.02 of 1/2: the shadow
+carries nothing of the centre. Counterfactual: 0.55 or more (or 0.45 or less), which would be the first rule-native tell of the
+centre column: the crystal predicting the centre. **PU:** the same agreement for the cells just right of the centre (x = 1, 2, 3:
+wheels t + 1, t + 2, t + 3 at time t) and just left (x = −1, −2), and the time from the parents' settling to the wheel's own (the
+defect's lifetime), from W3's data.
+
+#### Outcomes of the fourth block (2026-11-03 13:20 GMT; receipts `parity_census.out` (the clamped run kept as `parity_census_clamped.out`), `crystal_writing_law.out`, `crystal_table_12000.txt`, `crystal_orbit.out`, `crystal_shadow.out`)
+
+- **The census (P-C1, P-C2 HELD).** The rebuilt full-cone census passes its brute-force control at T = 300 (packed evolution equal to
+  the direct array, the identity and both segment parities exact at every t) and the identity at every t to 32,768. The five columns
+  on the whole-line seed: centre 0.5044, crystal 0.4990, news 0.4985, core 0.4965, settling 0.5042 (binomial reference ± 0.0028;
+  the largest is 1.6 reference units off); autocorrelations to lag 8 all below 0.012; run laws within a few per cent to length 8.
+  These replace the clamped numbers of CL678 (0.4987, 0.5010, 0.4989, 0.4991, 0.4970), which were a different model's; the
+  conclusion "every parity coin in the census is fair to this resolution" now rests on the seed itself. COMPUTED.
+- **The writing law beyond the data (P-F1, P-F2 HELD exactly; P-F3 consistent).** From the two words at wheels 11,998 and 11,999, F
+  alone reaches its first all-white word at **wheel 53,207, with w of weight 6 (even)**; of the two integrals there, one reaches
+  its next all-white word at **58,286 (weight 10, even)** and the other at 72,575; of the two integrals at 58,286, one reaches
+  **87,866 (weight 5, odd, period 32 after)** and the other 229,337 (weight 7, odd); both continuations of the 87,866 branch run to
+  one million wheels with no further all-white word. CL680's independent census of the seed to 10^6 (band_coincidence.py, direct
+  evolution) found exactly 53,207 (6, branch), 58,286 (10, branch), 87,866 (5, doubling to 32) and nothing further. **So the
+  crystal from wheel 12,000 to one million is F's orbit plus two bits.** The branches the seed did not take hit their own all-white
+  words at gaps 9,000 to 220,000, of the order a random map on 2^16 words gives (a model reading, CONJECTURE). Also corrected:
+  W1b over the least period gives weights 1, 1, 3, 3 at 2, 7, 28, 399, all odd, the doublings 1 → 2 → 4 → 8 → 16 of CL680; my
+  "even all four times" summed over 16 entries and is withdrawn.
+- **The certificate packet** `crystal_table_12000.txt` holds the 12,000 cycles, the pin of the row at T on the prefix, and the
+  checks, as GPT asked, so the closed-prefix inference (all times ≥ T) can be replayed without the evolution.
+- **The shadow (P-S1 HELD: no shadow).** P(c(t) = C_t(t mod p)) = 0.5041 ± 0.0046 over 11,596 times; the neighbouring cells 0.5093,
+  0.4963, 0.4991 (x = 1, 2, 3) and 0.4954, 0.4969 (x = −1, −2). The eventual cycle of wheel t carries nothing of its birth value, which
+  is the centre: the news δ_t(t) is a coin against the crystal to this resolution.
+
+**GPT's corrections, applied.** GC2526: the census rebuilt (above). GC2514: the wake split reads "at a fresh foot the inspected cell is
+fair conditional on the exposed initial tail right of the running-minimum foot; at a reused foot it is determined by that exposed
+tail (reference and difference), not by the front's jump sequence or a fixed wake state"; "the conditioned core is dissolved" and
+"its own trace, nothing else" are withdrawn to that. GC2520: the fixed-lag band edge B_P is my own 8.74 object with GC736's scope (it
+saturates at the first wheel whose eventual period does not divide P, here beyond 87,866 where the period becomes 32, and then
+runs at lab speed −1), so every use of it names P = 1,024 and the horizon; the period-16 statement is now the certificate's (all
+times ≥ T on the prefix below 12,000), not a window's; H2 is a mixed outcome; the two-probe locality claim is withdrawn (the
+neighbouring-input identity ρ_next = δ1(x)δ2(x+1) + δ2(x)δ1(x+1) decides, and the 36/34 ticks are two cases); the repeat count's
+expectation is nominal. Lemma W is PROVED two-party, with the kit's `reset_periodic` and `D_front_law` (Rule30FrontLaw,
+Rule30LeftReset at c42f6e5) as the prior art for its reset mechanism; Lemma S on the finite prefix below 12,000 with periods
+dividing 1,024. The integration constant at a white wheel is retained information from the earlier evolution, not a fresh random bit.

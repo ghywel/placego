@@ -1,0 +1,14 @@
+table crystal_table_12000.txt: 12000 wheels; started from wheels 11998, 11999 (periods 16, 16); followed to KMAX=1000000
+  branch seed.0.0.0: white wheels (wheel, least period of w, weight of w over it, parity, period after) = [(53207, 16, 6, 'even', 16), (58286, 16, 10, 'even', 16), (229337, 16, 7, 'odd', 32)]; reached 1000000
+  branch seed.0.0.1: white wheels (wheel, least period of w, weight of w over it, parity, period after) = [(53207, 16, 6, 'even', 16), (58286, 16, 10, 'even', 16), (229337, 16, 7, 'odd', 32)]; reached 1000000
+  branch seed.0.1.0: white wheels (wheel, least period of w, weight of w over it, parity, period after) = [(53207, 16, 6, 'even', 16), (58286, 16, 10, 'even', 16), (87866, 16, 5, 'odd', 32)]; reached 1000000
+  branch seed.0.1.1: white wheels (wheel, least period of w, weight of w over it, parity, period after) = [(53207, 16, 6, 'even', 16), (58286, 16, 10, 'even', 16), (87866, 16, 5, 'odd', 32)]; reached 1000000
+  branch seed.1.0.0: white wheels (wheel, least period of w, weight of w over it, parity, period after) = [(53207, 16, 6, 'even', 16), (72575, 16, 10, 'even', 16), (291256, 16, 5, 'odd', 32)]; reached 1000000
+  branch seed.1.0.1: white wheels (wheel, least period of w, weight of w over it, parity, period after) = [(53207, 16, 6, 'even', 16), (72575, 16, 10, 'even', 16), (291256, 16, 5, 'odd', 32)]; reached 1000000
+  branch seed.1.1.0: white wheels (wheel, least period of w, weight of w over it, parity, period after) = [(53207, 16, 6, 'even', 16), (72575, 16, 10, 'even', 16), (165748, 16, 6, 'even', 16), (174449, 16, 6, 'even', 16)]; stopped at 3 branch points
+  branch seed.1.1.1: white wheels (wheel, least period of w, weight of w over it, parity, period after) = [(53207, 16, 6, 'even', 16), (72575, 16, 10, 'even', 16), (165748, 16, 6, 'even', 16), (183183, 16, 11, 'odd', 32)]; stopped at 3 branch points
+CRYSTAL_ORBIT_DONE
+
+real	1m27.734s
+user	1m26.262s
+sys	0m0.008s

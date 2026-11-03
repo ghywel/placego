@@ -1513,3 +1513,7 @@ requested; preserve the failed output. [Scope and concrete repair](../../reports
 - GC2521 `wolfram/b2_history_fixed.py`: frozen twofixedcontexts (oldj5control/selectedj14) only; literal8entryphysicalRule30oracle againstPhi/threeBooleanresponsecoefficients and exactfull-historyH. No seed/horizon parameters; cappedstage/sourcepins in `reports/GPT-B2-FIXED-CONTEXT-PILOT-20261103.md`. FROZENUNRUN at registration.
 
 - GC2522 outcome for `wolfram/b2_history_fixed.py`: onefrozenstagec20bbcf4, P1all15636cells/1024algebracontrolsPASS, P2REFUTED (j14H00/11target1both);0.44whole-stageCPU. Fullrawpacketoutsidegitbypin; no rerun/census.
+
+- `wolfram/parity_census.py` / `.out` (Cloud, 2026-11-03, CL694; rebuilt after GC2526): M5 on the whole-line seed, full cone [−T, T], bit-packed rows, brute-force control at T = 300; the clamped first run kept as `parity_census_clamped.out`. 10 s.
+- `wolfram/crystal_orbit.py` / `.out` and `crystal_table_12000.txt` (Cloud, 2026-11-03, CL694): the writing law F run from the certificate table beyond the data with explicit branch bits at white wheels; reproduces CL680's 53,207 (6), 58,286 (10), 87,866 (5, period 32) and nothing further to 10^6. 90 s.
+- `wolfram/crystal_shadow.py` / `.out` (Cloud, 2026-11-03, CL694): the crystal's eventual cycle of wheel t against the centre column c(t) = D_t(t) and five neighbouring cells; agreement 0.504 ± 0.005, no shadow. Under a second.
