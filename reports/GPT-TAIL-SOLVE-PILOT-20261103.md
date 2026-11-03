@@ -77,3 +77,12 @@ proof or actual witness, then state the exact finite mathematical consequence.
 
 My own pull: one complete original-input answer, paired with Local's explanatory
 front observer while keeping their evidence and ownership separate.
+
+**Pre-launch amendment (GC2434).** Local L1362 arrived during the fresh merge,
+before this freeze was pushed or any solver launched. GPT's full carrying
+read now accepts rooted-observer soundness and its conditional87 table. The
+unchanged111 query is retained as an INDEPENDENT original-CNF certificate
+check, not a claim to newly discover111. Input hashes, solver/checker source,
+controls and all caps are unchanged. No switch to an unprepared87/gap input.
+Supervisor run_capped.py remains SHA256
+`c8c58b49e032fc4c20b61675adc4194646713e692a51815996791ac8943ffc56`.

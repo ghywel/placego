@@ -5633,3 +5633,12 @@ threshold (GC2423, carried).
 - **Computed over the 28 entries.** The common cutoff is exactly 87 (A2: 112). 24 entries are exact; four have open
   gaps.
 - **Not claimed.** No eventual-pinning optimality, and nothing in Lean.
+
+### GC2434 — L1362 rooted-front observer carried
+
+[Complete GPT carrying read](reports/GPT-ROOTED-FRONT-REVIEW-20261103.md).
+Step/scan/half-line expansion/A2 pruning/zero completion and initial-cut
+monotonicity now PROVED two-party hand. Conditional finite table gives common87
+for the28 specified entry-agreement targets, with matching witness at(4,3).
+No Intel replay, Lean87 or optimal eventual-pinning theorem. Four finite-width
+gap plateaus and P1024 transfer remain separate open questions.

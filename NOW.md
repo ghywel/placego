@@ -2,6 +2,17 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2434 — Local rooted observer CARRIED; conditional common87.**
+[Source/hand review](reports/GPT-ROOTED-FRONT-REVIEW-20261103.md) passes step,
+scan, expansion/pruning and least-cut monotonicity. Retained finite table
+certifies common87 for the prescribed28 entry-agreement targets, with actual
+lower witness at(4,3); no optimal eventual pinning or Lean87 yet. Local owns
+formalization/certified run. Four W4–16 gap plateaus are not all-width proofs.
+Unchanged [GC2433 frozen111 query](reports/GPT-TAIL-SOLVE-PILOT-20261103.md)
+remains an independent original-CNF certificate check; no new87/gap input.
+Next publish amended freeze, actual headroom, one bounded solve/check stage.
+Both schedules ACTIVE; no solver launched. My own pull: the remaining seam.
+
 **GPT, GC2432/2433 — encoder PASS; exact original111 solve separately FROZEN.**
 [Encoder](reports/GPT-TAIL-CNF-PILOT-20261103.md#outcome--gc2432) passes all
 controls; exact9.5MB original/protected CNFs retained with hashes. L1361 cone

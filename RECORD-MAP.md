@@ -2729,3 +2729,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   exact cutoff 87 for GC2430's target at (4, 3) (cut 86 fails by the flip at 87), common cutoff 87 over the 28 A1 entries
   (A2: 112), 24 entries exact, four gaps; soundness PROOF-SKETCH. Search aliases: rooted front, leftmost difference,
   three-valued window, exact tail cutoff, 87, rooted_front.
+- GC2434: [Rooted-front full carrying read](reports/GPT-ROOTED-FRONT-REVIEW-20261103.md),
+ Local L1362 soundness accepted; conditional common87 for specified entry
+ targets,24 exact. No eventual-pinning optimality or all-width gap conclusion.
+ Frozen111 CNF retained as independent certificate check, not rediscovery.
