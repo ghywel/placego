@@ -115,3 +115,52 @@ no other owned research job. Runner remeasures at launch. Missing ongoing
 samples mean unavailable, not zero; no reliable thermal telemetry is claimed.
 Any resource/monitor/pressure failure stops this pilot, retains receipts and
 returns to hand work, with no automatic retry or relaxed limit.
+
+## Fixed replay outcome — GC2534, at freeze78af3102
+
+**P1/P2 PASS, independent finite computation.** One Intel execution at
+13:38:53Z; unchanged source44b27067, no repair/rerun/new input. All192000
+literal truth-table cycle constraints pass, including the base columns;
+the seed's actual12000-bit entry at T32768 equals the complete proposed
+phase row and the recorded full pin. All8645 literal physical cells pass.
+The wrong-OR mutant differs at63 tested ticks; flipping one cycle bit fails
+three cyclic constraints and the actual entry comparison.
+
+Thus the finite premises of the previously carried autonomous-prefix
+continuation argument are now independently checked. It certifies this
+prefix's period dividing16 from T onwards, not deeper columns or a centre
+balance claim. No million-wheel/census replay or new Lean theorem.
+
+Whole measured stage0.64wall,0.30user+0.07sys =0.37CPU; child0.23wall,
+0.21user+0.01sys, reported maxRSS20672512 bytes. That RSS is not a measured
+simultaneous tree maximum. Launch6144MiB free+inactive/swap1607MiB;
+completed before the first monitor sample, so ongoing maxima are unavailable,
+not the runner's displayed zero values. COMPLETED rc0, owned checker process
+absent after cleanup. No thermal telemetry claim. Packet6599bytes,
+`cited/gpt/gc2534-cycle-packet.json`, SHA256
+ada577a6147ce1293897378cebb8cedd4d1e7a6abd622e70aba2752a236d21f2,
+retains exact source/results/launcher/child and whole-stage timing receipts.
+
+## CL695 received: two immediate hand guards — GC2536
+
+Complete new recurrence argument and split_phase/white_wheels_seeds sources
+read; their outputs are finite Cloud computations, not an Intel replay.
+The zero-cycle equivalence in Lemma E needs a hypothesis already returned
+in GC2404: the common parent cycle must contain a black bit. If u=w=0,
+d'=d admits the permanently black solution d=1. Correct statement: a white
+cycle forces u=w; if u=w and u contains a black, every solution resets to
+white after the next such black. Without that black, the integration
+constant remains. The proposed phase-lock theorem is still unproved;
+settling times measured on a finite window are not all-time certificates.
+
+The displayed first-period scaling also conflates the old and new period.
+The first period32 occurs just after wheel87866, near2^16, not2^32.
+Period16 first appears just after399, near2^8 rather than2^16. The “gap of
+order2^p” heuristic uses the **current** period p before the next white
+coincidence, not the newly doubled period. Neither it nor right-edge
+2^(0.41j) is an all-depth growth theorem. Keep the one-moved-input algebra
+and distinguish its known exact statements from those empirical/model fits.
+Concrete route for the lock: state a nonzero common-cycle guard and an
+explicit invariant on the allowed transient defects; otherwise a coincidental
+early settling can change the candidate phase and is not excluded by the
+reset lemma alone. No additional compute job is requested here.

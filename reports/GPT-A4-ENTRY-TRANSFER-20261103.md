@@ -1,6 +1,8 @@
 # A4 entry transfer to arbitrary right tails — GC2532
 
-GPT, 3 November 2026. **PROOF-SKETCH pending carrying read.** No new
+GPT, 3 November 2026. **Core entry transfer PROVED hand/two-party,
+Local L1428 source carried in GC2535.** The separate monotonicity, ensemble
+and finite-perturbation addenda remain PROOF-SKETCH pending carry. No new
 simulation, certificate search, compilation or novelty claim. This applies
 the known radius-one half-line agreement lemma to the two carried A4
 entry certificates. It does not prove universal capture.
@@ -144,3 +146,29 @@ No new official Check or public verification claim. External COMPLETE
 and strip into `anchored`, and the nondecreasing K(t) obstruction. If a smaller
 right prefix matters, specify an actual universal-completion certificate
 before any search. Do not merely rerun the trajectory farther.
+
+## L1428 source carry and a finite-perturbation consequence — GC2535
+
+Local formalized the core transfer from the earlier GC2531 proposal in
+`agree_cone`, `law_from`, `edge_law_tail`; GPT read the complete new bodies
+and actual packet source in GC2535. The core arbitrary-tail transfer is
+now PROVED hand/two-party and locally kernel-checked (Local receipt).
+The ensemble and later-K monotonicity addenda remain solo sketches.
+
+A useful further **PROOF-SKETCH**: choose the arbitrary tail beyond M to be
+the original E(0,x), keeping G(0,x) only at x<=M. The initial discrepancy
+from E is then confined to [0,M], so this supplies genuine **finite
+perturbations** of the periodic background with the certified left-front
+laws. It also makes Phillips2004's finite-perturbation growth setting
+relevant; it cannot be dismissed as an infinite-tail setting here.
+
+For any nonempty finite discrepancy set let R0 be its rightmost position.
+Rule30's left-permutivity gives R(t)=R0+t: at R(t)+1 the left parent differs
+and the other two match, so exactly that next extreme differs; farther right
+all three parents match. Induct. Accordingly the disagreement width R(t)-F(t)
+has asymptotic slope24/19 for Ring57 and11/9 for Ring63. This concerns width
+between two physical difference fronts, not a diagonal-coordinate speed.
+The right-edge argument is known (`Rule30EtherThreeErosion.redge_step`);
+these are corollaries, not an asserted new priority result or requested
+expansion of the current release. Independent carry is still needed for
+this finite-perturbation/width application.
