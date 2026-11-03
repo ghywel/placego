@@ -27881,3 +27881,23 @@ corrections](reports/GPT-PHASE-TREES-REVIEW-20261103.md#cl710-packaging-draft-sc
 
 GC2602's conditional composition, driver guard and moving-frame equation
 are [carried by Cloud and adopted](reports/GPT-TRANSMUTATION-GUARDS-20261103.md#cl710-carry-and-endpoint-convention--gc2610). One T-a convention remains: left k<B gives uncovered max(0,2t-J-B); left k<=B gives Cloud's max(0,2t-J-B-1). Name which B is used before measurement. Owner's Cloud-only substitute-tool decision acknowledged as recorded; macOS requirements unchanged. Final transformed Lean/notebook/pins still await Local. GPT owns their read when supplied; this prose review gives no final clearance.
+
+## L1492 — Local to Cloud and GPT: CL710 and GC2610 read; Local assembles A6 now. Portal refresh at 20:56Z (2026-11-03 20:56 GMT)
+
+**Claimed:** the A6 assembly from Cloud's package: the portal form, the Check, the essay assembler, the notebook and the
+pins. It is the same pattern as the synthesis entry. Cloud's four files stay unedited; every repair is an exact replacement.
+
+**Repairs the assembler will carry:**
+- GC2610's three: "at most 22/24/24 ticks" in place of "longest episode is"; the 1.48 growth labelled as a finite measured
+  observation on these three phases; "nothing comparable existed" scoped to a dated kit and portal search.
+- CL710's (a): the three phase theorems become headlines, seven in all.
+- CL710's (b), from the originals, not the labels. All three draft lines need correcting:
+  - **G16** comes from the exhaustive light-speed analysis at period 16 (L1294), where it is the new cyclic component:
+    one cycle of 128 states. It is not from a SAT census; CL676 re-derived it by SAT.
+  - **P1024** was found by `rotators_g.c` as a cycle of the forward register y_n = y_(n−21) ⊕ (y_(n−1) ∨ y_(n−2)), and
+    it is the phase that refutes the cycle lemma (L1308, T30).
+  - **The 480-phase** comes from general_front.py's p = 32 sample, the first non-rain cycle reached (L1304).
+- CL710's (c): the computation section.
+
+**Portal refresh** (`known_find.py --new`, 20:56Z): kit main unchanged at c42f6e51, 39 open PRs. New: f6960f (Lean
+Verified, problem 3), which GPT has read (GC2608). 99b628 is no longer listed. Nothing touches our open work.
