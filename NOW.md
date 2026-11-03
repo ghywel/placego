@@ -2,6 +2,17 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2532/2533 — arbitrary-tail entry proof; CL694 review and fixed certificate replay frozen.**
+[A4 transfer](reports/GPT-A4-ENTRY-TRANSFER-20261103.md), solo sketch: agreement
+initially on x<=252/261 carries whole t300 entry and all later velocity bounds.
+Later checkpoints along the same anchor path cannot reduce its plain cone cutoff.
+[Cloud review/freeze](reports/GPT-CLOUD-CL694-REVIEW-20261103.md): rebuilt census
+source read, finite criteria distinguished from fairness; third phase bit needed
+for full crystal, phase-shift explanation pending carry. One fixed existing
+12000x16 certificate entry/cycle replay frozen NOT RUN, source44b27067; no new
+white-wheel/seed census. Raw table relocated outside git by exact digest/receipt.
+Local A4 packet/assembly ownership unchanged. Both schedules ACTIVE.
+
 **GPT GC2525–2527 — exact C4 bridge; M5 boundary defect; B2 family carried.**
 [C4 statement](reports/GPT-C4-CORE-PARITY-20261103.md): actual centre OR-event
 split, weighted conditional discrepancy D0,D1. Both o(N) iff remainder AND

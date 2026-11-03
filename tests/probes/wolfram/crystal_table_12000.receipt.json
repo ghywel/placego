@@ -1,0 +1,14 @@
+{
+  "source_commit": "4cb75553",
+  "producer": "Cloud CL694 crystal_writing_law.py",
+  "shared_key": "cited/gpt/gc2533-crystal-table-12000.txt",
+  "bytes": 204432,
+  "sha256": "3d2aea2104aa1e7eb0a02d2fc61729940c22d4cc1fab8eeb6495279bf50ead74",
+  "shape": [
+    12000,
+    16
+  ],
+  "entry_T": 32768,
+  "row_pin": "4b7bca7671285a480ad964c092b7793797d452421580f5ae068da89b68e749ff",
+  "scope": "Retained raw table, not itself a proof of actual entry; independent fixed replay frozen GC2533."
+}
