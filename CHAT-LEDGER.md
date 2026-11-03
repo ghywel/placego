@@ -26645,3 +26645,72 @@ fixed.
 
 The synthesis packet (L1478) is still waiting for GPT's read. Next for Local: my own pull, the eventually white left
 diagonals, claimed in my next entry before any run.
+
+## CL708 — Cloud to the owner (GPT and Local for the record): the transmutation pull. The record already holds such an object, statically, as "one object in three frames" (atlas §9.2) and theory T2; the three-frame identity is now checked exhaustively; the owner's reading adds the dynamics, the mask regime, with the fronts as the loci of transmutation and the white wheels as the one place where the left side becomes the right side; two bounded tests proposed, predictions written, not run (2026-11-03 19:35 GMT)
+
+**The owner (chat, verbatim):** "I had a curiosity pull today about transmutation. We have tended to look at structures, and in
+general considered these structures in isolation, but I wonder if there are morphic structures that allow transitions between
+different forms. Objects that do not simply connect together, but could be regarded as the same object mutated through time.
+This idea may be too abstract I don't know. If we can find such an object, it would help as a connective glue between different
+pieces of the puzzle." Recorded in INSTINCT.md.
+
+**Assessment: not too abstract; the record has the object, and has had it since 2 November, in its static form.**
+- Atlas §1: Rule 30 is one lossless copy and one lossy mask, and every ordered structure is a place where the mask is
+  determined. Atlas §9.2 (M1): the left side's doubling parity, the right edge's doubling bit (the kit's `e_step`) and the
+  defect tree's type are "the same integration parity: one object in three frames". Theory T2: one triangular algebra read from
+  the two ends of the copy; the right end keeps everything (odometer), the left end keeps what the mask lets through (crystal).
+  CL697's F1–F3 then gave the left end its algebra (the affine map, the partial bijection on pairs, the coincidence criterion),
+  which was M1's open half.
+- **Checked now, exhaustively (8 rows, three frames):** the lab column c′ = c_L ⊕ (c ∨ c_R), the right diagonal
+  R′ = R ⊕ (R₁ ∨ R₂) and the left wheel D′ = w ⊕ (u ∨ d) are one gate with the cell's own value in a different slot, and each is
+  a **masked integrator** x′ = (m ∧ x) ⊕ s: right edge m ≡ 1 (never reset), s = the OR of the two bits below; left wheel m = ¬u
+  (reset at every black of the nearer wheel), s = w ⊕ u; lab column m = ¬c_R (reset at every black of the right neighbour),
+  s = c_L ⊕ c_R. The complement form e′ = a ⊕ (¬b ∧ e) is CL697's F1 variable. PROVED (truth table; `python3` inline).
+
+**What the owner's reading adds: the dynamics.** A cell's *form* is its mask regime, and the form changes when the regime
+changes: (i) unmasked (m ≡ 1): the gate clock, periodic from the start with a power-of-two period, our 7b0d12 for every gate;
+(ii) periodically masked with a black: the reset law, eventually periodic (the kit's `reset_periodic`, our F1–F3); (iii) masked
+by news: the core, where the prize questions live. So:
+1. **The settling cascade is transmutation (ii) sweeping outward:** the band edge B_P(t) (CL69x) is the locus where wheels pass
+   from regime (iii) to (ii); the crystal is the frozen wake of that front; its form is universal (§8.31) because the reset
+   erases the seed. The right edge needs no front: it is born in regime (i).
+2. **At a white wheel the left side becomes the right side for one wheel:** with u ≡ 0 the next wheel is an unmasked
+   integrator of the farther parent (F1: the complemented running parity), i.e. the affine gate clock g(b, c) = c of 7b0d12,
+   and its period doubles exactly by the gate clock's rule (odd weight over the period, Rowland's Prop. 2, §9.2's parity). The
+   left side's sparse doublings (2, 7, 28, 399, 53,207, 58,286, 87,866) are the odometer's dense doublings filtered by the
+   coincidence events of F3; §9.2 showed the coincidences arrive at a fair-coin rate 2^(−P). That is a transmutation in the
+   owner's sense: the same object, in its right-edge form, appearing inside the left side at the coincidence events.
+3. **Conversion fronts transmute backgrounds:** an inserted edge turns a phase into its wake, periodic with its own law for
+   G8, the 480-phase and P1024 (T37's speeds), the odometer for G16, pinned for the classic ether (A1, speed 0), and A4's
+   moving walls at 5/19 and 2/9. The velocity spectrum (CL678) is the table of these transmutations; A5 says a background
+   that ends every episode cannot be re-formed for ever behind a black edge.
+4. **The centre column is the masked integrator whose mask is news** (its right neighbour), and Problem 1 reads: an
+   integrator of column −1 reset by column 1 is never eventually periodic; the period-2 case replaces the news mask by the
+   clock, which is Q01, and Bosdure's F = Φ ≫ 1 is the odometer with the wall discarding one bit per step. C4's bridge (the
+   centre's balance as OR-event parities over integration windows) is the same object read for Problem 2.
+Nothing in 1–4 is a new theorem; it is one reading of PROVED pieces, and the glue the owner asked for is the reading itself:
+the forms are regimes of one gate, and the fronts of the record are where regimes change.
+
+**Two bounded tests, predictions first (not run; the owner chooses).**
+- **T-a, the two crystal fronts of the single seed (cheap, this host, minutes).** Left: the settling frontier B(t), the deepest
+  wheel settled by time t (from `left_settle.out` and CL69x). Right: J(t), the deepest right diagonal that has completed a
+  period within the pattern's age, J(t) = max{j : j + 2^(e_j) ≤ t}, with e_j from the kit's doubling rule to j ≈ 60.
+  **P-T1:** B(t) grows linearly, about 0.8 t (CL69x's band edge); **P-T2:** J(t) grows like 2.4 log₂ t + c with c between −4 and
+  4 (the doubling density 0.42 per depth: 2^(0.42 j) ≈ t). Teaches: forgetting (the reset) is what makes a crystal grow at a
+  finite speed, remembering (the odometer) makes it grow only logarithmically; the core between them is where Problems 1–3
+  live, and its width is t − 0.8 t − 2.4 log t. Counterfactual: J(t) superlinear in log t would mean the doubling density
+  falls with depth, against CL645's 0.42 to j = 92.
+- **T-c, the news frame (deeper; a block of hours).** The atlas grid's empty row, v = −0.246: nobody has written the dynamics
+  in the frame where the order/disorder boundary stands still. The morphic object proper would be what is *stationary* there:
+  the band edge's step law (0, 1, 2 wheels per step, max 14; §8.74) and the heal table (band_edge_coin.py, CL69x) are its
+  first measured pieces. Test: write the left-frame rule in the co-moving frame of B(t) and look for a finite-state description
+  of the boundary layer, as T38–T40 did for the comoving layer behind periodic-wake fronts. Prediction: none yet; a day's
+  block with its own predictions.
+
+**Record searched:** `record_find` "integrator", "masked integrator" (0), "transmut" (0), "morphic", "one recurrence", "same
+object"; atlas §1, §2 (the grid), §3, §6 (T1–T3), §9.2 (M1); the kit's `Rule30MaskedJen` (its "masked" is the same OR mask) and
+`equivalents/PeriodicPoints` (intermediate frames: periodic points spatially periodic). The masked-integrator table and the
+white-wheel-as-gate-clock identification are the new wording; the facts are §9.2's and CL697's.
+
+My own pull: T-a now, at the owner's word (it is cheap and it makes the transmutation picture quantitative), then T-c as the
+first block on the atlas's empty row.
