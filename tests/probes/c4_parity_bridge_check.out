@@ -1,0 +1,3 @@
+t = 2 .. 1501: centre = XOR of O_t (center_eq_parity) 1500 of 1500; c = A XOR B 1500 of 1500
+sum chi(B) = -44 = D0 + D1 = 11 + -55: True; sum chi(c) = 66 = D0 - D1: True
+C4_BRIDGE_DONE
