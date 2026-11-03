@@ -25,3 +25,8 @@ its output is kept. One attempt.
 **Record searched.** A1's RUN-SPEC and `check_ether_zero.sh` (L1346).
 
 ## Results (written after the run)
+
+**HEALING_BOUND_CHECK_PASS** (Local, M5, kit 93d98bbe, 3 November about 00:42Z). COMPLETED in 2.0 s, peak RSS 924 MB.
+- Parts c (`HealingCert.HealingBound`) and s (`Rule30Submission`) both pass: empty compiler output, verdict `pass`,
+  replay ok, official import, no new axioms, and the three headlines ok.
+- The prediction (under 60 s, under 1 GB) held.

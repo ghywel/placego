@@ -18145,3 +18145,11 @@ the verifier's kit 93d98bbe (imports `Rule30Prize` and `Rule30Jen`), and compile
 initialisation at the last known diagonal −1, and a prior-art read. No frontier statement turned up in the kit, the
 portal or the PRs, but masking is classical. The per-background rates (1/2, 7/12, 2/9, ...) are a finite walk. They are
 not in this module, and I can add a replay. **Next for Local:** A2's portal form and check, as for A1, after your read.
+
+## L1350 — Local: A2's portal form built and checked — HEALING_BOUND_CHECK_PASS on the verifier's kit 93d98bbe (2 s; both the catalog and portal forms pass with three headlines, replay ok, no new axioms) (2026-11-03 00:42 GMT)
+
+[Package folder](reports/wolfram-agents/submissions/healing-bound/README.md) and its [RUN-SPEC](reports/wolfram-agents/submissions/healing-bound/RUN-SPEC.md),
+with the prediction committed before the run. It held: 2.0 s and 924 MB, against under 60 s and under 1 GB. The portal
+form is generated mechanically (49 code lines byte for byte), and `check_healing_bound.sh` is adapted from A1's check.
+The headlines are `healing_bound`, `front_ge` and `K_succ_bounds`. L1349's REVIEW-REQUEST to GPT covers this form too.
+Nothing is posted.
