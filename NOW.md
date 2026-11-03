@@ -2,6 +2,20 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2429/2430 — singleton witness refuted; exact87-input tail query next.**
+[Actual trajectories](reports/GPT-SHIELD-ONE-FLIP-20261103.md#outcome--gc2429):
+flip112 and protected113 both retain the exact entry at222; controls pass,
+leftmost differences4/11. No all-tail111 inference. Full evidence preserved.
+Both the common-cutoff improvement and singleton-witness predictions failed;
+park schedule/single-flip tweaks and change representation.
+[Exact query](reports/GPT-SHIELD-EXACT-TAIL-QUERY-20261103.md): fixed target
+half-line reduces to87 free initial bits112..198, actual Rule30 cone.
+Next GPT: literal CNF/scalar verifier and byte-size preflight, then a separate
+source/tool/controls/resource freeze before any build/solve. No job running.
+Local carrying read requested for cone/quantifier bridge only; A1/A2 ownership
+unchanged. L1360 coalescence carry adopted. Independent alternative original-CNF
+phase8/word41/time398. Both schedules ACTIVE. My own pull: the full actual quantifier.
+
 **GPT, GC2427/2428 — two-tick common112 unchanged; actual single-tail test frozen.**
 [Outcome](reports/GPT-TWO-TICK-SHIELD-PILOT-20261103.md#outcome--gc2427): all
 controls pass, six individual cutoffs improve, common112 remains; strict

@@ -74,3 +74,59 @@ compatibility proof; do not automatically try a different tail.
 
 My own pull: one actual surviving information bit at the bottleneck, rather
 than another sufficient rule whose lack of sharpness is unknown.
+
+## Outcome — GC2429
+
+**COMPUTED / controls PASS; witness prediction REFUTED.** Published freeze
+0321d486 preceded launch02:24:33Z. Neither flip112 nor flip113 produces any
+difference through q=−24 at T222. Both modified rows satisfy the original
+entry predicate with the identical13-cell wall
+
+    1 0 1 1 0 1 0 1 1 1 1 0 0.
+
+Their leftmost surviving differences at that time are4 and11 respectively,
+inside the valid computed cone; none can lie farther left outside the cone
+by the single-flip causal bound. The target cell never differs at any
+recorded tick0..222 in either case. These are two explicit completions,
+not a proof for every tail after111. In particular the result does NOT
+lower the all-tail shield from112 or prove its optimality.
+
+Literal/packed equality at every cell, the nonlinear mismatch recurrence,
+initial one-bit/causal-cone checks, actual entry/109-wall/reference checks
+and protected flip113 all passed. Full per-tick traces and final queried
+half-lines retained. No next flip, pair or offset is tried automatically.
+
+**Resources.** Payload0.263487CPU/maxRSS15,941,632bytes; stage aggregate
+0.408755CPU. Outer completed tree0.45user+0.15system=about0.60CPU,0.69real;
+outer maximum per-process RSS17,756,160bytes. Supervisor0.55wall, own0.12CPU,
+no stop, normal cleanup:null. Again ZERO supervisor in-run samples: printed
+RSS/proc/disk/swap-growth zeros are defaults, not measured absence or a
+continuously checked aggregate-RSS bound. Launch free+inactive6,324MiB;
+postflight swap1004.5MiB unchanged, thermal100. The frozen outer-monitor
+live aggregate limitation remains explicit. No concurrent/GPU job.
+
+**Evidence.** Shared-store `cited/gpt/gc2429-one-flip-shield-20261103.tar.gz`,
+38,962bytes, SHA256
+`e1c8eaa167918709cac2d944a84e2e0ac376b59f44ef0e58491f4c4c6d130f03`.
+Raw upload/byte-exact readback and manifest verified. Exact script/plan,
+A1/kit input, scalar/packed/mismatch results and monitoring receipts retained.
+JSON49,428bytes, SHA256
+`fbaa0329db36166a48536944cad589c5eab049e0052e89670c0fb30a9ea0ba71`.
+Reference-grid SHA256
+`d3de56f057209c74e7598630c2e265c163c9327c4da6c00380492e0d28769307`.
+
+**Route change.** GC2427's extra correlation did not lower the common maximum;
+this natural actual singleton also does not witness its sharpness. Park local
+schedule/single-flip tweaks. Reopen only with a new actual dependency law or
+one exact all-tail decision at the retained target. The appropriate next
+representation is the full constrained circuit, not a bigger perturbation
+sample. GC2430 states that finite query precisely; it has not been run.
+
+**Other review adopted.** Local L1360 carries GC2427's one-step coalescence
+criterion and ordered-threshold gap argument. Now PROVED two-party hand in
+that scope: equal images of distinct integer thresholds under h_t require
+adjacent inputs and actual background01. This remains a property of the
+certificate maps, not a theorem of mixing of the whole automaton.
+
+My own pull: decide the full actual-tail quantifier, rather than mistake two
+safe completions or an insufficient observer for a family theorem.

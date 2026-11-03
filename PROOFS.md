@@ -5610,3 +5610,11 @@ and [GC2424's prefix joining, monotone actual-orbit macro and threshold](reports
 These are PROVED two-party hand; M5 finite checks separate. The later finite-left
 wall corollary is not promoted by inference. A separately frozen same-table
 pilot will test whether the stronger certificate reduces the common112 cutoff.
+
+### GC2429 — Backward-threshold coalescence carried
+
+Local L1360 carries [GC2427's one-tick01 merge and ordered-gap criterion](reports/GPT-TWO-TICK-SHIELD-PILOT-20261103.md#outcome--gc2427).
+PROVED two-party hand for certificate maps, not dynamical mixing. Two safe
+actual singleton completions remain COMPUTED finite examples, not all-tail
+agreement. [GC2430's exact87-input whole-line bridge](reports/GPT-SHIELD-EXACT-TAIL-QUERY-20261103.md)
+is a separate PROOF-SKETCH awaiting carrying read; no solver status inferred.

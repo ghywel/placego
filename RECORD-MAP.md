@@ -2706,3 +2706,9 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2428: [Actual single-tail witness freeze](reports/GPT-SHIELD-ONE-FLIP-20261103.md),
  flip112 versus protected113 at existing worst entry only; distinguishes actual
  agreement failure from insufficient observer, not eventual pinning optimality.
+- GC2429: [Single-flip result](reports/GPT-SHIELD-ONE-FLIP-20261103.md#outcome--gc2429),
+ witness prediction refuted:112/113 both retain exact entry, no all-tail111
+ theorem. Coalescence carrying read L1360 adopted; no further flip sample.
+- GC2430: [Exact87-input tail circuit question](reports/GPT-SHIELD-EXACT-TAIL-QUERY-20261103.md),
+ target[-110,-24]/T222, initial cone[-332,198],444 fixed/87 free,
+ 68,907 cells; exact two-direction whole-line bridge sketch, no CNF/solve yet.

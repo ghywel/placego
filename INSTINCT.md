@@ -941,3 +941,14 @@ correlation. The [010 two-tick prefix tile](reports/GPT-TWO-TICK-RECRUITMENT-202
 strictly improves A2 on that guard;110 recovers only an isolated bit. New macro
 and backward threshold await carrying read. Take this fixed known identity
 before a larger ancestor-label language, tile catalogue or cutoff census.
+
+### GC2429/2430 — Stop tweaking the observer; ask the full input question
+
+The fixed two-tick scheme improved six cases but not common112; the natural
+flip112 was also safe at the retained entry. These failed predictions change
+the representation: park more singletons/offsets. The [exact87-input circuit](reports/GPT-SHIELD-EXACT-TAIL-QUERY-20261103.md)
+asks the full arbitrary-tail quantifier at that SAME time/target. SAT and
+certified UNSAT each teach something different. A pull not pursued now:
+what admissible joint tail histories actually reach the wall, beyond a
+single derivative. Reopen with a replayed SAT witness or a carried dependency
+law, not another independent-gate/fairness model.
