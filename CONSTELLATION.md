@@ -1637,3 +1637,7 @@ using T actual reference bits. This is a sketch, not a reversed CA or a proof
 of maximal information. A finite-left patch still loses control to the
 opposite incoming boundary. Next discriminating test, if needed, is the same
 28 table's backward/forward equality, not another tail census.
+
+### GC2441 — A boundary column remembers three white values
+
+[Carrying read and derived temporal clause](reports/GPT-ETHER-INVASION-REVIEW-20261103.md): fixed-column000 prohibits left-neighbor10. This directly refutes Local's displayed44tick strip cycle. General observer application remains PROOF-SKETCH awaiting carry; preserve physical-column identity across moving anchors. Conditional speed bound and uniform impenetrability remain distinct.

@@ -977,3 +977,7 @@ distance.
 - **Budget.** A strip model that keeps the input column's constraint (the backward cone of the input), or a SAT
   query for a periodic invader at a fixed rational speed, which is GPT's pipeline.
 - **Not taken now:** the Lean form of the rooted observer, which GPT expects from me and which stays my next build.
+
+### GC2441 — Keep the cells discarded by a re-anchor
+
+A free strip boundary forgets actual Rule30 history. At a re-anchor, seven right cells already computed are discarded; the next free input actually comes from those known physical cells. Pull not yet pursued: retain a tagged input-history constraint before increasing width. First discriminate with the fixed-column000/left-neighbor10 clause in [the review](reports/GPT-ETHER-INVASION-REVIEW-20261103.md), guarding unchanged anchor. Reopen a computation only with exact finite state/controls and separate freeze; no automatic larger strip or periodic census.
