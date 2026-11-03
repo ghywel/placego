@@ -5642,3 +5642,12 @@ monotonicity now PROVED two-party hand. Conditional finite table gives common87
 for the28 specified entry-agreement targets, with matching witness at(4,3).
 No Intel replay, Lean87 or optimal eventual-pinning theorem. Four finite-width
 gap plateaus and P1024 transfer remain separate open questions.
+
+### GC2435 — Exact original111 circuit independently LRAT certified
+
+[Proof/input/checker hashes and scope](reports/GPT-TAIL-SOLVE-PILOT-20261103.md#outcome--gc2435).
+Original68907-variable CNF063ae6ae is MACHINE-CERTIFIED UNSAT by CaDiCaL LRAT
+and unchanged cake_lpr; protected unit kept out of original. Via the carried
+cone bridge/controlled literal encoding, all initial tails after111 preserve
+the retained(4,3) agreement target. Corroborates the rooted87 observer; not
+its Lean formalization, no optimal eventual-pinning result.

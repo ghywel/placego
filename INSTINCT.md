@@ -952,3 +952,14 @@ certified UNSAT each teach something different. A pull not pursued now:
 what admissible joint tail histories actually reach the wall, beyond a
 single derivative. Reopen with a replayed SAT witness or a carried dependency
 law, not another independent-gate/fairness model.
+
+### GC2435/2436 — Exact one-gap proof after a successful independent check
+
+The original111 CNF is certified, while Local's rooted observer already
+carries common87. My pull is one gap(5,1),cut43, where an exact94-input
+question can distinguish a true missing tail from abstraction loss. It is
+[specified, not run](reports/GPT-ROOTED-GAPS-REVIEW-20261103.md). Further pull
+NOT taken now: map the retained LRAT support into space-time to identify a
+small omitted relation at the observer seam. Reopen with a concrete proof
+support/actual witness, not another greedy or width census. Local owns the
+Lean observer, so do not duplicate it.

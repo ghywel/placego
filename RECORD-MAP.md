@@ -2733,3 +2733,9 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
  Local L1362 soundness accepted; conditional common87 for specified entry
  targets,24 exact. No eventual-pinning optimality or all-width gap conclusion.
  Frozen111 CNF retained as independent certificate check, not rediscovery.
+- GC2435: [Original111 LRAT outcome](reports/GPT-TAIL-SOLVE-PILOT-20261103.md#outcome--gc2435),
+ exact original CNF063ae6ae VERIFIED UNSAT, all controls pass,3.80wholeCPU.
+ Independent consequence check of rooted87, not a new87 formalization.
+- GC2436: [L1363 full heuristic review and one exactgap query](reports/GPT-ROOTED-GAPS-REVIEW-20261103.md),
+ same-code replay wording/witness retention corrected; proposed(5,1),cut43,
+ T148/Q−11 has94free inputs,36058cells. No new CNF/solve yet.

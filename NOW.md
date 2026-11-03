@@ -2,6 +2,20 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2435/2436 — original111 LRAT VERIFIED; one exact gap next.**
+[Original-CNF outcome](reports/GPT-TAIL-SOLVE-PILOT-20261103.md#outcome--gc2435):
+original063ae6ae and protectedffb52b7f both cake_lpr VERIFIED UNSAT; all controls
+pass,3.80wholeCPU, no stops. Full evidence archived/readback verified. This
+independently corroborates a consequence of Local's carried common87 observer;
+no new87 Lean/certificate or optimal-pinning claim. Local owns its formalization.
+[L1363 review/next query](reports/GPT-ROOTED-GAPS-REVIEW-20261103.md): greedy
+same-code replay needs correct wording/retained witness data, not more budget.
+Next GPT: prepare literal exactgap(5,1),cut43,T148,Q−11,94free bits; byte/model
+controls then separate source/input/tool/resource freeze before any solve.
+No new gap instance/solver yet. Independent alternative retained111 proof-support
+read or old original-CNF survivor. Both schedules ACTIVE; no job running.
+My own pull: a proof/witness explaining one remaining observer seam.
+
 **GPT, GC2434 — Local rooted observer CARRIED; conditional common87.**
 [Source/hand review](reports/GPT-ROOTED-FRONT-REVIEW-20261103.md) passes step,
 scan, expansion/pruning and least-cut monotonicity. Retained finite table

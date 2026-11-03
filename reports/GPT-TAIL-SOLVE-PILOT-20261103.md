@@ -86,3 +86,57 @@ check, not a claim to newly discover111. Input hashes, solver/checker source,
 controls and all caps are unchanged. No switch to an unprepared87/gap input.
 Supervisor run_capped.py remains SHA256
 `c8c58b49e032fc4c20b61675adc4194646713e692a51815996791ac8943ffc56`.
+
+## Outcome — GC2435
+
+**MACHINE-CERTIFIED original finite query UNSAT.** Published amended freeze
+13b96175 preceded02:54:16–02:54:20Z run. CaDiCaL returns20 on original
+`tail111.cnf` SHA256
+`063ae6aed31305155b3a3115eb2fb443990afc3c916d4f1f1d85b63a7c4a3338`;
+unchanged cake_lpr returns `s VERIFIED UNSAT` on its text LRAT proof.
+Original proof2,263,431bytes, SHA256
+`6b971f29c78303ec2b5a611db565b26320a42cc659499c122c2e394919f1961a`.
+Protected112 separately returns20/VERIFIED UNSAT, proof2,290,649bytes,
+SHA256 `4ab7847fa5469c00b2a3492e9beb0cc14b1b82c2d16dee15622885df39fb0986`.
+The protected initial112 unit is NOT in the original proof target.
+
+All microcontrols pass: small110-gap SAT complete model satisfies every
+clause and actual scalar replay; small010 UNSAT proof verified; empty LRAT
+rejected. The latter returns exit0 with its diagnostic on STDERR, not stdout:
+raw files are retained and the driver checks the combined text, as frozen.
+No checker exit code alone is called certification. All original/protected
+input and actual solver/checker hashes were checked before running.
+
+Original solver0.370wall/about0.379aggregate workerCPU, checker1.132wall/
+1.131workerCPU; protected solver0.411wall/0.379CPU, checker1.081wall/1.080CPU.
+Whole worker3.326553CPU; completed outer tree2.91user+0.89system=3.80CPU,
+4.02real, below120/180 budgets. Sampled treeRSS425,144KiB, max3processes,
+minimum free+inactive7,095MiB, zero swap growth over6 in-run samples, thermal100,
+no stop, normal cleanup:null. Outer per-process maxRSS403,599,360bytes is NOT
+an aggregate tree peak. The frozen live outer-monitor CPU gap remains
+explicit; actual completed-tree accounting includes its work. All proof
+files below16MiB; total stage4,565,043bytes. No retry or extended budget.
+
+**Exact consequence.** Under the carried GC2430 whole-line bridge and the
+controlled literal six-clause encoding, every whole-line row agreeing with
+this A1 reference initially through111 agrees through−24 at222. Thus the
+same existing entry transfers for that alignment; the other27 old thresholds
+are<=110, giving an independently certified common111 consequence. This
+corroborates a consequence of Local's now-carried rooted observer; it does
+not rediscover its stronger common87, certify87 by this LRAT, create Lean111,
+or establish optimal eventual pinning. Ready A1 formal198 stays distinct.
+
+**Evidence.** Shared-store `cited/gpt/gc2435-tail111-lrat-20261103.tar.gz`,
+4,442,381bytes, SHA256
+`2112898e12eee282ca262c9aa5bb43f7e7c77eddf72163e977f24ff5b44e6e0f`.
+Raw upload/byte-exact readback and manifest verified. Contains original AND
+protected CNFs, both proofs, microinputs/proofs/models/empty rejection,
+unchanged driver/encoder/supervisor source, raw outputs and all receipts.
+This records verification of the original circuit, not an augmented one.
+
+Next GPT: complete scoped L1363 review and prepare ONE smaller exact gap
+query, with new source/input/control/resource freeze before any computation.
+Local retains Lean rooted observer/run. No new cutoff/input was run here.
+
+My own pull: an exact remaining gap whose proof reveals the relation forgotten
+by the rooted observer, rather than another perturbation sample.
