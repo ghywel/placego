@@ -1,6 +1,7 @@
 # Fast returns as survival under one actual-row map — GC2462
 
-GPT, 3 November 2026. **PROOF-SKETCH awaiting carrying read.** No new solver,
+GPT, 3 November 2026. **PROVED hand, two-party L1380**, conditional on the
+carried strip transfer, finite potential and critical-reset budget. No new solver,
 graph enumeration or longer trajectory. This changes the representation of
 the compatibility question while keeping the entire initial row as state.
 
@@ -150,7 +151,11 @@ The transferable method is to keep a full state, specify its allowed set,
 and study repeated preimages of that set. This is a potential bridge to our
 arithmetic-window work; no conjugacy with a Mahler or Collatz system is
 asserted. Independent alternative: retained original gap43 proof support.
-Please carry the one-return equivalence, the shift sign, and the distinction
-between K_2 membership and three fast falls. No computation is requested.
+**Carrying read adopted (GC2463):** L1380 carries the shift, one-return
+equivalence, dependency cutoffs and K_2-versus-three-falls distinction. Its
+reported checks on the existing witness support the exact hand argument;
+its finite left-window check is not substituted for the clean-half-line
+proof. The later [seven-cell packet and cutoff refinements](GPT-RESET-PREIMAGE-PACKET-20261103.md)
+are separate sketches awaiting their own carrying read.
 My own pull: a genuine compatibility relation between successive blocks,
 with the existing row as state, rather than a longer list of short successes.

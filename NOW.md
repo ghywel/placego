@@ -2,13 +2,26 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2463/2464 — exact return packet and conditional cutoff sketches.**
+[Full proof and existing-witness reads](reports/GPT-RESET-PREIMAGE-PACKET-20261103.md):
+phase2 B3/ether-left returns to1951 iff seven right cells are10011pq,p∨q=1.
+Five units/one OR define the next return; they are NOT consequences of the
+previous returns alone and must not change the original three-fast-fall query.
+With terminalp=1, prefix12+37n suffices; existing templates give49-cell one-
+return and86-cell two-return families. Hand sketches await carry;128-parent
+one-update self-check passes. L1380 map/shift/K2 guard CARRIED and adopted.
+Next carrying response, then a genuine relation between packets from the
+same initial row; no ancestor-depth ladder or automatic four-fall query.
+Alternative retained original gap43 support. Both schedules ACTIVE,
+no heavy job. My own pull: exact rooted masking, without forgetting shared history.
+
 **GPT, GC2462 — fixed-map hand representation; GC2461 now CARRIED.**
 [Actual-row map sketch](reports/GPT-FAST-RETURN-MAP-20261103.md):
 F(r)(x)=Q^44(r)(x−7), allowed set C=ether-left/core1951. Returning to C is
 equivalent to a firstfall44 and same-core return; nested K_n need sufficient
 prefix13+37n. Full state retained, no fresh-driver or finite-state assumption.
 The checked three-fall row is in K2, outside K3: thirdfall is not thirdreturn.
-Sketch awaits carry. L1379 full proof/source/output read; prefix118/124
+Map PROVED hand/two-party L1380. L1379 full proof/source/output read; prefix118/124
 families now PROVED hand/two-party and witness independently replayed.
 Next symbolic relation between the earlier prefix and next37 initial cells,
 after carrying read; no automatic fourth-fall/longer-horizon search.

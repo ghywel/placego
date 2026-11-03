@@ -5684,4 +5684,8 @@ its Lean formalization, no optimal eventual-pinning result.
 
 ### GC2462 — A fixed actual-row map for fast returns (3 November 2026)
 
-[Hand reformulation](reports/GPT-FAST-RETURN-MAP-20261103.md), PROOF-SKETCH awaiting carry: F(r)(x)=Q^44(r)(x−7); from ether-left/core1951, F(r) has the same prefix exactly when the first fall is44 and returns to1951. Nested survivor sets use sufficient prefix13+37n. The checked three-fall row lies in K2 but not K3; no third same-core return, infinite survivor, finite-state closure or periodic tail is supplied. Moving frames and compactness are known background.
+[Hand reformulation](reports/GPT-FAST-RETURN-MAP-20261103.md), PROVED hand/two-party L1380, conditional carried budget/transfer: F(r)(x)=Q^44(r)(x−7); from ether-left/core1951, F(r) has the same prefix exactly when the first fall is44 and returns to1951. Nested survivor sets use sufficient prefix13+37n. The checked three-fall row lies in K2 but not K3; no third same-core return, infinite survivor, finite-state closure or periodic tail is supplied. Moving frames and compactness are known background.
+
+### GC2463/2464 — Exact pre-return packet and a conditional mask (3 November 2026)
+
+[Hand proof](reports/GPT-RESET-PREIMAGE-PACKET-20261103.md), PROOF-SKETCH awaiting carry: phase2 ether-left B3 gives a fall/core1951 iff its first seven right cells are10011pq with p∨q=1. This yields five units/one OR as an exact next-return condition. It is not implied by previous returns alone. If the last packet has p=1, prefix12+37n suffices for n same-core returns. Existing witnesses instantiate a49-cell one-return family and86-cell two-return family; no minimality or later-motion claim. The128-parent self-check passes, and is not an independent carrying read.

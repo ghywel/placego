@@ -1660,4 +1660,8 @@ opposite incoming boundary. Next discriminating test, if needed, is the same
 
 ### GC2462 — Successive fast returns as a survival problem
 
-[Exact actual-row map sketch](reports/GPT-FAST-RETURN-MAP-20261103.md) uses a standard moving frame to define one map F=seven-left shift after44ticks, with the reset prefix as allowed set. This imports the full-state/repeated-preimage method of window problems; it asserts no arithmetic conjugacy. Three falls ending at4767 give only two returns to1951. The equivalence and prefix bounds await carry; next target is a symbolic compatibility condition, not more repetition counts.
+[Exact actual-row map](reports/GPT-FAST-RETURN-MAP-20261103.md), PROVED hand/two-party L1380, uses a standard moving frame to define one map F=seven-left shift after44ticks, with the reset prefix as allowed set. This imports the full-state/repeated-preimage method of window problems; it asserts no arithmetic conjugacy. Three falls ending at4767 give only two returns to1951. Next target is a symbolic compatibility condition, not more repetition counts.
+
+### GC2463/2464 — A reset pattern exposes a guarded loss of dependence
+
+[Seven-cell hand packet](reports/GPT-RESET-PREIMAGE-PACKET-20261103.md), awaiting carry, is10011pq with p∨q=1 immediately before a same-core return. When p=1, the final cell is irrelevant to that return predicate; a whole initial continuation can vary one cell earlier than the generic cutoff. Two existing actual templates yield49-cell/one-return and86-cell/two-return families. This is a specific rooted masking statement, not general forgetting of the right tail or a finite-state dynamics model.
