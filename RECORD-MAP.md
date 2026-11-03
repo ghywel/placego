@@ -2969,3 +2969,28 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 
 - [Revised source and nb1](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md#l1465-actual-nb1-packet-read--gc2568-technical-pass): exact lcm source/portal transformation, actual icon source, all7 notebook outputs and raw Check74/six headlines PASS. No Intel build or public verification.
 - Cloud read and owner posting word remain required; Local owns delivery. Fixed-depth and existential pasted-point guards preserved. Manifest repair records GPT's own read. Complete external refresh16:34:54Z, kitc42f6e51, A4supersession already carried.
+
+
+## GC2569–2571 — root-only forcing and coloured boundary obligations (3 November 2026)
+
+- [Fixed root trace and carrying tableau](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#root-only-implication-found--gc2570): single published run PASS,0.21whole-stage CPU; ordinary masking alone unknown, a10 derives target.234-node checked DAG,25 initial leaves,17 two-step entries in compact table. New arbitrary-exterior25-cell word implication awaits Local carry; no path assumptions, solver or census.
+- [Signed15-state monitor sketch](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#signed-two-tick-boundary-forecasts--gc2571-proof-sketch-not-built): white as well as black forecasts; exact stay/retreat updates and common-input conflict guards. No replacement/dominance of old0011 monitor or product closure claimed.
+
+
+## GC2572 — Cloud's A5 and synthesis reviews carried (3 November 2026)
+
+- [CL699 wording correction](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md#cl699-wording-correction-adopted--gc2572): "from some depth on" replaces ambiguous "below"; old nb1 prose clearance superseded. Local's L1468 nb2 received, actual re-read next; owner posting word remains separate.
+- [CL700 revised synthesis](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#cl700-revised-synthesis-read--gc2572): principal repairs accepted; actual-anchor review gate, introductory verification scope and two empirical sample pointers remain. Older source audit stays with Cloud.
+
+
+## GC2573–2574 — A5 nb2 cleared technically; independent monitor carry (3 November 2026)
+
+- [A5 nb2 actual read](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md#l1468-actual-nb2-re-read--gc2573-technical-pass): required Cloud wording repaired, exact source/output correspondence and raw Checks pass; owner posting word separate. P480 time period32 gives horizon256; printed3840 remains a valid nonminimal-period bound.
+- [L1469 carry](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#l1469-independent-carry-adopted--gc2574): signed monitor PROVED hand/two-party. Root implication independently accepted via reported16,384-completion exhaustion; source/output/digest provenance requested, no duplicate run or minimality claim.
+
+
+## GC2575–2578 — boundary memory refinement and A5 publication read (3 November 2026)
+
+- [GC2576 Local exhaustion evidence](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#l1470-exhaustion-source-and-receipts-read--gc2576): complete source/raw controls read; universal25-cell forcing accepted two-party, no rerun/Lean/minimality claim.
+- [GC2577 observer](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#reusing-due-colours-and-the-dropped-cell--gc2577-proof-sketch): due-colour feedback plus one-step dropped-cell retention, still at most15 states; hand proof covers all seven0011 arrival schedules. New accepted paths subset old, saved t19 rejected. PROOF-SKETCH pending Local carry, no graph or product run.
+- [GC2578 A5 public read](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md#l1471-public-outcome-independently-checked--gc2578): public d37d24 Lean Verified; exact cleared source/notebook and PR116 head module/catalog checked. PR open/unmerged, no Human Verified tag; GPT COMPLETE refresh unchanged.

@@ -19,11 +19,12 @@ An **episode** of `T` ticks at depths `k, k + 1` with alignment `a` is a run `t 
 * `eternal_of_long`: such an episode gives an **eternal point**: paste `E` beyond depth `k + 1`;
   the code returns to itself after `horizon k p` ticks and follows `E` at every depth `≥ k`.
 * `eternal_of_eventual`: a pair that follows `E` from some onset on, for ever, also gives an eternal
-  point; behind a black edge, eventual and eternal tails are the same question.
+  point (a pasted code, not necessarily the original one); behind a black edge, eventual and eternal
+  tails are the same question for the phase.
 * `mfinite_iff`: the longest episode at depth `k` is finite iff no episode reaches
   `horizon k p` ticks, and then it is at most `horizon k p - 1`.
 * `episode_bridge`: **every depth has a finite longest episode iff no eternal point of any period
-  follows `E` below some depth.**
+  follows `E` at every depth from some depth on.**
 * `g8_mfinite`, `g8_no_eternal`, `g8_mfinite_of_grounding`: for the kit's eight-tick ether the
   bridge's two sides are the kit's `episode_bound_all` and `no_eventual_ether_pair`; the last
   derives finiteness from grounding alone, through the bridge.
@@ -223,7 +224,7 @@ theorem mfinite_iff {E : Nat → Nat → Bool} {p : Nat} (hE : IsPhase E p) (k :
     rwa [Nat.sub_add_cancel (horizon_pos hE.pos k)] at hep
 
 /-- **The episode bridge**: every depth has a finite longest episode iff no eternal point of any
-period follows `E` below some depth. -/
+period follows `E` at every depth from some depth on. -/
 theorem episode_bridge {E : Nat → Nat → Bool} {p : Nat} (hE : IsPhase E p) :
     (∀ k, MFinite E k) ↔ ¬ EternalTail E := by
   constructor

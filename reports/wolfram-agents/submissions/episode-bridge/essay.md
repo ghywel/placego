@@ -63,7 +63,8 @@ $$\bigl(\forall k,\ \texttt{MFinite}\ E\ k\bigr) \iff \neg\, \texttt{EternalTail
 
 An eternal point gives an infinite episode at its own depth, and conversely an episode of $H(k, p)$ ticks gives an
 eternal point. **`eternal_of_eventual`**: a pair that follows $E$ from some onset on, for ever, also gives an eternal
-point. Behind a black edge, "eventually follows the phase" and "eternally follows it" are the same question.
+point. Behind a black edge, "eventually follows the phase" and "eternally follows it" are the same question (for the
+phase; the eternal point is a pasted code, not necessarily the original one).
 
 ## Two controls
 
@@ -93,20 +94,26 @@ The two columns agree. This reproduces a known result, and is shown as an illust
 
 ## Related work and what is new
 
-- **The bridge** was proposed in our record by Cloud (CL676; the genealogy §38.2), and carried there by hand. Here it is
+- **The bridge** was proposed in our record by Cloud, the record's Claude (Anthropic) worker (CL676; the genealogy §38.2),
+  and carried there two-party (L1310). Here it is
   a formal theorem on the kit's objects.
-- **The kit.**
-  - `Rule30EtherEpisode` gives the exact longest episode for the eight-tick ether. Its ether is Troy Lowry's, from kit
-    PR 69.
-  - `Rule30EtherGrounding` proves that no black-edge code follows that ether eventually.
-  - `Rule30FrozenRuler` supplies the edge map and prefix autonomy.
-  - `Rule30GateClocks` supplies the uniform prefix period. It is our earlier submission
+- **The kit.** Of the five modules this one imports, four are our own earlier contributions and one is Troy Lowry's.
+  - `Rule30EtherEpisode` is ours ([R30-20261031-7c1f96](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261031-7c1f96)).
+    It gives the exact longest episode for the eight-tick ether, which is Lowry's ether from kit PR 69.
+  - `Rule30EtherGrounding` is Troy Lowry's, with OpenAI Codex and Claude (Anthropic). It proves that no black-edge code
+    follows that ether eventually.
+  - So the eight-tick ether's two controls are one theorem of ours and one of Lowry's, meeting through the bridge.
+  - `Rule30FrozenRuler` (the edge map and prefix autonomy) and `Rule30EdgeStaircases` (the rain code `rainA` and
+    `period_two_iff`, which the second control uses) are ours.
+  - `Rule30GateClocks`, the uniform prefix period, is ours too:
     [R30-20261030-7b0d12](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261030-7b0d12).
 - **New here, as a scoped comparison:** the formal statement for every periodic phase, the finite criterion with the
   explicit horizon $\operatorname{lcm}(2^{B(k+2)}, p)$, and "eventual is eternal".
-- **Scope.** No finiteness is decided for any new phase. The record's other phases (period 16, the 480-state phase,
-  period 1024) have computed episode tables, and the horizon makes their finiteness a finite question, but nothing
-  here computes it. Nothing here concerns the centre column of the single-cell pattern or the Prize problems
+- **Scope.** No finiteness is proved for any new phase.
+  - The record's exhaustive tables (period 16 to $k = 14$, period 1024 to $k = 8$, the 480-state phase to $k = 10$)
+    computed finiteness at those depths.
+  - The horizon ($1{,}024$, $1{,}024$ and $3{,}840$ ticks there) is what makes the question decidable at any depth.
+  - No Lean certificate of a table is given here. Nothing here concerns the centre column of the single-cell pattern or the Prize problems
   themselves.
 
 ## The formal proof
@@ -145,11 +152,12 @@ An **episode** of `T` ticks at depths `k, k + 1` with alignment `a` is a run `t 
 * `eternal_of_long`: such an episode gives an **eternal point**: paste `E` beyond depth `k + 1`;
   the code returns to itself after `horizon k p` ticks and follows `E` at every depth `≥ k`.
 * `eternal_of_eventual`: a pair that follows `E` from some onset on, for ever, also gives an eternal
-  point; behind a black edge, eventual and eternal tails are the same question.
+  point (a pasted code, not necessarily the original one); behind a black edge, eventual and eternal
+  tails are the same question for the phase.
 * `mfinite_iff`: the longest episode at depth `k` is finite iff no episode reaches
   `horizon k p` ticks, and then it is at most `horizon k p - 1`.
 * `episode_bridge`: **every depth has a finite longest episode iff no eternal point of any period
-  follows `E` below some depth.**
+  follows `E` at every depth from some depth on.**
 * `g8_mfinite`, `g8_no_eternal`, `g8_mfinite_of_grounding`: for the kit's eight-tick ether the
   bridge's two sides are the kit's `episode_bound_all` and `no_eventual_ether_pair`; the last
   derives finiteness from grounding alone, through the bridge.
@@ -351,7 +359,7 @@ theorem mfinite_iff {E : Nat → Nat → Bool} {p : Nat} (hE : IsPhase E p) (k :
     rwa [Nat.sub_add_cancel (horizon_pos hE.pos k)] at hep
 
 /-- **The episode bridge**: every depth has a finite longest episode iff no eternal point of any
-period follows `E` below some depth. -/
+period follows `E` at every depth from some depth on. -/
 theorem episode_bridge {E : Nat → Nat → Bool} {p : Nat} (hE : IsPhase E p) :
     (∀ k, MFinite E k) ↔ ¬ EternalTail E := by
   constructor

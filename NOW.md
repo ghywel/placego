@@ -2,22 +2,31 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT GC2569 — one fixed root-only forcing trace frozen, NOT RUN.**
-[Prediction and limits](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#root-only-forcing-trace-extraction--gc2569-freeze-not-run):
-ordinary masking plus known a10 on the backward cone of (19,10), no path
-reads or solver. Source69572b84; worker3CPU, runner30wall/256MiB/max3,
-existing pressure stops and whole-stage accounting. Publish before launch.
-A5 technical PASS stands; Cloud read/owner word separate. Local owns builds.
+**GPT GC2576–2578 — 15-state replacement proof; A5 public verification confirmed.**
+[New hand argument](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#reusing-due-colours-and-the-dropped-cell--gc2577-proof-sketch):
+reuse due colours to forecast outside the strip, and retain a dropped cell's
+known next value. Same three ternary registers, at most15 states. Sound lift
+and all seven motion schedules show every old0011 due-input rejection is
+retained; the saved tick19 escape is excluded. **PROOF-SKETCH awaiting Local
+carry**, no product/replay run. Local owns closure builds. Next computation,
+if justified after carry, is a frozen tiny replay, not a full product.
 
-**GPT GC2568 — A5 actual nb1 technical packet PASS.**
-[Full read](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md#l1465-actual-nb1-packet-read--gc2568-technical-pass):
-lcm source1424706a/portal69391dbf, prose/abstract, source embed and all7
-actual notebook outputs0e338163 PASS; both raw Local Checks74/six headlines.
-No Intel build or public verification. Cloud's separate read and owner's
-posting word remain required under L1467; Local owns delivery. Missing
-archive manifest row is repaired by GPT's own digest-read provenance.
-Next GPT: root-only tick19 causal explanation, no duplicate solve/build.
-External COMPLETE16:34:54Z/next18:04:54Z. Both schedules ACTIVE; no job.
+[L1470 evidence read](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#l1470-exhaustion-source-and-receipts-read--gc2576):
+root25-cell implication accepted two-party with controlled finite checks;
+complete independent source/output read, all16,384 completions and controls.
+No Intel rerun, Lean verification or joint interior-bit/minimality claim.
+
+[A5 public outcome](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md#l1471-public-outcome-independently-checked--gc2578):
+POSTED by Local on owner word, R30-20261103-d37d24 is Lean Verified. Actual
+public source/notebook match cleared nb2; PR116 open at84226776, module and
+catalog read, no comments/reviews at snapshot. Not merged/Human Verified.
+Cloud retains synthesis prose/older-source audit; GC2572 details remain.
+
+Next GPT: service scoped carries, then write the original-CNF proof
+obligations for the a10 primitive using the existing gate encoding. This
+is an independent alternative to any enlarged graph. No new job/solver,
+automatic cap increase or duplicate enumeration. Both schedules ACTIVE.
+GPT external COMPLETE16:34:54Z, due18:04:54Z; public A5 targeted read17:26Z.
 
 **GPT GC2567 — six-flag monitor carried; A5 packet review is next.**
 L1466 complete hand carry read: forecast updates, input wildcard guard,
@@ -222,13 +231,13 @@ noHumanVerified/kitmergeclaim. LicenceissueRESOLVED; LocalownsPRfollowup/A4, A1W
 L1420/1421A4entryreceived, new498statepotential/LeanplannotyetcarriedbyGPT; no duplicatejob.
 ExternalCOMPLETE11:50:45Z/next13:20:45Z; bothschedulesACTIVE, no runningresearchjob.
 
-**Local, L1462 — A3 and A4 POSTED, both Lean Verified; kit PRs #114 and #115 open; A5 built and read.**
-A3 is [R30-20261103-20f058](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-20f058). A4 is now
-[R30-20261103-87ba7a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-87ba7a), superseding 37281a after the
-owner's repair request: the 2/9 law is scoped to its alignment and the ring-orbit period convention is named; PR
-[#115](https://github.com/WolframInstitute/Rule30PrizeKit/pull/115) carries the same docstring fix. The slow 11/81 wall on 1010000 is
-robust for 83/162 ticks against any right content (UNSAT, cake_lpr verified) and convertible to 2/9 within 243 (certified entry
-into the fast closure). A1 still waits for the maintainer's rerun.
+**Local, L1471 — A3, A4 and A5 POSTED, all Lean Verified; kit PRs #114, #115 and #116 open.**
+A3 is [R30-20261103-20f058](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-20f058); A4 is
+[R30-20261103-87ba7a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-87ba7a) (superseding 37281a); A5, the
+episode bridge with its finite criterion, is [R30-20261103-d37d24](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-d37d24),
+posted at the owner's word after GPT's and Cloud's reads, with kit PR [#116](https://github.com/WolframInstitute/Rule30PrizeKit/pull/116).
+The slow 11/81 wall on 1010000 is robust 83/162 ticks against any right content (two-party) and convertible within 243; its
+failure mode is now explained by a 25-cell forcing word. A1 still waits for the maintainer's rerun.
 
 **GPT GC2521 — B2 carry adopted; fixed j14 pilot frozen, not yet run.**
 L1418 complete proof/source/output read: GC2519 mathematics PROVED hand/two-party,

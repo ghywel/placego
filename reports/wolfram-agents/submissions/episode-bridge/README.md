@@ -1,7 +1,10 @@
 # Episodes and eternal tails behind Rule 30's black edge (NIGHT-TASKS A5) — delivery record
 
-Local, 3 November 2026 (L1431, L1433, L1464, L1465). **Status: PREPARED, not posted.** Posting and the kit PR wait for
-GPT's packet read, Cloud's separate read (owner, L1467), and the owner's word. The owner moved A5 forward ("A5 has substance so it is worth moving forward").
+Local, 3 November 2026 (L1431, L1433, L1464, L1465). **Status: POSTED, Lean Verified** as
+[R30-20261103-d37d24](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-d37d24) (L1471),
+at the owner's word ("Yes, post A5") after GPT's packet reads (GC2568, GC2573) and Cloud's read (CL699). Kit PR
+[#116](https://github.com/WolframInstitute/Rule30PrizeKit/pull/116) is open (`Rule30EpisodeBridge`, branch `episode-bridge`,
+commit 8422677). The owner moved A5 forward ("A5 has substance so it is worth moving forward").
 
 ## Statement
 
@@ -12,7 +15,7 @@ On the kit's `Rule30FrozenRuler` edge codes, for every phase `E` of period `p` (
 | `episode_extend` | an episode of `horizon k p = lcm (2 ^ B (k + 2), p)` ticks at depths `k, k + 1` lasts for ever |
 | `eternal_of_long` | such an episode gives an eternal point: paste `E` beyond depth `k + 1` |
 | `mfinite_iff` | the longest episode at depth `k` is finite iff no episode reaches `horizon k p` ticks |
-| `episode_bridge` | every depth has a finite longest episode iff no eternal point of any period follows `E` |
+| `episode_bridge` | every depth has a finite longest episode iff no eternal point of any period follows `E` at every depth from some depth on |
 | `eternal_of_eventual` | a pair following `E` from some onset on gives an eternal point |
 | `rain_not_mfinite` | control: the rain code's orbit is a phase with unbounded episodes |
 
@@ -39,11 +42,34 @@ Also `g8_mfinite`, `g8_no_eternal` and `g8_mfinite_of_grounding`: the kit's eigh
   **RESULT OK**. Seven outputs, no message cells, KernelChecked 74, standard axioms, no local paths.
   - The computation cell reproduces the kit's longest G8 episode Lw k for k = 1 … 8 by brute force.
 
+## Repair after Cloud's read (CL699, L1468)
+
+- **Required, applied:** "follows the phase below some depth" said the opposite of the theorem in the kit's vocabulary,
+  where "below bit k" means the shallower bits. The abstract, the module header, the `episode_bridge` docstring and both
+  catalog rows now say "at every depth from some depth on", which is the Lean `∀ j, d ≤ j`.
+- **Optional, applied:**
+  - "Cloud" is glossed as the record's Claude (Anthropic) worker, and "carried by hand" now reads "carried two-party
+    (L1310)". The kit row uses the standard byline plus "The bridge was proposed in the contributors' record by Claude
+    (Anthropic)."
+  - The related work says which four imported modules are ours and which is Troy Lowry's.
+  - The scope gives the horizons of the record's three tables (1,024, 1,024 and 3,840 ticks), recomputed from the kit's
+    `B`.
+  - "Eventual is eternal" notes that the eternal point is a pasted code (GPT GC2568, Cloud CL699).
+- **Rebuilt.**
+  - New pins: probe `522de144…`, portal form `0e293558…`, kit form `dc07cbb7…`, prose `eceb5d78…`, abstract `3941efa9…`
+    (278 words), essay `e80f8b9f…`.
+  - The kit Check and the portal Check on 93d98bbe pass again: 74 constants, six headlines.
+  - Notebook nb2 gives **RESULT OK**: seven outputs, no message cells, KernelChecked 74, no local paths. Notebook
+    `c63ad950…`.
+  - Receipts: `cited/l1465-a5/a5-nb2-receipts.tar.gz` (`dbb4437c…`). nb1 is superseded.
+
 ## Prior art and credit
 
-- **The bridge is Cloud's** (CL676; the genealogy §38.2), carried two-party in L1310.
-- **The kit:** `Rule30EtherEpisode` (Lowry's PR 69 ether), `Rule30EtherGrounding`, `Rule30FrozenRuler`, and
-  `Rule30GateClocks` (our R30-20261030-7b0d12).
+- **The bridge is Cloud's**, the record's Claude (Anthropic) worker (CL676; the genealogy §38.2), carried two-party in L1310.
+  Cloud read the package (CL699) and asked for one wording repair, applied in L1468.
+- **The kit:** four of the five imported modules are ours: `Rule30EtherEpisode` (R30-20261031-7c1f96, on Troy Lowry's PR 69
+  ether), `Rule30FrozenRuler`, `Rule30EdgeStaircases` (the rain-code control) and `Rule30GateClocks` (R30-20261030-7b0d12).
+  `Rule30EtherGrounding` is Troy Lowry's, with OpenAI Codex and Claude (Anthropic).
 - **New here:** the formal statement for every phase, the finite criterion with its explicit lcm horizon, and
   "eventual is eternal".
 - **Search:**

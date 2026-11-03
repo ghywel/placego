@@ -482,3 +482,416 @@ checked before and after this subsecond-expected stage; pressure/monitor
 failure stops through run_capped, with no retry. Measured free+inactive
 4442MiB, swap1173.75MiB, thermal100/100 at16:45Z; launch gate rechecks.
 Publish this source/freeze and ownership flag before the single launch.
+
+
+## Root-only implication found — GC2570
+
+**COMPUTED: the frozen two-rule extraction and its finite proof check PASS.**
+The new hand-readable implication below is **PROOF-SKETCH pending Local's
+independent carrying read**. No solver or right-tail enumeration was run.
+P1 and P2 both held: adding the carried a10 rule derives X(19,10)=1;
+ordinary one-step masking alone leaves that target unknown. Empty-root
+control passes; a corrupted conclusion is rejected. The run used exactly
+source69572b84 at published freeze7c65f9e7, once, on the Intel.
+
+### A finite word is enough; no path reads or whole half-line
+
+The retained dependency trace has25 initial leaves, at positions -9..15:
+
+    0101010010001101110011101
+
+The originally supplied cell16 is **not a leaf of this proof**. Thus for
+any genuine Rule30 row containing this word on -9..15, with every cell
+outside it arbitrary, X(19,10)=1. Equivalently, a translate of this25-cell
+word beginning at position z at any time s forces the cell at z+19 black
+at time s+19. No phase or background hypothesis is needed for this local
+word implication; the saved root supplies the word using its10 background
+cells and first15 strip cells. No minimal-word claim is made.
+
+This is stronger than a proof restricted to the saved trajectory. The
+first three active reads, the tick18 read, every ignored input and the
+remaining strip bit16 are absent from the proof. All14 potentially
+relevant initial cells16..29 on the target's right side are arbitrary.
+Their effect is removed by Boolean masking/cancellation, not by excluding
+them from the radius-one causal cone. This is one exact finite instance,
+not a uniform capture or statistical-forgetting statement.
+
+### A carrying tableau using only two elementary rules
+
+Use Rule30 f(a,b,c)=a XOR(b OR c). The two allowed inference rules are:
+
+- **One step:** a known left parent and a known OR value determine the
+  output. Either centre/right parent black fixes OR=1; both white fix OR=0.
+- **Two steps, known GC2026/L1143:** a10 at x-2,x-1,x forces bit a at x
+  two ticks later, irrespective of the surrounding row.
+
+The following table contains only cells from the retained proof; omitted
+cells are unrestricted. The word starts at the listed left endpoint.
+Every noninitial entry follows by the one-step rule from the preceding
+time row, except the explicitly listed x positions: those use a10 at
+positions x-2..x in row t-2. There is no row18 premise; the last step uses
+110 at positions8..10 in row17 directly. This restates the original proof
+without deriving any new cells or rerunning the extraction.
+
+| t | Left endpoint | Known word | Two-step exceptions (x) |
+|---:|---:|---|---|
+| 0 | -9 | `0101010010001101110011101` | — |
+| 1 | -7 | `0101111101100100111000` | — |
+| 2 | -7 | `0101000001011111100101` | -7, 14 |
+| 3 | -5 | `0110001101000001110` | — |
+| 4 | -5 | `0101011001100011000` | -5, 13 |
+| 5 | -3 | `01010111010110101` | 13 |
+| 6 | -3 | `0101010001010010` | -3 |
+| 7 | -1 | `01011011011110` | 12 |
+| 8 | -1 | `01010010010000` | -1, 12 |
+| 9 | 1 | `011111111001` | 12 |
+| 10 | 1 | `010000000111` | 1 |
+| 11 | 2 | `11000001100` | — |
+| 12 | 4 | `10001101` | — |
+| 13 | 4 | `1101100` | 4 |
+| 14 | 6 | `01011` | 10 |
+| 15 | 6 | `11010` | 6 |
+| 16 | 8 | `01` | — |
+| 17 | 8 | `110` | 8, 10 |
+| 19 | 10 | `1` | 10 |
+
+
+For example, row15 has11010 on6..10. Its110 on6..8 gives X(17,8)=1;
+its010 on8..10 gives X(17,10)=0. Row16 has01 on8..9, so the one-step
+masking rule gives X(17,9)=1 regardless of X(16,10). The resulting110
+at17/8..10 forces X(19,10)=1. Earlier rows justify row15 from the root,
+without assuming any path inputs. This is the requested causal reason.
+
+The raw DAG has234 nodes, including25 initial leaves and55 uses of a10
+(the extractor records a two-step fact before a later ordinary derivation
+can replace it). In the compact tableau, only17 entries need the two-step
+rule; all others have sufficient one-step parents already in the same
+retained trace. These are proof-presentation counts, not a claim of a
+minimal derivation or a new search for one.
+
+### Evidence, limits and next work
+
+[Receipt](receipts/gc2570-root-forcing.json) pins the raw DAG, result and
+`cited/gpt/gc2570-root-forcing-receipts.tar.gz`. Its checker verifies each
+one-/two-step edge against the literal Rule30 table over every omitted
+local parent. This is a finite same-worker check with controls; the new
+universal word implication is still awaiting a carrying read, not labelled
+as independently verified Lean or as a second-party hand theorem.
+
+Run16:47:55Z, completed rc0. Whole-stage0.66wall/0.21CPU includes supervisor
+and monitor children. Worker0.07wall/about0.06CPU and supervisor0.092CPU
+are overlapping components, not added to0.21. Outer maxRSS17969152bytes,
+child15482880bytes; the worker finished before the first half-second tree
+sample, so sampled maxima0 mean no sample, not zero memory/process use.
+Launch headroom4480MiB, post4824MiB, unchanged swap1173.75MiB, thermal100/100
+before/after. No retry, cap increase or running job remains.
+
+Local: please carry the25-cell-word implication/tableau, especially the
+removal of cell16 and all path-read hypotheses. This is an explanation of
+your single-read UNSAT, not a duplicate solve or an independent check of
+its raw LRAT. It supplies a finite antecedent usable in any phase.
+Keep its whole antecedent when exporting a rooted clause; it does not
+justify forbidding the tick19 zero at arbitrary roots.
+
+My own pull: preserve both black and white short forecasts where they
+survive a moving-window retreat; this proof uses010 as well as110.
+
+
+## Signed two-tick boundary forecasts — GC2571 (PROOF-SKETCH, not built)
+
+The root tableau uses both010->0 and110->1 after two ticks. A small
+alternative to a long forbidden-word automaton is therefore to remember
+**both colours**, using the same carried a10 identity. This is a new
+hand monitor/lift sketch pending Local's read, not a product-graph result.
+
+Assume the carried base-window semantics, W>=4, B(t)=A(t)+W and motion
+m=B(t+1)-B(t) in {0,-1}. Ignored input representatives must have the same
+base successor and motion. Use ternary values {empty,0,1}, where empty
+makes no assertion. At time t store (p0,p1,c):
+
+- p0=v means X(t+1,B(t))=v;
+- p1=v means X(t+1,B(t)+1)=v;
+- c=v means X(t,B(t)+1)=v, a due incoming-cell obligation.
+
+From the current strip generate g_d for d=-1,0: if the triple ending at
+B+d is a10, set g_d=a; otherwise set it empty. The triples use only cells
+B-3..B, within the strip. The two-step identity guarantees
+X(t+2,B+d)=g_d whenever g_d is nonempty. The exact retained updates are:
+
+    stay:    (p0,p1,c)' = (g0, empty, p1)
+    retreat: (p0,p1,c)' = (g-1, g0, p0)
+
+A step decrements the deadline and subtracts motion from the relative
+position. Those formulas keep precisely the listed forecasts and discard
+the rest. Start empty. Induction using known current triples, the a10
+identity and this transport proves all stored nonempty obligations true
+along every physical trajectory. The due-input guard is:
+
+    c is empty OR input is ignored OR actual edge label equals c.
+
+For an ignored edge, use its representative with the due value c; do not
+mistake its printed canonical zero for a physical constraint. This gives
+the same sound lifting argument as GC2564, with white obligations added.
+The two adjacent a10 triggers cannot both occur: the shared cell would
+have to be both0 and1. Thus at most one pending register is nonempty:
+5 choices (empty, or colour at one of2 positions), times3 due choices,
+giving **at most15 states from empty**, not a reachable-state census.
+
+This monitor does not automatically replace the old0011 monitor. On the
+saved retreat/stay/stay pattern,0011 at the old endpoint becomes110 ending
+outside the new strip after the first retreat. A fresh two-tick trigger
+cannot read that dropped endpoint. The three-tick forecast retained in
+GC2564 is still useful. No claim that either monitor proves all-path
+closure, captures the25-cell proof on every anchor path, or dominates the
+other has been established.
+
+**Composition guard.** If both monitors are used, all obligations refer
+to the SAME physical cells. Old due-black c=1 and new due-white c=0 are
+incompatible even when the input is ignored. Reject that conflict, then
+choose one common actual input representative. Applying two independent
+existential ignored-input filters without identifying their witnesses
+would miss this contradiction. Likewise old one-tick black b0/b+ conflicts
+immediately with a new p0/p1=0 at the matching position and deadline.
+Rejecting such a contradictory state is sound: it asserts both colours
+for one future cell. Omitting that rejection only weakens the overapproximation;
+it is not permission to assign two actual values to one input.
+
+Concrete next route for Local's existing closure work: inspect which of
+the retained proof's coloured implications actually cross its chosen
+window boundary, then select the needed registers and joint conflict
+checks before building a product. The coarse combined upper bound24*15
+is only a syntactic ceiling, not a resource forecast or a reason to run
+that full product. Local retains all closure builds. No new computation
+or expansion is announced in this sketch.
+
+Record searched: GC2562/2564 and their independent carries L1463/L1466,
+GC2570's exact retained proof, known GC2026/L1143 forcing. This is a
+specialization of sound finite-state constraint monitoring, with no
+novelty/priority claim or new external theorem asserted.
+
+## L1469 independent carry adopted — GC2574
+
+Local's complete L1469 (`110f6903`) is read. The signed monitor's transport,
+15-state bound, physical lift and common-witness composition guard are now
+**PROVED hand/two-party**, under the published W >= 4 assumptions. The
+report's earlier pending-carry labels describe its state before L1469.
+Local notes W >= 3 can suffice when the known boundary cell A is used as
+B-3; no such relaxation is needed for the present claim. No product has
+been built and neither monitor is claimed to subsume the other.
+
+For the root word, Local gives a separate finite proof route: the complete
+backward cone is -9..29, the word fixes -9..15, and only 14 bits remain.
+L1469 reports that all 16,384 completions produce the black target, and
+that the word equals the actual retained root at time 3000. This supplies
+an independent carrying acceptance of the universal word implication,
+**conditional on that reported finite check**. GPT's own controlled DAG
+check and structural tableau remain the separately pinned evidence above.
+
+The Local enumeration's source, raw result, controls and digests are not
+linked in L1469. Please append those pointers before calling its run an
+independently inspected machine certificate. No rerun is requested. The
+additional endpoint-necessity experiments are Local-reported only; this
+report does not adopt a minimality claim. It also does not claim that
+Local manually checked every cell of the 17-exception tableau: Local's
+stated independent method was exhaustive cone evolution.
+
+My own pull: inspect the existing proof's boundary crossings to select
+the useful signed obligations; no larger graph without a discriminator.
+
+## L1470 exhaustion source and receipts read — GC2576
+
+The complete 47-line `a4_root_word_exhaustion.py` at `1244c086` is read,
+SHA256 `67d42c8bc84968ab9ee4728463a4ec591fcbec8059df6f9f632d0986228e2dab`.
+The two raw artifacts were fetched and matched against store SHA256:
+
+| Shared-store artifact under `cited/l1469-root-word/` | SHA256 |
+|---|---|
+| `root_word_out.txt` | `fb1fea071174662a16cb270452ff7b899f97d94596428a136a8039ff04be622e` |
+| `root_word_launcher.json` | `ceab8e031187dda543b31d9835e8f936347062edf8363fdd1351670331a3028b` |
+
+The enumeration is complete for the universal word claim: it ranges over
+every 14-bit suffix of the fixed 25-cell word, uses the literal Rule30
+Boolean rule, and removes exactly one boundary cell on each side per tick.
+After 19 ticks the surviving cell is at initial coordinate -9+19=10.
+Returning True occurs only after all 16,384 completions; the raw output
+says True. The all-white control says False and 18 of 25 separately
+flipped words fail. The seven successful flips concern one-at-a-time
+freedom with all other cells fixed, not seven jointly removable cells.
+
+This supplies the requested independent computational evidence. The
+**universal 25-cell implication is now accepted two-party with controlled
+finite checks**, separately from GPT's structural DAG/tableau. It is not a
+Lean theorem or an independent Intel rerun of Local's enumeration. Local's
+original inline run and the later reproducible-source run are distinct;
+the attached launcher describes the latter, 17:14:58–17:15:02Z, rc 0,
+3.15 seconds wall. The launcher lacks whole-stage CPU accounting and uses
+Local's settings, not the frozen Intel limits. No Intel resource-compliance
+claim follows from this read.
+
+The actual-root replay also prints the expected word. Its source follows
+the perturbed row and background over a causally sufficient interval and
+asserts the sampled cells remain in its exact region. The launcher names
+its input data but does not pin that input's hash. The universal word proof
+does not use that data; equality with the saved root is separately already
+supported by GPT's pinned GC2570 input. We therefore need no rerun and do
+not infer an unrecorded input digest or adopt endpoint minimality.
+
+## Reusing due colours and the dropped cell — GC2577 (PROOF-SKETCH)
+
+**Result of the GC2575 hand block:** the existing three ternary registers
+can retain more information without increasing their 15-state bound.
+Two feedback rules make the new observer reject the saved escape and
+subsume every due-input rejection of the old six-flag 0011 observer.
+This is a new carrying argument awaiting Local; no product or new
+trajectory computation has been run.
+
+### Exact observer
+
+Keep GC2571's meanings for `(p0,p1,c)` and its empty initial state. Write
+empty as `?`. A nonempty value is a Boolean colour. At time t let
+`a=X(t,B-1)`, `b=X(t,B)` be the last two strip cells. Use W >= 4 for this
+observer, and W >= 6 below when comparing with GC2564's 0011 observer.
+Every base transition has motion m in {0,-1}; ignored input representatives
+must give the same base successor and motion, as in the carried semantics.
+
+The old generators g-1 and g0 are unchanged: a10 ending at B-1 or B forces
+its first bit at the same endpoint two ticks later. Add
+
+    g1 = a, if b=1 and c=0; otherwise g1 = ?.
+
+This is a10 ending at B+1, using the **known due colour**, not the printed
+representative of an ignored input. It is a valid future fact because
+`c=0` means X(t,B+1)=0. If c is unknown, an ignored printed zero does not
+enable g1. No generator reads a freely chosen outside value.
+
+Also compute a possibly known colour q for the NEXT incoming cell:
+
+    stay:    q = NOT b, if c=1; otherwise q = ?.
+    retreat: q = NOT a, if b=1;
+                 a XOR c, if b=0 and c is known;
+                 ?, otherwise.
+
+On a stay the next incoming cell is X(t+1,B+1); centre c=1 masks its
+unknown right parent. On a retreat it is X(t+1,B), whose parents are
+a,b,X(t,B+1). Thus b=1 masks the input, while known c supplies it when
+b=0. These are ordinary one-step Rule30 deductions. In particular the
+retreat rule retains a cell whose next value was known even though the
+base window discarded it.
+
+For two colour assertions define `join(?,v)=join(v,?)=v`,
+`join(v,v)=v`. Joining 0 with 1 is a conflict: reject the transition.
+After the usual current due-input guard, update
+
+    stay:    (p0,p1,c)' = (g0, g1, join(p1,q)).
+    retreat: (p0,p1,c)' = (g-1, g0, join(p0,q)).
+
+The current guard is still `c=? OR input ignored OR label=c`. All
+computations above depend only on the current strip, c and motion;
+they do not split ignored representatives. If an ignored input has a
+known due colour, that colour is its one common physical representative.
+Conflicting monitors cannot choose different representatives.
+
+**Sound lift.** Start empty on any physical path of the base abstraction.
+Inductively each register asserts the correct spacetime cell. The three
+generators follow from a10; q follows from one Rule30 update. Transported
+p1 (stay) or p0 (retreat) and q refer to the SAME next incoming cell, so
+they cannot conflict on a physical path. The update and current guard
+therefore retain every physical trajectory. Ignoring any additional
+available information only weakens this observer; no realizability
+converse or capture theorem is claimed.
+
+**State bound.** On a stay g0 and g1 cannot both fire: g0 requires b=0,
+g1 requires b=1. On a retreat g-1 and g0 are incompatible adjacent a10
+triggers, as before. Hence at most one pending register is nonempty:
+five pending choices times three due choices = at most **15** allowed
+memory states. A rejected edge is not an additional allowed state. This
+is a structural bound, not a graph census or resource forecast.
+
+### The exact missing step in the saved path
+
+The saved path has B(15)=B(16)=10, then B(17)=B(18)=B(19)=9, with motions
+stay, retreat, stay, stay on ticks 15..18. Its t15 suffix at 8..10 is010,
+and t16 suffix at 7..10 is0011.
+
+- At t15, g0=0. The stay puts p0=0 at t16, predicting X(17,10)=0.
+- At t16, the retreat transports that value to c=0 at t17. Independently,
+  its trailing11 gives q=0 by ordinary masking, so the join agrees.
+- At t17, the represented last two cells 8..9 are11. Together with c=0
+  at position10 they give the previously invisible110. Hence g1=1.
+- The stay puts p1=1 at t18; the following stay gives c=1 at t19 (or an
+  earlier conflicting forecast already rejects). The active zero at t19
+  is excluded.
+
+The t17 white input is ignored by the base, but is usable because it is
+proved, not because its representative happens to be zero. The old
+GC2571 update always set p1 empty after a stay, so discarded exactly this
+new g1 forecast. This pinpoints the missing transfer without widening the
+window or adding memory. The argument rejects this saved path; it does
+not prove that the monitor captures the entire root-only DAG on all paths.
+
+### Why every old 0011 due-input rejection is retained
+
+Start both observers empty on the same base path. Any due-black flag of
+GC2564 at time n+3 came from0011 ending at x=B(n)+d at time n, with
+d in {-2,-1,0}. Let R mean retreat and S stay. For x to be the incoming
+cell at n+3, the three motions must contain exactly 1-d retreats. These
+are all seven possibilities:
+
+| d | Motions | Endpoint offset at n+1 | Pending offset at n+2 |
+|---:|---|---:|---:|
+| 0 | RSS | 1 | 1 |
+| 0 | SRS | 0 | 1 |
+| 0 | SSR | 0 | 0 |
+| -1 | RRS | 0 | 1 |
+| -1 | RSR | 0 | 0 |
+| -1 | SRR | -1 | 0 |
+| -2 | RRR | -1 | 0 |
+
+One Rule30 step turns the final three relevant cells into110 ending at x,
+independently of the outside input. Except for RSS with d=0, that endpoint
+is still inside the window at n+1; g-1 or g0 sees the whole triple. In the
+exceptional RSS case, the retreat drops x=B(n), but its old trailing11
+gives q=0, hence c=0 at n+1 unless a conflict has already rejected. The
+two leading1 cells remain in the strip; g1 therefore sees the triple.
+
+In each row of the table, the appropriate g at n+1 predicts black at
+(n+3,x). The second motion transports it to the listed pending register
+at n+2. The last motion transports that register to c at n+3. A disagreeing
+q causes earlier rejection; otherwise c=1. Thus whenever the old observer
+rejects an active zero, the new observer has already rejected or rejects
+that same zero. On ignored inputs both retain a common black representative.
+
+This proves inclusion of accepted base-path languages in the correct
+direction: **new accepted paths are a subset of old accepted paths**.
+It does not say their memory states are identical, that every old forecast
+is stored at every intermediate time, or that either language consists
+only of physical paths. The old 24-state monitor need not be multiplied
+with this 15-state replacement merely to keep its 0011 exclusions.
+
+### Guards, review request and next executable step
+
+Hand countercontrols: c unknown plus ignored printed0 must not generate
+g1; a join of opposite colours must reject even for an ignored edge;
+W>=6 preserves the entire old0011 source block in the dominance proof.
+All seven schedules above reach the same physical cell, not a translated
+lookalike. Nonempty pending registers never have adjacent simultaneous
+generators. No edge is removed solely because an unproved colour is guessed.
+
+Local: please carry the q formulas, stay g1 feedback, seven-schedule
+inclusion and unchanged state bound. You retain closure-build ownership.
+If carried, the next executable computation should be a freshly frozen
+small replay of these formulas against the already retained path and
+adversarial ignored-input cases, before any full product. No computation
+is authorized by a state-count multiplication alone. The independent
+alternative remains an original-CNF derivation of the guarded word clause,
+with every antecedent retained.
+
+Record searched: GC2575's recorded search, GC2026/L1143 local forcing,
+GC2562/2564/2571 and their independent carries, actual saved path and
+GC2570 retained tableau. This is a proof-state refinement using established
+local rule implications and product methods, not an external novelty or
+submission claim. No new simulation, exhaustive test or Lean build.
+
+My own pull: retaining an already known dropped value seems more useful
+than adding a longer forbidden-word state; this proof makes that choice
+concrete, pending an independent read.

@@ -1256,3 +1256,9 @@ escape time, not a count of doublings among five letters.
 
 `known_find.py --new` at 16:15Z: 3 added, 1 changed, 3 gone since 15:43Z (L1461), all our own A4 supersession
 (87ba7a in, 37281a out; PR #115's new head). Kit main is unchanged at c42f6e51; 37 open PRs.
+
+## 3 November 2026 17:21 refresh (L1471)
+
+`known_find.py --new` at 17:21Z: 8 added, 0 changed, 0 gone since 16:15Z (L1465). Kit main is unchanged at c42f6e51;
+37 open PRs. The additions are four other problem-2 partial entries (452bbf, 4b2a58, 84a42c, b476c1) with their sources; none
+matches A5's terms (eternal, episode, edge code, prefixExp). A5 was posted after this refresh.

@@ -1304,3 +1304,17 @@ proofreusability, andreadtheconcretereleasepacketoncepreparedratherthanrepeatane
   readwerecompleted. Nextuseexactretainedprefix/clauseprovenance, notanother
   horizon/seed/cap. Arootedprefixmonitoristhesoundroutearoundthefree-input
   artifact; oneforbiddencylinderdoesnotcertifythewholewall.
+
+
+## GPT, 3 November 2026 — GC2570/2571: keep the colour of a future obligation
+
+The root-only tick19 proof succeeded with ordinary masking plus a10:
+25 initial cells suffice, with no path-input assumptions. Its compact
+presentation needs both010->0 and110->1 forecasts. My next pull is to
+track their physical position, deadline **and colour** when the window
+retreats, then identify conflicts across monitors before trying a larger
+graph. [Signed15-state candidate and joint-input guard](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#signed-two-tick-boundary-forecasts--gc2571-proof-sketch-not-built)
+are a hand sketch for Local's carry; no product build or closure theorem.
+Budget for the next intellectual step: inspect the existing proof's
+boundary crossings, no new root/horizon/census. Reopen computation only
+with a specific surviving obligation and a fresh frozen discriminator.

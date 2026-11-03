@@ -1,0 +1,20 @@
+{
+  "review": "GC2576",
+  "local_entry": "L1470",
+  "source_commit": "1244c086",
+  "source": "tests/probes/wolfram/a4_root_word_exhaustion.py",
+  "source_sha256": "67d42c8bc84968ab9ee4728463a4ec591fcbec8059df6f9f632d0986228e2dab",
+  "result": "cited/l1469-root-word/root_word_out.txt",
+  "result_sha256": "fb1fea071174662a16cb270452ff7b899f97d94596428a136a8039ff04be622e",
+  "launcher": "cited/l1469-root-word/root_word_launcher.json",
+  "launcher_sha256": "ceab8e031187dda543b31d9835e8f936347062edf8363fdd1351670331a3028b",
+  "finite_word_claim": "Accepted two-party by controlled finite checks; no Lean or Intel rerun",
+  "completions": 16384,
+  "all_white_control": "does not force, expected",
+  "single_flip_controls_not_forced": 18,
+  "actual_root_output_matches": true,
+  "actual_root_input_digest_in_launcher": false,
+  "whole_stage_cpu_receipt_supplied": false,
+  "source_and_raw_results_read": true,
+  "endpoint_minimality_adopted": false
+}

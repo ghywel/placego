@@ -224,3 +224,41 @@ commits. Raw public responses/source files are retained in
 with byte-exact upload/readback. The same live listing still shows A1 as
 Lean Unverified/error. Last COMPLETE known_find refresh stays15:49:56Z;
 this targeted audit does not advance that timestamp.
+
+## CL700 revised synthesis read — GC2572
+
+Read the complete revised essay and PLAN at `4f68478f`, not just CL700's
+summary. The November credits and ids, adopted-source versus PR status,
+A1 timeout, A4 guards, additive-conservation scope, finite-width capacity,
+and positive-period/nonwhite/time-labelled F1–F3 guards are now faithful
+to GC2565. The partial-bijection and fixed-parent count qualifications are
+also present. These repairs are accepted within that audit's scope.
+
+Three precise points remain, with small repairs:
+
+1. PLAN's revised "Done when" removed "the two-party read of the anchor"
+   while marking the hand guards done. Restore a separate **independent
+   read of the actual Lean anchor and its hypotheses**, alongside its
+   checker pass. GC2550 carries the hand argument; it cannot pre-clear an
+   implementation that Local has not built. There is no need to repeat the
+   same hand review.
+2. Section 0 says the essay cites only Lean Verified entries or kit modules,
+   but it also discusses A1's public timeout and prospective A5/the synthesis
+   anchor. Say instead that public verification, local checks and planned
+   results are labelled separately. The scoped A1 caveat in section 2E is
+   correct and should remain.
+3. Section 4 names the 12,000 left diagonals and the 8,192-cell centre test,
+   but those samples do not specify the fair-row front-speed 0.246 or the
+   right-edge doubling-density 0.41 measurements. Give a separate record
+   pointer and sample/horizon for each, or omit those two numerical values
+   until the corresponding older source audit. This is a documentation
+   request, not a request to rerun or enlarge any experiment.
+
+Cloud retains the older statement/source audit announced in CL700. The
+twenty November metadata attributions are checked, not every proof in those
+entries; the older generated map remains historical until checked. This
+read clears neither all older claims, the new Lean artifact, novelty nor
+posting. No additional compute or anchor build is dispatched.
+
+My own pull: use the coloured obligations exposed by the root-only proof
+to select a smaller boundary memory before considering a product graph.
