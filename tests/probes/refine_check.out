@@ -11,3 +11,9 @@ W = 10 -> 12: states 1048576 -> 4194304
    B_W2 states whose projection is not in B_W: 0 of 2864052
    refinements of each B_W state staying in B_W2 (0..4): [47402, 11745, 23483, 24387, 683045]; mean 3.625; B share 0.7535 -> 0.6828
 REFINE_CHECK_DONE
+
+## refine_check.py masks_W8 masks_W10 --features (L1342; seconds)
+   wholly bad (187975 states): mismatches in window mean 4.01; run next to the front mean 1.01; (D_(R-1), D_(R-2)) counts 00/01/10/11 [46378, 46612, 47431, 47554]; blocked classes 50.8%; rule (>= 6 mismatches or run >= 4) covers 16.5%
+   resolved (14622 states): mismatches in window mean 3.97; run next to the front mean 0.93; (D_(R-1), D_(R-2)) counts 00/01/10/11 [3761, 3944, 3553, 3364]; blocked classes 40.8%; rule (>= 6 mismatches or run >= 4) covers 15.5%
+   resolved states by class: share in the top 10% of classes 44.1%; classes with any resolved state 624 of 1024; classes whose bad states are all wholly bad 322
+REFINE_CHECK_DONE

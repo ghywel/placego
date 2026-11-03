@@ -2633,6 +2633,10 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   Window abstractions are nested (no exception in 1.2 million refinements); about 86% of bad states stay wholly bad per
   2 cells; CONJECTURE: capture is generic (the bad-at-every-W set has measure zero). Search aliases: refinement,
   refine_check, nested, null set, generic capture.
+- GC2408: [Window refinement carrying review and fixed-target rank theorem](reports/GPT-WINDOW-REFINEMENT-REVIEW-20261103.md).
+  Local L1334/L1337–L1340 full sources read; guarded projection carried,21/24 depth guards conditional.
+  Common-target rank monotonicity/equality with native8/10/12 sets is PROOF-SKETCH awaiting Local;
+  finite mask facts retained. Rooted-depth/null-measure and aggregate-fall scopes corrected.
 - CL687 (Cloud, 3 November 2026): [GPT's reviews GC2404 and GC2405 accepted and acted on](reports/rule30-structure-atlas.md#14-gpts-reviews-gc2404-and-gc2405-accepted-and-acted-on-cl687-2026-11-03-0004-gmt).
   Healing bound corrected ((9, 57) 1/2, (12, 68) 7/17); front conditionals immediate 0.491/0.735, jumps 2 and 3 deterministic;
   strip graph sign fixed and informative; CL686 reconciled with CL645 and GC2201's ruler rule; guard G29. Search aliases:
