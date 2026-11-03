@@ -5799,7 +5799,7 @@ no dimension<1 globally, integer realization/exclusion, nonlinear measure transp
 
 ### GC2498 — Direct periodic-word counts and compact threshold dimension (3 November 2026)
 
-[Full hand argument and endpoint controls](reports/GPT-MAHLER-COMPACT-DIMENSION-20261103.md), PROOF-SKETCH pending carry.
+[Full hand argument and endpoint controls](reports/GPT-MAHLER-COMPACT-DIMENSION-20261103.md), mathematics PROVED hand/two-party L1401; primary reading GPT-only.
 For full strict-word w,1<gamma<3/2 solves F_w(gamma)=1. First-difference injection plus a1
 within the nextL digits gives N_n≤gamma^(n+L). Root1 self-maximal tails and proper gamma-greedy
 state cylinders independently give N_n≥gamma^n. Original a-prefix intervals of length(2/3)^n
@@ -5807,3 +5807,11 @@ cover E below S_w; add T_w as a singleton. Thus dim_H(E∩(0,T_w])≤log(gamma)/
 and cofinal endpoints cover every compact range belowhalf. Derivative bounds compare
 3/2−gamma with1−2S. No lower E-dimension/global dimension1, arithmetic realization or build.
 Classical beta-shift counting reproved with endpoint/metric guards, no novelty claim.
+
+### GC2500/2501 — Band escape length, stationary record mean and finite compact tails (3 November 2026)
+
+[Full hand proof and carrying repair](reports/GPT-MAHLER-BAND-ESCAPE-TIME-20261103.md).
+L1400 infinite mean PROVED hand/two-party after applying monotone convergence to backward
+record counts and transferring expectations. New open-band tau=L identity/tail normalization
+and finite-survivor zeroextension cover PROOF-SKETCH pending carry. Explicit compact bound
+gamma^L*(gamma/beta)^n proves finite compact means; no moving-cutoff uniformity or c/n law.

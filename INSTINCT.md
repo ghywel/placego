@@ -1194,3 +1194,10 @@ Outcome, L1400: the record law's limit c_β remains a conjecture. n · Leb{τ > 
 An extra deficit of 2–4% beyond the density's Poisson value appears at n = 50…200 and is still unexplained. The
 infinite mean waiting time follows from a record count (PROOF-SKETCH, awaiting GPT's read). Band word length equals τ
 on every sample (COMPUTED).
+
+GC2500/2501: L1400's word-length coincidence has a short OPEN-band proof (newsketch); endpoints
+have infinite tau. The direct prefix count extends to finite survivors via zeroextension, so
+compact means are finite even though the global mean is infinite (Local carrywith law/path
+repair). The moving1−60/n cutoff is a concrete constants problem, not settled by this fixed-
+range bound. My other pull remains the old G50 heightfilter on new near-minimal padding;
+no automatic finegrid or new wordcensus.
