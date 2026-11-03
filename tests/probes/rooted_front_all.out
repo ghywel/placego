@@ -1,0 +1,38 @@
+# python3 tests/probes/rooted_front.py --all 0 2 4
+(0,0) t1  81 xB -19: A2 cut  40; rooted W=0 cut  40; rooted W=2 cut  40; rooted W=4 cut  33; largest witness flip 33 -> cut 32 fails
+(0,1) t1  13 xB  -5: A2 cut  20; rooted W=0 cut  20; rooted W=2 cut  19; rooted W=4 cut  19; largest witness flip 19 -> cut 18 fails
+(0,2) t1  10 xB   2: A2 cut  25; rooted W=0 cut  25; rooted W=2 cut  25; rooted W=4 cut  25; largest witness flip 25 -> cut 24 fails
+(0,3) t1 186 xB -26: A2 cut 106; rooted W=0 cut 100; rooted W=2 cut  83; rooted W=4 cut  83; largest witness flip 51 -> cut 50 fails
+(1,0) t1 185 xB -27: A2 cut 104; rooted W=0 cut  98; rooted W=2 cut  81; rooted W=4 cut  81; largest witness flip 48 -> cut 47 fails
+(1,1) t1  17 xB  -6: A2 cut  20; rooted W=0 cut  20; rooted W=2 cut  20; rooted W=4 cut  20; largest witness flip 20 -> cut 19 fails
+(1,2) t1   9 xB   1: A2 cut  23; rooted W=0 cut  23; rooted W=2 cut  23; rooted W=4 cut  23; largest witness flip 23 -> cut 22 fails
+(1,3) t1   9 xB   1: A2 cut  23; rooted W=0 cut  23; rooted W=2 cut  23; rooted W=4 cut  23; largest witness flip 23 -> cut 22 fails
+(2,0) t1   8 xB   0: A2 cut  21; rooted W=0 cut  21; rooted W=2 cut  21; rooted W=4 cut  21; largest witness flip 21 -> cut 20 fails
+(2,1) t1  17 xB  -7: A2 cut  18; rooted W=0 cut  18; rooted W=2 cut  18; rooted W=4 cut  18; largest witness flip 18 -> cut 17 fails
+(2,2) t1  16 xB  -7: A2 cut  18; rooted W=0 cut  18; rooted W=2 cut  18; rooted W=4 cut  18; largest witness flip 18 -> cut 17 fails
+(2,3) t1   8 xB   0: A2 cut  21; rooted W=0 cut  21; rooted W=2 cut  21; rooted W=4 cut  21; largest witness flip 21 -> cut 20 fails
+(3,0) t1   7 xB  -1: A2 cut  19; rooted W=0 cut  19; rooted W=2 cut  19; rooted W=4 cut  19; largest witness flip 19 -> cut 18 fails
+(3,1) t1   7 xB  -1: A2 cut  19; rooted W=0 cut  19; rooted W=2 cut  19; rooted W=4 cut  19; largest witness flip 19 -> cut 18 fails
+(3,2) t1  16 xB  -8: A2 cut  16; rooted W=0 cut  16; rooted W=2 cut  16; rooted W=4 cut  16; largest witness flip 16 -> cut 15 fails
+(3,3) t1   7 xB  -1: A2 cut  19; rooted W=0 cut  19; rooted W=2 cut  19; rooted W=4 cut  19; largest witness flip 19 -> cut 18 fails
+(4,0) t1   6 xB  -2: A2 cut  17; rooted W=0 cut  17; rooted W=2 cut  17; rooted W=4 cut  17; largest witness flip 17 -> cut 16 fails
+(4,1) t1 148 xB -23: A2 cut  82; rooted W=0 cut  72; rooted W=2 cut  71; rooted W=4 cut  66; largest witness flip 42 -> cut 41 fails
+(4,2) t1   6 xB  -2: A2 cut  17; rooted W=0 cut  17; rooted W=2 cut  17; rooted W=4 cut  17; largest witness flip 17 -> cut 16 fails
+(4,3) t1 222 xB -37: A2 cut 112; rooted W=0 cut  98; rooted W=2 cut  87; rooted W=4 cut  87; largest witness flip 87 -> cut 86 fails
+(5,0) t1 221 xB -38: A2 cut 110; rooted W=0 cut  96; rooted W=2 cut  85; rooted W=4 cut  85; largest witness flip 85 -> cut 84 fails
+(5,1) t1 148 xB -24: A2 cut  80; rooted W=0 cut  72; rooted W=2 cut  72; rooted W=4 cut  61; largest witness flip 43 -> cut 42 fails
+(5,2) t1   5 xB  -3: A2 cut  15; rooted W=0 cut  15; rooted W=2 cut  15; rooted W=4 cut  15; largest witness flip 15 -> cut 14 fails
+(5,3) t1   5 xB  -3: A2 cut  15; rooted W=0 cut  15; rooted W=2 cut  15; rooted W=4 cut  15; largest witness flip 15 -> cut 14 fails
+(6,0) t1   4 xB  -4: A2 cut  13; rooted W=0 cut  13; rooted W=2 cut  13; rooted W=4 cut  13; largest witness flip 13 -> cut 12 fails
+(6,1) t1  25 xB -11: A2 cut  20; rooted W=0 cut  16; rooted W=2 cut  16; rooted W=4 cut  16; largest witness flip 16 -> cut 15 fails
+(6,2) t1   4 xB  -4: A2 cut  13; rooted W=0 cut  13; rooted W=2 cut  13; rooted W=4 cut  13; largest witness flip 13 -> cut 12 fails
+(6,3) t1  82 xB -18: A2 cut  42; rooted W=0 cut  42; rooted W=2 cut  42; rooted W=4 cut  35; largest witness flip 35 -> cut 34 fails
+common cutoff over these entries: A2 112 over all 28 (GC2421); rooted W=0 100, W=2 87, W=4 87
+ROOTED_FRONT_ALL_DONE
+# python3 tests/probes/rooted_front.py --all 8 12 16 0,3 1,0 4,1 5,1
+(0,3) t1 186 xB -26: A2 cut 106; rooted W=8 cut  83; rooted W=12 cut  83; rooted W=16 cut  83; largest witness flip 51 -> cut 50 fails
+(1,0) t1 185 xB -27: A2 cut 104; rooted W=8 cut  81; rooted W=12 cut  81; rooted W=16 cut  81; largest witness flip 48 -> cut 47 fails
+(4,1) t1 148 xB -23: A2 cut  82; rooted W=8 cut  66; rooted W=12 cut  66; rooted W=16 cut  66; largest witness flip 42 -> cut 41 fails
+(5,1) t1 148 xB -24: A2 cut  80; rooted W=8 cut  61; rooted W=12 cut  61; rooted W=16 cut  61; largest witness flip 43 -> cut 42 fails
+common cutoff over these entries: A2 112 over all 28 (GC2421); rooted W=8 83, W=12 83, W=16 83
+ROOTED_FRONT_ALL_DONE

@@ -5618,3 +5618,18 @@ PROVED two-party hand for certificate maps, not dynamical mixing. Two safe
 actual singleton completions remain COMPUTED finite examples, not all-tail
 agreement. [GC2430's exact87-input whole-line bridge](reports/GPT-SHIELD-EXACT-TAIL-QUERY-20261103.md)
 is a separate PROOF-SKETCH awaiting carrying read; no solver status inferred.
+
+### Waiting room — L1362 rooted-front observer: exact cutoff 87 for GC2430's target, common cutoff 87 (Local, 3 November 2026)
+
+[T54: observer, soundness sketch, controls and outcome](reports/rule30-genealogy.md#58-does-a-rooted-front-certify-more-than-a2-t54-l1362).
+The observer branches on the leftmost difference L and keeps a three-valued window of width W to its right, with E's
+values as the coefficients of the exact mismatch identity. Half-line states and pruned states are certified by A2's
+threshold (GC2423, carried).
+- **Soundness (PROOF-SKETCH, carrying read requested).** Every actual trajectory heals, becomes A2-certified, or stays
+  matched by a live state.
+- **Computed with W ≥ 2 at (4, 3), under this soundness.** Agreement through 87 suffices for agreement through −24 at
+  222 for every tail, and the flip at 87 shows that 86 fails. So 87 is exact, and GC2430's 111 question is answered
+  "yes".
+- **Computed over the 28 entries.** The common cutoff is exactly 87 (A2: 112). 24 entries are exact; four have open
+  gaps.
+- **Not claimed.** No eventual-pinning optimality, and nothing in Lean.
