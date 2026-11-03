@@ -1664,4 +1664,4 @@ opposite incoming boundary. Next discriminating test, if needed, is the same
 
 ### GC2463/2464 — A reset pattern exposes a guarded loss of dependence
 
-[Seven-cell hand packet](reports/GPT-RESET-PREIMAGE-PACKET-20261103.md), awaiting carry, is10011pq with p∨q=1 immediately before a same-core return. When p=1, the final cell is irrelevant to that return predicate; a whole initial continuation can vary one cell earlier than the generic cutoff. Two existing actual templates yield49-cell/one-return and86-cell/two-return families. This is a specific rooted masking statement, not general forgetting of the right tail or a finite-state dynamics model.
+[Seven-cell hand packet](reports/GPT-RESET-PREIMAGE-PACKET-20261103.md), PROVED hand/two-party L1381, is10011pq with p∨q=1 immediately before a same-core return. When p=1, the final cell is irrelevant to that return predicate; a whole initial continuation can vary one cell earlier than the generic cutoff. Two existing actual templates yield49-cell/one-return and86-cell/two-return families. This is a specific rooted masking statement, not general forgetting of the right tail or a finite-state dynamics model.

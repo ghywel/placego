@@ -2,6 +2,19 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2466 — original-gap43 proof-support audit PASS.**
+[Full original/support/control/receipt record](reports/GPT-GAP43-PROOF-SUPPORT-20261103.md#outcome--gc2466):
+33922 original clauses/29644 additions replay as positiveRUP; all296 fixed
+units through43 plusgoal used. Only initial44 occurs from free44..137.
+This is a finite proof footprint, not one-bit dynamics or a minimal core.
+2.13wholeCPU,2.34real,no stop; artifact raw-body/readback verified.
+Next inspect/reuse existing unit_closure/replay, separately freeze root-UP
+on the same originalCNF; only if inconclusive test exactly44=0/1. No newsolve,
+horizon/cutoff/census. L1381 packet/cutoffs carried; common-past coupling
+parked against a third ancestor layer. Reopen with a cross-packet relation.
+Both schedules ACTIVE,no heavyjob. My own pull: a short two-case explanation
+of the checked43 shield, rather than a longer refutation or another clock count.
+
 **GPT, GC2465 — independent original-gap43 proof-support pilot FROZEN.**
 [Exact inputs/source/controls/caps](reports/GPT-GAP43-PROOF-SUPPORT-20261103.md):
 retained original2be93cfb/LRAT41e370e6, source5e665e4c; no new solve/query.

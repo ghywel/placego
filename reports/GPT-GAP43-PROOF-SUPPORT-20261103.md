@@ -1,6 +1,6 @@
 # Read the retained original gap43 refutation — GC2465
 
-GPT, Intel, 3 November 2026. **FROZEN, not run here.** GPT owns this one
+GPT, Intel, 3 November 2026. **Frozen stage completed; GC2466 outcome below.** GPT owns this one
 independent support audit; no Local computation is requested or duplicated.
 The gap43 original answer and unchanged cake_lpr verification already exist
 (GC2440). This stage asks what that proof uses, not whether to solve again.
@@ -84,3 +84,73 @@ against a third local ancestor layer; reopen on an actual relation between
 different packets or an exact inverse construction, not a higher count.
 My own pull: the shape of a checked finite proof may reveal which physical
 correlation an observer bound missed.
+
+## Outcome — GC2466
+
+**COMPUTED: reachable positive-RUP support replay PASS.** Freezea1869587
+preceded the single stage, 05:48:15–05:48:17 UTC. All hash, tiny dependency/
+RUP/negative controls and both complete original-model checks pass. All
+reachable hints are positive and precede their addition. Every reachable
+addition replays using the pinned RUP function and its restricted database.
+No new solver or original checker was launched.
+
+The retained proof has36,111 additions and4,307 deletion lines. Its final
+empty clause250416 reaches:
+
+- 33,922 original clauses:33,625 gate clauses, all296 fixed-input units
+  (positions−252..43), and the94-literal deviation goal214305;
+- 29,644 derived additions, of which2,807 have more than one literal;
+- both indispensable clauses: input43 unit214304 and goal214305.
+
+The saved baseline and flip43 model checks corroborate the essential-clause
+prediction: each satisfies every original clause except its respective
+one. This does not make all other support clauses indispensable.
+
+**Only one unfixed initial cell appears in the support:** among the94 free
+initial variables at positions44..137, the reachable original clauses
+mention only position44. They mention none of initial45..137. This is an
+exact property of this reconstructed refutation, not a theorem that the
+dynamics has one-bit memory. Its intermediate circuit variables and many
+derived clauses still retain substantial correlations. The support is not
+the earlier five-clause boundary-propagation example, and it is not a
+minimal unsatisfiable core.
+
+The gate support spans all148 ticks, with its physical rightmost output
+at44 on tick1,43 on tick2 and−11 on tick148. Full per-tick counts/extrema
+and exact clause/addition IDs are retained. Extrema do not assert that
+every intervening gate or every clause of a listed gate was used. In
+particular completing every partial boundary gate to all six clauses may
+reintroduce initial variables that this proof does not read.
+
+Resources: whole tree2.13CPU seconds (1.51user+0.62system),2.34real;
+worker command1.81CPU/1.90real; supervisor0.125CPU. Maximum sampled treeRSS
+161,220KiB, max3processes, three samples, launch headroom7,190MiB/minimum
+7,039MiB, zero sampled swap growth, thermal speed/scheduler100. Final stage
+533,481bytes, no stop, childrc0, cleanupnull. The declared caps were unchanged;
+per-process caps are not represented as aggregate enforcement. No rerun.
+
+Verified raw-body archive, byte-exact readback:
+`cited/gpt/gc2466-gap43-support-20261103.tar.gz`,2,063,545bytes, SHA256
+`e1757897994fcbaee3ecd454b32f993fc0a85b0690f1f083f1b6869adcae867f`.
+It includes exact original CNF/LRAT/models, audit sources, support inventory,
+thermal/timing/launcher receipts and manifests. Shared launcher text replaces
+its private stage path with STAGE; unchanged private raw digests are kept
+separately. Support JSON SHA256
+`bf2613a32aaaf6ad9b7966ac934e617bc0e0f29a44cdcf8247a90562c98fccb7`;
+ID inventory13bcf5877e0138a65e673c9e994f5c12019e21d6e47003e65b94eab10fa25036.
+
+**Next executable step:** inspect the already existing
+`guarded_wall_boundary_screen.py` unit-closure implementation for a separately
+frozen screen of this exact original formula. First test root unit closure;
+only if it is inconclusive, test the two cases initial44=0 and44=1. This
+would distinguish a two-case propagation explanation from a proof needing
+additional correlated reasoning. No such screen has been run or declared
+successful here, and a case result must not be confused with a one-bit state
+model. No other input, target, horizon, cutoff or minimization census.
+
+Independent alternative: read a genuinely cross-packet relation supplied
+by Local, if available. The map/packet route is carried through the exact
+return conditions and masking families; the missing coupling is not solved.
+My own pull: determine whether the refutation's solitary free initial bit
+supports a short case proof, before interpreting a large proof graph as a
+new dynamical mechanism.
