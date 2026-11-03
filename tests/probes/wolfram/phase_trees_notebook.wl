@@ -1,4 +1,4 @@
-(* phase_trees_notebook.wl (Local, L1493): the release build of the A6 essay, adapted from synthesis_notebook.wl (L1478).
+(* phase_trees_notebook.wl (Local, L1493, L1496: the Abstract cell gated against abstract-final.txt, GC2615): the release build of the A6 essay, adapted from synthesis_notebook.wl (L1478).
    Run as `WolframKernel -script` through universal_start_notebook_launch.py, under run_capped.py --track-tree, from the kit
    at the verifier's commit 93d98bbe:  KERNEL phase_trees_notebook.wl ESSAY KIT.
    MarkdownToNotebook ("UseCache" -> False) under a 900 s TimeConstrained, with every message recorded; then the notebook's
@@ -18,7 +18,7 @@ rnHere = DirectoryName[$InputFileName];
 If[Quiet[Check[Get[FileNameJoin[{rnHere, "notebook_receipt.wl"}]], $Failed]] === $Failed, rnNote["receipt helper did not load"]];
 rnEssay = FileNameJoin[{rnCapped, "essay.md"}];
 CopyFile[rnEssaySource, rnEssay];
-If[FileHash[rnEssay, "SHA256", "HexString"] =!= "defe0ce18fa9e8f20fd6b6c159acfa0a89f585c8d09fdcc8258f19bd46164c83",
+If[FileHash[rnEssay, "SHA256", "HexString"] =!= "8b3803864e86f47d34433345f3a79e8d5066cbfe8fc1024ff62baefe80c19e16",
   rnNote["essay digest"]];
 rnNotebook = FileNameJoin[{rnCapped, "essay.nb"}];
 rnOut = FileNameJoin[{rnCapped, "nb-receipts"}];
@@ -55,6 +55,10 @@ If[FileExistsQ[rnNotebook],
   If[rnMsgCells =!= {}, rnNote["message cells " <> ToString[Length[rnMsgCells]]]];
   If[!FreeQ[rnOuts, $Failed], rnNote["$Failed in an output"]];
   rnIconOK = !FreeQ[Import[rnNotebook, "NB"], "IconizedObject"];
+  rnAbstractFile = FileNameJoin[{DirectoryName[rnEssaySource], "abstract-final.txt"}];
+  rnAbstractCells = Cases[rnNB, Cell[c_String, "Abstract", ___] :> c, Infinity];
+  rnAbstractOK = rnAbstractCells === {StringTrim[Import[rnAbstractFile, "Text", CharacterEncoding -> "UTF-8"]]};
+  If[!rnAbstractOK, rnNote["Abstract cell differs from abstract-final.txt"]];
   If[!rnIconOK, rnNote["Lean source not in an icon"]];
   rnStrings = ToString[#, InputForm] & /@ rnOuts;
   rnDigests = Table[Export[FileNameJoin[{rnOut, "cell-" <> IntegerString[i, 10, 2] <> ".txt"}], rnStrings[[i]], "Text"];
@@ -89,7 +93,7 @@ rnSummary = <|
   "message_cells" -> If[ValueQ[rnMsgCells], Length[rnMsgCells], Missing["NoNotebook"]],
   "handler_events" -> If[ValueQ[rnMessages], Length[rnMessages], 0],
   "iconized" -> TrueQ[rnIconOK], "axioms_ok" -> TrueQ[rnAxiomsOK],
-  "sizes_ok" -> TrueQ[rnSizesOK],
+  "sizes_ok" -> TrueQ[rnSizesOK], "abstract_ok" -> TrueQ[rnAbstractOK],
   "kernelcheck_ok" -> TrueQ[rnKernelOK], "environment_ok" -> TrueQ[rnEnvOK],
   "kernelcheck_declarations" -> If[ValueQ[rnKC] && rnKC =!= {}, First[rnKC][[2]]["Declarations"], Missing["NotChecked"]],
   "reasons" -> rnReasons|>;

@@ -21,13 +21,14 @@ Also `cone` (locality), `sound` and `rep_bound` (the tree). The seven rows above
 ## Package
 
 - [`title.txt`](title.txt); [`abstract-final.txt`](abstract-final.txt) (248 words, a3a6d68a…, from Cloud's `abstract.txt`);
-  [`essay.md`](essay.md) (defe0ce1…), assembled by
+  [`essay.md`](essay.md) (8b380386…), assembled by
   [`assemble_phase_trees_essay.py`](../../../../tests/probes/wolfram/assemble_phase_trees_essay.py) from Cloud's
   [`essay-prose.md`](essay-prose.md) (77d90307…). Cloud's files are not edited.
 - **Portal form:** [`Rule30Submission.lean`](Rule30Submission.lean) (1e7e7c51…), from the pinned probe by
   [`phase_trees_portal.py`](../../../../tests/probes/wolfram/phase_trees_portal.py): namespace, the statement import, the
   `#print` lines dropped, the docstring's first lines in public wording. Declarations and proofs are unchanged.
-- **Notebook** ([`phase_trees_notebook.wl`](../../../../tests/probes/wolfram/phase_trees_notebook.wl)): 4b6e1111….
+- **Notebook** ([`phase_trees_notebook.wl`](../../../../tests/probes/wolfram/phase_trees_notebook.wl)): nb2, ab978c74…. nb1
+  (4b6e1111…) is superseded: its Abstract cell held the placeholder "See abstract.txt." (GC2615).
 - **Kit form:** none yet. Cloud's note: a module `Rule30PhaseTrees`, or none; the owner decides after posting. It would need
   A5's module (#116) or a restatement of its definitions, as the portal form does.
 
@@ -43,17 +44,20 @@ Also `cone` (locality), `sound` and `rep_bound` (the tree). The seven rows above
 7. The computation section (CL710): the three-tree table, and a cell replaying G16's representative 41.
 8. Abstract: the three bounds as "at most", and the controls sentence (GC2610).
 9. Seven headlines: the three phase theorems added (CL710).
+10. The front matter's Abstract field carries the cleared abstract in place of the placeholder (GC2615).
 
 ## Checks
 
 - **Portal Check** on the verifier kit 93d98bbe: **pass**, 270 constants, seven headlines, statements imported, no new
   axioms. The three `mfinite` headlines use propext, Classical.choice and Quot.sound; `no_tail_of_mfinite` and the three phase
   theorems use propext and Quot.sound.
-- **Notebook: RESULT OK.** Six outputs, no message cells, KernelChecked 270, axiom sets as the Check printed them, layer sizes
-  as computed, no local paths. Build 185.6 s, sampled tree peak 2.53 GB, at least 4,355 MiB free, no swap growth.
+- **Notebook: RESULT OK (nb2).** Six outputs, no message cells, KernelChecked 270, axiom sets as the Check printed them, layer
+  sizes as computed, the Abstract cell equal to `abstract-final.txt`, no local paths. Build 176.3 s, sampled tree peak 2.62 GB, at
+  least 5,576 MiB free, no swap growth. Outputs 1 to 5 are byte-identical to nb1's; output 6 differs only in LeanLink's temporary
+  module name.
 - **Computation cell:** G16 representative 41's layer sizes equal the Python mirror's.
 - **Mutation control:** one chunk per phase at a maximizer rejected (L1489).
-- **Receipts:** `cited/l1493-a6/a6-nb1-receipts.tar.gz` and `cited/l1489-phasetrees/phase-trees-receipts.tar.gz` (919f5a7c…).
+- **Receipts:** `cited/l1496-a6/a6-nb2-receipts.tar.gz`, `cited/l1493-a6/a6-nb1-receipts.tar.gz` and `cited/l1489-phasetrees/phase-trees-receipts.tar.gz` (919f5a7c…).
 
 ## Submit parameters
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""assemble_phase_trees_essay.py (Local, L1493; adapted from assemble_synthesis_essay.py): essay.md and abstract-final.txt for A6.
+"""assemble_phase_trees_essay.py (Local, L1493, L1496; adapted from assemble_synthesis_essay.py): essay.md and abstract-final.txt for A6.
 essay.md = Cloud's essay-prose.md with the repairs below (GC2610's scope corrections, CL710's provenance corrected from the
 sources, the computation section), then the formal section with the checked portal form embedded verbatim. Cloud's files are
 not edited; every repair is an exact replacement that must match once.
@@ -84,6 +84,7 @@ a = once(a, "Controls: each longest episode reproduces the record's computed tab
          'abstract: controls (GC2610)')
 words = len(a.split()); assert words <= 250, words
 (d / 'abstract-final.txt').write_text(a)
+p = once(p, 'Abstract: See abstract.txt.\n', 'Abstract: ' + a.strip() + '\n', 'front matter: the cleared abstract in place of the placeholder (GC2615)')
 print('abstract-final.txt: %d words, sha256 %s' % (words, hashlib.sha256(a.encode()).hexdigest()))
 
 formal = '''
