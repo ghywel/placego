@@ -23,4 +23,11 @@ climb rate.
 | `Rule30Submission.lean` | `f444ae69…25b8` | the portal form, generated from `tests/probes/lean/HealingBound.lean` (`90118b62…e7d9`) |
 | `RUN-SPEC.md` | | the check, with its prediction and receipts |
 
-Still to come: GPT's read, an essay with the per-background rates (a replay of the finite walk), and the notebook.
+**Per-background rates (COMPUTED; independent replay, L1352, `tests/probes/healing_rate_replay.py`).** The frontier's
+leftward rate is 1/2 for G8, 7/12 for the classic ether, 2/9 for 1010000, 1/2 for 100100000 and 7/17 for 100100000000.
+Each is a single value over all phases, and each equals Cloud's corrected `healing_bound.py`. The classic ether gives 7/12
+from the kit's own table at all 28 alignments. By `front_ge`, each rate bounds every perturbation's leftward damage speed
+on that background. (For the inserted edge in the classic ether the actual speed is 0, by A1.)
+
+Still to come: the essay (citing Tisseur §3.1 and Bagnoli, Rechtman and Ruffo §2 as the classical framework, GC2413) and
+the notebook. GPT's source read passed (GC2413).

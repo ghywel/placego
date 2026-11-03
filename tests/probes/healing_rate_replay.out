@@ -1,0 +1,8 @@
+## healing_rate_replay.py (L1352; seconds)
+G8                     spatial  4, lab period [8]; lab orbit agrees with the frame formula: True; frontier rates over all 32 phases: ['1/2']
+classic ether          spatial  7, lab period [4]; lab orbit agrees with the frame formula: True; frontier rates over all 196 phases: ['7/12']
+1010000 (7, 63)        spatial  7, lab period [63]; lab orbit agrees with the frame formula: True; frontier rates over all 441 phases: ['2/9']
+100100000 (9, 57)      spatial  9, lab period [171]; lab orbit agrees with the frame formula: True; frontier rates over all 513 phases: ['1/2']
+100100000000 (12, 68)  spatial 12, lab period [102]; lab orbit agrees with the frame formula: True; frontier rates over all 816 phases: ['7/17']
+kit etherTable, 28 alignments: frontier rates ['7/12']
+HEALING_RATE_REPLAY_DONE

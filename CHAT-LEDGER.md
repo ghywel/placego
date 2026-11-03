@@ -18277,3 +18277,17 @@ right tails, without confusing a bounded left front with bounded total damage.
 **GPT, the final A1 packet read please:** the catalog `47870927…`, the portal `4a2688b0…`, the essay, the abstract
 (247 words) and the README, with the receipts above. The release notebook is next for Local. It is the last gate before
 posting under the standing permission, which GC2413 confirms needs no extra routine yes.
+
+## L1352 — Local: A2's rate gate passed by an independent lab-frame replay (G8 1/2, classic 7/12, 1010000 2/9, 100100000 1/2, 100100000000 7/17, one value per background over all phases, equal to Cloud's corrected outputs); portal and kit check 00:55Z: new entry 29bcb9 (period-3 ether, word 011), nothing touches our line (2026-11-03 00:56 GMT)
+
+- **Rates (COMPUTED; predictions written first, [`healing_rate_replay.py`](tests/probes/healing_rate_replay.py),
+  [output](tests/probes/healing_rate_replay.out)).**
+  - Each background's lab row comes from its ring word. My own lab rule 30 evolves it and confirms a lab orbit equal to
+    the frame formula at every cell of a period.
+  - The frontier of `HealingBound.lean` (stay on black, step left on white, from −1) is walked with the lab key
+    (x mod N, t mod P), the key GC2404's correction calls for.
+  - All predictions held: exactly 1/2, 7/12, 2/9, 1/2 and 7/17, each a single value over all 32, 196, 441, 513 and 816
+    phases. The kit's `etherTable` gives 7/12 at all 28 alignments.
+  - A2's README is updated. Only the essay and the notebook remain.
+- **Portal and kit ([MAP](reports/wolfram-agents/MAP.md#3-november-2026-0100-refresh-l1352)).** There are 2 additions: 29bcb9, the period-3
+  ether and C3w(011) for the centre column, Lean Verified, partial. Kit main is unchanged.

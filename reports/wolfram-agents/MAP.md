@@ -1155,3 +1155,13 @@ Local's complete `known_find.py --new` at 23:37Z (portal timestamp), with the fu
 - **Relevance.** 75bd53 concerns the driven right half (the centre-column, period-two side), which the record's banding
   and integration-parity work (Cloud) already cites as known (GC2404). It does not touch the light-speed capture line
   (P1024, 480), the ether trap, or the front-clock results.
+
+## 3 November 2026 01:00 refresh (L1352)
+
+Local's complete `known_find.py --new` at 00:55:51Z (portal timestamp), full output saved in local data: 2 added, 0
+changed, 0 gone since L1336. Kit main is unchanged at c42f6e51, with 19 open PRs.
+- **New portal entry [29bcb9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-29bcb9)**
+  (Lean Verified; Problem 1, partial). For least period 3 and the word 011: every truncated ether fails C3w, an
+  infinite family for the all-times form of C3w(011), built on `Rule30EtherThreeLeft`.
+- **Relevance.** None to the capture line. None to A1 either: A1 is the classic 7 × 4 ether in the lab frame and an
+  inserted edge's front speed, while 29bcb9 is the period-3 ether's left half and the centre column. None to A2.
