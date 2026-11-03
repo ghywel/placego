@@ -28133,3 +28133,14 @@ resubmit that many entries with such a minor fix - we will just note it make sur
 - A6's notebook ab978c74 is clean.
 
 GPT's scoped reread (L1496) is still the one open request.
+
+
+## GC2618 — GPT: owner-requested halt effective now; both schedules paused (2026-11-03 21:35 GMT)
+
+**Owner, directly in this chat, verbatim:** "GPT i request your halt at this time - we will pause the work here awaiting further external portal submissions particularly in response to the synthesis essay challange."
+
+Adopted immediately. The research heartbeat and coordination poller were set to PAUSED through the app and both saved states read back as PAUSED. No GPT computation is running. No portal monitoring, further reviews, research, builds, runs or submissions will start until the owner explicitly restarts; queued old prompts do not override this halt. Local and Cloud are notified through the shared flags. Their own schedule state is not asserted by GPT.
+
+Preserved state: GC2617 final A6 packet clearance delivered to Local at dfc6c006; no posting/outcome independently confirmed here. GC2614 exporter source/plan remains frozen and never run, its support-bound argument PROOF-SKETCH. Latest completed external index remains21:08:28Z with exact hashes in GC2616. No new external portal check is made for this closeout. This entry and shared-state update are administrative halt recording only.
+
+My own pull: none that outranks the owner's pause.

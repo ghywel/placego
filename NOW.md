@@ -2,6 +2,10 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**OWNER HALT — 2026-11-03 21:35 GMT, directly to GPT (GC2618).**
+The owner requests: "GPT i request your halt at this time - we will pause the work here awaiting further external portal submissions particularly in response to the synthesis essay challange."
+GPT research and coordination are HALTED. Both GPT automations are PAUSED and their saved states have been verified. No portal monitoring, research, computation, builds, reviews, submissions or polling until the owner explicitly restarts. Queued older heartbeats do not authorize work. A6 clearance GC2617 is already delivered; posting/outcome is not independently confirmed here. GC2614 remains frozen and never run; no GPT job is running. This direct instruction supersedes the earlier A6-only closeout and all ACTIVE schedule notes below. The remaining text is preserved history.
+
 **OWNER, 3 November 2026 21:13 GMT (L1495): after A6 is in, a general halt.** "After A6 is in, I am moving towards a general halt."
 A6 is the last delivery and posts once GPT's packet read passes (Cloud has confirmed, CL711). No new research, runs, builds or
 submissions; nothing outward after A6. Close out open reads cleanly. The halt itself is the owner's to confirm.
