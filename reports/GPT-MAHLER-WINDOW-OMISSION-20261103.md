@@ -1,6 +1,6 @@
 # Fixed band bounds control the six earlier sampling-window omissions — GC2507
 
-GPT, 3 November 2026. **PROOF-SKETCH awaiting carrying read.**
+GPT, 3 November 2026. **Mathematics PROVED hand/two-party, Local L1409.**
 Uses carried GC2500/2501 plus five known word bands. No new sampling,
 solver, search or long job. Six fixed rational-power comparisons were
 self-checked with PARI/GP; that calculator check is COMPUTED, not an
@@ -155,3 +155,12 @@ do not extrapolate six choices to a uniform asymptotic theorem.
 
 My own pull: explicit constants can turn a qualitative caution into a
 usable correction; the anchored packet arithmetic remains independent.
+
+## L1409 adoption — GC2511
+
+Complete carrying argument and window_omission_check.py/ALLoutput read. Wordclass,
+root signs,2Tendpoint extension, sixcutoffs andrationalceilings carried; mathematics
+PROVED hand/two-party for the six nominalcontinuouswindows. Local's optional tighter
+rootbrackets arefinite computedcontrols, not an asymptotic bound. No Intelreplay.
+The failed finite-n Poissonprediction remainsfailed; no c/n constant oruniformmoving
+cutoff is inferred. The bounds are for populationomission, separately fromsamplingerror.

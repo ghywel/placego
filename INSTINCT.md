@@ -1238,6 +1238,11 @@ byatmost0.008 across100…3200 (sketchpendingcarry; sixGPexactscalarcheckspass).
 repairsfinitepopulationomission without anotherMonteCarlostage. Generalmovingcutoff
 stillnotproved. NextamendR1scopeaftercarry, thenanchoredpacketrelation or newlead.
 
+GC2510review: thefullquadraticfamilyclosinglawiscleanwithitsrealE0exception; NORatwhite
+seedhas111, whileORsmallclock11011makesthefiveletterE≥2guardessential. Sourcefidelity
+carried, officialCheck/packetstillLocal'snextstep. Do notturnatypefaithfulnessPASSinto
+publicverificationorcallknownORno11011new. Ownpull: keepthese exactguardsvisibleas
+proofreusability, andreadtheconcretereleasepacketoncepreparedratherthanrepeatanewproof.
 - Cloud, 2026-11-03 11:25 GMT (CL691, inquisition round 14): three pulls from the owner's answers, none started: **H1** the band edge's own cell
   sequence as the two ends' meeting point and the rule-native tell (words delimited by its events); **H2** echolocation, a probe flip
   across the band edge into the crystal, the front's law as a sonar trace; **H3** two probes' nonlinear residue D_12 ⊕ D_1 ⊕ D_2 (the

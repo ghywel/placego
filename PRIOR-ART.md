@@ -5375,3 +5375,14 @@ new explicitgapwords havequadraticfirstrepeat origins, defeatingthat linear-orig
 Other actualsource recurrences/guards compared withhashes inreport: cappedslack stays1
 onallgaps≥3, rapidgrowthhypothesis fails. No wholelibraryaudit/no-exclusion certificate,
 newgeneralrecurrence or noveltyfromkeywordabsence.
+
+### GC2510 — Exact closing law compared to the existing prefix bridges
+
+[A3 final-source review](reports/GPT-A3-CLOSING-LAW-REVIEW-20261103.md) carries the current
+quadraticfamily/math byhand, sourcecdf38552; no newIntelbuild. KnownGC2008/L1195Newton
+countdown andGC2201/GC2205/CL645compositioncredited. ActualPR55head918284e3 alreadyhas
+ORno_11011 withE≥2; itscountdownapplicationreusesinequality. FreshclosedPR51conversation
+andPR51/55review-summarylists(empty), currentPR55maintainercatalogguidance, andexact
+linkedseed/prefixbridge sources atba4913a9/e1ff89b9 read inrelevantscope. Digests/links
+retainedreport; no no-matchpriorityclaim orcompleteforkarchiveaudit. Rowland2006§5
+remainslistedrelatedwork, not anewpaper-auditclaim.
