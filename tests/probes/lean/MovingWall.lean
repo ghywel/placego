@@ -642,13 +642,13 @@ theorem step_sound {G : Nat → Int → Bool} (hG : IsR30Z G) {t : Nat} {A : Int
     rw [restOf_bit hm hi, hG]
     have e1 : (if i = 0 then refAt tq dq 0 else m.testBit (i - 1)) = G t (A + 1 + (i : Int) - 1) := by
       by_cases h0 : i = 0
-      · subst h0; rw [if_pos rfl, hrefA]; congr 1; omega
-      · rw [if_neg h0, hs (i - 1) (by omega)]; congr 1; omega
+      · subst h0; simp only [↓reduceIte]; rw [hrefA]; congr 1; omega
+      · simp only [h0, ↓reduceIte]; rw [hs (i - 1) (by omega)]; congr 1; omega
     have e2 : m.testBit i = G t (A + 1 + (i : Int)) := hs i hi
     have e3 : (if i = 23 then G t (A + 25) else m.testBit (i + 1)) = G t (A + 1 + (i : Int) + 1) := by
       by_cases h23 : i = 23
-      · subst h23; rw [if_pos rfl]; congr 1; omega
-      · rw [if_neg h23, hs (i + 1) (by omega)]; congr 1; omega
+      · subst h23; simp only [↓reduceIte]; congr 1; omega
+      · simp only [h23, ↓reduceIte]; rw [hs (i + 1) (by omega)]; congr 1; omega
     rw [e1, e2, e3]
   have hn0 : n0Of tq dq m = G (t + 1) A := by
     unfold n0Of
