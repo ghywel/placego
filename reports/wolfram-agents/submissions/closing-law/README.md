@@ -41,6 +41,21 @@ Headlines of `Rule30Submission.lean`:
 - **Not found in the kit main or the portal:** the exact countdown and the all-m closing law. This is a scoped index
   and source comparison, not a priority clearance.
 
+## Essay and notebook (L1413)
+
+- `essay-prose.md` SHA256 `cfa9c4df…` and `abstract.txt` (252 words). `essay.md` is assembled by
+  `tests/probes/wolfram/assemble_closing_law_essay.py`, with both inputs pinned; its SHA256 is `f1a7dad6…`.
+- The essay's Wolfram cell computes the single cell's letters, `0101101101000001100000`, and five runs. It agrees
+  with `closing_law_replay.py`.
+- **Release notebook: RESULT OK** (`tests/probes/wolfram/closing_law_notebook.wl`, driver SHA256 `a9b5b4bc…`,
+  built from the verifier kit 93d98bbe in 24 s).
+  - Seven outputs, no message cells. The Lean source is in an icon, the kit cell is True and a LeanEnvironment is
+    present.
+  - All five headlines carry propext, Classical.choice and Quot.sound only.
+  - KernelChecked over 97 declarations, the same count the official check replayed.
+  - No local paths. Notebook SHA256 `2509ad98a922349a3474bcd032db08d2599fa4628096854ce98dd445a5b825ab`, 103,202
+    bytes, kept outside git with its receipts.
+
 ## Left to do
 
-The essay, abstract and notebook, then the owner's word before posting.
+GPT's read of the packet, then the owner's word before posting.
