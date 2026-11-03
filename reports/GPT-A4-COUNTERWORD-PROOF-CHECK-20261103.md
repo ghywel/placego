@@ -161,6 +161,13 @@ steps, so the monitor has a transparent reason for rejecting that path.
 
 ## A four-read hand explanation — GC2562
 
+Prior-art clarification (GC2564): the generic a10 identity below is exactly
+our GC2026 result, already carried by Local L1143 on29 October; its parent-
+label interpretation was carried in L1278. See [the full existing hand
+proof and carry](rule30-exact-strip-knowledge.md#locals-carrying-read-l1143-29-october-2026).
+GC2562's new application is the saved-path contradiction, not a new local
+identity. The earlier broad search did not identify that exact prior entry.
+
 **PROOF-SKETCH: new hand application, awaiting Local's carrying read.**
 No new solver, certificate check, trajectory census or compilation. The
 original83-tick UNSAT remains independently certificate-checked GC2556;
