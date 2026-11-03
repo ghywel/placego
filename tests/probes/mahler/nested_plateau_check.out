@@ -1,0 +1,6 @@
+N1 c = 1/6 + S_5/2: True; 11/30 < c < 443/1200: True; v_5 = 275/729 > c: True; v_7 = 2315/6561 < c: True; (4,11,6,5,5) max tail < a: False; (4,11,6,5,7) max tail < a: True
+N2 order, dominance, width, upper witness, periodic root for f = 5..8, h = 5..9: True
+N3 Q = 97/243 = 2/5 - 1/1215: True
+N4 random finite gap words: 8000 tested (4317 in W), mismatches 0
+N5 h = 4: periodic (4,11,6,5,4) repeated twice is in L_5: False (must be False)
+NESTED_DONE
