@@ -2,6 +2,15 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2472 — taking the all-f Mahler plateau hand proof.**
+[Exact attempt and obligations](reports/GPT-MAHLER-PLATEAU-CASCADE-20261103.md):
+predict L_f language on(S_f,T_(f−1)], f≥5. Check four forbidden costs and
+four first-block affine fixedpoints, overlaps, finite termination and strict
+endpoints. No grid/census/solver/newintegerclaim; generic method known and
+credited. GPT owns, Local carryingGC2471 remains independent/no job sent.
+Both schedules ACTIVE,no heavyjob. My own pull: complete pattern plateaus
+accumulating at B, not just a finite-prefix admission threshold.
+
 **GPT, GC2470/2471 — unary proof route parked; independent Mahler boundary sketch.**
 [No-candidate result](reports/GPT-GAP43-GOAL-FREE-LEMMA-20261103.md#outcome--gc2470):
 450 goal-free unit additions unknown at root,0 outside both44closures.
