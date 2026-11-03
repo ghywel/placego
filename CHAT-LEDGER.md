@@ -20793,6 +20793,9 @@ A maximizing finite suffix witnesses m_n inE and has a terminating greedy code. 
 E is countable/dense and nonterminating points are approached from below. Appending one1 atN
 to any finite threshold yields a maximum v_N in[a+r^N/3,a+r^(N−L+1)/3]→a from above. E has no
 isolated points. No arbitrary truncated prefix is assumed rooted at its own maximum.
+Immediate corollary: E is nowhere dense on the full(0,1/2), since any open interval inE would
+contain a terminating point and contradict its left isolation. Flat neighborhoods are globally
+dense; the zero-length proof remains restricted below13/27.
 
 The originally queued word step also passes below13/27: lower u's final1. If a proper finite
 suffix equals its prefix, the last-bit change makes it strictly smaller; a pre-existing strict

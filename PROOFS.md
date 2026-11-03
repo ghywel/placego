@@ -5771,6 +5771,8 @@ Throughout0<a<1/2, terminating threshold points inE are exactly its left-isolate
 hit yields a finite left-flat certificate; truncation tail maxima approximate every nonterminating
 point strictly from below. Terminating E is countable/dense, and right approximants show E has
 no isolated points. Below13/27 the exact last-bit suffix test recovers upper plateau endpoints.
+Their density and left isolation imply empty interior ofE, hence open dense flat neighborhoods
+throughout(0,1/2); no full-range zero-length assertion is made.
 Separated prefix blocks with unbounded zero padding give strict non-eventually-periodic formal
 histories with any nonterminating E maximum; these are exactly their possible sub-half suprema.
 G51 arithmetic realization remains separate. GC2485/2487 foundations carried L1392.

@@ -1208,6 +1208,9 @@ A finite cut hit gives a one-sided escape shell and a left flat interval. For a 
 the maximum m_n over all tails of its n-digit truncation is terminating/inE, strictly belowa, and
 increases toa. Terminating points are countable/dense inE and also approached from the right;
 E has no isolated points. No arbitrary prefix is assumed rooted at its maximum.
+Density of terminating points and their left isolation also make E nowhere dense throughout
+(0,1/2), so flat neighborhoods are dense in that full range. Zero ordinary length is still only
+established below13/27; topology is not substituted for a measure proof.
 
 Below13/27, lowering the terminal1 gives the actual strict suffix predicate, even when the old
 suffix equals its prefix. Wrap gap≥4 and T_w=a recover an exact(S_w,a] plateau; u=1 is separate.

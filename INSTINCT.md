@@ -1112,6 +1112,9 @@ threshold from below. The gap>=3 last-bit argument recovers exact upper plateau 
 Separated prefix blocks now realize every nonterminating E value as an unattained supremum of a
 strict non-eventually-periodic formal history. These are precisely their possible sub-half maxima;
 no G51 integer realization. GC2485/2487 foundations independently carried L1392, full source/output read.
+Immediate corollary recorded with GC2490: E is nowhere dense in the FULL(0,1/2), because its
+dense terminating points are left-isolated. This gives open dense flat neighborhoods there;
+it does not extend the zero-length proof beyond13/27.
 
 Next pull, noticed but not pursued: right-side isolation should be checked against PURE periodicity,
 not eventual periodicity. Primitive periodic self-maximal words give a right flat interval in the

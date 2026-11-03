@@ -110,6 +110,14 @@ and v_N tends to a. Consequently E has NO isolated points in(0,1/2).
 Together with its carried relative closedness, this is a relative
 perfect-set statement, not a classification of all flat components.
 
+There is also a global topological corollary: E has empty interior.
+If it contained an open interval, density of its terminating points
+would put one inside that interval, contradicting that point's left
+isolation. Hence E is relatively nowhere dense, and the flat-neighborhood
+set is open and dense throughout(0,1/2). The earlier zero-LENGTH bound
+was established only below13/27; no full-range measure bound follows
+from this topological argument.
+
 ## 4. The exact word constructor below13/27
 
 Now assume a inE, a<13/27, and u has at least two ones. The carried cost

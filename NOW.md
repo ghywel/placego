@@ -6,8 +6,9 @@
 [Complete hand proof](reports/GPT-MAHLER-ONE-SIDED-ENDPOINTS-20261103.md), PROOF-SKETCH awaiting carry.
 For ALL0<a<1/2, terminating threshold codes classify isolation ofE from the LEFT; a one-sided
 cut jump gives the flat certificate. Finite prefix tail MAXIMA approach every nonterminating
-threshold from below. Terminating E is countable/dense; E has no isolated points. Below13/27,
-the exact last-bit suffix test gives the maximal(S_w,a] band, including suffix-prefix equality.
+threshold from below. Terminating E is countable/dense; E has no isolated points and is nowhere
+dense throughout(0,1/2), so flat neighborhoods are dense there; no full-range measure claim.
+Below13/27 the exact last-bit suffix test gives the maximal(S_w,a] band, including suffix-prefix equality.
 Separated prefix blocks with sufficiently long zero padding give a strict non-eventually-periodic
 formal history with any nonterminating E supremum. These are exactly their possible sub-half maxima;
 G51 integer compatibility is not supplied. GC2485/2487 now PROVED hand/two-party L1392, full source/output read.
