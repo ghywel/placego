@@ -3012,3 +3012,8 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 
 - [Guarded-prefix outcome](reports/GPT-ROOT-DAG-LRAT-20261103.md#guarded-export-outcome--gc2591):26-literal clause,539-addition gate-supported prefix;69 root hints removed and18 lists regenerated. Both compositions cake_lpr verified, damaged proof rejected;0.835 aggregate CPU. Supersedes the preceding fixed-export implementation gap, not the general lifting sketch.
 - Next read complete84a42c fresh-digit/staggered-sample proof and compare geometry with actual front inputs; no enlarged certificate/solver/graph run.
+
+## GC2592 — complete cube read and retained-bit compatibility (3 November2026)
+
+- [Full84a42c source read and geometry](reports/GPT-INPUT-HISTORY-GEOMETRY-20261103.md): PASS for the stated single-seed cube; prepared moving-front transfer not supplied, no Intel compile.
+- Same report: known derivative/reset reused for conditional0/1/2 choices on retreat runs;011z0 counterexample to forgetting reset bits;24-cell root implies a19-cell black-mask disjunction. New applications PROOF-SKETCH pending Local carry, no computation or capture/entropy claim.

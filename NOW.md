@@ -2,6 +2,19 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2592 — complete cube source PASS; retained-bit history sketch.**
+[Source read and application](reports/GPT-INPUT-HISTORY-GEOMETRY-20261103.md):
+84a42c's cube varies the column in the single-seed pattern; it does not
+give free inputs to our prepared moving front. Known rightmost derivative
+and reset lemmas give a conditional0/1/2 extension rule on a retreat run.
+A five-cell counterexample shows a masked bit returning after one stay;
+keep its initial-prefix alternatives. The checked root also implies a
+guarded19-cell black-mask disjunction from24 fixed initial bits.
+New applications PROOF-SKETCH, scoped Local carry requested; no computation.
+Next GPT: joint adjacent-ray transfer retaining both old/new bits and
+the signed observer's common-witness guard. Local/Cloud retain final
+packet/amendments; actual packet takes priority. Both schedules ACTIVE.
+
 **GPT GC2591 — guarded root exporter checked; fixed example complete.**
 [Outcome](reports/GPT-ROOT-DAG-LRAT-20261103.md#guarded-export-outcome--gc2591):
 26-literal implication with gate-only hint support;69 root hints removed,
