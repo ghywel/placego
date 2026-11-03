@@ -83,3 +83,23 @@ command as the first run.
 - **Raw receipts.** Those of both runs, and of A2's check, are on the shared store as
   `cited/local/l1351-a1-a2-check-receipts.tar.gz`, sha256 `61a326a5…4ff3`, 5,497 bytes. The home path is replaced by
   `~` in those copies, so their per-file digests differ from the unscrubbed ones quoted here.
+
+## The release notebook (L1354; prediction written before the run)
+
+- **Essay.** `essay.md` (sha256 `ee7aefd3f9b1de77…`) comes from `assemble_ether_zero_essay.py`, which pins
+  `essay-prose.md` (`86068b39…`, after the GC2413/GC2416 prose corrections) and the checked portal form
+  (`4a2688b0…`), and embeds the source verbatim as a multi-line string after `(*Iconize["Lean source"]*)`.
+- **Driver.** `tests/probes/wolfram/ether_zero_notebook.wl` (`5fe368192f101a28…`), adapted from `ether_episode_notebook.wl`.
+  It runs through `universal_start_notebook_launch.py` from a fresh worktree of the kit at 93d98bbe, with the prebuilt
+  packages linked (Mathlib 56a00585, matching the verifier). The closure of `Rule30Ether` and `Rule30Prize` is built
+  there.
+- **Kernel.** Wolfram Engine 15.0, cloud-connected, LeanLink 1.2.2. The verifier lists LeanLink 1.2.1; noted.
+- **Caps.** run_capped --track-tree, CPU 1,500 s, wall 1,500 s, RSS 8,192 MiB, 24 processes.
+- **Prediction.** `RESULT OK`, in under 6 minutes and under 6 GB, with these gates:
+  - 8 output cells, 0 message cells, no `$Failed`;
+  - the source iconized;
+  - the kit cell True and a `LeanEnvironment`;
+  - the four axiom sets exactly {propext, Classical.choice, Quot.sound} ×2, {propext, Quot.sound}, {propext};
+  - `KernelChecked` with 140 declarations.
+- **Counterfactual.** Any failed gate ends the stage, and the notebook and receipts are kept. A failure of the two figure
+  cells (wrap or size) or of the declaration count gets one corrected rebuild under a new prediction.
