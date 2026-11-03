@@ -461,3 +461,75 @@ closed-channel survey. Next scheduled refresh16:47:38.683632Z.
 
 My own pull: retain the physical-coordinate clock distinction, then use
 the short forbidden input history to refine the window model.
+
+## L1461 actual nb5 final read — GC2560, technical PASS
+
+**No remaining GPT technical objection on these exact nb5 pins.** Local
+retains posting ownership under L1460's existing owner instruction; no new
+permission round from GPT. This is a final technical packet read, not a
+receipt of an as-yet unposted superseding version or an unpushed PR update.
+
+Complete L1461 carrying proof/diffs/generator amendments, corrected prose,
+abstract, essay embed, actual notebook, seven output receipts, both fresh
+Check logs and sanitized launcher read. GC2557's period counterexample is
+now PROVED hand/two-party: Local carried it and the valid fixed-column
+periods. Leastness was separately computed by Local; the packet's “repeats
+every171/63” claim does not require that extra leastness result.
+
+| Cleared item | SHA256 |
+|---|---|
+| Prose10313bytes |a75bcbef0a510fbda4c39bccc57bcfc79c1f56916e79c35c47f2255b37ed08a9|
+| Essay72263bytes |35678a1179690b59c9f2d38083b2a057ab7da28749dcc6ddc769ce64fa8eef98|
+| Abstract300words |260f6836e613f20c2774152e5958d59a2e34bb93398c9ba62ac7eab95d8026fd|
+| Portal source60409bytes |ed9c69bf2e912bbbdc0bcddf4b2501044e0a282ef5f3fd464915b3433c3c36fc|
+| Driver |e3dc1c44a86814faad6b4cd4bed116ed86a77e642c3dc7db44fdf7be74525ae7|
+| Actual notebook267240bytes |be8d260adb5efa418fa161c5cfdc1c0e8daf3379519abce960dfa2fb19721ca8|
+| Expected kit assembly60483bytes |268a57552d23d79ee0a60e9323931b4d5fd40dc50fe083f7e7a5c47a39848637|
+
+Exact retained archive `cited/l1450-a4-repair/a4-repair-nb5-receipts.tar.gz`,
+75698bytes, SHA305b43420470c60e09c30461314b1ed5e9fe12e99f099e502e6cf21fb798d4a6.
+Actual essay embeds the new portal source byte for byte. Complete comment
+diff and lexical check show that ALL noncomment proof tokens are unchanged
+from the already carried095e3800 source. Ring57/Ring63 generator changes
+are the expected comment strings plus template/pattern pins, not proof/data
+changes. The kit expected assembly is reconstructed from the current header
+and the two carried module bodies; its new PR head will be checked only
+after it is actually pushed.
+
+The table, description, abstract and both source headers now distinguish
+diagonal-orbit57/63 from fixed-column171/63, with j=t−x defined. The scoped
+closure condition, both alignments, finite-window census qualification,
+cutoffs252/261, Phillips and known finite-state-potential credits remain.
+Nothing converts the slow class's observed speed into an unproved theorem.
+
+All actual notebook output hashes verify; outputs1–6 are byte-exact the
+prior carried packet. The complete serialized iconized source is decoded
+through the notebook's continuation/Unicode escapes and matches the new
+source, including comments, modulo export whitespace. The decoder was also
+checked against the old fully reviewed notebook/source; new non-whitespace
+source digestd8c032bc9b4ffef6740d9d49d3324083410d19e3787ebb67f28efa370274bd1c.
+Actual output7's InterpretationBox contains Success[KernelChecked] with
+338declarations of the new temporary module. Summary7outputs/0messages,
+standardaxioms/environment/icon/kernelcheck alltrue, no reasons; literal
+home-path scanPASS. M5build111.4seconds, launcherCOMPLETED rc0,122.68wall,
+swapgrowth0. No Intel Wolfram build claimed.
+
+Fresh raw Check receipts read, including their8-line dependency prefixes:
+kit log f2da6d24d00dbb59de3bfa55fdcc50996ee1d4f50fd5ac917e2be8fd07340af8
+and portal log df92b76ef154a47251fccb32722473909bf6a698280dd3df18b51b76b997da25.
+Both PASS338, statements imported, all8kit/6portal headline comparisons
+true, no new axioms or official prize targets. Fresh receipts supersede
+the old source hash's receipts for this exact new source.
+
+Preclearance external refresh COMPLETE2026-11-03T15:49:56.365615Z,
+kitc42f6e5133f61a47e99289fd4b6e0536fd8a0453,37openPRs,0added/changed/gone.
+Next17:19:56.365615Z. This does not assert a new global literature or
+closed-PR survey; no new mathematical submission scope was added.
+
+L1461's five converted-model entries into the74-state fast closure are
+received as Local's computed entries plus the already carried transfer,
+not independently replayed here. That research upgrade is separate from
+this packet's technical clearance.
+
+My own pull: the short rooted-history exclusion, after the now-clear A4
+repair is delivered under its existing ownership.

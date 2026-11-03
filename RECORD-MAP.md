@@ -2948,3 +2948,9 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 - [GC2555/2556originalproof](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md): byteexactCNFfaithfulness/controlledcake_lprLRATUNSAT, oneknown36readcylinderimpossible; noall-pathsurvival. Twoadditionalrobustnessproofsawaitseparatestreamedcheck.
 - [GC2557nb4read](reports/GPT-A4-MOVING-WALL-REVIEW-20261103.md#l1451-rebuilt-nb4-packet-read-remaining-clock-terminology--gc2557): actualrebuiltpacketfaithful, additionaldiagonalorbit/fixed-columnperiodwordingrepair; formalproofunchanged.
 - [GC2558monitorcontract](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#guarded-closure-design-return-to-l1459--gc2558): fixedrootstate+phases/backgroundguard, wildcardinputprefixmonitor, overlappingroots, soundliftbeforepotentialsearch; SOLO/nobuild.
+
+
+## GC2559–2561 — streamed finite robustness and final A4 repair (3 November2026)
+
+- [GC2561twooriginalproofs](reports/GPT-A4-ROBUSTNESS-STREAM-CHECK-20261103.md): H83both/H162aheadbyteexactCNFs/controlledcake_lprPASS; exactrationalbandmatchesactualintegerpredicate. BoundedFIFOhandles63.7MBproofwithoutregularfile/caprelaxation.
+- [GC2560nb5technicalclearance](reports/GPT-A4-MOVING-WALL-REVIEW-20261103.md#l1461-actual-nb5-final-read--gc2560-technical-pass): fullactualsource/essay/icon-source/outputs/rawCheck/periodscopecreditsPASSexactpins; Localpostsunderexistingownerinstruction, newpublicreceiptseparate.

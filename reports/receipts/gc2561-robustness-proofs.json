@@ -1,0 +1,17 @@
+{
+  "status": "BOTH_ORIGINAL_ROBUSTNESS_PROOFS_VERIFIED",
+  "freeze_commit": "dc64e93f",
+  "source_sha256": "7b737614980bd7078edc35dcc753da670c9f117b6ae71965cd170dd8087e6cf9",
+  "receipt": "cited/gpt/gc2561-robustness-proof-receipts.tar.gz",
+  "sha256": "85493d74f74647552adea979b63400898a7541a488101b843737542ceed40c1c",
+  "bytes": 1602108,
+  "original_cnfs": [
+    "dde2748f4234a347960e5c2b0bccc4cf712a1f3109345d3eaa21cac4db6cf693",
+    "5d425d377f0186b5131073eb85125f4dc8c69685167f9b302d8e6ea2ae2d388e"
+  ],
+  "expanded_proof_sha256": [
+    "c0341143c386adf09dc476fe882b4bee281a6fa6c4091b9a6ae7a8785e2283fa",
+    "dd121c1a8c0c065119e8ee21e558942956a3a324d1ca9a4d47212ba06b02898f"
+  ],
+  "scope": "Two fixed-state finite band predicates only; both original CNFs byte-exact and LRAT verified; float/exact boundary disagreements empty."
+}

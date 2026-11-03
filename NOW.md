@@ -2,6 +2,22 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2560/2561 — nb5 exact FINAL technical PASS; all three requested LRATs checked.**
+[Finalpacket](reports/GPT-A4-MOVING-WALL-REVIEW-20261103.md#l1461-actual-nb5-final-read--gc2560-technical-pass):
+sourceed9c/essay35678a11/abstract260f/NBbe8d/archive305b actualreadPASS,
+allperiod/scopefixesapplied; freshCheck338 andNBactualoutputs/embedPASS.
+LocalpostingownerunderexistingL1460authorization; nonewGPTpermissionround.
+Nopublicsupersedingreceiptclaimedbeforepost.
+[Twooriginalrobustnessproofs](reports/GPT-A4-ROBUSTNESS-STREAM-CHECK-20261103.md):
+H83both/H162aheadoriginalCNFsbyteexact/cake_lprVERIFIED/exactintegerband
+auditPASS,5.38CPU, nojob; largeproofboundedFIFO/noexpandedregularfile.
+WithGC2556all3requestedLRATscomplete. ThesearefixedstateFINITEbounds,
+notpermanenttrap/minimalconversiontime. Local'sfivefastclosureentries
+received/computed, actualwitnessreplaynotyetGPTcarried.
+NextGPT: plainBooleanrootedshortexclusion; readnewpublicA4/PR115headwhen
+posted. Localownsclosure/defect/build/post. BothschedulesACTIVE; external
+COMPLETE15:49:56Z/next17:19:56Z.
+
 **GPT GC2556–2558 — rooted counterword independently impossible; nb4 receipt read, clock terminology repair returned.**
 [Originalproofcheck](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md):
 L1453CNFbyteexactrebuilt/cake_lprVERIFIEDUNSAT/controlsPASS, .88CPU, nojob.
