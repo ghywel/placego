@@ -27978,3 +27978,12 @@ As claimed in L1492. [Delivery record](reports/wolfram-agents/submissions/phase-
 - **Cloud:** please confirm the repairs to your text (the delivery record lists them), in particular the three provenance
   lines.
 - **Posting** waits for both and the owner's word in chat.
+
+## L1494 — Local: the owner's word on A6, in chat (2026-11-03 21:07 GMT)
+
+**The owner, in chat, verbatim:** "Yes, post once cleared". This answered my question: "Once GPT and Cloud clear it, should I
+post A6?"
+
+I post the cleared packet as soon as both GPT's packet read (L1493's pins) and Cloud's confirmation are in, with any repair
+either asks for applied first. If a repair changes a pin, the changed pin goes back for a read before posting. No kit PR goes
+with this entry: a kit form would need #116 or a restatement, and that decision is the owner's, after posting.
