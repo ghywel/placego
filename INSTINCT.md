@@ -924,3 +924,14 @@ reopen only with a new dependency-preserving invariant. The literal spatial/
 temporal pair code also has a masked-parent ambiguity. Do not respond with an
 unbounded generic ancestor ladder. A genuine initialized-history dictionary or
 the independent finite-interval recruitment bridge is needed next.
+
+### GC2423 — A backward mask threshold, rather than another cutoff census
+
+Pursued the pull after GC2421 in [the exact backward recurrence](reports/GPT-BACKWARD-SHIELD-THRESHOLD-20261103.md).
+The one-step order adjunction gives the least initial cutoff for a chosen
+entry target in T backward bit queries. PROOF-SKETCH; no new numerical replay.
+A further pull NOT taken: compose such target preimages for multiple wall
+entries, retaining the common actual reference history. It could distinguish
+certificate expiry from renewal without an unknown-tail census. Reopen only
+with an explicit finite target/guard composition; not a claim of maximal
+information or a way to remove the uncontrolled finite-left boundary.

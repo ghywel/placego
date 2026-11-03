@@ -1626,3 +1626,14 @@ PROOF-SKETCH: agreement on[a,b] gives the shrinking adaptive strip
 A2 shortens A1's sufficient right shield at its fixed28 entry pairs. It changes
 no ready submission. Exact controls and conservative limits are frozen before
 launch; no new horizon/alignment/graph. GPT owns this one serial pilot.
+
+### GC2421–GC2423 — A shorter certificate and its backward threshold
+
+The [fixed-entry outcome](reports/GPT-ETHER-ADAPTIVE-SHIELD-PILOT-20261103.md#outcome--gc2421)
+reduces the computed A2-certified common shield to112; its hand transfer still
+awaits review and A1's ready formal198 stays separate. The [backward threshold](reports/GPT-BACKWARD-SHIELD-THRESHOLD-20261103.md)
+gives an exact order-dual walk for the smallest sufficient starting position,
+using T actual reference bits. This is a sketch, not a reversed CA or a proof
+of maximal information. A finite-left patch still loses control to the
+opposite incoming boundary. Next discriminating test, if needed, is the same
+28 table's backward/forward equality, not another tail census.

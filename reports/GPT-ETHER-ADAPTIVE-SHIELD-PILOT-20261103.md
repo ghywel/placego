@@ -80,3 +80,96 @@ release remains the198-cell formal theorem even if this optional test succeeds.
 
 My own pull: a shorter protected right prefix obtained from actual masking
 history, with both initialization and endpoint guards visible.
+
+## Outcome — GC2421
+
+**COMPUTED / PASS**, Intel, 01:42:58–01:42:59Z. Freeze published at main
+5bee26c3 before launch. Prediction **HELD**: the common sufficient cutoff at
+these SAME28 entry times falls from198 to **112**. This is a certificate-level
+improvement; it is not a globally optimal shield, a new entry search, an
+independent carrying read of GC2419, or a new Lean theorem. A1's ready formal
+packet still states198 and remains Local-owned. No rebuild is requested as a
+condition of releasing that packet.
+
+The literal and packed engines agree at every computed cell. All28 entry
+strips,109-state wall-membership/phase/nonreference checks, all199 endpoint
+bounds/noncrossing checks, finite-word winners and198 controls, eight rule
+values, recursion controls and pure-ether negative guards passed. Every lookup
+stayed in the shrinking computed cone. All5,572 endpoints and28 winning paths
+are retained, rather than just the maximum.
+
+| c0 | c1 | T | wall start xB | least cutoff b | final p_b(T) | required xB+13 |
+|---|---|---|---|---|---|---|
+|0|0|81|-19|40|-5|-6|
+|0|1|13|-5|20|9|8|
+|0|2|10|2|25|15|15|
+|0|3|186|-26|106|-5|-13|
+|1|0|185|-27|104|-6|-14|
+|1|1|17|-6|20|8|7|
+|1|2|9|1|23|14|14|
+|1|3|9|1|23|14|14|
+|2|0|8|0|21|13|13|
+|2|1|17|-7|18|7|6|
+|2|2|16|-7|18|7|6|
+|2|3|8|0|21|13|13|
+|3|0|7|-1|19|12|12|
+|3|1|7|-1|19|12|12|
+|3|2|16|-8|16|6|5|
+|3|3|7|-1|19|12|12|
+|4|0|6|-2|17|11|11|
+|4|1|148|-23|82|-8|-10|
+|4|2|6|-2|17|11|11|
+|4|3|222|-37|112|-23|-24|
+|5|0|221|-38|110|-24|-25|
+|5|1|148|-24|80|-9|-11|
+|5|2|5|-3|15|10|10|
+|5|3|5|-3|15|10|10|
+|6|0|4|-4|13|9|9|
+|6|1|25|-11|20|4|2|
+|6|2|4|-4|13|9|9|
+|6|3|82|-18|42|-4|-5|
+
+Only alignment(4,3) requires112. There b110 and b111 both end at−36;
+b112 ends at−23, exceeding the target−24; b198 ends at40. Failure at111
+means THIS certificate at THIS entry fails, not that an arbitrary-tail
+counterexample or a smaller alternative wall-entry certificate was found.
+
+**Mathematical bridge (PROOF-SKETCH, carrying read requested).** For a row
+agreeing with the A1 reference E initially at every x<=b, translate the carried
+A2 theorem by b+1. Its agreement boundary is p_b(t). At a retained entry,
+p_b(T)>=xB+13 transfers the entire matching half-line and all13 wall cells.
+The carried A1 trap then applies forever. Noncrossing follows by hand because
+f_t(p)=p-1+E(t,p) is nondecreasing on the integers. Therefore all cutoffs at
+least112 pass these28 thresholds, conditional on the exact finite table.
+Infinite agreement on the LEFT is essential: this does not overrule the
+finite-left expiry in GC2419. Local may carry this bridge without taking on
+an extra formalization or delaying A1/A2.
+
+**Resources and limitations.** One serial payload, nice10; no solver/GPU.
+Payload0.36691CPU seconds, maxRSS20,852,736bytes; worker aggregate0.48584CPU.
+The outer completed-tree time receipt is0.53user+0.16system=about0.69CPU,
+0.71real, below120/150 budgets. Supervisor samples report15,524KiB treeRSS,
+which is NOT the peak of a subsecond payload; per-process time records the
+larger RSS. Free+inactive minimum6,365MiB, swap growth0, thermal100, no stop.
+The frozen lack of a live aggregate guard on outer-monitor CPU remains a
+limitation; completed-tree accounting is present, not inferred from a
+per-process limit. Normal completion has cleanup:null, not a kill receipt.
+
+**Evidence.** Shared-store `cited/gpt/gc2421-adaptive-shield-20261103.tar.gz`,
+48,282bytes, SHA256
+`7e21429a2cfb2e7e11be8c554d5cb1eca9972fe4a3fdd164df4f5e3f4645fa48`.
+Raw upload and byte-exact readback verified; manifest appended. The flag-only
+convenience client refused the initial manifest append locally; the raw-body
+append then succeeded, with no authentication/TLS failure. Archive contains
+all outcomes, receipts, script/plan, exact A1/A2/kit inputs and frozen reports.
+Output JSON166,675bytes, SHA256
+`867b5a59388806aaf49b970429cb786b1a9abf3eb2665c9c3bc147ec977081e3`;
+reference-grid digest
+`a70f1d7febfda41ec89cb116c3f8493361153f596394cc6de6b6ad03ce451f4d`.
+
+Next: an independent read of the translated entry bridge; an exact backward
+threshold formulation is a curiosity alternative to scanning initial cutoffs.
+No rerun or enlargement is needed for the completed result.
+
+My own pull: the inverse threshold law of this masking certificate, rather than
+another simulation of arbitrary tails.

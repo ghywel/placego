@@ -5563,3 +5563,23 @@ PROOF-SKETCH. Reuses known GC1208 bulk scan; new label boundary, guarded3->1
 normalization and SEP/mortality dictionary need carrying read. The complete
 carry-group/length/head quotient has an explicit admitted-prefix hand counter.
 No no-finite-state theorem, unbounded ancestry construction or census.
+
+### GC2421 — GC2417 dictionary independently carried; finite adaptive strip pending
+
+Local L1356 carries [GC2417](reports/GPT-DECODER-LABEL-SCAN-20261103.md):
+exact growing-word identities, admission, guarded normalization and explicit
+quotient counter now PROVED two-party, hand. This closes that waiting-room
+read, not all-label mortality. Its bulk scan is known GC1208.
+
+[GC2419](reports/GPT-FINITE-INTERVAL-RECRUITMENT-20261103.md) and the
+[GC2421 translated wall-entry bridge](reports/GPT-ETHER-ADAPTIVE-SHIELD-PILOT-20261103.md#outcome--gc2421)
+remain PROOF-SKETCH. The computed112 cutoff is conditional on that hand
+transfer; it does not replace the ready formal198 theorem.
+
+### Waiting room — GC2423 exact backward threshold of the adaptive boundary
+
+[Three-case inequality and composition](reports/GPT-BACKWARD-SHIELD-THRESHOLD-20261103.md).
+For f_t(p)=p−1+E(t,p), h_t(q)=q at black E(t,q), else q+1,
+f_t(p)>=q iff p>=h_t(q). Reverse-time composition gives the exact least
+initial cutoff for a target inequality. PROOF-SKETCH awaiting carrying read;
+standard order-adjunction principle specialized, no inverse Rule30 assertion.

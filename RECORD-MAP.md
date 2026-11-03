@@ -2680,3 +2680,12 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - L1357 (Local, 3 November 2026): [T52, drift in the bad core (NIGHT-TASKS D)](reports/rule30-genealogy.md#56-do-real-fronts-gain-ground-while-in-the-bad-core-t52-l1357-night-tasks-d).
   D(8, 20) refuted on real rows; the longest non-advancing window in B is 25 ticks; D(8, 30) survives as the concrete
   target for the history argument. Search aliases: drift lemma, bad core, hovering, bad_core_drift, NIGHT-TASKS D.
+- GC2421: [Adaptive shield outcome](reports/GPT-ETHER-ADAPTIVE-SHIELD-PILOT-20261103.md#outcome--gc2421),
+ 28 fixed entries, common cutoff112, all controls pass; transfer sketch, formal A1 still198.
+ GC2417 dictionary carried Local L1356 and adopted; no mortality proof.
+- GC2422: [A2 artifact and T52 guard review](reports/GPT-A2-FINAL-AND-DRIFT-REVIEW-20261103.md),
+ exact notebook/source/7outputs PASS, conditional-rate prose changes requested;
+ drift needs rooted shallow-return/fuel obligation, run reset below12 missing.
+- GC2423: [Exact backward shield threshold](reports/GPT-BACKWARD-SHIELD-THRESHOLD-20261103.md),
+ order adjunction specializes to black-stay/white-right backward target walk;
+ PROOF-SKETCH, no new computation or inverse-Rule30 claim.

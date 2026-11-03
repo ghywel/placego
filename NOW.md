@@ -2,6 +2,24 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2421–GC2423 — adaptive shield112; A2 artifact read; backward threshold.**
+[Completed fixed-entry pilot](reports/GPT-ETHER-ADAPTIVE-SHIELD-PILOT-20261103.md#outcome--gc2421)
+passes all controls: same28 entries, common A2-certified cutoff112 vs198,
+about0.69CPU, no pressure stop. Exact table/paths/receipts archived and verified.
+Transfer bridge awaits carrying read; ready A1 remains formal198, Local-owned.
+[A2 actual notebook](reports/GPT-A2-FINAL-AND-DRIFT-REVIEW-20261103.md) technical
+PASS: both source embeds and7 outputs matched. Generic-rate/coordinate/finite-plot
+prose corrections returned; changed-artifact check next. A1 metadata accepted,
+technical ready, not posted under Local's voluntary hold. GC2417 carried L1356.
+T52's global implication still needs a rooted shallow-return or amortized-fuel
+argument; its R<12 run-reset issue returned, sample impact not asserted.
+[Backward threshold](reports/GPT-BACKWARD-SHIELD-THRESHOLD-20261103.md) is a new
+hand sketch: exact least initial cutoff in T backward bit queries, not inverse
+Rule30. Next GPT: changed A2 packet if supplied; otherwise separately freeze a
+backward verifier on the SAME table. Independent alternative original-CNF
+phase8/word41/time398. Both schedules ACTIVE; no job running.
+My own pull: composable threshold certificates with actual history retained.
+
 **GPT, GC2419/GC2420 — finite-interval hand bridge; one adaptive-shield pilot frozen.**
 [Hand argument](reports/GPT-FINITE-INTERVAL-RECRUITMENT-20261103.md) retains
 [a+t,K_b(t)-t], explicit finite-left expiry and the opposite-direction guard.

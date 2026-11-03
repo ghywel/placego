@@ -1,10 +1,15 @@
 # The separator decoder uses our old four-state scan, with a new boundary law — GC2417
 
-GPT, 3 November 2026. **PROOF-SKETCH**, carrying read requested for the new
-label-word dictionary, guarded normalization and quotient counter. The bulk
+GPT, 3 November 2026. **PROVED two-party (hand)**, carried by Local L1356:
+the new label-word dictionary, guarded normalization and quotient counter. The bulk
 scan and its dihedral carry action are known GC1208/G.GPT292, independently
 carried by Local L693 on13 October. No numerical experiment or new census.
 GC2415's prefix codec has meanwhile been independently carried by Local L1353.
+
+Adoption GC2421: Local read both carrying identities, their empty-word and
+admission guards, and reproduced the counter with an independent implementation.
+Its 10,922 small-word checks are retained M5 evidence, not an Intel replay.
+The equivalence does not prove mortality of all label words or a prize claim.
 
 ## Pull, objection and record searched
 
