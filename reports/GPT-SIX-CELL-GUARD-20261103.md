@@ -3,8 +3,8 @@
 GPT, 3 November 2026. The physical implication is **PROVED hand/two-party**
 by GC2607/L1491: initial 111011 on [x,x+5] forces X(4,x+4)=1, with
 arbitrary exterior. This report gives an explicit 18-addition positive-RUP
-candidate for that implication. Its numeric encoding is **NOT YET CHECKED**
-at this freeze. No shortest antecedent or novel word mechanism is claimed.
+candidate for that implication. Its numeric encoding was **NOT YET CHECKED**
+at this freeze; GC2611 below records the partial outcome. No shortest antecedent or novel word mechanism is claimed.
 
 ## Gate support and the guarded clause
 
@@ -130,3 +130,55 @@ Next after a successful check: retain a reusable checked clause and its
 host-embedding obligations. No automatic original-CNF insertion. The
 actual final phase packet has priority once supplied; Local owns its
 assembly/builds and Cloud its packaging/owner exchange.
+
+
+## Partial outcome and the checker-status contract — GC2611
+
+Freeze2cff54b3 ran once at20:54:37Z. All18 gate-only RUP additions,
+224 scalar gate rows,8 fixed-word exteriors and512 nine-bit initial rows
+passed, including a countermodel to omission of the sixth guard. These
+are self-checks of the instance, not yet the intended verified-checker
+receipt. The unit-conflict control returned VERIFIED UNSAT. The corrupted
+final-hint proof was rejected with "Checking failed at line:17" (zero-based
+line18 of the prefix); it emitted no VERIFIED UNSAT marker but exited0.
+Our added assertion wrongly demanded a nonzero rejection exit status,
+and stopped the stage before the good certificate call. The existing
+a10 and guarded-root helpers correctly use the marker for rejection and
+require rc0 only for acceptance. This is a harness-contract failure,
+not an accepted corrupted proof or a counterexample to the implication.
+
+[Partial receipt](receipts/gc2611-six-guard-partial.json) pins every output.
+Evidence `cited/gpt/gc2611-six-guard-partial.tar.gz`,3610bytes,SHA256
+ d09365e3269bc8c5b314d00e09b434d1840ec2ee14d4cc237e0dac82a579276b;
+raw-body transfer and manifest readback verified. Driver aggregate0.26103
+plus outer0.076 gives0.33703CPU seconds; wall0.54s,maxRSS20,488,192bytes.
+Launch free+inactive5771MiB,swap1160.75MiB,thermal100/100. No tree sample
+before completion; sampled zero is not zero usage. Original source and
+failed receipt are preserved, with no automatic rerun.
+
+## Separately frozen remaining positive call — GC2612
+
+The new evidence justifying this narrow continuation is the checker's
+actual rejection text and the already-established helper contract.
+Only the previously uncalled good certificate is needed. Do not regenerate
+anything or rerun the completed controls. Check the immutable retained
+CNF b3e6d4b9cd6767d5556856f61eff5e8ac5981b82c33aeb46d3756fe684c9441e
+and LRAT ecee5483d6a52affdd2a7cf0c87a97290f23a4f66309d81576d0a34df10d086e.
+Prediction: normal exit0 AND literal VERIFIED UNSAT. Counterfactual:
+any other outcome is failure of this remaining validation and stops it.
+
+[a4_six_guard_finish.py](../tests/probes/wolfram/a4_six_guard_finish.py),
+SHA2569e506d9a3a72106d051c5747d4d99e7fbdafdd3382b3af59a7c29d0b741f435b,
+validates both file hashes and the checker, then execs the checker in the
+same process. [Plan](../tests/probes/wolfram/a4_six_guard_finish_plan.json)
+SHA2565f3a5d7e1d091474fd8e581c7a365f008af68fc631fd2bf3d7f11caa2326ac9c.
+This makes the existing serial stage's live/reaped CPU accounting direct.
+
+New total caps10 aggregateCPU/20wall/768MiB,one serial checker/nice10,
+max6 processes,16MiB/file/128MiB stage. Stage stop5CPU plus5CPU supervisor
+reserve, worker hard2CPU/5wall, outer hard3CPU. Same strict tree/headroom/
+swap/thermal gates:4096 launch,3072 running,64swap. Preflight20:56 about
+5702MiB free+inactive,swap1160.75MiB,thermal100/100,load1.86/2.08/2.10;
+recheck at launch. This is a separately justified call on existing bytes,
+not a larger experiment or entitlement to repeat a failed job. GPT owns
+it; Local/Cloud phase work is unchanged. No original-host embedding.

@@ -2,6 +2,15 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2611--2612 — partial certificate outcome preserved; only uncalled positive check newly frozen.**
+The18 gate-only RUP steps and scalar controls pass. The corrupted proof
+was rejected, but a wrong rc!=0 harness assertion stopped before the good
+call; no verified implication receipt yet. [Partial evidence and narrow continuation](reports/GPT-SIX-CELL-GUARD-20261103.md#separately-frozen-remaining-positive-call--gc2612)
+pin the existing bytes. One separately justified10 aggregateCPU/20wall
+call, no regenerated input or repeated controls. GPT owns it. Local owns
+phase assembly; Cloud packaging; GC2610 prose corrections await final
+packet. COMPLETE20:40:46Z; both schedules ACTIVE.
+
 **GPT GC2608--2610 — carries adopted; six-cell certificate check frozen; phase draft corrections returned.**
 L1491 carries the observer refinement and111011 implication, now PROVED
 hand/two-party. [Explicit18-addition guarded candidate and one fixed check](reports/GPT-SIX-CELL-GUARD-20261103.md)

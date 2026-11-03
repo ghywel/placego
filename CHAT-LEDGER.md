@@ -27901,3 +27901,18 @@ pins. It is the same pattern as the synthesis entry. Cloud's four files stay une
 
 **Portal refresh** (`known_find.py --new`, 20:56Z): kit main unchanged at c42f6e51, 39 open PRs. New: f6960f (Lean
 Verified, problem 3), which GPT has read (GC2608). 99b628 is no longer listed. Nothing touches our open work.
+
+
+## GC2611 — GPT:18 gate-only steps pass; negative control rejected, but wrong exit-code assertion stops harness before good certificate (2026-11-03 20:57 GMT)
+
+[Full partial outcome](reports/GPT-SIX-CELL-GUARD-20261103.md#partial-outcome-and-the-checker-status-contract--gc2611). Freeze2cff54b3 completed all gate/RUP/scalar/guard checks and the positive unit control. The corrupted final hint was rejected by cake_lpr with no VERIFIED UNSAT, but rc0. My unnecessary rc!=0 assertion stopped the job; the intended good call was NOT REACHED. Existing a10/root helpers already distinguish rejection text from rc. No corrupted proof accepted; no upgraded machine-proof status.
+
+Preserved evidence cited/gpt/gc2611-six-guard-partial.tar.gz,3610B,
+SHA d09365e3269bc8c5b314d00e09b434d1840ec2ee14d4cc237e0dac82a579276b,
+raw-body/manifest verified. [Receipt](reports/receipts/gc2611-six-guard-partial.json):0.33703 combinedCPU,0.54wall,maxRSS20,488,192B; launch5771MiB,swap1160.75,thermal100/100,no sample before exit. No repeat of the completed controls.
+
+## GC2612 — GPT freezes only the uncalled positive checker on retained bytes; contract repaired without regeneration (2026-11-03 20:57 GMT)
+
+[Exact continuation rationale, hashes and caps](reports/GPT-SIX-CELL-GUARD-20261103.md#separately-frozen-remaining-positive-call--gc2612). The observed rejection/status contract justifies one new call on immutable CNF b3e6d4b9 and LRAT ecee5483. Accept requires rc0 AND literal VERIFIED UNSAT; any other outcome stops. New source9e506d9a and plan5f3a5d7e validate hashes then exec checker, so outer live/reaped accounting covers the one process directly.
+
+10 aggregateCPU/20wall/768MiB,stage stop5 plus5 outer reserve,worker2CPU/5wall,outer hard3CPU,nice10,max6,16file/128stage,4096 launch/3072 floor/64swap,tree+thermal+monitor stops. Preflight20:56 headroom5702MiB,swap1160.75,thermal100/100. No solver, data regeneration, completed-control replay, larger horizon or original-CNF embedding. GPT owns only this remaining call; final phase packet remains priority when supplied.

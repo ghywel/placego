@@ -1,0 +1,107 @@
+{
+  "entry": "GC2611",
+  "freeze_commit": "2cff54b3",
+  "status": "PARTIAL: gate-only18-step RUP and scalar checks passed; negative checker control rejected; harness incorrectly required negative rc!=0; intended good checker call not reached",
+  "artifact": {
+    "path": "cited/gpt/gc2611-six-guard-partial.tar.gz",
+    "bytes": 3610,
+    "sha256": "d09365e3269bc8c5b314d00e09b434d1840ec2ee14d4cc237e0dac82a579276b"
+  },
+  "members": {
+    "bad.lrat": {
+      "bytes": 690,
+      "sha256": "59e4e32454985d55b94c4262ec8d731947b9c52db02cce3f9ee1f118b2e81576"
+    },
+    "bad.stderr": {
+      "bytes": 83,
+      "sha256": "5c4737d7e8d8281abab7a1375a13d99e7786411ef37563d9af2268b0aa413baf"
+    },
+    "bad.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "gate-only-prefix.lrat": {
+      "bytes": 654,
+      "sha256": "7d2c42659d2b0014df0cdafa9ded9de909745e39cce69f0b6db81f570a58c0dd"
+    },
+    "gates.cnf": {
+      "bytes": 1645,
+      "sha256": "eb928f1d781c30909d4f58cdd14ce72a9b494532a1c166d102cd0c7becbb3307"
+    },
+    "implication.cnf": {
+      "bytes": 1676,
+      "sha256": "b3e6d4b9cd6767d5556856f61eff5e8ac5981b82c33aeb46d3756fe684c9441e"
+    },
+    "implication.lrat": {
+      "bytes": 694,
+      "sha256": "ecee5483d6a52affdd2a7cf0c87a97290f23a4f66309d81576d0a34df10d086e"
+    },
+    "launcher.json": {
+      "bytes": 1270,
+      "sha256": "8040286312f901ae5597692493be8b8bbc9abf498623d4fa901d5b67ba38cd6c"
+    },
+    "live.json": {
+      "bytes": 100,
+      "sha256": "661a1393c0881c052d8710cf620c86b1ff1c79d2a90879150a8ca065e3151130"
+    },
+    "out.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "six-cell.receipt.json": {
+      "bytes": 271,
+      "sha256": "49f517d19229f1c8137f8696f6078dd72f80c3a05ecd825f50fac18ce22b5f2c"
+    },
+    "six-cell.stderr": {
+      "bytes": 404,
+      "sha256": "3dbc7c43a5665f7c272841210099aa83286be1fbed75660497c07f72c47d7dba"
+    },
+    "six-cell.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "solve.json": {
+      "bytes": 910,
+      "sha256": "5937e2d76147c3ba9c18a7c55eaed31095401d2686f8ccfe26d2762545ca1384"
+    },
+    "summary.json": {
+      "bytes": 437,
+      "sha256": "b31dbb539cde1bf60a8cebcc6986a826083f1dd8af26daed61d0af4df52660ed"
+    },
+    "thermal.txt": {
+      "bytes": 1115,
+      "sha256": "70f39550c80895568b45926db98b531843ca13454de7123a6d9ef41899419bac"
+    },
+    "time_receipt.txt": {
+      "bytes": 1294,
+      "sha256": "df64989b4c166e0d96707a57de640eddb85831c2190eb42f0c1574a37d076945"
+    },
+    "unit.cnf": {
+      "bytes": 19,
+      "sha256": "ac42a371b5a124286c410ed5dfa2e3be7ee7d5b1feac6f08e7e1715f0c3669a8"
+    },
+    "unit.lrat": {
+      "bytes": 10,
+      "sha256": "2e9bf73f333fd3624376d1eb676ce8d6240ba39924936c22bc1a522bfb01b8cc"
+    },
+    "unit.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "unit.stdout": {
+      "bytes": 17,
+      "sha256": "c680d3bd38a04c7beee7d54999f8f00b43051f75a53cf2bd170ae0cc5f99eb5f"
+    }
+  },
+  "resources": {
+    "driver_aggregate_cpu_s": 0.26103,
+    "outer_supervisor_cpu_s": 0.076,
+    "combined_cpu_s": 0.33703,
+    "wall_s": 0.54,
+    "maxrss_bytes": 20488192,
+    "launch_free_inactive_mib": 5771,
+    "launch_swap_mib": 1160.75,
+    "tree_samples": 0,
+    "sample_note": "completed before first sample; zeros are not zero usage"
+  }
+}
