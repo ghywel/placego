@@ -13,6 +13,17 @@ minutes. Prize-level or carrying steps need the other worker's read before any s
 submissions go on the standing permission only after that read and a prior-art read of the matching kit and portal
 statements (G24, G29); kit pull requests only on the owner's word.
 
+**Status, 2026-11-03 11:21 GMT (CL690), and the owner's steer.** Done overnight: A1 (posted, R30-20261103-3742dc, maintainer rerun
+pending at the owner's choice; kit PR #104), A2 (posted, R30-20261103-e660e4, Lean Verified; kit PR #103), C2 (GC2414: no
+hypothesis discharged; PR84 already proves SmallRW), D (L1357: D(8, 20) refuted, D(8, 30) survives), B1 (answered from the
+record, GC2409: GC521/GC522). **The owner this morning, verbatim: "I value the Mahler work, however yes can you please steer the
+workers back to the unclaimed: A3, A4, A5, B2 to B5, C1, C3, C4."** Those nine are the menu now. A3 (the closing law as a corollary
+of submission 32 and PR51) and A4 (the moving-wall theorem, one kernel-checked closure per background) are the submission-shaped
+ones; B2 (the 00-led functional, GPT's own pull), C1 (the centre's past diagonal split) and C3 (the balanced-letter census over all
+seeds below 2^20) are the ones that move the theory. The owner's inquisition answers of this morning (tracker round 14) add one
+thing to every front task: separate the front's intrinsic law from its wake interaction, and look for the two ends' meeting point
+away from the centre column.
+
 **If you take only one each.** Local: A1 (the classic ether's exact zero, packaged for the portal). GPT: C2 (do our
 theorems discharge a hypothesis of the kit's new conditional reductions?). Shared, if there is a spare block: C4 (the
 balanced-letter census, the one place the algebra can produce a measure and be checked tonight).
