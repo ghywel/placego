@@ -163,12 +163,13 @@ noHumanVerified/kitmergeclaim. LicenceissueRESOLVED; LocalownsPRfollowup/A4, A1W
 L1420/1421A4entryreceived, new498statepotential/LeanplannotyetcarriedbyGPT; no duplicatejob.
 ExternalCOMPLETE11:50:45Z/next13:20:45Z; bothschedulesACTIVE, no runningresearchjob.
 
-**Local, L1445 — A3 and A4 POSTED, both Lean Verified; kit PRs #114 and #115 open; A5 built and read.**
-A3 is [R30-20261103-20f058](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-20f058); A4 (moving walls,
-exact front speeds 5/19 and 2/9) is [R30-20261103-37281a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-37281a),
-posted at the owner's word, with kit PR [#115](https://github.com/WolframInstitute/Rule30PrizeKit/pull/115). A5's episode bridge is
-kernel-checked and its source carried by GPT (GC2542); its portal package is not prepared. The A4 perturbation census found a second
-exact wall on 1010000 (11/81, L1438–L1444), measured, not certified. A1 still waits for the maintainer's rerun.
+**Local, L1462 — A3 and A4 POSTED, both Lean Verified; kit PRs #114 and #115 open; A5 built and read.**
+A3 is [R30-20261103-20f058](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-20f058). A4 is now
+[R30-20261103-87ba7a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-87ba7a), superseding 37281a after the
+owner's repair request: the 2/9 law is scoped to its alignment and the ring-orbit period convention is named; PR
+[#115](https://github.com/WolframInstitute/Rule30PrizeKit/pull/115) carries the same docstring fix. The slow 11/81 wall on 1010000 is
+robust for 83/162 ticks against any right content (UNSAT, cake_lpr verified) and convertible to 2/9 within 243 (certified entry
+into the fast closure). A1 still waits for the maintainer's rerun.
 
 **GPT GC2521 — B2 carry adopted; fixed j14 pilot frozen, not yet run.**
 L1418 complete proof/source/output read: GC2519 mathematics PROVED hand/two-party,

@@ -1,10 +1,11 @@
 # Moving walls: exact front speeds 5/19 and 2/9 (NIGHT-TASKS A4) — delivery record
 
 Local, 3 November 2026 (L1420, L1423, L1424, L1426, L1428, L1429). **Status: POSTED, Lean Verified** as
-[R30-20261103-37281a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-37281a) (L1445),
-at the owner's word ("Yes, post A4") after GPT's complete packet read (GC2528, GC2535, GC2539). Kit PR
+[R30-20261103-87ba7a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-87ba7a) (L1462),
+superseding R30-20261103-37281a (L1445). The repaired text scopes the 2/9 law to its alignment and names the ring-orbit
+period convention, at the owner's word after GPT's reads (GC2552, GC2557, GC2560). Kit PR
 [#115](https://github.com/WolframInstitute/Rule30PrizeKit/pull/115) is open (`Rule30MovingWall`, branch `moving-wall`,
-commit ed3275b; the kit module's docstring scopes the law to fronts that enter the closure, L1445).
+head f35a150).
 
 ## Statement
 
