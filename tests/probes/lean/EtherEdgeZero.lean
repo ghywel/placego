@@ -12,17 +12,21 @@ on, the ether is undisturbed at and left of a fixed column `xB`, and the disturb
 right of it (`edge_pinned`). So the leftmost cell where `G` differs from the ether stays in a fixed window: its speed is
 exactly zero.
 
-* `trap_two_sided`: Lowry's ether-wall trap (kit `trap_invariant`, PR65) on the whole line, with the prescribed column
-  replaced by the induction hypothesis on the columns left of the B3 (L1320).
+* `trap_two_sided`: the ether-wall trap of the kit's `Rule30Ether` (`trap_invariant`) on the whole line, with the
+  prescribed column replaced by the induction hypothesis on the columns left of the B3 (L1320).
 * `G_left`: the light cone (columns `x < -t` are still the ether).
 * `iter3_G`: a finite list simulation (the kit's `lin3`) agrees with `G` on its range.
 * `entry_c0_c1`: for each alignment, the kernel checks that by a stated time `t1 ≤ 222` the columns `-t1 .. xB` are the
   ether, `xB` is a B3 column, and the next 13 cells form one of the 109 wall states (`checkEntry`, by `decide`).
 * `wall_ne_ref_all`: no wall state equals the ether's own 13 cells after a B3 (by `decide`), so the disturbance never heals.
 
-Prior art: the ether and the trap are Lowry's (kit PR65), used there to exclude ether walls beside a periodic centre
-column. The inserted edge's entry into the trap at every alignment, and the exact zero of its front speed, are Cloud's
-(CL681) and Local's (L1320, this file).
+* `edge_pinned_tail` (GC2412's shield, L1351): the same for every rule-30 evolution whose initial row agrees with the
+  inserted edge's on `x ≤ 198`, whatever its right tail.
+
+Prior art: the ether, the wall states and `trap_invariant` are the kit's `Rule30Ether` (a catalog module of the kit's
+first commit), used there to exclude ether walls beside a periodic centre column; kit pull request 65 later added `Lock`
+and `Rule30EtherWallWitness`. The inserted edge's entry into the trap at every alignment, and the exact zero of its front
+speed, are Cloud's (CL681) and Local's (L1320, this file).
 -/
 @[expose] public section
 namespace Ruliology.CellularAutomata.EtherEdgeZero
@@ -340,6 +344,46 @@ theorem entry_6_2 : checkEntry 6 2 4 (-4) = true := by decide
 set_option maxRecDepth 100000 in
 theorem entry_6_3 : checkEntry 6 3 82 (-18) = true := by decide
 
+/-! ### Arbitrary right tails beyond 198 -/
+
+/-- Radius-one locality: two whole-line rule-30 evolutions that agree at time `0` on `x ≤ M` agree at time `t` on
+`x ≤ M - t`. -/
+theorem agree_cone {G H : Nat → Int → Bool} (hG : IsR30Z G) (hH : IsR30Z H) (M : Int)
+    (h0 : ∀ x, x ≤ M → H 0 x = G 0 x) : ∀ t : Nat, ∀ x : Int, x + t ≤ M → H t x = G t x := by
+  intro t
+  induction t with
+  | zero => intro x hx; exact h0 x (by omega)
+  | succ t ih =>
+    intro x hx
+    rw [hH, hG, ih (x - 1) (by omega), ih x (by omega), ih (x + 1) (by omega)]
+
+/-- From a passing check, every evolution agreeing with the inserted edge's on `x ≤ M` at time `0` is pinned too, as long
+as the entry window `xB + 13` at time `t1` lies inside the agreement cone. -/
+theorem pinned_of_check_tail {c0 c1 t1 : Nat} {xB M : Int} (h : checkEntry c0 c1 t1 xB = true) (hM : xB + 13 + t1 ≤ M)
+    {H : Nat → Int → Bool} (hH : IsR30Z H) (h0 : ∀ x, x ≤ M → H 0 x = initRow c0 c1 x) :
+    ∀ t, t1 ≤ t → (∀ x, x ≤ xB → H t x = etherZ c0 x (t + c1)) ∧
+      ∃ x, xB < x ∧ x ≤ xB + 13 ∧ H t x ≠ etherZ c0 x (t + c1) := by
+  obtain ⟨hk, hE, hW⟩ := entry_spec h
+  have hag := agree_cone (G_isR30 c0 c1) hH M h0
+  have hE' : ∀ x, x ≤ xB → H t1 x = etherZ c0 x (t1 + c1) := fun x hx => by
+    rw [hag t1 x (by omega)]; exact hE x hx
+  have hrow : rowZ H t1 xB 13 = rowZ (G c0 c1) t1 xB 13 :=
+    seg_congr _ _ _ (fun i hi => hag t1 _ (by omega))
+  have hW' : ((t1 + c1) % 4, rowZ H t1 xB 13) ∈ wallStates := by rw [hrow]; exact hW
+  have inv := trap_two_sided hH (c0 : Int) xB c1 t1 hk hE' hW'
+  intro t ht
+  obtain ⟨hE2, hW2⟩ := inv (t - t1)
+  rw [show t1 + (t - t1) = t by omega] at hE2 hW2
+  refine ⟨hE2, ?_⟩
+  have hne : rowZ H t xB 13 ≠ refStrip ((t + c1) % 4) := by
+    have := List.all_eq_true.1 wall_ne_ref_all _ hW2
+    simpa using this
+  unfold rowZ refStrip at hne
+  obtain ⟨i, hi, hfi⟩ := seg_ne_witness 13 _ _ hne
+  refine ⟨xB + (i : Int) + 1, by omega, by omega, fun hc => hfi ?_⟩
+  rw [hc]
+  exact etherZ_eq_ether (by omega) (by omega)
+
 /-- **The classic ether absorbs a black edge: its front speed is exactly zero.** For every alignment `(c0, c1)` of the
 kit's ether, the leftmost cell where the inserted edge's evolution differs from the ether stays, from a finite time on,
 inside a fixed window of 13 cells: the ether at and left of `xB` is never disturbed, and the disturbance never heals. -/
@@ -374,6 +418,44 @@ theorem edge_pinned (c0 c1 : Nat) (h0 : c0 < 7) (h1 : c1 < 4) : ∃ xB : Int, �
   | 6, 1, _, _ => ⟨(-11), 25, pinned_of_check entry_6_1⟩
   | 6, 2, _, _ => ⟨(-4), 4, pinned_of_check entry_6_2⟩
   | 6, 3, _, _ => ⟨(-18), 82, pinned_of_check entry_6_3⟩
+  | c0 + 7, _, h, _ => absurd h (by omega)
+  | _, c1 + 4, _, h => absurd h (by omega)
+
+/-- **Arbitrary right tails.** Every rule-30 evolution of the whole line whose initial row agrees with the inserted edge's
+on `x ≤ 198` (the ether left of `0`, black at `0`, white on `1 .. 198`), whatever it holds beyond, is pinned in the same
+13-cell window from the same time on. -/
+theorem edge_pinned_tail (c0 c1 : Nat) (h0' : c0 < 7) (h1' : c1 < 4) {H : Nat → Int → Bool} (hH : IsR30Z H)
+    (h0 : ∀ x, x ≤ 198 → H 0 x = initRow c0 c1 x) : ∃ xB : Int, ∃ t1 : Nat, ∀ t, t1 ≤ t →
+    (∀ x, x ≤ xB → H t x = etherZ c0 x (t + c1)) ∧ ∃ x, xB < x ∧ x ≤ xB + 13 ∧ H t x ≠ etherZ c0 x (t + c1) :=
+  match c0, c1, h0', h1' with
+  | 0, 0, _, _ => ⟨(-19), 81, pinned_of_check_tail entry_0_0 (by decide) hH h0⟩
+  | 0, 1, _, _ => ⟨(-5), 13, pinned_of_check_tail entry_0_1 (by decide) hH h0⟩
+  | 0, 2, _, _ => ⟨2, 10, pinned_of_check_tail entry_0_2 (by decide) hH h0⟩
+  | 0, 3, _, _ => ⟨(-26), 186, pinned_of_check_tail entry_0_3 (by decide) hH h0⟩
+  | 1, 0, _, _ => ⟨(-27), 185, pinned_of_check_tail entry_1_0 (by decide) hH h0⟩
+  | 1, 1, _, _ => ⟨(-6), 17, pinned_of_check_tail entry_1_1 (by decide) hH h0⟩
+  | 1, 2, _, _ => ⟨1, 9, pinned_of_check_tail entry_1_2 (by decide) hH h0⟩
+  | 1, 3, _, _ => ⟨1, 9, pinned_of_check_tail entry_1_3 (by decide) hH h0⟩
+  | 2, 0, _, _ => ⟨0, 8, pinned_of_check_tail entry_2_0 (by decide) hH h0⟩
+  | 2, 1, _, _ => ⟨(-7), 17, pinned_of_check_tail entry_2_1 (by decide) hH h0⟩
+  | 2, 2, _, _ => ⟨(-7), 16, pinned_of_check_tail entry_2_2 (by decide) hH h0⟩
+  | 2, 3, _, _ => ⟨0, 8, pinned_of_check_tail entry_2_3 (by decide) hH h0⟩
+  | 3, 0, _, _ => ⟨(-1), 7, pinned_of_check_tail entry_3_0 (by decide) hH h0⟩
+  | 3, 1, _, _ => ⟨(-1), 7, pinned_of_check_tail entry_3_1 (by decide) hH h0⟩
+  | 3, 2, _, _ => ⟨(-8), 16, pinned_of_check_tail entry_3_2 (by decide) hH h0⟩
+  | 3, 3, _, _ => ⟨(-1), 7, pinned_of_check_tail entry_3_3 (by decide) hH h0⟩
+  | 4, 0, _, _ => ⟨(-2), 6, pinned_of_check_tail entry_4_0 (by decide) hH h0⟩
+  | 4, 1, _, _ => ⟨(-23), 148, pinned_of_check_tail entry_4_1 (by decide) hH h0⟩
+  | 4, 2, _, _ => ⟨(-2), 6, pinned_of_check_tail entry_4_2 (by decide) hH h0⟩
+  | 4, 3, _, _ => ⟨(-37), 222, pinned_of_check_tail entry_4_3 (by decide) hH h0⟩
+  | 5, 0, _, _ => ⟨(-38), 221, pinned_of_check_tail entry_5_0 (by decide) hH h0⟩
+  | 5, 1, _, _ => ⟨(-24), 148, pinned_of_check_tail entry_5_1 (by decide) hH h0⟩
+  | 5, 2, _, _ => ⟨(-3), 5, pinned_of_check_tail entry_5_2 (by decide) hH h0⟩
+  | 5, 3, _, _ => ⟨(-3), 5, pinned_of_check_tail entry_5_3 (by decide) hH h0⟩
+  | 6, 0, _, _ => ⟨(-4), 4, pinned_of_check_tail entry_6_0 (by decide) hH h0⟩
+  | 6, 1, _, _ => ⟨(-11), 25, pinned_of_check_tail entry_6_1 (by decide) hH h0⟩
+  | 6, 2, _, _ => ⟨(-4), 4, pinned_of_check_tail entry_6_2 (by decide) hH h0⟩
+  | 6, 3, _, _ => ⟨(-18), 82, pinned_of_check_tail entry_6_3 (by decide) hH h0⟩
   | c0 + 7, _, h, _ => absurd h (by omega)
   | _, c1 + 4, _, h => absurd h (by omega)
 

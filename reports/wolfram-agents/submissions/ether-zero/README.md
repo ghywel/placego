@@ -16,13 +16,15 @@ mismatch is pinned in (x_B, x_B + 13], so its speed is exactly zero.
 | `edge_pinned` | the statement above, for every alignment `c0 < 7`, `c1 < 4` |
 | `trap_two_sided` | the ether-wall trap on the whole line: ether up to a B3 column plus a wall state stays so for ever |
 | `wall_ne_ref_all` | no wall state is the ether's own 13 cells after a B3, so the disturbance never heals |
+| `edge_pinned_tail` | the same for every row agreeing with the inserted edge's on x ≤ 198, whatever its right tail |
 
 **Status.**
 - The theorem is kernel-checked: standard axioms, on kit 93d98bbe, which equals c42f6e5 for every module used.
 - The hand argument for the two-sided step is two-party (L1320 with Cloud's CL681).
-- GPT's read of this source is requested (L1345).
-- Prior art: the trap and the ether are Lowry's (kit PR65). The inserted edge's entry at every alignment, and the exact
-  zero of its front speed, are new to the kit and the portal, pending GPT's prior-art read.
+- GPT's read of the source passed (GC2412). Its packet read of this version is requested (L1351).
+- Prior art: the ether, its wall states and `trap_invariant` are the kit's `Rule30Ether` (a catalog module of the kit's
+  first commit); kit PR 65 later added `Lock` and `Rule30EtherWallWitness`. GPT's source comparison (GC2412) found no
+  inserted-edge entry or pinning theorem there.
 
 ## Files
 

@@ -1,6 +1,6 @@
 #!/bin/sh
 # Ether-zero full check (Local, L1346, NIGHT-TASKS A1): the catalog module EtherEdgeZero.lean and its portal form, each
-# compiled in isolation and checked by the kit's unchanged Check.lean with three headlines, as check_ether_episode.sh does.
+# compiled in isolation and checked by the kit's unchanged Check.lean with four headlines (L1351), as check_ether_episode.sh does.
 # Core imports only. Invoke from the lean/ directory of a kit at the verifier's commit, through
 # `lake env sh check_ether_episode.sh CATALOG SUBMISSION CHECKER`, under run_capped.py --track-tree.
 # The verifier's image 15 is kit 93d98bbe; Rule30Ether and its closure there are byte-identical to kit main c42f6e5.
@@ -11,8 +11,8 @@ python3 - "$1" "$2" "$3" <<'PY'
 from pathlib import Path
 import hashlib, os, sys
 out = Path(os.environ['CAPPED_OUT'])
-pins = [('catalog', sys.argv[1], '005f5e3ec90bc26af48ec640a6d7943db505d0dbf7c45d20df1cc5e3b899dfe2'),
-        ('submission', sys.argv[2], 'dc9ea874f8342ac7b900a63392f2750e7ad62f6e38a877cbae8b7b09725e99b3'),
+pins = [('catalog', sys.argv[1], '4787092702a8744f3376c0fa074991f641df98fd3cf3ab7885536e508fd53773'),
+        ('submission', sys.argv[2], '4a2688b0c03fd1274aa0a2381f98b5405f7fb42ab0a1bde1c1472bcf6db07018'),
         ('checker', sys.argv[3], 'b882f2527a1d6e720828a0c729cc80c3977905ed9207d09af22f8d153a073905')]
 data = {}
 for name, path, expected in pins:
@@ -30,7 +30,7 @@ for name, path, expected in pins:
 (out / 's' / 'src' / 'Rule30Submission.lean').write_bytes(data['submission'])
 (out / 'Check.lean').write_bytes(data['checker'])
 PY
-heads="edge_pinned trap_two_sided wall_ne_ref_all"
+heads="edge_pinned edge_pinned_tail trap_two_sided wall_ne_ref_all"
 base_path="$LEAN_PATH"
 for part in c s; do
   if [ "$part" = c ]; then

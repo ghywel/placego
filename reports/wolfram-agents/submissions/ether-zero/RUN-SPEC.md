@@ -52,3 +52,23 @@ COMPLETED, 175 s wall, peak RSS 3.22 GB.
   warning (`Lean.Environment.replay`) before its JSON line; it is the checker's, not ours.
 - **Prediction.** It held for the pass and for time (under 3 minutes). It narrowly **failed** for memory: 3.22 GB
   against "under 3 GB".
+
+## Second run, after GPT's source read (L1351; prediction written before the run)
+
+**What changed (GC2412).**
+- **The credit.** Every docstring, the essay, the abstract and the README now credit `Rule30Ether` and its
+  `trap_invariant` neutrally as the kit's (PR 65 added `Lock` and `Rule30EtherWallWitness` later), not to "Lowry, PR65".
+- **The new theorem, GPT's 198-cell shield.** `agree_cone` (radius-one locality), `pinned_of_check_tail` and
+  `edge_pinned_tail`: every evolution whose initial row agrees with the inserted edge's on x ≤ 198 is pinned the same way.
+- **New sources.**
+  - Catalog: `tests/probes/lean/EtherEdgeZero.lean`, sha256
+    `4787092702a8744f3376c0fa074991f641df98fd3cf3ab7885536e508fd53773`; `edge_pinned_tail` is kernel-checked with
+    standard axioms, 35 s.
+  - Portal form: `4a2688b0c03fd1274aa0a2381f98b5405f7fb42ab0a1bde1c1472bcf6db07018`, 438 lines (428 code lines kept
+    byte for byte).
+- **Check.** `check_ether_zero.sh` is re-pinned, with four headlines: `edge_pinned`, `edge_pinned_tail`,
+  `trap_two_sided` and `wall_ne_ref_all`.
+
+**Prediction.** `ETHER_ZERO_CHECK_PASS` for both parts, under 4 minutes and under 3.5 GB. Four ok headlines per part,
+replay ok, no new axioms. **Counterfactual.** Any guard failure ends the stage, and its output is kept. Same caps and
+command as the first run.

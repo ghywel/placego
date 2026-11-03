@@ -7,7 +7,7 @@ Description: A partial result proved in core Lean: a black cell inserted into th
 Abstract: See abstract.txt.
 Keywords: [rule 30, Rule 30 Prize, ether, wall, trap, front, news speed, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]
-Links: ["[Rule 30 Prizes](https://rule30prize.org/)", "[Kit pull request 65: Rule30Ether and its wall trap](https://github.com/WolframInstitute/Rule30PrizeKit/pull/65)"]
+Links: ["[Rule 30 Prizes](https://rule30prize.org/)", "[The kit's Rule30Ether](https://github.com/WolframInstitute/Rule30PrizeKit/blob/93d98bbe049177d2c1546b6b0714aa33703ae13d/lean/Ruliology/CellularAutomata/Rule30Ether.lean)"]
 ---
 
 ## The question
@@ -16,8 +16,8 @@ Rule 30 updates each cell from itself and its two neighbours: the new colour is 
 three Rule 30 Prize problems ask about the centre column of the pattern grown from a single black cell. This essay proves
 nothing about that column. It is about how far news travels through a periodic background of rule 30.
 
-Rule 30 has spatially and temporally periodic orbits, its **ethers**. The kit's `Rule30Ether` (Troy Lowry, kit pull
-request 65) gives one with spatial period 7 and temporal period 4, the **classic ether**. Its seven columns at the four
+Rule 30 has spatially and temporally periodic orbits, its **ethers**. The kit's `Rule30Ether` gives one with spatial
+period 7 and temporal period 4, the **classic ether**. Its seven columns at the four
 phases are
 
 $$B_1 = 0011,\ B_2 = 0110,\ B_3 = 1101,\ B_4 = 0101,\ B_5 = 0011,\ c = 0001,\ c = 0001.$$
@@ -49,7 +49,7 @@ The picture shows the difference from the ether near $x = 0$. (The plotted windo
 finite row, which wrap around.) The damage spreads to the right at full speed. Its left end wanders for a while, then
 stops for good.
 
-## Why it stops: Lowry's ether-wall trap
+## Why it stops: the ether-wall trap of `Rule30Ether`
 
 `Rule30Ether` contains 109 states of a 13-cell strip lying to the right of a $B_3$ column, the **wall states**, with two
 properties checked by the kernel (`wallOK_true`):
@@ -113,15 +113,31 @@ theorem edge_pinned (c0 c1 : Nat) (h0 : c0 < 7) (h1 : c1 < 4) : ∃ xB : Int, �
 **The front is pinned:** $x_B < F(t) \le x_B + 13$ for every $t \ge t_1$, at every alignment. Its leftward speed is
 exactly zero.
 
+## Any right tail beyond 198
+
+The 28 entries read nothing to the right of $x_B + 13 + t_1 \le 198$: a cell at time $t$ depends only on the cells
+within distance $t$ at time 0 (`agree_cone`). The tightest case is $(4, 3)$, with $-37 + 13 + 222 = 198$. Once
+trapped, the strip does not care what arrives from the right. So the same holds for every row that agrees with the
+inserted edge's on $x \le 198$ (the ether, the black cell, then 198 white cells), whatever it holds beyond:
+
+```lean
+theorem edge_pinned_tail (c0 c1 : Nat) (h0' : c0 < 7) (h1' : c1 < 4) {H : Nat → Int → Bool} (hH : IsR30Z H)
+    (h0 : ∀ x, x ≤ 198 → H 0 x = initRow c0 c1 x) : ∃ xB : Int, ∃ t1 : Nat, ∀ t, t1 ≤ t →
+    (∀ x, x ≤ xB → H t x = etherZ c0 x (t + c1)) ∧ ∃ x, xB < x ∧ x ≤ xB + 13 ∧ H t x ≠ etherZ c0 x (t + c1)
+```
+
+This is a statement about an infinite family of initial rows.
+
 ## Scope and what is new
 
 - **Frame.** The lab frame of the classic ether. Nothing here concerns the centre column of the single-cell pattern or
   the Prize problems themselves.
-- **Prior art.** The ether and the wall trap are Lowry's (kit pull request 65), used there to exclude ether walls beside
-  a periodic centre column. New here are the trap on the whole line, the entry of an inserted black edge at every
-  alignment, and with them the exact zero of the edge's front speed.
+- **Prior art.** The ether, its wall states and `trap_invariant` are the kit's `Rule30Ether`, used there to exclude ether
+  walls beside a periodic centre column; kit pull request 65 later added `Lock` and `Rule30EtherWallWitness`. New here
+  are the trap on the whole line, the entry of an inserted black edge at every alignment, and with them the exact zero
+  of the edge's front speed.
 - **Context.** Among the periodic backgrounds we examined, the classic ether is the one in which the inserted edge's left
   front is rigid. Elsewhere it moves at a positive rate below light speed.
 - **Checking.** The Lean module builds on the verifier's kit (93d98bbe) in core Lean with standard axioms (propext,
-  Classical.choice, Quot.sound), and passes the kit's `Check.lean` with the headlines `edge_pinned`, `trap_two_sided`
-  and `wall_ne_ref_all`.
+  Classical.choice, Quot.sound), and passes the kit's `Check.lean` with the headlines `edge_pinned`, `edge_pinned_tail`,
+  `trap_two_sided` and `wall_ne_ref_all`.
