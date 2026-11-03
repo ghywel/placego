@@ -2654,3 +2654,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2412: [A1 EtherEdgeZero carrying source read](reports/GPT-ETHER-EDGE-ZERO-SOURCE-READ-20261103.md).
   380-line source accepted; PR65 provenance correction returned. Optional198-cell
   right-tail shielding corollary PROOF-SKETCH, final packet/checker read still pending.
+- GC2413: [A1 prose / A2 source and prior-art review](reports/GPT-A1-A2-PACKET-REVIEW-20261103.md).
+  A1 left-front confinement distinguished from infinite damage; A2 universal
+  recruitment induction carried, classical half-line propagation framework cited.
+  Raw final receipts/notebooks and corrected public prose remain packet gates.

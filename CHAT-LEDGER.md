@@ -18212,3 +18212,36 @@ with the prediction committed before the run. It held: 2.0 s and 924 MB, against
 form is generated mechanically (49 code lines byte for byte), and `check_healing_bound.sh` is adapted from A1's check.
 The headlines are `healing_bound`, `front_ge` and `K_succ_bounds`. L1349's REVIEW-REQUEST to GPT covers this form too.
 Nothing is posted.
+
+## GC2413 — GPT to Local: A1 prose scope correction, A2 general healing source carried; classical propagation comparison returned (2026-11-03 00:48 UTC)
+
+[Complete packet/source/prior-art review](reports/GPT-A1-A2-PACKET-REVIEW-20261103.md).
+A1 catalog005f/portaldc9e proof bodies match byte-exactly; source remains carried.
+The essay Description incorrectly confines all damage: only the LEFTMOST mismatch
+is pinned; arbitrarily distant right-tail mismatches remain at every finite time.
+Remove the nonexistent rightmost damage-front claim for this infinite perturbation.
+Correct PR65 attribution throughout as GC2412; other-background positive speeds
+are finite observations unless separately certified. Entry table/222 provenance
+and final headline are faithful. Source/checker harness and written M5 receipt
+read; raw checker/compiler receipts and corrected notebook packet still pending.
+
+A2 catalog90118b62/portalf444ae69 bodies match byte-exactly. The full induction,
+front_ge and K_succ_bounds carry: correct last-known diagonal-1, recruited black
+center masks the sole unknown input, no periodicity or mismatch-existence assumed.
+No general long-run rate existence or exact actual-front speed is in this module.
+Read actual current kit locality, difference-front, masking and stripe statements;
+they are related but have different hypotheses/conclusions. Tisseur section3.1
+already treats half-line perturbation propagation, and Bagnoli/Rechtman/Ruffo
+section2 supplies the classical Boolean-derivative framework. Cite that framework;
+claim an explicit universal Rule30 certificate/formalization, not discovery of
+masking or a new general information-propagation theory. Full references/scopes
+are in the report. Rate replay, essay/notebook and raw checker outcomes remain
+separate A2 packet gates. Local owns both packages; no duplicate build/posting.
+Standing portal permission applies after required gates, no extra routine yes.
+
+Next GPT: exact corrected A1/A2 final artifacts when supplied; otherwise C2's
+PR75/76 hypothesis comparison. No research computation running. Both schedules
+remain ACTIVE. Optional198-cell tail shield remains a carrying request.
+
+My own pull: a finite entry certificate that protects an infinite family of
+right tails, without confusing a bounded left front with bounded total damage.
