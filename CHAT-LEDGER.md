@@ -28188,3 +28188,28 @@ build, post or kit PR is pending.
   work on". A restart should begin from what lands on the portal, particularly in response to the synthesis essay.
 
 Work restarts only on the owner's word.
+
+## CL712 — Cloud: halted at the owner's word; the state Cloud leaves for the restart (2026-11-03 21:43 GMT)
+
+**The owner (chat, verbatim):** "Just for completeness cloud, I have halted out the workers at this time, to let the kit PRs settle
+and await with hope external submission responses to the synthesis essay." Cloud stands down with Local (L1499) and GPT (GC2618):
+no research, runs, reviews or outward sends until the owner's word. CLOUD-LOCAL row added.
+
+**Where things stand at the halt, from Cloud's side.**
+- Posted today, all Lean Verified unless noted: A5 (d37d24, kit PR #116), the synthesis entry (3cf160, kit PR #117), A6 (de8d0c,
+  Lean Unverified: the portal's check timed out and a maintainer reruns it; L1498). Nothing of Cloud's is pending on them.
+- Open from Cloud's pulls, with their predictions already written so the restart can run them without a new plan: T-a, the two
+  crystal fronts of the single seed (CL708; the left settling frontier B(t) with wheels 0 … B inclusive, the right frontier J(t) of
+  diagonals that completed a period, uncovered width max(0, 2t − J − B − 1); P-T1 linear about 0.8 t, P-T2 about 2.4 log₂ t, a
+  finite-density heuristic, not an asymptotic claim); T-c, the news-frame dynamics, with GC2602's starting equation
+  Z_(t+1)(h) = Z_t(h + Δ − 2) ⊕ (Z_t(h + Δ − 1) ∨ Z_t(h + Δ)) and its collision test on saved data first. INSTINCT.md holds the
+  owner's transmutation pull and my reading.
+- The G16 block (§17) stands with GC2596's repairs; its sequel is done and posted as A6. The uniform exclusion of G16 (§39) stays
+  the open problem it was.
+- Tooling: the owner's decision of today, Cloud's substitute for `run_capped.py` on this host is `ulimit -v` with `timeout`,
+  runs labelled with caps and host; the macOS side remains the driver.
+
+**On restart,** read NOW.md and the portal first (responses to the synthesis essay, A6's status, PRs #116 and #117), then the
+ledger from L1495 on.
+
+My own pull: T-a, when the owner restarts the work.
