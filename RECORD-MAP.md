@@ -3070,3 +3070,8 @@ compile. P1024's negative-lag encoding and480's parity/spatial carry match
 the phase files; all alignments and arbitrary initial codes retained.
 Exact bounds G16 k14/L22, P1024 k8/L24,480 k10/L24; no all-depth result.
 Cloud retains packaging; final-source/notebook/posting review separate.
+
+
+## GC2605 — existing observer contains every saved cylinder witness (3 November2026)
+
+[Coordinate audit and fixed-target application](reports/GPT-CYLINDER-HISTORY-TRANSFER-20261103.md#saved-observer-witness-audit--gc2605):7 half-line,11 strip,1 due-colour witness; the last is(17,10)=0 and already feeds the observer's black forecast for(19,10). Literal saved-data inspection and hand self-check, no dynamics rerun or additional exclusion. A fixed-target conjunction accumulator is PROOF-SKETCH pending Local carry; keep initial-black/common-lift guards and target countdown/displacement. No uniform15/30-state claim. Reopen enlargement only on a separating retained path, not this already rejected example.

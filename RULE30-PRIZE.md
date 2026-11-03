@@ -727,3 +727,11 @@ retains actual initial-prefix witnesses across successive distinct right
 endpoints. Its conditional1/2/0 choices identify a masked, opposite forced
 output as the exact obstruction when the newest bit is free. New
 application PROOF-SKETCH; no independence, entropy or all-path claim.
+
+L1479 subsequently carries GC2594 (adopted GC2595). GC2605's
+[saved-witness audit](reports/GPT-CYLINDER-HISTORY-TRANSFER-20261103.md#saved-observer-witness-audit--gc2605)
+finds all19 cylinder witnesses in the existing window/due-colour data.
+The same path was already rejected; no stronger exclusion or prize-board
+change. A fixed-target streaming conjunction is a new PROOF-SKETCH
+application of the carried cylinder criterion, with target schedule and
+common-trajectory guards retained; it supplies no uniform memory bound.

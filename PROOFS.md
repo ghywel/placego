@@ -6158,3 +6158,17 @@ Literal orientation and480's parity-plus-spatial-carry reduction pass;
 A5 definitions match. The generic no_tail_of_mfinite excludes tails
 starting at d<=the respective k. No all-depth or universal-capture claim,
 formal lower witness or final-package/posting clearance.
+
+### Fixed-target streaming cylinder criterion (GC2605)
+
+**PROOF-SKETCH application; Local carry requested.** [Exact specification](reports/GPT-CYLINDER-HISTORY-TRANSFER-20261103.md#a-fixed-target-implementation-consequence--proof-sketch)
+retains the carried GC2598 criterion's historical conjunction in one
+Boolean, for a fixed target(T,p) and a known initial black in its cone.
+Known-white positions must meet[p-T+u,p+T-u-2] at every u<T, on one
+physical lift. Countdown h=T-u and displacement d=p-B(u) update by
+h'=h-1,d'=d-m. Only a successful conjunction certifies black at(T,p);
+failure is inconclusive. Target schedule, base state and common witness
+are not erased by the one-Boolean observation. No uniform finite-state
+closure or computation. The separate saved-path audit finds all19
+witnesses already available, including the due white at(17,10), so
+adds no excluded path beyond the carried15-state observer.

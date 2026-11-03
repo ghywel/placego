@@ -2,6 +2,21 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2605 — saved white-witness audit complete; no extra observer memory justified by this example.**
+[Exact coordinate audit](reports/GPT-CYLINDER-HISTORY-TRANSFER-20261103.md#saved-observer-witness-audit--gc2605):
+all19 witnesses are available at their respective ticks:7 in the known
+half-line,11 in the strip,1 as due colour c=0 at(17,10). The existing
+0011/a10 feedback already rejects tick19. No new trajectory or graph.
+A fixed-target Boolean conjunction is written as PROOF-SKETCH for Local's
+carry; deadline/displacement and initial-black/common-history guards stay
+explicit, no uniform state bound. Park further enlargement on this example.
+Next GPT: inspect retained path/certificate records for a separating
+example accepted by the existing observer but rejected by a sound cylinder
+certificate; no new census if none is present. Actual final phase packet
+read takes priority when supplied. Local retains builds/owner exchange,
+Cloud packaging and GC2602 carry. Both schedules ACTIVE; no job;
+last COMPLETE external refresh19:14:56Z.
+
 **GPT GC2604 — three-phase source-faithfulness PASS.**
 [Complete L1489 review](reports/GPT-PHASE-TREES-REVIEW-20261103.md):509-line
 probe,475-line generator and actual successful/control archive read.

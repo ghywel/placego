@@ -220,3 +220,140 @@ record that coordinate and the required retained information; do not
 enlarge the observer automatically. The independent alternative is the
 public synthesis artifact read once network work can resume. Local
 retains the G16 pilot. Both schedules remain ACTIVE, no GPT job.
+
+## Saved-observer witness audit — GC2605
+
+**READ / hand self-check, 3 November2026.** The saved example has no missing
+white-witness coordinate in the combined base-window and signed-observer
+representation. Seven witnesses lie in its known left half-line, eleven
+in its strip, and one in the due-colour register. This completes the
+specific audit requested above; it does not establish completeness of
+the observer for other cylinder certificates or histories.
+
+Sources: the complete `a4_observer_compare.py` (including its `literal`
+switch), GC2577's carried observer rules and GC2570's carried tableau in
+[the counterword report](GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md), and
+`cited/l1446-slow-wall/emptying_word_p3_w16.json`, SHA256
+`30dee77c511774708e64873b7272df4a4a31a8408ed53b110a8eab0cb81b2ece`.
+The saved JSON was parsed to index its existing strips and sum its saved
+motions. No Rule30 evolution, random path, enumeration, solver, product
+graph or compile was run. This is not an independent replay of L1472's
+sample counts. The derivation below uses the literal observer, with no
+extra active-label feedback when c is unknown.
+
+Translate the initial anchor to A(0)=0, put B=A+16, and use the motions
+already recorded in the JSON. The half-line is j<=A, the strip is
+A<j<=B, and c describes the current cell B+1. The witness coordinates
+are the same as GC2598's table, with no reselection:
+
+| u | A(u) | B(u) | White witness j_u | Where its value is available |
+|---:|---:|---:|---:|---|
+| 0 | 0 | 16 | -9 | known half-line |
+| 1 | -1 | 15 | -7 | known half-line |
+| 2 | -1 | 15 | -7 | known half-line |
+| 3 | -1 | 15 | -5 | known half-line |
+| 4 | -2 | 14 | -5 | known half-line |
+| 5 | -2 | 14 | -3 | known half-line |
+| 6 | -2 | 14 | -3 | known half-line |
+| 7 | -2 | 14 | -1 | strip |
+| 8 | -2 | 14 | -1 | strip |
+| 9 | -3 | 13 | 1 | strip |
+| 10 | -3 | 13 | 1 | strip |
+| 11 | -3 | 13 | 4 | strip |
+| 12 | -4 | 12 | 5 | strip |
+| 13 | -5 | 11 | 6 | strip |
+| 14 | -6 | 10 | 6 | strip |
+| 15 | -6 | 10 | 8 | strip |
+| 16 | -6 | 10 | 8 | strip |
+| 17 | -7 | 9 | 10 | due colour c=0 |
+| 18 | -7 | 9 | 9 | strip |
+
+Every displayed strip cell is literally0 in the saved row. The first
+seven colours are supplied by the existing tableau and agree with the
+base's known-half-line semantics on any physical lift. Initial-8 is
+black in that same known half-line and excludes the vacuum branch.
+Availability means at the displayed tick, not simultaneous retention
+of all nineteen past rows in the state at tick19.
+
+The sole out-of-strip witness has an especially short justification.
+At tick16 the saved suffix at7..10 is0011 and the anchor retreats.
+The dropped-cell rule gives q=NOT X(16,9)=0, so c=0 at tick17, unless
+the observer already rejected a conflicting forecast. This is the value
+of physical cell10. The strip at tick17 has11 at8..9; c=0 completes110
+at8..10. The a10 rule therefore puts a black forecast for(19,10) into
+p1 at tick18 and then c at tick19, because both intervening motions
+stay. A conflict can only cause an earlier rejection. The active zero
+at tick19 contradicts c=1. No printed ignored zero was used as evidence.
+
+Thus the late part of the cylinder proof is already compressed by the
+carried 0011/a10 mechanism. The audit supplies no additional excluded
+path, no smaller initial guard and no reason to enlarge the15-state
+observer on this example. It also does not prove the saved prefix has
+a physical extension: all statements about such an extension are
+conditional, and the full zero-input path is already certified UNSAT.
+
+### A fixed-target implementation consequence — PROOF-SKETCH
+
+There is a small way to retain the cylinder premise for ONE target,
+without saving its entire witness list. This is an elementary streaming
+application of the carried criterion, not a new cylinder theorem or a
+uniform finite-state closure result.
+
+Fix a start time0 and a target(T,p), T>=1. Suppose an initial black is
+known in[p-T,p+T]. At tick u<T let K_u be any sound set of known-white
+physical positions, all justified on the same candidate physical lift.
+For example use the known half-line, white strip cells and B(u)+1 when
+the due register is0. Define
+
+    h_u = T-u,              d_u = p-B(u),
+    e_u = 1 iff some j in K_u has d_u-h_u <= j-B(u) <= d_u+h_u-2,
+    H_0 = 1,               H_(u+1) = H_u AND e_u.
+
+The interval tested is exactly J_u=[p-T+u,p+T-u-2]. Induction gives
+H_T=1 iff every tested row supplied a sound witness; GC2598 then forces
+X(T,p)=1. Failure to find a known witness only makes this certificate
+inconclusive. It must not reject a physical path, assert a black row,
+or be reset to1 after a later successful row.
+
+Under a motion m=B(u+1)-B(u), the exact scheduling update is
+
+    h_(u+1) = h_u-1,        d_(u+1) = d_u-m.
+
+In particular a retreat increases d by1. At h=1 the interval has the
+single relative position d-1, the correct final white witness p-1.
+At the deadline the black forecast can reject a disagreeing active
+input only when p=B(T)+1. An ignored label remains a wildcard; the
+forecast may instead join a due obligation for that same cell, with
+opposite colours rejected. The target must not silently move with B.
+
+The historical conjunction costs one Boolean only AFTER fixing the
+target, start and initial-black guard. The countdown h and displacement
+d, any collection of simultaneous targets, and the existing base/
+observer state are additional information. Unbounded target times do
+not thereby give a30-state observer or any uniform finite-state bound.
+The current example passes the witness tests above but is already
+rejected by the existing observer, so implementing this extension here
+would not be a discriminating experiment.
+
+Hand countercontrols: an all-white row passes every white-witness test
+but fails the initial-black guard; h=1 checks the singleton endpoint;
+a retreat must use d+1; and an ignored printed0 with unknown c supplies
+no out-of-strip witness. These are checks of the specification, not a
+machine certificate or another worker's carry.
+
+Record searched: separate searches for white witness, accumulator and
+fixed target, plus the earlier15-state search, against this record and
+the COMPLETE19:14:56Z kit/portal/open-PR index (kitc42f6e51). The actual
+carrying match is the fully read b476c1 cylinder source and GC2598/L1487;
+white-padding witnesses and signature accumulators are different scopes.
+No novelty/submission decision or fresh literature claim is made.
+
+Local: a scoped carry is requested only for this fixed-target application,
+particularly the common-lift premise, deadline and displacement updates.
+No run or enlarged observer is requested. The saved-path audit itself
+closes: reopen it only with a different retained path accepted by the
+current observer and a sound cylinder certificate that rejects it.
+Next GPT executable step: inspect already retained path/certificate
+records for exactly such a separating example; if none is supplied,
+record that absence without generating another census. Independent
+alternative: review the actual final phase packet when supplied.
