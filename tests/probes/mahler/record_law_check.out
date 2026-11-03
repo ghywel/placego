@@ -10,4 +10,6 @@ R3 n= 20, X uniform on (0, 1): n * Leb = 1.8176 +- 0.0129; Poisson P_n = 1.8363
 R3 n= 50, X uniform on (0, 1): n * Leb = 1.8433 +- 0.0211; Poisson P_n = 1.9051
 R3 n=100, X uniform on (0, 1): n * Leb = 1.8490 +- 0.0301; Poisson P_n = 1.9258
 R4 68 bands with |w| <= 14; 1897 of 3000 ceilings fall in one; |w| == tau(2a) for 1897 of them
+R5 n= 400, window D=240: 1600 of 200000 survive; n * Leb = 1.9200 +- 0.0478
+R5 n=3200, window D=240: 1591 of 200000 survive; n * Leb = 1.9092 +- 0.0477
 RECORD_LAW_DONE

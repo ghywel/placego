@@ -21,6 +21,9 @@ R3 sampler validation: uniform X on (0, 1) at n = 20, 50, 100 (200,000 samples e
 R4 (added after the R1 run) plateau word length versus tau: for 3,000 random ceilings a in (1/3, 1/2) (60-bit dyadic)
    that fall in a band (S_w, T_w] with |w| <= 14, compare |w| with tau(2a). Equality for all of them would make the
    band-width tail beyond length n exactly Leb_a{tau(2a) > n}.
+R5 (added after GC2498's guard: the omission estimate below the window is a Poisson model, not a proved tail bound)
+   the window widened from D = 60 to D = 240 at n = 400 and n = 3200. R1's window value is a lower bound on the full
+   value, since the omitted region can only add survivors; agreement within error measures the omitted part.
 """
 from fractions import Fraction as Fr
 import math
@@ -118,4 +121,16 @@ for _ in range(3000):
             tau = k; break
     inband += 1; agree += (hit[0][2] == tau)
 print('R4 %d bands with |w| <= 14; %d of 3000 ceilings fall in one; |w| == tau(2a) for %d of them' % (len(bands), inband, agree))
+for n in (400, 3200):
+    K = n + 64; Kp = K + 7; Dw = 240
+    stepw = (Dw << Kp) // n
+    hits = 0
+    for _ in range(M):
+        u = rng.getrandbits(K)
+        m = (1 << Kp) - ((stepw * u) >> K) - 1
+        hits += survives(m, Kp, n)
+    p = hits / M
+    Dn = stepw / 2 ** Kp * n
+    print('R5 n=%4d, window D=240: %d of %d survive; n * Leb = %.4f +- %.4f' % (
+        n, hits, M, Dn * p, Dn * math.sqrt(p * (1 - p) / M)))
 print('RECORD_LAW_DONE')
