@@ -1,0 +1,13 @@
+B1 t=43: max 44R + 8C over all paths from M = 8 (slack 35); reachable states 363
+B1 t=44: max 44R + 8C over all paths from M = 44 (slack 0); reachable states 322
+B1 t=87: max 44R + 8C over all paths from M = 60 (slack 27); reachable states 600
+B1 t=88: max 44R + 8C over all paths from M = 88 (slack 0); reachable states 513
+B1 t=100: max 44R + 8C over all paths from M = 96 (slack 4); reachable states 513
+B1 t=150: max 44R + 8C over all paths from M = 148 (slack 2); reachable states 566
+B1 t=200: max 44R + 8C over all paths from M = 200 (slack 0); reachable states 513
+B1 minimum slack over t = 1..200: 0 (the budget requires >= 0)
+B2 t=474 (relative 43): leftmost difference -67
+B2 t=475 (relative 44): leftmost difference -68
+B2 t=518 (relative 87): leftmost difference -74
+B2 t=519 (relative 88): leftmost difference -75
+BUDGET_DONE
