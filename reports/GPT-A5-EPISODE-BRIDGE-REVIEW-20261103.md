@@ -125,3 +125,114 @@ two-party; the smaller horizon has not yet been substituted into the
 current Lean source or a delivery packet. Local also accepted the
 right-frame/left-frame clock guard and explicitly corrected L1433. No new
 compile, checker or public-verification claim.
+
+
+## L1465 actual nb1 packet read — GC2568 (technical PASS)
+
+**GPT technical read PASS on the exact pins below.** Complete319-line probe
+source and lcm diff, generator, committed316-line portal form, full prose,
+abstract, essay assembler and notebook driver read. Actual nb1 and both
+successful raw Check receipts read from the shared archive. This is a
+carrying/source/artifact review; no Intel Lean compile or Wolfram run.
+Local retains build/posting ownership. Cloud's separate read and the
+owner's posting word remain required by L1467.
+
+### Proof and scope
+
+The lcm implementation faithfully realizes the hand strengthening carried
+in L1438/GC2546. `prefix_period` uses Q dividing P; the phase uses p dividing
+P. Both divide H=lcm(Q,p), with Q=2^B(k+2) and H positive. The modulo-H
+reduction includes exactly0..H-1; the finite bound H-1 uses positivity
+before natural subtraction. The pasted point returns at H using the same
+prefix/tail split; no agreement with the original arbitrary deep tail is
+asserted. The existential conclusion of `eternal_of_eventual` remains
+correct: it supplies a possibly different periodic black-edge code.
+
+`IsPhase` needs only the recurrence at depths at least2 and a positive
+uniform time period. Neither spatial periodicity nor rain exclusion is
+used in the bridge. This safely generalizes Cloud CL676/genealogy38.2's
+setup. The two boundary phase columns need not themselves obey the
+black-edge boundary equations. Blackness is required where an eternal
+black-edge point is constructed, not for episode extension alone.
+The G8 and rain controls retain their intended objects and index shifts.
+
+The essay and abstract give the right existential bridge and finite
+criterion. The criterion is **at each fixed depth**, with every code and
+alignment quantified. It does not decide all depths at once or prove
+capture. Its common-period horizon is sufficient, not claimed optimal.
+The pasted-code explanation makes the eventual/eternal slogan precise.
+No mathematical repair is required for the current packet. If Cloud asks
+for another prose revision, useful optional clarifications are “at each
+fixed depth” in the final scope paragraph and “at depths at least2” in
+the abstract's phase definition; these are already explicit in the body.
+Do not rebuild only for these optional repetitions.
+
+### Exact source and notebook correspondence
+
+[Review receipt](receipts/gc2568-a5-packet-read.json) records full digests.
+Probe1424706a, portal69391dbf, prose1e988089, abstract068bceab,
+essaybd958031, notebook0e338163. The complete permitted header/namespace
+transformation was independently applied in memory; it reproduces the
+committed portal form byte for byte and kit-form digest
+fa7438a5c77881ffb301fe828ffbb1161a031edd2c542e3287ec840351405fa3.
+The kit form was reconstructed from the reviewed source, rather than read
+from Local's unpublished worktree. No private kit branch or catalog row
+is represented as already public or merged.
+
+All four actual dependency files are byte-identical between verifier kit
+93d98bbe and current kit c42f6e5133f61a47e99289fd4b6e0536fd8a0453:
+FrozenRuler, GateClocks, EtherEpisode, EdgeStaircases. The proof's B formula
+matches actual RecordCharge.B, and the gate-clock prefix period/exponent
+statements were reread. Source transformations change no proof body.
+
+Shared archive `cited/l1465-a5/a5-nb1-receipts.tar.gz`,29102bytes,
+SHA2562f0bfe517d2be8fe15db89ec33e6d328e695a2963af6712a297e17f5b60160e6,
+was downloaded over verified TLS and matched the store's exact stat.
+Actual notebook source in its executable icon is byte-exact69391dbf.
+A non-evaluating lexical comparison matches all seven actual notebook
+output bodies to their retained cell receipts; all cell digests and
+notebook/essay/driver pins match. Actual outputs show the4,4,6,6,7,7,8,8
+illustration, True kit path gate, LeanEnvironment, the six intended types,
+standard axioms, the lcm definition, and KernelChecked74. No Message/MSG
+cells or local paths were found in the actual notebook. The small G8
+illustration is a bounded reproduction of a known proved formula, not a
+new proof or an independent Intel census.
+
+Both raw Check objects report pass,74 replayed constants, all six headlines
+found/type-matched, imported statements and no new axioms. Both logs also
+contain the Check tool's existing deprecated-replay warning; the successful
+verdict is not a claim that the checker log is warning-free. The notebook
+summary records15246 handler events and zero message cells: those counts
+are distinct. No fatal failure is hidden in the actual outputs.
+Local's retained stale-A4 Check failure remains a failure; the reviewed
+successful receipts explicitly name the A5 declarations. The archive does
+not include the failed attempt's raw log, so that failure is retained here
+as Local's reported history, not an independently inspected raw receipt.
+
+The initial manifest scan found no row for this archive among364 parsed
+rows. Exact bytes/stat are verified nonetheless. GPT will add a manifest
+row recording **its own read** at this review commit; this supplies the
+missing durable digest pointer without claiming an earlier Local upload
+manifest existed. No rebuild is needed for that bookkeeping repair.
+
+### Search and delivery state
+
+Fresh complete `known_find.py --new` checkpoint16:34:54Z, kitc42f6e51,
+portal updated16:34:49Z,37 open PRs. Its3added/1changed/3gone are the A4
+supersession already fully carried GC2563: portal sourceed9c69bf and
+PR115 headf35a15038c3967254d83af459ce2546d28b14827, not new mathematics.
+The current record search for EternalTail/episode_bridge/eternal_of_eventual
+finds this package and prior Cloud/Local/GPT work, no indexed external match.
+This is a scoped comparison, not a new literature-priority clearance;
+closed PR/linked archive limitations remain. Cloud is explicitly credited
+for the bridge; no authorship decision is inferred on Cloud's behalf.
+
+**Next:** Local receives this exact-pin technical PASS; Cloud gives its
+requested framing/credit read, and Local obtains the owner's posting word.
+Any substantive packet change requires a scoped re-read of new pins.
+GPT's independent next mathematical target is the already-announced
+root-only causal explanation of the tick19 black cell; no duplicate SAT
+search, A5 build or publication is launched.
+
+My own pull: understand the root-to-tick19 implication by a short causal
+argument, with the final A5 review gate now explicitly discharged.

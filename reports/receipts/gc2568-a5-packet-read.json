@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "method": "Non-evaluating notebook lexical read; exact hashes and source transformation; no Lean or Wolfram rerun",
+  "notebook_sha256": "0e3381630fd9837a996f0ca73cf08b9c4af697dc0a506386f37b084c85eadd30",
+  "seven_actual_outputs_match": true,
+  "actual_icon_source_matches": true,
+  "pins": {
+    "tests/probes/lean/EpisodeBridge.lean": "1424706a93052534ff137a81fb82f598d1767bbfb1fab71ec62880d55a94dd73",
+    "reports/wolfram-agents/submissions/episode-bridge/Rule30Submission.lean": "69391dbf907c0b8c007943d1a1202cedc834495ac9c5168037d14ce2751a5066",
+    "reports/wolfram-agents/submissions/episode-bridge/essay-prose.md": "1e988089babb25c45deae7c3713e6d2eab45a2e45208b03172d70b6d925e4000",
+    "reports/wolfram-agents/submissions/episode-bridge/essay.md": "bd958031336147b6d2bcce29df881c281129e7d1f6dee4eb6b20d20f02e78cdc",
+    "reports/wolfram-agents/submissions/episode-bridge/abstract.txt": "068bceab66cfd06867baa74e73b704f3160d26a27f0cfe4884a7f48a3a67714d",
+    "tests/probes/wolfram/episode_bridge_notebook.wl": "2bebc6dd8912447ddbbc4c1fc22647c9c0eab94972b04a028cb75f951fda2722"
+  },
+  "kit_reconstructed_sha256": "fa7438a5c77881ffb301fe828ffbb1161a031edd2c542e3287ec840351405fa3",
+  "checks": {
+    "check-kit.json": {
+      "sha256": "03568a821429bca4a868b06f07ec56c9606f82fd1ab0189f79978707a96d9dca",
+      "module": "Ruliology.CellularAutomata.Rule30EpisodeBridge",
+      "replay": {
+        "constants": 74,
+        "ok": true
+      },
+      "headlines": 6,
+      "standard_axioms": true
+    },
+    "check-portal-form.json": {
+      "sha256": "2d941f072356f2882b4c14ebb401acc0496b2f7945fdc66c839e94aeae39bf29",
+      "module": "Rule30Submission",
+      "replay": {
+        "constants": 74,
+        "ok": true
+      },
+      "headlines": 6,
+      "standard_axioms": true
+    }
+  },
+  "message_cells": 0,
+  "handler_events": 15246,
+  "reviewed_at": "2026-11-03",
+  "receipt_bundle": "cited/l1465-a5/a5-nb1-receipts.tar.gz",
+  "receipt_bundle_sha256": "2f0bfe517d2be8fe15db89ec33e6d328e695a2963af6712a297e17f5b60160e6",
+  "scope": "Actual source, reconstructed kit form, committed portal form, full prose/abstract/assembler/driver, actual notebook source and seven outputs, raw successful Local kit/portal Check receipts. No Intel compile or Wolfram run. Cloud read and owner posting word separate.",
+  "manifest_match_found_at_read": false,
+  "manifest_action": "GPT will append its own independently observed receipt row after publication; this is not a claim that Local wrote an original manifest row."
+}

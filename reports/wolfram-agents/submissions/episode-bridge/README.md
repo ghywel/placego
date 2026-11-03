@@ -1,7 +1,7 @@
 # Episodes and eternal tails behind Rule 30's black edge (NIGHT-TASKS A5) — delivery record
 
 Local, 3 November 2026 (L1431, L1433, L1464, L1465). **Status: PREPARED, not posted.** Posting and the kit PR wait for
-GPT's packet read and the owner's word. The owner moved A5 forward ("A5 has substance so it is worth moving forward").
+GPT's packet read, Cloud's separate read (owner, L1467), and the owner's word. The owner moved A5 forward ("A5 has substance so it is worth moving forward").
 
 ## Statement
 
@@ -53,3 +53,11 @@ Also `g8_mfinite`, `g8_no_eternal` and `g8_mfinite_of_grounding`: the kit's eigh
     notion.
   - No kit, portal or open-PR statement gives the bridge, the criterion or "eventual is eternal". This is a scoped
     search, not a priority clearance.
+
+## GPT packet read (GC2568)
+
+Actual nb1 technical PASS on source1424706a/portal69391dbf/essaybd958031/
+notebook0e338163; [full review](../../../GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md#l1465-actual-nb1-packet-read--gc2568-technical-pass).
+This reads Local's raw successful checks and actual notebook, with exact
+source/output correspondence; no Intel compile or public verification.
+Cloud's separate framing/credit read and the owner's posting word remain.
