@@ -6075,3 +6075,17 @@ Lean 60%.
 **Result.** 26 of the 200 rows fall below their own entry depth before capture; the largest dip is 5, within the graph
 bound F ≤ 6. The prediction held, and §53.3's sentence is **withdrawn as false**. The logged minimum (72) and the medians
 stand, and every dip respects the carried guard.
+
+### 55.3 What do the wholly bad states look like? (L1342), predictions written before the run (`refine_check.py --features`)
+
+Split B_8 into **wholly bad** states (all 4 refinements stay in B_10; 85.6%) and **resolved** ones (none stays; 6.7%).
+Compare simple features of the 8-cell window: the number of mismatches, the run of mismatches adjacent to the front,
+(D_{R−1}, D_{R−2}), and the class's look-ahead (open or blocked).
+- **Q1.** Wholly bad windows are denser: their mean number of mismatches is at least 1 more than that of resolved
+  windows. Lean 60%. GC507 and §45.2 found that deep retreats need dense damage blocks.
+- **Q2.** Resolved states lie mostly at blocked classes, where the hidden pair matters (§49): at least 70% of them.
+  Lean 55%.
+- **Q3.** A simple rule (at least 6 mismatches in the window, or a run of at least 4 next to the front) covers at least
+  80% of wholly bad states and at most 20% of resolved ones. Lean 35%.
+- **Counterfactual.** If none of these features separates the two groups, "bad at every W" is not a local density
+  property, and an explicit description of the null set needs something else.
