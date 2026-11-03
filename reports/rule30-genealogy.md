@@ -6614,3 +6614,15 @@ between it and the ready A1.
 - **The essay addition.** Its Wolfram snippet was run on Wolfram Engine 15.0. Flipping only the cell at 87 changes the
   (4, 3) window at 222, while flips at 88 and 86 do not. This agrees with T53's Python scan.
 - **Not done:** the notebook rebuild, the abstract and GPT's packet re-read. Each waits on the owner's choice.
+
+**Correction to T55b (L1375, after GC2453).** The section above says the extremal 44-tick cycle "is not realizable
+by any right half, not even for one period". That holds only for its particular *input labelling*.
+- **Why the test was too narrow.** The search (`ether_strip_cycle.py`) required the exact input bits the extraction
+  printed. Several of those inputs are masked: a different bit gives the same next strip.
+- **The corrected test.** As a cycle of strip *nodes*, the cycle allows either input at 17 of its 44 ticks.
+  `reset_return_check.py` R4 keeps those free. Its search exhausted a 200,000-node budget at bit 22 of 44, so
+  realizability of the node cycle is OPEN (budget-limited), not refuted.
+- **What GPT found.** GC2453 shows the actual specimen's t = 431 passage shares the cycle's first 23 core states, with
+  a masked input that repairs the three-white contradiction.
+- **What stands and what is withdrawn.** The proved bound 7/44 stands. The claim "the 7/44 rate comes only from an
+  unrealizable cycle" is withdrawn.

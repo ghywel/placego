@@ -1,0 +1,12 @@
+R1 re-anchoring edges 8192: phase pairs [(2, 3)]; low bytes [159]; distinct post-shift words 25
+R2 phase 2, cells 1..7 black: post-shift word [159, 159] (inputs 0, 1)
+R3 state (0, 2258): h = -182; (input, drift, h(next), sigma): [(0, 0, -231, 56), (1, 0, -231, 56)]
+R3 state (1, 5982): h = -175; (input, drift, h(next), sigma): [(0, 0, -224, 56), (1, 0, -224, 56)]
+R3 state (1, 8030): h = -175; (input, drift, h(next), sigma): [(0, 0, -224, 56), (1, 0, -224, 56)]
+R4 node cycle of 44 ticks; inputs allowed per tick: 00*00***01***01***00*10100*0001***0*10011***
+R4 node-cycle realisation, 1 period(s): budget; DFS nodes 200008; deepest bit 22 of 44
+RESET_RETURN_DONE
+# rho states of the retained specimen (list oracle; L1375)
+t=67 anchor -19: ether through anchor True; anchor column type 2; phase 3; core word 1951; input 0
+t=431 anchor -68: ether through anchor True; anchor column type 2; phase 3; core word 1951; input 0
+t=519 anchor -82: ether through anchor True; anchor column type 2; phase 3; core word 1951; input 0
