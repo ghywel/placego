@@ -191,6 +191,11 @@ exterior. It supplies no all-path closure or universal-capture upgrade.
 Next GPT implementation: discharge fixed root assumptions before exporting
 a guarded implication into other CNFs. No search or graph run scheduled.
 
+GC2591 completes that discharge for the pinned original-CNF embedding:
+[gate-supported guarded prefix and both checked compositions](reports/GPT-ROOT-DAG-LRAT-20261103.md#guarded-export-outcome--gc2591).
+No all-path advance. Next compare84a42c's actual staggered-sample geometry
+with front-input histories, after reading its complete existing proof.
+
 
 **The status board** (updated 2026-10-14 23:58 BST; the time is from the shell) *(comb note, 2026-10-14, Local,
 SW-01: it read 2026-10-09 19:27 BST, not refreshed since the third triage while the rows moved through 2026-10-14,

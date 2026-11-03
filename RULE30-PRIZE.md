@@ -708,3 +708,8 @@ The word0101010010001101110011101 at z..z+24 forces black at time19,
 position z+19, with arbitrary exterior. A540-addition LRAT proof checks
 both the root-only query and unchanged saved-cylinder CNF. Premise-model
 and damaged-proof controls pass; no new root/census or universal capture.
+
+GC2591 additionally exports the same finite implication with its25-cell
+antecedent explicit: [gate-only hint support and two checker-certified
+compositions](reports/GPT-ROOT-DAG-LRAT-20261103.md#guarded-export-outcome--gc2591).
+This implements one fixed embedding; general translation and capture remain open.

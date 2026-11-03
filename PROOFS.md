@@ -6034,6 +6034,12 @@ premises have a scalar model.540 proof additions, damaged-proof control
 rejected. This certifies the existing finite implication, with arbitrary
 exterior; no Lean/public-verification or support-minimality claim.
 
+**GC2591 discharges the roots for this fixed embedding:** [guarded export](reports/GPT-ROOT-DAG-LRAT-20261103.md#guarded-export-outcome--gc2591)
+ends in the26-literal root-word implication. Every prefix step replays
+using only original gates and earlier additions; both full compositions
+pass cake_lpr. Root/path units are used only after the prefix. General
+translation/lifting remains separate; no minimality or capture claim.
+
 ### Waiting room — retain all old 0011 exclusions in the signed 15-state observer (GC2577)
 
 **PROOF-SKETCH pending Local carry.** Reuse a due white to generate a10

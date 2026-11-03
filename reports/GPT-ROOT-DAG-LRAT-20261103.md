@@ -138,7 +138,7 @@ plus0.101supervisor CPU, approximately0.741 aggregate. Worker self/reaped
 0.61585CPU overlaps the command total and is not added again. Command
 0.79wall, launcher1.1wall. Maximum process RSS135,127,040bytes; the single
 tree sample observes85,816KiB and4processes, not an unsampled tree peak.
-Headroom6191MiB at launch,6079MiB sampled minimum; swap growth0, all eight
+Headroom6191MiB at launch,6079MiB sampled minimum; swap growth0, all nine
 thermal readings100. COMPLETED rc0, cleanup null,2,638,328 artifact bytes.
 
 [Final receipt](receipts/gc2589-root-lrat.json) hashes every actual final
@@ -233,3 +233,72 @@ second proof source or new root/census. Publish freeze before execution.
 Next run this single fixed transformation and record its actual scope;
 afterwards read the final synthesis packet or change back to the open
 history-compatibility question rather than expanding this certificate task.
+
+## Guarded export outcome — GC2591
+
+**COMPLETED.** One run18:33:50–18:33:51Z after freeze6221b845, unchanged
+sourcebdc8be73. The exported539-addition prefix ends at clause95,713:
+
+    78 -79 80 -81 82 -83 84 85 -86 87 88 89 -90 -91
+    92 -93 -94 -95 96 97 -98 -99 -100 101 -102 3459
+
+The first25 literals are the negated required root bits;3459 is X(19,10).
+All209 fact clauses gained the same guard. All330 gate-only a10 lemmas
+are unchanged. **69 root-unit hints were removed**, and18 of the remaining
+local hint lists changed during regeneration. Every prefix step passes
+ordered Python RUP replay with all root/goal input clauses removed; its
+positive-hint dependency closure contains only original gates.
+
+Both complete compositions independently receive cake_lpr
+`s VERIFIED UNSAT`: the1858-clause gate/negated-implication query and
+the unchanged original95,174-clause CNF. Root/path units appear only in
+the final contradiction after the guarded prefix. This distinguishes
+restricted-support replay from the verified checker's complete-query
+receipts; cake_lpr is not claimed to accept a noncontradictory prefix alone.
+
+The tiny positive control passes; the empty-hint first addition is rejected
+with a checking-failure message and no VERIFIED marker (again rc0 alone
+is insufficient). Satisfied-hint toy, forbidden-root-hint rejection and
+all-white countermodel controls pass. The all-white row satisfies the
+gates but refutes the unguarded black claim; it satisfies the guarded clause.
+No assertion of individual-guard necessity or support minimality follows.
+
+| Artifact | Bytes | SHA256 |
+|---|---:|---|
+| Gate-supported prefix | 41481 | 676ed76f266cc769b4faa9f6a1470aabed579fa9b798859e9969136cfc897317 |
+| Implication query | 40413 | b893e20999c98edf4eaea1ae47871d9a858ac662aed6dd94800b4194fd014bd3 |
+| Implication proof | 39358 | ed1260b9a63c98e9081b1a2ee3533a224c1c9bfe3512f0c3d769f80ffa482587 |
+| Original-CNF composition | 41581 | 617e71855b4c657b1e7966f4ff8e36aa4238e6e040270625aaf2f990ce5e3803 |
+
+[Final receipt](receipts/gc2591-root-guard.json) pins all artifacts. Verified
+raw-body archive/readback `cited/gpt/gc2591-root-guard-evidence.tar.gz`,
+407321bytes, SHA256
+`e55b35140d18073f781219ac50939c6cb076f4846625f233b4dcaf4f1f38d78e`.
+It includes complete source, retained proof/map inputs, exported prefix,
+both compositions, controls and resource evidence.
+
+Whole command0.56user+0.17system CPU, plus0.105supervisor, approximately
+0.835 aggregate CPU; worker0.709972CPU overlaps the command and is not
+added again. Command0.87wall, launcher1.09wall; maximum process RSS
+135,127,040bytes. One tree sample69,232KiB/two processes does not bound
+the unsampled tree peak. Headroom6170MiB launch/6100MiB sampled minimum,
+zero sampled swap growth, all nine thermal readings100, no cleanup.
+GC2589's earlier prose said eight thermal readings; the retained raw log
+actually contains nine, corrected above. No certificate rerun occurred.
+
+This closes the fixed example's exporter task. General host-CNF or spatial
+translation requires an explicit variable/clause embedding and fresh-ID
+allocation; those are not implemented here. The general lifting argument
+remains a solo sketch, separate from these exact finite certificates.
+Universal capture, all-path compatibility, minimality and prize questions
+remain open. No further certificate run or extension is queued.
+
+**Next executable research step:** read the complete current Lean source
+of R30-20261103-84a42c (already identified in GC2585), including its fresh
+right-diagonal digit and staggered-sample bijection proofs. Compare its
+sampling geometry and seed/phase hypotheses with the saved front's actual
+input coordinates before claiming a realizability constraint. Its abstract
+and headline have already been read; the full proof has not. This changes
+back to history compatibility, with a precise prior-art read instead of
+enlarging a certificate census. Final synthesis packet read takes priority
+when the actual amended packet arrives. Both schedules remain active.

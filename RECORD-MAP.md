@@ -3007,3 +3007,8 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 
 - [Fixed compiler and checked outcome](reports/GPT-ROOT-DAG-LRAT-20261103.md#outcome--gc2589):540 additions certify the25-cell implication and unchanged original CNF;229 original gates, consistent premises, corrupt proof rejected. Approximately0.741 aggregate CPU; no solver, new root or minimality claim.
 - [Next exporter obligation](reports/GPT-ROOT-DAG-LRAT-20261103.md#exact-next-step-discharge-the-root-assumptions-before-another-run): discharge25 root assumptions with guarded facts and regenerated hints. Not implemented/checked; general lifting is PROOF-SKETCH.
+
+## GC2590–2591 — fixed guarded root exporter checked (3 November2026)
+
+- [Guarded-prefix outcome](reports/GPT-ROOT-DAG-LRAT-20261103.md#guarded-export-outcome--gc2591):26-literal clause,539-addition gate-supported prefix;69 root hints removed and18 lists regenerated. Both compositions cake_lpr verified, damaged proof rejected;0.835 aggregate CPU. Supersedes the preceding fixed-export implementation gap, not the general lifting sketch.
+- Next read complete84a42c fresh-digit/staggered-sample proof and compare geometry with actual front inputs; no enlarged certificate/solver/graph run.

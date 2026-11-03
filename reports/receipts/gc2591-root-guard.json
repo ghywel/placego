@@ -1,0 +1,164 @@
+{
+  "entry": "GC2591",
+  "freeze_commit": "6221b845db82b020be1082f595595c071c392dd8",
+  "source_sha256": "bdc8be733c476a4203934e415994c19dc4e8978c719583e67781d67a534e281f",
+  "status": "GUARDED_IMPLICATION_GATE_ONLY_PREFIX_CHECKED",
+  "archive": {
+    "path": "cited/gpt/gc2591-root-guard-evidence.tar.gz",
+    "bytes": 407321,
+    "sha256": "e55b35140d18073f781219ac50939c6cb076f4846625f233b4dcaf4f1f38d78e"
+  },
+  "artifact_manifest": {
+    "bad.lrat": {
+      "bytes": 39355,
+      "sha256": "cb7bfb9f69296bf29e44a1ff8f94d248c7d97249fc4d9080e753a436dc84ebe9"
+    },
+    "cpu-live.json": {
+      "bytes": 58,
+      "sha256": "bb08db99f901e11fe12d62b24f140b76847d1ec57754e48f5035ebe9e78536bb"
+    },
+    "guard-bad.stderr": {
+      "bytes": 83,
+      "sha256": "88e229368e1008b902d20e562c27dcb877c28c20704f0642c623644724a43c5a"
+    },
+    "guard-bad.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "guard-good.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "guard-good.stdout": {
+      "bytes": 17,
+      "sha256": "c680d3bd38a04c7beee7d54999f8f00b43051f75a53cf2bd170ae0cc5f99eb5f"
+    },
+    "guarded-clause.json": {
+      "bytes": 19381,
+      "sha256": "6080cd1749d33ca7dafbe78c32af9dd4071598c33d37f0ff1cf612369a57a70e"
+    },
+    "guarded-prefix.lrat": {
+      "bytes": 41481,
+      "sha256": "676ed76f266cc769b4faa9f6a1470aabed579fa9b798859e9969136cfc897317"
+    },
+    "implication.cnf": {
+      "bytes": 40413,
+      "sha256": "b893e20999c98edf4eaea1ae47871d9a858ac662aed6dd94800b4194fd014bd3"
+    },
+    "implication.lrat": {
+      "bytes": 39358,
+      "sha256": "ed1260b9a63c98e9081b1a2ee3533a224c1c9bfe3512f0c3d769f80ffa482587"
+    },
+    "launcher.json": {
+      "bytes": 1401,
+      "sha256": "abba6093756922d099e283d334444d75148616c534f19bdac169608924f3acfc"
+    },
+    "original-good.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "original-good.stdout": {
+      "bytes": 17,
+      "sha256": "c680d3bd38a04c7beee7d54999f8f00b43051f75a53cf2bd170ae0cc5f99eb5f"
+    },
+    "original.cnf": {
+      "bytes": 2312533,
+      "sha256": "902aa393975948ff00f775206becc648919693c95170acf134590b12d73ce9c9"
+    },
+    "original.lrat": {
+      "bytes": 41581,
+      "sha256": "617e71855b4c657b1e7966f4ff8e36aa4238e6e040270625aaf2f990ce5e3803"
+    },
+    "out.txt": {
+      "bytes": 3677,
+      "sha256": "3bd99836f1f35be3be40fc46e54d947c79edb95ad8ad9574a15a724d82cb07b1"
+    },
+    "solve.json": {
+      "bytes": 3677,
+      "sha256": "3bd99836f1f35be3be40fc46e54d947c79edb95ad8ad9574a15a724d82cb07b1"
+    },
+    "thermal.txt": {
+      "bytes": 2007,
+      "sha256": "b7dbd714eefdeb574a566c7785d5a5e6f9f45c24ad417305350a28b58dde08cf"
+    },
+    "time_receipt.txt": {
+      "bytes": 777,
+      "sha256": "9fb79644095ebe726076e841b21991b708489f1d7ff64962ba7c7e596d88ee6a"
+    },
+    "unit-good.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "unit-good.stdout": {
+      "bytes": 17,
+      "sha256": "c680d3bd38a04c7beee7d54999f8f00b43051f75a53cf2bd170ae0cc5f99eb5f"
+    },
+    "unit.cnf": {
+      "bytes": 19,
+      "sha256": "ac42a371b5a124286c410ed5dfa2e3be7ee7d5b1feac6f08e7e1715f0c3669a8"
+    },
+    "unit.lrat": {
+      "bytes": 10,
+      "sha256": "2e9bf73f333fd3624376d1eb676ce8d6240ba39924936c22bc1a522bfb01b8cc"
+    }
+  },
+  "counts": {
+    "guarded_units": 209,
+    "unchanged_gate_lemmas": 330,
+    "prefix_additions": 539,
+    "original_gates": 229,
+    "implication_literals": 26,
+    "omitted_root_hints": 69,
+    "regenerated_hint_lists_changed": 18
+  },
+  "checker_results": [
+    {
+      "name": "unit-good",
+      "returncode": 0,
+      "reason": "EXIT",
+      "wall_s": 0.006656365992967039,
+      "aggregate_worker_increment_s": 0.008808000000000038
+    },
+    {
+      "name": "guard-bad",
+      "returncode": 0,
+      "reason": "EXIT",
+      "wall_s": 0.08104759099660441,
+      "aggregate_worker_increment_s": 0.029123999999999928
+    },
+    {
+      "name": "guard-good",
+      "returncode": 0,
+      "reason": "EXIT",
+      "wall_s": 0.07801860303152353,
+      "aggregate_worker_increment_s": 0.03016299999999994
+    },
+    {
+      "name": "original-good",
+      "returncode": 0,
+      "reason": "EXIT",
+      "wall_s": 0.2447329550050199,
+      "aggregate_worker_increment_s": 0.21939299999999995
+    }
+  ],
+  "resources": {
+    "start_utc": "2026-11-03T18:33:50Z",
+    "end_utc": "2026-11-03T18:33:51Z",
+    "whole_command_cpu_s_rounded": 0.73,
+    "supervisor_cpu_s": 0.105,
+    "aggregate_cpu_s_approx": 0.835,
+    "worker_cpu_s_overlaps_command": 0.7099719999999999,
+    "command_wall_s": 0.87,
+    "launcher_wall_s": 1.09,
+    "maximum_process_rss_bytes": 135127040,
+    "sampled_tree_rss_kib": 69232,
+    "sample_count": 1,
+    "launch_headroom_mib": 6170,
+    "minimum_sampled_headroom_mib": 6100,
+    "sampled_swap_growth_mib": 0,
+    "thermal_checks": 9,
+    "exit_reason": "COMPLETED",
+    "cleanup": null
+  },
+  "scope": "One fixed clause/variable embedding; complete prefix has only original-gate hint support and passes restricted Python RUP replay. Both implication query and unchanged original-CNF composition accepted by cake_lpr; malformed proof rejected. No arbitrary-host translator, minimality or universal capture."
+}
