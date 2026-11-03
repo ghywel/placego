@@ -16,7 +16,13 @@ R1 for each n, M exact dyadic starts X = 1 - (D / n) * U, U uniform with K = n +
    1 - D/n contributes about c/n * exp(-D/c), a relative 3e-14); n * Leb = D * (fraction with tau > n). Exact integer
    arithmetic: X = m / 2^K, G^k(X) = m_k / 2^(K+k) with m_(k+1) = 3 m_k mod 2^(K+k+1); G^k(X) > X iff m_k > m * 2^k.
 R2 control without the window: uniform X on (2/3, 1) at n = 200, as in W3 with a different seed.
+R3 sampler validation: uniform X on (0, 1) at n = 20, 50, 100 (200,000 samples each). At n = 20 the exact value is
+   2 * 20 * (1/6 - W1 cumulative through L = 20) = 1.8222 (band_width_sum_check), given R4's identity.
+R4 (added after the R1 run) plateau word length versus tau: for 3,000 random ceilings a in (1/3, 1/2) (60-bit dyadic)
+   that fall in a band (S_w, T_w] with |w| <= 14, compare |w| with tau(2a). Equality for all of them would make the
+   band-width tail beyond length n exactly Leb_a{tau(2a) > n}.
 """
+from fractions import Fraction as Fr
 import math
 import random
 import sys
@@ -83,4 +89,33 @@ for _ in range(M):
 p = hits / M
 print('R2 n=200, X uniform on (2/3, 1): %d of %d survive; n * Leb = %.4f +- %.4f' % (
     hits, M, n * p / 3, n * math.sqrt(p * (1 - p) / M) / 3))
+for n in (20, 50, 100):
+    K = n + 64; Mv = 200000
+    hits = sum(survives(rng.getrandbits(K), K, n) for _ in range(Mv)); p = hits / Mv
+    print('R3 n=%3d, X uniform on (0, 1): n * Leb = %.4f +- %.4f; Poisson P_n = %.4f' % (
+        n, n * p, n * math.sqrt(p * (1 - p) / Mv), poisson(n)[1]))
+r = Fr(2, 3); bands = []
+for L in range(2, 15):
+    for v in range(1 << (L - 2)):
+        w = [1] + [(v >> i) & 1 for i in range(L - 2)] + [0]
+        s_ = [1 - b for b in w]
+        if any(not s_[i:] > s_[:L - i] for i in range(1, L)):
+            continue
+        A = sum(r ** j for j in range(L) if w[j]) / 3
+        S = A / (1 - r ** L); T = A + r ** (L - 1) / 3
+        if S < Fr(1, 2):
+            bands.append((S, T, L))
+inband = agree = 0
+for _ in range(3000):
+    a = Fr(1, 3) + Fr(rng.getrandbits(60), 2 ** 60) / 6
+    hit = [b for b in bands if b[0] < a <= b[1]]
+    if not hit:
+        continue
+    X = 2 * a; x = X; tau = None
+    for k in range(1, 200):
+        y = 3 * x / 2; x = y - (y.numerator // y.denominator)
+        if x > X:
+            tau = k; break
+    inband += 1; agree += (hit[0][2] == tau)
+print('R4 %d bands with |w| <= 14; %d of 3000 ceilings fall in one; |w| == tau(2a) for %d of them' % (len(bands), inband, agree))
 print('RECORD_LAW_DONE')

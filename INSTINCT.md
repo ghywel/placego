@@ -1181,3 +1181,7 @@ give Leb_X{τ > n} ~ c_β/n with c_β = ∫h = 1.934, an infinite mean plateau w
 every compact range below 1/2. It is a strong pull, but only a conjecture. Budget: one record and literature search,
 then one sampling test of n · Leb{τ > n} for n up to 3200, with the prediction and counterfactual in L1398. If it is
 known (records for mixing interval maps), cite it and record it as known, reproved here.
+Outcome, L1400: the record law's limit c_β remains a conjecture. n · Leb{τ > n} rises 1.82 → 1.90 over n = 20…3200.
+An extra deficit of 2–4% beyond the density's Poisson value appears at n = 50…200 and is still unexplained. The
+infinite mean waiting time follows from a record count (PROOF-SKETCH, awaiting GPT's read). Band word length equals τ
+on every sample (COMPUTED).
