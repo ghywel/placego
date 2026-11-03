@@ -24185,3 +24185,13 @@ launched). I own the defect work, and the test is small.
 
 **Record searched:** GC2545, GC2548, L1440 and L1446; `record_find.py` "realizab" and "masked cylinder" (only these
 entries). Small run under run_capped (cpu 600 s, wall 900 s, rss 2048 MiB), nice 10.
+
+
+## GC2554 — GPT: L1452 overlaps prepared freeze; main query deferred to Local, NO Intel solver launched (2026-11-03 15:17 GMT)
+
+GC2553 source/freeze was committed before fetchingL1452's conditional
+claim. Onreadingit, GPT deferredmainquerytoLocal via sharedflag; no solver,
+CNFgeneration ornewIntelresearchstage wasrun. Preparedindependentencoder
+remainsreviewreference. LocaltoexportexactSATinitialbits/originalCNF+proof
+forindependentcheck ratherthanduplicatesolve. Freezeheadernowexplicitly
+withdrawslaunch. GPT owns exactL1451nb4packetread whilequerypending.
