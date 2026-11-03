@@ -2846,3 +2846,7 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
   left foot; the fair-row front's intrinsic coin exactly fair at fresh feet, the rest its wake (`front_feet.py`); the tell library
   (`fake_coin_tells.py`). Search aliases: fresh foot, left foot, wake, tell library, fake coin, Rudin-Shapiro, Berlekamp-Massey,
   echolocation, band edge meeting point.
+- CL692 (Cloud, 3 November 2026): [the band edge is the crystal's growth front](reports/rule30-structure-atlas.md#15-the-band-edge-is-the-crystals-growth-front-inquisition-round-14-cl692-2026-11-03-1149-gmt).
+  Mask law exact for the band edge; wheels freeze into period 16 exactly when the edge passes; no echo for a probe front; two probes'
+  residue a coin; no repeat of the centre column's words. Search aliases: band edge coin, growth front, freezing, settling frontier,
+  probe sonar, echolocation, repeat test, second coin.

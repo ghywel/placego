@@ -505,3 +505,20 @@ jump sizes decide the next cell exactly (2 → white, 3 → black), so the "cond
 derivation before any stochastic model. T2 and T3: §13 stands as the calculus that organises CL645, with the ruler exception
 restored; the bridge claim is withdrawn to "the forced letters are algebra (two-party); the free letters are measured, not
 understood". The healing-bound column of the velocity table (§8.1, tracker round 11) is corrected as above.
+
+## 15. The band edge is the crystal's growth front (inquisition round 14, CL692, 2026-11-03 11:49 GMT)
+
+The owner's Q1 suspected that the two ends meet away from the centre column. The band edge B(t) of M4 (the lowest left wheel where
+the row at t differs from the row at t + 1,024) is a damage front between the pattern and its own shifted copy, so the mask lemma
+governs it exactly: B(t+1) = B(t) iff D_(B(t)−1)(t) = 0, at every one of 2^14 ticks (`band_edge_coin.py`). The wheel just left of the
+edge is not periodic before the edge reaches it (0 of 1,171 cases over the previous 256 ticks) and is periodic with least period 16
+from the moment the edge passes it (1,631 of 1,639 sampled times; 8 with period 8). So the band edge is the settling frontier, and the
+mechanism is the mask: wheel k keeps its own past through D_k(t+1) = D_(k−2) ⊕ D_k(t) while wheel k − 1 is white and loses it when
+k − 1 is black. **The crystal grows by masking, and the core's values freeze into it at the band edge; that is where the ends meet.**
+The edge's coin (its decider sequence) agrees with the fair-row front's decider in every tell of §14's library and has the same heal
+table exactly; a probe front launched inside the crystal moves at the fair-row speed (`probe_sonar.py`: no lock, no echo at the
+edge), because the crystal's period-16 wheels drive a front as the core does. Two probes' nonlinear residue is a coin in the core as
+on a fair row (`probe_pair.py`), and no word of the centre column repeats anywhere in a 2,049 × 4,097 pattern beyond chance
+(`coin_repeats.py`: 35 bits, as an iid control). Statuses: the mask law and the freezing law COMPUTED on 2^14 ticks, the mechanism
+PROOF-SKETCH (the mask lemma plus the monotonicity of B), the rest COMPUTED. For T1: the "core" is what the band edge has not yet
+frozen; for T3: the band edge's coin is the core's value at the instant of freezing, and no tell or repeat separates it from a coin.

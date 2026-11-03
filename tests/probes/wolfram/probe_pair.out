@@ -1,0 +1,7 @@
+fair row: D=40, T1=600: fronts meet at tick 36, first nonzero residue at tick 36; residue density in the overlap: mean 0.497 (first 50 ticks 0.489, last 100 0.499); residue left front speed over its life 0.2323
+single seed core: D=40, T1=600: fronts meet at tick 34, first nonzero residue at tick 34; residue density in the overlap: mean 0.497 (first 50 ticks 0.470, last 100 0.499); residue left front speed over its life 0.2509
+PROBE_PAIR_DONE
+
+real	0m0.228s
+user	0m0.565s
+sys	0m0.024s

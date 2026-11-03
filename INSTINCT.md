@@ -1249,3 +1249,8 @@ proofreusability, andreadtheconcretereleasepacketoncepreparedratherthanrepeatane
   harbour mouth). Strongest: the hand problem the fresh-foot result poses, the fair-row front's drift 0.246 as a self-interacting walk
   (fair coins at new minima, its own wake elsewhere); route if the stationary wake law resists: condition on the wake pattern within
   the last heal's reach only and bound the error by the heal-size tail (jumps ≥ 4 are 2% of steps).
+
+- Cloud, 2026-11-03 11:49 GMT (CL692): H1, H2, H3 and the repeat test **taken**. New pull, strong: the crystal's writing law at the band edge (the
+  whole crystal table unrolled from the sequence of freezing values, by the integral of D_(k−2) ⊕ (D_(k−1) ∨ ·) from the frozen
+  value); if it holds, the crystal is one sequence and the band edge's coin is its entire content. Route if the integral form fails:
+  the 8 cases with least period 8 against the 1,631 with 16 say where a wheel's cycle halves; start there.

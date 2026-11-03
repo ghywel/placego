@@ -1,0 +1,7 @@
+single seed: pattern (2049, 4097), centre words 1954, pairs 6.450e+10, expected 32-bit matches 15.02, found 4; longest repeat 35 bits at ('row', 1239, 3140, 1079) (family, index, offset in it, centre time)
+iid control: pattern (2049, 4097), centre words 1954, pairs 6.450e+10, expected 32-bit matches 15.02, found 12; longest repeat 35 bits at ('row', 1341, 1305, 705) (family, index, offset in it, centre time)
+COIN_REPEATS_DONE
+
+real	0m19.279s
+user	0m18.888s
+sys	0m0.446s

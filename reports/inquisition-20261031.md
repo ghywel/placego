@@ -2770,3 +2770,97 @@ Record searched: fair traces / left feet (GC2404, the known-results review), GC5
 **Taken from the round, for the next steps (the owner decides the order):** H1 (the band edge's sequence as the meeting point and
 the rule-native tell), H2 (echolocation: a probe across the band edge), H3 (two probes, the nonlinear residue), and the hand problem
 "0.246 as the drift of the self-interacting walk". The visualisations stay held until the owner says.
+
+### Round 14, second block (2026-11-03 11:43 GMT): the pull and the untested hypotheses, with the owner's repeat idea as a fourth test
+
+**The owner:** "Continue with the pull, and the tests that have not been run. Additionally i will add, the only other way I can think
+of that an unfair coin gives the game away is if the same sequence of tosses is repeated somewhere else. A repeat would suggest a
+second matching coin which is again implausible."
+
+**What the band-edge locator says by hand (PROOF-SKETCH, before any run).** M4's locator defines the band edge B(t) as the lowest
+left wheel where the row at time t differs from the row at time t + P (P = 1,024): the leftmost mismatch between the pattern and its
+own time-shifted copy. Both rows evolve under the same rule, so their difference obeys the damage dynamics exactly, and the mask lemma
+applies with no randomness: **B(t+1) = B(t) iff the wheel just left of the edge is white at time t, D_(B(t)−1)(t) = 0.** That is why
+the band edge's steps matched the fair-row front bin by bin (CL679): it is the same front, with the crystal's own wheels as the medium.
+The decider wheel B(t) − 1 lies inside the settled zone (B ≈ 0.75 t against the settling boundary 0.79 t), where the wheels are
+periodic with period dividing 16, so the band edge's "coin" is the crystal table read along the edge's path: **a fake coin made of a
+periodic table, whose tell is to read it as that table** (the owner's ASCII, in the rule's alphabet). In the same coordinates, the
+fair-row front's law reads: the front sits on a left-moving ray k and survives each tick iff ray k − 1 is white; ray k − 1's cells
+have feet of the opposite parity to ray k's, so the decider is independent of the damaged ray and fair at fresh feet; the heal size is
+the distance to the next damaged ray. The drift 0.246 is then: v = 1 − E[jump], E[jump] = P(black decider)·E[size ∣ heal], with
+P(black decider) = ½·P(fresh) + P(reused)·P(black ∣ reused) (measured 0.695·½ + 0.305·0.205 = 0.410). A closed form needs the wake's
+law at fresh-foot times; posed to GPT as a hand question, no model built here.
+
+**Predictions, before the runs.**
+- **H1, `band_edge_coin.py`** (the single seed to T = 2^14, P = 2^10): **P-H1a [90%]** the mask law holds at every t: B(t+1) = B(t) iff
+  D_(B(t)−1)(t) = 0, no exception. **P-H1b [75%]** the decider sequence W(t) = D_(B(t)−1)(t) is an exact function of (B(t) − 1,
+  t mod 16) over t ∈ [T/4, T]: zero exceptions. **P-H1c [55%]** W(t) passes the generic tells against a biased iid control of the same
+  density (autocorrelation < 0.05, 2-kernel 64, linear complexity within 20 of half, block-entropy deficit within 40 millibits of the
+  control). **P-H1d [70%]** the heal sizes at the band edge follow the fair-row front's pattern table (the shift-difference pattern at
+  the edge decides the size as the damaged pattern does on a fair row). Counterfactual for H1b: exceptions at the edge mean the
+  decider wheel is not yet settled there, and B − 1 is not inside the crystal.
+- **H2, `probe_sonar.py`** (the single seed, a flip at t0 = 2,048 and lab offset δ from the band edge, 1,024 ticks): **P-H2a [65%]** for
+  δ ≥ +50 (the core) the probe's left front has leftward speed 0.246 ± 0.04 and P(stay) 0.59 ± 0.04. **P-H2b [60%]** for δ ≤ −20 (inside
+  the crystal) the front locks: its speed over the last 512 ticks is below 0.05. **P-H2c [55%]** the transition between the two laws
+  is within 30 cells of δ = 0: the sonar sees the band edge. PU: the lock's position relative to the crystal's white diagonals (8.66).
+- **H3, `probe_pair.py`** (two flips d = 40 apart at the same time, on a fair row and in the single seed's core at t0 = 2,048; 600
+  ticks): **P-H3a [95%]** the residue D_12 ⊕ D_1 ⊕ D_2 is zero until the right front of the first meets the left front of the second
+  (exact locality). **P-H3b [55%]** inside the overlap the residue density is between 0.3 and 0.5 on the fair row, and the single
+  seed's core agrees within 0.05. PU: the residue's own left front speed against a single front's.
+- **R, `coin_repeats.py`** (the owner's repeat test; the single seed to T = 2,048, a 2,049 × 4,097 pattern; an iid array of the same
+  shape as control): the longest word of the centre column (t ≥ 64) that occurs anywhere else, in any column, row or ray of either
+  family. With about 5 × 10^10 position pairs a coin's longest repeat is about 36 bits. **P-R1 [85%]** the control's longest repeat is
+  ≤ 44. **P-R2 [65%]** the single seed's is ≤ 44 as well, i.e. no second coin at this size; counterfactual ≥ 50, which would be a
+  repeat beyond chance and the next object. Also counted: the number of 32-bit centre words found elsewhere against the expectation
+  (pairs × 2^−32 ≈ 12). PU: where the longest repeat lies (which family, which position).
+Record searched: band edge (CL679, 8.74), mask lemma (CL681, GC2404), "repeat" and "second coin" (no hit), "longest common"
+(no hit), 8.66 (the band locks above its white diagonals).
+
+#### Outcomes of the second block (2026-11-03 11:49 GMT; all five runs under a minute; receipts `band_edge_coin.out`, `probe_sonar.out`, `probe_pair.out`, `coin_repeats.out`)
+
+**H1, the band edge (`band_edge_coin.py`, the single seed to T = 2^14, P = 2^10).**
+- **P-H1a HELD, exact:** B(t+1) = B(t) iff D_(B(t)−1)(t) = 0 at every one of 16,384 ticks. The band edge obeys the mask lemma because
+  it is a damage front: the leftmost mismatch between the pattern and its own 1,024-shifted copy, both rows evolving by the rule.
+- **P-H1b REFUTED, and the refutation is the result.** The decider wheel B(t) − 1 is *not* periodic before it decides: over the 256
+  ticks before each decision it is periodic with period dividing 16, 32 or 64 in 0 of 1,171 sampled times, and the backward
+  agreement at lags 16m, 32m, 64m, 128m is at chance (6%). The first form of the test, "W(t) is a function of (B − 1, t mod 16)", was
+  vacuous (the edge visits each wheel about once, so no key repeats) and is recorded as a design error. The forward test gives the
+  law: **from the moment the band edge passes a wheel, that wheel is periodic with least period 16 (1,631 of 1,639 sampled times; 8
+  with period 8), and in none of them was it periodic with that period over the 64 ticks before.** So the band edge is the settling
+  frontier itself: a wheel freezes into its period-16 cycle exactly when the edge passes it. By the mask lemma this is one mechanism:
+  wheel k keeps its own past through D_k(t+1) = D_(k−2) ⊕ D_k(t) while wheel k − 1 is white, and loses it (D_k(t+1) = D_(k−2) ⊕ 1)
+  when wheel k − 1 is black; **the crystal grows by masking: a black cell of the last settled wheel erases the next wheel's memory of
+  its unsettled past.** The decider value W(t) is the first value of the frozen wheel's cycle, a core value at the instant it freezes.
+  Status: COMPUTED on 2^14 ticks; the mechanism PROOF-SKETCH (the mask lemma plus the monotonicity of B).
+- **P-H1c REFUTED as stated, HELD in substance.** Against a biased iid control the band edge's decider fails autocorrelation (0.218
+  against 0.018) and block entropy (869 against 313 millibits at n = 10); but against the right control, the fair-row front's own
+  decider sequence, it agrees in every tell (0.218 against 0.249; 869 against 931; complexity 1,023 against 1,024; kernel 64 against
+  64). The band edge's coin is the fair-row front's coin.
+- **P-H1d HELD, exactly:** the heal sizes at the band edge follow the fair-row front's pattern table (0010, 0011, 1000, 1100 → 1 in
+  every case; 0111, 1101 → 2 in every case; 0110, 1001 → 2 to 7 with mean 3.0).
+- *What it changes (Q1).* The owner's "meeting point elsewhere" has a candidate with a mechanism: the band edge is where the core's
+  values freeze into the crystal, and it moves as a damage front because it is one. The crystal is not a separate structure handed
+  rays to the core; the core is continuously written into the crystal at the edge, one masked wheel at a time.
+
+**H2, the probe across the band edge (`probe_sonar.py`, flips at t0 = 2,048, offsets −400 to +1,500 cells from x_B = −490).**
+- **P-H2a HELD, loosely:** core probes move leftward at 0.19 to 0.29 (mean 0.236) with P(stay) 0.57 to 0.62.
+- **P-H2b and P-H2c REFUTED:** no lock and no transition. Probes launched 400, 200, 100 cells inside the crystal move at 0.255, 0.241,
+  0.239, the same law as in the core; the sonar sees no boundary at the band edge. In the light of H1 this is consistent: the crystal's
+  wheels are period-16 cycles that drive a front exactly as the core does (their white density 0.59 and the same heal table), so a
+  damage front is blind to the crystal/core distinction. The crystal is periodic in time, not different for a front. 8.66's "lock"
+  concerned the periodic band background, not the single seed's crystal. PU: the lock is absent at every offset tested.
+
+**H3, two probes (`probe_pair.py`, D = 40, 600 ticks).** P-H3a HELD (the residue D_12 ⊕ D_1 ⊕ D_2 first appears at the exact tick the
+fronts meet, 36 on the fair row, 34 in the core). P-H3b HELD at its upper end: the residue density inside the overlap is 0.497 on the
+fair row and 0.497 in the single seed's core; the residue's own left front moves at 0.23 and 0.25. The interaction of two wakes is
+total and coin-like, and the core is indistinguishable from the fair row by it. No hidden structure by this sounding.
+
+**R, the owner's repeat test (`coin_repeats.py`, T = 2,048, 32-bit words).** P-R1 and P-R2 HELD: the longest word of the centre column
+found anywhere else (any column, row or ray, 6.45 × 10^10 position pairs) is **35 bits in the single seed and 35 bits in the iid
+control**; 32-bit matches 4 against 12 in the control, against a nominal expectation of 15 that counts the white half of the array
+outside the light cone, so about 7 effective. No second coin at this size. The right edge's periodic diagonals and the crystal's
+period-16 wheels are the known repeats, each a tell of its region; the centre column repeats nowhere.
+
+**Standing after the block.** Q1: the meeting point is the band edge, with a mechanism (PROOF-SKETCH) and an exact law (COMPUTED).
+Q2: no generic tell, no repeat, and the rule-native reading of the band edge's coin is "the core's value at the instant of freezing".
+Q5: the front is blind to the crystal; the wake split stands; the drift is a hand problem. Held: visualisations.

@@ -1,0 +1,25 @@
+H1a mask law B(t+1)=B(t) iff D_(B-1)(t)=0 over t<= 16384: violations 0
+H1b decider wheel periodic with period | 16 at decision time, t in [T/4, T]: 770 of 12289 agree with t-16m (m=1..4)
+H1b decider wheel periodic with period | 32 at decision time, t in [T/4, T]: 757 of 12289 agree with t-32m (m=1..4)
+H1b decider wheel periodic with period | 64 at decision time, t in [T/4, T]: 741 of 12289 agree with t-64m (m=1..4)
+H1b decider wheel periodic with period | 128 at decision time, t in [T/4, T]: 792 of 12289 agree with t-128m (m=1..4)
+H1b' over the 256 ticks before decision, wheel B-1 is periodic with period dividing 16/32/64 in 0/0/0 of 1171 sampled times
+H1b'' least forward period of the decider wheel from its decision time (1639 sampled times): 8: 8, 16: 1631
+      of those, already periodic with that period over the 64 ticks before the decision: 
+H1c band-edge decider W(t) density=0.4041 deficit=[27, 88, 162, 250, 342, 436, 533, 633, 743, 869] LC2048=1023 kernel=64 autocorr=0.2178
+H1c fair-row front decider density=0.4127 deficit=[22, 90, 170, 263, 363, 465, 570, 680, 798, 931] LC2048=1024 kernel=64 autocorr=0.2490
+H1c biased iid control   density=0.4065 deficit=[25, 51, 76, 102, 129, 156, 184, 216, 256, 313] LC2048=1024 kernel=64 autocorr=0.0181
+H1d heal size by the pattern (a[B],a[B+1],b[B],b[B+1]) at the edge (a = row t+P, b = row t): mean, n, distinct sizes
+   0010: mean 1.000 n=282 sizes [1]
+   0011: mean 1.000 n=613 sizes [1]
+   0110: mean 3.046 n=482 sizes [2, 3, 4, 5, 6, 7]
+   0111: mean 2.000 n=1085 sizes [2]
+   1000: mean 1.000 n=277 sizes [1]
+   1001: mean 2.983 n=518 sizes [2, 3, 4, 5, 6, 7]
+   1100: mean 1.000 n=617 sizes [1]
+   1101: mean 2.000 n=1092 sizes [2]
+BAND_EDGE_COIN_DONE
+
+real	0m3.628s
+user	0m3.925s
+sys	0m0.064s

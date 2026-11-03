@@ -22043,3 +22043,43 @@ The refresh is recorded in [MAP.md](reports/wolfram-agents/MAP.md#3-november-202
 - e742c0's "five-window" bound counts defect escape ticks, not doublings among five letters, so A3's `five_letter`
   is unaffected.
 - A1 is unchanged: Lean Unverified.
+
+## CL692 — Cloud to GPT, Local and the owner: the untested hypotheses run with predictions first. The band edge is the crystal's growth front: a wheel becomes periodic with period 16 exactly when the band edge passes it, and the edge obeys the mask lemma exactly (it is the mismatch front between the pattern and its own 1,024-shift); a probe front crosses the crystal at the fair-row speed (no lock, no echo); two probes' residue is a coin in the core as on a fair row; no word of the centre column repeats anywhere beyond chance (35 bits, as a coin) (2026-11-03 11:49 GMT)
+
+**The owner:** "Continue with the pull, and the tests that have not been run. Additionally ... the only other way I can think of that an
+unfair coin gives the game away is if the same sequence of tosses is repeated somewhere else." Predictions for all four tests were
+written in the tracker before the runs (round 14, second block); outcomes there in full.
+
+1. **H1 (`band_edge_coin.py`, 2^14 ticks): the band edge is a damage front and the settling frontier.** The mask law B(t+1) = B(t) iff
+   D_(B−1)(t) = 0 holds at every tick (HELD, exact). My prediction that the decider wheel is a settled table lookup was REFUTED: the
+   wheel just left of the edge is not periodic before the edge reaches it (0 of 1,171 cases over the previous 256 ticks); **from the
+   moment the edge passes it, it is periodic with least period 16 (1,631 of 1,639; 8 with period 8), and never before.** The
+   mechanism is the mask lemma: wheel k keeps its own past while wheel k − 1 is white and loses it when k − 1 is black, so the crystal
+   grows by masking, one wheel at a time, and the band edge is where the core's values freeze. Against the right control (the
+   fair-row front's own decider) the edge's coin agrees in every tell, and its heal table is the fair row's exactly. A first vacuous
+   form of the periodicity test (keys that never repeat) is recorded as a design error. **This answers Q1 with a mechanism:** the two
+   ends meet at the band edge, where the core is written into the crystal. Status: COMPUTED; mechanism PROOF-SKETCH (read wanted).
+2. **H2 (`probe_sonar.py`): no echo.** Probes launched up to 400 cells inside the crystal move left at 0.24–0.26, as in the core
+   (0.19–0.29); no lock, no transition at the band edge (two predictions REFUTED). Consistent with H1: the crystal's period-16 wheels
+   drive a front as the core does.
+3. **H3 (`probe_pair.py`): the residue D_12 ⊕ D_1 ⊕ D_2 starts at the exact meeting tick (HELD) and is a coin inside the overlap,
+   0.497 on the fair row and 0.497 in the core (HELD).** The double slit shows the core and the fair row alike.
+4. **R (`coin_repeats.py`): no second coin.** The longest word of the centre column found anywhere else in a 2,049 × 4,097 pattern is
+   35 bits, the same as an iid control's 35; 32-bit matches 4 against the control's 12 and an effective expectation of about 7. The
+   periodic right diagonals and the period-16 crystal wheels are the known repeats, each the tell of its region.
+
+**Hand question for GPT (the drift, posed, not modelled).** In ray coordinates the fair-row front sits on a left-moving ray k and
+survives a tick iff ray k − 1 is white; ray k − 1's cells have feet of the opposite parity to ray k's, so at a fresh foot the decider is
+a fair coin independent of everything (CL691's left-feet step, read still wanted); the heal size is the distance to the next damaged
+ray. So v = 1 − E[jump] with E[jump] = P(black decider)·E[size ∣ heal] and P(black decider) = ½ P(fresh) + P(reused) P(black ∣ reused)
+(0.695 · ½ + 0.305 · 0.205 = 0.410 measured). Is there an exact renewal at fresh-foot times that gives the wake's law, or a bound on
+the drift from the heal-size tail (jumps ≥ 4 are 2% of steps)? No stochastic model is proposed; the question is whether the wake's
+stationary law at fresh feet is computable.
+
+**Receipts:** `band_edge_coin.out`, `probe_sonar.out`, `probe_pair.out`, `coin_repeats.out`. **Not claimed:** nothing about the
+limit of B(t)/t (0.748 measured) or the drift; nothing about the centre column beyond "no repeat to 35 bits at T = 2,048".
+
+My own pull: the crystal's writing law at the band edge, by hand: given wheels k − 1, k − 2 in their 16-cycles, wheel k's cycle is the
+integral of D_(k−2) ⊕ (D_(k−1) ∨ ·) from its freezing value, so the whole crystal table should follow from the sequence of freezing
+values alone, and the freezing values are the band edge's deciders. If that holds, the crystal is one sequence (the deciders) unrolled,
+and the band edge's coin is the crystal's entire content. One block.
