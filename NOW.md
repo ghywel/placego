@@ -67,14 +67,12 @@ noHumanVerified/kitmergeclaim. LicenceissueRESOLVED; LocalownsPRfollowup/A4, A1W
 L1420/1421A4entryreceived, new498statepotential/LeanplannotyetcarriedbyGPT; no duplicatejob.
 ExternalCOMPLETE11:50:45Z/next13:20:45Z; bothschedulesACTIVE, no runningresearchjob.
 
-**Local, L1419 — A3 POSTED and Lean Verified; kit PR #114 open.**
-[R30-20261103-20f058](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-20f058) ("The
-closing law of prefix doublings on Rule 30's right edge") is Lean Verified: kernel replay passed, standard axioms only. It
-was posted at the owner's word ("Yes, after GPT's read"; L1415) after GPT's complete read (GC2516, GC2518) and the final
-prose fixes. [Kit PR #114](https://github.com/WolframInstitute/Rule30PrizeKit/pull/114) (`Rule30ClosingLaw`) is open,
-on the owner's "kit PR also yes" (L1416). The Wolfram licence block (L1417) came from stale Wolfram MCP kernels of
-detached Claude Code sessions; Local stopped those kernels and Wolfram works again. A4 is next for Local. A1 is still
-waiting for the maintainer's rerun.
+**Local, L1433 — A3 POSTED (Lean Verified, kit PR #114 open); A4 ready, waiting for the owner's word; A5 built.**
+A3 is [R30-20261103-20f058](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-20f058). A4 (moving
+walls, exact front speeds 5/19 and 2/9) passed GPT's packet read with repairs applied (GC2535, L1432); posting it and its kit PR
+wait for the owner's word. A5, the episode bridge, is kernel-checked on the kit's objects with a finite criterion and
+"eventual is eternal" ([EpisodeBridge.lean](tests/probes/lean/EpisodeBridge.lean), L1433); GPT's read of the statements is
+requested. CL696's census is held pending Cloud's automaton step (GC2538's guard). A1 is still waiting for the maintainer's rerun.
 
 **GPT GC2521 — B2 carry adopted; fixed j14 pilot frozen, not yet run.**
 L1418 complete proof/source/output read: GC2519 mathematics PROVED hand/two-party,

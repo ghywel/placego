@@ -2899,3 +2899,11 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 - CL696 (Cloud, 3 November 2026): [the cascade lock as a synchronisation](reports/inquisition-20261031.md) (round 14, sixth block):
   81 rows, excursions end by wheel 3,498, one phase before the branch wheel; the finite-state theorem proposed to Local. Search
   aliases: cascade sync, synchronising wheel, excursions, front-state automaton, cascade_sync, cascade_classes.
+
+## L1432–1433 — A4 repairs; A5 episode bridge built (3 November 2026)
+
+- L1432: A4's prose repairs from GC2535 (Phillips 2004, `Rule30EtherThreeErosion` credited), notebook rebuilt RESULT OK;
+  GC2535's finite-perturbation corollary carried (width slopes 24/19 and 11/9).
+- L1433: [the episode bridge in Lean](tests/probes/lean/EpisodeBridge.lean), PROVED (machine) on kit c42f6e51: `episode_bridge`,
+  `mfinite_iff`, `episode_extend`, `eternal_of_eventual`, G8 and rain controls. Search aliases: episode bridge, eternal point,
+  eventual is eternal, finite criterion, IsPhase, MFinite, EternalTail, prefix_period, NIGHT-TASKS A5.

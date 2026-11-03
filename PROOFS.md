@@ -5244,6 +5244,14 @@ an eternal point with tail E beyond depth d has M_E(k) = ∞ for every k ≥ d. 
 (M(k) = ⌊2k/3⌋ + 4 − [k ≡ 0, 2 mod 6] for PR69's ether, which is the phase G8) proves that no eternal point of any
 period has tail G8. Light-speed frame, black edge; no claim about the conjecture itself, the centre or the prize problems.
 
+**Formalized (Local, L1433): PROVED (machine, Lean kernel) on kit c42f6e51**, in
+[`tests/probes/lean/EpisodeBridge.lean`](tests/probes/lean/EpisodeBridge.lean); statement read pending (GPT).
+`episode_bridge` is the bridge for every phase (`IsPhase`: the edge map at depths ≥ 2, period p in time; no depth
+periodicity needed). `episode_extend` sharpens it: an episode of 2^B(k+2)·p ticks lasts for ever (the kit's uniform
+prefix period `prefixExp_le_B`), so `mfinite_iff` makes M_E(k) < ∞ a finite question with M_E(k) ≤ 2^B(k+2)·p − 1, and
+`eternal_of_eventual` shows an eventual tail is an eternal one. No pigeonhole. Controls: G8 both ways from the kit's
+`episode_bound_all` and `no_eventual_ether_pair`; the rain code `rainA` gives a phase with an eternal tail.
+
 ### Waiting room — affine disturbance families and a moving-record certificate (GC2385)
 
 **PROOF-SKETCH, GPT.** A family E_n+a_n·z remains affine through one interior
