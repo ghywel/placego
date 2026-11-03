@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """L1434 (Local, 2026-11-03): the A4 finite-perturbation census (GC2535's pull).
-Run: python3 tests/probes/wolfram/a4_perturbation_census.py DATA.json W_PERT [TMAX]
+Run: python3 tests/probes/wolfram/a4_perturbation_census.py DATA.json W_PERT [TMAX] [SAVE.npz]
 
 DATA.json is a4_closure_export.py's closure (kept outside git): ring orbit, alignment (r, s), window W, (P, S), the closure
 states and their potential. Every nonzero pattern u < 2 ^ W_PERT is XORed onto the background on cells [0, W_PERT): a finite
@@ -20,6 +20,7 @@ import numpy as np
 
 data = json.load(open(sys.argv[1]))
 WP = int(sys.argv[2]); TMAX = int(sys.argv[3]) if len(sys.argv) > 3 else 1200
+SAVE = sys.argv[4] if len(sys.argv) > 4 else None  # optional: save F(t) for every pattern (outside git)
 orb = [tuple(o) for o in data['orb']]; q = len(orb); N = data['N']; r0, s0 = data['r'], data['s']
 W, P, S = data['W'], data['P'], data['S']
 CL = {(st[0], st[1], tuple(st[2])): data['lo'][i] for i, st in enumerate(data['states'])}
@@ -166,4 +167,7 @@ for k in outside[:40]:
         pot = potential(*res)
         done[st] = 'own closure %d states; potential at (P,S): %s' % (len(res[0]), pot is not None)
     print('  outside pattern 0x%x: %s; slope %.4f' % (int(pats[k]), done[st], slope[k]))
+if SAVE:
+    np.savez_compressed(SAVE, F=F_track, pats=pats)
+    print('saved F(t) for every pattern to %s (kept outside git)' % SAVE.rsplit('/', 1)[-1])
 print('A4_PERTURBATION_CENSUS_DONE')
