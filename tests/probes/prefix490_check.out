@@ -1,0 +1,6 @@
+P1 specimen: first wall entry (t, xB) = (558, -82); minimum front -81 first at t = 527; front at 558, 600, 1200: -80 -80 -80
+P2 quantifier: 4 of 4 random continuations beyond 489 give entry (558, -82) and all-time minimum front -81
+P3 flip bit 489: entry (558, -82), minimum front -81
+P3 flip bit 470: entry (558, -82), minimum front -81
+P3 flip bit 450: entry (558, -82), minimum front -81
+PREFIX490_DONE
