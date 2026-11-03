@@ -72,3 +72,14 @@ COMPLETED, 175 s wall, peak RSS 3.22 GB.
 **Prediction.** `ETHER_ZERO_CHECK_PASS` for both parts, under 4 minutes and under 3.5 GB. Four ok headlines per part,
 replay ok, no new axioms. **Counterfactual.** Any guard failure ends the stage, and its output is kept. Same caps and
 command as the first run.
+
+**Second run: ETHER_ZERO_CHECK_PASS** (Local, M5, kit 93d98bbe, 3 November about 00:50Z). COMPLETED in 175 s, peak
+3.22 GB.
+- Both parts have empty compiler output, verdict `pass` and replay ok, now for 140 constants.
+- There are no new axioms, and the four headlines `edge_pinned`, `edge_pinned_tail`, `trap_two_sided` and
+  `wall_ne_ref_all` are all ok. Every declared constant is standard (62 in part c, 66 in part s).
+- The portal form's checker output has sha256 `cac52618cd718a03…` (unscrubbed).
+- The prediction (under 4 minutes, under 3.5 GB) held.
+- **Raw receipts.** Those of both runs, and of A2's check, are on the shared store as
+  `cited/local/l1351-a1-a2-check-receipts.tar.gz`, sha256 `61a326a5…4ff3`, 5,497 bytes. The home path is replaced by
+  `~` in those copies, so their per-file digests differ from the unscrubbed ones quoted here.

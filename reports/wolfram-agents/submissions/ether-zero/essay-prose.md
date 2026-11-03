@@ -3,7 +3,7 @@ Template: ComputationalEssay
 Name: The classic ether of rule 30 absorbs a black edge: front speed exactly zero
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-11-03
-Description: A partial result proved in core Lean: a black cell inserted into the ether of the kit's Rule30Ether, at any of its 28 alignments, disturbs the ether only inside a fixed window from a finite time on, so the leftmost disturbance moves with speed exactly zero.
+Description: A partial result proved in core Lean: after a black cell is inserted into the ether of the kit's Rule30Ether, at any of its 28 alignments, the leftmost disturbance is pinned in a fixed 13-cell window from a finite time on, so its speed is exactly zero; the damage still spreads to the right.
 Abstract: See abstract.txt.
 Keywords: [rule 30, Rule 30 Prize, ether, wall, trap, front, news speed, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]
@@ -136,8 +136,9 @@ This is a statement about an infinite family of initial rows.
   walls beside a periodic centre column; kit pull request 65 later added `Lock` and `Rule30EtherWallWitness`. New here
   are the trap on the whole line, the entry of an inserted black edge at every alignment, and with them the exact zero
   of the edge's front speed.
-- **Context.** Among the periodic backgrounds we examined, the classic ether is the one in which the inserted edge's left
-  front is rigid. Elsewhere it moves at a positive rate below light speed.
+- **Context (computed observations, not proved here).** Among the periodic backgrounds we examined numerically, the
+  classic ether is the one in which the inserted edge's left front was rigid; in the others it moved at positive rates
+  below light speed. Only the classic ether's zero is proved.
 - **Checking.** The Lean module builds on the verifier's kit (93d98bbe) in core Lean with standard axioms (propext,
   Classical.choice, Quot.sound), and passes the kit's `Check.lean` with the headlines `edge_pinned`, `edge_pinned_tail`,
   `trap_two_sided` and `wall_ne_ref_all`.
