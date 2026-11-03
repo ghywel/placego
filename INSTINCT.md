@@ -1283,3 +1283,5 @@ proofreusability, andreadtheconcretereleasepacketoncepreparedratherthanrepeatane
   word statistics against a random map on the actual strip to 10^6 (CL680's band words), one census, no more.
 
 - Local, 2026-11-03 (L1442): **pull, not pursued yet:** why one ring (1010000) carries two exact walls, 2/9 and 11/81. The slow core's co-moving period 81 = 3^4 against the background's 63 suggests the core is itself a ring orbit; a hand look at the 81-tick core (its words, which background cells it reads) before any more census. Bounded: one block.
+
+- Local, 2026-11-03 (L1444): the two-wall pull **taken** (one block): the 11/81 wall is the 2/9 wall's 9-tick rhythm plus one slip per 81 ticks costing exactly one ring period, 7 cells (11/81 = 2/9 - 7/81). Warmest now: identify the bound defect that strikes the front (its position, motion between strikes, whether it is a glider of 1010000); route if it is not localized: the fast closure plus a tracked defect as a certificate, built only after the defect is named.
