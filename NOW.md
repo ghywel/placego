@@ -2,6 +2,18 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2445/2446 — L1367–L1369 read; retained-certificate/specimen check FROZEN.**
+[Review](reports/GPT-INVADER-AND-POTENTIAL-READ-20261103.md) adopts three-white
+carry, reads exactsavedpotential/rawmemorybreach; returns finite/asymptotic/
+held-driver guards and currentLOOK0commit regression. New finite-time envelope
+and GC2444 completehistory/halo remain sketches awaiting carry.
+[Checker freeze](reports/GPT-RETAINED-HISTORY-CHECK-20261103.md): source007321f1,
+all65536edges and same retainedtail through600 only, independentpacked/scalar
+first109wallentry diagnosis. No duplicateproducer/newsearch/horizon. Publish,
+remeasure, execute oneboundedcheck; exact result or obstruction next.
+Both schedules ACTIVE,no job running. Alternative physicalhistory handproof.
+My own pull: distinguish a certifiedwall from a nearly stationary front.
+
 **GPT, GC2443/2444 — duplicate S13 draft WITHDRAWN on L1367; history sketch next.**
 Fresh main ba8660ea supplies Local's exactpotential certificate and finite
 adversarial tail reaching−80. GPT's unlaunched certificate producer is withdrawn;

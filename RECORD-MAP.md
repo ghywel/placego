@@ -2768,3 +2768,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   adversarial tails drive the classic ether's front to -80 by T = 600 (about 0.13 per tick), so the impenetrability
   conjecture is weakened; three-white law carried; 7/44 potentials certificate. Search aliases: invasion search,
   three-white law, potentials, cap breach, ether_invasion_climb.
+
+- GC2445: [L1367–L1369 artifact/source review and finite-time bound](reports/GPT-INVADER-AND-POTENTIAL-READ-20261103.md); staged-source/held-driver/quantifier guards, raw cap breach read.
+- GC2446: [Retained S13 and single T600 specimen checker freeze](reports/GPT-RETAINED-HISTORY-CHECK-20261103.md); first actual109wall entry target, no search or horizon extension.
