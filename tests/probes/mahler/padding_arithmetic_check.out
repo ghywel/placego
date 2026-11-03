@@ -1,0 +1,8 @@
+P1 B: 251 tails checked; every tail < a: True; max tail 0.473675873443 (a = 0.473684210526); packet starts approach a: True
+P1 D: 143 tails checked; every tail < a: True; max tail 0.473681431430 (a = 0.473684210526); packet starts approach a: True
+P2 ages and long-run positions match for k < 40: True; min B height margin 0.585; min D repeat margin 7.095
+P3 R_L formulas hold for L <= 30 (both words): True; gap means after 50 packets: B 6.0392 (6 + 2/51 = 6.0392), D 3.0392
+P4 capped slack equals 2^T for 200 random gap words with gaps >= 3: True
+P5 anchor 171 n_1 + 73 = 1024 v_2 on n_1 = 293 + 2048 t: True; realized length falls in the packet where the recurrence first fails for 4000 of 4000 seeds
+P6 orbit of 293: [293, 440, 660, 990, 1485, 2228, 3342, 5013, 7520, 11280, 16920, 25380]; parities 0..10 10001001000 (D: 10001001000); 2187*49-1 mod 1024 = 666
+PADDING_ARITHMETIC_DONE
