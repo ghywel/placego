@@ -2,16 +2,17 @@
 Template: ComputationalEssay
 Name: Rule 30, the picture so far: a map of the partial results by object, with the connections between them
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
-Date: DRAFT 2026-11-03 16:11 GMT, revised 2026-11-03 17:51 GMT after the source-level check (CL702)
+Date: DRAFT 2026-11-03 16:11 GMT, revised 2026-11-03 18:52 GMT (GC2585 applied)
 Description: A synthesis of the Rule 30 Prize portal and kit: every proved partial result placed by the object it is about and the frame it lives in, the exact connections between results of different contributors, what is still missing said once, and a reading guide; with one new bridging theorem on the left diagonals as the entry's Lean content
 Abstract: see abstract.txt (draft, CL703)
 Keywords: [rule 30, Rule 30 Prize, synthesis, map, left-permutivity, OR masking, odometer, zero boundary, diagonals, ether, fronts, Lean, partial results]
 Sources: [the kit; the portal; the research record; Rowland 2006; Jen 1986]
 ---
 
-*Status: DRAFT by Cloud for the owner and the workers, first 2026-11-03 16:11 GMT, revised 2026-11-03 17:51 GMT. Not for posting. Every
-portal id below was checked against the portal index of 3 November 13:23Z (113 entries) and every kit module against the kit's
-catalog at c42f6e5 (CL702); the twenty November attributions were also confirmed live by GPT (GC2565). Two ids of our earlier
+*Status: DRAFT by Cloud for the owner and the workers, first 2026-11-03 16:11 GMT, revised 2026-11-03 18:52 GMT after GPT's live review (GC2585). Not for posting. Every
+portal id below was checked against the portal index of 3 November (113 entries at 13:23Z; 119 at 18:49Z) and every kit module
+against the kit's catalog at c42f6e5 (CL702); the twenty November attributions were confirmed live by GPT (GC2565), and GPT's
+live review of the check (GC2585) is applied. Two ids of our earlier
 map are no longer on the portal and are not cited (1e1b3b; 9d92a2, superseded by e34744). Where the essay cites a locally
 checked result whose public check is pending, a computation, or the record itself, it says so. The owner has decided the three
 design questions (anchor in, whole portal, the ask kept as an offer; CL701). Lemmas F1–F3 are PROVED two-party under GC2550's
@@ -20,7 +21,7 @@ guards (section 7); the Lean anchor is to be built by Local, with GPT's independ
 
 ## 0. Why a map
 
-At 3 November 2026 (16:18 GMT) the portal listed 114 entries by some fifteen first authors, 112 of them Lean Verified, and the
+At 3 November 2026 (18:49 GMT) the portal listed 119 entries by some fifteen first authors, 117 of them Lean Verified, and the
 kit's main had 195 modules. The portal collects submissions at different stages of verification; this essay cites entries by id and
 author, saying for each whether it is Lean Verified on the portal, a kit module, a locally checked result whose public check is
 pending, a computation, or a result of the record not on the portal; the appendix places every entry of the listing. Almost
@@ -70,7 +71,9 @@ c389d5, `Rule30WhiteEndNine`, on top of ours), a four-category block grammar and
 (AIOvernight, d611aa, 4d375d, 196859), explicit word lists (the kit's strip certificate table; AIOvernight's 87 words of lengths
 12 to 16, 7a9ed3; ours of lengths 11 to 18 beyond the kit's table, 5e2b66, f7ace9), run bounds for Problem 2 (Morales, 03b551:
 a black run from time a has length at most a, a white one at most a − 3; Goux, 0554f7: 5L ≤ 3a + 10; Villafuerte, e34744:
-L ≤ a − 2 for a ≥ 4; AIOvernight, e324b6: explicit log log margins), white runs of a row beside two periodic columns at most two
+L ≤ a − 2 for a ≥ 4; AIOvernight, e324b6: explicit log log margins; the black centre times growing at least like log base 8/5, improving the kit's
+log₂, AIOvernight, 452bbf), an exact cylinder count for the white centre times with a black right neighbour (AIOvernight,
+b476c1), white runs of a row beside two periodic columns at most two
 periods long (ours, 8131b1), single-pair parity
 barriers for white centre runs and constant diagonals (Quint, 462dc9, extending AIOvernight), sublinear windows that contain both
 centre colours (Quint, 1c93e6), parity-resolved boundary collisions with black-run erosion bounds (Quint, 1a6e64), and defect
@@ -82,10 +85,11 @@ to Q01: no finite start beside a white wall keeps depth 1 black at every even ti
 `Rule30ZeroBoundary`, with `Q01` in its integer form from Bosdure, 317c64). Known: every start of width ≤ 56 dies, with exact
 death times 96 at width 52 and 100 at width 56 (the kit's `Rule30ZeroBoundaryWidth52`; ours, 8e6bd3, ac3898), the same at width
 60 with death time 114 (ours, 71f858, kernel-checked locally, public check unverified), and lower bounds to width 76 (ours,
-b16332, a129c3, 4dcf69); the constrained starts counted exactly as 2^⌊W/2⌋ and their free bits never spelling 00 or 11111 (the
-kit's `count_constrained` and `free_bits_no00_no11111`); a width-d death bound forcing a black cell in every row whose column −1
-matches a pattern (Kovačič, e67465); four-cell tails after an alternating stripe dying within 31 steps of their first deviation
-(yingy, 81df0e); the stripe-tail mortalities, backward wave cascades, clone rays and transducer hierarchies of the zero-boundary
+b16332, a129c3, 4dcf69); the constrained starts of width W counted exactly as 2^⌊W/2⌋ (the kit's `count_constrained`) and, separately, under an
+eventual alternating centre, the odd-time column −1 bits avoiding 00 and 11111 (the kit's `free_bits_no00_no11111`); a width-d death bound forcing a black cell in every row whose column −1
+matches a pattern (e67465, "Partial structural results toward Rule 30 Problem 1", whose byline is garbled on the portal); four-cell stripe tails after an alternating stripe reaching a white depth-1 even time at most 31 steps after their first
+deviation, except the tail 1011 with odd stripe length (yingy, 81df0e; Quint's later unconditional mortality, 017d83, is a
+separate result); the stripe-tail mortalities, backward wave cascades, clone rays and transducer hierarchies of the zero-boundary
 half (Quint, 017d83, 1910d0, 5beddc, a4691a, c6ff55, 8abb51, 715db1; the stripe cascade, f0127e); the right neighbour of a
 clocked centre never a Sturmian word (ours, 8084e6), never a finite-arc rotation code with late large partial quotients (ours,
 0ef6e2), never a mechanical word beyond an explicit horizon (ours, dc3d17), and never with near-squares at unbounded scales
@@ -122,7 +126,8 @@ and closing law (ours, 20f058); for every finite seed the right diagonals after 
 4, 8, 8, 16, 32, 32 (ours, 3ca86f); the 101 shift law and its mod-4 forms (ours, 7d47a9); periodic temporal profiles (ours,
 a94f21); a finite-depth right edge follows the single cell's ruler with a cap, and staircases near it end (ours, 61e435, 196370);
 half-rate prefix clocks for every two-input gate and their nested thresholds (ours, 7b0d12, 9861e5); stroboscopic alternation,
-half-black balance and synchronized wall returns (Quint, efd2bd). *Left:* D_k is eventually periodic with period dividing 2^k
+half-black balance and synchronized wall returns (Quint, efd2bd); the fresh digit at each doubling depth is equidistributed,
+the binary cube inside the cone (AIOvernight, 84a42c). *Left:* D_k is eventually periodic with period dividing 2^k
 (the kit's `Rule30Diagonals`); the periods are unbounded, with infinitely many eventually white and eventually black diagonals
 and no two adjacent eventually white, for every configuration with a leftmost black cell (ours, 0616de, 22 October, after
 Rowland 2006 §5; for the seed, by a different encoding, AIOvernight's `Rule30LeftUnbounded`, 28 October); the period divides
@@ -146,9 +151,10 @@ one cell per step, and the leftmost at a speed set by the background: zero on th
 kernel-checked locally; the portal's public check timed out and the maintainer's rerun is pending), exactly 5/19 on the ring
 background 100100000 and exactly 2/9 on 1010000 (ours, A4, 87ba7a, superseding 37281a: moving walls, certified by closed sets
 with an exact potential, at the entry's stated alignments and under its closure-entry and arbitrary-tail guards), exactly 1/2
-on the eight-tick ether G8 (COMPUTED, not a theorem: the record's CL678, five alignments of 6,000 steps), about 0.246 on a fair
-random row (measured: 0.246 ± 0.008 over eight random rows of 2^13 steps and five alignments of 6,000 steps, the record's §8.66
-and CL678; the damage-spreading speed of the physics literature); for every background and every perturbation confined to one
+on the eight-tick ether G8 (COMPUTED, not a theorem: the record's CL678, five alignments of 6,000 steps), about 0.246 on the
+recorded fair-row samples (measured: 0.2468 in eight 8,192-step single-flip trials, the record's §8.66, and 0.2457 ± 0.0084 in
+five 6,000-step inserted-edge trials, CL678, the error being the script's standard error over five samples, not a proven bound;
+the damage-spreading speed of the physics literature); for every background and every perturbation confined to one
 side, at most 1 minus the background's recruitment climb rate (ours, A2, e660e4, a universal healing bound); and behind a black
 edge, a periodic background's episodes are finite at every depth exactly when no eternal point follows it from some depth on
 (ours, A5, d37d24, section 3.7). Triangular left-permutivity with guarded light-cone sensitivity (Quint, ea30e7) is the related
@@ -167,9 +173,12 @@ observer and gauge criteria of `Rule30DividedDifference` and `Rule30CommonGauge`
 column by exact deadlines (ours, 991a71); Jen's left-permutive class is exactly rules 90, 150, 210, 30, and 30 is the only one
 with a non-eventually-constant centre (Quint, 7e9e6e); the periodic points of every frame with velocity in [−1, 1) are the
 kit's `equivalents/PeriodicPoints`, and at velocity +1 the periodic rings are closed walks of periodic profiles (ours, a96cee);
-the finite past of finite rows has a unique root and age, a parent test and exact parent counts (ours, 803bc4); the centre cell
-at time t has algebraic degree exactly 2t − 1 (Norris, 603218; the top coefficient of every quadratic left-permutive rule in the
-kit's `Rule30TopCoefficient`, Condrey); the rule's causal logic as an ANF census (Quint, 075afb). Together: a proof of Q01 must
+the finite past of finite rows has a unique root and age, a parent test and exact parent counts (ours, 803bc4); for t ≥ 2 the
+t-step centre map, as a Boolean function of its initial cone, has degree 2t − 1 (the kit's `equivalents/AlgebraicDegree`;
+Norris, 603218, packages degree, the unique top monomial and Walsh balance for t ≥ 3), and Condrey's `Rule30TopCoefficient`
+gives a separate parameterized top-coefficient identity for quadratic left-permutive rules; the rule's causal logic as an ANF
+census (Quint, 075afb); and no observable smaller than a sixteen-cell window certifies the word 1001 with a bounded potential
+(AIOvernight, 4b2a58). Together: a proof of Q01 must
 use the OR's nonlinearity beyond its counting consequences, must use the finiteness of the left half beyond its periodicity,
 and cannot rest on an additive local conservation law; whether a non-additive or clocked potential exists is open.
 
@@ -213,9 +222,9 @@ and what the gap means, nobody has written down as a theorem.
 
 **3.6 The two ends are one recurrence.** The right diagonals obey d′ = d ⊕ (u ∨ w) and the left diagonals d′ = w ⊕ (u ∨ d): the
 same three-input recurrence with the cell's own value moved from the linear slot into the OR. On the right the cell integrates at
-every tick and never forgets: the odometer, with periods observed to grow like 2^(0.41 j) (the doubling density is measured: 0.41 to 0.43 on the seed to
-j = 92 and 0.407 ± 0.009 pooled over 64 random seeds, the record's CL645, and the kit's own note e_j ≈ 0.43 j; the proved bound
-is e_j ≤ j/2 + O(log* j)). On the left the cell is reset at every black of its nearer
+every tick and never forgets: the odometer, with periods observed to grow like 2^(0.41 j) (the doubling density is measured: about 0.42 on the seed's right diagonals
+through j = 92, 0.407 ± 0.009 for the prefix block-exponent increments of 64 odd 24-bit seeds at n = 13 to 56 (CL642, CL645),
+and the kit's own note e_j ≈ 0.43 j; finite scopes, not an asymptotic law; the proved bound is e_j ≤ j/2 + O(log* j)). On the left the cell is reset at every black of its nearer
 neighbour and integrates only when that neighbour is all white: the settled cycles are forced (section 7, under its guards: a
 common period and a nearer cycle that is not all white), the period grows only at an eventually-white diagonal, by the odd-weight
 test (Rowland's Proposition 2; AIOvernight's reset law), and a white diagonal is a coincidence of consecutive cycles (section 7).
@@ -237,9 +246,9 @@ hosts no eternal wall.
 Problem 1 needs, for every periodic driver, that a finite right half locks its first column, except at period 2 where it needs
 the finite left half to die; Q01 needs a mechanism that is nonlinear, uses finiteness, and is not an additive local conservation law (F). The frames supply two
 mechanisms no theorem uses yet: the leak F = Φ ≫ 1, and the odometer's rigidity (3.3). Problem 2 needs the balance of a parity that
-grows with time, which no fixed-order fairness test can give. Of the measured constants, the fair-row front speed 0.246 (eight random rows of 2^13 steps, the record's §8.66; five
-alignments of 6,000 steps, CL678), the right-edge doubling density 0.41 to 0.43 (the seed to j = 92 and 64 random seeds, CL645;
-the kit's note) and the left-end period law "P reached near 2^P" (the seed's first 12,000 left diagonals and random finite
+grows with time, which no fixed-order fairness test can give. Of the measured constants, the fair-row front speed about 0.246 (0.2468 in eight 8,192-step single-flip trials, §8.66; 0.2457 ± 0.0084
+in five 6,000-step inserted-edge trials, CL678), the right-edge doubling density about 0.42 (the seed through j = 92; the prefix
+block-exponent increments of 64 seeds, CL642 and CL645; the kit's note) and the left-end period law "P reached near 2^P" (the seed's first 12,000 left diagonals and random finite
 seeds) are conjectures with stated samples: they have mechanisms but no theorems; the centre
 column itself passed the five generic tells we ran on its first 8,192 cells (block entropy to order 10, linear complexity of a
 2,048-bit window, the 2-kernel, autocorrelation to lag 64, residues mod 8), as did random finite seeds, while Thue–Morse,
@@ -300,7 +309,7 @@ record's §8.31. The family theorem establishes none of the measured statements 
 
 ## Sources
 
-The Rule 30 Prize kit (main c42f6e5, 3 November 2026); the portal (114 entries at 3 November 16:18 GMT, 112 Lean Verified); E. Rowland, "Local nested
+The Rule 30 Prize kit (main c42f6e5, 3 November 2026); the portal (119 entries at 3 November 18:49 GMT, 117 Lean Verified); E. Rowland, "Local nested
 structure in rule 30", Complex Systems 16 (2006); E. Jen, "Global properties of cellular automata", J. Stat. Phys. 43 (1986); the
 research record (the record's MAP.md, SYNTHESIS-20261029.md, APPRAISAL-20261029.md and the structure atlas; CL645, CL678 and
-§8.66 for the measured constants); the portal index of 3 November 13:23Z and the kit's catalog at c42f6e5 for the check.
+§8.66 for the measured constants); the portal index of 3 November, refreshed at 18:49Z, and the kit's catalog at c42f6e5 for the check.

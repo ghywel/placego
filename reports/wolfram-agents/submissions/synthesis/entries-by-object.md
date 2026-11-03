@@ -1,18 +1,18 @@
-# Appendix: every portal entry placed by object (generated 2026-11-03 17:54 GMT; Cloud)
+# Appendix: every portal entry placed by object (generated 2026-11-03 18:53 GMT; Cloud)
 
-One row per entry of the portal index (3 November 2026, 13:23Z, 113 entries) plus the two of ours posted after that snapshot.
-Object letters are the essay's sections (a second letter after a slash is a secondary placement); author is the first name as
-the portal shows it; status is Lean Verified (LV) or Lean Unverified (LU), with Human Verified (HV) and kit-contribution tags.
-The placement is Cloud's reading of each title and abstract; GPT confirms it before posting. Rows are by date within a section.
+One row per entry of the portal index (3 November 2026, refreshed 18:49Z, 119 entries). Object letters are the essay's
+sections (a second letter after a slash is a secondary placement); author is the first name as the portal shows it; status is
+Lean Verified (LV) or Lean Unverified (LU), with Human Verified (HV) and kit-contribution tags. The placement is Cloud's reading
+of each title and abstract, reviewed by GPT (GC2585: two moves adopted). Rows are by date within a section.
 
 | object | entries |
 |---|---|
-| A. The centre column | 23 |
+| A. The centre column | 24 |
 | B. Period 2 | 42 |
 | C. Periods 3 and 4 | 6 |
-| D. The diagonals | 21 |
-| E. Fronts, walls and backgrounds | 6 |
-| F. Structure and barriers | 8 |
+| D. The diagonals | 22 |
+| E. Fronts, walls and backgrounds | 7 |
+| F. Structure and barriers | 9 |
 | G. Problems 2 and 3 | 9 |
 
 ## A. The centre column
@@ -23,7 +23,6 @@ The placement is Cloud's reading of each title and abstract; GPT confirms it bef
 | 2026-10-23 | [521830](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-521830) | A | @AIOvernight | LV, HV | Two More Eventual Words Excluded from the Center Column of Rule 30 |
 | 2026-10-23 | [524848](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-524848) | A | Troy Lowry | LV, HV, kit | Six-bit core exclusions at padding 74 by backward vacuum certificates |
 | 2026-10-23 | [603218](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-603218) | A/G | Andy Norris | LV, HV | Right-sealed shield cascades, multi-parameter strip fixed points, Kleene block absorption, and Problem 2/3 degree-density bridges for Rule 30 |
-| 2026-10-23 | [60d213](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-60d213) | A/B | @AIOvernight | LV, HV | Sparse16: A Finite Obstruction to an Alternating Center in Rule 30 |
 | 2026-10-23 | [7a9ed3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-7a9ed3) | A | @AIOvernight | LV, HV, kit | White Padding before 10111 and Eighty-Seven Periodic Words in Rule 30 |
 | 2026-10-23 | [8fe04c](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-8fe04c) | A | Troy Lowry | LV, HV, kit | Forbidden suffixes and arbitrary-length tail families for Rule 30 |
 | 2026-10-23 | [c5e3c0](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-c5e3c0) | A | Andy Norris | LV, HV | Right-sealed shield cascades, multi-parameter strip fixed points, and Kleene block absorption for Rule 30 |
@@ -41,7 +40,9 @@ The placement is Cloud's reading of each title and abstract; GPT confirms it bef
 | 2026-10-29 | [f7ace9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-f7ace9) | A | ours | LV, HV | Excluded column words of length 17 and 18, beyond the kit's table |
 | 2026-11-03 | [1a6e64](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-1a6e64) | A | G.P.J.W. Quint | LV | Parity-Resolved D 0 / D 1 Boundary Collisions and Strengthened Erosion Bounds in Rule30BlackRunErosion |
 | 2026-11-03 | [1c93e6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-1c93e6) | A/D | G.P.J.W. Quint | LV | Exact Bounded whiteCount Witnesses and Sub-Linear Window Existence of Both Center Colors in Rule30SettledBarrierEffective |
+| 2026-11-03 | [452bbf](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-452bbf) | A/G | @AIOvernight | LV | Black Cells of the Center Column Grow at Least Like Log Base Eight Fifths |
 | 2026-11-03 | [462dc9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-462dc9) | A/D | G.P.J.W. Quint | LV | Single-Pair Parity Obstruction for White Center Runs and Constant-Diagonal Barriers in Rule30SettledBarrier |
+| 2026-11-03 | [b476c1](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-b476c1) | A/G | @AIOvernight | LV | An Exact Cylinder Count for the White Center Times of Rule 30 |
 
 ## B. Period 2
 
@@ -54,6 +55,7 @@ The placement is Cloud's reading of each title and abstract; GPT confirms it bef
 | 2026-10-23 | [1bf4dc](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-1bf4dc) | B | ours | LV, HV | Rule 210, the two-sided statement: no finite configuration keeps the period-2 clock on its center column |
 | 2026-10-23 | [4767e0](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-4767e0) | B | ours | LV, HV | The channel bound, certified: how much a clocked center column lets its right neighbour say |
 | 2026-10-23 | [4d1a54](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-4d1a54) | B | ours | LV, HV | The channel bound at width 14: explicit automaton states, one kernel check per state |
+| 2026-10-23 | [60d213](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-60d213) | B/A | @AIOvernight | LV, HV | Sparse16: A Finite Obstruction to an Alternating Center in Rule 30 |
 | 2026-10-23 | [8084e6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-8084e6) | B | ours | LV, HV | Every Sturmian word, of every slope and every intercept, is excluded as the right neighbour of a period-2 center column |
 | 2026-10-23 | [8e6bd3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-8e6bd3) | B | ours | LV, HV | The death time at width 52 is exactly 96, with witnesses at widths 56 and 60 |
 | 2026-10-23 | [ac3898](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261023-ac3898) | B | ours | LV, HV | The death time at width 56 is exactly 100: a complete chunk certificate and its witness |
@@ -63,8 +65,7 @@ The placement is Cloud's reading of each title and abstract; GPT confirms it bef
 | 2026-10-24 | [a129c3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261024-a129c3) | B | ours | LV, HV | A death-time lower bound at width 74, with a witness from a complete GPU census |
 | 2026-10-24 | [b16332](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261024-b16332) | B | ours | LV, HV | Death-time lower bounds at widths 64 to 72, with witnesses from a complete GPU census |
 | 2026-10-25 | [017d83](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261025-017d83) | B | G.P.J.W. Quint | LV, HV, kit | Unconditional Four-Cell and Five-Cell Stripe-Tail Mortality in Zero-Boundary Rule 30 |
-| 2026-10-26 | [0ef9c8](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261026-0ef9c8) | B/D | Jeongseop Lee | LV, HV | Period-32 two-phase shielding rigidity for finite Rule 30 moving-front states |
-| 2026-10-26 | [e67465](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261026-e67465) | B/C | Matev~ Kova i | LV | Partial structural results toward Rule 30 Problem 1: a truncation bridge, first kernel-checked Q001 instances, and a coupled golden-mean source constr |
+| 2026-10-26 | [e67465](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261026-e67465) | B/C | byline garbled on the portal | LV | Partial structural results toward Rule 30 Problem 1: a truncation bridge, first kernel-checked Q001 instances, and a coupled golden-mean source constr |
 | 2026-10-27 | [1910d0](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261027-1910d0) | B | G.P.J.W. Quint | LV, HV | Unconditional Six-Cell and Seven-Cell Stripe-Tail Mortality and Sparse Return-Map Completion of (97, 0) in Zero-Boundary Rule 30 |
 | 2026-10-27 | [230bc7](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261027-230bc7) | B | Renaud Bosdure | LV, HV, kit | Rule 30, Period 2: a Closed Trap for the Right Half Driven from the Empty Row |
 | 2026-10-27 | [352e5d](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261027-352e5d) | B | ours | LV, HV, kit | A seven-cell rewrite beside the white wall that merges in two steps, for every tail and every finite cut |
@@ -125,16 +126,18 @@ The placement is Cloud's reading of each title and abstract; GPT confirms it bef
 | 2026-11-03 | [0d8a71](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-0d8a71) | D | G.P.J.W. Quint | LV | Exact Realization of the Unique Gap-Five White Pair (D 2, D 7) and Sharp whiteCount Evaluation Through Index 12 |
 | 2026-11-03 | [20f058](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-20f058) | D | ours | LV | The closing law of prefix doublings on Rule 30's right edge |
 | 2026-11-03 | [750fd6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-750fd6) | D | G.P.J.W. Quint | LV | Complement Discrepancy Symmetry, Odd-Multiple Antiperiodicity, and Odd-Stride Subsampling Density 1/2 on Rule 30 Diagonals |
+| 2026-11-03 | [84a42c](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-84a42c) | D/G | @AIOvernight | LV | The Binary Cube Inside the Rule 30 Cone |
 | 2026-11-03 | [efd2bd](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-efd2bd) | D | G.P.J.W. Quint | LV | Stroboscopic Alternation, Multi-Period Half-Black Conservation, and Synchronized Wall Returns on Rule 30 Right Diagonals |
 
 ## E. Fronts, walls and backgrounds
 
 | date | id | object | author | status | title |
 |---|---|---|---|---|---|
+| 2026-10-26 | [0ef9c8](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261026-0ef9c8) | E/B | Jeongseop Lee | LV, HV | Period-32 two-phase shielding rigidity for finite Rule 30 moving-front states |
 | 2026-10-31 | [7c1f96](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261031-7c1f96) | E | ours | LV, HV, kit | The longest ether-pair episode behind a black right edge of rule 30 |
 | 2026-11-03 | [3742dc](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-3742dc) | E | ours | LU | The classic ether of rule 30 absorbs a black edge: front speed exactly zero |
-| 2026-11-03 | [87ba7a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-87ba7a) | E | ours | LV (after the snapshot; L1462) | Moving walls: the front speeds 5/19 and 2/9, certified by closed sets with an exact potential (A4, superseding 37281a) |
-| 2026-11-03 | [d37d24](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-d37d24) | E | ours | LV (after the snapshot; L1471) | Episodes and eternal tails behind Rule 30's black edge: a finite criterion (A5) |
+| 2026-11-03 | [87ba7a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-87ba7a) | E | ours | LV | Moving walls in Rule 30: exact front speeds 5/19 and 2/9 |
+| 2026-11-03 | [d37d24](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-d37d24) | E | ours | LV | Episodes and eternal tails behind Rule 30's black edge: a finite criterion |
 | 2026-11-03 | [e660e4](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-e660e4) | E | ours | LV | The universal healing bound for rule 30 |
 | 2026-11-03 | [e742c0](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-e742c0) | E/D | G.P.J.W. Quint | LV | Six-Window Four-Layer Defect Escape and Five-Window Isolated-Defect Bounds in Rule30DefectClockBudget |
 
@@ -149,6 +152,7 @@ The placement is Cloud's reading of each title and abstract; GPT confirms it bef
 | 2026-10-29 | [a96cee](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261029-a96cee) | F/E | ours | LV, HV, kit | Light-speed periodic rings of rule 30 as closed walks of periodic profiles |
 | 2026-10-30 | [803bc4](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261030-803bc4) | F | ours | LV, HV | Finite ancestors of Rule 30 rows: roots, boundary tests and exact counts |
 | 2026-11-02 | [075afb](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261102-075afb) | F | G.P.J.W. Quint | LV | Fundamental Causal Logic of Rule 30: ANF Decomposition, Marginal Causal Influence Census, and Spacetime Retrodiction |
+| 2026-11-03 | [4b2a58](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-4b2a58) | F/G | @AIOvernight | LV | No Smaller Observable Certifies the Word 1001 in Rule 30 |
 | 2026-11-03 | [ea30e7](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-ea30e7) | F/E | G.P.J.W. Quint | LV | Triangular Left-Permutivity, Right-Edge White-Corridor Sensitivity, and Left-Parent Injectivity of the Rule 30 Block Tree |
 
 ## G. Problems 2 and 3
