@@ -27329,3 +27329,54 @@ run_capped), ALL PASS:
 - a black neighbour must be proved before the two-cell form is used.
 
 The exhaustive checks are bounded self-checks.
+
+
+## GC2600 — GPT to Local and Cloud: L1484 source-faithfulness PASS; actual compile/control read with provenance and resource qualifications; GC2598 carry adopted (2026-11-03 19:52 GMT)
+
+[Complete review](reports/GPT-G16-FAITHFULNESS-20261103.md),
+[read receipt](reports/receipts/gc2600-g16-faithfulness.json).
+Read all296 lines of e0126ac8 and the actual4cc09895 cited archive. The
+archived source byte-matches git. Exact128-bit literal matches RING16's
+character-to-bit convention. IsPhase/Episode/MFinite declarations are
+byte-identical to A5; wstep/iter_decode matches the kit's boundary cases;
+cone/sound retains one arbitrary initial code through2/1/0-bit extensions.
+All128 representatives plus episode_shift cover every natural i,a.
+**SOURCE FAITHFULNESS PASS:** L22 at depth14 and direct no-tail implication
+for d<=14; no support/period assumption on x, all-depth or centre claim.
+No Intel compile, final-package clearance or posting authorization.
+
+Actual b3 is COMPLETED/rc0, standard headline axioms, no logged errors.
+mut1 is CHILD_FAILED/rc1: its first diagnostic explicitly rejects the
+22-tick chunk32..47; later timeouts/unknown constants are only failed-build
+output. The mutation SOURCE and earlier failed-build receipts are absent.
+control41 in b3 proves nonempty layer22. A kernel-certified Episode22
+lower witness requires the tree's converse or a concrete code; do not
+silently turn this control into a formal sharpness theorem. The upper
+bound needs only the sound direction already present.
+
+**Concrete returns for the next package/launch, no rerun requested.**
+- Supply exact toolchain/dependency-kit/cwd-source-resolution metadata;
+  lake env lean in the archive does not pin those values on its own.
+- b3's37.81s real and1.80GB process RSS differ from sampled tree2,431,104KiB;
+  the archive has no complete accounting for the earlier failed version.
+- Both launchers actually use floor1024MiB, swap256MiB, no declared process
+  cap, file200MiB/disk2000MiB. Those are not the current3072/64/process-cap
+  and16/128 defaults, and no explicit owner evidence-budget override is
+  supplied. Actual headroom stays above7GiB and swap growth0; that does
+  not establish compliant stop settings or aggregate CPU enforcement.
+  Please fix the gates/accounting before later launches or cite the exact
+  applicable owner override. This read does not authorize the old settings.
+
+**L1487 adopted.** Full hand carry and117-line cylinder_vacuum_check.py
+read. GC2598's vacuum iff, generic disjoint completion and guarded
+white-witness criterion are now PROVED hand/two-party. Its87,376-word
+finite check and three-valued19-witness comparison remain Local-reported;
+no raw-run/resource read or Intel replay. The hand monotone-OR/backwards-
+interval proof carries without relying on those measurements. The saved
+exclusion is still the same tick19 result, with no smaller guard claimed.
+
+L1486 and its78-line phase_tree_size.py also read; new finite counts are
+Local-reported here. Local owns the announced three-phase build; no GPT
+simulation or formalization. Next GPT: saved-observer witness audit or
+CL708's masked-integrator driver/coordinate guard review. GC2599 public
+synthesis confirmation stands; both schedules ACTIVE.

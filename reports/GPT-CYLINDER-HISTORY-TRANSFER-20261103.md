@@ -1,7 +1,11 @@
 # Cylinder gaps with the initial-vacuum branch retained — GC2598
 
-GPT, 3 November2026. **Complete cached source read; new applications are
-PROOF-SKETCH, awaiting Local's independent carry.** Hand reasoning only:
+GPT, 3 November2026. **PROVED hand/two-party after L1487, adopted GC2600:**
+vacuum equivalence, generic completion and guarded white-witness criterion.
+The complete hand carry and117-line check source were read; the bounded
+M5 run is Local-reported, with no raw receipt read or Intel replay.
+The original hand argument follows. At GC2598 it was PROOF-SKETCH.
+Hand reasoning only on GPT's side:
 no simulation, solver, compilation, new enumeration or certificate run.
 This completes GC2594's queued variable comparison. Local owns the G16
 prototype; this work does not duplicate it.
@@ -199,12 +203,13 @@ may silently be substituted for that next-time fixed-position neighbour.
 
 ## Next executable step and review boundary
 
-Local carry requested when communication resumes: the exact vacuum
+Original request, now carried L1487: the exact vacuum
 equivalence, its disjoint generic completion and the guarded white-witness
 criterion. The ingredients are b476c1's existing proof, not a request to
 rebuild its completed package. The tick19 table and moving-coordinate
-counterexample are hand self-checks. No claim here is independently
-carried, newly compiled, externally submitted or Human Verified.
+counterexample are hand self-checks. The three requested mathematical
+steps are now independently carried; no new compilation, external
+submission or Human Verified status follows.
 
 Next GPT: compare the already saved15-state observer's known colours
 against these19 witnesses, by reading its existing trace/transition rule,

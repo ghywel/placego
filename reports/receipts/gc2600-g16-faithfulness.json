@@ -1,0 +1,125 @@
+{
+  "entry": "GC2600",
+  "recorded_utc": "2026-11-03T19:48:36.240588+00:00",
+  "verdict": "SOURCE FAITHFULNESS PASS; successful M5 archive read; no Intel compile",
+  "source": {
+    "path": "tests/probes/lean/G16Episode.lean",
+    "bytes": 13877,
+    "sha256": "e0126ac89dc55378814ee94451a30aee1bc3550730cc92c1d33c3a545da941e1",
+    "complete_lines_read": 296
+  },
+  "archive": {
+    "path": "cited/l1484-g16/g16-lean-receipts.tar.gz",
+    "bytes": 8473,
+    "sha256": "4cc098954e89aa96dea4db6d47d9bc6042a853c6d864bc6e9f4fc1553d9fbc4f",
+    "archived_source_matches_committed_bytes": true
+  },
+  "definition_comparison": "IsPhase/Episode/MFinite declarations byte-identical to tests/probes/lean/EpisodeBridge.lean",
+  "a5_probe_pin": {
+    "bytes": 15556,
+    "sha256": "522de1444aea6702b8c91540fa26dc20f95c2f17992ddaf024e62669eab63dca"
+  },
+  "ring_check": {
+    "source": "tests/probes/upward_rigid.py",
+    "cells": 128,
+    "bit_order": "source character n equals ringNat.testBit n",
+    "ringNat_hex": "0x468b2e4a3c095cc178d9b5d3f6c43ea7",
+    "equal": true
+  },
+  "raw_runs": {
+    "b3": {
+      "files": {
+        "out.txt": {
+          "bytes": 579,
+          "sha256": "9c20b77f6a9896c4d6200a580d5213b7728502e4ec71264c144eccdfba0b2f66"
+        },
+        "time_receipt.txt": {
+          "bytes": 1086,
+          "sha256": "918b189a5694584b8f67be244fae2332bb3dd478e2e511e6dceba277f3f8efed"
+        },
+        "launcher.json": {
+          "bytes": 5135,
+          "sha256": "e93682ca8286b232c488a1d709a1415256cf87380c4baff664d5423c436449e6"
+        }
+      },
+      "exit_reason": "COMPLETED",
+      "child_rc": 0,
+      "wall_s": 38.06,
+      "supervisor_cpu_s": 0.299,
+      "limits": {
+        "cpu": 1200,
+        "wall": 1500,
+        "rss_mib": 8192,
+        "file_mib": 200,
+        "disk_mib": 2000,
+        "min_free_mib": 1024,
+        "launch_free_mib": 4096,
+        "swap_growth_mib": 256,
+        "track_tree": true,
+        "max_procs": null
+      },
+      "maxima": {
+        "rss_kib": 2431104,
+        "procs": 3,
+        "disk_bytes": 0,
+        "swap_growth_mib": 0.0,
+        "min_free_mib": 7117
+      }
+    },
+    "mut1": {
+      "files": {
+        "out.txt": {
+          "bytes": 1521,
+          "sha256": "e01d5104d1587a41e2929b0553ebca5068c21d8fff956767a52a2696936372ab"
+        },
+        "time_receipt.txt": {
+          "bytes": 1108,
+          "sha256": "abc870bec66ccf1c262238b93f5e34568976b35d159fb94a83dd3313f6d81708"
+        },
+        "launcher.json": {
+          "bytes": 4916,
+          "sha256": "f9c66dede9baaf3f54026f1401e4c8ba2ff75373603da3782a552d95e463220e"
+        }
+      },
+      "exit_reason": "CHILD_FAILED",
+      "child_rc": 1,
+      "wall_s": 36.58,
+      "supervisor_cpu_s": 0.308,
+      "limits": {
+        "cpu": 1200,
+        "wall": 1500,
+        "rss_mib": 8192,
+        "file_mib": 200,
+        "disk_mib": 2000,
+        "min_free_mib": 1024,
+        "launch_free_mib": 4096,
+        "swap_growth_mib": 256,
+        "track_tree": true,
+        "max_procs": null
+      },
+      "maxima": {
+        "rss_kib": 2461648,
+        "procs": 3,
+        "disk_bytes": 0,
+        "swap_growth_mib": 0.0,
+        "min_free_mib": 7085
+      }
+    }
+  },
+  "scope": "all arbitrary Nat->Bool codes with bit0 black; any natural i,a; pair14/15; excludes23ticks, henceL22; no tail fromd<=14; no all-depth/centre claim",
+  "control": "mut1 output explicitly rejects reps2 at22, then contains downstream timeout/unknown-constant errors. Actual mutation source and earlier failed-build receipt absent. control41 proves nonempty layer22, not formal Episode22 existence without completeness or concrete witness.",
+  "provenance_limits": "archive supplies actual final source and logs but no explicit toolchain version/dependency kit commit/cwd receipt; request packaging manifest, no rerun for faithfulness",
+  "resource_limits": "actual b3/mut1 monitored headroom above7GiB and swapgrowth0; configuration floor1024,swap256,max_procsnull,file200/disk2000 is not certification of required3072/64/declared-process/default16/128 gates or aggregateCPU enforcement",
+  "next": "Local supplies package provenance and preserves bound/control scope; no duplicate build. GPT queued saved-observer audit and CL708 driver/coordinate guards.",
+  "L1487": {
+    "status": "complete hand carry adopted; GC2598 three requested applications PROVED hand/two-party",
+    "source": "tests/probes/wolfram/cylinder_vacuum_check.py",
+    "sha256": "342e8d30206f5e28a04aa4d105c0bc2f72e037bdc9395151aec9f5c35088250f",
+    "scope": "complete117-line source read and syntax parsed; no execution or raw run/resource receipt read; bounded results remain Local-reported"
+  },
+  "L1486": {
+    "source": "tests/probes/wolfram/phase_tree_size.py",
+    "sha256": "5b80936b69ca195b399165c76986f853728b2d97c561b958546309e02d091ab5",
+    "scope": "complete78-line source and ledger read; new counts Local-reported; no raw run receipt or Intel replay; Local owns claimed next build"
+  }
+}

@@ -3048,3 +3048,9 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 
 - [Actual public3cf160 outcome](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#public-synthesis-outcome-independently-checked--gc2599): Lean Verified37 constants/ten matching headlines; downloaded Lean62b661a9/notebook8d8d0acd byte-match GC2595; wrong-endpoint403 resolved. No new compile, Human Verified or merge claim.
 - [L1482 adoption](reports/GPT-G16-TREE-REVIEW-20261103.md#l1482-and-cl709-read--gc2599):128-representative contract PROVED hand/two-party; complete check source read, finite run Local-reported. L1484 actual probe/receipt faithfulness read now owned by GPT, no duplicate build.
+
+
+## GC2600 — G16 probe faithfulness PASS and generic-cylinder carry (3 November2026)
+
+- [G16 source/receipt read](reports/GPT-G16-FAITHFULNESS-20261103.md): e0126ac8 complete, actual successful M5 archive4cc09895 read, exact ring/A5 conventions, arbitrary black-edge code/all-alignment L22 at k14. No all-depth result, Intel compile or final-package clearance. Nonempty layer control versus formal Episode22 witness distinguished; build provenance and resource-stop discrepancies returned.
+- L1487's full hand carry adopts [GC2598 vacuum/completion/white-witness criterion](reports/GPT-CYLINDER-HISTORY-TRANSFER-20261103.md) PROVED hand/two-party; full check source read, finite run remains Local-reported. L1486 source/plan read; Local owns the three-phase build.

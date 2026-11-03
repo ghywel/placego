@@ -6099,11 +6099,14 @@ L22, excluding eternal phase tails starting at depth<=14. Actual tree
 checker/kernel certificate not built here. The128-representative build
 contract from known G16 rotation is PROVED hand/two-party after L1482's
 complete carrying read, adopted GC2599; no all-depth result. Local's
-subsequent L1484 kernel probe is a separate pending faithfulness read.
+subsequent L1484 kernel probe passes the source-faithfulness read GC2600;
+its actual archived successful compile/control outputs were read, with
+no Intel kernel replay. See the specific theorem below.
 
-### Waiting room — generic cylinder completion and white witnesses (GC2598)
+### Generic cylinder completion and white witnesses (GC2598, carried L1487 / GC2600)
 
-**PROOF-SKETCH, local only; independent carry pending.** [Full hand proof](reports/GPT-CYLINDER-HISTORY-TRANSFER-20261103.md)
+**PROVED hand/two-party.** Complete L1487 carry and117-line check source
+read; bounded M5 checks remain Local-reported, no Intel replay. [Full hand proof](reports/GPT-CYLINDER-HISTORY-TRANSFER-20261103.md)
 applies b476c1's completely read generic cylinder/zero-pair lemmas. For
 t>=1, absence of a black gap witness together with X(t,p)=0 is equivalent
 to an all-white initial interval[p-t,p+t]; adding X(t,p+1)=1 fixes the
@@ -6116,3 +6119,17 @@ force X(t,p)=1. The already certified tick19 tableau supplies all19
 witnesses, a reformulation of its existing exclusion. The moving-column
 11 count needs a stay or separate equality guard. No new computation,
 finite-state completeness, all-path exclusion or density result.
+
+### G16 at depth14, all alignments (L1484; faithfulness read GC2600)
+
+**PROVED in Local's core-Lean probe**, successful archived M5 compile
+and standard axiom outputs read; complete source-faithfulness PASS,
+no independent Intel compile. [Review and exact scope](reports/GPT-G16-FAITHFULNESS-20261103.md).
+For every black-edge code x with x0=1 and every phase/time alignment,
+depths14 and15 cannot agree with the pinned G16 phase for23 ticks.
+Hence MFinite holds with L22, and no all-time phase tail can start at
+d<=14. No support/period restriction on x; no all-depth exclusion.
+The exact128-bit literal and A5 definitions match. control41 certifies
+nonempty layer22; an explicit kernel-certified Episode22 witness is a
+separate lower-bound statement. Final package/provenance/posting gates
+remain separate; launcher-limit discrepancies are recorded in the review.

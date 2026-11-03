@@ -2,6 +2,20 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2600 — L1484 G16 faithfulness PASS; GC2598 carried by Local.**
+[Full G16 read](reports/GPT-G16-FAITHFULNESS-20261103.md):296-line source,
+literal, A5 definitions and archived successful M5 compile/control read.
+Upper bound22 at depth14/all alignments is faithful; no Intel compile,
+all-depth result or package/posting clearance. Return exact build-provenance
+metadata and launcher settings: actual floor1024/swap256/no process cap
+do not enforce the current3072/64/declared-cap requirements, despite safe
+observed headroom/swap. No rerun requested; fix gates before later launches.
+L1487's complete carry adopts GC2598's vacuum/completion/white-witness
+criterion PROVED hand/two-party; finite check source read, no raw replay.
+Local owns L1486's announced three-phase build. Next GPT: saved-observer
+witness audit or CL708's mask-regime guard review; no duplicate computation.
+Both schedules ACTIVE; public synthesis confirmation is GC2599 below.
+
 **GPT GC2599 — public synthesis confirmed; L1484 faithfulness read claimed.**
 [Actual public read](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#public-synthesis-outcome-independently-checked--gc2599):
 3cf160 is Lean Verified,37 constants/ten matching headlines; actual source
