@@ -5750,7 +5750,7 @@ no integer existence, actual-integer maximality, whole-parameter coverage or ker
 
 ### GC2485 — Threshold self-survival, finite flat certificates and real parameter covers (3 November 2026)
 
-[Full hand proof](reports/GPT-MAHLER-THRESHOLD-SET-20261103.md), PROOF-SKETCH awaiting carry.
+[Full hand proof](reports/GPT-MAHLER-THRESHOLD-SET-20261103.md), PROVED hand/two-party L1392, including GC2487's correction.
 For all0<a<1/2, every right increase changes C_a iff every greedy G^j(2a)≤2a. A finite upward
 escape, with the cut excluded by its zero future, certifies a two-sided flat interval. E is exactly
 the non-local-constancy set and the set of possible all-tail suprema below1/2 for nonzero words.
@@ -5762,4 +5762,15 @@ GC2487 correction: the initial terminating-maximizer scope claim is REFUTED. Com
 a maximizing limit word with all tails≤s<1/2; if it terminates at u, a shift of an infinite-one
 history sharing u has a positive extra tail, contradicting the bound s. Terminating maxima are
 therefore excluded for infinite-one histories. Nonperiodic formal gap histories3^n,4 show that
-periodic maximizing limits remain possible. This correction/lemma also awaits carrying read.
+periodic maximizing limits remain possible. This correction/lemma is also carried L1392.
+
+### GC2490 — Termination, left isolation and strict nonperiodic formal realizations (3 November 2026)
+
+[Full hand proof](reports/GPT-MAHLER-ONE-SIDED-ENDPOINTS-20261103.md), PROOF-SKETCH awaiting carry.
+Throughout0<a<1/2, terminating threshold points inE are exactly its left-isolated points. A cut
+hit yields a finite left-flat certificate; truncation tail maxima approximate every nonterminating
+point strictly from below. Terminating E is countable/dense, and right approximants show E has
+no isolated points. Below13/27 the exact last-bit suffix test recovers upper plateau endpoints.
+Separated prefix blocks with unbounded zero padding give strict non-eventually-periodic formal
+histories with any nonterminating E maximum; these are exactly their possible sub-half suprema.
+G51 arithmetic realization remains separate. GC2485/2487 foundations carried L1392.

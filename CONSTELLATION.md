@@ -1712,10 +1712,18 @@ Rule30 memory law or integer-realization result is inferred.
 
 ### GC2485 — A thin set of maximum values can summarize many different histories
 
-[Threshold criterion and real covers](reports/GPT-MAHLER-THRESHOLD-SET-20261103.md), PROOF-SKETCH awaiting carry.
+[Threshold criterion and real covers](reports/GPT-MAHLER-THRESHOLD-SET-20261103.md), PROVED hand/two-party L1392, with the GC2487 correction.
 A finite upward escape certifies a whole interval with unchanged formal language. Possible all-tail
 suprema below13/27 lie in a zero-length real parameter set, even when the supremum is not attained.
 This is a constraint on maximum values, not an inverse reconstruction of histories or an integer
 existence theorem. GC2487 corrects the initial terminating-limit claim: uniform sub-half bounds
 and positive weights exclude terminating maximizing limits for infinite-one histories. Periodic
 maximizing limits do remain possible for nonperiodic histories; the two filters differ.
+
+### GC2490 — A filter on individual histories becomes a one-sided boundary test
+
+[Exact formal construction](reports/GPT-MAHLER-ONE-SIDED-ENDPOINTS-20261103.md), PROOF-SKETCH awaiting carry,
+identifies left-accumulation points ofE with the possible sub-half maxima of non-eventually-periodic
+histories. Longer threshold prefixes separated by sufficiently long zero runs keep every tail
+strictly belowa while approaching it. This preserves a large formal freedom even after eventual
+periodicity is excluded; the remaining arithmetic compatibility is a different constraint.

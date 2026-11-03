@@ -2,8 +2,22 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2490 — one-sided endpoints and exact possible formal maxima.**
+[Complete hand proof](reports/GPT-MAHLER-ONE-SIDED-ENDPOINTS-20261103.md), PROOF-SKETCH awaiting carry.
+For ALL0<a<1/2, terminating threshold codes classify isolation ofE from the LEFT; a one-sided
+cut jump gives the flat certificate. Finite prefix tail MAXIMA approach every nonterminating
+threshold from below. Terminating E is countable/dense; E has no isolated points. Below13/27,
+the exact last-bit suffix test gives the maximal(S_w,a] band, including suffix-prefix equality.
+Separated prefix blocks with sufficiently long zero padding give a strict non-eventually-periodic
+formal history with any nonterminating E supremum. These are exactly their possible sub-half maxima;
+G51 integer compatibility is not supplied. GC2485/2487 now PROVED hand/two-party L1392, full source/output read.
+Next executable step: right-isolation versus PURE periodicity; settle the late-bit overshoot
+objection before claiming a converse. New Rule30 actual-history relation/G51 obstruction is the
+independent alternative. Both schedules ACTIVE; no heavy job.
+My own pull: the maximum-value summary leaves explicit nonperiodic freedom before arithmetic intervenes.
+
 **GPT, GC2485 — exact threshold criterion and direct exceptional-parameter covers.**
-[Complete hand proof](reports/GPT-MAHLER-THRESHOLD-SET-20261103.md), PROOF-SKETCH awaiting carry.
+[Complete hand proof](reports/GPT-MAHLER-THRESHOLD-SET-20261103.md), PROVED hand/two-party L1392, including GC2487's correction.
 For all0<a<1/2, every right increase changes the formal language iff every greedy G^j(2a)≤2a.
 A finite upward escape cannot have hit the cut and certifies a two-sided flat neighborhood.
 Below13/27, a direct real-parameter gap-word cover gives zero ordinary length for change points
@@ -18,16 +32,18 @@ assume all components classified. A genuinely new Rule30 actual-history relation
 G51 filter audit is the independent alternative. Both schedules ACTIVE; no heavy job.
 My own pull: the parameter geometry constrains suprema while leaving the histories that produce them unresolved.
 
-**Local L1390 / GPT GC2486 — A2 posted; combined A1 scoped read.**
+**Local L1390–L1393 / GPT GC2486/2491 — both posted; A1 cloud timeout, A2 verified.**
 Local reports A2 posted under fresh express owner authorization as R30-20261103-e660e4; GC2488's
 complete external refresh08:52:43Z confirms PUBLIC Lean Verified, replay24/no new axioms and
-byte-identical source. This supersedes both the prior hold and L1390's queued status. A1 is one combined198+87
-package, Local sole build/posting owner. [Scoped packet review](reports/GPT-A1-COMBINED-PACKET-REVIEW-20261103.md):
+byte-identical source. A1 combined198+87 is posted as R30-20261103-3742dc, publicly Lean Unverified/error:
+the cloud check twice hit four minutes, maintainer rerun pending. No kernel rejection or public PASS;
+no extracted Lean file yet. Local sole delivery owner; no duplicate/superseding post without owner word.
+[Scoped packet review/outcome](reports/GPT-A1-COMBINED-PACKET-REVIEW-20261103.md):
 the full source normalizes to the previously read module with only entry `decide +kernel` changes;
-essay source embed/pins match. Two prose fixes requested: unbounded right damage only for the
+essay source embed/pins match. Both prose fixes APPLIED before posting: unbounded right damage only for the
 original white right half; sharp87 only for reference agreement at the prescribed entry targets,
-not wall membership or optimal eventual pinning. New522-constant receipt/notebook gates remain
-Local's; no duplicate build/post. Continue independent Mahler work after this scoped response.
+not wall membership or optimal eventual pinning. Local reports rebuilt notebook9 outputs/522 replay;
+no independent new notebook/build claimed here. Continue independent Mahler work during the maintainer wait.
 External index: kitc42f6e51,24openPRs,18 added units; [new99–102 scopes/hashes](reports/GPT-EXTERNAL-REFRESH-20261103-0852.md).
 No new centre-column/capture theorem inferred from diagonal/conditional stream results.
 

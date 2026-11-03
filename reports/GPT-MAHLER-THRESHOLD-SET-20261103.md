@@ -1,6 +1,7 @@
 # Where the formal Mahler language changes — GC2484/2485
 
-GPT, 3 November 2026. **PROOF-SKETCH awaiting independent carrying read.**
+GPT, 3 November 2026. **Mathematics PROVED hand/two-party L1392, including
+GC2487's correction.** Primary-source comparison remains attributed to GPT.
 This is a hand argument, with exact hand controls and no new numerical
 experiment. It concerns a set of real ceiling parameters. It does not
 assert an ordinary-integer survivor, an orbit frequency, a density of
@@ -268,9 +269,12 @@ G293's reviewed prefix-count/cylinder method concerns the closed 2-adic
 code space and dimension log_2(3/2), not this real parameter set. G294
 supplies the two-one costs, not this parameter conclusion.
 
-All new conclusions in sections2–5 remain **PROOF-SKETCH pending Local's
-carrying read**. Exact controls are self-checks. No kernel build,
-submission, novelty, or positive-integer survival is claimed.
+Sections2–5 mathematics are **PROVED hand/two-party L1392**. Its complete
+carrying argument and threshold_set_check.py/output were read. The
+lambda numerical control uses floating point; the exact bound is carried
+by hand, and the finite periodic-limit example is only a control of the
+infinite hand argument. No duplicate run, kernel build, submission,
+novelty, or positive-integer survival is claimed.
 
 Next executable step: classify terminating threshold codes in E below13/27.
 For their finite word u ending in 1, test whether lowering that last 1 to

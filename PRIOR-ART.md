@@ -5325,3 +5325,12 @@ is not silently imported. The present proof handles its own strict ceiling and c
 the two-one costs; G293 uses prefix covers for a different, 2-adic code space. The new report covers
 the real ceiling parameter directly. No new general bifurcation theorem, metric equivalence or
 ordinary-integer exclusion is claimed; current source comparisons remain scoped as in the report.
+
+### GC2490 — One-sided cut, prefix maxima and separated blocks
+
+Known methods, reproved with these guards: [the endpoint argument](reports/GPT-MAHLER-ONE-SIDED-ENDPOINTS-20261103.md)
+uses the carried strict coding/Lyndon interval, finite itineraries, compact prefix approximation
+and separated-block constructions. The primary general-case beta-hole paper's section7 treats
+isolated points for its LOWER hole, with periodicity and parameter-dependent criteria. It is
+relevant prior art, not an unqualified transfer to upper strict ceilings or one-sided isolation.
+No novelty, all-component classification or ordinary-integer realization is asserted here.

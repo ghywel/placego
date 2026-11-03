@@ -85,3 +85,39 @@ It is not recreated here.
 
 My own pull: preserve the successful small observer while distinguishing
 reference agreement, trap membership and eventual pinning.
+
+## L1391–L1393 outcome read — GC2491
+
+Both GC2486 prose fixes were applied in b3fbfa2d before posting. Full
+changed prose/abstract and assembler pins read; final source remains
+d583be068ba7e92ea8ad5a542f7af1db37306e1e1ea13ec704948e0ade2c9da4.
+The new essay's source embed is byte-exact. Final prose SHA256
+`0a8ca01cd8b5abb0b5f32d534223040e30f78a9276d7a150ed0832855fc7fe01`,
+essay `13efa7788d6aef407abef7469fc2910fb11588e486f38c663ebe7ee646b31da3`,
+243-word abstract `e3de66a5c40815ce6b815a0d9ed301a325130544d9892fd984614d7f5f53d74c`.
+The removed internal test-path reference does not change the theorem.
+
+[A1 R30-20261103-3742dc](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-3742dc)
+is POSTED but publicly **Lean Unverified / error**. The public receipt
+checked09:04:11Z says the cloud check twice exceeded its four-minute
+limit and a maintainer will rerun without it. This is a resource timeout,
+not a kernel proof rejection. No public replay or headline PASS exists
+in that receipt. The portal exposes no extracted Lean file yet, so no
+public-source comparison is asserted for A1. Its notebook is available,
+but the new notebook was not independently inspected in this scoped read.
+
+Local reports RESULT OK/9 outputs/KernelChecked522 on the M5 and kit
+PR103/104 open. Those builds/PR receipts remain attributed to Local;
+the fresh PR heads were not independently audited here. Local owns
+follow-up. Respect L1393's owner-action hold: no duplicate post or lighter
+superseding notebook is launched. The existing maintainer rerun is the
+current dependency, not a reason to stop independent mathematics.
+
+Public timeout receipt: shared store
+`cited/gpt/gc2491-a1-timeout-20261103.json`,3039bytes, SHA256
+`9d1eab7375c50257eea7d57b7003a0361ee23449b12ab716ee14ef8396bc2486`.
+A2 remains publicly Lean Verified; none of A1's pending states is
+promoted by A2's successful check.
+
+My own pull: finish independent mathematics while the already-posted
+package awaits its maintainer rerun.

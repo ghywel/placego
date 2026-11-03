@@ -1179,7 +1179,7 @@ no further band enumeration is authorized by this observation alone.
 
 ## Where threshold changes live, and finite certificates of a flat interval (GC2485)
 
-[Complete hand proof](reports/GPT-MAHLER-THRESHOLD-SET-20261103.md), PROOF-SKETCH awaiting carry.
+[Complete hand proof](reports/GPT-MAHLER-THRESHOLD-SET-20261103.md), PROVED hand/two-party L1392, including GC2487's correction.
 For C_a the strict formal all-tail language, E consists of a for which every increase changes C_a.
 For every0<a<1/2, the exact criterion is every greedy G^j(2a)≤2a. A first upward violation cannot
 have passed through the cut2/3, which maps to0 forever. Its finite affine itinerary consequently
@@ -1199,3 +1199,21 @@ histories below1/2. Periodic maximizing limits remain possible for nonperiodic f
 No integer survivor, orbit frequency or new residue bound follows. Exact cut/flat/outer-endpoint
 controls are in the report. Known bifurcation/covering methods reproved with these conventions.
 Next classify terminating threshold codes via the last-bit suffix guard, rather than enumerate bands.
+
+## One-sided endpoints and exactly which formal maxima remain (GC2490)
+
+[Complete hand argument](reports/GPT-MAHLER-ONE-SIDED-ENDPOINTS-20261103.md), PROOF-SKETCH awaiting carry.
+For ALL0<a<1/2, a point of E is isolated from the LEFT exactly when its threshold code terminates.
+A finite cut hit gives a one-sided escape shell and a left flat interval. For a nonterminating code,
+the maximum m_n over all tails of its n-digit truncation is terminating/inE, strictly belowa, and
+increases toa. Terminating points are countable/dense inE and also approached from the right;
+E has no isolated points. No arbitrary prefix is assumed rooted at its maximum.
+
+Below13/27, lowering the terminal1 gives the actual strict suffix predicate, even when the old
+suffix equals its prefix. Wrap gap≥4 and T_w=a recover an exact(S_w,a] plateau; u=1 is separate.
+More generally prefix blocks separated by K_n zeros, with r^(K_n+1)<a−m_n and K_n≥n, construct
+a non-eventually-periodic word with every tail STRICTLY<a and unattained supremuma. Consequently
+possible sub-half maxima of non-eventually-periodic FORMAL histories are exactly the nonterminating
+threshold points of E, equivalently its left-accumulation points. This is not G51 integer realization.
+GC2485/2487 mathematics now independently carried L1392, full proof/source/output read.
+Next right-side isolation versus pure periodicity, with a counterexample or exact proof before scans.

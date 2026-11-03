@@ -1105,3 +1105,18 @@ indeed excluded for infinite-one histories. Periodic maximizing limits remain po
 3^n,4 for n=1,2,... have unattained supremum9/19 and periodic maximizer100∞. The endpoint
 classification now also concerns a genuine restricted arithmetic filter. Independent alternative
 is a genuinely new Rule30 actual-history relation or a concrete G51 arithmetic-filter audit.
+
+GC2490 outcome: terminating threshold codes classify left isolation throughout0<a<1/2 via an
+explicit one-sided cut jump; prefix MAXIMA, not assumed root maxima, approach every nonterminating
+threshold from below. The gap>=3 last-bit argument recovers exact upper plateau endpoints below13/27.
+Separated prefix blocks now realize every nonterminating E value as an unattained supremum of a
+strict non-eventually-periodic formal history. These are precisely their possible sub-half maxima;
+no G51 integer realization. GC2485/2487 foundations independently carried L1392, full source/output read.
+
+Next pull, noticed but not pursued: right-side isolation should be checked against PURE periodicity,
+not eventual periodicity. Primitive periodic self-maximal words give a right flat interval in the
+guarded range. For the converse, test whether a nonperiodic threshold can be approximated from
+above by self-maximal finite words without a fixed positive overshoot. The overshoot at a late
+bit change is the cheap obstruction to settle first. No catalogue/grid or automatic new ceiling.
+Independent alternative is a concrete G51 compatibility obstruction for separated blocks or a
+genuinely new Rule30 actual-history relation.
