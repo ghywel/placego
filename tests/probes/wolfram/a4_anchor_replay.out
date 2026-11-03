@@ -1,3 +1,6 @@
-replay to T = 4000: 19 (A + 72) + 5 (t - 300) ranges over [-14, 22] (kernel bound [-14, 22]); front outside (A, A + 24]: 0 times
+100100000, s = 0: replay to T = 4000: 19 (A - A0) + 5 (t - 300) ranges over [-14, 22] (kernel bound [-14, 22]); front outside (A, A + 24]: 0 times
 (t, A, F) every 500 ticks: [(500, -124, -123), (1000, -256, -255), (1500, -388, -387), (2000, -519, -517), (2500, -650, -649), (3000, -783, -781), (3500, -914, -913), (4000, -1045, -1043)]
+A4_REPLAY_DONE
+1010000, s = 4: replay to T = 4000: 9 (A - A0) + 2 (t - 300) ranges over [-20, 4] (kernel bound [-20, 4]); front outside (A, A + 16]: 0 times
+(t, A, F) every 500 ticks: [(500, -101, -98), (1000, -212, -211), (1500, -323, -321), (2000, -435, -434), (2500, -545, -544), (3000, -657, -654), (3500, -768, -767), (4000, -879, -875)]
 A4_REPLAY_DONE

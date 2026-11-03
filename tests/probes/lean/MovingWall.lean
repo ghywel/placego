@@ -517,25 +517,25 @@ theorem ring_table : ∀ τ, τ < 57 → ∀ j, j < 9 →
     ringBit ((τ + 1) % 57) ((j + 1) % 9) = rule (ringBit τ ((j + 1) % 9)) (ringBit τ j) (ringBit τ ((j + 8) % 9)) := by
   decide
 
-/-- The background at alignment `(0, 0)`: `E t x` is the ring orbit's row `t mod 57` at diagonal index `(t - x) mod 9`. -/
-def E (t : Nat) (x : Int) : Bool := ringBit (t % 57) (((t : Int) - x) % 9).toNat
+/-- The background at alignment `(0, 0)`: `E t x` is the ring orbit's row `(t + 0) mod 57` at diagonal index `(t - x) mod 9`. -/
+def E (t : Nat) (x : Int) : Bool := ringBit ((t + 0) % 57) (((t : Int) - x) % 9).toNat
 
 theorem E_rule : IsR30Z E := by
   intro t x
-  have h := ring_table (t % 57) (Nat.mod_lt _ (by decide)) (((t : Int) - x) % 9).toNat (by omega)
+  have h := ring_table ((t + 0) % 57) (Nat.mod_lt _ (by decide)) (((t : Int) - x) % 9).toNat (by omega)
   unfold E
-  have e1 : (t + 1) % 57 = (t % 57 + 1) % 57 := by omega
+  have e1 : (t + 1 + 0) % 57 = ((t + 0) % 57 + 1) % 57 := by omega
   have e2 : ((((t + 1 : Nat) : Int) - x) % 9).toNat = ((((t : Int) - x) % 9).toNat + 1) % 9 := by omega
   have e3 : (((t : Int) - (x - 1)) % 9).toNat = ((((t : Int) - x) % 9).toNat + 1) % 9 := by omega
   have e4 : (((t : Int) - (x + 1)) % 9).toNat = ((((t : Int) - x) % 9).toNat + 8) % 9 := by omega
   rw [e1, e2, e3, e4]; exact h
 
 /-- The background at column `A + i`, from the phases `tq = t mod 57` and `dq = (t - A) mod 9`. -/
-def refAt (tq dq : Nat) (i : Int) : Bool := ringBit tq (((dq : Int) - i) % 9).toNat
+def refAt (tq dq : Nat) (i : Int) : Bool := ringBit ((tq + 0) % 57) (((dq : Int) - i) % 9).toNat
 
 theorem refAt_spec {t tq dq : Nat} {A : Int} (htq : tq = t % 57) (hdq : dq = (((t : Int) - A) % 9).toNat) (i : Int) :
     refAt tq dq i = E t (A + i) := by
-  unfold refAt E; subst htq; congr 1; omega
+  unfold refAt E; subst htq; congr 1 <;> omega
 
 /-- The first `n` values of `f` as bits. -/
 def bitsOf (f : Nat → Bool) : Nat → Nat
@@ -872,7 +872,7 @@ theorem rowAt_spec : ∀ t i, t ≤ i → (rowAt t).testBit i = Gedge t (lo + i)
     rw [show lo + ((i - 1 : Nat) : Int) = lo + (i : Int) - 1 by omega,
       show lo + ((i + 1 : Nat) : Int) = lo + (i : Int) + 1 by omega]
 
-/-- The start check at `t = 300`: columns `-400 .. -72` are the background, and columns `-71 .. -48` are the strip of
+/-- The start check at `t = 300`: columns `-300 .. -72` are the background, and columns `-71 .. -48` are the strip of
 `startKey`, which differs from the background's. -/
 def entryOK : Bool :=
   let r := rowAt 300

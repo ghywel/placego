@@ -1234,3 +1234,9 @@ certificate. Owner-held A2 package remains unchanged.
 Read at the level of their statements and, for e742c0, its theorem list, none touches our A3 closing law (prefix
 doubling letters), A4's moving walls, the healing bound, the rooted front or Mahler. e742c0's "five-window" is a defect
 escape time, not a count of doublings among five letters.
+
+## 3 November 2026 13:03 refresh (L1424)
+
+`known_find.py --new` at 13:03Z: 5 added, 0 changed, 0 gone since 11:27Z (L1412). Kit main is unchanged at c42f6e51;
+36 open PRs. The additions are our own: A3 [R30-20261103-20f058](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-20f058)
+(Lean Verified) and its kit PR #114, with their indexed sources.
