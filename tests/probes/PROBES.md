@@ -1525,3 +1525,6 @@ requested; preserve the failed output. [Scope and concrete repair](../../reports
 - `wolfram/cascade_classes.py` / `.out` (Cloud, 2026-11-03, CL696): 21 wide rows at wheels 52,900–53,210 with cycles extended by F; one settling-phase class at every wheel. 15 s. A first run clamped τ through a short window (G25), fixed with an assertion.
 
 - `wolfram/f_structure.py` / `.out` (Cloud, 2026-11-03, CL697): F's closed form (11,994 exact), the backward strip (11,997 exact), the derivative criterion (hits at k = 5, 26, 397 only; Binomial-shaped distances), the period-8 pair map enumerated (bijective, 255 sinks and sources, the seed's segment as a 367-step path). 2 s; takes the regenerated certificate table's path.
+
+- `wolfram/g16_survival.py` / `.out` (Cloud, 2026-11-03, CL705–CL706): the survival profile of G16 episodes at depths 1–14 over all prefixes and 2,048 alignments (controls: CL676's table), decay ratios and the number of distinct top-2t-bit words among survivors. 11 s. Caps: ulimit 4 GiB, timeout 1,200 s (`run_capped.py` refuses on this Linux host: its gate reads macOS swap).
+- `wolfram/g16_tree_size.py` / `.out` (Cloud, 2026-11-03, CL706): the node count of a top-bits tree certificate for M_G16(k) at k = 8, 11, 14, with the locality check (survivors are the completions of their top 2t-bit words; 34,384 assertions at k = 14). 5 s.

@@ -1,0 +1,64 @@
+k= 8 M=16 tree nodes (all 2048 alignments) = 69,408; per alignment 34; per-pair steps 17,825,792; locality checks passed 19,392
+   t  nodes[t]  max per alignment
+   1     2,048        1
+   2     4,144        3
+   3     7,824        6
+   4    16,928       17
+   5    17,456       22
+   6     9,360       16
+   7     5,152       12
+   8     2,880        9
+   9     1,584        2
+  10       928        2
+  11       544        1
+  12       272        1
+  13       144        1
+  14        80        1
+  15        48        1
+  16        16        1
+k=11 M=19 tree nodes (all 2048 alignments) = 236,416; per alignment 115; per-pair steps 167,772,160; locality checks passed 27,104
+   t  nodes[t]  max per alignment
+   1     2,048        1
+   2     4,144        3
+   3     7,824        6
+   4    16,928       17
+   5    35,040       44
+   6    75,344      121
+   7    41,808       93
+   8    22,832       69
+   9    12,464       16
+  10     7,376       12
+  11     4,352        7
+  12     2,608        4
+  13     1,568        3
+  14       896        2
+  15       512        2
+  16       320        2
+  17       192        2
+  18       112        1
+  19        48        1
+k=14 M=22 tree nodes (all 2048 alignments) = 733,856; per alignment 358; per-pair steps 1,543,503,872; locality checks passed 34,384
+   t  nodes[t]  max per alignment
+   1     2,048        1
+   2     4,144        3
+   3     7,824        6
+   4    16,928       17
+   5    35,040       44
+   6    75,344      121
+   7   167,440      372
+   8   184,032      548
+   9    99,680      138
+  10    58,064       92
+  11    33,824       60
+  12    20,016       30
+  13    12,176       20
+  14     7,264       14
+  15     4,320        9
+  16     2,560        4
+  17     1,488        3
+  18       864        3
+  19       448        2
+  20       224        2
+  21       112        1
+  22        16        1
+G16_TREE_SIZE_DONE
