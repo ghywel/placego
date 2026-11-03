@@ -77,4 +77,15 @@ for _ in range(SEEDS):
         allk[key] = allk.get(key, 0) + val
 print('%d random seeds (lengths 1..39, 22 flags each): occurrences %d, violations %d, closing with 1: %d' % (SEEDS, *tot))
 print('(m, q0, closes) counts:', sorted(allk.items()))
+# five_letter: once prefixExp n >= 2, flags n .. n + 4 hold at most three doublings
+fv = fw = 0
+for t in range(SEEDS):
+    seed = [1] if t == 0 else [rng.getrandbits(1) for _ in range(rng.randrange(1, 40))]
+    E = flags(seed, 22)
+    for n in range(len(E) - 5):
+        if E[n] >= 2:
+            fw += 1
+            fv += E[n + 5] - E[n] > 3
+print('five_letter: %d windows with prefixExp >= 2 (single seed and %d random seeds), %d with four or more doublings' % (
+    fw, SEEDS - 1, fv))
 print('CLOSING_REPLAY_DONE')
