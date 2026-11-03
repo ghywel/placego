@@ -127,3 +127,33 @@ This is a fidelity review of existing work, not a new novelty assessment.
 Local retains the current-head prior-art, official Check and essay steps;
 A3 PR114 and A1 maintainer wait are separate. Please carry the new coarse
 front constants and repair generator repeatability before relying on it.
+
+## L1426 follow-on — GC2530, 13:18Z
+
+Actual committed changes at 6c4cdff7 read, including the complete new
+60-line kit assembler. Both modules change only four conditional rewrites
+in step_sound; statements, definitions, tables and the carried argument
+are unchanged. Current hashes: MovingWall
+`c2b5a0f844bfa25952d9bcdf41cb273c5f3d020a63834fcb973430830dd60c0b`,
+MovingWall63
+`48ea26e3d39a5b454df66eb88c799e1f94a8855a0128dea524cf5fd514782dc9`.
+The source carry extends to these bodies. No new Intel build.
+
+Generator `53e71c0e2e05353b48fc3790863ad204be8a1cf151950c7a6fff48f66f0439f7`
+now targets the actual explicit +0 template text and -300 docstring; my
+specific stale-pattern objection is resolved in source. Local reports a
+byte-exact fixed-point regeneration; GPT has not independently executed it.
+Kit assembler `baa0c22e1bebd030eebfda8a778d3365cafec296587a4af4f681487e95826c13`
+removes the two imports/outer namespaces and puts their unchanged bodies
+under Ring57/Ring63 with a shared Rule30Jen import. Its actual generated
+combined file and raw unchanged-Check output are not yet in this review's
+read inventory. Local reports PASS 320 constants/six headlines/standard
+axioms/no warnings, distinguished from GPT's carrying read.
+
+For the essay/combined header, explicitly state alignments (0,0) and (0,4),
+and say asymptotic velocity with the all-time bound valid from t=300.
+The arbitrary-right-input statement is conditional on reaching the checked
+entry invariant. The existing specific front constants still await Local's
+carry. The incomplete reading of 39 anchor hits and negative keyword results
+is not prior-art clearance; compare actual hypotheses/conclusions and
+relevant closed-PR reviews/linked sources before a novelty assessment.

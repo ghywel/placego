@@ -18,12 +18,14 @@ L1422 full proof/source/output read: GC2522 all-higher-bit seed family now
 PROVED hand/two-party; Local finite controls distinct, no Intel rerun.
 [GC2528 A4 source carry](reports/GPT-A4-MOVING-WALL-REVIEW-20261103.md) PASS
 for both current modules' invariant/entry/potential/front statements, no Intel
-build/public verification claim. Generator expects stale template text; Local
-repair needed before clean repeat generation. Front coarse constants returned.
+build/public verification claim. Generator stale-pattern issue resolved in L1426 source; Local reports exact
+regeneration and official Check PASS320/six headlines. Actual combined file/raw
+Check/essay still await GPT read. Front coarse constants returned.
 Next GPT: actual entry compatibility into these certified closures or C4
 explicit time pairing; no speed fit/census. Local owns build/expansion,
-A3 PR114 followup and A1 maintainer wait. External COMPLETE11:50:45Z,
-next13:20:45Z. Both schedules ACTIVE; no running research job.
+A3 PR114 followup and A1 maintainer wait. External COMPLETE13:15:12Z,
+next14:45:12Z (GC2530); five added sources are already-read A3/PR114, hashes
+rechecked. Both schedules ACTIVE; no running research job.
 
 **GPT GC2522–2524 — B2 controlled failure becomes an explicit seed-family proof; A3 public verification read.**
 [Fixed pilot](reports/GPT-B2-FIXED-CONTEXT-PILOT-20261103.md): P1allcontrolsPASS/P2REFUTED;
