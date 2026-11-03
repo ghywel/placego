@@ -6010,3 +6010,68 @@ The same probes and the same 200 rows are used, with the guard now at floors W +
   finite W. The real funnel is then the limit of the window abstractions: a real front is in the forced region of a
   wide enough window long before capture.
 - W = 14 (16.8 million states) would be an Intel-sized job and is not run here.
+
+## 55. Why does the bad core shrink with the window? (T51, L1340)
+
+### 55.1 A refinement lemma, and predictions written before the run (`funnel_attractor.py --save`, `refine_check.py`)
+
+**Note first (from T42's output).** At W = 8 every state of B has a 600-step path of total advance ≤ 0 (100% of B, §45.2).
+So B holds no merely "advancing but not yet in S_E" states that would be harmless. All of B is dangerous in the
+over-approximation, and "capture = leaving B" is the right statement.
+
+**Refinement lemma (PROOF-SKETCH).** A (W + 2)-state v′ = (c, w, u) refines the W-state v = (c, w), where u is the pair
+D_{R−W−1}, D_{R−W−2}.
+- The W automaton branches over u and computes outputs at offsets ≥ −W.
+- On every branch where v's W-update does not FAIL, v′'s update with the same u gives the same advance. It also gives a
+  new (W + 2)-window whose first W cells are among v's branch windows (v's free cells are now partly determined).
+- So, when v has no FAIL branch, every successor of v′, cut back to W cells, is a successor of v.
+- Consequences:
+  - by induction on rank, refinements of A_W states lie in A_{W+2} ∪ (refinements of S_E_W);
+  - B_{W+2} projects into B_W ∪ (refinements of S_E_W).
+- The open point is the refinements of S_E_W. They form a robust closed set at W + 2 (every path advances), which
+  contains S_E_{W+2}. Some of them might never enter S_E_{W+2}, and those would sit in B_{W+2} although harmless.
+
+**Predictions (P1024, W = 8 → 10).**
+- **R1.** Every refinement of an A_8 state lies in A_10 ∪ S_E_10. Lean 90%.
+- **R2.** Every refinement of an S_E_8 state lies in A_10 ∪ S_E_10 (no harmless robust states in B_10). Lean 70%.
+- **R3.** Every B_10 state projects into B_8. This follows from R1 and R2. Lean 70%.
+- **R4.** Of each B_8 state's 4 refinements, a mean of about 3.6 stay in B_10 (the ×0.90 trend). The distribution is
+  concentrated at 4, with a minority of B_8 states partly resolved. Lean 50% on the shape.
+- **Counterfactual.** If R2 fails, B_{W+2} contains harmless robust states, and the "bad core" overstates the danger at
+  larger W. A cleaner core (states with a non-advancing infinite path) would then be needed.
+
+Record searched: §45, §52, §54; no earlier refinement comparison.
+
+### 55.2 Results ([output](../tests/probes/refine_check.out))
+
+- **R1 HELD.** All 168,132 (8 → 10) and 1,032,024 (10 → 12) refinements of A-states lie in A ∪ S_E at the larger W.
+- **R2 HELD.** All 1,556 and 2,032 refinements of S_E-states lie in A ∪ S_E; none is in B. No harmless robust states hide
+  in B.
+- **R3 HELD.** No state of B_{W+2} projects outside B_W: 0 of 790,062 and 0 of 2,864,052.
+- **R4 HELD.** Of each B_W state's 4 refinements, the number staying bad has mean 3.596 (8 → 10) and 3.625 (10 → 12).
+
+  | refinements staying in B (of 4) | 0 | 1 | 2 | 3 | 4 |
+  |---|---|---|---|---|---|
+  | B_8 → B_10 (219,722 states) | 6.7% | 1.5% | 3.1% | 3.3% | 85.6% |
+  | B_10 → B_12 (790,062 states) | 6.0% | 1.5% | 3.0% | 3.1% | 86.5% |
+
+**What T51 teaches.**
+- **The window abstractions form a nested sequence.** The refinement lemma (PROOF-SKETCH in §55.1) is confirmed with no
+  exception. Good states stay good, and the bad core at a larger window lies over the bad core at the smaller one.
+- **The decay has a stable mechanism.** At each 2-cell step about 86% of bad states stay wholly bad, about 6% are
+  resolved completely, and the rest partly. The ratio, about 0.9 per step, is nearly the same at both steps.
+- **A CONJECTURE (two steps of data).** Pick the cells behind the front at random (uniform product measure), given the
+  class and the 8 cells.
+  - The probability that no finite window forces capture would then be 0.838 × 0.9^{(W−8)/2} → 0. Capture would be
+    generic: almost every behind-front content is forced into S_E by some finite window.
+  - This is not universal capture. The exceptional set (bad at every W) could be nonempty and could contain real rows.
+  - It does say exactly what a counterexample must be: a row whose content behind the front lies, at every time, in
+    this measure-zero "bad at every W" set.
+
+*Correction (GC2407, accepted in L1341).* §53.3's sentence "no real front fell below its entry depth" does not follow from
+equal minima and medians of the two depth lists. It needs a per-row count. Prediction for that count, written before the
+run: at least one of the 200 rows dips below its own entry depth before capture, because paths in A can fall by up to 6.
+Lean 60%.
+**Result.** 26 of the 200 rows fall below their own entry depth before capture; the largest dip is 5, within the graph
+bound F ≤ 6. The prediction held, and §53.3's sentence is **withdrawn as false**. The logged minimum (72) and the medians
+stand, and every dip respects the carried guard.

@@ -1437,6 +1437,7 @@ digest in reports/inquisition-20261031.md:
 | `lock_entry.py` | Local, 2026-11-02 (L1326, T46): how every alignment's clean front enters the one orbit U: entry tick, first state in U, first tick on U's class cycle, departures from U after entry; P1024 and 480. Output `lock_entry.out` |
 | `reset_memory.py` | Local, 2026-11-02 (L1329, T47): GC2393's two-open resets on real pre-capture paths: their frequency, the blocked moves between them, and one-cell flips j = 3..16 behind the front two ticks after a reset (does the front path change within 200 ticks?). Output `reset_memory.out` |
 | `funnel_attractor.py` | Local, 2026-11-02 (L1330, T48): the attractor A of S_E in P1024's whole W-window automaton (rebuilt with per-state FAIL flags), its ranks, and real paths' first entry into A and lead to capture. Output `funnel_attractor.out` |
+| `refine_check.py` | Local, 2026-11-02 (L1340, T51): the refinement lemma between P1024's W and W + 2 window automata, from masks saved by `funnel_attractor.py --core --save`: refinements of A and S_E, projections of the bad core, and how many of each bad state's refinements stay bad. Output `refine_check.out` |
 
 
 GC2392 source-pair qualification for `wolfram/closed_set.py`: c7379a15's

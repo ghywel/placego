@@ -85,6 +85,9 @@ if '--core' in sys.argv:
         if new.sum() == aliveB.sum():
             break
         aliveB = new
+    savep = next((a[7:] for a in sys.argv if a.startswith('--save=')), None)
+    if savep:
+        np.savez_compressed(savep, SE=SE, A=(rank > 0), B=aliveB, W=W)   # L1340 T51: masks for refine_check.py (local data)
     print('   bad core B: %d states (%.2f%%); S_E + A + B = %d of %d; A and B disjoint: %s' % (
         int(aliveB.sum()), 100.0 * aliveB.sum() / NS, int(SE.sum() + A.sum() + aliveB.sum()), NS,
         not bool((A & aliveB).any())), flush=True)
@@ -183,4 +186,7 @@ if GUARD:
 if '--depths' in sys.argv:
     print('   logged depths: first entry into A at depth min %d, median %d; least depth from that entry to capture: min %d, median %d' % (
         min(entry_R), sorted(entry_R)[len(entry_R) // 2], min(minR_after), sorted(minR_after)[len(minR_after) // 2]), flush=True)
+    dips = [e - m for e, m in zip(entry_R, minR_after) if m < e]
+    print('   per row: rows whose front fell below its own entry depth before capture: %d of %d; largest dip %d' % (
+        len(dips), len(entry_R), max(dips) if dips else 0), flush=True)
 print('FUNNEL_ATTRACTOR_DONE')

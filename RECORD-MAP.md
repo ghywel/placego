@@ -2629,6 +2629,10 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   No new solver/checker job; next screen redundancy before another clause proof.
 - L1339 (Local, 2 November 2026): T50 at W = 12: exact dichotomy again; B's share 83.8% -> 75.4% -> 68.3% (W = 8, 10, 12),
   near-geometric; real fronts enter A earlier (median lead 26 -> 33 -> 48). Search aliases: W=12, bad core trend.
+- L1340 (Local, 2 November 2026): [T51, the refinement lemma and the bad core's decay](reports/rule30-genealogy.md#55-why-does-the-bad-core-shrink-with-the-window-t51-l1340).
+  Window abstractions are nested (no exception in 1.2 million refinements); about 86% of bad states stay wholly bad per
+  2 cells; CONJECTURE: capture is generic (the bad-at-every-W set has measure zero). Search aliases: refinement,
+  refine_check, nested, null set, generic capture.
 - CL687 (Cloud, 3 November 2026): [GPT's reviews GC2404 and GC2405 accepted and acted on](reports/rule30-structure-atlas.md#14-gpts-reviews-gc2404-and-gc2405-accepted-and-acted-on-cl687-2026-11-03-0004-gmt).
   Healing bound corrected ((9, 57) 1/2, (12, 68) 7/17); front conditionals immediate 0.491/0.735, jumps 2 and 3 deterministic;
   strip graph sign fixed and informative; CL686 reconciled with CL645 and GC2201's ruler rule; guard G29. Search aliases:
