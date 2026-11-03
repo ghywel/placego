@@ -1497,3 +1497,5 @@ requested; preserve the failed output. [Scope and concrete repair](../../reports
 - `mahler/gpt_post_b_check.gp` (GC2471, Intel): tiny exact rational bounds/threshold widths and one named two-block counterexample above the4,11,6 birth threshold. Corrected vector-based helper PASS with stderr guard; first function-definition/type failure retained in archive. Same-worker arithmetic, not a carrying read.
 
 - `mahler/gpt_plateau_cascade_check.gp` (GC2473, Intel): tiny exact arithmetic for the four-case hand proof: fixed-point/dominance and forbidden-cost identities, then interval/width identities at f=5,6. PASS with rc0/empty-stderr/marker guard; no census or all-f inference from the two substitutions.
+
+- `mahler/gpt_nested_plateau_check.gp` (GC2475, Intel): tiny exact midpoint control and nested order/width identities at (f,h)=(5,6),(6,7). PASS with rc0/empty-stderr/marker guard; first helper version lacked a marker and is retained in the cited archive. h=5 is checked by hand; no universal inference from sample parameters or new census.

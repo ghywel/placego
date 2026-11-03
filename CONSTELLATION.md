@@ -1672,4 +1672,13 @@ opposite incoming boundary. Next discriminating test, if needed, is the same
 
 ### GC2473 — Complete symbolic plateaus and a countable boundary discrepancy
 
-[All-f hand proof](reports/GPT-MAHLER-PLATEAU-CASCADE-20261103.md#completed-argument--gc2473), awaiting carry, supplies complete finite-memory languages on infinitely many explicit intervals aboveB. Their right-limit extras are exactly particular eventually-zero words, excluded on positive-integer codes. A four-state reader of whole gaps is not a four-state integer evolution. The method is known affine tail bounds with exact grammar/endpoints; no integer survivor or novelty claim.
+[All-f hand proof](reports/GPT-MAHLER-PLATEAU-CASCADE-20261103.md#completed-argument--gc2473), PROVED hand/two-party L1384, supplies complete finite-memory languages on infinitely many explicit intervals aboveB. Their right-limit extras are exactly particular eventually-zero words, excluded on positive-integer codes. A four-state reader of whole gaps is not a four-state integer evolution. The method is known affine tail bounds with exact grammar/endpoints; no integer survivor or novelty claim.
+
+
+### GC2475 — Failure of a coarse count can identify a finer finite rule
+
+[Midpoint control and nested languages](reports/GPT-MAHLER-NESTED-PLATEAUS-20261103.md), PROOF-SKETCH awaiting carry.
+Two words with one critical block each have different ceiling verdicts. Adding a conditional next-gap
+rule nevertheless classifies infinitely many whole parameter bands. Loss of one summary is not proof
+that all finite summaries fail. Refinement needs a legal repeat join and a dominant fixed point;
+the h=4 countercontrol exposes the former guard.

@@ -5696,4 +5696,14 @@ its Lean formalization, no optimal eventual-pinning result.
 
 ### GC2473 — Infinite plateau family and fixed-code right limit (3 November2026)
 
-[Complete hand argument](reports/GPT-MAHLER-PLATEAU-CASCADE-20261103.md#completed-argument--gc2473), PROOF-SKETCH awaiting carry: all f≥5 give exact L_f formal language on(S_f,T_(f−1)], with four exhaustive first blocks, lower periodic/upper finite witnesses, equality classification and closed lower criterion for integer codes. IntersectionallL_f has exactly terminal eventually-zero extras over the old language; no exchange of fixed and varying integers. Generic affine-supremum method known; no actual integer existence or kernel compilation.
+[Complete hand argument](reports/GPT-MAHLER-PLATEAU-CASCADE-20261103.md#completed-argument--gc2473), PROVED hand/two-party L1384: all f≥5 give exact L_f formal language on(S_f,T_(f−1)], with four exhaustive first blocks, lower periodic/upper finite witnesses, equality classification and closed lower criterion for integer codes. IntersectionallL_f has exactly terminal eventually-zero extras over the old language; no exchange of fixed and varying integers. Generic affine-supremum method known; no actual integer existence or kernel compilation.
+
+
+### GC2475 — A nested two-parameter Mahler plateau family (3 November 2026)
+
+[Complete five-case hand argument](reports/GPT-MAHLER-NESTED-PLATEAUS-20261103.md), PROOF-SKETCH awaiting carry.
+For all f≥5,h≥5, L_f plus the next-gap rule after (4,11,6,f) gives the exact language on
+(R_(f,h),V_(f,h−1)]. These intervals lie inside (T_f,S_f); periodic/finite witnesses give maximality,
+and the fixed-code right limit has only stated terminal extras over L_(f+1). h=4 fails the repeat-join
+control. The specified midpoint words refute critical-block count alone. No integer existence or
+kernel compilation. Known affine-supremum method, with explicit overlap and branch-dominance guards.

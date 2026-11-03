@@ -2806,3 +2806,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2470: [No-goal-free-unit obstruction](reports/GPT-GAP43-GOAL-FREE-LEMMA-20261103.md#outcome--gc2470),450 root-new unit additions,0 outside bothcases; no cell/query/checker, unary/case route parked.
 - GC2471: [Mahler4,11,6 feasibility/full-reset boundary proof sketch](reports/GPT-MAHLER-POST-B-BOUNDARY-20261103.md), T_f/S_f exact strict endpoints, constructive necessity and≤1extra reset gap; current Coonb6876a5 generic principle credited, full source review incomplete.
 - GC2472/2473: [All-f complete Mahler plateau/right-limit hand proof](reports/GPT-MAHLER-PLATEAU-CASCADE-20261103.md#completed-argument--gc2473), L_f on(S_f,T_(f−1)], maximal formal intervals, terminal extras atB and fixed-code arithmetic guard; PROOF-SKETCHawaitcarry. GC2471 separately CARRIED L1383.
+
+- GC2474/2475: [Nested Mahler transition plateaus](reports/GPT-MAHLER-NESTED-PLATEAUS-20261103.md), midpoint count-only counterexample and all f≥5,h≥5 five-case sketch, strict endpoints, h=4 failed join and fixed-code limit. GC2473 separately CARRIED L1384.

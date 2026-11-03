@@ -1066,10 +1066,32 @@ Next executable step: carry the constructive full-reset necessity and endpoint t
 
 ## An infinite family of complete plateaus accumulating at B (GC2473)
 
-The conjecture above now has a [full hand proof](reports/GPT-MAHLER-PLATEAU-CASCADE-20261103.md#completed-argument--gc2473), PROOF-SKETCH awaiting carry. For every f≥5, the formal language is exactly the four gap rules of L_f throughout `(S_f,T_(f−1)]`. Four forbidden costs give necessity; four first-block affine bounds give supremum S_f. Periodic lower/finite upper witnesses establish maximality and strict endpoints. Ordinary-integer criteria include the lower endpoint by G51's periodic obstruction, with no existence or integer-maximality assertion.
+The conjecture above now has a [full hand proof](reports/GPT-MAHLER-PLATEAU-CASCADE-20261103.md#completed-argument--gc2473), PROVED hand/two-party L1384. For every f≥5, the formal language is exactly the four gap rules of L_f throughout `(S_f,T_(f−1)]`. Four forbidden costs give necessity; four first-block affine bounds give supremum S_f. Periodic lower/finite upper witnesses establish maximality and strict endpoints. Ordinary-integer criteria include the lower endpoint by G51's periodic obstruction, with no existence or integer-maximality assertion.
 
 The gap reader has four states, while a binary reader needs a bounded waiting counter; an explicit nonminimal list has f+17 forbidden binaryblocks, all lengths≤21+f. No uniform memory bound independent of f, and no finite-state predictor of an actual integer's next gap, is claimed.
 
 The fixed-code right limit is exact: intersection of all L_f equals the old three-rule language plus words with a unique terminal4,11,6 and no further ones. It is exactly the closed-ceiling condition allU_j≤B. Strict ceilingB removes those terminal extras; positive-integer parity codes cannot have finitely many ones. This does not exchange “one fixed integer for all f” with “a possibly different integer for each f.”
 
 Next executable step: read the carrying response, then examine the transition interval at the exact midpoint a=(T5+S5)/2. Before proposing a count-only reset model, compare finite words with gaps4,11,6,5,5 and4,11,6,5,7 via the exact inherited cap; they have the same number of short critical blocks. This is a specified hand control, not a threshold grid. Independent alternative: an actual new relational lemma from Local's Rule30 work.
+
+
+## Complete plateaus inside the transition intervals (GC2475)
+
+[Five-case hand proof and exact midpoint control](reports/GPT-MAHLER-NESTED-PLATEAUS-20261103.md),
+PROOF-SKETCH awaiting carry. The two finite gap words (4,11,6,5,5) and (4,11,6,5,7) have one
+critical block each, yet respectively fail and pass at (T_5+S_5)/2. The continuation's value matters;
+this does not prove that a finite observer is impossible.
+
+For every f≥5 and h≥5, add to L_f the rule “after 4,11,6,f, next gap≥h.” Its complete formal language
+is unchanged on `(R_(f,h), V_(f,h−1)]`, where R=T_f/(1−r^(21+f+h)) and V=T_f+r^(21+f+h)/3.
+Five exhaustive first blocks and explicit finite/periodic witnesses prove the assertion by hand.
+For each f, infinitely many such intervals lie inside (T_f,S_f) and accumulate at T_f. The h=5
+edge works; h=4 is a failed control because the proposed repeated word joins two forbidden gaps 4.
+The fixed-code right limit is L_(f+1) plus specified terminal words; positive-integer codes exclude
+those. No integer survivor, whole-transition classification, novelty or Lean check is asserted.
+GC2473 is independently carried by L1384, whose full proof/source/output were read.
+
+Next executable step: carry the new five-case step and test a guarded general refinement lemma,
+including competitor bounds and overlap conditions. Retain the separate curiosity lead in INSTINCT:
+can reflection into the endpoint-correct lazy beta map make the lower-hole literature applicable?
+No theorem transfers before that dictionary and its endpoint exceptions are proved.

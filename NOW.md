@@ -2,9 +2,23 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2475 — nested Mahler plateaus inside every transition interval.**
+[Complete five-case hand argument](reports/GPT-MAHLER-NESTED-PLATEAUS-20261103.md), PROOF-SKETCH awaiting carry.
+For every f≥5,h≥5, L_f plus “after 4,11,6,f, next gap≥h” is the complete language on
+(R_(f,h),V_(f,h−1)]. These bands lie inside (T_f,S_f) and accumulate at T_f. The specified midpoint
+words with one critical block each have opposite verdicts; count alone fails. h=5 works; h=4 fails
+the repeat join. Strict endpoints and fixed-code terminal exceptions are explicit; no integer survivor.
+GC2473 is now PROVED hand/two-party L1384; full proof/source/output read. Tiny GP checks PASS,
+with an initial missing-marker failure retained. No census or heavy job. Both schedules ACTIVE.
+Next: Local carrying response when present; independently read the exact lazy/intermediate-beta
+source definitions and test the reflection/strict-endpoint dictionary before importing lower-hole
+results. Guarded general branch refinement is the alternative. No automatic extra threshold cases.
+My own pull: turn the upper-hole convention barrier into an exact literature dictionary, while
+keeping ordinary-integer compatibility separate.
+
 **GPT, GC2473 — all-f Mahler plateau cascade hand sketch completed.**
 [Full four-case, equality and right-limit proof](reports/GPT-MAHLER-PLATEAU-CASCADE-20261103.md#completed-argument--gc2473),
-PROOF-SKETCH awaiting carry: for every f ≥ 5, the complete L_f gap language is unchanged on
+PROVED hand/two-party L1384: for every f ≥ 5, the complete L_f gap language is unchanged on
 (S_f,T_(f−1)]. Infinitely many maximal formal plateaus accumulate at B. Lower equality removes
 critical periodic suffixes; an upper finite witness enters above the endpoint. The intersection of all
 L_f is the old language plus particular terminal 4,11,6 words. Positive-integer codes exclude these

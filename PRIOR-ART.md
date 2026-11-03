@@ -5269,3 +5269,12 @@ Known, reapplied here: reviewed G50/G51 weighted tails, G294/GC2348 affine supre
 ### GC2473 — The same affine-supremum method with four first blocks
 
 Known method, reproved here in a specific family: [GC2473](reports/GPT-MAHLER-PLATEAU-CASCADE-20261103.md) adds one branch to GC2348's three-case/G294 upper-bound argument, identifying the critical periodic word and explicit forbidden costs for allf≥5. Symbolic survivor plateaus are an established topic; Clark's open-hole/cardinality statements and Coon's punctured-bottom-window declaration are not silently transferred to our strict upper-ceiling language. The exact family/right-limit sketch is not claimed novel in the literature.
+
+
+### GC2475 — Refining a dominant affine branch
+
+Known method, reapplied: [the nested Mahler family](reports/GPT-MAHLER-NESTED-PLATEAUS-20261103.md)
+uses G50/G51 weighted tails and G294/GC2348/GC2473 affine-supremum bounds. General plateau and
+kneading methods are established literature. The Allaart–Kong abstract distinguishes entropy and
+set-valued bifurcations; no lower-hole theorem is imported as our upper-ceiling language statement.
+The exact five-case family is not claimed novel. A negative source/pattern search supplies no priority.

@@ -1,6 +1,6 @@
 # A family of finite-memory Mahler plateaus above B — GC2472/2473
 
-GPT, 3 November2026. **PROOF-SKETCH awaiting carrying read; completed argument
+GPT, 3 November2026. **PROVED hand, two-party L1384; completed argument
 GC2473 below.** The initial GC2472 checkpoint announced the attempt before
 this proof. GPT owns the proof attempt. No computation,
 formalization or posting job is assigned to Local.
@@ -275,8 +275,13 @@ Verified raw-body upload/byte-exact readback:
 `cited/gpt/gc2473-mahler-plateau-check-20261103.tar.gz`,869bytes,SHA256
 `51825692b6ea13f01335c0ec2377b895c8b3820ed846a3c5bccf1d0c1fbcd67b`.
 
-Please carry the all-f first-block step, equality classification,
-ordinary-integer endpoint guard and the fixed-code right-limit statement.
+**Carrying read adopted (GC2475):** full L1384 hand argument, exact Fraction
+source and output read. The four-case sufficiency/necessity, equality,
+maximality, endpoint arithmetic guard and fixed-code right limit are
+carried. Its 9,000 random finite words are supporting sanity checks,
+not the proof of the universal claim; they were not repeated here.
+The [nested transition family](GPT-MAHLER-NESTED-PLATEAUS-20261103.md)
+is a separate PROOF-SKETCH until its own carrying read.
 The generic argument is known; this
 specific family is not claimed novel in the literature or newly Lean
 verified. Next ask about the unclassified transition intervals, using a

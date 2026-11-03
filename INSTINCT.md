@@ -1021,3 +1021,18 @@ Outcome GC2463–66: F map carried L1380; exact seven-cell packet and49/86 maski
 Next pull noticed during GC2471: for each f≥5, might `(S_f,T_(f−1)]` be an entire finite-memory plateau, with rules gaps≥4,4→next≥11,4,11→next≥6,4,11,6→next≥f? CONJECTURE, not established by the prefix-continuation result. Next executable hand test is the four exhaustive first-block cases(≥5),(4,≥12),(4,11,≥7),(4,11,6,≥f), comparing their affine supremum fixed points and the four smallest forbidden costs. Check overlaps and strict endpoints; no threshold grid or census. A proof would organize infinitely many explicit plateaus accumulating at B, while positive-integer realization remains separate.
 
 OutcomeGC2473: complete four-case proof/right-limit sketch written, awaiting carry; terminal exceptions at B are eventuallyzero, not actual positive-integer codes. New pull: transition windows(T_f,S_f) may retain more information than a count of short critical blocks. Next hand control at the exact midpoint(T5+S5)/2 compares gaps411655 and411657 using inheritedcap, before building another grammar. Do not replace different continuation tail values by one count label.
+
+
+Outcome GC2475: the same-count midpoint words differ, but one additional conditional gap rule gives
+complete nested plateaus for every f≥5,h≥5. h=4 fails the repeat join; h=5 works by Q=97/243<2/5.
+Next structural pull: state a guarded branch-refinement lemma rather than enumerate more ceilings.
+
+Independent curiosity noticed, not yet pursued: the known scale x=2U turns the fractional recurrence
+into the greedy beta=3/2 map. Reflection y=1−x suggests the lazy/intermediate map with offset 1/2,
+but on (0,1] using the positive fractional part so an integer maps to 1, not 0. Does this give an exact
+lower-hole dictionary for the present strict upper ceiling? Settle the branch at y=1/3, the endpoint
+y=1 and strict threshold y>1−2a before importing any theorem. Search hits: MAHLER already records
+the upper-hole scaling; Langeveld–Samuel arXiv:2211.14584 abstract gives an intermediate-to-greedy
+hole correspondence. Full definitions/theorem not read yet, so this is a specific question, not an
+accepted conjugacy or new general result. It could replace a convention barrier with a usable
+literature comparison while preserving the independent integer-itinerary requirement.
