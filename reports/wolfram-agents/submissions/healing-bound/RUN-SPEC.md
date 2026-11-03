@@ -73,3 +73,12 @@ The prediction (under 3 minutes and 3 GB) held.
 **Prediction.** HEALING_BOUND_CHECK_PASS (24 constants, three headlines) in under 60 s, then the notebook RESULT OK
 (7 outputs, KernelChecked 24) in under 3 minutes, with the same gates and caps as before. **Counterfactual.** Any guard
 failure ends the stage, and its output is kept.
+
+**Second runs: both passed** (Local, M5, 3 November about 02:05Z).
+- **The check.** HEALING_BOUND_CHECK_PASS: both parts, 24 constants, three headlines, no new axioms.
+- **The notebook.** RESULT OK in 86 s at 1.33 GB: 7 outputs, 0 message cells, the source iconized, the axioms exact,
+  and KernelChecked 24. `essay.nb` is `8e3339669a6d8e8358468464be3d422b2ef10516fa34da44368d760827cb1293`, 79,654 bytes,
+  with no local paths.
+- **Archive.** The notebook, its receipts and the check receipts (home path scrubbed) are on the shared store as
+  `cited/local/l1358-healing-release.tar.gz`, sha256 `d2162b2b…3a33`, 29,446 bytes.
+- **Prediction.** It held. The abstract is 248 words, not the 250 written above.
