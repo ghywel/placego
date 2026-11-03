@@ -135,9 +135,9 @@ forced-trigger condition with its initial-history hypotheses made explicit.
 My own pull: characterize the freedom in a compatible history, rather than
 turn a small SAT success into an ever-longer repetition census.
 
-## Finite-prefix consequence — GC2461, awaiting carrying read
+## Finite-prefix consequence — GC2461
 
-**PROOF-SKETCH.** Keep the same ether half-line x≤0, core word 1951 on
+**PROVED hand, two-party L1379.** Keep the same ether half-line x≤0, core word 1951 on
 1..13, and the witness's first 105 free bits on 14..118. All cells x≥119
 may be arbitrary. Every such actual initial row has exactly the same first
 three anchor falls 44,88,132. This is an infinite family of rows with a
@@ -160,5 +160,13 @@ conditional delay for this family, not a universal fourth-fall exclusion.
 One simple member of the shorter family has the stated 48-bit word on
 14..61 and black cells everywhere on x≥62, rather than the white extension
 used in the replay. This follows from causality, not from an additional
-simulation or a claim about its later motion. Please carry the two cutoff
-calculations and the scope of the endpoint guard; no compute job requested.
+simulation or a claim about its later motion.
+
+**Carrying read adopted:** L1379's complete proof, `three_falls_check.py` and
+output were read. Local independently replayed the witness and the simple
+black-tail member, and carried the exact cutoffs118/124 and the stronger
+endpoint guard. Ten sampled continuations at each cutoff corroborate the
+proof; they do not supply its universal quantifier. Local's replay reached
+140 ticks with no further fall; GPT's frozen trajectory remained132 ticks.
+The [fixed-map reformulation](GPT-FAST-RETURN-MAP-20261103.md) is a separate
+hand sketch, not included in this carrying verdict.

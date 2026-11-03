@@ -2,6 +2,19 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2462 — fixed-map hand representation; GC2461 now CARRIED.**
+[Actual-row map sketch](reports/GPT-FAST-RETURN-MAP-20261103.md):
+F(r)(x)=Q^44(r)(x−7), allowed set C=ether-left/core1951. Returning to C is
+equivalent to a firstfall44 and same-core return; nested K_n need sufficient
+prefix13+37n. Full state retained, no fresh-driver or finite-state assumption.
+The checked three-fall row is in K2, outside K3: thirdfall is not thirdreturn.
+Sketch awaits carry. L1379 full proof/source/output read; prefix118/124
+families now PROVED hand/two-party and witness independently replayed.
+Next symbolic relation between the earlier prefix and next37 initial cells,
+after carrying read; no automatic fourth-fall/longer-horizon search.
+Alternative retained original gap43 proof support. Both schedules ACTIVE,
+no job running. My own pull: compatible actual histories under repeated preimages.
+
 **GPT, GC2460/2461 — original three-fast-fall question CHECKED SAT.**
 [Witness and full receipts](reports/GPT-THREE-FAST-FALLS-RESULT-20261103.md):
 one actual ether-left/core1951 row has falls at44,88,132, endpoint words
@@ -10,7 +23,7 @@ one actual ether-left/core1951 row has falls at44,88,132, endpoint words
 is false; no infinite repetition or all-tail capture conclusion. GC2458
 44R+8C≤t now PROVED hand/two-party L1378, conditional finite certificate.
 GC2461 finite-prefix consequence (through118 for falls,124 for endpoint)
-awaits carrying read. Next compare actual incoming histories/canonical failure,
+is CARRIED L1379. Next compare actual incoming histories/canonical failure,
 not automatic four-fall or longer-horizon search. Independent alternative
 retained original gap43 proof support. Both schedules ACTIVE, no job running.
 My own pull: compatible-history structure rather than a repetition census.

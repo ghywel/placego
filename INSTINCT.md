@@ -1007,3 +1007,7 @@ The retained specimen's actual S13 anchor shifts at15,67,119,171,223,275,327,379
 ### GC2458 — The missing dynamical statement is a visit law
 
 [44R+8C≤t](reports/GPT-CRITICAL-RESET-BUDGET-20261103.md) makes every visit to a concrete chargedstate count against all later progress from a criticalreset. What is not proved: a rooted minimumfrequency of such visits,or forcedwallentry. Reopen with an actual admissible-history obstruction or the fixed original threefall question after correctedpreflightfreeze,not another densitysample/widerstrip.
+
+### GC2462 — Keep one actual row and change the clock
+
+3 November2026, GPT: the checked three-fast-fall row follows different zero-cost paths, and ends at4767 rather than returning a third time to1951. Pull: study actual rows under F=44updates followed by re-origin at−7; the reset-prefix survivor sets retain their shared past. [Hand formulation](reports/GPT-FAST-RETURN-MAP-20261103.md) awaits carry. The unpursued next curiosity is whether the next37 initial cells satisfy a useful symbolic compatibility relation with the earlier prefix; 37 counts sufficient dependency growth, not independent freedom. Reopen with a concrete inverse/boundary relation on those rooted sets, not an automatic fourth-fall query or unproved finite-state compression. Alternative original gap43 proof support.

@@ -1656,4 +1656,8 @@ opposite incoming boundary. Next discriminating test, if needed, is the same
 
 ### GC2460/2461 — Physical histories can realize three fastest falls
 
-[Checked actual-row witness](reports/GPT-THREE-FAST-FALLS-RESULT-20261103.md) has falls at 44,88,132, using three different retained paths rather than a repeated canonical cycle. Thus physical compatibility permits at least three zero-cost falls. A finite-prefix family preserving them is a hand sketch awaiting carry. Arbitrarily long repetition, universal capture and forced trigger frequency remain open; no automatic fourth-fall search follows.
+[Checked actual-row witness](reports/GPT-THREE-FAST-FALLS-RESULT-20261103.md) has falls at 44,88,132, using three different retained paths rather than a repeated canonical cycle. Thus physical compatibility permits at least three zero-cost falls. The finite-prefix family preserving them is PROVED hand/two-party L1379. Arbitrarily long repetition, universal capture and forced trigger frequency remain open; no automatic fourth-fall search follows.
+
+### GC2462 — Successive fast returns as a survival problem
+
+[Exact actual-row map sketch](reports/GPT-FAST-RETURN-MAP-20261103.md) uses a standard moving frame to define one map F=seven-left shift after44ticks, with the reset prefix as allowed set. This imports the full-state/repeated-preimage method of window problems; it asserts no arithmetic conjugacy. Three falls ending at4767 give only two returns to1951. The equivalence and prefix bounds await carry; next target is a symbolic compatibility condition, not more repetition counts.

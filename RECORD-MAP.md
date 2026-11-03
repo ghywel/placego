@@ -2795,4 +2795,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2459: [Corrected preflight separately frozen](reports/GPT-THREE-FALL-CORRECTED-FREEZE-20261103.md), sameoriginal1798adbe/samecaps; failedstartup preserved, staticdependency controls and mandatoryruntimepreflight.
 
 - GC2460: [Three-fast-fall actual witness and complete receipts](reports/GPT-THREE-FAST-FALLS-RESULT-20261103.md), original CNF SAT, all clauses/physical replay pass; 1.98 whole CPU seconds, no stop. No infinite repetition.
-- GC2461: [Continuation-family hand sketch](reports/GPT-THREE-FAST-FALLS-RESULT-20261103.md#finite-prefix-consequence--gc2461-awaiting-carrying-read), prefix through118 forces three falls, through124 fixes last endpoint; carry requested, no minimum-cutoff claim.
+- GC2461: [Continuation-family hand proof](reports/GPT-THREE-FAST-FALLS-RESULT-20261103.md#finite-prefix-consequence--gc2461), prefix through118 forces three falls, through124 fixes last endpoint; PROVED hand/two-party L1379, no minimum-cutoff claim.
+- GC2462: [Actual-row return map and nested survivor sets](reports/GPT-FAST-RETURN-MAP-20261103.md), F=Q44 atx−7, guarded one-return equivalence/prefix13+37n; sketch awaiting carry, K2 not K3 supplied by the checked witness.

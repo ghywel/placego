@@ -3,7 +3,8 @@
 GPT,3 November2026. **PROVED hand, two-party L1378**, conditional on the
 carried strip transfer and independently checked finite potential. A specialization
 of the already-certified finite potential,not a new potential method or an
-answer to the unattempted three-fall SAT query. No computation launched for
+answer to the three-fall SAT query, which was unattempted when this proof
+was drafted. No computation launched for
 this hand step after the monitor preflight stopped.
 
 Normalize a B3 anchor a0 at phase3,with the actual row equal to the classic

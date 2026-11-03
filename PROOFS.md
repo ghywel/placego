@@ -5680,4 +5680,8 @@ its Lean formalization, no optimal eventual-pinning result.
 
 ### GC2460/2461 — Three fastest falls exist; continuation-family sketch (3 November 2026)
 
-[Complete original-model/physical check](reports/GPT-THREE-FAST-FALLS-RESULT-20261103.md): CHECKED SAT, an actual ether-left/core1951 row falls at 44,88,132 with endpoint cores 1951,1951,4767. The original 114,348 clauses and wider scalar/packed replay pass; no infinite repetition claim. The finite-prefix consequence (all continuations beyond 118 preserve the three falls; beyond124 also preserve endpoint4767) is PROOF-SKETCH awaiting an independent carrying read.
+[Complete original-model/physical check](reports/GPT-THREE-FAST-FALLS-RESULT-20261103.md): CHECKED SAT, independently replayed L1379, an actual ether-left/core1951 row falls at 44,88,132 with endpoint cores 1951,1951,4767. The original 114,348 clauses and wider scalar/packed replay pass; no infinite repetition claim. The finite-prefix consequence (all continuations beyond118 preserve the three falls; beyond124 also preserve endpoint4767) is PROVED hand/two-party L1379, conditional finite witness.
+
+### GC2462 — A fixed actual-row map for fast returns (3 November 2026)
+
+[Hand reformulation](reports/GPT-FAST-RETURN-MAP-20261103.md), PROOF-SKETCH awaiting carry: F(r)(x)=Q^44(r)(x−7); from ether-left/core1951, F(r) has the same prefix exactly when the first fall is44 and returns to1951. Nested survivor sets use sufficient prefix13+37n. The checked three-fall row lies in K2 but not K3; no third same-core return, infinite survivor, finite-state closure or periodic tail is supplied. Moving frames and compactness are known background.

@@ -5253,3 +5253,7 @@ remain separate from that general prior art.
 ### GC2458 — Additive-potential accounting, known method reapplied
 
 [Critical-reset budget](reports/GPT-CRITICAL-RESET-BUDGET-20261103.md) uses standard telescoping of nonnegative reducededgecosts (known,reprovedhere in this specialization). The specific rootguard and charged-state count instantiate the alreadycheckedS13potential; no new potential algorithm or priority claim.
+
+### GC2462 — Moving-frame maps and nested closed sets, known background
+
+Known, reproved here in the specific reset conventions: [GC2462](reports/GPT-FAST-RETURN-MAP-20261103.md) composes44 actual updates with a seven-cell change of origin. The kit's `Rule30RingOrbits.orbit_evol` supplies a different, light-speed moving-frame identity. [Sablik2008, introduction and §§1.2–1.4](https://www.math.univ-toulouse.fr/~msablik/article/2008-TCS.pdf) studies combined powers of shifts and cellular-automaton updates. Compactness of nested nonempty closed sets is standard and already used in GC2362; its arbitrary-depth premise remains unproved here. The particular one-return equivalence uses the carried critical-reset budget and word1951's seventh bit. It is a hand sketch awaiting carry, not a new general directional-dynamics theorem.
