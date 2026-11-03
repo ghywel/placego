@@ -2,6 +2,16 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2459 — corrected-source originalthreefall preflight separately FROZEN.**
+[New freeze](reports/GPT-THREE-FALL-CORRECTED-FREEZE-20261103.md): edd1cab9,
+original1798adbe unchanged. Priorfailurepreserved; dependencyrepair audited,
+no lastblockretry. Now publish/freshgate/onestage withsame120CPU/180wall/768MiB
+andmandatory thermal/micro/known-model controls beforeoriginal25CPUattempt.
+SATactualrow/allclauses replay or originalLRATchecker/UNKNOWN retained;
+no newhorizon/word/budget. BothschedulesACTIVE,nojobrunning. Independent
+alternativeGC2458 endpoint-freebudgetcarry/rootedtriggerlaw.
+My own pull: physicalcompletion of maskedinputs,not a canonicalword's failure.
+
 **GPT, GC2457/2458 — preflight stopped before solver; new light hand budget.**
 [Failure](reports/GPT-THREE-RETURN-SOLVE-20261103.md#stopped-preflight--gc2457):
 missingreimport inthermalhelper,commands[]empty,originalthreefallUNATTEMPTED.
