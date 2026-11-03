@@ -1251,3 +1251,8 @@ escape time, not a count of doublings among five letters.
 `known_find.py --new` at 15:43Z: 5 added, 0 changed, 0 gone since 14:35Z (L1445). Kit main is unchanged at c42f6e51;
 37 open PRs. The additions are our own: A4 [R30-20261103-37281a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-37281a)
 (Lean Verified) and its kit PR #115, with their indexed sources.
+
+## 3 November 2026 16:15 refresh (L1465)
+
+`known_find.py --new` at 16:15Z: 3 added, 1 changed, 3 gone since 15:43Z (L1461), all our own A4 supersession
+(87ba7a in, 37281a out; PR #115's new head). Kit main is unchanged at c42f6e51; 37 open PRs.

@@ -12,16 +12,16 @@ family of depth columns that obeys the edge map at every depth `≥ 2` and has p
 An **episode** of `T` ticks at depths `k, k + 1` with alignment `a` is a run `t < T` with
 `iter t x k = E k (t + a)` and `iter t x (k + 1) = E (k + 1) (t + a)`.
 
-* `episode_extend`: an episode of `2 ^ B (k + 2) * p` ticks lasts for ever. Bits `0 … k + 1` of
-  every code have period dividing `2 ^ B (k + 2)` from time `0` (`Rule30GateClocks.prefixExp_le_B`,
-  the edge map being the gate clock with OR), so the episode condition has period
-  `2 ^ B (k + 2) * p` in `t`.
+* `episode_extend`: an episode of `horizon k p = lcm (2 ^ B (k + 2), p)` ticks lasts for ever.
+  Bits `0 … k + 1` of every code have period dividing `2 ^ B (k + 2)` from time `0`
+  (`Rule30GateClocks.prefixExp_le_B`, the edge map being the gate clock with OR), and `E` has period
+  `p`, so the episode condition has period `horizon k p` in `t`.
 * `eternal_of_long`: such an episode gives an **eternal point**: paste `E` beyond depth `k + 1`;
-  the code returns to itself after `2 ^ B (k + 2) * p` ticks and follows `E` at every depth `≥ k`.
+  the code returns to itself after `horizon k p` ticks and follows `E` at every depth `≥ k`.
 * `eternal_of_eventual`: a pair that follows `E` from some onset on, for ever, also gives an eternal
   point; behind a black edge, eventual and eternal tails are the same question.
 * `mfinite_iff`: the longest episode at depth `k` is finite iff no episode reaches
-  `2 ^ B (k + 2) * p` ticks.
+  `horizon k p` ticks, and then it is at most `horizon k p - 1`.
 * `episode_bridge`: **every depth has a finite longest episode iff no eternal point of any period
   follows `E` below some depth.**
 * `g8_mfinite`, `g8_no_eternal`, `g8_mfinite_of_grounding`: for the kit's eight-tick ether the
@@ -59,13 +59,13 @@ theorem iter_eq_orbit (c : Nat → Bool) : ∀ t, iter t c = Rule30GateClocks.or
     show T (iter t c) = Rule30GateClocks.step orGate (Rule30GateClocks.orbit orGate c t)
     rw [iter_eq_orbit c t, T_eq_step]
 
-/-- **Uniform prefix period**: bit `j < n` of every code has period `2 ^ B n * m` from time `0`. -/
-theorem prefix_period (c : Nat → Bool) (n : Nat) {j : Nat} (hj : j < n) (t m : Nat) :
-    iter (t + 2 ^ B n * m) c j = iter t c j := by
+/-- **Uniform prefix period**: bit `j < n` of every code repeats after every `P` divisible by
+`2 ^ B n`, from time `0`. -/
+theorem prefix_period (c : Nat → Bool) (n : Nat) {j : Nat} (hj : j < n) (t : Nat) {P : Nat}
+    (hP : 2 ^ B n ∣ P) : iter (t + P) c j = iter t c j := by
   have hle := (Rule30GateClocks.prefixExp_le_B orGate c n).1
-  have hper : Rule30GateClocks.PrefixPer orGate c n (2 ^ B n * m) :=
-    (Rule30GateClocks.prefix_period_iff orGate c n _).mpr
-      (Nat.dvd_trans (Nat.pow_dvd_pow 2 hle) (Nat.dvd_mul_right _ _))
+  have hper : Rule30GateClocks.PrefixPer orGate c n P :=
+    (Rule30GateClocks.prefix_period_iff orGate c n _).mpr (Nat.dvd_trans (Nat.pow_dvd_pow 2 hle) hP)
   have h := hper (j + 1) (by omega) t
   rw [iter_eq_orbit, iter_eq_orbit]
   exact h
@@ -83,6 +83,11 @@ theorem IsPhase.period_mul {E : Nat → Nat → Bool} {p : Nat} (hE : IsPhase E 
   | 0 => by rw [Nat.mul_zero, Nat.add_zero]
   | m + 1 => by rw [Nat.mul_succ, ← Nat.add_assoc, hE.period, hE.period_mul j t m]
 
+theorem IsPhase.period_dvd {E : Nat → Nat → Bool} {p : Nat} (hE : IsPhase E p) (j t : Nat) {P : Nat}
+    (hP : p ∣ P) : E j (t + P) = E j t := by
+  obtain ⟨m, rfl⟩ := hP
+  exact hE.period_mul j t m
+
 /-- An episode of `T` ticks at depths `k, k + 1`, alignment `a`, onset `0`. -/
 def Episode (E : Nat → Nat → Bool) (k : Nat) (x : Nat → Bool) (a T : Nat) : Prop :=
   ∀ t, t < T → iter t x k = E k (t + a) ∧ iter t x (k + 1) = E (k + 1) (t + a)
@@ -97,25 +102,31 @@ def EternalTail (E : Nat → Nat → Bool) : Prop :=
   ∃ (x : Nat → Bool) (P d a : Nat), x 0 = true ∧ 0 < P ∧ iter P x = x ∧
     ∀ j, d ≤ j → ∀ t, iter t x j = E j (t + a)
 
-theorem per_pos {p : Nat} (hp : 0 < p) (k : Nat) : 0 < 2 ^ B (k + 2) * p :=
-  Nat.mul_pos (Nat.two_pow_pos _) hp
+/-- The horizon `lcm (2 ^ B (k + 2), p)`: a common period of bits `0 … k + 1` of every code and of
+the phase. -/
+abbrev horizon (k p : Nat) : Nat := Nat.lcm (2 ^ B (k + 2)) p
 
-/-- **An episode of `2 ^ B (k + 2) * p` ticks lasts for ever.** -/
+theorem horizon_pos {p : Nat} (hp : 0 < p) (k : Nat) : 0 < horizon k p :=
+  Nat.pos_iff_ne_zero.mpr (Nat.lcm_ne_zero (Nat.pos_iff_ne_zero.mp (Nat.two_pow_pos _))
+    (Nat.pos_iff_ne_zero.mp hp))
+
+/-- The horizon is at most the product `2 ^ B (k + 2) * p`; for `p = 2 ^ r` it is `2 ^ max (B (k + 2)) r`. -/
+theorem horizon_dvd_prod (k p : Nat) : horizon k p ∣ 2 ^ B (k + 2) * p :=
+  Nat.lcm_dvd (Nat.dvd_mul_right _ _) (Nat.dvd_mul_left _ _)
+
+/-- **An episode of `horizon k p` ticks lasts for ever.** -/
 theorem episode_extend {E : Nat → Nat → Bool} {p : Nat} (hE : IsPhase E p) {k : Nat}
-    {x : Nat → Bool} {a : Nat} (h : Episode E k x a (2 ^ B (k + 2) * p)) :
+    {x : Nat → Bool} {a : Nat} (h : Episode E k x a (horizon k p)) :
     ∀ t, iter t x k = E k (t + a) ∧ iter t x (k + 1) = E (k + 1) (t + a) := by
   intro t
-  obtain ⟨r, m, hr, rfl⟩ : ∃ r m, r < 2 ^ B (k + 2) * p ∧ t = r + 2 ^ B (k + 2) * p * m :=
-    ⟨_, _, Nat.mod_lt t (per_pos hE.pos k), (Nat.mod_add_div t _).symm⟩
-  have hm : 2 ^ B (k + 2) * p * m = p * (2 ^ B (k + 2) * m) := by
-    rw [Nat.mul_assoc, Nat.mul_left_comm]
-  have hi : ∀ j, j < k + 2 → iter (r + 2 ^ B (k + 2) * p * m) x j = iter r x j := by
-    intro j hj
-    rw [Nat.mul_assoc]
-    exact prefix_period x (k + 2) hj r (p * m)
-  have he : ∀ j, E j (r + 2 ^ B (k + 2) * p * m + a) = E j (r + a) := by
+  obtain ⟨r, m, hr, rfl⟩ : ∃ r m, r < horizon k p ∧ t = r + horizon k p * m :=
+    ⟨_, _, Nat.mod_lt t (horizon_pos hE.pos k), (Nat.mod_add_div t _).symm⟩
+  have hi : ∀ j, j < k + 2 → iter (r + horizon k p * m) x j = iter r x j := fun j hj =>
+    prefix_period x (k + 2) hj r (Nat.dvd_trans (Nat.dvd_lcm_left _ _) (Nat.dvd_mul_right _ _))
+  have he : ∀ j, E j (r + horizon k p * m + a) = E j (r + a) := by
     intro j
-    rw [Nat.add_right_comm, hm, hE.period_mul]
+    rw [Nat.add_right_comm]
+    exact hE.period_dvd j (r + a) (Nat.dvd_trans (Nat.dvd_lcm_right _ _) (Nat.dvd_mul_right _ _))
   rw [hi k (by omega), hi (k + 1) (by omega), he, he]
   exact h r hr
 
@@ -163,24 +174,25 @@ theorem paste_tail {E : Nat → Nat → Bool} {p : Nat} (hE : IsPhase E p) {k : 
         rw [iht, ih.2 t, ih.1 t, Nat.add_right_comm t 1 a, hE.step]
   exact fun n => (pair n).1
 
-/-- **An episode of `2 ^ B (k + 2) * p` ticks gives an eternal point** of period
-`2 ^ B (k + 2) * p` following `E` at every depth `≥ k`. -/
+/-- **An episode of `horizon k p` ticks gives an eternal point** of period `horizon k p`
+following `E` at every depth `≥ k`. -/
 theorem eternal_of_long {E : Nat → Nat → Bool} {p : Nat} (hE : IsPhase E p) {k : Nat}
-    {x : Nat → Bool} {a : Nat} (hx : x 0 = true) (h : Episode E k x a (2 ^ B (k + 2) * p)) :
+    {x : Nat → Bool} {a : Nat} (hx : x 0 = true) (h : Episode E k x a (horizon k p)) :
     EternalTail E := by
   have htail := paste_tail hE (episode_extend hE h)
-  refine ⟨paste E k x a, 2 ^ B (k + 2) * p, k, a, ?_, per_pos hE.pos k, ?_, ?_⟩
+  refine ⟨paste E k x a, horizon k p, k, a, ?_, horizon_pos hE.pos k, ?_, ?_⟩
   · simp [paste, hx]
   · funext j
     by_cases hj : j < k + 2
-    · have := prefix_period (paste E k x a) (k + 2) hj 0 p
+    · have := prefix_period (paste E k x a) (k + 2) hj 0 (Nat.dvd_lcm_left (2 ^ B (k + 2)) p)
       rw [Nat.zero_add] at this
       exact this
     · obtain ⟨n, rfl⟩ : ∃ n, j = k + n := ⟨j - k, by omega⟩
       rw [htail n]
-      show E (k + n) (2 ^ B (k + 2) * p + a) = if k + n < k + 2 then x (k + n) else E (k + n) a
+      show E (k + n) (horizon k p + a) = if k + n < k + 2 then x (k + n) else E (k + n) a
       simp only [hj, ↓reduceIte]
-      rw [Nat.add_comm (2 ^ B (k + 2) * p) a, Nat.mul_comm (2 ^ B (k + 2)) p, hE.period_mul]
+      rw [Nat.add_comm (horizon k p) a]
+      exact hE.period_dvd (k + n) a (Nat.dvd_lcm_right _ _)
   · intro j hj t
     obtain ⟨n, rfl⟩ : ∃ n, j = k + n := ⟨j - k, (Nat.add_sub_of_le hj).symm⟩
     exact htail n t
@@ -200,15 +212,15 @@ theorem eternal_of_eventual {E : Nat → Nat → Bool} {p : Nat} (hE : IsPhase E
 /-! ### The bridge -/
 
 /-- **The finite criterion**: the longest episode at depth `k` is finite iff no episode reaches
-`2 ^ B (k + 2) * p` ticks; then every episode is shorter than that. -/
+`horizon k p` ticks; then every episode is shorter than that. -/
 theorem mfinite_iff {E : Nat → Nat → Bool} {p : Nat} (hE : IsPhase E p) (k : Nat) :
-    MFinite E k ↔ ∀ (x : Nat → Bool) (a : Nat), x 0 = true → ¬ Episode E k x a (2 ^ B (k + 2) * p) := by
+    MFinite E k ↔ ∀ (x : Nat → Bool) (a : Nat), x 0 = true → ¬ Episode E k x a (horizon k p) := by
   constructor
   · rintro ⟨L, hL⟩ x a hx h
     exact hL x a hx (fun t _ => episode_extend hE h t)
   · intro h
-    refine ⟨2 ^ B (k + 2) * p - 1, fun x a hx hep => h x a hx ?_⟩
-    rwa [Nat.sub_add_cancel (per_pos hE.pos k)] at hep
+    refine ⟨horizon k p - 1, fun x a hx hep => h x a hx ?_⟩
+    rwa [Nat.sub_add_cancel (horizon_pos hE.pos k)] at hep
 
 /-- **The episode bridge**: every depth has a finite longest episode iff no eternal point of any
 period follows `E` below some depth. -/
@@ -270,7 +282,7 @@ theorem g8_no_eternal (i q : Nat) : ¬ EternalTail (g8 i q) := by
     show ether (d + 1 + i) (t + a + q) = ether (d + i + 1) (t + (a + q))
     rw [Nat.add_assoc t a q, Nat.add_right_comm d 1 i]
 
-/-- Finiteness from grounding alone, through the bridge (bound `2 ^ B (k + 2) * 8 - 1`). -/
+/-- Finiteness from grounding alone, through the bridge (bound `horizon k 8 - 1`). -/
 theorem g8_mfinite_of_grounding (i q : Nat) : ∀ k, MFinite (g8 i q) k :=
   (episode_bridge (g8_phase i q)).mpr (g8_no_eternal i q)
 
