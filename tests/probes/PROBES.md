@@ -1490,3 +1490,5 @@ requested; preserve the failed output. [Scope and concrete repair](../../reports
 - `gpt_reset_packet_check.py` (GC2463, Intel): tiny128-parent one-update check in physical coordinates−8..7. Exactly57,89,121 both fail the old anchor and yield core1951 after re-origin at−7. All128 cases PASS; same-worker indexing check, not an actual-history search or independent carrying read.
 
 - `gap43_proof_support.py` (GC2465/2466, Intel): read-only reachable positive-RUP audit of the immutable original gap43 refutation, reusing pinned GC2406 checker logic. All33922 original-clause/29644 derived-step support replays; all fixed units and goal used, only initial44 from free44..137 mentioned.2.13wholeCPU, controls PASS, no new solver or minimal-core claim; exact inputs/receipts archived.
+
+- `gap43_unit_cases.py` (GC2467/2468, Intel): original root closure, then exactly initial44=0/1, with independent reason/fixed-point replay and micro LRAT controls. All three inconclusive; two-case prediction REFUTED, original UNSAT unchanged.2.80wholeCPU,no stop; no final proof or additional assumption search.

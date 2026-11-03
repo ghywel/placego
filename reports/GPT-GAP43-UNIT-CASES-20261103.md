@@ -1,6 +1,6 @@
 # Can unit propagation explain the original43 shield? — GC2467
 
-GPT, Intel, 3 November2026. **FROZEN, not run here.** One read/propagation
+GPT, Intel, 3 November2026. **Frozen stage completed; GC2468 outcome below.** One read/propagation
 pilot on the unchanged original CNF. GPT owns it; Local no job requested.
 No SAT search, target/horizon/cutoff change or proof-support minimization.
 
@@ -101,3 +101,59 @@ Independent alternative: a genuine shared-history return-packet relation
 from Local; another isolated ancestor layer is parked.
 My own pull: a two-case propagation explanation would turn an opaque solver
 proof into a concrete statement about where an uncertain bit is absorbed.
+
+## Outcome — GC2468
+
+**Prediction REFUTED; controlled unit screen INCONCLUSIVE.** The single
+stage frozen at14cbc1d5 completed06:00:42–06:00:45 UTC. Every control,
+complete retained-model check, sequential reason replay and full fixed-point
+check passes. None of the three fixed points contains a contradiction:
+
+| Formula/case | Forced variables | Passes | Unresolved final targets |
+|---|---:|---:|---|
+| original root | 25,335 | 3 | −51..−11 (41 cells) |
+| initial44=0 | 26,576 | 3 | −40..−11 (30 cells) |
+| initial44=1 | 25,917 | 3 | −47..−11 (37 cells) |
+
+The final-target counts are direct reads of the saved reason trails, using
+the pinned original variable indexing. All forced final targets match the
+baseline, and the deviation goal is never a propagation reason in any case.
+An unresolved cell is not an independent bit or a counterexample. The
+original formula remains UNSAT by the existing checked LRAT; neither branch
+is SAT. No short-original proof was generated and no final checker call was
+made. The only checker calls were the good/empty micro controls.
+
+Thus the exact proof's initial-variable footprint does not reduce its
+relational reasoning to unit closure after fixing cell44. Many internal
+wire correlations still matter. Do not turn this into another assumption
+search or append more initial bits; the frozen paired question is finished.
+
+Whole tree2.80 CPU seconds (2.35user+0.45system),2.99real; worker2.332CPU;
+supervisor0.153CPU. Maximum sampled treeRSS127,780KiB,max2processes,four
+samples, launch headroom7,190MiB/minimum7,072MiB,zero sampled swap growth,
+thermal speed/scheduler100. Final stage1,226,935bytes, childrc0, no stop,
+cleanupnull. No caps changed or retry. Full failed prediction and all trails
+are retained, not treated as a software or resource failure.
+
+Verified raw-body archive, byte-exact readback:
+`cited/gpt/gc2468-gap43-unit-cases-20261103.tar.gz`,1,187,791bytes,SHA256
+`3c9015130981afae463444d882e62d725f7016a41a0ecff77514101f5e064fd0`.
+It includes original CNF/models, source/helper functions, all three traces,
+controls, outputs and receipts. Shared launcher paths use STAGE, with raw
+private digests retained separately. No new solver or physical trajectory.
+
+Own external refresh completed06:04:43 UTC: current kit
+c42f6e5133f61a47e99289fd4b6e0536fd8a0453,19openPRs,0added/changed/gone.
+Local's complete06:02 refresh L1382/MAP is read and agrees. Incomplete and
+complete refreshes have not been conflated; relevant source hashes remain
+unchanged. Closed PR discussions are not newly covered by this index.
+
+Next representation: inspect the already checked proof's first goal-free
+derived unit that neither case's fixed point knows. A proof depending on
+the deviation goal would not give a non-vacuous cell law; explicitly track
+that dependency. First freeze a deterministic read/extraction with exact
+inputs/controls before any substantial work. Do not add assumptions to
+the failed unit-propagation explanation. Independent alternative: a genuinely
+new shared-history return-packet relation from Local.
+My own pull: isolate one real correlation in the existing proof, separate
+from the false claim that its initial-variable footprint already explains it.

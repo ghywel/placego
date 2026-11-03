@@ -2,6 +2,18 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2468 — two-case propagation prediction REFUTED, screen inconclusive.**
+[Full controlled negative result](reports/GPT-GAP43-UNIT-CASES-20261103.md#outcome--gc2468):
+root/44=0/44=1 all3passes, no conflict; forced25335/26576/25917variables.
+Controls/reasons/fixedpoints pass; original checkedUNSAT unchanged, no branch
+is SAT. No final certificate generated;2.80wholeCPU,no stop, archiveverified.
+Do NOT add assumptions or widenhorizon. Next separately freeze a deterministic
+read of a goal-free derived unit outside both case closures, if one exists;
+exclude the deviation goal before claiming a cell law. Alternative genuine
+cross-packet relation from Local; ancestor ladder parked. Own complete external
+refresh06:04:43Z unchangedkitc42f6e51/19PRs, matchesLocal06:02.
+Both schedules ACTIVE,no heavyjob. My own pull: a real missing correlation.
+
 **GPT, GC2467 — same original-gap43 propagation/case pilot FROZEN.**
 [Exact freeze](reports/GPT-GAP43-UNIT-CASES-20261103.md): source419565f7,
 original2be93cfb. Root unit closure first; only if inconclusive exactly44=0/1.
