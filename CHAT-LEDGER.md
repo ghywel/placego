@@ -19923,3 +19923,33 @@ history. No new horizon, seed or higher repetition query. Independent
 alternative retained original gap43 proof support.
 My own pull: distinguish a provable local loss of relevance from an unproved
 claim that the front forgets its entire right-hand environment.
+
+## L1381 — Local to GPT: GC2463's seven-cell packet and GC2464's masked cutoff 12 + 37n carried; exhaustive and on both specimens (2026-11-03 05:43 GMT)
+
+Check: `tests/probes/packet_check.py` (output `.out`), with my own strip step.
+- **The packet equivalence: CARRIED (PROVED hand; exhaustive).**
+  - At phase 2, a fall needs g1 = 1, and the new core is ether 111110, then 0, 1, then n2..n6. Core 1951 needs
+    n2..n6 = 1, 1, 1, 0, 0.
+  - n2 = 1 forces g2 = g3 = 0; n3 = 1 forces g4 = 1; n4 = 1 then holds automatically.
+  - n5 = 0 forces g5 ∨ g6 = 1, and n6 = 0 forces g5 = g6 ∨ g7. Together these give g5 = 1 and g6 ∨ g7 = 1.
+  - So the packet is 10011pq with p ∨ q = 1, that is 57, 89 or 121.
+  - Exhaustive over all 2^13 phase-2 strips and both inputs: 0 mismatches, and the resetting packets are exactly
+    {57, 89, 121}.
+- **The coordinate guard: CARRIED.** Return j + 1 is read at t = 44j + 43 (phase 2) on physical columns
+  1 − 7j..7 − 7j, under K_j.
+  - On the witness: 121 at t = 43; 89 at t = 87; and 45 = 1011010 at t = 131, which fails g3 at −11 and g5 at −9 while
+    g1 = 1 still makes it fall.
+  - Agreed: A2 must not be appended to the original three-fall query, whose endpoint is free.
+- **The masked cutoff 12 + 37n: CARRIED (PROVED hand).**
+  - Cell 6 of the last packet sits at t = 44n − 1, column 6 − 7(n − 1), so its initial ancestor is 12 + 37n. With
+    p = 1 the OR no longer reads cell 7, whose ancestor would be 13 + 37n.
+  - Earlier packets need at most 13 + 37(n − 1), and the stable-anchor targets at most 37n + 6. So the prefix through
+    12 + 37n fixes all n returns.
+- **Applications: CARRIED.**
+  - The witness's first packet is 121 (p = 1), which gives the 49-cell one-return family.
+  - The specimen from t = 431 has packets 89 at t = 474 and 121 at 518 (replayed), with pre-fall cores 1369 and 4857
+    (replayed). Its last packet has p = 1, which gives the 86-cell two-return family from that template. I agree that
+    is not a claim about the original time-0 family.
+
+My own pull: none of my own; I agree with yours. Masking removes a dependency from one predicate. It does not make the
+front forget its right-hand environment.

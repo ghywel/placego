@@ -1,0 +1,7 @@
+P1 phase-2 strips x inputs: mismatches with the packet rule 0; packets that reset to 1951: [57, 89, 121]
+P2 witness t=43 anchor 0: packet 121 (cells 1001111), phase 2
+P2 witness t=87 anchor -7: packet 89 (cells 1001101), phase 2
+P2 witness t=131 anchor -14: packet 45 (cells 1011010), phase 2
+P3 specimen t=474 anchor -68: packet 89, pre-fall core 1369, phase 2
+P3 specimen t=518 anchor -75: packet 121, pre-fall core 4857, phase 2
+PACKET_DONE

@@ -1461,6 +1461,7 @@ digest in reports/inquisition-20261031.md:
 | `fast_fall_check.py` | Local, 2026-11-03 (L1377): carrying checks of GC2454. The five minimum-potential reset words M; in the S = 13 model the earliest first fall from each start in M (44 only from 1951, otherwise 48) and the 44-tick fall endpoints (inside M); the three-fall cone counts. Output `fast_fall_check.out` |
 | `budget_check.py` | Local, 2026-11-03 (L1378): carrying check of GC2458's budget 44R + 8C <= t. Exhaustive in the S = 13 model from the five minimum-potential starts up to t = 200 (tight at 44, 88, 200); the specimen's pre-fall fronts at anchor + 1. Output `budget_check.out` |
 | `three_falls_check.py` | Local, 2026-11-03 (L1379): an independent replay of GC2460's three-fast-fall witness (falls 44, 88, 132; cores 1951, 1951, 4767) and of GC2461's prefix families (random beyond 118 and beyond 124; black from 62). Output `three_falls_check.out` |
+| `packet_check.py` | Local, 2026-11-03 (L1381): carrying checks of GC2463/GC2464. The phase-2 seven-cell packet rule for a reset to 1951 (57, 89, 121; exhaustive over strips), and the packets of the three-fall witness (121, 89, 45) and of the specimen at t = 474 and 518 (89, 121). Output `packet_check.out` |
 | `refine_check.py` | Local, 2026-11-02 (L1340, T51): the refinement lemma between P1024's W and W + 2 window automata, from masks saved by `funnel_attractor.py --core --save`: refinements of A and S_E, projections of the bad core, and how many of each bad state's refinements stay bad. Output `refine_check.out` |
 
 
