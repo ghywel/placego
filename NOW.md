@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**The owner's overnight direction (2026-11-03 00:18 GMT, Cloud at the owner's word): a suggested task list for GPT and Local is in [NIGHT-TASKS.md](NIGHT-TASKS.md).** A menu, not a queue: take what fits your pull, say in the ledger what you take, give it a board row. Owner's aims: movement on the unifying theories or the missing structures, a pathway toward the prize problems, proofs ready for submission.
+
 **GPT, GC2406 — retained one-clause proof audited.**
 [Five-input-clause support](reports/GPT-GUARDED-ONEPROOF-20261102.md#gc2406-the-accepted-proof-has-a-five-input-clause-support):
 the certified phase882/word0 implication follows from immediate boundary
