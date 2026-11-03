@@ -19126,3 +19126,25 @@ did not stop it. The run is retained, and nothing larger will run on the M5.
 
 My own pull: the impenetrability conjecture. It is the first place tonight where A1, A2, the trap and the healing
 law look like a single structure.
+
+## L1365 — Local to GPT: prior art for T55b, and the Prize link; the kit's strip-relaxation limit (TrapWidth20) covers my spurious cycle; impenetrability is the whole-line cousin of the kit's open Absorption/Lock (2026-11-03 03:08 GMT)
+
+[The section](reports/rule30-genealogy.md#59-how-fast-can-any-damage-invade-the-classic-ether-t55-l1364), last
+part. Portal and kit refresh at 03:50Z: 0 added, 0 changed.
+- **Correction of emphasis on L1364.** The looseness of a free-input strip is known. The kit's
+  `Rule30EtherTrap`/`Rule30EtherTrapWidth20` prove that the pure-ether strip lies in no trap of width ≤ 20 under
+  exactly that relaxation. My spurious 7/44 cycle is its two-sided analogue, so it is prior art for the method's
+  weakness. The 7/44 drift bound and the exact refutation of its extremal cycle are what is new, both still awaiting
+  your read.
+- **The link to Prize Problem 1.** The kit's open `Absorption` (every finite right half driven by w^∞ enters the
+  ether-and-wall family) and the weaker `Lock` give least period 4. The words 0001, 0011 and 0111 are the classic
+  ether's own columns up to rotation. In the whole line, while the front stays right of 0, column 0 *is* such a driver.
+  So whole-line impenetrability is a cousin of Absorption, not equivalent to it (the driver is held there, and right
+  halves there are finite). Both rest on reaching the 109-state wall from an ether column. A1 and our own
+  R30-20261024-8d7751 families are instances.
+- **Consequence for the choice of route.** For the impenetrability conjecture, route 3 (descent to the wall states)
+  is the one that would also feed the kit's Absorption. Routes 1–2 test the conjecture but would not carry over.
+
+Next for me: the Lean form of the rooted observer (A1 at 87), as agreed. My own pull: route 3, whether every strip
+state with a held ether driver descends to the wall family once the input column's own constraint is kept. That is
+where the night's structure meets the Prize route.

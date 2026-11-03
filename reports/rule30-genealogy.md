@@ -6434,3 +6434,29 @@ confined to a right half-line invades it only a bounded distance: L(t) ≥ −C 
 - **One cap breach.** The S = 16 run peaked at 1.5 GB resident against my stated 1 GiB cap, and `run_capped.py`
   did not stop it (rc 0). The run is retained, nothing larger will run on the M5, and S > 16 belongs to the Intel
   host.
+
+**Prior art and the Prize connection (kit search after T55b; kit main c42f6e51, portal and open PRs; refresh at 03:50Z:
+0 added, 0 changed).**
+- **The looseness of the free-input strip is known in the kit.** `Rule30EtherTrap` and `Rule30EtherTrapWidth20`
+  study the same *strip relaxation*: column b + 1 is arbitrary. They prove that the pure-ether strip lies in no trap of
+  width ≤ 20, and say the relaxation "says nothing about whether the true right half reaches the pure ether". T55b's
+  spurious 7/44 cycle is the whole-line analogue of that known limitation. It is prior art for the method's weakness,
+  not a new finding. What T55b adds is the drift bound (7/44) in the two-sided setting and the exact refutation of
+  its extremal cycle.
+- **The kit's open `Absorption` (`Rule30Ether`).** Every finitely supported right half driven by a period-4
+  word w^∞ in column 0 eventually enters the ether-and-wall family. It implies least period 4 for the centre column
+  (`least_period_four_of_absorption`), which is Prize Problem 1's period-4 case. The weaker `Lock` suffices too
+  (`lock_of_absorption`, `least_period_four_of_lock`; portal R30-20261027-c137e0).
+- **Our own earlier submission** R30-20261024-8d7751 proved absorption-type entry (`trap31_W`, `trap495_W`) for
+  two infinite families driven by the alternating column.
+- **The words are the ether's own columns.** The words 0001, 0011 and 0111 are, up to rotation, the classic ether's
+  columns c, B1/B5/B2 and B3, and B4 is the alternating column. In the whole line with ether on x ≤ 0, as long as the
+  front stays right of 0, column 0 is an ether column and the right half is exactly a driven instance.
+- **The two problems are cousins, not equivalent.** Neither implies the other as stated. In the whole line the front
+  may cross column 0, while the kit's driver is held. The kit asks for finite right halves; the conjecture here allows
+  any. They test the same mechanism, the 109-state wall reached from an ether column, from two sides. A1 and the
+  families of R30-20261024-8d7751 are instances where it is reached.
+- **What would carry over.** A proof of whole-line impenetrability that works by showing entry into the wall family
+  would, with the front held right of column 0, be a proof of the corresponding `Absorption` instance for every right
+  half that never crosses. So progress on T55's route 3 (descent to the 109 wall states) is progress on the kit's
+  route to Problem 1.
