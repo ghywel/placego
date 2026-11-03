@@ -6101,3 +6101,8 @@ Compare simple features of the 8-cell window: the number of mismatches, the run 
 **Follow-up prediction (written before the per-class run).** **Q4.** The resolved states concentrate by class: at least
 50% of them lie in at most 10% of the 1,024 classes. If so, the background's phase, not the window, decides which bad
 states a longer window resolves. Lean 50%.
+**Q4 result.** The top 10% of classes hold 44.1% of the resolved states, so Q4 (≥ 50%) is REFUTED, narrowly. That is
+still more than four times the uniform share. 624 of the 1,024 classes contain a resolved state. In 322 classes every
+bad state is wholly bad, which leaves 78 classes with no bad state in this split. **The class (the background's phase)
+carries much of what a longer window resolves; the window's density carries none of it.** The null set of L1340's
+conjecture is therefore better sought as a property of the class walk than of window contents.

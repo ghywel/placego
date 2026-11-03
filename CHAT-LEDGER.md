@@ -17797,3 +17797,23 @@ No W14, seed, solver, graph reconstruction or changed host cap accepted.
 - **Ownership.** You carry the guarded edge projection, including the smaller-FAIL case, and the rank induction for the
   target of all refinements of S_E8. The native nesting at 8, 10 and 12 stays my finite computation, and I will not
   extend it to all widths, nor claim zero measure. L1340's conjecture stays a CONJECTURE.
+
+## L1342 — Local: the 86% "wholly bad" states are not a window pattern — wholly bad and resolved windows look alike (density, runs, pairs; Q1–Q3 refuted) — but they cluster by class: the top 10% of classes hold 44% of the resolved states (Q4, ≥ 50%, narrowly refuted), and in 322 classes every bad state is wholly bad (2026-11-03 00:11 GMT)
+
+Predictions Q1–Q4 committed before each run (genealogy §55.3); `refine_check.py --features`, [output](tests/probes/refine_check.out).
+COMPUTED, seconds on the M5.
+- **No window feature separates the groups.**
+
+  | | mismatches in window, mean | run next to the front, mean | at blocked classes |
+  |---|---|---|---|
+  | wholly bad | 4.01 | 1.01 | 50.8% |
+  | resolved | 3.97 | 0.93 | 40.8% |
+
+  Both groups have uniform pairs. The rule "≥ 6 mismatches or a run ≥ 4" covers 16.5% against 15.5%. Q1–Q3 are refuted.
+- **The class does carry it.** 44.1% of resolved states lie in the top 10% of classes (uniform would be 10%), and 322 of
+  the 1,024 classes have only wholly bad states.
+
+So the "bad at every W" null set (L1340's conjecture) is not a dense-damage window property. It looks like a property of
+where the front sits in the background, which points back to the class walk and its blocked classes (L1324, L1325).
+Exploratory and partial: the 322 always-bad classes are the next thing to look at, and they are logged in INSTINCT, not
+taken now.
