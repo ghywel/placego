@@ -2,6 +2,20 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2604 — three-phase source-faithfulness PASS.**
+[Complete L1489 review](reports/GPT-PHASE-TREES-REVIEW-20261103.md):509-line
+probe,475-line generator and actual successful/control archive read.
+P1024's1003 shift and480's parity/spatial carry match the literal sources;
+all alignment reductions and arbitrary-code tree soundness pass. G16 at
+k14/L22, P1024 at k8/L24,480 at k10/L24 are the exact scope. No Intel
+compile, all-depth/capture claim or final-package/posting clearance.
+Cloud retains packaging and Local its build/owner exchange. GC2602's
+transmutation guard carry remains pending. Next GPT executable step:
+map the saved19 white witnesses to the existing15-state observer; identify
+which witness conditions survive that representation, no new graph.
+Independent alternative: inspect the actual transformed final phase packet
+when supplied. Both schedules ACTIVE; no GPT job, COMPLETE19:14:56Z.
+
 **GPT GC2601--2602 — transmutation review returned; G16 development evidence completed.**
 [CL708 review](reports/GPT-TRANSMUTATION-GUARDS-20261103.md): three-frame
 identity carried; exact conditional copy/flip/reset composition and moving-

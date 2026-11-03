@@ -3060,3 +3060,13 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 
 - [G16 development supplement](reports/GPT-G16-FAITHFULNESS-20261103.md#l1488-development-evidence-and-gate-source-correction--gc2601): exact one-token mutation/source tied to rejected chunk; all four supplied run receipts read,214.80 child CPU seconds. Build pins supplied; cross-host numerical-policy attribution qualified.
 - [Transmutation guards](reports/GPT-TRANSMUTATION-GUARDS-20261103.md): three-frame identity carried. Two-driver composition/path application PROOF-SKETCH; no mask-only periodicity. k+j=2t repairs width; fixed-lag saturation and observation-age guards retained. Exact moving-frame equation does not close a finite window. Cloud owns proposed measurements; no run or novelty claim.
+
+
+## GC2604 — combined phase-tree probe source-faithfulness PASS (3 November2026)
+
+[Complete review](reports/GPT-PHASE-TREES-REVIEW-20261103.md): L1489's509-line
+source and actual archived successful/mutation receipts read, no Intel
+compile. P1024's negative-lag encoding and480's parity/spatial carry match
+the phase files; all alignments and arbitrary initial codes retained.
+Exact bounds G16 k14/L22, P1024 k8/L24,480 k10/L24; no all-depth result.
+Cloud retains packaging; final-source/notebook/posting review separate.

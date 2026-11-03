@@ -1,0 +1,122 @@
+{
+  "entry": "GC2604",
+  "time_utc": "2026-11-03T20:10:28.028939+00:00",
+  "verdict": "SOURCE FAITHFULNESS PASS, not final-package/posting clearance",
+  "source_hashes": {
+    "tests/probes/lean/PhaseTrees.lean": "7e2590f14fcdc1522be5ff23f7a621f82cf8efc0fa119e4c5b1207164b5d9f23",
+    "tests/probes/wolfram/phase_trees_lean.py": "f619afac66d4c13d415b082dac286055902dfbd5113b7e793e86701d999893fe",
+    "tests/probes/phase1024_ring.txt": "02e71fc3dfbece2e751a3f96425ab35b44e5206aff49126823cee54f7d5da2b5",
+    "tests/probes/phase480_p32.txt": "6f77ed2178c4fca0169fc0690b952b680276a787c06d44e8bba36e0eabb92bc3",
+    "tests/probes/wolfram/phase_episode.py": "87f64382a0a16af1fe1b3416ca22a6ffbfaf6328fe35c38850501fb68162834d"
+  },
+  "archive": {
+    "key": "cited/l1489-phasetrees/phase-trees-receipts.tar.gz",
+    "bytes": 12128,
+    "sha256": "919f5a7c12abd34909656af30f6669cd93c7a3387320f73e8aadee984ab87070",
+    "successful_source_exact_git_match": true,
+    "mutation_sha256": "0892fe02b7c7e4e51520d3c1d61b9014617a7afc7aa43e76687eeb4c716d1dea"
+  },
+  "literal_checks": [
+    "RING16 char n == ring16 bit n",
+    "P1024 char n == ring1024 bit n",
+    "P480 newer word bit0 == ring480a bit n",
+    "P480 newer word bit1 == ring480b bit n"
+  ],
+  "A5_declarations_byte_match": [
+    "IsPhase",
+    "Episode",
+    "MFinite"
+  ],
+  "phase_bounds": {
+    "g16": {
+      "k": 14,
+      "L": 22,
+      "representatives": 128
+    },
+    "p1024": {
+      "k": 8,
+      "L": 24,
+      "representatives": 1024
+    },
+    "p480": {
+      "k": 10,
+      "L": 24,
+      "representatives": 960
+    }
+  },
+  "supplied_build_metadata": {
+    "lean": "leanprover/lean4:v4.35.0",
+    "kit": "7204c94b8f08538357dccc72345f24fc69f5c0c3",
+    "cwd": "dependency kit checkout"
+  },
+  "runs": [
+    {
+      "run": "b1",
+      "child_rc": 0,
+      "exit_reason": "COMPLETED",
+      "child_cpu_s": 88.87,
+      "real_s": 89.74,
+      "launcher_wall_s": 90.25,
+      "supervisor_cpu_s": 0.604,
+      "maxima": {
+        "rss_kib": 2497600,
+        "procs": 3,
+        "disk_bytes": 657,
+        "swap_growth_mib": 0.0,
+        "min_free_mib": 5504
+      },
+      "limits": {
+        "cpu": 1200,
+        "wall": 1500,
+        "rss_mib": 8192,
+        "file_mib": 64,
+        "disk_mib": 256,
+        "min_free_mib": 3072,
+        "launch_free_mib": 4096,
+        "swap_growth_mib": 64,
+        "track_tree": true,
+        "max_procs": 8
+      }
+    },
+    {
+      "run": "mut1",
+      "child_rc": 1,
+      "exit_reason": "CHILD_FAILED",
+      "child_cpu_s": 98.98,
+      "real_s": 88.08,
+      "launcher_wall_s": 88.35,
+      "supervisor_cpu_s": 0.659,
+      "maxima": {
+        "rss_kib": 2484112,
+        "procs": 3,
+        "disk_bytes": 0,
+        "swap_growth_mib": 0.0,
+        "min_free_mib": 5447
+      },
+      "limits": {
+        "cpu": 1200,
+        "wall": 1500,
+        "rss_mib": 8192,
+        "file_mib": 64,
+        "disk_mib": 256,
+        "min_free_mib": 3072,
+        "launch_free_mib": 4096,
+        "swap_growth_mib": 64,
+        "track_tree": true,
+        "max_procs": 8
+      }
+    }
+  ],
+  "child_cpu_sum_s": 187.85,
+  "supervisor_cpu_sum_s": 1.263,
+  "not_claimed": [
+    "Intel compile or tree replay",
+    "formal lower witness or sharpness",
+    "all-depth phase exclusion",
+    "universal capture",
+    "centre-column result",
+    "final transformed package clearance",
+    "aggregate CPU enforcement",
+    "generator CPU accounting"
+  ]
+}

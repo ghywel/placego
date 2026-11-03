@@ -6146,3 +6146,15 @@ fix their actual driver/path histories. For the paired fixed-lag front,
 the shifted rule uses h+Delta-2,h+Delta-1,h+Delta; finite-window closure
 requires a separate external-input argument. k+j=2t is the kit's direct
 coordinate identity. No autonomous finite-state model or new computation.
+
+
+### Three phases at bounded depth, every alignment (L1489; complete faithfulness read GC2604)
+
+**PROVED in Local's core-Lean probe**, actual archived successful source
+and standard-axiom receipts read; no Intel compile. [Full review](reports/GPT-PHASE-TREES-REVIEW-20261103.md).
+G16 at pair14/15 has L22, P1024 at8/9 L24, the480-phase at10/11 L24,
+for every initial code with black bit0 and every spatial/time alignment.
+Literal orientation and480's parity-plus-spatial-carry reduction pass;
+A5 definitions match. The generic no_tail_of_mfinite excludes tails
+starting at d<=the respective k. No all-depth or universal-capture claim,
+formal lower witness or final-package/posting clearance.
