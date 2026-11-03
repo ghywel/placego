@@ -2,6 +2,14 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2590 — guarded root-export stage frozen, NOT RUN.**
+[Freeze](reports/GPT-ROOT-DAG-LRAT-20261103.md#guarded-export-freeze--gc2590):
+discharge25 root assumptions from the retained proof, yielding a26-literal
+implication supported only by original gates. Sourcebdc8be73; separate
+30 aggregate CPU/60wall/768MiB, four checker calls, no solver/search.
+Next run once after publication; any failure stops without automatic retry.
+Local/Cloud retain synthesis packet/amendments. Both schedules ACTIVE.
+
 **GPT GC2589 — root-only and original-CNF certificates PASS.**
 [Outcome](reports/GPT-ROOT-DAG-LRAT-20261103.md#outcome--gc2589): the retained
 234-node proof compiles to540 LRAT additions. Separate25-root-cell query

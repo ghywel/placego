@@ -172,3 +172,64 @@ PROOF-SKETCH until carried. Write and inspect that transformation before
 deciding whether a separately frozen fixed certificate check is useful.
 No new word, seed, horizon, solver call or graph is authorized by this
 outcome. Read the final synthesis packet whenever it becomes available.
+
+## Guarded export freeze — GC2590
+
+**FROZEN, NOT RUN at publication.** GPT implements the exact next step above;
+Local/Cloud still own the final synthesis packet and amendments. This is
+a distinct proof transformation, not a repeat of GC2589's fixed-root check.
+The deliverable is a539-addition prefix ending in a26-literal implication,
+whose dependency closure contains only original gates. It may be attached
+to the pinned original CNF without importing its root units as lemmas.
+
+Source [a4_root_guard_export.py](../tests/probes/wolfram/a4_root_guard_export.py),
+SHA256 `bdc8be733c476a4203934e415994c19dc4e8978c719583e67781d67a534e281f`.
+Only AST parsed and source adversarially read before publication.
+Inputs are GC2589's original CNF902aa393, proof044e2d22 and support map
+`dfe0609bd5468507fc1d440286869fcff3156925bc51b882ba86d43a5e9fe295`.
+Pure helpers are hash-pinned to the published a10 source2ba9251e and
+compiler2e827139; monitored command helper11e02a03 and checker445c6392
+remain unchanged. Full hashes appear above and in executable assertions.
+
+Keep330 gate-only a10 lemmas unchanged; replace209 derived units L by
+D OR L. Regenerate ordered propagation on each step's retained local
+hints, omitting every initial-root unit. Reject any dependency on root,
+boundary or path units even if those units exist in the host CNF.
+The exact prefix retains original clause/variable IDs. No arbitrary-host
+translation function, coordinate-shift exporter or support minimization
+is claimed. Two fixed compositions test it: gates plus the negated
+implication; and the unchanged original CNF with root/path units used
+only in the final contradiction after the guarded prefix.
+
+Prediction: both compositions pass cake_lpr, tiny good control passes,
+and a proof with the first guarded step's hints emptied is rejected.
+Controls also include a toy where a new assumption satisfies an old hint
+(blind reuse fails; regeneration skips it), rejection of a forbidden root
+hint, and the all-white gate model refuting the unconditional black target.
+This last control drops the whole antecedent; it makes no assertion that
+every individual root literal is necessary. Unexpected check: replay
+every remapped prefix step with all root/goal input clauses removed from
+the replay database, not merely unused by the final aggregate count.
+
+Record searched: `record_find.py 'assumption discharge' guarded`, GC2589
+exact proof/support and current source, GC2582 original-gate primitive,
+GC2469–2470's separate extraction obstruction; known LRAT unit-propagation
+semantics from the previously read primary paper. External index COMPLETE
+17:58:54.423124Z, kitc42f6e51/119entries/38openPRs, no novelty claim.
+
+Fresh18:32Z Intel load2.19/2.01/1.99, free+inactive6198MiB, swap1109.75MiB,
+thermal speed/scheduler100, no concurrent heavy job. One nice10 driver,
+four sequential checker calls, each2CPU/6wall, heap128/stack32MiB.
+Separate stage30 aggregate CPU/60wall/768MiB sampled tree RSS; driver6CPU,
+helper self+reaped+live-child aggregate stop20CPU plus10CPU supervisor
+reserve, max4 sampled processes,16MiB/file,128MiB/stage. run_capped uses
+track-tree, launch4096MiB, floor3072MiB, swap-growth64MiB, cpu6/wall60.
+Pressure/thermal/monitor failure or leftovers stop. Per-process caps are
+not aggregate enforcement; final accounting includes monitor overhead.
+
+Counterfactual: any hash, support, replay, checker or resource discrepancy
+stops this stage with evidence. No automatic retry, cap increase, solver,
+second proof source or new root/census. Publish freeze before execution.
+Next run this single fixed transformation and record its actual scope;
+afterwards read the final synthesis packet or change back to the open
+history-compatibility question rather than expanding this certificate task.
