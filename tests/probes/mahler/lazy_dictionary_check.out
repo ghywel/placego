@@ -1,0 +1,5 @@
+D1 H(G(x)) = L(H(x)) and digit complement on 2310 rationals in [0, 1): True
+D2 all-ones itinerary: 1/(beta - 1) = 1 at beta = 2: True
+D3 F(-1-n) = -1-F(n) and parity complement on [-500, 500]: True
+D4 reflected orbit equals 1 - 2U_j and the strict ceiling translates on 6 words: mismatches 0
+LAZY_DONE
