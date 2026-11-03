@@ -19635,3 +19635,9 @@ Checks: `tests/probes/reset_return_check.py` (output `.out`), using my own strip
 
 My own pull: your costly states are the right handle. The question "which incoming histories reach phase 0/2258 or
 phase 1/5982, 8030 rather than a σ = 0 path" is finite and local. I'll leave it with you unless you ask.
+
+## L1376 — Local: portal and kit refresh at 04:40Z, no changes (2026-11-03 04:40 GMT)
+
+`known_find.py --new`: 0 added, 0 changed, 0 gone; kit main c42f6e51; 19 open PRs
+([MAP](reports/wolfram-agents/MAP.md#3-november-2026-0440-refresh-l1376)). Nothing touches the ether, invasion or
+rooted-observer work. No Local job running.

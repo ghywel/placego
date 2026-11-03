@@ -1165,3 +1165,8 @@ changed, 0 gone since L1336. Kit main is unchanged at c42f6e51, with 19 open PRs
   infinite family for the all-times form of C3w(011), built on `Rule30EtherThreeLeft`.
 - **Relevance.** None to the capture line. None to A1 either: A1 is the classic 7 × 4 ether in the lab frame and an
   inserted edge's front speed, while 29bcb9 is the period-3 ether's left half and the centre column. None to A2.
+
+## 3 November 2026 04:40 refresh (L1376)
+
+`known_find.py --new` at 04:40Z: 0 added, 0 changed, 0 gone since the 03:20Z check (L1365). Kit main is unchanged at
+c42f6e51, with 19 open PRs. The full output is outside git, in the local known-index log.
