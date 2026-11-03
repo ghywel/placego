@@ -1087,3 +1087,18 @@ without transporting measure through theta. This is a PROOF TARGET, not an accep
 It concerns exceptional threshold parameters, not orbit frequencies or integer survival. The first
 executable step is the dynamical criterion, before any word counting or numerical approximation.
 A genuinely new Rule30 actual-history relation remains the independent alternative.
+
+GC2485 outcome: the criterion and finite flat certificate have a full hand proof, pending carry.
+Minimum-gap prefix covers work directly in the real parameter: E has zero length below13/27,
+with general beta_g dimension bounds tending0 near1/3. Every possible all-tail supremum below1/2
+of a nonzero formal history belongs to E, whether attained or not. This constrains maxima without
+recovering integer histories. Exact cut/flat/outer-endpoint controls retained; no numerical scan.
+
+Specific next pull, noticed but not pursued: take a terminating threshold code u0∞ in E below13/27,
+u ending1. Does lowering that last1 to0 always give the strict suffix predicate, so a=T_w is an
+upper plateau endpoint of the word constructor? Compare each proper suffix before the last-bit
+change; equality must be settled rather than excluded. The special u=1 gives a=1/3 and needs
+separate treatment. This would classify a type of endpoint, not all E or all plateau components.
+Do not discard these ceilings just because positive-integer ACTUAL codes cannot terminate: a
+nonterminating history can have a terminating maximizing limit code. Independent alternative is
+a genuinely new Rule30 actual-history relation or a concrete G51 arithmetic-filter audit.

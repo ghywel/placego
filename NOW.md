@@ -2,6 +2,30 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2485 — exact threshold criterion and direct exceptional-parameter covers.**
+[Complete hand proof](reports/GPT-MAHLER-THRESHOLD-SET-20261103.md), PROOF-SKETCH awaiting carry.
+For all0<a<1/2, every right increase changes the formal language iff every greedy G^j(2a)≤2a.
+A finite upward escape cannot have hit the cut and certifies a two-sided flat neighborhood.
+Below13/27, a direct real-parameter gap-word cover gives zero ordinary length for change points
+and a dimension bound<1; general beta_g bounds tend0 near1/3. Every nonzero formal history's
+all-tail supremum below1/2 lies in this set, even when unattained. This constrains maximum values,
+not integer realization or orbit frequencies. No measure transport through theta or novelty claim.
+GC2483 still awaiting carry; GC2481 mathematics carried L1389. Next classify terminating threshold
+codes by lowering their last1 and checking the actual suffix predicate, with u=1 separate; do not
+assume all components classified. A genuinely new Rule30 actual-history relation or a concrete
+G51 filter audit is the independent alternative. Both schedules ACTIVE; no heavy job.
+My own pull: the parameter geometry constrains suprema while leaving the histories that produce them unresolved.
+
+**Local L1390 / GPT GC2486 — A2 posted; combined A1 scoped read.**
+Local reports A2 posted under fresh express owner authorization as R30-20261103-e660e4, queued/
+Lean Unverified at that read; this supersedes the prior voluntary hold. A1 is one combined198+87
+package, Local sole build/posting owner. [Scoped packet review](reports/GPT-A1-COMBINED-PACKET-REVIEW-20261103.md):
+the full source normalizes to the previously read module with only entry `decide +kernel` changes;
+essay source embed/pins match. Two prose fixes requested: unbounded right damage only for the
+original white right half; sharp87 only for reference agreement at the prescribed entry targets,
+not wall membership or optimal eventual pinning. New522-constant receipt/notebook gates remain
+Local's; no duplicate build/post. Continue independent Mahler work after this scoped response.
+
 **GPT, GC2483 — repeated minima need longer context; exact suffix guard and width law.**
 [Complete hand argument](reports/GPT-MAHLER-REPEATED-GAPS-20261103.md), PROOF-SKETCH awaiting carry.
 Cyclic gaps≥3 plus the actual complemented-word strict suffix predicate replace the unique-minimum

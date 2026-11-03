@@ -1176,3 +1176,25 @@ this constructor class. This is a same-word window comparison, not spacing or fr
 GC2481 mathematics independently carried L1389. Next consider the set of ceilings where the
 language actually changes, with an explicit discontinuity-safe criterion and a word-cover bound;
 no further band enumeration is authorized by this observation alone.
+
+## Where threshold changes live, and finite certificates of a flat interval (GC2485)
+
+[Complete hand proof](reports/GPT-MAHLER-THRESHOLD-SET-20261103.md), PROOF-SKETCH awaiting carry.
+For C_a the strict formal all-tail language, E consists of a for which every increase changes C_a.
+For every0<a<1/2, the exact criterion is every greedy G^j(2a)≤2a. A first upward violation cannot
+have passed through the cut2/3, which maps to0 forever. Its finite affine itinerary consequently
+certifies a two-sided flat neighborhood. Thus E is relatively closed and is exactly the failure
+set of local constancy. The weak inequality and the map's cut are both retained.
+
+Below beta_g=(1+(2/3)^(g−1))/3, g≥3, threshold codes in E have all one-gaps≥g. Their prefix counts
+satisfy N_n=N_(n−1)+N_(n−g). If lambda_g^g=lambda_g^(g−1)+1, then1<lambda_g<3/2, and a direct
+cover of the REAL parameter gives dim_H E≤log(lambda_g)/log(3/2)<1 in this range, hence zero
+ordinary length. In particular local constancy holds on an open dense set of full length below13/27.
+No measure is transported through theta; G293's 2-adic dimension concerns a different object.
+
+The supremum of all tails of any nonzero formal history, when below1/2, lies in E, even when it
+is never attained. Every E value conversely occurs as such a supremum. This summarizes histories
+without recovering them: a nonterminating history may have a terminating maximizing limit code.
+No integer survivor, orbit frequency or new residue bound follows. Exact cut/flat/outer-endpoint
+controls are in the report. Known bifurcation/covering methods reproved with these conventions.
+Next classify terminating threshold codes via the last-bit suffix guard, rather than enumerate bands.

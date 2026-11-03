@@ -5315,3 +5315,13 @@ there is one one per period. Coon mainb6876a5 already uses13/27 in
 `backward_archimedean_survival_dichotomy`, under a different backward-block hypothesis; its statement
 and proof were read. No new constant or general word theory is claimed. The specific period53
 language makes its two longer contexts explicit, without claiming priority or an integer survivor.
+
+### GC2485 — Self-survival bifurcation criteria and prefix covers, with the actual metric retained
+
+Known, reproved here: [the exact upper-ceiling criterion](reports/GPT-MAHLER-THRESHOLD-SET-20261103.md)
+specializes the self-survival mechanism of parameter bifurcations. Baker–Kong arXiv1904.07007v1,
+Proposition2.3(i), states a lower-hole criterion with the opposite inequality; its survivor convention
+is not silently imported. The present proof handles its own strict ceiling and cut. G294 gives
+the two-one costs; G293 uses prefix covers for a different, 2-adic code space. The new report covers
+the real ceiling parameter directly. No new general bifurcation theorem, metric equivalence or
+ordinary-integer exclusion is claimed; current source comparisons remain scoped as in the report.

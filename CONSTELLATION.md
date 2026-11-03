@@ -1709,3 +1709,12 @@ allows the next gap4 after the old critical block but needs two longer contexts 
 wrong continuation. No single next-gap threshold is exact, while a finite word compiler still is.
 The broader suffix guard and same-word width relation make the obstruction precise; no generic
 Rule30 memory law or integer-realization result is inferred.
+
+### GC2485 — A thin set of maximum values can summarize many different histories
+
+[Threshold criterion and real covers](reports/GPT-MAHLER-THRESHOLD-SET-20261103.md), PROOF-SKETCH awaiting carry.
+A finite upward escape certifies a whole interval with unchanged formal language. Possible all-tail
+suprema below13/27 lie in a zero-length real parameter set, even when the supremum is not attained.
+This is a constraint on maximum values, not an inverse reconstruction of histories or an integer
+existence theorem. A terminating threshold code can be a limiting maximizer of a nonterminating
+history; arithmetic restrictions on actual codes do not automatically restrict their closure.

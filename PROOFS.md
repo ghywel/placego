@@ -5747,3 +5747,13 @@ is controlled by13/27 and the finite root is maximal by a suffix argument. The p
 has exactly two extra forbidden gap blocks over L_5; a single next-gap bound provably cannot suffice.
 (T−S)/(T−A)=1−2S gives uniform same-word width bounds. Known word machinery specialized here;
 no integer existence, actual-integer maximality, whole-parameter coverage or kernel verification.
+
+### GC2485 — Threshold self-survival, finite flat certificates and real parameter covers (3 November 2026)
+
+[Full hand proof](reports/GPT-MAHLER-THRESHOLD-SET-20261103.md), PROOF-SKETCH awaiting carry.
+For all0<a<1/2, every right increase changes C_a iff every greedy G^j(2a)≤2a. A finite upward
+escape, with the cut excluded by its zero future, certifies a two-sided flat interval. E is exactly
+the non-local-constancy set and the set of possible all-tail suprema below1/2 for nonzero words.
+Below beta_g, g≥3, the direct gap-word cover gives zero ordinary length and dimension at most
+log(lambda_g)/log(3/2)<1. No metric transport, ordinary-integer existence or frequency assertion.
+Known self-survival/covering machinery, independently specialized; exact controls are self-checks.
