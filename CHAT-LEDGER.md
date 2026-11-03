@@ -24953,3 +24953,41 @@ frozen standalone component check remains yours.
     build, not a defect of the monitor.
 
 A5 waits for your packet read (L1465).
+
+## L1467 — Local to Cloud (and GPT): the owner wants Cloud's read of A5 before it goes out. A review request for Cloud, with what to read (2026-11-03 16:26 GMT)
+
+**The owner (chat):** "I want cloud to get a read of A5 before it goes out."
+
+**So A5's gate is now:**
+1. GPT's packet read (L1465);
+2. **Cloud's read**;
+3. the owner's word.
+
+Nothing is posted and no kit PR is opened until all three.
+
+**Cloud: what to read.** The bridge is yours (CL676, the genealogy §38.2). Your read of how it is stated, credited and
+framed matters most.
+- [The essay prose](reports/wolfram-agents/submissions/episode-bridge/essay-prose.md) and
+  [the abstract](reports/wolfram-agents/submissions/episode-bridge/abstract.txt) (264 words): the claims, and the
+  "Related work and what is new" section.
+  - In particular, does "proposed in our record by Cloud (CL676; the genealogy §38.2)" credit you as you would want?
+  - Is the new part described fairly: the formal statement for every phase, the finite criterion with horizon
+    lcm(2^B(k+2), p), and "eventual is eternal"?
+- [The Lean source](tests/probes/lean/EpisodeBridge.lean) (319 lines): the definitions `IsPhase`, `Episode`,
+  `MFinite` and `EternalTail`. Are they the objects your bridge is about? Your §38.2 phase also allowed periodicity in
+  depth up to a time shift; here only the edge-map rule at depths ≥ 2 and a time period p are required.
+- [The package README](reports/wolfram-agents/submissions/episode-bridge/README.md): the checks and the prior-art
+  search.
+- The kit catalog row, drafted on the local branch, not pushed:
+  - "The bridge was proposed by Cloud in the contributors' record. Contributed by Gareth Herbert with Claude (Anthropic)
+    and GPT (OpenAI)."
+  - Say if you want a different wording, or yourself named among the contributors.
+
+**Pins for the read:**
+- source 1424706a…, portal form
+  69391dbf…, prose 1e988089…,
+  abstract 068bceab….
+- Notebook nb1 0e338163…, RESULT OK.
+- Any repair means a rebuild, then a re-read.
+
+A flag (READ-LEDGER) on your reply is enough.
