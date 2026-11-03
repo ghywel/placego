@@ -901,20 +901,50 @@ theorem entry_inv : Inv Gedge 300 (-72) 15 3 (startKey % 2 ^ 24) ∧ startKey % 
     rw [hx] at e
     exact e.symm
 
+/-- Radius-one locality: two rule-30 evolutions that agree at time `0` on `x ≤ c` agree at time `t` on `x ≤ c - t`. -/
+theorem agree_cone {G H : Nat → Int → Bool} (hG : IsR30Z G) (hH : IsR30Z H) {c : Int}
+    (h0 : ∀ x, x ≤ c → H 0 x = G 0 x) : ∀ t : Nat, ∀ x, x ≤ c - t → H t x = G t x := by
+  intro t
+  induction t with
+  | zero => intro x hx; exact h0 x (by omega)
+  | succ t ih =>
+    intro x hx
+    rw [hH, hG, ih (x - 1) (by omega), ih x (by omega), ih (x + 1) (by omega)]
+
+/-- The law from the start invariant, for any rule-30 evolution of the whole line. -/
+theorem law_from {H : Nat → Int → Bool} (hH : IsR30Z H) (hinv : Inv H 300 (-72) 15 3 (startKey % 2 ^ 24)) :
+    ∀ t : Nat, 300 ≤ t → ∃ A : Int, (∀ x, x ≤ A → H t x = E t x) ∧
+    (∃ x, A < x ∧ x ≤ A + 24 ∧ H t x ≠ E t x) ∧
+    -14 ≤ 19 * (A + 72) + 5 * ((t : Int) - 300) ∧ 19 * (A + 72) + 5 * ((t : Int) - 300) ≤ 22 := by
+  intro t ht
+  obtain ⟨-, hne, hkey⟩ := entry_inv
+  have hk : closure.lookup (keyOf 15 3 (startKey % 2 ^ 24)) = some 0 := by rw [hkey]; exact start_ok
+  obtain ⟨A, tq, dq, m, ψ, hI, -, hl, hψ, hne'⟩ :=
+    anchored closure_ok hH hinv (by decide) hk hne (t - 300)
+  have hb := List.all_eq_true.1 closure_bounds _ (lookup_mem _ _ _ hl)
+  simp only [Bool.and_eq_true, decide_eq_true_eq] at hb
+  rw [show 300 + (t - 300) = t by omega] at hI
+  refine ⟨A, hI.2.2.1, mismatch_of_ne hI hne', ?_, ?_⟩ <;> push_cast [show ((t - 300 : Nat) : Int) = (t : Int) - 300 by omega] at hψ <;> omega
+
 /-- **The front law of the inserted edge on the ring background `100100000` (temporal period 57).** For every `t ≥ 300`
 there is an anchor `A` with the background intact at and left of `A`, a mismatch within the 24 cells right of it, and
 `-14 ≤ 19 (A + 72) + 5 (t - 300) ≤ 22`. So the leftmost difference moves left at exactly `5/19` cell per tick. -/
 theorem edge_law : ∀ t : Nat, 300 ≤ t → ∃ A : Int, (∀ x, x ≤ A → Gedge t x = E t x) ∧
     (∃ x, A < x ∧ x ≤ A + 24 ∧ Gedge t x ≠ E t x) ∧
+    -14 ≤ 19 * (A + 72) + 5 * ((t : Int) - 300) ∧ 19 * (A + 72) + 5 * ((t : Int) - 300) ≤ 22 :=
+  law_from Gedge_isR30 entry_inv.1
+
+/-- **Any right tail.** The same law holds for every rule-30 evolution of the whole line whose initial row agrees with the
+inserted edge's at every `x ≤ 252`, whatever its cells beyond `252`: at `t = 300` the two agree on `x ≤ -48`, which holds
+the whole start invariant, and the closure accepts every later input from the right. -/
+theorem edge_law_tail {H : Nat → Int → Bool} (hH : IsR30Z H) (hag : ∀ x, x ≤ 252 → H 0 x = Gedge 0 x) :
+    ∀ t : Nat, 300 ≤ t → ∃ A : Int, (∀ x, x ≤ A → H t x = E t x) ∧
+    (∃ x, A < x ∧ x ≤ A + 24 ∧ H t x ≠ E t x) ∧
     -14 ≤ 19 * (A + 72) + 5 * ((t : Int) - 300) ∧ 19 * (A + 72) + 5 * ((t : Int) - 300) ≤ 22 := by
-  intro t ht
-  obtain ⟨hinv, hne, hkey⟩ := entry_inv
-  have hk : closure.lookup (keyOf 15 3 (startKey % 2 ^ 24)) = some 0 := by rw [hkey]; exact start_ok
-  obtain ⟨A, tq, dq, m, ψ, hI, -, hl, hψ, hne'⟩ :=
-    anchored closure_ok Gedge_isR30 hinv (by decide) hk hne (t - 300)
-  have hb := List.all_eq_true.1 closure_bounds _ (lookup_mem _ _ _ hl)
-  simp only [Bool.and_eq_true, decide_eq_true_eq] at hb
-  rw [show 300 + (t - 300) = t by omega] at hI
-  refine ⟨A, hI.2.2.1, mismatch_of_ne hI hne', ?_, ?_⟩ <;> push_cast [show ((t - 300 : Nat) : Int) = (t : Int) - 300 by omega] at hψ <;> omega
+  have hc := agree_cone Gedge_isR30 hH hag 300
+  obtain ⟨⟨htq, hdq, hE, hm, hs⟩, -, -⟩ := entry_inv
+  refine law_from hH ⟨htq, hdq, fun x hx => ?_, hm, fun i hi => ?_⟩
+  · rw [hc x (by omega)]; exact hE x hx
+  · rw [hc _ (by omega)]; exact hs i hi
 
 end Ruliology.CellularAutomata.Rule30MovingWall

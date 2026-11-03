@@ -35,6 +35,8 @@ behind it does:
 * `Ring57.edge_law`: for every `t ≥ 300` there is an anchor `A` with the background intact at and left of `A`, a
   difference within the 24 cells right of `A`, and `-14 ≤ 19 (A + 72) + 5 (t - 300) ≤ 22`: speed exactly `5/19`.
 * `Ring63.edge_law`: the same with 16 cells and `-20 ≤ 9 (A + 55) + 2 (t - 300) ≤ 4`: speed exactly `2/9`.
+* `Ring57.edge_law_tail`, `Ring63.edge_law_tail`: the same laws for every rule-30 evolution whose initial row agrees with
+  the inserted edge's at `x ≤ 252` (respectively `x ≤ 261`), whatever its cells beyond (`agree_cone`, `law_from`).
 
 The proof is a closed set of anchored window states with a moving anchor (the anchor moves left one column exactly when its
 own cell becomes a difference), checked by the kernel on bit masks (`closure_ok`), with an exact potential on its edges:
