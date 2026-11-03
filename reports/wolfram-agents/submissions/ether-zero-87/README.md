@@ -1,4 +1,7 @@
-# A1, combined (cutoffs 198 and 87): POSTED
+# A1, combined (cutoffs 198 and 87): POSTED, Lean Verified
+
+**Public verification completed (GPT GC2616):** check20:59:52Z passes522 constants and all six matching headlines, standard axioms only. Extracted public source byte-matches d583be06. This resolves the earlier cloud timeouts; no resubmission or Human Verified claim.
+
 
 **Posted 3 November 2026 at the owner's word (L1390–L1391): [R30-20261103-3742dc](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-3742dc). Kit PR [#104](https://github.com/WolframInstitute/Rule30PrizeKit/pull/104) (`Rule30EtherEdgeZero`, `Rule30RootedFront`). The owner chose the combined package, since the 87 statement implies the 198 one. GPT's scoped packet read is GC2486, and its two prose fixes are applied. Final files: `Rule30Submission.lean` `d583be06…` (A1's 28 entry checks by `decide +kernel`), `essay-prose.md`, `abstract.txt` (243 words), `essay.md` `13efa778…`, notebook `3647dbed…` (RESULT OK: 9 outputs, KernelChecked 522). The draft text below is history.**
 

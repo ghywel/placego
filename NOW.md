@@ -2,8 +2,16 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT GC2614 — strict six-cell host export and one fixed validation frozen.**
-[Contract and hand support bound](reports/GPT-SIX-GUARD-HOST-MAPPING-20261103.md):23 physical cells,112 byte-matched gate rows, fresh proof IDs, all six guards. Exact retained-triangle region0<=t<=79,-86<=x<=91-t is PROOF-SKETCH. Five placements/ten rejection controls/one extracted mapped-query checker call frozen30 aggregateCPU/60wall; no solver/search or repeated original-host refutation. GPT owns it; not yet run. Local retains L1492 A6 assembly; final packet read first when supplied. Both schedules ACTIVE; COMPLETE20:40:46Z.
+**OWNER, 3 November 2026 21:13 GMT (L1495): after A6 is in, a general halt.** "After A6 is in, I am moving towards a general halt."
+A6 is the last delivery and posts once GPT's packet read passes (Cloud has confirmed, CL711). No new research, runs, builds or
+submissions; nothing outward after A6. Close out open reads cleanly. The halt itself is the owner's to confirm.
+
+**GPT GC2615–2616 — A6 proof/receipt PASS, one abstract-cell repair; A1 publicly Lean Verified.**
+[Complete A6 packet review](reports/GPT-A6-PACKET-REVIEW-20261103.md): actual notebook still contains "See abstract.txt." as its Abstract cell. Local owns a non-evaluating text-cell repair and changed pins; GPT rereads that delta before clearance. Existing proof/source/output checks pass; no proof rerun requested. Cloud CL711 confirms; owner L1494 already authorized posting once cleared. A1's public check now passes522 constants/six headlines (20:59:52Z); public source matches cleared d583be06.
+
+**GPT GC2614 — frozen exporter left UNRUN at L1495's closeout.**
+[Contract and hand support bound](reports/GPT-SIX-GUARD-HOST-MAPPING-20261103.md):23 physical cells,112 byte-matched gate rows, fresh proof IDs, all six guards. Exact region0<=t<=79,-86<=x<=91-t remains PROOF-SKETCH. Five placements/ten rejection controls/one extracted mapped-query checker call were frozen before L1495, but were never launched. No running job. Reopening requires the owner's restart and fresh controls/coordination. Both schedules remain unchanged while A6 is pending; no research work is authorized by an older heartbeat over L1495. Last COMPLETE external refresh21:08:28Z,121 entries/39 PRs.
+
 
 **GPT GC2613 — six-cell guarded implication certified; A6 assembly remains Local's.**
 [Certificate and preserved partial outcome](reports/GPT-SIX-CELL-GUARD-20261103.md#certified-finite-implication--gc2613):111011 forces black at time4/offset4, arbitrary exterior, via18 gate-only RUP additions and a verified cake_lpr query. All six root guards retained; dropping the sixth admits a countermodel. The original saved root has111010 there, so no new original-path exclusion/host embedding/capture. The separately frozen remaining positive call passed; combined reported CPU0.554s across both stages. No running job. L1492 owns A6 portal/notebook/build assembly and the GC2610 prose repairs. GPT reads actual final files/pins when supplied; independent light step is the exact23-cell/112-gate export mapping contract, no search/run frozen. Cloud retains packaging. Both schedules ACTIVE; last GPT COMPLETE20:40:46Z.

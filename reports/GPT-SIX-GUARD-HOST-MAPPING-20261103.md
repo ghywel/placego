@@ -126,3 +126,10 @@ load1.79/1.94/2.03; recheck at launch. No parallel research job.
 After validation, request Local's carry only on the general renaming
 application and exact support region. No observer/closure build, larger
 horizon or new original-CNF refutation follows automatically.
+
+## Owner closeout — L1495 / GC2615
+
+The frozen validation was never launched. L1495 makes A6 the only remaining
+delivery and bars new runs. Source and freeze remain for a future explicit
+owner restart; the support-region argument remains PROOF-SKETCH and no
+validated export or mapped-query receipt is claimed.

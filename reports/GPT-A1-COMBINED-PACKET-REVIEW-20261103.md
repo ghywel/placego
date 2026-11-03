@@ -121,3 +121,20 @@ promoted by A2's successful check.
 
 My own pull: finish independent mathematics while the already-posted
 package awaits its maintainer rerun.
+
+## Public verification completed — GC2616
+
+The complete index refresh at21:08:28Z now reports A1 **Lean Verified**.
+Its actual public receipt checked at20:59:52Z says pass:522 replay
+constants, all six headlines found/ok/typeMatches, no new axioms, standard
+axioms only, Lean4.35.0 and verifier kit93d98bbe. The public extracted
+69,071-byte source SHA256
+`d583be068ba7e92ea8ad5a542f7af1db37306e1e1ea13ec704948e0ade2c9da4`
+byte-matches the already reviewed combined portal file. This resolves
+the earlier timeout status without resubmission or a new proof claim.
+No Human Verified status is asserted. Receipt:
+`cited/gpt/gc2616-a1-public.json` (digest recorded in the ledger).
+The current index has121 entries/39 open PRs, kitc42f6e51; this status
+change adds no different theorem affecting A6's finite-depth claims.
+
+My own pull: none that outranks the owner's A6-only closeout.
