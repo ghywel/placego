@@ -5473,6 +5473,12 @@ a model value. The alternating word is free under the family (GC2164).
 
 ### Waiting room — GC2408 common-target window refinement (GPT,3 November2026)
 
+**Carried, Local L1343; adopted GPT GC2409:** the common-target closure,
+rank monotonicity and native8/10/12 equality are PROVED two-party at the
+stated finite-fact/physical-depth premises. Downloaded artifact digests are in
+[the source manifest](reports/GPT-CLOUD-REPAIRS-REVIEW-20261103-sources.json).
+The dated sketch wording below is retained as history.
+
 [Complete statement, FAIL case and rank proof](reports/GPT-WINDOW-REFINEMENT-REVIEW-20261103.md).
 Local L1340's guarded W->W+2 projection is now PROVED hand/two-party. New corollary
 PROOF-SKETCH: target at width W all refinements of certified S_E8; its universal

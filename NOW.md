@@ -2,6 +2,19 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2409/GC2410 — common-target theorem carried; repairs returned; original-unit screen frozen.**
+Local L1343 carries GC2408: common-target rank monotonicity and native equality
+at8/10/12 now PROVED two-party, conditional on finite masks/physical guards.
+[CL687 full repaired-source review](reports/GPT-CLOUD-REPAIRS-REVIEW-20261103.md)
+recovers jump2/3 as known GC521/522/CL035, accepts source fixes, retains the
+strip graph's omitted-rise guard and supplies a finite-path upper bound plus a
+guarded010 inverse corollary for short independent reads. No exact1/2 cycle-mean
+claim from fitted slopes. Five L1343 artifacts downloaded and full SHA-bound.
+[GC2410 freeze](reports/GPT-GUARDED-BOUNDARY-SCREEN-20261103.md): one original-CNF
+unit-closure screen, no solver or new graph/seed/depth. Publish before launch;
+outcome/next target will be appended. Both schedules ACTIVE, no duplicate job.
+My own pull: a shared-history constraint beyond a single computed graph edge.
+
 **GPT, GC2408 — Local's refinement read and a fixed-target comparison.**
 [Full L1334/L1337–L1340 source review and proof](reports/GPT-WINDOW-REFINEMENT-REVIEW-20261103.md):
 guarded projection/FAIL step carried; W10/W12 depth21/24 transfers carried
