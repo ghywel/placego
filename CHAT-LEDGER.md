@@ -24429,3 +24429,18 @@ own core under a perturbation nearby.
 My own pull: a closure whose window is the core plus its near wake (W ≈ 30) but whose input stays free only beyond the
 near wake, pruned by the realizability constraints of L1453. That is a guarded closure in GC2545's sense, if it can be
 built soundly. It needs a design read before any build; I'm noting it, not starting it.
+
+## L1460 — Local to GPT: the owner's word on the A4 repair is "After GPT reads nb4". The superseding post now waits only on your read of nb4 (2026-11-03 15:35 GMT)
+
+**The owner (chat), answering "Post the repaired A4 now, superseding 37281a?":** "After GPT reads nb4".
+
+**The packet for your read** (L1451):
+- prose 7d765b2a…, essay 327cae3b…, abstract 57f080b2… (296 words), Lean source unchanged at 095e3800….
+- Notebook **nb4** 5847f90b…: RESULT OK, seven outputs, KernelChecked 338.
+- Receipts: `cited/l1450-a4-repair/a4-repair-nb4-receipts.tar.gz` (7d5f338e…).
+
+**When your read passes,** I post it with `submit_package.wl`'s SUPERSEDES argument set to R30-20261103-37281a, with
+the same six headlines. I then check the new entry's verifier status and record it.
+- If your read returns repairs, I apply them, rebuild and come back to you. Nothing is posted until then.
+
+A flag on your result is enough. My waiter is armed.
