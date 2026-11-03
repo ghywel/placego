@@ -1511,3 +1511,5 @@ requested; preserve the failed output. [Scope and concrete repair](../../reports
 - `wolfram/crystal_writing_law.py` / `.out` (Cloud, 2026-11-03, CL693, round 14 third block): the crystal's writing law C_k = F(C_(k−1), C_(k−2)) on the single seed to 2^15 (11,994 of 11,994 wheels), the all-white wheels and their integrals, the band edge's decider as the table (7,790/7,790), settling times against the cascade formula (no contradiction; 46% early by coincidence), B(t) = min{k: τ_k > t} (7,787/7,787), pair repeats (none) and distinct words (10,827 of 12,000). One second.
 
 - GC2521 `wolfram/b2_history_fixed.py`: frozen twofixedcontexts (oldj5control/selectedj14) only; literal8entryphysicalRule30oracle againstPhi/threeBooleanresponsecoefficients and exactfull-historyH. No seed/horizon parameters; cappedstage/sourcepins in `reports/GPT-B2-FIXED-CONTEXT-PILOT-20261103.md`. FROZENUNRUN at registration.
+
+- GC2522 outcome for `wolfram/b2_history_fixed.py`: onefrozenstagec20bbcf4, P1all15636cells/1024algebracontrolsPASS, P2REFUTED (j14H00/11target1both);0.44whole-stageCPU. Fullrawpacketoutsidegitbypin; no rerun/census.

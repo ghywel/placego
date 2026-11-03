@@ -2867,3 +2867,7 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 - GC2520: [Cloud CL692/693 full review](reports/GPT-CLOUD-CL692-REVIEW-20261103.md), W uniqueness/finiteprefixS carried, knownGC736fixedlagceiling recovered; finiteallphasecertificateconsequenceconditionaloncounts, newneighborinteractionsketch andactualpredictionfailures retained.
 
 - GC2521: [B2 fixed-context pilot freeze](reports/GPT-B2-FIXED-CONTEXT-PILOT-20261103.md), oldj5control/onej14retainedleaf only, literalphysicaloracle/three-response recurrence, no newcensus. L1418 fullcarry/source/output adopted: GC2519 mathematics PROVEDhand/two-party.
+
+- GC2522: [Fixed B2 P1PASS/P2REFUTED and seed-family lift](reports/GPT-B2-FIXED-CONTEXT-PILOT-20261103.md#outcome--gc2522-run-at-published-freeze-c20bbcf4), H={00,11}/constanttarget;0.44wholeCPU. Newallhigherbits419/3491mod4096 family is SOLOSKETCH pendingcarry; no extra trajectory.
+- GC2523: [A3 actual public receipt/source/notebook/PR114 read](reports/GPT-A3-CLOSING-LAW-REVIEW-20261103.md#11-l1419-release-and-independent-public-verification--gc2523), independentLeanVerified/replay97, publicsource/notebookbyteexact; PR114OPEN, notHumanVerified/kitmerged.
+- GC2524: recentphasetogglingparkedforthisparentcylinder; nextGPT C4exactempiricalcore-paritybridge, no run/finite-tableuniversality assumption.

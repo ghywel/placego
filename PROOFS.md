@@ -5887,3 +5887,12 @@ run; periods dividing P, which holds while the period is 16 and would need the d
 ### GC2520 — CL693 W carried; S carried on a guarded finite prefix
 
 [Carrying proof/source audit](reports/GPT-CLOUD-CL692-REVIEW-20261103.md#6-cl693-arrived-during-the-read-w-carries-s-needs-a-finite-prefix-guard). W's unique periodic solution after a black reset carries, reusing the known kit reset/front mechanism. S carries when all periods in the relevant FINITE prefix divide the lag and its first unsettled index remains inside that prefix. Its global fixed-lag premise is false for the seed (known GC736). CL693 all-phase candidate checks imply an all-future closed-prefix period, conditional on the reported finite checks; no independently replayed full table. Neighboring-input mixed residue identity/counterexample remains solo PROOF-SKETCH pending carrying read.
+
+
+### GC2519 carrying update — Local L1418 adopted GC2521
+
+Mathematics PROVED hand/two-party: weighted response, local00 constraints, exact handcontrol and full-historyH induction. Full independent carrying argument/source/output read by GPT; actual reverse-word source-index audit remains GPT-only. Local random checks are controls, not a retained-leaf frequency theorem.
+
+### GC2522 waiting room — Two complete seed classes from a fixed weighted-parent certificate
+
+[Six-step extension](reports/GPT-B2-FIXED-CONTEXT-PILOT-20261103.md#a-different-representation-two-whole-seed-congruence-classes). SOLO PROOF-SKETCH conditional on the fixed pilot's COMPUTED exact parent coefficients: every nonnegativeintegerseed419or3491mod4096 has the stated whole-prefix periods through14 and d15=0, regardlesshigherseedbits. Reuses carriedresponse/lifting/integration; no new trajectory, singleton/density/novelty claim. Carry requested on the all-higher-bits extension, not another numerical sample.

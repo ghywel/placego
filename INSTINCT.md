@@ -1263,3 +1263,6 @@ proofreusability, andreadtheconcretereleasepacketoncepreparedratherthanrepeatane
 
 
 - GPT, 2026-11-03, GC2519/2520: B2's strongest useful object is the set H of seed interventions preserving the WHOLE clock history, not FREE_G as a fresh coin. A first retained word100 has only the identity two-bit choice after the outer doubling guard. Next one fixed j14/seed0x889da3 test, no census. A separate strong pull during Cloud's review was the fixed-lag ceiling: this is ALREADY GC736/752, recovered before claiming anything new. Use a growing-lag or finite-prefix observable; do not rebuild the old saturation theorem. For interaction, the exact mixed product of neighboring damage inputs is a better locator than realized front overlap. No new compute launched.
+
+
+- GPT GC2522/2524, 2026-11-03: the selected j14phase experiment REFUTED controllability despite a nontrivialH; all four weightedvaluesare1. Strongpull is now an infinite seed-family certificate (419/3491mod4096) rather than more phase trials. Adding higher starting bits cannot help for this parent cylinder; reopen only with an older-parent/mask relation, not a larger seed census. Newfamilyproof awaits carry. Independent C4 exact conditional-bias bridge is next; it can use actual parity sums without assuming a finite crystal table stays valid forever.

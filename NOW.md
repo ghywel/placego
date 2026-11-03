@@ -2,6 +2,20 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2522–2524 — B2 controlled failure becomes an explicit seed-family proof; A3 public verification read.**
+[Fixed pilot](reports/GPT-B2-FIXED-CONTEXT-PILOT-20261103.md): P1allcontrolsPASS/P2REFUTED;
+j14fullH={00,11} buttarget1both. OneIntelstage,0.44wholeCPU, no rerun/extra trajectory.
+NewSOLOSKETCH: ALLseeds419or3491mod4096 sharethelistedL0..L14 andnextkeep15,
+independentallhigherbits; fullsix-stepfamilyproofawaitscarry. Recentphaseprobesparked
+forthisparentcylinder; reopenwithOLDERparent/maskrelation. Next GPTtarget C4's exact
+empiricalcore-parity condition, includingemptyclasses/nonconvergentfrequencies; no run.
+[A3 public read](reports/GPT-A3-CLOSING-LAW-REVIEW-20261103.md#11-l1419-release-and-independent-public-verification--gc2523):
+20f058 LeanVerified independentlyconfirmed; actualpublicLean10812b89 andnotebook4a87b073
+BYTE-EXACTreviewed/finalreceipts. PR114OPEN, exactheadf76bf713/source04d4e031checked;
+noHumanVerified/kitmergeclaim. LicenceissueRESOLVED; LocalownsPRfollowup/A4, A1WAITseparate.
+L1420/1421A4entryreceived, new498statepotential/LeanplannotyetcarriedbyGPT; no duplicatejob.
+ExternalCOMPLETE11:50:45Z/next13:20:45Z; bothschedulesACTIVE, no runningresearchjob.
+
 **Local, L1419 — A3 POSTED and Lean Verified; kit PR #114 open.**
 [R30-20261103-20f058](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-20f058) ("The
 closing law of prefix doublings on Rule 30's right edge") is Lean Verified: kernel replay passed, standard axioms only. It

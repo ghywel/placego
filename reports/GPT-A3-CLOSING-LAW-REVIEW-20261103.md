@@ -411,3 +411,54 @@ portal post followed by kit PR, both owner-authorized L1415/L1416. Once the
 licence is restored, the next gate is the exact current-essay rebuilt
 notebook/receipts, then the authorized post and public receipt inspection.
 No additional routine owner permission round is introduced by this review.
+
+
+## 11. L1419 release and independent public verification — GC2523
+
+L1419 complete outcome read: owner-authorized cleanup of stale Wolfram MCP
+kernels restored the licence; Local rebuilt the exact274ed1c5 essay,
+posted the portal package, and opened kit PR114. No GPT kernel cleanup,
+Wolfram invocation, posting or external comment was performed.
+
+Independent verified-TLS read of the official submissions JSON confirms
+[the public A3 submission](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-20f058),
+R30-20261103-20f058: **Lean Verified**, claim partial, submitted12:26Z,
+checked12:27:09Z. Replay97constants/ok, fiveheadline names/typeMatches/ok,
+nonewaxioms, standard axioms only; Lean4.35.0/verifier kit93d98bbe.
+No official prize target is verified. The status carries no Human Verified
+badge in this snapshot. The public extracted Lean is EXACTLY the reviewed
+10812b89 source,18407bytes. Web rendering failed; the official JSON/file
+API reads succeeded with certificate verification, not a substitute source.
+
+Final immutable receipts `cited/l1414-closing-law/a3-receipts-l1419.tar.gz`,
+SHA256 `68282ab04fe60426b44653ebf442af23c0145f103e92cddd7abda3cd78cd3299`,
+were downloaded and every manifest entry hash-verified. The current essay/
+updated driver pins match. Outputs1–6 are byte-identical to the fully read
+L1414 receipts; output7 differs only in the fresh LeanLinkTmp module name,
+whose actual KernelChecked97 object was read. Final summary reasons empty,
+seven outputs, zeroMESSAGECELLS,15165handler events. Internal build27s;
+outer receipt45.16wall/27.42user/2.60sys on Local, not an Intel measurement
+or fresh stage-wide monitoring audit.
+
+The ACTUAL public notebook was downloaded as well:107086bytes, SHA256
+`4a87b0730f122b84e14e639438e979c259f43863bd9e194c61009defedd18d30`,
+byte-identical to the final receipt notebook. Its literal local-path scan
+passes. Thus source, completed prose, final notebook receipt and public
+publication are now independently tied together; the old82477074 artifact
+is superseded and is not used to claim this release passed.
+
+[Kit PR114](https://github.com/WolframInstitute/Rule30PrizeKit/pull/114)
+is OPEN, exact head `f76bf713b35f90cdc200c57ac0fa55ff9b16060b`.
+Read current description, changed-file list, README/import diff and actual
+module at that head; fetched SHA256
+`04d4e03191c4822407109806de2a6a986cc1abfe65e953940741b40a423d5076`
+matches the reviewed generator reconstruction and declaration/proof body.
+Comments/reviews/check-rollup are empty in this snapshot. This is an open
+contribution, not kit acceptance or merger. No new full-kit build was run.
+
+Independent public receipt/source pins/metadata retained in
+`cited/gpt/gc2523-a3-public-receipt-20261103.json`,47469bytes, SHA256
+`d4a73f155aff218dd444f9112833b0c73f60583f980957773c1ee0e4b18c5d8d`.
+This targeted public read does NOT reset the last COMPLETE global external
+index timestamp11:50:45Z. Local owns PR follow-up and A4; A1 maintainer-WAIT
+remains separate. No owner activation action is now required for A3.
