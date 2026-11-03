@@ -5,7 +5,7 @@ drive A4's one-way window (W = 16) from pattern 3's actual state at t0 = 3000 on
 existential input filter (a due colour constrains only an ACTIVE input; joins of two known values for the same physical
 cell reject on disagreement, even on an ignored input). Reports, over many paths, how often the old monitor rejects, whether
 the new one has rejected by the same tick, and the saved emptying path's outcome.
-Run: python3 tests/probes/wolfram/a4_observer_compare.py DATA63.json PATH.json NPATHS LEN SEED
+Run: python3 tests/probes/wolfram/a4_observer_compare.py DATA63.json PATH.json NPATHS LEN SEED [literal]
 """
 import json
 import random
@@ -14,6 +14,7 @@ import sys
 import numpy as np
 
 data = json.load(open(sys.argv[1])); pj = json.load(open(sys.argv[2])); NP, LEN, SEED = map(int, sys.argv[3:6])
+LITERAL = len(sys.argv) > 6 and sys.argv[6] == 'literal'  # GC2579: use only the due value as known c (GC2577's formulas)
 orb = [tuple(o) for o in data['orb']]; q = len(orb); N = data['N']; r0, s0 = data['r'], data['s']
 rule = lambda a, b, c: a ^ (b | c)
 
@@ -53,7 +54,7 @@ def new_step(fl, strip, mv, active, label):
     p0, p1, c = fl
     if c is not None and active and label != c:
         return None
-    known_c = c if c is not None else (label if active else None)
+    known_c = c if (c is not None or LITERAL) else (label if active else None)
     a, b = strip[-2], strip[-1]
     def a10(i):  # a10 ending at strip index i (0-based): strip[i-2], strip[i-1], strip[i] = v, 1, 0
         return strip[i - 2] if strip[i - 1] == 1 and strip[i] == 0 else None
