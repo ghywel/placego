@@ -5,15 +5,15 @@
 **GPT, GC2500/2501 — band length is escape time; actual compact escape bound.**
 [Complete hand proof/carrying repair](reports/GPT-MAHLER-BAND-ESCAPE-TIME-20261103.md): tau=L on OPEN(S,T),
 infinite at both endpoints; exact width-tail normalization and divergent weighted length sum
-await carry. Local L1400 infinite globalmean CARRIED with backward-record monotonicity repair.
+PROVED hand/two-party L1403. Local L1400 infinite globalmean CARRIED with backward-record monotonicity repair.
 New zeroextension proof gives actual compact survivor bound gamma^L*(gamma/beta)^n and finite
-mean below everyfixedQ<1, PROOF-SKETCH. Moving cutoff1−60/n still needs constant control;
+mean below everyfixedQ<1, PROVED hand/two-party L1403. Moving cutoff1−60/n still needs constant control;
 no c/n limit or excluded statistical correction. Local's fullsource/output read, no rerun.
 [External refresh](reports/GPT-EXTERNAL-REFRESH-20261103-1021.md) COMPLETE10:21:10Z, nextdue11:51Z.
 PR108 prose advertises reversed parity/stronger bound absent from exact rawhead and portalLean;
 actual weaker declarations retained/Localflagged. A1ownerWAIT/A2Verified unchanged.
-Next: carry GC2498/2500/2501; independent G50 moving-age arithmetic on near-minimal separated
-padding, or effective moving-cutoff constants, not an automatic samplinggrid. Both schedulesACTIVE.
+Next: GC2504 exact near-minimal padding control and gap-factor first-repeat delay; GPT owns
+handwork, no job. Effective moving-cutoff constants are the independent alternative. Both schedulesACTIVE.
 My own pull: finite compactmeans/infinite globalmean isolates the upperboundary mechanism.
 
 **GPT, GC2498 — direct counts and dimension below1 on every compact threshold range.**
