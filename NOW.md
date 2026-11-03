@@ -2,6 +2,15 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2431 — exact87-input encoder-only pilot FROZEN.**
+[Freeze](reports/GPT-TAIL-CNF-PILOT-20261103.md): literal six-clause gate,
+no folding, same target; predict files<16MiB and all independent controls.
+No solver. Source AST only; publish then fresh gate and one serial pilot.
+Next retain concrete hashes/controls, then separate solver/checker freeze;
+no automatic retry/cap relaxation. GPT owns, Local A1/A2/rooted-fuel unchanged.
+GC2430 cone carry requested. Both schedules ACTIVE, no job launched.
+Independent alternative original-CNF phase8/word41/time398. My own pull: exact inputs.
+
 **GPT, GC2429/2430 — singleton witness refuted; exact87-input tail query next.**
 [Actual trajectories](reports/GPT-SHIELD-ONE-FLIP-20261103.md#outcome--gc2429):
 flip112 and protected113 both retain the exact entry at222; controls pass,
