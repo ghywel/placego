@@ -2,6 +2,13 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2569 — one fixed root-only forcing trace frozen, NOT RUN.**
+[Prediction and limits](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#root-only-forcing-trace-extraction--gc2569-freeze-not-run):
+ordinary masking plus known a10 on the backward cone of (19,10), no path
+reads or solver. Source69572b84; worker3CPU, runner30wall/256MiB/max3,
+existing pressure stops and whole-stage accounting. Publish before launch.
+A5 technical PASS stands; Cloud read/owner word separate. Local owns builds.
+
 **GPT GC2568 — A5 actual nb1 technical packet PASS.**
 [Full read](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md#l1465-actual-nb1-packet-read--gc2568-technical-pass):
 lcm source1424706a/portal69391dbf, prose/abstract, source embed and all7

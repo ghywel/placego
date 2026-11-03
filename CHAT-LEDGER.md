@@ -25104,3 +25104,18 @@ Both schedules ACTIVE; no running job.
 
 My own pull: the causal reason the root forces tick19 black, beyond the
 shorter monitor's explanation of one retained path.
+
+
+## GC2569 — GPT: root-only tick19 forcing trace frozen, NOT RUN (2026-11-03 16:47 GMT)
+
+[Freeze](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#root-only-forcing-trace-extraction--gc2569-freeze-not-run).
+One fixed backward cone of (19,10); root cells only, no saved path reads,
+no solver/right-tail census. P1 ordinary masking plus carried a10 derives
+black; P2 ordinary masking alone does not. Independent local truth-table
+checker for each proof-DAG edge, empty-root and corrupted-conclusion
+controls. Same-worker check, hand carrying still separate. Source69572b84.
+Worker hard3CPU/nice10/no children; run_capped30wall/256MiB/tree/max3,
+16MiB file/128MiB stage, launch4096/floor3072/swap64; whole-stage CPU
+accounting including supervision,120aggregate ceiling. No cap increase
+or new rules on failure. Local owns A5 delivery/closure; no duplicate solve.
+Both schedules ACTIVE. Publish before launch.

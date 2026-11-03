@@ -424,3 +424,61 @@ swap growth0, no external pressure/thermal stop. CHILD_FAILED rc1, no job
 left. Raw evidence remains outside git by digest. The failed prediction
 and exact frozen source/driver are retained; no later proof status is
 inferred from the failure diagnostics.
+
+
+## Root-only forcing-trace extraction — GC2569 freeze (NOT RUN)
+
+GPT owns one small fixed-root derivation attempt, after completing A5's
+technical review. Local's single-read19 SAT proof already exists; this
+runs no solver and repeats no right-tail enumeration. The question is
+whether **ordinary one-step masking plus the known a10 two-step identity**
+suffice to derive X(19,10)=1 from the saved root, without any path reads.
+
+Prediction P1: those two rule schemas derive the target black, producing
+a small checkable proof DAG. Counterfactual: the target stays unknown,
+which refutes this representation's sufficiency, not Local's UNSAT claim.
+P2/control: ordinary single-step masking alone leaves it unknown. No
+adaptive new rules, root, horizon, suffix census or resource enlargement
+in this stage. A failed P1 redirects to the exact remaining dependencies.
+Success would explain why the whole-row model forbids the read independently
+of the saved path and identify a reusable ancestor obligation.
+
+[Extractor](../tests/probes/wolfram/a4_root_forcing_trace.py), SHA256
+69572b8424c3f166800487d9b048b64abe879aa77db40e3d633a17144ac69538.
+Only the backward cone of (19,10) is visited: initial positions -9..29;
+-9..0 come from exact phase tq39/dq0, positions1..16 are the retained strip,
+and17..29 are unknown. All cells outside the supplied initial interval
+remain arbitrary. No time-dependent boundary clamp or path input is used.
+Inputs are the existing background528b5760 and saved root30dee77c, pinned
+in the script. It reads only the latter's start field, not its path/word.
+
+Every derived constant records its premises. A separate checker in the
+same source evaluates the literal Rule30 truth table over all missing
+parents of each ONE- or TWO-step implication; it does not trust the
+extractor's masking/a10 formulas. This is a same-worker finite self-check,
+not a Local carry or kernel certificate. Controls: empty initial facts
+produce no conclusions; ordinary-gate-only comparison; flip the target's
+claimed value and require local proof checking to reject it if found.
+The unexpected check is that every proof leaf comes from the root alone.
+
+Record searched: complete L1463, GC2555/2556 original-CNF translation,
+GC2562/2564 and known GC2026/L1143. Actual Local137-line encoder and
+GPT original-CNF reconstruction reread. Record/kit/portal/open-PR search
+for a10/0011/forced-cell finds known masking/forcing and strip results;
+no new identity or novelty claim is intended. Current complete external
+refresh16:34:54Z/kitc42f6e51. Python is the TOOLS small exact simulation/
+replay tool; no symbolic simplifier or Wolfram substitute is used.
+
+One Intel Python worker/nice10, no subprocesses from the extractor and
+no other research job. Worker hard CPU3 seconds; run_capped wall30,
+RSS256MiB, file16MiB/stage128MiB, tree tracking/max3 processes,
+launch4096/running3072MiB headroom, swap-growth64MiB. Overall stage120
+aggregate CPU ceiling; the single no-child research worker is kernel
+capped at3 CPU seconds, and launcher/monitor CPU is separately included
+using an outer whole-stage time receipt, rather than treating each
+process limit as an aggregate limit. Full accounting distinguishes that
+outer total from its overlapping worker/inner-time figures. Thermal is
+checked before and after this subsecond-expected stage; pressure/monitor
+failure stops through run_capped, with no retry. Measured free+inactive
+4442MiB, swap1173.75MiB, thermal100/100 at16:45Z; launch gate rechecks.
+Publish this source/freeze and ownership flag before the single launch.
