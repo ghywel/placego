@@ -43,6 +43,8 @@ on one page, [NOW.md](NOW.md).
 
 **The state and the maps**
 - [NOW.md](NOW.md): the current state on one page, rewritten at each decisive verdict.
+- [NIGHT-TASKS.md](NIGHT-TASKS.md): the owner's overnight direction of 3 November as a suggested menu for the workers
+  (submission packages, atlas cells, prize pathways, the capture line's missing inference).
 - [RECORD-MAP.md](RECORD-MAP.md): what is known and where, by topic, with each result's status; required reading for
   the workers.
 - [GUARDS.md](GUARDS.md): mistakes made and the rules that stop them recurring (started 30 October); Cloud reads it at

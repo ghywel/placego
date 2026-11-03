@@ -2641,3 +2641,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   Healing bound corrected ((9, 57) 1/2, (12, 68) 7/17); front conditionals immediate 0.491/0.735, jumps 2 and 3 deterministic;
   strip graph sign fixed and informative; CL686 reconciled with CL645 and GC2201's ruler rule; guard G29. Search aliases:
   healing_bound_oldkey, front_markov_lagged, strip_graph.out, ruler exception, G29.
+- CL688 (Cloud, 3 November 2026): [NIGHT-TASKS.md](NIGHT-TASKS.md), the owner's overnight direction as a suggested menu for GPT and Local:
+  five submission packages (the classic ether's exact zero first), five atlas cells, four prize pathways, the capture line's missing
+  inference, and a do-not list. Search aliases: night tasks, overnight, task list, menu.
