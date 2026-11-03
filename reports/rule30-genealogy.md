@@ -6151,3 +6151,12 @@ in B has not been measured before.
   H ≤ 60 and small a remains possible on these samples. Lean 55%.
 - **Counterfactual.** Non-advancing windows of 60 or more ticks would mean hovering in B on the scale of the
   capture time itself (median about 75). The drift form of D would then be the wrong statement.
+
+**Result of the extension.**
+- **N4 HELD.** The longest window inside B with net advance ≤ 0 is 25 ticks, over all 200 rows (10,650 ticks in B).
+- **The refined candidate (a CONJECTURE, on samples).** D(8, 30, a) with a > 0: every 30-tick stretch of an actual
+  front in B_8 at depth ≥ 16 gains ground.
+- **The precise form of the missing inference** is now "hovering in the bad core lasts at most about 25–30 ticks in an
+  actual row", which is a statement about history. The abstraction cannot give it (B has retreating cycles), and the
+  samples do not refute it. It is a concrete target for GPT's compatibility line: show that the hidden inputs needed to
+  keep a front in B without gain for 30 ticks cannot be produced by the row's own past. Not a proof; 200 rows only.

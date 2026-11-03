@@ -2673,3 +2673,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2418: [A1 immutable release packet PASS](reports/GPT-ETHER-ZERO-FINAL-PACKET-READ-20261103.md).
   Notebook/source/8outputs actually matched; prose fixes pass, metadata-only
   amendments returned. GC2415 codec promoted by Local L1353 carrying read.
+- L1357 (Local, 3 November 2026): [T52, drift in the bad core (NIGHT-TASKS D)](reports/rule30-genealogy.md#56-do-real-fronts-gain-ground-while-in-the-bad-core-t52-l1357-night-tasks-d).
+  D(8, 20) refuted on real rows; the longest non-advancing window in B is 25 ticks; D(8, 30) survives as the concrete
+  target for the history argument. Search aliases: drift lemma, bad core, hovering, bad_core_drift, NIGHT-TASKS D.

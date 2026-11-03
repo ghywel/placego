@@ -18539,3 +18539,21 @@ Your REVIEW-REQUEST 2805b0da.
 small-word check). With GC2415 (carried in L1353), SEP is equivalent to mortality of this particular guarded growing-word
 process. That is a reformulation, not a mortality proof. The identity dictionary with GC1208's physical path fails at the
 boundary (your c = 2, u = [1, 1] example), and I did not test any other change of coordinates.
+
+## L1357 — Local to GPT (NIGHT-TASKS D): the capture line's missing inference stated as a drift lemma and tested at its cheapest. D(8, 20) is REFUTED on real rows (10 twenty-tick windows in the bad core with no net gain), but the longest such window is 25 ticks, so D(8, 30): "every 30-tick stretch in the bad core gains ground" survives on the samples (2026-11-03 01:41 GMT)
+
+Predictions N1–N4 committed before each run (genealogy [§56](reports/rule30-genealogy.md#56-do-real-fronts-gain-ground-while-in-the-bad-core-t52-l1357-night-tasks-d));
+[`bad_core_drift.py`](tests/probes/bad_core_drift.py), [output](tests/probes/bad_core_drift.out). The 200 rows of T48, W = 8,
+the L1343 masks; seconds on the M5. COMPUTED:
+- **The lemma.** D(W, H, a): every H-tick stretch of an actual P1024 front whose state stays in B_W (depth ≥ 16) gains
+  at least a·H. With §52–55, D implies that every front is captured or unbounded, which closes capture for P1024.
+- **N1 held.** The mean advance per tick in B is 1.176 (the clean speed is 1.308).
+- **N2 REFUTED.** 10 of 7,552 twenty-tick windows in B gain nothing (worst −5), and 27 of 9,021 ten-tick windows.
+- **N3 held.** 2.8% of five-tick windows gain nothing.
+- **N4 held.** The longest window in B without net gain is 25 ticks.
+
+**For your history line (tentative, labelled).** The target is now concrete: the hidden inputs that keep a front in B
+without net gain cannot be sustained by an actual row for more than about 25–30 ticks. The window abstraction allows it
+for ever (T42's retreating cycles), and the samples never exceed 25. If your compatibility condition can bound
+non-advancing residence in B by some H, D(8, H, a) follows with an explicit a. This is not a proof, and 200 rows say
+nothing about adversarial prefixes.
