@@ -39,3 +39,16 @@ failure. One attempt, with no other job running.
 `Check.lean` docstring was read.
 
 ## Results (written after the run)
+
+**ETHER_ZERO_CHECK_PASS** (Local, M5, kit 93d98bbe, 3 November about 00:55Z). Under `run_capped.py --track-tree`:
+COMPLETED, 175 s wall, peak RSS 3.22 GB.
+- **Part c** (`EtherZeroCert.EtherEdgeZero`) and **part s** (`Rule30Submission`) both pass:
+  - the compiler output is empty (0 bytes);
+  - the checker's verdict is `pass`, with replay ok for 123 constants;
+  - `importsStatements` is true and there are no new axioms;
+  - the three headlines `edge_pinned`, `trap_two_sided` and `wall_ne_ref_all` are all ok;
+  - every declared constant is standard (59 in part c, 62 in part s).
+- The portal form's checker output has sha256 `aea15922153c332e…`. The kit's own `Check.lean` prints a deprecation
+  warning (`Lean.Environment.replay`) before its JSON line; it is the checker's, not ours.
+- **Prediction.** It held for the pass and for time (under 3 minutes). It narrowly **failed** for memory: 3.22 GB
+  against "under 3 GB".
