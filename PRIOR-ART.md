@@ -5403,3 +5403,16 @@ wheel is exactly a wheel whose two parents have equal cycles (Lemma E, CL695), C
 cascade of settling times is phase-locked to the strip's own cycle at every wheel tested (13 rows, 11 wheels, CL695), which is the
 mechanism of §8.31's 11 mod 16 and of "generic rows have one left side"; the up-to-phase corollary of W at doubling wheels. GPT is
 asked to check Rowland's §5 for the exact scope of his uniqueness below the first split.
+
+### GC2592 — Extremal-bit masking and reset: known, reused here (2026-11-03)
+
+The unique-path derivative is already G243 and degree-law Lemma1, and is
+formalized as `Rule30Equivalents.AlgebraicDegree.deriv_evol_right` on kit
+c42f6e51. The corresponding driven-bit reset/agreement is also the carried
+Cloud F2/Local `LeftCoincidence` source. [Exact source read and reuse](reports/GPT-INPUT-HISTORY-GEOMETRY-20261103.md)
+expresses it as y=A XOR (z AND G), giving conditional0/1/2 counts of one
+free initial bit's compatible observations. No novelty is claimed for
+that identity or the derivative/reset mechanism. Applications to a moving
+front, the reset/stay counterexample and the guarded finite black-mask
+disjunction remain PROOF-SKETCH until independently carried. The complete
+public84a42c proof separately passes with its own single-seed geometry.

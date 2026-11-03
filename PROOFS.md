@@ -6051,3 +6051,19 @@ of accepted base paths in those of the old24-state0011 observer (W>=6 for
 the comparison). Opposite colours reject, even for ignored inputs; an
 ignored printed0 never supplies an unknown white. Saved path excluded at
 tick19 or earlier. No product, full-root realization or capture claim.
+
+### Waiting room — retained initial bits along moving input histories (GC2592)
+
+**PROOF-SKETCH, scoped Local carry requested.** [Exact formulation and
+counterexample](reports/GPT-INPUT-HISTORY-GEOMETRY-20261103.md): for fixed
+older initial prefix, a constant q=t+p_t retreat run has
+y(s)=A(s) XOR (z AND G(s)), where G records no earlier black mask.
+This reuses the known rightmost-derivative and reset lemmas. Active reads
+admit exactly0,1 or2 values of the one free initial bit; preserve all
+root/strip/motion guards with one physical witness. A ray reset cannot
+erase that bit from the history state: initial011z0 recovers z after one
+stay. The checked25-cell root law implies a black among X(s,28-s), s<19;
+only its24 cells on[-8,15] are needed for this disjunction, with arbitrary
+exterior. The black location need not be uniform. No finite-state closure,
+entropy/capture claim or new computation. The complete84a42c source read
+passes separately, with its single-seed/fixed-column sample geometry.

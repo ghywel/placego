@@ -1,0 +1,76 @@
+{
+  "entry": "GC2592",
+  "created_at": "2026-11-03T18:51:51.396252+00:00",
+  "status": "FULL_PUBLIC_SOURCE_READ_PASS; NEW_HISTORY_APPLICATION_PROOF_SKETCH",
+  "host": "Intel",
+  "public_id": "R30-20261103-84a42c",
+  "public_source_url": "https://www.wolframcloud.com/obj/rule-30-prize/Agents/api/file?id=R30-20261103-84a42c&kind=lean",
+  "public_status": "Lean Verified; tags empty; 85 replayed constants; four headlines",
+  "kit_commit": "c42f6e5133f61a47e99289fd4b6e0536fd8a0453",
+  "last_complete_external_refresh": "2026-11-03T17:58:54.423124Z",
+  "portal_entries": 119,
+  "open_prs": 38,
+  "artifacts": {
+    "84a42c.lean": {
+      "bytes": 11067,
+      "sha256": "8b66f2213ee9c4f97043afce3fc0325643e39be2e8c265df75e77f7b7bc6fb5b"
+    },
+    "84a42c.html": {
+      "bytes": 61604,
+      "sha256": "0cb449c63a7fc0aa8287234fb391f335d8bbe0012366369b974b9f7519faaaa5"
+    },
+    "Rule30RightPeriods.lean": {
+      "bytes": 50477,
+      "sha256": "9ef3c374ff394f9727706b54f25a7d8fa1dce329efc6cd4f6c4821f6c03975ad"
+    },
+    "Rule30Diagonals.lean": {
+      "bytes": 12305,
+      "sha256": "4bbdd2e9fbe0ba2cd47479c5054b01f37be9df7724b5cd8758917f1ecc500791"
+    },
+    "AlgebraicDegree.lean": {
+      "bytes": 43214,
+      "sha256": "fcf02bca6ae7d628fb1e3f18451e992639c98f8d6feb2f52021ccd8d08a63e2b"
+    },
+    "LeftCoincidence.lean": {
+      "bytes": 10626,
+      "sha256": "2fc0ad5cdfdf5ff9e6279bd34a9a979449e75a1bf5bfff2ac5037460dd493430"
+    }
+  },
+  "archive": {
+    "path": "cited/gpt/gc2592-input-history-sources.tar.gz",
+    "bytes": 52123,
+    "sha256": "b8c5c5094d397ea4d4a4506154fbfed2aaed00b27ee253e9bee8b9a35744ef33"
+  },
+  "read_scope": {
+    "84a42c.lean": "Complete current public source, byte-identical to earlier GC2585 copy; proof reviewed, no compile",
+    "Rule30RightPeriods.lean": "Scoped carrying definitions and complete proofs: Per and basic period operations, Z/halving/period-monotonicity chain, shift_formula, antiperiod_of_black, antiperiod, per_step, not_per_small, per_iff_gap, cnt/cnt_add/cnt_compl. Not a whole-module audit.",
+    "Rule30Diagonals.lean": "Definitions R/D, cell_congr/cell_succ, outside-cone rule, R_zero/R_one_succ/R_step",
+    "AlgebraicDegree.lean": "deriv definition, evol_congr/evol_update_of_far/evol_update_left, complete deriv_evol_right proof",
+    "LeftCoincidence.lean": "Already carried GC2587 source; reset/accumulation/uniqueness definitions reread in relevant scope. Not a new compile."
+  },
+  "record_search": {
+    "terms": [
+      "staggered",
+      "fresh.digit",
+      "rightmost derivative",
+      "right.*cone plateau",
+      "input reset"
+    ],
+    "positive_sources": [
+      "G243",
+      "degree-law report Lemma 1",
+      "AlgebraicDegree.deriv_evol_right",
+      "LeftCoincidence reset_step/solutions_agree",
+      "CONSTELLATION GC560/L300 closed entropy route"
+    ],
+    "scope": "Broad console output truncated; no exhaustive negative/novelty claim. Search working output excluded from source bundle."
+  },
+  "new_hand_claims": [
+    "Conditional 0/1/2 retained-bit extension rule on a constant-right-endpoint retreat run, fixed older prefix; actual-path guards separate",
+    "011z0 counterexample to forgetting old bit at a ray reset: one stay recovers it",
+    "24-cell word on [-8,15] implies an existential black among X(s,28-s), 0<=s<=18; mask position may depend on exterior"
+  ],
+  "independent_carry": "Requested from Local; no carried status yet",
+  "no_new_computation": true,
+  "next_step": "Derive joint transfer on adjacent q-rays retaining old and new initial bits; compare signed-observer common-witness guards before a quotient."
+}

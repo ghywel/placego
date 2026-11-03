@@ -196,6 +196,13 @@ GC2591 completes that discharge for the pinned original-CNF embedding:
 No all-path advance. Next compare84a42c's actual staggered-sample geometry
 with front-input histories, after reading its complete existing proof.
 
+GC2592 completes that read: [the cube's geometry does not supply the
+moving front's inputs](reports/GPT-INPUT-HISTORY-GEOMETRY-20261103.md).
+Known derivative/reset laws give a conditional retained-bit rule, but
+011z0 shows that same-ray reset is not future equivalence after a stay.
+New hand applications await carry; no all-path or prize-status upgrade.
+Next compare two adjacent rays with the common-witness history guard.
+
 
 **The status board** (updated 2026-10-14 23:58 BST; the time is from the shell) *(comb note, 2026-10-14, Local,
 SW-01: it read 2026-10-09 19:27 BST, not refreshed since the third triage while the rows moved through 2026-10-14,
