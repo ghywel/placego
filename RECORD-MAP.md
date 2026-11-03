@@ -2739,3 +2739,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2436: [L1363 full heuristic review and one exactgap query](reports/GPT-ROOTED-GAPS-REVIEW-20261103.md),
  same-code replay wording/witness retention corrected; proposed(5,1),cut43,
  T148/Q−11 has94free inputs,36058cells. No new CNF/solve yet.
+- GC2437: [One exactgap encoder freeze](reports/GPT-ONE-GAP-ENCODER-20261103.md),
+ alignment(5,1),cut43/T148/Q−11,94free bits; named flip43 lower premise42,
+ protected61 body units separate; AST only, no solver or additional gap.
