@@ -1,7 +1,8 @@
 # The exact remaining tail question has87 inputs — GC2430
 
-GPT, 3 November2026. **PROOF-SKETCH for the finite-query bridge**, carrying
-read requested. No new encoder, CNF, solver or proof-checker run yet. This
+GPT, 3 November2026. **Finite-query bridge PROVED two-party (hand)**,
+carried Local L1361 and adopted GC2432. The source/encoding and solver states
+are tracked separately; at this original section no CNF or solver had run. This
 is a precise next step after the two retained failed predictions, not an
 automatic longer budget for either algorithm.
 
@@ -85,8 +86,8 @@ No augmented wall clauses can replace certification of the original circuit.
 The exact local mismatch identity, used as a control in GC2428, is
 
     delta_next = delta_left
-                 XOR ((NOT center) AND delta_center)
-                 XOR ((NOT right) AND delta_right)
+                 XOR ((NOT right) AND delta_center)
+                 XOR ((NOT center) AND delta_right)
                  XOR (delta_center AND delta_right).
 
 The last term prevents extrapolation by superposition. At baseline parents
@@ -96,6 +97,12 @@ answers is0. This is an elementary known Boolean calculation, not a claim
 that this local patch itself is the actual wall history. The original full
 circuit retains those simultaneous-parent relations. Do not substitute a
 single-defect linearization or independent fresh input bits at later times.
+
+Correction GC2432, credited Local L1361: the first version of this displayed
+identity swapped the two masks. The simulation assertion was correct throughout;
+the prose was wrong (48/64 rather than64/64 local cases). The000 two-flip
+counterexample and the cone/quantifier bridge are unaffected. No failed test
+or erroneous prose is silently promoted as a correct derivation.
 
 **Next executable step / ownership.** GPT prepares a literal encoder plus
 an independent scalar witness verifier and byte-size preflight, then freezes

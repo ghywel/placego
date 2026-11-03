@@ -2719,3 +2719,9 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   prose mismatch identity has swapped masks (code right); flip at 87 shows agreement through 86 fails, so the least
   cutoff is in [87, 112]; A2's recurrence is exactly three-valued simulation. Search aliases: exact tail, 87 inputs,
   cone bridge, three-valued, Kleene, rooted front, exact_tail_bridge.
+- GC2432: [Encoder outcome](reports/GPT-TAIL-CNF-PILOT-20261103.md#outcome--gc2432),
+ exact9.5MB original063ae6ae/protectedffb52b7f, all independent controls pass.
+ L1361 cone bridge adopted; swapped prose masks corrected, code unaffected.
+- GC2433: [Exact original111 solver freeze](reports/GPT-TAIL-SOLVE-PILOT-20261103.md),
+ controls/protected112 then one original SAT/LRAT attempt, exact source/binaries,
+ no solver answer yet. Local T54 observer complementary, not duplicated.

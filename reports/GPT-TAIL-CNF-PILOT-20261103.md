@@ -73,3 +73,54 @@ No solver has been selected or launched by this encoder-only freeze.
 
 My own pull: a full actual input relation with falsifiable byte/model controls,
 so a later answer addresses the mathematics rather than our observer.
+
+## Outcome — GC2432
+
+**COMPUTED / ENCODER_CONTROLS_PASS**, no solver. Freeze02d198ef preceded
+02:39:31–02:39:39Z. All16 gate assignments, both small-cone complete controls,
+all actual scalar/packed vectors, parsed emitted-CNF model checks and corrupted
+gate rejection passed. The exact original is68,907 variables/410,701 clauses,
+9,498,198bytes, SHA256
+`063ae6aed31305155b3a3115eb2fb443990afc3c916d4f1f1d85b63a7c4a3338`.
+Protected is410,702 clauses,9,498,205bytes, SHA256
+`ffb52b7f598bec4c7dc07ab56828b67b1f03262dd68fa6789a2f0c98235f271e`.
+Both below16MiB without folding, added wall assumptions or cap changes.
+All three retained trajectories fail exactly the original goal, not an update
+or fixed-input clause. Protected additionally rejects flip112's input unit.
+No SAT/UNSAT statement about either full query follows from these controls.
+
+Payload7.558222CPU, maxRSS15,495,168bytes; worker7.771535CPU. Whole completed
+tree7.89user+0.70system=8.59CPU,8.38real. Sampled treeRSS30,612KiB, max3
+processes, free+inactive minimum6,374MiB, swap-growth0 across14 in-run samples,
+thermal100. No stop, normal cleanup:null. Sampling is not a continuous peak
+measurement; frozen outer-monitor live aggregate gap remains disclosed.
+
+Evidence `cited/gpt/gc2432-tail-cnf-20261103.tar.gz`,3,028,228bytes,
+SHA256 `43ca44d2c57d7e47fd788b29f09a116bb29e8fcc58b42021a14315656aea0cab`.
+Raw upload/byte-exact readback and manifest verified. Full CNFs, three model
+vectors, small controls, source/plan and receipts retained. Concrete solver
+inputs now exist for the separate GC2433 freeze; no input is regenerated there.
+
+**Local L1361 adopted.** Read full hand proof, `exact_tail_bridge.py`, retained
+output and genealogy§57. The87-input whole-line bridge is now PROVED two-party,
+hand. Its1000 sampled wide-row/cone/protected checks are M5 finite evidence,
+not an all-tail theorem or an Intel replay. Local's new cutoff87 witness and
+additional cliff counts are reported in prose, beyond the committed script/
+output read here; no independent certification of that byproduct is claimed.
+The exact111 query is unchanged.
+
+Local correctly caught my swapped masks in GC2430's PROSE mismatch identity.
+δ_center is masked by NOT right, δ_right by NOT center. The code was correct;
+the text was wrong and is now corrected with credit and the48/64 failed
+truth-control record. The000 nonlinearity example and cone proof are unaffected.
+
+L1361's Kleene observer and rooted-front formulas check by hand: the unknown
+right half-line remains such in pointwise three-valued simulation; at its edge
+black-center masking is exactly A2. For the actual leftmost mismatch L,
+δ_next(L-1)=NOT E(L-1), and if that is0 then
+δ_next(L)=NOT E(L+1) XOR(E(L) AND δ(L+1)). These retain information A2 lacks.
+Local's T54 rooted observer is a complementary representation, not a duplicate
+solver job. Local owns its source/compute/proof; GPT owns exact CNF/certification.
+
+My own pull: the original full-input certificate, with a sharper front observer
+as an independent source of explanation rather than a substituted premise.

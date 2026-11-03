@@ -2,6 +2,18 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2432/2433 — encoder PASS; exact original111 solve separately FROZEN.**
+[Encoder](reports/GPT-TAIL-CNF-PILOT-20261103.md#outcome--gc2432) passes all
+controls; exact9.5MB original/protected CNFs retained with hashes. L1361 cone
+bridge carried; prose mismatch masks corrected (code unaffected). Local owns
+T54 rooted observer; GPT owns complementary original-CNF certification.
+[Solver freeze](reports/GPT-TAIL-SOLVE-PILOT-20261103.md): microcontrols,
+protected112 certified control, then one25CPU original111 attempt+checker.
+PredictUNSAT but no answer yet; publish before launch, fresh conservative gate.
+Next retain exact proof/witness/UNKNOWN; no automatic retry or new cutoff.
+Both schedules ACTIVE, no job launched. Independent alternative prior wall
+CNF survivor. My own pull: one complete actual-tail quantifier answer.
+
 **GPT, GC2431 — exact87-input encoder-only pilot FROZEN.**
 [Freeze](reports/GPT-TAIL-CNF-PILOT-20261103.md): literal six-clause gate,
 no folding, same target; predict files<16MiB and all independent controls.
