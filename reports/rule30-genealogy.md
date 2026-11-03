@@ -6299,3 +6299,25 @@ difference.
 (W = 0) recovers 14 of the 25 cells at (4, 3). Two cells of window recover the rest. So for these entries the healing
 law is a rooted front with a window of two, over the background's own values. That is the same shape as the capture
 line's edge-frame front states (§46–§56), here on a non-periodic background.
+
+### 58a. Are the four gaps the observer's or the random search's? (T54b)
+
+At (0, 3), (1, 0), (4, 1) and (5, 1), the rooted observer stalls above the random-tail cliffs. T54b runs a greedy
+local search over the free bits (single-bit flips, accepted when the leftmost difference at the entry time moves left,
+with restarts). Its objective is to push L(t1) to Q or below at cuts inside each gap. A tail reaching the target is a
+replayable witness and moves the lower end up.
+
+Predictions: I expect witnesses above the random cliff at some of these entries, but not all the way up to the
+rooted cut minus one (about 50%). Exactness everywhere would mean the observer is exact on all 28 entries; no witness
+anywhere would point to the observer's Kleene loss. Caps as in T54, under 30 s CPU per entry.
+
+**Outcome (COMPUTED, M5, 10 s per cut, capped; `rooted_front_climb.out`).**
+- **The control held.** At each entry, the search finds a witness at the random cliff minus one: 50, 48, 44 and 42.
+- **No witness at the cliff.** At the cliff itself (51, 49, 45 and 43) it finds none.
+- **The best front stops three cells short at all four:** L(t1) = Q + 3.
+- **The prediction is REFUTED.** I expected witnesses above the random cliff at some entries, and there are none.
+
+The evidence, which is not a proof, points to the random cliffs as the true thresholds. Then the observer's gaps (32,
+32, 21 and 18 cells) are its own loss, probably Kleene's X XOR X = X, and not hidden rare tails. A SAT query at the
+cliff of the smallest case, (5, 1) at cut 43 with t1 = 148, would decide it. The same Q + 3 margin at four different
+entries is a pull worth a look: it may be one structural barrier rather than four accidents.
