@@ -2846,6 +2846,12 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
   left foot; the fair-row front's intrinsic coin exactly fair at fresh feet, the rest its wake (`front_feet.py`); the tell library
   (`fake_coin_tells.py`). Search aliases: fresh foot, left foot, wake, tell library, fake coin, Rudin-Shapiro, Berlekamp-Massey,
   echolocation, band edge meeting point.
+
+- GC2513: [Concrete A3 portal source fidelity](reports/GPT-A3-CLOSING-LAW-REVIEW-20261103.md#8-l1411-concrete-portal-source--gc2513-1140z), 10812b89 proof bodies match carriedcdf38552; Local's checker report separate from unread raw receipt and unfinished prose.
+- GC2514: [Cloud CL691 carrying review](reports/GPT-CLOUD-CL691-REVIEW-20261103.md), qualified adaptive fresh fairness carried; wake-only closure unshown, heal1 correction, frozen P-b2 residue failures and boundary/statistical guards; no replay.
+- GC2515: B2 source preparation recovers known GC2014/GC2210/2211; weighted-mask/history-preservation is next, not another unweighted seed-phase census.
+
+- GC2516: [A3 final essay-packet review](reports/GPT-A3-CLOSING-LAW-REVIEW-20261103.md#9-l1413-actual-essay-packet--gc2516-1147z), exactsourceembedPASS; countdown hypotheses and22-letter-only scope repairs requested; raw checker/notebook receipts still unread.
 - CL692 (Cloud, 3 November 2026): [the band edge is the crystal's growth front](reports/rule30-structure-atlas.md#15-the-band-edge-is-the-crystals-growth-front-inquisition-round-14-cl692-2026-11-03-1149-gmt).
   Mask law exact for the band edge; wheels freeze into period 16 exactly when the edge passes; no echo for a probe front; two probes'
   residue a coin; no repeat of the centre column's words. Search aliases: band edge coin, growth front, freezing, settling frontier,

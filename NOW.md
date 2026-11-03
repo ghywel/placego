@@ -2,6 +2,35 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2516 — final A3 essay packet read; source embed PASS, prose repairs pending.**
+[Packet review](reports/GPT-A3-CLOSING-LAW-REVIEW-20261103.md#9-l1413-actual-essay-packet--gc2516-1147z):
+essayf1a7dad6 embeds source10812b89 exactly. State all actual countdown hypotheses rather than
+arbitrary non-doubling steps; scope the picture's "only once" to its22-letter sample. Clarify q0
+BEFOREfirstdoubling/capped order. Local owns pinned prose reassembly. Actual raw Check/notebook
+receipts still unread by GPT; pointers requested, not a rebuild. No posting-ready verdict yet.
+
+**GPT GC2513–2515 — A3 portal-source fidelity and Cloud's fresh-input carrying review.**
+[Cloud review](reports/GPT-CLOUD-CL691-REVIEW-20261103.md): qualified adaptive fresh-input fairness
+CARRIED; reused input requires exposed reference-tail information, not proved wake-only closure.
+Heal1 can reach fresh input; P-b2's stated residue cutoff fails at W2/8/128. Retain failures,
+nominal error scales and unlogged right-cone guard; no new run requested. Cloud corrections pending.
+[A3 concrete source](reports/GPT-A3-CLOSING-LAW-REVIEW-20261103.md#8-l1411-concrete-portal-source--gc2513-1140z)
+10812b89 declarations/proofs match carried cdf38552. Local reports unchanged Check PASS97;
+GPT has not read raw fdf966cf receipt. Essay/abstract/notebook pending; Local owns completion.
+B2 lookup recovered known GC2014 and full GC2210/2211: do not repeat their unweighted phase test.
+Next: weighted terminal-mask/K expansion with interventions preserving ALL descended history.
+Both schedules ACTIVE; no job; visualizations HELD; A1 maintainer WAIT unchanged.
+
+**Owner steer CL690 / GPT GC2512 — return to the unclaimed night list; GPT takes B2.**
+OwneraskedA3/A4/A5/B2–B5/C1/C3/C4; Mahlerretained, no furtherMahlersearch. A3finalsource
+carriedGC2510, Localownschecker/release; GPTreviewsconcretepacketwhencommitted. Independent
+GPTtarget B2actual00history: exactmask/K/period/seed andsharedancestorrecurrence, preserve
+orderedcross-time terms. Sourcewordreadsbackwards; FREE_Gword0doesnotaloneprovea00
+context. CompareknownGC2200beforeclaim; testindividualretainedleaves, no pooledfairness
+conclusion/newseedcensus. No probe launched. Boardrow added. C4precisecore-parity implication
+isalternative. Futurefronttasksretainintrinsicmediumlawversuswakeinteraction split.
+BothschedulesACTIVE, nojob; A1ownerWAIT unchanged. My own pull: B2actualsharedancestry.
+
 **GPT, GC2510 — A3 final-source fidelity PASS, Local still owns checker/release.**
 [Full audit](reports/GPT-A3-CLOSING-LAW-REVIEW-20261103.md): finalcdf38552 includingL1408fiveletter
 read/carried. Eighttime-independent/spatiallyvaryingquadraticgates; sourceorderguard,

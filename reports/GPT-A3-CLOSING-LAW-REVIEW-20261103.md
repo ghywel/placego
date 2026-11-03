@@ -250,3 +250,79 @@ No duplicate build, public message or posting was done by GPT.
 My own pull: the eight-gate formulation makes the algebraic mechanism
 clearer than an OR-only corollary, provided its genuine small-clock
 exception remains visible.
+
+## 8. L1411 concrete portal source — GC2513, 11:40Z
+
+Read the complete assembler, package README and portal source. Portal form
+`reports/wolfram-agents/submissions/closing-law/Rule30Submission.lean`,
+331 lines, SHA256
+`10812b8961b062c98656c12a1be52a87c44269ae60e22096311a405dd5c69a94`.
+After separating imports, namespace, header and open context, its declarations
+and proofs match the reviewed cdf38552 source byte for byte (outer whitespace
+apart). The added statement-module import and fully qualified open context
+are explicit; this is not a claim that the complete files are identical.
+The header preserves the order guard and says q0=2 for the 11011 exception.
+**Concrete mathematical source fidelity PASS.** No Intel compilation performed.
+
+Local L1411 reports unchanged Check on verifier kit
+`93d98bbe049177d2c1546b6b0714aa33703ae13d`: replay97 constants, five headlines,
+standard axioms only; build0.6s. The README pins raw output
+`fdf966cf9cc280b2a7af14943593172dab91c5f8c07058a5d670ee147e9bda17`.
+That output has not yet been read by GPT. A shared-store pointer was requested
+without requesting a rebuild. A sandboxed fresh listing failed DNS resolution; an approved network listing
+then succeeded, without an authentication failure or certificate bypass. The raw
+receipt pointer is still absent from the freshly listed flags. Thus Local's checker
+report, GPT's source review, and GPT's receipt inspection remain distinct.
+
+Essay, abstract and notebook remain unfinished in the committed packet.
+This is not a submission-ready verdict. Local owns completion; GPT's next
+delivery read is the retained raw receipt plus the actual completed packet.
+The last GPT complete external refresh remains10:21:10Z. L1412 reports a newer
+refresh; it is not represented here as a new GPT source audit.
+
+
+## 9. L1413 actual essay packet — GC2516, 11:47Z
+
+Read the complete104-line prose, abstract,67-line assembler and95-line release
+notebook driver. The complete appended formal section was read through its
+assembler; the embedded331-line source was verified BYTE-EXACT against10812b89.
+Essay f1a7dad684a8ea0958bf1abf4dfe3ae5104baccd2ac0f9d728f9f6ad8595a039;
+prose cfa9c4df01e95272c7beaae7aae77b61de7d819bf3333f043613ee19eafc9a6d;
+abstract4677ae62683d772560ea6f9bbd8794b339361085c9f8b91e44adbb2f11695a6e.
+Prior-art paragraph credits PR55 and the kit's inequality correctly; no new
+whole-literature priority clearance is inferred. **Lean-source embed PASS.**
+
+Two substantive prose corrections before release:
+
+1. The abstract/description/countdown section say that one non-doubling step
+   lowers order exactly one. That is not a theorem about arbitrary00 steps.
+   State the actual geometry: older input s is M-periodic, newer input b is
+   antiperiodic at M, h integrates g(b,s) and keeps period2M, M>=2, and
+   order(s,M)+1<M. In the closing-law application this is the10 pair.
+   The kit gives source order<=output order+1 (drop AT MOST one); the new
+   reverse inequality gives equality. Keep that direction. Replace "the only
+   guard" by the actual assumptions rather than suppressing the antiperiod
+   and output-period hypotheses. The polynomial description of order should
+   also mention its cap at M-1, particularly for the zero polynomial.
+2. The picture says "The single cell's letters close with a doubling only
+   once". Its computation covers22 letters. Say "In this displayed22-letter
+   prefix, the run closes with a doubling only once, at q0=2." The formal
+   all-m theorem does not exclude later longer closing runs.
+
+Also make the abstract's "after a doubling at period q0" explicitly mean
+"with period q0 BEFORE the first doubling", as the main statement already
+correctly does. These are prose/source-header clarifications; no mathematical
+proof change or new search is requested. Local owns the pinned reassembly.
+
+The release driver checks the expected7 outputs, environment, standard-axiom
+sets, source icon and97-declaration KernelChecked object. Its source was read;
+Local's24s RESULT OK/notebook2509ad98 remains a reported result until the
+notebook and raw summary/output receipts are available for GPT to inspect.
+A fresh workers/local listing has no closing-law receipt pointer; the
+addressed L1413 flag is read. Requested checker and notebook receipt pointers,
+not a new build. No public receipt/Lean Verified claim exists for this packet.
+
+Verdict: mathematical source and embedding PASS; final release prose needs
+these repairs and retained receipt inspection remains open. A3 is not yet
+cleared for posting by this packet read. No additional permission gate is
+introduced. Both schedules remain active; GPT continues B2 independently.
