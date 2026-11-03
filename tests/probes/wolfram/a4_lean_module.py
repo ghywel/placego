@@ -12,7 +12,7 @@ import json
 import pathlib
 import sys
 
-TEMPLATE_SHA = 'c2b5a0f844bfa25952d9bcdf41cb273c5f3d020a63834fcb973430830dd60c0b'
+TEMPLATE_SHA = '22aa42009ff730da04fd1cd323f4a0dd8b33b215e43d3f009f1d2305f669657c'
 
 root = pathlib.Path(__file__).resolve().parents[3]
 selftest = sys.argv[1] == '--selftest'
@@ -127,8 +127,13 @@ reps = [
      '/-- **The front law of the inserted edge on the ring background `%s` (temporal period %d).** For every `t ≥ 300`' % (word, q)),
     ('there is an anchor `A` with the background intact at and left of `A`, a mismatch within the 24 cells right of it, and\n`-14 ≤ 19 (A + 72) + 5 (t - 300) ≤ 22`. So the leftmost difference moves left at exactly `5/19` cell per tick. -/',
      'there is an anchor `A` with the background intact at and left of `A`, a mismatch within the %d cells right of it, and\n`%d ≤ %d (A + %d) + %d (t - 300) ≤ %d`. So the leftmost difference moves left at exactly `%d/%d` cell per tick. -/' % (W, lo_b, P, -A0, P - S, hi_b, P - S, P)),
-    ('    (∃ x, A < x ∧ x ≤ A + 24 ∧ Gedge t x ≠ E t x) ∧\n    -14 ≤ 19 * (A + 72) + 5 * ((t : Int) - 300) ∧ 19 * (A + 72) + 5 * ((t : Int) - 300) ≤ 22 := by',
-     '    (∃ x, A < x ∧ x ≤ A + %d ∧ Gedge t x ≠ E t x) ∧\n    %d ≤ %d * (A + %d) + %d * ((t : Int) - 300) ∧ %d * (A + %d) + %d * ((t : Int) - 300) ≤ %d := by' % (W, lo_b, P, -A0, P - S, P, -A0, P - S, hi_b)),
+    ('x ≤ A + 24 ∧ ', 'x ≤ A + %d ∧ ' % W),
+    ('-14 ≤ 19 * (A + 72) + 5 * ((t : Int) - 300) ∧ 19 * (A + 72) + 5 * ((t : Int) - 300) ≤ 22',
+     '%d ≤ %d * (A + %d) + %d * ((t : Int) - 300) ∧ %d * (A + %d) + %d * ((t : Int) - 300) ≤ %d' % (lo_b, P, -A0, P - S, P, -A0, P - S, hi_b)),
+    ('(hinv : Inv H 300 (-72) 15 3 (startKey % 2 ^ 24))', '(hinv : Inv H 300 (%d) %d %d (startKey %% 2 ^ %d))' % (A0, tq0, dq0, W)),
+    ('inserted edge\'s at every `x ≤ 252`, whatever its cells beyond `252`: at `t = 300` the two agree on `x ≤ -48`',
+     'inserted edge\'s at every `x ≤ %d`, whatever its cells beyond `%d`: at `t = 300` the two agree on `x ≤ %d`' % (A0 + W + 300, A0 + W + 300, A0 + W)),
+    ('(hag : ∀ x, x ≤ 252 → H 0 x = Gedge 0 x)', '(hag : ∀ x, x ≤ %d → H 0 x = Gedge 0 x)' % (A0 + W + 300)),
 ]
 for old, new in reps:
     assert old in body, 'pattern not found: ' + old[:70]
