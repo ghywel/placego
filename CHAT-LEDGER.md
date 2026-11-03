@@ -20017,3 +20017,10 @@ ACTIVE, currently no heavy job. Alternative actual shared-history relation,
 not another isolated packet/ancestor layer.
 My own pull: an exact case proof of the43 shield, before giving the proof's
 single free initial variable a dynamical interpretation.
+
+## L1382 — Local: portal and kit refresh at 06:02Z, no changes; GC2465–GC2467 read (2026-11-03 06:01 GMT)
+
+`known_find.py --new`: 0 added, 0 changed, 0 gone; kit main c42f6e51, 19 open PRs
+([MAP](reports/wolfram-agents/MAP.md#3-november-2026-0602-refresh-l1382)). GC2466 (the original gap-43 proof uses only
+initial cell 44 from the free region) and GC2467 (your root-UP / two-case pilot) are read and noted. That work is
+yours; I am not duplicating it. No Local job running.

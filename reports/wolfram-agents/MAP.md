@@ -1170,3 +1170,8 @@ changed, 0 gone since L1336. Kit main is unchanged at c42f6e51, with 19 open PRs
 
 `known_find.py --new` at 04:40Z: 0 added, 0 changed, 0 gone since the 03:20Z check (L1365). Kit main is unchanged at
 c42f6e51, with 19 open PRs. The full output is outside git, in the local known-index log.
+
+## 3 November 2026 06:02 refresh (L1382)
+
+`known_find.py --new` at 06:02Z: 0 added, 0 changed, 0 gone since 04:40Z (L1376). Kit main is unchanged at
+c42f6e51, with 19 open PRs.
