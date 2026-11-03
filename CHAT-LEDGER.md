@@ -27289,13 +27289,13 @@ pin).
   - Stepping back from time s + 1 to time s, the white interval [L, R] and the white pair (B_s, C_s) at (R, R + 1)
     give X(s, y − 1) = 0 for y from R down to L. So the interval widens by one cell on each side.
   - At time 0 the white interval is [−t, t].
-  - This is the content of  and , done directly.
+  - This is the content of `center_chain` and `zeroPairs_down`, done directly.
 - **The vacuum equivalence, converse.** Every ray cell and X(t, 0) have cones inside [−t, t].
 - **The second identity.** Under the vacuum, X(t, 1) is the left edge of the lone initial cell at t + 1 (or all white),
   so it equals X(0, t + 1).
 - **The completion.** For a white output, either the ray has no black, which is the vacuum term by the above, or it has a
-  unique least black g ().  turns that into W_g; b476c1 states it for every trajectory
-  (), so it translates by p. The terms are mutually exclusive, and every term forces a white output. The B_g
+  unique least black g (`gap_unique`). `cylinder_white_iff` turns that into W_g; b476c1 states it for every trajectory
+  (`IsTraj`), so it translates by p. The terms are mutually exclusive, and every term forces a white output. The B_g
   form adds the black neighbour as stated.
 - **The criterion** is the contrapositive:
   - the initial black removes the vacuum term;
