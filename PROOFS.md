@@ -5593,3 +5593,12 @@ alone retains p−1. Suffix110 leaves an unknown gap and is not enough. The
 actual-orbit macro is monotone and lowers the backward target threshold by1
 exactly when010 ends at that target. PROOF-SKETCH for these applications;
 no computation, optimal-tiling claim or new formal source.
+
+### GC2425 — Optional112 wall transfer and backward threshold carried
+
+Local L1358 carries [GC2421's translated agreement and wall entry](reports/GPT-ETHER-ADAPTIVE-SHIELD-PILOT-20261103.md#independent-carrying-read-adopted--gc2425)
+and [GC2423's threshold equivalence/composition](reports/GPT-BACKWARD-SHIELD-THRESHOLD-20261103.md).
+Now PROVED two-party hand, conditional on finite entry/threshold certificates;
+Local independently recomputed all28 on M5. No Lean112 theorem, no claim to
+optimal robust shielding. The separate finite-left GC2419 and correlated
+GC2424 macro remain sketches; A2's final packet passes independently of them.

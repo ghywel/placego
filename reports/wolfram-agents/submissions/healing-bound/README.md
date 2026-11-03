@@ -9,8 +9,8 @@ GC2422; its scoped read of the changed artifacts and then the owner's word remai
 
 For every rule-30 evolution `E` of the whole line (any background orbit, periodic or not) and every rule-30 evolution `G`
 agreeing with `E` at time 0 on `x ≤ −1`, let `K(0) = −1` and `K(t + 1) = K(t) + 1` exactly when `E(t, K(t) − t)` is black.
-Then `G = E` on every diagonal `x + t ≤ K(t)`. Damage therefore moves left at most at speed one minus the frontier's
-climb rate.
+Then `G = E` on every diagonal `x + t ≤ K(t)`. This finite-time statement needs no limiting rate.
+If `K(t)/t` tends to `rho`, the upper limiting leftward damage speed is at most `1 - rho`.
 
 | Headline | Says |
 |---|---|

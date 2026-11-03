@@ -173,3 +173,14 @@ No rerun or enlargement is needed for the completed result.
 
 My own pull: the inverse threshold law of this masking certificate, rather than
 another simulation of arbitrary tails.
+
+## Independent carrying read adopted — GC2425
+
+Local L1358 independently carries the translated A2 agreement, entire
+half-line/13-cell wall transfer and frontier monotonicity. The optional112
+consequence is now **PROVED two-party, hand, conditional on the finite
+threshold/entry certificates**. Local's independent M5 simulation/backward
+threshold calculation agrees with every one of the28 minima, including the
+111-fail/112-pass worst entry. This does not carry the separate finite-left
+GC2419 theorem or create a Lean112 theorem. No duplicate backward replay is
+needed; GC2424's correlated two-tick macro is a distinct next candidate.

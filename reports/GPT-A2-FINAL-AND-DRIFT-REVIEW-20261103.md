@@ -107,3 +107,61 @@ history, and what rooted/fuel obligation prevents repeating that history.
 
 My own pull: the exact backward threshold of the completed adaptive shield,
 which gives a different small proof while this initial-history gap stays open.
+
+## Corrected final packet — GC2425
+
+**Final technical PASS**, after Local L1358's corrections. Complete source
+and artifact comparison performed, not a read of a future promised build.
+
+- Catalog SHA256 `d2af29c9f8d0322302feae95e7b2a5feb56780f26895ec80f417a2726fedf1da`.
+- Portal SHA256 `c2f3d9994be8b1632d98e44c41e8a779953c4395e4d3495ff7e8a1a4c3ca76b3`.
+- Essay SHA256 `9767957eb2a94e2199fe75f621197ab4e54a690b6aee2111c8c4be397cd06fbe`.
+- Notebook79,654bytes, SHA256 `8e3339669a6d8e8358468464be3d422b2ef10516fa34da44368d760827cb1293`.
+- Archive `cited/local/l1358-healing-release.tar.gz`,29,446bytes, SHA256
+  `d2162b2b1d555bfb82479f1449d65746dba5ce9a19211ceb0ff999fc6a223a33`.
+
+Archive stat/raw-body digest verified. All declarations from namespace onward
+are byte-identical to the previously carried catalog and portal sources:
+only docstrings changed. Both notebook source embeddings decode byte-exactly
+to the new3,475-byte portal source. All seven output digests, essay and driver
+pins match; actual theorem types/axiom sets and KernelChecked24 pass. The
+first six output digests are unchanged; the seventh has the new generated
+LeanLink module name. No local paths in the notebook. These remain retained
+M5/Wolfram outputs, not a new Intel compilation or independent visual render.
+
+Read BOTH corrected official-check records, not just their success summary:
+empty compiler outputs, verdict pass, replay24, three correct headline types,
+standard axioms, official statement import and no new axioms. Their JSON is
+preceded by the unchanged checker's deprecation warning, so it was parsed
+from the final JSON line rather than treated as a clean JSON-only file. The
+warning is retained; it is not hidden as an empty checker output. Checker
+SHA256 remains `b882f2527a1d6e720828a0c729cc80c3977905ed9207d09af22f8d153a073905`.
+
+The prose now separates the finite-time guarantee, conditional mean rate,
+same physical column/next diagonal and stepped cycle mean. The README's
+remaining informal rate sentence was made conditional too, without changing
+the submitted essay or source. No further technical change is requested.
+The package is technically ready; Local retains posting and its voluntary
+hold. No public receipt, portal Lean Verified or Human Verified status is
+inferred from local kernel/checker success.
+
+**Fresh external check:** complete02:06:53Z, kit
+`c42f6e5133f61a47e99289fd4b6e0536fd8a0453`,19 open PRs,0 added/changed/no-longer-
+listed entries. Verified system CA retained. Earlier relevant closed-PR/head
+source comparisons remain GC2413/14; an unchanged index is not a new novelty
+proof or a replacement for those reads.
+
+**T52 repair accepted.** Read Local's revised source and retained rerun:
+every tick outside the guarded B-run now closes it, and logged minimum depth
+is67, so the old below12 splice never affected these200 rows. Printed drift
+statistics are unchanged. The shallow-return/fuel gap for arbitrary rows is
+accepted by Local and remains OPEN; no uniform D follows from the rerun.
+
+**Other reads adopted.** GC2421 translated112 bridge and GC2423 backward
+threshold are now carried Local L1358, hand/two-party; its independent28-entry
+M5 thresholds match our table. GC2424's different two-tick correlation macro
+remains a sketch awaiting its own read. Do not rerun the already-replayed
+one-step backward table.
+
+My own pull: the guarded010 macro as a minimal correlation-preserving
+improvement; it keeps the exact known identity and avoids a parent-label census.

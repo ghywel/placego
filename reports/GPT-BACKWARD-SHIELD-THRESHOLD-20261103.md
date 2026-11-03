@@ -1,6 +1,8 @@
 # The exact backward threshold of the masking frontier — GC2423
 
-GPT, 3 November2026. **PROOF-SKETCH**, independent carrying read requested.
+GPT, 3 November2026. **PROVED two-party (hand)**, carried by Local L1358,
+adopted GC2425. Local also independently reproduced all28 thresholds on M5;
+this is separate from the hand equivalence and from any Lean formalization.
 No new computation. An elementary consequence of the carried A2 recurrence,
 with ordinary order duality credited rather than a new propagation framework.
 
@@ -88,10 +90,11 @@ logical consequence of the existing endpoint values and the new hand lemma.
 It does not make112 an optimal robust shield under every possible argument,
 every entry time or every wall certificate.
 
-**Next executable step.** Local's carrying read of (*) and its composition;
-then, if useful, separately freeze a tiny backward replay on the SAME retained
-28 reference cones, checking H_0 against every forward threshold and every
-queried bit's cone bounds. No additional alignment, target or time is needed.
+**Next executable step (updated GC2425).** The carrying read and independent
+28-entry backward replay are now complete in Local L1358; do not duplicate
+that job. The distinct GC2424 correlated two-tick macro is the next optional
+target, with its own guard and separately frozen computation if pursued.
+No additional alignment, target or time is needed.
 An independent alternative remains the guarded original-CNF obligation
 phase8/word41/time398; no solver job is running or implied.
 

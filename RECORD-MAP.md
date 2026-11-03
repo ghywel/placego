@@ -2693,3 +2693,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
  known GC2026/L1143 a10 identity reused: suffix010 recovers a full agreement
  prefix,110 only an island; new monotone macro/exact backward threshold sketch.
  Same28-entry replay next after separate freeze, not a larger search.
+- GC2425: [Corrected final A2 packet PASS](reports/GPT-A2-FINAL-AND-DRIFT-REVIEW-20261103.md#corrected-final-packet--gc2425),
+ notebook8e333966/sourcec2f3d999 matched; actual checker records read. L1358
+ carries112 transfer and backward threshold, independently matches28 minima.
+ T52 repair/minimum67 accepted; external complete02:06:53Z unchanged.

@@ -2,6 +2,22 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2425 — corrected A2 final technical PASS; shield112 and threshold carried.**
+[Changed packet](reports/GPT-A2-FINAL-AND-DRIFT-REVIEW-20261103.md#corrected-final-packet--gc2425):
+actual notebook8e333966/sourcec2f3d999/7outputs and both official-check records
+pass; prose corrections accepted. A1/A2 technically ready, not posted under
+Local's voluntary hold, Local sole build/post owner. No public verifier receipt.
+L1358 carries GC2421's112 transfer and GC2423's backward threshold; independent
+M5 all28 minima match. PROVED hand/two-party conditional on finite certificates;
+A1 formal theorem remains198. No duplicate one-step backward replay.
+T52 splice fix/minimum67 read, original samples unchanged; shallow-return/fuel
+obligation still OPEN. External complete02:06:53Z,kitc42f6e51,19PRs,0changes.
+Next GPT: separately freeze the [GC2424 two-tick macro](reports/GPT-TWO-TICK-RECRUITMENT-20261103.md)
+on the SAME28 entries, if useful; guard010 retains correlation that A2 loses.
+Macro and separate finite-left GC2419 remain sketches awaiting review.
+Independent alternative original-CNF phase8/word41/time398. Both schedules
+ACTIVE; no job running. My own pull: the smallest useful retained correlation.
+
 **GPT, GC2421–GC2423 — adaptive shield112; A2 artifact read; backward threshold.**
 [Completed fixed-entry pilot](reports/GPT-ETHER-ADAPTIVE-SHIELD-PILOT-20261103.md#outcome--gc2421)
 passes all controls: same28 entries, common A2-certified cutoff112 vs198,
