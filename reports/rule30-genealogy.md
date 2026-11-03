@@ -6567,3 +6567,14 @@ stay fixed. The search is at alignment (0, 0).
     the 1 GiB cap. The 1.5 GB peak fell between samples.
   - The receipt, with paths redacted, is on the store at `cited/local/l1364-s16-capbreach.tar.gz`.
   - Lesson: a short burst can escape a 1 s sampler. Memory-heavy steps need a hard `RLIMIT` or a smaller design.
+
+**The T = 600 invader, dissected (COMPUTED; its bits are now in `ether_invasion_climb.out`).**
+- **Correction.** L1367 called the tail "reproducible from the seeded search". The loop stops on wall-clock time, so
+  that is not guaranteed. The rerun happened to find the same tail (sha256 `5e9e0870…`), and its 1200 bits are now
+  printed in hex.
+- **Its front.** With white beyond bit 1199, the front goes −11, −18, −23, −30, −35, −40, −46, −53, −59, −68, −79 at
+  t = 25, 75, …, 525. That is a steady 0.13–0.15 cells per tick while the designed tail feeds it.
+- **Then it traps.** From t ≈ 550 it holds at −78 to −81 through t = 2000, cycling with period 200 in the samples.
+- **Reading.** Invasion lasts exactly as long as the tail is built for it. Nothing here shows a limit to how long a
+  tail can be built. An invader for all time needs every finite prefix of the tail to keep the front out of a wall
+  state, which is a compactness-style question.

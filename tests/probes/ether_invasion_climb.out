@@ -11,3 +11,7 @@ ETHER_INVASION_CLIMB_DONE
 # python3 tests/probes/ether_invasion_climb.py 135 1200 (alignment (0,0) only)
 T=1200 alignment (0,0): best depth 59 (246 restarts); replay leftmost difference at T: -59; front path [-38, -59, -57, -59]; tail sha256 c4ac82a044367975
 ETHER_INVASION_CLIMB_DONE
+# rerun of T=600 with the tail bits printed (L1368)
+T=600 alignment (0,0): best depth 80 (914 restarts); replay leftmost difference at T: -80; front path [-21, -43, -62, -80]; tail sha256 5e9e0870f9730666
+   tail bits 0..1199 as hex (bit i = cell x = i, little-endian): fa78668716a6a346d8c6f839003ecb1513ff77035b1b3b051cde8c9506f1ae31c5c14915aa93a69956185a9a3432ae8f192f2c9cbbfc8bf67c66ae543e66c5a958a17fb865e49bb4d363187f4896b129817129ce10cb1b78a5c60ed53a8fbfaba9a29867fa69db1d2587a3dcf5783fca11309b8ac9be50d4002f88a15c1937cc63b4900a12dc03cd47beb1ff909a614d09a37c681558
+ETHER_INVASION_CLIMB_DONE
