@@ -278,8 +278,11 @@ a child x driven by a nearer word b and a farther word a, in natural time:
   is x(r + 1) = ¬a(r).
 - **F2, recovery and uniqueness** (`farther_of_child`, `farther_unique`, `solutions_agree`): a(t) = x(t + 1) ⊕ (b(t) ∨ x(t)) for
   every t, so the farther word is determined by the child and the nearer word, for any triple; and two children of the same a
-  and b agree from s + 1 on once b(s) is black. With the kit's `reset_periodic`, which supplies the periodic child, this is the
-  bijection between periodic farther words and periodic children whenever the nearer word has a black.
+  and b agree from s + 1 on once b(s) is black. The kit's `reset_periodic` proves that a child of periodic farther and nearer words is
+  itself periodic from the first black of the nearer word on; with it, the hand argument of the record (GC2550) gives the
+  bijection between periodic farther words and periodic children whenever the nearer word has a black. The module has no
+  standalone cyclic-bijection theorem: its results are arbitrary-word statements in natural time, and the D instances are for
+  the single cell's diagonals.
 - **F3, the coincidence criterion** (`coincidence_iff`): if b(s) is black, then x = b from s + 1 on if and only if
   a = b ⊕ shift(b) from s on. No periodicity is needed; the cyclic form follows.
 - **On the left diagonals** (`D_closed_form`, `D_farther_of_child`, `D_coincidence_iff`, through the kit's `D_step` with child
