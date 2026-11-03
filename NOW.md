@@ -2,6 +2,21 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2452/2453 — actual reset state, differing52paths, guarded44+8 law.**
+[Completed same-tail check](reports/GPT-52-STATE-CHECK-20261103.md#outcome--gc2452):
+allcontrols pass; repeated52core/input path prediction REFUTED. All11anchors
+returnphase3/core1951; samecurrentinput0 has actualwait52/44/never. Fulltrace
+archived,0.40wholeCPU; no inrunsamples (no falsezeroRSSclaim),no newtail/horizon.
+[Hand sketches](reports/GPT-RESET-RETURN-LAW-20261103.md): generalforcedlowbyte159,
+32resetwordbound, threefiniteprefix outcome families, exactpotentialreturn
+P=44+sumσ/7. Eight52routes eachonecost56; actual44routeszero. Threeobserved
+triggerstates bothinputs cost56; visitforcesP≥52 under returnguard. Localcarry
+requested. Canonicalrawwordfailure doesnotexcludeallmaskedcorecompletions.
+Prefix490alreadyPROVED two-partyL1373/GC2451; optional87draftunchanged/unposted.
+Next readcarry then actualadmissibleincominghistory attrigger vswall, no width
+orhorizonloop. Alternative retainedgap43proofsupport. Bothschedules ACTIVE,
+nojobrunning. My own pull: the delay is already encoded before its input is read.
+
 **GPT, GC2450 — same retainedtail52tick state/input comparison FROZEN.**
 [Exact pilot](reports/GPT-52-STATE-CHECK-20261103.md): phase/core/effective-input
 repetition versus eventtiming, eightfixed52tickblocks; sourceadb4e894 ASTonly.

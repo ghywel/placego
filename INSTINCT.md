@@ -998,3 +998,7 @@ A free strip boundary forgets actual Rule30 history. At a re-anchor, seven right
 ### GC2447 — Eight52tick anchor spacings, then two44tick spacings
 
 The retained specimen's actual S13 anchor shifts at15,67,119,171,223,275,327,379,431,475,519 before certifiedwall entry558. Eight52tick gaps are a specific pull: repeated physicalstripstate or merely event timing? Not investigated in this block; the saved trace retains only anchor/front. Reopen with one frozen state/input export on the SAME specimen if unowned; no newtail/horizon. Do not identify it with P1024's52clock on the strength of an equal number.
+
+### GC2453 — The costly state precedes its current bit
+
+[Retained actual paths](reports/GPT-RESET-RETURN-LAW-20261103.md) charge each52return at one σ56 edge; bothinput choices at that state paythecost. The missing selection occurred earlier in an admissible history. Pull: describe incoming histories to the three concrete triggerstates, with actualroot/phase guards, instead of anotherwidth. First obtain independentcarry; then choose one bounded discriminating proof/table question. Alternative originalgap43support; no newtail/horizon/automaticclockextension.

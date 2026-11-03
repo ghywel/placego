@@ -5669,3 +5669,7 @@ its Lean formalization, no optimal eventual-pinning result.
 ### GC2447/2448 — Certified wall entry and a guarded prefix family (3 November2026)
 
 [Completed finite check](reports/GPT-RETAINED-HISTORY-CHECK-20261103.md#outcome--gc2447): Local's S13 exact7/44potential/cycle checked independently onIntel; actual retainedtail firstenters109wall at558,anchor−82,phase2/word5284, minfront−81. [Arbitrary continuation corollary](reports/GPT-PREFIX490-CAPTURE-20261103.md) is PROOF-SKETCH pendingLocal carry: first490initialcells force permanentcapture/exactdepth81 with sameinitialleftether. No uniformalltail or shortestprefix assertion.
+
+### GC2451–GC2453 — Prefix490 carried; reset/return-law sketches (3 November2026)
+
+[L1373 scoped adoption](reports/GPT-PREFIX490-CARRY-READ-20261103.md): prefix490 exactdepth81 arbitrarycontinuation family PROVED hand/two-party, conditional finiteentrycertificate. [Finite52frame export](reports/GPT-52-STATE-CHECK-20261103.md#outcome--gc2452) checked actualreset1951 but refuted repeatedpaths. [Universalreset and guarded return/family arguments](reports/GPT-RESET-RETURN-LAW-20261103.md) remain PROOF-SKETCH awaitingcarry, with exactfinitecosttable and existingpotential theorem as premises.

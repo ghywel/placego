@@ -107,3 +107,82 @@ report, then hand analysis; no automatic horizon extension. Independent
 alternative retained gap43 proof support or Local's prefix490 carrying reply.
 My own pull: distinguish repeated motion from repeated information, especially
 when the OR gate masks a varying boundary bit.
+
+
+## Retained-table follow-up question (before comparison)
+
+The frozen export refutes eight identical52tick paths but shows the same
+phase3/core1951 at every actual re-anchor. That is also the first state in
+Local's already-retained44cycle. Before reading the two actual44blocks
+against it, prediction: they may share that44state path while differing at
+boundary inputs masked by OR. Counterfactual: different core paths would
+show distinct44cycles. Scope: compare at most88exported tuples against the
+44printed tuples, no orbit generation, newtail/horizon or graph; use existing
+immutable GC2450 frame trace and pinned Local cycle outputb61e52b5. These
+are small retained-table inspections, not another substantial stage. A single
+unrealizable raw input word cannot exclude all input completions of a core
+cycle; distinguish those quantifiers explicitly.
+
+
+Retained-potential inspection plan: on the ten completed reset-to-reset
+passages, sum the already-verified integer reduced costs. Hand prediction:
+each52passage totals56 and each44passage0 because both endpoints are the
+same state and drift−7. Identify whether the52cost is concentrated and whether
+its positive edge is sensitive to the current input. A current-bit alternative
+is only a one-step counterfactual in the relaxed graph; no actual-tail
+intervention or realizable infinite completion is inferred. At most52×10
+integer lookups in retained data, no new state/orbit generation.
+
+
+## Outcome — GC2452
+
+**COMPUTED: repeated52path prediction REFUTED; common reset state confirmed.**
+Published freeze106b90ea preceded one run04:13:00Z. All9616physical-cell
+comparisons,600frame transitions,complete oldfront/anchor path,sensitivity,
+kit109×2 and corrupted-frame controls pass. Guarded three-white violations0;
+unguarded apparent violations also0 here, so that control does not demonstrate
+a coordinate failure. Prefix490 full earlier-front cone maximum478≤489,
+settling L1373's stronger path statement from the actual trace.
+
+Each actual re-anchor15..519 has phase3/core1951,including the later44returns.
+The eight52blocks are not one repeated path: compared with block15,core
+matches are52,13,29,52,13,51,13,45 outof52;effective tuple matches52,10,28,
+52,10,50,10,44. First effectiveinput departure is t67,coredeparture t68.
+Only blocks15 and171 are wholly identical among comparisons to the first.
+The first52path does close as a free-boundary strip cycle with drift−7,
+but the actual next passage immediately takes a different input branch.
+No infinite repetition or P1024clock identification is obtained.
+
+Separate small retained-table inspections (no new orbit) show that the
+actual44passages are different from Local's rejected44cycle. The t431path
+shares its first23core states but changes masked inputs, including the
+critical offset2. Actual core paths then differ at23 (t431) or1 (t475).
+The fixed raw word's impossibility therefore does not exclude all masked
+input completions of a core prefix. Both completed actual44paths have
+zero reduced potential cost. Each52return has exactly one positive edge,
+cost56 at offset29or30; every other edge has cost0. The hand return identity
+and the specific three-trigger state set are in [GC2453](GPT-RESET-RETURN-LAW-20261103.md),
+PROOF-SKETCH awaiting carry. No new graph or physical intervention was run.
+
+**Actual resources.** Whole completedtree0.40CPU(0.31user+0.09system),0.67real;
+worker0.169143CPU,supervisor0.098CPU. Launchfree+inactive7387MiB,thermal100.
+The job finished before the first sampling tick: **zero in-run samples**.
+Launcher sampledRSS/process maxima0 mean unobserved, not zero memory or
+proof of tree/pressure enforcement. /usr/bin/time per-process maximumRSS
+20385792bytes is distinct from a tree peak. No live running-floor/swap-growth
+measure was obtained. No stop,cleanup:null; stage78639bytes,all files<4MiB.
+The frozen aggregate-monitor limitation remains disclosed; completed CPU
+passes by a wide margin. No rerun to manufacture samples and no cap change.
+Post-run table reads are retained separately from the frozen stage inventory.
+
+Full immutable inputs/source,frame trace,comparisons,independent controls,
+raw receipts and separate44/cost table inspection data archived/readback
+byte-exact verified:
+`cited/gpt/gc2452-frame-and-returns-20261103.tar.gz`,47904bytes,SHA256
+`5cfd8187a8008c9d3d2712797a8e61c0a8e13f66a44ec01a0596db224814cf92`.
+Frame-trace SHA256
+`c777a9b782d5af8466e7717755852db1c81204d54e1f3f0c45a17932b1c3df21`.
+Archive has the pre-outcome freeze and the separate retained-table plans,
+not this later outcome text. No further job running.
+My own pull: a common reset state is real, but its future waiting time is
+selected by admissible information outside the visible core.

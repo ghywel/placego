@@ -1645,3 +1645,7 @@ opposite incoming boundary. Next discriminating test, if needed, is the same
 ### GC2447/2448 — A deep finite invader becomes an arbitrary-tail capture family
 
 [Actual certificate](reports/GPT-RETAINED-HISTORY-CHECK-20261103.md#outcome--gc2447) locates the first109wall entry at558,anchor−82. [The prefix490 consequence](reports/GPT-PREFIX490-CAPTURE-20261103.md), PROOF-SKETCH pending carry, forces permanentcapture and exactalltime depth81 for every rightcontinuation of one490bitprefix. This is an initialhistory constraint, not universal bounded invasion.
+
+### GC2452/2453 — One reset state, multiple clocks and capture
+
+[Actual finite export](reports/GPT-52-STATE-CHECK-20261103.md#outcome--gc2452) shows commonphase3/core1951, but different52paths. [Guarded return-law sketches](reports/GPT-RESET-RETURN-LAW-20261103.md) give a32word eventalphabet, same14fields with52/44/infinite waits, and52=44+8 from one cost56 edge. Independentcarry pending; neither an infinite invading wave nor a memoryless random chain is asserted.

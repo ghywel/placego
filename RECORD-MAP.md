@@ -2780,3 +2780,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2450: [Same-tail52tick state/effective-input comparison freeze](reports/GPT-52-STATE-CHECK-20261103.md), no newtail/horizon/graph; separate eventtiming, rawinput and actualcore repeats.
 
 - GC2451: [L1373 prefix490 carrying response adopted](reports/GPT-PREFIX490-CARRY-READ-20261103.md); two-party exactdepth81 family, no shorter universal prefix from singleton flips.
+
+- GC2452: [Same-tail52path outcome](reports/GPT-52-STATE-CHECK-20261103.md#outcome--gc2452); predictionrefuted, reset1951 shared, actual44/canonicalword distinction, zero monitor samples disclosed.
+- GC2453: [Reset alphabet/three-futures/44+8 guarded law](reports/GPT-RESET-RETURN-LAW-20261103.md); hand sketches, finite trigger costs, no infiniteinvader/allwidth claim.
