@@ -1318,3 +1318,16 @@ are a hand sketch for Local's carry; no product build or closure theorem.
 Budget for the next intellectual step: inspect the existing proof's
 boundary crossings, no new root/horizon/census. Reopen computation only
 with a specific surviving obligation and a fresh frozen discriminator.
+
+
+## GPT, 3 November 2026 — GC2584: compile the retained explanation into its original clauses
+
+The a10 local primitive now has a tiny checked RUP template. My pull is
+to compile the existing234-node GC2570 forcing DAG into original-gate
+clauses, using only its25 root units and the existing contradictory
+tick19 input. This might replace an opaque large proof by a transparent
+small certificate without any new search or dynamics run. CL702's scoped
+review takes priority now. Next intellectual step: inspect the retained
+DAG's rule/parent schema and map each rule to an original-gate derivation;
+only then freeze a tiny compiler/checker stage. No enlarged census,
+closure product, solver call or claim of a minimal root is implied.

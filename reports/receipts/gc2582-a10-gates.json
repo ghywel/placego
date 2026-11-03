@@ -1,0 +1,74 @@
+{
+  "review": "GC2582",
+  "freeze_commit": "dc7e11f0",
+  "source": "tests/probes/wolfram/a10_gate_certificate.py",
+  "source_sha256": "2ba9251e3bbde12146e1697d5e665e5c78c27e5954b09c550adc6512c2fa3874",
+  "status": "GATE_ONLY_A10_CERTIFIED_AND_FIVE_ORIGINAL_TRANSLATIONS_CHECKED",
+  "started_utc": "2026-11-03T17:50:32Z",
+  "checker_sha256": "445c63926127267a4f0ae5c363b2bffcb004aece119ca50414e7bc22f8bdec23",
+  "original_cnf_sha256": "902aa393975948ff00f775206becc648919693c95170acf134590b12d73ce9c9",
+  "raw_bundle": "cited/gpt/gc2582-a10-gate-receipts.tar.gz",
+  "raw_bundle_sha256": "f5a57ae9f618e16ed5607c38e05c710f3e893f5f24eceb3013e956032db1292f",
+  "raw_bundle_bytes": 5009,
+  "worker_cpu_s": 0.306569,
+  "whole_command_cpu_s_rounded": 0.32,
+  "supervisor_cpu_s": 0.091,
+  "aggregate_cpu_s_approx": 0.411,
+  "command_wall_s": 0.34,
+  "launcher_wall_s": 0.55,
+  "maximum_resident_set_bytes": 67321856,
+  "sampled_tree_count": 0,
+  "launch_headroom_mib": 6329,
+  "no_solver": true,
+  "local_gate_cnf_models": 32,
+  "translations": [
+    [
+      0,
+      -84
+    ],
+    [
+      0,
+      97
+    ],
+    [
+      81,
+      -84
+    ],
+    [
+      81,
+      16
+    ],
+    [
+      17,
+      10
+    ]
+  ],
+  "raw_hashes": {
+    "a10-0.cnf": "ab21d2a26e39d1eb48fedf01cb490f5f2e8b7e680beed8c5c2c4b69aa295b04e",
+    "a10-0.lrat": "a0e1bef3a6d6429ece4f54755e2ebab1d5035711fdea68397284e3a0a5313cba",
+    "a10-0.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "a10-0.stdout": "c680d3bd38a04c7beee7d54999f8f00b43051f75a53cf2bd170ae0cc5f99eb5f",
+    "a10-1.cnf": "e88e5cee611ca6aea9297296d7f89538351e4c09802ffbc498e4c6d5857a05c7",
+    "a10-1.lrat": "a371e283fa8939bc9e1ca0bacda1793e088a8551bf598875b839516312c8c4be",
+    "a10-1.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "a10-1.stdout": "c680d3bd38a04c7beee7d54999f8f00b43051f75a53cf2bd170ae0cc5f99eb5f",
+    "launcher.json": "b64d8315a64b1c59dac070c916cd5ca6161214668ed847eefb73fa14a172e8a3",
+    "out.txt": "325beec220a6d89090149c45a71a9919a5fa2f1b5fbfd0080a288317a66777bd",
+    "solve.json": "325beec220a6d89090149c45a71a9919a5fa2f1b5fbfd0080a288317a66777bd",
+    "template-t0-x-84.lrat": "b57d988e1b1263b7a32672ba9cd8788a6be5b2f3d3ca3ec19a9b0c85c3da9f29",
+    "template-t0-x97.lrat": "128cc139fec1cd7d75dbd7205879b68d69bd3458344856df6e958dadab262dc1",
+    "template-t17-x10.lrat": "eb42f952e12abe7531c97386550d65c81a88f963f943fe406d04acf8b79f95bd",
+    "template-t81-x-84.lrat": "7610396d715ebaa0ec5cb1c2ed611d1947f5b2b2bd7c2b867683afb2e08b1978",
+    "template-t81-x16.lrat": "8b2e0d89839c0531ba91cd026769f9f1031797bba5532d193bd1f975961a6b9b",
+    "thermal.txt": "8e9e1ee6580278b52069d4fd647edd12ac340e92b2b8a66de21e332957dd9c58",
+    "time_receipt.txt": "786c46f2ef3c30f3dacd8239170fe021f999f17808bb84bb8f89bbd121a293c4",
+    "unit-bad.lrat": "c5d45ac8a6de5e9154b1a35d7f307f8326fb404a19dd6f82f6ec8e63eaa8fced",
+    "unit-bad.stderr": "01a9ba84f2403021993b7b7dde2cebf06fdfd79dd39b40549da2d6d34ccbec55",
+    "unit-bad.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unit-good.lrat": "2e9bf73f333fd3624376d1eb676ce8d6240ba39924936c22bc1a522bfb01b8cc",
+    "unit-good.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unit-good.stdout": "c680d3bd38a04c7beee7d54999f8f00b43051f75a53cf2bd170ae0cc5f99eb5f",
+    "unit.cnf": "ac42a371b5a124286c410ed5dfa2e3be7ee7d5b1feac6f08e7e1715f0c3669a8"
+  },
+  "scope": "Both local implications certified on the four-gate circuit plus their negation; five translated fragments RUP-checked against original gate clauses only. No new original-cylinder UNSAT receipt or uniform capture theorem."
+}

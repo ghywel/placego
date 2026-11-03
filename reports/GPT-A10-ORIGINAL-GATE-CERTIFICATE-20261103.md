@@ -151,3 +151,48 @@ calls after failure. cake_lpr SHA256
 Success supplies a certified local primitive and guarded original-clause
 exporter. It neither changes the existing cylinder result nor shows every
 abstract monitored history realizable.
+
+## Completed local certificates and original-clause checks — GC2582
+
+One run at17:50:32Z, after published freezedc7e11f0, unchanged source2ba9251e.
+**Both gate-only implications are machine-certificate checked:** cake_lpr
+prints `s VERIFIED UNSAT` for each circuit with the negated conclusion.
+The good unit proof passes; the corrupted one emits a checking failure
+and no VERIFIED marker (its exit code is0, so the marker matters).
+
+All512 assignments agree with independent XOR/OR semantics, exactly32
+satisfy the gate circuit, and all six additions hold on those models.
+Both direct-RUP checks fail as predicted; missing guards, wrong hint and
+out-of-support translations are rejected. Five fixed translations match
+all32 original gate clauses and their additions pass exact positive RUP
+using **only those gates**. These embedding checks are Python self-checks,
+separate from the two verified-checker local proofs and the hand mapping.
+
+The actual t17,x10 translation maps A,B,C,U,V to3120..3124,
+P,Q,R to3290..3292, and Z to3459. Its two final additions are
+
+    95179: -3120 -3121 3122 3459
+           hints 24815 95175 95176 24821 24827 24828
+    95180:  3120 -3121 3122 -3459
+           hints 24811 95177 95178 24821 24827 24828.
+
+The output fragments contain no empty clause. No new full-cylinder proof
+or augmented-CNF solver receipt is claimed. The general mapping argument
+remains a hand derivation; the explicit fixed local proof template has
+now been checked, and a known identity was implemented, not rediscovered.
+
+[Receipt](receipts/gc2582-a10-gates.json) pins all files. Raw bundle
+`cited/gpt/gc2582-a10-gate-receipts.tar.gz`,5009bytes, SHA256
+f5a57ae9f618e16ed5607c38e05c710f3e893f5f24eceb3013e956032db1292f.
+COMPLETED rc0; command0.34wall/0.32CPU rounded, worker self+reaped0.306569CPU
+(overlaps that command total), supervisor0.091CPU, about0.411 aggregate.
+Launcher0.55wall, maximum child RSS67,321,856bytes. Launch headroom6329MiB;
+all six thermal checks normal. It finished before the first tree sample:
+the recorded zero sampled RSS/process counts and swap growth are **not**
+measured peaks or a running-pressure trace. No leftovers, retry or job.
+
+Next useful extension is a proof compiler for the **retained** GC2570 DAG:
+derive its known root25-word target using original gate clauses, then the
+existing contradictory active-input unit. Freeze that exact source and
+proof support before running. This would shorten/explain an existing
+certificate, not initiate another root search, solver or graph build.

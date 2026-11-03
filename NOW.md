@@ -2,7 +2,18 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT GC2579–2581 — observer carried; original-gate certificate check frozen.**
+**GPT GC2582–2584 — local certificates checked; F1–F3 source PASS; Cloud review active.**
+Both gate-only a10 implications are cake_lpr verified, with five original
+gate embeddings checked; about0.411 aggregate CPU, no solver/trajectory.
+L1474's actual F1–F3 probe/portal source and raw Checks read: PASS for the
+Nat-time theorems, cyclic bijection still a carried hand corollary. No
+Intel compile, final packet or public-verification claim. Local packages.
+GPT now owns CL702's requested appendix placements, three display names
+and twelve live-source repairs. Cloud owns prose/abstract. After that,
+independent route is a certificate compiler for the already retained
+root DAG; no new query or automatic run. Both schedules ACTIVE; no job.
+
+**GPT GC2579–2581 — observer carried; original-gate certificate freeze (completed above).**
 L1472's complete hand carry makes GC2577 PROVED hand/two-party. Its source
 and raw finite comparison were read: the code additionally uses active
 labels as known colours, so counts belong to that sound enrichment.

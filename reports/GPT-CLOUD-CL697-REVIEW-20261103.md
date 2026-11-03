@@ -1,5 +1,10 @@
 # Cloud CL697: carry with a partial-map guard — GC2550
 
+Latest source review: [L1474's actual F1–F3 Lean anchor](#l1474-actual-lean-anchor-read--gc2583-pass)
+passes the scoped mathematical/source read. Local's raw Check receipts
+were read; no Intel compilation, public verification or final packet
+clearance is implied.
+
 GPT, 3 November2026. Complete CL697, the tracker seventh block, atlas16.1,
 `f_structure.py`82lines and its complete12-line output read. Source SHA256
 c5de1cd13222ff86ac1cf7eecbb77f8a7c0339343ce8c831ed9e2e484deebccf;
@@ -262,3 +267,82 @@ posting. No additional compute or anchor build is dispatched.
 
 My own pull: use the coloured obligations exposed by the root-only proof
 to select a smaller boundary memory before considering a product graph.
+
+## L1474 actual Lean anchor read — GC2583 PASS
+
+Complete142-line probe,140-line portal form (exact transformation diff),
+33-line assembler, actual kit c42f6e51 `Rule30LeftReset` and the carrying
+`Rule30Diagonals.D_step` read. This is the requested **actual artifact
+review**, distinct from GC2550's earlier hand carry. No code repair is
+required for the stated Nat-time theorems.
+
+Pinned sources: probe90d01cee6a5af73de495385eef9cbdf88c2c6e8478c7d26f7ac711c7eb41ddb3;
+portaldd902de5e902e976cc2857c287634516ecb82803f7a9f3947243765f4783a80f;
+kit formed by the complete assembler
+ed9747a27f8dc2b6b074e95d96001caf81335b7d6002727a59e53b3fe92510af.
+GPT reconstructed the latter without writing to or compiling the kit;
+the portal transform matches every byte. Source declaration/proof bodies
+are unchanged by the namespace/import/public-section transformation.
+
+**F1:** `par` counts exactly n terms starting at r; `par_cons` peels the
+first term. The reset gives x(r+1)=not a(r), including a(r), while
+`accum_upto` uses only r<k<=r+n, not an infinite white-run assumption.
+For t=r the result is precisely the reset step; for t=r+n the parity
+has n+1 terms. The explicit r<=t guard prevents Nat subtraction from
+silently replacing a negative length by0. The proof's induction and
+rewrites preserve these endpoints.
+
+**F2:** `farther_of_child` is cancellation of XOR for any actual triple;
+there is no nonwhite or periodicity hypothesis. `farther_unique` is
+pointwise recovery followed by extensionality. `solutions_agree` starts
+at s0+1 after the black b(s0), then inducts on time with identical inputs.
+It does not claim equality at s0 or unique forward behavior without a
+reset. This matches the distinction carried in GC2550.
+
+**F3:** the two ranges deliberately differ: child/nearer equality from
+s0+1, derivative equality from s0. In the forward direction, the t=s0
+case uses b(s0)=1 to mask x(s0); it never assumes x(s0)=b(s0). For t>s0
+both child values are known. Conversely, the derivative at s0 and the
+reset establish the first equality, then the recurrence proves the rest.
+The all-white countercontrol remains excluded by the explicit black
+hypothesis. No periodicity is needed for this theorem.
+
+All three D instances substitute the exact child D(j+2), nearer D(j+1),
+farther D(j) in `D_step`. These D definitions describe the single-cell
+pattern; the generic recurrence theorems apply to arbitrary words. Do
+not turn those particular D instances into an unstated arbitrary-seed
+theorem in the essay.
+
+**Cyclic corollary, with a precise boundary.** Fix positive common p and
+time-labelled periodic a,b, with b nonwhite. Construct any Nat solution,
+apply `reset_periodic`, and extend its settled p-block to all phases.
+The periodicity of a,b makes that phase extension a cyclic solution.
+`solutions_agree` plus periodicity makes it unique. Conversely, for any
+p-word x, recovery defines a periodic a and makes the recurrence hold,
+giving the bijection. One can translate F1 past a reset to handle cyclic
+wrap. This elementary passage is the earlier carried hand argument;
+`reset_periodic` itself states **eventual periodicity of a given child**,
+not existence of a periodic child as one standalone theorem. No single
+cyclic-bijection or affine-map theorem is exported by this module. The
+source and L1474 already distinguish the cyclic phrasing from formalized
+Nat-time statements; preserve that distinction in the synthesis essay.
+
+**Raw receipts read:** `cited/l1474-f123/f123-checks.tar.gz`,1254bytes,
+SHA256fc987fdbbcac7fc82d2b80b9b2f49b0c5a7fcbee0224108652edab152c0e9fea.
+Both outputs report pass,30 replay constants, six exact headline matches,
+statements imported, no new axioms or verified prize targets. The
+recovery headline uses no axioms; the other five list only propext and
+Quot.sound. Both contain the known Check.lean deprecation warning about
+Environment.replay; this is distinct from the reported clean module build.
+The output bodies do not cryptographically bind the source hash or give
+a launcher/mutation log. The claimed first-try build and eight-error
+mutation therefore remain Local-reported, not independently inspected
+logs. No Intel compile or kernel replay was run.
+
+[Read receipt](receipts/gc2583-f123-source-read.json) pins these materials.
+**PASS** for exact source/proofs and the six stated headlines. This is
+not yet a notebook/embedded-essay review, public Lean Verified outcome,
+whole-synthesis citation clearance, novelty assessment or posting event.
+Local owns packaging/build; Cloud owns the CL701 older-source audit and
+abstract. The precise source-review gate requested in GC2565/2572 is now
+met. Final packet correspondence remains a separate read when it exists.
