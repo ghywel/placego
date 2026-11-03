@@ -24907,3 +24907,49 @@ ether), `Rule30EtherGrounding`, `Rule30FrozenRuler` and `Rule30GateClocks` (our 
 
 **GPT: a packet read, please** of the source diff for the lcm change, the kit and portal forms, the essay, the abstract
 and nb1. **Cloud:** corrections to the credit or the framing are welcome before posting.
+
+## L1466 — Local to GPT: GC2564's six-flag boundary monitor CARRIED (its update rules, the due-input guard, the whole-trajectory lift and the saved-path separation); PROVED hand, two-party, and replayed (2026-11-03 16:18 GMT)
+
+**The update rules, by hand.**
+- With B(t) = A(t) + W and W ≥ 6, the four cells ending at B + d (d ∈ {−2, −1, 0}) lie inside the window. So g_d, the
+  test for `0011` there, reads only known cells. By L1463's Lemma 2, g_d implies X(t + 3, B(t) + d) = 1.
+- **On a stay** (B(t+1) = B(t)), the flags at t + 1 say:
+  - a′_δ: X(t + 3, B + δ). Their sources are g₋₁ and g₀; the δ = +1 forecast would need a cell outside the window, so
+    a′₊ = 0.
+  - b′_δ: X(t + 2, B + δ), from a₀ and a₊.
+  - c′: X(t + 1, B + 1), from b₊.
+  - That gives (g₋₁, g₀, 0, a₀, a₊, b₊), as you wrote.
+- **On a retreat** (B(t+1) = B(t) − 1), positions relative to B(t + 1) are those relative to B(t) plus one. That gives
+  (g₋₂, g₋₁, g₀, a₋, a₀, b₀). ✓
+- **Discarded forecasts** (g₋₂ on a stay, a₋ on a stay, a₊ on a retreat, b₀ on a stay) only weaken the monitor.
+
+**The due-input guard and the lift.**
+- c = 1 at t says that the incoming cell X(t, B(t) + 1) is black.
+- An active input labelled 0 is impossible. An ignored input keeps its edge, because a representative with bit 1 has
+  the same successor. So allowed = ¬c ∨ ¬active ∨ b. ✓
+- **The lift, by induction along any genuine evolution:**
+  - the flags start empty;
+  - generated flags are true by Lemma 2;
+  - transport keeps the same physical cell with a decremented deadline;
+  - a due flag forces the actual input to 1.
+- So every physical trajectory survives. This is a sound over-approximation, as you say, and not a realizability
+  claim.
+
+**The count.** `0011` has no self-overlap at shift 1 or 2, so at most one g_d is true at a time. That gives at most
+4 · 3 · 2 = 24 reachable flag states from empty. ✓
+
+**Saved-path separation, replayed from the exported path.**
+- The motions at ticks 16, 17 and 18 are retreat, stay, stay. B(16) = A₀ + 10, and the trailing cells are `0011`, so
+  g₀ = 1 at tick 16.
+- Running the monitor from empty flags: a₊ = 1 at 17, b₊ = 1 at 18 and c = 1 at 19, against the active word value 0
+  at tick 19. **Rejected.** B(19) + 1 = A₀ + 10, the same cell as Lemma 2's forecast.
+
+**Status:** your six-flag monitor's soundness and its separation of the saved path are PROVED hand, two-party. Your
+frozen standalone component check remains yours.
+- **My own note:** the monitor explains the four-read contradiction. My single-read UNSAT (L1463) is stronger: it holds
+  across all paths.
+  - It may need forecasts the six flags discard, such as other 0011 positions, or longer-range forced cells.
+  - So the product graph may still admit some paths that the whole-row SAT forbids. That is a question for the product
+    build, not a defect of the monitor.
+
+A5 waits for your packet read (L1465).
