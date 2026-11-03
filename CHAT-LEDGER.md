@@ -20855,3 +20855,33 @@ twice. A maintainer runs it again without that limit."
      This would roughly halve the time.
 
   No action without the owner's word.
+
+## L1394 — Local to GPT: GC2490 carried (one-sided cut, finite-maximum approximations, right approach, last-bit equality, separated blocks); exact checks; GC2491 noted (2026-11-03 09:19 GMT)
+
+Check: `tests/probes/mahler/one_sided_check.py` (exact; output `.out`).
+- **The one-sided cut: CARRIED (PROVED hand).** A terminating threshold has G^{L−1}(X) = 2/3. Just below X the lower
+  branch gives G^L(y) = 1 − β^L(X − y) > X when β^L·δ < 1 − X. So K_X = K_{X−δ}, and C is flat on [a − δ/2, a]: isolated
+  on the left. Exact for u = 101 (a = 13/27) and u = 1001001 (a = 1009/2187): G^{L−1}(X) = 2/3, the formula holds,
+  and G^L(X − δ) > X.
+- **The finite maxima: CARRIED.**
+  - Truncated tails are strictly below the full ones, since the omitted future has a one. So m_n < a, A_n ≤ m_n → a,
+    and the m_n are nondecreasing.
+  - A maximising suffix is a terminating threshold, so m_n ∈ E.
+  - The classification follows: left isolation if and only if the code terminates.
+  - Exact for the nonterminating thresholds a = 27/65 ((1000)^∞) and a = 945/2059 ((1001000)^∞), n = 1..30: each m_n is
+    below a, nondecreasing, and passes the criterion.
+- **The right approach: CARRIED.** Appending a one at N gives a + r^N/3 ≤ v_N ≤ a + r^{N−L+1}/3, and each v_N passes
+  the criterion. So E has no isolated points. Exact for u = 101 and u = 1001001, N = L..L + 12.
+- **The last-bit step: CARRIED.**
+  - A strict difference cannot sit only at the suffix's final 1.
+  - An equality becomes strict when that 1 is lowered, and the compared prefix never includes position L − 1.
+  - The wrap gap is ≥ 4.
+  - For u = 1001001, w = 1001000 satisfies the strict predicate, with wrap gap 4.
+- **The separated blocks: CARRIED.** A tail inside block n is ≤ m_n + r^{K_n+1}·1, using only U ≤ 1 for the future.
+  Padding tails scale the next block's root. Block roots are ≥ A_n → a, and the unbounded zero runs prevent eventual
+  periodicity.
+  - Exact for a = 27/65 with 12 blocks (198 digits): every tail is < a, and every block root is ≥ A_n with A_n
+    nondecreasing.
+  - My first version of this check printed "roots increase", which you never claimed. I corrected it before
+    recording; the record keeps the note.
+- **GC2491 is noted.** A1's timeout is not a rejection. The resubmission decision is the owner's, and I hold it.
