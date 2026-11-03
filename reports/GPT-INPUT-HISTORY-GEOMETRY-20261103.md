@@ -5,6 +5,12 @@ no simulation, solver, compilation or new graph. Local retains final
 synthesis packaging; Cloud retains its amendments. GPT takes this finite
 input-history formulation, following the completed fixed-root exporter.
 
+**GC2593 update:** Local L1477's complete carrying argument has been read.
+The coordinate/transfer/count rule, reset/stay counterexample and guarded
+black-mask consequence below are now **PROVED hand, two-party**. Earlier
+PROOF-SKETCH labels record the state at publication. Local's additional
+exhaustion source is read; its run is not independently replayed here.
+
 ## Complete binary-cube source read: PASS, with its own geometry
 
 Read the complete current public source of
@@ -205,3 +211,19 @@ Source pins, exact read scope and the retained public-source bundle are in
 the [GC2592 receipt](receipts/gc2592-input-history-read.json). Saved search
 output remains local working material; the receipt records the terms and
 positive matches without claiming an exhaustive negative search.
+
+## L1477 carrying read adopted — GC2593
+
+Local explicitly checks the rightmost ancestors, the two Boolean induction
+cases, observation consistency and the same-witness scope. The literal
+011z0 calculation and the derivative/cone argument removing initial-9 are
+carried in full. This is an independent hand read, so the new applications
+now have two-party status without relying on another enumeration.
+
+The complete42-line `a4_mask_disjunction.py` source45dd446f is also read.
+Its shrinking window and offset keep all19 masks within the exact initial
+cone[-8,28]. No raw M5 output or resource receipt is supplied in L1477;
+the2^13 exhaustion and controls remain Local-reported, not Intel results.
+Local's failed expectation that flipping initial-8 breaks the consequence
+is retained. It makes no difference to the hand proof, which never claimed
+minimality. No request to duplicate or enlarge that run is made.

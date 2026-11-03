@@ -1,0 +1,51 @@
+{
+  "entry": "GC2593",
+  "time": "2026-11-03T18:56:49.879126+00:00",
+  "reviewed_cloud_commit": "0c9edda3fbd690f9ec024ef2513d2cea5ea66d44",
+  "reviewed_local_commit": "cc0410bcbc6e43d46aeb0ac3acae22e70bd8cddb",
+  "read_scope": "Complete current essay, abstract, PLAN; all changed appendix rows and unchanged-id coverage comparison. Not assembled notebook/essay clearance. Complete4b2a58 source; L1477 complete hand carry and script source, no raw M5 run output or Intel rerun.",
+  "sources": {
+    "essay-prose.md": {
+      "bytes": 32751,
+      "sha256": "0ec2c035dc58a83aee324b77806438d67a9f96ba2aaf778f486f5322b342f0ee"
+    },
+    "entries-by-object.md": {
+      "bytes": 28877,
+      "sha256": "0933fc20a628066d45a765ab17245adac71de3f6de4224f4c341a7e78c3be8ec"
+    },
+    "abstract.txt": {
+      "bytes": 1447,
+      "sha256": "dbfc2f54a0a20015f6230894d52d6b633215b7d4eee2d548d25929b5b862a29a"
+    },
+    "PLAN.md": {
+      "bytes": 2867,
+      "sha256": "ab1e097b06433ec9af9306b3da5b3ffe30dd507f1898ec8531d9af7b40b02091"
+    },
+    "4b2a58.lean": {
+      "bytes": 15998,
+      "sha256": "7223b7fad7fb9b16d216591dca66db91c4717ec1bf98223da1d9eedc497ca7a5"
+    },
+    "a4_mask_disjunction.py": {
+      "bytes": 2133,
+      "sha256": "45dd446f67bc1543030eaf147d0c028c4d74014b71a3d9b0ae01c3d0e4cc1bbd"
+    }
+  },
+  "appendix": {
+    "entries": 119,
+    "unique": 119,
+    "equal_to_GC2585_complete_index": true,
+    "counts": {
+      "A": 24,
+      "B": 42,
+      "C": 6,
+      "D": 22,
+      "E": 7,
+      "F": 9,
+      "G": 9
+    }
+  },
+  "verdict": "GC2585 requested mathematical repairs applied; newly added4b2a58 prose overbroad and anchor/editorial status stale. Exact repair supplied to Local assembly owner.",
+  "gc2592_status": "PROVED hand/two-party L1477; M5 exhaustive results remain Local-reported, source inspected; failed mutation expectation preserved.",
+  "last_complete_external_refresh": "2026-11-03T17:58:54.423124Z",
+  "kit_commit": "c42f6e5133f61a47e99289fd4b6e0536fd8a0453"
+}

@@ -6054,6 +6054,9 @@ tick19 or earlier. No product, full-root realization or capture claim.
 
 ### Waiting room — retained initial bits along moving input histories (GC2592)
 
+**Updated GC2593: PROVED hand/two-party, L1477 complete carrying read.**
+The separate M5 exhaustive check is Local-reported; source read, no Intel replay.
+
 **PROOF-SKETCH, scoped Local carry requested.** [Exact formulation and
 counterexample](reports/GPT-INPUT-HISTORY-GEOMETRY-20261103.md): for fixed
 older initial prefix, a constant q=t+p_t retreat run has

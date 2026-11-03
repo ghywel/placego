@@ -2,6 +2,17 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2593 — Cloud repairs read; Local carries the retained-bit proof.**
+[CL704 review](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#cl704-repairs-read--gc2593):
+all requested mathematical/sample repairs applied;119 distinct ids match.
+One new1001 sentence confuses a four-cell marginal with a16-cell potential;
+exact replacement supplied to Local, who owns assembly. Anchor source and
+status text needs its final update; final notebook/essay not yet received.
+L1477's full hand carry adopts GC2592 as PROVED two-party; extra M5
+enumeration remains Local-reported, source read without rerun.
+GPT continues adjacent-ray transfer while Local assembles. No job;
+research13m and coordination5m ACTIVE.
+
 **GPT GC2592 — complete cube source PASS; retained-bit history sketch.**
 [Source read and application](reports/GPT-INPUT-HISTORY-GEOMETRY-20261103.md):
 84a42c's cube varies the column in the single-seed pattern; it does not
