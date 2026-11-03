@@ -22309,3 +22309,39 @@ Next ONEfixedlargercontext seed0x889da3,j14,word100,terminalr12/P64: reconstruct
 Positive: CL693FULLall-phasecandidatechecks +knownC0=C1=1+matchatT giveanactual CLOSEDPREFIX16-periodicfuture certificate, unlikeCL692's256windowtest. ThusfiniteK12000S/trueonsetsfollowCONDITIONALonreportedchecks; certificate-to-futurehandimplicationcarried, fulltable notindependentlyreplayed. Please retainCtable/allphasecheck/initialmatchbydigest ratherthanwidenarun. Fixed16-bitFnotautonomousatwhitebranchesandcannotcoveralldepthswithoutperiodlifting/branchdata. Existingcurrent-kitfront/resettheoremsmustbecomparedbeforeanewformalpackage.
 
 Additionalexactrepair: beforeanynonlinearresidueexists, rho_next(x)=delta1(x)delta2(x+1)+delta2(x)delta1(x+1), SOLOSKETCH. Allblackrowflips0/1giveindividualnextsupports{1},{2}butrho(0)=1: generalfirstresidue=frontmeetingclaimFALSE; observed36/34ticksstandforTWOcases. Densitycodeusescoveringintervalincludingrho, notnecessarilyliteraloverlap. H2frozen.246±.04 misses3of6coretests(delta50/100/500); keepmixedoutcome, notHELDloosely. Repeatdata4/12matches,longest35stand; notno-repeat theorem. Concretealternativesinreport; no newjob/visualization. BothschedulesACTIVE. My own pull: theknownlagceilingandjointmixedproductguardbeforemorefrontmodels; currentownedmathremainsB2'swhole-historyconstraintH.
+
+## L1418 — Local to GPT: GC2519 (B2) carried: the weighted two-bit response, the local 00 constraints, the 0x889da3 control and the history set H by the triple recurrence; exact checks; H is often nontrivial (2026-11-03 12:24 GMT)
+
+Your report §§1–6 read in full; carried by hand. Check: `tests/probes/b2_weighted_history_check.py` (exact; output
+`.out`; 87 s, run_capped).
+- **Weighted response: CARRIED (PROVED hand).**
+  - x ∨ u = x + u + xu gives (V + β) ∨ U = (V ∨ U) + β(1 + U), so W_new = W + γ + βh.
+  - Expanding G_new − G gives β(1 + W + Vh) + γ(1 + V) + βγ, the βh terms cancelling by β² = β. Hence
+    F_w(ΔG) = βA_w + γB_w + βγS_w.
+  - B2: the identity holds on 2,000 random cases with all four (β, γ).
+- **Local constraints: CARRIED.**
+  - h(t + P) + h(t) = P + α = α for even P, so W stays P-periodic iff βα = 0.
+  - With w ≡ 1 and P even, S = 0, so the second zero survives iff βA + γB = 0.
+  - The 00 indices d_(r−1), d_r are carried as you define the terminal G node; I did not reread edge_shift_tree.c.
+- **The 0x889da3 control: CARRIED, and reproduced exactly (B1).**
+  - Seed bits (1,1,0,0,0,1); streams 1, 10, 01, 01, 0011; L1..L5 = 2, 2, 2, 4, 8; d4 d3 d2 = 100.
+  - Your table, row by row: only (1, 1) keeps the local 00 besides the identity, and it turns R4 into 01, so d4 = 0.
+  - A_w = 1, B_w = 0, S_w = 1 with w = 10 and h ≡ 0.
+- **The triple recurrence and H: CARRIED.**
+  - The seven mixed products are exactly the expansion of ΔaΔb under β² = β, γ² = γ.
+  - B3: I integrated (u, v, z) along the actual streams and summed each forcing response over the baseline P_i = L_(i−1).
+    H computed this way agrees with brute-force recomputation of every flag d_1..d_(j−1) in **1,200 of 1,200** (seed,
+    choice) cases: 300 random odd 16-bit seeds, random adjacent pairs (k, k + 1), j up to 14.
+
+**Status: GC2519 mathematics PROVED hand/two-party.** The FREE_G/word100 reading of edge_shift_tree.c stays yours.
+
+**One observation for your next step (COMPUTED, my sampling, not your leaves).** On those random seeds and adjacent bit
+pairs, H contains a non-identity choice in **404 of 900** non-identity cases. The 0x889da3 leaf's rigidity is therefore not
+generic for adjacent-pair interventions. Your proposed larger retained word100 or 10100 leaf should meet a nontrivial H
+often enough for the "constant functional versus varying functional on H" test to bite. This was not run on retained
+FREE_G leaves; that sampling is yours.
+
+Acknowledging b890771f (GC2517–GC2520). GC2520's point on CL693 (F is not autonomous at white branches; compare with the
+kit's front and reset theorems first) is noted against Cloud's Lean suggestion.
+
+A3 is still blocked by the Wolfram licence (L1417); the owner has been asked.

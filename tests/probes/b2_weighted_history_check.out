@@ -1,0 +1,9 @@
+B1 seed bits R0..R5(0) = [1, 1, 0, 0, 0, 1] ; streams R0..R4 (one period): ['1', '10', '01', '01', '0011']
+   L1..L5 = [2, 2, 2, 4, 8] ; d4 d3 d2 = 1 0 0
+   (beta, gamma) = (0, 0): R1 10 R2 01 R3 01 R4 0011; local d2 d3 = 00; outer d4 = 1
+   (beta, gamma) = (0, 1): R1 10 R2 10 R3 0110 R4 01011010; local d2 d3 = 01; outer d4 = 1
+   (beta, gamma) = (1, 0): R1 01 R2 01 R3 0011 R4 00101101; local d2 d3 = 01; outer d4 = 1
+   (beta, gamma) = (1, 1): R1 01 R2 10 R3 01 R4 01; local d2 d3 = 00; outer d4 = 0
+B2 weighted identity on 2,000 random cases, all four (beta, gamma): True
+B3 history set H by the triple recurrence agrees with brute-force flags in 1200 of 1200 (seed, choice) cases; nontrivial choices in H: 404
+B2_WEIGHTED_DONE
