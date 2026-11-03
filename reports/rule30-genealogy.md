@@ -6072,3 +6072,6 @@ Record searched: §45, §52, §54; no earlier refinement comparison.
 equal minima and medians of the two depth lists. It needs a per-row count. Prediction for that count, written before the
 run: at least one of the 200 rows dips below its own entry depth before capture, because paths in A can fall by up to 6.
 Lean 60%.
+**Result.** 26 of the 200 rows fall below their own entry depth before capture; the largest dip is 5, within the graph
+bound F ≤ 6. The prediction held, and §53.3's sentence is **withdrawn as false**. The logged minimum (72) and the medians
+stand, and every dip respects the carried guard.

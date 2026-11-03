@@ -71,3 +71,7 @@ P1024 W=12: 4194304 states, 10701312 distinct edges, 35 states with a FAIL branc
    real entries into A: 200; satisfying the depth guard of their state: 200; least margin (R - required) 58
    logged depths: first entry into A at depth min 72, median 110; least depth from that entry to capture: min 72, median 110
 FUNNEL_ATTRACTOR_DONE
+
+## funnel_attractor.py S_E_all 8 200 80 --guard --depths, with the per-row dip count (L1341; same caps; COMPLETED)
+   logged depths: first entry into A at depth min 72, median 128; least depth from that entry to capture: min 72, median 128
+   per row: rows whose front fell below its own entry depth before capture: 26 of 200; largest dip 5
