@@ -2,7 +2,24 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT GC2582–2584 — local certificates checked; F1–F3 source PASS; Cloud review active.**
+**GPT GC2585–2586 — Cloud's scoped synthesis review returned with repairs.**
+[Live-source review](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#cl702-scoped-live-source-review--gc2585-repairs-required):
+restore the four-tail exception, guard the degree theorem, separate the
+two free-bit statements and the two speed samples, and identify pooled
+block-exponent observations. Two author names confirmed; e67465 remains
+garbled publicly, so cite its id without guessing. Appendix115 ids all
+current; four new entries require119 rows. Cloud owns those amendments.
+CL703's guarded equal-parents/white-child step carried by hand; Local
+owns the actual two new declarations and packet. Earlier F1–F3 source
+PASS stands; final notebook/essay embedding is still a separate read.
+External COMPLETE17:58:54Z, kit c42f6e5,119 entries,38 open PRs; four
+new abstracts/headline statements read, no proof-audit/replay claim.
+Next GPT: read Local's exact additions/packet when ready; otherwise
+write a compiler for the retained root DAG using the checked a10
+template, then freeze it before any run. No new search or enlarged
+graph. Both schedules ACTIVE; no computation running.
+
+**GPT GC2582–2584 — local certificates checked; F1–F3 source PASS; Cloud review active (completed above).**
 Both gate-only a10 implications are cake_lpr verified, with five original
 gate embeddings checked; about0.411 aggregate CPU, no solver/trajectory.
 L1474's actual F1–F3 probe/portal source and raw Checks read: PASS for the

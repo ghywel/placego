@@ -1,0 +1,567 @@
+{
+  "entry": "GC2585",
+  "worker": "GPT",
+  "reviewed_commit": "d5d900e4",
+  "scope": "CL702 placement map, three author spellings, twelve citation repairs; CL703 guarded white-child hand step. Not a full proof audit, compilation or final packet clearance.",
+  "complete_external_refresh": {
+    "completed_at": "2026-11-03T17:58:54.423124Z",
+    "portal_updated": "2026-11-03T17:58:46Z",
+    "kit": "c42f6e5133f61a47e99289fd4b6e0536fd8a0453",
+    "portal_entries": 119,
+    "open_prs": 38,
+    "index_digests": {
+      "portal.json": "c69e2568213a585c6fe6f297ad5f4ae02c333fc71b16a1d8638aee5e0e2cfc7e",
+      "prs.json": "f5b174c2d73babed4acefba20fa79075f0666e1a6ffc644a6214fd19bdb5276e",
+      "stamp.json": "52fb478b131ebc15ac5d7a41c8c0d8576da8899003a7e77320f6ab0a00cd09af",
+      "checked.json": "648a440ecad53a246bec9fcc4a26476b81450999d26a0b84d36cbb3ad6240f73"
+    }
+  },
+  "live_pages": [
+    {
+      "id": "R30-20261020-81df0e",
+      "authors": "yingy; Codex",
+      "status": "Lean Verified",
+      "html_sha256": "5961a9a32ae9573c4456fd958e51ada15190e6abc13093510e149cf77fce2898",
+      "checked_at": "2026-11-03T17:59:50.138547+00:00"
+    },
+    {
+      "id": "R30-20261023-8fe04c",
+      "authors": "Troy Lowry; OpenAI Codex",
+      "status": "Lean Verified",
+      "html_sha256": "c2626e804da39915e6acf5c41c7b7506b04f6c4c2ed5a894a354572304d34c53",
+      "checked_at": "2026-11-03T17:59:50.151470+00:00"
+    },
+    {
+      "id": "R30-20261023-524848",
+      "authors": "Troy Lowry; OpenAI Codex",
+      "status": "Lean Verified",
+      "html_sha256": "95667921d2720598be51b4717e1e0dc22d9d576157e3a66174c7406cbf67f11f",
+      "checked_at": "2026-11-03T17:59:51.072060+00:00"
+    },
+    {
+      "id": "R30-20261023-7a9ed3",
+      "authors": "@AIOvernight; OpenAI Codex; Claude",
+      "status": "Lean Verified",
+      "html_sha256": "9bd2d6a687042c9f2b3bcca77fd6612fe5f55202705260e5a57da87a87994594",
+      "checked_at": "2026-11-03T17:59:51.341327+00:00"
+    },
+    {
+      "id": "R30-20261027-c137e0",
+      "authors": "Renaud Bosdure; Claude (Anthropic); Gemini (Google); Grok (xAI)",
+      "status": "Lean Verified",
+      "html_sha256": "54bbeb51556d2c01bab0a354137d56a691e84c23ecccfbfe97c7c3d8540a68a7",
+      "checked_at": "2026-11-03T17:59:51.918251+00:00"
+    },
+    {
+      "id": "R30-20261029-a96cee",
+      "authors": "Gareth Herbert; Claude (Anthropic); GPT (OpenAI)",
+      "status": "Lean Verified",
+      "html_sha256": "2a6d53b79225216fdfedd1f39da8f4895e7ce52b89222b3fce74d38dff2720bd",
+      "checked_at": "2026-11-03T17:59:52.216468+00:00"
+    },
+    {
+      "id": "R30-20261022-0616de",
+      "authors": "Gareth Herbert; Claude (Anthropic); GPT (OpenAI)",
+      "status": "Lean Verified",
+      "html_sha256": "f88160ded040028cb7c12be285ffe1884be0681322fa95bb850335cb23e6af3a",
+      "checked_at": "2026-11-03T17:59:52.760621+00:00"
+    },
+    {
+      "id": "R30-20261023-8e6bd3",
+      "authors": "Gareth Herbert; Claude (Anthropic); GPT (OpenAI)",
+      "status": "Lean Verified",
+      "html_sha256": "494cc3f8cf14e62434fc5edb81fff97a95413b611f942ce1c05332da253a68af",
+      "checked_at": "2026-11-03T17:59:53.077882+00:00"
+    },
+    {
+      "id": "R30-20261023-ac3898",
+      "authors": "Gareth Herbert; Claude (Anthropic); GPT (OpenAI)",
+      "status": "Lean Verified",
+      "html_sha256": "f6811d14dd1f3de93a8c8030037f452a1c42ff51537400bd610ad09028c5f7c3",
+      "checked_at": "2026-11-03T17:59:53.634011+00:00"
+    },
+    {
+      "id": "R30-20261023-603218",
+      "authors": "Andy Norris; Jesse v1.4 (solidSF)",
+      "status": "Lean Verified",
+      "html_sha256": "f0d55a58f7edb8e8464914a5cf7a03e5892f0a6e0434de85ba77f375a08edc02",
+      "checked_at": "2026-11-03T17:59:53.917803+00:00"
+    },
+    {
+      "id": "R30-20261024-b16332",
+      "authors": "Gareth Herbert; Claude (Anthropic); GPT (OpenAI)",
+      "status": "Lean Verified",
+      "html_sha256": "5c491b46eacdcb725a2e0e4c68130cf998145cdd67d43ba7501400a5f580fe30",
+      "checked_at": "2026-11-03T17:59:54.568972+00:00"
+    },
+    {
+      "id": "R30-20261024-a129c3",
+      "authors": "Gareth Herbert; Claude (Anthropic); GPT (OpenAI)",
+      "status": "Lean Verified",
+      "html_sha256": "406f5ca11ee1133948e2ccbfc97317b49357d39eb437c3333fcda2f6fb51c6c2",
+      "checked_at": "2026-11-03T17:59:54.824196+00:00"
+    },
+    {
+      "id": "R30-20261024-4dcf69",
+      "authors": "Gareth Herbert; Claude (Anthropic); GPT (OpenAI)",
+      "status": "Lean Verified",
+      "html_sha256": "4f6a6f3a0d2b4d37784ac67488498b879f29dee0bbaf2cf6c43d3e19f6b27851",
+      "checked_at": "2026-11-03T17:59:55.404104+00:00"
+    },
+    {
+      "id": "R30-20261026-0ef9c8",
+      "authors": "Jeongseop Lee; OpenAI Codex; Claude Code",
+      "status": "Lean Verified",
+      "html_sha256": "ef2a90e0b175113b25744992b14c7d96d307a2b438168779d6dc64c6dd1a0a00",
+      "checked_at": "2026-11-03T17:59:55.689519+00:00"
+    },
+    {
+      "id": "R30-20261028-e34744",
+      "authors": "Emerson Villafuerte; Antigravity (Google DeepMind)",
+      "status": "Lean Verified",
+      "html_sha256": "7e27d4266304f8dc47be350489aae7136da41e837163ada4e59962bff3daa6ea",
+      "checked_at": "2026-11-03T17:59:56.287284+00:00"
+    },
+    {
+      "id": "R30-20261029-5e2b66",
+      "authors": "Gareth Herbert; Claude (Anthropic); GPT (OpenAI)",
+      "status": "Lean Verified",
+      "html_sha256": "78562203c300cdd4fe7ff28ea793e136548a3b14671575e9d3afa7e393390664",
+      "checked_at": "2026-11-03T17:59:56.555303+00:00"
+    },
+    {
+      "id": "R30-20261029-f7ace9",
+      "authors": "Gareth Herbert; Claude (Anthropic); GPT (OpenAI)",
+      "status": "Lean Verified",
+      "html_sha256": "a0402193e727e4b2362accfc45d958f440de1dbbf56ae7e5aedae232ed8ae6dc",
+      "checked_at": "2026-11-03T17:59:57.122034+00:00"
+    },
+    {
+      "id": "R30-20261026-e67465",
+      "authors": "Matev~ Kova\ri\r; Claude(Anthropic)",
+      "status": "Lean Verified",
+      "html_sha256": "8bdd174f07d2d0b08b1b2b8ee2cb98b42c2a97214dac85700a8ffadb38fe5222",
+      "checked_at": "2026-11-03T17:59:58.545163+00:00"
+    },
+    {
+      "id": "R30-20261103-29bcb9",
+      "authors": "Leonardo Jiménez Martínez; Claude Opus 5.5 (Anthropic)",
+      "status": "Lean Verified",
+      "html_sha256": "5a03331234af013740512aa90c38d706ee2225de1973a6bcce43bce04cf6ea9f",
+      "checked_at": "2026-11-03T17:59:57.978427+00:00"
+    },
+    {
+      "id": "R30-20261024-71f858",
+      "authors": "Gareth Herbert; Claude (Anthropic); GPT (OpenAI)",
+      "status": "Lean Unverified",
+      "html_sha256": "28d0e29a696f6d8f84a12399c2eecc2136b7d928534e2db8726b1631eb8eba91",
+      "checked_at": "2026-11-03T17:59:58.834802+00:00"
+    }
+  ],
+  "appendix": {
+    "read_rows": 115,
+    "unique_ids": 115,
+    "current_portal_entries": 119,
+    "stale_ids": [],
+    "missing_ids": [
+      "R30-20261103-b476c1",
+      "R30-20261103-4b2a58",
+      "R30-20261103-452bbf",
+      "R30-20261103-84a42c"
+    ],
+    "suggested_moves": {
+      "60d213": "B/A",
+      "0ef9c8": "E/B"
+    },
+    "suggested_additions": {
+      "b476c1": "A/G",
+      "452bbf": "A/G",
+      "4b2a58": "F/G",
+      "84a42c": "D/G"
+    },
+    "resulting_primary_counts": {
+      "A": 24,
+      "B": 42,
+      "C": 6,
+      "D": 22,
+      "E": 7,
+      "F": 9,
+      "G": 9
+    }
+  },
+  "required_repairs": [
+    "81df0e exception: v != 13 or m even",
+    "Degree is a function of arbitrary initial cone; t >= 2 in imported kit theorem; combined Norris headline t >= 3",
+    "Separate counted finite-horizon starts from actual alternating-centre odd-time free bits",
+    "Separate eight 8192-step flips from five 6000-step inserted-edge samples and their uncertainty",
+    "Pooled 64-seed figure is prefix block-exponent increments, not all individual diagonal least periods",
+    "Do not guess e67465 author from mangled public field",
+    "Add four new portal entries and date appendix snapshot"
+  ],
+  "name_checks": {
+    "29bcb9": "Leonardo Jiménez Martínez",
+    "81df0e": "yingy",
+    "e67465": "Public authors field remains mangled; notebook has <your name>; proposed Kovačič not confirmed"
+  },
+  "new_entries_scope": "Abstracts and exact headline statements read; not complete proof carrying or local replay. All four publicly Lean Verified at snapshot. 4b2a58 actual formal potentials are rational-valued.",
+  "gh_metadata_reads": {
+    "PR65": {
+      "url": "https://github.com/WolframInstitute/Rule30PrizeKit/pull/65",
+      "state": "closed",
+      "merged": false,
+      "head": "d4dca6b4b2c41013553a997205fe4c67cffb1c5d"
+    },
+    "PR46": {
+      "url": "https://github.com/WolframInstitute/Rule30PrizeKit/pull/46",
+      "created_at": "2026-10-28T15:38:08Z",
+      "state": "closed",
+      "merged": false,
+      "head": "a2d48a2cd00a8c404ebe5bb544b93563f9cb5326",
+      "file_adopted_commit": "37a3d844129f82be2a545d99b021f7cfb058d972",
+      "file_adopted_at": "2026-10-30T09:21:52Z"
+    }
+  },
+  "raw_evidence": {
+    "path": "cited/gpt/gc2585-synthesis-review.tar.gz",
+    "bytes": 757881,
+    "sha256": "c1092504fd4707619a2b6c9848d34a7a874411909383bba747c3d3e9875b0623"
+  },
+  "source_manifest": [
+    {
+      "name": "R30-20261020-81df0e.html",
+      "bytes": 61277,
+      "sha256": "5961a9a32ae9573c4456fd958e51ada15190e6abc13093510e149cf77fce2898"
+    },
+    {
+      "name": "R30-20261020-81df0e.json",
+      "bytes": 3385,
+      "sha256": "03c19e65387a00afbae9bef0b1b6751ef765cf1a65de57a789418b1dbd5f8e70"
+    },
+    {
+      "name": "R30-20261022-0616de.html",
+      "bytes": 62375,
+      "sha256": "f88160ded040028cb7c12be285ffe1884be0681322fa95bb850335cb23e6af3a"
+    },
+    {
+      "name": "R30-20261022-0616de.json",
+      "bytes": 5351,
+      "sha256": "80ca040388d605d6937a2aacaae46415d12afe0beb936b0bed0f679feda482b1"
+    },
+    {
+      "name": "R30-20261022-0616de.lean",
+      "bytes": 33772,
+      "sha256": "407f237bc8f8722178c3cb9453773e3feb55f5af83367cda7a27e02ce26f0230"
+    },
+    {
+      "name": "R30-20261023-524848.html",
+      "bytes": 61596,
+      "sha256": "95667921d2720598be51b4717e1e0dc22d9d576157e3a66174c7406cbf67f11f"
+    },
+    {
+      "name": "R30-20261023-524848.json",
+      "bytes": 3709,
+      "sha256": "5140cab2680fbabc3504f7a82ee162a5b948ab5a42732e7f057441971c2467e8"
+    },
+    {
+      "name": "R30-20261023-603218.html",
+      "bytes": 65230,
+      "sha256": "f0d55a58f7edb8e8464914a5cf7a03e5892f0a6e0434de85ba77f375a08edc02"
+    },
+    {
+      "name": "R30-20261023-603218.json",
+      "bytes": 9709,
+      "sha256": "bec763bc3a13a852da2058c485e6b4b1d0ecd2856121377b0d77bc310f44feda"
+    },
+    {
+      "name": "R30-20261023-603218.lean",
+      "bytes": 141901,
+      "sha256": "68851ecc751cd06587482baecce52f0e5b0958fe12a759e26e8484b45e002da3"
+    },
+    {
+      "name": "R30-20261023-7a9ed3.html",
+      "bytes": 61562,
+      "sha256": "9bd2d6a687042c9f2b3bcca77fd6612fe5f55202705260e5a57da87a87994594"
+    },
+    {
+      "name": "R30-20261023-7a9ed3.json",
+      "bytes": 3791,
+      "sha256": "5f8ea58f94a6e2836f77416d78ef8996d687f8008803409cfd30aee6c12d06ac"
+    },
+    {
+      "name": "R30-20261023-8e6bd3.html",
+      "bytes": 60787,
+      "sha256": "494cc3f8cf14e62434fc5edb81fff97a95413b611f942ce1c05332da253a68af"
+    },
+    {
+      "name": "R30-20261023-8e6bd3.json",
+      "bytes": 3086,
+      "sha256": "2cac7c9bd5ff792da402b7dcf9dae7aa106c6acf3ff2c00834166e86c54ea3ff"
+    },
+    {
+      "name": "R30-20261023-8fe04c.html",
+      "bytes": 61770,
+      "sha256": "c2626e804da39915e6acf5c41c7b7506b04f6c4c2ed5a894a354572304d34c53"
+    },
+    {
+      "name": "R30-20261023-8fe04c.json",
+      "bytes": 4141,
+      "sha256": "0a17e3730a8d9208b0b16b4c4a2d5bc9d9c98d2a07fbf8bf008581af4ce8b86e"
+    },
+    {
+      "name": "R30-20261023-ac3898.html",
+      "bytes": 60573,
+      "sha256": "f6811d14dd1f3de93a8c8030037f452a1c42ff51537400bd610ad09028c5f7c3"
+    },
+    {
+      "name": "R30-20261023-ac3898.json",
+      "bytes": 2763,
+      "sha256": "c2f3b910a554b45d23b0e96c03ef84b14ef999ec3d7caed4fe5b6aa4d44237fc"
+    },
+    {
+      "name": "R30-20261024-4dcf69.html",
+      "bytes": 60411,
+      "sha256": "4f6a6f3a0d2b4d37784ac67488498b879f29dee0bbaf2cf6c43d3e19f6b27851"
+    },
+    {
+      "name": "R30-20261024-4dcf69.json",
+      "bytes": 2459,
+      "sha256": "80664366bd9d80e4d1f2cb4f40a7a2052c149f770803254eb6066a0dabdad841"
+    },
+    {
+      "name": "R30-20261024-71f858.html",
+      "bytes": 60123,
+      "sha256": "28d0e29a696f6d8f84a12399c2eecc2136b7d928534e2db8726b1631eb8eba91"
+    },
+    {
+      "name": "R30-20261024-71f858.json",
+      "bytes": 2046,
+      "sha256": "c0c7945b21515e195a5e4f3fe9eef83cd1df0620f09beade9c36d4b7c8ca96ec"
+    },
+    {
+      "name": "R30-20261024-a129c3.html",
+      "bytes": 60387,
+      "sha256": "406f5ca11ee1133948e2ccbfc97317b49357d39eb437c3333fcda2f6fb51c6c2"
+    },
+    {
+      "name": "R30-20261024-a129c3.json",
+      "bytes": 2435,
+      "sha256": "4ee17677c63d712f0ee6a80038d1c464be9e8df26163e4b4c5b5557d01e47cc7"
+    },
+    {
+      "name": "R30-20261024-b16332.html",
+      "bytes": 61122,
+      "sha256": "5c491b46eacdcb725a2e0e4c68130cf998145cdd67d43ba7501400a5f580fe30"
+    },
+    {
+      "name": "R30-20261024-b16332.json",
+      "bytes": 3650,
+      "sha256": "8e881d722e4fc09c4ac7a1de058660b1632541d12b279230146c1ecdfb38028e"
+    },
+    {
+      "name": "R30-20261026-0ef9c8.html",
+      "bytes": 61326,
+      "sha256": "ef2a90e0b175113b25744992b14c7d96d307a2b438168779d6dc64c6dd1a0a00"
+    },
+    {
+      "name": "R30-20261026-0ef9c8.json",
+      "bytes": 3505,
+      "sha256": "5ff3e445d670c2569d64f8518ce76ea3c55d43df1504fbf31d5719699911cbeb"
+    },
+    {
+      "name": "R30-20261026-0ef9c8.lean",
+      "bytes": 190940,
+      "sha256": "cd2425f35ca59e204a4b93fe6ec9c72603052209fb9f1997b4af703e47c32e0f"
+    },
+    {
+      "name": "R30-20261026-e67465.html",
+      "bytes": 65404,
+      "sha256": "8bdd174f07d2d0b08b1b2b8ee2cb98b42c2a97214dac85700a8ffadb38fe5222"
+    },
+    {
+      "name": "R30-20261026-e67465.json",
+      "bytes": 9790,
+      "sha256": "6cf6f10c55897b6be1e9e4fc5083c8ed97a31b56c7f58708a48172445a619e82"
+    },
+    {
+      "name": "R30-20261026-e67465.nb",
+      "bytes": 94448,
+      "sha256": "9317db604e65c662f30022db7c3f06ec3652872c13a2509e9788313f4334d8d0"
+    },
+    {
+      "name": "R30-20261027-c137e0.html",
+      "bytes": 62626,
+      "sha256": "54bbeb51556d2c01bab0a354137d56a691e84c23ecccfbfe97c7c3d8540a68a7"
+    },
+    {
+      "name": "R30-20261027-c137e0.json",
+      "bytes": 5205,
+      "sha256": "1d1b8a5180eb60c0a88639b39b27690a500d30160a1c3c21edb5ab5e0ffdcdb0"
+    },
+    {
+      "name": "R30-20261028-e34744.html",
+      "bytes": 65240,
+      "sha256": "7e27d4266304f8dc47be350489aae7136da41e837163ada4e59962bff3daa6ea"
+    },
+    {
+      "name": "R30-20261028-e34744.json",
+      "bytes": 9710,
+      "sha256": "53f7ba3d182f281d2beb20f265d323055334def3501dbbeb3d8c96d18011c5bf"
+    },
+    {
+      "name": "R30-20261029-5e2b66.html",
+      "bytes": 61159,
+      "sha256": "78562203c300cdd4fe7ff28ea793e136548a3b14671575e9d3afa7e393390664"
+    },
+    {
+      "name": "R30-20261029-5e2b66.json",
+      "bytes": 3349,
+      "sha256": "82a82fdd12dd40d2847c5aee62416c6dd2b37ce9f2f6e071c87734951b1bc0c8"
+    },
+    {
+      "name": "R30-20261029-a96cee.html",
+      "bytes": 62504,
+      "sha256": "2a6d53b79225216fdfedd1f39da8f4895e7ce52b89222b3fce74d38dff2720bd"
+    },
+    {
+      "name": "R30-20261029-a96cee.json",
+      "bytes": 5437,
+      "sha256": "ca9f608c5bc2fd11e0d132f8ac58ba8bce0ea8ce8e5babf220dcb3ae7abfb1ae"
+    },
+    {
+      "name": "R30-20261029-f7ace9.html",
+      "bytes": 61087,
+      "sha256": "a0402193e727e4b2362accfc45d958f440de1dbbf56ae7e5aedae232ed8ae6dc"
+    },
+    {
+      "name": "R30-20261029-f7ace9.json",
+      "bytes": 3277,
+      "sha256": "39ac19e0401c3ff5a0e8dd3c4c33c749a882c4b2294c2ef9804198337e176edf"
+    },
+    {
+      "name": "R30-20261103-29bcb9.html",
+      "bytes": 61441,
+      "sha256": "5a03331234af013740512aa90c38d706ee2225de1973a6bcce43bce04cf6ea9f"
+    },
+    {
+      "name": "R30-20261103-29bcb9.json",
+      "bytes": 3735,
+      "sha256": "68b4ae3df4cad7f9af2560ed0b949209c17ea20aa9ffe0ba8918d2fd4e60e713"
+    },
+    {
+      "name": "R30-20261103-452bbf.lean",
+      "bytes": 20555,
+      "sha256": "838a256750cd8794340c953bf5ec3c703a1ea5bb0c59b984df7f068177b8adaf"
+    },
+    {
+      "name": "R30-20261103-4b2a58.lean",
+      "bytes": 15998,
+      "sha256": "7223b7fad7fb9b16d216591dca66db91c4717ec1bf98223da1d9eedc497ca7a5"
+    },
+    {
+      "name": "R30-20261103-84a42c.lean",
+      "bytes": 11067,
+      "sha256": "8b66f2213ee9c4f97043afce3fc0325643e39be2e8c265df75e77f7b7bc6fb5b"
+    },
+    {
+      "name": "R30-20261103-b476c1.lean",
+      "bytes": 28995,
+      "sha256": "3ad0168e6b49de01661ca02ce827c498792e2d9b5baefd7308f3cda32feb55bb"
+    },
+    {
+      "name": "edge_diag_rules.out",
+      "bytes": 17100,
+      "sha256": "de5bafdf56438fe3110c0325f4baeaaa9d219d853b1f58551c3ff4ceaea5e27d"
+    },
+    {
+      "name": "fetched.json",
+      "bytes": 5496,
+      "sha256": "357b3cb845b8ca13d22cadd164387a258affc08f9c2b99ef1ff3c6072a13fad2"
+    },
+    {
+      "name": "index-checked.json",
+      "bytes": 97284,
+      "sha256": "648a440ecad53a246bec9fcc4a26476b81450999d26a0b84d36cbb3ad6240f73"
+    },
+    {
+      "name": "index-portal.json",
+      "bytes": 630414,
+      "sha256": "c69e2568213a585c6fe6f297ad5f4ae02c333fc71b16a1d8638aee5e0e2cfc7e"
+    },
+    {
+      "name": "index-prs.json",
+      "bytes": 121792,
+      "sha256": "f5b174c2d73babed4acefba20fa79075f0666e1a6ffc644a6214fd19bdb5276e"
+    },
+    {
+      "name": "index-stamp.json",
+      "bytes": 123,
+      "sha256": "52fb478b131ebc15ac5d7a41c8c0d8576da8899003a7e77320f6ab0a00cd09af"
+    },
+    {
+      "name": "kit-AlgebraicDegree.lean",
+      "bytes": 43214,
+      "sha256": "fcf02bca6ae7d628fb1e3f18451e992639c98f8d6feb2f52021ccd8d08a63e2b"
+    },
+    {
+      "name": "kit-PeriodicPoints.lean",
+      "bytes": 14807,
+      "sha256": "dd7e300baf996d52dabe789ce8537f1a5fb03c59504c233f37544bbd17843f57"
+    },
+    {
+      "name": "kit-Rule30Ether.lean",
+      "bytes": 92731,
+      "sha256": "9413bfbf7b8d53f8320160d28b1c8ec7644a12369bcc224be9405415c27e282d"
+    },
+    {
+      "name": "kit-Rule30LeftUnbounded.lean",
+      "bytes": 14405,
+      "sha256": "b1d3f9bd1d43cf230cd01170c246fe4eb33b8f9095c98b33df6ba4183bd714d7"
+    },
+    {
+      "name": "kit-Rule30RightPeriods.lean",
+      "bytes": 50477,
+      "sha256": "9ef3c374ff394f9727706b54f25a7d8fa1dce329efc6cd4f6c4821f6c03975ad"
+    },
+    {
+      "name": "kit-Rule30TopCoefficient.lean",
+      "bytes": 32678,
+      "sha256": "0e5d74b35c3aafbea85aba974fbe23d90f7482933370ace4173d71e2d3d28107"
+    },
+    {
+      "name": "kit-Rule30TraceEdge.lean",
+      "bytes": 3902,
+      "sha256": "458f22ffa401e81440f6c2e4d039f02523af19186cbd92a2879667f5fa7e3ded"
+    },
+    {
+      "name": "kit-Rule30ZeroBoundary.lean",
+      "bytes": 69276,
+      "sha256": "1c58537fa2b7f5dbfb97d49b5c6834947f4742a09153c470e0a189da9a24020b"
+    },
+    {
+      "name": "kit-Rule30ZeroBoundaryStripeFour.lean",
+      "bytes": 28825,
+      "sha256": "02dd6d94b051c783e5bdfa08229533fa9c83580205382acb063b3ea184dabb49"
+    },
+    {
+      "name": "new-entry-metadata.json",
+      "bytes": 18318,
+      "sha256": "6e5cfd6a321c372383724cd3be709c4007fd2bcdc6851a2ea833094882f9e879"
+    },
+    {
+      "name": "speed_law.out",
+      "bytes": 2295,
+      "sha256": "c8b102322fde2088cd98025b404aec847c0ad5a03bbbdf9175b716563e7cf9b9"
+    },
+    {
+      "name": "speed_law.py",
+      "bytes": 4830,
+      "sha256": "75923b5c546a80f36bef30d7b9edc82052ce0807af45b60c8c39e05bc9816203"
+    }
+  ],
+  "computation": "No new dynamics, solver, graph, compilation or measurement run; metadata/hash/diff checks only.",
+  "CL703_white_direction": {
+    "entry": "GC2586",
+    "status": "PROVED hand two-party for the guarded elementary recurrence step",
+    "scope": "a=b from s, black b(r) with r>=s gives child white from r+1; converse white child gives equal parents; source additions still Local-owned and unread until built."
+  }
+}
