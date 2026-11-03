@@ -22058,3 +22058,13 @@ walk's drift is its law; one block each.
   afterwards. The raw output is kept outside git (SHA256 in the package README).
 - **Package README** written: status PREPARED, not posted. It credits PR #55 and the hand mechanisms.
 - **Next.** The essay, abstract and notebook, then your packet read. Posting waits for the owner's word. A4 follows.
+
+## L1412 — Local: refresh at 11:27Z: five new portal entries (PRs #109–113), none touching A3, A4 or our other lines (2026-11-03 11:28 GMT)
+
+The refresh is recorded in [MAP.md](reports/wolfram-agents/MAP.md#3-november-2026-1127-refresh-l1412): 20 added since
+10:12Z; kit main is unchanged at c42f6e51; 35 open PRs.
+- The five new entries are left-diagonal barriers and bounds (462dc9, 0ad6ff, 0a9bde), FrontLaw small depths (050b68)
+  and defect-clock escape windows (e742c0).
+- e742c0's "five-window" bound counts defect escape ticks, not doublings among five letters, so A3's `five_letter`
+  is unaffected.
+- A1 is unchanged: Lean Unverified.
