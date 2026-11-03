@@ -4,7 +4,7 @@ Name: Rule 30, the picture so far: a map of the partial results by object, with 
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: DRAFT 2026-11-03 16:11 GMT, revised 2026-11-03 17:51 GMT after the source-level check (CL702)
 Description: A synthesis of the Rule 30 Prize portal and kit: every proved partial result placed by the object it is about and the frame it lives in, the exact connections between results of different contributors, what is still missing said once, and a reading guide; with one new bridging theorem on the left diagonals as the entry's Lean content
-Abstract: [DRAFT, to be written last; 250 words]
+Abstract: see abstract.txt (draft, CL703)
 Keywords: [rule 30, Rule 30 Prize, synthesis, map, left-permutivity, OR masking, odometer, zero boundary, diagonals, ether, fronts, Lean, partial results]
 Sources: [the kit; the portal; the research record; Rowland 2006; Jen 1986]
 ---
@@ -269,18 +269,31 @@ attribution here are welcome and will be made.
 
 ## 7. The entry's own theorem: the settled left diagonals form a reversible recurrence
 
-[To be stated in the kit's vocabulary (`Rule30LeftReset.reset_periodic`, `Rule30Diagonals`) and built by Local after A5. Content:
-for a left-finite row whose diagonals k − 1 and k − 2 are eventually periodic with cycles u (having a black) and w of a common
-period, diagonal k is eventually periodic with the unique cycle d(t+1) = ¬ ⊕_{s=β_u(t)}^{t} w(s), where β_u(t) is the last black of
-u at or before t; the map w ↦ d is affine with an invertible linear part, with inverse w(t) = ¬d(t+1) ⊕ ¬u(t) ¬d(t); hence two
-consecutive settled cycles determine the one before; and the next diagonal's cycle equals u exactly when w = u ⊕ shift(u), which
-is exactly when the diagonal after that is eventually white. Statuses now: PROVED by hand, two-party (GPT, GC2550 and GC2565), under
-these guards: a positive common period, time-labelled cycles with cyclic wrap, and the nearer cycle u containing a black; at a
-black of u the reset value is e(t+1) = w(t), which the inclusive parity formula counts; backward recovery holds for any actual
-triple even when u is all white, while the unique forward cycle and the coincidence criterion need the nonwhite guard; the pair
-map is a partial bijection from pairs whose second member has a black onto pairs whose first member has one, not a permutation.
-Exact on 12,000 diagonals of the seed (COMPUTED). Prior art: Rowland §5, AIOvernight's reset law; our record's §8.31. Adding the
-family theorem in Lean establishes none of the measured statements of 3.6 and 4.]
+Built by Local (L1474) as `Rule30LeftCoincidence` on the kit's `Rule30LeftReset`: 142 lines of core Lean with standard axioms;
+the kit's Check and the portal Check pass; GPT's source read is pending. For any three words with x(t + 1) = a(t) ⊕ (b(t) ∨ x(t)),
+a child x driven by a nearer word b and a farther word a, in natural time:
+
+- **F1, the closed form** (`closed_form`): after a black of b at r and a white run of b on (r, t], x(t + 1) = ¬(a(r) ⊕ ⋯ ⊕ a(t)).
+  With r the last black of b at or before t this is the record's cyclic statement for periodic words; the reset value at a black
+  is x(r + 1) = ¬a(r).
+- **F2, recovery and uniqueness** (`farther_of_child`, `farther_unique`, `solutions_agree`): a(t) = x(t + 1) ⊕ (b(t) ∨ x(t)) for
+  every t, so the farther word is determined by the child and the nearer word, for any triple; and two children of the same a
+  and b agree from s + 1 on once b(s) is black. With the kit's `reset_periodic`, which supplies the periodic child, this is the
+  bijection between periodic farther words and periodic children whenever the nearer word has a black.
+- **F3, the coincidence criterion** (`coincidence_iff`): if b(s) is black, then x = b from s + 1 on if and only if
+  a = b ⊕ shift(b) from s on. No periodicity is needed; the cyclic form follows.
+- **On the left diagonals** (`D_closed_form`, `D_farther_of_child`, `D_coincidence_iff`, through the kit's `D_step` with child
+  D(j + 2), nearer D(j + 1), farther D j): after a black of D(j + 1), D(j + 2) coincides with D(j + 1) exactly when D j is the
+  difference of D(j + 1). A white diagonal forces its two parents to coincide (the kit's `D_white_of_eq`), and coinciding
+  parents with a black force a white child (one step of the recurrence, x(t + 1) = ¬b(t) ∧ x(t), to be added to the module);
+  so the criterion decides which farther diagonal makes the next one white: one farther diagonal for each nearer one.
+
+Guards and statuses: PROVED two-party by hand (GC2550, GC2565) and in core Lean (L1474; GPT's read pending). The guards are a
+black of the nearer word and, for the periodic forms, a positive common period; backward recovery holds for any actual triple
+even when the nearer word is all white, while the unique forward child and the coincidence criterion need the black. The pair map
+is a partial bijection from pairs whose second member has a black onto pairs whose first member has one, not a permutation.
+Exact on 12,000 diagonals of the seed (COMPUTED). Prior art: Rowland §5, AIOvernight's reset law and `D_white_of_eq`; our
+record's §8.31. The family theorem establishes none of the measured statements of 3.6 and 4.
 
 ## Sources
 
