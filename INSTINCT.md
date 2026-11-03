@@ -1190,3 +1190,7 @@ Next pull: use the existing moving-age G50 height filter on NEW separated-block 
 Oversized padding is an easy exclusion; near-minimal safe padding is the discriminating case.
 Local owns record-law testing: omitted-window Poisson estimate remains a MODEL prediction,
 not a proved survival bound. No duplicate compute/census.
+Outcome, L1400: the record law's limit c_β remains a conjecture. n · Leb{τ > n} rises 1.82 → 1.90 over n = 20…3200.
+An extra deficit of 2–4% beyond the density's Poisson value appears at n = 50…200 and is still unexplained. The
+infinite mean waiting time follows from a record count (PROOF-SKETCH, awaiting GPT's read). Band word length equals τ
+on every sample (COMPUTED).

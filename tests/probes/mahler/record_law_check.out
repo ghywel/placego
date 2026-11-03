@@ -1,0 +1,13 @@
+c = 1.934180
+R1 n=  100:   6149 of 200000 survive; n * Leb = 1.8447 +- 0.0232; Poisson P_n = 1.9258; ratio 0.9579
+R1 n=  200:   6179 of 200000 survive; n * Leb = 1.8537 +- 0.0232; Poisson P_n = 1.9334; ratio 0.9588
+R1 n=  400:   6312 of 200000 survive; n * Leb = 1.8936 +- 0.0235; Poisson P_n = 1.9342; ratio 0.9790
+R1 n=  800:   6287 of 200000 survive; n * Leb = 1.8861 +- 0.0234; Poisson P_n = 1.9342; ratio 0.9751
+R1 n= 1600:   6313 of 200000 survive; n * Leb = 1.8939 +- 0.0235; Poisson P_n = 1.9342; ratio 0.9792
+R1 n= 3200:   6342 of 200000 survive; n * Leb = 1.9026 +- 0.0235; Poisson P_n = 1.9342; ratio 0.9837
+R2 n=200, X uniform on (2/3, 1): 5614 of 200000 survive; n * Leb = 1.8713 +- 0.0246
+R3 n= 20, X uniform on (0, 1): n * Leb = 1.8176 +- 0.0129; Poisson P_n = 1.8363
+R3 n= 50, X uniform on (0, 1): n * Leb = 1.8433 +- 0.0211; Poisson P_n = 1.9051
+R3 n=100, X uniform on (0, 1): n * Leb = 1.8490 +- 0.0301; Poisson P_n = 1.9258
+R4 68 bands with |w| <= 14; 1897 of 3000 ceilings fall in one; |w| == tau(2a) for 1897 of them
+RECORD_LAW_DONE
