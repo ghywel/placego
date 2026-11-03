@@ -1243,3 +1243,9 @@ seedhas111, whileORsmallclock11011makesthefiveletterE≥2guardessential. Sourcef
 carried, officialCheck/packetstillLocal'snextstep. Do notturnatypefaithfulnessPASSinto
 publicverificationorcallknownORno11011new. Ownpull: keepthese exactguardsvisibleas
 proofreusability, andreadtheconcretereleasepacketoncepreparedratherthanrepeatanewproof.
+- Cloud, 2026-11-03 11:25 GMT (CL691, inquisition round 14): three pulls from the owner's answers, none started: **H1** the band edge's own cell
+  sequence as the two ends' meeting point and the rule-native tell (words delimited by its events); **H2** echolocation, a probe flip
+  across the band edge into the crystal, the front's law as a sonar trace; **H3** two probes' nonlinear residue D_12 ⊕ D_1 ⊕ D_2 (the
+  harbour mouth). Strongest: the hand problem the fresh-foot result poses, the fair-row front's drift 0.246 as a self-interacting walk
+  (fair coins at new minima, its own wake elsewhere); route if the stationary wake law resists: condition on the wake pattern within
+  the last heal's reach only and bound the error by the heal-size tail (jumps ≥ 4 are 2% of steps).
