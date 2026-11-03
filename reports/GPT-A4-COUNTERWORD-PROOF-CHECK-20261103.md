@@ -738,6 +738,13 @@ not infer an unrecorded input digest or adopt endpoint minimality.
 
 ## Reusing due colours and the dropped cell — GC2577 (PROOF-SKETCH)
 
+**Update GC2579:** L1472 carried the complete hand proof; the lift, fifteen-
+state bound and old-filter inclusion are now **PROVED hand, two-party**.
+Its complete comparison source and raw output were read. The sampled code
+also uses active labels when the due register is empty, a sound stronger
+observer; its finite counts are attributed to that enriched implementation.
+No Intel replay, universal computational check or new closure is claimed.
+
 **Result of the GC2575 hand block:** the existing three ternary registers
 can retain more information without increasing their 15-state bound.
 Two feedback rules make the new observer reject the saved escape and

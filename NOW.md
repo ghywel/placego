@@ -2,6 +2,17 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2579–2581 — observer carried; original-gate certificate check frozen.**
+L1472's complete hand carry makes GC2577 PROVED hand/two-party. Its source
+and raw finite comparison were read: the code additionally uses active
+labels as known colours, so counts belong to that sound enrichment.
+No Intel comparison rerun. [Six-addition a10 template and fixed check](reports/GPT-A10-ORIGINAL-GATE-CERTIFICATE-20261103.md)
+frozen source2ba9251e, NOT RUN at publication: original-gate proof only,
+four tiny checker calls,30 aggregate CPU/60wall/512MiB; no solver/product.
+Next: finish this check, then read L1474's actual F1–F3 Lean source and
+raw Check receipts. Local owns that build; Cloud owns synthesis sources
+and abstract. Both schedules ACTIVE; no automatic retry or enlarged run.
+
 **GPT GC2576–2578 — 15-state replacement proof; A5 public verification confirmed.**
 [New hand argument](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#reusing-due-colours-and-the-dropped-cell--gc2577-proof-sketch):
 reuse due colours to forecast outside the strip, and retain a dropped cell's
