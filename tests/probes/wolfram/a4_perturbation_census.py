@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """L1434 (Local, 2026-11-03): the A4 finite-perturbation census (GC2535's pull).
-Run: python3 tests/probes/wolfram/a4_perturbation_census.py DATA.json W_PERT [TMAX] [SAVE.npz]
+Run: python3 tests/probes/wolfram/a4_perturbation_census.py DATA.json W_PERT [TMAX] [SAVE.npz EXPORT.json]
 
 DATA.json is a4_closure_export.py's closure (kept outside git): ring orbit, alignment (r, s), window W, (P, S), the closure
 states and their potential. Every nonzero pattern u < 2 ^ W_PERT is XORed onto the background on cells [0, W_PERT): a finite
@@ -21,6 +21,7 @@ import numpy as np
 data = json.load(open(sys.argv[1]))
 WP = int(sys.argv[2]); TMAX = int(sys.argv[3]) if len(sys.argv) > 3 else 1200
 SAVE = sys.argv[4] if len(sys.argv) > 4 else None  # optional: save F(t) for every pattern (outside git)
+EXPORT = sys.argv[5] if len(sys.argv) > 5 else None  # optional: the certificates as JSON (outside git)
 orb = [tuple(o) for o in data['orb']]; q = len(orb); N = data['N']; r0, s0 = data['r'], data['s']
 W, P, S = data['W'], data['P'], data['S']
 CL = {(st[0], st[1], tuple(st[2])): data['lo'][i] for i, st in enumerate(data['states'])}
@@ -155,7 +156,7 @@ for (a, b) in [(TMAX // 4, TMAX // 2), (TMAX // 2, TMAX)]:
     hist = Counter(np.round(sl, 2).tolist())
     print('slopes over [%d, %d]: within 0.01 of the theorem %d of %d; clusters (slope, count): %s' % (
         a, b, near, NP, sorted(hist.items(), key=lambda kv: -kv[1])[:12]))
-done = {}
+done = {}; owncert = {}
 for k in outside[:40]:
     st = state_at[1200][k]
     if st in done:
@@ -166,8 +167,27 @@ for k in outside[:40]:
     else:
         pot = potential(*res)
         done[st] = 'own closure %d states; potential at (P,S): %s' % (len(res[0]), pot is not None)
+        owncert[st] = (res, pot)
     print('  outside pattern 0x%x: %s; slope %.4f' % (int(pats[k]), done[st], slope[k]))
 if SAVE:
     np.savez_compressed(SAVE, F=F_track, pats=pats)
     print('saved F(t) for every pattern to %s (kept outside git)' % SAVE.rsplit('/', 1)[-1])
+if EXPORT:
+    # every pattern: its entry time and anchored state (in A4's closure), or its t = 1200 state and own closure
+    enc = lambda st: [st[0], st[1], ''.join(map(str, st[2]))]
+    ent = []
+    for k in range(NP):
+        if first_in[k] >= 0:
+            tc = int(first_in[k]); ent.append([int(pats[k]), tc, enc(state_at[tc][k]), 'A4', CL[state_at[tc][k]]])
+        else:
+            ent.append([int(pats[k]), 1200, enc(state_at[1200][k]), 'own', None])
+    own = []
+    for st, ((order, edges), pot) in owncert.items():
+        idx = {x: i for i, x in enumerate(order)}
+        own.append({'start': enc(st), 'states': [enc(x) for x in order],
+                    'edges': [[idx[x], [[idx[n], mv] for n, mv in edges[x]]] for x in order], 'psi': pot})
+    json.dump({'name': data['name'], 'P': P, 'S': S, 'W': W, 'r': r0, 's': s0, 'WP': WP, 'TMAX': TMAX,
+               'entries': ent, 'own_closures': own}, open(EXPORT, 'w'))
+    print('wrote the certificates (%d entries, %d own closures) to %s (kept outside git)' % (
+        len(ent), len(own), EXPORT.rsplit('/', 1)[-1]))
 print('A4_PERTURBATION_CENSUS_DONE')
