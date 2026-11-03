@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """L1453/L1454 (Local, 2026-11-03): a bounded model check of the 11/81 wall on 1010000. Run:
-python3 tests/probes/wolfram/a4_wall_robustness.py DATA63.json PATTERN T0 W H MARGIN OUT.cnf [both|ahead|behind [NOWHITE]]
+python3 tests/probes/wolfram/a4_wall_robustness.py DATA63.json PATTERN T0 W H MARGIN OUT.cnf [both|ahead|behind [NOWHITE [bisect]]]
 Fixed: PATTERN's exact row at T0 at and left of x = A0 + W (A0 = F(T0) - 1): the background half-line and the window. Free:
 every cell right of it that can matter within H ticks (relative W + 1 .. W + H). Question: is there right content for which
 the left front F leaves the band line(t) + [gmin - MARGIN, gmax + MARGIN] at some tick t <= H, where line(t) is the 11/81
@@ -16,7 +16,8 @@ from pysat.solvers import Solver
 
 data = json.load(open(sys.argv[1])); PAT = int(sys.argv[2], 0); T0, W, H, MARGIN = map(int, sys.argv[3:7]); CNF = sys.argv[7]
 SIDE = sys.argv[8] if len(sys.argv) > 8 else 'both'
-NOWHITE = int(sys.argv[9]) if len(sys.argv) > 9 else 0  # L1456: forbid white runs of length >= NOWHITE among the free cells  # 'both', 'ahead' (F < lower edge: faster, towards 2/9), 'behind' (F > upper edge)
+NOWHITE = int(sys.argv[9]) if len(sys.argv) > 9 else 0  # L1456: forbid white runs of length >= NOWHITE among the free cells
+BISECT = len(sys.argv) > 10 and sys.argv[10] == 'bisect'  # L1458: least free radius r (cells beyond r fixed to the actual content)  # 'both', 'ahead' (F < lower edge: faster, towards 2/9), 'behind' (F > upper edge)
 orb = [tuple(o) for o in data['orb']]; q = len(orb); N = data['N']; r0, s0 = data['r'], data['s']
 E = lambda x, t: orb[(t + s0) % q][((t - x) + r0) % N]
 rule = lambda a, b, c: a ^ (b | c)
@@ -86,6 +87,24 @@ ctl = cl + [[v(0, x)] if X0[c + x] else [-v(0, x)] for x in range(A0 + W + 1, XR
 with Solver(name='cadical195', bootstrap_with=ctl) as s:
     print('control (free cells fixed to the actual content): %s (expected UNSAT: the actual front stays in its band)' % (
         'SAT' if s.solve() else 'UNSAT'))
+if BISECT:
+    free = list(range(A0 + W + 1, XR(0) + 1))
+    actual = {x: (v(0, x) if X0[c + x] else -v(0, x)) for x in free}
+    with Solver(name='cadical195', bootstrap_with=cl) as s_:
+        def ok(r):
+            return s_.solve(assumptions=[actual[x] for x in free if x - A0 > r])
+        lo_r, hi_r = W, W + H
+        assert ok(hi_r) and not ok(lo_r)
+        while hi_r - lo_r > 1:
+            mid = (lo_r + hi_r) // 2
+            if ok(mid):
+                hi_r = mid
+            else:
+                lo_r = mid
+        print('least free radius: content at relative %d..%d suffices (SAT); %d..%d does not (UNSAT)' % (W + 1, hi_r, W + 1, lo_r))
+        assert ok(hi_r)
+        m_ = s_.get_model(); ms_ = set(l for l in m_ if l > 0)
+        print('the least-radius breaking content (relative %d..%d): %s' % (W + 1, W + H, ''.join('1' if v(0, x) in ms_ else '0' for x in free)))
 with Solver(name='cadical195', bootstrap_with=cl) as s:
     sat = s.solve(); model = s.get_model() if sat else None
 print('CaDiCaL, any right content: %s' % ('SAT' if sat else 'UNSAT'))

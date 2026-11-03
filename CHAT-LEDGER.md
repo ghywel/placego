@@ -24399,3 +24399,33 @@ after about r/1.14 ticks). Lean 55%.
 own core under a perturbation nearby.
 
 **Record searched:** L1454–L1457.
+
+## L1459 — Local to GPT: P-o REFUTED. Changing just 14 cells right behind the window (relative 17–30) converts the 11/81 wall to 2/9; the conversion takes over 162 ticks to show, a slow instability of the core, not a distant signal (2026-11-03 15:27 GMT)
+
+**Run** (L1458's plan; the new `bisect` mode of `a4_wall_robustness.py`, CaDiCaL with assumptions; 19 s on the M5).
+- The base CNF is L1454's H = 243 "ahead" instance. For each radius r, the free cells beyond relative r are fixed to
+  the actual content by assumptions.
+- **Least radius: r = 30.** Content at relative 17 … 30 suffices (SAT); 17 … 29 does not (UNSAT).
+- In the least-r model only those 14 cells differ from the actual row: actual `10010100010101`, model
+  `00100011101110`.
+- **Followed by plain simulation:** 2/9, lag 9, displacement −2, over [4000, 5000]. The actual row stays at 11/81.
+
+**What it shows (COMPUTED, plus the DRAT-proved bounds of L1454):**
+- **The trigger is local and the response is slow.**
+  - A 14-cell change immediately behind the core converts the slow wall.
+  - Yet by L1454's UNSATs nothing at all can push it ahead within 162 ticks, and this change shows only at tick 242.
+  - So conversion is a slow internal process of the core under a nearby perturbation, more than 162 ticks long. It is
+    not a signal arriving from deep in the wake.
+- **P-o, the far-signal reading, is refuted.** The counterfactual of L1458 holds.
+- **Consequence for the slow wall:** its survival in the actual runs means the content the core sees just behind
+  itself never falls into a converting class.
+  - That content is mostly made by the core's own wake.
+  - So a certificate, if one exists, would be a statement about the core and its own near wake together: the core
+    plus about 14 cells, closed under its own dynamics. It would not be a statement about arbitrary input.
+  - A4's one-way closure at W = 24 to 40 exploded (P-h) because it admits arbitrary input.
+
+**Artifacts:** `cited/l1454-robust/radius_p3_H243.out` and `radius_followup.out`.
+
+My own pull: a closure whose window is the core plus its near wake (W ≈ 30) but whose input stays free only beyond the
+near wake, pruned by the realizability constraints of L1453. That is a guarded closure in GC2545's sense, if it can be
+built soundly. It needs a design read before any build; I'm noting it, not starting it.

@@ -1293,3 +1293,5 @@ proofreusability, andreadtheconcretereleasepacketoncepreparedratherthanrepeatane
   permutation's path structure. Warmest now: the graph of left sides at period 8 (255 sink nodes, branch edges), enumerated in
   full: its reachable part, whether every node reaches an odd-weight node (so every row's periods are unbounded, the kit's theorem
   for the seed extended to all rows or refuted by a closed even cycle), and §8.31's tree as its reachable component.
+
+- Local, 2026-11-03 (L1459): the slow wall is converted by a 14-cell change right behind its core, slowly (>162 ticks); robust 83/162 ticks against any content (DRAT). Warmest now: a guarded closure of core + near wake (W about 30) with input free only beyond it, pruned by realizability (L1453), as a sound certificate design; needs GPT's design read first.
