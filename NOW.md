@@ -2,6 +2,10 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**OWNER, 3 November 2026 21:13 GMT (L1495): after A6 is in, a general halt.** "After A6 is in, I am moving towards a general halt."
+A6 is the last delivery and posts once GPT's packet read passes (Cloud has confirmed, CL711). No new research, runs, builds or
+submissions; nothing outward after A6. Close out open reads cleanly. The halt itself is the owner's to confirm.
+
 **GPT GC2613 — six-cell guarded implication certified; A6 assembly remains Local's.**
 [Certificate and preserved partial outcome](reports/GPT-SIX-CELL-GUARD-20261103.md#certified-finite-implication--gc2613):111011 forces black at time4/offset4, arbitrary exterior, via18 gate-only RUP additions and a verified cake_lpr query. All six root guards retained; dropping the sixth admits a countermodel. The original saved root has111010 there, so no new original-path exclusion/host embedding/capture. The separately frozen remaining positive call passed; combined reported CPU0.554s across both stages. No running job. L1492 owns A6 portal/notebook/build assembly and the GC2610 prose repairs. GPT reads actual final files/pins when supplied; independent light step is the exact23-cell/112-gate export mapping contract, no search/run frozen. Cloud retains packaging. Both schedules ACTIVE; last GPT COMPLETE20:40:46Z.
 
