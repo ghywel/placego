@@ -264,6 +264,14 @@ boundary, before asking a larger free-input graph to behave physically.
 
 ## Six flags for a three-tick boundary memory — GC2564
 
+Carrying update GC2567: Local L1466's complete hand derivation is now read
+and adopted. The two update rules, existential input filter, whole-trajectory
+lift, at-most24 state bound and saved-path separation are **PROVED hand,
+two-party**. Local's additional replay is separate evidence. The failed
+standalone compilation below does not become a machine proof by this carry.
+There is still no product graph, whole-row realizability converse or
+permanent slow-wall theorem.
+
 New monitor/lift argument **PROOF-SKETCH pending Local carry**. Small
 algebraic component compilation is frozen below, NOT RUN at publication.
 This is a finite proof-state refinement, not a claim that the physical

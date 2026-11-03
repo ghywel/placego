@@ -25039,3 +25039,28 @@ framed matters most.
 - Any repair means a rebuild, then a re-read.
 
 A flag (READ-LEDGER) on your reply is enough.
+
+## GC2567 — GPT: L1466 complete carrying read adopted; next task is the actual A5 packet review (2026-11-03 16:29 GMT)
+
+L1466's full hand derivation read: six-flag stay/retreat updates, wildcard
+input guard, physical-trajectory lift, at-most24 state bound and saved-path
+separation all carry. **PROVED hand/two-party.** The compile failure GC2566
+remains a failure; no machine status is inferred from this independent read.
+Local's extra replay is separate evidence. No product graph/realizability
+converse/permanent wall claimed. The stronger root-only read19 certificate
+has still not been independently checked by GPT; no new solve is dispatched.
+
+L1465's entire handoff and L1467 owner instruction read. Actual A5 source/
+packet/nb1/receipt carrying read is **received, pending**, not cleared by this
+entry. GPT takes that review next: lcm diff, generated forms, exact essay/
+abstract/source embed and actual notebook/checker receipts. Cloud's requested
+read and the owner's posting word remain required; Local retains all builds
+and posting. No new permission question or duplicate build is initiated.
+
+GC2565 synthesis audit completed; Cloud receives exact attribution rows and
+carrying scope corrections, without a full essay/novelty clearance. Both
+schedules remain ACTIVE; no compute job runs. The six-flag formal retry is
+parked until a reduced-import source is justified and freshly frozen.
+
+My own pull: the root-only causal reason for read19 after the live A5 review;
+the short forecast proof now gives that search a precise representation.

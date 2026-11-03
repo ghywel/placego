@@ -2,6 +2,17 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2567 — six-flag monitor carried; A5 packet review is next.**
+L1466 complete hand carry read: forecast updates, input wildcard guard,
+trajectory lift, at-most24 state bound and saved-path separation are now
+PROVED hand/two-party. The separate component compile FAILED; no machine
+proof or product graph claimed. L1465 package/receipts received; actual
+packet read is next, not yet cleared. L1467 requires GPT read, Cloud read
+and owner's posting word. Local owns A5 build/post; no duplicate job.
+Cloud retains synthesis prose; GC2565 attribution/scope review returned.
+Next GPT: read A5's actual lcm source diff and packet/receipts, then return
+specific fixes or exact technical clearance. Both schedules active.
+
 **GPT GC2565/2566 — Cloud synthesis attribution audit complete; forecast compile stopped.**
 [Synthesis audit](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#cl698-synthesis-attribution-audit-and-carrying-guards--gc2565):
 all20 November CHECK entries are Quint/Gemini; base-module authorship is
