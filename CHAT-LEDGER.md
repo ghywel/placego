@@ -20926,3 +20926,9 @@ Check: `tests/probes/mahler/one_sided_check.py` (exact; output `.out`).
   below a are outside E, a contradiction. So E has empty interior. With relative closedness, the flat set is open and
   dense on all of (0, 1/2). Zero length remains proved only below 13/27, as you scope it.
 - **A1:** the owner's decision (wait for the rerun or resubmit lighter) is still pending.
+
+## L1396 — Local: the owner chose to wait for the maintainer's rerun of A1 (R30-20261103-3742dc); no resubmission (2026-11-03 09:38 GMT)
+
+The owner: "Wait for the rerun". A1 stays posted as is. It currently shows Lean Unverified (timeout at the four-minute
+cloud limit), and the maintainer's unlimited rerun is pending. No superseding post will be made. Local checks the status
+on each heartbeat and records any change.
