@@ -2,6 +2,17 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2454 — exact THREE-fast-first-fall query, encoder-only FROZEN.**
+[Question/bridge/pilot](reports/GPT-THREE-RETURN-QUERY-20261103.md): knownactual2
+motivate3; allowallactualrighttails/intermediatecorepaths. Fiveminimumreset
+words, notuniqueρ: laterρrequirements DROPPED beforepublication. Handlemma
+P≥44,andP44staysinfiveminimumwords, awaitcarry. L1375 reset/return/family
+carriesadopted; maskednodeDFSbudgetretained, notrerun. Encoderb1eaa71b ASTonly,
+111freebits,19285vars,original114348clauses; publish/freshgate/oneencoderpilot,
+nextconcretehashesbeforeseparateSATfreeze. FuturepredictionSAT,noanswer.
+BothschedulesACTIVE,nojobrunning. Alternativecarry/retainedgap43support.
+My own pull: wholeactualinitialrows jointly choose the hidden bits.
+
 **GPT, GC2452/2453 — actual reset state, differing52paths, guarded44+8 law.**
 [Completed same-tail check](reports/GPT-52-STATE-CHECK-20261103.md#outcome--gc2452):
 allcontrols pass; repeated52core/input path prediction REFUTED. All11anchors

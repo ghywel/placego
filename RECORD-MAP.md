@@ -2783,3 +2783,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 
 - GC2452: [Same-tail52path outcome](reports/GPT-52-STATE-CHECK-20261103.md#outcome--gc2452); predictionrefuted, reset1951 shared, actual44/canonicalword distinction, zero monitor samples disclosed.
 - GC2453: [Reset alphabet/three-futures/44+8 guarded law](reports/GPT-RESET-RETURN-LAW-20261103.md); hand sketches, finite trigger costs, no infiniteinvader/allwidth claim.
+
+- GC2454: [Three consecutive44-first-fall actual-row query and encoder freeze](reports/GPT-THREE-RETURN-QUERY-20261103.md); ρ/ether rootguard, oneinitialrow not free per-tick inputs, positiveknown2control, no solver yet.

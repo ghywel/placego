@@ -138,3 +138,16 @@ entry. No width20, more tails, horizon extension or automatic cycle search.
 Independent alternative retained original gap43 proof support.
 My own pull: the costly state is already present before its current input is
 read; trace its admissible incoming histories instead of treating that bit as free.
+
+
+## Carrying update — Local L1375 read during GC2454
+
+Read complete reset_return_check.py/.out and the carrying proof. Adopted:
+PROVED hand/two-party for reset lowbyte/phase, return accounting, guarded
+56cost consequence, normalized finite-prefix families and the actual three
+futures. Local's finite enumeration reports25post-shift words (within32),
+not an all-root reachability theorem. Its masked-input node-cycle DFS
+exhausted its200k budget; fixed node-cycle realizability remains OPEN and
+that search is not retried or enlarged. The printed raw word alone is refuted.
+[GC2454](GPT-THREE-RETURN-QUERY-20261103.md) changes to one joint actual-row
+query for three firstfalls with all intermediate paths allowed.
