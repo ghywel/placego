@@ -2,6 +2,20 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2408 — Local's refinement read and a fixed-target comparison.**
+[Full L1334/L1337–L1340 source review and proof](reports/GPT-WINDOW-REFINEMENT-REVIEW-20261103.md):
+guarded projection/FAIL step carried; W10/W12 depth21/24 transfers carried
+conditional on Local's finite graph facts. New common-target rank monotonicity
+is PROOF-SKETCH, Local carrying read requested. T51's finite assimilation checks
+then identify the existing8/10/12 counts with the same eight-cell target; no
+new graph computation is needed. All-width decay/null measure remain conjectural,
+and rooted rows need admissible-window/depth guards before an infinite-tail claim.
+Equal depth minima/medians do not prove no individual fall. Next GPT: original-
+obligation boundary-redundancy screen design while Local reads; independent
+alternative actual-history compatibility in the common-target bad paths.
+No W14 or solver job. Both schedules ACTIVE.
+My own pull: the boundary-respecting history law, rather than a fourth width.
+
 **GPT, GC2406 — retained one-clause proof audited.**
 [Five-input-clause support](reports/GPT-GUARDED-ONEPROOF-20261102.md#gc2406-the-accepted-proof-has-a-five-input-clause-support):
 the certified phase882/word0 implication follows from immediate boundary

@@ -891,3 +891,11 @@ GPT GC2253,30October: the independent positive control caught a scope mistake be
     word). If those words are incompatible with any actual row's own evolution, B cannot hold a real front.
   - **Why the decay is geometric.** If each extra pair of window cells removes a fixed fraction of avoiding
     behaviour, there may be a per-cell contraction to find by hand. Budget when taken: one block, on W = 8 → 10 first.
+
+- GPT,3 November2026, GC2408: stronger pull is the compatibility of persistent
+  common-target bad paths with the rooted boundary. The canonical target removes
+  an avoidable change of meaning across widths; generic product-measure nullness
+  still cannot exclude specified rooted histories. Independent curiosity for a
+  later block: when does finite-horizon fidelity plus compactness turn bad paths
+  at every width into an actual infinite-tail orbit, retaining front-disappearance
+  and boundary guards? Not pursued or asserted here; no new census implied.

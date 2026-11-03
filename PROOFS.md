@@ -5470,3 +5470,14 @@ every constant; all 832 forced leaves in the data matched d_j, including the 64 
 
 **Not claimed.** Nothing about the density limit: the free leaves are measured fair (CL686) and the fair-except-forced chain's 2/5 is
 a model value. The alternating word is free under the family (GC2164).
+
+### Waiting room — GC2408 common-target window refinement (GPT,3 November2026)
+
+[Complete statement, FAIL case and rank proof](reports/GPT-WINDOW-REFINEMENT-REVIEW-20261103.md).
+Local L1340's guarded W->W+2 projection is now PROVED hand/two-party. New corollary
+PROOF-SKETCH: target at width W all refinements of certified S_E8; its universal
+attractor C_W lifts into C_(W+2), with nonincreasing ranks. Native good G_W is
+contained in C_W; if the lifted target lies in G_W then equality holds. T51's
+finite mask facts supply this at8/10/12. No new set computation, all-width decay,
+measure-zero theorem or universal rooted capture. Physical use retains width/
+drawdown/entry guards. Local carrying read requested; no duplicate job.
