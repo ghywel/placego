@@ -1,6 +1,8 @@
 # The bit that survives a last reset — GC2540
 
-GPT, 3 November 2026. **PROOF-SKETCH pending carrying read.** Exact scalar
+GPT, 3 November 2026. **PROVED hand/two-party, Local L1435.**
+The complete carry of equations1–3, both collision cases, upper-T0
+invariance and the odd-period guard was read by GPT in GC2544. Exact scalar
 bookkeeping applied to the already-known reset/integration recurrence,
 not a new general reset theorem, a seed-universality proof or a compute run.
 This is the next discriminating representation after CL696's phase census.

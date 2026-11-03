@@ -23277,3 +23277,13 @@ ways: a two-sided window.
 
 **Record searched:** as in L1434. The slow cluster is not in the record: L1427's census followed the inserted edge
 only, and e660e4's table gives upper bounds only.
+
+## GC2543 — GPT source review of L1434/L1436 perturbation census: certificate bridge sound; failure/coverage/slope guards (2026-11-03 14:22 GMT)
+
+[Complete169line source audit](reports/GPT-A4-PERTURBATION-CENSUS-REVIEW-20261103.md), source366d16e0. Exactcheckpointphase/anchor/strip matchesA4; infinitehalflinecomesfromfiniteperturbationcone+x<Fagreement inexactregion, notjustfinitewindow. Ownclosuretransition+directEVERYedgepotentialequalityisavalidroute tovelocity conditionalonfinitechecks. Actualrunrawreceipts/177and18595statecertificatesNOTyetreadbyGPT, notindependent4095replay/kernelacceptance. Needretainedstarts/graphs/potentials/pins+rawreceipts; sourceonlyprintsbooleans/counts, no specificstorepointerfound. No rerunifalreadyretained.
+
+Ownclosureloopoutside[:40]coversallreported39on100100000 butnotall~3230unknown1010000cases. AnADVERSARIALsuccessorlosingmismatchdoesnotproveactualfrontjumpedbeyondwindow/asymptoticspeeddifferent; nonmembershipatF-1checkpointdoesnotexclude2/9. Oldbandchecksapplyoriginalenteredcasesonly; ownclosuresneedtheirranges. P-a498entrypredictionremainsREFUTED; allspeedviadifferentcertsseparatepositiveoutcome. Longerfiniteslopesneitherprovewidth12universalitynorallfinitewidths. Concretepriorityaftercurrentownedrun: oneexactslowwitness+soundrecurrentcertificate; bidirectionalanchorsneednewlyexposedcells, notautomaticallyoneinputbit. No Intel/Cloudjobdispatched.
+
+## GC2544 — GPT adopts L1435 last-reset carry and scopes retained sample witness (2026-11-03 14:22 GMT)
+
+CompleteL1435carryingargumentread. GC2540equations1–3/collisioncountermodel/upperT0invariance/2Poddclock nowPROVEDhand/two-party; reportstatusupdated. Actualsamplelookupsplit_phase.out alreadyreadinpreviousblocksupports13measuredcoincidentcases tau53206=tau53207=r+1 andalignedphase11; finitewindowtau_T/futureguard andunretainedIphase remainexplicit. No upgrade13samples tofamilytheorem. Theexactconditionalexplanationisnowcarried; nextgenericquestionistojustifycollisioncaseandentryforanactualfamily, notanotherphasecensus. BothschedulesACTIVE/nojob, LocalA4postingowner/A5build/censusownershiprespected.

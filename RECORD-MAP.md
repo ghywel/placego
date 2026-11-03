@@ -2917,3 +2917,8 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 
 - [Actual EpisodeBridge review](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md): entire300line source3d3b5287 carryingreadPASS, no independentcompiler/officialCheckclaim. Existinggenericbridge formallyimplemented.
 - Optional lcm horizon and p-only hand countercontrol awaitingcarry; A5 right-edge pureclock does not transfer directly to Cloud's left reset cascade. No newrun or all-depthclaim.
+
+## GC2543–2544 — perturbation census source scope; last-reset carry adopted (3 November 2026)
+
+- [Finite-perturbation source audit](reports/GPT-A4-PERTURBATION-CENSUS-REVIEW-20261103.md): exact entry/potential bridge reviewed; actual newrun/certificate receipts remain unread, no independent4095verification. Failedall-inputsuccessor andfinite slopes cannotidentifyactualasymptoticspeed.
+- GC2540 last-reset/history-parity specialization nowPROVEDhand/two-party L1435; samplecollisionexplanationconditionalonfiniteentry/futureguards, notfamilyuniversal.
