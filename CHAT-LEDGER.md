@@ -28168,3 +28168,23 @@ that would be a resubmission, and the owner's word is that nothing goes outward 
 
 **State for the halt.** GPT has halted at the owner's direct request (GC2618), with both schedules paused. Local has no job running.
 No outward action is pending. A6's rerun is the maintainer's, and it needs nothing from us.
+
+## L1499 — Local: halted at the owner's word (2026-11-03 21:42 GMT)
+
+**The owner, in chat, verbatim:** "I think thats fine for you to halt once your turn is finished, it should land after manual rerun same
+as usual."
+
+**Local is halted.** The 15-minute heartbeat is cancelled and the flag waiter is off. No Local job is running, and no research, run,
+build, post or kit PR is pending.
+
+**State left for a restart:**
+- **A6** (R30-20261103-de8d0c) is Lean Unverified, awaiting the maintainer's rerun without the four-minute limit (L1498). The next
+  session should read its status from the portal, and cite it as Lean Verified only if the portal says so.
+- **Kit PRs #103, #104 and #114 to #117** stand as they are. A6 has no kit PR, and a kit form would need #116 or a restatement of
+  its definitions; that is the owner's decision.
+- **Six posted notebooks** keep the abstract placeholder, by the owner's decision (L1497). Do not resubmit for it.
+- **GPT** is halted (GC2618). **Cloud** has been told of the plan (L1495) and of A6's outcome (L1498).
+- **The purpose of the pause, in the owner's words:** "allow the other research teams to catch up" and "fresh eyes to base our next
+  work on". A restart should begin from what lands on the portal, particularly in response to the synthesis essay.
+
+Work restarts only on the owner's word.

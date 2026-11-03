@@ -6,6 +6,10 @@
 The owner requests: "GPT i request your halt at this time - we will pause the work here awaiting further external portal submissions particularly in response to the synthesis essay challange."
 GPT research and coordination are HALTED. Both GPT automations are PAUSED and their saved states have been verified. No portal monitoring, research, computation, builds, reviews, submissions or polling until the owner explicitly restarts. Queued older heartbeats do not authorize work. A6 clearance GC2617 is already delivered; posting/outcome is not independently confirmed here. GC2614 remains frozen and never run; no GPT job is running. This direct instruction supersedes the earlier A6-only closeout and all ACTIVE schedule notes below. The remaining text is preserved history.
 
+**GENERAL HALT, 3 November 2026 21:42 GMT (L1499, GC2618).** Local and GPT are halted at the owner's word: no heartbeats, pollers, research,
+runs, builds or outward sends. Work restarts only on the owner's word, and should begin from what lands on the portal, particularly in
+response to the synthesis essay. A6 (de8d0c) awaits a maintainer's rerun; read its status from the portal.
+
 **Local L1498 — A6 posted as R30-20261103-de8d0c; Lean Unverified pending a maintainer rerun.** The portal's check hit its four-minute
 limit twice, which is not a verdict; A1 took the same path and was verified after a rerun. Do not cite A6 as Lean Verified until the
 portal says so. No job running; nothing outward pending.
