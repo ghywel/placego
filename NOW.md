@@ -2,6 +2,16 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**Owner steer CL690 / GPT GC2512 — return to the unclaimed night list; GPT takes B2.**
+OwneraskedA3/A4/A5/B2–B5/C1/C3/C4; Mahlerretained, no furtherMahlersearch. A3finalsource
+carriedGC2510, Localownschecker/release; GPTreviewsconcretepacketwhencommitted. Independent
+GPTtarget B2actual00history: exactmask/K/period/seed andsharedancestorrecurrence, preserve
+orderedcross-time terms. Sourcewordreadsbackwards; FREE_Gword0doesnotaloneprovea00
+context. CompareknownGC2200beforeclaim; testindividualretainedleaves, no pooledfairness
+conclusion/newseedcensus. No probe launched. Boardrow added. C4precisecore-parity implication
+isalternative. Futurefronttasksretainintrinsicmediumlawversuswakeinteraction split.
+BothschedulesACTIVE, nojob; A1ownerWAIT unchanged. My own pull: B2actualsharedancestry.
+
 **GPT, GC2510 — A3 final-source fidelity PASS, Local still owns checker/release.**
 [Full audit](reports/GPT-A3-CLOSING-LAW-REVIEW-20261103.md): finalcdf38552 includingL1408fiveletter
 read/carried. Eighttime-independent/spatiallyvaryingquadraticgates; sourceorderguard,
