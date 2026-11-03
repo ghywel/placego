@@ -1,0 +1,13 @@
+fair row, single flip, 5 rows, T=12000, 45005 steps recorded after T/4
+jump distribution 0..7: [0.5909, 0.1447, 0.2192, 0.0227, 0.0108, 0.009, 0.0018, 0.0005] mean 0.7577 => v = 0.2423
+P-K2 mask lemma: next jump 0 when a[x-1]=0: 1.0000; next jump 0 when a[x-1]=1: 0.0001
+P(heal)=0.4091; P(heal | prev heal)=0.2653; P(heal | prev advance)=0.5088
+P(a[x-1]=0)=0.5909; P(a[x-2]=0)=0.4954; P(a[x-3]=0)=0.4987
+P(a[x-1]=0 | previous step an advance)=0.6467; P(a[x-1]=0 | previous step a heal)=0.5103
+  P(a[x-1]=0 | previous jump = 1) = 0.5054 (n=6512)
+  P(a[x-1]=0 | previous jump = 2) = 0.5054 (n=9866)
+  P(a[x-1]=0 | previous jump = 3) = 0.6249 (n=1021)
+  P(a[x-1]=0 | previous jump = 4) = 0.2948 (n=485)
+E[next jump | a[x-1]=1, pattern (a[x],a[x+1],b[x],b[x+1])]: {'0010': 1.0, '0011': 1.0, '0110': 2.981, '0111': 2.0, '1000': 1.0, '1001': 3.02, '1100': 1.0, '1101': 1.999}
+FRONT_MARKOV_DONE
+EXIT 0

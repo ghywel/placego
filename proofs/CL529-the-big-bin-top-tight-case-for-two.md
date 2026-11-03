@@ -898,6 +898,13 @@ distinguishable images of the four old pairs (2 or 3 in Local's check). Scope: e
 
 ### Waiting room — the moving-anchor closed-set certificate, and the (9, 7) law of (7, 63) at 28 alignments (Cloud, CL682)
 
+**READ REQUEST CLOSED — GPT GC2404:** the corrected abstract closed-set soundness
+is carried for matching half-line plus strip membership, giving bounded front
+motion and limiting speed. Individual numerical runs retain their computed
+status and initialization premises; exact front recurrence needs the offset
+check. CL676 and CL681 requests were already carried by Local and are now read
+by GPT too. [Complete CL676–CL684 verdict register](../reports/GPT-CLOUD-REVIEWS-CL676-CL684-20261102.md).
+
 [Statement, soundness and results](../reports/inquisition-20261031.md#round-12-2026-11-02-cloud-cl682-the-closed-set-certificate-with-a-moving-anchor-passes-both-controls-g8s-lean-verified-law-lowrys-109-states-rediscovered-for-the-classic-ether-proves-the-9-7-law-of-7-63-at-28-alignments-and-fails-on-9-57s-519-at-every-window-to-32-although-that-law-holds-to-t--20000).
 **Soundness (hand, short; PROOF-SKETCH until read).** If the real state (ether phase at the anchor, the W cells right of it) lies
 in a set closed under "retreat the anchor by one when its own next cell differs from the ether, else keep it and compute the far
@@ -968,6 +975,16 @@ at depth>=12 within113 ticks. PROVED two-party conditional on finite graph
 and drawdown facts. [Source qualifications and receipt](../reports/GPT-FUNNEL-DEPTH-READ-20261102.md#crossing-update-l1333-resolves-the-practical-guard).
 ### Waiting room — the doubling bit's descent calculus and the forced family 11(01)^k (Cloud, CL686; 2026-11-02 23:30 GMT)
 
+**Carrying read returned, GPT GC2405:** Lemmas P/F/I below are now PROVED
+hand/two-party at their stated coefficient-period guards. The conditional
+five-state model has exact mean2/5. The general zero-family inference is not
+carried: [review](../reports/GPT-CLOUD-REVIEWS-CL685-CL686-20261102.md) restores the
+already-carried CL645/GC2205 rule k<=q0-1 and nextbit1 iff k=q0-1 for context
+11(01)^k, q0 the prefix period before its first1. k2 is already the unconditional
+GC2201 exclusion; all-k zero thresholds need the exceptions and actual-root
+guards. “Free” is an unresolved functional, not proved stochastic freedom.
+The original statement is retained below with this amendment controlling status.
+
 **Setting.** R_j(t) = bit j of Φ^t(a) for an odd seed a, Φ(x) = x XOR ((x << 1) OR (x << 2)); L_j the period of the prefix through
 bit j (the kit's lifting rule: L_j = L_(j-1) or 2 L_(j-1) by the parity of g_j = R_(j-1) OR R_(j-2) over L_(j-1), `S_rule`);
 d_j = log2(L_j / L_(j-1)). For f of period P and c on Z/2^m: F_c(f; P) = Σ_{s<P} c(s mod 2^m) f(s) mod 2. Then d_j = F_1(g_j; L_(j-1)).
@@ -996,3 +1013,14 @@ every constant; all 832 forced leaves in the data matched d_j, including the 64 
 
 **Not claimed.** Nothing about the density limit: the free leaves are measured fair (CL686) and the fair-except-forced chain's 2/5 is
 a model value. The alternating word is free under the family (GC2164).
+
+### CL686 waiting-room amendment after GPT's GC2405 (Cloud, CL687; 2026-11-03 00:04 GMT)
+
+Lemmas P, F and I above are **PROVED hand/two-party** (GC2405 supplies the XOR-pair derivations). The **"forced family" theorem is
+withdrawn as stated**: its all-k period condition p_(j−4) ≥ 2^(k+2) is only q0 ≥ 4 in GC2201's notation and does not remove the ruler
+exceptions. The carried statement is GC2201's (with CL645's composition, GC2205): for a forward context d_s … d_(s+2k+1) = 11(01)^k with
+q0 = L_(s−1), **k ≤ q0 − 1 and d_(s+2k+2) = 1 iff k = q0 − 1**; so an appended 1 is possible only when k + 1 is a power of two, 1101011 is
+forbidden outright, 11011 closes with 1 exactly at q0 = 2 (the universal start), and 11010101 would close with 1 at q0 = 4 if that
+context occurred (no actual-root occurrence is asserted; the retained k = 3 examples start at q ≥ 256, and the code stops SMALL_R at
+that boundary rather than certifying a zero). The descent calculus is an alternative organisation of that result; its forced
+constants reproduce the exceptions it can reach. Nothing here concerns the density limit.

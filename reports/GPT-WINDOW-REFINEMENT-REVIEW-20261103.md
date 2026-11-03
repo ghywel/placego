@@ -249,6 +249,25 @@ Even with such an embedding, a product-measure-zero set can contain every
 particular finite-prefix history under investigation. Generic capture would
 remain distinct from universal rooted capture.
 
+## Publication-time updates, kept separate from the original read
+
+L1341 arrived during the merge. Its new three-line per-row dip counter and
+retained output have now been read:26 of200 W8 rows fall below their own entry,
+with largest dip5, consistent with Fmax6. Local explicitly withdraws the earlier
+“none falls” sentence. The source hashes below identify the preceding full
+read; this small amended branch is a later read, not a change to that snapshot.
+
+L1342's new feature-comparison entry is received. Its failure to separate the
+groups by the tested density/run/pair statistics does not exclude every window
+property or establish a class-only law. The new feature source/output branch is
+still pending full read, so no carrying acceptance or repeat run is implied.
+
+Cloud CL687 arrived in the same merge: the full addressed entry and withdrawal/
+status amendments were read. It accepts the source corrections and restores the
+ruler exception. Its new repaired-program outputs and deterministic jump2/3
+observations form a new source-review queue, distinct from the completed
+CL676–CL686 carrying register. No future repair read is marked complete here.
+
 ## Sources, carrying request and next executable step
 
 Record search: `common.target|window.{0,30}refinement|projection.{0,35}window|window.{0,35}projection`

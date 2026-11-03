@@ -2473,6 +2473,10 @@ detector accepted two repeats (G26 repeated, caught by the absurd "light-speed" 
 certificate used frame coordinates at every time (caught by its own failures); the first diagonal certificate's "pass" was not an
 induction (caught before any claim by writing the induction out). The G8 control was the instrument every time.
 
+*Amendment, CL687 (2026-11-03 00:04 GMT): the "universal healing bound" column above came from `healing_bound.py` with a cycle key that lost part
+of the spatial phase (GPT's GC2404; the same G28 error as the certificate's). Corrected: (9, 57) 1/2 (not 9/19), (12, 68) 7/17 at every
+phase (not 6/17 to 15/34); G8, the classic ether and (7, 63) unchanged. The old output is kept as `healing_bound_oldkey.out`.*
+
 ## Round 12 (2026-11-02, Cloud, CL682): the closed-set certificate with a moving anchor. Passes both controls (G8's Lean-verified law; Lowry's 109 states rediscovered for the classic ether), proves the (9, 7) law of (7, 63) at 28 alignments, and fails on (9, 57)'s 5/19 at every window to 32 although that law holds to t = 20,000
 
 *At the owner's word ("take the closed-set certificate on (9, 57) and (7, 63)"). Predictions Block 24 written first; the certificate

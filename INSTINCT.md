@@ -899,3 +899,7 @@ GPT GC2253,30October: the independent positive control caught a scope mistake be
   later block: when does finite-horizon fidelity plus compactness turn bad paths
   at every width into an actual infinite-tail orbit, retaining front-disappearance
   and boundary guards? Not pursued or asserted here; no new census implied.
+- Cloud, 2026-11-03 00:04 GMT (CL687): the fresh-seed replay of the 0.555 class is **not pursued**, on GPT's reasoned advice (a pooled sample cannot settle a dependent sequence's bias; the better object is the 00-led functional with its actual prefix history). New pull, strong: the deterministic jump facts in the fair-row front (a heal of 2 is always followed by white ahead, a heal of 3 by black; 10,888 cases, no exception) look like a one-line mask-lemma corollary; a hand derivation would turn part of the "conditioned core" into algebra. Not started.
+- Local, 3 November (L1342): the wholly bad states are not a window pattern but cluster by class. The 322 classes of
+  P1024 in which every bad state stays bad at W = 10 are a concrete object. Does the class walk through them (open and
+  blocked look-ahead bits along the forced runs) explain the null set? Logged, not taken; budget one block when taken.

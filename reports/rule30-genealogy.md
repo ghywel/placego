@@ -6067,3 +6067,42 @@ Record searched: §45, §52, §54; no earlier refinement comparison.
   - This is not universal capture. The exceptional set (bad at every W) could be nonempty and could contain real rows.
   - It does say exactly what a counterexample must be: a row whose content behind the front lies, at every time, in
     this measure-zero "bad at every W" set.
+
+*Correction (GC2407, accepted in L1341).* §53.3's sentence "no real front fell below its entry depth" does not follow from
+equal minima and medians of the two depth lists. It needs a per-row count. Prediction for that count, written before the
+run: at least one of the 200 rows dips below its own entry depth before capture, because paths in A can fall by up to 6.
+Lean 60%.
+**Result.** 26 of the 200 rows fall below their own entry depth before capture; the largest dip is 5, within the graph
+bound F ≤ 6. The prediction held, and §53.3's sentence is **withdrawn as false**. The logged minimum (72) and the medians
+stand, and every dip respects the carried guard.
+
+### 55.3 What do the wholly bad states look like? (L1342), predictions written before the run (`refine_check.py --features`)
+
+Split B_8 into **wholly bad** states (all 4 refinements stay in B_10; 85.6%) and **resolved** ones (none stays; 6.7%).
+Compare simple features of the 8-cell window: the number of mismatches, the run of mismatches adjacent to the front,
+(D_{R−1}, D_{R−2}), and the class's look-ahead (open or blocked).
+- **Q1.** Wholly bad windows are denser: their mean number of mismatches is at least 1 more than that of resolved
+  windows. Lean 60%. GC507 and §45.2 found that deep retreats need dense damage blocks.
+- **Q2.** Resolved states lie mostly at blocked classes, where the hidden pair matters (§49): at least 70% of them.
+  Lean 55%.
+- **Q3.** A simple rule (at least 6 mismatches in the window, or a run of at least 4 next to the front) covers at least
+  80% of wholly bad states and at most 20% of resolved ones. Lean 35%.
+- **Counterfactual.** If none of these features separates the two groups, "bad at every W" is not a local density
+  property, and an explicit description of the null set needs something else.
+
+**Results (COMPUTED; [output](../tests/probes/refine_check.out) after this section is filed).** No separation.
+- Wholly bad windows: 4.01 mismatches on average, run next to the front 1.01, pairs uniform, 50.8% at blocked classes,
+  rule coverage 16.5%.
+- Resolved windows: 3.97, 0.93, pairs uniform, 40.8% at blocked classes, rule coverage 15.5%.
+- **Q1, Q2 and Q3 are all REFUTED.** Both groups look like uniformly random windows. Q2 even points the other way:
+  resolved states sit at blocked classes less often.
+- So **badness at every W is not a local density property of the window**, and the counterfactual holds.
+
+**Follow-up prediction (written before the per-class run).** **Q4.** The resolved states concentrate by class: at least
+50% of them lie in at most 10% of the 1,024 classes. If so, the background's phase, not the window, decides which bad
+states a longer window resolves. Lean 50%.
+**Q4 result.** The top 10% of classes hold 44.1% of the resolved states, so Q4 (≥ 50%) is REFUTED, narrowly. That is
+still more than four times the uniform share. 624 of the 1,024 classes contain a resolved state. In 322 classes every
+bad state is wholly bad, which leaves 78 classes with no bad state in this split. **The class (the background's phase)
+carries much of what a longer window resolves; the window's density carries none of it.** The null set of L1340's
+conjecture is therefore better sought as a property of the class walk than of window contents.

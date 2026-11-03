@@ -1,13 +1,21 @@
 fair row, single flip, 5 rows, T=12000, 45005 steps recorded after T/4
 jump distribution 0..7: [0.5909, 0.1447, 0.2192, 0.0227, 0.0108, 0.009, 0.0018, 0.0005] mean 0.7577 => v = 0.2423
-P-K2 mask lemma: next jump 0 when a[x-1]=0: 1.0000; next jump 0 when a[x-1]=1: 0.0001
+P-K2 mask lemma: next jump 0 when a[x-1]=0: 1.0000; next jump 0 when a[x-1]=1: 0.0000
 P(heal)=0.4091; P(heal | prev heal)=0.2653; P(heal | prev advance)=0.5088
+IMMEDIATE: P(a[x-1]=0 at step i | step i an advance, jump=0)=0.4912; P(a[x-1]=0 at step i | step i a heal, jump>0)=0.7348
 P(a[x-1]=0)=0.5909; P(a[x-2]=0)=0.4954; P(a[x-3]=0)=0.4987
-P(a[x-1]=0 | previous step an advance)=0.6467; P(a[x-1]=0 | previous step a heal)=0.5103
-  P(a[x-1]=0 | previous jump = 1) = 0.5054 (n=6512)
-  P(a[x-1]=0 | previous jump = 2) = 0.5054 (n=9866)
-  P(a[x-1]=0 | previous jump = 3) = 0.6249 (n=1021)
-  P(a[x-1]=0 | previous jump = 4) = 0.2948 (n=485)
-E[next jump | a[x-1]=1, pattern (a[x],a[x+1],b[x],b[x+1])]: {'0010': 1.0, '0011': 1.0, '0110': 2.981, '0111': 2.0, '1000': 1.0, '1001': 3.02, '1100': 1.0, '1101': 1.999}
+TWO-STEP LAG (the old 0.647 line): P(a[x-1]=0 at step i+1 | step i an advance)=0.6467; P(a[x-1]=0 at step i+1 | step i a heal)=0.5103
+  two-step lag: P(a[x-1]=0 at step i+1 | jump at step i = 1) = 0.5054 (n=6512)
+  immediate:    P(a[x-1]=0 at step i   | jump at step i = 1) = 0.4992 (n=6512)
+  two-step lag: P(a[x-1]=0 at step i+1 | jump at step i = 2) = 0.5054 (n=9866)
+  immediate:    P(a[x-1]=0 at step i   | jump at step i = 2) = 1.0000 (n=9867)
+  two-step lag: P(a[x-1]=0 at step i+1 | jump at step i = 3) = 0.6249 (n=1021)
+  immediate:    P(a[x-1]=0 at step i   | jump at step i = 3) = 0.0000 (n=1021)
+  two-step lag: P(a[x-1]=0 at step i+1 | jump at step i = 4) = 0.2948 (n=485)
+  immediate:    P(a[x-1]=0 at step i   | jump at step i = 4) = 0.6206 (n=485)
+E[next jump | a[x-1]=1, pattern (a[x],a[x+1],b[x],b[x+1])]: {'0010': 1.0, '0011': 1.0, '0110': 2.981, '0111': 2.0, '1000': 1.0, '1001': 3.02, '1100': 1.0, '1101': 2.0}
 FRONT_MARKOV_DONE
-EXIT 0
+
+real	0m9.634s
+user	0m9.764s
+sys	0m0.086s

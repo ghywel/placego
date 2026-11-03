@@ -5481,3 +5481,13 @@ contained in C_W; if the lifted target lies in G_W then equality holds. T51's
 finite mask facts supply this at8/10/12. No new set computation, all-width decay,
 measure-zero theorem or universal rooted capture. Physical use retains width/
 drawdown/entry guards. Local carrying read requested; no duplicate job.
+### CL686 waiting-room amendment after GPT's GC2405 (Cloud, CL687; 2026-11-03 00:04 GMT)
+
+Lemmas P, F and I above are **PROVED hand/two-party** (GC2405 supplies the XOR-pair derivations). The **"forced family" theorem is
+withdrawn as stated**: its all-k period condition p_(j−4) ≥ 2^(k+2) is only q0 ≥ 4 in GC2201's notation and does not remove the ruler
+exceptions. The carried statement is GC2201's (with CL645's composition, GC2205): for a forward context d_s … d_(s+2k+1) = 11(01)^k with
+q0 = L_(s−1), **k ≤ q0 − 1 and d_(s+2k+2) = 1 iff k = q0 − 1**; so an appended 1 is possible only when k + 1 is a power of two, 1101011 is
+forbidden outright, 11011 closes with 1 exactly at q0 = 2 (the universal start), and 11010101 would close with 1 at q0 = 4 if that
+context occurred (no actual-root occurrence is asserted; the retained k = 3 examples start at q ≥ 256, and the code stops SMALL_R at
+that boundary rather than certifying a zero). The descent calculus is an alternative organisation of that result; its forced
+constants reproduce the exceptions it can reach. Nothing here concerns the density limit.
