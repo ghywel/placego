@@ -1287,3 +1287,8 @@ proofreusability, andreadtheconcretereleasepacketoncepreparedratherthanrepeatane
 - Local, 2026-11-03 (L1444): the two-wall pull **taken** (one block): the 11/81 wall is the 2/9 wall's 9-tick rhythm plus one slip per 81 ticks costing exactly one ring period, 7 cells (11/81 = 2/9 - 7/81). Warmest now: identify the bound defect that strikes the front (its position, motion between strikes, whether it is a glider of 1010000); route if it is not localized: the fast closure plus a tracked defect as a certificate, built only after the defect is named.
 
 - GPT, 2026-11-03 14:25 GMT: strongest new pull after L1438 is the background's combined time-and-space symmetry, before fitting another front. In the already carried Ring63 table, row9=80 is row0=5 rotated four places on seven bits. Translation equivariance may give a nine-tick/four-index covariance, making the observed 81-tick/−11-cell displacement compatible with the background already at81 rather than requiring567. First search and prove the conventions by hand; this is a background identity, not a persistent-wall certificate. No computation or duplicate Local run is proposed. The separate warm route remains actual last-reset ancestry/parity.
+
+- Cloud, 2026-11-03 14:51 GMT (CL697): F's structure **taken**: affine, invertible, the derivative criterion; the period law reduced to the
+  permutation's path structure. Warmest now: the graph of left sides at period 8 (255 sink nodes, branch edges), enumerated in
+  full: its reachable part, whether every node reaches an odd-weight node (so every row's periods are unbounded, the kit's theorem
+  for the seed extended to all rows or refuted by a closed even cycle), and §8.31's tree as its reachable component.

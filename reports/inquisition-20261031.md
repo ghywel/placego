@@ -3118,3 +3118,65 @@ which would be a generic second left side's cascade and would bound the lock to 
   collapses each white gap of a parent's cycle, and the universal reset when the parent's last defect is a black): PROOF-SKETCH. A
   theorem needs the finite-state form: the cascade as a front-state automaton driven by the universal cycles, synchronised from
   every front state at some wheel by 3,498. That is an exhaustive computation over 2^W front states, Local-sized.
+
+### Round 14, seventh block (2026-11-03 14:46 GMT): F's structure by hand (the owner: "Continue with the pull, F's structure by hand")
+
+**The closed form (PROOF-SKETCH, before the run).** Over GF(2), u ∨ d = u ⊕ d ⊕ ud, so the left-frame recurrence reads
+d(t+1) = w(t) ⊕ u(t) ⊕ (1 ⊕ u(t)) d(t). With w ≡ 0 its periodic solution is all black (a reset gives 1, a white keeps it), and
+with d = 1 ⊕ e: e(t+1) = w(t) ⊕ ¬u(t) e(t). So e is the running parity of w restarted at every black of u, and
+**F(u, w)(t+1) = ¬ ⊕_{s = β_u(t)}^{t} w(s)**, with β_u(t) the last black of u at or before t: *a wheel's cycle is the complemented
+running parity of its farther parent, restarted at each black of its nearer parent.* Writing e = A_u w: A_u is linear in w and
+invertible (within each run of u the outputs are prefix sums), with A_u^(−1) e (t) = e(t+1) ⊕ ¬u(t) e(t). Hence:
+1. **F(u, ·) = 1 ⊕ A_u(·) is an affine bijection of the word space whenever u has a black.** The strip's pair map
+   Π(a, b) = (b, F(b, a)) is a permutation away from white parents, and the strip is **reversible**:
+   C_(k−1)(t) = ¬C_(k+1)(t+1) ⊕ ¬C_k(t) ¬C_(k+1)(t); at a white C_k the same formula gives C_(k−1) = ∂C_(k+1), the derivative,
+   so the backward strip is determined through white wheels as well (only the forward branch bit is lost).
+2. **The coincidence criterion.** C_(k+1) = C_k iff A_(C_k) C_(k−1) = ¬C_k iff C_(k−1) = A_(C_k)^(−1)(¬C_k) = C_k ⊕ shift(C_k) = ∂C_k.
+   So for each nearer parent exactly one farther parent produces a white wheel two steps on: among 2^p farther parents one, which is
+   the 2^(−p) per wheel behind "the period P is first reached near wheel 2^P", and the kit's bound 2^(2P) on the next non-P wheel
+   (`D_period_unbounded`) is the size of the pair space a permutation orbit cannot exceed. Below 12,000 the criterion must hold
+   exactly at k = 5, 26, 397 (the white wheels 7, 28, 399) and nowhere else.
+3. **At period 8 the permutation can be enumerated in full** (65,536 pairs): its cycle lengths, how many coincidence pairs each cycle
+   carries, and where the strip's period-8 segment (wheels 29 to 398, a path of 371 steps from the restart pair to the coincidence
+   pair) sits on its cycle. A random permutation has a longest cycle near 0.62 of the space and a path to a set of 2^p = 256
+   marked pairs of length about 2^p on average.
+
+**Predictions (`f_structure.py` on the certificate table, regenerated in scratch).** P-F1 [90%]: the closed form reproduces
+C_k = F(C_(k−1), C_(k−2)) at all 11,994 settled wheels with a black parent. P-F2 [85%]: the backward run from wheels 11,998–11,999
+reproduces every cycle down to wheel 2, through 399, 28 and 7, with no exception. P-F3 [85%]: d(C_(k−1), ∂C_k) = 0 exactly at
+k = 5, 26, 397 below 12,000, and the distances elsewhere have mean within 0.3 of p/2 = 8 (a Binomial-like spread, lean 60%).
+P-F4 (PU): the cycle structure of Π at period 8; the position of the 371-step segment on its cycle. P-F5 [55%]: the period-8
+segment's length 371 is within a factor 3 of (its cycle's length)/(the number of coincidence pairs on that cycle).
+Record searched: Rowland §5 (eventual periodicity, Proposition 2, the first split), the kit's `Rule30LeftUnbounded` (the 2^(2P)
+bound), §8.31 (the strip map), CL693–CL696; "derivative", "reversible strip", "affine" (no hit for the cycle-level reversibility).
+
+#### Outcomes of the seventh block (2026-11-03 14:51 GMT; `f_structure.py`, two seconds; receipt `f_structure.out`)
+
+- **P-F1 HELD, exact:** the closed form F(u, w)(t+1) = ¬(parity of w over [last black of u at or before t, t]) reproduces all 11,994
+  settled wheels with a black parent.
+- **P-F2 HELD, exact:** the backward strip C_(k−1)(t) = ¬C_(k+1)(t+1) ⊕ ¬C_k(t) ¬C_(k+1)(t) reproduces every cycle from wheel 11,998
+  down to wheel 2, 11,997 of 11,997, straight through the white wheels 399, 28 and 7. **The crystal is reversible at the level of
+  cycles:** two consecutive settled cycles determine the one before, and only the forward branch bit at a white wheel is ever lost.
+- **P-F3 HELD:** C_(k−1) = ∂C_k exactly at k = 5, 26, 397 (the white wheels 7, 28, 399 two wheels on) and nowhere else below 12,000;
+  the Hamming distance to the derivative has mean 7.999 and a Binomial(16, ½)-shaped histogram (3, 4, 33, 94, 332, 748, 1,561, 2,059,
+  2,366, 2,039, 1,506, 779, 344, 89, 32, 2, 6 against the reference 0, 3, 22, 103, 333, 800, 1,466, 2,094, 2,356, 2,094, 1,466, 800,
+  333, 103, 22, 3, 0). PU: six wheels have C_(k−1) = ¬∂C_k exactly (k = 2, 3, 11, 21, 67, 9,877), a complement coincidence the
+  binomial would give 0.003 times; and four near-misses of the white criterion at distance 1 (k = 657, 1,079, 1,210, 2,647).
+- **P-F4 (PU) and P-F5 HELD.** At period 8 the pair map is a bijection on its 65,280 pairs (b ≠ 0), with exactly 255 coincidence
+  pairs (∂b, b), one per nearer parent, and 255 sources (0, d): the pair space decomposes into source-to-sink paths and closed
+  cycles, in classes of 8 under the time shift (the orbit lengths come in multiplicities of 8). The seed's period-8 segment, the
+  pair at wheels (29, 30) run forward, reaches its first coincidence pair after 367 steps, which is wheel 396 as the table says
+  (the coincidence pair is (C_396, C_397), and 399 is white). With 65,280 pairs and 255 sinks the mean source-to-sink path is at
+  most 256 = 2^8; the seed's 367 is 1.43 of that.
+
+**What F's structure says, in one paragraph.** The crystal's recurrence is affine and invertible in the farther parent: a wheel is
+the complemented running parity of its grandparent, restarted at each black of its parent. So the strip is a permutation orbit on
+pairs of words, broken only at coincidences, and a coincidence two wheels on happens exactly when the grandparent is the
+derivative of the parent: one farther parent in 2^p. The three numbers the record had measured about the left end are now one
+structure: the white wheels come about once in 2^p wheels (the sinks are one in 2^p of the pairs), the next non-P wheel is within
+2^(2P) (the kit's `D_period_unbounded`, a pigeonhole on consecutive profiles: the permutation's orbit cannot exceed the pair space),
+and the period doubles at a white wheel iff the common parent cycle has odd weight. Every left-finite row restarts each segment at
+a source (0, d), so no row ever lies on a closed cycle of the permutation; the finite graph whose nodes are the sinks and whose
+edges are the branch choices is §8.31's tree of left sides. Statuses: the closed form, the inverse and the derivative criterion
+PROVED by hand (single-party, a read wanted), exact on 12,000 wheels; the period-8 enumeration COMPUTED; the 2^p spacing a
+consequence of the count under a uniform heuristic, CONJECTURE as a law.

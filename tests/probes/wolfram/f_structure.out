@@ -1,0 +1,12 @@
+P-F1 closed form F(u,w) = NOT running parity of w restarted at u's blacks: 11994 agree, 0 disagree (wheels with a black parent)
+P-F2 backward strip C_(k-1) = NOT C_(k+1)(t+1) XOR (NOT C_k(t) AND NOT C_(k+1)(t)) from wheel 11998 down to 2: 11997 agree, 0 disagree (first disagreement at wheel None)
+P-F3 wheels k with C_(k-1) = dC_k (derivative): [5, 26, 397]; white wheels two on: [7, 28, 399]; distance mean 7.999 (p/2 = 8), histogram [3, 4, 33, 94, 332, 748, 1561, 2059, 2366, 2039, 1506, 779, 344, 89, 32, 2, 6]
+      binomial(16,1/2) reference x 11997: [0, 3, 22, 103, 333, 800, 1466, 2094, 2356, 2094, 1466, 800, 333, 103, 22, 3, 0]
+P-F4 period 8: pair map defined on 65280 pairs (b != 0); image distinct 65280 of 65280 -> bijective on its image
+      orbits from distinct starts: 268; length histogram (top 10): [(132, 16), (57, 8), (420, 8), (545, 8), (233, 8), (668, 8), (353, 8), (111, 8), (88, 8), (92, 8)]; coincidence pairs 255
+      the strip's period-8 segment from the pair at wheels (29, 30): steps to the first coincidence pair 367 (the record's 398 - 29 = 369); check the offset
+F_STRUCTURE_DONE
+
+real	0m2.047s
+user	0m1.766s
+sys	0m0.084s

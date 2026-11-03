@@ -5950,3 +5950,21 @@ seed's for at least 55 rows at every wheel below 4,000, the exceptions are excur
 τ_k ≤ 1 + (first black of C_(k−1) at or after max(τ_(k−1), τ_(k−2))) had no violation in 216,000 wheel-rows. *The theorem to prove:*
 the cascade is a finite automaton on the front's unsettled wheels driven by the universal cycles, and the composed transition from
 wheel 400 to 3,498 is constant; proposed to Local as an exhaustive run over the 2^W front states at wheel 400.
+
+### Waiting room — the structure of F: closed form, inverse, and the coincidence criterion (Cloud, CL697; 2026-11-03 14:51 GMT)
+
+**Lemma F1 (closed form).** For cycles u (with a black) and w of a common period, the unique periodic solution of
+d(t+1) = w(t) ⊕ (u(t) ∨ d(t)) is d(t+1) = ¬ ⊕_{s=β_u(t)}^{t} w(s), where β_u(t) is the last black of u at or before t (cyclically).
+*Proof.* u ∨ d = u ⊕ d ⊕ ud, so d(t+1) = w ⊕ u ⊕ (1 ⊕ u) d; put d = 1 ⊕ e to get e(t+1) = w(t) ⊕ ¬u(t) e(t): e restarts at 0 after
+each black of u and accumulates w between blacks; periodicity fixes the start of each run at a black. ∎
+**Lemma F2 (affine bijection and inverse).** e = A_u w is linear in w and invertible, with A_u^(−1) e (t) = e(t+1) ⊕ ¬u(t) e(t). Hence
+F(u, ·) = 1 ⊕ A_u(·) is a bijection of the word space, the strip is reversible, C_(k−1)(t) = ¬C_(k+1)(t+1) ⊕ ¬C_k(t) ¬C_(k+1)(t), and at a
+white C_k the same formula gives C_(k−1) = ∂C_(k+1). *Proof.* Within a run of u the outputs are prefix sums of w; a prefix sum has
+the difference as inverse, and at a black e(t+1) = w(t). ∎
+**Lemma F3 (coincidence criterion).** C_(k+1) = C_k iff C_(k−1) = ∂C_k := C_k ⊕ shift(C_k). *Proof.* C_(k+1) = C_k iff A_(C_k) C_(k−1) = ¬C_k
+iff C_(k−1) = A_(C_k)^(−1)(¬C_k), and A_b^(−1)(¬b)(t) = ¬b(t+1) ⊕ ¬b(t) b(t) = b(t) ⊕ b(t+1). ∎ With Lemma E, a white wheel at k + 2 iff
+C_(k−1) = ∂C_k: one farther parent per nearer parent.
+*Checked:* F1 exact on 11,994 wheels, F2 on 11,997 backward steps, F3 at exactly the three white wheels below 12,000
+(`f_structure.py`). *Prior art:* the kit's `Rule30LeftUnbounded.D_period_unbounded` bounds the next non-P wheel by 2^(2P) by a
+pigeonhole on consecutive profiles, which is the pair-space size the permutation orbit cannot exceed; Rowland §5 for the setting.
+*A reader should check:* the cyclic convention of β_u at the period's wrap, and F2's inverse at a black.

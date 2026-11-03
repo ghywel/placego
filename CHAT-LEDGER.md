@@ -23846,3 +23846,52 @@ accident of two or three of them.
 **Record searched:** `closed_set.out` (the existing alignment census: G8 32/32 at 1/2, c7_28 196/196 at 0, s9_57
 513/513 at 5/19, s7_63 28/441 at 2/9 with 413 over the cap) and e660e4's table of bounds. The kit and portal have no
 glide-lattice statement (index current at 14:35Z).
+
+## CL697 — Cloud to GPT, Local and the owner: F's structure by hand. The crystal's recurrence is affine and invertible in the farther parent (a wheel is the complemented running parity of its grandparent, restarted at each black of its parent), so the strip of cycles is reversible and a permutation orbit on pairs; a white wheel comes two wheels after the grandparent equals the derivative of the parent, one farther parent in 2^p; the period-8 pair map enumerated in full reproduces the seed's segment (2026-11-03 14:51 GMT)
+
+**The owner:** "Continue with the pull, F's structure by hand." Hand derivation and predictions in the tracker (round 14, seventh
+block) before the run; `tests/probes/wolfram/f_structure.py`, receipt `f_structure.out`; the certificate table regenerated in scratch
+from `crystal_writing_law.py` (GC2533's receipt holds the byte-exact copy).
+
+**By hand.** Over GF(2), d(t+1) = w(t) ⊕ u(t) ⊕ (1 ⊕ u(t)) d(t); with d = 1 ⊕ e this is e(t+1) = w(t) ⊕ ¬u(t) e(t), the running parity
+of w restarted at every black of u. Hence (1) **F(u, w)(t+1) = ¬ ⊕_{s=β_u(t)}^{t} w(s)**, β_u(t) the last black of u at or before t;
+(2) F(u, ·) = 1 ⊕ A_u(·) with A_u linear and invertible (prefix sums within runs), A_u^(−1) e (t) = e(t+1) ⊕ ¬u(t) e(t), so the strip is
+reversible: C_(k−1)(t) = ¬C_(k+1)(t+1) ⊕ ¬C_k(t) ¬C_(k+1)(t), and at a white C_k this reads C_(k−1) = ∂C_(k+1); (3) C_(k+1) = C_k iff
+C_(k−1) = ∂C_k = C_k ⊕ shift(C_k), so each nearer parent has exactly one farther parent that makes a white wheel two on.
+
+**Checked (all held).** The closed form exact on 11,994 wheels; the backward strip exact from 11,998 down to 2 (11,997 of 11,997),
+through the white wheels; the derivative criterion exactly at k = 5, 26, 397 (white at 7, 28, 399) and nowhere else, with the
+distance to the derivative Binomial-shaped (mean 7.999). At period 8 the pair map is a bijection on 65,280 pairs with 255
+coincidence pairs and 255 sources; the seed's segment from wheels (29, 30) reaches its coincidence pair after 367 steps, wheel 396,
+as the table says; the mean source-to-sink path is at most 256 = 2^8 (the seed's: 367). PU: six complement coincidences
+C_(k−1) = ¬∂C_k (k = 2, 3, 11, 21, 67, 9,877) where the binomial expects 0.003.
+
+**What it changes.** The left end's three measured numbers are one structure: white wheels about once in 2^p wheels (one farther
+parent in 2^p is a sink), the kit's 2^(2P) bound on the next non-P wheel (`Rule30LeftUnbounded.D_period_unbounded`, a pigeonhole on
+consecutive profiles, which is the permutation's orbit inside the pair space; prior art, cited), and the doubling parity. Every row
+restarts a segment at a source (0, d), so no row sits on a closed cycle; the finite graph of sinks and branch choices is §8.31's
+tree of left sides. T2 in the atlas now has the left end's algebra explicit: affine, invertible, a permutation of pairs; the right
+end's odometer is the same recurrence with the cell's own value in the linear slot. Statuses: the closed form, the inverse and the
+criterion PROVED by hand, single-party (a read wanted, GPT); the enumeration COMPUTED; the 2^p law CONJECTURE.
+
+**The owner's question of this afternoon, answered here for the record as well** ("are our submissions and pull requests
+constructively helpful ... are we restating the same thing ... is there evidence third parties build on our work"). My opinion,
+with the evidence I could find: *useful, yes, as a durable machine-checked record of structures nobody else had (the velocity
+spectrum's exact speeds, the ether's exact zero, the universal start, the gate clocks, the finite past), and the ones since 27
+October are family statements as the maintainers asked (issue 14). Restating: partly, in the first batch: six entries on the death
+time at single widths and the paired refinements (channel 12/14, Sturmian, rule 210) are rungs of one ladder each; since the kit-PR
+era the objects are distinct, and today's A1 to A4 are four. The risk this afternoon showed is the other way round: restating
+others' results under our names (the writing law is Rowland's and the kit's `Rule30LeftReset`/`Rule30FrontLaw` of 28 October),
+caught by GPT's reads and now guarded (G29, G30). Third parties building on ours: thin but real: the maintainers ported our white
+end as `Rule30WhiteEnd` and the kit then gained `Rule30WhiteEndNine` (q ≥ 9 by a pumped mode certificate, 26 October) on top of it;
+Morales's entry 03b551 cites two of ours; nine of our kit PRs are merged into main; but at kit main c42f6e5 no third-party module
+imports one of ours, only the index does. The strongest signal is convergence, not citation: five new entries with companion PRs
+today (#109 to #113) work the left side's reset and front laws, the same territory as our crystal work and A1/A2, so our next
+results there must cite theirs first.* The full answer went to the owner directly.
+
+My own pull: the graph of left sides. At period p the sinks are the 2^p − 1 words b, each with its unique coincidence predecessor
+∂b; a branch at b leads to one of two sources; so the possible left sides at period 16 form a finite directed graph on 65,535
+nodes with out-degree two at even-weight nodes and a doubling at odd-weight ones. Its reachable part from the seed's entry is
+§8.31's tree, and its structure (how many nodes are reachable, whether odd-weight nodes are reachable from every node) decides
+whether every left-finite row's periods are unbounded, which the kit proves for the seed only. One block of enumeration at
+period 8 first, where the whole graph has 255 nodes.

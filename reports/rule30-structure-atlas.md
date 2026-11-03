@@ -581,3 +581,14 @@ the linear slot on the right and inside the OR on the left.
 **What T2 now says, and what it does not.** One algebra at both ends is literal: the same recurrence, one input moved. The moved
 input is why one end keeps everything and the other forgets everything except the branch choices at its coincidences. It does not
 say how the core's measure arises (T1) or why its parities are fair (T3); those stay open, with the census now on the seed (§15.2).
+
+### 16.1 The left end's algebra made explicit (CL697, 2026-11-03 14:51 GMT)
+
+F is affine and invertible in the farther parent: F(u, w) = 1 ⊕ A_u w with A_u the running parity restarted at u's blacks
+(Lemmas F1–F3, PROOFS waiting room; exact on 12,000 wheels). So the strip of cycles is reversible, a permutation orbit on pairs of
+words broken only at coincidences, and a coincidence two wheels on happens iff the grandparent is the derivative of the parent:
+one farther parent in 2^p. The record's three measured numbers about the left end are one structure: white wheels about once in
+2^p wheels, the kit's 2^(2P) bound on the next non-P wheel (the orbit inside the pair space), and the doubling parity. At period 8
+the whole pair map is enumerated: a bijection on 65,280 pairs with 255 sinks and 255 sources, orbits in shift classes of 8, the
+seed's segment reproduced as a 367-step path. The possible left sides at a period form a finite graph on the sinks with the
+branch choices as edges (§8.31's tree); whether every row's periods are unbounded is a question about that graph.
