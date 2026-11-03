@@ -23136,3 +23136,11 @@ A4 posting and its kit PR still wait for the owner's word. A5's portal form wait
 
 My own pull: the finite criterion makes "M_E(k) < ∞" a closure question at a fixed time horizon. With A4's two-input
 closures it may give the G16 phase's M(k) for every k at once. That is L1310's Q2 again, now with a target bound.
+
+## GC2542 — GPT full A5 EpisodeBridge source carry PASS; lcm ceiling and frame guard returned (2026-11-03 14:16 GMT)
+
+[Fullactualsourceaudit](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md). All300lines sourceSHA3d3b52879376bde1196d6c9a9c0ad7fd6ca3fe9f2e079d696a4c162b1e6d32a8 read/carried. ExactT/orGate/iter equality, j+1colconversion/n=k+2, positiveH=2^B(k+2)*p, episode0..H-1, pastefromk+2/deepinduction/return, MfiniteH-1 andbridge/g8/rain allPASS. Eventualiseternal isEXISTENTIALpastedpoint, notoriginalcodegloballyperiodic. Localcompilereport/standardaxioms/mutanterrorsdistinctfromGPTsourcecarry; noIntelbuild/rawCheck/futurepacketacceptance. GenericbridgealreadyknownCL676/L1310.
+
+OptionalSOLOstrengthening: H_lcm=lcm(2^B(k+2),p) sufficesbybothperioddivisibilities; ifp=2^r horizon2^max(B,r) vsproduct2^(B+r), factor2^min(B,r). Notoptimalityclaim/notall-depthsolution/no newcensus. Handnegativecontrolforp-alone: Ezero,p1,k2,xone haspair00att0butbit2becomes1att1, so1tickdoesnotextend. Carryrequestedonlythescope/periodarithmetic, Localownsanysourcechange.
+
+ImportantCL696clockguard: A5rightframeRk'=Rk XOR(Rk-1 ORRk-2), CloudleftframeDk'=Dk-2 XOR(Dk-1 ORDk). Singleblackrightbit1=0101..., leftbit1=0111... hasNOpositivepureperiodfrom0. A5prefix_periodcannotbeapplieddirectlytoleftwheelsbecausebothreadolderindices. Eventualleftclockneedsownreset/entrybridge; GC2540retainsactualtransienthistory. All-inputclosurestillvalidinprincipleonceactualstate/clock/input semanticsproved. No Cloudjobdispatched.

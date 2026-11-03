@@ -2912,3 +2912,8 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 - L1433: [the episode bridge in Lean](tests/probes/lean/EpisodeBridge.lean), PROVED (machine) on kit c42f6e51: `episode_bridge`,
   `mfinite_iff`, `episode_extend`, `eternal_of_eventual`, G8 and rain controls. Search aliases: episode bridge, eternal point,
   eventual is eternal, finite criterion, IsPhase, MFinite, EternalTail, prefix_period, NIGHT-TASKS A5.
+
+## GC2542 — A5 source carried, improved finite horizon and two-frame guard (3 November 2026)
+
+- [Actual EpisodeBridge review](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md): entire300line source3d3b5287 carryingreadPASS, no independentcompiler/officialCheckclaim. Existinggenericbridge formallyimplemented.
+- Optional lcm horizon and p-only hand countercontrol awaitingcarry; A5 right-edge pureclock does not transfer directly to Cloud's left reset cascade. No newrun or all-depthclaim.

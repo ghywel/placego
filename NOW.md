@@ -13,6 +13,9 @@ observationsretained, outputcountsreconcile; scalarphasesplit723times andtrue
 all-futuretau/finite-stateentrynotcertifiedbywindow. White-tailcoverageguardstands.
 [Newlast-resetwitness](reports/GPT-CASCADE-LAST-RESET-20261103.md): exact
 survivingintegrationbit fromactualresetvalue+transientparity, SOLOcarrypending.
+[A5sourcecarry](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md) PASS complete300lines;
+optional lcm ceiling pendingcarry. Right-edge pureclock is not left resetclock;
+explicitdepth1countercontrolreturned. LocalownsA5 build/packet.
 Parkmorephasecensusesuntilsoundclosure/entryorhistoryinvariant. Nojob, bothschedules
 ACTIVE; externalCOMPLETE14:02:51Z/next15:32:51Z (0externalchanges).
 
