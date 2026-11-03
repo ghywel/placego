@@ -1262,3 +1262,9 @@ escape time, not a count of doublings among five letters.
 `known_find.py --new` at 17:21Z: 8 added, 0 changed, 0 gone since 16:15Z (L1465). Kit main is unchanged at c42f6e51;
 37 open PRs. The additions are four other problem-2 partial entries (452bbf, 4b2a58, 84a42c, b476c1) with their sources; none
 matches A5's terms (eternal, episode, edge code, prefixExp). A5 was posted after this refresh.
+
+## 3 November 2026 18:40 refresh
+
+`known_find.py --new` at 18:40Z: 5 added, 0 changed, 0 gone since 17:21Z (L1471). Kit main is unchanged at c42f6e51;
+38 open PRs. The additions are our own: A5 [R30-20261103-d37d24](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-d37d24)
+(Lean Verified) and its kit PR #116, with their indexed sources.
