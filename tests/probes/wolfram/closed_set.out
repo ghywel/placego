@@ -27,3 +27,8 @@ s7_63 law (P,S)=(9,7), lab speed 0.2222; alignments tried 441; certified 28, not
   not certified (first 6): [((0, 0), 'exceeded cap', 20001), ((0, 1), 'exceeded cap', 20001), ((0, 2), 'exceeded cap', 20001), ((0, 3), 'exceeded cap', 20001), ((0, 6), 'exceeded cap', 20001), ((0, 7), 'exceeded cap', 20001)]
 CLOSED_SET_DONE
 EXIT 0
+# start witnesses (GC2402's request, CL687, 2026-11-03): certify's start state is asserted to lie in the truncated simulation's exact
+# region and its left half-line to equal the background analytically; printed for small runs. G8, 4 alignments, W = 8:
+#   t0=300 anchor A=-149 W=8 exact region [-600,160) half-line [-600,-149] equals E   (and A=-147)
+# (9,57), 3 alignments, W = 24: t0=300 anchor A=-77 W=24 exact region [-600,160) half-line [-600,-77] equals E; certified 3/3,
+#   closures 498 and 4433 states. The full censuses above were not rerun; the assertion now guards every later run.

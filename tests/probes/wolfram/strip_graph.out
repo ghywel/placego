@@ -1,0 +1,12 @@
+G8: W=6, states 2048
+  replay control: 1994 random real transitions, 0 not in the graph's successor set
+  edges 4864; rise distribution [1024, 1024, 1792, 256, 256, 256, 256]
+  max f over steps (n, max f) with weights rise-2: [(0, 4), (1228, -1838), (2456, -3680), (3684, -5522), (4912, -7364), (6140, -9206), (7368, -11048), (8596, -12890), (9824, -14732), (11052, -16574), (12280, -18416), (12287, -18427)]
+  slope of max f over the last half: -1.5001 => estimated max mean rise 0.4999 (below 2: no adversarial eternal cycle of depth range <= W)
+STRIP_GRAPH_DONE
+G8: W=8, states 8192
+  replay control: 2000 random real transitions, 0 not in the graph's successor set
+  edges 21504; rise distribution [4096, 4096, 7168, 1024, 1024, 1024, 1024, 2048]
+  max f over steps (n, max f) with weights rise-2: [(0, 5), (4915, -7365), (9830, -14737), (14745, -22110), (19660, -29482), (24575, -36855), (29490, -44227), (34405, -51600), (39320, -58972), (44235, -66345), (49150, -73717), (49151, -73719)]
+  slope of max f over the last half: -1.5000 => estimated max mean rise 0.5000 (not separated from 2 at this K)
+STRIP_GRAPH_DONE

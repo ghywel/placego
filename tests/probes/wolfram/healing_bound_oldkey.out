@@ -1,0 +1,6 @@
+G8: lab period 8, spatial 4; universal leftward bound on any perturbation's damage speed: max over phases 0.5000, min 0.5000, distinct [0.5]
+c7_28: lab period 4, spatial 7; universal leftward bound on any perturbation's damage speed: max over phases 0.5833, min 0.5833, distinct [0.5833]
+s7_63: lab period 63, spatial 7; universal leftward bound on any perturbation's damage speed: max over phases 0.2222, min 0.2222, distinct [0.2222]
+s9_57: lab period 171, spatial 9; universal leftward bound on any perturbation's damage speed: max over phases 0.4737, min 0.4737, distinct [0.4737]
+s12_68: lab period 102, spatial 12; universal leftward bound on any perturbation's damage speed: max over phases 0.4412, min 0.3529, distinct [0.3529, 0.4118, 0.4412]
+HEALING_BOUND_DONE

@@ -46,6 +46,12 @@ def certify(r, s, t0, W, T):
     for t in range(t0): a, bb = step(a), step(bb)
     d = np.flatnonzero(a ^ bb); xmin = int(d.min()) - c; xB = xmin - 1
     strip = tuple(int(v) for v in bb[c + xB + 1: c + xB + 1 + W])
+    # start witness (GC2402, CL687): the truncated simulation is exact on [-(WL - t0), WR - t0) at t0; the anchor must lie at
+    # x >= -(t0 + 1) by causality, the window must end inside the exact region, and the real row must equal the background's
+    # analytic value on the whole exact region left of the anchor (the certificate's matching half-line premise)
+    assert xB >= -(t0 + 1) and xB + W < WR - t0, (xB, W, t0)
+    assert all(int(bb[c + x]) == E(x, t0, r, s) for x in range(-(WL - t0), xB + 1)), "left half-line differs from the background at t0"
+    if NAL is not None and NAL <= 8: print(f"  start witness: t0={t0} anchor A={xB} W={W} exact region [{-(WL - t0)},{WR - t0}) half-line [{-(WL - t0)},{xB}] equals E", flush=True)
     start = (t0 % q, (t0 - xB) % N, strip)
     # closure
     seen = {start: 0}; dq = deque([start]); edges = {}

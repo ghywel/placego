@@ -33,10 +33,12 @@ if lag is not None: phases = [(0, j0) for j0 in range(N)]    # with c = rho^lag,
 def Eval(tq, j):
     if lag is not None: return int(y[(j - lag * tq) % N]) if False else int(y[j % N])   # placeholder, replaced below
 # exact E for the lag case: E at frame depth j, frame time t = y[(j - lag*t) % N]; we track (t mod N?) -> use j_eff = j - lag*t mod N as the phase
-def Ebelow(ph, i, dt):   # value of E at depth j0 - i (i = 1, 2 below the band bottom) at time t + dt
+def Ebelow(ph, i, dt):   # value of E at depth j0 + i (i = 1, 2: the diagonals k_min - i BELOW the band bottom are DEEPER) at time t + dt
+    # corrected 2026-11-02 (CL687) after GPT's GC2404: the earlier code read depth j0 - i here (a sign error); its outputs (G8: mean rise
+    # 4.5 at W = 6, 6.5 at W = 8, "uninformative") are that faulty implementation's and are superseded by this run
     tq, j0 = ph
-    if lag is not None: return int(y[(j0 - i - lag * dt) % N])    # j0 already folded: depth phase at the current time
-    return int(orb[(tq + dt) % q][(j0 - i) % N])
+    if lag is not None: return int(y[(j0 + i - lag * dt) % N])
+    return int(orb[(tq + dt) % q][(j0 + i) % N])
 def Eat(ph, i, dt):      # E at depth j0 + i (inside the band region) at time t + dt
     tq, j0 = ph
     if lag is not None: return int(y[(j0 + i - lag * dt) % N])
@@ -78,6 +80,36 @@ for st in list(states):
         if nst in states:
             src.append(states[st]); dst.append(states[nst]); wt.append(rise)
 src = np.array(src); dst = np.array(dst); wt = np.array(wt, dtype=np.int64)
+# --- direct replay control (CL687): build a literal row = E everywhere except the band, step it with the lab rule, and check that the
+# graph's successor set contains the real successor (the real new strip, with the real entering diagonals), for random states
+if lag is None:
+    rng = np.random.default_rng(3); checked = 0; bad = 0
+    def Elab(x, t, j0, tq):   # lab cell (x, t) of E when depth j0 at time tq is the band bottom's phase: depth j = t - x ... in diagonal
+        return None
+    adj = collections.defaultdict(set)
+    for a_, b_ in zip(src, dst): adj[int(a_)].add(int(b_))
+    keys = list(states)
+    for trial in range(2000):
+        st = keys[rng.integers(len(keys))]; (tq, j0), strip = st
+        # diagonal coordinates: D_k(t+1) = D_(k-2) XOR (D_(k-1) OR D_k); E_k(t) at depth j = 2t - k; here band bottom k_min has depth j0 at
+        # phase time tq. Build D over k in [k_min - M, k_min + W + M] with E below and above, the strip in the band, then step literally.
+        M = 8; T0 = tq; kmin = 2 * T0 - j0
+        ks = list(range(kmin - M, kmin + W + 1 + M)); D = {}
+        for k in ks:
+            i = k - kmin
+            if 0 <= i <= W: D[k] = strip[i]
+            else: D[k] = int(orb[T0 % q][(2 * T0 - k) % N])
+        Dn = {k: D[k - 2] ^ (D[k - 1] | D[k]) for k in ks if k - 2 in D}
+        En = {k: int(orb[(T0 + 1) % q][(2 * (T0 + 1) - k) % N]) for k in Dn}
+        mism = [k for k in sorted(Dn) if Dn[k] != En[k] and k >= kmin]
+        if not mism: continue   # band healed (graph has no edge); skip
+        nk = mism[0]; rise_real = nk - kmin
+        if rise_real > W: continue
+        nst = (((T0 + 1) % q, (2 * (T0 + 1) - nk) % N), tuple(Dn[nk + i] for i in range(W + 1)))
+        checked += 1
+        if nst not in states or states[nst] not in adj[states[st]]: bad += 1
+    print(f"  replay control: {checked} random real transitions, {bad} not in the graph's successor set")
+
 print(f"  edges {len(src)}; rise distribution {np.bincount(wt).tolist()}", flush=True)
 # value iteration with weights rise - 2
 f = np.zeros(V, dtype=np.int64); K = 6 * V if V < 20000 else 120000
