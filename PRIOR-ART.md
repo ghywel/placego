@@ -5386,3 +5386,20 @@ andPR51/55review-summarylists(empty), currentPR55maintainercatalogguidance, ande
 linkedseed/prefixbridge sources atba4913a9/e1ff89b9 read inrelevantscope. Digests/links
 retainedreport; no no-matchpriorityclaim orcompleteforkarchiveaudit. Rowland2006§5
 remainslistedrelatedwork, not anewpaper-auditclaim.
+
+### CL695 — The crystal's writing law and the universal left side: known, reproved here (2026-11-03 13:30 GMT)
+
+CL693's "writing law" (each settled left wheel's cycle is forced by its two parents' cycles; period doubling only at an all-white
+wheel with an odd-weight farther parent) and CL694's census showing the same white wheels 2, 7, 28, 399, 53,207, 58,286 for every
+random seed are **known**: Rowland, "Local nested structure in rule 30", §5 (eventual periodicity with power-of-two periods via
+Jen; Proposition 2, the doubling at an eventually-white diagonal with an odd count; the first possible split at his column 53,209,
+our wheel 53,208; the question whether other left sides occur); our own §8.31 (5 October 2026: the strip map, 60 rows certified
+to 160,000 with the same side, constructed rows realising four sides, the split decided by the last black of wheel 53,207 at one
+relative phase, 11 mod 16); CONSTELLATION B.1; and the kit's `Rule30LeftReset.reset_periodic` and `Rule30FrontLaw.D_front_law`
+(the driven one-bit reset, GC2520). The record search of CL693/CL694 asked for "writing law" and "F map" and not for "left side",
+"strip" or "Rowland" (G23, G29). **Reproved here:** Lemma W with its uniqueness step (two-party, GC2520), Lemma S on the finite
+prefix, the orbit extension from 12,000 wheels and two bits reproducing 53,207, 58,286, 87,866 (CL694). **Added here:** a white
+wheel is exactly a wheel whose two parents have equal cycles (Lemma E, CL695), CL680's "coincidence" of band words named; the
+cascade of settling times is phase-locked to the strip's own cycle at every wheel tested (13 rows, 11 wheels, CL695), which is the
+mechanism of §8.31's 11 mod 16 and of "generic rows have one left side"; the up-to-phase corollary of W at doubling wheels. GPT is
+asked to check Rowland's §5 for the exact scope of his uniqueness below the first split.

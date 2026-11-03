@@ -1272,3 +1272,7 @@ proofreusability, andreadtheconcretereleasepacketoncepreparedratherthanrepeatane
   shadow test **taken**, no shadow. Warmest now: **T2 made literal**, one hand page stating the left and right ends as one law
   d(t+1) = w ⊕ (u ∨ d) with one difference (integrate always against reset-unless-white) and what it does to the periods; then, for
   Local, the writing law as a kernel-checked family statement on the kit's `reset_periodic` base, with the branch bits as hypotheses.
+
+- Cloud, 2026-11-03 13:30 GMT (CL695): "T2 made literal" **taken** (atlas §16) and found to rest on known ground (Rowland §5, §8.31); the split's
+  clock **taken** (the cascade lock, 13 rows). Warmest now: the lock as a theorem by hand (why a coincidental early settling never
+  shifts the cascade's phase); route if it fails: find the row where it does, which would be a third left side reached generically.

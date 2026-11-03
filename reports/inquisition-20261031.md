@@ -3017,3 +3017,62 @@ neighbouring-input identity ρ_next = δ1(x)δ2(x+1) + δ2(x)δ1(x+1) decides, a
 expectation is nominal. Lemma W is PROVED two-party, with the kit's `reset_periodic` and `D_front_law` (Rule30FrontLaw,
 Rule30LeftReset at c42f6e5) as the prior art for its reset mechanism; Lemma S on the finite prefix below 12,000 with periods
 dividing 1,024. The integration constant at a white wheel is retained information from the earlier evolution, not a fresh random bit.
+
+### Round 14, fifth block (2026-11-03 13:22 GMT): the pull reconsidered, and one census for the page "one recurrence, two ends"
+
+**By hand.** The left wheels obey d' = w ⊕ (u ∨ d) and the right diagonals d' = d ⊕ (u ∨ w): the same three-input recurrence with
+the cell's own value moved from the OR into the linear slot. On the right the cell integrates the OR of its two neighbours at every
+tick and never forgets (the odometer is a bijection), so the period doubles whenever the OR has odd weight over the parents' period:
+the kit's S_rule, density about 0.41 per diagonal, periods 2^(0.41 j). On the left the cell integrates the farther neighbour only
+while the nearer one is white and is reset to the complement of the farther one at every black of the nearer, so a settled wheel's
+cycle is forced (Lemma W) and the period can grow only at an all-white wheel, where the same odd-weight test doubles it. If F's
+orbit produces an all-white word of length P about once in 2^P wheels (the random-map reading), the period P is first reached near
+wheel 2^P: the seed's 2, 7, 28, 399, 87,866 for P = 2, 4, 8, 16, 32 have gaps 5, 21, 371, 87,467 against 4, 16, 256, 65,536. So one
+difference in the law makes one end exponential and the other logarithmic, and the record's two doubling laws (CL680's "same
+integration parity") are the same test applied at every diagonal on the right and only at white wheels on the left.
+
+**Prediction for the census (`white_wheels_seeds.py`, random odd seeds of 24 bits on the left-finite system, run to 1.45 E with
+E = 60,000, the same method as CL680's band_coincidence.py):** **P-X1 [60%]:** for each of three random seeds the eventually-white
+wheels come with periods doubling 1 → 2 → 4 → 8 → 16 → 32 at wheels whose gaps are within a factor 4 of 2^P for the regime's
+period P (the law is the rule's, not the seed's). **P-X2 [55%]:** at least one seed reaches period 32 below 60,000 (the seed did at
+87,866). Counterfactual: gaps unrelated to 2^P, or periods that do not double at white wheels (which would mean the seed's
+crystal is special). PU: the first white wheels' positions by seed.
+
+**Outcome of the fifth block's census and a correction (2026-11-03 13:27 GMT).** `white_wheels_seeds.py` on six 24-bit and three 40-bit random
+seeds: every one has the white wheels 2, 7, 28, 399, 53,207, 58,286 with the same periods (1 → 2 → 4 → 8 → 16, then two branches
+at period 16) and the same weights 1, 1, 3, 3, 6, 10. P-X1 HELD in a stronger form than predicted: not gaps of the order 2^P but the
+same wheels exactly; P-X2 REFUTED for the known reason (the doubling to 32 is at 87,866, above E = 60,000). **And this is known
+in the record:** §8.31 (5 October, Rowland's question "is there really only one left side?") certified the same strip to 160,000
+for 60 rows, the two splits at 53,208 and 58,287 taken the same way by all of them, and constructed rows that realise the other
+sides; CONSTELLATION B.1 carries it. The writing law is Rowland's Proposition 2 (the doubling at an eventually-white diagonal)
+together with the reset mechanism in the kit's `reset_periodic` and `D_front_law`, reorganised as one recurrence on cycles. My
+`Record searched:` lines of CL693 and CL694 asked for "writing law" and "F map" and not for "left side", "strip" or "Rowland":
+G23/G29 again, filed in PRIOR-ART.md as known and reproved. What the writing law adds to §8.31 is the mechanism: a white wheel is
+exactly a wheel whose two parents have equal cycles (d′ = u ⊕ (u ∨ d) is white after the first black of u), which is CL680's
+"coincidence" of consecutive band words; and the branch at an even-weight white wheel is the one choice F does not make.
+
+**The one thing §8.31 left unexplained, taken as the pull.** It found that the split at 53,208 is decided by the last black cell of
+wheel 53,207, and that this moment falls at the same phase, 11 mod 16 of the strip's own cycle, for all 20 rows tested (LS8), with
+no reason given. By the writing law, once wheel 53,207's parents (53,205 and 53,206, equal cycles C) have settled, wheel 53,207
+keeps its value through C's whites and is zeroed at C's first black; so its last black is the tick before the first black of C after
+the parents settle, if it is black then; and wheel 53,208's constant is ¬C at that tick. The lock is therefore either in the
+parents' settling phase (the cascade's timing is universal) or in C's own structure (a long white run of C so that any settling
+inside it meets the same first black). **Predictions (`split_phase.py`, 16 random seeds and the single seed, wheels 53,200–53,210
+followed through settling):** P-Φ1 [60%] in every row the last black of wheel 53,207 is the tick before the first black of C after
+both parents have settled. P-Φ2 [55%] the parents' settling times, measured against the row's own cycle phase, are the same for
+all rows: the cascade is phase-locked and that is the mechanism of 8.31's 11 mod 16. Counterfactual: the parents' settling phases
+vary while the last black's phase does not; then the lock is C's white run, and the proof is one line about C.
+
+**Outcome of the split-phase test (2026-11-03 13:30 GMT; `split_phase.py`, the single seed and 12 random 24-bit seeds, wheels 53,200–53,210).**
+- The two parents of the white wheel have equal cycles in every row (Lemma E below). The settling times are rigidly spaced in every
+  row: wheel 53,205 settles 5 ticks before 53,206; 53,206 and 53,207 settle at the same tick τ; 53,208 at τ − 2; the last black of
+  53,207 is at τ − 1 in every row; against the row's own cycle, τ ≡ 12 and the last black ≡ 11 mod 16, 8.31's number. **P-Φ2 HELD in
+  full: the settling phases of all eleven wheels against the row's own cycle are the same for all 13 rows (13, 2, 11, 5, 8, 7, 12,
+  12, 10, 13, 12).** P-Φ1 REFUTED as stated: the last black of 53,207 is not the tick before C's first black after the parents settle
+  but the tick before 53,206 settles; the parents' last defect makes it, and 53,207 is already white when 53,206 settles.
+- *So the mechanism of "generic rows have one left side" is the cascade's clock:* the settling times of the strip's wheels are a
+  function of the strip's own cycles, universal up to the row's phase shift; the branch at an even-weight white wheel is the
+  complement of the farther parent's value at the locked phase (¬C_53206 at phase 11), the same for every row that reaches the
+  wheel through the cascade; only a row built to hold the other constant with no black ever at the white wheel (8.31's construction)
+  takes the other side. COMPUTED on 13 rows here and 20 in 8.31; the lock's proof (why coincidental early settlings never shift the
+  cascade) is the open hand step, PROOF-SKETCH.

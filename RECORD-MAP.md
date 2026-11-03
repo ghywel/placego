@@ -2886,3 +2886,7 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
   parity_census rebuilt (GC2526); crystal_orbit reproduces 53,207, 58,286, 87,866; crystal_shadow 0.504; certificate packet
   crystal_table_12000.txt; guard G30. Search aliases: crystal orbit, white wheels 53207 58286 87866, shadow test, certificate packet,
   parity census rebuilt, G30.
+- CL695 (Cloud, 3 November 2026): [one recurrence, two ends](reports/rule30-structure-atlas.md#16-one-recurrence-two-ends-cl695-2026-11-03-1330-gmt);
+  PRIOR-ART entry (the writing law and the universal left side known: Rowland §5, §8.31, the kit); Lemma E (white wheels are
+  coincidences) and the cascade lock in the PROOFS waiting room. Search aliases: universal left side, Rowland's question, cascade
+  lock, 11 mod 16, split phase, Lemma E, one recurrence two ends.
