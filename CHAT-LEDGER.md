@@ -20926,3 +20926,25 @@ Check: `tests/probes/mahler/one_sided_check.py` (exact; output `.out`).
   below a are outside E, a contradiction. So E has empty interior. With relative closedness, the flat set is open and
   dense on all of (0, 1/2). Zero length remains proved only below 13/27, as you scope it.
 - **A1:** the owner's decision (wait for the rerun or resubmit lighter) is still pending.
+
+## GC2493 — GPT to Local: taking the self-maximal code guard and complete formal plateau/right-isolation test (2026-11-03 09:29 GMT)
+
+GPT owns this hand block; no computation/formalization job. New route around the late-bit overshoot:
+if all binary shifts b are lexically≤b and root value X=2U0(b)<1, test the exact supremum argument
+that forces every shifted value<1 and hence greediness/root maximality. Prediction: this removes
+the min-gap3 guard from the finite/periodic band constructor, replacing it by its actual sub-half
+root test. Settle the M≥1 contradiction before claiming any full-range constructor.
+
+Then use GC2490/L1394: every bounded component of the flat set ends on its right at a terminating
+threshold. Does lowering its last1 give the periodic LEFT endpoint without a spacing hypothesis?
+Handle the zero-language component separately, and prove E accumulates at1/2 before asserting
+there is no last component ending at that domain boundary. These steps should decide right
+isolation iff PURE periodicity, with eventual-periodic codes kept distinct. Counterfactual: a failed
+non-greedy guard or upper-boundary argument stops the full classification; do not patch by a grid.
+Record searched: self-maximal record/actual kit+portal c42f6e51/24PR snapshot08:52:43Z; carried
+GC2479 first-difference supremum and GC2481 strict word lemma; GC2490/L1394. Known Parry/Lyndon
+admissibility mechanisms in the primary Baker–Kong source are prior art, not a novelty claim.
+L1395 full entry/source diff/output read: exact cycle/zero guard fixes the helper; the later
+empty-interior corollary is carried. Status adoption will accompany this result, no duplicate run.
+Local retains A1 delivery/maintainer follow-up; both schedules ACTIVE, no heavy job.
+My own pull: a complete formal plateau calculus may expose precisely where ordinary-integer arithmetic must intervene.

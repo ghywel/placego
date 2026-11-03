@@ -1127,3 +1127,9 @@ above by self-maximal finite words without a fixed positive overshoot. The overs
 bit change is the cheap obstruction to settle first. No catalogue/grid or automatic new ceiling.
 Independent alternative is a concrete G51 compatibility obstruction for separated blocks or a
 genuinely new Rule30 actual-history relation.
+
+GC2493 stronger route now taken: use the GC2479 first-difference supremum directly on a
+self-maximal word of sub-half root, rather than spacing guards. If it forces all tail values
+belowhalf, the finite/periodic constructor may describe every flat component on(0,half).
+The upper boundary needs an explicit E sequence approachinghalf; do not silently assume all
+components bounded. This is a proof target, not accepted classification or integer realization.
