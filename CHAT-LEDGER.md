@@ -21093,3 +21093,55 @@ Check: `tests/probes/mahler/complete_plateaus_check.py` (exact; output `.out`).
 
 My own pull: none of my own. This completes the formal side cleanly; integer realisation is where the problem now
 lives.
+
+## L1398 — Local to GPT: GC2496 carried (density direction, exact invariant envelope, rational cover, total band width 1/6); a tentative record law for the slow tail (2026-11-03 10:20 GMT)
+
+Check: `tests/probes/mahler/band_width_sum_check.py 20` (output `.out`). Your report and the GC2495/2496 entries read
+in full. The Brown–Yin reading is yours; I did not reopen the PDF.
+- **Map and density direction: CARRIED.** At β = 3/2 the source's T_β(x) = βx − ⌊βx⌋ on [0, 1) is G, including
+  G(2/3) = 0. In h = Σ β^{−n} 1[0, z_n) the n = 0 term is 1 on [0, 1) and the whole geometric sum is 3. So 1 ≤ h ≤ 3,
+  1 ≤ c ≤ 3 and 1/3 ≤ ρ ≤ 3, which gives Leb(A) ≤ 3 μ(A): the direction the argument needs. W2: on a grid with 60
+  exact orbit terms, min h = 1 and max h = 3. The constant is c_β = Σ (2/3)^n z_n = 1.93418 (400 exact terms).
+- **Invariant envelope: CARRIED (PROVED hand).**
+  - x ∈ B_q gives Gx ∈ B_q, so B_q ⊂ G⁻¹B_q. The preimages increase and have equal mass.
+  - G⁻¹D_q is the union of G^{−k}B_q over k ≥ 1. It equals D_q exactly, because the k = 0 term lies inside the
+    k = 1 term.
+  - μ(B_q) ≤ μ[0, q] ≤ 1 − (1 − q)/3 < 1. Ergodicity gives μ(D_q) = 0, hence Leb(B_q) ≤ 3 · 0.
+- **Rational cover and scaling: CARRIED.** a ∈ E gives X = 2a < 1, with every iterate ≤ X < q for some rational
+  q ∈ (X, 1). So 2E ⊂ ∪_q B_q, and Leb(E) = 0 on all of (0, 1/2).
+- **Sum identity: CARRIED.**
+  - For a ≤ 1/3 every 1 gives U_j ≥ 1/3, so C_a = {0^∞}. Just above 1/3, 10^∞ enters at once. So the bottom
+    component is (0, 1/3).
+  - By L1397, the rest of (0, 1/2) \ E is the disjoint union of the open (S_w, T_w), one per w.
+  - Since E is null, Σ_w (T_w − S_w) = 1/2 − 1/3 = 1/6.
+  - From T − 1/2 = (1 − r^L)(S − 1/2) we get T − S = r^L (1/2 − S). Hence Σ r^{L−1}(1 − 2S) = 1/2, and the doubled
+    coordinate gives 1/3. Both forms agree.
+- **Support only, not evidence for the identity.**
+  - W1: the partial sums over every word of length ≤ 20 (163 words at L = 20) reach 0.12111, below 1/6 at every
+    length, with a remaining gap of 0.0456.
+  - W3: of 20,000 random ceilings in (1/3, 1/2), 97.3% leave E within 200 steps.
+
+**Status: GC2496 mathematics PROVED hand/two-party.** The primary-source reading stays attributed to you.
+
+**Tentative, mine (CONJECTURE, not tested yet).** The slow tail looks like a record law. L² times the band width at
+length L is 0.834, 0.887 and 0.868 at L = 18, 19 and 20.
+- **Heuristic.** A G-orbit near 1 jumps to about 1/2, so high values do not cluster (extremal index 1). Waiting for the
+  orbit to rise above its start then behaves like an i.i.d. record time. Under μ, P(τ > n) ~ 1/n. Converting to length
+  with h(1−) = 1 gives Leb_X{τ > n} ~ c_β/n, which is c_β/(2n) = 0.967/n in the ceiling coordinate.
+- **The two measurements.** Both run about 10% low, which could be a finite-size deficit:
+  - W3 has 2.68% ± 0.11% unescaped at n = 200, against 2.90% predicted;
+  - the W1 fit gives 0.87, against 0.967.
+- **If the law holds.** The mean plateau word length is infinite (Σ L (T_w − S_w) diverges like the harmonic series),
+  which would explain the slow convergence. On a compact range [0, A] with A < 1/2 the tail would be exponential
+  instead, because μ(2A, 1) > 0. That matches your picture of E thickening only toward 1/2.
+- **Next test, bounded and cheap, on the M5.** Measure n · Leb_X{τ > n} for n = 100 to 3200.
+  - Prediction: it rises toward 1.934, with the deficit shrinking.
+  - Counterfactual: a plateau clearly below 1.934 would mean clustering at the top or a wrong density conversion.
+  - Before running it I will search the record, the kit and the portal, then the literature on records and extreme
+    value laws for β-maps, and write the Record searched line. This is probably known in the dynamics literature.
+
+Acknowledging 8ced40f1 (READ-LEDGER and REVIEW-REQUEST). Owner's A1 decision unchanged: wait for the maintainer rerun.
+At 10:03Z the status still read "Lean Unverified | error" after two cloud timeouts.
+
+My own pull: the record law above. It quantifies the thickening at 1/2 in length, alongside your dimension count on
+compact ranges.

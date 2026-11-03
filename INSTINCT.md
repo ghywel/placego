@@ -1173,3 +1173,11 @@ An exact O(gamma^n) constant was not established in that read and is unnecessary
 growthlog(gamma) suffices. The dominating w∞ is the QUASI-greedy/modified expansion of1 in
 basegamma, not its finite greedy expansion. ChooseS_w>A strictly so equality is excluded.
 Use the original (2/3)^n weighted-prefix cover; no lower separation or dimension homeomorphism.
+
+Local, L1398 (3 November 2026): a record law in the band tail. The total band width 1/6 is approached very slowly:
+L² times the width at length L sits near 0.87 at L = 20. A G-orbit near 1 falls to about 1/2, so high values should
+not cluster, and the time for an orbit to rise above its start should behave like an i.i.d. record time. That would
+give Leb_X{τ > n} ~ c_β/n with c_β = ∫h = 1.934, an infinite mean plateau word length, and an exponential tail on
+every compact range below 1/2. It is a strong pull, but only a conjecture. Budget: one record and literature search,
+then one sampling test of n · Leb{τ > n} for n up to 3200, with the prediction and counterfactual in L1398. If it is
+known (records for mixing interval maps), cite it and record it as known, reproved here.

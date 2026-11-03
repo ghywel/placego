@@ -1,0 +1,19 @@
+W1 L= 2:     0 words, widths 0.000e+00, cumulative 0.0000000000 (1/6 - cumulative = 1.667e-01)
+W1 L= 3:     1 words, widths 7.797e-03, cumulative 0.0077972710 (1/6 - cumulative = 1.589e-01)
+W1 L= 4:     1 words, widths 1.671e-02, cumulative 0.0245114210 (1/6 - cumulative = 1.422e-01)
+W1 L= 5:     1 words, widths 1.529e-02, cumulative 0.0398021198 (1/6 - cumulative = 1.269e-01)
+W1 L= 6:     1 words, widths 1.182e-02, cumulative 0.0516176669 (1/6 - cumulative = 1.150e-01)
+W1 L= 8:     2 words, widths 7.940e-03, cumulative 0.0705012372 (1/6 - cumulative = 9.617e-02)
+W1 L=10:     5 words, widths 6.162e-03, cumulative 0.0847260854 (1/6 - cumulative = 8.194e-02)
+W1 L=12:    10 words, widths 4.625e-03, cumulative 0.0954709163 (1/6 - cumulative = 7.120e-02)
+W1 L=14:    19 words, widths 3.885e-03, cumulative 0.1041212309 (1/6 - cumulative = 6.255e-02)
+W1 L=16:    40 words, widths 3.155e-03, cumulative 0.1109059305 (1/6 - cumulative = 5.576e-02)
+W1 L=18:    80 words, widths 2.575e-03, cumulative 0.1164816160 (1/6 - cumulative = 5.019e-02)
+W1 L=20:   163 words, widths 2.171e-03, cumulative 0.1211102497 (1/6 - cumulative = 4.556e-02)
+W1x L=18: L^2 * widths = 0.8344
+W1x L=19: L^2 * widths = 0.8874
+W1x L=20: L^2 * widths = 0.8682
+W1x heuristic c/L^2 tail beyond L=20: 0.0423; cumulative + tail = 0.1635 (1/6 = 0.1667)
+W2 Parry density on a grid: min 1.0000, max 3.0000 (bounds 1 and 3)
+W3 random ceilings in (1/3, 1/2): escaped within 200 steps 19465 of 20000 (0.9732); escape time median 10, 99% 151, max 200
+BAND_SUM_DONE
