@@ -1,0 +1,7 @@
+D0 137 words in the class with |w| <= 16
+D1 F_w(3/2) == 2 S_w exactly: 0 failures
+D2 recursion inequality failures 0; gamma^n <= N_n failures 0; N_n <= gamma^(n+L) failures 0 (n <= 22); max N_n / gamma^(n+L) = 0.4437
+D3 derivative comparison failures 0; exponent-deficit bracket failures 0
+D4 18769 membership checks of E points below S_w (codes of 2S_v and 2T_v, first 40 digits): 0 violations; T_v strictly inside an open band (S_w, T_w): 0
+D5 gap-2 word: polynomial at 3/2 = 217/512; in class: True
+COMPACT_DIMENSION_DONE
