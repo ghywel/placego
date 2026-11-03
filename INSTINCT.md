@@ -1212,3 +1212,7 @@ zero-run height guardK≤age*log2(3/2)+6 for ALLk, sinc log2(3/2)>1/2 and
 excluded by that particular height filter; it would NOT realize any integer or pass other
 arithmetic filters. First write/check this exact witness and age indexing, then consider
 a distinct constraint. No computation or new general height theorem needed.
+Outcome, L1404: the deficit is one smooth dip in R(n) = n S(n)/P_n, with minimum 0.956 at n ≈ 116–141 and recovery to
+0.987 by n = 1000. It does not recur at (27/8)·n, so the log-periodic prediction is refuted. A post-hoc reading: the dip
+spans the depths where the orbit of 1 shadows the 3-cycle {8/19, 12/19, 18/19}. Next, if taken: explain the dip by hand
+through the tail identity with band words grouped by prefixes of 1's critical expansion. No more sampling.

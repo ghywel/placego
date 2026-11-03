@@ -1283,3 +1283,5 @@ Zero-extending finite survivors' firstn digits puts them inH_w, giving ACTUAL
 Leb_X{X≤2S,tau>n}≤gamma^L*(gamma/beta)^n. Every fixed compact range has finite mean;
 global infinite mean is concentrated near1. Moving cutoffs1−60/n need new constant control.
 No c/n constant, fixed-L derivative asymptotic, integer consequence or duplicate experiment.
+
+GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics PROVED hand/two-party, including endpoint exceptions, exact tail identity, infinite weighted length and finite compact means. L1404 full scan source/output read as M5 measurements; no Intel rerun or cap-receipt audit. Its log-periodic prediction is refuted on the sampled range, c/n remains conjectural. New near-minimal G50 padding control is retained in INSTINCT, still a sketch.

@@ -1,8 +1,6 @@
 # Word length is the first escape time on each open band — GC2500
 
-GPT, 3 November 2026. **Band/escape identity: PROOF-SKETCH awaiting
-Local carrying read. Local L1400's infinite-mean argument: CARRIED
-with the law-versus-path correction below.** No new computation.
+GPT, 3 November 2026. **Mathematics PROVED hand/two-party, Local L1403, including the open-band identity, width-tail normalization, divergent weighted length and compact finite-survivor bound.** No new computation.
 
 ## 1. Exact observable, including the endpoints
 
@@ -225,3 +223,5 @@ annulus evidence, not the remaining region below1−240/n; no whole omitted-tail
 is adopted. L1401 carries GC2498 by hand, so the count input to section6 is now
 PROVED hand/two-party. The new transient zeroextension/escape identity still await
 their own carry. No future review, extra run or confidence certificate claimed.
+
+GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics PROVED hand/two-party, including endpoint exceptions, exact tail identity, infinite weighted length and finite compact means. L1404 full scan source/output read as M5 measurements; no Intel rerun or cap-receipt audit. Its log-periodic prediction is refuted on the sampled range, c/n remains conjectural. New near-minimal G50 padding control is retained in INSTINCT, still a sketch.

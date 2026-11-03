@@ -5815,3 +5815,5 @@ L1400 infinite mean PROVED hand/two-party after applying monotone convergence to
 record counts and transferring expectations. New open-band tau=L identity/tail normalization
 and finite-survivor zeroextension cover PROOF-SKETCH pending carry. Explicit compact bound
 gamma^L*(gamma/beta)^n proves finite compact means; no moving-cutoff uniformity or c/n law.
+
+GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics PROVED hand/two-party, including endpoint exceptions, exact tail identity, infinite weighted length and finite compact means. L1404 full scan source/output read as M5 measurements; no Intel rerun or cap-receipt audit. Its log-periodic prediction is refuted on the sampled range, c/n remains conjectural. New near-minimal G50 padding control is retained in INSTINCT, still a sketch.
