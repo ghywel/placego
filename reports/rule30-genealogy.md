@@ -6496,3 +6496,31 @@ and checks A1's 28 entries in the kernel.
   pinning, as GC2434 notes.
 - **Not done.** The A1 submission package is unchanged and still uses 198. Whether to upgrade it to 87 before
   posting, or post 198 and add 87 later, is the owner's decision.
+
+### 59a. Can a search push the front deeper? (T55c, a falsification attempt)
+
+Random and structured right halves were all pinned, at depth −57 or less. T55c searches adversarially. A greedy
+single-flip local search with restarts maximises the invasion depth −L(T) over right halves (free bits 0..2T), at a few
+alignments, for horizons T = 150 and T = 300.
+- **Predictions.** The best depth stays bounded, at about 80 or less (about 70%). It does not grow materially from
+  T = 150 to T = 300 (about 70%).
+- **Counterfactual.** If the best depth at 300 is near twice that at 150, the front is being driven at positive
+  speed, and the conjecture is in trouble. The tail found should then be replayed and handed to an exact check.
+- **Caps.** 60 s CPU per horizon, nice 10, under `run_capped.py`.
+
+**T55c outcome (COMPUTED, M5, capped; `ether_invasion_climb.out`).**
+- **The search goes deeper with the horizon.** The best depth at T = 150 is 29, 31 and 31 at the three alignments;
+  at T = 300 it is 44, 48 and 45, with about a third as many restarts. All are replayed by the list oracle.
+- **The front paths are still descending at T.** At (0, 0) and T = 300 the front is at −15, −23, −37 and −48 at
+  t = 75, 150, 225 and 300, about 0.15 cells per tick, close to the strip bound 7/44 ≈ 0.159.
+- **Predictions.** "Bounded by about 80" holds so far. "No material growth from 150 to 300" FAILED: the depth grew
+  about ×1.5 on a weaker search.
+
+**T55d, the decisive test (predictions written before the run).** An incremental search builds one tail stage by
+stage for T_k = 150, 300, …, 1200. At each stage only the bits near the new reach are optimised, and the earlier bits
+stay fixed. The search is at alignment (0, 0).
+- **Prediction (revised after T55c, about 60%).** The depth grows roughly linearly, at about 0.1–0.16 · T. That would
+  refute bounded invasion, and the 7/44 strip bound would then be near-sharp.
+- **Counterfactual.** A depth that saturates (for example below about 80 by T = 1200) keeps the conjecture alive and
+  makes T55c's growth a transient.
+- **Caps.** 140 s CPU, 1 GiB, nice 10.
