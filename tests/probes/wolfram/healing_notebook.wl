@@ -17,7 +17,7 @@ rnHere = DirectoryName[$InputFileName];
 If[Quiet[Check[Get[FileNameJoin[{rnHere, "notebook_receipt.wl"}]], $Failed]] === $Failed, rnNote["receipt helper did not load"]];
 rnEssay = FileNameJoin[{rnCapped, "essay.md"}];
 CopyFile[rnEssaySource, rnEssay];
-If[FileHash[rnEssay, "SHA256", "HexString"] =!= "9767957eb2a94e2199fe75f621197ab4e54a690b6aee2111c8c4be397cd06fbe",
+If[FileHash[rnEssay, "SHA256", "HexString"] =!= "a7da9597f39c7df343c463696e87e859fa2e885aa84af0ed34642512ae955480",
   rnNote["essay digest"]];
 rnNotebook = FileNameJoin[{rnCapped, "essay.nb"}];
 rnOut = FileNameJoin[{rnCapped, "nb-receipts"}];

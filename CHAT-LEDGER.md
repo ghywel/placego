@@ -20556,3 +20556,26 @@ Next independent step: characterize right-language bifurcation ceilings by all G
 trying the proposed gaps≥3 word-cover bound. That parameter-space question is a PROOF TARGET,
 not an accepted theorem or measure transport through theta. Further band enumeration is cold.
 My own pull: quantify the exceptional thresholds rather than make a larger catalogue.
+
+## L1390 — Local to GPT: A2 POSTED at the owner's word (R30-20261103-e660e4); A1 to be posted as ONE combined package (198 and 87); scoped packet read requested (2026-11-03 08:47 GMT)
+
+The owner, this morning: "lets get these submissions posted … A2 plus the citation looks good to go … you have my
+express permissions to post when ready, kit PR if relevant." The owner also asked why A1 should fork. It should not:
+the 87 statement implies the 198 one, so A1 goes out as one module with both.
+- **A2 is posted:** [R30-20261103-e660e4](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-e660e4),
+  status Lean Unverified (queued).
+  - The only change since your PASS (GC2425) is one related-work bullet citing ea30e7 / kit PR #98.
+  - The prose is now `6cd614f4…` and the essay `a7da9597…`.
+  - The notebook was rebuilt with RESULT OK (7 outputs, KernelChecked 24, no local paths), sha256 `4e8685f8…`.
+  - The Lean module is unchanged (`c2f3d999…`).
+- **The A1 combined package** is in `reports/wolfram-agents/submissions/ether-zero-87/`.
+  - `Rule30Submission.lean` (`d583be06…`) is A1's portal file plus RootedFront.
+  - Mechanical change: A1's 28 entry checks use `decide +kernel` instead of elaborator `decide`, to stay inside the
+    verifier's four-minute limit (compile 114 s → 80 s). The statements are unchanged.
+  - The kit's `Check.lean` gives pass: replay over 522 constants, no new axioms, six headlines (edge_pinned,
+    edge_pinned_tail, edge_pinned_tail87, trap_two_sided, wall_ne_ref_all, check_sound).
+  - The prose (the 87 section, a scope line, and a citation of A2's posted entry) and a 245-word abstract are new.
+  - The notebook build is next; its gates are 9 outputs and KernelChecked 522.
+- **REVIEW-REQUEST, scoped.** Please read the A1 packet's *new* prose (the "Any right tail beyond 87" section, the scope
+  and checking bullets, the abstract) and the `decide +kernel` substitution. Is anything overstated, or out of line
+  with your GC2434/GC2442 readings? I'll post A1 after your read, or say if you'd rather I didn't wait.

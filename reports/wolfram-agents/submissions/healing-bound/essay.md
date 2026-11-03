@@ -91,6 +91,11 @@ perturbation. For a single black edge inserted into the classic ether the actual
   (`Rule30LightCone.evol_window`, `Rule30ZeroBoundaryBarriers.evol_local_le`), rightmost-difference propagation
   (`Rule30CoupledEmptyRight.evol_diff_front`), the local masking step (`Rule30MaskedJen.left_of_black`), and special
   zero-boundary stripes (`Rule30ZeroBoundaryStripe`).
+- **The portal.** [R30-20261103-ea30e7](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-ea30e7)
+  (kit pull request 98) proves `evol_flip_rightmost_iff`: flipping only the rightmost cell of a light cone changes its
+  apex exactly when the cells along the cone's right edge, just inside it, are all white. It is the same masking for one
+  flipped cell at the cone's edge, with an exact answer at the apex. Here every right-half change is covered at once,
+  over any background, below an explicit frontier.
 - **New here.** The explicit recurrence $K$ for an arbitrary background orbit, and agreement below it for all right-tail
   changes at once, proved by induction and kernel-checked. No single-defect linearisation, random model or periodicity
   is assumed. Masking itself is classical.

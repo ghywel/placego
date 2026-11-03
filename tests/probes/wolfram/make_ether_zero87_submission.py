@@ -6,6 +6,9 @@ Mechanical: A1's portal file (reports/wolfram-agents/submissions/ether-zero/Rule
 byte except its module docstring, which gains one bullet for `edge_pinned_tail87`; the body of
 tests/probes/lean/RootedFront.lean (between its `open` line and `end`) is appended before `end Rule30Submission`, with
 its internal docstring references removed. The script refuses internal references left in the code.
+For the verifier's time limit (L1390), A1's 28 entry checks `set_option maxRecDepth 100000 in theorem entry_.. := by decide`
+become `theorem entry_.. := by decide +kernel` (the kernel evaluates directly; statements unchanged; standard axioms):
+compile 114 s -> 81 s on the M5.
 """
 import sys
 a1 = open(sys.argv[1]).read()
@@ -34,6 +37,9 @@ assert old_bullet in a1
 a1 = a1.replace(old_bullet, new_bullet, 1)
 tail = '\nend Rule30Submission\n'
 assert a1.endswith(tail)
+import re
+a1, nent = re.subn(r'set_option maxRecDepth 100000 in\n(theorem entry_\d_\d : checkEntry [^\n]*) := by decide\n', r'\1 := by decide +kernel\n', a1)
+assert nent == 28, nent
 out = a1[:-len(tail)] + '\n' + body.rstrip('\n') + '\n' + tail
 open(sys.argv[3], 'w').write(out)
 print('written', sys.argv[3], len(out.split('\n')), 'lines')

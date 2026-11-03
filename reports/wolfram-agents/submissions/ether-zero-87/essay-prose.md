@@ -1,0 +1,186 @@
+---
+Template: ComputationalEssay
+Name: The classic ether of rule 30 absorbs a black edge: front speed exactly zero
+Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
+Date: 2026-11-03
+Description: A partial result proved in core Lean: after a black cell is inserted into the ether of the kit's Rule30Ether, at any of its 28 alignments, the leftmost disturbance is pinned in a fixed 13-cell window from a finite time on, so its speed is exactly zero; the same holds for every right tail beyond cell 87, the least cutoff for these entries; the difference stays unbounded to the right.
+Abstract: See abstract.txt.
+Keywords: [rule 30, Rule 30 Prize, ether, wall, trap, front, news speed, Lean 4, LeanLink, partial result]
+Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]
+Links: ["[Rule 30 Prizes](https://rule30prize.org/)", "[The kit's Rule30Ether](https://github.com/WolframInstitute/Rule30PrizeKit/blob/93d98bbe049177d2c1546b6b0714aa33703ae13d/lean/Ruliology/CellularAutomata/Rule30Ether.lean)"]
+---
+
+## The question
+
+Rule 30 updates each cell from itself and its two neighbours: the new colour is *left* XOR (*centre* OR *right*). The
+three Rule 30 Prize problems ask about the centre column of the pattern grown from a single black cell. This essay proves
+nothing about that column. It is about how far news travels through a periodic background of rule 30.
+
+Rule 30 has spatially and temporally periodic orbits, its **ethers**. The kit's `Rule30Ether` gives one with spatial
+period 7 and temporal period 4, the **classic ether**. Its seven columns at the four
+phases are
+
+$$B_1 = 0011,\ B_2 = 0110,\ B_3 = 1101,\ B_4 = 0101,\ B_5 = 0011,\ c = 0001,\ c = 0001.$$
+
+```wl
+etherTable = {{0,0,1,1},{0,1,1,0},{1,1,0,1},{0,1,0,1},{0,0,1,1},{0,0,0,1},{0,0,0,1}};
+ether[j_, phi_] := etherTable[[Mod[j, 7] + 1, Mod[phi, 4] + 1]];
+ArrayPlot[Table[ether[x, t], {t, 0, 27}, {x, 0, 41}], ImageSize -> 420]
+```
+
+Change one cell of the ether and the damage spreads. For a perturbation with a rightmost differing cell, that cell moves
+right one place per tick, because the new colour is an XOR with the left neighbour. To the left the news can be masked:
+a black centre hides the right neighbour.
+How fast does damage move leftwards into this ether?
+
+## The experiment: insert a black edge
+
+Take the ether at an alignment $(c_0, c_1)$: column $x$ at time $t$ is $\mathrm{ether}(x + c_0, t + c_1)$. Keep it for
+$x < 0$, put a black cell at $x = 0$ and white to its right, and run rule 30. Compare with the undisturbed ether. The
+leftmost cell where they differ is the **front** $F(t)$.
+
+```wl
+row[c0_, c1_, lo_, hi_] := Table[Which[x < 0, ether[x + c0, c1], x == 0, 1, True, 0], {x, lo, hi}];
+evo = CellularAutomaton[30, row[4, 3, -700, 400], 300];
+ref = Table[ether[x + 4, t + 3], {t, 0, 300}, {x, -700, 400}];
+ArrayPlot[BitXor[evo, ref][[All, 600 ;; 760]], ImageSize -> 480]
+```
+
+The picture shows the difference from the ether near $x = 0$. (The plotted window stays far from the ends of the
+finite row, which wrap around.) To the right the difference is unbounded at every time, since the white right half
+already differs from the ether. Its left end wanders for a while, then stops for good.
+
+## Why it stops: the ether-wall trap of `Rule30Ether`
+
+`Rule30Ether` contains 109 states of a 13-cell strip lying to the right of a $B_3$ column, the **wall states**, with two
+properties checked by the kernel (`wallOK_true`):
+
+- **Closed under every right input.** If the strip is a wall state at phase $\varphi$, then whatever the cell to its
+  right does, the strip is a wall state at phase $\varphi + 1$ one step later.
+- **Masked head.** Whenever $B_3$ is white, the strip's first cell carries the ether's own $B_4$ value.
+
+So "ether columns up to a $B_3$ column, then a wall state" is a trap. Each column left of the $B_3$ column reads three
+ether cells. The $B_3$ column reads the wall's head only when it is white, and then sees the ether's value. When it is
+black, the head is masked. The strip stays a wall state for any input from the right. The kit proves this with column 0
+held to an ether column for all time (`trap_invariant`), and uses it to exclude ether walls beside a periodic centre
+column. Here the whole left half-line is the ether, and the same induction runs with the prescribed column replaced by
+the induction hypothesis:
+
+```lean
+theorem trap_two_sided {G : Nat → Int → Bool} (hG : IsR30Z G) (c xB : Int) (s t1 : Nat)
+    (hk : (xB + c) % 7 = 2)
+    (hE : ∀ x, x ≤ xB → G t1 x = etherZ c x (t1 + s))
+    (hW : ((t1 + s) % 4, rowZ G t1 xB 13) ∈ wallStates) :
+    ∀ n, (∀ x, x ≤ xB → G (t1 + n) x = etherZ c x (t1 + n + s)) ∧
+      ((t1 + n + s) % 4, rowZ G (t1 + n) xB 13) ∈ wallStates
+```
+
+## The inserted edge enters the trap at every alignment
+
+The ether has $7 \times 4 = 28$ alignments. For each, the evolution of the inserted edge reaches the trap: at some time
+$t_1 \le 222$, the ether is intact at and left of a $B_3$ column $x_B$, and the next 13 cells form a wall state.
+
+| $(c_0, c_1)$ | $t_1$ | $x_B$ | $(c_0, c_1)$ | $t_1$ | $x_B$ | $(c_0, c_1)$ | $t_1$ | $x_B$ | $(c_0, c_1)$ | $t_1$ | $x_B$ |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| (0,0) | 81 | −19 | (2,0) | 8 | 0 | (4,0) | 6 | −2 | (6,0) | 4 | −4 |
+| (0,1) | 13 | −5 | (2,1) | 17 | −7 | (4,1) | 148 | −23 | (6,1) | 25 | −11 |
+| (0,2) | 10 | 2 | (2,2) | 16 | −7 | (4,2) | 6 | −2 | (6,2) | 4 | −4 |
+| (0,3) | 186 | −26 | (2,3) | 8 | 0 | (4,3) | 222 | −37 | (6,3) | 82 | −18 |
+| (1,0) | 185 | −27 | (3,0) | 7 | −1 | (5,0) | 221 | −38 | | | |
+| (1,1) | 17 | −6 | (3,1) | 7 | −1 | (5,1) | 148 | −24 | | | |
+| (1,2) | 9 | 1 | (3,2) | 16 | −8 | (5,2) | 5 | −3 | | | |
+| (1,3) | 9 | 1 | (3,3) | 7 | −1 | (5,3) | 5 | −3 | | | |
+
+These 28 facts are checked by the kernel itself, not by an external program:
+
+- **The light cone.** `G_left`: the columns $x < -t$ are still the ether at time $t$.
+- **A finite simulation.** `iter3_G`: iterating the kit's `lin3` on a list agrees with the whole-line evolution on the
+  list's range, via the kit's `lin3_seg`.
+- **The check itself.** `checkEntry`, run by `decide` for each alignment. It simulates from $-2t_1$ to time $t_1$, and
+  checks that the columns $-t_1, \dots, x_B$ are the ether, that $x_B$ is a $B_3$ column, and that the next 13 cells
+  are one of the 109 wall states.
+
+## The disturbance never heals
+
+None of the 109 wall states equals the ether's own 13 cells after a $B_3$ column (`wall_ne_ref_all`, by `decide`). So
+once trapped, the strip always differs from the ether somewhere, and the front stays inside it. Together:
+
+```lean
+theorem edge_pinned (c0 c1 : Nat) (h0 : c0 < 7) (h1 : c1 < 4) : ∃ xB : Int, ∃ t1 : Nat, ∀ t, t1 ≤ t →
+    (∀ x, x ≤ xB → G c0 c1 t x = etherZ c0 x (t + c1)) ∧
+    ∃ x, xB < x ∧ x ≤ xB + 13 ∧ G c0 c1 t x ≠ etherZ c0 x (t + c1)
+```
+
+**The front is pinned:** $x_B < F(t) \le x_B + 13$ for every $t \ge t_1$, at every alignment. Its leftward speed is
+exactly zero.
+
+## Any right tail beyond 198
+
+The 28 entries read nothing to the right of $x_B + 13 + t_1 \le 198$: a cell at time $t$ depends only on the cells
+within distance $t$ at time 0 (`agree_cone`). The tightest case is $(4, 3)$, with $-37 + 13 + 222 = 198$. Once
+trapped, the strip does not care what arrives from the right. So the same holds for every row that agrees with the
+inserted edge's on $x \le 198$ (the ether, the black cell, then 198 white cells), whatever it holds beyond:
+
+```lean
+theorem edge_pinned_tail (c0 c1 : Nat) (h0' : c0 < 7) (h1' : c1 < 4) {H : Nat → Int → Bool} (hH : IsR30Z H)
+    (h0 : ∀ x, x ≤ 198 → H 0 x = initRow c0 c1 x) : ∃ xB : Int, ∃ t1 : Nat, ∀ t, t1 ≤ t →
+    (∀ x, x ≤ xB → H t x = etherZ c0 x (t + c1)) ∧ ∃ x, xB < x ∧ x ≤ xB + 13 ∧ H t x ≠ etherZ c0 x (t + c1)
+```
+
+This is a statement about an infinite family of initial rows.
+
+## Any right tail beyond 87
+
+The cutoff 198 comes from the light cone alone. Masking does better. Let δ be the difference between the evolution H
+of any row and the inserted edge's evolution G. With G's own values as coefficients, δ obeys an exact one-cell rule:
+
+$$\delta'(x) = \delta(x-1) \oplus (\lnot r \land \delta(x)) \oplus (\lnot c \land \delta(x+1)) \oplus (\delta(x) \land \delta(x+1)),$$
+
+where c and r are G's centre and right cells. A black right neighbour hides a change in the centre, and a black
+centre hides a change on the right.
+
+A **rooted observer** follows the leftmost difference L together with three-valued knowledge (0, 1 or unknown) of the
+next two cells. **Half-line states**, "no difference at or left of m", advance by the recruitment step: m stays when
+G's cell at m is black and falls by one otherwise. One tick evaluates the new cells over every completion of the
+unknowns and branches until the new front is found. Half-line states are expanded into rooted ones up to a threshold,
+and rooted states far to the right are retired into half-line ones. The tick is sound for **every** choice of those
+thresholds, so the thresholds are untrusted data (`tick_sound`). The background rows are bit masks, and the kernel
+runs each alignment's check (`check_sound`, `decide +kernel`).
+
+```lean
+theorem edge_pinned_tail87 (c0 c1 : Nat) (h0' : c0 < 7) (h1' : c1 < 4) {H : Nat → Int → Bool} (hH : IsR30Z H)
+    (h0 : ∀ x, x ≤ 87 → H 0 x = initRow c0 c1 x) : ∃ xB : Int, ∃ t1 : Nat, ∀ t, t1 ≤ t →
+    (∀ x, x ≤ xB → H t x = etherZ c0 x (t + c1)) ∧ ∃ x, xB < x ∧ x ≤ xB + 13 ∧ H t x ≠ etherZ c0 x (t + c1)
+```
+
+The cutoff 87 cannot be lowered for these entries. Flipping only the cell at 87 changes the 13-cell window at
+alignment (4, 3) at time 222:
+
+```wl
+edgeRow[f_Integer] := Table[Which[x < 0, ether[x + 4, 3], x == 0 || x == f, 1, True, 0], {x, -700, 400}];
+window[r_] := CellularAutomaton[30, r, {{{222}}, {-36, -24} + 701}];
+base = window[edgeRow[-1000]];   (* no extra flip *)
+{window[edgeRow[87]] == base, window[edgeRow[88]] == base, window[edgeRow[86]] == base}
+```
+
+The comparisons are False, True and True: of these three flips, only the cell at 87 reaches the window (checked on
+Wolfram Engine 15.0, and replayed in Python by `tests/probes/exact_tail_bridge.py`'s single-flip scan, T53). This is a statement about the entries used here: a row that agrees
+only through 86 may still be pinned through some other entry.
+
+## Scope and what is new
+
+- **Frame.** The lab frame of the classic ether. Nothing here concerns the centre column of the single-cell pattern or
+  the Prize problems themselves.
+- **Prior art.** The ether, its wall states and `trap_invariant` are the kit's `Rule30Ether`, used there to exclude ether
+  walls beside a periodic centre column; kit pull request 65 later added `Lock` and `Rule30EtherWallWitness`. New here
+  are the trap on the whole line, the entry of an inserted black edge at every alignment, with them the exact zero
+  of the edge's front speed, and the least right-tail cutoff 87 for these entries.
+- **Context (computed observations, not proved here).** Among the periodic backgrounds we examined numerically, the
+  classic ether is the one in which the inserted edge's left front was rigid; in the others it moved at positive rates
+  below light speed. Only the classic ether's zero is proved.
+- **Checking.** The Lean module builds on the verifier's kit (93d98bbe) in core Lean with standard axioms (propext,
+  Classical.choice, Quot.sound), and passes the kit's `Check.lean` with the headlines `edge_pinned`, `edge_pinned_tail`,
+  `edge_pinned_tail87`, `trap_two_sided`, `wall_ne_ref_all` and `check_sound`.
+- **The observer's relatives.** Its half-line states follow the recruitment frontier of the companion submission
+  [R30-20261103-e660e4](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-e660e4) (the universal
+  healing bound). The rooted front, with its two-cell window, is what lowers that frontier's cutoff of 112 to 87.

@@ -291,62 +291,34 @@ theorem pinned_of_check {c0 c1 t1 : Nat} {xB : Int} (h : checkEntry c0 c1 t1 xB 
   rw [hc]
   exact etherZ_eq_ether (by omega) (by omega)
 
-set_option maxRecDepth 100000 in
-theorem entry_0_0 : checkEntry 0 0 81 (-19) = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_0_1 : checkEntry 0 1 13 (-5) = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_0_2 : checkEntry 0 2 10 2 = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_0_3 : checkEntry 0 3 186 (-26) = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_1_0 : checkEntry 1 0 185 (-27) = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_1_1 : checkEntry 1 1 17 (-6) = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_1_2 : checkEntry 1 2 9 1 = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_1_3 : checkEntry 1 3 9 1 = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_2_0 : checkEntry 2 0 8 0 = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_2_1 : checkEntry 2 1 17 (-7) = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_2_2 : checkEntry 2 2 16 (-7) = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_2_3 : checkEntry 2 3 8 0 = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_3_0 : checkEntry 3 0 7 (-1) = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_3_1 : checkEntry 3 1 7 (-1) = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_3_2 : checkEntry 3 2 16 (-8) = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_3_3 : checkEntry 3 3 7 (-1) = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_4_0 : checkEntry 4 0 6 (-2) = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_4_1 : checkEntry 4 1 148 (-23) = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_4_2 : checkEntry 4 2 6 (-2) = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_4_3 : checkEntry 4 3 222 (-37) = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_5_0 : checkEntry 5 0 221 (-38) = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_5_1 : checkEntry 5 1 148 (-24) = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_5_2 : checkEntry 5 2 5 (-3) = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_5_3 : checkEntry 5 3 5 (-3) = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_6_0 : checkEntry 6 0 4 (-4) = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_6_1 : checkEntry 6 1 25 (-11) = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_6_2 : checkEntry 6 2 4 (-4) = true := by decide
-set_option maxRecDepth 100000 in
-theorem entry_6_3 : checkEntry 6 3 82 (-18) = true := by decide
+theorem entry_0_0 : checkEntry 0 0 81 (-19) = true := by decide +kernel
+theorem entry_0_1 : checkEntry 0 1 13 (-5) = true := by decide +kernel
+theorem entry_0_2 : checkEntry 0 2 10 2 = true := by decide +kernel
+theorem entry_0_3 : checkEntry 0 3 186 (-26) = true := by decide +kernel
+theorem entry_1_0 : checkEntry 1 0 185 (-27) = true := by decide +kernel
+theorem entry_1_1 : checkEntry 1 1 17 (-6) = true := by decide +kernel
+theorem entry_1_2 : checkEntry 1 2 9 1 = true := by decide +kernel
+theorem entry_1_3 : checkEntry 1 3 9 1 = true := by decide +kernel
+theorem entry_2_0 : checkEntry 2 0 8 0 = true := by decide +kernel
+theorem entry_2_1 : checkEntry 2 1 17 (-7) = true := by decide +kernel
+theorem entry_2_2 : checkEntry 2 2 16 (-7) = true := by decide +kernel
+theorem entry_2_3 : checkEntry 2 3 8 0 = true := by decide +kernel
+theorem entry_3_0 : checkEntry 3 0 7 (-1) = true := by decide +kernel
+theorem entry_3_1 : checkEntry 3 1 7 (-1) = true := by decide +kernel
+theorem entry_3_2 : checkEntry 3 2 16 (-8) = true := by decide +kernel
+theorem entry_3_3 : checkEntry 3 3 7 (-1) = true := by decide +kernel
+theorem entry_4_0 : checkEntry 4 0 6 (-2) = true := by decide +kernel
+theorem entry_4_1 : checkEntry 4 1 148 (-23) = true := by decide +kernel
+theorem entry_4_2 : checkEntry 4 2 6 (-2) = true := by decide +kernel
+theorem entry_4_3 : checkEntry 4 3 222 (-37) = true := by decide +kernel
+theorem entry_5_0 : checkEntry 5 0 221 (-38) = true := by decide +kernel
+theorem entry_5_1 : checkEntry 5 1 148 (-24) = true := by decide +kernel
+theorem entry_5_2 : checkEntry 5 2 5 (-3) = true := by decide +kernel
+theorem entry_5_3 : checkEntry 5 3 5 (-3) = true := by decide +kernel
+theorem entry_6_0 : checkEntry 6 0 4 (-4) = true := by decide +kernel
+theorem entry_6_1 : checkEntry 6 1 25 (-11) = true := by decide +kernel
+theorem entry_6_2 : checkEntry 6 2 4 (-4) = true := by decide +kernel
+theorem entry_6_3 : checkEntry 6 3 82 (-18) = true := by decide +kernel
 
 /-! ### Arbitrary right tails beyond 198 -/
 
