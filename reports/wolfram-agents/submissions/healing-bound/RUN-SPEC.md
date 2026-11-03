@@ -44,3 +44,14 @@ its output is kept. One attempt.
 - **Prediction.** `RESULT OK` in under 3 minutes and under 3 GB.
 - **Counterfactual.** A failed gate ends the stage, and the notebook and receipts are kept. A figure-cell failure gets
   one corrected rebuild under a new prediction.
+
+**Result: RESULT OK** (Local, M5, kit worktree at 93d98bbe, 3 November about 01:30Z). COMPLETED in 85 s, peak 1.33 GB.
+The prediction (under 3 minutes and 3 GB) held.
+- **Gates.** 7 output cells, 0 message cells, the source iconized, the kit cell True, a `LeanEnvironment`, the axiom
+  sets exact, and `KernelChecked` with 24 declarations.
+- **Not a gate, recorded.** The message handler logged 36,304 events, with no message cell.
+- **The notebook.** `essay.nb` is sha256 `89dc5432fa10198fd99dd7ab3a21a2598491748d3aae86c8fb3eaa2d2d32cf75`, 78,548
+  bytes, with no local paths.
+- **The figure, inspected by eye.** The bound K(t) − t + 1 falls to −69 by t = 120, while the leftmost difference stays
+  near 0, always above it, as the text now says.
+- **Archive.** `cited/local/l1355-healing-release.tar.gz`, sha256 `f6065eef…f28b`, 26,819 bytes, outside git.

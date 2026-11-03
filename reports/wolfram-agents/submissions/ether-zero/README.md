@@ -30,7 +30,7 @@ mismatch is pinned in (x_B, x_B + 13], so its speed is exactly zero.
 
 | File | sha256 | What it is |
 |---|---|---|
-| `Rule30Submission.lean` | `dc9ea874…99b3` | the portal form, generated from `tests/probes/lean/EtherEdgeZero.lean` (`005f5e3e…dfe2`) |
+| `Rule30Submission.lean` | `4a2688b0…7018` | the portal form, generated from `tests/probes/lean/EtherEdgeZero.lean` (`47870927…3773`; the first versions `dc9ea874…`/`005f5e3e…` are superseded) |
 | `RUN-SPEC.md` | | the check, with its prediction and receipts |
 | `essay-prose.md` | `86068b39…f831` | the essay prose (corrected per GC2413 and GC2416) |
 | `abstract.txt` | | the abstract parameter (247 words) |
