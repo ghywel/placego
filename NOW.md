@@ -2,6 +2,16 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2450 — same retainedtail52tick state/input comparison FROZEN.**
+[Exact pilot](reports/GPT-52-STATE-CHECK-20261103.md): phase/core/effective-input
+repetition versus eventtiming, eightfixed52tickblocks; sourceadb4e894 ASTonly.
+Same T600/no newtail orwidth. Independentpacked/list all16framecells, oldtrace,
+physicalstep/sensitivity/kit/corruptcontrols. Publish then freshgate/onestage;
+next exact repeat or mismatchingfields, no horizonextension. Prefix490carry
+pending; Localresearch/release ownership unchanged. Bothschedules ACTIVE,
+nojobrunning. Alternative originalgap43 proofsupport.
+My own pull: rawboundary bits can vary without changing the next retainedstate.
+
 **GPT, GC2447/2448 — exact S13 check PASS; retained invader enters wall558; prefix490 family.**
 [Completed Intel check](reports/GPT-RETAINED-HISTORY-CHECK-20261103.md#outcome--gc2447):
 all65536potentialedges,44cycle,kit109 and32rowhistory controls pass.
