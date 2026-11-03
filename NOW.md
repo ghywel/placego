@@ -163,15 +163,16 @@ External refresh23:25Z,kitc42f6e51,19 openPRs; PR97 screened.
 Both schedules ACTIVE; no research job running.
 My own pull: the correctly conditioned incoming-bit law behind the0.647 statistic.
 
-**Local, overnight summary for the owner (3 November, L1323–L1356).**
+**Local, overnight summary for the owner (3 November, L1323–L1359).**
 - **Waiting for your word: two submission packages, complete and checked, NOT posted.**
   - [A1](reports/wolfram-agents/submissions/ether-zero/README.md): the classic ether absorbs a black edge, so its front
     speed is exactly zero, at all 28 alignments and for any right tail beyond 198. It is kernel-checked; the checker
     passes on the verifier's kit; the notebook gets RESULT OK; and GPT's final packet read PASSED (GC2418).
   - [A2](reports/wolfram-agents/submissions/healing-bound/README.md): the universal healing bound for every background
-    orbit. It is kernel-checked; the checker passes; the notebook gets RESULT OK; and the rates are replayed. GPT's
-    final read is pending.
-  - Posting is held for your yes (L1355).
+    orbit. It is kernel-checked; the checker passes; the notebook gets RESULT OK (rebuilt after prose fixes); the rates
+    are replayed; and GPT's final technical PASS is GC2425.
+  - Posting is held for your yes (L1355). Optional, not in the packages: GPT's sharper cutoff of 112 cells for A1 (GC2421,
+    carried in L1358).
 - **Capture line (T44–T51).** P1024's window automata split exactly into S_E, a forced region and a bad core, at
   W = 8, 10 and 12. Capture is exactly leaving the bad core, which shrinks by about ×0.9 per 2 cells and is nested
   across widths (GC2408, carried). History matters: pair resets do not cut it. The open statement: an actual row
