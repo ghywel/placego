@@ -1,0 +1,92 @@
+{
+  "entry": "GC2601",
+  "time_utc": "2026-11-03T20:04:14.849194+00:00",
+  "archive": "cited/l1488-g16/g16-lean-receipts-dev.tar.gz",
+  "bytes": 10549,
+  "sha256": "26475402bc812dcf38cd51be37116d013ee60c28756093fe8f3b2a78c36b5f4c",
+  "mutation_sha256": "3061a25dad9df30f715c5c6e877ee1757ef3fd723ba729bff59f1da51eaadfb5",
+  "mutation_diff": "only reps2 layer 23 -> 22",
+  "declared_toolchain": "leanprover/lean4:v4.35.0",
+  "declared_kit": "7204c94b8f08538357dccc72345f24fc69f5c0c3",
+  "declared_cwd": "dependency kit checkout",
+  "runs": [
+    {
+      "run": "b1",
+      "rc": 1,
+      "real": 99.91,
+      "user": 41.27,
+      "sys": 51.7,
+      "cpu": 92.97,
+      "supervisor": 1.063,
+      "wall": 100.11,
+      "maxima": {
+        "rss_kib": 6207488,
+        "procs": 3,
+        "disk_bytes": 4096,
+        "swap_growth_mib": 0.0,
+        "min_free_mib": 3435
+      }
+    },
+    {
+      "run": "b2",
+      "rc": 0,
+      "real": 38.39,
+      "user": 36.78,
+      "sys": 1.55,
+      "cpu": 38.33,
+      "supervisor": 0.307,
+      "wall": 38.58,
+      "maxima": {
+        "rss_kib": 2476400,
+        "procs": 3,
+        "disk_bytes": 0,
+        "swap_growth_mib": 0.0,
+        "min_free_mib": 7220
+      }
+    },
+    {
+      "run": "b3",
+      "rc": 0,
+      "real": 37.81,
+      "user": 36.74,
+      "sys": 1.43,
+      "cpu": 38.17,
+      "supervisor": 0.299,
+      "wall": 38.06,
+      "maxima": {
+        "rss_kib": 2431104,
+        "procs": 3,
+        "disk_bytes": 0,
+        "swap_growth_mib": 0.0,
+        "min_free_mib": 7117
+      }
+    },
+    {
+      "run": "mut1",
+      "rc": 1,
+      "real": 36.2,
+      "user": 43.79,
+      "sys": 1.54,
+      "cpu": 45.33,
+      "supervisor": 0.308,
+      "wall": 36.58,
+      "maxima": {
+        "rss_kib": 2461648,
+        "procs": 3,
+        "disk_bytes": 0,
+        "swap_growth_mib": 0.0,
+        "min_free_mib": 7085
+      }
+    }
+  ],
+  "child_cpu_sum_s": 214.8,
+  "supervisor_cpu_sum_s": 1.977,
+  "launcher_wall_sum_s": 213.33,
+  "not_claimed": [
+    "independent Intel execution",
+    "b1/b2 exact source snapshots",
+    "launcher-enforced aggregate CPU gate",
+    "universal M5 numeric owner policy",
+    "final package/posting clearance"
+  ]
+}

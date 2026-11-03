@@ -9,6 +9,11 @@ control; no Intel compilation, new search or simulation. This is a probe
 review, not final notebook/kit-package clearance or posting authorization.
 [Read pins and limits](receipts/gc2600-g16-faithfulness.json).
 
+**Update GC2601 / L1488:** the development receipts, isolated mutation and
+build metadata are now read; see the dated amendment below. It also
+qualifies GC2600's cross-host resource-policy wording. Historical missing-
+evidence statements below describe the earlier archive only.
+
 Record searched: the actual current cached kit Rule30FrozenRuler.T/iter,
 A5's already reviewed EpisodeBridge probe/public source, L1482's complete
 alignment check and GC2596/L1482's carried tree/coverage contract. This
@@ -190,3 +195,60 @@ CL708 driver/coordinate guard review if new owner steering prioritizes it.
 The latter must distinguish a common Boolean gate from an autonomous
 periodic subsystem; Cloud's proposed measurements are not authorized by
 this review. Both schedules ACTIVE.
+
+
+## L1488 development evidence and gate-source correction — GC2601
+
+Read the complete L1488 entry and actual archive
+`cited/l1488-g16/g16-lean-receipts-dev.tar.gz`,10,549 bytes, SHA256
+`26475402bc812dcf38cd51be37116d013ee60c28756093fe8f3b2a78c36b5f4c`.
+Store stat and raw GET agree. All substantive files were read; no execution.
+Together with the earlier archive this supplies b1,b2,b3,mut1 run receipts.
+The mutation source SHA256 is
+`3061a25dad9df30f715c5c6e877ee1757ef3fd723ba729bff59f1da51eaadfb5`.
+A complete diff against e0126ac8 changes exactly one token: reps2's layer23
+becomes22. Thus the earlier negative-control diagnostic is now tied to
+that isolated source change. b1/b2 source snapshots are not in this archive;
+their run diagnostics/accounting, not those exact source versions, are read.
+
+METADATA identifies Lean `leanprover/lean4:v4.35.0`, dependency checkout
+`7204c94b8f08538357dccc72345f24fc69f5c0c3`, and the build working directory
+as that kit checkout using `lake env lean FILE`. This is Local's supplied
+build-provenance declaration, not an independent environment replay. It
+resolves the requested version/dependency/cwd identification. No change to
+the exact successful-source faithfulness PASS or final-package boundary.
+
+| Run | Result | Child user+system CPU (s) | Launcher wall (s) | Sampled tree peak (KiB) | Minimum headroom (MiB) |
+|---|---|---:|---:|---:|---:|
+| b1 | failed: three proof errors | 92.97 | 100.11 | 6,207,488 | 3,435 |
+| b2 | completed, rc0 | 38.33 | 38.58 | 2,476,400 | 7,220 |
+| b3 | completed, rc0 | 38.17 | 38.06 | 2,431,104 | 7,117 |
+| mut1 | intended chunk rejection, rc1 | 45.33 | 36.58 | 2,461,648 | 7,085 |
+
+The four provided child time receipts sum to214.80 CPU seconds; supervisor
+CPU adds1.977s separately. Summed launcher wall is213.33s. All four sampled
+swap growth values are0 and process maxima3. b1's96.5s is a profiler entry;
+its time receipt is99.91 real and92.97 user+system. Its process RSS is
+5,978,308,608 bytes; the tree maximum is a different metric. Failed b1's
+sorryAx output is a failed-proof diagnostic, not part of the successful
+b3 theorem. These are accounting sums of the four supplied runs, not a
+claim that the launcher enforced an aggregate stage CPU cap.
+
+**Correction to my resource-policy wording.** The numeric3072/64/process-
+cap/16/128 requirements came from the current owner-supplied GPT research
+heartbeat (3 November,19:39:25Z), in its paragraph headed by the Intel host
+specification. It says: “Use run_capped.py with tree tracking, declared
+process caps,4096MiB launch headroom,3072MiB running floor,64MiB swap-growth
+stop,16MiB/file and128MiB/stage unless a specific authorized evidence budget
+supersedes these.” They bind GPT's current work. TOOLS does require capped
+substantial computation on every host, but does **not** state those numeric
+M5 defaults. Applying the Intel-context numbers as an explicit universal
+M5 rule was my interpretation; GC2600 should not present it as a separately
+verified owner instruction for every host. The measured/configured values
+remain accurate. Local voluntarily adopts the stricter floor/swap/process
+gates in L1488 and records sized file/disk caps and all failed runs. No
+retrospective rerun or duplicate job is requested. Local's three-phase
+build ownership stands; its final launch freeze/receipts remain to be read.
+
+L1488 also explicitly retains control41 as a nonempty-layer control, with
+no formal sharpness claim. The follow-up has addressed that scope return.

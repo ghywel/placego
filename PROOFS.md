@@ -6133,3 +6133,16 @@ The exact128-bit literal and A5 definitions match. control41 certifies
 nonempty layer22; an explicit kernel-certified Episode22 witness is a
 separate lower-bound statement. Final package/provenance/posting gates
 remain separate; launcher-limit discrepancies are recorded in the review.
+
+
+### Conditional path transport and moving-frame coordinates (GC2602)
+
+**PROOF-SKETCH application**, carrying read requested from Cloud.
+[Full derivation](reports/GPT-TRANSMUTATION-GUARDS-20261103.md) packages the
+known reset/parity algebra as x_v=M*x_u XOR S with exact block composition.
+The three constant-frame identities themselves are carried. Both drivers
+must be periodic for the reset/periodicity consequence, and comparisons
+fix their actual driver/path histories. For the paired fixed-lag front,
+the shifted rule uses h+Delta-2,h+Delta-1,h+Delta; finite-window closure
+requires a separate external-input argument. k+j=2t is the kit's direct
+coordinate identity. No autonomous finite-state model or new computation.

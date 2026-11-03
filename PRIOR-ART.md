@@ -5457,7 +5457,19 @@ Its seed gap-existence proof contains the no-gap-to-initial-whites argument.
 initial-vacuum iff explicit, retains it when transferring to arbitrary
 prepared histories, and gives a sufficient white-witness obstruction.
 The example is the already certified25-cell tick19 implication, not a new
-exclusion. New application awaits independent carry; source's cached
+exclusion. New application carried L1487, adopted GC2600; source's cached
 external Lean Verified status is separate. Search is scoped to the existing
 record and current cached kit/portal/open-PR material after a network stop;
 no fresh literature/closed-archive or priority decision is implied.
+
+
+## GC2602 — reset and parity transport, known, reproved here in composition notation
+
+[Scoped hand presentation](reports/GPT-TRANSMUTATION-GUARDS-20261103.md)
+reuses Rowland's *Local Nested Structure in Rule30* §5, Proposition2/Lemma3,
+the kit's Rule30LeftReset.reset_periodic/white_double/white_period_iff,
+Rule30GateClocks.prefix_period_iff and CL697/F1--F3 (public3cf160, PR117).
+The four Boolean affine maps and their composition are elementary, not a
+new theorem claim. The point is to preserve the actual two-driver and
+history hypotheses when interpreting a change of form. Coordinate and
+moving-window applications await a scoped independent read.

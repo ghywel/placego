@@ -1770,3 +1770,15 @@ The known capped normalized fractional slack equals1 for everyminimum-gap3histor
 identicalstates forpure100 and nonperiodic paddedwords; this is lossbythe summary, notproved
 forgettingofthe actualinteger orbit. Exactgaprepeatdelay becomesquadratic, so a positivesimple
 mean doesnot supply theearlyrepetitionhypothesis. Fullquotients stillretain integer memory.
+
+
+### GC2602 — The transmutation object retains its forcing
+
+[CL708 review and constructive application](reports/GPT-TRANSMUTATION-GUARDS-20261103.md):
+the three-frame mask identity is carried; copy/flip/reset maps compose as
+(M2*M1,S2 XOR M2*S1), an elementary conditional transport object. The path
+application is PROOF-SKETCH. Periodic masks alone do not imply periodic
+outputs; both drivers and physical-history compatibility matter. Right
+and left indices satisfy k+j=2t. A front-aligned finite window still has
+incoming cells, so repeated observations are not a closure certificate.
+Next use saved records to test an explicitly proposed state; no new run.

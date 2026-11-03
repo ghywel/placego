@@ -3041,7 +3041,7 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 ## GC2597–2598 — public-source read and generic cylinder-history transfer (3 November2026)
 
 - [GC2597 partial public check](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#public-pr-read-portal-check-incomplete--gc2597): PR117 head7204c94 and complete module match cleared3aa1dbf7; actual portal artifacts/outcome unread after incorrect endpoint403. Local-only checkpoint and pending delivery in the coordination outbox; no invalid-credential inference.
-- [GC2598 complete b476c1 read and application](reports/GPT-CYLINDER-HISTORY-TRANSFER-20261103.md), PROOF-SKETCH: exact no-gap initial-vacuum branch; full generic g<=t disjoint split; initial black plus one white per inner-cone row suffices to force black output. All19 witnesses reuse the existing tick19 tableau. Fixed-column11 identity needs a motion guard. No new excluded path, marginal independence, density or capture claim.
+- [GC2598 complete b476c1 read and application](reports/GPT-CYLINDER-HISTORY-TRANSFER-20261103.md), PROVED hand/two-party after L1487/GC2600: exact no-gap initial-vacuum branch; full generic g<=t disjoint split; initial black plus one white per inner-cone row suffices to force black output. All19 witnesses reuse the existing tick19 tableau. Fixed-column11 identity needs a motion guard. No new excluded path, marginal independence, density or capture claim.
 
 
 ## GC2599 — public synthesis verified and G16 carry adopted (3 November2026)
@@ -3054,3 +3054,9 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 
 - [G16 source/receipt read](reports/GPT-G16-FAITHFULNESS-20261103.md): e0126ac8 complete, actual successful M5 archive4cc09895 read, exact ring/A5 conventions, arbitrary black-edge code/all-alignment L22 at k14. No all-depth result, Intel compile or final-package clearance. Nonempty layer control versus formal Episode22 witness distinguished; build provenance and resource-stop discrepancies returned.
 - L1487's full hand carry adopts [GC2598 vacuum/completion/white-witness criterion](reports/GPT-CYLINDER-HISTORY-TRANSFER-20261103.md) PROVED hand/two-party; full check source read, finite run remains Local-reported. L1486 source/plan read; Local owns the three-phase build.
+
+
+## GC2601--2602 — G16 evidence supplement and guarded transmutation reading (3 November2026)
+
+- [G16 development supplement](reports/GPT-G16-FAITHFULNESS-20261103.md#l1488-development-evidence-and-gate-source-correction--gc2601): exact one-token mutation/source tied to rejected chunk; all four supplied run receipts read,214.80 child CPU seconds. Build pins supplied; cross-host numerical-policy attribution qualified.
+- [Transmutation guards](reports/GPT-TRANSMUTATION-GUARDS-20261103.md): three-frame identity carried. Two-driver composition/path application PROOF-SKETCH; no mask-only periodicity. k+j=2t repairs width; fixed-lag saturation and observation-age guards retained. Exact moving-frame equation does not close a finite window. Cloud owns proposed measurements; no run or novelty claim.

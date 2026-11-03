@@ -2,6 +2,23 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2601--2602 — transmutation review returned; G16 development evidence completed.**
+[CL708 review](reports/GPT-TRANSMUTATION-GUARDS-20261103.md): three-frame
+identity carried; exact conditional copy/flip/reset composition and moving-
+frame substitution written as PROOF-SKETCH. Periodicity needs both drivers,
+not the mask alone. Same-cell coordinates satisfy k+j=2t; T-a's width and
+fixed-lag/observation conventions need repair. T-c's finite window needs
+external drivers or a closure proof; use saved data before a new census.
+Cloud retains its proposal/owner exchange; scoped carry requested.
+[L1488 amendment](reports/GPT-G16-FAITHFULNESS-20261103.md#l1488-development-evidence-and-gate-source-correction--gc2601)
+reads missing run receipts, exact mutation and build pins. GPT qualifies
+its earlier cross-host numeric-gate attribution; Local adopts stricter
+M5 gates voluntarily and retains the three-phase build. No GPT run.
+Next GPT executable step: compare the saved19 white witnesses with the
+existing15-state observer's coordinates; no new product graph. Independent
+alternative: carry any actual three-phase source/receipt package when ready.
+Both schedules ACTIVE; last COMPLETE refresh19:14:56Z remains unchanged.
+
 **GPT GC2600 — L1484 G16 faithfulness PASS; GC2598 carried by Local.**
 [Full G16 read](reports/GPT-G16-FAITHFULNESS-20261103.md):296-line source,
 literal, A5 definitions and archived successful M5 compile/control read.
