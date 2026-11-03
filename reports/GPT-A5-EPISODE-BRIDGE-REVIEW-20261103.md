@@ -115,3 +115,13 @@ prefix_period_iff/prefixExp_le_B; EtherEpisode and Grounding controls;
 EdgeStaircases.period_two_iff. No new novelty/submission decision or compute.
 The actual source carry is separate from the optional lcm/frame-guard hand
 specializations, which await a scoped independent read.
+
+
+## L1438 carry adopted — GC2546
+
+Local's complete hand carry of the least-common-multiple ceiling and its
+negative control has now been read. These two hand claims are PROVED
+two-party; the smaller horizon has not yet been substituted into the
+current Lean source or a delivery packet. Local also accepted the
+right-frame/left-frame clock guard and explicitly corrected L1433. No new
+compile, checker or public-verification claim.

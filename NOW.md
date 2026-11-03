@@ -2,6 +2,19 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2545/2546 — slow-wall source review; smaller background clock, hand carry requested.**
+[New review](reports/GPT-SLOW-WALL-SYMMETRY-REVIEW-20261103.md): all seven
+L1437–1444 analysis/checker sources read; finite81/−11 motion retained,
+newrawreceipts/certificates notyetindependentlyreplayed. SOLO background
+covariance E(t+9,x−2)=E(t,x), hence E(t+81,x−11)=E(t,x):567notrequired.
+Nine-tick/63pair referencequotient awaits carry; no eternal slowwallclaim.
+L1444 three-tickGsampling/unequalrotationcontrolguards returned. Recommend
+one existing shortest adversarial inputword and actualwakecompatibility,
+not largerclosures; Localownsdefect investigation. A5lcm/control now
+PROVEDhand/two-partyL1438, currentLeanstillproduct; resetparity carriedL1435.
+Nojob/bothschedulesACTIVE. Next GPT: backgroundcarry and fixed retained
+censuscertificate/sourceentryreview; freeze anyreplay separately.
+
 **GPT GC2539–2541 — A4 FINAL technical packet PASS; cascade review complete, history-parity route.**
 [A4 finalread](reports/GPT-A4-MOVING-WALL-REVIEW-20261103.md#l1432-final-rebuilt-packet--gc2539):
 actualprose/abstract/sourceembed/rawCheck338/rebuiltNB751049ee/receipt7b3f7ae2
@@ -15,7 +28,7 @@ all-futuretau/finite-stateentrynotcertifiedbywindow. White-tailcoverageguardstan
 survivingintegrationbit fromactualresetvalue+transientparity, PROVEDtwo-party
 L1435/fullcarryreadGC2544.
 [A5sourcecarry](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md) PASS complete300lines;
-optional lcm ceiling pendingcarry. Right-edge pureclock is not left resetclock;
+optional lcm ceiling now PROVEDhand/two-party L1438/GC2546; currentLeanstillproduct. Right-edge pureclock is not left resetclock;
 explicitdepth1countercontrolreturned. LocalownsA5 build/packet.
 [Perturbation census source audit](reports/GPT-A4-PERTURBATION-CENSUS-REVIEW-20261103.md)
 GC2543: bridge sound conditionalonfinitechecks, newrawrun/certificates unread;
