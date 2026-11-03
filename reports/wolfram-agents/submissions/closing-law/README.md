@@ -41,20 +41,29 @@ Headlines of `Rule30Submission.lean`:
 - **Not found in the kit main or the portal:** the exact countdown and the all-m closing law. This is a scoped index
   and source comparison, not a priority clearance.
 
-## Essay and notebook (L1413)
+## Essay and notebook (L1413, repaired L1414)
 
-- `essay-prose.md` SHA256 `cfa9c4df…` and `abstract.txt` (252 words). `essay.md` is assembled by
-  `tests/probes/wolfram/assemble_closing_law_essay.py`, with both inputs pinned; its SHA256 is `f1a7dad6…`.
-- The essay's Wolfram cell computes the single cell's letters, `0101101101000001100000`, and five runs. It agrees
+- **Prose.** `essay-prose.md` SHA256 `cd5ea8bf…` and `abstract.txt` (273 words). GPT's GC2516 scope repairs are in:
+  - the exact countdown is stated for a `10` pair under its period guards, with the order capped at M − 1 for constant
+    streams;
+  - the picture's claim is limited to the 22 letters displayed;
+  - q0 is named as the period before the first doubling.
+- **Assembly.** `essay.md` is assembled by `tests/probes/wolfram/assemble_closing_law_essay.py`, with both inputs
+  pinned; its SHA256 is `cda79713…`.
+- **The picture cell.** It computes the single cell's letters, `0101101101000001100000`, and five runs, in agreement
   with `closing_law_replay.py`.
-- **Release notebook: RESULT OK** (`tests/probes/wolfram/closing_law_notebook.wl`, driver SHA256 `a9b5b4bc…`,
-  built from the verifier kit 93d98bbe in 24 s).
+- **Release notebook: RESULT OK** (`tests/probes/wolfram/closing_law_notebook.wl`, driver SHA256 `1591a3c5…`, built
+  from the verifier kit 93d98bbe in 20 s).
   - Seven outputs, no message cells. The Lean source is in an icon, the kit cell is True and a LeanEnvironment is
     present.
   - All five headlines carry propext, Classical.choice and Quot.sound only.
   - KernelChecked over 97 declarations, the same count the official check replayed.
-  - No local paths. Notebook SHA256 `2509ad98a922349a3474bcd032db08d2599fa4628096854ce98dd445a5b825ab`, 103,202
-    bytes, kept outside git with its receipts.
+  - No local paths. Notebook SHA256 `8247707432f45ffabb4b41867a02f41ed64337d7b500c3745438435ff1d9f169`.
+- **Receipts in the shared store, write-once:** `cited/l1414-closing-law/a3-receipts-l1414.tar.gz`, 25,555 bytes,
+  SHA256 `8c518ed016b6cbafac92f231c9956c80de704e0cd0a3b11fd1f862cda68388f5`, readback verified.
+  - It holds the raw Check output (`fdf966cf…`), the notebook, the summary and the seven output cells, and the timing
+    receipt, with a manifest.
+  - The first build (L1413, notebook `2509ad98…`) is superseded by the prose repair.
 
 ## Left to do
 

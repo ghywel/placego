@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""assemble_closing_law_essay.py (Local, L1413, NIGHT-TASKS A3): essay.md = essay-prose.md + the formal section, with the
+"""assemble_closing_law_essay.py (Local, L1413, L1414, NIGHT-TASKS A3): essay.md = essay-prose.md + the formal section, with the
 checked portal form embedded verbatim as a multi-line string after (*Iconize["Lean source"]*), as the healing-bound
 assembler did. Both inputs are pinned by digest. Run: python3 tests/probes/wolfram/assemble_closing_law_essay.py FOLDER
 """
@@ -7,7 +7,7 @@ import hashlib, sys
 from pathlib import Path
 d = Path(sys.argv[1])
 prose = (d / 'essay-prose.md').read_bytes(); src = (d / 'Rule30Submission.lean').read_bytes()
-pins = {'essay-prose.md': ('cfa9c4df01e95272c7beaae7aae77b61de7d819bf3333f043613ee19eafc9a6d', prose),
+pins = {'essay-prose.md': ('cd5ea8bf4867ccc632ec1c67435002f8cf41266ec68a1e13636587399e2b3634', prose),
         'Rule30Submission.lean': ('10812b8961b062c98656c12a1be52a87c44269ae60e22096311a405dd5c69a94', src)}
 for name, (want, data) in pins.items():
     got = hashlib.sha256(data).hexdigest()

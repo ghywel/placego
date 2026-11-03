@@ -3,7 +3,7 @@ Template: ComputationalEssay
 Name: The closing law of prefix doublings on Rule 30's right edge
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-11-03
-Description: A partial result proved in core Lean: on the kit's gate clocks, including Rule 30's right edge, the difference order drops by exactly one per non-doubling step, so an alternating run of doublings after a doubling at period q0 has length at most q0 - 1 and closes with a doubling exactly at that length. Corollaries: 1101011 never occurs among the doubling letters, and five consecutive letters hold at most three doublings once the period is at least 4.
+Description: A partial result proved in core Lean: on the kit's gate clocks, including Rule 30's right edge, the difference order drops by exactly one across each pair of letters 10 (a doubling, then a keep), so after a doubling at period q0 (the period before that doubling) an alternating run has at most q0 - 1 pairs and closes with a doubling exactly at that length. Corollaries: 1101011 never occurs among the doubling letters, and five consecutive letters hold at most three doublings once the period is at least 4.
 Abstract: See abstract.txt.
 Keywords: [rule 30, Rule 30 Prize, right edge, prefix periods, difference order, gate clocks, doubling letters, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]
@@ -27,15 +27,21 @@ alternating runs, for every gate with a quadratic term.
 For a stream $f$ of period $M = 2^v$, the kit's `order f M` measures how many differences of $f$ vanish below the full
 period: in polynomial terms, the multiplicity of the factor $1 + z$ in $\sum_{t < M} f(t) z^t$ over $\mathbb{F}_2$.
 
-The kit proves that one non-doubling step lowers the order by **at most** one (`order_countdown_gate`). Here it is shown
-that for a gate whose derivative in its newer input, $g(1, s) \oplus g(0, s)$, depends on $s$ (OR is such a gate), it
-lowers it by **exactly** one. Past the $M$-th difference, the new stream's differences are exactly those of the older
+The step that matters is a pair of letters $10$. Take three consecutive streams: $s$ with period $M = 2^v \ge 2$; the
+next one, $b$, which has just doubled, so that it is antiperiodic at $M$; and $h$, which integrates the gate,
+$h(t + 1) = h(t) \oplus g(b(t), s(t))$, and keeps the period $2M$. In this setting the kit proves that the order drops
+by **at most** one: $\mathrm{order}\, s\, M \le \mathrm{order}\, h\, (2M) + 1$ (`order_countdown_gate`). Here it is
+shown that for a gate whose derivative in its newer input, $g(1, s) \oplus g(0, s)$, depends on $s$ (OR is such a gate),
+it drops by **exactly** one. Past the $M$-th difference, the new stream's differences are exactly those of the older
 input:
 
 $$\Delta^{k + 2 + M} h = \Delta^{k + 1} s,$$
 
-so the first vanishing difference of $h$ lies exactly $M + 1$ beyond that of $s$ (`order_countdown_exact`). The only
-guard is that $s$ is not of the largest possible order, which excludes constant streams.
+so the first vanishing difference of $h$ lies exactly $M + 1$ beyond that of $s$ (`order_countdown_exact`). The guards
+are exactly those of this setting: the periods and the antiperiod above, $M \ge 2$, and
+$\mathrm{order}\, s\, M + 1 < M$. The last one is needed because the order is capped at $M - 1$: a constant stream,
+the zero stream included, has every difference vanishing and so the capped order $M - 1$, and the equality fails there.
+This is a statement about a $10$ pair, not about an arbitrary step without a doubling.
 
 ## The closing law
 
@@ -87,8 +93,9 @@ Column[{Row[{"letters: ", StringJoin[ToString /@ letters]}],
     {"start n", "pairs m", "q0", "next letter", "law: m+1 = q0"}], Frame -> All]}]
 ```
 
-Each row is a run $1\,(10)^m\,1$; the next letter is $1$ exactly in the rows where $m + 1 = q_0$. The single cell's
-letters close with a doubling only once, the $11011$ at $q_0 = 2$.
+Each row is a run $1\,(10)^m\,1$; the next letter is $1$ exactly in the rows where $m + 1 = q_0$. Within the 22 letters
+displayed, a run closes with a doubling only once, the $11011$ at $q_0 = 2$; nothing is claimed here about later
+letters.
 
 ## Related work and what is new
 
