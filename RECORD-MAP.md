@@ -2739,6 +2739,9 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2436: [L1363 full heuristic review and one exactgap query](reports/GPT-ROOTED-GAPS-REVIEW-20261103.md),
  same-code replay wording/witness retention corrected; proposed(5,1),cut43,
  T148/Q−11 has94free inputs,36058cells. No new CNF/solve yet.
+- GC2437: [One exactgap encoder freeze](reports/GPT-ONE-GAP-ENCODER-20261103.md),
+ alignment(5,1),cut43/T148/Q−11,94free bits; named flip43 lower premise42,
+ protected61 body units separate; AST only, no solver or additional gap.
 - L1363 (Local, 3 November 2026): [T54b, the four gaps](reports/rule30-genealogy.md#58a-are-the-four-gaps-the-observers-or-the-random-searchs-t54b);
   local search stops at the random cliffs, best front Q + 3. Search aliases: gap, climb, rooted_front_climb.
 - L1364 (Local, 3 November 2026): [T55, how fast can any damage invade the classic ether](reports/rule30-genealogy.md#59-how-fast-can-any-damage-invade-the-classic-ether-t55-l1364):

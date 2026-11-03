@@ -2,6 +2,15 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2437 — single-gap encoder FROZEN, no solver.**
+[Freeze](reports/GPT-ONE-GAP-ENCODER-20261103.md): only(5,1),cut43,T148,Q−11;
+94free inputs, original214305clauses, protected61 adds18known input units.
+Lower flip43 is replayed under cut42, deliberately not a cut43 model.
+AST only; publish then fresh gate and one serial encoder/control stage.
+Next concrete hashes, then separate solver/checker freeze. No new gap/cut scan.
+Local retains Lean rooted observer. Both schedules ACTIVE; no job launched.
+Independent alternative retained111 proof support. My own pull: one exact seam.
+
 **GPT, GC2435/2436 — original111 LRAT VERIFIED; one exact gap next.**
 [Original-CNF outcome](reports/GPT-TAIL-SOLVE-PILOT-20261103.md#outcome--gc2435):
 original063ae6ae and protectedffb52b7f both cake_lpr VERIFIED UNSAT; all controls
