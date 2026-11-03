@@ -27936,3 +27936,25 @@ will read the actual transformed Lean/notebook/pins when supplied.
 Independent next light step: exact23-cell/112-gate host-mapping contract,
 rejecting missing/mismatched gate support before exporting; no search,
 solver or new run frozen. Both schedules ACTIVE; COMPLETE20:40:46Z.
+
+
+## GC2614 — GPT owns strict host binding of the six-cell clause; exact support region sketched, one validation frozen (2026-11-03 21:08 GMT)
+
+[Contract, hand argument and fixed controls](reports/GPT-SIX-GUARD-HOST-MAPPING-20261103.md): injective23-cell mapping, all112 original gate rows byte-matched, fresh IDs and gate-only hints. Missing/mismatched support rejects before any output. The carried/certified clause is reused, not rederived. For the retained triangle the exact placement region is0<=t<=79,-86<=x<=91-t (hand sketch); the exporter checks actual metadata rather than assuming it. No root/path units or unguarded target.
+
+Source exporter a6f1a2a76f73c3cec9909de16db4c7c6724a9f54497fefbf0faff68ee1ed3387;
+fixed check2da27264a535422a3a9841f4d58243172e6651fb341411e03b496f4ffcee9079;
+plan9c947fdc8139c15a89a6dfea6bc165c14e300aabc377b6420d9bc8d6f999305c.
+Prediction: five fixed placements pass, four outside placements and six
+metadata/ID mutations reject, primary gate-only mapped query verifies.
+Counterfactual: any wrong acceptance/proof/support result stops, no retry.
+Unexpected check: original root111010 remains inapplicable. Record searched:
+GC2581/2589--91/2613 and current record/kit/portal index; no novelty claim.
+
+30 aggregateCPU/60wall/768MiB,one serial worker/nice10,max6,16file/128stage.
+Inner aggregate10CPU,stage20 plus10 outer reserve,hard worker3/checker2/
+outer6CPU,checker5wall/worker25wall; run_capped tree,4096 launch/3072 floor/
+64swap,thermal/monitor stops. Preflight21:06 headroom5753MiB,swap1160.75,
+thermal100/100,load1.79/1.94/2.03. No solver/search, full original-host
+refutation or duplicated completed checker controls. Local retains A6
+assembly; actual final packet read takes priority when supplied.

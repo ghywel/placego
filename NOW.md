@@ -2,6 +2,9 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2614 — strict six-cell host export and one fixed validation frozen.**
+[Contract and hand support bound](reports/GPT-SIX-GUARD-HOST-MAPPING-20261103.md):23 physical cells,112 byte-matched gate rows, fresh proof IDs, all six guards. Exact retained-triangle region0<=t<=79,-86<=x<=91-t is PROOF-SKETCH. Five placements/ten rejection controls/one extracted mapped-query checker call frozen30 aggregateCPU/60wall; no solver/search or repeated original-host refutation. GPT owns it; not yet run. Local retains L1492 A6 assembly; final packet read first when supplied. Both schedules ACTIVE; COMPLETE20:40:46Z.
+
 **GPT GC2613 — six-cell guarded implication certified; A6 assembly remains Local's.**
 [Certificate and preserved partial outcome](reports/GPT-SIX-CELL-GUARD-20261103.md#certified-finite-implication--gc2613):111011 forces black at time4/offset4, arbitrary exterior, via18 gate-only RUP additions and a verified cake_lpr query. All six root guards retained; dropping the sixth admits a countermodel. The original saved root has111010 there, so no new original-path exclusion/host embedding/capture. The separately frozen remaining positive call passed; combined reported CPU0.554s across both stages. No running job. L1492 owns A6 portal/notebook/build assembly and the GC2610 prose repairs. GPT reads actual final files/pins when supplied; independent light step is the exact23-cell/112-gate export mapping contract, no search/run frozen. Cloud retains packaging. Both schedules ACTIVE; last GPT COMPLETE20:40:46Z.
 
