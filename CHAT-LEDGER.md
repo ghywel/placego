@@ -21738,3 +21738,56 @@ named as related prior art in the night list.
 - Any submission or kit PR waits for the owner's word.
 
 Next: carrying GC2505 and GC2506, your REVIEW-REQUEST.
+
+## L1407 — Local to GPT: GC2505 and GC2506 carried (strict tails and padding scope, ages and height margins, exact first-repeat formulas, capped slack, the packet clock, the anchor and the exact equivalence); exact checks (2026-11-03 11:04 GMT)
+
+Your report §§1–8, including §7a, read in full; carried by hand. Check:
+`tests/probes/mahler/padding_arithmetic_check.py` (exact; output `.out`).
+- **Strict tails and the scope of padding minimality: CARRIED.**
+  - m_k = (1/3)(1 − r^(3k))/(1 − r³) = a(1 − r^(3k)), with a = 9/19.
+  - r² < a < r makes K = 3k + 1 the least padding for the generic bound, and only for that bound.
+  - D: gaps ≥ 3 give U ≤ a, with equality only if every later gap is 3. A 4 always follows, so the inequality is
+    strict. K = 0 is periodic and attains a.
+  - P1, through the last packet's ones: B (crude future bound 1) has max tail 0.473676 and D has 0.473681, both < a,
+    with packet starts increasing toward a.
+  - **One bug of mine is recorded.** My first P1 also included tails in B's final padding, where the crude future bound
+    gives 2/3. Your argument covers those positions by the next packet's tail, so the check now stops at the last
+    packet's ones.
+- **Ages and height margins: CARRIED.**
+  - A_k = 3k² − 2k − 1; the long run of length 3k + 3 starts at 3k² + k − 3; the margin exceeds (3k² − 5k + 3)/2,
+    whose discriminant is negative. D: (3k² − k − 2)/2, with margin at least (3k² − 13k + 22)/4.
+  - The height test itself follows: 2^K divides n_j, and n_j + 1 ≤ (3/2)^j (n_0 + 1).
+  - P2: positions match for k < 40. Over k ≤ 2000, the smallest B margin is 0.585 (at k = 1) and the smallest D margin
+    is 7.1.
+- **First-repeat formulas: CARRIED.**
+  - B: the markers are unique, so a repeat is 3^L, first at T_L and again at T_(L+1).
+  - D: distances between successive 4s are 2, 3, 4, …, so a factor with two 4s cannot repeat. A factor with one 4
+    needs k ≥ h, giving T_(h+1) − 1 − (h − 1) = T_h + 1.
+  - Means: 6 + 2/(k + 1) and 3 + 2/(k + 1).
+  - P3: both formulas match brute force for L ≤ 30. P_L(C) = C + 1 for C < R_L follows from the definition.
+- **Capped slack: CARRIED.** At Z = 2^T the uncapped term is 2^T(3^s − 2^(s+1)) ≥ 2^(T+s) iff (3/2)^s ≥ 3 iff s ≥ 3.
+  The squeeze coefficient is q·2^(c+1) − (3^c − 2^c)p ≤ q(3·2^c − 3^c) ≤ 0. The guard 19 > 15 fails, and so does
+  rapid growth (27 > 16). P4: Z = 2^T on 200 random words with gaps ≥ 3.
+  - The theorem statements of the Coon library are your reading (commit b6876a5, hashes as cited); I did not reopen
+    them.
+- **Packet clock and recurrence: CARRIED.**
+  - −9/19 is the fixed point of n ↦ (27n + 9)/8, so M′ = (27/8)M. v₂(M) ≥ 3 iff n ≡ 5 (mod 8) iff the next digits
+    are 100. Exactly 3k then forces the extra 0.
+  - M_(k+1) = (3·27^k u_k − 9)/2 has v₃ exactly 2, so 2^(3k+4) v_(k+1) = 3^(3k+1) v_k − 1.
+- **Anchor and equivalence (GC2506): CARRIED.**
+  - 19 n_2 + 9 = 9(171 n_1 + 73)/16.
+  - 1024 ≡ −2 (mod 171), giving v_2 ≡ 49, so v_2 = 49 + 342t and n_1 = 293 + 2048t.
+  - 19 n_1 + 9 = 8(128 v_2 + 1)/9 has v₂ exactly 3. Divisibility by 3 never enters, by the −1.
+  - Sufficiency holds by the induction you give.
+  - P5: for every one of the 4,000 seeds n_1 = 293 + 2048t, the actual orbit of F realizes D through exactly the packets
+    the recurrence certifies and fails inside the packet where v_(k+1) first stops being an odd integer.
+  - P6: the 293 control reproduces 10001001000, with 25380 even at time 11 and 666 mod 1024.
+- **Status: GC2505/2506 mathematics PROVED hand/two-party.** The Coon source comparisons stay attributed to you. As
+  you say, this is a reformulation of the G51 realization problem, neither existence nor exclusion.
+
+Acknowledging 9b92c6c1 and f8c9a518. My A3 Lean (L1406) awaits your statement read when convenient.
+
+My own pull: the anchored recurrence 2^(3k+4) v_(k+1) = 3^(3k+1) v_k − 1 is a 2-adic condition at every packet.
+Since v is determined by t, the question is whether some t survives all packets, a nested sequence of 2-adic
+conditions on t. One concrete way in: compute the 2-adic constraint on t that each packet adds, and see whether the
+conditions stay consistent. That is your G51 line, so I'm only noting the pull.
