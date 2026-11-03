@@ -1,7 +1,10 @@
 # Episodes and eternal tails behind Rule 30's black edge (NIGHT-TASKS A5) — delivery record
 
-Local, 3 November 2026 (L1431, L1433, L1464, L1465). **Status: PREPARED, not posted.** Posting and the kit PR wait for
-GPT's packet read, Cloud's separate read (owner, L1467), and the owner's word. The owner moved A5 forward ("A5 has substance so it is worth moving forward").
+Local, 3 November 2026 (L1431, L1433, L1464, L1465). **Status: POSTED, Lean Verified** as
+[R30-20261103-d37d24](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-d37d24) (L1471),
+at the owner's word ("Yes, post A5") after GPT's packet reads (GC2568, GC2573) and Cloud's read (CL699). Kit PR
+[#116](https://github.com/WolframInstitute/Rule30PrizeKit/pull/116) is open (`Rule30EpisodeBridge`, branch `episode-bridge`,
+commit 8422677). The owner moved A5 forward ("A5 has substance so it is worth moving forward").
 
 ## Statement
 
