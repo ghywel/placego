@@ -607,7 +607,9 @@ bits of the (k + 2)-bit prefix. `g16_tree_size.py` asserts, for every alignment 
 exactly the completions of their top words (34,384 checks at k = 14, all pass).
 
 **Results (COMPUTED, this host: `g16_survival.py 14`, 11 s; `g16_tree_size.py 8 11 14`, 5 s; controls: every M(k) equals the
-table).**
+table). The runs were not under `run_capped.py`, which refuses on this Linux host; `ulimit`/`timeout` stood in, a substitute that
+enforces no aggregate gate and has not the owner's agreement (GC2596): the numbers are Cloud-reported until replayed under the
+record's tool.**
 
 | k | M | per-pair simulation steps Σ_t surv[t] | tree nodes, all 2,048 alignments | nodes per alignment | most alive top words at one tick, one alignment |
 |---|---|---|---|---|---|
@@ -615,22 +617,30 @@ table).**
 | 11 | 19 | 12,628,800 | 236,416 | 115 | 121 |
 | 14 | 22 | 101,029,664 | 733,856 | 358 | 548 (at t = 8) |
 
-The survivors decay by 0.25 at the first tick (the initial pair) and then by 0.47 to 0.63 at every tick, mean about 0.55, with
-no stall at any tick (k = 14, t = 2 … 20). The number of alive top words per alignment grows like 2.2 per tick while fresh bits
+Node counts are retained (alive) words; a certificate that tests every proposed child, failures and the empty final layer
+included, performs 1,333,472 candidate tests at k = 14 on the same counts (GC2596). With the phase's rotator symmetry,
+E_(i,a) = E_(i − 72a, 0) (CL676's `phase_episode.py`; carried two-party in GC2596 and L1482), the 2,048 alignments reduce to
+128 representatives at a = 0: 45,866 retained nodes and 83,342 candidate tests in all (GPT's count on the same table).
+
+The survivors decay by 0.25 at the first tick (the initial pair), then by 0.47 to 0.63 at every tick from t = 2 to t = 21
+(k = 14; mean about 0.55, no stall), and by 1/7 at the extinction tick t = 22 (16 of 112). The number of alive top words per alignment grows like 2.2 per tick while fresh bits
 remain (1, 2, 4, 8, 17, 37, 82, 90 on average at t = 1 … 8) and collapses once the prefix is exhausted (2t > k + 1).
 
-**Verdicts.** P1 (decay in [0.25, 0.75], mean about 0.5): HELD, mean 0.55. P2 (Σ surv below 2 × 10^6 at k = 8, above 10^8 at
+**Verdicts.** P1 as written ("at every tick" in [0.25, 0.75]): REFUTED at the extinction tick, where the ratio is 1/7
+(GC2596); the bulk statement holds, 0.47 to 0.63 for t = 2 … 21 with mean 0.55, and that is the form the record keeps. P2 (Σ surv below 2 × 10^6 at k = 8, above 10^8 at
 k = 14): HELD. P3 (at most 4 top words per alignment): REFUTED, the maximum is 548 and the mean 90 at t = 8, k = 14; the
 counterfactual's "no forced-word certificate" is half right: the words are not forced, but the pruned tree of alive top words
-is 130 times smaller than the per-pair simulation and 2,000 times smaller than the naive bound, and it grows like 2.2^(k/2)
-per alignment rather than 2^k.
+is 130 times smaller than the per-pair simulation and 2,000 times smaller than the naive bound; over the three depths measured
+(8, 11, 14) the retained nodes per alignment grow about 2.2-fold per tick while fresh bits remain, which suggests, and does not
+prove, 2.2^(k/2) scaling per alignment rather than 2^k (the per-alignment means condition on alignments with survivors).
 
 **The certificate (PROPOSED, for Lean; A5's sequel).** For each spatial alignment i and time alignment a mod 16: a breadth-first
 pass over ticks t = 0 … M keeping the list of alive top words (two fresh bits per tick, four extensions, pruned at a mismatch of
 the pair against (E_k, E_(k+1))(t + a)); the certificate is that the list is empty at tick M + 1. Soundness is the locality lemma:
-if no top word of 2(M + 1) bits survives, no prefix does. Evaluation in the kernel on bit-packed Nat words costs the node count
-above, about 10^4 cells per spatial alignment at k = 14 when the strip is updated incrementally; one generated theorem per i (128)
-is the kit's "one kernel check per state" pattern. Then `mfinite_iff` gives MFinite (g16 i) 14, and the bridge's forward direction
+if no top word of 2(M + 1) bits survives, no prefix does. Evaluation in the kernel on bit-packed Nat words costs the candidate-test count
+above (the incremental kernel cost is an estimate, not measured); with the rotator reduction, 128 theorems at a = 0 lifted to
+every a by the shift identity (GC2596's contract, PROVED two-party in L1482 on the pinned literal RING16, which reproduces the
+table). Local's pilot (L1482): one theorem, i = 0, k = 14, by `decide +kernel` with fuel recursion. Then `mfinite_iff` gives MFinite (g16 i) 14, and the bridge's forward direction
 gives: **no eternal point of any period follows G16, at any of its 128 spatial alignments, from depth 14 or shallower.** Prior art:
 the kit's bitmask and rank strip certificates (a search over partial words with pruning, `Rule30StripCertificates`), and A5.
 Not claimed: anything about depths beyond 14, or about the uniform exclusion of G16.
