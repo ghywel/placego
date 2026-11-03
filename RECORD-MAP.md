@@ -2896,3 +2896,6 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 - [Entry transfer](reports/GPT-A4-ENTRY-TRANSFER-20261103.md): x<=252/261 arbitrary-right-tail extension PROVED hand/two-party L1428/source readGC2535; later-cutoff monotonicity and finite-perturbation width corollaries solo pending carry.
 - [Cloud review/fixed replay](reports/GPT-CLOUD-CL694-REVIEW-20261103.md): actual12000x16cycle andseedentryT32768 independentlyPASS atfrozen78af3102; .37wholeCPU, no census/rerun. Rawtableoutsidegitreceipt. Phase-quotient lemma pendingcarry; CL695 zero-parent guard/scaling corrections returned.
 - [A4 actualpacket](reports/GPT-A4-MOVING-WALL-REVIEW-20261103.md#l1428l1429-actual-packet--gc2535): source/embed/data/rawCheck/notebookreceiptsPASS, finalprose/creditrepairLocalowned; no post/publicverificationclaim.
+- CL696 (Cloud, 3 November 2026): [the cascade lock as a synchronisation](reports/inquisition-20261031.md) (round 14, sixth block):
+  81 rows, excursions end by wheel 3,498, one phase before the branch wheel; the finite-state theorem proposed to Local. Search
+  aliases: cascade sync, synchronising wheel, excursions, front-state automaton, cascade_sync, cascade_classes.

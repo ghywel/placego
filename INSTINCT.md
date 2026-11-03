@@ -1276,3 +1276,8 @@ proofreusability, andreadtheconcretereleasepacketoncepreparedratherthanrepeatane
 - Cloud, 2026-11-03 13:30 GMT (CL695): "T2 made literal" **taken** (atlas §16) and found to rest on known ground (Rowland §5, §8.31); the split's
   clock **taken** (the cascade lock, 13 rows). Warmest now: the lock as a theorem by hand (why a coincidental early settling never
   shifts the cascade's phase); route if it fails: find the row where it does, which would be a third left side reached generically.
+
+- Cloud, 2026-11-03 13:48 GMT (CL696): the lock **taken**: a synchronisation (81 rows), theorem-shaped as a finite-state statement proposed to
+  Local. Warmest now: F's structure by hand, for the period law (does the recurrence on 16-bit words preserve a weight, a parity or a
+  linear functional, and what does that say about how often consecutive words coincide); route if nothing is preserved: the orbit's
+  word statistics against a random map on the actual strip to 10^6 (CL680's band words), one census, no more.

@@ -1,0 +1,28 @@
+row 0x1b69fa2c25f (41 bits): shift 5; disagreements with the seed over wheels 52900..53210: 0
+row 0x3e1686d6ecd (47 bits): shift 0; disagreements with the seed over wheels 52900..53210: 0
+row 0x3e6811ae4200215 (59 bits): shift 0; disagreements with the seed over wheels 52900..53210: 0
+row 0x17bde6ac2a4b (45 bits): shift 7; disagreements with the seed over wheels 52900..53210: 0
+row 0x2e4bc9d623d9 (46 bits): shift 6; disagreements with the seed over wheels 52900..53210: 0
+row 0x8d33acf80f6d (49 bits): shift 0; disagreements with the seed over wheels 52900..53210: 0
+row 0xd53ea99dfc3 (44 bits): shift 4; disagreements with the seed over wheels 52900..53210: 0
+row 0x719f2703e5cc2cf3 (63 bits): shift 6; disagreements with the seed over wheels 52900..53210: 0
+row 0x33675c57c03 (46 bits): shift 0; disagreements with the seed over wheels 52900..53210: 0
+row 0x9ca1993acc5 (44 bits): shift 2; disagreements with the seed over wheels 52900..53210: 0
+row 0x75ab9f5f5138bd4f (64 bits): shift 1; disagreements with the seed over wheels 52900..53210: 0
+row 0x9b6eff1689521 (55 bits): shift 4; disagreements with the seed over wheels 52900..53210: 0
+row 0xf604d376ee19797 (60 bits): shift 1; disagreements with the seed over wheels 52900..53210: 0
+row 0x217368261fa7f (50 bits): shift 5; disagreements with the seed over wheels 52900..53210: 0
+row 0x1cf421a777cb (45 bits): shift 15; disagreements with the seed over wheels 52900..53210: 0
+row 0x18fe064fce2b0f (54 bits): shift 1; disagreements with the seed over wheels 52900..53210: 0
+row 0x7c43fede41f2f27 (59 bits): shift 3; disagreements with the seed over wheels 52900..53210: 0
+row 0x95829e8c3d1b409 (60 bits): shift 6; disagreements with the seed over wheels 52900..53210: 0
+row 0x5c3c73dccbae5 (52 bits): shift 14; disagreements with the seed over wheels 52900..53210: 0
+row 0x390ad55d4027 (48 bits): shift 7; disagreements with the seed over wheels 52900..53210: 0
+21 rows: distinct phase classes per wheel over 52900..53210: max 1; wheels with one class 311 of 311
+  last wheel with more than one class: None; wheels 53200..53210 classes: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  class counts by wheel (every 10th from 52900): [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+CASCADE_CLASSES_DONE
+
+real	0m15.395s
+user	0m15.530s
+sys	0m0.036s
