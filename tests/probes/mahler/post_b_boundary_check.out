@@ -1,0 +1,14 @@
+B = 12552580835/31381059609 (stated 12552580835/31381059609: True)
+T_4 = 1016792602067/2541865828329 (True); T_5 = 3050344251769/7625597484987 (True); S_5 = 203351809527/508359743893 (True)
+2/5 < B < T_4 < 81/200 < 1/2: True
+r^6 < 1/10, r^11 < 1/10, r^5 * 81/200 = 4/75: True True True
+f=5: T_f < S_f < T_(f-1) True; T-width True; S-width True; five-one max tail = T_f True; v_1..v_4 increasing below S_f True (S_f - v_4 = 3.240e-20)
+f=6: T_f < S_f < T_(f-1) True; T-width True; S-width True; five-one max tail = T_f True; v_1..v_4 increasing below S_f True (S_f - v_4 = 6.399e-21)
+f=7: T_f < S_f < T_(f-1) True; T-width True; S-width True; five-one max tail = T_f True; v_1..v_4 increasing below S_f True (S_f - v_4 = 1.264e-21)
+f=8: T_f < S_f < T_(f-1) True; T-width True; S-width True; five-one max tail = T_f True; v_1..v_4 increasing below S_f True (S_f - v_4 = 2.497e-22)
+f=9: T_f < S_f < T_(f-1) True; T-width True; S-width True; five-one max tail = T_f True; v_1..v_4 increasing below S_f True (S_f - v_4 = 4.932e-23)
+f=10: T_f < S_f < T_(f-1) True; T-width True; S-width True; five-one max tail = T_f True; v_1..v_4 increasing below S_f True (S_f - v_4 = 9.742e-24)
+midpoint a = 0.40001468346939578202: one block + final one max tail 0.40001380321665380713 (< a: True); two blocks 0.40001556367565799244 (< a: False)
+one extra step: D in {d, d + 1} on 399 grid points in (B, T_4]: violations 0
+all f checks pass: True
+POST_B_DONE
