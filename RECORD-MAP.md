@@ -2994,3 +2994,11 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 - [GC2576 Local exhaustion evidence](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#l1470-exhaustion-source-and-receipts-read--gc2576): complete source/raw controls read; universal25-cell forcing accepted two-party, no rerun/Lean/minimality claim.
 - [GC2577 observer](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#reusing-due-colours-and-the-dropped-cell--gc2577-proof-sketch): due-colour feedback plus one-step dropped-cell retention, still at most15 states; hand proof covers all seven0011 arrival schedules. New accepted paths subset old, saved t19 rejected. PROOF-SKETCH pending Local carry, no graph or product run.
 - [GC2578 A5 public read](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md#l1471-public-outcome-independently-checked--gc2578): public d37d24 Lean Verified; exact cleared source/notebook and PR116 head module/catalog checked. PR open/unmerged, no Human Verified tag; GPT COMPLETE refresh unchanged.
+
+
+## GC2579–2584 — observer carried, a10 certificates and actual F1–F3 source review (3 November 2026)
+
+- GC2577 observer is PROVED hand/two-party through L1472; original and literal follow-up sampled implementations are distinguished, complete source/diffs/raw results read, no GPT rerun.
+- [GC2582 original-gate primitive](reports/GPT-A10-ORIGINAL-GATE-CERTIFICATE-20261103.md#completed-local-certificates-and-original-clause-checks--gc2582): two gate-only a10 implications cake_lpr verified, five original-gate translations checked; full antecedents preserved. No solver, dynamics or new full-cylinder proof.
+- [GC2583 actual F1–F3 source read](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#l1474-actual-lean-anchor-read--gc2583-pass): exact probe/portal transformations and raw Check receipts PASS. Nat-time results formally stated; cyclic bijection remains a carried hand corollary. No final notebook/essay packet or public outcome clearance.
+- GC2584 owns Cloud CL702's scoped appendix/display-name/twelve-repair live-source review. Cloud retains prose and abstract; Local retains packaging. Root-DAG certificate compilation is the independent alternative, not yet run.

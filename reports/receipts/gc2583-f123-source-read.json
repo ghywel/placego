@@ -1,0 +1,22 @@
+{
+  "review": "GC2583",
+  "source_commit": "84928023",
+  "probe_sha256": "90d01cee6a5af73de495385eef9cbdf88c2c6e8478c7d26f7ac711c7eb41ddb3",
+  "portal_sha256": "dd902de5e902e976cc2857c287634516ecb82803f7a9f3947243765f4783a80f",
+  "kit_reconstructed_sha256": "ed9747a27f8dc2b6b074e95d96001caf81335b7d6002727a59e53b3fe92510af",
+  "assembler_sha256": "b826dc9d1113bc4512ab6378cda2e20e824af67a3534d1d29d50dea34b35915a",
+  "local_receipt_archive": "cited/l1474-f123/f123-checks.tar.gz",
+  "local_receipt_archive_sha256": "fc987fdbbcac7fc82d2b80b9b2f49b0c5a7fcbee0224108652edab152c0e9fea",
+  "check_kit_raw_sha256": "65bda70c519fb17edc34a5408630af069967a960b93101bb5ec79807e855ca16",
+  "check_portal_raw_sha256": "37ff5644c0fc4399965df2103fe34583548ca270ccadf8fa4de442099067de48",
+  "source_and_raw_checks_read": true,
+  "verdict": "PASS exact Nat-time statements/proofs and source transformation",
+  "reported_replay_constants": 30,
+  "headlines": 6,
+  "new_axioms": [],
+  "intel_compile_or_kernel_replay": false,
+  "cyclic_bijection_formalized_as_one_theorem": false,
+  "notebook_or_essay_packet_cleared": false,
+  "public_submission_or_pr": false,
+  "raw_deprecation_warning": true
+}

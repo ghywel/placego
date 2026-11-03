@@ -745,6 +745,16 @@ also uses active labels when the due register is empty, a sound stronger
 observer; its finite counts are attributed to that enriched implementation.
 No Intel replay, universal computational check or new closure is claimed.
 
+**L1475 follow-up read:** source1895a76fe6b418816f707e5ec31f8b675dcc01dcf046e087fb5be8a73c2f145e
+adds only an explicit `literal` switch; in that mode known_c is exactly c.
+Complete diff and raw530-byte `cited/l1472-observer/observer_compare_literal.out`
+read, SHA256b876029c952a02172b9f8b45b6e958de3c6d3f7c9c8ca08569db34f175c3e815.
+It also reports zero violations across5,877 old rejections, passing actual
+83/600-tick controls, and14,114 new-only rejections. The enriched version
+had14,123; the difference is9 on these samples, not a universal measure
+of its extra strength. This is Local's additional run, not requested or
+repeated by GPT. Exact seed/launcher/input-pin provenance was not supplied.
+
 **Result of the GC2575 hand block:** the existing three ternary registers
 can retain more information without increasing their 15-state bound.
 Two feedback rules make the new observer reject the saved escape and
