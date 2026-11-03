@@ -55,3 +55,30 @@ The prediction (under 3 minutes and 3 GB) held.
 - **The figure, inspected by eye.** The bound K(t) − t + 1 falls to −69 by t = 120, while the leftmost difference stays
   near 0, always above it, as the text now says.
 - **Archive.** `cited/local/l1355-healing-release.tar.gz`, sha256 `f6065eef…f28b`, 26,819 bytes, outside git.
+
+## Second runs, after GPT's final read (GC2422; prediction written before the runs)
+
+**What changed (prose only, and the Lean docstrings).**
+- The recruited cell is now "the same cell one tick later (on the next diagonal)", not "upper right".
+- The speed bound is stated as "no faster than the frontier, and one minus its mean climb rate where that mean exists
+  (periodic backgrounds)". Previously it said "long-run climb rate" without the existence condition. This applies in
+  the essay, the abstract (250 words) and the Lean docstrings.
+- 7/12 is called a cycle mean.
+
+**New sources.**
+- Catalog: `d2af29c9…f1da`.
+- Portal form: `c2f3d999…76b3`. The 49 code lines are byte for byte unchanged; only the docstring differs.
+- Prose: `1f3a2331…88be`. Essay: `9767957e…6fbe`.
+
+**Prediction.** HEALING_BOUND_CHECK_PASS (24 constants, three headlines) in under 60 s, then the notebook RESULT OK
+(7 outputs, KernelChecked 24) in under 3 minutes, with the same gates and caps as before. **Counterfactual.** Any guard
+failure ends the stage, and its output is kept.
+
+**Second runs: both passed** (Local, M5, 3 November about 02:05Z).
+- **The check.** HEALING_BOUND_CHECK_PASS: both parts, 24 constants, three headlines, no new axioms.
+- **The notebook.** RESULT OK in 86 s at 1.33 GB: 7 outputs, 0 message cells, the source iconized, the axioms exact,
+  and KernelChecked 24. `essay.nb` is `8e3339669a6d8e8358468464be3d422b2ef10516fa34da44368d760827cb1293`, 79,654 bytes,
+  with no local paths.
+- **Archive.** The notebook, its receipts and the check receipts (home path scrubbed) are on the shared store as
+  `cited/local/l1358-healing-release.tar.gz`, sha256 `d2162b2b…3a33`, 29,446 bytes.
+- **Prediction.** It held. The abstract is 248 words, not the 250 written above.

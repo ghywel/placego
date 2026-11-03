@@ -5,3 +5,12 @@ P1024 W=8, 200 rows, K=80: ticks in B at R >= 16 before capture: 10650; mean adv
    H=20: 7552 windows inside B; least net advance -5; windows with net advance <= 0: 10 (0.13%); median 24
    longest window inside B with net advance <= 0: 25 ticks
 BAD_CORE_DRIFT_DONE
+
+## bad_core_drift.py masks_W8 200 80 (L1358, after GC2422's splice fix; same caps; COMPLETED): output identical to the second run, plus the least depth
+P1024 W=8, 200 rows, K=80: ticks in B at R >= 16 before capture: 10650; mean advance per tick in B 1.176 (17/13 = 1.308)
+   H= 5: 9830 windows inside B; least net advance -8; windows with net advance <= 0: 272 (2.77%); median 6
+   H=10: 9021 windows inside B; least net advance -9; windows with net advance <= 0: 27 (0.30%); median 12
+   H=20: 7552 windows inside B; least net advance -5; windows with net advance <= 0: 10 (0.13%); median 24
+   longest window inside B with net advance <= 0: 25 ticks
+   least depth before capture, over all rows: 67 (a run could have spliced only below 16)
+BAD_CORE_DRIFT_DONE

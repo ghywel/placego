@@ -24,26 +24,29 @@ base = [int(''.join(str(bits[(k + 195 * n) % p]) for n in range(depth))[::-1], 2
 rev = [int(format(v, '0%db' % W)[::-1], 2) for v in range(1 << W)]
 rng = random.Random(48)
 HS = [5, 10, 20]
-win_adv = {H: [] for H in HS}; per_tick = []; in_B_ticks = 0; longest_holder = [0]
+win_adv = {H: [] for H in HS}; per_tick = []; in_B_ticks = 0; longest_holder = [0]; minRs = []
 for it in range(N):
     th = rng.randrange(p)
     x = rng.getrandbits(K) | (base[th] >> K << K)
-    run = []; runs = []
+    run = []; runs = []; minR = 10 ** 9
     for t in range(T + 1):
         d = (x ^ base[(th + t) % p]) & mask; R = d.bit_length() - 1
+        minR = min(minR, R)
         if R >= 12:
             v = (((th + t + 195 * R) % p) << W) | rev[(d >> (R - W)) & ((1 << W) - 1)]
             if SE[v]:
                 break
-            if R >= 16 and B[v]:
-                run.append(R); in_B_ticks += 1
-            else:
-                if len(run) > 1:
-                    runs.append(run)
-                run = []
+        # GC2422: any tick that is not (R >= 16 and in B) closes the current run, so no run splices non-consecutive ticks
+        if R >= 16 and B[v]:
+            run.append(R); in_B_ticks += 1
+        else:
+            if len(run) > 1:
+                runs.append(run)
+            run = []
         x = (x ^ ((x << 1) | (x << 2) | 3)) & mask
     if len(run) > 1:
         runs.append(run)
+    minRs.append(minR)
     for r in runs:
         # N4: the longest window inside this run with net advance <= 0
         L = len(r)
@@ -62,4 +65,5 @@ for H in HS:
         H, len(a), int(a.min()) if len(a) else 0, int((a <= 0).sum()), 100.0 * (a <= 0).mean() if len(a) else 0,
         int(np.median(a)) if len(a) else 0), flush=True)
 print('   longest window inside B with net advance <= 0: %d ticks' % longest_holder[0], flush=True)
+print('   least depth before capture, over all rows: %d (a run could have spliced only below 16)' % min(minRs), flush=True)
 print('BAD_CORE_DRIFT_DONE')

@@ -2,7 +2,8 @@
 
 Local, 3 November 2026 (L1348–L1355). **Status: package complete and checked on the M5; not submitted.** The source is
 carried (GC2413), the checker passes on kit 93d98bbe (L1350), the rates are replayed (L1352), and the release notebook
-gets RESULT OK (L1355). Waiting for GPT's final packet read, and then the owner's word.
+gets RESULT OK (L1355; rebuilt after GC2422's prose fixes, L1358). GPT's technical PASS of the first build is
+GC2422; its scoped read of the changed artifacts and then the owner's word remain.
 
 ## Statement
 
@@ -21,7 +22,7 @@ climb rate.
 
 | File | sha256 | What it is |
 |---|---|---|
-| `Rule30Submission.lean` | `f444ae69…25b8` | the portal form, generated from `tests/probes/lean/HealingBound.lean` (`90118b62…e7d9`) |
+| `Rule30Submission.lean` | `c2f3d999…76b3` | the portal form, generated from `tests/probes/lean/HealingBound.lean` (`d2af29c9…f1da`; first versions `f444ae69…`/`90118b62…` superseded, docstrings only) |
 | `RUN-SPEC.md` | | the check, with its prediction and receipts |
 
 **Per-background rates (COMPUTED; independent replay, L1352, `tests/probes/healing_rate_replay.py`).** The frontier's
@@ -31,13 +32,13 @@ from the kit's own table at all 28 alignments. By `front_ge`, each rate bounds e
 on that background. (For the inserted edge in the classic ether the actual speed is 0, by A1.)
 
 | `essay-prose.md` | | the essay (cites Tisseur §3.1 and Bagnoli, Rechtman and Ruffo §2, GC2413) |
-| `essay.md` | `be5c4bad…acf9` | the prose with the source embedded |
-| `abstract.txt` | | the abstract (251 words) |
-| `essay.nb` | `89dc5432…cf75` | the release notebook (shared store, `cited/local/l1355-healing-release.tar.gz`) |
+| `essay.md` | `9767957e…6fbe` | the prose with the source embedded |
+| `abstract.txt` | | the abstract (248 words) |
+| `essay.nb` | `8e333966…1293` | the release notebook (shared store, `cited/local/l1358-healing-release.tar.gz`; the first build `89dc5432…` superseded) |
 
 ## Submission parameters (for the owner's yes)
 
-- **notebook:** `essay.nb`, `89dc5432…`, built at kit 93d98bbe. **problem:** `1`. **claim:** `partial`.
+- **notebook:** `essay.nb`, `8e333966…`, built at kit 93d98bbe. **problem:** `1`. **claim:** `partial`.
 - **title:** The universal healing bound for rule 30.
 - **authors:** Gareth Herbert; Claude (Anthropic); GPT (OpenAI). **agent:** Claude Code with Claude Opus 5.5.
 - **headlines:** `Rule30Submission.healing_bound`, `Rule30Submission.front_ge`, `Rule30Submission.K_succ_bounds`.
