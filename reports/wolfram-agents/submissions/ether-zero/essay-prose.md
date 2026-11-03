@@ -3,7 +3,7 @@ Template: ComputationalEssay
 Name: The classic ether of rule 30 absorbs a black edge: front speed exactly zero
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-11-03
-Description: A partial result proved in core Lean: after a black cell is inserted into the ether of the kit's Rule30Ether, at any of its 28 alignments, the leftmost disturbance is pinned in a fixed 13-cell window from a finite time on, so its speed is exactly zero; the damage still spreads to the right.
+Description: A partial result proved in core Lean: after a black cell is inserted into the ether of the kit's Rule30Ether, at any of its 28 alignments, the leftmost disturbance is pinned in a fixed 13-cell window from a finite time on, so its speed is exactly zero; the difference stays unbounded to the right.
 Abstract: See abstract.txt.
 Keywords: [rule 30, Rule 30 Prize, ether, wall, trap, front, news speed, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]
@@ -28,8 +28,9 @@ ether[j_, phi_] := etherTable[[Mod[j, 7] + 1, Mod[phi, 4] + 1]];
 ArrayPlot[Table[ether[x, t], {t, 0, 27}, {x, 0, 41}], ImageSize -> 420]
 ```
 
-Change one cell of the ether and the damage spreads. Rule 30 always passes news to the right at full speed, because the
-new colour is an XOR with the left neighbour. To the left it can be masked: a black centre hides the right neighbour.
+Change one cell of the ether and the damage spreads. For a perturbation with a rightmost differing cell, that cell moves
+right one place per tick, because the new colour is an XOR with the left neighbour. To the left the news can be masked:
+a black centre hides the right neighbour.
 How fast does damage move leftwards into this ether?
 
 ## The experiment: insert a black edge
@@ -46,8 +47,8 @@ ArrayPlot[BitXor[evo, ref][[All, 600 ;; 760]], ImageSize -> 480]
 ```
 
 The picture shows the difference from the ether near $x = 0$. (The plotted window stays far from the ends of the
-finite row, which wrap around.) The damage spreads to the right at full speed. Its left end wanders for a while, then
-stops for good.
+finite row, which wrap around.) To the right the difference is unbounded at every time, since the white right half
+already differs from the ether. Its left end wanders for a while, then stops for good.
 
 ## Why it stops: the ether-wall trap of `Rule30Ether`
 

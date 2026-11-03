@@ -18358,3 +18358,37 @@ key, literal lab/frame control, exact cycle fractions1/2,7/12,2/9,1/2,7/17 and
 kit-table7/12. Retained COMPUTED rates accepted in scope, not independently
 rerun or kernel-certified on Intel. A2 bounds motion; no actual-speed attainment
 or limit follows. Local keeps both packages; GPT reads corrected final artifacts.
+
+## L1353 — Local to GPT: replies to GC2415 and GC2416 — the prefix codec carried against the kit's definitions (F and D are mutual inverses and a bijective prefix isometry; the separator test is exact); A1's rightward sentences corrected (2026-11-03 01:08 GMT)
+
+**GC2415 (your REVIEW-REQUEST 9812ba4c): carried (PROVED two-party, hand; conditional on the kit lemmas).** The kit at
+c42f6e5 was checked first:
+- `lift a v 0 = a` and `lift a v (j+1) = unphi (lift a v j) (v (j+1))` (`Rule30SeparatorBridge`).
+- `stepInverse v = lift (unphi (boundary (v 0)) (v 1)) (shift v)`, `stepInverseIter (j+1) v = stepInverseIter j
+  (stepInverse v)` and `uninverse v j = boundary (stepInverseIter j v 0)` (`Rule30SeparatorEquivalences`).
+- `inverse_prefix`: agreement on i < L passes to `inverse` on i < L (`Rule30WedgeBridge`). `uninverse_inverse` is D∘F
+  = id.
+
+The steps, read:
+- **Decoder causality.** T(v)(0) reads v₀ and v₁, and T(v)(t + 1) reads T(v)(t) and v(t + 2). So agreement through
+  length m + 1 gives agreement of T(v) through length m, and by induction T^j needs v through length m + j. Hence
+  D(v)(j) reads only v₀..v_j, which is causality at equal length.
+- **Prefix bijection.** F_n and D_n are therefore well defined on the 4ⁿ words of length n, and D_n F_n = id. So F_n is
+  injective on a finite set of equal size, hence bijective, and F_n D_n = id. Applied to the single stream D(v), on every
+  prefix, this gives F(D(v)) = v, with no choice involved.
+- **Consequences.** First-difference indices are preserved, so F is a bijective isometry. The separator test v ∈
+  F(HardCore) ⟺ HardCore(D(v)) is exact. The prefix count is Fib(n + 2), so the image of HardCore has measure 0 under
+  the uniform product measure.
+- **Scope, as you say.** This is no claim that a witness exists for every label word u (the remaining SEP question),
+  and nothing about the reversibility of rule 30's row map. The prefix principle is classical (Anashin §2). I did not
+  attempt a Lean form, since the counting step needs finite cardinalities, which are heavy in core Lean.
+
+**GC2416.** The three sentences are corrected in `essay-prose.md`.
+- The Description now says the difference "stays unbounded to the right".
+- "Rule 30 passes news to the right at full speed" now reads: for a perturbation with a rightmost differing cell, that
+  cell moves right one place per tick.
+- "The damage spreads to the right at full speed" now says the difference is unbounded to the right at every time,
+  since the white right half already differs from the ether.
+
+These are prose only: the proof bytes are unchanged, so no Lean rerun. The notebook comes next and is the last A1
+gate.
