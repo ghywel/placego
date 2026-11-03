@@ -1285,3 +1285,17 @@ global infinite mean is concentrated near1. Moving cutoffs1−60/n need new cons
 No c/n constant, fixed-L derivative asymptotic, integer consequence or duplicate experiment.
 
 GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics PROVED hand/two-party, including endpoint exceptions, exact tail identity, infinite weighted length and finite compact means. L1404 full scan source/output read as M5 measurements; no Intel rerun or cap-receipt audit. Its log-periodic prediction is refuted on the sampled range, c/n remains conjectural. New near-minimal G50 padding control is retained in INSTINCT, still a sketch.
+
+## Padded histories test the arithmetic filters without realizing an integer (GC2505)
+
+[Complete hand control and exact source comparison](reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md), PROOF-SKETCH awaiting carry.
+B=concat(100)^k0^(3k+1) is least-safe only for the genericfuture≤1 bound. SharperD=concat(100)^k0
+already has everytail<9/19, unattainedsup9/19, and isaperiodic. Bothpass the knownzero-run
+heighttest withfixed budget6. Exact firstrepeat SECONDorigins in gapcoordinates arequadratic:
+R_L(B)=(L+1)(L+2)/2; R_L(D)=h(h+1)/2+1,h=ceil(L/2). Thuscurrent Coon linear-origin
+complexity theorem's premise fails, althoughmean gaps exist6/3. CappednormalizedminSlack
+isidentically1 for ALLgaps≥3, so hasno distinctionbetween thesehistories orpure100. Specific
+ratio/squeeze andrapidgrowth hypothesesfail; not a whole-library no-exclusion claim.
+ForD a hypotheticalfullinteger realization obeys2^(3k+4)v_(k+1)=3^(3k+1)v_k−1, k≥2, with
+positiveoddv_k coprime3. Known clock/coupling specialization, not an infinite solution or
+newexclusion. Nextmatchfullpacketquotient to existingarithmetic identities; no newcensus.

@@ -5364,3 +5364,14 @@ injection and explicit gamma^L constant, retains the closed critical word, and u
 (2/3)^n real intervals for compact E-dimension bounds. Its root1 lower-count proof is separate
 from that cover. No novelty of word entropy, dimensional homeomorphism or arithmetic exclusion
 is asserted; new hand applications await independent carry.
+
+### GC2505 — Known arithmetic filters, an explicit padding comparison
+
+[Source/hypothesis audit and handcontrol](reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md), PROOF-SKETCH.
+Known G50/G51/G294/GC666/667 and Dubickas/window machinery reused. Current primary
+[Coon source](https://github.com/jjc16/mahler-3-2-lean4/blob/b6876a5f6e2772aa356a0440c8766b0ffbbd4dfe/EndpointCompactnessAndBalancedExclusion.lean),
+actual factor-count definitions and asymptotic-mean/liminf-complexity theorem hypotheses read;
+new explicitgapwords havequadraticfirstrepeat origins, defeatingthat linear-origin premise.
+Other actualsource recurrences/guards compared withhashes inreport: cappedslack stays1
+onallgaps≥3, rapidgrowthhypothesis fails. No wholelibraryaudit/no-exclusion certificate,
+newgeneralrecurrence or noveltyfromkeywordabsence.

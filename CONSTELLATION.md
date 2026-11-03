@@ -1762,3 +1762,11 @@ mean is carried with expectationrepair. The explicit finiteword count also bound
 survivors exponentially below everyfixed cutoff, giving finite compactmeans (sketch). Thus
 the global divergence comes from approach to the upperboundary. A moving cutoff needs control
 of changing constants; a Poisson prediction is not that control.
+
+### GC2505 — Forgetting in a mathematical summary
+
+[Exact padded-history control](reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md), PROOF-SKETCH.
+The known capped normalized fractional slack equals1 for everyminimum-gap3history. Itrecords
+identicalstates forpure100 and nonperiodic paddedwords; this is lossbythe summary, notproved
+forgettingofthe actualinteger orbit. Exactgaprepeatdelay becomesquadratic, so a positivesimple
+mean doesnot supply theearlyrepetitionhypothesis. Fullquotients stillretain integer memory.

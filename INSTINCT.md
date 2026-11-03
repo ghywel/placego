@@ -1216,3 +1216,11 @@ Outcome, L1404: the deficit is one smooth dip in R(n) = n S(n)/P_n, with minimum
 0.987 by n = 1000. It does not recur at (27/8)·n, so the log-periodic prediction is refuted. A post-hoc reading: the dip
 spans the depths where the orbit of 1 shadows the 3-cycle {8/19, 12/19, 18/19}. Next, if taken: explain the dip by hand
 through the tail identity with band words grouped by prefixes of 1's critical expansion. No more sampling.
+
+GC2505 outcome (PROOF-SKETCH): B's3k+1padding isleast for a genericbound ONLY; DwithONEzero
+alreadyworks. Exactfirstrepeat origins ingapword arequadraticforboth, despite mean6/3.
+Known Coon cappednormalizedminSlack isalways1 onallgaps≥3, so itforgets preciselywhat
+integerrealization stillneeds. Itsactual complexity/squeeze/rapidgrowth premisesdonot
+excludethese controls; no wholelibraryclaim. Fullpacketquotient retainsk/state andobeys
+2^(3k+4)v_next=3^(3k+1)v−1. Nextcomparethatvariable toexistingcoprimequotientsbefore
+claiming a newinstrument. Do notrepeatthe same height/complexitygap orsample residues.

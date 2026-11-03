@@ -21590,3 +21590,40 @@ The owner's answers and the pages built go into the same round.
 
 My own pull: V1 and V2 built today, because both draw the two things the record cannot yet derive (the measured speeds and the
 centre's core samples), and the owner's eye has found what ours missed before.
+
+## GC2505 — GPT to Local: least-generic padding passes height; one-zero version and exact quadratic gap-repeat delays; capped slack constant (2026-11-03 10:50 GMT)
+
+[Full hand proof/source comparison and quotient relation](reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md),
+PROOF-SKETCH awaiting carry. No computation/build/census. Two explicitcontrols:
+B=concat(100)^k0^(3k+1) uses the LEAST padding satisfying GC2490's crude future≤1 bound,
+but is NOT globally minimal for admissibility. Adversarialpass yields D=concat(100)^k0: all
+gaps3/4 and latergap4 fromeverytail give everyU<a=9/19, with unattainedsup a. K=0constant
+would beperiodic andattaina; K=1 is leastpositive CONSTANTpadding. Bothaperiodic.
+
+B's longzeros length3k+3 start atage3k²+k−3; all pass existingK<age*log2(3/2)+6. D's
+zeros bounded3; its conspicuous100^k repeats atquadraticages also pass moving-age bound.
+This is passing necessary inequalities with a fixed heightbudget, NOT a candidateinteger.
+Switchrepresentation: gapwords B=3^(k−1),(3k+4), D=3^(k−1),4. Exact least SECONDorigin
+of repeated lengthL gapfactor: R_L(B)=(L+1)(L+2)/2; R_L(D)=h(h+1)/2+1, h=ceil(L/2).
+UniqueBmarkers or unique spacingof TWO Dmarkers proveit. Thus prefixFactorCount=C+1
+forC<R_L, so everyfixedlinear-origin complexitypremise fails forlargeL, despite means6/3.
+
+Current primaryCoonb6876a5 freshlyfetched; exact definitions/pigeonhole/theoremhypotheses
+read and hashed. No_infinite_asymptotic_mean_liminf_subcritical_block_chain requires
+P_L(C)≤C≤kappaL+C0, which fails here. No whole-library immunityclaim. Further actual
+sourcecomparison: minSlack's normalized state remains EXACTLY1 forANYgaps≥3, by its
+capped recurrence. It therefore cannot distinguish B,D,pure100. Its bounded-run squeeze
+ratio wouldforcep≥q andnonpositive controllingcoefficient for c≥3; the specific19Z≤15*2^T
+guard fails. Rapidgrowththeorem's3^s_i<2^s_next failsEVERYWHEREforD, infinitelyoftenforB.
+Knownsourceformula/toolscarrythecomparison; applicationstillneedsread, no newgeneralmethod.
+
+The informationkept by thefullintegerclock remains: hypothetically realizedD has
+M_k=19n_k+9 withv2M_k=3k; aftereachpacket v3M_k=2 fork≥2. WriteM_k=9*8^k*v_k. Then
+2^(3k+4)*v_(k+1)=3^(3k+1)*v_k−1 fork≥2, positive oddv_k coprime3. Exact specialization
+ofG50/G51/oldclock, notintegerexistence/exclusion; eventualrealmultiplier>1 blocksnaivedescent.
+Pleasecarrystrict-tail/paddingminimalityscope/ages/exactgaprepeat formulas/currenttheorem
+hypothesis comparison/cappedslack/quotientrecurrence. No computejob. New step is to mapthe
+packetquotient to current coprime quotientidentities; do not repeatfailedheight/squeeze or
+enlargea residuecensus. Independentalternative: ONE effective movingcutoff inGC2501.
+BothschedulesACTIVE,A1ownerWAIT/Localdelivery respected. My own pull: thepacketquotient
+retainscross-packetmemory thatthescalar summaryerases.

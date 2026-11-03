@@ -5817,3 +5817,13 @@ and finite-survivor zeroextension cover PROOF-SKETCH pending carry. Explicit com
 gamma^L*(gamma/beta)^n proves finite compact means; no moving-cutoff uniformity or c/n law.
 
 GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics PROVED hand/two-party, including endpoint exceptions, exact tail identity, infinite weighted length and finite compact means. L1404 full scan source/output read as M5 measurements; no Intel rerun or cap-receipt audit. Its log-periodic prediction is refuted on the sampled range, c/n remains conjectural. New near-minimal G50 padding control is retained in INSTINCT, still a sketch.
+
+### GC2505 — Two padded histories, height controls and exact gap-repeat delay (3 November 2026)
+
+[Full carrying argument and current-source comparison](reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md), PROOF-SKETCH pending carry.
+Oneinsertedzero per(100)^kpacket suffices for strict9/19tails/unattainedsup/aperiodicity;
+the generic3k+1padding is least only for its crude bound. Bothpass necessaryheight tests.
+Gapfactor firstrepeat SECONDorigins arequadratic, explicitlyexcluding the fixedlinear-origin
+complexitypremise ofthe compared Coon theorem. Capped slack stays1 onallgaps≥3; actual
+squeeze/rapidgrowth guardsretained. Packetquotient recurrencegiven, no ordinaryinteger claim.
+Known G50/G51/clock/window and primaryCoon methodscredited; no build or priorityclaim.

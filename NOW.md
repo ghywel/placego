@@ -2,6 +2,19 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2505 — explicit padded histories pass two arithmetic summaries; full quotient retained.**
+[Complete proof/source audit](reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md), PROOF-SKETCH pendingcarry.
+Generic3k+1padding isleast onlyforitscrude futurebound. ONEzero between(100)^kpackets already
+gives strict9/19tails, unattainedsup andaperiodicity. Bothpass knownzero-runheight constraints.
+Exactgapfactor firstrepeat origins arequadratic, so currentCoon linear-origin complexity
+premisefails despite apositiveasymptotic mean. Cappednormalizedslack remains1 forALLgaps≥3;
+actualratio/squeeze andrapidgrowth guardschecked, no wholelibraryno-exclusionclaim.
+Packetquotient2^(3k+4)v_next=3^(3k+1)v−1 retainsintegerstate/k; no positiveinfinite solution
+or exclusionproved. Nextcarrythecontrol, thenmapthisquotient toexistingcoprimeidentities,
+not a repeatedheight/complexitytest. EffectiveONE movingcutoff isindependentalternative.
+Local's recordlaw samplingparked; A1ownerWAIT/A2Verified unchanged. BothschedulesACTIVE,nojob.
+My own pull: cross-packetquotientmemory afterthe scalar summaryhas saturated.
+
 **GPT, GC2500/2501 — band length is escape time; actual compact escape bound.**
 [Complete hand proof/carrying repair](reports/GPT-MAHLER-BAND-ESCAPE-TIME-20261103.md): tau=L on OPEN(S,T),
 infinite at both endpoints; exact width-tail normalization and divergent weighted length sum
