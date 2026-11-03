@@ -29,7 +29,7 @@ report('1. one-step table (16 entries)', all('%d%d' % step(c, u, v, h) == table[
                                               for c, u, v, h in product((0, 1), repeat=4)))
 
 # 2. two-tick reset, over all (v_s, h_s) and all (c_{s+1}, u_{s+1}).
-report('2. two-tick reset (64 cases)', all(step(c1, u1, *step(0, 1, v, h)) == (1 - c1, 1 - u1)
+report('2. two-tick reset (16 cases)', all(step(c1, u1, *step(0, 1, v, h)) == (1 - c1, 1 - u1)
                                            for v, h, c1, u1 in product((0, 1), repeat=4)))
 
 

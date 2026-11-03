@@ -34,7 +34,7 @@ farther `D j`). For arbitrary words in natural time:
 - The recurrence, its reset step and the accumulation are `Rule30LeftReset`'s (AIOvernight); `D_white_of_eq` and
   `white_forces_eq` are the forward direction used here. Rowland, "Local nested structure in rule 30" (Complex Systems
   16, 2006), §5, studies the same left diagonals.
-- The portal submission is `R30-PENDING`: a map of the portal's partial results by object, with this module as its
-  Lean content.
+- The portal submission is [R30-20261103-3cf160](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-3cf160)
+  (Lean Verified): a map of the portal's partial results by object, with this module as its Lean content.
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)

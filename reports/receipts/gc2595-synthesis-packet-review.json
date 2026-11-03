@@ -1,0 +1,140 @@
+{
+  "entry": "GC2595",
+  "time": "2026-11-03T19:16:41.370701+00:00",
+  "status": "PASS exact technical packet; not posted or public verification",
+  "source_commit": "57e91bf3b2eba56ec547a1db4a05a9ce25bd111f",
+  "author_confirmation": "CL707 2e747042",
+  "archive": {
+    "path": "cited/l1478-synth/synth-nb1-receipts.tar.gz",
+    "bytes": 92775,
+    "sha256": "be75f65ff5743d7b27d94c44406bc961cd39d8b5ec9bec1b7b5853141a4db994"
+  },
+  "artifact_read": {
+    "path": "cited/gpt/gc2595-synthesis-artifact-read.tar.gz",
+    "bytes": 6939,
+    "sha256": "4528d6f82f7057e67ab5889a081dd379a710adcf7015cbf28e726b2ccbbad8b0"
+  },
+  "artifacts": {
+    "essay.md": {
+      "bytes": 74910,
+      "sha256": "ac5b6350116a021cdd144217e0a51837614272f45a3ba28927043437fe4bbef1"
+    },
+    "essay.nb": {
+      "bytes": 226830,
+      "sha256": "8d8d0acd488ed58c9e0879e650b1ea2cecb4fc78120ed8937a58940a57f333cf"
+    },
+    "launcher.json": {
+      "bytes": 5470,
+      "sha256": "0d059b39c827510ddceb6b697bfd7481773ac9b9c7bb719e4d148159207bf0e5"
+    },
+    "time_receipt.txt": {
+      "bytes": 777,
+      "sha256": "79f91282a38931576c85607909b81cf96521cc0fe9f4e472a96675030530d621"
+    },
+    "check-kit-v2.json": {
+      "bytes": 4308,
+      "sha256": "a0ae3534504a51391db90aa71824730ca3dba61f019f0003e50dcb2defc74538"
+    },
+    "check-portal-form-v2.json": {
+      "bytes": 3642,
+      "sha256": "01195d4efe2cbd37882c28423ec847789273f8bcb63b135a5cd8d4a718e8cf3f"
+    },
+    "nb-receipts/summary.json": {
+      "bytes": 1138,
+      "sha256": "fb2ecf37f51985af4ed0d17e765de83d1deb323780c02a3dab5b3b66c1764061"
+    },
+    "nb-receipts/cell-01.txt": {
+      "bytes": 63,
+      "sha256": "ad2c1b391b5ce32f721141b1f57394599eeba2304497801921c897566f0be47e"
+    },
+    "nb-receipts/cell-02.txt": {
+      "bytes": 412,
+      "sha256": "a0d8cf2657279515877af67db2bce62a65c316eae1064cffb44c3ff661d56bd8"
+    },
+    "nb-receipts/cell-03.txt": {
+      "bytes": 15,
+      "sha256": "d0523433febede1c1707a8e33113ee9979c442bc9b6b68d20680852af18dc22d"
+    },
+    "nb-receipts/cell-04.txt": {
+      "bytes": 5695,
+      "sha256": "641a2e87a848921217968db35a4584949841e9de0243c94da89502739e5813b2"
+    },
+    "nb-receipts/cell-05.txt": {
+      "bytes": 2116,
+      "sha256": "7c8b94baf8e3b6b718d53539d1db15ea90f85947809ac7270eb37494ef39d2a4"
+    },
+    "nb-receipts/cell-06.txt": {
+      "bytes": 1490,
+      "sha256": "65521653e2e54c32e72b1d3dadb29c46862b0d2cefbda412e550934722d2088c"
+    },
+    "nb-receipts/cell-07.txt": {
+      "bytes": 1149,
+      "sha256": "e1004a20e7041a6cfdc7d376a4d7b5acdca6d25947d091438a558a59f69e9a75"
+    },
+    "nb-receipts/cell-08.txt": {
+      "bytes": 4012,
+      "sha256": "1fada91edc3513513130f9525fa5123910df2a23b67e3b4fa8fb4e66f583a08b"
+    }
+  },
+  "source_pins": {
+    "portal_lean": "62b661a95baa2dce6be9121d75d4449d302ca92179687154937375831fdeeeb1",
+    "notebook_interpreted_source": "62b661a95baa2dce6be9121d75d4449d302ca92179687154937375831fdeeeb1",
+    "kit_reconstructed": "3aa1dbf719e4d7325fa3a0197a20ad62eab96122009213a684dda27a47bf25ba",
+    "assembler": "7fb31ae1a26713500b6524faed797fa84a14e78c92a721cd88cbe8090f599c8f",
+    "notebook_driver": "ee6d35485015ddec91bd653a9612a887772df1140ae297cfec69892dddf46a97"
+  },
+  "checks": {
+    "essay_reassembly_byte_exact": true,
+    "portal_embedding_byte_exact": true,
+    "output_comparison": {
+      "method": "Lexical normalization of WL export whitespace, string escapes, Association shorthand and display coefficient multiplication; no evaluation",
+      "output_count": 8,
+      "equal": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "both_raw_checks": "PASS 37; ten headlines; standard axioms only",
+    "kit_diff": "one attribution docstring sentence only",
+    "stored_message_cells": 0,
+    "reported_handler_events": 15287,
+    "frontend_rendered_by_gpt": false,
+    "intel_lean_or_wolfram_rerun": false,
+    "local_python_replay": "reported only; raw replay not in packet",
+    "unpublished_kit_branch": "Local-reported 92aab4b; actual branch object not read"
+  },
+  "fresh_index": {
+    "status": "COMPLETE",
+    "completed_at": "2026-11-03T19:14:56.186736+00:00",
+    "kit": "c42f6e5133f61a47e99289fd4b6e0536fd8a0453",
+    "portal_updated": "2026-11-03T19:14:52Z",
+    "portal_entries": 119,
+    "open_prs": 38,
+    "changes": {
+      "added": 0,
+      "changed": 0,
+      "removed": 0
+    },
+    "index_digests": {
+      "portal.json": "fff01b667cfd2748c3e7ecfd38b23c5078c393296824054d79c4797479dfe31c",
+      "prs.json": "5bce659ddfc1b9ffc95eb0ecf58b85bcb2694e157e6408096fb1001e2d4b0c22",
+      "stamp.json": "01b43d8fa18dc5e27479a2347a8d902e0f8a5548811c2b66133a58702841aa2f",
+      "checked.json": "1bc863081bd04067ba271eccc119a99fe0a6dbf7cb45fc1b6efbc7d475052a04"
+    }
+  },
+  "carry": {
+    "entry": "L1479",
+    "commit": "dc8a1db2",
+    "status": "GC2594 PROVED hand/two-party within stated scope",
+    "source_sha256": "6ef030bba1ba0460a85dab499ffca68f889960ce96e67ab3ea0cbdbbc0e5bb18",
+    "raw_run": "Local-reported only; no GPT replay",
+    "count_correction": "two-tick reset loop repeat=4 has16 cases, not its64 label"
+  },
+  "next": "Local delivery; GPT CL706 complete locality/tree soundness read, public outcome read when supplied; independent alternative b476c1 full proof/variable comparison; no new run"
+}

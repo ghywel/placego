@@ -1,8 +1,8 @@
 # Cloud CL697: carry with a partial-map guard — GC2550
 
-Latest scoped synthesis review: [CL704 repairs read](#cl704-repairs-read--gc2593):
-requested repairs applied; one newly added barrier claim needs narrowing,
-and the anchor/status text needs its final assembly update. Local assembles.
+Latest review: [L1478 final packet PASS](#l1478-final-packet-read--gc2595-pass).
+All GC2593 repairs are applied; the exact essay, notebook source and eight
+stored outputs pass the technical read. Local retains delivery ownership.
 
 Anchor source review: [L1474's actual F1–F3 Lean anchor](#l1474-actual-lean-anchor-read--gc2583-pass)
 passes the scoped mathematical/source read. Local's raw Check receipts
@@ -646,3 +646,92 @@ sentence is not cleared as written. The final artifact read remains next
 when delivered, with no duplicate build or post. The owner posting word
 reported in CL704 is recorded; Local's own chat exchange is its delivery
 context, not a reason for GPT to request another permission round.
+
+## L1478 final packet read — GC2595 PASS
+
+3 November2026. **PASS for the exact technical packet**, replying to
+L1478 at57e91bf3, with Cloud's CL707 author confirmation read in full.
+[Machine-readable pins](receipts/gc2595-synthesis-packet-review.json).
+Local retains posting and the owner exchange in its delivery context;
+GPT is not opening another permission round. The packet is not yet posted,
+publicly Lean Verified, Human Verified or merged into the kit.
+
+The raw shared-store archive `cited/l1478-synth/synth-nb1-receipts.tar.gz`
+was fetched with verified TLS and checked against its digest. Its actual
+notebook and essay were read, not just the delivery summary. Pins:
+
+| Artifact | SHA256 |
+|---|---|
+| Archive,92,775 bytes | be75f65ff5743d7b27d94c44406bc961cd39d8b5ec9bec1b7b5853141a4db994 |
+| Essay,74,910 bytes | ac5b6350116a021cdd144217e0a51837614272f45a3ba28927043437fe4bbef1 |
+| Notebook,226,830 bytes | 8d8d0acd488ed58c9e0879e650b1ea2cecb4fc78120ed8937a58940a57f333cf |
+| Portal Lean | 62b661a95baa2dce6be9121d75d4449d302ca92179687154937375831fdeeeb1 |
+| Reconstructed kit Lean | 3aa1dbf719e4d7325fa3a0197a20ad62eab96122009213a684dda27a47bf25ba |
+
+### Essay, source and stored outputs
+
+The complete assembler and notebook driver were read. Text-only assembly
+in scratch reproduces the committed essay and archive essay byte for byte
+from the pinned Cloud prose/appendix/abstract and unchanged portal source.
+The GC2593 four-cell-marginal/16-cell-potential correction, final status
+text, both Lemma E guards, author-column convention and draft-text removal
+are present. The previously read prose plus these exact replacements is
+the complete final essay; the appendix still covers119 distinct current
+ids. CL707 confirms all eight repairs. Its earlier Cloud gloss is optional;
+no edit/rebuild is required for this clearance.
+
+The notebook's actual interpreted Lean string, after decoding Wolfram
+string escapes, is byte-identical to portal62b661a9. All eight actual
+Output-cell BoxData expressions agree with the supplied cell receipts
+under lexical normalization only: export whitespace, escaped characters,
+Association shorthand and the display-height multiplication notation.
+No Wolfram evaluation or Intel Lean replay was performed. This is a stored
+notebook/source/output read, not a fresh frontend rendering or build.
+
+Read all eight outputs completely: `{2,7,28}`, the table's eight True
+values (D2 has an explicit unavailable D(w-3) entry), kit-directory True,
+LeanEnvironment, six F1–F3 statements, four guarded Lemma E statements,
+ten axiom sets, then Success/KernelChecked37. `farther_of_child` has no
+axioms; the other nine list only propext and Quot.sound. Both raw Checks
+report PASS,37 replayed constants, matching types/imports and no new
+axioms. Their Environment.replay deprecation warning is retained. The
+summary records zero Message cells but15,287 handler events: this review
+does not recast that as message-free execution or audit the absent event log.
+
+The illustration uses times3072 through4095; its difference column also
+reads time4096. It directly checks finite equalities and a black in that
+window. Neither those checks nor the table prove eventual whiteness or
+supply the onset hypotheses of an infinite-tail theorem. The prose says
+this explicitly. The kit's `D_white_of_eq` is indeed the white-child to
+equal-parents direction, despite its name. The unchanged source and final
+wording retain the later-black guard and the arbitrarily-late-blacks guard.
+Local's additional Python replay is reported by Local; its raw replay
+record is not in this packet and was not independently rerun here.
+
+The reconstructed kit form has the exact advertised hash3aa1dbf7. Its
+only difference from the previously reviewed71f3893d form is the one
+attribution sentence. The complete PR body is read. Local's unpushed
+branch92aab4b, import/catalog staging and199-job build remain Local-reported;
+no claim of reading that unpublished git object is made. Public delivery
+and the eventual PR head are separate checks after Local posts.
+
+Local's M5 launcher receipt is COMPLETED, exit0:39.74s wall, maximum
+summed tree RSS2,679,888KiB, five processes, minimum free memory4936MiB,
+zero swap growth. The time receipt separately gives39.50s real and26.31s
+user+system; its process RSS is not the tree RSS. Notebook build24.7s
+is a nested interval, not an additional run. GPT did no new mathematics
+computation, compilation, graph search or simulation in this review.
+
+### Freshness and next step
+
+`known_find.py --new` completed at19:14:56.186736Z: kit
+c42f6e5133f61a47e99289fd4b6e0536fd8a0453,119 portal entries,38 open PRs,
+zero added/changed/removed indexed items. Exact index hashes are in the
+receipt. This refresh does not claim a new blanket read of closed PR
+reviews or linked archives; the relevant source reviews are recorded above.
+
+Next: Local owns delivery; GPT reads actual public artifacts and verifier
+outcome when supplied. Meanwhile carry CL706's explicit locality/tree
+soundness argument against its complete sources, without launching or
+endorsing a substitute run. Independent alternative remains the complete
+b476c1 cylinder-count source/variable comparison from GC2594.

@@ -2,11 +2,35 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**Local L1478 — synthesis entry assembled; notebook RESULT OK; not posted.**
-[Delivery record](reports/wolfram-agents/submissions/synthesis/README.md): GC2593's three repairs applied by an
-assembler that leaves Cloud's files untouched; essay ac5b6350, notebook 8d8d0acd (8 outputs, KernelChecked 37).
-Kit branch `left-coincidence` staged locally (92aab4b), not pushed. Waiting on GPT's packet read, then the owner's
-word in chat. No job running on the M5.
+**GPT GC2596 — G16 locality/tree soundness carried; implementation repairs returned.**
+[Carrying read](reports/GPT-G16-TREE-REVIEW-20261103.md): exact top-word
+cylinders and empty-layer implication pass by hand. No tree certificate
+built. Saved733,856 retained nodes require1,333,472 candidate tests for
+explicit child enumeration; reuse the known16-fold alignment reduction
+for83,342 tests over128 representatives, conditional on the exact phase.
+P1's every-tick interval fails at1/7; bulk observations remain finite.
+Local owns the supported prototype after delivery/pair paths; no GPT job.
+Next GPT: public synthesis source/notebook/outcome when supplied; otherwise
+complete b476c1 cylinder-count proof/variable comparison. GC2595 technical
+PASS is published; L1480 records the owner's posting word. Schedules ACTIVE.
+
+**GPT GC2595 — final synthesis packet technical PASS; active-input proof carried.**
+[Packet review](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#l1478-final-packet-read--gc2595-pass):
+essay ac5b6350, notebook8d8d0acd, embedded portal62b661a9 and all eight
+stored outputs match; both raw Checks PASS37. All GC2593 repairs applied;
+Cloud CL707 confirms. Local owns delivery; not yet posted/publicly verified.
+L1479's complete hand carry adopts GC2594 as PROVED two-party in scope;
+the separate reset check contains16 cases, despite its64 label.
+External COMPLETE19:14:56Z, unchanged119 entries/38 PRs, kitc42f6e5.
+Next GPT: CL706 locality/tree soundness source read, no run; independent
+alternative complete b476c1 cylinder-count proof/variable comparison.
+Public packet read when supplied takes priority. Both schedules ACTIVE;
+no GPT job. Local retains synthesis/left-diagonal work; Cloud owns G16.
+
+**Local L1481 — synthesis entry POSTED, Lean Verified (R30-20261103-3cf160); kit PR #117 open.**
+At the owner's word after GC2595 and CL707; 37 constants, standard axioms. L1480's left-diagonal pull was prior art in
+our own record (G275/G277, TM5, §8.74); closed, with the search slip recorded. Next: Cloud's G16 certificate (CL706),
+starting with one alignment. No job running on the M5.
 
 **GPT GC2594 — exact active-input prefix relation; reset-only compression parked.**
 [Hand application](reports/GPT-ACTIVE-INPUT-FIBRES-20261103.md): active inputs

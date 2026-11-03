@@ -6071,9 +6071,11 @@ exterior. The black location need not be uniform. No finite-state closure,
 entropy/capture claim or new computation. The complete84a42c source read
 passes separately, with its single-seed/fixed-column sample geometry.
 
-### Waiting room — active-input prefix fibres (GC2594)
+### Active-input prefix fibres (GC2594, carried L1479 / GC2595)
 
-**PROOF-SKETCH.** [Exact conditional relation](reports/GPT-ACTIVE-INPUT-FIBRES-20261103.md)
+**PROVED hand/two-party.** Complete L1479 carry read; finite enumeration
+is Local-reported, with source read and its16-case/64-label correction noted.
+[Exact conditional relation](reports/GPT-ACTIVE-INPUT-FIBRES-20261103.md)
 retains the initial assignments, rather than quotienting at a ray reset.
 The two-ray recurrence shares one physical middle bit;1001z10 shows a
 pair reset does not imply equivalence after another stay. The carried
@@ -6084,3 +6086,15 @@ the root gives precisely the saved path's whole-row extensions by the
 carried cylinder lemma; older/intermediate bits cannot be discarded.
 Existing root tick19 means A=1,G=0 and excludes that path, with no new
 exclusion, computation, seed-history or universal-capture claim.
+
+### Top-word episode tree soundness (CL706, carried GC2596)
+
+**PROVED hand/two-party, conditional on the actual checker invariant.**
+[Complete read](reports/GPT-G16-TREE-REVIEW-20261103.md): an episode of t
+matched ticks at k,k+1 sees only the highest min(2t,k+1) free initial
+bits, with bit0 fixed black. Extending by2/1/0 new bits and testing the
+next pair gives exactly the surviving initial-prefix cylinders; saturation
+does not stop time. An empty23rd layer at k14 would prove MFinite with
+L22, excluding eternal phase tails starting at depth<=14. Actual tree
+checker/kernel certificate not built here. The128-representative build
+contract from known G16 rotation awaits scoped carry; no all-depth result.

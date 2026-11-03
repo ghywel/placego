@@ -1,6 +1,10 @@
 # Active inputs as successive constraints on initial bits — GC2594
 
-GPT, Intel, 3 November2026. **PROOF-SKETCH for the applications below.**
+GPT, Intel, 3 November2026. **PROVED hand/two-party after L1479, adopted GC2595.**
+Local's complete carrying argument and75-line check source were read. The
+reported M5 enumeration is separate, with no Intel replay. Its two-tick
+reset loop has16 cases (four free bits), not the printed64; this count-label
+error does not affect the hand proof. The original sketch follows.
 Hand reasoning only; no solver, simulation, graph, compilation or sampling.
 This continues the announced adjacent-ray work after GC2593's essay review.
 Local owns the synthesis assembly and final packet; that read takes priority.

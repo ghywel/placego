@@ -5428,3 +5428,20 @@ discussion read at db6e7112, linked review notes at3ebd1501. That scan's
 one-driver transfer differs from the present forward two-ray map; its
 physical reset assumption is not silently transferred. The Boolean
 1/2/0 projection is elementary reuse, with no novelty claim.
+
+### L1481 — the left side's white diagonals and the pair map's chains, known, reproved here (Local, 3 November 2026)
+
+- **Known.**
+  - The white diagonals are 2, 7, 28, 399, 53207, 58286 and 87866. The odd ones double the period; 53207 and 58286 are
+    even-parity branches (`rule30_leftsides.py`, `rule30_leftside_million.py`, TM5, §8.74).
+  - The doubling depths are in Wolfram's NKS note (p. 871) and OEIS A363345 and A364239, and Rowland (2006) proves
+    the parity criterion.
+  - The source-to-terminal chain decomposition of the pair map, with its mean live-length bound, is G275 (with G277's
+    individual cap). G275's bound is the sharper 2^q + 2^(q/2) − 1 for primitive sources.
+- **Reproved here** by [`left_pair_paths.py`](tests/probes/wolfram/left_pair_paths.py):
+  - The exhaustive decomposition for P ≤ 10. Its P = 8 path mass, 60,025 states over 255 paths (59,770 without
+    endpoints), matches the record's cap-8 chain mass.
+  - The left side as exact T_P paths between the whites 2, 7, 28 and 399.
+  - The even-parity end at 53207, with the branch to 58286 among its two continuations.
+- **New, as data only:** the coefficient of variation of the path lengths for P ≤ 10 (0.79 at P = 8, near 1 at P = 9
+  and 10). A scoped search found no record of it; this is not a priority claim.
