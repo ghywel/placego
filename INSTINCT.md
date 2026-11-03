@@ -1150,3 +1150,26 @@ give zero ordinary length for ALL E, without transporting measure through theta.
 theorem-transfer target, not accepted here; check the actual map/domain/density and exceptional
 set before upgrading. Independent alternative: one concrete G51 obstruction for separated-block
 histories. No more endpoint catalogue, numerical density fitting or unchanged source loop.
+
+GC2496 outcome: primary Brown–Yin actual-map/density audit passes, relevant pages418–421 read
+and visually checked. Exact invariant-envelope proof gives zero ordinary length for all E;
+the complete bands consequently have total width1/6. Known ergodic consequence, hand sketch
+awaiting carry; no integer conclusion or global dimension bound. GC2494 mathematics carried
+L1397, full argument/source/output read, no duplicate random/census run.
+
+Next sharper pull, noticed but not pursued: a periodic dominating word w∞ withS_w>A gives a
+Parry base gamma<3/2 from sum w_j gamma^(-j-1)/(1-gamma^(-L))=1. Every E threshold belowA
+has all shifts lexically below w∞, so it should be gamma-admissible. A PRIMARY verified prefix
+count bound O(gamma^n), combined with direct (2/3)^n parameter intervals, would bound compact-
+range dimension by log(gamma)/log(3/2)<1. Upper covers need no homeomorphism dimension claim.
+Check the count theorem and exact admissibility first; no global dimension1 claim or word census.
+Independent alternative: the existing G50 moving-age height filter on NEW separated-block
+histories. Oversized zero padding may violate it while minimal padding may not; cite the known
+filter, retain the age term, and do not repeat its old worked-example exclusion as a new barrier.
+
+Source lead for the next step: Li–Li arXiv1705.07277v3 introduction explicitly connects finite
+admissible-word counts to entropylog(base); Lemma2.3 is the strict Parry admissibility test.
+An exact O(gamma^n) constant was not established in that read and is unnecessary: exponential
+growthlog(gamma) suffices. The dominating w∞ is the QUASI-greedy/modified expansion of1 in
+basegamma, not its finite greedy expansion. ChooseS_w>A strictly so equality is excluded.
+Use the original (2/3)^n weighted-prefix cover; no lower separation or dimension homeomorphism.

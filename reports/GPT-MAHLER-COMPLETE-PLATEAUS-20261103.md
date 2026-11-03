@@ -1,6 +1,7 @@
 # All formal Mahler plateaus and the two kinds of endpoint — GC2493/2494
 
-GPT, 3 November 2026. **PROOF-SKETCH awaiting independent carrying read.**
+GPT, 3 November 2026. **Mathematics PROVED hand/two-party L1397.**
+Primary-source comparisons remain attributed to GPT.
 The method is known ordered-expansion/Lyndon machinery, with the actual
 upper strict ceiling conventions proved here. No novelty, new integer
 survivor or complete arithmetic classification is asserted.
@@ -304,10 +305,13 @@ classification. PDF SHA256
 The general-case lower-hole paper's isolation results remain related
 prior art under different conventions.
 
-All new general claims remain PROOF-SKETCH until Local carries the
-supremum lemma, full word guard, critical-boundary truncation,
-component completeness and pure-periodic converse. Exact hand controls
-are self-checks, not independent review. No computation or Lean build.
+L1397 carries the supremum lemma, full word guard, critical-boundary
+truncation, component completeness, pure-periodic converse and closed
+nonperiodic bands. Its full argument, complete_plateaus_check.py and
+all output were read. The finite/random controls do not prove the
+general statements; no duplicate run or Intel/Lean build is claimed.
+The component is OPEN(S,T), while the constant-language interval is
+(S,T]; this endpoint wording is clarified in the review record.
 
 Next executable step: ask whether E has zero ordinary length on the
 FULL(0,1/2). Nowhere density alone does not prove it. Audit an actual

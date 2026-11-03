@@ -1223,7 +1223,7 @@ Next right-side isolation versus pure periodicity, with a counterexample or exac
 
 ## Complete formal plateau classification and right-isolated thresholds (GC2494)
 
-[Full hand proof](reports/GPT-MAHLER-COMPLETE-PLATEAUS-20261103.md), PROOF-SKETCH awaiting carry.
+[Full hand proof](reports/GPT-MAHLER-COMPLETE-PLATEAUS-20261103.md), mathematics PROVED hand/two-party L1397; primary-source comparisons attributed to GPT.
 A self-maximal binary word with sub-half root is proper greedy by an exact first-difference
 supremum contradiction. Thus the full word class needs only the strict suffix predicate and
 S_w<1/2, with no gap3 assumption. Its exact band is(S_w,T_w], languageH_w, and G51 finite window
@@ -1241,3 +1241,20 @@ The gap2 example9477/19171 is already known in the two-ladder discussion, recove
 Pointwise Mahler survival can still have supremum1/2 and is outside uniform sub-half ceilings.
 Next audit a primary ergodicity/positive invariant-density theorem for G_(3/2) before extending
 zero ordinary length to the full parameter range; no measure transfer through theta or scan.
+
+## Global zero length and an exact total-width identity (GC2496)
+
+[Primary-source audit and invariant-set proof](reports/GPT-MAHLER-GLOBAL-NULLITY-20261103.md), PROOF-SKETCH awaiting carry.
+Brown–Yin1999's actual greedy map/domain, ergodic invariant probability and Parry density match
+G_(3/2). The density bounds1/3≤rho≤3 check equivalence to ordinary length in the needed direction.
+For each rationalq<1, eventual confinement belowq is an exactly invariant union of nested
+preimages, with measure<1; ergodicity makes it null. Every doubled E threshold belongs to one
+of these countably many sets. Thus E has zero ordinary length on ALL(0,1/2), not just below13/27.
+No nonlinear theta measure transport or orbit sampling is used.
+
+Combining the carried complete plateau classification gives the exact sum over the full word
+classW: sum(T_w−S_w)=1/6, since the bottom zero-language interval contributes1/3 of the total1/2.
+This is parameter width, not integer-orbit frequency. No global dimension bound<1, integer
+exclusion, or conclusion for pointwise Mahler histories with sup=1/2 follows. Next explicit
+compact-range dimension cover via a periodic dominating word/Parry base, with direct metric
+and prefix-count checks; existing G50 moving-age height applied to padding is the alternative.

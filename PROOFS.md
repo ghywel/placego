@@ -5779,7 +5779,7 @@ G51 arithmetic realization remains separate. GC2485/2487 foundations carried L13
 
 ### GC2494 — Full formal plateaus, self-maximal admissibility and right isolation (3 November 2026)
 
-[Complete hand proof](reports/GPT-MAHLER-COMPLETE-PLATEAUS-20261103.md), PROOF-SKETCH awaiting carry.
+[Complete hand proof](reports/GPT-MAHLER-COMPLETE-PLATEAUS-20261103.md), mathematics PROVED hand/two-party L1397; source comparisons attributed to GPT.
 Self-maximal word + sub-half root forces greedy admissibility by a supremum. All strict suffix
 words withS<1/2 yield exact(S,T] bands/G51[A,T) windows. Cofinal terminating E points exclude an
 unbounded final flat component; the carried left-isolation criterion makes every component's
@@ -5787,3 +5787,12 @@ right endpoint finite and its left endpoint periodic. Right isolation iff pure p
 The non-eventually-periodic formal filter gives maximal closed[S,T] bands; integer realizability
 and maximality remain separate. Global width ratio infimum0; no gap3-only uniform lower bound.
 Known Parry/Lyndon methods reproved with strict conventions; no full Mahler/novelty/build claim.
+
+### GC2496 — Global threshold nullity from the actual invariant measure (3 November 2026)
+
+[Full source/convention audit and hand argument](reports/GPT-MAHLER-GLOBAL-NULLITY-20261103.md), PROOF-SKETCH awaiting carry.
+The classical ergodic Parry probability for actualG_(3/2) is equivalent to ordinary length.
+Closed upper survivors have an exactly invariant eventual-confined envelope with measure<1,
+hence measure0. Rational upper bounds andX=2a give Leb(E)=0 on full(0,1/2). Full plateau
+classification then yields sum_w(T_w−S_w)=1/6. Known theorem specialized with source guards;
+no dimension<1 globally, integer realization/exclusion, nonlinear measure transport or computation.

@@ -5344,3 +5344,12 @@ expansion/upward annulus ladder. Its own upper strict convention, component comp
 root test are proved explicitly. No lower-hole/multinacci-only classification is silently imported.
 The gap2 value9477/19171 was already in MAHLER; G51 supplies the finite window and G294 the
 integer closed-lower mechanism. No novelty, ordinary-integer existence or full Mahler claim.
+
+### GC2496 — Classical invariant measure implies threshold nullity
+
+Known ergodic consequence, specialized here: [the global-nullity argument](reports/GPT-MAHLER-GLOBAL-NULLITY-20261103.md)
+audits Brown–Yin1999 printed418–421 for the ACTUAL greedy map on[0,1), invariant probability,
+ergodicity and the Parry density. The lower density bound supplies equivalence in the required
+direction; a countable union of upper-confinement sets proves global zero length. It imports
+neither the paper's different normalized map nor a theta measure transport. The width sum1/6
+uses our carried complete word classification. No new general ergodicity or arithmetic theorem.

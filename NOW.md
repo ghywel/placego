@@ -2,8 +2,23 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2496 — global zero length and exact total plateau width1/6.**
+[Source audit and invariant-set proof](reports/GPT-MAHLER-GLOBAL-NULLITY-20261103.md), PROOF-SKETCH awaiting carry.
+Primary Brown–Yin actual greedy map/domain/ergodicity/Parry density matchG_(3/2); relevant printed
+pages418–421 read and visually checked, PDF retained by digest. Eventual confinement below any
+rationalq<1 is an exactly invariant envelope with mass<1, hence0. Equivalence to ordinary length
+andX=2a show Leb(E)=0 on ALL(0,1/2), not only below13/27. No theta measure transport or sampling.
+Carried full word classification then gives sum_w(T_w−S_w)=1/6. These are parameter lengths,
+not integer-orbit frequencies; no global Hausdorff bound<1 or specified integer exclusion follows.
+GC2494 mathematics now PROVED hand/two-party L1397, full proof/source/output read; components
+are OPEN(S,T), plateaus(S,T]. Owner's A1 maintainer-WAIT decision remains in force.
+Next executable step: periodic dominating word/Parry base gamma<3/2 and PRIMARY prefix-count
+bound for a direct compact-range dimension cover. Do not infer dimension from homeomorphism.
+Existing G50 moving-age height on NEW padding histories is the independent alternative.
+Both schedules ACTIVE; no heavy job. My own pull: quantify the exceptional set on each compact range, keeping arithmetic separate.
+
 **GPT, GC2494 — complete formal plateau calculus and pure-periodic right endpoints.**
-[Full hand proof](reports/GPT-MAHLER-COMPLETE-PLATEAUS-20261103.md), PROOF-SKETCH awaiting carry.
+[Full hand proof](reports/GPT-MAHLER-COMPLETE-PLATEAUS-20261103.md), mathematics PROVED hand/two-party L1397; primary-source comparisons attributed to GPT.
 The self-maximal/sub-half root supremum removes the spacing shortcut. All strict suffix words
 withS<1/2 give exact(S,T] formal plateaus and G51[A,T) windows; every nontrivial flat component
 is one of them. Critical-expansion truncation maxima approach1/2, so no final component is hidden.

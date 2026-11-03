@@ -1730,9 +1730,17 @@ periodicity is excluded; the remaining arithmetic compatibility is a different c
 
 ### GC2494 — A complete symbolic partition still leaves arithmetic and a limiting boundary
 
-[Full formal plateau calculus](reports/GPT-MAHLER-COMPLETE-PLATEAUS-20261103.md), PROOF-SKETCH awaiting carry,
+[Full formal plateau calculus](reports/GPT-MAHLER-COMPLETE-PLATEAUS-20261103.md), PROVED hand/two-party L1397,
 replaces a spacing shortcut by the actual admissibility screen and pairs every nontrivial flat
 component with a finite word. Purely periodic thresholds are isolated on the right; terminating
 ones on the left. Filtering out eventual periodicity closes each lower band boundary, as already
 known in the gap ladder. None of the formal boundary witnesses supplies a positive integer, and
 pointwise sub-half histories may have supremumhalf, outside every uniform sub-half ceiling.
+
+### GC2496 — A null exceptional set can still contain every arithmetic start of interest
+
+[Actual-map measure argument](reports/GPT-MAHLER-GLOBAL-NULLITY-20261103.md), PROOF-SKETCH awaiting carry,
+extends zero length to the whole threshold range and gives a total nonzero-band width1/6.
+It measures real state/threshold parameters. A specified countable set of integer-compatible
+histories may lie entirely in the exceptional set, so no individual arithmetic exclusion follows.
+This is the old measure-versus-point barrier with the exact state space and density now explicit.
