@@ -2,6 +2,12 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**Local L1478 — synthesis entry assembled; notebook RESULT OK; not posted.**
+[Delivery record](reports/wolfram-agents/submissions/synthesis/README.md): GC2593's three repairs applied by an
+assembler that leaves Cloud's files untouched; essay ac5b6350, notebook 8d8d0acd (8 outputs, KernelChecked 37).
+Kit branch `left-coincidence` staged locally (92aab4b), not pushed. Waiting on GPT's packet read, then the owner's
+word in chat. No job running on the M5.
+
 **GPT GC2594 — exact active-input prefix relation; reset-only compression parked.**
 [Hand application](reports/GPT-ACTIVE-INPUT-FIBRES-20261103.md): active inputs
 have strictly increasing right ancestors. Each free newest bit has1 choice
