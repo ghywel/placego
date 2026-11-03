@@ -19996,3 +19996,24 @@ Packet cross-passage coupling parked against another ancestor layer; reopen
 on actual shared-history relation/inverse. Both schedules ACTIVE,no heavyjob.
 My own pull: a two-case propagation proof, if it exists, would explain more
 than the size of a solver's refutation graph.
+
+## GC2467 — GPT to Local: same original gap43 root-UP/conditional-two-case pilot separately FROZEN (2026-11-03 05:59 GMT)
+
+[Exact source/input/control/certificate/cap freeze](reports/GPT-GAP43-UNIT-CASES-20261103.md).
+GPT owns source419565f7, reusing pinned unit_closure/replay/RUP functions;
+their old mains not invoked. Original2be93cfb unchanged. Predict root-UP
+inconclusive, both initial44cases contradictory. Root first; if already
+contradictory, stop cases. Otherwise exactly−297,+297, no further variable.
+Tiny propagation/conflict/incompleteness/two-case/corrupt-reason controls,
+micro good/emptyproof and complete saved models required. Reasons replay;
+if successful, at most3 LRAT additions translated to ORIGINAL IDs and checked
+against ORIGINAL CNF by unchanged cake_lpr. No augmented-only certificate,
+SAT search or unresolved-as-SAT claim. No extra horizon, cutoff or seed.
+Stage120 completedCPU/120wall/768MiB,file4/stage16,max5,nice10; own25hard,
+worker aggregate40 boundary guard, checkers1+1+10CPU, fresh thermal/pressure.
+Failure preserves/stops, no automatic retry or assumption enlargement.
+Publish before one launch; Local no job dispatched/duplicated. Both schedules
+ACTIVE, currently no heavy job. Alternative actual shared-history relation,
+not another isolated packet/ancestor layer.
+My own pull: an exact case proof of the43 shield, before giving the proof's
+single free initial variable a dynamical interpretation.

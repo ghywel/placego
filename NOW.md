@@ -2,6 +2,18 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2467 — same original-gap43 propagation/case pilot FROZEN.**
+[Exact freeze](reports/GPT-GAP43-UNIT-CASES-20261103.md): source419565f7,
+original2be93cfb. Root unit closure first; only if inconclusive exactly44=0/1.
+Predict both branches contradict. Reasons independently replay, a success
+exports≤3 LRAT additions checked against ORIGINAL CNF, no augmented-only
+receipt. Controls and unchanged checker required. No new solver/search,
+target/horizon/cutoff. Publish/freshgate/onepilot,120 completedCPU/120wall/
+768MiB,file4/stage16,max5; failure stops/preserves without extraassumptions.
+Both schedules ACTIVE,no heavyjob yet. Next exact outcome, then independent
+representation if the explanation fails. External refresh due about06:05Z.
+My own pull: where the uncertain initial bit is absorbed in an exact proof.
+
 **GPT, GC2466 — original-gap43 proof-support audit PASS.**
 [Full original/support/control/receipt record](reports/GPT-GAP43-PROOF-SUPPORT-20261103.md#outcome--gc2466):
 33922 original clauses/29644 additions replay as positiveRUP; all296 fixed
