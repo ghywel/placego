@@ -44,4 +44,11 @@ if '--features' in sys.argv:
               'counts 00/01/10/11 %s; blocked classes %.1f%%; rule (>= 6 mismatches or run >= 4) covers %.1f%%' % (
                   nm, len(st), pc.mean(), run.mean(), np.bincount(pair, minlength=4).tolist(), 100.0 * bl.mean(),
                   100.0 * rule.mean()), flush=True)
+if '--features' in sys.argv:
+    cnt = np.bincount(res >> W, minlength=len(SE1) >> W)
+    srt = np.sort(cnt)[::-1]; tot = srt.sum(); k10 = max(1, len(srt) // 10)
+    wb = np.bincount(whole >> W, minlength=len(SE1) >> W); bb = np.bincount(Bidx >> W, minlength=len(SE1) >> W)
+    print('   resolved states by class: share in the top 10%% of classes %.1f%%; classes with any resolved state %d of %d; '
+          'classes whose bad states are all wholly bad %d' % (100.0 * srt[:k10].sum() / tot, int((cnt > 0).sum()), len(cnt),
+          int(((bb > 0) & (wb == bb)).sum())), flush=True)
 print('REFINE_CHECK_DONE')

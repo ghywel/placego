@@ -6089,3 +6089,15 @@ Compare simple features of the 8-cell window: the number of mismatches, the run 
   80% of wholly bad states and at most 20% of resolved ones. Lean 35%.
 - **Counterfactual.** If none of these features separates the two groups, "bad at every W" is not a local density
   property, and an explicit description of the null set needs something else.
+
+**Results (COMPUTED; [output](../tests/probes/refine_check.out) after this section is filed).** No separation.
+- Wholly bad windows: 4.01 mismatches on average, run next to the front 1.01, pairs uniform, 50.8% at blocked classes,
+  rule coverage 16.5%.
+- Resolved windows: 3.97, 0.93, pairs uniform, 40.8% at blocked classes, rule coverage 15.5%.
+- **Q1, Q2 and Q3 are all REFUTED.** Both groups look like uniformly random windows. Q2 even points the other way:
+  resolved states sit at blocked classes less often.
+- So **badness at every W is not a local density property of the window**, and the counterfactual holds.
+
+**Follow-up prediction (written before the per-class run).** **Q4.** The resolved states concentrate by class: at least
+50% of them lie in at most 10% of the 1,024 classes. If so, the background's phase, not the window, decides which bad
+states a longer window resolves. Lean 50%.
