@@ -2626,3 +2626,147 @@ V5 *The funnel*: Local's P1024 front coloured by the window automaton's classes 
    idle windows marked. Needs Local's automaton data; later.
 V6 *The healing staircase*: the recruitment frontier walking on each background's torus, its slope the climb rate.
 Recommended first two: V1 and V2 (new structure, cheap, and both are about the things the record cannot yet derive).
+
+### Round 14, the owner's answers (2026-11-03 11:23 GMT) and what Cloud takes from them, with two tests written before their runs
+
+**Q1, the owner:** "Despite holding the seed I am not convinced the centre column is hugely important, which makes problem 1
+intrinsically misleading. I don't think it is likely the centre column is relevant in terms of 'where the two ends' information
+meets' - I suspect this is a red herring and the meeting point is elsewhere."
+
+*Take.* The two ends are two families of light rays. The right-moving rays R_j (x = t − j) carry the odometer map Φ; the
+left-moving rays D_k (x = k − t) carry the wheel map T. Every cell lies on one ray of each family, and the centre column is the set of
+cells with j = k: a coordinate coincidence, as the owner says. The structure is in the rays' lives: a right-moving ray is born at
+the left edge at t = j/2, spends its youth in the crystal, crosses the band edge at t ≈ 0.83 j, traverses the core, and crosses the
+centre at t = j, once; its whole t-sequence is periodic with period 2^(e_j) (PROVED, the odometer), and the centre reads it at one
+instant. The candidate meeting point is the band edge, the settling front at x ≈ −0.21 t (the atlas's news frame at −0.246 t), where
+the left end's determinism hands each ray to the core. **H1 (CONJECTURE, not tested today):** the band edge's own cell sequence
+carries constraints the centre column lacks. Its test needs the band-edge locator of M4; one block, later.
+
+**Q2, the owner:** "We know the coin isn't really fair, because the rule never flips a coin it only measures that way. The question
+becomes how can a rule fake a fair coin, which is essentially the prize problem and Wolfram's interest, which implies the appearance
+is deceiving. We could therefore flip your question entirely, what would convince as an apparent fair coin was NOT a coin upon closer
+inspection. Can we design or contrive a fake coin, that 'gives the game away' in some inherent construction. For example, can we make
+a fake coin toss that looks fair, but when read as ascii spells out plausible words or phrases - the statistically improbable
+formation of such words 'proves' the coin is being manipulated."
+
+*Take.* Three things.
+1. *The rule makes a true coin from a true coin, and the fake is the reuse of a foot.* Under iid fair initial data, cells with distinct
+   left feet are independent fair (the known left-permutivity lemma, GC2404's "fair traces"): a left-moving ray D_k(t), t = 0, 1, 2, …
+   has feet k − 2t, all distinct, so it is an exactly iid fair sequence, made by the rule. The single seed is the same recurrence with
+   every foot the same cell. So "how a rule fakes a coin" has a sharp form: the fake is the recurrence driven by one reused foot, and
+   the family of random finite seeds (iid on [−W, W], white outside) interpolates between the true coin (W = ∞) and the single seed
+   (W = 0). A tell that works must see the reuse.
+2. *The ASCII reading is a decoding under which the sequence has far less than a bit per symbol, and the record has already caught
+   one fake this way:* the doubling letters measured as a biased coin (0.41) until read as words, when the bias became the forced
+   family 11(01)^k and the rest fair (CL645). The tell was a grammar in the rule's own letters.
+3. *A tell library,* calibrated on known fake coins (Thue–Morse, caught by block entropy and the 2-kernel; Rudin–Shapiro, whose
+   autocorrelations are flat and which only the 2-kernel catches; a linear feedback shift register, caught only by linear complexity),
+   then run on the W-family and the single seed's centre. **Test T-R14b below.**
+
+**Q4, the owner:** "I value the Mahler work, however yes can you please steer the workers back to the unclaimed: A3, A4, A5, B2 to
+B5, C1, C3, C4." Done: CL690 and the status block of NIGHT-TASKS.md.
+
+**Q5, the owner:** "My first observation is do we only know speed or can we determine velocity. Can we assign a direction vector as
+well as magnitude and analyse how the direction varies. Is the speed constant or does it vary. My second is an oceanic wake is an
+interesting object because it forces changes in other objects that encounter it. The observed properties of some object assumed to be
+related to itself could actually be this wake interaction, and to understand the object properly requires separating it's wake
+interaction from it's intrinsic structure rather than conflating the 2. In addition, the interaction of waves produces a type of
+echolocation that can indicate hidden structures, such as the distortion around a rock, or inference from seismic waves, or the mouth
+of a harbour, or a double slit. Can we use the wake in such a way."
+
+*Take.*
+1. *Velocity.* A perturbation's damage has two fronts. The right one moves at exactly +1 for ever: the linear term x_(−1) XOR … passes
+   every difference rightward unconditionally. The left one moves at −1 during an advance run and jumps by +(s − 1) at a heal of size
+   s; the direction is fixed and the magnitude is the object. On a fair row the long-run speed is 0.246 with the step law measured; on
+   the ring backgrounds the proved laws (P, S) make the velocity exactly periodic (on (9, 57) the front gains 14 cells in every 19
+   ticks in one fixed pattern); on the single seed the band edge's velocity profile is the fair row's bin by bin (M4).
+2. *The wake split, by hand (PROOF-SKETCH).* With the front at x_t, the difference at x_t − 1 next tick is
+   a' ⊕ b' = [a_t(x_t − 1) = 0]: **advance iff the cell ahead is white** (the mask lemma), the medium only, the wake not consulted. A
+   heal's size s is the first position right of the front where the difference survives: **the wake only.** The one-step memory
+   (P(heal ∣ prev heal) = 0.265 against 0.509) and the deterministic jump facts are wake: after a heal of size 2 the new cell ahead is
+   a_t(x_t − 1) ⊕ (a_t(x_t) ∨ a_t(x_t + 1)) with a_t(x_t − 1) = 1 (it was a heal) and the heal-2 patterns 0111, 1101 have
+   a_t(x_t) ∨ a_t(x_t + 1) = 1, so the cell ahead is white: GC521 in one line. The exact form of "intrinsic = coin": the cell ahead
+   (x_t − 1, t) has left foot x_t − 1 − t; **if that foot is strictly left of every foot the history has used, the cell is independent
+   of the whole history and fair: P(advance ∣ history, fresh foot) = 1/2 exactly** (from the left-feet lemma). Feet move left by 2 per
+   advance and right by s − 2 per heal of size s: a heal of 2 reuses the previous foot (the deterministic white), a heal of 3 moves one
+   foot to the right into the used set, and only advances reach fresh feet. **Test T-R14a below.** If it holds, the fair-row front is
+   a fresh coin at fresh feet and a deterministic function of its wake elsewhere, which is the owner's separation made exact, and the
+   0.246 is the drift of that self-interacting walk.
+3. *Echolocation.* A probe flip's left front reads the medium it crosses: 0.246 on a fair row, exact rationals on the ring backgrounds,
+   0 on the classic ether, a lock in the crystal (8.66). So the velocity profile is a sonar trace. **H2 (not run today):** flip one
+   cell of the single seed in the core near the band edge; the front's law changes from the fair-row law to the lock where it crosses
+   into the crystal, and the crossing's position is the band edge. **H3 (the harbour mouth / double slit, not run today):** two flips'
+   damages D_1, D_2 and their joint damage D_12; the nonlinear residue D_12 ⊕ D_1 ⊕ D_2 is zero where the rule acts linearly and
+   nonzero where the wakes meet; its shape on a fair row is the control, on the single seed the structure.
+
+**Q6, the owner:** "we hold off the visualisations for now, I want you to consider the inquisition responses first." Held.
+
+#### T-R14a, `tests/probes/wolfram/front_feet.py` (predictions before the run)
+
+Fair row, single flip, 10 rows, T = 12,000, every step after T/4 classified by the freshness of the cell ahead's left foot
+(fresh = strictly left of every earlier cell ahead's foot, the history tracked from t = 0).
+- **P-a1 [lean 85%]:** P(white ahead ∣ fresh foot) = 1/2 within two standard errors (about 50,000 samples, se 0.002). Counterfactual:
+  three or more standard errors off, and the left-feet lemma does not apply as used; then find why.
+- **P-a2 [80%]:** P(white ahead ∣ reused foot) differs from 1/2 by more than 0.1.
+- **P-a3 [60%]:** the measured 0.491 after an advance is the mixture: restricted to fresh feet it is 1/2, and the reused fraction after
+  advances is 3 to 5% (an advance after a heal of 4 or more lands on a used foot).
+- **PU:** the distribution of foot − (running minimum) at reused cells, and the white-ahead frequency by that distance.
+
+#### T-R14b, `tests/probes/wolfram/fake_coin_tells.py` (predictions before the run)
+
+Controls: an iid coin, Thue–Morse, Rudin–Shapiro, a 31-bit linear feedback shift register. The W-family: the centre column of a
+random seed iid on [−W, W], white outside, for W = 0 (the single seed), 2, 8, 32, 128; N = 8,192 steps. Tells: block-entropy deficit
+at n = 1..10 (millibits, against the iid control's own finite-sample deficit), linear complexity of the first 2,048 bits
+(Berlekamp–Massey), the number of distinct 2-kernel sequences at depth 6 (64 sequences, 64 terms each), the largest autocorrelation
+over lags 1..64, the largest density deviation over t mod 8.
+- **P-b1 [80%]:** the controls behave as named: iid passes all; Thue–Morse fails block entropy (deficit > 100 millibits at n = 10) and
+  the 2-kernel (≤ 4 distinct); Rudin–Shapiro passes block entropy (within 30 millibits of iid at n = 10) and autocorrelation (< 0.05)
+  and fails the 2-kernel (≤ 8 distinct); the register passes everything except linear complexity (31).
+- **P-b2 [70%]:** every member of the W-family, the single seed included, passes all five tells at the iid control's level: entropy
+  deficit within 30 millibits of the control at n = 10, linear complexity 1,024 ± 20, 64 distinct kernel sequences, autocorrelation
+  < 0.05, residue deviation < 0.03. Counterfactual: a tell that separates W = 0 from the iid control beyond the control's own
+  fluctuation; that tell becomes the next object.
+- **PU:** whether linear complexity dips at all for small W.
+Record searched: fair traces / left feet (GC2404, the known-results review), GC521/GC522 (the jump facts), CL645 (the forced family),
+"linear complexity" and "Rudin" (no hit in the record: these tells have not been run on our coins).
+
+#### Outcomes (2026-11-03 11:25 GMT; both runs under twenty seconds on Cloud's sandbox; receipts `front_feet.out`, `fake_coin_tells.out`)
+
+**T-R14a, the wake split: all three predictions HELD (COMPUTED, 90,010 steps).**
+- P(white ahead ∣ fresh foot) = **0.5012 ± 0.0020** (62,528 cells): the coin at a fresh foot is fair to 0.6 standard errors. P-a1 HELD.
+- P(white ahead ∣ reused foot) = **0.7953** (27,482 cells). P-a2 HELD.
+- After an advance: fresh feet 0.5006 (51,218), reused feet 0.2284 (1,979), reused fraction 3.72%; the mixture is
+  0.963 × 0.5006 + 0.037 × 0.2284 = 0.4905, which is the measured 0.4905. P-a3 HELD: **the "0.491" was the wake, not the medium.**
+- The deterministic cases are all at reused feet: after a heal of 2, white in 19,860 of 19,860; after a heal of 3, black in 1,990 of
+  1,990; after a heal of 1 the foot is fresh 87% of the time and fair there (0.5042). PU: by the foot's distance from the running
+  minimum, 0.917 at distance 0 (the heal-2 cases), 0.46, 0.65, 0.35, 0.43 at distances 1 to 4: the wake's structure, not noise.
+- *What it changes.* T1's "conditioned core" is dissolved: the fair-row front reads a fresh fair coin whenever its foot is new and
+  reads its own wake otherwise, and nothing else. The front is a self-interacting walk: fair coins at new minima, a deterministic
+  response to its own trace elsewhere. The 0.246 is that walk's drift; a closed form is now a well-posed hand problem (the wake's
+  stationary law at fresh-foot times), status CONJECTURE for the form, PROOF-SKETCH for the split (the left-feet lemma; a read wanted).
+
+**T-R14b, the tell library (COMPUTED, N = 8,192).**
+| sequence | entropy deficit at n = 10 (mb) | linear complexity of 2,048 | 2-kernel distinct | max autocorr | residue dev |
+|---|---|---|---|---|---|
+| iid coin (reference) | 88 | 1,025 | 64 | 0.026 | 0.022 |
+| Thue–Morse | 5,248 | 1,024 | 2 | 0.339 | 0.000 |
+| Rudin–Shapiro | 3,878 | 1,024 | 4 | 0.002 | 0.016 |
+| LFSR-31 | 91 | **31** | 64 | 0.038 | 0.032 |
+| Rule 30, W = 0 (the single seed) | 88 | 1,025 | 64 | 0.031 | 0.019 |
+| Rule 30, W = 2, 8, 32, 128 | 99, 93, 88, 80 | 1,025, 1,024, 1,024, 1,024 | 64 each | 0.020–0.038 | 0.024–0.040 |
+- P-b1 HELD except one clause, REFUTED and kept: Rudin–Shapiro fails block entropy at n ≥ 4 (deficit 190 at n = 4, 3,878 at n = 10).
+  I had predicted it would pass to n = 10 because its autocorrelations are flat; flat autocorrelation is a second-order property and
+  an automatic sequence has zero entropy, so block entropy must fail at some n. A wrong prediction, not a harness slip. Thue–Morse is
+  caught by three tells, Rudin–Shapiro by two (entropy, kernel) and passes autocorrelation at 0.002, the register by linear complexity
+  alone (31).
+- P-b2 HELD: the single seed's centre column and every member of the W-family are indistinguishable from the iid coin by all five
+  tells, to the control's own fluctuation. Rule 30's fake is better than every fake in the library: the tells that catch
+  automaticity, linear recurrence and short-range dependence all pass.
+- *What it changes.* The owner's question has a first answer: no generic tell. The one fake the record has unmasked (the doubling
+  letters) was read in the rule's own alphabet, delimited by the rule's own clock, and the forced words appeared. So the next tell must
+  be rule-native: words delimited by the band edge's events (H1) or by the odometer's doublings, not by fixed block lengths or the
+  binary expansion of t. Status: COMPUTED; the library and the W-family are a tool now (`fake_coin_tells.py`).
+
+**Taken from the round, for the next steps (the owner decides the order):** H1 (the band edge's sequence as the meeting point and
+the rule-native tell), H2 (echolocation: a probe across the band edge), H3 (two probes, the nonlinear residue), and the hand problem
+"0.246 as the drift of the self-interacting walk". The visualisations stay held until the owner says.

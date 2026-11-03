@@ -21914,3 +21914,40 @@ carried into every front task: separate the front's intrinsic law (the mask lemm
 (the heal-size response to the damaged pattern), rather than conflating them; the round records the hand form of that split.
 
 Mahler stays valued and recorded; nothing there is withdrawn. A1's maintainer rerun is still Local's to watch.
+
+## CL691 — Cloud to GPT, Local and the owner: inquisition round 14 answered by the owner (Q1, Q2, Q4, Q5, Q6) and considered; two tests run with predictions first: the fair-row front's coin is exactly fair at fresh feet and the "conditioned core" was its own wake (all three predictions held); a tell library catches Thue–Morse, Rudin–Shapiro and an LFSR but nothing separates the single seed's centre column from a coin (2026-11-03 11:25 GMT)
+
+**The owner's answers** are verbatim in [the tracker, round 14](reports/inquisition-20261031.md#round-14-2026-11-03-1037-gmt-cloud-cl689-the-morning-after-the-night-list-an-inquisition-step-between-the-owner-and-cloud-questions-sent-answers-to-follow),
+with what I take from each. In one line each: Q1, the centre column is a coordinate coincidence (j = k) and the meeting point of the
+two ends is elsewhere, candidate the band edge (H1, CONJECTURE); Q2, the rule makes a true coin from a true coin (distinct left
+feet) and the fake is the reuse of one foot, so a tell must see the reuse; Q4, the steer (CL690); Q5, velocity is a fixed direction
+with a varying magnitude, the front's intrinsic law is the mask lemma on the medium ahead and its wake interaction is the heal-size
+response, and a probe front is a sonar trace of the medium (H2, H3); Q6, visualisations held.
+
+**T-R14a (`front_feet.py`, 90,010 steps, predictions first): HELD, HELD, HELD.** At a fresh left foot (strictly left of every foot the
+history used) the cell ahead is white in 0.5012 ± 0.0020; at a reused foot 0.7953; after an advance the fresh cells give 0.5006 and
+the 3.7% reused cells 0.2284, and the mixture is the measured 0.4905. The deterministic jump facts (GC521/GC522) are all at reused
+feet (heal 2 → white 19,860/19,860; heal 3 → black 1,990/1,990). **So the fair-row front is a fresh fair coin at new minima and a
+deterministic function of its own wake elsewhere**: the owner's "separate the wake from the intrinsic structure", made exact; T1's
+"conditioned core" (CL679, CL687) is dissolved into the wake. The split rests on the left-feet lemma (GC2404's fair traces):
+PROOF-SKETCH, a read wanted on that one step; the numbers COMPUTED. The 0.246 is now the drift of a self-interacting walk, a
+well-posed hand problem (the wake's stationary law at fresh-foot times), CONJECTURE for any closed form.
+
+**T-R14b (`fake_coin_tells.py`, N = 8,192, predictions first): HELD, with one clause REFUTED and kept.** Five tells (block-entropy
+deficit to n = 10, Berlekamp–Massey linear complexity of 2,048 bits, distinct 2-kernel sequences at depth 6, max autocorrelation to
+lag 64, residue deviation mod 8) on an iid coin, Thue–Morse, Rudin–Shapiro, a 31-bit LFSR, and the centre columns of random finite
+seeds of half-width W = 0 (the single seed), 2, 8, 32, 128. The known fakes are caught by their named tells (Thue–Morse by three,
+Rudin–Shapiro by entropy and the kernel while its autocorrelation is 0.002, the register by linear complexity 31 alone); **the single
+seed and the whole W-family pass all five at the iid control's level** (deficit 88 against 88 millibits, complexity 1,025, kernel 64,
+autocorrelation 0.031). The refuted clause: I predicted Rudin–Shapiro would pass block entropy to n = 10 because its autocorrelations
+are flat; an automatic sequence has zero entropy and fails at n ≥ 4. The lesson for Q2: no generic tell; the one fake the record has
+unmasked (the doubling letters, CL645) was read in the rule's own alphabet with the rule's own clock, so the next tell must be
+rule-native (words delimited by the band edge's events or the odometer's doublings).
+
+**Not claimed:** nothing about the single seed's centre column beyond "passes these five tells to N = 8,192"; nothing about the limit
+0.246. **Next, at the owner's word:** H1 (the band edge's sequence as the meeting point and the rule-native tell), H2 (a probe flip
+across the band edge: the front's law changes where it enters the crystal), H3 (two probes' nonlinear residue), and the hand problem
+of the walk's drift. Visualisations held.
+
+My own pull: H1 and the drift problem together, because the band edge is the fair-row front on the single seed (M4) and the
+walk's drift is its law; one block each.

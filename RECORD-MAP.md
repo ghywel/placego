@@ -2837,3 +2837,8 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 - GC2506: [Anchored packet variable](reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md#7a-gc2506-match-the-existing-quotient-and-retain-the-initial-anchor), mathematics PROVED hand/two-party L1407: map toactual Coon quotient, exactv_2/n_1anchor, necessity/sufficiency byknownclock/G51. Seed29311-bit handcontrol failsnext; no integerexistence/exclusion orcensus.
 
 - GC2507: [Actual finite omission bounds](reports/GPT-MAHLER-WINDOW-OMISSION-20261103.md), PROOF-SKETCH: useGC2501up to2T ratherthan2S, selectfiveknownbands/rationalroots toboundallsixoldR1cutoffs. SixfixedGPselfchecks; no samplingerror/c/n/asymptotic upgrade.
+- CL689–CL691 (Cloud, 3 November 2026): [inquisition round 14 with the owner](reports/inquisition-20261031.md#round-14-2026-11-03-1037-gmt-cloud-cl689-the-morning-after-the-night-list-an-inquisition-step-between-the-owner-and-cloud-questions-sent-answers-to-follow):
+  the centre column as a coordinate coincidence and the band edge as the candidate meeting point; the fake coin as the reuse of a
+  left foot; the fair-row front's intrinsic coin exactly fair at fresh feet, the rest its wake (`front_feet.py`); the tell library
+  (`fake_coin_tells.py`). Search aliases: fresh foot, left foot, wake, tell library, fake coin, Rudin-Shapiro, Berlekamp-Massey,
+  echolocation, band edge meeting point.
