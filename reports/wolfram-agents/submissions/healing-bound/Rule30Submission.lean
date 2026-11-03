@@ -10,8 +10,9 @@ agrees with `E` at time 0 on the columns `x ≤ -1`, define the **recruitment fr
 
 * `healing_bound`: `G` agrees with `E` at every cell on a diagonal `x + t ≤ K t`. A black centre masks its right
   neighbour, so a diagonal whose newest known cell is black is recruited at the next tick.
-* `front_ge`: the leftmost disagreement at time `t` lies at `x ≥ K t - t + 1`, so damage moves left at most at speed one
-  minus the frontier's long-run climb rate. For a periodic background that rate is a finite walk on its torus.
+* `front_ge`: the leftmost disagreement at time `t` lies at `x ≥ K t - t + 1`. Where the frontier's climb rate has a
+  long-run mean (for a periodic background, the cycle mean of a finite walk on its torus), damage moves left at most at
+  one minus that mean.
 * `K_succ_bounds`: the frontier never falls and climbs at most one diagonal per tick.
 
 Scope: any background orbit and any perturbation confined to `x ≥ 0` at time 0. Nothing here concerns the centre column of

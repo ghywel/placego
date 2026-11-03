@@ -11,8 +11,8 @@ python3 - "$1" "$2" "$3" <<'PY'
 from pathlib import Path
 import hashlib, os, sys
 out = Path(os.environ['CAPPED_OUT'])
-pins = [('catalog', sys.argv[1], '90118b629613146a7269d3b74ffd094bbe289b25e8a12007a874bc221adce7d9'),
-        ('submission', sys.argv[2], 'f444ae698fa0de3fff978a5c41ea09aaebc91c80ce3da4ec668a6780c8d325b8'),
+pins = [('catalog', sys.argv[1], 'd2af29c9f8d0322302feae95e7b2a5feb56780f26895ec80f417a2726fedf1da'),
+        ('submission', sys.argv[2], 'c2f3d9994be8b1632d98e44c41e8a779953c4395e4d3495ff7e8a1a4c3ca76b3'),
         ('checker', sys.argv[3], 'b882f2527a1d6e720828a0c729cc80c3977905ed9207d09af22f8d153a073905')]
 data = {}
 for name, path, expected in pins:

@@ -10,8 +10,8 @@ agrees with `E` at time 0 on the columns `x ≤ -1`, define the **recruitment fr
 `K 0 = -1`, and `K (t + 1) = K t + 1` if the background cell `E t (K t - t)` is black, else `K t`. Then `G` agrees with
 `E` at every cell on a diagonal `x + t ≤ K t` (`healing_bound`). A black centre masks its right neighbour, so a diagonal
 whose newest known cell is black is recruited at the next tick. The leftmost disagreement at time `t` therefore lies at
-`x ≥ K t - t + 1` (`front_ge`), and its leftward speed is at most one minus the frontier's long-run climb rate, which
-for a periodic background is a finite walk on its torus.
+`x ≥ K t - t + 1` (`front_ge`). Where the frontier's climb rate has a long-run mean (for a periodic background it is a
+cycle mean of a finite walk on its torus), the leftward speed is at most one minus that mean.
 -/
 @[expose] public section
 namespace Ruliology.CellularAutomata.HealingBound

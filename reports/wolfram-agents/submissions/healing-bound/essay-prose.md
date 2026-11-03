@@ -3,7 +3,7 @@ Template: ComputationalEssay
 Name: The universal healing bound for rule 30
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-11-03
-Description: A partial result proved in core Lean: for every background orbit of rule 30 and every change confined to the right half-line at time 0, the evolution agrees with the background below an explicit recruitment frontier, so damage moves left no faster than one minus the frontier's climb rate.
+Description: A partial result proved in core Lean: for every background orbit of rule 30 and every change confined to the right half-line at time 0, the evolution agrees with the background below an explicit recruitment frontier, so damage moves left no faster than the frontier itself, and on average no faster than one minus the frontier's mean climb rate where that mean exists (it does for periodic backgrounds).
 Abstract: See abstract.txt.
 Keywords: [rule 30, Rule 30 Prize, damage spreading, light cone, masking, background, ether, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]
@@ -32,12 +32,14 @@ $x \le -1$, then $G(t, x) = E(t, x)$ for every cell with $x + t \le K(t)$.
 The induction has two cases.
 - **Off the new diagonal.** A cell with $x + t + 1 \le K(t)$ at time $t + 1$ reads three cells of time $t$ on known
   diagonals, so it agrees.
-- **The recruited diagonal.** When the newest known cell $E(t, K(t) - t)$ is black, the cell to its upper right
-  reads that black centre and an unknown right neighbour. The OR is 1 either way, so its value is the background's.
+- **The recruited diagonal.** When the newest known cell $E(t, K(t) - t)$ is black, the same cell one tick later
+  (column $K(t) - t$, time $t + 1$, which lies on the next diagonal) reads that black centre and an unknown right
+  neighbour. The OR is 1 either way, so its value is the background's.
 
 Hence the leftmost cell where $G$ differs from $E$ at time $t$ lies at $x \ge K(t) - t + 1$ (`front_ge`). The frontier
-never falls and climbs at most one diagonal per tick (`K_succ_bounds`). So damage moves left at most at speed one
-minus the frontier's long-run climb rate.
+never falls and climbs at most one diagonal per tick (`K_succ_bounds`). So damage moves left no faster than the
+frontier $K(t) - t + 1$. When the frontier's climb rate has a long-run mean, which it does for a periodic background,
+the leftward speed is at most one minus that mean. For a general background no such mean need exist.
 
 ## A picture: the classic ether with a random right half
 
@@ -58,13 +60,14 @@ ListLinePlot[{Table[{t, kFront[[t + 1]] - t + 1}, {t, 0, tmax}], Table[{t, leftm
 ```
 
 The theorem guarantees that the leftmost difference never lies below the bound. The bound does not depend on the
-perturbation: it falls at slope 7/12, the classic ether's rate below, and reaches $x = -69$ at $t = 120$. The actual
+perturbation: over each cycle it falls by 7/12 of a cell per tick on average, the classic ether's rate below, and it
+reaches $x = -69$ at $t = 120$. The actual
 leftmost difference can fall much less. The bound is a guarantee for every perturbation, not the speed of any one.
 
 ## The rates for some periodic backgrounds
 
-For a periodic background the frontier is a walk on the background's space-time torus. Its long-run climb rate is
-exact and computable, and so is the leftward bound $1 - \text{rate}$. We replayed the walk at every phase. These rates are
+For a periodic background the frontier is a walk on the background's space-time torus. It enters a cycle, and its
+climb rate has an exact cycle mean, computable, as does the leftward bound $1 - \text{rate}$. We replayed the walk at every phase. These rates are
 computed, not part of the Lean module.
 
 | background (ring word) | leftward bound on damage speed |
