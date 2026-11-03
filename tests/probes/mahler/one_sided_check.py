@@ -32,14 +32,17 @@ def tails(bits):
 
 
 def in_E(a, steps=400):
-    X = 2 * a; x = X
+    """Exact: True if the G-orbit of X = 2a reaches 0 or an exact rational cycle without exceeding X; False on an
+    escape; None (UNKNOWN) at the cap. (Fixed after GC2492: the first version returned True at the cap.)"""
+    X = 2 * a; x = X; seen = {X}
     for _ in range(steps):
         x = G(x)
         if x > X:
             return False
-        if x == 0:
+        if x == 0 or x in seen:
             return True
-    return True                                          # no escape within the horizon (periodic orbits recur)
+        seen.add(x)
+    return None
 
 
 def val(bits):
@@ -59,11 +62,11 @@ for u in ([1, 0, 1], [1, 0, 0, 1, 0, 0, 1]):
         ''.join(map(str, u)), a, x, z, z == 1 - beta ** L * d, z > X))
 for w in ([1, 0, 0, 0], [1, 0, 0, 1, 0, 0, 0]):
     L = len(w); a = val(w) / (1 - r ** L)
-    ok = in_E(a); prev = None; good = True
+    ok = in_E(a) is True; prev = None; good = True
     for n in range(1, 31):
         p = (w * 10)[:n]
         t = tails(p); m = max(t); A = t[0]
-        good &= m < a and A <= m and (prev is None or m >= prev) and in_E(m)
+        good &= m < a and A <= m and (prev is None or m >= prev) and in_E(m) is True
         prev = m
     print('O2 w = %s: a = S_w = %s in E: %s; m_1..m_30 below a, nondecreasing, A_n <= m_n, each in E: %s; a - m_30 = %.3e' % (
         ''.join(map(str, w)), a, ok, good, float(a - prev)))
@@ -72,7 +75,7 @@ for u in ([1, 0, 1], [1, 0, 0, 1, 0, 0, 1]):
     for N in range(L, L + 13):
         b = u + [0] * (N - L) + [1]
         v = max(tails(b))
-        good &= a + r ** N / 3 <= v <= a + r ** (N - L + 1) / 3 and (v >= F(1, 2) or in_E(v))
+        good &= a + r ** N / 3 <= v <= a + r ** (N - L + 1) / 3 and (v >= F(1, 2) or in_E(v) is True)
     print('O3 u = %s: v_N bounds and membership for N = L..L+12: %s' % (''.join(map(str, u)), good))
 u = [1, 0, 0, 1, 0, 0, 1]; w = u[:-1] + [0]; L = len(w)
 print('O4 u = 1001001 -> w = %s: strict suffix predicate %s; wrap gap %d' % (

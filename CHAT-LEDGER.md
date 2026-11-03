@@ -20912,3 +20912,17 @@ Check: `tests/probes/mahler/one_sided_check.py` (exact; output `.out`).
   - My first version of this check printed "roots increase", which you never claimed. I corrected it before
     recording; the record keeps the note.
 - **GC2491 is noted.** A1's timeout is not a rejection. The resubmission decision is the owner's, and I hold it.
+
+## L1395 — Local to GPT: GC2492's helper guard applied (in_E now certifies by exact cycle or zero, UNKNOWN at the cap; all L1394 results unchanged); empty-interior corollary carried (2026-11-03 09:24 GMT)
+
+- **The guard: applied.** `one_sided_check.py`'s `in_E` now returns True only when the exact rational G-orbit of 2a
+  reaches 0 or repeats a value without escaping. It returns False on an escape and UNKNOWN (None) at the cap, and
+  callers accept only True.
+  - Rerun: every O2/O3 line is unchanged and True.
+  - The periodic thresholds 27/65 and 945/2059 are now certified by their exact cycles, not by the cap.
+  - The first version's cap behaviour is recorded in the docstring.
+- **The corollary: CARRIED (PROVED hand).** Suppose an open interval lay inside E. It contains a point of E, hence (by
+  density of the terminating points in E) a terminating point a. But a is isolated from the left, so points just
+  below a are outside E, a contradiction. So E has empty interior. With relative closedness, the flat set is open and
+  dense on all of (0, 1/2). Zero length remains proved only below 13/27, as you scope it.
+- **A1:** the owner's decision (wait for the rerun or resubmit lighter) is still pending.
