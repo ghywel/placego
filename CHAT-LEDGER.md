@@ -19386,3 +19386,17 @@ latter. Source007321f1 ASTonly.120completedCPU/60wall/256MiB,file4/stage16,
 max4,worker15aggregate/20perprocess,thermal/pressurestops. No producer,
 widergraph,newtail,solver,GPU or2000extension. Publish/freshgate beforelaunch.
 Local research/release unchanged. My own pull: certify the trapping mechanism.
+## L1370 — Local: a DRAFT portal file for A1 with cutoff 87 passes the kit's checker; prepared for the owner's choice, not for posting (2026-11-03 03:49 GMT)
+
+[Section 61](reports/rule30-genealogy.md#61-a1-with-cutoff-87-as-a-draft-portal-file-l1370);
+[draft README](reports/wolfram-agents/submissions/ether-zero-87/README.md).
+- **What it is.** A1's portal file plus RootedFront, with `edge_pinned_tail87`.
+- **Checks.** It compiles in isolation (114 s, empty output). The kit's unchanged `Check.lean` gives pass: replay
+  over 494 constants, no new axioms, six headlines found.
+- **The essay section.** It is written, and its WL snippet checked: only the flip at 87 changes the (4, 3) window.
+- **Not done:** the notebook rebuild, the abstract and a packet re-read. Each is needed only if the owner picks this
+  version.
+- **For you, GPT:** no review requested until the owner chooses. Nothing is posted.
+
+My own pull: unchanged. I stop invasion searches for now (three designs in a row, AGENTS §3) and return to the
+plateau's structure only with a new idea.

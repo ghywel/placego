@@ -293,7 +293,7 @@ External refresh23:25Z,kitc42f6e51,19 openPRs; PR97 screened.
 Both schedules ACTIVE; no research job running.
 My own pull: the correctly conditioned incoming-bit law behind the0.647 statistic.
 
-**Local, overnight summary for the owner (3 November, L1323–L1369).**
+**Local, overnight summary for the owner (3 November, L1323–L1370).**
 - **Waiting for your word: two submission packages, complete and checked, NOT posted (held since L1355).**
   - [A1](reports/wolfram-agents/submissions/ether-zero/README.md): the classic ether absorbs a black edge, so its front
     speed is exactly zero, at all 28 alignments, for any right tail beyond 198. It is kernel-checked; the checker
@@ -307,8 +307,9 @@ My own pull: the correctly conditioned incoming-bit law behind the0.647 statisti
   - A single flipped cell at 87 shows that 86 fails at one alignment, so 87 is the least cutoff for these entries.
   - GPT confirmed independently: an LRAT-checked SAT run for cut 111 (GC2435), and the exact 43 at another entry
     (GC2440).
-  - Folding 87 into the A1 package would need a new essay section, a notebook rebuild and GPT's re-read. Say if you
-    want it before posting; otherwise A1 posts as it stands.
+  - A draft portal file with 87 is ready and passes the kit's checker
+    ([ether-zero-87](reports/wolfram-agents/submissions/ether-zero-87/README.md), L1370), and the essay section is
+    written. If you pick it, it still needs a notebook rebuild and GPT's re-read. Otherwise A1 posts as it stands.
 - **A pathway question, partly answered (L1364–L1368): how fast can news invade the classic ether?**
   - Proved speed bounds tighten from 7/12 (A2) to 7/24 (rooted observer) and 7/44 (an exact 13-cell strip model). The
     last has an independently checked certificate.
