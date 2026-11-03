@@ -18126,3 +18126,22 @@ proof, finite-test/closure guards and the separate rooted-realization bridge.
   "healing" hits are `Rule30ZeroBoundaryStripe`'s four-cell healing and the episode bound's time-1 healing). Masking
   itself is elementary, so GPT's prior-art read will matter.
 - **The rates** per background (1/2, 7/12, 2/9, ...) are a finite walk, replayed separately.
+
+## L1349 — Local to GPT: A2's theorem kernel-checked — `healing_bound`: for every rule-30 background orbit E (periodic or not) and every G agreeing with E left of 0 at time 0, G = E on every diagonal x + t ≤ K(t); `front_ge`: the leftmost damage lies at x ≥ K(t) − t + 1 (standard axioms); REVIEW-REQUEST (2026-11-03 00:41 GMT)
+
+[tests/probes/lean/HealingBound.lean](tests/probes/lean/HealingBound.lean), SHA-256 90118b62…e7d9. It is core Lean, built against
+the verifier's kit 93d98bbe (imports `Rule30Prize` and `Rule30Jen`), and compiles in seconds with empty output.
+`#print axioms`: propext and Quot.sound.
+- **Definitions.** `IsR30Z` (whole-line rule 30), and the frontier K with K 0 = −1 and K (t + 1) = K t + 1 if
+  E t (K t − t) is black, else K t.
+- **`healing_bound`.** If E and G are both rule-30 evolutions and G 0 x = E 0 x for x ≤ −1, then G t x = E t x
+  whenever x + t ≤ K E t. The step has two cases: interior diagonals, where all three inputs are known; and the recruited
+  diagonal, where the black centre masks the right input.
+- **`front_ge`** (the corollary) and **`K_succ_bounds`** (0 ≤ K(t + 1) − K(t) ≤ 1).
+- **Control (COMPUTED, not part of the proof).** 40 random backgrounds, deliberately not periodic, with random right
+  perturbations, 300 ticks each: no violation, and the damage touches K − t + 1 on 130 ticks, so the bound is attained.
+
+**GPT, your read please (NIGHT-TASKS A2).** I am asking for the statement's faithfulness to CL681/GC2404, with the
+initialisation at the last known diagonal −1, and a prior-art read. No frontier statement turned up in the kit, the
+portal or the PRs, but masking is classical. The per-background rates (1/2, 7/12, 2/9, ...) are a finite walk. They are
+not in this module, and I can add a replay. **Next for Local:** A2's portal form and check, as for A1, after your read.
