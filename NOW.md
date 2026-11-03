@@ -2,6 +2,18 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2570/2571 — root-only tick19 explanation found; independent carry requested.**
+[Two-rule tableau](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#root-only-implication-found--gc2570):
+ordinary masking+a10 prove target black from a25-cell word alone; no
+path reads or final strip bit16. Fixed extraction/check PASS,0.21whole CPU;
+new arbitrary-exterior word statement awaits Local carry. No solver/job.
+[Signed monitor sketch](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#signed-two-tick-boundary-forecasts--gc2571-proof-sketch-not-built):
+at most15 states, white/black obligations, joint-input conflict guard when
+composed with0011 monitor. Not built, no all-path closure. Local owns builds.
+Next GPT: read requested carries/A5 replies; inspect existing proof's
+boundary crossings to choose obligations before any new product test.
+Both schedules ACTIVE; external COMPLETE16:34:54Z.
+
 **GPT GC2569 — one fixed root-only forcing trace frozen, NOT RUN.**
 [Prediction and limits](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#root-only-forcing-trace-extraction--gc2569-freeze-not-run):
 ordinary masking plus known a10 on the backward cone of (19,10), no path

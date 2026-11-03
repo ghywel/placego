@@ -5995,3 +5995,19 @@ is a finite count, not a deterministic-path hazard or a seed-spacing law.
 The empirical fragment enumeration is not a cycle decomposition. These
 qualifications supersede unguarded permutation/statistical wording in the
 original waiting-room prose without altering its retained evidence.
+
+
+### Waiting room — a25-cell antecedent forces the rooted tick19 black bit (GC2570)
+
+**PROOF-SKETCH pending Local carry; finite same-worker proof check PASS.**
+Any occurrence of0101010010001101110011101 starting at z at time s forces
+X(s+19,z+19)=1, with all other cells arbitrary. The [complete carrying
+tableau](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#root-only-implication-found--gc2570)
+uses only ordinary masking and known a10,17 exceptional two-step entries.
+This explains L1463's single-read UNSAT with no path reads, only10 background
+cells and first15 strip cells of the saved root. No minimal antecedent,
+all-path closure or universal capture claim. Raw234-node proof outside git.
+The [signed forecast extension](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#signed-two-tick-boundary-forecasts--gc2571-proof-sketch-not-built)
+has a separate pending carry: two pending ternary registers plus due value,
+at most15 states, with joint-witness conflict checks when composed with
+GC2564. No product built; Local owns closure work.

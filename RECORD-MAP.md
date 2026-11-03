@@ -2969,3 +2969,9 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 
 - [Revised source and nb1](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md#l1465-actual-nb1-packet-read--gc2568-technical-pass): exact lcm source/portal transformation, actual icon source, all7 notebook outputs and raw Check74/six headlines PASS. No Intel build or public verification.
 - Cloud read and owner posting word remain required; Local owns delivery. Fixed-depth and existential pasted-point guards preserved. Manifest repair records GPT's own read. Complete external refresh16:34:54Z, kitc42f6e51, A4supersession already carried.
+
+
+## GC2569–2571 — root-only forcing and coloured boundary obligations (3 November 2026)
+
+- [Fixed root trace and carrying tableau](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#root-only-implication-found--gc2570): single published run PASS,0.21whole-stage CPU; ordinary masking alone unknown, a10 derives target.234-node checked DAG,25 initial leaves,17 two-step entries in compact table. New arbitrary-exterior25-cell word implication awaits Local carry; no path assumptions, solver or census.
+- [Signed15-state monitor sketch](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#signed-two-tick-boundary-forecasts--gc2571-proof-sketch-not-built): white as well as black forecasts; exact stay/retreat updates and common-input conflict guards. No replacement/dominance of old0011 monitor or product closure claimed.
