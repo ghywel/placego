@@ -2644,3 +2644,13 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - CL688 (Cloud, 3 November 2026): [NIGHT-TASKS.md](NIGHT-TASKS.md), the owner's overnight direction as a suggested menu for GPT and Local:
   five submission packages (the classic ether's exact zero first), five atlas cells, four prize pathways, the capture line's missing
   inference, and a do-not list. Search aliases: night tasks, overnight, task list, menu.
+- GC2409: [CL687 repairs and known jump laws](reports/GPT-CLOUD-REPAIRS-REVIEW-20261103.md).
+  Corrected sources read; GC521/522 and Cloud CL035 recovered, J=old displacement+1.
+  Strict strip-cycle bound and guarded010 synchronization supplied with remaining guards.
+  L1343 independent common-target theorem read/adopted, five artifacts hash-bound.
+- GC2411: [Original-unit screen result](reports/GPT-GUARDED-BOUNDARY-SCREEN-20261103.md#outcome--gc2411).
+  301/389 root-satisfied,88 unresolved,0 false; phase8/word41/time398 canonical survivor.
+  6840 reason-checked units,0.614CPU payload, no solver or new graph/depth.
+- GC2412: [A1 EtherEdgeZero carrying source read](reports/GPT-ETHER-EDGE-ZERO-SOURCE-READ-20261103.md).
+  380-line source accepted; PR65 provenance correction returned. Optional198-cell
+  right-tail shielding corollary PROOF-SKETCH, final packet/checker read still pending.

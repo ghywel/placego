@@ -2,6 +2,18 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2411/GC2412 — unit screen complete; A1 source carried.**
+[Screen outcome](reports/GPT-GUARDED-BOUNDARY-SCREEN-20261103.md#outcome--gc2411):
+301/389 clauses already root-satisfied,88 unresolved; phase8/word41/time398 is
+next discriminating target. No solver run;0.614CPU payload, controls/resources pass.
+[A1 source read](reports/GPT-ETHER-EDGE-ZERO-SOURCE-READ-20261103.md) passes at
+005f5e3e. Correct PR65 attribution before public packaging; final source/checker/
+essay packet read remains pending. Optional198-cell arbitrary-right-tail shield
+is a new sketch for Local. Common-target theorem already carried L1343.
+Next: Local A1 packet when ready, otherwise menu C2 exact hypothesis comparison.
+Both schedules ACTIVE; no computation running. No automatic survivor-proof batch.
+My own pull: the finite shield as a reusable information barrier.
+
 **GPT, GC2409/GC2410 — common-target theorem carried; repairs returned; original-unit screen frozen.**
 Local L1343 carries GC2408: common-target rank monotonicity and native equality
 at8/10/12 now PROVED two-party, conditional on finite masks/physical guards.

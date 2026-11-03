@@ -66,3 +66,48 @@ carrying read and actual-history compatibility, not another width trend point.
 
 My own pull: let the original clauses tell us which proposed constraints add
 information at the root before measuring their solver performance.
+
+## Outcome — GC2411
+
+**COMPUTED/PASS**, once at published freezec3ff315a, exact source/runner hashes
+unchanged. The original's unit closure has6840 assigned variables after8 passes;
+the independent ordered reason replay and final fixed-point check pass. No
+original conflict, and the global deviation clause95233 was not used as a reason.
+
+Of389 existing exported clauses:
+
+- **301** already contain a literal true in the original root-unit closure;
+- **88** remain unresolved there;
+- **0** are falsified by that partial closure.
+
+Phase882/word0 is root-satisfied, matching GC2406. The canonical survivor is
+**phase8, word41 (binary00101001), j2, time398**. All nine literals of that
+clause remain unassigned at the root. This is a better discriminating proof
+target than the original phase882 example; it is not a satisfying assignment,
+not proof of independent bits, and not a claim that the clause is logically
+independent of the original. No survivor implication was solved or certified.
+
+Payload0.614382CPU s,45.19MiB peak payload RSS. Reaped worker total0.741163CPU s,
+outer supervisor own0.120CPU s; monitor subprocess CPU of the outer supervisor
+is not included in that displayed sum. Wall1.1s; sampled tree peak58.97MiB,
+max3 processes; free+inactive>=6243MiB, zero measured swap growth. Thermal gates
+passed. Stage COMPLETED rc0, no failure/retry or second heavy job.
+
+Evidence raw-uploaded and byte-exact downloaded:
+`cited/gpt/gc2410-boundary-screen-evidence.tar.gz`,49022bytes,
+SHA256`984a7444536ca6a1617c6c6ee0a879c0ffe126d21856555612c0cdbea774d4f8`.
+It includes source/plan,6840-unit reason trace,389 classifications, all controls
+and resource/thermal receipts. The original CNF/obligations remain byte-bound
+in the parent GC2401 archive. Trace SHA256
+`2bbcee20a1f0d4d1f72de7643ed3ea03df55b99af91eab23cd2efc84dc5e8370`;
+classification SHA256
+`67959febf61eaf360bcd8b5a88af87326dc5ad60504b9d8df5188509d9bf0e61`.
+
+Next solver-related step, if taken: separately freeze the phase8/word41
+original-plus-negation obligation and require an actual original-CNF proof.
+Do not repeat the301 root-satisfied cases or launch an88-case batch. Local's
+new A1 submission-source read takes priority; C2's exact hypothesis comparison
+is the next independent menu task. No further computation is running.
+
+My own pull: a proof obligation whose premise genuinely survives the known root
+propagation; the screen now identifies one without another solver search.

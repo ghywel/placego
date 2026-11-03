@@ -5502,3 +5502,22 @@ forbidden outright, 11011 closes with 1 exactly at q0 = 2 (the universal start),
 context occurred (no actual-root occurrence is asserted; the retained k = 3 examples start at q ≥ 256, and the code stops SMALL_R at
 that boundary rather than certifying a zero). The descent calculus is an alternative organisation of that result; its forced
 constants reproduce the exceptions it can reach. Nothing here concerns the density limit.
+
+### Waiting room — GC2409 finite-path bound and guarded healed-strip010 corollary
+
+[Exact statements and scopes](reports/GPT-CLOUD-REPAIRS-REVIEW-20261103.md).
+PROOF-SKETCH: max integer weight M over all K-edge paths gives every cycle mean
+<=M/K; repaired G8 graph bounds are conditional on its retained output integers,
+with one-step-rise<=W guard. Separately, an old mismatch at L and agreement of
+the images on(L,Y) excludes common010 starting at L<q with q+2<Y, by actual kit
+Preimages.eq_of_evol_one_eq_on_of_window.010 at L remains allowed. New guarded
+application awaiting independent read; known GC521/522 jump laws already carried.
+
+### Waiting room — GC2412 arbitrary right tails beyond198 for the ether edge
+
+[Source read and light-cone consequence](reports/GPT-ETHER-EDGE-ZERO-SOURCE-READ-20261103.md).
+The original380-line EtherEdgeZero source is carried. New corollary PROOF-SKETCH:
+initial agreement with initRow on x<=198 suffices for its eventual pinning, with
+arbitrary right tail farther out, since xB+t1+13<=198 at every recorded alignment.
+Local carrying/formalization choice pending; current original headline remains
+about its stated cut row. No final submission packet accepted yet.
