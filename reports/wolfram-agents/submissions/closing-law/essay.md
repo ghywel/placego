@@ -3,7 +3,7 @@ Template: ComputationalEssay
 Name: The closing law of prefix doublings on Rule 30's right edge
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-11-03
-Description: A partial result proved in core Lean: on the kit's gate clocks, including Rule 30's right edge, the difference order drops by exactly one across each pair of letters 10 (a doubling, then a keep), so after a doubling at period q0 (the period before that doubling) an alternating run has at most q0 - 1 pairs and closes with a doubling exactly at that length. Corollaries: 1101011 never occurs among the doubling letters, and five consecutive letters hold at most three doublings once the period is at least 4.
+Description: A partial result proved in core Lean: on the kit's gate clocks, including Rule 30's right edge, the difference order drops by exactly one across each pair of letters 10 (a doubling, then a keep), under the stated period and nonconstant-source hypotheses, so after a doubling at period q0 (the period before that doubling) an alternating run has at most q0 - 1 pairs and closes with a doubling exactly at that length. Corollaries: 1101011 never occurs among the doubling letters, and five consecutive letters hold at most three doublings once the period is at least 4.
 Abstract: See abstract.txt.
 Keywords: [rule 30, Rule 30 Prize, right edge, prefix periods, difference order, gate clocks, doubling letters, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]
@@ -40,7 +40,7 @@ $$\Delta^{k + 2 + M} h = \Delta^{k + 1} s,$$
 so the first vanishing difference of $h$ lies exactly $M + 1$ beyond that of $s$ (`order_countdown_exact`). The guards
 are exactly those of this setting: the periods and the antiperiod above, $M \ge 2$, and
 $\mathrm{order}\, s\, M + 1 < M$. The last one is needed because the order is capped at $M - 1$: a constant stream,
-the zero stream included, has every difference vanishing and so the capped order $M - 1$, and the equality fails there.
+the zero stream included, has every difference vanishing and so the capped order $M - 1$, and the equality can fail there.
 This is a statement about a $10$ pair, not about an arbitrary step without a doubling.
 
 ## The closing law
