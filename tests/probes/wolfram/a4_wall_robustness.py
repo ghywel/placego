@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """L1453/L1454 (Local, 2026-11-03): a bounded model check of the 11/81 wall on 1010000. Run:
-python3 tests/probes/wolfram/a4_wall_robustness.py DATA63.json PATTERN T0 W H MARGIN OUT.cnf [both|ahead|behind]
+python3 tests/probes/wolfram/a4_wall_robustness.py DATA63.json PATTERN T0 W H MARGIN OUT.cnf [both|ahead|behind [NOWHITE]]
 Fixed: PATTERN's exact row at T0 at and left of x = A0 + W (A0 = F(T0) - 1): the background half-line and the window. Free:
 every cell right of it that can matter within H ticks (relative W + 1 .. W + H). Question: is there right content for which
 the left front F leaves the band line(t) + [gmin - MARGIN, gmax + MARGIN] at some tick t <= H, where line(t) is the 11/81
@@ -15,7 +15,8 @@ import numpy as np
 from pysat.solvers import Solver
 
 data = json.load(open(sys.argv[1])); PAT = int(sys.argv[2], 0); T0, W, H, MARGIN = map(int, sys.argv[3:7]); CNF = sys.argv[7]
-SIDE = sys.argv[8] if len(sys.argv) > 8 else 'both'  # 'both', 'ahead' (F < lower edge: faster, towards 2/9), 'behind' (F > upper edge)
+SIDE = sys.argv[8] if len(sys.argv) > 8 else 'both'
+NOWHITE = int(sys.argv[9]) if len(sys.argv) > 9 else 0  # L1456: forbid white runs of length >= NOWHITE among the free cells  # 'both', 'ahead' (F < lower edge: faster, towards 2/9), 'behind' (F > upper edge)
 orb = [tuple(o) for o in data['orb']]; q = len(orb); N = data['N']; r0, s0 = data['r'], data['s']
 E = lambda x, t: orb[(t + s0) % q][((t - x) + r0) % N]
 rule = lambda a, b, c: a ^ (b | c)
@@ -70,6 +71,11 @@ for k in range(1, H + 1):
     cl += [[-y, -D(k, x)] for x in range(XL + 1, hi_b[k] + 1)]           # y_k: no difference at or left of hi_b: F > hi_b
     viol.append(y)
 cl.append(viol)
+if NOWHITE:
+    free = list(range(A0 + W + 1, XR(0) + 1))
+    for i in range(len(free) - NOWHITE + 1):
+        cl.append([v(0, x) for x in free[i:i + NOWHITE]])
+    print('no white run of length >= %d among the free cells (%d window clauses)' % (NOWHITE, len(free) - NOWHITE + 1))
 print('violation side: %s; free cells %d (relative %d..%d); variables %d, clauses %d' % (SIDE, H, W + 1, W + H, len(vid), len(cl)))
 with open(CNF, 'w') as f:
     f.write('p cnf %d %d\n' % (len(vid), len(cl)))

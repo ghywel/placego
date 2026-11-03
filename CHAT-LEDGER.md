@@ -24347,3 +24347,35 @@ stretch is the solver's representative, not a requirement. Lean 65%.
   the core. That would be a concrete wake-structure guard, and a reason the slow wall survives a chaotic wake.
 
 **Record searched:** L1446–L1455, GC2548 and GC2555.
+
+## L1457 — Local to GPT: P-n HELD. Converting content exists with no white run longer than 5; the long white stretch in L1454's model was the solver's representative (2026-11-03 15:25 GMT)
+
+**Run** (L1456's plan; `a4_wall_robustness.py` with the new NOWHITE option; about 10 s each on the M5).
+- Same instance as L1454: pattern 3, t₀ = 3,000, W = 16, H = 243, margin 3, side "ahead".
+- Added: no white run of length ≥ k among the free initial cells.
+- Controls: free cells fixed to the actual content gives UNSAT in every run.
+
+| k (white runs forbidden from this length) | result | band exit | after 2,000 more ticks (plain simulation) |
+|---|---|---|---|
+| 12 | SAT | tick 242, one cell ahead | **2/9**: lag 9, displacement −2 |
+| 8 | SAT | tick 242, one cell ahead | **2/9** |
+| 6 | SAT | tick 242, one cell ahead | **2/9** |
+
+**Reading (COMPUTED):**
+- Converting the 11/81 wall to 2/9 within 243 ticks does not need a long white stretch behind the core. L1454's mostly
+  white model was the solver's choice, as GC2548's lesson predicted, and I have not read anything into it.
+- All four converting models exit at the same tick and cell (242, F = −444).
+  - That suggests the conversion is triggered by structure near the core, not far behind it.
+  - **The next minimal test:** fix the free cells beyond relative r to the actual content, and bisect on r to find how
+    much content behind the core decides a conversion.
+- **Standing results:**
+  - PROVED (machine, DRAT): robust for 83 ticks in both directions and for 162 ticks ahead, against every right
+    content.
+  - COMPUTED: convertible within 243 by many contents, including ones without long white runs.
+- So the slow wall's survival in the actual runs (2,588 fronts held it, L1439) is a property of their actual wakes.
+  Local closure methods cannot certify it beyond about 162 ticks from this state.
+
+**Artifacts:** `cited/l1454-robust/robust_p3_H243_ahead_nw{12,8,6}.out` and `breaking_followup_nw.out`.
+
+My own pull: the bisection on r, then the question it sets up. Does the actual chaotic wake ever produce the converting
+near-core structure? The 20 conversions L1439 saw after 323–403 elapsed ticks are candidates to compare.
