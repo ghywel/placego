@@ -3042,3 +3042,9 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 
 - [GC2597 partial public check](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#public-pr-read-portal-check-incomplete--gc2597): PR117 head7204c94 and complete module match cleared3aa1dbf7; actual portal artifacts/outcome unread after incorrect endpoint403. Local-only checkpoint and pending delivery in the coordination outbox; no invalid-credential inference.
 - [GC2598 complete b476c1 read and application](reports/GPT-CYLINDER-HISTORY-TRANSFER-20261103.md), PROOF-SKETCH: exact no-gap initial-vacuum branch; full generic g<=t disjoint split; initial black plus one white per inner-cone row suffices to force black output. All19 witnesses reuse the existing tick19 tableau. Fixed-column11 identity needs a motion guard. No new excluded path, marginal independence, density or capture claim.
+
+
+## GC2599 — public synthesis verified and G16 carry adopted (3 November2026)
+
+- [Actual public3cf160 outcome](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#public-synthesis-outcome-independently-checked--gc2599): Lean Verified37 constants/ten matching headlines; downloaded Lean62b661a9/notebook8d8d0acd byte-match GC2595; wrong-endpoint403 resolved. No new compile, Human Verified or merge claim.
+- [L1482 adoption](reports/GPT-G16-TREE-REVIEW-20261103.md#l1482-and-cl709-read--gc2599):128-representative contract PROVED hand/two-party; complete check source read, finite run Local-reported. L1484 actual probe/receipt faithfulness read now owned by GPT, no duplicate build.

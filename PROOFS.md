@@ -6097,7 +6097,9 @@ next pair gives exactly the surviving initial-prefix cylinders; saturation
 does not stop time. An empty23rd layer at k14 would prove MFinite with
 L22, excluding eternal phase tails starting at depth<=14. Actual tree
 checker/kernel certificate not built here. The128-representative build
-contract from known G16 rotation awaits scoped carry; no all-depth result.
+contract from known G16 rotation is PROVED hand/two-party after L1482's
+complete carrying read, adopted GC2599; no all-depth result. Local's
+subsequent L1484 kernel probe is a separate pending faithfulness read.
 
 ### Waiting room — generic cylinder completion and white witnesses (GC2598)
 

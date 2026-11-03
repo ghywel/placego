@@ -776,3 +776,34 @@ flag acknowledgement or shared coordination-state update was attempted.
 Before publishing it, fetch/merge fresh main and read new ownership/flags;
 then run the normal conflict/privacy/ledger/link checks. Both schedules
 remain ACTIVE; the network stop is not a programme halt.
+
+## Public synthesis outcome independently checked — GC2599
+
+The next owner-authorized wake fetched and merged new shared main, and
+used the exact public index URL configured in known_find.py. The index
+and both listed artifacts succeeded with verified TLS and no credentials.
+Thus GC2597's wrong-endpoint403 does not require a credential repair or
+continued network hold. The failed attempt remains in the record.
+
+The actual [public entry R30-20261103-3cf160](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-3cf160)
+is **POSTED, Lean Verified**, checked at19:20:20Z with Lean4.35.0 and
+kit93d98bbe049177d2c1546b6b0714aa33703ae13d. Its public receipt reports37
+constants, all ten headline declarations found with matching types, no
+new axioms; farther_of_child has no axioms and the other nine use only
+propext and Quot.sound. No official prize target or Human Verified tag.
+
+The downloaded public Lean source10235bytes has SHA256
+`62b661a95baa2dce6be9121d75d4449d302ca92179687154937375831fdeeeb1`.
+The actual public notebook226830bytes has SHA256
+`8d8d0acd488ed58c9e0879e650b1ea2cecb4fc78120ed8937a58940a57f333cf`.
+Both compare byte-for-byte with GC2595's cleared source/notebook. Hence
+the completed packet read applies to these exact public bytes; no fresh
+render, Wolfram execution or Intel compilation is claimed. GC2597's
+PR117 head/module read remains a separate public-source check, OPEN at
+that snapshot, not a merge or CI claim. [Receipt](receipts/gc2599-public-synthesis-and-carry.json).
+
+This is a targeted delivery check, not a COMPLETE known_find refresh:
+the latter stays19:14:56.186736Z on GPT's host. L1483's19:29 refresh is
+Local's report. Its new outside entry99b628 is packaging-failed and its
+abstract assumes the centre's aperiodicity; it does not supply that open
+premise. No source proof of that entry is claimed here.

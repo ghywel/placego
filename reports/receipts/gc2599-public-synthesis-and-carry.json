@@ -1,0 +1,178 @@
+{
+  "entry": "GC2599",
+  "recorded_utc": "2026-11-03T19:42:30.833373+00:00",
+  "network_recovery": "configured public index and listed artifacts succeeded with verified TLS; previous wrong-route403 retained, no credential repair needed",
+  "public_entry": "R30-20261103-3cf160",
+  "public_status": "Lean Verified",
+  "public_check": {
+    "state": "passed",
+    "detail": "Kernel replay passed; standard axioms only.",
+    "verdict": "pass",
+    "reasons": [],
+    "verifiedTargets": [],
+    "official": [],
+    "headlines": [
+      {
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ],
+        "found": true,
+        "kind": "theorem",
+        "name": "Rule30Submission.closed_form",
+        "ok": true,
+        "problems": [],
+        "typeMatches": true
+      },
+      {
+        "axioms": [],
+        "found": true,
+        "kind": "theorem",
+        "name": "Rule30Submission.farther_of_child",
+        "ok": true,
+        "problems": [],
+        "typeMatches": true
+      },
+      {
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ],
+        "found": true,
+        "kind": "theorem",
+        "name": "Rule30Submission.solutions_agree",
+        "ok": true,
+        "problems": [],
+        "typeMatches": true
+      },
+      {
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ],
+        "found": true,
+        "kind": "theorem",
+        "name": "Rule30Submission.coincidence_iff",
+        "ok": true,
+        "problems": [],
+        "typeMatches": true
+      },
+      {
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ],
+        "found": true,
+        "kind": "theorem",
+        "name": "Rule30Submission.white_of_coincidence",
+        "ok": true,
+        "problems": [],
+        "typeMatches": true
+      },
+      {
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ],
+        "found": true,
+        "kind": "theorem",
+        "name": "Rule30Submission.evwhite_iff_eventually_eq",
+        "ok": true,
+        "problems": [],
+        "typeMatches": true
+      },
+      {
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ],
+        "found": true,
+        "kind": "theorem",
+        "name": "Rule30Submission.D_closed_form",
+        "ok": true,
+        "problems": [],
+        "typeMatches": true
+      },
+      {
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ],
+        "found": true,
+        "kind": "theorem",
+        "name": "Rule30Submission.D_coincidence_iff",
+        "ok": true,
+        "problems": [],
+        "typeMatches": true
+      },
+      {
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ],
+        "found": true,
+        "kind": "theorem",
+        "name": "Rule30Submission.D_white_of_coincidence",
+        "ok": true,
+        "problems": [],
+        "typeMatches": true
+      },
+      {
+        "axioms": [
+          "propext",
+          "Quot.sound"
+        ],
+        "found": true,
+        "kind": "theorem",
+        "name": "Rule30Submission.D_evwhite_iff_eventually_eq",
+        "ok": true,
+        "problems": [],
+        "typeMatches": true
+      }
+    ],
+    "replay": {
+      "constants": 37,
+      "ok": true
+    },
+    "newAxioms": [],
+    "lean": "4.35.0",
+    "kitCommit": "93d98bbe049177d2c1546b6b0714aa33703ae13d",
+    "checkedAt": "2026-11-03T19:20:20Z"
+  },
+  "public_files": {
+    "synthesis-entry.json": {
+      "bytes": 5790,
+      "sha256": "1f4bbd6b04c0ce7ee11263e10e0268bf3f055371d6c02781d1a2b00dd419b9bd"
+    },
+    "synthesis-public.lean": {
+      "bytes": 10235,
+      "sha256": "62b661a95baa2dce6be9121d75d4449d302ca92179687154937375831fdeeeb1"
+    },
+    "synthesis-public.nb": {
+      "bytes": 226830,
+      "sha256": "8d8d0acd488ed58c9e0879e650b1ea2cecb4fc78120ed8937a58940a57f333cf"
+    }
+  },
+  "source_and_notebook_match_gc2595_bytes": true,
+  "public_pr_check": "GC2597 at head7204c94b8f08538357dccc72345f24fc69f5c0c3, module3aa1dbf7, OPEN; not a fresh PR query or build",
+  "evidence": {
+    "path": "cited/gpt/gc2599-synthesis-public-read.tar.gz",
+    "bytes": 72606,
+    "sha256": "bf63211cded3b439c7ded83b4a623379ec8e38988e2d84346135515a9f06f428"
+  },
+  "g16_carry": {
+    "entry": "L1482",
+    "commit": "2e6c4229",
+    "status": "exact128-representative build contract PROVED hand/two-party",
+    "source_read": "complete77-line g16_alignment_check.py",
+    "source_pin": {
+      "bytes": 3844,
+      "sha256": "71f032fe3015fc239efde6275aaf9ca05a89d2c83da6fa7ffe5132f1a292c9c0"
+    },
+    "finite_run": "Local-reported M5, no raw output/resource receipt read or Intel replay",
+    "count_guard": "matching M(k) maxima does not identify unprinted SAT phase or re-establish retained-node counts"
+  },
+  "CL709": "complete entry and actual atlas17 repairs read; remaining literal extinction/bridge/reduction wording returned",
+  "last_complete_gpt_external_refresh_utc": "2026-11-03T19:14:56.186736Z",
+  "no_new_compute_or_compile": true
+}

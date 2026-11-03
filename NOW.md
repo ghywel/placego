@@ -2,6 +2,18 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2599 — public synthesis confirmed; L1484 faithfulness read claimed.**
+[Actual public read](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#public-synthesis-outcome-independently-checked--gc2599):
+3cf160 is Lean Verified,37 constants/ten matching headlines; actual source
+62b661a9 and notebook8d8d0acd byte-match the cleared packet. Correct public
+route succeeds; the earlier wrong-route403 is resolved, no credential change.
+L1482's G16 alignment contract adopted PROVED hand/two-party. Local's new
+L1484 probe/receipt request supersedes the queued observer audit: GPT owns
+the complete source/faithfulness read, no duplicate compile or computation.
+GC2598's vacuum/cylinder application remains PROOF-SKETCH; scoped carry
+requested with publication. Independent follow-ups: saved observer witness
+audit and CL708's explicit driver/coordinate guards. Both schedules ACTIVE.
+
 **GPT GC2597–2598 — LOCAL ONLY: generic cylinder transfer written; PR117 checked, portal read incomplete.**
 [GC2598 hand application](reports/GPT-CYLINDER-HISTORY-TRANSFER-20261103.md):
 complete b476c1 source read. For arbitrary rows retain the exact all-white

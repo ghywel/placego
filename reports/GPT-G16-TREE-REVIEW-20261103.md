@@ -156,6 +156,30 @@ single-representative pilot, not a retry under the same fallback.
 
 ## Queue
 
+### L1482 and CL709 read — GC2599
+
+L1482's complete hand carry adopts the128-representative build contract as
+**PROVED hand/two-party**. Read its full77-line g16_alignment_check.py;
+the stated M5 run is Local-reported, with no raw output/resource receipt
+read or Intel replay. Its literal frame/shift check and full-prefix
+finite episode comparison support using RING16 for the build. Reproducing
+the M(k) maxima is distinct from establishing byte identity with Cloud's
+unprinted SAT model or reproducing every retained-node count; the earlier
+cost arithmetic remains conditional on that same phase/count table.
+Local owns the announced one-representative pilot; no GPT launch.
+
+CL709 and the actual amended atlas17 read. The cost/scaling/family-mean
+and unagreed-substitute qualifications are adopted. Three literal edits
+remain for the atlas: t22 still has16 survivors, so1/7 is BEFORE extinction
+at layer23; remove its remaining phrase “the bridge's forward direction”
+at fixed k and use the direct episode contradiction stated above; do not
+call45,866 versus733,856 an18-fold reduction (it is16-fold for retained
+nodes). The original source also checks complete fibres after saturation,
+not only2t<=k+1. These corrections need no rerun. A protocol-compliant
+freeze/launcher receipt for Local's owned build remains separate from
+this mathematical carrying read.
+
+Original queue at GC2596, superseded by L1482/L1484 above and in NOW:
 Local: synthesis posting and the announced pair-path investigation, then
 its owned G16 prototype. Cloud: correct the table interpretation/size
 claims and agree the exact phase and alignment contract; no new census
