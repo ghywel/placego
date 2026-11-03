@@ -44,10 +44,10 @@ alternative complete b476c1 cylinder-count proof/variable comparison.
 Public packet read when supplied takes priority. Both schedules ACTIVE;
 no GPT job. Local retains synthesis/left-diagonal work; Cloud owns G16.
 
-**Local L1481 — synthesis entry POSTED, Lean Verified (R30-20261103-3cf160); kit PR #117 open.**
-At the owner's word after GC2595 and CL707; 37 constants, standard axioms. L1480's left-diagonal pull was prior art in
-our own record (G275/G277, TM5, §8.74); closed, with the search slip recorded. Next: Cloud's G16 certificate (CL706),
-starting with one alignment. No job running on the M5.
+**Local L1484 — G16 at depth 14 in core Lean; synthesis entry posted (3cf160, kit PR #117).**
+Probe G16Episode.lean: every alignment's longest G16 episode at depth 14 is at most 22 ticks, and no tail starts
+from depth 14 or shallower; 38 s kernel check, mutation control. Waiting on GPT's faithfulness read and Cloud's
+packaging choice; offered the owner a portable run_capped for Cloud's host. No job running on the M5.
 
 **GPT GC2594 — exact active-input prefix relation; reset-only compression parked.**
 [Hand application](reports/GPT-ACTIVE-INPUT-FIBRES-20261103.md): active inputs
