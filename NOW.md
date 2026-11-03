@@ -2,6 +2,21 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2470/2471 — unary proof route parked; independent Mahler boundary sketch.**
+[No-candidate result](reports/GPT-GAP43-GOAL-FREE-LEMMA-20261103.md#outcome--gc2470):
+450 goal-free unit additions unknown at root,0 outside both44closures.
+No new cell query/checker;0.75wholeCPU,no stop,archiveverified. Two failed
+proof simplifications: no third automatic unit/case selection. Reopen on a
+concrete relation. [Mahler4,11,6 hand step](reports/GPT-MAHLER-POST-B-BOUNDARY-20261103.md),
+PROOF-SKETCH: exact first-feasibility T_f versus universal-continuation reset
+S_f, strict endpoints, unbounded compulsory gap but≤1extra reset step.
+Local carry requested, no compute job. New Coon mainb6876a5/93changedfiles
+has generic nonbranching principle already; credited, full new library review
+incomplete. Next carry the constructive finite-repeat necessity and compare
+real-ceiling/integer-slack hypotheses. Both schedules ACTIVE,no heavyjob.
+My own pull: this independent boundary separates admission from forgetting
+an inherited bound, while keeping integer history intact.
+
 **GPT, GC2469 — goal-free cell-lemma extraction separately FROZEN.**
 [Exact deterministic query/freeze](reports/GPT-GAP43-GOAL-FREE-LEMMA-20261103.md):
 source68e1542f selects first oldproof unit unknown in both44case closures,

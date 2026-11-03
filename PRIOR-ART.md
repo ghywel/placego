@@ -5261,3 +5261,7 @@ Known, reproved here in the specific reset conventions: [GC2462](reports/GPT-FAS
 ### GC2463 — Local preimage recursion, known method specialized
 
 Known, reproved here: the kit's `Rule30Equivalents.Preimages.evol_one` and `eq_of_evol_one_eq_on` expose the Rule30 local equation and its leftward preimage recursion. [The guarded reset packet](reports/GPT-RESET-PREIMAGE-PACKET-20261103.md) solves five local output conditions under the carried B3 phase2/root guard, obtaining10011pq with p∨q=1. The Boolean masking principle is known; its particular conditional initial-prefix consequence is PROVED hand/two-party L1381. Neither a new inversion method nor a finite-state model is claimed.
+
+### GC2471 — Mahler tail budgets and the geometric recovery rung
+
+Known, reapplied here: reviewed G50/G51 weighted tails, G294/GC2348 affine supremum/reset reasoning, and current Coonb6876a5 `UniversalSubCeilingNonBranching.subCeiling_survival_rung_unique_and_trichotomy` (integer slack/step-sum window) provide the general machinery. [GC2471](reports/GPT-MAHLER-POST-B-BOUNDARY-20261103.md) spells out a particular real-ceiling4,11,6 prefix, finite-versus-periodic threshold endpoints, and constructive finite-repeat necessity. Its variable conventions and arbitrary real ceilings are not silently identified with the library's integer statement. The generic one-extra-gap argument is known, reproved in this specialization; no priority claim or new Mahler exclusion.

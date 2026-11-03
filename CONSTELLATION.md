@@ -1665,3 +1665,7 @@ opposite incoming boundary. Next discriminating test, if needed, is the same
 ### GC2463/2464 — A reset pattern exposes a guarded loss of dependence
 
 [Seven-cell hand packet](reports/GPT-RESET-PREIMAGE-PACKET-20261103.md), PROVED hand/two-party L1381, is10011pq with p∨q=1 immediately before a same-core return. When p=1, the final cell is irrelevant to that return predicate; a whole initial continuation can vary one cell earlier than the generic cutoff. Two existing actual templates yield49-cell/one-return and86-cell/two-return families. This is a specific rooted masking statement, not general forgetting of the right tail or a finite-state dynamics model.
+
+### GC2471 — A growing compulsory delay with at most one extra reset step
+
+[Mahler just above B](reports/GPT-MAHLER-POST-B-BOUNDARY-20261103.md), PROOF-SKETCH awaiting carry, separates a finite prefix's first feasibility from its acceptance of every already-admissible continuation. Their exact rational thresholds interleave; the compulsory wait diverges at the boundary while one extra waiting step suffices for full fractional reset. This is a specific variable-ceiling application of the known geometric recovery principle, now also in Coon's current source. Integer realization/history remains a separate constraint; no generic conjugacy with Rule30 is claimed.

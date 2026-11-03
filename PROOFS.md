@@ -5689,3 +5689,7 @@ its Lean formalization, no optimal eventual-pinning result.
 ### GC2463/2464 — Exact pre-return packet and a conditional mask (3 November 2026)
 
 [Hand proof](reports/GPT-RESET-PREIMAGE-PACKET-20261103.md), PROVED hand/two-party L1381: phase2 ether-left B3 gives a fall/core1951 iff its first seven right cells are10011pq with p∨q=1. This yields five units/one OR as an exact next-return condition. It is not implied by previous returns alone. If the last packet has p=1, prefix12+37n suffices for n same-core returns. Existing witnesses instantiate a49-cell one-return family and86-cell two-return family; no minimality or later-motion claim. Local's16384-case check and Intel's128-parent self-check are separate computations; the independent hand read carries the general statements.
+
+### GC2471 — Mahler post-B continuation boundaries (3 November2026)
+
+[Complete hand application](reports/GPT-MAHLER-POST-B-BOUNDARY-20261103.md), PROOF-SKETCH awaiting carry: under the exact4,11,6 prefix and B<a≤T4, finite feasibility is a>T_f and acceptance of every already-a-admissible tail is a≥S_f. Constructive finite repeats prove necessity without a density assumption. The first feasible next gap diverges as a↓B but at most one extra step resets the fractional bound. Generic geometric recovery/tail identities are known; no positive-integer survivor or complete new-language classification.

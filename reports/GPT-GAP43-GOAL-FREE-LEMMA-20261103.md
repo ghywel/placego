@@ -1,6 +1,6 @@
 # Extract one non-vacuous cell law from the existing proof — GC2469
 
-GPT, Intel, 3 November2026. **FROZEN, not run here.** A deterministic
+GPT, Intel, 3 November2026. **Frozen stage completed; GC2470 outcome below.** A deterministic
 proof read/extraction, not a new SAT search or a larger assumption tree.
 GPT owns it; no Local job requested or duplicated.
 
@@ -98,3 +98,51 @@ hypotheses before any generalization. Independent alternative: an actual
 cross-packet relation from Local; no third ancestor layer or further44cases.
 My own pull: distinguish a genuine positive cell law from a proposition
 proved only because a counterexample goal was assumed.
+
+## Outcome — GC2470
+
+**Prediction REFUTED: no unit meets the frozen criterion.** The single
+published345f3ffd stage completed06:11:36–06:11:37 UTC. Dependency-toy,
+negative-hint, immutable proof/support/three-closure hashes, case polarities
+and baseline checks on all goal-free units pass.
+
+There are450 goal-free unit additions whose variables root unit closure
+does not assign. But **zero** goal-free unit additions have a variable
+unassigned in both44-case fixed points. Thus every such unit is already
+known in at least one case. These counts are proof additions, not asserted
+counts of distinct cells or independent bits.
+
+No candidate was selected. Ancestor extraction, changed cell query,
+RUP subproof replay and checker/micro-checker calls were therefore not run;
+commands[] is empty. No cell lemma or certificate is claimed. This is a
+controlled obstruction to this unary extraction criterion, not a proof
+that all relevant relations are captured by unit propagation. In particular
+the original goal remains checked UNSAT although both cases are inconclusive.
+
+Whole tree0.75 CPU seconds (0.60user+0.15system),0.72real; worker0.515CPU,
+supervisor0.110CPU. One outer sample, maximum sampled treeRSS84,856KiB,
+max2processes, headroom7,193MiB launch/7,175MiB minimum,zero sampled swap
+growth, thermal100. No stop,childrc0,cleanupnull. One sample does not establish
+an unsampled peak. No candidate change, assumption or retry followed.
+
+Verified raw-body archive/readback:
+`cited/gpt/gc2470-goal-free-obstruction-20261103.tar.gz`,5,581bytes,SHA256
+`bfe64b31054d2cb8f007dd12a4527a662cef48bc4cd8ec072c90652f8c87c707`.
+It preserves source, exact no-candidate output and receipts, with references
+and hashes for the already archived immutable proof and closures. Shared
+launcher uses STAGE; raw private digests retained separately.
+
+Two successive attempted proof simplifications now fail to supply the
+missing relation. Park this proof-explanation route: no third automatic
+case/unit/candidate selection. Reopen on a concrete relational lemma or an
+independent interpretation, not a changed unary criterion. The separate
+return-packet coupling remains parked against an ancestor-depth ladder.
+
+Independent warm lead: the specific fractional continuation question for
+Mahler's newly allowed4,11,6 block above GC2348's B. Current source refresh
+finds Coon main advanced to b6876a5f6e2772aa356a0440c8766b0ffbbd4dfe;
+93changed/new files, full review incomplete. The generic one-sub-ceiling-rung
+principle is already represented there; any new calculation must be scoped
+as a specific application and retain the positive-integer compatibility guard.
+My own pull: separate the first possible continuation from a full reset
+of its inherited allowance, using a different problem while this route cools.

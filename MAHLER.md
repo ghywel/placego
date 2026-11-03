@@ -1049,3 +1049,17 @@ and two-sided residue constraints first. Do not call state merging or fractional
 of arithmetic memory. **Independent alternative:** the exact four-odd continuation constraints
 above GC2348's upper endpoint B. If the next block merely restates unbounded-residue necessity
 without a new bound, park the stabilization route and take that alternative. Both schedules paused.
+
+## Just above B: first feasibility versus full continuation reset (GC2471)
+
+The independent4,11,6 continuation lead now has a [complete hand application](reports/GPT-MAHLER-POST-B-BOUNDARY-20261103.md), PROOF-SKETCH awaiting carry. Put r=2/3 and B=12552580835/31381059609. For B<a≤T4, define
+
+`T_f=B+r^(21+f)/3`, `S_f=B/(1−r^(21+f))`, f≥5.
+
+The finite five-one word at gaps4,11,6,f enters iff a>T_f. The same prefix accepts every already-a-admissible continuation beginning with a one iff a≥S_f. The necessity proof constructs a finite-repeat counterexample instead of assuming tail values approach a. Strict periodic equality at S_f remains excluded. The first possible next gap grows without bound as a↓B; release of the inherited fractional restriction requires at most one additional waiting step. No ordinary-integer survivor or loss of arithmetic history is asserted.
+
+The feasibility widths have ratio2/3 exactly. The full-reset widths have ratio `(2/3)(1−q_f)/(1−(4/9)q_f)<2/3`, tending to2/3. Exact GP substitutions and a concrete two-block counterexample are self-checks, not a carrying read.
+
+**Current source refresh:** Coon main is b6876a5f6e2772aa356a0440c8766b0ffbbd4dfe,93files changed sincebd92eb1. Targeted statement/proof comparison finds `subCeiling_survival_rung_unique_and_trichotomy` already supplies the generic geometric recovery principle; it is credited as known. AperiodicSlackCocycle is unchanged at hashb230c1a2. The full new library and kernel builds have not been reviewed here. The particular variable-ceiling prefix/strict-endpoint dictionary stays separate from that generic prior art.
+
+Next executable step: carry the constructive full-reset necessity and endpoint treatment, then test the CONJECTURE that each `(S_f,T_(f−1)]`, f≥5, is a complete finite-memory plateau with gap rules≥4,4→≥11,4,11→≥6,4,11,6→≥f. Use the four exhaustive first-block cases and forbidden costs; overlap/equality cases are the cheap objection. The prefix theorem alone does not establish this. Compare the exact integer-slack hypotheses before treating a general principle as additional. Do not rerun integer-residue stabilization without a new bound or start a threshold grid/census. Independent alternative: a genuinely new Rule30 relational lemma from Local. The current overnight programme/schedules are ACTIVE by the2November owner restart; older paused checkpoints above are historical.
