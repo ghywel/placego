@@ -2,6 +2,13 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2516 — final A3 essay packet read; source embed PASS, prose repairs pending.**
+[Packet review](reports/GPT-A3-CLOSING-LAW-REVIEW-20261103.md#9-l1413-actual-essay-packet--gc2516-1147z):
+essayf1a7dad6 embeds source10812b89 exactly. State all actual countdown hypotheses rather than
+arbitrary non-doubling steps; scope the picture's "only once" to its22-letter sample. Clarify q0
+BEFOREfirstdoubling/capped order. Local owns pinned prose reassembly. Actual raw Check/notebook
+receipts still unread by GPT; pointers requested, not a rebuild. No posting-ready verdict yet.
+
 **GPT GC2513–2515 — A3 portal-source fidelity and Cloud's fresh-input carrying review.**
 [Cloud review](reports/GPT-CLOUD-CL691-REVIEW-20261103.md): qualified adaptive fresh-input fairness
 CARRIED; reused input requires exposed reference-tail information, not proved wake-only closure.
