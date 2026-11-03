@@ -6460,3 +6460,39 @@ confined to a right half-line invades it only a bounded distance: L(t) ≥ −C 
   would, with the front held right of column 0, be a proof of the corresponding `Absorption` instance for every right
   half that never crosses. So progress on T55's route 3 (descent to the 109 wall states) is progress on the kit's
   route to Problem 1.
+
+## 60. The rooted observer in Lean: A1's right tail from 198 down to 87 (L1366)
+
+`tests/probes/lean/RootedFront.lean` (sha256 `a6bb4065951636dd…`) imports A1's catalog module `EtherEdgeZero` (sha256
+`4787092702a8744f…`). Core Lean, standard axioms. It formalises T54's observer for **any** two whole-line rule-30 evolutions
+and checks A1's 28 entries in the kernel.
+- **The identity.** `mis_rule` / `dif_succ` is the exact one-cell difference identity, with the background's values
+  as coefficients (T53/B5).
+- **Three-valued cells.** `tv`, `tv_sound`: `mis` over every completion of the unknown parents, checked on all
+  27 × 32 cases.
+- **States.** `HoldsR` is a rooted state (the leftmost difference L, with a window of two). `HoldsH` is a
+  half-line state.
+- **Steps.** `succR_sound` covers the step and the scan, `succH_sound` A2's step, `expand_sound` the half-line
+  expansion, and `convert_sound` the conversion and deduplication (`dedup_mem`, by a bit-mask key, `key_inj`).
+  `tick_sound` combines them: one tick preserves "some state holds" for **every** choice of the threshold k, so the
+  thresholds `ks` (A2's backward thresholds, GC2423) are untrusted data.
+- **The run.** `rows_spec`, `run_sound` and `check_sound` keep the background rows as bit masks (`stepN`), and the
+  kernel runs `check` (`decide +kernel`). A passing check gives H T x = E T x for every x ≤ Q and every H agreeing
+  with E on x ≤ b at time 0, whatever its right tail.
+- **The result.** `tail87_c0_c1` gives the entry window at the entry time from agreement on x ≤ 87, at all 28
+  entries. `pinned_of_agree` and **`edge_pinned_tail87`** state A1's `edge_pinned_tail` with 87 in place of 198.
+
+**Outcome (COMPUTED and kernel-checked, M5).**
+- **Build.** The module compiles in 51 s with empty compiler output.
+- **The kit's unchanged `Check.lean`** (`b882f252…`, verifier kit 93d98bbe) gives verdict pass. Replay is OK over
+  354 constants, with no new axioms, for the headlines `edge_pinned_tail87` (propext, Classical.choice, Quot.sound),
+  `check_sound` and `tick_sound` (propext, Quot.sound). The checker JSON has sha256 `de478f43910c415f…`.
+- **Controls.** A scratch check proved `check … 86 … = false` at (4, 3) by `decide +kernel`: the kernel's run
+  rejects cut 86, as the flip at 87 requires. The Python mirror of the exact Lean algorithm
+  (`rooted_front_lean_data.py`) passes all 28 entries at 87 and fails exactly one at 86.
+- **Status.** The observer's soundness is now PROVED in Lean as well as carried by hand (GC2434). A1's right-tail
+  theorem holds with cutoff 87 (PROVED, Lean). The single flip at 87 shows that cut 86 does not give the (4, 3) entry
+  (COMPUTED), so 87 is the least common cutoff *for these fixed entries*. That says nothing about optimal eventual
+  pinning, as GC2434 notes.
+- **Not done.** The A1 submission package is unchanged and still uses 198. Whether to upgrade it to 87 before
+  posting, or post 198 and add 87 later, is the owner's decision.

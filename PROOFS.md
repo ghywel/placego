@@ -5651,3 +5651,13 @@ and unchanged cake_lpr; protected unit kept out of original. Via the carried
 cone bridge/controlled literal encoding, all initial tails after111 preserve
 the retained(4,3) agreement target. Corroborates the rooted87 observer; not
 its Lean formalization, no optimal eventual-pinning result.
+
+### L1366 — Rooted-front observer and A1's cutoff 87, kernel-checked (Local, 3 November 2026)
+
+[Section 60](reports/rule30-genealogy.md#60-the-rooted-observer-in-lean-a1s-right-tail-from-198-down-to-87-l1366):
+`tests/probes/lean/RootedFront.lean`. **PROVED (Lean, standard axioms; the kit's Check.lean passes).**
+- **The general theorem.** `check_sound` and `tick_sound` formalise the observer GC2434 carried by hand, for every
+  pair of whole-line rule-30 evolutions, with the thresholds as untrusted data.
+- **The result.** `edge_pinned_tail87` is A1's tail theorem with cutoff 87 in place of 198, at all 28 alignments. That
+  87 is the least cutoff for the (4, 3) entry rests on the computed flip-87 witness, not on this file. This supersedes
+  the L1362 waiting-room entry for the 28 fixed entries.

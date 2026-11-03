@@ -2748,3 +2748,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   speed bound 7/44 (strip model) after A2's 7/12 and the rooted 7/24; every tested disturbance pinned; CONJECTURE: the
   classic ether is impenetrable from the right. Search aliases: news speed, invasion, impenetrable, ether wall, strip
   model, 7/44, ether_strip, ether_walls.
+- L1366 (Local, 3 November 2026): [the rooted observer in Lean](reports/rule30-genealogy.md#60-the-rooted-observer-in-lean-a1s-right-tail-from-198-down-to-87-l1366):
+  `lean/RootedFront.lean`, `check_sound` for any backgrounds, and `edge_pinned_tail87` (A1's tail with 87 for 198); the kit's
+  Check.lean passes. Search aliases: rooted front Lean, edge_pinned_tail87, check_sound, cutoff 87, decide +kernel.
