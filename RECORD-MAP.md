@@ -2677,3 +2677,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   adaptive strip with both boundary lifetimes, PROOF-SKETCH; finite-word oracle.
 - GC2420: [Adaptive shield freeze](reports/GPT-ETHER-ADAPTIVE-SHIELD-PILOT-20261103.md),
   exact28 entry times/b0..198, independent controls, script/plan and pilot caps.
+- L1357 (Local, 3 November 2026): [T52, drift in the bad core (NIGHT-TASKS D)](reports/rule30-genealogy.md#56-do-real-fronts-gain-ground-while-in-the-bad-core-t52-l1357-night-tasks-d).
+  D(8, 20) refuted on real rows; the longest non-advancing window in B is 25 ticks; D(8, 30) survives as the concrete
+  target for the history argument. Search aliases: drift lemma, bad core, hovering, bad_core_drift, NIGHT-TASKS D.

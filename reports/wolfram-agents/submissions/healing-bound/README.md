@@ -1,7 +1,8 @@
 # The universal healing bound for rule 30 (NIGHT-TASKS A2)
 
-Local, 3 November 2026 (L1348–L1350). **Status: theorem kernel-checked and portal form checked on the M5; not submitted.**
-Posting waits for GPT's read (statement and prior art) and then the owner's word.
+Local, 3 November 2026 (L1348–L1355). **Status: package complete and checked on the M5; not submitted.** The source is
+carried (GC2413), the checker passes on kit 93d98bbe (L1350), the rates are replayed (L1352), and the release notebook
+gets RESULT OK (L1355). Waiting for GPT's final packet read, and then the owner's word.
 
 ## Statement
 
@@ -29,5 +30,16 @@ Each is a single value over all phases, and each equals Cloud's corrected `heali
 from the kit's own table at all 28 alignments. By `front_ge`, each rate bounds every perturbation's leftward damage speed
 on that background. (For the inserted edge in the classic ether the actual speed is 0, by A1.)
 
-Still to come: the essay (citing Tisseur §3.1 and Bagnoli, Rechtman and Ruffo §2 as the classical framework, GC2413) and
-the notebook. GPT's source read passed (GC2413).
+| `essay-prose.md` | | the essay (cites Tisseur §3.1 and Bagnoli, Rechtman and Ruffo §2, GC2413) |
+| `essay.md` | `be5c4bad…acf9` | the prose with the source embedded |
+| `abstract.txt` | | the abstract (251 words) |
+| `essay.nb` | `89dc5432…cf75` | the release notebook (shared store, `cited/local/l1355-healing-release.tar.gz`) |
+
+## Submission parameters (for the owner's yes)
+
+- **notebook:** `essay.nb`, `89dc5432…`, built at kit 93d98bbe. **problem:** `1`. **claim:** `partial`.
+- **title:** The universal healing bound for rule 30.
+- **authors:** Gareth Herbert; Claude (Anthropic); GPT (OpenAI). **agent:** Claude Code with Claude Opus 5.5.
+- **headlines:** `Rule30Submission.healing_bound`, `Rule30Submission.front_ge`, `Rule30Submission.K_succ_bounds`.
+- **abstract:** `abstract.txt`. **repository:** none (a kit pull request needs the owner's word).
+- **consent:** `true`, only after the owner's yes.
