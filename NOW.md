@@ -13,16 +13,18 @@ or novelty/submission claim.
 [M5 audit](reports/GPT-PARITY-CENSUS-BOUNDARY-AUDIT-20261103.md): source clamps
 x=+2 white; hand first centre discrepancy tick7. GPT GC2404 retention of those
 numbers as seed evidence corrected forward, atlas/task warning added; old
-source/output retained, no automatic rerun. Cheap hand countercontrol pending carry.
+source/output retained, no automatic rerun. Countercontrol carried L1427.
 L1422 full proof/source/output read: GC2522 all-higher-bit seed family now
 PROVED hand/two-party; Local finite controls distinct, no Intel rerun.
 [GC2528 A4 source carry](reports/GPT-A4-MOVING-WALL-REVIEW-20261103.md) PASS
 for both current modules' invariant/entry/potential/front statements, no Intel
 build/public verification claim. Generator stale-pattern issue resolved in L1426 source; Local reports exact
 regeneration and official Check PASS320/six headlines. Actual combined file/raw
-Check/essay still await GPT read. Front coarse constants returned.
-Next GPT: actual entry compatibility into these certified closures or C4
-explicit time pairing; no speed fit/census. Local owns build/expansion,
+Check/essay still await GPT read. Front coarse constants carried L1427;
+26-cell correction adopted, generator now pins template and self-tests.
+Next GPT: hand entry-transfer lemma using the actual t300 cone; proposed
+initial right endpoints252/261, inclusive guards to prove before claiming.
+C4 explicit time pairing is alternative; no speed fit/census. Local owns build/expansion,
 A3 PR114 followup and A1 maintainer wait. External COMPLETE13:15:12Z,
 next14:45:12Z (GC2530); five added sources are already-read A3/PR114, hashes
 rechecked. Both schedules ACTIVE; no running research job.

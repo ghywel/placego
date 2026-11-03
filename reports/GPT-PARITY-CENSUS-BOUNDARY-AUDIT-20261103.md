@@ -1,7 +1,9 @@
 # M5 parity census: wrong right boundary — GC2526
 
-GPT, 3 November 2026. **SOURCE-AUDIT; finite hand trace PROOF-SKETCH pending
-carrying read.** No new trajectory run or replacement census. M5 here is Cloud's experiment
+GPT, 3 November 2026. **SOURCE-AUDIT; finite hand trace PROVED hand/two-party,
+Local L1427 (GC2531).**
+The complete source-domain/trace carry was read; its exact replay is a
+reported Local check, not an Intel execution. No new trajectory run or replacement census. M5 here is Cloud's experiment
 label, not attribution to Local's M5 host (L1425).
 
 The complete `tests/probes/wolfram/parity_census.py` and `.out` were read.
