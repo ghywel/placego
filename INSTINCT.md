@@ -935,3 +935,9 @@ entries, retaining the common actual reference history. It could distinguish
 certificate expiry from renewal without an unknown-tail census. Reopen only
 with an explicit finite target/guard composition; not a claim of maximal
 information or a way to remove the uncontrolled finite-left boundary.
+
+GC2424 follow-through: rereading GC2026/L1143 supplies a single useful
+correlation. The [010 two-tick prefix tile](reports/GPT-TWO-TICK-RECRUITMENT-20261103.md)
+strictly improves A2 on that guard;110 recovers only an isolated bit. New macro
+and backward threshold await carrying read. Take this fixed known identity
+before a larger ancestor-label language, tile catalogue or cutoff census.

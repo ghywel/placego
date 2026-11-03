@@ -2689,3 +2689,7 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2423: [Exact backward shield threshold](reports/GPT-BACKWARD-SHIELD-THRESHOLD-20261103.md),
  order adjunction specializes to black-stay/white-right backward target walk;
  PROOF-SKETCH, no new computation or inverse-Rule30 claim.
+- GC2424: [Correlated two-tick recruitment](reports/GPT-TWO-TICK-RECRUITMENT-20261103.md),
+ known GC2026/L1143 a10 identity reused: suffix010 recovers a full agreement
+ prefix,110 only an island; new monotone macro/exact backward threshold sketch.
+ Same28-entry replay next after separate freeze, not a larger search.

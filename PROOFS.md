@@ -5583,3 +5583,13 @@ For f_t(p)=p−1+E(t,p), h_t(q)=q at black E(t,q), else q+1,
 f_t(p)>=q iff p>=h_t(q). Reverse-time composition gives the exact least
 initial cutoff for a target inequality. PROOF-SKETCH awaiting carrying read;
 standard order-adjunction principle specialized, no inverse Rule30 assertion.
+
+### Waiting room — GC2424 correlated two-tick prefix recruitment
+
+[Exact suffix guard, monotone macro and backward threshold](reports/GPT-TWO-TICK-RECRUITMENT-20261103.md).
+Known GC2026/L1143 a10 identity is already carried. New application: two orbits
+agreeing through p with suffix010 still agree through p after two ticks; A2
+alone retains p−1. Suffix110 leaves an unknown gap and is not enough. The
+actual-orbit macro is monotone and lowers the backward target threshold by1
+exactly when010 ends at that target. PROOF-SKETCH for these applications;
+no computation, optimal-tiling claim or new formal source.

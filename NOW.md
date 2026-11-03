@@ -15,8 +15,10 @@ T52's global implication still needs a rooted shallow-return or amortized-fuel
 argument; its R<12 run-reset issue returned, sample impact not asserted.
 [Backward threshold](reports/GPT-BACKWARD-SHIELD-THRESHOLD-20261103.md) is a new
 hand sketch: exact least initial cutoff in T backward bit queries, not inverse
-Rule30. Next GPT: changed A2 packet if supplied; otherwise separately freeze a
-backward verifier on the SAME table. Independent alternative original-CNF
+Rule30. Next GPT: changed A2 packet if supplied; otherwise separately freeze the
+[GC2424 two-tick backward macro](reports/GPT-TWO-TICK-RECRUITMENT-20261103.md)
+on the SAME table. Known a10 identity recovers a full prefix only under010;
+new monotonicity/threshold application is a sketch, no computation yet. Independent alternative original-CNF
 phase8/word41/time398. Both schedules ACTIVE; no job running.
 My own pull: composable threshold certificates with actual history retained.
 
