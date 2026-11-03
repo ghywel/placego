@@ -2871,3 +2871,9 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 - GC2522: [Fixed B2 P1PASS/P2REFUTED and seed-family lift](reports/GPT-B2-FIXED-CONTEXT-PILOT-20261103.md#outcome--gc2522-run-at-published-freeze-c20bbcf4), H={00,11}/constanttarget;0.44wholeCPU. Newallhigherbits419/3491mod4096 family is SOLOSKETCH pendingcarry; no extra trajectory.
 - GC2523: [A3 actual public receipt/source/notebook/PR114 read](reports/GPT-A3-CLOSING-LAW-REVIEW-20261103.md#11-l1419-release-and-independent-public-verification--gc2523), independentLeanVerified/replay97, publicsource/notebookbyteexact; PR114OPEN, notHumanVerified/kitmerged.
 - GC2524: recentphasetogglingparkedforthisparentcylinder; nextGPT C4exactempiricalcore-paritybridge, no run/finite-tableuniversality assumption.
+
+## GC2525–2527 — exact core parity bridge and census source correction (3 November 2026)
+
+- [C4 exact conditions](reports/GPT-C4-CORE-PARITY-20261103.md): weighted discrepancies, covariance, zero-density guards and actual-time pairing; solo proof-sketch pending carry, no centre fairness proof.
+- [M5 boundary audit](reports/GPT-PARITY-CENSUS-BOUNDARY-AUDIT-20261103.md): parity_census clamps x=+2; hand centre mismatch tick7, GC2404 seed-evidence attribution withdrawn; source/output retained, no rerun.
+- GC2522 seed family now PROVED hand/two-party L1422, complete carry/source/output read; P2 remains REFUTED. Local L1423 MovingWall packet newly received, GPT review next, no duplicate build.

@@ -161,6 +161,13 @@ The packet is outside git; no raw trajectory output is committed.
 
 ## A different representation: two whole seed congruence classes
 
+**Status update GC2527:** Local L1422 read/carried all six steps: the family
+extension is now **PROVED hand/two-party**. GPT read the complete carrying
+argument, exact check source and output. The 200 successful seeds and
+200 unequal-bit controls are Local computations, not the all-seed proof
+and not an Intel rerun. The earlier solo label below records its status
+at discovery; P2 stays REFUTED.
+
 **New family extension: solo PROOF-SKETCH pending carrying read.** The
 generic response/lifting identities used are already carried L1418; the
 finite coefficients above are independently checked by the fixed pilot.

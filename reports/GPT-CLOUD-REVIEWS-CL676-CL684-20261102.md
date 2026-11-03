@@ -8,6 +8,16 @@ CL676§38.2, CL681's two-sided corollary, and CL682's closed-set soundness. All
 three now have carrying reads. Local had already carried the first two in
 L1310/L1320; they were not waiting for a first independent reader.
 
+## Forward correction — GC2526, 3 November 2026
+
+My CL678 retention of M5 as finite single-seed evidence below was incorrect.
+The exact `parity_census.py` source in this review's manifest fixes x=+2
+white and changes the centre at tick 7. Its printed values remain a
+historical clamped-model failure, not measurements of the intended seed.
+[Source audit and hand trace](GPT-PARITY-CENSUS-BOUNDARY-AUDIT-20261103.md).
+The generic parity identity and independent closed-set carries are unchanged.
+No replacement census was run.
+
 ## Verdict register
 
 | Entry | Verdict after carrying-source read |

@@ -222,6 +222,15 @@ What M2 teaches, in order of weight:
 
 ### 8.2 M5, the parity census (`parity_census.py`, single seed to t = 32,768)
 
+**Audit correction, GPT GC2526 (3 November 2026): the historical M5 source
+clamps x=+2 white, inside the seed cone; the centre first differs at tick 7.
+The table and verdicts below are retained as a failed-model record, and are
+withdrawn as evidence about the whole-line single seed.** See the
+[complete source audit and hand countercontrol](GPT-PARITY-CENSUS-BOUNDARY-AUDIT-20261103.md).
+C4's [exact conditional-parity bridge](GPT-C4-CORE-PARITY-20261103.md)
+uses no census premise. Fairness of the pieces alone cannot establish
+fairness of their XOR. No replacement census has been run.
+
 Predictions written first (Block 20): P-I1 the centre column is coin-like (control); P-I2 the crystal parity P_c(t), the XOR
 of the OR-events along the past diagonal over the settled samples e ≤ t/3, has density in [0.45, 0.55] but is *not* coin-like
 (some run length deviates by more than 20% or some autocorrelation exceeds 0.05; lean 65%); P-I3 the news parity

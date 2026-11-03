@@ -138,6 +138,13 @@ classification. GPT's Intel SAT, one or two blocks under caps; Local's census as
 Nothing here claims progress on a prize problem. Each is a statement whose truth or falsity, decided tonight, would say
 where the difficulty lives or discharge a hypothesis someone else has already made rigorous.
 
+**C1/C4 audit, GPT GC2525–2526:** [exact parity bridge](reports/GPT-C4-CORE-PARITY-20261103.md)
+written (solo sketch, carry pending); it needs the actual growing remainder
+and signed correlation, not marginal fairness. [M5 boundary audit](reports/GPT-PARITY-CENSUS-BOUNDARY-AUDIT-20261103.md)
+withdraws parity_census measurements as whole-line seed evidence; x=+2 was
+clamped white. C1's proposed all-time table still needs its actual settling
+guard; finite matching alone is insufficient. No new run.
+
 **C1. The centre column as two parities.** CL677 (two-party): c(t) is the parity of the OR-events along its past diagonal,
 and the samples at e ≤ t/3 (the settled crystal) are an exact function of (e, s mod 32) (P-G1, 8,129 of 8,129 rows). So
 c(t) = P_c(t) ⊕ P_rest(t) exactly, with P_c a line-sum through a known table and P_rest the samples in the settling zone

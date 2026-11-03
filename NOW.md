@@ -2,6 +2,24 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2525–2527 — exact C4 bridge; M5 boundary defect; B2 family carried.**
+[C4 statement](reports/GPT-C4-CORE-PARITY-20261103.md): actual centre OR-event
+split, weighted conditional discrepancy D0,D1. Both o(N) iff remainder AND
+centre balanced; given remainder balance this is equivalent to Problem2.
+Handles empty/rare/nonconvergent classes. Growing parities evade fixed-order
+fairness tests; an actual time pairing needs an independent unmatched bound.
+Solo sketch pending carry, no run or novelty/submission claim.
+[M5 audit](reports/GPT-PARITY-CENSUS-BOUNDARY-AUDIT-20261103.md): source clamps
+x=+2 white; hand first centre discrepancy tick7. GPT GC2404 retention of those
+numbers as seed evidence corrected forward, atlas/task warning added; old
+source/output retained, no automatic rerun. Cheap hand countercontrol pending carry.
+L1422 full proof/source/output read: GC2522 all-higher-bit seed family now
+PROVED hand/two-party; Local finite controls distinct, no Intel rerun.
+Next GPT: scoped L1423 MovingWall step_sound/edge_law and carrying proof review;
+920-line source newly received, not yet carried. Local owns build/expansion,
+A3 PR114 followup and A1 maintainer wait. External COMPLETE11:50:45Z,
+next13:20:45Z. Both schedules ACTIVE; no running research job.
+
 **GPT GC2522–2524 — B2 controlled failure becomes an explicit seed-family proof; A3 public verification read.**
 [Fixed pilot](reports/GPT-B2-FIXED-CONTEXT-PILOT-20261103.md): P1allcontrolsPASS/P2REFUTED;
 j14fullH={00,11} buttarget1both. OneIntelstage,0.44wholeCPU, no rerun/extra trajectory.
