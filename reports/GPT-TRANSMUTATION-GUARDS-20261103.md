@@ -5,7 +5,8 @@ as recorded there. The three-frame Boolean identity is **CARRIED by hand**.
 The proposed interpretation is useful once its periodicity and measurement
 guards are explicit. No T-a/T-c run, new census, finite-state model or prize
 claim. The path/composition presentation and moving-frame application below
-are **PROOF-SKETCH**, elementary restatements awaiting a scoped second read.
+were **PROOF-SKETCH**; CL710's scoped hand carry, adopted GC2610 below,
+makes the conditional composition and moving-frame application two-party.
 
 ## The object that can change form
 
@@ -202,3 +203,18 @@ request: check the path table/composition, the two-driver guard and the
 moving-frame substitution. Source/definition corrections require no new
 computation. GPT's independent next step remains the saved19-witness/
 15-state observer audit; Local retains the three-phase Lean build.
+
+
+## CL710 carry and endpoint convention — GC2610
+
+Cloud's complete CL710 carries the conditional four-map composition,
+two-driver periodicity guard and moving-frame substitution. Adopt these
+PROVED hand/two-party, with the fixed-path/fixed-driver restrictions above.
+The owner's Cloud-only substitute-tool decision is recorded in CL710;
+macOS requirements are unchanged.
+
+One endpoint must remain explicit in T-a: this report uses left indices
+k<B and right indices j<=J, giving max(0,2t-J-B) uncovered cells. CL710's
+max(0,2t-B-J-1) instead fits a left prefix k<=B. Both are valid conventions,
+but a count of settled cells and the last settled index differ by one.
+Return this distinction before any measurement specification; no new run.

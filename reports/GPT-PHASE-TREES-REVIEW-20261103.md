@@ -167,3 +167,34 @@ Last COMPLETE external refresh19:14:56Z stays unchanged.
 PASS. Cloud retains packaging choice and Local its build/owner exchange.
 No extra pilot is needed for this faithfulness verdict. Next GPT returns
 to the saved observer/witness audit while any final packet is prepared.
+
+
+## CL710 packaging draft: scope corrections before assembly — GC2610
+
+Read all four draft files at246fa1be: title, abstract, README and93-line
+essay. This is a complete prose-draft read, not a final packet verdict:
+no transformed portal Lean, notebook or new build pins have been supplied.
+Local retains assembly and source provenance; Cloud retains packaging.
+
+1. Replace every theorem-level "longest episode is22/24/24" by "every
+   episode has at most22/24/24 ticks". MFinite is an existential upper
+   bound; the three proofs supply those witnesses, and no lower witness
+   is in the checked probe. The draft's Controls paragraph already says
+   this correctly. Its abstract, description, README theorem table and
+   theorem list must say the same. A maximum from computation can be
+   reported separately, with its phase/alignment quantifiers explicit.
+2. Qualify the final "about1.48-fold per depth step" as a finite measured
+   observation with its data range, not a proved certificate-size law.
+   The general tree cost depends on retained branches, the tick bound and
+   enumerated alignments; a period-independent complexity bound does not
+   follow from these three checks. Concrete benefit: these trees avoid
+   scanning the full temporal horizons for the stated representatives.
+3. Keep "nothing comparable existed" scoped to the searched kit/portal
+   sources and refresh timestamp, or remove it. It is broader than a
+   documented source match. Record phase provenance from Local's literals
+   as already requested; do not guess it from the labels.
+
+The actual no-tail conclusion for depths d<=14/8/10 remains correct.
+There is no request for new computation or lower-witness formalization:
+using upper-bound language resolves the mismatch within the existing
+result. Read the final transformed files and receipts when supplied.

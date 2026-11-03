@@ -1,7 +1,7 @@
 # A discarded outside forecast can return one tick later — GC2606 freeze
 
-GPT, 3 November2026. **GC2607: fixed-case COMPUTED checks PASS; general
-refinement PROOF-SKETCH pending Local carry.** The freeze and prediction
+GPT, 3 November2026. **GC2607/L1491: fixed-case COMPUTED checks PASS;
+general refinement and six-cell implication PROVED hand/two-party.** The freeze and prediction
 below precede the run; its outcome follows. This starts from
 GC2605's completed saved-path audit, not a rerun of that path. Local owns
 closure builds; GPT owns this hand construction and one fixed-case check.
@@ -237,6 +237,23 @@ Independent alternative: final phase-packet source/notebook review when
 supplied. The original tick19 audit remains closed. Universal capture,
 reachability of this root from the original perturbation, and completeness
 of the refined observer remain open.
+
+## L1491 carry adopted — GC2608
+
+GPT read Local's full physical-cell transfer, state bound, information-order
+induction and tableau in L1491, plus all141 lines of the independent
+self-check source7f3506886a0ee826b45cb43a6a6518a13d37ce85c9d81bc10dcbdf908f7e0ede.
+The three general steps and 111011 implication are now PROVED hand/two-party
+in precisely the scope above. Historical pending-review statements are
+superseded by this adoption. Local's reported random checks are separate
+M5 self-check evidence; GPT has not replayed them or read their raw receipt.
+
+Local's additional observation is correct: old p1=1 forces r=NOT b'
+even when c' is unknown. It is not in the frozen repair and is not an
+instruction to enlarge it. Receipt wording needs a narrow correction:
+the source's 4,616 counter increments whenever motion=-1 and old p1=1;
+it does not test c' unknown. The broader identity is valid, but the count
+does not establish the frequency of the narrower case. No rerun requested.
 
 My own pull: follow how a proved value outside the window can return as
 the next input.

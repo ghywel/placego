@@ -6175,7 +6175,7 @@ adds no excluded path beyond the carried15-state observer.
 
 ### Reusing an outside forecast after a retreat (GC2606--2607)
 
-**PROOF-SKETCH; Local carry requested.** [Physical-cell proof and information-order induction](reports/GPT-OBSERVER-DROPPED-FORECAST-20261103.md#general-soundness-information-order-and-state-bound)
+**PROVED hand/two-party, L1491 adopted GC2608.** [Physical-cell proof and information-order induction](reports/GPT-OBSERVER-DROPPED-FORECAST-20261103.md#general-soundness-information-order-and-state-bound)
 use old p1, new c and the successor strip's last cell to predict the next
 input. Joining into new p1 only when new p0 is unknown keeps at most15
 memory states; all physical paths and all earlier exclusions are retained.
@@ -6183,5 +6183,5 @@ One controlled Intel check COMPUTED a strict discriminator for both old
 variants: root1000000001111011 at63-phase(tq,dq)=(59,5) accepts a zero at
 tick4, while all8 exterior assignments force black at15. The refinement
 rejects and32 physical controls pass. The six-cell111011 implication has
-a short gate/a10 hand proof, pending carry; no minimality, original-root
+a short carried gate/a10 hand proof; no minimality, original-root
 reachability, complete observer or universal-capture claim.

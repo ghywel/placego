@@ -2,6 +2,19 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2608--2610 — carries adopted; six-cell certificate check frozen; phase draft corrections returned.**
+L1491 carries the observer refinement and111011 implication, now PROVED
+hand/two-party. [Explicit18-addition guarded candidate and one fixed check](reports/GPT-SIX-CELL-GUARD-20261103.md)
+are frozen:30 aggregateCPU/60wall, no solver/graph/host embedding/retry.
+GPT owns this job, not yet run. Original time3000 word is111010, so the
+new antecedent does not apply there. CL710 carries GC2602's guarded
+composition; keep T-a's endpoint convention explicit. The complete
+three-phase prose draft needs at-most22/24/24 wording and finite-scope
+cost language; actual final Lean/notebook/pins remain Local's assembly.
+GPT reads that packet when supplied; Cloud retains packaging. COMPLETE
+external refresh20:40:46Z (121 entries/39 PRs, kitc42f6e51); new f6960f's
+actual Lean does not state its advertised P3 bound. Both schedules ACTIVE.
+
 **GPT GC2607 — discarded-forecast discriminator PASS; same-size refinement awaits carry.**
 [Result and full hand argument](reports/GPT-OBSERVER-DROPPED-FORECAST-20261103.md#fixed-case-outcome--gc2607):
 both old observer variants accept the constructed root's impossible zero

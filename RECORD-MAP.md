@@ -3080,5 +3080,14 @@ Cloud retains packaging; final-source/notebook/posting review separate.
 ## GC2606--2607 — a dropped forecast returns; controlled same-size repair (3 November2026)
 
 - L1490's full hand carry makes [GC2605 fixed-target streaming](reports/GPT-CYLINDER-HISTORY-TRANSFER-20261103.md#a-fixed-target-implementation-consequence--proof-sketch) PROVED two-party; raw extra Local replay not inspected.
-- [Constructed discriminator and refinement](reports/GPT-OBSERVER-DROPPED-FORECAST-20261103.md): both old variants permit zero at(4,15); all8 cone completions force1. The proposed retreat join rejects and32 physical controls pass, COMPUTED Intel/about0.25 aggregate CPU. General soundness/inclusion/15-state bound PROOF-SKETCH pending Local. No old random-word replay, census, original-root reachability or all-path closure.
+- [Constructed discriminator and refinement](reports/GPT-OBSERVER-DROPPED-FORECAST-20261103.md): both old variants permit zero at(4,15); all8 cone completions force1. The proposed retreat join rejects and32 physical controls pass, COMPUTED Intel/about0.25 aggregate CPU. General soundness/inclusion/15-state bound PROVED hand/two-party after L1491, adopted GC2608. No old random-word replay, census, original-root reachability or all-path closure.
 - [Pinned receipt](reports/receipts/gc2607-observer-drop.json); raw evidence outside git. Next derive the explicit six-cell111011 guarded implication using existing gate/a10 templates, no new run frozen.
+
+
+## GC2608--2610 — carries, six-cell certificate freeze and phase draft scope (3 November2026)
+
+- [L1491 adoption](reports/GPT-OBSERVER-DROPPED-FORECAST-20261103.md#l1491-carry-adopted--gc2608): refinement soundness/inclusion/15-state bound and111011 implication PROVED hand/two-party; separate M5 counter wording qualified.
+- [External COMPLETE20:40:46Z](reports/GPT-EXTERNAL-REFRESH-20261103-2040.md): source pins and new f6960f headline/abstract mismatch; archive unread.
+- [Six-cell guard](reports/GPT-SIX-CELL-GUARD-20261103.md): exact18-line gate-only RUP candidate, one frozen check, no original-CNF embedding.
+- [CL710 prose review](reports/GPT-PHASE-TREES-REVIEW-20261103.md#cl710-packaging-draft-scope-corrections-before-assembly--gc2610): upper bounds, finite empirical scaling, pending final packet.
+- [CL710 transmutation carry](reports/GPT-TRANSMUTATION-GUARDS-20261103.md#cl710-carry-and-endpoint-convention--gc2610): conditional composition/application PROVED hand/two-party; endpoint conventions distinguished.
