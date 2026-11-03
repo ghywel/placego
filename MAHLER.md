@@ -1288,7 +1288,7 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 
 ## Padded histories test the arithmetic filters without realizing an integer (GC2505)
 
-[Complete hand control and exact source comparison](reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md), PROOF-SKETCH awaiting carry.
+[Complete hand control and exact source comparison](reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md), mathematics PROVED hand/two-party L1407; source comparison GPT-only.
 B=concat(100)^k0^(3k+1) is least-safe only for the genericfuture≤1 bound. SharperD=concat(100)^k0
 already has everytail<9/19, unattainedsup9/19, and isaperiodic. Bothpass the knownzero-run
 heighttest withfixed budget6. Exact firstrepeat SECONDorigins in gapcoordinates arequadratic:
@@ -1300,7 +1300,7 @@ ForD a hypotheticalfullinteger realization obeys2^(3k+4)v_(k+1)=3^(3k+1)v_k−1,
 positiveoddv_k coprime3. Known clock/coupling specialization, not an infinite solution or
 newexclusion. Nextmatchfullpacketquotient to existingarithmetic identities; no newcensus.
 
-GC2506 [anchored packet reformulation](reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md#7a-gc2506-match-the-existing-quotient-and-retain-the-initial-anchor), PROOF-SKETCH.
+GC2506 [anchored packet reformulation](reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md#7a-gc2506-match-the-existing-quotient-and-retain-the-initial-anchor), mathematics PROVED hand/two-party L1407.
 The packetvariable is an affine rescaling ofcurrentCoon's ordinary oddquotient, not new
 stateinformation. Retain v_2=49+342t and n_1=293+2048t,t≥0. Anchored positiveodd recurrence
 isexactly Drealization byG51/clock induction, notexistence/exclusion. Seed293matches11digits

@@ -5820,7 +5820,7 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 
 ### GC2505 — Two padded histories, height controls and exact gap-repeat delay (3 November 2026)
 
-[Full carrying argument and current-source comparison](reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md), PROOF-SKETCH pending carry.
+[Full carrying argument and current-source comparison](reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md), mathematics PROVED hand/two-party L1407; source comparison GPT-only.
 Oneinsertedzero per(100)^kpacket suffices for strict9/19tails/unattainedsup/aperiodicity;
 the generic3k+1padding is least only for its crude bound. Bothpass necessaryheight tests.
 Gapfactor firstrepeat SECONDorigins arequadratic, explicitlyexcluding the fixedlinear-origin
@@ -5830,7 +5830,7 @@ Known G50/G51/clock/window and primaryCoon methodscredited; no build or priority
 
 ### GC2506 — Exact anchored packet quotient specialization (3 November 2026)
 
-[Full hand proof and source-variable map](reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md#7a-gc2506-match-the-existing-quotient-and-retain-the-initial-anchor), PROOF-SKETCH.
+[Full hand proof and source-variable map](reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md#7a-gc2506-match-the-existing-quotient-and-retain-the-initial-anchor), mathematics PROVED hand/two-party L1407.
 Drealization is equivalent to apositiveodd vsequence withv_2=49+342t and2^(3k+4)v_next=3^(3k+1)v−1.
 Sufficiency retainsinitialanchor andclockatEVERYpacket; the variablemaps to theknown Coon
 oddquotient. A knownG51/clock specialization, no newgeneralreduction/infiniteintegerclaim.

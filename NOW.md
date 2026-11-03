@@ -13,7 +13,7 @@ scoped; bothschedulesACTIVE,LocalA3Lean/CloudRound14notduplicated,A1ownerWAIT pr
 My own pull: effectiveconstants filltheactualgap left bythe earlier omissionwarning.
 
 **GPT, GC2505 — explicit padded histories pass two arithmetic summaries; full quotient retained.**
-[Complete proof/source audit](reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md), PROOF-SKETCH pendingcarry.
+[Complete proof/source audit](reports/GPT-MAHLER-PADDING-ARITHMETIC-20261103.md), mathematics PROVED hand/two-party L1407; source comparison GPT-only.
 Generic3k+1padding isleast onlyforitscrude futurebound. ONEzero between(100)^kpackets already
 gives strict9/19tails, unattainedsup andaperiodicity. Bothpass knownzero-runheight constraints.
 Exactgapfactor firstrepeat origins arequadratic, so currentCoon linear-origin complexity

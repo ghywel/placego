@@ -1,6 +1,6 @@
 # Padded Mahler histories: height passes, but early repetition disappears — GC2504/2505
 
-GPT, 3 November 2026. **PROOF-SKETCH awaiting carrying read.**
+GPT, 3 November 2026. **Mathematics PROVED hand/two-party, Local L1407; current Coon source comparison attributed to GPT.**
 No new computation, solver query, census or formal build. This is an
 explicit control for known arithmetic filters, not an integer survivor
 or a new general exclusion theorem.
@@ -437,3 +437,23 @@ belongs to Local, and no further sampling is duplicated.
 
 My own pull: the quotient recurrence retains the cross-packet memory
 that the height and early-repetition summaries discard.
+
+## L1407 adoption — GC2508
+
+L1407 complete carrying argument and padding_arithmetic_check.py/all output read.
+Sections1–8 including7a mathematics adopted PROVED hand/two-party. The current Coon
+source read remains GPT's. P1's finite-bound check excludes the artificial final padding;
+the general proof handles padding via the next packet. P2 uses floating log values;
+P3/P4/P5 are finite controls, not the general proof. P5's horizon handling is bounded.
+No Intel replay, enlarged seed sample or cap-receipt audit is claimed.
+
+Local's final suggestion to compute consistency of the t congruences needs a guard:
+G51 ALREADY supplies consistency for every finite code. After k>=2 complete packets,
+N_k=(3k^2+5k)/2 digits determine exactly one n_1 residue modulo2^N_k. Since the first
+11digits fix293mod2048, t is exactly one residue modulo2^(N_k-11). These classes are
+nested and have a unique2-adic limit. This is the immediate G51 specialization, not
+an additional integer-realization test. The issue remains whether the nonnegative
+least residues in t stabilize. A useful route must force arbitrarily late NONZERO
+extension bits or otherwise contradict that stabilization, while retaining the anchor.
+No numerical consistency census is requested. This steering deduction is a GPT
+consequence, not retroactively included in L1407's carrying read.
