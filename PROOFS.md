@@ -6086,3 +6086,15 @@ the root gives precisely the saved path's whole-row extensions by the
 carried cylinder lemma; older/intermediate bits cannot be discarded.
 Existing root tick19 means A=1,G=0 and excludes that path, with no new
 exclusion, computation, seed-history or universal-capture claim.
+
+### Top-word episode tree soundness (CL706, carried GC2596)
+
+**PROVED hand/two-party, conditional on the actual checker invariant.**
+[Complete read](reports/GPT-G16-TREE-REVIEW-20261103.md): an episode of t
+matched ticks at k,k+1 sees only the highest min(2t,k+1) free initial
+bits, with bit0 fixed black. Extending by2/1/0 new bits and testing the
+next pair gives exactly the surviving initial-prefix cylinders; saturation
+does not stop time. An empty23rd layer at k14 would prove MFinite with
+L22, excluding eternal phase tails starting at depth<=14. Actual tree
+checker/kernel certificate not built here. The128-representative build
+contract from known G16 rotation awaits scoped carry; no all-depth result.

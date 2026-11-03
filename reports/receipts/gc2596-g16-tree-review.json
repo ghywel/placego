@@ -1,0 +1,59 @@
+{
+  "entry": "GC2596",
+  "time": "2026-11-03T19:23:25.325663+00:00",
+  "status": "Locality and conditional empty-tree implication CARRIED hand/two-party with CL706; no implemented tree or kernel certificate",
+  "sources": {
+    "tests/probes/wolfram/g16_survival.py": {
+      "sha256": "d7d6c90212056d93eb73df99896e3be006cc44465b124487b463bb77f05d403f",
+      "bytes": 4554
+    },
+    "tests/probes/wolfram/g16_survival.out": {
+      "sha256": "a2b9c14b23e685e2abafbd5163fda46f9a5607f55d54daa895f66c1524eee39f",
+      "bytes": 11944
+    },
+    "tests/probes/wolfram/g16_tree_size.py": {
+      "sha256": "ced7ceb583d58311667559cf0217652d416786249d5b8483226d1a1302dfabaf",
+      "bytes": 3787
+    },
+    "tests/probes/wolfram/g16_tree_size.out": {
+      "sha256": "d56bf5fc59ace7ec3f9526d9c2c67425ae05d6b69e173eed5cb0509803e943f2",
+      "bytes": 1881
+    },
+    "tests/probes/wolfram/g16_episode.py": {
+      "sha256": "c6fa87f4b2fbd0c1c544504a8834456ddc0ad2a624323a90a01fd910db05b8b7",
+      "bytes": 2867
+    },
+    "tests/probes/wolfram/phase_episode.py": {
+      "sha256": "87f64382a0a16af1fe1b3416ca22a6ffbfaf6328fe35c38850501fb68162834d",
+      "bytes": 3471
+    },
+    "tests/probes/upward_rigid.py": {
+      "sha256": "9cac980fdde864f99699b59bd8f86f8124f6e857e2ffb258e3f6e3655b404a79",
+      "bytes": 4984
+    },
+    "tests/probes/lean/EpisodeBridge.lean": {
+      "sha256": "522de1444aea6702b8c91540fa26dc20f95c2f17992ddaf024e62669eab63dca",
+      "bytes": 15556
+    }
+  },
+  "source_read_scope": {
+    "g16_probes": "complete three episode/survival/tree sources; both new outputs",
+    "phase_episode": "complete59-line source",
+    "upward_rigid": "RING16 and ring_columns/phases conventions only; no new SAT audit",
+    "EpisodeBridge": "relevant already-reviewed definitions, mfinite_iff and episode_bridge implications; no new compile"
+  },
+  "computed_status": "Cloud reported; source/output read; no Intel enumeration",
+  "table_arithmetic": {
+    "surviving_nodes": 733856,
+    "explicit_child_candidate_tests": 1333472,
+    "collapsed_surviving_nodes": 45866,
+    "collapsed_candidate_tests": 83342,
+    "collapse_guard": "exact pinned phase with c(y)_j=y_(j-72), all128 spatial representatives at a=0; same phase as the table up to alignment",
+    "P1_counterexample": "k14 surv22/surv21=16/112=1/7<0.25",
+    "family_mean_denominator": "nonempty alignments only"
+  },
+  "no_new_compute_or_build": true,
+  "resource_status": "Cloud fallback not accepted as aggregate enforcement or authorization; no repeat requested",
+  "pending_carry": "exact128-representative build-contract application of known rotation",
+  "next": "Local owns separately frozen supported single-representative prototype after delivery; GPT actual public synthesis outcome or b476c1 complete source comparison"
+}

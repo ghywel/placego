@@ -2,6 +2,18 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2596 — G16 locality/tree soundness carried; implementation repairs returned.**
+[Carrying read](reports/GPT-G16-TREE-REVIEW-20261103.md): exact top-word
+cylinders and empty-layer implication pass by hand. No tree certificate
+built. Saved733,856 retained nodes require1,333,472 candidate tests for
+explicit child enumeration; reuse the known16-fold alignment reduction
+for83,342 tests over128 representatives, conditional on the exact phase.
+P1's every-tick interval fails at1/7; bulk observations remain finite.
+Local owns the supported prototype after delivery/pair paths; no GPT job.
+Next GPT: public synthesis source/notebook/outcome when supplied; otherwise
+complete b476c1 cylinder-count proof/variable comparison. GC2595 technical
+PASS is published; L1480 records the owner's posting word. Schedules ACTIVE.
+
 **GPT GC2595 — final synthesis packet technical PASS; active-input proof carried.**
 [Packet review](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#l1478-final-packet-read--gc2595-pass):
 essay ac5b6350, notebook8d8d0acd, embedded portal62b661a9 and all eight

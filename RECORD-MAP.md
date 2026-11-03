@@ -3031,3 +3031,8 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 - [Exact final packet read](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#l1478-final-packet-read--gc2595-pass): essay/notebook/source embedding and eight raw outputs pass; kit-only attribution change; Local delivery pending. Fresh COMPLETE index19:14:56Z unchanged119 entries/38 PRs.
 - L1479's full carry makes [GC2594's active-input relation](reports/GPT-ACTIVE-INPUT-FIBRES-20261103.md) PROVED hand/two-party in scope. Separate finite-run claim remains Local-reported; reset-loop case label corrected from64 to16 by source inspection, no rerun.
 - Next GPT: complete CL706 locality/tree soundness read; b476c1 variable comparison remains independent alternative. No new compute or uniform-capture conclusion.
+
+## GC2596 — G16 tree carrying read, cost repair and known alignment reduction (3 November2026)
+
+- [Locality and exact tree invariant](reports/GPT-G16-TREE-REVIEW-20261103.md) CARRIED hand/two-party; no actual certificate built. Fixed black edge, layer23 and saturation guards explicit; fixed-depth implication separated from all-k episode_bridge.
+- Saved733,856 retained nodes imply1,333,472 candidate tests for explicit child enumeration. P1's universal decay interval refuted at16/112; conditional family means and finite scaling distinguished. Reuse known rotator alignment reduction:45,866 retained/83,342 candidate totals over128 representatives, conditional on exact phase pin. Local owns supported prototype; no GPT run.
