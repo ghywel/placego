@@ -1078,7 +1078,7 @@ Next executable step: read the carrying response, then examine the transition in
 ## Complete plateaus inside the transition intervals (GC2475)
 
 [Five-case hand proof and exact midpoint control](reports/GPT-MAHLER-NESTED-PLATEAUS-20261103.md),
-PROOF-SKETCH awaiting carry. The two finite gap words (4,11,6,5,5) and (4,11,6,5,7) have one
+PROVED hand/two-party L1385. The two finite gap words (4,11,6,5,5) and (4,11,6,5,7) have one
 critical block each, yet respectively fail and pass at (T_5+S_5)/2. The continuation's value matters;
 this does not prove that a finite observer is impossible.
 
@@ -1095,3 +1095,18 @@ Next executable step: carry the new five-case step and test a guarded general re
 including competitor bounds and overlap conditions. Retain the separate curiosity lead in INSTINCT:
 can reflection into the endpoint-correct lazy beta map make the lower-hole literature applicable?
 No theorem transfers before that dictionary and its endpoint exceptions are proved.
+
+
+## An exact upper-ceiling to lower-map dictionary, with an applicability guard (GC2476)
+
+[Hand dictionary and primary-source scope](reports/GPT-MAHLER-LAZY-DICTIONARY-20261103.md), PROOF-SKETCH awaiting carry,
+specializes known beta reflection: x=2U follows the greedy map G at beta=3/2; y=1−x follows the lower
+map L=T^-_(3/2,1/2) on (0,1]. The branch at y=1/3 maps to 1, and L(1)=1. All U_j<a is exactly
+all L^j(y)>1−2a. It is a strict lower threshold, not a closed-survivor condition. Integer compatibility
+is still separate; complemented parity histories of positive n correspond to negative −1−n.
+
+Langeveld–Samuel v1's exact definitions and printed Corollary 2.7 were inspected. At this lazy endpoint,
+the lower itinerary of 1 is 1 forever, so the named greedy-base conversion requires beta'=2 rather
+than a value in its printed (1,2). This blocks an unqualified invocation, not every possible theorem
+transfer. The final journal treatment and later construction remain to be audited. The nested GC2475
+family is separately carried by L1385, whose complete proof/source/output were read.

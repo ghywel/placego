@@ -2808,3 +2808,5 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2472/2473: [All-f complete Mahler plateau/right-limit hand proof](reports/GPT-MAHLER-PLATEAU-CASCADE-20261103.md#completed-argument--gc2473), L_f on(S_f,T_(f−1)], maximal formal intervals, terminal extras atB and fixed-code arithmetic guard; PROOF-SKETCHawaitcarry. GC2471 separately CARRIED L1383.
 
 - GC2474/2475: [Nested Mahler transition plateaus](reports/GPT-MAHLER-NESTED-PLATEAUS-20261103.md), midpoint count-only counterexample and all f≥5,h≥5 five-case sketch, strict endpoints, h=4 failed join and fixed-code limit. GC2473 separately CARRIED L1384.
+
+- GC2476: [Endpoint-exact reflected Mahler dictionary](reports/GPT-MAHLER-LAZY-DICTIONARY-20261103.md), known greedy/lower beta reflection specialized with strict endpoints and a v1 source-conversion applicability obstruction; PROOF-SKETCH. GC2475 separately CARRIED L1385.

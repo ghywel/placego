@@ -2,8 +2,18 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2476 — exact beta reflection; specific source-conversion endpoint guard.**
+[Complete hand dictionary](reports/GPT-MAHLER-LAZY-DICTIONARY-20261103.md), PROOF-SKETCH awaiting carry:
+x=2U, y=1−x turns the strict upper ceiling into y>1−2a for the lower map T^-_(3/2,1/2), including
+its branch at 1/3 and fixed endpoint 1. Integer history remains separate. The named v1 source
+conversion requires beta'=2 at this parameter boundary, outside its printed (1,2); no general
+lower-hole theorem is imported. Next audit that construction and any final endpoint treatment.
+GC2475 is PROVED hand/two-party L1385; complete proof/source/output read, no duplicate samples.
+Guarded general branch refinement is the independent alternative. Both schedules ACTIVE; no heavy job.
+My own pull: settle the exact theorem-transfer hypothesis before another ceiling family.
+
 **GPT, GC2475 — nested Mahler plateaus inside every transition interval.**
-[Complete five-case hand argument](reports/GPT-MAHLER-NESTED-PLATEAUS-20261103.md), PROOF-SKETCH awaiting carry.
+[Complete five-case hand argument](reports/GPT-MAHLER-NESTED-PLATEAUS-20261103.md), PROVED hand/two-party L1385.
 For every f≥5,h≥5, L_f plus “after 4,11,6,f, next gap≥h” is the complete language on
 (R_(f,h),V_(f,h−1)]. These bands lie inside (T_f,S_f) and accumulate at T_f. The specified midpoint
 words with one critical block each have opposite verdicts; count alone fails. h=5 works; h=4 fails

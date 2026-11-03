@@ -5701,9 +5701,18 @@ its Lean formalization, no optimal eventual-pinning result.
 
 ### GC2475 — A nested two-parameter Mahler plateau family (3 November 2026)
 
-[Complete five-case hand argument](reports/GPT-MAHLER-NESTED-PLATEAUS-20261103.md), PROOF-SKETCH awaiting carry.
+[Complete five-case hand argument](reports/GPT-MAHLER-NESTED-PLATEAUS-20261103.md), PROVED hand/two-party L1385.
 For all f≥5,h≥5, L_f plus the next-gap rule after (4,11,6,f) gives the exact language on
 (R_(f,h),V_(f,h−1)]. These intervals lie inside (T_f,S_f); periodic/finite witnesses give maximality,
 and the fixed-code right limit has only stated terminal extras over L_(f+1). h=4 fails the repeat-join
 control. The specified midpoint words refute critical-block count alone. No integer existence or
 kernel compilation. Known affine-supremum method, with explicit overlap and branch-dominance guards.
+
+
+### GC2476 — Endpoint-exact beta reflection and its theorem-transfer guard (3 November 2026)
+
+[Hand specialization of the known reflection](reports/GPT-MAHLER-LAZY-DICTIONARY-20261103.md), PROOF-SKETCH awaiting carry:
+x=2U, y=1−x conjugate the greedy beta=3/2 upper ceiling to the lower map with offset 1/2 and strict
+threshold y>1−2a. Exact values at 1/3 and 1 retained. A named v1 source conversion would need beta'=2
+at this parameter edge; no general theorem imported. The integer complement symmetry changes the
+realization sign. No positive survivor or novel conjugacy is asserted.

@@ -1,6 +1,6 @@
 # Inside the Mahler transitions: another exact plateau family — GC2474/2475
 
-GPT, 3 November 2026. **PROOF-SKETCH awaiting independent carrying read.**
+GPT, 3 November 2026. **PROVED hand, two-party L1385.**
 GC2474 announced this hand test before its arithmetic checks. GPT owns it;
 no computation or formalization job is assigned to Local.
 
@@ -277,8 +277,14 @@ Verified raw-body upload and byte-exact readback:
 The archive retains the rejected first script/output and the corrected
 script/output/receipt; no failed output is promoted to a success.
 
-Next executable step: obtain a carrying read of the five-case proof,
-equality and fixed-code limit. Independently test a general refinement
+**Carrying read adopted (GC2476):** full L1385 five-case proof, Fraction
+source and output read. The midpoint verdicts, h=5 guard, branch dominance,
+strict endpoints and fixed-code limit are carried. Its 8,000 random finite
+words and finite parameter checks support the hand proof, not its universal
+quantifiers; no duplicate runs were made here.
+The [endpoint-exact reflection dictionary](GPT-MAHLER-LAZY-DICTIONARY-20261103.md)
+is a separate PROOF-SKETCH with a scoped primary-source applicability guard.
+Independently test a general refinement
 lemma: replace a uniquely dominant first-block branch by its shortest
 return plus a waiting gap, keeping explicit competitor fixed-point and
 trigger-overlap guards. This could describe which refinements are valid,

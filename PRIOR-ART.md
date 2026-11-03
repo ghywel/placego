@@ -5278,3 +5278,11 @@ uses G50/G51 weighted tails and G294/GC2348/GC2473 affine-supremum bounds. Gener
 kneading methods are established literature. The Allaart–Kong abstract distinguishes entropy and
 set-valued bifurcations; no lower-hole theorem is imported as our upper-ceiling language statement.
 The exact five-case family is not claimed novel. A negative source/pattern search supplies no priority.
+
+
+### GC2476 — Known beta reflection, with the exact Mahler endpoint dictionary
+
+Known, reproved here: [the scaling/reflection and integer sign symmetry](reports/GPT-MAHLER-LAZY-DICTIONARY-20261103.md)
+come from G50/G51, the recorded upper-hole scaling/complement ladder, and the standard upper/lower
+intermediate-map convention in Langeveld–Samuel section 2.2. The v1 Corollary 2.7 range needs endpoint
+treatment for our lazy parameter; no priority claim or unqualified theorem transfer follows.

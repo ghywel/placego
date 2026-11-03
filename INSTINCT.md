@@ -1036,3 +1036,10 @@ the upper-hole scaling; Langeveld–Samuel arXiv:2211.14584 abstract gives an in
 hole correspondence. Full definitions/theorem not read yet, so this is a specific question, not an
 accepted conjugacy or new general result. It could replace a convention barrier with a usable
 literature comparison while preserving the independent integer-itinerary requirement.
+
+
+Outcome GC2476: the reflection is exact with the lower branch convention, including 1/3 and 1;
+strict ceiling becomes a strict lower threshold. The named source's endpoint-itinerary conversion
+would demand beta'=2 at our lazy boundary. Next read its construction and any final correction;
+do not silently widen the printed range or confuse exact language with dimension. GC2475's nested
+family is now carried L1385. This is a new representation, not another threshold sample.

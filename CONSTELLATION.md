@@ -1677,7 +1677,7 @@ opposite incoming boundary. Next discriminating test, if needed, is the same
 
 ### GC2475 — Failure of a coarse count can identify a finer finite rule
 
-[Midpoint control and nested languages](reports/GPT-MAHLER-NESTED-PLATEAUS-20261103.md), PROOF-SKETCH awaiting carry.
+[Midpoint control and nested languages](reports/GPT-MAHLER-NESTED-PLATEAUS-20261103.md), PROVED hand/two-party L1385.
 Two words with one critical block each have different ceiling verdicts. Adding a conditional next-gap
 rule nevertheless classifies infinitely many whole parameter bands. Loss of one summary is not proof
 that all finite summaries fail. Refinement needs a legal repeat join and a dominant fixed point;
