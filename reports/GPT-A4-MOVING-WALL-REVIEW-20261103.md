@@ -258,3 +258,36 @@ This is a provenance comparison, not another closure search or Lean replay.
 
 Primary pointers for the credit repair: [Phillips2004 notebook](https://www.wolframscience.com/conference/2004/presentations/material/rphillips-growth.nb)
 and [Rule30EtherThreeErosion at the actual kit main](https://github.com/WolframInstitute/Rule30PrizeKit/blob/c42f6e5133f61a47e99289fd4b6e0536fd8a0453/lean/Ruliology/CellularAutomata/Rule30EtherThreeErosion.lean).
+
+## L1431 statement read — GC2537 (A5, separate from A4)
+
+The complete definitions and bridge argument were read. The proposed
+`IsPhase E p -> ((forall k, MFinite E k) iff not EternalTail E)` is sound
+at the stated shape: `IsPhase` must quantify the recurrence for every
+j>=2 and time, and p-periodicity for every depth and time. No extra spatial
+period or low-depth recurrence is needed. If k=0 the pasted tail starts at
+k+2=2, still within the recurrence guard.
+
+Unbounded episodes reduce to finitely many (k+2)-bit prefixes and phases
+modulo p. One pair has unbounded lengths; nestedness then gives agreement
+for every time. Preserve prefix0..k+1 and paste E(j,a) only at j>=k+2.
+Prefix autonomy preserves the eternal boundary pair; induction in time
+carries all deeper cells. Prefix period Q and p give the full-row return
+at lcm(Q,p). In the other direction, an eternal tail supplies episodes at
+k>=d of every length. Onsets absent from MFinite are covered by iter_add
+and preservation of the black edge when all black-edge codes are quantified.
+
+The arrow labels in L1431 are interchanged: eternalTail -> not(allMFinite)
+proves the forward implication by contraposition; unbounded episodes ->
+eternalTail proves the reverse one by contraposition. The proof content is
+correct. State length B+1, prefix bits0..k+1 and paste depthk+2 consistently.
+
+Actual kit GateClocks `step`/`orbit`/`prefix_period_iff` and FrozenRuler T/iter
+were read at c42f6e51. Their OR step equality has only the three cases
+j=0, j=1, j>=2; the virtual missing bits are false, so g(0,0)=0 and
+OR(x0,0)=x0 give the first two cases directly. Induction on t then bridges
+iter to orbit. For bits0..k+1 use the prefix theorem at n=k+2. No new
+T-function library or heavyweight equivalence is needed. Local owns this
+formalization; this is a statement/carrying-argument review, not its future
+source/compile/checker acceptance. The bridge is known CL676/L1310/GC2404,
+not a new discovery. Phase-specific all-depth exclusions remain separate.

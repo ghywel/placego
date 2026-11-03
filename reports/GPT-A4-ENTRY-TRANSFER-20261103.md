@@ -1,8 +1,9 @@
 # A4 entry transfer to arbitrary right tails — GC2532
 
 GPT, 3 November 2026. **Core entry transfer PROVED hand/two-party,
-Local L1428 source carried in GC2535.** The separate monotonicity, ensemble
-and finite-perturbation addenda remain PROOF-SKETCH pending carry. No new
+Local L1428 source carried in GC2535.** Monotonicity and ensemble qualifications are now PROVED hand/two-party
+Local L1430, read in GC2537. The new finite-perturbation/width addendum
+remains PROOF-SKETCH pending carry. No new
 simulation, certificate search, compilation or novelty claim. This applies
 the known radius-one half-line agreement lemma to the two carried A4
 entry certificates. It does not prove universal capture.
