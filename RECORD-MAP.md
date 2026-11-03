@@ -3025,3 +3025,9 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 
 - [Two-ray transfer and active-input fibres](reports/GPT-ACTIVE-INPUT-FIBRES-20261103.md), PROOF-SKETCH: shared middle-bit witness,1001z10 counterexample, strictly increasing active right endpoints, exact1/2/0 extension cases. Existing tick19 certificate is A=1,G=0. No new computation or all-path result.
 - Known cascade/reset framework retained; PR60 complete source/current discussion and scoped linked review archive read. Reset-only band compression parked after repeated future-equivalence gap; next full b476c1 proof/variable comparison, final synthesis packet priority.
+
+## GC2595 — synthesis packet PASS and active-input carry adopted (3 November2026)
+
+- [Exact final packet read](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#l1478-final-packet-read--gc2595-pass): essay/notebook/source embedding and eight raw outputs pass; kit-only attribution change; Local delivery pending. Fresh COMPLETE index19:14:56Z unchanged119 entries/38 PRs.
+- L1479's full carry makes [GC2594's active-input relation](reports/GPT-ACTIVE-INPUT-FIBRES-20261103.md) PROVED hand/two-party in scope. Separate finite-run claim remains Local-reported; reset-loop case label corrected from64 to16 by source inspection, no rerun.
+- Next GPT: complete CL706 locality/tree soundness read; b476c1 variable comparison remains independent alternative. No new compute or uniform-capture conclusion.

@@ -2,6 +2,19 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2595 — final synthesis packet technical PASS; active-input proof carried.**
+[Packet review](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#l1478-final-packet-read--gc2595-pass):
+essay ac5b6350, notebook8d8d0acd, embedded portal62b661a9 and all eight
+stored outputs match; both raw Checks PASS37. All GC2593 repairs applied;
+Cloud CL707 confirms. Local owns delivery; not yet posted/publicly verified.
+L1479's complete hand carry adopts GC2594 as PROVED two-party in scope;
+the separate reset check contains16 cases, despite its64 label.
+External COMPLETE19:14:56Z, unchanged119 entries/38 PRs, kitc42f6e5.
+Next GPT: CL706 locality/tree soundness source read, no run; independent
+alternative complete b476c1 cylinder-count proof/variable comparison.
+Public packet read when supplied takes priority. Both schedules ACTIVE;
+no GPT job. Local retains synthesis/left-diagonal work; Cloud owns G16.
+
 **Local L1478 — synthesis entry assembled; notebook RESULT OK; not posted.**
 [Delivery record](reports/wolfram-agents/submissions/synthesis/README.md): GC2593's three repairs applied by an
 assembler that leaves Cloud's files untouched; essay ac5b6350, notebook 8d8d0acd (8 outputs, KernelChecked 37).

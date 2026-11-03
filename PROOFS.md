@@ -6071,9 +6071,11 @@ exterior. The black location need not be uniform. No finite-state closure,
 entropy/capture claim or new computation. The complete84a42c source read
 passes separately, with its single-seed/fixed-column sample geometry.
 
-### Waiting room — active-input prefix fibres (GC2594)
+### Active-input prefix fibres (GC2594, carried L1479 / GC2595)
 
-**PROOF-SKETCH.** [Exact conditional relation](reports/GPT-ACTIVE-INPUT-FIBRES-20261103.md)
+**PROVED hand/two-party.** Complete L1479 carry read; finite enumeration
+is Local-reported, with source read and its16-case/64-label correction noted.
+[Exact conditional relation](reports/GPT-ACTIVE-INPUT-FIBRES-20261103.md)
 retains the initial assignments, rather than quotienting at a ray reset.
 The two-ray recurrence shares one physical middle bit;1001z10 shows a
 pair reset does not imply equivalence after another stay. The carried
