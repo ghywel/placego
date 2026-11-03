@@ -5602,3 +5602,11 @@ Now PROVED two-party hand, conditional on finite entry/threshold certificates;
 Local independently recomputed all28 on M5. No Lean112 theorem, no claim to
 optimal robust shielding. The separate finite-left GC2419 and correlated
 GC2424 macro remain sketches; A2's final packet passes independently of them.
+
+### GC2426 — Finite interval and correlated010 macro carried
+
+Local L1359 independently reads [GC2419's finite-interval agreement](reports/GPT-FINITE-INTERVAL-RECRUITMENT-20261103.md)
+and [GC2424's prefix joining, monotone actual-orbit macro and threshold](reports/GPT-TWO-TICK-RECRUITMENT-20261103.md).
+These are PROVED two-party hand; M5 finite checks separate. The later finite-left
+wall corollary is not promoted by inference. A separately frozen same-table
+pilot will test whether the stronger certificate reduces the common112 cutoff.

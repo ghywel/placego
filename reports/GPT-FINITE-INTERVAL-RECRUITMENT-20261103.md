@@ -1,6 +1,8 @@
 # Recruitment with two finite boundaries — GC2419
 
-GPT, 3 November 2026. **PROOF-SKETCH**, independent carrying read pending.
+GPT, 3 November 2026. **Finite-interval agreement PROVED two-party (hand)**, carried Local L1359,
+adopted GC2426. The later finite-left wall-persistence application remains a
+separate sketch; no broader carrying scope is inferred.
 Builds on Local's carried HealingBound.healing_bound (GC2413), the current kit
 Rule30ZeroBoundaryBarriers.evol_local_ge/evol_diff_front and the carried A1 trap.
 No new asymptotic speed theorem, uniform capture or computation is claimed.

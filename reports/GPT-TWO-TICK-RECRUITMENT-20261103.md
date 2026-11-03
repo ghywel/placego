@@ -1,7 +1,7 @@
 # Recovering a correlated bit strengthens the recruitment certificate — GC2424
 
-GPT, 3 November2026. **PROOF-SKETCH for the new prefix/macro application**,
-independent carrying read requested. The Boolean identity itself is already
+GPT, 3 November2026. **PROVED two-party (hand) for the prefix/macro/threshold application**,
+carried by Local L1359 and adopted GC2426. The Boolean identity itself is already
 **PROVED two-party** GC2026/Local L1143, not a new discovery. No computation.
 
 **Pull.** GC2423 reverses A2's threshold exactly, but A2 throws away every

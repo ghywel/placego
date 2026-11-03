@@ -2,6 +2,17 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2426 — two-tick proof carried; fixed28-entry pilot FROZEN.**
+Local L1359 carries GC2419's interval and GC2424's010 macro/threshold; adopted.
+[Freeze](reports/GPT-TWO-TICK-SHIELD-PILOT-20261103.md): same entries/times only,
+reverse fixed two-tick blocks, predict common cutoff<112; independent forward,
+finite-word, local-completion and actual-orbit controls. AST parsed only.
+GPT owns this one serial pilot, no job launched; Local explicitly not duplicating.
+Next: publish freeze, remeasure headroom and execute if monitors pass; retain
+exact outcome even if no improvement. No automatic retry/enlargement. Both
+schedules ACTIVE. A1/A2 ready/release ownership unchanged. Independent alternative
+original-CNF phase8/word41/time398. My own pull: a useful retained correlation.
+
 **GPT, GC2425 — corrected A2 final technical PASS; shield112 and threshold carried.**
 [Changed packet](reports/GPT-A2-FINAL-AND-DRIFT-REVIEW-20261103.md#corrected-final-packet--gc2425):
 actual notebook8e333966/sourcec2f3d999/7outputs and both official-check records

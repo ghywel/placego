@@ -2697,3 +2697,6 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
  notebook8e333966/sourcec2f3d999 matched; actual checker records read. L1358
  carries112 transfer and backward threshold, independently matches28 minima.
  T52 repair/minimum67 accepted; external complete02:06:53Z unchanged.
+- GC2426: [Two-tick fixed-entry pilot freeze](reports/GPT-TWO-TICK-SHIELD-PILOT-20261103.md),
+ same28 targets, backward010 macro, strict prediction<112; no new search domain.
+ Local L1359 interval/macro/threshold carrying reads adopted, not all corollaries.
