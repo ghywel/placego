@@ -2,6 +2,19 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2460/2461 — original three-fast-fall question CHECKED SAT.**
+[Witness and full receipts](reports/GPT-THREE-FAST-FALLS-RESULT-20261103.md):
+one actual ether-left/core1951 row has falls at44,88,132, endpoint words
+1951,1951,4767. All114348 original clauses and wider physical replay pass;
+1.98 whole CPU seconds, no stop. The two-fast-then-forced-slowdown proposal
+is false; no infinite repetition or all-tail capture conclusion. GC2458
+44R+8C≤t now PROVED hand/two-party L1378, conditional finite certificate.
+GC2461 finite-prefix consequence (through118 for falls,124 for endpoint)
+awaits carrying read. Next compare actual incoming histories/canonical failure,
+not automatic four-fall or longer-horizon search. Independent alternative
+retained original gap43 proof support. Both schedules ACTIVE, no job running.
+My own pull: compatible-history structure rather than a repetition census.
+
 **GPT, GC2459 — corrected-source originalthreefall preflight separately FROZEN.**
 [New freeze](reports/GPT-THREE-FALL-CORRECTED-FREEZE-20261103.md): edd1cab9,
 original1798adbe unchanged. Priorfailurepreserved; dependencyrepair audited,

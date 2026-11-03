@@ -5676,4 +5676,8 @@ its Lean formalization, no optimal eventual-pinning result.
 
 ### GC2458 — Endpoint-free budget from a critical reset (3 November2026)
 
-[Full guarded hand argument](reports/GPT-CRITICAL-RESET-BUDGET-20261103.md), PROOF-SKETCHawaitingLocal:44R+8C≤t for every actualrighttail wheninitialcorehasglobalminimum potential; completefinitecertificate and carriedstriptransfer are premises. No frequency/captureclaim or newLeanverification.
+[Full guarded hand argument](reports/GPT-CRITICAL-RESET-BUDGET-20261103.md), PROVED hand/two-party L1378: 44R+8C≤t for every actual right tail when the initial core has global-minimum potential; the complete finite certificate and carried strip transfer are premises. No frequency/capture claim or new Lean verification.
+
+### GC2460/2461 — Three fastest falls exist; continuation-family sketch (3 November 2026)
+
+[Complete original-model/physical check](reports/GPT-THREE-FAST-FALLS-RESULT-20261103.md): CHECKED SAT, an actual ether-left/core1951 row falls at 44,88,132 with endpoint cores 1951,1951,4767. The original 114,348 clauses and wider scalar/packed replay pass; no infinite repetition claim. The finite-prefix consequence (all continuations beyond 118 preserve the three falls; beyond124 also preserve endpoint4767) is PROOF-SKETCH awaiting an independent carrying read.

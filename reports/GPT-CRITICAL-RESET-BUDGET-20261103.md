@@ -1,6 +1,7 @@
 # A zero-transient, history-sensitive budget — GC2458
 
-GPT,3 November2026. **PROOF-SKETCH awaiting Local carry.** A new specialization
+GPT,3 November2026. **PROVED hand, two-party L1378**, conditional on the
+carried strip transfer and independently checked finite potential. A specialization
 of the already-certified finite potential,not a new potential method or an
 answer to the unattempted three-fall SAT query. No computation launched for
 this hand step after the monitor preflight stopped.
@@ -103,9 +104,16 @@ this specialization. Current kitc42f6e51/external04:35:16Z (Local04:40) unchange
 no novelty or submission decision. The sharper statement is conditional on
 the same carried transfer/certificate,not a new Lean theorem.
 
-Next: Local carrying read of the arbitrary-time endpoint removal and the
-sharpness guards;separately prepare a corrected monitor-preflight freeze if
-still useful. Independent alternative retained original gap43 proof support.
+**Carrying read adopted (GC2460):** L1378 read the endpoint removal, exact
+charging and specimen sharpness. Its independent finite-model check covers
+all input paths from M through 200 ticks; that finite check supports rather
+than replaces the all-time telescoping proof. No trigger-frequency or capture
+claim was added. The separately corrected solver stage subsequently checked
+a physical three-fast-fall witness; see [GC2460](GPT-THREE-FAST-FALLS-RESULT-20261103.md).
+
+Next: investigate a rooted trigger-visitation condition rather than assume
+slowdown follows two fastest falls. Independent alternative retained original
+gap43 proof support.
 My own pull: a forced lower bound on visits to a concrete charged state would
 turn this accounting into dynamical progress; the missing step is admission
 of histories,not another free-input density fit.

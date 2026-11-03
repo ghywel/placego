@@ -1652,4 +1652,8 @@ opposite incoming boundary. Next discriminating test, if needed, is the same
 
 ### GC2458 — Visits to costly states bound all subsequent motion
 
-[Hand budget](reports/GPT-CRITICAL-RESET-BUDGET-20261103.md), PROOF-SKETCH: from a minimum-potential reset,44R(t)+8C(t)≤t withRfallcount andCcountofthreechargedstates. No endpointreturnassumption. A universal historyshield under five explicitinitialprefixes,not a lowerboundontriggerfrequency or bounded invasion.
+[Hand budget](reports/GPT-CRITICAL-RESET-BUDGET-20261103.md), PROVED hand/two-party L1378: from a minimum-potential reset, 44R(t)+8C(t)≤t, with R counting falls and C counting visits to three charged states. No endpoint-return assumption. A history-dependent shield under five explicit initial prefixes, not a lower bound on trigger frequency or bounded invasion.
+
+### GC2460/2461 — Physical histories can realize three fastest falls
+
+[Checked actual-row witness](reports/GPT-THREE-FAST-FALLS-RESULT-20261103.md) has falls at 44,88,132, using three different retained paths rather than a repeated canonical cycle. Thus physical compatibility permits at least three zero-cost falls. A finite-prefix family preserving them is a hand sketch awaiting carry. Arbitrarily long repetition, universal capture and forced trigger frequency remain open; no automatic fourth-fall search follows.

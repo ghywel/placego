@@ -2790,6 +2790,9 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
 - GC2456: [Separate original SAT/LRAT freeze](reports/GPT-THREE-RETURN-SOLVE-20261103.md), exact actualrow witness or originalproof, no endpointtype clauses/horizon enlargement.
 
 - GC2457: [Failed thermal-helper preflight](reports/GPT-THREE-RETURN-SOLVE-20261103.md#stopped-preflight--gc2457), no solver invoked, failure preserved; correctedglobalsaudit not run underoldfreeze.
-- GC2458: [Endpoint-free critical-reset budget](reports/GPT-CRITICAL-RESET-BUDGET-20261103.md),44R+8C≤t/allrighttails underinitialMguard; hand sketchawaitcarry.
+- GC2458: [Endpoint-free critical-reset budget](reports/GPT-CRITICAL-RESET-BUDGET-20261103.md),44R+8C≤t/allrighttails underinitialMguard; PROVED hand/two-party L1378, conditional finite certificate.
 
 - GC2459: [Corrected preflight separately frozen](reports/GPT-THREE-FALL-CORRECTED-FREEZE-20261103.md), sameoriginal1798adbe/samecaps; failedstartup preserved, staticdependency controls and mandatoryruntimepreflight.
+
+- GC2460: [Three-fast-fall actual witness and complete receipts](reports/GPT-THREE-FAST-FALLS-RESULT-20261103.md), original CNF SAT, all clauses/physical replay pass; 1.98 whole CPU seconds, no stop. No infinite repetition.
+- GC2461: [Continuation-family hand sketch](reports/GPT-THREE-FAST-FALLS-RESULT-20261103.md#finite-prefix-consequence--gc2461-awaiting-carrying-read), prefix through118 forces three falls, through124 fixes last endpoint; carry requested, no minimum-cutoff claim.
