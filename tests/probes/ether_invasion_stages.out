@@ -10,3 +10,15 @@ stage 8 T=1200: depth 19 (0.016 per tick)
 front path every 150 ticks: [-31, -29, -29, -31, -31, -29, -29, -19]
 replay (list oracle): leftmost difference at T=1200: -31; tail bits 0..2399 sha256 af4247af6d2972b7
 ETHER_INVASION_STAGES_DONE
+# python3 tests/probes/ether_invasion_stages.py 15 150 8 150 (T55e, receding horizon)
+stage 1: depth 48 at the lookahead T=300; committed bits < 135; front at T_k=150: -25
+stage 2: depth 66 at the lookahead T=450; committed bits < 270; front at T_k=300: -48
+stage 3: depth 64 at the lookahead T=600; committed bits < 405; front at T_k=450: -66
+stage 4: depth 64 at the lookahead T=750; committed bits < 540; front at T_k=600: -64
+stage 5: depth 66 at the lookahead T=900; committed bits < 675; front at T_k=750: -64
+stage 6: depth 66 at the lookahead T=1050; committed bits < 810; front at T_k=900: -66
+stage 7: depth 64 at the lookahead T=1200; committed bits < 945; front at T_k=1050: -66
+stage 8: depth 64 at the lookahead T=1350; committed bits < 1080; front at T_k=1200: -64
+front path every 150 ticks: [-25, -48, -66, -64, -64, -66, -66, -64, -64]
+replay (list oracle): leftmost difference at T=1350: -64; tail bits 0..2699 sha256 b4dc89bc24a75530
+ETHER_INVASION_STAGES_DONE

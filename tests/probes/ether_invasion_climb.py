@@ -6,8 +6,9 @@ Ether at alignment (c0, c1) on x < 0 (alignments (4,3), (0,0), (6,1)); free righ
 cannot reach x <= 0 by T... they can reach x >= -T; we keep 2T so every cell that can influence the region x < 0 by
 time T is free), white beyond. Objective: the depth -L(T) of the leftmost difference from the ether at time T.
 Single-bit flips in random order, kept when the depth does not decrease; restart after 300 non-improving tries.
-The best tail is replayed by a separate list oracle; its depth, digest and the front path L(t) at t = T/4, T/2, 3T/4, T
-are printed.
+The best tail is replayed by a separate list oracle; its depth, digest, full bits (hex) and the front path L(t) at
+t = T/4, T/2, 3T/4, T are printed. The loop stops on wall-clock time, so runs are not bit-reproducible: the printed
+bits are the record (L1368 correction).
 """
 import hashlib
 import random
@@ -76,4 +77,6 @@ for T in Ts:
         print('T=%d alignment (%d,%d): best depth %d (%d restarts); replay leftmost difference at T: %s; front path %s; '
               'tail sha256 %s' % (T, c0, c1, s, restarts, rep, [path[k] for k in sorted(path)],
                                   hashlib.sha256(''.join(map(str, bits)).encode()).hexdigest()[:16]), flush=True)
+        print('   tail bits 0..%d as hex (bit i = cell x = i, little-endian): %x' % (len(bits) - 1,
+              sum(v << i for i, v in enumerate(bits))), flush=True)
 print('ETHER_INVASION_CLIMB_DONE')

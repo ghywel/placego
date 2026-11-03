@@ -6567,3 +6567,37 @@ stay fixed. The search is at alignment (0, 0).
     the 1 GiB cap. The 1.5 GB peak fell between samples.
   - The receipt, with paths redacted, is on the store at `cited/local/l1364-s16-capbreach.tar.gz`.
   - Lesson: a short burst can escape a 1 s sampler. Memory-heavy steps need a hard `RLIMIT` or a smaller design.
+
+**The T = 600 invader, dissected (COMPUTED; its bits are now in `ether_invasion_climb.out`).**
+- **Correction.** L1367 called the tail "reproducible from the seeded search". The loop stops on wall-clock time, so
+  that is not guaranteed. The rerun happened to find the same tail (sha256 `5e9e0870…`), and its 1200 bits are now
+  printed in hex.
+- **Its front.** With white beyond bit 1199, the front goes −11, −18, −23, −30, −35, −40, −46, −53, −59, −68, −79 at
+  t = 25, 75, …, 525. That is a steady 0.13–0.15 cells per tick while the designed tail feeds it.
+- **Then it traps.** From t ≈ 550 it holds at −78 to −81 through t = 2000, cycling with period 200 in the samples.
+- **Reading.** Invasion lasts exactly as long as the tail is built for it. Nothing here shows a limit to how long a
+  tail can be built. An invader for all time needs every finite prefix of the tail to keep the front out of a wall
+  state, which is a compactness-style question.
+
+### 59b. A receding-horizon invader (T55e)
+
+The staged build of T55d committed each stage's bits, and the front trapped after stage 1. T55e looks ahead instead.
+At stage k it optimises the bits up to 0.9 · (T_k + Δ) for depth at T_k + Δ, and then commits only the bits below
+0.9 · T_k. The next stage starts from the uncommitted remainder. Δ = 150, T_k = 150 k, k = 1..8, at alignment (0, 0).
+- **Prediction (about 55%).** The committed tail's front depth at T_k keeps growing, roughly linearly at about
+  0.1 · T_k, to around 100 or more by T = 1200. That would be sustained invasion over the whole run.
+- **Counterfactual.** If the depth plateaus, as in T55d, then designed invasion is a finite-horizon effect of each
+  search. Bounded invasion would then come back into play, with a larger C.
+- **Caps.** 145 s CPU, 1 GiB, nice 10.
+
+**T55e outcome (COMPUTED, M5, capped; `ether_invasion_stages.out`).** The committed tail's front is at −25, −48, −66,
+−64, −64, −66, −66, −64 and −64 at T = 150, …, 1350. It reaches −66 by T = 450 and then holds there: from stage 3 on,
+the lookahead search finds nothing deeper. The list replay at T = 1350 gives −64.
+- **The prediction (sustained linear growth) is REFUTED** for this design.
+- **The evidence across all adversarial searches.** The best depths are 31 (T = 150), 48 (300), 80 (600), 59 (1200
+  joint) and 66 (1350 receding). None exceeds 80, and the deepest fronts trap soon after.
+- **This corrects L1367's lean.** L1367 said the evidence "leans towards unbounded invasion". With T55e it is mixed,
+  and if anything leans the other way. Adversarial tails reach depth 80, but every design tried plateaus around
+  64–80.
+- **The conjecture, restated.** Bounded invasion of the classic ether by any right half is OPEN, with C ≥ 80 if it
+  holds. The small C suggested by typical disturbances (about 57) is refuted by the T = 600 specimen.

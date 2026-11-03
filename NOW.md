@@ -281,45 +281,39 @@ External refresh23:25Z,kitc42f6e51,19 openPRs; PR97 screened.
 Both schedules ACTIVE; no research job running.
 My own pull: the correctly conditioned incoming-bit law behind the0.647 statistic.
 
-**Local, overnight summary for the owner (3 November, L1323–L1367).**
-- **Waiting for your word: two submission packages, complete and checked, NOT posted.**
+**Local, overnight summary for the owner (3 November, L1323–L1369).**
+- **Waiting for your word: two submission packages, complete and checked, NOT posted (held since L1355).**
   - [A1](reports/wolfram-agents/submissions/ether-zero/README.md): the classic ether absorbs a black edge, so its front
-    speed is exactly zero, at all 28 alignments and for any right tail beyond 198. It is kernel-checked; the checker
-    passes on the verifier's kit; the notebook gets RESULT OK; and GPT's final packet read PASSED (GC2418).
+    speed is exactly zero, at all 28 alignments, for any right tail beyond 198. It is kernel-checked; the checker
+    passes; the notebook gets RESULT OK; GPT's final read PASSED (GC2418).
   - [A2](reports/wolfram-agents/submissions/healing-bound/README.md): the universal healing bound for every background
-    orbit. It is kernel-checked; the checker passes; the notebook gets RESULT OK (rebuilt after prose fixes); the rates
-    are replayed; and GPT's final technical PASS is GC2425.
-  - Posting is held for your yes (L1355). Optional, not in the packages: GPT's sharper cutoff of 112 cells for A1 (GC2421,
-    carried in L1358).
-- **New, 03:00 (L1361–L1362): A1's right-tail cutoff is exactly 87 (computed; soundness awaits GPT's read).**
-  - A new observer follows the leftmost difference with a two-cell window. It shows that agreement through 87 suffices
-    at every alignment, against A2's 112.
-  - A single flipped cell at 87 shows that 86 fails. 24 of the 28 alignments are exact; four have open gaps.
-  - This also answers GPT's 111 question (GC2430) "yes".
-  - Not in Lean yet. If it holds up, it could become an optional A1 upgrade from 198 to 87; that is your call.
-  - GPT has since carried the observer's soundness (GC2434) and certified the 111 case by an independent LRAT-checked
-    SAT run (GC2435).
-- **New, 03:25 (L1366): the cutoff of 87 is now kernel-checked in Lean.**
-  - `edge_pinned_tail87` is A1's tail theorem with 87 in place of 198, and the kit's checker passes it.
-  - The general observer theorem behind it (`check_sound`) works for any background.
-  - It is ready to fold into A1 if you want the sharper statement; the A1 package itself is unchanged.
-- **New, 03:10 (L1364): a candidate unifying structure. Is the classic ether impenetrable from the right?**
-  - Every disturbance we tried stays within a bounded distance: inserted edges, random right halves, all 756
-    ether–ether walls, and 1988 periodic right halves.
-  - The proved speed bounds fall as the method sharpens: 7/12 (A2), then 7/24, then 7/44.
-  - The pattern that gives 7/44 turns out not to be realizable.
-  - CONJECTURE: no disturbance can invade more than a bounded distance. If true, A1 is one case of a general shielding
-    law, with the kit's 109-state trap as its mechanism.
-  - **Update, 03:40 (L1367): weakened.** An adversarial search finds right halves that drive the front steadily to
-    −80 by time 600, about 0.13 cells per tick. Typical disturbances are still all trapped. So "impenetrable" holds
-    for typical disturbances, but probably not for every infinite right half. The kit's open Absorption, which concerns
-    finite right halves, is untouched.
-- **Capture line (T44–T51).** P1024's window automata split exactly into S_E, a forced region and a bad core, at
-  W = 8, 10 and 12. Capture is exactly leaving the bad core, which shrinks by about ×0.9 per 2 cells and is nested
-  across widths (GC2408, carried). History matters: pair resets do not cut it. The open statement: an actual row
-  cannot keep its front in the bad core for ever.
-- **Carrying reads done for GPT.** GC2389 (front clock), GC2390, GC2393, GC2395, GC2397, GC2398, GC2403, GC2408,
-  GC2415 (prefix codec) and GC2417 (label scan).
+    orbit. It is kernel-checked; the checker passes; the notebook gets RESULT OK; GPT's final technical PASS is GC2425.
+- **A sharper A1, ready if you want it (L1361–L1366; your call).**
+  - A new "rooted-front" observer follows the leftmost difference with a two-cell window.
+  - In Lean, `edge_pinned_tail87` ([RootedFront.lean](tests/probes/lean/RootedFront.lean)) states A1 with cutoff 87
+    in place of 198. It is kernel-checked, the kit's checker passes, and GPT read the statement (GC2442).
+  - A single flipped cell at 87 shows that 86 fails at one alignment, so 87 is the least cutoff for these entries.
+  - GPT confirmed independently: an LRAT-checked SAT run for cut 111 (GC2435), and the exact 43 at another entry
+    (GC2440).
+  - Folding 87 into the A1 package would need a new essay section, a notebook rebuild and GPT's re-read. Say if you
+    want it before posting; otherwise A1 posts as it stands.
+- **A pathway question, partly answered (L1364–L1368): how fast can news invade the classic ether?**
+  - Proved speed bounds tighten from 7/12 (A2) to 7/24 (rooted observer) and 7/44 (an exact 13-cell strip model). The
+    last has an independently checked certificate.
+  - Every typical disturbance is trapped: inserted edges, random right halves, all 756 ether–ether walls, and 1988
+    periodic right halves.
+  - But an adversarial right half, found by search, drives the front steadily to −80 by time 600, about 0.13 cells per
+    tick, before it traps. Searches designed to keep going plateau at −64 to −66 (L1369). So whether *any* right half
+    can invade without limit is open. If invasion is bounded, the bound is at least 80 cells.
+  - **Why it matters for the Prize.** The kit reduces the period-4 case of Problem 1 to its open `Absorption`
+    conjecture: finite right halves driven by an ether column enter the 109-state wall. Our results show the wall is
+    reached by everything typical, while adversarial halves can delay it for hundreds of ticks. Whether a proof of
+    Absorption can avoid using the finiteness of the right half is exactly this open question.
+- **Capture line (T44–T52).** P1024's window automata split exactly into S_E, a forced region and a bad core (W = 8,
+  10, 12). Capture is exactly leaving the bad core, which shrinks with W and is nested (GC2408, carried). The open
+  statement: an actual row cannot keep its front in the bad core for ever.
+- **Carrying reads done for GPT (selected).** GC2389, GC2393, GC2408, GC2415, GC2417, GC2427 (coalescence), GC2430
+  (87-input cone bridge), GC2441 (three-white law).
 
 **Local, L1323 — overnight joint research, re-armed 2 November 22:20 GMT at the owner's word:** Local's heartbeat
 (15 minutes, session cron) and store flag waiter are ACTIVE, alongside GPT's (below). The owner's words:
