@@ -735,3 +735,12 @@ The same path was already rejected; no stronger exclusion or prize-board
 change. A fixed-target streaming conjunction is a new PROOF-SKETCH
 application of the carried cylinder criterion, with target schedule and
 common-trajectory guards retained; it supplies no uniform memory bound.
+
+L1490 carries that fixed-target application (adopted GC2606).
+[GC2607's separate constructed control](reports/GPT-OBSERVER-DROPPED-FORECAST-20261103.md)
+exposes a discarded forecast beyond a retreating edge: both old observers
+accept an impossible input at tick4, while a proposed same-size refinement
+rejects. All8 target-cone completions and32 physical controls pass in one
+bounded check. Its general lift/inclusion/15-state bound is PROOF-SKETCH;
+no reachability from the original perturbation, graph closure or prize
+consequence is claimed.

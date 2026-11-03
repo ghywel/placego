@@ -2,6 +2,19 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2607 — discarded-forecast discriminator PASS; same-size refinement awaits carry.**
+[Result and full hand argument](reports/GPT-OBSERVER-DROPPED-FORECAST-20261103.md#fixed-case-outcome--gc2607):
+both old observer variants accept the constructed root's impossible zero
+at tick4; all8 exact target-cone completions force black. The proposed
+retreat join rejects it; all32 physical controls pass. About0.25 aggregate
+CPU seconds, no job/retry/graph. General soundness, information-order
+inclusion and the unchanged15-state memory bound are PROOF-SKETCH for
+Local's carry. Root reachability from the original perturbation is not
+claimed. Next GPT: hand-derive the guarded111011 implication in the
+existing gate/a10 proof language, six initial literals retained; no new
+run frozen. Supplied final phase packet takes priority. Local/Cloud retain
+build/packaging; schedules ACTIVE; last COMPLETE19:14:56Z.
+
 **GPT GC2606 — one fixed dropped-forecast discriminator frozen; L1490 carry adopted.**
 [Hand candidate and frozen check](reports/GPT-OBSERVER-DROPPED-FORECAST-20261103.md):
 one constructed16-cell root, target(4,15), no search/census. Old p1 is

@@ -1,0 +1,82 @@
+{
+  "entry": "GC2607",
+  "freeze_commit": "a8dd808a",
+  "status": "COMPUTED single-case checks; universal refinement hand proof pending Local carry",
+  "worker_sha256": "00bed528d6923d7eed8d5b80f4b0d3a1e4007dc0a18222823293c3d03e45a6ce",
+  "plan_sha256": "e46599c79365864b42c41a34a774b2789e754f5f0296df4853e119d6cdfad1d7",
+  "background_sha256": "528b5760a6d9c4b9d709512b6ba1e45ffecfe57a3ea987cc447ca69c9a94075b",
+  "original_observer_sha256": "1895a76fe6b418816f707e5ec31f8b675dcc01dcf046e087fb5be8a73c2f145e",
+  "root": "1000000001111011",
+  "phase": [
+    59,
+    5
+  ],
+  "target": [
+    4,
+    15
+  ],
+  "scope": "constructed root, not claimed reachable from saved t3000 perturbation",
+  "result": "Both original variants accept five zero labels; proposed refinement rejects at tick4; all8 exact target cone completions give1;32 physical-path controls pass;all-white cone gives0",
+  "resources": {
+    "wall_s": 0.54,
+    "driver_self_and_reaped_cpu_s": 0.156266,
+    "outer_supervisor_cpu_s": 0.094,
+    "approx_aggregate_cpu_s": 0.250266,
+    "time_maxrss_bytes": 16273408,
+    "launch_free_inactive_mib": 6457,
+    "launch_swap_mib": 1192.75,
+    "tree_samples": 0,
+    "sampling_note": "Job finished before first tree sample; sampled zeros are not zero RSS/processes."
+  },
+  "artifact": {
+    "path": "cited/gpt/gc2607-observer-drop-evidence.tar.gz",
+    "bytes": 2264,
+    "sha256": "0923a2d36d8086a18bf1caa8b61f9af6bfd07a99a8eb35b2cc2c496870ff378c"
+  },
+  "members": {
+    "fixed-case.receipt.json": {
+      "bytes": 261,
+      "sha256": "8b675c95785e7afba94d678721f4269d7d527eed22bf8cd4c00c13c27fe798d1"
+    },
+    "fixed-case.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "fixed-case.stdout": {
+      "bytes": 106,
+      "sha256": "f0d13bb43e83e916dee8a2a5314f4d249f55f8e82b7b6a728ff3b30b1b8b1f97"
+    },
+    "launcher.json": {
+      "bytes": 1063,
+      "sha256": "13ed571b158b99596744faeeb75325e422acc59166341a24c99ea33037c3c9b8"
+    },
+    "live.json": {
+      "bytes": 91,
+      "sha256": "e5f62604b9fd1e128c95f0ae8aa4488efe3cfb77d2fc4f0dd0f19c2faa3e69bc"
+    },
+    "out.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "output_hashes.json": {
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    "result.json": {
+      "bytes": 7023,
+      "sha256": "ebcc7b6e231c58fe9419137eaf07c58feb632eff60d573a81d0d29fc7d9bacb6"
+    },
+    "summary.json": {
+      "bytes": 378,
+      "sha256": "6fdb4fe8976a61a2e208ab9e56df9aae7cd3bc237fa3e32de74bcaa46c553070"
+    },
+    "thermal.txt": {
+      "bytes": 669,
+      "sha256": "b565b20812a2c0ab30069b94bb41c4d236524189730cb161cd5deb5a1a701910"
+    },
+    "time_receipt.txt": {
+      "bytes": 777,
+      "sha256": "c40661e33a467f2358f710bdca3e79a550ed2684f44d0fcca1ef25b9e29c1552"
+    }
+  }
+}

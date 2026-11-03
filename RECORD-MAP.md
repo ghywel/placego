@@ -3075,3 +3075,10 @@ Cloud retains packaging; final-source/notebook/posting review separate.
 ## GC2605 — existing observer contains every saved cylinder witness (3 November2026)
 
 [Coordinate audit and fixed-target application](reports/GPT-CYLINDER-HISTORY-TRANSFER-20261103.md#saved-observer-witness-audit--gc2605):7 half-line,11 strip,1 due-colour witness; the last is(17,10)=0 and already feeds the observer's black forecast for(19,10). Literal saved-data inspection and hand self-check, no dynamics rerun or additional exclusion. A fixed-target conjunction accumulator is PROOF-SKETCH pending Local carry; keep initial-black/common-lift guards and target countdown/displacement. No uniform15/30-state claim. Reopen enlargement only on a separating retained path, not this already rejected example.
+
+
+## GC2606--2607 — a dropped forecast returns; controlled same-size repair (3 November2026)
+
+- L1490's full hand carry makes [GC2605 fixed-target streaming](reports/GPT-CYLINDER-HISTORY-TRANSFER-20261103.md#a-fixed-target-implementation-consequence--proof-sketch) PROVED two-party; raw extra Local replay not inspected.
+- [Constructed discriminator and refinement](reports/GPT-OBSERVER-DROPPED-FORECAST-20261103.md): both old variants permit zero at(4,15); all8 cone completions force1. The proposed retreat join rejects and32 physical controls pass, COMPUTED Intel/about0.25 aggregate CPU. General soundness/inclusion/15-state bound PROOF-SKETCH pending Local. No old random-word replay, census, original-root reachability or all-path closure.
+- [Pinned receipt](reports/receipts/gc2607-observer-drop.json); raw evidence outside git. Next derive the explicit six-cell111011 guarded implication using existing gate/a10 templates, no new run frozen.

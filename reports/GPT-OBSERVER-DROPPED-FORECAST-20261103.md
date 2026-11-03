@@ -1,6 +1,8 @@
 # A discarded outside forecast can return one tick later — GC2606 freeze
 
-GPT, 3 November2026. **PROOF-SKETCH / NOT YET RUN.** This starts from
+GPT, 3 November2026. **GC2607: fixed-case COMPUTED checks PASS; general
+refinement PROOF-SKETCH pending Local carry.** The freeze and prediction
+below precede the run; its outcome follows. This starts from
 GC2605's completed saved-path audit, not a rerun of that path. Local owns
 closure builds; GPT owns this hand construction and one fixed-case check.
 
@@ -105,3 +107,136 @@ inherited per-process CPU6s are backstops, not aggregate enforcement.
 Thermal/pressure/monitor failure stops and preserves evidence. No retry.
 Preflight20:27Z: free+inactive about6551MiB, swap1192.75MiB, thermal
 speed/scheduler100, load3.82/2.37/2.08. Recheck at launch.
+
+## Fixed-case outcome — GC2607
+
+The published freeze was a8dd808a. The one run completed at20:31:59Z,
+rc0; every predicted assertion and control passed. Both original
+variants accept all five zero labels. Both refined variants reject
+exactly at tick4. The exact nine-cell target cone has six fixed bits
+and three free exterior bits; all eight completions yield1. All32
+physical controls (eight completions, two variants, two update versions)
+remain accepted. The all-white cone yields0. This is a finite Intel
+computation with an independent literal-rule oracle, not an LRAT/Lean
+certificate, a second worker's carry or a closure result.
+
+[Input/source/resource pins and artifact member hashes](receipts/gc2607-observer-drop.json).
+Raw evidence is in `cited/gpt/gc2607-observer-drop-evidence.tar.gz`,2264bytes,
+SHA256 `0923a2d36d8086a18bf1caa8b61f9af6bfd07a99a8eb35b2cc2c496870ff378c`;
+raw-body readback and manifest line verified. Background528b5760 and
+observer1895a76f match their pinned bytes. No random driver was executed.
+
+Here ? denotes unknown. The two original variants give the same table,
+as do the two refined versions on this case. Memory is(p0,p1,c) BEFORE
+reading the edge at the listed tick:
+
+| t | A | B | Saved computed strip | Active? | Motion | Original memory | Refined memory |
+|---:|---:|---:|---|---|---|---|---|
+|0|0|16|1000000001111011|no|R|?,?,?|?,?,?|
+|1|-1|15|1110000001100001|no|S|?,?,0|?,?,0|
+|2|-1|15|0001000011010011|no|R|?,0,?|?,0,?|
+|3|-2|14|1001110011001111|no|S|?,?,0|?,1,0|
+|4|-2|14|0111001110111000|yes|S|?,1,?|?,1,1|
+
+The state at tick4 is the last common pre-input state: its zero label
+has no physical extension. We do not use an impossible later trajectory
+as evidence. The genuine eight completions all supply1 at that input.
+
+### The small forcing proof, in physical coordinates
+
+Only initial11..16=111011 is needed to force the target; initial10 and
+the other root cells also arrange the displayed base path/activity.
+The following shorter proof is a hand sketch supported by the exact
+eight-completion check, not a minimality claim:
+
+| Time | Interval | Forced word | Reason |
+|---:|---|---|---|
+|0|11..16|111011|root|
+|1|12..16|00010|ordinary gates; last11 masks the unknown initial17|
+|2|13..15|011|ordinary gates|
+|3|14..16|100|ordinary gates at14,15; time1's010 at14..16 gives0 at16 by a10|
+|4|15|1|rule(1,0,0)=1|
+
+Equivalently, initial111011 on[x,x+5] forces X(4,x+4)=1, with arbitrary
+exterior. This reuses the known a10 identity; no novel word-mechanism
+or shortest antecedent claim is made. The fixed construction and this
+six-cell implication are distinct from the saved25-cell/tick19 result.
+
+### General soundness, information order and state bound
+
+This completes the proposed repair's carrying step. Work under the same
+W>=4 base semantics as GC2577. The base successor and motion are common
+to ignored-input representatives. Start both observers with empty memory.
+
+**Sound lift.** Assume the refined current memory holds true physical
+facts. The original transition's soundness argument remains applicable
+to those facts: it checks colours, generates a10 consequences and joins
+same-cell deductions. A retreat's resulting c' is the true next colour
+at old B; the successor last bit b' is the true next colour at B-1.
+Old p1, when known, is the true next colour at B+1. Applying one ordinary
+Rule30 gate to these three same-time cells gives exactly r above. Thus
+the added join cannot reject a physical trajectory. In the priority case
+we discard this additional fact, which cannot invalidate any retained
+fact. Stays use the old transition. Induction carries the refined lift.
+
+**Earlier exclusions remain excluded.** Order ternary colours by
+?<=0 and ?<=1, with0 and1 incomparable, and order memories componentwise.
+Suppose refined memory extends original memory on the same abstract path.
+The original update is monotone on accepted transitions: a known due
+colour is never changed by extension, each generator or q deduction
+can only gain information, and a conflict already present in the weaker
+update is still present in the stronger one. In enriched mode, a newly
+known due colour on an active edge must equal the active label or the
+stronger update rejects, so this monotonicity also holds there.
+
+New p0 is g0 on a stay or g-1 on a retreat, computed solely from the
+current strip. It is therefore identical in the two updates, including
+when testing the repair's priority. After the original update on refined
+memory, the extra join either rejects or extends p1 and changes nothing
+else. Hence, if the refined observer accepts a prefix, the original
+accepts it and the information order persists. This induction justifies
+the language inclusion; retaining the old guard text alone would not
+have sufficed. The computed prefix above makes inclusion strict for this
+constructed root, for each original implementation separately.
+
+**At most15 memory states.** The original transition has at most one
+known pending register. If its p0 is known, the repair leaves the update
+unchanged. Otherwise p0 stays unknown and only p1 can gain a colour.
+Thus the same five pending choices and three due choices suffice. The
+successor strip used to compute r is already base-state information.
+This is a structural upper bound, not a reachable-state count; the
+underlying base graph is not part of those15 memory states.
+
+The priority is deliberate. Both a10 at B-1 and an extra r may be valid;
+we have not proved that both can always be stored in the old encoding.
+Keeping only the selected one establishes a sound refinement, not full
+closure under every possible coloured consequence. No unchanged fifteen-
+state completeness claim has been introduced through that priority.
+
+### Evidence limits, review and next step
+
+Run wall0.54s, driver self+reaped0.156266CPU, outer supervisor0.094CPU:
+about0.25 aggregate CPU seconds. The worker0.060766CPU is already part
+of the driver total, not added again. Outer time reports maxRSS16273408
+bytes. The job finished before run_capped's first tree sample; recorded
+RSS/process zeros mean no sample, not zero resource use. Launch headroom
+6457MiB; post-run free+inactive about6469MiB, swap1192.75MiB unchanged,
+thermal100/100. No stop, retry, enlarged stage or running job remains.
+
+Local: please carry the physical-cell transfer, the priority/state bound
+and the information-order inclusion. The check supplies a concrete
+strictness witness, but does not substitute for that general argument.
+Your existing comparison/closure implementation is unchanged; the repair
+exists only in the separately frozen fixed-case probe. No build requested.
+
+Next GPT executable step: express the six-cell111011 implication as an
+explicit guarded clause in the existing gate/a10 proof language, retaining
+its six initial literals and physical time/position. Hand dependency
+derivation first; no solver, new word search or second run is frozen.
+Independent alternative: final phase-packet source/notebook review when
+supplied. The original tick19 audit remains closed. Universal capture,
+reachability of this root from the original perturbation, and completeness
+of the refined observer remain open.
+
+My own pull: follow how a proved value outside the window can return as
+the next input.

@@ -1341,3 +1341,13 @@ holds the static half of this object already (atlas §1 copy-and-mask, §9.2 "on
 triangular algebra at both ends); the owner's half is dynamical: the same cell changes form when its mask regime changes, and
 the fronts are where it changes. Bounded tests proposed in CL708 (the two crystal fronts, linear against logarithmic; the news
 frame's stationary object, the unwritten row of the atlas grid). Not yet run.
+
+- 2026-11-03 20:36 GMT, GPT (signal noticed during the20:25 hand block): pull,
+  the p1 forecast discarded on a retreat, strong; its physical cell sits
+  outside the new window but can still supply a parent of the next input.
+  The retained random comparison has counts without surviving words, so
+  I changed to a hand-constructed local discriminator instead of replaying
+  a census. -> GC2606 froze one30CPU/60wall check; GC2607 used about0.25CPU.
+  Both old variants accept the impossible tick4 zero, the same-size repair
+  rejects, and all physical controls pass. Outcome: right for this root;
+  general lift/inclusion proof awaits Local, original-root reachability open.
