@@ -1,0 +1,15 @@
+N=8192; tells: entropy deficit (millibits) n=1..10 | linear complexity of 2048 | 2-kernel distinct (64 max) | max|autocorr| lags 1..64 | max residue dev mod 8
+iid coin                     density=0.4954 | deficit=[0, 0, 0, 1, 2, 3, 9, 20, 44, 88] | LC=1025 | kernel=64 | autocorr=0.0256 | residue=0.0215
+Thue-Morse                   density=0.5000 | deficit=[0, 82, 415, 748, 1415, 2082, 2749, 3582, 4415, 5248] | LC=1024 | kernel=2 | autocorr=0.3386 | residue=0.0000
+Rudin-Shapiro                density=0.4922 | deficit=[0, 0, 1, 190, 501, 924, 1565, 2252, 3003, 3878] | LC=1024 | kernel=4 | autocorr=0.0018 | residue=0.0156
+LFSR-31                      density=0.5089 | deficit=[0, 1, 1, 2, 4, 7, 12, 23, 43, 91] | LC=31 | kernel=64 | autocorr=0.0383 | residue=0.0322
+rule30 W=0 (single seed)     density=0.5010 | deficit=[0, 0, 0, 0, 1, 2, 6, 17, 39, 88] | LC=1025 | kernel=64 | autocorr=0.0310 | residue=0.0186
+rule30 W=2                   density=0.4993 | deficit=[0, 0, 0, 1, 3, 5, 11, 22, 47, 99] | LC=1025 | kernel=64 | autocorr=0.0198 | residue=0.0322
+rule30 W=8                   density=0.5039 | deficit=[0, 0, 0, 1, 3, 7, 14, 26, 49, 93] | LC=1024 | kernel=64 | autocorr=0.0309 | residue=0.0391
+rule30 W=32                  density=0.5018 | deficit=[0, 0, 0, 1, 2, 5, 11, 21, 43, 88] | LC=1024 | kernel=64 | autocorr=0.0381 | residue=0.0244
+rule30 W=128                 density=0.4950 | deficit=[0, 0, 0, 1, 2, 4, 9, 20, 40, 80] | LC=1024 | kernel=64 | autocorr=0.0272 | residue=0.0400
+FAKE_COIN_TELLS_DONE
+
+real	0m1.428s
+user	0m1.777s
+sys	0m0.016s

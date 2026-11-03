@@ -1,0 +1,34 @@
+fair row, single flip, 10 rows, T=12000, 90010 steps after T/4
+  all steps                                                  n= 90010  P(white ahead)=0.5910  se=0.0017
+  fresh foot                                                 n= 62528  P(white ahead)=0.5012  se=0.0020
+  reused foot                                                n= 27482  P(white ahead)=0.7953  se=0.0030
+  step just made an advance (jump 0)                         n= 53197  P(white ahead)=0.4905  se=0.0022
+  advance, fresh foot                                        n= 51218  P(white ahead)=0.5006  se=0.0022
+  advance, reused foot                                       n=  1979  P(white ahead)=0.2284  se=0.0112
+  reused fraction after advances: 0.0372
+  step just made a heal of 1                                 n= 12954  P(white ahead)=0.4988  se=0.0044
+  heal of 1, fresh foot                                      n= 11310  P(white ahead)=0.5042  se=0.0047
+  heal of 1, reused foot                                     n=  1644  P(white ahead)=0.4617  se=0.0123
+  step just made a heal of 2                                 n= 19860  P(white ahead)=1.0000  se=0.0035
+  heal of 2, reused foot                                     n= 19860  P(white ahead)=1.0000  se=0.0035
+  step just made a heal of 3                                 n=  1990  P(white ahead)=0.0000  se=0.0112
+  heal of 3, reused foot                                     n=  1990  P(white ahead)=0.0000  se=0.0112
+  step just made a heal of 4                                 n=   953  P(white ahead)=0.6107  se=0.0162
+  heal of 4, reused foot                                     n=   953  P(white ahead)=0.6107  se=0.0162
+  step just made a heal of 5                                 n=   849  P(white ahead)=0.1673  se=0.0172
+  heal of 5, reused foot                                     n=   849  P(white ahead)=0.1673  se=0.0172
+PU: white-ahead frequency by distance of the foot from the running minimum (reused cells):
+  dist 0: n=19700 P(white)=0.9171
+  dist 1: n=3919 P(white)=0.4621
+  dist 2: n=1707 P(white)=0.6532
+  dist 3: n=1422 P(white)=0.3502
+  dist 4: n=375 P(white)=0.4267
+  dist 5: n=189 P(white)=0.6455
+  dist 6: n=93 P(white)=0.4946
+  dist 7: n=42 P(white)=0.4524
+  dist >= 8: n=35 P(white)=0.5429
+FRONT_FEET_DONE
+
+real	0m17.556s
+user	0m16.295s
+sys	0m0.180s
