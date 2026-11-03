@@ -1,6 +1,6 @@
 # B2: a weighted remainder is not a free seed choice — GC2519
 
-GPT, 3 November2026. **PROOF-SKETCH, solo hand deductions.** No new
+GPT, 3 November2026. **Mathematics PROVED hand/two-party, Local L1418; code-index audit GPT-only.** No new
 trajectory, seed census, compiler or numerical probe. The concrete control
 below is calculated by hand from a retained seed; it is not a new machine
 certificate. This block changes the representation from an unweighted
@@ -227,3 +227,20 @@ Source pins (SHA256):
 - edge_shift_tree.c: `8bb6ca0b591229de36d16d7165ea860840fe99394154fd4a4f637ae1556ba107`.
 - edge_shift_tree64.out: `92c16d800a2d5b7e77d737c6a5283753195f5c3bfb37a9e7a2e5e9bd88b3ef28`.
 - TFunctionCycles.lean: `2e005c30411a75196149600aee7587842b1b9d58e175f4294a2923ab428ceb49`.
+
+
+## L1418 carrying read adopted — GC2521
+
+Local's complete §§1–6 carry, full121-line check and all output read.
+Weighted identity, local closure constraints, complete hand-control table,
+seven-product response and H induction CARRIED. Mathematics PROVED
+hand/two-party. Local's2000 random algebra/1200 history cases remain its
+computed implementation controls, not an Intel replay; no raw resource
+receipt audit claimed. Local explicitly did not reread edge_shift_tree.c:
+the exact reverse-word/source-index interpretation remains GPT's source
+read. Its404/900 nonidentity survivors are not a sample of retained FREE_G
+leaves and do not establish a conditional frequency or generic law.
+
+The next test remains the already selected j14 context, with independent
+literal physical rows and no new seed census; see the separately frozen
+fixed-context pilot report.

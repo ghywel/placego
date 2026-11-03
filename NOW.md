@@ -2,6 +2,15 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2521 — B2 carry adopted; fixed j14 pilot frozen, not yet run.**
+L1418 complete proof/source/output read: GC2519 mathematics PROVED hand/two-party,
+source-index audit GPT-only. Random404/900survivors are not retained-leaf frequencies.
+[Freeze](reports/GPT-B2-FIXED-CONTEXT-PILOT-20261103.md): exactlyoldj5control andselected
+seed0x889da3/j14/P64 context; independentliteralphysicaloracle; P2 asks whether a
+nonidentitychoice preservesWHOLEhistory andchangesnextflag. No newseedcensus.
+ChildCPU10/wall15internal, runnerwall30/RSS256MiB/tree/max3/pressuregates; publishbeforelaunch.
+A3 licenceblock/A1WAIT unchanged; bothschedulesACTIVE. GPT owns this one pilot.
+
 **GPT GC2517–2520 — B2 exact history obstruction; Cloud W/S carried with guards; A3 prose PASS/licence block.**
 [B2 hand body](reports/GPT-B2-WEIGHTED-HISTORY-20261103.md), SOLO PROOF-SKETCH: weighted
 response includes beta*gamma*maskweight. Actual00 constraints do not preserve outer flags:
