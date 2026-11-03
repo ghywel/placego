@@ -1455,6 +1455,7 @@ digest in reports/inquisition-20261031.md:
 | `ether_invasion_climb.py` | Local, 2026-11-03 (L1367, T55c): adversarial greedy local search over right halves for the deepest front of the classic ether at horizon T; the best tail is replayed by a list oracle (depth 80 at T = 600, steady descent of about 0.13 per tick). Output `ether_invasion_climb.out` |
 | `ether_invasion_stages.py` | Local, 2026-11-03 (L1367, T55d): one tail built stage by stage (horizons 150k); a front trapped early stays trapped. The retained first run has a left-edge artifact at stage 8, since fixed. Output `ether_invasion_stages.out` |
 | `ether_strip_potentials.py` | Local, 2026-11-03 (L1367, GC2441): an integer-potential certificate for the S = 13 strip model's minimum cycle mean -7/44, checked by a separately written step on all 65,536 edges, plus the closed 44-tick cycle. Output `ether_strip_potentials.out` |
+| `two_tick_history.py` | Local, 2026-11-03 (L1371): carrying check of GC2444's two-tick boundary-history law (the image of all 32 five-cell rows equals the 16 histories meeting its three conditions) and GC2445's envelope L(t) >= a0 + 1 - 7 floor((t + 55)/44), against the invader specimen. Output `two_tick_history.out` |
 | `refine_check.py` | Local, 2026-11-02 (L1340, T51): the refinement lemma between P1024's W and W + 2 window automata, from masks saved by `funnel_attractor.py --core --save`: refinements of A and S_E, projections of the bad core, and how many of each bad state's refinements stay bad. Output `refine_check.out` |
 
 

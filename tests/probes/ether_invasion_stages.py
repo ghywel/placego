@@ -49,7 +49,8 @@ tail = 0                                         # bits of the right half, as of
 commit = 0                                       # bits below this offset are fixed
 for k in range(1, K + 1):
     T = STEP * k + LOOK
-    lo_b = max(0, commit - 40 if LOOK == 0 else commit); hi_b = int(0.9 * T) + 40
+    lo_b = max(0, int(0.9 * STEP * (k - 1)) - 40) if LOOK == 0 else commit   # LOOK 0: T55d's 40-cell overlap (fixed after GC2445)
+    hi_b = int(0.9 * T) + 40
     bits = list(range(lo_b, hi_b))
     base = left | (tail << (0 - LO))
     t0 = time.time(); best = (depth(base, T), tail)

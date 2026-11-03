@@ -1,0 +1,8 @@
+two-tick law: image of the 32 rows has 16 histories; conditions admit 16; equal: True
+t=  44: at most  2 re-anchorings; envelope L(t) >=  -18 for a0 = -5
+t= 150: at most  4 re-anchorings; envelope L(t) >=  -32 for a0 = -5; specimen front -21
+t= 300: at most  8 re-anchorings; envelope L(t) >=  -60 for a0 = -5; specimen front -43
+t= 450: at most 11 re-anchorings; envelope L(t) >=  -81 for a0 = -5; specimen front -62
+t= 600: at most 14 re-anchorings; envelope L(t) >= -102 for a0 = -5; specimen front -80
+t=1200: at most 28 re-anchorings; envelope L(t) >= -200 for a0 = -5
+TWO_TICK_HISTORY_DONE
