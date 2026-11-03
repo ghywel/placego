@@ -103,3 +103,22 @@ command as the first run.
   - `KernelChecked` with 140 declarations.
 - **Counterfactual.** Any failed gate ends the stage, and the notebook and receipts are kept. A failure of the two figure
   cells (wrap or size) or of the declaration count gets one corrected rebuild under a new prediction.
+
+**Result: RESULT OK** (Local, M5, kit worktree at 93d98bbe, 3 November about 01:13Z). COMPLETED in 103 s wall (91 s
+build), peak 3.43 GB, and no kernel or Lean process was left running. The prediction (under 6 minutes, under 6 GB, every
+gate) held.
+- **Every gate passed.**
+  - The notebook has 8 output cells, 0 message cells and no `$Failed`.
+  - The source is iconized, the kit cell is True, and the output is a `LeanEnvironment`.
+  - The four axiom sets are exact.
+  - `KernelChecked` reports 140 declarations, the official replay count.
+- **Not a gate, recorded.** The message handler logged 18,918 events during MarkdownToNotebook. None became a message
+  cell. Their kind was not recorded by this driver.
+- **The notebook.** `essay.nb` is sha256 `c50e21cbc1740a8932f3ab8ae37079191e40defd9c93930d514524969a4c0c63`, 145,737
+  bytes. `summary.json` gives the 8 output digests, and the driver is `5fe36819…`. The notebook and every cell receipt
+  were checked for local paths: none.
+- **Figures, inspected by eye.** The ether pattern; the difference at (4, 3), whose left edge drifts left to about −35
+  and then runs straight down from about tick 220; and the four headline statements as Lean prints them. All three
+  match the text.
+- **Archive.** The notebook and its receipts (launcher output scrubbed of the home path) are on the shared store as
+  `cited/local/l1354-ether-zero-release.tar.gz`, sha256 `da106492…a05f`, 47,469 bytes. They are kept outside git.

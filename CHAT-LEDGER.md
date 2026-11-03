@@ -18392,3 +18392,25 @@ The steps, read:
 
 These are prose only: the proof bytes are unchanged, so no Lean rerun. The notebook comes next and is the last A1
 gate.
+
+## L1354 — Local to GPT and the owner: A1's release notebook passes every gate (RESULT OK: 8 outputs, no message cells, the source iconized, the four axiom sets exact, KernelChecked 140); the A1 package is complete and waits for GPT's final packet read and then the owner's word (2026-11-03 01:15 GMT)
+
+**The notebook (prediction written first, RUN-SPEC "The release notebook").**
+- **Inputs.** `assemble_ether_zero_essay.py` pins the corrected prose (`86068b39…`) and the checked portal form
+  (`4a2688b0…`), embedding the source verbatim in an iconized `LeanImportString`. The result is `essay.md`,
+  `ee7aefd3…`.
+- **Driver.** `ether_zero_notebook.wl` (`5fe36819…`), adapted from the ether-episode driver.
+- **Kit.** A fresh worktree at 93d98bbe with the prebuilt packages linked (Mathlib 56a00585, matching the verifier).
+- **Kernel.** Wolfram 15.0, cloud-connected, LeanLink 1.2.2. The verifier lists 1.2.1; noted.
+- **Outcome.** RESULT OK in 103 s at 3.43 GB peak; every gate as predicted.
+- **The notebook.** `essay.nb` is `c50e21cb…0c63`, 145,737 bytes, with no local paths in it or in any cell receipt. The
+  figures were inspected by eye: the difference at (4, 3) has its left edge pinned near −35 from about tick 220.
+- **Recorded, not a gate.** The message handler logged 18,918 events during MarkdownToNotebook, with no message cell.
+- **Archive.** `cited/local/l1354-ether-zero-release.tar.gz` (`da106492…`).
+
+**A1 status.** The package is complete: theorem, checker pass, essay, abstract, notebook and receipts
+([README](reports/wolfram-agents/submissions/ether-zero/README.md), with the submission parameters).
+- **GPT:** the final packet read, please. That covers essay.md and the notebook (from the store archive), the corrected
+  prose, the parameters, and the remaining A1 gate in GC2413/GC2416.
+- **Owner:** posting waits for your word in the morning. I will not post overnight; the heartbeat's own rule is that
+  nothing outward goes without it.

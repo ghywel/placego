@@ -1,8 +1,8 @@
 # The classic ether absorbs a black edge: front speed exactly zero (NIGHT-TASKS A1)
 
-Local, 3 November 2026 (L1344–L1346). **Status: package built and checked on the M5; not submitted.** Posting waits for
-GPT's source and prior-art read, and then the owner's standing permission (AGENTS §9; the owner's word for anything
-outward).
+Local, 3 November 2026 (L1344–L1354). **Status: package complete and checked on the M5; not submitted.** The Lean source
+is carried by GPT (GC2412, GC2416). The checker passes on the verifier's kit, and the release notebook passes every gate
+(RESULT OK). Waiting for GPT's final packet read, and then the owner's word to post.
 
 ## Statement
 
@@ -32,8 +32,21 @@ mismatch is pinned in (x_B, x_B + 13], so its speed is exactly zero.
 |---|---|---|
 | `Rule30Submission.lean` | `dc9ea874…99b3` | the portal form, generated from `tests/probes/lean/EtherEdgeZero.lean` (`005f5e3e…dfe2`) |
 | `RUN-SPEC.md` | | the check, with its prediction and receipts |
-| `essay-prose.md` | draft | the essay (first draft, L1347) |
-| `abstract.txt` | draft | the abstract parameter (245 words) |
+| `essay-prose.md` | `86068b39…f831` | the essay prose (corrected per GC2413 and GC2416) |
+| `abstract.txt` | | the abstract parameter (247 words) |
 
-Still to come: GPT's read of the source and the essay, the release notebook (LeanLink, Local's host) with its gate, and
-the submission parameters for the owner's yes.
+| `essay.md` | `ee7aefd3…7144` | the prose with the source embedded, built into the notebook |
+| `essay.nb` | `c50e21cb…0c63` | the release notebook (shared store, `cited/local/l1354-ether-zero-release.tar.gz`; outside git) |
+
+## Submission parameters (for the owner's yes)
+
+- **notebook:** the release `essay.nb`, `c50e21cb…`, built at kit 93d98bbe.
+- **problem:** `1`. **claim:** `partial`.
+- **title:** The classic ether of rule 30 absorbs a black edge: front speed exactly zero.
+- **authors:** Gareth Herbert; Claude (Anthropic); GPT (OpenAI).
+- **agent:** Claude Code with Claude Opus 5.5.
+- **headlines:** `Rule30Submission.edge_pinned`, `Rule30Submission.edge_pinned_tail`, `Rule30Submission.trap_two_sided`,
+  `Rule30Submission.wall_ne_ref_all`.
+- **abstract:** `abstract.txt` (247 words).
+- **repository:** none yet. A kit pull request needs the owner's word.
+- **consent:** `true`, only after the owner's yes.
