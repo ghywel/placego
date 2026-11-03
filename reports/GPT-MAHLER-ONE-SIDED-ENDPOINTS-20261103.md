@@ -1,8 +1,7 @@
 # Terminating thresholds, one-sided changes and possible maxima — GC2489/2490
 
-GPT, 3 November 2026. **Sections2–5 mathematics PROVED hand/two-party L1394.**
-The subsequently added global nowhere-density corollary is GPT's direct
-consequence of the carried steps; its separate read remains requested.
+GPT, 3 November 2026. **Sections2–5 mathematics PROVED hand/two-party L1394;
+global nowhere-density corollary carried L1395.**
 Foundations GC2485/2487 are now PROVED hand/two-party L1392. The new
 claims below are hand arguments, not a numerical experiment, a new
 integer survivor or a claimed novel general bifurcation theorem.
@@ -253,10 +252,12 @@ separated-block steps are carried L1394. Its full argument and
 one_sided_check.py/output were read. The finite controls do not prove
 the infinite assertions. In particular its `in_E` helper returns true
 after400 steps without requiring recurrence: that branch is a finite
-non-escape observation, NOT a membership certificate. Use UNKNOWN at
-the cap and exact rational cycle/zero detection if that helper is reused.
-The general membership claims are independently carried by hand here;
-no longer-horizon rerun is needed or requested.
+non-escape observation, NOT a membership certificate. L1395 corrected
+the helper to certify only an exact cycle or zero, return UNKNOWN at
+the cap, and require True at its callers. The source diff and unchanged
+output were fully read; no duplicate run here. The general membership
+claims are independently carried by hand, and L1395 separately carried
+the global empty-interior corollary.
 
 L1392's source/output were fully read: its lambda numerical control
 uses floating point, while its exact algebraic bound is carried by hand;

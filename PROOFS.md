@@ -5766,7 +5766,7 @@ periodic maximizing limits remain possible. This correction/lemma is also carrie
 
 ### GC2490 — Termination, left isolation and strict nonperiodic formal realizations (3 November 2026)
 
-[Full hand proof](reports/GPT-MAHLER-ONE-SIDED-ENDPOINTS-20261103.md), mathematics PROVED hand/two-party L1394; subsequent nowhere-density corollary separately awaiting read.
+[Full hand proof](reports/GPT-MAHLER-ONE-SIDED-ENDPOINTS-20261103.md), mathematics PROVED hand/two-party L1394; nowhere-density corollary carried L1395.
 Throughout0<a<1/2, terminating threshold points inE are exactly its left-isolated points. A cut
 hit yields a finite left-flat certificate; truncation tail maxima approximate every nonterminating
 point strictly from below. Terminating E is countable/dense, and right approximants show E has
@@ -5776,3 +5776,14 @@ throughout(0,1/2); no full-range zero-length assertion is made.
 Separated prefix blocks with unbounded zero padding give strict non-eventually-periodic formal
 histories with any nonterminating E maximum; these are exactly their possible sub-half suprema.
 G51 arithmetic realization remains separate. GC2485/2487 foundations carried L1392.
+
+### GC2494 — Full formal plateaus, self-maximal admissibility and right isolation (3 November 2026)
+
+[Complete hand proof](reports/GPT-MAHLER-COMPLETE-PLATEAUS-20261103.md), PROOF-SKETCH awaiting carry.
+Self-maximal word + sub-half root forces greedy admissibility by a supremum. All strict suffix
+words withS<1/2 yield exact(S,T] bands/G51[A,T) windows. Cofinal terminating E points exclude an
+unbounded final flat component; the carried left-isolation criterion makes every component's
+right endpoint finite and its left endpoint periodic. Right isolation iff pure periodicity.
+The non-eventually-periodic formal filter gives maximal closed[S,T] bands; integer realizability
+and maximality remain separate. Global width ratio infimum0; no gap3-only uniform lower bound.
+Known Parry/Lyndon methods reproved with strict conventions; no full Mahler/novelty/build claim.

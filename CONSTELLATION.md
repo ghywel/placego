@@ -1727,3 +1727,12 @@ identifies left-accumulation points ofE with the possible sub-half maxima of non
 histories. Longer threshold prefixes separated by sufficiently long zero runs keep every tail
 strictly belowa while approaching it. This preserves a large formal freedom even after eventual
 periodicity is excluded; the remaining arithmetic compatibility is a different constraint.
+
+### GC2494 — A complete symbolic partition still leaves arithmetic and a limiting boundary
+
+[Full formal plateau calculus](reports/GPT-MAHLER-COMPLETE-PLATEAUS-20261103.md), PROOF-SKETCH awaiting carry,
+replaces a spacing shortcut by the actual admissibility screen and pairs every nontrivial flat
+component with a finite word. Purely periodic thresholds are isolated on the right; terminating
+ones on the left. Filtering out eventual periodicity closes each lower band boundary, as already
+known in the gap ladder. None of the formal boundary witnesses supplies a positive integer, and
+pointwise sub-half histories may have supremumhalf, outside every uniform sub-half ceiling.

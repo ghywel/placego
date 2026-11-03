@@ -5334,3 +5334,13 @@ and separated-block constructions. The primary general-case beta-hole paper's se
 isolated points for its LOWER hole, with periodicity and parameter-dependent criteria. It is
 relevant prior art, not an unqualified transfer to upper strict ceilings or one-sided isolation.
 No novelty, all-component classification or ordinary-integer realization is asserted here.
+
+### GC2494 — Parry self-admissibility and a complete strict-word plateau calculus
+
+Known mechanisms, reproved here: [the full constructor/classification](reports/GPT-MAHLER-COMPLETE-PLATEAUS-20261103.md)
+uses the GC2479 first-difference supremum, Parry's ordered/self-admissible expansion templates
+(primary Baker–Kong v1 Lemma2.1), the carried strict binary Lyndon interval, and the old critical
+expansion/upward annulus ladder. Its own upper strict convention, component completeness and
+root test are proved explicitly. No lower-hole/multinacci-only classification is silently imported.
+The gap2 value9477/19171 was already in MAHLER; G51 supplies the finite window and G294 the
+integer closed-lower mechanism. No novelty, ordinary-integer existence or full Mahler claim.

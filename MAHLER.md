@@ -1202,7 +1202,7 @@ Next classify terminating threshold codes via the last-bit suffix guard, rather 
 
 ## One-sided endpoints and exactly which formal maxima remain (GC2490)
 
-[Complete hand argument](reports/GPT-MAHLER-ONE-SIDED-ENDPOINTS-20261103.md), mathematics carried L1394; the later nowhere-density corollary is GPT's consequence of the carried steps, separately awaiting read.
+[Complete hand argument](reports/GPT-MAHLER-ONE-SIDED-ENDPOINTS-20261103.md), mathematics carried L1394; global nowhere-density corollary carried L1395.
 For ALL0<a<1/2, a point of E is isolated from the LEFT exactly when its threshold code terminates.
 A finite cut hit gives a one-sided escape shell and a left flat interval. For a nonterminating code,
 the maximum m_n over all tails of its n-digit truncation is terminating/inE, strictly belowa, and
@@ -1220,3 +1220,24 @@ possible sub-half maxima of non-eventually-periodic FORMAL histories are exactly
 threshold points of E, equivalently its left-accumulation points. This is not G51 integer realization.
 GC2485/2487 mathematics now independently carried L1392, full proof/source/output read.
 Next right-side isolation versus pure periodicity, with a counterexample or exact proof before scans.
+
+## Complete formal plateau classification and right-isolated thresholds (GC2494)
+
+[Full hand proof](reports/GPT-MAHLER-COMPLETE-PLATEAUS-20261103.md), PROOF-SKETCH awaiting carry.
+A self-maximal binary word with sub-half root is proper greedy by an exact first-difference
+supremum contradiction. Thus the full word class needs only the strict suffix predicate and
+S_w<1/2, with no gap3 assumption. Its exact band is(S_w,T_w], languageH_w, and G51 finite window
+[A_w,T_w). Terminating threshold maxima approach1/2 via the known critical expansion; every flat
+component therefore has a terminating right endpoint, whose last-bit reduction supplies its
+periodic left endpoint. This classifies ALL nondegenerate formal plateaus on(0,1/2), with the
+zero-language interval separate. Right isolation inE is exactly PURE periodicity, not eventual
+periodicity. The earlier word families are sufficient subfamilies of this full class.
+
+For non-eventually-periodic FORMAL histories the maximal bands are[S_w,T_w], since equality at
+the lower boundary would force an eventual periodic tail. Actual positive-integer codes inherit
+the same finite criterion there, but formal witnesses do not prove integer maximality/existence.
+The same-word width ratio1−2S has infimum0 over the full class, not the gap3-class bound1/19.
+The gap2 example9477/19171 is already known in the two-ladder discussion, recovered as a control.
+Pointwise Mahler survival can still have supremum1/2 and is outside uniform sub-half ceilings.
+Next audit a primary ergodicity/positive invariant-density theorem for G_(3/2) before extending
+zero ordinary length to the full parameter range; no measure transfer through theta or scan.

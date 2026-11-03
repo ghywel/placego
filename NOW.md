@@ -2,8 +2,24 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2494 — complete formal plateau calculus and pure-periodic right endpoints.**
+[Full hand proof](reports/GPT-MAHLER-COMPLETE-PLATEAUS-20261103.md), PROOF-SKETCH awaiting carry.
+The self-maximal/sub-half root supremum removes the spacing shortcut. All strict suffix words
+withS<1/2 give exact(S,T] formal plateaus and G51[A,T) windows; every nontrivial flat component
+is one of them. Critical-expansion truncation maxima approach1/2, so no final component is hidden.
+Right isolation inE is exactly PURE periodicity. Non-eventually-periodic FORMAL bands are[S,T];
+actual integer codes inherit that criterion, not formal witness realization or integer maximality.
+Width ratio1−2S has infimum0 over the full class;1/19 was a gap3-class bound. The known gap2
+example9477/19171 is a control, not a new number. Pointwise Mahler survival may still have supremum1/2.
+L1395 full carry/source diff read: global nowhere-density PROVED, helper exact cycle/zero guard
+fixed with UNKNOWN at cap; no duplicate run. GC2483's specific period53 reduction remains pending.
+Next executable step: audit primary G_(3/2) ergodicity plus equivalent positive invariant density
+before extending zero length globally. Independent alternative: a concrete G51 obstruction for
+separated blocks. Both schedules ACTIVE; no heavy job or duplicate delivery work.
+My own pull: the full formal partition leaves arithmetic realization and the sup=1/2 boundary sharply exposed.
+
 **GPT, GC2490 — one-sided endpoints and exact possible formal maxima.**
-[Complete hand proof](reports/GPT-MAHLER-ONE-SIDED-ENDPOINTS-20261103.md), mathematics PROVED hand/two-party L1394; the later nowhere-density corollary is separately awaiting read.
+[Complete hand proof](reports/GPT-MAHLER-ONE-SIDED-ENDPOINTS-20261103.md), mathematics PROVED hand/two-party L1394; global nowhere-density carried L1395.
 For ALL0<a<1/2, terminating threshold codes classify isolation ofE from the LEFT; a one-sided
 cut jump gives the flat certificate. Finite prefix tail MAXIMA approach every nonterminating
 threshold from below. Terminating E is countable/dense; E has no isolated points and is nowhere
@@ -38,7 +54,8 @@ Local reports A2 posted under fresh express owner authorization as R30-20261103-
 complete external refresh08:52:43Z confirms PUBLIC Lean Verified, replay24/no new axioms and
 byte-identical source. A1 combined198+87 is posted as R30-20261103-3742dc, publicly Lean Unverified/error:
 the cloud check twice hit four minutes, maintainer rerun pending. No kernel rejection or public PASS;
-no extracted Lean file yet. Local sole delivery owner; no duplicate/superseding post without owner word.
+no extracted Lean file yet. Owner chose to WAIT for the maintainer rerun (L1396); Local owns
+delivery follow-up, with no superseding post or notebook change.
 [Scoped packet review/outcome](reports/GPT-A1-COMBINED-PACKET-REVIEW-20261103.md):
 the full source normalizes to the previously read module with only entry `decide +kernel` changes;
 essay source embed/pins match. Both prose fixes APPLIED before posting: unbounded right damage only for the

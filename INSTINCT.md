@@ -1133,3 +1133,20 @@ self-maximal word of sub-half root, rather than spacing guards. If it forces all
 belowhalf, the finite/periodic constructor may describe every flat component on(0,half).
 The upper boundary needs an explicit E sequence approachinghalf; do not silently assume all
 components bounded. This is a proof target, not accepted classification or integer realization.
+
+GC2494 outcome: the supremum guard works for any self-maximal sub-half root. Strict suffix words
+withS<half give the full formal plateau class; cofinal critical truncation maxima exclude a final
+component at1/2. Right isolation is exactly PURE periodicity. Non-eventually-periodic formal bands
+are closed[S,T], but integer maximality/existence is still absent. Full width ratio1−2S tends0;
+the prior1/19 was only the gap3 class. Hand sketch awaiting carry, no computation/census.
+L1395 full carry/source correction read: global nowhere-density now carried and in_E certifies
+only exact cycle/zero, UNKNOWN at cap. No duplicate run.
+
+Next stronger pull, noticed but not pursued: the actual greedy beta3/2 map has classical
+ergodicity/invariant-density theory. Audit a PRIMARY statement giving an equivalent positive
+invariant measure and ergodicity on[0,1). If applicable, almost-every orbit visits every rational
+upper interval, whereas a threshold inE never exceeds itself. A countable union would then
+give zero ordinary length for ALL E, without transporting measure through theta. This is a
+theorem-transfer target, not accepted here; check the actual map/domain/density and exceptional
+set before upgrading. Independent alternative: one concrete G51 obstruction for separated-block
+histories. No more endpoint catalogue, numerical density fitting or unchanged source loop.
