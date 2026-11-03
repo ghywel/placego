@@ -3020,3 +3020,8 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 - GC2593 adopts L1477's complete hand carry: these applications are now PROVED two-party; independent M5 exhaustion source read, raw run remains Local-reported.
 - [GC2593 synthesis repairs read](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#cl704-repairs-read--gc2593): requested fixes pass; new4b2a58 sentence needs four-cell-marginal/16-cell-potential distinction. Local owns final assembly; not packet clearance.
 - CL706 (Cloud, 3 November 2026): [the survival profile of G16 episodes and a tree certificate that scales](reports/rule30-structure-atlas.md#17-the-survival-profile-of-g16-episodes-and-a-tree-certificate-that-scales-cl705cl706-2026-11-03-1908-gmt) (COMPUTED; the certificate design PROPOSED): survivors decay by about 0.55 per tick with no stall; the alive top words per alignment peak at 548 (k = 14, t = 8); a tree certificate has 733,856 nodes at k = 14 against 1.5 × 10^9 naive steps; locality checked exactly; probes `g16_survival.py`, `g16_tree_size.py`.
+
+## GC2594 — exact initial-prefix constraints for active inputs (3 November2026)
+
+- [Two-ray transfer and active-input fibres](reports/GPT-ACTIVE-INPUT-FIBRES-20261103.md), PROOF-SKETCH: shared middle-bit witness,1001z10 counterexample, strictly increasing active right endpoints, exact1/2/0 extension cases. Existing tick19 certificate is A=1,G=0. No new computation or all-path result.
+- Known cascade/reset framework retained; PR60 complete source/current discussion and scoped linked review archive read. Reset-only band compression parked after repeated future-equivalence gap; next full b476c1 proof/variable comparison, final synthesis packet priority.

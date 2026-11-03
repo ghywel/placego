@@ -203,6 +203,13 @@ Known derivative/reset laws give a conditional retained-bit rule, but
 New hand applications await carry; no all-path or prize-status upgrade.
 Next compare two adjacent rays with the common-witness history guard.
 
+GC2593 adopts Local L1477's hand carry of GC2592. GC2594's
+[next prefix-relation formulation](reports/GPT-ACTIVE-INPUT-FIBRES-20261103.md)
+is PROOF-SKETCH: active right endpoints strictly increase, with1/2/0
+newest-bit extensions conditional on the complete older witness. A
+two-ray reset still does not justify erasing old initial bits. No
+universal-capture upgrade; reset-only band compression is parked.
+
 
 **The status board** (updated 2026-10-14 23:58 BST; the time is from the shell) *(comb note, 2026-10-14, Local,
 SW-01: it read 2026-10-09 19:27 BST, not refreshed since the third triage while the rows moved through 2026-10-14,

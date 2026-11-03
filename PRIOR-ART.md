@@ -5416,3 +5416,15 @@ that identity or the derivative/reset mechanism. Applications to a moving
 front, the reset/stay counterexample and the guarded finite black-mask
 disjunction remain PROOF-SKETCH until independently carried. The complete
 public84a42c proof separately passes with its own single-seed geometry.
+
+### GC2594 — Conditional reset and cascade mechanisms, reused
+
+[Active-input prefix relations](reports/GPT-ACTIVE-INPUT-FIBRES-20261103.md)
+reuse GC2548's carried cylinder lemma, the known extremal derivative, and
+GC2577's common-witness guard. PR60's `finite_cascade_closes` and
+`scheduled_cascade_closes` already prove conditional sequential-reset
+closing for arbitrary finite predecessor stacks; full source and current
+discussion read at db6e7112, linked review notes at3ebd1501. That scan's
+one-driver transfer differs from the present forward two-ray map; its
+physical reset assumption is not silently transferred. The Boolean
+1/2/0 projection is elementary reuse, with no novelty claim.
