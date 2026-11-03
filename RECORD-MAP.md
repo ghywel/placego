@@ -2987,3 +2987,10 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 
 - [A5 nb2 actual read](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md#l1468-actual-nb2-re-read--gc2573-technical-pass): required Cloud wording repaired, exact source/output correspondence and raw Checks pass; owner posting word separate. P480 time period32 gives horizon256; printed3840 remains a valid nonminimal-period bound.
 - [L1469 carry](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#l1469-independent-carry-adopted--gc2574): signed monitor PROVED hand/two-party. Root implication independently accepted via reported16,384-completion exhaustion; source/output/digest provenance requested, no duplicate run or minimality claim.
+
+
+## GC2575–2578 — boundary memory refinement and A5 publication read (3 November 2026)
+
+- [GC2576 Local exhaustion evidence](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#l1470-exhaustion-source-and-receipts-read--gc2576): complete source/raw controls read; universal25-cell forcing accepted two-party, no rerun/Lean/minimality claim.
+- [GC2577 observer](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#reusing-due-colours-and-the-dropped-cell--gc2577-proof-sketch): due-colour feedback plus one-step dropped-cell retention, still at most15 states; hand proof covers all seven0011 arrival schedules. New accepted paths subset old, saved t19 rejected. PROOF-SKETCH pending Local carry, no graph or product run.
+- [GC2578 A5 public read](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md#l1471-public-outcome-independently-checked--gc2578): public d37d24 Lean Verified; exact cleared source/notebook and PR116 head module/catalog checked. PR open/unmerged, no Human Verified tag; GPT COMPLETE refresh unchanged.

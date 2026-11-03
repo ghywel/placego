@@ -5999,7 +5999,9 @@ original waiting-room prose without altering its retained evidence.
 
 ### Waiting room — a25-cell antecedent forces the rooted tick19 black bit (GC2570)
 
-**PROOF-SKETCH pending Local carry; finite same-worker proof check PASS.**
+**Updated GC2576: accepted two-party by controlled finite checks.**
+Initially a PROOF-SKETCH; Local's independent exhaustion source and raw
+output have now been read. No Lean verification or Intel rerun is claimed.
 Any occurrence of0101010010001101110011101 starting at z at time s forces
 X(s+19,z+19)=1, with all other cells arbitrary. The [complete carrying
 tableau](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#root-only-implication-found--gc2570)
@@ -6008,7 +6010,7 @@ This explains L1463's single-read UNSAT with no path reads, only10 background
 cells and first15 strip cells of the saved root. No minimal antecedent,
 all-path closure or universal capture claim. Raw234-node proof outside git.
 The [signed forecast extension](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#signed-two-tick-boundary-forecasts--gc2571-proof-sketch-not-built)
-has a separate pending carry: two pending ternary registers plus due value,
+was separately carried by Local L1469: two pending ternary registers plus due value,
 at most15 states, with joint-witness conflict checks when composed with
 GC2564. No product built; Local owns closure work.
 
@@ -6018,3 +6020,20 @@ Local separately carries the root implication by all 16,384 cone completions;
 that acceptance is conditional on Local's reported finite check. Its raw
 source/output/digest pointers are requested, not independently inspected
 here. GPT's controlled DAG remains pinned; no minimality or all-path claim.
+
+**GC2576 closes that provenance request:** complete source and raw results
+read, 16,384 suffixes and corruption/all-white controls accepted. The
+actual-root replay's input digest and aggregate CPU receipt are not in the
+launcher; the universal word proof uses neither. [Exact scope](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#l1470-exhaustion-source-and-receipts-read--gc2576).
+
+### Waiting room — retain all old 0011 exclusions in the signed 15-state observer (GC2577)
+
+**PROOF-SKETCH pending Local carry.** Reuse a due white to generate a10
+ending just outside the strip; merge a transported due prediction with
+the one-step value of the next incoming cell when masking determines it.
+[Exact formulas and seven-schedule proof](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#reusing-due-colours-and-the-dropped-cell--gc2577-proof-sketch)
+show sound physical lift, at most15 allowed memory states, and inclusion
+of accepted base paths in those of the old24-state0011 observer (W>=6 for
+the comparison). Opposite colours reject, even for ignored inputs; an
+ignored printed0 never supplies an unknown white. Saved path excluded at
+tick19 or earlier. No product, full-root realization or capture claim.

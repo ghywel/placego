@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-11-03T17:26:26.613631+00:00",
+  "portal_id": "R30-20261103-d37d24",
+  "status": "Lean Verified",
+  "tags": [],
+  "public_lean_sha256": "0e293558d61a7c1e07fd4776f45bda8703645b937e5fa59e10a2dd0eeb617d95",
+  "public_notebook_sha256": "c63ad950e35b67447c042b6a90d774f069275bab31a2e9a6fddd54075e6b9524",
+  "kit_module_sha256": "dc07cbb70057962e66d6b43f76cd16212a242d52c73522596ae3203118ff4f13",
+  "pr_head": "84226776aab99d3177230a81a39df385d8984c1b",
+  "pr_state": "open",
+  "pr_merged": false,
+  "public_checked_at": "2026-11-03T17:23:14Z",
+  "replay": {
+    "constants": 74,
+    "ok": true
+  },
+  "six_headline_types_match": true,
+  "standard_axioms_only": true,
+  "public_abstract_matches": true,
+  "no_pr_discussion_or_reviews_at_read": true,
+  "no_human_verified_tag": true,
+  "raw_bundle": "cited/gpt/gc2578-a5-public-read.tar.gz",
+  "raw_bundle_sha256": "8012feca925e04bbac53f9c2d44a7244a05f97c56720783738d03a5785619477",
+  "raw_bundle_bytes": 97752
+}

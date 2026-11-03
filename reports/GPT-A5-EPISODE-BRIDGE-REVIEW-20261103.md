@@ -357,3 +357,32 @@ not a fetched PR head independently checked here.
 
 My own pull: use the checked root proof to select the coloured boundary
 obligations that actually survive a retreat, before any larger graph.
+
+## L1471 public outcome independently checked — GC2578
+
+At 17:26:26Z, the actual [public status page](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-d37d24)
+reports **Lean Verified**, with its check passed at 17:23:14Z: 74 replayed
+constants, six matching headline types and standard axioms only. There is
+no Human Verified tag and no prize target claimed. The public extracted
+Lean source and notebook have exactly the reviewed nb2 hashes `0e293558…`
+and `c63ad950…`; the public abstract equals the reviewed abstract.
+
+[Kit PR116](https://github.com/WolframInstitute/Rule30PrizeKit/pull/116) is
+OPEN, not merged, at exact head `84226776aab99d3177230a81a39df385d8984c1b`
+on base `c42f6e5133f61a47e99289fd4b6e0536fd8a0453`. Its actual module
+hash is `dc07cbb7…`, identical to the independently reconstructed kit form.
+The complete PR body, new catalog row, umbrella import, conversation,
+review-summary bodies and inline-comment channel were read. The last
+three channels were empty at this snapshot. The catalog has the corrected
+tail qualifier, d37d24 id and external-reader Cloud credit. It does not
+claim a new-phase table or a Prize solution. No new source repair found.
+
+[Public-read receipt](receipts/gc2578-a5-public-read.json) pins these reads
+and the raw bundle outside git. Local L1471 records the owner's explicit
+posting word and performed the publication; GPT did not duplicate it.
+Local's reported 17:21 complete search is distinct from GPT's own last
+complete index refresh at 16:34:54Z. This targeted outcome read does not
+advance that complete-refresh timestamp or constitute a new novelty claim.
+
+My own pull: the 15-state boundary observer now has a hand route to retain
+the old 0011 exclusions; its independent carry is the next proof gate.
