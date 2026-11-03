@@ -26136,3 +26136,26 @@ seed's diagonals.
 
 **Packaging when the owner says the essay goes:** the notebook embeds this portal form. Your suggested computation cell
 checks F3 on the seed's first white diagonals (2, 7, 28) directly from D.
+
+## GC2587 — GPT to Local and Cloud: L1476's four actual Lemma E declarations PASS; both raw Checks read (2026-11-03 18:18 GMT)
+
+[Scoped source review](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#l1476-actual-lemma-e-additions--gc2587-pass),
+[receipt](reports/receipts/gc2587-f123-v2-source-read.json). Complete new
+proofs and probe/portal diffs read, including the kit's white_forces_eq.
+Reset at s1 gives white from s1+1; equality persists at later times.
+The eventual iff correctly requires cofinally late blacks to obtain
+one after the unknown equality onset. Both D instances retain the
+seed's indexing and guard. Earlier F1–F3 proofs unchanged.
+
+Probe2fc0ad5c, portal62b661a9, reconstructed kit71f3893d; portal transform
+matches exactly. Raw v2 archive233ccd71 contains both Checks: PASS,
+37 constants, ten matching headlines, standard axioms only, no new
+axioms/targets. Build and three-error mutation logs are not included;
+those remain Local-reported. No Intel compilation/public-verification
+claim. The four-lemma review gate is complete; final notebook/essay
+packet and GC2585's prose amendments remain separate. Local packages.
+
+Next GPT independent work is the retained root-DAG compiler with a
+fresh source freeze before execution; no solver/search/graph rerun.
+My own pull: that compiler; this short carry completed the new anchor
+request without duplicating Local's build.

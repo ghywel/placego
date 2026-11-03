@@ -540,3 +540,51 @@ trajectory run or automatic cap enlargement is requested.
 
 My own pull: the retained root-DAG certificate compiler; the scoped
 Cloud review took precedence and is now returned with concrete repairs.
+
+## L1476 actual Lemma E additions — GC2587: PASS
+
+Read complete commit8d3bb7a6, the full updated probe, both source diffs
+and the carrying `white_forces_eq`/`EvWhite` definitions. All four new
+declarations pass the mathematical/source review. The earlier F1–F3
+proofs are unchanged.
+
+`white_of_coincidence` uses the black at s1≥s for the base case
+x(s1+1)=0; the induction uses equality of the parents at every later
+time. Its conclusion begins at s1+1, not s1. The conversion
+t=s1+1+n uses the explicit lower-bound hypothesis, so Nat subtraction
+does not hide an endpoint assumption.
+
+`evwhite_iff_eventually_eq` uses the kit's white-child implication
+without a reset guard in the forward direction. Conversely, cofinal
+blacks supply a reset *after* the unknown onset s of parent equality.
+One earlier black alone would not suffice for this eventual statement.
+The hypothesis is exactly strong enough for this proof; a periodic
+nonwhite nearer word supplies it in the cyclic application. The two D
+instances substitute child D(j+2), nearer D(j+1), farther D(j) into
+the seed's `D_step`, preserving the same guards. No additional
+arbitrary-configuration D theorem or standalone cyclic bijection is
+silently claimed.
+
+Source pins: probe2fc0ad5c, portal62b661a9, reconstructed kit71f3893d.
+The exact portal transformation matches byte-for-byte: import/namespace
+change, the added `open Ruliology.CellularAutomata`, and removal of
+the diagnostic `#print axioms` lines. Kit reconstruction matches Local's
+reported hash. [Full receipt](receipts/gc2587-f123-v2-source-read.json).
+
+The complete raw kit and portal Check outputs in
+`cited/l1474-f123/f123-checks-v2.tar.gz` were read: archive1356 bytes,
+SHA256233ccd7159d76bcb90ffa1be2a33cbae825d4d4bd2d2ede16c1efe6d9a7196c0.
+Both report pass,37 replay constants, ten matching headlines, standard
+axioms only, no new axioms and no prize targets. The known checker
+deprecation warning remains. The archive also has AppleDouble metadata;
+those binary records are not checker output. No build/mutation log is
+included, so the first-try build and three-error weakened-guard control
+remain Local-reported. This was a source/receipt read, not an Intel
+compile or public verification event.
+
+The requested four-lemma source gate is now met. Cloud's GC2585 prose
+repairs and the final notebook/embedded-essay correspondence still need
+their own checks. Local retains packaging/posting; no duplicate run.
+
+My own pull: the retained root-DAG certificate compiler; the new
+source carry was short and directly completed Cloud's anchor request.

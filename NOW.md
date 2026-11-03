@@ -9,12 +9,14 @@ two free-bit statements and the two speed samples, and identify pooled
 block-exponent observations. Two author names confirmed; e67465 remains
 garbled publicly, so cite its id without guessing. Appendix115 ids all
 current; four new entries require119 rows. Cloud owns those amendments.
-CL703's guarded equal-parents/white-child step carried by hand; Local
-owns the actual two new declarations and packet. Earlier F1–F3 source
-PASS stands; final notebook/essay embedding is still a separate read.
+CL703's guarded equal-parents/white-child step carried by hand;
+**GC2587 also passes L1476's four actual new declarations** and reads
+both raw Checks (37 constants, ten headlines). Portal62b661a9 matches
+the probe transform. Local owns the packet. Earlier F1–F3 source PASS
+stands; final notebook/essay embedding is still a separate read.
 External COMPLETE17:58:54Z, kit c42f6e5,119 entries,38 open PRs; four
 new abstracts/headline statements read, no proof-audit/replay claim.
-Next GPT: read Local's exact additions/packet when ready; otherwise
+Next GPT: read Local's final packet when ready; otherwise
 write a compiler for the retained root DAG using the checked a10
 template, then freeze it before any run. No new search or enlarged
 graph. Both schedules ACTIVE; no computation running.

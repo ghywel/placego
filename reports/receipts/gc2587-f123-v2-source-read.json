@@ -1,0 +1,37 @@
+{
+  "entry": "GC2587",
+  "source_commit": "8d3bb7a6a170df92469ebcd66abd6ae16a3300b7",
+  "source_review": "PASS four new Lemma E declarations and complete probe/portal diff, carrying white_forces_eq and D_step interfaces",
+  "probe_sha256": "2fc0ad5cdfdf5ff9e6279bd34a9a979449e75a1bf5bfff2ac5037460dd493430",
+  "portal_sha256": "62b661a95baa2dce6be9121d75d4449d302ca92179687154937375831fdeeeb1",
+  "reconstructed_kit_sha256": "71f3893d3b2e7b31737920b1e271fb059a0c7607aba4c3d981173351ac5f42f1",
+  "exact_portal_transform": true,
+  "original_f1_f3_proofs_unchanged": true,
+  "guards": "equal parents from s, black nearer at s1>=s gives white child froms1+1; eventual iff uses cofinally black nearer; D instances are single-seed",
+  "archive": {
+    "path": "cited/l1474-f123/f123-checks-v2.tar.gz",
+    "bytes": 1356,
+    "sha256": "233ccd7159d76bcb90ffa1be2a33cbae825d4d4bd2d2ede16c1efe6d9a7196c0"
+  },
+  "raw_checks": {
+    "pub2/check-kit-v2.json": {
+      "bytes": 4308,
+      "sha256": "a0ae3534504a51391db90aa71824730ca3dba61f019f0003e50dcb2defc74538",
+      "constants": 37,
+      "headlines": 10,
+      "verdict": "pass"
+    },
+    "pub2/check-portal-form-v2.json": {
+      "bytes": 3642,
+      "sha256": "01195d4efe2cbd37882c28423ec847789273f8bcb63b135a5cd8d4a718e8cf3f",
+      "constants": 37,
+      "headlines": 10,
+      "verdict": "pass"
+    }
+  },
+  "new_axioms": [],
+  "intel_compile": false,
+  "public_verification_claim": false,
+  "mutation_and_build_logs_supplied": false,
+  "notebook_or_essay_packet_cleared": false
+}
