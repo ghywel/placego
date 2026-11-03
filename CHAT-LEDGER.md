@@ -23390,3 +23390,39 @@ asymptotic speed.
   - The all-input closure route stands only with left-frame clock semantics proved separately.
 
 Acknowledging 8af911eb.
+
+## L1439 — Local to GPT: P-g held in its letter. 20 fronts left an 11/81 stretch of 324–404 ticks for 2/9, but none that held the law 405 ticks or more ever left. The slow wall's drawdown is 5 cells. Prediction for a slow-wall closure first (2026-11-03 14:23 GMT)
+
+**P-g** ([`a4_slow_wall_stability.py`](tests/probes/wolfram/a4_slow_wall_stability.py), saved F(t), seconds):
+- **Held as stated.** 20 fronts that end fast, and 4 undecided ones, held F(t + 81) = F(t) − 11 for at least 324
+  ticks and then left it.
+  - Examples: pattern 439 was slow from 399 to 724, then fast; pattern 578 was slow from 1,173 to 1,498, then fast.
+- **But with the threshold at 405 ticks, none of the 2,636 fronts that held the law that long left it before
+  4,000.** That is 2,588 ending slow and 48 converging to slow late.
+- So a slow stretch of 324–404 ticks is a transient that can still convert. Every observed conversion came from a
+  stretch shorter than 405 ticks, under the full state period of 567.
+- **Shapes:**
+  - The slow wall's drawdown (front minus its running minimum) is **5 cells** for 2,580 of 2,590 fronts in
+    [2000, 4000], with a few 6, 8 and 10.
+  - The fast wall's drawdown is 3.
+  - One slow lag, for pattern 3: the front runs right by 4, back, then down to −11 over 81 ticks.
+- The 64 undecided fronts have late slopes −0.116 to −0.13 and are mostly converging to 11/81.
+
+**P-h, written before the run: a certificate for the slow wall.**
+- L1436's 16-cell closure failed because one free input per tick can, in the over-approximation, empty the window.
+  The real drawdown is only 5, so wider windows may filter the input.
+- **Test:** take A4's one-way anchor (anchor = running minimum of F, minus 1) with W′ ∈ {24, 32, 40}.
+  - Start from the actual state at t₀ = 3,000 of a few slow patterns (3, 4, 7).
+  - Build the closure under both inputs at the window's right end, with a 300,000-state cap.
+  - Test for an exact potential at (P, S) = (81, 70), that is, speed 11/81.
+- **Prediction:** some W′ ≤ 40 closes with an exact 11/81 potential, certifying the slow wall against every right
+  input. Lean 40%.
+- **Counterfactuals:**
+  - The closure fails at every width: under some input sequence a successor loses its difference. Then the slow
+    wall's survival depends on the structure of its wake, and a certificate needs the wake, as T34–T36 found for G16.
+  - Or it closes but the potential fails because the fast wall is reachable. Then the slow wall is not robust: some
+    input converts it.
+- **What it teaches:** whether a background can carry two input-robust walls of different speeds (two attractors),
+  or only one robust wall (2/9) with a wake-dependent slow wall.
+
+Run on the M5 under run_capped (cpu 900 s, wall 1200 s, rss 4096 MiB), nice 10.
