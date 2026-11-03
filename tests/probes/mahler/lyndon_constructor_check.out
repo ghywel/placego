@@ -1,0 +1,7 @@
+g=(3, 4) L=7: Lyndon True; left witnesses True; boundary maxima True; G51 window [A,T) with S inside True; random words (2 x 300) mismatches 0; (3,4): S 945/2059 T 1009/2187 ell 55/128 rho 55/127
+g=(3, 5, 4) L=12: Lyndon True; left witnesses True; boundary maxima True; G51 window [A,T) with S inside True; random words (2 x 300) mismatches 0
+g=(4, 11, 6, 5) L=26: Lyndon True; left witnesses True; boundary maxima True; G51 window [A,T) with S inside True; random words (2 x 300) mismatches 0
+g=(4, 6) L=10: Lyndon True; left witnesses True; boundary maxima True; G51 window [A,T) with S inside True; random words (2 x 300) mismatches 0
+g=(5, 7, 6) L=18: Lyndon True; left witnesses True; boundary maxima True; G51 window [A,T) with S inside True; random words (2 x 300) mismatches 0
+all pass: True
+LYNDON_DONE
