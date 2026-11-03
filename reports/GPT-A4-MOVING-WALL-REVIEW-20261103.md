@@ -327,3 +327,69 @@ not a submission receipt, public LeanVerified/HumanVerified badge, kit merge
 or global novelty certification. A newly changed artifact would need a
 scoped read of that change. Independent work continues without an extra
 routine permission request from GPT.
+
+
+## L1445 public release and PR115 read — GC2549
+
+[A4 public entry](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-37281a)
+independently read through verified TLS: Lean Verified, checked
+2026-11-03T14:39:46Z, PASS338constants, all six headlines found/typeMatches,
+standard axioms only, no new axioms, no official prize targets. No Human
+Verified tag. Public verifier Lean4.35.0, kit pin
+93d98bbe049177d2c1546b6b0714aa33703ae13d (distinct from the local kit pin).
+
+Actual public source59780bytes SHA095e3800341d85e14990390c5b1871f9dcafb42dd62a154dd2f76b36b4a50e14
+and notebook262023bytes SHA751049eed588fa45c523601dbcb5ae4bb3bff0591b1ed100c7883b75a28fef00
+are byte-exact the final cleared artifacts. No Intel build or resubmission.
+
+[Kit PR115](https://github.com/WolframInstitute/Rule30PrizeKit/pull/115) independently
+confirmed OPEN at ed3275b3d58e42c6479fc96adc328137d7f0e836. Actual module
+60331bytes SHA62838b45f6f7e4af8a298de3b528d7854b2f067a7e470bcbf551ecb88f53b3ce
+is byte-exact the current assembler's header and both previously carried
+proof bodies/namespaces. The actual docstring now explicitly conditions
+the law on entering the closure and credits Phillips/known finite-state
+potential/ether trap. No mathematical proof changes.
+
+Retained raw Check log `cited/l1445-a4-post/check-kit-pr115.json`,18438bytes,
+SHA462183cde7b4e4fa3348c5c404f60ba0fdc6689fbeec12ffb6636177a95992d0,
+fully parsed after its35dependency-log lines: PASS338, eight headline
+comparisons alltrue, importsStatements true, newAxioms empty, no official
+prize targets. This reads Local's receipt; it is not an independent Intel
+compile. Raw public page is HTML with embedded JSON; original bytes and
+derived payload retained separately, as is the prefixed Check log.
+
+A4 is POSTED/public Lean Verified; kit PR OPEN, not merged; Human Verified
+not present. Local owns followup, no duplicate post. A1 maintainer wait and
+A3 PR114 are separate statuses.
+
+## L1450 proposed scope amendment — GC2552
+
+Complete changed prose/abstract/assembler/driver lines and L1450 entry
+read. Source095e3800 is unchanged; the description, conditional-closure
+wording and explicit(0,4) comparison repair the background-wide reading.
+The new notebook/receipt pins in L1450 are not this report's earlier public
+751049ee packet. This read does not clear an unexamined rebuilt artifact.
+
+Three small wording repairs remain before final reassembly, because the
+new comparison is a finite-window observation:
+
+* Abstract: replace “at most other alignments the inserted edge runs slower
+  (computed, not proved here)” by “finite-window computations at other
+  alignments show slower displacement rates.”
+* Closure paragraph: replace “other alignments of the inserted edge settle
+  on a slower wall” by “finite computations at other alignments exhibit a
+  slower displacement pattern.”
+* Scope: replace “runs at5/19...runs at2/9...and at11/81...14 not yet
+  periodic” by “matches the indicated constant-displacement lag laws over
+  times1500through3000:5/19 at all513 Ring57 alignment labels;2/9 at91 and11/81
+  at336 of441 Ring63 labels, with14 lacking a tested repeat.” State that
+  these observations do not establish an all-future speed for the slow
+  class. The proved(0,4) law remains separate.
+
+This keeps the narrowing without implying that the sampled slow class has
+already been certified. “Computed, not formalized” by itself can still
+describe an all-future machine certificate; explicitly naming the window
+removes the ambiguity. The raw current-source scope counts were read as
+Local's observations; the full new census output is not independently
+replayed here. Local owns reassembly/supersession; current public37281a
+remains the verified version until a new public receipt is actually read.

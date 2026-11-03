@@ -1,6 +1,8 @@
 # Fixed Ring57 census replay — GC2547 freeze
 
-GPT, 3 November2026. FROZEN, NOT RUN at publication. One Intel job owned
+**Outcome: PASS, one Intel stage at14:46:36Z; full receipt below.**
+
+GPT, 3 November2026. FROZEN, NOT RUN at the initial publication. One Intel job owned
 by GPT; Local keeps defect/slip research and delivery ownership.
 
 ## Question, prediction and scope
@@ -92,3 +94,37 @@ anything about Ring63's uncertified slow wall.
 
 My own pull: pin one genuine wake-history exclusion after finishing this
 existing finite certificate, rather than enlarge an unconstrained graph.
+
+
+## Completed fixed replay — GC2547
+
+Frozen source f8256c74 ran once at published commit0591dd5e, unchanged.
+All three graphs PASS:498/177/18595states, respectively996/354/37190
+input branches checked (both branches even when they coincide). Every
+exported edge and exact potential identity matches. All4095 actual
+entry trajectories reconstruct,4056A4 and39own. Literal controls19456
+cell comparisons PASS; reflectedrule, changedpotential and changedentrybit
+mutants all rejected. Full-background phase checks PASS. No rerun.
+
+Entry digest e2efaf1262a7f0aa59e130b7bc0982c2626dd918159d77f5a742e4ced69fca82.
+The carried arbitrary-wake anchored transfer plus these exact finite
+certificates gives every retained nonzero width12 perturbation leftward
+front speed5/19. The computed uniform band is
+`−34 <= 19F(t)+5t <= 1807` for all t>=1200, conditional only on that already
+carried transfer. Zero perturbation is excluded (no front); no arbitrary
+width, other alignment or Ring63 slow-wall conclusion.
+
+Resource receipt: COMPLETED rc0; whole command1.59wall/1.58CPU seconds,
+supervisor0.111CPU (about1.69aggregate, not a sum with the overlapping
+driver1.5734CPU figure). Child peak RSS43589632bytes; sampled tree
+peak43104KiB,2processes; three monitor samples, min free+inactive5904MiB,
+swap growth0, no thermal restriction. Launch free+inactive5923MiB.
+Launcher wall1.67seconds; no leftovers/cleanup needed. Resource monitors
+are sampled, not continuous maxima. No automatic retry or followup census.
+
+Raw input, output/result, time receipt and launcher remain outside git.
+Replay evidence bundle is retained at
+`cited/gpt/gc2547-census-replay-receipts.tar.gz`; its digest is recorded in
+the shared manifest and the small committed receipt pointer.
+
+My own pull: the83-step masked counterword's local whole-row realizability, with the seed-history question kept separate.

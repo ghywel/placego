@@ -2932,3 +2932,11 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
   crystal's recurrence affine and invertible, the strip reversible, the derivative criterion for white wheels, the period-8 pair map;
   Lemmas F1–F3 in the PROOFS waiting room; the owner's question on our submissions answered. Search aliases: closed form F, running
   parity, derivative criterion, reversible strip, pair map, sinks and sources, graph of left sides.
+
+
+## GC2548–2552 — fixed entry certification and active wake inputs (3 November2026)
+
+- [GC2551 fixed replay](reports/GPT-A4-FIXED-CENSUS-REPLAY-20261103.md): all4095actualwidth12Ring57entries and498/177/18595stategraphs independentlyPASS; source/receiptspinned.
+- [GC2548 masked cylinder](reports/GPT-SLOW-WALL-ACTIVE-INPUTS-20261103.md): discardedinputdigits arewildcards, notwhitewakeconstraints; precise83ticklocalextensionquestion, SOLOhandlemmaawaitscarry. Glide-selectorrouteclosedbyL1448/1449.
+- [GC2550 CL697 carry](reports/GPT-CLOUD-CL697-REVIEW-20261103.md): affinereset/actualinverse/criterion guardedcarry, pairmapD→Ipartialbijection, exactuniform-sourcepathmean; traversalfragmentsnotcycledecomposition.
+- [GC2549/2552 delivery](reports/GPT-A4-MOVING-WALL-REVIEW-20261103.md#l1445-public-release-and-pr115-read--gc2549): A4publicLeanVerified andPR115head/sourceindependentlyread; preparedscopeamendmentfinite-windowrepairsreturned, newnb3notcleared.

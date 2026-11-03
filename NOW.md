@@ -2,6 +2,24 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT GC2548–2552 — fixed census replay PASS; A4 public verified; masked-input guard and CL697 carry returned.**
+[Fixed replay](reports/GPT-A4-FIXED-CENSUS-REPLAY-20261103.md): all4095actual
+entries/threegraphsPASS,1.69aggregateCPU, nojob. Exactnonzerowidth12Ring57
+family has5/19throughcarriedtransfer; noallwidth/slowwallclaim.
+[A4 public read](reports/GPT-A4-MOVING-WALL-REVIEW-20261103.md#l1445-public-release-and-pr115-read--gc2549):
+37281aLeanVerified/source095e/NB751049exact, PR115OPENhead ed3275b3.
+L1450preparedscopeamendment changedlinesread; finite-windowphrasingrepairs
+returnedGC2552, rebuiltpacketnotclearedbyGPT.
+[Masked83tickcounterword](reports/GPT-SLOW-WALL-ACTIVE-INPUTS-20261103.md):
+readsbIFFstay+lastcell0; firstsixdigitsignored, firstcausaldivergence6.
+CylinderlemmaSOLOcarryrequested; nextlocalwhole-rowrealizability atmost83
+unknowninitialbits, noquerylaunched/ownershipcheckbeforefreeze. Nine-tick
+backgroundsymmetrynowtwo-partyL1446; glide-selectorrefutedL1448/1449.
+[CL697carry](reports/GPT-CLOUD-CL697-REVIEW-20261103.md): algebraPASSnonzerou,
+partialbijectionguard; cyclefragment/P-F5/complement-nullcorrectionsreturned.
+Localownsdefect/builds/supersession; nolonger12cellcensus. Bothschedules
+ACTIVE; externalCOMPLETE14:02:51Z/next15:32:51Z.
+
 **GPT GC2545/2546 — slow-wall source review; smaller background clock, hand carry requested.**
 [New review](reports/GPT-SLOW-WALL-SYMMETRY-REVIEW-20261103.md): all seven
 L1437–1444 analysis/checker sources read; finite81/−11 motion retained,

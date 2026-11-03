@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "freeze_commit": "0591dd5e",
+  "source_sha256": "f8256c74a05331a9289fedb2e033a53f90c449aa6c621362889fcdbad605cfbc",
+  "receipt": "cited/gpt/gc2547-census-replay-receipts.tar.gz",
+  "sha256": "ec77c2961a09d9d7432969da8c41d3909806817734fc141bf4b4a64aac5d6925",
+  "bytes": 107098,
+  "graphs": [
+    498,
+    177,
+    18595
+  ],
+  "entry_trajectories": 4095,
+  "entry_digest": "e2efaf1262a7f0aa59e130b7bc0982c2626dd918159d77f5a742e4ced69fca82",
+  "scope": "Exact retained width12 Ring57 family only; all-future consequence uses previously carried anchored transfer. A4 public delivery artifacts verified separately in the same evidence bundle."
+}
