@@ -592,3 +592,48 @@ one farther parent in 2^p. The record's three measured numbers about the left en
 the whole pair map is enumerated: a bijection on 65,280 pairs with 255 sinks and 255 sources, orbits in shift classes of 8, the
 seed's segment reproduced as a 367-step path. The possible left sides at a period form a finite graph on the sinks with the
 branch choices as edges (§8.31's tree); whether every row's periods are unbounded is a question about that graph.
+
+## 17. The survival profile of G16 episodes and a tree certificate that scales (CL705–CL706, 2026-11-03 19:08 GMT)
+
+**Setting.** A5 (R30-20261103-d37d24) makes finiteness of the longest episode at depth k a finite question with the horizon
+lcm(2^B(k+2), p); for G16 (the 128-cell ring with c(y) = ρ^72 y, time period 16) at k = 14 that is 1,024 ticks, and CL676's table
+M_G16(1..14) = 8 8 9 11 12 13 13 16 17 19 19 21 21 22 is an exhaustive computation over 2^(k+1) prefixes and 128 × 16 alignments.
+A kernel certificate that re-enumerates it costs 2^(k+1) × 2,048 × (M+1) edge steps, 1.5 × 10^9 at k = 14, out of reach; the
+uniform route (the front-potential method) fails for G16 (§39, T34–T40). This block measures the shape of the surviving set.
+
+**Locality (PROVED, elementary; checked exactly).** Bit j of the edge code at tick s depends only on initial bits j − 2s … j,
+so the pair (k, k + 1) at tick s depends on initial bits k − 2s … k + 1, and an episode of length ≥ t depends only on the top 2t
+bits of the (k + 2)-bit prefix. `g16_tree_size.py` asserts, for every alignment and tick with 2t ≤ k + 1, that the survivors are
+exactly the completions of their top words (34,384 checks at k = 14, all pass).
+
+**Results (COMPUTED, this host: `g16_survival.py 14`, 11 s; `g16_tree_size.py 8 11 14`, 5 s; controls: every M(k) equals the
+table).**
+
+| k | M | per-pair simulation steps Σ_t surv[t] | tree nodes, all 2,048 alignments | nodes per alignment | most alive top words at one tick, one alignment |
+|---|---|---|---|---|---|
+| 8 | 16 | 1,578,240 | 69,408 | 34 | 22 |
+| 11 | 19 | 12,628,800 | 236,416 | 115 | 121 |
+| 14 | 22 | 101,029,664 | 733,856 | 358 | 548 (at t = 8) |
+
+The survivors decay by 0.25 at the first tick (the initial pair) and then by 0.47 to 0.63 at every tick, mean about 0.55, with
+no stall at any tick (k = 14, t = 2 … 20). The number of alive top words per alignment grows like 2.2 per tick while fresh bits
+remain (1, 2, 4, 8, 17, 37, 82, 90 on average at t = 1 … 8) and collapses once the prefix is exhausted (2t > k + 1).
+
+**Verdicts.** P1 (decay in [0.25, 0.75], mean about 0.5): HELD, mean 0.55. P2 (Σ surv below 2 × 10^6 at k = 8, above 10^8 at
+k = 14): HELD. P3 (at most 4 top words per alignment): REFUTED, the maximum is 548 and the mean 90 at t = 8, k = 14; the
+counterfactual's "no forced-word certificate" is half right: the words are not forced, but the pruned tree of alive top words
+is 130 times smaller than the per-pair simulation and 2,000 times smaller than the naive bound, and it grows like 2.2^(k/2)
+per alignment rather than 2^k.
+
+**The certificate (PROPOSED, for Lean; A5's sequel).** For each spatial alignment i and time alignment a mod 16: a breadth-first
+pass over ticks t = 0 … M keeping the list of alive top words (two fresh bits per tick, four extensions, pruned at a mismatch of
+the pair against (E_k, E_(k+1))(t + a)); the certificate is that the list is empty at tick M + 1. Soundness is the locality lemma:
+if no top word of 2(M + 1) bits survives, no prefix does. Evaluation in the kernel on bit-packed Nat words costs the node count
+above, about 10^4 cells per spatial alignment at k = 14 when the strip is updated incrementally; one generated theorem per i (128)
+is the kit's "one kernel check per state" pattern. Then `mfinite_iff` gives MFinite (g16 i) 14, and the bridge's forward direction
+gives: **no eternal point of any period follows G16, at any of its 128 spatial alignments, from depth 14 or shallower.** Prior art:
+the kit's bitmask and rank strip certificates (a search over partial words with pruning, `Rule30StripCertificates`), and A5.
+Not claimed: anything about depths beyond 14, or about the uniform exclusion of G16.
+
+**Next.** The same tree for the 480-state phase (time period 32; k ≤ 10) and P1024 (k ≤ 8): their node counts scale with the number
+of alignments, to be measured before any build.
