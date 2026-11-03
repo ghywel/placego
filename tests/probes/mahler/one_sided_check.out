@@ -1,0 +1,9 @@
+O1 u = 101: a = 13/27; G^(L-1)(X) = 2/3; G^L(X - delta) = 188/189, formula True, > X: True
+O1 u = 1001001: a = 1009/2187; G^(L-1)(X) = 2/3; G^L(X - delta) = 15140/15309, formula True, > X: True
+O2 w = 1000: a = S_w = 27/65 in E: True; m_1..m_30 below a, nondecreasing, A_n <= m_n, each in E: True; a - m_30 = 9.628e-07
+O2 w = 1001000: a = S_w = 945/2059 in E: True; m_1..m_30 below a, nondecreasing, A_n <= m_n, each in E: True; a - m_30 = 1.474e-06
+O3 u = 101: v_N bounds and membership for N = L..L+12: True
+O3 u = 1001001: v_N bounds and membership for N = L..L+12: True
+O4 u = 1001001 -> w = 1001000: strict suffix predicate True; wrap gap 4
+O5 separated blocks (12 blocks, 198 digits): every tail < a: True; block root >= A_n and A_n nondecreasing: True; A_12 = 0.412183, a = 0.415385
+ONE_SIDED_DONE
