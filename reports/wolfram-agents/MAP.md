@@ -1220,3 +1220,17 @@ certificate. Owner-held A2 package remains unchanged.
   spacing, black-run erosion, settled-barrier witnesses, left anti-periods, separator equivalences, alternating
   trace bridge, zero-boundary stripe cascades and right-diagonal periods. Read at the level of their statements, none
   concerns ether fronts, the healing bound, the rooted front or our Mahler line.
+
+## 3 November 2026 11:27 refresh (L1412)
+
+`known_find.py --new` at 11:27Z: 20 added, 0 changed, 0 gone since 10:12Z (L1399). Kit main is unchanged at c42f6e51;
+35 open PRs. Five new portal entries, all Lean Verified, each with a companion PR (#109–113):
+- 462dc9 (`Rule30SettledBarrier`), 0ad6ff (`Rule30LeftReset`) and 0a9bde (`Rule30LeftUnbounded`): white-run parity
+  barriers, whiteCount and settled-diagonal bounds on the left diagonals;
+- 050b68 (`Rule30FrontLaw`): small-depth `frontBound` values and a sharper periodicity onset;
+- e742c0 (`Rule30DefectClockBudget`): six-window defect escape and five-window isolated-defect bounds, counted in
+  ticks of a defect clock.
+
+Read at the level of their statements and, for e742c0, its theorem list, none touches our A3 closing law (prefix
+doubling letters), A4's moving walls, the healing bound, the rooted front or Mahler. e742c0's "five-window" is a defect
+escape time, not a count of doublings among five letters.
