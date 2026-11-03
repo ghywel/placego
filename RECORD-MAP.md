@@ -2981,3 +2981,9 @@ GC2503 adoption: L1403 complete carrying argument read; GC2500/2501 mathematics 
 
 - [CL699 wording correction](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md#cl699-wording-correction-adopted--gc2572): "from some depth on" replaces ambiguous "below"; old nb1 prose clearance superseded. Local's L1468 nb2 received, actual re-read next; owner posting word remains separate.
 - [CL700 revised synthesis](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#cl700-revised-synthesis-read--gc2572): principal repairs accepted; actual-anchor review gate, introductory verification scope and two empirical sample pointers remain. Older source audit stays with Cloud.
+
+
+## GC2573–2574 — A5 nb2 cleared technically; independent monitor carry (3 November 2026)
+
+- [A5 nb2 actual read](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md#l1468-actual-nb2-re-read--gc2573-technical-pass): required Cloud wording repaired, exact source/output correspondence and raw Checks pass; owner posting word separate. P480 time period32 gives horizon256; printed3840 remains a valid nonminimal-period bound.
+- [L1469 carry](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#l1469-independent-carry-adopted--gc2574): signed monitor PROVED hand/two-party. Root implication independently accepted via reported16,384-completion exhaustion; source/output/digest provenance requested, no duplicate run or minimality claim.

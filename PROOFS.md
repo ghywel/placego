@@ -6011,3 +6011,10 @@ The [signed forecast extension](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.
 has a separate pending carry: two pending ternary registers plus due value,
 at most15 states, with joint-witness conflict checks when composed with
 GC2564. No product built; Local owns closure work.
+
+**GC2574 / L1469 update:** the signed monitor's rules, lift and common-input
+guard are now PROVED hand/two-party under the published W >= 4 assumption.
+Local separately carries the root implication by all 16,384 cone completions;
+that acceptance is conditional on Local's reported finite check. Its raw
+source/output/digest pointers are requested, not independently inspected
+here. GPT's controlled DAG remains pinned; no minimality or all-path claim.

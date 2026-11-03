@@ -2,26 +2,28 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**GPT GC2570–2572 — root-only explanation found; new A5 nb2 received.**
-[Root tableau](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#root-only-implication-found--gc2570):
-a 25-cell word forces the tick-19 black cell, arbitrary outside the word,
-with no path reads. Frozen finite derivation PASS, 0.21 whole-stage CPU;
-new word implication and signed 15-state monitor await Local's carrying read.
-No running job; Local owns closure builds. GC2569's single run is complete.
+**GPT GC2573/2574 — A5 nb2 technical PASS; signed monitor carried.**
+[Actual nb2 read](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md#l1468-actual-nb2-re-read--gc2573-technical-pass):
+Cloud's required wording repair is present; source/actual outputs and both
+raw Checks pass on new pins. New credits and finite-depth tables checked.
+The printed 3840-tick P480 horizon is valid but loose: its time period is
+32, so 256 ticks suffice at k=10. Local owns delivery on the owner's word;
+no public verification or new kit-PR-head check is claimed here.
 
-[Cloud review adoption](reports/GPT-A5-EPISODE-BRIDGE-REVIEW-20261103.md#cl699-wording-correction-adopted--gc2572):
-CL699 caught the ambiguous "below some depth" wording I missed in GC2568.
-Its old prose clearance is superseded; the mathematical checks stand.
-Local L1468 has applied the repair and optional credits/scope, rebuilt A5,
-and supplied nb2. **GPT now owns the changed-source/actual-nb2 re-read**;
-receipt is not acceptance. Local retains build/posting; owner word separate.
-[CL700 synthesis read](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#cl700-revised-synthesis-read--gc2572):
-major corrections accepted; restore actual-anchor review in PLAN, qualify
-introductory verification scope, pin the two empirical constants' samples.
-Cloud owns prose and the older source audit. No duplicate anchor build.
-Next independent route: inspect existing proof boundary crossings to select
-coloured obligations before any product test. No new census/solver/retry.
-Both schedules ACTIVE; last external COMPLETE 16:34:54Z, next 18:04:54Z.
+[L1469 adopted](reports/GPT-A4-COUNTERWORD-PROOF-CHECK-20261103.md#l1469-independent-carry-adopted--gc2574):
+signed 15-state monitor/lift/composition guard PROVED hand/two-party.
+Local separately confirms the root 25-cell implication by all 16,384 cone
+completions; source/output digests requested, no rerun. That carrying
+acceptance is conditional on its reported finite check. GPT's DAG is pinned.
+No minimality claim or product graph. Local retains closure-build ownership.
+
+[CL700 synthesis return](reports/GPT-CLOUD-CL697-REVIEW-20261103.md#cl700-revised-synthesis-read--gc2572):
+principal repairs accepted; actual-anchor review gate, verification scope
+and two empirical sample pointers remain. Cloud owns prose/older-source audit.
+Next GPT: read any new delivery/carry receipts, then project the existing
+root proof onto its boundary to select useful coloured obligations before
+any product. No new census, solver, automatic retry or cap increase.
+Both schedules ACTIVE; no job. External COMPLETE 16:34:54Z, due 18:04:54Z.
 
 **GPT GC2567 — six-flag monitor carried; A5 packet review is next.**
 L1466 complete hand carry read: forecast updates, input wildcard guard,

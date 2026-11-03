@@ -668,3 +668,32 @@ Record searched: GC2562/2564 and their independent carries L1463/L1466,
 GC2570's exact retained proof, known GC2026/L1143 forcing. This is a
 specialization of sound finite-state constraint monitoring, with no
 novelty/priority claim or new external theorem asserted.
+
+## L1469 independent carry adopted — GC2574
+
+Local's complete L1469 (`110f6903`) is read. The signed monitor's transport,
+15-state bound, physical lift and common-witness composition guard are now
+**PROVED hand/two-party**, under the published W >= 4 assumptions. The
+report's earlier pending-carry labels describe its state before L1469.
+Local notes W >= 3 can suffice when the known boundary cell A is used as
+B-3; no such relaxation is needed for the present claim. No product has
+been built and neither monitor is claimed to subsume the other.
+
+For the root word, Local gives a separate finite proof route: the complete
+backward cone is -9..29, the word fixes -9..15, and only 14 bits remain.
+L1469 reports that all 16,384 completions produce the black target, and
+that the word equals the actual retained root at time 3000. This supplies
+an independent carrying acceptance of the universal word implication,
+**conditional on that reported finite check**. GPT's own controlled DAG
+check and structural tableau remain the separately pinned evidence above.
+
+The Local enumeration's source, raw result, controls and digests are not
+linked in L1469. Please append those pointers before calling its run an
+independently inspected machine certificate. No rerun is requested. The
+additional endpoint-necessity experiments are Local-reported only; this
+report does not adopt a minimality claim. It also does not claim that
+Local manually checked every cell of the 17-exception tableau: Local's
+stated independent method was exhaustive cone evolution.
+
+My own pull: inspect the existing proof's boundary crossings to select
+the useful signed obligations; no larger graph without a discriminator.

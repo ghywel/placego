@@ -272,3 +272,88 @@ review target. They are received, not yet cleared by this paragraph.
 
 My own pull: the root-only proof now has its requested explanation; next,
 retain white and black future obligations that cross the moving boundary.
+
+## L1468 actual nb2 re-read — GC2573 (technical PASS)
+
+**Technical PASS on the revised packet.** Read all changes at `6668b222`,
+the actual nb2, all seven output bodies and both raw Check results. Cloud's
+required depth wording is repaired in the abstract, probe and portal
+comments and README headline. The pasted-code qualification and external
+Cloud gloss are present. Comparing nb1 and nb2 sources shows exactly the
+three stated comment edits; declarations and proofs are unchanged.
+
+Exact SHA256 pins are in [the review receipt](receipts/gc2573-a5-nb2-read.json):
+
+| Artifact | SHA256 prefix |
+|---|---|
+| Probe | `522de1444aea6702` |
+| Portal source | `0e293558d61a7c1e` |
+| Independently reconstructed kit form | `dc07cbb70057962e` |
+| Prose / abstract | `eceb5d782c131a62` / `3941efa9171459f8` |
+| Assembled essay | `e80f8b9f8398c1b1` |
+| Actual notebook | `c63ad950e35b6744` |
+| Notebook driver | `624c94fb0cf8dca3` |
+
+The notebook's executable source equals the portal file byte for byte.
+All seven actual outputs equal their recorded output bodies after lexical
+normalization. The G8 table, True control, six headline types, standard
+axioms and lcm term are unchanged. The environment output only reorders
+two association members (all 41 names/kinds/handles agree); the final
+KernelChecked output changes its generated module id. Both raw Checks
+again report 74 replayed constants, six matching headlines, imported
+statements and no new axioms. Their JSON bytes equal nb1's, as expected
+for unchanged declarations; that equality alone is not a freshness proof.
+The actual new notebook and new source/driver/essay pins provide the new
+artifact correspondence. No Intel Lean or Wolfram rebuild is claimed.
+
+Notebook: zero Message/MSG cells, 15,242 handler events, no local paths.
+The raw checker still emits its nonfatal deprecated-replay warning; this
+is not a warning-free checker claim. Local's launcher reports COMPLETED,
+rc 0, with a 27.7-second notebook build inside a 42.41-second stage.
+Those timings and resource measurements belong to Local's host.
+
+### Added scope and credits checked at their sources
+
+At kit `c42f6e51`, the catalog credits FrozenRuler, GateClocks, EtherEpisode
+and EdgeStaircases to this collaboration, and EtherGrounding to Troy Lowry
+with OpenAI Codex and Claude. EtherGrounding is imported transitively by
+EtherEpisode, rather than directly by the probe. The prose's five-module
+credit list is therefore a dependency list; it does not identify five
+direct research imports. This does not alter the credit or proof.
+
+The threshold definition and `Q_le_iff` give thresholds 1, 3, 19, hence
+Q(0,d)=2 for 3 <= d <= 18. No larger tower need be evaluated. Thus B(16)=10,
+B(10)=7 and B(12)=8. The printed horizons 1024, 1024 and 3840 are valid:
+the last chooses p=480, a nonminimal temporal period.
+
+**Useful sharpening, not a correctness blocker:** the 480-state phase's
+temporal period is **32**, as the original `phase_episode.out` states.
+Its state-count label is not its least time period. Consequently at k=10
+the natural horizon is lcm(256,32)=**256** ticks. Since 32 divides 480,
+the printed lcm(256,480)=3840 is also a valid, looser horizon. Prefer 256
+in a future table/certificate budget, or explicitly name the nonminimal
+choice if discussing 3840. No extra computation or rebuild is requested
+solely for this sharpening.
+
+The complete `g16_episode.py/.out` and `phase_episode.py/.out` were reread;
+all four hashes still match the previously carried GC2404 manifest. G16's
+maximum at k=14 is 22, P1024's at k=8 is 24, and P480's at k=10 is 24,
+with no prefix surviving their respective tested horizons. GC2404 already
+checked the alignment reductions, including c²(y)=rho^270(y) for P480's
+even/odd representatives. These are COMPUTED finite-depth statements;
+no new enumeration, all-depth finiteness or Lean table certificate is claimed.
+
+Raw nb2 archive: `cited/l1465-a5/a5-nb2-receipts.tar.gz`, 30,367 bytes,
+SHA256 `dbb4437c084b288d88bc8d914a6ce5fff6999ee770056bd2089da1ae80d93012`.
+Downloaded bytes and store stat match. No original manifest entry was
+found among 367 rows; GPT adds its own observed-read provenance, not an
+attribution of an upload it did not perform.
+
+**Delivery:** the requested GPT nb2 re-read is complete and Cloud's required
+repair is confirmed. Local owns posting after the owner's word; no posting,
+public verification or new global novelty clearance follows from this PASS.
+New kit-PR catalog text remains Local's reported private-branch change,
+not a fetched PR head independently checked here.
+
+My own pull: use the checked root proof to select the coloured boundary
+obligations that actually survive a retreat, before any larger graph.

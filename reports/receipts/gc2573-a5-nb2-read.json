@@ -1,0 +1,69 @@
+{
+  "status": "TECHNICAL PASS on actual nb2; owner posting word separate",
+  "method": "Non-evaluating notebook lexical read; exact hashes and source transformation; no Lean or Wolfram rerun",
+  "notebook_sha256": "c63ad950e35b67447c042b6a90d774f069275bab31a2e9a6fddd54075e6b9524",
+  "seven_actual_outputs_match": true,
+  "actual_icon_source_matches": true,
+  "pins": {
+    "tests/probes/lean/EpisodeBridge.lean": "522de1444aea6702b8c91540fa26dc20f95c2f17992ddaf024e62669eab63dca",
+    "reports/wolfram-agents/submissions/episode-bridge/Rule30Submission.lean": "0e293558d61a7c1e07fd4776f45bda8703645b937e5fa59e10a2dd0eeb617d95",
+    "reports/wolfram-agents/submissions/episode-bridge/essay-prose.md": "eceb5d782c131a6267721fe8acb45c56a435dea9d11f8561315563032f86e34c",
+    "reports/wolfram-agents/submissions/episode-bridge/essay.md": "e80f8b9f8398c1b147d4d0437e13ae0443963fc49b0959692ee0f58e6357561d",
+    "reports/wolfram-agents/submissions/episode-bridge/abstract.txt": "3941efa9171459f8848538714a6ef14b05d2bac40505e4149db3bbc208b1bcec",
+    "tests/probes/wolfram/episode_bridge_notebook.wl": "624c94fb0cf8dca3a57b7da3b15c8fbc5595637fbd01e7fa681fc43f84d04b65"
+  },
+  "kit_reconstructed_sha256": "dc07cbb70057962e66d6b43f76cd16212a242d52c73522596ae3203118ff4f13",
+  "checks": {
+    "check-kit-v2.json": {
+      "sha256": "03568a821429bca4a868b06f07ec56c9606f82fd1ab0189f79978707a96d9dca",
+      "module": "Ruliology.CellularAutomata.Rule30EpisodeBridge",
+      "replay": {
+        "constants": 74,
+        "ok": true
+      },
+      "headlines": 6,
+      "standard_axioms": true
+    },
+    "check-portal-form-v2.json": {
+      "sha256": "2d941f072356f2882b4c14ebb401acc0496b2f7945fdc66c839e94aeae39bf29",
+      "module": "Rule30Submission",
+      "replay": {
+        "constants": 74,
+        "ok": true
+      },
+      "headlines": 6,
+      "standard_axioms": true
+    }
+  },
+  "message_cells": 0,
+  "handler_events": 15242,
+  "shared_archive_sha256": "dbb4437c084b288d88bc8d914a6ce5fff6999ee770056bd2089da1ae80d93012",
+  "manifest_match_found": false,
+  "review": "GC2573",
+  "source_commit": "6668b222",
+  "manifest_rows_at_check": 367,
+  "archive_bytes": 30367,
+  "proof_source_changes": "Exactly three comment edits; declarations and proof bodies unchanged",
+  "horizon_scope": {
+    "G16_k14_p16": 1024,
+    "P1024_k8_p1024": 1024,
+    "P480_k10_nonminimal_p480": 3840,
+    "P480_k10_actual_p32": 256,
+    "printed_horizon_valid": true
+  },
+  "local_resource_claims": {
+    "start_utc": "2026-11-03T16:59:54Z",
+    "end_utc": "2026-11-03T17:00:37Z",
+    "exit_reason": "COMPLETED",
+    "child_rc": 0,
+    "notebook_build_s": 27.7,
+    "stage_wall_s": 42.41
+  },
+  "no_intel_build": true,
+  "source_audit": {
+    "tests/probes/wolfram/g16_episode.py": "c6fa87f4b2fbd0c1c544504a8834456ddc0ad2a624323a90a01fd910db05b8b7",
+    "tests/probes/wolfram/g16_episode.out": "bcda1f3011d1e2ac9c76587143922849a013e617ffc76873d2a4ac4eb69cc486",
+    "tests/probes/wolfram/phase_episode.py": "87f64382a0a16af1fe1b3416ca22a6ffbfaf6328fe35c38850501fb68162834d",
+    "tests/probes/wolfram/phase_episode.out": "ddfa0a86901edf7c9e1504dfebd3a799a9a3699dc4da1eea38f0a88fcadaf998"
+  }
+}
