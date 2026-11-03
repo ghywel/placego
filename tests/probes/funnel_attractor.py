@@ -186,4 +186,7 @@ if GUARD:
 if '--depths' in sys.argv:
     print('   logged depths: first entry into A at depth min %d, median %d; least depth from that entry to capture: min %d, median %d' % (
         min(entry_R), sorted(entry_R)[len(entry_R) // 2], min(minR_after), sorted(minR_after)[len(minR_after) // 2]), flush=True)
+    dips = [e - m for e, m in zip(entry_R, minR_after) if m < e]
+    print('   per row: rows whose front fell below its own entry depth before capture: %d of %d; largest dip %d' % (
+        len(dips), len(entry_R), max(dips) if dips else 0), flush=True)
 print('FUNNEL_ATTRACTOR_DONE')

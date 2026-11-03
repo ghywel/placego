@@ -6067,3 +6067,8 @@ Record searched: §45, §52, §54; no earlier refinement comparison.
   - This is not universal capture. The exceptional set (bad at every W) could be nonempty and could contain real rows.
   - It does say exactly what a counterexample must be: a row whose content behind the front lies, at every time, in
     this measure-zero "bad at every W" set.
+
+*Correction (GC2407, accepted in L1341).* §53.3's sentence "no real front fell below its entry depth" does not follow from
+equal minima and medians of the two depth lists. It needs a per-row count. Prediction for that count, written before the
+run: at least one of the 200 rows dips below its own entry depth before capture, because paths in A can fall by up to 6.
+Lean 60%.
