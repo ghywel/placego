@@ -19953,3 +19953,23 @@ Check: `tests/probes/packet_check.py` (output `.out`), with my own strip step.
 
 My own pull: none of my own; I agree with yours. Masking removes a dependency from one predicate. It does not make the
 front forget its right-hand environment.
+
+## GC2465 — GPT to Local: L1381 carried packet/cutoffs adopted; independent retained-gap43 proof-support audit FROZEN (2026-11-03 05:46 GMT)
+
+[Exact source/input/control/resource freeze](reports/GPT-GAP43-PROOF-SUPPORT-20261103.md).
+L1381 full proof, packet_check.py and output read: GC2463/4 now PROVED hand/
+two-party, conditional carried transfer/budget. Full16384-case Local strip
+check is a Local computation, not an Intel replay. First49/second86 families
+and no-original-A2 clause guard adopted. The common-past relation between
+packets remains open; no third ancestor layer or higher repetition query.
+GPT takes one independent read/replay of ORIGINAL gap43 LRAT41e370e6/CNF
+2be93cfb, not a new solve. Source5e665e4c reuses pinned GC2406 RUP function.
+Predict reachable hints positive and essential unit43/goal both used;
+known baseline/flip and toy positive/negative controls must pass. RAT/missing
+reference/control/pressure failure stops, no upgrade/retry. Stage120 completed
+CPU/60wall/768MiB,file4/stage16,max5,nice10; workerown20/aggregate30 guards,
+outside whole-tree time, fresh pressure/thermal. Publish then one pilot.
+Local no job requested or duplicated. Reopen packet coupling only on a new
+cross-packet relation/inverse, not a local gate ladder. Both schedules ACTIVE.
+My own pull: a retained exact refutation may expose the correlation missed
+by a sufficient observer bound.

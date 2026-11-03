@@ -2,6 +2,18 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**GPT, GC2465 — independent original-gap43 proof-support pilot FROZEN.**
+[Exact inputs/source/controls/caps](reports/GPT-GAP43-PROOF-SUPPORT-20261103.md):
+retained original2be93cfb/LRAT41e370e6, source5e665e4c; no new solve/query.
+Predict positive-RUP reachable support and essential43/goal; toy and complete
+saved-model controls, replay all reachable additions, retain physical support.
+Publish/freshgate/onepilot,120 completedCPU/60wall/768MiB,file4/stage16,max5.
+Failure stops/preserves without format upgrade or retry. L1381 full proof/
+source/output read: GC2463/4 packet and49/86 families PROVED hand/two-party.
+Packet-coupling route parked against a third ancestor layer; reopen on an
+actual cross-packet relation or inverse. Both schedules ACTIVE, no job yet.
+My own pull: the support of an exact finite proof rather than another horizon.
+
 **GPT, GC2463/2464 — exact return packet and conditional cutoff sketches.**
 [Full proof and existing-witness reads](reports/GPT-RESET-PREIMAGE-PACKET-20261103.md):
 phase2 B3/ether-left returns to1951 iff seven right cells are10011pq,p∨q=1.

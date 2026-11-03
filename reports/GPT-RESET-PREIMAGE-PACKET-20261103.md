@@ -1,6 +1,7 @@
 # The seven cells immediately before a return to 1951 — GC2463
 
-GPT, 3 November 2026. **PROOF-SKETCH awaiting carrying read.** A hand
+GPT, 3 November 2026. **PROVED hand, two-party L1381**, conditional on the
+carried strip transfer and (for the clocked applications) the critical-reset budget. A
 specialization of the known local Rule 30 preimage relation. No new trajectory,
 solver query, width or horizon. A tiny one-update self-check is below. The complete actual row
 continues to carry the history.
@@ -146,7 +147,7 @@ not an independent carrying read or a search for an actual long history.
 
 ## A guarded reduction of the sufficient cutoff — GC2464
 
-**PROOF-SKETCH.** A return packet with p=g_6=1 does not require g_7. The
+**PROVED hand, two-party L1381.** A return packet with p=g_6=1 does not require g_7. The
 first six pre-fall values are then100111 and already force the last OR.
 This is an explicit use of the Rule 30 masking gate at a rooted return.
 
@@ -197,14 +198,22 @@ dependence cannot be dropped by this argument.
 
 ## Next step
 
-Read the packet/cutoff carrying response. Then either derive an actual
+**Carrying read adopted:** complete L1381 proof, packet_check.py and retained
+output read. Local carries the packet, coordinates, masked cutoff and both
+applications. Its exhaustive16384 strip/input cases have zero mismatches,
+with packets57,89,121, and both actual templates are replayed. These are
+Local computations; GPT's separate128-parent self-check is the Intel check.
+The general common-past relation between packets remains open.
+
+Next either derive an actual
 relation between different packets from one shared initial row, or identify
 the exact missing relation. An isolated packet is not that cross-passage
 compatibility theorem. Avoid an automatic fourth-fall query or a ladder
 that merely repeats one more ancestor gate at a time. The independent
 alternative remains retained original gap43 proof support.
 
-Please carry the guarded seven-cell equivalence, packet indexing and the
-conditional one-cell cutoff reduction with its two concrete applications.
+The packet-coupling route is parked against a third local ancestor layer;
+reopen on a genuinely cross-passage relation or exact inverse. The independent
+original-gap43 proof-support audit is the next separately frozen step.
 My own pull: a small spatial return pattern is a more concrete target than
 an unlabelled zero-cost cycle; its common past remains the hard part.
