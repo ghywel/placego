@@ -3,7 +3,7 @@ Template: ComputationalEssay
 Name: The classic ether of rule 30 absorbs a black edge: front speed exactly zero
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-11-03
-Description: A partial result proved in core Lean: after a black cell is inserted into the ether of the kit's Rule30Ether, at any of its 28 alignments, the leftmost disturbance is pinned in a fixed 13-cell window from a finite time on, so its speed is exactly zero; the same holds for every right tail beyond cell 87, the least cutoff for these entries; the difference stays unbounded to the right.
+Description: A partial result proved in core Lean: after a black cell is inserted into the ether of the kit's Rule30Ether, at any of its 28 alignments, the leftmost disturbance is pinned in a fixed 13-cell window from a finite time on, so its speed is exactly zero; the same holds for every right tail beyond cell 87, the least cutoff for exact agreement with the reference at these entries; for the original white right half, the difference extends arbitrarily far to the right.
 Abstract: See abstract.txt.
 Keywords: [rule 30, Rule 30 Prize, ether, wall, trap, front, news speed, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]
@@ -153,8 +153,8 @@ theorem edge_pinned_tail87 (c0 c1 : Nat) (h0' : c0 < 7) (h1' : c1 < 4) {H : Nat 
     (∀ x, x ≤ xB → H t x = etherZ c0 x (t + c1)) ∧ ∃ x, xB < x ∧ x ≤ xB + 13 ∧ H t x ≠ etherZ c0 x (t + c1)
 ```
 
-The cutoff 87 cannot be lowered for these entries. Flipping only the cell at 87 changes the 13-cell window at
-alignment (4, 3) at time 222:
+The cutoff 87 is the least one for exact agreement with the reference at these entry times. Flipping only the cell
+at 87 changes the 13-cell window at alignment (4, 3) at time 222:
 
 ```wl
 edgeRow[f_Integer] := Table[Which[x < 0, ether[x + 4, 3], x == 0 || x == f, 1, True, 0], {x, -700, 400}];
@@ -163,9 +163,9 @@ base = window[edgeRow[-1000]];   (* no extra flip *)
 {window[edgeRow[87]] == base, window[edgeRow[88]] == base, window[edgeRow[86]] == base}
 ```
 
-The comparisons are False, True and True: of these three flips, only the cell at 87 reaches the window (checked on
-Wolfram Engine 15.0, and replayed in Python by `tests/probes/exact_tail_bridge.py`'s single-flip scan, T53). This is a statement about the entries used here: a row that agrees
-only through 86 may still be pinned through some other entry.
+The comparisons are False, True and True: of these three flips, only the cell at 87 reaches the window (also replayed
+independently in Python). The sharpness concerns agreement with the reference, not pinning. A changed window is not by
+itself outside the wall states, and a row that agrees only through 86 may still be pinned, at this entry or another.
 
 ## Scope and what is new
 
@@ -174,7 +174,7 @@ only through 86 may still be pinned through some other entry.
 - **Prior art.** The ether, its wall states and `trap_invariant` are the kit's `Rule30Ether`, used there to exclude ether
   walls beside a periodic centre column; kit pull request 65 later added `Lock` and `Rule30EtherWallWitness`. New here
   are the trap on the whole line, the entry of an inserted black edge at every alignment, with them the exact zero
-  of the edge's front speed, and the least right-tail cutoff 87 for these entries.
+  of the edge's front speed, and the cutoff 87, sharp for exact agreement with the reference at these entries.
 - **Context (computed observations, not proved here).** Among the periodic backgrounds we examined numerically, the
   classic ether is the one in which the inserted edge's left front was rigid; in the others it moved at positive rates
   below light speed. Only the classic ether's zero is proved.

@@ -1,6 +1,6 @@
 # The universal healing bound for rule 30 (NIGHT-TASKS A2)
 
-Local, 3 November 2026 (L1348–L1355). **Status: package complete and checked on the M5; not submitted.** The source is
+Local, 3 November 2026 (L1348–L1355). **Status: POSTED 3 November 2026 at the owner's word (L1390): [R30-20261103-e660e4](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-e660e4), Lean Verified (kernel replay passed, standard axioms). Kit PR [#103](https://github.com/WolframInstitute/Rule30PrizeKit/pull/103) (`Rule30HealingBound`). The posted notebook adds one related-work citation (ea30e7) and is sha256 `4e8685f8…`.** The source is
 carried (GC2413), the checker passes on kit 93d98bbe (L1350), the rates are replayed (L1352), and the release notebook
 gets RESULT OK (L1355; rebuilt after GC2422's prose fixes, L1358). GPT's technical PASS of the first build is
 GC2422; its scoped read of the changed artifacts and then the owner's word remain.

@@ -1,4 +1,8 @@
-# A1 with cutoff 87: DRAFT for the owner's choice, NOT for posting
+# A1, combined (cutoffs 198 and 87): POSTED
+
+**Posted 3 November 2026 at the owner's word (L1390–L1391): [R30-20261103-3742dc](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-3742dc). Kit PR [#104](https://github.com/WolframInstitute/Rule30PrizeKit/pull/104) (`Rule30EtherEdgeZero`, `Rule30RootedFront`). The owner chose the combined package, since the 87 statement implies the 198 one. GPT's scoped packet read is GC2486, and its two prose fixes are applied. Final files: `Rule30Submission.lean` `d583be06…` (A1's 28 entry checks by `decide +kernel`), `essay-prose.md`, `abstract.txt` (243 words), `essay.md` `13efa778…`, notebook `3647dbed…` (RESULT OK: 9 outputs, KernelChecked 522). The draft text below is history.**
+
+## Draft history
 
 Local, 3 November 2026 (L1370). This directory holds an *alternative* to the ready A1 package
 ([`../ether-zero/`](../ether-zero/README.md)). A1 states its right-tail theorem with cutoff 198; this draft adds
