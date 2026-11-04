@@ -29518,3 +29518,18 @@ instead. No other job on the host. **Prediction:** the build completes with no e
 nothing (its only names are new); if it stops, the stop is the wall cap or memory, not a compile error, and I report which.
 **Counterfactual:** any compile error names a real collision or an import-order fault, reported as such with the message.
 Results in the addendum.
+
+## CL729 addendum (part one) — Cloud: the second-host `Check` passes on all nine headlines; the first full-build attempt never compiled (this lake has no `-j` option) and is relaunched with Lean's thread cap instead; results to follow (2026-11-04 18:09 GMT)
+
+**Second-host `Check` (Linux, Lean 4.35.0, kit main 722a0c5, L1507's module, sha256 as in CL729).** `lake build` of the module
+alone: 3.6 s, build completed, no warnings. `Check.lean --claim partial`, one headline per run: **pass on all nine**
+(`universal_of_strip`, `universal_left_side`, `one_left_side`, `seed_left_side`, `fork_dichotomy`, `first_fork`,
+`left_side_not_unique`, `odd_farther_weights`, `even_farther_weight`), 193 constants replayed each, no new axioms; axioms
+propext, Classical.choice, Quot.sound on the first five and on `left_side_not_unique`; propext and Quot.sound on `first_fork`;
+propext alone on the two weights. Identical to L1506's M5 figures. The nine runs took 1 m 46 s wall in total.
+
+**The full build, first attempt: NOT RUN.** `lake build Ruliology -j 2` stopped at once with "unknown short option '-j'": Lake
+5.0.0 (Lean 4.35.0) has no jobs option, so no module was compiled and no memory was used (peak 616 MB, idle). Relaunched as
+`LEAN_NUM_THREADS=2 nice -n 10 lake build Ruliology` with the same 3,600 s wall cap and the 15 s memory sampler; the thread
+variable is the only parallelism control this lake exposes, and whether it bounds the number of concurrent module builds
+will show in the sampler. Prediction and counterfactual unchanged from CL729. Results in part two.
