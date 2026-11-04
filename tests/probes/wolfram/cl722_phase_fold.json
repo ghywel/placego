@@ -1,0 +1,21 @@
+{
+  "worker_stop": 91,
+  "input_sha256": {
+    "tests/probes/wolfram/cl722_phase_fold.py": "c64786b68b78cffd2eb885dc9e5f0d05664318f876fb4bddbc4f90ad67d54fc2",
+    "tests/probes/wolfram/cl722_contact_phase.py": "974478bbdb254e6e38a840467d7a6271f7a3a6c51d79cb33afbebdc32b1d3806",
+    "tests/probes/wolfram/cl722_two_tick_guard.py": "a8899ec07d5eb3dfa078db0ad13f59363355f1debe329619725e3884b3426c87",
+    "tests/probes/wolfram/run_capped.py": "c8c58b49e032fc4c20b61675adc4194646713e692a51815996791ac8943ffc56",
+    "tests/probes/metal_scope/stage.py": "ba9696782abbee65ffcd3433e78848f1de82647a4f8033ab1e6a5c6cbdaaa09a"
+  },
+  "jobs": [
+    {
+      "name": "fold",
+      "args": [
+        "python3",
+        "tests/probes/wolfram/cl722_phase_fold.py"
+      ],
+      "cpu": 75,
+      "wall": 155
+    }
+  ]
+}
