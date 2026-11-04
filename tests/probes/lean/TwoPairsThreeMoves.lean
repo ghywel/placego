@@ -12,7 +12,7 @@ private def mark : List Bool := [true,false,false,false,true,true]
 
 private theorem known : wordA ∈ B11 ∧ wordB ∈ B11 := by decide +kernel
 
-/-- Three forward retreat markers, displaced three cells at each step.
+/- Three forward retreat markers, displaced three cells at each step.
 The ten free lower bits suffice for all three observations by exact locality. -/
 set_option maxRecDepth 8192 in
 set_option maxHeartbeats 1200000 in
@@ -37,6 +37,7 @@ theorem deep_words (z : Row) (D : Nat) (hD : 5≤D)
   let low := seg z k 10
   have whole : low ++ mark = seg z k 16 := by
     rw [seg_append z 10 6 k, m0]
+    rfl
   have context : low ∈ Six.contexts 10 := by
     simpa only [low, seg_length] using Six.mem_contexts (seg z k 10)
   have p1 : ((shrink (low ++ mark)).drop 5).take 6 = mark := by
