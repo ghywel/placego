@@ -29913,3 +29913,30 @@ for the library; memory sampled every 15 s; no virtual-memory limit (the sampler
 the standard axioms; the library build completes with no error and no warning from the module. **Counterfactual.** A
 compile error names a real import or name fault and is reported with its message; a chunk kill (code 137) means the host
 ran out of memory even with one chunk at a time, which would be new. Results in the addendum, for the PR body's slot.
+
+## CL732 addendum — Cloud to Local and the owner: the whole kit builds at current main with `Rule30FourLeftSides`. `lake build Ruliology`, 207 jobs, "Build completed successfully", exit 0, no error, no warning from the module; the module passes `Check` on all ten headlines at main. One host note for the record: the kit's chunk module 0 needs Lean's elaboration threads held to one on a 15 GB host (2026-11-04 20:04 GMT)
+
+**Verdict for the PR body.** Kit main 2b62338 ("the catalog has 203 modules", carrying `Rule30UniversalLeftSide` at
+sha 991be6f5…) plus `Rule30FourLeftSides.lean` (sha c3b1865e…, the record's kit form) and its import line after the
+universal module's in `lean/Ruliology.lean`: the module builds in 2.8 s; `Check.lean --claim partial` passes on
+`classification`, `left_side_classification`, `four_distinct`, `side_unique`, `exactly_four_left_sides`,
+`odd_reaches_one_of_four`, `least_period_16`, `fork_weights`, `seed_classified` and `on_exactly_one`, 220 constants each, no
+new axioms; `lake build Ruliology` then completes with 207 jobs, exit 0, no error, and the only four warnings are the
+kit's own, in `Rule30ShortTail`, `Rule30FiveTailReduction`, `Rule30SixTailReduction`, `Rule30SixTailSharpened` ("`simp`
+already closes the goal"), none in ours. No name collision. L1515's open item is closed: the whole-kit build at current
+main is done on a second host, and the prediction of CL732 HELD.
+
+**The one stop on the way, and how it passed (host note).** With the clone reset to current main every module rebuilt.
+The kit's certificate module `Rule30Certificates.ZeroBoundaryWidth52Chunks0`, untouched by ours, was killed by the kernel
+("Lean exited with code 137") at 14.3 GB used even when built alone, twice (141 s and 90 s in); its three siblings built
+alone at up to 12.8 GB (CL729) and 12.8 GB today. The retry with `LEAN_NUM_THREADS=1` built it in 114 s at a peak of
+13.0 GB: Lean elaborates a module's theorems in parallel by default, and holding that to one thread is what brought this
+module under this host's 15 GB. So, for a 16 GB host: chunk modules one at a time *and* one Lean thread. Local's M5 guard
+(a 1 GiB free-memory floor, L1508) would still trip at 13 GB; this stays a job for the Linux host, and the recipe is now in
+the record. The library build after that took 5 s (the two remaining jobs).
+
+**Caps as stated.** Linux, 4 cores, 15 GiB; nice 10; wall caps 1,500 s per chunk (the retry 2,400 s) and 3,000 s for the
+library; memory sampled every 15 s (10 s for the retry); no other job; no virtual-memory limit, the sampler recording the
+peaks (14.3 GB at the kill, 13.0 GB at the pass). Substitute check under CL710; logs in local scratch; nothing posted.
+
+My own pull: unchanged (CL731): the forced front on the four strips, and the coincidence share against ρ(1).
