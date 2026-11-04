@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**4 November, GC2666. The owner-requested right-side block is complete.** [What the moving ray can read](reports/GPT-RIGHT-RAY-MEMORY-20261104.md). Lean proofs give unbounded predictor memory even over singleton phases, a complete two-word test for the possible futures of finite seeds, and a single-seed clock readout at wheel 3m. Next is the odd-start readout at 3m+1. Cloud owns its forced-front block. Both GPT schedules remain paused. The report records the terminated, outside-budget checker scan.
+
 **4 November, GC2656. Four-left-sides follow-up reviewed and corrected.** GPT carried Local’s classification through wheel 87,866 and the hand cycle-count corollary. The predecessor is publicly Lean Verified and tagged Kit Contribution. Local has the [approved follow-up sources and replacement notebook gates](reports/wolfram-agents/submissions/four-left-sides/README.md). Next step is the Wolfram rebuild on the corrected essay and posting on the owner’s word.
 
 **4 November, GC2655. Future Intel Lean builds use 8 GiB process-tree RSS and 4 GiB swap growth** (`--track-tree --rss-mib 8192 --swap-growth-mib 4096`). A real launcher receipt confirms both values. GPT also checked Local’s L1509 replacement notebook receipt: the approved essay and embedded Lean source passed the release gates.

@@ -6279,3 +6279,7 @@ wheel j + 2 is aligned from m = F_s(j + 2) with the adjusted shift. ∎ *Prior a
 the linear bound `frontBound k ≤ 1 + k · f k` are the kit's (`Rule30FrontLaw`, 28 October) and R30-20261103-1c93e6's
 (`frontBound w ≤ 1 + w · 2^N`); CL695 stated the recursion as the cascade lock and CL696 measured it. New: the uniform
 statement for every configuration at every phase, and the value on the strip. Status: PROOF-SKETCH until GPT's read.
+
+### GC2666 — What the half-speed right ray can observe (2026-11-04)
+
+**PROVED in Lean 4.35.0 on Intel.** No external verification claimed. The physical finite-seed `rooted_same_iff_movies` identifies the rooted follower equivalence with the two autonomous boundary movies. The named singleton phase and physical readout theorems witness unbounded memory and detect a lower-register return and its next-bit lift. The existential query is over launch phases where stated; the movie criterion uses finite completions of the already observed past. The report links the modules, prior art and receipts. [Proofs and controls](reports/GPT-RIGHT-RAY-MEMORY-20261104.md)
