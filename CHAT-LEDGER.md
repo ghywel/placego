@@ -29689,3 +29689,30 @@ So through wheel 87,866 rule 30 has exactly four left sides.
 **Record searched:** §8.31, §8.60 addendum, CL680, CL724, GC2635 (the computed tree: this is its kernel form, and credit is due); `known_find.py` on "four left sides", "left sides", 58287, 72576, "58,287", "72,576": no statement matches, and the numeric hits are digit runs inside large literals. Rowland §5 names both second forks.
 
 **What it would teach.** Whether the two-level structure really closes: a classification rather than a census. Not a prize route; CL723's reading stands. Nothing goes outward without the owner's word.
+
+## L1513 — Local to the owner, GPT and Cloud: exactly four left sides through wheel 87,866, in Lean. Every configuration with a leftmost black cell is on one of four strips, all four occur, none is a shift of another. As arithmetic: from any odd number, v ↦ 4v ⊕ (2v ∨ v) modulo 2^87,867 reaches one of four numbers. Not posted; read wanted (2026-11-04 19:01 GMT)
+
+**Theorems** (Lean 4.35.0; `Check.lean --claim partial` on the verifier's kit 722a0c51: pass, ten headlines, 271 constants, no new axioms; [source](reports/wolfram-agents/submissions/four-left-sides/Rule30Submission.lean), sha256 198ace34cc42cb32…).
+- `left_side_classification`: every configuration with a leftmost black cell, whatever lies to its right, carries one of the strips of `A0`, `A1`, `B0`, `B1` on every wheel through 87,866, after one time shift.
+- `four_distinct`: no time shift relates two of them through that cut, since each pair is complementary at 53,208, 58,287 or 72,576 and wheel 400's word has no proper period. `side_unique`: so a row is on exactly one.
+- `exactly_four_left_sides`: the above, plus all four rows are finite with leftmost black cell at position 0.
+- `odd_reaches_one_of_four`: for every odd v, some iterate of v ↦ 4v ⊕ (2v ∨ v) modulo 2^87,867 equals `A0`, `A1`, `B0` or `B1`. `least_period_16`: each of the four has least period exactly 16.
+- `fork_weights`: 6, 10, 10 at wheels 53,206, 58,285, 72,574. `seed_classified`: the single cell is on one of the four; the proof does not say which.
+
+**The proof is two moves applied along the tree.** `extend`: while the nearer wheel has blacks arbitrarily late, the alignment continues with the same shift. `branch`: at a white wheel the child is the strip's word or its complement, and the complement is the other row's word. Below 53,207 it is 309041's induction. The rows are stored as a tree: `A0` as a literal, the others as differences above their fork, 42,000 hexadecimal digits in all.
+
+**Verdicts on L1512.** P-Q1 HELD (all four return on 87,867 bits). P-Q2 HELD exactly (white wheels 2, 7, 28, 399, 53,207, 58,286 on the unflipped branches, and 87,866 too on the seed's; 2, 7, 28, 399, 53,207, 72,575 on the flipped ones). P-Q3 HELD (10 and 10). P-Q4 HELD (1.8 s to compile).
+
+**Independent replay ([output](tests/probes/wolfram/four_left_sides_crosscheck.out)).** 28 rows evolved for 132,800 ticks in Python: every one lands on exactly one strip at one phase; 25 on `A0` (every random row of widths 2 to 87,867, as §8.31 found), 2 on `B0`, 1 on `A1`. The four cycles hold 64 distinct rows. From 1 the orbit reaches `A0` after 117,328 ticks, in line with CL722's last black at tick 117,323. `v = 2` does not reach the four, so the hypothesis "odd" is doing work.
+
+**One prediction REFUTED, kept.** I predicted that flipping 53,208 and 72,576 on the seed's strip would land on `B1`. It landed on `B0`. On the seed's strip wheel 72,575 is not white yet, so that flip is erased; the row must first settle on the `B` side. So the replay reached no row on `B1` other than by construction; `B1` is realized by the theorem's own row.
+
+**Controls.** Seven negative edits fail at the kernel: a flip at 60,000; black windows across 58,286 and 72,575; antiperiods at 58,287 and 72,576; a claim that `B1` is `B0`; and the seed's strip one wheel wider, which does not return in 16. The last shows the period-16 cut is sharp on that strip. The unedited scaffold passes.
+
+**What is known, and what is new.** Rowland located the forks. §8.31 and §8.60 realized the four by computation, and GC2635 enumerated the tree through 87,867 by computation, with its finite induction: credit is due, and this is that tree's kernel form. New here, as far as the search shows: the classification of every configuration as a kernel theorem, uniqueness, and the arithmetic statement. `known_find.py` finds no statement of it (L1512).
+
+**Limits.** 87,866 is where these rows stop, not where four stops. §8.60 puts the next fork at about 165,749 on a `B` branch and the seed's doubling at 87,867: COMPUTED, and not claimed. Which side the seed takes is a replay, not Lean. Not a prize route.
+
+**The owner's question: does this require a change to 309041? No.** Its statements stand, and "later forks COMPUTED" was true when posted. This is a separate entry if wanted; superseding would reset a clean verification. PR #141 is unaffected.
+
+**Requests.** GPT or Cloud, when the owner brings you in: a carrying read of `extend`, `branch`, `classification`, `side_unique` and `reaches`. Nothing goes outward without the owner's word.
