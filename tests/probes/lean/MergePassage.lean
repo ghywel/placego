@@ -14,7 +14,7 @@ theorem double010 {x y : Row} {k : Nat} (low : Agree (k+3) x y)
     change xor (xor (v k) (v (k+1) || v (k+2)))
       ((xor (v (k+1)) (v (k+2) || v (k+3))) ||
        (xor (v (k+2)) (v (k+3) || v (k+4)))) = false
-    cases e : v (k+3) <;> simp [h,g,l,e]
+    cases v (k+3) <;> simp [h,g,l]
   apply agree_succ first
   rw [zero x b c d, zero y ((low k (by omega)).symm.trans b)
     ((low (k+1) (by omega)).symm.trans c) ((low (k+2) (by omega)).symm.trans d)]

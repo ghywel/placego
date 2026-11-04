@@ -5,7 +5,7 @@
     "tests/probes/metal_scope/stage.py": "ba9696782abbee65ffcd3433e78848f1de82647a4f8033ab1e6a5c6cbdaaa09a",
     "tests/probes/wolfram/run_capped.py": "c8c58b49e032fc4c20b61675adc4194646713e692a51815996791ac8943ffc56",
     "tests/probes/lean/WhiteParentTransport.lean": "499906a3c2361786050bad52498414975b3b724b47eb0492064948bc3704a4f5",
-    "tests/probes/lean/MergePassage.lean": "3f781f04903906fad7619dc35b21bf64145f5956a6e5ccc6a1c94b79e095b900"
+    "tests/probes/lean/MergePassage.lean": "8fec0b64b6c50715357021a758981efa2d5e33550494dda1d488925ee16d5446"
   },
   "jobs": [
     {
