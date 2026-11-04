@@ -4,15 +4,9 @@ Gareth Herbert; Claude (Anthropic); GPT (OpenAI). 4 November 2026.
 
 ## 1. The claim
 
-In *Local nested structure in rule 30* (2006), section 5, Eric Rowland wrote that one is "tempted to conjecture that among
-nontrivial rightful rows R with a white left tail, the eventual period of column m in {f^t R} is independent of R — that
-there is really only one 'left side' of rule 30, regardless of which rightful initial condition we choose", gave the
-inductive argument in prose, located the first possible failure at his column 53,209, where an eventually white column has
-an even number of black cells per period in the column to its left, and added "(if in fact they do occur for some initial
-conditions)". This essay settles both sides. Through his column 53,208 (wheel 53,207 in the wall frame used here) the
-conjecture holds for every configuration with a leftmost black cell, with one common time shift (`universal_left_side`);
-at his column 53,209 (wheel 53,208) two finite rows realize the two continuations and no time shift identifies them
-(`first_fork`). Both are kernel-checked with the standard axioms.
+In *Local nested structure in rule 30* (2006), §5, Eric Rowland asked whether different initial rows give the same eventual periodic words along the left edge. He described an induction, identified the first possible split, and expected that the left side could depend on the initial row. His column 53,208 is eventually white. Its left neighbour has even weight over a period, allowing two continuations at column 53,209.
+
+Here wheels are numbered from zero. Through wheel 53,207 every configuration with a leftmost black cell eventually agrees with the seed’s strip after one common time shift (`universal_left_side`). At wheel 53,208 two finite configurations realize complementary words, and no common shift aligns their strips through that wheel (`first_fork`). Complementation preserves least period length. It is the periodic words and their joint alignment that distinguish the two left sides. Both the universality and the fork are kernel-checked.
 
 ## 2. The frame
 
@@ -25,13 +19,11 @@ black cell's diagonals `D j` satisfy it too (`D_zero`, `D_one`, `D_step`).
 
 ## 3. The strip, and what it must satisfy
 
-The reference is one row: `B`, the single black cell's row at tick 72,000 on its lowest 53,209 bits (a 16,017-digit
-number), with `C j t` the bit `j` of the `t`-th iterate of the wall-frame map on `B`. `B` returns after 16 ticks
+The integer `B` encodes the lowest 53,209 wall-frame bits of the single seed at tick 72,000, identified by a separate replay. Write `C j t` for bit `j` after `t` updates of this fixed-width register. Its initial value has 16,017 decimal digits. The register returns after 16 ticks
 (`B_return`, a kernel evaluation), so the strip is 16-periodic from tick 0 and every statement about it is a statement about
 sixteen rows. The strip is *admissible through J* when its base words are black, each word obeys the recurrence driven by
 the two below it, and at every wheel `m + 1 ≤ J` either the nearer word `C m` has a black somewhere in its sixteen phases, or
-some `L` is a period of every word through `m` and an antiperiod of `C (m + 1)`. For `B` and `J = 53207` the data are: the OR of
-the sixteen rows is black at every wheel through 53,206 except 2, 7, 28, 399 (`black_mask`); at those four, the lower strip has
+some `L` is a period of every word through `m` and an antiperiod of `C (m + 1)`. For `B` and `J = 53207` the data are: the mask check finds a black phase at every wheel through 53,206 outside the four named positions, 2, 7, 28 and 399 (`black_mask`). At those four, the lower strip has
 period 1, 2, 4, 8 and the child wheel 3, 8, 29, 400 is antiperiodic with that `L` (`per2 … anti399`). Rowland's parity reading
 is checked too: the farther weights at the four white wheels are 1, 1, 3, 3 over those periods (`odd_farther_weights`), and
 wheel 53,207 is white with farther weight 6 over 16 (`C_white`, `even_farther_weight`), the even case he predicted.
@@ -58,27 +50,20 @@ shift, wheel 53,208 of every row is eventually the strip's word or its complemen
 ## 5. The fork
 
 **`first_fork`.** Let `B'` be `B` with bit 53,208 flipped; both are finite rows with their leftmost black cell at position 0,
-and both return after 16 ticks. Their left diagonals agree on every wheel through 53,207 at every tick, are complementary at
+and their 53,209-wheel prefixes return after 16 ticks. Their left diagonals agree on every wheel through 53,207 at every tick, are complementary at
 wheel 53,208 at every tick, and no shift relates them through wheel 53,208: wheel 400's word has no proper period, so a
 shift preserving the lower strip is a multiple of 16, which fixes wheel 53,208 (`wheel400_primitive`, `no_shift`). So the
 universality of section 4 stops exactly at Rowland's column 53,209, and his "(if in fact they do occur)" has a kernel-checked
-yes: a second continuation occurs for a finite row. Which of the two the single black cell itself takes is read off `B`
-(the seed's row at tick 72,000 by a replayed computation, not a Lean statement; a kernel run of the seed to that tick does
-not fit the verifier's limit). In Lean, at least one of the two finite rows differs from the seed at 53,208
+yes: a second continuation occurs for a finite row. A separate replay identifies `B` as the low 53,209 bits at tick 72,000, fixing which continuation the single seed takes. The Lean proof requires only the literal and its certified cycle. In Lean, at least one of the two finite rows differs from the seed at 53,208
 (`left_side_not_unique`), which is what the question asks; its proof does not name which row.
 
 Six negative controls, each one edit to the certificate, fail at the kernel: a flipped bit at wheel 30,000; a flipped bit at
 53,207; wheel 399 dropped from the white mask; the mask claim extended to 53,207; an antiperiod `L < 16` claimed at wheel
-53,208, the step that would carry universality past the fork; a period claimed at wheel 400.
+53,208, the step that would carry universality past the fork; an eight-tick return claimed through wheel 400.
 
 ## 6. What follows, and what the record already saw
 
-Below the fork the band edge's walk, the merge of two configurations' orbits and the finite transport guards of the
-contributors' record (CL715–CL723, GC2624–GC2647) are consequences of one strip: every configuration with a leftmost black
-cell becomes the seed's left side, exactly, in finite time. Beyond the fork the strip branches again at 58,287 or 72,576
-(Rowland's 58,288 and 72,577), realized by finite rows in the record (§8.60) and enumerated through wheel 87,867 (GC2635);
-the same certificate at those wheels is the natural next step. Whether there are infinitely many left sides, Rowland's
-surmise, is open.
+The theorem gives eventual agreement after one common shift on this finite strip. The passage times and transport bounds in CL715–CL723 and GC2624–GC2647 require additional information about the transient. Rowland also located the next two possible splits at wheels 58,287 and 72,576. The contributors’ finite-row computations in §8.60 realize those later branches. A Lean certificate for them would extend the present result. Rowland’s question about infinitely many left sides remains open.
 
 ## 7. Prior art and credits
 
@@ -88,14 +73,12 @@ are the kit's `Rule30LeftReset`; the general-configuration diagonals and their r
 `Rule30AgedLeftDiagonals`; the coincidence lemmas of `Rule30LeftCoincidence` (R30-20261103-3cf160), extended on kit main by
 G. P. J. W. Quint and Gemini (R30-20261104-30d8ae), are the eventual-period companions of this theorem. Bosdure's universal
 left-edge crystal (R30-20261027-317c64, `zrow_edge_one` … `zrow_edge_seven`) proved the universality of wheels through 7 for
-finite zero-boundary starts; this result extends it to every wheel through 53,207 and every configuration with a leftmost
+finite zero-boundary starts with the last black cell at depth at least two; this result extends it to every wheel through 53,207 and every configuration with a leftmost
 black cell. The census of the seed's white diagonals to a million (2, 7, 28, 399, 53,207, 58,286, 87,866, with farther weights
 1, 1, 3, 3, 6, 10, 5) is the record's CL680. GPT (OpenAI) supplied the finite transport and passage lemmas that prompted the
 statement. The two rows of the fork are the record's flip construction of 5 October (§8.31: a settled strip with one
 bit flipped at the first even fork), by Claude (Anthropic, Cloud and Local), formalized here.
 
-## 8. What is not claimed
+## 8. Scope
 
-Nothing beyond wheel 53,208: there the strip branches, and the statement says nothing further. Nothing about the center
-column, the density, or the prize problems: every column of the pattern leaves the settled band and lives on the chaotic
-side, and this theorem is about the settled side only.
+The proof ends at wheel 53,208. A fixed column in laboratory coordinates eventually leaves this finite moving strip, so the theorem gives no conclusion about the center column or its density.

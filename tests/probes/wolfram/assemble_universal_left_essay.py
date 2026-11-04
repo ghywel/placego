@@ -65,8 +65,7 @@ formal = '''
 ## The formal proof
 
 The module is core Lean. It imports the official statements (`Rule30Prize`) and the kit's `Rule30AgedLeftDiagonals`, which
-brings `Rule30FiniteDiagonals`, `Rule30Diagonals` and `Rule30Realization`. Nothing else is needed. The 53,209-bit row is the
-hexadecimal literal in the source, and every `decide +kernel` below is the Lean kernel evaluating sixteen rows of it.
+brings `Rule30FiniteDiagonals`, `Rule30Diagonals` and `Rule30Realization`. Nothing else is needed. The hexadecimal literal encodes a register of 53,209 wheels. The finite checks use Lean kernel reduction on its cycle and the cycle of the flipped register.
 
 ```wl
 Needs["Wolfram`LeanLink`"];

@@ -2,19 +2,15 @@ Rule30UniversalLeftSide: one left side through wheel 53,207 for every configurat
 
 This adds `lean/Ruliology/CellularAutomata/Rule30UniversalLeftSide.lean`, with its `public import` in `lean/Ruliology.lean` and a row in *Added in the kit*.
 
-**What it proves.** Rowland (*Local nested structure in rule 30*, 2006, §5) conjectured that rule 30 has only one left side, and located the first possible failure at his column 53,209, which is wheel 53,208 here.
-- `universal_of_strip`: for every array with the left-diagonal recurrence (`Rule30AgedLeftDiagonals.Recurrence`) and a black wheel 0, and every strip whose wheels at each step have blacks arbitrarily late or a period of the lower words that is an antiperiod of the child, one time shift aligns every wheel through `J` with the strip. This is Rowland's induction.
+**What it proves.** Rowland (*Local nested structure in rule 30*, 2006, §5) asked whether the eventual left-diagonal periods are independent of the initial row. He identified an even-weight integral whose two possible child words are complements. His child column 53,209 is zero-based wheel 53,208 here. These results concern the words under a common time shift; the two complementary words have the same least period.
+- `universal_of_strip`: for every array with the left-diagonal recurrence (`Rule30AgedLeftDiagonals.Recurrence`) and a black wheel 0, and every reference strip with black base words, the stated recurrence, and either arbitrarily late black bits on each nearer parent or a common period of the lower words that is an antiperiod of the child, one time shift aligns every wheel through `J` with the strip. This is Rowland's induction.
 - `universal_left_side`: every configuration with a leftmost black cell, whatever lies to its right, carries the strip `C` on every wheel through 53,207 after one shift. `one_left_side`: any two such configurations share their left side through 53,207 up to a shift. `seed_left_side`: so does the single black cell.
 - `fork_dichotomy`: with that shift, wheel 53,208 of every such configuration is eventually `C`'s word or its complement.
-- `first_fork`: the finite rows `B` and `B'` (`B` with bit 53,208 flipped) agree on every wheel through 53,207 and are complementary on wheel 53,208 at every tick, and no time shift relates them. `left_side_not_unique`: some finite row differs from the single seed there; the proof does not say which of the two.
+- `first_fork`: the finite rows `B` and `B'` (`B` with bit 53,208 flipped) agree on every wheel through 53,207 and are complementary on wheel 53,208 at every tick, and no common shift aligns their entire prefixes through 53,208. `left_side_not_unique` proves that at least one of these finite rows differs from the singleton through 53,208 under every shift, without identifying which row.
 - `odd_farther_weights`, `even_farther_weight`: Rowland's parity condition at the five white wheels.
 
-The reference is one 53,209-bit literal `B` that returns after sixteen ticks (`B_return`), so every condition is a kernel evaluation over sixteen rows. No table of cycles and no run of the seed is needed. That `B` is the single seed's row at tick 72,000 is a replayed computation and is not used in any proof.
+The sixteen-tick return of the literal `B` in the 53,209-wheel register is kernel-checked (`B_return`). A separate replay identifies it with the singleton’s wall-frame row at tick 72,000 truncated to the low 53,209 bits. The proof uses the literal and its verified return independently of that computation.
 
-**Checks**, Lean 4.35.0:
-@@CHECKS@@
-- Every declaration is in the new namespace `Ruliology.CellularAutomata.Rule30UniversalLeftSide`.
-
-Portal entry: @@ENTRY@@.
+**Checks.** On Lean 4.35.0, Local reported an official `Check.lean --claim partial` pass for all nine headlines in the composed kit module on kit main `722a0c51` and in its portal form on verifier kit `c42f6e51` (L1506–L1507). The module check replayed 193 constants. The combined headline axioms were `propext`, `Classical.choice` and `Quot.sound`; `first_fork` used only `propext` and `Quot.sound`. Every declaration in the kit module is under `Ruliology.CellularAutomata.Rule30UniversalLeftSide`. Two separate attempts at the full `lake build Ruliology` on the M5 stopped at the memory guard (L1508).
 
 Nothing here concerns the center column or the Prize problems. Credits: Rowland's argument; the kit's `Rule30LeftReset`, `Rule30FiniteDiagonals` and `Rule30AgedLeftDiagonals`; Bosdure's universal left-edge crystal (R30-20261027-317c64) for wheels through 7.
