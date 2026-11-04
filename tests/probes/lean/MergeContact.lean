@@ -19,7 +19,7 @@ theorem splice_update {j : Nat} {l r : Row} (hj : 2 ≤ j)
       by_cases h : v<j
       · simp [splice,h,left v hv,right v h]
       · simp [splice,h]
-    simp only [splice,if_neg hk]
+    simp only [splice,ite_eq_right hk]
     cases k with
     | zero => omega
     | succ k =>

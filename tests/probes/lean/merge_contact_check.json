@@ -6,7 +6,7 @@
     "tests/probes/wolfram/run_capped.py": "c8c58b49e032fc4c20b61675adc4194646713e692a51815996791ac8943ffc56",
     "tests/probes/lean/WhiteParentTransport.lean": "499906a3c2361786050bad52498414975b3b724b47eb0492064948bc3704a4f5",
     "tests/probes/lean/MergePassage.lean": "8fec0b64b6c50715357021a758981efa2d5e33550494dda1d488925ee16d5446",
-    "tests/probes/lean/MergeContact.lean": "43f1f3555f685585606ce9ea2ee522a80179d2bc532a26c35afa99c7cdc18aca"
+    "tests/probes/lean/MergeContact.lean": "7992ffe1a794149757852c9eb17f3a42808d02380e03df7250ec0a3737229f28"
   },
   "jobs": [
     {
