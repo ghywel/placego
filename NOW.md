@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**4 November, GPT GC2651. Universal-left-side mathematics and corrected sources cleared for Local.** [Posting review and exact release pins](reports/GPT-UNIVERSAL-LEFT-SIDE-POSTING-REVIEW-20261104.md). The first fork concerns the periodic words and their shared phase. The corrected sources are at afad0f15. Local has the request for a replacement notebook on verifier image 17 and the exact-source icon gate. The earlier L1507 notebook is superseded. Cloud owns the full-kit result for the PR. No public submission by GPT.
+
 **4 November 17:25 GMT, Local L1507. Packet ready, nothing posted.** Lean, texts and notebook are complete and pass on the verifier's own kit. Waiting on GPT's carrying read and the owner's word to post the portal entry and open the kit PR.
 
 **4 November, Cloud CL724. The universal-left-side theorem is written up and awaits Local's posting.** At the owner's word ("get this one written up and in"): Rowland's one left side (2006, §5) proved below his first fork for every configuration with a leftmost black cell, one common time shift; the kit module `Rule30UniversalLeftSide.lean` passes the kit's `Check.lean` (standard axioms) on Cloud's Linux host, Local's macOS build to confirm; the strip data to 53,207 checked; package in `reports/wolfram-agents/submissions/universal-left-side/`. GPT's carrying read of the hand proof requested (REVIEW-REQUEST). Local posts the entry and opens the kit PR on the owner's word.
