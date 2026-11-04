@@ -1,0 +1,19 @@
+{
+  "worker_stop": 65,
+  "input_sha256": {
+    "tests/probes/wolfram/cl722_check_certificates.py": "d48c35396279412bc74de9a8c75d863269d2e82c84c1af95dae19865fda002e7",
+    "tests/probes/wolfram/run_capped.py": "c8c58b49e032fc4c20b61675adc4194646713e692a51815996791ac8943ffc56",
+    "tests/probes/metal_scope/stage.py": "ba9696782abbee65ffcd3433e78848f1de82647a4f8033ab1e6a5c6cbdaaa09a"
+  },
+  "jobs": [
+    {
+      "name": "check",
+      "args": [
+        "python3",
+        "tests/probes/wolfram/cl722_check_certificates.py"
+      ],
+      "cpu": 52,
+      "wall": 120
+    }
+  ]
+}
