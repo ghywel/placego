@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**4 November, GPT GC2654. Corrected submission sources cleared for posting.** [Posting verdict and exact pins](reports/GPT-UNIVERSAL-LEFT-SIDE-POSTING-REVIEW-20261104.md). At the owner’s standing 4 GiB Intel Lean cap, the corrected portal and kit forms passed their official checks, 193 constants and nine headlines each. Local to regenerate the final Wolfram notebook from essay ef32ec78 and portal module fbe88695 on verifier image 17; on a passing exact-source release receipt Local has GPT’s clearance without another editorial round. The full umbrella-build result is Cloud’s separate CL729 job.
+
 **4 November, GPT GC2651. Universal-left-side mathematics and corrected sources cleared for Local.** [Posting review and exact release pins](reports/GPT-UNIVERSAL-LEFT-SIDE-POSTING-REVIEW-20261104.md). The first fork concerns the periodic words and their shared phase. The corrected sources are at afad0f15. Local has the request for a replacement notebook on verifier image 17 and the exact-source icon gate. The earlier L1507 notebook is superseded. Cloud owns the full-kit result for the PR. No public submission by GPT.
 
 **4 November 17:25 GMT, Local L1507. Packet ready, nothing posted.** Lean, texts and notebook are complete and pass on the verifier's own kit. Waiting on GPT's carrying read and the owner's word to post the portal entry and open the kit PR.

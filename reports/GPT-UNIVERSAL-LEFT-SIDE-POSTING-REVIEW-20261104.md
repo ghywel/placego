@@ -1,6 +1,6 @@
 # Universal left side: posting review
 
-**Verdict.** The mathematical carrying read passes. GPT clears the corrected portal source, abstract, essay and kit module at `afad0f15`. For the portal upload, Local should use the replacement notebook generated from the pins below once its Wolfram release receipt passes. The passing L1507 notebook predates the corrections. Local owns the notebook and posting. This review does not require a further editorial pass on an exact regeneration.
+**Verdict.** The mathematical carrying read and both official module checks pass. GPT clears the corrected portal source, abstract, essay and kit module at `afad0f15`. For the portal upload, Local should use the replacement notebook generated from the pins below once its Wolfram release receipt passes. The passing L1507 notebook predates the corrections. Local owns the notebook and posting. This review does not require a further editorial pass on an exact regeneration.
 
 ## What the proof establishes
 
@@ -25,6 +25,13 @@ I checked the embedded Lean byte-for-byte and compared the executable content of
 
 ## Which checks ran
 
-Local reported an official pass on all nine headlines and a successful Wolfram notebook for the earlier L1507 packet. Cloud independently reported passing all nine headlines, replaying 193 constants of the earlier module on the Linux host (CL729). On Intel both cold compiler treatments reached the 768 MiB memory guard in the upstream `Rule30BlackRuns` dependency. Neither Intel attempt produced a verdict from the official checker. Host headroom stayed above 5,455 MiB and swap did not grow. Both receipts are preserved. The owner then authorized a larger memory allowance, and the same checker was resumed at 4 GiB.
+Local reported an official pass on all nine headlines and a successful Wolfram notebook for the earlier L1507 packet. Cloud independently reported passing all nine headlines, replaying 193 constants of the earlier module on the Linux host (CL729). On Intel the first two cold compiler treatments reached the original 768 MiB memory guard in the upstream `Rule30BlackRuns` dependency. Neither Intel attempt produced a verdict from the official checker. Host headroom stayed above 5,455 MiB and swap did not grow. The owner raised the allowance to 4 GiB and made this the standing Intel Lean build cap. The same checker then completed on both revisions. Peak sampled tree RSS was 1,598,552 KiB, minimum headroom 5,810 MiB, and swap growth zero.
+
+| Corrected form | Kit revision | Standard compiler and official checker |
+|---|---|---|
+| Portal `Rule30Submission` | Verifier image 17, `722a0c51` | PASS, 193 constants replayed, 9/9 headlines, zero new axioms |
+| Kit `Rule30UniversalLeftSide` | Kit main `a91c7273` | PASS, 193 constants replayed, 9/9 headlines, zero new axioms |
+
+Synchronous elaboration also passed both checks, with 184 constants on each. Recompiling the two modules with the ordinary command-line setting on the same import objects reproduced the 193 expected by the notebook driver on both. The checks use `--claim partial`; they are not portal submissions. The unmodified official checker printed a deprecation warning about its own replay API. The verified shared-store archive `cited/gpt/gc2654-universal-left-checks.tar.gz` is 5,558 bytes, SHA256 `76e9fb1963c50e290a0204d78aa7c82ee1054d3c5aebe7dab0d958e9554635fb`. It contains the four checker outputs, source manifests and the receipts for the stopped and successful builds.
 
 **Release handoff.** Use the corrected source pins in a passing current-verifier module/notebook run. Confirm the notebook’s exact source icon, matching abstract, eight outputs, white-wheel replay, weight table, named axiom sets, 193-declaration kernel check and final notebook digest. Cloud owns the separate whole-kit build and its precise outcome belongs in the PR body. A whole-kit CI result and a public portal verification are separate from this mathematical clearance.
