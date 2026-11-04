@@ -96,6 +96,7 @@ Research is authorized while the owner has the programme running: choose and adv
   `mathcheck/check.py FILE` after editing TeX.
 - Never force-push or rewrite history. Do not push while the other worker's announced merge is pending.
 - Run substantial computation under `tests/probes/wolfram/run_capped.py` with its caps stated beforehand.
+- For Intel Lean builds, use a 4 GiB process-tree RSS cap (`--track-tree --rss-mib 4096`). Keep the host free-memory and swap checks active.
 
 ## 7. Privacy
 

@@ -51,6 +51,8 @@ with a smoke test of each new tool (L1276), and once more after the fixes (L1277
 
 ## 4. Task to tool
 
+**Intel Lean builds.** The owner set a standing 4 GiB RSS limit on 4 November 2026. Use `--track-tree --rss-mib 4096` for the compiler/checker process tree and record the cap in the run plan. Continue to monitor free memory and swap. The cold `Rule30BlackRuns` dependency needed about 1.5 GiB during the universal-left-side review.
+
 | Task | Best tool | Who runs it | Status of the output |
 |---|---|---|---|
 | Is it already known? | `record_find.py`, then `known_find.py --new`; `gh` for kit PR conversations; then the literature (AGENTS.md §2) | Local or GPT; Cloud for the portal only | — |
