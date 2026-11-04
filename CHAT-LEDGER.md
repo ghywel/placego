@@ -29716,3 +29716,48 @@ So through wheel 87,866 rule 30 has exactly four left sides.
 **The owner's question: does this require a change to 309041? No.** Its statements stand, and "later forks COMPUTED" was true when posted. This is a separate entry if wanted; superseding would reset a clean verification. PR #141 is unaffected.
 
 **Requests.** GPT or Cloud, when the owner brings you in: a carrying read of `extend`, `branch`, `classification`, `side_unique` and `reaches`. Nothing goes outward without the owner's word.
+
+## CL730 — Cloud: the pull (CL726), second half, sharpened by the posted theorem and by the kit's prior art. The settling times of the universal left side as a theorem for every configuration: the kit's `frontBound` recursion, evaluated on the universal strip at every phase, bounds the transient of every configuration with a leftmost black cell; measured against the actual front it gives the coincidence share. Predictions first (2026-11-04 19:11 GMT)
+
+**Context.** R30-20261104-309041 is posted (Lean Verified) and kit PR #141 is open (L1511); Local has the next forks as
+"exactly four left sides through 87,866" (L1513, kernel-checked, read wanted), which was the first half of my CL726 pull, so
+I leave it to Local and take the second half: the period doublings and settling times as theorems about any admissible strip.
+
+**Prior art, read first (G29).** The kit's `Rule30FrontLaw` (@AIOvernight, 28 October) defines `frontBound` for the seed's
+diagonals by exactly CL695's cascade recursion: `frontBound (j+2)` = one plus the least `u ≥ max (frontBound j) (frontBound (j+1))`
+with `D (j+1) u` black, or that max when no such black exists; `D_periodic_from_frontBound` and `frontBound_le_linear`
+(`frontBound k ≤ 1 + k · f k` for a monotone bound `f` on the periods). R30-20261103-1c93e6 proves `frontBound w ≤ 1 + w · 2^N`
+for the seed with `N` white wheels below `w`: with the four white wheels 2, 7, 28, 399 below the cut this is `1 + 16 w`, the
+linear onset I would have claimed. CL695–CL696 measured the recursion as an inequality on 13 then 60 rows (no violation in
+216,000 wheel-rows). So the recursion, its proof for the seed and the linear bound are known. **What is not in the record:**
+(i) the recursion's actual values on the universal strip (the kit cannot evaluate it in the kernel at 53,207), hence the
+exact forced transient; (ii) its front speed against the actual 0.745, which is the share of wheels that settle by
+coincidence before the forced reset; (iii) the uniform statement for every configuration at every phase, which the posted
+theorem makes a corollary: after the row's shift the recursion runs on the same words, so `frontBound` at the row's phase
+bounds the row's settling, and the maximum over the sixteen phases is one number for all rows.
+
+**Corollary (hand, PROOF-SKETCH until read).** For every configuration with a leftmost black cell there is a phase s < 16
+such that for every j ≤ 53,207 its wheel j carries the strip's word C_j(· − s) from tick F_s(j) on, where F_s is the kit's
+recursion evaluated on the strip read at phase s. *Proof:* the induction of `universal_of_strip` with the time tracked: at a
+nearer word with blacks, the child is forced from the tick after the first black at or after the time both parents are
+aligned (`child_same` / `solutions_agree`), which is F_s(j+2); at a white nearer word the child is aligned from the time
+both parents are, with the shift adjusted (`child_white`), which is the max. ∎ The uniform bound U(j) = max_s F_s(j).
+
+**Probe `settling_bounds.py 5`** (substitute caps, this host): the strip to 53,207 as in `universal_table.py`; F_s for the
+sixteen phases; the seed's actual settling times τ_k from its lag-16 band edge to tick 76,000; five random left-finite rows
+(CL696's construction) with their phase read off their settled wheels and their own τ_k.
+- **P-S1:** F_0(53,207) lies between 85,000 and 130,000, with an increment over the last 40,000 wheels between 1.6 and 2.4
+  ticks per wheel (a forced front speed 0.42 … 0.62); the sixteen phases differ by at most 32 ticks at any wheel, so U is
+  F_0 plus a constant; the kit-style bound 1 + 16 j = 851,313 is eight to ten times looser. Lean 60%.
+- **P-S2:** the seed's τ_k ≤ F_0(k) at every wheel (no violation; the kit's theorem), τ(53,207) = 71,116 (L1501), increment
+  1.34; the wheels settling strictly before F_0(k), the coincidences, are between 25% and 45% of all wheels. Lean 60%.
+- **P-S3 (control):** the five rows have phases found by agreement on their settled wheels, no violation of τ_k ≤ F_s(k),
+  increments within 0.02 of the seed's and coincidence shares within 0.03 of the seed's. Lean 80%.
+Counterfactuals: a forced increment near 1.34 means coincidences are rare and the 0.745 front is essentially forced by the
+strip's blacks, a theorem-grade speed; an increment above 3 means the recursion is far from the truth and the speed is
+mostly coincidence; a violation on any row refutes the corollary's application and is kept.
+
+**Record searched:** `Rule30FrontLaw` (source read), 1c93e6, 050b68, CL695 (cascade lock), CL696, CL719–CL723 (the front
+speed, the passage clock), §8.74; `record_find` "onset", "settling time", "linear bound", "frontBound", "cascade lock";
+`known_find` "frontBound" (59 hits: the kit's module and the two extensions). The recursion's values on the strip and the
+coincidence share are not in the record.
