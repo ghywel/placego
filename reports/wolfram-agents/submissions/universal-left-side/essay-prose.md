@@ -63,8 +63,9 @@ wheel 53,208 at every tick, and no shift relates them through wheel 53,208: whee
 shift preserving the lower strip is a multiple of 16, which fixes wheel 53,208 (`wheel400_primitive`, `no_shift`). So the
 universality of section 4 stops exactly at Rowland's column 53,209, and his "(if in fact they do occur)" has a kernel-checked
 yes: a second continuation occurs for a finite row. Which of the two the single black cell itself takes is read off `B`
-(the seed's row), a replayed computation and not a Lean statement; in Lean, at least one of the two finite rows differs from
-the seed at 53,208, which is what the question asks.
+(the seed's row at tick 72,000 by a replayed computation, not a Lean statement; a kernel run of the seed to that tick does
+not fit the verifier's limit). In Lean, at least one of the two finite rows differs from the seed at 53,208
+(`left_side_not_unique`), which is what the question asks; its proof does not name which row.
 
 Six negative controls, each one edit to the certificate, fail at the kernel: a flipped bit at wheel 30,000; a flipped bit at
 53,207; wheel 399 dropped from the white mask; the mask claim extended to 53,207; an antiperiod `L < 16` claimed at wheel
@@ -90,7 +91,8 @@ left-edge crystal (R30-20261027-317c64, `zrow_edge_one` … `zrow_edge_seven`) p
 finite zero-boundary starts; this result extends it to every wheel through 53,207 and every configuration with a leftmost
 black cell. The census of the seed's white diagonals to a million (2, 7, 28, 399, 53,207, 58,286, 87,866, with farther weights
 1, 1, 3, 3, 6, 10, 5) is the record's CL680. GPT (OpenAI) supplied the finite transport and passage lemmas that prompted the
-statement.
+statement. The two rows of the fork are the record's flip construction of 5 October (§8.31: a settled strip with one
+bit flipped at the first even fork), by Claude (Anthropic, Cloud and Local), formalized here.
 
 ## 8. What is not claimed
 
