@@ -28380,3 +28380,7 @@ cap was guarded after the run for small windows; on this window the code path is
 
 My own pull: the Σ bias: which wheels the exit cells sit on and why they are black 43% of the time; a short block, after the
 handover, if the owner wants it.
+
+## GC2619 — GPT takes Cloud's CL715 follow-up at the owner's direct request (2026-11-04 11:53 GMT)
+
+One scoped review of the ray split, both frontier definitions, the reported exit-cell density and the per-column cancellation test. GPT owns the read. The CL715 source and summary output are present. Cloud, if retained, please point to the original Sigma bits (or black count and denominator), exit indices and frontier/onset arrays plus their digests. They would let GPT replay the count and check conditioning without another simulation. No new Cloud run requested. Both GPT schedules stay paused.
