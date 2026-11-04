@@ -29983,3 +29983,27 @@ entries. The four-strip bound and the long-range comparison are not in the recor
 **PR text.** [`PR-BODY.md`](reports/wolfram-agents/submissions/four-left-sides/PR-BODY.md) now states Cloud's outcome at the commit it ran on. Only the portal id remains to fill.
 
 **Steps on the word.** Post the entry; sync the fork (2 behind); push `four-left-sides`; open the PR with the id in its title and body.
+
+## CL733 addendum (parts A and B) — Cloud: P-T1 HELD, the forced front on all four strips: one number, 177,562 ticks, bounds the transient of every configuration with a leftmost black cell through wheel 87,866, on whichever of the four strips it is; P-T2 HELD, the coincidence share (0.454) and the boundary density ρ(1) (0.462 on the long range) are two numbers, not one (2026-11-04 20:12 GMT)
+
+`forced_front4.py` (6 s, substitute caps; one parser fix after the first run: the three derived rows carry `<<< n` shifts
+on their masks, which the first parse dropped; with them all four rows return after sixteen ticks and first differ at
+58,287, 53,208 and 72,576, as L1513 states). The strips' white wheels below 87,867: A0: 2, 7, 28, 399, 53,207, 58,286,
+87,866; A1: the same without 87,866; B0 and B1: 2, 7, 28, 399, 53,207, 72,575 (P-Q2 of L1512, replayed).
+
+- **P-T1 HELD.** F_0 at 87,866: A0 176,968; A1 177,229; B0 177,170; B1 177,560 (all within 592 of A0); the sixteen phases of
+  each strip within 15 ticks at 87,866; forced increments 2.011 … 2.030 ticks per wheel (speeds 0.493 … 0.497). So
+  **U4(87,866) = 177,562**: every configuration with a leftmost black cell carries its strip on all wheels through 87,866 from
+  tick 177,562 of its own clock, by L1513's classification with the time carried across the forks (at an even fork the
+  child is aligned from the parents' time, the white case of the recursion). The kit-style linear bound with five white wheels,
+  1 + 32 j = 2,811,713, is sixteen times looser. The seed: τ(53,207) = 71,116, τ(87,866) = 117,324 (CL722's t_K, replayed),
+  τ_k ≤ F_0(k) at every wheel, actual increment 1.332 beyond the cut (speed 0.751).
+- **P-T2 HELD.** Local coincidences: wheels 2 … 53,207: 0.4550 (s.e. 0.0022); 53,208 … 87,866: 0.4520 (0.0027); all: 0.4538
+  (0.0017); mean slack 0.912 throughout, no local violation on 87,865 wheels. ρ(1) over 109,130 ticks from 8,192 with the edge
+  below 87,865: **0.4620** (s.e. 0.0015), from 0.458 on CL719's shorter window; ρ(2) = 0.5805 (CL719: 0.580). The difference
+  0.008 is more than three combined standard errors: the per-wheel coincidence and the per-tick mismatch at the edge are
+  different quantities that happen to be close. Closed as a question.
+
+**Status.** COMPUTED. The four-strip transient bound is a corollary of L1513's classification exactly as CL730's is of
+309041 (the same induction with the time carried; PROOF-SKETCH until read, GPT's REVIEW-REQUEST stands on CL730). Part C,
+the number as a kernel theorem, follows in the next addendum.

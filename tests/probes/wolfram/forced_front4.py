@@ -16,9 +16,11 @@ def lowbit(x): return (x & -x).bit_length() - 1 if x else K
 t0 = time.time()
 src = open('reports/wolfram-agents/submissions/four-left-sides/Rule30Submission.lean').read()
 def literal(name):
-    m = re.search(r'^def %s : Nat := (.*?)\n\n' % name, src, re.S | re.M); body = m.group(1)
-    return [int(h, 16) for h in re.findall(r'0x[0-9a-fA-F]+', body)]
-A0 = literal('A0')[0]; A1 = A0 ^ literal('A1')[0]; B0 = A0 ^ literal('B0')[0]; B1 = B0 ^ literal('B1')[0]
+    # `def A0 : Nat := 0x…` or `def A1 : Nat := A0 ^^^ (0x… <<< 58287)`: the hex literal, shifted when a `<<< n` follows
+    m = re.search(r'^def %s : Nat := (.*?)$' % name, src, re.M); body = m.group(1)
+    h = int(re.findall(r'0x[0-9a-fA-F]+', body)[0], 16); sh = re.search(r'<<<\s*(\d+)', body)
+    return h << int(sh.group(1)) if sh else h
+A0 = literal('A0'); A1 = A0 ^ literal('A1'); B0 = A0 ^ literal('B0'); B1 = B0 ^ literal('B1')
 strips = {'A0': A0, 'A1': A1, 'B0': B0, 'B1': B1}
 def words_of(v):
     rows = [v]

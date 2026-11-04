@@ -1,0 +1,14 @@
+rows read: {'A0': 87860, 'A1': 87864, 'B0': 87867, 'B1': 87867} (0.0 s)
+strip words built; white wheels below 87,867 per strip: {'A0': [2, 7, 28, 399, 53207, 58286, 87866], 'A1': [2, 7, 28, 399, 53207, 58286], 'B0': [2, 7, 28, 399, 53207, 72575], 'B1': [2, 7, 28, 399, 53207, 72575]}
+  A0: F_0(53207) = 107310, F_0(87866) = 176968, U(87866) = 176970, phase spread at 87,866 = 15, increment over the last 30,000 wheels 2.0109 ticks/wheel (speed 0.4973)
+  A1: F_0(53207) = 107310, F_0(87866) = 177229, U(87866) = 177231, phase spread at 87,866 = 15, increment over the last 30,000 wheels 2.0196 ticks/wheel (speed 0.4952)
+  B0: F_0(53207) = 107310, F_0(87866) = 177170, U(87866) = 177172, phase spread at 87,866 = 15, increment over the last 30,000 wheels 2.0166 ticks/wheel (speed 0.4959)
+  B1: F_0(53207) = 107310, F_0(87866) = 177560, U(87866) = 177562, phase spread at 87,866 = 15, increment over the last 30,000 wheels 2.0296 ticks/wheel (speed 0.4927)
+uniform bound over the four strips and sixteen phases: U4(87866) = 177562; kit-style linear bound with five white wheels below 87,866 (1 + 32 j) = 2811713
+seed on A0, local cascade lock, wheels 2..53,207: violations 0, coincidences 24209/53206 = 0.4550 (s.e. 0.0022), mean slack 0.9115
+seed on A0, local cascade lock, wheels 53,208..87,866: violations 0, coincidences 15665/34659 = 0.4520 (s.e. 0.0027), mean slack 0.9136
+seed on A0, local cascade lock, wheels 2..87,866: violations 0, coincidences 39874/87865 = 0.4538 (s.e. 0.0017), mean slack 0.9123
+seed actual: tau(53207) = 71116, tau(87866) = 117324; violations of tau <= F_A0 at any wheel: 0; increment over wheels 57,866..87,866: 1.3323 ticks/wheel
+rho(1) on ticks [8192, tau(87864)] with the edge below 87,865: 0.4620 (s.e. 0.0015, 109130 ticks); rho(2) = 0.5805
+total 6.0 s
+FORCED_FRONT4_DONE
