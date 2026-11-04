@@ -28676,3 +28676,56 @@ differ (the merge front), against B_seed(t).
 a time; `known_find` "left-finite", "time shift" (cache of the kit at c42f6e5 and the portal's 119 entries; the PR index returns
 403 here): the hits are our strip certificates (8fe04c, 524848) and the kit's C3w shift equivalence, none a statement that two
 left-finite rows' orbits merge on the settled prefix and its front.
+
+## CL721 addendum — Cloud: P-F8 run. (a) HELD, the orbits merge and the edges agree from exactly the tick the merge front passes the edge; (b) REFUTED, the margin drifts: the merge front runs at 0.754 wheel per tick against the lag-16 edge's 0.7435; (c) REFUTED, the transient ends at one of four universal events (wheels 2,021, 2,550, 4,093, 4,481), eight rows past CL696's wheel 3,498; and the row 101 is the seed's orbit on every cell left of the right edge, with no transient (2026-11-04 13:28 GMT)
+
+`walk_merge.py 20 16` (11.7 s; the diagnostics block was added after the first run, the predictions unchanged; the first
+run's figures are the same) and `seed101_cone.py 15` (2 s); substitute caps as before.
+- **P-F8a HELD.** On every row J(t) > B_seed(t) at every tick of the window (least margin 3, on two rows; at most 0.07% of
+  ticks below 8). On every one of the eighteen rows that differ from the seed, the last tick with J ≤ B_seed is the last tick
+  with B_row(t + s) ≠ B_seed(t), to the tick: the edges agree from the moment the orbits agree at the edge and never before
+  (COMPUTED, 18 of 18). P-F7's one walk is one orbit: the row's rows t + s and the seed's rows t are the same words on the
+  settled band, at the edge and for a margin beyond it.
+- **P-F8b REFUTED.** The margin grows: half-window means 87 … 244 then 225 … 390 (fourteen rows by more than the factor 1.5,
+  the rest by 1.4). Least squares on the window: the merge front moves at 0.7538 wheel per tick (0.7496 … 0.7596 across rows),
+  the lag-16 band edge at 0.7435, difference 0.0104 (0.0061 … 0.0162): a drift, not the counterfactual's √t. The merge front's
+  speed is the record's large-lag figure (§8.74: the lag-1,024 band edge at 0.755 to 2^19; one minus the news speed 0.2437),
+  while the lag-16 settling front is slower on this window and rises with t (CL719: 0.7449 on [8,192, 32,768]; CL720 Part A:
+  0.7474 on [16,384, 65,536]). Reading (CONJECTURE): a difference front between two orbits, or between an orbit and a distant
+  shift of itself, runs at the information speed; the lag-16 front compares an orbit with its near shift and is held back by
+  the cascade; whether it reaches 0.755 with t is open.
+- **P-F8c REFUTED.** The edges' last discrepancy is at tick 2,646 (one row), 3,309 … 3,323 (eight rows), 5,389 (four) or
+  5,917 (four), at the seed's wheels 2,021, 2,548 … 2,556, 4,093 and 4,481: eight of eighteen rows end their transient past
+  4,700. Eighteen rows, four events: the transient does not fade, it ends at one of a few universal moments of the cascade
+  (COMPUTED). What those moments are in the strip (a reset no coincidence can defer, or the end of a run of coincidences) is
+  open. In the discrepant ticks after tick 1,000 the offsets B_row − B_seed are runs of consecutive values (−21 … −14,
+  −64 … −57, −127 … −120): the row's edge trails the seed's by a gap that closes slowly and then at once. Against CL696 (the
+  settling phase mod 16, against the row's own cycle phase, with excursions ending by wheel 3,498 on 60 rows): a gap that is not
+  a multiple of 16 should show in that test, so either the four late rows' gaps are invisible to it or the two tests call
+  different things the end; for the reader.
+- **The row 101.** The construction's row 0x5 (cells 0 and 2) aligns with the seed at s = 0, and its merge front is the seed's
+  right edge: J(t) − 2t ∈ {0, 2}, alternating, from t = 0 (`seed101_cone.py`: 32,768 ticks, no disagreement on bits
+  0 … 2t − 1 at any tick). The orbit of 101 is the seed's orbit on every cell left of the seed's right edge, at every tick,
+  without a transient; the decoration lives at the edge: at even t the row is the seed's with 01 appended beyond the edge, at
+  odd t the seed's with its edge cell cleared and 11 appended. PROOF-SKETCH (hand, in the atlas): the two shapes map to each
+  other under the rule; the one step that could leak reads the seed's first right diagonal R₁ through the OR, and
+  R₁(t) = t mod 2 (the kit's ruler at j = 1) masks it. The owner's transmutation in miniature: two finite rows that are one
+  object with different edges.
+
+**The block in one line.** The band edge's walk carries no memory of the row (P-F7, P-F8a), only of the universal strip and
+of the news; its steps are a lossy view of a state that remembers beyond two ticks (P-F2, P-F4 refuted); the heal clock is
+one refractory tick then a fair coin (P-F3); and a left-finite row becomes the seed's left side exactly, at one of a few
+universal moments (P-F8c), with the merge front then outrunning the settling front at the information speed (P-F8b).
+Atlas §20, RECORD-MAP row, PROBES.md lines, INSTINCT.md note added. No Lean asked.
+
+**REVIEW-REQUEST to GPT (carrying reads):** (1) the entropy ladder's bias gauge: are the two halves an adequate gauge for the
+plug-in H₄ on 49,153 ticks with up to 16⁴ contexts, or should H₄ − H₂ = 0.051 be discounted further; (2) the Markov-gap reading
+(the five-wheel pattern as a lossy projection of the pair-of-rows state); (3) P-F7's identity against CL695's corollary and
+CL696's synchronisation: is the exact constant shift already implied by the corollary once the edge is included, or new; (4)
+P-F8b's speed gap and P-F8c's four events, and the tension with CL696's wheel 3,498; (5) the 101 induction and its ruler
+step. Replays under the macOS tool are Local's when the heartbeat resumes.
+
+My own pull: the four universal moments (what in the strip ends a row's transient; the discrepant offsets' slow close and
+sudden end suggest a reset the cascade cannot defer), then the 101 family: which finite rows are the seed with an edge
+decoration, and whether every left-finite row's late transient is such a decoration moving in from the right. In INSTINCT.md.
+The owner turns the work over to GPT after this block.

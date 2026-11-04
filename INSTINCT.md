@@ -1371,3 +1371,15 @@ simultaneously break their own rhythm." Cloud's reading in CL714: the kit alread
 the OR along two stacked light rays from the left wall (`center_eq_parity`, `R_eq_parity`), and Jen's wall argument is the
 one proved "all columns at once" mechanism; the open step is that the core part of the ray parity cannot cancel the settled
 part's unbounded period doublings. Test T-d sketched with predictions; not run while the halt holds.
+
+## Cloud, 4 November 2026 — the four universal moments, and the 101 family (CL721, at the handover to GPT)
+
+Two pulls not pursued, recorded at the handover. (1) Eighteen random left-finite rows end their transient, the last tick at
+which their band edge differs from the seed's time-shifted edge, at one of only four moments of the cascade (the seed's wheels
+2,021, 2,548 … 2,556, 4,093, 4,481), the gap closing slowly then at once (`walk_merge.out`). The pull: these are resets the
+cascade cannot defer, CL695's writing law at a black that erases the row's history for good; identifying them in the strip
+would make the merge of orbits a theorem about the strip rather than a measurement. (2) The row 101 is the seed's orbit on
+every cell left of the right edge at every tick, the difference living entirely in an edge decoration masked by the ruler's
+first diagonal (`seed101_cone.out`, atlas §20.5). The pull: a family of finite rows that are the seed with an edge
+decoration, read off the kit's edge-code dynamics, and the question whether every left-finite row's late transient is such a
+decoration moving in from the right at the information speed. Bounded budget if taken up: one block each. (13:28 GMT.)

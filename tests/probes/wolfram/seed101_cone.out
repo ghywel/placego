@@ -1,0 +1,2 @@
+T=2^15: J(t) >= 2t at every tick from t = 0 on; values of J - 2t there: [(0, 16384), (2, 16385)]; agreement failures on bits 0..2t-1 after that tick: 0
+SEED101_CONE_DONE

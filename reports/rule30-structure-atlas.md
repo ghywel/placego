@@ -774,3 +774,83 @@ stationary profile with its thickness. Not claimed: closure, a Markov structure 
 **Next, if wanted:** the entropy rate of the step process Δ_t and its memory (H(Δ_t | Δ_(t−1), …)), and the stationary measure on
 the eight-wheel window: the quantitative "what is stationary there"; and the same frame for a random left-finite row (CL696's
 sixty rows), to see whether the dipole is universal.
+
+## 20. The step process and the one walk: entropy ladder, heal clock, universality of the band edge's walk across left-finite rows, the merge of orbits, and the row 101 (CL720–CL721, 2026-11-04)
+
+*Cloud, 2026-11-04, after §19. Probes `step_entropy.py`, `news_frame_rows.py`, `walk_align.py`, `walk_merge.py`,
+`seed101_cone.py` (substitute caps ulimit 8 GiB, timeout 1,800 s, this Linux host). Predictions P-F1 … P-F8 in CL720, its
+addendum and CL721, each written and pushed before its run. Statuses as labelled; nothing here is a theorem beyond the one-line
+restatements marked so.*
+
+**Frame and two restatements (PROVED, §8.31/§8.74 restated).** Wall frame: bit j of row t is the cell x = j − t, bit 0 the left
+edge; bit j at tick t + 1 reads bits j − 2, j − 1, j at tick t. Hence (i) two configurations agreeing on bits 0 … J at one tick
+agree there at every later tick, and (ii) the lag-16 band edge B(t) = the lowest bit where rows t and t + 16 differ never
+retreats. The settled band is the universal strip's cycles (§8.31, CL695); its edge is the settling front of §19.
+
+**20.1 The step process of the single seed (`step_entropy.py 17`; trusted window [16,384, 65,536], 49,153 ticks, certified
+16-periodic prefix to wheel 87,866, where the strip's period doubles; at T = 2^18 the edge passed that wheel and the assertion
+stopped the run).** Steps 0 / 1 / 2 at 59.2% / 14.8% / 21.7%, mean 0.7474; mask law 0 violations.
+
+| quantity | value (bits) | halves | plug-in bias gauge |
+|---|---|---|---|
+| H₀ = H(Δ) | 1.6053 | | |
+| H₁ = H(Δ_t \| last 1) | 1.2981 | 1.2968, 1.2975 | +0.0010 |
+| H₂ (last 2) | 1.2264 | 1.2231, 1.2251 | +0.0024 |
+| H₃ (last 3) | 1.1952 | 1.1906, 1.1910 | +0.0044 |
+| H₄ (last 4) | 1.1755 | 1.1683, 1.1685 | +0.0072 |
+
+P-F1 HELD. P-F2's first two clauses HELD and its third REFUTED: H₄ = H₂ − 0.051 against a gauge of 0.007; the decrements
+0.307, 0.072, 0.031, 0.020 shrink but have not reached the gauge at k = 4. The step process remembers beyond two ticks
+(COMPUTED). Waiting times between heals: mean 2.450 = 1/P(heal); hazard h(1) = 0.267, h(2) = 0.518, h(3 … 7) = 0.49 … 0.50
+(n from 7,091 to 463), h(8) = 0.455 on 233: one refractory tick, then a memoryless gate at one half (P-F3 HELD, COMPUTED).
+The mismatch pattern M on wheels B … B + 4 (16 states, bit 0 always set, entropy 3.94 bits): H(M′ | M) = 3.346,
+H(M′ | M, M_prev) = 2.330, Markov gap 1.016 bits (P-F4 REFUTED): the pattern is a lossy projection; the pair of rows
+(t, t + 16) around the edge is the state (reading, CONJECTURE, consistent with P-F2's refutation and §19's horizon of eight).
+
+**20.2 Universality on twenty random left-finite rows (`news_frame_rows.py 20 16`; CL696's construction, rng 606, widths
+2 … 62, each on [8,192, 32,768], certified prefix checked on every row).** P-F5, P-F6 HELD far inside tolerance: mean step
+0.7447 … 0.7455 (seed 0.7449), P(heal) 0.4096 … 0.4099, E[jump | heal] 1.817 … 1.819, ρ(1) 0.4577 … 0.4579, ρ(2)
+0.5805 … 0.5813, densities 0.410 / 0.500 / 0.593 at h = −1, 0, 1 on every row; B(32,768) from 24,444 to 24,564 (seed 24,465).
+Explained by 20.3: the same walk read on windows displaced by at most 148 ticks.
+
+**20.3 The one walk (P-F7, `walk_align.py 20 16`; COMPUTED).** For every one of the twenty rows there is a time shift
+s ∈ [−148, 24] at which the step sequences agree on 100% of the window and B_row(t + s) − B_seed(t) = 0 at every tick (not
+merely constant). Every left-finite row's settling-time sequence τ_k is the seed's plus one constant, exactly, over wheels about
+6,100 … 24,465 (18,000 wheels, twenty rows, no exception). Prior art in the record: CL695's corollary up to phase (the eventual
+cycles of every left-finite row below the first even-weight white wheel are the universal strip's up to a time shift;
+PROOF-SKETCH) and CL696's synchronisation (τ_k mod 16 agrees with the seed's beyond wheel 3,498 on 60 rows); §8.36–8.38's merges
+of lead 1's forced walks. New here: the agreement is of the whole sequence with one constant and includes the front itself.
+
+**20.4 The merge of orbits (P-F8, `walk_merge.py 20 16`; COMPUTED).** With s from 20.3, let J(t) be the lowest bit where the
+seed's row t and the row's row t + s differ (the merge front).
+- (a) J(t) > B_seed(t) at every tick of the window on every row (least margin 3), and on all eighteen rows that differ from the
+  seed, the last tick with J ≤ B_seed is the last tick with B_row(t + s) ≠ B_seed(t): the edges agree from the moment the orbits
+  agree at the edge, never before. The one walk is one orbit on the settled band, the edge and a margin beyond.
+- (b) The margin J − B_seed drifts: the merge front moves at 0.7538 wheel per tick (0.7496 … 0.7596), the lag-16 edge at 0.7435,
+  difference 0.0104 (0.0061 … 0.0162); half-window means 87 … 244 then 225 … 390. The merge front's speed is §8.74's lag-1,024
+  figure 0.755 (one minus the news speed 0.2437); the lag-16 settling front is slower on this window and rises with t (0.7449
+  on [8,192, 32,768]; 0.7474 on [16,384, 65,536]). Reading (CONJECTURE): a difference front between two orbits, or between an
+  orbit and a distant shift of itself, runs at the information speed; the near-shift front is held back by the cascade.
+- (c) The transient ends at one of four universal events: last discrepancy at tick 2,646 (one row), 3,309 … 3,323 (eight),
+  5,389 (four), 5,917 (four), that is at the seed's wheels 2,021, 2,548 … 2,556, 4,093, 4,481. The discrepant offsets
+  B_row − B_seed before the end are runs of consecutive values (−21 … −14, −64 … −57, −127 … −120): the row's edge trails
+  the seed's by a gap that closes slowly and then at once. What the four events are in the strip is open. Tension with
+  CL696's wheel 3,498 (a phase test, mod 16, against the row's own cycle phase) noted in CL721; for the reader.
+
+**20.5 The row 101 (`seed101_cone.py 15`; COMPUTED to 32,768 ticks, PROOF-SKETCH).** The row with cells 0 and 2 has the seed's
+orbit on every cell left of the seed's right edge at every tick t ≥ 0, with J(t) − 2t ∈ {0, 2} alternating. Shapes: at even t
+the row is the seed's row S_t with bits 2t + 1, 2t + 2 = 0, 1; at odd t it is S_t with bit 2t cleared and bits 2t + 1, 2t + 2 = 1, 1.
+*Sketch.* Even t: bits ≤ 2t + 1 of the next rows read bits ≤ 2t + 1, equal in both (bit 2t + 1 is 0 in both); bit 2t + 2 becomes
+1 ⊕ (0 ∨ 1) = 0 against the seed's 1, bits 2t + 3, 2t + 4 become 1, 1: the odd shape. Odd t: bits ≤ 2t − 1 agree; bit 2t reads
+(V_(2t−2), V_(2t−1), V_(2t)) with V_(2t) = 0 against the seed's 1, and the OR masks the difference iff V_(2t−1) = R₁(t) = 1, which
+holds at odd t since R₁(t) = t mod 2 (the kit's ruler at the first right diagonal; checked to 2^15); bits 2t + 1 … 2t + 3 then
+agree (0, 1, 0 in both) and bit 2t + 4 is 1 against 0: the even shape. ∎ (The ruler step is the one to read.) Two finite rows that
+are one object with different edges: the owner's transmutation in miniature.
+
+**What is claimed.** The measurements, the identities of 20.3–20.4(a) on twenty rows, the shapes of 20.5. Not claimed: any
+asymptotic statement, the mechanism of the four events, the reason for the speed gap, or that every left-finite row's transient
+is an edge decoration moving in.
+
+**Next, if wanted.** Identify the four events in the strip (CL695's reset law at a black the cascade cannot defer?); the 101
+family (which finite rows are the seed with an edge decoration; the kit's edge-code dynamics is the place); the lag-16 front's
+speed against t to 2^19 under the macOS tool (Local), to see whether it reaches 0.755.
