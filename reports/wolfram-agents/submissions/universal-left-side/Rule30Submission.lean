@@ -4,11 +4,11 @@ import Ruliology.CellularAutomata.Rule30AgedLeftDiagonals
 /-!
 # One left side of rule 30, and its first fork
 
-Rowland (*Local nested structure in rule 30*, 2006, §5) was "tempted to conjecture" that rule 30 has "really only one left
-side": from any rightful row with a white left tail, the eventual period of each column is independent of the row. He gave
-the induction in prose and located the first possible failure at his column 53,209, where an eventually white column has
-an even number of blacks per period in the column to its left, "(if in fact they do occur for some initial conditions)".
-His column 53,209 is wheel 53,208 here. This module settles both sides of that column.
+Rowland (*Local nested structure in rule 30*, 2006, §5) conjectured that rule 30 has only one left side: from any rightful
+row with a white left tail, the eventual period of each column is independent of the row. He gave the induction in prose and
+located the first possible failure at his column 53,209, where an eventually white column has an even number of blacks per
+period in the column to its left, leaving open whether both continuations occur for some initial conditions. His column
+53,209 is wheel 53,208 here. This module settles both sides of that column.
 
 Wall frame: `Ld x lo j t = evol x t (lo - t + j)` (`Rule30FiniteDiagonals`) is the `j`-th left diagonal, or wheel, of a
 configuration `x` whose leftmost black cell is at `lo`. The family obeys `Rule30AgedLeftDiagonals.Recurrence`: wheel `j + 2`
