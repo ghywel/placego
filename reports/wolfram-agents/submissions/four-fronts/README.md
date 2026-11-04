@@ -1,4 +1,24 @@
-# The forced front on the four strips (Cloud, CL734; 4 November 2026)
+# The forced front on the four strips
+
+**Status (L1524, 4 November 2026): ready to post on the owner's word, nothing posted.** Release notebook sha256 `ab4479f8a93f068c40d650e45fa9225c5a66cf356004dfaede30919ea0a095da`, 399,655 bytes, built on verifier image 17 (kit `722a0c51`), receipts `cited/l1524-four-fronts/nb1-receipts.tar.gz` (8,086 bytes, ecb6cd165f48697a…). The texts have not had a read by Cloud or GPT.
+
+**What changed from CL734.** Cloud's six modules (below) build and pass `Check`, but they do not fit where they have to go: the kit takes certificate data "in one module per family that builds in under a minute and 4 GB", and the verifier builds one module within four minutes for notebook, build and replay together. The release form keeps Cloud's theorems and replaces the four data modules with a walk (`frun_of_walk`), which reads the recursion off one addition, one shift and one mask per tick.
+
+| Form | File | sha256 | Build (M5) | `Check` |
+|---|---|---|---|---|
+| Kit, generic | [`Rule30FourFrontsBase.lean`](Rule30FourFrontsBase.lean) | `eb2dd2f57df49c57…` | 1 s | |
+| Kit, walk and theorems | [`Rule30FourFronts.lean`](Rule30FourFronts.lean) | `a0bbc2a910c6f84d…` | 7 s, 2.1 GB | pass, kit main 96b4f2a, 256 constants, 11 headlines |
+| Portal | [`Rule30Submission.lean`](Rule30Submission.lean) | `134d62fba8e16f30…` | 7 s, 2.4 GB | pass, kit 722a0c51, 681 constants, 11 headlines |
+
+Texts: [`title.txt`](title.txt), [`abstract.txt`](abstract.txt) (224 words, `977221e8…`), [`essay-prose.md`](essay-prose.md), `essay.md` (`b790d0a5…`). Generators: [`four_fronts_fast.py`](../../../../tests/probes/wolfram/four_fronts_fast.py) with [`FourFrontsWalkCore.lean`](../../../../tests/probes/lean/FourFrontsWalkCore.lean), [`four_fronts_portal.py`](../../../../tests/probes/wolfram/four_fronts_portal.py), [`assemble_four_fronts_essay.py`](../../../../tests/probes/wolfram/assemble_four_fronts_essay.py). Driver: [`four_fronts_notebook.wl`](../../../../tests/probes/wolfram/four_fronts_notebook.wl). Kit PR text: [`PR-BODY.md`](PR-BODY.md).
+
+Headlines: `forced_front_four`, `forced_front_four_uniform`, `forced_front_four_left_side`, `forced_front_four_seed`, `classification_bounded`, `forced_front_low`, `forced_front_low_left_side`, `FA0_87866`, `FA1_87866`, `FB0_87866`, `FB1_87866`. `forced_front_low` is new: it gives the 53,207 statement of CL733 part C, so the entry covers both versions and `Rule30ForcedFront` is not needed.
+
+Local alone posts, on the owner's word; any change to the Lean, essay or abstract moves the pins and needs a new notebook.
+
+---
+
+## CL734 as Cloud delivered it (Cloud, 4 November 2026)
 
 **Claim (PROVED, Lean 4.35.0 kernel on Cloud's Linux host; Local's build of record to follow).** Every configuration with a
 leftmost black cell is on one of the four strips of `Rule30FourLeftSides` (A0, A1, B0, B1) on every wheel through 87,866

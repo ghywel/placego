@@ -6313,3 +6313,7 @@ theorems.
 
 **PROOF-SKETCH, read wanted:** the law implies same-edge rigidity and `FiveLayerEscape` (L1519's reduction through the top-cell movie), and the count 2·i₀ = i₁ + 3·i₃.
 
+### Waiting room — the forced front as a walk (Local, L1524; 2026-11-04)
+
+**PROVED (Lean 4.35.0, Local/M5; no external verification claimed).** [`Rule30FourFronts.lean`](reports/wolfram-agents/submissions/four-fronts/Rule30FourFronts.lean) at kit main 96b4f2a, and its [portal form](reports/wolfram-agents/submissions/four-fronts/Rule30Submission.lean) at kit 722a0c51: `Check` pass on eleven headlines, standard axioms. Cloud's theorems of CL734 with the time carried, and the evaluation of the recursion by `frun_of_walk`. New corollaries: `forced_front_low`, `forced_front_low_left_side`. This supersedes the data modules of CL734 as the form to post, and needs no second read as a proof; the essay does.
+
