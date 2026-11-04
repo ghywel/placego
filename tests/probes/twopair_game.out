@@ -1,0 +1,10 @@
+w=8 windows 128 |B|=0 (3 rounds) |A|=128 core 128 SCCs 1 nontrivial 1
+  SCC size 128 mean drift in [-0.782, 3.000]
+w=10 windows 512 |B|=0 (3 rounds) |A|=512 core 512 SCCs 1 nontrivial 1
+  SCC size 512 mean drift in [-0.782, 3.000]
+w=12 windows 2048 |B|=44 (3 rounds) |A|=1997 core 1997 SCCs 1 nontrivial 1
+  SCC size 1997 mean drift in [-0.782, 1.005]
+w=14 windows 8192 |B|=331 (3 rounds) |A|=7770 core 7770 SCCs 1 nontrivial 1
+  SCC size 7770 mean drift in [-0.782, 1.005]
+w=16 windows 32768 |B|=2023 (3 rounds) |A|=29914 core 29914 SCCs 1 nontrivial 1
+  SCC size 29914 mean drift in [-0.777, 1.005]

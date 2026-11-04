@@ -1,0 +1,14 @@
+P=128 orbit nodes 1121550 sum of Q 143381758 longest 2033 rain edges 0 | constant drivers 0 period drops 0 repeated drivers 0
+  nodes by lg Q: 1:1 2:1 3:3 4:2 5:64 6:2651 7:1118828
+P=2 orbit nodes 1 sum of Q 2 longest 1 rain edges 0 | constant drivers 0 period drops 0 repeated drivers 0
+  nodes by lg Q: 1:1
+P=4 orbit nodes 2 sum of Q 6 longest 2 rain edges 0 | constant drivers 0 period drops 0 repeated drivers 0
+  nodes by lg Q: 1:1 2:1
+P=8 orbit nodes 5 sum of Q 30 longest 4 rain edges 0 | constant drivers 0 period drops 0 repeated drivers 0
+  nodes by lg Q: 1:1 2:1 3:3
+P=16 orbit nodes 7 sum of Q 62 longest 5 rain edges 0 | constant drivers 0 period drops 0 repeated drivers 0
+  nodes by lg Q: 1:1 2:1 3:3 4:2
+P=32 orbit nodes 71 sum of Q 2110 longest 15 rain edges 0 | constant drivers 0 period drops 0 repeated drivers 0
+  nodes by lg Q: 1:1 2:1 3:3 4:2 5:64
+P=64 orbit nodes 2722 sum of Q 171774 longest 104 rain edges 0 | constant drivers 0 period drops 0 repeated drivers 0
+  nodes by lg Q: 1:1 2:1 3:3 4:2 5:64 6:2651

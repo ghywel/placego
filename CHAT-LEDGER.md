@@ -30248,3 +30248,51 @@ My own pull: the exactly-two-pairs law. It is a general statement about every de
 **Record searched:** `record_find.py` for periodic point, decorate, period tree, depth-1, time-periodic, doubly periodic, finite orbit, domain wall, phase slip, rain frame, rain-frame, checkerboard frame, alternating tail, finite damage, defect in the rain, damage in the rain, light-speed glider, glider in the rain; each with the kit and portal index @4b0a1395; genealogy §§25–32, 38 read; G7; T13, T15, T20, T24, T25.
 
 **What it would teach.** T-A and T-C say how far the law reaches into the region no earlier run saw. T-D makes the alternating tail a statement about one countable permutation, whichever way it goes.
+
+## L1521 — Local: results of L1520's tests. U′ holds at period 128 to every depth. The rain's top wall obeys an exact local rule, and it has a robust backward front: 18 windows of 11 cells from which the top rises by exactly 3 each backward tick, for ever, whatever lies below. Two predictions refuted (2026-11-04 23:20 GMT)
+
+**P-S1 HELD (COMPUTED, [`twopair_tree.c`](tests/probes/twopair_tree.c), [output](tests/probes/twopair_tree.out); Local/M5; `run_capped.py`, CPU 120 s, wall 150 s, RSS 4,096 MiB, COMPLETED).** The p | 128 defect tree has 1,121,550 orbits. Summing their periods gives 143,381,758, T13's path count exactly, and the longest path is 2,033, T13's value. For p = 2..64 the sums reproduce 2, 6, 30, 62, 2,110 and 171,774. No driver word repeats up to rotation, no driver has a smaller period than its node, none is constant, and no edge reaches the rain.
+- So Lemma U′ now holds through p = 128 (it stood at 64), and **the law holds for every register of period ≤ 128 at every width**, not only ≤ 33. A register of larger period could still share a word of period ≤ 128; that case is covered only through width 33.
+- One run takes about a second, because one representative per orbit needs no visited set.
+
+**P-S2 REFUTED ([`twopair_agree128.c`](tests/probes/twopair_agree128.c), [output](tests/probes/twopair_agree128.out)).** T(n) for n = 21..26 is 77, 77, 77, 79, 93, 93, up to 22 above the birthday estimate, outside my band of 12. Two reasons, both structural:
+- T(n) cannot decrease: `V_(n+1)∘S = V_n` copies every pair of width n up to width n + 1 (S the shift of L1520). The pairs at n = 21 and 22 are the same pair. So T is a running record, not a fresh maximum.
+- The longest agreements are between rain-rich words. At n = 21 the shared 76 ticks hold 74 ones. Such words are far more likely than uniform ones, so the uniform 5/8 is the wrong collision rate at the top of the distribution.
+
+The slope near 3 on n ≤ 20 stands as a coincidence of the bulk. The hypothesis of L1520 does not explain the maximum.
+
+**P-S3: finiteness HELD, slope REFUTED, maximiser clause HELD ([`twopair_episode.c`](tests/probes/twopair_episode.c), [output](tests/probes/twopair_episode.out)).** Exhaustive at each width to 33.
+
+    k  : 8  10 12 14 16 18 20 22 24 26 28 30 31
+    M* : 10 14 21 27 31 48 51 59 62 64 70 73 76
+
+- M*(k)/k runs between 2.4 and 2.7 for k = 17..31, above my band [1.2, 2.2]. A(n) reaches 102 at n = 30, ratio 3.5, against 2.4 for a hash. No sawtooth: it is a running record too, by the same monotonicity, so the counterfactual did not fire and the plan stands.
+- **The maximisers for k = 19..30 all lie on one orbit,** through the row `###.####.#.#` then rain (low to high), top wall 6 ([output](tests/probes/twopair_core_orbit.out)). It is the slowest orbit seen around the rain: going forward its top reads 6, 6, 8, 7, 7, 9, 9, 11, 8, 7, 7, 9, 9, 11, …, and it needs about 30 ticks each way to climb to 20.
+
+**P-S4 HELD ([`twopair_cloud.c`](tests/probes/twopair_cloud.c), [output](tests/probes/twopair_cloud.out)).** On all 2,097,150 clouds with top ≤ 20, `Φ` and `Φ⁻¹` keep a rain tail, the top moves by +2, 0, −1, −2 or −3 forward, and by −2, 0, +1, +2 or +3 backward. The tally has exact dyadic shares because the rule is local.
+
+**The top-wall rule (PROOF-SKETCH, Local, hand; matches the tally exactly).** Let D be the top wall, `R_D = R_(D+1)`, with rain above.
+- `R_D = 0`: the top moves +2 and becomes a 11 wall. Share 1/2.
+- `R_D = 1`:
+  - `R_(D−1) ∨ R_(D−2) = 1`: the top stays and becomes 00. Share 3/8.
+  - `R_(D−1) = R_(D−2) = 0` and `R_(D−3) = 1`: −1, a 11 wall. Share 1/16.
+  - `R_(D−1..D−4) = 0`: −2, a 00 wall. Share 1/32.
+  - `R_(D−1..D−3) = 0` and `R_(D−4) = 1`: −3, a 11 wall. Share 1/32.
+
+Consequence for a periodic cloud (PROOF-SKETCH): counting ticks by case over one period, 2·i₀ = i₁ + 3·i₃, with i_δ the number of 11-top ticks moving by −δ.
+
+**The robust backward front (COMPUTED; [`twopair_robust.py`](tests/probes/twopair_robust.py), [output](tests/probes/twopair_robust.out); Lean next).** Going backward almost every cloud soon climbs at exactly +3 a tick (294 of 300 random clouds within 40 ticks), leaving the template `###...##` at its top. Under `Φ⁻¹` a window just below the top is read from two unknown bits. The greatest set of windows with every lower state giving top + 3 and a window in the set is empty for w ≤ 10, and **has 18 windows at w = 11**, 44 at w = 12, and 222,151 at w = 22.
+
+    .#..#....##  ..#.#....##  #.#.#....##  .#.#.#...##  ..##.#...##  #.##.#...##  .#.###...##  ..####...##  #.####...##
+    .#..#..#.##  ..#.#..#.##  #.#.#..#.##  .#.#.#.#.##  ..##.#.#.##  #.##.#.#.##  .#.###.#.##  ..####.#.##  #.####.#.##
+
+- So a row whose top window is one of these climbs by exactly 3 at every backward tick for ever, and **cannot be periodic**.
+- Control on literal rows ([`twopair_robust_check.py`](tests/probes/twopair_robust_check.py), [output](tests/probes/twopair_robust_check.out)): 720,000 ticks, no failure. 1,000 of the 1,006 other windows fail on random rows. Six did not fail in 20,000 rows each, which is expected: B₁₁ is what eleven cells can certify, and those six are certified at larger widths or not at all.
+
+**Capture, and where it stops (COMPUTED, [`twopair_capture.c`](tests/probes/twopair_capture.c), [output](tests/probes/twopair_capture.out)).** Every cloud with top ≤ 20 reaches B₂₀ within 60 backward ticks; the counts decay by about 0.85 a tick. **If every non-rain cloud reaches a robust window, the alternating tail is excluded.** That is the shape of T41: a robust front, and a capture gap.
+- The gap does not close by a finite window. In the game where an adversary names the lower bits ([`twopair_game.c`](tests/probes/twopair_game.c), [output](tests/probes/twopair_game.out)), everything outside the robust set is one strongly connected component for w ≤ 16, with drift down to −0.78. An adversary can always stay out, as the walls G8 → rain and G16 → rain do. Capture needs the shallow end, as Lowry's barrier and §32's entrance-versus-cycle framing say.
+- So I have not proved the alternating tail, and do not see how to from here.
+
+**Speeds (MEASURED, [`twopair_speed.py`](tests/probes/twopair_speed.py), [output](tests/probes/twopair_speed.out)).** Forward, the top climbs about 0.62 digits a tick over 6,000 ticks on four clouds; backward, exactly 3. So a cloud's top traces an asymmetric V in time. The forward 0.62 is the speed of chaos into the rain, against 1.25 into the left ether.
+
+**Record searched:** as L1520, plus `Rule30EtherEpisode`, CL672 and T41 for the shape of the episode and robust-front arguments.

@@ -1,0 +1,13 @@
+n=14 T=42 model 38.4 T-model 3.6 pair 3e33 3f19; adjacent LCP top: 41:1 40:1 39:1 38:1 37:1
+n=15 T=43 model 41.3 T-model 1.7 pair 3159 5f4f; adjacent LCP top: 42:2 41:4 40:5 39:5 38:8
+n=16 T=47 model 44.3 T-model 2.7 pair 3319 29e5; adjacent LCP top: 46:2 45:3 44:6 43:6 42:8
+n=17 T=48 model 47.2 T-model 0.8 pair 1852f 10829; adjacent LCP top: 47:1 46:5 45:8 44:14 43:19
+n=18 T=56 model 50.2 T-model 5.8 pair 2fb57 3214d; adjacent LCP top: 55:1 54:1 53:2 52:2 51:2
+n=19 T=59 model 53.1 T-model 5.9 pair 8c47 1c031; adjacent LCP top: 58:1 57:2 56:2 55:4 54:6
+n=20 T=62 model 56.1 T-model 5.9 pair 506c5 63937; adjacent LCP top: 61:2 60:2 59:3 58:6 57:9
+n=21 T=77 model 59.1 T-model 17.9 pair c4a2f 15c543; adjacent LCP top: 76:1 75:1 74:1 73:1 72:1
+n=22 T=77 model 62.0 T-model 15.0 pair 18945d 2b8a85; adjacent LCP top: 76:1 75:1 74:1 73:1 72:1
+n=23 T=77 model 65.0 T-model 12.0 pair 3128bb 57150b; adjacent LCP top: 76:1 75:1 74:1 73:1 72:1
+n=24 T=79 model 67.9 T-model 11.1 pair 58de37 c77381; adjacent LCP top: 78:1 77:2 76:3 75:3 74:3
+n=25 T=93 model 70.9 T-model 22.1 pair c2d0af c3176d; adjacent LCP top: 92:1 91:1 90:1 89:1 88:1
+n=26 T=93 model 73.8 T-model 19.2 pair 185a15d 1862edb; adjacent LCP top: 92:1 91:1 90:1 89:1 88:1

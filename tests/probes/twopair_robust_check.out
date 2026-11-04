@@ -1,0 +1,28 @@
+B_11 windows (low to high):
+   .#..#....##
+   ..#.#....##
+   #.#.#....##
+   .#.#.#...##
+   ..##.#...##
+   #.##.#...##
+   .#.###...##
+   ..####...##
+   #.####...##
+   .#..#..#.##
+   ..#.#..#.##
+   #.#.#..#.##
+   .#.#.#.#.##
+   ..##.#.#.##
+   #.##.#.#.##
+   .#.###.#.##
+   ..####.#.##
+   #.####.#.##
+positive control: ticks tested 720000 failures 0
+negative control: windows outside B_11 1006 that never failed in 3000 random rows 6
+   ##...#...## did not fail in 20000 rows
+   ##...#.#.## did not fail in 20000 rows
+   .#...##.### did not fail in 20000 rows
+   ..#..##.### did not fail in 20000 rows
+   #.#..##.### did not fail in 20000 rows
+   ##.#.##.### did not fail in 20000 rows
+windows outside B_11 never seen to fail: 6
