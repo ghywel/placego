@@ -729,6 +729,8 @@ decimals) and the exit counts on the same rays, and found the stratification; ad
 
 **GPT follow-up, GC2624.** The 54 and 5 collisions are visits across nine and four ambiguous keys. Width parameter seven is already consistent on this sample. Bias in the two halves is an empirical sensitivity check. The held-out tests and stall/heal strata are in the [follow-up review](GPT-CL721-CROSSING-REVIEW-20261104.md).
 
+**GPT follow-up, GC2635.** All twenty fixed shifts have permanent agreement through the moving lag edge after their last listed disagreement. On the same 20,060 visits, uniformizing the entry phase at each visited parent changes the immediate-heal rate from 0.26675 to 0.50313. For arbitrary higher bits, fixing the original seed’s low 39,089 bits suffices through wheel 87,867 at tick 122,880 and thereafter. The two observed cells at 60,549–60,550 identify the future branch under the aligned prefix-return guard. [Kernel theorems, numerical hypotheses and exact scopes](GPT-WHITE-PARENT-OBSTRUCTION-20261104.md)
+
 
 **The frame.** The atlas grid's row v = −0.246, "nobody has written the dynamics in this frame". Written now from exact pieces:
 the state is the pair of rows (t, t + 16) on wheels around the lag-16 band edge B(t) (CL692's object; on the certified prefix

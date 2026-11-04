@@ -431,6 +431,7 @@ depth about $d/2$. That is the next thing to look for.
 
 ## 8. The right side as a complement (2026-10-04)
 
+
 The owner's suggestion, after §7: rather than ignore the right side, use it to complement the left. It works. The
 left side alone leaves column 1 free, and then zero runs grow with depth (§7). But column 1 is not free: it is part of
 the right side, and Rule 30 constrains it heavily.
@@ -539,6 +540,8 @@ the forced left half's zero runs depend only on that local language. If they do,
 unchanged in three volumes in [reports/rule30-prize/](reports/rule30-prize/). The table lists every one, in order, with a
 link straight to it. New sub-sections can be added here until this section passes about 250 KB again, then rotate
 the same way.
+
+[4 November supplement on the left settling front](reports/GPT-WHITE-PARENT-OBSTRUCTION-20261104.md). GC2635 links §§8.31, 8.60, 8.66 and 8.74 to the all-completion prefix guard, permanent lag pin and finite branch readouts. The prize questions remain open.
 
 | Sub-section | Volume |
 |---|---|
