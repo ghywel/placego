@@ -1,0 +1,20 @@
+{
+  "worker_stop": 12,
+  "input_sha256": {
+    "tests/probes/wolfram/cl721_crossings.py": "f350170a348e4f63b65ed6d7fd35eea3114d4f321c51d1e6c6d6bdcc30021e39",
+    "tests/probes/wolfram/walk_merge.out": "9f0b117bf5196ff4f2d4be89b29df0629b6c433eef33cb14361e43faf4a4fe8f",
+    "tests/probes/metal_scope/stage.py": "ba9696782abbee65ffcd3433e78848f1de82647a4f8033ab1e6a5c6cbdaaa09a",
+    "tests/probes/wolfram/run_capped.py": "c8c58b49e032fc4c20b61675adc4194646713e692a51815996791ac8943ffc56"
+  },
+  "jobs": [
+    {
+      "name": "cross",
+      "args": [
+        "python3",
+        "tests/probes/wolfram/cl721_crossings.py"
+      ],
+      "cpu": 5,
+      "wall": 30
+    }
+  ]
+}
