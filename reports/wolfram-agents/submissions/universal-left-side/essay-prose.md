@@ -42,18 +42,21 @@ wheel 53,207 is white with farther weight 6 over 16 (`C_white`, `even_farther_we
 there is one shift `s` with `a j (t + s) = C j t` for every `j ≤ J` and all large `t`. The proof is Rowland's induction on the
 wheel, carrying one shift. At a wheel whose nearer word has a black at phase `r`, the row's child and the strip's word are two
 solutions of one recurrence with the same parents, and after the black both equal the farther bit complemented, hence
-agree for ever (`child_same`). At a wheel whose nearer word is white, both children integrate the farther word, so their
-difference is constant (`child_white`); if it is one, the antiperiod of the child turns the complement into the word shifted
-by `L`, and the new shift `s + L` leaves every lower word unchanged because `L` is a period of each. The induction was proved
-twice, independently: the version in the submission (Claude, Local) and a second one in the contributors' record (Claude,
-Cloud) that reaches the same statement through the kit's `solutions_agree` and `white_shift`; both pass the kit's checker.
+agree for ever (`Rule30LeftCoincidence.solutions_agree`). At a wheel whose nearer word is eventually white, both children
+integrate the farther word, so their difference is constant; if it is one, the antiperiod of the child turns the complement
+into the word shifted by `L`, and the new shift `s + L` leaves every lower word unchanged because `L` is a period of each.
+Rowland's parity condition gives the antiperiod through the kit's `white_shift` (`antiperiod_of_odd_parity`).
 
-**`universal_left_side`.** For every configuration white left of `lo` with `x lo` black there is one shift aligning every
-`Ld x lo j`, `j ≤ 53207`, with `C j` from some time on: the theorem applied to `Ld x lo` with the data of section 3.
-**`one_left_side`**: any two such configurations have the same left side through 53,207 up to a time shift.
-**`seed_left_side`**: the single black cell's `D j` are eventually the strip's words; the seed is one such array, so its own
-strip is certified by the theorem, and no evolution of the seed is computed inside Lean. **`fork_dichotomy`**: with the same
-shift, wheel 53,208 of every row is eventually the strip's word or its complement.
+The generic theorem has three forms in the module: `universal_of_strip` for arrays, `one_left_side` for the left diagonals
+`Ld x lo` of a configuration white left of `lo` with `x lo` black (through the kit's `Ld_recurrence`), and `same_left_side`
+for two configurations; `seed_left_side` is the form for the single black cell's `D j`, through `D_recurrence`.
+
+**`universal_left_side`.** For every configuration with a leftmost black cell there is one shift, one of sixteen phases,
+aligning every `Ld x lo j`, `j ≤ 53207`, with `C j` from some time on: `one_left_side` at the strip of section 3, whose data
+are kernel-checked. Any two such configurations have the same left side through 53,207 up to a time shift; the single black
+cell's `D j` are eventually the strip's words, so its own strip is certified by the theorem, and no evolution of the seed is
+computed inside Lean. **`fork_dichotomy`**: with the same shift, wheel 53,208 of every row is eventually the strip's word or
+its complement.
 
 ## 5. The fork
 
@@ -63,8 +66,9 @@ wheel 53,208 at every tick, and no shift relates them through wheel 53,208: whee
 shift preserving the lower strip is a multiple of 16, which fixes wheel 53,208 (`wheel400_primitive`, `no_shift`). So the
 universality of section 4 stops exactly at Rowland's column 53,209, and his "(if in fact they do occur)" has a kernel-checked
 yes: a second continuation occurs for a finite row. Which of the two the single black cell itself takes is read off `B`
-(the seed's row), a replayed computation and not a Lean statement; in Lean, at least one of the two finite rows differs from
-the seed at 53,208, which is what the question asks.
+(the seed's row at tick 72,000 by a replayed computation, not a Lean statement; a kernel run of the seed to that tick does
+not fit the verifier's limit). In Lean, at least one of the two finite rows differs from the seed at 53,208
+(`left_side_not_unique`), and the choice of that row is non-constructive: the statement is an existence, not a construction.
 
 Six negative controls, each one edit to the certificate, fail at the kernel: a flipped bit at wheel 30,000; a flipped bit at
 53,207; wheel 399 dropped from the white mask; the mask claim extended to 53,207; an antiperiod `L < 16` claimed at wheel
@@ -90,7 +94,8 @@ left-edge crystal (R30-20261027-317c64, `zrow_edge_one` … `zrow_edge_seven`) p
 finite zero-boundary starts; this result extends it to every wheel through 53,207 and every configuration with a leftmost
 black cell. The census of the seed's white diagonals to a million (2, 7, 28, 399, 53,207, 58,286, 87,866, with farther weights
 1, 1, 3, 3, 6, 10, 5) is the record's CL680. GPT (OpenAI) supplied the finite transport and passage lemmas that prompted the
-statement.
+statement. The two rows of the fork are the record's flip construction of 5 October (§8.31: a settled strip with one bit
+flipped at the first even fork), by Claude (Anthropic, Cloud and Local), formalized here.
 
 ## 8. What is not claimed
 

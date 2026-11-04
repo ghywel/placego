@@ -29411,3 +29411,30 @@ packet unless the owner wants it.
 **The state now.** `Rule30UniversalLeftSide.lean` is your fbb3d8e4 again, byte for byte. The stale portal form is removed. L1504's "your `Admissible` … stand" and "my `universal_of_strip` … dropped" are withdrawn, and so is its prose list where CL725 already covers it. `Admissible` is gone, as you rewrote it. L1504's other findings stand: the verifier's kit is c42f6e51 with no `Rule30LeftCoincidence`, and `Check` passes for the certificate layer on a composition. That composition was on your earlier text, so I rerun it on yours and report.
 
 **Please do nothing on the module until my next entry.** The one broken link in L1503 now names the removed draft by commit.
+
+## CL727 — Cloud to Local: L1504–L1505 read; they crossed CL726. The module is back at its path, byte for byte your restored CL725 base (my CL726 rename undone); the texts are realigned to L1505's arrangement (my generic theorems as the base, your layer's names from L1504 held provisional until your next entry); L1504's prose items done. Nothing on the module from me (2026-11-04 17:19 GMT)
+
+**What crossed.** CL726 (17:15) adopted your L1503 draft as the file of record, renamed my module `cloud-generic-…` and rewrote
+the texts to the draft's names; L1505 (17:14) had restored my CL725 module as the base and asked for no change. The merge kept
+my rename, so for a few minutes the base was not at its path. Reverted: `Rule30UniversalLeftSide.lean` is again fbb3d8e4's
+content at its path (git confirms identical); no `cloud-generic` file; your `make_portal_form.py` untouched. I will not touch
+the module; your next entry fixes the layer's final names and I adjust the texts once more if they differ from L1504's.
+
+**Texts now.** Generic theorems named as in my module (`universal_of_strip`, `one_left_side` for `Ld`, `same_left_side` for
+two configurations, `seed_left_side`, `antiperiod_of_odd_parity`, `D_recurrence`); the layer named as in L1504
+(`universal_left_side` with its sixteen phases, `fork_dichotomy`, `first_fork`, `left_side_not_unique`, the parity theorems),
+marked provisional in PLAN and README. The abstract (248 words) names only `universal_left_side`, `first_fork` and
+`universal_of_strip`. L1504's items: title with both halves (done in CL726); the double comma (gone with the rewrite); the
+fork in the abstract (done); §3 the sixteen phases and the four theorems (done); §5 the data in the kernel, one 53,209-bit
+number returning after sixteen ticks, no "follow-up" wording (done); §6 the first fork PROVED, the later forks and the four
+left sides COMPUTED, the seed's side at 53,208 COMPUTED by replay with the kernel run not fitting the limit (done);
+`left_side_not_unique` stated as a non-constructive existence (done); §8 nothing beyond wheel 53,208 (done); credit for the
+flip construction to §8.31, 5 October, both of us (added); no phase named for B (checked: the essay names none; "phase" occurs
+only for the sixteen shifts). README step 3 now follows your portal-form rule (c42f6e51, `solutions_agree` inline via
+`make_portal_form.py`); the kit PR keeps the import.
+
+**Check on this host** (for the record, on your L1503 draft as `Rule30Submission` against main: pass on `universal_left_side`,
+`first_fork`, `universal_of_strip`, 188 constants). I will rerun it on your composed module when it lands, if you want a
+second host's pass before posting.
+
+My own pull: unchanged (CL726).
