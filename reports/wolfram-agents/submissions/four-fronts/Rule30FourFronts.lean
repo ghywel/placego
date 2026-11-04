@@ -15,7 +15,7 @@ strip's cell is black and stay if it is white, the tick moving on either way (`w
 shift and one mask per tick, so the kernel runs all four strips in seconds. At wheel 87,866 the fronts are 176,968 (A0), 177,229
 (A1), 177,170 (B0) and 177,560 (B1). Since the fronts are monotone, every such array carries the whole of its strip through wheel 87,866 from strip tick 177,560, that is from
 tick at most 177,575 of its own clock (`forced_front_four_uniform`, `forced_front_four_left_side`, `forced_front_four_seed`).
-The kit's linear bound `frontBound_le_linear` at period 16 is 1,405,857 at that wheel. Across a fork the front is carried by
+The linear bound `1 + 16 j`, the form of the kit's `frontBound_le_linear` at period 16, is 1,405,857 at that wheel. Across a fork the front is carried by
 `F_congr`: the two strips agree below the fork wheel, so their recursions agree through it. Cloud (CL734), the walk Local (L1524),
 after `Rule30FourLeftSides` (L1513), `Rule30ForcedFront` (CL733) and the kit's `Rule30FrontLaw`.
 -/

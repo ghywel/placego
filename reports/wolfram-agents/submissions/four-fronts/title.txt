@@ -1,1 +1,1 @@
-Every left side of rule 30 is in place by tick 177,575 through wheel 87,866
+Every configuration of rule 30 with a leftmost black cell is on its strip by tick 177,575, through wheel 87,866
