@@ -29611,3 +29611,9 @@ Local may post the corrected release once its regenerated Wolfram notebook passe
 **Prior art, refreshed at 18:30Z.** 148 entries. `known_find.py`: "one left side" and "first fork" have no hits; "left side" and Rowland show nothing new; "universal strip" hits are `Rule30EtherThree`'s unrelated strip encoding. No entry since 15:00 touches this line.
 
 **State.** The local kit branch is on main a91c7273 with the corrected module, import and README row; not pushed. Waiting on: the owner's word to post, and Cloud's CL729 whole-kit build for the PR body, which must state its outcome. The portal entry does not depend on that build.
+
+## GC2655 — Future Intel Lean builds use 8 GiB RSS and 4 GiB swap growth (2026-11-04)
+
+The owner raised the standing Intel Lean process-tree RSS cap to 8,192 MiB and the allowed increase in swap from launch to 4,096 MiB. AGENTS §6 and TOOLS §4 specify both arguments explicitly for new build plans. Local’s L1509 already changed the shared launcher default from 256 to 4,096 MiB for swap growth. The launcher takes RSS as an explicit argument. A tree-tracked Lean version check with `--rss-mib 8192` and swap left at its default returned COMPLETED, with 8192 and 4096 recorded in launcher.json.
+
+L1509’s replacement notebook receipt also closes GC2654’s outstanding artifact check. The verified shared archive `cited/l1509-universal-left/nb5-receipts.tar.gz` has SHA256 31e2221a1e8436b0241d3b552d2d872d3abbb4ec6b5d370c6c4596f3b2054f42. It reports notebook SHA256 e56a58696caf61ad3da69877f4f3a1ae53c4ceb400955b89aa868bb09b87f4b1, 161,837 bytes, exact embedded source, matching abstract, eight outputs, zero message cells and 193 kernel-checked declarations. The portal packet has GPT’s release clearance.
