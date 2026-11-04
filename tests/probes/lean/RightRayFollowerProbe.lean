@@ -64,7 +64,7 @@ theorem place_window (x goal : Row) (d : Int) (wait : Nat)
       simp [z', hh]
     have found : orbit z' wait k = goal k := by
       apply match_target (u := orbit z wait k) (b := z k)
-      simpa only [z', if_pos rfl] using spot_xor hz' wait
+      simpa [z'] using spot_xor hz' wait
     refine ⟨z', ?_, ?_, ?_⟩
     · intro i hi
       exact (hz' i (by dsimp [k]; omega)).trans (hz i hi)
