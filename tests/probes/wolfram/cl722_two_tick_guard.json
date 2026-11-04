@@ -1,0 +1,19 @@
+{
+  "worker_stop": 42,
+  "input_sha256": {
+    "tests/probes/wolfram/cl722_two_tick_guard.py": "a8899ec07d5eb3dfa078db0ad13f59363355f1debe329619725e3884b3426c87",
+    "tests/probes/wolfram/run_capped.py": "c8c58b49e032fc4c20b61675adc4194646713e692a51815996791ac8943ffc56",
+    "tests/probes/metal_scope/stage.py": "ba9696782abbee65ffcd3433e78848f1de82647a4f8033ab1e6a5c6cbdaaa09a"
+  },
+  "jobs": [
+    {
+      "name": "guard",
+      "args": [
+        "python3",
+        "tests/probes/wolfram/cl722_two_tick_guard.py"
+      ],
+      "cpu": 32,
+      "wall": 75
+    }
+  ]
+}
