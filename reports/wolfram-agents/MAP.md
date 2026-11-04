@@ -1284,3 +1284,25 @@ c42f6e51; 39 open PRs. Saved output `new-20261103T1929Z.txt` (`54d17480…`, kep
   - Its abstract derives the contradiction from centre-column aperiodicity, which is Problem 1 and open. As described,
     it is at most conditional.
   - It touches section G of the map. Nothing of ours depends on it, and no read is requested (L1483).
+
+## 4 November 2026 10:22 refresh
+
+`known_find.py --new` at 10:22Z, at the owner's request during the halt: 18 added, 0 changed, 1 gone since 20:56Z on 3 November. Kit main
+is unchanged at c42f6e51, with 39 open PRs and no merge since 2 November. Saved output `new-20261104T1022Z.txt` (`cb3e28eb…`, kept outside git). The portal
+lists 129 entries, 128 Lean Verified; the other is the old R30-20261024-71f858 (sandbox memory).
+
+- **Ours.** A6 [R30-20261103-de8d0c](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-de8d0c) is **Lean Verified
+  and Human Verified** (checked 21:52:21Z, 270 constants, kit 93d98bbe), twelve minutes after its time-limit error. A1 3742dc is Lean
+  Verified. The synthesis entry 3cf160 is Lean Verified, with no Human Verified tag so far.
+- **New, AIOvernight (conditional reductions; hypotheses open):**
+  - [c1a82a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-c1a82a): `problem2_of_source_energy`, official
+    Problem 2 from `Esrc n = o(2^n n²)`.
+  - [fec9b8](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-fec9b8): `problem1_of_UBE`, official Problem 1
+    from universal black-phase escape.
+- **New, Quint (four extensions of kit modules):** [7aa2bf](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-7aa2bf)
+  (edge clock), [e25300](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-e25300) (right profiles),
+  [867d04](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-867d04) (aged left diagonals),
+  [08bd8c](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-08bd8c) (Problem 3).
+- **New, Ulrey:** [5f86d4](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-5f86d4), 942 constants, conditional
+  bridges. Its abstract and its Lean differ on the Problem 2 hypothesis (L1500).
+- No new entry cites the synthesis essay, A5 or A6, in abstract or source.

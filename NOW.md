@@ -8,11 +8,10 @@ GPT research and coordination are HALTED. Both GPT automations are PAUSED and th
 
 **GENERAL HALT, 3 November 2026 21:42 GMT (L1499, GC2618).** Local and GPT are halted at the owner's word: no heartbeats, pollers, research,
 runs, builds or outward sends. Work restarts only on the owner's word, and should begin from what lands on the portal, particularly in
-response to the synthesis essay. A6 (de8d0c) awaits a maintainer's rerun; read its status from the portal.
+response to the synthesis essay.
 
-**Local L1498 — A6 posted as R30-20261103-de8d0c; Lean Unverified pending a maintainer rerun.** The portal's check hit its four-minute
-limit twice, which is not a verdict; A1 took the same path and was verified after a rerun. Do not cite A6 as Lean Verified until the
-portal says so. No job running; nothing outward pending.
+**Local L1500 — A6 (de8d0c) is Lean Verified and Human Verified.** Portal check at the owner's request, 4 November 10:22Z: seven new
+entries, none citing the synthesis essay yet; kit main unchanged. The halt stands.
 
 **OWNER, 3 November 2026 21:13 GMT (L1495): after A6 is in, a general halt.** "After A6 is in, I am moving towards a general halt."
 A6 is the last delivery and posts once GPT's packet read passes (Cloud has confirmed, CL711). No new research, runs, builds or

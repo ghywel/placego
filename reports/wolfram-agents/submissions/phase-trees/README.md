@@ -1,9 +1,9 @@
 # Three periodic phases behind Rule 30's black edge, excluded to bounded depth (A6) — delivery record
 
-**Status: POSTED as [R30-20261103-de8d0c](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-de8d0c), Lean
-Unverified (L1498).** The portal's check timed out at its four-minute limit twice; a maintainer reruns it without the limit, as for A1.
-The Check on the verifier's kit passes locally. Posted at the owner's word (L1494) after GPT's final PASS (GC2617) and Cloud's
-confirmation (CL711). The Lean is Local's probe
+**Status: POSTED, Lean Verified and Human Verified** as
+[R30-20261103-de8d0c](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-de8d0c) (L1500): checked 21:52:21Z on kit
+93d98bbe, 270 constants, after an earlier time-limit error at the portal's four-minute limit (L1498). Posted at the owner's word (L1494)
+after GPT's final PASS (GC2617) and Cloud's confirmation (CL711). The Lean is Local's probe
 `tests/probes/lean/PhaseTrees.lean` (L1489, 7e2590f1…; GPT's source-faithfulness PASS GC2604, and GC2600 for the G16 forerunner).
 The tree is Cloud's (CL706), its soundness and alignment contract GPT's (GC2596), the builds and the assembly Local's. Cloud's
 packaging review is CL710.

@@ -28213,3 +28213,33 @@ no research, runs, reviews or outward sends until the owner's word. CLOUD-LOCAL 
 ledger from L1495 on.
 
 My own pull: T-a, when the owner restarts the work.
+
+## L1500 — Local: portal and kit check at the owner's request, during the halt. A6 is Lean Verified; seven new entries; none answers the synthesis essay yet (2026-11-04 10:24 GMT)
+
+**The owner, in chat:** "Good morning Local, please do the portal / kit pr check up and summarise any new submissinos." This is that check
+only. The halt stands: no research, no new runs, nothing outward. [MAP refresh](reports/wolfram-agents/MAP.md#4-november-2026-1022-refresh).
+
+**A6.** R30-20261103-de8d0c is **Lean Verified and Human Verified**, checked 21:52:21Z, twelve minutes after its time-limit error: 270
+constants, seven headlines, kit 93d98bbe. L1498's "Lean Unverified" is superseded. The delivery record and NOW.md are updated.
+
+**The kit.** Main is unchanged at c42f6e51; nothing has merged since 2 November. 39 open PRs. Ours (#103, #104, #114 to #117) have no
+comments or reviews.
+
+**Statement-level reads of the new entries** (the cached portal Lean, not only the abstracts; a read, not a carry):
+- **c1a82a (AIOvernight).** `problem2_of_source_energy`: if for every k > 0, eventually 8k²·Esrc n ≤ 2^n n², then official `Problem2`.
+  Here Esrc n sums Z(u)² over u < 2^n, and Z is a sum of n terms of ±1 or 0 at dyadic shifts. So |Z| ≤ n, and the trivial bound is
+  Esrc n ≤ 2^n n²: the hypothesis asks for any vanishing saving over trivial. They report about 0.98·2^n·n at n = 22. Conditional, and
+  the hypothesis is open. "First theorem" of this kind is their claim, unchecked here.
+- **fec9b8 (AIOvernight).** `problem1_of_UBE`: universal black-phase escape implies official `Problem1`. UBE quantifies over every finite
+  nonzero left start and every periodic word with a black phase. Open, and by their own account stronger than Problem 1 needs.
+- **5f86d4 (Ulrey).** **Abstract and Lean differ.** The abstract says `problem2_of_renewal_bound_80` assumes that consecutive 00
+  occurrences have gap at most 80. The Lean hypothesis `h_near` is different: for every n ≥ N₀ there is an m within 80 of n with
+  count11 m = count00 m, an exact balance recurring in every window. The reported "max gap = 77" over 37.5 million steps fits the
+  abstract's gap, so as stated it does not test the Lean hypothesis. Expected, not computed: count11 − count00 should drift, which makes
+  `h_near` implausible. The Problem 1 bridge likewise assumes a finite transducer computing column −1. Conditional throughout.
+- **7aa2bf (Quint).** `upper_cone_speed_two_shield` is the same locality as A6's `cone`, in the other direction, posted two hours later.
+  `both_colors_within` says every depth j > 0 of a black-edge code shows both colours within (j + 1)/2 ticks.
+- **e25300, 867d04, 08bd8c (Quint):** routine extensions of `Rule30RightProfiles`, `Rule30AgedLeftDiagonals` and `Rule30Problem3`.
+
+**The synthesis essay.** No new entry cites 3cf160, A5 or A6, in abstract or source. 3cf160 has no Human Verified tag so far, while
+A6, A5, A4, A1 and others have. Too early to read anything into that.
