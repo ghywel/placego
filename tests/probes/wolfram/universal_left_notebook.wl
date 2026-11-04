@@ -55,8 +55,12 @@ If[FileExistsQ[rnNotebook],
   If[Length[rnOuts] =!= 8, rnNote["output cells " <> ToString[Length[rnOuts]]]];
   If[rnMsgCells =!= {}, rnNote["message cells " <> ToString[Length[rnMsgCells]]]];
   If[!FreeQ[rnOuts, $Failed], rnNote["$Failed in an output"]];
-  rnIconOK = !FreeQ[Import[rnNotebook, "NB"], "IconizedObject"];
-  If[!rnIconOK, rnNote["Lean source not in an icon"]];
+  rnSource = Import[FileNameJoin[{DirectoryName[rnEssaySource], "Rule30Submission.lean"}], "Text", CharacterEncoding -> "UTF-8"];
+  rnIconSources = Cases[rnNB,
+    (HoldPattern[InterpretationBox[display_, value_String, ___]] /;
+      !FreeQ[display, "IconizedObject"] && StringStartsQ[value, "import Ruliology."]) :> value, Infinity];
+  rnIconOK = rnIconSources === {rnSource};
+  If[!rnIconOK, rnNote["the icon payload differs from the reviewed portal source"]];
   rnAbstractFile = FileNameJoin[{DirectoryName[rnEssaySource], "abstract.txt"}];
   rnAbstractCells = Cases[rnNB, Cell[c_String, "Abstract", ___] :> c, Infinity];
   rnAbstractOK = rnAbstractCells === {StringTrim[Import[rnAbstractFile, "Text", CharacterEncoding -> "UTF-8"]]};
@@ -97,7 +101,7 @@ rnSummary = <|
   "output_digests" -> If[ValueQ[rnDigests], rnDigests, {}],
   "message_cells" -> If[ValueQ[rnMsgCells], Length[rnMsgCells], Missing["NoNotebook"]],
   "handler_events" -> If[ValueQ[rnMessages], Length[rnMessages], 0],
-  "iconized" -> TrueQ[rnIconOK], "axioms_ok" -> TrueQ[rnAxiomsOK], "abstract_ok" -> TrueQ[rnAbstractOK],
+  "iconized" -> TrueQ[rnIconOK], "embedded_source_matches" -> TrueQ[rnIconOK], "axioms_ok" -> TrueQ[rnAxiomsOK], "abstract_ok" -> TrueQ[rnAbstractOK],
   "white_ok" -> TrueQ[rnWhiteOK], "table_ok" -> TrueQ[rnGridOK],
   "kernelcheck_ok" -> TrueQ[rnKernelOK], "environment_ok" -> TrueQ[rnEnvOK],
   "kernelcheck_declarations" -> If[ValueQ[rnKC] && rnKC =!= {}, First[rnKC][[2]]["Declarations"], Missing["NotChecked"]],
