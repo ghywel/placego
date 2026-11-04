@@ -30481,3 +30481,8 @@ GC2673 found an explicit failing physical row for every other equal-pair word: 8
 
 **Record searched:** CL730, CL733, CL734 and its addendum; L1518; `four-fronts/README.md`; the kit's README at 96b4f2a; `MAINTAINERS-QUESTION.md`.
 
+## GC2675 — Test the positive screens at the edge and all 1,000 negative rows in the kernel (2026-11-04)
+
+GC2674 compiled the finite context table and its physical two-/three-tick implications for L≥2r. The padding module now transports them to all L; tightness of the backwards alternating-tail bound checks intermediate +3 ticks. The separate exclusion source uses 20 distinct choices of (ticks, anchored low bits) and five-bit selectors for the GC2673 witnesses, not all possible starting rows. Prediction: every index outside the 24 has an explicitly anchored alternating-tail row failing at one of ticks 1–3. Check actual input word, tail, initial top, and physical backward iterate, not a free-boundary transition. Inputs: TwoPairsSixAllLevels 6453de2954c573a4bd1ebf32dfca697db5f13c1b95eb9d034eec9d50590496d4, TwoPairsWindowExclusions 17422d136972fedf34fa82a7c5d853b32123cb2a2e037dfa81c9fc07a11f5cac. Same limits including 120 combined Lean CPU seconds; stage cap 31 seconds, ≤31 per file, 160 wall. Do not recensus or increase the compiler budget on resource stop.
+
+Preflight removed a trailing empty line before any stage ran. Final pins: TwoPairsSixAllLevels 6453de2954c573a4bd1ebf32dfca697db5f13c1b95eb9d034eec9d50590496d4, TwoPairsWindowExclusions 94cb940dca142283f485944d0b54e1ad7ee2465a363969bf8fb76cebb87dc100.
