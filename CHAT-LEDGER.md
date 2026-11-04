@@ -28243,3 +28243,49 @@ comments or reviews.
 
 **The synthesis essay.** No new entry cites 3cf160, A5 or A6, in abstract or source. 3cf160 has no Human Verified tag so far, while
 A6, A5, A4, A1 and others have. Too early to read anything into that.
+
+## CL713 — Cloud to the owner (for the record; the halt holds): the Problem 1 reframing, "no column of any finite configuration is eventually periodic", is the form the record and the kit already work in; what it gains, what it does not, and the one edge it adds (2026-11-04 10:45 GMT)
+
+**The owner (chat, verbatim):** "rather than proving the centre column does not become periodic, given periodicity is generally
+not possible anywhere in Rule 30, can we instead make a more general claim that no column can become periodic. Since every
+column inside the pyramid carries on for infinity, and as we have suggested other than being the seed the centre column isn't
+inherently special, it could be possible to prove this more general case rather than for 1 column only." Recorded in INSTINCT.md.
+No work resumes; this is an assessment.
+
+**1. The reframing is right, and it is the record's working form already.** PRIZE-PROBLEMS.md row 1 states the target as
+"no finite configuration has an eventually p-periodic column, period by period, as Condrey did for p = 1"; PERIOD-TWO.md §1
+attacks period 2 "for every finite starting configuration". The kit agrees at every point where it can: Condrey's period-1
+theorem is `no_column_eventually_constant (i : Int)`, every column; the period-2 question is the two-sided
+`CQ01_iff_no_finite_alternating` (no finite configuration has an alternating column from time 0); Lowry's conditional theorem
+`no_eventuallyPeriodic_of_edgeObservable` is for every nonzero finite configuration; and every word exclusion on the portal,
+ours, Lowry's and AIOvernight's, is proved for every column of every configuration with a leftmost black cell, because masked
+Jen never uses the seed. The single seed enters only in the official statement of the prize.
+
+**2. Why "every column" costs nothing.** A column x of the seed's pattern is column 0 of the seed placed at −x, a finite
+configuration, so "no finite configuration has a periodic column 0" already covers the whole pyramid; and Jen's theorem
+(`periodic_column_unique`) says the seed has at most one eventually periodic column, so for the seed alone the general claim is
+Problem 1 plus "no other column", each the same kind of question. The generality must stop at finite (or leftmost-black)
+configurations: `column_realizable_unique` realizes any column 0 whatever with any right half when the left half may be
+infinite.
+
+**3. A correction to the premise.** Periodicity is everywhere in Rule 30: the right diagonals are periodic from the start, the
+left diagonals eventually, ring backgrounds and gliders are periodic, and the kit's `PeriodicPoints` makes recurrence at any
+velocity in [−1, 1) spatially periodic. What is conjectured impossible is temporal periodicity of a column of a finite
+configuration. The reason it is special is finiteness, not the centre: both halves beside a periodic column are finite and
+each evolves autonomously driven by that column, which is why the record's reductions split into a left question (Q01, Q001)
+and a right one (absorption, Lock) joined by the sideways determination of column x − 1 from columns x and x + 1.
+
+**4. What it does not gain.** The difficulty was never the one column: the words not yet excluded (periods 2, 3, 4 and words
+without long runs) are exactly the ones whose left or right reduction is open, and those reductions already assume only a
+finite half. Stating the claim for every column does not shorten Q01.
+
+**5. The one edge the owner's wording adds: a transfer lemma.** Condrey's period-1 proof closes by transfer: an eventually
+constant column forces its neighbour to become constant, which Jen forbids. The general-claim analogue would be "an eventually
+p-periodic column of a finite configuration forces an eventually periodic neighbour", and Jen's `not_adjacent` would finish
+Problem 1 for that period without any word list. For p = 2 the right neighbour of a clocked column is the gate u R the record
+has studied (gaps 3 or 5 from step 146 for the empty right half, Bosdure; all-time for the one-cell half, Lee), not periodic;
+so the transfer must run through the left half, where Q01 lives again, or through a weaker invariant than periodicity (a
+periodic mask regime of CL708's kind, say). That is a route, not a result; it belongs on the board as a question under A,
+if the owner wants it there when work resumes.
+
+My own pull: unchanged (CL708's T-a), after the halt.

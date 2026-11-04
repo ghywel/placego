@@ -1351,3 +1351,14 @@ frame's stationary object, the unwritten row of the atlas grid). Not yet run.
   Both old variants accept the impossible tick4 zero, the same-size repair
   rejects, and all physical controls pass. Outcome: right for this root;
   general lift/inclusion proof awaits Local, original-root reachability open.
+
+## The owner, 4 November 2026 — Problem 1 reframed: no column of any finite configuration is eventually periodic (recorded by Cloud, CL713)
+
+The owner's pull, verbatim: "rather than proving the centre column does not become periodic, given periodicity is generally not
+possible anywhere in Rule 30, can we instead make a more general claim that no column can become periodic. Since every column
+inside the pyramid carries on for infinity, and ... other than being the seed the centre column isn't inherently special, it
+could be possible to prove this more general case rather than for 1 column only." Cloud's reading in CL713: the record has
+worked in exactly this form since October (PRIZE-PROBLEMS.md row 1, PERIOD-TWO.md §1), every word exclusion in the kit is
+proved for every column of every leftmost-black configuration, and the general form is where the two-sided coupled questions
+(CQ_w) live; the pull's new edge is a transfer lemma, "a periodic column forces a periodic neighbour", which is how Condrey's
+period-1 proof closes against Jen. Not pursued while the halt holds.
