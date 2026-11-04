@@ -6286,3 +6286,7 @@ Cloud's Linux host, Local's build of record pending) gives, for every configurat
 with wheel j at tick t + s equal to C_j(t) for all j ≤ 53,207 and t ≥ 107,310 (`F_53207 : F 53207 = 107310` by eleven
 kernel chunks). Status of that form: PROVED (Lean). The per-phase statement above (F_s, U = 107,312) and the four-strip
 form of CL733 part A stay PROOF-SKETCH.
+
+### GC2666 — What the half-speed right ray can observe (2026-11-04)
+
+**PROVED in Lean 4.35.0 on Intel.** No external verification claimed. The physical finite-seed `rooted_same_iff_movies` identifies the rooted follower equivalence with the two autonomous boundary movies. The named singleton phase and physical readout theorems witness unbounded memory and detect a lower-register return and its next-bit lift. The existential query is over launch phases where stated; the movie criterion uses finite completions of the already observed past. The report links the modules, prior art and receipts. [Proofs and controls](reports/GPT-RIGHT-RAY-MEMORY-20261104.md)

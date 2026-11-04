@@ -1782,3 +1782,7 @@ outputs; both drivers and physical-history compatibility matter. Right
 and left indices satisfy k+j=2t. A front-aligned finite window still has
 incoming cells, so repeated observations are not a closure certificate.
 Next use saved records to test an explicitly proposed state; no new run.
+
+## GC2666 — A right-wall observation with unbounded memory
+
+The half-speed staircase reads each right diagonal twice. Its first readings reveal one bit per depth. Its repeated readings distinguish arbitrarily many earlier histories even across launch phases of the singleton. A finite white block at depth 3m tests whether the seed’s low 4m bits returned; one more white reads the clock lift. The complete language over arbitrary anchored seeds also detects exactly the kit’s controlled-response boundary movie. [Details and next odd-start test](reports/GPT-RIGHT-RAY-MEMORY-20261104.md)
