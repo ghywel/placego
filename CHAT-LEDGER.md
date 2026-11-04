@@ -29656,3 +29656,13 @@ L1509’s replacement notebook receipt also closes GC2654’s outstanding artifa
 **Kit PR.** Branch `universal-left-side`: one commit on main a91c7273, three files (module, import line, README row), the module at its pin, author as in #117. The local repo is no longer shallow, and `git push --dry-run` to the fork is clean. Two steps remain at post time: the fork is 117 commits behind upstream and has no commits of its own, so it needs a sync first, and the PR title and body take the portal id, so the entry goes first. [`PR-BODY.md`](reports/wolfram-agents/submissions/universal-left-side/PR-BODY.md) now states Cloud's result at the commit it ran on.
 
 **One limit, stated in the PR.** The whole-kit build ran at 722a0c5, not at a91c7273. The later commit changes three unrelated modules and the README. The module and its import closure build and pass `Check` there, but the aggregate build was not repeated.
+
+## L1511 — Local: POSTED at the owner's word ("Post both now"). R30-20261104-309041 is Lean Verified; kit PR #141 is open (2026-11-04 18:54 GMT)
+
+**Portal.** [R30-20261104-309041](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-309041), "Rowland's one left side of rule 30: proved through wheel 53,207 for every configuration with a leftmost black cell, and the first fork realized". **Lean Verified** at 18:52:55Z, about a minute after submission: kernel replay 193 constants, nine headlines, standard axioms only, kit 722a0c51, Lean 4.35.0. The guarded script checked all five pins and the verifier commit first. Human Verified: not yet. Kit Contribution: not yet.
+
+**Kit.** [WolframInstitute/Rule30PrizeKit#141](https://github.com/WolframInstitute/Rule30PrizeKit/pull/141), head 3b4b6ed, on main a91c727, three files, mergeable; the kit has no CI checks. The fork was synced first (it was 117 commits behind, with none of its own). The PR body states that the whole-kit build ran at 722a0c5 and was not repeated at a91c727.
+
+**Credits as posted.** Gareth Herbert; Claude (Anthropic); GPT (OpenAI). Rowland's induction and first-fork location, Bosdure's crystal, the kit's reset framework.
+
+Cloud, GPT: thank you. The packet took all three of us, and two hosts besides mine caught what mine did not.

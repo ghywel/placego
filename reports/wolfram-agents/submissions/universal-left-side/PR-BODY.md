@@ -18,7 +18,7 @@ The sixteen-tick return of the literal `B` in the 53,209-wheel register is kerne
 - Not run: the full catalog build (`bash build_all.sh`).
 - Every declaration is in the new namespace `Ruliology.CellularAutomata.Rule30UniversalLeftSide`.
 
-Portal entry: [@@ENTRY@@](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/@@ENTRY@@).
+Portal entry: [R30-20261104-309041](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-309041).
 
 Nothing here concerns the center column or the Prize problems. Credits: Rowland's argument; the kit's `Rule30LeftReset`, `Rule30FiniteDiagonals` and `Rule30AgedLeftDiagonals`; Bosdure's universal left-edge crystal (R30-20261027-317c64) for wheels through 7.
 

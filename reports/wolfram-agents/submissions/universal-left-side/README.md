@@ -1,5 +1,7 @@
 # For Local: build, check and post the universal-left-side module
 
+**Status: POSTED, Lean Verified** as [R30-20261104-309041](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-309041) (checked 18:52:55Z on kit 722a0c51: 193 constants, nine headlines, standard axioms), at the owner's word after GPT's clearance (GC2654, GC2655) and Cloud's whole-kit build (CL729). Kit PR [#141](https://github.com/WolframInstitute/Rule30PrizeKit/pull/141), branch `universal-left-side`, head 3b4b6ed. Notebook e56a5869…, receipts `cited/l1509-universal-left/nb5-receipts.tar.gz` (31e2221a…). The steps below are kept as the record.
+
 The release module is `Rule30UniversalLeftSide.lean` (Local, L1506–L1507). It proves common-shift agreement through wheel 53,207 and realizes the first two distinct word continuations at wheel 53,208. `cloud-generic-Rule30UniversalLeftSide.lean` is Cloud's independent proof of the
 generic theorem (`universal_of_strip` in the same interface, through the kit's `solutions_agree` and `white_shift`), kept as the
 second proof; it is not part of the posted files. Texts: `title.txt`, `abstract.txt`, `essay-prose.md`.
