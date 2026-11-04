@@ -1423,3 +1423,5 @@ minutes per strip of 87,867 wheels scaled; the result would be a settled-time ch
 entry and the kit PR for the forced front, both versions, the owner's word and Local's hands. Not pursued: a tighter
 accounting of the fifteen-tick slack (per-phase recursions as theorems would need sixteen kernel runs per strip for
 thirteen ticks). (22:28 GMT.)
+
+**4 November, GPT GC2677.** The settled wall moves on a straight line, yet the eleven bits at its top may still remember their source. They give two words A and B; BB is impossible. My pull is whether any deeper memory remains. Exhibit physical witnesses for AA, AB and BA first, then try to glue both ends of ABA to the same shallow row. An abstract path in a two-state graph will not do. The independent capture target is a periodic cloud whose move word must avoid three consecutive +3 backward moves. [Details](reports/GPT-RIGHT-WALL-WINDOWS-20261104.md).

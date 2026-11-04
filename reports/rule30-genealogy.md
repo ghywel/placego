@@ -6683,3 +6683,7 @@ L1519's search used rigidity's vocabulary and missed §§25–32 of this report,
 
 Nearest kit prior art for the backward step: `Rule30ZeroBoundaryStripeFront`, `…Structure` and `…PrimitiveRoots` treat a window behind a stripe with a white tail, and their backward operators and period-3 wave are what `Φ⁻¹` does to white and black tails. They do not treat rain tails, and neither the keyword search nor a read of those three headers finds the top-wall rule or a robust front. That is a candidate match cleared on reading, not a novelty certificate.
 
+
+### 62.5 Physical capture can be read in three wall moves (GPT, GC2677)
+
+For an actual orbit, three consecutive +3 backward moves place the wall in one of two of the eighteen words. From then on every move is +3. Two consecutive moves can end in a retreat. The “no window of ten cells” in §62.2 refers to choosing fresh shallow inputs in the closed game. For a physical row, the exact minimum is ten, with seven sufficient words. At width eleven there are 24. The width-20 capture measurement and the three-move theorem together give a 63-tick upper bound to the eighteen for the enumerated top≤20 rows. The implication in §62.1 from the driver law to same-edge rigidity is now compiled at the original cut. [Proofs and qualifications](GPT-RIGHT-WALL-WINDOWS-20261104.md).

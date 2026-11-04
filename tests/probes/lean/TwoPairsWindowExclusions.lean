@@ -26,11 +26,9 @@ private theorem source_alt (w low L j : Nat) (hj : L+10 ≤ j) :
     source w low L (j+1) = !source w low L j := by
   by_cases a : (j-(L+10)) % 2 = 0
   · simp [source, show ¬j < L by omega, show ¬j+1 < L by omega,
-      show ¬j < L+10 by omega, show ¬j+1 < L+10 by omega, a,
-      show (j+1-(L+10)) % 2 ≠ 0 by omega]
+      show ¬j < L+10 by omega, show ¬j+1 < L+10 by omega, a] <;> omega
   · simp [source, show ¬j < L by omega, show ¬j+1 < L by omega,
-      show ¬j < L+10 by omega, show ¬j+1 < L+10 by omega, a,
-      show (j+1-(L+10)) % 2 = 0 by omega]
+      show ¬j < L+10 by omega, show ¬j+1 < L+10 by omega, a] <;> omega
 
 def previousN (x : Row) : Nat → Row
   | 0 => x
@@ -49,6 +47,7 @@ private theorem prefix_back (x : Row) (n : Nat) :
     | zero => simp [seg, back, previous]
     | succ n =>
       have h := back_seg (step_previous x) n 2 (by decide)
+      simp only [show 2-1=1 by decide, show 2-2=0 by decide, previous] at h
       change x 0 :: xor (x 1) (x 0) :: seg (previous x) 2 n =
         xor (x 0) (false || false) ::
         xor (x 1) (xor (x 0) (false || false) || false) ::
@@ -96,7 +95,8 @@ theorem physical_exclusion (i : Fin 1024) (outside : word i.val ∉ retained) :
   let d := L+9+3*r
   have h := List.all_eq_true.mp checked i.val (List.mem_range.mpr i.isLt)
   have sample : Sample (word i.val) low L r := by
-    simpa [checkOne, hw, outside, L] using h
+    apply of_decide_eq_true
+    simpa only [checkOne, hw, if_neg outside, L] using h
   obtain ⟨rlo, rhi, anchor, window, wall, fail⟩ := sample
   refine ⟨x, L, r, rlo, rhi, anchor, window, ⟨wall, source_alt _ _ _⟩, ?_⟩
   change (scan (seg x 0 (d+2)) r).getD d false ≠

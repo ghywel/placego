@@ -545,6 +545,8 @@ the same way.
 
 [CL722 follow-up on the same front](reports/GPT-CL722-PASSAGE-PHASE-20261104.md). A pre-contact phase selector predicts the finite passage classes; the two-update guard closes the completion question for arbitrary high bits.
 
+Three consecutive maximal backward moves of a rain-tailed right wall force perpetual motion, even at the shallow edge. A periodic non-rain cloud must therefore avoid that three-move sequence at every phase. [Right-wall theorem and sharp counterexample](reports/GPT-RIGHT-WALL-WINDOWS-20261104.md)
+
 | Sub-section | Volume |
 |---|---|
 | [8.1 The four arms (the owner's design, 2026-10-04)](reports/rule30-prize/RULE30-PRIZE-8.1.md#81-the-four-arms-the-owners-design-2026-10-04) | 1 |
