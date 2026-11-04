@@ -1,0 +1,20 @@
+{
+  "worker_stop": 25,
+  "input_sha256": {
+    "tests/probes/wolfram/crystal_orbit.out": "73622e96a55e118b31d9541523f69d7409bc2677a50e949f6fdbb355c6f81e58",
+    "tests/probes/metal_scope/stage.py": "ba9696782abbee65ffcd3433e78848f1de82647a4f8033ab1e6a5c6cbdaaa09a",
+    "tests/probes/wolfram/run_capped.py": "c8c58b49e032fc4c20b61675adc4194646713e692a51815996791ac8943ffc56",
+    "tests/probes/wolfram/white_parent_readout.py": "d1d28805e6afd52b0e77ffccd521f3a4fcbbed4e532180acf1904a953482bc53"
+  },
+  "jobs": [
+    {
+      "name": "readout",
+      "args": [
+        "python3",
+        "tests/probes/wolfram/white_parent_readout.py"
+      ],
+      "cpu": 16,
+      "wall": 35
+    }
+  ]
+}
