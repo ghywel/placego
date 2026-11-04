@@ -28610,3 +28610,69 @@ the strips below the edge are the universal left side (§8.31), so the walk of t
   window. Lean 70%. Counterfactual: agreement only near 60% at the best shift would mean the rows share the strip's statistics
   but walk differently, with the news deciding each heal; agreement of 99% with a drifting offset would mean one walk with
   occasional seed-dependent jumps. Probe `walk_align.py 20 16`, substitute caps as before.
+
+## CL721 — Cloud: the block's verdicts. P-F1, P-F3, P-F5, P-F6 HELD; P-F2's third clause and P-F4 REFUTED (the step process remembers beyond two ticks and the five-wheel mismatch pattern is not Markov in its own frame: the pair of rows is the state); P-F7 HELD in its strongest form: the band edge's walk is literally one walk for every left-finite row, shifted in time, agreement 100% and offset exactly zero on twenty of twenty. P-F8 (do the orbits themselves merge, and how far past the edge) written before its test (2026-11-04 13:19 GMT)
+
+**Part A, `step_entropy.py 17`** (2.9 s, substitute caps ulimit 8 GiB, timeout 1,800 s, this host). At T = 2^18 the band edge
+passed wheel 87,866, where the universal strip's period doubles to 32 (CL680), so GC2621's certified-prefix assertion failed and
+the run was repeated at T = 2^17: trusted window [16,384, 65,536], 49,153 ticks, certified 16-periodic prefix to wheel 87,866.
+Mask law: 0 violations. Steps 0 / 1 / 2: 59.2% / 14.8% / 21.7%, mean 0.7474.
+- **P-F1 HELD:** H₀ = 1.6053 bits per tick.
+- **P-F2: the first two clauses HELD, the third REFUTED.** H₁ = 1.2981 (= H₀ − 0.307), H₂ = 1.2264 (= H₁ − 0.072), then
+  H₃ = 1.1952 and H₄ = 1.1755: H₄ = H₂ − 0.051 against a plug-in bias gauge of at most +0.007 (the two halves agree to 0.001 at
+  every k). The decrements 0.307, 0.072, 0.031, 0.020 shrink but have not reached the gauge at k = 4: the step process remembers
+  more than two ticks. Reading (CONJECTURE): the transducer's state is the pair of rows around the edge, not the last steps, and
+  the steps are a lossy projection of it; the same fact as P-F4's refutation.
+- **P-F3 HELD:** h(1) = 0.267 (0.265 predicted), h(2) = 0.518, h(3 … 7) = 0.491, 0.499, 0.488, 0.500, 0.497 (n from 7,091
+  down to 463); h(8) = 0.455 on 233 waits, within sampling. Waits between heals: mean 2.450 = 1/P(heal). One refractory tick
+  after a heal, then a memoryless gate at one half.
+- **P-F4 REFUTED:** the mismatch pattern on wheels B … B + 4 (16 states, bit 0 always set, entropy 3.94 bits) has
+  H(M′ | M) = 3.346 and H(M′ | M, M_prev) = 2.330 bits: a Markov gap of 1.016 bits, twenty times the threshold. The five-wheel
+  pattern is not the state; the pair of rows (t, t + 16) around the edge is (CL719's determination horizon said the step reads
+  eight wheels; the pattern's next value reads more than the pattern).
+
+**Part B, `news_frame_rows.py 20 16`** (13 s): the seed and twenty random left-finite rows (CL696's construction, rng 606,
+widths 2 … 62), each on [8,192, 32,768] to T = 2^16, the certified prefix checked on every row (wheels 42,884 … 43,001), 0
+mask-law violations. **P-F5 and P-F6 HELD far inside tolerance:** mean step 0.7447 … 0.7455 (seed 0.7449), P(heal)
+0.4096 … 0.4099 (0.4097), E[jump | heal] 1.817 … 1.819 (1.818), ρ(1) 0.4577 … 0.4579, ρ(2) 0.5805 … 0.5813, densities
+0.410 / 0.500 / 0.593 at h = −1, 0, 1 on every row to three decimals; B(32,768) from 24,444 to 24,564 (seed 24,465).
+
+**P-F7, `walk_align.py 20 16`** (3.7 s): **HELD, in the strongest form.** For every one of the twenty rows the best shift
+s ∈ [−148, 24] gives agreement 1.0000 of the step sequences on the whole window, and B_row(t + s) − B_seed(t) = 0 at every tick
+(min 0, max 0), not merely constant. Three rows have s = 0: two are the seed itself (the construction can return 1) and one is
+0b101 (0x5), a different row whose band edge is the seed's without any shift. The band edge's walk is one walk: every row's
+settling-time sequence τ_k is the seed's plus one constant, exactly, over wheels about 6,100 … 24,465 (18,000 wheels, twenty rows,
+no exception). Part B's agreement to 0.001 is therefore not an agreement of statistics but the same sample read on windows
+displaced by |s| ≤ 148 of 24,576 ticks. Status: COMPUTED.
+*Prior art in the record (G29, cited not claimed):* CL695's corollary up to phase (the eventual cycles of every left-finite row
+below the first even-weight white wheel are the universal strip's up to a time shift; PROOF-SKETCH, Lemma W plus induction) and
+CL696's cascade lock as a synchronisation (τ_k mod 16 agrees with the seed's on 55 of 60 rows at every wheel below 4,000, the
+excursions ending by wheel 3,498; 21 wide rows agree at every wheel 52,900 … 53,210). What P-F7 adds: the agreement is of the whole
+sequence with one constant, not of the phase mod 16, and it includes the front itself, not only the settled cycles behind it.
+§8.36–8.38's merges (two prefixes whose difference has died are one walk, `rule30_merge.py`) are the same mechanism on lead 1's
+forced walks in the standard frame. The owner's transmutation (INSTINCT.md, 3 November) in its literal form at the wall: a
+left-finite row does not resemble the seed's left side, it becomes it, in finite time, exactly, front included.
+
+**P-F8, written before its test** (`walk_merge.py 20 16`, substitute caps as before). In the wall frame a prefix's future is
+its own (bit j at t + 1 reads bits j − 2 … j at t), so the band edge never retreats and the question is whether the two orbits
+coincide, not only their edges. With s from the alignment, J(t) = the lowest bit where the seed's row t and the row's row t + s
+differ (the merge front), against B_seed(t).
+- **P-F8a:** J(t) > B_seed(t) at every tick of the window on every row: the settled prefix is shared (CL695's corollary makes it
+  so once each wheel is in its cycle) and the edge bit too. Lean 80%. Counterfactual: a tick with J ≤ B while the edges still
+  agree would mean the edges coincide without the rows (a white-wheel constant difference, Lemma E's integrator), and the
+  "one walk" would be of the walk only.
+- **P-F8b:** the margin J − B_seed is stationary across the window (the two half-window means within a factor 1.5), with a
+  mean below 50 wheels, and at least 90% of ticks have a margin of 8 or more (CL719's horizon). Lean 55%. Counterfactual: a
+  margin that grows like √t (second half clearly larger) means the merge front is an independent difference front outrunning the
+  edge at the same mean speed; a margin often below 8 while the steps still agree means the step reads less than CL719's
+  collision test suggested, or that the differences at the edge are masked.
+- **P-F8c (the transient):** for every row the last tick at which B_row(t + s) ≠ B_seed(t) is below 4,700 (CL696's excursions
+  end by wheel 3,498, and B(4,700) ≈ 3,500). Lean 60%. Counterfactual: a last discrepancy between 4,700 and 8,192 means the
+  wheel-3,498 bound was the sixty rows' and not a law.
+
+**Record searched:** CL695 (Lemma E and the corollary up to phase), CL696 (the cascade lock as a synchronisation), CL697 (F1–F3),
+§8.31, §8.36–8.38 (`rule30_merge.py`, `rule30_influence.py`), DQ-009 / L955 / L992 (the twin-merge front), §8.74; `record_find`
+"merge front", "difference front", "transmut", "left-finite", "time shift", "same walk", "Lyapunov", "universal walk", one term at
+a time; `known_find` "left-finite", "time shift" (cache of the kit at c42f6e5 and the portal's 119 entries; the PR index returns
+403 here): the hits are our strip certificates (8fe04c, 524848) and the kit's C3w shift equivalence, none a statement that two
+left-finite rows' orbits merge on the settled prefix and its front.

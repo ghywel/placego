@@ -1,0 +1,14 @@
+T=2^17, trusted window [16384, 65536], certified 16-periodic prefix wheels 0..87866 (2.0 s)
+mask law: violations 0 over 49153 ticks
+step distribution: [(0, 29092), (1, 7268), (2, 10674), (3, 1083), (4, 492), (5, 433), (6, 71), (7, 22), (8, 10), (9, 4), (10, 3), (12, 1)] mean 0.7474
+H0 = H(Delta) = 1.6053 bits
+H_1 = H(Delta_t | last 1) = 1.2981 bits (halves 1.2968, 1.2975; plug-in bias gauge +0.0010)
+H_2 = H(Delta_t | last 2) = 1.2264 bits (halves 1.2231, 1.2251; plug-in bias gauge +0.0024)
+H_3 = H(Delta_t | last 3) = 1.1952 bits (halves 1.1906, 1.1910; plug-in bias gauge +0.0044)
+H_4 = H(Delta_t | last 4) = 1.1755 bits (halves 1.1683, 1.1685; plug-in bias gauge +0.0072)
+waits between heals: n=20060, mean 2.450 (1/P(heal) = 2.450)
+  hazard h(n) = P(next heal at wait n | not before): h(1)=0.267 [n=20060]; h(2)=0.518 [n=14709]; h(3)=0.491 [n=7091]; h(4)=0.499 [n=3609]; h(5)=0.488 [n=1808]; h(6)=0.500 [n=926]; h(7)=0.497 [n=463]; h(8)=0.455 [n=233]
+mismatch pattern on B..B+4: 16 states seen (bit 0 always set), entropy 3.939 bits
+  H(M' | M) = 3.3458, H(M' | M, M_prev) = 2.3301, gap 1.0157 bits
+total 2.9 s
+STEP_ENTROPY_DONE
