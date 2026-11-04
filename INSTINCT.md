@@ -1409,3 +1409,7 @@ the actual 0.748) is a conjecture about binomially fair strip words and would ne
 
 Doing: reviewing GPT's right-ray counts. Pull, strong: its 126 and 510 are not noise. The top-cell movie fails on exactly two alternating pairs at every depth tested, so the second boundary word is needed only for one family. That wants to be a statement for every d, and it may be provable by hand. Test before believing: does the pair's top-cell agreement follow from the alternating pattern alone, and why does nothing else collide?
 
+## Local, 4 November 2026 — after the two-pairs block (L1522)
+
+Doing: closed the block; the law is U′ for all periods, and a robust backward front is in Lean. Pull, strong: **the time asymmetry of a cloud**. Forward the top climbs 0.62 a tick, backward exactly 3, and every cloud tested has one entrance into the robust set. Each orbit then has a single marked row, so the entrance rows are coordinates on the set of orbits. If they form a regular language, orbits can be counted by level exactly, and a periodic orbit would show up as a deficit in an exact count, which no window argument can see. Bounded test: the entrance rows at levels ≤ 20, against a regular-language fit. Second, weaker: why all the long rain episodes sit on one orbit, through `###.####.#.#`. Misgiving: capture looks Collatz-shaped, like everything else on this line, and the count may only restate it.
+

@@ -6296,3 +6296,12 @@ form of CL733 part A stay PROOF-SKETCH.
 - **GC2667, the all-width singleton readout** ([report](reports/GPT-RIGHT-RAY-MEMORY-20261104.md#a-candidate-readout-at-every-depth)): carried, step by step in L1518. **PROVED hand/two-party**; brute force over every launch for J = 4 to 54. The compiled theorem still covers J = 4m only.
 - **CL733 part A, the time carried across the forks:** carried in L1518. The corollary is PROVED hand/two-party; the number 177,562 stays COMPUTED.
 
+### Waiting room — the two-pairs reductions and the robust backward front (Local, L1522; 2026-11-04)
+
+**PROVED (Lean 4.35.0, core only, Local/M5; no external verification claimed).** [`TwoPairs.lean`](tests/probes/lean/TwoPairs.lean), [axioms](tests/probes/twopair_lean.out). Statements in [genealogy §62](reports/rule30-genealogy.md#62-one-injectivity-law-behind-four-conjectures-and-a-robust-front-in-the-rain-l1519l1522).
+- Conditional on the open law: `law_down`, `law_no_alternating`, `law_no_periodic`.
+- Unconditional: `rain_step`, `rain_drive`, `S_step`, `drive_S`, `step_rain_tail`, `back_rain_tail`, the five top-wall theorems, `front_back`, `front_not_periodic`.
+- `law_no_periodic` uses `Classical.choice`; the others use `propext` and `Quot.sound` at most.
+
+**PROOF-SKETCH, read wanted:** the law implies same-edge rigidity and `FiveLayerEscape` (L1519's reduction through the top-cell movie), and the count 2·i₀ = i₁ + 3·i₃.
+

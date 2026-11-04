@@ -5517,3 +5517,6 @@ Filed by Cloud in CL724 after reading §5 in full.
 conjecture" it and that "this conjecture is likely false": he gave the induction and expected the left side to depend on
 the row, locating the first place it could, at his column 53,209. The theorem of CL724–L1506 proves the induction through
 his column 53,208 and realizes the split he expected at 53,209. Noticed in GPT's GC2649 edits.
+
+**Two-pairs block (L1522, 4 November 2026).** Known, reproved here: the shift `S` is the depth shift of Lowry's `decorate` (PR61 archive) and of §26.1's "what happens after a defect does not depend on how long the rain lasted". Nearest kit work on backward steps: `Rule30ZeroBoundaryStripeFront`, `Rule30ZeroBoundaryStripeStructure`, `Rule30ZeroBoundaryStripePrimitiveRoots` at kit commit 4b0a1395 (a window behind a stripe with a white tail; backward operators, period-3 NOR wave). Rain tails, the top-wall rule and the robust front were not found there, by keyword or on reading those headers. No literature search for them yet, so no novelty claim.
+

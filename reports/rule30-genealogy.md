@@ -6626,3 +6626,60 @@ by any right half, not even for one period". That holds only for its particular 
   a masked input that repairs the three-white contradiction.
 - **What stands and what is withdrawn.** The proved bound 7/44 stands. The claim "the 7/44 rate comes only from an
   unrealizable cycle" is withdrawn.
+
+## 62. One injectivity law behind four conjectures, and a robust front in the rain (L1519–L1522)
+
+*Local, 4 November 2026, at the owner's word ("Yes, take it"). Programs and outputs: `tests/probes/twopair_*`. Lean: [`TwoPairs.lean`](../tests/probes/lean/TwoPairs.lean), core Lean 4.35.0, [axioms](../tests/probes/twopair_lean.out).*
+
+### 62.1 The law, and what it is
+
+Write `V_n` for the time word of bit n − 1 OR bit n − 2, which toggles bit n. **The law:** at every width n, `V_n` is injective on odd registers, except for one pair, the two phases of rain.
+
+- It began as an observation about top-cell movies (L1518). It is **Lemma U′ of §29.4, plus "no defect-tree column alternates", for every period at once.** `V_n` fixes column n up to complement, a column and its complement are siblings, and the shift S below turns histories of different lengths into one width.
+- It implies Lemma U, R(p) (the alternating tail), the light-speed recurrence conjecture and, through the top-cell reduction, same-edge rigidity. The last implication is PROOF-SKETCH; the others below are Lean.
+- So four open statements are corollaries of one injectivity statement. The status of the law itself is §29.5's: true in the random model, mechanism unknown.
+
+**Where it has been checked (COMPUTED).** Every register at widths ≤ 33, whatever its period (`twopair_vcycles.c`). Every register of period ≤ 128 at every width, with Lemma U′ now through p = 128, one representative per orbit (`twopair_tree.c`; the sums of periods reproduce T13's 143,381,758 exactly). A register of period above 128 at width above 33 is unchecked.
+
+**Proved in `TwoPairs.lean`, for every k.**
+
+| theorem | statement |
+|---|---|
+| `rain_step`, `rain_drive` | the two rain rows swap, and their driver is all ones at every width |
+| `S_step`, `drive_S` | S(x) = 1, ¬x₁, x₁, x₂, … commutes with the map and moves `V_n` up one width |
+| `law_down` | the law at a width implies it at every smaller width |
+| `law_no_alternating` | the law excludes one alternating diagonal on a non-rain row |
+| `law_no_periodic` | the law at every width implies that only rain is periodic |
+
+The proof of the last: a periodic row has finitely many word values, two levels share one, and the shift puts them at one width with two different rows.
+
+### 62.2 Clouds in the rain
+
+Put `y_j = R_j ⊕ (j + t mod 2)`, so rain is constant y. A wall is a place with `R_k = R_(k+1)`. A 00 wall at k flips walls k + 1 and k + 2; a 11 wall does nothing. A code with an alternating tail is a **finite cloud of walls in the rain**. Its shallow end is fixed by permutivity, and by the shift the black edge plays no further part.
+
+- **Rain tails survive both ways** (`step_rain_tail`, `back_rain_tail`), so `Φ` permutes the countable set of rain-tailed rows. White tails do not behave so. Every orbit there is a cycle, of which only rain is known, or two-sided.
+- **The top wall moves by an exact local rule** (`top_up`, `top_stay`, `top_minus_one`, `top_minus_two`, `top_minus_three`): a 00 top rises by 2; a 11 top stays, or falls by 1, 2 or 3, according to the four cells below it. Over a period of a periodic cloud, 2·i₀ = i₁ + 3·i₃ (PROOF-SKETCH), with i_δ the number of 11-top ticks moving by −δ.
+- **Forward and backward are very different (MEASURED).** Forward, the top climbs about 0.62 digits a tick. Backward, almost every cloud soon climbs at exactly 3 a tick, so a cloud's top traces an asymmetric V in time.
+
+**The robust backward front (PROVED, `front_back`, `front_not_periodic`).** There is a set of eighteen windows of eleven cells such that a row with such a window at its top, and rain above, has every predecessor of the same form three cells higher, whatever lies below the window. Such a row climbs for ever going backward, and is not periodic. No window of ten cells or fewer does this; at twenty-two cells there are 222,151.
+
+**Capture is the gap.** If every non-rain cloud reached a robust window going backward, the alternating tail would be excluded. Every cloud with top ≤ 20 does so within 60 ticks (COMPUTED). The gap does not close by a finite window: in the game where an adversary names the lower bits, everything outside the robust set is one strongly connected component for w ≤ 16, with drift down to −0.78, as the walls G8 → rain and G16 → rain require. So this is the shape of T41, a robust front and a capture gap, and capture needs the shallow end. **The alternating tail is not proved.**
+
+### 62.3 Predictions
+
+| prediction | verdict |
+|---|---|
+| P-R1 the law to width 32 | HELD, to 33 |
+| P-R2 cycle counts grow about 1.5 per bit | HELD |
+| P-R3 relaxed chains from an alternating top die at bounded depth | REFUTED; T20's walls already showed it |
+| P-S1 U′ at p = 128 | HELD |
+| P-S2 a birthday law for the agreement time T(n) | REFUTED: T is a running record (the shift copies pairs up), and the longest agreements are rain-rich words |
+| P-S3 rain episode M*(k): finite, slope in [1.2, 2.2], maximisers near a small cloud | finite HELD; slope REFUTED (2.4 to 2.7); maximisers HELD: for k = 19..30 all on one orbit, through `###.####.#.#` |
+| P-S4 rain tails survive; the top moves ≤ 2 forward, ≤ 3 backward | HELD, now Lean |
+
+### 62.4 What the record search missed
+
+L1519's search used rigidity's vocabulary and missed §§25–32 of this report, which already hold U′, R(p) and the recurrence conjecture. L1518's "within reach of a hand proof" and L1519's framing of a new law are corrected in L1519 and L1520.
+
+Nearest kit prior art for the backward step: `Rule30ZeroBoundaryStripeFront`, `…Structure` and `…PrimitiveRoots` treat a window behind a stripe with a white tail, and their backward operators and period-3 wave are what `Φ⁻¹` does to white and black tails. They do not treat rain tails, and neither the keyword search nor a read of those three headers finds the top-wall rule or a robust front. That is a candidate match cleared on reading, not a novelty certificate.
+

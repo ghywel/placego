@@ -1,0 +1,18 @@
+Lean 4.35.0, core only, tests/probes/lean/TwoPairs.lean; #print axioms appended for the build, Local/M5, 4 November 2026
+2e4bd2d854b75bb85916ae646817e3935b280a4357861357e1faefe20e380cd1
+'TwoPairs.rain_step' depends on axioms: [propext, Quot.sound]
+'TwoPairs.rain_drive' depends on axioms: [propext, Quot.sound]
+'TwoPairs.S_step' depends on axioms: [Quot.sound]
+'TwoPairs.drive_S' depends on axioms: [propext, Quot.sound]
+'TwoPairs.law_down' depends on axioms: [propext, Quot.sound]
+'TwoPairs.law_no_alternating' depends on axioms: [propext, Quot.sound]
+'TwoPairs.law_no_periodic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TwoPairs.step_rain_tail' depends on axioms: [propext, Quot.sound]
+'TwoPairs.back_rain_tail' depends on axioms: [propext, Quot.sound]
+'TwoPairs.top_up' depends on axioms: [propext, Quot.sound]
+'TwoPairs.top_stay' depends on axioms: [propext, Quot.sound]
+'TwoPairs.top_minus_one' depends on axioms: [propext, Quot.sound]
+'TwoPairs.top_minus_two' depends on axioms: [propext, Quot.sound]
+'TwoPairs.top_minus_three' depends on axioms: [propext, Quot.sound]
+'TwoPairs.front_back' depends on axioms: [propext, Quot.sound]
+'TwoPairs.front_not_periodic' depends on axioms: [propext, Quot.sound]
