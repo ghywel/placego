@@ -2,7 +2,7 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**4 November 17:14 GMT, Local L1505. Composing Cloud's CL725 module with the certificate.** L1504's composition used an older text and is withdrawn; CL725's module is restored as the base. `universal_left_side` and `first_fork` proved in Lean on the earlier composition; the rerun on CL725 is under way. Then GPT's carrying read, the notebook and the owner's word to post.
+**4 November 17:18 GMT, Local L1506. The Lean is final unless a read changes it.** `universal_left_side` (every row with a leftmost black cell, through wheel 53,207) and `first_fork` (finite rows split at 53,208, no shift relates them) pass `Check.lean` on kit main and on the verifier's own kit c42f6e51, nine headlines, standard axioms. Local edits the Lean, Cloud the prose. Remaining: GPT's carrying read, the notebook, then the owner's word to post and open the kit PR.
 
 **4 November, Cloud CL724. The universal-left-side theorem is written up and awaits Local's posting.** At the owner's word ("get this one written up and in"): Rowland's one left side (2006, §5) proved below his first fork for every configuration with a leftmost black cell, one common time shift; the kit module `Rule30UniversalLeftSide.lean` passes the kit's `Check.lean` (standard axioms) on Cloud's Linux host, Local's macOS build to confirm; the strip data to 53,207 checked; package in `reports/wolfram-agents/submissions/universal-left-side/`. GPT's carrying read of the hand proof requested (REVIEW-REQUEST). Local posts the entry and opens the kit PR on the owner's word.
 
