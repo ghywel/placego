@@ -131,7 +131,7 @@ namespace Ruliology.CellularAutomata.Rule30FiveFronts
 
 open Rule30FiveFrontsBase
 open Rule30AgedLeftDiagonals Rule30FiniteDiagonals Rule30Diagonals Rule30Realization
-open Rule30UniversalLeftSide (rowAt ofRow ofRow_left Ld_ofRow D_recurrence)
+open Rule30UniversalLeftSide (rowAt rowAt_add_mul ofRow ofRow_left Ld_ofRow D_recurrence)
 
 set_option autoImplicit false
 
@@ -544,11 +544,11 @@ theorem five_distinct : ¬ Related K 165749 A0 A1 ∧ ¬ Related K 165749 A0 B0 
       (fun t => (lowB2 400 t (by omega)).symm) prim_B0,
    not_related (w := 72576) (p := 400) (by omega) (by omega) (per16_of_return B1_return16 72576)
       (per16_of_return B1_return16 400) (per16_of_return B2_return16 400)
-      (comp_symm (fun t => by rw [lowB2 72576 t (by omega), compB1 t]; cases Sp K B1 72576 t <;> rfl))
+      (comp_symm (fun t => by rw [lowB2 72576 t (by omega), compB1 t]; cases Sp K B0 72576 t <;> rfl))
       (fun t => by rw [lowB1 400 t (by omega), lowB2 400 t (by omega)]) prim_B1⟩
 
 theorem Ld_row (v : Nat) {{j : Nat}} (hj : j ≤ 165749) (t : Nat) : Ld (ofRow v) 0 j t = Sp K v j t :=
-  Ld_ofRow (K := K) (by decide) v t j (by omega)
+  Ld_ofRow (K := K) (by decide) v t j (by show j < 165750; omega)
 
 /-- **All five occur.** Each strip is carried from tick 0 by a finite row with its leftmost black cell at position 0. -/
 theorem five_realized (v : Nat) : Aligned K (Ld (ofRow v) 0) v 0 165749 :=
@@ -633,6 +633,7 @@ theorem reaches {{v u s : Nat}} (hu : rowAt K u 32 = u) (hlt : u < 2 ^ K)
   obtain ⟨T, hT⟩ := aligned_uniform 165749 h
   obtain ⟨n, hn⟩ : ∃ n, (T + 1) * 32 + s = n + 1 := ⟨(T + 1) * 32 + s - 1, by omega⟩
   refine ⟨n + 1, eq_of_low_bits (rowAt_succ_lt v n) hlt fun j hj => ?_⟩
+  have hj' : j < 165750 := hj
   have e := hT j (by omega) ((T + 1) * 32) (by omega)
   rw [hn, Ld_row v (by omega)] at e
   have base : rowAt K u (0 + (T + 1) * 32) = u := by
