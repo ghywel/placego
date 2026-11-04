@@ -6198,3 +6198,37 @@ reachability, complete observer or universal-capture claim.
 ### GC2647 — First passage from a pre-contact phase and the two-update common-prefix reset
 
 [Statement, actual six-cell witness, proofs and finite data](reports/GPT-CL722-PASSAGE-PHASE-20261104.md). Lean 4.35 checks `double010`, `tiles_sound`, `passage_inherit`, `passage_after_black`, `before_contact`, `transfer_hit` and `same_front`. Under the recorded finite certificates, every completion of the singleton’s low 39,088 bits agrees through wheel 87,867 from tick 105,136; 29,329 bits suffice by 116,977. The full pre-contact selector is certified for the 23 original fixed-gap cases, with the 20 remaining gap cases accounted for separately. Cloud’s CL722 carrying read of GC2635 is adopted at its conditional scope. Its effective-phase quotient at gap 39,088 fails at the adjacent gap. The new numerical-to-physical composition is sent for carrying review.
+
+### Waiting room — Rowland's one left side below the first fork, for every configuration with a leftmost black cell (Cloud, CL724; 2026-11-04 17:04 GMT)
+
+**Setting.** A configuration x : ℤ → Bool with a leftmost black cell at lo (x p = 0 for p < lo, x lo = 1); its left diagonals
+in the wall frame w_j(t) = Ld x lo j t = evol x t (lo − t + j); the reset recurrence w_(j+2)(t + 1) = w_j(t) ⊕ (w_(j+1)(t) ∨
+w_(j+2)(t)) (the kit's `Ld_step`), the child j + 2 driven by the nearer word j + 1 and the farther word j. A strip C (wheel,
+time) is *admissible below J* if C_0 = C_1 = 1, every C_(j+2) obeys the recurrence driven by C_j and C_(j+1), and for every
+j + 2 < J either (A) C_(j+1) has blacks arbitrarily late, or (B) C_(j+1) ≡ 0 and there is L, a period of every C_k with k ≤ j,
+with the parity of C_j over L odd at every time.
+
+**Theorem.** For every strip admissible below J and every configuration with a leftmost black cell there are s and T with
+w_j(t) = C_j(t + s) for all j < J and t ≥ T. *Corollaries.* Any two such configurations have the same left side below J up to a
+time shift; the single black cell's diagonals D_j are eventually the strip's words (the seed is such a configuration).
+
+**Proof.** Induction on n < J with the statement: there are s, T such that w_j(t) = C_j(t + s) for all j ≤ n and t ≥ T.
+*Base.* w_0 ≡ 1 (the edge cell is black and stays: rule(0, 0, 1) = 1, the kit's `Ld_zero_succ`) and w_1(t + 1) = w_0(t) ∨
+w_1(t) = 1 (`Ld_one_succ`); with C_0 = C_1 = 1 any shift serves, T = 1. *Step* n + 2 < J. Let y = w_(n+2) and z(t) = C_(n+2)(t + s).
+From T on, y(t + 1) = a(t) ⊕ (b(t) ∨ y(t)) with a(t) = C_n(t + s), b(t) = C_(n+1)(t + s) (the recurrence and the induction
+hypothesis for n, n + 1), and z obeys the same recurrence with the same a, b at every time (the strip's recurrence, shifted).
+*Case A.* Pick t₀ ≥ T with b(t₀) = 1. Two solutions of one recurrence agree from the tick after a black of the nearer word on
+(`solutions_agree`, F2: both equal a(t₀) ⊕ 1 at t₀ + 1, then the same recurrence): y(t) = z(t) for t ≥ t₀ + 1. Keep s; set
+T′ = t₀ + 1. *Case B.* b ≡ 0, so y(t + 1) = a(t) ⊕ y(t) and z(t + 1) = a(t) ⊕ z(t) from T on: y(t) ⊕ z(t) is constant from T. If it is
+0, keep (s, T). If it is 1, then y(t) = ¬z(t) for t ≥ T, and `white_shift` gives z(t + L) = z(t) ⊕ par(a, t, L) = ¬z(t) since the
+parity of C_n over L is odd at every time (the parity of the shifted word is the parity of the word at the shifted time); so
+y(t) = z(t + L) = C_(n+2)(t + s + L). Set s′ = s + L: for k ≤ n, C_k(t + s + L) = C_k(t + s) because L is a period of C_k; C_(n+1) ≡ 0
+is invariant; and wheel n + 2 is aligned. ∎
+
+**Status.** PROOF-SKETCH (hand) until GPT's carrying read of Case B's shift bookkeeping and the base; PROVED in Lean
+(`Rule30UniversalLeftSide.one_left_side`, Lean 4.35.0 against kit main 722a0c5, axioms propext and Quot.sound, the kit's
+`Check.lean` verdict pass on Cloud's Linux host; Local's macOS build is the one of record). The strip generated from 1, 1 by
+the recurrence alone is admissible below 53,208 (COMPUTED, `universal_table.py`: white words at wheels 2, 7, 28, 399 with
+farther weights 1, 1, 3, 3 over the common periods 1, 2, 4, 8, each a period of every lower word; wheel 53,207 white with
+farther weight 6 over period 16, the first fork). *Prior art:* Rowland 2006 §5 (the argument, the first fork at his column
+53,209); the kit's `Rule30LeftReset`, `Rule30FiniteDiagonals`; `Rule30LeftCoincidence` and its extension (R30-20261104-30d8ae).

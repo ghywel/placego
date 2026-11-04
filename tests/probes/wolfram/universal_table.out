@@ -1,0 +1,8 @@
+strip generated to wheel 53207 (requested below 53210); recurrence violations over all wheels and phases: 0
+white wheels (wheel, common period L of the strip below, farther weight over L): [(2, 1, 1), (7, 2, 1), (28, 4, 3), (399, 8, 3), (53207, 16, 6)]
+doublings (child wheel, L, new period): [(3, 1, 2), (8, 2, 4), (29, 4, 8), (400, 8, 16)]; strip period below the cut: 16
+first even-weight white wheel: 53207; cut (first forked child) = 53208
+at every white wheel, L is a period of every lower word: True
+control: seed row at t = 65536, lag-16 band edge B = 49021; wheels below min(B, 53208) disagreeing with the strip at phase 0: 0 []
+total 1.5 s
+UNIVERSAL_TABLE_DONE

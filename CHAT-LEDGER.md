@@ -29142,3 +29142,42 @@ Lean 95% (CL680's census and Rowland's data, re-derived from the recurrence alon
 t = 65,536 agrees with the strip at that phase on every wheel below its lag-16 band edge (about 48,900 wheels). Lean 95%.
 Counterfactual: an even-weight white wheel below 53,207 moves the cut; a mismatch with the actual row means the generated
 strip is not the seed's (which the theorem forbids, so it would be a bug in the generator).
+
+## CL724 addendum — Cloud: the package is written and the Lean is in. P-U1 and P-U2 HELD (the strip to 53,207 from the recurrence alone, white words 2, 7, 28, 399 odd, wheel 53,207 even: the first fork); `Rule30UniversalLeftSide.lean` builds against kit main and passes the kit's `Check.lean` with the standard axioms on this host; hand proof in the PROOFS waiting room; REVIEW-REQUEST to GPT; Local posts on the owner's word (2026-11-04 17:05 GMT)
+
+**The data (`universal_table.py 53210 16`, 1.5 s).** Generated from C_0 = C_1 = 1 by the recurrence alone (forced child after a
+black of the nearer word; the integrator at a white one, with the seed's phase read at t = 4,096): no recurrence violation on
+53,206 wheels × 16 phases; white wheels (wheel, common period L of the strip below, farther weight over L): (2, 1, 1), (7, 2, 1),
+(28, 4, 3), (399, 8, 3), (53,207, 16, 6); doublings at child wheels 3, 8, 29, 400 to periods 2, 4, 8, 16; at every white wheel L is a
+period of every lower word; the first even-weight white wheel is 53,207, so wheel 53,208 is the first fork (Rowland's column
+53,209). **P-U1 HELD.** Control: the seed's actual row at t = 65,536 (lag-16 band edge 49,021) disagrees with the strip at
+phase 0 on none of its settled wheels. **P-U2 HELD.** Status COMPUTED; the strip's admissibility below 53,208 is exactly the
+hypothesis of the theorem.
+
+**The Lean.** `reports/wolfram-agents/submissions/universal-left-side/Rule30UniversalLeftSide.lean` (247 lines): `Admissible`,
+`par_shift`, `Ld_zero_eq`, `Ld_one_eq`, the induction `aligned`, the headline `one_left_side`, the corollaries
+`same_left_side` and `seed_left_side`. Built with Lean 4.35.0 (the release tarball) against a shallow clone of the kit at main
+(722a0c5) on this Linux host: `lake build` 1.1 s; `#print axioms`: propext and Quot.sound on all three headlines; the kit's
+`Check.lean` with `--claim partial --headline ...one_left_side`: verdict **pass**, 58 constants replayed, no new axioms. A
+substitute check under CL710: Local's macOS build and the posting are the ones of record. The proof uses the kit's
+`Ld_step`, `Ld_zero_succ`, `Ld_one_succ`, `white_shift`, `par`, `evol_seed` and our `solutions_agree`; nothing else.
+
+**The package** (same folder): `title.txt`, `abstract.txt` (under 250 words), `essay-prose.md` (eight sections: claim, frame,
+admissible strips and the theorem, the proof, the data, consequences and the realized forks, prior art and credits, what is
+not claimed), `PLAN.md`, `README.md` (Local's build, check and posting steps, the kit README row, the two routes: portal
+entry with the module inline as for the synthesis entry, and the kit PR). PROOFS.md waiting room holds the hand proof;
+PRIOR-ART.md the Rowland §5 entry; RECORD-MAP, PROBES.md and NOW.md updated.
+
+**What would make it stronger, for Local or GPT if time allows before posting:** a kernel-checked instance of `Admissible` for
+the explicit strip (sixteen-bit words from the generator; a small cut such as 401 inside the module, the full 53,208 in a
+`Rule30Certificates/` module if it builds in under a minute). The theorem does not depend on it; the essay says the data check
+is replayed outside Lean and names the certificate as the follow-up.
+
+**REVIEW-REQUEST to GPT (carrying read):** the hand proof in the PROOFS waiting room, in particular Case B's shift
+bookkeeping (that L, a period of every lower word, makes s + L a common shift) and the base (wheels 0 and 1 black for every
+configuration with a leftmost black cell); the abstract's and essay's claims against Rowland §5 (what is his, what is ours);
+and, if GPT's Lean 4.35.0 has the kit, a second build. No posting from here; the owner turns the posting over to Local.
+
+My own pull: the kernel-checked instance (the sixteen-bit word bridge is a page of Lean), then the strip certificate to
+53,208 as the kit's data module; after that, Rowland's "(if in fact they do occur)" as a theorem: a finite row that realizes
+the second branch at 53,208, certified, which would make the fork a theorem and not a census.

@@ -5499,3 +5499,16 @@ GC2633's one-wheel transport (a black at the last common wheel writes one more c
 `healing_bound_from`: the one-update recruitment frontier from an arbitrary anchor), found by GPT's refresh (GC2647).
 Status: known, re-derived here in the wall frame; GC2647's two-update 010 rule (`double010`) is the step beyond it. Filed
 by Cloud in CL723.
+
+## CL724 (Cloud, 4 November 2026): Rowland's one left side (2006, §5) — known as a conjecture with its inductive argument; proved here below the first fork
+
+Rowland, *Local nested structure in rule 30* (2006), §5: Proposition 2 (Wolfram's period-doubling observation) proved for
+rule 30 from any rightful row; the conjecture that "there is really only one 'left side' of rule 30, regardless of which
+rightful initial condition we choose", with the inductive argument in prose (Lemma 3: a bit has a long-term effect on its
+column iff the column to its left is white; unless the nearer column is eventually white the child's period is forced by
+its parents; at a white nearer column with a period increase the period is invariant under negation); the first possible
+failure at his column 53,209 (our wheel 53,208), the next at his 58,288 and 72,577; and "(if in fact they do occur for some
+initial conditions)". CL695's corollary up to phase restated this argument for the eventual cycles. Status: the conjecture
+below the first fork is known as Rowland's argument and is proved here (CL724, `Rule30UniversalLeftSide`), with one common
+time shift for every configuration with a leftmost black cell; the realized forks (§8.60, GC2635) answer his parenthesis.
+Filed by Cloud in CL724 after reading §5 in full.
