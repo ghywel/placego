@@ -88,7 +88,7 @@ Grid[{{"F(87,866) on A0", F[[87867]]}, {"first tick at which the single black ce
 
 **The single seed settles earlier.** Its first exact match to the phase-zero row `A0` on these 87,867 wheels occurs at tick 117,328. The bound for its strip is 176,968. Over the measured range the recursion grows by about two ticks per wheel, while the seed’s actual front grows by about four ticks per three wheels. A wheel can already agree with the strip before the next reset. Determining the worst settling time over all configurations would require a separate argument.
 
-**Against the general bound.** A nonwhite wheel advances after at most fifteen waiting ticks and one move. A white wheel adds zero to the recursion. Thus so the same recursion has the linear bound `1 + 16 j`. That is the form of the kit's `frontBound_le_linear` at period 16, a lemma about the recursion on the seed's own history. At wheel 87,866 it is 1,405,857, about eight times the evaluated front.
+**Against the general bound.** A nonwhite wheel advances after at most fifteen waiting ticks and one move. A white wheel adds zero to the recursion. Thus the same recursion has the linear bound `1 + 16 j`. That is the form of the kit's `frontBound_le_linear` at period 16, a lemma about the recursion on the seed's own history. At wheel 87,866 it is 1,405,857, about eight times the evaluated front.
 
 **Beyond the cut.** 87,866 is where these rows stop. Extending the four-strip theorem requires proofs of the wider rows’ returns and branch conditions. The measured single-seed period doubles to 32 at wheel 87,867. Following that branch also requires a period-32 version of the walk.
 

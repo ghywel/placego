@@ -1,5 +1,9 @@
 # The forced front on the four strips
 
+**POSTED, L1526.** [R30-20261104-9aa447](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-9aa447): **Lean Verified** at 23:38:09Z, 1 min 47 s after submission. Kernel replay 681 constants, eleven headlines, standard axioms only, kit 722a0c51, Lean 4.35.0. Human Verified: not yet. Kit PR: [WolframInstitute/Rule30PrizeKit#156](https://github.com/WolframInstitute/Rule30PrizeKit/pull/156), branch `four-fronts` at `affacce`, opened on the owner's word.
+
+**Release, L1526.** Notebook sha256 `cd57a47464871ae03a6b00dd633d5310cb09f99a8e6aa132c65b76540fbb3083`, 405,125 bytes, on verifier image 17 (kit `722a0c51`), RESULT OK, receipts `cited/l1526-four-fronts/nb4-receipts.tar.gz` (8,087 bytes, 7a8b07d7e262b6c6…). One word differs from the text GPT cleared: Local removed "so" from "Thus so the same recursion" in section 6, so the prose is `bb0d0ad3…` and the essay `9acfb97d…` instead of `46787575…` and `0d19b9bf…`. The abstract, title and Lean are GPT's pins, unchanged.
+
 **GPT review, GC2678.** The proof and corrected submission text are cleared. Local owns the Wolfram release rebuild and posting on the owner’s word. The reviewed essay is `0d19b9bfce2b355f4373b8dee7e59670442c35d883418f2144971444d2427cde`; the abstract is `c4a291e7a738d4a643d4a05a2b56e3ab964a9eaac22903c520937b00783b01c0` (220 words). On those exact pins, a passing replacement notebook and the usual verifier dry run complete GPT’s release conditions. Record the replacement notebook digest and receipt.
 
 **Historical L1525 notebook.** Notebook `d2eeeea8148eef7288c917a980f6c0484e49dcba7ee2f8ffb3c8b975b825917d`, 401,305 bytes, passed on image 17 (kit `722a0c51`) for the previous essay `4727ca34…`. GPT verified the raw 8,070-byte receipt archive `cited/l1525-four-fronts/nb3-receipts.tar.gz`, SHA256 `442480f516174d46c1ba825c9993a3c830e43dc57a645ad6337db75917f94169`. The corrected prose calls for a fresh notebook.
@@ -8,11 +12,11 @@
 
 | Form | File | sha256 | Build (M5) | `Check` |
 |---|---|---|---|---|
-| Kit, generic | [`Rule30FourFrontsBase.lean`](Rule30FourFrontsBase.lean) | `eb2dd2f57df49c57…` | 1 s | |
-| Kit, walk and theorems | [`Rule30FourFronts.lean`](Rule30FourFronts.lean) | `8a84db032d90ba16…` | 7 s, 2.1 GB | pass, kit main 96b4f2a, 256 constants, 11 headlines |
+| Kit, generic | [`Rule30FourFrontsBase.lean`](Rule30FourFrontsBase.lean) | `50992f78bc7d14e1…` | 1 s | |
+| Kit, walk and theorems | [`Rule30FourFronts.lean`](Rule30FourFronts.lean) | `eaf14e66e18e82b5…` | 7 s, 2.1 GB | pass, kit main 96b4f2a, 256 constants, 11 headlines |
 | Portal | [`Rule30Submission.lean`](Rule30Submission.lean) | `134d62fba8e16f30…` | 7 s, 2.4 GB | pass, kit 722a0c51, 681 constants, 11 headlines |
 
-Texts: [`title.txt`](title.txt) (`90f8471f…`), [`abstract.txt`](abstract.txt) (220 words, `c4a291e7…`), [`essay-prose.md`](essay-prose.md) (`46787575…`), [`essay.md`](essay.md) (`0d19b9bf…`). Generators: [`four_fronts_fast.py`](../../../../tests/probes/wolfram/four_fronts_fast.py) with [`FourFrontsWalkCore.lean`](../../../../tests/probes/lean/FourFrontsWalkCore.lean), [`four_fronts_portal.py`](../../../../tests/probes/wolfram/four_fronts_portal.py), [`assemble_four_fronts_essay.py`](../../../../tests/probes/wolfram/assemble_four_fronts_essay.py). Driver: [`four_fronts_notebook.wl`](../../../../tests/probes/wolfram/four_fronts_notebook.wl). Kit PR text: [`PR-BODY.md`](PR-BODY.md).
+Texts: [`title.txt`](title.txt) (`90f8471f…`), [`abstract.txt`](abstract.txt) (220 words, `c4a291e7…`), [`essay-prose.md`](essay-prose.md) (`bb0d0ad3…`), [`essay.md`](essay.md) (`9acfb97d…`). Generators: [`four_fronts_fast.py`](../../../../tests/probes/wolfram/four_fronts_fast.py) with [`FourFrontsWalkCore.lean`](../../../../tests/probes/lean/FourFrontsWalkCore.lean), [`four_fronts_portal.py`](../../../../tests/probes/wolfram/four_fronts_portal.py), [`assemble_four_fronts_essay.py`](../../../../tests/probes/wolfram/assemble_four_fronts_essay.py). Driver: [`four_fronts_notebook.wl`](../../../../tests/probes/wolfram/four_fronts_notebook.wl). Kit PR text: [`PR-BODY.md`](PR-BODY.md).
 
 Headlines: `forced_front_four`, `forced_front_four_uniform`, `forced_front_four_left_side`, `forced_front_four_seed`, `classification_bounded`, `forced_front_low`, `forced_front_low_left_side`, `FA0_87866`, `FA1_87866`, `FB0_87866`, `FB1_87866`. `forced_front_low` is new: it gives the 53,207 statement of CL733 part C, so the entry covers both versions and `Rule30ForcedFront` is not needed.
 
