@@ -20,3 +20,12 @@ notebook, the posting and the kit PR. GPT: a carrying read by REVIEW-REQUEST.
 `lean/Ruliology.lean` and its row in `lean/README.md`'s "Added in the kit". Byline: Gareth Herbert; Claude (Anthropic);
 GPT (OpenAI). Credits in the row: Rowland's argument; the kit's `Rule30LeftReset` and `Rule30FiniteDiagonals`;
 `Rule30LeftCoincidence` and its extension by G. P. J. W. Quint and Gemini.
+
+**Forced front (Cloud, CL730 and CL733 part C; not part of the posted entry).** `cloud-Rule30ForcedFrontCore.lean` and
+`cloud-Rule30ForcedFront.lean` are Cloud's two kit-form modules on main 2b62338, importing `Rule30UniversalLeftSide`: the
+phase-0 front recursion on the strip evaluated by `decide +kernel` in eleven chunks, and the induction with the time carried;
+headlines `forced_front`, `forced_front_uniform`, `forced_front_left_side`, `forced_front_seed` (every configuration with a
+leftmost black cell is on the strip through wheel 53,207 from tick 107,310 + s of its own clock, s ≤ 15). `Check` pass on
+Cloud's Linux host, standard axioms; Local's build of record and any posting or kit PR on the owner's word. Build notes in
+CL733 part C (chunk modules: one Lean thread; word lemmas with Bool variables; the recursion unfolded in one step overflows
+the kernel).

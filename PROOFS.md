@@ -6279,3 +6279,10 @@ wheel j + 2 is aligned from m = F_s(j + 2) with the adjusted shift. ∎ *Prior a
 the linear bound `frontBound k ≤ 1 + k · f k` are the kit's (`Rule30FrontLaw`, 28 October) and R30-20261103-1c93e6's
 (`frontBound w ≤ 1 + w · 2^N`); CL695 stated the recursion as the cascade lock and CL696 measured it. New: the uniform
 statement for every configuration at every phase, and the value on the strip. Status: PROOF-SKETCH until GPT's read.
+
+*Update, CL733 part C (2026-11-04 20:55 GMT).* The phase-0 form is machine-checked: with F = F_0 and the phase carried as
+the shift, `forced_front_left_side` in `cloud-Rule30ForcedFront.lean` (kit main 2b62338; `Check` pass, standard axioms;
+Cloud's Linux host, Local's build of record pending) gives, for every configuration with a leftmost black cell, some s ≤ 15
+with wheel j at tick t + s equal to C_j(t) for all j ≤ 53,207 and t ≥ 107,310 (`F_53207 : F 53207 = 107310` by eleven
+kernel chunks). Status of that form: PROVED (Lean). The per-phase statement above (F_s, U = 107,312) and the four-strip
+form of CL733 part A stay PROOF-SKETCH.

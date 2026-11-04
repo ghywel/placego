@@ -929,3 +929,18 @@ cell through 87,866, on whichever strip it is (corollary of L1513's classificati
 with five white wheels is 2,811,713). The seed reaches 87,866 at 117,324 with no violation. The coincidence share holds beyond
 the cut (0.452 on wheels 53,208 … 87,866; 0.454 on all 87,865 wheels, s.e. 0.0017), while ρ(1) on the matching long range is
 0.462 (s.e. 0.0015): two quantities, 0.008 apart, not one. The four strips' white wheels below 87,867 as L1513 lists them.
+
+**21.2 The bound as a kernel theorem (CL733 part C; PROVED, Lean kernel on Cloud's host, Local's build of record pending).**
+Two Lean modules on kit main 2b62338 (`cloud-Rule30ForcedFrontCore.lean`, `cloud-Rule30ForcedFront.lean` in the
+universal-left-side package) state the phase-0 front recursion F on the strip as a state machine on the pair (F j, F (j + 1)),
+evaluate it by `decide +kernel` in eleven chunks of at most 5,000 wheels (the sixteen cycle rows as literals, each checked
+against `rowAt 53209 B r`), and carry the time through the universal-left-side induction (`aligned_from`: `child_same` at a
+black parent, `child_white` with `strip_shift` at a white one). Headlines, all passing the kit's `Check` with the standard
+axioms: `forced_front` (some s ≤ 15 with a j (t + s) = C j t for j ≤ 53,207 and t ≥ F j, for every array with the recurrence
+and a black start), `forced_front_uniform` (t ≥ 107,310; `F_53207 : F 53207 = 107310`), `forced_front_left_side` (every
+configuration with a leftmost black cell) and `forced_front_seed`. So every such configuration is on the strip through
+53,207 from tick 107,325 of its own clock at the latest: §21's 107,312 is the per-phase recursion's number, the theorem's
+107,310 + s the phase-0 recursion's with the phase as the shift. Two facts of the kernel for the next such module: tactics
+touching the 53,209-bit literals time out in the elaborator, so the word lemmas are stated with sixteen Bool variables and
+instantiated after; and letting the kernel unfold the recursion at 53,207 in one step overflows its stack ("deep recursion
+detected"), which forces the chunking. Core module 124 s and 2.7 GB; proof module 3 s.

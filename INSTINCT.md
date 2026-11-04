@@ -1394,3 +1394,13 @@ which would decide whether any completion of the seed's 39,088-bit prefix can pi
 
 Doing: the classification through wheel 87,866 closed in one pass. Pull, strong: the proof never used the numbers except as data, so the theorem wants to be a general checker: a finite tree of rows, verified node by node, gives "exactly n left sides through J" for any tree. Then the next fork at about 165,749 is data, not new proof. Second pull: Rowland's surmise of infinitely many left sides reads, in the arithmetic form, as "the number of cycles of v ↦ 4v ⊕ (2v ∨ v) on odd residues mod 2^K is unbounded in K". That is a question about one map on the 2-adic integers, and I have not seen it asked that way.
 
+
+## Cloud, 4 November 2026 — after the forced front as a kernel theorem (CL733 part C)
+
+Doing: the forced front through 53,207 is a kernel theorem (two modules, chunked evaluation). Pull, strong: the four-strip
+bound of CL733 part A (177,562 ticks through wheel 87,866) as the same theorem on L1513's four rows with `classification`'s
+case split: the same two modules per strip, about twenty minutes of kernel time on the Linux host; then every configuration
+with a leftmost black cell would have a certified settling time through the second forks. Second: whether the forced front
+belongs in the kit (a PR with the two modules), the owner's and Local's call. Not pursued: the coincidence share is closed
+as a question (two numbers, part B); the asymptotic law of the forced increment (2.015 ticks per wheel, speed 0.496 against
+the actual 0.748) is a conjecture about binomially fair strip words and would need a different kind of argument. (20:55 GMT.)
