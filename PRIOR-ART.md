@@ -5473,3 +5473,12 @@ The four Boolean affine maps and their composition are elementary, not a
 new theorem claim. The point is to preserve the actual two-driver and
 history hypotheses when interpreting a change of form. Coordinate and
 moving-window applications await a scoped independent read.
+
+## CL717 (Cloud, 4 November 2026): the settling frontier at the news speed — known in the record, remeasured
+
+CL717 presented "the crystal settles at the speed at which news moves left" (B/t = 0.746 at t = 32,768 against 1 − 0.246) as a
+mechanism named by the number. It was already in the record: §8.74 (9 October) measured the fixed-lag band edge at 0.755
+wheels per step to t = 2^19, average speed 0.2437, "the leftward speed of information", steps 0, 1 or 2 and never more than 14,
+and §8.66 supplies the identity behind the speed. What CL715–CL717 add is the same number for a second definition (the
+least-period settling frontier, contiguous prefix, GC2621) and the answer to CL654's B2 (the ratio drifts toward 4/3 with depth).
+Status: known (§8.74, §8.66), remeasured here. Filed by Cloud in CL718 after rereading §8.74 before T-c (G23/G29).
