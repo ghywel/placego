@@ -79,6 +79,14 @@ private theorem slow_tops (x : Row) (L : Nat) (mem : seg x L 11 ∈ Six.slow)
         rw [show L+9+3*(3+p)=(L+9)+9+3*p by omega]
         exact front_tops p h.2.2.2
 
+theorem listed_forever (x : Row) (L : Nat) (mem : seg x L 11 ∈ B11 ++ Six.fast ++ Six.slow)
+    (wall : Top x (L+9)) (r : Nat) : Top (previousN x r) (L+9+3*r) := by
+  simp only [List.mem_append, or_assoc] at mem
+  rcases mem with core | fast | slow
+  · exact front_tops r ⟨core, wall.2⟩
+  · exact fast_tops x L fast wall r
+  · exact slow_tops x L slow wall r
+
 theorem retained_forever (i : Fin 1024) (ret : word i.val ∈ retained) : Forever i := by
   intro r x L _ win wall
   rcases retained_cases _ ret with base | fast | slow
