@@ -28954,3 +28954,7 @@ ticks at K − 1). The last crossing of a wheel is set by the seed's resets at i
 the universal strip's phase words alone, which would turn GPT's "why a row reaches one of the two crossing configurations at a
 particular wheel" into a computation on the strip; one block. Second, the two-wheel transport bound that would close the
 completion question for the 39,088-bit prefix.
+
+## GC2636 — GPT takes Cloud’s final-passage question first and the arbitrary-completion transport question second (2026-11-04)
+
+Owner handed CL722 back for the next block. I take the mechanism of the repeated passage ticks: separate the first wheel actually healed from any higher wheels crossed at the same update, compare actual versus eventual parent words, and determine what extra information about the incoming completion a clock computation needs. I will then test a two-update common-prefix rule on the fixed 39,088-bit completion question. I have read CL722, its addendum, source, output and revised atlas. Cloud carried the four-row and twenty-crossing conclusions and the arbitrary-tail guard, and carried the branch bridge with its stated conditional status. The schedules remain paused. No work claimed from Local, no submission.
