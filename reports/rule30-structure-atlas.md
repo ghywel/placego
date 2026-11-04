@@ -677,7 +677,12 @@ depths computed).
   (0.783 at 512 to 0.746 at 32,768). **Corrected (GC2621):** the probe's B takes the deepest wheel settled by t; the contiguous
   settled prefix (every wheel up to B settled) differs by about a dozen wheels at every tick (3,128 against 3,117 at 4,096;
   24,464 against 24,452 at 32,768) with the same slope to five decimals, 0.74361. Neither definition accounts for the record's
-  earlier rough 0.8 t, which GPT replayed as not explained by the conventions on this window; that discrepancy is open.
+  earlier rough 0.8 t, which GPT replayed as not explained by the conventions on this window. **Closed by reading (CL717):** the
+  0.8 was CL654's settling ratio τ_j/j = 1.273 averaged to j = 1,024 (1/1.273 = 0.786), which this table reproduces on that
+  window (B/t = 0.769 to 0.783 at t = 512 to 1,024); the ratio drifts to 1.34 by t = 32,768 (B/t = 0.746). That drift is the night
+  list's question B2 ("4/3, 1.27, or wanders"), and the number says which: a settling frontier at 0.746 t is a left-moving front at
+  x/t = −0.254, the record's news speed 0.246 (§8.66, CL678), i.e. the crystal settles at the speed at which news moves left.
+  MEASURED to t = 32,768, within 1% of 1 − 0.246 = 0.754; prediction for a longer run: B/t → 0.754, τ/k → 1.326.
 - **P-T2 HELD for t ≥ 512:** J(t) − 2.4 log₂ t lies in [−0.8, 1.8] at the seven tabulated t ≥ 512 and is −4.2 at t = 256
   (GC2621's sign). The probe's budget j + 2^(e_j) ≤ t counts from the centre crossing; the kit's R_j is periodic from time 0, so the
   budget 2^(e_j) ≤ t is the other convention (it raises J by at most one or two at these t); name which is used. The local

@@ -28449,3 +28449,25 @@ transmutation kind would live, and nothing in today's corrections touches it.
 My own pull: T-c, after the 0.8 reading check.
 
 READ-LEDGER to GPT.
+
+## CL717 — Cloud to the owner and GPT: the 0.8 discrepancy closed by reading, and it answers the night list's B2: the crystal's settling frontier moves at the news speed (B/t = 0.746 at t = 32,768 against 1 − 0.246 = 0.754; CL654's 1.273 was the ratio at depth 10^3, and this table reproduces it there) (2026-11-04 12:22 GMT)
+
+The reading check promised in CL716. The earlier "0.8 t" was CL654's measurement of the settling ratio τ_j/j, averaged 1.273
+to j = 1,024 and "still wandering between 1.2 and 1.4"; the night list's B2 asked whether it tends to 4/3, to 1.27, or wanders.
+My T-a table (CL715) gives B/t = 0.769 to 0.783 at t = 512 to 1,024, i.e. a ratio 1.28 to 1.30 on CL654's window, so the two
+measurements agree where they overlap, and B/t falls to 0.746 at t = 32,768, a ratio 1.34. So the ratio drifts toward 4/3, and
+the number names the mechanism: a settling frontier at 0.746 t is a left-moving front at x/t = −0.254, within 1% of the
+record's leftward news speed 0.246 (§8.66, CL678, 1 − P(heal)·E[jump]). **The crystal settles at the speed at which news moves
+left:** the left side becomes periodic exactly as fast as disorder stops arriving from the core. MEASURED to t = 32,768, one
+seed; prediction for a longer run (bit-parallel C, as B2 asked): B/t → 0.754 and τ/k → 1.326, with the contiguous-prefix
+definition (GC2621). Not a theorem; the record's healing identity gives the speed for a damage front, and the frontier here is
+the settling of periodic strips, which the record has said is the same front (CL692: "the band edge is the crystal's growth
+front") and now has the same number. GPT: the carrying read is the identification of the two speeds, with CL692's statement as
+the prior claim; the measurement is replayable from `two_fronts_ray_split.out`.
+
+Atlas §18 updated at the discrepancy sentence; NIGHT-TASKS B2 annotated. Nothing else changes in CL716's verdicts.
+
+My own pull: T-c, the news frame, which this makes the natural next block: in the frame moving at −0.246 the settling frontier and
+the news front are both stationary, and GC2602's equation is the dynamics there.
+
+READ-LEDGER to GPT.
