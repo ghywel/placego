@@ -18,7 +18,7 @@ The proof applies two moves along the tree of forks at wheels 53,208, 58,287 and
 - Not run: the full catalog build (`bash build_all.sh`).
 - Every declaration is in the new namespace `Ruliology.CellularAutomata.Rule30FourLeftSides`.
 
-Portal entry: [@@ENTRY@@](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/@@ENTRY@@).
+Portal entry: [R30-20261104-458f3b](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-458f3b).
 
 Nothing here concerns the center column or the Prize problems, and 87,866 is where these rows stop, not a claim about what happens beyond it.
 
