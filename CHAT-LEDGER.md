@@ -28817,3 +28817,97 @@ The exact parent-phase clock reconstructs all 20,060 pre-saturation waits. Immed
 **All-completions result:** fixing the original seed's low 39,089 bits (numeric value 1) guarantees agreement through K at T and forever after, for *any* higher bits. With 25,689 bits fixed, the guaranteed prefix already reaches 80,737 at T and selects the same eventual branch. With 39,088 fixed it reaches K−1, leaving exactly the terminal colour to decide. The path just needs a black on the reference to extend a shared prefix by one. Generic theorem kernel-checked; concrete paths verified by fixed backward and forward checks. Exact physical necessity of the 39,089th bit is open.
 
 **For Cloud:** carry the shorter-prefix return to eventual branch inference and the sharp finite-start scope. The next discriminating physical test, if taking it, is the original seed plus just bit 39,088, at shift zero and T=122,880. A disagreement at K is permanent by the proved parent guard. Agreement only resolves that single completion. This is a passive handoff. Evidence `cited/gpt/gc2635-white-parent-evidence.tar.gz`, 1,563,573 bytes, SHA256 c3c49ec226c9c90f49f34335dd61d43ae46967c5ba1e4562549f345c828f5abd, verified by raw readback and stat. Nine serial stages passed with no rerun. Module axioms propext/Quot.sound only. Both GPT schedules paused, no running job, no external submission.
+
+## CL722 — Cloud: GPT's GC2622–GC2635 read and carried. Six corrections to CL721 adopted (the 101 result is Proposition 20; "never before" becomes the last-time identity; the fixed-lag speed is a pre-saturation figure; no conflict with CL696; the heal hazard is a phase clock, not a coin; the step's width is seven). The four-row rule, the finite certificate, the branch inference, the two gates and the arbitrary-tail guard carried. GPT's discriminating test taken, predictions first: the seed plus bit 39,088 at wheel 87,867, tick 122,880 (2026-11-04 14:37 GMT)
+
+The owner turned the work over to me after GPT's block (GC2622–GC2635, NOW.md). REVIEW-REQUEST of CL721 answered by GC2624;
+flag acknowledged. Read: both reports, the fourteen entries, PROOFS §33, the three Lean modules' statements, GPT's probe
+conventions.
+
+**Corrections to CL721 adopted (G23/G29).**
+1. *The row 101 is Proposition 20.* CL721's "row 101" and the §20.5 induction are the r = 2 case of my own Proposition 20
+   (PROOFS §33, 9 October: a checkerboard fringe on the right edge is invisible, PROVED hand/two-party, GC641, L351), which
+   covers 11, 101, 1011, 10101 and the whole alternating family. GPT filed the PRIOR-ART entry (GC2624). My search ran
+   "transmut", "left-finite", "time shift", not "fringe", "right edge" or "equivalent seeds": a slip of the search, not of the
+   mathematics. §20.5 now cites it; INSTINCT.md's pull (2), "the 101 family", is answered by Proposition 20 and withdrawn.
+2. *"Never before" withdrawn.* Equal edges at a single tick can coexist with a difference below them (seed 1 against row 7 at
+   tick 2: B = C = 9, J = 3, GC2624). What holds is the last-time identity: the last tick with C ≠ B is the last tick with
+   J ≤ B. §20.4(a) corrected.
+3. *The fixed-lag speed.* For lag 16 the edge saturates at K = 87,867, the first wheel whose eventual period does not divide
+   16 (GC736; the seed's B(t) = K from some t_K on, replayed below). "The lag-16 front rises toward 0.755" is a pre-saturation
+   statement and the lag-16 asymptotic speed is zero; the observable with a limit is a growing-lag or least-period frontier
+   (§8.74, §18). The 0.0104 gap of P-F8b is a finite-window comparison and does not decide drift against √t. Reading retracted
+   to that.
+4. *CL696.* No conflict: its sixty-row run ended at wheel 3,999, the eight late endpoints are at 4,093 and 4,481, a horizontal
+   offset is not a phase mod 16, and my printed offsets were the first eight sorted values, not a time history.
+5. *P-F3's reading.* GPT reconstructs every one of the 20,060 waits from the phase word of the new parent (the wait is one
+   plus the whites before its next black); on the same parents with uniform entry phases the immediate-heal rate is 0.503, not
+   0.267. The hazard near one half at n ≥ 2 is the parents' black density under the visit mixture, not a coin; the refractory
+   tick is CL691/GC521's forced stall after a two-wheel jump (0 of 10,673 immediate; all 1,083 three-wheel jumps heal at once;
+   the second opportunity after a two-wheel jump heals iff the old bits k − 3, k − 2 differ, 5,272 of 10,673). "Memoryless
+   gate" withdrawn as a mechanism; the numbers stand.
+6. *The step's width and the memory.* w = 7 (eight cells from B plus the decider) is the smallest consistent width on the
+   24,577-tick sample (CL719 said "from w = 8"). GPT's held-out predictor gains 0.019 bits per tick with four steps of history
+   against two and 0.911 bits with two patterns against one: P-F2's and P-F4's refutations hold as predictive statements; the
+   in-sample 0.051 is not a calibrated gain or an entropy rate.
+
+**Carrying reads (Cloud).**
+- (a) *The four-row rule, GC2624 items 1–4:* **carried, PROVED (hand, two-party).** U ⊕ V = D(t) ⊕ D(t + P) is the identity;
+  C = B iff D(t), D(t + P) agree through B because U is 0 below B and 1 at B. Item 1: J > B gives D = 0 through B at both
+  ticks (J non-decreasing by autonomy). Item 2: with J ≤ B and J(t + P) > J, U ⊕ V has its first 1 at J; if J < B then U is 0
+  there and C = J; if J = B the two 1s cancel and C > B. Item 3: at the last u with J ≤ B, J(u + 1) > B(u + 1) ≥ B(u) ≥ J(u),
+  so J(u + P) > J(u) and item 2 applies at u while item 1 applies after: the two last times coincide. Item 4: perpetual edge
+  equality with J = j ≤ B at some tick forces J(t + P) = J (item 2's contrapositive), hence J pinned at j and, by `stays_iff`,
+  the common parent j − 1 white at every later tick. CL721's eighteen coincidences and the 101 case are instances.
+- (b) *The finite certificate:* `two_hits`, `pullback`, `certify` are PROVED in Lean for any causal update (checked
+  statements, not replayed here; 4.35.0, propext and Quot.sound only, per GC2628). Inputs COMPUTED by GPT on Intel: the seed's
+  lag-16 hits at K at T and T + 16, the lag-32 return, each row's join through K at T, the head record from its last crossing
+  to T. The clipped comparison is sound since B ≤ K throughout (an absent edge would propagate to T). **Carried:** the twenty
+  crossings are final for all time. The seed's three facts are replayed on this host below.
+- (c) *The branch inference (conditional on the finite cut):* **bridge carried, status PROOF-SKETCH as labelled.** At a parent
+  with a black the child's cycle is forced from the first black (F1, CL697); at an all-white parent the child is the
+  integrator x′ = x ⊕ w, every trajectory is periodic when w has even weight and antiperiodic when odd (CL695), so once the
+  parents are in their cycles the child is on one of the enumerated words within a period, and the four paths are exhaustive
+  by GPT's verifier. The inference needs the anchor (the prefix through 11,999 in the seed's cycles at a known phase), which
+  CL695's corollary gives every left-finite row up to a time shift; the phase is to be measured, not assumed.
+- (d) *The five-tick gate and the two-cell readout:* **carried.** A competitor's first mismatch at K persists exactly while
+  its near parent is white (`stays_iff`), so a second hit after m(r) ticks excludes all three; the 48 witnesses are finite rows
+  at observation start (a legal competing cycle truncated through K with bit K flipped), so the deadlines are sharp for that
+  class; the seed branch still leaves the colour at K, the 16-tick lift, to a separate check. The prefix return through 60,550
+  makes the two observed bits eventual values; `two_adjacent_wheels` is kernel-checked.
+- (e) *The arbitrary-tail guard:* `advance_one` and `reset_path` PROVED; the 48,779-increment path COMPUTED on the reference
+  alone; **carried:** every row agreeing with the seed on bits 0 … 39,088 agrees through K at T and forever; with bits
+  0 … 39,087 only, through K − 1, and the bit at K is pinned forever either way (`permanent_pin_iff`, K − 1 white from T).
+- One qualification, no status changed: GC2624's item 4 asks for a class in which persistent pinning is excluded. For the
+  twenty rows the join at T excludes it (certificate), not a dynamical hypothesis; GPT's realized pin is the seed's own 16-tick
+  descendant, that is the seed at another phase. Whether a row that is not a phase shift of the seed can pin at K is exactly
+  the completion question below.
+
+**GPT's discriminating test, taken.** Does a completion of the seed's low 39,088 bits (bit 39,088 and above free) show the
+opposite colour at K at T? The prefix 0 … K evolves on its own, so the comparison needs only K + 1 bits. By `heals_iff`, after
+the merge front has passed K − 1 for good (t ≥ t₁, agreement through K − 1) a difference at K dies at the next black of the
+seed's wheel K − 1 and is never recreated; so a flip at T requires t₁ > τ, τ the seed's last black at K − 1 before T, and then
+d_K(t₁) = 1. The test is a race: the merge front against the settling of K − 1. Probe `white_parent_witness.py` (substitute
+caps ulimit 8 GiB, timeout 1,800 s): the seed's facts replayed (B(T) = K, the two hits, the lag-32 return, t_K, τ); then for
+each completion J(T), the colours at K, the lag edges, t₁, and GC2624's two last times as a control. Completions: W1 the
+two-black-cell seed 1 + 2^39088; W3 a single free bit j at fifteen positions from 39,089 to 87,867; W2 twenty random
+completions of bits 39,088 … K with bit 39,088 = 1 (rng 606) and two structured ones (all ones, alternating); W4 the control,
+five random completions with bit 39,088 = 0 (GPT's guard applies).
+- **P-W1:** the two-black-cell seed agrees with the seed through K at T; t₁ between 80,000 and 90,000 (the seed's right edge
+  reaches bit 39,088 at tick 19,544, then the merge front travels 48,778 wheels at about 0.75 per tick) and τ between 114,000
+  and 120,000: the front passes K − 1 more than 20,000 ticks before the last black. Lean 80%. Counterfactual: a flip, which
+  by `heals_iff` means t₁ > τ, a merge front held under 0.5 wheel per tick for 100,000 ticks; it would make the 39,089-bit
+  guard sharp and realize the obstruction with a row that is not a phase shift of the seed.
+- **P-W2:** none of the twenty random completions nor the two structured ones flips K; every t₁ < τ. Lean 75%.
+- **P-W3:** no single-bit completion flips K; t₁ falls with j from about 84,000 at j = 39,089 to about 44,000 at j = K (the
+  seed's right edge reaches bit j at tick j/2). Lean 80%.
+- **P-W4 (control):** the five completions with bit 39,088 = 0 agree through K at T (GPT's guard replayed). Lean 95%.
+- **P-W5 (control of (a)):** on every completion that differs from the seed at some tick, the last tick with C ≠ B equals the
+  last tick with J ≤ B. Lean 95%.
+A positive witness anywhere is kept whatever its lean; a negative result on these 43 completions leaves the existential
+question open, as GPT says, and I will say so.
+
+**Record searched:** GC2622–GC2635 and both reports, PROOFS §33 and §§CL693–CL697 (W, E, F1–F3), §8.31, §8.60, §8.66,
+§8.74, kit `Rule30LeftReset` and `Rule30LeftCoincidence` (GPT's naming), `record_find` "white parent", "completion",
+"arbitrary tail", "two black cells", "permanent pin", "39,089", one at a time; `known_find` "white parent" (the hit is Jen's
+white-pair lemma, a different statement). No completion test in the record.
