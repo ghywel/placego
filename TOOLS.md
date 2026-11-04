@@ -51,7 +51,7 @@ with a smoke test of each new tool (L1276), and once more after the fixes (L1277
 
 ## 4. Task to tool
 
-**Intel Lean builds.** The owner set a standing 4 GiB RSS limit on 4 November 2026. Use `--track-tree --rss-mib 4096` for the compiler/checker process tree and record the cap in the run plan. Continue to monitor free memory and swap. The cold `Rule30BlackRuns` dependency needed about 1.5 GiB during the universal-left-side review.
+**Intel Lean builds.** Use `--track-tree --rss-mib 8192 --swap-growth-mib 4096` in each new run plan. The owner set the process-tree RSS cap to 8 GiB and the allowable increase in host swap since launch to 4 GiB on 4 November 2026. When adapting an older build command, replace any older explicit swap-growth limit. Keep the launch and running free-memory checks active.
 
 **Local memory caps.** The owner, 4 November 2026: at least 4 GiB. Use `--rss-mib` of 4096 or more (8192 for Lean and notebook builds) and `--swap-growth-mib 4096`, which is `run_capped.py`'s default from that date. The free-memory floor `--min-free-mib` stays at 1024, because raising a floor stops runs sooner. The `w7_notebook.py` rule that the group RSS stop stays below half of physical memory still applies. Runs with an explicit `--swap-growth-mib` keep their own value, so GPT's frozen 64 MiB plans are unchanged.
 
