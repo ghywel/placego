@@ -71,8 +71,8 @@ theorem decode {x y : Row} {d : Nat}
     (h : ∀ t, t ≤ 2 * d → readRay x t = readRay y t) :
     Below x y (d + 1) := by
   intro j
-  induction j using Nat.strongInductionOn with
-  | h j ih =>
+  induction j using Nat.strongRecOn with
+  | ind j ih =>
     intro hj
     apply (spot_iff (fun a ha => ih a ha (by omega)) (2*j)).mp
     have he := h (2*j) (by omega)
@@ -141,7 +141,7 @@ theorem top_step {x : Row} {b : Nat} (h : Top x b) : Top (step x) (b+2) := by
 
 theorem top_run {x : Row} {b : Nat} (h : Top x b) (r : Nat) : Top (run x r) (b+2*r) := by
   induction r with
-  | zero => simpa using h
+  | zero => simpa only [run, Nat.mul_zero, Nat.add_zero] using h
   | succ r ih =>
     rw [show b+2*(r+1) = (b+2*r)+2 by omega]
     exact top_step ih
