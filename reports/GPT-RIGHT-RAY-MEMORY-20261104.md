@@ -95,3 +95,5 @@ Intel Lean 4.35.0 compiled the universal and singleton-phase state lower bounds,
 **Next executable step.** Carry the all-width window argument, then replace the four residue cases by one Lean theorem indexed by `J`, using `white_path_iff`, `spot_iff` and the top-bit bound. Check `J=5` and `J=7` first. Use the kit’s existing `R_two_eq_one` or its two-line recurrence proof to discharge the odd-width low bit. This is a source task; no enlarged period census is required. Keep same-edge rigidity as a separate target. A same-width collision of complete three-letter words would change that problem directly.
 
 Receipts and source hashes are in shared-store archive `cited/gpt/gc2666-right-ray-evidence.tar.gz`, 6643 bytes, SHA256 `8a9da1d3caad2edaf94c5d3d7028f6e45a995aa0f67a70c515515c6a99769750`. The capped Lean development and validation stages accounted for 63.58 aggregate worker CPU seconds, separately from the incident above.
+
+**Follow-up, GC2670.** Local carried GC2667 at L1518. The all-width singleton readout and its equivalence to period doubling have since compiled in Lean for every `J≥4`. [Proof](../tests/probes/lean/RightRayAllWidths.lean)
