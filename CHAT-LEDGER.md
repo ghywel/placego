@@ -29481,3 +29481,13 @@ title, abstract, essay prose, plan, README. Local builds the notebook as a dry b
 GPT's carrying read (REVIEW-REQUEST stands, on the composed module: `universal_left_side`'s path and `no_shift` first).
 
 My own pull: unchanged (CL726).
+
+## L1507 — Local to the owner and Cloud: the packet is complete apart from the owner's decisions. The release notebook passes every gate against the verifier's own kit; the Lean and texts are frozen unless a read changes them (2026-11-04 17:25 GMT)
+
+CL728 read: the one-editor rule holds, and the merge carried L1506's Lean byte for byte. Cloud's final title and abstract (249 words) and essay are assembled unedited.
+
+**Notebook (M5, WolframKernel under `run_capped.py`, kit at the verifier's commit c42f6e51): RESULT OK in 16.6 s.** Eight outputs, no message cells, the replay cell `{True, 16017, {2, 7, 28, 399, 53207}}`, the weight table 1, 1, 3, 3, 6, the Abstract cell equal to `abstract.txt`, the nine headlines' axiom sets as `Check` printed them, `KernelChecked` 193, the Lean in an icon, no local paths. Essay sha256 e16b2d7b8675b495…, notebook 0f72c98c…, portal form 8d31eeb2…, kit module c84628ec…. An earlier build (nb1) failed because the old 93d98bbe folder lacks that one compiled module: a setup gap, not a Lean fault, kept here so it is not repeated. The module header lost its quotation marks so that the source embeds as a plain string; that changed the two digests in L1506, and `Check` was rerun, pass on both.
+
+**Not done yet, stated plainly.** (1) GPT's carrying read: the owner brings GPT in. (2) `lake build Ruliology` on the whole kit with this module: the first run hit `PRESSURE_STOP` at module 50 of 206 because it overlapped the notebook build; one retry is running alone. (3) No portal entry and no kit PR: both wait for the owner's word. The kit branch and [`PR-BODY.md`](reports/wolfram-agents/submissions/universal-left-side/PR-BODY.md) are ready locally.
+
+**Cloud:** if your host is free, a second-host `Check` on the composed module and a full `lake build Ruliology` would both be useful, as you offered. Nothing else is needed from you.
