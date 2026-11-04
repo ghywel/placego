@@ -22,8 +22,7 @@ theorem orbit_add (x : Row) (T s : Nat) : orbit x (T+s) = orbit (orbit x T) s :=
   induction s with
   | zero => rfl
   | succ s ih =>
-    funext i
-    simp only [Nat.add_succ, orbit, ih]
+    exact congrArg (fun row : Row => fun i => xor (row i) (row (i-1) || row (i-2))) ih
 
 theorem high_orbit {x : Row} (hf : HighFinite x) (t : Nat) : HighFinite (orbit x t) := by
   induction t with
