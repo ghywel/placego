@@ -169,4 +169,69 @@ theorem marker_iff_lift_bit (J P : Nat) (hJ : 4 ≤ J)
 #print axioms block_iff_return
 #print axioms next_record
 #print axioms marker_iff_lift_bit
+private theorem double_bool {a b c : Bool} (h : a=b ↔ b=c) : a=c := by
+  cases a <;> cases b <;> cases c <;> simp_all
+
+/-- The coloured word occurs iff the entire width-(J+1) return set consists
+of the multiples of 2P, where the width-J returns are the multiples of P. -/
+theorem marker_iff_double (J P : Nat) (hJ : 4 ≤ J) (hpos : 0 < P)
+    (hP : ∀ t, Returns J t ↔ P ∣ t) :
+    (∃ s, whiteBlock s J ∧ sample s J (J/2) = marker J) ↔
+      ∀ t, Returns (J+1) t ↔ (2*P) ∣ t := by
+  rw [marker_iff_lift_bit J P hJ hP]
+  have ret := (hP P).mpr (Nat.dvd_refl _)
+  have initial : single (J:Int) = false := by simp [single,show (J:Int) ≠ 0 by omega]
+  have low : RightRayDelay.Below (RightRayDelay.run (RightRayDelay.pulse 0) P)
+      (RightRayDelay.pulse 0) J := by
+    intro i hi
+    exact (single_bit P i).symm.trans ((ret (i:Int) (by omega)).trans (congrFun single_nat i))
+  have reset := double_bool (RightRayDelay.spot_iff low P)
+  have lower : Returns J (2*P) := by rw [Nat.mul_comm]; exact return_mul ret 2
+  have big : Returns (J+1) (2*P) := by
+    intro i hi
+    by_cases hlt : i < (J:Int)
+    · exact lower i hlt
+    · rw [show i=(J:Int) by omega]
+      refine Eq.trans ?_ (congrFun single_nat J).symm
+      rw [single_bit]
+      change RightRayDelay.run (RightRayDelay.pulse 0) (2*P) J = _
+      rw [show 2*P=P+P by omega,RightRayDelay.run_add]
+      exact reset
+  constructor
+  · intro hb t
+    constructor
+    · intro ht
+      have small : Returns J t := fun i hi => ht i (by omega)
+      obtain ⟨q,hq⟩ := (hP t).mp small
+      by_cases hev : q%2=0
+      · refine ⟨q/2,?_⟩
+        calc
+          t = P*q := hq
+          _ = P*(2*(q/2)) := congrArg (fun k => P*k) (by omega)
+          _ = (2*P)*(q/2) := by simp [Nat.mul_comm,Nat.mul_left_comm,Nat.mul_assoc]
+      · have eqt : t = (2*P)*(q/2)+P := by
+          calc
+            t = P*q := hq
+            _ = P*(2*(q/2)+1) := congrArg (fun k => P*k) (by omega)
+            _ = (2*P)*(q/2)+P := by simp [Nat.mul_add,Nat.mul_comm,Nat.mul_left_comm,Nat.mul_assoc]
+        have hmatch := (agreed_orbit (return_mul big (q/2)) P) (J:Int) (by omega)
+        have ho := ht (J:Int) (by omega)
+        rw [eqt,orbit_add,hmatch,hb,initial] at ho
+        contradiction
+    · rintro ⟨q,rfl⟩
+      exact return_mul big q
+  · intro h
+    cases hb : orbit single P (J:Int) with
+    | true => rfl
+    | false =>
+      have retP : Returns (J+1) P := by
+        intro i hi
+        by_cases hlt : i < (J:Int)
+        · exact ret i hlt
+        · rw [show i=(J:Int) by omega,hb,initial]
+      have hle := Nat.le_of_dvd hpos ((h P).mp retP)
+      omega
+
+#print axioms marker_iff_double
+
 end RightRayAllWidths

@@ -41,7 +41,7 @@ private theorem rain_agree {x y : Row} (hx : x 0 = true) (hy : y 0 = true) :
     intro rx ry top
     have lower : x (k+1) = y (k+1) := by
       rw [rx (k+1) (by omega) (by omega), ry (k+1) (by omega) (by omega)] at top
-      cases x (k+1) <;> cases y (k+1) <;> simp_all
+      simpa using top
     have rest := ih (fun j hj h => rx j hj (by omega)) (fun j hj h => ry j hj (by omega)) lower
     intro j hj
     by_cases h : j < k+2
@@ -73,12 +73,33 @@ theorem recover_short (k : Nat) (law : Law k) {x y : Row} (hx : x 0 = true) (hy 
       have b := mask 1 (by omega)
       change (step x (k+2) || step x (k+1)) = (step y (k+2) || step y (k+1)) at b
       rw [white,white',top_flip k hx rx,top_flip k hy ry] at b
-      cases x (k+1) <;> cases y (k+1) <;> simp_all
+      simpa using b
 
 theorem recover (k : Nat) (law : Law k) {x y : Row} (hx : x 0 = true) (hy : y 0 = true)
     (h₀ : ∀ t, iter x t (k+2) = iter y t (k+2))
     (h₁ : ∀ t, iter x t (k+3) = iter y t (k+3)) : Agree (k+2) x y :=
   recover_short k law hx hy h₀ (fun t _ => h₁ t)
+
+/-- A common driver return P needs readings at 0 through P on the first interface
+and only ticks 0,1,2 on the second. Periodicity is needed only for the two drivers. -/
+theorem recover_by (k P : Nat) (law : Law k) (hp : 0<P) {x y : Row}
+    (hx : x 0 = true) (hy : y 0 = true)
+    (px : ∀ t, drive k x t = drive k x (t%P)) (py : ∀ t, drive k y t = drive k y (t%P))
+    (first : ∀ t, t≤P → iter x t (k+2) = iter y t (k+2))
+    (second : ∀ t, t≤2 → iter x t (k+3) = iter y t (k+3)) : Agree (k+2) x y := by
+  have drivers (t : Nat) : drive k x t = drive k y t := by
+    rw [px t, py t]
+    have small := Nat.mod_lt t hp
+    exact drive_eq k _ (first _ (by omega)) (first _ (by omega))
+  apply recover_short k law hx hy _ second
+  intro t
+  induction t with
+  | zero => exact first 0 (by omega)
+  | succ t ih =>
+    change xor (iter x t (k+2)) (drive k x t) = xor (iter y t (k+2)) (drive k y t)
+    rw [ih, drivers t]
+
+#print axioms recover_by
 
 #print axioms recover_short
 end TwoPairsInterfaces
