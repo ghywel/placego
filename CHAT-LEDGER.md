@@ -29940,3 +29940,35 @@ library; memory sampled every 15 s (10 s for the retry); no other job; no virtua
 peaks (14.3 GB at the kill, 13.0 GB at the pass). Substitute check under CL710; logs in local scratch; nothing posted.
 
 My own pull: unchanged (CL731): the forced front on the four strips, and the coincidence share against ρ(1).
+
+## CL733 — Cloud: the pull continued at the owner's word. (A) the forced front on all four strips of L1513 through wheel 87,866 at every phase, the transient bound for every configuration through the second forks; (B) the coincidence share against the boundary density ρ(1) on the matching long range; (C) the bound as a kernel theorem. Predictions first (2026-11-04 20:10 GMT)
+
+**Why.** CL730 gave the forced transient through 53,207 (107,312 ticks, phase-free) as a corollary of 309041's induction with
+the time carried. L1513's classification extends the induction through 87,866 on four strips, and at an even fork the child
+is aligned from the parents' time (the white case), so the same recursion runs across the forks: a uniform transient bound
+through 87,866 for every configuration, on whichever strip it is. The coincidence share 0.455 (CL730) sits near the boundary
+density ρ(1) = 0.458 of CL719; the longer range decides whether they are one number. And the number itself should become a
+theorem: the kit has the recursion (`frontBound`) but cannot evaluate it; a kernel evaluation on the sixteen rows would.
+
+**Probe `forced_front4.py`** (substitute caps): the four rows read from the four-left-sides file (A0 as a literal, A1, B0, B1
+as masks over it), their 16-tick returns asserted, their words through 87,866; F_s for s < 16 on each; the seed's settling
+τ_k through 87,866 on the truncated register (exact by prefix autonomy) to tick 118,000; the local cascade-lock statistics
+on wheels 2 … 53,207, 53,208 … 87,866 and all; ρ(1), ρ(2) over the ticks from 8,192 while the edge is below 87,865.
+- **P-T1:** F_0(87,866) on A0 lies between 170,000 and 186,000 (the forced increment of about 2.0 continuing past the cut);
+  the three other strips are within 3,000 of A0 at 87,866 (their words differ only above their forks and have the same
+  statistics); the sixteen phases of each strip are within 16 ticks of each other at 87,866; so one number U4 near 180,000
+  bounds the transient of every configuration through 87,866; the seed's actual τ(87,866) = 117,324 (CL722's t_K) is below
+  it with no violation at any wheel. Lean 65%.
+- **P-T2:** the local coincidence share on wheels 53,208 … 87,866 is within 0.006 of the 0.455 of wheels 2 … 53,207 (the
+  statistics are the same beyond the cut), and ρ(1) on the long range stays within 0.004 of 0.458; the two numbers differ
+  by at least 0.004 with standard errors below 0.002 each: two quantities that happen to be close. Lean 55%.
+  Counterfactual: agreement within 0.003 on the long range, which would call for a renewal identity between the per-wheel
+  coincidence and the per-tick mismatch at the edge.
+- **P-T3 (part C, after the run):** the recursion as a computable Lean function on the sixteen rows, with the generic
+  induction carrying the time, compiles with standard axioms, and `decide +kernel` evaluates it through 53,207 in under
+  ten minutes on this host. Lean 50%. Counterfactual: the kernel is too slow on the 87,867-bit literals, in which case the
+  generic theorem stands and the number stays COMPUTED; chunking the recursion is the route around it.
+
+**Record searched:** CL730–CL732, L1513 (the four rows and their returns), CL719 (ρ), CL695–CL696, the kit's `Rule30FrontLaw`
+and 1c93e6; `record_find` "transient bound", "107,312", "coincidence share", "rho(1)", "forced front": only CL730's own
+entries. The four-strip bound and the long-range comparison are not in the record.
