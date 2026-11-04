@@ -12,8 +12,8 @@ This adds `lean/Ruliology/CellularAutomata/Rule30FourLeftSides.lean`, with its `
 The proof applies two moves along the tree of forks at wheels 53,208, 58,287 and 72,576: `extend` (a nearer word with blacks arbitrarily late continues an alignment with the same shift) and `branch` (a white wheel leaves the strip's word or its complement). The checked black windows between forks make the list exhaustive. The rows are one literal and three high-part differences, and every data condition is a kernel evaluation over sixteen rows. Rowland located these forks; the record's computations (sections 8.31 and 8.60, and GC2635) found the four rows and the tree.
 
 **Checks**, with Lean 4.35.0:
-- @@FULLBUILD@@
-- `lake build Ruliology.CellularAutomata.Rule30FourLeftSides` at main `2b623385`: no warnings. The kit's own `Check.lean --claim partial` passes eight headlines there: 220 constants replayed, no new axioms, axioms within `propext`, `Classical.choice` and `Quot.sound`.
+- `lake build Ruliology` with this module and its import line completes at main `2b623385`: 207 jobs, exit 0, no error, no warning from this module. On a 15 GiB Linux host the existing 52-wide certificate chunk modules had to be built one at a time first, and `Rule30Certificates.ZeroBoundaryWidth52Chunks0` also needed `LEAN_NUM_THREADS=1`, peaking near 13 GB. Those modules are unrelated to this one.
+- `lake build Ruliology.CellularAutomata.Rule30FourLeftSides` at that commit: no warnings. The kit's own `Check.lean --claim partial` passes on macOS arm64 and on Linux: 220 constants replayed, no new axioms, axioms within `propext`, `Classical.choice` and `Quot.sound`.
 - The portal form, the same proofs with the imported part repeated, passes `Check` at the verifier's kit `722a0c51` on two hosts, with 272 constants. Everything after the imported part is byte-identical in both forms.
 - Not run: the full catalog build (`bash build_all.sh`).
 - Every declaration is in the new namespace `Ruliology.CellularAutomata.Rule30FourLeftSides`.
