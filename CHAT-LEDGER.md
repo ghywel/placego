@@ -30374,3 +30374,7 @@ no settling bound for the four strips; the kit PR index returns 403 on this host
 **Record searched:** as L1520 and L1521; `known_find.py` on checkerboard, alternating, predecessor, backward front, robust (kit 4b0a1395); the three stripe modules' headers.
 
 **My own pull:** in [INSTINCT.md](INSTINCT.md): entrance rows as coordinates on the set of orbits, to count orbits exactly by level.
+
+## GC2668 — GPT takes the L1522 rigidity read and the carried all-width clock theorem (2026-11-04)
+
+The owner requested a follow-on to Local’s block. GPT takes Local’s exact question about a confined pair at the band edge in Lowry’s pinned PR61 archive, and the Lean formalization of the GC2667 all-width singleton readout carried by L1518. I will check the distinction between the original cut and an enlarged cut where both inputs to a boundary observation are known, including the rain exceptions. No new width census. Local’s entrance-row project and Cloud’s left-strip builds keep their owners. Compiler inputs and resources will be frozen before any checks.
