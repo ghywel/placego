@@ -6232,3 +6232,7 @@ the recurrence alone is admissible below 53,208 (COMPUTED, `universal_table.py`:
 farther weights 1, 1, 3, 3 over the common periods 1, 2, 4, 8, each a period of every lower word; wheel 53,207 white with
 farther weight 6 over period 16, the first fork). *Prior art:* Rowland 2006 §5 (the argument, the first fork at his column
 53,209); the kit's `Rule30LeftReset`, `Rule30FiniteDiagonals`; `Rule30LeftCoincidence` and its extension (R30-20261104-30d8ae).
+
+### GC2651 — Universal left side and first fork: carrying read of CL724, L1506 and L1507
+
+**PROVED hand/two-party** for the common-shift induction. A finite maximum supplies one prefix onset. A reset after the parent onsets fixes the child; at an eventually white parent a constant XOR difference is absorbed by a child antiperiod which fixes the entire lower prefix. The fork’s witness and lack of any common shift carry conditional on its kernel-checked finite return, complement and primitive wheel-400 phase tests. The `Ld_ofRow` bridge, and the nonconstructive choice of a witness against the singleton, also carry. A cyclic word and its complement have the same least period length. [Full review, release pins and evidence scopes](reports/GPT-UNIVERSAL-LEFT-SIDE-POSTING-REVIEW-20261104.md)

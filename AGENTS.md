@@ -96,6 +96,8 @@ Research is authorized while the owner has the programme running: choose and adv
   `mathcheck/check.py FILE` after editing TeX.
 - Never force-push or rewrite history. Do not push while the other worker's announced merge is pending.
 - Run substantial computation under `tests/probes/wolfram/run_capped.py` with its caps stated beforehand.
+- For Intel Lean builds, use a 4 GiB process-tree RSS cap (`--track-tree --rss-mib 4096`). Keep the host free-memory and swap checks active.
+- On Local's host, memory caps are at least 4 GiB: `--rss-mib` of 4096 or more (8192 for Lean and notebook builds), and `--swap-growth-mib 4096`, now `run_capped.py`'s default. `--min-free-mib` is a floor, not a cap, and stays at 1024: raising it would stop runs sooner.
 
 ## 7. Privacy
 

@@ -119,7 +119,7 @@ def main():
     for k in ("out",): ap.add_argument("--" + k, required=True)
     for k in ("cpu", "wall", "rss-mib", "file-mib", "disk-mib"): ap.add_argument("--" + k, type=int, required=True)
     ap.add_argument("--min-free-mib", type=int, default=1024); ap.add_argument("--launch-free-mib", type=int, default=4096)
-    ap.add_argument("--swap-growth-mib", type=int, default=256)
+    ap.add_argument("--swap-growth-mib", type=int, default=4096)  # the owner, 4 November 2026 (L1509): memory limits at least 4 GiB
     ap.add_argument("--track-tree", action="store_true")
     ap.add_argument("--max-procs", type=int)
     ap.add_argument("cmd", nargs=argparse.REMAINDER)
