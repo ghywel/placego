@@ -674,9 +674,13 @@ depths computed).
 | 32,768 | 24,452 | 0.746 | 36 | 36.0 | 41,047 | 0.626 |
 
 - **P-T1 HELD in form, with a different constant:** B(t) is linear, slope 0.744 over [4,096, 32,768], and B/t drifts slowly down
-  (0.783 at 512 to 0.746 at 32,768). The record's "0.8 t" is a different object, the fixed-lag band edge B_P (GC736 saturates it);
-  this B is the least-period settling frontier. Name which is used (GC2602/GC2610).
-- **P-T2 HELD for t ≥ 512:** J(t) = 2.4 log₂ t + c with c in [−1.8, 0.8]; at t = 256, c = 4.2, just outside the band. The local
+  (0.783 at 512 to 0.746 at 32,768). **Corrected (GC2621):** the probe's B takes the deepest wheel settled by t; the contiguous
+  settled prefix (every wheel up to B settled) differs by about a dozen wheels at every tick (3,128 against 3,117 at 4,096;
+  24,464 against 24,452 at 32,768) with the same slope to five decimals, 0.74361. Neither definition accounts for the record's
+  earlier rough 0.8 t, which GPT replayed as not explained by the conventions on this window; that discrepancy is open.
+- **P-T2 HELD for t ≥ 512:** J(t) − 2.4 log₂ t lies in [−0.8, 1.8] at the seven tabulated t ≥ 512 and is −4.2 at t = 256
+  (GC2621's sign). The probe's budget j + 2^(e_j) ≤ t counts from the centre crossing; the kit's R_j is periodic from time 0, so the
+  budget 2^(e_j) ≤ t is the other convention (it raises J by at most one or two at these t); name which is used. The local
   fit over 2^8 … 2^15 has slope 2.8 per doubling of t (the doubling density over depths 15 … 36 is 8 in 21), a finite range, not an
   asymptotic law. The core, 2t − B − J − 1, is 59 to 63% of the row and rising slowly: the left crystal takes a growing 37%, the right
   completed zone a vanishing 0.1%.
@@ -684,24 +688,34 @@ depths computed).
 **T-d, the ray split (the identity PROVED; the measurements COMPUTED).** From the kit's `R_step`, telescoping along the ray
 j₀ = t − x from its entry into the cone: **cell(t, x) = Σ(t − x) ⊕ C_x(t)**, where Σ(j₀) = R_(j₀)(s* + 1) is the ray's own value one
 step after it leaves the settled band (s* = last s with wheel 2s − j₀ ≤ B(s)) and C_x(t) is the parity of the OR of the two rays
-beneath it over the core segment s* + 1 … t − 1. So the settled part of every column's ray parity is a single crystal cell, and
-every column receives the same sequence Σ, delayed by x. Exact on 2,000 random cells. Exit at s* ≈ 0.80 j₀; the core segment is
-0.20 t long at t = 32,768.
-- **Σ, the band-edge transect** (j₀ ∈ [4,096, 32,768]): density **0.431**, maximum |autocorrelation| over lags 1 … 64 **0.062**
-  (noise 0.012), and **no period** at or below a quarter of the window on [10, 42), [42, 598), [598, 4,096), [4,096, 32,768).
-  **P-D1 REFUTED as written:** the settled part's period does not double at the white wheels' arrivals; it has no period at all.
-  The telescoping shows why: Σ is a transect of the crystal along the moving band edge, one cell per ray, not a sum of periodic
-  terms. The bias to 0.431 and the autocorrelation are new observables of the first unsettled wheels; unexplained.
-- **P-D2 HELD as written, weakly:** max |corr(Σ(t − x), C_x(t))| over the 129 columns is 0.0185, mean −0.0005, against a
-  multiple-comparison noise level of about 0.017: no detectable dependence. But the test is weak by construction: if a column were
-  P-periodic with a balanced word p, C = Σ ⊕ p and the correlation is 1 − 2·density(p) = 0. The content is in the column's own
-  aperiodicity.
-- **P-D3 HELD (control):** no column has a period ≤ 4,096 on the window.
+beneath it over the core segment s* + 1 … t − 1. So, up to the first exit, the settled part of every column's ray parity is a single crystal cell, and every column receives
+the same sequence Σ, delayed by x. Exact on 2,000 random cells, and (GC2621) the identity telescopes at **any** cut a ≤ t, the
+first exit being one choice: 2,658 of the 28,673 sampled rays re-enter the probe's band after their first exit (1,671 with the
+contiguous band), so "the settled part" means "the part before the first exit". Exit at s* ≈ 0.80 j₀; the core segment is 0.20 t
+long at t = 32,768.
+- **Σ, the first-exit transect** (j₀ ∈ [4,096, 32,768]): density 0.431 with the probe's boundary, **0.623 with the contiguous
+  prefix on the same rays** (GC2621's replay: 12,362 and 17,867 black of 28,673). **The density is a convention artefact, not a
+  property of the crystal's edge:** a ray advances two wheels per tick while the boundary is nondecreasing, so a first exit lands
+  one or two wheels beyond the boundary; the offset-one exits are 50% black under either boundary (8,101 of 16,127; 8,030 of
+  16,022) and the offset-two stratum carries the whole bias and flips with the convention (34% against 78%). My "new unexplained
+  observable" is withdrawn. Maximum |autocorrelation| over lags 1 … 64 is 0.062 (noise 0.012) under the probe's boundary, to be
+  re-read under the contiguous one. **P-D1 REFUTED on the windows tested:** no period at or below a quarter of each window
+  ([10, 42), [42, 598), [598, 4,096), [4,096, 32,768), lags through 4,096); that is a finite exclusion, not aperiodicity. The
+  telescoping shows why the prediction's mechanism was wrong: Σ is one cell per ray along the moving boundary, not a growing sum of
+  periodic terms.
+- **P-D2 VOID (GC2621):** with C = cell ⊕ Σ the zero-lag sign product is identically (2Σ − 1)(2C − 1) = 1 − 2·cell, so the
+  reported 0.0185 is the largest departure of a column's black fraction from one half on the window and says nothing about Σ;
+  any transect would give the same numbers. The test I wrote could not detect what it was written to detect. The per-column
+  content is the column's own lag-P behaviour: for a nominated P, the two lag-P differences C_x(t + P) ⊕ C_x(t) and
+  Σ(t + P − x) ⊕ Σ(t − x) must agree at every t, and a differing pair is an exact witness against P; counting and localizing them
+  is the right test, not run.
+- **P-D3 HELD (control):** no column has a period ≤ 4,096 on the window [4,096, 32,768]; a finite-window statement.
 
-**What it teaches.** (1) The wall reaches every column through one aperiodic sequence, not a clock: the owner's "stacked
-diagonals that break every rhythm" are the rays, and what they carry is the crystal's transect Σ, the same for all columns up to
-delay, with the core adding a parity over the last fifth of the ray. (2) A periodic column x would need C_x(t) = Σ(t − x) ⊕ p(t)
+**What it teaches.** (1) The wall reaches every column through one sequence along the rays, the first-exit transect Σ, the same for all columns up to
+delay, with the core adding a parity over the last fifth of the ray; on the windows tested Σ has no period through lag 4,096, and
+its density is a sampling convention, not a signal. (2) A periodic column x would need C_x(t) = Σ(t − x) ⊕ p(t)
 with p periodic: the core's OR-parity along the ray would have to reproduce the crystal's transect exactly up to a periodic word.
 That is the general claim in one line, per column, and it is where a proof would have to work. (3) Forgetting makes the left
-crystal grow at 0.74 t; remembering keeps the right completed zone logarithmic. Not claimed: any asymptotic law, any
-explanation of 0.431, anything about Problems 1 to 3.
+crystal grow at 0.74 t; remembering keeps the right completed zone logarithmic. Not claimed: any asymptotic law, any aperiodicity beyond the windows, any dependence between the core and the transect (the
+test was void), anything about Problems 1 to 3. GC2621 carried the identity, replayed both frontiers (slopes equal to five
+decimals) and the exit counts on the same rays, and found the stratification; adopted in CL716.
