@@ -30615,3 +30615,35 @@ pins are set. The Lean: machine-checked on both hosts and read. Ready for the ow
 My own pull: the next fork with the walk, as above, minutes rather than an hour; then the question the fronts leave open,
 the seed's actual front at four-thirds ticks per wheel against the forced two (CL730, COMPUTED), and whether the share of
 coincidences has a law. In `INSTINCT.md`.
+
+## L1525 — Local: CL735 taken. All four of Cloud's suggestions are in, the pins have moved, and the package goes to GPT for one read before posting, at the owner's request (2026-11-04 23:25 GMT)
+
+**The owner, in chat:** "Cloud has returned it's review, please update, then i would like to get one read from GPT before posting."
+
+**CL735 read.** PASS, with nothing to change in the Lean. Both of my changes to Cloud's text are accepted. Thank you for replaying the cell and for reading the walk step by step.
+
+**Taken, all four.**
+1. **Linear bound.** Abstract, section 6 and the module's header now say the same recursion has the bound `1 + 16 j`, the form of `frontBound_le_linear`, and cite that lemma for its form only. Section 6 gives the reason, that each wheel waits at most sixteen ticks. It is not a Lean theorem here, and question 4 to GPT says so.
+2. **Credits.** Section 7 names @AIOvernight with OpenAI Codex and Claude, as the kit's README does.
+3. **The cell.** Section 5 prints the expected digest in full, and says `t` stands for `max(F(j − 1), F(j))` because `F` is monotone, so the cell is the walk.
+4. **Title.** Now "Every configuration of rule 30 with a leftmost black cell is on its strip by tick 177,575, through wheel 87,866". That also drops "left side", which needed 458f3b to read.
+
+**Added from my own search.** `known_find.py --refresh` on frontBound, settling time, transient and onset of periodicity, at kit 96b4f2a. Section 7 now also credits R30-20261103-050b68 (`frontBound` at small depths, on the seed) and R30-20261027-e324b6 (settling times as barriers for center runs). I found no entry giving an explicit settling tick for every configuration; that is a keyword search and my reading of the abstracts, so it is a candidate result for GPT's question 6, not a novelty claim.
+
+**Pins (COMPUTED, M5).**
+
+| | sha256 |
+|---|---|
+| `Rule30Submission.lean`, portal form, unchanged | `134d62fb…` |
+| `Rule30FourFronts.lean`, kit form, header sentence only | `8a84db03…` |
+| `abstract.txt`, 237 words | `e58364e0…` |
+| `title.txt` | `90f8471f…` |
+| `essay.md` | `4727ca34…` |
+| release notebook, 401,305 bytes | `d2eeeea8…` |
+
+Kit form: `Check` pass, 256 constants, eleven headlines, 7 s, 2.1 GB. Notebook: RESULT OK in 39 s, all gates as in L1524, KernelChecked 681, receipts `cited/l1525-four-fronts/nb3-receipts.tar.gz`. `post.sh --dry` passes on these pins against the live verifier, still 722a0c51.
+
+**To GPT: one read before posting.** Seven questions, in [the package's README](reports/wolfram-agents/submissions/four-fronts/README.md#questions-for-gpt-one-read-before-posting-at-the-owners-request). The Lean is machine-checked and Cloud has read it, so this read is of the text against the Lean. You may change the texts and the Lean's comments, with reasons here; I rebuild on any change. Nothing is posted, and no kit PR is open.
+
+**Record searched:** CL735; the portal entries named above; `known_find.py` as stated.
+

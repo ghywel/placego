@@ -1,10 +1,10 @@
 ---
 Template: ComputationalEssay
-Name: Every left side of rule 30 is in place by tick 177,575 through wheel 87,866
+Name: Every configuration of rule 30 with a leftmost black cell is on its strip by tick 177,575, through wheel 87,866
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-11-04
 Description: An explicit tick in core Lean. Every configuration with a leftmost black cell carries one of four explicit strips on every left diagonal through wheel 87,866 from tick 177,560 + s of its own clock, with s at most 15, and the time of each wheel is given by a settling recursion evaluated by the kernel.
-Abstract: Our entry R30-20261104-458f3b proved that every configuration of rule 30 with a leftmost black cell eventually agrees with one of four explicit strips on all left diagonals through wheel 87,866, after one time shift, but it gave no time. Here the time is explicit. Every such configuration carries its strip through wheel 87,866 from tick 177,560 + s of its own clock, with s at most 15, and through wheel 53,207 from tick 107,310 + s (forced_front_four_left_side, forced_front_low_left_side). forced_front_four gives the time wheel by wheel, as the settling recursion of the kit's Rule30FrontLaw run on each strip's sixteen-row cycle and carried through the classification. The time shift of 458f3b is now bounded by 15 (classification_bounded). The recursion is evaluated as a walk. From wheel j at tick t, move to wheel j + 1 if the strip's cell is black and stay if it is white. That is one addition, one shift and one mask per tick, and the kernel runs all four strips in seconds. The bound is not sharp, since the single black cell reaches its strip's exact row at tick 117,328. It is about an eighth of the kit's linear bound of 1,405,857 at period 16. Nothing here concerns the center column or the Prize problems, and 87,866 is where these rows stop, not a claim about what happens beyond it.
+Abstract: Our entry R30-20261104-458f3b proved that every configuration of rule 30 with a leftmost black cell eventually agrees with one of four explicit strips on all left diagonals through wheel 87,866, after one time shift, but it gave no time. Here the time is explicit. Every such configuration carries its strip through wheel 87,866 from tick 177,560 + s of its own clock, with s at most 15, and through wheel 53,207 from tick 107,310 + s (forced_front_four_left_side, forced_front_low_left_side). forced_front_four gives the time wheel by wheel, as the settling recursion of the kit's Rule30FrontLaw run on each strip's sixteen-row cycle and carried through the classification. The time shift of 458f3b is now bounded by 15 (classification_bounded). The recursion is evaluated as a walk. From wheel j at tick t, move to wheel j + 1 if the strip's cell is black and stay if it is white. That is one addition, one shift and one mask per tick, and the kernel runs all four strips in seconds. The bound is not sharp, since the single black cell reaches its strip's exact row at tick 117,328. It is about an eighth of the linear bound 1 + 16 j at period 16, the form of the kit's frontBound_le_linear, which is 1,405,857 at that wheel. Nothing here concerns the center column or the Prize problems, and 87,866 is where these rows stop, not a claim about what happens beyond it.
 Keywords: [rule 30, Rule 30 Prize, left diagonals, left side, settling time, forced front, Rowland, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)", "[Rowland, Local nested structure in rule 30](https://ericrowland.github.io/papers/Local_nested_structure_in_rule_30.pdf)"]
 Links: ["[Rule 30 Prizes](https://rule30prize.org/)", "[R30-20261104-458f3b: exactly four left sides through wheel 87,866](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-458f3b)", "[R30-20261104-309041: one left side through wheel 53,207](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-309041)", "[R30-20261103-1c93e6: exact bounded whiteCount witnesses](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261103-1c93e6)"]
@@ -66,7 +66,7 @@ The whole module, including the part repeated from 458f3b, builds in about seven
 
 ## 5. A computation
 
-The next two cells replay this in Wolfram Language, outside Lean, on the seed's row `A0`. The first runs the recursion and prints `F(53,207)` and `F(87,866)`, with the digest that ties the computed row to the literal in the source. The second sets the bound beside what the single black cell actually does.
+The next two cells replay this in Wolfram Language, outside Lean, on the seed's row `A0`. The first runs the recursion and prints `F(53,207)` and `F(87,866)`. Its running value `t` stands for `max(F(j − 1), F(j))`, because `F` is monotone (`F_mono`), so the cell is the walk. It also prints the digest of the computed row, which should be that of the literal `A0` in the source, `0dc9e1db3e968ceb8e12cac61d61ca1f7fd6b749422681ae53d5f842b64d1e3c`. The second cell sets the bound beside what the single black cell actually does.
 
 ```wl
 K = 87867; mask = 2^K - 1;
@@ -88,7 +88,7 @@ Grid[{{"F(87,866) on A0", F[[87867]]}, {"first tick at which the single black ce
 
 **The bound is not sharp.** The single black cell reaches the exact row `A0` at tick 117,328, and the bound for its strip is 176,968. The recursion grows by about two ticks per wheel, while the seed's actual front grows by about four ticks per three wheels. The recursion counts only the resets the proof can see, and a wheel can fall into its cycle earlier by coincidence. These growth rates are computed, not proved.
 
-**Against the general bound.** The kit's `frontBound_le_linear`, at period 16, gives `1 + 16 · 87,866 = 1,405,857`. The evaluated recursion is about an eighth of that.
+**Against the general bound.** Each wheel waits at most sixteen ticks, so the same recursion has the linear bound `1 + 16 j`. That is the form of the kit's `frontBound_le_linear` at period 16, a lemma about the recursion on the seed's own history. At wheel 87,866 it is 1,405,857, about eight times the evaluated front.
 
 **Beyond the cut.** 87,866 is where these rows stop. The moves take any strip given by a row with a 16-tick return, so the next fork would need new rows and no new proof.
 
@@ -96,7 +96,7 @@ Grid[{{"F(87,866) on A0", F[[87867]]}, {"first tick at which the single black ce
 
 ## 7. Credits
 
-The recursion and the linear bound are the kit's `Rule30FrontLaw` and R30-20261103-1c93e6 (Quint and Gemini). The induction is Rowland's (2006, section 5), and the strips are those of R30-20261104-309041 and R30-20261104-458f3b.
+The recursion and the linear bound are the kit's `Rule30FrontLaw`, contributed by @AIOvernight with OpenAI Codex and Claude, and R30-20261103-1c93e6 (Quint and Gemini). R30-20261103-050b68 (Quint and Gemini) evaluates the same recursion at small depths on the seed, and R30-20261027-e324b6 (@AIOvernight, with Claude and OpenAI Codex) uses settling times as barriers for center runs. The induction is Rowland's (2006, section 5), and the strips are those of R30-20261104-309041 and R30-20261104-458f3b.
 
 ## The formal proof
 

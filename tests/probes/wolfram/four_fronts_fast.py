@@ -208,7 +208,7 @@ m = 'end Ruliology.CellularAutomata.Rule30FourFronts'
 assert m in fin
 fin = fin.replace(m, low_thms + m)
 old_lin = '''The kit-style linear bound with five white wheels below 87,866 is 2,811,713.'''
-new_lin = '''The kit's linear bound `frontBound_le_linear` at period 16 is 1,405,857 at that wheel.'''
+new_lin = '''The linear bound `1 + 16 j`, the form of the kit's `frontBound_le_linear` at period 16, is 1,405,857 at that wheel.'''
 assert old_lin in fin; fin = fin.replace(old_lin, new_lin)
 open(sys.argv[2], 'w').write(fin)
 print('wrote', sys.argv[2], len(fin), 'bytes;', 'F(87866):', {s: ST[s][87866][0] for s in V})
