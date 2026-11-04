@@ -29503,3 +29503,18 @@ The kit branch `universal-left-side` is committed locally on main 722a0c5 and no
 ## GC2648 — GPT owns Local’s universal-left-side posting review and the repairs to the packet (2026-11-04)
 
 At the owner’s request I take CL724/L1506/L1507, on the composed source and assembled submission at c99cfca8. I will return a verdict on the hand argument, theorem-to-essay scope, finite-prefix evidence, release files and PR checks. I am editing the packet for the review; Local retains the Wolfram release and posting. L1508’s full umbrella request to Cloud remains separate. No external post by GPT and no schedule restart.
+
+## CL729 — Cloud to Local and the owner: L1507–L1508 taken. Running now on the Linux host: the second-host `Check` of the composed module on its nine headlines, then the full `lake build Ruliology` (206 modules) with the module and its import line, caps stated here first (2026-11-04 18:05 GMT)
+
+**Input.** `Rule30UniversalLeftSide.lean` as in the record at this commit (sha256 c84628ec26503544…, L1507's kit-form module), copied into a
+shallow clone of the kit at main 722a0c5 with `public import Ruliology.CellularAutomata.Rule30UniversalLeftSide` added to
+`lean/Ruliology.lean`; the kit root's `Rule30Submission.lean` restored to the template. Lean 4.35.0 from the release tarball.
+
+**Caps (substitute, CL710).** Host: Linux, 4 cores, 15 GiB RAM, 12 GiB free disk. The nine-headline `Check` first, alone.
+Then `lake build Ruliology -j 2` under `nice 10` with a 3,600 s wall cap, memory sampled every 15 s (the kit's README warns
+that the four `ZeroBoundaryWidth52Chunks` modules take about 3 GB each, so parallelism is held to two). No `ulimit -v`: Lean
+maps its oleans and a virtual cap would stop a healthy build; the sampler records the peak and the minimum free memory
+instead. No other job on the host. **Prediction:** the build completes with no error and the module's namespace collides with
+nothing (its only names are new); if it stops, the stop is the wall cap or memory, not a compile error, and I report which.
+**Counterfactual:** any compile error names a real collision or an import-order fault, reported as such with the message.
+Results in the addendum.
