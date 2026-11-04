@@ -29142,3 +29142,49 @@ Lean 95% (CL680's census and Rowland's data, re-derived from the recurrence alon
 t = 65,536 agrees with the strip at that phase on every wheel below its lag-16 band edge (about 48,900 wheels). Lean 95%.
 Counterfactual: an even-weight white wheel below 53,207 moves the cut; a mismatch with the actual row means the generated
 strip is not the seed's (which the theorem forbids, so it would be a bug in the generator).
+
+## L1501 — Local: back after the app dropped my session, up to date through CL723. Taking CL723's theorem in a sharper, two-sided form: every row with a leftmost black cell has one left side through wheel 53,207, and finite rows split at 53,208; a 16-tick return of one 53,209-bit row replaces the cycle table (2026-11-04 16:57 GMT)
+
+**The owner, in chat:** "we are working towards a portal / PR kit submission to get in today." The app dropped my session list entry;
+memories and this worktree are intact. Read: NOW, L1500 to CL723, GPT's two 4 November reports, `MergePassage.lean`, `MergeContact.lean`.
+
+**Refresh at 16:46Z.** Kit main 722a0c51, 145 portal entries, 12 open PRs. All six of our PRs (#103, #104, #114 to #117) closed at 11:40Z
+and their modules are on main: maintainers landing them, not rejections. Submitted after GC2647's 15:07Z refresh: 7bfbbd, bc49cf, 174d46, 53931f
+(Quint), b73ae0 (Ibarra), bd6d4b (Ulrey). `known_find.py "left side"` shows none of them on this line.
+
+**What I take on (Cloud: this is your CL723 pull; please do not duplicate, a read would be welcome).** Write W(j, t) for bit j of the left-edge
+map's row, F(v) = (v << 2) ⊕ ((v << 1) ∨ v), and let B be the single seed's row at tick 72,000 on 53,209 bits.
+- **Theorem U (target, PROOF-SKETCH).** For every row with a leftmost black cell, whatever its right tail, there is one time shift s with
+  every wheel j ≤ 53,207 eventually equal to the wheel j of the 16-cycle of B, shifted by s.
+- **Theorem S (target, PROOF-SKETCH).** At wheel 53,208 exactly two continuations exist for every such row, the cycle's word and its
+  complement, and both occur for finite rows (B and B ⊕ 2^53,208); no time shift identifies them. So universality stops exactly at
+  Rowland's column 53,209, and his "if in fact they do occur" gets a kernel-checked yes.
+
+**Why this is shorter than CL723's plan.** No table of 53,207 cycles is needed, and the seed need not be simulated. The reference is B itself:
+it returns after 16 ticks, so the strip is periodic from tick 0. Induct on the wheel. If wheel m has a black at some phase, the kit's
+`solutions_agree` (F2) gives wheel m + 1 for free, with the same shift. If wheel m is white, the two words differ by a constant; if the constant is
+1, add L to the shift, where L = 1, 2, 4, 8 at m = 2, 7, 28, 399 is a period of wheels ≤ m and an antiperiod of wheel m + 1. The only
+finite inputs are the 16 rows of B: the OR of the phases is black everywhere below 53,208 except at 2, 7, 28, 399, 53,207, and the four
+period/antiperiod checks. Rowland's odd-weight condition is exactly that antiperiod. The seed then follows as one more row.
+
+**Done so far.** COMPUTED (Python replay of §8.31): first lag-16 tick 71,116 at 53,209 wheels; white wheels 2, 7, 28, 399, 53,207; periods
+1, 2, 4, 8, 16 stepping at 3, 8, 29, 400 and wheel 53,208 staying at 16; B and B ⊕ 2^53,208 both return after 16 ticks. MEASURED (M5, Lean 4.35.0):
+`decide +kernel` proves the 16-tick return of the 16,017-digit literal in 0.25 s, `propext` only. A first attempt to run the seed itself for
+2^17 ticks in the kernel hit its 150 s cap; 2^12 ticks took 1.1 s. That run is optional now and is kept as a failure of the first design.
+
+**Prediction.** The module builds on kit main with standard axioms, and the certificate checks stay under ten seconds, inside the portal's four-minute
+limit. **Counterfactual.** A phase mask differing from the five named wheels, a failed period/antiperiod check at any of the four, or a wheel-400
+word with a proper period (which would let a shift absorb the flip) would each stop the kernel proof and the theorem in this form.
+
+**Record searched:** CL695, CL723, §8.31, PRIOR-ART's Rowland §5 entry; `known_find.py` on "left side", 53207, 53208, 53209 (digit runs inside large
+literals, and one list entry, not this statement), Rowland, "time shift". Nearest match: Bosdure's universal left-edge crystal, R30-20261027-317c64,
+`zrow_edge_one` … `zrow_edge_seven`, wheels through 7 for finite zero-boundary starts: to be credited. Rowland's Proposition 2 carries the doubling
+criterion and his §5 names column 53,209 and the open question, so the generic step is known and is credited to him; a line-by-line read of §5 comes
+before any novelty wording.
+
+**Blocker for posting.** `wolframscript` on this host reports a licence fault and the Wolfram MCP failed to connect; the notebook needs it. The
+owner has it. Fallback if the owner's target is different: the 010 rule and passage lemmas are the portable alternative, already kernel-checked.
+
+**Not claimed.** Nothing on the centre column or any prize problem (CL723's reading stands).
+
+My own pull: this direction is my pull. The next thing I would want after it is the same certificate at 58,287 and 72,576, giving four left sides.

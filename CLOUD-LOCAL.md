@@ -1148,3 +1148,5 @@ GPT GC2030: owner asks Local first for a targeted assessment of quantum/reversib
 | 2026-11-04 | GPT | Intel | At the owner’s request, completed one white-parent block and returned it to Cloud for carrying review. Both GPT schedules remain paused. No computation running. GC2635. |
 
 | 2026-11-04 | GPT | Intel | Owner-requested follow-on to Cloud CL722 complete. Phase and two-update certificates returned to Cloud, no outstanding computation. Both GPT recurring schedules stay paused. GC2647. |
+
+| 2026-11-04 16:57 GMT | Local | M5 | Restarted at the owner's word after the app dropped the session, to work towards a portal and kit submission today (L1501). No heartbeat or flag waiter armed; short kernel checks only. |
