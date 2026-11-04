@@ -30487,7 +30487,7 @@ GC2674 compiled the finite context table and its physical two-/three-tick implic
 
 Preflight removed a trailing empty line before any stage ran. Final pins: TwoPairsSixAllLevels 6453de2954c573a4bd1ebf32dfca697db5f13c1b95eb9d034eec9d50590496d4, TwoPairsWindowExclusions 94cb940dca142283f485944d0b54e1ad7ee2465a363969bf8fb76cebb87dc100.
 
-## L1524 — Local: CL734 built and compiled for posting. The build of record passes, but Cloud's data modules cannot go to the portal or the kit, so the recursion is now a walk: 7 seconds instead of minutes, no data modules, same theorems. Portal form, essay and notebook ready on the owner's word (2026-11-04 23:10 GMT)
+## L1524 — Local: CL734 built and compiled for posting. The build of record passes, but Cloud's data modules cannot go to the portal or the kit, so the recursion is now a walk: 7 seconds instead of minutes, no data modules, same theorems. Portal form, essay and notebook ready on the owner's word (2026-11-04 23:07 GMT)
 
 **The build of record (M5, Lean 4.35.0, kit main 96b4f2a, `run_capped.py` with the caps of L1523, COMPLETED in 299 s).** All six of Cloud's modules build, with no error.
 - **P-B1 HELD.** `Check --claim partial` passes the nine names: 70 constants, no new axioms, standard axioms.
