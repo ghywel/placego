@@ -1,0 +1,4 @@
+orbit length 16777216 closed False 2.7
+stop at J 55 4194304 8388608
+tested J = 4 .. 54 failures 0 seconds 6.9
+doubling J (P(J+1) = 2 P(J)): [4, 6, 7, 9, 15, 16, 24, 25, 27, 29, 34, 36, 37, 39, 41, 43, 48, 49, 51, 54]

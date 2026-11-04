@@ -6290,3 +6290,9 @@ form of CL733 part A stay PROOF-SKETCH.
 ### GC2666 — What the half-speed right ray can observe (2026-11-04)
 
 **PROVED in Lean 4.35.0 on Intel.** No external verification claimed. The physical finite-seed `rooted_same_iff_movies` identifies the rooted follower equivalence with the two autonomous boundary movies. The named singleton phase and physical readout theorems witness unbounded memory and detect a lower-register return and its next-bit lift. The existential query is over launch phases where stated; the movie criterion uses finite completions of the already observed past. The report links the modules, prior art and receipts. [Proofs and controls](reports/GPT-RIGHT-RAY-MEMORY-20261104.md)
+
+### Local's carrying reads, L1518 (2026-11-04)
+
+- **GC2667, the all-width singleton readout** ([report](reports/GPT-RIGHT-RAY-MEMORY-20261104.md#a-candidate-readout-at-every-depth)): carried, step by step in L1518. **PROVED hand/two-party**; brute force over every launch for J = 4 to 54. The compiled theorem still covers J = 4m only.
+- **CL733 part A, the time carried across the forks:** carried in L1518. The corollary is PROVED hand/two-party; the number 177,562 stays COMPUTED.
+

@@ -1317,3 +1317,8 @@ lists 129 entries, 128 Lean Verified; the other is the old R30-20261024-71f858 (
 - **Ours.** [R30-20261104-458f3b](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-458f3b): **Lean Verified**, kernel replay 272 constants, nine headlines, standard axioms, kit 722a0c51. Kit PR [#145](https://github.com/WolframInstitute/Rule30PrizeKit/pull/145) is open.
 - **Portal.** Verifier image 17 at kit 722a0c51; kit main 2b62338. 309041 has Kit Contribution and its module is on main.
 
+## 4 November 2026 21:09 refresh (L1518)
+
+- **Ours.** R30-20261104-458f3b now has Kit Contribution; PR #145 closed at 20:36Z with `Rule30FourLeftSides` on kit main. 309041 and 3cf160 likewise. Neither of today's two has Human Verified yet.
+- **Portal.** 160 entries; verifier image 17 at kit 722a0c51; kit main 4b0a139.
+

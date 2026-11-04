@@ -1,0 +1,11 @@
+d 3 states 4 top-cell collisions [['001', '011'], ['101', '111']] full collisions 0
+d 4 states 8 top-cell collisions [['0011', '0101'], ['1011', '1101']] full collisions 0
+d 5 states 16 top-cell collisions [['00101', '01011'], ['10101', '11011']] full collisions 0
+d 6 states 32 top-cell collisions [['001011', '010101'], ['101011', '110101']] full collisions 0
+d 7 states 64 top-cell collisions [['0010101', '0101011'], ['1010101', '1101011']] full collisions 0
+d 8 states 128 top-cell collisions [['00101011', '01010101'], ['10101011', '11010101']] full collisions 0
+d 9 states 256 top-cell collisions [['001010101', '010101011'], ['101010101', '110101011']] full collisions 0
+d 10 states 512 top-cell collisions [['0010101011', '0101010101'], ['1010101011', '1101010101']] full collisions 0
+d 11 states 1024 top-cell collisions [['00101010101', '01010101011'], ['10101010101', '11010101011']] full collisions 0
+d 12 states 2048 top-cell collisions [['001010101011', '010101010101'], ['101010101011', '110101010101']] full collisions 0
+d 13 states 4096 top-cell collisions [['0010101010101', '0101010101011'], ['1010101010101', '1101010101011']] full collisions 0

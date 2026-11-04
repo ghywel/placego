@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**4 November 21:09 GMT, Local L1518. Cloud's and GPT's blocks reviewed; both stand.** Forced front: macOS build of record done, `Check` pass. GC2667: carried, PROVED two-party. CL733's error bars tested and hold, though the gap drifts across the window. New: the top-cell movie fails on exactly two alternating pairs at every depth tested. Both of today's entries are Kit Contributions.
+
 **4 November, GC2666. The owner-requested right-side block is complete.** [What the moving ray can read](reports/GPT-RIGHT-RAY-MEMORY-20261104.md). Lean proofs give unbounded predictor memory even over singleton phases, a complete two-word test for the possible futures of finite seeds, and a single-seed clock readout at wheel 3m. GC2667 gives an all-width hand extension. Next is its carrying read and a Lean statement using the singleton’s synchronized bits 1 and 2 at odd widths (GC2667 addendum). Cloud owns its forced-front block. Both GPT schedules remain paused. The report records the terminated, outside-budget checker scan.
 
 **4 November, GC2656. Four-left-sides follow-up reviewed and corrected.** GPT carried Local’s classification through wheel 87,866 and the hand cycle-count corollary. The predecessor is publicly Lean Verified and tagged Kit Contribution. Local has the [approved follow-up sources and replacement notebook gates](reports/wolfram-agents/submissions/four-left-sides/README.md). Next step is the Wolfram rebuild on the corrected essay and posting on the owner’s word.

@@ -1404,3 +1404,8 @@ with a leftmost black cell would have a certified settling time through the seco
 belongs in the kit (a PR with the two modules), the owner's and Local's call. Not pursued: the coincidence share is closed
 as a question (two numbers, part B); the asymptotic law of the forced increment (2.015 ticks per wheel, speed 0.496 against
 the actual 0.748) is a conjecture about binomially fair strip words and would need a different kind of argument. (20:55 GMT.)
+
+## Local, 4 November 2026 — the exactly-two-pairs law (L1518)
+
+Doing: reviewing GPT's right-ray counts. Pull, strong: its 126 and 510 are not noise. The top-cell movie fails on exactly two alternating pairs at every depth tested, so the second boundary word is needed only for one family. That wants to be a statement for every d, and it may be provable by hand. Test before believing: does the pair's top-cell agreement follow from the alternating pattern alone, and why does nothing else collide?
+

@@ -1,0 +1,13 @@
+rho(1): mean 0.4620, n 109130, binomial s.e. 0.00151
+  autocorrelation lags 1, 2, 3, 4, 8, 16, 32: [0.0551, -0.2386, 0.1027, 0.0458, -0.0073, 0.0037, 0.0062]
+coincidence: mean 0.4538, n 87865, binomial s.e. 0.00168
+  autocorrelation lags 1, 2, 3, 4, 8, 16, 32: [-0.4026, 0.4484, -0.3379, 0.267, 0.0718, -0.0021, -0.0097]
+difference 0.0082
+  block    16: rho s.e. 0.00143 (6820 blocks), coincidence s.e. 0.00141 (5491 blocks), difference / combined s.e. 4.07
+  block    64: rho s.e. 0.00141 (1705 blocks), coincidence s.e. 0.00137 (1372 blocks), difference / combined s.e. 4.16
+  block   256: rho s.e. 0.00143 (426 blocks), coincidence s.e. 0.00138 (343 blocks), difference / combined s.e. 4.12
+  block  1024: rho s.e. 0.00158 (106 blocks), coincidence s.e. 0.00145 (85 blocks), difference / combined s.e. 3.82
+  block  4096: rho s.e. 0.00170 (26 blocks), coincidence s.e. 0.00172 (21 blocks), difference / combined s.e. 3.38
+  block  8192: rho s.e. 0.00160 (13 blocks), coincidence s.e. 0.00210 (10 blocks), difference / combined s.e. 3.10
+rho(1) by quarter of its window: [0.4586, 0.4611, 0.4607, 0.4675]
+coincidence by quarter of its wheels: [0.4553, 0.454, 0.4556, 0.4503]

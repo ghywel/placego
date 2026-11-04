@@ -1,0 +1,36 @@
+T1 white intervals: cases 57120 mismatches 0
+periods of the low J bits, J = 1..22: [1, 2, 2, 4, 8, 8, 16, 32, 32, 64, 64, 64, 64, 64, 64, 128, 256, 256, 256, 256, 256, 256]
+T2 launch 50 ['01'] as stated
+T2 launch 48 ['00', '01'] as stated
+T2 launch 47 ['00', '00', '01'] as stated
+T2 launch 46 ['00', '00', '00'] as stated
+T3 delayed black at repeat i of m:  21 of 21
+T4/T5 m=1: block_iff_return mismatches 0, next_record mismatches 0; P(4m)=4 P(4m+1)=8; extra white at some launch True, doubled True
+T4/T5 m=2: block_iff_return mismatches 0, next_record mismatches 0; P(4m)=32 P(4m+1)=32; extra white at some launch False, doubled False
+T4/T5 m=3: block_iff_return mismatches 0, next_record mismatches 0; P(4m)=64 P(4m+1)=64; extra white at some launch False, doubled False
+T4/T5 m=4: block_iff_return mismatches 0, next_record mismatches 0; P(4m)=128 P(4m+1)=256; extra white at some launch True, doubled True
+T4/T5 m=5: block_iff_return mismatches 0, next_record mismatches 0; P(4m)=256 P(4m+1)=256; extra white at some launch False, doubled False
+T6 J=4: window vs return mismatches 0; colour vs top bit mismatches 0; colour at some launch True; doubled True; returns 2 of 8
+T6 J=5: window vs return mismatches 0; colour vs top bit mismatches 0; colour at some launch False; doubled False; returns 1 of 8
+T6 J=6: window vs return mismatches 0; colour vs top bit mismatches 0; colour at some launch True; doubled True; returns 2 of 16
+T6 J=7: window vs return mismatches 0; colour vs top bit mismatches 0; colour at some launch True; doubled True; returns 2 of 32
+T6 J=8: window vs return mismatches 0; colour vs top bit mismatches 0; colour at some launch False; doubled False; returns 1 of 32
+T6 J=9: window vs return mismatches 0; colour vs top bit mismatches 0; colour at some launch True; doubled True; returns 2 of 64
+T6 J=10: window vs return mismatches 0; colour vs top bit mismatches 0; colour at some launch False; doubled False; returns 1 of 64
+T6 J=11: window vs return mismatches 0; colour vs top bit mismatches 0; colour at some launch False; doubled False; returns 1 of 64
+T6 J=12: window vs return mismatches 0; colour vs top bit mismatches 0; colour at some launch False; doubled False; returns 1 of 64
+T6 J=13: window vs return mismatches 0; colour vs top bit mismatches 0; colour at some launch False; doubled False; returns 1 of 64
+T6 J=14: window vs return mismatches 0; colour vs top bit mismatches 0; colour at some launch False; doubled False; returns 1 of 64
+T6 J=15: window vs return mismatches 0; colour vs top bit mismatches 0; colour at some launch True; doubled True; returns 2 of 128
+T6 J=16: window vs return mismatches 0; colour vs top bit mismatches 0; colour at some launch True; doubled True; returns 2 of 256
+T6 J=17: window vs return mismatches 0; colour vs top bit mismatches 0; colour at some launch False; doubled False; returns 1 of 256
+T6 J=18: window vs return mismatches 0; colour vs top bit mismatches 0; colour at some launch False; doubled False; returns 1 of 256
+T6 J=19: window vs return mismatches 0; colour vs top bit mismatches 0; colour at some launch False; doubled False; returns 1 of 256
+T6 J=20: window vs return mismatches 0; colour vs top bit mismatches 0; colour at some launch False; doubled False; returns 1 of 256
+T6 total failures 0
+T7 d=8: odd states 128, distinct top-cell movies 126, distinct full movies 128
+T7 d=10: odd states 512, distinct top-cell movies 510, distinct full movies 512
+T7 d=12: odd states 2048, distinct top-cell movies 2046, distinct full movies 2048
+T7 d=14: odd states 8192, distinct top-cell movies 8190, distinct full movies 8192
+T7 d=16: odd states 32768, distinct top-cell movies 32766, distinct full movies 32768
+seconds 4.8
