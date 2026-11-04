@@ -55,7 +55,8 @@ If[FileExistsQ[rnNotebook],
   If[Length[rnOuts] =!= 8, rnNote["output cells " <> ToString[Length[rnOuts]]]];
   If[rnMsgCells =!= {}, rnNote["message cells " <> ToString[Length[rnMsgCells]]]];
   If[!FreeQ[rnOuts, $Failed], rnNote["$Failed in an output"]];
-  rnSource = Import[FileNameJoin[{DirectoryName[rnEssaySource], "Rule30Submission.lean"}], "Text", CharacterEncoding -> "UTF-8"];
+  (* raw bytes, not Import "Text", which drops the final newline (L1509, nb4) *)
+  rnSource = ByteArrayToString[ReadByteArray[FileNameJoin[{DirectoryName[rnEssaySource], "Rule30Submission.lean"}]], "UTF-8"];
   rnIconSources = Cases[rnNB,
     (HoldPattern[InterpretationBox[display_, value_String, ___]] /;
       !FreeQ[display, "IconizedObject"] && StringStartsQ[value, "import Ruliology."]) :> value, Infinity];
