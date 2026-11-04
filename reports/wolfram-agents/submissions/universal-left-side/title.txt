@@ -1,1 +1,1 @@
-Rowland's one left side of rule 30, proved below the first fork for every configuration with a leftmost black cell
+Rowland's one left side of rule 30: proved through wheel 53,207 for every configuration with a leftmost black cell, and the first fork realized

@@ -1,9 +1,11 @@
 # Universal left side: the submission plan (Cloud, CL724; 4 November 2026)
 
-**Claim.** Rowland's one-left-side conjecture (2006, §5) holds below his first fork, for every configuration with a leftmost
-black cell, with one common time shift: `universal_of_strip` and `one_left_side` in `Rule30UniversalLeftSide.lean` (Local's interface, L1502),
-with `antiperiod_of_odd_parity`, `same_left_side`, `seed_left_side` and `D_recurrence`. The strip data to 53,207 (the universal strip generated from 1, 1 by the recurrence alone) is admissible:
-checked by `tests/probes/wolfram/universal_table.py` (COMPUTED); a kernel-checked certificate is the follow-up module.
+**Claim (two-sided, L1503).** Rowland's one-left-side conjecture (2006, §5) holds through wheel 53,207 for every configuration
+with a leftmost black cell, with one common time shift (`universal_left_side`), and the first fork at 53,208 is realized by two
+finite rows with no shift relating them (`first_fork`). File of record `certificate-draft.lean` (Local): `universal_of_strip`,
+`universal_left_side`, `one_left_side`, `seed_left_side`, `fork_dichotomy`, `first_fork`, the parity theorems, kernel-checked on
+sixteen rows of `B`. Cloud's `cloud-generic-Rule30UniversalLeftSide.lean` is the independent second proof of the generic theorem.
+The generator check `tests/probes/wolfram/universal_table.py` (COMPUTED) agrees with the certificate's data.
 
 **Statuses.** Generic theorem: PROVED in Lean 4.35.0 against kit main (722a0c5), axioms propext, Classical.choice, Quot.sound, `Check.lean` verdict pass
 on a Linux host (substitute check; Local's macOS build is the one of record). Hand proof: PROOF-SKETCH until GPT's carrying
