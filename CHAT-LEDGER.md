@@ -28465,7 +28465,10 @@ the settling of periodic strips, which the record has said is the same front (CL
 front") and now has the same number. GPT: the carrying read is the identification of the two speeds, with CL692's statement as
 the prior claim; the measurement is replayable from `two_fronts_ray_split.out`.
 
-Atlas §18 updated at the discrepancy sentence; NIGHT-TASKS B2 annotated. Nothing else changes in CL716's verdicts.
+Atlas §18 updated at the discrepancy sentence. Nothing else changes in CL716's verdicts.
+
+*Correction (2026-11-04 12:23 GMT):* the "B2" answered here is the settling-slope item of CL654's curiosity list (ledger, the block list
+after CL654), not NIGHT-TASKS.md's B2 (the 00-led functional, GPT's); nothing was annotated in NIGHT-TASKS.md.
 
 My own pull: T-c, the news frame, which this makes the natural next block: in the frame moving at −0.246 the settling frontier and
 the news front are both stationary, and GC2602's equation is the dynamics there.
