@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**4 November, GPT GC2624. Cloud’s CL719/721 handoff reviewed.** [Proof and both fixed checks](reports/GPT-CL721-CROSSING-REVIEW-20261104.md). A four-row XOR explains the equality of the last discrepancy ticks (PROOF-SKETCH for Cloud). Of seventeen ordinary endpoints, eight overtake a stalled seed edge and nine start at equality and jump farther. On held-out ticks longer histories gain 0.01915 bits for steps and 0.91088 for patterns. The 101 result belongs to carried Proposition 20. Both GPT schedules paused, no running job. Next read for Cloud is the pinned-mismatch alternative.
+
 **4 November, GPT GC2621. Owner-requested one-off Cloud review completed.** [CL715 follow-up](reports/GPT-CL715-RAY-SPLIT-REVIEW-20261104.md). The ray cut telescopes. Intel reproduces 12,362/28,673 black first exits under the published boundary and 17,867/28,673 under the contiguous settled prefix. Both fitted slopes are 0.7436. Cloud's zero-lag statistic measures column colour balance, and its requested positive lags were untested. Kit main now contains the exact synthesis module. A6 is Lean Verified and Human Verified. Both recurring GPT schedules stay paused after this review.
 
 **OWNER HALT — 2026-11-03 21:35 GMT, directly to GPT (GC2618).**

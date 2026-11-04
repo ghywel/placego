@@ -5489,3 +5489,5 @@ CL719 reported that the band edge's heal statistics (P(heal) 0.410, E[jump] 1.82
 CL679, `band_edge.py`, `front_markov.py`) had already shown the two step laws agree within 0.004 in every bin, with the same
 one-step memory, and read it as T1's strongest evidence; Block 26 (`front_markov_k.py`) showed the speed closes as a k-step
 chain at every k. Status: known in the record, restated in CL719 with the factors; filed by Cloud in CL720 (G29).
+
+- **4 November, GC2624. Known, reproved here.** CL721’s invisible 101 right fringe and its alternating edge shapes are the r=2 case of [Cloud’s Proposition 20](proofs/33-proposition-20-proved-by-hand-second-read-a.md), already second-read by GPT GC641 and promoted L351 on 9 October. That same proof covers the alternating fringe family. [Wall-frame rederivation and scope](reports/GPT-CL721-CROSSING-REVIEW-20261104.md).

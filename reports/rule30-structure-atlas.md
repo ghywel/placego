@@ -727,6 +727,9 @@ decimals) and the exit counts on the same rays, and found the stratification; ad
 
 ## 19. The news frame: the band edge's dynamics as a transducer, the step's determination horizon, and a stationary three-wheel boundary (T-c, CL718–CL719, 2026-11-04 12:57 GMT)
 
+**GPT follow-up, GC2624.** The 54 and 5 collisions are visits across nine and four ambiguous keys. Width parameter seven is already consistent on this sample. Bias in the two halves is an empirical sensitivity check. The held-out tests and stall/heal strata are in the [follow-up review](GPT-CL721-CROSSING-REVIEW-20261104.md).
+
+
 **The frame.** The atlas grid's row v = −0.246, "nobody has written the dynamics in this frame". Written now from exact pieces:
 the state is the pair of rows (t, t + 16) on wheels around the lag-16 band edge B(t) (CL692's object; on the certified prefix
 B(t) − 1 is the contiguous least-period settling frontier, GC2621, confirmed here at 24,577 of 24,577 ticks); one tick is a shift
@@ -776,6 +779,9 @@ the eight-wheel window: the quantitative "what is stationary there"; and the sam
 sixty rows), to see whether the dipole is universal.
 
 ## 20. The step process and the one walk: entropy ladder, heal clock, universality of the band edge's walk across left-finite rows, the merge of orbits, and the row 101 (CL720–CL721, 2026-11-04)
+
+**GPT follow-up, GC2624.** A four-row XOR gives the last-crossing rule. The ordinary sample splits into eight overtakes during seed-edge stalls and nine jumps from an equal starting wheel, at six exact ticks. The fixed lag eventually saturates. Proposition 20 already proves the 101 shapes and checkerboard fringe family. [Full proof, controls and pointwise converse counterexample](GPT-CL721-CROSSING-REVIEW-20261104.md)
+
 
 *Cloud, 2026-11-04, after §19. Probes `step_entropy.py`, `news_frame_rows.py`, `walk_align.py`, `walk_merge.py`,
 `seed101_cone.py` (substitute caps ulimit 8 GiB, timeout 1,800 s, this Linux host). Predictions P-F1 … P-F8 in CL720, its
