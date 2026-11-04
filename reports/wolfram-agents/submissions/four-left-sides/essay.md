@@ -4,20 +4,20 @@ Name: Exactly four left sides of rule 30 through wheel 87,866, and the same theo
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-11-04
 Description: A classification in core Lean: every configuration with a leftmost black cell carries one of four explicit strips on every left diagonal through wheel 87,866, all four occur, and no time shift relates two of them. As arithmetic, every odd number reaches one of four numbers under one map modulo 2^87867.
-Abstract: Rowland (2006, section 5) asked whether the periodic words on the left of rule 30 depend on the initial row, and located forks that split again. Our entry R30-20261104-309041 proved one left side through wheel 53,207 and realized the first fork. Here we classify the next level. Every configuration with a leftmost black cell, whatever its right tail, carries one of four explicit strips on every left diagonal through wheel 87,866, after one time shift (left_side_classification; Lean, standard axioms). All four are realized by finite rows, no time shift relates two of them, and each configuration is on exactly one. So rule 30 has exactly four left sides through that wheel. The same theorem is a statement about one map: iterate v to 4v xor (2v or v) modulo 2^87867 from any odd number, and the orbit reaches one of four numbers, each of least period 16 (odd_reaches_one_of_four). This map is a T-function that is not invertible, so the Klimov-Shamir cycle description in the kit does not apply. The proof applies two moves along the tree of forks at wheels 53,208, 58,287 and 72,576: a nearer parent with blacks extends an alignment with the same shift, and a white parent leaves two continuations. The data are sixteen rows of each of four numbers, kernel-checked. That the first number is the single seed's row is a separate computation. Wheel 87,866 is where these rows stop, not a claim about what lies beyond. Nothing concerns the center column.
+Abstract: Rowland (2006, section 5) identified three possible forks in the periodic words on the left of rule 30. Our entry R30-20261104-309041 proved one left side through wheel 53,207 and realized the first fork. Here we classify the next level. Every configuration with a leftmost black cell, whatever its right tail, eventually agrees with one of four explicit strips on all left diagonals through wheel 87,866, with one common time shift. Each strip is realized by a finite row, and no two are related by a time shift. The Lean theorem left_side_classification gives existence, and on_exactly_one gives uniqueness. Equivalently, iteration of v ↦ 4v xor (2v or v) modulo 2^87867 from any odd number reaches one of four representatives, each of least period 16. Between forks, a black nearer parent forces the child to agree at the existing shift. At each white parent, two explicit continuations cover the possible child words. The Lean kernel checks sixteen phases of each strip. As a hand corollary, the number of cycles on odd residues rises from one to two, three and four when the register first includes wheels 53,208, 58,287 and 72,576 respectively. A separate computation identifies the single seed’s representative. The classification ends at wheel 87,866.
 Keywords: [rule 30, Rule 30 Prize, left diagonals, left side, Rowland, classification, T-function, cycles, fork, Lean 4, LeanLink, partial result]
-Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)", "[Rowland, Local nested structure in rule 30](https://ericrowland.github.io/papers/Local_nested_structure_in_rule_30.pdf)", "[Nersissian, Diagonal Periods and Newton Supports of Rules 30, 86 and 135](https://arxiv.org/abs/2609.25077)", "[OEIS A364239](https://oeis.org/A364239)"]
+Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)", "[Rowland, Local nested structure in rule 30](https://ericrowland.github.io/papers/Local_nested_structure_in_rule_30.pdf)", "[Nersissian, Diagonal Periods and Newton Supports of Rules 30, 86 and 135](https://arxiv.org/abs/2609.25077)", "[Anashin, Non-Archimedean analysis, T-functions, and cryptography](https://arxiv.org/abs/cs/0612038)", "[OEIS A364239](https://oeis.org/A364239)"]
 Links: ["[Rule 30 Prizes](https://rule30prize.org/)", "[R30-20261104-309041: one left side through wheel 53,207](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-309041)", "[R30-20261027-317c64: Bosdure's universal left-edge crystal](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261027-317c64)", "[R30-20261104-30d8ae: Quint and Gemini's extension of the left-coincidence module](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-30d8ae)"]
 ---
 
 ## 1. The claim
 
-Eric Rowland (*Local nested structure in rule 30*, 2006, section 5) asked whether the periodic words on the left of rule 30 are independent of the initial row. He located the first possible fork at his column 53,209, noted that each continuation can split again, at his columns 58,288 and 72,577, and surmised that there are infinitely many left sides. Our entry R30-20261104-309041 proved one left side through wheel 53,207 (his column 53,208) for every configuration with a leftmost black cell, and realized the first fork by two finite rows. This entry takes the next level, and it is a classification rather than a list of examples.
+Eric Rowland (*Local nested structure in rule 30*, 2006, section 5) asked whether the periodic words on the left of rule 30 are independent of the initial row. He located the first possible fork at his column 53,209, identified two further possible forks, at his columns 58,288 and 72,577, and surmised that there are infinitely many left sides. Our entry R30-20261104-309041 proved one left side through wheel 53,207 (his column 53,208) for every configuration with a leftmost black cell, and realized the first fork by two finite rows. Here we prove which continuations occur and that these exhaust the possibilities through wheel 87,866.
 
-**Theorem (`left_side_classification`, `exactly_four_left_sides`, `on_exactly_one`).** There are four explicit rows `A0`, `A1`, `B0`, `B1` of 87,867 bits such that:
+**Theorem (`left_side_classification`, `exactly_four_left_sides`, `on_exactly_one`).** There are four explicit rows `A0`, `A1`, `B0`, `B1` in an 87,867-bit register with the following properties.
 
-- every configuration with a leftmost black cell, whatever lies to its right, carries the strip of one of them on every wheel through 87,866, after one time shift;
-- each of the four is realized by a finite row;
+- every configuration with a leftmost black cell, whatever lies to its right, eventually agrees with one of the four strips on every wheel through 87,866, with one time shift for the whole strip.
+- each of the four is realized by a finite row.
 - no time shift relates two of them through that wheel, so each configuration is on exactly one.
 
 So through wheel 87,866 rule 30 has exactly four left sides.
@@ -28,35 +28,35 @@ So through wheel 87,866 rule 30 has exactly four left sides.
 
 Place the leftmost black cell of a configuration `x` at `lo`. Its left diagonals, or wheels, are `Ld x lo j t = evol x t (lo - t + j)` (`Rule30FiniteDiagonals`). Wheel `0` stays black, wheel `1` is black from tick `1`, and wheel `j + 2` is reset by its nearer word `j + 1` and driven by its farther word `j`: `Ld (j + 2) (t + 1) = Ld j t ⊕ (Ld (j + 1) t ∨ Ld (j + 2) t)`. These are the kit's `Rule30AgedLeftDiagonals.Recurrence`.
 
-Read a row as a number, bit `j` being wheel `j`. Then one tick is the map `Ψ`: the three terms `4v`, `2v` and `v` are the farther word, the nearer word and the wheel itself. Bits below `n` depend only on bits below `n`, so the first `K` wheels form a closed system: `Ψ` modulo `2^K`. Bit `0` never changes, so the odd numbers are exactly the rows with a black wheel `0`, which is to say the configurations with a leftmost black cell, read from that cell.
+Read a row as a number, bit `j` being wheel `j`. Then one tick is the map `Ψ`: the three terms `4v`, `2v` and `v` are the farther word, the nearer word and the wheel itself. Bits below `n` depend only on bits below `n`, so the first `K` wheels form a closed system: `Ψ` modulo `2^K`. Bit `0` never changes. Reading the first `K` cells from a configuration’s leftmost black cell gives an odd residue modulo `2^K`. Every odd residue has a finite representative obtained by extending those bits with white cells. An arbitrary right tail gives the same evolution on those first `K` wheels.
 
 ## 3. The four rows
 
 The rows form a tree. `A0` is a literal. `B0` differs from it from wheel 53,208 up, `A1` from wheel 58,287 up, and `B1` differs from `B0` from wheel 72,576 up. All four return after 16 ticks (`A0_return`, `A1_return`, `B0_return`, `B1_return`), so each strip is periodic from tick 0, and every statement about them is a statement about sixteen rows, evaluated by the Lean kernel. The kernel checks the following.
 
 - Below wheel 53,207, the OR of `A0`'s sixteen rows is black at every wheel except 2, 7, 28 and 399, where the period and antiperiod checks of 309041 apply.
-- Wheel 53,207 is white in `A0`, and `B0` agrees with `A0` below 53,208 and is its complement there. The farther weight at wheel 53,206 is 6 over 16, so this is a true fork.
-- Wheel 58,286 is white in `A0`, and `A1` agrees with `A0` below 58,287 and is its complement there. The farther weight at wheel 58,285 is 10.
-- Wheel 72,575 is white in `B0`, and `B1` agrees with `B0` below 72,576 and is its complement there. The farther weight at wheel 72,574 is 10.
+- Wheel 53,207 is white in `A0`, and `B0` agrees with `A0` below 53,208 and complements it at wheel 53,208. Wheel 53,206 is black at six of the sixteen phases.
+- Wheel 58,286 is white in `A0`, and `A1` agrees with `A0` below 58,287 and complements it at wheel 58,287. Wheel 58,285 is black at ten of the sixteen phases.
+- Wheel 72,575 is white in `B0`, and `B1` agrees with `B0` below 72,576 and complements it at wheel 72,576. Wheel 72,574 is black at ten of the sixteen phases.
 - On every other wheel below 87,866, the row in question has a black at some phase (`wA0_low`, `wA0_high`, `wA1_high`, `wB0_low`, `wB0_high`, `wB1_high`).
 
 ## 4. The proof
 
 The proof applies two moves along that tree.
 
-**`extend`.** Suppose an array is aligned with a strip through wheel `m`, with shift `s`, and wheel `m` of the strip has blacks arbitrarily late. Then the alignment reaches wheel `m + 1` with the same shift: after a black of the nearer word, the array's child and the strip's child are the same bit, and they stay equal (`child_same`).
+**`extend`.** Suppose an array is aligned with a strip through wheel `m ≥ 1` at shift `s`, and wheel `m` has black cells arbitrarily late. Choose a black tick after both parent wheels, `m − 1` and `m`, have aligned. At the next tick both children take the complement of the same farther bit. They then have identical inputs and stay equal at the same shift (`child_same`).
 
 **`branch`.** Suppose instead wheel `m` is white. Then both children integrate the same farther word, so their difference is constant from some tick on (`child_white`). If the difference is zero the alignment continues. If it is one, the array is aligned with the other row of the fork, which agrees with this one below the child and is its complement on it.
 
-So `classification` runs: `universal_of_strip` brings every array to wheel 53,207 on `A0`; `branch` at 53,207 gives `A0` or `B0`; `extend` takes `A0` to 58,286 and `B0` to 72,575; `branch` there gives `A0` or `A1`, and `B0` or `B1`; and `extend` takes each of the four to 87,866. No shift changes after wheel 53,207, because the fork step needs none: a white wheel with even farther weight has no antiperiod to absorb the difference. That is why the two continuations are genuinely different, and it is the reason for the count.
+So `classification` runs: `universal_of_strip` brings every array to wheel 53,207 on `A0`; `branch` at 53,207 gives `A0` or `B0`; `extend` takes `A0` to 58,286 and `B0` to 72,575; `branch` there gives `A0` or `A1`, and `B0` or `B1`; and `extend` takes each of the four to 87,866. The checked black cells between successive forks make the list exhaustive. At each intervening wheel a reset forces the child. At each of the three white parents the two exhibited continuations cover both possible differences at the existing shift. The next argument distinguishes those continuations even when shifts are allowed.
 
 **Why they are different (`four_distinct`, `on_exactly_one`).** Each pair of strips is complementary at one wheel, at every tick: 53,208, 58,287 or 72,576. Wheel 400 has the same word in all four, and that word has no proper period. So a shift relating two of them must be a multiple of 16, and a multiple of 16 fixes the complementary wheel, which is a contradiction. If one array were on two strips, its two alignments would relate them (`side_unique`).
 
-**Why it becomes arithmetic (`odd_reaches_one_of_four`).** Apply `left_side_classification` to the configuration of an odd `v`. Finitely many wheels have one common threshold (`aligned_uniform`), so from some tick the first 87,867 wheels equal one of the four strips. At a tick that is a multiple of 16 past that threshold, the row is that number exactly.
+**Why it becomes arithmetic (`odd_reaches_one_of_four`).** Apply `left_side_classification` to the configuration of an odd `v`. Finitely many wheels have one common threshold (`aligned_uniform`), so from some tick the first 87,867 wheels equal one of the four strips. In the proof’s convention, the input at tick `t + s` matches the strip at tick `t`. For a common threshold `T`, choose `t = 16(T + 1)`. The strip then equals its phase-zero representative. The input reaches that exact number at tick `16(T + 1) + s`, after reduction to the register width.
 
 ## 5. A computation
 
-The next two cells replay part of this in Wolfram Language, outside Lean, from the single black cell. Running `Ψ` for 128,000 ticks gives a number whose sixteen rows have the white wheels above; its hexadecimal digest is printed, and it is the digest of the literal `A0` in the source. This is the replay behind saying that `A0` is the single seed's row: in Lean `A0` is a number, and `seed_classified` says only that the seed is on one of the four. The table counts the ticks that small odd numbers take to reach `A0`. Every random row we tried landed on `A0`. The other three strips are reached by rows built for them, which is the same picture Rowland's question left open and the record's §8.31 found.
+The next two cells replay part of this in Wolfram Language, outside Lean, from the single black cell. Running `Ψ` for 128,000 ticks gives a number whose next sixteen phases have the white wheels of `A0`. The printed digest of its hexadecimal representation agrees with the digest of the `A0` literal in the source. This is the replay behind saying that `A0` is the single seed's row: in Lean `A0` is a number, and `seed_classified` says only that the seed is on one of the four. The table gives the first arrival at `A0` from the two displayed starts. In a separate check, all 20 sampled odd rows landed on the cycle of `A0`, at various phases. The other three cycles have explicit finite representatives.
 
 ```wl
 K = 87867; mask = 2^K - 1;
@@ -68,15 +68,17 @@ all = BitOr @@ NestList[step, A, 15];
 ```
 
 ```wl
-reach[v_] := Module[{x = v, n = 0}, While[x != A, x = step[x]; n++]; n];
+reach[v_, limit_:128000] := Module[{x = v, n = 0}, While[n < limit && x != A, x = step[x]; n++]; If[x == A, n, Missing["NotReachedWithinLimit"]]];
 Grid[Prepend[{#, reach[#]} & /@ {1, 7}, {"odd start", "ticks to reach A0"}], Frame -> All]
 ```
 
 ## 6. What follows, and how this fits
 
-**Counting cycles.** A periodic point of `Ψ` on odd numbers modulo `2^n`, for `n ≤ 87,867`, lifts to an odd number modulo `2^87867`, which reaches one of the four. So every cycle modulo `2^n` is the reduction of one of the four, and two reductions coincide exactly when the strips agree below `n`. Hence the number of cycles on odd residues modulo `2^n` is 1 for `n ≤ 53,208`, 2 for `53,209 ≤ n ≤ 58,287`, 3 for `58,288 ≤ n ≤ 72,576`, and 4 for `72,577 ≤ n ≤ 87,867`. This corollary is a short hand argument and is not stated in the Lean. A direct enumeration confirms one cycle at every level we tried up to `n = 22`.
+**Counting cycles.** Fix `1 ≤ n ≤ 87,867`. Take a point on any cycle of odd residues modulo `2^n` and choose an odd lift to the full register. Reduction to the low `n` bits commutes with each step of `Ψ`. The lift reaches one of the four representatives, so its projection lies both on the original cycle and on the representative’s reduced cycle. Two cycles of a function that meet are the same cycle. Conversely each representative projects to a periodic point because it returns after 16 ticks.
 
-**Why the kit's cycle theorem does not reach this map.** `Ψ` is a T-function: bits below `n` of the image depend only on bits below `n`. The kit's `TFunctionCycles` describes the cycles of invertible T-functions, after Klimov and Shamir, and applies to the right-edge map `Φ(x) = x ⊕ (2x ∨ 4x)`. There bit `i` of the argument enters bit `i` of the image through `⊕`. In `Ψ` it enters through `∨`, and `Ψ` is not invertible: `Ψ(3)` and `Ψ(5)` agree modulo 16. So on the right every point is periodic, while on the left orbits merge and only a few cycles survive. In these terms Rowland's surmise of infinitely many left sides says that the number of cycles of `Ψ` on odd residues modulo `2^n` is unbounded in `n`.
+The four representatives agree at phase zero below the first fork. More generally, each pair agrees below its first differing wheel. If that wheel is retained, so is wheel 400, whose common time word has least period 16. A rotation identifying the two cycles must therefore shift by a multiple of 16. That preserves each fork bit, where the two words are complementary. A branch first counts separately when its differing wheel is included, so the count on odd residues is one for `1 ≤ n ≤ 53,208`, two for `53,209 ≤ n ≤ 58,287`, three for `58,288 ≤ n ≤ 72,576`, and four for `72,577 ≤ n ≤ 87,867`. This corollary is proved here by hand from the Lean classification.
+
+**Why the kit's cycle theorem does not reach this map.** `Ψ` is a T-function: bits below `n` of the image depend only on bits below `n`. The kit's `TFunctionCycles` describes the cycles of invertible T-functions, following Klimov and Shamir and the 2-adic work of Anashin, and applies to the right-edge map `Φ(x) = x ⊕ (2x ∨ 4x)`. There bit `i` of the argument enters bit `i` of the image through `⊕`. In `Ψ` it enters through `∨`, and `Ψ` is not invertible: `Ψ(3)` and `Ψ(5)` agree modulo 16. So on the right every point is periodic, while on the left orbits merge and only a few cycles survive. Rowland’s surmise suggests a finite-width question. Can the number of cycles on odd residues grow without bound as `n` increases?
 
 ## 7. Prior art and credits
 
@@ -86,11 +88,11 @@ Our contributors' record realized the four left sides by computation on 5 and 6 
 
 ## 8. What is not claimed
 
-Wheel 87,866 is where these rows stop. Beyond it the record computes a doubling on the seed's side at wheel 87,867 and a further fork at about wheel 165,749 on a `B` side; neither is claimed here. Which of the four the single seed takes is a replay, not a Lean statement. Whether there are infinitely many left sides stays open. Nothing here concerns the center column, the density or the prize problems: every column of the pattern leaves the settled band, and this theorem is about the settled side only.
+Wheel 87,866 is where these rows stop. Beyond it the record computes a doubling on the seed's side at wheel 87,867 and a further fork at wheel 165,749 on the `B0` continuation; neither is claimed here. Which of the four the single seed takes is a replay, not a Lean statement. Whether there are infinitely many left sides stays open. A fixed spatial column eventually leaves the finite strip studied here. The theorem concerns the left side and leaves the center-column prize problems open.
 
 ## The formal proof
 
-The module is core Lean. It imports the official statements (`Rule30Prize`) and the kit's `Rule30AgedLeftDiagonals`, which brings `Rule30FiniteDiagonals`, `Rule30Diagonals` and `Rule30Realization`. The four rows are the hexadecimal literals in the source, and every `decide +kernel` is the Lean kernel evaluating sixteen rows of them.
+The module is core Lean. It imports the official statements (`Rule30Prize`) and the kit's `Rule30AgedLeftDiagonals`, which brings `Rule30FiniteDiagonals`, `Rule30Diagonals` and `Rule30Realization`. The source stores `A0` as a hexadecimal literal and the other rows as shifted XOR differences. The finite phase checks evaluate these definitions inside the Lean kernel.
 
 ```wl
 Needs["Wolfram`LeanLink`"];

@@ -24,7 +24,7 @@ Date: 2026-11-04
 Description: A classification in core Lean: every configuration with a leftmost black cell carries one of four explicit strips on every left diagonal through wheel 87,866, all four occur, and no time shift relates two of them. As arithmetic, every odd number reaches one of four numbers under one map modulo 2^87867.
 Abstract: {abstract}
 Keywords: [rule 30, Rule 30 Prize, left diagonals, left side, Rowland, classification, T-function, cycles, fork, Lean 4, LeanLink, partial result]
-Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)", "[Rowland, Local nested structure in rule 30](https://ericrowland.github.io/papers/Local_nested_structure_in_rule_30.pdf)", "[Nersissian, Diagonal Periods and Newton Supports of Rules 30, 86 and 135](https://arxiv.org/abs/2609.25077)", "[OEIS A364239](https://oeis.org/A364239)"]
+Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)", "[Rowland, Local nested structure in rule 30](https://ericrowland.github.io/papers/Local_nested_structure_in_rule_30.pdf)", "[Nersissian, Diagonal Periods and Newton Supports of Rules 30, 86 and 135](https://arxiv.org/abs/2609.25077)", "[Anashin, Non-Archimedean analysis, T-functions, and cryptography](https://arxiv.org/abs/cs/0612038)", "[OEIS A364239](https://oeis.org/A364239)"]
 Links: ["[Rule 30 Prizes](https://rule30prize.org/)", "[R30-20261104-309041: one left side through wheel 53,207](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-309041)", "[R30-20261027-317c64: Bosdure's universal left-edge crystal](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261027-317c64)", "[R30-20261104-30d8ae: Quint and Gemini's extension of the left-coincidence module](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-30d8ae)"]
 ---
 
@@ -41,7 +41,7 @@ all = BitOr @@ NestList[step, A, 15];
 ```
 
 ```wl
-reach[v_] := Module[{x = v, n = 0}, While[x != A, x = step[x]; n++]; n];
+reach[v_, limit_:128000] := Module[{x = v, n = 0}, While[n < limit && x != A, x = step[x]; n++]; If[x == A, n, Missing["NotReachedWithinLimit"]]];
 Grid[Prepend[{#, reach[#]} & /@ {1, 7}, {"odd start", "ticks to reach A0"}], Frame -> All]
 ```
 '''
@@ -49,7 +49,7 @@ formal = '''
 
 ## The formal proof
 
-The module is core Lean. It imports the official statements (`Rule30Prize`) and the kit's `Rule30AgedLeftDiagonals`, which brings `Rule30FiniteDiagonals`, `Rule30Diagonals` and `Rule30Realization`. The four rows are the hexadecimal literals in the source, and every `decide +kernel` is the Lean kernel evaluating sixteen rows of them.
+The module is core Lean. It imports the official statements (`Rule30Prize`) and the kit's `Rule30AgedLeftDiagonals`, which brings `Rule30FiniteDiagonals`, `Rule30Diagonals` and `Rule30Realization`. The source stores `A0` as a hexadecimal literal and the other rows as shifted XOR differences. The finite phase checks evaluate these definitions inside the Lean kernel.
 
 ```wl
 Needs["Wolfram`LeanLink`"];

@@ -6239,7 +6239,7 @@ farther weight 6 over period 16, the first fork). *Prior art:* Rowland 2006 §5 
 
 ### Waiting room — Exactly four left sides through wheel 87,866 (Local, L1514; 2026-11-04)
 
-*Status:* PROVED in Lean 4.35.0, single-party (`Rule30Submission.lean` in the four-left-sides package, `Check` pass). Hand proof below is PROOF-SKETCH until a second reader carries it. The cycle-count corollary is hand only.
+*Status (GC2656):* Local and Cloud report Lean 4.35.0 checks of the same portal module. Cloud CL731 and GPT GC2656 carried the classification and uniqueness proof. GPT also carried the cycle-count corollary by hand for `1 ≤ n ≤ 87,867`. The Lean file proves the classification at full width. [Reviewed packet and release pins](reports/wolfram-agents/submissions/four-left-sides/README.md)
 
 **Setting.** `a` is an array with the left-diagonal recurrence and `a 0 0` black. For a number `v` with `Ψ^16(v) = v` modulo `2^87867`, `S_v(j, t)` is bit `j` of `Ψ^t(v)`. *Aligned through `J` at `s`* means every wheel `j ≤ J` has `a j (t + s) = S_v(j, t)` for all large `t`, each wheel with its own threshold.
 
@@ -6255,7 +6255,7 @@ farther weight 6 over period 16, the first fork). *Prior art:* Rowland 2006 §5 
 
 **Arithmetic.** For odd `v`, the classification applies to the configuration of `v`. Taking the maximum of finitely many thresholds, from some tick `T` all wheels below 87,867 of the row at `t + s` equal those of `Ψ^t(u)`. Choose `t` a multiple of 16 with `t ≥ T` and `t ≥ 16`: then `Ψ^t(u) = u`, and the row at `t + s`, being below `2^87867`, equals `u`.
 
-**Corollary, hand only.** Let `n ≤ 87,867`. A periodic point modulo `2^n` lifts to an odd residue modulo `2^87867`, whose orbit reaches one of the four and reduces onto the orbit of the periodic point. So every cycle modulo `2^n` is a reduction of one of the four. Two reductions are the same cycle when the rows agree below `n`, and for `n > 400` are different when a complementary wheel lies below `n`, by the argument above. This gives 1, 2, 3, 4 cycles with thresholds at `n` = 53,209, 58,288, 72,577. Only the threshold argument is new.
+**Corollary, hand only.** Let `1 ≤ n ≤ 87,867`. An odd periodic point modulo `2^n` lifts to an odd residue modulo `2^87867`, whose orbit reaches one of the four and reduces onto the orbit of the periodic point. So every cycle modulo `2^n` is a reduction of one of the four. Two reductions are the same cycle when the rows agree below `n`, and for `n > 400` are different when a complementary wheel lies below `n`, by the argument above. This gives 1, 2, 3, 4 cycles with thresholds at `n` = 53,209, 58,288, 72,577. Only the threshold argument is new.
 
 
 ### Waiting room — the forced front: the kit's `frontBound` recursion bounds the settling of every configuration with a leftmost black cell (Cloud, CL730; 2026-11-04 19:13 GMT)

@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**4 November, GC2656. Four-left-sides follow-up reviewed and corrected.** GPT carried Local’s classification through wheel 87,866 and the hand cycle-count corollary. The predecessor is publicly Lean Verified and tagged Kit Contribution. Local has the [approved follow-up sources and replacement notebook gates](reports/wolfram-agents/submissions/four-left-sides/README.md). Next step is the Wolfram rebuild on the corrected essay and posting on the owner’s word.
+
 **4 November, GC2655. Future Intel Lean builds use 8 GiB process-tree RSS and 4 GiB swap growth** (`--track-tree --rss-mib 8192 --swap-growth-mib 4096`). A real launcher receipt confirms both values. GPT also checked Local’s L1509 replacement notebook receipt: the approved essay and embedded Lean source passed the release gates.
 
 **4 November 19:01 GMT, Local L1513. Exactly four left sides through wheel 87,866, in Lean (not posted).** Every configuration with a leftmost black cell is on one of four strips; all four occur; none is a shift of another. In arithmetic, from any odd number v ↦ 4v ⊕ (2v ∨ v) mod 2^87,867 reaches one of four numbers. `Check` passes on the verifier's kit. R30-20261104-309041 needs no change. A carrying read and the owner's word are needed for any posting.
