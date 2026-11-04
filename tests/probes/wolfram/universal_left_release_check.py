@@ -1,7 +1,9 @@
 """Serial, exact-source review of the two release forms with each kit's own Check.lean.
 
 Run under run_capped.py. KIT_CACHE is a git clone containing both pinned commits.
-The existing stage supervisor enforces the CPU/thermal budget across the compilers.
+RELEASE_FIRST names the initial checkpoint. To compare normal command-line elaboration,
+set RELEASE_WARM to the completed synchronous release run instead. The stage supervisor
+enforces the CPU/thermal budget across the compilers.
 """
 import hashlib
 import json
@@ -30,6 +32,11 @@ def main():
     lean = os.environ["METAL_SCOPE_BINARY"]
     assert "eb6cafb7290e8bd5f2937522d8d804f58f02bafc" in subprocess.check_output([lean, "--version"], text=True)
     jobs, hashes = [], {}
+    warm = Path(os.environ["RELEASE_WARM"]) if "RELEASE_WARM" in os.environ else None
+    if warm:
+        assert json.loads((warm/"launcher.json").read_bytes())["exit_reason"]=="COMPLETED"
+        assert sha((warm/"sources.json").read_bytes())=="3cbb2e90b51edfb4250505a7cf6595ae6b28d22c35789db97ccee632c582cd78"
+
     for kind, commit, module in CASES:
         root = out/kind
         root.mkdir()
@@ -51,8 +58,15 @@ def main():
             source.parent.mkdir(parents=True, exist_ok=True)
             source.write_bytes(data)
             hashes[str(source.relative_to(out))] = sha(data)
+            if warm and name != module:
+                prior = warm/kind/source.relative_to(root)
+                assert prior.read_bytes()==data and prior.with_suffix(".olean").is_file()
+                for obj in prior.parent.glob(prior.stem+".*"):
+                    if obj != prior:
+                        shutil.copyfile(obj, source.parent/obj.name)
+                return
             # Only resume successful exact-source objects from the pinned first launch.
-            if kind == "portal" and name in RESUME:
+            if not warm and kind == "portal" and name in RESUME:
                 prior = Path(os.environ["RELEASE_FIRST"])/kind/source.relative_to(root)
                 assert prior.read_bytes()==data
                 receipt = prior.parents[len(name.split("."))-1].parent/("portal-"+name.rsplit(".",1)[-1]+".receipt.json")
@@ -63,7 +77,7 @@ def main():
                     shutil.copyfile(obj,source.with_suffix(suffix))
                 return
             jobs.append(dict(name=kind+'-'+name.rsplit('.',1)[-1],
-                             args=['env','LEAN_PATH='+str(root),lean,'-j1','-DElab.async=false','-R',str(root),'-o',
+                             args=['env','LEAN_PATH='+str(root),lean,'-j1',*([] if warm else ['-DElab.async=false']),'-R',str(root),'-o',
                                    str(source.with_suffix('.olean')),str(source)],cpu=32,wall=60))
         src = PACKET/(module.rsplit('.',1)[-1]+'.lean')
         emit(module,src.read_bytes())
@@ -77,7 +91,7 @@ def main():
         assert sha((PACKET/name).read_bytes())==digest,name
     (out/'sources.json').write_text(json.dumps(hashes,sort_keys=True,indent=2)+'\n')
     plan = out/'jobs.json'
-    plan.write_text(json.dumps(dict(worker_stop=200,input_sha256={},jobs=jobs),indent=2)+'\n')
+    plan.write_text(json.dumps(dict(worker_stop=55 if warm else 200,input_sha256={},jobs=jobs),indent=2)+'\n')
     os.execv(sys.executable,[sys.executable,'tests/probes/metal_scope/stage.py',str(plan)])
 
 
