@@ -1,0 +1,20 @@
+{
+  "worker_stop": 90,
+  "input_sha256": {
+    "tests/probes/wolfram/cl722_passage_clock.py": "0949ca87f64b046fa1679170683ef2bd24d2edd78a758003fd74819631937dbc",
+    "tests/probes/wolfram/white_parent_witness.out": "231287689be9d93c9fa4ec4bb9c0f830b8660c33db29f6d07beab08a4a81021b",
+    "tests/probes/wolfram/run_capped.py": "c8c58b49e032fc4c20b61675adc4194646713e692a51815996791ac8943ffc56",
+    "tests/probes/metal_scope/stage.py": "ba9696782abbee65ffcd3433e78848f1de82647a4f8033ab1e6a5c6cbdaaa09a"
+  },
+  "jobs": [
+    {
+      "name": "clock",
+      "args": [
+        "python3",
+        "tests/probes/wolfram/cl722_passage_clock.py"
+      ],
+      "cpu": 78,
+      "wall": 145
+    }
+  ]
+}
