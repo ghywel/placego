@@ -5,11 +5,17 @@ import Ruliology.CellularAutomata.Rule30AgedLeftDiagonals
 # Exactly four left sides of rule 30 through wheel 87,866
 
 Extends R30-20261104-309041, which proved one left side through wheel 53,207 and realized the first fork. Here every
-configuration with a leftmost black cell is placed on one of four strips through wheel 87,866 (`left_side_classification`,
-`exactly_four_left_sides`). All four are realized by finite rows and no time shift relates two of them. As arithmetic: iterate
-`v ↦ 4 v ⊕ (2 v ∨ v)` modulo `2 ^ 87867` from any odd `v`, and the orbit reaches `A0`, `A1`, `B0` or `B1` (`odd_reaches_one_of_four`),
-each of least period 16. The induction is Rowland's (2006, §5), who located these forks. The generic part is repeated from
-309041 because the verifier's kit does not hold that module. Nothing here concerns the center column or the Prize problems.
+configuration with a leftmost black cell is placed on one of four strips through wheel 87,866 (`left_side_classification`). All
+four are realized by finite rows, no time shift relates two of them, and each configuration is on exactly one
+(`exactly_four_left_sides`, `on_exactly_one`). As arithmetic: iterate `v ↦ 4 v ⊕ (2 v ∨ v)` modulo `2 ^ 87867` from any odd `v`, and
+the orbit reaches `A0`, `A1`, `B0` or `B1` (`odd_reaches_one_of_four`), each of least period 16 (`least_period_16`).
+
+The proof applies two moves along the tree of forks at wheels 53,208, 58,287 and 72,576. `extend`: while the nearer wheel has
+blacks arbitrarily late, an alignment continues with the same shift. `branch`: at a white wheel the child is the strip's word or
+its complement. Below wheel 53,207 it is the induction of `universal_of_strip`. The induction is Rowland's (2006, §5), who
+located these forks. That induction and the row-number bridge are repeated from 309041 because the verifier's kit does not
+hold that module. Nothing here concerns the center column or the Prize problems, and 87,866 is where these rows stop, not a claim
+about what happens beyond it.
 -/
 
 namespace Rule30Submission
@@ -583,6 +589,18 @@ def weight16 (v m : Nat) : Nat → Nat
 /-- The farther words at the three forks have even weight over 16: 6, 10, 10. -/
 theorem fork_weights : weight16 A0 53206 16 = 6 ∧ weight16 A0 58285 16 = 10 ∧ weight16 B0 72574 16 = 10 := by
   decide +kernel
+
+/-- **Each array is on exactly one side.** Two different strips cannot both carry it, at any shifts. -/
+theorem on_exactly_one {a : Nat → Nat → Bool} {s s' : Nat} :
+    ¬ (Aligned a A0 s 87866 ∧ Aligned a A1 s' 87866) ∧ ¬ (Aligned a A0 s 87866 ∧ Aligned a B0 s' 87866) ∧
+    ¬ (Aligned a A0 s 87866 ∧ Aligned a B1 s' 87866) ∧ ¬ (Aligned a A1 s 87866 ∧ Aligned a B0 s' 87866) ∧
+    ¬ (Aligned a A1 s 87866 ∧ Aligned a B1 s' 87866) ∧ ¬ (Aligned a B0 s 87866 ∧ Aligned a B1 s' 87866) :=
+  ⟨fun h => four_distinct.1 (side_unique A1_return h.1 h.2),
+   fun h => four_distinct.2.1 (side_unique B0_return h.1 h.2),
+   fun h => four_distinct.2.2.1 (side_unique B1_return h.1 h.2),
+   fun h => four_distinct.2.2.2.1 (side_unique B0_return h.1 h.2),
+   fun h => four_distinct.2.2.2.2.1 (side_unique B1_return h.1 h.2),
+   fun h => four_distinct.2.2.2.2.2 (side_unique B1_return h.1 h.2)⟩
 
 /-! ### The same theorem as arithmetic -/
 

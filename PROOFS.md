@@ -6236,3 +6236,24 @@ farther weight 6 over period 16, the first fork). *Prior art:* Rowland 2006 §5 
 ### GC2651 — Universal left side and first fork: carrying read of CL724, L1506 and L1507
 
 **PROVED hand/two-party** for the common-shift induction. A finite maximum supplies one prefix onset. A reset after the parent onsets fixes the child; at an eventually white parent a constant XOR difference is absorbed by a child antiperiod which fixes the entire lower prefix. The fork’s witness and lack of any common shift carry conditional on its kernel-checked finite return, complement and primitive wheel-400 phase tests. The `Ld_ofRow` bridge, and the nonconstructive choice of a witness against the singleton, also carry. A cyclic word and its complement have the same least period length. [Full review, release pins and evidence scopes](reports/GPT-UNIVERSAL-LEFT-SIDE-POSTING-REVIEW-20261104.md)
+
+### Waiting room — Exactly four left sides through wheel 87,866 (Local, L1514; 2026-11-04)
+
+*Status:* PROVED in Lean 4.35.0, single-party (`Rule30Submission.lean` in the four-left-sides package, `Check` pass). Hand proof below is PROOF-SKETCH until a second reader carries it. The cycle-count corollary is hand only.
+
+**Setting.** `a` is an array with the left-diagonal recurrence and `a 0 0` black. For a number `v` with `Ψ^16(v) = v` modulo `2^87867`, `S_v(j, t)` is bit `j` of `Ψ^t(v)`. *Aligned through `J` at `s`* means every wheel `j ≤ J` has `a j (t + s) = S_v(j, t)` for all large `t`, each wheel with its own threshold.
+
+**Extend.** Suppose alignment through `m ≥ 1`, and `S_v(m, ·)` has a black at some tick `r` beyond the thresholds of wheels `m - 1` and `m`. At tick `r`, the updates of `a (m + 1)` at `r + s` and of `S_v(m + 1)` at `r` both read the same farther bit and a black nearer bit, so both equal the farther bit complemented. After that the two children have equal inputs and equal state, so they stay equal. The shift is unchanged.
+
+**Branch.** Suppose alignment through `w`, and `S_v(w, ·)` is white at every tick. Beyond the thresholds both children obey `x' = f ⊕ x` with the same `f`, so their XOR is constant. If it is 0, alignment reaches `w + 1`. If it is 1, take `v'` with `S_v'` equal to `S_v` below `w + 1` and complementary at `w + 1`: then `a` is aligned with `v'` through `w + 1` at the same `s`.
+
+**Classification.** 309041's induction gives alignment with `A0` through 53,207. Branch at 53,207 gives `A0` or `B0` through 53,208. On `A0`, extend to 58,286 and branch there to `A0` or `A1`; on `B0`, extend to 72,575 and branch there to `B0` or `B1`. Extend each to 87,866. The kernel supplies every black and white fact as a statement about sixteen rows.
+
+**Distinctness.** Two of the four strips are complementary at one wheel `w` at every tick and equal on wheel 400. Suppose `S_v(j, t + s) = S_v'(j, t)` eventually on all wheels. If `s` is not a multiple of 16, then wheel 400 gives `S_v(400, t + s) = S_v(400, t)` at late ticks of every residue, contradicting that its word has no proper period. If it is, then `S_v(w, t + s) = S_v(w, t)`, contradicting the complement.
+
+**Uniqueness.** If `a` is aligned with `v` at `s` and with `v'` at `s'`, then for late `t`, `S_v(j, t + s' + 15 s) = a j (t + s' + 16 s) = S_v'(j, t + 16 s) = S_v'(j, t)`. So the strips are related, against distinctness.
+
+**Arithmetic.** For odd `v`, the classification applies to the configuration of `v`. Taking the maximum of finitely many thresholds, from some tick `T` all wheels below 87,867 of the row at `t + s` equal those of `Ψ^t(u)`. Choose `t` a multiple of 16 with `t ≥ T` and `t ≥ 16`: then `Ψ^t(u) = u`, and the row at `t + s`, being below `2^87867`, equals `u`.
+
+**Corollary, hand only.** Let `n ≤ 87,867`. A periodic point modulo `2^n` lifts to an odd residue modulo `2^87867`, whose orbit reaches one of the four and reduces onto the orbit of the periodic point. So every cycle modulo `2^n` is a reduction of one of the four. Two reductions are the same cycle when the rows agree below `n`, and for `n > 400` are different when a complementary wheel lies below `n`, by the argument above. This gives 1, 2, 3, 4 cycles with thresholds at `n` = 53,209, 58,288, 72,577. Only the threshold argument is new.
+

@@ -6,6 +6,8 @@
 
 **4 November 19:01 GMT, Local L1513. Exactly four left sides through wheel 87,866, in Lean (not posted).** Every configuration with a leftmost black cell is on one of four strips; all four occur; none is a shift of another. In arithmetic, from any odd number v ↦ 4v ⊕ (2v ∨ v) mod 2^87,867 reaches one of four numbers. `Check` passes on the verifier's kit. R30-20261104-309041 needs no change. A carrying read and the owner's word are needed for any posting.
 
+**4 November 19:09 GMT, Local L1514. Four-left-sides follow-up prepared for GPT's read; not posted.** [Packet, pins and six questions](reports/wolfram-agents/submissions/four-left-sides/README.md). `Check` and a dry notebook pass on the verifier's kit.
+
 **4 November 18:54 GMT, Local L1511. POSTED: universal left side.** [R30-20261104-309041](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-309041) is Lean Verified (193 constants, standard axioms). Kit PR [#141](https://github.com/WolframInstitute/Rule30PrizeKit/pull/141) is open. At the owner's word Local continues with the next forks.
 
 **4 November 18:49 GMT, Local L1510. Submission and kit PR ready; nothing posted.** All pins match, the verifier and kit main have not moved, and Cloud's whole-kit build passed. Waiting only on the owner's word.
