@@ -28289,3 +28289,56 @@ periodic mask regime of CL708's kind, say). That is a route, not a result; it be
 if the owner wants it there when work resumes.
 
 My own pull: unchanged (CL708's T-a), after the halt.
+
+## CL714 — Cloud to the owner (for the record; the halt holds): "stacked diagonals from wall to wall" is a theorem of the kit. Every cell is the parity of the OR along two adjacent light rays from the left wall (`center_eq_parity`, `R_eq_parity`); Jen's wall argument is the proved "all columns at once" mechanism; the open step is a cancellation statement about the core; a test sketched, not run (2026-11-04 11:22 GMT)
+
+**The owner (chat, verbatim):** "the question becomes what would cause every column to be invalidated as periodic all at once.
+I am thinking: if there are 2 or more stacked diagonals that trace from wall to wall that force every column above them to
+simultaneously break their own rhythm." Recorded in INSTINCT.md.
+
+**1. The object exists, in the kit.** `Rule30Diagonals.R_eq_parity`: R_(j+2)(t) = ⊕_(s<t) (R_(j+1)(s) ∨ R_j(s)), where
+R_j(s) = cell(s, s − j) is the light ray x − s = −j, read from where it enters the cone at the left wall (s = j/2) through the
+centre (s = j) and on. With j = t − x − 2: **every cell cell(t, x) is the parity, along two adjacent rays from the left wall
+to the cells (t − 1, x) and (t − 1, x + 1), of the OR of the two rays.** The kit states it for the centre (`center_eq_parity`:
+the centre at time t is black iff an odd number of earlier rows s < t are black at position s − t + 1 or s − t + 2); it is the
+odometer's integration read backwards, and it holds for every column by translation. So a column's rhythm is an accumulated
+parity along rays that begin at the left wall, which is the owner's picture with one correction: the rays run wall to column,
+not wall to wall (a light ray never reaches the right wall, which recedes at the same speed).
+
+**2. The proved "all at once" mechanism is Jen's wall argument.** `periodic_left_all`: two adjacent eventually periodic
+columns force every column to their left to be periodic with the same onset T and period P (left-permutivity). `no_left_periodic`:
+that is impossible, because a column q left of −(T + P) is white at time T and the left wall arrives at it, black, at time |q|.
+The wall breaks a uniformly periodic left half everywhere at once. The gap for Problem 1 is that one periodic column propagates
+nothing: its left neighbour is determined by it together with the aperiodic column on its right.
+
+**3. Where the wall enters every column: the settled band along the rays.** Column x's two rays at time t cross wheel k at
+time s = (t − x − 1 + k)/2; with settling times about 1.25 k (the cascade, CL696), the rays are inside the settled band for
+wheels k ≤ (t − x − 1)/1.5, a segment that grows linearly in t. Split the parity: cell(t, x) = S_x(t) ⊕ C_x(t), the settled part
+(the crystal's periodic strips, sampled at the crossing times, each term periodic in t with period 2^(e_k + 1)) and the core
+part. The settled part gains a new term whenever the rays reach a wheel that has settled; a white wheel w (2, 7, 28, 399, 53,207,
+58,286, 87,866, 2,107,985,254, …, infinitely many by Rowland and our 0616de) enters column x's segment at t ≈ 1.5 w + x, so each
+period doubling of the left side sweeps across every column along a light ray from the wall: that is the "stacked diagonals
+forcing every column", made exact. What it forces is only the settled part: S_x(t) cannot be eventually P-periodic for any fixed
+P once a term of period above P has entered, unless later terms cancel it in the parity.
+
+**4. The open step, stated.** The general claim (no column of a finite configuration is eventually periodic) is, in this
+decomposition, **"the core part C_x(t) never cancels the settled part's period growth"**: an eventually P-periodic column needs
+C_x(t) ⊕ S_x(t) P-periodic while S_x(t) keeps acquiring terms of period above P. This is the C4 bridge's object read for
+Problem 1 instead of Problem 2 (the OR-event parities along the past rays, split by the settled part; GC2525/L1425 PROVED the
+split two-party), and the parity census (CL678, M5) is its evidence: the crystal parity is coin-like and uncorrelated with the
+core's, within the census. A proof would need the core's parity to be *provably* unable to track a coin-like periodic-strip
+sum, which is the same hardness as Problem 1 in new clothes; what the decomposition gives is a single statement for every
+column at once, with the wall's doublings as the forcing term, rather than word lists. Statuses: the decomposition PROVED (kit,
+§8.31, CL696); the forcing of S_x PROVED given the unbounded periods; the cancellation statement CONJECTURE, equivalent to the
+general Problem 1 for that column.
+
+**5. A test to run when work resumes (T-d), predictions first.** On the single seed to t = 2^16, for columns x in
+{−64, …, 64}: compute S_x(t) and C_x(t) along the two rays with the settled band from the cascade's settling times; control,
+S ⊕ C = cell(t, x) exactly (PROVED, must hold at every t); **P-D1:** the least period of S_x over the window doubles each time a
+white wheel enters its segment, at t within 10% of 1.5 w + x for w = 2, 7, 28, 399 (lean 70%); **P-D2:** the cross-correlation of
+S_x and C_x at lags 0 … 64 is below 0.02 at every x (the crystal and the core are uncorrelated, as M5 found for the centre; lean
+65%); **P-D3:** no column's parity sequence has a period below 2^12 on the window (control of the conjecture; lean 95%).
+Counterfactual for P-D2: a correlation would be a mechanism by which the core knows the crystal, and the first structural lead
+on the cancellation. Substitute tool, this host, caps to be stated at the run.
+
+My own pull: T-a stays first; T-d after it, both at the owner's word.

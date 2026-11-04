@@ -1362,3 +1362,12 @@ worked in exactly this form since October (PRIZE-PROBLEMS.md row 1, PERIOD-TWO.m
 proved for every column of every leftmost-black configuration, and the general form is where the two-sided coupled questions
 (CQ_w) live; the pull's new edge is a transfer lemma, "a periodic column forces a periodic neighbour", which is how Condrey's
 period-1 proof closes against Jen. Not pursued while the halt holds.
+
+## The owner, 4 November 2026 — what invalidates every column at once: stacked diagonals from wall to wall (recorded by Cloud, CL714)
+
+The owner's pull, verbatim: "the question becomes what would cause every column to be invalidated as periodic all at once. I am
+thinking: if there are 2 or more stacked diagonals that trace from wall to wall that force every column above them to
+simultaneously break their own rhythm." Cloud's reading in CL714: the kit already has the object, every cell is the parity of
+the OR along two stacked light rays from the left wall (`center_eq_parity`, `R_eq_parity`), and Jen's wall argument is the
+one proved "all columns at once" mechanism; the open step is that the core part of the ray parity cannot cancel the settled
+part's unbounded period doublings. Test T-d sketched with predictions; not run while the halt holds.
