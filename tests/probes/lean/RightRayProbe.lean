@@ -77,7 +77,7 @@ theorem even_snapshot_test (x : Row) (d n : Int) (m : Nat) (hm : 0 < m)
       White x (n-3*(m : Int)+1) (d-1) := by
   apply snapshot_test hd
   intro y
-  simpa only [Nat.zero_add] using even_white_iff (orbit y) (orbit_step y) 0 n m hm
+  simpa only [Nat.zero_add, show orbit y 0 = y by simp [orbit]] using even_white_iff (orbit y) (orbit_step y) 0 n m hm
 
 theorem odd_snapshot_test (x : Row) (d n : Int) (m : Nat) (hm : 0 < m)
     (hd : d-1 ≤ n+(m : Int)) :
@@ -85,6 +85,6 @@ theorem odd_snapshot_test (x : Row) (d n : Int) (m : Nat) (hm : 0 < m)
       White x (n-3*(m : Int)) (d-1) := by
   apply snapshot_test hd
   intro y
-  simpa only [Nat.zero_add] using odd_white_iff (orbit y) (orbit_step y) 0 n m hm
+  simpa only [Nat.zero_add, show orbit y 0 = y by simp [orbit]] using odd_white_iff (orbit y) (orbit_step y) 0 n m hm
 
 end RightRayProbe
