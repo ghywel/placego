@@ -24,7 +24,7 @@ for t in range(T + P + 1):
     V = ((V << 2) ^ ((V << 1) | V)) & MASK; rows.append(V)
 print(f"simulated T={T} ({time.time()-t0:.1f} s)", flush=True)
 def bits_of(v, n):                                     # bool array of the lowest n bits of v, index = wheel
-    b = v.to_bytes((n + 7) // 8, 'little')
+    b = (v & ((1 << n) - 1)).to_bytes((n + 7) // 8, 'little')
     return np.unpackbits(np.frombuffer(b, dtype=np.uint8), bitorder='little')[:n].astype(bool)
 # certified prefix: wheels agreeing at T-W and T-W+16 (autonomous prefix, so the equality propagates forever)
 agree = ~bits_of(rows[T - W] ^ rows[T - W + P], K)

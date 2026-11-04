@@ -1,0 +1,27 @@
+simulated T=65536 (3.5 s)
+certified 16-periodic prefix at T-W: wheels 0..42899
+C1: B16(t)-1 == contiguous least-period frontier at 24577 of 24577 ticks in [8192, 32768] (mismatches 0)
+mask law (B stays iff decider B-1 white): violations 0 over [8192, 32768]
+step law: mean Delta 0.7449 (8.74: 0.755; CL715 least-period frontier: 0.744); P(heal) 0.4097; E[jump|heal] 1.818; max jump 12; distribution [(0, 14507), (1, 3704), (2, 5354), (3, 510), (4, 249), (5, 194), (6, 36), (7, 14), (8, 4), (9, 1), (10, 2), (12, 2)]
+  product P(heal)*E[jump] = 0.7449; 8.66's fair-row front: 0.410 x 1.839 = 0.754
+C2: collisions of the window state with different Delta (t in [T0, TH]):
+  w= 0: distinct states      4, collisions  5581
+  w= 1: distinct states     16, collisions  1384
+  w= 2: distinct states     64, collisions   781
+  w= 4: distinct states    972, collisions    54
+  w= 6: distinct states   8591, collisions     5
+  w= 8: distinct states  21103, collisions     0
+  w=10: distinct states  24210, collisions     0
+  w=12: distinct states  24538, collisions     0
+  w=14: distinct states  24574, collisions     0
+  w=16: distinct states  24575, collisions     0
+  w=18: distinct states  24577, collisions     0
+  w=20: distinct states  24577, collisions     0
+  w=24: distinct states  24577, collisions     0
+C3: mismatch density rho(h) above the edge, h = 0..24: 1.000 0.458 0.580 0.502 0.517 0.517 0.516 0.513 0.497 0.502 0.495 0.497 0.500 0.503 0.501 0.504 0.496 0.501 0.491 0.498 0.501 0.503 0.503 0.503 0.498
+C5: bulk rho (h = 32..64) = 0.5003; first h with |rho(h) - bulk| <= 0.02: 3
+C4: max |rho_half1 - rho_half2| over h <= 32: 0.0143 (halves of 12288 and 12289 ticks)
+C6: the row's black density across the frontier, h = -16..-1 | 0..15 | 16..64: 0.4939 | 0.5063 | 0.5000
+    by h, -16..24: 0.50 0.51 0.50 0.50 0.50 0.50 0.50 0.49 0.50 0.50 0.49 0.50 0.50 0.50 0.50 0.41 0.50 0.59 0.50 0.51 0.50 0.50 0.50 0.50 0.50 0.50 0.50 0.50 0.51 0.50 0.49 0.50 0.50 0.49 0.51 0.50 0.50 0.50 0.50 0.50 0.50
+total 14.2 s
+NEWS_FRAME_DONE

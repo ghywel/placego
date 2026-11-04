@@ -724,3 +724,53 @@ That is the general claim in one line, per column, and it is where a proof would
 crystal grow at 0.74 t; remembering keeps the right completed zone logarithmic. Not claimed: any asymptotic law, any aperiodicity beyond the windows, any dependence between the core and the transect (the
 test was void), anything about Problems 1 to 3. GC2621 carried the identity, replayed both frontiers (slopes equal to five
 decimals) and the exit counts on the same rays, and found the stratification; adopted in CL716.
+
+## 19. The news frame: the band edge's dynamics as a transducer, the step's determination horizon, and a stationary three-wheel boundary (T-c, CL718–CL719, 2026-11-04 12:57 GMT)
+
+**The frame.** The atlas grid's row v = −0.246, "nobody has written the dynamics in this frame". Written now from exact pieces:
+the state is the pair of rows (t, t + 16) on wheels around the lag-16 band edge B(t) (CL692's object; on the certified prefix
+B(t) − 1 is the contiguous least-period settling frontier, GC2621, confirmed here at 24,577 of 24,577 ticks); one tick is a shift
+by Δ_t = B(t + 1) − B(t) followed by the rule (GC2602's equation Z_(t+1)(h) = Z_t(h + Δ − 2) ⊕ (Z_t(h + Δ − 1) ∨ Z_t(h + Δ))); Δ_t is 0
+iff the decider wheel B − 1 is white at t (the mask law, CL692 H1a, 0 violations here), else the jump set by the pattern above (CL692
+H1d); and cells enter from the deep side every tick. So the frame's dynamics is a **transducer**: a finite window driven by an
+incoming stream, never a closed automaton (GC2602). PROVED as a restatement of exact facts; nothing new is asserted in it.
+
+**Run.** `news_frame.py 65536`: the left-frame system as a big integer to T = 65,536; trusted window t ∈ [8,192, 32,768], every wheel
+used inside the prefix certified 16-periodic (wheels 0 … 42,899 agree at T − W and T − W + 16, the autonomous prefix propagating the
+equality for ever); 14 s on this host under the agreed substitute (ulimit 8 GiB, timeout 1,800 s).
+
+**The step law (controls against §8.74 and §8.66, all HELD).** Mean Δ = 0.7449 (CL715's 0.744 on the same window; §8.74's 0.755 on
+[2^16, 2^19], within its diffusive wander); P(heal) = 0.4097, E[jump | heal] = 1.818, product 0.7449 = the mean exactly, against
+§8.66's fair-row factors 0.410 × 1.839: the band edge's heal statistics are the fair-row damage front's. Distribution of Δ over
+24,577 ticks: 0 at 59.0%, 1 at 15.1%, 2 at 21.8%, 3 at 2.1%, 4 at 1.0%, 5 at 0.8%, 6 … 12 at 0.2% together; jumps of 2 outnumber jumps of
+1; the largest is 12 (§8.74: never more than 14).
+
+**C2, the determination horizon (GC2602's collision test).** State = (decider bit; rows t and t + 16 on wheels B … B + w); a
+collision is a repeated state with a different Δ.
+
+| w | 0 | 1 | 2 | 4 | 6 | 8 | 10 | 14 | 18 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| distinct states | 4 | 16 | 64 | 972 | 8,591 | 21,103 | 24,210 | 24,574 | 24,577 |
+| collisions | 5,581 | 1,384 | 781 | 54 | 5 | 0 | 0 | 0 | 0 |
+
+The 54 collisions at w = 4 and the 5 at w = 6 are exact witnesses that the step reads beyond six wheels; from w = 8 every one of
+the 3,474 repeated states is consistent. **Prediction C2 half refuted:** collisions were to persist through w = 8 and vanish by 16;
+they vanish at 8. Absence of collisions is consistency on finite data, not closure: at w ≥ 18 every tick is its own state, and the
+five jumps longer than 8 all sit in states that never repeat.
+
+**C3–C6, the boundary layer (HELD).** The mismatch density ρ(h) = P(row_t ⊕ row_(t+16) = 1 at wheel B + h): ρ(0) = 1 by definition,
+**ρ(1) = 0.458, ρ(2) = 0.580**, then within 0.02 of the bulk from h = 3 on; bulk (h = 32 … 64) 0.5003; the two halves of the window
+agree within 0.0143 at every h ≤ 32. The row's own black density across the frontier is 0.50 everywhere except a **dipole at the
+edge: 0.41 at h = −1 (the decider; CL692's 0.404), 0.50 at h = 0, 0.59 at h = 1**; the settled side averages 0.494, the news side
+0.500. So in its own frame the order/disorder boundary is a stationary structure two wheels thick, a dipole in the row's density
+and in the mismatch density, riding at the news speed on a decider gate that is black 41% of the time.
+
+**Reading, PROOF-SKETCH.** The decider's 0.41 is §8.66's selection effect in a new place: the edge waits while the decider is
+white and leaves when it is black, so the decider is sampled white-rich; P(heal) is that density by the mask law, 0.410. The
+enrichment at h = 1 (0.59 black, mismatch 0.58 at h = 2) is the heal-size structure of H1d (patterns with a black at B + 1 heal by
+exactly 2); not derived here. What is new: the transducer statement, the horizon table with its exact witnesses, and the
+stationary profile with its thickness. Not claimed: closure, a Markov structure of Δ, or any asymptotic statement.
+
+**Next, if wanted:** the entropy rate of the step process Δ_t and its memory (H(Δ_t | Δ_(t−1), …)), and the stationary measure on
+the eight-wheel window: the quantitative "what is stationary there"; and the same frame for a random left-finite row (CL696's
+sixty rows), to see whether the dipole is universal.
