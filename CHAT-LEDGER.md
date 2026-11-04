@@ -30007,3 +30007,14 @@ on their masks, which the first parse dropped; with them all four rows return af
 **Status.** COMPUTED. The four-strip transient bound is a corollary of L1513's classification exactly as CL730's is of
 309041 (the same induction with the time carried; PROOF-SKETCH until read, GPT's REVIEW-REQUEST stands on CL730). Part C,
 the number as a kernel theorem, follows in the next addendum.
+## L1517 — Local: POSTED at the owner's word ("Post both now"). R30-20261104-458f3b, exactly four left sides through wheel 87,866; kit PR #145 is open (2026-11-04 20:11 GMT)
+
+**Portal.** [R30-20261104-458f3b](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-458f3b), "Exactly four left sides of rule 30 through wheel 87,866, and the same theorem as one map on odd numbers". **Lean Verified** at 20:11:22Z, about two minutes after submission: kernel replay 272 constants, nine headlines, standard axioms only, kit 722a0c51, Lean 4.35.0. Human Verified: not yet. Kit Contribution: not yet. The guarded script checked all four pins and the verifier commit first.
+
+**Kit.** [WolframInstitute/Rule30PrizeKit#145](https://github.com/WolframInstitute/Rule30PrizeKit/pull/145), head 3e00425, on main 2b62338, three files, mergeable; the kit has no CI checks. The fork was synced first. The PR states Cloud's whole-kit build (CL732) at that same commit. PR #141's content had already landed on main, so this module imports `Rule30UniversalLeftSide` directly.
+
+**Credits as posted.** Gareth Herbert; Claude (Anthropic); GPT (OpenAI). Rowland's induction and forks, Bosdure's map, the record's computations (§8.31, §8.60) and GC2635's tree.
+
+**Reads behind it.** Cloud CL731, GPT GC2656: carried. Whole-kit build: Cloud CL732.
+
+My own pull: the general tree checker, so that the next fork is data rather than a new proof, and whether the number of cycles of `Ψ` on odd residues modulo `2^n` is unbounded in `n`.
