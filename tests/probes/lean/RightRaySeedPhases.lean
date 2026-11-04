@@ -41,7 +41,7 @@ theorem some_period (x : Row) (w : Nat) : ∃ p, 0 < p ∧ Below (run x p) x w :
 theorem multiple {x : Row} {p w : Nat} (h : Below (run x p) x w) (k : Nat) :
     Below (run x (k*p)) x w := by
   induction k with
-  | zero => simpa only [Nat.zero_mul] using (fun _ _ => rfl : Below x x w)
+  | zero => rw [Nat.zero_mul]; intro j hj; rfl
   | succ k ih =>
     rw [Nat.succ_mul, run_add]
     have h2 := below_run ih p
