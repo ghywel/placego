@@ -25,7 +25,7 @@ private def depth (J r : Nat) : Int := (((windowStart J+r)/2 : Nat) : Int)
 
 private theorem sample_eq (s J r : Nat) :
     sample s J r = orbit (cut s J) r (depth J r) := by
-  unfold sample read cut depth
+  unfold sample RightRayRooted.read cut depth
   rw [← orbit_add, ← orbit_add, Nat.add_assoc]
 
 private theorem exterior : ∀ i : Int, i < 0 → single i = false := by
@@ -143,7 +143,7 @@ theorem marker_iff_lift_bit (J P : Nat) (hJ : 4 ≤ J)
     (hP : ∀ t, Returns J t ↔ P ∣ t) :
     (∃ s, whiteBlock s J ∧ sample s J (J/2) = marker J) ↔ orbit single P (J:Int)=true := by
   have ret := (hP P).mpr (Nat.dvd_refl _)
-  have initial : single (J:Int)=false := by simp [single,show (J:Int) ≠ 0 by omega]
+  have initial : single (J:Int)=false := by unfold single; exact decide_eq_false (by omega)
   constructor
   · rintro ⟨s,hw,hm⟩
     have hbit := (next_record s J hJ hw).mp hm
@@ -180,7 +180,7 @@ theorem marker_iff_double (J P : Nat) (hJ : 4 ≤ J) (hpos : 0 < P)
       ∀ t, Returns (J+1) t ↔ (2*P) ∣ t := by
   rw [marker_iff_lift_bit J P hJ hP]
   have ret := (hP P).mpr (Nat.dvd_refl _)
-  have initial : single (J:Int) = false := by simp [single,show (J:Int) ≠ 0 by omega]
+  have initial : single (J:Int) = false := by unfold single; exact decide_eq_false (by omega)
   have low : RightRayDelay.Below (RightRayDelay.run (RightRayDelay.pulse 0) P)
       (RightRayDelay.pulse 0) J := by
     intro i hi
@@ -208,12 +208,12 @@ theorem marker_iff_double (J P : Nat) (hJ : 4 ≤ J) (hpos : 0 < P)
         calc
           t = P*q := hq
           _ = P*(2*(q/2)) := congrArg (fun k => P*k) (by omega)
-          _ = (2*P)*(q/2) := by simp [Nat.mul_comm,Nat.mul_left_comm,Nat.mul_assoc]
+          _ = (2*P)*(q/2) := by simp [Nat.mul_comm,Nat.mul_left_comm]
       · have eqt : t = (2*P)*(q/2)+P := by
           calc
             t = P*q := hq
             _ = P*(2*(q/2)+1) := congrArg (fun k => P*k) (by omega)
-            _ = (2*P)*(q/2)+P := by simp [Nat.mul_add,Nat.mul_comm,Nat.mul_left_comm,Nat.mul_assoc]
+            _ = (2*P)*(q/2)+P := by simp [Nat.mul_add,Nat.mul_comm,Nat.mul_left_comm]
         have hmatch := (agreed_orbit (return_mul big (q/2)) P) (J:Int) (by omega)
         have ho := ht (J:Int) (by omega)
         rw [eqt,orbit_add,hmatch,hb,initial] at ho
