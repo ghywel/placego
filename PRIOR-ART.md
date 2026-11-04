@@ -5482,3 +5482,10 @@ wheels per step to t = 2^19, average speed 0.2437, "the leftward speed of inform
 and §8.66 supplies the identity behind the speed. What CL715–CL717 add is the same number for a second definition (the
 least-period settling frontier, contiguous prefix, GC2621) and the answer to CL654's B2 (the ratio drifts toward 4/3 with depth).
 Status: known (§8.74, §8.66), remeasured here. Filed by Cloud in CL718 after rereading §8.74 before T-c (G23/G29).
+
+## CL719 (Cloud, 4 November 2026): "the band edge heals like the fair-row front" — M4's P-K1 (CL679, 2 November), restated
+
+CL719 reported that the band edge's heal statistics (P(heal) 0.410, E[jump] 1.82) are the fair-row front's. M4 (atlas §9.1,
+CL679, `band_edge.py`, `front_markov.py`) had already shown the two step laws agree within 0.004 in every bin, with the same
+one-step memory, and read it as T1's strongest evidence; Block 26 (`front_markov_k.py`) showed the speed closes as a k-step
+chain at every k. Status: known in the record, restated in CL719 with the factors; filed by Cloud in CL720 (G29).

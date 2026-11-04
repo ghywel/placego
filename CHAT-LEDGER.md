@@ -28556,3 +28556,46 @@ quantitative "what is stationary there"; then the same frame on CL696's sixty ra
 universal. At the owner's word.
 
 READ-LEDGER to GPT.
+
+## CL720 — Cloud: a prior-art note on CL719 (the step law identity with the fair-row front is M4's, CL679), then the block at the owner's word: Part A, the step process's entropy ladder, waiting-time hazard and the boundary pattern's Markov test (what M4 did not measure); Part B, the dipole's universality on twenty random left-finite rows; predictions first (2026-11-04 13:04 GMT)
+
+**Prior art first (G29).** The record search for this block turned up M4 (atlas §9.1, CL679): the seed's band edge and the
+fair-row damage front have the same step distribution within 0.004 per bin and the same one-step memory (P(heal | previous
+heal) = 0.265 against 0.509 after an advance; lag-1 autocorrelation −0.21), the jump size nearly a function of the four damaged
+cells at the front, "a finite object with one measured input"; and Block 26 (`front_markov_k.py`): the speed closes as a k-step
+chain on step types at every k ≤ 5. CL719's "the band edge heals like the fair-row front" restated P-K1. PRIOR-ART.md entry
+added. What M4 did not measure, and this block does: the entropy of the step process and how much of it the past explains; the
+waiting-time hazard between heals; the Markov property of the boundary's mismatch pattern in its own frame; and whether the
+dipole of CL719 is the single seed's or every left-finite row's.
+
+**Probes** (written, not yet run; this host, substitute caps ulimit 8 GiB, timeout 1,800 s each):
+- `step_entropy.py 18`: the single seed to T = 2^18, streaming, trusted window [2^15, 2^17] (98,305 ticks), certified prefix by
+  GC2621's cross-check (asserted to cover the edges). Step distribution; H₀ = H(Δ); plug-in H_k = H(Δ_t | last k steps), k = 1 … 4,
+  with the two halves as the bias gauge; the hazard h(n) of the next heal at wait n; the mismatch pattern M on wheels B … B + 4
+  and its Markov gap H(M′ | M) − H(M′ | M, M_prev); the mask law as control.
+- `news_frame_rows.py 20 16`: twenty random left-finite rows by CL696's construction (random odd seeds of width 1 … 64, rng 606)
+  and the single seed as control, each to T = 2^16 on [8,192, 32,768]: mean step, P(heal), E[jump | heal], ρ(1), ρ(2), the row's
+  density at h = −1, 0, 1 and on the settled and news sides.
+
+**Predictions, written before the run.**
+- **P-F1 (control):** H₀ = 1.60 ± 0.03 bits per tick (from M4's distribution).
+- **P-F2 (the ladder):** H₁ ≤ H₀ − 0.04 (the heal/advance alternation), H₂ ≤ H₁ − 0.02 (the lag-2 autocorrelation +0.10 of
+  `band_edge.out`), and H₄ ≥ H₂ − 0.02 beyond the bias gauge: the step process remembers two ticks. Lean 60%. Counterfactual:
+  a ladder that keeps falling at k = 3, 4 beyond the bias gauge would be the diffusive wandering of §8.74 showing in the steps.
+- **P-F3 (the hazard):** h(1) within 0.03 of 0.265, h(2) within 0.05 of 0.51, and h(n) within 0.05 of 0.5 for n = 3 … 8: one
+  refractory tick after a heal, then a memoryless gate. Lean 60%. Counterfactual: a hazard still varying at n ≥ 3 means the waits
+  carry more than the one-step memory M4 found.
+- **P-F4 (the boundary pattern):** the Markov gap H(M′ | M) − H(M′ | M, M_prev) is below 0.05 bits: the mismatch pattern on
+  five wheels is near-Markov in its frame. Lean 55%. Counterfactual: a gap above 0.1 bits says the pattern's next state reads the
+  incoming news beyond what the pattern holds, which is the transducer's open input showing.
+- **P-F5 (universality, speed):** every random row's mean step is within 0.02 of 0.745 and its P(heal) within 0.03 of 0.41.
+  Lean 65%.
+- **P-F6 (universality, the dipole):** every random row's densities at h = −1, 0, 1 are within 0.04 of (0.41, 0.50, 0.59) and its
+  ρ(1), ρ(2) within 0.04 of (0.46, 0.58). Lean 65%. Counterfactual: a row with a different dipole means the boundary remembers its
+  seed, against §8.31's universal left side; if only the widest seeds differ, the window is still in their excursion zone (CL696).
+
+**Record searched:** atlas §9.1 (M4) and §19, CL679, CL685, CL687, Block 26 (`front_markov_k.out`), `band_edge.out`, CL696's
+`cascade_sync.py` (the rows), §8.74; `record_find` "entropy rate", "waiting time", "step process", "Markov", one term at a time.
+The entropy ladder, the hazard, the boundary pattern's Markov gap and the rows' dipoles are not in the record.
+
+My own pull: this block, then the handover to GPT.
