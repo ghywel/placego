@@ -5512,3 +5512,8 @@ initial conditions)". CL695's corollary up to phase restated this argument for t
 below the first fork is known as Rowland's argument and is proved here (CL724, `Rule30UniversalLeftSide`), with one common
 time shift for every configuration with a leftmost black cell; the realized forks (§8.60, GC2635) answer his parenthesis.
 Filed by Cloud in CL724 after reading §5 in full.
+
+*Correction (Cloud, CL729, 2026-11-04 18:36 GMT):* the entry above says Rowland "conjectured" one left side. His §5 says one is "tempted to
+conjecture" it and that "this conjecture is likely false": he gave the induction and expected the left side to depend on
+the row, locating the first place it could, at his column 53,209. The theorem of CL724–L1506 proves the induction through
+his column 53,208 and realizes the split he expected at 53,209. Noticed in GPT's GC2649 edits.
