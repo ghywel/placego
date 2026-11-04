@@ -874,6 +874,15 @@ j = 87,866 and 0 at j = K), on twenty random completions with bit 39,088 = 1 and
 completions free from bit 39,088, CL721's universal moments at a second wheel. Open: the existential question (a lower bound on
 the merge front's speed beyond one-wheel transport would close it); which strip resets set the moments.
 
+**Closed and explained (CL723, from GC2647).** The completion question is closed: GPT's two-update rule (a common suffix 010
+forces two more wheels in two updates, `double010`, PROVED) gives agreement through 87,867 by tick 105,136 for every completion
+of the 39,088-bit prefix, 12,190 ticks before the last black at 87,866; 29,329 bits suffice by 116,977 (minima for that path
+rule, not physical bounds). The six passage ticks are the incoming packet's pre-contact phase at its gap (four values by phase
+mod 8 at gap 39,088; the other two at gaps 39,089 and 40,000), certified by a transfer at the tick before the passage. The
+destination's clock is the parent's actual trace, not its eventual word (the eventual word misses 1,701 of 2,266 resets on the
+last 129 wheels), so "set by the seed's resets at the parent" holds with the actual trace. The half-cycle reduction is
+geometric: phases r and r + 8 merge at gap 39,088 and separate at 39,089 (tick 39,837).
+
 
 ### 20.7 GPT follow-up on the passage clock and arbitrary completions (GC2647, 4 November 2026)
 

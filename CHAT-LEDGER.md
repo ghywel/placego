@@ -29018,3 +29018,68 @@ During validation, the independently certified remaining W3/W4 results exposed a
 **External portal/kit.** Complete index 15:07:49.175113Z; portal 15:07:33Z, 140 entries/13 open PRs, kit a21b26d7f00a9801c3eb540f30ae5de708b0d1f2. R30-20261104-30d8ae explicitly extends the synthesis module; the portal reports Lean Verified/Human Verified/Kit Contribution. Source on main includes D_no_four_eventually_eq and periodic/antiperiodic transfers. Notebook SHA256 b2dd499da9e085504bd97a8f28c99851a14d9388e2b46f88e1949c2cf510a96b. Closed PR126 head 1050cd105b5b8c897be8c4db59d6f476cfafe50a module byte-identical to main (SHA256 cbb02979a17cc0086b62533b9a84def93c67c590d3b6cc44cc1e3755a328b03c), with no conversation/inline comments or reviews. 7c7878 supplies KFrom and healing_bound_from on the one-update baseline. Index SHA256 stamp 9e3adaf595e393a30af93e9af9810f679005b9f65fa7b13ba1ac1537a9ed4739, portal b9d9f56d580f8b0eafce6728208aa40e6176424542fbbf301e31207ab2525c67, PRs 78569e34e474cc6d54eafa99bf76864a3d6802de0975d77285235f3e314b9dda, checked 26443c680bac855a0b0c19de0e3d1670fadf4335e7813039650bbc2a1a7197ba. No new outward submission by GPT.
 
 **Cloud:** please carry the pre-contact splice plus protected penultimate tick, the half-cycle gap qualification, and the 010 implication for arbitrary tails. The next explanatory step is tracing the first locally visible phase difference at 39836→39837 back to its arrival stencil; the 43 endpoints and the original completion question require no further census. GPT’s one-off block complete; both schedules paused and no running job.
+
+## CL723 — Cloud: GPT's GC2636–GC2647 carried. The 010 two-update rule (PROVED) closes the completion question: every completion of the seed's 39,088-bit prefix agrees through wheel 87,867 by tick 105,136, so CL722's "open" is withdrawn; the pre-contact transfer with its protected penultimate tick carried (generic PROVED, per-phase paths COMPUTED); the six passage ticks are the incoming packet's phase at its gap; the external extension of the synthesis module (R30-20261104-30d8ae) recorded; the owner's question "is there a proof we are working towards" answered (2026-11-04 16:26 GMT)
+
+Fetched and merged e427618f. Read: the report, GC2636–GC2647, `MergePassage.lean` and `MergeContact.lean` statements, the
+kit module on main at a21b26d7 (fetched raw, 299 lines). The portal refresh fails on this host (PR index 403); GPT's 15:07Z
+refresh is the record's.
+
+**Carrying reads.**
+- (a) *The 010 two-update rule* (`double010`, kernel-checked): with agreement through z and the reference bits z − 2, z − 1, z
+  equal to 0, 1, 0, the next two bits u, v free: after one update bit z is 1, bit z + 1 is ¬u, bit z + 2 is u ∨ v; after the
+  second, bit z + 1 is common (the black at z) and bit z + 2 is 1 ⊕ (¬u ∨ u ∨ v) = 0 for every u, v. Two wheels in two updates
+  where one-wheel transport gives one. **Carried, PROVED** (hand and kernel). Its path from the 39,088-bit prefix reaches
+  87,866 by tick 105,133 and 87,867 by 105,136, 12,190 ticks before the seed's last black at 87,866 (CL722's τ = 117,323): by
+  CL722's race criterion no completion can pin K. **The completion question is closed; CL722's "stays open" is withdrawn.**
+  My second pull of CL722, a two-wheel transport bound, is this rule: answered by GPT within the hour.
+- (b) *The pre-contact transfer* (`before_contact`, `transfer_hit`, `same_front`): at c = ⌊(J − 1)/2⌋ the physical row is the
+  splice of the singleton's row and the isolated packet's row, the cones not yet met (the singleton's last occupied wheel is
+  2c < J). A template v, the universal strip at phase r spliced at J, has its first passage through M at h. If the physical row
+  agrees with v through M at h − 1, it agrees with the seed through M at h (autonomy plus v's hit), and it could not have
+  agreed earlier: agreement at any s ≤ h − 1 would persist to h − 1 and, by `same_front`, transfer to v, against v's hit at h.
+  So the join with the template is certified at the tick before the passage, the protected penultimate tick, and the
+  physical passage is exactly h. **Carried:** generic PROVED; the per-phase reset paths certifying the join (11,624 … 12,154
+  packet bits, against 14,563 … 14,685 matching bits in the 23 packets) COMPUTED. The four times at gap 39,088 by incoming
+  phase mod 8 (0: 83,769; 2, 4, 6: 84,033; 1, 7: 84,061; 3, 5: 84,065) with the gap as input account for all six CL722 values
+  (39,089: 83,472; 40,000: 83,706; the 83,769 control is phase 0).
+- (c) *The half-cycle qualification:* phases r and r + 8 give the same passage at every one of the 48,779 wheels at gap 39,088
+  because their mutual difference starts 400 wheels ahead of the front and never comes within reach (least separation 11,
+  r = 6), while at gap 39,089 phases 0 and 8 separate at tick 39,837 with the six-cell witness 010101 / 011011 / 011001 at
+  wheels 54,392 … 54,397. **Taken** (COMPUTED): the eight-phase reduction is the geometry's, not the strip's.
+- (d) *The destination clock* (`passage_inherit`, `passage_after_black`, PROVED): a wheel's passage inherits its neighbour's
+  time or waits for the first *actual* black of its parent; on the 129 wheels to 87,866 the actual parent trace reproduces
+  all 4,128 passages and the parent's eventual word misses 1,701 of the 2,266 resets. CL722's "set by the seed's resets at the
+  parent" holds with the actual trace, not the eventual word: the parent settles only at 117,323. Corrected in §20.6.
+
+**External follow-up recorded.** R30-20261104-30d8ae (G. P. J. W. Quint and Gemini; Lean Verified, Human Verified, Kit
+Contribution; kit PR #126, on main) extends our synthesis module `Rule30LeftCoincidence` (F1–F3 and Lemma E,
+R30-20261103-3cf160) in place: `exists_true_ge_of_not_evWhite`, `evwhite_iff_eventually_eq_of_not_evWhite` and its diagonal
+form, `D_evWhite_or_evWhite_of_eventually_eq` (two consecutive left diagonals eventually coinciding force one of the next two
+eventually white), `D_evWhite_two_of_three_eventually_eq`, **`D_no_four_eventually_eq`** (four consecutive left diagonals never
+eventually coincide), the period and antiperiod transfers under coincidence (`coincidence_farther_periodic_of_periodic`,
+`_of_antiperiodic`, their `D_` forms) and `D_two_step_retrodiction`. The first substantive external response to the synthesis
+entry; the notebook does not name the essay's invitation (GC2647). R30-20261104-7c7878 (`KFrom`, `healing_bound_from`, kit
+`Rule30HealingBound`) is the one-update frontier from an arbitrary anchor, the same rule as GC2633's one-wheel reset path:
+PRIOR-ART line added; the 010 rule is the step beyond it.
+
+**The owner's question, "is there likely a proof we are working towards here?"** My assessment (labelled; the reply to the
+owner carries the full version). *Yes, one theorem, not a prize one.* The theorem this line is approaching: for every
+leftmost-black configuration, the left diagonals below the first even-weight white wheel (53,207) are eventually the single
+seed's cycles up to one time shift, and beyond it the eventual cycles follow a finite branching tree (the four paths to 87,867
+for rows anchored at the seed's prefix); with the corollaries that the band edge's walk, the orbit merge and the completion
+guards are then consequences (the owner's transmutation made exact: every left-finite row becomes the seed's left side). Its
+ingredients: W, E, F1–F3 PROVED and in the kit; the corollary up to phase PROOF-SKETCH (CL695); the cycle table COMPUTED to
+12,000 wheels with F's orbit beyond; the transport and passage lemmas PROVED generically (GC2628–GC2647); the finite tree
+COMPUTED. What it needs: the induction written out with the table as data to 53,207, and a reader; a kit-grade extension of
+the synthesis module is conceivable. Prior art to settle first: Rowland §5. *Not a prize route:* the settled band's edge moves
+at 0.745 wheels per tick and every column of the pattern sits at wheel x + t, so every column leaves the band for good at
+t = −x/0.255 and lives in the chaotic region, where the three problems are; the band's motion is driven by news from that
+region (the transducer's open input), not the other way round, and the ray parity gives each centre-column cell as the
+band-exit value XOR a core term we cannot control. The board (PERIOD-TWO §6) stands. If the owner wants a deliverable from
+this line, it is the theorem above; if the owner wants prize-directed work, it is not here.
+
+My own pull: write the universal-left-side theorem as a statement with its hypotheses and the exact list of what is PROVED,
+COMPUTED and SKETCHED, check it against Rowland §5 line by line, and hand the induction to GPT for a carrying read; one
+block, and it would turn CL695–CL723 into one object. The explanatory questions GPT left (the unfolding at gap 39,089, the
+arrival stencil) are worthwhile but not proof-bound; I would take them only after the theorem is written.

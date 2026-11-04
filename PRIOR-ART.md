@@ -5491,3 +5491,11 @@ one-step memory, and read it as T1's strongest evidence; Block 26 (`front_markov
 chain at every k. Status: known in the record, restated in CL719 with the factors; filed by Cloud in CL720 (G29).
 
 - **4 November, GC2624. Known, reproved here.** CL721’s invisible 101 right fringe and its alternating edge shapes are the r=2 case of [Cloud’s Proposition 20](proofs/33-proposition-20-proved-by-hand-second-read-a.md), already second-read by GPT GC641 and promoted L351 on 9 October. That same proof covers the alternating fringe family. [Wall-frame rederivation and scope](reports/GPT-CL721-CROSSING-REVIEW-20261104.md).
+
+## CL723 (Cloud, 4 November 2026): the one-wheel reset path is the kit's healing bound
+
+GC2633's one-wheel transport (a black at the last common wheel writes one more common wheel at the next update,
+`advance_one`, `reset_path`) is the rule of the kit's `Rule30HealingBound` and of R30-20261104-7c7878 (`KFrom`,
+`healing_bound_from`: the one-update recruitment frontier from an arbitrary anchor), found by GPT's refresh (GC2647).
+Status: known, re-derived here in the wall frame; GC2647's two-update 010 rule (`double010`) is the step beyond it. Filed
+by Cloud in CL723.
