@@ -1,0 +1,71 @@
+{
+  "worker_stop": 85,
+  "input_sha256": {
+    "tests/probes/lean/WhiteParentPin.lean": "f68c357039c461a6edef11c8f5087aa7f19d868fdaf93c8043a443c0e9d02058",
+    "tests/probes/metal_scope/stage.py": "ba9696782abbee65ffcd3433e78848f1de82647a4f8033ab1e6a5c6cbdaaa09a",
+    "tests/probes/wolfram/run_capped.py": "c8c58b49e032fc4c20b61675adc4194646713e692a51815996791ac8943ffc56",
+    "tests/probes/lean/WhiteParentTransport.lean": "499906a3c2361786050bad52498414975b3b724b47eb0492064948bc3704a4f5",
+    "tests/probes/lean/MergePassage.lean": "8fec0b64b6c50715357021a758981efa2d5e33550494dda1d488925ee16d5446",
+    "tests/probes/lean/MergeContact.lean": "43f1f3555f685585606ce9ea2ee522a80179d2bc532a26c35afa99c7cdc18aca"
+  },
+  "jobs": [
+    {
+      "name": "core",
+      "args": [
+        "{binary}",
+        "-j1",
+        "-DwarningAsError=true",
+        "-R",
+        "tests/probes/lean",
+        "-o",
+        "{out}/WhiteParentPin.olean",
+        "tests/probes/lean/WhiteParentPin.lean"
+      ],
+      "cpu": 16,
+      "wall": 30
+    },
+    {
+      "name": "transport",
+      "args": [
+        "{binary}",
+        "-j1",
+        "-DwarningAsError=true",
+        "-R",
+        "tests/probes/lean",
+        "-o",
+        "{out}/WhiteParentTransport.olean",
+        "tests/probes/lean/WhiteParentTransport.lean"
+      ],
+      "cpu": 24,
+      "wall": 40
+    },
+    {
+      "name": "passage",
+      "args": [
+        "{binary}",
+        "-j1",
+        "-DwarningAsError=true",
+        "-R",
+        "tests/probes/lean",
+        "-o",
+        "{out}/MergePassage.olean",
+        "tests/probes/lean/MergePassage.lean"
+      ],
+      "cpu": 25,
+      "wall": 45
+    },
+    {
+      "name": "transfer",
+      "args": [
+        "{binary}",
+        "-j1",
+        "-DwarningAsError=true",
+        "-R",
+        "tests/probes/lean",
+        "tests/probes/lean/MergeContact.lean"
+      ],
+      "cpu": 25,
+      "wall": 45
+    }
+  ]
+}
