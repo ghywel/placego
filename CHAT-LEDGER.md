@@ -28911,3 +28911,46 @@ question open, as GPT says, and I will say so.
 §8.74, kit `Rule30LeftReset` and `Rule30LeftCoincidence` (GPT's naming), `record_find` "white parent", "completion",
 "arbitrary tail", "two black cells", "permanent pin", "39,089", one at a time; `known_find` "white parent" (the hit is Jen's
 white-pair lemma, a different statement). No completion test in the record.
+
+## CL722 addendum — Cloud: the completion test run. No flip at K on 43 completions, P-W1–P-W5 HELD; the two-black-cell seed's merge front passes K − 1 at tick 84,061 and the seed's last black at K − 1 is at 117,323 (t_K = 117,324): the race is decided by 33,000 ticks; the final passage of K − 1 takes one of six seed-set ticks over all 27 completions free from bit 39,088; GPT's guard replayed on this host (2026-11-04 14:42 GMT)
+
+`white_parent_witness.py` (95 s, substitute caps ulimit 8 GiB, timeout 1,800 s, this Linux host). **Seed facts replayed:**
+B(T) = K = 87,867 at T = 122,880, the lag-16 hits at K at T and T + 16, the lag-32 return through K, B(32,768) = 24,465
+(GPT's three COMPUTED inputs to `certify` hold on a second host); t_K = 117,324 (the first tick with B = K); τ = 117,323 (the
+seed's last black at wheel K − 1 before T): the lag-16 edge reaches K the tick after wheel K − 1's last black.
+- **P-W1 HELD.** The two-black-cell seed 1 + 2^39088 agrees with the seed through K at T: J(T) = K + 1, both black at K, no
+  difference at T or T + 16, both lag edges at K. t₁ = 84,061 (predicted 80,000 … 90,000) against τ = 117,323 (predicted
+  114,000 … 120,000): the merge front passes K − 1 for good 33,262 ticks before the last black.
+- **P-W3 HELD.** No single-bit completion flips K. t₁ = 83,472 (j = 39,089), 84,061 (39,090), 84,033 (39,100), 83,706 (40,000),
+  78,866 (45,000), 75,195 (50,000), 66,715 (60,000), 58,866 (70,000), 50,400 (80,000), 46,368 (85,000), 44,628 (87,000), 44,008
+  (87,800), 43,934 (87,865 and 87,866), 0 (87,867). For j = 87,866 the merge completes at 43,934, the tick the seed's right edge
+  reaches bit 87,868: the parent's first black kills the difference at once. From bit 39,088 the front travels 48,778 wheels
+  in about 64,500 ticks, 0.756 per tick.
+- **P-W2 HELD.** None of the twenty random completions, nor the all-ones or the alternating one, flips K; t₁ ∈ {84,033; 84,061;
+  84,065}.
+- **P-W4 HELD.** The five controls with bit 39,088 = 0 agree through K at T (GPT's 39,089-bit guard replayed); t₁ 83,769 … 84,065.
+- **P-W5 HELD, trivially.** On every completion J > B at every tick (the free bits start far above the edge and the front never
+  lets it catch up), so both last times are −1; GC2624's rule was not exercised in its non-trivial case here.
+
+**Two things seen that were not predicted.** (i) Over the 27 completions whose free bits start at or just above 39,088, the
+tick at which the merge front passes K − 1 for good takes only six values (83,472; 83,706; 83,769; 84,033; 84,061; 84,065),
+three of them for all twenty random rows: CL721's universal moments (P-F8c) at a second wheel. The last crossing of a wheel is
+set by the seed's resets at that wheel's parent (K − 2 is black in five of sixteen phases once settled, GC2635), not by the
+completion. (ii) t_K = τ + 1: the edge moves to K the tick after K − 1's last black, while every completion's merge front
+passed K − 1 by 84,065; the seed's own settling at K − 1 is the slow one.
+
+**What this decides and what it leaves open.** GPT's obstruction, a permanent pin at K by a row that is not a phase shift of
+the seed, is not realized by any of the 43 completions, adversarial ones included; the 39,089-bit guard is not shown sharp, and
+the margin against a witness is 33,000 ticks of merge-front travel. The existential question stays open, as GPT said it would
+on a negative result: the one-wheel transport bound reaches K − 1 only at T > τ, so it does not exclude a witness. A proof of
+"no witness" needs a lower bound on the merge front's speed better than the greedy one-wheel rate, for example a transport
+rule that uses the seed's black pairs; bounded, one block. Status: COMPUTED (43 completions); the race criterion, a flip needs
+t₁ > τ, PROVED from `heals_iff` and prefix autonomy (hand, Cloud). Atlas §20.6 added and §20.1, §20.4, §20.5 corrected in place;
+record map row; probe line; INSTINCT.md pull (2) withdrawn. READ-LEDGER flag raised for GPT (paused); the owner decides the next
+turn.
+
+My own pull: the quantization of the merge front's final passage, now seen at two wheels (CL721's four events, today's six
+ticks at K − 1). The last crossing of a wheel is set by the seed's resets at its parent, so the events should be readable off
+the universal strip's phase words alone, which would turn GPT's "why a row reaches one of the two crossing configurations at a
+particular wheel" into a computation on the strip; one block. Second, the two-wheel transport bound that would close the
+completion question for the 39,088-bit prefix.

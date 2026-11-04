@@ -1,0 +1,52 @@
+seed: B(T) = 87867 = K; lag-16 hits at K at T and T+16 and the lag-32 return through K: replayed; t_K (first tick with B = K) = 117324; tau (last black of wheel K-1 before T) = 117323; B(32768) = 24465  (1.2 s)
+W1: the two-black-cell seed 1 + 2^39088
+  1 + 2^39088                        J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84061 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+W3: single free bit j
+  1 + 2^39089                        J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  83472 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  1 + 2^39090                        J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84061 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  1 + 2^39100                        J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84033 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  1 + 2^40000                        J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  83706 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  1 + 2^45000                        J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  78866 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  1 + 2^50000                        J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  75195 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  1 + 2^60000                        J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  66715 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  1 + 2^70000                        J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  58866 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  1 + 2^80000                        J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  50400 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  1 + 2^85000                        J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  46368 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  1 + 2^87000                        J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  44628 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  1 + 2^87800                        J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  44008 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  1 + 2^87865                        J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  43934 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  1 + 2^87866                        J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  43934 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  1 + 2^87867                        J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=      0 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+W2: twenty random completions of bits 39,088 .. K with bit 39,088 = 1
+  random 0                           J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84061 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  random 1                           J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84061 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  random 2                           J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84061 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  random 3                           J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84033 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  random 4                           J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84065 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  random 5                           J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84033 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  random 6                           J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84065 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  random 7                           J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84065 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  random 8                           J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84065 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  random 9                           J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84061 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  random 10                          J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84065 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  random 11                          J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84061 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  random 12                          J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84033 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  random 13                          J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84065 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  random 14                          J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84033 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  random 15                          J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84065 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  random 16                          J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84033 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  random 17                          J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84061 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  random 18                          J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84061 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  random 19                          J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84065 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+W2s: two structured completions (all ones; alternating 1010.. from bit 39,088)
+  all ones from 39088                J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84033 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  alternating from 39088             J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84061 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+W4 (control, GPT's guard): five random completions with bit 39,088 = 0, bits 39,089 .. K random
+  control 0                          J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  83769 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  control 1                          J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84033 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  control 2                          J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84033 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  control 3                          J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84065 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+  control 4                          J(T)= 87868 aK=1 yK=1 dK(T)=0 dK(T+16)=0 B(T)=87867 C(T)= 87867  t1=  84033 (before tau)  lastC!=B=     -1 lastJ<=B=     -1 same
+flips at K at T: 0 of 43 completions; witnesses: []
+total 95.4 s
+WHITE_PARENT_WITNESS_DONE

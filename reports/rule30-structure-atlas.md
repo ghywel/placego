@@ -810,7 +810,7 @@ stopped the run).** Steps 0 / 1 / 2 at 59.2% / 14.8% / 21.7%, mean 0.7474; mask 
 P-F1 HELD. P-F2's first two clauses HELD and its third REFUTED: H₄ = H₂ − 0.051 against a gauge of 0.007; the decrements
 0.307, 0.072, 0.031, 0.020 shrink but have not reached the gauge at k = 4. The step process remembers beyond two ticks
 (COMPUTED). Waiting times between heals: mean 2.450 = 1/P(heal); hazard h(1) = 0.267, h(2) = 0.518, h(3 … 7) = 0.49 … 0.50
-(n from 7,091 to 463), h(8) = 0.455 on 233: one refractory tick, then a memoryless gate at one half (P-F3 HELD, COMPUTED).
+(n from 7,091 to 463), h(8) = 0.455 on 233: one refractory tick, then a hazard near one half (P-F3 HELD, COMPUTED). *Corrected reading (CL722, from GC2635):* every one of the 20,060 waits is determined by the phase word of the new parent (one plus the whites before its next black); the hazard near one half is the parents' black density under the visit mixture, not a coin, and the refractory tick is CL691/GC521's forced stall after a two-wheel jump. The smallest consistent width of the step is w = 7, eight cells from B plus the decider (GC2624), not eight.
 The mismatch pattern M on wheels B … B + 4 (16 states, bit 0 always set, entropy 3.94 bits): H(M′ | M) = 3.346,
 H(M′ | M, M_prev) = 2.330, Markov gap 1.016 bits (P-F4 REFUTED): the pattern is a lossy projection; the pair of rows
 (t, t + 16) around the edge is the state (reading, CONJECTURE, consistent with P-F2's refutation and §19's horizon of eight).
@@ -832,20 +832,18 @@ of lead 1's forced walks. New here: the agreement is of the whole sequence with 
 **20.4 The merge of orbits (P-F8, `walk_merge.py 20 16`; COMPUTED).** With s from 20.3, let J(t) be the lowest bit where the
 seed's row t and the row's row t + s differ (the merge front).
 - (a) J(t) > B_seed(t) at every tick of the window on every row (least margin 3), and on all eighteen rows that differ from the
-  seed, the last tick with J ≤ B_seed is the last tick with B_row(t + s) ≠ B_seed(t): the edges agree from the moment the orbits
-  agree at the edge, never before. The one walk is one orbit on the settled band, the edge and a margin beyond.
+  seed, the last tick with J ≤ B_seed is the last tick with B_row(t + s) ≠ B_seed(t). *Corrected (CL722):* this is the last-time identity of GC2624's four-row rule, PROVED; "never before" was wrong, equal edges at a single tick can coexist with a difference below them (seed 1 against row 7 at tick 2). The one walk is one orbit on the settled band, the edge and a margin beyond. All twenty crossings are final for all time (GPT's certificate, GC2635).
 - (b) The margin J − B_seed drifts: the merge front moves at 0.7538 wheel per tick (0.7496 … 0.7596), the lag-16 edge at 0.7435,
   difference 0.0104 (0.0061 … 0.0162); half-window means 87 … 244 then 225 … 390. The merge front's speed is §8.74's lag-1,024
   figure 0.755 (one minus the news speed 0.2437); the lag-16 settling front is slower on this window and rises with t (0.7449
-  on [8,192, 32,768]; 0.7474 on [16,384, 65,536]). Reading (CONJECTURE): a difference front between two orbits, or between an
-  orbit and a distant shift of itself, runs at the information speed; the near-shift front is held back by the cascade.
+  on [8,192, 32,768]; 0.7474 on [16,384, 65,536]). *Corrected reading (CL722):* for a fixed lag of 16 the edge saturates at K = 87,867, the first wheel whose eventual period does not divide 16 (GC736; B(t) = K from tick 117,324 on, CL722), so the lag-16 asymptotic speed is zero and the 0.0104 gap is a pre-saturation, finite-window comparison that does not decide drift against √t; the observable with a limit is a growing-lag or least-period frontier (§8.74, §18).
 - (c) The transient ends at one of four universal events: last discrepancy at tick 2,646 (one row), 3,309 … 3,323 (eight),
   5,389 (four), 5,917 (four), that is at the seed's wheels 2,021, 2,548 … 2,556, 4,093, 4,481. The discrepant offsets
   B_row − B_seed before the end are runs of consecutive values (−21 … −14, −64 … −57, −127 … −120): the row's edge trails
-  the seed's by a gap that closes slowly and then at once. What the four events are in the strip is open. Tension with
-  CL696's wheel 3,498 (a phase test, mod 16, against the row's own cycle phase) noted in CL721; for the reader.
+  the seed's by a gap that closes slowly and then at once. What the four events are in the strip is open. No conflict with
+  CL696's wheel 3,498 (CL722): its run ended at wheel 3,999, a horizontal offset is not a phase mod 16, and the printed offsets were sorted values, not a history.
 
-**20.5 The row 101 (`seed101_cone.py 15`; COMPUTED to 32,768 ticks, PROOF-SKETCH).** The row with cells 0 and 2 has the seed's
+**20.5 The row 101 (`seed101_cone.py 15`; COMPUTED to 32,768 ticks). Known: this is the r = 2 case of Proposition 20 (PROOFS §33, 9 October, PROVED hand/two-party, GC641), the invisible checkerboard fringe, which covers 11, 101, 1011, 10101 and the whole alternating family; PRIOR-ART entry by GPT (GC2624); the sketch below is a wall-frame rederivation (CL722).** The row with cells 0 and 2 has the seed's
 orbit on every cell left of the seed's right edge at every tick t ≥ 0, with J(t) − 2t ∈ {0, 2} alternating. Shapes: at even t
 the row is the seed's row S_t with bits 2t + 1, 2t + 2 = 0, 1; at odd t it is S_t with bit 2t cleared and bits 2t + 1, 2t + 2 = 1, 1.
 *Sketch.* Even t: bits ≤ 2t + 1 of the next rows read bits ≤ 2t + 1, equal in both (bit 2t + 1 is 0 in both); bit 2t + 2 becomes
@@ -856,9 +854,22 @@ agree (0, 1, 0 in both) and bit 2t + 4 is 1 against 0: the even shape. ∎ (The 
 are one object with different edges: the owner's transmutation in miniature.
 
 **What is claimed.** The measurements, the identities of 20.3–20.4(a) on twenty rows, the shapes of 20.5. Not claimed: any
-asymptotic statement, the mechanism of the four events, the reason for the speed gap, or that every left-finite row's transient
-is an edge decoration moving in.
+asymptotic statement, the mechanism of the four events, or that every left-finite row's transient is an edge decoration moving in (the
+speed-gap reading is withdrawn, 20.4(b)).
 
-**Next, if wanted.** Identify the four events in the strip (CL695's reset law at a black the cascade cannot defer?); the 101
-family (which finite rows are the seed with an edge decoration; the kit's edge-code dynamics is the place); the lag-16 front's
-speed against t to 2^19 under the macOS tool (Local), to see whether it reaches 0.755.
+**Next, if wanted.** Identify the four events in the strip (CL695's reset law at a black the cascade cannot defer?). (The 101
+family is Proposition 20; the lag-16 speed question is void by saturation; both struck in CL722.)
+
+**20.6 The completion test (CL722, from GC2635's handoff; `white_parent_witness.py`; COMPUTED on 43 completions, this host).**
+Setting: K = 87,867 (the first wheel whose eventual period is 32), T = 122,880; the prefix 0 … K evolves on its own. GPT's guard
+(`reset_path`, PROVED; the path COMPUTED): every row agreeing with the seed on bits 0 … 39,088 agrees through K at T and forever;
+with bits 0 … 39,087 only, through K − 1, the bit at K then pinned forever either way since K − 1 is white from T. Question:
+does any completion of the 39,088-bit prefix show the opposite colour at K at T? Race criterion (PROVED from `heals_iff` and
+autonomy): a flip needs the merge front to pass K − 1 for good only after τ, the seed's last black at K − 1 before T. Replayed
+seed facts: B(T) = K, the two lag-16 hits at K, the lag-32 return, t_K = 117,324, τ = 117,323. Results: no flip on the
+two-black-cell seed 1 + 2^39088 (t₁ = 84,061), on fifteen single-bit completions (t₁ from 83,472 at j = 39,089 down to 43,934 at
+j = 87,866 and 0 at j = K), on twenty random completions with bit 39,088 = 1 and two structured ones (t₁ ∈ {84,033; 84,061;
+84,065}), and the five controls with bit 39,088 = 0 agree through K (the guard replayed). The margin against a witness is
+33,000 ticks of merge-front travel. Not predicted: the final passage of K − 1 takes only six seed-set ticks over the 27
+completions free from bit 39,088, CL721's universal moments at a second wheel. Open: the existential question (a lower bound on
+the merge front's speed beyond one-wheel transport would close it); which strip resets set the moments.

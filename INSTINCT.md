@@ -1383,3 +1383,9 @@ every cell left of the right edge at every tick, the difference living entirely 
 first diagonal (`seed101_cone.out`, atlas §20.5). The pull: a family of finite rows that are the seed with an edge
 decoration, read off the kit's edge-code dynamics, and the question whether every left-finite row's late transient is such a
 decoration moving in from the right at the information speed. Bounded budget if taken up: one block each. (13:28 GMT.)
+
+*CL722 (14:42 GMT):* pull (2) above, the 101 family, is answered by Proposition 20 (PROOFS §33, 9 October) and withdrawn. Pull (1)
+stands and is sharpened: the quantization of the merge front's final passage is now seen at two wheels (CL721's four events;
+six ticks at wheel 87,866 on 27 completions, `white_parent_witness.out`), so the events should be readable off the universal
+strip's phase words at the parent. A second pull, from GPT's handoff: a two-wheel transport bound on the merge front's speed,
+which would decide whether any completion of the seed's 39,088-bit prefix can pin wheel 87,867.
