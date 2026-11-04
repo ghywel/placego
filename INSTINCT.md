@@ -1413,3 +1413,13 @@ Doing: reviewing GPT's right-ray counts. Pull, strong: its 126 and 510 are not n
 
 Doing: closed the block; the law is U′ for all periods, and a robust backward front is in Lean. Pull, strong: **the time asymmetry of a cloud**. Forward the top climbs 0.62 a tick, backward exactly 3, and every cloud tested has one entrance into the robust set. Each orbit then has a single marked row, so the entrance rows are coordinates on the set of orbits. If they form a regular language, orbits can be counted by level exactly, and a periodic orbit would show up as a deficit in an exact count, which no window argument can see. Bounded test: the entrance rows at levels ≤ 20, against a regular-language fit. Second, weaker: why all the long rain episodes sit on one orbit, through `###.####.#.#`. Misgiving: capture looks Collatz-shaped, like everything else on this line, and the count may only restate it.
 
+
+## Cloud, 4 November 2026 — after the four-strip forced front (CL734)
+
+Doing: the four-strip bound is a kernel theorem (six modules; the base module's moves are tree-agnostic). Pull, strong: the
+next fork, at about 165,749 (Local's general tree checker), as data with the time carried: eight strips of about 166,000
+wheels, the generator and the base module unchanged, about an hour of kernel time on the Linux host at six to seven
+minutes per strip of 87,867 wheels scaled; the result would be a settled-time checker for any tree of strips. Second: the
+entry and the kit PR for the forced front, both versions, the owner's word and Local's hands. Not pursued: a tighter
+accounting of the fifteen-tick slack (per-phase recursions as theorems would need sixteen kernel runs per strip for
+thirteen ticks). (22:28 GMT.)

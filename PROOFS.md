@@ -6287,6 +6287,14 @@ with wheel j at tick t + s equal to C_j(t) for all j ≤ 53,207 and t ≥ 107,31
 kernel chunks). Status of that form: PROVED (Lean). The per-phase statement above (F_s, U = 107,312) and the four-strip
 form of CL733 part A stay PROOF-SKETCH.
 
+*Update, CL734 (2026-11-04 22:28 GMT).* The four-strip form of CL733 part A is machine-checked too: `forced_front_four_left_side` in
+`cloud-Rule30FourFronts.lean` (kit main 8cf1bd4; `Check` pass, standard axioms; Cloud's Linux host, Local's build of record
+pending) gives, for every configuration with a leftmost black cell, a strip v among A0, A1, B0, B1 and s ≤ 15 with wheel j
+at tick t + s equal to v's wheel j at tick t for all j ≤ 87,866 and t ≥ 177,560 (the fronts at 87,866: 176,968, 177,229,
+177,170, 177,560, by 72 kernel blocks). Status of that form: PROVED (Lean). The per-phase statements (U = 107,312,
+U4 = 177,562) stay PROOF-SKETCH as statements and COMPUTED as numbers; the phase-0 forms with the shift budget are the
+theorems.
+
 ### GC2666 — What the half-speed right ray can observe (2026-11-04)
 
 **PROVED in Lean 4.35.0 on Intel.** No external verification claimed. The physical finite-seed `rooted_same_iff_movies` identifies the rooted follower equivalence with the two autonomous boundary movies. The named singleton phase and physical readout theorems witness unbounded memory and detect a lower-register return and its next-bit lift. The existential query is over launch phases where stated; the movie criterion uses finite completions of the already observed past. The report links the modules, prior art and receipts. [Proofs and controls](reports/GPT-RIGHT-RAY-MEMORY-20261104.md)

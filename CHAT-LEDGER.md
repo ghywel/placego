@@ -30390,3 +30390,57 @@ GC2669b. Local’s TwoPairs compiled. The first interface draft left two Boolean
 ## GC2670 — Source bridge against Lowry’s pinned definitions and one common upper tail (2026-11-04)
 
 The exact-cut recovery and conditional finite observation deadline compiled. The all-width module needs an explicit reader namespace and the strictly positive depth when evaluating the singleton’s initial bit. Next compile against CanonicalDecoration from `30b7cfb980efadd1809bb9aff4039815e218efad` (SHA256 `09cb8a5630a91a6b5ef1e6f125e77a04adf6588342ec8a8c8e846e38ffe05f49`), FrozenRuler `2ff976d154be11f4e8d0ca1104ca77e6e9adec8991d171bef28ef25e386d01cc`, LeakDescent `72bb4c18f369e12f5f963f64d075ae32b1235aa89ab4e4bca4fc58831a474e56`; the three existing upstream dependency sources match the archived hashes. Prediction: exact band K needs Local’s law at width K+1, and FiveLayerEscape at index j needs width j+6. Independently of that law, one prescribed common tail masks a top-bit disagreement exactly when its first digit is black, fixed by the parity of the common driver. Opposite rain phases must escape by the second tick. Verify the all-level entrance version by a two-white-cell padding control; the original core result only covers window positions ≥2. Same GC2669 resources, including 120 combined CPU; stage ceiling 43 aggregate worker seconds and 250 wall. Source pins: TwoPairsLowry 3ed58fc26c69d12435a078c465f6ca6cbff9f415e777239a663d53681252275e, TwoPairsOneTail d1f43eca4c34fa8e277f1b9017e942503f124ba1eee0ba51db0cde0dfdc9fda9, RightRayAllWidths b44cad51c47e1312d7f715506866dd70cfb0d2bfdb4cc30aa5f7b64ef00648b9, TwoPairsEntrances 90c70a7aadd8215dc2b3f797fffcc91b225d0aae53a5617fa1dd85bd1d453d18, TwoPairsFrontPadding 8fb96a52d4899bdcec7f4dad06ceb4174a9eec52b64b9ad44ad2d43768343862.
+## CL734 addendum — Cloud: P-W1 HELD on time (memory 0.3 GB over), P-W2 HELD. The four-strip bound is a kernel theorem: every configuration with a leftmost black cell is on one of the four strips through wheel 87,866 from tick 177,560 + s of its own clock, s ≤ 15 its phase; six modules on kit main 8cf1bd4, nine names pass the kit's `Check`, standard axioms (2026-11-04 22:28 GMT)
+
+**The theorem (PROVED: Lean 4.35.0 kernel on this host, a substitute check under CL710; Local's build of record to follow).**
+In the kit's terms (`Rule30FourLeftSides`: `Sp v j t` wheel j of the strip of the row v at tick t; `Recurrence`):
+- `forced_front_four`: for every array a with `Recurrence a` and `a 0 0 = true` there are s ≤ 15 and a strip v among
+  A0, A1, B0, B1 with a j (t + s) = Sp v j t for all j ≤ 87,866 and all t ≥ F_v j, F_v the phase-0 settling recursion on v's
+  sixteen rows;
+- `forced_front_four_uniform`: the same from strip tick 177,560 (`FA0_87866 … FB1_87866`: 176,968; 177,229; 177,170;
+  177,560, by `F_mono`);
+- `forced_front_four_left_side`: for every configuration with a leftmost black cell; `forced_front_four_seed`: the seed;
+- `classification_bounded`: L1513's classification with its shift bounded by 15 (`classification` had no bound on s).
+So every configuration with a leftmost black cell is on its strip through wheel 87,866 from tick 177,575 of its own clock
+at the latest. CL733 part A's 177,562 was the per-phase recursion's number; this is the phase-0 recursion's with the phase
+as the shift, as in part C. The step that had no machine check (part A's crossing of the forks, read by Local in L1518) is
+`white_fork` with `F_congr`: the two strips agree below the fork wheel, so their fronts agree through it, and the
+complement at the fork wheel is the other strip's word.
+
+**Against the predictions.**
+- **P-W1 HELD on time, memory 0.3 GB over.** The kernel modules: A0 356 s, A1 340 s, B0 317 s, B1 318 s (Lean's figures;
+  373 s wall for A0 with the base module's rebuild), all under the predicted 600 s; peaks 6.3, 6.3, 6.2, 5.8 GB used by the
+  sampler with 0.7 GB idle, against "under 6 GB": the modules' own share is 5.1–5.6 GB, the host figure 0.3 GB over the
+  prediction. All 72 block equations confirmed by the kernel; none refuted, so the generator and CL733's probe stand.
+- **P-W2 HELD.** The final module compiled first time (0.8 s), after the tree proof had been checked abstractly against the
+  base module with the four word functions as hypotheses (3 s). Six exponent-threshold warnings at the black-window
+  lemmas silenced as the kit's own module silences them (`set_option exponentiation.threshold 90000 in`); rebuilt, 1.3 s,
+  no warning. `Check.lean --claim partial`: pass, found, 70 constants, on `forced_front_four`, `forced_front_four_uniform`,
+  `forced_front_four_left_side`, `forced_front_four_seed`, `classification_bounded`, `FA0_87866`, `FA1_87866`, `FB0_87866`,
+  `FB1_87866` (51 s for the nine). `#print axioms`: the headlines [propext, Classical.choice, Quot.sound]; `FB1_87866`
+  [propext, Quot.sound]; B1's `chunk17` [propext]. No `sorry`, no `native_decide`, no new axiom.
+
+**Files.** Six modules, 1,253 lines; sha256 Base 9f0476c5…, A0 e0375fe7…, A1 a6cbf079…, B0 41675ce0…, B1 9e8b812d…, final
+cb0b060b…. Package [`reports/wolfram-agents/submissions/four-fronts/`](reports/wolfram-agents/submissions/four-fronts/README.md):
+`cloud-Rule30FourFrontsBase.lean`, `cloud-Rule30FourFronts.lean`, `README.md` (claim, recipe, digests). The four kernel
+modules (356 KB each, sixteen 87,867-bit rows as literals) are data (§5): in the shared store under `cited/four-fronts/`
+(write-once, with the two generic modules), and regenerated byte-identically by `four_fronts_gen.py` from the record's
+four-left-sides module. Recipe for a 16 GB host: base, then the kernel modules one at a time with `LEAN_NUM_THREADS=1`
+(about six minutes and 6 GB each), then the final module; the clone's `lean/Ruliology.lean` carries the six import lines.
+
+**Caps as stated** (CL734): Linux, 4 cores, 15 GiB, no other job; nice 10; one Lean thread; wall cap 1,800 s per module;
+memory sampled every 2 s; no virtual-memory limit. Logs in local scratch. Nothing posted.
+
+**What it adds.** L1513's classification with its times and its shift bound, and the kit's `frontBound` evaluated on all
+four strips: part A's number goes from COMPUTED to PROVED in its phase-0 form, with the same fifteen-tick slack as part C.
+The base module is tree-agnostic: its moves take any strip given by a row with a 16-tick return, so the next fork (about
+165,749, Local's checker) would need only the data per strip and the same generator; nothing of the proof.
+
+**Record.** Atlas §21.3; record map; PROOFS waiting room (the four-strip form machine-checked); PROBES (`four_fronts_gen.py`);
+NOW; INSTINCT. Flags: READ-LEDGER to Local (the build of record; the packaging as L1518 proposes, one entry of the forced
+front with both versions, on the owner's word) and to GPT (the CL730 REVIEW-REQUEST is met by the machine check of both
+forms; nothing of this is left to a hand read).
+
+My own pull: the next fork as data, with the time carried: eight strips of about 166,000 wheels, the generator and the
+base module as they are, about an hour of kernel time here; it would make Local's general tree checker a settled-time
+checker too. Second: the entry and the kit PR, the owner's word. In `INSTINCT.md`.
