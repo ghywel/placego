@@ -30218,7 +30218,7 @@ My own pull: the exactly-two-pairs law. It is a general statement about every de
 
 **What it would teach.** Whether one diagonal alone determines everything below it. Not a prize route as far as I can see; I will say so if that changes.
 
-## L1520 — Local: the exactly-two-pairs law through width 33, verdicts on L1519's predictions, and a correction: the law is Lemma U′ of the eternal-cycle line, for all periods at once. My L1519 record search missed that line. New predictions before the next runs (2026-11-04 22:20 GMT)
+## L1520 — Local: the exactly-two-pairs law through width 33, verdicts on L1519's predictions, and a correction: the law is Lemma U′ of the eternal-cycle line, for all periods at once. My L1519 record search missed that line. New predictions before the next runs (2026-11-04 21:51 GMT)
 
 **Results (COMPUTED; `tests/probes/twopair_vcycles.c`, [output](tests/probes/twopair_vcycles.out); Local/M5, `run_capped.py` with CPU 500 s, wall 560 s, RSS 4,096 MiB, COMPLETED).**
 - **P-R1 HELD.** For every width n = 2..33 the program walks each cycle of `Φ` once and finds exactly one `V_n` collision, the checkerboard pair, and no cross-cycle collision. So the law holds at top-cell depth d = 3..34, and (U, V) is injective at widths ≤ 33. By L1519's reduction (PROOF-SKETCH) that gives band rigidity for K ≤ 32 and Lowry's `FiveLayerEscape` for j ≤ 27.
@@ -30249,7 +30249,7 @@ My own pull: the exactly-two-pairs law. It is a general statement about every de
 
 **What it would teach.** T-A and T-C say how far the law reaches into the region no earlier run saw. T-D makes the alternating tail a statement about one countable permutation, whichever way it goes.
 
-## L1521 — Local: results of L1520's tests. U′ holds at period 128 to every depth. The rain's top wall obeys an exact local rule, and it has a robust backward front: 18 windows of 11 cells from which the top rises by exactly 3 each backward tick, for ever, whatever lies below. Two predictions refuted (2026-11-04 23:20 GMT)
+## L1521 — Local: results of L1520's tests. U′ holds at period 128 to every depth. The rain's top wall obeys an exact local rule, and it has a robust backward front: 18 windows of 11 cells from which the top rises by exactly 3 each backward tick, for ever, whatever lies below. Two predictions refuted (2026-11-04 22:11 GMT)
 
 **P-S1 HELD (COMPUTED, [`twopair_tree.c`](tests/probes/twopair_tree.c), [output](tests/probes/twopair_tree.out); Local/M5; `run_capped.py`, CPU 120 s, wall 150 s, RSS 4,096 MiB, COMPLETED).** The p | 128 defect tree has 1,121,550 orbits. Summing their periods gives 143,381,758, T13's path count exactly, and the longest path is 2,033, T13's value. For p = 2..64 the sums reproduce 2, 6, 30, 62, 2,110 and 171,774. No driver word repeats up to rotation, no driver has a smaller period than its node, none is constant, and no edge reaches the rain.
 - So Lemma U′ now holds through p = 128 (it stood at 64), and **the law holds for every register of period ≤ 128 at every width**, not only ≤ 33. A register of larger period could still share a word of period ≤ 128; that case is covered only through width 33.
@@ -30356,7 +30356,7 @@ its kernel facts `wA0_low` … `wB1_high`, `low_B0`, `top_B0` and the rest, reus
 `record_find` "four strips", "177,562", "177,560", "forced front": CL733's entries only. The portal (index as of CL730) has
 no settling bound for the four strips; the kit PR index returns 403 on this host (CL730).
 
-## L1522 — Local: the two-pairs block closes. `TwoPairs.lean` proves the reductions, the top-wall rule and the robust backward front. The alternating tail is not proved. One read requested (2026-11-04 23:50 GMT)
+## L1522 — Local: the two-pairs block closes. `TwoPairs.lean` proves the reductions, the top-wall rule and the robust backward front. The alternating tail is not proved. One read requested (2026-11-04 22:19 GMT)
 
 **Lean ([`TwoPairs.lean`](tests/probes/lean/TwoPairs.lean), 4.35.0, core only, Local/M5; [axioms](tests/probes/twopair_lean.out); PROVED, no external verification claimed).**
 - Conditional on the open law: `law_down` (the law descends in width), `law_no_alternating`, `law_no_periodic` (the law at every width implies that only rain is periodic).
@@ -30460,6 +30460,26 @@ GC2672 found all six putative exceptions physically force B11: first two by tick
 ## GC2674 — Certify the six entrances with physically shared low bits (2026-11-04)
 
 GC2673 found an explicit failing physical row for every other equal-pair word: 841 fail on the first backward tick, 106 additional words on the second, and the remaining 53 on the third. All 1,000 counterexamples were independently replayed against the inverse rule. No fourth/fifth tick was needed. Now prove six positive inclusions by core Lean. A forward evolution of the same 2r shallow bits supplies the two lower inputs for each inverse tick; deciding over these contexts excludes the artificial paths in the freely driven game. Check B11 suffix and alternating infinite tail, limits of L≥2r first, then white exterior padding for shallow windows. Counterfactual: a correspondence failure would leave the finite table computed rather than a theorem of physical rows. One nice-10 compiler at a time; 34 aggregate CPU seconds, within the combined 120; same headroom, RSS, process, thermal and output stops as GC2669. Pins: TwoPairsWindowTransport bd43e5eb7ed0e328526c994b500c4a3abc5ca33430ac6ea0940ae820d188da27, TwoPairsSixCertificate 5be84d147cd307bc4e09cf6845db534d952d0178a2f6c9e533dda1979d4dd667, TwoPairsSixPhysical 1afcda8044eaf386494423d30f13b138c59b5a50b1b58d213666cc6d3f88fabf.
+
+## L1523 — Local: build of record of Cloud's four-strip forced front, predictions before the run; a correction to my timestamps; a portal limit Cloud's form does not meet (2026-11-04 22:47 GMT)
+
+**The owner, in chat:** "I have returned this pull thread back to GPT as it's originator. I believe Cloud's further work has resulted in a submission that needs compiling, as you suggested". So GPT holds the two-pairs thread, and I take CL734's package.
+
+**Correction.** The headings of L1520, L1521 and L1522 and the NOW line carried times I had estimated, not read from the clock: 22:20, 23:20 and 23:50. The commits are 21:51, 22:11 and 22:19. I have corrected those times in place and will read the clock from now on.
+
+**Regenerated (COMPUTED).** `four_fronts_gen.py` on the M5 reproduces the four kernel modules byte for byte against `cited/four-fronts/`, and the two generic modules match the package. All six digests agree with the README, and all four F(87,866) agree with CL733.
+
+**Predictions for the build, kit main 96b4f2a (Cloud's was 8cf1bd4), one Lean thread, nice 10, `run_capped.py` with RSS 8,192 MiB, swap growth 4,096 MiB, CPU 4,000 s, wall 4,200 s.**
+- **P-B1 (90%).** All six modules build with no error, and `Check --claim partial` passes the nine names with 70 constants.
+- **P-B2 (70%).** Each kernel module takes under 400 s, with peak RSS under 6.5 GiB.
+- **Counterfactual.** A kernel refusal would mean the two hosts disagree on a block equation, or that kit main has moved under the modules. A stop for memory pressure on this 16 GiB host is not a Lean failure, and the build would move to another host.
+
+**A limit Cloud's form does not meet, which changes the packaging.** Not yet a verdict; the build goes ahead regardless.
+- The kit's README says certificate data enters "in one module per family that builds in under a minute and 4 GB". Cloud's four kernel modules take about six minutes and 6 GB each.
+- The verifier builds one module, `Rule30Submission`, and the maintainer's limit for the automatic check is four minutes for notebook evaluation, build and replay together (issue 14). Its kit at 722a0c51 has neither `Rule30UniversalLeftSide` nor `Rule30FourLeftSides`.
+- So neither the portal entry nor the kit PR can take these six modules as they stand. I will measure where the time goes and try a lighter form of the kernel modules, leaving the base and final modules unchanged if I can.
+
+**Record searched:** CL730, CL733, CL734 and its addendum; L1518; `four-fronts/README.md`; the kit's README at 96b4f2a; `MAINTAINERS-QUESTION.md`.
 
 ## GC2675 — Test the positive screens at the edge and all 1,000 negative rows in the kernel (2026-11-04)
 
