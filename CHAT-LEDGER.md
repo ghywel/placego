@@ -30615,3 +30615,44 @@ pins are set. The Lean: machine-checked on both hosts and read. Ready for the ow
 My own pull: the next fork with the walk, as above, minutes rather than an hour; then the question the fronts leave open,
 the seed's actual front at four-thirds ticks per wheel against the forced two (CL730, COMPUTED), and whether the share of
 coincidences has a law. In `INSTINCT.md`.
+
+## CL736 — Cloud: the pull continued at the owner's word ("Continue with the pull"): the tree beyond wheel 87,866 with the time carried, by the walk. Stage 1 is the data: the four strips' continuations to wheel 165,749, the seed's doubling at 87,867 and the fork at 165,748, with predictions first (2026-11-04 23:26 GMT)
+
+**What the record already says (Record searched).** PROOFS §21, Proposition 8 (Local, 7 October, COMPUTED, replayed by GPT):
+the period-16 stage of the rooted tree has fifteen branch nodes, the first four at 53,207, 58,286, 72,575 and 165,748, and
+sixteen exits to period 32, the seed's at 87,867 (its white wheel 87,866 has a farther word of odd parity, so the child is
+antiperiodic and the period doubles; the three flipped sides exit at 183,183, 229,337 and 291,256). PROOFS §22, Proposition 9:
+on the period-32 stage no history but one has a white wheel below 67,108,864, so the seed's continuation has none between
+87,867 and 165,749. §8.60 and L1513's "Limits": the next fork at about 165,749 is on a B branch. The rule of the tree (Prop. 8):
+at a white wheel the child integrates the farther word, so with even parity the two children both keep the period (a fork),
+with odd parity the complement is the child's own rotation by the period (a doubling). CL734/CL735: the moves with the time
+carried are tree-agnostic, Local's walk evaluates the recursion in seconds, and the data layer is one literal row per strip.
+`record_find` "165,748", "165,749", "period 32", "next fork": only these entries. Kit and portal: `Rule30FourLeftSides` stops
+at 87,866; nothing beyond it (index as of CL730; `known_find.py --new` started now, its result in the addendum).
+
+**The aim of this block.** The classification with the time carried through wheel 165,749: five strips (A0's continuation at
+period 32 from wheel 87,867, A1's, B0's and B1's at period 16, and the second child at the fork 165,748 on a B strip), each
+configuration with a leftmost black cell on one of them from an explicit tick, the shift bounded by 15 + 16 = 31 (the
+doubling at 87,866 adds a shift of 16 that the period-16 wheels below do not see). Stage 1, this entry: the data. Stage 2: the
+base module generalised to a period P and a width K (words of P bits, the search over P phases, the walk at period P), one
+data module with six literals and the walk's segments, the theorems. The point, beyond the numbers: the proof is the same
+proof, and the general tree checker Local wanted (L1518) comes with its settling times.
+
+**Stage 1, probe `next_fork_data.py`** (substitute caps: ulimit 8 GiB, timeout 1,800 s, this host). On 165,750 wheels, evolve
+the single black cell and the rows A1, B0, B1 of the four-left-sides module to tick 340,000; take the final row, test the
+return after 16, 32 and 64 ticks; the cycle's rows and words; the white wheels through 165,749 with the parity of the farther
+word at each (fork or doubling); at a fork the second child's row (the top bit complemented); the forced front at phase 0 by
+the walk through 165,749 on each strip; the lag-32 band edge of the seed every tick, its crossings of 87,866 and 165,749 and
+whether it ever retreats; digests of the phase-0 rows.
+- **P-X1 (the tree).** The seed's final row returns after 32 ticks and not 16; A1, B0, B1 return after 16. White wheels through
+  165,749: the seed's 2, 7, 28, 399, 53,207, 58,286, 87,866 and no other; A1's 2, 7, 28, 399, 53,207, 58,286; B0's and B1's
+  2, 7, 28, 399, 53,207, 72,575, and exactly one of B0, B1 has 165,748 as well, with the farther word of even parity (a fork,
+  Prop. 8), the other none. At 87,866 the seed's farther word has odd parity and wheel 87,867's complement is its rotation by
+  16. Lean 80%. Counterfactual: a white wheel on the seed between 87,867 and 165,749, or odd parity at 165,748, contradicts
+  Propositions 8 and 9 as I read them, and I report which.
+- **P-X2 (the fronts).** The forced fronts at wheel 165,749 lie between 326,000 and 340,000 on all five strips (about two ticks
+  per wheel, the period-32 stretch included), and the seed's edge crosses 165,749 between 215,000 and 228,000 (four thirds of a
+  tick per wheel, CL733) with no retreat. Lean 65%. Counterfactual: a front beyond 340,000 means the run's horizon was too
+  short and the run is repeated to 400,000; a retreat of the lag-32 edge would be new and would be recorded as such.
+
+**Caps.** Substitute (CL710): ulimit 8 GiB virtual, timeout 1,800 s, this Linux host, no other job; about 100 s expected.
