@@ -175,6 +175,77 @@ theorem certify {f : Row → Row} (hf : Causal f) {a y : Nat → Row}
   intro t hn
   exact ⟨edge t,(both t hn).1,(both t hn).2,pullback hf ha hy hp edge bd both join t hn⟩
 
+private theorem reset_iff {z u a b : Bool} (hab : a ≠ b) :
+    xor z (u || a) = xor z (u || b) ↔ u = true := by
+  cases z <;> cases u <;> cases a <;> cases b <;> simp_all
+
+/-- At an actual first difference j=n+1, its old bit heals precisely on a black parent. -/
+theorem heals_iff {n : Nat} {x y : Row} (h : First (n+1) x y) :
+    wall x (n+1) = wall y (n+1) ↔ x n = true := by
+  cases n with
+  | zero =>
+    change (x 0 || x 1) = (y 0 || y 1) ↔ x 0 = true
+    rw [← h.1 0 (by omega)]
+    simpa using (reset_iff (z:=false) (u:=x 0) h.2)
+  | succ n =>
+    change xor (x n) (x (n+1) || x (n+2)) =
+      xor (y n) (y (n+1) || y (n+2)) ↔ x (n+1) = true
+    rw [← h.1 n (by omega), ← h.1 (n+1) (by omega)]
+    exact reset_iff h.2
+
+theorem stays_iff {n : Nat} {x y : Row} (h : First (n+1) x y) :
+    First (n+1) (wall x) (wall y) ↔ x n = false := by
+  have eqv := heals_iff h
+  constructor
+  · intro hs
+    cases he : x n with
+    | false => rfl
+    | true => exact False.elim (hs.2 (eqv.mpr he))
+  · intro he
+    refine ⟨wall_causal h.1, ?_⟩
+    intro g
+    have bad := eqv.mp g
+    simp [he] at bad
+
+/-- With the first difference at n+1 initially, permanent pinning is equivalent
+to the single parent staying white on that orbit. The parent histories agree by causality. -/
+theorem permanent_pin_iff {a y : Nat → Row} (ha : Runs wall a) (hy : Runs wall y)
+    {T n : Nat} (h : First (n+1) (a T) (y T)) :
+    (∀ d, First (n+1) (a (T+d)) (y (T+d))) ↔ ∀ d, a (T+d) n = false := by
+  constructor
+  · intro pins d
+    apply (stays_iff (pins d)).mp
+    rw [← ha (T+d), ← hy (T+d)]
+    exact pins (d+1)
+  · intro white d
+    induction d with
+    | zero => exact h
+    | succ d ih =>
+      change First (n+1) (a ((T+d)+1)) (y ((T+d)+1))
+      rw [ha, hy]
+      exact (stays_iff ih).mpr (white d)
+
+/-- First black after m white phases: the rows disagree at the wheel up to and
+including T+m, and agree on the entire prefix through that wheel at T+m+1. -/
+theorem first_black {a y : Nat → Row} (ha : Runs wall a) (hy : Runs wall y)
+    {T n m : Nat} (h : First (n+1) (a T) (y T))
+    (white : ∀ d, d < m → a (T+d) n = false) (black : a (T+m) n = true) :
+    (∀ d, d ≤ m → First (n+1) (a (T+d)) (y (T+d))) ∧
+    Agree (n+2) (a ((T+m)+1)) (y ((T+m)+1)) := by
+  have pins (d : Nat) (hd : d ≤ m) : First (n+1) (a (T+d)) (y (T+d)) := by
+    induction d with
+    | zero => exact h
+    | succ d ih =>
+      change First (n+1) (a ((T+d)+1)) (y ((T+d)+1))
+      rw [ha, hy]
+      exact (stays_iff (ih (by omega))).mpr (white d (by omega))
+  refine ⟨pins, ?_⟩
+  have last := pins m (by omega)
+  rw [ha, hy]
+  exact agree_succ (wall_causal last.1) ((heals_iff last).mpr black)
+
+#print axioms permanent_pin_iff
+#print axioms first_black
 #print axioms wall_causal
 #print axioms two_hits
 #print axioms pullback
