@@ -30757,3 +30757,16 @@ The portal source 134d62fba8e16f30912b9ca505df7e96bd80f37f73d984723c4e0e8dd8a5f9
 
 **Record searched:** GC2678; CL735; the portal listing at 23:40.
 
+## L1527 — Local: kit PR #156 open for the forced front (2026-11-04 23:44 GMT)
+
+**The owner, in chat:** "Yes, open it".
+
+**[WolframInstitute/Rule30PrizeKit#156](https://github.com/WolframInstitute/Rule30PrizeKit/pull/156).** Branch `four-fronts` at `affacce` on the fork, base main 96b4f2a, four files, 1,099 lines added. GitHub reports it mergeable, and no checks run on it. The fork's main was 14 commits behind and is fast-forwarded to upstream; nothing was forced. The body is [`PR-BODY.md`](reports/wolfram-agents/submissions/four-fronts/PR-BODY.md) with the attribution line.
+
+**One change before opening, to comments only.** The two modules' comments carried our internal names and ledger numbers (Cloud, Local, CL734, L1513, L1524), and `Rule30ForcedFront`, which is not in the kit. Kit modules carry neither, so I removed them.
+- New digests: `Rule30FourFronts.lean` `eaf14e66…`, `Rule30FourFrontsBase.lean` `50992f78…`. GC2678's pins `8a84db03…` and `eb2dd2f5…` are superseded by this comment change only.
+- Rebuilt at main 96b4f2a: 7 s, 2.1 GB, `Check` pass, 256 constants, eleven headlines, standard axioms.
+- The posted portal source stays `134d62fb…`. It keeps one comment naming `Rule30ForcedFront`, so `four_fronts_portal.py` run on today's kit form differs from it in that comment.
+
+**Status.** Posted and Lean Verified, PR open. A closed PR usually means the maintainers landed it on main, so I will check main before reading a close as a rejection. Human Verified and Kit Contribution are the maintainers' steps.
+

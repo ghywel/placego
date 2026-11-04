@@ -119,9 +119,14 @@ shift and one mask per tick, so the kernel runs all four strips in seconds. At w
 assert old_doc in fin; fin = fin.replace(old_doc, new_doc)
 old_cred = '''Cloud (CL734), after
 `Rule30FourLeftSides` (L1513), `Rule30ForcedFront` (CL733) and the kit's `Rule30FrontLaw`.'''
-new_cred = '''Cloud (CL734), the walk Local (L1524),
-after `Rule30FourLeftSides` (L1513), `Rule30ForcedFront` (CL733) and the kit's `Rule30FrontLaw`.'''
+new_cred = '''After `Rule30FourLeftSides` and the kit's
+`Rule30FrontLaw`.'''
 assert old_cred in fin; fin = fin.replace(old_cred, new_cred)
+old_ff = '''This module makes the time explicit, as `Rule30ForcedFront` did below the first fork. The
+settling recursion'''
+new_ff = '''This module makes the time explicit. The
+settling recursion'''
+assert old_ff in fin; fin = fin.replace(old_ff, new_ff)
 a = fin.index('/-! ### The words of the four strips -/')
 b = fin.index('/-! ### White wheels, black windows and the agreement below the forks -/')
 words = '''/-! ### The words of the four strips -/
@@ -169,7 +174,7 @@ theorem low_congr {w w' : Nat → Nat} {n : Nat} {st : Nat × Nat} (h : ∀ i, i
 '''
 fas = '\n\n'.join(f'theorem F{s}_87866 : F wd{s} 87866 = {ST[s][87866][0]} := F_of_S S{s}' for s in ('A0', 'A1', 'B0', 'B1'))
 fin = fin[:a] + helpers + numbers + '\n\n' + fas + '\n\n' + fin[b:]
-low_thms = '''/-- Below the first fork the four strips are one, so the front there comes sooner: `107,310`, the value `F 53207` of `Rule30ForcedFront`. -/
+low_thms = '''/-- Below the first fork the four strips are one, so the front there comes sooner: `107,310`. -/
 theorem F_low : F wdA0 53207 = 107310 ∧ F wdA1 53207 = 107310 ∧ F wdB0 53207 = 107310 ∧ F wdB1 53207 = 107310 := by
   have h0 : F wdA0 53207 = 107310 := F_of_S a_53207
   have h2 : F wdB0 53207 = 107310 := F_of_S b_53207

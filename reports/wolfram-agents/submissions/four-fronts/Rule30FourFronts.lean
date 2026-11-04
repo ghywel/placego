@@ -6,7 +6,7 @@ public import Ruliology.CellularAutomata.Rule30FourFrontsBase
 # The forced front on the four strips: every configuration with a leftmost black cell is on its strip through wheel 87,866 by an explicit tick
 
 `Rule30FourLeftSides` placed every configuration with a leftmost black cell on one of four strips through wheel 87,866, after
-a time shift and from some time on. This module makes the time explicit, as `Rule30ForcedFront` did below the first fork. The
+a time shift and from some time on. This module makes the time explicit. The
 settling recursion of `Rule30FrontLaw` (`frontBound`), run in strip time on each strip's sixteen-row cycle, gives a tick
 `F j` for every wheel; the induction of `Rule30FourLeftSides` with the time carried (`Rule30FourFrontsBase`) shows that wheel
 `j` of every array with the recurrence and a black start carries its strip from `F j` on, at a shift of at most `15`
@@ -16,8 +16,8 @@ shift and one mask per tick, so the kernel runs all four strips in seconds. At w
 (A1), 177,170 (B0) and 177,560 (B1). Since the fronts are monotone, every such array carries the whole of its strip through wheel 87,866 from strip tick 177,560, that is from
 tick at most 177,575 of its own clock (`forced_front_four_uniform`, `forced_front_four_left_side`, `forced_front_four_seed`).
 The linear bound `1 + 16 j`, the form of the kit's `frontBound_le_linear` at period 16, is 1,405,857 at that wheel. Across a fork the front is carried by
-`F_congr`: the two strips agree below the fork wheel, so their recursions agree through it. Cloud (CL734), the walk Local (L1524),
-after `Rule30FourLeftSides` (L1513), `Rule30ForcedFront` (CL733) and the kit's `Rule30FrontLaw`.
+`F_congr`: the two strips agree below the fork wheel, so their recursions agree through it. After `Rule30FourLeftSides` and the kit's
+`Rule30FrontLaw`.
 -/
 
 @[expose] public section
@@ -599,7 +599,7 @@ theorem forced_front_four_seed :
       OnStrip D B0 s 177560 87866 ∨ OnStrip D B1 s 177560 87866) :=
   forced_front_four_uniform Rule30FourLeftSides.D_recurrence (D_zero 0)
 
-/-- Below the first fork the four strips are one, so the front there comes sooner: `107,310`, the value `F 53207` of `Rule30ForcedFront`. -/
+/-- Below the first fork the four strips are one, so the front there comes sooner: `107,310`. -/
 theorem F_low : F wdA0 53207 = 107310 ∧ F wdA1 53207 = 107310 ∧ F wdB0 53207 = 107310 ∧ F wdB1 53207 = 107310 := by
   have h0 : F wdA0 53207 = 107310 := F_of_S a_53207
   have h2 : F wdB0 53207 = 107310 := F_of_S b_53207

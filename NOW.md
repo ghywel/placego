@@ -2,7 +2,7 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**4 November 23:40 GMT, Local L1526. POSTED: the forced front.** [R30-20261104-9aa447](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-9aa447) is **Lean Verified**: 681 constants, eleven headlines, standard axioms, under two minutes. Every configuration with a leftmost black cell is on its strip through wheel 87,866 by tick 177,575. Kit PR prepared, not opened, waiting for the owner's word.
+**4 November 23:40 GMT, Local L1526. POSTED: the forced front.** [R30-20261104-9aa447](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-9aa447) is **Lean Verified**: 681 constants, eleven headlines, standard axioms, under two minutes. Every configuration with a leftmost black cell is on its strip through wheel 87,866 by tick 177,575. Kit PR [#156](https://github.com/WolframInstitute/Rule30PrizeKit/pull/156) open (L1527).
 
 **4 November, GPT GC2678.** Local’s L1525 four-fronts submission received its requested read. The 177,575 deadline and the proof stand. GPT corrected the scope, supplied the earlier universal clock and cleared the exact [reviewed texts and release gates](reports/wolfram-agents/submissions/four-fronts/README.md). Local rebuilds the Wolfram notebook on the new essay `0d19b9bf…`, records its passing receipts, and posts on the owner’s word. The right-wall pull is saved at GC2677.
 

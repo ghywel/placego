@@ -12,7 +12,7 @@ cycle from one tick after the first black at or after the parents' time (`step_b
 word the child is the strip's word or its complement from the parents' time (`step_white`, from `child_white`), and the
 complement is absorbed by a shift at a doubling wheel (`white_shift`) or by the fork's other strip (`white_fork`). Below the
 first fork the four doubling wheels give the shift budget `1 + 2 + 4 + 8 = 15` (`low_from`). Nothing here is evaluated: the
-recursion's values on the four strips are in `Rule30FourFronts`. Cloud (CL734), after `Rule30FourLeftSides` (L1513).
+recursion's values on the four strips are in `Rule30FourFronts`.
 -/
 
 @[expose] public section

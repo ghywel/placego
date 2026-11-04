@@ -1,6 +1,6 @@
 # The forced front on the four strips
 
-**POSTED, L1526.** [R30-20261104-9aa447](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-9aa447): **Lean Verified** at 23:38:09Z, 1 min 47 s after submission. Kernel replay 681 constants, eleven headlines, standard axioms only, kit 722a0c51, Lean 4.35.0. Human Verified: not yet. Kit PR: prepared, not opened; it waits for the owner's word.
+**POSTED, L1526.** [R30-20261104-9aa447](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-9aa447): **Lean Verified** at 23:38:09Z, 1 min 47 s after submission. Kernel replay 681 constants, eleven headlines, standard axioms only, kit 722a0c51, Lean 4.35.0. Human Verified: not yet. Kit PR: [WolframInstitute/Rule30PrizeKit#156](https://github.com/WolframInstitute/Rule30PrizeKit/pull/156), branch `four-fronts` at `affacce`, opened on the owner's word.
 
 **Release, L1526.** Notebook sha256 `cd57a47464871ae03a6b00dd633d5310cb09f99a8e6aa132c65b76540fbb3083`, 405,125 bytes, on verifier image 17 (kit `722a0c51`), RESULT OK, receipts `cited/l1526-four-fronts/nb4-receipts.tar.gz` (8,087 bytes, 7a8b07d7e262b6c6…). One word differs from the text GPT cleared: Local removed "so" from "Thus so the same recursion" in section 6, so the prose is `bb0d0ad3…` and the essay `9acfb97d…` instead of `46787575…` and `0d19b9bf…`. The abstract, title and Lean are GPT's pins, unchanged.
 
@@ -12,8 +12,8 @@
 
 | Form | File | sha256 | Build (M5) | `Check` |
 |---|---|---|---|---|
-| Kit, generic | [`Rule30FourFrontsBase.lean`](Rule30FourFrontsBase.lean) | `eb2dd2f57df49c57…` | 1 s | |
-| Kit, walk and theorems | [`Rule30FourFronts.lean`](Rule30FourFronts.lean) | `8a84db032d90ba16…` | 7 s, 2.1 GB | pass, kit main 96b4f2a, 256 constants, 11 headlines |
+| Kit, generic | [`Rule30FourFrontsBase.lean`](Rule30FourFrontsBase.lean) | `50992f78bc7d14e1…` | 1 s | |
+| Kit, walk and theorems | [`Rule30FourFronts.lean`](Rule30FourFronts.lean) | `eaf14e66e18e82b5…` | 7 s, 2.1 GB | pass, kit main 96b4f2a, 256 constants, 11 headlines |
 | Portal | [`Rule30Submission.lean`](Rule30Submission.lean) | `134d62fba8e16f30…` | 7 s, 2.4 GB | pass, kit 722a0c51, 681 constants, 11 headlines |
 
 Texts: [`title.txt`](title.txt) (`90f8471f…`), [`abstract.txt`](abstract.txt) (220 words, `c4a291e7…`), [`essay-prose.md`](essay-prose.md) (`bb0d0ad3…`), [`essay.md`](essay.md) (`9acfb97d…`). Generators: [`four_fronts_fast.py`](../../../../tests/probes/wolfram/four_fronts_fast.py) with [`FourFrontsWalkCore.lean`](../../../../tests/probes/lean/FourFrontsWalkCore.lean), [`four_fronts_portal.py`](../../../../tests/probes/wolfram/four_fronts_portal.py), [`assemble_four_fronts_essay.py`](../../../../tests/probes/wolfram/assemble_four_fronts_essay.py). Driver: [`four_fronts_notebook.wl`](../../../../tests/probes/wolfram/four_fronts_notebook.wl). Kit PR text: [`PR-BODY.md`](PR-BODY.md).
