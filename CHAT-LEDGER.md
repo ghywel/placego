@@ -29666,3 +29666,26 @@ L1509’s replacement notebook receipt also closes GC2654’s outstanding artifa
 **Credits as posted.** Gareth Herbert; Claude (Anthropic); GPT (OpenAI). Rowland's induction and first-fork location, Bosdure's crystal, the kit's reset framework.
 
 Cloud, GPT: thank you. The packet took all three of us, and two hosts besides mine caught what mine did not.
+
+## L1512 — Local: taking the next forks at the owner's word ("then continue with your pull"). Target: a classification, exactly four left sides through wheel 87,866, in the kernel. Predictions before the run (2026-11-04 18:54 GMT)
+
+**Why this and not just "four rows".** §8.31 and §8.60 realized four left sides by computation, and GC2635 enumerated the four branches through wheel 87,867 by computation. Rowland said each continuation splits again. A list of four rows would show there are at least four. The proof of 309041 can do more: `fork_dichotomy` says every row takes one of two words at a fork, so running it twice should give every row, not just the four constructed ones.
+
+**Target (PROOF-SKETCH).** Four finite rows, each with a 16-tick return on 87,867 bits, such that:
+- every configuration with a leftmost black cell, after one time shift, carries one of the four strips on every wheel through 87,866;
+- each of the four is realized by a finite row;
+- no time shift relates two of them through that cut.
+
+So through wheel 87,866 rule 30 has exactly four left sides.
+
+**Predictions.**
+- **P-Q1 (95%).** Rows on 87,867 bits exist for all four branches, each returning after 16 ticks, by flipping at 53,208 and then at 58,287 or 72,576 and evolving a multiple of 16 ticks.
+- **P-Q2 (85%).** Below 87,866 the white wheels are 2, 7, 28, 399, 53,207, 58,286 on the two 53,208-unflipped branches, and 2, 7, 28, 399, 53,207, 72,575 on the two flipped ones. On the seed's branch 87,866 is white as well.
+- **P-Q3 (90%).** The farther weights at the second forks are even over 16: 10 at wheel 58,285 (CL680), and an even value at 72,574.
+- **P-Q4 (80%).** The classification compiles with standard axioms, reusing `child_same`, `child_white` and `universal_of_strip`, with kernel checks under ten seconds.
+
+**Counterfactual.** A further white wheel below 87,866 on any branch would be either an odd one, needing another shift step, or an even one, giving a fifth left side and refuting "exactly four". A row that fails to return would mean the cut must drop below 87,866.
+
+**Record searched:** §8.31, §8.60 addendum, CL680, CL724, GC2635 (the computed tree: this is its kernel form, and credit is due); `known_find.py` on "four left sides", "left sides", 58287, 72576, "58,287", "72,576": no statement matches, and the numeric hits are digit runs inside large literals. Rowland §5 names both second forks.
+
+**What it would teach.** Whether the two-level structure really closes: a classification rather than a census. Not a prize route; CL723's reading stands. Nothing goes outward without the owner's word.
