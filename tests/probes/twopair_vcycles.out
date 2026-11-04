@@ -1,0 +1,42 @@
+  n=13 within-cycle: x=aab P=2 Vperiod=1
+n=13 registers=4096 cycles=78 maxP=128 within=1 cross=0 lgP: 1:2 2:1 3:3 4:2 5:34 6:26 7:10
+  n=14 within-cycle: x=1555 P=2 Vperiod=1
+n=14 registers=8192 cycles=114 maxP=256 within=1 cross=0 lgP: 1:2 2:1 3:3 4:2 5:42 6:34 7:24 8:6
+  n=15 within-cycle: x=2aab P=2 Vperiod=1
+n=15 registers=16384 cycles=170 maxP=256 within=1 cross=0 lgP: 1:2 2:1 3:3 4:2 5:52 6:43 7:41 8:26
+  n=16 within-cycle: x=5555 P=2 Vperiod=1
+n=16 registers=32768 cycles=252 maxP=512 within=1 cross=0 lgP: 1:2 2:1 3:3 4:2 5:58 6:58 7:56 8:66 9:6
+  n=17 within-cycle: x=aaab P=2 Vperiod=1
+n=17 registers=65536 cycles=376 maxP=512 within=1 cross=0 lgP: 1:2 2:1 3:3 4:2 5:64 6:71 7:74 8:125 9:34
+  n=18 within-cycle: x=15555 P=2 Vperiod=1
+n=18 registers=131072 cycles=578 maxP=1024 within=1 cross=0 lgP: 1:2 2:1 3:3 4:2 5:64 6:97 7:107 8:190 9:106 10:6
+  n=19 within-cycle: x=2aaab P=2 Vperiod=1
+n=19 registers=262144 cycles=902 maxP=1024 within=1 cross=0 lgP: 1:2 2:1 3:3 4:2 5:64 6:141 7:153 8:264 9:224 10:48
+  n=20 within-cycle: x=55555 P=2 Vperiod=1
+n=20 registers=524288 cycles=1396 maxP=2048 within=1 cross=0 lgP: 1:2 2:1 3:3 4:2 5:64 6:181 7:213 8:386 9:369 10:159 11:16
+  n=21 within-cycle: x=aaaab P=2 Vperiod=1
+n=21 registers=1048576 cycles=2180 maxP=2048 within=1 cross=0 lgP: 1:2 2:1 3:3 4:2 5:64 6:229 7:287 8:565 9:577 10:358 11:92
+  n=22 within-cycle: x=155555 P=2 Vperiod=1
+n=22 registers=2097152 cycles=3394 maxP=4096 within=1 cross=0 lgP: 1:2 2:1 3:3 4:2 5:64 6:277 7:377 8:810 9:862 10:688 11:286 12:22
+  n=23 within-cycle: x=2aaaab P=2 Vperiod=1
+n=23 registers=4194304 cycles=5304 maxP=4096 within=1 cross=0 lgP: 1:2 2:1 3:3 4:2 5:64 6:325 7:507 8:1083 9:1299 10:1202 11:688 12:128
+  n=24 within-cycle: x=555555 P=2 Vperiod=1
+n=24 registers=8388608 cycles=8246 maxP=8192 within=1 cross=0 lgP: 1:2 2:1 3:3 4:2 5:64 6:361 7:671 8:1454 9:1864 10:1932 11:1416 12:446 13:30
+  n=25 within-cycle: x=aaaaab P=2 Vperiod=1
+n=25 registers=16777216 cycles=12748 maxP=8192 within=1 cross=0 lgP: 1:2 2:1 3:3 4:2 5:64 6:393 7:863 8:1898 9:2612 10:2973 11:2546 12:1181 13:210
+  n=26 within-cycle: x=1555555 P=2 Vperiod=1
+n=26 registers=33554432 cycles=19792 maxP=16384 within=1 cross=0 lgP: 1:2 2:1 3:3 4:2 5:64 6:423 7:1072 8:2452 9:3603 10:4485 11:4289 12:2582 13:778 14:36
+  n=27 within-cycle: x=2aaaaab P=2 Vperiod=1
+n=27 registers=67108864 cycles=30636 maxP=16384 within=1 cross=0 lgP: 1:2 2:1 3:3 4:2 5:64 6:453 7:1269 8:3106 9:4921 10:6522 11:6942 12:4880 13:2169 14:302
+  n=28 within-cycle: x=5555555 P=2 Vperiod=1
+n=28 registers=134217728 cycles=47432 maxP=32768 within=1 cross=0 lgP: 1:2 2:1 3:3 4:2 5:64 6:485 7:1439 8:3825 9:6659 10:9242 11:10854 12:8682 13:4868 14:1240 15:66
+  n=29 within-cycle: x=aaaaaab P=2 Vperiod=1
+n=29 registers=268435456 cycles=73566 maxP=32768 within=1 cross=0 lgP: 1:2 2:1 3:3 4:2 5:64 6:521 7:1617 8:4691 9:8741 10:12970 11:16351 12:14801 13:9660 14:3646 15:496
+  n=30 within-cycle: x=15555555 P=2 Vperiod=1
+n=30 registers=536870912 cycles=114200 maxP=65536 within=1 cross=0 lgP: 1:2 2:1 3:3 4:2 5:64 6:553 7:1819 8:5664 9:11232 10:18024 11:23878 12:24201 13:17845 14:8748 15:2088 16:76
+  n=31 within-cycle: x=2aaaaaab P=2 Vperiod=1
+n=31 registers=1073741824 cycles=177260 maxP=65536 within=1 cross=0 lgP: 1:2 2:1 3:3 4:2 5:64 6:583 7:2036 8:6744 9:14308 10:24557 11:34177 12:37987 13:31423 14:18224 15:6435 16:714
+  n=32 within-cycle: x=55555555 P=2 Vperiod=1
+n=32 registers=2147483648 cycles=275172 maxP=131072 within=1 cross=0 lgP: 1:2 2:1 3:3 4:2 5:64 6:621 7:2263 8:7975 9:17983 10:32849 11:48379 12:57257 13:53237 14:35150 15:15945 16:3309 17:132
+  n=33 within-cycle: x=aaaaaaab P=2 Vperiod=1
+n=33 registers=4294967296 cycles=427100 maxP=131072 within=1 cross=0 lgP: 1:2 2:1 3:3 4:2 5:64 6:655 7:2516 8:9380 9:22331 10:43354 11:67115 12:84731 13:86161 14:64245 15:34561 16:10821 17:1158

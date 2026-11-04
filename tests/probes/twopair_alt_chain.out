@@ -1,0 +1,5 @@
+P=2: tops 1, nodes 6, BFS depth 3, level sizes [1, 4, 1], cycle True
+P=4: tops 3, nodes 57, BFS depth 4, level sizes [3, 32, 13, 9], cycle True
+P=8: tops 15, nodes 7633, BFS depth 7, level sizes [15, 1280, 1105, 1839, 952, 1184, 1258], cycle True
+  cap reached
+P=16: tops 255, nodes 5764800, BFS depth 2, level sizes [255, 1679360], cycle False
