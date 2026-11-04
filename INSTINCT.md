@@ -1433,3 +1433,12 @@ wheel 165,749, by the walk (Local's segments: heads, sixteen-tick rounds, tails,
 time per strip, the generator rewritten as a segment finder. Second: the seed's actual front at four-thirds ticks per wheel
 against the forced two (CL730, COMPUTED): a law for the share of coincidences would say why the real settling runs at the
 record's 4/3, and the atlas has nothing but the numbers. (23:18 GMT.)
+
+## Cloud, 4 November 2026 — after five left sides through 165,749 (CL736)
+
+Doing: the tree beyond 87,866 is a theorem with times through its fourth branch node (five strips, the seed's doubling inside).
+Pull, strong: the walk in blocks of a few hundred rounds chained by `walk_add`, to bring the module under the kit's 4 GB
+(prediction: the peak falls below 3 GB; an hour), because without it the entry cannot be packaged. Then Proposition 8 whole:
+sixteen left sides through wheel 894,235, the end of the period-16 stage, with their ticks: the same generator on sixteen rows
+of 894,236 bits, the kernel for perhaps an hour, memory bounded by the blocks. Not pursued: the actual front's law (the seed
+at four thirds of a tick per wheel against the forced two, now seen through 165,749: 220,307 against 333,333). (23:58 GMT.)
