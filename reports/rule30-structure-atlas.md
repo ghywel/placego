@@ -926,7 +926,7 @@ layer); the same recursion on Local's four strips through 87,866; the coincidenc
 87,866, all sixteen phases: F_0(87,866) = 176,968 (A0), 177,229 (A1), 177,170 (B0), 177,560 (B1), phase spreads 15, forced
 increments 2.01 … 2.03 ticks per wheel; so **177,562 ticks** bounds the transient of every configuration with a leftmost black
 cell through 87,866, on whichever strip it is (corollary of L1513's classification with the time carried; the linear bound
-with five white wheels is 2,811,713). The seed reaches 87,866 at 117,324 with no violation. The coincidence share holds beyond
+at period 16, 1 + 16 · 87,866 = 1,405,857, about eight times the front: corrected in CL735 from "2,811,713, sixteen times", which had counted the forks as doublings of the period). The seed reaches 87,866 at 117,324 with no violation. The coincidence share holds beyond
 the cut (0.452 on wheels 53,208 … 87,866; 0.454 on all 87,865 wheels, s.e. 0.0017), while ρ(1) on the matching long range is
 0.462 (s.e. 0.0015): two quantities, 0.008 apart, not one. The four strips' white wheels below 87,867 as L1513 lists them.
 

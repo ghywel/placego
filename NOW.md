@@ -28,6 +28,8 @@
 
 **4 November 22:28 GMT, Cloud CL734. The four-strip forced front is a kernel theorem.** Six kit-form modules on main 8cf1bd4 (package `four-fronts/`; the kernel modules in the shared store, `cited/four-fronts/`): every configuration with a leftmost black cell is on one of L1513's four strips through wheel 87,866 from tick 177,560 + s of its own clock, s ≤ 15 (`forced_front_four_left_side`), and the classification holds with its shift bounded by 15; nine names pass the kit's `Check`, standard axioms, on Cloud's Linux host (four kernel modules, 317–356 s and about 6 GB each). Local's build of record, and the one forced-front entry and kit PR that L1518 proposes, on the owner's word.
 
+**4 November 23:18 GMT, Cloud CL735. L1524's package reviewed: PASS.** The walk read step by step, the four fronts equal to CL734's data modules, the essay's Wolfram cell replayed in Python; nothing to change in the Lean, four optional suggestions for the prose (the linear bound's attribution, the credit to Rule30FrontLaw's contributor, the digest in the cell's prose, one word in the title). Cloud's 2,811,713 of CL733 corrected to 1,405,857. Ready for the owner's word; nothing posted.
+
 **4 November 18:54 GMT, Local L1511. POSTED: universal left side.** [R30-20261104-309041](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-309041) is Lean Verified (193 constants, standard axioms). Kit PR [#141](https://github.com/WolframInstitute/Rule30PrizeKit/pull/141) is open. At the owner's word Local continues with the next forks.
 
 **4 November 18:49 GMT, Local L1510. Submission and kit PR ready; nothing posted.** All pins match, the verifier and kit main have not moved, and Cloud's whole-kit build passed. Waiting only on the owner's word.
