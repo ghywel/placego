@@ -30687,3 +30687,45 @@ Kit form: `Check` pass, 256 constants, eleven headlines, 7 s, 2.1 GB. Notebook: 
 
 **Record searched:** CL735; the portal entries named above; `known_find.py` as stated.
 
+
+## CL736 addendum (stage 1) — Cloud: P-X1 and P-X2 HELD, exactly. The tree to wheel 165,749 is: the seed's strip doubles at 87,867 (period 32, no white wheel after), A1 and B1 run on at period 16 with no white wheel, B0 forks at 165,748 (even parity). The fronts at 165,749: 333,333 on the seed's strip, 333,257 on A1's, 333,503 on B0's two children, 334,150 on B1's. Stage 2 designed, predictions first (2026-11-04 23:32 GMT)
+
+**`next_fork_data.py`** ([output](tests/probes/wolfram/next_fork_data.out); 26 s, substitute caps). On 165,750 wheels to tick 340,000.
+- **P-X1 HELD.** The seed's final row returns after 32 ticks and not 16; A1, B0, B1 after 16. White wheels through 165,749:
+  seed 2, 7, 28, 399, 53,207, 58,286, 87,866 and no other; A1 2, 7, 28, 399, 53,207, 58,286; B0 2, 7, 28, 399, 53,207,
+  72,575, 165,748; B1 2, 7, 28, 399, 53,207, 72,575. At every white wheel the parity of the farther word says what Prop. 8
+  says: odd at 2, 7, 28, 399 and at the seed's 87,866 (doublings: the child's period is twice the farther word's and its
+  complement is its own rotation by the farther period, 1, 2, 4, 8, 16), even at 53,207, 58,286, 72,575 and 165,748
+  (forks: the child keeps the period and its complement is not a rotation). At 165,748 the second child's row is B0's
+  phase-0 row with bit 165,749 complemented: it returns after 16 ticks and its words differ from B0's at wheel 165,749 only,
+  by the complement. The low 87,867 bits of each phase-0 row at tick 340,000 are the old literals A0, A1, B0, B1.
+- **P-X2 HELD.** Fronts at 165,749 at phase 0: seed 333,333, A1 333,257, B0 333,503 (both children, the words agreeing
+  through 165,748), B1 334,150; increments over the last 50,000 wheels 2.003 … 2.014 ticks per wheel, the period-32 stretch
+  no different. The seed's lag-32 edge crossed 87,866 at tick 117,356 and 165,749 at 220,307 (1.329 ticks per wheel), never
+  retreated, and no lag-32 difference appeared after the crossing; so the seed is on its strip through 165,749 by 220,307,
+  against the forced 333,333 + s. A1, B0, B1 as rows settle by 103,072, 103,906, 104,190.
+- For the Lean: on the seed's 32-row cycle, rows r + 16 agree with rows r below wheel 87,867 for r < 16, and bit 87,867
+  flips after 16 ticks: the doubling is a shift by 16 that the wheels below do not see, exactly `white_shift` with L = 16.
+- Digests (sha256 of the hex, first 16): seed's phase-0 row 0da896a8c50980de, A1 a1ef92d52d464b32, B0 edf7c0b9a636b475,
+  B1 d97733db8b70d303, B0's second child 808f4cd66feab494.
+- `known_find.py --new` could not refresh (the PR index returns 403 on this host, as before); the cached index stands.
+
+**Stage 2, the design (one base module at period 32, generic in the width; one data module; no data module of rows).**
+Every strip in range is 32-periodic (period 16 divides 32), so one period serves all five: the words are 32 bits (`wordOf`,
+by recursion, no hand cases), the search runs over 32 phases, the moves are those of `Rule30FourFrontsBase` with `rowAt K v
+32 = v` and `j + 2 < K` as hypotheses, Local's walk runs at 32 ticks a round, and the data module holds five literals of
+165,750 bits (the seed's row, A1's, B0's, B1's and B0's second child), their returns, the doubling facts at 87,866 (a shift by
+16), the fork facts at 53,207, 58,286, 72,575 and 165,748, the black windows, and the walk's segments. The shift budget is
+15 + 16 = 31. Headlines: `forced_front_five` (some s ≤ 31 and one of five strips, wheel by wheel), `…_uniform` from strip
+tick 334,150 (own clock at most 334,181), `…_left_side`, `…_seed`, `classification_bounded_five`, and, if the period-32
+form of `not_related` goes through on per-wheel periods, `exactly_five_left_sides`.
+- **P-Y1:** the base module compiles with the proofs of `Rule30FourFrontsBase` and Local's walk under the two
+  substitutions, the kit's `rowAt_add_mul` and `stepK_bit_step` being generic already. Lean 75%. Counterfactual: a lemma
+  that leaned on 16 beyond the literal (an omega over `% 16`) fails and is restated.
+- **P-Y2:** the data module builds on this host in under 300 s and under 4 GB, the kernel confirming every segment fact
+  (about 960,000 walk ticks after sharing the prefixes), and `Check.lean --claim partial` passes the headlines with the
+  standard axioms; the fronts at 165,749 are the four numbers above. Lean 65%. Counterfactual: a segment fact refused by the
+  kernel means the generator's segment arithmetic is wrong (the heads, rounds and tails) and is fixed; a build past 300 s
+  means the 165,750-bit rows cost more per tick than Local's 6 µs scaled, and the limit is reported with the time.
+
+**Caps.** As CL734 for Lean (no virtual-memory limit, wall 1,800 s per module, memory sampled, one Lean thread, nice 10).

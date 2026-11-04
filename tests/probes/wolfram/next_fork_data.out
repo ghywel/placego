@@ -1,0 +1,51 @@
+K = 165750 wheels, T_END = 340000, lag 32
+
+seed: 6.6 s; period 32; low 87867 bits of the phase-0 row equal the old literal: True; edge crossed 87,866 at tick 117356, 165,749 at tick 220307, retreats 0, nonzero lag-32 differences after the last crossing 0
+  white wheels through 165749: [2, 7, 28, 399, 53207, 58286, 87866]
+  white 2: farther word period 1, parity 1 -> doubling; child period 2, complement is its rotation by 1: True
+  white 7: farther word period 2, parity 1 -> doubling; child period 4, complement is its rotation by 2: True
+  white 28: farther word period 4, parity 1 -> doubling; child period 8, complement is its rotation by 4: True
+  white 399: farther word period 8, parity 1 -> doubling; child period 16, complement is its rotation by 8: True
+  white 53207: farther word period 16, parity 0 -> fork; child period 16, complement is its rotation by 16: False
+  white 58286: farther word period 16, parity 0 -> fork; child period 16, complement is its rotation by 16: False
+  white 87866: farther word period 16, parity 1 -> doubling; child period 32, complement is its rotation by 16: True
+  forced front at phase 0: F(53207) = 107310, F(87866) = 176968, F(165749) = 333333; increment over the last 50,000 wheels 2.0107 ticks/wheel
+  phase-0 row digest (sha256 of hex, first 16) 0da896a8c50980de
+  doubling facts for Lean: rows r+16 = rows r below 87867: True; bit 87867 flips after 16 ticks: True
+
+A1: 6.5 s; period 16; low 87867 bits of the phase-0 row equal the old literal: True; edge crossed 87,866 at tick 32, 165,749 at tick 103072, retreats 0, nonzero lag-32 differences after the last crossing 0
+  white wheels through 165749: [2, 7, 28, 399, 53207, 58286]
+  white 2: farther word period 1, parity 1 -> doubling; child period 2, complement is its rotation by 1: True
+  white 7: farther word period 2, parity 1 -> doubling; child period 4, complement is its rotation by 2: True
+  white 28: farther word period 4, parity 1 -> doubling; child period 8, complement is its rotation by 4: True
+  white 399: farther word period 8, parity 1 -> doubling; child period 16, complement is its rotation by 8: True
+  white 53207: farther word period 16, parity 0 -> fork; child period 16, complement is its rotation by 16: False
+  white 58286: farther word period 16, parity 0 -> fork; child period 16, complement is its rotation by 16: False
+  forced front at phase 0: F(53207) = 107310, F(87866) = 177229, F(165749) = 333257; increment over the last 50,000 wheels 2.0028 ticks/wheel
+  phase-0 row digest (sha256 of hex, first 16) a1ef92d52d464b32
+
+B0: 6.5 s; period 16; low 87867 bits of the phase-0 row equal the old literal: True; edge crossed 87,866 at tick 32, 165,749 at tick 103906, retreats 0, nonzero lag-32 differences after the last crossing 0
+  white wheels through 165749: [2, 7, 28, 399, 53207, 72575, 165748]
+  white 2: farther word period 1, parity 1 -> doubling; child period 2, complement is its rotation by 1: True
+  white 7: farther word period 2, parity 1 -> doubling; child period 4, complement is its rotation by 2: True
+  white 28: farther word period 4, parity 1 -> doubling; child period 8, complement is its rotation by 4: True
+  white 399: farther word period 8, parity 1 -> doubling; child period 16, complement is its rotation by 8: True
+  white 53207: farther word period 16, parity 0 -> fork; child period 16, complement is its rotation by 16: False
+  white 72575: farther word period 16, parity 0 -> fork; child period 16, complement is its rotation by 16: False
+  white 165748: farther word period 16, parity 0 -> fork; child period 16, complement is its rotation by 16: False
+  forced front at phase 0: F(53207) = 107310, F(87866) = 177170, F(165749) = 333503; increment over the last 50,000 wheels 2.0127 ticks/wheel
+  phase-0 row digest (sha256 of hex, first 16) edf7c0b9a636b475
+  fork at 165748: second child row = row ^ 2^165749: returns after 16: True; words differ exactly at [165749]; complement at 165749: True; digest 808f4cd66feab494
+
+B1: 6.3 s; period 16; low 87867 bits of the phase-0 row equal the old literal: True; edge crossed 87,866 at tick 32, 165,749 at tick 104190, retreats 0, nonzero lag-32 differences after the last crossing 0
+  white wheels through 165749: [2, 7, 28, 399, 53207, 72575]
+  white 2: farther word period 1, parity 1 -> doubling; child period 2, complement is its rotation by 1: True
+  white 7: farther word period 2, parity 1 -> doubling; child period 4, complement is its rotation by 2: True
+  white 28: farther word period 4, parity 1 -> doubling; child period 8, complement is its rotation by 4: True
+  white 399: farther word period 8, parity 1 -> doubling; child period 16, complement is its rotation by 8: True
+  white 53207: farther word period 16, parity 0 -> fork; child period 16, complement is its rotation by 16: False
+  white 72575: farther word period 16, parity 0 -> fork; child period 16, complement is its rotation by 16: False
+  forced front at phase 0: F(53207) = 107310, F(87866) = 177560, F(165749) = 334150; increment over the last 50,000 wheels 2.0135 ticks/wheel
+  phase-0 row digest (sha256 of hex, first 16) d97733db8b70d303
+
+done
