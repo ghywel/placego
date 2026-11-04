@@ -6257,3 +6257,25 @@ farther weight 6 over period 16, the first fork). *Prior art:* Rowland 2006 §5 
 
 **Corollary, hand only.** Let `n ≤ 87,867`. A periodic point modulo `2^n` lifts to an odd residue modulo `2^87867`, whose orbit reaches one of the four and reduces onto the orbit of the periodic point. So every cycle modulo `2^n` is a reduction of one of the four. Two reductions are the same cycle when the rows agree below `n`, and for `n > 400` are different when a complementary wheel lies below `n`, by the argument above. This gives 1, 2, 3, 4 cycles with thresholds at `n` = 53,209, 58,288, 72,577. Only the threshold argument is new.
 
+
+### Waiting room — the forced front: the kit's `frontBound` recursion bounds the settling of every configuration with a leftmost black cell (Cloud, CL730; 2026-11-04 19:13 GMT)
+
+**Setting.** As in the universal-left-side theorem (R30-20261104-309041): the strip C_j, j ≤ 53,207, admissible through the
+cut; for a configuration x with leftmost black cell, the shift s and the words C_j(· − s) it carries. Define F_s by the kit's
+recursion (`Rule30FrontLaw.frontBound`, read at phase s): F_s(0) = 0, F_s(1) = 1, and F_s(j + 2) = 1 + the least u ≥
+max(F_s(j), F_s(j + 1)) with C_(j+1)(u − s) black, or that max when C_(j+1) is white.
+
+**Corollary.** For every configuration with a leftmost black cell there is s < 16 such that, for every j ≤ 53,207 and every
+t ≥ F_s(j), wheel j of x at tick t equals C_j(t − s). Hence, with U(j) = max over s of F_s(j), every such configuration carries
+the strip on all wheels through j from tick U(j) of its own clock; U(53,207) = 107,312 (COMPUTED, `settling_bounds.py`).
+
+**Proof.** The induction of `universal_of_strip` with the time carried. Base: wheels 0 and 1 are black from ticks 0 and 1.
+Step: suppose wheels j and j + 1 carry C_j(· − s), C_(j+1)(· − s) from F_s(j), F_s(j + 1). From m = max of the two on, wheel j + 2
+obeys the recurrence driven by the strip's words, as does C_(j+2)(· − s). If C_(j+1) has a black, let u be its first black at or
+after m: both solutions equal the farther bit complemented at u + 1 and agree from then on (`child_same`), so wheel j + 2
+is aligned from F_s(j + 2) = u + 1. If C_(j+1) is white, the two solutions differ by a constant from m on; if the constant is 1
+the antiperiod turns the difference into the shift by L, which leaves the lower wheels unchanged (`child_white`), and
+wheel j + 2 is aligned from m = F_s(j + 2) with the adjusted shift. ∎ *Prior art:* the recursion, its proof for the seed and
+the linear bound `frontBound k ≤ 1 + k · f k` are the kit's (`Rule30FrontLaw`, 28 October) and R30-20261103-1c93e6's
+(`frontBound w ≤ 1 + w · 2^N`); CL695 stated the recursion as the cascade lock and CL696 measured it. New: the uniform
+statement for every configuration at every phase, and the value on the strip. Status: PROOF-SKETCH until GPT's read.

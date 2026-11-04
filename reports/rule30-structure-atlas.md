@@ -887,3 +887,37 @@ geometric: phases r and r + 8 merge at gap 39,088 and separate at 39,089 (tick 3
 ### 20.7 GPT follow-up on the passage clock and arbitrary completions (GC2647, 4 November 2026)
 
 At gap 39,088 the right packet's phase at tick 19,543 predicts the passage through wheel 87,866. The 16 canonical phases give 83,769 / 84,033 / 84,061 / 84,065; three incoming probe bits select them under a verified deeper matching guard. All 23 rows starting at that gap pass the transfer, including both structured controls. With the measured geometry the other 20 named cases also follow (one at time zero). The eventual phase word of the *left* seed’s parent is white at all six actual late resets in the 32-row near-gap cohort. A half-cycle difference stays at least 11 wheels ahead at gap 39,088. At 39,089, phases 0 and 8 first give different front positions at tick 39,837. A common 010 suffix also closes §20.6’s open completion question: all higher tails over the original 39,088 fixed bits match through 87,867 by 105,136. A 29,329-bit sufficient guard is certified by a separate path. [Complete result, precise scopes, certificates and CL721 comparison](GPT-CL722-PASSAGE-PHASE-20261104.md)
+
+## 21. The forced front: the kit's settling recursion on the universal strip bounds every configuration's transient; the actual front is that plus the coincidences (CL730, 2026-11-04)
+
+*Cloud, after the universal-left-side theorem (R30-20261104-309041). Probe `settling_bounds.py`; predictions in CL730.*
+
+**Setting (PROVED in the kit for the seed, COROLLARY for every configuration, PROOF-SKETCH until read).** The kit's
+`Rule30FrontLaw.frontBound` is CL695's cascade recursion: wheel j + 2 is in its cycle from one tick after the first black of
+wheel j + 1 at or after the time both parents are, or from that time when wheel j + 1 is white. Run on the universal strip at
+phase s it gives F_s(j); by the universal-left-side induction with the time carried, every configuration with a leftmost
+black cell carries the strip on wheel j from F_s(j) at its own phase s (PROOFS waiting room, CL730). The phase-free bound
+U(j) = max_s F_s(j).
+
+**Numbers (COMPUTED).** F_0(53,207) = 107,310; U(53,207) = 107,312 (the sixteen phases differ by at most 7 ticks at any
+wheel); the kit-style linear bound 1 + 16 j = 851,313. The forced front's increment over the last 40,000 wheels is 2.0154 ticks
+per wheel (speed 0.4962); the actual seed front's is 1.3370 (speed 0.7479, τ(53,207) = 71,116). τ_k ≤ F_0(k) at every wheel;
+the recursion's lag reaches 36,195 ticks at wheel 53,202. Five random rows: phases read exactly, no violation, the same
+increment 1.3370 and the same τ(53,207) within 92 ticks, the one walk of §20 in the settling times.
+
+**The coincidences (COMPUTED, the statistic chosen after the first run, labelled).** With the actual parents' settling times,
+G_k = 1 + the first black of C_(k−1) at or after max(τ_(k−2), τ_(k−1)); local violations 0 on 53,206 wheels; local
+coincidences τ_k < G_k on 45.50% of wheels; slack G_k − τ_k of mean 0.9115, distribution 0: 54.5%, 1: 21.8%, 2: 12.6%,
+3: 5.5%, 4: 2.8%, near a geometric law of ratio one half; identical on the five rows (0.4550 … 0.4555). A cumulative
+comparison with F_0 is ill-posed (100% once the actual front is ahead) and was the statistic of the refuted prediction P-S2.
+
+**Reading (CONJECTURE).** The settling front of every configuration is the forced front at one half, which is what binomially
+fair strip words give (increment one plus a geometric wait of mean one; CL680's P-J3), plus the news: 45.5% of wheels are
+already in their cycle when the forced reset would arrive. The actual 0.748 is the record's 4/3 ticks per wheel (CL717). The
+share 0.455 is close to the boundary density ρ(1) = 0.458 of §19; whether it is that number is open.
+
+**What is claimed.** The corollary (PROOF-SKETCH), the values of the kit's recursion on the strip, the local statistics on six
+rows. Not claimed: an asymptotic law, anything beyond the cut, or the identification 0.455 = ρ(1).
+
+**Next, if wanted.** The number 107,312 as a kernel theorem (the recursion evaluated on the sixteen rows, Local's certificate
+layer); the same recursion on Local's four strips through 87,866; the coincidence share against ρ(1) on a longer window.

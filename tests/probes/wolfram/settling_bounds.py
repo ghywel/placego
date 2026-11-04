@@ -62,6 +62,20 @@ def tau_from_B(Barr, kmax):
 tau_seed = tau_from_B(Barr, J - 1)
 assert tau_seed[J - 1] >= 0, "seed not settled through 53,207 within TMAX"
 def incr(x, lo, hi): return (x[hi] - x[lo]) / (hi - lo)
+def local_lock(tau, s):
+    G = np.zeros_like(tau); co = vi = 0; slack = []
+    for k in range(2, len(tau)):
+        m = max(tau[k - 2], tau[k - 1]); w = C[k - 1]
+        if w == 0: g = m
+        else:
+            u = m
+            while not Cval(k - 1, u - s): u += 1
+            g = u + 1
+        G[k] = g
+        if tau[k] < g: co += 1
+        elif tau[k] > g: vi += 1
+        slack.append(int(g - tau[k]))
+    sl = np.array(slack); return co, vi, sl
 lo, hi = J - 1 - 40000, J - 1
 print(f"strip to wheel {J-1}; seed evolved to {TMAX} ({time.time()-t0:.1f} s)")
 print(f"frontBound on the strip, seed phase: F_0(53207) = {F0[J-1]}; increment over the last 40,000 wheels {incr(F0, lo, hi):.4f} ticks/wheel (front speed {1/incr(F0, lo, hi):.4f})")
@@ -69,6 +83,9 @@ print(f"phase-free bound U(53207) = max over 16 phases = {U[J-1]}; max over whee
 print(f"seed actual: tau(53207) = {tau_seed[J-1]}; increment over the last 40,000 wheels {incr(tau_seed, lo, hi):.4f} ticks/wheel (front speed {1/incr(tau_seed, lo, hi):.4f})")
 viol = int(np.sum(tau_seed > F0)); early = int(np.sum(tau_seed[2:] < F0[2:])); eq = int(np.sum(tau_seed[2:] == F0[2:]))
 print(f"seed: wheels with tau > F_0 (violations of the bound): {viol}; wheels settling strictly before F_0 (coincidences): {early} of {J-2} ({early/(J-2):.4f}); equal: {eq}; max F_0 - tau = {int((F0 - tau_seed).max())} at wheel {int(np.argmax(F0 - tau_seed))}")
+co, vi, sl = local_lock(tau_seed, 0)
+hist = {int(v): int(n) for v, n in zip(*np.unique(sl, return_counts=True))}
+print(f"seed, local cascade lock with actual parents: local violations {vi}; local coincidences (tau_k < G_k) {co} of {J-2} ({co/(J-2):.4f}); slack G_k - tau_k: mean {sl.mean():.4f}, distribution {dict(sorted(hist.items())[:8])}")
 # random rows (CL696's construction): their own band edge, phase and tau
 rng = np.random.default_rng(606)
 print("random rows: width, phase s, violations of tau_k <= F_s(k), tau(53207), increment, coincidence share, max F_s - tau")
@@ -89,6 +106,7 @@ for r in range(NROWS):
         if best is None or agree > best[0]: best = (agree, s)
     s = best[1]; Fs = frontBound(s) if s else F0
     v = int(np.sum(tau_r > Fs)); e = int(np.sum(tau_r[2:] < Fs[2:]))
-    print(f"  width {wb:2d}: s = {s:2d} (agreement {best[0]}/{len(range(1000,40000,97))}), violations {v}, tau(53207) = {tau_r[J-1]}, increment {incr(tau_r, lo, hi):.4f}, coincidences {e/(J-2):.4f}, max F_s - tau = {int((Fs - tau_r).max())}")
+    co_r, vi_r, sl_r = local_lock(tau_r, s)
+    print(f"  width {wb:2d}: s = {s:2d} (agreement {best[0]}/{len(range(1000,40000,97))}), violations {v}, tau(53207) = {tau_r[J-1]}, increment {incr(tau_r, lo, hi):.4f}, cumulative coincidences {e/(J-2):.4f}, local: violations {vi_r}, coincidences {co_r/(J-2):.4f}, mean slack {sl_r.mean():.4f}")
 print(f"total {time.time()-t0:.1f} s")
 print("SETTLING_BOUNDS_DONE")

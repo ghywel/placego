@@ -1,0 +1,14 @@
+strip to wheel 53207; seed evolved to 76000 (1.7 s)
+frontBound on the strip, seed phase: F_0(53207) = 107310; increment over the last 40,000 wheels 2.0154 ticks/wheel (front speed 0.4962)
+phase-free bound U(53207) = max over 16 phases = 107312; max over wheels of U - F_0 = 7; kit-style bound 1 + 16 j = 851313
+seed actual: tau(53207) = 71116; increment over the last 40,000 wheels 1.3370 ticks/wheel (front speed 0.7479)
+seed: wheels with tau > F_0 (violations of the bound): 0; wheels settling strictly before F_0 (coincidences): 53204 of 53206 (1.0000); equal: 2; max F_0 - tau = 36195 at wheel 53202
+seed, local cascade lock with actual parents: local violations 0; local coincidences (tau_k < G_k) 24209 of 53206 (0.4550); slack G_k - tau_k: mean 0.9115, distribution {0: 28997, 1: 11616, 2: 6721, 3: 2952, 4: 1489, 5: 703, 6: 363, 7: 176}
+random rows: width, phase s, violations of tau_k <= F_s(k), tau(53207), increment, coincidence share, max F_s - tau
+  width 45: s =  2 (agreement 403/403), violations 0, tau(53207) = 71070, increment 1.3370, cumulative coincidences 1.0000, local: violations 0, coincidences 0.4553, mean slack 0.9120
+  width 47: s = 12 (agreement 403/403), violations 0, tau(53207) = 71096, increment 1.3370, cumulative coincidences 0.9998, local: violations 0, coincidences 0.4553, mean slack 0.9116
+  width  4: s =  1 (agreement 403/403), violations 0, tau(53207) = 71085, increment 1.3370, cumulative coincidences 1.0000, local: violations 0, coincidences 0.4550, mean slack 0.9115
+  width  7: s =  4 (agreement 403/403), violations 0, tau(53207) = 71024, increment 1.3370, cumulative coincidences 0.9999, local: violations 0, coincidences 0.4555, mean slack 0.9126
+  width  2: s =  0 (agreement 403/403), violations 0, tau(53207) = 71116, increment 1.3370, cumulative coincidences 1.0000, local: violations 0, coincidences 0.4550, mean slack 0.9115
+total 6.7 s
+SETTLING_BOUNDS_DONE

@@ -29782,3 +29782,41 @@ coincidence share are not in the record.
 I wrongly told the owner mid-block that these two arXiv papers were absent from the record: both are in PRIOR-ART, and my search of the ledger was too narrow.
 
 **For GPT.** Pins and questions are in the README. **For the owner.** Nothing is waiting on you until GPT returns.
+
+## CL730 addendum — Cloud: run. P-S1 HELD (the forced front runs at 0.496 wheel per tick, F_0(53,207) = 107,310, the sixteen phases within 7 ticks, the phase-free bound 107,312, the linear bound eight times looser); P-S3 HELD (five rows: phases read exactly, no violation, increments identical to the seed's); P-S2's coincidence statistic REFUTED as stated and replaced post hoc by CL695's local form: 45.5% of wheels settle before the forced reset, with a near-geometric slack, the same on every row (2026-11-04 19:13 GMT)
+
+`settling_bounds.py 5` (5 s, substitute caps; the local statistic added after the first run, the predictions unchanged).
+- **P-S1 HELD.** The kit's recursion on the strip at the seed's phase: F_0(53,207) = 107,310; increment over the last 40,000
+  wheels 2.0154 ticks per wheel, a forced front speed of 0.4962. The sixteen phases differ by at most 7 ticks at any wheel,
+  so the phase-free bound is U(53,207) = 107,312: **every configuration with a leftmost black cell carries the universal
+  strip on all wheels through 53,207 from tick 107,312 of its own clock** (the corollary of CL730, applied; status: the
+  corollary PROOF-SKETCH until read, the number COMPUTED). The kit-style linear bound 1 + 16 j = 851,313 is 7.9 times looser.
+- **Seed and bound.** τ(53,207) = 71,116 (as L1501), increment 1.3370 per wheel, front speed 0.7479; τ_k ≤ F_0(k) at every
+  wheel (no violation); the recursion's lag grows to 36,195 ticks at wheel 53,202.
+- **P-S2 REFUTED as stated, the statistic being ill-posed:** measured cumulatively against F_0, 53,204 of 53,206 wheels
+  settle "before" the bound, because once the actual front is ahead every later wheel is. The right statistic is CL695's
+  local cascade lock, with the actual parents' settling times: G_k = 1 + the first black of C_(k−1) at or after
+  max(τ_(k−2), τ_(k−1)). *Post hoc, labelled:* local violations 0 (CL696's no-violation again, on 53,206 wheels); local
+  coincidences, τ_k < G_k, 24,209 of 53,206 = **0.4550**; the slack G_k − τ_k has mean 0.9115 and the distribution 0: 54.5%,
+  1: 21.8%, 2: 12.6%, 3: 5.5%, 4: 2.8%, 5: 1.3%, 6: 0.7%, 7: 0.3%, near a geometric law of ratio one half. So the settling
+  front is 54.5% forced resets and 45.5% coincidences, and the forced front alone would run at half a wheel per tick.
+- **P-S3 HELD.** Five random rows (widths 45, 47, 4, 7, 2): phases 2, 12, 1, 4, 0 read with 403 of 403 settled wheels
+  agreeing; no violation of τ_k ≤ F_s(k); τ(53,207) from 71,024 to 71,116; increment 1.3370 on every row; local coincidence
+  share 0.4550 … 0.4555, mean slack 0.9115 … 0.9126. The one walk of CL721, now in the settling times through the cut.
+
+**What it teaches.** Two fronts bracket the settling of every configuration: the forced front, the kit's recursion run on
+the strip's blacks, at 0.496 wheel per tick, and the actual front at 0.748 (the record's 4/3 ticks per wheel, CL717). The
+gap is exactly the coincidences, 45.5% of wheels, with a half-geometric slack: the news from the chaotic side arrives at the
+child in time nearly half the time. A forced front at one half is what Bernoulli blacks of density one half would give
+(increment 1 + a geometric wait of mean 1), and the strip's words are binomially fair (CL680, P-J3); so the forced half is
+the strip's statistics, and the extra quarter is the news. Not claimed: any asymptotic law, or anything beyond the cut.
+
+**Record.** Atlas §21; the corollary in the PROOFS waiting room; RECORD-MAP row; PROBES line. REVIEW-REQUEST to GPT: the
+corollary's read (the time bookkeeping in both cases, the phase-free maximum) and the reading of the two fronts; also the
+cumulative statistic's failure as a caution. Lean: the recursion is the kit's `frontBound`; a kernel evaluation of it on the
+strip (the number 107,312 as a theorem) is the follow-up, Local's if wanted, since the certificate layer is Local's.
+
+My own pull: Local's L1513 asked for a carrying read of `extend`, `branch`, `classification`, `side_unique`, `reaches`; I take
+that read next, at the owner's word, as the second reader. After it, the forced front as a theorem (the recursion's value in
+the kernel) and the question whether the coincidence share 0.455 is the boundary density ρ(1) = 0.458 of CL719, which it
+nearly equals, or a different number.
