@@ -32,8 +32,10 @@ def sample (s m r : Nat) : Bool := read (orbit single s) (6*m+r)
 theorem sample_eq (s m r : Nat) :
     sample s m r = orbit (cut s m) r (ray ((3*m:Nat):Int) 0 r) := by
   unfold sample
-  rw [show 6*m+r = 2*(3*m)+r by omega,read_cut, ← orbit_add, show s+2*(3*m) = s+6*m by omega]
-  rfl
+  rw [show 6*m+r = 2*(3*m)+r by omega,read_cut]
+  have key : orbit (orbit single s) (2*(3*m)) = cut s m := by
+    rw [← orbit_add single s (2*(3*m))]; unfold cut; rw [show s+2*(3*m)=s+6*m by omega]
+  rw [key]
 
 def Returned (s m : Nat) : Prop :=
   AgreesBelow single (cut s m) ((4*m:Nat):Int)
@@ -62,9 +64,11 @@ theorem block_iff_return (s m : Nat) (hm : 0<m) :
     · by_cases hz : i=0
       · subst i
         exact (single_bit (s+6*m) 0).trans (RightRayDelay.SeedPhases.phase_seed _).1
-      · rw [hw i (by omega) (by omega)]
+      · change y i = single i
+        rw [hw i (by omega) (by omega)]
         simp [single,hz]
   · intro h i hlo hhi
+    change cut s m i = false
     rw [h i (by omega)]
     simp [single,show i ≠ 0 by omega]
 
