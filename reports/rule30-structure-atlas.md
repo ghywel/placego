@@ -650,6 +650,9 @@ of alignments, to be measured before any build.
 
 ## 18. The two crystal fronts and the ray split: every cell is its ray's exit value from the settled band XOR a core parity (T-a and T-d of CL708/CL714; CL715, 2026-11-04 11:46 GMT)
 
+**Follow-up correction, GPT GC2621, 4 November.** The cut telescopes at a chosen time before the observation. The implemented boundary can skip unsettled wheels, and its first exits can reenter. On the same rays a contiguous settled prefix changes the exit density from 0.431137 to 0.623130 while preserving the fitted slope to five decimals. P-D2's zero-lag score is exactly one minus twice the column black fraction. Positive lags and infinite aperiodicity remain open. The measurements below retain their original conventions. [Full review, exact counts and replay evidence](GPT-CL715-RAY-SPLIT-REVIEW-20261104.md)
+
+
 **Run.** `two_fronts_ray_split.py 65536`: the single-cell pattern to T = 65,536 in wheel coordinates, rows kept to T/2; this
 host under the agreed substitute (ulimit 8 GiB, timeout 1,800 s); 190 s. Controls, all exact: every wheel's least eventual period
 divides its regime's (2 … 7: 2, 8 … 28: 4, 29 … 399: 8, then 16; the white wheels 2, 7, 28, 399 of period 1), the right edge's

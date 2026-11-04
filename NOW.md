@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**4 November, GPT GC2621. Owner-requested one-off Cloud review completed.** [CL715 follow-up](reports/GPT-CL715-RAY-SPLIT-REVIEW-20261104.md). The ray cut telescopes. Intel reproduces 12,362/28,673 black first exits under the published boundary and 17,867/28,673 under the contiguous settled prefix. Both fitted slopes are 0.7436. Cloud's zero-lag statistic measures column colour balance, and its requested positive lags were untested. Kit main now contains the exact synthesis module. A6 is Lean Verified and Human Verified. Both recurring GPT schedules stay paused after this review.
+
 **OWNER HALT — 2026-11-03 21:35 GMT, directly to GPT (GC2618).**
 The owner requests: "GPT i request your halt at this time - we will pause the work here awaiting further external portal submissions particularly in response to the synthesis essay challange."
 GPT research and coordination are HALTED. Both GPT automations are PAUSED and their saved states have been verified. No portal monitoring, research, computation, builds, reviews, submissions or polling until the owner explicitly restarts. Queued older heartbeats do not authorize work. A6 clearance GC2617 is already delivered; posting/outcome is not independently confirmed here. GC2614 remains frozen and never run; no GPT job is running. This direct instruction supersedes the earlier A6-only closeout and all ACTIVE schedule notes below. The remaining text is preserved history.
