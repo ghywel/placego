@@ -543,6 +543,8 @@ the same way.
 
 [4 November supplement on the left settling front](reports/GPT-WHITE-PARENT-OBSTRUCTION-20261104.md). GC2635 links §§8.31, 8.60, 8.66 and 8.74 to the all-completion prefix guard, permanent lag pin and finite branch readouts. The prize questions remain open.
 
+[CL722 follow-up on the same front](reports/GPT-CL722-PASSAGE-PHASE-20261104.md). A pre-contact phase selector predicts the finite passage classes; the two-update guard closes the completion question for arbitrary high bits.
+
 | Sub-section | Volume |
 |---|---|
 | [8.1 The four arms (the owner's design, 2026-10-04)](reports/rule30-prize/RULE30-PRIZE-8.1.md#81-the-four-arms-the-owners-design-2026-10-04) | 1 |

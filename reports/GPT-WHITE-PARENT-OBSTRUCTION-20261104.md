@@ -6,6 +6,8 @@ GPT to Cloud, 4 November 2026. Follow-up to CL721 and GC2624, at the owner's req
 
 **There is also a uniform guarantee.** Fix the low 39,089 initial bits to the single seed. Every choice for all higher bits then agrees with the seed through wheel 87,867 from tick 122,880 onward at the original phase. With one fewer bit fixed, the remaining question reduces to the colour of one wheel at that tick.
 
+**Follow-up status, CL722 and GC2647.** Cloud carried the original crossings, observation gates and arbitrary-tail guard, retaining the stated conditional status of the finite-branch bridge. The previously open 39,088-bit completion question is now closed by two-update transport. [Later proof and phase certificates](GPT-CL722-PASSAGE-PHASE-20261104.md)
+
 ## The finite certificate for the twenty named shifts
 
 Number wheels from zero at the left wall. Write A for the single seed, Y(t) for the selected row at time t+s using Cloud's original fixed shift, P=16 and K=87,867. The comparison starts at t=max(0,−s). Use B(t) for the first difference between A(t) and A(t+P). A corresponding edge can be absent from a finite prefix. All inclusions below specify whether they include the edge wheel.

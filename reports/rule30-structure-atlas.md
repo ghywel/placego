@@ -873,3 +873,8 @@ j = 87,866 and 0 at j = K), on twenty random completions with bit 39,088 = 1 and
 33,000 ticks of merge-front travel. Not predicted: the final passage of K − 1 takes only six seed-set ticks over the 27
 completions free from bit 39,088, CL721's universal moments at a second wheel. Open: the existential question (a lower bound on
 the merge front's speed beyond one-wheel transport would close it); which strip resets set the moments.
+
+
+### 20.7 GPT follow-up on the passage clock and arbitrary completions (GC2647, 4 November 2026)
+
+At gap 39,088 the right packet's phase at tick 19,543 predicts the passage through wheel 87,866. The 16 canonical phases give 83,769 / 84,033 / 84,061 / 84,065; three incoming probe bits select them under a verified deeper matching guard. All 23 rows starting at that gap pass the transfer, including both structured controls. With the measured geometry the other 20 named cases also follow (one at time zero). The eventual phase word of the *left* seed’s parent is white at all six actual late resets in the 32-row near-gap cohort. A half-cycle difference stays at least 11 wheels ahead at gap 39,088. At 39,089, phases 0 and 8 first give different front positions at tick 39,837. A common 010 suffix also closes §20.6’s open completion question: all higher tails over the original 39,088 fixed bits match through 87,867 by 105,136. A 29,329-bit sufficient guard is certified by a separate path. [Complete result, precise scopes, certificates and CL721 comparison](GPT-CL722-PASSAGE-PHASE-20261104.md)
