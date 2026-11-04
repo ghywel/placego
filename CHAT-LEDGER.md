@@ -29265,3 +29265,36 @@ sides the seed takes at wheel 53,208 needs one seed run to tick about 71,116. Wi
 I will try the direct form in the kernel and report the cost; it is optional.
 
 **Blocker unchanged.** Wolfram licence fault on this host; the owner has been told.
+
+## L1503 — Local to Cloud and the owner: both headline theorems compile against kit main, standard axioms. `universal_left_side` (every row, every wheel through 53,207, one shift) and `first_fork` (two finite rows, no shift identifies them). L1501's targets move from PROOF-SKETCH to Lean. Check, carrying reads and packaging remain (2026-11-04 17:08 GMT)
+
+**Result (Lean 4.35.0 on the M5, kit main 722a0c51, one file, under two seconds; `#print axioms` only so far, the kit's `Check` not yet run).**
+- `universal_left_side`: for x with `∀ p < lo, x p = false` and `x lo = true`, ∃ s, ∀ j ≤ 53207, ∃ T, ∀ t ≥ T, `Ld x lo j (t + s) = C j t`. No condition on the right tail.
+- `one_left_side`: the same between any two such configurations, directly. `seed_left_side`: for the kit's `D`.
+- `fork_dichotomy`: with that shift, wheel 53,208 of every row is eventually C's word or its complement.
+- `first_fork`: `ofRow B` and `ofRow B'`, B' = B ⊕ 2^53,208, agree on every wheel through 53,207 at every tick, are complementary on wheel 53,208 at every tick,
+  and no shift relates them through wheel 53,208. `B_lt`, `B'_lt`, `B_bit`, `B'_bit`: both finite, both with leftmost black cell at position 0.
+- `odd_farther_weights` (1, 1, 3, 3 over 1, 2, 4, 8 at wheels 1, 6, 27, 398) and `even_farther_weight` (6 over 16 at wheel 53,206): Rowland's parity condition in the kernel.
+
+Axioms: `propext`, `Classical.choice`, `Quot.sound` for the first four; `propext`, `Quot.sound` for `first_fork`; `propext` for the weights. No `native_decide`. Source:
+[certificate-draft.lean](reports/wolfram-agents/submissions/universal-left-side/certificate-draft.lean), sha256 e52c05ec0c832d7b… It has `universal_of_strip`, proved by the induction of L1501: L1502's stub turned out shorter
+to prove than to stub. Cloud: adopt it, or replace it with yours if yours is better; I have no attachment to it. It carries one extra hypothesis, `1 ≤ J`.
+
+**Controls.** Six negative controls, each one edit to the certificate: a flip at wheel 30,000; a flip at wheel 53,207; wheel 399 dropped from the white mask; the mask claim extended to wheel 53,207; an
+antiperiod L < 16 at wheel 53,208 (the step that would carry universality past the fork); a period claim at wheel 400. All six fail at the kernel with a type mismatch, and the unedited scaffold passes.
+[`universal_left_cert.py`](tests/probes/wolfram/universal_left_cert.py) regenerates B and the controls; it asserts the 16-tick returns and white wheels independently in Python.
+
+**L1501's prediction HELD:** builds with standard axioms; the certificate checks are far under ten seconds.
+
+**L1502's optional seed run: not viable, recorded.** 2^13 ticks took 7 s, 2^14 took 38 s, and 2^15 passed a 90 s cap, so 72,000 ticks will not fit the portal's four minutes. So "the seed takes B's side at wheel 53,208" stays COMPUTED (B is the seed's row at
+tick 72,000, Python replay), and is not a Lean statement. In Lean, at least one of the two finite rows differs from the seed, which follows from `first_fork` and `seed_left_side`. That is enough for Rowland's question, which asks whether a second continuation occurs at all.
+A note on the method: a timing taken from B itself was misleadingly flat, because B cycles and the kernel's cache answers after 16 ticks.
+
+**Packaging point for Cloud.** The portal's `environment` block lists its verifier kit at c42f6e51 and its module list has no `Rule30LeftCoincidence`, though main has it. So the portal form must not import that module; the draft's `Rule30LeftCoincidence` import
+is unused and I am dropping it. The kit PR form may cite F2 in its header, and can import it.
+
+**Wolfram.** Fault cleared: the owner had me stop four stale `wolfram -run PacletSymbol…` processes, which ignored SIGTERM and needed SIGKILL; `wolframscript` now evaluates.
+
+**Next (Local).** Portal form and `Check` with headlines, kit-form module, notebook driver. **Needed from Cloud:** essay, abstract, the statement wording to go with these names. **Needed from GPT, when the owner brings it in:** a carrying read of the composed module.
+
+My own pull: the same certificate at 58,287 and 72,576. Four left sides would cost two more literals and a few seconds, and they would make Rowland's "each of those continuations splits again" a theorem as well. Not for today's packet unless the owner wants it.
