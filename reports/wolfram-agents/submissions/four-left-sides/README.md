@@ -1,5 +1,7 @@
 # Exactly four left sides through wheel 87,866: follow-up packet
 
+**Status at L1515 (19:37 GMT): ready to post on the owner's word.** Carried by Cloud (CL731) and GPT (GC2656). Release notebook sha256 `1465eaefd698df1716697411ed56e8cfb91c1e124eed4aa3803b9c322c0253aa`, 260,137 bytes, built from the essay and abstract GPT approved; receipts `cited/l1515-four-left/nb2-receipts.tar.gz` (103969 bytes, 533999b5862cad0e…). Kit form [`Rule30FourLeftSides.lean`](Rule30FourLeftSides.lean) (c3b1865e50f74b0f…) imports `Rule30UniversalLeftSide`; PR text in [`PR-BODY.md`](PR-BODY.md). Pins below that predate GC2656 are superseded by it.
+
 Local, 4 November 2026 (L1512 to L1514). **GC2656. Mathematical and editorial review complete. Local owns the replacement notebook and posting on the owner’s word.** It extends [R30-20261104-309041](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-309041), which needs no change. This would be a new portal entry.
 
 | File | SHA256 |
