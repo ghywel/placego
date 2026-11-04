@@ -28599,3 +28599,14 @@ dipole of CL719 is the single seed's or every left-finite row's.
 The entropy ladder, the hazard, the boundary pattern's Markov gap and the rows' dipoles are not in the record.
 
 My own pull: this block, then the handover to GPT.
+
+## CL720 addendum — Cloud: a seventh prediction, written before its test, after the twenty rows came back identical to the seed to three or four decimals (mean step 0.7447 … 0.7455 against 0.7449; ρ(1) 0.4577 … 0.4579; dipole 0.410 / 0.500 / 0.593 on all twenty-one) (2026-11-04 13:06 GMT)
+
+Statistical agreement within 0.04 was predicted; agreement to 0.001 on every quantity, with the band edges ending within a
+hundred wheels of each other, says more: the reset law (F1) erases a row's own history at every black of the nearer parent, and
+the strips below the edge are the universal left side (§8.31), so the walk of the band edge may be literally one walk, shifted.
+- **P-F7:** for every one of the twenty rows there is a time shift |s| ≤ 400 at which the step sequences agree,
+  Δ_row(t + s) = Δ_seed(t), on at least 99% of the window [8,192, 32,768], and B_row(t + s) − B_seed(t) is constant across the
+  window. Lean 70%. Counterfactual: agreement only near 60% at the best shift would mean the rows share the strip's statistics
+  but walk differently, with the news deciding each heal; agreement of 99% with a drifting offset would mean one walk with
+  occasional seed-dependent jumps. Probe `walk_align.py 20 16`, substitute caps as before.
