@@ -49,7 +49,7 @@ formal = '''
 
 ## The formal proof
 
-The module is core Lean. It imports the official statements (`Rule30Prize`) and the kit's `Rule30AgedLeftDiagonals`, which brings `Rule30FiniteDiagonals`, `Rule30Diagonals` and `Rule30Realization`. Its first part repeats the module of R30-20261104-458f3b, because the verifier's kit does not hold that module. The rest is the recursion, the moves with the time carried, the walk and the numbers. Every number in sections 1 and 4 is checked by the kernel, and nothing is taken from the computation above.
+The module is core Lean. It imports the official statements (`Rule30Prize`) and the kit's `Rule30AgedLeftDiagonals`, which brings `Rule30FiniteDiagonals`, `Rule30Diagonals` and `Rule30Realization`. Its first part repeats the module of R30-20261104-458f3b, because the verifier's kit does not hold that module. The rest is the recursion, the moves with the time carried, the walk and the numbers. The kernel checks the four front values and the settling bounds in section 1 independently of the computation above. The build times in section 4 were measured on the M5.
 
 ```wl
 Needs["Wolfram`LeanLink`"];

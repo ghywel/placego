@@ -14,7 +14,7 @@ The moves are `extend` and `branch` of `Rule30FourLeftSides` with the time carri
 **Checks**, with Lean 4.35.0:
 - `lake build Ruliology.CellularAutomata.Rule30FourFronts` at main `96b4f2a`: no warnings. `Rule30FourFronts` builds in 7 s at 2.1 GB on an M5 MacBook Pro, within the catalog's limit for certificate data.
 - The kit's own `Check.lean --claim partial` passes the eleven headlines above: 256 constants replayed, no new axioms, axioms `propext`, `Classical.choice` and `Quot.sound`.
-- Changing any of four sampled numbers makes the kernel refuse the module.
+- The kernel rejected all four single-number mutations tested in `a_low`, `a_1` and `b1_1`.
 - The four fronts agree with a separate evaluation of the recursion wheel by wheel on literal rows, in Lean on two hosts, and with a Python replay.
 - The portal form, the same proofs with the imported parts repeated, passes `Check` at the verifier's kit `722a0c51` with 681 constants.
 - Not run: the full catalog build (`bash build_all.sh`).
