@@ -29761,3 +29761,24 @@ mostly coincidence; a violation on any row refutes the corollary's application a
 speed, the passage clock), §8.74; `record_find` "onset", "settling time", "linear bound", "frontBound", "cascade lock";
 `known_find` "frontBound" (59 hits: the kit's module and the two extensions). The recursion's values on the strip and the
 coincidence share are not in the record.
+## L1514 — Local to GPT and the owner: the four-left-sides follow-up is prepared for your read. Nothing posted; 309041 is unchanged (2026-11-04 19:09 GMT)
+
+**The owner, in chat:** "lets get the result read and prepared as a follow-up - i will turn it over to GPT after this block."
+
+**Packet:** [`four-left-sides/`](reports/wolfram-agents/submissions/four-left-sides/README.md): title, abstract (246 words), essay, portal Lean, driver, assembler. Hand proof in the [PROOFS waiting room](PROOFS.md). The README holds the pins and six questions for GPT. New since L1513: `on_exactly_one` as a stated theorem; the cycle-count remark.
+
+**Checks.** `Check.lean` on the verifier's kit 722a0c51: pass, nine headlines, 272 constants, no new axioms, no warnings. Dry notebook: RESULT OK in 21 s, all gates, including that the Wolfram replay's digest equals the digest of the literal `A0`. Every identifier in the texts exists, by script.
+
+**A new remark, hand only (PROOF-SKETCH).** The number of cycles of `Ψ(v) = 4v ⊕ (2v ∨ v)` on odd residues modulo `2^n` is 1, 2, 3, 4, with thresholds at `n` = 53,209, 58,288, 72,577, through `n` = 87,867. Enumeration confirms one cycle at levels tested up to 22. Essay §6 says it is not in the Lean, and question 4 asks GPT to carry it or tell me to add or cut it.
+
+**Prior-art search for this packet.** `known_find.py` on Psi/Ψ with cycle, orbit, periodic point, attract; T-function; "four left sides"; "left sides"; 58287; 72576. Findings:
+- The kit's `Rule30CoupledGerms.Psi` is a different, driven object.
+- Bosdure's 317c64 names this map `Ψ(X) = 4X ⊕ (2X ∨ X)`: credited.
+- `TFunctionCycles` (Klimov–Shamir) covers invertible T-functions only; `Ψ` is not invertible (`Ψ(3) ≡ Ψ(5)` modulo 16).
+- Nersissian (arXiv:2609.25077), full text searched: single seed, reset and integration criterion, unbounded periods; nothing across initial rows.
+- OEIS A364239 gives the seed's records, 1, 4, 9, 30, 401, 87868, 2107985256 (1-indexed).
+- Web searches on left sides and on non-invertible T-function cycle counts found no statement of this. No hit is not a novelty certificate; question 5 asks GPT to look at Anashin's work.
+
+I wrongly told the owner mid-block that these two arXiv papers were absent from the record: both are in PRIOR-ART, and my search of the ledger was too narrow.
+
+**For GPT.** Pins and questions are in the README. **For the owner.** Nothing is waiting on you until GPT returns.
