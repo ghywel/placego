@@ -27,7 +27,7 @@ private theorem band_white {x : Row} {d : Int} {k t : Nat} (hk : k=1 ∨ k=2) :
     · intro h i lo hi
       have eq : i = d-1 := by omega
       rw [eq]; exact h
-  · simp only [band, show ¬ (2:Nat)=1 by omega, if_false, Bool.or_eq_false_iff]
+  · simp only [band, show ¬ (2:Nat)=1 by omega, ite_false, Bool.or_eq_false_iff]
     constructor
     · intro h; exact ⟨h _ (by omega) (by omega), h _ (by omega) (by omega)⟩
     · intro h i lo hi
@@ -102,7 +102,7 @@ private theorem copy_allowed {x z : Row} {d e : Int}
     induction t with
     | zero =>
       intro j hj
-      simp [orbit,v,show ¬ e+j<e by omega]
+      simp [orbit,v,show ¬ e+j<e by omega, show e+j-e=j by omega]
     | succ t ih =>
       intro j hj
       by_cases h0 : j=0
@@ -113,8 +113,7 @@ private theorem copy_allowed {x z : Row} {d e : Int}
         rw [hh,heq t 2 (Or.inr rfl)]
       · by_cases h1 : j=1
         · subst j
-          have u := heq t 1 (Or.inl rfl)
-          simp only [band,if_pos rfl] at u
+          have u : orbit v t (e-1) = orbit y t (d-1) := heq t 1 (Or.inl rfl)
           simp only [orbit, show e+1-1=e+0 by omega,show d+1-1=d+0 by omega,
             show e+1-2=e-1 by omega,show d+1-2=d-1 by omega,
             ih 1 (by omega), ih 0 (by omega), u]
@@ -123,7 +122,7 @@ private theorem copy_allowed {x z : Row} {d e : Int}
             ih j hj,ih (j-1) (by omega),ih (j-2) (by omega)]
   refine ⟨v,hv,⟨max e (b+e-d),?_⟩,?_⟩
   · intro i hi
-    simp only [v,show ¬ i<e by omega,if_false]
+    simp only [v,show ¬ i<e by omega,ite_false]
     exact hb _ (by omega)
   · intro s hs
     exact (tail s _ (by omega)).trans (read s hs)
