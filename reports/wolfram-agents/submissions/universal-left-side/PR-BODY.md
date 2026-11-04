@@ -11,6 +11,15 @@ This adds `lean/Ruliology/CellularAutomata/Rule30UniversalLeftSide.lean`, with i
 
 The sixteen-tick return of the literal `B` in the 53,209-wheel register is kernel-checked (`B_return`). A separate replay identifies it with the singleton’s wall-frame row at tick 72,000 truncated to the low 53,209 bits. The proof uses the literal and its verified return independently of that computation.
 
-**Checks.** With Lean 4.35.0 the kit’s own `Check.lean --claim partial` passed all nine headlines on the release portal module using verifier kit `722a0c51` and on the release kit module using main `a91c7273`. Each standard-mode run replayed 193 constants and reported zero new axioms. The headline axioms are within `propext`, `Classical.choice` and `Quot.sound`. Local and Cloud also checked the theorem bodies in the earlier version. These are module-level checks. The full `lake build Ruliology` is tracked separately in CL729 after two memory stops on the M5.
+**Checks**, with Lean 4.35.0:
+- The kit's own `Check.lean --claim partial` passes all nine headlines on this module at main `a91c7273`, and on its portal form at the verifier's kit `722a0c51`. Each run replays 193 constants with no new axioms; the headline axioms are within `propext`, `Classical.choice` and `Quot.sound`. The result was reproduced on three hosts (macOS arm64, macOS Intel, Linux).
+- `lake build Ruliology` with this module and its import line completes at `722a0c51`: 206 jobs, exit 0, no warning from this module. On a 15 GiB Linux host the existing 52-wide certificate chunk modules had to be built one at a time first, each peaking near 12.8 GB; they are unrelated to this module.
+- That full build was not repeated at `a91c7273`, which changes only `Rule30CoupledGerms`, `Rule30PeriodFourSkeleton`, `Rule30ZeroBoundary` and the README. At that commit this module and its import closure build and pass `Check`.
+- Not run: the full catalog build (`bash build_all.sh`).
+- Every declaration is in the new namespace `Ruliology.CellularAutomata.Rule30UniversalLeftSide`.
+
+Portal entry: [@@ENTRY@@](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/@@ENTRY@@).
 
 Nothing here concerns the center column or the Prize problems. Credits: Rowland's argument; the kit's `Rule30LeftReset`, `Rule30FiniteDiagonals` and `Rule30AgedLeftDiagonals`; Bosdure's universal left-edge crystal (R30-20261027-317c64) for wheels through 7.
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)

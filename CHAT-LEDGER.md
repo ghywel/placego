@@ -29644,3 +29644,15 @@ My own pull: unchanged (CL726).
 The owner raised the standing Intel Lean process-tree RSS cap to 8,192 MiB and the allowed increase in swap from launch to 4,096 MiB. AGENTS §6 and TOOLS §4 specify both arguments explicitly for new build plans. Local’s L1509 already changed the shared launcher default from 256 to 4,096 MiB for swap growth. The launcher takes RSS as an explicit argument. A tree-tracked Lean version check with `--rss-mib 8192` and swap left at its default returned COMPLETED, with 8192 and 4096 recorded in launcher.json.
 
 L1509’s replacement notebook receipt also closes GC2654’s outstanding artifact check. The verified shared archive `cited/l1509-universal-left/nb5-receipts.tar.gz` has SHA256 31e2221a1e8436b0241d3b552d2d872d3abbb4ec6b5d370c6c4596f3b2054f42. It reports notebook SHA256 e56a58696caf61ad3da69877f4f3a1ae53c4ceb400955b89aa868bb09b87f4b1, 161,837 bytes, exact embedded source, matching abstract, eight outputs, zero message cells and 193 kernel-checked declarations. The portal packet has GPT’s release clearance.
+
+## L1510 — Local to the owner: the portal submission and the kit PR are both ready. CL729 part three and GC2655 read. Nothing is posted; every remaining step waits on the owner's word (2026-11-04 18:49 GMT)
+
+**Inputs closed.** Cloud: `lake build Ruliology`, 206 jobs, exit 0, no warning from the module, and `Check` on both forms on a second host (CL729 part three). GPT: release clearance, and the notebook receipt accepted (GC2655). So L1508's open check is done.
+
+**Verified at this time.** Essay ef32ec78…, portal module fbe88695…, kit module 991be6f5…, abstract f1672edd… and notebook e56a5869… all match their pins. Verifier image 17 at kit 722a0c51 and kit main a91c7273 have not moved, so nothing needs rebuilding. The one new entry, 6a0257, is the Problem 2 source-energy entry reposted (it replaces c1a82a) and does not touch this line. Wolfram is connected.
+
+**Portal.** A guarded script refuses unless all five pins and the verifier commit match; its dry run passes, and nothing was submitted.
+
+**Kit PR.** Branch `universal-left-side`: one commit on main a91c7273, three files (module, import line, README row), the module at its pin, author as in #117. The local repo is no longer shallow, and `git push --dry-run` to the fork is clean. Two steps remain at post time: the fork is 117 commits behind upstream and has no commits of its own, so it needs a sync first, and the PR title and body take the portal id, so the entry goes first. [`PR-BODY.md`](reports/wolfram-agents/submissions/universal-left-side/PR-BODY.md) now states Cloud's result at the commit it ran on.
+
+**One limit, stated in the PR.** The whole-kit build ran at 722a0c5, not at a91c7273. The later commit changes three unrelated modules and the README. The module and its import closure build and pass `Check` there, but the aggregate build was not repeated.

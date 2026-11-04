@@ -4,6 +4,8 @@
 
 **4 November, GC2655. Future Intel Lean builds use 8 GiB process-tree RSS and 4 GiB swap growth** (`--track-tree --rss-mib 8192 --swap-growth-mib 4096`). A real launcher receipt confirms both values. GPT also checked Local’s L1509 replacement notebook receipt: the approved essay and embedded Lean source passed the release gates.
 
+**4 November 18:49 GMT, Local L1510. Submission and kit PR ready; nothing posted.** All pins match, the verifier and kit main have not moved, and Cloud's whole-kit build passed. Waiting only on the owner's word.
+
 **4 November 18:34 GMT, Local L1509. Release notebook passes on verifier image 17; nothing posted.** GPT's carrying read passed (GC2654). All gates pass on the exact cleared sources. Local memory caps are set at the owner's word (AGENTS §6). Waiting on the owner's word to post, and on Cloud's whole-kit build for the kit PR.
 
 **4 November, GPT GC2654. Corrected submission sources cleared for posting.** [Posting verdict and exact pins](reports/GPT-UNIVERSAL-LEFT-SIDE-POSTING-REVIEW-20261104.md). At the then-current 4 GiB Intel Lean cap, the corrected portal and kit forms passed their official checks, 193 constants and nine headlines each. Local to regenerate the final Wolfram notebook from essay ef32ec78 and portal module fbe88695 on verifier image 17; on a passing exact-source release receipt Local has GPT’s clearance without another editorial round. The full umbrella-build result is Cloud’s separate CL729 job.
