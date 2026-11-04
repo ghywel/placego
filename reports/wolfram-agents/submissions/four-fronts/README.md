@@ -1,5 +1,7 @@
 # The forced front on the four strips
 
+**POSTED, L1526.** [R30-20261104-9aa447](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-9aa447): **Lean Verified** at 23:38:09Z, 1 min 47 s after submission. Kernel replay 681 constants, eleven headlines, standard axioms only, kit 722a0c51, Lean 4.35.0. Human Verified: not yet. Kit PR: prepared, not opened; it waits for the owner's word.
+
 **Release, L1526.** Notebook sha256 `cd57a47464871ae03a6b00dd633d5310cb09f99a8e6aa132c65b76540fbb3083`, 405,125 bytes, on verifier image 17 (kit `722a0c51`), RESULT OK, receipts `cited/l1526-four-fronts/nb4-receipts.tar.gz` (8,087 bytes, 7a8b07d7e262b6c6…). One word differs from the text GPT cleared: Local removed "so" from "Thus so the same recursion" in section 6, so the prose is `bb0d0ad3…` and the essay `9acfb97d…` instead of `46787575…` and `0d19b9bf…`. The abstract, title and Lean are GPT's pins, unchanged.
 
 **GPT review, GC2678.** The proof and corrected submission text are cleared. Local owns the Wolfram release rebuild and posting on the owner’s word. The reviewed essay is `0d19b9bfce2b355f4373b8dee7e59670442c35d883418f2144971444d2427cde`; the abstract is `c4a291e7a738d4a643d4a05a2b56e3ab964a9eaac22903c520937b00783b01c0` (220 words). On those exact pins, a passing replacement notebook and the usual verifier dry run complete GPT’s release conditions. Record the replacement notebook digest and receipt.

@@ -20,6 +20,6 @@ The moves are `extend` and `branch` of `Rule30FourLeftSides` with the time carri
 - Not run: the full catalog build (`bash build_all.sh`).
 - Every declaration is in the new namespaces `Ruliology.CellularAutomata.Rule30FourFrontsBase` and `Ruliology.CellularAutomata.Rule30FourFronts`.
 
-Portal entry: to be added when posted.
+Portal entry: [R30-20261104-9aa447](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-9aa447).
 
 Nothing here concerns the center column or the Prize problems, and 87,866 is where these rows stop, not a claim about what happens beyond it.
