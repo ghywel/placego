@@ -30193,3 +30193,27 @@ Closing deduction after GC2666, with no further machine job. For J≥4 let h=⌊
 **Status changes.** GC2667: PROVED two-party. CL733 part A's corollary: carried, the number COMPUTED. Kit: 458f3b now has Kit Contribution (PR #145 closed at 20:36Z, module on main), as do 309041 and 3cf160. Human Verified on neither of today's two yet.
 
 My own pull: the exactly-two-pairs law. It is a general statement about every depth, it looks within reach of a hand proof, and it would explain why one extra bit of boundary information is all the ray needs.
+
+## L1519 — Local: taking the exactly-two-pairs law at the owner's word, with a correction first. "Looks within reach of a hand proof" (L1518) was unjustified: the law implies same-edge rigidity, which is open with a documented barrier. Predictions before any run (2026-11-04 21:27 GMT)
+
+**The owner, in chat:** "Yes, take it."
+
+**Correction to L1518.** Write `V_n(x)` for the time word of bit n−1 OR bit n−2 of the odd register x of width n, and `Φ(x) = x ⊕ (2x ∨ 4x)`. Bit n of a register integrates `V_n`, so the top-cell movie at width n + 1 determines and is determined by the top bit and `V_n`. The law at width n + 1 is therefore: **`V_n` is injective on odd registers except for one pair.** Then `(U_n, V_n)` is injective, and that is Lowry's `SameEdgeRigidity` ([PR61 archive](https://github.com/Troyusrex2/Rule30PrizeKit/blob/30b7cfb980efadd1809bb9aff4039815e218efad/research/period-reflection-20261030T190801Z/NEXT-CLAIM.txt)): his two codes agree on all higher digits at all times, and mine need agree on only one diagonal. Rigidity is open. Lowry proves escape from four-digit bands (`four_layer_escape`), shows a relaxed model traps a defect at width 5, and states that "the finite black source farther left must enter the argument in a new way". So the all-depth law is at least as hard as an open problem with a known barrier. I told the owner otherwise, and that was wrong.
+
+**What the pairs are (PROOF-SKETCH, a few lines).** `q = …010101 = −1/3` and `p = …101011 = 1/3` in the 2-adic integers. `Φ(q) = p` and `Φ(p) = q`: the checkerboard 2-cycle. Any two adjacent bits of either contain a black, so `V_n ≡ 1` on both, at every width. That explains the collision at every depth, and why the second word is needed only there: `U_n` separates them.
+
+**Plan, in order of certainty.**
+1. Prove the family and the two reductions, in Lean if cheap.
+2. Test the law far beyond d = 16. A cycle enumeration costs one pass over the odd registers, because a collision is a cycle whose V word has a smaller period, or two cycles with rotation-equal V words.
+3. Try the alternating-tail case, which PR69 and the kit list as open. In this notation it is `V_n ≡ V_{n+1} ≡ 1` for a non-checkerboard code. A short hand derivation gives a foothold: if two adjacent diagonals alternate, the next one down is black on every even tick, and any non-alternation there forces four white cells below it. The question is whether that descends to the black edge.
+
+**Predictions.**
+- **P-R1 (85%).** The law holds at every width n ≤ 32: exactly one `V_n` collision pair, the checkerboard.
+- **P-R2 (70%).** Cycle counts grow by a factor of roughly 1.5 per bit, since a cycle splits when its parity is even and doubles when odd.
+- **P-R3 (50%).** Relaxed, with no black edge: from two adjacent alternating diagonals over a non-alternating one, the chain of periodic words downward dies within a bounded depth for time periods 4 to 32. If it dies at a depth independent of the period, a local proof is plausible. If it survives, the black edge must enter, as Lowry warns.
+
+**Counterfactual.** A collision at any width refutes the law, and refutes rigidity if it survives the U word, which would change a conjecture in the kit's catalog. A surviving relaxed chain means P-R3's local route is closed.
+
+**Record searched:** `known_find.py` on rigid, "alternating tail", Psi/Ψ with cycle or orbit; PR61's archive (`RESULT.txt`, `NEXT-CLAIM.txt`, `ReturnSections`, `CanonicalDecoration`, `WordBoundary`); PR69; `Rule30ControlledResponse`, `Rule30DefectClockBudget`, `Rule30EtherGrounding`; Lee's R30-20261026-0ef9c8; PROOFS' same-edge rigidity for eight backgrounds (L1261); GC2664 to GC2666. The depth structure (a checkerboard prefix shifts a code up) is Lowry's `decorate`. Nothing states a single-diagonal law.
+
+**What it would teach.** Whether one diagonal alone determines everything below it. Not a prize route as far as I can see; I will say so if that changes.
