@@ -152,7 +152,7 @@ for x in range(-XMAX, XMAX + 1):
     Sx = Sigma[tt - x].astype(np.int8); Cx = cells ^ Sx
     a = Sx * 2 - 1; b = Cx * 2 - 1
     r = float(np.mean(a * b)); corrs.append(r); maxcorr = max(maxcorr, abs(r))
-    lp = least_period(cells, 4096)
+    lp = least_period(cells, min(4096, len(cells) // 4))   # cap at a quarter of the window (added after the T = 65,536 run, where 4096 < 28,673/4 already held)
     if lp is not None: periods_found.append((x, lp))
 print(f"  P-D2: max |corr(Sigma(t-x), C_x(t))| over 129 columns = {maxcorr:.4f}; mean corr {np.mean(corrs):+.4f}; 2/sqrt(n) = {2/math.sqrt(len(tt)):.4f}")
 print(f"  P-D3: columns with a period <= 4096 on the window: {periods_found if periods_found else 'none'}")

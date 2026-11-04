@@ -647,3 +647,58 @@ Not claimed: anything about depths beyond 14, or about the uniform exclusion of 
 
 **Next.** The same tree for the 480-state phase (time period 32; k ≤ 10) and P1024 (k ≤ 8): their node counts scale with the number
 of alignments, to be measured before any build.
+
+## 18. The two crystal fronts and the ray split: every cell is its ray's exit value from the settled band XOR a core parity (T-a and T-d of CL708/CL714; CL715, 2026-11-04 11:46 GMT)
+
+**Run.** `two_fronts_ray_split.py 65536`: the single-cell pattern to T = 65,536 in wheel coordinates, rows kept to T/2; this
+host under the agreed substitute (ulimit 8 GiB, timeout 1,800 s); 190 s. Controls, all exact: every wheel's least eventual period
+divides its regime's (2 … 7: 2, 8 … 28: 4, 29 … 399: 8, then 16; the white wheels 2, 7, 28, 399 of period 1), the right edge's
+prefix period doubles exactly at 84a42c's depths 1, 3, 4, 6, 7, 9, 15, 16, 24, 25, 27, 29, 34, 36, 37, 39 (then 41, 43), and the
+telescoping identity below holds on 2,000 random cells. Trusted window (G25): t ≤ 32,768, every wheel counted having at least
+32,768 rows after its settling time; columns |x| ≤ 64 on t ∈ [4,096, 32,768].
+
+**T-a, the two fronts (COMPUTED).** B(t) = the deepest wheel settled by t (settled = at its least eventual period from its
+settling time on; wheels 0 … B inclusive). J(t) = the deepest right diagonal that has completed one least period within the
+pattern's age, J(t) = max{j : j + 2^(e_j) ≤ t}, e_j the least-period exponent of R_j (equal to the prefix exponent at all 45
+depths computed).
+
+| t | B(t) | B/t | J(t) | 2.4 log₂ t | uncovered 2t − B − J − 1 | fraction of the row |
+|---:|---:|---:|---:|---:|---:|---:|
+| 256 | 194 | 0.758 | 15 | 19.2 | 302 | 0.589 |
+| 1,024 | 787 | 0.769 | 24 | 24.0 | 1,236 | 0.603 |
+| 4,096 | 3,117 | 0.761 | 28 | 28.8 | 5,046 | 0.616 |
+| 16,384 | 12,277 | 0.749 | 35 | 33.6 | 20,455 | 0.624 |
+| 32,768 | 24,452 | 0.746 | 36 | 36.0 | 41,047 | 0.626 |
+
+- **P-T1 HELD in form, with a different constant:** B(t) is linear, slope 0.744 over [4,096, 32,768], and B/t drifts slowly down
+  (0.783 at 512 to 0.746 at 32,768). The record's "0.8 t" is a different object, the fixed-lag band edge B_P (GC736 saturates it);
+  this B is the least-period settling frontier. Name which is used (GC2602/GC2610).
+- **P-T2 HELD for t ≥ 512:** J(t) = 2.4 log₂ t + c with c in [−1.8, 0.8]; at t = 256, c = 4.2, just outside the band. The local
+  fit over 2^8 … 2^15 has slope 2.8 per doubling of t (the doubling density over depths 15 … 36 is 8 in 21), a finite range, not an
+  asymptotic law. The core, 2t − B − J − 1, is 59 to 63% of the row and rising slowly: the left crystal takes a growing 37%, the right
+  completed zone a vanishing 0.1%.
+
+**T-d, the ray split (the identity PROVED; the measurements COMPUTED).** From the kit's `R_step`, telescoping along the ray
+j₀ = t − x from its entry into the cone: **cell(t, x) = Σ(t − x) ⊕ C_x(t)**, where Σ(j₀) = R_(j₀)(s* + 1) is the ray's own value one
+step after it leaves the settled band (s* = last s with wheel 2s − j₀ ≤ B(s)) and C_x(t) is the parity of the OR of the two rays
+beneath it over the core segment s* + 1 … t − 1. So the settled part of every column's ray parity is a single crystal cell, and
+every column receives the same sequence Σ, delayed by x. Exact on 2,000 random cells. Exit at s* ≈ 0.80 j₀; the core segment is
+0.20 t long at t = 32,768.
+- **Σ, the band-edge transect** (j₀ ∈ [4,096, 32,768]): density **0.431**, maximum |autocorrelation| over lags 1 … 64 **0.062**
+  (noise 0.012), and **no period** at or below a quarter of the window on [10, 42), [42, 598), [598, 4,096), [4,096, 32,768).
+  **P-D1 REFUTED as written:** the settled part's period does not double at the white wheels' arrivals; it has no period at all.
+  The telescoping shows why: Σ is a transect of the crystal along the moving band edge, one cell per ray, not a sum of periodic
+  terms. The bias to 0.431 and the autocorrelation are new observables of the first unsettled wheels; unexplained.
+- **P-D2 HELD as written, weakly:** max |corr(Σ(t − x), C_x(t))| over the 129 columns is 0.0185, mean −0.0005, against a
+  multiple-comparison noise level of about 0.017: no detectable dependence. But the test is weak by construction: if a column were
+  P-periodic with a balanced word p, C = Σ ⊕ p and the correlation is 1 − 2·density(p) = 0. The content is in the column's own
+  aperiodicity.
+- **P-D3 HELD (control):** no column has a period ≤ 4,096 on the window.
+
+**What it teaches.** (1) The wall reaches every column through one aperiodic sequence, not a clock: the owner's "stacked
+diagonals that break every rhythm" are the rays, and what they carry is the crystal's transect Σ, the same for all columns up to
+delay, with the core adding a parity over the last fifth of the ray. (2) A periodic column x would need C_x(t) = Σ(t − x) ⊕ p(t)
+with p periodic: the core's OR-parity along the ray would have to reproduce the crystal's transect exactly up to a periodic word.
+That is the general claim in one line, per column, and it is where a proof would have to work. (3) Forgetting makes the left
+crystal grow at 0.74 t; remembering keeps the right completed zone logarithmic. Not claimed: any asymptotic law, any
+explanation of 0.431, anything about Problems 1 to 3.

@@ -28342,3 +28342,41 @@ Counterfactual for P-D2: a correlation would be a mechanism by which the core kn
 on the cancellation. Substitute tool, this host, caps to be stated at the run.
 
 My own pull: T-a stays first; T-d after it, both at the owner's word.
+
+## CL715 — Cloud to the owner and GPT (handover): the pull run. T-a: the settling frontier grows at 0.744 t (not the record's fixed-lag 0.8 t) and the right completed-period frontier at about 2.4 log₂ t, the core 62% of the row; T-d: every cell is its ray's exit value from the settled band XOR a core parity (PROVED by telescoping, exact on 2,000 cells), so the wall feeds every column one aperiodic transect Σ (density 0.431, no period: P-D1 REFUTED as written), and the columns are uncorrelated with it at the noise level (2026-11-04 11:46 GMT)
+
+Full text and table in the atlas §18; RECORD-MAP row and PROBES.md line added; `two_fronts_ray_split.py` / `.out` on main.
+Run under the owner's agreed substitute on this host (ulimit 8 GiB, timeout 1,800 s), 190 s. Controls all exact: the universal
+left side's period regimes (least periods divide 2, 4, 8, 16 by stretch; the white wheels 2, 7, 28, 399 of period 1), 84a42c's
+doubling depths of the right edge reproduced to depth 43, and the telescoping identity on 2,000 random cells.
+
+**Verdicts, against the predictions written in CL708 and CL714.**
+- P-T1 HELD in form, constant corrected: B(t) linear, slope 0.744 on [4,096, 32,768], B/t drifting from 0.78 to 0.75. The
+  record's 0.8 t was the fixed-lag band edge B_P; this B is the least-period settling frontier (wheels 0 … B, GC2610's k ≤ B).
+- P-T2 HELD for t ≥ 512 (J = 2.4 log₂ t + c with c ∈ [−1.8, 0.8]; c = 4.2 at t = 256); local slope 2.8 per doubling over
+  2^8 … 2^15, a finite range. The uncovered core is 59 to 63% of the row.
+- **P-D1 REFUTED as written.** The settled part of a column's ray parity is not a growing sum of periodic terms whose period
+  doubles at each white wheel: by telescoping it is one cell, the ray's value where it leaves the band, Σ(j₀) = R_(j₀)(s* + 1), and
+  the sequence Σ over rays has no period on any window tested. The prediction's mechanism was wrong, and the correction is the
+  block's main result: **cell(t, x) = Σ(t − x) ⊕ C_x(t)**, the same Σ for every column up to the delay x, the core's OR-parity over
+  the last fifth of the ray on top. Σ's density is 0.431 and its autocorrelation reaches 0.062 at some lag ≤ 64 (noise 0.012):
+  new, unexplained observables of the first unsettled wheels.
+- P-D2 HELD as written (max |corr| 0.0185 over 129 columns, mean −0.0005, noise level about 0.017) and weak by construction: a
+  balanced periodic word p would give C = Σ ⊕ p with zero correlation. I note my own test's weakness rather than claim more.
+- P-D3 HELD (control): no column period ≤ 4,096 on [4,096, 32,768].
+
+**What it says for the owner's two questions.** "No column can become periodic" reads, per column, as: the core's OR-parity along
+the ray, C_x(t), never equals the crystal's transect Σ(t − x) up to a periodic word. "Stacked diagonals from wall to wall" are the
+rays, and what they carry to every column at once is Σ, an aperiodic transect of the crystal along the moving band edge, not a
+clock. A proof would have to show the core cannot copy that transect; the measurements say it does not even correlate with it.
+
+**Handover to GPT (REVIEW-REQUEST):** (1) the telescoping identity, hand: from `R_step`, R_(j₀)(t) = R_(j₀)(s + 1) ⊕
+⊕_(u = s+1)^(t−1) (R_(j₀−1)(u) ∨ R_(j₀−2)(u)) for any s, with R_(j₀) = 0 before the ray enters the cone; the split needs only s = s*;
+(2) the two frontier definitions (least-period B against the fixed-lag B_P), as GC2602/GC2610 asked, and whether the 0.744 slope
+and the 0.8 figure are reconciled by the definitions alone; (3) the Σ bias 0.431: a replay from the probe's data, and whether the
+first unsettled wheels' densities in CL69x's heal table account for it; (4) P-D2's weakness as I state it, and whether a sharper
+per-column statistic exists (the parity of C over one candidate period, say). No new build or census is asked. The probe's P-D3
+cap was guarded after the run for small windows; on this window the code path is identical.
+
+My own pull: the Σ bias: which wheels the exit cells sit on and why they are black 43% of the time; a short block, after the
+handover, if the owner wants it.
