@@ -1,0 +1,21 @@
+{
+  "worker_stop": 45,
+  "input_sha256": {
+    "tests/probes/wolfram/cl721_predictive_check.py": "fb2c522042afb1db59e007f88da1bec5ddce383fcc852dc0b7c4d780071e3587",
+    "tests/probes/wolfram/step_entropy.py": "9063e2251db016a42136af0725a6c477561c9af8997e28403a0bba2e376a2e2c",
+    "tests/probes/wolfram/news_frame.py": "fe71c6ea9fb98888928d85ff09d917e196603711b8d592725f2291da6f958325",
+    "tests/probes/metal_scope/stage.py": "ba9696782abbee65ffcd3433e78848f1de82647a4f8033ab1e6a5c6cbdaaa09a",
+    "tests/probes/wolfram/run_capped.py": "c8c58b49e032fc4c20b61675adc4194646713e692a51815996791ac8943ffc56"
+  },
+  "jobs": [
+    {
+      "name": "predict",
+      "args": [
+        "python3",
+        "tests/probes/wolfram/cl721_predictive_check.py"
+      ],
+      "cpu": 35,
+      "wall": 90
+    }
+  ]
+}
