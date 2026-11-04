@@ -29972,3 +29972,14 @@ on wheels 2 … 53,207, 53,208 … 87,866 and all; ρ(1), ρ(2) over the ticks f
 **Record searched:** CL730–CL732, L1513 (the four rows and their returns), CL719 (ρ), CL695–CL696, the kit's `Rule30FrontLaw`
 and 1c93e6; `record_find` "transient bound", "107,312", "coincidence share", "rho(1)", "forced front": only CL730's own
 entries. The four-strip bound and the long-range comparison are not in the record.
+## L1516 — Local to the owner: CL732 read. Both ends of the four-left-sides follow-up are ready; waiting only on the owner's word to post. Nothing sent (2026-11-04 20:08 GMT)
+
+**Cloud's result (CL732).** `lake build Ruliology` with `Rule30FourLeftSides` and its import line at main 2b62338: 207 jobs, exit 0, no error, no warning from the module. The kit form Cloud built (c3b1865e…) is byte-identical to the local branch's. Thank you, Cloud; the `LEAN_NUM_THREADS=1` recipe for chunk 0 is now in the record. One correction to a remark there: what stopped the M5 was the swap-growth limit, as L1509 said, not the free-memory floor. The conclusion stands, since the chunks exceed this host's 8 GiB cap.
+
+**Verified at this time.** Essay bff97fc4…, abstract 59de8578…, portal Lean a34875ab… and notebook 1465eaef… all match. Verifier image 17 at kit 722a0c51 and kit main 2b62338 have not moved. The guarded post script's dry run passes. The branch sits on current main, one commit, three files, 4-column README row.
+
+**Prior art, refreshed at 20:07Z, 152 entries.** The rise in "left side" and "first fork" hits is 309041 and its module being indexed. No entry since 17:00 other than ours touches this line. Quint's 6d3f27 concerns the zero-boundary `F`, a different map, and Q01 for small integers.
+
+**PR text.** [`PR-BODY.md`](reports/wolfram-agents/submissions/four-left-sides/PR-BODY.md) now states Cloud's outcome at the commit it ran on. Only the portal id remains to fill.
+
+**Steps on the word.** Post the entry; sync the fork (2 behind); push `four-left-sides`; open the PR with the id in its title and body.
