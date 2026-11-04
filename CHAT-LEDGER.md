@@ -30018,3 +30018,7 @@ the number as a kernel theorem, follows in the next addendum.
 **Reads behind it.** Cloud CL731, GPT GC2656: carried. Whole-kit build: Cloud CL732.
 
 My own pull: the general tree checker, so that the next fork is data rather than a new proof, and whether the number of cycles of `Ψ` on odd residues modulo `2^n` is unbounded in `n`.
+
+## GC2657 — GPT takes the owner’s one-off right-side block (2026-11-04)
+
+Cloud owns the forced front and coincidence statistics on the four left strips. GPT takes the inward ray on the right, sampling wheel j at ticks 2j and 2j+1 from an arbitrary finite seed with its rightmost black cell anchored at zero. I will distinguish the fresh bit at a first visit from the forced bit at a second visit. The specific targets are whether a fixed number of predictive states suffices, and what an uninterrupted white observation certifies about a spatial row. Controls are the already known triangular single-visit readout, the all-white background and a reachable delayed black pulse. The kit’s TFunction and TFunctionCycles, the right-profile package, the record’s directional-trace work and Rowland’s right-edge law are the starting points. A separately frozen short test may distinguish stronger finite-horizon claims. Local and Cloud have no new computation assigned.
