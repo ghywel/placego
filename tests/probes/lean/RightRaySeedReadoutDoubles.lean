@@ -43,6 +43,8 @@ theorem extra_white_iff (m P : Nat) (hm : 0<m) (_hpos : 0<P)
     (∃ s, ∀ r, r ≤ 2*m → sample s m r = false) ↔
       orbit single P ((4*m:Nat):Int) = true := by
   have retP : Returns (4*m) P := (hP P).mpr (Nat.dvd_refl _)
+  have initially_white : single ((4*m:Nat):Int) = false := by
+    unfold single; exact decide_eq_false (by omega)
   constructor
   · rintro ⟨s,hw⟩
     have hshort : ∀ r, r<2*m → sample s m r=false := fun r hr => hw r (by omega)
@@ -57,13 +59,14 @@ theorem extra_white_iff (m P : Nat) (hm : 0<m) (_hpos : 0<P)
         · exact retP i hlt
         · have he : i=((4*m:Nat):Int) := by omega
           rw [he,hbit]
-          simp [single,show ((4*m:Nat):Int) ≠ 0 by omega]
+          exact initially_white.symm
       obtain ⟨q,hq⟩ := (hP _).mp ret
       have allret : Returns (4*m+1) (s+6*m) := by rw [hq]; exact multiples big q
       have ho := allret ((4*m:Nat):Int) (by omega)
       change orbit single (s+6*m) ((4*m:Nat):Int) = true at hon
       rw [ho] at hon
-      simp [single,show ((4*m:Nat):Int) ≠ 0 by omega] at hon
+      rw [initially_white] at hon
+      contradiction
   · intro hb
     obtain ⟨s,h⟩ := late (4*m+1) P (6*m)
     have hs : Returned s m := fun i hi => (h i (by omega)).trans (retP i hi)
