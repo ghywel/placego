@@ -1605,4 +1605,4 @@ the damage, there is one walk per strip, and the ten-second test on the small tr
 launch. Pull: none strong. The damage field's density profile (CL742) remains the one structural object untested on
 this line; the constant λ_L needs an approximation bound or far longer runs, neither a block. Misgiving: three
 refutations in a row say the line is at the noise floor of one trajectory per strip, and I should say so rather than
-propose more of the same. (15:30 GMT.)
+propose more of the same. (15:10 GMT.)
