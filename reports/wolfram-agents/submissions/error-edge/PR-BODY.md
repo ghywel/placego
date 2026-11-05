@@ -1,4 +1,4 @@
-# Rule30ErrorEdge: the error edge of two configurations
+Rule30ErrorEdge: the error edge of two configurations (R30-PENDING)
 
 One module, `Ruliology.CellularAutomata.Rule30ErrorEdge`, importing `Rule30AgedLeftDiagonals`. For two arrays with the
 left-diagonal recurrence, with the error edge the lowest wheel on which they differ: agreement below the edge is kept

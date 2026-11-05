@@ -1,0 +1,9 @@
+heal_black_flipped rc 1 errors 2 mut/heal_black_flipped.lean:67:58: error: Tactic `decide` proved that the proposition
+heal0_flipped rc 1 errors 2 mut/heal0_flipped.lean:69:97: error: Tactic `decide` proved that the proposition
+white_above_flipped rc 1 errors 2 mut/white_above_flipped.lean:99:82: error: Tactic `decide` proved that the proposition
+black_two_flipped rc 1 errors 2 mut/black_two_flipped.lean:103:79: error: Tactic `decide` proved that the proposition
+jump_five_flipped rc 1 errors 2 mut/jump_five_flipped.lean:153:83: error: Tactic `decide` proved that the proposition
+jump_six_flipped rc 1 errors 2 mut/jump_six_flipped.lean:174:82: error: Tactic `decide` proved that the proposition
+jump_seven_flipped rc 1 errors 2 mut/jump_seven_flipped.lean:196:82: error: Tactic `decide` proved that the proposition
+jump_four_white rc 1 errors 1 mut/jump_four_white.lean:145:2: error: Tactic `rfl` failed: The left-hand side
+jump_six_no_white_hypothesis rc 1 errors 2 mut/jump_six_no_white_hypothesis.lean:173:83: error: Tactic `decide` proved that the proposition
