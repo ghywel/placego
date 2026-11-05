@@ -5562,3 +5562,5 @@ Filed by Cloud in CL741 addendum 3.
 
 **L1548, 5 November:** `Reset.above` of the wall package is known in kind. All eight ten-cell words F(b, u, v) contain a reset word `0 1^(3m+1) 0` of `Rule30ResetFreeCore` (kit PR 60, and G13 in our archive) with a cell above it. Status: known, reproved here. `Reset.again`, the shape returning three cells higher, is not in those sources as far as the search reached.
 
+
+**GC2684 refinement of L1548:** the forbidden-run family is `Rule30ResetFreeRuns.AvoidReset`; its inverse synchronization with the following cell is `Rule30InverseCascade.run_resets` at PR60 head `db6e71128339d1fc45b5a7ab5f2bade997996ae3`. `Rule30ResetFreeCore` is the graph framework, not the precise source of that synchronization identity. PR60 discussion and linked archive `3ebd1501497f168c04b3b0fab00595b1266f5a00` read separately, plus relevant PR47 inverse/carrier sources. The specific F-shape return was not found in these sources or the matching current-kit statements; bounded clearance only. [Sources and scope](reports/GPT-RIGHT-WALL-SUBMISSION-REVIEW-20261105.md).

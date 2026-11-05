@@ -20,7 +20,8 @@ public import Ruliology.CellularAutomata.Rule30FrozenRuler
 
 Read a row from its rightmost black cell, as in `Rule30FrozenRuler`: the row is an edge code, and one tick of rule 30 is the edge map `T`.
 This module studies codes with a *rain tail*, cells that alternate from some index on. `T` keeps such a tail and so does every
-predecessor, and the *wall* is the last equal pair below the tail. The `Rule30EdgeStaircases` rain pair `1010…`, `11010…` has no wall.
+predecessor, and the *wall* is the last equal pair below the tail. In the `Rule30EdgeStaircases` rain pair, `1010…` has no wall, while `11010…` has its wall at index 0.
+The transport and nonperiodicity statements below require a window start at least 2; the local wall rule requires depth at least 5.
 
 * `predecessor_unique`: every code has exactly one predecessor under `T`, so a backward tick is well defined.
 * `top_up`, `top_stay`, `top_minus_one`, `top_minus_two`, `top_minus_three`: the wall moves by an exact local rule under `T`.
@@ -31,7 +32,7 @@ predecessor, and the *wall* is the last equal pair below the tail. The `Rule30Ed
   `B = .#.###...##`.
 * `no_BB`, `no_AAA`: neither `BB` nor `AAA` occurs. `witness_AA`, `witness_AB`, `witness_BA`, `witness_ABA`: these words do occur.
 * `reset`, `above`, `again`, `letters`: the ten-cell word `0, b, !b, 1, u, 1, 0, v, 0, 1`. It contains a reset word `0 1^(3m+1) 0`
-  of `Rule30ResetFreeCore`, so nothing from below passes it, and with rain above it, it reappears three cells higher.
+  of the family in `Rule30ResetFreeRuns`, with inverse synchronization in `Rule30InverseCascade.run_resets` (kit PR 60), so nothing from below passes it, and with rain above it, it reappears three cells higher.
 * `letter_after_B`, `letter_after_A`: the next letter, from the two new cells under the window.
 * `Closed`, `Held`, `held_back`, `held_forever`, `held_not_periodic`: a closed set of windows holds a row for ever, whatever lies below.
 
