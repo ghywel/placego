@@ -31237,7 +31237,7 @@ a new object. In `INSTINCT.md`.
 
 **Results.**
 1. **Reset word (PROVED, Lean, no axioms).** `0, b, ¬b, 1, u, 1, 0, v, 0, 1`. Under any lower cells the predecessor has the same shape three cells higher, given `s, ¬s, s` above, and above the word it does not depend on anything below. `A` and `B` are such words. One free letter per block follows: only the letter after `BA` can choose.
-2. **`AAB` lock (PROVED, Lean).** Six windows of 136 cells, closed for every pair of lower cells, letters `A`, `A`, `B` for ever, with an anchored witness. 135 cells do not close (COMPUTED).
+2. **`AAB` lock (PROVED, Lean).** Six windows of 136 cells, closed for every pair of lower cells, letters `A`, `A`, `B` for ever, with an anchored witness. At 135 cells the windows do not close: a path of free lower states leaves after about 60 ticks (COMPUTED).
 3. **A lock is a second wall.** All ten lock windows start with a reset word, the floor: a solid black column at offset 41 or 132, as at offset 7 in the wall. Exact periodic search: one strip each for `AB` and `AAB`, none for any other letter word of period up to 16 (COMPUTED, floors of this shape only, nine searches capped).
 4. **Closed classes (COMPUTED, every width to 92).** The eventual windows have one closed class up to width 44 and exactly two from 45 to 92: the `AB` lock and the cloud (920,783 windows at 92), which is strongly connected at each width.
 5. **The cloud (PROVED at width 45, Lean).** 798 windows, closed, disjoint from the `AB` lock, letters alternate at most 17 ticks. So no late burst can reach `AB`.

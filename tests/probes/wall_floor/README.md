@@ -9,7 +9,7 @@ Probes for [genealogy §63.7](../../../reports/rule30-genealogy.md). All are sho
 | `wall_closure.c` | Closure of a window under all four lower states, for windows up to 190 cells. |
 | `wall_member.c` | Real rows against E(w): which class they enter, when, and whether they leave. Outputs `wall_member45.out`, `wall_member52.out`. |
 | `wall_try.c` | A word at the top of a row, random cells below, until the letters leave their cycle. Outputs `wall_try_aab136.out`, `wall_try_quiet.out`. |
-| `lockperiodic.py`, `dumpleaves.py`, `aab136.py` | The period-3 search that found the `AAB` lock; output `lockperiodic_p3.out`, `aab136.out`. |
+| `lockperiodic.py`, `dumpleaves.py`, `aab136.py`, `break135.py` | The period-3 search that found the `AAB` lock, its six windows, and the path that leaves at width 135; outputs `lockperiodic_p3.out`, `aab136.out`, `break135.out`. |
 | `parts.py`, `partcheck.py`, `lockin.py`, `cloudletters.py` | The parts of E(w), their letters on every edge, where the `AAB` lock's top cells sit, and the letters on the cloud. |
 | `markov.py`, `killrate.py`, `killed.py` | The cloud as a chain with fair lower states: letter statistics, the rate at which `AAB` breaks (`killrate.py TICKS WIDTH ...`; `killrate.out` is from its first form, with 900 ticks fixed), and the windows that can hold `AAB`. |
 | `decide.py`, `shield.py`, `rechk29.py` | The one free choice; the state sets up a window; the recheck of L1531's width-29 line. |
