@@ -31919,3 +31919,43 @@ hazard", "white parent share": none.
 
 **Record searched:** L1533 to L1539, GC2682, genealogy §63, §64; rare-event splitting is standard, and I claim nothing new in the method. `known_find.py` on metastable, lifetime: to be listed with the result.
 
+
+## CL743 addendum 1 — Cloud: matched windows: P-J1 and P-J2 MISSED and the counterfactual HELD, the seed's higher heal rate sits in the stall hazard q alone (0.510–0.513 in every window past 200,000 against 0.509–0.511 on the nine random rows), S and the jump law are the random rows'; P-J3 exact. One lookup on the strip alone, prediction first (2026-11-05 13:25 GMT)
+
+**`edge_windows.py`** ([output](tests/probes/wolfram/edge_windows.out); 894,236 wheels, 1,180,031 ticks, 256 s; the
+edge never retreats; the finite identity exact in all nine windows and the whole run, P-J3 HELD). Per window of
+100,000 wheels, from 200,000 on:
+
+| window | p | q | S | E[jump] | P(2) |
+|---|---|---|---|---|---|
+| 200,000– | 0.4140 | 0.5130 | 0.7262 | 1.832 | 0.527 |
+| 300,000– | 0.4121 | 0.5130 | 0.7319 | 1.841 | 0.537 |
+| 400,000– | 0.4132 | 0.5129 | 0.7285 | 1.846 | 0.532 |
+| 500,000– | 0.4111 | 0.5101 | 0.7308 | 1.844 | 0.535 |
+| 600,000– | 0.4114 | 0.5105 | 0.7305 | 1.845 | 0.533 |
+| 700,000– | 0.4120 | 0.5099 | 0.7276 | 1.844 | 0.532 |
+| 800,000– | 0.4123 | 0.5124 | 0.7305 | 1.844 | 0.533 |
+| nine random rows (CL742) | 0.4106–0.4118 | 0.5088–0.5107 | 0.7286–0.7312 | 1.838–1.842 | 0.531–0.534 |
+
+The first two windows (0.4096, 0.4112; q 0.5068, 0.5102) are the transient; the whole run gives p 0.4119, q 0.5110,
+S 0.7297, E[jump] 1.840.
+- **P-J1 MISSED:** the seed's q past 200,000 is not the random rows' 0.5095 but above it in every window, 0.5099–0.5130
+  (mean 0.5117), while the nine random runs span 0.5088–0.5107: the two ranges touch at one value and do not overlap
+  otherwise (descriptive, seven dependent windows against nine runs; no standard error claimed).
+- **P-J2 MISSED, its counterfactual HELD:** S past 200,000 is 0.7262–0.7319 (mean 0.7294) against the random rows'
+  0.7286–0.7312 (mean 0.7300): the same. The share of heals landing on a white parent, the jump law and P(parent black |
+  jump 1) (0.509–0.515 against 0.51) are the random rows' on the strip; the difference in p is carried by q alone: the
+  strip's stall runs are shorter. By the identity, Δp = 0.0012 needs Δq = +0.0025 at ∂p/∂q = 0.47, which is what the
+  windows show (+0.0022).
+- **What q is, by hand (S2):** after a stay the parent's next bit is C_(m−3)(t) ⊕ C_(m−2)(t), two strip bits below the
+  stalled edge, where the two configurations agree; q is the law of that XOR seen from a stalled edge. On a fair field
+  it is 0.5095, above ½ by the edge's selection; on the strip 0.5117. Either the strip's own law of that XOR next to a
+  white bit is above ½ (its grammar: period 32 at every wheel, white density 0.587 in the fixed-wheel series, CL741),
+  or the edge selects differently on the strip. These are separable by one lookup on the strip alone, unconditional on
+  the edge: P(C_(j−3)(t) ⊕ C_(j−2)(t) = 1 | C_(j−1)(t) = 0) over all wheels j and all 32 phases, and the same on a random
+  row (½ exactly for i.i.d. bits).
+- **P-J4 (lookup, prediction first):** the strip's unconditional value is 0.500 ± 0.002: the strip's grammar is not
+  where the 0.002 lives, and the difference is in what the stalled edge selects on the strip. Lean 50%. Counterfactual:
+  a value near 0.511 or above says the strip's spatial grammar at white bits carries it, and the fair-field picture
+  of the strip fails in exactly this three-bit statistic, which the near-uniform five-bit windows of CL741 did not
+  resolve (P(C_(j+5) | five bits) deviated by 0.0016 on average; this is a different conditional).
