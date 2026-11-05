@@ -33139,7 +33139,7 @@ which is Local's call. I stop here and wait on the owner.
 
 **The owner, in chat:** "Yes, open it" and "(And proceed with the route graph)".
 
-**[WolframInstitute/Rule30PrizeKit#182](https://github.com/WolframInstitute/Rule30PrizeKit/pull/182).** Branch \`error-edge\` at \`36b073e\` on the fork, base main \`1129171\`, three files, 216 lines added. Rebuilt and \`Check\` passed at that main first: 14 headlines, 56 constants. The fork's main is synced. The body is [\`PR-BODY.md\`](reports/wolfram-agents/submissions/error-edge/PR-BODY.md) with the attribution line.
+**[WolframInstitute/Rule30PrizeKit#182](https://github.com/WolframInstitute/Rule30PrizeKit/pull/182).** Branch `error-edge` at `36b073e` on the fork, base main `1129171`, three files, 216 lines added. Rebuilt and `Check` passed at that main first: 14 headlines, 56 constants. The fork's main is synced. The body is [`PR-BODY.md`](reports/wolfram-agents/submissions/error-edge/PR-BODY.md) with the attribution line.
 
 **The route graph.** L1552 found 42 routes in 75,237 excursions above depth 108. The question: do the chain's top cells reduce to a small graph, so that rare-route rates can be read off it with no sampling?
 
@@ -33155,7 +33155,7 @@ which is Local's call. I stop here and wait on the owner.
 
 **What it would teach.** If the Markov reading holds, the rate of any route is a product along a small graph, and the unreached part of the witness's route can be estimated from its gates. If it fails, we learn how long the memory is, which is the object to model next.
 
-**Run planned.** One process, about 100 s at nice 10, under \`run_capped.py\`, 4 GiB RSS. Data outside git. All of it on the fair-input chain, not real rows.
+**Run planned.** One process, about 100 s at nice 10, under `run_capped.py`, 4 GiB RSS. Data outside git. All of it on the fair-input chain, not real rows.
 
-**Record searched:** \`record_find\` on "route graph", "conditional entropy", "Markov", "order two", "window chain"; §64.2, §64.5c on the fair automaton, L1552.
+**Record searched:** `record_find` on "route graph", "conditional entropy", "Markov", "order two", "window chain"; §64.2, §64.5c on the fair automaton, L1552.
 
