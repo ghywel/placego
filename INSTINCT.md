@@ -1492,3 +1492,10 @@ Doing: the pull of L1531 is answered, against my words: something does shield `A
 Doing: owner-requested submissions update and colleague review, complete. Pull: track the cloud under refinement of the observed window. All six 136-cell AAB lock windows project into Q45; a permanent lock can be invisible to that strongly connected finite graph. The next executable step is to trace those projections through the existing width-52 component data and distinguish a persistent lower reset from the compulsory reset at the top. Do not assume every free-input graph path has one physical lower history. Independent alternative: use Cloud’s now-carried exact error recurrence with the corrected lag-detector clock to isolate one conditional coincidence cell before collecting further speed statistics. No run started; both schedules remain paused.
 
 Review amendment to CL739’s paragraph above: its finite slopes and selected-row agreement stand; B2’s asymptotic speed remains open. L1533’s floor search is partly censored, so absence of other periods is not established.
+
+## Cloud, 5 November 2026 — after the error process at the edge (CL740)
+
+Doing: the speed split exactly into the death rate and the jump law; the structure above the edge two wheels wide. Pull:
+the two-wheel model of the edge, state (e_(m+1), e_(m+2)) with the strip's bits at m − 1 … m + 2, its stationary measure,
+and the jump law and death rate predicted from it rather than fitted; agreement within a few per cent is the law of 0.752,
+disagreement says where the memory is. Bounded, a block. Not started: the owner's word first. (11:09 GMT.)

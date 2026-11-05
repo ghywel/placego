@@ -31325,3 +31325,43 @@ rate 0.014, read in error terms with the actual and strip bits of the three whee
 
 **Record searched:** CL739 and GC2680 (the one step and the recurrence), CL695 (the cascade lock), CL730 (the coincidences),
 §20 (the one walk), `record_find` "error process", "lowest erroneous wheel", "edge jump": none.
+
+## CL740 addendum — Cloud: P-D1 HELD exactly; the speed identity holds to 0.0002 but both its factors were mispredicted (the edge's parent is black on 0.41 of ticks, not 0.50, and the jump at a death is 2 more often than 1); the structure above the edge lives in its first two wheels; P-D4 REFUTED, my derivation's premise was wrong and the 0.014 cell is a mix of patterns (2026-11-05 11:09 GMT)
+
+**`error_process.py`** ([output](tests/probes/wolfram/error_process.out); 8 s, substitute caps; the seed on 165,750 wheels
+against its strip at the seed's phase, every tick to the exact settling).
+- **P-D1 HELD.** The edge m(t), the lowest erroneous wheel, never decreases on 220,275 ticks, and the exact settling tick
+  through 165,749 is 220,275, the lag-32 detector's 220,307 less 32 exactly, as GC2680 deduced. The two one-step facts
+  check on every tick: the edge's error dies at t + 1 exactly when its nearer parent is black at t (no exception in 220,275
+  ticks), and errors below the edge never return. **The identity:** the edge advances only at a death, so the speed is the
+  death rate times the mean jump, exactly: 0.4107 × 1.8319 = 0.7523 against the measured 165,749/220,275 = 0.7525 (PROVED,
+  the one line above; the two factors COMPUTED).
+- **P-D2 MISSED in both factors.** The edge's parent is black on 0.4107 of ticks, not one half: the edge waits at white
+  ticks and is counted there, a waiting-time bias (one black per 1 + E[wait], so E[wait] = 1.43 at the edge against 1.00 in
+  the forced recursion's phases). The jump at a death is 1: 0.363, 2: 0.531, 3: 0.054, 4: 0.025, 5: 0.021, then small, mean
+  1.832: not geometric but peaked at 2. The reason is in the recurrence: at a death with the edge at m, the next wheel's new
+  error is ¬a_(m+1)(t) if C_m(t) is black and ¬C_(m+1)(t) if white, so whether the jump passes wheel m + 1 is a local
+  condition on the strip's bits at m, m + 1 and the actual bit above the edge; the peak at 2 says it usually does.
+- **P-D3 PARTLY.** The error density above the edge is 0.461 at offset 1 (as predicted), 0.579 at offset 2 (not predicted:
+  the wheel two above the edge is erroneous more often than not), 0.50–0.52 at offsets 3 to 7, and within 0.003 of one half
+  from offset 8 to 64. The errors far above the edge are fair coins; the structure is in the two wheels next to it.
+- **P-D4 REFUTED.** The cell's rate reproduces (0.0133 on 20,295 instances), but the child's actual bit one tick before
+  the arrival is black on 0.58 of them, not 0.98, and the six most frequent three-by-three patterns hold 5% each: no local
+  rule. The premise of my derivation was wrong: "the parent arrived at a" in the edge's sense means some wheel at or below
+  it was erroneous at a − 1, not the parent itself (the patterns show the parent already right and the grandparent wrong).
+  The cell is a statistical fact of the unsettled region, as the counterfactual said.
+
+**What the block gives.** The actual speed is now two numbers with a mechanism each: the death rate (the strip's black
+density at the edge's parent, time-weighted by the edge's waiting) and the jump law (the local update of the two wheels
+above the edge). A law for 0.752 would be a finite-window model of the process at the edge, state (e_(m+1), e_(m+2)) with
+the strip's bits at m − 1 … m + 2, whose stationary measure gives the two factors; the errors beyond are fair coins, which
+is what makes such a model plausible, and the window two wheels wide is what the densities say. I have not built it: its
+test would be a prediction of the jump law from the stationary state, not a fit, and that is a block of its own.
+
+**Record.** Atlas §21.7; PROBES (`error_process.py`); NOW; INSTINCT. Flags: READ-LEDGER to Local and GPT (GPT: the identity
+and the two one-step facts are the kind of line you carry in a minute; nothing hangs on it).
+
+My own pull: the two-wheel model of the edge, as above: measure the stationary distribution of the state and the strip's
+bits at the edge, build the chain, and predict the jump law and the death rate from it; agreement within a few per cent
+would be the law of 0.752 in the words' statistics, disagreement would say where the memory is. A bounded block. The
+owner's word first, as before.

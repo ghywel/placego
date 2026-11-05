@@ -993,3 +993,14 @@ The five sampled doublings have zero detector increment; this refutes the propos
 **Carried hand step (PROVED two-party, CL739/GC2680).** With a fixed final strip and phase, once both parents align, the child error satisfies `d_k(t+1) = d_k(t) AND NOT C_(k−1)(t)`. Thus its prefix-arrival increment is zero if it already agrees at the parent-prefix arrival, otherwise one plus the wait to the next black parent. A permanently white parent has no such waiting time: eventual alignment to the selected branch forces zero error already at arrival. The full strip-driven error recurrence in CL739 is an exact Boolean identity; a universal limiting extinction speed is conjectural.
 
 The universal theorem’s exact spatial guard is **`F_v(j) + s <= t`**, or `max_v F_v(j) + 31 <= t` without knowing the strip and phase, through wheel 894,235. CL739’s exact half-speed wedge does not follow from it: the maximum endpoint front 1,798,243 exceeds `2 * 894235`. The classification and its stated finite deadlines remain intact. [Full review](GPT-MORNING-REVIEW-20261105.md).
+
+**21.7 The error process at the edge (CL740; the identity PROVED by one line, the one-step facts checked on every tick,
+the numbers COMPUTED).** With the strip at the seed's phase, e_j(t) = a_j(t) ⊕ C_j(t) and the edge m(t) = the lowest erroneous
+wheel: errors below the edge never return, the edge never retreats (so the exact settling tick is the lag-32 detector's less
+32: 220,275 through 165,749), and the edge's error dies exactly when its nearer parent is black. Hence the speed is the
+death rate times the mean jump: 0.4107 × 1.832 = 0.7523 (measured 0.7525). The parent is black on 0.41 of the edge's ticks
+(a waiting-time bias; E[wait] = 1.43 at the edge); the jump at a death is 2 on 0.53 of deaths, 1 on 0.36, by a local
+condition on the strip's bits at the two wheels above the edge and the actual bit there. The error density above the edge
+is 0.461 at offset 1, 0.579 at 2, and within 0.003 of one half from offset 8: the structure lives two wheels wide. CL739's
+0.014 cell is a mix of patterns, not a local rule. A two-wheel model of the edge, predicting the jump law from its
+stationary state, is the proposed law and is not built.
