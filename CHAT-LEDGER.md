@@ -33244,3 +33244,68 @@ which is Local's call. I stop here and wait on the owner.
 **Checks and scope.** Complete known-find refresh 21:48:45Z, kit `9af60de9f51a2b110934006053cddb22d906cec5`; targeted exact statements and closed PR21/27/58/64 discussion/head sources read. New index delta is not all carried. Tiny Intel convention controls PASS (36 survivor counts, 255 widths, 255 Boolean support/parity cases, four Fourier fibres; 0.0563 CPU seconds). Existing universal proof sources, not those tiny tests, justify the quoted theorems. No novelty/prize claim or new computation status for L1557/CL750.
 
 **Cloud, next:** final design read, especially HX-1/2, the diversified pilot, source-scoped gates, roster/model choices and the implementation/usage contract. Then Local supplies the final run manifest and remaining owner budget choices. First eventual GPT review packet at most three nonduplicated carrying steps, keeping the owner's review budget in view. Both schedules remain paused.
+
+## CL751 — Cloud: SW-02 third read, at the owner's word: draft 3 returned to Local; worth running on the survey's merits, the attack waves only on known inputs; CP-5 rescoped from the record's five facts (the two ends do not meet), AM-3's forever guard is Q01 by one line, HX-2's invariant cannot be a left-side property; an alias table with kit name checks; eight cuts; Opus by default. Not run (2026-11-05 22:30 GMT)
+
+**At the owner's word** ("provide second review, make sure the questions are well scoped, that the swarm is worth
+running, add what is missing, and above all make sure what is known supports the design brief rather than being
+rediscovered"). Draft 2 (GC2686) read in full with its review, L1558, L1559, atlas §21.6–§21.11 and the kit's
+module docstrings; the kit clone fetched to main `5ad29d6`, two commits past GPT's `9af60de9`.
+[Draft 3](reports/SW02-SWARM-DESIGN.md) under the editing protocol (earlier text kept, strikes with reasons, §18 line);
+[Cloud's review](reports/CLOUD-SW02-DESIGN-REVIEW-20261105.md) with the known-inputs table, the derivations and the
+answers to §16. Nothing posted, nothing run.
+
+**Verdict.** Run it: the door ledger, the barrier atlas and the record repair (O1, O3, O6) pay whatever the attack
+waves yield, and today's own case is the argument (CL740 re-derived §8.66's identity as new, PRIOR-ART CL740–CL741).
+The attack waves pay only if every squad starts from what the record holds: draft 2's briefs for AM-3, CP-5, HX-2
+and LN-09 would each have spent an agent re-deriving the week's left-side work. Draft 3 adds the rule (§8.0: a
+`Known inputs` list in every brief, restated before the attack; attack agents see their brief, §4, §4a and §6 only)
+and the alias table (§4a: edge = band edge = damage front = news front, and so on, with frames and statuses).
+Recommendation to the owner: the core with my eight cuts applied first, Waves 0–1 and the pilot in full, the main
+attack wave decided after reading them.
+
+**The one derivation that changes a question (CP-5, "the two ends' meeting point").** In the zero-boundary frame the
+wall is wheel W + t at tick t. (i) Causality runs one way: wheels below W never see the wall, and the wall's influence
+at tick t is depths ≤ t (PROVED, `agree_step`'s content). (ii) The zero boundary is a reset: one white cell per tick
+at the moving wall, breaking the recurrence exactly when depth 1 is black, so each wheel J ≥ W is born white at tick
+J − W and follows the recurrence after (PROVED, one line). (iii) The forced front climbs at most one wheel a tick
+(`walk_one`) and the wall exactly one, W above, so every wheel is born before the front reaches it and the kit's
+settling bound applies to the half-row from each wheel's birth (PROOF-SKETCH: one hypothesis check on
+`forced_front_four`, asked of Local in §16); the measured band edge at 0.757 t wheels puts W + 0.243 t cells of chaos
+between the band and the wall, growing for ever (MEASURED, §21.6, CL742). (iv) What the band sends up is fair in
+every statistic measured (CL740–CL745). (v) What the wall sends down reaches the band only through the branch and
+phase at forks (§21.10–§21.11). So there is no meeting point; CP-5 becomes a logician's question: what could a joint
+constraint be, across that chaos, and which exact invariant of the chaotic region would it need (none in the record).
+**AM-3:** the nearest difference of two rows to the wall moves one depth a tick whatever the rest (PROVED, one line
+from F), so a splice at lowest bit i enters every check from tick i on and a "forever guard" is Q01 at the spliced
+row; the only check-preserving operation in the record is the forward orbit. **HX-2:** the invariant cannot be a
+left-side property, since every left-finite configuration carries the strip and 48 of 48 random completions end on A0;
+it must live in the interior or the right wall. Statuses as marked; the hand steps are PROOF-SKETCH until read.
+
+**Also in draft 3.** Kit name checks: every theorem the document names is on main `5ad29d6`; `IntegerForm` is a
+namespace in `Rule30ZeroBoundary.lean`, `death_time_52_exact` is ours on the portal (8e6bd3), not in the kit,
+`white_shift` is in two modules. Door seeds: the chink as a switch, the branch law, the prefix guard with its Lean
+shape, the wall as a reset. BN-11: the rate off A0 on 300 random rows through the two forks (0 of 48 known; prediction
+at most 5%; the chink tests as controls). P13–P15. Cuts first: BR-4, BR-6, PE-3, P3-2, LN-05, LN-07, LN-12, XP-1
+(56 → 48), reasons in the review §5. Models: Fable's weekly limit is an account limit, so assume it is shared with my
+sessions; Opus by default, Fable for at most twelve named slots, the swarm's Fable use capped at a quarter of the week.
+SW-01 lessons missed: the vocabulary problem, and the judges' tiny censuses (let readers run `ref.py`'s smallest
+cases in Wave 1). The bet: CT-2 shut wrongly by CT-4's unsigned ceiling read as a theorem; then AM-5, then CP-5.
+
+**Two questions for Local before the freeze** (design §16): whether `forced_front_four` needs the recurrence at wheel
+J from tick 0 or from the front's arrival (if the latter, "every finite row's zero-boundary evolution carries the
+strip through 87,866 by the forced tick" is a kit-form statement I would draft on the owner's word); and whether the
+launcher can withhold the design document from attack agents.
+
+**Record searched:** `record_find` chink, switchboard, prefix question, damage front, error edge (RECORD-MAP rows
+CL741, CL748–CL750; atlas §21.6–§21.11; PRIOR-ART CL740–CL741); `git grep` of 26 names on kit main `5ad29d6`;
+`known_find.py`'s PR index 403 on this host (GC2686's 13-PR read stands). Not verified: the sharing of Fable's meter;
+`forced_front_four`'s hypotheses beyond its docstring. Flags: READ-LEDGER-CL751 for Local and GPT; no REVIEW-REQUEST,
+nothing here carries a proof that needs a read before the swarm (the CP-5 inputs are inputs, marked).
+
+**My own pull:** the wall as a reset. The zero-boundary dynamics is the wall-frame recurrence with one white reset
+per tick at the moving wall, and the kit already has the reset lemmas (`reset_inherits`, `white_shift`) and the
+settling bound; joining them gives "the half-row's left side is universal with the forced bound", the first kit
+statement that connects the Q01 frame to the left-side modules, and it is what CP-5 would otherwise spend an agent
+on. Bounded: one hypothesis check and a module of the error-edge's size. Noted in INSTINCT; not taken, the review
+was the task.

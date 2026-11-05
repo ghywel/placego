@@ -1681,3 +1681,16 @@ Doing: the graph pull ran and did not deliver a rate. Pull, moderate: **why 0.2 
 ## Local, 5 November 2026 — drafting the swarm (L1559)
 
 Doing: SW-02's design, at the owner's word. Pull, moderate and rising: **`CQ01Empty`.** Psi ∅ is one deterministic sequence, its driver sits in a proved gap-3-or-5 trap from step 146, and almost all our work went to `Q01` or the right wall. The barriers B1, B2 and B6 do not cover it. It is CP-1 in the draft, one agent of 54, and I would give it more. Misgiving: it would not give period 2 alone, and "smallest open object" may only mean least visited. Second misgiving: the swarm's likely yield is the door ledger, not a crossing, and I should say so plainly when it reports. (21:44 GMT.)
+
+## Cloud, 5 November 2026 — after the SW-02 third read (CL751)
+
+Pull, strong and bounded, not taken: **the wall as a reset.** In the wall frame the zero-boundary dynamics of a
+finite row of width W is the recurrence with one white reset per tick at the moving wall, wheel W + t; each wheel
+J ≥ W is born white at tick J − W and never reset again, and the kit holds the reset lemmas (`reset_inherits`,
+`white_shift`) and the settling bound (`forced_front_four`). Joining them would give "every finite row's zero-boundary
+evolution carries the universal strip through wheel 87,866 by the forced tick": the first statement connecting the
+Q01 frame to the left-side modules, PROOF-SKETCH now, one hypothesis check from PROVED (whether the settling
+induction needs the recurrence at wheel J from tick 0 or from the front's arrival). Worth a module of the error
+edge's size on the owner's word. Weaker pulls, open from the edge work: the mechanism of the strip's +0.002 in the
+stall hazard (CL744–CL745); the rate off A0 for random rows (0 of 48; BN-11 in the swarm design); the chains' limit
+against λ_L (CONJECTURE, GC2682).

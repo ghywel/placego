@@ -1,7 +1,16 @@
 # SW-02: a swarm to answer the open questions, shut the doors that should be shut and leave the right ones ajar
 
-*Draft 2, GPT's second read of Local's draft 1 (L1559), 5 November 2026, GC2686. **Not run; awaiting Cloud's final
-design review.** No SW-02 agent or bench has started and no launcher exists. Draft 1 remains at commit c55f453e;
+*Draft 3, Cloud's third read of draft 2, 5 November 2026, CL751. **Not run; returned to Local for the freeze and the
+smoke test, with the owner's §16 choices open.** Verdict: worth running, for the survey, the door ledger, the record
+repair and the barrier atlas (O1, O3, O6), which pay whatever the attack waves yield; the attack waves are worth their
+tokens only if every squad starts from what the record already holds, so draft 3 adds a known-inputs rule (§8.0), an
+alias table with kit name checks (§4a), a rescoped CP-5, inputs for AM-3, HX-1, HX-2, R-04 and LN-09, door and bench
+seeds, a cut list and a model recommendation. Draft 2 remains at commit bdbf37c9; overruled text is struck below with
+its reason. [Cloud's review: the known-inputs table with citations and statuses, the hand derivations, the answers to
+§16 and the bet](CLOUD-SW02-DESIGN-REVIEW-20261105.md).*
+
+*Draft 2, GPT's second read of Local's draft 1 (L1559), 5 November 2026, GC2686. **Not run; ~~awaiting Cloud's final
+design review~~ (done: draft 3, CL751).** No SW-02 agent or bench has started and no launcher exists. Draft 1 remains at commit c55f453e;
 materially overruled premises are struck below. [Review, source pins and hand-remark audit](GPT-SW02-DESIGN-REVIEW-20261105.md).
 The owner's authorization is to prepare this swarm, with Cloud reviewing before Local implements and runs it on the M5.
 Other research and both GPT schedules remain paused.*
@@ -50,6 +59,7 @@ SW-01 ran on 14 and 15 October ([RULE30-PRIZE §8.113](rule30-prize/RULE30-PRIZE
 | The Fable cap and the weekly limit killed agents mid-run, and a resume re-ran finished skeptics live | One workflow per wave, returns saved after each, gates read from the usage meter |
 | Embedding the digest pushed a script past 512 KB | Digests live in files and agents read them |
 | The critic named missing lenses (homogeneous dynamics, circuit lower bounds, Padé, character sums, thermodynamic formalism, Mauduit–Rivat, Littlewood–Offord, friendly measures, algorithmic randomness) | They are placed among the lenses and librarians in §8 |
+| Not named among SW-01's lessons, met again today (Cloud, draft 3): the record holds one object under several names, so a search misses it and an agent re-derives it. CL740 re-derived §8.66's healing identity as new (PRIOR-ART CL740–CL741); GC2686 found the coupled-B1 theorem by reading the module, not by its phrase | Every squad brief carries a known-inputs list with exact citations (§8.0); the alias table of §4a is part of every record search, and a KNOWN verdict cites the matching name |
 
 ## 2. Objectives
 
@@ -126,6 +136,27 @@ library is `tests/probes/swarm/sw02/ref.py`, to be written after this design is 
   leave arbitrarily long survivors without one immortal natural. A compact limit of finite rows may have infinite
   support. Every compactness or density argument must preserve its claimed population.
 
+## 4a. Aliases and name checks (Cloud, draft 3)
+
+The record names one object several ways, and a search that misses the other names re-derives what the record holds
+(CL740's identity was §8.66's). Every reader and every record skeptic searches under every name in its row. Statuses
+are the record's, with their sources; the derivations behind the last two rows are in
+[Cloud's review](CLOUD-SW02-DESIGN-REVIEW-20261105.md) §3.
+
+| Object | Names in the record | Frame | Status in the record |
+|---|---|---|---|
+| The edge of the ordered left side | error edge (CL740; `Rule30ErrorEdge`), band edge (atlas §9.1, §15), settling front and actual front (§21.6), damage front (§8.66; CL741), news front (§8.74; §19) | wall frame: wheel j at tick t is the cell x = j − t from the leftmost black cell (`Rule30FiniteDiagonals.Ld`) | never retreats, heals iff its parent is black (PROVED, kit); its long-run speed is the left damage front's, 1 − λ_L with λ_L = 0.2436 ± 0.0003 (MEASURED, CL742; Grassberger and NKS p. 949: 0.2428 ± 0.0003); the finite chains M(L, R, W) extrapolate to 0.7562 ± 0.0005 (CONJECTURE, GC2682) |
+| A heal, a stall, a jump | the death of the edge's error, a wait, the edge's step; the forced stall after a jump of 2 (CL691/GC521, CL722) is `jump_two` | wall frame | p = q/(q + S) with S the share of heals onto a white parent and q the stall hazard (PROVED two-party, GC2682/CL743); the jump facts 2 to 7 (PROVED, kit) |
+| The strip's walk | the one walk (§20), the forced front (`Rule30FourFronts.walk`), the settling recursion (§21) | strip time | wheel j of every left-finite configuration carries its strip from the forced tick F j, about 2 j (F 87,866 = 176,968 on A0) (PROVED, kit, whole-line, through wheel 87,866); the actual settling runs ahead of it at about 1.32 ticks a wheel through the coincidences (MEASURED, §21.6; its limit is open, B2) |
+| The left sides | the universal strip and its forks (`Rule30UniversalLeftSide`), the four strips (`Rule30FourLeftSides`), the sixteen strips below 894,235 (tree16, §21.10) | wall frame | one shift aligns every left-finite configuration with its strip (PROVED through 87,866, kit); the sixteen are sixteen settings of fifteen switches, each thrown by one cell at a fork's child (COMPUTED, §21.10); the branch law (PROOF-SKETCH, 24 of 24) |
+| The far edge and the wall | the far edge is the leftmost black cell and moves out one depth a tick (`zrow_edge`; `testBit_F_succ_of_top`); the wall is depth 0 of the zero-boundary frame, column 0, and in wheels it is wheel W + t at tick t for a row of width W | zero-boundary (§4) and wall frame together | causality runs from the far edge to the wall only; the two frames meet through the chaotic region between the band edge and the wall, about W + 0.243 t cells wide (CP-5's inputs, §8) |
+
+**Name checks on kit main `5ad29d6`** (two commits past GC2686's `9af60de9`: #186 `Rule30PeriodFourSkeleton`, #187
+`Rule30EtherThreeSkeleton`; Cloud's clone, fetched 5 November 22:10 GMT): every theorem this document names is defined
+there, with three notes. `IntegerForm` is a namespace inside `Rule30ZeroBoundary.lean`, not a module.
+`death_time_52_exact` is a portal theorem (R30-20261023-8e6bd3, MAP row 12), not on kit main: cite the entry.
+`white_shift` is defined in both `Rule30FourFrontsBase` and `Rule30LeftReset`: cite the module.
+
 ## 5. Door cards and verdicts
 
 A **door** is a route: a statement of the form "method M could prove target P". Each door gets one card with these
@@ -187,6 +218,19 @@ claimed. Only phase-tagged source notes from Wave 1 are shared before the first 
 
 ## 8. The agents: role and locus of interest
 
+### 8.0 Known inputs and anchoring (Cloud, draft 3)
+
+- **Every squad brief carries a `Known inputs` list:** the statements the record already holds on its question, each
+  with its status and an exact citation (kit theorem at the pinned commit, atlas section, ledger entry, probe output).
+  The agent restates them in its own words before attacking and may not report one as a finding. Local writes the
+  lists from Wave 1's facts, starting from [Cloud's review](CLOUD-SW02-DESIGN-REVIEW-20261105.md) §2 for the
+  left-side, edge and wall questions (AM-3, CP-5, HX-1, HX-2, R-04, LN-09 and CT-2's differencing remark).
+- **Attack agents see their brief, §4, §4a and §6 only,** not this design document: the objectives, the predictions,
+  the "must amplify" history and the other squads' questions are the anchors. Readers, librarians, skeptics, judges
+  and compilers see the whole document. Fresh eyes see their one page.
+- **A known input is prior art,** not a result: a return that proves one again is "known, reproved here" (AGENTS §3),
+  and the screeners mark it KNOWN, with the matching name from §4a, without spending a skeptic.
+
 ### Wave 1: readers (13)
 
 **Role of all readers:** read the sources themselves rather than the summaries; write a door card for every route met;
@@ -197,7 +241,7 @@ list facts useful to the squads; raise a flag wherever a summary's status disagr
 | R-01 | Q01 and its forms: integer form, free and check bits, K, counts, death times | `Rule30ZeroBoundary`, PERIOD-TWO §2 and §5, RULE30-PRIZE §8.36 to §8.42 |
 | R-02 | The coupled question: CQ01, Psi R, CQ01Empty, Q01Gap, moves, traps, E(L, B), the channel bound | `Rule30PeriodTwoCoupled`, `Rule30PeriodTwoSideways`, `Rule30GateTrap`, PERIOD-TWO §6.5 |
 | R-03 | Periods 3, 4 and above; ether, traps, ring backgrounds, moving walls | `Rule30Ether*`, `Rule30PeriodFourSkeleton`, `Rule30MovingWall`, CONSTELLATION |
-| R-04 | The left side: wheels, strips, fronts, healing, the error edge, forks | `Rule30AgedLeftDiagonals`, `Rule30FourFronts`, `Rule30UniversalLeftSide`, `Rule30HealingBound`, `Rule30ErrorEdge` |
+| R-04 | The left side: wheels, strips, fronts, healing, the error edge, forks | `Rule30AgedLeftDiagonals`, `Rule30FourFronts`, `Rule30UniversalLeftSide`, `Rule30HealingBound`, `Rule30ErrorEdge`; added in draft 3: atlas §21.6 to §21.11, PRIOR-ART (CL740–CL741), §8.66, §8.74, and the probes `edge_model.py`, `edge_random.py`, `jump_facts.py`, `chink.py`, `prefix_race.py` with their outputs |
 | R-05 | The right edge: `T`, 2-adics, the odometer, rain, the wall, letters, locks, the cloud, the route graph | `Rule30FrozenRuler`, `Rule30RightWall*`, genealogy §§25 to 32 and §§62 to 64 |
 | R-06 | Problem 2: its forms, the bridges, what is proved about density, runs and discrepancy | kit `ProblemTwo`, `Rule30P2Bridge`, RULE30-PRIZE §8.92 to §8.94 |
 | R-07 | Problem 3: models, proved lower bounds, what is formally implied | kit `ProblemThree`, `Rule30Problem3*`, `QueryComplexity`, `Circuits`, `OneTapeGap`, `OfflineGap` |
@@ -257,6 +301,16 @@ In each squad the agent's locus is its question. **Prover** means it tries to pr
   padding, not immortal surgery. Seek a splice with a proved forever guard or a quantitative inherited horizon,
   finite support and distinct outputs. Use `Rule30HealingBound`/`Rule30ErrorEdge` only after matching frames and
   parent/depth guards. State Hamming distance, output width and survival horizon in the proposed neighbour bound.
+  **Known inputs (Cloud, draft 3; derivation in the review §3.2).** (i) The difference of two rows nearest the wall
+  moves one depth toward it each tick whatever the rest of the row: where both rows agree at depths k and k − 1,
+  δ_k(t + 1) = δ_(k+1)(t) (PROVED, one line from F). So two rows whose lowest differing bit is i differ in bit₀ at
+  tick i exactly, and for even i at most one of them survives tick i: §4's free and check bits, seen from a pair, by
+  the left-permutivity behind `zrow_edge`. (ii) Hence a splice whose lowest changed bit is i enters every check from
+  tick i on, and a "forever guard" for the spliced row is Q01 at that row; the record holds no operation that
+  preserves all later checks except the forward orbit of AM-1. (iii) `Rule30ErrorEdge` and `Rule30HealingBound` live
+  at the other end, the ordered band behind the leftmost black cell, counted in wheels (§4a), and say nothing at the
+  wall; on that side a single flipped cell never leaves the structure above it unchanged, since every chink spills
+  through the farther word's xor (PROVED, one line; 64 of 64, atlas §21.10).
 - **AM-4, algebraic amplification (prover, measurer).** Over F₂ the survivor indicator has a reduced polynomial P.
   Alon–Füredi gives |S| ≥ 2^(W − deg P) when S is nonempty. Chevalley–Warning and Ax–Katz give divisibility from degree
   sums, and the top coefficient of P is the parity of |S| (hand remarks; the record has no hit for these names). The kit
@@ -322,11 +376,37 @@ In each squad the agent's locus is its question. **Prover** means it tries to pr
   `EdgeObservable`, LR, R(p), Lemma U′, capture and period 2: which arrows are proved, refuted or open, and which nodes
   are one statement under two names. Output: one diagram and a list of the weakest unproved statements. Build on GC2414
   and the synthesis essay.
-- **CP-5, the two ends (prover).** An immortal row's orbit has a left edge, which is ordered (universal strip, wheels),
+- **CP-5, the two ends (~~prover~~ logician first; a prover only on a grip the logician names; Cloud, draft 3).** An
+  immortal row's orbit has a left edge, which is ordered (universal strip, wheels),
   and a wall at column 0. Is there a joint constraint? This is the owner's "two ends' meeting point". Start from
   `Rule30FourFronts`, `Rule30UniversalLeftSide`, `Rule30RootedFront`. First justify their use on a zero-boundary
   immortal row or formulate the coupled physical configuration. State agreement/hitting time pointwise before
   using an eventual speed. Guard G14: write velocities with their signs; no extrapolation before capture.
+  **Known inputs (Cloud, draft 3; derivations in the review §3.1).** The record answers most of this before it is
+  asked, so the task is what is left. (i) *Causality runs one way.* Wheel j at tick t + 1 reads wheels j − 2, j − 1
+  and j at tick t (`Rule30AgedLeftDiagonals.Recurrence`; `Rule30ErrorEdge.agree_step`), and in the zero-boundary
+  frame the wall is wheel W + t at tick t (§4a). So wheels 0 to W − 1 of the half-row never see the wall and coincide
+  for ever with the whole-line evolution's, and the wall's influence at tick t is wheels ≥ W, that is depths ≤ t
+  (PROVED: the light cone). The wall cannot constrain the left side; only the left side the wall. (ii) *In the wall
+  frame the zero boundary is a reset:* wheel W + t is forced white at tick t, which breaks the recurrence exactly when
+  depth 1 is black at tick t (every even tick, for a survivor) and never again at that wheel, so each wheel J ≥ W is
+  born white at tick J − W and follows the recurrence after (PROVED, one line). (iii) *The band and the wall part
+  company.* The forced front climbs at most one wheel a tick (`Rule30FourFronts.walk_one`) and the wall climbs
+  exactly one, W wheels above it, so the wall passes every wheel J ≥ W before the forced front reaches it, and the
+  kit's settling bound applies to the half-row from each wheel's birth (PROOF-SKETCH: the transfer of the whole-line
+  theorem to the forced dynamics is the first thing CP-5 writes down; it is one hypothesis check, §16). The measured
+  band edge is at about 0.757 t wheels on all sixteen rows and on random rows (MEASURED, §21.6, CL742), so the chaotic
+  region between the band edge and the wall is about W + 0.243 t cells wide and grows for ever: there is no meeting
+  point, and what meets the wall is the chaotic region. (iv) *What the band sends up is fair in every statistic
+  measured:* the error field above the edge carries structure in its first two wheels only (CL740); a damaged row's
+  edge has the random background's statistics to 0.003 (CL741 addendum 3); the strip itself is fair in every
+  five-bit, run and XOR statistic checked (CL743–CL744), the one excess being 0.002 in the stall hazard, mechanism
+  open. (v) *What the wall sends down* reaches the band only through the branch and phase chosen at forks (the branch
+  law, §21.10; the prefix question, §21.11: 48 of 48 random completions on A0). **Rescoped question.** Given (i) to
+  (v), state exactly what a joint constraint could be: a property of the chaotic region's column at the wall (the free
+  bits) implied by the band below it across W + 0.243 t cells of chaos. Classify it against gates 8, 9 and 11, say
+  which exact invariant of the chaotic region it would need, and whether any such invariant is in the record (none
+  is known to Cloud). A prover attempt follows only if the logician names a grip. Do not re-measure the front.
 - **CP-6, proof autopsy (analyst).** Take every unconditional exclusion that worked (Condrey's period 1, Jen, Rule 210's
   Proposition 19, `free_not_eventuallyPeriodic`, Theorem E). Run each with 0101 in place, find the first line that
   fails, and state the smallest extra input that would repair it.
@@ -427,7 +507,7 @@ substantial work. LN-03, LN-04 and LN-09 join XP and FE as unforced slots (12 of
 | LN-06 | Termination and verification | Exact boundary-aware rewriting and sound simulation; invariants outside the known Q01/coupled ranking classes, with an explicit scope comparison |
 | LN-07 | Renormalisation and automata | Christol, Cobham, Hadamard products; the rule-150 Duhamel identity |
 | LN-08 | Cryptanalysis | 0101 as a weak-key question; guess-and-determine as a proof shape |
-| LN-09 | Coupling and percolation | Merging and healing as coalescing walks; damage spreading |
+| LN-09 | Coupling and percolation | Merging and healing as coalescing walks; damage spreading. Known (draft 3): the left damage front is the error edge of a damaged row against its strip, with the identity, chains and constants of §4a (CL740–CL742; §8.66; NKS p. 949); start from the open items instead: the chains' limit against λ_L, the mechanism of the strip's +0.002 in the stall hazard, and whether two edges over one strip coalesce (two walks over A0 lock for 96% of wheels in thirteen stretches at one clock offset, CL746 addendum 1) |
 | LN-10 | Polynomial method | Emptiness at width W as a Nullstellensatz certificate: what degree does it need? |
 | LN-11 | Incompressibility | An encoding argument: can a long survivor be compressed? Moser–Tardos, Kolmogorov, algorithmic randomness |
 | LN-12 | Thermodynamic formalism, homogeneous dynamics | Pressure on K; Bousch's single-orbit telescoping; Littlewood–Offord; friendly measures |
@@ -442,6 +522,12 @@ substantial work. LN-03, LN-04 and LN-09 join XP and FE as unforced slots (12 of
   A free-boundary cycle, a fair-input trajectory, or extensions with W increasing with T do not give an immortal
   finite row. Start from the prior generated-history/guarded-clause reports and original-CNF obligations; reuse
   existing certificates. Deliver a lifting obstruction or exact missing bridge, not another gateway census.
+  **Known input (Cloud, draft 3).** One finite-history constraint of the kind sought is in the record: a completion
+  of the seed's first 19,656 bits has the seed's left side A0 through 894,235 up to the doublings' phase shifts
+  (§21.11, PROOF-SKETCH plus COMPUTED, under the stated caveat that the chaotic stretch is no slower than the strip's
+  words); below that guard the branch is decided by the walk's phase at the fork, not by the prefix. The forced and
+  actual fronts are whole-line, left-finite statements; their transfer to the zero-boundary half-row is CP-5's input
+  (iii). Use these before building a new history graph.
 - **HX-2, is the stronger target necessary? (prover).** The prizes concern the single seed; Q01 and CQ01 quantify
   over more configurations. Write a candidate invariant P true of the seed and preserved by evolution, and ask
   whether P rules out the truncated-ether witnesses behind a particular all-finite barrier. A positive answer
@@ -449,6 +535,14 @@ substantial work. LN-03, LN-04 and LN-09 join XP and FE as unforced slots (12 of
   periodic trace, a discrepancy estimate, or a residue-ray flip) and expose the remaining implication. Compare
   with `Rule30Realization.seed_perturbation`, existing seed/light-cone results and HX-1. Do not infer a seed theorem
   from almost-sure statements. No claim of a new invariant is made here.
+  **Known input (Cloud, draft 3).** P cannot be a property of the left side. Every left-finite configuration carries
+  the universal strip after a shift (`Rule30FourLeftSides`, PROVED through wheel 87,866); the sixteen left sides below
+  894,235 are reached from the single seed by one flipped cell per fork (§21.10, COMPUTED); and 48 random completions
+  of the seed's prefix, twelve of them sharing only the first cell, end on the seed's own left side A0 (§21.11,
+  COMPUTED). The all-finite witnesses therefore have left sides from the same family, and `seed_perturbation`, which
+  perturbs the left half beyond −n, is consistent with this. P must live in the interior or on the right side, where
+  the record's pointwise structure is the seed's right wall (R-05's objects; the route graph of L1554–L1557). Start
+  there, with HX-1's lifting question.
 
 #### Fresh eyes (4) and the outreach drafter (1)
 
@@ -502,7 +596,11 @@ Readers extend this list. It is here so that reviewers can see the intended cove
   `EdgeObservable`; the two-sided channel theorem; Corollary F's open class; Theorem E″ and G132 to G136; seed-only reachability and finite-history lifting (HX-1/2).
 - **Structures:** the wheel and kicks; left wheels, strips and the front; the wall, locks, cloud and entry; the route
   graph; the error edge; ether absorption; moving walls; finite past and merging; the 00-led functional; the
-  balanced-letter census.
+  balanced-letter census; added in draft 3 (Cloud): the chink as a switch and the switchboard (§21.10); the branch
+  law at a fork; the prefix guard P* = 19,656 with its chaotic-stretch caveat, and its Lean shape (the forced front
+  from a starting wheel plus the reset at two forks) (§21.11); which left side a configuration gets, as a function of
+  the clearing ticks at its forks; the strips as fair fields in every statistic measured (CL743–CL745); the wall as a
+  reset in the wall frame (CP-5's input ii).
 - **Method families:** local potentials; matrix and arctic interpretations; regular model checking; finite abstraction;
   SAT certificates; the entropy squeeze and directional entropy; measure rigidity; automatic, Christol and Cobham
   methods; exponential sums; Diophantine methods; renormalisation; complexity barriers; logic and independence; learning
@@ -531,6 +629,7 @@ All numerical endpoints below are draft ceilings, **not authorized automatic enl
 | BN-08 | One frozen original finite formula and named proof system/variable order, with tiny calibration | Certified SAT witness and known UNSAT instance; independent proof checker | Report measured proof/diagram sizes only; timeout is not a lower bound and W40 is not an automatic target |
 | BN-09 | HX-1/XP-5: test a specified history restriction on physical rows with finite support and fixed coordinates | Known physical witness exercising the route and a spurious free-boundary example; fair-input chain as comparator | A genuine history restriction separates at least one abstract example; failure leaves the lifting question open |
 | BN-10 | BR-3: verify the exact finite observation manifest/tolerance against a constructed survivor system | Both the planted survivor and a known terminating control are detected | Match only the stated observations, with no inference about unseen W,t |
+| BN-11 (Cloud, draft 3) | The rate off A0: a census of random left-finite rows (P = 1) through the seed path's two forks, 53,207 and 58,286 (cleared by about tick 80,000), recording the branch at each; `prefix_race.py` is the instrument, 5–6 s a completion on Cloud's host for 350,016 ticks (CL750 addendum 2), and the two forks need under a quarter of that | Positive: a chink at a fork's child switches the branch (8 of 8, CL748 addendum 2); negative: a chink below the fork does not (64 of 64) | At most 5% of 300 rows leave A0 at either fork (0 of 48 so far); a higher rate is the finding, and the switching rows are kept for the branch law |
 
 ## 11. Rigour protocol
 
@@ -632,6 +731,13 @@ silent replay of an old task.
 **Models.** A first proposal, for Cloud to correct: Fable for the squads, the barrier provers and the judges; Opus for
 readers, librarians and lenses; skeptics on the model other than the claim's author, to reduce shared error (still a
 self-check); screeners and compilers on Opus at medium effort. The smoke test confirms that the model names work.
+**Cloud, draft 3.** Fable's weekly limit is an account limit, and Cloud's sessions run on Fable under the owner's
+account, so treat it as shared with Cloud's reviews and blocks unless the owner's usage page says otherwise; the 17%
+read at 21:24 GMT includes Cloud's day. Recommendation: Opus for every task by default; Fable for at most twelve slots
+where a wrong step is expensive and the stronger model changes the odds (AM-1, AM-4, CP-1, CP-5 as rescoped, HX-1,
+HX-2, CT-1, CT-3, JD-1, JD-2, and SK-M on any prize-level claim); and cap the swarm's Fable use at a quarter of the
+week, so that GPT's and Cloud's carrying reads of what it produces are not starved. The "70% for Fable" gate above is
+then a ceiling the swarm should not approach.
 
 **Cost.** The only measured figure so far: 30 past workflow agents here (Opus 5.5, essay work) took a median of 94,000
 output tokens, 198,000 fresh input tokens, about 6 million processed input tokens with caching, and 41 model calls each.
@@ -646,6 +752,14 @@ weekly projection stays under 80% for all models and 70% for Fable, leaving room
 13); hunters 5 → 3; skeptic cap 30 → 15 claims, which removes 30 agents; longer periods 3 → 1; verifiers 8 → 4;
 rescuers 6 → 3; bench 10 → 6. HX-1/2 are retained. If making these cuts, designate enough remaining lenses or
 other tasks unforced to retain at least a fifth of the **actual** Wave 2 roster: in the 45-task core, XP=3 plus FE=4 plus LN-09 and LN-08 make nine. Log every deferred question.
+**Cut first (Cloud, draft 3), before the order above:** BR-4 (an undecidability reduction is a project, not a
+question for one agent), BR-6 (measurements of proof sizes with no question they would answer), PE-3 (no object:
+"any argument uniform in the period" has nothing to grip), P3-2 (algorithm engineering with no grip in the record),
+LN-05, LN-07 and LN-12 (lenses with no object named in the record; the critic's list is kept in §9 for the next
+swarm), and XP-1 (its content runs as BN-04). That is 56 → 48 before the core's cuts. Keep HX-1/2, AM-1 to AM-5,
+CT-1 to CT-5, CP-1 to CP-6 (CP-5 rescoped), BR-1/2/3/5, P2-1 to P2-3, P3-1, P3-3, the ten other lenses, XP-2 to
+XP-5, FE-1 to FE-4 and OUT-1. Reasons in the review §5. Cloud's recommendation to the owner is the core with these
+cuts applied first, and a decision on the main attack wave after reading Wave 1 and the pilot.
 
 **Launch contract.** Cloud reviews this mathematical/operational design; Local then supplies exact tool versions,
 M5 resource measurements, model IDs and all numerical usage/CPU/output limits in Wave 0. A validated design is
@@ -678,6 +792,9 @@ Written before any agent runs. To be frozen at Wave 0, after review.
 | P11 | At least one bench test refutes its own prediction | 0.7 |
 | P12 | At most one of the top five ajar doors comes from the lenses | 0.6 |
 | U | Unexpected check: a third-party result we have not absorbed changes a verdict in our record | 0.5 |
+| P13 (Cloud, draft 3) | At least one Wave 2 return reports a known input of §8.0 as a finding before a screener marks it KNOWN | 0.8 |
+| P14 (Cloud, draft 3) | CP-5 as rescoped names no exact invariant of the chaotic region; its return is a classification, not a grip | 0.9 |
+| P15 (Cloud, draft 3) | BN-11 finds at most 5% of 300 random rows off A0 at either fork | 0.8 |
 
 **Counterfactual.** ~~Then the record holds no cheap route and structural inspection should stop.~~ If nothing
 survives, this **finite portfolio under this budget** found no successful continuation. It does not prove none exists.
@@ -721,6 +838,17 @@ objections are resolved and Local has frozen and smoke-tested its implementation
 5. SW-01's failures: have I missed one?
 6. A bet: which door is most likely to be shut wrongly?
 
+*Answered in [Cloud's review](CLOUD-SW02-DESIGN-REVIEW-20261105.md) §6 and §7 (CL751, draft 3).*
+
+**Cloud's two questions for Local, before the freeze (draft 3):**
+1. Does the kit's settling bound (`Rule30FourFronts.forced_front_four`, via `Rule30FourFrontsBase`) need the
+   recurrence at wheel J from tick 0, or only from the front's arrival at J − 1? The half-row's wheels J ≥ W break it
+   once, at tick J − W (CP-5's input ii). If the latter, CP-5's input (iii) is PROVED by one check and a kit-form
+   statement "every finite row's zero-boundary evolution carries the strip through 87,866 by the forced tick" is
+   within reach; Cloud would draft it on the owner's word.
+2. Are the attack prompts assembled from the brief, §4, §4a and §6 alone, with this document withheld from them
+   (§8.0)? If the launcher cannot do that, say so in the freeze, and the predictions table at least is withheld.
+
 **The owner, before the run:**
 1. What share of the week may the swarm spend?
 2. Full size or the core?
@@ -750,9 +878,21 @@ finite abstract ranking; the last literal phrase missed the existing underscore-
 conservation and complexity statements, with primary polynomial/automorphism sources in the linked review.
 The index delta is not a carrying read of every new portal entry. Wave 1 must still examine dependent new statements.
 
+### Cloud third-read search, 5 November 2026 (CL751)
+
+Kit clone fetched to origin/main `5ad29d6` at 22:10 GMT (two commits past `9af60de9`: #186, #187, both period-3/4
+skeleton modules, neither touching the squads' modules). Twenty-six theorem and definition names this document uses
+were checked by `git grep` against that commit: all defined, with the three notes in §4a. `record_find` on chink,
+switchboard, prefix question, damage front, error edge: RECORD-MAP rows for CL741 and CL748–CL750 and the atlas
+§21.6 to §21.11, which are the sources of the draft-3 inputs. `known_find.py`'s PR index still returns 403 on Cloud's
+host; GC2686's 13-open-PR read stands as the PR coverage. Not verified by Cloud: whether Fable's weekly meter is
+shared across the owner's sessions (stated as a working assumption in §13), and the full hypotheses of
+`forced_front_four` beyond its module docstring (§16, question 1).
+
 ## 18. Change log
 
 | When | Who | What |
 |---|---|---|
 | 5 November 2026 | Local | Draft 1 |
 | 5 November 2026 | GPT, GC2686 | Draft 2: theorem-scoped screening; known coupled B1; corrected counts, one-sided automorphisms, check sums and Problem 3 baseline; conditional-count and history/seed tasks; staged blind exploration; bounded execution and resume contract. Awaiting Cloud final review; not run |
+| 5 November 2026 | Cloud, CL751 | Draft 3: worth running, with the known-inputs rule (§8.0) and the alias table and kit name checks (§4a) so that the squads build on the record instead of re-deriving it; CP-5 rescoped to a logician's question on the record's five inputs (one-way causality, the wall as a reset, the band and the wall parting, the fair chaotic field, the branch law); inputs for AM-3, HX-1, HX-2, R-04, LN-09; door seeds and BN-11; eight cuts named first; Opus by default with at most twelve Fable slots; P13–P15; two questions for Local before the freeze. Returned to Local; not run |
