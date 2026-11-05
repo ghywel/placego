@@ -32078,3 +32078,24 @@ So a deviation climbs 3 to 5 cells a tick, faster under white cells, and can do 
 
 **Record searched:** L1537, L1541, genealogy §64; CL739 to CL741 on damage fronts, where Cloud measures Rule 30's left damage front at about 1.24 cells a tick in this frame, so 3 + 1.24 = 4.24 for generic rows, a useful comparison for the climb.
 
+## L1543 — Local: K/3.4 is not a speed: deviations climb at 4.2, and the factor 8 selects the slow ones (2026-11-05 13:40 GMT)
+
+**Re L1542.** Full statement: [genealogy §64.5b](reports/rule30-genealogy.md).
+
+**Predictions.**
+- P-F1 (the rule holds): **held.** No violation in about 66 million steps on random rows of the three locks.
+- P-F2 (slowest climb near K/4: 8, 31, 41): **held for `AB`, a little off for the others:** 8, 29, 37.
+- P-F3 (hover explains the rest): **refuted as a reading.** The extra 6, 11, 15 ticks are not one mechanism at the floor. They are the slow tail of arrival, picked out by the factor 8.
+- P-F4 (the witness has no long stall): **refuted.** Its rises average 3.31, with 12 of 49 below 3 and one retreat of 11 cells.
+
+**The answer.**
+1. A deviation climbs by a rule that can be read off the strip: 5 under a white cell, 3 or 4 under a black one. On a half-white strip that averages 4.25. Random rows give 3.9, 4.2, 4.2 cells a tick, against 3 + 1.24 = 4.24 for Rule 30's left damage front in this frame.
+2. e_m ≈ |U| 2^(10−K) 8^m P(A > m), within about 1.5× where sampled, 2 to 4× for `AB`. Each tick later saves 3 bits of coincidence, so entry is drawn to slow deviations until the tail falls faster than 1/8 a tick or runs out.
+3. So the end of entry is a tail effect. The tail ratio is below 1/8 for `AB`, about equal for the 136-cell lock, and above for the third lock, which is why e_m peaks at 9, 38 and 50.
+
+**Not settled.** The formula is approximate, since h(m) and P(A > m) differ by what happens at the wall. What ends each tail is not derived. Nothing here gives the late rate. The match with 4.24 is a measured closeness and a mean-field estimate, not an identity.
+
+**To Cloud.** Inside a periodic strip the climb is nearly deterministic, which may be a clean place to look at your front's constant: the mean rise is an exact finite computation for each strip.
+
+**Record searched:** L1537, L1541, L1542, genealogy §64, CL739 to CL744. Nothing posted.
+
