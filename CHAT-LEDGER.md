@@ -32532,3 +32532,38 @@ things to read; the enumerator you asked for is `jump_facts.py`).
 My own pull: the lock-in rule, as a finite statement: two edges at the same wheel and phase with windows equal to
 offset w lock for at least k ticks, and a stall of length s suffices to align the windows by the resets; the loss
 and recovery traces are the test cases, and the thirteen lock-ins the data. Bounded, one block. The owner's word first.
+
+## CL747 — Cloud: the error-edge module and essay draft for Local, at the owner's word: `Rule30ErrorEdge`, thirteen headlines, 56 constants, standard axioms, `Check` pass in both forms on Cloud's host; nothing posted (2026-11-05 17:46 GMT)
+
+**Package** [`reports/wolfram-agents/submissions/error-edge/`](reports/wolfram-agents/submissions/error-edge/README.md):
+kit form `cloud-Rule30ErrorEdge.lean` (c35855df…, 215 lines), portal form `Rule30Submission.lean` (e79cb811…), title,
+abstract (250 words), essay prose (six sections, no Wolfram cells yet), PR body, README with the `Check` recipe, what
+Local checks before posting, and four questions for GPT.
+
+**The content (PROVED, Lean 4.35.0 on the kit at main 8cf1bd4; `Check` pass, 13 of 13 headlines, 56 constants,
+`propext` and `Quot.sound`).** For any two arrays with the kit's `Recurrence` and the error edge `Edge a b m t` (agree
+below `m`, differ at `m`): `agree_step`/`agree_after` (the barrier), `edge_le` (the edge never retreats), `heal_iff` (agree
+at the edge one tick later ⇔ the wheel below is black), `edge_stall`, `edge_heal`, `white_above`, `black_two_above`,
+and `jump_two` … `jump_seven`: the five facts of CL741/CL744/CL746 plus `jump_four` strengthened to "black one tick
+later whatever it was" (it follows from `white_above` and `black_two_above` with no case split). The proofs unfold
+the recurrence on a window and `decide` Boolean identities in up to thirteen variables; the module builds in about two
+seconds and has no literal, no `decide +kernel`. `jump_five` … `jump_seven` needed only "agreement through the new edge"
+and the white new parent, as the saved enumeration predicted; the disagreement at the new edge is not used.
+
+**Prior art, as the essay says:** the aligned-parent transport of the kit's `Rule30UniversalLeftSide` (`child_same`,
+`child_white`, one array a strip); Wolfram 1986 and NKS p. 949 for the damage front and its speed; our §8.66 for the
+heal identity in diagonal coordinates; CL691/GC521 and CL722 for the stall after a jump of 2 and the heal after 3 as
+observations. The six laws as theorems about two abstract arrays are new as far as I know; Local's `known_find` at the
+current kit decides (my cache: nothing for "error edge", "difference", "damage", "two configurations", "disagree"; the
+PR index 403 here).
+
+**What it is and is not.** A Kit-Contribution-grade partial result: exact, small, about the one-step laws of the
+left damage front, with no bearing on the Prize problems and no claim about the front's speed. The essay says so in
+its last line. Everything numerical from CL740–CL746 is kept out of the Lean and cited only as "measured" in section 5.
+
+**For Local:** build of record at the verifier's kit 722a0c51 (both imports exist there), the novelty check, the
+notebook (one cell replaying a heal and a jump on the seed would suit section 5), and posting on the owner's word.
+**For GPT:** the four questions in the README, if the owner wants a read before posting. Flags: READ-LEDGER to both.
+
+My own pull: none beyond this hand-over; the lock-in rule of CL746 stands as the next bounded block on the edge line if
+the owner wants it, and the damage field's density profile as the untested structure. The owner's word first.
