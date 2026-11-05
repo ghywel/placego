@@ -32956,3 +32956,58 @@ statement the kit could hold. One block, if wanted. Otherwise I stop here and wa
 
 **Record searched:** the terms in the README, at kit `5fb59158`.
 
+
+## CL750 — Cloud: the prefix question, at the owner's word. By hand it is a race: a completion of the seed's first P bits takes the seed's branch at a fork if its shared prefix with the seed covers the fork wheel at the seed's last black there, and the seed's path has only two forks below 894,235; the worst-case guard from the kit's recursion is P* = 19,656. Predictions for random completions, before the run (2026-11-05 20:02 GMT)
+
+**By hand (PROOF-SKETCH, from the branch law of CL749 and the error-edge module of CL747).** Let a configuration x share
+the seed's first P bits (bit 0 black, bits 1 … P − 1 white) with anything above. Its *shared prefix* with the seed is the
+error edge of the two configurations: it never retreats and advances exactly at the blacks of the seed's wheel below it
+(`agree_step`, `heal_iff`), starting at P at tick 0. At a fork wheel j on the seed's path, with τ*_seed the last tick at
+which the seed's wheel j is black: if the shared prefix covers wheel j at τ*_seed, the two configurations agree on
+wheels ≤ j there, both fork wheels are black together, both children are reset to the same value ¬a_(j−1)(τ*_seed), and
+both integrate the same word from then on: **x takes the seed's branch**. If the shared prefix is below j at τ*_seed,
+x's own fork wheel has its own last black and the branch law decides with x's τ*: free of the seed. So the left side
+of every completion of the seed's first P bits is A0 (up to the phase, which the doublings above may shift) through
+894,235 as soon as the shared prefix beats the seed's last black at every fork on the seed's path; and the seed's path
+has only two, 53,207 and 58,286, every other fork of the tree being another branch's (CL738's names). The seed's last
+blacks there, read from its run: **71,115 and 77,909** (one tick before its walk clears each fork).
+
+**The guard (COMPUTED).** The slowest the shared prefix can climb is the kit's forced-front recursion (`frontBound`,
+CL733's reading on the strip's cycle) started at wheel P: the adversary above P can hold the edge to one wheel per black
+of the parent where the rule allows it, and the recursion is that worst case on A0's words. From P = 2 it reaches
+53,207 at 107,310 (CL733's number) and 58,286 at 117,439: both lose. The least P at which it beats both last blacks with
+the phase budget of 31 is **P* = 19,656** (67,742 + 31 < 71,115 and 77,871 + 31 < 77,909; at 19,655 the second fork is
+lost by one tick). Caveat, stated: the recursion on A0's words is the worst case where the seed is settled; above the
+seed's own front the seed's bits are not the strip's, and the worst case there is not bounded by this computation. So
+P* is the guard under the hypothesis that the chaotic stretch is no slower than the strip's words, which the
+forced-front theorems make plausible and do not prove. GC2635's 39,089 (agreement with the seed through 87,867,
+with the doubling at 87,866 and its 16-tick correction) is an exact guard of a stronger kind and about twice this.
+
+| P | forced front at 53,207 | at 58,286 | the seed's last blacks |
+|---|---|---|---|
+| 2 | 107,310 | 117,439 | 71,115; 77,909 |
+| 10,000 | 87,134 | 97,263 | |
+| 19,656 = P* | 67,742 | 77,871 | |
+| 39,089 | 28,446 | 38,575 | |
+
+**The experiment** (`prefix_race.py`; the seed and a random completion evolved together on 165,750 wheels; the shared
+prefix read at 71,115 and 77,909 and every 5,000 ticks; the completion's strip identified at every phase among the
+five strips of the tree): twelve completions at each of P = 1, 500, 2,000, 20,000.
+- **P-P1 (the criterion):** every completion whose shared prefix covers 53,207 at 71,115 and 58,286 at 77,909 settles on
+  A0, no exception; a completion whose shared prefix is below a fork wheel at the seed's last black there may settle on
+  either branch (free), and the branches it takes below the first fork are A0.53207, A0.53207.72575 or
+  A0.53207.165748, below the second A0.58286. Lean 75%. Counterfactual: a completion that covers both forks and ends
+  elsewhere: the race criterion is wrong, and the branch is not set by the reset at the seed's last black.
+- **P-P2 (the rates, from the race of two walks at the same speed):** a random completion's shared prefix climbs at the
+  front's own speed, 0.757, as the seed's front does, so at P = 1 the two are neck and neck at the first fork (the
+  edge's fluctuation over 71,000 ticks a few hundred wheels) and the race is close to even: 3 to 9 of 12 on A0; at
+  P = 500 more win: 6 to 12; at P = 2,000, at least 11 of 12; at P = 20,000, 12 of 12. Lean 55%. Counterfactual: at
+  P = 1 nearly all on A0 (the shared prefix runs well ahead of the seed's front, perhaps because the seed's chaotic
+  region heals the edge faster than the strip does), or nearly none.
+- **P-P3:** the typical threshold for random completions is below 2,000 bits, an order of magnitude under the
+  adversarial guard P*. Lean 65%.
+Caps: substitute (CL710), ulimit 8 GiB, timeout 1,800 s, four processes, about five minutes.
+
+**Record searched:** GC2634/GC2635 (`WhiteParentTransport.lean`, the all-completions prefix guard 39,089 through 87,867,
+"the two seed bits at 60,549–60,550 select the branch"), CL722, CL733 (107,310), CL749; `record_find` "prefix guard",
+"completion", "all completions": GC2633–GC2635 and CL722 only.
