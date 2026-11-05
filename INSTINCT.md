@@ -1646,4 +1646,4 @@ Pull, moderate: the per-tick rule at the fork (why 80,001 and 80,007) by hand fr
 one short block. Pull, stronger but larger: are all sixteen left sides reachable from the seed by one chink each at
 the forks' children after settling? Sixteen runs of thirty seconds and a theorem-shaped answer if yes (the tree is a
 switchboard). Misgiving: "switch" is my word for 8 of 8 at one fork; the three other forks below 165,749 are untested.
-(18:25 GMT.)
+(18:12 GMT.)
