@@ -1,0 +1,17 @@
+2db293b85e060c32  Rule30SixteenFronts.lean
+c3234f501a95193e  Rule30SixteenFrontsStrip0.lean
+d4c4aab5cbe0802c  Rule30SixteenFrontsStrip1.lean
+cbbfa72cab384682  Rule30SixteenFrontsStrip10.lean
+de4afdaf1e58cff6  Rule30SixteenFrontsStrip11.lean
+458a114606753027  Rule30SixteenFrontsStrip12.lean
+ef641e2843ed0c2a  Rule30SixteenFrontsStrip13.lean
+f9794e2abb2fd46e  Rule30SixteenFrontsStrip14.lean
+367a18e3170b16d9  Rule30SixteenFrontsStrip15.lean
+e66f12e1fd7a6c56  Rule30SixteenFrontsStrip2.lean
+c4cfdbf714d9973b  Rule30SixteenFrontsStrip3.lean
+390e4dd6590bba56  Rule30SixteenFrontsStrip4.lean
+477986e29548c15d  Rule30SixteenFrontsStrip5.lean
+6474af21e7e4c884  Rule30SixteenFrontsStrip6.lean
+e1ecbae6fb97cf4c  Rule30SixteenFrontsStrip7.lean
+46983ee423f59d18  Rule30SixteenFrontsStrip8.lean
+1a9b567ec8f73bc9  Rule30SixteenFrontsStrip9.lean

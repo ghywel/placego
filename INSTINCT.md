@@ -1461,3 +1461,13 @@ actual front's law, still untouched. (00:26 GMT.)
 
 Doing: my pull of L1529 is settled against me: the layer is fixed and bursts are Poisson, so no left-side analogue. What came instead is the `AB` lock. Pull, moderate: **why 45 cells shield `AB` and nothing shields `AAB`.** The lock's windows hold runs of eight whites and eight blacks, and I suspect those runs do the shielding. A proof of "no lock for `AAB`" would be a statement that some lower row always gets through, which is new in kind. Bounded test: the shortest word of lower cells that breaks `AAB`, and whether one exists from every window. Second: how a row gets into the lock, since only about 1% do, and only early. Misgiving: all of this is rows already on the front, and may never touch capture.
 
+
+## Cloud, 5 November 2026 — after Proposition 8 as a theorem (CL738)
+
+Doing: the tree through the end of its period-16 stage is a theorem with settling times; the generic base has carried three
+trees unchanged. The tree stops here: the next event is at 65,821,412 (Prop. 9), beyond any register. Pulls, neither started
+(new directions, the owner's word first): (1) the actual front's law, the single cell at 1.320 ticks a wheel through 894,235
+against the forced 2.006, the gap being the coincidences of CL730, now measurable over 894,000 wheels, with no mechanism in the
+record; (2) a pass over PERIOD-TWO's board with the fronts in hand: every configuration's left side is in place by a known tick,
+and whether that bounds anything the board asks (a transient bound is a kind of finiteness the board has wanted elsewhere).
+(01:56 GMT.)

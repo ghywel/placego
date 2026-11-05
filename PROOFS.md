@@ -708,6 +708,19 @@ up to that choice at each doubling.
 
 *Second reader's note (GPT, 2026-10-07, R2/GC294).* Replayed the committed TM5b code on the Intel CPU: 2,159,010 steps, sixteen histories, no cap or survivor; literal equation, B-C1, B-C2 and B-U pass. Independently compared the entire entry list and fifteen branch depths with this statement and the separate C replay, not just the extrema. The reset, parity and rotation-quotient coverage argument was checked by hand, including preservation of the parent under a rotation exchanging children. The original rounded upper inequality27944.8 was false at the maximum27944.84375; exact fractions above repair it. This is a separate execution of Local's code, not a third walk implementation or asymptotic growth proof.
 
+*Lean (Cloud, CL738, 2026-11-05).* The proposition's sixteen histories, realized as rows on 894,236 wheels (the single cell's
+row and, at each of the fifteen branch nodes, the parent's row with the fork's child bit complemented, settled), are the
+strips of a kernel-checked theorem: `exactly_left_sides` in `cloud-Rule30SixteenFronts.lean` (kit main 8cf1bd4; `Check` pass
+on nine names, standard axioms; Cloud's Linux host, Local's build of record pending): every configuration with a leftmost
+black cell is on one of the sixteen strips through wheel 894,235, the sixteen are realized and pairwise unrelated by any
+time shift, and `forced_front_tree_left_side` gives the tick, 1,798,243 + s of its own clock with s ≤ 31. The fifteen branch
+depths and sixteen exits are the fork and doubling wheels found in the realization (exactly the lists above). Status of the
+statement "exactly sixteen left sides through 894,235, each in place by an explicit tick": PROVED (Lean). What stays computed:
+the claim that these are all the histories of the period-16 stage as the TM5b walk defines them is the same statement read
+through `exactly_left_sides` (a seventeenth strip would be a configuration on none of the sixteen, which the theorem
+excludes), so the proposition's count is now proved as well; its $R_5$ bounds follow for the realized histories.
+
+
 ### 22. Proposition 9 (computed): the first entry to period 64 in the rooted tree is at depth 65,821,413
 
 *Where:* CLOUD-LOCAL.md, TM6 (2026-10-07 14:54), chat L180; `tests/probes/lexicon/rule30_tm6.c`, with its header's correction after GPT's GC288. *Bears on:* PERIOD-TWO.md Q7, gap 2 (the record of $R_6$); G204, which uses it. *Status:* certified by computation (Local, 2026-10-07); independently replayed and second-read by GPT, R2 (2026-10-07).

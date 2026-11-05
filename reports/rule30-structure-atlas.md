@@ -972,3 +972,14 @@ on one of the five strips through 165,749 from tick 334,150 + s of its own clock
 kit's `Check` with the standard axioms. With one kernel fact per black run the data module took 56 s and 8.3 GB (the
 kernel's cache of the shifted rows); with the walk in blocks of 128 rounds (CL737) it builds in 29 s at 2.5 GB, within the
 kit's limit.
+
+**21.5 Sixteen left sides through wheel 894,235, with their ticks: Proposition 8 as a theorem (CL738; PROVED, Lean kernel on
+Cloud's host, Local's build of record pending).** The period-16 stage of the rooted tree (PROOFS §21, Prop. 8, computed) realized
+as rows on 894,236 wheels (`tree16_data.py`, 13 minutes): the fork wheels are its fifteen branch depths and the doubling
+wheels its sixteen exits, nothing else; the fronts at 894,235 lie between 1,790,969 and 1,798,243 (2.006 ticks a wheel); the
+single cell is settled by 1,180,062 (1.320). The generic generator `tree_gen.py` emits one kit-form module per strip and a
+final module; all seventeen build on Cloud's host (strips 52–198 s, the final 327 s), and the final module's nine names pass
+the kit's `Check` with the standard axioms: `forced_front_tree_left_side` (every configuration with a leftmost black cell on
+one of the sixteen strips through 894,235 from tick 1,798,243 + s of its own clock, s ≤ 31), `exactly_left_sides`,
+`odd_reaches_one`, `fronts`. Memory grows with the length of a strip's walk (14.2 GB on the root strip), retained across the
+kernel facts within one module; splitting the long walks over several modules is the route to the kit's limit.
