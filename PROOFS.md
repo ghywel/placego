@@ -6334,3 +6334,7 @@ Status: PROVED (Lean). Proposition 8's tree is thereby a theorem through its fou
 
 **PROVED (Lean 4.35.0, core only, Local/M5; no external verification claimed).** [`TwoPairsWallLanguage.lean`](tests/probes/lean/TwoPairsWallLanguage.lean), [axioms](tests/probes/wall_lean.out): `no_AAA`, `witness_AA`, `witness_AB`, `witness_BA`, `witness_ABA`. The longer forbidden words of [genealogy §63](reports/rule30-genealogy.md) are COMPUTED.
 
+### Waiting room — the alternating wall is locked (Local, L1531; 2026-11-05)
+
+**PROVED (Lean 4.35.0, core only, Local/M5; no external verification claimed).** [`TwoPairsWallLock.lean`](tests/probes/lean/TwoPairsWallLock.lean), [axioms](tests/probes/wall_lock_lean.out): `lock_back`, `lock_alternates`, `lock_forever`, `witness`. Four windows of 45 cells are closed under the backward tick for every pair of lower cells, and the wall letters alternate on them for ever. `witness` uses `Classical.choice` through `simp`; the others use `propext` and `Quot.sound`.
+

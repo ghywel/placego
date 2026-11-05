@@ -1,0 +1,52 @@
+row 0 column periods: k0:1 k8:3 k10:1 k11:3 k14:1 k15:3 k17:1 k18:3 k25:0 k28:1 k29:0
+row 1 column periods: k0:1 k8:3 k10:1 k11:3 k14:1 k15:3 k17:1 k18:3 k22:0
+row 1 best common strip 22 cells at shift 1
+row 2 column periods: k0:1 k8:3 k10:1 k11:3 k14:1 k15:3 k17:1 k18:3 k22:732 k25:0 k28:732 k29:0
+row 2 best common strip 22 cells at shift 2
+row 3 column periods: k0:1 k8:3 k10:1 k11:3 k14:1 k15:3 k17:1 k18:3 k25:0 k28:1 k29:0
+row 3 best common strip 25 cells at shift 1
+row 4 best common strip 25 cells at shift 0
+row 5 best common strip 25 cells at shift 0
+row 6 best common strip 25 cells at shift 2
+row 7 best common strip 25 cells at shift 2
+row 9 best common strip 22 cells at shift 0
+row 10 best common strip 25 cells at shift 501
+row 12 best common strip 25 cells at shift 22
+row 13 best common strip 22 cells at shift 2
+row 14 best common strip 25 cells at shift 604
+row 15 best common strip 25 cells at shift 669
+quiet rows 93 of 120 on ticks [1200,2736)
+common strip with the first row, by dyadic length: <32:92
+offset: classes of column period (m for 3*2^m, o other, n none)
+ k=  0 o:93
+ k=  8 m0:93
+ k= 16 m0:93
+ k= 24 m0:46 o:3 n:44
+ k= 32 m1:1 n:92
+ k= 40 m1:1 n:92
+ k= 48 m1:1 n:92
+ k= 56 m0:1 n:92
+ k= 64 m0:1 n:92
+ k= 72 m1:1 n:92
+ k= 80 m0:1 n:92
+ k= 88 n:93
+ k= 96 n:93
+ k=104 n:93
+ k=112 n:93
+ k=120 n:93
+ k=128 n:93
+ k=136 n:93
+ k=144 n:93
+ k=152 n:93
+ k=160 n:93
+ k=168 n:93
+ k=176 n:93
+ k=184 n:93
+ k=192 n:93
+ k=200 n:93
+ k=208 n:93
+ k=216 n:93
+ k=224 n:93
+ k=232 n:93
+ k=240 n:93
+ k=248 n:93

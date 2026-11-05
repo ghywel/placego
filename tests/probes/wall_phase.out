@@ -1,0 +1,22 @@
+share by time block of 300 ticks: AAB, AB, mixed
+ t=     0      0      0    600
+ t=   300    572      6     22
+ t=   600    569      6     25
+ t=   900    566      6     28
+ t=  1200    573      6     21
+ t=  1500    567      6     27
+ t=  1800    572      6     22
+ t=  2100    572      6     22
+ t=  2400    571      6     23
+ t=  4800    574      6     20
+ t=  7200    565      6     29
+ t=  9600    566      6     28
+ t= 12000    566      6     28
+ t= 14400    558      6     36
+ t= 16800    562      6     32
+block transitions (rows from, columns to; AAB, AB, mixed):
+    31741        0     1144
+        0      348        0
+     1717        6      444
+rows by number of departures from AAB after block 3: 0:95 1:160 2:176 3:93 4:53 5:17 6:5 7:1
+AB stretches in blocks: 59:6

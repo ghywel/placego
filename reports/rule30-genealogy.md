@@ -6718,10 +6718,30 @@ In the frame of the wall, `y_t(k)` the cell `k` below the deep wall cell, forwar
 ### 63.4 Over long times (MEASURED)
 
 - Most rows fall into `AAB` repeated. Over ticks 1,200 to 2,400 of 3,000 random rows, 2,543 have period 3, 33 have period 2 (`AB`), and 424 have no period up to 600 ([output](../tests/probes/wall_attr.out)).
-- That is not the end. On 60 rows followed for 12,000 ticks, quiet stretches of thousands of ticks are broken by short bursts of `x`, and first late bursts cluster near ticks 5,000 to 8,000 ([output](../tests/probes/wall_bursts.out)). Density of `BAB` stops falling at about 0.0067 per row and tick, from tick 512 to 4,096 ([output](../tests/probes/wall_late.out)).
-- Below the wall on a quiet row there is a common strip. At `B` ticks, the first 24 cells are identical on 126,200 profiles from 631 unrelated rows, and through 56 cells 96% of the profiles lie in one row's own time orbit ([output](../tests/probes/wall_strip.out)). It looks like the left sides of rule 30, with a wall in place of the edge. This is a measurement; no such theorem is claimed.
+- That is not the end. On 60 rows followed for 12,000 ticks, quiet stretches of thousands of ticks are broken by short bursts of `x` ([output](../tests/probes/wall_bursts.out)). Density of `BAB` stops falling at about 0.0067 per row and tick, from tick 512 to 4,096 ([output](../tests/probes/wall_late.out)).
+- Below the wall on a quiet row there is a common layer. At `B` ticks, the first 24 cells are identical on 126,200 profiles from 631 unrelated rows, and through 56 cells 96% of the profiles lie in one row's own time orbit ([output](../tests/probes/wall_strip.out)). L1529 said this looked like the left sides of rule 30. §63.6 tests that, and it does not.
 
 ### 63.5 What this does not settle
 
 It says nothing yet about capture, or about a periodic cloud, because it concerns rows already on the front. The language is exact only through length 18, the run limits are measured, and I have no description of the whole language.
+
+### 63.6 The layer below the wall, and the lock (L1530–L1531)
+
+**Not a left side (MEASURED).** A left side's settled region grows with time. This layer does not.
+- Exact time periods stop at offset 21 to 24; below that no column has a period up to 768 ([output](../tests/probes/wall_cols.out)). Unrelated quiet rows part at 22 to 25 cells, at every time shift.
+- The rate at which a cell differs from itself three ticks later is the same in every time window from tick 128 to 4,096: about 0.01 to 0.03 through offset 28, near 0.5 from offset 64 on, with the columns between partly ordered ([output](../tests/probes/wall_layer.out)). So the wall drags a boundary layer of fixed size, about 60 cells, through noise.
+- Exact solutions periodic in time are not few: at offset 40 there are 43 at period 3 and 5,689 at period 6 for the letters `AAB`, and they end, at offset 153 for period 3 and offset 62 for `AB` at period 2 ([output](../tests/probes/wall_periodic.out)).
+
+**`AAB` is metastable (MEASURED).** On 600 rows over 18,000 ticks, departures per row have mean 1.875 and variance 1.823, and the counts 95, 160, 176, 93, 53, 17, 5, 1 fit a Poisson law (92, 173, 162, 101, 47, 18, 6, 2) ([output](../tests/probes/wall_phase.out)). So the phase is left at a constant rate of about one per 9,000 ticks, with no locked subpopulation. Bursts have 504 shapes among 1,129, and the top ten cover 30% ([output](../tests/probes/wall_burst_shapes.out)). They are noise leaking through the layer, not forks. L1529's "first late bursts cluster near ticks 5,000 to 8,000" was a reading of waiting times in a run of 12,000 ticks, and is withdrawn.
+
+**`AB` is locked (PROVED, Lean).** [`TwoPairsWallLock.lean`](../tests/probes/lean/TwoPairsWallLock.lean), [axioms](../tests/probes/wall_lock_lean.out). Four windows of 45 cells form a closed set under the backward tick for every pair of lower cells:
+
+    ..##.#...#.#..#..#........##....##..####...##    A
+    ..####.#.##.##.########......#.##..#.###...##    B
+    .#.#.#...#.#..#..#........##....##..####...##    A
+    .#.###.#.##.##.########......#.##..#.###...##    B
+
+`lock_back`: every predecessor of such a row is such a row, three cells higher. `lock_alternates`: the letters alternate. `lock_forever`: for ever, whatever lies below. `witness`: an anchored row is in the lock. So the infinite word `ABAB…` occurs on anchored rows. On literal rows, 72,000 backward ticks show no failure ([output](../tests/probes/wall_lock_check.out)). In the runs, `AB` was entered only early, by about 1% of rows, and never left: 348 block transitions out of it, all staying, and no late burst reached it.
+
+So the wall has two phases of very different kinds. `AB` is shielded from what lies below by 45 cells. `AAB` is not, at any width tested.
 

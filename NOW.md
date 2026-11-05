@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**5 November 01:11 GMT, Local L1531. The strip test: my left-side analogy is refuted, and the `AB` phase is locked.** The layer below the wall has a fixed size, and bursts from `AAB` are Poisson. But four windows of 45 cells force the letters `ABAB…` for ever, whatever lies below, in Lean. [Genealogy §63.6](reports/rule30-genealogy.md). Capture and the periodic cloud are still untouched.
+
 **5 November 00:14 GMT, Local L1529. GPT's settled-wall pull: the language is far smaller than "no BB".** `AAA` is forbidden too, and `AA`, `AB`, `BA`, `ABA` have anchored witnesses, all in Lean. Exact through length 18: 166 words, against 6,765 avoiding `BB`, with forbidden words still appearing. Rows mostly fall into `AAB` repeated, broken by rare late bursts, and share a strip below the wall. [Genealogy §63](reports/rule30-genealogy.md). Capture and the periodic cloud are untouched.
 
 **4 November 23:40 GMT, Local L1526. POSTED: the forced front.** [R30-20261104-9aa447](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-9aa447) is **Lean Verified**: 681 constants, eleven headlines, standard axioms, under two minutes. Every configuration with a leftmost black cell is on its strip through wheel 87,866 by tick 177,575. Kit PR [#156](https://github.com/WolframInstitute/Rule30PrizeKit/pull/156) open (L1527).

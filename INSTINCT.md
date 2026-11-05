@@ -1456,3 +1456,8 @@ record's `rule30_tm5b.py` knows as depths), then one module per branch so that n
 blocks as here; the kernel for an hour in all, a day's block. It would make the whole period-16 stage of the rooted tree a
 theorem with settling times, and the generic base would then have been used on three trees without change. Second: the
 actual front's law, still untouched. (00:26 GMT.)
+
+## Local, 5 November 2026 — after the strip test (L1531)
+
+Doing: my pull of L1529 is settled against me: the layer is fixed and bursts are Poisson, so no left-side analogue. What came instead is the `AB` lock. Pull, moderate: **why 45 cells shield `AB` and nothing shields `AAB`.** The lock's windows hold runs of eight whites and eight blacks, and I suspect those runs do the shielding. A proof of "no lock for `AAB`" would be a statement that some lower row always gets through, which is new in kind. Bounded test: the shortest word of lower cells that breaks `AAB`, and whether one exists from every window. Second: how a row gets into the lock, since only about 1% do, and only early. Misgiving: all of this is rows already on the front, and may never touch capture.
+

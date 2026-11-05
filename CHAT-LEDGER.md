@@ -30992,3 +30992,26 @@ multiple of 32 ticks so that the phases agree; the forced front at phase 0 by th
   Counterfactual: a sibling that does not return after 32 ticks within 1,800 s of evolution would say its upper wheels
   settle slower than two ticks a wheel, which the theorem's form through 165,749 says cannot happen; the run would be
   repeated from a saved row with a longer horizon and the figure reported.
+
+## L1531 — Local: the strip test. My left-side analogy is refuted: the layer below the wall has a fixed size and bursts are random. But the `AB` phase is locked, and that is in Lean: four windows of 45 cells force the letters for ever (2026-11-05 01:11 GMT)
+
+**Verdicts on L1530: all four predictions refuted.**
+- **P-S1 REFUTED.** Exact column periods stop at offset 21 to 24. Below that no column has a period up to 768 ([output](tests/probes/wall_cols.out)).
+- **P-S2 REFUTED.** Unrelated quiet rows part at 22 to 25 cells, at every time shift: 92 of 92 pairs under 32.
+- **P-S3 REFUTED.** 1,129 bursts have 504 shapes, and the top ten cover 30%, not 80% ([output](tests/probes/wall_burst_shapes.out)).
+- **P-S4 REFUTED.** At offset 40 there are 43 exact period-3 solutions and 5,689 of period 6 for `AAB`, not eight ([output](tests/probes/wall_periodic.out)).
+
+**So the counterfactual fired: L1529's strip is not a left side.** The rate at which a cell differs from itself three ticks later is the same from tick 128 to tick 4,096, at every offset: small through 28, noise from 64 ([output](tests/probes/wall_layer.out)). The layer does not grow.
+
+**Corrections to L1529 and my last report.** "It looks like the left sides of rule 30" was wrong, and I said it to the owner as a pull. "First late bursts clustering near ticks 5,000 to 8,000" was a misreading of waiting times in a run of 12,000 ticks. Over 18,000 ticks, departures from `AAB` fit a Poisson law, mean 1.875, variance 1.823, about one per 9,000 ticks ([output](tests/probes/wall_phase.out)). That also answers whether `AAB` hides a locked subpopulation: 95 rows without a departure against 92 expected, so no.
+
+**What the test found instead: PROVED, Lean 4.35.0, core only, Local/M5, no external verification claimed** ([`TwoPairsWallLock.lean`](tests/probes/lean/TwoPairsWallLock.lean), [axioms](tests/probes/wall_lock_lean.out)). In the same runs `AB` never left: 348 block transitions, all staying. So I looked for a lock, and there is one. Four windows of 45 cells form a closed set under the backward tick, for every pair of lower cells.
+- `lock_back`, `lock_alternates`, `lock_forever`: such a row has wall letters `ABAB…` at every backward tick for ever, whatever lies below the window.
+- `witness`: an anchored row is in the lock. So the infinite word `ABAB…` occurs.
+- Literal rows: 72,000 backward ticks, no failure ([output](tests/probes/wall_lock_check.out)).
+- The letters are already forced at width 29, with a closed set of 69 windows; 45 is the width with the smallest set, four windows, among widths 26 to 65 from one locked row.
+
+**Scope.** This is a second robust object after GC2677's front: B₁₁ fixes the wall's speed, the lock fixes its letters. It says nothing about capture or the periodic cloud. No lock for `AAB` appeared at widths to 45, and the Poisson law says none should be expected on typical rows; that is measurement, not proof. `AB` was entered by about 1% of rows and only early; I do not know why.
+
+**Record searched:** as L1530. Write-up: genealogy §63.6.
+

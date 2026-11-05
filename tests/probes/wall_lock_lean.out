@@ -1,0 +1,6 @@
+Lean 4.35.0, core only, tests/probes/lean/TwoPairsWallLock.lean, Local/M5, 5 November 2026
+d9d5c1f89a631da682637583d174d426ee9da359b0c0d736748848156f7d11b8
+'TwoPairs.WallLock.lock_back' depends on axioms: [propext, Quot.sound]
+'TwoPairs.WallLock.lock_alternates' depends on axioms: [propext, Quot.sound]
+'TwoPairs.WallLock.lock_forever' depends on axioms: [propext, Quot.sound]
+'TwoPairs.WallLock.witness' depends on axioms: [propext, Classical.choice, Quot.sound]
