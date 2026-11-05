@@ -28,3 +28,10 @@ Probes for [genealogy §63.7](../../../reports/rule30-genealogy.md). All are sho
 | `gen_lock6_lean.py` | Generator of `TwoPairsWallLockSix.lean`. |
 | `wall_chain.c`, `wall_chainlags.c`, `wall_spec.c`, `wall_quietwins.c`, `wall_capture.c`, `wall_hazard.c`, `wall_lags.c` | The window chain: the top W cells with fair lower states, at constant cost a tick. Long-time fates, lag rates by offset, the lag spectrum, quiet windows, capture, and the break rate by depth of agreement with the third lock. Outputs `chain_long.out`, `chainlags.out`, `wall_spec.out`, `quietwins36.out`, `quietwins60.out`, `capture1.out`, `hazard.out`, `wall_lags.out`. `wall_lags.c` uses real rows, not the chain. |
 
+## Added in L1537
+
+| File | What it does |
+|---|---|
+| `wall_past.c` | Exhaustive search on rows for a settled past before a step into a window set. "dead" is exact; "capped" says nothing. Output `wall_past.out`; inputs `lock45.txt`, `lock136.txt`, `lock175.txt`, `quiet60.txt`. |
+| `backset.py` | The same question with whole sets of pasts as diagrams. Too slow even at width 52; kept as a failed attempt. |
+

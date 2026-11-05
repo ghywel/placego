@@ -6836,3 +6836,10 @@ Apart from the first lag table, these runs use the window chain: the top 256 or 
 **No capture seen (MEASURED).** In 4.9 billion chain ticks no row entered the third lock ([output](../tests/probes/wall_floor/capture1.out)). Agreement reached 145 cells, with sharp cliffs near 107 and just above 145, and never 150. 400 chains of 2 million ticks ended with 5 in `AB`, none in `AAB` ([output](../tests/probes/wall_floor/chain_long.out)). The cliffs suggest, but do not show, that the lock splits off the cloud somewhere near width 150, as the 136-cell lock does at 52. If so no cloud row can enter it.
 
 **What this does not settle.** Whether there are more locks, for example at period 12. Whether the third lock can be reached from the cloud at all. Why the strip of each lock ends where it does. Still nothing about capture onto the front.
+
+**How late a row can enter (COMPUTED, exact on rows; L1536–L1537).** [`wall_past.c`](../tests/probes/wall_floor/wall_past.c) takes a lock window as a row, and searches every lower part of that row for a past in which the row just before was outside the window set and all earlier rows read letters ([output](../tests/probes/wall_floor/wall_past.out)). The past rows follow by the forward rule, so free lower states play no part. The search is exhaustive when it says dead.
+- A row can step into the `AB` lock with at most 14 settled rows before it. Its 2-cycle at width 22 can be entered with at most 4.
+- A row can step into the `AAB` period-3 cycle at any width from 45 to 53 with at most 16 settled rows before it.
+
+So these cycles are out of reach of a long-settled row, and at widths from 45 to 51 that is more than the free graph shows: `Q45` holds the period-3 cycle, but no physical row with a long past enters it. This is why entries into `AB` come only just after a row settles. For the third lock the search gives no verdict. It stopped at its node limit at most windows, and on real quiet windows, which do have long pasts, it stops the same way, so a stop says nothing.
+
