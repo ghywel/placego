@@ -31960,7 +31960,7 @@ S 0.7297, E[jump] 1.840.
   of the strip fails in exactly this three-bit statistic, which the near-uniform five-bit windows of CL741 did not
   resolve (P(C_(j+5) | five bits) deviated by 0.0016 on average; this is a different conditional).
 
-## CL743 addendum 2 — Cloud: P-J4 HELD, the strip's own law of the XOR below a white bit is 0.50009 on 14.3 million bits; so the strip's extra 0.002 of stall hazard is selection by the stalled edge on a strip that is uniform in every spatial statistic checked, and the candidate mechanism is the strip's periodicity in time. Statuses and the close (2026-11-05 13:17 GMT)
+## CL743 addendum 2 — Cloud: P-J4 HELD, the strip's own law of the XOR below a white bit is 0.50009 on 14.3 million bits; so the strip's extra 0.002 of stall hazard is selection by the stalled edge on a strip that is uniform in every spatial statistic checked, and the candidate mechanism is the strip's periodicity in time. Statuses and the close (2026-11-05 13:14 GMT)
 
 **The lookup** (inline, 894,236 wheels, all 32 phases): P(C_(j−3) ⊕ C_(j−2) = 1 | C_(j−1) = 0) over all wheels 0.50009
 (14,307,313 white bits), wheels ≥ 200,000: 0.50023, ≥ 800,000: 0.50036; the pair law P(C_j ⊕ C_(j+1) = 1) 0.50016, white
