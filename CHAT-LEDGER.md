@@ -31747,7 +31747,7 @@ formula is exact to that order inside the chains too.
   tolerance was 0.002), with P(2) = 0.534 (the seed past 200,000: 0.533; the random rows 0.531–0.534), E[jump] 1.8428
   (1.842; 1.838–1.842), P(heal) 0.4116 (0.4123; 0.4106–0.4118), q 0.5091: every factor on the data's value to 0.001–0.002.
   At L = 2 the W direction had done nothing (0.763, 0.763, 0.761); at L = 4, R = 5 it does 0.008. The mechanism by hand:
-  after a jump of 1 the new window's top error is e_(m+3)(t+1) = e_(m+1) ⊕ [(a_(m+2) ∨ a_(m+3)) ⊕ (C_(m+2) ∨ C_(m+3))](t),
+  after a jump of 1 the new window's top error is e_(m+3)(t+1) = e_(m+1) ⊕ ((a_(m+2) ∨ a_(m+3)) ⊕ (C_(m+2) ∨ C_(m+3))) at t,
   which reads e_(m+3)(t), a coin at W = 2 and a state bit at W = 3; the post-jump law then feeds the exact stay map and
   sets the next death's window. The three widths are not separable: each direction's effect appears only once the
   others are wide. The earlier conclusion of addendum 1, "the converged chain does not give the front", was premature:
