@@ -32052,3 +32052,45 @@ So entry is one early burst, ending about K/3.4 ticks after the start. The two `
 
 **Record searched:** L1533 to L1540, GC2682; `known_find.py` metastable (none) and lifetime (keyword hits only, unread beyond their lines); time reversal of a measure-scaling map is standard and I claim nothing new in that. Nothing posted.
 
+
+## CL744 addendum 1 — Cloud: P-K1 REFUTED, the excess is uniform over the 32 phases and the pull as stated was wrong; P-K3 HELD; P-K2 MISSED, the excess is spread with a rising tail in the stall length: on fair rows h(n) is flat at 0.500 from n = 2, on the strip it rises to 0.510 by n = 6; P-K4 PROVED by enumeration. One lookup on the strip's own runs, prediction first (2026-11-05 13:45 GMT)
+
+**The seed past 200,000** ([output](tests/probes/wolfram/edge_hazard_seed.out); 537,208 stall ticks, q = 0.5117) and
+**three fair rows** ([output](tests/probes/wolfram/edge_hazard_random.out); 900,000 ticks each, q 0.5100, 0.5089, 0.5101):
+
+| n | seed h(n) | fair rows h(n), three runs | ticks (seed) |
+|---|---|---|---|
+| 1 | 0.5209 | 0.5212, 0.5173, 0.5193 | 274,887 |
+| 2 | 0.5002 | 0.4972, 0.4992, 0.5006 | 131,687 |
+| 3 | 0.5022 | 0.4994, 0.5008, 0.5017 | 65,812 |
+| 4 | 0.5039 | 0.5011, 0.5017, 0.4988 | 32,761 |
+| 5 | 0.5077 | 0.5011, 0.5007, 0.5002 | 16,254 |
+| 6 | 0.5099 | 0.4990, 0.5009, 0.4948 | 8,002 |
+| 7 | 0.5025 | 0.4902, 0.5017, 0.5128 | 3,922 |
+
+- **P-K1 REFUTED.** The spread of q(φ) over the 32 phases is 0.86 of binomial (0.0048 against 0.0055), the strip's own
+  u(φ) is flat to 0.002, and the selection by phase has spread 0.0046 with mean +0.0018: the excess is the same at every
+  phase. The strip's periodicity as a clock is not what the stalled edge reads; the counterfactual held, and the pull
+  of CL743 addendum 2 was wrong as stated. **P-K3 HELD:** the fair rows' control ratios are 0.94, 0.80, 0.84.
+- **P-K2 MISSED.** h(1) on the seed is 0.5209 against 0.5173–0.5212 on the fair rows: inside their spread, not above it
+  by 0.003 (the three fair runs differ among themselves by 0.004 at n = 1, more than binomial, so h(1) is not a sharp
+  number at this length). The excess is in the tail: from n = 4 the seed's hazard rises, 0.504, 0.508, 0.510, while
+  the fair rows stay at 0.500 ± 0.002 through n = 7 (§20.1's "hazard near one half" is exact on fair rows from n = 2).
+  Weighted by the stall ticks the differences sum to 0.0019, the q difference. By jump, h(1 | d): 0.530 (d = 1,
+  65,954), 0.502 (d = 2, 200,799; CL722's second opportunity), 0.199 (d = 7, 433).
+- **P-K4 PROVED by exhaustive enumeration** (inline, every bit that enters: a window L = 3, R = 4, W = 3 and the coins of
+  an extension 4, all 2^7 death states × 2^13 coins): after a jump of 4 or 5 whose new parent is white, the parent at
+  the next tick is black in every case; after a jump of 6, white in every case. On the seed past 200,000: 6,054 of 6,054,
+  1,323 of 1,323, 0 of 324. The fair rows' probe did not record h(1 | d), so their check is by the enumeration alone,
+  which is exhaustive and does not need it. Two more one-line facts of the kind of CL741's, now four.
+
+**The mechanism this points at, by hand.** The hazard at stall length n is the law of the parent's series at a fixed
+wheel, C_(m−1)(t + 1) given a white run of length n so far. On a fair field that series is memoryless from n = 2 (the
+data: 0.500 ± 0.002). On the strip the parent's series has period 32, so its white runs are bounded and their law is
+not geometric; a rising hazard in n is exactly what a bounded run law gives. If that is the cause, it is a property of
+the strip's fixed-wheel series alone, without the edge: measurable by one lookup over all wheels ≥ 200,000 and all
+phases, u(n) = P(the run ends at n | the run has lasted n), and selection-free.
+- **P-K5 (lookup, prediction first):** the strip's own run hazard u(n) rises with n like h(n): u(2) … u(6) within 0.003 of
+  0.500, 0.502, 0.504, 0.508, 0.510, with u(1) = 0.500 ± 0.002 (the one-step law was 0.50009). Lean 55%. Counterfactual:
+  u(n) flat at 0.500 ± 0.002 through n = 6: the rise is the edge's selection on the strip, not the strip's run law, and
+  the mechanism is still open.

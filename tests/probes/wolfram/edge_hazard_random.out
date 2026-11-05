@@ -1,0 +1,15 @@
+(i) the error edge over a random background: standard frame, the damage half-infinite to the right of the centre; wheel = cell + tick
+  seed 41: N=2097152, T=900000: lambda_L 0.2447, wall-frame speed 0.7553; edge decreases 0; P(heal) 0.4111; jump law {1: 0.3595, 2: 0.5331, 3: 0.0549, 4: 0.0254, 5: 0.0213, 6: 0.0037, 7: 0.0012}; mean 1.8371; product 0.7553; error density at offsets 1..4 [0.4611, 0.578, 0.4992, 0.5164]; P-G3 state: C_(m+3)=1 on 5810 of 5847 visits (0.994); hazard after a stay q 0.5100; P(parent black | jump d) {1: 0.509, 2: 0.000, 3: 1.000, 4: 0.384, 5: 0.835, 6: 0.775}; S4's formula 1/(1 + S/q) with S 0.7305: 0.4111; 504 s
+    h(n) by stall length (ticks): 1: 0.5212 (270290), 2: 0.4972 (129422), 3: 0.4994 (65077), 4: 0.5011 (32576), 5: 0.5011 (16252), 6: 0.4990 (8108), 7: 0.4902 (4062), 8: 0.4742 (2071), 9: 0.5106 (1089), 10: 0.5141 (533), 11: 0.5637 (259), 12: 0.4956 (228)
+    control, q by t mod 32 (n >= 2): mean 0.4984, sd over phases 0.0052, binomial 0.0056, ratio 0.94
+  speed over 1 backgrounds: mean 0.7553
+(i) the error edge over a random background: standard frame, the damage half-infinite to the right of the centre; wheel = cell + tick
+  seed 42: N=2097152, T=900000: lambda_L 0.2438, wall-frame speed 0.7562; edge decreases 0; P(heal) 0.4108; jump law {1: 0.3589, 2: 0.5329, 3: 0.0545, 4: 0.0258, 5: 0.0217, 6: 0.0039, 7: 0.0013}; mean 1.8409; product 0.7562; error density at offsets 1..4 [0.4623, 0.5766, 0.4986, 0.5168]; P-G3 state: C_(m+3)=1 on 5863 of 5914 visits (0.991); hazard after a stay q 0.5089; P(parent black | jump d) {1: 0.510, 2: 0.000, 3: 1.000, 4: 0.384, 5: 0.843, 6: 0.793}; S4's formula 1/(1 + S/q) with S 0.7299: 0.4108; 507 s
+    h(n) by stall length (ticks): 1: 0.5173 (269851), 2: 0.4992 (130268), 3: 0.5008 (65242), 4: 0.5017 (32566), 5: 0.5007 (16227), 6: 0.5009 (8102), 7: 0.5017 (4044), 8: 0.5022 (2015), 9: 0.4895 (1003), 10: 0.5234 (512), 11: 0.5246 (244), 12: 0.5421 (214)
+    control, q by t mod 32 (n >= 2): mean 0.5002, sd over phases 0.0044, binomial 0.0055, ratio 0.80
+  speed over 1 backgrounds: mean 0.7562
+(i) the error edge over a random background: standard frame, the damage half-infinite to the right of the centre; wheel = cell + tick
+  seed 43: N=2097152, T=900000: lambda_L 0.2420, wall-frame speed 0.7580; edge decreases 0; P(heal) 0.4113; jump law {1: 0.3584, 2: 0.5331, 3: 0.0545, 4: 0.0258, 5: 0.0217, 6: 0.004, 7: 0.0014}; mean 1.8429; product 0.7580; error density at offsets 1..4 [0.4613, 0.5777, 0.4986, 0.5167]; P-G3 state: C_(m+3)=1 on 5902 of 5958 visits (0.991); hazard after a stay q 0.5101; P(parent black | jump d) {1: 0.510, 2: 0.000, 3: 1.000, 4: 0.383, 5: 0.844, 6: 0.789}; S4's formula 1/(1 + S/q) with S 0.7300: 0.4113; 519 s
+    h(n) by stall length (ticks): 1: 0.5193 (270254), 2: 0.5006 (129914), 3: 0.5017 (64884), 4: 0.4988 (32329), 5: 0.5002 (16202), 6: 0.4948 (8097), 7: 0.5128 (4091), 8: 0.4922 (1993), 9: 0.5030 (1012), 10: 0.4891 (503), 11: 0.4903 (257), 12: 0.4943 (265)
+    control, q by t mod 32 (n >= 2): mean 0.5005, sd over phases 0.0047, binomial 0.0056, ratio 0.84
+  speed over 1 backgrounds: mean 0.7580
