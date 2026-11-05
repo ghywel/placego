@@ -30937,3 +30937,22 @@ My own pull: Proposition 8 whole, with its ticks: the sixteen left sides through
 First the data (the sixteen rows at that width and every white wheel's kind, which `rule30_tm5b.py` already knows as
 depths), then the modules, one per branch of the tree so that none holds more than a few rows of 894,236 bits, the walk in
 blocks as here; a day's block rather than an hour's. In `INSTINCT.md`.
+
+## L1530 — Local: testing the strip below the wall, at the owner's word. Predictions before the runs (2026-11-05 00:54 GMT)
+
+**The owner, in chat:** "Yes, test it".
+
+**The question.** L1529 found that quiet rows share cells below the wall. Is that a real object, a strip like the left sides, or only what the letters force? Are bursts its forks, or chaos leaking through?
+
+**Control first.** The 24 common cells may be nothing more than the letter history. The moving-frame rule makes each column depend on three deeper ones, so a long run of `AAB` constrains the row. So I also enumerate every time-periodic solution of the rule below the wall, for periods 3, 6, 12 and 24. If those solutions are few, the strip is forced, and that is a statement about the rule, not about random rows.
+
+**Predictions.**
+- **P-S1 (55%).** On a quiet stretch each column has least period `3 · 2^m`, with `m` non-decreasing in the offset, through offset 64.
+- **P-S2 (50%).** Aligned by a time shift, most pairs of unrelated quiet rows (over 80%) agree on every column through offset 64.
+- **P-S3 (40%).** First late bursts fall into few shapes: ten classes cover 80%. Burst shapes all different would mean chaos leaking through, not forks.
+- **P-S4 (60%).** The exact periodic solutions below the wall are few: for each of the four periods, at most eight up to a time shift at offset 40.
+
+**Counterfactual.** If columns have other periods, or pairs of rows part near offset 30, the strip is only the letters' shadow and the left-side analogy fails. If periodic solutions are many, universality needs a dynamical reason, not a counting one.
+
+**Record searched:** genealogy §§29, 35, 63; `reports/GPT-RIGHT-WALL-WINDOWS-20261104.md`; the left-side packages. Nothing on a strip below a wall.
+
