@@ -6,14 +6,16 @@ state is read there. The transition matrix is exact by enumeration of the coins 
 the extension lands in a fresh uniform state; its mass is reported). The stationary measure predicts the death rate, the
 jump law, the error densities above the edge and the law of the state, against the empirical values from the seed on
 165,750 wheels (the empirical part re-runs error_process.py's walk and records the state and its transitions every tick).
-Predictions P-E0 .. P-E5 in CL741.
-Usage: python3 edge_model.py ROWSDIR [L,R,W,E ...]   (the rows of tree16_data.py at 165,750 wheels; A0.bin at phase 0)"""
+M_strip: the strip's coins weighted by the strip's own frequency of the whole window, measured on the strip over its
+32 rows and all wheels (no edge data); the error coins stay fair. Predictions P-E0 .. P-E5 in CL741, P-F1, P-F2 in its addendum 1.
+Usage: python3 edge_model.py ROWSDIR [L,R,W,E[,1] ...]   (a fifth field 1 = the strip-law chain)   (the rows of tree16_data.py at 165,750 wheels; A0.bin at phase 0)"""
 import sys, time, collections
 import numpy as np
 
 # ---------- the model ----------
-def model(L, R, W, E, verbose=True):
-    """Returns (pi, death, jump_law, dens, T, overflow, codes) for M(L,R,W) with extension E."""
+def model(L, R, W, E, cfreq=None):
+    """M(L,R,W) with extension E. cfreq: the strip's frequency table of windows of L+3+R+E bits (lowest wheel at bit 0);
+    None = fair coins for the strip. Errors outside the window are fair coins in both cases."""
     assert W <= R + E - 1
     nS = 1 << (L + 1 + R + W)
     # positions p relative to the edge: strip known on -L..R (state), coins on -L-2, -L-1 and R+1..R+E;
@@ -26,7 +28,7 @@ def model(L, R, W, E, verbose=True):
     coins = [((idx >> i) & 1).astype(np.int8) for i in range(ncoin)]
     lo, hi = -L - 2, R + E
     T = np.zeros((nS, nS)); death = np.zeros(nS); jumps = np.zeros((nS, R + E + 2)); pbj = np.zeros((nS, R + E + 2)); overflow = 0.0
-    maxj = E - max(R, W)          # the largest jump whose new state is fully inside the computed window
+    maxj = min(E, R + E - W)      # the largest jump whose new state (strip to m'+R, errors to m'+W) is inside the computed window
     for s in range(nS):
         Cs = [(s >> i) & 1 for i in range(L + 1 + R)]          # C at -L..R
         es = [(s >> (L + 1 + R + i)) & 1 for i in range(W)]    # e at 1..W
@@ -41,6 +43,12 @@ def model(L, R, W, E, verbose=True):
             elif p <= W: e[p] = np.full(N, es[p - 1], dtype=np.int8)
             else: e[p] = coins[k]; k += 1
         assert k == ncoin
+        if cfreq is None: wt = np.full(N, 1.0 / N)
+        else:
+            code = np.zeros(N, dtype=np.int64)
+            for p in range(lo, hi + 1): code |= C[p].astype(np.int64) << (p - lo)
+            wt = cfreq[code].astype(float); z = wt.sum()
+            wt = wt / z if z > 0 else np.full(N, 1.0 / N)       # a window the strip never shows: unreachable, left uniform
         a = {p: C[p] ^ e[p] for p in C}
         C2 = {p: C[p - 2] ^ (C[p - 1] | C[p]) for p in range(lo + 2, hi + 1)}
         a2 = {p: a[p - 2] ^ (a[p - 1] | a[p]) for p in range(lo + 2, hi + 1)}
@@ -52,20 +60,20 @@ def model(L, R, W, E, verbose=True):
         death[s] = d
         for j in range(0, maxj + 1):
             sel = (m2 == j)
-            w = sel.mean()
+            w = wt[sel].sum()
             if w == 0: continue
             jumps[s, j] += w
-            if j >= 1: pbj[s, j] += (C2[j - 1][sel] == 1).mean() * w
+            if j >= 1: pbj[s, j] += wt[sel & (C2[j - 1] == 1)].sum()
             # new state at m' = j: C at j-L..j+R, e at j+1..j+W (all inside lo+2..hi)
             code = np.zeros(N, dtype=np.int64)
             for i in range(L + 1 + R): code |= C2[j - L + i].astype(np.int64) << i
             for i in range(W): code |= e2[j + 1 + i].astype(np.int64) << (L + 1 + R + i)
-            T[s] += np.bincount(code[sel], minlength=nS) / N
+            T[s] += np.bincount(code[sel], weights=wt[sel], minlength=nS)
         sel = m2 > maxj
         if sel.any():
-            w = sel.mean(); overflow += w / nS; jumps[s, maxj + 1] += w
+            w = wt[sel].sum(); overflow += w / nS; jumps[s, maxj + 1] += w
             T[s] += w / nS                    # a fresh uniform state
-    assert np.allclose(T.sum(1), 1)
+    assert np.allclose(T.sum(1), 1), T.sum(1)
     # stationary measure by power iteration
     pi = np.full(nS, 1 / nS)
     for _ in range(20000):
@@ -79,6 +87,16 @@ def model(L, R, W, E, verbose=True):
     return pi, drate, jl, dens, T, overflow, pbl, maxj
 
 def fmt_jl(jl, upto=9): return {j: round(float(jl[j]), 4) for j in range(1, min(upto, len(jl) - 1) + 1)}
+
+def strip_windows(cyc, K, width):
+    """Frequency of every width-bit window of the strip over its P rows and all wheels (lowest wheel at bit 0)."""
+    freq = np.zeros(1 << width, dtype=np.int64)
+    for row in cyc:
+        b = np.unpackbits(np.frombuffer(row.to_bytes((K + 7) // 8, 'little'), dtype=np.uint8), bitorder='little')[:K].astype(np.int64)
+        n = K - width + 1; code = np.zeros(n, dtype=np.int64)
+        for i in range(width): code |= b[i:i + n] << i
+        freq += np.bincount(code, minlength=1 << width)
+    return freq
 
 # ---------- the data ----------
 K = 165750; MASK = (1 << K) - 1; P = 32
@@ -145,21 +163,37 @@ for j in range(2, 200002, 97):
     nb = sum(ser); tot_w += (P - nb) / P
 print(f"the strip: black density over the wheels {sd:.4f}; white density in the fixed-wheel series (sample) {tot_w/len(range(2,200002,97)):.4f}")
 
+# the strip's own window law (P-F1): P(C_{j+5} = 1 | C_j..C_{j+4}) over all its positions, against the edge-conditional law
+f6 = strip_windows(cyc, K, 6).astype(float)
+p6 = {w: f6[w | (1 << 5)] / (f6[w] + f6[w | (1 << 5)]) for w in range(32) if f6[w] + f6[w | (1 << 5)] > 0}
+tot6 = f6.sum(); mad6 = sum(abs(p6[w] - 0.5) * (f6[w] + f6[w | 32]) for w in p6) / tot6
+ec = collections.defaultdict(lambda: np.zeros(2, dtype=np.int64))
+for s_, v in cond.items(): ec[s_ & 31] += (v[0], v[2])
+print(f"P-F1: the strip's law P(C_(j+5)=1 | 5-window) over all positions: mean |p - 1/2| = {mad6:.4f}; windows (lowest wheel first) with p < 0.3 or > 0.7: "
+      + ", ".join(f"{''.join(str((w >> i) & 1) for i in range(5))}: {p6[w]:.3f}" for w in sorted(p6) if p6[w] < 0.3 or p6[w] > 0.7))
+print("  the same at the edge (C_(m+3) given C[m-2..m+2], all error states): "
+      + ", ".join(f"{''.join(str((w >> i) & 1) for i in range(5))}: {ec[w][1]/ec[w][0]:.3f}" for w in sorted(ec) if w in p6 and (p6[w] < 0.3 or p6[w] > 0.7)))
+print(f"  the strip's windows: {int((f6 > 0).sum())} of 64 six-windows occur; of 15-windows {int((strip_windows(cyc, K, 15) > 0).sum())} of 32768")
+
 # ---------- the models ----------
 results = {}
-MODELS = [tuple(int(v) for v in a.split(',')) for a in sys.argv[2:]] or [(2, 2, 2, 8), (2, 2, 1, 8), (2, 2, 3, 8), (3, 3, 2, 8), (2, 2, 4, 8), (2, 2, 2, 10)]
-for (l, r, w, E) in MODELS:
+MODELS = [tuple(int(v) for v in a.split(',')) for a in sys.argv[2:]] or [(2, 2, 2, 8), (2, 2, 1, 8), (2, 2, 3, 8), (3, 3, 2, 8), (2, 2, 4, 8), (2, 2, 2, 10), (2, 2, 2, 8, 1), (2, 2, 3, 8, 1), (2, 2, 2, 10, 1)]
+for spec in MODELS:
+    l, r, w, E = spec[:4]; use_strip = len(spec) > 4 and spec[4] == 1
     t1 = time.time()
-    pi, drate, jl, mdens, T, overflow, pbl, maxj = model(l, r, w, E)
+    cf = strip_windows(cyc, K, l + 3 + r + E) if use_strip else None
+    pi, drate, jl, mdens, T, overflow, pbl, maxj = model(l, r, w, E, cf)
     mean = float(sum(j * jl[j] for j in range(len(jl))))
-    results[(l, r, w)] = (pi, drate, jl, mdens, T)
-    print(f"M({l},{r},{w}) E={E}: {1 << (l+1+r+w)} states, {time.time()-t1:.0f} s; overflow mass {overflow:.2e}; "
+    results[(l, r, w, use_strip)] = (pi, drate, jl, mdens, T)
+    print(f"M{'_strip' if use_strip else ''}({l},{r},{w}) E={E}: {1 << (l+1+r+w)} states, {time.time()-t1:.0f} s; overflow mass {overflow:.2e}; "
           f"death rate {drate:.4f}; jump law {fmt_jl(jl)}; mean {mean:.4f}; speed {drate*mean:.4f}; "
           f"error density at offsets 1..{w}: {[round(v, 4) for v in mdens]}; jumps past {maxj} lumped at {maxj+1}; "
           f"P(parent black | jump d): {{{', '.join(f'{d}: {pbl[d]:.3f}' for d in range(1, min(6, maxj) + 1))}}}")
-pi, drate, jl, mdens, T = results[(2, 2, 2)] if (2, 2, 2) in results else results[MODELS[0][:3]]
-tv = 0.5 * np.abs(pi - emp).sum()
-print(f"P-E4a: total variation between M(2,2,2)'s stationary law and the empirical law of the 7-bit state: {tv:.4f}")
+for key in [(2, 2, 2, False), (2, 2, 2, True)]:
+    if key not in results: continue
+    pi = results[key][0]
+    print(f"P-E4a/P-F2: total variation between M{'_strip' if key[3] else ''}(2,2,2)'s stationary law and the empirical law of the 7-bit state: {0.5 * np.abs(pi - emp).sum():.4f}")
+pi, drate, jl, mdens, T = results[(2, 2, 2, False)] if (2, 2, 2, False) in results else results[MODELS[0][:3] + (len(MODELS[0]) > 4,)]
 # the Markov test: per-state transition rows, model vs empirical, for well-visited states
 rows = []
 for s in range(nS):

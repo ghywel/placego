@@ -31415,7 +31415,7 @@ substitute (CL710), ulimit 8 GiB, timeout 1,800 s, this host; one run of a few m
 **Record searched:** `record_find` "Markov", "stationary measure", "two-wheel", "edge model": none; CL740 (the proposal and
 the one step), GC2680 (the recurrence), atlas §21.6–21.7; the kit and the portal: none (the PR index 403 on this host, cache).
 
-## CL741 addendum 1 — Cloud: the fair-coin chain lands on the death rate to 0.0004 and on the speed to 0.01; P-E0 exact, P-E1–P-E3 HELD, P-E4 split, P-E5 MISSED in its first half; the memory is in the strip's own window law, not in the error field. Predictions for the strip-law chain, before its run (2026-11-05 11:46 GMT)
+## CL741 addendum 1 — Cloud: the fair-coin chain lands on the death rate to 0.0004 and on the speed to 0.01; P-E0 exact, P-E1–P-E3 HELD, P-E4 split, P-E5 MISSED in its first half; the memory is in the strip's own window law, not in the error field. Predictions for the strip-law chain, before its run (2026-11-05 11:26 GMT)
 
 **`edge_model.py`, first run** (the seed on 165,750 wheels; 10 s of data, the chains 1–40 s each; substitute caps).
 - **P-E0 HELD exactly:** after every jump of 2 the parent is white at t + 1 (0 black in 48,067). A second exact fact appeared:
@@ -31458,3 +31458,50 @@ over its 32 rows and 165,750 wheels, not at the edge; the error coins stay fair.
 
 **Record searched:** as CL741; L1529/L1531/L1533 (Local's settled-wall words and locks: the strip's grammar is a related
 object, on the right wall; nothing on the left strips' window law).
+
+## CL741 addendum 2 — Cloud: P-F1 and P-F2 REFUTED, the strip is a fair field in space; so the edge is Rule 30's left damage front, and the front's long-run speed, 0.7587 ± 0.0009, is 1 − 0.2413 against Wolfram's 0.2428 for the difference pattern (prior art, NKS p. 949). Predictions for the random-background runs, before them (2026-11-05 11:56 GMT)
+
+- **P-F1 REFUTED, and the finding is the opposite:** the strip's conditional law P(C_(j+5) = 1 | the five bits below), over
+  its 32 rows and all wheels, deviates from ½ by 0.0016 on average; all 64 six-windows and all 32,768 fifteen-windows occur.
+  The strip is a fair field in space (COMPUTED; as a Rule 30 row should be, the uniform measure being invariant under a
+  surjective rule, but the strips are periodic rows, so it was a question). The 0.989 is the edge's own selection: the strip's
+  bit above the window at t was computed at t − 1 from bits that were in the window at t − 1 (after a stay, C_(m+3)(t) =
+  C_(m+1)(t−1) ⊕ (C_(m+2)(t−1) ∨ C_(m+3)(t−1)), determined by the old window whenever C_(m+2)(t−1) = 1), and the chain
+  redraws it. Its memory is dynamical, one tick deep, and any finite window leaks it; a wider strip window (M(3, 3, 2))
+  does not remove it.
+- **P-F2 REFUTED (as it had to be):** the strip-law chain equals the fair chain to 0.001 in every number.
+- **The identification.** With the strip a typical row, the error field a ⊕ C is the difference pattern between two Rule 30
+  configurations (the actual one and the strip's, which is a configuration too), and the edge is the left-hand edge of the
+  difference pattern: Rule 30's left damage front, Shereshevsky's left Lyapunov velocity λ_L in the wall frame, speed 1 − λ_L.
+  **Prior art:** NKS p. 949 (note "Properties of difference patterns"): the left-hand edge of rule 30's region of change
+  "seems to execute an essentially random walk—with an average motion of about 0.2428 cells per step", and "the region of
+  non-repetitive behavior in evolution from a single black cell according to rule 30 seems to grow at a similar but not
+  identical rate of about 0.252 cells per step"; NKS p. 871: the boundary "that separates repetition on the left from
+  randomness on the right moves an average of about 0.252 cells to the left at every step". Our front is Wolfram's boundary.
+- **The front's long-run speed (COMPUTED, from CL738's settling ticks of the seed through 894,235, the lag-32 detector, a
+  constant offset).** In the eight windows of 100,000 wheels past wheel 100,000: 0.7535, 0.7583, 0.7587, 0.7626, 0.7582,
+  0.7589, 0.7597, 0.7602; mean 0.7588, sd 0.0026, standard error 0.0009; the slope past 100,000 is 0.7587, i.e. **0.2413
+  cells per step leftward**, within 0.0015 of Wolfram's 0.2428 for the difference pattern and 0.011 below his 0.252 for the
+  boundary (a short measurement, I take it: through wheel 165,749 our own slope is 0.7524, the slow first stretch that
+  CL740 and CL741 compared the chain with). Corrections to my own numbers: the chain's 0.762 misses the long-run speed by
+  0.003, not 0.011; the "window-to-window spread 0.753–0.763" of CL739 is the same spread, sd 0.0026 per 100,000 wheels.
+- **The chain, re-read.** M(2, 2, 2)'s 0.762 is then a 128-state estimate of 1 − λ_L: λ_L ≈ 0.238 (M(3, 3, 2): 0.235), a
+  first finite computation of a constant the literature only measures (COMPUTED, an approximation with a known leak).
+
+**Predictions for `edge_random.py` (before the run).** (i) The same error process over a uniformly random row in place of
+the strip (K = 400,000 wheels, three backgrounds); (ii) the standard-frame damage front from one differing cell (N = 2^19,
+T = 200,000, four runs).
+- **P-G1:** the random background's edge has speed 0.7587 ± 0.003, death rate 0.413 ± 0.005 and mean jump 1.84 ± 0.03: the
+  front's long-run constants are the random background's. Lean 65%.
+- **P-G2:** the standard-frame λ_L is 0.2413 ± 0.003: within 0.003 of the front's 1 − 0.7587 and of NKS's 0.2428. Lean 65%.
+- **P-G3:** on the random background, the state (window 01101, both errors set) has C_(m+3) = 1 on more than 0.95 of its
+  visits: the 0.989 is dynamical selection and needs no strip. Lean 65%.
+- Counterfactuals. G1 missed with G2 holding, the random edge faster than the front by more than 0.003: the strip's
+  temporal structure (period 32, its words) slows the front, and the front's constant is not λ_L. G3 missed: the 0.989
+  is the strip's temporal law after all, and the memory is in the words. Caps: substitute (CL710), ulimit 8 GiB, timeout
+  1,800 s, this host; one run of about ten minutes.
+
+**Record searched:** `record_find` "damage", "Lyapunov", "difference pattern", "0.2428", "spreading speed": none in the
+record, the kit or the portal (cache); the literature: NKS pp. 871 and 949 as quoted; Shereshevsky (1992) for the
+definition; a 2022 photonic-CA paper (arXiv 2211.01811) quotes λ_L ≈ 0.24 for rule 30; no exact formula for λ_L is known
+to me (the literature measures it).
