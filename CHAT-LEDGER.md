@@ -31459,7 +31459,7 @@ over its 32 rows and 165,750 wheels, not at the edge; the error coins stay fair.
 **Record searched:** as CL741; L1529/L1531/L1533 (Local's settled-wall words and locks: the strip's grammar is a related
 object, on the right wall; nothing on the left strips' window law).
 
-## CL741 addendum 2 — Cloud: P-F1 and P-F2 REFUTED, the strip is a fair field in space; so the edge is Rule 30's left damage front, and the front's long-run speed, 0.7587 ± 0.0009, is 1 − 0.2413 against Wolfram's 0.2428 for the difference pattern (prior art, NKS p. 949). Predictions for the random-background runs, before them (2026-11-05 11:56 GMT)
+## CL741 addendum 2 — Cloud: P-F1 and P-F2 REFUTED, the strip is a fair field in space; so the edge is Rule 30's left damage front, and the front's long-run speed, 0.7587 ± 0.0009, is 1 − 0.2413 against Wolfram's 0.2428 for the difference pattern (prior art, NKS p. 949). Predictions for the random-background runs, before them (2026-11-05 11:35 GMT)
 
 - **P-F1 REFUTED, and the finding is the opposite:** the strip's conditional law P(C_(j+5) = 1 | the five bits below), over
   its 32 rows and all wheels, deviates from ½ by 0.0016 on average; all 64 six-windows and all 32,768 fifteen-windows occur.

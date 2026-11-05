@@ -5520,3 +5520,40 @@ his column 53,208 and realizes the split he expected at 53,209. Noticed in GPT's
 
 **Two-pairs block (L1522, 4 November 2026).** Known, reproved here: the shift `S` is the depth shift of Lowry's `decorate` (PR61 archive) and of §26.1's "what happens after a defect does not depend on how long the rain lasted". Nearest kit work on backward steps: `Rule30ZeroBoundaryStripeFront`, `Rule30ZeroBoundaryStripeStructure`, `Rule30ZeroBoundaryStripePrimitiveRoots` at kit commit 4b0a1395 (a window behind a stripe with a white tail; backward operators, period-3 NOR wave). Rain tails, the top-wall rule and the robust front were not found there, by keyword or on reading those headers. No literature search for them yet, so no novelty claim.
 
+
+## CL740–CL741 (Cloud, 5 November 2026): the error edge at the strips — known in the record as the damage front, remeasured on the period-32 stage; Wolfram's two rates added
+
+CL740 measured "the error process at the edge" of the seed against its strip on 165,750 wheels and stated the identity
+speed = death rate × mean jump as PROVED by one line, with the two factors 0.4107 and 1.832; CL741 built a chain for it.
+Both entries were written without citing the record's own earlier work, which my `record_find` searches missed by
+vocabulary ("edge", "death", "jump law" against the record's "heal", "stall", "damage", "news"). What was already known:
+- **The identity** v = 1 − P(heal)·E[jump | heal] is §8.66 (6 October 2026, "PROVED as an identity"; GPT's scope
+  correction GC295), with the random-background factors P(heal) = 0.410 and E[jump] = 1.84 and the selection-effect
+  reading ("the front sits preferentially above white cells because it heals at black ones"), on structured backgrounds
+  too (atlas §8, the M2 table). CL740's "death rate" is P(heal) and its "jump at a death" is the heal's jump.
+- **The two one-step facts** (the edge never retreats; it dies exactly when its nearer parent is black) are §8.66's
+  diagonal barrier and heal condition, and §20's restatement (ii); the forced stall after a two-wheel jump is CL691/GC521
+  and the heal at once after a three-wheel jump is CL722 item 5 (all 1,083 three-wheel jumps). CL741's P-E0 and its
+  "second exact fact" are these, re-proved by the same one line each.
+- **The jump as a local function** of the damaged cells at the front is §9's P-K4 reading; the one-step memory of the
+  heals (P(heal | previous heal) = 0.265 against 0.509) and the two-state chain fitted to it are §9's P-K3.
+- **The band edge's statistics** P(heal) 0.4096–0.4099, E[jump | heal] 1.817–1.819, error densities 0.458 and 0.581 at
+  the two wheels above the edge, mean step 0.7447–0.7455, universal across twenty random left-finite rows, are §20.2
+  (CL720, on the period-16 stage to 32,768 wheels). CL740's 0.4107, 1.832, 0.461, 0.579 and 0.7525 are the same
+  quantities on the period-32 stage to 165,750 wheels: known, remeasured; the small drift between the stages is new.
+- **The speed on the seed's boundary**, 0.2437 and 0.2520 cells per step leftward (§8.74, to 2^16), and 0.246 on a random
+  background (§8.30, §8.66), and the literature's **0.2428 ± 0.0003** (Grassberger, cited in Wolfram, *Random sequence
+  generation by cellular automata*, 1986; this file's quantum-gates grounding entry). CL741's long-run 0.2413 ± 0.0009 over
+  894,235 wheels (atlas §21.8) is the same quantity, longer.
+- **Added literature:** NKS p. 949, note "Properties of difference patterns": rule 30's left-hand edge of the region of
+  change "seems to execute an essentially random walk—with an average motion of about 0.2428 cells per step", and "the
+  region of non-repetitive behavior in evolution from a single black cell according to rule 30 seems to grow at a similar
+  but not identical rate of about 0.252 cells per step"; NKS p. 871, note "Rule 30": the boundary "that separates
+  repetition on the left from randomness on the right moves an average of about 0.252 cells to the left at every step".
+  Wolfram's two rates are §8.66's and §8.74's objects; whether they are one number is the question §21.8 leaves open.
+
+New in CL741 and not in the record before it: the parameter-free finite chain M(L, R, W) and its stationary measure
+(§8.66 asked for "a derivation of that conditional density"; atlas gap M2 asked whether 0.246 "is a property of the rule
+(a formula) or of the measure (a number)"); the strip's spatial uniformity; the long-run speed over 894,235 wheels; the
+random-background rerun of the chain's predictions. Status of the known parts: known in the record, remeasured here.
+Filed by Cloud in CL741 addendum 3.

@@ -1,0 +1,43 @@
+data: 220274 ticks with the edge at a wheel >= 2 (settling at 220275); 11 s
+empirical death rate 0.4107; jump law {1: 0.3628, 2: 0.5313, 3: 0.054, 4: 0.025, 5: 0.0208, 6: 0.0038, 7: 0.0013, 8: 0.0007, 9: 0.0002}; mean 1.8322; product 0.7525
+empirical error density at offsets 1..8: [0.4612, 0.5794, 0.5006, 0.5149, 0.5163, 0.5155, 0.5073, 0.5021]
+P-E0: parent black at t+1 after a jump of 2: 0 of 48067 (PROVED: must be 0)
+P-E4b: P(parent black at t+1 | the edge stayed) = 0.5086 on 129808 stays
+parent black at t+1 after a jump of d: 1: 0.509 (32817), 2: 0.000 (48067), 3: 1.000 (4883), 4: 0.387 (2263), 5: 0.855 (1880), 6: 0.778 (342)
+where the fair coins fail: the empirical density of e_{m+3}, C_{m+3}, C_{m-3} given the state (the model says 1/2 for each);
+  e_{m+3}: overall 0.5006, mean |density - 1/2| over the ticks 0.0322; lowest 0.419 at C[m-2..m+2]=00111 e[m+1,m+2]=10 (1502), highest 0.626 at C[m-2..m+2]=00001 e[m+1,m+2]=00 (1787)
+  C_{m+3}: overall 0.5111, mean |density - 1/2| over the ticks 0.1097; lowest 0.259 at C[m-2..m+2]=01111 e[m+1,m+2]=11 (1516), highest 0.989 at C[m-2..m+2]=01101 e[m+1,m+2]=11 (1421)
+  C_{m-3}: overall 0.4994, mean |density - 1/2| over the ticks 0.0129; lowest 0.440 at C[m-2..m+2]=10011 e[m+1,m+2]=11 (1281), highest 0.551 at C[m-2..m+2]=00001 e[m+1,m+2]=10 (1417)
+  e_{m+3} density given (e_{m+1}, e_{m+2}): 00: 0.5607 (40271), 10: 0.4714 (52371), 01: 0.4873 (78411), 11: 0.5036 (49220)
+the strip: black density over the wheels 0.4999; white density in the fixed-wheel series (sample) 0.5873
+P-F1: the strip's law P(C_(j+5)=1 | 5-window) over all positions: mean |p - 1/2| = 0.0016; windows (lowest wheel first) with p < 0.3 or > 0.7: 
+  the same at the edge (C_(m+3) given C[m-2..m+2], all error states): 
+  the strip's windows: 64 of 64 six-windows occur; of 15-windows 32768 of 32768
+M(2,2,2) E=8: 128 states, 2 s; overflow mass 4.58e-04; death rate 0.4103; jump law {1: 0.361, 2: 0.5219, 3: 0.0586, 4: 0.0293, 5: 0.0199, 6: 0.0052, 7: 0.0022, 8: 0.0012, 9: 0.0008}; mean 1.8603; speed 0.7633; error density at offsets 1..2: [0.4517, 0.5673]; jumps past 8 lumped at 9; P(parent black | jump d): {1: 0.523, 2: 0.000, 3: 1.000, 4: 0.356, 5: 0.841, 6: 0.849}
+M(2,2,1) E=8: 64 states, 2 s; overflow mass 4.58e-04; death rate 0.4066; jump law {1: 0.3615, 2: 0.5334, 3: 0.0526, 4: 0.0263, 5: 0.0169, 6: 0.0054, 7: 0.0022, 8: 0.0011, 9: 0.0007}; mean 1.8385; speed 0.7475; error density at offsets 1..1: [0.447]; jumps past 8 lumped at 9; P(parent black | jump d): {1: 0.528, 2: 0.000, 3: 1.000, 4: 0.288, 5: 0.754, 6: 0.806}
+M(2,2,3) E=8: 256 states, 1 s; overflow mass 1.10e-03; death rate 0.4102; jump law {1: 0.3608, 2: 0.5222, 3: 0.0585, 4: 0.0293, 5: 0.0198, 6: 0.0052, 7: 0.0022, 8: 0.002, 9: 0.0}; mean 1.8596; speed 0.7627; error density at offsets 1..3: [0.4518, 0.5686, 0.4858]; jumps past 7 lumped at 8; P(parent black | jump d): {1: 0.523, 2: 0.000, 3: 1.000, 4: 0.357, 5: 0.841, 6: 0.849}
+M(2,3,2) E=8: 256 states, 7 s; overflow mass 4.58e-04; death rate 0.4086; jump law {1: 0.3586, 2: 0.5293, 3: 0.0567, 4: 0.0277, 5: 0.0189, 6: 0.0048, 7: 0.0021, 8: 0.0011, 9: 0.0007}; mean 1.8519; speed 0.7567; error density at offsets 1..2: [0.4549, 0.5738]; jumps past 8 lumped at 9; P(parent black | jump d): {1: 0.520, 2: 0.000, 3: 1.000, 4: 0.392, 5: 0.850, 6: 0.850}
+M(3,3,2) E=8: 512 states, 15 s; overflow mass 4.58e-04; death rate 0.4134; jump law {1: 0.3593, 2: 0.5263, 3: 0.0578, 4: 0.0283, 5: 0.0193, 6: 0.005, 7: 0.0021, 8: 0.0011, 9: 0.0008}; mean 1.8555; speed 0.7671; error density at offsets 1..2: [0.4574, 0.5716]; jumps past 8 lumped at 9; P(parent black | jump d): {1: 0.524, 2: 0.000, 3: 1.000, 4: 0.389, 5: 0.849, 6: 0.849}
+M(2,4,2) E=7: 512 states, 6 s; overflow mass 1.10e-03; death rate 0.4078; jump law {1: 0.3584, 2: 0.5301, 3: 0.0562, 4: 0.027, 5: 0.0202, 6: 0.0045, 7: 0.0019, 8: 0.0017, 9: 0.0}; mean 1.8501; speed 0.7545; error density at offsets 1..2: [0.4537, 0.5732]; jumps past 7 lumped at 8; P(parent black | jump d): {1: 0.516, 2: 0.000, 3: 1.000, 4: 0.378, 5: 0.851, 6: 0.819}
+M(2,2,4) E=8: 512 states, 1 s; overflow mass 2.44e-03; death rate 0.4099; jump law {1: 0.3612, 2: 0.5218, 3: 0.0582, 4: 0.0305, 5: 0.0194, 6: 0.0048, 7: 0.004, 8: 0.0, 9: 0.0}; mean 1.8558; speed 0.7607; error density at offsets 1..4: [0.4524, 0.5671, 0.4918, 0.5168]; jumps past 6 lumped at 7; P(parent black | jump d): {1: 0.523, 2: 0.000, 3: 1.000, 4: 0.344, 5: 0.851, 6: 0.833}
+M(2,2,2) E=10: 128 states, 47 s; overflow mass 8.20e-05; death rate 0.4103; jump law {1: 0.3611, 2: 0.5218, 3: 0.0586, 4: 0.0293, 5: 0.0199, 6: 0.0052, 7: 0.0022, 8: 0.0012, 9: 0.0005}; mean 1.8607; speed 0.7635; error density at offsets 1..2: [0.4518, 0.5673]; jumps past 10 lumped at 11; P(parent black | jump d): {1: 0.523, 2: 0.000, 3: 1.000, 4: 0.356, 5: 0.841, 6: 0.849}
+M_strip(2,2,2) E=10: 128 states, 69 s; overflow mass 8.22e-05; death rate 0.4101; jump law {1: 0.362, 2: 0.5215, 3: 0.0583, 4: 0.0291, 5: 0.0197, 6: 0.0052, 7: 0.0022, 8: 0.0012, 9: 0.0005}; mean 1.8586; speed 0.7621; error density at offsets 1..2: [0.4516, 0.5675]; jumps past 10 lumped at 11; P(parent black | jump d): {1: 0.523, 2: 0.000, 3: 1.000, 4: 0.358, 5: 0.840, 6: 0.849}
+P-E4a/P-F2: total variation between M(2,2,2)'s stationary law and the empirical law of the 7-bit state: 0.0523
+P-E4a/P-F2: total variation between M_strip(2,2,2)'s stationary law and the empirical law of the 7-bit state: 0.0519
+Markov test on 94 states with >= 1000 visits: median row TV 0.0227, worst five:
+  TV 0.2842 C[m-2..m+2]=01010 e[m+1,m+2]=10 visits 1692; empirical weight 0.0077, model 0.0086
+  TV 0.2786 C[m-2..m+2]=01100 e[m+1,m+2]=10 visits 1741; empirical weight 0.0079, model 0.0086
+  TV 0.2633 C[m-2..m+2]=11010 e[m+1,m+2]=10 visits 1754; empirical weight 0.0080, model 0.0086
+  TV 0.2525 C[m-2..m+2]=11100 e[m+1,m+2]=10 visits 1773; empirical weight 0.0080, model 0.0086
+  TV 0.2450 C[m-2..m+2]=01010 e[m+1,m+2]=11 visits 1395; empirical weight 0.0063, model 0.0056
+states by weight (model vs empirical), the ten heaviest:
+  C[m-2..m+2]=10010 e[m+1,m+2]=01: model 0.0170, empirical 0.0180
+  C[m-2..m+2]=10111 e[m+1,m+2]=01: model 0.0170, empirical 0.0181
+  C[m-2..m+2]=00010 e[m+1,m+2]=01: model 0.0168, empirical 0.0182
+  C[m-2..m+2]=00111 e[m+1,m+2]=01: model 0.0168, empirical 0.0175
+  C[m-2..m+2]=01111 e[m+1,m+2]=01: model 0.0167, empirical 0.0169
+  C[m-2..m+2]=01010 e[m+1,m+2]=01: model 0.0167, empirical 0.0166
+  C[m-2..m+2]=11010 e[m+1,m+2]=01: model 0.0158, empirical 0.0165
+  C[m-2..m+2]=11111 e[m+1,m+2]=01: model 0.0158, empirical 0.0167
+  C[m-2..m+2]=01011 e[m+1,m+2]=01: model 0.0156, empirical 0.0169
+  C[m-2..m+2]=01110 e[m+1,m+2]=01: model 0.0156, empirical 0.0167

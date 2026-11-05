@@ -1004,3 +1004,41 @@ condition on the strip's bits at the two wheels above the edge and the actual bi
 is 0.461 at offset 1, 0.579 at 2, and within 0.003 of one half from offset 8: the structure lives two wheels wide. CL739's
 0.014 cell is a mix of patterns, not a local rule. A two-wheel model of the edge, predicting the jump law from its
 stationary state, is the proposed law and is not built.
+
+*Prior art (CL741 addendum 3):* §21.7 is §8.66's healing identity v = 1 − P(heal)·E[jump | heal] (6 October) with its two
+factors, §8.66/CL691/GC521/CL722's one-step facts, and §20.2's band-edge statistics, remeasured on the period-32 stage;
+known in the record, see PRIOR-ART (CL740–CL741). The 0.7525 is the first stretch's speed; the long run is in §21.8.
+
+**21.8 The finite chain of the edge, the strip as a fair field, and the damage front's constant (CL741 and its
+addenda; the chain COMPUTED, its two exact facts PROVED by one line each and known, the measurements COMPUTED).**
+*The chain M(L, R, W):* at the edge m the state is the strip's bits at m − L … m + R and the errors at m + 1 … m + W;
+every other bit the wall-frame step needs is a fair coin; the new edge is the lowest erroneous wheel at t + 1 and the
+state is read there. The transition matrix is exact by enumeration (an extension of E wheels; the mass of jumps past it,
+below 10⁻⁴ at E = 10, lands in a fresh uniform state). No parameter enters. M(2, 2, 2), 128 states, gives P(heal) =
+0.4103 (the seed to 165,749: 0.4107), the jump law 1: 0.361, 2: 0.522, 3: 0.059, 4: 0.029, 5: 0.020 (0.363, 0.531, 0.054,
+0.025, 0.021), the mean jump 1.860 (1.832), the error densities 0.452 and 0.567 at offsets 1 and 2 (0.461, 0.579), the
+parent black after a jump of 1, 4, 5, 6 on 0.52, 0.36, 0.84, 0.85 (0.51, 0.39, 0.86, 0.78) and a state law 0.052 from the
+empirical one in total variation; speed 0.763. The one-wheel model M(2, 2, 1) is nearly as good (0.407, 0.533, 0.747),
+so the width does not sharpen it. The two facts the chain contains exactly: after a jump of 2 the parent is white at
+t + 1 (0 black in 48,067; CL691/GC521's forced stall), after a jump of 3 it is black (4,883 of 4,883; CL722's heal at
+once), each one line from the step. Across its widths the chain's speed is 0.747 (W = 1), 0.763 (2, 2, 2), 0.757
+(2, 3, 2), 0.755 (2, 4, 2), 0.767 (3, 3, 2): it does not converge cleanly, and the diagnostics say why.
+*Where the coins fail:* given the seven-bit state, the error at offset 3 has mean |density − ½| = 0.032, the strip's bit
+two below the window 0.013, the strip's bit one above the window **0.110**, with 0.989 in one state (window 01101, both
+errors set). The strip's own spatial law is uniform (its five-bit conditional law deviates from ½ by 0.0016 on average;
+all 32,768 fifteen-windows occur), so the bias is dynamical selection one tick deep: the bit above the window at t was
+computed at t − 1 from bits then inside the window, and the chain redraws it. Weighting the coins by the strip's own
+window law changes nothing (P-F1, P-F2 REFUTED). The exact chain is a transfer matrix along the wheel axis, not built.
+*The constant:* with the strip a fair field in space, the error field is the difference pattern between two Rule 30
+configurations and the edge is the left damage front, §8.66's object and Grassberger's/Wolfram's 0.2428 ± 0.0003 (NKS
+p. 949: "an essentially random walk—with an average motion of about 0.2428 cells per step"; p. 871: the boundary between
+repetition and randomness "moves an average of about 0.252 cells to the left at every step", "similar but not
+identical"). The seed's front over 894,235 wheels (CL738's settling ticks, the lag-32 detector): the eight 100,000-wheel
+windows past 100,000 have speeds 0.7535, 0.7583, 0.7587, 0.7626, 0.7582, 0.7589, 0.7597, 0.7602 (mean 0.7588, sd 0.0026,
+s.e. 0.0009), i.e. **0.2413 cells per step leftward** on the long run against 0.2476 through 165,749 and §20.1's 0.2526 to
+65,536: the front's speed rises with depth (the period-16 stage, the period-32 stage, the long run), the drift CL739
+saw. The standard-frame damage front from one differing cell (four runs, N = 2^19, T = 200,000): λ_L = 0.2422, 0.2445,
+0.2462, 0.2444, mean 0.2443, sd 0.0016, within 0.003 of the front's 0.2413 and 0.0015 of 0.2428. Whether Wolfram's two
+rates are one number is not settled here: the front's windows drift upward and 0.2413 ± 0.0009 sits 1.5 s.e. below
+0.2428.
+

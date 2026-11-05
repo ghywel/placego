@@ -5,12 +5,15 @@ the parent's bit, the jump at a death, the error density at offsets 1..4, and th
 state (window C[m-2..m+2] = 01101, lowest wheel first, both errors set), whose density was 0.989 on the actual strip.
 (ii) The standard frame: two random rows of N cells differing in one cell, the leftmost differing cell after T steps,
 lambda_L = its mean leftward motion per step (NKS p. 949: about 0.2428). Predictions P-G1 .. P-G3 in CL741 addendum 2.
-Usage: python3 edge_random.py [K] [NSEEDS] [N] [T]   defaults 400000 3 524288 200000"""
+Usage: python3 edge_random.py [K] [NSEEDS] [N] [T] [NRUNS_ii]   defaults 400000 3 524288 200000 NSEEDS+1
+(run here as K = 300,000 with three backgrounds, and part (ii) separately with four runs)"""
 import sys, time, collections, random
 K = int(sys.argv[1]) if len(sys.argv) > 1 else 400000
 NS = int(sys.argv[2]) if len(sys.argv) > 2 else 3
 N = int(sys.argv[3]) if len(sys.argv) > 3 else 1 << 19
 T = int(sys.argv[4]) if len(sys.argv) > 4 else 200000
+NL = int(sys.argv[5]) if len(sys.argv) > 5 else NS + 1     # runs of part (ii)
+import functools; print = functools.partial(print, flush=True)
 def lowbit(x, K): return (x & -x).bit_length() - 1 if x else K
 print("(i) the error edge over a random background, wall frame")
 speeds = []
@@ -42,14 +45,14 @@ for seed in range(1, NS + 1):
           f"{[round(dens[d]/nwin, 4) for d in range(1, 5)]}; P-G3 state: C_(m+3)=1 on {special[1]} of {sum(special)} visits "
           f"({special[1]/max(1,sum(special)):.3f}); {time.time()-t0:.0f} s")
 import statistics
-print(f"  speed over {NS} backgrounds: mean {statistics.mean(speeds):.4f}" + (f", sd {statistics.stdev(speeds):.4f}" if NS > 1 else ""))
+if speeds: print(f"  speed over {NS} backgrounds: mean {statistics.mean(speeds):.4f}" + (f", sd {statistics.stdev(speeds):.4f}" if NS > 1 else ""))
 print("(ii) the left damage front, standard frame: two random rows differing in one cell")
 lams = []
-for seed in range(1, NS + 2):
+for seed in range(1, NL + 1):
     rng = random.Random(100 + seed); MASK = (1 << N) - 1
     def step(v): return ((v << 1) ^ (v | (v >> 1))) & MASK
     a = rng.getrandbits(N); b = a ^ (1 << (N // 2)); x0 = N // 2; t0 = time.time()
     for _ in range(T): a = step(a); b = step(b)
     xL = lowbit(a ^ b, N); lam = (x0 - xL) / T; lams.append(lam)
     print(f"  seed {seed}: N={N}, T={T}: left edge moved {x0 - xL} cells: lambda_L = {lam:.4f}; {time.time()-t0:.0f} s")
-print(f"  lambda_L over {len(lams)} runs: mean {statistics.mean(lams):.4f}, sd {statistics.stdev(lams):.4f}; 1 - lambda_L = {1-statistics.mean(lams):.4f}")
+if lams: print(f"  lambda_L over {len(lams)} runs: mean {statistics.mean(lams):.4f}" + (f", sd {statistics.stdev(lams):.4f}" if len(lams) > 1 else "") + f"; 1 - lambda_L = {1-statistics.mean(lams):.4f}")

@@ -1504,3 +1504,21 @@ disagreement says where the memory is. Bounded, a block. Not started: the owner'
 
 Doing: GC2680's question answered; the pull of L1533 (why only periods 2 and 3) is dead as stated, since period 6 locks too. Pull, strong: **the agreement cliffs.** Quiet rows agree with the third lock to depth 145 and never 150, with a cliff near 107. I suspect the lock splits off the cloud near width 150, as the 136-cell lock splits at 52 long before it closes. If that is right the cloud is closed against it and the real rows' strip is the top of something they can never enter, which would be a strange and exact statement. Bounded test: the cloud cannot be listed at 150, so go backward from the lock's windows, with letters `AAB` held, and see whether the set of windows that reach it dies out. Second, moderate: period 12. Real rows show correlations at multiples of 6 down to offset 128, and at 18 near 112 to 128. Third, small: GPT's question back, whether a strip must end. Misgiving, unchanged: all of this is rows on the front. Lesson: twice now a partial sample told me something false: offsets 20, 24, 28 in L1531, and a truncated line today. Read the whole output. (11:32 GMT.)
 
+
+## Cloud, 5 November 2026 — after the finite chain of the edge (CL741)
+
+Doing: the chain M(2, 2, 2) is built and lands on P(heal) to 0.0004 and the speed to 0.004 of the long run; the strip
+is a fair field in space; the random-background runs are the last check. Lesson, uncomfortable: CL740 and CL741 re-found
+§8.66 (6 October), CL691/GC521, CL722 and §20.2 in new words, and my `record_find` searches missed them because I
+searched my vocabulary ("edge", "death", "jump law") and not the record's ("heal", "stall", "damage", "news"). Next time,
+search the record for the *object* under every name it has had (the atlas's frame table is the index: "v = −0.246, the
+news frame"). Pull, strong: **the exact chain.** The chain's leak is one tick deep and known (the bit above the window
+is a function of the previous window half the time); the exact object is a transfer matrix along the wheel axis with
+the strip's and the errors' bits as a sliding process, and its stationary measure would be an exact rational, the
+"formula" gap M2 asks for, testable against 0.2428 ± 0.0003 at the fourth decimal. Second, moderate: **the drift with
+depth.** The front's speed rises from 0.747 (period-16 stage, to 65,536) through 0.7525 (to 165,749) to 0.7588 (past
+100,000, to 894,235); the random background sits near the chain's 0.763. If the strip's period is what slows the
+front, the speed at each stage is a function of the period, and the limit is λ_L only as the periods double away: that
+would make Wolfram's "similar but not identical" 0.252 and 0.2428 the same number seen at two depths, a claim with a
+test (the stage speeds at periods 16, 32, 64). Misgiving: the chain's widths disagree by 0.02 among themselves, so its
+"0.763" is not a prediction at the third decimal; only the exact chain is. (11:43 GMT.)
