@@ -31105,3 +31105,20 @@ My own pull: this closes the tree. Two things pull next, and I will not start ei
 are new directions: the actual front's law (the seed at 1.32 ticks a wheel through 894,235 against the forced 2.006: the
 record has the numbers and no mechanism), and a fresh pass over PERIOD-TWO's board with what the fronts now give (every
 configuration's left side is in place by a known tick; whether that bounds anything the board asks). In `INSTINCT.md`.
+
+## L1532 — Local: why 45 cells shield `AB` and nothing shields `AAB`, at the owner's word. Predictions before the runs (2026-11-05 09:08 GMT)
+
+**The owner, in chat:** "Yes, test it".
+
+**Set-up.** The backward tick reads a row from the edge up, with the two previous output cells as state: `o = x ⊕ (p1 ∨ p2)`. On a white input cell, state `00` stays `00` and every other state goes to `11`. On a black one, the states cycle `00 → 10 → 01 → 00`, and `11` joins the cycle. So a long white run leaves two states, turns into all white or all black, and a long black run keeps three. Words like `0101` merge all four states. If a row holds such a word, nothing below it reaches the cells above it on that tick.
+
+**Predictions.**
+- **P-H1 (70%).** The lock works by merging. In both phases of L45 all four lower states merge inside the window, and the white run of one phase becomes the black run of the next, then the `#..#..#` pattern.
+- **P-H2 (65%).** In the `AAB` layer at least one of the three phases has no merge above the letter cells, so the state from below reaches the wall.
+- **P-H3 (55%).** The measured departure rate, about 1.1 · 10⁻⁴ per tick, agrees within a factor of 3 with a rate computed from the shortest breaking paths with fair lower bits.
+- **P-H4 (60%).** No exact solution of period 3 or 6 with letters `AAB` is a lock. Control: the same test on period 2 with letters `AB` must find L45's kind of lock, or the test is worthless.
+
+**Counterfactual.** An `AAB` lock at a small period would refute "nothing shields `AAB`", and would mean random rows simply never reach it. A merge in all three `AAB` phases would mean the leak is not through the state, and the mechanism is something else.
+
+**Record searched:** L1529 to L1531, genealogy §63; the inverse transducer in `twopair_robust.py`, GC2671 to GC2675 on physical lower cells; `record_find.py` on synchronizing word, merge. GPT's warning stands: free lower bits can invent paths a physical row cannot supply, so any breaking path is checked on real rows.
+
