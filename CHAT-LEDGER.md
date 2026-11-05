@@ -32674,3 +32674,67 @@ wall cell (cache; the PR index 403).
 **Run planned.** The graph is seconds of Python. The specimens need one process of the chain with a ring of rows, about 2 minutes at nice 10, under `run_capped.py` with 4 GiB RSS, about 25 hits expected at the rate of L1547. All of this is about the surrogate chain and the strip, not real rows.
 
 **Record searched:** §63.8, §64.5, §64.5b to §64.5e, L1547, GC2683 and its review, `record_find` on "competing strip" and "witness passes". "145" and "plateau" are too common to be useful alone. Nothing in the kit or portal bears on it.
+
+## CL748 addendum 1 — Cloud: 64 chinks: P-N1, P-N3, P-N5 HELD, P-N2 half refuted by my own omission (every chink spills, through the farther word), P-N4 REFUTED and explained by hand: 64 of 64 re-form on A0, because the branch at a fork is chosen by the strip's walk, not by a coin. The pictures are made. A decisive pair of tests at the first fork, predictions first (2026-11-05 18:09 GMT)
+
+**The 64 chinks** ([output](tests/probes/wolfram/chink.out); wheels 0, 1, 2, 7, 28, 100, 399, 5,000 at ticks 1,000 … 1,007 on the
+seed with 165,750 wheels; 25 s each):
+
+| wheel | the chink heals after (ticks) | the wheel above differs at once? | strip | phase of the re-formed left side | settling through 165,749, ticks after t₀ |
+|---|---|---|---|---|---|
+| 0 | never (wheel 0 is constant; the wall frame moves in by one) | never | A0, 8 of 8 | 14, 31, 16, 17, 18, 3, 4, 13 | 220,157–220,311 |
+| 1 | 1 | always | A0, 8 of 8 | 10, 21, 20, 27, 6, 1, 0, 7 | 220,157–220,321 |
+| 2 | 1 | at alternate ticks, exactly when wheel 3 was white | A0, 8 of 8 | 7, 22, 29, 0, 27, 18, 1, 20 | 220,172–220,244 |
+| 7 | 2, 1, 2, 1, … | at half the ticks | A0, 8 of 8 | 8, 16, 10, 30, 4, 20, 6, 18 (all even) | 220,163–220,323 |
+| 28 | 1–2 | at half the ticks | A0, 8 of 8 | 8, 8, 20, 0, 20, 12, 0, 12 (all ≡ 0 mod 4) | 220,122–220,275 |
+| 100 | 1–3 | at five of eight | A0, 8 of 8 | 24, 16, 24, 8, 0, 8, 0, 0 (all ≡ 0 mod 8) | 220,062–220,179 |
+| 399 | 1–5 | at two of eight | A0, 8 of 8 | 0, 16, 0, 16, 0, 24, 8, 16 (all ≡ 0 mod 8) | 219,726–219,817 |
+| 5,000 | never (above the front at t₀: chaotic there) | always | A0, 8 of 8 | 0, 0, 0, 0, 0, 0, 0, 0 | 219,275 − k at t₀ = 1,000 + k: the seed's own 220,275 exactly |
+
+- **P-N1 HELD:** the chink on a wall heals at the next black of the wheel below it, within its period (wheels 1, 2: one
+  tick; 7: two at most; 28: two; 399: five at most), never on wheel 0, where the configuration's wall frame moves in by
+  one (offset 1 in every run).
+- **P-N2 half REFUTED, by my own omission in the hand analysis:** every chink spills. A black on wheel j complements
+  wheel j + 2 at once through the xor of the farther word (a_(j+2)(t+1) = a_j(t) ⊕ …), whatever wheel j + 1 does; the
+  "no spill" branch I wrote considered only the child j + 1. The other half HELD: wheel 3 differs after a chink on
+  wheel 2 exactly at the ticks at which it was white (alternate ticks), and the wheel above a chink on 7 or 28 is
+  untouched at half the ticks, as the reset formula says.
+- **P-N3 HELD:** every spilling chink at wheels 0–100 settles through 165,749 between t₀ + 220,062 and t₀ + 220,323, the
+  seed's own 220,275 within 0.1%; at wheel 399 about 500 ticks sooner. The hernia is the whole left side above the chink
+  re-formed by the front at its own speed, however low or high the hole. The clause on wheel 5,000 was wrong as written:
+  at t₀ = 1,000 the front is at wheel 750, so a chink at 5,000 is a flipped cell in the chaotic region, which changes
+  the error field but not the walk; all eight settle at the seed's own tick 220,275 exactly and at the seed's phase.
+- **The phase is free exactly modulo the periods below the chink:** any residue for chinks on wheels 0, 1, 2; even for
+  wheel 7 (the wheels below have period 2); 0 mod 4 for 28; 0 mod 8 for 100 and 399. The doublings above the chink
+  choose their shifts afresh (`low_from`'s budget), the dynamics choosing which.
+- **P-N4 REFUTED, 64 of 64 on A0, and here is the mechanism (PROOF-SKETCH).** At a fork wheel j, white for ever on the
+  strip, the child j + 1 is reset to ¬a_(j−1)(t) at every tick at which the configuration's wheel j is still black, and
+  after the last such tick τ* it integrates the farther word (`child_white`), its difference from the strip's child
+  word constant from then on. That difference is d = a_(j+1)(τ* + 1) ⊕ C_(j+1)(τ* + 1) = ¬a_(j−1)(τ*) ⊕ C_(j−1)(τ*) ⊕
+  C_(j+1)(τ*) = ¬C_(j+1)(τ*) once the farther parent is settled: **the branch is the strip's own child bit at the tick
+  at which the walk clears the fork**, not a coin from the chaotic region above. The walk over a strip is the strip's
+  own (CL745–CL746), phase-locked to it, so every configuration that reaches the fork on the strip's walk clears it at
+  the same strip phase and takes the same branch; a chink below the fork re-forms the prefix on that walk and cannot
+  switch the branch. It could switch only if the walk were in an excursion at the fork (CL746: 4% of wheels), which
+  none of the 64 was at any of the four forks below 165,749, or if the chink is at the fork's child itself after the
+  parents have settled, when the error can never heal (its parent is white for ever, `heal_iff`) and the complement
+  persists: that is exactly `first_fork`'s `B'` and lands on the other strip.
+- **P-N5 HELD:** the pictures ([store](sharedstore/README.md) `cited/chink/`: `chink7_scale_xor.png` fd7a270d…,
+  `chink7_local_xor.png` d37d2ed4…, `chink7_local_chink.png` dea8cf77…, `chink7_local_orig.png` b9fb1043…; the seed on
+  165,750 wheels, the chink on wheel 7 at tick 1,000, standard frame). At scale (40,000 ticks, 40× downsampled) the
+  difference from the unchinked seed is a wedge from the apex: next to the wall a striped texture, the re-formed left
+  side at phase 8 against the original at 0; a sharp boundary at slope about −0.243, the damage front; chaos beyond, to
+  the light cone. Locally (600 ticks) the front is a random walk. Sent to the owner.
+
+**The decisive pair, predictions first** (`chink.py` on the seed at 165,750 wheels; the seed's walk clears wheels
+53,206–53,208 at tick 71,116; chinks at t₀ = 80,000 … 80,007).
+- **P-N6a:** a chink on wheel 53,208, the first fork's child, after the parents have settled, never heals (its parent
+  53,207 is white for ever) and switches the configuration to the other branch: all eight land on `A0.53207` at the
+  seed's phase, settling through 165,749 about (165,749 − 53,208)/0.757 ≈ 149,000 ticks after t₀. Lean 85% (PROOF-SKETCH
+  by `heal_iff` and `white_fork`; the run is the check).
+- **P-N6b:** a chink on wheel 53,206, two below the child, complements the child at once through the farther word and
+  may re-blacken the fork wheel 53,207 at t₀ + 1 (a_(53207)(t₀+1) = ¬a_(53205)(t₀)); when it does, the child is reset
+  again and the branch is re-chosen by the strip's clock, A0; when it does not, the complement persists, `A0.53207`.
+  So the eight ticks split between the two strips according to a_(53205)(t₀), and the phase stays 0 or becomes 16
+  (the wheels below have period 16). Lean 55%. Counterfactual: all eight on A0: the fork wheel is always re-blackened
+  (or the child reset later by another black on 53,207) and the branch is rigid against every chink below the child.
