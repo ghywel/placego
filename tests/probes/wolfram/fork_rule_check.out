@@ -1,0 +1,27 @@
+W      T0     fork wheel black at ticks (after T0)   tau*    c(tau*+1)  predicted      observed
+53206  80000  [1]                                   80001   0          A0             A0         ok   a_(j-1)(tau*) 1    general A0        ok
+53206  80001  [1, 2, 3, 4, 5]                       80006   1          A0.53207       A0.53207   ok   a_(j-1)(tau*) 1    general A0.53207  ok
+53206  80002  [1, 2, 3, 4]                          80006   1          A0.53207       A0         MISS   a_(j-1)(tau*) 0    general A0        ok
+53206  80003  [1, 2, 3]                             80006   1          A0.53207       A0         MISS   a_(j-1)(tau*) 0    general A0        ok
+53206  80004  [1, 2]                                80006   1          A0.53207       A0         MISS   a_(j-1)(tau*) 0    general A0        ok
+53206  80005  [1]                                   80006   1          A0.53207       A0         MISS   a_(j-1)(tau*) 0    general A0        ok
+53206  80006  [1]                                   80007   0          A0             A0         ok   a_(j-1)(tau*) 1    general A0        ok
+53206  80007  [1, 2, 3, 4]                          80011   1          A0.53207       A0.53207   ok   a_(j-1)(tau*) 1    general A0.53207  ok
+53207  80000  [0]                                   80000   1          A0.53207       A0.53207   ok   a_(j-1)(tau*) 1    general A0.53207  ok
+53207  80001  [0]                                   80001   0          A0             A0         ok   a_(j-1)(tau*) 1    general A0        ok
+53207  80002  [0, 1, 2, 3, 4]                       80006   1          A0.53207       A0.53207   ok   a_(j-1)(tau*) 1    general A0.53207  ok
+53207  80003  [0, 1, 2, 3]                          80006   1          A0.53207       A0.53207   ok   a_(j-1)(tau*) 1    general A0.53207  ok
+53207  80004  [0, 1, 2]                             80006   1          A0.53207       A0.53207   ok   a_(j-1)(tau*) 1    general A0.53207  ok
+53207  80005  [0, 1]                                80006   1          A0.53207       A0.53207   ok   a_(j-1)(tau*) 1    general A0.53207  ok
+53207  80006  [0]                                   80006   1          A0.53207       A0.53207   ok   a_(j-1)(tau*) 1    general A0.53207  ok
+53207  80007  [0]                                   80007   0          A0             A0         ok   a_(j-1)(tau*) 1    general A0        ok
+53208  80000  never                                 None    None       A0.53207       A0.53207   ok   a_(j-1)(tau*) None general A0.53207  ok
+53208  80001  never                                 None    None       A0.53207       A0.53207   ok   a_(j-1)(tau*) None general A0.53207  ok
+53208  80002  never                                 None    None       A0.53207       A0.53207   ok   a_(j-1)(tau*) None general A0.53207  ok
+53208  80003  never                                 None    None       A0.53207       A0.53207   ok   a_(j-1)(tau*) None general A0.53207  ok
+53208  80004  never                                 None    None       A0.53207       A0.53207   ok   a_(j-1)(tau*) None general A0.53207  ok
+53208  80005  never                                 None    None       A0.53207       A0.53207   ok   a_(j-1)(tau*) None general A0.53207  ok
+53208  80006  never                                 None    None       A0.53207       A0.53207   ok   a_(j-1)(tau*) None general A0.53207  ok
+53208  80007  never                                 None    None       A0.53207       A0.53207   ok   a_(j-1)(tau*) None general A0.53207  ok
+the law as written (premise: wheel j-1 aligned at tau*) reproduces 20 of 24; the general law d = not a_(j-1)(tau*) xor c(tau*+1) reproduces 24 of 24
+the A0 child word c over one period: 01000001000011000100000100001100; w: 11000011000101001100001100010100

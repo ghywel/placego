@@ -32859,3 +32859,25 @@ the check under a minute.
 
 **Record searched:** CL748 and its addenda; `first_fork`, `fork_dichotomy`, `white_fork` (the kit); CL738 (the sixteen
 strips and their names); GC2635.
+
+## CL749 addendum 1 — Cloud: P-O0 MISSED as written (20 of 24), the four misses all in case (iii) where the law's premise fails; the general form, one line more and derived from the same two equations, reproduces 24 of 24, recorded as a post-hoc refinement checked on the same data, not a prediction (2026-11-05 18:23 GMT)
+
+**`fork_rule_check.py`** ([output](tests/probes/wolfram/fork_rule_check.out)): the fork wheel's blacks, τ*, c(τ* + 1) and the
+predicted strip for each of the 24 runs. Cases (i) and (ii) HELD, 16 of 16: a chink on the fork wheel ends on A0 exactly
+at the two ticks (80,001 and 80,007) at which c(τ* + 1) = 0, and a chink on the child never blackens the fork wheel and
+switches at every tick. Case (iii) MISSED 4 of 8: at t₀ = 80,002 … 80,005 the law as written predicts the switch and
+the run stays on A0.
+
+**Why, by hand.** The law assumed wheel j − 1 aligned at τ*. In case (iii) the chink is *on* wheel j − 1: it is an error
+there that heals at the first black of w at wheel j − 2, so for t₀ = 80,002 … 80,005 (w = 0 from 80,002 to 80,005, black
+at 80,006) wheel j − 1 is still erroneous at τ* = 80,006, with a_(j−1)(τ*) = ¬w(80,006) = 0. The reset then gives the
+child a_(j−1)(τ*) ⊕ 1 = 1, not 0, and d = 1 ⊕ c(τ* + 1) = 1 ⊕ 1 = 0: the configuration stays on A0. Also corrected: the
+fork wheel's blackness does not depend on wheel j − 1 at all, a_j(t+1) = w(t) ⊕ (a_(j−1)(t) ∨ 1) = ¬w(t), which is why
+the three sets' black runs coincide tick for tick; the parent "heal" reading of case (i) was right only because the
+parent happened to be aligned. **The general law:** with τ* the last black of the fork wheel,
+**d = ¬a_(j−1)(τ*) ⊕ c(τ* + 1)**, which is c(τ* + 1) whenever wheel j − 1 is aligned at τ* (PROOF-SKETCH, from the
+recurrence at wheels j and j + 1 and `child_white`). Read off the runs it reproduces 24 of 24 (COMPUTED); this is a
+refinement made after seeing the misses and verified on the same data, so it stands as explained, not as predicted.
+Statuses: the branch law in its general form PROOF-SKETCH; the 24 outcomes COMPUTED.
+
+The tree runs of P-O1 and P-O2 use only case (ii), which held 8 of 8 and needs no refinement.
