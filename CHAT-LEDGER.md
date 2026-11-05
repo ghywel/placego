@@ -31703,3 +31703,35 @@ Fair. Before any run I worked it through by hand. Moving frame, `Y_k(t)` the col
 
 **Record searched:** G13 (reset language), L1533 to L1537, GC2680, genealogy §63; `known_find.py` as in L1534. No Lean yet.
 
+
+## CL742 addendum 1 — Cloud: the chain table; P-H1 HELD in R (geometric convergence at every L) and MISSED across L (the columns 0.013 apart): the left width is the slow direction, S2 was wrong for the chain. Prediction for L = 5, 6 before the run (2026-11-05 12:21 GMT)
+
+**`edge_model.py`, M(L, R, 2) at E = 6** (the speed; P(heal) and E[jump] in the output):
+
+| L \ R | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|
+| 2 | 0.7620 | 0.7555 | 0.7538 | 0.7529 | 0.7528 |
+| 3 | 0.7745 | 0.7665 | 0.7640 | 0.7628 | 0.7626 |
+| 4 | 0.7779 | 0.7696 | 0.7674 | 0.7661 | 0.7658 |
+
+- **In R, P-H1 HELD at every L:** the changes are 0.0065, 0.0017, 0.0009, 0.0001 (L = 2), 0.0080, 0.0025, 0.0012, 0.0002
+  (L = 3), 0.0083, 0.0022, 0.0013, 0.0003 (L = 4): shrinking by 2–4 at each step, S3's geometric leak as predicted.
+- **Across L, MISSED:** at R = 6 the columns are 0.7528, 0.7626, 0.7658, apart by 0.013 (the tolerance was 0.003), with
+  increments +0.0098 and +0.0032. P(heal) carries most of it: 0.4079, 0.4124, 0.4141 (the data past 200,000: 0.4123; the
+  random rows: 0.4115), the mean jump 1.846, 1.849, 1.850 (1.842; 1.839). By S4 the left width acts through the hazard
+  q: at L = 2 the chain's q is exactly ½; at L = 3 the parent's next bit C_(m−3) ⊕ C_(m−2) is state-determined, and q
+  rises towards the data's 0.5086. So S2 ("the left leak is small") was wrong for the chain even though the data's
+  deviation below the window is 0.013: a 0.009 shift in q moves P(heal) by 0.004 and the speed by 0.01. The right
+  width's remaining error is in the jump law: P(2) = 0.526–0.531 against the data's 0.533.
+- **P-H2 cannot hold as the limit stands:** the R-converged values at L = 3, 4 are 0.763, 0.766, above the seed's
+  0.7595 and the random 0.7567.
+
+**Prediction for the L direction (`edge_model.py` M(5, 5, 2), M(6, 5, 2), and M(4, 5, 3) for W at a larger L; E = 6;
+each chain's q printed so that S4 decomposes it).**
+- **P-H5:** the L increments keep shrinking (L = 5: +0.001 ± 0.001, L = 6: +0.0005 ± 0.0005), the hazard q of the
+  chains converges to 0.508 ± 0.002, and the chain's limit is 0.767 ± 0.002: above the seed's long run by 0.007 and the
+  random front by 0.010, so the converged chain does not give the front, and its residual is in the jump law (P(2) low
+  by 0.005–0.007), i.e. in the law of the window at a death, which no finite window of fresh coins reproduces. Lean 50%.
+  Counterfactual: the L increments stop shrinking, or q overshoots 0.51: the memory below the edge is long-range,
+  contrary to S2's reading of the data, and the stay phase itself is where the chain fails.
+- **P-H6:** W = 3 at L = 4, R = 5 changes the speed by less than 0.002. Lean 70%.
