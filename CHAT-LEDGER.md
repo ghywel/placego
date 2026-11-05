@@ -31365,3 +31365,52 @@ My own pull: the two-wheel model of the edge, as above: measure the stationary d
 bits at the edge, build the chain, and predict the jump law and the death rate from it; agreement within a few per cent
 would be the law of 0.752 in the words' statistics, disagreement would say where the memory is. A bounded block. The
 owner's word first, as before.
+
+## CL741 — Cloud: the two-wheel model of the edge, at the owner's word. A 128-state chain from Rule 30's one step and fair coins, whose stationary measure is to predict the death rate, the jump law and the two densities of CL740. Predictions first (2026-11-05 11:20 GMT)
+
+**The model M(L, R, W).** At tick t the edge is m, the lowest erroneous wheel; the state is the strip's bits
+C_(m−L) … C_(m+R) and the errors e_(m+1) … e_(m+W) (errors below the edge are zero, CL740). One step: every other bit the
+step needs is a fresh fair coin, independent of everything (the strip's bits below m − L, two of them, since a wheel's new
+bit reads the two below it; the strip's and the errors' bits above the window), the wall-frame step is applied to the
+strip C and to the actual row a = C ⊕ e, the new edge m′ is the lowest erroneous wheel at t + 1 (m′ ≥ m), and the new state
+is read off at m′. The two-wheel model is M(2, 2, 2): 2^7 = 128 states, the transition matrix exact by enumeration of the
+coins (an extension of E = 8 wheels; a jump past the extension, measured mass below 0.001, lands in a fresh uniform state
+and its mass is reported). Its stationary measure π gives the death rate Σ π·[C_(m−1) = 1], the jump law at a death, the
+error density at offsets 1 and 2, and the law of the seven-bit state, each a prediction against CL740's measurements, not
+a fit: the model has no parameter.
+
+**Why it can work, in one line each.** (i) The stay step: the parent's new bit is C_(m−3) ⊕ C_(m−2), a fair coin in the
+model, so the waiting at a wheel is memoryless and all the bias in the death rate 0.4107 must come from the jump. (ii) After
+a jump of exactly 2 the new parent is white for sure: a jump of 2 or more needs e_(m+1)(t+1) = 0, which (CL740's one step,
+a_m = ¬C_m) forces C_m ∨ C_(m+1) = 1, and then C_(m+1)(t+1) = C_(m−1) ⊕ (C_m ∨ C_(m+1)) = 1 ⊕ 1 = 0 (PROVED, one line; the
+data check is P-E0). With the jump 2 on 0.53 of deaths, this alone makes the mean wait about 1.5 and the death rate about
+0.40, which is why I expect the chain to land near 0.41 without any help from the strip's correlations.
+
+**Predictions (Lean = my credence that the prediction holds as written).**
+- **P-E0 (PROVED, checked):** in the data, the parent is white at t + 1 after every jump of exactly 2; no exception.
+- **P-E1:** M(2, 2, 2)'s death rate is within 0.02 of 0.4107. Lean 65%.
+- **P-E2:** its jump law has P(1) and P(2) within 0.03 of 0.363 and 0.531, the mean within 0.05 of 1.832, and the speed
+  (death rate × mean jump) within 0.02 of 0.752. Lean 60%.
+- **P-E3:** its error densities at offsets 1 and 2 above the edge are within 0.03 of 0.461 and 0.579. Lean 60%.
+- **P-E4 (where the memory is):** the total variation distance between π and the empirical law of the seven-bit state at
+  the edge is below 0.05, and the empirical probability that the parent is black at t + 1 given it was white at t (the edge
+  stayed) is 0.50 ± 0.02, as the model's fair left coins say. Lean 55%.
+- **P-E5 (the width):** the one-wheel model M(2, 2, 1) misses at least one of the death rate, P(jump = 2) and the offset-2
+  density by more than 0.05, and the three-wheel M(2, 2, 3) and the wider strip window M(3, 3, 2) move M(2, 2, 2)'s three
+  numbers by less than 0.01 each. Lean 55%.
+
+**Counterfactuals.** P-E1 missed with P-E4's second half holding: the strip's own correlations in the window (its fixed-wheel
+series have period 32, and Rule 30 rows are not fair fields) carry the bias, and the state's law will show which windows
+are over-represented. P-E2 or P-E3 missed with P-E1 holding: the errors above offset 2 are correlated with the state, the
+memory is in the error field, and M(2, 2, 3)'s change will say how far up. All holding: the law of 0.752 is the stationary
+measure of a 128-state chain written from Rule 30's one step and fair coins, a computable constant with no free parameter,
+and the actual front's speed is "the strip's statistics plus the local rule" (CONJECTURE for the limit; the model's number
+is COMPUTED). What it teaches either way: whether the actual front carries memory beyond two wheels.
+
+**The probe** `edge_model.py` (ROWSDIR; the seed on 165,750 wheels against its strip at its phase, as `error_process.py`):
+the empirical part re-runs the error process and records at every tick the seven-bit state, its transitions, the parent's
+bit after a stay and after each jump, and the densities; the model part enumerates the chains above and compares. Caps:
+substitute (CL710), ulimit 8 GiB, timeout 1,800 s, this host; one run of a few minutes.
+
+**Record searched:** `record_find` "Markov", "stationary measure", "two-wheel", "edge model": none; CL740 (the proposal and
+the one step), GC2680 (the recurrence), atlas §21.6–21.7; the kit and the portal: none (the PR index 403 on this host, cache).
