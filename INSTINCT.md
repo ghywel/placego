@@ -1647,3 +1647,15 @@ one short block. Pull, stronger but larger: are all sixteen left sides reachable
 the forks' children after settling? Sixteen runs of thirty seconds and a theorem-shaped answer if yes (the tree is a
 switchboard). Misgiving: "switch" is my word for 8 of 8 at one fork; the three other forks below 165,749 are untested.
 (18:12 GMT.)
+
+## Cloud, 5 November 2026 — after the switchboard (CL749)
+
+Doing: the branch law derived by hand and checked (its premise failed in four of 24 and the general form, one line more,
+caught them: a post-hoc refinement, labelled so); fifteen strips reached by scheduled chinks, 15 of 15. Lesson: the
+derivation's premise ("wheel j − 1 aligned at τ*") was exactly what the chink on wheel j − 1 violates, and I wrote the
+check's prediction at 85% without noticing; the check found it in a minute. State the premise of a law as a hypothesis
+with a name, and ask which of the planned cases violates it, before giving a credence. Pull, moderate: whether the
+clearing ticks at the fifteen forks, hence the left side, are a function of a configuration's prefix (GC2635's guard
+through 87,866 suggests yes), which would make the sixteen left sides computable from a prefix, a kit-shaped statement;
+I would put it to the owner rather than pursue it. Misgiving: forty-four switches at fifteen forks is a census of one
+path each; the law's general form has been checked at one fork only. (18:25 GMT.)

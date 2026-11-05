@@ -32881,3 +32881,62 @@ refinement made after seeing the misses and verified on the same data, so it sta
 Statuses: the branch law in its general form PROOF-SKETCH; the 24 outcomes COMPUTED.
 
 The tree runs of P-O1 and P-O2 use only case (ii), which held 8 of 8 and needs no refinement.
+
+## CL749 addendum 2 — Cloud: the sixteen left sides by chink: P-O1 HELD, 15 of 15 reached, one chink per fork of the name; P-O2 HELD, the settling after the last chink is the front's climb from the chinked child within 0.5% in fourteen and 1.5% in one. The tree is a switchboard. The close (2026-11-05 18:26 GMT)
+
+**`chink_tree.py`** ([output](tests/probes/wolfram/chink_tree.out); the seed on 894,236 wheels; 43–48 s a strip): for each of
+the fifteen strips other than A0, a flip on each fork's child in the order of the name, the first 3,000 ticks after the
+seed's walk clears the fork, each next one 3,000 ticks after the previous chink plus the wheel distance at 0.70 wheels
+a tick; the fork wheel was white at every chink tick (no assertion fired); after the last flip the row was compared
+with all sixteen strips at all 32 phases every 2,048 ticks.
+
+| strip | chinks | last child c | ticks after the last chink | (894,235 − c)/0.757 | ratio |
+|---|---|---|---|---|---|
+| A0.58286 | 1 | 58,287 | 1,104,882 | 1,104,290 | 1.0005 |
+| A0.53207 | 1 | 53,208 | 1,113,724 | 1,111,000 | 1.0025 |
+| A0.53207.72575 | 2 | 72,576 | 1,089,201 | 1,085,414 | 1.0035 |
+| A0.53207.165748 | 2 | 165,749 | 962,241 | 962,332 | 0.9999 |
+| A0.53207.165748.179399 | 3 | 179,400 | 947,933 | 944,299 | 1.0038 |
+| A0.53207.165748.174449 | 3 | 174,450 | 955,005 | 950,838 | 1.0044 |
+| …174449.243767 | 4 | 243,768 | 859,125 | 859,269 | 0.9998 |
+| …174449.350243 | 4 | 350,244 | 721,353 | 718,614 | 1.0038 |
+| …174449.485619 | 4 | 485,620 | 542,294 | 539,782 | 1.0047 |
+| …174449.537692 | 4 | 537,693 | 472,000 | 470,993 | 1.0021 |
+| …174449.445474 | 4 | 445,475 | 595,548 | 592,813 | 1.0046 |
+| …445474.482608 | 5 | 482,609 | 543,597 | 543,759 | 0.9997 |
+| …445474.603582 | 5 | 603,583 | 385,113 | 383,952 | 1.0030 |
+| …174449.563842 | 4 | 563,843 | 438,739 | 436,449 | 1.0052 |
+| …563842.760454 | 5 | 760,455 | 179,443 | 176,723 | 1.0154 |
+
+- **P-O1 HELD, 15 of 15:** every left side of the tree is reached from the single black cell by one flipped cell per
+  fork of its name, at the fork's child, after the front has cleared the fork. With the seed's own A0 that is all
+  sixteen (COMPUTED; the law behind it, case (ii) of CL749, PROOF-SKETCH, held 8 of 8 at the first fork and 44 of 44
+  across the tree's fifteen forks here, each chink switching the branch it was meant to).
+- **P-O2 HELD:** the settling after the last chink is the front's climb from the chinked child at 0.757 wheels a tick
+  within 0.5% in fourteen strips and 1.5% in the shortest climb (179,443 against 176,723 from 760,455, where the 2,048-
+  tick grain and the walk's own fluctuation are a larger share).
+
+**What this says (statuses as marked).** The sixteen left sides of CL738 are not sixteen fates but sixteen settings
+of fifteen switches: a configuration's left side is decided at the forks, by the strip's child bit at the tick its
+front clears each fork (the branch law, PROOF-SKETCH, 24 of 24 in its general form), and one cell flipped at a fork's
+child after the parents settle throws that switch and nowhere below it (COMPUTED, 64 of 64 below the first fork
+unchanged, 44 of 44 at the children switched). The walls are not where the pattern leaks out; the forks' children are
+where it can be steered. The hernia the owner imagined is the front re-forming the left side above the hole, with a
+new clock and, at a fork's child, a new strip.
+
+**Prior art.** `first_fork`, `fork_dichotomy`, `white_fork` (the kit): the two branches at a fork and the flipped bit at
+tick 0; GC2635: the branch selected by two bits at a snapshot; CL738: the sixteen strips; CL745–CL746: the walk per
+strip, which makes the branch rigid below a fork. New: the chink as a switch, the branch law with its τ*, and the
+switchboard, fifteen strips reached by scheduled chinks.
+
+**Record.** Atlas §21.10 (a paragraph); NOW; RECORD-MAP; PROBES; INSTINCT; `chink_tree.out`, `fork_rule_check.out`.
+Flags: READ-LEDGER to Local and GPT (GPT: the branch law in its general form is the one line to carry, if the owner
+asks; Local: `chink_tree.py` is a one-cell switch between the kit's sixteen left sides, 45 s a strip, if a Lean
+statement of case (ii) is wanted it is `heal_iff` with a white parent for ever plus `first_fork`).
+
+My own pull: the switchboard makes a question precise that I would put to the owner rather than pursue on my own: the
+branch law reads the strip's child bit at the tick the front clears the fork, so a configuration's left side is a
+function of the ticks at which its front clears the fifteen forks, modulo the child words' periods; whether those
+clearing ticks are themselves determined by the configuration's low bits alone (GC2635's prefix guard says yes through
+87,866 for the seed) would make the sixteen left sides a function computable from a prefix, which is the kind of
+statement the kit could hold. One block, if wanted. Otherwise I stop here and wait on the owner.

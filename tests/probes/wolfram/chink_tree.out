@@ -1,0 +1,30 @@
+target A0.58286: chinks at (wheel, tick) [(58287, 80910)]
+  settled on A0.58286 (phase 16) by tick 1185792, 1104882 ticks after the last chink (the front's climb from 58287 at 0.757: 1104290); HIT; 43 s
+target A0.53207: chinks at (wheel, tick) [(53208, 74116)]
+  settled on A0.53207 (phase 16) by tick 1187840, 1113724 ticks after the last chink (the front's climb from 53208 at 0.757: 1111000); HIT; 44 s
+target A0.53207.72575: chinks at (wheel, tick) [(53208, 74116), (72576, 104783)]
+  settled on A0.53207.72575 (phase 0) by tick 1193984, 1089201 ticks after the last chink (the front's climb from 72576 at 0.757: 1085414); HIT; 44 s
+target A0.53207.165748: chinks at (wheel, tick) [(53208, 74116), (165749, 237887)]
+  settled on A0.53207.165748 (phase 0) by tick 1200128, 962241 ticks after the last chink (the front's climb from 165749 at 0.757: 962332); HIT; 43 s
+target A0.53207.165748.179399: chinks at (wheel, tick) [(53208, 74116), (165749, 237887), (179400, 260387)]
+  settled on A0.53207.165748.179399 (phase 0) by tick 1208320, 947933 ticks after the last chink (the front's climb from 179400 at 0.757: 944299); HIT; 44 s
+target A0.53207.165748.174449: chinks at (wheel, tick) [(53208, 74116), (165749, 237887), (174450, 253315)]
+  settled on A0.53207.165748.174449 (phase 0) by tick 1208320, 955005 ticks after the last chink (the front's climb from 174450 at 0.757: 950838); HIT; 45 s
+target A0.53207.165748.174449.243767: chinks at (wheel, tick) [(53208, 74116), (165749, 237887), (174450, 253315), (243768, 355339)]
+  settled on A0.53207.165748.174449.243767 (phase 16) by tick 1214464, 859125 ticks after the last chink (the front's climb from 243768 at 0.757: 859269); HIT; 45 s
+target A0.53207.165748.174449.350243: chinks at (wheel, tick) [(53208, 74116), (165749, 237887), (174450, 253315), (350244, 507447)]
+  settled on A0.53207.165748.174449.350243 (phase 16) by tick 1228800, 721353 ticks after the last chink (the front's climb from 350244 at 0.757: 718614); HIT; 45 s
+target A0.53207.165748.174449.485619: chinks at (wheel, tick) [(53208, 74116), (165749, 237887), (174450, 253315), (485620, 700842)]
+  settled on A0.53207.165748.174449.485619 (phase 16) by tick 1243136, 542294 ticks after the last chink (the front's climb from 485620 at 0.757: 539782); HIT; 45 s
+target A0.53207.165748.174449.537692: chinks at (wheel, tick) [(53208, 74116), (165749, 237887), (174450, 253315), (537693, 775232)]
+  settled on A0.53207.165748.174449.537692 (phase 0) by tick 1247232, 472000 ticks after the last chink (the front's climb from 537693 at 0.757: 470993); HIT; 46 s
+target A0.53207.165748.174449.445474: chinks at (wheel, tick) [(53208, 74116), (165749, 237887), (174450, 253315), (445475, 643492)]
+  settled on A0.53207.165748.174449.445474 (phase 0) by tick 1239040, 595548 ticks after the last chink (the front's climb from 445475 at 0.757: 592813); HIT; 46 s
+target A0.53207.165748.174449.445474.482608: chinks at (wheel, tick) [(53208, 74116), (165749, 237887), (174450, 253315), (445475, 643492), (482609, 699539)]
+  settled on A0.53207.165748.174449.445474.482608 (phase 16) by tick 1243136, 543597 ticks after the last chink (the front's climb from 482609 at 0.757: 543759); HIT; 45 s
+target A0.53207.165748.174449.445474.603582: chinks at (wheel, tick) [(53208, 74116), (165749, 237887), (174450, 253315), (445475, 643492), (603583, 872359)]
+  settled on A0.53207.165748.174449.445474.603582 (phase 0) by tick 1257472, 385113 ticks after the last chink (the front's climb from 603583 at 0.757: 383952); HIT; 46 s
+target A0.53207.165748.174449.563842: chinks at (wheel, tick) [(53208, 74116), (165749, 237887), (174450, 253315), (563843, 812589)]
+  settled on A0.53207.165748.174449.563842 (phase 16) by tick 1251328, 438739 ticks after the last chink (the front's climb from 563843 at 0.757: 436449); HIT; 47 s
+target A0.53207.165748.174449.563842.760454: chinks at (wheel, tick) [(53208, 74116), (165749, 237887), (174450, 253315), (563843, 812589), (760455, 1096461)]
+  settled on A0.53207.165748.174449.563842.760454 (phase 0) by tick 1275904, 179443 ticks after the last chink (the front's climb from 760455 at 0.757: 176723); HIT; 48 s

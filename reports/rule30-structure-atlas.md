@@ -1111,4 +1111,9 @@ on the fork wheel lasts while w = 0 (a_j(t+1) = ¬w(t)); a chink on the child ne
 the strip every time; a chink on wheel j − 1 blackens the fork wheel at t₀ + 1 without fail and the general form decides
 (it reproduces 24 of 24 fork chinks; the simple form 20 of 24, missing exactly the four where wheel j − 1 was still an
 error at τ*).
+*The switchboard (CL749 addendum 2; COMPUTED).* Every one of the fifteen strips other than A0 is reached from the single
+black cell by one flipped cell per fork of its name, at the fork's child, after the front has cleared the fork (15 of
+15, 44 chinks, each switching its branch); the settling after the last chink is the front's climb from the chinked
+child within 0.5% in fourteen cases and 1.5% in one. The sixteen left sides are sixteen settings of fifteen switches,
+each thrown by one cell at a fork's child and by nothing below it.
 
