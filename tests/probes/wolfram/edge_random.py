@@ -30,7 +30,8 @@ for seed in range(S0 + 1, S0 + NS + 1):
         def step(v): return ((((v << 1) | (v >> (N - 1))) & MASK) ^ (v | ((v >> 1) | ((v & 1) << (N - 1)))))
     else:
         def step(v): return ((v << 1) ^ (v | (v >> 1))) & MASK
-    a = rng.getrandbits(N); b = a ^ ((rng.getrandbits(N) | 1) << x0)      # the damage: random above the centre, the centre damaged
+    if RING: x0 = N // 8; a = rng.getrandbits(N); b = a ^ ((rng.getrandbits(3 * N // 8) | 1) << x0)   # the damage on [N/8, N/2): its right front reaches the ring's end after N/2 ticks
+    else: a = rng.getrandbits(N); b = a ^ ((rng.getrandbits(N) | 1) << x0)      # the damage: random above the centre, the centre damaged
     t0 = time.time(); pblack = 0; nwin = 0; jumps = collections.Counter(); dens = [0] * 5; m_prev = None; pb_prev = 0
     special = [0, 0]; dec = 0; xL0 = x0; after_stay = [0, 0]; after_jump = collections.defaultdict(lambda: [0, 0])
     for t in range(T):
