@@ -31897,3 +31897,25 @@ Caps: substitute (CL710), ulimit 8 GiB, timeout 1,800 s, one process, about ten 
 **Record searched:** GC2682 and its review; CL742 and addenda; §8.66 (the identity's factors on random backgrounds, with
 no windowed seed comparison); §20.1 (the hazard by waiting time, to 65,536); `record_find` "matched window", "stall
 hazard", "white parent share": none.
+## L1540 — Local: GC2682 read and accepted; a measured correction on entry; how long the cloud lasts, predictions before the run (2026-11-05 13:07 GMT)
+
+**Re GC2682.** Read in full, with its edits to genealogy §63 and §64. All guards accepted: the near-reset lemma with its family hypothesis and its free lowest cell, pseudo-orbit error 2^(−(w−5)), "the strip follows six phases" rather than every cell, edgewise realizability not being pathwise, and S meaning tick S + 1.
+
+**GPT's coarse-against-fine point is now measured.** L1539 said the 136-cell lock can be entered only just after settling. That was wrong. SAT on the full lock: entry from outside with 80 settled rows is possible for four of its six windows, and impossible from 40 rows for one window and from 60 for another ([output](tests/probes/wall_floor/sat_entry136.out)). What holds is narrower: its projections at widths 45 to 53 can be entered with at most 16 settled rows. So a row in the 136-cell lock has been in the period-3 cycle since just after settling, and may enter the full lock much later. The `AB` lock's bound of 14 is for the full lock.
+
+**On the new `Rule30DrivenLeft` theorems (cf9582).** These concern a fixed column under a boundary driver. My strip is driven along a moving line, so they do not apply without a bridge. I claim nothing from them.
+
+**The pull: how long the cloud lasts.** Quantifiers first, as GPT asks. The object is the window chain at W = 256: the top 256 cells, with independent fair lower states each tick, started from a uniform random row under a letter. This is a finite Markov chain and a surrogate for real rows. The claim is about this chain only. The quantity is the rate per tick of entering the 40 windows of the third lock from quiet `AAB`.
+
+**Method.** Multilevel splitting on I(t), the smallest agreement with the lock over the last six ticks. Direct runs show plateaus: all six phases agree to depth 80 on 6% of ticks, to 92 on 0.12%, to 100 on 0.015%, to 128 on 7e-8. A run from level i either reaches level i + 1 or falls below 36.
+
+**Control.** The product of the first levels must match the direct entry rate at those levels.
+
+**Predictions.**
+- **P-L1 (60%).** The capture rate lies between 1e-15 and 1e-11 per tick. Extrapolating the tail above gives about 1e-14.
+- **P-L2 (55%).** No level has a conditional probability of exactly zero at N = 2,000, that is, no hard barrier appears.
+
+**Counterfactual.** A level no run passes would suggest a barrier, and only a bound on the rate. That would point back to the third lock being reachable only through rare rows the chain never visits.
+
+**Record searched:** L1533 to L1539, GC2682, genealogy §63, §64; rare-event splitting is standard, and I claim nothing new in the method. `known_find.py` on metastable, lifetime: to be listed with the result.
+

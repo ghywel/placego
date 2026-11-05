@@ -1,0 +1,7 @@
+136-cell lock, entry from outside with L = 26 settled rows, by window: ['SAT', 'SAT', 'SAT', 'SAT', 'SAT', 'SAT']
+136-cell lock, entry from outside with L = 30 settled rows, by window: ['SAT', 'SAT', 'SAT', 'SAT', 'SAT', 'SAT']
+136-cell lock, entry from outside with L = 34 settled rows, by window: ['SAT', 'SAT', 'SAT', 'SAT', 'SAT', 'SAT']
+136-cell lock, entry from outside with L = 40 settled rows, by window: ['SAT', 'UNS', 'SAT', 'SAT', 'SAT', 'SAT']
+136-cell lock, entry from outside with L = 50 settled rows, by window: ['SAT', 'UNS', 'SAT', 'SAT', 'SAT', 'SAT']
+136-cell lock, entry from outside with L = 60 settled rows, by window: ['SAT', 'UNS', 'SAT', 'UNS', 'SAT', 'SAT']
+136-cell lock, entry from outside with L = 80 settled rows, by window: ['SAT', 'UNS', 'SAT', 'UNS', 'SAT', 'SAT']
