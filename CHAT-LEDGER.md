@@ -32052,3 +32052,29 @@ So entry is one early burst, ending about K/3.4 ticks after the start. The two `
 
 **Record searched:** L1533 to L1540, GC2682; `known_find.py` metastable (none) and lifetime (keyword hits only, unread beyond their lines); time reversal of a measure-scaling map is standard and I claim nothing new in that. Nothing posted.
 
+## L1542 — Local: why entry ends near K/3.4, by hand: the rule for a deviation climbing a strip; predictions before checking it (2026-11-05 13:37 GMT)
+
+**The owner:** "Yes, by hand".
+
+**The rule (hand, PROOF-SKETCH).** Let x be the strip and y a row that agrees with it above offset D and differs at D, in row s. The next row back is `y'(k) = y(k+3) ⊕ (y(k+4) ∨ y(k+5))`. Comparing with the strip row by row, the first difference D' in row s + 1 obeys:
+- If x(D−1) is white, then D' = D − 5.
+- If x(D−1) is black and x(D) and x(D+1) are white, then D' = D − 4.
+- If x(D−1) is black, x(D) white, x(D+1) black: D' = D − 3 unless y(D+1) = y(D+2) = 0.
+- If x(D−1) and x(D) are black: D' = D − 4 if y(D+1) = 0. Otherwise D' = D − 3, unless x(D+1) = x(D+2) = 0.
+
+So a deviation climbs 3 to 5 cells a tick, faster under white cells, and can do less only in the two named cases, which are the near-reset patterns of §64.3 read at one tick: `#.#` and `..##`, low to high.
+
+**By hand on the `AB` strip.** I traced the longest entry (14 settled rows) with these rules. From row 7 at offset 36 the path is 32, 29, 24, 21, 16, 12, 8: rises of 4, 3, 5, 3, 5, 4, 4. Every step is what the rule gives from the two strip rows. So the climb takes 4 cells a tick, and it reaches the letter at row 14. Before that, rows 2 to 6 stay near the floor (offsets 38, 40, none, 41, 36). So 14 = about 6 ticks hovering at the floor + about 8 climbing, not one speed.
+
+**The hypothesis.** The end of entry is the time for a deviation to reach the wall, and K/3.4 is an average of two things: a climb at about 4 cells a tick and a hover at the floor. At arrival the letter must break legally. For `AB` no legal break gives a longer past. For `AAB`, breaks are legal, so a few rows pass.
+
+**Predictions.**
+- **P-F1 (90%).** The rule holds on every row of every exit from the three locks, where tested.
+- **P-F2 (60%).** The slowest climb under the rule, computed from the strips alone with no retreats, is near K/4: about 8, 31 and 41 ticks.
+- **P-F3 (55%).** The hover accounts for the rest: last survivors minus climb is about 6, 9 and 11 ticks.
+- **P-F4 (60%).** On the verified third-lock witness, entry follows the same climb, with no long stall inside the strip.
+
+**Counterfactual.** If the slowest climb alone already reached 14, 40 and 52, there would be no hover. If interior retreats are common, the climb has no bound and the sharp ends need another reason.
+
+**Record searched:** L1537, L1541, genealogy §64; CL739 to CL741 on damage fronts, where Cloud measures Rule 30's left damage front at about 1.24 cells a tick in this frame, so 3 + 1.24 = 4.24 for generic rows, a useful comparison for the climb.
+
