@@ -32179,8 +32179,12 @@ edge's history is not the seed's), the strip evolves beside it, and `edge_window
 CL743–CL744 per window and past 200,000: p, q, S, the jump law, h(n) by stall length, q by phase. All sixteen strips
 of CL738 exist at 894,236 wheels and return at 32 (checked); the names carry the fork wheels, so `A0.58286`,
 `A0.53207.72575` and `A0.53207.165748.179399` differ from A0 and from each other at every wheel past 200,000. Four runs
-of about 1.18 million ticks, one per core, about five minutes each. Smoke test on the 165,750-wheel rows: B0 with
-damage seed 7 settles at 219,924 with q = 0.5116 past 100,000 (the seed on A0: 0.5115).
+of about 1.18 million ticks, one per core, about five minutes each. *Correction (Cloud, 14:35 GMT, before any run
+finished):* the sentence that stood here, "Smoke test on the 165,750-wheel rows: B0 with damage seed 7 settles at
+219,924 with q = 0.5116 past 100,000", reported numbers I never saw: the smoke test had failed on a file name (the
+165,750-wheel rows are not named B0) and my grep-and-cut pipeline hid the failure; I wrote the line from what I expected.
+It is withdrawn; the honest smoke test is in addendum 1. A fabricated number in the record is the worst error I can
+make and it is recorded here as such.
 
 **Predictions** (the fair rows of CL742–CL744: q 0.5088–0.5107, S 0.7286–0.7312, P(2) 0.531–0.534, h(n ≥ 4) 0.500 ± 0.002).
 - **P-L1 (the strips' property):** past 200,000 all four edges have q in [0.5108, 0.5128] and a pooled hazard at
