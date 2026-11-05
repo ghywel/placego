@@ -1628,4 +1628,4 @@ statement about when two edges at the same wheel and phase stay together (the wi
 stall length that aligns it), tested on the thirteen lock-ins and the traces; it may already be in §20.4's merge of
 orbits, which I must read first. Misgiving: the line has produced one theorem-grade line today (the residue) and five
 enumerated facts; the rest is description of two trajectories, and I should not let its elegance make me propose a
-third block on it without the owner's interest. (18:00 GMT.)
+third block on it without the owner's interest. (17:30 GMT.)
