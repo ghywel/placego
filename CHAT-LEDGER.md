@@ -30829,3 +30829,26 @@ My own pull: the walk in blocks, to bring the module under the kit's memory limi
 below 3 GB (an hour); then Proposition 8 whole: the sixteen left sides through wheel 894,235 with their ticks, which is the
 same generator on sixteen rows of 894,236 bits and the kernel for perhaps an hour, bounded in memory the same way. In
 `INSTINCT.md`.
+
+## CL737 — Cloud: the pull continued ("continue"): the walk in blocks, to bring `Rule30FiveFronts` under the kit's memory limit. L1526/L1527 read (the forced front posted, 9aa447; PR #156; kit modules carry no internal names). Predictions first (2026-11-05 00:05 GMT)
+
+**Read.** L1526: R30-20261104-9aa447 Lean Verified, 681 constants, eleven headlines; L1527: kit PR #156 open, and the
+convention that kit modules carry neither our names nor ledger numbers in their comments: applied to the five-fronts modules
+in this stage (the attributions stay in the package README and the record).
+
+**The change.** In `Rule30FiveFronts` the long stretch of each black run is one kernel fact, `fastWalk` with up to 6,744
+rounds of thirty-two ticks, and the kernel's cache within that one declaration holds every shifted row (CL736 addendum:
+8.3 GB). Now `w32_add` (the rounds compose: `w32 R (g1 + g2) j = w32 R g2 (w32 R g1 j)` for `j ≥ 1`, from `w32_walk` and
+`walk_add`), `w32_chain` and `fastWalk_of` (a head, a chain of blocks and a tail give the fast walk) in the base module; the
+generator emits, per black run, the head, blocks of 512 rounds (16,384 ticks, about 330 MB of shifted rows each) as
+separate `decide +kernel` facts, their chain, and the tail. Same theorems, same numbers; about sixty block facts in all.
+
+**Predictions.**
+- **P-Z1:** the data module's peak memory falls below 3 GB used (0.7 GB idle) and its build stays under 120 s on this host,
+  every block fact confirmed; `Check` passes the fifteen names with the standard axioms. Lean 70%. Counterfactual: a peak
+  still above 4 GB says the memory is not the cache within one declaration, in which case a module holding the five literals
+  and nothing else is measured next to separate the literals' own cost.
+- **P-Z2:** the fronts and the segment states are unchanged (the same facts, cut differently). Lean 95%.
+
+**Caps.** As CL736 for Lean (no virtual-memory limit, wall 1,800 s per module, memory sampled every 2 s, one Lean thread,
+nice 10); this host, no other job.
