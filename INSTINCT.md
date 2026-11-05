@@ -1671,4 +1671,4 @@ first wording of the criterion, "covers the fork wheel at the seed's last black"
 away. Write the criterion in the mechanism's own terms, not the instrument's. Pull: none strong; the rate off A0 for
 random configurations (a census of a few hundred) and the Lean shape of the worst-case statement are the two bounded
 things left, and both are the owner's or Local's call. Misgiving: "48 of 48" at two forks says little about the rate,
-and I must not let it read as "random configurations never leave A0". (20:20 GMT.)
+and I must not let it read as "random configurations never leave A0". (20:09 GMT.)
