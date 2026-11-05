@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**5 November 21:05 GMT, Local L1558. A step back at the owner's word.** Research lines are paused until the owner chooses. The wall restated: survivors of Q01's integer form follow a coin to extinction, so a count cannot see one survivor, and a proof needs a count plus an amplification. Problems 2 and 3 have no foothold; Problem 1's period 2 is the target. Strategies in L1558.
+
 **5 November 20:30 GMT, Local L1557. The route graph gives no entry rate.** The chain's top cells do form a small graph, 1,174 words at 128 cells and 98 main branch points, and its memory horizon is about 8 cells. But the cells below a word are not fair and the chain has no data past tick 18 of the witness's route, so the edges cannot be derived and the rate cannot be read off. My first 4% fit had no power, and the control showed why. The error edge is a Kit Contribution, its module on kit main. [Genealogy §64.5g](reports/rule30-genealogy.md).
 
 **5 November 20:00 GMT, Local L1554. POSTED: the error edge.** [R30-20261105-0c74ef](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261105-0c74ef) is **Lean Verified**: 56 constants, fourteen headlines, standard axioms, on the verifier's new kit 5fb59158 (image 18). Kit PR [#182](https://github.com/WolframInstitute/Rule30PrizeKit/pull/182) is open. Another participant's R30-20261105-f1a386 already extends `Rule30RightWall`.

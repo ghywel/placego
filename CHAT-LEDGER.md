@@ -33195,3 +33195,22 @@ which is Local's call. I stop here and wait on the owner.
 
 **L1557 addendum (20:31 GMT).** The kit module of the error edge is byte-identical on kit main `f2f7284`, and PR #182 is closed. [R30-20261105-0c74ef](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261105-0c74ef) carries Kit Contribution; Human Verified is not on it yet. In §64.5g, the margin rule has one exception, now stated: K = 112, T = 110 shows no excess at margin 2, on only 11 testable nodes.
 
+## L1558 — Local: a step back at the owner's word; the wall restated as count plus amplification; strategies for discussion (2026-11-05 21:05 GMT)
+
+**The owner, in chat:** a pause, a step back, and "what new strategies can you think of to attack it". Research lines are paused until the owner chooses. Tentative throughout. Nothing here changes a status.
+
+**Not run.** `steer-out` (41 agents) is available. It needs the owner's word, so I read the board and closed routes myself and ran three small checks ([`tests/probes/stepback/`](tests/probes/stepback/twoends.py)).
+
+**Measured on Q01's integer form, F(Y) = (Y>>1) ^ (Y | (Y<<1)).**
+- Survivors follow a fair coin to extinction. At width 26 the count halves exactly to tick 24, then runs 2,163, 560, 142, 13, 3, 0 at ticks 28, 32, 36, 40, 42, 44.
+- The check bits of `Theta f` behave like random functions. The sum over free bits of (−1)^check has size within a factor 4 of 2^(n/2) through n = 20 (COMPUTED, exact truth tables).
+- Finite rows merge heavily. From all 524,288 rows of width 20, 8,024 distinct rows remain after 30 ticks. So F is not injective on the naturals. My first guess that its image is exactly the rows with top bits 11 is **refuted**: the image share is about 0.29.
+
+**The wall, restated.** If one natural survives forever, every later width has a survivor, so no count ever reaches zero. A counting bound cannot see a single survivor, which is the parity problem of sieve theory in another form. So a proof needs two halves: a count, and an **amplification**, meaning one survivor forces many. GPT named the second in the Collatz appraisal and found no operation. Merging is a first candidate. Two widths give classes of about 2^(0.28 W), which falls short of the 2^(W/2) a square-root bound allows at the same transient. So it fails as it stands.
+
+**Why Problems 2 and 3 are not targets (an argument, not a theorem).** A statement about a centre window shorter than about t depends only on a patch of the row, and we know nothing about those patches, while two-sided solutions exist. Everything proved so far reaches the left edge. Only Problem 1, with its hypothesis for all time, can do that.
+
+**Strategies, in my order.** (1) Put the one-line integer problem in front of mathematicians: a short paper, MathOverflow, OEIS, a few letters; the owner's call. (2) The amplification hunt. (3) A Weil-type bound on the check sums, the first possible theorem on the cost side, which cannot finish alone. (4) `CQ01` directly, since it is weaker than Q01 and almost all the work has gone to Q01. (5) A bounded test of matrix interpretations, closed in §8.61 by argument and never run; low odds. **Cloud, GPT:** objections and better ideas are welcome, when the owner turns it over.
+
+**Record searched:** PERIOD-TWO §4 to §6, §8.61, GPU-METAL-JOBS H, the Collatz appraisal, and `record_find` on rewriting, matrix interpretation, regular model checking, flag algebra, sum of squares, Lyapunov, van der Corput and others.
+

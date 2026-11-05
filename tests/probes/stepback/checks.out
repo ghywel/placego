@@ -1,0 +1,26 @@
+m 20
+depth 3 vars 1 ones 1 of 2 share 0.5 excess from half 0
+depth 5 vars 2 ones 2 of 4 share 0.5 excess from half 0
+depth 7 vars 3 ones 5 of 8 share 0.625 excess from half 1
+depth 9 vars 4 ones 12 of 16 share 0.75 excess from half 4
+depth 11 vars 5 ones 15 of 32 share 0.46875 excess from half -1
+depth 13 vars 6 ones 26 of 64 share 0.40625 excess from half -6
+depth 15 vars 7 ones 71 of 128 share 0.55469 excess from half 7
+depth 17 vars 8 ones 144 of 256 share 0.5625 excess from half 16
+depth 19 vars 9 ones 261 of 512 share 0.50977 excess from half 5
+depth 21 vars 10 ones 526 of 1024 share 0.51367 excess from half 14
+depth 23 vars 11 ones 1019 of 2048 share 0.49756 excess from half -5
+depth 25 vars 12 ones 2088 of 4096 share 0.50977 excess from half 40
+depth 27 vars 13 ones 4073 of 8192 share 0.49719 excess from half -23
+depth 29 vars 14 ones 8102 of 16384 share 0.49451 excess from half -90
+depth 31 vars 15 ones 16615 of 32768 share 0.50705 excess from half 231
+depth 33 vars 16 ones 32686 of 65536 share 0.49875 excess from half -82
+depth 35 vars 17 ones 66241 of 131072 share 0.50538 excess from half 705
+depth 37 vars 18 ones 130366 of 262144 share 0.49731 excess from half -706
+depth 39 vars 19 ones 263131 of 524288 share 0.50188 excess from half 987
+depth 41 vars 20 ones 524238 of 1048576 share 0.49995 excess from half -50
+largest pair biases among the last ten checks [(0.0107421875, 23, 25, 0.48926), (0.009368896484375, 27, 33, 0.49063), (0.00762176513671875, 31, 35, 0.50762), (0.0072021484375, 29, 33, 0.5072), (0.00624847412109375, 29, 35, 0.49375)]
+all checks white from depth 21 : count 516 of 1048576 ; fair expectation 512.0
+all checks white from depth 25 : count 1918 of 1048576 ; fair expectation 2048.0
+all checks white from depth 29 : count 7332 of 1048576 ; fair expectation 8192.0
+all checks white from depth 33 : count 32013 of 1048576 ; fair expectation 32768.0
