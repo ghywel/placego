@@ -6904,6 +6904,8 @@ The AB lock and the tested coarse projections of the period-3 lock can be entere
 
 ### 64.5a When rows enter a lock: the count run backward (L1540–L1541)
 
+**Corrected in §64.5c.** For the two `AAB` locks, the "last m with survivors", the totals and the "one early burst" below are sampling artefacts. The formula and the `AB` figures stand.
+
 **The law.** A row with a letter at its wall at time 0, fair independent cells below, rain above. Let U be a set of K-cell windows closed under the backward tick.
 
 **The formula (follows from §64.1).** Let e_m be the probability that the row first enters U at time m. Then
@@ -6929,6 +6931,8 @@ So almost all entry into a lock happens in one early burst, ending about K/3.4 t
 **Splitting on the chain, kept as a failure.** Multilevel splitting reproduced the direct rates to 2% up to agreement 145 ([output](../tests/probes/wall_floor/split_big.out)), and no run in 200,000 passed 145. But few independent rows reach that level, and all of them there share one top-145 word with a mismatch at exactly offset 145 ([output](../tests/probes/wall_floor/arrive_track.out)). So the wall at 145 is a fact about that one route, not a bound. The verified witness takes another route: after its break, agreement climbs about 3.4 cells a tick straight into the lock ([output](../tests/probes/wall_floor/witness_track.out)), while chain rows climb from a plateau near 85.
 
 ### 64.5b Why entry ends near K/3.4: a deviation's climb, and the factor 8 (L1542–L1543)
+
+**Corrected in §64.5c.** K/3.4 itself came from the sampling artefact, so there was no such end to explain for the `AAB` locks. The rise rule, the climb, the formula and the tail ratios stand.
 
 Worked by hand at the owner's request. K/3.4 turned out not to be a speed.
 
@@ -6962,6 +6966,30 @@ The factor 8^m is 3 bits a tick: each tick later saves three chance coincidences
 So K/3.4 is where a tilted tail runs out, not a speed. That two locks share 3.4 is a coincidence of their tails. The survival 0.2 in the third lock's Monte Carlo is this same tail ratio.
 
 **What a late entrant must do.** It must arrive late, and then break its letters legally. The verified witness shows the first: its 49 rises going back average 3.31, with 12 below 3, one a retreat of 11 cells. The second is what stops almost everyone, since the particles of §64.5a die within a tick or two of the tail's end. For `AB` the search shows no legal break at all beyond 14 rows, and the cloud's bound on alternation fits this.
+
+### 64.5c The deviation automaton, and a correction (L1544–L1545)
+
+**The correction.** The Monte Carlo of §64.5a resamples particles, and I said fresh cells enter on every tick. They do, but at the bottom of the row, and they reach the letters only some 30 ticks later. So particles that share an ancestor share their fate, and the population collapses. Counting ancestors shows it ([175 cells](../tests/probes/wall_floor/lineage175.out), [136 cells](../tests/probes/wall_floor/lineage136.out)): of the third lock's particles alive at tick 40, 2,031 ancestors remain at tick 45, 21 at 49 and one at 51, and then all die. For the 136-cell lock, from 1,032 ancestors at tick 34 down to 2 at 42. So the sudden end at 40 and 52 was an artefact, and "entry ends near K/3.4" has no basis for these two locks. The estimates are good only to about m = 34 and m = 45. The bound of 14 for `AB` is exact and independent of this, from exhaustive search and SAT.
+
+**A hand fact (PROOF-SKETCH; checked).** Let y_0 have its top K cells fixed and fair cells below. In row s the cells at offsets K − 3s and deeper are fair and independent of those K cells, since y_s(k) = y_0(k + 3s) ⊕ (a function of deeper cells), which is triangular ([check](../tests/probes/wall_floor/fairzone.out)). So only the zone between the first difference and K − 3s needs tracking. This is before conditioning on letters.
+
+**The automaton (COMPUTED).** [`wall_dev.c`](../tests/probes/wall_floor/wall_dev.c). State: phase, first difference D, and the m cells below it. One tick back gives the next state by the rule of §64.5b.
+
+*Fair version:* unknown cells fair. It has no particles, so it cannot collapse.
+
+| Lock | m | Mean arrival, chain | Mean arrival, sampled |
+|---|---|---|---|
+| `AB` | 12 | 8.72 | 8.69 |
+| 136 cells | 12 | 29.99 | 29.96 |
+| Third | 11 | 39.21 | 39.34 |
+
+The arrival distribution matches within about 20% through the bulk, and within a factor of 2 at the depth sampling reaches ([136](../tests/probes/wall_floor/dev136.out), [175](../tests/probes/wall_floor/dev175.out), [45](../tests/probes/wall_floor/dev45.out)). So on these strips the zone below the first difference behaves very nearly as fair for the bulk of arrival. This is measured, not proved.
+
+*Late behaviour of the chain.* With e_m ≈ |U| 2^(10−K) 8^m P(A > m), the chain gives for `AB` a steady fall from 1e-3 at m = 8 (the true cut at 14 it cannot see), and for the 136-cell lock a peak near 8e-11 at m = 38, then a fall of about 8% a tick. For the third lock e_m does not stop rising: 2.4e-11 at m = 51, 9e-11 at 60, 4.3e-10 at 87, a late ratio of 0.132 a tick, just above 1/8. That cannot go on for ever, since the e_m sum to at most 1. So the chain must fail at long range, and it fails by letting a row hover at a depth where the true row would need particular deep cells.
+
+*Free version:* unknown cells take all values, so the longest path would be a rigorous bound if the graph had no cycle. For `AB` it has cycles at m = 10, 12, 14, at interior offsets such as 12, 18 and 34 ([output](../tests/probes/wall_floor/dev45_free.out)). A deviation can sit there in the graph. I read these as the other exact periodic solutions that share the strip's top cells, as in §63.7, but I have not checked that cell by cell. So this window automaton gives no structural bound, and the true bound of 14 needs more cells than it holds.
+
+**Where this leaves late entry.** The third lock's chain suggests e_m could reach order 1e-10 before it fails, so a late rate of that order is not excluded. It is not an estimate: the chain overstates hovering. The direct run gives no entry in 4.9 billion ticks. A direct run of 1e11 ticks would settle whether the rate is near 1e-10, with no sampling method to doubt.
 
 ### 64.6 What this does not settle
 

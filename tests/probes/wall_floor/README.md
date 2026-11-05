@@ -64,3 +64,11 @@ Probes for [genealogy §63.7](../../../reports/rule30-genealogy.md). All are sho
 | `tailcheck.py` | The estimates of `wall_entry` against the formula with sampled arrivals. Reads `run_entry2/out.txt` and `run_entry3/out.txt`, saved here as `entry175.out` and `entry136.out`. Output `tailcheck.out`. |
 | `ab_exit.py` | The longest entries to the `AB` lock, row by row, by SAT. Output `ab_exit.out`. |
 
+## Added in L1545
+
+| File | What it does |
+|---|---|
+| `wall_dev.c` | The deviation automaton: `./wall_dev CYCFILE SETFILE M fair N SEED T` or `./wall_dev CYCFILE SETFILE M free ROUNDS`. Outputs `dev45.out`, `dev136.out`, `dev175.out`, `dev45_free.out`. Inputs `cyc45.txt`, `cyc136.txt`, `cyc175.txt`. |
+| `wall_entry_id2.c` | `wall_entry` with an ancestor count from tick `IDN`. Outputs `lineage136.out`, `lineage175.out`. **Read these before trusting `entry136.out` or `entry175.out` past m = 34 and m = 45.** |
+| `fairzone.py` | Checks that cells at offset K − 3s are fair. Output `fairzone.out`. |
+

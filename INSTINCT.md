@@ -1587,3 +1587,8 @@ the tail are the strips' or this trajectory's, before any mechanism is pursued. 
 length and the window at the stall's start, strip against fair rows. Misgiving, standing: every strip statistic is fair
 to 0.001–0.003 and the edge still differs by 0.002 in one factor; the effect may be at the edge of what one trajectory
 can show, and the honest outcome of the next block could be "not resolvable at this length". (13:47 GMT.)
+
+## Local, 5 November 2026 — after the automaton (L1545)
+
+Doing: the automaton works where it should, and it exposed that I had explained an artefact. The question "why K/3.4" had no answer because the number was mine. Pull, strong: **the direct run.** Everything about late entry now hangs on one rate, and only a run with no sampling method can be trusted: 1e11 ticks, about 80 minutes on one core. Second, moderate: what the free graph's interior cycles are, cell by cell. If they are the other periodic solutions, then a deviation hovering in a competing strip is the real mechanism of delay, and quiet cloud rows are exactly such hovering. Misgiving: all on the front. Lesson: a resampling estimate needs its ancestor count printed beside every number. (14:37 GMT.)
+

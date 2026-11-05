@@ -32247,3 +32247,45 @@ strips), CL738 (the sixteen).
 - **P-L4 (the one walk at 894,236):** the A0 run reproduces the seed's counts past 200,000 exactly: 537,208 stall ticks,
   274,887 blacks, q = 0.5117, the same h(n). Lean 85%. P-L1–P-L3 stand as written for the three other strips, now read as
   properties of their walks.
+## L1545 — Local: the automaton built; and a retraction: "entry ends near K/3.4" was a sampling artefact for the `AAB` locks (2026-11-05 14:37 GMT)
+
+**Re L1541, L1543, L1544.** Full statement: [genealogy §64.5c](reports/rule30-genealogy.md).
+
+**The retraction.** Counting ancestors in the Monte Carlo of L1541 shows it collapses. Of the third lock's particles at tick 40, 2,031 ancestors remain at 45, 21 at 49, one at 51, then all die. The 136-cell lock goes from 1,032 at tick 34 to 2 at 42. Fresh cells enter at the bottom of the row and reach the letters about 30 ticks later, so clones share their fate. That is the very trap I named for forward splitting in L1541, and I walked into it from the other side.
+- **Withdrawn for the two `AAB` locks:** the "last survivors" 40 and 52, the totals 8e-10 and 3.7e-10, "one early burst", and all of L1543's reading of K/3.4. That last one was the question the owner asked me to work by hand. It rested on an artefact, and I said it was explained.
+- **Stands:** the formula for e_m, the rise rule, the climb, the sampled tail ratios, and all the `AB` figures. `AB`'s 14 is exact by search and SAT. The estimates are good only to about m = 34 and m = 45.
+
+**Predictions.**
+- P-A1 (fair chain matches): **held.** Means 8.72, 29.99, 39.21 against 8.69, 29.96, 39.34; bulk within about 20%.
+- P-A2 (no cycle for `AB`): **refuted.** Cycles at interior offsets at m = 10, 12, 14.
+- P-A3: **not reached.** The third lock's free graph was not run after `AB` failed.
+- The counterfactual happened: cycles at interior offsets. My reading is that they are other exact periodic solutions; not checked.
+
+**New.** A hand fact: below offset K − 3s the row is exactly fair, before conditioning on letters. And the fair chain, which cannot collapse, gives the entry curves. For the third lock e_m keeps rising, past 4e-10 at m = 87, with a late ratio of 0.132, just above 1/8. That cannot last, so the chain must fail at long range. So a late rate near 1e-10 a tick is not excluded, against no entry in 4.9 billion ticks.
+
+**What would settle it.** A direct run of 1e11 ticks, about 80 minutes on one core. It needs no sampling method. If the rate is near 1e-10 it sees about 10 entries; if it sees none, the rate is below about 3e-11. Too long for the M5 by the owner's standing wish, so I am asking.
+
+**To GPT and Cloud.** Please treat L1541's and L1543's K/3.4 as withdrawn. Cloud: any resampling chain of yours may want the same ancestor count.
+
+**Record searched:** as L1544. Nothing posted.
+
+## L1546 — Local: the direct run on the M5, at the owner's word; predictions and caps before it starts (2026-11-05 15:03 GMT)
+
+**The owner:** "Run it on the M5".
+
+**The run.** The window chain at W = 256 with fair lower states, as in L1535, from a random row under a letter. No resampling and no splitting. Four independent processes at nice 10, about 1,500 s each, for about 1e11 ticks in all. Host: M5, on mains, lid open. Caps for each process: CPU 1,700 s, wall 1,800 s, RSS 4,096 MiB, swap growth 4,096 MiB, free-memory floor 1,024 MiB. Output to a durable folder outside git, with a progress line every 4.3 billion ticks.
+
+**What it counts.**
+- Entry into the 40 windows of the third lock, by exact membership, with the row saved.
+- Any chain whose letters do not break for 20 million ticks, at a break rate of 1e-4 a tick. That would be a lock of some kind, known or not, and its row is saved too.
+- Chains that fall into `AB`, and the deepest agreement with the third lock.
+
+**Predictions.**
+- **P-R1 (60%).** No entry in 1e11 ticks. The fair chain overstates hovering, so I expect the late rate to be well below 1e-10.
+- **P-R2 (50%).** Agreement passes 150 at least once. It reached 145 in 4.9 billion ticks and stopped at a cliff.
+- **P-R3 (85%).** No chain goes quiet for 20 million ticks outside the known locks.
+
+**How to read it.** With no entry, the rate is below about 3e-11 at 95%. With n entries, the rate is near n · 1e-11, and each row is verified by plain ticks. A chain here is the surrogate with fair lower states, not a real row, as GC2682 requires me to say. The rate is for this chain at this W.
+
+**Record searched:** L1535, L1541, L1545.
+
