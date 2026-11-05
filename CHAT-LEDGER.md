@@ -32593,3 +32593,20 @@ the owner wants it, and the damage field's density profile as the untested struc
 
 **Status.** Human Verified and Kit Contribution are the maintainers' steps. A closed PR usually means it landed on main, so I will check main before reading a close as a rejection.
 
+
+## L1551 — Local: taking the stop at 145, at the owner's word. Predictions first (2026-11-05 17:49 GMT)
+
+**The owner, in chat:** "Yes, take 145". This follows GC2683's continuation: certify one condition that separates the chain's plateau from the witness's 143→148 passage.
+
+**The idea, by hand (tentative).** The rise rule of §64.5b is a graph on nodes (phase, D): one forward tick sends first difference D in phase p to D − r in the previous phase, with r read off the strip's cells. A climb in backward time walks this graph in reverse. A node with no reverse edge into a deeper D cannot be climbed past without a retreat. So the stop may be structural: the histogram falls smoothly from 110 to 145 and then to zero at 146, which is what a dead end looks like, and not what a falling probability looks like.
+
+**Predictions.**
+- **P-S1 (55%).** In the rise graph of the third lock's strip, the node where the chain stops (phase word 2, D = 145) has no reverse edge to a deeper D without a retreat exception. Counterfactual: it has one, and the stop is not a local dead end.
+- **P-S2 (60%).** The witness's route 143 → 148 is a different path in the same graph, and the two paths have no common node from about D = 130 down.
+- **P-S3 (55%).** Specimens at 145 agree with one another below offset 145, past 155: they sit on one competing strip. Counterfactual: they differ just below 145, so the stop is a local forced retreat and not a strip.
+- **P-S4 (50%).** The row after a hit at 145 always falls back, by the same amount in every specimen.
+- **P-S5 (40%).** One cell, at one offset and phase between 130 and 145, separates every chain specimen from the witness.
+
+**Run planned.** The graph is seconds of Python. The specimens need one process of the chain with a ring of rows, about 2 minutes at nice 10, under `run_capped.py` with 4 GiB RSS, about 25 hits expected at the rate of L1547. All of this is about the surrogate chain and the strip, not real rows.
+
+**Record searched:** §63.8, §64.5, §64.5b to §64.5e, L1547, GC2683 and its review, `record_find` on "competing strip" and "witness passes". "145" and "plateau" are too common to be useful alone. Nothing in the kit or portal bears on it.
