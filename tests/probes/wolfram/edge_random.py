@@ -1,12 +1,15 @@
 """edge_random.py: the error edge over a random background, and Rule 30's left damage front (CL741 addendum 2).
-(i) The wall-frame error process of error_process.py with the strip replaced by a uniformly random row C (evolved by the
-same step; the actual row a = C XOR e with e random above wheel 0): every tick the edge m (the lowest erroneous wheel),
+(i) The error process over a random background. Not in the wall frame: there the implicit zeros below wheel 0 give every
+row a left side (the universal strip), so the background near the edge is never random and an error at wheel 0 never
+heals (the first design, killed). In the standard frame instead: a random row a of N cells and b = a with random damage on
+the cells from the centre up; the leftmost damaged cell x_L, the wall-frame edge m = x_L + t; every tick the parent's bit
+(the cell below x_L),
 the parent's bit, the jump at a death, the error density at offsets 1..4, and the strip's bit three above the edge in the
 state (window C[m-2..m+2] = 01101, lowest wheel first, both errors set), whose density was 0.989 on the actual strip.
 (ii) The standard frame: two random rows of N cells differing in one cell, the leftmost differing cell after T steps,
 lambda_L = its mean leftward motion per step (NKS p. 949: about 0.2428). Predictions P-G1 .. P-G3 in CL741 addendum 2.
-Usage: python3 edge_random.py [K] [NSEEDS] [N] [T] [NRUNS_ii]   defaults 400000 3 524288 200000 NSEEDS+1
-(run here as K = 300,000 with three backgrounds, and part (ii) separately with four runs)"""
+Usage: python3 edge_random.py [K] [NSEEDS] [N] [T] [NRUNS_ii]   defaults 400000 3 524288 200000 NSEEDS+1 (K unused now)
+(run here as N = 2^20, T = 300,000, three backgrounds for (i); part (ii) separately with four runs at N = 2^19, T = 200,000)"""
 import sys, time, collections, random
 K = int(sys.argv[1]) if len(sys.argv) > 1 else 400000
 NS = int(sys.argv[2]) if len(sys.argv) > 2 else 3
@@ -15,34 +18,33 @@ T = int(sys.argv[4]) if len(sys.argv) > 4 else 200000
 NL = int(sys.argv[5]) if len(sys.argv) > 5 else NS + 1     # runs of part (ii)
 import functools; print = functools.partial(print, flush=True)
 def lowbit(x, K): return (x & -x).bit_length() - 1 if x else K
-print("(i) the error edge over a random background, wall frame")
+print("(i) the error edge over a random background: standard frame, the damage half-infinite to the right of the centre; wheel = cell + tick")
 speeds = []
 for seed in range(1, NS + 1):
-    rng = random.Random(seed); MASK = (1 << K) - 1
-    def step(v): return ((v << 2) ^ ((v << 1) | v)) & MASK
-    C = rng.getrandbits(K); e = rng.getrandbits(K) | 1; a = C ^ e
-    t0 = time.time(); t = 0; pblack = 0; nwin = 0; jumps = collections.Counter(); dens = [0] * 5; m_prev = None
-    special = [0, 0]; dec = 0
-    while True:
-        e = a ^ C; m = lowbit(e, K)
-        if m >= K: break
+    rng = random.Random(seed); MASK = (1 << N) - 1; x0 = N // 2
+    def step(v): return ((v << 1) ^ (v | (v >> 1))) & MASK
+    a = rng.getrandbits(N); b = a ^ ((rng.getrandbits(N) | 1) << x0)      # the damage: random above the centre, the centre damaged
+    t0 = time.time(); pblack = 0; nwin = 0; jumps = collections.Counter(); dens = [0] * 5; m_prev = None; pb_prev = 0
+    special = [0, 0]; dec = 0; xL0 = x0
+    for t in range(T):
+        d = a ^ b; xL = lowbit(d, N)
+        if xL < t + 8: raise RuntimeError("the damage reached the boundary's cone")   # cell 0's influence reaches cell t at tick t
+        m = xL + t                                             # the wall-frame edge
         if m_prev is not None and m < m_prev: dec += 1
-        if m >= 2:
-            nwin += 1; pb = (C >> (m - 1)) & 1; pblack += pb
-            w = (e >> (m + 1)) & 15
-            for d in range(1, 5): dens[d] += (w >> (d - 1)) & 1
-            if (w & 3) == 3 and ((C >> (m - 2)) & 31) == 0b10110:     # window 01101 lowest wheel first = bits 0..4 = 0,1,1,0,1
-                special[(C >> (m + 3)) & 1] += 1
-            if m_prev is not None and pb_prev: jumps[m - m_prev] += 1
-            pb_prev = pb
-        else: pb_prev = 0
-        m_prev = m; a = step(a); C = step(C); t += 1
+        nwin += 1; pb = (a >> (xL - 1)) & 1; pblack += pb              # the parent: the cell below the edge (undamaged, so a = b there)
+        w = (d >> (xL + 1)) & 15
+        for k in range(1, 5): dens[k] += (w >> (k - 1)) & 1
+        if (w & 3) == 3 and ((a >> (xL - 2)) & 31) == 0b10110: special[(a >> (xL + 3)) & 1] += 1
+        if m_prev is not None and pb_prev: jumps[m - m_prev] += 1
+        pb_prev = pb; m_prev = m
+        a = step(a); b = step(b)
+    xL = lowbit(a ^ b, N); lam = (x0 - xL) / T
     tot = sum(jumps.values()); mean = sum(j * v for j, v in jumps.items()) / tot; dr = pblack / nwin
     jl = {j: round(v / tot, 4) for j, v in sorted(jumps.items()) if j <= 7}
-    speeds.append((K - 1) / t)
-    print(f"  seed {seed}: K={K} settled at tick {t}: speed {(K-1)/t:.4f} (leftward {1-(K-1)/t:.4f} cells/step); edge decreases {dec}; "
-          f"death rate {dr:.4f}; jump law {jl}; mean {mean:.4f}; product {dr*mean:.4f}; error density at offsets 1..4 "
-          f"{[round(dens[d]/nwin, 4) for d in range(1, 5)]}; P-G3 state: C_(m+3)=1 on {special[1]} of {sum(special)} visits "
+    speeds.append(1 - lam)
+    print(f"  seed {seed}: N={N}, T={T}: lambda_L {lam:.4f}, wall-frame speed {1-lam:.4f}; edge decreases {dec}; "
+          f"P(heal) {dr:.4f}; jump law {jl}; mean {mean:.4f}; product {dr*mean:.4f}; error density at offsets 1..4 "
+          f"{[round(dens[k]/nwin, 4) for k in range(1, 5)]}; P-G3 state: C_(m+3)=1 on {special[1]} of {sum(special)} visits "
           f"({special[1]/max(1,sum(special)):.3f}); {time.time()-t0:.0f} s")
 import statistics
 if speeds: print(f"  speed over {NS} backgrounds: mean {statistics.mean(speeds):.4f}" + (f", sd {statistics.stdev(speeds):.4f}" if NS > 1 else ""))

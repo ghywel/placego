@@ -1,0 +1,11 @@
+(i) the error edge over a random background: standard frame, the damage half-infinite to the right of the centre; wheel = cell + tick
+  seed 1: N=1048576, T=300000: lambda_L 0.2419, wall-frame speed 0.7581; edge decreases 0; P(heal) 0.4122; jump law {1: 0.3617, 2: 0.53, 3: 0.0544, 4: 0.0254, 5: 0.0223, 6: 0.004, 7: 0.0014}; mean 1.8392; product 0.7581; error density at offsets 1..4 [0.463, 0.5766, 0.4989, 0.5157]; P-G3 state: C_(m+3)=1 on 1933 of 1954 visits (0.989); 68 s
+  seed 2: N=1048576, T=300000: lambda_L 0.2426, wall-frame speed 0.7574; edge decreases 0; P(heal) 0.4120; jump law {1: 0.361, 2: 0.531, 3: 0.0546, 4: 0.0255, 5: 0.0218, 6: 0.004, 7: 0.0012}; mean 1.8385; product 0.7574; error density at offsets 1..4 [0.4634, 0.5775, 0.4985, 0.5171]; P-G3 state: C_(m+3)=1 on 1993 of 2010 visits (0.992); 50 s
+  seed 3: N=1048576, T=300000: lambda_L 0.2454, wall-frame speed 0.7546; edge decreases 0; P(heal) 0.4103; jump law {1: 0.3582, 2: 0.5345, 3: 0.0547, 4: 0.0252, 5: 0.0211, 6: 0.0038, 7: 0.0013}; mean 1.8392; product 0.7546; error density at offsets 1..4 [0.462, 0.5772, 0.4982, 0.5169]; P-G3 state: C_(m+3)=1 on 1993 of 2017 visits (0.988); 50 s
+  speed over 3 backgrounds: mean 0.7567, sd 0.0019
+(ii) the left damage front, standard frame: two random rows differing in one cell
+  seed 1: N=524288, T=200000: left edge moved 48450 cells: lambda_L = 0.2422; 15 s
+  seed 2: N=524288, T=200000: left edge moved 48902 cells: lambda_L = 0.2445; 11 s
+  seed 3: N=524288, T=200000: left edge moved 49240 cells: lambda_L = 0.2462; 15 s
+  seed 4: N=524288, T=200000: left edge moved 48884 cells: lambda_L = 0.2444; 11 s
+  lambda_L over 4 runs: mean 0.2443, sd 0.0016; 1 - lambda_L = 0.7557

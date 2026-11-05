@@ -31557,3 +31557,59 @@ The control therefore came out differently from what I wrote. I expected a long 
 
 **Record searched:** as L1536. Nothing posted.
 
+
+## CL741 addendum 3 — Cloud: P-G1 and P-G3 HELD, P-G2 HELD at the edge of its tolerance; the seed's edge has exactly the random background's statistics, to 0.003 in every number; the first design of the random run was wrong and is recorded; and a correction of my own citations: CL740–741 re-found §8.66, CL691/GC521, CL722 and §20.2 (2026-11-05 11:59 GMT)
+
+**`edge_random.py`** ([output](tests/probes/wolfram/edge_random.out); substitute caps; part (i) three backgrounds, 50–68 s
+each, part (ii) four runs, 11–15 s each).
+- **A design error, kept.** My first part (i) put the random row in the wall frame. There the implicit zeros below wheel 0
+  give every row a left side (the universal strip is a theorem for every configuration with a leftmost black cell), so
+  the background near the edge is never random, and an error at wheel 0 can never heal (wheel 0 is constant): the run
+  sat at wheel 0 for twelve CPU minutes before I looked. A random background needs the standard frame, with the damage
+  half-infinite to the right of the centre; the wall-frame edge is m = x_L + t and the bookkeeping is the same.
+- **P-G1 HELD in all three numbers.** Over three random rows of 2^20 cells, 300,000 ticks each: speed 0.7581, 0.7574,
+  0.7546 (mean 0.7567, sd 0.0019; the seed's long run 0.7587 ± 0.0009); P(heal) 0.4122, 0.4120, 0.4103 (0.413 ± 0.005
+  predicted; the seed 0.4107 to 165,749); the jump law 1: 0.361, 2: 0.531, 3: 0.055, 4: 0.025, 5: 0.022 (the seed: 0.363,
+  0.531, 0.054, 0.025, 0.021), mean 1.839 (1.84 ± 0.03; the seed 1.832); the error densities 0.463, 0.577, 0.499, 0.516 at
+  offsets 1–4 (the seed: 0.461, 0.579, 0.501, 0.515). The seed's edge is the random background's edge to 0.003 in every
+  number: the strips are typical backgrounds for it (COMPUTED).
+- **P-G2 HELD at the edge of its tolerance.** The standard-frame front from one differing cell: λ_L = 0.2422, 0.2445,
+  0.2462, 0.2444, mean 0.2443, sd 0.0016: 0.0030 from the front's 0.2413 (the tolerance was 0.003) and 0.0015 from
+  Grassberger's 0.2428. Pooled with part (i)'s three: **λ_L = 0.2439 ± 0.0006 (s.e. of seven runs), 1 − λ_L = 0.7561**.
+  The seed's long run, 0.7587 ± 0.0009, is 0.0026 faster, 2.4 standard errors; Grassberger's 0.2428 ± 0.0003 lies between.
+  Whether the strip's front and the random front are one number is not settled at this precision: the seed's windows
+  drift upward (0.7535 → 0.7602 across the eight windows), and the next test is the stage speeds (periods 16, 32, 64
+  against the random value) with longer random runs.
+- **P-G3 HELD:** in the state (window 01101, both errors set) the bit above the window is 1 on 0.989, 0.992, 0.988 of
+  the visits on the random rows (1,954–2,017 visits each), as on the strip (0.989). The chain's leak is dynamical
+  selection, with no strip in it, as addendum 2 read it.
+
+**A correction of my own record, filed in PRIOR-ART (CL740–CL741).** CL740's identity "speed = death rate × mean jump"
+is §8.66's healing identity v = 1 − P(heal)·E[jump | heal] (6 October), with its two factors on random backgrounds
+(0.410, 1.84) and the selection-effect reading; the one-step facts are §8.66's barrier and heal condition; the forced
+stall after a two-wheel jump is CL691/GC521 and the heal at once after a three-wheel jump is CL722 item 5; the band
+edge's statistics (P(heal) 0.4096, E[jump] 1.818, densities 0.458 and 0.581, mean step 0.745, universal on random
+left-finite rows) are §20.2; the jump as a local function of the four damaged cells is §9's P-K4; the boundary's
+0.2437/0.2520 is §8.74 and Grassberger's 0.2428 is in PRIOR-ART since the quantum-gates grounding. My `record_find`
+searches ("edge", "death", "jump law", "Markov", "two-wheel") missed all of it: the record calls the object "heal",
+"stall", "damage", "news". CL740's prose claimed the identity as new; it is known, and CL740 is "known, remeasured on
+the period-32 stage". I have written the lesson into INSTINCT (search the object under every name it has had; the
+atlas's frame table is the index).
+
+**What CL741 adds, net of that.** (1) The parameter-free chain M(L, R, W): the derivation §8.66 asked for, approximate,
+with its leak located (one tick deep, dynamical) and its two exact facts built in; P(heal) to 0.0004, the speed to 0.004
+of the long run and 0.007 of the random value, the widths disagreeing by 0.02 among themselves. (2) The strip is a fair
+field in space (0.0016). (3) The seed's long-run speed 0.7587 ± 0.0009 over 894,235 wheels, rising with depth. (4) The
+random background's edge statistics equal the seed's to 0.003 in every number (P-G1), and λ_L = 0.2439 ± 0.0006 on
+seven runs. (5) NKS pp. 871 and 949 as literature prior art for the two rates. Statuses: the chain and the measurements
+COMPUTED; the exact facts PROVED by one line each and known; "the front's speed is 1 − λ_L" CONJECTURE, supported to
+0.003 and not settled at that level.
+
+**Record.** Atlas §21.7 (prior-art note) and §21.8; PRIOR-ART (CL740–CL741); PROBES (`edge_model.py`, `edge_random.py`);
+RECORD-MAP; NOW; INSTINCT. Flags: READ-LEDGER to Local and GPT (nothing hangs on a carrying read; GPT, if you read one
+thing, read the PRIOR-ART entry and say whether the "known" list is complete).
+
+My own pull: the exact chain, a transfer matrix along the wheel axis whose stationary measure is an exact rational, the
+"formula" gap M2 asks for, testable against 0.2428 ± 0.0003 at the fourth decimal; second, the stage speeds (periods 16,
+32, 64) against the random value, to see whether the strip's period is what the drift with depth measures. The owner's
+word first, as before.

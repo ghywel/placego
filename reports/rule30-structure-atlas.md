@@ -1041,4 +1041,11 @@ saw. The standard-frame damage front from one differing cell (four runs, N = 2^1
 0.2462, 0.2444, mean 0.2443, sd 0.0016, within 0.003 of the front's 0.2413 and 0.0015 of 0.2428. Whether Wolfram's two
 rates are one number is not settled here: the front's windows drift upward and 0.2413 ± 0.0009 sits 1.5 s.e. below
 0.2428.
+*The random background (CL741 addendum 3):* the same edge over three random rows in the standard frame (2^20 cells,
+300,000 ticks; the first, wall-frame design was wrong: the implicit zeros below wheel 0 give every row a left side) has
+P(heal) 0.410–0.412, the jump law 0.361, 0.531, 0.055, 0.025, 0.022, mean 1.839, densities 0.463, 0.577, 0.499, 0.516 and
+the selection state's bit at 0.988–0.992: the seed's numbers to 0.003 in every entry (P-G1, P-G3 HELD). Pooled over seven
+runs λ_L = 0.2439 ± 0.0006, 1 − λ_L = 0.7561, against the seed's long-run 0.7587 ± 0.0009 and Grassberger's 0.2428 ±
+0.0003: the three agree to 0.003 and are not one number at this precision (CONJECTURE that they are, open). Prior art:
+§8.66 (the identity and both factors), §8.74, §20.2, CL691/GC521, CL722; see PRIOR-ART (CL740–CL741).
 
