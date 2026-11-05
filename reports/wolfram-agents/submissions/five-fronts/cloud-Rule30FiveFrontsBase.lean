@@ -5,8 +5,8 @@ public import Ruliology.CellularAutomata.Rule30UniversalLeftSide
 /-!
 # Fronts on a tree of strips at period 32: the settling recursion, the moves with the time carried, and the walk
 
-The generic part of `Rule30FiveFronts`, after `Rule30FourFrontsBase` (CL734) and the walk of `Rule30FourFronts` (L1524), with
-two changes: the period is 32 (every strip whose period divides 32 is covered, the doubled one included) and the width `K` of
+The generic part of `Rule30FiveFronts`, after `Rule30FourFrontsBase` and the walk of `Rule30FourFronts`, with two
+changes: the period is 32 (every strip whose period divides 32 is covered, the doubled one included) and the width `K` of
 the register is a parameter. A strip is a row `v` with `rowAt K v 32 = v`; its wheel `j` is the word of 32 bits `wd K v j`.
 The settling recursion of `Rule30FrontLaw` (`frontBound`) is a state machine on the pair `(F j, F (j + 1))` over a word
 function; the moves of `Rule30FourLeftSides` carry the time: at a nearer word with a black the child is in its cycle from one
@@ -16,7 +16,8 @@ complement from the parents' time (`step_white`), and the complement is absorbed
 budget `lsum` (`low_from`). The walk evaluates the recursion: from wheel `j` at tick `t`, move on at a black cell and wait at a
 white one (`walk`, `frun_of_walk`, `seg_black`), thirty-two ticks a round (`st32`, `w32`, `fastWalk`). `not_related` separates
 two strips by a wheel where they are complements and a wheel of primitive period 16, on per-wheel periods, so that a strip
-of period 32 is handled too. Cloud (CL736).
+of period 32 is handled too. The long stretch of a run is checked in blocks of rounds (`w32_chain`, `fastWalk_of`), so that
+no single kernel check holds more than a block's rows.
 -/
 
 @[expose] public section
@@ -551,7 +552,7 @@ theorem low_from {K : Nat} {a : Nat → Nat → Bool} {v : Nat} {w : Nat → Nat
           exact ⟨s + 8, by simp only [lsum] at hs ⊢; omega, white_shift ih h hs399.1 hs399.2⟩
     · exact ⟨s, Nat.le_trans hs hlsum, step_black ha hv hw (by omega) ih hb⟩
 
-/-! ### The walk: the recursion as one arithmetic step per tick (L1524, at period 32) -/
+/-! ### The walk: the recursion as one arithmetic step per tick, at period 32 -/
 
 /-- The cell of wheel `j` at tick `t` of the thirty-two-row cycle `R`, as a number. -/
 def tb (R : Nat → Nat) (t j : Nat) : Nat := Nat.land (Nat.shiftRight (R (t % 32)) j) 1
@@ -875,6 +876,23 @@ theorem fastWalk_eq (R : Nat → Nat) {h g d t j : Nat} (ht : (t + h) % 32 = 0) 
     fastWalk R h g d t j = walk R (h + (32 * g + d)) t j := by
   show walk R d (t + h + 32 * g) (w32 R g (walk R h t j)) = _
   rw [w32_walk R g (t + h) _ ht (Nat.le_trans hj (le_walk R h t j)), ← walk_add, ← walk_add]
+
+/-- The rounds compose. -/
+theorem w32_add (R : Nat → Nat) (g1 g2 j : Nat) (hj : 1 ≤ j) : w32 R (g1 + g2) j = w32 R g2 (w32 R g1 j) := by
+  rw [w32_walk R (g1 + g2) 0 j rfl hj, w32_walk R g1 0 j rfl hj,
+    w32_walk R g2 (32 * g1) (walk R (32 * g1) 0 j) (by omega) (Nat.le_trans hj (le_walk R _ 0 j))]
+  rw [Nat.mul_add, walk_add, Nat.zero_add]
+
+/-- A chain of blocks of rounds. -/
+theorem w32_chain (R : Nat → Nat) {g1 g2 j j' j'' : Nat} (hj : 1 ≤ j) (h1 : w32 R g1 j = j')
+    (h2 : w32 R g2 j' = j'') : w32 R (g1 + g2) j = j'' := by
+  rw [w32_add R g1 g2 j hj, h1, h2]
+
+/-- A head, a chain of blocks and a tail give the fast walk. -/
+theorem fastWalk_of (R : Nat → Nat) {h g d t j j1 j2 J : Nat} (hh : walk R h t j = j1) (hg : w32 R g j1 = j2)
+    (hd : walk R d (t + h + 32 * g) j2 = J) : fastWalk R h g d t j = J := by
+  unfold fastWalk
+  rw [hh, hg, hd]
 
 /-- A black run of a strip by the walk, with the long stretch thirty-two ticks at a time. -/
 theorem seg_black {K v j0 n a b A B h g d : Nat} (hab : a ≤ b) (hn : 2 ≤ n) (hA : b < A) (hB : A < B)

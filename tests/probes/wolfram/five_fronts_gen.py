@@ -3,11 +3,11 @@
 settling recursion at phase 0, and writes the Lean module: five literals, their returns, the doubling and fork facts, the
 black windows, Local's walk segments (a head to a multiple of 32, the rounds, a tail, and four facts per black run, L1524),
 the chains, and the theorems. The numbers in the kernel facts come from this Python; the kernel confirms or refutes each.
-Usage: python3 five_fronts_gen.py OUTFILE [BLOCK]   (no OUTFILE: print the segments only; BLOCK: rounds per kernel fact, 512)."""
+Usage: python3 five_fronts_gen.py OUTFILE [BLOCK]   (no OUTFILE: print the segments only; BLOCK: rounds per kernel fact, 128)."""
 import re, sys, time, hashlib
 import numpy as np
 K = 165750; MASK = (1 << K) - 1; T_END = 340000; P = 32; JMAX = 165749
-BLK = int(sys.argv[2]) if len(sys.argv) > 2 else 512   # rounds of 32 ticks per kernel fact (OUTFILE BLOCK)
+BLK = int(sys.argv[2]) if len(sys.argv) > 2 else 128   # rounds of 32 ticks per kernel fact (OUTFILE BLOCK)
 SRC = 'reports/wolfram-agents/submissions/four-left-sides/Rule30FourLeftSides.lean'
 src = open(SRC).read()
 def step(v): return ((v << 2) ^ ((v << 1) | v)) & MASK

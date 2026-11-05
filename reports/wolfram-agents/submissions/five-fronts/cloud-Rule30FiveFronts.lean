@@ -14,16 +14,16 @@ whose farther word has even parity, so its child keeps period 16 and the complem
 (`white_fork`). The settling recursion of `Rule30FrontLaw`, read on each strip's thirty-two-row cycle and carried through
 the tree (`Rule30FiveFrontsBase`), gives `forced_front_five`: every array with the left-diagonal recurrence and a black start
 carries one of the five strips on every wheel through 165,749 from strip tick `F j`, at a shift of at most `15 + 16 = 31`.
-The fronts at wheel 165,749 are 333,333 (`A0`), 333,257 (`A1`), 333,503 (`B0` and `B2`) and 334,150 (`B1`), by Local's walk
-(`seg_black`, L1524) at thirty-two ticks a round; so from strip tick 334,150, that is from tick at most 334,181 of its own
+The fronts at wheel 165,749 are 333,333 (`A0`), 333,257 (`A1`), 333,503 (`B0` and `B2`) and 334,150 (`B1`), by the walk
+(`seg_black`) at thirty-two ticks a round, in blocks; so from strip tick 334,150, that is from tick at most 334,181 of its own
 clock, every configuration with a leftmost black cell carries the whole of its strip through 165,749
 (`forced_front_five_uniform`, `forced_front_five_left_side`, `forced_front_five_seed`). The five strips are realized by finite
 rows, no time shift relates two of them, and each configuration is on exactly one (`exactly_five_left_sides`,
 `on_exactly_one`); the classification holds with its shift bounded by 31 (`classification_bounded`). As arithmetic, iterating
 `v ↦ 4 v ⊕ (2 v ∨ v)` modulo `2 ^ 165750` from any odd `v` reaches one of the five rows (`odd_reaches_one_of_five`).
 The rows: `A0` is the single cell's row at tick 340,000, `A1`, `B0`, `B1` are the rows of `Rule30FourLeftSides` evolved to tick
-340,000, `B2` is `B0` with bit 165,749 complemented. Cloud (CL736), after L1513, L1524 and the record's Proposition 8 (the
-tree of forks and doublings, computed). Nothing here concerns the center column or the Prize problems, and 165,749 is
+340,000, `B2` is `B0` with bit 165,749 complemented. The tree of forks and doublings to this depth was first found by
+computation, in the contributors' record; here it is a theorem as far as it is used. Nothing here concerns the center column or the Prize problems, and 165,749 is
 where these rows stop, not a claim about what happens beyond it.
 -/
 
@@ -274,21 +274,282 @@ theorem classification_bounded {a : Nat → Nat → Bool} (ha : Recurrence a) (h
 /-! ### The numbers, by the walk -/
 
 theorem a_low : frun wA0 0 400 (0, 1) = (783, 784) := by decide +kernel
+theorem a0_1_h : walk (rowAt K A0) 16 784 401 = 410 := by decide +kernel
+theorem a0_1_b0 : w32 (rowAt K A0) 128 410 = 2484 := by decide +kernel
+theorem a0_1_c0 : w32 (rowAt K A0) 128 410 = 2484 := a0_1_b0
+theorem a0_1_b1 : w32 (rowAt K A0) 128 2484 = 4518 := by decide +kernel
+theorem a0_1_c1 : w32 (rowAt K A0) 256 410 = 4518 :=
+  w32_chain _ (g1 := 128) (g2 := 128) (by decide) a0_1_c0 a0_1_b1
+theorem a0_1_b2 : w32 (rowAt K A0) 128 4518 = 6500 := by decide +kernel
+theorem a0_1_c2 : w32 (rowAt K A0) 384 410 = 6500 :=
+  w32_chain _ (g1 := 256) (g2 := 128) (by decide) a0_1_c1 a0_1_b2
+theorem a0_1_b3 : w32 (rowAt K A0) 128 6500 = 8509 := by decide +kernel
+theorem a0_1_c3 : w32 (rowAt K A0) 512 410 = 8509 :=
+  w32_chain _ (g1 := 384) (g2 := 128) (by decide) a0_1_c2 a0_1_b3
+theorem a0_1_b4 : w32 (rowAt K A0) 128 8509 = 10539 := by decide +kernel
+theorem a0_1_c4 : w32 (rowAt K A0) 640 410 = 10539 :=
+  w32_chain _ (g1 := 512) (g2 := 128) (by decide) a0_1_c3 a0_1_b4
+theorem a0_1_b5 : w32 (rowAt K A0) 128 10539 = 12544 := by decide +kernel
+theorem a0_1_c5 : w32 (rowAt K A0) 768 410 = 12544 :=
+  w32_chain _ (g1 := 640) (g2 := 128) (by decide) a0_1_c4 a0_1_b5
+theorem a0_1_b6 : w32 (rowAt K A0) 128 12544 = 14629 := by decide +kernel
+theorem a0_1_c6 : w32 (rowAt K A0) 896 410 = 14629 :=
+  w32_chain _ (g1 := 768) (g2 := 128) (by decide) a0_1_c5 a0_1_b6
+theorem a0_1_b7 : w32 (rowAt K A0) 128 14629 = 16657 := by decide +kernel
+theorem a0_1_c7 : w32 (rowAt K A0) 1024 410 = 16657 :=
+  w32_chain _ (g1 := 896) (g2 := 128) (by decide) a0_1_c6 a0_1_b7
+theorem a0_1_b8 : w32 (rowAt K A0) 128 16657 = 18716 := by decide +kernel
+theorem a0_1_c8 : w32 (rowAt K A0) 1152 410 = 18716 :=
+  w32_chain _ (g1 := 1024) (g2 := 128) (by decide) a0_1_c7 a0_1_b8
+theorem a0_1_b9 : w32 (rowAt K A0) 128 18716 = 20748 := by decide +kernel
+theorem a0_1_c9 : w32 (rowAt K A0) 1280 410 = 20748 :=
+  w32_chain _ (g1 := 1152) (g2 := 128) (by decide) a0_1_c8 a0_1_b9
+theorem a0_1_b10 : w32 (rowAt K A0) 128 20748 = 22791 := by decide +kernel
+theorem a0_1_c10 : w32 (rowAt K A0) 1408 410 = 22791 :=
+  w32_chain _ (g1 := 1280) (g2 := 128) (by decide) a0_1_c9 a0_1_b10
+theorem a0_1_b11 : w32 (rowAt K A0) 128 22791 = 24790 := by decide +kernel
+theorem a0_1_c11 : w32 (rowAt K A0) 1536 410 = 24790 :=
+  w32_chain _ (g1 := 1408) (g2 := 128) (by decide) a0_1_c10 a0_1_b11
+theorem a0_1_b12 : w32 (rowAt K A0) 128 24790 = 26720 := by decide +kernel
+theorem a0_1_c12 : w32 (rowAt K A0) 1664 410 = 26720 :=
+  w32_chain _ (g1 := 1536) (g2 := 128) (by decide) a0_1_c11 a0_1_b12
+theorem a0_1_b13 : w32 (rowAt K A0) 128 26720 = 28738 := by decide +kernel
+theorem a0_1_c13 : w32 (rowAt K A0) 1792 410 = 28738 :=
+  w32_chain _ (g1 := 1664) (g2 := 128) (by decide) a0_1_c12 a0_1_b13
+theorem a0_1_b14 : w32 (rowAt K A0) 128 28738 = 30725 := by decide +kernel
+theorem a0_1_c14 : w32 (rowAt K A0) 1920 410 = 30725 :=
+  w32_chain _ (g1 := 1792) (g2 := 128) (by decide) a0_1_c13 a0_1_b14
+theorem a0_1_b15 : w32 (rowAt K A0) 128 30725 = 32804 := by decide +kernel
+theorem a0_1_c15 : w32 (rowAt K A0) 2048 410 = 32804 :=
+  w32_chain _ (g1 := 1920) (g2 := 128) (by decide) a0_1_c14 a0_1_b15
+theorem a0_1_b16 : w32 (rowAt K A0) 128 32804 = 34877 := by decide +kernel
+theorem a0_1_c16 : w32 (rowAt K A0) 2176 410 = 34877 :=
+  w32_chain _ (g1 := 2048) (g2 := 128) (by decide) a0_1_c15 a0_1_b16
+theorem a0_1_b17 : w32 (rowAt K A0) 128 34877 = 36896 := by decide +kernel
+theorem a0_1_c17 : w32 (rowAt K A0) 2304 410 = 36896 :=
+  w32_chain _ (g1 := 2176) (g2 := 128) (by decide) a0_1_c16 a0_1_b17
+theorem a0_1_b18 : w32 (rowAt K A0) 128 36896 = 38974 := by decide +kernel
+theorem a0_1_c18 : w32 (rowAt K A0) 2432 410 = 38974 :=
+  w32_chain _ (g1 := 2304) (g2 := 128) (by decide) a0_1_c17 a0_1_b18
+theorem a0_1_b19 : w32 (rowAt K A0) 128 38974 = 41067 := by decide +kernel
+theorem a0_1_c19 : w32 (rowAt K A0) 2560 410 = 41067 :=
+  w32_chain _ (g1 := 2432) (g2 := 128) (by decide) a0_1_c18 a0_1_b19
+theorem a0_1_b20 : w32 (rowAt K A0) 128 41067 = 43046 := by decide +kernel
+theorem a0_1_c20 : w32 (rowAt K A0) 2688 410 = 43046 :=
+  w32_chain _ (g1 := 2560) (g2 := 128) (by decide) a0_1_c19 a0_1_b20
+theorem a0_1_b21 : w32 (rowAt K A0) 128 43046 = 45080 := by decide +kernel
+theorem a0_1_c21 : w32 (rowAt K A0) 2816 410 = 45080 :=
+  w32_chain _ (g1 := 2688) (g2 := 128) (by decide) a0_1_c20 a0_1_b21
+theorem a0_1_b22 : w32 (rowAt K A0) 128 45080 = 47044 := by decide +kernel
+theorem a0_1_c22 : w32 (rowAt K A0) 2944 410 = 47044 :=
+  w32_chain _ (g1 := 2816) (g2 := 128) (by decide) a0_1_c21 a0_1_b22
+theorem a0_1_b23 : w32 (rowAt K A0) 128 47044 = 49064 := by decide +kernel
+theorem a0_1_c23 : w32 (rowAt K A0) 3072 410 = 49064 :=
+  w32_chain _ (g1 := 2944) (g2 := 128) (by decide) a0_1_c22 a0_1_b23
+theorem a0_1_b24 : w32 (rowAt K A0) 128 49064 = 51101 := by decide +kernel
+theorem a0_1_c24 : w32 (rowAt K A0) 3200 410 = 51101 :=
+  w32_chain _ (g1 := 3072) (g2 := 128) (by decide) a0_1_c23 a0_1_b24
+theorem a0_1_b25 : w32 (rowAt K A0) 128 51101 = 53200 := by decide +kernel
+theorem a0_1_c25 : w32 (rowAt K A0) 3328 410 = 53200 :=
+  w32_chain _ (g1 := 3200) (g2 := 128) (by decide) a0_1_c24 a0_1_b25
+theorem a0_1_g : w32 (rowAt K A0) 3328 410 = 53200 := a0_1_c25
+theorem a0_1_d : walk (rowAt K A0) 11 (784 + 16 + 32 * 3328) 53200 = 53205 := by decide +kernel
+set_option exponentiation.threshold 200000 in
 theorem a0_1 : frun wA0 400 52806 (783, 784) = (107308, 107310) :=
   seg_black (K := K) (v := A0) (h := 16) (g := 3328) (d := 11) (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    (by decide +kernel) (by decide +kernel) (by decide +kernel) (by decide +kernel)
+    (fastWalk_of _ a0_1_h a0_1_g a0_1_d) (by decide +kernel) (by decide +kernel) (by decide +kernel)
 theorem a0_2 : frun wA0 53206 1 (107308, 107310) = (107310, 107310) := frun_white (by decide) wA0_53207
+theorem a0_3_h : walk (rowAt K A0) 18 107310 53208 = 53216 := by decide +kernel
+theorem a0_3_b0 : w32 (rowAt K A0) 128 53216 = 55184 := by decide +kernel
+theorem a0_3_c0 : w32 (rowAt K A0) 128 53216 = 55184 := a0_3_b0
+theorem a0_3_b1 : w32 (rowAt K A0) 128 55184 = 57312 := by decide +kernel
+theorem a0_3_c1 : w32 (rowAt K A0) 256 53216 = 57312 :=
+  w32_chain _ (g1 := 128) (g2 := 128) (by decide) a0_3_c0 a0_3_b1
+theorem a0_3_b2 : w32 (rowAt K A0) 59 57312 = 58266 := by decide +kernel
+theorem a0_3_c2 : w32 (rowAt K A0) 315 53216 = 58266 :=
+  w32_chain _ (g1 := 256) (g2 := 59) (by decide) a0_3_c1 a0_3_b2
+theorem a0_3_g : w32 (rowAt K A0) 315 53216 = 58266 := a0_3_c2
+theorem a0_3_d : walk (rowAt K A0) 29 (107310 + 18 + 32 * 315) 58266 = 58284 := by decide +kernel
+set_option exponentiation.threshold 200000 in
 theorem a0_3 : frun wA0 53207 5078 (107310, 107310) = (117438, 117439) :=
   seg_black (K := K) (v := A0) (h := 18) (g := 315) (d := 29) (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    (by decide +kernel) (by decide +kernel) (by decide +kernel) (by decide +kernel)
+    (fastWalk_of _ a0_3_h a0_3_g a0_3_d) (by decide +kernel) (by decide +kernel) (by decide +kernel)
 theorem a0_4 : frun wA0 58285 1 (117438, 117439) = (117439, 117439) := frun_white (by decide) wA0_58286
+theorem a0_5_h : walk (rowAt K A0) 1 117439 58287 = 58288 := by decide +kernel
+theorem a0_5_b0 : w32 (rowAt K A0) 128 58288 = 60350 := by decide +kernel
+theorem a0_5_c0 : w32 (rowAt K A0) 128 58288 = 60350 := a0_5_b0
+theorem a0_5_b1 : w32 (rowAt K A0) 128 60350 = 62375 := by decide +kernel
+theorem a0_5_c1 : w32 (rowAt K A0) 256 58288 = 62375 :=
+  w32_chain _ (g1 := 128) (g2 := 128) (by decide) a0_5_c0 a0_5_b1
+theorem a0_5_b2 : w32 (rowAt K A0) 128 62375 = 64414 := by decide +kernel
+theorem a0_5_c2 : w32 (rowAt K A0) 384 58288 = 64414 :=
+  w32_chain _ (g1 := 256) (g2 := 128) (by decide) a0_5_c1 a0_5_b2
+theorem a0_5_b3 : w32 (rowAt K A0) 128 64414 = 66475 := by decide +kernel
+theorem a0_5_c3 : w32 (rowAt K A0) 512 58288 = 66475 :=
+  w32_chain _ (g1 := 384) (g2 := 128) (by decide) a0_5_c2 a0_5_b3
+theorem a0_5_b4 : w32 (rowAt K A0) 128 66475 = 68524 := by decide +kernel
+theorem a0_5_c4 : w32 (rowAt K A0) 640 58288 = 68524 :=
+  w32_chain _ (g1 := 512) (g2 := 128) (by decide) a0_5_c3 a0_5_b4
+theorem a0_5_b5 : w32 (rowAt K A0) 128 68524 = 70512 := by decide +kernel
+theorem a0_5_c5 : w32 (rowAt K A0) 768 58288 = 70512 :=
+  w32_chain _ (g1 := 640) (g2 := 128) (by decide) a0_5_c4 a0_5_b5
+theorem a0_5_b6 : w32 (rowAt K A0) 128 70512 = 72556 := by decide +kernel
+theorem a0_5_c6 : w32 (rowAt K A0) 896 58288 = 72556 :=
+  w32_chain _ (g1 := 768) (g2 := 128) (by decide) a0_5_c5 a0_5_b6
+theorem a0_5_b7 : w32 (rowAt K A0) 128 72556 = 74613 := by decide +kernel
+theorem a0_5_c7 : w32 (rowAt K A0) 1024 58288 = 74613 :=
+  w32_chain _ (g1 := 896) (g2 := 128) (by decide) a0_5_c6 a0_5_b7
+theorem a0_5_b8 : w32 (rowAt K A0) 128 74613 = 76656 := by decide +kernel
+theorem a0_5_c8 : w32 (rowAt K A0) 1152 58288 = 76656 :=
+  w32_chain _ (g1 := 1024) (g2 := 128) (by decide) a0_5_c7 a0_5_b8
+theorem a0_5_b9 : w32 (rowAt K A0) 128 76656 = 78725 := by decide +kernel
+theorem a0_5_c9 : w32 (rowAt K A0) 1280 58288 = 78725 :=
+  w32_chain _ (g1 := 1152) (g2 := 128) (by decide) a0_5_c8 a0_5_b9
+theorem a0_5_b10 : w32 (rowAt K A0) 128 78725 = 80773 := by decide +kernel
+theorem a0_5_c10 : w32 (rowAt K A0) 1408 58288 = 80773 :=
+  w32_chain _ (g1 := 1280) (g2 := 128) (by decide) a0_5_c9 a0_5_b10
+theorem a0_5_b11 : w32 (rowAt K A0) 128 80773 = 82797 := by decide +kernel
+theorem a0_5_c11 : w32 (rowAt K A0) 1536 58288 = 82797 :=
+  w32_chain _ (g1 := 1408) (g2 := 128) (by decide) a0_5_c10 a0_5_b11
+theorem a0_5_b12 : w32 (rowAt K A0) 128 82797 = 84796 := by decide +kernel
+theorem a0_5_c12 : w32 (rowAt K A0) 1664 58288 = 84796 :=
+  w32_chain _ (g1 := 1536) (g2 := 128) (by decide) a0_5_c11 a0_5_b12
+theorem a0_5_b13 : w32 (rowAt K A0) 128 84796 = 86828 := by decide +kernel
+theorem a0_5_c13 : w32 (rowAt K A0) 1792 58288 = 86828 :=
+  w32_chain _ (g1 := 1664) (g2 := 128) (by decide) a0_5_c12 a0_5_b13
+theorem a0_5_b14 : w32 (rowAt K A0) 68 86828 = 87862 := by decide +kernel
+theorem a0_5_c14 : w32 (rowAt K A0) 1860 58288 = 87862 :=
+  w32_chain _ (g1 := 1792) (g2 := 68) (by decide) a0_5_c13 a0_5_b14
+theorem a0_5_g : w32 (rowAt K A0) 1860 58288 = 87862 := a0_5_c14
+theorem a0_5_d : walk (rowAt K A0) 5 (117439 + 1 + 32 * 1860) 87862 = 87864 := by decide +kernel
+set_option exponentiation.threshold 200000 in
 theorem a0_5 : frun wA0 58286 29579 (117439, 117439) = (176966, 176968) :=
   seg_black (K := K) (v := A0) (h := 1) (g := 1860) (d := 5) (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    (by decide +kernel) (by decide +kernel) (by decide +kernel) (by decide +kernel)
+    (fastWalk_of _ a0_5_h a0_5_g a0_5_d) (by decide +kernel) (by decide +kernel) (by decide +kernel)
 theorem a0_6 : frun wA0 87865 1 (176966, 176968) = (176968, 176968) := frun_white (by decide) wA0_87866
+theorem a0_7_h : walk (rowAt K A0) 24 176968 87867 = 87876 := by decide +kernel
+theorem a0_7_b0 : w32 (rowAt K A0) 128 87876 = 89934 := by decide +kernel
+theorem a0_7_c0 : w32 (rowAt K A0) 128 87876 = 89934 := a0_7_b0
+theorem a0_7_b1 : w32 (rowAt K A0) 128 89934 = 91922 := by decide +kernel
+theorem a0_7_c1 : w32 (rowAt K A0) 256 87876 = 91922 :=
+  w32_chain _ (g1 := 128) (g2 := 128) (by decide) a0_7_c0 a0_7_b1
+theorem a0_7_b2 : w32 (rowAt K A0) 128 91922 = 93954 := by decide +kernel
+theorem a0_7_c2 : w32 (rowAt K A0) 384 87876 = 93954 :=
+  w32_chain _ (g1 := 256) (g2 := 128) (by decide) a0_7_c1 a0_7_b2
+theorem a0_7_b3 : w32 (rowAt K A0) 128 93954 = 96029 := by decide +kernel
+theorem a0_7_c3 : w32 (rowAt K A0) 512 87876 = 96029 :=
+  w32_chain _ (g1 := 384) (g2 := 128) (by decide) a0_7_c2 a0_7_b3
+theorem a0_7_b4 : w32 (rowAt K A0) 128 96029 = 98085 := by decide +kernel
+theorem a0_7_c4 : w32 (rowAt K A0) 640 87876 = 98085 :=
+  w32_chain _ (g1 := 512) (g2 := 128) (by decide) a0_7_c3 a0_7_b4
+theorem a0_7_b5 : w32 (rowAt K A0) 128 98085 = 100149 := by decide +kernel
+theorem a0_7_c5 : w32 (rowAt K A0) 768 87876 = 100149 :=
+  w32_chain _ (g1 := 640) (g2 := 128) (by decide) a0_7_c4 a0_7_b5
+theorem a0_7_b6 : w32 (rowAt K A0) 128 100149 = 102208 := by decide +kernel
+theorem a0_7_c6 : w32 (rowAt K A0) 896 87876 = 102208 :=
+  w32_chain _ (g1 := 768) (g2 := 128) (by decide) a0_7_c5 a0_7_b6
+theorem a0_7_b7 : w32 (rowAt K A0) 128 102208 = 104232 := by decide +kernel
+theorem a0_7_c7 : w32 (rowAt K A0) 1024 87876 = 104232 :=
+  w32_chain _ (g1 := 896) (g2 := 128) (by decide) a0_7_c6 a0_7_b7
+theorem a0_7_b8 : w32 (rowAt K A0) 128 104232 = 106259 := by decide +kernel
+theorem a0_7_c8 : w32 (rowAt K A0) 1152 87876 = 106259 :=
+  w32_chain _ (g1 := 1024) (g2 := 128) (by decide) a0_7_c7 a0_7_b8
+theorem a0_7_b9 : w32 (rowAt K A0) 128 106259 = 108311 := by decide +kernel
+theorem a0_7_c9 : w32 (rowAt K A0) 1280 87876 = 108311 :=
+  w32_chain _ (g1 := 1152) (g2 := 128) (by decide) a0_7_c8 a0_7_b9
+theorem a0_7_b10 : w32 (rowAt K A0) 128 108311 = 110411 := by decide +kernel
+theorem a0_7_c10 : w32 (rowAt K A0) 1408 87876 = 110411 :=
+  w32_chain _ (g1 := 1280) (g2 := 128) (by decide) a0_7_c9 a0_7_b10
+theorem a0_7_b11 : w32 (rowAt K A0) 128 110411 = 112411 := by decide +kernel
+theorem a0_7_c11 : w32 (rowAt K A0) 1536 87876 = 112411 :=
+  w32_chain _ (g1 := 1408) (g2 := 128) (by decide) a0_7_c10 a0_7_b11
+theorem a0_7_b12 : w32 (rowAt K A0) 128 112411 = 114450 := by decide +kernel
+theorem a0_7_c12 : w32 (rowAt K A0) 1664 87876 = 114450 :=
+  w32_chain _ (g1 := 1536) (g2 := 128) (by decide) a0_7_c11 a0_7_b12
+theorem a0_7_b13 : w32 (rowAt K A0) 128 114450 = 116529 := by decide +kernel
+theorem a0_7_c13 : w32 (rowAt K A0) 1792 87876 = 116529 :=
+  w32_chain _ (g1 := 1664) (g2 := 128) (by decide) a0_7_c12 a0_7_b13
+theorem a0_7_b14 : w32 (rowAt K A0) 128 116529 = 118578 := by decide +kernel
+theorem a0_7_c14 : w32 (rowAt K A0) 1920 87876 = 118578 :=
+  w32_chain _ (g1 := 1792) (g2 := 128) (by decide) a0_7_c13 a0_7_b14
+theorem a0_7_b15 : w32 (rowAt K A0) 128 118578 = 120614 := by decide +kernel
+theorem a0_7_c15 : w32 (rowAt K A0) 2048 87876 = 120614 :=
+  w32_chain _ (g1 := 1920) (g2 := 128) (by decide) a0_7_c14 a0_7_b15
+theorem a0_7_b16 : w32 (rowAt K A0) 128 120614 = 122617 := by decide +kernel
+theorem a0_7_c16 : w32 (rowAt K A0) 2176 87876 = 122617 :=
+  w32_chain _ (g1 := 2048) (g2 := 128) (by decide) a0_7_c15 a0_7_b16
+theorem a0_7_b17 : w32 (rowAt K A0) 128 122617 = 124661 := by decide +kernel
+theorem a0_7_c17 : w32 (rowAt K A0) 2304 87876 = 124661 :=
+  w32_chain _ (g1 := 2176) (g2 := 128) (by decide) a0_7_c16 a0_7_b17
+theorem a0_7_b18 : w32 (rowAt K A0) 128 124661 = 126706 := by decide +kernel
+theorem a0_7_c18 : w32 (rowAt K A0) 2432 87876 = 126706 :=
+  w32_chain _ (g1 := 2304) (g2 := 128) (by decide) a0_7_c17 a0_7_b18
+theorem a0_7_b19 : w32 (rowAt K A0) 128 126706 = 128735 := by decide +kernel
+theorem a0_7_c19 : w32 (rowAt K A0) 2560 87876 = 128735 :=
+  w32_chain _ (g1 := 2432) (g2 := 128) (by decide) a0_7_c18 a0_7_b19
+theorem a0_7_b20 : w32 (rowAt K A0) 128 128735 = 130827 := by decide +kernel
+theorem a0_7_c20 : w32 (rowAt K A0) 2688 87876 = 130827 :=
+  w32_chain _ (g1 := 2560) (g2 := 128) (by decide) a0_7_c19 a0_7_b20
+theorem a0_7_b21 : w32 (rowAt K A0) 128 130827 = 132881 := by decide +kernel
+theorem a0_7_c21 : w32 (rowAt K A0) 2816 87876 = 132881 :=
+  w32_chain _ (g1 := 2688) (g2 := 128) (by decide) a0_7_c20 a0_7_b21
+theorem a0_7_b22 : w32 (rowAt K A0) 128 132881 = 134895 := by decide +kernel
+theorem a0_7_c22 : w32 (rowAt K A0) 2944 87876 = 134895 :=
+  w32_chain _ (g1 := 2816) (g2 := 128) (by decide) a0_7_c21 a0_7_b22
+theorem a0_7_b23 : w32 (rowAt K A0) 128 134895 = 136945 := by decide +kernel
+theorem a0_7_c23 : w32 (rowAt K A0) 3072 87876 = 136945 :=
+  w32_chain _ (g1 := 2944) (g2 := 128) (by decide) a0_7_c22 a0_7_b23
+theorem a0_7_b24 : w32 (rowAt K A0) 128 136945 = 139007 := by decide +kernel
+theorem a0_7_c24 : w32 (rowAt K A0) 3200 87876 = 139007 :=
+  w32_chain _ (g1 := 3072) (g2 := 128) (by decide) a0_7_c23 a0_7_b24
+theorem a0_7_b25 : w32 (rowAt K A0) 128 139007 = 141035 := by decide +kernel
+theorem a0_7_c25 : w32 (rowAt K A0) 3328 87876 = 141035 :=
+  w32_chain _ (g1 := 3200) (g2 := 128) (by decide) a0_7_c24 a0_7_b25
+theorem a0_7_b26 : w32 (rowAt K A0) 128 141035 = 143067 := by decide +kernel
+theorem a0_7_c26 : w32 (rowAt K A0) 3456 87876 = 143067 :=
+  w32_chain _ (g1 := 3328) (g2 := 128) (by decide) a0_7_c25 a0_7_b26
+theorem a0_7_b27 : w32 (rowAt K A0) 128 143067 = 145134 := by decide +kernel
+theorem a0_7_c27 : w32 (rowAt K A0) 3584 87876 = 145134 :=
+  w32_chain _ (g1 := 3456) (g2 := 128) (by decide) a0_7_c26 a0_7_b27
+theorem a0_7_b28 : w32 (rowAt K A0) 128 145134 = 147168 := by decide +kernel
+theorem a0_7_c28 : w32 (rowAt K A0) 3712 87876 = 147168 :=
+  w32_chain _ (g1 := 3584) (g2 := 128) (by decide) a0_7_c27 a0_7_b28
+theorem a0_7_b29 : w32 (rowAt K A0) 128 147168 = 149256 := by decide +kernel
+theorem a0_7_c29 : w32 (rowAt K A0) 3840 87876 = 149256 :=
+  w32_chain _ (g1 := 3712) (g2 := 128) (by decide) a0_7_c28 a0_7_b29
+theorem a0_7_b30 : w32 (rowAt K A0) 128 149256 = 151244 := by decide +kernel
+theorem a0_7_c30 : w32 (rowAt K A0) 3968 87876 = 151244 :=
+  w32_chain _ (g1 := 3840) (g2 := 128) (by decide) a0_7_c29 a0_7_b30
+theorem a0_7_b31 : w32 (rowAt K A0) 128 151244 = 153271 := by decide +kernel
+theorem a0_7_c31 : w32 (rowAt K A0) 4096 87876 = 153271 :=
+  w32_chain _ (g1 := 3968) (g2 := 128) (by decide) a0_7_c30 a0_7_b31
+theorem a0_7_b32 : w32 (rowAt K A0) 128 153271 = 155286 := by decide +kernel
+theorem a0_7_c32 : w32 (rowAt K A0) 4224 87876 = 155286 :=
+  w32_chain _ (g1 := 4096) (g2 := 128) (by decide) a0_7_c31 a0_7_b32
+theorem a0_7_b33 : w32 (rowAt K A0) 128 155286 = 157338 := by decide +kernel
+theorem a0_7_c33 : w32 (rowAt K A0) 4352 87876 = 157338 :=
+  w32_chain _ (g1 := 4224) (g2 := 128) (by decide) a0_7_c32 a0_7_b33
+theorem a0_7_b34 : w32 (rowAt K A0) 128 157338 = 159362 := by decide +kernel
+theorem a0_7_c34 : w32 (rowAt K A0) 4480 87876 = 159362 :=
+  w32_chain _ (g1 := 4352) (g2 := 128) (by decide) a0_7_c33 a0_7_b34
+theorem a0_7_b35 : w32 (rowAt K A0) 128 159362 = 161325 := by decide +kernel
+theorem a0_7_c35 : w32 (rowAt K A0) 4608 87876 = 161325 :=
+  w32_chain _ (g1 := 4480) (g2 := 128) (by decide) a0_7_c34 a0_7_b35
+theorem a0_7_b36 : w32 (rowAt K A0) 128 161325 = 163366 := by decide +kernel
+theorem a0_7_c36 : w32 (rowAt K A0) 4736 87876 = 163366 :=
+  w32_chain _ (g1 := 4608) (g2 := 128) (by decide) a0_7_c35 a0_7_b36
+theorem a0_7_b37 : w32 (rowAt K A0) 128 163366 = 165425 := by decide +kernel
+theorem a0_7_c37 : w32 (rowAt K A0) 4864 87876 = 165425 :=
+  w32_chain _ (g1 := 4736) (g2 := 128) (by decide) a0_7_c36 a0_7_b37
+theorem a0_7_b38 : w32 (rowAt K A0) 21 165425 = 165738 := by decide +kernel
+theorem a0_7_c38 : w32 (rowAt K A0) 4885 87876 = 165738 :=
+  w32_chain _ (g1 := 4864) (g2 := 21) (by decide) a0_7_c37 a0_7_b38
+theorem a0_7_g : w32 (rowAt K A0) 4885 87876 = 165738 := a0_7_c38
+theorem a0_7_d : walk (rowAt K A0) 18 (176968 + 24 + 32 * 4885) 165738 = 165747 := by decide +kernel
+set_option exponentiation.threshold 200000 in
 theorem a0_7 : frun wA0 87866 77882 (176968, 176968) = (333331, 333333) :=
   seg_black (K := K) (v := A0) (h := 24) (g := 4885) (d := 18) (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    (by decide +kernel) (by decide +kernel) (by decide +kernel) (by decide +kernel)
+    (fastWalk_of _ a0_7_h a0_7_g a0_7_d) (by decide +kernel) (by decide +kernel) (by decide +kernel)
 theorem a_53207 : frun wA0 0 53207 (0, 1) = (107310, 107310) :=
   (frun_chain _ 0 400 52807 _ _ _ a_low
     (frun_chain _ 400 52806 1 _ _ _ a0_1
@@ -318,13 +579,187 @@ theorem SA0_165748 : S wA0 165748 = (333331, 333333) :=
     a0_7)))))))
 theorem b_53207 : frun wB0 0 53207 (0, 1) = (107310, 107310) :=
   (low_congr (fun i hi => (wB0_eq_A0 i (by omega)).symm)).trans a_53207
+theorem b0_1_h : walk (rowAt K B0) 18 107310 53208 = 53218 := by decide +kernel
+theorem b0_1_b0 : w32 (rowAt K B0) 128 53218 = 55202 := by decide +kernel
+theorem b0_1_c0 : w32 (rowAt K B0) 128 53218 = 55202 := b0_1_b0
+theorem b0_1_b1 : w32 (rowAt K B0) 128 55202 = 57283 := by decide +kernel
+theorem b0_1_c1 : w32 (rowAt K B0) 256 53218 = 57283 :=
+  w32_chain _ (g1 := 128) (g2 := 128) (by decide) b0_1_c0 b0_1_b1
+theorem b0_1_b2 : w32 (rowAt K B0) 128 57283 = 59306 := by decide +kernel
+theorem b0_1_c2 : w32 (rowAt K B0) 384 53218 = 59306 :=
+  w32_chain _ (g1 := 256) (g2 := 128) (by decide) b0_1_c1 b0_1_b2
+theorem b0_1_b3 : w32 (rowAt K B0) 128 59306 = 61399 := by decide +kernel
+theorem b0_1_c3 : w32 (rowAt K B0) 512 53218 = 61399 :=
+  w32_chain _ (g1 := 384) (g2 := 128) (by decide) b0_1_c2 b0_1_b3
+theorem b0_1_b4 : w32 (rowAt K B0) 128 61399 = 63417 := by decide +kernel
+theorem b0_1_c4 : w32 (rowAt K B0) 640 53218 = 63417 :=
+  w32_chain _ (g1 := 512) (g2 := 128) (by decide) b0_1_c3 b0_1_b4
+theorem b0_1_b5 : w32 (rowAt K B0) 128 63417 = 65418 := by decide +kernel
+theorem b0_1_c5 : w32 (rowAt K B0) 768 53218 = 65418 :=
+  w32_chain _ (g1 := 640) (g2 := 128) (by decide) b0_1_c4 b0_1_b5
+theorem b0_1_b6 : w32 (rowAt K B0) 128 65418 = 67361 := by decide +kernel
+theorem b0_1_c6 : w32 (rowAt K B0) 896 53218 = 67361 :=
+  w32_chain _ (g1 := 768) (g2 := 128) (by decide) b0_1_c5 b0_1_b6
+theorem b0_1_b7 : w32 (rowAt K B0) 128 67361 = 69388 := by decide +kernel
+theorem b0_1_c7 : w32 (rowAt K B0) 1024 53218 = 69388 :=
+  w32_chain _ (g1 := 896) (g2 := 128) (by decide) b0_1_c6 b0_1_b7
+theorem b0_1_b8 : w32 (rowAt K B0) 128 69388 = 71438 := by decide +kernel
+theorem b0_1_c8 : w32 (rowAt K B0) 1152 53218 = 71438 :=
+  w32_chain _ (g1 := 1024) (g2 := 128) (by decide) b0_1_c7 b0_1_b8
+theorem b0_1_b9 : w32 (rowAt K B0) 70 71438 = 72559 := by decide +kernel
+theorem b0_1_c9 : w32 (rowAt K B0) 1222 53218 = 72559 :=
+  w32_chain _ (g1 := 1152) (g2 := 70) (by decide) b0_1_c8 b0_1_b9
+theorem b0_1_g : w32 (rowAt K B0) 1222 53218 = 72559 := b0_1_c9
+theorem b0_1_d : walk (rowAt K B0) 29 (107310 + 18 + 32 * 1222) 72559 = 72573 := by decide +kernel
+set_option exponentiation.threshold 200000 in
 theorem b0_1 : frun wB0 53207 19367 (107310, 107310) = (146462, 146463) :=
   seg_black (K := K) (v := B0) (h := 18) (g := 1222) (d := 29) (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    (by decide +kernel) (by decide +kernel) (by decide +kernel) (by decide +kernel)
+    (fastWalk_of _ b0_1_h b0_1_g b0_1_d) (by decide +kernel) (by decide +kernel) (by decide +kernel)
 theorem b0_2 : frun wB0 72574 1 (146462, 146463) = (146463, 146463) := frun_white (by decide) wB0_72575
+theorem b0_3_h : walk (rowAt K B0) 1 146463 72576 = 72576 := by decide +kernel
+theorem b0_3_b0 : w32 (rowAt K B0) 128 72576 = 74588 := by decide +kernel
+theorem b0_3_c0 : w32 (rowAt K B0) 128 72576 = 74588 := b0_3_b0
+theorem b0_3_b1 : w32 (rowAt K B0) 128 74588 = 76629 := by decide +kernel
+theorem b0_3_c1 : w32 (rowAt K B0) 256 72576 = 76629 :=
+  w32_chain _ (g1 := 128) (g2 := 128) (by decide) b0_3_c0 b0_3_b1
+theorem b0_3_b2 : w32 (rowAt K B0) 128 76629 = 78678 := by decide +kernel
+theorem b0_3_c2 : w32 (rowAt K B0) 384 72576 = 78678 :=
+  w32_chain _ (g1 := 256) (g2 := 128) (by decide) b0_3_c1 b0_3_b2
+theorem b0_3_b3 : w32 (rowAt K B0) 128 78678 = 80720 := by decide +kernel
+theorem b0_3_c3 : w32 (rowAt K B0) 512 72576 = 80720 :=
+  w32_chain _ (g1 := 384) (g2 := 128) (by decide) b0_3_c2 b0_3_b3
+theorem b0_3_b4 : w32 (rowAt K B0) 128 80720 = 82783 := by decide +kernel
+theorem b0_3_c4 : w32 (rowAt K B0) 640 72576 = 82783 :=
+  w32_chain _ (g1 := 512) (g2 := 128) (by decide) b0_3_c3 b0_3_b4
+theorem b0_3_b5 : w32 (rowAt K B0) 128 82783 = 84796 := by decide +kernel
+theorem b0_3_c5 : w32 (rowAt K B0) 768 72576 = 84796 :=
+  w32_chain _ (g1 := 640) (g2 := 128) (by decide) b0_3_c4 b0_3_b5
+theorem b0_3_b6 : w32 (rowAt K B0) 128 84796 = 86842 := by decide +kernel
+theorem b0_3_c6 : w32 (rowAt K B0) 896 72576 = 86842 :=
+  w32_chain _ (g1 := 768) (g2 := 128) (by decide) b0_3_c5 b0_3_b6
+theorem b0_3_b7 : w32 (rowAt K B0) 128 86842 = 88899 := by decide +kernel
+theorem b0_3_c7 : w32 (rowAt K B0) 1024 72576 = 88899 :=
+  w32_chain _ (g1 := 896) (g2 := 128) (by decide) b0_3_c6 b0_3_b7
+theorem b0_3_b8 : w32 (rowAt K B0) 128 88899 = 90939 := by decide +kernel
+theorem b0_3_c8 : w32 (rowAt K B0) 1152 72576 = 90939 :=
+  w32_chain _ (g1 := 1024) (g2 := 128) (by decide) b0_3_c7 b0_3_b8
+theorem b0_3_b9 : w32 (rowAt K B0) 128 90939 = 93010 := by decide +kernel
+theorem b0_3_c9 : w32 (rowAt K B0) 1280 72576 = 93010 :=
+  w32_chain _ (g1 := 1152) (g2 := 128) (by decide) b0_3_c8 b0_3_b9
+theorem b0_3_b10 : w32 (rowAt K B0) 128 93010 = 95095 := by decide +kernel
+theorem b0_3_c10 : w32 (rowAt K B0) 1408 72576 = 95095 :=
+  w32_chain _ (g1 := 1280) (g2 := 128) (by decide) b0_3_c9 b0_3_b10
+theorem b0_3_b11 : w32 (rowAt K B0) 128 95095 = 97138 := by decide +kernel
+theorem b0_3_c11 : w32 (rowAt K B0) 1536 72576 = 97138 :=
+  w32_chain _ (g1 := 1408) (g2 := 128) (by decide) b0_3_c10 b0_3_b11
+theorem b0_3_b12 : w32 (rowAt K B0) 128 97138 = 99236 := by decide +kernel
+theorem b0_3_c12 : w32 (rowAt K B0) 1664 72576 = 99236 :=
+  w32_chain _ (g1 := 1536) (g2 := 128) (by decide) b0_3_c11 b0_3_b12
+theorem b0_3_b13 : w32 (rowAt K B0) 128 99236 = 101264 := by decide +kernel
+theorem b0_3_c13 : w32 (rowAt K B0) 1792 72576 = 101264 :=
+  w32_chain _ (g1 := 1664) (g2 := 128) (by decide) b0_3_c12 b0_3_b13
+theorem b0_3_b14 : w32 (rowAt K B0) 128 101264 = 103320 := by decide +kernel
+theorem b0_3_c14 : w32 (rowAt K B0) 1920 72576 = 103320 :=
+  w32_chain _ (g1 := 1792) (g2 := 128) (by decide) b0_3_c13 b0_3_b14
+theorem b0_3_b15 : w32 (rowAt K B0) 128 103320 = 105367 := by decide +kernel
+theorem b0_3_c15 : w32 (rowAt K B0) 2048 72576 = 105367 :=
+  w32_chain _ (g1 := 1920) (g2 := 128) (by decide) b0_3_c14 b0_3_b15
+theorem b0_3_b16 : w32 (rowAt K B0) 128 105367 = 107417 := by decide +kernel
+theorem b0_3_c16 : w32 (rowAt K B0) 2176 72576 = 107417 :=
+  w32_chain _ (g1 := 2048) (g2 := 128) (by decide) b0_3_c15 b0_3_b16
+theorem b0_3_b17 : w32 (rowAt K B0) 128 107417 = 109457 := by decide +kernel
+theorem b0_3_c17 : w32 (rowAt K B0) 2304 72576 = 109457 :=
+  w32_chain _ (g1 := 2176) (g2 := 128) (by decide) b0_3_c16 b0_3_b17
+theorem b0_3_b18 : w32 (rowAt K B0) 128 109457 = 111512 := by decide +kernel
+theorem b0_3_c18 : w32 (rowAt K B0) 2432 72576 = 111512 :=
+  w32_chain _ (g1 := 2304) (g2 := 128) (by decide) b0_3_c17 b0_3_b18
+theorem b0_3_b19 : w32 (rowAt K B0) 128 111512 = 113499 := by decide +kernel
+theorem b0_3_c19 : w32 (rowAt K B0) 2560 72576 = 113499 :=
+  w32_chain _ (g1 := 2432) (g2 := 128) (by decide) b0_3_c18 b0_3_b19
+theorem b0_3_b20 : w32 (rowAt K B0) 128 113499 = 115541 := by decide +kernel
+theorem b0_3_c20 : w32 (rowAt K B0) 2688 72576 = 115541 :=
+  w32_chain _ (g1 := 2560) (g2 := 128) (by decide) b0_3_c19 b0_3_b20
+theorem b0_3_b21 : w32 (rowAt K B0) 128 115541 = 117513 := by decide +kernel
+theorem b0_3_c21 : w32 (rowAt K B0) 2816 72576 = 117513 :=
+  w32_chain _ (g1 := 2688) (g2 := 128) (by decide) b0_3_c20 b0_3_b21
+theorem b0_3_b22 : w32 (rowAt K B0) 128 117513 = 119522 := by decide +kernel
+theorem b0_3_c22 : w32 (rowAt K B0) 2944 72576 = 119522 :=
+  w32_chain _ (g1 := 2816) (g2 := 128) (by decide) b0_3_c21 b0_3_b22
+theorem b0_3_b23 : w32 (rowAt K B0) 128 119522 = 121530 := by decide +kernel
+theorem b0_3_c23 : w32 (rowAt K B0) 3072 72576 = 121530 :=
+  w32_chain _ (g1 := 2944) (g2 := 128) (by decide) b0_3_c22 b0_3_b23
+theorem b0_3_b24 : w32 (rowAt K B0) 128 121530 = 123561 := by decide +kernel
+theorem b0_3_c24 : w32 (rowAt K B0) 3200 72576 = 123561 :=
+  w32_chain _ (g1 := 3072) (g2 := 128) (by decide) b0_3_c23 b0_3_b24
+theorem b0_3_b25 : w32 (rowAt K B0) 128 123561 = 125630 := by decide +kernel
+theorem b0_3_c25 : w32 (rowAt K B0) 3328 72576 = 125630 :=
+  w32_chain _ (g1 := 3200) (g2 := 128) (by decide) b0_3_c24 b0_3_b25
+theorem b0_3_b26 : w32 (rowAt K B0) 128 125630 = 127628 := by decide +kernel
+theorem b0_3_c26 : w32 (rowAt K B0) 3456 72576 = 127628 :=
+  w32_chain _ (g1 := 3328) (g2 := 128) (by decide) b0_3_c25 b0_3_b26
+theorem b0_3_b27 : w32 (rowAt K B0) 128 127628 = 129660 := by decide +kernel
+theorem b0_3_c27 : w32 (rowAt K B0) 3584 72576 = 129660 :=
+  w32_chain _ (g1 := 3456) (g2 := 128) (by decide) b0_3_c26 b0_3_b27
+theorem b0_3_b28 : w32 (rowAt K B0) 128 129660 = 131686 := by decide +kernel
+theorem b0_3_c28 : w32 (rowAt K B0) 3712 72576 = 131686 :=
+  w32_chain _ (g1 := 3584) (g2 := 128) (by decide) b0_3_c27 b0_3_b28
+theorem b0_3_b29 : w32 (rowAt K B0) 128 131686 = 133761 := by decide +kernel
+theorem b0_3_c29 : w32 (rowAt K B0) 3840 72576 = 133761 :=
+  w32_chain _ (g1 := 3712) (g2 := 128) (by decide) b0_3_c28 b0_3_b29
+theorem b0_3_b30 : w32 (rowAt K B0) 128 133761 = 135784 := by decide +kernel
+theorem b0_3_c30 : w32 (rowAt K B0) 3968 72576 = 135784 :=
+  w32_chain _ (g1 := 3840) (g2 := 128) (by decide) b0_3_c29 b0_3_b30
+theorem b0_3_b31 : w32 (rowAt K B0) 128 135784 = 137859 := by decide +kernel
+theorem b0_3_c31 : w32 (rowAt K B0) 4096 72576 = 137859 :=
+  w32_chain _ (g1 := 3968) (g2 := 128) (by decide) b0_3_c30 b0_3_b31
+theorem b0_3_b32 : w32 (rowAt K B0) 128 137859 = 139940 := by decide +kernel
+theorem b0_3_c32 : w32 (rowAt K B0) 4224 72576 = 139940 :=
+  w32_chain _ (g1 := 4096) (g2 := 128) (by decide) b0_3_c31 b0_3_b32
+theorem b0_3_b33 : w32 (rowAt K B0) 128 139940 = 141972 := by decide +kernel
+theorem b0_3_c33 : w32 (rowAt K B0) 4352 72576 = 141972 :=
+  w32_chain _ (g1 := 4224) (g2 := 128) (by decide) b0_3_c32 b0_3_b33
+theorem b0_3_b34 : w32 (rowAt K B0) 128 141972 = 144015 := by decide +kernel
+theorem b0_3_c34 : w32 (rowAt K B0) 4480 72576 = 144015 :=
+  w32_chain _ (g1 := 4352) (g2 := 128) (by decide) b0_3_c33 b0_3_b34
+theorem b0_3_b35 : w32 (rowAt K B0) 128 144015 = 146022 := by decide +kernel
+theorem b0_3_c35 : w32 (rowAt K B0) 4608 72576 = 146022 :=
+  w32_chain _ (g1 := 4480) (g2 := 128) (by decide) b0_3_c34 b0_3_b35
+theorem b0_3_b36 : w32 (rowAt K B0) 128 146022 = 148027 := by decide +kernel
+theorem b0_3_c36 : w32 (rowAt K B0) 4736 72576 = 148027 :=
+  w32_chain _ (g1 := 4608) (g2 := 128) (by decide) b0_3_c35 b0_3_b36
+theorem b0_3_b37 : w32 (rowAt K B0) 128 148027 = 150105 := by decide +kernel
+theorem b0_3_c37 : w32 (rowAt K B0) 4864 72576 = 150105 :=
+  w32_chain _ (g1 := 4736) (g2 := 128) (by decide) b0_3_c36 b0_3_b37
+theorem b0_3_b38 : w32 (rowAt K B0) 128 150105 = 152132 := by decide +kernel
+theorem b0_3_c38 : w32 (rowAt K B0) 4992 72576 = 152132 :=
+  w32_chain _ (g1 := 4864) (g2 := 128) (by decide) b0_3_c37 b0_3_b38
+theorem b0_3_b39 : w32 (rowAt K B0) 128 152132 = 154190 := by decide +kernel
+theorem b0_3_c39 : w32 (rowAt K B0) 5120 72576 = 154190 :=
+  w32_chain _ (g1 := 4992) (g2 := 128) (by decide) b0_3_c38 b0_3_b39
+theorem b0_3_b40 : w32 (rowAt K B0) 128 154190 = 156255 := by decide +kernel
+theorem b0_3_c40 : w32 (rowAt K B0) 5248 72576 = 156255 :=
+  w32_chain _ (g1 := 5120) (g2 := 128) (by decide) b0_3_c39 b0_3_b40
+theorem b0_3_b41 : w32 (rowAt K B0) 128 156255 = 158342 := by decide +kernel
+theorem b0_3_c41 : w32 (rowAt K B0) 5376 72576 = 158342 :=
+  w32_chain _ (g1 := 5248) (g2 := 128) (by decide) b0_3_c40 b0_3_b41
+theorem b0_3_b42 : w32 (rowAt K B0) 128 158342 = 160320 := by decide +kernel
+theorem b0_3_c42 : w32 (rowAt K B0) 5504 72576 = 160320 :=
+  w32_chain _ (g1 := 5376) (g2 := 128) (by decide) b0_3_c41 b0_3_b42
+theorem b0_3_b43 : w32 (rowAt K B0) 128 160320 = 162385 := by decide +kernel
+theorem b0_3_c43 : w32 (rowAt K B0) 5632 72576 = 162385 :=
+  w32_chain _ (g1 := 5504) (g2 := 128) (by decide) b0_3_c42 b0_3_b43
+theorem b0_3_b44 : w32 (rowAt K B0) 128 162385 = 164465 := by decide +kernel
+theorem b0_3_c44 : w32 (rowAt K B0) 5760 72576 = 164465 :=
+  w32_chain _ (g1 := 5632) (g2 := 128) (by decide) b0_3_c43 b0_3_b44
+theorem b0_3_b45 : w32 (rowAt K B0) 84 164465 = 165733 := by decide +kernel
+theorem b0_3_c45 : w32 (rowAt K B0) 5844 72576 = 165733 :=
+  w32_chain _ (g1 := 5760) (g2 := 84) (by decide) b0_3_c44 b0_3_b45
+theorem b0_3_g : w32 (rowAt K B0) 5844 72576 = 165733 := b0_3_c45
+theorem b0_3_d : walk (rowAt K B0) 27 (146463 + 1 + 32 * 5844) 165733 = 165746 := by decide +kernel
+set_option exponentiation.threshold 200000 in
 theorem b0_3 : frun wB0 72575 93172 (146463, 146463) = (333500, 333503) :=
   seg_black (K := K) (v := B0) (h := 1) (g := 5844) (d := 27) (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    (by decide +kernel) (by decide +kernel) (by decide +kernel) (by decide +kernel)
+    (fastWalk_of _ b0_3_h b0_3_g b0_3_d) (by decide +kernel) (by decide +kernel) (by decide +kernel)
 theorem b0_4 : frun wB0 165747 1 (333500, 333503) = (333503, 333503) := frun_white (by decide) wB0_165748
 theorem b_72575 : frun wB0 0 72575 (0, 1) = (146463, 146463) :=
   (frun_chain _ 0 53207 19368 _ _ _ b_53207
@@ -338,17 +773,320 @@ theorem SB0_165748 : S wB0 165748 = (333503, 333503) :=
     b0_4))))
 theorem a1_58286 : frun wA1 0 58286 (0, 1) = (117439, 117439) :=
   (low_congr (fun i hi => (wA1_eq_A0 i (by omega)).symm)).trans a_58286
+theorem a1_1_h : walk (rowAt K A1) 1 117439 58287 = 58287 := by decide +kernel
+theorem a1_1_b0 : w32 (rowAt K A1) 128 58287 = 60339 := by decide +kernel
+theorem a1_1_c0 : w32 (rowAt K A1) 128 58287 = 60339 := a1_1_b0
+theorem a1_1_b1 : w32 (rowAt K A1) 128 60339 = 62332 := by decide +kernel
+theorem a1_1_c1 : w32 (rowAt K A1) 256 58287 = 62332 :=
+  w32_chain _ (g1 := 128) (g2 := 128) (by decide) a1_1_c0 a1_1_b1
+theorem a1_1_b2 : w32 (rowAt K A1) 128 62332 = 64375 := by decide +kernel
+theorem a1_1_c2 : w32 (rowAt K A1) 384 58287 = 64375 :=
+  w32_chain _ (g1 := 256) (g2 := 128) (by decide) a1_1_c1 a1_1_b2
+theorem a1_1_b3 : w32 (rowAt K A1) 128 64375 = 66424 := by decide +kernel
+theorem a1_1_c3 : w32 (rowAt K A1) 512 58287 = 66424 :=
+  w32_chain _ (g1 := 384) (g2 := 128) (by decide) a1_1_c2 a1_1_b3
+theorem a1_1_b4 : w32 (rowAt K A1) 128 66424 = 68484 := by decide +kernel
+theorem a1_1_c4 : w32 (rowAt K A1) 640 58287 = 68484 :=
+  w32_chain _ (g1 := 512) (g2 := 128) (by decide) a1_1_c3 a1_1_b4
+theorem a1_1_b5 : w32 (rowAt K A1) 128 68484 = 70519 := by decide +kernel
+theorem a1_1_c5 : w32 (rowAt K A1) 768 58287 = 70519 :=
+  w32_chain _ (g1 := 640) (g2 := 128) (by decide) a1_1_c4 a1_1_b5
+theorem a1_1_b6 : w32 (rowAt K A1) 128 70519 = 72545 := by decide +kernel
+theorem a1_1_c6 : w32 (rowAt K A1) 896 58287 = 72545 :=
+  w32_chain _ (g1 := 768) (g2 := 128) (by decide) a1_1_c5 a1_1_b6
+theorem a1_1_b7 : w32 (rowAt K A1) 128 72545 = 74520 := by decide +kernel
+theorem a1_1_c7 : w32 (rowAt K A1) 1024 58287 = 74520 :=
+  w32_chain _ (g1 := 896) (g2 := 128) (by decide) a1_1_c6 a1_1_b7
+theorem a1_1_b8 : w32 (rowAt K A1) 128 74520 = 76485 := by decide +kernel
+theorem a1_1_c8 : w32 (rowAt K A1) 1152 58287 = 76485 :=
+  w32_chain _ (g1 := 1024) (g2 := 128) (by decide) a1_1_c7 a1_1_b8
+theorem a1_1_b9 : w32 (rowAt K A1) 128 76485 = 78447 := by decide +kernel
+theorem a1_1_c9 : w32 (rowAt K A1) 1280 58287 = 78447 :=
+  w32_chain _ (g1 := 1152) (g2 := 128) (by decide) a1_1_c8 a1_1_b9
+theorem a1_1_b10 : w32 (rowAt K A1) 128 78447 = 80473 := by decide +kernel
+theorem a1_1_c10 : w32 (rowAt K A1) 1408 58287 = 80473 :=
+  w32_chain _ (g1 := 1280) (g2 := 128) (by decide) a1_1_c9 a1_1_b10
+theorem a1_1_b11 : w32 (rowAt K A1) 128 80473 = 82469 := by decide +kernel
+theorem a1_1_c11 : w32 (rowAt K A1) 1536 58287 = 82469 :=
+  w32_chain _ (g1 := 1408) (g2 := 128) (by decide) a1_1_c10 a1_1_b11
+theorem a1_1_b12 : w32 (rowAt K A1) 128 82469 = 84610 := by decide +kernel
+theorem a1_1_c12 : w32 (rowAt K A1) 1664 58287 = 84610 :=
+  w32_chain _ (g1 := 1536) (g2 := 128) (by decide) a1_1_c11 a1_1_b12
+theorem a1_1_b13 : w32 (rowAt K A1) 128 84610 = 86642 := by decide +kernel
+theorem a1_1_c13 : w32 (rowAt K A1) 1792 58287 = 86642 :=
+  w32_chain _ (g1 := 1664) (g2 := 128) (by decide) a1_1_c12 a1_1_b13
+theorem a1_1_b14 : w32 (rowAt K A1) 128 86642 = 88681 := by decide +kernel
+theorem a1_1_c14 : w32 (rowAt K A1) 1920 58287 = 88681 :=
+  w32_chain _ (g1 := 1792) (g2 := 128) (by decide) a1_1_c13 a1_1_b14
+theorem a1_1_b15 : w32 (rowAt K A1) 128 88681 = 90710 := by decide +kernel
+theorem a1_1_c15 : w32 (rowAt K A1) 2048 58287 = 90710 :=
+  w32_chain _ (g1 := 1920) (g2 := 128) (by decide) a1_1_c14 a1_1_b15
+theorem a1_1_b16 : w32 (rowAt K A1) 128 90710 = 92692 := by decide +kernel
+theorem a1_1_c16 : w32 (rowAt K A1) 2176 58287 = 92692 :=
+  w32_chain _ (g1 := 2048) (g2 := 128) (by decide) a1_1_c15 a1_1_b16
+theorem a1_1_b17 : w32 (rowAt K A1) 128 92692 = 94700 := by decide +kernel
+theorem a1_1_c17 : w32 (rowAt K A1) 2304 58287 = 94700 :=
+  w32_chain _ (g1 := 2176) (g2 := 128) (by decide) a1_1_c16 a1_1_b17
+theorem a1_1_b18 : w32 (rowAt K A1) 128 94700 = 96745 := by decide +kernel
+theorem a1_1_c18 : w32 (rowAt K A1) 2432 58287 = 96745 :=
+  w32_chain _ (g1 := 2304) (g2 := 128) (by decide) a1_1_c17 a1_1_b18
+theorem a1_1_b19 : w32 (rowAt K A1) 128 96745 = 98844 := by decide +kernel
+theorem a1_1_c19 : w32 (rowAt K A1) 2560 58287 = 98844 :=
+  w32_chain _ (g1 := 2432) (g2 := 128) (by decide) a1_1_c18 a1_1_b19
+theorem a1_1_b20 : w32 (rowAt K A1) 128 98844 = 100874 := by decide +kernel
+theorem a1_1_c20 : w32 (rowAt K A1) 2688 58287 = 100874 :=
+  w32_chain _ (g1 := 2560) (g2 := 128) (by decide) a1_1_c19 a1_1_b20
+theorem a1_1_b21 : w32 (rowAt K A1) 128 100874 = 102898 := by decide +kernel
+theorem a1_1_c21 : w32 (rowAt K A1) 2816 58287 = 102898 :=
+  w32_chain _ (g1 := 2688) (g2 := 128) (by decide) a1_1_c20 a1_1_b21
+theorem a1_1_b22 : w32 (rowAt K A1) 128 102898 = 104929 := by decide +kernel
+theorem a1_1_c22 : w32 (rowAt K A1) 2944 58287 = 104929 :=
+  w32_chain _ (g1 := 2816) (g2 := 128) (by decide) a1_1_c21 a1_1_b22
+theorem a1_1_b23 : w32 (rowAt K A1) 128 104929 = 107021 := by decide +kernel
+theorem a1_1_c23 : w32 (rowAt K A1) 3072 58287 = 107021 :=
+  w32_chain _ (g1 := 2944) (g2 := 128) (by decide) a1_1_c22 a1_1_b23
+theorem a1_1_b24 : w32 (rowAt K A1) 128 107021 = 109086 := by decide +kernel
+theorem a1_1_c24 : w32 (rowAt K A1) 3200 58287 = 109086 :=
+  w32_chain _ (g1 := 3072) (g2 := 128) (by decide) a1_1_c23 a1_1_b24
+theorem a1_1_b25 : w32 (rowAt K A1) 128 109086 = 111129 := by decide +kernel
+theorem a1_1_c25 : w32 (rowAt K A1) 3328 58287 = 111129 :=
+  w32_chain _ (g1 := 3200) (g2 := 128) (by decide) a1_1_c24 a1_1_b25
+theorem a1_1_b26 : w32 (rowAt K A1) 128 111129 = 113161 := by decide +kernel
+theorem a1_1_c26 : w32 (rowAt K A1) 3456 58287 = 113161 :=
+  w32_chain _ (g1 := 3328) (g2 := 128) (by decide) a1_1_c25 a1_1_b26
+theorem a1_1_b27 : w32 (rowAt K A1) 128 113161 = 115234 := by decide +kernel
+theorem a1_1_c27 : w32 (rowAt K A1) 3584 58287 = 115234 :=
+  w32_chain _ (g1 := 3456) (g2 := 128) (by decide) a1_1_c26 a1_1_b27
+theorem a1_1_b28 : w32 (rowAt K A1) 128 115234 = 117300 := by decide +kernel
+theorem a1_1_c28 : w32 (rowAt K A1) 3712 58287 = 117300 :=
+  w32_chain _ (g1 := 3584) (g2 := 128) (by decide) a1_1_c27 a1_1_b28
+theorem a1_1_b29 : w32 (rowAt K A1) 128 117300 = 119371 := by decide +kernel
+theorem a1_1_c29 : w32 (rowAt K A1) 3840 58287 = 119371 :=
+  w32_chain _ (g1 := 3712) (g2 := 128) (by decide) a1_1_c28 a1_1_b29
+theorem a1_1_b30 : w32 (rowAt K A1) 128 119371 = 121363 := by decide +kernel
+theorem a1_1_c30 : w32 (rowAt K A1) 3968 58287 = 121363 :=
+  w32_chain _ (g1 := 3840) (g2 := 128) (by decide) a1_1_c29 a1_1_b30
+theorem a1_1_b31 : w32 (rowAt K A1) 128 121363 = 123428 := by decide +kernel
+theorem a1_1_c31 : w32 (rowAt K A1) 4096 58287 = 123428 :=
+  w32_chain _ (g1 := 3968) (g2 := 128) (by decide) a1_1_c30 a1_1_b31
+theorem a1_1_b32 : w32 (rowAt K A1) 128 123428 = 125451 := by decide +kernel
+theorem a1_1_c32 : w32 (rowAt K A1) 4224 58287 = 125451 :=
+  w32_chain _ (g1 := 4096) (g2 := 128) (by decide) a1_1_c31 a1_1_b32
+theorem a1_1_b33 : w32 (rowAt K A1) 128 125451 = 127494 := by decide +kernel
+theorem a1_1_c33 : w32 (rowAt K A1) 4352 58287 = 127494 :=
+  w32_chain _ (g1 := 4224) (g2 := 128) (by decide) a1_1_c32 a1_1_b33
+theorem a1_1_b34 : w32 (rowAt K A1) 128 127494 = 129555 := by decide +kernel
+theorem a1_1_c34 : w32 (rowAt K A1) 4480 58287 = 129555 :=
+  w32_chain _ (g1 := 4352) (g2 := 128) (by decide) a1_1_c33 a1_1_b34
+theorem a1_1_b35 : w32 (rowAt K A1) 128 129555 = 131608 := by decide +kernel
+theorem a1_1_c35 : w32 (rowAt K A1) 4608 58287 = 131608 :=
+  w32_chain _ (g1 := 4480) (g2 := 128) (by decide) a1_1_c34 a1_1_b35
+theorem a1_1_b36 : w32 (rowAt K A1) 128 131608 = 133619 := by decide +kernel
+theorem a1_1_c36 : w32 (rowAt K A1) 4736 58287 = 133619 :=
+  w32_chain _ (g1 := 4608) (g2 := 128) (by decide) a1_1_c35 a1_1_b36
+theorem a1_1_b37 : w32 (rowAt K A1) 128 133619 = 135647 := by decide +kernel
+theorem a1_1_c37 : w32 (rowAt K A1) 4864 58287 = 135647 :=
+  w32_chain _ (g1 := 4736) (g2 := 128) (by decide) a1_1_c36 a1_1_b37
+theorem a1_1_b38 : w32 (rowAt K A1) 128 135647 = 137700 := by decide +kernel
+theorem a1_1_c38 : w32 (rowAt K A1) 4992 58287 = 137700 :=
+  w32_chain _ (g1 := 4864) (g2 := 128) (by decide) a1_1_c37 a1_1_b38
+theorem a1_1_b39 : w32 (rowAt K A1) 128 137700 = 139738 := by decide +kernel
+theorem a1_1_c39 : w32 (rowAt K A1) 5120 58287 = 139738 :=
+  w32_chain _ (g1 := 4992) (g2 := 128) (by decide) a1_1_c38 a1_1_b39
+theorem a1_1_b40 : w32 (rowAt K A1) 128 139738 = 141730 := by decide +kernel
+theorem a1_1_c40 : w32 (rowAt K A1) 5248 58287 = 141730 :=
+  w32_chain _ (g1 := 5120) (g2 := 128) (by decide) a1_1_c39 a1_1_b40
+theorem a1_1_b41 : w32 (rowAt K A1) 128 141730 = 143788 := by decide +kernel
+theorem a1_1_c41 : w32 (rowAt K A1) 5376 58287 = 143788 :=
+  w32_chain _ (g1 := 5248) (g2 := 128) (by decide) a1_1_c40 a1_1_b41
+theorem a1_1_b42 : w32 (rowAt K A1) 128 143788 = 145841 := by decide +kernel
+theorem a1_1_c42 : w32 (rowAt K A1) 5504 58287 = 145841 :=
+  w32_chain _ (g1 := 5376) (g2 := 128) (by decide) a1_1_c41 a1_1_b42
+theorem a1_1_b43 : w32 (rowAt K A1) 128 145841 = 147884 := by decide +kernel
+theorem a1_1_c43 : w32 (rowAt K A1) 5632 58287 = 147884 :=
+  w32_chain _ (g1 := 5504) (g2 := 128) (by decide) a1_1_c42 a1_1_b43
+theorem a1_1_b44 : w32 (rowAt K A1) 128 147884 = 149934 := by decide +kernel
+theorem a1_1_c44 : w32 (rowAt K A1) 5760 58287 = 149934 :=
+  w32_chain _ (g1 := 5632) (g2 := 128) (by decide) a1_1_c43 a1_1_b44
+theorem a1_1_b45 : w32 (rowAt K A1) 128 149934 = 151950 := by decide +kernel
+theorem a1_1_c45 : w32 (rowAt K A1) 5888 58287 = 151950 :=
+  w32_chain _ (g1 := 5760) (g2 := 128) (by decide) a1_1_c44 a1_1_b45
+theorem a1_1_b46 : w32 (rowAt K A1) 128 151950 = 154033 := by decide +kernel
+theorem a1_1_c46 : w32 (rowAt K A1) 6016 58287 = 154033 :=
+  w32_chain _ (g1 := 5888) (g2 := 128) (by decide) a1_1_c45 a1_1_b46
+theorem a1_1_b47 : w32 (rowAt K A1) 128 154033 = 156087 := by decide +kernel
+theorem a1_1_c47 : w32 (rowAt K A1) 6144 58287 = 156087 :=
+  w32_chain _ (g1 := 6016) (g2 := 128) (by decide) a1_1_c46 a1_1_b47
+theorem a1_1_b48 : w32 (rowAt K A1) 128 156087 = 158128 := by decide +kernel
+theorem a1_1_c48 : w32 (rowAt K A1) 6272 58287 = 158128 :=
+  w32_chain _ (g1 := 6144) (g2 := 128) (by decide) a1_1_c47 a1_1_b48
+theorem a1_1_b49 : w32 (rowAt K A1) 128 158128 = 160224 := by decide +kernel
+theorem a1_1_c49 : w32 (rowAt K A1) 6400 58287 = 160224 :=
+  w32_chain _ (g1 := 6272) (g2 := 128) (by decide) a1_1_c48 a1_1_b49
+theorem a1_1_b50 : w32 (rowAt K A1) 128 160224 = 162278 := by decide +kernel
+theorem a1_1_c50 : w32 (rowAt K A1) 6528 58287 = 162278 :=
+  w32_chain _ (g1 := 6400) (g2 := 128) (by decide) a1_1_c49 a1_1_b50
+theorem a1_1_b51 : w32 (rowAt K A1) 128 162278 = 164323 := by decide +kernel
+theorem a1_1_c51 : w32 (rowAt K A1) 6656 58287 = 164323 :=
+  w32_chain _ (g1 := 6528) (g2 := 128) (by decide) a1_1_c50 a1_1_b51
+theorem a1_1_b52 : w32 (rowAt K A1) 88 164323 = 165746 := by decide +kernel
+theorem a1_1_c52 : w32 (rowAt K A1) 6744 58287 = 165746 :=
+  w32_chain _ (g1 := 6656) (g2 := 88) (by decide) a1_1_c51 a1_1_b52
+theorem a1_1_g : w32 (rowAt K A1) 6744 58287 = 165746 := a1_1_c52
+theorem a1_1_d : walk (rowAt K A1) 7 (117439 + 1 + 32 * 6744) 165746 = 165747 := by decide +kernel
+set_option exponentiation.threshold 200000 in
 theorem a1_1 : frun wA1 58286 107462 (117439, 117439) = (333256, 333257) :=
   seg_black (K := K) (v := A1) (h := 1) (g := 6744) (d := 7) (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    (by decide +kernel) (by decide +kernel) (by decide +kernel) (by decide +kernel)
+    (fastWalk_of _ a1_1_h a1_1_g a1_1_d) (by decide +kernel) (by decide +kernel) (by decide +kernel)
 theorem SA1_165748 : S wA1 165748 = (333256, 333257) :=
   (frun_chain _ 0 58286 107462 _ _ _ a1_58286
     a1_1)
 theorem b1_72575 : frun wB1 0 72575 (0, 1) = (146463, 146463) :=
   (low_congr (fun i hi => (wB1_eq_B0 i (by omega)).symm)).trans b_72575
+theorem b1_1_h : walk (rowAt K B1) 1 146463 72576 = 72577 := by decide +kernel
+theorem b1_1_b0 : w32 (rowAt K B1) 128 72577 = 74614 := by decide +kernel
+theorem b1_1_c0 : w32 (rowAt K B1) 128 72577 = 74614 := b1_1_b0
+theorem b1_1_b1 : w32 (rowAt K B1) 128 74614 = 76617 := by decide +kernel
+theorem b1_1_c1 : w32 (rowAt K B1) 256 72577 = 76617 :=
+  w32_chain _ (g1 := 128) (g2 := 128) (by decide) b1_1_c0 b1_1_b1
+theorem b1_1_b2 : w32 (rowAt K B1) 128 76617 = 78713 := by decide +kernel
+theorem b1_1_c2 : w32 (rowAt K B1) 384 72577 = 78713 :=
+  w32_chain _ (g1 := 256) (g2 := 128) (by decide) b1_1_c1 b1_1_b2
+theorem b1_1_b3 : w32 (rowAt K B1) 128 78713 = 80731 := by decide +kernel
+theorem b1_1_c3 : w32 (rowAt K B1) 512 72577 = 80731 :=
+  w32_chain _ (g1 := 384) (g2 := 128) (by decide) b1_1_c2 b1_1_b3
+theorem b1_1_b4 : w32 (rowAt K B1) 128 80731 = 82734 := by decide +kernel
+theorem b1_1_c4 : w32 (rowAt K B1) 640 72577 = 82734 :=
+  w32_chain _ (g1 := 512) (g2 := 128) (by decide) b1_1_c3 b1_1_b4
+theorem b1_1_b5 : w32 (rowAt K B1) 128 82734 = 84733 := by decide +kernel
+theorem b1_1_c5 : w32 (rowAt K B1) 768 72577 = 84733 :=
+  w32_chain _ (g1 := 640) (g2 := 128) (by decide) b1_1_c4 b1_1_b5
+theorem b1_1_b6 : w32 (rowAt K B1) 128 84733 = 86693 := by decide +kernel
+theorem b1_1_c6 : w32 (rowAt K B1) 896 72577 = 86693 :=
+  w32_chain _ (g1 := 768) (g2 := 128) (by decide) b1_1_c5 b1_1_b6
+theorem b1_1_b7 : w32 (rowAt K B1) 128 86693 = 88681 := by decide +kernel
+theorem b1_1_c7 : w32 (rowAt K B1) 1024 72577 = 88681 :=
+  w32_chain _ (g1 := 896) (g2 := 128) (by decide) b1_1_c6 b1_1_b7
+theorem b1_1_b8 : w32 (rowAt K B1) 128 88681 = 90734 := by decide +kernel
+theorem b1_1_c8 : w32 (rowAt K B1) 1152 72577 = 90734 :=
+  w32_chain _ (g1 := 1024) (g2 := 128) (by decide) b1_1_c7 b1_1_b8
+theorem b1_1_b9 : w32 (rowAt K B1) 128 90734 = 92841 := by decide +kernel
+theorem b1_1_c9 : w32 (rowAt K B1) 1280 72577 = 92841 :=
+  w32_chain _ (g1 := 1152) (g2 := 128) (by decide) b1_1_c8 b1_1_b9
+theorem b1_1_b10 : w32 (rowAt K B1) 128 92841 = 94896 := by decide +kernel
+theorem b1_1_c10 : w32 (rowAt K B1) 1408 72577 = 94896 :=
+  w32_chain _ (g1 := 1280) (g2 := 128) (by decide) b1_1_c9 b1_1_b10
+theorem b1_1_b11 : w32 (rowAt K B1) 128 94896 = 96889 := by decide +kernel
+theorem b1_1_c11 : w32 (rowAt K B1) 1536 72577 = 96889 :=
+  w32_chain _ (g1 := 1408) (g2 := 128) (by decide) b1_1_c10 b1_1_b11
+theorem b1_1_b12 : w32 (rowAt K B1) 128 96889 = 98901 := by decide +kernel
+theorem b1_1_c12 : w32 (rowAt K B1) 1664 72577 = 98901 :=
+  w32_chain _ (g1 := 1536) (g2 := 128) (by decide) b1_1_c11 b1_1_b12
+theorem b1_1_b13 : w32 (rowAt K B1) 128 98901 = 100895 := by decide +kernel
+theorem b1_1_c13 : w32 (rowAt K B1) 1792 72577 = 100895 :=
+  w32_chain _ (g1 := 1664) (g2 := 128) (by decide) b1_1_c12 b1_1_b13
+theorem b1_1_b14 : w32 (rowAt K B1) 128 100895 = 102933 := by decide +kernel
+theorem b1_1_c14 : w32 (rowAt K B1) 1920 72577 = 102933 :=
+  w32_chain _ (g1 := 1792) (g2 := 128) (by decide) b1_1_c13 b1_1_b14
+theorem b1_1_b15 : w32 (rowAt K B1) 128 102933 = 104975 := by decide +kernel
+theorem b1_1_c15 : w32 (rowAt K B1) 2048 72577 = 104975 :=
+  w32_chain _ (g1 := 1920) (g2 := 128) (by decide) b1_1_c14 b1_1_b15
+theorem b1_1_b16 : w32 (rowAt K B1) 128 104975 = 106976 := by decide +kernel
+theorem b1_1_c16 : w32 (rowAt K B1) 2176 72577 = 106976 :=
+  w32_chain _ (g1 := 2048) (g2 := 128) (by decide) b1_1_c15 b1_1_b16
+theorem b1_1_b17 : w32 (rowAt K B1) 128 106976 = 109033 := by decide +kernel
+theorem b1_1_c17 : w32 (rowAt K B1) 2304 72577 = 109033 :=
+  w32_chain _ (g1 := 2176) (g2 := 128) (by decide) b1_1_c16 b1_1_b17
+theorem b1_1_b18 : w32 (rowAt K B1) 128 109033 = 111109 := by decide +kernel
+theorem b1_1_c18 : w32 (rowAt K B1) 2432 72577 = 111109 :=
+  w32_chain _ (g1 := 2304) (g2 := 128) (by decide) b1_1_c17 b1_1_b18
+theorem b1_1_b19 : w32 (rowAt K B1) 128 111109 = 113199 := by decide +kernel
+theorem b1_1_c19 : w32 (rowAt K B1) 2560 72577 = 113199 :=
+  w32_chain _ (g1 := 2432) (g2 := 128) (by decide) b1_1_c18 b1_1_b19
+theorem b1_1_b20 : w32 (rowAt K B1) 128 113199 = 115273 := by decide +kernel
+theorem b1_1_c20 : w32 (rowAt K B1) 2688 72577 = 115273 :=
+  w32_chain _ (g1 := 2560) (g2 := 128) (by decide) b1_1_c19 b1_1_b20
+theorem b1_1_b21 : w32 (rowAt K B1) 128 115273 = 117324 := by decide +kernel
+theorem b1_1_c21 : w32 (rowAt K B1) 2816 72577 = 117324 :=
+  w32_chain _ (g1 := 2688) (g2 := 128) (by decide) b1_1_c20 b1_1_b21
+theorem b1_1_b22 : w32 (rowAt K B1) 128 117324 = 119347 := by decide +kernel
+theorem b1_1_c22 : w32 (rowAt K B1) 2944 72577 = 119347 :=
+  w32_chain _ (g1 := 2816) (g2 := 128) (by decide) b1_1_c21 b1_1_b22
+theorem b1_1_b23 : w32 (rowAt K B1) 128 119347 = 121357 := by decide +kernel
+theorem b1_1_c23 : w32 (rowAt K B1) 3072 72577 = 121357 :=
+  w32_chain _ (g1 := 2944) (g2 := 128) (by decide) b1_1_c22 b1_1_b23
+theorem b1_1_b24 : w32 (rowAt K B1) 128 121357 = 123360 := by decide +kernel
+theorem b1_1_c24 : w32 (rowAt K B1) 3200 72577 = 123360 :=
+  w32_chain _ (g1 := 3072) (g2 := 128) (by decide) b1_1_c23 b1_1_b24
+theorem b1_1_b25 : w32 (rowAt K B1) 128 123360 = 125448 := by decide +kernel
+theorem b1_1_c25 : w32 (rowAt K B1) 3328 72577 = 125448 :=
+  w32_chain _ (g1 := 3200) (g2 := 128) (by decide) b1_1_c24 b1_1_b25
+theorem b1_1_b26 : w32 (rowAt K B1) 128 125448 = 127430 := by decide +kernel
+theorem b1_1_c26 : w32 (rowAt K B1) 3456 72577 = 127430 :=
+  w32_chain _ (g1 := 3328) (g2 := 128) (by decide) b1_1_c25 b1_1_b26
+theorem b1_1_b27 : w32 (rowAt K B1) 128 127430 = 129447 := by decide +kernel
+theorem b1_1_c27 : w32 (rowAt K B1) 3584 72577 = 129447 :=
+  w32_chain _ (g1 := 3456) (g2 := 128) (by decide) b1_1_c26 b1_1_b27
+theorem b1_1_b28 : w32 (rowAt K B1) 128 129447 = 131509 := by decide +kernel
+theorem b1_1_c28 : w32 (rowAt K B1) 3712 72577 = 131509 :=
+  w32_chain _ (g1 := 3584) (g2 := 128) (by decide) b1_1_c27 b1_1_b28
+theorem b1_1_b29 : w32 (rowAt K B1) 128 131509 = 133577 := by decide +kernel
+theorem b1_1_c29 : w32 (rowAt K B1) 3840 72577 = 133577 :=
+  w32_chain _ (g1 := 3712) (g2 := 128) (by decide) b1_1_c28 b1_1_b29
+theorem b1_1_b30 : w32 (rowAt K B1) 128 133577 = 135579 := by decide +kernel
+theorem b1_1_c30 : w32 (rowAt K B1) 3968 72577 = 135579 :=
+  w32_chain _ (g1 := 3840) (g2 := 128) (by decide) b1_1_c29 b1_1_b30
+theorem b1_1_b31 : w32 (rowAt K B1) 128 135579 = 137591 := by decide +kernel
+theorem b1_1_c31 : w32 (rowAt K B1) 4096 72577 = 137591 :=
+  w32_chain _ (g1 := 3968) (g2 := 128) (by decide) b1_1_c30 b1_1_b31
+theorem b1_1_b32 : w32 (rowAt K B1) 128 137591 = 139679 := by decide +kernel
+theorem b1_1_c32 : w32 (rowAt K B1) 4224 72577 = 139679 :=
+  w32_chain _ (g1 := 4096) (g2 := 128) (by decide) b1_1_c31 b1_1_b32
+theorem b1_1_b33 : w32 (rowAt K B1) 128 139679 = 141725 := by decide +kernel
+theorem b1_1_c33 : w32 (rowAt K B1) 4352 72577 = 141725 :=
+  w32_chain _ (g1 := 4224) (g2 := 128) (by decide) b1_1_c32 b1_1_b33
+theorem b1_1_b34 : w32 (rowAt K B1) 128 141725 = 143808 := by decide +kernel
+theorem b1_1_c34 : w32 (rowAt K B1) 4480 72577 = 143808 :=
+  w32_chain _ (g1 := 4352) (g2 := 128) (by decide) b1_1_c33 b1_1_b34
+theorem b1_1_b35 : w32 (rowAt K B1) 128 143808 = 145841 := by decide +kernel
+theorem b1_1_c35 : w32 (rowAt K B1) 4608 72577 = 145841 :=
+  w32_chain _ (g1 := 4480) (g2 := 128) (by decide) b1_1_c34 b1_1_b35
+theorem b1_1_b36 : w32 (rowAt K B1) 128 145841 = 147835 := by decide +kernel
+theorem b1_1_c36 : w32 (rowAt K B1) 4736 72577 = 147835 :=
+  w32_chain _ (g1 := 4608) (g2 := 128) (by decide) b1_1_c35 b1_1_b36
+theorem b1_1_b37 : w32 (rowAt K B1) 128 147835 = 149899 := by decide +kernel
+theorem b1_1_c37 : w32 (rowAt K B1) 4864 72577 = 149899 :=
+  w32_chain _ (g1 := 4736) (g2 := 128) (by decide) b1_1_c36 b1_1_b37
+theorem b1_1_b38 : w32 (rowAt K B1) 128 149899 = 151862 := by decide +kernel
+theorem b1_1_c38 : w32 (rowAt K B1) 4992 72577 = 151862 :=
+  w32_chain _ (g1 := 4864) (g2 := 128) (by decide) b1_1_c37 b1_1_b38
+theorem b1_1_b39 : w32 (rowAt K B1) 128 151862 = 153946 := by decide +kernel
+theorem b1_1_c39 : w32 (rowAt K B1) 5120 72577 = 153946 :=
+  w32_chain _ (g1 := 4992) (g2 := 128) (by decide) b1_1_c38 b1_1_b39
+theorem b1_1_b40 : w32 (rowAt K B1) 128 153946 = 155939 := by decide +kernel
+theorem b1_1_c40 : w32 (rowAt K B1) 5248 72577 = 155939 :=
+  w32_chain _ (g1 := 5120) (g2 := 128) (by decide) b1_1_c39 b1_1_b40
+theorem b1_1_b41 : w32 (rowAt K B1) 128 155939 = 157991 := by decide +kernel
+theorem b1_1_c41 : w32 (rowAt K B1) 5376 72577 = 157991 :=
+  w32_chain _ (g1 := 5248) (g2 := 128) (by decide) b1_1_c40 b1_1_b41
+theorem b1_1_b42 : w32 (rowAt K B1) 128 157991 = 160013 := by decide +kernel
+theorem b1_1_c42 : w32 (rowAt K B1) 5504 72577 = 160013 :=
+  w32_chain _ (g1 := 5376) (g2 := 128) (by decide) b1_1_c41 b1_1_b42
+theorem b1_1_b43 : w32 (rowAt K B1) 128 160013 = 162015 := by decide +kernel
+theorem b1_1_c43 : w32 (rowAt K B1) 5632 72577 = 162015 :=
+  w32_chain _ (g1 := 5504) (g2 := 128) (by decide) b1_1_c42 b1_1_b43
+theorem b1_1_b44 : w32 (rowAt K B1) 128 162015 = 164063 := by decide +kernel
+theorem b1_1_c44 : w32 (rowAt K B1) 5760 72577 = 164063 :=
+  w32_chain _ (g1 := 5632) (g2 := 128) (by decide) b1_1_c43 b1_1_b44
+theorem b1_1_b45 : w32 (rowAt K B1) 105 164063 = 165744 := by decide +kernel
+theorem b1_1_c45 : w32 (rowAt K B1) 5865 72577 = 165744 :=
+  w32_chain _ (g1 := 5760) (g2 := 105) (by decide) b1_1_c44 b1_1_b45
+theorem b1_1_g : w32 (rowAt K B1) 5865 72577 = 165744 := b1_1_c45
+theorem b1_1_d : walk (rowAt K B1) 3 (146463 + 1 + 32 * 5865) 165744 = 165747 := by decide +kernel
+set_option exponentiation.threshold 200000 in
 theorem b1_1 : frun wB1 72575 93173 (146463, 146463) = (334148, 334150) :=
   seg_black (K := K) (v := B1) (h := 1) (g := 5865) (d := 3) (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)
-    (by decide +kernel) (by decide +kernel) (by decide +kernel) (by decide +kernel)
+    (fastWalk_of _ b1_1_h b1_1_g b1_1_d) (by decide +kernel) (by decide +kernel) (by decide +kernel)
 theorem SB1_165748 : S wB1 165748 = (334148, 334150) :=
   (frun_chain _ 0 72575 93173 _ _ _ b1_72575
     b1_1)
