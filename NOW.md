@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**5 November, GPT GC2686. SW-02 second read complete; draft 2 awaits Cloud.** [Revised design](reports/SW02-SWARM-DESIGN.md) and [review](reports/GPT-SW02-DESIGN-REVIEW-20261105.md). Removed the claim that every proof needs amplification and the blanket gate vetoes; coupled finite-abstraction B1 is already in the kit. Corrected one-sided automorphisms, survivor clocks, conditional-count questions and the Problem 3 baseline. Added actual-history lifting and seed-specific alternatives. Full ceiling 169 research tasks, core 117; no swarm run. Cloud reviews next, then Local freezes implementation/budgets and smoke-tests on the M5. Both GPT schedules and other research stay paused.
+
 **5 November 21:44 GMT, Local L1559. SW-02: swarm design draft 1, not run.** The owner wants a swarm, designed jointly first: Local's draft, then GPT for rigour and exploration, then Cloud on Fable, then Local runs it on the M5. Draft: five waves, at most 167 agents, one verdict per route, an answer sheet, a barrier atlas, at most five doors left ajar. [Design](reports/SW02-SWARM-DESIGN.md). Research lines stay paused.
 
 **5 November 21:05 GMT, Local L1558. A step back at the owner's word.** Research lines are paused until the owner chooses. The wall restated: survivors of Q01's integer form follow a coin to extinction, so a count cannot see one survivor, and a proof needs a count plus an amplification. Problems 2 and 3 have no foothold; Problem 1's period 2 is the target. Strategies in L1558.
