@@ -353,23 +353,24 @@ def seg_text(n, lab, j0, cnt):
     j1 = walk_sim(n, h, t, j); t += h
     out.append(f"theorem {lab}_h : walk {R} {h} {b} {j0 + 1} = {j1} := by decide +kernel\n")
     blocks = [BLK] * (g // BLK) + ([g % BLK] if g % BLK else [])
-    jj = j1; facts = []
+    jj = j1; cum = 0
     for i, rounds in enumerate(blocks):
         jn = walk_sim(n, P * rounds, t, jj); t += P * rounds
         out.append(f"theorem {lab}_b{i} : w32 {R} {rounds} {jj} = {jn} := by decide +kernel\n")
-        facts.append(f"{lab}_b{i}"); jj = jn
+        if i == 0:
+            out.append(f"theorem {lab}_c0 : w32 {R} {rounds} {j1} = {jn} := {lab}_b0\n")
+        else:
+            out.append(f"theorem {lab}_c{i} : w32 {R} {cum + rounds} {j1} = {jn} :=\n"
+                       f"  w32_chain _ (g1 := {cum}) (g2 := {rounds}) (by decide) {lab}_c{i - 1} {lab}_b{i}\n")
+        cum += rounds; jj = jn
     j2 = jj
-    def nest(i):
-        if i == len(facts) - 1: return facts[i]
-        return f"(w32_chain _ (by decide) {facts[i]} {nest(i + 1)})"
-    if len(facts) == 1:
-        out.append(f"theorem {lab}_g : w32 {R} {g} {j1} = {j2} := {facts[0]}\n")
-    else:
-        out.append(f"theorem {lab}_g : w32 {R} {g} {j1} = {j2} :=\n  {nest(0)}\n")
+    assert cum == g
+    out.append(f"theorem {lab}_g : w32 {R} {g} {j1} = {j2} := {lab}_c{len(blocks) - 1}\n")
     J = walk_sim(n, d, t, j2)
     assert J == j0 + cnt - 1 and t == b + h + P * g, (n, lab, J, j0 + cnt - 1)
     out.append(f"theorem {lab}_d : walk {R} {d} ({b} + {h} + 32 * {g}) {j2} = {j0 + cnt - 1} := by decide +kernel\n")
-    out.append(f"theorem {lab} : frun w{n} {j0} {cnt} ({a}, {b}) = ({A}, {B}) :=\n"
+    out.append(f"set_option exponentiation.threshold 200000 in\n"
+               f"theorem {lab} : frun w{n} {j0} {cnt} ({a}, {b}) = ({A}, {B}) :=\n"
                f"  seg_black (K := K) (v := {n}) (h := {h}) (g := {g}) (d := {d}) (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)\n"
                f"    (fastWalk_of _ {lab}_h {lab}_g {lab}_d) (by decide +kernel) (by decide +kernel) (by decide +kernel)\n")
     return "".join(out)
