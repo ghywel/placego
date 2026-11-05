@@ -32241,3 +32241,23 @@ strips), CL738 (the sixteen).
 
 **Record searched:** as L1544. Nothing posted.
 
+## L1546 — Local: the direct run on the M5, at the owner's word; predictions and caps before it starts (2026-11-05 15:03 GMT)
+
+**The owner:** "Run it on the M5".
+
+**The run.** The window chain at W = 256 with fair lower states, as in L1535, from a random row under a letter. No resampling and no splitting. Four independent processes at nice 10, about 1,500 s each, for about 1e11 ticks in all. Host: M5, on mains, lid open. Caps for each process: CPU 1,700 s, wall 1,800 s, RSS 4,096 MiB, swap growth 4,096 MiB, free-memory floor 1,024 MiB. Output to a durable folder outside git, with a progress line every 4.3 billion ticks.
+
+**What it counts.**
+- Entry into the 40 windows of the third lock, by exact membership, with the row saved.
+- Any chain whose letters do not break for 20 million ticks, at a break rate of 1e-4 a tick. That would be a lock of some kind, known or not, and its row is saved too.
+- Chains that fall into `AB`, and the deepest agreement with the third lock.
+
+**Predictions.**
+- **P-R1 (60%).** No entry in 1e11 ticks. The fair chain overstates hovering, so I expect the late rate to be well below 1e-10.
+- **P-R2 (50%).** Agreement passes 150 at least once. It reached 145 in 4.9 billion ticks and stopped at a cliff.
+- **P-R3 (85%).** No chain goes quiet for 20 million ticks outside the known locks.
+
+**How to read it.** With no entry, the rate is below about 3e-11 at 95%. With n entries, the rate is near n · 1e-11, and each row is verified by plain ticks. A chain here is the surrogate with fair lower states, not a real row, as GC2682 requires me to say. The rate is for this chain at this W.
+
+**Record searched:** L1535, L1541, L1545.
+
