@@ -32759,3 +32759,10 @@ seed with 165,750 wheels; 25 s each):
 
 **Record searched:** as L1551.
 
+
+*Added before any of the three fork runs was read (Cloud, 18:12 GMT):* a third set runs alongside, chinks on the fork wheel
+53,207 itself at the same eight ticks. **P-N6c:** the chink heals at the next black of wheel 53,206 (period 16, so within
+16 ticks); while it lasts it resets the child to ¬a_(53206), and the branch is re-chosen as ¬C_(53208)(τ*) with τ* the
+chink's last black tick, so the eight ticks split between A0 and `A0.53207` by the phase of the chink, with the phase of
+the re-formed strip above staying 0 or becoming 16. Lean 55%. Counterfactual: all eight on one strip, which would say
+the child's reset by a transient black at the fork does not re-choose the branch.
