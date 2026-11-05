@@ -181,11 +181,13 @@ for n in order:
         k += 1; lab = f"r{k}"; L.append(white_text(n, lab, j, e)); segs.append((lab, j, 1)); j = e
         a, b = STATES[n][e]
         L.append(f"theorem s_{e} : frun w 0 {e} (0, 1) = ({a}, {b}) :=\n  {chain(start_lab, start_j, segs, e)}\n")
+    a, b = STATES[n][J - 1]
     if J - 1 > j:
         k += 1; lab = f"r{k}"; txt, _ = seg_text(n, lab, j, J - 1 - j); L.append(txt); segs.append((lab, j, J - 1 - j)); j = J - 1
-    a, b = STATES[n][J - 1]
-    L.append(f"theorem s_{J - 1} : frun w 0 {J - 1} (0, 1) = ({a}, {b}) :=\n  {chain(start_lab, start_j, segs, J - 1)}\n")
-    L.append(f"theorem front : F w {J} = {F[n][J]} := by rw [← S_snd]; exact congrArg Prod.snd s_{J - 1}\n")
+        L.append(f"theorem s_end : frun w 0 {J - 1} (0, 1) = ({a}, {b}) :=\n  {chain(start_lab, start_j, segs, J - 1)}\n")
+    else:
+        L.append(f"theorem s_end : frun w 0 {J - 1} (0, 1) = ({a}, {b}) := {start_lab if not segs else 's_' + str(j)}\n")
+    L.append(f"theorem front : F w {J} = {F[n][J]} := by rw [← S_snd]; exact congrArg Prod.snd s_end\n")
     L.append(f"theorem front_le : ∀ j, j ≤ {J} → F w j ≤ {F[n][J]} := fun j hj => Nat.le_trans (F_mono w hj) (by rw [front]; exact Nat.le_refl _)\n")
     L.append(f"\nend {ns(i)}\n")
     open(f"{OUT}/{mod(i)}.lean", 'w').write("".join(L))
