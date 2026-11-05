@@ -79,3 +79,7 @@ Probes for [genealogy §63.7](../../../reports/rule30-genealogy.md). All are sho
 | `wall_capture2.c` | The direct run: `./wall_capture2 256 SECONDS SEED lock175.txt ref6.txt`. Saves any row that enters or goes quiet. Output of the four processes, seeds 301 to 304: `capture_run.out`. |
 | `cyclecheck.py`, `branches6.py` | Where exact periodic solutions leave the lock strips. Outputs `cyclecheck.out`, `branches6.out`. |
 
+## Added in L1548
+
+`package/`: the right-wall submission's sources. `gen_base.py` (with `extras.lean`), `gen_locks.py`, `gen_cloud.py` and `gen_portal.py` (with `portal_head.txt`) write the modules from the record's Lean and this folder's lock and witness files. Run them from a subfolder of the working folder, with `tests/probes/lean` as first argument. `replay_portal.py` replays every finite claim from the portal source's literals in plain Python, and `mutate.py` lists the ten mutants. Outputs are alongside.
+

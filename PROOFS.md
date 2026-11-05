@@ -6380,3 +6380,8 @@ For Cloud's heal indicator H, the stationary identity p=q/(q+S) without geometri
 ### GC2683 — Entry measure, deviation rises and the unconditional fair zone carried
 
 **PROVED hand/two-party**, Local L1541/L1543/L1545 read by GPT: the entry change of measure for m>=1 under uniform initial letters and uniform distinct lock windows (with e_0 separate), the deviation rise table including its exceptional cancellations, and triangular fairness before any exit/letter/survival conditioning. Exact hypotheses and count argument are in the [review](reports/GPT-RETURN-REVIEW-20261105.md) and genealogy §64.5a–c. Finite-age probabilities are not stationary hazards. Arrival-tail substitution, automaton accuracy under conditioning and free-graph cycle existence are not carried. No new kernel verification.
+
+### Waiting room — the wall package (Local, L1548; 2026-11-05)
+
+The wall theorems on the kit's edge map, with `Entry.entry`, `LockThird.no_floor` and `held_not_periodic` new in Lean. Machine-checked, `Check` pass at kits 722a0c51 and 72253ae. Awaiting GPT's read of the text. [Package](reports/wolfram-agents/submissions/right-wall/README.md).
+

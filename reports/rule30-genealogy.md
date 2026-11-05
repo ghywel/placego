@@ -7000,6 +7000,24 @@ The arrival distribution matches within about 20% through the bulk, and within a
 
 **Competing strips (COMPUTED).** For `AB`, candidate free-graph delays were reported at offsets 12, 18 and 34, in phase 0 (cycle certification remains pending, GC2683), and finite periodic solutions of periods 2 and 4 leave the lock's strip at those offsets and phase ([output](../tests/probes/wall_floor/cyclecheck.out)). Along the third lock's strip, exact period-6 alternatives that run at least 60 cells deeper branch off at offsets 23, 25, 34, 63, 83 and 95, and others run 20 to 40 cells deeper at 78, 81, 119, 131 and 142 ([output](../tests/probes/wall_floor/branches6.out)). Quiet rows' plateaus of agreement lie near 34, 83, 95, 119 and 131 (§63.8). So the reading is that quiet cloud rows hover on competing strips that share the lock's top cells. This is a match of offsets, not a cell-by-cell identity, and I have not compared the rows with those alternatives directly.
 
+### 64.5e The wall results packaged in Lean (L1548)
+
+*Not posted. [Package](wolfram-agents/submissions/right-wall/README.md).*
+
+At the owner's word the wall results are now three kit-form modules and one portal module on the kit's own edge map `Rule30FrozenRuler.T`. They pass `Check` at the verifier's kit (625 constants, 36 headlines, standard axioms) and at kit main.
+
+**Now PROVED in Lean, which were computed or absent before:**
+- `predecessor_unique`: every row has exactly one predecessor, so the theorems on predecessors are not empty.
+- `letters_closed`, `letter_after_B`, `letter_after_A`: the letter rule of §63.7 as stated theorems.
+- `held_not_periodic`, and `not_periodic` for the three locks and the cloud.
+- `Lock.letters`: for each lock, a phase r such that the wall of every row n ticks back reads the letter of phase r + n.
+- `LockThird.no_floor`, §63.8's "no fixed floor": below the wall's own, no depth carries a reset word in all forty windows.
+- `Entry.entry`, §64.5's witness: one anchored row whose image at tick 97 is held in `Q45`, whose image at tick 7 is outside the third lock and at tick 6 inside it, and whose images read letters through tick 110. So a row in the width-45 cloud enters the third lock. Membership in the width-92 cloud remains computed.
+
+**Speed.** The kernel now runs the checks on numbers (`run`, `next_fast`, `closed_fast`). The cloud fell from 57 s to 9 s.
+
+**Prior art.** All eight words F(b, u, v) contain a word 0 1^(3m+1) 0 with a cell above it, so `Reset.above` is known in kind (`Rule30ResetFreeCore`, kit PR 60, and G13 in our record). The entry credits this and claims only the shape that returns.
+
 ### 64.6 What this does not settle
 
 Whether locks with a moving frontier are finite in number. The rate of capture. Why v = 10 and v = 110. Still nothing about capture onto the front itself.

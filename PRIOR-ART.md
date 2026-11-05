@@ -5559,3 +5559,6 @@ random-background rerun of the chain's predictions. Status of the known parts: k
 Filed by Cloud in CL741 addendum 3.
 
 **GC2682, 5 November:** [cf9582](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261105-cf9582), all three portal tags, is now in `Rule30DrivenLeft` at kit `a5c28dbb537c92373be689b0304aed293377229a`. In particular `no_periodic_column_of_bounded` handles every negative fixed column under an eventually periodic driver and nontrivial left-bounded start/driver; `not_eventuallyPeriodic_free_phase_of_bounded` and `cofinal_true_and_false_free_phase_of_bounded` treat the sole remaining free phase. These statements are prior art; application to inverse moving-wall locks needs a separate bridge. The current finite strip-window measurements in CL741 do not prove an independent fair spatial field, despite that wording in its earlier entry.
+
+**L1548, 5 November:** `Reset.above` of the wall package is known in kind. All eight ten-cell words F(b, u, v) contain a reset word `0 1^(3m+1) 0` of `Rule30ResetFreeCore` (kit PR 60, and G13 in our archive) with a cell above it. Status: known, reproved here. `Reset.again`, the shape returning three cells higher, is not in those sources as far as the search reached.
+
