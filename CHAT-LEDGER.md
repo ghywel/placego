@@ -31105,3 +31105,50 @@ My own pull: this closes the tree. Two things pull next, and I will not start ei
 are new directions: the actual front's law (the seed at 1.32 ticks a wheel through 894,235 against the forced 2.006: the
 record has the numbers and no mechanism), and a fresh pass over PERIOD-TWO's board with what the fronts now give (every
 configuration's left side is in place by a known tick; whether that bounds anything the board asks). In `INSTINCT.md`.
+
+## CL739 — Cloud: the pull continued ("continue"). (a) The board pass: the fronts are left-side structure and serve no open row. (b) The actual front's law, the record's open B2/F4 (the settling slope 1.3326 at 100,000: 4/3, 1.27 or wandering?), measured to 894,235 on the single cell and on the fifteen other rows, with the coincidences and the lag behind the forced front. Predictions first (2026-11-05 09:10 GMT)
+
+**(a) The board (PERIOD-TWO §6.5), read against the fronts.** What the fronts give is an explicit periodic region: for every
+configuration with a leftmost black cell, at every tick t the wheels j ≤ (t − 31)/2 carry one of sixteen known strips of
+period dividing 32 (through wheel 894,235), that is the cells at x ≤ −t/2 of the pattern in the cell frame are known
+words; the single cell's own region is wider (x ≤ −0.24 t). No open row asks for this: the two-sided channel theorem,
+Corollary F's class, Theorem E″ and the PR75/76 comparisons concern the center column, the right edge or the wall, and the
+prize pathways of NIGHT-TASKS C1–C4 likewise. The entries 309041, 458f3b, 9aa447 and the five- and sixteen-strip theorems
+belong together as Rowland-side structure, and I file them so; no row changes status. The record's own open question that
+they do serve is B2/F4 of the owner-era list (CL654, GC2266): the actual front's slope.
+
+**(b) The actual front.** The single cell settles wheel j at tick τ_j; the record has τ_j/j → 1.3326 at j = 100,000
+(GC2266), the owner-era question B2 ("4/3, 1.27, or wanders") and F4's candidate mechanism ("the band advances by a fixed
+amount at each doubling of the newest settled wheel"). CL738's data add τ(894,235) = 1,180,062, a cumulative ratio of
+1.3196: lower than at 100,000, so the exact 4/3 is already in doubt. The forced front runs at 2.006 ticks a wheel, the gap
+being the coincidences of CL730 (a child already in its cycle when the forced reset arrives, 45.5% of wheels through
+87,866). **Probe `front_law.py`** (substitute caps per invocation; the single cell about three minutes, each of the fifteen
+other rows under 70 s, as `tree16_data.py`): the single cell to its settling through 894,235 with the lag-32 band edge every
+tick, hence τ_j for every wheel; the forced front F_j on its strip; the slope in windows of 100,000 wheels and the
+cumulative ratios; the increments at the five doublings 3, 8, 29, 400, 87,867 against the increment distribution; the
+local coincidence statistics of CL695/CL730 over all 894,000 wheels (violations, share, slack distribution, by range); the
+lag F_j − τ_j and its slope; the increment histogram. Then each of the fifteen other rows, evolved from the parent's row
+with the fork's child bit complemented as in stage 1, with its own τ above its fork: the slope over its stretch (skipping
+10,000 wheels after the fork) and its increment histogram.
+- **P-C1 (the slope).** Each 100,000-wheel window from 100,000 to 894,235 has a slope within [1.30, 1.335], with no trend
+  across the windows beyond 0.01; 4/3 = 1.3333 lies above every window. So B2's answer is "neither 4/3 nor 1.27: about
+  1.32, steady". Lean 60%. Counterfactual: windows rising toward 1.333 keep F4's premise alive at larger scale; windows
+  wandering beyond ±0.02 is B2's third alternative; either is recorded as such.
+- **P-C2 (F4's candidate).** The increment at the doubling 87,867 is within the ordinary distribution (at most 8 ticks), and
+  the slope over the 806,000 wheels after it, where no doubling occurs, is the same 1.32: the doublings do not set the
+  speed. Lean 85%. Counterfactual: a large jump at 87,867 or a slope that changes there.
+- **P-C3 (coincidences and the lag).** No local violation on 894,000 wheels; the coincidence share within 0.01 of 0.454;
+  the slack distribution near the geometric law of ratio one half (0: 0.54 ± 0.02, 1: 0.22 ± 0.02, 2: 0.12 ± 0.02); the lag
+  F_j − τ_j grows at 0.686 ± 0.01 ticks a wheel over [100,000, 894,235]. Lean 70%.
+- **P-C4 (universality).** Every one of the fifteen other rows has a slope within [1.30, 1.34] over its stretch above its
+  fork, and its increment histogram agrees with the single cell's within 0.02 in each class (0, 1, 2, 3, ≥ 4): the actual
+  speed is a property of the strips, not of the configuration (the one walk of §20, now on sixteen rows). Lean 65%.
+  Counterfactual: a row with another speed says the configuration matters, and the §20 reading is narrowed to random rows.
+
+**What it would teach.** B2 answered at nine times the range; F4's mechanism tested; whether the actual speed is universal
+across configurations; and, for the law itself, the two numbers a model must reproduce: the forced 2.006 and the actual
+1.32 from the same words, with the coincidence share and the slack law as its constraints.
+
+**Record searched:** CL654 (B2, F4), GC2266 (the slope at 100,000), CL717 (the 4/3 as the record's front at x/t = −0.25),
+CL695/CL696 (the cascade lock and its measurement), CL730/CL733 (the coincidences through 87,866), CL738 (τ at 894,235,
+the sixteen rows); `record_find` "settling slope", "1.3326", "coincidence share": these.
