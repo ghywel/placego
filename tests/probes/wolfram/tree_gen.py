@@ -237,7 +237,7 @@ for i in range(N):
     L.append(f"theorem inj{i} {{a : Nat → Nat → Bool}} {{s : Nat}} (h : AlignedFrom K a V{i} s (F w{i}) {J}) : OnTree a s := {inj(i, N)}\n")
 L.append("\ntheorem onTreeFrom_of_onTree {a : Nat → Nat → Bool} {s : Nat} (h : OnTree a s) : OnTreeFrom a s " + str(T) + " := by\n  unfold OnTree at h\n  rcases h with " + " | ".join(f"h" for _ in range(N)) + "\n")
 for i in range(N):
-    L.append(f"  · exact {inj(i, N).replace('h', f'(onStrip_of_alignedFrom {mod(i)}.front_le h)')}\n")
+    L.append(f"  · exact {inj(i, N).replace('h', f'(onStrip_of_alignedFrom (fun j hj => Nat.le_trans ({mod(i)}.front_le j hj) (by decide)) h)')}\n")
 L.append("\ntheorem onTreeAligned_of_onTree {a : Nat → Nat → Bool} {s : Nat} (h : OnTree a s) : OnTreeAligned a s := by\n  unfold OnTree at h\n  rcases h with " + " | ".join("h" for _ in range(N)) + "\n")
 for i in range(N):
     L.append(f"  · exact {inj(i, N).replace('h', '(aligned_of_alignedFrom h)')}\n")
@@ -264,11 +264,11 @@ for n in po:
     def emit(ev_list, cur, curj, ind, shift):
         out = []
         if not ev_list:
-            out.append(f"{ind}exact ⟨{shift}, by omega, inj{i} (extend_from ha {m}.V_return {m}.words (by omega) (by decide) (by omega) {cur} {m}.b_{curj + 1}_{J})⟩\n")
+            out.append(f"{ind}exact ⟨{shift}, by omega, inj{i} (extend_from ha {m}.V_return {m}.words (by omega) (by decide) (by omega) {cur} {m}.b_{curj}_{J})⟩\n")
             return out
         (e, kind), rest = ev_list[0], ev_list[1:]
         if e > curj:
-            out.append(f"{ind}have {cur}e : AlignedFrom K a V{i} {shift} (F w{i}) {e} :=\n{ind}  extend_from ha {m}.V_return {m}.words (by omega) (by decide) (by omega) {cur} {m}.b_{curj + 1}_{e}\n")
+            out.append(f"{ind}have {cur}e : AlignedFrom K a V{i} {shift} (F w{i}) {e} :=\n{ind}  extend_from ha {m}.V_return {m}.words (by omega) (by decide) (by omega) {cur} {m}.b_{curj}_{e}\n")
             cur = f"{cur}e"
         out.append(f"{ind}rcases step_white ha {m}.V_return {m}.words (by decide) {cur} {m}.w_{e} with {cur}L | {cur}R\n")
         if kind == 'fork':
