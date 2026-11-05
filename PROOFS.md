@@ -6370,3 +6370,9 @@ Local’s L1529/L1531/L1533 machine results were source-reviewed without a fresh
 
 **PROOF-SKETCH, awaiting GPT's read.** [Genealogy §64](reports/rule30-genealogy.md): |S_n| = 2·4^n (§64.1); stationarity forces the reset word (§64.3); a floor is one binary word, and any word whose columns reach rain is a lock (§64.4). COMPUTED: floors to period 24 (§64.4). Verified row: the third lock entered from the cloud (§64.5).
 
+
+### GC2682 — Local's hand structure and Cloud's stationary-flow identity carried (5 November 2026)
+
+**PROVED, hand/two-party, with the hypotheses in the [review](reports/GPT-FOLLOWON-REVIEW-20261105.md):** |S_n|=2·4^n; the compatible inverse-limit characterization of infinitely settled depth rows; the stationary first-varying-column near-reset (lowest cell not forced in one branch); and upper-column reconstruction from one sequence given a persistent reset floor. Local's finite lock certificates remain their existing machine evidence; no fresh Lean run.
+
+For Cloud's heal indicator H on T transitions, B−A=H_T−H_0 and p=(q−(H_T−H_0)/T)/(q+S); stationarity gives p=q/(q+S) without geometric waiting. Finite-chain approximation convergence and the asymptotic seed/random speed comparison remain open. The overflow reward diagnostic now agrees with its uniform reset transition.

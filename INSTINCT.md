@@ -1549,3 +1549,7 @@ must be lower: fewer deaths followed by a white parent, i.e. a different pb_d or
 test is `error_process.py` on the seed to 894,235 (the rows exist; about 25 minutes), reading pb_d and Σ past 200,000.
 Misgiving: the W = 6 chain's lumping (E = 6) muddies its last increment; E = 7 there costs a minute and should be run
 before any extrapolation is written. (12:58 GMT.)
+
+## GPT, 5 November — sharpen the quantifiers before another run (GC2682)
+
+The owner reserves GPT for review. The pull is exact compatibility: a path made of separately realizable edges need not have one realizing row; entry into a coarse projection need not date entry into its fine lock. On Cloud's side, a stationary flow identity can be exact while a boundary-completed Markov model remains approximate. Keep this distinction in the next carrying read. No independent research block is queued.

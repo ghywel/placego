@@ -28,7 +28,7 @@ def model(L, R, W, E, cfreq=None):
     idx = np.arange(N, dtype=np.int64)
     coins = [((idx >> i) & 1).astype(np.int8) for i in range(ncoin)]
     lo, hi = -L - 2, R + E
-    Trows = []; Tcols = []; Tvals = []; death = np.zeros(nS); jumps = np.zeros((nS, R + E + 2)); pbj = np.zeros((nS, R + E + 2)); overflow = 0.0; stayblack = np.zeros(nS)
+    Trows = []; Tcols = []; Tvals = []; death = np.zeros(nS); jumps = np.zeros((nS, R + E + 2)); pbj = np.zeros((nS, R + E + 2)); overflow_by_state = np.zeros(nS); stayblack = np.zeros(nS)
     maxj = min(E, R + E - W)      # the largest jump whose new state (strip to m'+R, errors to m'+W) is inside the computed window
     for s in range(nS):
         Cs = [(s >> i) & 1 for i in range(L + 1 + R)]          # C at -L..R
@@ -74,7 +74,9 @@ def model(L, R, W, E, cfreq=None):
             Trows.append(np.full(len(nz), s)); Tcols.append(nz); Tvals.append(row[nz])
         sel = m2 > maxj
         if sel.any():
-            w = wt[sel].sum(); overflow += w / nS; jumps[s, maxj + 1] += w
+            w = wt[sel].sum(); overflow_by_state[s] += w; jumps[s, maxj + 1] += w
+            # GC2682: the reset state's parent is a fair bit, not identically white.
+            pbj[s, maxj + 1] += w / 2
             Trows.append(np.full(nS, s)); Tcols.append(np.arange(nS)); Tvals.append(np.full(nS, w / nS))     # a fresh uniform state
     T = sp.csr_matrix((np.concatenate(Tvals), (np.concatenate(Trows), np.concatenate(Tcols))), shape=(nS, nS))
     assert np.allclose(np.asarray(T.sum(1)).ravel(), 1)
@@ -85,6 +87,11 @@ def model(L, R, W, E, cfreq=None):
         pi2 = TT @ pi
         if np.abs(pi2 - pi).max() < 1e-14: pi = pi2; break
         pi = pi2
+    else:
+        raise RuntimeError("stationary iteration did not reach its numerical tolerance")
+    # This is a numerical residual, not a certified stationary-distribution error bound.
+    assert np.abs(TT @ pi - pi).max() < 1e-13
+    overflow = float(pi @ overflow_by_state)   # stationary mass, not a uniform-state average
     drate = float(pi @ death)
     jl = (pi * death) @ jumps / drate            # jump law at a death (index = jump; the last nonzero index holds every jump past the extension)
     pbl = ((pi * death) @ pbj) / np.maximum((pi * death) @ jumps, 1e-300)   # P(new parent black | jump)

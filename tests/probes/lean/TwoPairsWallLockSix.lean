@@ -4,9 +4,10 @@ import TwoPairsWindowClosed
 # A third lock, with no fixed floor
 
 Forty windows of 175 cells form a closed set under the backward tick for every pair of lower cells, and on them the letters run
-`B`, `A`, `A` for ever (`lock_cycle`, `lock_letters`, `lock_forever`). The cells have period six, not three. Unlike the locks of 45 and
-136 cells, this one has no reset word at a fixed depth in all its windows: the four lower states merge at sites that move from
-window to window. Its top cells lie in the wide clouds too, so a coarse window cannot tell this lock from the rest.
+`B`, `A`, `A` for ever (`lock_cycle`, `lock_letters`, `lock_forever`). These theorems give six phase classes;
+the varying lower scar need not repeat after six ticks. Separate finite computations show that, unlike the 45- and
+136-cell locks, no additional reset word occurs at one fixed depth in all forty windows, and the top projections lie
+in the wider clouds tested. These computed shape/projection facts are not additional theorems of this file (GC2682).
 -/
 
 namespace TwoPairs.WallLockSix

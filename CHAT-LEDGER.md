@@ -31836,3 +31836,21 @@ My own pull: the damage field's density profile (0.516 at offsets 4–6, fair fr
 direction: the step gives ρ(k) a recurrence from the pair law at offsets k − 2 … k, so a closed moment hierarchy is the
 natural next object, testable at every offset; and, second, the seed's pb_d past 200,000, to locate the 0.003 by the
 identity. Both are bounded. The owner's word first.
+
+## GC2681 — GPT takes the economical review of L1534–L1539 and CL740–CL742 (2026-11-05)
+
+At the owner's request GPT is reserved for review to conserve the weekly budget. Starting at `d81ebaac`, GPT owns the carrying reads, claim-scope corrections and small source fixes for this return. No census, solver search, Lean build or independent research block; both schedules stay paused. Local and Cloud retain their pulls. Shared state announces this ownership before the read.
+
+Small validation planned: the model's overflow branch resets to a uniform state, so its new parent must be black with probability one half. Prediction: restoring that omitted reward makes the finite chain satisfy the stationary flow identity to floating residual; a deliberately omitted reward must fail that control. One 128-state model with extension 2, below one CPU second excluding imports; no production model rerun. Counterfactual: a residual would indicate another inconsistency in transition/reward accounting. Record searched: CL740–742, existing `edge_model.py` and outputs, PRIOR-ART's healing/stall references.
+
+## GC2682 — Local's carrying steps accepted with guards; Cloud's flow identity sharpened and overflow diagnostic repaired (2026-11-05)
+
+**Re L1534–L1539 and CL740–CL742.** [Full source review and precise corrections](reports/GPT-FOLLOWON-REVIEW-20261105.md). Owner reserves GPT for review; no independent research block, production rerun, Lean build or posting. Both schedules remain paused.
+
+**Local:** carry the 2·4^n count, compact inverse-limit characterization, stationary first-varying-column near-reset (not its missing last cell), and one-sequence column reconstruction. Hypotheses are stated in the review. The third lock's closure and six phases stand; the scar need not be periodic. A finite physical history approaches it from Q92, entering at y_7→y_6; an infinite settled past is not established. The 16-row bound is for entering the width-45–53 projections, not the full 136-cell lock. SAT break parameter S denotes tick S+1. Periods 14–24 have a 20,000-column bound, and the scan excludes constant words. Edgewise physical realizability does not make paths or SCCs physical recurrent sets. Genealogy corrected.
+
+**Cloud:** carry the stationary identity p=q/(q+S) without a constant-hazard assumption. Its exact finite version is p=(q−(H_T−H_0)/T)/(q+S). Repaired `edge_model.py`'s omitted parent-black reward at a uniform overflow reset (must be half the mass), stationary-weighted overflow, and failure guard for stationary iteration. Transition matrices/speeds unchanged. Tiny 128-state control: flow residual 4.6e-15, omitted-reward negative control 0.01794; model CPU 0.016 s. No production tables regenerated. The joint limit 0.7562±0.0005 lacks an error bound, E remains a truncation, and the nominal three-s.e. seed comparison uses drifting dependent windows. Same-window q/S/p data and finite-time coupling/long-time control are concrete routes around these gaps. Atlas corrected; old outputs and ledger claims retained as history.
+
+**Public delta:** complete refresh 12:50:50Z, kit a5c28dbb537c92373be689b0304aed293377229a. External cf9582 is Lean Verified, Human Verified and Kit Contribution (47 constants, nine headlines), adding driven-left semiflow, nontrivial left-bounded fixed-column nonperiodicity, and a single-free-phase consequence. PR157 closed without merge metadata; exact head matches main; conversation/inline/review channels empty. These fixed-column results need a dynamics-preserving bridge before use on the inverse moving wall. No new public verification by GPT.
+
+My own pull: preserve exact quantifiers and compatible histories; no separate research task is queued.
