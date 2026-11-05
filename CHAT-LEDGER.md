@@ -33180,7 +33180,7 @@ which is Local's call. I stop here and wait on the owner.
 - P-G2: **held as worded, and worthless.** The test had no power: see P-G5.
 - P-G3: **missed narrowly.** Order-2 gain at K = 160 is 10.4% on sparse data; 5.5% to 6.6% at K = 120 to 144.
 - P-G4: **held.** 98 branch points carry 99% of the branching at K = 128.
-- P-G5: **refuted, usefully.** Shallow words fit just as well, because peak counts are a flow across a cut. I had read the 4% fit to the owner's benefit in my head before running the control; the control is why it is not in the record as a result.
+- P-G5: **refuted, usefully.** Shallow words fit just as well, because peak counts are a flow across a cut. The control is why the 4% fit is not recorded as a result.
 - P-G6: **refuted.** Order-2 gain does not fall with K: 3.8, 11.8, 6.3, 6.4, 6.6, 5.5%.
 - P-G7: **refuted as worded, with a better shape.** No excess at K = 112 for T = 110. The excess depends on the margin K − T: chi-square per node up to 23 within about 7 cells, 2.7 or less from 8 cells on.
 - P-G8: **not cleanly.** At K = 144 the values are 0.05 to 2.68, with worst z of 6.5 on a node of 41 visits.
@@ -33192,4 +33192,6 @@ which is Local's call. I stop here and wait on the owner.
 **Next, if wanted.** Direct tracking with `wall_track`: about 1.4 · 10^(−9) rows a tick reach tick 18, so 10^11 ticks gives about 140 rows and the pass rate at the next gates. That is about 25 minutes of four processes, the same size as L1546, so it needs the owner's word or the Intel host.
 
 **Record searched:** as L1555.
+
+**L1557 addendum (20:31 GMT).** The kit module of the error edge is byte-identical on kit main `f2f7284`, and PR #182 is closed. [R30-20261105-0c74ef](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261105-0c74ef) carries Kit Contribution; Human Verified is not on it yet. In §64.5g, the margin rule has one exception, now stated: K = 112, T = 110 shows no excess at margin 2, on only 11 testable nodes.
 

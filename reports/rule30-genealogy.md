@@ -7072,7 +7072,7 @@ The count grows by about 0.2 bits a cell from 120 on, close to the cloud's 0.21 
 | 136 | 0.61 | 1.00 | 2.26 | 7.76 | 13.15 |
 | 144 | 0.05 | 1.44 | 2.68 | 0.05 | 1.87 |
 
-So the Markov reading fails when the target lies within about 7 cells of the foot of the word, and is close to calibrated, at 2.7 or less, with a margin of 8 cells or more. One node at K = 128 has 61 visits, all reaching 125, against a Markov value of 13. With margin the worst cases are nodes of a few dozen visits, and some of that is error in the fitted half, so the boundary is rough. Order-2 models gain about 6% at every K from 120 to 144, so some memory remains at all these depths.
+So the Markov reading fails when the target lies within about 7 cells of the foot of the word, and is close to calibrated, at 2.7 or less, with a margin of 8 cells or more. The one exception is K = 112, T = 110, at 0.98 with a margin of 2, on only 11 testable nodes. One node at K = 128 has 61 visits, all reaching 125, against a Markov value of 13. With margin the worst cases are nodes of a few dozen visits, and some of that is error in the fitted half, so the boundary is rough. Order-2 models gain about 6% at every K from 120 to 144, so some memory remains at all these depths.
 
 **Why memory has a horizon (hand, tentative).** In the sweep, new(d) = old(d − 3) ⊕ (new(d + 1) ∨ new(d + 2)). Information moves down 3 cells a tick, so a cell at depth d carries the top of the row from about d/3 ticks ago, flipped by what lies deeper. A row's fate at depth T is decided by cells a few ticks' worth below T.
 
