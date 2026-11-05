@@ -32819,3 +32819,43 @@ derivation with a check, one short block; beyond that, the question the owner's 
 hand is whether the sixteen left sides are *all* reachable from the seed by one chink each (a chink at each fork's
 child after settling, in sequence), which the tree's structure suggests and sixteen runs would show. The owner's word
 first.
+
+## CL749 — Cloud: the branch law at a fork, derived by hand, with its check predicted; then the sixteen left sides by chink, predicted. At the owner's word (2026-11-05 18:22 GMT)
+
+**The law (PROOF-SKETCH, from the recurrence and `child_white`; the check below is its test on 24 runs).** At a fork
+wheel j (the first is 53,207) the strip's wheel j is white for ever, so its two lower words are equal: 0 = w_(j−2)(t) ⊕
+(w_(j−1)(t) ∨ 0) gives w_(j−2) = w_(j−1) =: w. The child's word on A0 is c, with c(t+1) = w(t) ⊕ c(t); on the other
+branch it is ¬c (`first_fork`). Let the configuration be settled through the child before t₀ and let any perturbation at
+t₀ blacken wheel j transiently while wheels j − 2, j − 1 stay settled, and let τ* be the last tick at which wheel j is
+black. The heal of wheel j at τ* + 1 needs a_(j−1)(τ*) = 1 (`heal_iff`), and at that tick the black fork wheel resets
+the child: a_(j+1)(τ* + 1) = a_(j−1)(τ*) ⊕ (1 ∨ …) = 0. From τ* + 1 on wheel j is white, so the child and c both
+integrate w and their difference is constant: d = 0 ⊕ c(τ* + 1). **The configuration ends on A0 exactly when the A0
+child word is white at τ* + 1, and on the other branch when it is black.** Three cases: (i) a chink on the fork wheel:
+a_j(t + 1) = w(t) ⊕ (w(t) ∨ 1) = ¬w(t), so the chink lasts while w = 0 and τ* = t₀ + the wait for w to be black (this is
+the heal count of CL748 addendum 2 less one); (ii) a chink on the child: nothing feeds wheel j from above, it is never
+black, the complement persists, the strip switches every time (8 of 8 observed); (iii) a chink on wheel j − 1: the fork
+wheel is blackened at t₀ + 1 without fail, a_j(t₀+1) = w(t₀) ⊕ (¬w(t₀) ∨ 0) = 1, and the law applies with its own τ*,
+which the check reads off the run rather than deriving (the 53,206 error and the fork wheel's heal interleave over a
+few ticks). The two sets of CL748 addendum 2 are complementary at ticks 80,001 and 80,007 because case (i) and case
+(iii) reach their τ* at different ticks there; the law says which.
+- **P-O0:** `fork_rule_check.py` (the seed to each t₀, the flip, the fork wheel followed for 64 ticks, c read from A0's
+  cycle) reproduces all 24 observed outcomes of CL748 addendum 2 (8 on the fork wheel, 8 two below, 8 on the child).
+  Lean 85%. Counterfactual: a miss in case (iii), where the interleaving may blacken wheel j again later than my
+  64-tick window or where wheels j − 2, j − 1 are not settled at τ*.
+
+**The sixteen left sides by chink** (`chink_tree.py`; the seed on 894,236 wheels; a strip's name lists the forks at which
+it departs from the seed's path; at each fork in order, once the front has cleared it, the fork's child is flipped;
+after the last flip the row is compared with every strip at every phase every 2,048 ticks until it matches).
+- **P-O1:** every one of the fifteen strips other than A0 is reached from the seed by one chink per fork of its name,
+  15 of 15; the chink schedule (the seed's settling tick of the first fork plus 3,000, then the previous chink plus the
+  wheel distance at 0.70 wheels a tick plus 3,000) always finds the fork wheel white at the chink tick. Lean 80%.
+  Counterfactual A: a fork whose child chink does not switch (the law fails at that fork, or the two branches are not
+  complements there); counterfactual B: the schedule chinks before the front has cleared a fork (the assertion fires;
+  then the margin was too small, not the law).
+- **P-O2:** after the last chink at a child c, the row matches its strip within (894,235 − c)/0.757 × 1.05 + 2,048 ticks.
+  Lean 65%.
+Caps: substitute (CL710), ulimit 8 GiB, timeout 1,800 s a process, four processes of four strips, about 25 minutes;
+the check under a minute.
+
+**Record searched:** CL748 and its addenda; `first_fork`, `fork_dichotomy`, `white_fork` (the kit); CL738 (the sixteen
+strips and their names); GC2635.
