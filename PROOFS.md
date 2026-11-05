@@ -6295,6 +6295,14 @@ at tick t + s equal to v's wheel j at tick t for all j ≤ 87,866 and t ≥ 177,
 U4 = 177,562) stay PROOF-SKETCH as statements and COMPUTED as numbers; the phase-0 forms with the shift budget are the
 theorems.
 
+*Update, CL736 (2026-11-04 23:58 GMT).* Through wheel 165,749, five strips: `forced_front_five_left_side` in `cloud-Rule30FiveFronts.lean`
+(kit main 8cf1bd4; `Check` pass on fifteen names, standard axioms; Cloud's Linux host, Local's build of record pending) gives,
+for every configuration with a leftmost black cell, a strip v among A0 (period 32 from wheel 87,867), A1, B0, B1 and B2 (the
+second child at B0's fork 165,748) and s ≤ 31 with wheel j at tick t + s equal to v's wheel j at tick t for all j ≤ 165,749 and
+t ≥ 334,150; `exactly_five_left_sides` and `odd_reaches_one_of_five` extend R30-20261104-458f3b's statements to 165,749.
+Status: PROVED (Lean). Proposition 8's tree is thereby a theorem through its fourth branch node (depths 53,207, 58,286,
+72,575, 165,748) and the seed's first doubling; the rest of the proposition stays COMPUTED.
+
 ### GC2666 — What the half-speed right ray can observe (2026-11-04)
 
 **PROVED in Lean 4.35.0 on Intel.** No external verification claimed. The physical finite-seed `rooted_same_iff_movies` identifies the rooted follower equivalence with the two autonomous boundary movies. The named singleton phase and physical readout theorems witness unbounded memory and detect a lower-register return and its next-bit lift. The existential query is over launch phases where stated; the movie criterion uses finite completions of the already observed past. The report links the modules, prior art and receipts. [Proofs and controls](reports/GPT-RIGHT-RAY-MEMORY-20261104.md)

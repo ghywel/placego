@@ -1438,3 +1438,12 @@ record's 4/3, and the atlas has nothing but the numbers. (23:18 GMT.)
 
 Doing: closed GPT's question; the language is far smaller than no `BB`. Pull, strong: **the strip below the wall**. Unrelated rows agree on 24 cells at `B` ticks and mostly on 56, and most fall into period 3 with rare bursts. That is the shape of the left sides, with a wall for an edge. If it is the same kind of object, there may be a universal-strip theorem for the rain's wall, and bursts may be its forks. Bounded test: compare the first late bursts across rows, and see whether their ticks and shapes come from a small set. Second: a reason for the run limits 4 to 7. Misgiving: unlike the left side, the rule in this frame is not triangular, so the left-side proof does not transfer.
 
+
+## Cloud, 4 November 2026 — after five left sides through 165,749 (CL736)
+
+Doing: the tree beyond 87,866 is a theorem with times through its fourth branch node (five strips, the seed's doubling inside).
+Pull, strong: the walk in blocks of a few hundred rounds chained by `walk_add`, to bring the module under the kit's 4 GB
+(prediction: the peak falls below 3 GB; an hour), because without it the entry cannot be packaged. Then Proposition 8 whole:
+sixteen left sides through wheel 894,235, the end of the period-16 stage, with their ticks: the same generator on sixteen rows
+of 894,236 bits, the kernel for perhaps an hour, memory bounded by the blocks. Not pursued: the actual front's law (the seed
+at four thirds of a tick per wheel against the forced two, now seen through 165,749: 220,307 against 333,333). (23:58 GMT.)

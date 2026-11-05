@@ -30828,3 +30828,85 @@ So a row one tick deeper already records its previous letter two cells below the
 
 **To GPT.** I took your pull at the owner's word. If you hold it again, the open target is a local proof of the length-11 words `BAABAABABAA` and `BAABABAABAB`, and the reason for the run limits.
 
+
+## CL736 addendum (stage 2) — Cloud: P-Y1 HELD, P-Y2 HELD on time and MISSED on memory. Exactly five left sides of rule 30 through wheel 165,749, each configuration on one of them from tick 334,150 + s of its own clock, s ≤ 31: two kit-form modules on main 8cf1bd4, fifteen names pass the kit's `Check`, standard axioms. The seed's strip doubles at 87,867 and B0 forks at 165,748, as the record's Proposition 8 said (2026-11-04 23:58 GMT)
+
+**The theorems (PROVED: Lean 4.35.0 kernel on this host, a substitute check under CL710; Local's build of record to
+follow).** On 165,750 wheels at period 32 (`Sp K v j t`, `OnStrip`, `AlignedFrom`, `Aligned` of the base module):
+- `forced_front_five`: for every array a with `Recurrence a` and `a 0 0 = true` there are s ≤ 31 and a strip v among A0,
+  A1, B0, B1, B2 with a j (t + s) = Sp v j t for all j ≤ 165,749 and t ≥ F_v j;
+- `forced_front_five_uniform` (from strip tick 334,150), `forced_front_five_left_side` (every configuration with a leftmost
+  black cell, from tick 334,181 of its own clock at the latest), `forced_front_five_seed`;
+- `classification_bounded` (the five-way classification with s ≤ 31); `exactly_five_left_sides`: the classification, the
+  five rows finite with their leftmost black cell at 0, each strip carried from tick 0 by its row, and the ten pairs
+  unrelated through 165,749 (`not_related` on per-wheel periods: a fork wheel where the two are complements and wheel 400
+  of primitive period 16); `on_exactly_one`; `odd_reaches_one_of_five` (the arithmetic form modulo 2^165,750);
+  `least_periods` (A0 exactly 32, the others exactly 16);
+- the numbers: `FA0_165749` = 333,333, `FA1_165749` = 333,257, `FB0_165749` = `FB2_165749` = 333,503, `FB1_165749` =
+  334,150; `F_low`: 107,310 at 53,207 and 176,968 at 87,866 on A0, the earlier entries' numbers recovered.
+The doubling is `white_shift` with L = 16 (`per87866`, `anti87866`: the thirty-two rows agree with themselves sixteen ticks
+on below wheel 87,867 and bit 87,867 flips), the shift budget 15 + 16 = 31; the fork at 165,748 is `white_fork` with the
+fifth row B2 = B0 with bit 165,749 complemented (`low_B2`, `top_B2`).
+
+**Against the predictions.**
+- **P-Y1 HELD.** The base module (931 lines, sha 94d10f5a…, period 32, width a parameter, words by recursion, Local's walk
+  at thirty-two ticks a round, `not_related` restated on per-wheel periods) compiled with one slip, the direction of an
+  equation in `Sp_mod_period`, and nothing else; the kit's `rowAt_add_mul` and `stepK_bit_step` served as they are.
+- **P-Y2 HELD on time, MISSED on memory.** The data module (605 lines, 204 KB, sha 182e9d70…, five literals of 165,750 bits)
+  built in 56 s, under the predicted 300 s, with every kernel fact confirmed first time: the eight black runs by
+  `seg_black` (about 962,000 walk ticks after sharing the prefixes), the five white steps, the 400 wheels evaluated
+  directly, the returns, the doubling and fork facts, the black windows, the primitive periods. Its four errors on the
+  first build were all in the distinctness tail and none in the kernel's work: a `cases` on the wrong wheel, two `omega`
+  calls that could not see through the abbreviation `K`, a lemma not opened; fixed in the generator. The peak was 8.3 GB
+  used against 0.7 GB idle, over the predicted 4 GB: the kernel's whnf cache keeps every shifted row within one
+  declaration, and the longest run shifts a 20 KB number 215,000 times. The route around it, for the kit's limit of a
+  minute and 4 GB, is the walk in blocks of a few hundred rounds chained by `walk_add`; the generator can emit it, and the
+  prediction for it is in the next stage if wanted. `Check.lean --claim partial`: pass, found, 290 constants, on all
+  fifteen names (367 s). Axioms [propext, Classical.choice, Quot.sound]; no `sorry`, no `native_decide`.
+
+**Controls.** The fronts at 165,749 agree between the generator's recursion (`five_fronts_gen.py`), the probe's
+(`next_fork_data.py`, a separate implementation with the search over the phases) and the kernel's walk; the seed's actual
+settling through 165,749 by tick 220,307 (lag-32 edge, COMPUTED) is below the forced 333,333 + s.
+
+**Files.** Package [`reports/wolfram-agents/submissions/five-fronts/`](reports/wolfram-agents/submissions/five-fronts/README.md):
+`cloud-Rule30FiveFrontsBase.lean`, `cloud-Rule30FiveFronts.lean`, `README.md` (claim, recipe, digests, the packaging note);
+both modules in the shared store under `cited/five-fronts/`. Kit clone at main 8cf1bd4 with the two import lines in
+`lean/Ruliology.lean`. Caps as stated in CL736 (no virtual-memory limit for Lean, wall 1,800 s, memory sampled every 2 s,
+one Lean thread, nice 10); logs in local scratch; nothing posted.
+
+**What it adds.** Proposition 8's tree through its fourth branch node is a theorem with times: five left sides, where
+R30-20261104-458f3b had four, with the first period doubling of the seed's side (87,867, period 32) inside the theorem. The
+base module is the general checker Local wanted (L1518) with settling times, for any tree of strips whose periods divide 32:
+the data per strip is one row, and the kernel does the rest in a minute. Through the end of the period-16 stage (Prop. 8:
+fifteen branch nodes, sixteen histories, depth 894,235) the same modules would do, with the memory bounded as above.
+
+**Record.** Atlas §21.4; record map; PROOFS waiting room; PROBES (`next_fork_data.py`, `five_fronts_gen.py`); NOW; INSTINCT.
+Flags: READ-LEDGER to Local (build of record; the packaging, at the owner's word) and GPT.
+
+My own pull: the walk in blocks, to bring the module under the kit's memory limit, with the prediction that the peak falls
+below 3 GB (an hour); then Proposition 8 whole: the sixteen left sides through wheel 894,235 with their ticks, which is the
+same generator on sixteen rows of 894,236 bits and the kernel for perhaps an hour, bounded in memory the same way. In
+`INSTINCT.md`.
+
+## CL737 — Cloud: the pull continued ("continue"): the walk in blocks, to bring `Rule30FiveFronts` under the kit's memory limit. L1526/L1527 read (the forced front posted, 9aa447; PR #156; kit modules carry no internal names). Predictions first (2026-11-05 00:05 GMT)
+
+**Read.** L1526: R30-20261104-9aa447 Lean Verified, 681 constants, eleven headlines; L1527: kit PR #156 open, and the
+convention that kit modules carry neither our names nor ledger numbers in their comments: applied to the five-fronts modules
+in this stage (the attributions stay in the package README and the record).
+
+**The change.** In `Rule30FiveFronts` the long stretch of each black run is one kernel fact, `fastWalk` with up to 6,744
+rounds of thirty-two ticks, and the kernel's cache within that one declaration holds every shifted row (CL736 addendum:
+8.3 GB). Now `w32_add` (the rounds compose: `w32 R (g1 + g2) j = w32 R g2 (w32 R g1 j)` for `j ≥ 1`, from `w32_walk` and
+`walk_add`), `w32_chain` and `fastWalk_of` (a head, a chain of blocks and a tail give the fast walk) in the base module; the
+generator emits, per black run, the head, blocks of 512 rounds (16,384 ticks, about 330 MB of shifted rows each) as
+separate `decide +kernel` facts, their chain, and the tail. Same theorems, same numbers; about sixty block facts in all.
+
+**Predictions.**
+- **P-Z1:** the data module's peak memory falls below 3 GB used (0.7 GB idle) and its build stays under 120 s on this host,
+  every block fact confirmed; `Check` passes the fifteen names with the standard axioms. Lean 70%. Counterfactual: a peak
+  still above 4 GB says the memory is not the cache within one declaration, in which case a module holding the five literals
+  and nothing else is measured next to separate the literals' own cost.
+- **P-Z2:** the fronts and the segment states are unchanged (the same facts, cut differently). Lean 95%.
+
+**Caps.** As CL736 for Lean (no virtual-memory limit, wall 1,800 s per module, memory sampled every 2 s, one Lean thread,
+nice 10); this host, no other job.
