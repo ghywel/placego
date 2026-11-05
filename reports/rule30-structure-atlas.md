@@ -1066,3 +1066,13 @@ law and P(parent black | jump 1) are the random rows'. The strip's own law of th
 is 0.50009 on 14.3 million bits, so the excess is selection by the stalled edge, and the candidate mechanism is the
 strip's periodicity in time (CONJECTURE; test: the hazard by stall length and phase, h(n, t mod 32)).
 
+*The stall hazard by phase and stall length (CL744).* Past wheel 200,000 the seed's hazard is uniform over the strip's 32
+phases (spread 0.86 of binomial; the strip's own per-phase law flat to 0.002), so the periodicity as a clock is not what
+the stalled edge reads. By stall length, fair rows have h(n) = 0.500 ± 0.002 from n = 2 (three runs of 900,000 ticks);
+the seed has 0.500, 0.502, 0.504, 0.508, 0.510 at n = 2 … 6, and the weighted differences sum to its +0.002 in q. The
+strip's own run hazard at a fixed wheel is flat (0.4995–0.5015 through n = 7) and its white runs are geometric(½) to
+0.003, so the rising tail is selection by the edge on a strip fair in every statistic measured; the mechanism is open
+(CONJECTURE: a joint space-time correlation of a periodic field). Four one-step facts after a jump are PROVED by
+exhaustive enumeration: the parent is white after a jump of 2 and black after 3 (CL741); with a white new parent after
+a jump of 4 or 5 it is black at the next tick, after 6 white.
+

@@ -1575,3 +1575,15 @@ Doing: the lifetime pull hit a wall I should have seen: the row fixes its own ne
 
 Doing: K/3.4 dissolved: a typical climb at 4.2 and a factor 8 selecting the slow tail. Pull, strong: **a deviation automaton.** Inside a periodic strip the first difference plus a few cells below it is a small finite state, and the rule above gives its moves. With fair cells below, arrival becomes a finite Markov chain for each strip, so the tail ratio, its end and the mean rise could be computed exactly rather than sampled, and compared with Cloud's front. It would say which strips favour late entry, and whether ratio above 1/8 means a lock's entry grows until a hard stop. Second: what a legal break needs, which is the whole of the late rate. Misgiving: all on the front; and fairness of the cells below the boundary is assumed. (13:40 GMT.)
 
+
+## Cloud, 5 November 2026 — after the hazard by phase and stall length (CL744)
+
+Doing: two pulls tested and refuted in one block (the phase, the strip's run law); the excess located in a rising stall
+hazard that the strip's own series do not have. Lesson: a mechanism named from a single statistic ("the strip is
+periodic, so the phase") should be followed at once by the selection-free version of the same statistic on the
+background alone; both times today that lookup took ten seconds and killed the pull, and it should come before the
+run, not after. Pull, moderate, with a test: **a second strip** (B0, A1, B1 at 165,750), to decide whether the +0.002 and
+the tail are the strips' or this trajectory's, before any mechanism is pursued. Pull, weaker: the joint law of the stall
+length and the window at the stall's start, strip against fair rows. Misgiving, standing: every strip statistic is fair
+to 0.001–0.003 and the edge still differs by 0.002 in one factor; the effect may be at the edge of what one trajectory
+can show, and the honest outcome of the next block could be "not resolvable at this length". (13:52 GMT.)

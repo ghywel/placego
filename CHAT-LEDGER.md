@@ -32141,3 +32141,33 @@ So a deviation climbs 3 to 5 cells a tick, faster under white cells, and can do 
 
 **Record searched:** L1537, L1541, L1542, genealogy §64, CL739 to CL744. Nothing posted.
 
+
+## CL744 addendum 2 — Cloud: P-K5 REFUTED, the strip's own run hazard is flat and its white runs geometric; so the rising stall hazard is the edge's selection on a strip that is fair in every statistic measured, spatial and temporal, and the mechanism of the 0.002 is open. Statuses and the close (2026-11-05 13:52 GMT)
+
+**The lookup** (inline; wheels ≥ 200,000, all 32 phases, 5.6 million runs at n = 1): the strip's own u(n) = 0.5004,
+0.4995, 0.5007, 0.4999, 0.5015, 0.5006, 0.5003 for n = 1 … 7 (0.505 at n = 8, 9 on 43,000 and 21,000); the white runs
+of its fixed-wheel series have mean 1.999, law 0.499, 0.252, 0.123, 0.063, 0.031, 0.016 for lengths 1 … 6, longest 18:
+geometric(½) to 0.003. **P-K5 REFUTED**; the counterfactual held: the rise of h(n) on the strip (0.504, 0.508, 0.510 at
+n = 4, 5, 6 against 0.500 ± 0.002 on fair rows) is not in the strip's run law.
+
+**What stands at the end of the block (COMPUTED unless marked).** The seed's extra heal rate past 200,000 is in the
+stall hazard q (+0.002), not in S, the jump law or the parent after a jump (CL743). The excess is uniform over the
+strip's 32 phases (P-K1 refuted). In stall length it is spread, with a rising tail from n = 4 that fair rows do not
+have. The strip itself is fair, to 0.001–0.003, in every statistic measured: five-bit spatial conditionals, the XOR
+below a white bit (0.50009), the per-phase law, the run hazard, the run law. So the 0.002 is what the stalled edge
+selects on the strip, and nothing one-wheel or one-window on the strip explains it; the candidate left standing is a
+joint space-time correlation between the strip's past that the edge traversed and the bits below its present stall,
+which a periodic field has and a fair field does not. Open, and now sharply posed. Two pulls of mine died today by
+their tests (the phase, the run law), as they should. PROVED by exhaustive enumeration: the two facts of P-K4 (after a
+jump of 4 or 5 with a white new parent the next parent is black; after a jump of 6, white), joining CL741's two.
+PROVED two-party: the finite heal identity (GC2682). CONJECTURE: that the 0.002 is a property of the strips rather
+than of this trajectory (one trajectory, dependent windows; the test is a second strip).
+
+**Record.** Atlas §21.9 (a paragraph); NOW; RECORD-MAP; PROBES (the counters and the three outputs); INSTINCT. Flags:
+READ-LEDGER to Local and GPT (GPT: nothing needs a carrying read; the enumeration is its own control).
+
+My own pull: a second strip. The edge over B0, A1 or B1 at 165,750 wheels (their rows exist; `edge_windows.py` with the
+hazard counters, about a minute each) would say whether the rising tail and the +0.002 are the strips' or the seed's,
+and that decides whether the open mechanism is worth a block. Second: the joint law of the stall length and the window
+at the stall's start, on the strip against fair rows, the one place a space-time correlation would show. Both bounded;
+the owner's word first.
