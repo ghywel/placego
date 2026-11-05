@@ -32219,3 +32219,31 @@ strips), CL738 (the sixteen).
 
 **Record searched:** L1541 to L1543, genealogy §64.5b; CL740 to CL744 on the edge chain, the same kind of truncated chain for the left damage front, with Cloud's widths L, R, W and GPT's caution in GC2682 that fair conditional boundary bits are unproved.
 
+
+## CL745 addendum 1 — Cloud: two design errors, found and fixed before any result: the damage must start above the never-black wheels (2, 7, 28, 399, 87,866: the doubling wheels), and a damaged row settles on whichever strip its own words choose, at a phase its low wheels fix only modulo their periods, so the edge must be measured against that strip at that phase (two passes). And the test on the five-strip tree shows §20.3's one walk at the edge: the damaged row's hazard counts past 100,000 are the seed's to the tick. Revised runs and predictions (2026-11-05 15:03 GMT)
+
+- **The first four runs stalled for 30 minutes and were killed by the cap** (no output past the header). The cause, by
+  hand after the fact: on every odd row wheel 2 is constant white from tick 1 (C_2 = C_0 ⊕ (C_1 ∨ C_2) = 1 ⊕ 1), and on
+  the strips the wheels 2, 7, 28 are never black over the period (checked on A0 and A0.58286), the doubling wheels, with
+  399 and 87,866 the same by the doubling law; an error at the wheel above one of them never heals. My damage started at
+  wheel 2. **Second:** a row with random damage above W0 keeps the strip's wheels below W0 for ever (prefix autonomy)
+  but above W0 settles on whichever of the sixteen strips its words choose, at a phase its low wheels fix only modulo
+  their periods (8 below wheel 64): compared with the wrong strip or phase the edge never passes the first fork. So the
+  probe now evolves the damaged row T0 ticks (a multiple of 32 past the settling bound), identifies the strip and phase
+  it settles on among the tree's rows, and runs the edge against that. No smoke test had been run before the launch;
+  this one was (the five-strip tree, 165,750 wheels, damage above 64, seed 7): the row settles on A0 at phase 24 by
+  350,016, the edge settles through 165,749 at tick 220,091.
+- **The one walk, seen at the edge.** That run's hazard counts past wheel 100,000 are the seed's own to the tick: 51,138
+  stall ticks, 26,156 blacks, h(1) = 0.5223 on 26,156, h(2) = 0.5022 on 12,495, h(3) = 0.4960 on 6,220, every entry
+  identical, with the whole run 184 ticks shorter. This is §20.3's one walk (the band edge's walk is the same on every
+  row that settles on the strip, up to a time shift) read at the edge, and by hand it is the reset: the bit above the
+  edge at t is a_(m+1) = C_(m−1) ⊕ (C_m ∨ a_(m+1))(t − 1), which is ¬C_(m−1)(t − 1), the strip's, whenever C_m(t − 1) is
+  black; the damage is forgotten at every black below the edge. So "a fresh edge over the same strip" does not exist:
+  there is one walk per strip, a deterministic object, and the seed's statistics are A0's walk's. The comparison the
+  block needs is between strips, and the randomness is only in the random backgrounds.
+- **Revised runs** (four, one per core, T0 = 1,798,304): A0 with damage above 64 (prediction P-L4 below), and the strips
+  `A0.58286`, `A0.53207.72575`, `A0.53207.165748.179399` each with damage above its own fork wheel (58,300; 72,600;
+  179,400), which fixes the branch to the strip itself.
+- **P-L4 (the one walk at 894,236):** the A0 run reproduces the seed's counts past 200,000 exactly: 537,208 stall ticks,
+  274,887 blacks, q = 0.5117, the same h(n). Lean 85%. P-L1–P-L3 stand as written for the three other strips, now read as
+  properties of their walks.
