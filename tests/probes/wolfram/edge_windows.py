@@ -9,7 +9,8 @@ the strip's own per-phase law of the XOR below a white bit.
 Usage: python3 edge_windows.py ROWSDIR [WIDTH] [K] [LATE] [STRIP] [DAMAGE]   (the rows of tree16_data.py at 894,236 wheels, phase 0;
 STRIP the row's file name without .bin, default A0; DAMAGE 0 = the seed, else the strip with random damage from wheel W0 (arg 7,
 default 64) with that seed; T0 (arg 8, a multiple of 32, at or past the settling bound): first evolve the damaged row T0 ticks and
-identify the strip it settles on among ROWS/*.bin, then run the edge against that strip; CL745)"""
+identify the strip it settles on among ROWS/*.bin, then run the edge against that strip; CL745; TAU (arg 9): save the settling
+ticks per wheel to this .npy, CL746)"""
 import sys, time, collections
 ROWS = sys.argv[1]; WIDTH = int(sys.argv[2]) if len(sys.argv) > 2 else 100000
 STRIP = sys.argv[5] if len(sys.argv) > 5 else "A0"             # CL745: the strip's file name without .bin
@@ -25,6 +26,9 @@ assert cyc[P] == cyc[0], "the strip does not return at 32 on these wheels"; cyc 
 class Win:
     def __init__(s): s.T = 0; s.D = 0; s.A = 0; s.B = 0; s.H0 = None; s.HT = None; s.jumps = collections.Counter(); s.pbj = collections.Counter(); s.t0 = None; s.t1 = None
 wins = collections.defaultdict(Win); allw = Win()
+TAU = sys.argv[9] if len(sys.argv) > 9 else None             # CL746: save the settling ticks per wheel (the first tick with the edge above the wheel) to this .npy
+import numpy as np
+tau = np.full(K, -1, dtype=np.int64) if TAU else None
 # CL744: the hazard by stall length n and phase t mod 32, past wheel LATE; n = 1 also by the preceding jump d
 LATE = int(sys.argv[4]) if len(sys.argv) > 4 else 200000
 st = collections.Counter(); bk = collections.Counter()        # (n, phi) -> stall ticks, blacks at t+1
@@ -57,6 +61,7 @@ while True:
     C = cyc[t % P]; e = x ^ C; m = lowbit(e)
     if m >= K: break
     if m_prev is not None and m < m_prev: dec += 1
+    if TAU is not None and (m_prev is None or m > m_prev): tau[(m_prev if m_prev is not None else 0):m] = t
     h = (C >> (m - 1)) & 1 if m >= 1 else 0           # H_t: the parent black = the edge heals at t -> t+1
     x2 = step(x); C2 = cyc[(t + 1) % P]; e2 = x2 ^ C2; m2 = lowbit(e2)
     h2 = (C2 >> (m2 - 1)) & 1 if 1 <= m2 < K else 0  # H_{t+1}
@@ -76,6 +81,7 @@ while True:
         elif h2: w.B += 1
     x = x2; t += 1; m_prev = m
 print(f"settled through {K-1} at tick {t}; edge decreases {dec}; {time.time()-t0:.0f} s")
+if TAU is not None: tau[m_prev:K] = t; np.save(TAU, tau); print(f"settling ticks saved ({K} wheels)")
 print("window(wheels)      ticks    p=D/T   q=B/W   S=A/D   identity   E[jump]  P(1)   P(2)   P(3)   pb1    pb4    pb5    H0 HT")
 def report(name, w):
     Wst = w.T - w.D; q = w.B / Wst; S = w.A / w.D; p = w.D / w.T

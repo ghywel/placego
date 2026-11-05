@@ -32407,3 +32407,59 @@ My own pull: Local's competing route as a physical obstruction, and Cloud's phas
 
 **Record searched:** as L1548. Nothing posted.
 
+
+## CL746 — Cloud: GC2683 carried (the "identical to the tick" overclaim withdrawn, the reset's guard corrected, the n = 7 range corrected, the enumerator saved as a replayable probe with a fifth fact); the answer to the owner on what is submittable; and GPT's continuation taken, one loss and recovery of alignment between the two walks over A0, predictions first (2026-11-05 17:22 GMT)
+
+**Carried from GC2683 and [the review](reports/GPT-RETURN-REVIEW-20261105.md).**
+- **Withdrawn:** "identical to the tick in four of seven windows" (CL745 addendum 2). Equal printed aggregates in three
+  windows are not tickwise equality, and the last window has equal duration (123,967) with healing fractions 0.412279
+  and 0.412327: not the same walk there. What the saved durations do show is GPT's table: the damaged row's cumulative
+  offset against the seed at window exits is −168, −200, +152, +216, +216 ticks, all 24 modulo 32, changing by −32, +352,
+  +64, whole periods. Finite arithmetic on five numbers; the "one walk" of §20.3 stands in its own scope, and what I
+  have is two walks over the same strip whose clocks differ by whole periods at the five points measured.
+- **The reset's guard, corrected:** at the edge m the parents of wheel m + 1 are wheel m − 1, aligned, and wheel m, the
+  edge itself, where a_m = ¬C_m. So a_(m+1)(t+1) = C_(m−1) ⊕ (a_m ∨ a_(m+1)) is reset to ¬C_(m−1) when the *actual* edge
+  bit a_m is black, i.e. when C_m is white, and keeps a_(m+1)'s memory (C_(m−1) ⊕ a_(m+1)) when C_m is black. CL745
+  addendum 1 had the sign the wrong way; the reset exists, half the time, with that guard (PROVED, one line). GPT's
+  general statement, both actual parents aligned and the nearer black, is the one for a wheel above the edge.
+- Wheel 2 is permanently white from tick 2, not tick 1 (1 → 7 → 19). The fair rows' h(n) are 0.500 ± 0.002 through n = 6,
+  not 7 (n = 7: 0.490, 0.502, 0.513 on 4,000 ticks). The phase bins use n ≥ 2 and the last bins pool n ≥ 12 and d ≥ 7, as
+  the probe's source says.
+- **The enumerator is saved:** `tests/probes/wolfram/jump_facts.py` ([output](tests/probes/wolfram/jump_facts.out)),
+  exhaustive over every bit that enters (window L = 3, R = 4, W = 3, extension 4; 2^7 heal states × 2^11 coins). It
+  replays the four facts and shows a fifth: **after a jump of 7 whose new parent is white, the parent at t + 2 is
+  white** (jumps 1, 2 and 8 unconstrained at t + 2; the data's "d = 7" bin pooled jumps of 7 or more, 0.199 on 433, so
+  there is no contradiction, and the bin is split in the next run). PROVED by the saved enumeration, five facts.
+
+**To the owner, on what is submittable from my side.** One thing, small and exact: a kit-form module on *the error edge
+of two configurations* in the kit's wall frame: the edge never retreats, it heals exactly when its parent is black (the
+kit's `child_same`/`child_white` give the aligned-parent step; the two-configuration edge statements are not in the
+kit by `known_find`, which finds nothing for "difference pattern", "damage", "first differing", "two configurations" in
+its cache; the index's PR channel is 403 on this host, so Local's check is needed), and the five post-jump laws above,
+each a finite statement checkable by `decide` over a window of bits in seconds. It is Kit-Contribution grade at best,
+has no bearing on the prize questions, and its prior art is §8.66 and CL691/GC521/CL722 in our own record and the
+difference-pattern literature. Everything else on my side today is COMPUTED (the chains, the speeds, the walks) and
+not submittable. If the owner wants it, I write the module and the essay draft; Local builds and posts.
+
+**GPT's continuation, taken.** The two walks over A0 (the seed; the row damaged above 64, settling on A0 at phase 8)
+differ in their clocks by whole periods. The question: at a slip, which actual parent ceases to agree, and what reset
+restores agreement. The instrument: `edge_windows.py` now saves the settling ticks τ_j per wheel; two runs give τ for
+both walks; Δ_j = τ′_j − τ_j is then read at every wheel, not only at five window exits, and its changes locate the
+slips; a second pass evolves both rows to the first slip past 500,000 and prints the two rows and the strip around the
+edge over ±40 ticks.
+- **P-M1 (quantization):** Δ_j is 24 modulo 32 at every wheel j ≥ 200,000 where both walks have settled, i.e. the two
+  edges pass every wheel at ticks that differ by a whole number of periods, with no exception. Lean 50%. Counterfactual:
+  Δ_j takes other residues between slips: the walks are not phase-locked between the measured points, and the whole-
+  period offsets at the window exits were coincidence or selection by the window boundaries.
+- **P-M2 (rarity):** Δ_j changes fewer than 30 times over wheels 200,000–894,235, every change a multiple of 32, and
+  the changes come in a loss (the walks part) and a recovery (they re-merge) within 50,000 wheels. Lean 45%.
+- **P-M3 (the slip's anatomy, GPT's prediction carried):** at the first slip past 500,000 the walks part at a heal whose
+  jump reads a wheel where the two actual rows differ (an error at offset 3 or more above the edge in one row and not
+  the other), and agreement recovers only after a reset under the corrected guard (the actual edge bit black). Lean
+  50%. Counterfactual: the walks part at a stay (impossible if the stay step is exact, so this would mean a bookkeeping
+  error) or never recover within the run (equal later durations concealing distinct walks, GPT's counterfactual).
+Caps: substitute (CL710), ulimit 8 GiB, timeout 1,800 s, two then one process, about fifteen minutes in all.
+
+**Record searched:** GC2683 and its review; §20.3–20.4 (the one walk; the merge of orbits: twenty rows' walks aligned by
+time shifts of at most 148 ticks at the period-16 stage); CL745; `record_find` "clock slip", "phase lock", "merge of
+orbits": §20.4 only.

@@ -1,0 +1,4 @@
+cases by jump d (resolved inside the window): {1: 1048576, 2: 786432, 3: 131072, 4: 65536, 5: 40960, 6: 14336, 7: 5632, 8: 2688}
+new parent's possible values at t+1 by jump: {1: [0, 1], 2: [0], 3: [1], 4: [0, 1], 5: [0, 1], 6: [0, 1], 7: [0, 1], 8: [0, 1]}
+parent at t+2 after a white new parent, by jump: {1: [0, 1], 2: [0, 1], 4: [1], 5: [1], 6: [0], 7: [0], 8: [0, 1]}
+facts (1)-(4): ALL HOLD
