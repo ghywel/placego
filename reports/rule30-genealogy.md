@@ -6912,7 +6912,7 @@ The AB lock and the tested coarse projections of the period-3 lock can be entere
 
 where h(m) is the probability that a row with top K cells in U and fair cells below has its first forward image outside U and its first m forward images all reading letters. So entry can be measured from inside the lock. This matters because going forward the row fixes its own next 50 ticks, so fresh randomness at the bottom cannot reach the top in time, and splitting on the chain resamples nothing. Going backward, fresh cells enter at each tick. [`wall_entry.c`](../tests/probes/wall_floor/wall_entry.c) estimates h(m) by sequential Monte Carlo.
 
-**Control.** For the `AB` lock the method gives 0.527% in all (0.024% by tick 7 and 0.503% after), with no particle alive at m = 15, the exact bound of L1537 ([output](../tests/probes/wall_floor/entry45.out)). Direct runs of the window chain from the same law give 208 of 40,000, or 0.52% ([output](../tests/probes/wall_floor/direct_ab.out)).
+**Control.** For the `AB` lock the method gives 0.53% in all (0.024% by tick 7 and 0.51% after), with no particle alive at m = 15, the exact bound of L1537 ([output](../tests/probes/wall_floor/entry45.out)). Direct runs of the window chain from the same law give 208 of 40,000, or 0.52% ([output](../tests/probes/wall_floor/direct_ab.out)).
 
 | Lock | Probability of entry seen | Peak of e_m | Last m with survivors | K / m |
 |---|---|---|---|---|

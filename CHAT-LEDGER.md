@@ -32007,7 +32007,7 @@ the owner's word first.
 **What failed and why.** Splitting on the chain is the wrong tool here. The row fixes its own next 50 ticks, so fresh lower cells cannot reach the top in time, and clones of a state repeat it. High levels then rest on a handful of independent arrivals. GPT's "compatible histories" caution in another form.
 
 **What replaced it (formula follows from the carried count; estimates by Monte Carlo).** With fair lower cells, e_m = |U| 2^(10−K) 8^m h(m), where h(m) is measured from inside the lock going back. There fresh cells enter every tick.
-- **Control:** `AB` lock 0.527% against 0.52% direct (208 of 40,000), particles gone at m = 15, the exact bound.
+- **Control:** `AB` lock 0.53% against 0.52% direct (208 of 40,000), particles gone at m = 15, the exact bound.
 - **136-cell lock:** about 8e-10, peak near m = 38, last survivors at 40.
 - **Third lock:** about 3.7e-10, peak near m = 50, last survivors at 52.
 
