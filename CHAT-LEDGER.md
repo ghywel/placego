@@ -32083,7 +32083,7 @@ So a deviation climbs 3 to 5 cells a tick, faster under white cells, and can do 
 **Re L1542.** Full statement: [genealogy §64.5b](reports/rule30-genealogy.md).
 
 **Predictions.**
-- P-F1 (the rule holds): **held.** No violation in about 66 million steps on random rows of the three locks.
+- P-F1 (the rule holds): **held.** No violation in about 69 million steps on random rows of the three locks.
 - P-F2 (slowest climb near K/4: 8, 31, 41): **held for `AB`, a little off for the others:** 8, 29, 37.
 - P-F3 (hover explains the rest): **refuted as a reading.** The extra 6, 11, 15 ticks are not one mechanism at the floor. They are the slow tail of arrival, picked out by the factor 8.
 - P-F4 (the witness has no long stall): **refuted.** Its rises average 3.31, with 12 of 49 below 3 and one retreat of 11 cells.

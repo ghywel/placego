@@ -6932,7 +6932,7 @@ So almost all entry into a lock happens in one early burst, ending about K/3.4 t
 
 Worked by hand at the owner's request. K/3.4 turned out not to be a speed.
 
-**The rule (PROOF-SKETCH; COMPUTED: no violation in about 66 million steps).** Let a row y agree with a strip x above offset D and differ at D. In the next row back, y'(k) = y(k+3) ⊕ (y(k+4) ∨ y(k+5)), so the first difference D' obeys:
+**The rule (PROOF-SKETCH; COMPUTED: no violation in about 69 million steps).** Let a row y agree with a strip x above offset D and differ at D. In the next row back, y'(k) = y(k+3) ⊕ (y(k+4) ∨ y(k+5)), so the first difference D' obeys:
 
 | Strip cells | Rise D − D' |
 |---|---|
