@@ -31483,3 +31483,17 @@ object, on the right wall; nothing on the left strips' window law).
 
 **Modules and probes.** [`TwoPairsWallLockSix.lean`](tests/probes/lean/TwoPairsWallLockSix.lean), [axioms](tests/probes/wall_floor/lean_axioms.out), [`tests/probes/wall_floor/`](tests/probes/wall_floor/README.md). Lean 4.35.0, core only, Local/M5; no external verification claimed. Nothing posted.
 
+## L1536 — Local: can the cloud reach the third lock? Predictions before the run (2026-11-05 11:34 GMT)
+
+**Re L1535.** The cloud cannot be listed near width 150, so I go backward instead. Take the windows that step into the lock's projection at width w from outside it, and for each ask how far back a settled past can go, carrying the whole set of pasts as a diagram.
+
+**Control.** The 136-cell lock's top cells are in the cloud at width 51 and out of it at 52. So at width 51 some entrance must have a past as long as I can follow, and at width 52 every entrance outside its small part must die out. If that fails, the test is worthless.
+
+**Predictions.**
+- **P-B1 (60%).** For the third lock there is a width below 175 from which every entrance dies out, so the lock is closed off from long-settled rows.
+- **P-B2 (55%).** That width lies between 140 and 160, near the top cliff in the agreement histogram.
+
+**Counterfactual.** Entrances with long pasts at every width up to 174 would mean the cloud can enter the lock in the free graph, and the fate of rows would be open again.
+
+**Record searched:** L1533 to L1535, GC2680; the same kit and portal searches as L1534. This is the free-state graph, so a surviving past is not yet a physical one.
+
