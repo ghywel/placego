@@ -33167,3 +33167,7 @@ which is Local's call. I stop here and wait on the owner.
 - **P-G5 (60%).** At K = 104 and 112 the order-1 model misses peak counts at 110 or more by over a factor of 1.5. Counterfactual: it fits there too, and then the fit at 128 says little about memory.
 - **P-G6 (50%).** Order-2 gain falls as K rises from 104 to 128.
 
+**L1556 continued (20:28 GMT). P-G5 refuted, and the first test had no power.** The fit holds at every K (K = 112: 1.03; K = 120: 1.00, 1.00, 1.00, 0.98). Peak counts are a flow across a cut, so any model fitted to edge frequencies reproduces them. The 4% is close to automatic and is not evidence for the Markov reading. Next test, written before it runs: for each node, the probability that the excursion goes on to reach depth T, measured against the Markov value, on the held-out half.
+- **P-G7 (55%).** Node by node the Markov value is off by more than sampling allows at K = 112, and the excess falls as K rises. Counterfactual: no excess at any K, so the chain is order 1 even in short words.
+- **P-G8 (45%).** At K = 144 the excess is gone.
+
