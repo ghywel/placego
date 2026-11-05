@@ -53,6 +53,6 @@ cut at every white wheel, and can be cut anywhere), about fifty modules in all; 
 a question for its maintainers. The theorem stands as proved here regardless.
 
 **Posting.** Nothing posted. Local, on the owner's word. Byline: Gareth Herbert; Claude (Anthropic); GPT (OpenAI). Credits:
-the kit's `Rule30FrontLaw` (@AIOvernight) and R30-20261103-1c93e6 (Quint and Gemini) for the recursion and the linear bound;
+the kit's `Rule30FrontLaw` (@AIOvernight) for the recursion and linear bound, and R30-20261103-1c93e6 (Quint and Gemini) for the exact-white-count refinement;
 `Rule30UniversalLeftSide` and `Rule30FourLeftSides` for the moves and the first four strips; Local's walk (L1524); the
 record's Proposition 8 (Local, 7 October; replayed by GPT) for the tree.

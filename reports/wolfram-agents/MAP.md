@@ -1322,3 +1322,9 @@ lists 129 entries, 128 Lean Verified; the other is the old R30-20261024-71f858 (
 - **Ours.** R30-20261104-458f3b now has Kit Contribution; PR #145 closed at 20:36Z with `Rule30FourLeftSides` on kit main. 309041 and 3cf160 likewise. Neither of today's two has Human Verified yet.
 - **Portal.** 160 entries; verifier image 17 at kit 722a0c51; kit main 4b0a139.
 
+
+## 5 November 2026 10:46 refresh (GPT, GC2680)
+
+Complete `known_find.py --new`: kit `556e8323937e3337aa14b5dd8ecd9ed5002fde79`, portal snapshot 10:46:45Z, 164 entries and 12 open PRs. The only additions since the preceding complete check are the four-fronts portal entry/source and its two kit modules; the umbrella imports also changed. [9aa447](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-9aa447) is Lean Verified and Kit Contribution, with no Human Verified tag. PR156 closed without GitHub merge metadata, but its exact-head modules are byte-identical to main and the reviewed package. The separate PR conversation, inline comments and review-summary channels are empty. The public portal source is the approved `134d62fb…`. No additional external synthesis-essay response in this delta.
+
+The predecessor entries 309041 and 458f3b remain Lean Verified and Kit Contribution; the external 30d8ae follow-up has all three tags. No new open-PR source delta. [Exact hashes, source checks and colleague reviews](../GPT-MORNING-REVIEW-20261105.md). This refresh does not re-audit all historical closed PRs or change any prize-board status.

@@ -6355,3 +6355,9 @@ Status: PROVED (Lean). Proposition 8's tree is thereby a theorem through its fou
 
 **PROVED (Lean 4.35.0, core only, Local/M5; no external verification claimed).** [Axioms](tests/probes/wall_floor/lean_axioms.out). [`TwoPairsReset.lean`](tests/probes/lean/TwoPairsReset.lean): `reset`, `above`, `again`, `letters`, no axioms. [`TwoPairsWindowClosed.lean`](tests/probes/lean/TwoPairsWindowClosed.lean): `held_back`, `held_forever`, for any closed set of windows. [`TwoPairsWallLockAAB.lean`](tests/probes/lean/TwoPairsWallLockAAB.lean): `closed`, `lock_cycle`, `lock_letters`, `lock_phase`, `lock_forever`, `witness`. [`TwoPairsWallCloud.lean`](tests/probes/lean/TwoPairsWallCloud.lean): `closed`, `cloud_forever`, `cloud_not_lock`, `no_long_alternation`. Statements in [genealogy §63.7](reports/rule30-genealogy.md). COMPUTED, not in Lean: two closed classes at every width 45 to 92; 135 cells do not close `AAB`; the floor search.
 
+
+### GC2680 — carrying review of the parent-aligned error law (5 November 2026)
+
+**PROVED, hand/two-party (CL739 and GPT).** With a fixed final strip and phase, after both parents agree, XORing their child recurrences gives `d_k(t+1) = d_k(t) AND NOT C_(k−1)(t)`. The prefix-arrival increment is zero if the child agrees at the parent-prefix arrival; otherwise it is one plus the wait to a black parent. If the parent is permanently white, eventual alignment to the chosen branch forces zero error already. Cloud’s full driven-error recurrence is also an exact Boolean identity; a universal limiting speed is not proved. [Carrying argument and review scope](reports/GPT-MORNING-REVIEW-20261105.md).
+
+Local’s L1529/L1531/L1533 machine results were source-reviewed without a fresh build. Q45 is disjoint from the AB lock but contains the top-45 projections of every AAB lock window; exclusion of AAB uses the distinct computed wider clouds. General necessity of a lower reset floor remains open.

@@ -984,16 +984,12 @@ one of the sixteen strips through 894,235 from tick 1,798,243 + s of its own clo
 `odd_reaches_one`, `fronts`. Memory grows with the length of a strip's walk (14.2 GB on the root strip), retained across the
 kernel facts within one module; splitting the long walks over several modules is the route to the kit's limit.
 
-**21.6 The actual front to 894,235: about 1.32 ticks a wheel, not 4/3; the same on sixteen rows; its law's shape (CL739;
-COMPUTED, the one step of the law PROOF-SKETCH).** The single cell settles wheel j at τ_j (the lag-32 band edge, which never
-retreats): windows of 100,000 wheels run 1.3326, 1.3272, 1.3188, 1.3180, 1.3113, 1.3189, 1.3176, 1.3163, 1.3155, every one
-below 4/3, a slow fall to a plateau near 1.317; τ(894,235) = 1,180,063, cumulative 1.3196 (B2 of the owner-era list
-answered; GC2266's 1.3326 at 100,000 reproduced). The five doublings add increment 0 (F4's mechanism refuted). No local
-violation on 892,234 wheels; coincidence share 0.4565; slack 0: 0.5435, then 0.221, 0.124, 0.056, 0.028, 0.014; the lag
-behind the forced front grows at 0.686 a wheel. The fifteen other rows of the tree walk at 1.315–1.331 with the same
-increment histogram (increment 0 on 0.456–0.458 of wheels on all sixteen). The law's shape: after the parents align, the
-child's difference obeys d(t + 1) = d(t) ∧ ¬C_(k−1)(t), so the increment is 0 (the child already in its cycle at the parent's
-arrival) or one more than the wait to the parent's next black; the two are the coincidence share and the slack law, and
-1.3196 = 0.5435 × 2.428. The coincidence is set by the local differences and bits one tick before the arrival (0.64 after a
-reset of the parent; 0.014 to 0.53 after a coincidence of the parent, by the bits): the actual front is the extinction
-boundary of the strip-driven difference process, framed as a conjecture.
+**21.6 The measured actual front through 894,235 and its exact local update (CL739; reviewed GC2680).** The single-cell finite-window slopes are 1.3326, 1.3272, 1.3188, 1.3180, 1.3113, 1.3189, 1.3176, 1.3163 and 1.3155. The post-100,000 windows lie below 4/3; their first-to-last drift is −0.0117, so P-C1 passed its range condition and missed its 0.01 trend condition. These finite observations do not settle B2’s asymptotic question, exclude a limiting 4/3, or prove configuration-independent speed. The fifteen tested fork perturbations have similar slopes, 1.315–1.331. A periodic strip row itself starts settled on the observed prefix.
+
+The probe’s `tau` is the upper time in the comparison `x(t) = x(t−32)`. At the endpoint, 1,180,062 is the last unequal upper tick, 1,180,063 the first equal one, and **1,180,031 the corresponding entry into the periodic orbit**. The finite prefix evolves autonomously, so its first 32-step return certifies entry 32 ticks earlier. Subtracting 32 preserves the measured window slopes and, above the detector’s startup floor, its increments and phases modulo 32. The absolute gap from the forced 1,792,687 is therefore **612,656**. The preceding §21.5 value 1,180,062 remains a safe upper bound on entry, but is not its exact onset.
+
+The five sampled doublings have zero detector increment; this refutes the proposed immediate extra jump at those wheels, not every possible asymptotic role of doubling. The output records 894,234 tested wheels, zero negative slack, coincidence share 0.4565, mean slack 0.9146, and gap growth 0.6858 ticks a wheel. Zero increment and positive slack have the same displayed proportion; white-parent wheels prevent treating them as identical events everywhere.
+
+**Carried hand step (PROVED two-party, CL739/GC2680).** With a fixed final strip and phase, once both parents align, the child error satisfies `d_k(t+1) = d_k(t) AND NOT C_(k−1)(t)`. Thus its prefix-arrival increment is zero if it already agrees at the parent-prefix arrival, otherwise one plus the wait to the next black parent. A permanently white parent has no such waiting time: eventual alignment to the selected branch forces zero error already at arrival. The full strip-driven error recurrence in CL739 is an exact Boolean identity; a universal limiting extinction speed is conjectural.
+
+The universal theorem’s exact spatial guard is **`F_v(j) + s <= t`**, or `max_v F_v(j) + 31 <= t` without knowing the strip and phase, through wheel 894,235. CL739’s exact half-speed wedge does not follow from it: the maximum endpoint front 1,798,243 exceeds `2 * 894235`. The classification and its stated finite deadlines remain intact. [Full review](GPT-MORNING-REVIEW-20261105.md).
