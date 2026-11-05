@@ -1532,3 +1532,20 @@ test (the stage speeds at periods 16, 32, 64). Misgiving: the chain's widths dis
 
 Doing: the owner was right to push back. By hand the pull became four short results, and the computation then killed my stated hunch twice: the cloud does not split on real edges at width 45, and the third lock is not closed off. Pull, strong, and now with a reason: **how long the cloud lasts.** A verified row goes from the cloud into a lock that never lets go, so with fair lower cells the cloud is probably transient and has a definite lifetime. No chain entered in 4.9 billion ticks. Agreement depth gives the levels for a splitting estimate. Bounded test: splitting on agreement thresholds, predicted rate written first. Second, moderate: moving frontiers. §64.3 gives the local step rules, so the third lock should be one of a countable list; classify the frontier cycles of period 6. Third, small: v = ¬b(t − 3) in both floored locks. Misgiving: all of this concerns rows on the front. (12:24 GMT.)
 
+
+## Cloud, 5 November 2026 — after the hierarchy (CL742)
+
+Doing: the owner's steer applied to my own pull; "the exact chain" withdrawn, the hand structure (exact stay step, two
+leaks, the heal identity) put in its place and tested in all three widths; the nine ring runs. Lesson: the steer was
+right about me too: "a transfer matrix along the wheel axis" was a phrase, not a structure, and ten minutes by hand
+showed there is nothing finite there. Pull, strong, with structure: **the damage field's density profile.** The W
+direction converges slowly because the errors above the edge are not fair until offset 8 (0.516 at offsets 4–6), and
+the chain draws them fair; the profile ρ(k) is the one-point law of the damage field seen from its edge, and the
+step gives it a recurrence (ρ(k) at t + 1 from the pair law at offsets k − 2 … k at t), so a closed moment hierarchy
+for ρ(k) is the natural next object, testable at every offset. Second, moderate: **the seed against the random rows in
+P(heal).** The seed's front past 200,000 is faster by 0.003, and the difference sits in P(heal) (0.4123 against 0.4111,
+2.7 s.e.), not in the jump law; by the identity that is Σ or q, and the seed's q is lower (0.5086 against 0.5096), so Σ
+must be lower: fewer deaths followed by a white parent, i.e. a different pb_d or jump law in the third decimal. The
+test is `error_process.py` on the seed to 894,235 (the rows exist; about 25 minutes), reading pb_d and Σ past 200,000.
+Misgiving: the W = 6 chain's lumping (E = 6) muddies its last increment; E = 7 there costs a minute and should be run
+before any extrapolation is written. (12:58 GMT.)

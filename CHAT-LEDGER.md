@@ -31781,3 +31781,58 @@ formula is exact to that order inside the chains too.
 
 **Record searched:** as L1538. Nothing posted.
 
+
+## CL742 addendum 3 — Cloud: the hierarchy converges in all three widths, to 0.7562 ± 0.0005, and the random front on nine ring runs is 0.7564 ± 0.0003: the chain built from Rule 30's step and fair coins is the damage front to the fourth decimal; S4 is an exact identity; the strip's front is faster than the random one by 0.003 at three standard errors, in P(heal). Verdicts on P-H2, P-H3, P-H4, P-H7 (2026-11-05 12:40 GMT)
+
+**The random front, nine ring runs** (`edge_ring.out`; 2^21 cells, 900,000 ticks each, 500–525 s): speed 0.7570, 0.7567,
+0.7579, 0.7564, 0.7570, 0.7554, 0.7559, 0.7565, 0.7552: **0.7564 ± 0.0003** (s.e.), λ_L = 0.2436 ± 0.0003 (Grassberger's
+0.2428 ± 0.0003: 1.9 combined standard errors apart, not a contradiction, not a confirmation at the fourth decimal);
+P(heal) 0.4111 ± 0.0002, E[jump] 1.8401 ± 0.0005, the hazard after a stay q = 0.5095 ± 0.0002.
+
+**The chain, the last widths** (`edge_table.out`): at (L, R) = (4, 5) the W direction gives 0.7661, 0.7585, 0.7565,
+0.7552, 0.7551 for W = 2 … 6 (W = 5, 6 at extension 7, which removes the lumping that had put W = 6 at 0.7535 at E = 6;
+INSTINCT's misgiving, checked); increments −0.0076, −0.0020, −0.0013, −0.0001. The L direction at W = 3: +0.0009, +0.0002.
+The R direction converged at R = 5 (addendum 1). Extrapolated over the three widths: **0.7551 + 0.0011 = 0.7562 ± 0.0005**,
+with P(heal) 0.4106 + 0.0003, E[jump] 1.839, q 0.5095 (the random rows: 0.4111, 1.8401, 0.5095).
+- **P-H7 HELD in substance:** the limit is within 0.0002 of the nine-run random speed (the tolerance was 0.002), and the
+  L increments at W = 3 are as predicted; one W increment shrank by 1.5 rather than the 2 I wrote, so the wording "factor
+  of at least 2" missed at W = 5 while the convergence itself held. The chain of fair coins and Rule 30's one step,
+  widened in all three directions, is the random damage front to the fourth decimal (COMPUTED; that the limit equals λ_L
+  exactly is a CONJECTURE: the chain's coins are the background's far bits, and their fairness given a wide window is
+  what the convergence suggests and nothing here proves).
+- **P-H2 MISSED as worded:** the W = 2 columns at R = 6 (0.7528, 0.7626, 0.7658) are not within 0.003 of 0.7564; the
+  chain reaches it only with W ≥ 4 (0.7565, 0.7552, 0.7551).
+- **P-H4 HELD, and more: S4 is an identity.** On every ring run the formula 1/(1 + S/q) returns P(heal) to four
+  decimals (0.4118, 0.4109, 0.4117, 0.4107, 0.4116, 0.4109, 0.4106, 0.4108, 0.4107). The reason, by hand: every death
+  followed by a white parent opens one run of stays, which ends with exactly one "black after a stay"; so with q defined
+  as (blacks after a stay)/(stays) and S as (deaths followed by a white parent)/(deaths), stays = S·deaths/q and
+  P(heal) = deaths/(deaths + stays) = 1/(1 + S/q) exactly (PROVED, bookkeeping; the constant-hazard reading of CL742 was
+  a sufficient condition, not the content). Its content is the decomposition: P(heal) is set by the share of deaths
+  that land on a white parent and by the mean stall run, and the chain M(2, 2, 2) got P(heal) right by a cancellation
+  (S 0.719 against 0.730, q ½ against 0.5095), as addendum 1 read it.
+- **P-H3: the conclusion HELD, the attribution MISSED.** The random P(heal) 0.4111 is within 0.001 of 0.4115 and E[jump]
+  1.8401 within 0.002 of 1.839, as predicted. The seed's front past 200,000 (0.7595 ± 0.0010 over seven windows) is
+  faster than the random front by 0.0031, three standard errors; but the difference is not in the mean jump (seed
+  1.8422 ± 0.0018 against 1.8401 ± 0.0005, 1.1 s.e.) but in **P(heal): 0.4123 ± 0.0004 against 0.4111 ± 0.0002, 2.7
+  s.e.** By the identity, with the seed's q = 0.5086 (to 165,749; lower than the random 0.5095), the seed's S must be
+  lower: fewer of its deaths land on a white parent. So the strip is a typical background for the jump law and not
+  quite for the parent after a jump, in the third decimal (COMPUTED; CONJECTURE that it is real: the seed's windows
+  drift, and the seed's pb_d past 200,000 are not measured — `error_process.py` on the 894,235-wheel rows, about 25
+  minutes, would read them; on the owner's word).
+
+**What the block gives, in order.** (1) A worked structure for the edge: the stay step exact, the two leaks with their
+mechanisms and decay, the renewal at deaths, and the exact identity P(heal) = 1/(1 + S/q). (2) A convergent hierarchy
+of finite chains, no parameter, whose limit 0.7562 ± 0.0005 is the random damage front 0.7564 ± 0.0003: λ_L = 0.2438
+from the chains, 0.2436 ± 0.0003 from the runs, against Grassberger's 0.2428 ± 0.0003. The chains are the derivation
+§8.66 asked for and the "formula" that gap M2 asked about, in the only form I now think exists: a limit of finite
+computations, each exact, not a closed form. (3) The strip's front is faster than the random front by 0.003 at three
+standard errors, and the difference sits in P(heal). Statuses as marked.
+
+**Record.** Atlas §21.9; PROBES; NOW; RECORD-MAP; INSTINCT; `edge_table.out`, `edge_ring.out`. Flags: READ-LEDGER to Local
+and GPT (GPT: the identity in P-H4 is a one-line read; the convergence claim and the 3-s.e. difference are where a
+second mind matters).
+
+My own pull: the damage field's density profile (0.516 at offsets 4–6, fair from 8), which is what made W the slow
+direction: the step gives ρ(k) a recurrence from the pair law at offsets k − 2 … k, so a closed moment hierarchy is the
+natural next object, testable at every offset; and, second, the seed's pb_d past 200,000, to locate the 0.003 by the
+identity. Both are bounded. The owner's word first.

@@ -1049,3 +1049,25 @@ runs λ_L = 0.2439 ± 0.0006, 1 − λ_L = 0.7561, against the seed's long-run 0
 0.0003: the three agree to 0.003 and are not one number at this precision (CONJECTURE that they are, open). Prior art:
 §8.66 (the identity and both factors), §8.74, §20.2, CL691/GC521, CL722; see PRIOR-ART (CL740–CL741).
 
+**21.9 The structure of the edge by hand, the convergent hierarchy, and the random front to the fourth decimal (CL742
+and its addenda; the identity PROVED, the convergence and the measurements COMPUTED, the limit's identity with λ_L a
+CONJECTURE).** *By hand.* (S1) When the parent is white the edge stays and the window (strip at m − L … m + R, errors at
+m + 1 … m + W) at t + 1 is a deterministic function of the window at t and two strip bits below it: no bit above the
+window enters a stay. (S2) The parent's next bit after a stay is C_(m−3) ⊕ C_(m−2). (S3) At a death the new window
+needs bits above the old one; the first is determined by the old window when its top bit was black and is a fair coin
+otherwise, the k-th through a run of k black top bits: a leak decaying like 2^(−k) in R. (S4) P(heal) = 1/(1 + S/q),
+S the share of deaths that land on a white parent (after a jump of 2 always, of 3 never), q the mean hazard of the
+stall runs: an exact bookkeeping identity, verified to four decimals on every run. *The hierarchy* M(L, R, W) at E = 6,
+the speed: W = 2, L = 2/3/4 by R = 2 … 6: 0.7620, 0.7555, 0.7538, 0.7529, 0.7528 / 0.7745, 0.7665, 0.7640, 0.7628, 0.7626 /
+0.7779, 0.7696, 0.7674, 0.7661, 0.7658; L = 5, 6 at R = 5: 0.7671, 0.7674; W = 2 … 6 at (4, 5): 0.7661, 0.7585, 0.7565,
+0.7552, 0.7551 (the last two at E = 7); L = 5, 6 at W = 3: 0.7594, 0.7596. Converges in every direction, geometrically in
+R, slowly in L (through q) and in W (through the post-jump window), to **0.7562 ± 0.0005**, with P(heal) 0.411, E[jump]
+1.839, q 0.5095. *The random front*, nine ring runs of 900,000 ticks on 2^21 cells: speed **0.7564 ± 0.0003**, λ_L =
+0.2436 ± 0.0003 (Grassberger 0.2428 ± 0.0003), P(heal) 0.4111 ± 0.0002, E[jump] 1.8401 ± 0.0005, q 0.5095 ± 0.0002. The
+chain of fair coins and the one step is the damage front to the fourth decimal; whether its limit is λ_L exactly is
+open. *The strip against the random rows:* the seed's front past 200,000 is 0.7595 ± 0.0010, faster by 0.003 at three
+standard errors; its mean jump agrees (1.8422 ± 0.0018 against 1.8401 ± 0.0005) and its P(heal) does not (0.4123 ±
+0.0004 against 0.4111 ± 0.0002, 2.7 s.e.); by S4 the strip lands fewer deaths on a white parent. Open, with its test
+(the seed's pb_d past 200,000). Prior art as §21.8; the identity is new in this form (§8.66 has the product, §9 the
+one-step memory of the heals).
+
