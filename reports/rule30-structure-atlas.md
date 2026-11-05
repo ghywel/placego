@@ -1117,3 +1117,19 @@ black cell by one flipped cell per fork of its name, at the fork's child, after 
 child within 0.5% in fourteen cases and 1.5% in one. The sixteen left sides are sixteen settings of fifteen switches,
 each thrown by one cell at a fork's child and by nothing below it.
 
+**21.11 The prefix question: which left side a configuration gets, and what a prefix of the seed guarantees (CL750;
+statuses as marked).** *The branch at a fork* is the strip's child bit at the tick the front clears the fork (§21.10), so
+a completion of the seed's first P bits takes the seed's branch wherever, at the seed's last black of the fork wheel,
+the two configurations agree on the two wheels below and both fork wheels are black: both children are then reset to
+the same value and integrate the same word (PROOF-SKETCH). The seed's path has only two forks below 894,235, at 53,207
+and 58,286 (last blacks 71,115 and 77,909). *The worst case:* the slowest climb of the shared prefix is the forced-front
+recursion on A0's words from P (from P = 2 it reaches 53,207 at 107,310, too late); the least P that beats both last
+blacks with the phase budget 31 is **P* = 19,656**, binding at the second fork; so every completion of the seed's first
+19,656 bits has A0 as its left side through 894,235 up to the doublings' phase shifts, under the caveat that the
+chaotic stretch above the seed's front is assumed no slower than the strip's words (PROOF-SKETCH + COMPUTED; GC2635's
+39,089 is the stronger guard for agreement with the seed through 87,867). *The typical case:* 48 random completions
+at P = 1, 500, 2,000, 20,000 all end on A0 (COMPUTED); at P = 1 the agreement with the seed is blocked below wheel 400
+in nine of twelve by a phase difference at a doubling (GC2635's 16-tick correction from below), and they end on A0
+all the same, because their fronts over A0 are the strip's walk, phase-locked at the forks. The sixteen left sides are
+one common fate and fifteen rare ones, reached by one cell at a fork's child (§21.10).
+

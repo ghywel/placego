@@ -33076,3 +33076,61 @@ stands (for completions whose shared prefix is not blocked); P-P3 stands.
   completions (blocked at 8, 29 or 400 by a phase difference at a doubling), and covers both forks in at most 2 of 12;
   at P = 500 and above it is never blocked below the forks and covers 53,207 at 71,115 in at least 10 of 12. Lean 65%.
 - **P-P1** as in CL750 (covering ⟹ the seed's branch, no exception), **P-P3** as in CL750.
+
+## CL750 addendum 2 — Cloud: 48 random completions of the seed's first P bits, P = 1 to 20,000: 48 of 48 on A0. P-P1, P-P2′, P-P3, P-P4 HELD; the race criterion restated in the form the runs show; the prefix question answered in three parts. The close (2026-11-05 20:09 GMT)
+
+**The runs** ([output](tests/probes/wolfram/prefix_race.out); the seed and each completion on 165,750 wheels; 5–6 s a completion
+beside the seed to 350,016 ticks; the strip identified among the five at every phase):
+
+| P | on A0 | shared prefix with the seed at 71,115 (the seed's last black at 53,207) | at 77,909 (at 58,286) |
+|---|---|---|---|
+| 1 | 12 of 12 | blocked at 3, 8, 29 or 400 in nine; 53,206 in three (the seed's own front) | the same nine; 58,286 in three |
+| 500 | 12 of 12 | 53,779–54,433, above the fork in all | 59,074–59,705, above |
+| 2,000 | 12 of 12 | 55,162–55,326 | 60,252–60,536 |
+| 20,000 | 12 of 12 | 66,113–66,740 | 71,358–71,996 |
+
+- **P-P1 HELD:** every completion whose shared prefix covered both forks at the seed's last blacks (all 36 at P ≥ 500)
+  settled on A0, no exception.
+- **P-P2′ HELD:** at least 10 of 12 on A0 at each P; 0 off A0 over the 48 (the prediction allowed up to 4).
+- **P-P4 HELD:** at P = 1 the agreement with the seed is blocked below wheel 400 in nine of twelve (at 3, 8, 29, 400: a
+  phase difference at the doubling just below) and covers neither fork in any; at P ≥ 500 it is never blocked and covers
+  both forks in all. The three P = 1 completions that shared the seed's phase through 400 had their shared prefix at
+  53,206 at 71,115 and 58,286 at 77,909: exactly the seed's own front, which is where a shared prefix that runs with
+  the seed must be at those ticks, since the seed's fork wheel is still its edge at its last black.
+- **P-P3 HELD and more:** the typical threshold is not below 2,000 but 1: a random completion sharing only the leftmost
+  cell ends on A0, 12 of 12.
+
+**The criterion, restated as the runs show it.** "Covers the fork wheel at the seed's last black" was the wrong
+wording: at its last black the seed's fork wheel is still its own edge, so no configuration agrees with the seed
+*through* it then. The right statement is the reset's: a completion takes the seed's branch at a fork if, at the
+seed's last black of the fork wheel, the two configurations agree on the wheels j − 2 and j − 1 and both fork wheels
+are black (then both children are reset to the same value and integrate the same word). A shared prefix ahead of the
+seed's front, as at every P ≥ 500, gives exactly that; a shared prefix running with the seed's front, as in the three
+unblocked P = 1 completions, gives it at the fork as well, since the fork wheel's black at τ* is forced by the lower
+wheels (a_j(t+1) = ¬w(t)) and those are shared. The nine blocked completions are outside the criterion altogether
+and still took A0, as CL748's switchboard says they must: their fronts over A0 are the strip's walk, phase-locked,
+clearing the fork at the same strip phase as the seed's.
+
+**The prefix question, answered in three parts (statuses as marked).**
+1. *The worst case:* every completion of the seed's first P* = 19,656 bits has A0 as its left side through 894,235, up
+   to the phase shifts the doublings allow, because the slowest possible climb of its shared prefix (the kit's
+   forced-front recursion on A0's words from P*) beats the seed's last black at both forks on the seed's path, 53,207
+   and 58,286, the only two below 894,235. PROOF-SKETCH, with the caveat of CL750 that the recursion bounds the climb
+   where the seed is settled and the chaotic stretch above the seed's front is assumed no slower; the kit's
+   `Rule30FrontLaw`, our forced-front modules and GC2634's `WhiteParentTransport` are the ingredients of a Lean statement.
+2. *The typical case:* a random completion ends on A0 at every prefix length tried, 48 of 48 from P = 1 to 20,000
+   (COMPUTED). The sixteen left sides are one common fate and fifteen rare ones, reached by rare configurations (the
+   chinks of CL749, or a settled row with its fork child flipped, `first_fork`); the excursion argument of CL750
+   addendum 1 puts the rate off A0 at a few per cent a fork at most, and 0 of 48 at two forks is consistent with it.
+3. *Agreement with the seed itself* is a different and stronger thing: it is blocked at every doubling whose phase the
+   completion chose differently (9 of 12 at P = 1, at 3, 8, 29 or 400), which is GC2635's 16-tick correction and the
+   reason its guard (39,089, agreement through 87,867 including the doubling) is about twice the branch guard.
+
+**Record.** Atlas §21.11; NOW; RECORD-MAP; PROBES; INSTINCT; `prefix_race.out`. Flags: READ-LEDGER to Local and GPT
+(GPT: part 1's statement is the one to weigh; its caveat is explicit; Local: the Lean shape is the forced front from a
+starting wheel plus the branch reset at two forks, if the owner wants it as an entry).
+
+My own pull: none strong. The one loose end with structure is the rate off A0 for random configurations (the
+excursion argument says a few per cent a fork; 0 of 48 is consistent and uninformative), which a census of a few
+hundred completions through the first fork would pin, a bounded block of an hour; and the Lean statement of part 1,
+which is Local's call. I stop here and wait on the owner.

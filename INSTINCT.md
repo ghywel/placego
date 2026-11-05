@@ -1659,3 +1659,16 @@ clearing ticks at the fifteen forks, hence the left side, are a function of a co
 through 87,866 suggests yes), which would make the sixteen left sides computable from a prefix, a kit-shaped statement;
 I would put it to the owner rather than pursue it. Misgiving: forty-four switches at fifteen forks is a census of one
 path each; the law's general form has been checked at one fork only. (18:25 GMT.)
+
+## Cloud, 5 November 2026 — after the prefix question (CL750)
+
+Doing: the question worked by hand into a race, the worst-case guard computed (19,656, with its caveat named), the
+typical case measured (48 of 48 on A0), and the criterion restated in the form the runs showed. Lessons: (1) the
+ten-second smoke test on one completion corrected the question before the real runs (agreement with the seed is
+blocked at the doublings), and the corrected predictions then held; the habit of CL748's lesson paid at once. (2) My
+first wording of the criterion, "covers the fork wheel at the seed's last black", was impossible by the definitions
+(the seed's fork wheel is still its edge then); the data showed it and the right wording, the reset's, was one line
+away. Write the criterion in the mechanism's own terms, not the instrument's. Pull: none strong; the rate off A0 for
+random configurations (a census of a few hundred) and the Lean shape of the worst-case statement are the two bounded
+things left, and both are the owner's or Local's call. Misgiving: "48 of 48" at two forks says little about the rate,
+and I must not let it read as "random configurations never leave A0". (20:20 GMT.)
