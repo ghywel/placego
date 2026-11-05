@@ -8,11 +8,11 @@ Read a row of rule 30 from its rightmost black cell. Bit `k` of its edge code is
 
 `T c 0 = c 0`, `T c 1 = c 1 ⊕ c 0`, `T c (k + 2) = c (k + 2) ⊕ (c (k + 1) ∨ c k)`.
 
-This is `Rule30FrozenRuler.edge_evol`, which needs only white to the right of the edge cell, so the row need not be finite. Below, a *row* is such a code. Every row has exactly one predecessor (`predecessor_unique`), so time can be run backward, and `previousN` does so. A statement about all `z` with `iter z n = x` is a statement about one row, the `n`-th predecessor of `x`. It holds whatever the lower cells of `x` are.
+This is `Rule30FrozenRuler.edge_evol`, which needs only white to the right of the edge cell, so the row need not be finite. Below, a *row* is such a code, with bit 0 black; the Lean definitions also allow unanchored Boolean sequences. Every row has exactly one predecessor (`predecessor_unique`), so time can be run backward, and `previousN` does so. A statement about all `z` with `iter z n = x` is a statement about one row, the `n`-th predecessor of `x`. It holds whatever the lower cells of `x` are.
 
-A row has a *rain tail* if its cells alternate from some index on. `T` keeps a rain tail and so does the predecessor (`step_rain_tail`, `back_rain_tail`). The rain pair `1010…`, `11010…` of `Rule30EdgeStaircases` is all tail. Any other row with a rain tail has a *wall*, the last equal pair below the tail (`Top`). This entry is about what stands at the wall. Words are written from low cell to high cell, with `#` black and `.` white.
+A row has a *rain tail* if its cells alternate from some index on. `T` keeps a rain tail and so does the predecessor (`step_rain_tail`, `back_rain_tail`). The rain pair of `Rule30EdgeStaircases` is `1010…`, which has no equal pair, and `11010…`, whose last equal pair starts at index 0. Any other anchored row with a rain tail has a *wall*, the last equal pair below the tail (`Top`). This entry is about what stands at the wall. Words are written from low cell to high cell, with `#` black and `.` white. In all window-transport, letter and nonperiodicity statements below, the window starts at an index `L ≥ 2`, leaving the two lower cells used by the sweep.
 
-**Letters.** Suppose the wall rises three cells on each of three backward ticks, at depth at least 5. Then the eleven cells ending at the wall read `A = ..####...##` or `B = .#.###...##` (`deep_words`). `BB` never occurs on successive ticks (`no_BB`), nor does `AAA` (`no_AAA`), and `ABA` occurs on an anchored row (`witness_ABA`).
+**Letters.** Suppose the wall rises three cells on each of three backward ticks, with the shallowest of the four walls at depth at least 5. Then the eleven cells ending at the wall read `A = ..####...##` or `B = .#.###...##` (`deep_words`). `BB` never occurs on successive ticks (`no_BB`), nor does `AAA` (`no_AAA`), and `ABA` occurs on an anchored row (`witness_ABA`).
 
 **Locks.** Three sets of windows, each closed under the backward tick for every pair of lower cells:
 
@@ -20,7 +20,7 @@ A row has a *rain tail* if its cells alternate from some index on. `T` keeps a r
 |---|---|---|---|---|---|
 | `LockAB` | 45 | 4 | 2 | `A`, `B` | at the foot of every window (`floor`) |
 | `LockAAB` | 136 | 6 | 3 | `A`, `A`, `B` | at the foot of every window (`floor`) |
-| `LockThird` | 175 | 40 | 6 | `B`, `A`, `A`, `B`, `A`, `A` | at no depth below the wall's own (`no_floor`) |
+| `LockThird` | 175 | 40 | 6 | `B`, `A`, `A`, `B`, `A`, `A` | no common offset below the top letter has shape `F(b,u,v)` in all forty windows (`no_floor`) |
 
 If a row shows a window of a lock at its wall, with rain above, then every predecessor does too, three cells higher each tick, and the letters follow the phases for ever, whatever lies below the window (`LockAB.letters`, `LockAAB.letters`, `LockThird.letters`). Each lock has a witness on an anchored row (`witness`).
 
@@ -34,11 +34,11 @@ Nothing here concerns the center column or the Prize problems.
 
 ## 2. The wall and its letters
 
-The wall moves by an exact local rule under `T`. Say the wall is at `D`. If cell `D` is white it moves up two cells (`top_up`). If `D` is black and a cell of `D − 1`, `D − 2` is black, it stays (`top_stay`). If `D` is black and both are white, it falls by one, two or three cells, according to cells `D − 3` and `D − 4` (`top_minus_one`, `top_minus_two`, `top_minus_three`). So a backward advance of three is the last case read in reverse, and it fixes the six cells at the wall to `#...##` (`marker`).
+The wall moves by an exact local rule under `T`. Say the wall is at `D ≥ 5`; shallower walls have boundary exceptions. If cell `D` is white it moves up two cells (`top_up`). If `D` is black and a cell of `D − 1`, `D − 2` is black, it stays (`top_stay`). If `D` is black and both are white, it falls by one, two or three cells, according to cells `D − 3` and `D − 4` (`top_minus_one`, `top_minus_two`, `top_minus_three`). So a backward advance of three is the last case read in reverse, and it fixes the six cells at the wall to `#...##` (`marker`).
 
-Three such advances put that marker on three successive rows, and a finite check of the ten cells below the first marker leaves the two letters (`deep_words`). Eighteen windows of eleven cells are closed under the backward tick (`front_back`), and a row showing one is not periodic (`front_not_periodic`). So the open part of the question "is the rain pair the only periodic row with a rain tail?" is whether every other such row reaches those windows. We do not settle that here.
+Three such advances put that marker on three successive rows, and a finite check of the ten cells below the first marker leaves the two letters (`deep_words`). Eighteen windows of eleven cells are closed under the backward tick (`front_back`), and a row showing one is not periodic (`front_not_periodic`). A periodic orbit cannot meet those windows. Thus a sufficient route to proving that the rain pair is the only periodic anchored row with a rain tail would be to show that every other such row reaches the windows. That capture statement is open; no converse is claimed.
 
-Once a row shows a letter, the two letters are themselves closed (`letters_closed`). The next letter has a simple rule. After `B` comes `A` for every pair of lower cells (`letter_after_B`). After `A` comes `A` exactly when the two cells of the predecessor just below the old window are white (`letter_after_A`). After `AA` comes `B`, by `no_AAA`. So every settled word is a string of blocks `BA` and `BAA`, and the only choice is the letter after `BA`.
+Once a row shows a letter, the two letters are themselves closed (`letters_closed`). The next letter has a simple rule. After `B` comes `A` for every pair of lower cells (`letter_after_B`). After `A` comes `A` exactly when the two cells of the predecessor just below the old window are white (`letter_after_A`). After `AA` comes `B`, by `no_AAA`. Thus an infinite settled history, after at most an initial `A` or `AA`, is a concatenation of `BA` and `BAA`; finite observed words may end partway through a block. The choice is the letter after `BA`.
 
 ## 3. The word that stops what comes from below
 
@@ -53,11 +53,11 @@ Take ten cells `F(b, u, v) = 0, b, ¬b, 1, u, 1, 0, v, 0, 1`.
 
 Rain supplies `s, ¬s, s` on every tick, which is why the wall rises by exactly three.
 
-`Reset.above` is not new in kind. Each word `F(b, u, v)` contains a word `0 1^(3m + 1) 0` of Lowry's `Rule30ResetFreeCore` with a further cell above it, and such words reset the inverse sweep (`Rule30InverseCascade`, kit PR 60). What the theorems here add is the shape that comes back three cells higher.
+`Reset.above` uses a known reset mechanism. Each word `F(b, u, v)` contains `0 1^(3m + 1) 0` with a further cell above it. Troy Lowry's `Rule30InverseCascade.run_resets` in [kit PR 60](https://github.com/WolframInstitute/Rule30PrizeKit/pull/60) proves the corresponding inverse-sweep synchronization; `Rule30ResetFreeRuns.AvoidReset` records the forbidden-run family, and `Rule30ResetFreeCore` supplies the encoded graph framework. Here `Reset.again` identifies the particular ten-cell shape that returns three cells higher. The reviewed prior sources do not state that identity.
 
 ## 4. Closed sets
 
-Let `S` be a list of words of `W` cells. `S` is *closed* (`Closed`) if for every window in it and each of the four pairs of lower cells, the image window is in `S` and rain resumes above it. `Held W S x L` says that cells `L` to `L + W − 1` of `x` are a window of `S` and that the cells above alternate. Then:
+Let `S` be a list of words of `W` cells. `S` is *closed* (`Closed`) if for every window in it and each of the four pairs of lower cells, the image window is in `S` and rain resumes above it. `Held W S x L` says that cells `L` to `L + W − 1` of `x` are a window of `S` and that the cells above alternate. Assume `L ≥ 2` (and, for nonperiodicity, `W ≥ 2`). Then:
 
 - `held_back`: every predecessor is held three cells higher, whatever lies below the window.
 - `held_forever`: every row `n` ticks back is held `3 n` cells higher.
@@ -78,17 +78,17 @@ These are the four windows of `LockAB`. The last eleven cells are the letter.
 
 The two windows of a phase differ only in cells 1 and 2, the bit `b` of the reset word at the foot of the window. That bit is all the lower cells can move. So a window of `LockAB` holds a second reset word, 34 cells below the wall's own, and the strip between the two cannot feel anything from below. The same holds for `LockAAB`, with the two words 125 cells apart.
 
-`LockThird` shows that a lock needs no such word. No reset word stands at one depth in all forty windows, apart from the wall's own (`no_floor`), and the number of windows in a phase runs 5, 6, 7, 8, 7, 7. Lower states still merge before they reach the letters, but at places that move with the phase. So `AAB` repeated has two different locks.
+`LockThird` has no common location for the shape `F(b,u,v)` below its top letter: for each offset `0 ≤ d < 164`, at least one of the forty windows lacks that shape there (`no_floor`). This excludes neither other synchronizing words nor a floor outside the displayed window. The numbers of windows in its six phases are 5, 6, 7, 8, 7, 7. A separate computation finds that the four lower sweep states merge below the letters, at positions depending on the window and phase (COMPUTED). Thus `AAB` repeated has two different locks.
 
 A separate computation finds that these widths are the smallest. At 135 and 174 cells, a path of free lower cells leaves the letters (COMPUTED).
 
 ## 6. The cloud, and a row that enters a lock
 
-Most rows do not lock at once. Of 100,000 rows with 40 random cells, 99,176 entered the 798 windows and 824 entered `LockAB`, all by tick 128 (MEASURED). The cloud explains why late rows never reached `LockAB`: `Cloud.closed` holds them, and `cloud_not_lock` keeps them apart. Its rank function, the longest alternating run from each window, gives `no_long_alternation`.
+Most rows do not lock at once. Of 100,000 rows with 40 random cells, 99,176 entered the 798 windows and 824 entered `LockAB`, all by tick 128 (MEASURED). The cloud explains why late rows never reached `LockAB`: `Cloud.closed` holds them, and `cloud_not_lock` keeps them apart. A rank between 1 and 17 decreases whenever the letter changes, giving `no_long_alternation`: seventeen successive letter changes are impossible.
 
 The cloud is coarse, though. The theorem `Entry.entry` is about one explicit row whose rain starts at cell 569. Its images under `T`, at ticks `k`, read letters for every `k ≤ 110` (`Entry.letters`). The image at tick 97 is held in the cloud, so the images at every tick below 97 are too. The image at tick 7 is outside the third lock, and the image at tick 6 is inside it, so the images at ticks 0 to 6 are as well. Read backward from tick 110, the letters run in a mix of `BA` and `BAA` down to tick 57, then `BAA` repeated, and the row is caught at tick 6.
 
-So a row in the cloud can step into a lock: a window of 45 cells cannot see the third lock.
+Thus a backward orbit can enter the third lock while remaining in the cloud. Membership in the 45-cell cloud does not distinguish whether capture by the third lock has occurred. The two windows end at the same wall: their starting indices differ by `175 − 45 = 130`.
 
 ## 7. A computation
 
@@ -109,10 +109,10 @@ These are not theorems of this entry.
 - **COMPUTED.** Let `E(w)` be the windows of `w` cells that can follow arbitrarily many settled ticks with free lower cells. At every width from 45 to 92 the graph on `E(w)` has exactly two closed classes, the class of `LockAB` and a cloud, of 798 windows at width 45 and 920,783 at width 92.
 - **COMPUTED.** A reset word below the wall leaves one free binary word in time. Among primitive words of period up to 13, exactly two reach rain going up, `10` and `110`, the words of `LockAB` and `LockAAB`. Through period 24 this holds within 20,000 columns.
 - **MEASURED, on a surrogate.** In a chain on the top 256 cells with independent fair lower cells, no capture by the third lock was detected in about 1.2 · 10^11 ticks. Fair lower cells are an assumption, not a fact about real rows, and no rate is claimed.
-- **Open.** Whether every row with a rain tail reaches the letters, whether every settled row ends in a lock, and whether there are other locks. A search by period found these three and no others, with caps, so this is a list of what was found.
+- **Open.** Whether every anchored row with a rain tail outside the rain pair reaches the letters, whether every settled row ends in a lock, and whether there are other locks. A search by period found these three and no others, with caps, so this is a list of what was found.
 
 ## 10. Credits and prior art
 
-The edge map is `Rule30FrozenRuler` (Coven, Pivato and Yassawi, Proc. AMS 135, 2007), and the rain pair is `Rule30EdgeStaircases` (R30-20261027-196370). Reset words `0 1^(3m + 1) 0` and their role in the inverse sweep are Troy Lowry's (`Rule30ResetFreeCore`, `Rule30ResetFreeThree`, kit PR 60). The closed-window method is in `Rule30GateTrap`. `Rule30UniversalStart` (R30-20261029-3ca86f) reads the first equal pair behind the edge on the right diagonals. The wall here is the last one. The word "lock" here is not the `Lock` of the kit's period-4 table, and "wall" is not the kit's zero wall.
+The edge-map formalization is the kit's `Rule30FrozenRuler`; Coven, Pivato and Yassawi, Proc. AMS 135 (2007), give the general permutive-automaton and odometer framework. The rain pair is in `Rule30EdgeStaircases` (R30-20261027-196370). Troy Lowry's `Rule30ResetFreeRuns` and `Rule30InverseCascade.run_resets` (kit PR 60) supply the reset-run family and inverse-sweep synchronization. The closed-window method is in `Rule30GateTrap`, contributed by Renaud Bosdure with Claude, Gemini and Grok. `Rule30UniversalStart` (R30-20261029-3ca86f) reads the first equal pair behind the edge on the right diagonals. The wall here is the last one. The word "lock" here is not the `Lock` of the kit's period-4 table, and "wall" is not the kit's zero wall.
 
-We searched the kit at main `72253aea`, all portal entries and open kit PRs on 5 November 2026 for rain tails, walls of edge codes, closed windows under the backward tick and reset words, and found no earlier statement of these theorems.
+The 5 November 2026 search was refreshed at kit `c63cde84`, with the portal and open PR sources, and included the relevant PR 60 discussion and linked proof archive. We found no earlier statement of these particular invariant window families and their letter laws. The reset mechanism and closed-window method are prior art, as credited above.
