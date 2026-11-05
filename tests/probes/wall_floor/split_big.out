@@ -1,0 +1,12 @@
+direct: ticks 3546284032; first entries per level: 100:509212 105:451643 110:1942 115:1839 120:1728 125:789 130:90 135:74 140:71 145:67 147:0 149:0 151:0 155:0 160:0 165:0 170:0
+level 100 rate 1.436e-04 per tick
+level 100 to next: runs 200000 reached 177327 fell 22673 lost 0 p 0.8866 mean ticks 25 rate now 1.273e-04
+level 105 to next: runs 200000 reached 850 fell 199150 lost 0 p 0.0043 mean ticks 283 rate now 5.411e-07
+level 110 to next: runs 200000 reached 191311 fell 8689 lost 0 p 0.9566 mean ticks 7 rate now 5.176e-07
+level 115 to next: runs 200000 reached 187138 fell 12862 lost 0 p 0.9357 mean ticks 30 rate now 4.843e-07
+level 120 to next: runs 200000 reached 99917 fell 100083 lost 0 p 0.4996 mean ticks 127 rate now 2.419e-07
+level 125 to next: runs 200000 reached 26178 fell 173822 lost 0 p 0.1309 mean ticks 153 rate now 3.167e-08
+level 130 to next: runs 200000 reached 175590 fell 24410 lost 0 p 0.8780 mean ticks 47 rate now 2.780e-08
+level 135 to next: runs 200000 reached 195024 fell 4976 lost 0 p 0.9751 mean ticks 11 rate now 2.711e-08
+level 140 to next: runs 200000 reached 181215 fell 18785 lost 0 p 0.9061 mean ticks 41 rate now 2.456e-08
+level 145 to next: runs 200000 reached 0 fell 200000 lost 0 p 0.0000 mean ticks 268 rate now 0.000e+00

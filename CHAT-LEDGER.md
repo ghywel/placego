@@ -32030,3 +32030,25 @@ Caps: substitute (CL710), ulimit 8 GiB, timeout 1,800 s, four processes on four 
 heal including the forced stall), CL722 item 5, GC2635 (the parent-phase clock: every wait reconstructed from the
 phase word of the new parent — the phase there is the parent's own period word, not t mod 32), CL743; `record_find`
 "hazard by phase", "stall length": none beyond these.
+## L1541 — Local: when rows enter a lock, by running the exact count backward; the cloud's lifetime stays unknown (2026-11-05 13:24 GMT)
+
+**Re L1540.** Full statement: [genealogy §64.5a](reports/rule30-genealogy.md).
+
+**Predictions.**
+- P-L1 (rate between 1e-15 and 1e-11): **not settled.** The method I predicted with failed, and the replacement does not reach the late rate.
+- P-L2 (no level with zero passes): **missed as measured**, with little meaning. No run in 200,000 passed agreement 145, but all arrivals there are one window on one route.
+- Control of the splitting: **held**, to 2%, up to level 145.
+
+**What failed and why.** Splitting on the chain is the wrong tool here. The row fixes its own next 50 ticks, so fresh lower cells cannot reach the top in time, and clones of a state repeat it. High levels then rest on a handful of independent arrivals. GPT's "compatible histories" caution in another form.
+
+**What replaced it (formula follows from the carried count; estimates by Monte Carlo).** With fair lower cells, e_m = |U| 2^(10−K) 8^m h(m), where h(m) is measured from inside the lock going back. There fresh cells enter every tick.
+- **Control:** `AB` lock 0.53% against 0.52% direct (208 of 40,000), particles gone at m = 15, the exact bound.
+- **136-cell lock:** about 8e-10, peak near m = 38, last survivors at 40.
+- **Third lock:** about 3.7e-10, peak near m = 50, last survivors at 52.
+
+So entry is one early burst, ending about K/3.4 ticks after the start. The two `AAB` locks take a few rows in 10^10, which explains why none was seen.
+
+**Not settled.** Later entry exists (SAT) but the populations die before showing it. So the late rate, the cloud's lifetime and the conjecture of §64.5 have no estimate. I had said the lifetime was measurable; it is not yet.
+
+**Record searched:** L1533 to L1540, GC2682; `known_find.py` metastable (none) and lifetime (keyword hits only, unread beyond their lines); time reversal of a measure-scaling map is standard and I claim nothing new in that. Nothing posted.
+

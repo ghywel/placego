@@ -6902,6 +6902,32 @@ The AB lock and the tested coarse projections of the period-3 lock can be entere
 
 **CONJECTURE.** With a specified independent fair lower-input law, eventual lock entry is almost sure for each admissible initial state. This is not a claim about every input sequence. Reachability alone suffices for absorption in an appropriate finite chain, but does not automatically settle the infinite-state question (GC2682).
 
+### 64.5a When rows enter a lock: the count run backward (L1540–L1541)
+
+**The law.** A row with a letter at its wall at time 0, fair independent cells below, rain above. Let U be a set of K-cell windows closed under the backward tick.
+
+**The formula (follows from §64.1).** Let e_m be the probability that the row first enters U at time m. Then
+
+    e_m = |U| · 2^(10−K) · 8^m · h(m),
+
+where h(m) is the probability that a row with top K cells in U and fair cells below has its first forward image outside U and its first m forward images all reading letters. So entry can be measured from inside the lock. This matters because going forward the row fixes its own next 50 ticks, so fresh randomness at the bottom cannot reach the top in time, and splitting on the chain resamples nothing. Going backward, fresh cells enter at each tick. [`wall_entry.c`](../tests/probes/wall_floor/wall_entry.c) estimates h(m) by sequential Monte Carlo.
+
+**Control.** For the `AB` lock the method gives 0.53% in all (0.024% by tick 7 and 0.51% after), with no particle alive at m = 15, the exact bound of L1537 ([output](../tests/probes/wall_floor/entry45.out)). Direct runs of the window chain from the same law give 208 of 40,000, or 0.52% ([output](../tests/probes/wall_floor/direct_ab.out)).
+
+| Lock | Probability of entry seen | Peak of e_m | Last m with survivors | K / m |
+|---|---|---|---|---|
+| `AB`, 45 cells | 5.3e-3 | m = 9 | 14 (exact) | 3.2 |
+| `AAB`, 136 cells | 8e-10 | m = 38 | 40 | 3.4 |
+| Third, 175 cells | 3.7e-10 | m = 50 | 52 | 3.4 |
+
+([136 cells](../tests/probes/wall_floor/entry136.out), [175 cells](../tests/probes/wall_floor/entry175.out); 3 and 10 million particles. ESTIMATED: the last two rows rest on one run each.)
+
+So almost all entry into a lock happens in one early burst, ending about K/3.4 ticks after the row's start, when a deviation from the strip has had time to climb to the wall. The two `AAB` locks take in a few rows in 10^10. That is why none was seen.
+
+**What this leaves open.** SAT shows both `AAB` locks can be entered later than the last m above, so e_m is not zero there. The particle populations died out at those points, so the late rate is too small for this run to see. It may be near 1e-16 a tick, but that is an order of magnitude from extinction, not a bound. The direct bound from the chain is that no entry occurred in 4.9 billion ticks. So the conjecture of §64.5, that every row ends in a lock, has no estimate behind it, and if true its time scale is far beyond any run here.
+
+**Splitting on the chain, kept as a failure.** Multilevel splitting reproduced the direct rates to 2% up to agreement 145 ([output](../tests/probes/wall_floor/split_big.out)), and no run in 200,000 passed 145. But few independent rows reach that level, and all of them there share one top-145 word with a mismatch at exactly offset 145 ([output](../tests/probes/wall_floor/arrive_track.out)). So the wall at 145 is a fact about that one route, not a bound. The verified witness takes another route: after its break, agreement climbs about 3.4 cells a tick straight into the lock ([output](../tests/probes/wall_floor/witness_track.out)), while chain rows climb from a plateau near 85.
+
 ### 64.6 What this does not settle
 
 Whether locks with a moving frontier are finite in number. The rate of capture. Why v = 10 and v = 110. Still nothing about capture onto the front itself.

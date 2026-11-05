@@ -1,0 +1,10 @@
+set: 4 windows of 45 cells; extensions tried 128, with y_1 outside and known past settled 80
+m log2 e_m e_m cumulative
+8 -9.800 1.1217e-03 1.1217e-03 (survival 0.9189, 8f 7.3513)
+9 -9.231 1.6642e-03 2.7860e-03 (survival 0.1855, 8f 1.4837)
+10 -9.906 1.0422e-03 3.8281e-03 (survival 0.0783, 8f 0.6262)
+11 -10.733 5.8752e-04 4.4156e-03 (survival 0.0705, 8f 0.5638)
+12 -11.261 4.0746e-04 4.8231e-03 (survival 0.0867, 8f 0.6935)
+13 -14.311 4.9187e-05 4.8723e-03 (survival 0.0151, 8f 0.1207)
+14 -12.384 1.8711e-04 5.0594e-03 (survival 0.4755, 8f 3.8040)
+n 15 all dead

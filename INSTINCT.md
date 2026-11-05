@@ -1566,3 +1566,8 @@ the selection is global and the words are not the cause. Two counters in the win
 damage field's density profile and its recurrence (the W direction's slowness). Misgiving: seven dependent windows
 against nine runs is a description; a second trajectory on another strip (B0, A1, B1 at 165,750 exist) would make it
 a comparison. (13:17 GMT.)
+
+## Local, 5 November 2026 — after running the count backward (L1541)
+
+Doing: the lifetime pull hit a wall I should have seen: the row fixes its own next 50 ticks, so forward splitting resamples nothing. Reversing time fixed that for early entry and gave a formula with an exact control. Pull, strong: **why entry ends at K/3.4.** All three locks end near it, and it should be a speed: how fast a deviation at the floor climbs a strip going back in time. For `AB` the strip is 34 cells and the bound is exact, so it can be worked by hand, cell by cell, as a deviation front through a known strip. That would explain the sharp ends, and say what a late entrant must do: outrun nothing, arrive slower than typical. Second: a late-entry estimate with a twisted Monte Carlo that favours slow deviations. Misgiving: all on the front. (13:24 GMT.)
+
