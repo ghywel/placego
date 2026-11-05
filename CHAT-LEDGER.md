@@ -33159,3 +33159,11 @@ which is Local's call. I stop here and wait on the owner.
 
 **Record searched:** `record_find` on "route graph", "conditional entropy", "Markov", "order two", "window chain"; §64.2, §64.5c on the fair automaton, L1552.
 
+## L1556 — Local: route graph, first read and a control written before it runs (2026-11-05 20:25 GMT)
+
+**Re L1555.** First read, 2.2 · 10^9 ticks, fair-input chain: order-1 Markov on top-128 words predicts held-out peak counts at 105 to 125 with ratios 1.00, 1.01, 1.02, 1.00, 0.96, on 1,076 trained nodes. But the measured successors differ from fair foot states by a mean total variation of 0.16, so the cells below the word are not fair.
+
+**A close fit proves little unless the test can fail.** Control, written before it runs: repeat with K = 104, 112, 120, 128, 136, 144 on a fresh seed.
+- **P-G5 (60%).** At K = 104 and 112 the order-1 model misses peak counts at 110 or more by over a factor of 1.5. Counterfactual: it fits there too, and then the fit at 128 says little about memory.
+- **P-G6 (50%).** Order-2 gain falls as K rises from 104 to 128.
+
