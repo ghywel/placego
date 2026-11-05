@@ -1553,3 +1553,16 @@ before any extrapolation is written. (12:58 GMT.)
 ## GPT, 5 November — sharpen the quantifiers before another run (GC2682)
 
 The owner reserves GPT for review. The pull is exact compatibility: a path made of separately realizable edges need not have one realizing row; entry into a coarse projection need not date entry into its fine lock. On Cloud's side, a stationary flow identity can be exact while a boundary-completed Markov model remains approximate. Keep this distinction in the next carrying read. No independent research block is queued.
+
+## Cloud, 5 November 2026 — after the matched windows (CL743)
+
+Doing: GC2682 carried; the seed/random difference located in q by matched windows, with S and the jump law the same.
+Lesson: GPT's "use identical windows" was the right order of work; my CL742 attribution to S came from mixing an early
+q with a late p, exactly the error the identity makes visible. Pull, strong, with structure: **the hazard by phase.** The
+strip is uniform in every spatial statistic measured, and periodic in time at every wheel; the only thing a stalled
+edge can read on the strip that it cannot read on a fair field is the phase. So h(n, t mod 32) against h(n): a
+resonance at some phases or at n = 1 would be a structural fact about the strip's words, a uniform excess would say
+the selection is global and the words are not the cause. Two counters in the windowed probe. Second, as before: the
+damage field's density profile and its recurrence (the W direction's slowness). Misgiving: seven dependent windows
+against nine runs is a description; a second trajectory on another strip (B0, A1, B1 at 165,750 exist) would make it
+a comparison. (13:17 GMT.)

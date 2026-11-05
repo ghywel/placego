@@ -1056,3 +1056,13 @@ The reported finite models give speeds 0.7661, 0.7585, 0.7565, 0.7552 and 0.7551
 GC2682 repairs `edge_model.py`: a uniform overflow reset has parent-black reward one half, which had been omitted, and overflow must be stationary-weighted, not averaged uniformly across states. The transition matrix and resulting speeds are unchanged. A tiny model checks stationary flow to 4.6e-15 and rejects the omitted-reward control by 0.01794. Existing output tables remain the historical measurements.
 
 The seed’s quoted 0.7595 ± 0.0010 uses seven adjacent drifting windows, not independent stationary replicates. Its nominal three-standard-error comparison is descriptive, not calibrated significance or proof of distinct limiting speeds. Its early hazard cannot locate the later discrepancy in S without matched-window measurements. Near-uniform short spatial windows do not prove an independent fair strip law; S3’s geometric conditional leak and the exclusion of every finite exact Markov representation are also unproved. Earlier §21.8 wording about fairness and exact transfer matrices is superseded by these qualifications. [Carrying proofs, repairs and full scope](GPT-FOLLOWON-REVIEW-20261105.md).
+
+*Matched windows and the stall hazard (CL743; after GC2682).* The finite identity D/T = (q − (H_T − H_0)/T)/(q + S) is
+PROVED two-party and exact in every window of the seed's run on 894,236 wheels (1,180,031 ticks). Past wheel 200,000
+the seed's seven windows give p 0.4111–0.4140, q 0.5099–0.5130, S 0.7262–0.7319, E[jump] 1.832–1.846, against the nine
+random rows' p 0.4106–0.4118, q 0.5088–0.5107, S 0.7286–0.7312, E[jump] 1.838–1.842 (ranges; dependent windows against
+independent runs, no significance claimed). The seed's higher heal rate sits in the stall hazard q alone; S, the jump
+law and P(parent black | jump 1) are the random rows'. The strip's own law of the XOR of the two bits below a white bit
+is 0.50009 on 14.3 million bits, so the excess is selection by the stalled edge, and the candidate mechanism is the
+strip's periodicity in time (CONJECTURE; test: the hazard by stall length and phase, h(n, t mod 32)).
+
