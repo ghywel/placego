@@ -1,0 +1,41 @@
+offset ruler           2         3         4         5         6         7 
+corridor, X and o differ from the strip, H and , are cells the strip leaves open
+ -13 ph1 best1: 96 X#X..X#.####ooo#Xoo#XX.oXo#.o.X.Xo#.oo.oXo###Xo,HXH,H,
+ -12 ph2 best2:100 #o.o.#ooooXX.oX.o..o#XXoo##.X.#X#o#oXoXXX#XoH,X,,XHH,,
+ -11 ph3 best3:105 .oX.X##XX.o..oo#X#oo....o#.o..#o#Xo.#.X#.oo#,,X,H#,,,,
+ -10 ph4 best4:108 XXX##X...Xoo##XXXX#..X#XXXXX.#X###..oX#Xoo.##X.#XH,,,H
+  -9 ph5 best5:113 o#XX..X.o###oX#.Xoo#o.###.o#oo#o.o#..##X#.oX#XX.o#H,,H
+  -8 ph0 best0:118 X##X#..XXX...oX.o.#oX#.X##..##.X#.X#XoXX.Xo.#X#,,H,,,,
+  -7 ph1 best1:123 .#...Xo.###oo###Xo##X.XoXoo.#....#oXoo.#.oo#oX#H,.HH,H
+  -6 ph2 best2:126 ##.#.###o#XX.oXXoX.o#X.o#o#.XX#.####.#.XX#.#HH.HH.,HH,
+  -5 ph3 best3:131 .#...##...#..o#o.oo#X...o#XoX.##o.#.#..#.##o,HX,,#,H,,
+  -4 ph4 best4:131 ...##.....###oXXX.#XXXoX.....oX#oo.X#.#.##.#oX.o.,HH,H
+  -3 ph5 best5:131 ##......#####Xo.X#oo#.#ooXo#####Xo#..oo.#Xo.oX.X#o,,,,
+  -2 ph0 best0:136 .##.#........#..#.oo.#X.#oXXo#X.oX.oX#....o.oX#H,H,H,,
+  -1 ph1 best1:141 .#....#.########.###...o.o#.#.X..o#X#o.o.####X#HH.,H,H
+   0 ph2 best2:145 ##.#.#####...#..#..##..####XX.#.##oo.o.X.o.o,,X,,X,,HH
+   1 ph3 best3:144 .#...##...#..###.###....##Xo.Xoo#Xo.oXX#X#o#HHXHHoHH,H
+   2 ph4 best4:131 ...##.....###oXXX.oXX.oXXXXX.oX##o..oX#Xo#.o#..oX,,H,,
+   3 ph5 best5:131 ##......#####Xo.X#oo#Xo#o.oo#oo#X#o.X##X#.oXoXX.##H,HH
+   4 ph0 best0:114 Xoo.oXXXXXXX.oX.oX#oXo..o#.X##XXo..oXo...Xo.#XoH,H,,,H
+   5 ph1 best1:111 X#X.XX#Xo#oo#oo#X#oo..XoX##X#...XooX##XoX####.o,,X,H,H
+   6 ph2 best2:109 o#X#.o#o#o.X.#X.#XXooXX###o..Xo.###oX#X..#.o,H.,HXHH,H
+   7 ph3 best3:108 .o.XXooXX.#.X#o#.#oo.X..ooXo.X##oX#Xo.X#.o##,HXH,#H,H,
+   8 ph4 best4:108 X..##X.X..oo##...XoX.X#X.XXXX#.oooX.o.#.oo.##.Xo.,H,,,
+witness
+  21 ph4           .XXooX.X..oooo..XXoXX.#.XXXX.o.#o#X.#.#X#oXooX.#.H,,,H
+  20 ph5           #o....XXo#o##X#XX##o#.oo#.#o#oo#X##..o#.#Xo.#.XXo#,H,H
+  19 ph0           .##Xo......XXo..#.o#.oX.##X.#oX.#X.#.oXXXXo.oX#H,,,H,H
+  18 ph1           .#....#.ooooooooX##oXX.#Xo#Xo.X.X#o.o#.#Xo#ooX#HH.,HHH
+  17 ph2           ##.#.#####...o..o..ooX.oo#oX..oX##oo.#XXXo.oH,XH,X,,HH
+  16 ph3           .#...##...#..###X###XXXXo#X#.Xo##X#.oXX#.#ooHHXH,o,H,H
+  15 ph4           ...##.....####....#..Xo.X..XXo.#o#.Xo.#X#o.#oXXoX,,HHH
+  14 ph5           ##......#####.#..####.##oX##ooooX#oX.#oX#Xo.#XX.ooH,HH
+  13 ph0           .##.#........#..#.##.#..#oX.ooX.o..o.#.X.X#.oX#H,,HHHH
+  12 ph1           .#....#.########.###...#.##.#.XXXo#X##X#.##oo.#HH.,HH,
+  11 ph2           ##.#.#####...#..#..##..####...#.##ooX#..Xo.#,H.,,.,H,,
+  10 ph3           .#...##...#..###.###....##.#..###.#.#..o.##oHH.H,#HHHH
+   9 ph4           ...##.....####....#...#......#.###..#.#.##X#oX.o.HH,,,
+   8 ph5           ##......#####.#..####.###.######.##..##.#.#.#..X#o,,,,
+   7 ph0           .##.#........#..#.##.#..##..##..#..#.#....#.#.#H,,,,HH
+   6 ph1           .#....#.########.###...#.##.#....##.##.#.####.#H,.,HHH

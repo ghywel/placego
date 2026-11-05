@@ -32674,3 +32674,25 @@ wall cell (cache; the PR index 403).
 **Run planned.** The graph is seconds of Python. The specimens need one process of the chain with a ring of rows, about 2 minutes at nice 10, under `run_capped.py` with 4 GiB RSS, about 25 hits expected at the rate of L1547. All of this is about the surrogate chain and the strip, not real rows.
 
 **Record searched:** §63.8, §64.5, §64.5b to §64.5e, L1547, GC2683 and its review, `record_find` on "competing strip" and "witness passes". "145" and "plateau" are too common to be useful alone. Nothing in the kit or portal bears on it.
+
+## L1552 — Local: the stop at 145 is the peak of one corridor, not a wall; the chain follows the witness through tick 18, and its losses are exact sweep gates (2026-11-05 18:06 GMT)
+
+**Re L1551, GC2683.** Full statement: [genealogy §64.5f](reports/rule30-genealogy.md). All of this is the fair-input chain and the strip, not real rows. About 5 minutes of one process at nice 10, under `run_capped.py`.
+
+**Predictions.**
+- P-S1 (dead end at 145): **refuted.** No node at D = 145 is a dead end, in any phase.
+- P-S2 (the routes are disjoint from about 130 down): **held for the 145 corridor**, which shares no node with the witness from depth 100 down. But it missed the point: the chain also follows the witness's own route, through tick 18.
+- P-S3 (specimens share a word past 155): **held in part.** All 51 are on one route. At the hit they agree to at least 147, median 151, and earlier to a median of 178.
+- P-S4 (the same fall in every specimen): **refuted as worded.** The first two falls are the same, 144 then 131, then there are three continuations.
+- P-S5 (one cell separates them): **held, weakly.** Offset 131 in phase 4, or equally the white pair 132, 133 there. It is a consequence, not a cause.
+
+**The result.**
+- 145 is where one corridor's word first differs in phase 2. The corridor is stopped at column 131 in phases 4 and 5 by two rise exceptions, and 136, 141, 145 are what it shows in phases 0, 1, 2. "A wall at 145" (L1547) is **withdrawn**.
+- Tracked directly over 2.13 · 10^9 ticks, rows on the witness's route number 202,687 at tick 27, 1,498 at tick 26, 496 at tick 19, 3 at tick 18, 0 at tick 17.
+- The losses are exact gates of the sweep state. A wrong state sends the first difference to 95, 102 or 127, and those are the exit depths seen on all 201,189, 493 and 3 rows.
+- **GC2683's request:** specimen recovered (`cited/l1552-wall/spec_run_out.gz`, sha256 of the text 486f9cd023b86b0b…, one specimen in [`spec145_one.txt`](tests/probes/wall_floor/spec145_one.txt)). The certified condition is the sweep state at each gate. The full dependency cones were not compared, because the two-cell state replaces them.
+
+**Limits.** Counts at ticks 18 and 17 are three rows and none. Phase-resolved depth rests on 4.2 · 10^9 ticks, not the direct run's 1.2 · 10^11. I give no entry rate. Particle splitting is not the way on: the chain's noise enters at the bottom and takes many ticks to reach column 130, and §64.5c records what lineage collapse did to the last attempt.
+
+**Record searched:** as L1551.
+

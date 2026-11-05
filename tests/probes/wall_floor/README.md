@@ -83,3 +83,13 @@ Probes for [genealogy §63.7](../../../reports/rule30-genealogy.md). All are sho
 
 `package/`: the right-wall submission's sources. `gen_base.py` (with `extras.lean`), `gen_locks.py`, `gen_cloud.py` and `gen_portal.py` (with `portal_head.txt`) write the modules from the record's Lean and this folder's lock and witness files. Run them from a subfolder of the working folder, with `tests/probes/lean` as first argument. `replay_portal.py` replays every finite claim from the portal source's literals in plain Python, and `mutate.py` lists the ten mutants. Outputs are alongside.
 
+## Added in L1552
+
+| File | What it does |
+|---|---|
+| `wall_spec145.c` | The chain with a ring of rows. Dumps rows around each hit of a depth, or routes only, and counts depth by phase. Outputs `spec_run_summary.out`, `spec_routes_summary.out`, `spec_routes_tree.out`, one specimen in `spec145_one.txt`. |
+| `wall_track.c`, `wall_shadow.c` | Track chain rows along the verified witness. Outputs `track_run.out`, `shadow_run.out`. |
+| `wall_risegraph.py`, `gate131.py` | The rise rule as a graph, and its table around column 131. |
+| `gate_state.py` | The exact sweep states at the gates of the witness's route. |
+| `spec_read.py`, `spec_witness.py`, `spec_cols.py` | Read the specimens against one another, the witness and the strip. |
+

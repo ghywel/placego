@@ -1,0 +1,55 @@
+DEEPEST 141 at total ticks 4193147
+DEEPEST 145 at total ticks 4193148
+ticks 2130706432 chains 1 captures 0 quiet 0 AB 0 deepest 145
+agreement depth tail: >=145:50 >=140:150 >=135:202 >=130:464 >=125:1176 >=120:3758 >=115:6117 >=110:7995 >=105:963187 >=100:2840193 >=95:5715810 >=90:28247870 >=85:109630310 >=80:136514629 >=75:145545482 >=70:159273866 >=65:191970475 >=60:259658272
+witness tick, D, entries, steps from the tick before, exits at this tick by depth
+56 D 13 start 27726 step 0 exits
+55 D 17 start 0 step 27726 exits
+54 D 22 start 0 step 27726 exits
+53 D 25 start 0 step 27726 exits
+52 D 30 start 0 step 27706 exits 24:20
+51 D 33 start 0 step 27706 exits
+50 D 32 start 0 step 27706 exits
+49 D 37 start 0 step 24560 exits 32:3146
+48 D 40 start 0 step 24560 exits
+47 D 45 start 0 step 19155 exits 40:5405
+46 D 49 start 0 step 19155 exits
+45 D 53 start 0 step 19155 exits
+44 D 57 start 355 step 3219 exits 49:15936
+43 D 61 start 482 step 3574 exits
+42 D 65 start 225 step 2442 exits 61:1614
+41 D 65 start 6041906 step 2667 exits
+40 D 70 start 319508 step 36371 exits 67:1253954 69:4754248
+39 D 71 start 2091885 step 180835 exits 71:175044
+38 D 75 start 4324433 step 129 exits 65:2272591
+37 D 64 start 770344 step 4324562 exits
+36 D 63 start 2293847 step 5094906 exits
+35 D 65 start 0 step 3846519 exits 60:2081905 65:1460329
+34 D 69 start 4754248 step 3527011 exits 69:319508
+33 D 73 start 36387 step 4934981 exits 66:1564718 71:1781560
+32 D 78 start 0 step 653065 exits 75:4318303
+31 D 82 start 0 step 297228 exits 64:320706 82:35131
+30 D 86 start 15237 step 297146 exits 82:82
+29 D 88 start 19229876 step 304982 exits 88:7401
+28 D 89 start 0 step 202687 exits 86:19332171
+27 D 94 start 0 step 202687 exits
+26 D 99 start 0 step 1498 exits 95:201189
+25 D 103 start 0 step 816 exits 102:682
+24 D 107 start 0 step 816 exits
+23 D 111 start 0 step 642 exits 106:174
+22 D 113 start 0 step 642 exits
+21 D 115 start 0 step 496 exits 115:146
+20 D 119 start 677 step 495 exits 115:1
+19 D 121 start 0 step 496 exits 121:676
+18 D 126 start 0 step 3 exits 102:493
+17 D 131 start 0 step 0 exits 127:3
+16 D 134 start 0 step 0 exits
+15 D 139 start 0 step 0 exits
+14 D 142 start 0 step 0 exits
+13 D 143 start 0 step 0 exits
+12 D 148 start 0 step 0 exits
+11 D 152 start 0 step 0 exits
+10 D 157 start 0 step 0 exits
+9 D 160 start 0 step 0 exits
+8 D 165 start 0 step 0 exits
+7 D 175 start 0 step 0 exits

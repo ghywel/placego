@@ -1,0 +1,53 @@
+specimens 51 rows each 96
+distinct routes around the hit 3
+39 2:100 3:105 4:108 5:113 0:118 1:123 2:126 3:131 4:131 5:131 0:136 1:141 2:145 3:144 4:131 5:131 0:114 1:111 2:109 3:108 4:108 5:104 0:95 1:91 2:88 3:86 4:88
+11 2:100 3:105 4:108 5:113 0:118 1:123 2:126 3:131 4:131 5:131 0:136 1:141 2:145 3:144 4:131 5:119 0:124 1:127 2:127 3:124 4:122 5:119 0:123 1:102 2:101 3:102 4:98
+1 2:100 3:105 4:108 5:113 0:118 1:123 2:126 3:131 4:131 5:131 0:136 1:141 2:145 3:144 4:131 5:119 0:124 1:127 2:127 3:124 4:122 5:119 0:124 1:127 2:127 3:124 4:122
+tick: min and median common depth among specimens (rows top first)
+-46 min 39 med 124 distinct top-100 7 top-200 49
+-44 min 34 med 121 distinct top-100 7 top-200 48
+-42 min 43 med 120 distinct top-100 7 top-200 46
+-40 min 52 med 125 distinct top-100 6 top-200 45
+-38 min 60 med 133 distinct top-100 5 top-200 45
+-36 min 68 med 137 distinct top-100 4 top-200 43
+-34 min 63 med 141 distinct top-100 4 top-200 44
+-32 min 71 med 133 distinct top-100 4 top-200 45
+-30 min 70 med 141 distinct top-100 4 top-200 45
+-28 min 63 med 149 distinct top-100 2 top-200 44
+-26 min 71 med 157 distinct top-100 2 top-200 43
+-24 min 79 med 162 distinct top-100 2 top-200 44
+-22 min 86 med 166 distinct top-100 2 top-200 41
+-20 min 94 med 174 distinct top-100 2 top-200 40
+-18 min 103 med 178 distinct top-100 1 top-200 40
+-16 min 111 med 176 distinct top-100 1 top-200 40
+-14 min 120 med 175 distinct top-100 1 top-200 39
+-12 min 125 med 173 distinct top-100 1 top-200 41
+-10 min 134 med 167 distinct top-100 1 top-200 37
+-8 min 140 med 164 distinct top-100 1 top-200 39
+-6 min 139 med 164 distinct top-100 1 top-200 38
+-4 min 140 med 160 distinct top-100 1 top-200 39
+-2 min 143 med 166 distinct top-100 1 top-200 42
+0 min 147 med 151 distinct top-100 1 top-200 43
+2 min 150 med 150 distinct top-100 1 top-200 43
+4 min 114 med 156 distinct top-100 1 top-200 42
+6 min 109 med 156 distinct top-100 1 top-200 42
+8 min 108 med 147 distinct top-100 1 top-200 41
+10 min 95 med 120 distinct top-100 2 top-200 43
+12 min 88 med 125 distinct top-100 2 top-200 44
+14 min 88 med 135 distinct top-100 3 top-200 42
+16 min 88 med 143 distinct top-100 3 top-200 44
+18 min 88 med 138 distinct top-100 4 top-200 43
+20 min 83 med 129 distinct top-100 3 top-200 42
+22 min 81 med 118 distinct top-100 5 top-200 45
+24 min 75 med 124 distinct top-100 5 top-200 48
+26 min 63 med 98 distinct top-100 6 top-200 47
+28 min 71 med 95 distinct top-100 7 top-200 47
+30 min 70 med 101 distinct top-100 7 top-200 47
+32 min 63 med 88 distinct top-100 9 top-200 47
+34 min 71 med 88 distinct top-100 10 top-200 48
+36 min 70 med 82 distinct top-100 11 top-200 48
+38 min 63 med 83 distinct top-100 10 top-200 46
+40 min 71 med 88 distinct top-100 12 top-200 48
+42 min 70 med 93 distinct top-100 15 top-200 49
+44 min 63 med 83 distinct top-100 14 top-200 49
+46 min 53 med 81 distinct top-100 17 top-200 49
