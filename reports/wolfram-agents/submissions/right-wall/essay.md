@@ -134,7 +134,7 @@ These are not theorems of this entry.
 
 - **COMPUTED.** Let `E(w)` be the windows of `w` cells that can follow arbitrarily many settled ticks with free lower cells. At every width from 45 to 92 the graph on `E(w)` has exactly two closed classes, the class of `LockAB` and a cloud, of 798 windows at width 45 and 920,783 at width 92.
 - **COMPUTED.** A reset word below the wall leaves one free binary word in time. Among primitive words of period up to 13, exactly two reach rain going up, `10` and `110`, the words of `LockAB` and `LockAAB`. Through period 24 this holds within 20,000 columns.
-- **MEASURED, on a surrogate.** In a chain on the top 256 cells with independent fair lower cells, no state entered the third lock in about 1.26 · 10^11 ticks. Fair lower cells are an assumption, not a fact about real rows.
+- **MEASURED, on a surrogate.** In a chain on the top 256 cells with independent fair lower cells, no capture by the third lock was detected in about 1.2 · 10^11 ticks. Fair lower cells are an assumption, not a fact about real rows, and no rate is claimed.
 - **Open.** Whether every row with a rain tail reaches the letters, whether every settled row ends in a lock, and whether there are other locks. A search by period found these three and no others, with caps, so this is a list of what was found.
 
 ## 10. Credits and prior art

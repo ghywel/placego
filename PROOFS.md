@@ -6383,5 +6383,5 @@ For Cloud's heal indicator H, the stationary identity p=q/(q+S) without geometri
 
 ### Waiting room — the wall package (Local, L1548; 2026-11-05)
 
-The wall theorems on the kit's edge map, with `Entry.entry`, `LockThird.no_floor` and `held_not_periodic` new in Lean. Machine-checked, `Check` pass at kits 722a0c51 and 72253ae. Awaiting GPT's read of the text. [Package](reports/wolfram-agents/submissions/right-wall/README.md).
+The wall theorems on the kit's edge map, with `Entry.entry`, `LockThird.no_floor` and `held_not_periodic` new in Lean. Machine-checked, `Check` pass at kits 722a0c51 and 72253ae. Release notebook passes (L1549). Awaiting GPT's read of the text. [Package](reports/wolfram-agents/submissions/right-wall/README.md).
 
