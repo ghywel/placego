@@ -1,0 +1,116 @@
+w 22: 2 windows, target past 60
+ window 0: dead, best past 3, nodes 16
+ window 1: dead, best past 4, nodes 117
+reached 0 capped 0 of 2
+w 24: 2 windows, target past 60
+ window 0: dead, best past 3, nodes 5
+ window 1: dead, best past 4, nodes 149
+reached 0 capped 0 of 2
+w 26: 2 windows, target past 60
+ window 0: dead, best past 5, nodes 294
+ window 1: dead, best past 4, nodes 26
+reached 0 capped 0 of 2
+w 30: 2 windows, target past 60
+ window 0: dead, best past 5, nodes 61
+ window 1: dead, best past 6, nodes 559
+reached 0 capped 0 of 2
+w 36: 2 windows, target past 60
+ window 0: dead, best past 7, nodes 1225
+ window 1: dead, best past 10, nodes 17077
+reached 0 capped 0 of 2
+w 40: 2 windows, target past 60
+ window 0: dead, best past 13, nodes 199491
+ window 1: dead, best past 8, nodes 3046
+reached 0 capped 0 of 2
+w 44: 4 windows, target past 60
+ window 0: dead, best past 9, nodes 2499
+ window 1: dead, best past 12, nodes 106466
+ window 2: dead, best past 9, nodes 7297
+ window 3: dead, best past 14, nodes 689838
+reached 0 capped 0 of 4
+w 45: 4 windows, target past 60
+ window 0: dead, best past 12, nodes 25024
+ window 1: dead, best past 12, nodes 106446
+ window 2: dead, best past 9, nodes 2709
+ window 3: dead, best past 14, nodes 597458
+reached 0 capped 0 of 4
+w 45: 3 windows, target past 60
+ window 0: dead, best past 8, nodes 174
+ window 1: dead, best past 13, nodes 90784
+ window 2: dead, best past 14, nodes 138186
+reached 0 capped 0 of 3
+w 46: 3 windows, target past 60
+ window 0: dead, best past 8, nodes 181
+ window 1: dead, best past 13, nodes 90832
+ window 2: dead, best past 14, nodes 138238
+reached 0 capped 0 of 3
+w 47: 3 windows, target past 60
+ window 0: dead, best past 14, nodes 346378
+ window 1: dead, best past 9, nodes 92
+ window 2: dead, best past 14, nodes 138270
+reached 0 capped 0 of 3
+w 48: 3 windows, target past 60
+ window 0: dead, best past 14, nodes 346307
+ window 1: dead, best past 15, nodes 316589
+ window 2: dead, best past 12, nodes 17308
+reached 0 capped 0 of 3
+w 50: 3 windows, target past 60
+ window 0: dead, best past 13, nodes 39904
+ window 1: dead, best past 16, nodes 1825694
+ window 2: dead, best past 9, nodes 359
+reached 0 capped 0 of 3
+w 51: 3 windows, target past 60
+ window 0: dead, best past 10, nodes 222
+ window 1: dead, best past 16, nodes 1825762
+ window 2: dead, best past 14, nodes 156620
+reached 0 capped 0 of 3
+w 52: 3 windows, target past 60
+ window 0: dead, best past 10, nodes 258
+ window 1: dead, best past 16, nodes 1825959
+ window 2: dead, best past 14, nodes 156511
+reached 0 capped 0 of 3
+w 53: 3 windows, target past 60
+ window 0: dead, best past 16, nodes 1265691
+ window 1: dead, best past 16, nodes 1509970
+ window 2: dead, best past 14, nodes 156384
+reached 0 capped 0 of 3
+w 60: 6 windows, target past 70
+ window 0: capped, best past 19, nodes 3000001
+ window 1: capped, best past 20, nodes 3000001
+ window 2: dead, best past 13, nodes 18018
+ window 3: dead, best past 12, nodes 949
+ window 4: dead, best past 17, nodes 2322706
+ window 5: capped, best past 21, nodes 3000001
+reached 0 capped 3 of 6
+w 100: 6 windows, target past 70
+ window 0: capped, best past 27, nodes 3000001
+ window 1: capped, best past 28, nodes 3000001
+ window 2: capped, best past 24, nodes 3000001
+ window 3: capped, best past 24, nodes 3000001
+ window 4: capped, best past 27, nodes 3000001
+ window 5: dead, best past 22, nodes 2625506
+reached 0 capped 5 of 6
+w 140: 6 windows, target past 70
+ window 0: capped, best past 32, nodes 3000001
+ window 1: capped, best past 35, nodes 3000001
+ window 2: dead, best past 29, nodes 122882
+ window 3: capped, best past 32, nodes 3000001
+ window 4: capped, best past 30, nodes 3000001
+ window 5: capped, best past 34, nodes 3000001
+reached 0 capped 5 of 6
+w 160: 6 windows, target past 70
+ window 0: capped, best past 38, nodes 3000001
+ window 1: capped, best past 41, nodes 3000001
+ window 2: capped, best past 36, nodes 3000001
+ window 3: capped, best past 35, nodes 3000001
+ window 4: capped, best past 36, nodes 3000001
+ window 5: capped, best past 37, nodes 3000001
+reached 0 capped 6 of 6
+w 60: 6 windows, target past 70
+ window 0: capped, best past 20, nodes 3000001
+ window 1: capped, best past 20, nodes 3000001
+ window 2: capped, best past 22, nodes 3000001
+ window 3: capped, best past 22, nodes 3000001
+ window 4: capped, best past 21, nodes 3000001
+ window 5: capped, best past 20, nodes 3000001
+reached 0 capped 6 of 6

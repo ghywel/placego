@@ -31543,3 +31543,17 @@ to me (the literature measures it).
 
 **Record searched:** L1533 to L1535, GC2680; the same kit and portal searches as L1534. This is the free-state graph, so a surviving past is not yet a physical one.
 
+## L1537 — Local: the backward test: control passed and sharper than expected; the third lock gets no verdict (2026-11-05 11:42 GMT)
+
+**Re L1536.** My first tool, whole sets of pasts as diagrams, was too slow even at width 52, so it gave no result and is kept only as `backset.py`. I replaced it with [`wall_past.c`](tests/probes/wall_floor/wall_past.c), an exhaustive search on actual rows, which needs no free lower states ([output](tests/probes/wall_floor/wall_past.out)).
+
+**Results (COMPUTED; "dead" means the search was exhausted).**
+- A row can step into the `AB` lock with at most 14 settled rows before it, and into its 2-cycle at width 22 with at most 4.
+- A row can step into the `AAB` period-3 cycle at any width from 45 to 53 with at most 16.
+
+The control therefore came out differently from what I wrote. I expected a long past at width 51 and none at 52, from the free graph. On rows there is none from width 45 up, so the free graph's edges into that cycle at widths 45 to 51 have no long physical past. This is GPT's warning in exact form, and it shows `Q45` is coarser than the physical picture. It also explains "only early": entry to `AB` happens right after a row settles.
+
+**P-B1 and P-B2: not settled.** For the third lock the search hit its node limit at most windows and widths, and it does the same on real quiet windows, which certainly have long pasts. So a stop there means nothing. The method can prove a cycle closed off, but not show it open, and it did not prove this one closed off. The agreement cliffs near 107 and 145 stay unexplained.
+
+**Record searched:** as L1536. Nothing posted.
+
