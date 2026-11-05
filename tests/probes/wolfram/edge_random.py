@@ -34,6 +34,7 @@ for seed in range(S0 + 1, S0 + NS + 1):
     else: a = rng.getrandbits(N); b = a ^ ((rng.getrandbits(N) | 1) << x0)      # the damage: random above the centre, the centre damaged
     t0 = time.time(); pblack = 0; nwin = 0; jumps = collections.Counter(); dens = [0] * 5; m_prev = None; pb_prev = 0
     special = [0, 0]; dec = 0; xL0 = x0; after_stay = [0, 0]; after_jump = collections.defaultdict(lambda: [0, 0])
+    hst = collections.Counter(); hbk = collections.Counter(); n_stall = 0      # CL744: the hazard by stall length n and by t mod 32 (control)
     for t in range(T):
         d = a ^ b; xL = lowbit(d, N)
         if RING:
@@ -46,8 +47,10 @@ for seed in range(S0 + 1, S0 + NS + 1):
         for k in range(1, 5): dens[k] += (w >> (k - 1)) & 1
         if (w & 3) == 3 and ((a >> (xL - 2)) & 31) == 0b10110: special[(a >> (xL + 3)) & 1] += 1
         if m_prev is not None:
-            if pb_prev: jumps[m - m_prev] += 1; after_jump[m - m_prev][pb] += 1
-            else: after_stay[pb] += 1
+            if pb_prev: jumps[m - m_prev] += 1; after_jump[m - m_prev][pb] += 1; n_stall = 0
+            else:
+                after_stay[pb] += 1; n_stall += 1
+                key = (min(n_stall, 12), t % 32); hst[key] += 1; hbk[key] += pb
         pb_prev = pb; m_prev = m
         a = step(a); b = step(b)
     xL = lowbit(a ^ b, N); lam = (x0 - xL) / T
@@ -61,6 +64,11 @@ for seed in range(S0 + 1, S0 + NS + 1):
           f"{[round(dens[k]/nwin, 4) for k in range(1, 5)]}; P-G3 state: C_(m+3)=1 on {special[1]} of {sum(special)} visits "
           f"({special[1]/max(1,sum(special)):.3f}); hazard after a stay q {q:.4f}; P(parent black | jump d) {{{', '.join(f'{j}: {pbd[j]:.3f}' for j in pbd if j <= 6)}}}; "
           f"S4's formula 1/(1 + S/q) with S {S:.4f}: {formula:.4f}; {time.time()-t0:.0f} s")
+    hn = {n: (sum(v for (nn, _), v in hbk.items() if nn == n) / sum(v for (nn, _), v in hst.items() if nn == n), sum(v for (nn, _), v in hst.items() if nn == n)) for n in range(1, 13) if sum(v for (nn, _), v in hst.items() if nn == n)}
+    print("    h(n) by stall length (ticks): " + ", ".join(f"{n}: {h:.4f} ({c})" for n, (h, c) in hn.items()))
+    qphi = [(sum(v for (nn, pp), v in hbk.items() if pp == phi and nn >= 2) / sum(v for (nn, pp), v in hst.items() if pp == phi and nn >= 2), sum(v for (nn, pp), v in hst.items() if pp == phi and nn >= 2)) for phi in range(32)]
+    mq = sum(b * c for b, c in qphi) / sum(c for _, c in qphi); sd = (sum((b - mq) ** 2 for b, _ in qphi) / 31) ** 0.5; binom = (mq * (1 - mq) / (sum(c for _, c in qphi) / 32)) ** 0.5
+    print(f"    control, q by t mod 32 (n >= 2): mean {mq:.4f}, sd over phases {sd:.4f}, binomial {binom:.4f}, ratio {sd/binom:.2f}")
 import statistics
 if speeds: print(f"  speed over {NS} backgrounds: mean {statistics.mean(speeds):.4f}" + (f", sd {statistics.stdev(speeds):.4f}" if NS > 1 else ""))
 print("(ii) the left damage front, standard frame: two random rows differing in one cell")

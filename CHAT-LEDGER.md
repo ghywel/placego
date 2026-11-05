@@ -31994,3 +31994,39 @@ My own pull: the hazard by phase and stall length on the strip against the rando
 windowed probe with two counters added (about five minutes), and a prediction I can write now, that the excess is not
 uniform over the 32 phases. Second: the damage field's density profile and its recurrence, as before. Both bounded;
 the owner's word first.
+
+## CL744 — Cloud: the stall hazard by stall length and by phase, at the owner's word; the strip against three new random rows with the same counters; three exact-looking facts from the smoke test to be settled by enumeration. Predictions first (2026-11-05 13:35 GMT)
+
+**The measurement.** `edge_windows.py` (two counters added): past wheel 200,000 on the seed's run to 894,235, every stall
+tick is keyed by its stall length n (n = 1 the first stall tick after a heal, keyed also by the preceding jump d) and by
+the strip's phase t mod 32; the hazard h(n) = P(parent black at t + 1 | n), the per-phase q(φ) over stalls with n ≥ 2,
+and the strip's own law u(φ) = P(C_(j−3) ⊕ C_(j−2) = 1 | C_(j−1) = 0) per phase over wheels ≥ 200,000, so that q(φ) − u(φ)
+is the selection by phase. `edge_random.py` (the same counters): three new ring runs (seeds 41–43, 900,000 ticks) give
+h(n) on fair rows and the control q by t mod 32, which has no meaning there. The windows' dependence as before: ranges
+and ratios to the binomial spread, no significance.
+
+**From the smoke test on the 165,750-wheel rows past 100,000 (51,138 stall ticks; a lookup, not the run):** h(n) =
+0.522, 0.502, 0.496, 0.493, 0.503, 0.506 for n = 1 … 6; h(1 | d) = 0.531 (d = 1), 0.504 (d = 2: the second opportunity,
+CL722's 0.494 on the period-16 stage), **1.000 (d = 4, 571 of 571), 1.000 (d = 5, 114 of 114), 0.000 (d = 6, 28 of 28)**;
+q(φ) with 1,600 stalls a phase has spread 1.23 times binomial, inconclusive at that size; u(φ) is flat, 0.493–0.504.
+
+**Predictions.**
+- **P-K1 (phase):** past 200,000 (about 400,000 stall ticks, binomial spread 0.006 a phase) the spread of q(φ) over the
+  32 phases is at least twice the binomial, and q(φ) − u(φ) carries it (u flat within 0.005): the strip's phase is what
+  the stalled edge reads. Lean 45%. Counterfactual: a ratio of 1.3 or less, the excess uniform in phase, a global
+  selection that the strip's periodicity does not explain, and the pull is wrong as stated.
+- **P-K2 (stall length):** the seed's h(1), pooled over jumps, exceeds the random rows' h(1) by 0.003 or more, and h(n)
+  for n ≥ 3 agree within 0.004: the excess sits at the first opportunity after a heal. Lean 40%. Counterfactual: the
+  excess is spread over all n, or sits in the weights (shorter stalls), not in the hazards.
+- **P-K3 (control):** on the random rows the spread of q by t mod 32 is within 1.3 times binomial. Lean 85%.
+- **P-K4 (three facts):** after a jump of 4 or 5 whose new parent is white, the parent is black at the next tick; after
+  a jump of 6 with a white new parent, it is white at the next tick; both hold on the random rows, and both follow from
+  the window at the death by finite enumeration (a check over the seven-bit window and the coins of the chain), which
+  would make them PROVED like CL741's two. Lean 70%. Counterfactual: a single exception on the random rows, and the
+  facts are the strip's, not the rule's.
+Caps: substitute (CL710), ulimit 8 GiB, timeout 1,800 s, four processes on four cores, about ten minutes.
+
+**Record searched:** §20.1 (h(n) to 65,536: 0.267, 0.518, 0.49–0.50, 0.455 at n = 8 — a different n, counted from the
+heal including the forced stall), CL722 item 5, GC2635 (the parent-phase clock: every wait reconstructed from the
+phase word of the new parent — the phase there is the parent's own period word, not t mod 32), CL743; `record_find`
+"hazard by phase", "stall length": none beyond these.

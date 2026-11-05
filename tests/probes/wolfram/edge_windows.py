@@ -4,7 +4,9 @@ quantity of the heal identity read per window of wheels: ticks T, heals D, stays
 B (stays followed by a black parent), q = B/W, S = A/D, p = D/T, the jump law and P(parent black | jump d); the finite
 identity D/T = (q - (H_T - H_0)/T)/(q + S) (GC2682, PROVED two-party) checked in each window; and the same for the
 whole run. A window is the stretch of ticks during which the edge lies in [a, a + WIDTH).
-Usage: python3 edge_windows.py ROWSDIR [WIDTH]   (the rows of tree16_data.py at 894,236 wheels; A0.bin at phase 0)"""
+CL744: also the hazard past wheel LATE by stall length n (n = 1 also by the preceding jump) and by phase t mod 32, against
+the strip's own per-phase law of the XOR below a white bit.
+Usage: python3 edge_windows.py ROWSDIR [WIDTH] [K] [LATE]   (the rows of tree16_data.py at 894,236 wheels; A0.bin at phase 0)"""
 import sys, time, collections
 ROWS = sys.argv[1]; WIDTH = int(sys.argv[2]) if len(sys.argv) > 2 else 100000
 A0 = int.from_bytes(open(f"{ROWS}/A0.bin", 'rb').read(), 'little')
@@ -18,6 +20,11 @@ assert cyc[P] == cyc[0], "the strip does not return at 32 on these wheels"; cyc 
 class Win:
     def __init__(s): s.T = 0; s.D = 0; s.A = 0; s.B = 0; s.H0 = None; s.HT = None; s.jumps = collections.Counter(); s.pbj = collections.Counter(); s.t0 = None; s.t1 = None
 wins = collections.defaultdict(Win); allw = Win()
+# CL744: the hazard by stall length n and phase t mod 32, past wheel LATE; n = 1 also by the preceding jump d
+LATE = int(sys.argv[4]) if len(sys.argv) > 4 else 200000
+st = collections.Counter(); bk = collections.Counter()        # (n, phi) -> stall ticks, blacks at t+1
+st1 = collections.Counter(); bk1 = collections.Counter()      # n = 1 by the preceding jump d
+n_stall = 0; last_jump = None
 t0 = time.time(); x = 1; t = 0; m_prev = None; h_prev = None; dec = 0
 while True:
     C = cyc[t % P]; e = x ^ C; m = lowbit(e)
@@ -26,6 +33,12 @@ while True:
     h = (C >> (m - 1)) & 1 if m >= 1 else 0           # H_t: the parent black = the edge heals at t -> t+1
     x2 = step(x); C2 = cyc[(t + 1) % P]; e2 = x2 ^ C2; m2 = lowbit(e2)
     h2 = (C2 >> (m2 - 1)) & 1 if 1 <= m2 < K else 0  # H_{t+1}
+    if h: n_stall = 0; last_jump = m2 - m
+    else:
+        n_stall += 1
+        if m >= LATE:
+            key = (min(n_stall, 12), t % P); st[key] += 1; bk[key] += h2
+            if n_stall == 1 and last_jump is not None: st1[min(last_jump, 7)] += 1; bk1[min(last_jump, 7)] += h2
     for w in (wins[m // WIDTH], allw):
         if w.H0 is None: w.H0 = h; w.t0 = t
         w.T += 1; w.HT = h2; w.t1 = t + 1
@@ -46,3 +59,28 @@ def report(name, w):
     print(f"{name:16s} {w.T:9d}  {p:.4f}  {q:.4f}  {S:.4f}  {ident:.6f}  {mean:.4f}  {jl[1]:.3f}  {jl[2]:.3f}  {jl[3]:.3f}  {pb[1]:.3f}  {pb[4]:.3f}  {pb[5]:.3f}  {w.H0}  {w.HT}   exact: {abs(ident - p) < 1e-12}")
 for k in sorted(wins): report(f"{k*WIDTH}-{min((k+1)*WIDTH, K)-1}", wins[k])
 report("all", allw)
+import math
+print(f"the hazard past wheel {LATE}: stall ticks {sum(st.values())}, blacks {sum(bk.values())}, q = {sum(bk.values())/sum(st.values()):.4f}")
+print("  h(1) by the preceding jump d: " + ", ".join(f"{d}: {bk1[d]/st1[d]:.4f} ({st1[d]})" for d in sorted(st1)))
+hn = {}
+for n in range(1, 13):
+    S_ = sum(v for (nn, _), v in st.items() if nn == n); B_ = sum(v for (nn, _), v in bk.items() if nn == n)
+    if S_: hn[n] = (B_ / S_, S_)
+print("  h(n) by stall length (ticks): " + ", ".join(f"{n}: {h:.4f} ({c})" for n, (h, c) in hn.items()))
+qphi = []
+for phi in range(P):
+    S_ = sum(v for (nn, pp), v in st.items() if pp == phi and nn >= 2); B_ = sum(v for (nn, pp), v in bk.items() if pp == phi and nn >= 2)
+    qphi.append((B_ / S_, S_))
+mean_q = sum(b * c for b, c in qphi) / sum(c for _, c in qphi); sd = (sum((b - mean_q) ** 2 for b, _ in qphi) / (P - 1)) ** 0.5
+binom = (sum(math.sqrt(mean_q * (1 - mean_q) / c) ** 2 for _, c in qphi) / P) ** 0.5
+print(f"  q by phase (n >= 2): mean {mean_q:.4f}, sd over the 32 phases {sd:.4f}, binomial sd per phase {binom:.4f}, ratio {sd/binom:.2f}; "
+      f"phases above {mean_q+0.01:.3f} or below {mean_q-0.01:.3f}: {[phi for phi, (b, _) in enumerate(qphi) if abs(b - mean_q) > 0.01]}")
+print("  q(phi): " + " ".join(f"{b:.3f}" for b, _ in qphi))
+# the strip's own law per phase, unconditional on the edge: P(C_(j-3) xor C_(j-2) = 1 | C_(j-1) = 0) over wheels >= LATE
+import numpy as np
+def bits(row): return np.unpackbits(np.frombuffer(row.to_bytes((K + 7) // 8, 'little'), dtype=np.uint8), bitorder='little')[:K].astype(np.int64)
+u = []
+for phi in range(P):
+    b = bits(cyc[phi])[LATE:]; w = (b[2:] == 0); xr = b[:-2] ^ b[1:-1]; u.append(float(xr[w].mean()))
+print("  the strip's own u(phi) = P(xor below a white bit) per phase, wheels >= LATE: " + " ".join(f"{v:.3f}" for v in u))
+print(f"  selection by phase, q(phi) - u(phi): sd over phases {np.std([b - v for (b, _), v in zip(qphi, u)], ddof=1):.4f}; mean {np.mean([b - v for (b, _), v in zip(qphi, u)]):.4f}")
