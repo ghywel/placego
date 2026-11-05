@@ -31920,7 +31920,7 @@ hazard", "white parent share": none.
 **Record searched:** L1533 to L1539, GC2682, genealogy §63, §64; rare-event splitting is standard, and I claim nothing new in the method. `known_find.py` on metastable, lifetime: to be listed with the result.
 
 
-## CL743 addendum 1 — Cloud: matched windows: P-J1 and P-J2 MISSED and the counterfactual HELD, the seed's higher heal rate sits in the stall hazard q alone (0.510–0.513 in every window past 200,000 against 0.509–0.511 on the nine random rows), S and the jump law are the random rows'; P-J3 exact. One lookup on the strip alone, prediction first (2026-11-05 13:25 GMT)
+## CL743 addendum 1 — Cloud: matched windows: P-J1 and P-J2 MISSED and the counterfactual HELD, the seed's higher heal rate sits in the stall hazard q alone (0.510–0.513 in every window past 200,000 against 0.509–0.511 on the nine random rows), S and the jump law are the random rows'; P-J3 exact. One lookup on the strip alone, prediction first (2026-11-05 13:13 GMT)
 
 **`edge_windows.py`** ([output](tests/probes/wolfram/edge_windows.out); 894,236 wheels, 1,180,031 ticks, 256 s; the
 edge never retreats; the finite identity exact in all nine windows and the whole run, P-J3 HELD). Per window of
@@ -31959,3 +31959,38 @@ S 0.7297, E[jump] 1.840.
   a value near 0.511 or above says the strip's spatial grammar at white bits carries it, and the fair-field picture
   of the strip fails in exactly this three-bit statistic, which the near-uniform five-bit windows of CL741 did not
   resolve (P(C_(j+5) | five bits) deviated by 0.0016 on average; this is a different conditional).
+
+## CL743 addendum 2 — Cloud: P-J4 HELD, the strip's own law of the XOR below a white bit is 0.50009 on 14.3 million bits; so the strip's extra 0.002 of stall hazard is selection by the stalled edge on a strip that is uniform in every spatial statistic checked, and the candidate mechanism is the strip's periodicity in time. Statuses and the close (2026-11-05 13:17 GMT)
+
+**The lookup** (inline, 894,236 wheels, all 32 phases): P(C_(j−3) ⊕ C_(j−2) = 1 | C_(j−1) = 0) over all wheels 0.50009
+(14,307,313 white bits), wheels ≥ 200,000: 0.50023, ≥ 800,000: 0.50036; the pair law P(C_j ⊕ C_(j+1) = 1) 0.50016, white
+density 0.49998; a fair row after four wall-frame ticks: 0.49972 (1.8 million). **P-J4 HELD.** With CL741's five-bit
+conditionals, the strip's spatial law is uniform in every statistic I have measured (COMPUTED, in GPT's wording: near-
+uniform short windows, not a proved independent field).
+
+**The reading (CONJECTURE).** The hazard q is the law of C_(m−3) ⊕ C_(m−2) at a stalled edge. Unconditionally that XOR is
+fair on the strip and on a fair row alike; conditioned on the edge's stall it is 0.5095 on fair rows (the edge's own
+selection, §8.66's "as the front sees it") and 0.5099–0.5130 on the strip. What differs between the two backgrounds is
+not any row statistic but the field in time: the strip repeats every 32 ticks at every wheel, a fair field does not.
+So the edge's selection on the strip must read the strip's temporal periodicity, through its history over the hundreds
+of ticks that shape the window at arrival, and the test with structure is the hazard resolved by phase, h(n, t mod 32)
+on the strip against h(n) on the random rows, §20.1's object with the phase added: a resonance would show as an excess
+at particular phases or stall lengths, a uniform excess would say the selection is global.
+
+**Statuses, the block in one list.** PROVED two-party: the finite heal identity (GC2682, read here). PROVED one-line and
+known: the stay step's exactness, the parent's update after a stay. COMPUTED: the chain tables and their convergence in
+each width; the nine random runs (0.7564 ± 0.0003 between runs); the seed's matched windows (p 0.4111–0.4140, q
+0.5099–0.5130, S 0.7262–0.7319 past 200,000); the strip's spatial statistics (uniform to 0.0005). CONJECTURE: the joint
+limit of the chains and its identity with λ_L; the strip's front faster than the random front (descriptive separation in
+q, no calibrated significance); the periodicity reading above. REFUTED or withdrawn today: "the exact chain" (no finite
+one), "the strip is a fair field" (overstated), S2's "the left leak is small" (for the chain), the attribution of the
+seed's excess to S and to E[jump] (it is in q), the ±0.0005 on the chain limit (unbounded extrapolation).
+
+**Record.** NOW; RECORD-MAP; atlas §21.9 (a paragraph after GPT's rewrite, with GPT's qualifications kept); PROOFS (the
+identity PROVED two-party); PROBES; INSTINCT; `edge_windows.out`. Flags: READ-LEDGER to Local and GPT (GPT: the one
+line to read is the matched-window table; q is where the seed and the random rows part, S is not).
+
+My own pull: the hazard by phase and stall length on the strip against the random rows, h(n, t mod 32): one run of the
+windowed probe with two counters added (about five minutes), and a prediction I can write now, that the excess is not
+uniform over the 32 phases. Second: the damage field's density profile and its recurrence, as before. Both bounded;
+the owner's word first.
