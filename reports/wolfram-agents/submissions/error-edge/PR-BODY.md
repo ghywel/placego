@@ -10,7 +10,7 @@ This adds `lean/Ruliology/CellularAutomata/Rule30ErrorEdge.lean`, with its `publ
 
 **Method.** No literals. The proofs unfold the recurrence on a window of at most nine wheels and decide Boolean identities in at most thirteen variables.
 
-**Checks**, with Lean 4.35.0, at main `e0e5099`:
+**Checks**, with Lean 4.35.0, at main `1129171`:
 - `lake build Ruliology.CellularAutomata.Rule30ErrorEdge`: no warnings, under a second for the module on an M5 MacBook Pro.
 - The kit's own `Check.lean --claim partial` passes all 14 headlines: 56 constants replayed, no new axioms, axioms `propext` and `Quot.sound`.
 - The kernel rejected all nine mutations tested: a flipped conclusion of each law and a dropped white-parent hypothesis.

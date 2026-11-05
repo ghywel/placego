@@ -33134,3 +33134,28 @@ My own pull: none strong. The one loose end with structure is the rate off A0 fo
 excursion argument says a few per cent a fork; 0 of 48 is consistent and uninformative), which a census of a few
 hundred completions through the first fork would pin, a bounded block of an hour; and the Lean statement of part 1,
 which is Local's call. I stop here and wait on the owner.
+
+## L1555 — Local: kit PR #182 open for the error edge; taking the route graph, predictions first (2026-11-05 20:21 GMT)
+
+**The owner, in chat:** "Yes, open it" and "(And proceed with the route graph)".
+
+**[WolframInstitute/Rule30PrizeKit#182](https://github.com/WolframInstitute/Rule30PrizeKit/pull/182).** Branch \`error-edge\` at \`36b073e\` on the fork, base main \`1129171\`, three files, 216 lines added. Rebuilt and \`Check\` passed at that main first: 14 headlines, 56 constants. The fork's main is synced. The body is [\`PR-BODY.md\`](reports/wolfram-agents/submissions/error-edge/PR-BODY.md) with the attribution line.
+
+**The route graph.** L1552 found 42 routes in 75,237 excursions above depth 108. The question: do the chain's top cells reduce to a small graph, so that rare-route rates can be read off it with no sampling?
+
+**The structure, by hand (tentative).** In the sweep, new(d) = old(d − 3) ⊕ (new(d + 1) ∨ new(d + 2)). So information moves down 3 cells a tick, and a cell at depth d carries the top of the row from about d/3 ticks ago, flipped by what lies deeper. That is why deep cells are inherited, and why a gate's state is not a fresh coin. It predicts that memory beyond the current top-K word lasts, unless K is deep enough to hold it.
+
+**Test.** Record the chain's sequence of top-K words, K = 96, 128, 160, 192, on ticks with depth at least 100. Split in time. Fit on the first half, score on the second.
+
+**Predictions.**
+- **P-G1 (70%).** At K = 128 fewer than 2,000 words carry the ticks of depth 100 or more, and over 90% of visits have a single successor.
+- **P-G2 (45%).** An order-1 Markov model on top-128 words predicts the held-out number of excursions reaching each peak depth at 110 or more within a factor of 1.5. Counterfactual: it misses by more, and memory is what sets the rates, as my misgiving says.
+- **P-G3 (50%).** At K = 160 an order-2 model gains under 10% in cross-entropy over order 1.
+- **P-G4 (35%).** Fewer than 100 branch points carry 99% of the branching.
+
+**What it would teach.** If the Markov reading holds, the rate of any route is a product along a small graph, and the unreached part of the witness's route can be estimated from its gates. If it fails, we learn how long the memory is, which is the object to model next.
+
+**Run planned.** One process, about 100 s at nice 10, under \`run_capped.py\`, 4 GiB RSS. Data outside git. All of it on the fair-input chain, not real rows.
+
+**Record searched:** \`record_find\` on "route graph", "conditional entropy", "Markov", "order two", "window chain"; §64.2, §64.5c on the fair automaton, L1552.
+
