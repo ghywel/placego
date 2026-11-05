@@ -1,0 +1,29 @@
+K=128 excursions 991211 nodes 1171 train nodes 1076 visits 1479850 single-successor share 0.518 branch nodes 231 carrying 99% of branching 98
+   held-out bits per tick: order 1 0.2811, order 2 0.2632, gain 6.4%, ticks 1476222, at branch nodes 712394
+   peak>=105: predicted  323414.3 observed  323428 ratio 1.00
+   peak>=110: predicted     598.3 observed     590 ratio 1.01
+   peak>=115: predicted     564.3 observed     555 ratio 1.02
+   peak>=120: predicted     524.1 observed     523 ratio 1.00
+   peak>=125: predicted     240.7 observed     252 ratio 0.96
+K=160 excursions 991211 nodes 51849 train nodes 43720 visits 1479850 single-successor share 0.640 branch nodes 6910 carrying 99% of branching 5765
+   held-out bits per tick: order 1 0.2895, order 2 0.2594, gain 10.4%, ticks 1476222, at branch nodes 529232
+   peak>=105: predicted  321481.0 observed  323428 ratio 0.99
+   peak>=110: predicted     540.0 observed     590 ratio 0.92
+   peak>=115: predicted     513.0 observed     555 ratio 0.92
+   peak>=120: predicted     489.4 observed     523 ratio 0.94
+   peak>=125: predicted     229.1 observed     252 ratio 0.91
+   peak>=130: predicted      22.5 observed      31 ratio 0.73
+   peak>=135: predicted      20.0 observed      27 ratio 0.74
+   peak>=140: predicted      19.0 observed      25 ratio 0.76
+   peak>=145: predicted      19.0 observed      23 ratio 0.83
+K=192 excursions 991211 nodes 728800 train nodes 488606 visits 1479850 single-successor share 0.785 branch nodes 31970 carrying 99% of branching 31135
+   held-out bits per tick: order 1 0.9953, order 2 0.9172, gain 7.8%, ticks 1476222, at branch nodes 287302
+   peak>=105: predicted  260127.0 observed  323428 ratio 0.80
+   peak>=110: predicted     350.0 observed     590 ratio 0.59
+   peak>=115: predicted     338.0 observed     555 ratio 0.61
+   peak>=120: predicted     327.0 observed     523 ratio 0.63
+   peak>=125: predicted     127.0 observed     252 ratio 0.50
+   peak>=130: predicted      13.0 observed      31 ratio 0.42
+   peak>=135: predicted      12.0 observed      27 ratio 0.44
+   peak>=140: predicted      12.0 observed      25 ratio 0.48
+   peak>=145: predicted      12.0 observed      23 ratio 0.52

@@ -1672,3 +1672,8 @@ away. Write the criterion in the mechanism's own terms, not the instrument's. Pu
 random configurations (a census of a few hundred) and the Lean shape of the worst-case statement are the two bounded
 things left, and both are the owner's or Local's call. Misgiving: "48 of 48" at two forks says little about the rate,
 and I must not let it read as "random configurations never leave A0". (20:09 GMT.)
+
+## Local, 5 November 2026 — after the route graph (L1557)
+
+Doing: the graph pull ran and did not deliver a rate. Pull, moderate: **why 0.2 bits a cell.** The word count grows like the cloud, and the sweep moves information down 3 cells a tick, so 0.2 bits a cell would be about 0.6 bits a tick of real choice. Measured held-out entropy is about 0.25 bits a tick on deep ticks. If those two numbers can be related by hand, that is a structural law and not a statistic. Second: the tracker run for the gates past tick 18. Misgiving: I keep producing good measurements of a surrogate. Real rows are the point, and nothing since L1545 has gone back to them. (20:30 GMT.)
+

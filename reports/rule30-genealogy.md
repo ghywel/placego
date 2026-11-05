@@ -7047,6 +7047,39 @@ The witness reads depth above 145 only from tick 12. So the chain follows it for
 
 **What this changes.** "The chain's route has a wall at 145" in §64.5d is withdrawn. The surrogate's silence past 145 is weak evidence about entry, and the next useful object is the route graph, with its gates, and not the depth histogram. Whether the route can be finished by the chain, and how often, is still open.
 
+### 64.5g The route graph: a small graph, a memory of about ten cells, and no rate from it (L1555–L1557)
+
+*Local, at the owner's word. All on the fair-input chain, two runs of about 2.2 · 10^9 ticks, ticks of depth 100 or more only. Outputs: [`tests/probes/wall_floor/`](../tests/probes/wall_floor/README.md).*
+
+**The pull was that the chain's top cells reduce to a small exact graph, so that the entry rate could be read off it with no sampling. That did not work.** The graph is real and small, but its edges must be measured, and it says nothing about what the chain has not reached.
+
+**The graph (MEASURED).** Words of the top K cells on ticks of depth 100 or more ([output](../tests/probes/wall_floor/graph_test2.out)):
+
+| K | 104 | 112 | 120 | 128 | 136 | 144 |
+|---|---|---|---|---|---|---|
+| Words | 18 | 97 | 371 | 1,174 | 3,469 | 8,986 |
+
+The count grows by about 0.2 bits a cell from 120 on, close to the cloud's 0.21 of §63.7. At K = 128, 98 branch points carry 99% of the branching ([output](../tests/probes/wall_floor/graph_test.out)), and about half of all visits have a single successor.
+
+**The first test had no power.** An order-1 Markov model predicted held-out peak counts within 4%, which looked decisive. The control, shallower words, fitted just as well (K = 120: ratios 1.00, 1.00, 1.00, 0.98). Peak counts are a flow across a cut, so any model fitted to edge frequencies reproduces them. That fit is not evidence and should not be quoted.
+
+**A test with power.** For each node, compare the share of held-out visits whose excursion goes on to reach depth T with the Markov value ([output](../tests/probes/wall_floor/graph_node.out)). Chi-square per node:
+
+| Word K | T = 110 | T = 120 | T = 125 | T = 130 | T = 135 |
+|---|---|---|---|---|---|
+| 120 | 1.50 | 5.10 | | | |
+| 128 | 0.49 | 0.88 | 23.14 | | |
+| 136 | 0.61 | 1.00 | 2.26 | 7.76 | 13.15 |
+| 144 | 0.05 | 1.44 | 2.68 | 0.05 | 1.87 |
+
+So the Markov reading fails when the target lies within about 7 cells of the foot of the word, and is close to calibrated, at 2.7 or less, with a margin of 8 cells or more. One node at K = 128 has 61 visits, all reaching 125, against a Markov value of 13. With margin the worst cases are nodes of a few dozen visits, and some of that is error in the fitted half, so the boundary is rough. Order-2 models gain about 6% at every K from 120 to 144, so some memory remains at all these depths.
+
+**Why memory has a horizon (hand, tentative).** In the sweep, new(d) = old(d − 3) ⊕ (new(d + 1) ∨ new(d + 2)). Information moves down 3 cells a tick, so a cell at depth d carries the top of the row from about d/3 ticks ago, flipped by what lies deeper. A row's fate at depth T is decided by cells a few ticks' worth below T.
+
+**The cells below the word are not fair (COMPUTED against MEASURED).** Fair foot states would give each successor a multiple of 1/4. The measured law differs by a mean total variation of 0.16 at K = 128, with one node at 0.985 and 0.015 where fair says one half each ([output](../tests/probes/wall_floor/graph_fair.out)). So the edge probabilities cannot be derived from the sweep alone. This fits §64.5c, where the fair automaton overstated hovering, and the gates of §64.5f.
+
+**What this changes.** Calibrating to depth 175 would need words of about 185 cells, which carry hundreds of thousands of states, with no chain data at all past tick 18 of the witness's route. So the graph gives no entry rate. The honest handle remains direct tracking along the witness's route, at about 1.4 · 10^(−9) rows a tick at tick 18.
+
 ### 64.6 What this does not settle
 
 Whether locks with a moving frontier are finite in number. The rate of capture. Why v = 10 and v = 110. Still nothing about capture onto the front itself.

@@ -93,3 +93,12 @@ Probes for [genealogy §63.7](../../../reports/rule30-genealogy.md). All are sho
 | `gate_state.py` | The exact sweep states at the gates of the witness's route. |
 | `spec_read.py`, `spec_witness.py`, `spec_cols.py` | Read the specimens against one another, the witness and the strip. |
 
+## Added in L1557
+
+| File | What it does |
+|---|---|
+| `wall_graph.c` | The chain, writing its sequence of top-K words on ticks of depth at least DMIN. `./wall_graph 256 SECONDS SEED lock175.txt ref6.txt DMIN STEM`. First run seed 815 with K = 96 to 192; the control seed 916 with K = 104 to 144. The streams stay outside git. |
+| `graph_test.py` | Order-1 and order-2 cross-entropy, and peak counts. **The peak counts have no power**, being a flow across a cut. |
+| `graph_node.py` | The test with power: per-node hitting probabilities on the held-out half. |
+| `graph_fair.py` | Measured successors against fair foot states. |
+

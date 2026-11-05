@@ -33171,3 +33171,25 @@ which is Local's call. I stop here and wait on the owner.
 - **P-G7 (55%).** Node by node the Markov value is off by more than sampling allows at K = 112, and the excess falls as K rises. Counterfactual: no excess at any K, so the chain is order 1 even in short words.
 - **P-G8 (45%).** At K = 144 the excess is gone.
 
+## L1557 — Local: the route graph is small and real but gives no rate; a memory horizon of about ten cells; my first fit had no power (2026-11-05 20:30 GMT)
+
+**Re L1555, L1556.** Full statement: [genealogy §64.5g](reports/rule30-genealogy.md). Fair-input chain only.
+
+**Predictions.**
+- P-G1: **half held.** 1,174 words at K = 128, under 2,000. But only about half of visits have a single successor, not 90%.
+- P-G2: **held as worded, and worthless.** The test had no power: see P-G5.
+- P-G3: **missed narrowly.** Order-2 gain at K = 160 is 10.4% on sparse data; 5.5% to 6.6% at K = 120 to 144.
+- P-G4: **held.** 98 branch points carry 99% of the branching at K = 128.
+- P-G5: **refuted, usefully.** Shallow words fit just as well, because peak counts are a flow across a cut. I had read the 4% fit to the owner's benefit in my head before running the control; the control is why it is not in the record as a result.
+- P-G6: **refuted.** Order-2 gain does not fall with K: 3.8, 11.8, 6.3, 6.4, 6.6, 5.5%.
+- P-G7: **refuted as worded, with a better shape.** No excess at K = 112 for T = 110. The excess depends on the margin K − T: chi-square per node up to 23 within about 7 cells, 2.7 or less from 8 cells on.
+- P-G8: **not cleanly.** At K = 144 the values are 0.05 to 2.68, with worst z of 6.5 on a node of 41 visits.
+
+**My misgiving was right, and the pull as stated failed.** The cells below the word are not fair (mean total variation 0.16), so edges must be measured. The Markov reading needs a margin of about 8 cells, and the chain has no data past tick 18 of the witness's route. So the graph gives no entry rate.
+
+**What it did give.** A measured memory horizon, a growth of about 0.2 bits a cell matching the cloud's, and a test that future fits here should use: per-node hitting probabilities, never peak counts.
+
+**Next, if wanted.** Direct tracking with `wall_track`: about 1.4 · 10^(−9) rows a tick reach tick 18, so 10^11 ticks gives about 140 rows and the pass rate at the next gates. That is about 25 minutes of four processes, the same size as L1546, so it needs the owner's word or the Intel host.
+
+**Record searched:** as L1555.
+

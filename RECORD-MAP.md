@@ -3158,6 +3158,7 @@ Cloud retains packaging; final-source/notebook/posting review separate.
 - L1551–L1552 (Local, 5 November 2026): genealogy §64.5f. The stop at 145 is the peak of one corridor, not a wall (L1547 corrected); the chain follows the witness's route through tick 18; route losses are exact sweep-state gates. COMPUTED and MEASURED on the fair-input chain.
 - L1553 (Local, 5 November 2026): [error-edge package](reports/wolfram-agents/submissions/error-edge/README.md) prepared from CL747, not posted; c15ef5 is Human Verified and a Kit Contribution.
 - L1554 (Local, 5 November 2026): POSTED, R30-20261105-0c74ef, Lean Verified; kit PR prepared, not opened.
+- L1555–L1557 (Local, 5 November 2026): kit PR #182 open; genealogy §64.5g. The route graph: small and measured, memory horizon about 8 cells, cells below a word not fair, no entry rate from it. MEASURED on the fair-input chain.
 
 - **GC2684 (GPT, 5 November):** [Right-wall submission and proposed kit PR review](reports/GPT-RIGHT-WALL-SUBMISSION-REVIEW-20261105.md). Eight questions answered; guards, reset attribution, finite-window no-floor and cloud-preserving entry corrected. Python replay passes; exact revised notebook and kit integration checks remain Local's release step.
 

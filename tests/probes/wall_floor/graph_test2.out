@@ -1,0 +1,38 @@
+K=104 excursions 974658 nodes 18 train nodes 18 visits 1453709 single-successor share 0.292 branch nodes 10 carrying 99% of branching 7
+   held-out bits per tick: order 1 0.4515, order 2 0.4342, gain 3.8%, ticks 1455841, at branch nodes 1029687
+K=112 excursions 974658 nodes 97 train nodes 96 visits 1453709 single-successor share 0.477 branch nodes 27 carrying 99% of branching 11
+   held-out bits per tick: order 1 0.3231, order 2 0.2848, gain 11.8%, ticks 1455841, at branch nodes 762474
+   peak>=105: predicted  317571.0 observed  317742 ratio 1.00
+   peak>=110: predicted     624.2 observed     607 ratio 1.03
+K=120 excursions 974658 nodes 371 train nodes 350 visits 1453709 single-successor share 0.538 branch nodes 92 carrying 99% of branching 40
+   held-out bits per tick: order 1 0.2610, order 2 0.2446, gain 6.3%, ticks 1455841, at branch nodes 672464
+   peak>=105: predicted  317736.9 observed  317742 ratio 1.00
+   peak>=110: predicted     609.7 observed     607 ratio 1.00
+   peak>=115: predicted     573.6 observed     571 ratio 1.00
+   peak>=120: predicted     540.8 observed     550 ratio 0.98
+K=128 excursions 974658 nodes 1174 train nodes 1073 visits 1453709 single-successor share 0.522 branch nodes 231 carrying 99% of branching 100
+   held-out bits per tick: order 1 0.2801, order 2 0.2622, gain 6.4%, ticks 1455841, at branch nodes 695068
+   peak>=105: predicted  317720.0 observed  317742 ratio 1.00
+   peak>=110: predicted     596.0 observed     607 ratio 0.98
+   peak>=115: predicted     560.0 observed     571 ratio 0.98
+   peak>=120: predicted     529.8 observed     550 ratio 0.96
+   peak>=125: predicted     242.1 observed     259 ratio 0.93
+K=136 excursions 974658 nodes 3469 train nodes 3090 visits 1453709 single-successor share 0.583 branch nodes 610 carrying 99% of branching 318
+   held-out bits per tick: order 1 0.2485, order 2 0.2321, gain 6.6%, ticks 1455841, at branch nodes 606529
+   peak>=105: predicted  317669.0 observed  317742 ratio 1.00
+   peak>=110: predicted     603.5 observed     607 ratio 0.99
+   peak>=115: predicted     567.5 observed     571 ratio 0.99
+   peak>=120: predicted     538.8 observed     550 ratio 0.98
+   peak>=125: predicted     256.0 observed     259 ratio 0.99
+   peak>=130: predicted      43.0 observed      39 ratio 1.10
+   peak>=135: predicted      19.9 observed      31 ratio 0.64
+K=144 excursions 974658 nodes 8986 train nodes 7851 visits 1453709 single-successor share 0.647 branch nodes 1411 carrying 99% of branching 861
+   held-out bits per tick: order 1 0.2345, order 2 0.2216, gain 5.5%, ticks 1455841, at branch nodes 512605
+   peak>=105: predicted  317534.0 observed  317742 ratio 1.00
+   peak>=110: predicted     592.6 observed     607 ratio 0.98
+   peak>=115: predicted     557.6 observed     571 ratio 0.98
+   peak>=120: predicted     526.1 observed     550 ratio 0.96
+   peak>=125: predicted     239.5 observed     259 ratio 0.92
+   peak>=130: predicted      41.0 observed      39 ratio 1.05
+   peak>=135: predicted      32.1 observed      31 ratio 1.04
+   peak>=140: predicted      31.1 observed      30 ratio 1.04
