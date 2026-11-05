@@ -1,0 +1,9 @@
+w 45, edges kept 1256: windows 903, parts 234, cyclic parts 6, sizes [658, 4, 4, 3, 3, 3]
+  closed cyclic parts [658, 4]; windows with no real successor 94, with no real predecessor 120
+  largest cyclic part: size 658 of which in the free cloud 658 ; free cloud size 798
+w 45, edges kept 935: windows 903, parts 299, cyclic parts 5, sizes [595, 4, 4, 3, 3]
+  closed cyclic parts [595, 4]; windows with no real successor 268, with no real predecessor 273
+  largest cyclic part: size 595 of which in the free cloud 595 ; free cloud size 798
+w 45, edges kept 881: windows 903, parts 312, cyclic parts 4, sizes [584, 4, 4, 3]
+  closed cyclic parts [584, 4]; windows with no real successor 295, with no real predecessor 295
+  largest cyclic part: size 584 of which in the free cloud 584 ; free cloud size 798

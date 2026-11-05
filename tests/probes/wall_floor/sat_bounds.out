@@ -1,0 +1,18 @@
+W 45 L 15 window 0: vars 776 clauses 5745: UNSATISFIABLE in 0.0s
+W 45 L 15 window 1: vars 776 clauses 5745: UNSATISFIABLE in 0.0s
+W 45 L 15 window 2: vars 776 clauses 5745: UNSATISFIABLE in 0.0s
+W 45 L 15 window 3: vars 776 clauses 5745: UNSATISFIABLE in 0.0s
+W 45 L 14 window 0: vars 690 clauses 5086: SATISFIABLE in 0.0s
+   letters oldest first: AABABABABABABAB
+W 45 L 14 window 1: vars 690 clauses 5086: UNSATISFIABLE in 0.0s
+W 45 L 14 window 2: vars 690 clauses 5086: UNSATISFIABLE in 0.0s
+W 45 L 14 window 3: vars 690 clauses 5086: UNSATISFIABLE in 0.0s
+W 45 L 17 window 0: vars 963 clauses 7182: UNSATISFIABLE in 0.0s
+W 45 L 17 window 1: vars 963 clauses 7182: UNSATISFIABLE in 0.0s
+W 45 L 17 window 2: vars 963 clauses 7182: UNSATISFIABLE in 0.0s
+W 49 L 17 window 0: vars 963 clauses 7186: UNSATISFIABLE in 0.0s
+W 49 L 17 window 1: vars 963 clauses 7186: UNSATISFIABLE in 0.0s
+W 49 L 17 window 2: vars 963 clauses 7186: UNSATISFIABLE in 0.0s
+W 53 L 17 window 0: vars 963 clauses 7190: UNSATISFIABLE in 0.0s
+W 53 L 17 window 1: vars 963 clauses 7190: UNSATISFIABLE in 0.0s
+W 53 L 17 window 2: vars 963 clauses 7190: UNSATISFIABLE in 0.0s

@@ -1,0 +1,20 @@
+P=1: words 0, to rain 0, to other constants 0, undecided at 20000 steps 0
+P=2 v=10 reaches rain, alternating from column 41
+P=2: words 1, to rain 1, to other constants 0, undecided at 20000 steps 0
+P=3 v=110 reaches rain, alternating from column 132
+P=3: words 2, to rain 1, to other constants 0, undecided at 20000 steps 1
+P=4: words 3, to rain 0, to other constants 0, undecided at 20000 steps 3
+P=5: words 6, to rain 0, to other constants 0, undecided at 20000 steps 6
+P=6: words 9, to rain 0, to other constants 0, undecided at 20000 steps 9
+P=7: words 18, to rain 0, to other constants 0, undecided at 20000 steps 18
+P=8: words 30, to rain 0, to other constants 0, undecided at 20000 steps 30
+P=9: words 56, to rain 0, to other constants 0, undecided at 20000 steps 56
+P=10: words 99, to rain 0, to other constants 0, undecided at 20000 steps 99
+P=11: words 186, to rain 0, to other constants 0, undecided at 20000 steps 186
+P=12: words 335, to rain 0, to other constants 0, undecided at 20000 steps 335
+P=13: words 630, to rain 0, to other constants 0, undecided at 20000 steps 630
+P=14: words 1161, to rain 0, to other constants 0, undecided at 20000 steps 1161
+P=15: words 2182, to rain 0, to other constants 0, undecided at 20000 steps 2182
+P=16: words 4080, to rain 0, to other constants 0, undecided at 20000 steps 4080
+P=17: words 7710, to rain 0, to other constants 0, undecided at 20000 steps 7710
+P=18: words 14532, to rain 0, to other constants 0, undecided at 20000 steps 14532

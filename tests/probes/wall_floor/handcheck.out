@@ -1,0 +1,7 @@
+n 0 width 11 count 2 formula 2
+n 1 width 16 count 8 formula 8
+n 2 width 21 count 32 formula 32
+n 3 width 26 count 128 formula 128
+n 4 width 31 count 512 formula 512
+AB floor offset 41 v [0, 1] formulas that fail: [] letters at offset 9 [0, 1]
+AAB floor offset 132 v [1, 1, 0] formulas that fail: [] letters at offset 9 [0, 0, 1]
