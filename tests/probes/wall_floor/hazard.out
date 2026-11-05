@@ -1,0 +1,17 @@
+ticks 2063597568 chains 2 captures 0 AB 1 breaks 228063
+agreement 0 to 29: quiet ticks 11900029, breaks 60 ticks later 1058, rate 8.89e-05
+agreement 30 to 33: quiet ticks 44748419, breaks 60 ticks later 1100, rate 2.46e-05
+agreement 34 to 35: quiet ticks 490338465, breaks 60 ticks later 172140, rate 3.51e-04
+agreement 36 to 38: quiet ticks 36392353, breaks 60 ticks later 2872, rate 7.89e-05
+agreement 39 to 41: quiet ticks 487350718, breaks 60 ticks later 667, rate 1.37e-06
+agreement 42 to 49: quiet ticks 547816894, breaks 60 ticks later 33599, rate 6.13e-05
+agreement 50 to 59: quiet ticks 106747448, breaks 60 ticks later 13441, rate 1.26e-04
+agreement 60 to 69: quiet ticks 93909557, breaks 60 ticks later 2499, rate 2.66e-05
+agreement 70 to 79: quiet ticks 21400542, breaks 60 ticks later 667, rate 3.12e-05
+agreement 80 to 87: quiet ticks 46512411, breaks 60 ticks later 20, rate 4.30e-07
+agreement 88 to 90: quiet ticks 57163297, breaks 60 ticks later 0, rate 0.00e+00
+agreement 91 to 99: quiet ticks 24179894, breaks 60 ticks later 0, rate 0.00e+00
+agreement 100 to 109: quiet ticks 2681654, breaks 60 ticks later 0, rate 0.00e+00
+agreement 110 to 599: quiet ticks 6770, breaks 60 ticks later 0, rate 0.00e+00
+agreement depth exact: 96:693067 97:75649 98:575692 99:1377 100:444733 101:406686 102:314774 103:107801 104:502251 105:402370 106:275187 107:817 108:108166 109:118869 110:54 111:642 113:972 114:25 115:504 117:54 118:472 119:1030 121:504 122:398 123:696 124:529 125:113 126:241 127:209 131:183 136:38 137:2 141:36 144:34 145:34
+agreement depth tail: >=145:34 >=140:104 >=135:144 >=130:327 >=125:890 >=120:3017 >=115:5077 >=110:6770 >=105:912179 >=100:2688424 >=95:5410058 >=90:26953892 >=85:104867562 >=80:130544026 >=75:139040944 >=70:151944568 >=65:182548635 >=60:245854125

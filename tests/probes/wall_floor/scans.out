@@ -1,0 +1,14 @@
+done 4 BA rc=0 closed lines 1
+P=4 BA: nodes 25003 tests 20525 closed 104 capped 0
+done 6 BA rc=0 closed lines 1
+P=6 BA: nodes 54942 tests 4997 closed 1352 capped 0
+done 8 BA rc=124 closed lines 1
+CLOSED w 45 closure 4 ..####.#.##.##.########......#.##..#.###...##
+done 6 BAA rc=124 closed lines 3
+CLOSED w 175 closure 40 ..####.##...####.#..#.#.###..#.##....###.###..#...##...#.##..##...####..##..####.##..###.#.##.#.
+done 9 BAA rc=0 closed lines 1
+P=9 BAA: nodes 10624937 tests 1810419 closed 183769 capped 617469
+done 7 BABABAA rc=0 closed lines 0
+P=7 BABABAA: nodes 165789 tests 128393 closed 0 capped 0
+done 9 BABABABAA rc=0 closed lines 0
+P=9 BABABABAA: nodes 572701 tests 22128 closed 0 capped 0
