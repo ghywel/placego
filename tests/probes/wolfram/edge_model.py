@@ -196,7 +196,8 @@ for key in [(2, 2, 2, False), (2, 2, 2, True)]:
     if key not in results: continue
     pi = results[key][0]
     print(f"P-E4a/P-F2: total variation between M{'_strip' if key[3] else ''}(2,2,2)'s stationary law and the empirical law of the 7-bit state: {0.5 * np.abs(pi - emp).sum():.4f}")
-pi, drate, jl, mdens, T = results[(2, 2, 2, False)] if (2, 2, 2, False) in results else results[MODELS[0][:3] + (len(MODELS[0]) > 4,)]
+if (2, 2, 2, False) not in results: sys.exit(0)          # the Markov test and the state table are for the two-wheel chain
+pi, drate, jl, mdens, T = results[(2, 2, 2, False)]
 # the Markov test: per-state transition rows, model vs empirical, for well-visited states
 rows = []
 for s in range(nS):

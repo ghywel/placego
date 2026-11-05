@@ -31735,3 +31735,28 @@ each chain's q printed so that S4 decomposes it).**
   Counterfactual: the L increments stop shrinking, or q overshoots 0.51: the memory below the edge is long-range,
   contrary to S2's reading of the data, and the stay phase itself is where the chain fails.
 - **P-H6:** W = 3 at L = 4, R = 5 changes the speed by less than 0.002. Lean 70%.
+
+## CL742 addendum 2 — Cloud: P-H5 HELD (the L direction converges to 0.7674, q to 0.5108), P-H6 MISSED and the miss is the finding: at the larger widths the error window matters, W = 3 brings the jump law onto the data's (P(2) = 0.534, E[jump] 1.843) and the speed to 0.7585. Prediction for the W direction before the run (2026-11-05 12:26 GMT)
+
+**`edge_model.py`, E = 6:** M(4, 5, 2) 0.7661 (q 0.5103), M(5, 5, 2) 0.7671 (q 0.5107), M(6, 5, 2) 0.7674 (q 0.5108): the
+L increments are +0.0010 and +0.0003, as P-H5 said, and the chains' hazard converges to 0.5108 against the random rows'
+measured 0.5101, 0.5089, 0.5090 (the three ring runs finished so far) and the seed's 0.5086. S4's formula reproduces
+each chain's P(heal) within 0.0006 (0.4134 for 0.4140, 0.4137 for 0.4143, 0.4138 for 0.4143, 0.4111 for 0.4116): the
+formula is exact to that order inside the chains too.
+- **P-H6 MISSED, and this is where the residual was.** M(4, 5, 3) gives 0.7585, a change of −0.0076 from W = 2 (the
+  tolerance was 0.002), with P(2) = 0.534 (the seed past 200,000: 0.533; the random rows 0.531–0.534), E[jump] 1.8428
+  (1.842; 1.838–1.842), P(heal) 0.4116 (0.4123; 0.4106–0.4118), q 0.5091: every factor on the data's value to 0.001–0.002.
+  At L = 2 the W direction had done nothing (0.763, 0.763, 0.761); at L = 4, R = 5 it does 0.008. The mechanism by hand:
+  after a jump of 1 the new window's top error is e_(m+3)(t+1) = e_(m+1) ⊕ [(a_(m+2) ∨ a_(m+3)) ⊕ (C_(m+2) ∨ C_(m+3))](t),
+  which reads e_(m+3)(t), a coin at W = 2 and a state bit at W = 3; the post-jump law then feeds the exact stay map and
+  sets the next death's window. The three widths are not separable: each direction's effect appears only once the
+  others are wide. The earlier conclusion of addendum 1, "the converged chain does not give the front", was premature:
+  it was converged in L and R at W = 2.
+
+**Prediction for the W direction (M(4, 5, W) for W = 4, 5, 6 and M(5, 5, 3), M(6, 5, 3); E = 6; about 20 minutes).**
+- **P-H7:** the W increments shrink geometrically (W = 4: −0.002 ± 0.001, W = 5: −0.0007 ± 0.0005, W = 6 smaller), the
+  L increments at W = 3 stay at +0.001 and +0.0003, and the extrapolated (L, R, W) → ∞ value lies within 0.002 of the
+  nine-run random speed (0.7564 on the first three ring runs): the hierarchy converges to the random front. Lean 50%.
+  Counterfactual: the W increments do not shrink, or the limit settles at 0.758–0.760 (the seed's long run) rather than
+  the random value: either the chain is not converging (the Palm correlations are long-range in the error field) or
+  the strip's front and the random front differ and the chain, built from fair coins, sides with one of them.
