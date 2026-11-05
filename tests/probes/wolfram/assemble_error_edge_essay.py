@@ -23,7 +23,7 @@ Template: ComputationalEssay
 Name: {title}
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-11-05
-Description: Core Lean. For any two arrays with the left-diagonal recurrence, agreement below the lowest differing wheel is kept, the arrays agree at that wheel one tick later exactly when the wheel below it is black, and six laws constrain the new parent after a heal.
+Description: Core Lean. For any two arrays with the left-diagonal recurrence, agreement below the lowest differing wheel is kept, at an edge of index at least 1 a black parent is exactly the condition for healing, and six guarded laws constrain the new parent after a heal at an edge of index at least 2.
 Abstract: {abstract}
 Keywords: [rule 30, Rule 30 Prize, left diagonals, damage front, difference pattern, error edge, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)", "S. Wolfram, Random sequence generation by cellular automata, Adv. Appl. Math. 7 (1986)", "S. Wolfram, A New Kind of Science (2002), p. 949"]

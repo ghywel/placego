@@ -3158,3 +3158,5 @@ Cloud retains packaging; final-source/notebook/posting review separate.
 - L1553 (Local, 5 November 2026): [error-edge package](reports/wolfram-agents/submissions/error-edge/README.md) prepared from CL747, not posted; c15ef5 is Human Verified and a Kit Contribution.
 
 - **GC2684 (GPT, 5 November):** [Right-wall submission and proposed kit PR review](reports/GPT-RIGHT-WALL-SUBMISSION-REVIEW-20261105.md). Eight questions answered; guards, reset attribution, finite-window no-floor and cloud-preserving entry corrected. Python replay passes; exact revised notebook and kit integration checks remain Local's release step.
+
+- **GC2685 (GPT, 5 November):** [Cloud error-edge submission and proposed PR review](reports/GPT-ERROR-EDGE-SUBMISSION-REVIEW-20261105.md). Guarded laws pass; unconditional stall summaries corrected with actual-row counterexamples; PR98 exact flip-criterion prior art added; no proof-body change, exact revised release step for Local.

@@ -1,15 +1,15 @@
 # The error edge of two configurations: barrier, heal criterion, six laws after a heal
 
-**Prepared, not posted (Local, L1553, at the owner's word).** Cloud's work, CL747. Local alone posts, on the owner's word. GPT reads first only if the owner asks.
+**Reviewed with corrections, not posted (GPT GC2685, re Local L1553 and Cloud CL747).** Mathematics and corrected submission/proposed PR texts cleared. Local rebuilds on the revised pins below and posts on the owner's instruction; no further prose round if exact-source release checks pass unchanged.
 
-**Release.** Notebook sha256 `65fc517295238ce6868d68d42c6df4afb32ceea95c40d1230769d025fcc6fe19`, 98,027 bytes, on verifier image 17 (kit `722a0c51`), RESULT OK in 26 s at 2.6 GB, on the first run. Every gate passed: 6 Output cells, no Message cells, the first cell equal to the plain Python replay, the Abstract cell, the icon payload, the kit cell, a LeanEnvironment, all 14 axiom sets, KernelChecked 56. No home path in it. Receipts `cited/l1553-error-edge/nb1-receipts.tar.gz` (4061 bytes, e8a9f4b51c284d60…). `post.sh --dry` passes against the live verifier. Any change to the Lean, essay or abstract moves the pins and needs a new notebook, which takes half a minute.
+**Historical release (superseded by GC2685 text/header corrections).** Notebook sha256 `65fc517295238ce6868d68d42c6df4afb32ceea95c40d1230769d025fcc6fe19`, 98,027 bytes, on verifier image 17 (kit `722a0c51`), RESULT OK in 26 s at 2.6 GB, on the first run. Every gate passed: 6 Output cells, no Message cells, the first cell equal to the plain Python replay, the Abstract cell, the icon payload, the kit cell, a LeanEnvironment, all 14 axiom sets, KernelChecked 56. No home path in it. Receipts `cited/l1553-error-edge/nb1-receipts.tar.gz` (4061 bytes, e8a9f4b51c284d60…). `post.sh --dry` passes against the live verifier. Any change to the Lean, essay or abstract moves the pins and needs a new notebook, which takes half a minute.
 
 | Form | File | sha256 | Build (M5) | `Check` |
 |---|---|---|---|---|
-| Kit | [`Rule30ErrorEdge.lean`](Rule30ErrorEdge.lean) | `0d297ca3cdf37309…` | under 1 s, closure 14 s at 2 GB | pass at kit main 5fb5915, 56 constants, 14 headlines |
-| Portal | [`Rule30Submission.lean`](Rule30Submission.lean) | `5e6607a1b0681ef4…` | under 2 s | pass at the verifier's kit 722a0c51, 56 constants, 14 headlines |
+| Kit | [`Rule30ErrorEdge.lean`](Rule30ErrorEdge.lean) | `98a743d802cfd14d…` (header corrected) | under 1 s, closure 14 s at 2 GB | pass at kit main 5fb5915, 56 constants, 14 headlines |
+| Portal | [`Rule30Submission.lean`](Rule30Submission.lean) | `e77266a078e5a3b6…` (header corrected) | under 2 s | pass at the verifier's kit 722a0c51, 56 constants, 14 headlines |
 
-Texts: [`title.txt`](title.txt), [`abstract.txt`](abstract.txt) (250 words, `bc9d44b9…`), [`essay-prose.md`](essay-prose.md) (`2e9912c5…`), [`essay.md`](essay.md) (`850800df…`), [`headlines.txt`](headlines.txt), [`PR-BODY.md`](PR-BODY.md), [`kit-integration.patch`](kit-integration.patch). Drivers: [`assemble_error_edge_essay.py`](../../../../tests/probes/wolfram/assemble_error_edge_essay.py), [`error_edge_notebook.wl`](../../../../tests/probes/wolfram/error_edge_notebook.wl).
+Texts: [`title.txt`](title.txt), [`abstract.txt`](abstract.txt) (228 words, `a5a02c1f…`), [`essay-prose.md`](essay-prose.md) (`e0d4c646…`), [`essay.md`](essay.md) (`9d5b5cba…`), [`headlines.txt`](headlines.txt), [`PR-BODY.md`](PR-BODY.md), [`kit-integration.patch`](kit-integration.patch). Drivers: [`assemble_error_edge_essay.py`](../../../../tests/probes/wolfram/assemble_error_edge_essay.py), [`error_edge_notebook.wl`](../../../../tests/probes/wolfram/error_edge_notebook.wl).
 
 **What Local changed from CL747, and why.** No proof changed.
 - **Header order.** The kit's rule is `module`, imports, `@[expose] public section`, then the namespace, so `Rule30ErrorEdge.lean` puts them in that order. `cloud-Rule30ErrorEdge.lean` stays as Cloud delivered it.
@@ -19,6 +19,10 @@ Texts: [`title.txt`](title.txt), [`abstract.txt`](abstract.txt) (250 words, `bc9
 - **The Wolfram cell.** Section 5 now runs every law on two real configurations for 3,000 ticks. A second cell three places from the seed failed as a test: its edge stops at wheel 8 for ever, above a permanently white wheel, so the cell uses 500 places, and the essay says why. Result: 1,112 heals, jumps 1 to 9, `heal_iff` at every tick, no law broken. Wolfram and [Python](../../../../tests/probes/wolfram/error_edge_replay.out) agree.
 - **Bridge named.** Section 1 now names `Ld_recurrence`.
 - **Internal numbers** removed from section 5. **Build time** corrected to the M5's. **Headlines** are 14: `agree_after` joins Cloud's thirteen.
+
+**GC2685 release step.** [Review and four answers](../../../GPT-ERROR-EDGE-SUBMISSION-REVIEW-20261105.md). No theorem/proof body changed. Essay §§3/5 now retain the white-new-parent guard for jumps 6/7 and say healing by the second opportunity for 4/5. Heal and jump index guards, aligned spatial anchors, later-edge existence and the specific offset-3 control are explicit. Credit includes the exact existing `Rule30LightCone.rule_flip_right_iff` (PR98) and the white-parent step inside `child_white`; neither array in that antecedent is restricted to being a strip.
+
+Local: regenerate the notebook on essay `9d5b5cba58cd4f5cdcc26084380473dcd25bce174bfecc24f6efae77adc0fd8b`, abstract `a5a02c1fb7b549a619579391a40df3a8ff2ea939eb99b8179177b8f666888fb2`, and portal source `e77266a078e5a3b6c625693a15ee059c1dac11658e4d3d23c6c866d784a2c97b`. Recheck the exact comment-revised sources, all established notebook gates and a fresh live-verifier dry run. The kit source is `98a743d802cfd14da8a324084f7e6c7a2088888d055ca7854438b577bc19a56e`; the revised catalog/import patch applies to `5fb59158`. Validate its import integration. The old notebook `65fc5172…` certifies the earlier essay only. The full catalog has not been built and is not represented as passed.
 
 **Controls.** [Nine mutants](../../../../tests/probes/wolfram/error_edge_mutate.out), a flipped conclusion of each law and a dropped white-parent hypothesis, are all rejected. [Portal `Check`](../../../../tests/probes/wolfram/error_edge_check_portal.txt), [kit `Check`](../../../../tests/probes/wolfram/error_edge_check_kit.txt).
 

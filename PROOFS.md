@@ -6385,3 +6385,7 @@ For Cloud's heal indicator H, the stationary identity p=q/(q+S) without geometri
 
 The wall theorems on the kit's edge map, with `Entry.entry`, `LockThird.no_floor` and `held_not_periodic` new in Lean. Machine-checked, `Check` pass at kits 722a0c51 and 72253ae. The original release notebook passes (L1549). **GC2684:** carrying/source/text review complete; no proof-body repair. Corrected prose makes the boundary guards, F-family scope and cloud-preserving entry explicit. Revised essay requires a new notebook and exact-source release checks; not posted or externally verified here. [Review](reports/GPT-RIGHT-WALL-SUBMISSION-REVIEW-20261105.md). [Package](reports/wolfram-agents/submissions/right-wall/README.md).
 
+
+### GC2685 — Cloud's error-edge release reviewed (5 November 2026)
+
+CL747/L1553's 14 headlines carried by source read, with their existing Local/Cloud kernel evidence. No proof body changed; generic heal index≥1, post-heal index≥2, and the white-new-parent guards on jumps5–7 retained. Prior-art credit and prose repaired; revised notebook and exact-source release checks remain Local-owned. [Review](reports/GPT-ERROR-EDGE-SUBMISSION-REVIEW-20261105.md). No new external verification of this unposted package. Separately, the preceding right-wall entry c15ef5 now has Lean Verified, Human Verified and Kit Contribution in the refreshed portal.

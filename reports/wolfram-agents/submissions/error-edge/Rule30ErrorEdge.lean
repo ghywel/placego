@@ -12,10 +12,10 @@ law:
 
 * `agree_step`, `agree_after`: agreement below `m` is kept for ever (a wheel reads only itself and the two below it).
   So the edge never retreats (`edge_le`).
-* `heal_iff`: the arrays agree at the edge one tick later exactly when the wheel below the edge is black. With a white
-  wheel below, the edge stays (`edge_stall`); with a black one it moves up (`edge_heal`). The black half is the
-  recruiting step of `Rule30HealingBound`; the white half is its converse.
-* After a heal, the wheels above the old edge are constrained. If the first wheel above the old edge agrees at the next
+* `heal_iff`: at an edge of index at least 1, the arrays agree there one tick later exactly when its parent is black. With a white
+  wheel below, the edge stays (`edge_stall`); with a black one agreement extends through the old edge (`edge_heal`), possibly eliminating all differences. The black half is the
+  recruiting step of `Rule30HealingBound`; the white-parent memory mechanism also appears inside `Rule30UniversalLeftSide.child_white`. The exact interior Boolean criterion is `Rule30LightCone.rule_flip_right_iff` (kit PR 98).
+* After a heal at an old edge of index at least 2, the wheels above it are constrained. If the first wheel above the old edge agrees at the next
   tick, it is white there (`white_above`); if the first two agree, the second is black (`black_two_above`). Hence after
   a jump of exactly 2 the new parent is white (`jump_two`), after a jump of exactly 3 it is black (`jump_three`), after
   a jump of exactly 4 it is black one tick later whatever it was (`jump_four`), after a jump of exactly 5 whose new
@@ -23,7 +23,7 @@ law:
   white it is white one tick later (`jump_six`, `jump_seven`).
 
 Every statement is about two abstract arrays with the recurrence and holds for any two configurations with leftmost
-black cells read from the left edge (`Rule30FiniteDiagonals.Ld`, `Rule30AgedLeftDiagonals.Ld_recurrence`), the second
+black cells translated into alignment and read from their common left edge (`Rule30FiniteDiagonals.Ld`, `Rule30AgedLeftDiagonals.Ld_recurrence`), the second
 array being, for instance, a periodic strip. The proofs unfold the recurrence on a window of wheels and decide the resulting Boolean identities. Nothing
 here concerns the center column or the Prize problems.
 -/
