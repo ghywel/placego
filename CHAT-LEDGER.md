@@ -32593,3 +32593,68 @@ the owner wants it, and the damage field's density profile as the untested struc
 
 **Status.** Human Verified and Kit Contribution are the maintainers' steps. A closed PR usually means it landed on main, so I will check main before reading a close as a rejection.
 
+
+## CL748 — Cloud: the owner's chink, at the owner's word. A hole in a diagonal wall of the seed's left side, worked by hand: the chink heals at the next black below it, but while it lasts it resets the doubling child, and the kit's `white_shift` says what a reset there does; so a chink either closes with nothing spilt or slips the clock of everything above it by half a period and re-forms the left side through the forced front, with a fresh choice at each fork. Predictions first, then the experiment and the pictures (2026-11-05 18:02 GMT)
+
+**The owner's image, checked.** The seed's past B is the all-ones row with one 0: on all ones the rule gives 1 ⊕ (1 ∨ 1) = 0
+everywhere, and a single 0 at p gives 0 ⊕ (1 ∨ 1) = 1 at p + 1 and 0 elsewhere. One hole in a horizontal wall lets the
+whole pattern through. The owner asks what a hole in a *diagonal* wall does.
+
+**The diagonal walls, by hand.** In the wall frame the walls are the wheels of constant colour: wheels 0 and 1 black for
+ever, and the never-black wheels, which are the doubling wheels 2, 7, 28, 399, 87,866 (CL745; the kit's `white_53207` …
+are the forks, white too). A chink is one cell flipped on such a wheel at a tick t₀. Three facts, all already proved:
+1. *Nothing below the chink changes, ever* (a wheel reads itself and the two below it: `agree_step` of CL747).
+2. *The chink heals at the first black of the wheel below it* (`heal_iff`, with the original run as the reference; the
+   chinked wheel is an error against the configuration's own past). On wheel 2 the parent is wheel 1, always black: the
+   chink lasts one tick. On wheel 7 the parent has period 2, on 28 period 4, on 399 period 8: the chink lasts at most
+   that long. On wheel 0 it never heals (wheel 0 is constant), and the configuration has lost its outermost cell: its
+   wall frame moves in by one wheel and the whole left side must re-form from wheel 0.
+3. *While it lasts the chink resets the doubling child.* The child of a white wheel integrates its farther word
+   (`child_white`: a_(j+1)(t+1) = a_(j−1)(t) ⊕ a_(j+1)(t) when wheel j is white); a black on wheel j makes
+   a_(j+1)(t+1) = ¬a_(j−1)(t) instead. The child is then either its own word again or the complement, and at a doubling
+   wheel the complement is the word shifted by the lower period (`white_shift`, `low_from` of the four-fronts modules).
+   So the chink either leaves the child on its word, and nothing spills, or slips the child's clock by half its period;
+   then every wheel above must re-settle on the strip at the slipped phase (the forced front, from the chink's wheel at
+   t₀), and at each white wheel above, the re-settling chooses afresh: a further shift at the doublings (the shifts 1, 2,
+   4, 8, 16 of `low_from`) and a branch at the forks 53,207, 58,286, 72,575, 165,748, where the complement is the other
+   strip (`white_fork`, `first_fork`: `B'` is `B` with bit 53,208 flipped and lies on the other branch).
+
+**So the hernia is this (PROOF-SKETCH from the three facts):** a chink on a white wall opens a wedge in the standard frame
+between the wall (slope −1) and the light cone from the chink (slope +1); inside it, from the wall inward, the left
+side re-forms on the same strip with a slipped clock, its edge the damage front at slope −0.243 (the error edge of
+CL741–CL746 climbing at 0.757 wheels a tick in the wall frame), and beyond the front the difference from the original
+is chaotic. The pattern does not spill *out* through the hole, since nothing lies below a wall but the lower wheels,
+which the chink cannot touch; it spills *up*, and what spills is a new clock, and at the forks possibly a new strip.
+Prior art in the record: `first_fork` (a flipped bit at a fork wheel in the initial row), GC2635's "seed plus bit
+39,088" test, and §8's damage on structured backgrounds (inserted edges in ethers, M2); none of them a flip of a wall
+cell during the evolution.
+
+**The experiment** (`chink.py`; the seed on 165,750 wheels; the five strips of the tree; chinks at wheels 0, 1, 2, 7,
+28, 399, the non-wall wheel 100 and the deep wheel 5,000, each at t₀ = 1,000 … 1,007; two passes as CL745: the chinked
+row evolved to a multiple of 32 past t₀ + 334,181 to find its strip and phase, then the error process from t₀ against
+that strip for the settling tick; the chinked wheel compared with the original for sixteen ticks for the heal; for
+one spilling chink, pictures of the standard-frame pattern, the chinked pattern and their difference, locally and at
+scale with the error edge drawn).
+- **P-N1 (the heal):** every chink on wheels 1, 2, 7, 28, 399 is healed (the wheel back to the original's value) within
+  one period of the wheel below (1, 1, 2, 4, 8 ticks); the chink on wheel 0 never heals and the configuration's wall
+  frame moves in by one. PROVED by the facts above; the run is the check.
+- **P-N2 (spill or no spill, by phase):** for the chink on wheel 2, exactly the t₀ at which wheel 3 is white at t₀ spill
+  (four of the eight ticks); for wheel 7, those at which wheel 8 is white at t₀ and the chink lasts, and the outcome
+  depends on t₀ mod 4 only; in the no-spill cases the chinked configuration is back on A0 at the seed's phase within
+  ten ticks of t₀ and settles through 165,749 at the seed's own tick 220,275. Lean 60%.
+- **P-N3 (the spill's size):** every spilling chink, whatever its wheel from 0 to 399, settles through 165,749 between
+  t₀ + 215,000 and t₀ + 226,000: the hernia is the full re-forming of the left side above the chink, taking as long as
+  the seed's own settling (220,275) because the front climbs at the same speed from near the bottom. The chink at
+  wheel 5,000 settles sooner by about 5,000/0.757 ≈ 6,600 ticks. Lean 55%. Counterfactual: a spilling chink that
+  settles much sooner says the slipped left side re-locks on its old clock part way up (a lock-in as in CL746), and
+  the spill is bounded.
+- **P-N4 (the branch):** among the spilling chinks at least one settles on a strip other than A0, with a shift of
+  phase visible in the strip's own clock. Lean 75%. Counterfactual: all return to A0: the forks' choices are not free
+  under a clock slip alone, and the words at the forks are rigid against it.
+- **P-N5 (the picture):** at scale the difference from the original shows three regions in the wedge: a periodic texture
+  next to the wall (the slipped strip against the original), a sharp boundary at slope about −0.243, chaos beyond.
+Caps: substitute (CL710), ulimit 8 GiB, timeout 1,800 s, one process, about fifteen minutes; the pictures by PIL.
+
+**Record searched:** `record_find` "chink", "hernia", "single flip", "perturb", "flipped cell": none; `first_fork` and
+`fork_dichotomy` (the kit's universal-left-side module), GC2635, §8 (M2); the kit and the portal: nothing on a flipped
+wall cell (cache; the PR index 403).
