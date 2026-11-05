@@ -8,7 +8,7 @@ settling bound and its strip identified among ROWSDIR/*.bin at every phase.
 Usage: python3 prefix_race.py ROWSDIR P N RNGSEED"""
 import sys, os, random, time
 ROWS = sys.argv[1]; Pfx = int(sys.argv[2]); N = int(sys.argv[3]); RS = int(sys.argv[4])
-K = 165750; MASK = (1 << K) - 1; P = 32; T0 = 350016; FORKS = {53207: 71115, 58286: 77909}
+K = 165750; MASK = (1 << K) - 1; P = 32; T0 = 350016; FORKS = {53207: 71115, 58286: 77909}; TICKS = {tk: j for j, tk in FORKS.items()}
 def step(v): return ((v << 2) ^ ((v << 1) | v)) & MASK
 def lowbit(x): return (x & -x).bit_length() - 1 if x else K
 strips = {}
@@ -22,9 +22,9 @@ for n in range(N):
     t0 = time.time()
     y = ((rng.getrandbits(K) >> Pfx) << Pfx) | 1; x = 1; t = 0; at = {}; prof = []
     while t < T0:
-        if t in FORKS or t % 5000 == 0:
+        if t in TICKS or t % 5000 == 0:
             m = lowbit(x ^ y)
-            if t in FORKS: at[t] = m
+            if t in TICKS: at[t] = m
             if t % 5000 == 0: prof.append(m)
         x = step(x); y = step(y); t += 1
     found = None
