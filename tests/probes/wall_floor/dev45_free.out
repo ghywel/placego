@@ -1,0 +1,8 @@
+free graph: m 12 rounds 50 longest path to the wall from any state outside the lock: 50 ticks (NOT CONVERGED: a cycle)
+  ph 0 D 12 w ###..####... L 50
+  ph 0 D 12 w ###..###.#.. L 50
+  ph 0 D 12 w ##.#...###.. L 50
+  ph 0 D 12 w ##.#...##.#. L 50
+  ph 0 D 12 w ###..###.##. L 50
+  ph 0 D 12 w ###..####..# L 50
+  ph 0 D 12 w ###..###.#.# L 50
