@@ -11,6 +11,7 @@ M_strip: the strip's coins weighted by the strip's own frequency of the whole wi
 Usage: python3 edge_model.py ROWSDIR [L,R,W,E[,1] ...]   (a fifth field 1 = the strip-law chain)   (the rows of tree16_data.py at 165,750 wheels; A0.bin at phase 0)"""
 import sys, time, collections
 import numpy as np
+import scipy.sparse as sp
 
 # ---------- the model ----------
 def model(L, R, W, E, cfreq=None):
@@ -27,7 +28,7 @@ def model(L, R, W, E, cfreq=None):
     idx = np.arange(N, dtype=np.int64)
     coins = [((idx >> i) & 1).astype(np.int8) for i in range(ncoin)]
     lo, hi = -L - 2, R + E
-    T = np.zeros((nS, nS)); death = np.zeros(nS); jumps = np.zeros((nS, R + E + 2)); pbj = np.zeros((nS, R + E + 2)); overflow = 0.0; stayblack = np.zeros(nS)
+    Trows = []; Tcols = []; Tvals = []; death = np.zeros(nS); jumps = np.zeros((nS, R + E + 2)); pbj = np.zeros((nS, R + E + 2)); overflow = 0.0; stayblack = np.zeros(nS)
     maxj = min(E, R + E - W)      # the largest jump whose new state (strip to m'+R, errors to m'+W) is inside the computed window
     for s in range(nS):
         Cs = [(s >> i) & 1 for i in range(L + 1 + R)]          # C at -L..R
@@ -69,16 +70,19 @@ def model(L, R, W, E, cfreq=None):
             code = np.zeros(N, dtype=np.int64)
             for i in range(L + 1 + R): code |= C2[j - L + i].astype(np.int64) << i
             for i in range(W): code |= e2[j + 1 + i].astype(np.int64) << (L + 1 + R + i)
-            T[s] += np.bincount(code[sel], weights=wt[sel], minlength=nS)
+            row = np.bincount(code[sel], weights=wt[sel], minlength=nS); nz = np.nonzero(row)[0]
+            Trows.append(np.full(len(nz), s)); Tcols.append(nz); Tvals.append(row[nz])
         sel = m2 > maxj
         if sel.any():
             w = wt[sel].sum(); overflow += w / nS; jumps[s, maxj + 1] += w
-            T[s] += w / nS                    # a fresh uniform state
-    assert np.allclose(T.sum(1), 1), T.sum(1)
+            Trows.append(np.full(nS, s)); Tcols.append(np.arange(nS)); Tvals.append(np.full(nS, w / nS))     # a fresh uniform state
+    T = sp.csr_matrix((np.concatenate(Tvals), (np.concatenate(Trows), np.concatenate(Tcols))), shape=(nS, nS))
+    assert np.allclose(np.asarray(T.sum(1)).ravel(), 1)
+    TT = T.T.tocsr()
     # stationary measure by power iteration
     pi = np.full(nS, 1 / nS)
     for _ in range(20000):
-        pi2 = pi @ T
+        pi2 = TT @ pi
         if np.abs(pi2 - pi).max() < 1e-14: pi = pi2; break
         pi = pi2
     drate = float(pi @ death)
@@ -206,7 +210,7 @@ for s in range(nS):
     er = np.zeros(nS)
     for s2 in range(nS): er[s2] = trans[(s, s2)]
     er /= er.sum()
-    rows.append((0.5 * np.abs(er - T[s]).sum(), s, n))
+    rows.append((0.5 * np.abs(er - T[s].toarray().ravel()).sum(), s, n))
 rows.sort(reverse=True)
 print(f"Markov test on {len(rows)} states with >= 1000 visits: median row TV {np.median([r[0] for r in rows]):.4f}, worst five:")
 for tvr, s, n in rows[:5]: print(f"  TV {tvr:.4f} {sname(s)} visits {n}; empirical weight {emp[s]:.4f}, model {pi[s]:.4f}")
