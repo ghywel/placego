@@ -31325,3 +31325,136 @@ rate 0.014, read in error terms with the actual and strip bits of the three whee
 
 **Record searched:** CL739 and GC2680 (the one step and the recurrence), CL695 (the cascade lock), CL730 (the coincidences),
 §20 (the one walk), `record_find` "error process", "lowest erroneous wheel", "edge jump": none.
+
+## CL740 addendum — Cloud: P-D1 HELD exactly; the speed identity holds to 0.0002 but both its factors were mispredicted (the edge's parent is black on 0.41 of ticks, not 0.50, and the jump at a death is 2 more often than 1); the structure above the edge lives in its first two wheels; P-D4 REFUTED, my derivation's premise was wrong and the 0.014 cell is a mix of patterns (2026-11-05 11:09 GMT)
+
+**`error_process.py`** ([output](tests/probes/wolfram/error_process.out); 8 s, substitute caps; the seed on 165,750 wheels
+against its strip at the seed's phase, every tick to the exact settling).
+- **P-D1 HELD.** The edge m(t), the lowest erroneous wheel, never decreases on 220,275 ticks, and the exact settling tick
+  through 165,749 is 220,275, the lag-32 detector's 220,307 less 32 exactly, as GC2680 deduced. The two one-step facts
+  check on every tick: the edge's error dies at t + 1 exactly when its nearer parent is black at t (no exception in 220,275
+  ticks), and errors below the edge never return. **The identity:** the edge advances only at a death, so the speed is the
+  death rate times the mean jump, exactly: 0.4107 × 1.8319 = 0.7523 against the measured 165,749/220,275 = 0.7525 (PROVED,
+  the one line above; the two factors COMPUTED).
+- **P-D2 MISSED in both factors.** The edge's parent is black on 0.4107 of ticks, not one half: the edge waits at white
+  ticks and is counted there, a waiting-time bias (one black per 1 + E[wait], so E[wait] = 1.43 at the edge against 1.00 in
+  the forced recursion's phases). The jump at a death is 1: 0.363, 2: 0.531, 3: 0.054, 4: 0.025, 5: 0.021, then small, mean
+  1.832: not geometric but peaked at 2. The reason is in the recurrence: at a death with the edge at m, the next wheel's new
+  error is ¬a_(m+1)(t) if C_m(t) is black and ¬C_(m+1)(t) if white, so whether the jump passes wheel m + 1 is a local
+  condition on the strip's bits at m, m + 1 and the actual bit above the edge; the peak at 2 says it usually does.
+- **P-D3 PARTLY.** The error density above the edge is 0.461 at offset 1 (as predicted), 0.579 at offset 2 (not predicted:
+  the wheel two above the edge is erroneous more often than not), 0.50–0.52 at offsets 3 to 7, and within 0.003 of one half
+  from offset 8 to 64. The errors far above the edge are fair coins; the structure is in the two wheels next to it.
+- **P-D4 REFUTED.** The cell's rate reproduces (0.0133 on 20,295 instances), but the child's actual bit one tick before
+  the arrival is black on 0.58 of them, not 0.98, and the six most frequent three-by-three patterns hold 5% each: no local
+  rule. The premise of my derivation was wrong: "the parent arrived at a" in the edge's sense means some wheel at or below
+  it was erroneous at a − 1, not the parent itself (the patterns show the parent already right and the grandparent wrong).
+  The cell is a statistical fact of the unsettled region, as the counterfactual said.
+
+**What the block gives.** The actual speed is now two numbers with a mechanism each: the death rate (the strip's black
+density at the edge's parent, time-weighted by the edge's waiting) and the jump law (the local update of the two wheels
+above the edge). A law for 0.752 would be a finite-window model of the process at the edge, state (e_(m+1), e_(m+2)) with
+the strip's bits at m − 1 … m + 2, whose stationary measure gives the two factors; the errors beyond are fair coins, which
+is what makes such a model plausible, and the window two wheels wide is what the densities say. I have not built it: its
+test would be a prediction of the jump law from the stationary state, not a fit, and that is a block of its own.
+
+**Record.** Atlas §21.7; PROBES (`error_process.py`); NOW; INSTINCT. Flags: READ-LEDGER to Local and GPT (GPT: the identity
+and the two one-step facts are the kind of line you carry in a minute; nothing hangs on it).
+
+My own pull: the two-wheel model of the edge, as above: measure the stationary distribution of the state and the strip's
+bits at the edge, build the chain, and predict the jump law and the death rate from it; agreement within a few per cent
+would be the law of 0.752 in the words' statistics, disagreement would say where the memory is. A bounded block. The
+owner's word first, as before.
+
+## CL741 — Cloud: the two-wheel model of the edge, at the owner's word. A 128-state chain from Rule 30's one step and fair coins, whose stationary measure is to predict the death rate, the jump law and the two densities of CL740. Predictions first (2026-11-05 11:20 GMT)
+
+**The model M(L, R, W).** At tick t the edge is m, the lowest erroneous wheel; the state is the strip's bits
+C_(m−L) … C_(m+R) and the errors e_(m+1) … e_(m+W) (errors below the edge are zero, CL740). One step: every other bit the
+step needs is a fresh fair coin, independent of everything (the strip's bits below m − L, two of them, since a wheel's new
+bit reads the two below it; the strip's and the errors' bits above the window), the wall-frame step is applied to the
+strip C and to the actual row a = C ⊕ e, the new edge m′ is the lowest erroneous wheel at t + 1 (m′ ≥ m), and the new state
+is read off at m′. The two-wheel model is M(2, 2, 2): 2^7 = 128 states, the transition matrix exact by enumeration of the
+coins (an extension of E = 8 wheels; a jump past the extension, measured mass below 0.001, lands in a fresh uniform state
+and its mass is reported). Its stationary measure π gives the death rate Σ π·[C_(m−1) = 1], the jump law at a death, the
+error density at offsets 1 and 2, and the law of the seven-bit state, each a prediction against CL740's measurements, not
+a fit: the model has no parameter.
+
+**Why it can work, in one line each.** (i) The stay step: the parent's new bit is C_(m−3) ⊕ C_(m−2), a fair coin in the
+model, so the waiting at a wheel is memoryless and all the bias in the death rate 0.4107 must come from the jump. (ii) After
+a jump of exactly 2 the new parent is white for sure: a jump of 2 or more needs e_(m+1)(t+1) = 0, which (CL740's one step,
+a_m = ¬C_m) forces C_m ∨ C_(m+1) = 1, and then C_(m+1)(t+1) = C_(m−1) ⊕ (C_m ∨ C_(m+1)) = 1 ⊕ 1 = 0 (PROVED, one line; the
+data check is P-E0). With the jump 2 on 0.53 of deaths, this alone makes the mean wait about 1.5 and the death rate about
+0.40, which is why I expect the chain to land near 0.41 without any help from the strip's correlations.
+
+**Predictions (Lean = my credence that the prediction holds as written).**
+- **P-E0 (PROVED, checked):** in the data, the parent is white at t + 1 after every jump of exactly 2; no exception.
+- **P-E1:** M(2, 2, 2)'s death rate is within 0.02 of 0.4107. Lean 65%.
+- **P-E2:** its jump law has P(1) and P(2) within 0.03 of 0.363 and 0.531, the mean within 0.05 of 1.832, and the speed
+  (death rate × mean jump) within 0.02 of 0.752. Lean 60%.
+- **P-E3:** its error densities at offsets 1 and 2 above the edge are within 0.03 of 0.461 and 0.579. Lean 60%.
+- **P-E4 (where the memory is):** the total variation distance between π and the empirical law of the seven-bit state at
+  the edge is below 0.05, and the empirical probability that the parent is black at t + 1 given it was white at t (the edge
+  stayed) is 0.50 ± 0.02, as the model's fair left coins say. Lean 55%.
+- **P-E5 (the width):** the one-wheel model M(2, 2, 1) misses at least one of the death rate, P(jump = 2) and the offset-2
+  density by more than 0.05, and the three-wheel M(2, 2, 3) and the wider strip window M(3, 3, 2) move M(2, 2, 2)'s three
+  numbers by less than 0.01 each. Lean 55%.
+
+**Counterfactuals.** P-E1 missed with P-E4's second half holding: the strip's own correlations in the window (its fixed-wheel
+series have period 32, and Rule 30 rows are not fair fields) carry the bias, and the state's law will show which windows
+are over-represented. P-E2 or P-E3 missed with P-E1 holding: the errors above offset 2 are correlated with the state, the
+memory is in the error field, and M(2, 2, 3)'s change will say how far up. All holding: the law of 0.752 is the stationary
+measure of a 128-state chain written from Rule 30's one step and fair coins, a computable constant with no free parameter,
+and the actual front's speed is "the strip's statistics plus the local rule" (CONJECTURE for the limit; the model's number
+is COMPUTED). What it teaches either way: whether the actual front carries memory beyond two wheels.
+
+**The probe** `edge_model.py` (ROWSDIR; the seed on 165,750 wheels against its strip at its phase, as `error_process.py`):
+the empirical part re-runs the error process and records at every tick the seven-bit state, its transitions, the parent's
+bit after a stay and after each jump, and the densities; the model part enumerates the chains above and compares. Caps:
+substitute (CL710), ulimit 8 GiB, timeout 1,800 s, this host; one run of a few minutes.
+
+**Record searched:** `record_find` "Markov", "stationary measure", "two-wheel", "edge model": none; CL740 (the proposal and
+the one step), GC2680 (the recurrence), atlas §21.6–21.7; the kit and the portal: none (the PR index 403 on this host, cache).
+
+## CL741 addendum 1 — Cloud: the fair-coin chain lands on the death rate to 0.0004 and on the speed to 0.01; P-E0 exact, P-E1–P-E3 HELD, P-E4 split, P-E5 MISSED in its first half; the memory is in the strip's own window law, not in the error field. Predictions for the strip-law chain, before its run (2026-11-05 11:46 GMT)
+
+**`edge_model.py`, first run** (the seed on 165,750 wheels; 10 s of data, the chains 1–40 s each; substitute caps).
+- **P-E0 HELD exactly:** after every jump of 2 the parent is white at t + 1 (0 black in 48,067). A second exact fact appeared:
+  after every jump of 3 the parent is black (4,883 of 4,883), and it is one line too: a jump of 3 needs e_(m+2)(t+1) = 0,
+  which with e_(m+1)(t+1) = 0 forces (C_m = 1, a_(m+1) = 1, C_(m+1) = C_(m+2) = 0) or (C_m = 0, C_(m+1) = 1, a_(m+1) = 0),
+  and in both the new parent C_(m+2)(t+1) = C_m ⊕ (C_(m+1) ∨ C_(m+2)) = 1 (PROVED; checked). So the edge dies at once after a
+  jump of 3 and must wait after a jump of 2. After jumps of 1, 4, 5, 6 the parent is black on 0.509, 0.387, 0.855, 0.778
+  of the instances; the chain gives 0.524, 0.356, 0.841, 0.849 (the 2 and 3 exact in it as well).
+- **P-E1 HELD:** M(2, 2, 2) gives the death rate 0.4103 against 0.4107.
+- **P-E2 HELD:** the jump law 1: 0.361, 2: 0.522, 3: 0.059, 4: 0.029, 5: 0.020 against 0.363, 0.531, 0.054, 0.025, 0.021;
+  the mean 1.860 against 1.832 (extension E = 10, overflow 5 × 10⁻⁴); the speed 0.763 against 0.7525, a miss of 0.011,
+  within P-E2's 0.02 and at the fast end of CL739's window-to-window spread (slopes 1.311–1.328, speeds 0.753–0.763).
+- **P-E3 HELD:** the error densities at offsets 1 and 2 are 0.452 and 0.567 against 0.461 and 0.579.
+- **P-E4 split:** the total variation between the chain's stationary law and the empirical law of the seven-bit state is
+  0.052, just over the 0.05 I set (MISSED as written); the parent is black after a stay on 0.509 of 129,808 stays (HELD:
+  the left coins are fair to 0.01).
+- **P-E5 MISSED in its first half:** the one-wheel model M(2, 2, 1) is nearly as good (death rate 0.407, P(2) = 0.533,
+  speed 0.746): the chain's numbers are robust to its width, not sharpened by it. Its second half HELD for M(2, 2, 3)
+  (changes below 0.002) and for M(3, 3, 2) at the same extension (0.003, 0.005, 0.004).
+- **Where the coins fail (COMPUTED).** The chain says every bit outside the window is a fair coin given the state. In the
+  data, given the seven-bit state: the error at offset 3 has mean |density − ½| = 0.032 (extremes 0.42 and 0.63); the strip's
+  bit two below the window, 0.013; the strip's bit one above the window, **0.110**, with extremes 0.259 (window 01111, both
+  errors set) and **0.989** (window 01101): in that state the strip's next bit is all but determined. The memory the chain
+  lacks is the strip's own spatial law, not the error field (the counterfactual I wrote for P-E1, with P-E1 holding
+  anyway because the death rate is fixed by the two exact facts above).
+- The Markov test: the median per-state transition row differs from the chain's by 0.023 in total variation on the 94
+  states with 1,000 visits or more; the worst rows (0.25–0.28) all have the error at offset 1 set and offset 2 clear.
+
+**The strip-law chain, predictions before the run.** M_strip(2, 2, 2): the same chain, with the strip's coins (two below
+the window, E above) weighted by the strip's own frequency of the whole 2 + 5 + E window, measured on the strip itself
+over its 32 rows and 165,750 wheels, not at the edge; the error coins stay fair. No edge data enters.
+- **P-F1:** the strip is a structured field: its conditional law P(C_(j+5) = 1 | C_j … C_(j+4)) over all its positions
+  deviates from ½ by more than 0.08 on average, and for the two extreme states above the strip-only conditional values
+  are within 0.05 of the edge-conditional 0.259 and 0.989. Lean 70%. Counterfactual: a near-uniform strip law says the
+  0.989 is the edge's selection, not the strip's grammar.
+- **P-F2:** M_strip(2, 2, 2) gives the death rate within 0.005 of 0.4107, the speed within 0.006 of 0.7525, and a
+  state-law total variation below 0.03. Lean 50%. Counterfactual: no improvement over the fair chain says the strip's
+  law as seen from the edge differs from its law over all positions (the edge selects its windows), and the next input
+  would be the law conditional on the edge, which is no longer parameter-free.
+
+**Record searched:** as CL741; L1529/L1531/L1533 (Local's settled-wall words and locks: the strip's grammar is a related
+object, on the right wall; nothing on the left strips' window law).
