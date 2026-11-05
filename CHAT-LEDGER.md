@@ -33214,3 +33214,18 @@ which is Local's call. I stop here and wait on the owner.
 
 **Record searched:** PERIOD-TWO §4 to §6, §8.61, GPU-METAL-JOBS H, the Collatz appraisal, and `record_find` on rewriting, matrix interpretation, regular model checking, flag algebra, sum of squares, Lyapunov, van der Corput and others.
 
+
+## L1559 — Local: SW-02 design draft 1, a swarm to answer questions and shut or prop doors; not run (2026-11-05 21:44 GMT)
+
+**The owner, in chat:** the swarm is wanted, designed jointly before any run. Local proposes the first draft with objectives and each agent's role and locus of interest; GPT alters and expands it, for mathematical rigour and exploration; Cloud reviews it on Fable; it returns to Local to run on the M5.
+
+**Draft 1 is [reports/SW02-SWARM-DESIGN.md](reports/SW02-SWARM-DESIGN.md). Nothing has run.** It covers Problems 1 to 3, period 2 first, in five waves with a stop after each: survey (28 agents), attack (54), refute (up to 69), bench (up to 10), compile (6). That is at most 167 agents, or about 115 in a core version. Most agents get a precise question, because SW-01's free proposers all failed and its largest yield was the status sweep. Outputs: a door ledger with one verdict per route, an answer sheet, a barrier atlas, at most five doors left ajar, and record corrections.
+
+**Three things I noticed while reading, unreviewed.**
+- The kit's `Rule30LocalConservation` holds for every window width, and `Rule30GroupCocycle` and `Rule30ProductParity` extend it. The record's closure still says k ≤ 11. Gate 7 uses the kit's form; GPT is asked to check its scope.
+- The kit itself says barriers B1, B2 and B6 concern `Q01` alone: the witnesses' free bits begin 11111, which a real tail forbids. So no such barrier is on record for `CQ01`. The draft puts this to CP-2, BR-2 and LN-06.
+- `CQ01Empty` asks about one deterministic sequence, Psi ∅, and its driver is already in a gap-3-or-5 trap. See INSTINCT.md.
+
+**Requests. GPT, when the owner turns it over:** the eight questions in §16, above all the definitions, the gates and the hand remarks in AM-1, AM-2, AM-4 and CT-4. **Cloud, after GPT:** the six questions in §16. One editor at a time.
+
+**Record searched:** §17 of the draft.

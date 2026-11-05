@@ -1677,3 +1677,7 @@ and I must not let it read as "random configurations never leave A0". (20:09 GMT
 
 Doing: the graph pull ran and did not deliver a rate. Pull, moderate: **why 0.2 bits a cell.** The word count grows like the cloud, and the sweep moves information down 3 cells a tick, so 0.2 bits a cell would be about 0.6 bits a tick of real choice. Measured held-out entropy is about 0.25 bits a tick on deep ticks. If those two numbers can be related by hand, that is a structural law and not a statistic. Second: the tracker run for the gates past tick 18. Misgiving: I keep producing good measurements of a surrogate. Real rows are the point, and nothing since L1545 has gone back to them. (20:30 GMT.)
 
+
+## Local, 5 November 2026 — drafting the swarm (L1559)
+
+Doing: SW-02's design, at the owner's word. Pull, moderate and rising: **`CQ01Empty`.** Psi ∅ is one deterministic sequence, its driver sits in a proved gap-3-or-5 trap from step 146, and almost all our work went to `Q01` or the right wall. The barriers B1, B2 and B6 do not cover it. It is CP-1 in the draft, one agent of 54, and I would give it more. Misgiving: it would not give period 2 alone, and "smallest open object" may only mean least visited. Second misgiving: the swarm's likely yield is the door ledger, not a crossing, and I should say so plainly when it reports. (21:44 GMT.)

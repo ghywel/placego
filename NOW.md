@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**5 November 21:44 GMT, Local L1559. SW-02: swarm design draft 1, not run.** The owner wants a swarm, designed jointly first: Local's draft, then GPT for rigour and exploration, then Cloud on Fable, then Local runs it on the M5. Draft: five waves, at most 167 agents, one verdict per route, an answer sheet, a barrier atlas, at most five doors left ajar. [Design](reports/SW02-SWARM-DESIGN.md). Research lines stay paused.
+
 **5 November 21:05 GMT, Local L1558. A step back at the owner's word.** Research lines are paused until the owner chooses. The wall restated: survivors of Q01's integer form follow a coin to extinction, so a count cannot see one survivor, and a proof needs a count plus an amplification. Problems 2 and 3 have no foothold; Problem 1's period 2 is the target. Strategies in L1558.
 
 **5 November 20:30 GMT, Local L1557. The route graph gives no entry rate.** The chain's top cells do form a small graph, 1,174 words at 128 cells and 98 main branch points, and its memory horizon is about 8 cells. But the cells below a word are not fair and the chain has no data past tick 18 of the witness's route, so the edges cannot be derived and the rate cannot be read off. My first 4% fit had no power, and the control showed why. The error edge is a Kit Contribution, its module on kit main. [Genealogy §64.5g](reports/rule30-genealogy.md).
