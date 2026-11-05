@@ -1,0 +1,8 @@
+A ##...####..##....##........#..#..#.#...#.#.#.
+B ##...###.#..##.#......########.##.##.#.###.#.
+L 14 window 0 letters oldest first AABABABABABABAB
+   row, letter, first offset off the strip, cells known: [(0, 'B', None, 81), (1, 'A', None, 76), (2, 'B', 38, 71), (3, 'A', 40, 66), (4, 'B', None, 61), (5, 'A', 41, 56), (6, 'B', 36, 51), (7, 'A', 36, 46), (8, 'B', 32, 41), (9, 'A', 29, 36), (10, 'B', 24, 31), (11, 'A', 21, 26), (12, 'B', 16, 21), (13, 'A', 12, 16), (14, 'A', 8, 11)]
+L 13 window 0 letters oldest first ABABABABABABAB
+   row, letter, first offset off the strip, cells known: [(0, 'B', None, 76), (1, 'A', None, 71), (2, 'B', 38, 66), (3, 'A', 40, 61), (4, 'B', None, 56), (5, 'A', 41, 51), (6, 'B', 36, 46), (7, 'A', 36, 41), (8, 'B', 32, 36), (9, 'A', 29, 31), (10, 'B', 24, 26), (11, 'A', None, 21), (12, 'B', None, 16), (13, 'A', None, 11)]
+L 12 window 0 letters oldest first AABABABABABAB
+   row, letter, first offset off the strip, cells known: [(0, 'B', None, 71), (1, 'A', None, 66), (2, 'B', 38, 61), (3, 'A', 40, 56), (4, 'B', 38, 51), (5, 'A', 35, 46), (6, 'B', 30, 41), (7, 'A', 30, 36), (8, 'B', 25, 31), (9, 'A', 21, 26), (10, 'B', 16, 21), (11, 'A', 12, 16), (12, 'A', 8, 11)]

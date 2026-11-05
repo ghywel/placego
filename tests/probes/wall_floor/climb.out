@@ -1,0 +1,3 @@
+AB 45 phase, start offset, slowest, fastest: [(0, 41, 7, 7), (1, 41, 8, 7)] | retreat sites 9 of 60 | white cells 0.55
+AAB 136 phase, start offset, slowest, fastest: [(0, 132, 28, 28), (1, 132, 28, 28), (2, 132, 29, 27)] | retreat sites 62 of 363 | white cells 0.518
+third 175 phase, start offset, slowest, fastest: [(0, 162, 35, 34), (1, 162, 36, 34), (2, 159, 34, 34), (3, 159, 35, 35), (4, 164, 36, 36), (5, 165, 37, 36)] | retreat sites 177 of 960 | white cells 0.471
