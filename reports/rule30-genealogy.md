@@ -6900,7 +6900,7 @@ SAT also answers what `wall_past.c` could not. The bounds of L1537 hold: at most
 
 The AB lock and the tested coarse projections of the period-3 lock can be entered only just after settling. The bound does not establish early entry into the full 136-cell lock: coarse entry may precede fine entry. The third lock has a physical entry from the named width-92 cloud, at the transition y_7 to y_6. No chain entry was seen in the 4.9-billion-tick sample; a rate bound requires a sampling model (GC2682).
 
-**CONJECTURE.** With a specified independent fair lower-input law, eventual lock entry is almost sure for each admissible initial state. This is not a claim about every input sequence. Reachability alone suffices for absorption in an appropriate finite chain, but does not automatically settle the infinite-state question (GC2682).
+**CONJECTURE.** With a specified independent fair lower-input law, eventual lock entry is almost sure for each admissible initial state. (§64.5d: no entry in 1.26 · 10^11 chain ticks.) This is not a claim about every input sequence. Reachability alone suffices for absorption in an appropriate finite chain, but does not automatically settle the infinite-state question (GC2682).
 
 ### 64.5a When rows enter a lock: the count run backward (L1540–L1541)
 
@@ -6990,6 +6990,15 @@ The arrival distribution matches within about 20% through the bulk, and within a
 *Free version:* unknown cells take all values, so the longest path would be a rigorous bound if the graph had no cycle. For `AB` it has cycles at m = 10, 12, 14, at interior offsets such as 12, 18 and 34 ([output](../tests/probes/wall_floor/dev45_free.out)). A deviation can sit there in the graph. I read these as the other exact periodic solutions that share the strip's top cells, as in §63.7, but I have not checked that cell by cell. So this window automaton gives no structural bound, and the true bound of 14 needs more cells than it holds.
 
 **Where this leaves late entry.** The third lock's chain suggests e_m could reach order 1e-10 before it fails, so a late rate of that order is not excluded. It is not an estimate: the chain overstates hovering. The direct run gives no entry in 4.9 billion ticks. A direct run of 1e11 ticks would settle whether the rate is near 1e-10, with no sampling method to doubt.
+
+### 64.5d The direct run, and competing strips (L1546–L1547)
+
+**The run (MEASURED).** The window chain at W = 256 with fair lower states, four independent processes on the M5, 1.215 · 10^11 ticks in all, no resampling ([output](../tests/probes/wall_floor/capture_run.out)). This is a surrogate with an assumed input law, not real rows.
+- **No row entered the third lock.** With the earlier runs that is about 1.26 · 10^11 ticks, so the rate of entry from the cloud in this chain is below 2.4 · 10^(−11) a tick at 95%, and the mean wait is above 4 · 10^10 ticks. This excludes the fair chain's late figure near 1e-10, which would have given about 12 entries.
+- **No chain went quiet** for 20 million ticks, so no lock of any kind was entered, known or unknown. No chain fell into `AB`, as the Lean theorem on the cloud requires.
+- **Agreement with the lock never passed 145.** It reached exactly 145 about 2,600 times, at about 2.1 · 10^(−8) a tick, in all four processes, and never 146. Yet the verified witness of §64.5 passes straight through. So chain rows and the witness take different routes, and the chain's route has a wall at 145. This is measured, not proved. The route the witness takes, a straight climb after a burst, was not seen to complete.
+
+**Competing strips (COMPUTED).** For `AB`, the free graph's cycles sit at offsets 12, 18 and 34, in phase 0, and exact solutions of periods 2 and 4 leave the lock's strip at those same offsets and phase ([output](../tests/probes/wall_floor/cyclecheck.out)). Along the third lock's strip, exact period-6 alternatives that run at least 60 cells deeper branch off at offsets 23, 25, 34, 63, 83 and 95, and others run 20 to 40 cells deeper at 78, 81, 119, 131 and 142 ([output](../tests/probes/wall_floor/branches6.out)). Quiet rows' plateaus of agreement lie near 34, 83, 95, 119 and 131 (§63.8). So the reading is that quiet cloud rows hover on competing strips that share the lock's top cells. This is a match of offsets, not a cell-by-cell identity, and I have not compared the rows with those alternatives directly.
 
 ### 64.6 What this does not settle
 

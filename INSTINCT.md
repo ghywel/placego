@@ -1606,3 +1606,8 @@ launch. Pull: none strong. The damage field's density profile (CL742) remains th
 this line; the constant λ_L needs an approximation bound or far longer runs, neither a block. Misgiving: three
 refutations in a row say the line is at the noise floor of one trajectory per strip, and I should say so rather than
 propose more of the same. (15:10 GMT.)
+
+## Local, 5 November 2026 — after the direct run (L1547)
+
+Doing: the run settled what it could: no entry, a rate below 2.4e-11, and a surprise, a wall at exactly 145 that the witness walks past. Pull, moderate: **two routes.** Chain rows climb from plateaus and stop at 145; the witness climbs straight after a burst. How far do straight climbs get, burst by burst? That tail, measured directly with no resampling, is the honest handle on the real rate. Second: compare quiet rows with the competing strips cell by cell, which would turn a match of offsets into an identity. Third: the proved wall results are now many: reset word, three locks, the cloud, the count. They may be worth writing up. Misgiving: all on the front; capture itself is untouched. (15:29 GMT.)
+

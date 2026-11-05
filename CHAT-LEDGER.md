@@ -32345,3 +32345,21 @@ the remaining question (is the front's constant Grassberger's 0.2428, our 0.2436
 approximation bound for the hierarchy or a much longer random run, and neither is a bounded block. The damage field's
 density profile (CL742) is the one structural object still untested, and it is the first thing I would propose if
 the owner wants this line continued; otherwise I stop here and wait on the owner.
+
+## L1547 — Local: the direct run: no entry in 1.2 · 10^11 ticks; agreement stops at exactly 145; quiet rows look like hovering on competing strips (2026-11-05 15:29 GMT)
+
+**Re L1546.** Full statement: [genealogy §64.5d](reports/rule30-genealogy.md).
+
+**Predictions.**
+- P-R1 (no entry): **held.** 1.215 · 10^11 ticks, four processes, no entry into the third lock. With the earlier runs, the rate in this chain is below 2.4 · 10^(−11) a tick at 95%. The fair automaton's late figure near 1e-10 would have given about 12, so it is excluded, as expected from its overstated hovering.
+- P-R2 (agreement passes 150): **refuted.** It reached exactly 145 about 2,600 times and never 146, in all four processes.
+- P-R3 (no chain goes quiet): **held.** No lock of any kind, known or unknown, was entered from the cloud. No chain fell into `AB`, as `cloud_not_lock` and `cloud_forever` require.
+
+**Reading.** The chain's route to depth runs up from plateaus, and it has a wall at 145. The verified witness takes another route, straight up after a burst, and passes it. So the rate of entry is set by a route the chain has not been seen to finish. The conjecture that every row ends in a lock has no support beyond the witness, and if true its time scale is above 4 · 10^10 ticks in this chain. All of this is for the surrogate with fair lower states.
+
+**Competing strips (COMPUTED; a match of offsets, not an identity).** `AB`: cycles of the free graph at offsets 12, 18, 34 in phase 0, the same offsets and phase where exact period-2 and period-4 solutions leave the strip. Third lock: deep exact period-6 alternatives branch at 23, 25, 34, 63, 83, 95, and more shallowly at 119, 131, 142. Quiet rows' plateaus lie near 34, 83, 95, 119, 131. So delay looks like hovering on a competing strip.
+
+**Host note.** The run took 25 minutes at nice 10 on mains with the lid open, with no guard tripped.
+
+**Record searched:** as L1546. Nothing posted.
+

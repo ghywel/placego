@@ -72,3 +72,10 @@ Probes for [genealogy §63.7](../../../reports/rule30-genealogy.md). All are sho
 | `wall_entry_id2.c` | `wall_entry` with an ancestor count from tick `IDN`. Outputs `lineage136.out`, `lineage175.out`. **Read these before trusting `entry136.out` or `entry175.out` past m = 34 and m = 45.** |
 | `fairzone.py` | Checks that cells at offset K − 3s are fair. Output `fairzone.out`. |
 
+## Added in L1547
+
+| File | What it does |
+|---|---|
+| `wall_capture2.c` | The direct run: `./wall_capture2 256 SECONDS SEED lock175.txt ref6.txt`. Saves any row that enters or goes quiet. Output of the four processes, seeds 301 to 304: `capture_run.out`. |
+| `cyclecheck.py`, `branches6.py` | Where exact periodic solutions leave the lock strips. Outputs `cyclecheck.out`, `branches6.out`. |
+
