@@ -31614,6 +31614,72 @@ My own pull: the exact chain, a transfer matrix along the wheel axis whose stati
 32, 64) against the random value, to see whether the strip's period is what the drift with depth measures. The owner's
 word first, as before.
 
+## CL742 — Cloud: the owner's steer taken; "the exact chain" withdrawn as worded, there is no finite exact chain; the structure worked through by hand instead: the stay step is exact, the chain leaks only at its two ends with a geometric decay, and the heal probability has a formula whose two errors cancel in the chain. Predictions for the hierarchy and for the long random runs, before them (2026-11-05 12:13 GMT)
+
+**The owner's steer** (12:12 GMT, to Local, passed to me as a standard): a pull must rest on a worked structure, not on "it
+might". My first pull, "the exact chain as a transfer matrix along the wheel axis", fails that standard: worked by hand,
+no finite exact chain exists. The bit at offset r above the edge at tick t depends on offsets r − 2 … r + d at t − 1
+(d the edge's move), so the past of any fixed window reaches to offsets that grow without bound as one goes back, and
+the columns along the wheel axis are whole time series. The exact object is the stationary law of the background as
+seen from the edge, a Palm measure with no finite description a priori. Withdrawn. What survives by hand:
+
+**(S1) The stay step is exact.** If C_(m−1)(t) = 0 the edge stays, and the window (C at m − L … m + R, e at m + 1 … m + W,
+W ≤ R) at t + 1 is a deterministic function of the window at t and the two strip bits C_(m−L−2), C_(m−L−1)(t): C_j(t+1)
+reads C_(j−2 … j)(t), all inside [m − L − 2, m + R], and e_j(t+1) reads e_(j−2), a_(j−1), a_j, all at offsets ≤ W. No bit
+above the window enters a stay. So the chain's only approximations are (S2) the two bits below the window at a stay and
+(S3) the bits above the window at a death. (PROVED, by the step's reading.)
+
+**(S2) The left leak is small and measured.** The parent's next bit after a stay is C_(m−3) ⊕ C_(m−2); for L = 2 the
+chain draws C_(m−3) fresh, so its hazard is exactly ½ (its wait after a white parent is geometric with mean 2); the data's
+hazard is q = 0.5086 (CL741, 129,808 stays), the bits below the window deviate from ½ by 0.013 given the state.
+
+**(S3) The right leak decays geometrically in R.** At a death with jump d the new window needs bits up to offset d + R
+at t. The first bit above the old window, C_(m+R+1)(t), equals C_(m+R−1)(t−1) ⊕ (C_(m+R)(t−1) ∨ C_(m+R+1)(t−1)) when the
+edge stayed at t − 1: determined by the old window when its top bit C_(m+R)(t−1) was black (the OR saturates), and a fair
+coin otherwise (the XOR with a bit outside the old window). The k-th bit above is determined only through a run of k
+black top bits at t − 1, so the share of the leak that is determined, and that the chain's fresh coins get wrong, falls
+like 2^(−k): widening R by one should halve the leak. This is the mechanism for the chain's convergence in R, a
+CONJECTURE with its test in P-H1. It also says why W beyond 2 changes nothing (0.763, 0.763, 0.761 at W = 2, 3, 4): the
+errors above the window enter only at a death, two offsets at a time.
+
+**(S4) The heal probability by hand.** After a jump of d the new parent is black with probability pb_d (pb_2 = 0 and
+pb_3 = 1 exactly, CL741), else the edge waits 1 + a geometric number of ticks with hazard q. So E[wait] = Σ_d P(d)(1 −
+pb_d)/q and **P(heal) = 1 / (1 + Σ_d P(d)(1 − pb_d)/q)** (PROOF-SKETCH: exact if the hazard after the first stall tick is
+constant; §20.1 measured it as 0.518, then 0.49–0.50). Checked on CL741's numbers: the seed's jump law and pb_d give Σ =
+0.7298; with q = 0.5086, E[wait] = 1.435 against the measured 1.435; with q = ½, 1.460 (P(heal) 0.4066, not 0.4107).
+The chain M(2, 2, 2) has Σ = 0.7191 (fewer jumps of 2: 0.522 against 0.531) and q = ½: E[wait] = 1.438, P(heal) 0.4101.
+**So the chain's agreement on P(heal) to 0.0004 is a cancellation of two errors of 0.004 each** (its jump law and its
+hazard), which the formula exposes and the data's own factors do not. The speed is P(heal) × E[jump], so every number of
+the front reduces to the jump law at a death and the pb_d, i.e. to the window's law at the moment of a death; the
+window's law at a death is the post-jump law pushed through the exact stay map for the wait. That is the mathematical
+structure under the chain: a renewal at deaths, with the only unknown the law of the bits above the window at a death.
+
+**Lookup, from CL738's settling ticks (not a run):** the seed's two factors per 100,000-wheel window past 100,000:
+P(heal) 0.4112, 0.4140, 0.4121, 0.4132, 0.4111, 0.4114, 0.4120, 0.4123; E[jump] 1.832, 1.832, 1.841, 1.846, 1.844, 1.845,
+1.844, 1.844. Past 200,000: **P(heal) 0.4123 ± 0.0004, E[jump] 1.8422 ± 0.0018** (s.e. over seven windows), product 0.7595.
+The random background's three runs (CL741): P(heal) 0.4122, 0.4120, 0.4103; E[jump] 1.8392, 1.8385, 1.8392, product
+0.7567. The seed's mean jump rises with depth (1.832 to 165,749, 1.832 in the first window, 1.844 from 300,000 on) and the
+jump law shifts with it (P(1) 0.362 → 0.357, P(2) 0.531 → 0.533).
+
+**Predictions (the chain table `edge_model.py` with M(L, R, 2), L = 2, 3, 4, R = 2 … 6, extension E = 6; the random
+background `edge_random.py` on a ring of 2^21 cells, nine runs of 900,000 ticks in three processes).**
+- **P-H1 (the hierarchy converges as S3 says):** at each L the change in the chain's speed from R to R + 1 shrinks by a
+  factor of at least 1.5 at every step from R = 3 on, and the three columns agree within 0.003 at R = 6. Lean 55%.
+  Counterfactual: no shrinking, or the columns apart by more than 0.005: the right leak is not the chain's main error
+  and S3's mechanism is incomplete (the bits above the window are determined by more than runs of black top bits).
+- **P-H2 (the limit):** the R = 6 values lie within 0.003 of the nine-run random speed. Lean 50%.
+- **P-H3 (the strip against the random background):** nine runs give the random P(heal) within 0.001 of 0.4115 and
+  E[jump] within 0.002 of 1.839, so the seed's past-200,000 mean jump 1.842 ± 0.002 stands above the random one by
+  about 0.003 at 1.5–3 standard errors and the strip's front is faster than the random front by 0.002–0.004 (speed 0.7595
+  against about 0.7567). Lean 45%. Counterfactual: the random E[jump] comes out at 1.842 and the speeds agree within
+  0.001: the first stretch was the transient and the front's constant is λ_L.
+- **P-H4 (the formula on the random background):** S4's formula with each run's jump law, pb_d and hazard reproduces
+  that run's P(heal) within 0.001. Lean 75%.
+Caps: substitute (CL710), ulimit 8 GiB, timeout 1,800 s per process, four processes on four cores, about 25 minutes.
+
+**Record searched:** §8.66 (the identity; its "selection effect" is S2–S4's content made explicit), §9 (P-K3's two-state
+chain: fitted, the formula here is not), §20.1 (the hazard), CL691/GC521/CL722 (pb_2, pb_3), CL741; `record_find`
+"hazard", "renewal", "Palm": the hazard in §20.1 only.
 ## L1538 — Local: the pull worked by hand, at the owner's word: four hand results, and predictions before checking them (2026-11-05 12:01 GMT)
 
 **The owner, in chat:** "'it might split' and 'could settle' sounds more like a hunch than a strong pull. Can we work it through by hand, or move in a direction that gives us a more mathematical structure".
@@ -31637,3 +31703,35 @@ Fair. Before any run I worked it through by hand. Moving frame, `Y_k(t)` the col
 
 **Record searched:** G13 (reset language), L1533 to L1537, GC2680, genealogy §63; `known_find.py` as in L1534. No Lean yet.
 
+
+## CL742 addendum 1 — Cloud: the chain table; P-H1 HELD in R (geometric convergence at every L) and MISSED across L (the columns 0.013 apart): the left width is the slow direction, S2 was wrong for the chain. Prediction for L = 5, 6 before the run (2026-11-05 12:21 GMT)
+
+**`edge_model.py`, M(L, R, 2) at E = 6** (the speed; P(heal) and E[jump] in the output):
+
+| L \ R | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|
+| 2 | 0.7620 | 0.7555 | 0.7538 | 0.7529 | 0.7528 |
+| 3 | 0.7745 | 0.7665 | 0.7640 | 0.7628 | 0.7626 |
+| 4 | 0.7779 | 0.7696 | 0.7674 | 0.7661 | 0.7658 |
+
+- **In R, P-H1 HELD at every L:** the changes are 0.0065, 0.0017, 0.0009, 0.0001 (L = 2), 0.0080, 0.0025, 0.0012, 0.0002
+  (L = 3), 0.0083, 0.0022, 0.0013, 0.0003 (L = 4): shrinking by 2–4 at each step, S3's geometric leak as predicted.
+- **Across L, MISSED:** at R = 6 the columns are 0.7528, 0.7626, 0.7658, apart by 0.013 (the tolerance was 0.003), with
+  increments +0.0098 and +0.0032. P(heal) carries most of it: 0.4079, 0.4124, 0.4141 (the data past 200,000: 0.4123; the
+  random rows: 0.4115), the mean jump 1.846, 1.849, 1.850 (1.842; 1.839). By S4 the left width acts through the hazard
+  q: at L = 2 the chain's q is exactly ½; at L = 3 the parent's next bit C_(m−3) ⊕ C_(m−2) is state-determined, and q
+  rises towards the data's 0.5086. So S2 ("the left leak is small") was wrong for the chain even though the data's
+  deviation below the window is 0.013: a 0.009 shift in q moves P(heal) by 0.004 and the speed by 0.01. The right
+  width's remaining error is in the jump law: P(2) = 0.526–0.531 against the data's 0.533.
+- **P-H2 cannot hold as the limit stands:** the R-converged values at L = 3, 4 are 0.763, 0.766, above the seed's
+  0.7595 and the random 0.7567.
+
+**Prediction for the L direction (`edge_model.py` M(5, 5, 2), M(6, 5, 2), and M(4, 5, 3) for W at a larger L; E = 6;
+each chain's q printed so that S4 decomposes it).**
+- **P-H5:** the L increments keep shrinking (L = 5: +0.001 ± 0.001, L = 6: +0.0005 ± 0.0005), the hazard q of the
+  chains converges to 0.508 ± 0.002, and the chain's limit is 0.767 ± 0.002: above the seed's long run by 0.007 and the
+  random front by 0.010, so the converged chain does not give the front, and its residual is in the jump law (P(2) low
+  by 0.005–0.007), i.e. in the law of the window at a death, which no finite window of fresh coins reproduces. Lean 50%.
+  Counterfactual: the L increments stop shrinking, or q overshoots 0.51: the memory below the edge is long-range,
+  contrary to S2's reading of the data, and the stay phase itself is where the chain fails.
+- **P-H6:** W = 3 at L = 4, R = 5 changes the speed by less than 0.002. Lean 70%.

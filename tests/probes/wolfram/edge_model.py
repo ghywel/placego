@@ -27,7 +27,7 @@ def model(L, R, W, E, cfreq=None):
     idx = np.arange(N, dtype=np.int64)
     coins = [((idx >> i) & 1).astype(np.int8) for i in range(ncoin)]
     lo, hi = -L - 2, R + E
-    T = np.zeros((nS, nS)); death = np.zeros(nS); jumps = np.zeros((nS, R + E + 2)); pbj = np.zeros((nS, R + E + 2)); overflow = 0.0
+    T = np.zeros((nS, nS)); death = np.zeros(nS); jumps = np.zeros((nS, R + E + 2)); pbj = np.zeros((nS, R + E + 2)); overflow = 0.0; stayblack = np.zeros(nS)
     maxj = min(E, R + E - W)      # the largest jump whose new state (strip to m'+R, errors to m'+W) is inside the computed window
     for s in range(nS):
         Cs = [(s >> i) & 1 for i in range(L + 1 + R)]          # C at -L..R
@@ -58,6 +58,7 @@ def model(L, R, W, E, cfreq=None):
         for p in range(hi, -1, -1): m2 = np.where(e2[p] == 1, p, m2)
         d = Cs[L - 1]                        # C_{m-1}: death iff 1
         death[s] = d
+        if d == 0: stayblack[s] = wt[C2[-1] == 1].sum()      # the parent black at t+1 after a stay (the hazard q)
         for j in range(0, maxj + 1):
             sel = (m2 == j)
             w = wt[sel].sum()
@@ -84,7 +85,8 @@ def model(L, R, W, E, cfreq=None):
     jl = (pi * death) @ jumps / drate            # jump law at a death (index = jump; the last nonzero index holds every jump past the extension)
     pbl = ((pi * death) @ pbj) / np.maximum((pi * death) @ jumps, 1e-300)   # P(new parent black | jump)
     dens = [float(pi @ np.array([(s >> (L + 1 + R + i)) & 1 for s in range(nS)])) for i in range(W)]
-    return pi, drate, jl, dens, T, overflow, pbl, maxj
+    q = float(pi @ stayblack) / float(pi @ (1 - death))
+    return pi, drate, jl, dens, T, overflow, pbl, maxj, q
 
 def fmt_jl(jl, upto=9): return {j: round(float(jl[j]), 4) for j in range(1, min(upto, len(jl) - 1) + 1)}
 
@@ -182,13 +184,14 @@ for spec in MODELS:
     l, r, w, E = spec[:4]; use_strip = len(spec) > 4 and spec[4] == 1
     t1 = time.time()
     cf = strip_windows(cyc, K, l + 3 + r + E) if use_strip else None
-    pi, drate, jl, mdens, T, overflow, pbl, maxj = model(l, r, w, E, cf)
+    pi, drate, jl, mdens, T, overflow, pbl, maxj, q = model(l, r, w, E, cf)
     mean = float(sum(j * jl[j] for j in range(len(jl))))
     results[(l, r, w, use_strip)] = (pi, drate, jl, mdens, T)
     print(f"M{'_strip' if use_strip else ''}({l},{r},{w}) E={E}: {1 << (l+1+r+w)} states, {time.time()-t1:.0f} s; overflow mass {overflow:.2e}; "
           f"death rate {drate:.4f}; jump law {fmt_jl(jl)}; mean {mean:.4f}; speed {drate*mean:.4f}; "
           f"error density at offsets 1..{w}: {[round(v, 4) for v in mdens]}; jumps past {maxj} lumped at {maxj+1}; "
-          f"P(parent black | jump d): {{{', '.join(f'{d}: {pbl[d]:.3f}' for d in range(1, min(6, maxj) + 1))}}}")
+          f"P(parent black | jump d): {{{', '.join(f'{d}: {pbl[d]:.3f}' for d in range(1, min(6, maxj) + 1))}}}; "
+          f"hazard after a stay q {q:.4f}; S4: S = {sum(float(jl[d]) * (1 - float(pbl[d])) for d in range(1, maxj + 2)):.4f}, 1/(1+S/q) = {1 / (1 + sum(float(jl[d]) * (1 - float(pbl[d])) for d in range(1, maxj + 2)) / q):.4f}")
 for key in [(2, 2, 2, False), (2, 2, 2, True)]:
     if key not in results: continue
     pi = results[key][0]
