@@ -31613,3 +31613,27 @@ My own pull: the exact chain, a transfer matrix along the wheel axis whose stati
 "formula" gap M2 asks for, testable against 0.2428 ± 0.0003 at the fourth decimal; second, the stage speeds (periods 16,
 32, 64) against the random value, to see whether the strip's period is what the drift with depth measures. The owner's
 word first, as before.
+
+## L1538 — Local: the pull worked by hand, at the owner's word: four hand results, and predictions before checking them (2026-11-05 12:01 GMT)
+
+**The owner, in chat:** "'it might split' and 'could settle' sounds more like a hunch than a strong pull. Can we work it through by hand, or move in a direction that gives us a more mathematical structure".
+
+Fair. Before any run I worked it through by hand. Moving frame, `Y_k(t)` the column at offset k, rule `Y_k(t) = Y_(k+3)(t+1) ⊕ (Y_(k+4)(t+1) ∨ Y_(k+5)(t+1))`. Four results, all PROOF-SKETCH until read.
+
+**H1. Exact count of settled pasts.** Let S_n be the words of 11 + 5n cells whose n forward images all read a letter. Each word of S_n extends to exactly four words of S_(n+1), one for each pair of cells placed at the bottom of the longer word, by running the sweep up from there. So |S_n| = 2·4^n. Equivalently a random row with a letter at its wall has n settled past rows with probability exactly 8^(−n). The word grows 5 cells a tick: 3 for the wall, and 2 because the pair of lower cells is written down.
+
+**H2. What a free lower state is.** H1 says a path of lower states is exact when the window grows 5 cells a tick. It stops being exact when the window is cut back to width w, because the cut forgets the cells that restricted the next state. So a path in the free graph at width w is a pseudo-orbit at precision 2^(−w), not an orbit. With T the backward tick, T is injective on rows with a letter, and it scales measure by exactly 1/8. Λ = ∩ T^n(L) is the set of rows with an infinite settled past, and Λ is the inverse limit of the E(w). So "physical" has a definition, and my closed classes are the Morse sets of a compact system, seen at resolution w. This replaces "a graph with only physical moves".
+
+**H3. Stationarity forces the reset word.** Suppose the lower cells reach offset h on every phase and nothing above it. Then the rule at k = h − 5, h − 4, h − 3 forces `Y_(h−1) ≡ 1`, `Y_(h−4) ≡ 0`, `Y_(h−3) ≡ 1` and (y(h), y(h+1), y(h+2)) in {(0,1,·), (1,0,0)}, and at k = h − 6, h − 7 it forces `Y_(h−6) ≡ 0`, `Y_(h−7) ≡ 1`. That is the reset word. So the word was not a lucky shape: it is what a floor of constant depth must be. A lock without it must have a frontier that moves, as the third lock's does. Moving the frontier up by r cells in one forward tick needs nothing if r = 5, a black cell if r = 4, and more below that.
+
+**H4. A floor is one binary word.** Going up, the rule is deterministic. So with the reset word at offset c, every column above it is a function of the single sequence v(t) = `Y_(c−4)(t)`. By hand: `Y_(c−1)(t) = ¬v(t−1)`, `Y_(c−7)(t) = ¬v(t+1)`, `Y_(c−8)(t) = v(t+1)`, `Y_(c−9)(t) = ¬v(t+1)`, `Y_(c−10)(t) = v(t+2)`, `Y_(c−13)(t) = ¬v(t+3)`, `Y_(c−14)(t) = v(t+2) ∨ v(t+3)`, `Y_(c−20)(t) = v(t+4) ∧ v(t+5)`, `Y_(c−21)(t) = ¬(v(t+4) ∨ v(t+5))`. Rain is v ≡ 0. A lock with a floor is a word v whose time dependence dies out going up, ending in the wall and rain. That turns the search for floors from a tree with caps into one deterministic orbit per word.
+
+**Predictions.**
+- **P-H5 (95%).** H1's counts 8, 32, 128, 512 hold, and H4's formulas match the strips of both floored locks.
+- **P-H6 (70%).** Over all words v up to period 24, the only ones that end in the wall are those of the `AB` and `AAB` strips and their repeats.
+- **P-H7 (65%).** Take the graph at width 45 whose edges are realized by actual rows with 15 settled past rows. The `AB` lock and the period-3 cycle have no edge in, and fewer edges exist than in the free graph, but the cloud stays one strongly connected class.
+
+**Counterfactual.** A floor word at another period would mean more locks than the trees found. A cloud that splits on real edges would make my pull a result. If it stays whole, the free graph was already right at width 45 and the pull as I stated it is dead.
+
+**Record searched:** G13 (reset language), L1533 to L1537, GC2680, genealogy §63; `known_find.py` as in L1534. No Lean yet.
+
