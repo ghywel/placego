@@ -1,0 +1,49 @@
+rows 600000 settled 600000 letters 115799989 letters lost after settling 0
+L= 1 words seen       2 of       2 avoiding BB; with BB 0; rarest count 41629594
+L= 2 words seen       3 of       3 avoiding BB; with BB 0; rarest count 32370994
+L= 3 words seen       4 of       5 avoiding BB; with BB 0; rarest count 8983421
+L= 4 words seen       5 of       8 avoiding BB; with BB 0; rarest count 8792953
+L= 5 words seen       7 of      13 avoiding BB; with BB 0; rarest count 2290769
+L= 6 words seen       9 of      21 avoiding BB; with BB 0; rarest count 2199566
+L= 7 words seen      12 of      34 avoiding BB; with BB 0; rarest count 91088
+L= 8 words seen      16 of      55 avoiding BB; with BB 0; rarest count 52549
+L= 9 words seen      21 of      89 avoiding BB; with BB 0; rarest count 50725
+L=10 words seen      28 of     144 avoiding BB; with BB 0; rarest count 363
+L=11 words seen      35 of     233 avoiding BB; with BB 0; rarest count 363
+L=12 words seen      44 of     377 avoiding BB; with BB 0; rarest count 363
+L=13 words seen      55 of     610 avoiding BB; with BB 0; rarest count 158
+L=14 words seen      70 of     987 avoiding BB; with BB 0; rarest count 158
+L=15 words seen      87 of    1597 avoiding BB; with BB 0; rarest count 73
+L=16 words seen     110 of    2584 avoiding BB; with BB 0; rarest count 12
+L=17 words seen     136 of    4181 avoiding BB; with BB 0; rarest count 1
+L=18 words seen     166 of    6765 avoiding BB; with BB 0; rarest count 1
+L=19 words seen     203 of   10946 avoiding BB; with BB 0; rarest count 1
+L=20 words seen     245 of   17711 avoiding BB; with BB 0; rarest count 1
+L=21 words seen     294 of   28657 avoiding BB; with BB 0; rarest count 1
+L=22 words seen     353 of   46368 avoiding BB; with BB 0; rarest count 1
+L= 3 no BB, no AAA:      4, seen      4
+L= 4 no BB, no AAA:      5, seen      5
+L= 5 no BB, no AAA:      7, seen      7
+L= 6 no BB, no AAA:      9, seen      9
+L= 7 no BB, no AAA:     12, seen     12
+L= 8 no BB, no AAA:     16, seen     16
+L= 9 no BB, no AAA:     21, seen     21
+L=10 no BB, no AAA:     28, seen     28
+L=11 no BB, no AAA:     37, seen     35; first missing BAABAABABAA
+L=12 no BB, no AAA:     49, seen     44; first missing AABABAABABAA
+L=13 no BB, no AAA:     65, seen     55; first missing AABAABAABABAA
+L=14 no BB, no AAA:     86, seen     70; first missing AABAABAABABAAB
+L=15 no BB, no AAA:    114, seen     87; first missing AABAABAABABAABA
+L=16 no BB, no AAA:    151, seen    110; first missing AABAABAABAABABAA
+L=17 no BB, no AAA:    200, seen    136; first missing AABAABAABAABABAAB
+L=18 no BB, no AAA:    265, seen    166; first missing AABAABAABAABABAABA
+L=19 no BB, no AAA:    351, seen    203; first missing AABAABAABAABAABABAA
+L=20 no BB, no AAA:    465, seen    245; first missing AABAABAABAABAABABAAB
+L=21 no BB, no AAA:    616, seen    294; first missing AABAABAABAABAABABAABA
+L=22 no BB, no AAA:    816, seen    353; first missing AABAABAABAABAABAABABAA
+P(B)=0.35950
+P(B|A)=0.56123 P(A|B)=1.00000
+ctx AAB: P(B)=0.00000 (n=31982631)
+ctx ABA: P(B)=0.21446 (n=41000558)
+ctx BAA: P(B)=1.00000 (n=32046173)
+ctx BAB: P(B)=0.00000 (n=8970627)

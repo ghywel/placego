@@ -1,0 +1,7 @@
+AA deepest row: low bits (6, 33, '0b100001')
+AB deepest row: low bits (4, 7, '0b111')
+BA deepest row: low bits (4, 11, '0b1011')
+ABA deepest row: low bits (7, 97, '0b1100001')
+BAB deepest row: low bits (7, 53, '0b110101')
+AAB deepest row: low bits (9, 223, '0b11011111')
+BAA deepest row: low bits (9, 271, '0b100001111')

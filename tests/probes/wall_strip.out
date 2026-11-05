@@ -1,0 +1,20 @@
+rows quiet over the last 600 ticks: 631 of 700, profiles 126200
+K= 12 distinct overall      1, in the first row's orbit     1, share of all profiles inside that orbit 1.0000
+K= 20 distinct overall      1, in the first row's orbit     1, share of all profiles inside that orbit 1.0000
+K= 24 distinct overall      1, in the first row's orbit     1, share of all profiles inside that orbit 1.0000
+K= 26 distinct overall      2, in the first row's orbit     1, share of all profiles inside that orbit 0.9950
+K= 28 distinct overall      4, in the first row's orbit     2, share of all profiles inside that orbit 0.9934
+K= 32 distinct overall      5, in the first row's orbit     2, share of all profiles inside that orbit 0.9934
+K= 36 distinct overall     10, in the first row's orbit     4, share of all profiles inside that orbit 0.9899
+K= 40 distinct overall     16, in the first row's orbit     6, share of all profiles inside that orbit 0.9869
+K= 44 distinct overall     24, in the first row's orbit     9, share of all profiles inside that orbit 0.9869
+K= 48 distinct overall     39, in the first row's orbit    15, share of all profiles inside that orbit 0.9821
+K= 56 distinct overall    102, in the first row's orbit    34, share of all profiles inside that orbit 0.9639
+K= 64 distinct overall    277, in the first row's orbit    64, share of all profiles inside that orbit 0.8259
+K= 80 distinct overall   1649, in the first row's orbit   146, share of all profiles inside that orbit 0.4042
+K= 96 distinct overall   8461, in the first row's orbit   191, share of all profiles inside that orbit 0.1392
+K=128 distinct overall  70822, in the first row's orbit   200, share of all profiles inside that orbit 0.0057
+K=160 distinct overall 117758, in the first row's orbit   200, share of all profiles inside that orbit 0.0017
+K=200 distinct overall 125753, in the first row's orbit   200, share of all profiles inside that orbit 0.0016
+K=256 distinct overall 126200, in the first row's orbit   200, share of all profiles inside that orbit 0.0016
+K=320 distinct overall 126200, in the first row's orbit   200, share of all profiles inside that orbit 0.0016

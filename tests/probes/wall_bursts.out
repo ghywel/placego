@@ -1,0 +1,18 @@
+row 0 bursts (start,len): 12+112 5427+63
+row 1 bursts (start,len): 20+0 5026+377 8096+94
+row 2 bursts (start,len): 18+16 6405+36
+row 3 bursts (start,len): 4+2 5690+206
+row 4 bursts (start,len): 10+50 794+20 7944+154
+row 5 bursts (start,len): 4+78 3051+23 6043+21 10866+62
+row 6 bursts (start,len): 4+17 5348+126
+row 7 bursts (start,len): 8+0
+row 8 bursts (start,len): 4+557
+row 9 bursts (start,len): 9+309 4544+63 10486+62
+row 10 bursts (start,len): 6+44
+row 11 bursts (start,len):
+row 12 bursts (start,len): 15+0 6734+100
+row 13 bursts (start,len): 6150+19
+row 14 bursts (start,len): 8+2 1083+88
+row 15 bursts (start,len): 8+2 6747+83
+quiet gaps by dyadic length: <128:3 <256:2 <512:4 <1024:9 <2048:12 <4096:24 <8192:32 <16384:4
+rows with fewer than two bursts 13 of 60

@@ -6687,3 +6687,41 @@ Nearest kit prior art for the backward step: `Rule30ZeroBoundaryStripeFront`, `�
 ### 62.5 Physical capture can be read in three wall moves (GPT, GC2677)
 
 For an actual orbit, three consecutive +3 backward moves place the wall in one of two of the eighteen words. From then on every move is +3. Two consecutive moves can end in a retreat. The “no window of ten cells” in §62.2 refers to choosing fresh shallow inputs in the closed game. For a physical row, the exact minimum is ten, with seven sufficient words. At width eleven there are 24. The width-20 capture measurement and the three-move theorem together give a 63-tick upper bound to the eighteen for the enumerated top≤20 rows. The implication in §62.1 from the driver law to same-edge rigidity is now compiled at the original cut. [Proofs and qualifications](GPT-RIGHT-WALL-WINDOWS-20261104.md).
+
+## 63. The language of the settled wall (L1528–L1529)
+
+*Local, 5 November 2026, continuing GPT's pull of GC2677 at the owner's word. Programs and outputs: `tests/probes/wall_*`. Lean: [`TwoPairsWallLanguage.lean`](../tests/probes/lean/TwoPairsWallLanguage.lean), core Lean 4.35.0, [axioms](../tests/probes/wall_lean.out).*
+
+GPT left two words at the top of a settled wall, `A = ..####...##` and `B = .#.###...##`, with `BB` excluded, and asked which sequences occur. Letters are read in backward time.
+
+### 63.1 The answer is much smaller than "no BB"
+
+**PROVED (Lean).** `no_AAA`: `A` cannot occur three times in succession, at any depth. `witness_AA`, `witness_AB`, `witness_BA`, `witness_ABA`: each occurs on an explicit anchored row, `ABA` on one row.
+
+**COMPUTED, exact through length 18.** A word occurs if and only if some cells below the deepest window make the forward rows show it, and any such cells complete to an anchored row, so a search on the deepest row decides it ([`wall_exact.c`](../tests/probes/wall_exact.c), [output](../tests/probes/wall_exact.out)). An independent Python search agrees on all 37 candidates of length 11 ([output](../tests/probes/wall_replay.out)), and 115,799,989 letters from 600,000 random rows show the same words ([output](../tests/probes/wall_lang.out)).
+
+| length | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| words | 2 | 3 | 4 | 5 | 7 | 9 | 12 | 16 | 21 | 28 | 35 | 44 | 55 | 70 | 87 | 110 | 136 | 166 |
+| avoiding `BB` | 2 | 3 | 5 | 8 | 13 | 21 | 34 | 55 | 89 | 144 | 233 | 377 | 610 | 987 | 1,597 | 2,584 | 4,181 | 6,765 |
+
+Minimal forbidden words: `BB`, `AAA`, then at lengths 11, 11, 12, 14, 16, 18, 18, 18: `BAABAABABAA`, `BAABABAABAB`, `AABABAABABAA`, `ABAABAABABABAA`, `ABAABAABABABABAA`, `BAABAABABABAABABAA`, `BABABAABABAABAABAB`, `BABABABAABAABAABAB`. Length 19 has at least two more, and the search cap left two words undecided there. New forbidden words keep appearing, so the language is not one of finite type at any length reached. The count grows by about 1.22 per letter, against 1.62 for "no `BB`".
+
+### 63.2 Blocks and runs
+
+No `BB` and no `AAA` make every sequence a string of two blocks, `x = BA` and `y = BAA`. In these terms `yyxy`, `yxyx`, `yyxxy` and `yyxxxy` are forbidden. MEASURED on 300,000 rows ([output](../tests/probes/wall_rule.out)): after two or more `y`, the next run of `x` has length 4 to 7 and nothing else, while after one `y` it has length 1 to 12.
+
+### 63.3 Why the row remembers (PROOF-SKETCH, checked on 45,252 ticks with no violation)
+
+In the frame of the wall, `y_t(k)` the cell `k` below the deep wall cell, forward evolution reads `y_t(k) = y_(t+1)(k + 3) ⊕ (y_(t+1)(k + 4) ∨ y_(t+1)(k + 5))`. From the second settled tick on, `y(11) = ¬b` and `y(11) ∨ y(12) = 1`, and `(y(12), y(13))` on a row reads the previous letter: `AA` at `(0, 0)`, `BA` at `(1, 1)`, and `AB` at the other two ([check](../tests/probes/wall_pairs_check.out)). The letters of the past sit in the cells below the window.
+
+### 63.4 Over long times (MEASURED)
+
+- Most rows fall into `AAB` repeated. Over ticks 1,200 to 2,400 of 3,000 random rows, 2,543 have period 3, 33 have period 2 (`AB`), and 424 have no period up to 600 ([output](../tests/probes/wall_attr.out)).
+- That is not the end. On 60 rows followed for 12,000 ticks, quiet stretches of thousands of ticks are broken by short bursts of `x`, and first late bursts cluster near ticks 5,000 to 8,000 ([output](../tests/probes/wall_bursts.out)). Density of `BAB` stops falling at about 0.0067 per row and tick, from tick 512 to 4,096 ([output](../tests/probes/wall_late.out)).
+- Below the wall on a quiet row there is a common strip. At `B` ticks, the first 24 cells are identical on 126,200 profiles from 631 unrelated rows, and through 56 cells 96% of the profiles lie in one row's own time orbit ([output](../tests/probes/wall_strip.out)). It looks like the left sides of rule 30, with a wall in place of the edge. This is a measurement; no such theorem is claimed.
+
+### 63.5 What this does not settle
+
+It says nothing yet about capture, or about a periodic cloud, because it concerns rows already on the front. The language is exact only through length 18, the run limits are measured, and I have no description of the whole language.
+
