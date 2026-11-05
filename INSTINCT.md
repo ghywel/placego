@@ -1471,3 +1471,13 @@ against the forced 2.006, the gap being the coincidences of CL730, now measurabl
 record; (2) a pass over PERIOD-TWO's board with the fronts in hand: every configuration's left side is in place by a known tick,
 and whether that bounds anything the board asks (a transient bound is a kind of finiteness the board has wanted elsewhere).
 (01:56 GMT.)
+
+## Cloud, 5 November 2026 — after the actual front's law (CL739)
+
+Doing: B2/F4 answered; the increment law's shape; the universality on sixteen rows. Pull, strong: the difference process
+d_k(t), whose rule is explicit and driven by the strip's words, with the actual front as its extinction boundary: measure
+it directly (the width of the live region behind the front, the lifetime distribution of a difference, the boundary's local
+speed against the words' local density), and ask whether 0.758 wheels a tick has a formula in the words' statistics. A
+new object; the owner's word first. Second, smaller: the 0.014 cell of the coincidence table (parent arrived by coincidence,
+strip bits (1, 0), grandparent black) looks like a theorem with a one-step proof; if it is, two or three such cells would
+make the coincidence a local rule up to a residue, and the law would follow from the words. (09:32 GMT.)

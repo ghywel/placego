@@ -96,6 +96,30 @@ elif CMD == 'sib':
     out['windows'] = [[int(a), int(b), round(float(tau[b] - tau[a]) / (b - a), 4)] for a, b in zip(bounds[:-1], bounds[1:]) if b > a]
     out['increments_stretch'] = hist(np.diff(tau[lo:hi + 1])) if hi > lo else None
     json.dump(out, open(f"{STATE}/front_{name}.json", 'w'), indent=1); print(json.dumps(out)[:400])
+elif CMD == 'cond':
+    # the coincidence (increment 0: the child in its cycle at the parent's arrival) against the local pattern of the strip
+    # at the arrival tick a = tau_{k-1}: the parent's bits at a-1 and a, the grandparent's bit at a-1, and whether the parent
+    # itself arrived by a coincidence (increment 0) or by a reset
+    tau = np.load(f"{STATE}/tau_seed.npy"); w = words_of(load_row('A0'))
+    def bit(j, t): return (int(w[j]) >> (t % P)) & 1
+    cells = {}
+    for k in range(3, K):
+        word = int(w[k - 1])
+        if word == 0: continue
+        a = int(max(tau[k - 2], tau[k - 1]))
+        if a == 0: continue
+        key = (int(tau[k - 1] == tau[k - 2]), bit(k - 1, a - 1), bit(k - 1, a), bit(k - 2, a - 1))
+        c = cells.setdefault(key, [0, 0]); c[0] += 1; c[1] += int(tau[k] == a)
+    rows = []
+    for key in sorted(cells):
+        n, co = cells[key]; rows.append({'parent_by_coincidence': key[0], 'parent_bit_before': key[1], 'parent_bit_at_arrival': key[2], 'grandparent_bit_before': key[3], 'wheels': n, 'coincidence_rate': round(co / n, 4)})
+    marg = {}
+    for key, (n, co) in cells.items():
+        m = marg.setdefault(('parent_bit_at_arrival', key[2]), [0, 0]); m[0] += n; m[1] += co
+    out = {'cells': rows, 'by_parent_bit_at_arrival': {str(k[1]): round(v[1] / v[0], 4) for k, v in sorted(marg.items())}}
+    json.dump(out, open(f"{STATE}/front_cond.json", 'w'), indent=1)
+    for r in rows: print(r)
+    print(out['by_parent_bit_at_arrival'])
 elif CMD == 'report':
     seed = json.load(open(f"{STATE}/front_seed.json"))
     print(f"single cell: settled through {K-1} at tick {seed['settle_tick']}, edge retreats {seed['edge_retreats']}, {seed['seconds']} s")

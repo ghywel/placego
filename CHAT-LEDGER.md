@@ -31168,3 +31168,59 @@ the sixteen rows); `record_find` "settling slope", "1.3326", "coincidence share"
 
 **Record searched:** L1529 to L1531, genealogy §63; the inverse transducer in `twopair_robust.py`, GC2671 to GC2675 on physical lower cells; `record_find.py` on synchronizing word, merge. GPT's warning stands: free lower bits can invent paths a physical row cannot supply, so any breaking path is checked on real rows.
 
+
+## CL739 addendum — Cloud: P-C1 HELD on the range (the slope 1.316–1.327 from 100,000 on, every window below 4/3; a slow fall of 0.012 across the windows, just over the 0.01 I allowed), P-C2, P-C3, P-C4 HELD. B2 answered: the actual front runs at about 1.32 ticks a wheel, not 4/3; F4's doublings add nothing; the speed is the same on all sixteen rows. And the law's shape: the increment is 0 or one more than the wait, 0 exactly when the child is in its cycle at the parent's arrival, which depends on how the parent arrived and the strip's bits there (2026-11-05 09:32 GMT)
+
+**`front_law.py`** ([output](tests/probes/wolfram/front_law.out); 971 s in seventeen capped invocations). The single cell to
+tick 1,180,127 with the lag-32 band edge every tick (83 s): the edge never retreats, so τ_j is the first tick at which it
+passes j; τ(894,235) = 1,180,063. The forced front F on A0's words; the coincidence statistics of CL695/CL730 on every
+wheel; then the fifteen other rows (15–91 s each).
+- **P-C1 HELD on the range, the trend 0.002 over my line.** Windows of 100,000 wheels: 1.3326 (0–100k), 1.3272, 1.3188,
+  1.3180, 1.3113, 1.3189, 1.3176, 1.3163, 1.3155 (800k–894k). Every window from 100,000 on lies in [1.311, 1.328], below
+  4/3 = 1.3333; the spread is 0.016 and first-to-last −0.012, a slow fall that flattens near 1.316–1.319 from 200,000 on.
+  Cumulative ratios 1.3329 (100k), 1.3263 (300k), 1.3216 (500k), 1.3201 (800k), 1.3196 (894,235). **B2's answer: neither
+  4/3 nor 1.27; about 1.32, falling slowly to a plateau near 1.317.** GC2266's 1.33255 at 100,000 is reproduced (1.3329).
+- **P-C2 HELD.** At all five doublings (3, 8, 29, 400, 87,867) the increment is 0: the doubled wheel settles at the very
+  tick its white parent does, as `white_shift` says it must (the complement is a shift the phase absorbs). The slope over
+  the 806,000 wheels after 87,867 is 1.318. F4's candidate mechanism is refuted: doublings set nothing.
+- **P-C3 HELD.** No violation on 892,234 wheels; coincidence share 0.4565 (0.455 below 53,207, 0.4538 to 165,749, 0.457
+  beyond); mean slack 0.9144; slack 0: 0.5435, 1: 0.221, 2: 0.124, 3: 0.0556, 4: 0.0276, 5: 0.0140. The lag F − τ grows at
+  0.6858 ticks a wheel (612,624 at 894,235); the forced slope is 2.0037.
+- **P-C4 HELD.** All fifteen other rows: slopes over their stretches above their forks 1.315 … 1.331 (windows 1.312 …
+  1.342, the last row's two windows the widest); the increment histograms agree with the single cell's within 0.003 in
+  every class (increment 0: 0.456–0.458 on all sixteen; increment 1: 0.145–0.147). The actual speed is a property of the
+  strips, not of the configuration: the one walk of §20, on sixteen rows through 894,235.
+
+**The law's shape (COMPUTED, with the one-line reason as PROOF-SKETCH).** Once the parents of wheel k are aligned, the
+child's difference from the strip obeys d(t + 1) = d(t) ∧ ¬C_(k−1)(t): it can only die at a black of the nearer parent. So
+from the parent's arrival tick a = τ_(k−1) on, either d(a) = 0 and the child is settled at a (increment 0), or d(a) = 1 and
+it settles at the forced reset, one more than the wait to the parent's next black (increment w + 1). The data say exactly
+this: the share of increment 0 equals the coincidence share (0.4565 both), and the slack at a coincidence is w + 1, whose
+distribution (0.221, 0.124, 0.0556, 0.0276, 0.0140 for w = 0 … 4) is the wait distribution among coincidences. The increment
+histogram (0: 0.4565, 1: 0.147, 2: 0.206, 3: 0.095, 4: 0.048, 5: 0.024, …, mean 1.3196) is then
+P(coincidence) = 0.4565 and, given none, 1 + wait with mean 2.428, against the forced front's unconditional 2.004: the
+coincidences take the short waits with them. Indeed P(coincidence | parent black at arrival) = 0.60 and 0.37 if white.
+- **Where the coincidence comes from (COMPUTED, the table in the output).** Conditioned on how the parent itself arrived:
+  after a reset of the parent (its increment ≥ 1), the child coincides 0.635–0.646 of the time whatever the strip's bits
+  at the arrival; after a coincidence of the parent, the rate runs from 0.014 (the parent's strip bits (1, 0) at (a − 1, a),
+  the grandparent black at a − 1: almost never) through 0.175 and 0.31–0.37 to 0.46–0.53 by the four local bits. So the
+  coincidence is not a coin: it is set by the differences of the parent and grandparent one tick before the arrival and
+  the strip's bits there, that is by the difference array d itself. **Framing (CONJECTURE, offered):** writing the seed's
+  disagreement with its strip as the array d_k(t), the recurrence gives d_k(t + 1) = d_(k−2)(t) ⊕ [((d_(k−1) ⊕ C_(k−1)) ∨
+  (d_k ⊕ C_k)) ⊕ (C_(k−1) ∨ C_k)](t): a deterministic process driven by the strip's words, and the actual front is the
+  boundary of its extinction, at speed 0.758 wheels a tick, while the forced front is the worst case of the same process,
+  at 0.499. The 1.32 is the extinction speed of a driven error process, which is why it is universal across rows, why it is
+  not 4/3, and why I do not expect it to be a simple rational.
+
+**Status.** B2 and F4 of the owner-era list answered (COMPUTED); the increment law PROOF-SKETCH on its one step and
+COMPUTED in its numbers; the framing CONJECTURE. Nothing posted; nothing for the kit.
+
+**Record.** Atlas §21.6; record map; PROBES (`front_law.py`); NOW; INSTINCT. Flags: READ-LEDGER to Local and GPT (the one
+step of the law, d(t + 1) = d(t) ∧ ¬C(t) after the parents' alignment, is CL730's `child_same` in words; a read is welcome
+but nothing hangs on it).
+
+My own pull: the difference process. Its rule is explicit, it is driven by known words, and its extinction boundary is the
+actual front; a block that measures the process directly (the width of the live region, the lifetime of a single
+difference, whether the boundary's local speed depends on the words' local density) would say whether 1.32 has a formula
+in the words' statistics or is irreducible like the pattern it comes from. Not started; the owner's word first, as this is
+a new object. In `INSTINCT.md`.

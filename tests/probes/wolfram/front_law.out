@@ -1,0 +1,42 @@
+single cell: settled through 894235 at tick 1180063, edge retreats 0, 83 s
+windows (lo, hi, slope): [[0, 100000, 1.3326], [100000, 200000, 1.3272], [200000, 300000, 1.3188], [300000, 400000, 1.318], [400000, 500000, 1.3113], [500000, 600000, 1.3189], [600000, 700000, 1.3176], [700000, 800000, 1.3163], [800000, 894235, 1.3155]]
+cumulative ratios: [[100000, 1.3329], [200000, 1.33], [300000, 1.3263], [400000, 1.3242], [500000, 1.3216], [600000, 1.3212], [700000, 1.3207], [800000, 1.3201], [894235, 1.3196]]
+P-C1 windows from 100,000 within [1.30, 1.335]: True; spread 0.0159; first-to-last -0.0117; all below 4/3: True
+doublings (tau, increment): {'3': [34, 0], '8': [34, 0], '29': [63, 0], '400': [533, 0], '87867': [117356, 0]}
+P-C2 increment at 87,867 at most 8: True; slope after 100,000 = 1.3179
+increments all: {'0': 0.45650304450172496, '1': 0.14693341235804905, '2': 0.20636521719682185, '3': 0.0949727979781601, '4': 0.047779386850212754, '5': 0.023836016259708017, '6': 0.011972244432391933, '7': 0.005913434388052358, '>=8': 0.005724446034878975} mean 1.3196 max 19 p99.9 10
+coincidences: {"2..53207": {"wheels": 53206, "violations": 0, "coincidence_share": 0.455, "mean_slack": 0.9115, "slack_dist": {"0": 0.545, "1": 0.2183, "2": 0.1263, "3": 0.0555, "4": 0.028, "5": 0.0132}}, "53208..165749": {"wheels": 112542, "violations": 0, "coincidence_share": 0.4538, "mean_slack": 0.9103, "slack_dist": {"0": 0.5462, "1": 0.2184, "2": 0.125, "3": 0.0554, "4": 0.0274, "5": 0.0136}}, "165750..894235": {"wheels": 728486, "violations": 0, "coincidence_share": 0.457, "mean_slack": 0.9155, "slack_dist": {"0": 0.543, "1": 0.2215, "2": 0.1243, "3": 0.0556, "4": 0.0276, "5": 0.014}}, "all": {"wheels": 894234, "violations": 0, "coincidence_share": 0.4565, "mean_slack": 0.9146, "slack_dist": {"0": 0.5435, "1": 0.2209, "2": 0.1245, "3": 0.0556, "4": 0.0276, "5": 0.0139}}}
+P-C3 violations 0, share 0.4565 (within 0.01 of 0.454: True), slack0 0.5435, lag slope 0.6858 (0.686 ± 0.01: True), forced slope 2.0037
+lag at window ends: [[100000, 67971], [200000, 136221], [300000, 205713], [400000, 274253], [500000, 343104], [600000, 411874], [700000, 479781], [800000, 548324], [894235, 612624]]
+A0.53207: fork 53207, settled at 1112768, slope over the stretch 1.323, windows [1.336, 1.3186, 1.3191, 1.3201, 1.3197, 1.3261, 1.3151, 1.3288, 1.3245], inc0 0.45669635282608145, inc1 0.14647779193696475, 91 s
+A0.58286: fork 58286, settled at 1103968, slope over the stretch 1.3206, windows [1.3292, 1.3224, 1.3163, 1.3222, 1.3163, 1.3167, 1.3244, 1.3192, 1.3133], inc0 0.4563786097914154, inc1 0.14704315525916886, 90 s
+A0.53207.72575: fork 72575, settled at 1089138, slope over the stretch 1.3253, windows [1.3371, 1.3219, 1.3232, 1.3171, 1.3298, 1.3222, 1.331, 1.321, 1.3198], inc0 0.456608009028422, inc1 0.14589008438272724, 88 s
+A0.53207.165748: fork 165748, settled at 962445, slope over the stretch 1.321, windows [1.3214, 1.3124, 1.3227, 1.3194, 1.3264, 1.3227, 1.3225, 1.3207], inc0 0.45662128420038806, inc1 0.14654426112686955, 78 s
+A0.53207.165748.174449: fork 174449, settled at 953490, slope over the stretch 1.3242, windows [1.3213, 1.3286, 1.3273, 1.3255, 1.3245, 1.3208, 1.321, 1.3306], inc0 0.45629169396366503, inc1 0.1461851123931895, 76 s
+A0.53207.165748.179399: fork 179399, settled at 946237, slope over the stretch 1.3235, windows [1.3334, 1.3271, 1.3173, 1.3272, 1.3237, 1.3171, 1.3181, 1.3355], inc0 0.45642597203600843, inc1 0.14695354231841495, 76 s
+A0.53207.165748.174449.243767: fork 243767, settled at 857438, slope over the stretch 1.3179, windows [1.3147, 1.3195, 1.3188, 1.3188, 1.3199, 1.3124, 1.3263], inc0 0.457224181729894, inc1 0.1470942296792809, 70 s
+A0.53207.165748.174449.350243: fork 350243, settled at 720008, slope over the stretch 1.3232, windows [1.33, 1.326, 1.3162, 1.3219, 1.3223, 1.3227], inc0 0.4560807204615808, inc1 0.1464706334001884, 59 s
+A0.53207.165748.174449.445474: fork 445474, settled at 595510, slope over the stretch 1.3267, windows [1.3307, 1.3223, 1.3286, 1.3236, 1.3304], inc0 0.45596225727048956, inc1 0.1467818397301486, 49 s
+A0.53207.165748.174449.485619: fork 485619, settled at 541118, slope over the stretch 1.3244, windows [1.3294, 1.3255, 1.3256, 1.3171], inc0 0.45670634572206265, inc1 0.1458776011941347, 44 s
+A0.53207.165748.174449.537692: fork 537692, settled at 472002, slope over the stretch 1.3241, windows [1.3235, 1.3289, 1.323, 1.3172], inc0 0.4564756941438556, inc1 0.1465738640626533, 39 s
+A0.53207.165748.174449.563842: fork 563842, settled at 437788, slope over the stretch 1.325, windows [1.3339, 1.3235, 1.3162, 1.3312], inc0 0.4563128917076581, inc1 0.1460023970635971, 36 s
+A0.53207.165748.174449.445474.482608: fork 482608, settled at 541842, slope over the stretch 1.315, windows [1.3149, 1.3168, 1.3151, 1.3128, 1.3383], inc0 0.45811775134079963, inc1 0.14641233386284752, 44 s
+A0.53207.165748.174449.445474.603582: fork 603582, settled at 383496, slope over the stretch 1.3193, windows [1.3132, 1.3183, 1.3281], inc0 0.4579657369268703, inc1 0.14568576030101335, 31 s
+A0.53207.165748.174449.563842.760454: fork 760454, settled at 177809, slope over the stretch 1.3307, windows [1.3279, 1.3424], inc0 0.4570043625787688, inc1 0.1452577153013411, 15 s
+P-C4 all fifteen slopes within [1.30, 1.34]: True (min 1.3150, max 1.3307); histograms within 0.02 of the single cell's: True
+total 971 s
+
+=== cond: the coincidence rate against the local pattern at the parent's arrival (single cell)
+{'parent_by_coincidence': 0, 'parent_bit_before': 0, 'parent_bit_at_arrival': 0, 'grandparent_bit_before': 1, 'wheels': 117494, 'coincidence_rate': 0.636}
+{'parent_by_coincidence': 0, 'parent_bit_before': 0, 'parent_bit_at_arrival': 1, 'grandparent_bit_before': 1, 'wheels': 125925, 'coincidence_rate': 0.646}
+{'parent_by_coincidence': 0, 'parent_bit_before': 1, 'parent_bit_at_arrival': 0, 'grandparent_bit_before': 1, 'wheels': 117026, 'coincidence_rate': 0.6354}
+{'parent_by_coincidence': 0, 'parent_bit_before': 1, 'parent_bit_at_arrival': 1, 'grandparent_bit_before': 1, 'wheels': 125564, 'coincidence_rate': 0.6443}
+{'parent_by_coincidence': 1, 'parent_bit_before': 0, 'parent_bit_at_arrival': 0, 'grandparent_bit_before': 0, 'wheels': 9727, 'coincidence_rate': 0.4605}
+{'parent_by_coincidence': 1, 'parent_bit_before': 0, 'parent_bit_at_arrival': 0, 'grandparent_bit_before': 1, 'wheels': 51650, 'coincidence_rate': 0.5322}
+{'parent_by_coincidence': 1, 'parent_bit_before': 0, 'parent_bit_at_arrival': 1, 'grandparent_bit_before': 0, 'wheels': 33242, 'coincidence_rate': 0.5113}
+{'parent_by_coincidence': 1, 'parent_bit_before': 0, 'parent_bit_at_arrival': 1, 'grandparent_bit_before': 1, 'wheels': 20231, 'coincidence_rate': 0.4986}
+{'parent_by_coincidence': 1, 'parent_bit_before': 1, 'parent_bit_at_arrival': 0, 'grandparent_bit_before': 0, 'wheels': 160416, 'coincidence_rate': 0.1751}
+{'parent_by_coincidence': 1, 'parent_bit_before': 1, 'parent_bit_at_arrival': 0, 'grandparent_bit_before': 1, 'wheels': 108988, 'coincidence_rate': 0.0141}
+{'parent_by_coincidence': 1, 'parent_bit_before': 1, 'parent_bit_at_arrival': 1, 'grandparent_bit_before': 0, 'wheels': 11750, 'coincidence_rate': 0.3703}
+{'parent_by_coincidence': 1, 'parent_bit_before': 1, 'parent_bit_at_arrival': 1, 'grandparent_bit_before': 1, 'wheels': 12213, 'coincidence_rate': 0.3145}
+by the parent bit at arrival: {'0': 0.3727, '1': 0.6005}

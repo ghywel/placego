@@ -983,3 +983,17 @@ the kit's `Check` with the standard axioms: `forced_front_tree_left_side` (every
 one of the sixteen strips through 894,235 from tick 1,798,243 + s of its own clock, s ≤ 31), `exactly_left_sides`,
 `odd_reaches_one`, `fronts`. Memory grows with the length of a strip's walk (14.2 GB on the root strip), retained across the
 kernel facts within one module; splitting the long walks over several modules is the route to the kit's limit.
+
+**21.6 The actual front to 894,235: about 1.32 ticks a wheel, not 4/3; the same on sixteen rows; its law's shape (CL739;
+COMPUTED, the one step of the law PROOF-SKETCH).** The single cell settles wheel j at τ_j (the lag-32 band edge, which never
+retreats): windows of 100,000 wheels run 1.3326, 1.3272, 1.3188, 1.3180, 1.3113, 1.3189, 1.3176, 1.3163, 1.3155, every one
+below 4/3, a slow fall to a plateau near 1.317; τ(894,235) = 1,180,063, cumulative 1.3196 (B2 of the owner-era list
+answered; GC2266's 1.3326 at 100,000 reproduced). The five doublings add increment 0 (F4's mechanism refuted). No local
+violation on 892,234 wheels; coincidence share 0.4565; slack 0: 0.5435, then 0.221, 0.124, 0.056, 0.028, 0.014; the lag
+behind the forced front grows at 0.686 a wheel. The fifteen other rows of the tree walk at 1.315–1.331 with the same
+increment histogram (increment 0 on 0.456–0.458 of wheels on all sixteen). The law's shape: after the parents align, the
+child's difference obeys d(t + 1) = d(t) ∧ ¬C_(k−1)(t), so the increment is 0 (the child already in its cycle at the parent's
+arrival) or one more than the wait to the parent's next black; the two are the coincidence share and the slack law, and
+1.3196 = 0.5435 × 2.428. The coincidence is set by the local differences and bits one tick before the arrival (0.64 after a
+reset of the parent; 0.014 to 0.53 after a coincidence of the parent, by the bits): the actual front is the extinction
+boundary of the strip-driven difference process, framed as a conjecture.
