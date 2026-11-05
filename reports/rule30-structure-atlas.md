@@ -1076,3 +1076,13 @@ strip's own run hazard at a fixed wheel is flat (0.4995–0.5015 through n = 7) 
 exhaustive enumeration: the parent is white after a jump of 2 and black after 3 (CL741); with a white new parent after
 a jump of 4 or 5 it is black at the next tick, after 6 white.
 
+*Four strips' walks (CL745).* A row with random damage above W0 keeps the strip's wheels below W0, settles on whichever
+strip its words choose at a phase its low wheels fix only modulo their periods, and its edge, once past the transient,
+follows the strip's own walk (§20.3's one walk, with stretches where orbits part and re-merge: identical to the tick in
+four of seven windows at 894,236 wheels). So there is one walk per strip, and the comparison is between walks. Past
+wheel 200,000 the walks on A0, A0.58286, A0.53207.165748 and A0.53207.72575 have p 0.4105–0.4123, q 0.5090–0.5117,
+S 0.7293–0.7309, speeds 0.7555–0.7595, against the nine fair rows' 0.4106–0.4118, 0.5088–0.5107, 0.7286–0.7312,
+0.7552–0.7580: the strips share the fair rows' law to within their own spread, A0 highest of four. The seed's +0.003
+of CL743 was that, not a strip property; CL744's rising tail is A0's own. Design facts, by hand: the never-black wheels
+of the strips are the doubling wheels (2, 7, 28, 399, 87,866), an error above one never heals.
+

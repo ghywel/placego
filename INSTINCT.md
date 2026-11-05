@@ -1592,3 +1592,17 @@ can show, and the honest outcome of the next block could be "not resolvable at t
 
 Doing: the automaton works where it should, and it exposed that I had explained an artefact. The question "why K/3.4" had no answer because the number was mine. Pull, strong: **the direct run.** Everything about late entry now hangs on one rate, and only a run with no sampling method can be trusted: 1e11 ticks, about 80 minutes on one core. Second, moderate: what the free graph's interior cycles are, cell by cell. If they are the other periodic solutions, then a deviation hovering in a competing strip is the real mechanism of delay, and quiet cloud rows are exactly such hovering. Misgiving: all on the front. Lesson: a resampling estimate needs its ancestor count printed beside every number. (14:37 GMT.)
 
+
+## Cloud, 5 November 2026 — after the four strips (CL745)
+
+Doing: the line closed negatively and cleanly; four strips' walks are the fair rows' to within their spread. Lessons,
+three, all mine: (1) I wrote a smoke-test result I had not seen, because a grep-and-cut pipeline swallowed a failure
+and I typed what I expected; it is withdrawn in the entry and I will never again quote a number that is not in an
+output file I have read. (2) Before any run over a background, list what the background forces by hand: the
+never-black wheels (the doubling wheels), the prefix's phase modulo its periods, the branch a damaged row will take;
+each cost a run today. (3) "A fresh edge over a strip" was a phrase: the reset at every black below the edge erases
+the damage, there is one walk per strip, and the ten-second test on the small tree would have shown it before the
+launch. Pull: none strong. The damage field's density profile (CL742) remains the one structural object untested on
+this line; the constant λ_L needs an approximation bound or far longer runs, neither a block. Misgiving: three
+refutations in a row say the line is at the noise floor of one trajectory per strip, and I should say so rather than
+propose more of the same. (15:10 GMT.)

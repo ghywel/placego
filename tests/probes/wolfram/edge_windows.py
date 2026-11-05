@@ -7,7 +7,9 @@ whole run. A window is the stretch of ticks during which the edge lies in [a, a 
 CL744: also the hazard past wheel LATE by stall length n (n = 1 also by the preceding jump) and by phase t mod 32, against
 the strip's own per-phase law of the XOR below a white bit.
 Usage: python3 edge_windows.py ROWSDIR [WIDTH] [K] [LATE] [STRIP] [DAMAGE]   (the rows of tree16_data.py at 894,236 wheels, phase 0;
-STRIP the row's file name without .bin, default A0; DAMAGE 0 = the seed, else random damage above wheel 2 with that seed; CL745)"""
+STRIP the row's file name without .bin, default A0; DAMAGE 0 = the seed, else the strip with random damage from wheel W0 (arg 7,
+default 64) with that seed; T0 (arg 8, a multiple of 32, at or past the settling bound): first evolve the damaged row T0 ticks and
+identify the strip it settles on among ROWS/*.bin, then run the edge against that strip; CL745)"""
 import sys, time, collections
 ROWS = sys.argv[1]; WIDTH = int(sys.argv[2]) if len(sys.argv) > 2 else 100000
 STRIP = sys.argv[5] if len(sys.argv) > 5 else "A0"             # CL745: the strip's file name without .bin
@@ -28,10 +30,28 @@ LATE = int(sys.argv[4]) if len(sys.argv) > 4 else 200000
 st = collections.Counter(); bk = collections.Counter()        # (n, phi) -> stall ticks, blacks at t+1
 st1 = collections.Counter(); bk1 = collections.Counter()      # n = 1 by the preceding jump d
 n_stall = 0; last_jump = None
-import random
-if DAMAGE: rng = random.Random(DAMAGE); x = (cyc[0] ^ ((rng.getrandbits(K) & ~0b111) | 0b100)) & MASK
+import random, os
+W0 = int(sys.argv[7]) if len(sys.argv) > 7 else 64          # the damage starts at wheel W0 (above the never-black wheels 2, 7, 28)
+T0 = int(sys.argv[8]) if len(sys.argv) > 8 else 0           # if given: evolve the damaged row T0 ticks (a multiple of 32), identify its strip among ROWS/*.bin, use that
+if DAMAGE:
+    rng = random.Random(DAMAGE); x0 = (cyc[0] ^ ((rng.getrandbits(K) >> W0) << W0 | (1 << W0))) & MASK
+    if T0:
+        assert T0 % P == 0; y = x0
+        for _ in range(T0): y = step(y)
+        found = None            # the low wheels fix the phase only modulo the small periods: search every strip at every phase
+        for f in sorted(os.listdir(ROWS)):
+            if not f.endswith('.bin'): continue
+            r = int.from_bytes(open(f"{ROWS}/{f}", 'rb').read(), 'little') & MASK; c = [r]
+            for _ in range(P - 1): c.append(step(c[-1]))
+            for ph in range(P):
+                if c[ph] == y: found = (f[:-4], ph, c)
+        assert found, "the damaged row is on none of the strips at tick T0, at any phase"
+        STRIP, PHASE, c = found
+        cyc = c[PHASE:] + c[:PHASE]          # the strip at the configuration's phase: compare x(t) with cyc[t mod 32]
+        assert step(cyc[P - 1]) == cyc[0]
+    x = x0
 else: x = 1
-print(f"strip {STRIP} on {K} wheels; actual row: {'the seed' if not DAMAGE else f'the strip with random damage above wheel 2, seed {DAMAGE}'}")
+print(f"strip {STRIP} on {K} wheels; actual row: {'the seed' if not DAMAGE else f'strip {sys.argv[5] if len(sys.argv) > 5 else 'A0'} with random damage from wheel {W0}, seed {DAMAGE}' + (f', settling on {STRIP} at phase {PHASE} by tick {T0}' if T0 else '')}")
 t0 = time.time(); t = 0; m_prev = None; h_prev = None; dec = 0
 while True:
     C = cyc[t % P]; e = x ^ C; m = lowbit(e)
