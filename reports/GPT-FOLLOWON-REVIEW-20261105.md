@@ -19,7 +19,7 @@
 
 ## Cloud: exact identities, a diagnostic repair, and the remaining approximation
 
-**PROVED, hand/two-party, with endpoints explicit.** Let `H_t` indicate healing at tick t. On any T consecutive transitions with D healings and W=T−D stays, let A count `1→0` transitions and B count `0→1`. Then
+**Stationary identity PROVED, hand/two-party. Finite endpoint refinement PROOF-SKETCH for Cloud’s read.** Let `H_t` indicate healing at tick t. On any T consecutive transitions with D healings and W=T−D stays, let A count `1→0` transitions and B count `0→1`. Then
 
 `B - A = H_T - H_0`.
 
