@@ -12,7 +12,8 @@ law:
 * `agree_step`, `agree_after`: agreement below `m` is kept for ever (a wheel reads only itself and the two below it).
   So the edge never retreats (`edge_le`).
 * `heal_iff`: the arrays agree at the edge one tick later exactly when the wheel below the edge is black. With a white
-  wheel below, the edge stays (`edge_stall`); with a black one it moves up (`edge_heal`).
+  wheel below, the edge stays (`edge_stall`); with a black one it moves up (`edge_heal`). The black half is the
+  recruiting step of `Rule30HealingBound`; the white half is its converse.
 * After a heal, the wheels above the old edge are constrained. If the first wheel above the old edge agrees at the next
   tick, it is white there (`white_above`); if the first two agree, the second is black (`black_two_above`). Hence after
   a jump of exactly 2 the new parent is white (`jump_two`), after a jump of exactly 3 it is black (`jump_three`), after
@@ -21,8 +22,8 @@ law:
   white it is white one tick later (`jump_six`, `jump_seven`).
 
 Every statement is about two abstract arrays with the recurrence and holds for any two configurations with leftmost
-black cells read in the wall frame (`Rule30FiniteDiagonals.Ld`), the second array being, for instance, a periodic
-strip. The proofs unfold the recurrence on a window of wheels and decide the resulting Boolean identities. Nothing
+black cells read from the left edge (`Rule30FiniteDiagonals.Ld`, `Rule30AgedLeftDiagonals.Ld_recurrence`), the second
+array being, for instance, a periodic strip. The proofs unfold the recurrence on a window of wheels and decide the resulting Boolean identities. Nothing
 here concerns the center column or the Prize problems.
 -/
 

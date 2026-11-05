@@ -1,5 +1,35 @@
 # The error edge of two configurations: barrier, heal criterion, six laws after a heal
 
+**Prepared, not posted (Local, L1553, at the owner's word).** Cloud's work, CL747. Local alone posts, on the owner's word. GPT reads first only if the owner asks.
+
+**Release.** Notebook sha256 `65fc517295238ce6868d68d42c6df4afb32ceea95c40d1230769d025fcc6fe19`, 98,027 bytes, on verifier image 17 (kit `722a0c51`), RESULT OK in 26 s at 2.6 GB, on the first run. Every gate passed: 6 Output cells, no Message cells, the first cell equal to the plain Python replay, the Abstract cell, the icon payload, the kit cell, a LeanEnvironment, all 14 axiom sets, KernelChecked 56. No home path in it. Receipts `cited/l1553-error-edge/nb1-receipts.tar.gz` (4061 bytes, e8a9f4b51c284d60…). `post.sh --dry` passes against the live verifier. Any change to the Lean, essay or abstract moves the pins and needs a new notebook, which takes half a minute.
+
+| Form | File | sha256 | Build (M5) | `Check` |
+|---|---|---|---|---|
+| Kit | [`Rule30ErrorEdge.lean`](Rule30ErrorEdge.lean) | `0d297ca3cdf37309…` | under 1 s, closure 14 s at 2 GB | pass at kit main 5fb5915, 56 constants, 14 headlines |
+| Portal | [`Rule30Submission.lean`](Rule30Submission.lean) | `5e6607a1b0681ef4…` | under 2 s | pass at the verifier's kit 722a0c51, 56 constants, 14 headlines |
+
+Texts: [`title.txt`](title.txt), [`abstract.txt`](abstract.txt) (250 words, `bc9d44b9…`), [`essay-prose.md`](essay-prose.md) (`2e9912c5…`), [`essay.md`](essay.md) (`850800df…`), [`headlines.txt`](headlines.txt), [`PR-BODY.md`](PR-BODY.md), [`kit-integration.patch`](kit-integration.patch). Drivers: [`assemble_error_edge_essay.py`](../../../../tests/probes/wolfram/assemble_error_edge_essay.py), [`error_edge_notebook.wl`](../../../../tests/probes/wolfram/error_edge_notebook.wl).
+
+**What Local changed from CL747, and why.** No proof changed.
+- **Header order.** The kit's rule is `module`, imports, `@[expose] public section`, then the namespace, so `Rule30ErrorEdge.lean` puts them in that order. `cloud-Rule30ErrorEdge.lean` stays as Cloud delivered it.
+- **Credit.** Cloud's list did not include `Rule30HealingBound` (our own R30-20261103-e660e4). Its `healing_bound` already has the black half of `heal_iff` as its recruiting step, so the essay, the module header and the catalog row now say so, and claim the white half as the converse.
+- **"Wall frame" became "from the left edge".** The word now has another meaning in R30-20261105-c15ef5, and "wall" means the zero wall in the kit.
+- **"Jumps of 1 and of 8 or more".** The enumerator's window resolves jumps through 8, so the essay now says 1 and 8, and that it does not reach further.
+- **The Wolfram cell.** Section 5 now runs every law on two real configurations for 3,000 ticks. A second cell three places from the seed failed as a test: its edge stops at wheel 8 for ever, above a permanently white wheel, so the cell uses 500 places, and the essay says why. Result: 1,112 heals, jumps 1 to 9, `heal_iff` at every tick, no law broken. Wolfram and [Python](../../../../tests/probes/wolfram/error_edge_replay.out) agree.
+- **Bridge named.** Section 1 now names `Ld_recurrence`.
+- **Internal numbers** removed from section 5. **Build time** corrected to the M5's. **Headlines** are 14: `agree_after` joins Cloud's thirteen.
+
+**Controls.** [Nine mutants](../../../../tests/probes/wolfram/error_edge_mutate.out), a flipped conclusion of each law and a dropped white-parent hypothesis, are all rejected. [Portal `Check`](../../../../tests/probes/wolfram/error_edge_check_portal.txt), [kit `Check`](../../../../tests/probes/wolfram/error_edge_check_kit.txt).
+
+**Prior art searched.** `known_find.py --new` at kit `5fb59158`, portal 18:19Z, 12 open PRs, and the index's PR channel worked on this host. Terms: error edge, difference pattern, damage, two configurations, disagree, first differing, heal, stall, jump, two arrays, agree below, differ at. Read: `Rule30HealingBound` (credited), `Rule30UniversalLeftSide` (`child_same`, `child_white`, `same_left_side`, credited), `Rule30MaskedJen.left_of_black` (credited), `Rule30EdgeClock` and R30-20261103-e742c0 (first differences on the right-edge map `T`, another recurrence and other statements), R30-20261024-1fc962 `front_step` (the period-3 ether), R30-20261029-dc3d17 (unrelated), R30-20261027-61e435 (right-edge `iter_agree`). Nothing gives `heal_iff`'s white half for two left-diagonal arrays, or the jump laws. Closed PR discussions are not indexed.
+
+**Not run:** the full catalog build. It is not required, and PR 156 landed without it.
+
+---
+
+*Cloud's original README follows.*
+
 **Cloud, 5 November 2026 (CL747). Drafted at the owner's word; nothing posted.** Local builds of record, runs the novelty
 check at the current kit, builds the notebook, and posts on the owner's word; GPT reads once before posting if the owner
 asks.

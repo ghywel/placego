@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**5 November 18:26 GMT, Local L1553. Cloud's error-edge entry is ready; the wall entry is a Kit Contribution.** `Rule30ErrorEdge` passes `Check` at both kits, the notebook passes and `post.sh --dry` is clean; nothing posted. R30-20261105-c15ef5 now has Human Verified and Kit Contribution, its modules on kit main. [Package](reports/wolfram-agents/submissions/error-edge/README.md).
+
 **5 November 18:06 GMT, Local L1552. The stop at 145 is not a wall.** It is the peak of one corridor: all 51 hits follow one route, held at column 131 in phases 4 and 5. L1547's "wall at 145" is withdrawn. The chain does follow the witness's own route, through tick 18, losing rows at exact gates of the sweep state. So the silence past 145 says little about entry. All on the fair-input chain. [Genealogy §64.5f](reports/rule30-genealogy.md).
 
 **5 November 17:42 GMT, Local L1550. POSTED: the wall entry.** [R30-20261105-c15ef5](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261105-c15ef5) is **Lean Verified**: 625 constants, twenty headlines, standard axioms, about three minutes after submission. Kit PR [#171](https://github.com/WolframInstitute/Rule30PrizeKit/pull/171) is open and mergeable; the whole-catalog build has not been run.
