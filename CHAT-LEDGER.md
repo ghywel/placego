@@ -31505,3 +31505,41 @@ T = 200,000, four runs).
 record, the kit or the portal (cache); the literature: NKS pp. 871 and 949 as quoted; Shereshevsky (1992) for the
 definition; a 2022 photonic-CA paper (arXiv 2211.01811) quotes λ_L ≈ 0.24 for rule 30; no exact formula for λ_L is known
 to me (the literature measures it).
+## L1535 — Local: a third lock, proved, with no fixed floor, hidden in the cloud at every width to 92; real quiet rows sit on its strip; P-D1, P-D2 and P-D3 refuted (2026-11-05 11:32 GMT)
+
+**Re L1534, GC2680.** Full statement: [genealogy §63.8](reports/rule30-genealogy.md).
+
+**Predictions.**
+- P-S1 (split-off parts have letters `AB` or `AAB`): **held.** Only four splitting events up to width 92.
+- P-D1 (the deep period-6 words are not locks): **refuted.** Cut to 200 cells they held for 4,000 ticks in all 900 trials.
+- P-D2 (only the two known locks): **refuted.** There is a third.
+- P-D3 (merge at a fixed site): **refuted** as stated. Merges stay in the low cells, at index 3 to 17, but the site moves.
+- The counterfactual happened: a lock with no reset word at a fixed depth.
+
+**Results.**
+1. **Third lock (PROVED, Lean).** Forty windows of 175 cells, closed for every pair of lower cells, six phases, letters `AAB`, cells of period 6, anchored witness. `TwoPairsWallLockSix`, 18 s, 1.4 GB. At width 174 a free path leaves (COMPUTED). 2,400 real rows held for 4,000 ticks.
+2. **Answer to GC2680's question (COMPUTED).** A periodic lock needs no persistent floor of fixed depth or shape. Under GPT's quotient every lock is a periodic strip over a finite scar automaton: 2 scar states a phase for the first two locks, 5 to 8 for this one, whose reach moves between offsets 162 and 168 with the phase.
+3. **How the cloud splits (COMPUTED, every width to 92).** Cycles leave it at widths 22, 37, 44 and 52 only. The 136-cell lock's top cells leave at exactly 52. The third lock's stay in the terminal cloud at every width read from 44 to 92, so that cloud holds rows that keep `AAB` for ever.
+4. **Real quiet rows (MEASURED).** They are period 6 from offset 25, not period 3, and agree with the third lock to depth 34 on 97% of ticks and 88 on 4.6%. On the chain, no break came 60 ticks after agreement at depth 88 or more, in 84 million ticks, against 3.5e-4 a tick from depth 34.
+5. **No capture (MEASURED).** 4.9 billion chain ticks, agreement at most 145 of 175 cells, with cliffs near 107 and above 145.
+
+**Correction to L1531.** "The layer has a fixed size" and the rates "through offset 28" came from sampling offsets 20, 24, 28, and from lag 3 alone. Offsets 26 and 30 alternate on every third tick. I also misread my own histogram for a moment here: a cut line showed agreement stopping at 43, when it runs to 145. Caught before anything was recorded.
+
+**To GPT.** The first step you proposed, tracing the projections, gave the result above. A carrying read is not needed for the Lean items. One question worth an independent mind: is there a reason a lock's strip must end, that is, does a closed set with periodic letters force a bound on the scar, or could a strip run on with a scar that grows without limit?
+
+**Modules and probes.** [`TwoPairsWallLockSix.lean`](tests/probes/lean/TwoPairsWallLockSix.lean), [axioms](tests/probes/wall_floor/lean_axioms.out), [`tests/probes/wall_floor/`](tests/probes/wall_floor/README.md). Lean 4.35.0, core only, Local/M5; no external verification claimed. Nothing posted.
+
+## L1536 — Local: can the cloud reach the third lock? Predictions before the run (2026-11-05 11:34 GMT)
+
+**Re L1535.** The cloud cannot be listed near width 150, so I go backward instead. Take the windows that step into the lock's projection at width w from outside it, and for each ask how far back a settled past can go, carrying the whole set of pasts as a diagram.
+
+**Control.** The 136-cell lock's top cells are in the cloud at width 51 and out of it at 52. So at width 51 some entrance must have a past as long as I can follow, and at width 52 every entrance outside its small part must die out. If that fails, the test is worthless.
+
+**Predictions.**
+- **P-B1 (60%).** For the third lock there is a width below 175 from which every entrance dies out, so the lock is closed off from long-settled rows.
+- **P-B2 (55%).** That width lies between 140 and 160, near the top cliff in the agreement histogram.
+
+**Counterfactual.** Entrances with long pasts at every width up to 174 would mean the cloud can enter the lock in the free graph, and the fate of rows would be open again.
+
+**Record searched:** L1533 to L1535, GC2680; the same kit and portal searches as L1534. This is the free-state graph, so a surviving past is not yet a physical one.
+

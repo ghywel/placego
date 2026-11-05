@@ -1499,3 +1499,8 @@ Doing: the speed split exactly into the death rate and the jump law; the structu
 the two-wheel model of the edge, state (e_(m+1), e_(m+2)) with the strip's bits at m − 1 … m + 2, its stationary measure,
 and the jump law and death rate predicted from it rather than fitted; agreement within a few per cent is the law of 0.752,
 disagreement says where the memory is. Bounded, a block. Not started: the owner's word first. (11:09 GMT.)
+
+## Local, 5 November 2026 — after the third lock (L1535)
+
+Doing: GC2680's question answered; the pull of L1533 (why only periods 2 and 3) is dead as stated, since period 6 locks too. Pull, strong: **the agreement cliffs.** Quiet rows agree with the third lock to depth 145 and never 150, with a cliff near 107. I suspect the lock splits off the cloud near width 150, as the 136-cell lock splits at 52 long before it closes. If that is right the cloud is closed against it and the real rows' strip is the top of something they can never enter, which would be a strange and exact statement. Bounded test: the cloud cannot be listed at 150, so go backward from the lock's windows, with letters `AAB` held, and see whether the set of windows that reach it dies out. Second, moderate: period 12. Real rows show correlations at multiples of 6 down to offset 128, and at 18 near 112 to 128. Third, small: GPT's question back, whether a strip must end. Misgiving, unchanged: all of this is rows on the front. Lesson: twice now a partial sample told me something false: offsets 20, 24, 28 in L1531, and a truncated line today. Read the whole output. (11:32 GMT.)
+

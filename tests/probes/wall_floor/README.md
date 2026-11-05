@@ -17,3 +17,14 @@ Probes for [genealogy §63.7](../../../reports/rule30-genealogy.md). All are sho
 | `clos.py`, `eventual.py`, `locklib.py` | Window closure and E(w) in Python, the first versions. |
 | `gen_lock_lean.py`, `gen_cloud_lean.py`, `cloud_*.txt` | Generators of `TwoPairsWallLockAAB.lean` and `TwoPairsWallCloud.lean`; each writes to `lean/` beside it, so run them from a folder that has one. |
 | `lean_axioms.out` | The axioms of the four Lean modules. `TwoPairsWallCloud` built in 57 s with 1.5 GB (M5, 8 GiB cap); a single check over all 798 windows passed that cap, so the check is split into chunks of 40. |
+
+## Added in L1535
+
+| File | What it does |
+|---|---|
+| `wall_births.c` | E(w) with each part's parent: every cycle that splits off the cloud. Output `wall_births92.out`. |
+| `wall_lockscan.c`, `wall_holds.c`, `wall_closure2.c` | Closure with no assumption on shape, on periodic trees, on one word, or for wide windows. Outputs `scans.out`, `lockscan_*.out`. |
+| `deep6.py`, `deepread.py`, `lock175.py`, `phases175.py`, `lock6in.py`, `break_at.py`, `entrances.py`, `scar.py` | The deep period-6 words, the third lock's phases, where it sits in E(w), and the quotient of the three locks. Outputs `lock175.out`, `phases175.out`, `lock6in.out`, `lock136in.out`, `scar.out`. |
+| `gen_lock6_lean.py` | Generator of `TwoPairsWallLockSix.lean`. |
+| `wall_chain.c`, `wall_chainlags.c`, `wall_spec.c`, `wall_quietwins.c`, `wall_capture.c`, `wall_hazard.c`, `wall_lags.c` | The window chain: the top W cells with fair lower states, at constant cost a tick. Long-time fates, lag rates by offset, the lag spectrum, quiet windows, capture, and the break rate by depth of agreement with the third lock. Outputs `chain_long.out`, `chainlags.out`, `wall_spec.out`, `quietwins36.out`, `quietwins60.out`, `capture1.out`, `hazard.out`, `wall_lags.out`. `wall_lags.c` uses real rows, not the chain. |
+

@@ -14,3 +14,8 @@
 'TwoPairs.WallCloud.cloud_forever' depends on axioms: [propext, Quot.sound]
 'TwoPairs.WallCloud.cloud_not_lock' depends on axioms: [propext, Quot.sound]
 'TwoPairs.WallCloud.no_long_alternation' depends on axioms: [propext, Quot.sound]
+'TwoPairs.WallLockSix.closed' depends on axioms: [propext]
+'TwoPairs.WallLockSix.lock_cycle' depends on axioms: [propext, Quot.sound]
+'TwoPairs.WallLockSix.lock_letters' depends on axioms: [propext, Quot.sound]
+'TwoPairs.WallLockSix.lock_forever' depends on axioms: [propext, Quot.sound]
+'TwoPairs.WallLockSix.witness' depends on axioms: [propext, Classical.choice, Quot.sound]

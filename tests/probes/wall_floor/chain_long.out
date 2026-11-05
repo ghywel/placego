@@ -1,0 +1,6 @@
+100 chains
+200 chains
+300 chains
+400 chains
+W 512 chains 400 ticks 2000000: letters AB from before T/2 5, AAB from before T/2 0, other 395
+changes of the lag-3 letter by dyadic tick, per chain: 2^2:2.04 2^3:3.28 2^4:5.19 2^5:7.37 2^6:8.46 2^7:7.70 2^8:5.45 2^9:9.43 2^10:20.48 2^11:40.62 2^12:78.86 2^13:163.75 2^14:319.11 2^15:646.62 2^16:1292.28 2^17:2602.22 2^18:5197.76 2^19:10364.60 2^20:18754.42

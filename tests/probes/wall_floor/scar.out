@@ -1,0 +1,14 @@
+AB lock width 45
+  phase 0: scar states 2, scar cells 3, offset of the highest 42, responses [1, 2], merge index 3 to 7
+  phase 1: scar states 2, scar cells 3, offset of the highest 42, responses [1, 2], merge index 3 to 7
+AAB lock width 136
+  phase 0: scar states 2, scar cells 3, offset of the highest 133, responses [1, 2], merge index 3 to 7
+  phase 1: scar states 2, scar cells 3, offset of the highest 133, responses [1, 2], merge index 3 to 7
+  phase 2: scar states 2, scar cells 3, offset of the highest 133, responses [1, 2], merge index 3 to 7
+third lock width 175
+  phase 0: scar states 5, scar cells 10, offset of the highest 165, responses [1, 2], merge index 3 to 10
+  phase 1: scar states 6, scar cells 10, offset of the highest 165, responses [1, 2, 3], merge index 4 to 17
+  phase 2: scar states 7, scar cells 13, offset of the highest 162, responses [1, 2], merge index 3 to 10
+  phase 3: scar states 8, scar cells 13, offset of the highest 162, responses [1, 2], merge index 3 to 11
+  phase 4: scar states 7, scar cells 8, offset of the highest 167, responses [1, 2], merge index 3 to 11
+  phase 5: scar states 7, scar cells 7, offset of the highest 168, responses [1, 2], merge index 3 to 14

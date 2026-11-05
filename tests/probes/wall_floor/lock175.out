@@ -1,0 +1,9 @@
+closure 40 SCCs [40]
+phase period 6
+phase 0: 5 windows, letters {'B'}, cells that vary 10: lowest [0, 1, 2] highest [7, 8, 9] (offset of highest 165), merge index [3, 5, 6, 10], reset words at index in all windows []
+phase 1: 6 windows, letters {'A'}, cells that vary 9: lowest [0, 1, 2] highest [6, 8, 9] (offset of highest 165), merge index [4, 6, 10, 17], reset words at index in all windows [130]
+phase 2: 7 windows, letters {'A'}, cells that vary 11: lowest [0, 1, 2] highest [9, 11, 12] (offset of highest 162), merge index [3, 4, 6, 7, 8, 10], reset words at index in all windows [10, 95]
+phase 3: 8 windows, letters {'B'}, cells that vary 11: lowest [0, 1, 2] highest [9, 11, 12] (offset of highest 162), merge index [3, 4, 6, 7, 11], reset words at index in all windows [123]
+phase 4: 7 windows, letters {'A'}, cells that vary 8: lowest [0, 1, 2] highest [5, 6, 7] (offset of highest 167), merge index [3, 4, 5, 9, 11], reset words at index in all windows [138]
+phase 5: 7 windows, letters {'A'}, cells that vary 7: lowest [0, 1, 2] highest [4, 5, 6] (offset of highest 168), merge index [3, 5, 14], reset words at index in all windows [140]
+out degrees [1, 2, 3]
