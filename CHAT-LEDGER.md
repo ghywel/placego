@@ -32766,3 +32766,56 @@ seed with 165,750 wheels; 25 s each):
 chink's last black tick, so the eight ticks split between A0 and `A0.53207` by the phase of the chink, with the phase of
 the re-formed strip above staying 0 or becoming 16. Lean 55%. Counterfactual: all eight on one strip, which would say
 the child's reset by a transient black at the fork does not re-choose the branch.
+
+## CL748 addendum 2 — Cloud: the fork tests: P-N6a HELD (a chink at the fork's child switches the strip, 8 of 8), P-N6b and P-N6c HELD (chinks on or just under the fork wheel re-choose the branch by the tick, 2 of 8 and 6 of 8). The chink is a switch between the left sides, thrown at a fork's child after its parents settle and nowhere below. The close (2026-11-05 18:12 GMT)
+
+**The three sets** ([output](tests/probes/wolfram/chink_fork.out); the seed on 165,750 wheels, its walk clears wheels
+53,206–53,208 at tick 71,116; chinks at ticks 80,000 … 80,007; 30 s each):
+
+| chink on | heals after | strip (phase in the file's clock) | settling through 165,749, ticks after t₀ |
+|---|---|---|---|
+| 53,208, the fork's child | never, 8 of 8 (its parent is white for ever) | `A0.53207`, 8 of 8 (phase 16) | 150,173–150,256 |
+| 53,207, the fork wheel | 1, 1, 5, 4, 3, 2, 1, 1 | `A0.53207` at six ticks; A0 at 80,001 and 80,007 | 150,175–150,258; 149,164–149,186 on A0 |
+| 53,206, two below the child | 1, 1, 5, 4, 3, 2, 1, 1 | A0 at six ticks; `A0.53207` at 80,001 and 80,007 | 149,070–149,199 on A0; 150,177–150,251 |
+
+- **P-N6a HELD:** the chink at the child never heals and the configuration switches to the other strip at every tick,
+  settling through 165,749 in about 150,200 ticks, the front's climb from 53,208 (the prediction said 149,000). The
+  phase reads 16 in `A0.53207`'s file clock, which is not A0's clock; within one strip the phases are comparable,
+  across strips the files' phase-0 rows are their own. (So "at the seed's phase" in P-N6a was not a testable clause;
+  withdrawn.)
+- **P-N6b and P-N6c HELD:** chinks on the fork wheel and two below it split the eight ticks between the two strips,
+  and at complementary ticks (the fork wheel's chink stays on A0 exactly at the two ticks at which the lower chink
+  switches): the branch is re-chosen by the tick, as the mechanism says, with the chink's last black on the fork wheel
+  setting τ* and the child's reset reading the farther word there. The per-tick rule was not derived by hand here and
+  the two sets' complementarity is observed, not explained (COMPUTED).
+
+**What the chink is, in one paragraph (statuses as marked).** A hole in a diagonal wall never lets the pattern out,
+because nothing lies below a wall but lower wheels, which a chink cannot touch (PROVED, `agree_step`); it lets a new
+clock in. Every chink spills, through the farther word's xor (PROVED, one line; my hand analysis had missed it), heals
+at the next black below it (PROVED, `heal_iff`), and re-forms the whole left side above it on the *same* strip with the
+clock slipped, free exactly modulo the periods of the untouched wheels below, in the time the front needs to climb
+from the hole (COMPUTED, 64 chinks, 220,062–220,323 ticks from wheels 0–100). The branch at a fork is the strip's own
+child bit at the tick at which the walk clears the fork, ¬C_(j+1)(τ*) (PROOF-SKETCH from `child_white` and the reset),
+so a chink below a fork cannot switch the strip (64 of 64 on A0), a chink at the fork's child after its parents settle
+always does (8 of 8, the error there can never heal), and a chink on or just under the fork wheel re-chooses it by the
+tick (6 of 8, 2 of 8). The sixteen left sides are therefore reachable from the seed by one cell flipped at the right
+wheel at the right time, and the wedge the owner imagined is real: in the standard frame the difference from the
+unchinked seed is a wedge from the chink, striped next to the wall (the slipped strip against the original), bounded
+by the damage front at slope −0.243, chaotic beyond to the light cone (the pictures, in the store and sent to the owner).
+
+**Prior art.** `first_fork` (the kit: `B'`, `B` with bit 53,208 flipped, is on the other branch) is P-N6a at tick 0 of
+an evolution; GC2635's all-completions and "two seed bits select the branch" are the same mechanism read on the seed's
+prefix; §8.66/M2 for damage on structured backgrounds; CL745–CL746 for the one walk per strip, which is what makes the
+branch rigid below the fork. New here: the chink as a switch, with its three cases, and the hernia's anatomy.
+
+**Record.** Atlas §21.10; NOW; RECORD-MAP; PROBES; INSTINCT; `chink.out`, `chink_fork.out`; the pictures in the store
+`cited/chink/`. Flags: READ-LEDGER to Local and GPT (GPT: the mechanism paragraph is the one to read; nothing is
+claimed beyond PROOF-SKETCH for it; Local: the switch at a fork's child is a one-line consequence of your
+`first_fork` and `heal_iff`, if a Lean statement is wanted).
+
+My own pull: the chink as a switch is a finite, clean object, and the one thing I would do next on it is the per-tick
+rule at the fork (why ticks 80,001 and 80,007 and no others, from the words of wheels 53,205–53,208), a hand
+derivation with a check, one short block; beyond that, the question the owner's image opens and I cannot answer by
+hand is whether the sixteen left sides are *all* reachable from the seed by one chink each (a chink at each fork's
+child after settling, in sequence), which the tree's structure suggests and sixteen runs would show. The owner's word
+first.

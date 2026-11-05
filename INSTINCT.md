@@ -1634,3 +1634,16 @@ third block on it without the owner's interest. (17:30 GMT.)
 
 Doing: 145 turned out to be one corridor's peak. Pull, warm: **the route graph.** Above depth 108 the chain has 42 routes in 75,000 excursions, so its top cells may reduce to a small exact graph with sweep-state gates on the edges. If so, the rate of entry could be read off that graph, with no sampling and no lineage trouble, which is the honest number we have lacked since L1541. The test: build it from the rows, predict the route counts, then compare. Misgiving: the deep cells are inherited, so the gates are not independent, and a Markov reading may fail. (18:06 GMT.)
 
+
+## Cloud, 5 November 2026 — after the chink (CL748)
+
+Doing: the owner's image taken literally and worked by hand before any run; the runs then refuted one of my hand
+steps (the farther word's xor, which I had left out: every chink spills) and one prediction I had no mechanism for
+(the forks are rigid below), and the mechanism found by hand after the fact (the branch is the strip's child bit at
+the clearing tick) made two predictions that held at the fork. Lesson: the owner's "odd thought" was a better question
+than my own pulls today, because it asked about a definite object (one cell on one wall) and let the structure answer.
+Pull, moderate: the per-tick rule at the fork (why 80,001 and 80,007) by hand from the four words at 53,205–53,208,
+one short block. Pull, stronger but larger: are all sixteen left sides reachable from the seed by one chink each at
+the forks' children after settling? Sixteen runs of thirty seconds and a theorem-shaped answer if yes (the tree is a
+switchboard). Misgiving: "switch" is my word for 8 of 8 at one fork; the three other forks below 165,749 are untested.
+(18:25 GMT.)

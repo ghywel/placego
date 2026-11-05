@@ -1,0 +1,96 @@
+chink on wheel 53208 at tick 80000: healed after None tick(s) (None = not within 16); wheel 53209 first differs at +None; wall frame offset 0
+  settles on A0.53207 at strip phase 16 by tick 414208 (the seed: A0 at phase 0)
+  settled through wheel 165749 at tick 230226 = T0 + 150226 (the seed's own settling through 165,749: 220,275)
+  edge every 1,000 ticks after T0 (ticks, wheel): 0:53210, 1000:53983, 2000:54687, 3000:55460, 4000:56175, 5000:56904, 6000:57699, 7000:58467, 8000:59252, 9000:60009, 10000:60768, 11000:61501 …
+chink on wheel 53208 at tick 80001: healed after None tick(s) (None = not within 16); wheel 53209 first differs at +None; wall frame offset 0
+  settles on A0.53207 at strip phase 16 by tick 414208 (the seed: A0 at phase 0)
+  settled through wheel 165749 at tick 230210 = T0 + 150209 (the seed's own settling through 165,749: 220,275)
+  edge every 1,000 ticks after T0 (ticks, wheel): 0:53210, 1000:53975, 2000:54675, 3000:55445, 4000:56161, 5000:56888, 6000:57688, 7000:58450, 8000:59228, 9000:59971, 10000:60758, 11000:61502 …
+chink on wheel 53208 at tick 80002: healed after None tick(s) (None = not within 16); wheel 53209 first differs at +None; wall frame offset 0
+  settles on A0.53207 at strip phase 16 by tick 414208 (the seed: A0 at phase 0)
+  settled through wheel 165749 at tick 230258 = T0 + 150256 (the seed's own settling through 165,749: 220,275)
+  edge every 1,000 ticks after T0 (ticks, wheel): 0:53210, 1000:53975, 2000:54679, 3000:55445, 4000:56163, 5000:56888, 6000:57688, 7000:58467, 8000:59230, 9000:59989, 10000:60768, 11000:61487 …
+chink on wheel 53208 at tick 80003: healed after None tick(s) (None = not within 16); wheel 53209 first differs at +None; wall frame offset 0
+  settles on A0.53207 at strip phase 16 by tick 414208 (the seed: A0 at phase 0)
+  settled through wheel 165749 at tick 230226 = T0 + 150223 (the seed's own settling through 165,749: 220,275)
+  edge every 1,000 ticks after T0 (ticks, wheel): 0:53210, 1000:53965, 2000:54664, 3000:55435, 4000:56151, 5000:56876, 6000:57678, 7000:58447, 8000:59212, 9000:59957, 10000:60744, 11000:61489 …
+chink on wheel 53208 at tick 80004: healed after None tick(s) (None = not within 16); wheel 53209 first differs at +None; wall frame offset 0
+  settles on A0.53207 at strip phase 16 by tick 414208 (the seed: A0 at phase 0)
+  settled through wheel 165749 at tick 230210 = T0 + 150206 (the seed's own settling through 165,749: 220,275)
+  edge every 1,000 ticks after T0 (ticks, wheel): 0:53210, 1000:53980, 2000:54694, 3000:55474, 4000:56193, 5000:56922, 6000:57714, 7000:58477, 8000:59274, 9000:60021, 10000:60782, 11000:61511 …
+chink on wheel 53208 at tick 80005: healed after None tick(s) (None = not within 16); wheel 53209 first differs at +None; wall frame offset 0
+  settles on A0.53207 at strip phase 16 by tick 414208 (the seed: A0 at phase 0)
+  settled through wheel 165749 at tick 230178 = T0 + 150173 (the seed's own settling through 165,749: 220,275)
+  edge every 1,000 ticks after T0 (ticks, wheel): 0:53210, 1000:53983, 2000:54695, 3000:55476, 4000:56193, 5000:56922, 6000:57716, 7000:58478, 8000:59270, 9000:60013, 10000:60782, 11000:61524 …
+chink on wheel 53208 at tick 80006: healed after None tick(s) (None = not within 16); wheel 53209 first differs at +None; wall frame offset 0
+  settles on A0.53207 at strip phase 16 by tick 414208 (the seed: A0 at phase 0)
+  settled through wheel 165749 at tick 230258 = T0 + 150252 (the seed's own settling through 165,749: 220,275)
+  edge every 1,000 ticks after T0 (ticks, wheel): 0:53210, 1000:53977, 2000:54683, 3000:55451, 4000:56169, 5000:56892, 6000:57691, 7000:58471, 8000:59232, 9000:59995, 10000:60772, 11000:61491 …
+chink on wheel 53208 at tick 80007: healed after None tick(s) (None = not within 16); wheel 53209 first differs at +None; wall frame offset 0
+  settles on A0.53207 at strip phase 16 by tick 414208 (the seed: A0 at phase 0)
+  settled through wheel 165749 at tick 230258 = T0 + 150251 (the seed's own settling through 165,749: 220,275)
+  edge every 1,000 ticks after T0 (ticks, wheel): 0:53210, 1000:53977, 2000:54683, 3000:55454, 4000:56170, 5000:56892, 6000:57692, 7000:58473, 8000:59234, 9000:59998, 10000:60772, 11000:61491 …
+chink on wheel 53207 at tick 80000: healed after 1 tick(s) (None = not within 16); wheel 53208 first differs at +1; wall frame offset 0
+  settles on A0.53207 at strip phase 16 by tick 414208 (the seed: A0 at phase 0)
+  settled through wheel 165749 at tick 230258 = T0 + 150258 (the seed's own settling through 165,749: 220,275)
+  edge every 1,000 ticks after T0 (ticks, wheel): 0:53207, 1000:53974, 2000:54675, 3000:55443, 4000:56161, 5000:56886, 6000:57688, 7000:58467, 8000:59225, 9000:59989, 10000:60768, 11000:61483 …
+chink on wheel 53207 at tick 80001: healed after 1 tick(s) (None = not within 16); wheel 53208 first differs at +None; wall frame offset 0
+  settles on A0 at strip phase 16 by tick 414208 (the seed: A0 at phase 0)
+  settled through wheel 165749 at tick 229187 = T0 + 149186 (the seed's own settling through 165,749: 220,275)
+  edge every 1,000 ticks after T0 (ticks, wheel): 0:53207, 1000:53967, 2000:54710, 3000:55458, 4000:56193, 5000:56949, 6000:57710, 7000:58455, 8000:59224, 9000:59978, 10000:60714, 11000:61437 …
+chink on wheel 53207 at tick 80002: healed after 5 tick(s) (None = not within 16); wheel 53208 first differs at +1; wall frame offset 0
+  settles on A0.53207 at strip phase 16 by tick 414208 (the seed: A0 at phase 0)
+  settled through wheel 165749 at tick 230242 = T0 + 150240 (the seed's own settling through 165,749: 220,275)
+  edge every 1,000 ticks after T0 (ticks, wheel): 0:53207, 1000:53948, 2000:54650, 3000:55419, 4000:56141, 5000:56858, 6000:57668, 7000:58432, 8000:59203, 9000:59950, 10000:60731, 11000:61474 …
+chink on wheel 53207 at tick 80003: healed after 4 tick(s) (None = not within 16); wheel 53208 first differs at +1; wall frame offset 0
+  settles on A0.53207 at strip phase 16 by tick 414208 (the seed: A0 at phase 0)
+  settled through wheel 165749 at tick 230178 = T0 + 150175 (the seed's own settling through 165,749: 220,275)
+  edge every 1,000 ticks after T0 (ticks, wheel): 0:53207, 1000:54009, 2000:54707, 3000:55485, 4000:56204, 5000:56929, 6000:57727, 7000:58494, 8000:59292, 9000:60043, 10000:60823, 11000:61534 …
+chink on wheel 53207 at tick 80004: healed after 3 tick(s) (None = not within 16); wheel 53208 first differs at +1; wall frame offset 0
+  settles on A0.53207 at strip phase 16 by tick 414208 (the seed: A0 at phase 0)
+  settled through wheel 165749 at tick 230242 = T0 + 150238 (the seed's own settling through 165,749: 220,275)
+  edge every 1,000 ticks after T0 (ticks, wheel): 0:53207, 1000:53948, 2000:54652, 3000:55420, 4000:56141, 5000:56860, 6000:57668, 7000:58434, 8000:59204, 9000:59950, 10000:60731, 11000:61478 …
+chink on wheel 53207 at tick 80005: healed after 2 tick(s) (None = not within 16); wheel 53208 first differs at +1; wall frame offset 0
+  settles on A0.53207 at strip phase 16 by tick 414208 (the seed: A0 at phase 0)
+  settled through wheel 165749 at tick 230226 = T0 + 150221 (the seed's own settling through 165,749: 220,275)
+  edge every 1,000 ticks after T0 (ticks, wheel): 0:53207, 1000:53965, 2000:54666, 3000:55437, 4000:56151, 5000:56878, 6000:57678, 7000:58448, 8000:59212, 9000:59960, 10000:60746, 11000:61491 …
+chink on wheel 53207 at tick 80006: healed after 1 tick(s) (None = not within 16); wheel 53208 first differs at +1; wall frame offset 0
+  settles on A0.53207 at strip phase 16 by tick 414208 (the seed: A0 at phase 0)
+  settled through wheel 165749 at tick 230242 = T0 + 150236 (the seed's own settling through 165,749: 220,275)
+  edge every 1,000 ticks after T0 (ticks, wheel): 0:53207, 1000:53967, 2000:54666, 3000:55437, 4000:56153, 5000:56880, 6000:57680, 7000:58448, 8000:59232, 9000:59995, 10000:60776, 11000:61497 …
+chink on wheel 53207 at tick 80007: healed after 1 tick(s) (None = not within 16); wheel 53208 first differs at +None; wall frame offset 0
+  settles on A0 at strip phase 0 by tick 414208 (the seed: A0 at phase 0)
+  settled through wheel 165749 at tick 229171 = T0 + 149164 (the seed's own settling through 165,749: 220,275)
+  edge every 1,000 ticks after T0 (ticks, wheel): 0:53207, 1000:53936, 2000:54682, 3000:55421, 4000:56166, 5000:56917, 6000:57681, 7000:58429, 8000:59193, 9000:59947, 10000:60682, 11000:61406 …
+chink on wheel 53206 at tick 80000: healed after 1 tick(s) (None = not within 16); wheel 53207 first differs at +1; wall frame offset 0
+  settles on A0 at strip phase 16 by tick 414208 (the seed: A0 at phase 0)
+  settled through wheel 165749 at tick 229187 = T0 + 149187 (the seed's own settling through 165,749: 220,275)
+  edge every 1,000 ticks after T0 (ticks, wheel): 0:53206, 1000:53909, 2000:54657, 3000:55406, 4000:56147, 5000:56892, 6000:57663, 7000:58411, 8000:59182, 9000:59925, 10000:60661, 11000:61386 …
+chink on wheel 53206 at tick 80001: healed after 1 tick(s) (None = not within 16); wheel 53207 first differs at +1; wall frame offset 0
+  settles on A0.53207 at strip phase 16 by tick 414208 (the seed: A0 at phase 0)
+  settled through wheel 165749 at tick 230178 = T0 + 150177 (the seed's own settling through 165,749: 220,275)
+  edge every 1,000 ticks after T0 (ticks, wheel): 0:53206, 1000:53976, 2000:54692, 3000:55472, 4000:56193, 5000:56917, 6000:57712, 7000:58475, 8000:59268, 9000:60009, 10000:60780, 11000:61521 …
+chink on wheel 53206 at tick 80002: healed after 5 tick(s) (None = not within 16); wheel 53207 first differs at +1; wall frame offset 0
+  settles on A0 at strip phase 16 by tick 414208 (the seed: A0 at phase 0)
+  settled through wheel 165749 at tick 229187 = T0 + 149185 (the seed's own settling through 165,749: 220,275)
+  edge every 1,000 ticks after T0 (ticks, wheel): 0:53206, 1000:53929, 2000:54676, 3000:55414, 4000:56162, 5000:56908, 6000:57673, 7000:58425, 8000:59189, 9000:59945, 10000:60672, 11000:61396 …
+chink on wheel 53206 at tick 80003: healed after 4 tick(s) (None = not within 16); wheel 53207 first differs at +1; wall frame offset 0
+  settles on A0 at strip phase 0 by tick 414208 (the seed: A0 at phase 0)
+  settled through wheel 165749 at tick 229075 = T0 + 149072 (the seed's own settling through 165,749: 220,275)
+  edge every 1,000 ticks after T0 (ticks, wheel): 0:53206, 1000:53967, 2000:54715, 3000:55458, 4000:56195, 5000:56951, 6000:57712, 7000:58457, 8000:59226, 9000:59978, 10000:60715, 11000:61439 …
+chink on wheel 53206 at tick 80004: healed after 3 tick(s) (None = not within 16); wheel 53207 first differs at +1; wall frame offset 0
+  settles on A0 at strip phase 0 by tick 414208 (the seed: A0 at phase 0)
+  settled through wheel 165749 at tick 229203 = T0 + 149199 (the seed's own settling through 165,749: 220,275)
+  edge every 1,000 ticks after T0 (ticks, wheel): 0:53206, 1000:53911, 2000:54661, 3000:55408, 4000:56149, 5000:56894, 6000:57665, 7000:58413, 8000:59182, 9000:59929, 10000:60665, 11000:61386 …
+chink on wheel 53206 at tick 80005: healed after 2 tick(s) (None = not within 16); wheel 53207 first differs at +1; wall frame offset 0
+  settles on A0 at strip phase 0 by tick 414208 (the seed: A0 at phase 0)
+  settled through wheel 165749 at tick 229075 = T0 + 149070 (the seed's own settling through 165,749: 220,275)
+  edge every 1,000 ticks after T0 (ticks, wheel): 0:53206, 1000:53959, 2000:54704, 3000:55445, 4000:56187, 5000:56938, 6000:57697, 7000:58449, 8000:59216, 9000:59970, 10000:60706, 11000:61430 …
+chink on wheel 53206 at tick 80006: healed after 1 tick(s) (None = not within 16); wheel 53207 first differs at +1; wall frame offset 0
+  settles on A0 at strip phase 0 by tick 414208 (the seed: A0 at phase 0)
+  settled through wheel 165749 at tick 229139 = T0 + 149133 (the seed's own settling through 165,749: 220,275)
+  edge every 1,000 ticks after T0 (ticks, wheel): 0:53206, 1000:53959, 2000:54704, 3000:55447, 4000:56187, 5000:56940, 6000:57699, 7000:58449, 8000:59216, 9000:59970, 10000:60707, 11000:61430 …
+chink on wheel 53206 at tick 80007: healed after 1 tick(s) (None = not within 16); wheel 53207 first differs at +1; wall frame offset 0
+  settles on A0.53207 at strip phase 16 by tick 414208 (the seed: A0 at phase 0)
+  settled through wheel 165749 at tick 230258 = T0 + 150251 (the seed's own settling through 165,749: 220,275)
+  edge every 1,000 ticks after T0 (ticks, wheel): 0:53206, 1000:53967, 2000:54666, 3000:55439, 4000:56153, 5000:56880, 6000:57680, 7000:58448, 8000:59236, 9000:59978, 10000:60748, 11000:61491 …

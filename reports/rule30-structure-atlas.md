@@ -1084,3 +1084,22 @@ read a difference, rejoined at coincidences modulo the period (COMPUTED; the res
 PROVED by the saved exhaustive enumeration `jump_facts.py` (after a jump of 7 with a white new parent the next parent is
 white, joining the four).
 
+**21.10 The chink: a hole in a diagonal wall re-forms the left side above it with a slipped clock, and switches the
+strip only at a fork's child (CL748, the owner's question; statuses as marked).** The diagonal walls of the seed's left
+side are the wheels of constant colour: 0 and 1 black, and the doubling wheels 2, 7, 28, 399, 87,866 white. A chink, one
+cell flipped on a wall at tick t₀, cannot touch the wheels below it (PROVED, `agree_step`), heals at the next black of
+the wheel below it (PROVED, `heal_iff`; never on wheel 0, where the wall frame moves in by one), and spills upward at
+once through the farther word's xor (PROVED, one line). Every chink spills: 64 chinks on wheels 0–399 at ticks 1,000–1,007
+re-form the whole left side above the hole on the same strip A0 in 220,062–220,323 ticks (the seed's own settling
+220,275), with the clock slipped, free exactly modulo the periods of the untouched wheels below (any residue below
+wheel 2, even below 7, 0 mod 4 below 28, 0 mod 8 below 399) (COMPUTED); a chink above the front (wheel 5,000 at tick
+1,000) changes nothing in the walk. In the standard frame the difference from the unchinked seed is a wedge from the
+chink: striped next to the wall (the slipped strip against the original), a sharp boundary at slope −0.243 (the damage
+front), chaos beyond to the light cone (pictures in the store, `cited/chink/`). *The branch at a fork* j is the strip's
+own child bit at the tick τ* at which the walk clears the fork, ¬C_(j+1)(τ*), since the child is reset to ¬a_(j−1) at
+the fork wheel's last black and integrates the farther word thereafter (PROOF-SKETCH from `child_white`): so a chink
+below a fork cannot switch the strip (64 of 64), a chink at the fork's child after its parents settle always does (8 of
+8 at wheel 53,208, the error there never heals; `first_fork`'s `B'` mid-evolution), and a chink on or two under the
+fork wheel re-chooses the branch by the tick (6 of 8 and 2 of 8 at complementary ticks; the per-tick rule not derived).
+The chink is a switch between the left sides, thrown at a fork's child and nowhere below.
+
