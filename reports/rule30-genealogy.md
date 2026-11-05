@@ -6729,7 +6729,7 @@ It says nothing yet about capture, or about a periodic cloud, because it concern
 
 **Not a left side (MEASURED).** A left side's settled region grows with time. This layer does not.
 - Exact time periods stop at offset 21 to 24; below that no column has a period up to 768 ([output](../tests/probes/wall_cols.out)). Unrelated quiet rows part at 22 to 25 cells, at every time shift.
-- The rate at which a cell differs from itself three ticks later is the same in every time window from tick 128 to 4,096: about 0.01 to 0.03 through offset 28, near 0.5 from offset 64 on, with the columns between partly ordered ([output](../tests/probes/wall_layer.out)). So the wall drags a boundary layer of fixed size, about 60 cells, through noise.
+- The rate at which a cell differs from itself three ticks later is the same in every time window from tick 128 to 4,096: about 0.01 to 0.03 through offset 28, near 0.5 from offset 64 on, with the columns between partly ordered ([output](../tests/probes/wall_layer.out)). So the wall drags a boundary layer of fixed size, about 60 cells, through noise. **Corrected in §63.8: this sampled offsets 20, 24 and 28 only. Offsets 26 and 30 differ on 98% and 96% of ticks, because the cells there have period 6.**
 - Exact solutions periodic in time are not few: at offset 40 there are 43 at period 3 and 5,689 at period 6 for the letters `AAB`, and they end, at offset 153 for period 3 and offset 62 for `AB` at period 2 ([output](../tests/probes/wall_periodic.out)).
 
 **`AAB` is metastable (MEASURED).** On 600 rows over 18,000 ticks, departures per row have mean 1.875 and variance 1.823, and the counts 95, 160, 176, 93, 53, 17, 5, 1 fit a Poisson law (92, 173, 162, 101, 47, 18, 6, 2) ([output](../tests/probes/wall_phase.out)). These sampled counts are compatible with an approximately constant departure rate of about one per 9,000 ticks; they do not exclude a locked subpopulation (GC2680). Bursts have 504 shapes among 1,129, and the top ten cover 30% ([output](../tests/probes/wall_burst_shapes.out)). They are noise leaking through the layer, not forks. L1529's "first late bursts cluster near ticks 5,000 to 8,000" was a reading of waiting times in a run of 12,000 ticks, and is withdrawn.
@@ -6802,3 +6802,37 @@ The graph on E(w) has one closed class at every width up to 44, and exactly two 
 **The language by sets of rows.** [`langset.py`](../tests/probes/wall_floor/langset.py) carries all rows with a given letter word as one decision diagram. It reproduces the exact counts and the minimal forbidden words of §63.1 through length 18 in 14 seconds. An empty set proves a word forbidden; a non-empty set is only a candidate.
 
 **What this does not settle.** Whether the cloud stays strongly connected at every width. Why only periods 2 and 3, and why the two reset words lie 34 and 125 cells apart. Whether a row can hold `AAB` for ever without a floor. It still says nothing about capture, because all of it concerns rows already on the front.
+
+### 63.8 A third lock, with no fixed floor, hidden in the cloud (L1534–L1535)
+
+GC2680 asked whether a periodic lock needs a persistent lower reset floor, and how a coarse cloud splits as the window widens. Both now have answers, and the first is no.
+
+**The third lock (PROVED, Lean).** [`TwoPairsWallLockSix.lean`](../tests/probes/lean/TwoPairsWallLockSix.lean), [axioms](../tests/probes/wall_floor/lean_axioms.out). Forty windows of 175 cells are closed under the backward tick for every pair of lower cells. They fall in six phases, the letters run `B`, `A`, `A`, `B`, `A`, `A`, and the cells have period 6, not 3 ([phases](../tests/probes/wall_floor/phases175.out)). `closed`, `lock_cycle`, `lock_letters`, `lock_forever`, `witness`. So `AAB` has two different locks, which share only their top 23 to 27 cells. At width 174 a free path of lower states leaves the letters (COMPUTED). Real rows: 60 random lower parts under each of the 40 windows ran 4,000 ticks with no departure.
+
+**No fixed floor (COMPUTED).** Apart from the wall's own word, no reset word sits at one depth in all 40 windows. GPT's quotient makes the difference plain ([output](../tests/probes/wall_floor/scar.out)). Cut each window into its strip, the cells that do not vary within a phase, and its scar, the low cells that do.
+
+| Lock | Scar states by phase | Scar cells by phase | Merge index |
+|---|---|---|---|
+| `AB`, 45 cells | 2, 2 | 3, 3 | 3 to 7 |
+| `AAB`, 136 cells | 2, 2, 2 | 3, 3, 3 | 3 to 7 |
+| Third, 175 cells | 5, 6, 7, 8, 7, 7 | 10, 10, 13, 13, 8, 7 | 3 to 17 |
+
+So every lock is a deterministic periodic strip over a finite scar automaton. Some merge below the strip is forced, because two lower states that never merged would differ above. But the merge need not be one word at one depth: in the third lock the highest cell the lower states reach moves with the phase, between offsets 162 and 168. The reset word is one way to end a strip, not the only way.
+
+**The cloud hides it (COMPUTED).** All 40 windows project into the terminal cloud at every width read from 44 to 92 ([output](../tests/probes/wall_floor/lock6in.out)). So at width 92 the cloud contains rows that hold `AAB` for ever. This is GPT's `Q45` remark at twice the width and for a lock with no floor.
+
+**How the cloud splits (COMPUTED, every width to 92).** [`wall_births.c`](../tests/probes/wall_floor/wall_births.c), [output](../tests/probes/wall_floor/wall_births92.out). Only four splitting events produce a cycle: width 22 (`AB`, 2 windows), 37 (`AB`, 7), 44 (two `AAB` cycles of 3) and 52 (`AAB`, 4). The last holds the 136-cell lock, whose top cells leave the cloud at exactly width 52 ([output](../tests/probes/wall_floor/lock136in.out)). No other letter word splits off.
+
+**Search with no assumption on shape (COMPUTED, bounded).** [`wall_lockscan.c`](../tests/probes/wall_floor/wall_lockscan.c) tests closure on the nodes of the exact periodic trees ([output](../tests/probes/wall_floor/scans.out)). Period 2 finds only the 45-cell lock and period 3 only the 136-cell lock. Period 4 `AB` and period 6 `AB` find only the 45-cell lock, with no test capped. Letter words `BABABAA` and `BABABABAA`, at their own periods, find nothing, with no test capped. Period 6 `AAB` and period 8 `AB` hit their time limits, having found the 136-cell and third locks and the 45-cell lock. Period 9 `AAB` finished with only the 136-cell lock but 617,469 capped tests. Period 3 had 1,861 capped tests. So this is a list of what was found, not a proof that there are three.
+
+**Real quiet rows are period 6, and sit on the third lock's strip (MEASURED).** My layer measurements in §63.6 sampled offsets 20, 24, 28 and missed this.
+- At offsets 26 and 30 a cell differs from itself three ticks later on 98% and 96% of ticks, and six ticks later on 4% and 5%, on real rows ([output](../tests/probes/wall_floor/wall_lags.out)) and on the chain ([output](../tests/probes/wall_floor/chainlags.out)). Down to offset 128 the strongest correlations are at multiples of 6 ([output](../tests/probes/wall_floor/wall_spec.out)).
+- At depth 36 the chain shows 36 distinct quiet windows, and six of them, which form one cycle of six ticks, carry 87% of the ticks ([output](../tests/probes/wall_floor/quietwins36.out)).
+- Quiet rows agree with the third lock to depth 34 on 97% of ticks, 60 on 13%, 88 on 4.6%, 100 on 0.14% ([output](../tests/probes/wall_floor/chainlags.out)).
+- Agreement protects the letters. In 2.1 billion chain ticks, the rate of a break exactly 60 ticks later is 3.5e-4 from depth 34 to 35, 4.3e-7 from 80 to 87, and none in 84 million ticks from depth 88 or more ([output](../tests/probes/wall_floor/hazard.out)).
+
+Apart from the first lag table, these runs use the window chain: the top 256 or 512 cells with fair lower states, at constant cost a tick. Its break rate, 1.1e-4, matches real rows, but it is a surrogate, and the fair lower states are an assumption.
+
+**No capture seen (MEASURED).** In 4.9 billion chain ticks no row entered the third lock ([output](../tests/probes/wall_floor/capture1.out)). Agreement reached 145 cells, with sharp cliffs near 107 and just above 145, and never 150. 400 chains of 2 million ticks ended with 5 in `AB`, none in `AAB` ([output](../tests/probes/wall_floor/chain_long.out)). The cliffs suggest, but do not show, that the lock splits off the cloud somewhere near width 150, as the 136-cell lock does at 52. If so no cloud row can enter it.
+
+**What this does not settle.** Whether there are more locks, for example at period 12. Whether the third lock can be reached from the cloud at all. Why the strip of each lock ends where it does. Still nothing about capture onto the front.

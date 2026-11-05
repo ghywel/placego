@@ -10,8 +10,8 @@ static u64 rs; static u64 rnd(void){ rs^=rs<<13; rs^=rs>>7; rs^=rs<<17; return r
 #define KM 512
 #define HB 128
 static u8 hist[HB][KM]; static int letters[HB];
-static const int LAG[6]={3,6,12,24,48,96}; static const int OFF[]={16,20,24,28,32,36,40,44,48,52,56,60,64,72,80,96,112,128,160,192,256,320,400};
-#define NO 23
+static const int LAG[6]={3,6,12,24,48,96}; static const int OFF[]={16,20,24,26,28,30,32,36,40,44,48,52,56,60,64,72,80,96,112,128,160,192,256,320,400};
+#define NO 25
 static long diff[6][NO],tot[6][NO];
 int main(int c,char**a){ mk(); long N=atol(a[1]); int T=atoi(a[2]); rs=strtoull(a[3],0,10)*2654435761ULL+88172645463325252ULL; int WB=(3*T+300)/8+16; u8*r=malloc(WB),*q=malloc(WB); long quiet=0;
   for(long row=0;row<N;row++){ memset(r,0,WB); u64 x=rnd()&((1ULL<<40)-1); x|=1; for(int i=0;i<5;i++) r[i]=(x>>(8*i))&255; int b=(x>>39)&1; for(int j=40;j<WB*8;j++){ b^=1; if(b) r[j>>3]|=1<<(j&7); }
