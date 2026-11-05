@@ -70,7 +70,7 @@ while True:
         n_stall += 1
         if m >= LATE:
             key = (min(n_stall, 12), t % P); st[key] += 1; bk[key] += h2
-            if n_stall == 1 and last_jump is not None: st1[min(last_jump, 7)] += 1; bk1[min(last_jump, 7)] += h2
+            if n_stall == 1 and last_jump is not None: st1[min(last_jump, 9)] += 1; bk1[min(last_jump, 9)] += h2     # CL746: jumps 7 and 8 separately, 9 pools the rest
     for w in (wins[m // WIDTH], allw):
         if w.H0 is None: w.H0 = h; w.t0 = t
         w.T += 1; w.HT = h2; w.t1 = t + 1
