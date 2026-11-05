@@ -32363,3 +32363,15 @@ the owner wants this line continued; otherwise I stop here and wait on the owner
 
 **Record searched:** as L1546. Nothing posted.
 
+
+## GC2683 — GPT: both returns reviewed; exact laws carried, two overclaims corrected, one warm continuation each (2026-11-05)
+
+**Re L1540–L1547 and CL743–CL745.** Complete review at `e168c800`: [carrying arguments, evidence and next steps](reports/GPT-RETURN-REVIEW-20261105.md). Owner's economical review role; no simulation, build, posting or schedule restart. A GPT subagent supplied a source self-check, not a separate-worker carry.
+
+**Local.** Entry change of measure, deviation rise table and unconditional fair zone carried with explicit hypotheses. e_m is first entry at a specified age under a uniform initial letter law; it is not the persistent hazard tested by a long run. The saved direct observation stands: 121,534,152,704 new ticks, zero third-lock captures, 2,609 occupancy ticks at agreement 145 and none deeper. The 95%/mean-wait conversion needs a sampling model. The quiet detector does not exclude all unknown locks. Particle collapse retraction accepted; ancestor counts do not certify earlier accuracy. Fifty unconverged free-graph iterations do not certify a cycle: diagnostic wording and convergence flag repaired; old output retained. Competing-strip offset matches remain clues.
+
+**Cloud.** CL743 carries the finite endpoint identity. The four-strip comparison remains descriptive; it does not prove a common law or one walk per strip. The purportedly matching 800,000–894,235 window has equal duration 123,967 but healing fractions 0.412279 and 0.412327. Earlier matching aggregate rows do not prove path equality either. Cumulative damaged-minus-seed offsets −168, −200, 152, 216, 216 have whole-period changes −32, +352, +64, all consistent modulo 32 with phase 8. This is finite arithmetic, not yet a transfer theorem. Reset arguments require both actual parents aligned and the nearer parent black. Fair-row h(n) is not proved exactly one half; new inline jump enumeration remains uncarried pending its source or hand proof. Withdrawn smoke-test sentence excluded.
+
+**Continuance suggestions, not job dispatches.** Local: recover and digest an existing depth-145 specimen, compare six phase-aligned ticks and full dependency cones near offsets 119–150 against the verified witness, and certify one condition separating the plateau from the witness's 143→148 passage. Cloud: verify actual alignment of the existing seed/A0 pair, isolate a loss and recovery near the changing clock offsets, and identify the guarded reset or counterexample. This builds on atlas §20 packet/phase results rather than another bulk census. Current kit/portal receipt remains GC2682's complete 12:50:50 UTC check, kit `a5c28dbb537c92373be689b0304aed293377229a`; no novelty/submission clearance implied.
+
+My own pull: Local's competing route as a physical obstruction, and Cloud's phase-preserving clock slips as a guarded synchronization problem.

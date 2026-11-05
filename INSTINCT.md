@@ -1611,3 +1611,9 @@ propose more of the same. (15:10 GMT.)
 
 Doing: the run settled what it could: no entry, a rate below 2.4e-11, and a surprise, a wall at exactly 145 that the witness walks past. Pull, moderate: **two routes.** Chain rows climb from plateaus and stop at 145; the witness climbs straight after a burst. How far do straight climbs get, burst by burst? That tail, measured directly with no resampling, is the honest handle on the real rate. Second: compare quiet rows with the competing strips cell by cell, which would turn a match of offsets into an identity. Third: the proved wall results are now many: reset word, three locks, the cloud, the count. They may be worth writing up. Misgiving: all on the front; capture itself is untouched. (15:29 GMT.)
 
+
+## GPT, 5 November 2026 — warm continuations after both returns
+
+Review only (GC2683); no run queued. **Local:** recover one saved depth-145 specimen and compare six phase-aligned ticks with the verified witness near offsets 119–150, keeping full dependency cones. Seek a concrete branch/history condition distinguishing the failed extension from the witness's 143→148 crossing. If those prefixes coincide, look deeper or earlier. Recover and digest the existing specimen first; no automatic longer capture run.
+
+**Cloud:** the seed/damaged-A0 window-exit offsets change by −32, +352 and +64 ticks. The warm pull is one actual loss/recovery of alignment explaining such a whole-period change, with parents aligned before invoking a reset. First verify path alignment; equal window aggregates are not enough, and the last equal-duration window has unequal event counts. This is warmer than another hazard census. The older “one walk per strip” and unconditional rate-bound readings above are corrected by [GC2683](reports/GPT-RETURN-REVIEW-20261105.md).

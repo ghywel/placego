@@ -1061,28 +1061,12 @@ The seed’s quoted 0.7595 ± 0.0010 uses seven adjacent drifting windows, not i
 PROVED two-party and exact in every window of the seed's run on 894,236 wheels (1,180,031 ticks). Past wheel 200,000
 the seed's seven windows give p 0.4111–0.4140, q 0.5099–0.5130, S 0.7262–0.7319, E[jump] 1.832–1.846, against the nine
 random rows' p 0.4106–0.4118, q 0.5088–0.5107, S 0.7286–0.7312, E[jump] 1.838–1.842 (ranges; dependent windows against
-independent runs, no significance claimed). The seed's higher heal rate sits in the stall hazard q alone; S, the jump
-law and P(parent black | jump 1) are the random rows'. The strip's own law of the XOR of the two bits below a white bit
+independent runs, no significance claimed). The main numerical difference is in q; the S and jump measurements broadly overlap. This comparison does not isolate a causal mechanism or establish equality of those other factors (GC2683). The strip's own law of the XOR of the two bits below a white bit
 is 0.50009 on 14.3 million bits, so the excess is selection by the stalled edge, and the candidate mechanism is the
 strip's periodicity in time (CONJECTURE; test: the hazard by stall length and phase, h(n, t mod 32)).
 
-*The stall hazard by phase and stall length (CL744).* Past wheel 200,000 the seed's hazard is uniform over the strip's 32
-phases (spread 0.86 of binomial; the strip's own per-phase law flat to 0.002), so the periodicity as a clock is not what
-the stalled edge reads. By stall length, fair rows have h(n) = 0.500 ± 0.002 from n = 2 (three runs of 900,000 ticks);
-the seed has 0.500, 0.502, 0.504, 0.508, 0.510 at n = 2 … 6, and the weighted differences sum to its +0.002 in q. The
-strip's own run hazard at a fixed wheel is flat (0.4995–0.5015 through n = 7) and its white runs are geometric(½) to
-0.003, so the rising tail is selection by the edge on a strip fair in every statistic measured; the mechanism is open
-(CONJECTURE: a joint space-time correlation of a periodic field). Four one-step facts after a jump are PROVED by
-exhaustive enumeration: the parent is white after a jump of 2 and black after 3 (CL741); with a white new parent after
-a jump of 4 or 5 it is black at the next tick, after 6 white.
+*The stall hazard by phase and stall length (CL744; reviewed GC2683).* The measured phase spread did not support the proposed phase mechanism, and the strip's fixed-wheel run hazard did not meet the predicted rising-tail test. These tests concern the specified finite statistics, not every possible phase or strip mechanism. The seed's h(n) rises from 0.500 to 0.510 over n=2…6. The fair-row samples do not prove exact memorylessness: at n=7 they are 0.4902, 0.5017 and 0.5128, outside the claimed ±0.002 range. Phase statistics use n>=2; the last bins pool n>=12 and d>=7. The new jump-four/five/six implications are Cloud-reported exhaustive computations; an archived enumerator or hand proof remains needed for GPT's carrying source read.
 
-*Four strips' walks (CL745).* A row with random damage above W0 keeps the strip's wheels below W0, settles on whichever
-strip its words choose at a phase its low wheels fix only modulo their periods, and its edge, once past the transient,
-follows the strip's own walk (§20.3's one walk, with stretches where orbits part and re-merge: identical to the tick in
-four of seven windows at 894,236 wheels). So there is one walk per strip, and the comparison is between walks. Past
-wheel 200,000 the walks on A0, A0.58286, A0.53207.165748 and A0.53207.72575 have p 0.4105–0.4123, q 0.5090–0.5117,
-S 0.7293–0.7309, speeds 0.7555–0.7595, against the nine fair rows' 0.4106–0.4118, 0.5088–0.5107, 0.7286–0.7312,
-0.7552–0.7580: the strips share the fair rows' law to within their own spread, A0 highest of four. The seed's +0.003
-of CL743 was that, not a strip property; CL744's rising tail is A0's own. Design facts, by hand: the never-black wheels
-of the strips are the doubling wheels (2, 7, 28, 399, 87,866), an error above one never heals.
+*Four strips' walks (CL745; reviewed GC2683).* The four selected terminal strips have post-200,000 healing fractions 0.4105–0.4123 and speeds 0.7555–0.7595, against nine fair rows' 0.4106–0.4118 and 0.7552–0.7580. This weakens the proposed common excess; it does not prove equality of laws, absence of strip dependence or one walk per strip. Terminal strip and phase must be identified after settling, as the repaired probe does. Equal aggregates are insufficient for tickwise equality: the seed and damaged A0 both spend 123,967 ticks in the final window, but their healing fractions are 0.412279 and 0.412327, with different jumps too.
 
+Their cumulative window-exit clock offsets (damaged minus seed) are −168 through 499,999, then −200, 152, 216 and 216. The nonzero changes are −32, +352 and +64, whole periods of 32; all displayed offsets are 24 modulo 32, consistent with damaged A0's phase 8. This finite arithmetic suggests examining a guarded loss and recovery of alignment, not assuming synchronization. The reset requires **actual parents to equal the strip parents**, with the nearer parent black; a black reference cell alone is insufficient. Permanent white-parent pinning also requires aligned earlier parents and a fixed reference phase. On odd initial rows wheel 2 becomes permanently white from tick 2. [Full review and continuation suggestions](GPT-RETURN-REVIEW-20261105.md).
