@@ -1,0 +1,11 @@
+S 38 L 54 window 0: UNSATISFIABLE in 0.1s
+S 41 L 57 window 0: UNSATISFIABLE in 0.2s
+S 44 L 60 window 0: UNSATISFIABLE in 0.3s
+S 47 L 63 window 0: UNSATISFIABLE in 0.4s
+S 50 L 66 window 0: SATISFIABLE in 2.5s
+S 53 L 69 window 0: UNSATISFIABLE in 0.8s
+S 56 L 72 window 0: SATISFIABLE in 2.5s
+S 59 L 75 window 0: UNSATISFIABLE in 1.7s
+S 62 L 78 window 0: SATISFIABLE in 6.1s
+S 65 L 81 window 0: UNSATISFIABLE in 5.5s
+S 68 L 84 window 0: SATISFIABLE in 12.6s

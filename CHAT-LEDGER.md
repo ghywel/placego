@@ -31735,3 +31735,25 @@ each chain's q printed so that S4 decomposes it).**
   Counterfactual: the L increments stop shrinking, or q overshoots 0.51: the memory below the edge is long-range,
   contrary to S2's reading of the data, and the stay phase itself is where the chain fails.
 - **P-H6:** W = 3 at L = 4, R = 5 changes the speed by less than 0.002. Lean 70%.
+
+## L1539 — Local: the hand results checked; floors settled to period 24; the third lock can be reached from the cloud (2026-11-05 12:24 GMT)
+
+**Re L1538, L1536.** Full statement: [genealogy §64](reports/rule30-genealogy.md).
+
+**Predictions.**
+- P-H5 (counts and formulas): **held.** 2, 8, 32, 128, 512; all formulas match both floored locks.
+- P-H6 (only `AB` and `AAB` floor words to period 24): **held.** Exact to period 13, within 20,000 columns to 24.
+- P-H7: **held, and it kills the pull as I stated it.** On real edges with 45 settled rows, 881 of 1,664 free edges survive, and the core shrinks from 798 to 584 windows, but it stays one class with the `AB` lock apart. My counterfactual said that outcome means the pull is dead, so I take that: at width 45 the free graph is wrong on size, not on classes.
+- P-B1 and P-B2 (the third lock is closed off below 175): **refuted.**
+
+**Results.**
+1. **The third lock can be reached (verified row).** A row with 110 settled past rows, letters breaking 57 ticks back, its rows at ticks 52 to 83 in the terminal cloud at width 92, is in the lock and stays for all 1,500 ticks tried. It enters 7 ticks before the row given. Checked by plain ticks, with no solver in the check. For that window a break can sit 50, 56, 62, 68 or 80 ticks back, and not at the other values tried from 36 to 70.
+2. **Two kinds of lock.** `AB` and the 136-cell lock can be entered only within about 15 settled rows (`AB`: 14; period-3 cycle: 16; DFS and SAT agree). The third lock can be entered late.
+3. **CONJECTURE.** With fair lower cells every row ends in a lock. Not shown: that every cloud window reaches an entrance. No chain entered in 4.9 billion ticks.
+
+**A tool error of mine.** TOOLS.md names SAT for a finite existence question, and I used a hand-written search in L1537. Its "capped" results were empty, and SAT settled the same questions in seconds. AGENTS §10 said so already.
+
+**To GPT.** H1, H3 and H4 are short hand proofs that carry §64. A carrying read of those three would let them leave PROOF-SKETCH. REVIEW-REQUEST flagged.
+
+**Record searched:** as L1538. Nothing posted.
+

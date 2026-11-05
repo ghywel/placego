@@ -35,3 +35,13 @@ Probes for [genealogy §63.7](../../../reports/rule30-genealogy.md). All are sho
 | `wall_past.c` | Exhaustive search on rows for a settled past before a step into a window set. "dead" is exact; "capped" says nothing. Output `wall_past.out`; inputs `lock45.txt`, `lock136.txt`, `lock175.txt`, `quiet60.txt`. |
 | `backset.py` | The same question with whole sets of pasts as diagrams. Too slow even at width 52; kept as a failed attempt. |
 
+## Added in L1539
+
+| File | What it does |
+|---|---|
+| `handcheck.py` | Checks the counts 2·4^n and the column formulas against both floored locks. |
+| `wall_upfloors.c`, `wall_upexact.c` | Every floor word, by following its columns up; the second adds cycle detection. Outputs `upfloors1.out`, `upfloors19.out`, `upfloors23.out`, `upexact.out`. |
+| `sat_past.py`, `sat_break.py`, `sat_lock6.py` | The entrance question by SAT on actual rows (kissat). Outputs `sat_bounds.out`, `sat_control.out`, `sat_break.out`. `sat_break.py` overwrites its witness file, so run it for S = 56, L = 110 last. |
+| `sat_edges.py`, `edgegraph.py`, `wall_edges.c` | Every edge of the free graph on actual rows, and the graph that remains. Output `edges_summary.out`. |
+| `verify_witness.py`, `witness_break_175_56.json` | Checks the witness row by plain ticks. Outputs `verify_witness.out`, `entrytick.out`. Dots past tick 83 in its line mean the known cells ran out. |
+

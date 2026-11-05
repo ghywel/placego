@@ -6833,7 +6833,7 @@ So every lock is a deterministic periodic strip over a finite scar automaton. So
 
 Apart from the first lag table, these runs use the window chain: the top 256 or 512 cells with fair lower states, at constant cost a tick. Its break rate, 1.1e-4, matches real rows, but it is a surrogate, and the fair lower states are an assumption.
 
-**No capture seen (MEASURED).** In 4.9 billion chain ticks no row entered the third lock ([output](../tests/probes/wall_floor/capture1.out)). Agreement reached 145 cells, with sharp cliffs near 107 and just above 145, and never 150. 400 chains of 2 million ticks ended with 5 in `AB`, none in `AAB` ([output](../tests/probes/wall_floor/chain_long.out)). The cliffs suggest, but do not show, that the lock splits off the cloud somewhere near width 150, as the 136-cell lock does at 52. If so no cloud row can enter it.
+**No capture seen (MEASURED).** In 4.9 billion chain ticks no row entered the third lock ([output](../tests/probes/wall_floor/capture1.out)). Agreement reached 145 cells, with sharp cliffs near 107 and just above 145, and never 150. 400 chains of 2 million ticks ended with 5 in `AB`, none in `AAB` ([output](../tests/probes/wall_floor/chain_long.out)). The cliffs suggest, but do not show, that the lock splits off the cloud somewhere near width 150, as the 136-cell lock does at 52. If so no cloud row can enter it. **Refuted in §64.5: a row in the terminal cloud can enter it.**
 
 **What this does not settle.** Whether there are more locks, for example at period 12. Whether the third lock can be reached from the cloud at all. Why the strip of each lock ends where it does. Still nothing about capture onto the front.
 
@@ -6843,3 +6843,65 @@ Apart from the first lag table, these runs use the window chain: the top 256 or 
 
 So these cycles are out of reach of a long-settled row, and at widths from 45 to 51 that is more than the free graph shows: `Q45` holds the period-3 cycle, but no physical row with a long past enters it. This is why entries into `AB` come only just after a row settles. For the third lock the search gives no verdict. It stopped at its node limit at most windows, and on real quiet windows, which do have long pasts, it stops the same way, so a stop says nothing.
 
+## 64. The structure behind the wall: exact counts, pseudo-orbits, and what a floor must be (L1538–L1539)
+
+*Local, 5 November 2026, at the owner's request to work the pull through by hand. The hand results are PROOF-SKETCH until read. Probes: [`tests/probes/wall_floor/`](../tests/probes/wall_floor/README.md).*
+
+Moving frame: `Y_k(t)` is the column at offset k from the wall. The rule is `Y_k(t) = Y_(k+3)(t+1) ⊕ (Y_(k+4)(t+1) ∨ Y_(k+5)(t+1))`, with t counting backward ticks. It runs one way without choice: each column is fixed by the three below it, one tick on.
+
+### 64.1 Exact count of settled pasts (PROOF-SKETCH; COMPUTED for n ≤ 4)
+
+Let S_n be the words of 11 + 5n cells whose forward images, for n ticks, all read a letter.
+
+**Claim.** |S_n| = 2·4^n.
+
+*Proof.* Take y_1 in S_n. Choose the two lowest cells of a word y_0 of 16 + 5n cells, in any of four ways. The relation y_0(k+3) = y_1(k) ⊕ (y_0(k+4) ∨ y_0(k+5)) then fixes all the cells above them, running up to the wall, and rain fixes the top three. Its forward image is y_1, and it reads a letter because letters are closed under the backward tick. Conversely each word of S_(n+1) comes this way from its forward image and its two lowest cells. So the map is 4 to 1. ∎
+
+So a uniformly random row with a letter at its wall has n settled past rows with probability exactly 8^(−n). The counts 2, 8, 32, 128, 512 were checked by enumeration ([output](../tests/probes/wall_floor/handcheck.out)).
+
+### 64.2 What a free lower state is (PROOF-SKETCH; COMPUTED at width 45)
+
+§64.1 says lower states are free and independent when the known word grows 5 cells a tick: 3 for the wall and 2 for the pair written down. The window graphs instead cut the word back to width w each tick. That forgets the cells that restricted the next state. So a path in the free graph at width w is a pseudo-orbit at precision 2^(−w), not an orbit.
+
+The exact object is the set Λ of rows with an infinite settled past. The windows of Λ are ∩_W proj_w E(W): a window lying under lifts in every E(W) has, by König's lemma, an infinite row over it, and all its forward images read letters. So "physical" has a definition, and the closed classes of §63.7 are Morse sets seen at resolution w.
+
+SAT on actual rows now tests each free edge of E(45): is there a row with that step and L settled rows before it ([summary](../tests/probes/wall_floor/edges_summary.out)).
+
+| Settled rows L | Real edges | Dead edges | Largest strongly connected part | Other closed part |
+|---|---|---|---|---|
+| free graph | 1,664 | 0 | 798 | `AB` lock, 4 |
+| 16 | 1,256 | 408 | 658 | `AB` lock, 4 |
+| 30 | 935 | 729 | 595 | `AB` lock, 4 |
+| 45 | 881 | 783 | 584 | `AB` lock, 4 |
+
+So nearly half the free edges at width 45 are not real for long-settled rows, and the free cloud overstates the recurrent part by more than a quarter. But the part that remains is still one class. The cloud does not split on real edges at this width.
+
+### 64.3 Stationarity forces the reset word (PROOF-SKETCH)
+
+**Claim.** Take a family of histories that agree on all columns above offset h, and suppose y_t(h) takes both values on every tick t. Then `Y_(h−1) ≡ 1`, `Y_(h−3) ≡ 1`, `Y_(h−4) ≡ 0`, `Y_(h−6) ≡ 0`, `Y_(h−7) ≡ 1`, and (y(h), y(h+1), y(h+2)) lies in {(0,1,·), (1,0,0)}.
+
+*Proof.* Rule at k = h − 5: `Y_(h−5)(t) = Y_(h−2)(t+1) ⊕ (Y_(h−1)(t+1) ∨ y_(t+1)(h))`. The left side is common to the family and y(h) takes both values, so `Y_(h−1)(t+1) = 1`. Rule at k = h − 4: `Y_(h−4)(t) = 1 ⊕ (y(h) ∨ y(h+1))`, common to the family. A member with y(h) = 1 gives 0, so y(h) ∨ y(h+1) = 1 for all. Rule at k = h − 3: `Y_(h−3)(t) = y(h) ⊕ (y(h+1) ∨ y(h+2))`. A member with y(h) = 0 has y(h+1) = 1 and gives 1, so a member with y(h) = 1 has y(h+1) = y(h+2) = 0. Rule at k = h − 6 and h − 7 gives the last two columns. ∎
+
+With c = h − 1 this is the reset word of §63.7, apart from the lowest cell. So the word is not a lucky shape: it is what a floor of constant depth must be. A lock without it must have a frontier that moves, and the third lock's does. In one forward tick the frontier can rise 5 cells with no condition, 4 only under a black cell, 3 only if also y(h) ∨ y(h+1) is common, and less only with all three conditions of the proof.
+
+### 64.4 A floor is one binary word (PROOF-SKETCH; COMPUTED)
+
+Since the rule runs upward without choice, a reset word at offset c leaves one free sequence, v(t) = `Y_(c−4)(t)`. With C_n = `Y_(c−n)`: C_1(t) = ¬v(t−1), C_2 = 1, C_3 = 0, C_4 = v, C_5 = 0, and from there C_n(t) = C_(n−3)(t+1) ⊕ (C_(n−4)(t+1) ∨ C_(n−5)(t+1)). By hand: C_7(t) = ¬v(t+1), C_8(t) = v(t+1), C_10(t) = v(t+2), C_13(t) = ¬v(t+3), C_14(t) = v(t+2) ∨ v(t+3), C_20(t) = v(t+4) ∧ v(t+5), C_21(t) = ¬(v(t+4) ∨ v(t+5)). These match both floored locks ([output](../tests/probes/wall_floor/handcheck.out)).
+
+The strip above a floor is Rule 30 driven by one bit a tick. Rain is v ≡ 0. A lock with a floor is a word v whose time dependence dies out going up. By `reset` and `again` any such word is a lock, so the search for floors is one deterministic orbit per word, with no tree and no node cap.
+
+[`wall_upfloors.c`](../tests/probes/wall_floor/wall_upfloors.c): over all primitive words of period up to 24, only v = 10 (floor at offset 41) and v = 110 (offset 132) reach rain. For periods up to 13 this is exact: every other word enters another cycle of the column map ([output](../tests/probes/wall_floor/upexact.out)). For periods 14 to 24 it holds within 20,000 columns ([to 18](../tests/probes/wall_floor/upfloors1.out), [19 to 22](../tests/probes/wall_floor/upfloors19.out), [23 and 24](../tests/probes/wall_floor/upfloors23.out)). This closes the caps of §63.8 for floors of this shape. In both locks v(t) = ¬b(t − 3), with b the letter word. Two cases, so that may be chance.
+
+### 64.5 The third lock can be reached (verified row, no solver in the check)
+
+L1535 suspected the third lock was closed off from the cloud. It is not. SAT finds a row with 110 settled past rows whose letters break 57 ticks back and which is in the lock now ([run](../tests/probes/wall_floor/sat_break.out), [row](../tests/probes/wall_floor/witness_break_175_56.json)). [`verify_witness.py`](../tests/probes/wall_floor/verify_witness.py) checks it by plain forward and inverse ticks ([output](../tests/probes/wall_floor/verify_witness.out)): the past letters are a run of bursts like those on real rows, its rows at ticks 52 to 83 have their top 92 cells in the terminal cloud, and it stays in the lock for all 1,500 future ticks tried. Going back from the row given, rows 0 to 6 are in the lock and row 7 is not ([output](../tests/probes/wall_floor/entrytick.out)).
+
+SAT also answers what `wall_past.c` could not. The bounds of L1537 hold: at most 14 settled rows before entry to the `AB` lock, at most 16 before the period-3 cycle ([output](../tests/probes/wall_floor/sat_bounds.out)). For one window of the third lock, a letter break S ticks back is possible at S = 50, 56, 62, 68 and 80, and not at the other values tried from 36 to 70: the break must sit in the right phase of six, and at least 50 ticks back ([output](../tests/probes/wall_floor/sat_break2.out)).
+
+So there are two kinds of lock. `AB` and the 136-cell lock can be entered only just after settling. The third lock can be entered late, from the cloud. No chain did so in 4.9 billion ticks, so the rate is small.
+
+**CONJECTURE.** With fair lower cells the cloud is transient: every row ends in a lock. It needs every cloud window to reach an entrance, which is not shown.
+
+### 64.6 What this does not settle
+
+Whether locks with a moving frontier are finite in number. The rate of capture. Why v = 10 and v = 110. Still nothing about capture onto the front itself.

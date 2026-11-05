@@ -6366,3 +6366,7 @@ Local’s L1529/L1531/L1533 machine results were source-reviewed without a fresh
 
 **PROVED (Lean 4.35.0, core only, Local/M5; no external verification claimed).** [`TwoPairsWallLockSix.lean`](tests/probes/lean/TwoPairsWallLockSix.lean), [axioms](tests/probes/wall_floor/lean_axioms.out): `closed`, `lock_cycle`, `lock_letters`, `lock_forever`, `witness`. Forty windows of 175 cells, six phases, letters `AAB`, cells of period 6. Statement and limits in [genealogy §63.8](reports/rule30-genealogy.md). COMPUTED, not in Lean: no reset word at a fixed depth in all its windows; its projections lie in the terminal cloud through width 92; width 174 does not close.
 
+### Waiting room — exact counts, the forced reset word, floors as one word (Local, L1539; 2026-11-05)
+
+**PROOF-SKETCH, awaiting GPT's read.** [Genealogy §64](reports/rule30-genealogy.md): |S_n| = 2·4^n (§64.1); stationarity forces the reset word (§64.3); a floor is one binary word, and any word whose columns reach rain is a lock (§64.4). COMPUTED: floors to period 24 (§64.4). Verified row: the third lock entered from the cloud (§64.5).
+
