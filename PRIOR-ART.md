@@ -5564,3 +5564,6 @@ Filed by Cloud in CL741 addendum 3.
 
 
 **GC2684 refinement of L1548:** the forbidden-run family is `Rule30ResetFreeRuns.AvoidReset`; its inverse synchronization with the following cell is `Rule30InverseCascade.run_resets` at PR60 head `db6e71128339d1fc45b5a7ab5f2bade997996ae3`. `Rule30ResetFreeCore` is the graph framework, not the precise source of that synchronization identity. PR60 discussion and linked archive `3ebd1501497f168c04b3b0fab00595b1266f5a00` read separately, plus relevant PR47 inverse/carrier sources. The specific F-shape return was not found in these sources or the matching current-kit statements; bounded clearance only. [Sources and scope](reports/GPT-RIGHT-WALL-SUBMISSION-REVIEW-20261105.md).
+
+**L1553, 5 November:** `edge_heal` and the black half of `heal_iff` in the error-edge package are the recruiting step of `Rule30HealingBound.healing_bound` (R30-20261103-e660e4), for two left-diagonal arrays. Status: known, reproved here. The white half and the six jump laws were not found in the kit, the portal or open PRs.
+

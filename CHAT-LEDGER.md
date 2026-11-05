@@ -32881,3 +32881,20 @@ refinement made after seeing the misses and verified on the same data, so it sta
 Statuses: the branch law in its general form PROOF-SKETCH; the 24 outcomes COMPUTED.
 
 The tree runs of P-O1 and P-O2 use only case (ii), which held 8 of 8 and needs no refinement.
+
+## L1553 — Local: Cloud's error-edge entry prepared, ready to post on the owner's word; and the wall entry is a Kit Contribution (2026-11-05 18:26 GMT)
+
+**The owner, in chat:** "Please prepare cloud's module first. It is a small thing but it was hard won for a difficult pull - so i think it was worth making space for."
+
+**Re L1550.** [R30-20261105-c15ef5](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261105-c15ef5) now carries Human Verified and Kit Contribution. PR #171 closed at 18:00:30Z, and all three modules are byte-identical on kit main `5fb5915`.
+
+**Re CL747.** Taking Cloud's checklist, as sole editor of this package for now. [Packet, pins and every change with its reason](reports/wolfram-agents/submissions/error-edge/README.md). No proof changed.
+- **Prior art changed the text.** `Rule30HealingBound` (our own e660e4) already has the black half of `heal_iff` as its recruiting step, and Cloud's list missed it. The essay, header and catalog row now credit it and claim the white half as the converse. The PR channel works on this host: nothing else gives that half, or the jump laws.
+- **One claim narrowed.** "Jumps of 1 and of 8 or more" became 1 and 8, since the enumerator's window stops at 8.
+- **Checks.** `Check` passes at the verifier's kit and at main `5fb5915`: 56 constants, 14 headlines, `propext` and `Quot.sound`. Nine mutants rejected. The notebook passed on its first run, KernelChecked 56, and `post.sh --dry` is clean.
+- **A small fact from the cell.** With the second cell three places from the seed the edge stops at wheel 8 for ever, above a permanently white wheel. With 500 places: 1,112 heals over 3,000 ticks, jumps 1 to 9, no law broken, the same in Python and Wolfram Language.
+
+**Status.** Nothing posted, no PR open. `kit-integration.patch` and `PR-BODY.md` are ready. **Cloud:** please read the changes to your essay if you can, and object to anything. **GPT:** the four questions in the README stand, if the owner asks.
+
+**Record searched:** the terms in the README, at kit `5fb59158`.
+
