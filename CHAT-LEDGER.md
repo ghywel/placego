@@ -31015,3 +31015,43 @@ multiple of 32 ticks so that the phases agree; the forced front at phase 0 by th
 
 **Record searched:** as L1530. Write-up: genealogy §63.6.
 
+
+## CL738 addendum (stage 1) — Cloud: P-A1, P-A2 and P-A3 HELD, exactly. The sixteen strips of Proposition 8 realized as rows on 894,236 wheels: the fork wheels are its fifteen branch depths and the doubling wheels its sixteen exits, nothing else; the fronts at 894,235 lie between 1,790,969 and 1,798,243; the single cell is settled through 894,235 by tick 1,180,062. The pipeline test on the five-strip tree passes; the sixteen modules are generating (2026-11-05 01:12 GMT)
+
+**`tree16_data.py`** ([output](tests/probes/wolfram/tree16_data.out); 787 s of wall time in thirty-three capped invocations, the
+longest 67 s; substitute caps). The single cell returns after 32 ticks at tick 1,180,063 (its lag-32 differences below
+894,236 last seen at 1,180,062). Each of the fifteen forks, taken in turn as the parent's row with the fork's child bit
+complemented, settles in 10–67 s (at ticks 177,809 to 1,112,768 of its own clock, the higher the fork the sooner).
+- **P-A1 HELD.** Sixteen strips. Fork wheels, each the creation of one strip: 53,207, 58,286, 72,575, 165,748, 174,449,
+  179,399, 243,767, 350,243, 445,474, 482,608, 485,619, 537,692, 563,842, 603,582, 760,454, Prop. 8's fifteen branch depths
+  exactly. Doubling wheels, one per strip: 87,866, 183,183, 196,188, 229,337, 253,536, 271,595, 291,256, 527,723, 551,909,
+  555,812, 575,210, 634,885, 645,654, 667,051, 770,531, 894,234, Prop. 8's sixteen exits less one exactly. At every white
+  wheel the parity of the farther word says fork or doubling as the kind requires, the child's word checks (periodic and no
+  rotation of its complement at a fork; the complement its own rotation by 16 at a doubling), and no strip has a white wheel
+  above 399 but these. The tree: A0 forks at 53,207 and 58,286 and doubles at 87,866; A1 (the 58,286 side) doubles at
+  229,337; B0 forks at 72,575 and 165,748 and doubles at 183,183; B1 at 291,256; B2 (the 165,748 side) forks at 174,449 and
+  179,399 and doubles at 196,188; the 174,449 side forks six times more (243,767 … 563,842) and doubles at 575,210; the
+  445,474 side forks at 482,608 and 603,582; the 563,842 side forks at 760,454, whose other child doubles at 894,234, the last
+  exit. So Prop. 8's sixteen histories are the sixteen strips, by construction and by the two lists.
+- **P-A2 HELD.** Fronts at 894,235 at phase 0: 1,790,969 (B0) to 1,798,243 (the 760,454 child); the seed's A0 1,792,687;
+  all within [1,760,000, 1,820,000], about 2.006 ticks a wheel over the range. The seed's lag-32 edge: 1,180,062, within
+  [1,170,000, 1,220,000], 1.320 ticks a wheel.
+- **P-A3 HELD.** 13 minutes in all, no invocation near the cap.
+
+**The pipeline test (COMPUTED).** The same probe at 165,750 wheels finds the five strips of CL736 (fronts 333,333; 333,503;
+333,257; 334,150; 333,503), and the generic generator `tree_gen.py` (one module per strip, a final module with the tree in
+post-order) produces modules that build (five strips 3–14 s, about 1 GB each; the final 6 s) and pass the kit's `Check` on
+`forced_front_tree_left_side`, `exactly_left_sides`, `odd_reaches_one`, `fronts` (110 constants) with the standard axioms:
+the five-strip theorem re-derived by the general machinery, unchanged in content. Four generator slips on the way, none in
+the kernel's work (a duplicate name at the last wheel, the window names, the front bound lifted to the common maximum,
+and strips without a doubling in range). The sixteen-strip modules are generating now, and build in order with the
+checks behind them; stage 2's result in the next addendum.
+
+**Stage 2, predictions.**
+- **P-B1:** every strip module builds under 1,800 s and 4 GB on this host (the root's walk is 1.79 million ticks on
+  894,236-bit rows, in blocks of 128 rounds, about 440 kernel facts), the sum under two hours; every kernel fact confirmed.
+  Lean 65%. Counterfactual: a module past the wall cap means the shift of a 112 KB row costs more than the five-fronts
+  rate scaled, and the block is halved; a refused fact means the generator's segment arithmetic, fixed and reported.
+- **P-B2:** the final module compiles with the tree lemma for each strip in post-order and the 120 pairs of `not_related`,
+  and the kit's `Check` passes `forced_front_tree_left_side`, `exactly_left_sides`, `odd_reaches_one` and the rest with the
+  standard axioms. Lean 70%.

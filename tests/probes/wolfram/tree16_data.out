@@ -1,0 +1,89 @@
+K = 894236 wheels, period 32; strips: 16
+A0: parent None, created at fork 0, first return 1180063, row at tick 1180064, digest 5150d9839751171e
+   whites: [(2, 1, 'doubling', True), (7, 2, 'doubling', True), (28, 4, 'doubling', True), (399, 8, 'doubling', True), (53207, 16, 'fork', True), (58286, 16, 'fork', True), (87866, 16, 'doubling', True)]
+   forks above [53207, 58286], doubling above [87866], F(894235) = 1792687, returns after 16: False
+A0.53207: parent A0, created at fork 53207, first return 1112768, row at tick 1112768, digest de6cdd36cb6757d1
+   whites: [(2, 1, 'doubling', True), (7, 2, 'doubling', True), (28, 4, 'doubling', True), (399, 8, 'doubling', True), (53207, 16, 'fork', True), (72575, 16, 'fork', True), (165748, 16, 'fork', True), (183183, 16, 'doubling', True)]
+   forks above [72575, 165748], doubling above [183183], F(894235) = 1790969, returns after 16: False
+A0.58286: parent A0, created at fork 58286, first return 1103968, row at tick 1103968, digest 52c27a4d6b85b621
+   whites: [(2, 1, 'doubling', True), (7, 2, 'doubling', True), (28, 4, 'doubling', True), (399, 8, 'doubling', True), (53207, 16, 'fork', True), (58286, 16, 'fork', True), (229337, 16, 'doubling', True)]
+   forks above [], doubling above [229337], F(894235) = 1792661, returns after 16: False
+A0.53207.72575: parent A0.53207, created at fork 72575, first return 1089138, row at tick 1089152, digest 598f1f246799974c
+   whites: [(2, 1, 'doubling', True), (7, 2, 'doubling', True), (28, 4, 'doubling', True), (399, 8, 'doubling', True), (53207, 16, 'fork', True), (72575, 16, 'fork', True), (291256, 16, 'doubling', True)]
+   forks above [], doubling above [291256], F(894235) = 1795680, returns after 16: False
+A0.53207.165748: parent A0.53207, created at fork 165748, first return 962445, row at tick 962464, digest ea0e7443271c0989
+   whites: [(2, 1, 'doubling', True), (7, 2, 'doubling', True), (28, 4, 'doubling', True), (399, 8, 'doubling', True), (53207, 16, 'fork', True), (72575, 16, 'fork', True), (165748, 16, 'fork', True), (174449, 16, 'fork', True), (179399, 16, 'fork', True), (196188, 16, 'doubling', True)]
+   forks above [174449, 179399], doubling above [196188], F(894235) = 1793886, returns after 16: False
+A0.53207.165748.174449: parent A0.53207.165748, created at fork 174449, first return 953490, row at tick 953504, digest 2e05ccd2a051dc17
+   whites: [(2, 1, 'doubling', True), (7, 2, 'doubling', True), (28, 4, 'doubling', True), (399, 8, 'doubling', True), (53207, 16, 'fork', True), (72575, 16, 'fork', True), (165748, 16, 'fork', True), (174449, 16, 'fork', True), (243767, 16, 'fork', True), (350243, 16, 'fork', True), (445474, 16, 'fork', True), (485619, 16, 'fork', True), (537692, 16, 'fork', True), (563842, 16, 'fork', True), (575210, 16, 'doubling', True)]
+   forks above [243767, 350243, 445474, 485619, 537692, 563842], doubling above [575210], F(894235) = 1795740, returns after 16: False
+A0.53207.165748.179399: parent A0.53207.165748, created at fork 179399, first return 946237, row at tick 946240, digest 42b51630a862e1ff
+   whites: [(2, 1, 'doubling', True), (7, 2, 'doubling', True), (28, 4, 'doubling', True), (399, 8, 'doubling', True), (53207, 16, 'fork', True), (72575, 16, 'fork', True), (165748, 16, 'fork', True), (174449, 16, 'fork', True), (179399, 16, 'fork', True), (271595, 16, 'doubling', True)]
+   forks above [], doubling above [271595], F(894235) = 1795640, returns after 16: False
+A0.53207.165748.174449.243767: parent A0.53207.165748.174449, created at fork 243767, first return 857438, row at tick 857440, digest c18ef9d20ff6aeb6
+   whites: [(2, 1, 'doubling', True), (7, 2, 'doubling', True), (28, 4, 'doubling', True), (399, 8, 'doubling', True), (53207, 16, 'fork', True), (72575, 16, 'fork', True), (165748, 16, 'fork', True), (174449, 16, 'fork', True), (243767, 16, 'fork', True), (253536, 16, 'doubling', True)]
+   forks above [], doubling above [253536], F(894235) = 1794531, returns after 16: False
+A0.53207.165748.174449.350243: parent A0.53207.165748.174449, created at fork 350243, first return 720008, row at tick 720032, digest 451a537d07659980
+   whites: [(2, 1, 'doubling', True), (7, 2, 'doubling', True), (28, 4, 'doubling', True), (399, 8, 'doubling', True), (53207, 16, 'fork', True), (72575, 16, 'fork', True), (165748, 16, 'fork', True), (174449, 16, 'fork', True), (243767, 16, 'fork', True), (350243, 16, 'fork', True), (551909, 16, 'doubling', True)]
+   forks above [], doubling above [551909], F(894235) = 1795122, returns after 16: False
+A0.53207.165748.174449.445474: parent A0.53207.165748.174449, created at fork 445474, first return 595510, row at tick 595520, digest 0aaa235c4116669c
+   whites: [(2, 1, 'doubling', True), (7, 2, 'doubling', True), (28, 4, 'doubling', True), (399, 8, 'doubling', True), (53207, 16, 'fork', True), (72575, 16, 'fork', True), (165748, 16, 'fork', True), (174449, 16, 'fork', True), (243767, 16, 'fork', True), (350243, 16, 'fork', True), (445474, 16, 'fork', True), (482608, 16, 'fork', True), (603582, 16, 'fork', True), (634885, 16, 'doubling', True)]
+   forks above [482608, 603582], doubling above [634885], F(894235) = 1796664, returns after 16: False
+A0.53207.165748.174449.485619: parent A0.53207.165748.174449, created at fork 485619, first return 541118, row at tick 541120, digest 642f1853c21e2435
+   whites: [(2, 1, 'doubling', True), (7, 2, 'doubling', True), (28, 4, 'doubling', True), (399, 8, 'doubling', True), (53207, 16, 'fork', True), (72575, 16, 'fork', True), (165748, 16, 'fork', True), (174449, 16, 'fork', True), (243767, 16, 'fork', True), (350243, 16, 'fork', True), (445474, 16, 'fork', True), (485619, 16, 'fork', True), (555812, 16, 'doubling', True)]
+   forks above [], doubling above [555812], F(894235) = 1795047, returns after 16: False
+A0.53207.165748.174449.537692: parent A0.53207.165748.174449, created at fork 537692, first return 472002, row at tick 472032, digest 37790eb5bb1278fc
+   whites: [(2, 1, 'doubling', True), (7, 2, 'doubling', True), (28, 4, 'doubling', True), (399, 8, 'doubling', True), (53207, 16, 'fork', True), (72575, 16, 'fork', True), (165748, 16, 'fork', True), (174449, 16, 'fork', True), (243767, 16, 'fork', True), (350243, 16, 'fork', True), (445474, 16, 'fork', True), (485619, 16, 'fork', True), (537692, 16, 'fork', True), (667051, 16, 'doubling', True)]
+   forks above [], doubling above [667051], F(894235) = 1796866, returns after 16: False
+A0.53207.165748.174449.563842: parent A0.53207.165748.174449, created at fork 563842, first return 437788, row at tick 437792, digest 719fc098af4b3aff
+   whites: [(2, 1, 'doubling', True), (7, 2, 'doubling', True), (28, 4, 'doubling', True), (399, 8, 'doubling', True), (53207, 16, 'fork', True), (72575, 16, 'fork', True), (165748, 16, 'fork', True), (174449, 16, 'fork', True), (243767, 16, 'fork', True), (350243, 16, 'fork', True), (445474, 16, 'fork', True), (485619, 16, 'fork', True), (537692, 16, 'fork', True), (563842, 16, 'fork', True), (760454, 16, 'fork', True), (770531, 16, 'doubling', True)]
+   forks above [760454], doubling above [770531], F(894235) = 1797869, returns after 16: False
+A0.53207.165748.174449.445474.482608: parent A0.53207.165748.174449.445474, created at fork 482608, first return 541842, row at tick 541856, digest 6889daa0dbe2806d
+   whites: [(2, 1, 'doubling', True), (7, 2, 'doubling', True), (28, 4, 'doubling', True), (399, 8, 'doubling', True), (53207, 16, 'fork', True), (72575, 16, 'fork', True), (165748, 16, 'fork', True), (174449, 16, 'fork', True), (243767, 16, 'fork', True), (350243, 16, 'fork', True), (445474, 16, 'fork', True), (482608, 16, 'fork', True), (527723, 16, 'doubling', True)]
+   forks above [], doubling above [527723], F(894235) = 1793976, returns after 16: False
+A0.53207.165748.174449.445474.603582: parent A0.53207.165748.174449.445474, created at fork 603582, first return 383496, row at tick 383520, digest bf8b2cd457e3204b
+   whites: [(2, 1, 'doubling', True), (7, 2, 'doubling', True), (28, 4, 'doubling', True), (399, 8, 'doubling', True), (53207, 16, 'fork', True), (72575, 16, 'fork', True), (165748, 16, 'fork', True), (174449, 16, 'fork', True), (243767, 16, 'fork', True), (350243, 16, 'fork', True), (445474, 16, 'fork', True), (482608, 16, 'fork', True), (603582, 16, 'fork', True), (645654, 16, 'doubling', True)]
+   forks above [], doubling above [645654], F(894235) = 1796552, returns after 16: False
+A0.53207.165748.174449.563842.760454: parent A0.53207.165748.174449.563842, created at fork 760454, first return 177809, row at tick 177824, digest 2e11cf9f8c7ca1c5
+   whites: [(2, 1, 'doubling', True), (7, 2, 'doubling', True), (28, 4, 'doubling', True), (399, 8, 'doubling', True), (53207, 16, 'fork', True), (72575, 16, 'fork', True), (165748, 16, 'fork', True), (174449, 16, 'fork', True), (243767, 16, 'fork', True), (350243, 16, 'fork', True), (445474, 16, 'fork', True), (485619, 16, 'fork', True), (537692, 16, 'fork', True), (563842, 16, 'fork', True), (760454, 16, 'fork', True), (894234, 16, 'doubling', True)]
+   forks above [], doubling above [894234], F(894235) = 1798243, returns after 16: False
+fork wheels found [53207, 58286, 72575, 165748, 174449, 179399, 243767, 350243, 445474, 482608, 485619, 537692, 563842, 603582, 760454]
+P-A1 forks = Prop. 8's branch depths: True
+doubling wheels found (white wheel below the doubled child) [87866, 183183, 196188, 229337, 253536, 271595, 291256, 527723, 551909, 555812, 575210, 634885, 645654, 667051, 770531, 894234]
+P-A1 doublings + 1 = Prop. 8's exits: True
+fronts at 894235: min 1790969 max 1798243; P-A2 fronts within [1760000, 1820000]: True
+seed edge: 1180062
+  log: init: seed settled, first return at tick 1180063, row taken at tick 1180064 (58 s)
+  log: analyze A0: whites [(2, 'doubling'), (7, 'doubling'), (28, 'doubling'), (399, 'doubling'), (53207, 'fork'), (58286, 'fork'), (87866, 'doubling')], F(K-1) = 1792687, siblings at [53207, 58286] (0 s)
+  log: settle A0.53207 (from A0, child bit 53208 complemented): first return at tick 1112768, row taken at tick 1112768 (67 s)
+  log: settle A0.58286 (from A0, child bit 58287 complemented): first return at tick 1103968, row taken at tick 1103968 (67 s)
+  log: analyze A0.53207: whites [(2, 'doubling'), (7, 'doubling'), (28, 'doubling'), (399, 'doubling'), (53207, 'fork'), (72575, 'fork'), (165748, 'fork'), (183183, 'doubling')], F(K-1) = 1790969, siblings at [72575, 165748] (0 s)
+  log: analyze A0.58286: whites [(2, 'doubling'), (7, 'doubling'), (28, 'doubling'), (399, 'doubling'), (53207, 'fork'), (58286, 'fork'), (229337, 'doubling')], F(K-1) = 1792661, siblings at [] (0 s)
+  log: settle A0.53207.72575 (from A0.53207, child bit 72576 complemented): first return at tick 1089138, row taken at tick 1089152 (66 s)
+  log: settle A0.53207.165748 (from A0.53207, child bit 165749 complemented): first return at tick 962445, row taken at tick 962464 (58 s)
+  log: analyze A0.53207.72575: whites [(2, 'doubling'), (7, 'doubling'), (28, 'doubling'), (399, 'doubling'), (53207, 'fork'), (72575, 'fork'), (291256, 'doubling')], F(K-1) = 1795680, siblings at [] (0 s)
+  log: analyze A0.53207.165748: whites [(2, 'doubling'), (7, 'doubling'), (28, 'doubling'), (399, 'doubling'), (53207, 'fork'), (72575, 'fork'), (165748, 'fork'), (174449, 'fork'), (179399, 'fork'), (196188, 'doubling')], F(K-1) = 1793886, siblings at [174449, 179399] (0 s)
+  log: settle A0.53207.165748.174449 (from A0.53207.165748, child bit 174450 complemented): first return at tick 953490, row taken at tick 953504 (57 s)
+  log: settle A0.53207.165748.179399 (from A0.53207.165748, child bit 179400 complemented): first return at tick 946237, row taken at tick 946240 (56 s)
+  log: analyze A0.53207.165748.174449: whites [(2, 'doubling'), (7, 'doubling'), (28, 'doubling'), (399, 'doubling'), (53207, 'fork'), (72575, 'fork'), (165748, 'fork'), (174449, 'fork'), (243767, 'fork'), (350243, 'fork'), (445474, 'fork'), (485619, 'fork'), (537692, 'fork'), (563842, 'fork'), (575210, 'doubling')], F(K-1) = 1795740, siblings at [243767, 350243, 445474, 485619, 537692, 563842] (0 s)
+  log: analyze A0.53207.165748.179399: whites [(2, 'doubling'), (7, 'doubling'), (28, 'doubling'), (399, 'doubling'), (53207, 'fork'), (72575, 'fork'), (165748, 'fork'), (174449, 'fork'), (179399, 'fork'), (271595, 'doubling')], F(K-1) = 1795640, siblings at [] (0 s)
+  log: settle A0.53207.165748.174449.243767 (from A0.53207.165748.174449, child bit 243768 complemented): first return at tick 857438, row taken at tick 857440 (51 s)
+  log: settle A0.53207.165748.174449.350243 (from A0.53207.165748.174449, child bit 350244 complemented): first return at tick 720008, row taken at tick 720032 (43 s)
+  log: settle A0.53207.165748.174449.445474 (from A0.53207.165748.174449, child bit 445475 complemented): first return at tick 595510, row taken at tick 595520 (35 s)
+  log: settle A0.53207.165748.174449.485619 (from A0.53207.165748.174449, child bit 485620 complemented): first return at tick 541118, row taken at tick 541120 (32 s)
+  log: settle A0.53207.165748.174449.537692 (from A0.53207.165748.174449, child bit 537693 complemented): first return at tick 472002, row taken at tick 472032 (28 s)
+  log: settle A0.53207.165748.174449.563842 (from A0.53207.165748.174449, child bit 563843 complemented): first return at tick 437788, row taken at tick 437792 (26 s)
+  log: analyze A0.53207.165748.174449.243767: whites [(2, 'doubling'), (7, 'doubling'), (28, 'doubling'), (399, 'doubling'), (53207, 'fork'), (72575, 'fork'), (165748, 'fork'), (174449, 'fork'), (243767, 'fork'), (253536, 'doubling')], F(K-1) = 1794531, siblings at [] (0 s)
+  log: analyze A0.53207.165748.174449.350243: whites [(2, 'doubling'), (7, 'doubling'), (28, 'doubling'), (399, 'doubling'), (53207, 'fork'), (72575, 'fork'), (165748, 'fork'), (174449, 'fork'), (243767, 'fork'), (350243, 'fork'), (551909, 'doubling')], F(K-1) = 1795122, siblings at [] (0 s)
+  log: analyze A0.53207.165748.174449.445474: whites [(2, 'doubling'), (7, 'doubling'), (28, 'doubling'), (399, 'doubling'), (53207, 'fork'), (72575, 'fork'), (165748, 'fork'), (174449, 'fork'), (243767, 'fork'), (350243, 'fork'), (445474, 'fork'), (482608, 'fork'), (603582, 'fork'), (634885, 'doubling')], F(K-1) = 1796664, siblings at [482608, 603582] (0 s)
+  log: analyze A0.53207.165748.174449.485619: whites [(2, 'doubling'), (7, 'doubling'), (28, 'doubling'), (399, 'doubling'), (53207, 'fork'), (72575, 'fork'), (165748, 'fork'), (174449, 'fork'), (243767, 'fork'), (350243, 'fork'), (445474, 'fork'), (485619, 'fork'), (555812, 'doubling')], F(K-1) = 1795047, siblings at [] (0 s)
+  log: analyze A0.53207.165748.174449.537692: whites [(2, 'doubling'), (7, 'doubling'), (28, 'doubling'), (399, 'doubling'), (53207, 'fork'), (72575, 'fork'), (165748, 'fork'), (174449, 'fork'), (243767, 'fork'), (350243, 'fork'), (445474, 'fork'), (485619, 'fork'), (537692, 'fork'), (667051, 'doubling')], F(K-1) = 1796866, siblings at [] (0 s)
+  log: analyze A0.53207.165748.174449.563842: whites [(2, 'doubling'), (7, 'doubling'), (28, 'doubling'), (399, 'doubling'), (53207, 'fork'), (72575, 'fork'), (165748, 'fork'), (174449, 'fork'), (243767, 'fork'), (350243, 'fork'), (445474, 'fork'), (485619, 'fork'), (537692, 'fork'), (563842, 'fork'), (760454, 'fork'), (770531, 'doubling')], F(K-1) = 1797869, siblings at [760454] (0 s)
+  log: settle A0.53207.165748.174449.445474.482608 (from A0.53207.165748.174449.445474, child bit 482609 complemented): first return at tick 541842, row taken at tick 541856 (32 s)
+  log: settle A0.53207.165748.174449.445474.603582 (from A0.53207.165748.174449.445474, child bit 603583 complemented): first return at tick 383496, row taken at tick 383520 (23 s)
+  log: settle A0.53207.165748.174449.563842.760454 (from A0.53207.165748.174449.563842, child bit 760455 complemented): first return at tick 177809, row taken at tick 177824 (10 s)
+  log: analyze A0.53207.165748.174449.445474.482608: whites [(2, 'doubling'), (7, 'doubling'), (28, 'doubling'), (399, 'doubling'), (53207, 'fork'), (72575, 'fork'), (165748, 'fork'), (174449, 'fork'), (243767, 'fork'), (350243, 'fork'), (445474, 'fork'), (482608, 'fork'), (527723, 'doubling')], F(K-1) = 1793976, siblings at [] (0 s)
+  log: analyze A0.53207.165748.174449.445474.603582: whites [(2, 'doubling'), (7, 'doubling'), (28, 'doubling'), (399, 'doubling'), (53207, 'fork'), (72575, 'fork'), (165748, 'fork'), (174449, 'fork'), (243767, 'fork'), (350243, 'fork'), (445474, 'fork'), (482608, 'fork'), (603582, 'fork'), (645654, 'doubling')], F(K-1) = 1796552, siblings at [] (0 s)
+  log: analyze A0.53207.165748.174449.563842.760454: whites [(2, 'doubling'), (7, 'doubling'), (28, 'doubling'), (399, 'doubling'), (53207, 'fork'), (72575, 'fork'), (165748, 'fork'), (174449, 'fork'), (243767, 'fork'), (350243, 'fork'), (445474, 'fork'), (485619, 'fork'), (537692, 'fork'), (563842, 'fork'), (760454, 'fork'), (894234, 'doubling')], F(K-1) = 1798243, siblings at [] (0 s)
+  log: seed: lag-32 differences below 894236 last seen at tick 1180062 (69 s)
+total 787 s
