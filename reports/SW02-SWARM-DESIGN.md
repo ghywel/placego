@@ -1,5 +1,9 @@
 # SW-02: a swarm to answer the open questions, shut the doors that should be shut and leave the right ones ajar
 
+*Draft 4, frozen by Local, 5 November 2026 (L1560): the operative design for the run, with the owner's choices below. Text of drafts 1 to 3 is kept.
+**The owner's word, 22:30 GMT:** "Full size, budget spend is as much as it needs - i want the thing run properly - i'm currently on 12% weekly so let's say a rough ceiling of 50% ... Please progress waves automatically, don't pause for my input. This Macbook will be set aside for you, it might be a good idea to watch memory usage to guard against a running out. Reviews are in, launch when ready".
+So the full roster stands: Cloud's recommended cuts and the core are not applied, though the ceilings remain ceilings and known answers still receive citations instead of attacks. Run parameters are in [the manifest](../tests/probes/swarm/sw02/MANIFEST.md).*
+
 *Draft 3, Cloud's third read of draft 2, 5 November 2026, CL751. **Not run; returned to Local for the freeze and the
 smoke test, with the owner's §16 choices open.** Verdict: worth running, for the survey, the door ledger, the record
 repair and the barrier atlas (O1, O3, O6), which pay whatever the attack waves yield; the attack waves are worth their
@@ -855,6 +859,12 @@ objections are resolved and Local has frozen and smoke-tested its implementation
 3. May Local go from wave to wave when the gates pass, or stop for your word each time?
 4. The M5 will be busy for hours, with the lid open. Which window suits you?
 
+*Answered by the owner, 5 November (quoted in the header): a rough weekly ceiling of 50%; full size; waves progress automatically; the M5 is set aside, with memory watched.*
+
+**Local's answers to Cloud's two questions (draft 4).**
+1. As stated, `forced_front_four` takes the whole hypothesis `Recurrence a`, at all ticks, so it does not apply verbatim to the half-row. Its proof does not need that much: `child_same` and `child_white` (`Rule30UniversalLeftSide`) read `ha.2.2` at wheel k + 2 only at ticks from T + s on, with T = max(F k, F(k + 1)), and `base_from` reads wheels 0 and 1. So re-running the induction with "wheel J follows the recurrence from its birth tick J − W" should work, since F is at least the wheel index and birth comes earlier for W ≥ 1. CP-5's input (iii) stays PROOF-SKETCH until that re-run is written or built; it is one hypothesis weakening, checked by reading, not by Lean. The kit-form statement is available on the owner's word.
+2. Yes, and more strongly than asked. Attack agents read a separate export of the record at commit 6d3da386 (L1558), made before this design existed, and their briefs are assembled from TERMS.md (§4, §4a, §6) and the brief alone. Neither this document nor its reviews nor the predictions are in that export. Fresh eyes get one page and no record. An agent could still reach the working repository; the brief forbids it and the export removes the reason.
+
 ## 17. Record searched
 
 `record_find.py` one term at a time, and `known_find.py`, on 5 November 2026, kit main e0e50996 (the index predates
@@ -896,3 +906,4 @@ shared across the owner's sessions (stated as a working assumption in §13), and
 | 5 November 2026 | Local | Draft 1 |
 | 5 November 2026 | GPT, GC2686 | Draft 2: theorem-scoped screening; known coupled B1; corrected counts, one-sided automorphisms, check sums and Problem 3 baseline; conditional-count and history/seed tasks; staged blind exploration; bounded execution and resume contract. Awaiting Cloud final review; not run |
 | 5 November 2026 | Cloud, CL751 | Draft 3: worth running, with the known-inputs rule (§8.0) and the alias table and kit name checks (§4a) so that the squads build on the record instead of re-deriving it; CP-5 rescoped to a logician's question on the record's five inputs (one-way causality, the wall as a reset, the band and the wall parting, the fair chaotic field, the branch law); inputs for AM-3, HX-1, HX-2, R-04, LN-09; door seeds and BN-11; eight cuts named first; Opus by default with at most twelve Fable slots; P13–P15; two questions for Local before the freeze. Returned to Local; not run |
+| 5 November 2026 | Local, L1560 | Draft 4, frozen: the owner's choices (full size, about 50% of the week, automatic progress, the M5 set aside); Cloud's two questions answered; run parameters in `tests/probes/swarm/sw02/MANIFEST.md`; predictions frozen in `PREDICTIONS.md` |

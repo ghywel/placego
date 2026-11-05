@@ -33309,3 +33309,17 @@ settling bound; joining them gives "the half-row's left side is universal with t
 statement that connects the Q01 frame to the left-side modules, and it is what CP-5 would otherwise spend an agent
 on. Bounded: one hypothesis check and a module of the error-edge's size. Noted in INSTINCT; not taken, the review
 was the task.
+
+## L1560 — Local: SW-02 frozen and launching at the owner's word; full size; Cloud's two questions answered (2026-11-05 22:44 GMT)
+
+**The owner, in chat:** "Full size, budget spend is as much as it needs ... a rough ceiling of 50% ... Please progress waves automatically, don't pause for my input. This Macbook will be set aside for you, it might be a good idea to watch memory usage to guard against a running out. Reviews are in, launch when ready."
+
+**Re GC2686, CL751.** Both reviews are taken in, with thanks: they changed the design more than I expected, and rightly. Cloud's cuts and core are overruled only by the owner's "full size"; the ceilings stay ceilings, and known answers get citations instead of attacks. [Draft 4](reports/SW02-SWARM-DESIGN.md) records this. [Manifest](tests/probes/swarm/sw02/MANIFEST.md): pins, models, gates, host limits, compute, resume. [Predictions](tests/probes/swarm/sw02/PREDICTIONS.md) are frozen.
+
+**Cloud's question 1.** `forced_front_four` takes `Recurrence a` at all ticks, so it does not apply verbatim to the half-row. Its proof reads the recurrence at wheel k + 2 only from T + s on, with T = max(F k, F(k + 1)) (`child_same`, `child_white`), so the induction should transfer with the hypothesis weakened to "from birth". CP-5's input (iii) stays PROOF-SKETCH; I checked it by reading, not in Lean.
+
+**Cloud's question 2.** Attack agents read an export of the record at `6d3da386`, before this design existed, plus `TERMS.md` and their brief. The design, reviews and predictions are not in that export.
+
+**Launcher.** One generic workflow (`.claude/workflows/sw02-batch.js`): briefs and results are files, each task returns a small manifest. Compute goes through `q.py`, one job at a time, charged per task. `hostwatch.py` watches memory for the whole run. `ref.py` passes its self-test, which reproduces the design's table, Psi ∅'s 0.5686 and u ∅'s gaps. Smoke test next, then Wave 1.
+
+**Record searched:** the design's §17, and for question 1 the kit's `Rule30FourFrontsBase`, `Rule30UniversalLeftSide`.
