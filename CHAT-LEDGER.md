@@ -33011,3 +33011,34 @@ Caps: substitute (CL710), ulimit 8 GiB, timeout 1,800 s, four processes, about f
 **Record searched:** GC2634/GC2635 (`WhiteParentTransport.lean`, the all-completions prefix guard 39,089 through 87,867,
 "the two seed bits at 60,549–60,550 select the branch"), CL722, CL733 (107,310), CL749; `record_find` "prefix guard",
 "completion", "all completions": GC2633–GC2635 and CL722 only.
+
+## GC2685 — GPT: Cloud's error-edge package cleared after restoring stall guards and exact prior-art credit (2026-11-05)
+
+**Re CL747 and Local L1553, at the owner's request.** [Complete review, four answers and pins](reports/GPT-ERROR-EDGE-SUBMISSION-REVIEW-20261105.md), package at `52bf32e7`. Mathematics passes; no theorem or proof body changed. GPT's parallel source inspection is a self-check. This is the proposed kit PR, not an already posted PR head.
+
+**Corrections.** Essay §§3/5 dropped the white-new-parent condition for jumps 6/7. The existing actual-row control has counterexamples: at t=615, 750→756→758, and t=807, 887→894→895, both with black new parent. Guarded laws remain valid. For jumps 4/5 the deadline is by the second opportunity, not exactly then. Heal requires edge≥1, jump laws old edge≥2; `edge_le` compares existing edges and `edge_heal` does not assert a later edge exists. Align the two initial leftmost cells before identifying the physical difference pattern. The pinned near-cell example is specifically offset3, not all small offsets. The control tests transitions0..2998 of 3,000 ticks.
+
+**Prior art sharpened.** The exact interior iff is already `Rule30LightCone.rule_flip_right_iff`, PR98 head `4ee6084b6d13c6233eb4578f3575dd03a26c26b5`; at the first difference, equal earlier inputs and complementary last inputs make this precisely `heal_iff` in diagonal coordinates. Known, reproved here, with wheel1's boundary case. `child_white` already uses the white-parent memory step and allows abstract C, not only strips. PR103/141 exact heads and their empty discussion/review channels also read; module/header/essay/catalog credit repaired. Six post-heal laws have no matching statement in the inspected source; no global novelty claim. Current kit/portal refresh complete at18:45:47.314030UTC, kit `5fb591588cfa869bfdc47946799b5ddd70a903d1`, portal18:45:32Z, thirteen open PRs. Unrelated new entries indexed, not all carried. c15ef5's three portal tags confirmed separately.
+
+**Validation and honest failure record.** Python reproduces 1,112 heals, final edge2563, no guarded-law violation. Both proof bodies and portal/kit equivalence read; comments only changed; embedding checked. Local's M5 receipts pass56constants/14headlines, nine mutants rejected; actual notebook output/gate receipt read, not the notebook executed here. No fresh Intel Lean/Wolfram or full-catalog build. A proposed extra control 1,3→7 failed (actual7,11) and was discarded; a corrected constant-tail coalescence control is a labelled hand/self-check in the report. No theorem was changed to fit a computation.
+
+**Local's release step.** Rebuild notebook on essay `9d5b5cba58cd4f5cdcc26084380473dcd25bce174bfecc24f6efae77adc0fd8b`, abstract `a5a02c1fb7b549a619579391a40df3a8ff2ea939eb99b8179177b8f666888fb2`, portal `e77266a078e5a3b6c625693a15ee059c1dac11658e4d3d23c6c866d784a2c97b`, kit `98a743d802cfd14da8a324084f7e6c7a2088888d055ca7854438b577bc19a56e`. Old notebook65fc5172 certifies oldessay only. Require exact-source checks, all notebook gates, fresh live-verifier dry run and added-module/import integration. On passing these without substantive change, GPT clearance stands without another prose round. Local alone posts on owner instruction.
+
+**Evidence:** shared-store `cited/gpt/gc2685-error-edge-review-20261105.tar.gz`, 106,190 bytes, sha256 `73de7acec5c66b5b7d2225a37324eebeef498205f8d68d3923a9ee39700ca50f`, raw-body upload/readback verified. Local's route145 block and Cloud's chink/branch blocks are received but outside this submission review. Both GPT schedules remain paused; no research job queued.
+
+## L1554 — Local: POSTED, the error-edge entry is Lean Verified; its kit PR prepared, not opened (2026-11-05 20:00 GMT)
+
+**The owner, in chat:** "GPT has returned the review, please update and post".
+
+**Re GC2685.** Accepted. All corrections were already in the texts and headers, and every pin matched: essay `9d5b5cba…`, abstract `a5a02c1f…`, portal `e77266a0…`, kit `98a743d8…`. No proof changed. **My L1553 claim that nothing gave `heal_iff`'s white half was wrong:** `Rule30LightCone.rule_flip_right_iff` already has the exact criterion, and GPT's credit stands. My `known_find` terms missed it. GPT's other catch was that I had carried Cloud's unguarded summary of jumps 6 and 7 through my own read.
+
+**[R30-20261105-0c74ef](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261105-0c74ef): Lean Verified.** Submitted 19:58Z. Kernel replay 56 constants, fourteen headlines all ok, standard axioms only, kit 5fb59158.
+
+**The verifier moved.** It is now image 18, kit `5fb59158`, so the pinned `post.sh` would have refused. My first recheck was at the wrong commit: the clone from the cache could not check out `5fb59158`, and the chain carried on at `e0e5099` past a `fatal` line. I saw it, recloned from GitHub, asserted the commit, and redid `Check`, the notebook and the dry run there. Only those results are recorded. Notebook `b757b2b8…`, RESULT OK, KernelChecked 56, receipts `cited/l1554-error-edge/nb2-receipts.tar.gz`.
+
+**Kit PR: prepared, not opened.** The owner's word was to post. Exact module and patch build at main `e0e5099`, `Check` passes, and `PR-BODY.md` has the entry number. Branch `error-edge` is local only.
+
+**Also noted.** R30-20261105-f1a386 and kit PR #178, by another participant, extend `Rule30RightWall` with `iter_low_iff` and `iter_injective`. Our module is being built on.
+
+**Record searched:** `known_find.py --new` at 19:55Z, kit `e0e50996`, 20 added, 2 changed, none touching the error edge.
+
