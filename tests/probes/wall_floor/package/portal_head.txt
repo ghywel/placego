@@ -1,0 +1,13 @@
+import Ruliology.CellularAutomata.Rule30Prize
+import Ruliology.CellularAutomata.Rule30FrozenRuler
+
+/-!
+# Rule 30: the wall of a rain-tailed edge code. Two letters, three locks and a closed cloud
+
+Read a row from its rightmost black cell, as in `Rule30FrozenRuler`: one tick of rule 30 is the edge map `T`. A code with a rain tail
+alternates from some index on, and its wall is the last equal pair below the tail. Under backward ticks a settled wall rises three cells
+a tick and shows one of two eleven-cell letters. This module gives closed sets of windows at the wall: a code showing a window of such a
+set shows one at every backward tick for ever, whatever lies below the window. Three of them force the letter sequences `AB`, `AAB`
+and `BAABAA` for ever, and a set of 798 windows of 45 cells excludes the first of those locks. An explicit row in that set enters the
+third lock. Rows in these sets are not periodic under `T`. Nothing here concerns the center column or the Prize problems.
+-/

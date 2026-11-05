@@ -1,0 +1,8 @@
+LockAB windows 4 phases 2 letters AB depths with a reset word in every window [0, 34]
+LockAAB windows 6 phases 3 letters AAB depths with a reset word in every window [0, 125]
+LockThird windows 40 phases 6 letters BAABAA depths with a reset word in every window [164]
+cloud 798 max rank 17 images checked in all 3392
+entry letters, tick 0 first: ABAABAABAABAABAABAABAABAABAABAABAABAABAABAABAABAABAABAABABABAABABABAABABABABABAABAABABABAABABABAABABABABABABAAB
+ticks 0..19 with the top 175 cells in the third lock: [0, 1, 2, 3, 4, 5, 6]
+ticks in the cloud: [95, 96, 97] are the last three; count 98
+REPLAY OK

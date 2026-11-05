@@ -1,0 +1,6 @@
+Ruliology.CellularAutomata.Rule30RightWall rc 0
+pass {'constants': 433, 'ok': True} new axioms [] headlines 18 True []
+Ruliology.CellularAutomata.Rule30RightWallLocks rc 0
+pass {'constants': 66, 'ok': True} new axioms [] headlines 12 True []
+Ruliology.CellularAutomata.Rule30RightWallCloud rc 0
+pass {'constants': 126, 'ok': True} new axioms [] headlines 6 True []

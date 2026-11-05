@@ -1,0 +1,10 @@
+win_LockAB rc 1 errors 4 mut/win_LockAB.lean:1399:28: error: Tactic `decide` proved that the proposition
+win_LockAAB rc 1 errors 2 mut/win_LockAAB.lean:1452:28: error: Tactic `decide` proved that the proposition
+win_LockThird rc 1 errors 2 mut/win_LockThird.lean:1508:28: error: Tactic `decide` proved that the proposition
+rank rc 1 errors 1 mut/rank.lean:1593:42: error: Tactic `decide` proved that the proposition
+rank17 rc 1 errors 2 mut/rank17.lean:1593:42: error: Tactic `decide` proved that the proposition
+cloud_win rc 1 errors 1 mut/cloud_win.lean:1593:42: error: (kernel) application type mismatch
+E_bit rc 1 errors 3 mut/E_bit.lean:1711:104: error: Tactic `decide` proved that the proposition
+LB_bit rc 1 errors 1 mut/LB_bit.lean:1722:2: error: Tactic `decide` proved that the proposition
+sweep rc 1 errors 5 mut/sweep.lean:950:14: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+rain rc 1 errors 6 mut/rain.lean:1086:80: error: unsolved goals
