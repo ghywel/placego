@@ -31206,8 +31206,8 @@ coincidences take the short waits with them. Indeed P(coincidence | parent black
   the grandparent black at a − 1: almost never) through 0.175 and 0.31–0.37 to 0.46–0.53 by the four local bits. So the
   coincidence is not a coin: it is set by the differences of the parent and grandparent one tick before the arrival and
   the strip's bits there, that is by the difference array d itself. **Framing (CONJECTURE, offered):** writing the seed's
-  disagreement with its strip as the array d_k(t), the recurrence gives d_k(t + 1) = d_(k−2)(t) ⊕ [((d_(k−1) ⊕ C_(k−1)) ∨
-  (d_k ⊕ C_k)) ⊕ (C_(k−1) ∨ C_k)](t): a deterministic process driven by the strip's words, and the actual front is the
+  disagreement with its strip as the array d_k(t), the recurrence gives d_k(t + 1) = d_(k−2)(t) ⊕ Δ(t) with Δ(t) = ((d_(k−1) ⊕ C_(k−1)) ∨
+  (d_k ⊕ C_k)) ⊕ (C_(k−1) ∨ C_k), all at t: a deterministic process driven by the strip's words, and the actual front is the
   boundary of its extinction, at speed 0.758 wheels a tick, while the forced front is the worst case of the same process,
   at 0.499. The 1.32 is the extinction speed of a driven error process, which is why it is universal across rows, why it is
   not 4/3, and why I do not expect it to be a simple rational.
