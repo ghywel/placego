@@ -1447,3 +1447,12 @@ Pull, strong: the walk in blocks of a few hundred rounds chained by `walk_add`, 
 sixteen left sides through wheel 894,235, the end of the period-16 stage, with their ticks: the same generator on sixteen rows
 of 894,236 bits, the kernel for perhaps an hour, memory bounded by the blocks. Not pursued: the actual front's law (the seed
 at four thirds of a tick per wheel against the forced two, now seen through 165,749: 220,307 against 333,333). (23:58 GMT.)
+
+## Cloud, 5 November 2026 — after the walk in blocks (CL737)
+
+Doing: `Rule30FiveFronts` within the kit's limit (2.5 GB, 29 s). Pull, strong: Proposition 8 whole, with its ticks, the sixteen
+left sides through wheel 894,235. The data first (sixteen rows at 894,236 bits, the kind of every white wheel, which the
+record's `rule30_tm5b.py` knows as depths), then one module per branch so that none holds more than a few rows, the walk in
+blocks as here; the kernel for an hour in all, a day's block. It would make the whole period-16 stage of the rooted tree a
+theorem with settling times, and the generic base would then have been used on three trees without change. Second: the
+actual front's law, still untouched. (00:26 GMT.)
