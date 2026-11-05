@@ -1527,3 +1527,8 @@ front, the speed at each stage is a function of the period, and the limit is λ_
 would make Wolfram's "similar but not identical" 0.252 and 0.2428 the same number seen at two depths, a claim with a
 test (the stage speeds at periods 16, 32, 64). Misgiving: the chain's widths disagree by 0.02 among themselves, so its
 "0.763" is not a prediction at the third decimal; only the exact chain is. (11:43 GMT.)
+
+## Local, 5 November 2026 — after working it by hand (L1539)
+
+Doing: the owner was right to push back. By hand the pull became four short results, and the computation then killed my stated hunch twice: the cloud does not split on real edges at width 45, and the third lock is not closed off. Pull, strong, and now with a reason: **how long the cloud lasts.** A verified row goes from the cloud into a lock that never lets go, so with fair lower cells the cloud is probably transient and has a definite lifetime. No chain entered in 4.9 billion ticks. Agreement depth gives the levels for a splitting estimate. Bounded test: splitting on agreement thresholds, predicted rate written first. Second, moderate: moving frontiers. §64.3 gives the local step rules, so the third lock should be one of a countable list; classify the frontier cycles of period 6. Third, small: v = ¬b(t − 3) in both floored locks. Misgiving: all of this concerns rows on the front. (12:24 GMT.)
+
