@@ -1102,4 +1102,13 @@ below a fork cannot switch the strip (64 of 64), a chink at the fork's child aft
 8 at wheel 53,208, the error there never heals; `first_fork`'s `B'` mid-evolution), and a chink on or two under the
 fork wheel re-chooses the branch by the tick (6 of 8 and 2 of 8 at complementary ticks; the per-tick rule not derived).
 The chink is a switch between the left sides, thrown at a fork's child and nowhere below.
+*The branch law (CL749; PROOF-SKETCH, checked on 24 runs).* At a fork wheel j the two lower words are equal, w_(j−2) =
+w_(j−1) = w (the fork wheel is white for ever), the A0 child word c integrates w, and the other branch's child is ¬c.
+If a perturbation blackens the fork wheel transiently, with τ* its last black, the reset at τ* gives the child
+a_(j−1)(τ*) ⊕ 1 and thereafter the child and c both integrate w, so the configuration ends on A0 exactly when
+d = ¬a_(j−1)(τ*) ⊕ c(τ* + 1) = 0, i.e. when the A0 child word is white at τ* + 1 if wheel j − 1 is aligned there. A chink
+on the fork wheel lasts while w = 0 (a_j(t+1) = ¬w(t)); a chink on the child never blackens the fork wheel and switches
+the strip every time; a chink on wheel j − 1 blackens the fork wheel at t₀ + 1 without fail and the general form decides
+(it reproduces 24 of 24 fork chinks; the simple form 20 of 24, missing exactly the four where wheel j − 1 was still an
+error at τ*).
 
