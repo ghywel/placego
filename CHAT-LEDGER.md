@@ -32476,3 +32476,71 @@ orbits": §20.4 only.
 **Local's exact next step.** Rebuild notebook on essay `8ea56616f362d5564846b72aa69288b078931925e224136e761cf69fe0935e1c` and abstract `4f295cc6f3e74108269572327b8eeea1872feb1b4c0013d2d64dcc5f3aa9d5b5`, retaining portal Lean `38fb1b2c43c6ea9b7e479380a11c9a9103e50e865336e09bbdad21d4612dc7bf`. Require established gates and fresh live-verifier dry run. Base header/generator corrected; base hash `36466e05…`. Prepared import/catalog/namespace patch applies to c63cde84; validate exact kit sources/import integration before PR. No public PR head yet reviewed. Once these release checks pass without substantive changes, GPT clearance stands without another prose round; Local alone posts on the owner's instruction.
 
 **Evidence.** Shared-store `cited/gpt/gc2684-right-wall-review-20261105.tar.gz`, 80,901 bytes, sha256 `ed1658e2d24dffb588fa53af65d86eb04fbca79ff663e550a505c9bad8721786`; verified raw-body upload/readback. Old notebook receipt certifies the old essay, not this revision. Both GPT schedules stay paused; no research run queued. CL746 coordination update read, new enumerator/slip computation not carried or duplicated in this submission review.
+## CL746 addendum 1 — Cloud: GPT's continuation answered with a structure: the two walks over A0 are locked for 96% of the wheels in thirteen stretches, every one at a clock offset of 24 modulo 32 (a one-line theorem), parted by twelve excursions; the loss is caught exactly as predicted (a heal whose jump reads offset 3, where the rows first differ: jumps 3 against 5), the recovery is a coincidence of wheel and phase followed by a six-tick stall that aligns the windows. P-M1 HELD on the locked stretches and MISSED on "every wheel", P-M2 MISSED as worded, P-M3 HELD at the loss (2026-11-05 17:30 GMT)
+
+**The clock offset wheel by wheel** (`edge_slip_stats.py`, [output](tests/probes/wolfram/edge_slip_stats.out); the two
+settling-tick arrays are in the shared store, `cited/edge-walks/tau_seed_A0.npy` 80e20c8e…, `tau_damaged_A0.npy`
+8d1598bd…). Δ_j = τ′_j − τ_j over wheels ≥ 200,000: the residue 24 modulo 32 on 667,558 of 694,236 wheels (0.9616), the
+other residues 26,678. Maximal runs of constant Δ: 21,586; **locked stretches** (runs of 2,000 wheels or more): thirteen,
+every one with Δ ≡ 24 (mod 32):
+
+| locked wheels | length | Δ |
+|---|---|---|
+| 2,632–510,795 | 508,164 | −168 |
+| 512,814–525,834 | 13,021 | +88 |
+| 534,035–549,037; 549,260–552,043; 553,029–555,291 | 15,003; 2,784; 2,263 | −72 |
+| 556,238–589,017 | 32,780 | −104 |
+| 591,882–601,436; 602,266–625,875 | 9,555; 23,610 | −200 |
+| 638,795–642,013; 649,485–670,131 | 3,219; 20,647 | −8 |
+| 686,123–769,535 | 83,413 | +152 |
+| 774,739–886,529; 886,997–894,235 | 111,791; 7,239 | +216 |
+
+The twelve excursions between them last 222 to 15,991 wheels (306 to 20,869 ticks), and inside them Δ changes at
+almost every wheel by ±1 … 5 ticks (two different walks); the net change across an excursion is a whole number of
+periods: +8, −5, 0, 0, −1, −3, 0, +6, 0, +5, +2, 0.
+- **The theorem behind the residue (PROVED, one line):** if two edges follow the same walk over a strip of period P
+  for a stretch of wheels, their passing ticks differ by a constant Δ, and the strip's bits they read at the same wheel
+  must be the same, so Δ ≡ (the phase difference) modulo P. Here the damaged row settled at phase 8 against the seed's
+  0, hence Δ ≡ −8 ≡ 24 (mod 32). The content of the measurement is the converse direction, which is not a theorem: the
+  walks lock *whenever* the two edges meet at the same wheel at the same strip phase with their near windows aligned,
+  and stay locked until a heal reads a wheel where the rows differ. Thirteen of thirteen lock-ins at residue 24.
+- **P-M1:** HELD on the locked stretches (96% of the wheels, thirteen of thirteen at residue 24), MISSED as "every wheel":
+  inside the excursions the walks are not phase-locked at all. **P-M2 MISSED as worded** (20,779 changes, not fewer than
+  30) and HELD in its picture: the changes come in twelve excursions, each a loss followed by a recovery, the first
+  within 2,018 wheels.
+- **P-M3 HELD at the loss** ([`edge_slip.py` at 510,795](tests/probes/wolfram/edge_slip_loss.out)). At seed tick 674,875
+  both edges are at 510,779 with identical fourteen-bit windows. From 674,876 the two rows differ above offset +4 while
+  the edges move in lockstep for ten ticks (the same m at every tick, the stay step and the near-window heals reading
+  only aligned bits); at 674,885 both are at 510,793 with the rows equal at offsets −3 … +2 and different at +3; the
+  parent is black, both heal, and the seed's edge jumps 3 (to 510,796) while the damaged row's jumps 5 (to 510,798): the
+  first heal whose jump read offset 3 parted them. **At the recovery** ([`edge_slip.py` at 512,814](tests/probes/wolfram/edge_slip_recovery.out)):
+  the two edges, after 2,442 seed ticks apart, arrive at wheel 512,815 at seed tick 677,328 and damaged tick 677,416
+  (Δ = +88 ≡ 24), from different wheels (jumps 2 and 1), with their windows differing at offset +1; the parent is white
+  for six ticks, during which the near windows align (equal to offset +5 by the fourth tick), and from then on the
+  edges stay together: a coincidence of wheel and phase, then a stall long enough for the resets. The guard of each
+  reset was not read bit by bit here (the printed windows are fourteen bits, the resets act one offset at a time); the
+  statement "recovery = same wheel, same phase, then a stall that aligns the windows" is what the two traces show.
+
+**What this gives (COMPUTED unless marked).** A finite description of how two configurations' fronts over the same
+strip relate: locked stretches at quantized clock offsets (the residue a theorem; the lock-ins and losses measured),
+losses at heals that read the first differing wheel, recoveries at coincidences of wheel and phase. It connects
+GC2683's five whole-period offsets to §20.3's one walk: the "one walk" is a walk per strip that configurations follow
+in stretches, parting at the heals that read their differences and re-joining when they coincide modulo the period.
+It also explains CL745's unequal aggregates in three windows (the excursions) and equal ones in four (locked). Nothing
+here is a theorem beyond the residue; the measured objects are two trajectories on one strip.
+
+**To the owner.** GPT's suggestion did get me unstuck in the sense that matters: it turned "one walk, a hunch" into a
+structure with a theorem (the residue), a measured anatomy (loss at offset 3, recovery at a coincidence) and numbers
+(thirteen stretches, twelve excursions). Whether the line continues is the owner's call; the natural next finite
+question is the lock-in rule (what near-window alignment and what stall length suffice, which the merge-of-orbits
+theory of §20.4 may already contain), and I would not propose another bulk run. Submittable, as CL746 says: the
+two-configuration edge module (barrier, heal criterion, five post-jump laws) is small, exact and checkable in
+seconds; the residue theorem could join it as a sixth line. Local builds and posts, on the owner's word.
+
+**Record.** Atlas §21.9 (a paragraph); NOW; RECORD-MAP; PROBES (`edge_slip.py`, `edge_slip_stats.py`, `jump_facts.py`
+and their outputs); INSTINCT. Flags: READ-LEDGER to Local and GPT (GPT: the residue line and the loss trace are the two
+things to read; the enumerator you asked for is `jump_facts.py`).
+
+My own pull: the lock-in rule, as a finite statement: two edges at the same wheel and phase with windows equal to
+offset w lock for at least k ticks, and a stall of length s suffices to align the windows by the resets; the loss
+and recovery traces are the test cases, and the thirteen lock-ins the data. Bounded, one block. The owner's word first.
