@@ -1,0 +1,79 @@
+
+theorem chk_mem : ∀ w, w ∈ Q45 → ∀ p1 p2 : Bool, next 45 w p1 p2 ∈ Q45 := by
+  intro w hw p1 p2
+  obtain ⟨n, hn, rfl⟩ := List.mem_map.1 hw
+  obtain ⟨h1, h2, _⟩ := (good n hn).1 p1 p2
+  have := T.mem_of_find tree _ h1
+  rw [tree_eq] at this
+  exact List.mem_map.2 ⟨_, this, h2⟩
+
+/-- **The cloud is closed.** -/
+theorem closed : Closed 45 Q45 := by
+  refine ⟨by decide, chk_mem, ?_, ?_, ?_, ?_⟩
+  · intro w hw p1 p2; obtain ⟨n, hn, rfl⟩ := List.mem_map.1 hw; exact ((good n hn).1 p1 p2).2.2.1
+  · intro w hw p1 p2; obtain ⟨n, hn, rfl⟩ := List.mem_map.1 hw; exact ((good n hn).1 p1 p2).2.2.2.1
+  · intro w hw p1 p2; obtain ⟨n, hn, rfl⟩ := List.mem_map.1 hw; exact ((good n hn).1 p1 p2).2.2.2.2.1
+  · intro w hw p1 p2; obtain ⟨n, hn, rfl⟩ := List.mem_map.1 hw; exact ((good n hn).1 p1 p2).2.2.2.2.2.1
+
+/-- **For ever.** -/
+theorem cloud_forever {x : Row} {L : Nat} (hL : 2 ≤ L) (h : Held 45 Q45 x L) :
+    ∀ n z, iter z n = x → Held 45 Q45 z (L + 3 * n) := held_forever closed hL h
+
+/-- **Cloud and lock are apart.** -/
+theorem cloud_not_lock : ∀ w, w ∈ Q45 → w ∉ WallLock.L45 := by
+  intro w hw; obtain ⟨n, hn, rfl⟩ := List.mem_map.1 hw; exact (good n hn).2.2.2
+
+theorem chk_rk1 : ∀ n, n ∈ Qn → 1 ≤ rk (dec 45 n) ∧ rk (dec 45 n) ≤ 17 := fun n hn => ⟨(good n hn).2.1, (good n hn).2.2.1⟩
+theorem chk_rk2 : ∀ n, n ∈ Qn → ∀ p1 p2 : Bool, (next 45 (dec 45 n) p1 p2).drop 34 ≠ (dec 45 n).drop 34 →
+    rk (next 45 (dec 45 n) p1 p2) + 1 ≤ rk (dec 45 n) := fun n hn p1 p2 => ((good n hn).1 p1 p2).2.2.2.2.2.2
+
+/-- **Alternation is bounded.** Along any backward history in the cloud, the 11 cells at the wall cannot change on 17 ticks running. -/
+theorem no_long_alternation {L : Nat} (hL : 2 ≤ L) (z : Nat → Row) (hz : ∀ i, step (z (i + 1)) = z i)
+    (h : Held 45 Q45 (z 0) L) :
+    ¬ ∀ i, i < 17 → seg (z (i + 1)) (L + 3 * (i + 1) + 34) 11 ≠ seg (z i) (L + 3 * i + 34) 11 := by
+  intro hc
+  have held : ∀ i, Held 45 Q45 (z i) (L + 3 * i) := by
+    intro i
+    induction i with
+    | zero => exact h
+    | succ i ih =>
+      have := held_back closed (L := L + 3 * i) (by omega) (hz i) ih
+      rwa [show L + 3 * i + 3 = L + 3 * (i + 1) by omega] at this
+  have top : ∀ (x : Row) (K : Nat), (seg x K 45).drop 34 = seg x (K + 34) 11 := by
+    intro x K
+    have e : seg x K 45 = seg x K 34 ++ seg x (K + 34) 11 := seg_append x 34 11 K
+    rw [e, List.drop_left' (seg_length x 34 K)]
+  have down : ∀ i, i ≤ 17 → rk (seg (z i) (L + 3 * i) 45) + i ≤ 17 := by
+    intro i
+    induction i with
+    | zero =>
+      intro _
+      obtain ⟨n, hn, e⟩ := List.mem_map.1 (held 0).1
+      have := (chk_rk1 n hn).2
+      rw [e] at this
+      simpa using this
+    | succ i ih =>
+      intro hi
+      have ih' := ih (by omega)
+      obtain ⟨n, hn, e⟩ := List.mem_map.1 (held i).1
+      have hnext := next_seg closed (L := L + 3 * i) (by omega) (hz i) (held i)
+      have ch := hc i (by omega)
+      have key := chk_rk2 n hn (z (i + 1) (L + 3 * i - 1)) (z (i + 1) (L + 3 * i - 2))
+      rw [e, ← hnext, top, top] at key
+      have e2 : L + 3 * i + 3 + 34 = L + 3 * (i + 1) + 34 := by omega
+      rw [e2] at key
+      have := key ch
+      have e3 : L + 3 * i + 3 = L + 3 * (i + 1) := by omega
+      rw [e3] at this
+      omega
+  have d17 := down 17 (Nat.le_refl _)
+  obtain ⟨n, hn, e⟩ := List.mem_map.1 (held 17).1
+  have := (chk_rk1 n hn).1
+  rw [e] at this
+  omega
+
+#print axioms closed
+#print axioms cloud_forever
+#print axioms cloud_not_lock
+#print axioms no_long_alternation
+end TwoPairs.WallCloud

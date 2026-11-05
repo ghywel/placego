@@ -1,0 +1,11 @@
+w 30 cloud: size 70, letters AB, alternating cycle True, longest alternating path (letters) 21
+w 45 cloud: size 798, letters AB, alternating cycle False, longest alternating path (letters) 17
+w 45 lock: size 4, letters AB, alternating cycle True, longest alternating path (letters) 4
+w 52 cloud: size 2385, letters AB, alternating cycle False, longest alternating path (letters) 17
+w 52 lock: size 11, letters AB, alternating cycle True, longest alternating path (letters) 9
+w 60 cloud: size 8333, letters AB, alternating cycle False, longest alternating path (letters) 17
+w 60 lock: size 19, letters AB, alternating cycle True, longest alternating path (letters) 16
+w 70 cloud: size 38117, letters AB, alternating cycle False, longest alternating path (letters) 17
+w 70 lock: size 138, letters AB, alternating cycle True, longest alternating path (letters) 62
+w 76 cloud: size 91552, letters AB, alternating cycle False, longest alternating path (letters) 17
+w 76 lock: size 320, letters AB, alternating cycle True, longest alternating path (letters) 127

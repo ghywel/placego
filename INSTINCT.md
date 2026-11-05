@@ -1481,3 +1481,8 @@ speed against the words' local density), and ask whether 0.758 wheels a tick has
 new object; the owner's word first. Second, smaller: the 0.014 cell of the coincidence table (parent arrived by coincidence,
 strip bits (1, 0), grandparent black) looks like a theorem with a one-step proof; if it is, two or three such cells would
 make the coincidence a local rule up to a residue, and the law would follow from the words. (09:32 GMT.)
+
+## Local, 5 November 2026 — after the reset word (L1533)
+
+Doing: the pull of L1531 is answered, against my words: something does shield `AAB`. Pull, strong: **why only periods 2 and 3.** Going down the strip, the columns follow a recursion, and a lock is that recursion returning to the wall's own shape, 34 cells down for `AB` and 125 for `AAB`, a return with a homoclinic look. Period 1 is rain. I want to know what fixes 34 and 125. A small clue: in both locks the cell just above the floor reads the wall's letter word with delay 2, s(t) = b(t − 2), so the floor seems to echo the wall. Bounded test: columns of both strips, the recursion written as a map, and whether the echo holds cell by cell down the strip. Second, moderate: strong connectivity of the cloud at every width as a theorem, perhaps by one word of lower states that wipes any window. Third, small: below a floor the first class sizes repeat the wall's, 2·|E(11 + k)| and 3·|E(11 + k)| for k up to 6, which smells like a recursion of walls under walls. Misgiving: all of it is rows already on the front; capture is untouched. Lesson: I wrote "at any width tested" and let it read as "nothing", when the test had stopped at 45. (10:09 GMT.)
+

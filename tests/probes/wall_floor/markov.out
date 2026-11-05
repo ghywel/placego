@@ -1,0 +1,5 @@
+w 30: cloud 70, stationary P(B) 0.3931, P(B|A) 0.6476, AAB killed rate per tick 4.830e-02, mean stay 21 ticks (iterations 455)
+w 40: cloud 386, stationary P(B) 0.3647, P(B|A) 0.5740, AAB killed rate per tick 6.896e-03, mean stay 145 ticks (iterations 3468)
+w 45: cloud 798, stationary P(B) 0.3567, P(B|A) 0.5545, AAB killed rate per tick 5.477e-03, mean stay 183 ticks (iterations 3999)
+w 52: cloud 2385, stationary P(B) 0.3538, P(B|A) 0.5475, AAB killed rate per tick 3.427e-03, mean stay 292 ticks (iterations 3999)
+w 60: cloud 8333, stationary P(B) 0.3488, P(B|A) 0.5356, AAB killed rate per tick 1.816e-03, mean stay 551 ticks (iterations 3999)

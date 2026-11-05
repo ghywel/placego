@@ -1,0 +1,81 @@
+w 12 E 2 iters 2 parts 1 cyclic 0 terminal 2 | cyclic parts 1, sizes:
+w 13 E 3 iters 2 parts 1 cyclic 0 terminal 3 | cyclic parts 1, sizes:
+w 14 E 4 iters 2 parts 1 cyclic 0 terminal 4 | cyclic parts 1, sizes:
+w 15 E 5 iters 2 parts 1 cyclic 0 terminal 5 | cyclic parts 1, sizes:
+w 16 E 6 iters 2 parts 1 cyclic 0 terminal 6 | cyclic parts 1, sizes:
+w 17 E 7 iters 2 parts 1 cyclic 0 terminal 7 | cyclic parts 1, sizes:
+w 18 E 8 iters 3 parts 1 cyclic 0 terminal 8 | cyclic parts 1, sizes:
+w 19 E 10 iters 2 parts 1 cyclic 0 terminal 10 | cyclic parts 1, sizes:
+w 20 E 13 iters 2 parts 1 cyclic 0 terminal 13 | cyclic parts 1, sizes:
+w 21 E 16 iters 2 parts 1 cyclic 0 terminal 16 | cyclic parts 1, sizes:
+w 22 E 19 iters 3 parts 3 cyclic 0 terminal 16 | cyclic parts 2, sizes: 2
+w 23 E 23 iters 2 parts 3 cyclic 0 terminal 20 | cyclic parts 2, sizes: 2
+w 24 E 27 iters 3 parts 4 cyclic 0 terminal 23 | cyclic parts 2, sizes: 2
+w 25 E 33 iters 2 parts 6 cyclic 0 terminal 27 | cyclic parts 2, sizes: 2
+w 26 E 40 iters 2 parts 8 cyclic 0 terminal 32 | cyclic parts 2, sizes: 2
+w 27 E 50 iters 3 parts 8 cyclic 0 terminal 42 | cyclic parts 2, sizes: 2
+w 28 E 60 iters 4 parts 8 cyclic 0 terminal 52 | cyclic parts 2, sizes: 2
+w 29 E 69 iters 4 parts 8 cyclic 0 terminal 61 | cyclic parts 2, sizes: 2
+w 30 E 81 iters 4 parts 11 cyclic 0 terminal 70 | cyclic parts 2, sizes: 2
+w 31 E 95 iters 4 parts 9 cyclic 0 terminal 85 | cyclic parts 2, sizes: 3
+w 32 E 115 iters 6 parts 6 cyclic 0 terminal 109 | cyclic parts 2, sizes: 2
+w 33 E 134 iters 5 parts 10 cyclic 0 terminal 124 | cyclic parts 2, sizes: 2
+w 34 E 157 iters 5 parts 10 cyclic 0 terminal 146 | cyclic parts 2, sizes: 3
+w 35 E 182 iters 7 parts 16 cyclic 0 terminal 165 | cyclic parts 3, sizes: 2 2
+w 36 E 214 iters 6 parts 20 cyclic 0 terminal 193 | cyclic parts 3, sizes: 2 2
+w 37 E 250 iters 5 parts 25 cyclic 0 terminal 218 | cyclic parts 4, sizes: 7 2 2
+w 38 E 296 iters 5 parts 26 cyclic 0 terminal 263 | cyclic parts 4, sizes: 7 2 2
+w 39 E 359 iters 5 parts 33 cyclic 0 terminal 317 | cyclic parts 4, sizes: 8 3 2
+w 40 E 440 iters 4 parts 45 cyclic 0 terminal 386 | cyclic parts 4, sizes: 8 3 2
+w 41 E 503 iters 12 parts 51 cyclic 0 terminal 439 | cyclic parts 4, sizes: 10 4 3
+w 42 E 574 iters 9 parts 59 cyclic 0 terminal 500 | cyclic parts 4, sizes: 11 4 4
+w 43 E 666 iters 10 parts 58 cyclic 0 terminal 598 | cyclic parts 4, sizes: 6 4 4
+w 44 E 780 iters 10 parts 69 cyclic 0 terminal 696 | cyclic parts 6, sizes: 7 4 4 3 3
+w 45 E 903 iters 11 parts 87 cyclic 0 terminal 4 798 | cyclic parts 7, sizes: 5 4 4 4 4
+w 46 E 1064 iters 7 parts 111 cyclic 0 terminal 4 935 | cyclic parts 7, sizes: 5 5 4 4 3
+w 47 E 1246 iters 10 parts 134 cyclic 0 terminal 6 1090 | cyclic parts 7, sizes: 6 5 5 4 3
+w 48 E 1468 iters 8 parts 142 cyclic 0 terminal 8 1301 | cyclic parts 7, sizes: 6 5 5 4 4
+w 49 E 1643 iters 12 parts 169 cyclic 0 terminal 10 1452 | cyclic parts 6, sizes: 6 4 4 4
+w 50 E 1954 iters 10 parts 196 cyclic 0 terminal 12 1732 | cyclic parts 6, sizes: 8 5 4 3
+w 51 E 2204 iters 18 parts 108 cyclic 0 terminal 14 2069 | cyclic parts 5, sizes: 8 6 4
+w 52 E 2552 iters 12 parts 143 cyclic 0 terminal 11 2385 | cyclic parts 7, sizes: 5 4 4 4 3
+w 53 E 3008 iters 12 parts 168 cyclic 0 terminal 13 2816 | cyclic parts 7, sizes: 5 4 3 3 3
+w 54 E 3505 iters 12 parts 185 cyclic 0 terminal 17 3292 | cyclic parts 6, sizes: 6 4 4 3
+w 55 E 4142 iters 12 parts 245 cyclic 0 terminal 21 3865 | cyclic parts 6, sizes: 7 4 3 3
+w 56 E 4836 iters 11 parts 314 cyclic 0 terminal 27 4486 | cyclic parts 6, sizes: 5 4 3 3
+w 57 E 5693 iters 13 parts 360 cyclic 0 terminal 33 5290 | cyclic parts 6, sizes: 4 4 4 4
+w 58 E 6717 iters 14 parts 424 cyclic 0 terminal 39 6243 | cyclic parts 6, sizes: 5 5 4 3
+w 59 E 7755 iters 21 parts 505 cyclic 0 terminal 18 7203 | cyclic parts 7, sizes: 18 6 6 3 3
+w 60 E 9026 iters 19 parts 639 cyclic 0 terminal 19 8333 | cyclic parts 7, sizes: 22 7 6 4 3
+w 61 E 10623 iters 12 parts 722 cyclic 0 terminal 26 9835 | cyclic parts 7, sizes: 25 8 6 5 3
+w 62 E 12419 iters 13 parts 849 cyclic 0 terminal 31 11497 | cyclic parts 8, sizes: 15 14 7 6 5 3
+w 63 E 14443 iters 18 parts 1017 cyclic 0 terminal 37 13343 | cyclic parts 8, sizes: 18 16 7 5 4 4
+w 64 E 16472 iters 28 parts 722 cyclic 0 terminal 47 15653 | cyclic parts 8, sizes: 20 17 7 5 5 4
+w 65 E 19181 iters 20 parts 893 cyclic 0 terminal 58 18174 | cyclic parts 8, sizes: 22 18 8 6 6 4
+w 66 E 22232 iters 26 parts 1102 cyclic 0 terminal 69 21000 | cyclic parts 8, sizes: 24 22 8 7 5 3
+w 67 E 25841 iters 24 parts 1332 cyclic 0 terminal 78 24364 | cyclic parts 8, sizes: 30 24 10 5 3 3
+w 68 E 30199 iters 22 parts 1518 cyclic 0 terminal 96 28511 | cyclic parts 8, sizes: 34 25 11 6 3 3
+w 69 E 34910 iters 30 parts 1747 cyclic 0 terminal 119 32970 | cyclic parts 9, sizes: 29 26 11 6 4 4 3
+w 70 E 40234 iters 32 parts 1906 cyclic 0 terminal 138 38117 | cyclic parts 9, sizes: 28 23 12 8 4 4 3
+w 71 E 46986 iters 20 parts 2231 cyclic 0 terminal 146 44539 | cyclic parts 9, sizes: 25 17 14 10 5 5 3
+w 72 E 53929 iters 57 parts 2527 cyclic 0 terminal 180 51154 | cyclic parts 11, sizes: 27 20 6 6 5 5 4 3
+w 73 E 61327 iters 40 parts 1717 cyclic 0 terminal 206 59340 | cyclic parts 8, sizes: 30 22 6 6 5 3
+w 74 E 71071 iters 24 parts 1738 cyclic 0 terminal 251 69017 | cyclic parts 8, sizes: 34 15 8 7 5 4
+w 75 E 81319 iters 32 parts 1750 cyclic 0 terminal 276 79222 | cyclic parts 8, sizes: 35 17 9 8 6 4
+w 76 E 93905 iters 25 parts 1971 cyclic 0 terminal 320 91552 | cyclic parts 9, sizes: 18 15 11 9 8 7 3
+w 77 E 108712 iters 36 parts 2219 cyclic 0 terminal 387 106055 | cyclic parts 9, sizes: 12 11 9 9 8 8 3
+w 78 E 125360 iters 31 parts 2578 cyclic 0 terminal 457 122267 | cyclic parts 10, sizes: 14 11 11 9 8 6 5 4
+w 79 E 145063 iters 26 parts 2610 cyclic 0 terminal 550 141835 | cyclic parts 10, sizes: 16 14 13 10 9 6 5 5
+w 80 E 167829 iters 38 parts 3115 cyclic 0 terminal 655 163987 | cyclic parts 10, sizes: 20 16 12 11 9 6 5 3
+w 81 E 195040 iters 28 parts 3416 cyclic 0 terminal 781 190760 | cyclic parts 10, sizes: 25 18 12 12 11 7 5 3
+w 82 E 226037 iters 27 parts 3938 cyclic 0 terminal 937 221088 | cyclic parts 9, sizes: 29 16 14 10 6 4 4
+w 83 E 261947 iters 33 parts 4712 cyclic 0 terminal 1086 256088 | cyclic parts 10, sizes: 17 15 11 9 6 5 4 4
+w 84 E 301673 iters 42 parts 5304 cyclic 0 terminal 1272 295035 | cyclic parts 9, sizes: 18 16 11 11 6 5 4
+w 85 E 349133 iters 33 parts 5672 cyclic 0 terminal 1514 341882 | cyclic parts 9, sizes: 22 14 12 12 6 4 4
+w 86 E 400183 iters 51 parts 6662 cyclic 0 terminal 1799 391645 | cyclic parts 9, sizes: 25 16 15 13 8 5 4
+w 87 E 463441 iters 32 parts 7500 cyclic 0 terminal 2111 453744 | cyclic parts 9, sizes: 29 18 16 14 8 6 4
+w 88 E 535136 iters 42 parts 8092 cyclic 0 terminal 2455 524499 | cyclic parts 9, sizes: 34 18 17 15 8 4 3
+w 89 E 614993 iters 51 parts 9004 cyclic 0 terminal 2905 602987 | cyclic parts 9, sizes: 38 19 17 16 8 5 3
+w 90 E 705290 iters 44 parts 10214 cyclic 0 terminal 3427 691540 | cyclic parts 9, sizes: 46 22 22 16 6 3 3
+w 91 E 812307 iters 63 parts 10750 cyclic 0 terminal 4037 797414 | cyclic parts 8, sizes: 56 24 14 10 7 3
+w 92 E 938126 iters 36 parts 12476 cyclic 0 terminal 4755 920783 | cyclic parts 8, sizes: 62 18 18 11 8 3

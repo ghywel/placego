@@ -1,0 +1,25 @@
+
+theorem tree_eq : tree.toList = Qn := by decide +kernel
+
+/-- The cloud. -/
+def Q45 : List (List Bool) := Qn.map (dec 45)
+
+/-- The longest alternating run from a window; 0 outside the cloud. -/
+def rk (w : List Bool) : Nat := tree.find (code w)
+
+/-- What each number must satisfy for every pair of lower cells. -/
+def Good (n : Nat) : Prop :=
+  ∀ p1 p2 : Bool,
+    rk (next 45 (dec 45 n) p1 p2) ≠ 0 ∧ dec 45 (code (next 45 (dec 45 n) p1 p2)) = next 45 (dec 45 n) p1 p2 ∧
+    (back p1 p2 (WindowClosed.inp 45 (dec 45 n))).getD 48 false = !(back p1 p2 (WindowClosed.inp 45 (dec 45 n))).getD 47 false ∧
+    (back p1 p2 (WindowClosed.inp 45 (dec 45 n))).getD 49 false = !(back p1 p2 (WindowClosed.inp 45 (dec 45 n))).getD 48 false ∧
+    (back p1 p2 (WindowClosed.inp 45 (dec 45 n))).getD 49 false = !(WindowClosed.inp 45 (dec 45 n)).getD 49 false ∧
+    (back p1 p2 (WindowClosed.inp 45 (dec 45 n))).getD 50 false = !(WindowClosed.inp 45 (dec 45 n)).getD 50 false ∧
+    ((next 45 (dec 45 n) p1 p2).drop 34 ≠ (dec 45 n).drop 34 → rk (next 45 (dec 45 n) p1 p2) + 1 ≤ rk (dec 45 n))
+
+/-- And on its own. -/
+def Good1 (n : Nat) : Prop := 1 ≤ rk (dec 45 n) ∧ rk (dec 45 n) ≤ 17 ∧ dec 45 n ∉ WallLock.L45
+
+instance : DecidablePred Good := fun n => by unfold Good; infer_instance
+instance : DecidablePred Good1 := fun n => by unfold Good1; infer_instance
+

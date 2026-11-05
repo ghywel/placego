@@ -1,0 +1,11 @@
+P=2 BA: deepest 49 nodes 325 floors 1 first 41 last 41: 41:1
+P=3 BAA: deepest 140 nodes 6221 floors 1 first 132 last 132: 132:1
+P=4 BABA: deepest 131 nodes 24843 floors 1 first 41 last 41: 41:1
+P=5 BABAA: deepest 26 nodes 2153 floors 0 first 0 last 0:
+P=6 BAABAA: deepest 631 nodes 21726559 floors 1 first 132 last 132: 132:1
+P=6 BABABA: deepest 49 nodes 54964 floors 1 first 41 last 41: 41:1
+P=7 BABABAA: deepest 75 nodes 165789 floors 0 first 0 last 0:
+P=8 BABAABAA: deepest 26 nodes 52459 floors 0 first 0 last 0:
+P=8 BABABABA: deepest 504 nodes 60000001 CAPPED floors 1 first 41 last 41: 41:1
+P=9 BAABAABAA: deepest 140 nodes 10187978 floors 1 first 132 last 132: 132:1
+P=9 BABABABAA: deepest 45 nodes 572701 floors 0 first 0 last 0:

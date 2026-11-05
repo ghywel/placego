@@ -1,0 +1,5 @@
+w 45: E 903 cloud 798 lock 4
+rows 100000: ended in cloud 99176 lock 824 neither 0; settled ticks 10336118, in cloud 9317643 lock 76724 transient 38650 outside E 903101; departures from a class 0
+transient cyclic or not, ticks spent by part (size:ticks): 5:3074 4:867 4:1161 4:1082 4:1839
+windows seen: cloud 798 lock 4 transient 101
+entry tick histogram (bins of 32): 97514 2479 6 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0

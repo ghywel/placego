@@ -1,0 +1,55 @@
+import TwoPairsWindowClosed
+import TwoPairsWallLock
+
+/-!
+# The cloud at the wall
+
+Most rows do not lock. Their letters run in `AAB` for long stretches and break off, and the break looks free. This module shows
+that it is not. A set of 798 windows of 45 cells is closed under the backward tick for every pair of lower cells (`closed`), so a
+row that shows one of them shows one of them at every backward tick for ever (`cloud_forever`). No window of the cloud is a window
+of the alternating lock (`cloud_not_lock`), so such a row never reaches the lock, and its letters never alternate for more than 17
+ticks together (`no_long_alternation`).
+-/
+
+namespace TwoPairs.WallCloud
+open WindowClosed
+
+/-- A word of `W` cells from a number, low to high. -/
+def dec (W n : Nat) : List Bool := (List.range W).map n.testBit
+
+/-- A word as a number. -/
+def code : List Bool → Nat
+  | [] => 0
+  | b :: t => (if b then 1 else 0) + 2 * code t
+
+/-- A search tree of numbers with ranks. -/
+inductive T where
+  | e
+  | n (l : T) (v r : Nat) (t : T)
+
+/-- The rank of a number, 0 if it is not there. -/
+def T.find : T → Nat → Nat
+  | .e, _ => 0
+  | .n l v r t, c => if c < v then l.find c else if v < c then t.find c else r
+
+/-- The numbers. -/
+def T.toList : T → List Nat
+  | .e => []
+  | .n l v _ t => l.toList ++ v :: t.toList
+
+theorem T.mem_of_find : ∀ (t : T) (c : Nat), t.find c ≠ 0 → c ∈ t.toList := by
+  intro t
+  induction t with
+  | e => intro c h; exact absurd rfl h
+  | n l v r t ihl iht =>
+    intro c h
+    simp only [T.find] at h
+    simp only [T.toList, List.mem_append, List.mem_cons]
+    by_cases c1 : c < v
+    · rw [if_pos c1] at h; exact Or.inl (ihl c h)
+    · rw [if_neg c1] at h
+      by_cases c2 : v < c
+      · rw [if_pos c2] at h; exact Or.inr (Or.inr (iht c h))
+      · exact Or.inr (Or.inl (by omega))
+
+/-- The windows of the cloud as numbers, each with the longest alternating run that starts at it. -/

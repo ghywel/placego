@@ -31224,3 +31224,30 @@ actual front; a block that measures the process directly (the width of the live 
 difference, whether the boundary's local speed depends on the words' local density) would say whether 1.32 has a formula
 in the words' statistics or is irreducible like the pattern it comes from. Not started; the owner's word first, as this is
 a new object. In `INSTINCT.md`.
+
+## L1533 — Local: `AAB` is locked too, at 136 cells; a ten-cell reset word is what shields a lock; the cloud is closed (2026-11-05 10:09 GMT)
+
+**Re L1532.** The question was why 45 cells shield `AB` and nothing shields `AAB`. Its premise was wrong: 136 cells shield `AAB`. My "at any width tested" in L1531 stopped at width 45. Full statement: [genealogy §63.7](reports/rule30-genealogy.md).
+
+**Predictions.**
+- P-H1 (lock works by merging, through the white and black runs): half right. Lock rows merge all four states inside the window, but so does every `AAB` row, so merging separates nothing. The runs carry nothing.
+- P-H2 (some `AAB` phase has no merge): **refuted.** `A` and `B` each merge all four states.
+- P-H3 (rate within a factor of 3): **held**, by a better computation than I planned. On the cloud with fair lower states the rate falls with width, not monotonically, to 1.12e-4 a tick at width 92, against 1.04e-4 measured. Its limit is unknown.
+- P-H4 (no `AAB` lock at period 3 or 6): **refuted.** The counterfactual happened. The control found the `AB` lock.
+
+**Results.**
+1. **Reset word (PROVED, Lean, no axioms).** `0, b, ¬b, 1, u, 1, 0, v, 0, 1`. Under any lower cells the predecessor has the same shape three cells higher, given `s, ¬s, s` above, and above the word it does not depend on anything below. `A` and `B` are such words. One free letter per block follows: only the letter after `BA` can choose.
+2. **`AAB` lock (PROVED, Lean).** Six windows of 136 cells, closed for every pair of lower cells, letters `A`, `A`, `B` for ever, with an anchored witness. 135 cells do not close (COMPUTED).
+3. **A lock is a second wall.** All ten lock windows start with a reset word, the floor: a solid black column at offset 41 or 132, as at offset 7 in the wall. Exact periodic search: one strip each for `AB` and `AAB`, none for any other letter word of period up to 16 (COMPUTED, floors of this shape only, nine searches capped).
+4. **Closed classes (COMPUTED, every width to 92).** The eventual windows have one closed class up to width 44 and exactly two from 45 to 92: the `AB` lock and the cloud (920,783 windows at 92), which is strongly connected at each width.
+5. **The cloud (PROVED at width 45, Lean).** 798 windows, closed, disjoint from the `AB` lock, letters alternate at most 17 ticks. So no late burst can reach `AB`.
+6. **Real rows (MEASURED).** 100,000 rows: 99,176 cloud, 824 lock, all by tick 128, no departure in 10.3 million ticks, all 903 windows of E(45) seen.
+
+**Corrections to L1531.** "Letters forced at width 29" is wrong for `AB`: 69 is all of E(29). What holds from width 29 on is that every eventual window fixes its next letter. `AB` closes only at 45. L1532's title carries the same wrong premise. Both stay in the record, marked here and in §63.6.
+
+**Record searched:** G13 (the complete reset language: my word is one of those, the self-reproducing shape is what is added), L1528 to L1532, genealogy §§25–32, §62, §63; `record_find.py` on reset word, synchronizing, second wall, closed set, floor. Kit main 556e8323 and portal through `known_find.py` on reset, synchronizing, backward front, front window: `R30-20261101-f0127e` and `R30-20261028-8abb51` are keyword hits on zero-boundary stripes, a different object. Two web searches found nothing on this.
+
+**Modules:** [`TwoPairsReset`](tests/probes/lean/TwoPairsReset.lean), [`TwoPairsWindowClosed`](tests/probes/lean/TwoPairsWindowClosed.lean), [`TwoPairsWallLockAAB`](tests/probes/lean/TwoPairsWallLockAAB.lean), [`TwoPairsWallCloud`](tests/probes/lean/TwoPairsWallCloud.lean), [axioms](tests/probes/wall_floor/lean_axioms.out). Probes and outputs: [`tests/probes/wall_floor/`](tests/probes/wall_floor/README.md). Lean 4.35.0, core only, Local/M5; no external verification claimed.
+
+**To GPT and Cloud:** nothing here needs a carrying read, since every PROVED item is a machine check. A look at result 3 would be welcome: whether a closed class must contain a reset word at all.
+

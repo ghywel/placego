@@ -6743,5 +6743,62 @@ It says nothing yet about capture, or about a periodic cloud, because it concern
 
 `lock_back`: every predecessor of such a row is such a row, three cells higher. `lock_alternates`: the letters alternate. `lock_forever`: for ever, whatever lies below. `witness`: an anchored row is in the lock. So the infinite word `ABAB…` occurs on anchored rows. On literal rows, 72,000 backward ticks show no failure ([output](../tests/probes/wall_lock_check.out)). In the runs, `AB` was entered only early, by about 1% of rows, and never left: 348 block transitions out of it, all staying, and no late burst reached it.
 
-So the wall has two phases of very different kinds. `AB` is shielded from what lies below by 45 cells. `AAB` is not, at any width tested.
+So the wall has two phases of very different kinds. `AB` is shielded from what lies below by 45 cells. `AAB` is not, at any width tested. **Corrected in §63.7: L1531 tested widths only up to 45, and 136 cells shield `AAB`.**
 
+### 63.7 What shields a wall: the reset word, floors and the cloud (L1532–L1533)
+
+The last line of §63.6 is wrong. L1531 tested widths only up to 45, and `AAB` is shielded at 136. Its line that the letters are "forced at width 29" is wrong too, as a statement about `AB`: 69 is all of E(29), defined below. What holds from width 29 on is that every eventual window fixes its next letter ([recheck](../tests/probes/wall_floor/rechk29.out)). `AB` closes only at 45.
+
+**One free letter per block (PROVED, from `reset` and `no_AAA`).** After `B` the next letter is `A` for every pair of lower cells. After `A` it is `A` exactly when both cells under the letter are white in the new row. After `AA` it is `B`. So the letter word has one free choice per block: the letter after `BA`.
+
+**The reset word (PROVED, Lean, no axioms).** [`TwoPairsReset.lean`](../tests/probes/lean/TwoPairsReset.lean), [axioms](../tests/probes/wall_floor/lean_axioms.out). Ten cells, low to high:
+
+    0, b, ¬b, 1, u, 1, 0, v, 0, 1
+
+Let a row carry this word at cells p to p + 9, and take any predecessor of the row.
+- `reset`: the predecessor reads `0, b′, ¬b′, 1, ¬v, 1, 0` on cells p + 3 to p + 9, where b′ = ¬u if b = 1 or both cells under the word are white in the predecessor, and b′ = u otherwise.
+- `above`: above the word the predecessor is one fixed function of the row, whatever b, u, v and the cells below. The two output cells under that part are always `1, 0`.
+- `again`: if the row reads `s, ¬s, s` just above the word, the predecessor has a reset word three cells higher, with new u = ¬v and new v = ¬s.
+- `letters`: `A` is the word with (b, u, v) = (0, 1, 0) under one black cell, and `B` the word with (1, 1, 0) under one black cell.
+
+So the wall rises three cells a tick because rain supplies `s, ¬s, s` above the word on every tick. Reset words in general are G13's: a word resets exactly when it contains 0 1^(3k+1) 0 z ([archive](../archive/gpt/RULE30-GPT.1.md)). What is added here is a shape that reproduces itself three cells higher.
+
+**A lock is a second wall (read off the windows; the locks themselves are PROVED).** All ten windows of the two locks start with a reset word, so each lock row has a second word below the letters, at a fixed offset. I call it the floor. In the moving frame it shows a solid black column at offset 41 for `AB` and 132 for `AAB`, as the wall does at offset 7. The strip above the floor cannot feel what lies below it, so the strip is a finite deterministic system and its letters are periodic. The two windows of a phase differ only in cells 1 and 2, the floor's bit b. That bit is all the lower cells can move.
+
+**`AAB` is locked (PROVED, Lean).** [`TwoPairsWallLockAAB.lean`](../tests/probes/lean/TwoPairsWallLockAAB.lean), over the general [`TwoPairsWindowClosed.lean`](../tests/probes/lean/TwoPairsWindowClosed.lean). Six windows of 136 cells, two in each of three phases:
+
+    ..####.#.#.#..#..#.#.##.....##...#..#..#####.....#.####..#.#..#####.###.#.###..#..#..#.##.......#..#..##.###....##..#.#....##..####...##    A
+    .#.###.#.#.#..#..#.#.##.....##...#..#..#####.....#.####..#.#..#####.###.#.###..#..#..#.##.......#..#..##.###....##..#.#....##..####...##    A
+    ..##.#.#.##.##.#.#.......#.###.##.##..#.......##..#.##.#.##..#...#...##..###.##.##.#.........###.##...#......#.##.#.####....#..####...##    A
+    .#.#.#.#.##.##.#.#.......#.###.##.##..#.......##..#.##.#.##..#...#...##..###.##.##.#.........###.##...#......#.##.#.####....#..####...##    A
+    ..##.#...#.#.#.#######.#..##...#.##.#######....##...##....####.###....#...#.#...##########..##.....#######.#...##..#.####.##..#.###...##    B
+    .#.#.#...#.#.#.#######.#..##...#.##.#######....##...##....####.###....#...#.#...##########..##.....#######.#...##..#.####.##..#.###...##    B
+
+`closed`: the set is closed under the backward tick for every pair of lower cells. `lock_cycle` and `lock_letters`: the phases follow each other and read `A`, `A`, `B`. `lock_forever`: for ever, whatever lies below. `witness`: an anchored row is in the lock. Width 136 is the smallest (COMPUTED): at 135 the closure of the same windows passes 1.5 million. On real rows, 400 random lower parts under each window ran 6,000 ticks with no departure ([output](../tests/probes/wall_floor/wall_try_aab136.out)). The control, a quiet window of 24 cells, lost 41% of 2,000 rows in 2,000 ticks ([output](../tests/probes/wall_floor/wall_try_quiet.out)).
+
+**Only these two so far (COMPUTED, with limits).** A search of exact time-periodic solutions for a floor of this shape finds one strip for `AB` (offset 41, at periods 2, 4, 6, 8), one for `AAB` (offset 132, at periods 3, 6, 9), and none for any other letter word of period up to 16 with no `BB` or `AAA` ([periods to 9](../tests/probes/wall_floor/wall_floors_small.out), [10 to 16](../tests/probes/wall_floor/wall_floors_big.out)). Limits: it looks only for floors of this shape, words of periods 10 to 16 were searched only as primitive words, and eight of those searches and the period-8 `AB` search hit their node cap.
+
+**The eventual windows (COMPUTED, every width 12 to 92).** E(w) is the set of windows of w cells that can appear after arbitrarily many settled ticks, taking all four lower states on every tick. E(11) = {`A`, `B`}, and E(w) comes from E(w − 1) by adding a lower cell and taking images until the set stops shrinking ([`wall_eventual.c`](../tests/probes/wall_floor/wall_eventual.c), [output](../tests/probes/wall_floor/wall_eventual92.out)).
+
+| Width | 12 | 20 | 28 | 36 | 44 | 45 | 52 | 60 | 68 | 76 | 84 | 92 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Size of E(w) | 2 | 13 | 60 | 214 | 780 | 903 | 2,552 | 9,026 | 30,199 | 93,905 | 301,673 | 938,126 |
+
+The graph on E(w) has one closed class at every width up to 44, and exactly two at every width from 45 through 92: the `AB` lock class and the class I call the cloud (4 + 798 windows at 45, 4,755 + 920,783 at 92). The cloud grows by about 0.21 bits a cell, or 0.63 bits a tick. It is strongly connected at each of these widths, so it holds no closed part of its own. From width 136 the `AAB` lock is a third closed class. Outside the classes there are a few small cycles: at the widths read (45, 52, 60, 76, 92) every one has letters `AB` or `AAB` on all its edges ([output](../tests/probes/wall_floor/partcheck.out)). The part that holds the `AAB` lock's top cells has no edge in from width 52 to 92 ([output](../tests/probes/wall_floor/lockin.out)). The first class sizes below a floor repeat the wall's: the `AB` class at width 45 + k has 2·|E(11 + k)| windows and the `AAB` closure 3·|E(11 + k)| for k up to 6.
+
+**The cloud (PROVED at width 45, Lean).** [`TwoPairsWallCloud.lean`](../tests/probes/lean/TwoPairsWallCloud.lean). `closed` and `cloud_forever`: its 798 windows are closed for every pair of lower cells. `cloud_not_lock`: none is a window of the `AB` lock. `no_long_alternation`: along any backward history in the cloud the letters cannot change on 17 ticks running. So a row in the cloud never reaches the `AB` lock, which is why no late burst did. The `AAB` lock's top cells leave the cloud by width 52, so cloud rows do not reach that lock either (COMPUTED). The longest alternating run in the cloud is 17 letters at every width from 45 to 76 ([output](../tests/probes/wall_floor/cloudletters.out)).
+
+**Real rows (MEASURED).** Of 100,000 rows with 40 random cells, 99,176 entered the cloud and 824 the `AB` lock, all by tick 128, and none left in 10.3 million settled ticks ([output](../tests/probes/wall_floor/wall_member45.out)). All 903 windows of E(45) occurred, and all 2,385 + 11 class windows at width 52 ([output](../tests/probes/wall_floor/wall_member52.out)), so at these widths the free lower states invent nothing. A row can enter a lock only before its window is in E(w). No real row was seen in the `AAB` lock, and I do not know whether a row of 40 cells can reach it.
+
+**Why `AAB` lasts (COMPUTED).** About half the cloud's windows can hold `AAB` for ever (45,598 of 91,552 at width 76), and from 98.9% of those every lower state holds it ([output](../tests/probes/wall_floor/killed.out)). With each lower state at weight 1/4, the rate at which `AAB` breaks on the cloud falls with width, not monotonically, and at width 92 is within 8% of the measured rate. I do not know its limit.
+
+
+| Width | 30 | 45 | 60 | 70 | 76 | 80 | 86 | 92 | Measured |
+|---|---|---|---|---|---|---|---|---|---|
+| Breaks a tick | 4.8e-2 | 5.5e-3 | 1.8e-3 | 4.7e-4 | 6.7e-4 | 3.8e-4 | 1.6e-4 | 1.12e-4 | 1.04e-4 |
+
+([Widths to 76](../tests/probes/wall_floor/killrate2.out), [80 to 92](../tests/probes/wall_floor/killrate.out).)
+
+**The language by sets of rows.** [`langset.py`](../tests/probes/wall_floor/langset.py) carries all rows with a given letter word as one decision diagram. It reproduces the exact counts and the minimal forbidden words of §63.1 through length 18 in 14 seconds. An empty set proves a word forbidden; a non-empty set is only a candidate.
+
+**What this does not settle.** Whether the cloud stays strongly connected at every width. Why only periods 2 and 3, and why the two reset words lie 34 and 125 cells apart. Whether a row can hold `AAB` for ever without a floor. It still says nothing about capture, because all of it concerns rows already on the front.

@@ -1,0 +1,16 @@
+'TwoPairs.Reset.reset' does not depend on any axioms
+'TwoPairs.Reset.above' does not depend on any axioms
+'TwoPairs.Reset.again' does not depend on any axioms
+'TwoPairs.Reset.letters' does not depend on any axioms
+'TwoPairs.WindowClosed.held_back' depends on axioms: [propext, Quot.sound]
+'TwoPairs.WindowClosed.held_forever' depends on axioms: [propext, Quot.sound]
+'TwoPairs.WallLockAAB.closed' depends on axioms: [propext]
+'TwoPairs.WallLockAAB.lock_cycle' depends on axioms: [propext, Quot.sound]
+'TwoPairs.WallLockAAB.lock_letters' depends on axioms: [propext, Quot.sound]
+'TwoPairs.WallLockAAB.lock_phase' depends on axioms: [propext]
+'TwoPairs.WallLockAAB.lock_forever' depends on axioms: [propext, Quot.sound]
+'TwoPairs.WallLockAAB.witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TwoPairs.WallCloud.closed' depends on axioms: [propext, Quot.sound]
+'TwoPairs.WallCloud.cloud_forever' depends on axioms: [propext, Quot.sound]
+'TwoPairs.WallCloud.cloud_not_lock' depends on axioms: [propext, Quot.sound]
+'TwoPairs.WallCloud.no_long_alternation' depends on axioms: [propext, Quot.sound]

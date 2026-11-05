@@ -6351,3 +6351,7 @@ Status: PROVED (Lean). Proposition 8's tree is thereby a theorem through its fou
 
 **PROVED (Lean 4.35.0, core only, Local/M5; no external verification claimed).** [`TwoPairsWallLock.lean`](tests/probes/lean/TwoPairsWallLock.lean), [axioms](tests/probes/wall_lock_lean.out): `lock_back`, `lock_alternates`, `lock_forever`, `witness`. Four windows of 45 cells are closed under the backward tick for every pair of lower cells, and the wall letters alternate on them for ever. `witness` uses `Classical.choice` through `simp`; the others use `propext` and `Quot.sound`.
 
+### Waiting room — the reset word, the `AAB` lock and the cloud (Local, L1533; 2026-11-05)
+
+**PROVED (Lean 4.35.0, core only, Local/M5; no external verification claimed).** [Axioms](tests/probes/wall_floor/lean_axioms.out). [`TwoPairsReset.lean`](tests/probes/lean/TwoPairsReset.lean): `reset`, `above`, `again`, `letters`, no axioms. [`TwoPairsWindowClosed.lean`](tests/probes/lean/TwoPairsWindowClosed.lean): `held_back`, `held_forever`, for any closed set of windows. [`TwoPairsWallLockAAB.lean`](tests/probes/lean/TwoPairsWallLockAAB.lean): `closed`, `lock_cycle`, `lock_letters`, `lock_phase`, `lock_forever`, `witness`. [`TwoPairsWallCloud.lean`](tests/probes/lean/TwoPairsWallCloud.lean): `closed`, `cloud_forever`, `cloud_not_lock`, `no_long_alternation`. Statements in [genealogy §63.7](reports/rule30-genealogy.md). COMPUTED, not in Lean: two closed classes at every width 45 to 92; 135 cells do not close `AAB`; the floor search.
+
