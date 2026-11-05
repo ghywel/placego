@@ -30770,3 +30770,61 @@ The portal source 134d62fba8e16f30912b9ca505df7e96bd80f37f73d984723c4e0e8dd8a5f9
 
 **Status.** Posted and Lean Verified, PR open. A closed PR usually means the maintainers landed it on main, so I will check main before reading a close as a rejection. Human Verified and Kit Contribution are the maintainers' steps.
 
+## L1528 — Local: taking GPT's pull of GC2677, the language of the settled wall. A hand reduction first, predictions before any run (2026-11-04 23:50 GMT)
+
+**The owner, in chat:** "Next i would like you to continue with GPT's recent pull". GPT's next question: which sequences of the two settled words `A = ..####...##` and `B = .#.###...##` can occur? `BB` is excluded. Exhibit `AA`, `AB`, `BA`, then test `ABA` on one shallow history. The thread is parked with GPT, so I take it from here; GPT, tell me if you have started.
+
+**The moving frame (PROOF-SKETCH, Local).** Let `y_t(k)` be the cell `k` places below the deep cell of the wall pair at backward tick `t`, so the pair is `k = 0, 1`. If the wall moves three cells per tick, forward evolution in this frame is a one-sided rule,
+
+`y_t(k) = y_(t+1)(k + 3) ⊕ (y_(t+1)(k + 4) ∨ y_(t+1)(k + 5))`.
+
+Information only travels towards the wall, and a static stretch of the row solves the same equation with `y` independent of `t`. So static stretches are paths of the shift register `x(j + 3) = x(j) ⊕ (x(j − 1) ∨ x(j − 2))`, the rotators of §29.7 at `r = 3`. Rain is one of its cycles, and `A` and `B` are its transients into rain. I checked both by hand.
+
+**Consequences for the letters (PROOF-SKETCH).** Write `b_t = 1` for `B`. The words give `y(10) = 0`, `y(9) = b` and `y(8) = ¬b`. Applying the rule at offsets 6 to 9 gives, at each tick:
+- `y(11) = ¬b`, so one more cell is fixed by the letter;
+- `y(11) ∨ y(12) = 1`, so `y(12) = 1` on a `B`;
+- with `(p, q) = (y_(t+1)(12), y_(t+1)(13))`, the pair of letters `(w_(t+1), w_t)` is `AA` if `(p, q) = (0, 0)`, `AB` if exactly one of `p, q` is black, and `BA` if `(p, q) = (1, 1)`.
+
+So a row one tick deeper already records its previous letter two cells below the window, and `BB` has no value of `(p, q)`, which agrees with GC2677.
+
+**Why I expect no more constraints.** The rule is permutive in its nearest input, so the time words at three adjacent offsets can be set freely by choosing a row, working from the far end. Each tick offers five new cells, and the three-cell retreat plus one letter costs about four. This is a count, not a proof.
+
+**Predictions.**
+- **P-W1 (90%).** `AA`, `AB`, `BA` and `ABA` all occur on anchored rows, `ABA` on one row.
+- **P-W2 (75%).** No further forbidden word: every word avoiding `BB` occurs, through length 20.
+- **P-W3 (65%).** On random rows `B` has frequency in [0.25, 0.40], and `P(B | A)` is near 1/2.
+- **P-W4 (50%).** The letter sequence is not Markov of order 1: the frequencies after `AA` and `BA` differ by more than sampling error.
+
+**Counterfactual.** A missing word of length at most 20 is a new forbidden factor, so deeper memory exists, and it should have a local proof like `no_BB`. If P-W2 holds, the wall remembers one letter and no more, and the target becomes a construction for every word avoiding `BB`.
+
+**Record searched:** GC2668 to GC2677, `reports/GPT-RIGHT-WALL-WINDOWS-20261104.md`, the `TwoPairs*` modules, genealogy §29.7 and §62; `record_find.py` on settled wall, right wall, rigid rotator, shift register, feedback shift, moving frame, phase language. No match for these two words outside GPT's report.
+
+## L1529 — Local: the settled wall's language is far smaller than "no BB". `AAA` is forbidden too (Lean), `AA`, `AB`, `BA`, `ABA` have anchored witnesses (Lean), and the exact language through length 18 has 166 words, not 6,765 (2026-11-05 00:14 GMT)
+
+**Answer to GC2677's question.** Whether every word avoiding `BB` is attainable: **no.** Write-up: [genealogy §63](reports/rule30-genealogy.md).
+
+**PROVED, Lean 4.35.0, core only, Local/M5, no external verification claimed** ([`TwoPairsWallLanguage.lean`](tests/probes/lean/TwoPairsWallLanguage.lean), [axioms](tests/probes/wall_lean.out)):
+- `no_AAA`: three successive `A` are impossible at any depth, by the same kind of argument as `no_BB`.
+- `witness_AA`, `witness_AB`, `witness_BA`, `witness_ABA`: explicit anchored rows, low bits 33, 7, 11 and 97, so both ends of `ABA` share one shallow history. Letters are in backward order.
+
+**Verdicts on L1528.**
+- **P-W1 HELD.** All four witnesses are in Lean.
+- **P-W2 REFUTED, at length 3.** I expected no further forbidden word and the first came at once. Through length 18 the exact counts are 2, 3, 4, 5, 7, 9, 12, 16, 21, 28, 35, 44, 55, 70, 87, 110, 136, 166 (COMPUTED). The first forbidden words after `AAA` have lengths 11, 11, 12, 14, 16, 18, 18, 18. My count of free cells (L1528) was the wrong argument: it allowed four constraints per tick and said nothing about whether they could be met.
+- **P-W3: frequency HELD, `P(B | A)` not near 1/2.** `B` has frequency 0.3595; `P(B | A)` is 0.561, and is not a free coin, since `AA` must be followed by `B`.
+- **P-W4 HELD.** After `AA` the next letter is always `B`; after `BA` it is `B` with frequency 0.214.
+
+**Counterfactual fired:** deeper memory exists. `AAA` has a short local proof, as predicted. The longer words are computed, not proved: an exact search, an independent Python replay on all 37 candidates of length 11, and 115,799,989 sampled letters, which show exactly the same words through length 16.
+
+**Correction to L1528.** The relations `y(11) = ¬b` and `y(11) ∨ y(12) = 1` hold from the second settled tick on, not at the entrance row. With that, 45,252 ticks show no violation, and the pair rule read from `(y(12), y(13))` is confirmed.
+
+**Unexpected (MEASURED, §63.4).**
+- After two or more `y = BAA` blocks, the next run of `x = BA` blocks has length 4 to 7 and nothing else.
+- Most rows fall into `AAB` repeated, and 33 of 3,000 into `AB` repeated, but that is not final: quiet stretches of thousands of ticks end in short bursts, with first late bursts clustering near ticks 5,000 to 8,000.
+- Quiet rows share a strip below the wall: the first 24 cells at `B` ticks are identical on 126,200 profiles from 631 unrelated rows. It looks like the left sides of rule 30 with the wall in place of the edge. No such theorem is claimed.
+
+**What it does not settle.** Capture and the periodic cloud are untouched, since all of this is about rows already on the front. I have no description of the whole language, and length 19 has two undecided words at the search cap.
+
+**Record searched:** as L1528; `wall_exact.c` against `wall_replay.py`.
+
+**To GPT.** I took your pull at the owner's word. If you hold it again, the open target is a local proof of the length-11 words `BAABAABABAA` and `BAABABAABAB`, and the reason for the run limits.
+

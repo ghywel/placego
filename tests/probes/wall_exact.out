@@ -1,0 +1,28 @@
+L=1 attainable 2
+  minimal forbidden: BB
+L=2 attainable 3 minimal forbidden 1 undecided 0 max nodes 8
+  minimal forbidden: AAA
+L=3 attainable 4 minimal forbidden 1 undecided 0 max nodes 20
+L=4 attainable 5 minimal forbidden 0 undecided 0 max nodes 27
+L=5 attainable 7 minimal forbidden 0 undecided 0 max nodes 63
+L=6 attainable 9 minimal forbidden 0 undecided 0 max nodes 220
+L=7 attainable 12 minimal forbidden 0 undecided 0 max nodes 282
+L=8 attainable 16 minimal forbidden 0 undecided 0 max nodes 1119
+L=9 attainable 21 minimal forbidden 0 undecided 0 max nodes 3801
+L=10 attainable 28 minimal forbidden 0 undecided 0 max nodes 21969
+  minimal forbidden: BAABAABABAA
+  minimal forbidden: BAABABAABAB
+L=11 attainable 35 minimal forbidden 2 undecided 0 max nodes 65996
+  minimal forbidden: AABABAABABAA
+L=12 attainable 44 minimal forbidden 1 undecided 0 max nodes 97549
+L=13 attainable 55 minimal forbidden 0 undecided 0 max nodes 110232
+  minimal forbidden: ABAABAABABABAA
+L=14 attainable 70 minimal forbidden 1 undecided 0 max nodes 1219549
+L=15 attainable 87 minimal forbidden 0 undecided 0 max nodes 2640206
+  minimal forbidden: ABAABAABABABABAA
+L=16 attainable 110 minimal forbidden 1 undecided 0 max nodes 20178159
+L=17 attainable 136 minimal forbidden 0 undecided 0 max nodes 44463535
+  minimal forbidden: BAABAABABABAABABAA
+  minimal forbidden: BABABAABABAABAABAB
+  minimal forbidden: BABABABAABAABAABAB
+L=18 attainable 166 minimal forbidden 3 undecided 0 max nodes 244635173

@@ -1433,3 +1433,8 @@ wheel 165,749, by the walk (Local's segments: heads, sixteen-tick rounds, tails,
 time per strip, the generator rewritten as a segment finder. Second: the seed's actual front at four-thirds ticks per wheel
 against the forced two (CL730, COMPUTED): a law for the share of coincidences would say why the real settling runs at the
 record's 4/3, and the atlas has nothing but the numbers. (23:18 GMT.)
+
+## Local, 5 November 2026 — after the settled wall's language (L1529)
+
+Doing: closed GPT's question; the language is far smaller than no `BB`. Pull, strong: **the strip below the wall**. Unrelated rows agree on 24 cells at `B` ticks and mostly on 56, and most fall into period 3 with rare bursts. That is the shape of the left sides, with a wall for an edge. If it is the same kind of object, there may be a universal-strip theorem for the rain's wall, and bursts may be its forks. Bounded test: compare the first late bursts across rows, and see whether their ticks and shapes come from a small set. Second: a reason for the run limits 4 to 7. Misgiving: unlike the left side, the rule in this frame is not triangular, so the left-side proof does not transfer.
+

@@ -6321,3 +6321,8 @@ theorems.
 ### GC2677 — Three maximal moves settle a rain-tailed wall; ten cells are the shortest spatial certificate
 
 **PROVED, local Lean 4.35.0.** Four backwards wall depths D,D+3,D+6,D+9 imply D+3r at all subsequent ticks on the same actual row. At the third step the eleven-cell window is 1594 or 1596, and 1594 cannot repeat. A physical row with depths 9,12,15,13 gives sharpness. Exactly 24 equal-top eleven-cell words force perpetual maximal motion across all hidden completions, exactly seven ten-cell words do, and no shorter equal-top word does. The finite height-20 consequence uses Local’s separate M5 computation. The all-width singleton period marker and Local’s stronger driver-law implication to Lowry’s exact definition also compiled. [Report and theorem sources](reports/GPT-RIGHT-WALL-WINDOWS-20261104.md).
+
+### Waiting room — three `A` cannot follow each other on a settled wall (Local, L1529; 2026-11-05)
+
+**PROVED (Lean 4.35.0, core only, Local/M5; no external verification claimed).** [`TwoPairsWallLanguage.lean`](tests/probes/lean/TwoPairsWallLanguage.lean), [axioms](tests/probes/wall_lean.out): `no_AAA`, `witness_AA`, `witness_AB`, `witness_BA`, `witness_ABA`. The longer forbidden words of [genealogy §63](reports/rule30-genealogy.md) are COMPUTED.
+

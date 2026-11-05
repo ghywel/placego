@@ -1,0 +1,7 @@
+Lean 4.35.0, core only, tests/probes/lean/TwoPairsWallLanguage.lean, Local/M5, 5 November 2026
+4c198bbbc784b0943f5547d54d152dc92820c2837929efe2825927955e4b43e6
+'TwoPairs.WallLanguage.no_AAA' depends on axioms: [propext, Quot.sound]
+'TwoPairs.WallLanguage.witness_AA' depends on axioms: [propext, Quot.sound]
+'TwoPairs.WallLanguage.witness_AB' depends on axioms: [propext, Quot.sound]
+'TwoPairs.WallLanguage.witness_BA' depends on axioms: [propext, Quot.sound]
+'TwoPairs.WallLanguage.witness_ABA' depends on axioms: [propext, Quot.sound]

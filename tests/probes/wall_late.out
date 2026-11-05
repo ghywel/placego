@@ -1,0 +1,13 @@
+rows 1500 ticks 4000: BAB events by dyadic tick range, per row, density per tick
+ [2,4): 8 events, 0.00267 per row-tick
+ [4,8): 578 events, 0.09633 per row-tick
+ [8,16): 1936 events, 0.16133 per row-tick
+ [16,32): 4135 events, 0.17229 per row-tick
+ [32,64): 5809 events, 0.12102 per row-tick
+ [64,128): 6492 events, 0.06763 per row-tick
+ [128,256): 5222 events, 0.02720 per row-tick
+ [256,512): 3711 events, 0.00966 per row-tick
+ [512,1024): 5483 events, 0.00714 per row-tick
+ [1024,2048): 10274 events, 0.00669 per row-tick
+ [2048,4096): 20743 events, 0.00675 per row-tick
+last BAB tick by range: <1:132 <8:79 <16:138 <32:156 <64:158 <128:154 <256:116 <512:59 <1024:68 <2048:115 <4096:325
