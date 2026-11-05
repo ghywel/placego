@@ -45,3 +45,13 @@ Probes for [genealogy §63.7](../../../reports/rule30-genealogy.md). All are sho
 | `sat_edges.py`, `edgegraph.py`, `wall_edges.c` | Every edge of the free graph on actual rows, and the graph that remains. Output `edges_summary.out`. |
 | `verify_witness.py`, `witness_break_175_56.json` | Checks the witness row by plain ticks. Outputs `verify_witness.out`, `entrytick.out`. Dots past tick 83 in its line mean the known cells ran out. |
 
+## Added in L1541
+
+| File | What it does |
+|---|---|
+| `wall_entry.c` | Entry time of a closed set from inside it: `./wall_entry SETFILE N NMAX SEED`. Outputs `entry45.out`, `entry136.out`, `entry175.out`. `wall_smc.c` is the first form, which keeps rows still inside the set and loses them to rows that left. |
+| `wall_chain2.c` | The chain from a random letter, the law `wall_entry` uses. Output `direct_ab.out`. |
+| `wall_split.c`, `wall_splitb.c` | Splitting on the chain, on the six-tick minimum and on single-tick agreement. Output `split_big.out`. Kept as a failure: see genealogy §64.5a. |
+| `witness_track.py`, `arrive_track.py` | Agreement with the third lock along the witness and along chain arrivals at 145. |
+| `sat_entry136.out` | Entry to the full 136-cell lock with L settled rows. |
+
