@@ -32195,3 +32195,23 @@ Caps: substitute (CL710), ulimit 8 GiB, timeout 1,800 s, four processes on four 
 **Record searched:** CL743–CL744, §20.2 (twenty random left-finite rows' band edges at the period-16 stage, all with the
 same statistics to 0.0003: a universality the present question refines at the third decimal of q), CL736 (the five
 strips), CL738 (the sixteen).
+
+## L1544 — Local: the deviation automaton, at the owner's word. Design and predictions before the run (2026-11-05 14:30 GMT)
+
+**The owner:** "Yes, build it".
+
+**A hand fact first.** Let y_0 have its top K cells in a lock and fair cells below. Then in row s the cells at offsets K − 3s and deeper are exactly fair and independent, because y_s(k) = y_0(k + 3s) ⊕ (a function of deeper cells), which is triangular. So below a boundary rising 3 cells a tick the row is exactly random, above the first difference it is the strip, and only the zone between needs tracking. That zone widens at about 1.2 cells a tick. So the first difference is a damage front between a periodic background and a random field.
+
+**The automaton.** State: the phase, the first difference D, and the m cells below it. One tick back gives the next D and the known part of the next m cells, by the rule of L1543. The remaining cells are unknown, and this is where two versions part.
+- **Fair version.** Unknown cells are fair. Arrival becomes a finite Markov chain. Fairness is exact only below offset K − 3s, so this is an approximation that should improve with m.
+- **Free version.** Unknown cells range over all values. Every real row then follows a path in the graph, so the longest path is a rigorous bound on arrival, if the graph has no cycle. Rows in the lock are excluded, since T maps the lock into itself and a row that has left going back cannot return.
+
+**Predictions.**
+- **P-A1 (70%).** The fair version at m = 12 matches sampled arrivals: mean within 0.2 ticks, late tail ratios within 20%, on all three strips.
+- **P-A2 (55%).** The free graph has no cycle at m ≤ 12 for `AB`, so arrival after exit has a proved bound there, between 13 and 16.
+- **P-A3 (45%).** The third lock's graph also has no cycle, and its bound is near 50 to 55. That would explain the hard stop of the Monte Carlo at 53.
+
+**Counterfactual.** A cycle in the free graph that survives larger m would be a deviation that need never reach the wall, inside a strip: either a new closed structure, or a sign that the tails do not end by structure. A fair chain that misses the data would mean the zone below the first difference is not close to fair, which would matter for Cloud's chain too.
+
+**Record searched:** L1541 to L1543, genealogy §64.5b; CL740 to CL744 on the edge chain, the same kind of truncated chain for the left damage front, with Cloud's widths L, R, W and GPT's caution in GC2682 that fair conditional boundary bits are unproved.
+
