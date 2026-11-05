@@ -6928,6 +6928,41 @@ So almost all entry into a lock happens in one early burst, ending about K/3.4 t
 
 **Splitting on the chain, kept as a failure.** Multilevel splitting reproduced the direct rates to 2% up to agreement 145 ([output](../tests/probes/wall_floor/split_big.out)), and no run in 200,000 passed 145. But few independent rows reach that level, and all of them there share one top-145 word with a mismatch at exactly offset 145 ([output](../tests/probes/wall_floor/arrive_track.out)). So the wall at 145 is a fact about that one route, not a bound. The verified witness takes another route: after its break, agreement climbs about 3.4 cells a tick straight into the lock ([output](../tests/probes/wall_floor/witness_track.out)), while chain rows climb from a plateau near 85.
 
+### 64.5b Why entry ends near K/3.4: a deviation's climb, and the factor 8 (L1542–L1543)
+
+Worked by hand at the owner's request. K/3.4 turned out not to be a speed.
+
+**The rule (PROOF-SKETCH; COMPUTED: no violation in about 69 million steps).** Let a row y agree with a strip x above offset D and differ at D. In the next row back, y'(k) = y(k+3) ⊕ (y(k+4) ∨ y(k+5)), so the first difference D' obeys:
+
+| Strip cells | Rise D − D' |
+|---|---|
+| x(D−1) white | 5 |
+| x(D−1) black, x(D) and x(D+1) white | 4 |
+| x(D−1) black, x(D) white, x(D+1) black | 3, unless y(D+1) = y(D+2) = 0 |
+| x(D−1) and x(D) black | 4 if y(D+1) = 0; otherwise 3, unless x(D+1) = x(D+2) = 0 |
+
+Each row follows by comparing the two sides of the rule at k = D − 5, D − 4, D − 3. A rise below 3 needs one of the two exceptions, the near-reset of §64.3 read at one tick: `#.#` or `..##`, low to high. On a strip about half white, the mean rise is 5/2 + 3.5/2 = 4.25.
+
+**By hand on the `AB` strip.** The longest entry has 14 settled rows. From row 7 at offset 36 its first difference goes 32, 29, 24, 21, 16, 12, 8: rises 4, 3, 5, 3, 5, 4, 4, each read off the two strip rows ([output](../tests/probes/wall_floor/ab_exit.out)).
+
+**The climb is nearly fixed (COMPUTED).** With no retreats, the strips alone give a climb from floor to wall of 7 to 8 ticks for `AB`, 27 to 29 for the 136-cell lock, and 34 to 37 for the third lock, so slowest and fastest differ by at most 3 ([output](../tests/probes/wall_floor/climb.out)). Mean arrival on random rows is 8.7, 30.0 and 39.3 ticks: 3.9, 4.2 and 4.2 cells a tick ([output](../tests/probes/wall_floor/arrive_all.out)). In this frame Cloud's left damage front of Rule 30 moves at 3 + 1.24 = 4.24.
+
+**Why entry ends later than that.** Until the deviation reaches the wall the past letters are the strip's, so h(m) is close to P(A > m), with A the arrival row. So
+
+    e_m ≈ |U| · 2^(10−K) · 8^m · P(A > m).
+
+The factor 8^m is 3 bits a tick: each tick later saves three chance coincidences in the row's starting cells. So entry favours slow deviations. e_m grows as long as the tail of A falls more slowly than 1/8 a tick. This agrees with the estimates of §64.5a within a factor of about 1.5 where arrivals are well sampled, and about 2 to 4 for the short `AB` strip ([output](../tests/probes/wall_floor/tailcheck.out)).
+
+| Lock | Mean arrival | Tail ratio late on | Compared with 1/8 | Peak of e_m |
+|---|---|---|---|---|
+| `AB` | 8.7 | 0.09, then less | below | 9, near typical |
+| 136 cells | 30.0 | about 0.14 | about equal | 38, slow |
+| Third | 39.3 | about 0.22 | above | 50, the end of the tail |
+
+So K/3.4 is where a tilted tail runs out, not a speed. That two locks share 3.4 is a coincidence of their tails. The survival 0.2 in the third lock's Monte Carlo is this same tail ratio.
+
+**What a late entrant must do.** It must arrive late, and then break its letters legally. The verified witness shows the first: its 49 rises going back average 3.31, with 12 below 3, one a retreat of 11 cells. The second is what stops almost everyone, since the particles of §64.5a die within a tick or two of the tail's end. For `AB` the search shows no legal break at all beyond 14 rows, and the cloud's bound on alternation fits this.
+
 ### 64.6 What this does not settle
 
 Whether locks with a moving frontier are finite in number. The rate of capture. Why v = 10 and v = 110. Still nothing about capture onto the front itself.

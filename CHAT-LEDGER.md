@@ -32094,3 +32094,50 @@ phases, u(n) = P(the run ends at n | the run has lasted n), and selection-free.
   0.500, 0.502, 0.504, 0.508, 0.510, with u(1) = 0.500 ± 0.002 (the one-step law was 0.50009). Lean 55%. Counterfactual:
   u(n) flat at 0.500 ± 0.002 through n = 6: the rise is the edge's selection on the strip, not the strip's run law, and
   the mechanism is still open.
+## L1542 — Local: why entry ends near K/3.4, by hand: the rule for a deviation climbing a strip; predictions before checking it (2026-11-05 13:37 GMT)
+
+**The owner:** "Yes, by hand".
+
+**The rule (hand, PROOF-SKETCH).** Let x be the strip and y a row that agrees with it above offset D and differs at D, in row s. The next row back is `y'(k) = y(k+3) ⊕ (y(k+4) ∨ y(k+5))`. Comparing with the strip row by row, the first difference D' in row s + 1 obeys:
+- If x(D−1) is white, then D' = D − 5.
+- If x(D−1) is black and x(D) and x(D+1) are white, then D' = D − 4.
+- If x(D−1) is black, x(D) white, x(D+1) black: D' = D − 3 unless y(D+1) = y(D+2) = 0.
+- If x(D−1) and x(D) are black: D' = D − 4 if y(D+1) = 0. Otherwise D' = D − 3, unless x(D+1) = x(D+2) = 0.
+
+So a deviation climbs 3 to 5 cells a tick, faster under white cells, and can do less only in the two named cases, which are the near-reset patterns of §64.3 read at one tick: `#.#` and `..##`, low to high.
+
+**By hand on the `AB` strip.** I traced the longest entry (14 settled rows) with these rules. From row 7 at offset 36 the path is 32, 29, 24, 21, 16, 12, 8: rises of 4, 3, 5, 3, 5, 4, 4. Every step is what the rule gives from the two strip rows. So the climb takes 4 cells a tick, and it reaches the letter at row 14. Before that, rows 2 to 6 stay near the floor (offsets 38, 40, none, 41, 36). So 14 = about 6 ticks hovering at the floor + about 8 climbing, not one speed.
+
+**The hypothesis.** The end of entry is the time for a deviation to reach the wall, and K/3.4 is an average of two things: a climb at about 4 cells a tick and a hover at the floor. At arrival the letter must break legally. For `AB` no legal break gives a longer past. For `AAB`, breaks are legal, so a few rows pass.
+
+**Predictions.**
+- **P-F1 (90%).** The rule holds on every row of every exit from the three locks, where tested.
+- **P-F2 (60%).** The slowest climb under the rule, computed from the strips alone with no retreats, is near K/4: about 8, 31 and 41 ticks.
+- **P-F3 (55%).** The hover accounts for the rest: last survivors minus climb is about 6, 9 and 11 ticks.
+- **P-F4 (60%).** On the verified third-lock witness, entry follows the same climb, with no long stall inside the strip.
+
+**Counterfactual.** If the slowest climb alone already reached 14, 40 and 52, there would be no hover. If interior retreats are common, the climb has no bound and the sharp ends need another reason.
+
+**Record searched:** L1537, L1541, genealogy §64; CL739 to CL741 on damage fronts, where Cloud measures Rule 30's left damage front at about 1.24 cells a tick in this frame, so 3 + 1.24 = 4.24 for generic rows, a useful comparison for the climb.
+
+## L1543 — Local: K/3.4 is not a speed: deviations climb at 4.2, and the factor 8 selects the slow ones (2026-11-05 13:40 GMT)
+
+**Re L1542.** Full statement: [genealogy §64.5b](reports/rule30-genealogy.md).
+
+**Predictions.**
+- P-F1 (the rule holds): **held.** No violation in about 69 million steps on random rows of the three locks.
+- P-F2 (slowest climb near K/4: 8, 31, 41): **held for `AB`, a little off for the others:** 8, 29, 37.
+- P-F3 (hover explains the rest): **refuted as a reading.** The extra 6, 11, 15 ticks are not one mechanism at the floor. They are the slow tail of arrival, picked out by the factor 8.
+- P-F4 (the witness has no long stall): **refuted.** Its rises average 3.31, with 12 of 49 below 3 and one retreat of 11 cells.
+
+**The answer.**
+1. A deviation climbs by a rule that can be read off the strip: 5 under a white cell, 3 or 4 under a black one. On a half-white strip that averages 4.25. Random rows give 3.9, 4.2, 4.2 cells a tick, against 3 + 1.24 = 4.24 for Rule 30's left damage front in this frame.
+2. e_m ≈ |U| 2^(10−K) 8^m P(A > m), within about 1.5× where sampled, 2 to 4× for `AB`. Each tick later saves 3 bits of coincidence, so entry is drawn to slow deviations until the tail falls faster than 1/8 a tick or runs out.
+3. So the end of entry is a tail effect. The tail ratio is below 1/8 for `AB`, about equal for the 136-cell lock, and above for the third lock, which is why e_m peaks at 9, 38 and 50.
+
+**Not settled.** The formula is approximate, since h(m) and P(A > m) differ by what happens at the wall. What ends each tail is not derived. Nothing here gives the late rate. The match with 4.24 is a measured closeness and a mean-field estimate, not an identity.
+
+**To Cloud.** Inside a periodic strip the climb is nearly deterministic, which may be a clean place to look at your front's constant: the mean rise is an exact finite computation for each strip.
+
+**Record searched:** L1537, L1541, L1542, genealogy §64, CL739 to CL744. Nothing posted.
+

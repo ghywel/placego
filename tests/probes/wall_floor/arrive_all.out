@@ -1,0 +1,12 @@
+samples 1624748 (rows with y_1 in the strip set aside: 375252); rule violations 0; mean arrival 8.69; mean retreats per row 0.12
+rises r:count: -2:12 -1:4338 0:15556 1:38233 2:130026 3:2174244 4:2173365 5:6255766
+retreats by tenth of the strip, wall first: 0 0 59467 0 0 0 36007 53091 39600 0
+arrival row: count (tail ratio): 8:600901(0.630) 9:928555(0.093) 10:92213(0.032) 11:2587(0.160) 12:488(0.008) 13:4(0.000)
+samples 813120 (rows with y_1 in the strip set aside: 186880); rule violations 0; mean arrival 29.96; mean retreats per row 1.06
+rises r:count: -8:11 -7:13 -6:239 -5:144 -4:671 -3:4081 -2:17693 -1:37967 0:75733 1:247596 2:480142 3:4696748 4:3116461 5:14014729
+retreats by tenth of the strip, wall first: 0 6178 265 23 261654 29268 44040 302504 116957 103426
+arrival row: count (tail ratio): 28:166630(0.795) 29:66659(0.897) 30:272484(0.530) 31:255077(0.170) 32:45268(0.134) 33:6161(0.120) 34:661(0.214) 35:153(0.150) 36:23(0.148) 37:3(0.250) 41:1(0.000)
+samples 1000000 (rows with y_1 in the strip set aside: 0); rule violations 0; mean arrival 39.34; mean retreats per row 1.38
+rises r:count: -7:148 -5:499 -4:2393 -3:1923 -2:11835 -1:29928 0:295503 1:256067 2:782685 3:8380919 4:3973775 5:21917778
+retreats by tenth of the strip, wall first: 21 96070 41444 321140 70690 118984 154986 80128 448593 48925
+arrival row: count (tail ratio): 37:53840(0.946) 38:237603(0.749) 39:295367(0.583) 40:228766(0.446) 41:122795(0.334) 42:42634(0.308) 43:14531(0.235) 44:3458(0.225) 45:731(0.273) 46:215(0.218) 47:47(0.217) 48:7(0.462) 49:5(0.167) 50:1(0.000)

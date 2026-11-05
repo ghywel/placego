@@ -55,3 +55,12 @@ Probes for [genealogy §63.7](../../../reports/rule30-genealogy.md). All are sho
 | `witness_track.py`, `arrive_track.py` | Agreement with the third lock along the witness and along chain arrivals at 145. |
 | `sat_entry136.out` | Entry to the full 136-cell lock with L settled rows. |
 
+## Added in L1543
+
+| File | What it does |
+|---|---|
+| `climb.py` | The climb from floor to wall under the rise rule, from the strips alone. Output `climb.out`. |
+| `wall_arrive.c` | Arrival rows and rises on random rows, with the rule checked at every step. Output `arrive_all.out`. For the third lock run with `KEEP=1`, because its first forward image differs only in cells that are not strip cells. |
+| `tailcheck.py` | The estimates of `wall_entry` against the formula with sampled arrivals. Reads `run_entry2/out.txt` and `run_entry3/out.txt`, saved here as `entry175.out` and `entry136.out`. Output `tailcheck.out`. |
+| `ab_exit.py` | The longest entries to the `AB` lock, row by row, by SAT. Output `ab_exit.out`. |
+
