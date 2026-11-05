@@ -6,11 +6,14 @@ identity D/T = (q - (H_T - H_0)/T)/(q + S) (GC2682, PROVED two-party) checked in
 whole run. A window is the stretch of ticks during which the edge lies in [a, a + WIDTH).
 CL744: also the hazard past wheel LATE by stall length n (n = 1 also by the preceding jump) and by phase t mod 32, against
 the strip's own per-phase law of the XOR below a white bit.
-Usage: python3 edge_windows.py ROWSDIR [WIDTH] [K] [LATE]   (the rows of tree16_data.py at 894,236 wheels; A0.bin at phase 0)"""
+Usage: python3 edge_windows.py ROWSDIR [WIDTH] [K] [LATE] [STRIP] [DAMAGE]   (the rows of tree16_data.py at 894,236 wheels, phase 0;
+STRIP the row's file name without .bin, default A0; DAMAGE 0 = the seed, else random damage above wheel 2 with that seed; CL745)"""
 import sys, time, collections
 ROWS = sys.argv[1]; WIDTH = int(sys.argv[2]) if len(sys.argv) > 2 else 100000
-A0 = int.from_bytes(open(f"{ROWS}/A0.bin", 'rb').read(), 'little')
-K = A0.bit_length(); K = ((K + 7) // 8) * 8 if False else int(sys.argv[3]) if len(sys.argv) > 3 else 894236
+STRIP = sys.argv[5] if len(sys.argv) > 5 else "A0"             # CL745: the strip's file name without .bin
+DAMAGE = int(sys.argv[6]) if len(sys.argv) > 6 else 0            # 0: the seed (x = 1); else the strip with random damage above wheel 2 (this seed)
+A0 = int.from_bytes(open(f"{ROWS}/{STRIP}.bin", 'rb').read(), 'little')
+K = int(sys.argv[3]) if len(sys.argv) > 3 else 894236
 MASK = (1 << K) - 1; P = 32
 def step(v): return ((v << 2) ^ ((v << 1) | v)) & MASK
 def lowbit(x): return (x & -x).bit_length() - 1 if x else K
@@ -25,7 +28,11 @@ LATE = int(sys.argv[4]) if len(sys.argv) > 4 else 200000
 st = collections.Counter(); bk = collections.Counter()        # (n, phi) -> stall ticks, blacks at t+1
 st1 = collections.Counter(); bk1 = collections.Counter()      # n = 1 by the preceding jump d
 n_stall = 0; last_jump = None
-t0 = time.time(); x = 1; t = 0; m_prev = None; h_prev = None; dec = 0
+import random
+if DAMAGE: rng = random.Random(DAMAGE); x = (cyc[0] ^ ((rng.getrandbits(K) & ~0b111) | 0b100)) & MASK
+else: x = 1
+print(f"strip {STRIP} on {K} wheels; actual row: {'the seed' if not DAMAGE else f'the strip with random damage above wheel 2, seed {DAMAGE}'}")
+t0 = time.time(); t = 0; m_prev = None; h_prev = None; dec = 0
 while True:
     C = cyc[t % P]; e = x ^ C; m = lowbit(e)
     if m >= K: break

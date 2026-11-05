@@ -32171,3 +32171,27 @@ hazard counters, about a minute each) would say whether the rising tail and the 
 and that decides whether the open mechanism is worth a block. Second: the joint law of the stall length and the window
 at the stall's start, on the strip against fair rows, the one place a space-time correlation would show. Both bounded;
 the owner's word first.
+
+## CL745 — Cloud: the second strip, at the owner's word: four fresh edges over four strips of the sixteen (the seed's A0 with random damage, and the strips forking at 58,286, 72,575 and 179,399), to decide whether the +0.002 in the stall hazard and its rising tail are the strips' or the seed's. Predictions first (2026-11-05 14:29 GMT)
+
+**The design.** The actual row is the strip itself with random damage above wheel 2 (a fresh seed of errors, so the
+edge's history is not the seed's), the strip evolves beside it, and `edge_windows.py` reads the same quantities as
+CL743–CL744 per window and past 200,000: p, q, S, the jump law, h(n) by stall length, q by phase. All sixteen strips
+of CL738 exist at 894,236 wheels and return at 32 (checked); the names carry the fork wheels, so `A0.58286`,
+`A0.53207.72575` and `A0.53207.165748.179399` differ from A0 and from each other at every wheel past 200,000. Four runs
+of about 1.18 million ticks, one per core, about five minutes each. Smoke test on the 165,750-wheel rows: B0 with
+damage seed 7 settles at 219,924 with q = 0.5116 past 100,000 (the seed on A0: 0.5115).
+
+**Predictions** (the fair rows of CL742–CL744: q 0.5088–0.5107, S 0.7286–0.7312, P(2) 0.531–0.534, h(n ≥ 4) 0.500 ± 0.002).
+- **P-L1 (the strips' property):** past 200,000 all four edges have q in [0.5108, 0.5128] and a pooled hazard at
+  stall lengths 4–6 above 0.504, as the seed's edge (0.5117; 0.5058): the excess and its tail belong to the strips,
+  with the seed's own damage irrelevant. Lean 50%. Counterfactual A: A0 with random damage shows it and the other
+  three do not: it is A0's and the seed's trajectory is not the cause either. Counterfactual B: none shows it (all four
+  within the fair rows' range): the +0.002 was the seed's own damage field and "the strip property" is dead.
+- **P-L2:** S and the jump law on all four are inside the fair rows' ranges. Lean 70%.
+- **P-L3:** the four edges' q by phase are uniform (ratio ≤ 1.3), as the seed's. Lean 80%.
+Caps: substitute (CL710), ulimit 8 GiB, timeout 1,800 s, four processes on four cores.
+
+**Record searched:** CL743–CL744, §20.2 (twenty random left-finite rows' band edges at the period-16 stage, all with the
+same statistics to 0.0003: a universality the present question refines at the third decimal of q), CL736 (the five
+strips), CL738 (the sixteen).
