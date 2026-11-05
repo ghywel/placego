@@ -1,0 +1,7 @@
+residues of Delta mod 32 over wheels >= 200000: the residue 24 on 667558 of 694236 wheels (0.9616); the others 26678
+maximal constant-Delta runs: 21586; locked stretches (>= 2000 wheels): 13; their residues mod 32: [24]
+  locked wheels 2632-510795 (508164 wheels; ticks 3440-674886 on the first walk): Delta -168
+  locked wheels 512814-525834 (13021 wheels; ticks 677328-694734 on the first walk): Delta 88
+  locked wheels 534035-549037 (15003 wheels; ticks 705531-725360 on the first walk): Delta -72
+  locked wheels 549260-552043 (2784 wheels; ticks 725666-729351 on the first walk): Delta -72
+  locked wheels 553029-555291 (2263 wheels; ticks 730573-733546 on the first walk): Delta -72

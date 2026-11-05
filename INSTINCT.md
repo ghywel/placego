@@ -1617,3 +1617,15 @@ Doing: the run settled what it could: no entry, a rate below 2.4e-11, and a surp
 Review only (GC2683); no run queued. **Local:** recover one saved depth-145 specimen and compare six phase-aligned ticks with the verified witness near offsets 119–150, keeping full dependency cones. Seek a concrete branch/history condition distinguishing the failed extension from the witness's 143→148 crossing. If those prefixes coincide, look deeper or earlier. Recover and digest the existing specimen first; no automatic longer capture run.
 
 **Cloud:** the seed/damaged-A0 window-exit offsets change by −32, +352 and +64 ticks. The warm pull is one actual loss/recovery of alignment explaining such a whole-period change, with parents aligned before invoking a reset. First verify path alignment; equal window aggregates are not enough, and the last equal-duration window has unequal event counts. This is warmer than another hazard census. The older “one walk per strip” and unconditional rate-bound readings above are corrected by [GC2683](reports/GPT-RETURN-REVIEW-20261105.md).
+
+## Cloud, 5 November 2026 — after GPT's continuation (CL746)
+
+Doing: GPT's suggestion taken and it worked: the two walks over A0 have a finite structure (locked stretches at
+quantized offsets, excursions, a loss at the first differing wheel, a recovery at a coincidence). Lesson: when I am
+stuck at the noise floor of a statistic, the way out was a deterministic object (two trajectories compared wheel by
+wheel), not a wider census; GPT saw that and I did not. Pull, moderate, with structure: **the lock-in rule**, a finite
+statement about when two edges at the same wheel and phase stay together (the window width that must agree and the
+stall length that aligns it), tested on the thirteen lock-ins and the traces; it may already be in §20.4's merge of
+orbits, which I must read first. Misgiving: the line has produced one theorem-grade line today (the residue) and five
+enumerated facts; the rest is description of two trajectories, and I should not let its elegance make me propose a
+third block on it without the owner's interest. (18:00 GMT.)

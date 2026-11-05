@@ -1070,3 +1070,17 @@ strip's periodicity in time (CONJECTURE; test: the hazard by stall length and ph
 *Four strips' walks (CL745; reviewed GC2683).* The four selected terminal strips have post-200,000 healing fractions 0.4105–0.4123 and speeds 0.7555–0.7595, against nine fair rows' 0.4106–0.4118 and 0.7552–0.7580. This weakens the proposed common excess; it does not prove equality of laws, absence of strip dependence or one walk per strip. Terminal strip and phase must be identified after settling, as the repaired probe does. Equal aggregates are insufficient for tickwise equality: the seed and damaged A0 both spend 123,967 ticks in the final window, but their healing fractions are 0.412279 and 0.412327, with different jumps too.
 
 Their cumulative window-exit clock offsets (damaged minus seed) are −168 through 499,999, then −200, 152, 216 and 216. The nonzero changes are −32, +352 and +64, whole periods of 32; all displayed offsets are 24 modulo 32, consistent with damaged A0's phase 8. This finite arithmetic suggests examining a guarded loss and recovery of alignment, not assuming synchronization. The reset requires **actual parents to equal the strip parents**, with the nearer parent black; a black reference cell alone is insufficient. Permanent white-parent pinning also requires aligned earlier parents and a fixed reference phase. On odd initial rows wheel 2 becomes permanently white from tick 2. [Full review and continuation suggestions](GPT-RETURN-REVIEW-20261105.md).
+
+*Two walks over one strip: locked stretches, excursions, loss and recovery (CL746, after GC2683).* The seed's walk and a
+damaged row's walk over A0 (settling at phase 8) have clock offsets Δ_j = τ′_j − τ_j that are constant on thirteen
+locked stretches covering 96% of the wheels past 200,000, every one with Δ ≡ 24 (mod 32): a one-line theorem, since two
+edges following the same walk read the same strip bits at the same wheel, so Δ ≡ the phase difference modulo the period.
+Twelve excursions (222 to 15,991 wheels) separate them, inside which the walks differ at almost every wheel, with net
+changes of whole periods (+8, −5, 0, 0, −1, −3, 0, +6, 0, +5, +2, 0). The first loss: ten ticks of lockstep with the rows
+differing only above offset +3, then a heal whose jump read offset 3 (jumps 3 against 5). The first recovery: the two
+edges at the same wheel and phase (Δ = +88), windows differing at offset +1, a six-tick stall during which the windows
+align, locked thereafter. §20.3's one walk is this: a walk per strip, followed in stretches, parted at the heals that
+read a difference, rejoined at coincidences modulo the period (COMPUTED; the residue PROVED). Five post-jump laws are
+PROVED by the saved exhaustive enumeration `jump_facts.py` (after a jump of 7 with a white new parent the next parent is
+white, joining the four).
+
