@@ -7,7 +7,7 @@ the extension lands in a fresh uniform state; its mass is reported). The station
 jump law, the error densities above the edge and the law of the state, against the empirical values from the seed on
 165,750 wheels (the empirical part re-runs error_process.py's walk and records the state and its transitions every tick).
 Predictions P-E0 .. P-E5 in CL741.
-Usage: python3 edge_model.py ROWSDIR   (the rows of tree16_data.py at 165,750 wheels; A0.bin at phase 0)"""
+Usage: python3 edge_model.py ROWSDIR [L,R,W,E ...]   (the rows of tree16_data.py at 165,750 wheels; A0.bin at phase 0)"""
 import sys, time, collections
 import numpy as np
 
@@ -25,7 +25,7 @@ def model(L, R, W, E, verbose=True):
     idx = np.arange(N, dtype=np.int64)
     coins = [((idx >> i) & 1).astype(np.int8) for i in range(ncoin)]
     lo, hi = -L - 2, R + E
-    T = np.zeros((nS, nS)); death = np.zeros(nS); jumps = np.zeros((nS, R + E + 2)); overflow = 0.0
+    T = np.zeros((nS, nS)); death = np.zeros(nS); jumps = np.zeros((nS, R + E + 2)); pbj = np.zeros((nS, R + E + 2)); overflow = 0.0
     maxj = E - max(R, W)          # the largest jump whose new state is fully inside the computed window
     for s in range(nS):
         Cs = [(s >> i) & 1 for i in range(L + 1 + R)]          # C at -L..R
@@ -55,6 +55,7 @@ def model(L, R, W, E, verbose=True):
             w = sel.mean()
             if w == 0: continue
             jumps[s, j] += w
+            if j >= 1: pbj[s, j] += (C2[j - 1][sel] == 1).mean() * w
             # new state at m' = j: C at j-L..j+R, e at j+1..j+W (all inside lo+2..hi)
             code = np.zeros(N, dtype=np.int64)
             for i in range(L + 1 + R): code |= C2[j - L + i].astype(np.int64) << i
@@ -72,9 +73,10 @@ def model(L, R, W, E, verbose=True):
         if np.abs(pi2 - pi).max() < 1e-14: pi = pi2; break
         pi = pi2
     drate = float(pi @ death)
-    jl = (pi * death) @ jumps / drate            # jump law at a death (index = jump)
+    jl = (pi * death) @ jumps / drate            # jump law at a death (index = jump; the last nonzero index holds every jump past the extension)
+    pbl = ((pi * death) @ pbj) / np.maximum((pi * death) @ jumps, 1e-300)   # P(new parent black | jump)
     dens = [float(pi @ np.array([(s >> (L + 1 + R + i)) & 1 for s in range(nS)])) for i in range(W)]
-    return pi, drate, jl, dens, T, overflow
+    return pi, drate, jl, dens, T, overflow, pbl, maxj
 
 def fmt_jl(jl, upto=9): return {j: round(float(jl[j]), 4) for j in range(1, min(upto, len(jl) - 1) + 1)}
 
@@ -93,6 +95,7 @@ x = 1; t = 0
 visits = collections.Counter(); trans = collections.Counter()
 after_stay = [0, 0]; after_jump = collections.defaultdict(lambda: [0, 0]); jumps = collections.Counter()
 dens = np.zeros(9, dtype=np.int64); nwin = 0; pblack = 0
+cond = collections.defaultdict(lambda: np.zeros(4, dtype=np.int64))   # per state: visits, e_{m+3}, C_{m+3}, C_{m-3}
 def state_of(C, e, m):
     s = 0
     for i in range(L + 1 + R): s |= ((C >> (m - L + i)) & 1) << i
@@ -106,6 +109,7 @@ while True:
         s = state_of(C, e, m); visits[s] += 1; nwin += 1
         pb = (C >> (m - 1)) & 1; pblack += pb
         for d in range(1, 9): dens[d] += (e >> (m + d)) & 1
+        if m >= 3: cond[s] += (1, (e >> (m + 3)) & 1, (C >> (m + 3)) & 1, (C >> (m - 3)) & 1)
         if prev is not None:
             ps, pm, ppb = prev
             trans[(ps, s)] += 1
@@ -123,6 +127,15 @@ print(f"P-E0: parent black at t+1 after a jump of 2: {after_jump[2][1]} of {sum(
 print(f"P-E4b: P(parent black at t+1 | the edge stayed) = {after_stay[1]/sum(after_stay):.4f} on {sum(after_stay)} stays")
 print("parent black at t+1 after a jump of d: " + ", ".join(f"{d}: {after_jump[d][1]/sum(after_jump[d]):.3f} ({sum(after_jump[d])})" for d in sorted(after_jump) if d <= 6))
 nS = 1 << (L + 1 + R + W)
+def sname(s): return "C[m-2..m+2]=" + "".join(str((s >> i) & 1) for i in range(5)) + " e[m+1,m+2]=" + "".join(str((s >> (5 + i)) & 1) for i in range(2))
+print("where the fair coins fail: the empirical density of e_{m+3}, C_{m+3}, C_{m-3} given the state (the model says 1/2 for each);")
+for name, col in (("e_{m+3}", 1), ("C_{m+3}", 2), ("C_{m-3}", 3)):
+    tot_v = sum(v[0] for v in cond.values()); mad = sum(abs(v[col] / v[0] - 0.5) * v[0] for v in cond.values()) / tot_v
+    ext = sorted(((v[col] / v[0], s, v[0]) for s, v in cond.items() if v[0] >= 1000))
+    print(f"  {name}: overall {sum(v[col] for v in cond.values())/tot_v:.4f}, mean |density - 1/2| over the ticks {mad:.4f}; lowest {ext[0][0]:.3f} at {sname(ext[0][1])} ({ext[0][2]}), highest {ext[-1][0]:.3f} at {sname(ext[-1][1])} ({ext[-1][2]})")
+by_e = collections.defaultdict(lambda: np.zeros(2, dtype=np.int64))
+for s, v in cond.items(): by_e[s >> 5] += (v[0], v[1])
+print("  e_{m+3} density given (e_{m+1}, e_{m+2}): " + ", ".join(f"{k & 1}{k >> 1}: {v[1]/v[0]:.4f} ({v[0]})" for k, v in sorted(by_e.items())))
 emp = np.array([visits[s] for s in range(nS)], dtype=float); emp /= emp.sum()
 # the strip's own statistics: black density over the wheels, and the mean white run in its fixed-wheel series (period 32)
 sd = bin(A0).count('1') / K
@@ -134,15 +147,17 @@ print(f"the strip: black density over the wheels {sd:.4f}; white density in the 
 
 # ---------- the models ----------
 results = {}
-for (l, r, w, E) in [(2, 2, 2, 8), (2, 2, 1, 8), (2, 2, 3, 8), (3, 3, 2, 7), (2, 2, 4, 8)]:
+MODELS = [tuple(int(v) for v in a.split(',')) for a in sys.argv[2:]] or [(2, 2, 2, 8), (2, 2, 1, 8), (2, 2, 3, 8), (3, 3, 2, 8), (2, 2, 4, 8), (2, 2, 2, 10)]
+for (l, r, w, E) in MODELS:
     t1 = time.time()
-    pi, drate, jl, mdens, T, overflow = model(l, r, w, E)
+    pi, drate, jl, mdens, T, overflow, pbl, maxj = model(l, r, w, E)
     mean = float(sum(j * jl[j] for j in range(len(jl))))
     results[(l, r, w)] = (pi, drate, jl, mdens, T)
     print(f"M({l},{r},{w}) E={E}: {1 << (l+1+r+w)} states, {time.time()-t1:.0f} s; overflow mass {overflow:.2e}; "
           f"death rate {drate:.4f}; jump law {fmt_jl(jl)}; mean {mean:.4f}; speed {drate*mean:.4f}; "
-          f"error density at offsets 1..{w}: {[round(v, 4) for v in mdens]}")
-pi, drate, jl, mdens, T = results[(2, 2, 2)]
+          f"error density at offsets 1..{w}: {[round(v, 4) for v in mdens]}; jumps past {maxj} lumped at {maxj+1}; "
+          f"P(parent black | jump d): {{{', '.join(f'{d}: {pbl[d]:.3f}' for d in range(1, min(6, maxj) + 1))}}}")
+pi, drate, jl, mdens, T = results[(2, 2, 2)] if (2, 2, 2) in results else results[MODELS[0][:3]]
 tv = 0.5 * np.abs(pi - emp).sum()
 print(f"P-E4a: total variation between M(2,2,2)'s stationary law and the empirical law of the 7-bit state: {tv:.4f}")
 # the Markov test: per-state transition rows, model vs empirical, for well-visited states
@@ -155,7 +170,6 @@ for s in range(nS):
     er /= er.sum()
     rows.append((0.5 * np.abs(er - T[s]).sum(), s, n))
 rows.sort(reverse=True)
-def sname(s): return "C[m-2..m+2]=" + "".join(str((s >> i) & 1) for i in range(5)) + " e[m+1,m+2]=" + "".join(str((s >> (5 + i)) & 1) for i in range(2))
 print(f"Markov test on {len(rows)} states with >= 1000 visits: median row TV {np.median([r[0] for r in rows]):.4f}, worst five:")
 for tvr, s, n in rows[:5]: print(f"  TV {tvr:.4f} {sname(s)} visits {n}; empirical weight {emp[s]:.4f}, model {pi[s]:.4f}")
 print("states by weight (model vs empirical), the ten heaviest:")

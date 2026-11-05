@@ -31414,3 +31414,47 @@ substitute (CL710), ulimit 8 GiB, timeout 1,800 s, this host; one run of a few m
 
 **Record searched:** `record_find` "Markov", "stationary measure", "two-wheel", "edge model": none; CL740 (the proposal and
 the one step), GC2680 (the recurrence), atlas §21.6–21.7; the kit and the portal: none (the PR index 403 on this host, cache).
+
+## CL741 addendum 1 — Cloud: the fair-coin chain lands on the death rate to 0.0004 and on the speed to 0.01; P-E0 exact, P-E1–P-E3 HELD, P-E4 split, P-E5 MISSED in its first half; the memory is in the strip's own window law, not in the error field. Predictions for the strip-law chain, before its run (2026-11-05 11:46 GMT)
+
+**`edge_model.py`, first run** (the seed on 165,750 wheels; 10 s of data, the chains 1–40 s each; substitute caps).
+- **P-E0 HELD exactly:** after every jump of 2 the parent is white at t + 1 (0 black in 48,067). A second exact fact appeared:
+  after every jump of 3 the parent is black (4,883 of 4,883), and it is one line too: a jump of 3 needs e_(m+2)(t+1) = 0,
+  which with e_(m+1)(t+1) = 0 forces (C_m = 1, a_(m+1) = 1, C_(m+1) = C_(m+2) = 0) or (C_m = 0, C_(m+1) = 1, a_(m+1) = 0),
+  and in both the new parent C_(m+2)(t+1) = C_m ⊕ (C_(m+1) ∨ C_(m+2)) = 1 (PROVED; checked). So the edge dies at once after a
+  jump of 3 and must wait after a jump of 2. After jumps of 1, 4, 5, 6 the parent is black on 0.509, 0.387, 0.855, 0.778
+  of the instances; the chain gives 0.524, 0.356, 0.841, 0.849 (the 2 and 3 exact in it as well).
+- **P-E1 HELD:** M(2, 2, 2) gives the death rate 0.4103 against 0.4107.
+- **P-E2 HELD:** the jump law 1: 0.361, 2: 0.522, 3: 0.059, 4: 0.029, 5: 0.020 against 0.363, 0.531, 0.054, 0.025, 0.021;
+  the mean 1.860 against 1.832 (extension E = 10, overflow 5 × 10⁻⁴); the speed 0.763 against 0.7525, a miss of 0.011,
+  within P-E2's 0.02 and at the fast end of CL739's window-to-window spread (slopes 1.311–1.328, speeds 0.753–0.763).
+- **P-E3 HELD:** the error densities at offsets 1 and 2 are 0.452 and 0.567 against 0.461 and 0.579.
+- **P-E4 split:** the total variation between the chain's stationary law and the empirical law of the seven-bit state is
+  0.052, just over the 0.05 I set (MISSED as written); the parent is black after a stay on 0.509 of 129,808 stays (HELD:
+  the left coins are fair to 0.01).
+- **P-E5 MISSED in its first half:** the one-wheel model M(2, 2, 1) is nearly as good (death rate 0.407, P(2) = 0.533,
+  speed 0.746): the chain's numbers are robust to its width, not sharpened by it. Its second half HELD for M(2, 2, 3)
+  (changes below 0.002) and for M(3, 3, 2) at the same extension (0.003, 0.005, 0.004).
+- **Where the coins fail (COMPUTED).** The chain says every bit outside the window is a fair coin given the state. In the
+  data, given the seven-bit state: the error at offset 3 has mean |density − ½| = 0.032 (extremes 0.42 and 0.63); the strip's
+  bit two below the window, 0.013; the strip's bit one above the window, **0.110**, with extremes 0.259 (window 01111, both
+  errors set) and **0.989** (window 01101): in that state the strip's next bit is all but determined. The memory the chain
+  lacks is the strip's own spatial law, not the error field (the counterfactual I wrote for P-E1, with P-E1 holding
+  anyway because the death rate is fixed by the two exact facts above).
+- The Markov test: the median per-state transition row differs from the chain's by 0.023 in total variation on the 94
+  states with 1,000 visits or more; the worst rows (0.25–0.28) all have the error at offset 1 set and offset 2 clear.
+
+**The strip-law chain, predictions before the run.** M_strip(2, 2, 2): the same chain, with the strip's coins (two below
+the window, E above) weighted by the strip's own frequency of the whole 2 + 5 + E window, measured on the strip itself
+over its 32 rows and 165,750 wheels, not at the edge; the error coins stay fair. No edge data enters.
+- **P-F1:** the strip is a structured field: its conditional law P(C_(j+5) = 1 | C_j … C_(j+4)) over all its positions
+  deviates from ½ by more than 0.08 on average, and for the two extreme states above the strip-only conditional values
+  are within 0.05 of the edge-conditional 0.259 and 0.989. Lean 70%. Counterfactual: a near-uniform strip law says the
+  0.989 is the edge's selection, not the strip's grammar.
+- **P-F2:** M_strip(2, 2, 2) gives the death rate within 0.005 of 0.4107, the speed within 0.006 of 0.7525, and a
+  state-law total variation below 0.03. Lean 50%. Counterfactual: no improvement over the fair chain says the strip's
+  law as seen from the edge differs from its law over all positions (the edge selects its windows), and the next input
+  would be the law conditional on the edge, which is no longer parameter-free.
+
+**Record searched:** as CL741; L1529/L1531/L1533 (Local's settled-wall words and locks: the strip's grammar is a related
+object, on the right wall; nothing on the left strips' window law).
