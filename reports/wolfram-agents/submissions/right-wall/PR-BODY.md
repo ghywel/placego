@@ -1,4 +1,4 @@
-Rule30RightWall: the wall of a rain-tailed edge code. Two letters, three locks and a closed cloud
+Rule30RightWall: the wall of a rain-tailed edge code. Two letters, three locks and a closed cloud (R30-20261105-c15ef5)
 
 This PR adds `lean/Ruliology/CellularAutomata/Rule30RightWall.lean`, `Rule30RightWallLocks.lean` and `Rule30RightWallCloud.lean`, their umbrella imports and a catalog entry. The catalog also records the shared namespace of the two companion modules. It builds on `Rule30FrozenRuler`: the row is the kit's edge code and one tick is the kit's `T`.
 
@@ -17,7 +17,7 @@ This PR adds `lean/Ruliology/CellularAutomata/Rule30RightWall.lean`, `Rule30Righ
 
 **Method.** The finite checks run on numbers. `run` is the backward sweep on one number with one index, and `run_back`, `next_fast` and `closed_fast` prove it equals the sweep on words. `fw` is one forward tick on a number, and `iter_fw` proves it is `T` on all bits.
 
-**Checks**, with Lean 4.35.0, at main `72253ae`:
+**Checks**, with Lean 4.35.0, at main `ec1355c` on these exact files:
 - `lake build Ruliology.CellularAutomata.Rule30RightWallCloud`: no warnings. On an M5 MacBook Pro the three modules take about 2 s, 2 s and 10 s, and at most 2.7 GB, within the catalog's limit for certificate data.
 - The kit's own `Check.lean --claim partial` passes all 36 headlines, 18, 12 and 6 by module: 433, 66 and 126 constants replayed, no new axioms, axioms among `propext`, `Classical.choice` and `Quot.sound`.
 - The kernel rejected all ten mutations tested: a window of each lock, a rank, the rank bound, a window of the cloud, a bit of the entry row, a letter, the sweep and the rain.
@@ -25,10 +25,10 @@ This PR adds `lean/Ruliology/CellularAutomata/Rule30RightWall.lean`, `Rule30Righ
 - The portal form, the same proofs in one module, passes `Check` at the verifier's kit `722a0c51` with 625 constants.
 - Not run: the full catalog build (`bash build_all.sh`).
 - The three files share namespace `Ruliology.CellularAutomata.Rule30RightWall`, as recorded in the proposed catalog namespace note.
-- Source review and a second plain-Python replay passed. The only change to Lean source since these compiler/checker receipts is a correction to the base module’s header comment.
+- Source review and a second plain-Python replay passed.
 
 **Prior art.** `Rule30ResetFreeRuns` and `Rule30InverseCascade.run_resets` in PR #60 for reset words, `Rule30GateTrap` for closed windows, `Rule30EdgeStaircases` for the rain pair. "Lock" here is not the `Lock` of the period-4 table, and "wall" is not the zero wall.
 
-Portal entry: PENDING.
+Portal entry: [R30-20261105-c15ef5](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261105-c15ef5).
 
 Nothing here concerns the center column or the Prize problems.

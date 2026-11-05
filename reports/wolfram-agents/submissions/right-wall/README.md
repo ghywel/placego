@@ -1,12 +1,14 @@
 # The wall of rain-tailed rows: letters, three locks and a closed cloud
 
-**Not posted. GPT review passed with the GC2684 corrections below. Local must rebuild the notebook on the revised essay before posting on the owner's word.** Prepared at the owner's word (5 November 2026, L1548, L1549). Local alone posts.
+**POSTED, L1550.** [R30-20261105-c15ef5](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261105-c15ef5): **Lean Verified** about three minutes after submission at 17:38Z. Kernel replay 625 constants, twenty headlines, standard axioms only, kit 722a0c51, Lean 4.35.0. Human Verified and Kit Contribution: not yet. Kit PR: [WolframInstitute/Rule30PrizeKit#171](https://github.com/WolframInstitute/Rule30PrizeKit/pull/171), branch `right-wall` at `09bfce7`, base main `ec1355c`, open and mergeable. The full catalog build has not been run.
+
+**Release, L1550.** Notebook sha256 `1ff0804b3cfc159a0d986c61ffe50ed8d2e7b95f1517226a60bc64f45761bacc`, 389,170 bytes, on verifier image 17, essay `8ea56616…`, abstract `4f295cc6…`, portal Lean `38fb1b2c…`, RESULT OK in 58 s at 3.6 GB, every gate passed. Receipts `cited/l1550-right-wall/nb3-receipts.tar.gz` (11669 bytes, 7687fd370b5f0938…). The portal takes at most twenty headlines, so [`submit-headlines.txt`](submit-headlines.txt) lists the twenty submitted, from the 36 in [`headlines.txt`](headlines.txt), which the notebook prints. `Check` passes on both lists. The kit form at main `ec1355c` passes on all 36: [output](../../../../tests/probes/wall_floor/package/check_kit_pr.txt).
 
 **Historical release, L1549 (superseded essay).** Notebook sha256 `f607c46dc5cf5786d943b7f8229240eff72a6773a41a46a832d6ce2ca5727ed8`, 385,769 bytes, on verifier image 17 (kit `722a0c51`), RESULT OK in 56 s at 3.6 GB, every gate passed: 8 Output cells, no Message cells, the first cell `True` with the 111 letters, the picture, the Abstract cell, the icon payload, the kit cell, a LeanEnvironment, all 36 axiom sets and KernelChecked 625. Receipts `cited/l1549-right-wall/nb2-receipts.tar.gz` (11,681 bytes, 32fcfcb74692b103…). `post.sh --dry` passes every pin against the live verifier. That notebook certifies the old essay `4d76bd72…`, not the GC2684 revision. Any change to the Lean, essay or abstract moves the pins and needs a new notebook.
 
 | Form | File | sha256 | Build (M5) | `Check` |
 |---|---|---|---|---|
-| Kit, base | [`Rule30RightWall.lean`](Rule30RightWall.lean) | `36466e05e1f1046d…` (header corrected; original build `444b24f3…`) | 2 s, 0.5 GB | pass at kit main 72253ae, 433 constants, 18 headlines |
+| Kit, base | [`Rule30RightWall.lean`](Rule30RightWall.lean) | `36466e05e1f1046d…` | 2 s, 0.5 GB | pass at kit main ec1355c, 433 constants, 18 headlines |
 | Kit, locks | [`Rule30RightWallLocks.lean`](Rule30RightWallLocks.lean) | `ead953d6a4c6d495…` | 2 s, 0.6 GB | pass, 66 constants, 12 headlines |
 | Kit, cloud and entry | [`Rule30RightWallCloud.lean`](Rule30RightWallCloud.lean) | `17ef5cc3a863ce60…` | 10 s, 2.7 GB | pass, 126 constants, 6 headlines |
 | Portal | [`Rule30Submission.lean`](Rule30Submission.lean) | `38fb1b2c43c6ea9b…` | 13 s, 3.0 GB | pass at the verifier's kit 722a0c51, 625 constants, 36 headlines, in 14 s at 3.3 GB |
@@ -30,7 +32,7 @@ Texts: [`title.txt`](title.txt), [`abstract.txt`](abstract.txt) (`4f295cc6…`, 
 
 [GC2684 review](../../../GPT-RIGHT-WALL-SUBMISSION-REVIEW-20261105.md) answers all eight questions. No theorem or proof body changed. The portal source remains `38fb1b2c43c6ea9b7e479380a11c9a9103e50e865336e09bbdad21d4612dc7bf`. The base module header and its generator now state the boundary exceptions and precise reset attribution. The text states L ≥ 2 and the shallowest-wall depth, narrows `no_floor` to the F family in the finite windows, labels moving merges COMPUTED, states the rank inequality, preserves cloud membership during lock entry, and excludes the rain pair from the open capture question.
 
-Local: regenerate the notebook with the existing driver on essay `8ea56616f362d5564846b72aa69288b078931925e224136e761cf69fe0935e1c`; require all existing gates and a fresh `post.sh --dry` against the live verifier. Recheck the commented base source at its new hash and retain the unchanged companion/portal receipts. Apply [`kit-integration.patch`](kit-integration.patch) after copying the three modules into a current kit checkout; it applies cleanly to `c63cde84`. Build/check the added modules and validate the import integration. A whole-catalog build remains unperformed and is not represented as passed. On passing exact-source release checks, GPT clearance stands without another prose round; Local alone posts on the owner's instruction.
+The release steps above are done (L1550).
 
 ## Original review questions (answered in GC2684)
 

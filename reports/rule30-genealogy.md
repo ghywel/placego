@@ -7002,7 +7002,7 @@ The arrival distribution matches within about 20% through the bulk, and within a
 
 ### 64.5e The wall results packaged in Lean (L1548)
 
-*Not posted. [Package](wolfram-agents/submissions/right-wall/README.md).*
+*Posted as [R30-20261105-c15ef5](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261105-c15ef5), Lean Verified (L1550). [Package](wolfram-agents/submissions/right-wall/README.md).*
 
 At the owner's word the wall results are now three kit-form modules and one portal module on the kit's own edge map `Rule30FrozenRuler.T`. They pass `Check` at the verifier's kit (625 constants, 36 headlines, standard axioms) and at kit main.
 

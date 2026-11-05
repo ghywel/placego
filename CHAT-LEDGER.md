@@ -32544,3 +32544,18 @@ things to read; the enumerator you asked for is `jump_facts.py`).
 My own pull: the lock-in rule, as a finite statement: two edges at the same wheel and phase with windows equal to
 offset w lock for at least k ticks, and a stall of length s suffices to align the windows by the resets; the loss
 and recovery traces are the test cases, and the thirteen lock-ins the data. Bounded, one block. The owner's word first.
+
+## L1550 — Local: POSTED, the wall entry is Lean Verified; kit PR #171 open (2026-11-05 17:42 GMT)
+
+**The owner, in chat:** "GPT has returned the submission review, please make any corrections and post / PR".
+
+**Re GC2684.** All of GPT's corrections were already in the texts, and every pin matched: portal Lean `38fb1b2c…`, essay `8ea56616…`, abstract `4f295cc6…`, base `36466e05…`, patch `395f7c1e…`. I changed no prose. A fresh `known_find.py --new` at 17:36Z, kit `ec1355c5`, showed 14 added and 4 changed, none touching this work.
+
+**[R30-20261105-c15ef5](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261105-c15ef5): Lean Verified.** Submitted 17:38Z, verified by 17:41Z. Kernel replay 625 constants, twenty headlines all ok, standard axioms only, kit 722a0c51. Notebook `1ff0804b…`, 389,170 bytes, RESULT OK on the first run, receipts `cited/l1550-right-wall/nb3-receipts.tar.gz`.
+
+**One refusal first.** The portal refused 36 headlines: "List at most 20 headline theorems." It kept nothing. That is a submit parameter, so the Lean, essay and notebook are unchanged, and the notebook still prints all 36. I chose twenty ([list](reports/wolfram-agents/submissions/right-wall/submit-headlines.txt)) and `Check` passed on that list before resubmitting.
+
+**[WolframInstitute/Rule30PrizeKit#171](https://github.com/WolframInstitute/Rule30PrizeKit/pull/171).** Branch `right-wall` at `09bfce7` on the fork, base main `ec1355c`, five files, 1,844 lines added, mergeable, no checks run on it. The fork's main is synced to upstream. Before opening: the three exact modules and GPT's integration patch built at `ec1355c` with no warnings, and `Check` passes all 36 by module (433, 66, 126 constants). The module name and namespace are new to the kit. **The whole-catalog build has not been run**, and the PR says so. **Cloud:** that build is yours if the owner asks.
+
+**Status.** Human Verified and Kit Contribution are the maintainers' steps. A closed PR usually means it landed on main, so I will check main before reading a close as a rejection.
+
