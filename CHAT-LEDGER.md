@@ -30956,3 +30956,39 @@ blocks as here; a day's block rather than an hour's. In `INSTINCT.md`.
 
 **Record searched:** genealogy §§29, 35, 63; `reports/GPT-RIGHT-WALL-WINDOWS-20261104.md`; the left-side packages. Nothing on a strip below a wall.
 
+
+## CL738 — Cloud: the pull continued ("Continue"): Proposition 8 whole, with its ticks. The sixteen left sides through wheel 894,235, the end of the period-16 stage. Stage 1 is the data, the sixteen strips realized as rows; predictions first (2026-11-05 00:57 GMT)
+
+**Record searched.** PROOFS §21 (Prop. 8: fifteen branch nodes at 53,207, 58,286, 72,575, 165,748, 174,449, 179,399,
+243,767, 350,243, 445,474, 482,608, 485,619, 537,692, 563,842, 603,582, 760,454; sixteen exits to period 32 at 87,867,
+183,184, 196,189, 229,338, 253,537, 271,596, 291,257, 527,724, 551,910, 555,813, 575,211, 634,886, 645,655, 667,052,
+770,532, 894,235; the single cell and its three flipped sides realize four of the histories) and §22 (Prop. 9: no white wheel
+on the period-32 stage below 67,108,864 but one, so each history has no event after its doubling in this range); CL736
+(the five strips through 165,749, the method); `rule30_tm5b.py` and `rule30_leftside_million.py` (the record's two codes
+for the tree, as words and as the seed's rows). Nothing in the kit or on the portal beyond 165,749 (ours).
+
+**The aim.** Every configuration with a leftmost black cell is on one of sixteen strips through wheel 894,235 from an
+explicit tick, each strip of period 32 by then (its own doubling inside the range), the classification with its shift
+bounded by 31, the sixteen realized and pairwise unrelated: Prop. 8 as a theorem through the end of its stage, with
+settling times. Stage 1, this entry: the rows. Stage 2: the modules, one per strip (its row of 894,236 bits and its own walk
+from its fork, the shared part by `low_congr` from its parent's module), the final module with the sixteen-way tree, the
+width a parameter of the base already, the walk in blocks of 128 rounds.
+
+**Stage 1, probe `tree16_data.py`** (substitute caps per invocation: ulimit 8 GiB, timeout 1,800 s; one strip per
+invocation, a loop of about thirty-two invocations; state and rows in local scratch, cited by digest). On 894,236 wheels:
+settle the single black cell (the row returns after 32 ticks: on its strip at every wheel), take the row at the next
+multiple of 32 ticks as `A0` at phase 0. Then, for each strip in turn: its thirty-two rows and words; its white wheels with
+the parity of the farther word (even: a fork, odd: a doubling); for each fork above the wheel where the strip itself was
+created, the sibling: the row with the child bit complemented, evolved until it returns after 32 ticks, taken at a
+multiple of 32 ticks so that the phases agree; the forced front at phase 0 by the walk; the lag-32 settling tick; digests.
+- **P-A1 (the tree).** Sixteen strips. The fork wheels found are exactly Prop. 8's fifteen branch depths, each the creation
+  of one strip; the doubling wheels found are exactly Prop. 8's sixteen exits less one (the white wheel below the doubled
+  child), one per strip; no other white wheel above 399. Lean 80%. Counterfactual: a missing or extra event means the
+  realization scheme (siblings at forks only, one per fork) misses a branch, or a depth convention differs by one; reported
+  with the numbers and Prop. 8 reread.
+- **P-A2 (the fronts).** The forced front at 894,235 lies between 1,760,000 and 1,820,000 on every strip (two ticks a
+  wheel); the single cell's lag-32 edge crosses 894,235 between 1,170,000 and 1,220,000 (four thirds). Lean 70%.
+- **P-A3 (the cost).** All invocations finish within 60 minutes of wall time in all, none near the cap. Lean 65%.
+  Counterfactual: a sibling that does not return after 32 ticks within 1,800 s of evolution would say its upper wheels
+  settle slower than two ticks a wheel, which the theorem's form through 165,749 says cannot happen; the run would be
+  repeated from a saved row with a longer horizon and the figure reported.
