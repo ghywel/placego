@@ -1,0 +1,48 @@
+process 1
+DEEPEST 141 at total ticks 59289293
+DEEPEST 145 at total ticks 59289294
+progress ticks 4294967296 seconds 218 captures 0 quiet 0 AB 0 deepest 145
+progress ticks 8589934592 seconds 430 captures 0 quiet 0 AB 0 deepest 145
+progress ticks 12884901888 seconds 641 captures 0 quiet 0 AB 0 deepest 145
+progress ticks 17179869184 seconds 852 captures 0 quiet 0 AB 0 deepest 145
+progress ticks 21474836480 seconds 1062 captures 0 quiet 0 AB 0 deepest 145
+progress ticks 25769803776 seconds 1273 captures 0 quiet 0 AB 0 deepest 145
+progress ticks 30064771072 seconds 1484 captures 0 quiet 0 AB 0 deepest 145
+ticks 30383538176 chains 1 captures 0 quiet 0 AB 0 deepest 145
+agreement depth tail: >=145:684 >=140:2073 >=135:2831 >=130:6505 >=125:16623 >=120:53770 >=115:87965 >=110:115337 >=105:13713187 >=100:40451956 >=95:81465008 >=90:402903087 >=85:1563864186 >=80:1947419412 >=75:2076297489 >=70:2272168552 >=65:2738696089 >=60:3703984127
+process 2
+DEEPEST 141 at total ticks 38352250
+DEEPEST 145 at total ticks 38352251
+progress ticks 4294967296 seconds 218 captures 0 quiet 0 AB 0 deepest 145
+progress ticks 8589934592 seconds 430 captures 0 quiet 0 AB 0 deepest 145
+progress ticks 12884901888 seconds 640 captures 0 quiet 0 AB 0 deepest 145
+progress ticks 17179869184 seconds 851 captures 0 quiet 0 AB 0 deepest 145
+progress ticks 21474836480 seconds 1062 captures 0 quiet 0 AB 0 deepest 145
+progress ticks 25769803776 seconds 1272 captures 0 quiet 0 AB 0 deepest 145
+progress ticks 30064771072 seconds 1483 captures 0 quiet 0 AB 0 deepest 145
+ticks 30417092608 chains 1 captures 0 quiet 0 AB 0 deepest 145
+agreement depth tail: >=145:661 >=140:2000 >=135:2738 >=130:6366 >=125:16174 >=120:52464 >=115:85743 >=110:112483 >=105:13735105 >=100:40508222 >=95:81574100 >=90:403409233 >=85:1565861211 >=80:1949888587 >=75:2078873295 >=70:2274905736 >=65:2741872533 >=60:3708192499
+process 3
+DEEPEST 141 at total ticks 6804234
+DEEPEST 145 at total ticks 6804235
+progress ticks 4294967296 seconds 219 captures 0 quiet 0 AB 0 deepest 145
+progress ticks 8589934592 seconds 430 captures 0 quiet 0 AB 0 deepest 145
+progress ticks 12884901888 seconds 642 captures 0 quiet 0 AB 0 deepest 145
+progress ticks 17179869184 seconds 853 captures 0 quiet 0 AB 0 deepest 145
+progress ticks 21474836480 seconds 1064 captures 0 quiet 0 AB 0 deepest 145
+progress ticks 25769803776 seconds 1275 captures 0 quiet 0 AB 0 deepest 145
+progress ticks 30064771072 seconds 1486 captures 0 quiet 0 AB 0 deepest 145
+ticks 30349983744 chains 1 captures 0 quiet 0 AB 0 deepest 145
+agreement depth tail: >=145:637 >=140:1929 >=135:2671 >=130:6246 >=125:16333 >=120:53188 >=115:86803 >=110:113616 >=105:13694755 >=100:40382645 >=95:81320258 >=90:402097578 >=85:1560701045 >=80:1943470508 >=75:2072131895 >=70:2267717588 >=65:2733623836 >=60:3697785763
+process 4
+DEEPEST 141 at total ticks 18746367
+DEEPEST 145 at total ticks 18746368
+progress ticks 4294967296 seconds 218 captures 0 quiet 0 AB 0 deepest 145
+progress ticks 8589934592 seconds 430 captures 0 quiet 0 AB 0 deepest 145
+progress ticks 12884901888 seconds 641 captures 0 quiet 0 AB 0 deepest 145
+progress ticks 17179869184 seconds 852 captures 0 quiet 0 AB 0 deepest 145
+progress ticks 21474836480 seconds 1063 captures 0 quiet 0 AB 0 deepest 145
+progress ticks 25769803776 seconds 1273 captures 0 quiet 0 AB 0 deepest 145
+progress ticks 30064771072 seconds 1484 captures 0 quiet 0 AB 0 deepest 145
+ticks 30383538176 chains 1 captures 0 quiet 0 AB 0 deepest 145
+agreement depth tail: >=145:627 >=140:1901 >=135:2595 >=130:6064 >=125:15969 >=120:52657 >=115:86498 >=110:113647 >=105:13710215 >=100:40436595 >=95:81427010 >=90:402575007 >=85:1562456154 >=80:1945671401 >=75:2074495889 >=70:2270320941 >=65:2736750889 >=60:3701968859
