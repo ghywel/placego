@@ -6996,7 +6996,7 @@ The arrival distribution matches within about 20% through the bulk, and within a
 **The run (MEASURED).** The window chain at W = 256 with fair lower states, four independent processes on the M5, 1.215 · 10^11 ticks in all, no resampling ([output](../tests/probes/wall_floor/capture_run.out)). This is a surrogate with an assumed input law, not real rows.
 - **No third-lock capture was detected in 121,534,152,704 new ticks.** The four trajectories start from A; exact membership is checked from tick 300. Earlier entry would persist by lock closure. A 95% conversion of the combined exposure into 2.4 · 10^(−11) per tick and a mean wait requires a Poisson/constant-hazard or another justified sampling model. It does not follow from four dependent trajectories alone, and does not exclude finite-age e_m near 1e-10 (GC2683).
 - **No period-three quiet flag or long-AB flag fired.** The quiet detector needs twenty million consecutive ticks, leaving a final censoring interval. It does not detect every possible letter-period lock. No universal exclusion of unknown locks follows (GC2683).
-- **Agreement with the lock never passed 145.** The histogram records exactly 2,609 ticks at depth 145, about 2.1 · 10^(−8) of ticks, spread over all four processes, and none at 146 or deeper. These are occupancy ticks, not certified independent excursions (GC2683). Yet the verified witness of §64.5 passes straight through. So chain rows and the witness take different routes, and the chain's route has a wall at 145. This is measured, not proved. The route the witness takes, a straight climb after a burst, was not seen to complete.
+- **Agreement with the lock never passed 145.** The histogram records exactly 2,609 ticks at depth 145, about 2.1 · 10^(−8) of ticks, spread over all four processes, and none at 146 or deeper. These are occupancy ticks, not certified independent excursions (GC2683). Yet the verified witness of §64.5 passes straight through. **Corrected in §64.5f: 145 is the peak of one corridor, not a wall, and the chain does follow the witness through tick 18.** So chain rows and the witness take different routes, and the chain's route has a wall at 145. This is measured, not proved. The route the witness takes, a straight climb after a burst, was not seen to complete.
 
 **Competing strips (COMPUTED).** For `AB`, candidate free-graph delays were reported at offsets 12, 18 and 34, in phase 0 (cycle certification remains pending, GC2683), and finite periodic solutions of periods 2 and 4 leave the lock's strip at those offsets and phase ([output](../tests/probes/wall_floor/cyclecheck.out)). Along the third lock's strip, exact period-6 alternatives that run at least 60 cells deeper branch off at offsets 23, 25, 34, 63, 83 and 95, and others run 20 to 40 cells deeper at 78, 81, 119, 131 and 142 ([output](../tests/probes/wall_floor/branches6.out)). Quiet rows' plateaus of agreement lie near 34, 83, 95, 119 and 131 (§63.8). So the reading is that quiet cloud rows hover on competing strips that share the lock's top cells. This is a match of offsets, not a cell-by-cell identity, and I have not compared the rows with those alternatives directly.
 
@@ -7017,6 +7017,35 @@ At the owner's word the wall results are now three kit-form modules and one port
 **Speed.** The kernel now runs the checks on numbers (`run`, `next_fast`, `closed_fast`). The cloud fell from 57 s to 9 s.
 
 **Prior art.** All eight words F(b, u, v) contain a word 0 1^(3m+1) 0 with a cell above it, so `Reset.above` is known in kind (`Rule30ResetFreeCore`, kit PR 60, and G13 in our record). The entry credits this and claims only the shape that returns.
+
+### 64.5f The stop at 145: the peak of one corridor, not a wall (L1551–L1552)
+
+*Local, at the owner's word, following GC2683's continuation. Everything here is about the fair-input chain and the strip, not real rows. Corrects §64.5d. Outputs: [`tests/probes/wall_floor/`](../tests/probes/wall_floor/README.md).*
+
+**Not a dead end (COMPUTED).** The rise rule of §64.5b is a graph on (phase, D). A climb in backward time walks it in reverse. No node at D = 145, in any phase, is a dead end ([output](../tests/probes/wall_floor/risegraph.out)). So the strip itself holds no barrier at 145.
+
+**One corridor (MEASURED).** All 51 hits at 145 in 2.1 · 10^9 ticks follow one route through the same 14 ticks, in the form phase:depth ([output](../tests/probes/wall_floor/spec_read.out)):
+
+    2:100 3:105 4:108 5:113 0:118 1:123 2:126 3:131 4:131 5:131 0:136 1:141 2:145 3:144 4:131
+
+Their top 100 cells are identical from 18 ticks before the hit to 8 after, and at the hit they agree with one another to 147 cells or more. Above depth 108 the chain has little choice: 75,237 excursions fall into 42 routes over 14 ticks ([output](../tests/probes/wall_floor/spec_routes_tree.out)). The deep cells are not fresh chance. Rows that share a top word keep sharing it, deeper each tick, so the outcome is fixed some 20 ticks ahead.
+
+**Why the corridor peaks (exact on the strip, measured on the rows).** The corridor reaches column 131 in phase 3, with the wrong cell there. In phases 4 and 5 column 131 is a rise exception of §64.5b, `..##` and `#.#` ([output](../tests/probes/wall_floor/gate131.out)), so the first difference stays at 131. In 4.2 · 10^9 ticks with phases counted, depth in phases 4 and 5 never passed 131 ([first run](../tests/probes/wall_floor/spec_run_summary.out), [second](../tests/probes/wall_floor/spec_routes_summary.out)). Depths 136, 141 and 145 in phases 0, 1 and 2 are what the same row shows while column 131 happens to be right. Column 131 goes wrong again in phase 4 and the depth falls back. So 145 is where this one word first differs in phase 2, and nothing more.
+
+**The cell that separates them (exact).** Phase 3 has a black cell at offset 128, so for a row that agrees there, the rule gives Y131 = ¬(Y132 ∨ Y133) in phase 4. All 51 specimens have offset 132 black there. The witness has 132 and 133 white. This is a consequence and not a cause, since those cells come up from below.
+
+**The witness's route is used by the chain (MEASURED).** A chain row is on the route at witness tick k if it shares that witness row deeper than the witness's own first difference from the lock ([output](../tests/probes/wall_floor/track_run.out), 2.13 · 10^9 ticks):
+
+| Witness tick k | 28 | 27 | 26 | 25 | 23 | 21 | 19 | 18 | 17 |
+|---|---|---|---|---|---|---|---|---|---|
+| Witness depth D | 89 | 94 | 99 | 103 | 111 | 115 | 121 | 126 | 131 |
+| Chain rows on the route | 202,687 | 202,687 | 1,498 | 816 | 642 | 496 | 496 | 3 | 0 |
+
+The witness reads depth above 145 only from tick 12. So the chain follows it for most of the way, and depth above 145 would need six more steps past tick 18. At about 170 rows at tick 18 in the direct run, a pass rate below about 0.4 a step would be enough to show nothing past 145. The absence of depth 146 therefore says little about the route that matters.
+
+**The gates (COMPUTED, exact).** A backward tick is a sweep up the row with a state of two cells. For rows that share a witness row above offset c, each of the four states gives one first difference from the next witness row ([output](../tests/probes/wall_floor/gate_state.out)). The sharp losses are gates: at ticks 27→26, 19→18 and 18→17 a wrong state sends the first difference to one fixed offset, 95, 102 and 127, and those are exactly the depths at which the tracked rows left the route (201,189 at 95, 493 at 102, 3 at 127). For most c at the gate of tick 19→18, one state of four passes. Measured passage there is 3 of 496, well below 1/4, because the rows arriving share their deep cells.
+
+**What this changes.** "The chain's route has a wall at 145" in §64.5d is withdrawn. The surrogate's silence past 145 is weak evidence about entry, and the next useful object is the route graph, with its gates, and not the depth histogram. Whether the route can be finished by the chain, and how often, is still open.
 
 ### 64.6 What this does not settle
 

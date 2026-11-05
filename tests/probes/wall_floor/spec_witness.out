@@ -1,0 +1,35 @@
+witness route, backward time, tick:phase:depth
+110:0:12 109:1:17 108:2:20 107:0:19 106:2:13 105:0:14 104:2:13 103:0:14 102:2:13 101:0:14 100:2:13 99:0:17 98:2:13 97:0:14 96:1:19 95:2:20 94:0:14 93:2:13 92:0:17 91:2:13 90:0:14 89:1:19 88:2:20 87:0:14 86:2:13 85:0:14 84:2:13 83:0:17 82:1:22 81:5:26 80:0:24 79:1:23 78:2:22 77:0:19 76:2:13 75:0:14 74:2:13 73:0:14 72:2:13 71:0:17 70:2:13 69:0:14 68:1:19 67:2:20 66:0:14 65:2:13 64:0:17 63:2:13 62:0:14 61:1:19 60:2:20 59:0:14 58:2:13 57:0:14 56:2:13 55:0:17 54:1:22 53:5:26 52:3:30 51:4:33 50:5:32 49:0:37 48:1:40 47:2:45 46:3:49 45:4:53 44:5:57 43:0:61 42:1:65 41:2:65 40:3:70 39:4:71 38:5:75 37:0:64 36:1:63 35:2:65 34:3:69 33:4:73 32:5:78 31:0:82 30:1:86 29:2:88 28:3:89 27:4:94 26:5:99 25:0:103 24:1:107 23:2:111 22:3:113 21:4:115 20:5:119 19:0:121 18:1:126 17:2:131 16:3:134 15:4:139 14:5:142 13:0:143 12:1:148 11:2:152 10:3:157 9:4:160 8:5:165 7:0:175 6:1:175 5:2:175 4:3:175 3:4:175 2:5:175 1:0:175 0:1:175 -1:2:175 -2:3:175 -3:4:175 -4:5:175 -5:0:175 -6:1:175 -7:2:175 -8:3:175 -9:4:175 -10:5:175 -11:0:175 -12:1:175 -13:2:175 -14:3:175 -15:4:175 -16:5:175 -17:0:175 -18:1:175 -19:2:175 -20:3:175 -21:4:175 -22:5:175 -23:0:175 -24:1:175 -25:2:175 -26:3:175 -27:4:175 -28:5:175 -29:0:175 -30:1:175 -31:2:175 -32:3:175 -33:4:175 -34:5:175 -35:0:175 -36:1:175 -37:2:175 -38:3:175 -39:4:175 -40:5:175
+corridor rows against witness rows: for each corridor tick, the witness tick with the deepest common word
+-20 phase 0 lock depth 89 best witness tick 1 common depth 89
+-19 phase 1 lock depth 89 best witness tick 0 common depth 89
+-18 phase 2 lock depth 82 best witness tick 5 common depth 82
+-17 phase 3 lock depth 81 best witness tick 4 common depth 81
+-16 phase 4 lock depth 83 best witness tick 3 common depth 83
+-15 phase 5 lock depth 88 best witness tick 2 common depth 88
+-14 phase 0 lock depth 92 best witness tick 1 common depth 92
+-13 phase 1 lock depth 96 best witness tick 0 common depth 96
+-12 phase 2 lock depth 100 best witness tick 5 common depth 100
+-11 phase 3 lock depth 105 best witness tick 4 common depth 105
+-10 phase 4 lock depth 108 best witness tick 3 common depth 108
+-9 phase 5 lock depth 113 best witness tick 2 common depth 113
+-8 phase 0 lock depth 118 best witness tick 1 common depth 118
+-7 phase 1 lock depth 123 best witness tick 0 common depth 123
+-6 phase 2 lock depth 126 best witness tick 5 common depth 126
+-5 phase 3 lock depth 131 best witness tick 4 common depth 131
+-4 phase 4 lock depth 131 best witness tick 3 common depth 131
+-3 phase 5 lock depth 131 best witness tick 2 common depth 131
+-2 phase 0 lock depth 136 best witness tick 1 common depth 136
+-1 phase 1 lock depth 141 best witness tick 0 common depth 141
+0 phase 2 lock depth 145 best witness tick 5 common depth 145
+1 phase 3 lock depth 144 best witness tick 4 common depth 144
+2 phase 4 lock depth 131 best witness tick 3 common depth 131
+3 phase 5 lock depth 131 best witness tick 2 common depth 131
+4 phase 0 lock depth 114 best witness tick 1 common depth 114
+5 phase 1 lock depth 111 best witness tick 0 common depth 111
+6 phase 2 lock depth 109 best witness tick 5 common depth 109
+7 phase 3 lock depth 108 best witness tick 4 common depth 108
+8 phase 4 lock depth 108 best witness tick 3 common depth 108
+9 phase 5 lock depth 104 best witness tick 2 common depth 104
+10 phase 0 lock depth 95 best witness tick 1 common depth 95
+11 phase 1 lock depth 91 best witness tick 0 common depth 91
