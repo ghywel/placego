@@ -6,7 +6,7 @@ the chains, and the theorems. The numbers in the kernel facts come from this Pyt
 Usage: python3 five_fronts_gen.py OUTFILE   (no OUTFILE: print the segments only)."""
 import re, sys, time, hashlib
 import numpy as np
-K = 165750; MASK = (1 << K) - 1; T_END = 340000; P = 32; JMAX = 165749
+K = 165750; MASK = (1 << K) - 1; T_END = 340000; P = 32; JMAX = 165749; BLK = 512   # rounds of 32 ticks per kernel fact
 SRC = 'reports/wolfram-agents/submissions/four-left-sides/Rule30FourLeftSides.lean'
 src = open(SRC).read()
 def step(v): return ((v << 2) ^ ((v << 1) | v)) & MASK
@@ -112,16 +112,16 @@ whose farther word has even parity, so its child keeps period 16 and the complem
 (`white_fork`). The settling recursion of `Rule30FrontLaw`, read on each strip's thirty-two-row cycle and carried through
 the tree (`Rule30FiveFrontsBase`), gives `forced_front_five`: every array with the left-diagonal recurrence and a black start
 carries one of the five strips on every wheel through 165,749 from strip tick `F j`, at a shift of at most `15 + 16 = 31`.
-The fronts at wheel 165,749 are 333,333 (`A0`), 333,257 (`A1`), 333,503 (`B0` and `B2`) and 334,150 (`B1`), by Local's walk
-(`seg_black`, L1524) at thirty-two ticks a round; so from strip tick 334,150, that is from tick at most 334,181 of its own
+The fronts at wheel 165,749 are 333,333 (`A0`), 333,257 (`A1`), 333,503 (`B0` and `B2`) and 334,150 (`B1`), by the walk
+(`seg_black`) at thirty-two ticks a round, in blocks; so from strip tick 334,150, that is from tick at most 334,181 of its own
 clock, every configuration with a leftmost black cell carries the whole of its strip through 165,749
 (`forced_front_five_uniform`, `forced_front_five_left_side`, `forced_front_five_seed`). The five strips are realized by finite
 rows, no time shift relates two of them, and each configuration is on exactly one (`exactly_five_left_sides`,
 `on_exactly_one`); the classification holds with its shift bounded by 31 (`classification_bounded`). As arithmetic, iterating
 `v ↦ 4 v ⊕ (2 v ∨ v)` modulo `2 ^ 165750` from any odd `v` reaches one of the five rows (`odd_reaches_one_of_five`).
 The rows: `A0` is the single cell's row at tick 340,000, `A1`, `B0`, `B1` are the rows of `Rule30FourLeftSides` evolved to tick
-340,000, `B2` is `B0` with bit 165,749 complemented. Cloud (CL736), after L1513, L1524 and the record's Proposition 8 (the
-tree of forks and doublings, computed). Nothing here concerns the center column or the Prize problems, and 165,749 is
+340,000, `B2` is `B0` with bit 165,749 complemented. The tree of forks and doublings to this depth was first found by
+computation, in the contributors' record; here it is a theorem as far as it is used. Nothing here concerns the center column or the Prize problems, and 165,749 is
 where these rows stop, not a claim about what happens beyond it.
 -/
 
@@ -341,11 +341,38 @@ theorem classification_bounded {a : Nat → Nat → Bool} (ha : Recurrence a) (h
 theorem a_low : frun wA0 0 400 (0, 1) = (783, 784) := by decide +kernel
 ''')
 # the walk segments and chains
+def walk_sim(n, ticks, t, j):
+    c = cyc[n]
+    for _ in range(ticks):
+        j += (c[t % P] >> j) & 1; t += 1
+    return j
 def seg_text(n, lab, j0, cnt):
     a, b, A, B, h, g, d = seg_params(n, j0, cnt)
-    return (f"theorem {lab} : frun w{n} {j0} {cnt} ({a}, {b}) = ({A}, {B}) :=\n"
-            f"  seg_black (K := K) (v := {n}) (h := {h}) (g := {g}) (d := {d}) (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)\n"
-            f"    (by decide +kernel) (by decide +kernel) (by decide +kernel) (by decide +kernel)\n")
+    R = f"(rowAt K {n})"; out = []
+    j = j0 + 1; t = b
+    j1 = walk_sim(n, h, t, j); t += h
+    out.append(f"theorem {lab}_h : walk {R} {h} {b} {j0 + 1} = {j1} := by decide +kernel\n")
+    blocks = [BLK] * (g // BLK) + ([g % BLK] if g % BLK else [])
+    jj = j1; facts = []
+    for i, rounds in enumerate(blocks):
+        jn = walk_sim(n, P * rounds, t, jj); t += P * rounds
+        out.append(f"theorem {lab}_b{i} : w32 {R} {rounds} {jj} = {jn} := by decide +kernel\n")
+        facts.append(f"{lab}_b{i}"); jj = jn
+    j2 = jj
+    def nest(i):
+        if i == len(facts) - 1: return facts[i]
+        return f"(w32_chain _ (by decide) {facts[i]} {nest(i + 1)})"
+    if len(facts) == 1:
+        out.append(f"theorem {lab}_g : w32 {R} {g} {j1} = {j2} := {facts[0]}\n")
+    else:
+        out.append(f"theorem {lab}_g : w32 {R} {g} {j1} = {j2} :=\n  {nest(0)}\n")
+    J = walk_sim(n, d, t, j2)
+    assert J == j0 + cnt - 1 and t == b + h + P * g, (n, lab, J, j0 + cnt - 1)
+    out.append(f"theorem {lab}_d : walk {R} {d} ({b} + {h} + 32 * {g}) {j2} = {j0 + cnt - 1} := by decide +kernel\n")
+    out.append(f"theorem {lab} : frun w{n} {j0} {cnt} ({a}, {b}) = ({A}, {B}) :=\n"
+               f"  seg_black (K := K) (v := {n}) (h := {h}) (g := {g}) (d := {d}) (by decide) (by decide) (by decide) (by decide) (by decide) (by decide)\n"
+               f"    (fastWalk_of _ {lab}_h {lab}_g {lab}_d) (by decide +kernel) (by decide +kernel) (by decide +kernel)\n")
+    return "".join(out)
 def white_text(n, lab, j0, wfact):
     a, b = S[n][j0]
     return f"theorem {lab} : frun w{n} {j0} 1 ({a}, {b}) = ({b}, {b}) := frun_white (by decide) {wfact}\n"
