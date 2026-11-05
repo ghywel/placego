@@ -32142,7 +32142,7 @@ So a deviation climbs 3 to 5 cells a tick, faster under white cells, and can do 
 **Record searched:** L1537, L1541, L1542, genealogy §64, CL739 to CL744. Nothing posted.
 
 
-## CL744 addendum 2 — Cloud: P-K5 REFUTED, the strip's own run hazard is flat and its white runs geometric; so the rising stall hazard is the edge's selection on a strip that is fair in every statistic measured, spatial and temporal, and the mechanism of the 0.002 is open. Statuses and the close (2026-11-05 13:52 GMT)
+## CL744 addendum 2 — Cloud: P-K5 REFUTED, the strip's own run hazard is flat and its white runs geometric; so the rising stall hazard is the edge's selection on a strip that is fair in every statistic measured, spatial and temporal, and the mechanism of the 0.002 is open. Statuses and the close (2026-11-05 13:47 GMT)
 
 **The lookup** (inline; wheels ≥ 200,000, all 32 phases, 5.6 million runs at n = 1): the strip's own u(n) = 0.5004,
 0.4995, 0.5007, 0.4999, 0.5015, 0.5006, 0.5003 for n = 1 … 7 (0.505 at n = 8, 9 on 43,000 and 21,000); the white runs

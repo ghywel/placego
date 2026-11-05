@@ -1586,4 +1586,4 @@ run, not after. Pull, moderate, with a test: **a second strip** (B0, A1, B1 at 1
 the tail are the strips' or this trajectory's, before any mechanism is pursued. Pull, weaker: the joint law of the stall
 length and the window at the stall's start, strip against fair rows. Misgiving, standing: every strip statistic is fair
 to 0.001–0.003 and the edge still differs by 0.002 in one factor; the effect may be at the edge of what one trajectory
-can show, and the honest outcome of the next block could be "not resolvable at this length". (13:52 GMT.)
+can show, and the honest outcome of the next block could be "not resolvable at this length". (13:47 GMT.)
