@@ -33042,3 +33042,37 @@ Caps: substitute (CL710), ulimit 8 GiB, timeout 1,800 s, four processes, about f
 
 **Record searched:** `known_find.py --new` at 19:55Z, kit `e0e50996`, 20 added, 2 changed, none touching the error edge.
 
+
+## CL750 addendum 1 — Cloud: the smoke test corrects the question before the runs: agreement with the seed is blocked at every doubling whose phase differs, so the race against the seed is moot for short prefixes; what decides the branch is the walk's phase at the fork, and the predictions are revised accordingly before any completion is run (2026-11-05 20:05 GMT)
+
+**What the ten-second smoke test showed** (one completion with P = 1, evolved beside the seed to 80,000 ticks, no
+identification): the shared prefix with the seed climbs to wheel 8 by tick 5,000 and stays there for ever. By hand:
+wheel 7 is a doubling wheel, white for ever on both configurations, so an error at wheel 8 can never heal (`heal_iff`),
+and the completion's wheel 8 carries the strip's word at *its* phase, which differs from the seed's whenever the free
+choice at the doubling went the other way (half the time at each of the doublings 2, 7, 28, 399, so the phases agree
+through wheel 400 for about one completion in sixteen). This is GC2635's 16-tick correction read from below: a
+completion of a short prefix never agrees with the seed above the first doubling where their clocks differ, however
+long it runs. So the race criterion of CL750, "the shared prefix covers the fork wheel at the seed's last black", can
+only be met by completions that share the seed's phase at every doubling below the fork, in practice P > 399 (the
+doubling at 399 is the last below the first fork), and for P = 1 it is moot: those completions are "free" in the
+criterion's sense, which says nothing about their branch.
+
+**What decides the branch for the free ones, by hand (PROOF-SKETCH, from CL748–CL749):** the branch at a fork is the
+strip's child bit at the tick the front clears the fork, read in the strip's clock, and two fronts over the same
+strip, whatever their phases, are locked to each other for 96% of the wheels (CL746, two configurations on A0). A
+completion that reaches a fork in a locked stretch clears it at the same strip phase as the seed and takes the seed's
+branch; one in an excursion clears it at an arbitrary phase and takes the other branch about half the time (the A0
+child word is black at three of the six black ticks of the word below it). So a random completion should take the
+other branch at a fork with probability of order 2%, at every P, and nearly all random completions should end on A0
+through 165,749 (two forks on A0's path). This is not what P-P2 said, and P-P2 is withdrawn before the run; P-P1
+stands (for completions whose shared prefix is not blocked); P-P3 stands.
+
+**Revised predictions, before the runs.**
+- **P-P2′ (the rates):** at each of P = 1, 500, 2,000, 20,000, at least 10 of 12 completions settle on A0; over the 48,
+  the completions off A0 number 0 to 4, and each of them is on A0.53207 (or a descendant) or A0.58286. Lean 60%.
+  Counterfactual: a substantial share off A0 at P = 1 (say 4 or more of 12): the fronts of a completion and of the seed
+  are not locked at the forks as two rows on A0 were, and the branch is closer to a coin for short prefixes.
+- **P-P4 (the block):** at P = 1 the shared prefix with the seed is below wheel 400 at 71,115 in at least 9 of 12
+  completions (blocked at 8, 29 or 400 by a phase difference at a doubling), and covers both forks in at most 2 of 12;
+  at P = 500 and above it is never blocked below the forks and covers 53,207 at 71,115 in at least 10 of 12. Lean 65%.
+- **P-P1** as in CL750 (covering ⟹ the seed's branch, no exception), **P-P3** as in CL750.
