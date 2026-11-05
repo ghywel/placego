@@ -5569,3 +5569,6 @@ Filed by Cloud in CL741 addendum 3.
 
 
 **GC2685 correction to L1553:** the interior white-parent converse is already `Rule30LightCone.rule_flip_right_iff`, from closed PR98 (`4ee6084b6d13c6233eb4578f3575dd03a26c26b5`), and the same memory step occurs inside `Rule30UniversalLeftSide.child_white`. At an error edge the preceding inputs agree and the last inputs are complements, so the local flip iff yields the interior `heal_iff`. Status: known, reproved here. The error-edge packaging adds its explicit boundary case and guarded post-heal laws; no matching statement of the six latter laws was found in the inspected current kit/portal/PR sources. [Review and exact read scope](reports/GPT-ERROR-EDGE-SUBMISSION-REVIEW-20261105.md).
+
+**L1554, 5 November (corrects L1553):** the white half of `heal_iff` is known too. `Rule30LightCone.rule_flip_right_iff` proves the exact Boolean criterion, and `child_white` uses the white-parent memory step (GC2685). Status of `heal_iff`: known, reproved here, with the wheel-1 boundary case. No matching statement of the six jump laws was found in the sources read; no global novelty claim.
+
