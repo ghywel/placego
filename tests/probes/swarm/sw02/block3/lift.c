@@ -218,7 +218,8 @@ static inline int is_target(u64 w, int W) {
     if ((w & 1) && entry16[w & 0xFFFF]) return 1;
     if (fam_under(w, W)) return 2;
     if (use_lock7 && W >= lockw && inset(lockset, nlock, w & ((1ULL << lockw) - 1))) return 3;
-    if (W >= 45 && inset(l7b, nl7b, w & ((1ULL << 45) - 1))) return 4;
+    /* lock-7b has two exits under the extra, nonphysical pq moves. */
+    if (!MODE && W >= 45 && inset(l7b, nl7b, w & ((1ULL << 45) - 1))) return 4;
     return 0;
 }
 

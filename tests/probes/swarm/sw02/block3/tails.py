@@ -27,7 +27,7 @@ def in_family(x, W):
             if (q, (x >> k) & 0x1FFF) in wall: return True
     return False
 def in_lock(x, W):
-    return (W >= lockw and (x & ((1 << lockw) - 1)) in lock) or (W >= 45 and (x & ((1 << 45) - 1)) in L7B)
+    return (W >= lockw and (x & ((1 << lockw) - 1)) in lock) or (mode == 'xx' and W >= 45 and (x & ((1 << 45) - 1)) in L7B)
 Rs = [int(x) for x in open(rows_file).read().split()]
 tails = {}
 for R in Rs:

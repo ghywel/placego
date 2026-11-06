@@ -28,7 +28,8 @@ if not smoke:
     assert int(gate[1]) <= 4189
 for mode in ('xx', 'pq'):
     s = text(mode)
-    assert re.search(r'closure failures: lock-7 set 0, lock-7b set 0', s), mode
+    expected_bad7b = 0 if mode == 'xx' else 2
+    assert re.search(r'closure failures: lock-7 set 0, lock-7b set ' + str(expected_bad7b) + r'\b', s), mode
 
 def unresolved(path):
     result = {}

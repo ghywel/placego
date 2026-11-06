@@ -78,7 +78,7 @@ def target(c, W):
         for k in range(6, W - 12, 7):
             t |= (((c ^ np.int64(PAT[q] & ((1 << k) - 1))) & np.int64((1 << k) - 1)) == 0) & wall[q, (c >> np.int64(k)) & 0x1FFF]
     if W >= lockw: t |= np.isin(c & np.int64((1 << lockw) - 1), lock)
-    if W >= 45: t |= np.isin(c & np.int64((1 << 45) - 1), L7B)
+    if a.mode == 'xx' and W >= 45: t |= np.isin(c & np.int64((1 << 45) - 1), L7B)
     return t
 
 def edges(c, W):

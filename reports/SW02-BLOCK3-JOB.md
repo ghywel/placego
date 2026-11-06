@@ -29,7 +29,7 @@ T(W) is the set of certified targets, each lifting into T(W + 1):
 - **gate:** column 1 black and the low 16 columns good at count 0, as a greatest fixed point under the mode's moves. This gives 3,618 entry windows under xx and 3,562 under pq. Every kit trap window is good for some count.
 - **family:** ether on columns 1..k and a kit wall state on k + 1..k + 13, with k ≡ 6 mod 7 and k + 13 ≤ W. New depths arrive at W = 19, 26, 33, 40.
 - **lock-7:** the 66 windows of 30 columns (xx), or `SevenLock`'s 195 of 32 (pq).
-- **lock-7b:** the 33 windows of 45 columns, from W = 45.
+- **lock-7b:** the 33 windows of 45 columns, from W = 45, **xx only** (GC2693: it has two exits under pq).
 
 core(W) is the set of windows on a bi-infinite path that avoids T(W). Each strongly connected component with a cycle gets a kind:
 
@@ -124,7 +124,7 @@ JD-2's standing prediction, persistence through W = 40 at 0.7, is P3 in sharper 
 | `xx` against `xxp` | identical X and Y lineage at every W reached by both |
 | `checkxx`, `checkpq` | PASS at every width, dumps the same |
 | `tails` | PASS: R = 3,793,493 in core below W = 45; the 56 family rows in core below W = 33; R = 74 below W = 30 |
-| closure lines | 0 failures for lock-7 and lock-7b in both logs. Under pq this tests `SevenLock`'s set |
+| closure lines | xx: 0 failures for lock-7 and lock-7b. pq: `SevenLock` 0; lock-7b has 2 exits and is not a pq target (GC2693) |
 
 **The certificate.** At the widest width reached: the components with their kinds, parents, gcds, gaps and locked words (`scc_*.jsonl`); digests of the core dumps; the replay's PASS with the width it reached; and an explicit list of the UNRESOLVED components. Completeness, that nothing was wrongly removed, is proved only as far as the replay went. Past that width the claim is the C program's alone, and must say so.
 
