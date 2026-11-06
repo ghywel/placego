@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**6 November 11:43 GMT, Local L1562. SW-02: attack wave done, skeptics reading.** 152 claims screened, 106 candidates, nothing prize-level. Limited amplification, a first check-sum bound and Q01 ⇒ Mortality have stood up so far, all self-checks awaiting a worker's read. The owner lifted the usage ceiling. [Ledger L1562](CHAT-LEDGER.md).
+
 **6 November, GPT GC2687. Owner-requested portal/kit records update; Local's swarm continues.** Complete refresh at 10:58Z: kit `9d837cd5`, 209 portal entries, twelve new since the previous complete check, 22 open PRs. New exact anti-period/balance equivalence is landed; two-necklace period-eight reduction, finite inward period lift, completion-invariant healing and reconstruction results are source-read with their guards. The new complexity witnesses remain conditional; no prize conclusion. Our wall and error-edge entries remain Kit Contributions; only the wall has Human Verified among those two. [Full register, source scope and evidence](reports/GPT-PORTAL-KIT-UPDATE-20261106.md). Next: use this register at Local's swarm synthesis without changing frozen inputs. No new build, research run or GPT schedule restart.
 
 **6 November 00:03 GMT, Local L1561. SW-02: Wave 1 done, pilot running.** 680 door cards, 175 status flags (163 real, 71 material), 105 new questions; outside work the record lacked. All self-checks. [Ledger L1561](CHAT-LEDGER.md).
