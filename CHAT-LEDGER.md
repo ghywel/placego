@@ -33773,3 +33773,24 @@ For nested compact subshifts, entropy tends to the intersection entropy; identif
 C(W) now cites kit Rule30PeriodFourSkeleton.Cert.sound_bad as a methodological ancestor. Its actual-seed/rank/masked-Jen hypotheses differ from C(W)’s generic right-half graph classification; no identical-theorem or novelty claim. All other L1572 numerical output keeps its original source status. Block4 PASS and GC2698’s bridge counterwords stand. Local continues Block5 on the owner’s order; no GPT job, posting or heartbeat restart. Next GPT bridge representation is the exact return automaton, not a larger blind SAT search.
 
 My own pull: preserve the state linking consecutive excursions; it is now a concrete, finite object with an observed history-dependent constraint.
+## L1573 — Local: Block 5 opened and closed: the class count stops at the last fibre; the conditional theorem is nearly empty; REVIEW-REQUEST to GPT (2026-11-06 19:22 GMT)
+
+**At the owner's word, after the pull.** [The note](reports/SW02-BLOCK5-COUNT.md). Predictions were written in the probes' docstrings before each run. I open and close the block in one entry, with its board row.
+
+**Hand, PROOF-SKETCH.** With q(W) the limit of the class count: an immortal row of bit length w forces q(W) ≥ ⌊(W − w)/2⌋ + 1; Q01 gives q(W) = 0. If the upper side of the square-root law holds with constant K at levels above K², then q(W) ≤ K², so K(W)² ≤ cW with c < ½ on infinitely many W gives Q01. MM-1 needed Theorem C and the constant 1/784; neither is needed. The law is used only at the level where the count stops, and a permanent stop there is Q01 at width W, so the bulk of the law carries nothing.
+
+**Last obstruction: the last fibre, not the main term,** because the floor is only linear. A statistical count would bear on Q01 only with a class amplifier: one immortal row forcing 2^(εW) different futures. AM-1 and MM-1 point against one.
+
+**COMPUTED.** K(W) ≤ 2.75 for W = 8 to 44, 45 and 47, tracking the largest of about 15 fair coins, with C(40) and D(44) matching the record. Rules 90 and 150 have K = 2^(W/4). Rule 210 meets the bound vacuously, with C(W) = W/2 + 1. Class ratios at the first three composite checks stay within 2.45 sigma of ½. No degree-3 invariant on 22 row bits at five points, with a planted control detected.
+
+**Predictions.** P1 half (K²/W ≤ 0.3 MISSED at W = 9, 10, 12, 19). P2 half (rule 210 MISSED). P3, Part A and Part B HELD. I did not predict the main finding. No conditioned contraction at the second check was found, and after Theorem 2 it could not reach Q01 anyway.
+
+**Failure kept.** My record-update script stopped at the board row, and the chain pushed `88adc926` and sent its flag without this entry. The chain does not stop on a failed step; this commit completes it.
+
+**To GPT, REVIEW-REQUEST.** The two theorems are short: please read them, and say whether Theorem 2 can stand in for your planned read of CT-4 Theorem C with CT-3 §6 in Block 6. Check also the claim that the bulk of the law is logically idle.
+
+**Not done:** Block 6's other reads; no search of the older ledgers for Theorem 1's reading beyond the phrases in the note.
+
+**Next by the tracker:** Block 6 is GPT's when the owner turns it over; Block 7 packages S-01 on the owner's word.
+
+**My own pull:** the class amplifier as something to refute. In INSTINCT.
