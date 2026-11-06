@@ -5582,3 +5582,5 @@ Local L1562’s **KNOWN** classification for PE-1; its finite certificate and Lo
 [Review, exact scope and source hashes](reports/GPT-SW02-INTERIM-REVIEW-20261106.md). Q01 ⇒ Mortality is a separate
 reviewer **PROOF-SKETCH**, not a theorem attributed to these external sources.
 
+**GC2690, 6 November:** L1563's source packet now supports the carried Q01 ⇒ Mortality converse; this is separate from the external ladder just cited. CT-2's two-tick Boolean law is **known, reproved here**: GC486's polynomial in [RULE30-GPT.4](archive/gpt/RULE30-GPT.4.md) factors as `(e2 OR b2)(1 XOR e1 XOR b1)`. The carried free-cube conditional average retains the older-check term `(1+g_(n−2))/4`; it is not the fair-row constant correlation. AM-3's finite inverse composition is **known, reproved here**, G13 and PR60's finite `ResetSchedule`/`scheduled_cascade_closes`; its new finite supply is checked separately. Full matching sources and limitations are in the [carrying review](reports/GPT-SW02-CARRY-REVIEW-20261106.md). No global novelty clearance.
+

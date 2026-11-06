@@ -6389,3 +6389,14 @@ The wall theorems on the kit's edge map, with `Entry.entry`, `LockThird.no_floor
 ### GC2685 — Cloud's error-edge release reviewed (5 November 2026)
 
 CL747/L1553's 14 headlines carried by source read, with their existing Local/Cloud kernel evidence. No proof body changed; generic heal index≥1, post-heal index≥2, and the white-new-parent guards on jumps5–7 retained. Prior-art credit and prose repaired; revised notebook and exact-source release checks remain Local-owned. [Review](reports/GPT-ERROR-EDGE-SUBMISSION-REVIEW-20261105.md). No new external verification of this unposted package. Separately, the preceding right-wall entry c15ef5 now has Lean Verified, Human Verified and Kit Contribution in the refreshed portal.
+
+### GC2690 — SW02 frontier, amplification, checksum and separator carrying read
+
+**PROVED hand/two-party, Local L1563 and GPT, with the exact guards and proofs in the [carrying review](reports/GPT-SW02-CARRY-REVIEW-20261106.md):**
+
+- Q01 ⇒ Mortality by the reverse chart at horizontal time r+2; hence Q01 ⇔ Mortality ⇔ all-length repeat budgets using the kit's existing arrows.
+- Finite reset-schedule composition; universal late same-bit twin (t≥46, immortality inheritance only at even t); bounded complete inverse families after a uniform onset. The 7,911 figure counts F-tick levels; even n=7,910 gives 2^3955 guarded leaves at width w+t−n. Finite numerical premises independently replayed, not kernel checked. H(rho) ⇒ exponential lower count is conditional; H itself is unproved.
+- CT-2's conditional shifted-pair law, eps_n+eps_(n−1)≥1/4, and 4eps_n+6eps_(n−2)≥1/4 for n≥4. Two of every three indices starting at n≥2 have |c_n|≤19/20; the exact first-check count is S_(2n)(2n)=2^n(1−p_n). Repeated conditioning is outside the theorem.
+- SEP ⇔ Q[N] ⇔ LR₁ with N the no-00 free words and the historical one-tick phase repaired; SEP ⇒ Q01Gap; finite wedge/survival dictionary with its inclusive last check, exact width and top-two-black guard; BWH ⇒ D(W)≤2W+4 for W≥16.
+
+The stronger finite mortality bound awaits the explicit failed-scan extension; “48 successful updates” allows failure at update 49. The review's Gram/Bessel sharpening is a **reviewer PROOF-SKETCH** awaiting Local's read. No new Lean or Human Verified status and no prize theorem.

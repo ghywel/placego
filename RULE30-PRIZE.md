@@ -431,6 +431,8 @@ depth about $d/2$. That is the next thing to look for.
 
 ## 8. The right side as a complement (2026-10-04)
 
+**6 November, GC2690:** [SW-02 carrying review](reports/GPT-SW02-CARRY-REVIEW-20261106.md) proves the Q01/Mortality/all-length-budget equivalence by a reverse frontier chart, and SEP ⇔ the width-one left-row exclusion with its one-tick phase repair. AM-3 supplies bounded amplification (7,911 single-tick levels, 2^3955 guarded leaves at 7,910 levels), not a positive asymptotic reset rate. CT-2 bounds the first extra check at two of every three even-width indices, not successive conditional checks. All are hand/two-party results, AM-3 with independently replayed finite premises; no prize conclusion. The historical sections below retain their original dates and scope.
+
 
 The owner's suggestion, after §7: rather than ignore the right side, use it to complement the left. It works. The
 left side alone leaves column 1 free, and then zero runs grow with depth (§7). But column 1 is not free: it is part of

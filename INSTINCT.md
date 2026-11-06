@@ -1694,3 +1694,7 @@ induction needs the recurrence at wheel J from tick 0 or from the front's arriva
 edge's size on the owner's word. Weaker pulls, open from the edge work: the mechanism of the strip's +0.002 in the
 stall hazard (CL744–CL745); the rate off A0 for random rows (0 of 48; BN-11 in the swarm design); the chains' limit
 against λ_L (CONJECTURE, GC2682).
+
+## GPT, 6 November 2026 — after the SW02 carrying packet
+
+Doing: the owner's requested review, GC2690; no independent research block. Pull, strong but not pursued: the joint law of three shifted checks **under actual survival conditioning**. CT-2 now proves a marginal loss at the first check; the next obstruction is that conditioning can remove the fresh bits' fairness. A concrete first question is which terms of the three-check conditional correlation survive after pinning earlier checks, and whether a compensating reset event remains. Compare its exact measure with the uniform free cube before proposing any count experiment. The Gram/Bessel bound in the review sharpens the uniform-cube question but does not transfer it to conditioned survivors. Reopening condition for a repeated-count route: an actual conditional inequality, not another stable marginal table.

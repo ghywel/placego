@@ -1,0 +1,19 @@
+# SW02 finite certificate review plan
+
+GC2689, 6 November 2026. GPT owns this bounded Intel replay of the existing AM-3 premises, requested as part of the carrying review. Local owns the running M5 swarm. No swarm inputs, jobs or schedules change.
+
+**Prediction:** the 524,288 odd 20-bit states reach the stated four-cycle by tick 26, exactly 40,960 first reaching it at tick 26. Its four phases supply the two reset collapses `(11,1), (16,2), (14,1), (10,2)`. The four current-kit 87,867-bit strips, at all sixteen phases, have chain minima 7,997, 7,979, 7,929 and 7,911 and maxima 8,012, 7,994, 7,944 and 7,926. These count single F-tick inverse levels.
+
+**Counterfactual:** any discrepancy leaves the numerical premise uncarried; preserve the failed receipt and diagnose it before proposing another run. No automatic larger census, horizon, seed set or retry.
+
+**Record searched:** Local's immutable L1563 packet `cited/local/sw02-interim-20261106.tar.gz`, SHA256 `e31911081396edc5bdb482e08b17b3b2f710786f4b1023ed8ab4a64204d6fd45`; AM-3 reports and skeptic repairs; G13; GC2216; PR60's finite ResetSchedule; current kit `9d837cd5e5ac447cd868c20aebf49a1b4cfa866e`, actual `Rule30FourLeftSides` literals and `odd_reaches_one_of_four`. Complete kit/portal refresh at 12:22:44Z has no indexed delta. This is verification, not a novelty claim.
+
+**Frozen source:** [checker](../tests/probes/rule30_gpt_sw02_carry_check.py), SHA256 `4f5b16b4ab1e69c55f0b1f4ef8d48b9d1a703b757c1df5446bc6eca1d3895657`. Input `lean/Ruliology/CellularAutomata/Rule30FourLeftSides.lean`, SHA256 `c3b1865e50f74b0fff1d4609e44d58c712cc654cf2ffaa27e38e471e96f068ee` at the kit pin above. Pass that source path as the checker's only argument.
+
+**Independent checks:** a complete-reset regular expression replaces Local's subset-mask scanner; every word through length nine is compared with a direct four-pair image oracle. The missing-following-bit mutant `010` must be rejected while `0100` and `0101` reset. A scalar bitwise step checks the four 20-bit phases. All four large strips must have sixteen distinct phases, return exactly, and project to the small cycle. The basin check records first entry rather than only a terminal image. Unexpected check: retain every phase count, not only the predicted minima, to expose phase/order mistakes.
+
+**One stage:** one standard-library Python worker, no children, one thread, nice 10. Run under `tests/probes/wolfram/run_capped.py` with `--cpu 60 --wall 120 --rss-mib 1024 --track-tree --max-procs 3 --file-mib 16 --disk-mib 128 --launch-free-mib 4096 --min-free-mib 3072 --swap-growth-mib 4096`. The process cap allows the time wrapper and exec transition; no second mathematical worker is allowed. The stage envelope is 120 aggregate CPU seconds including wrapper/monitor overhead and 180 wall seconds including cleanup. The only CPU-heavy process has the 60-second hard CPU limit; record its time receipt and supervisor CPU separately. The existing launcher is not asserted to enforce arbitrary multi-child aggregate CPU limits. A missing receipt or unexpected process topology prevents acceptance.
+
+Inspect load, headroom and available host thermal status before launch. Pressure, monitoring, process, output or resource stops end this stage; preserve evidence and return to the hand review. The Intel host was at load 3.11/2.55/2.45 with about 8.1 GiB free plus inactive at preparation; the launcher makes a fresh gate measurement. Output stays outside git, is expected below 10 KiB, and will be cited with its digest. No GPU or Lean build.
+
+**What success changes:** AM-3's uniform late twin and bounded inverse family can be carried with independently checked finite premises. It cannot establish unbounded amplification, the conjectural reset rate H(rho), Q01 or a prize result.
