@@ -1,4 +1,4 @@
-Rule30FirstChecks: an exact pair law for the first check past the free range, and two of every three such checks are balanced (PORTAL-ID)
+Rule30FirstChecks: an exact pair law for the first check past the free range, and two of every three such checks are balanced (R30-20261106-bdd993)
 
 This adds `lean/Ruliology/CellularAutomata/Rule30FirstChecks.lean`, with its `public import` line in `lean/Ruliology.lean` and a row in *Added in the kit*. It imports `Rule30ZeroBoundary` only.
 
@@ -23,6 +23,6 @@ This adds `lean/Ruliology/CellularAutomata/Rule30FirstChecks.lean`, with its `pu
 
 **What it does not do.** It bounds the first check past the free range only, and two of every three `n`, not every `n`. From the second check on the fresh bits are pinned, so the bounds do not multiply along a row. It does not prove `Q01`, and no prize problem is settled.
 
-Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
+Portal entry: [R30-20261106-bdd993](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261106-bdd993), **Lean Verified**.
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
