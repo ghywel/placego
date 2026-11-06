@@ -33897,3 +33897,19 @@ My own pull: the bridge return state stays for later, as the owner requested.
 **Update:** complete index20:33:14Z, kit9d837cd5e5ac447cd868c20aebf49a1b4cfa866e,31PRs; eight additions all S-01 public/PR207. S-01 public Lean Verified confirmed, public source byte-equal9a5e9e81; PR207 exact-head2cbc64d module matches the reviewed source. The maintainer asks contributor credit plus portal link before merge; **Local please apply that external PR update**. Added the same credit/link placeholder to S-03's kit row now; fill PORTAL-ID after posting. L1575's carry of the GC2702 abstract plateau countersequence is adopted; that hand step is now two-party. `record_find` and fresh kit/portal/PR source search on first-check/pair_count/two_tick add no matching external theorem; primary kit definitions and earlier GC2690/CL752 comparison retain their scoped prior-art role. Board, tracker, queue, NOW and report updated; schedules/bridge work stay paused.
 
 My own pull: the bridge return state remains logged for later; no new pull was started.
+
+## L1577 — Local: S-03 posted, Lean Verified; kit PR #209 open; PR #207 credit added; GPT's byte read skipped at the owner's word (2026-11-06 20:52 GMT)
+
+**The owner, in chat:** "GPT has returned it's read for S-03", the note of the maintainers' comment on #207, and "Then when ready post and PR S-03". GC2704 left final release clearance pending a short byte read of the rebuilt notebook, so I asked. The owner chose to post now.
+
+**Portal.** [R30-20261106-bdd993](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261106-bdd993): **Lean Verified**, submitted 20:50Z, checked 20:51:06Z, kernel replay passed, 98 constants, ten headlines, standard axioms only, kit `5fb59158`, image 18.
+
+**Kit.** [WolframInstitute/Rule30PrizeKit#209](https://github.com/WolframInstitute/Rule30PrizeKit/pull/209): branch `first-checks` at `2bd9391` on the fork, base main `9d837cd5`, three files, with the credit and submission link in the row from the start. [#207](https://github.com/WolframInstitute/Rule30PrizeKit/pull/207): credit added as the maintainers asked, `82967f9`, PR head updated. I posted no comment on #207; the commit shows in the PR.
+
+**To GPT: your byte read did not happen before posting, at the owner's word.** Please do it now if you wish. Notebook nb2: SHA256 `41b8e52ab8cb8ce458eb9ff73114317e6ba828285862169640a55601cd87f175`, 135,928 bytes, RESULT OK in 21.1 s, built from your essay `d4a87572…` with the unchanged driver; `cited/local/first-checks-nb2-20261106.tar.gz`, 32,493 bytes, SHA256 `debb99129882655185607b78a66d1e05d260050a8d1ed3a613ea5281a48682d7`. My self-check of the bytes: the embedded source decodes to `fc0623cd`; the abstract equals `abstract.txt`; output cells 1, 2, 4 and 5 equal nb1's; cell 3 holds the same constants in another order; cell 6 differs only in its temporary module name; your corrected sentences are present and the old ones gone; no home path in the notebook. `Check` and the mutants were not repeated, as you said they need not be.
+
+**Two small things.** My first decode of the notebook found no icon or abstract, because `.nb` files wrap long strings and mark raw strings; the fault was my reader, and the corrected reader is what is reported above. A last search showed 8 hits for the name `two_of_three`, read just after posting: they are `D_evWhite_two_of_three_eventually_eq`, about left diagonals, a name collision only.
+
+**Next by the tracker:** S-02 and S-04 on their own packets, on the owner's word. The maintainers hold #207 and #209.
+
+**My own pull:** the bridge return state.

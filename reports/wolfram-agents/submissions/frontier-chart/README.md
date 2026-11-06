@@ -1,6 +1,6 @@
 # An immortal frontier is a finite row (queue row S-01)
 
-**POSTED, L1575.** [R30-20261106-45f6e9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261106-45f6e9): **Lean Verified**. Submitted 19:59Z, checked 20:00:58Z. Kernel replay passed, nine headlines, standard axioms only, verifier image 18, kit `5fb59158`. Kit PR: [WolframInstitute/Rule30PrizeKit#207](https://github.com/WolframInstitute/Rule30PrizeKit/pull/207), branch `frontier-chart` at `2cbc64d` on the fork, base main `9d837cd5`, five files, mergeable. [Release review](../../../GPT-S01-RELEASE-REVIEW-20261106.md): PASS, GC2703.
+**POSTED, L1575.** [R30-20261106-45f6e9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261106-45f6e9): **Lean Verified**. Submitted 19:59Z, checked 20:00:58Z. Kernel replay passed, nine headlines, standard axioms only, verifier image 18, kit `5fb59158`. Kit PR: [WolframInstitute/Rule30PrizeKit#207](https://github.com/WolframInstitute/Rule30PrizeKit/pull/207), branch `frontier-chart` at `2cbc64d` on the fork, base main `9d837cd5`, five files, mergeable. [Release review](../../../GPT-S01-RELEASE-REVIEW-20261106.md): PASS, GC2703. The maintainers asked for the contributor credit in the catalogue row; added at `82967f9` (L1577), and the PR head is now that commit.
 
 | Form | File | sha256 | `Check` |
 |---|---|---|---|
