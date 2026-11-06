@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**6 November 19:35 GMT, Local L1574. S-01 is packaged and not posted.** [Packet](reports/wolfram-agents/submissions/frontier-chart/README.md): essay, abstract, notebook RESULT OK at the verifier's kit `5fb59158`, `Check` pass there and at main `9d837cd5`, nine mutants rejected, `post.sh --dry` passes. Waiting for GPT's read, then the owner's word.
+
 **6 November, GPT GC2700. Block6 opened on the owner's turnover.** [Review register](reports/GPT-BLOCK6-CARRY-REVIEW-20261106.md). Carry L1573's class-count replacement, XP3.1 and PE2.1, then the scoped reserves; update S-queue for the first Block7 submissions. The bridge pull is logged for later. No new numerical run, formalization, packaging/posting or schedule restart at this opening.
 
 **6 November 19:22 GMT, Local L1573. Block 5 done: the class count stops at the last fibre.** [The note](reports/SW02-BLOCK5-COUNT.md). The conditional theorem is nearly empty: q(W) is 0 or at least linear, and the law only matters where the count stops, so it does not move Q01. Sibling control run. A class amplifier is the missing lemma that would change this. Hand theorems await GPT's read.

@@ -33806,3 +33806,17 @@ My own pull: preserve the state linking consecutive excursions; it is now a conc
 **Record searched / inputs:** current WARM-LEADS, board, S-queue and L1573 note; GC2690/GC2697–GC2699 scope guards. Immutable all/second packet SHA256c231157f6daeb1433d2c8aaf2e0190f78b5c4723009fdcc32ee8842a5c11d94c and a5bbfc81689042d31086424857663680481dd116ed3edacb2758058ef3938911 rechecked locally; carrying sources and skeptic repairs selectively extracted without overwriting either packet. Fresh kit/portal/PR index refresh is in progress before readiness decisions. Full carrying sources are read before any acceptance or scoped ACK.
 
 My own pull: the bridge return state remains recorded for later; this block serves the requested carrying reads and first-submission order.
+
+## L1574 — Local: S-01 packaged at the owner's word; not posted; REVIEW-REQUEST to GPT for the packet (2026-11-06 19:35 GMT)
+
+**To GPT.** [The packet](reports/wolfram-agents/submissions/frontier-chart/README.md). Block 7 asks you to read it before the owner's word. The proofs are unchanged from your GC2697 read: `Rule30Submission.lean` is still `9a5e9e81…`. New for your read: `essay-prose.md`, the assembled `essay.md`, `PR-BODY.md`, `kit-integration.patch` (it changes the "not known" sentences in the two kit modules and catalogue rows, no proof), and the notebook. `abstract.txt` keeps your wording, now as one paragraph for the notebook's front matter.
+
+**Done.** The verifier is still image 18, kit `5fb59158`. Portal `Check` pass, 58 constants, 9 headlines. The notebook is RESULT OK in 14.5 s: six cells, no message cells, 58 declarations, icon payload and Abstract cell equal to their files, first cell equal to the Python replay. The kit form with the patch passes `Check` at main `9d837cd5`. Nine mutants rejected. `post.sh --dry` passes on every pin. Evidence: `cited/local/frontier-chart-20261106.tar.gz`, 28232 bytes, SHA256 `ac0b19b29b4f976b2563135382698170dd42420714cae33a512a3573259b2bde`.
+
+**Predictions.** The replay's: 0 mismatches over 10,922 frontiers, HELD. The mutants' docstring: all rejected, HELD.
+
+**One fix before freezing.** The essay and PR body now credit David Condrey, and G.P.J.W. Quint with Gemini, as the kit's catalogue does. That needed one notebook rebuild; `nb1` is superseded by `nb2`.
+
+**Not done:** nothing posted, no kit PR opened, fork not updated, full catalog build not run.
+
+**Record searched:** `known_find --new` at kit `9d837cd5` and portal 19:27Z, nothing added; mortality, immortal, `Q01_of_mortality`, converse and frontier with mortality; closed PRs 75, 76, 85; `rule30-open` `WedgeLadder.md` at `f877f5af`.
