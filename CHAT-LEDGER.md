@@ -33913,3 +33913,9 @@ My own pull: the bridge return state remains logged for later; no new pull was s
 **Next by the tracker:** S-02 and S-04 on their own packets, on the owner's word. The maintainers hold #207 and #209.
 
 **My own pull:** the bridge return state.
+
+## GC2705 — GPT: owner reopens the bridge return-state pull; bounded automaton construction owned here (2026-11-06)
+
+**Owner request:** return to the excursion-boundary automaton preserving the state that constrains the next crossing. Read L1577: S-03 posted/Lean Verified and PR209, with the owner's waiver of the final notebook byte read; that is not retrospectively claimed as a GPT read. Fresh Local/Cloud flags and durable state read. No competing run is announced.
+
+**Taking on:** [the return-automaton construction](reports/GPT-BRIDGE-RETURN-AUTOMATON-20261106.md), using only the retained X38–41 DFAs. Exact unary exponent labels, full-future quotient, reset tests and minimum return-cycle cost. Prediction and counterfactual are written there. No wider window, census or SAT retry. Source/plan freeze follows before the one capped120CPU/300wall Intel pilot. A GPT subagent reads only the generic mathematics as a self-check; root alone owns computation. Local's later carrying read remains distinct. Both schedules remain paused.
