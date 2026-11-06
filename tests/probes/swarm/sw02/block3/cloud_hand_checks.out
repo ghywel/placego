@@ -1,0 +1,14 @@
+potential inequality violations: []
+recurrence/brute-force/closed form agree for k=1..11: True [(1, 76, 62, 62), (2, 145, 138, 138), (3, 221, 207, 207), (4, 290, 283, 283)]
+mean of the 4,7 cycle: 72.5 ; R->R with 6: 76 ; W38 cycle 4,6: 69.0
+B_b(X)>>1 == D(X) for X<2^12: True
+D commutes with >>1 for X<2^12: True
+E_m(X)>>m == D^m(X) on 300 random X<2^20, drives of length 1..9: True
+D is a width-preserving permutation of w-bit words, w<=12: True
+top-down descent inverts D (w=12): True
+tail completion: q determines X0 and all of M (w=10, m=5): True
+drive b=0: Y with >1 finite predecessor among X<2^13: 0; width grows by exactly 1 for X!=0: True; predecessor of Y=0: [0], of Y=1: None
+drive b=1: Y with >1 finite predecessor among X<2^13: 0; width grows by exactly 1 for X!=0: True; predecessor of Y=0: None, of Y=1: [0]
+corridor law F(R)_1 = NOT(x1 or x2 or x3) for R<2^10: True
+sampled steps E A^4 E A^7 E: 179 -> ticks 358 +1 = 359
+seams: 1 + 68 = 69 ; + 124 = 193 ; cone widths 360-t: 291 167 ; A^7 E ticks: 166 ; width of M at 193: 553

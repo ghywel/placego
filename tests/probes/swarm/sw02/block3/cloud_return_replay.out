@@ -1,0 +1,60 @@
+
+=== W=38: DFA states 240, q0 after E = 20 (11870 windows), raw boundary states 6, quotient classes 2, horizon 22
+  class 0 (rep raw 57, members [57]): next n -> class: {1: [6, 7, 8, 9, 10, 11, '...']}
+  class 1 (rep raw 20, members [20, 76, 85, 156, 165]): next n -> class: {0: [4], 1: [6, 7, 8, 9, 10, 11, '...']}
+  factor 55 A^4 E A^4 3: absent
+  factor 55 A^4 E A^6 3: present
+  factor E A^4 E A^7 E: present
+  factor E A^6 E A^4 E: present
+  factor language == two-state grammar (S threshold 6): True (481 reachable subset pairs; NFA states 67)
+  raw fibre chain under C from q0: [(20, 11870), (165, 11105), (165, 11105), (165, 11105), (165, 11105)]
+    n=6: destinations over all boundary states [76, 156] -> no common reset
+    n=7: destinations over all boundary states [85, 165] -> no common reset
+    n=8: destinations over all boundary states [20] -> common reset to raw 20 (11870 windows)
+    n=9: destinations over all boundary states [20] -> common reset to raw 20 (11870 windows)
+    n=12: destinations over all boundary states [20] -> common reset to raw 20 (11870 windows)
+
+=== W=39: DFA states 209, q0 after E = 20 (16437 windows), raw boundary states 5, quotient classes 2, horizon 22
+  class 0 (rep raw 57, members [57]): next n -> class: {1: [7, 8, 9, 10, 11, 12, '...']}
+  class 1 (rep raw 20, members [20, 78, 90, 165]): next n -> class: {0: [4], 1: [6, 7, 8, 9, 10, 11, '...']}
+  factor 55 A^4 E A^4 3: absent
+  factor 55 A^4 E A^6 3: absent
+  factor E A^4 E A^7 E: present
+  factor E A^6 E A^4 E: present
+  factor language == two-state grammar (S threshold 7): True (422 reachable subset pairs; NFA states 60)
+  raw fibre chain under C from q0: [(20, 16437), (165, 15537), (165, 15537), (165, 15537), (165, 15537)]
+    n=6: destinations over all boundary states [-1, 78] -> no common reset
+    n=7: destinations over all boundary states [90, 165] -> no common reset
+    n=8: destinations over all boundary states [20] -> common reset to raw 20 (16437 windows)
+    n=9: destinations over all boundary states [20] -> common reset to raw 20 (16437 windows)
+    n=12: destinations over all boundary states [20] -> common reset to raw 20 (16437 windows)
+
+=== W=40: DFA states 236, q0 after E = 20 (22882 windows), raw boundary states 5, quotient classes 2, horizon 25
+  class 0 (rep raw 57, members [57]): next n -> class: {1: [7, 8, 9, 10, 11, 12, '...']}
+  class 1 (rep raw 20, members [20, 78, 89, 173]): next n -> class: {0: [4], 1: [6, 7, 8, 9, 10, 11, '...']}
+  factor 55 A^4 E A^4 3: absent
+  factor 55 A^4 E A^6 3: absent
+  factor E A^4 E A^7 E: present
+  factor E A^6 E A^4 E: present
+  factor language == two-state grammar (S threshold 7): True (484 reachable subset pairs; NFA states 60)
+  raw fibre chain under C from q0: [(20, 22882), (173, 21914), (173, 21914), (173, 21914), (173, 21914)]
+    n=6: destinations over all boundary states [-1, 78] -> no common reset
+    n=7: destinations over all boundary states [89, 173] -> no common reset
+    n=8: destinations over all boundary states [20] -> common reset to raw 20 (22882 windows)
+    n=9: destinations over all boundary states [20] -> common reset to raw 20 (22882 windows)
+    n=12: destinations over all boundary states [20] -> common reset to raw 20 (22882 windows)
+
+=== W=41: DFA states 291, q0 after E = 20 (31339 windows), raw boundary states 6, quotient classes 2, horizon 27
+  class 0 (rep raw 60, members [60]): next n -> class: {1: [7, 8, 9, 10, 11, 12, '...']}
+  class 1 (rep raw 20, members [20, 81, 94, 109, 200]): next n -> class: {0: [4], 1: [6, 7, 8, 9, 10, 11, '...']}
+  factor 55 A^4 E A^4 3: absent
+  factor 55 A^4 E A^6 3: absent
+  factor E A^4 E A^7 E: present
+  factor E A^6 E A^4 E: present
+  factor language == two-state grammar (S threshold 7): True (612 reachable subset pairs; NFA states 60)
+  raw fibre chain under C from q0: [(20, 31339), (200, 30163), (200, 30163), (200, 30163), (200, 30163)]
+    n=6: destinations over all boundary states [-1, 81] -> no common reset
+    n=7: destinations over all boundary states [94, 200] -> no common reset
+    n=8: destinations over all boundary states [109] -> common reset to raw 109 (31333 windows)
+    n=9: destinations over all boundary states [109] -> common reset to raw 109 (31333 windows)
+    n=12: destinations over all boundary states [109] -> common reset to raw 109 (31333 windows)
