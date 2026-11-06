@@ -20,6 +20,26 @@ def drive(t):
     return int(t % 2 == 0)
 
 
+def tail_step(x):
+    return x ^ ((x >> 1) | (x >> 2))
+
+
+def tail_inverse(y):
+    x = 0
+    for i in range(y.bit_length() - 1, -1, -1):
+        value = ((y >> i) & 1) ^ (((x >> (i + 1)) | (x >> (i + 2))) & 1)
+        x |= value << i
+    return x
+
+
+def complete_tail(q, m):
+    """Unique m-step driven image with high tail q above its first m cells."""
+    root = q
+    for _ in range(m):
+        root = tail_inverse(root)
+    return root, rows(root, m)[-1]
+
+
 def rows(x, n):
     out = [x]
     for t in range(n):
@@ -168,6 +188,23 @@ def main():
         mutant = heads.copy()
         mutant[3] ^= 1
         assert diagonal(expected[-1], 7, mutant)['head_failures'] == [3]
+    # Independent forward lookup of every 8-bit tail at four depths.
+    # This tests both surjectivity and the inverse-based completion, not
+    # merely whether the completion function agrees with its own scanner.
+    for depth in (1, 2, 5, 7):
+        lookup = {}
+        for root in range(256):
+            image = rows(root, depth)[-1]
+            q = image >> depth
+            assert q not in lookup
+            lookup[q] = (root, image)
+            d = root
+            for _ in range(depth):
+                d = tail_step(d)
+            assert d == q
+        assert len(lookup) == 256
+        for q in range(256):
+            assert complete_tail(q, depth) == lookup[q]
     # One frozen causal-versus-ancestry control; it is not a bridge witness.
     root, m, cut = 19, 193, 167
     full = rows(root, m)
@@ -178,6 +215,7 @@ def main():
     bad = diagonal(changed, m, wanted, cut)
     assert good['accepted'] and good['rows'] == full
     assert ancestry(y, m)['rows'] == full
+    assert complete_tail(y >> m, m) == (root, y)
     reference_bad = ancestry(changed, m)
     assert reference_bad['accepted'] == (not bad['boundary_failures'])
     if reference_bad['accepted']:
@@ -194,6 +232,8 @@ def main():
     result = {
         'controls': {'one_step_exhaustive_cases': checked,
                      'small_ancestry_cases': 768, 'seven_step_seeds': 32,
+                     'tail_completion_cases': 1024,
+                     'seam_tail_completion': True,
                      'wrong_head_rejected': True, 'zero_padding_invariant': True},
         'control_not_bridge_witness': True,
         'seed': root, 'seam_tick': m, 'seam_hex': hex(y),

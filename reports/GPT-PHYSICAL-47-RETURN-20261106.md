@@ -181,4 +181,57 @@ remain unchanged. Source `physical_ancestry.py` SHA256
 `a7071cc2e836c22fd56c565370be7d4b65cc4f4eb6aaa2c4dca4b8b31c473701`;
 plan `gc2708-ancestry-plan.json` SHA256
 `f3e732af24bc770ba657f6b53fcc59ab19639c1b826883da0ef4c9a19f26603e`.
-The wrapper/stage/monitor hashes are unchanged. Result pending this replay.
+The wrapper/stage/monitor hashes are unchanged. This replay passed:16,384
+one-step cases,768 accepted/rejected ancestry cases,32 seven-step seeds,
+wrong-head rejection and leading-zero invariance. Seed19's time193 row and
+its cell168 mutant have equal heads for166 future ticks; the mutant's first
+sequential inverse rejection is at boundary time169. The diagonal scan
+rejects as soon as it exposes boundary time25. These are different scan
+orders for the same failed ancestry, not a contradictory failure time.
+
+The first launch was refused before spawning a worker because the sandbox
+denied `sysctl` access. The refusal receipt is retained. A separate permitted
+preflight checked headroom, swap and process monitoring; the unchanged
+source/limits then ran with all monitors active. Completed worker CPU0.342199s,
+supervisor0.124s, plus0.120s for the refused launch. No pressure stop or cap
+bypass. The job was shorter than a full RSS sample, so sampled zero RSS is
+not a peak-memory measurement; the worker's rusage peak was17,379,328 bytes.
+
+## Tail completion sharpens the interface (PROOF-SKETCH)
+
+There is a simpler interpretation of the diagonal boundary checks. Define
+
+    D(X) = X XOR ((X>>1) OR (X>>2)).
+
+For any drive bits, B_b(X)>>1=D(X), and D commutes with right shift. Induction
+therefore gives, for the m-step driven evolution E_m,
+
+    E_m(X)>>m = D^m(X).
+
+On every finite w-bit space D is a bijection: recover x_i from the highest
+bit downward using x_i=y_i XOR(x_(i+1) OR x_(i+2)). Consequently every finite
+high tail q has exactly one compatible m-cell prefix, namely the low m bits
+of E_m(D^(-m)(q)). The zero tail has root0 and the driven image of0, not
+necessarily the all-white row. This is a specialization of known left
+permutivity/triangular reconstruction, not a novelty claim.
+
+At the4,7 seam, q=M>>193 is therefore a complete physical ancestry coordinate.
+The original width<=360 root condition becomes q<2^360. It determines all193
+lower seam bits, including the167 future-visible bits. The prescribed past
+E A^4 E head word and future A^7 E word remain additional conditions. This
+is an invertible coordinate change, not a dimension reduction or a witness.
+Equivalently, once a valid tail has generated the334-bit cut state, each
+successive boundary check determines the next low seam bit uniquely.
+
+**Additional implementation control, frozen before execution:** compare the
+tail-inverse completion with an independent forward lookup for every8-bit
+tail at depths1,2,5,7, and reconstruct the already-fixed seed19 seam from
+its high tail. Prediction: all1024 lookup cases agree and the time193 seam
+is identical. Counterfactual: any collision, missing tail or completion
+mismatch invalidates the implementation. This repeats the small controls
+only because new code was added; no physical target search. Same30CPU/90wall
+ceiling,18CPU worker,20CPU worker-stop and host limits; the total block ceiling
+remains120CPU. New source SHA256
+`6d55a6bd120120c34c81f12ea6d9a453a1754a1fafaeea92ac92e867ed1fe912`;
+plan `gc2708-completion-plan.json` SHA256
+`712ecab4df46fccc0d84b15707c7aef5dfba49f5d674de3a7bea9b8c0f245e6e`.
