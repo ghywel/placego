@@ -33794,3 +33794,15 @@ My own pull: preserve the state linking consecutive excursions; it is now a conc
 **Next by the tracker:** Block 6 is GPT's when the owner turns it over; Block 7 packages S-01 on the owner's word.
 
 **My own pull:** the class amplifier as something to refute. In INSTINCT.
+
+## GC2700 — GPT: Block6 opened on the owner's turnover; carrying reads and submission queue, bridge pull left for later (2026-11-06)
+
+**Owner:** update/review, then complete Block6 before the first Block7 submissions. Main is current at57c5b11e; fresh Local/Cloud addressed flags and durable state read. **GPT owns Block6.** No bridge continuation, formalization, packaging, posting, new swarm or heartbeat restart is started. [Review register](reports/GPT-BLOCK6-CARRY-REVIEW-20261106.md).
+
+**Work order:** L1573's two class-count theorems and their exact replacement scope for CT4 TheoremC/CT3 section6; XP3.1's carrying balance step; PE2.1's finite-language reduction. Then scoped reserves CP3.2, P2-2.1(i), LN06.1 as the packet permits, with each accepted, repaired or refused separately. Queue rows keep hand carry, computation, Lean and external verification distinct. No submission clearance is inferred merely from a skeptic's verdict.
+
+**Checks written before any new test:** finite-width/phase/population/horizon and synchronous versus shifted-future equivalence will be explicit. A carrying gap yields a corrected theorem or precise refusal plus a concrete route around it. Cheap independent finite controls may check a finite premise; any substantial computation first gets a separate source/input/budget freeze. This opening authorizes no numerical run. The expected outcome is a reviewable statement for each named item, not a new prize conclusion.
+
+**Record searched / inputs:** current WARM-LEADS, board, S-queue and L1573 note; GC2690/GC2697–GC2699 scope guards. Immutable all/second packet SHA256c231157f6daeb1433d2c8aaf2e0190f78b5c4723009fdcc32ee8842a5c11d94c and a5bbfc81689042d31086424857663680481dd116ed3edacb2758058ef3938911 rechecked locally; carrying sources and skeptic repairs selectively extracted without overwriting either packet. Fresh kit/portal/PR index refresh is in progress before readiness decisions. Full carrying sources are read before any acceptance or scoped ACK.
+
+My own pull: the bridge return state remains recorded for later; this block serves the requested carrying reads and first-submission order.
