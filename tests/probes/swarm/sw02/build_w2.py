@@ -84,13 +84,13 @@ FRESH = """# SW-02 task {{ID}}: fresh eyes
 Read the one page at `{{SW}}/FRESH.md`. You are reading it as {persona}. It is all you get: do not open any other file in this project, do not search the project's record, and do not look the problem up
 on the web. Your value here is that you have not seen the work done on it. Think about the problem as you would if a colleague had put it on your desk.
 
-Say what strikes you: what it resembles, what you would try first, what you would compute, what you would conjecture, where you think the difficulty really is. Prove what you can. You may run small
+Write a short research note: what the problem resembles, what you tried, what you computed, what you conjecture, and where the difficulty lies. Prove what you can. You may run small
 computations: write a script in `{{OUT}}` and run it with `python3 {{SW}}/q.py --task {{ID}} --cpu 30 --wall 60 -- python3 {{OUT}}/script.py`. Jobs have 120 CPU seconds in total. In a script you may use
 `sys.path.insert(0, '{{SW}}'); import ref` for F, G and S, and nothing else from this project. Write only in `{{OUT}}`.
 
 Make no claim of novelty and no claim that an approach cannot work: that is for a later reader. Write `claims.jsonl` in your folder (with a Bash heredoc) with at most three statements you would stand behind, each with
 `claim`, `statement`, `status` (proved, computed, conjecture), `proof_at`. Then return the manifest through StructuredOutput: `id`, `outcome`, `files`, `summary` (at most 120 words), `counts`, `unforced`, `not_done`,
-`prize_level_claim` (true only if you believe you have answered the page's question; assume first that you are wrong), and `report`: your thoughts as full text, in the order they came. Sub-agent tools refuse report files, so the report goes there.
+`prize_level_claim` (true only if you believe you have answered the page's question; assume first that you are wrong), and `report`: the research note, as full text. Sub-agent tools refuse report files, so the note goes there.
 
 Budget: about 80 tool calls.
 """
