@@ -6,6 +6,8 @@
 
 *Requests marked done were covered by the bench (BN-02, BN-11 to BN-16, BN-L1).*
 
+- [x] **R-02 / Block 3, bounded lift past 31.** GC2696: completed full xx/pq40 and pruned xx41; X/Y persist. Independent replay xx36/pq32,42 gap extraction partial. Finite test closed, universal disappearance question below stays open. [Results](GPT-BLOCK3-RESULTS-20261106.md).
+
 - [ ] **AM-1.** Champion families at widths 24..52: for every recorded champion row (width <= W dying at D(W), from Local's death tables outside git), count finite single-flip partners (forgettable free tocks), finite guarded G-predecessors and guarded ancestors with request_… *Cost:* under one CPU second per row; needs the champion rows, which are outside this task's mater…
 - [ ] **AM-1.** Extend census.py to widths 24..26 (python3 census.py 24 26, about 0.5-2 GB of numpy arrays, 63-tick cap safe since D(26) = 44): survivor sets for t >= W-2 with predecessor histogram, surviving-sibling families, forgettable-tock distribution and ancestor trees *Cost:* about 10-40 CPU seconds and up to 2 GB RSS on Local's host (run_capped --rss-mib 4096)
 - [ ] **AM-2.** Limit of N_t(W) at fixed W: run am2_late.py for W = 21..26 to t = 1000 and record the last merge tick *Cost:* 2^25 rows at start, deduplicated each tick; about 60 to 120 CPU seconds, 2 GiB
@@ -260,7 +262,7 @@
 - [ ] **R-01.** Is Theta_(2n+1) of full degree only for odd n, and what is its exact degree at even n?
 - [ ] **R-02.** Is u empty eventually periodic? Either answer is new: yes gives CQ01Empty by absorption; no is the first aperiodicity theorem for a real driver and refutes Lock for the alternating word.
 - [ ] **R-02.** Does TrapOrPeriodic hold for every finite R? Is it true for infinite R?
-- [ ] **R-02.** Do the two leaky SCCs of the free-input core vanish at some W once the leak-free sets are removed?
+- [ ] **R-02.** Do the two leaky SCCs of the free-input core vanish at some W once the leak-free sets are removed? **Block 3, GC2696: ** two unresolved lineages still survive 40/41, with 32/85 respective 16-gap words at 40. Inspect an actual-history condition on a bridge next; no all-width conclusion.
 - [ ] **R-02.** What is the 3,5,5,5 word? Is there a closed sub-trap inside the gate trap, and is it realised for ever by any R?
 - [ ] **R-02.** Is the kick word (fives between threes) a better driver coordinate than notches? Its mean is 5 with heavy spread: does the mean have an exact reason?
 - [ ] **R-02.** Does E(L, B) stratify by absorption class?

@@ -1,6 +1,8 @@
 # Block 3 run packet: the window lift past 31 columns
 
-*Prepared by Local for GPT, 6 November 2026, at the owner's request. Block 3 of [WARM-LEADS](../WARM-LEADS.md). The commit that adds this file freezes the plan and the predictions in §4. Nothing wider than 34 columns has been run by anyone. Code: [`tests/probes/swarm/sw02/block3/`](../tests/probes/swarm/sw02/block3/).*
+*Prepared by Local for GPT, 6 November 2026, at the owner's request. Block 3 of [WARM-LEADS](../WARM-LEADS.md). The commit that adds this file freezes the plan and the predictions in §4. At that freeze nothing wider than 34 had been run; the completed Intel outcome is recorded below. Code: [`tests/probes/swarm/sw02/block3/`](../tests/probes/swarm/sw02/block3/).*
+
+**Completed 6 November, GC2696: outcome B.** [Review, corrected targets, measured cost and evidence](GPT-BLOCK3-RESULTS-20261106.md). C(W) and the parent/pruning argument are now PROVED hand/two-party, within §8's scope. All stages ended. **The original execution table below is historical; it was not approved or used on Intel.** §8 and GC2693–GC2695 contain the frozen bounded stage plans; no rerun is requested.
 
 | | |
 |---|---|
@@ -37,7 +39,7 @@ core(W) is the set of windows on a bi-infinite path that avoids T(W). Each stron
 - **GAP35:** every gap of column 1 is 3 or 5.
 - **UNRESOLVED:** neither.
 
-**Claim C(W), PROOF-SKETCH, for GPT's read.** Every right half R, finite or infinite, driven by the alternating column, does one of these:
+**Claim C(W), PROVED hand/two-party at GC2692, with §8's guards.** Every right half R, finite or infinite, driven by the alternating column, does one of these:
 
 1. It enters T(W).
 2. It ends in one LOCKED component, so `u R` is eventually periodic.
@@ -135,7 +137,7 @@ JD-2's standing prediction, persistence through W = 40 at 0.7, is P3 in sharper 
 | **C** | A new CLOSED component appears | Check it under both move rules and search for a finite R that reaches it. A fourth closed set would change the trichotomy |
 | **D** | A control fails | No verdict |
 
-**What B would still teach.** The bridge words are finite data. If X's gap language settles to loops and bridges, the next step is a hand argument on those bridges rather than a wider window. If no finite W removes them, the finite-R hypothesis is essential, which is what `game-residue.md` says of its own game.
+**What B would still teach.** The bridge words are finite data. If X's gap language settles to loops and bridges, the next step is a hand argument on those bridges rather than a wider window. Persistence at every finite W would obstruct this finite-window method; it would not alone establish that every possible proof needs finite right support (§8).
 
 ## 7. Limits
 
