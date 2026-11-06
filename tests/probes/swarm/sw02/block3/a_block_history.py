@@ -203,10 +203,83 @@ def run_sat():
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--out',type=Path,required=True)
+    p.add_argument('--followup',type=Path)
     a=p.parse_args();a.out.mkdir(parents=True,exist_ok=True)
-    result={'transfer':free_transfer(a.out),'SAT':run_sat()}
+    if a.followup:
+        result=followup(a.followup,a.out)
+    else:
+        result={'transfer':free_transfer(a.out),'SAT':run_sat()}
     (a.out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(result,indent=2))
+
+
+def followup(prior,out):
+    table=json.loads((prior/'input-labelled-transfer.json').read_text())
+    accepted={(x[0],x[1],x[2]) for x in table}
+    physical_roots={};word_counts=Counter();by_word={}
+    # Independent representation of the *same* initial21-cell cone:
+    # enumerate its14 incoming initial bits, rather than a free temporal word.
+    for tail in range(1 << 14):
+        root=64 | (tail << 7);rs=trace(root,22)
+        if not block_ok(rs) or rs[14]&127 not in A_END+E_END:continue
+        end=rs[14]&127;w=word_of(rs)
+        assert (64,w,end) in accepted
+        assert first_adjacent_failure(rs,w) is None
+        assert trunk(64,w)==[r&127 for r in rs[:15]]
+        nextgap=2 if end in A_END else 3
+        # Independently check the actual complete gap25 then gap2/3.
+        assert [t//2 for t in range(2,17+2*nextgap,2) if rs[t]&1] == [1,3,8,8+nextgap]
+        physical_roots[root]=end;word_counts[(w,end)]+=1
+        by_word.setdefault((w,end),[]).append(root)
+    (out/'physical-input-words.json').write_text(json.dumps(
+        [{'word':w,'end':e,'roots':roots} for (w,e),roots in sorted(by_word.items())])+'\n')
+    sensitivity=None
+    for root,end in sorted(physical_roots.items()):
+        if end not in A_END:continue
+        for i in range(7,21):
+            other=root^(1<<i)
+            if physical_roots.get(other) in E_END:
+                sensitivity={'A_root':root,'E_root':other,'cell':i+1,
+                             'A_word':word_of(trace(root,14)),
+                             'E_word':word_of(trace(other,14)),
+                             'A_end':end,'E_end':physical_roots[other]}
+                break
+        if sensitivity:break
+    results=[]
+    # Revisit only the three queries whose prefix32 hypothesis was refuted.
+    # Correct prefix64 is separately frozen; no wider cone/conflict budget.
+    with Cadical195() as s:
+        left=Cone(s,0,source=64,endpoint='A')
+        right=Cone(s,left.top,source=64,endpoint='E')
+        left.fix_prefix(14,64);left.fix(13,7,1)
+        u,v=left.ids[13][6],right.ids[0][7]
+        s.add_clause([-u,v]);s.add_clause([u,-v])
+        s.conf_budget(10000);answer=s.solve_limited()
+        r={'kind':'bad_splice_source64','solver_answer':answer,'stats':s.accum_stats()}
+        if answer:
+            m=s.get_model();r['left']=left.witness(m);r['right']=right.witness(m)
+            lr=[int(x,16) for x in r['left']['rows_hex']]
+            rr=[int(x,16) for x in r['right']['rows_hex']]
+            assert lr[14]&127==rr[0]&127==64
+            assert (lr[13]>>7)&1==1
+            assert (rr[0]>>7)&1==(lr[13]>>6)&1
+            r['required_column8_at_join']=1^((lr[13]>>6)&1)
+            r['supplied_column8_at_join']=(rr[0]>>7)&1
+        results.append(r)
+    with Cadical195() as s:
+        c=Cone(s,0,blocks=2,source=64,endpoint='E')
+        s.conf_budget(10000);answer=s.solve_limited()
+        r={'kind':'shared_two_blocks_source64','solver_answer':answer,'stats':s.accum_stats()}
+        if answer:r['witness']=c.witness(s.get_model())
+        results.append(r)
+    counts=[]
+    for endset,name in [(A_END,'A'),(E_END,'E')]:
+        words={(w,e) for w,e in by_word if e in endset}
+        free=[x for x in table if x[2] in endset and x[3] is None]
+        counts.append({'next':name,'initial_cone_models':sum(n for (w,e),n in word_counts.items() if e in endset),
+                       'physical_words':len(words),'adjacent_only_words':len(free)})
+    return {'initial_cone_assignments':1<<14,'counts':counts,
+            'single_bit_sensitivity':sensitivity,'SAT':results}
 
 
 if __name__ == '__main__':main()

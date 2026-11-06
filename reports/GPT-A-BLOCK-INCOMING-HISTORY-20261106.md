@@ -43,3 +43,17 @@ Intel preflight23:10Z: load3.14/2.08/1.92, free+inactive about6005MiB, swap783.2
 | tests/probes/swarm/sw02/block3/intel_worker.py | 2442c769f0054db8133de0958de672f996df884c100e8cfe8e50499fabb47a94 |
 | tests/probes/metal_scope/stage.py | ba9696782abbee65ffcd3433e78848f1de82647a4f8033ab1e6a5c6cbdaaa09a |
 | tests/probes/wolfram/run_capped.py | 26f850a8c1ba3905e00093cfa52331e94ee3d48ebe41c8b69b90b735b0a5ec3b |
+
+## First result and a separately justified follow-up freeze — GC2717
+
+COMPUTED: the free-word table has6672 accepted records, all from initial prefix64. Prefixes32 and96 cannot supply A followed by either gap2 or3, even with arbitrary column8 words. From64, raw word counts are3712 (next A) and2960 (next gap3); the column8/9 necessary consistency leaves231 and130. Physical21-cell SAT witnesses exist for both from64 (roots64 and2097088), independently checked. The prediction that all three source prefixes supply both outcomes is REFUTED. The other three planned witness questions were pinned to32, so all returned UNSAT on that premise; no certified UNSAT claim is used. The finite transfer covers all free inputs and separately explains their empty source. First stage completed,0.620971 accountedCPU seconds including outer supervisor,0.60wall; no running job.
+
+This is new evidence for changing the *source*, with no cone/horizon/conflict increase. The live switch starts at64, not an arbitrary gap2 prefix. Before additional work, freeze this follow-up:
+
+- Enumerate exactly the14 variable initial bits of the **same**21-cell cone with low7=64, to classify all physical incoming words. This changes representation from arbitrary temporal input to its shared initial cells; it is not a new seed/horizon census. Prediction: some of the361 adjacency-compatible words still fail deeper history compatibility; counterfactual: adjacency alone is sufficient on this particular block. All physical words must be in the frozen free table.
+- Search that retained exact table for one initial-bit change exchanging endpoints00 and11. Prediction: a witness exists; absence will be recorded without enlargement.
+- Two SAT witness queries, each still10000 conflicts, ask the unsafe-splice and genuinely shared-two-block questions at source64. Prediction: both have witnesses. Counterfactuals are retained; no automatic third pass. All models replay all cone cells and a separate scalar oracle.
+
+Follow-up source SHA256 `6f267ef17db8561994a81992b07078b5924fc6bd3c48098bf26adc271d5dc50e`. Original free table SHA256 `acb9ceab098a8ecb3943e95bd470cc0b4691b44702cbde4ed0c248a9254f871d`. stage-stop20 aggregateCPU, child18CPU/65wall, outer24CPU/85wall; unchanged8192RSS/4096swap/4096launch/1024floor/6process/16file/128stage limits. Including the completed first stage, the maximum declared follow-up CPU remains within the original60-second stage allowance. No symbolic Boolean minimizer; exact finite simulation and SAT remain the tools.
+
+Local L1579 arrived during the freeze and was safely merged. Its complete report, including both requested carrying derivations in §5, is read: GC2714 branch selector and repaired S(b) are now PROVED hand/two-party. Its new Theorem N is received as PROOF-SKETCH, with the requested later review still separate from this active block.

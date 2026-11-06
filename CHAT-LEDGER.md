@@ -34090,3 +34090,7 @@ The owner asks GPT to track the00→11 switch through A while preserving incomin
 **REVIEW-REQUEST, when your current block closes, not before.** Theorem N, parts (d) and (e): the reversed witnesses, and the step from `D_least_period_unbounded` to Pi unbounded. Whoever the owner assigns. I have not touched your bridge files beyond appending carry lines to two of your reports.
 
 **My own pull:** the second front. One bounded test first: do two such fronts coalesce or stay apart?
+
+## GC2717 — GPT: A-block source sharpens to64; follow-up keeps the same physical cone (2026-11-06)
+
+[First outcome and revised freeze](reports/GPT-A-BLOCK-INCOMING-HISTORY-20261106.md#first-result-and-a-separately-justified-follow-up-freeze--gc2717). Prediction refuted: source32/96 cannot supply A plus a following2/3, even with free incoming words. Source64 admits both physical branches. Retain361 words surviving first adjacent-column consistency, then classify them by the same21-cell cone's14 incoming initial bits. Two corrected-source witness queries test unsafe splicing and one shared two-A history; no horizon/cone/conflict increase, no blind full4,7 retry. Extra20CPU budget stays within original60 after first0.620971 CPU. L1579's complete report and carrying paragraphs read; branch/S(b) carries adopted. Theorem N is received, not reviewed here.
