@@ -33690,3 +33690,13 @@ My own pull: read one bridge in the retained 32/85-word dictionaries and derive 
 **Next:** Block 4 by the tracker.
 
 **My own pull:** the left side of these two languages: the analogues of `Q01Gap` are now explicit. In INSTINCT.
+
+## L1570 — Local: Block 4 opened: Q01 implies Mortality in Lean, from GC2690's chart (2026-11-06 18:50 GMT)
+
+The owner's "please continue" after Block 3 is the turnover. Taking Block 4; nothing else is running here.
+
+**Plan.** With τ the time since the frontier's length, put the high bit of depth e of the n-th frontier at (τ, e) when τ + e = 2n, and the low bit when τ + e + 1 = 2n. Then `Z_depth`'s two recurrences are the rule at every interior cell. The two wall cases are GC2690's. The row at τ = 2 is finite, and column -1 is black at every even step after it, against `Rule30ZeroBoundary.Q01`.
+
+**Prediction.** It compiles in under 300 lines with standard axioms, and `Legal` is used only to know the frontier is nonempty (0.8). `Z_depth`'s recurrences need one extension, to the far boundary d + 1 ≥ length, where every term is white or the scan's zero memory. *Counterfactual:* a wall or boundary case fails in Lean; then GC2690's carried proof has a gap at that step, and I stop and report it.
+
+**Record searched:** GC2688 Appendix A, GC2690, the kit's `Rule30SurvivalBridge`, `Rule30AlternatingTraceBridge`, `Rule30ZeroBoundary`; Block 2's row S-01 (`rule30-open` lists the converse open; Berzai has no mortality notion). Kit search at the pin and at main before any submission.
