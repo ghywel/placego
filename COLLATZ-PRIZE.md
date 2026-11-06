@@ -36,6 +36,8 @@ lies within any reachable search, and a proof is what the prize pays for.
   What is ours is the pairing with Rule 30's Theorem A′ and the conclusion that exponential sums cannot reach a
   single case on either side.
 
+*(SW-02 note, Local, 6 November 2026, flag 12, CONFIRMED, checked against source by a sub-agent: :36-37 and :266: 'the conclusion that exponential sums over starts cannot reach a single case on either side (a sum along one orbit is another object: kit and portal reductions take such sums on the seed to Problems 1 and 2, hypotheses open)'. :351 status: 'CLOSED for sums over starts (§5)'.)*
+
 **What the problem needs, in this record's terms.** A count. If fewer than $2^{w - \alpha T + c}$ numbers of $w$ bits
 stay above their start for $T$ steps, every stopping time is finite and the conjecture follows (§1). The free bits
 pay exactly; the open part is whether the remainder modulo $3^a$ keeps paying, which is a statement about one orbit's
@@ -326,6 +328,10 @@ the principle that number is the trace's complexity $p(n)$.
    additions on both sides are all of the second kind, and they stop at the same place: traces with long early
    repetitions are excluded, and traces that look random are not.
 
+*(SW-02 note, Local, 6 November 2026, flag 62, CONFIRMED, checked against source by a sub-agent: COLLATZ-PRIZE.md:318: "*The exponential sums.* §4 identified them: they are Tao's sums, read in base 2. Estimated with square-root error, as random data would be, they cannot close either problem." Replace "are out of its reach in principle" by "are out of reach of any such estimate". Row :351: "**CLOSED** as a route (§5, reasoned, no theorem)" with "Square-root estimates cannot separate a single case." RECORD-MAP.md:401 as in flag 61.)*
+
+*(SW-02 note, Local, 6 November 2026, flag 9, CONFIRMED, checked against source by a sub-agent: 'An exponential sum estimates a count as a main term plus an error. A bound resting on uniform estimates of all the coefficients cannot go below about the square root of the set's size (Parseval), though particular sums can be exact: over the free range they are 0 (CZ0; `walsh_center_eq_zero`).' Board row :351: 'A bound from uniform coefficient estimates is at least about the square root of the set's size.')*
+
 **Where the nonlinearity sits.** One more exact parallel, with no theorem attached yet. Both maps are affine once
 one bit is known. Collatz is $x \mapsto 3x/2$ or $x/2$ plus a source of $1/2$ at the odd steps, and the trace
 records exactly those steps, so knowing the trace makes the whole orbit affine (Terras's formula). Rule 30 is the
@@ -356,6 +362,8 @@ commit as the result.
 | The carry dial (§9): carries cut to $k$ places, on Collatz and Mahler's 3/2 map | **DONE** as a measurement (2026-10-09, AS and MD) | Cycles at even $k = 2, 4, 6$; collapse at odd $k \ge 3$ ($k = 1$ reaches 1); all of $n < 2^{18}$ reach 1 at $k = 0, 1, 8, 10, 12$ and $\infty$ (tested $k \le 12$ and $\infty$) (comb note, 2026-10-14, Local, SW-01: the board row matched to section 9, as D6-3 did for the map; was "collapse at odd $k$; all of $n < 2^{18}$ reach 1 from $k = 12$"); $H_0(g) = v_2(g) + 1$ (GC836) | Why even $k$ grows cycles; whether any finite $k$ already behaves like the true map for all $n$ |
 | Eventually alternating orbits, and the never-drop residues $D_k$ under multipliers (results after PERIOD-TWO.md Q9's fifth triage) | **DONE** as lemmas (2026-10-13 and 2026-10-14) | Proposition 24 (PROOFS.md entry 43, RULE30-PRIZE.md §8.92, second-read by GPT in GC1162): an orbit whose parity column alternates for ever is the trivial cycle, so the conjecture holds if and only if every positive orbit's parity column is eventually 1010.... Cloud's hand lemmas H2 and H3 of RULE30-PRIZE.md §8.110 (single-party; checked by computation to depth 24): Terras's never-drop residues $D_k$ lie in $3 + 4\mathbb{Z}$ for $k \ge 2$, and $y = (2x - 1)/3$ maps $D_k$ into $D_{k+1}$. *(comb note, 2026-10-14, Local, SW-01: row added to match PERIOD-TWO.md Q9's note.)* | Neither is a statement beyond the conditional bounds; Q9 stays PARKED. |
 | Published results checked overnight (Cloud, 2026-10-22, added at the spring clean) | **NOTED** | Mazur's natural-density log-time theorem: its Lean artifact builds here against the standard axioms only (CL510–511). Hercher's m-cycle bound (arXiv 2201.00406v3): the gap in Theorem 21's proof is real, and the repair posted on rStation recovers m ≤ 91, checked by an independent implementation (CL520–522). A community 95-block extension: its key identity checks by hand; its search is unassessed (CL523). All single-party. | Second reads of CL522 and CL523; m = 92 stays open. PRIOR-ART.md's rStation section has the sources. |
+
+*(SW-02 note, Local, 6 November 2026, flag 11, CONFIRMED, checked against source by a sub-agent: 'Nothing: a measurement of the population, the asymptotic shape a density proof needs (§3); it says nothing about single cases.')*
 
 ## 7. How to reproduce
 
@@ -411,6 +419,8 @@ different linear part, and the Gray-code one is the part the two problems share.
 - **Not at all.** These are the wall-specific results: the silent sources (E6, E14), the wheel and its kicks, G248's
   charge modulo 28, and the forbidden visible words. They come from the 0101 clock. Collatz's analogue of a clock
   is a periodic parity vector, which is the cycle case, already handled by Steiner's method (G33, G47).
+
+*(SW-02 note, Local, 6 November 2026, flag 13, CONFIRMED, checked against source by a sub-agent: :398: replace 'Two of the day's results are of that kind:' by 'GC600 is proposed as of that kind; GC598 is not, unchanged, since it also needs the frontier's bound on source positions and a non-dyadic signature (GC616, read L326):'. :429: replace 'awaiting reading' by 'read L326'.)*
 
 **A caution about the number 3.** GC598's three is the period of the Fibonacci numbers modulo 2. It comes from
 $x^2 + x + 1$ over GF(2), not from the 3 of $3n+1$. The fact the argument uses, that no power of two is a multiple of

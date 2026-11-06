@@ -371,6 +371,8 @@ stationary walls, moving walls, and laws exact in fact but not adversarially rob
 whether one period of the front is determined by a bounded strip under every outside input, is the same as upward rigidity in
 the eternal-cycle line, and the tool is now one tool for both.
 
+*(SW-02 note, Local, 6 November 2026, flag 164, PARTIAL, checked against source by a sub-agent: the first moving walls (70–74 states), and, after the phase-state fix of CL683, (9, 57)'s 5/19 as well (60 sampled alignments; `Rule30MovingWall.Ring57.edge_law`, 24 cells). This section first reported that (9, 57) could not be certified; that failure was a bookkeeping error. The spectrum's exact laws certified so far are stationary walls and moving walls; the dividing question,)*
+
 ## 12. The open cells, second pass (Block 26, CL685, at the owner's word)
 
 Where the six cells of §4 stand after the day, and what this pass adds.
@@ -1117,6 +1119,16 @@ black cell by one flipped cell per fork of its name, at the fork's child, after 
 child within 0.5% in fourteen cases and 1.5% in one. The sixteen left sides are sixteen settings of fifteen switches,
 each thrown by one cell at a fork's child and by nothing below it.
 
+*(SW-02 note, Local, 6 November 2026, flag 83, CONFIRMED, checked against source by a sub-agent: and a chink on or one under the fork wheel re-chooses the branch by the tick)*
+
+*(SW-02 note, Local, 6 November 2026, flag 82, CONFIRMED, checked against source by a sub-agent: line 1101: so a chink far below a fork and early did not switch the strip (64 of 64, wheels up to 5,000, ticks 1,000–1,007; nothing between those and the fork was run). line 1104: The chink is a switch between the left sides, thrown always at a fork's child and, by the tick, on the fork wheel and the wheel under it. line 1118: each thrown by one cell at a fork's child. Design:636: negative: an early chink far below the fork does not (64 of 64).)*
+
+*(SW-02 note, Local, 6 November 2026, flag 81, CONFIRMED, checked against source by a sub-agent: line 1098: *The branch at a fork* j, when wheel j − 1 is aligned with the strip at τ*, is the strip's own child bit at the tick τ* at which the walk clears the fork, ¬C_(j+1)(τ*); in general it is the branch law's d below, and on the seed at 53,207 only the general form is right. line 1121: *The branch at a fork* is given by the branch law at the tick the front clears the fork (§21.10), so ...)*
+
+*(SW-02 note, Local, 6 November 2026, flag 80, CONFIRMED, checked against source by a sub-agent: Every chink spills: 56 chinks on wheels 0–399 at ticks 1,000–1,007 re-form the whole left side above the hole on the same strip A0 by ticks 220,731–221,327, that is 219,726–220,323 ticks after the chink (the seed's own settling tick 220,275; through 165,748 for wheel 0), with the clock slipped ...; eight chinks above the front (wheel 5,000 at ticks 1,000–1,007) change nothing in the walk.)*
+
+*(SW-02 note, Local, 6 November 2026, flag 79, CONFIRMED, checked against source by a sub-agent: The diagonal walls of the seed's left side are the wheels of constant colour: below 87,867, black 0, 1, 4, 9, 30, 401, 53,209, 58,288 and white 2, 7, 28, 399, 53,207, 58,286, 87,866 (each white wheel j has a black j + 2).)*
+
 **21.11 The prefix question: which left side a configuration gets, and what a prefix of the seed guarantees (CL750;
 statuses as marked).** *The branch at a fork* is the strip's child bit at the tick the front clears the fork (§21.10), so
 a completion of the seed's first P bits takes the seed's branch wherever, at the seed's last black of the fork wheel,
@@ -1132,4 +1144,8 @@ at P = 1, 500, 2,000, 20,000 all end on A0 (COMPUTED); at P = 1 the agreement wi
 in nine of twelve by a phase difference at a doubling (GC2635's 16-tick correction from below), and they end on A0
 all the same, because their fronts over A0 are the strip's walk, phase-locked at the forks. The sixteen left sides are
 one common fate and fifteen rare ones, reached by one cell at a fork's child (§21.10).
+
+*(SW-02 note, Local, 6 November 2026, flag 86, CONFIRMED, checked against source by a sub-agent: Design:636: (0 of 12 at P = 1 in `prefix_race.out`; the other 36 of the 48 had a shared prefix covering both forks and could not leave). Design:409, 544, Cloud:53, 150: 48 of 48 random completions on A0, 36 of them forced by their shared prefix and 12 free. Cloud:170 as in flag 78.)*
+
+*(SW-02 note, Local, 6 November 2026, flag 84, PARTIAL, checked against source by a sub-agent: so every completion of the seed's first 19,656 bits has A0 as its left side through 894,235 up to the doublings' phase shifts, with no caveat: the transport can run on the seed's own rows, where the one-wheel rule and GC2647's 010 rule reach 54,841 at 71,115 and 58,753 at 77,909, and 19,197 bits are the least for those two rules (PROOF-SKETCH + COMPUTED; SW-02 replay, second read pending))*
 

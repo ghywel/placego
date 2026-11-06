@@ -4476,6 +4476,8 @@ length ≤ 40 joins the rain to it at p = 1,024 (T33; both rain instances `cake_
 unknown, with GC2369's thirty-minute Intel block running as I write). GC2368's caution that fixed-p rigidity need not
 survive lifting is the same point as item 2 of §38.2 below.
 
+*(SW-02 note, Local, 6 November 2026, flag 151, CONFIRMED, checked against source by a sub-agent: :4468: Standing: COMPUTED for every p dividing 128, on a PROVED reduction (two implementations and GPT's third through 64; at 128 `eternal_dfs.c`, its path count reproduced by `twopair_tree.c`, §62.1); p = 256 has. :2850: **COMPUTED (exhaustive enumeration, no checked certificate or Lean proof): for every period dividing 128, the only rows with a black rightmost cell that recur)*
+
 Refuted on the way, and usefully: double-or-die (GPT's period-8 plateau); the valuation separator and the cycle lemma
 (P1024, L1308); per-state orders (T21); bounded-window coins (T27, with GC2362's correction). These refutations
 constrain the shape of any proof, which is the point of §38.5.
@@ -6639,6 +6641,8 @@ Write `V_n` for the time word of bit n − 1 OR bit n − 2, which toggles bit n
 - It implies Lemma U, R(p) (the alternating tail), the light-speed recurrence conjecture and, through the top-cell reduction, same-edge rigidity. The last implication is PROOF-SKETCH; the others below are Lean.
 - So four open statements are corollaries of one injectivity statement. The status of the law itself is §29.5's: true in the random model, mechanism unknown.
 
+*(SW-02 note, Local, 6 November 2026, flag 152, CONFIRMED, checked against source by a sub-agent: It implies Lemma U, R(p) (the alternating tail), the light-speed recurrence conjecture and, through the top-cell reduction, same-edge rigidity. The implication to Lemma U is PROOF-SKETCH (L1520); the others are Lean (below, and `same_edge_rigidity`, §62.5).)*
+
 **Where it has been checked (COMPUTED).** Every register at widths ≤ 33, whatever its period (`twopair_vcycles.c`). Every register of period ≤ 128 at every width, with Lemma U′ now through p = 128, one representative per orbit (`twopair_tree.c`; the sums of periods reproduce T13's 143,381,758 exactly). A register of period above 128 at width above 33 is unchecked.
 
 **Proved in `TwoPairs.lean`, for every k.**
@@ -6902,6 +6906,8 @@ The AB lock and the tested coarse projections of the period-3 lock can be entere
 
 **CONJECTURE.** With a specified independent fair lower-input law, eventual lock entry is almost sure for each admissible initial state. (§64.5d: no entry in 1.26 · 10^11 chain ticks.) This is not a claim about every input sequence. Reachability alone suffices for absorption in an appropriate finite chain, but does not automatically settle the infinite-state question (GC2682).
 
+*(SW-02 note, Local, 6 November 2026, flag 153, CONFIRMED, checked against source by a sub-agent: (§64.5d: no third-lock capture detected in about 1.2 · 10^11 chain ticks.))*
+
 ### 64.5a When rows enter a lock: the count run backward (L1540–L1541)
 
 **Corrected in §64.5c.** For the two `AAB` locks, the "last m with survivors", the totals and the "one early burst" below are sampling artefacts. The formula and the `AB` figures stand.
@@ -6913,6 +6919,8 @@ The AB lock and the tested coarse projections of the period-3 lock can be entere
     e_m = |U| · 2^(10−K) · 8^m · h(m),
 
 where h(m) is the probability that a row with a uniformly chosen top K window in U and fair cells below has its first forward image outside U and all its first m forward images reading letters. Separately e_0 = |U| 2^(10−K). This is a finite-age entry probability, not a stationary per-tick hazard (GC2683). So entry can be measured from inside the lock. This matters because going forward the row fixes its own next 50 ticks, so fresh randomness at the bottom cannot reach the top in time, and splitting on the chain resamples nothing. Going backward, fresh cells enter at each tick. [`wall_entry.c`](../tests/probes/wall_floor/wall_entry.c) estimates h(m) by sequential Monte Carlo.
+
+*(SW-02 note, Local, 6 November 2026, flag 154, CONFIRMED, checked against source by a sub-agent: :6915: This matters because along the chain, whose tick is a real backward tick, the row fixes its own next 50 ticks, so fresh randomness at the bottom cannot reach the top in time, and splitting on the chain resamples nothing. Along the forward images that h(m) reads, fresh cells enter at each tick. :6939: In its forward image, y'(k) = y(k+3) ⊕ (y(k+4) ∨ y(k+5)), so the first difference D' obeys:)*
 
 **Control.** For the `AB` lock the method gives 0.53% in all (0.024% by tick 7 and 0.51% after), with no particle alive at m = 15, the exact bound of L1537 ([output](../tests/probes/wall_floor/entry45.out)). Direct runs of the window chain from the same law give 208 of 40,000, or 0.52% ([output](../tests/probes/wall_floor/direct_ab.out)).
 

@@ -1682,6 +1682,8 @@ Doing: the graph pull ran and did not deliver a rate. Pull, moderate: **why 0.2 
 
 Doing: SW-02's design, at the owner's word. Pull, moderate and rising: **`CQ01Empty`.** Psi ∅ is one deterministic sequence, its driver sits in a proved gap-3-or-5 trap from step 146, and almost all our work went to `Q01` or the right wall. The barriers B1, B2 and B6 do not cover it. It is CP-1 in the draft, one agent of 54, and I would give it more. Misgiving: it would not give period 2 alone, and "smallest open object" may only mean least visited. Second misgiving: the swarm's likely yield is the door ledger, not a crossing, and I should say so plainly when it reports. (21:44 GMT.)
 
+*(SW-02 note, Local, 6 November 2026, flag 22, PARTIAL, checked against source by a sub-agent: 'The barrier B1 transfers to it by the same pigeonhole on truncations of Psi ∅ (`truncation_death`; hand, unread), and B2 and B6, which use the stripe's periodicity, do not cover it as they stand.')*
+
 ## Cloud, 5 November 2026 — after the SW-02 third read (CL751)
 
 Pull, strong and bounded, not taken: **the wall as a reset.** In the wall frame the zero-boundary dynamics of a

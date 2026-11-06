@@ -1756,6 +1756,8 @@ answers differ.
 | Coin model (8.14, G.1) | half a bit per cell | Terras's coin | borderline | favourable, (2/3)^k | Mahler differs: borderline |
 | Logical form (8.46, GC664) | Pi_2 | Pi_2 | Pi_2 (GC664) | Pi_1 (Stérin-Woods) | Erdős differs |
 
+*(SW-02 note, Local, 6 November 2026, flag 159, PARTIAL, checked against source by a sub-agent: | Multipliers that move the set off itself (8.109, here) | the row was asked only of time doubling: Rule 150's column is t -> 2t invariant, Rule 30's is a coin (0.496). Of K itself: even, or +-3 mod 8, at depth 3 (PROOF-SKETCH) | even, or 3 mod 4, at depth 2 | sign -1 after 2 -> 3 | sign -1 (u = 2 mod 3) | Rule 30's column is not comparable; K has the same shape as the other three |)*
+
 (*) Reasoned here, not computed. Rule 30 is permutive in its left neighbour (PERIOD-TWO.md section 1), so
 c(t) = x_(-t)(0) XOR g_t(x_(-t+1)(0), ..., x_t(0)). With a fair-coin initial row, the column is therefore a fair coin,
 and almost surely not eventually periodic. The forced left half is this bijection run backwards.
@@ -2477,6 +2479,8 @@ the maximizers at a width come in families sharing their deep bits (at 24: 0xf0c
 the same 14-bit start 0x2b4b maximizes every width 14..18 and the 52-maximizer has 51 bits, so the table is driven by
 a sparse family re-used across widths; D(W)/W stays in [1.73, 1.90] from 20 to 64. The maximizer census across widths
 (D4) is the proposed next step.
+
+*(SW-02 note, Local, 6 November 2026, flag 161, CONFIRMED, checked against source by a sub-agent: a sparse family re-used across widths; D(W)/W stays in [1.73, 1.90] at the widths in this table (20 to 24, 30, 52 to 64), but not at every width: D(31) = 66 gives 2.13 and D(29) = 48 gives 1.66.)*
 
 ### 8.118 Formal delivery: finite-prefix changes preserve repeat obstructions (GC2095, 29 October2026)
 

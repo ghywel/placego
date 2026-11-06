@@ -13,6 +13,8 @@ hidden multiplicity to amplify. Hidden multiplicity exists in our record only on
 driven right half's far end, and the left half's driver), and there it multiplies right halves, never the left row that
 Q01 is about.
 
+*(SW-02 note, Local, 6 November 2026, flag 150, PARTIAL, checked against source by a sub-agent: Add under the title: **Superseded in part (CL638, after GC1883).** 'No hidden multiplicity' holds for the complete trace only and is withdrawn for the even-time trace Q01 constrains; 'must double width or horizon' is softened to the product ηβ ≈ 2 of an affine bound; 'cannot be easier than the target' is a judgement, not a theorem. Lemma A stands.)*
+
 ## 1. The lead, restated
 
 Rows are the kit's zero-boundary left half (ZBL): depth 1 next to a white wall, `(Fx)_k = x_{k+1} xor (x_k or x_{k-1})`.

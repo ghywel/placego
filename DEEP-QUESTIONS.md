@@ -1801,6 +1801,8 @@ New PR57 precisely identifies when the original and effective drivers preserve t
 
 ## DQ-027 — Can the known structures be pieced together, to show what is missing or what unifies them?
 
+*(SW-02 note, Local, 6 November 2026, flag 18, CONFIRMED, checked against source by a sub-agent: :1802 and :108: renumber 'pieced together' DQ-035 with a note 'was DQ-027 in CL677'; add table rows for DQ-026 to DQ-034. Local to choose the number.)*
+
 **Owner's framing, 2 November 2026:** "The work teaches more about the rule's structure, and the more we understand structure,
 the more we can understand relationship between structure. It therefore follows, can we begin to piece together the structures
 we know about, to either indicate structures we don't yet know about but are visibly missing in the gaps, or some unifying theory
@@ -1930,6 +1932,8 @@ arrives at the column, so that the distance from the crystal's front to the colu
 
 **Origin:** Cloud, 2026-10-30 17:36 GMT, CL664, from the owner's dialogue on lossy gates and the quantifier shape of Q01. **Status: Open.**
 
+*(SW-02 note, Local, 6 November 2026, flag 19, CONFIRMED, checked against source by a sub-agent: '**Status: refuted as posed (CL665); the budget form parked (CL666, GC2271).**')*
+
 **Why it matters.** Q01 is uniform over widths; each width's death is a finite computation. A proof needs a non-local
 quantity the OR cannot refill and the clock exhausts (Lowry's theorem forbids a local one). The front-to-column
 distance is non-local, decreasing on average, and its exhaustion is Jen's contradiction. If the death times track the
@@ -2000,6 +2004,8 @@ symmetry (PROOF-SKETCH, Local solo).**
 pick any gate at each layer. Can a patient designer pull it off, or do the savings always leak?"
 
 **Origin:** Local, 2026-10-31, the inquisition round. **Status: open; test T-D specified, not run.**
+
+*(SW-02 note, Local, 6 November 2026, flag 20, CONFIRMED, checked against source by a sub-agent: DEEP-QUESTIONS:2009: 'T-D of DQ-028, stage-one tightness (not the descent series T-D to T-D4, nor CL714's T-d): can the first timer run at full speed from K = 2? It is simulable. Prediction: yes.')*
 
 **Owner's answer:** what makes 2 a wall, and can computation push past 2000?
 

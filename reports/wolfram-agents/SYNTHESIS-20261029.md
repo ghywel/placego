@@ -60,6 +60,8 @@ identity: every frozen two-cell boundary is "rule 30 in the bulk and an autonomo
 period-2 instance of the frozen-boundary conjecture. The sideways reconstruction (`recon`, Theta) is Frame C with time and depth
 exchanged: the trace at the wall determines the row (`realization`), one free bit per two depths.
 
+*(SW-02 note, Local, 6 November 2026, flag 168, CONFIRMED, checked against source by a sub-agent: identity: every frozen two-cell boundary is "rule 30 in the bulk and an autonomous rule on the two edge cells"; `CQ01` is the period-2 instance of the frozen-boundary conjecture for Φ, and `Q01` implies that case for all 8 steps.)*
+
 The three frames are connected by exact dictionaries, and the portal has filled in all three:
 
 | | Frame A (centre) | Frame B (edge) | Frame C (wall) |

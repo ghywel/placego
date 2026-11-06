@@ -282,6 +282,8 @@ and the prize is about every single case.
 4. **The method.** Predictions committed before runs, a control with a known answer beside every new number, and a
    counterfactual that must fail. Over a day it caught a dozen wrong guesses of mine, each recorded.
 
+*(SW-02 note, Local, 6 November 2026, flag 41, CONFIRMED, checked against source by a sub-agent: sets. Single-case theorems here come mostly from finiteness or from exact counting of finite objects; the exceptions in the record are Furstenberg's x2 x3 orbit theorem, Mahler through Ridout, and t(n²) normal along squares (statement read, proof not audited).)*
+
 **The prizes, by how much carries over:**
 
 - **Collatz (¥120M): strong.** The same skeleton. Terras's theorem (the first $k$ parity steps of $n$ are a

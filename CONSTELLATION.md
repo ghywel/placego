@@ -59,6 +59,8 @@ do, so a "next step" is a family of walls over which a theorem can be proved.
 | The single cell itself | — | — | the prize | Its two bands are provably far from the core (§8.30) | none known | open |
 | The uniform count (question 1) | all | all | $N_w(T) \le 2^{w - \alpha T + c}$ for every wall at once | Measured to width 26 (§8.51 to §8.53); the only shape that wins | A family where the debt is explicit (the slow walls) | the goal |
 
+*(SW-02 note, Local, 6 November 2026, flag 16, CONFIRMED, checked against source by a sub-agent: 'Period 2 is the record (the wheel, the channel, the count); periods 3 and 4 have proved reductions in the kit, open at their last statements (lean/README.md); periods 5 and 6 measured (§8.42)')*
+
 ## B. The second question: the object for its own sake
 
 Each row is a thing Rule 30 does that nobody asked it to do. "Known" cites the record; "cheap" means a run of

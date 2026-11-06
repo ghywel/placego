@@ -63,6 +63,8 @@ official wording quoted) then ask:
    here. A coin that repeats has a shortcut, since you can look its cycle up, so proving there is no shortcut
    would settle Problem 1 too (§8.34).
 
+*(SW-02 note, Local, 6 November 2026, flag 69, PARTIAL, checked against source by a sub-agent: Every measurement agrees with a fair coin (§8.34, §8.35); no density is proved, only partial bounds: a black run from time a lasts at most about 3a/5 (R30-20261025-0554f7), and the black cells grow at least like a logarithm (R30-20261103-452bbf).)*
+
 Three things make this coin unusual.
 - **It is not chance.** Every flip is fixed by the rule, so each question has a true-or-false answer. A measurement
   can only make an answer look likely, and the prizes pay for proofs. For a truly random coin, "the same face
@@ -266,6 +268,8 @@ by Condrey; period 2 is the open case, and the work concentrates there. What exi
   - the notched kicks;
   - Jen's leftward flow of periodicity;
   - the bottleneck and its exact bound.
+
+*(SW-02 note, Local, 6 November 2026, flag 68, CONFIRMED, checked against source by a sub-agent: The bound was still falling at the widest width computed (0.137, 0.133, 0.128, 0.1222 at m = 22 to 28); levelling is not shown, and a positive limit is not proved.)*
 
 The night's three main measurements are drawn in one figure, [rule30_night.svg](tests/probes/lexicon/rule30_night.svg):
 - the adversary's runs against depth;

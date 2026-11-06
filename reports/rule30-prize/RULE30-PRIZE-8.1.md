@@ -704,6 +704,8 @@ orbits that decay to the wheel, the ground state**, and nothing re-excites them.
 on that single 4-lock decay. Within the wheel itself the angle does jump in quanta: the walls' notches above. So the
 analogy fits twice over, once for the size of the orbit and once for its phase.
 
+*(SW-02 note, Local, 6 November 2026, flag 158, PARTIAL, checked against source by a sub-agent: E1 had predicted jumps both ways and is refuted. The jumps go one way: a lock outside a closed window set behaves like a **metastable excited orbit that decays to the wheel, the ground state**, and nothing re-excites it here. A lock inside a closed set cannot decay (COMPUTED, SW-02: 66 windows of 30 columns, entered by R = 74 at t = 379).)*
+
 **A correction** (found here): the second domain word $U_2$ of §8.5 has least period 14. It is
 `00010011001101` four times, the 14-lock, not a second wheel. The classifier tested for $U_2$ before the 14-lock, so
 every 14-lock window above was counted as $U_2$. §8.5 and the probe headers say so now.
@@ -1944,6 +1946,8 @@ The owner's view that the three problems are a three-body problem fits:
   - Problem 1 for the single seed would follow from any positive entropy at all.
   - Our period-2 case needs entropy above 0.0646 for a finite left seed driven by 0101….
 
+*(SW-02 note, Local, 6 November 2026, flag 155, CONFIRMED, checked against source by a sub-agent: - Problem 2 needs only the centre column's black density to be 1/2, far less than fully coin-like.)*
+
 No lower bound of this kind has ever been proved for Rule 30. That one shared obstacle is the structure the three-body
 picture reveals. `rule30_core.py` measured the left side in both settings (predictions written first):
 
@@ -2325,6 +2329,10 @@ a sharper dichotomy:
   $\log_2 s$ bits, and the law is bounded.
 - **Next to 0101 the channel's entropy is positive.** It levels off near 0.12 bits per visible bit, at every layer
   width computed. A positive-entropy channel lets the runs grow, slowly, as a coin game.
+
+*(SW-02 note, Local, 6 November 2026, flag 157, CONFIRMED, checked against source by a sub-agent: As flag 156, sites 8.1:2326 and PERIOD-TWO.md:151.)*
+
+*(SW-02 note, Local, 6 November 2026, flag 156, CONFIRMED, checked against source by a sub-agent: 8.1:2326: **Next to 0101 the channel's entropy looks positive.** Its upper bound levels off near 0.12 bits per visible bit, at every layer width computed; the limit is not proved positive (§8.20). A positive-entropy channel would let the runs grow, slowly, as a coin game. || 8.1:2450: Here, the 0101 wall, where column 1 has positive entropy at every width computed and the limit is open. || PERIOD-TWO.md:151: constrained side of positive entropy, which is how the side next to 0101 looks at every width computed (the limit is open).)*
 
 So no local rule of column 1 can give the bounded law for 0101. The cost side has to come from the left half's
 forced cells themselves.

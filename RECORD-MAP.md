@@ -102,6 +102,10 @@ PART: as on the board.
 - §8.11 N1's "60% against 8%" compared two measures: on N1's own, real halves 69.8%, wide random 70.9%, coins
   60.2%; coins at column 13 sit inside the partial lock — MEASURED — CL098
 
+*(SW-02 note, Local, 6 November 2026, flag 66, CONFIRMED, checked against source by a sub-agent: - In a finite configuration with column 0 eventually 0101, column 1 is never eventually periodic, so its wheel would slip for ever; an unkicked wheel never works, at any rotation number (right halves driven alone can lock, §8.5) — PROVED — Proposition 7 (Jen), §8.13; Theorem E, §8.57)*
+
+*(SW-02 note, Local, 6 November 2026, flag 65, CONFIRMED, checked against source by a sub-agent: RECORD-MAP.md:83-84: "- Column 1 beside 0101: 56-step windows mostly match the wheel U, an exact coding of the rotation by 17/56, which is the column's mean rate, kicked by domain walls in notches of 1/28 turn; its commonest repeating word is the 36-step word of three 10-blocks and one 6-block; no other trace tried turns one — MEASURED — §8.4 to §8.11; PERIOD-TWO.md §3, §5". RECORD-MAP.md:87: "- Rotation exact within a 56-step window, rarely over two turns of U (ticks in two-period stretches: 0.39 for U, 0.85 for the 36-step word); not chaotic, its randomness is the interior's — MEASURED — §8.10, §8.11".)*
+
 ## Kicks (alphabet, classes 12/32/42/52, rates, the kick game)
 - Size set by the interior; timing and alphabet rigid; no memory; about 3.5 bits a kick — MEASURED — §8.43, §8.11
 - The alphabet is local: after 133 steps, four classes and at most log2 6 bits a kick; not a classification of
@@ -274,6 +278,8 @@ PART: as on the board.
 - TC/TC2 audits PART (GC871, CL107, GC877, GC879/CL109), F digest and count roots COMPUTED (GC886, GC889); LP audits
   PART (GC883..885, GC887, GC891), witness recipe PROVED (GC888, CL118, L507), positivity guard GC942/944 (CL158)
 
+*(SW-02 note, Local, 6 November 2026, flag 46, PARTIAL, checked against source by a sub-agent: - Problem3 binary-input multitape target fixed (GC1282), then replaced as target by the kit's one-tape `Problem3`, `Problem3Verbal`, `Problem3Robust` (CL615); the prize-level lower bound OPEN, matching precedent NOT FOUND — specification GC1282; PRIZE-PROBLEMS D4.)*
+
 ## The left front, triangles and the right edge
 - Left diagonals eventually periodic, power-of-2 periods (Jen 1986, Rowland §5) — PROVED — JenPow2.lean L541: band k<=j+2 period2^j; settled gcd run bound L543; GC962; §8.27/30.
 - Lemma B1 (white, then black; LemmaB1.lean L529; GC955), B2 (unbounded periods; LemmaB2.lean L545/550, GC963; infinite white/black JenPow2.lean L548, GC964), B3 (no white run over twice the
@@ -392,6 +398,14 @@ PART: as on the board.
 - Summing marginal information of successive observations — CLOSED (no count-loss certificate) — GC412
 - Q2, the finite-window move: reopen only on a condition not local in column 1 — OPEN (parked) — CL065, GC614.1
 
+*(SW-02 note, Local, 6 November 2026, flag 59, CONFIRMED, checked against source by a sub-agent: RECORD-MAP.md:390: "- Unrestricted sideways collapse: the limit set keeps every binary trace — CLOSED — G128; sideways with the wall or finite support stays open (`CQ01_iff_Psi`; rest in CONSTELLATION.md row 5)". PERIOD-TWO.md:285 status cell: "**CLOSED**, as global collapse in the unrestricted limit set (G128); the walled form is CQ01 itself (`CQ01_iff_Psi`); the rest parked in CONSTELLATION row5". STATE-OF-THE-PROOF.md:227: "Routes since closed (finite-predecessor descent, unrestricted sideways collapse)".)*
+
+*(SW-02 note, Local, 6 November 2026, flag 58, CONFIRMED, checked against source by a sub-agent: - Minimal-counterexample finite-predecessor descent: 3/4 of normalized words are roots — CLOSED as a complete route; other shrinking transformations open — G121 to G124, G128)*
+
+*(SW-02 note, Local, 6 November 2026, flag 57, PARTIAL, checked against source by a sub-agent: RECORD-MAP.md:380: "- Self-similarity of record witnesses between depths d and 2d (renormalisation): none beyond chance — CLOSED as that test — §8.36, RC5". PERIOD-TWO.md:317 first cell and last cell: "Self-similarity of record witnesses between depths $d$ and $2d$ (§7)" and "Other renormalisations untested here; the kit's conditional eight-column identity (`Rule30SpacingRenormalization`) is a different map.")*
+
+*(SW-02 note, Local, 6 November 2026, flag 56, PARTIAL, checked against source by a sub-agent: - The wheel's rigidity as a bound: in the kick game to depth 105 timing cuts runs but does not stop them (MEASURED; the positive-entropy sentence is a heuristic) — CLOSED as a route — §8.44)*
+
 ## Collatz twin (Q9)
 - Counting form: Terras's coin to 0.5% (w = 30); slope -0.0591 vs the coin's -0.0591 at w = 43, excess <= 7.4 bits,
   not growing — MEASURED — COLLATZ-PRIZE.md §6, collatz_count.py (CZ12 .. CZ16, L509)
@@ -411,6 +425,8 @@ PART: as on the board.
   MEASURED — rule30_and_shadow.py, L453
 - Mazur natural-density log-time Collatz theorem (CL510-511): ProofAtlas Lean artifact ca3dd0d built here, standard axioms only; set-level, fold-table note added. PRIOR-ART rStation section. (Moved here from the GPT section on 2026-10-22, Cloud's own line.)
 - Hercher 2201.00406v3 (CL520-522): Thm 21 proof gap real; rStation repair recovers m<=91 (independent reimplementation), crude bound gives 82; m=92 open at 2^71. PRIOR-ART rStation section. (Moved here from the GPT section on 2026-10-22, Cloud's own line.)
+
+*(SW-02 note, Local, 6 November 2026, flag 61, PARTIAL, checked against source by a sub-agent: - Exponential sums as a route to a single case: expected square-root error, reasoned, no theorem — CLOSED as a route; open for the population form (L221) — COLLATZ-PRIZE.md §5)*
 
 ## Mahler's 3/2 problem (MAHLER.md)
 
@@ -3146,6 +3162,10 @@ Cloud retains packaging; final-source/notebook/posting review separate.
 - L1542–L1543 / GC2683: genealogy §64.5b. Deviation rise table carried with both exceptional cancellations; mean 4.25 is heuristic. K/3.4 explanation withdrawn; replacing the exact entry event by an arrival tail is an approximation.
 - L1544–L1545 / GC2683: genealogy §64.5c. Unconditional triangular fair-zone lemma carried; no conditional boundary-fairness theorem. Ancestor collapse retracts the early cutoff. Free-graph budget exhaustion does not certify cycles; diagnostic repaired.
 - L1546–L1547 / GC2683: genealogy §64.5d. 121,534,152,704 new M5 chain ticks without detected third-lock entry, 2,609 occupancy ticks at depth 145 and none deeper. A rate bound needs a model; finite-age entry probabilities are distinct. Quiet detector does not exclude every lock. Competing strips match offsets only.
+
+*(SW-02 note, Local, 6 November 2026, flag 50, CONFIRMED, checked against source by a sub-agent: Replace "A third lock of 175 cells, period 6, letters `AAB`" by "A third lock of 175 cells, six phases (the lower scar need not repeat), letters `AAB`", and "real quiet rows are period 6 and sit on its strip, with no capture in 4.9 billion chain ticks (MEASURED)" by "real quiet rows show approximate period-six structure and approach its strip (agreement to depth 34 on 97% of ticks, 88 on 4.6%), with no capture in 4.9 billion chain ticks (MEASURED; GC2682)".)*
+
+*(SW-02 note, Local, 6 November 2026, flag 49, PARTIAL, checked against source by a sub-agent: - L1530–L1531 (Local, 5 November 2026): genealogy §63.6. The layer below the wall is not a left side; its "fixed size" (MEASURED at offsets 20, 24, 28, lag 3 only) is withdrawn by L1535; `AAB` is metastable, Poisson departures (MEASURED); `AB` is locked, `lock_back`, `lock_alternates`, `lock_forever`, `witness` in [`TwoPairsWallLock.lean`](tests/probes/lean/TwoPairsWallLock.lean). The left-side analogy of L1529 is refuted. Search aliases: wall lock, AB lock, L45, boundary layer, metastable, Poisson bursts.)*
 
 - GC2680 (GPT, 5 November): [morning kit/portal refresh and Local/Cloud reviews](reports/GPT-MORNING-REVIEW-20261105.md). Kit `556e8323`, 164 entries, 12 open PRs. Local’s locks stand; `Q45` contains the projections of the `AAB` lock, so cloud exclusions need width labels. Observed vertices do not certify arbitrary histories; capped floor searches remain censored.
 
