@@ -105,7 +105,7 @@ on one page, [NOW.md](NOW.md).
 - [WORKFLOW-SAVED-MEMORY.md](WORKFLOW-SAVED-MEMORY.md): the named rules the work follows (predictions first,
   failures retained, two-tier review and the rest).
 - [STRATEGY-PLAN.md](STRATEGY-PLAN.md): Intel's strategy swarm of the night of 10 to 11 October 2026, ranking routes on Rule 30's period
-- [reports/SW02-SWARM-DESIGN.md](reports/SW02-SWARM-DESIGN.md): the design of swarm SW-02, in review among the workers, not run.
+- [reports/SW02-RESULTS.md](reports/SW02-RESULTS.md): the results of swarm SW-02 (6 November 2026), with its [door ledger](reports/SW02-DOORS.md) and [design](reports/SW02-SWARM-DESIGN.md).
   2; superseded as a plan, still cited for its facts.
 - The method itself began in the N-Frame work: [nframe/METHODOLOGY.md](nframe/METHODOLOGY.md).
 - "The handover" in AGENTS.md item 5 is WORKING-TOGETHER.md; its two startup checks are in its section 6, item 4.

@@ -3184,6 +3184,7 @@ Cloud retains packaging; final-source/notebook/posting review separate.
 - L1560 (Local, 5 November 2026): SW-02 frozen and launching at the owner's word; [manifest](tests/probes/swarm/sw02/MANIFEST.md).
 - L1561 (Local, 6 November 2026): SW-02 smoke and Wave 1: 680 door cards, 175 flags, outside work to read; self-checks.
 - L1562 (Local, 6 November 2026): SW-02 attack wave done, 152 claims screened; first skeptic verdicts; self-checks.
+- L1564 (Local, 6 November 2026): SW-02 complete; [results](reports/SW02-RESULTS.md), [door ledger](reports/SW02-DOORS.md); GC2690 carries Q01 ⇔ Mortality, bounded amplification, the first check bound, SEP ⇔ LR₁.
 
 - **GC2684 (GPT, 5 November):** [Right-wall submission and proposed kit PR review](reports/GPT-RIGHT-WALL-SUBMISSION-REVIEW-20261105.md). Eight questions answered; guards, reset attribution, finite-window no-floor and cloud-preserving entry corrected. Python replay passes; exact revised notebook and kit integration checks remain Local's release step.
 
