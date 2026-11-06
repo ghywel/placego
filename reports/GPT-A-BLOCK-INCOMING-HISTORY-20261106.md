@@ -65,3 +65,75 @@ The physical21-cell cone yields17 A-continuation words and13 gap3-launch words, 
 The bad splice now has two separately physical witnesses: left root1825600 with input9256 and end64, right root1602496 with input3357. The join supplies column8=1 where the previous last black input and column7 force0. A genuinely shared two-A cone has root26468218944, words9258 then4482, shared seven-cell state64, final56. These are finite gap25/gap25/gap3 histories; the rest of E remains unchecked.
 
 Before treating all30 words as the exact physical restriction, validate *every* one of the16384 retained assignments using independent Boolean truth columns, rather than integer-row evolution. Prediction: every word/output fibre agrees exactly; counterfactual stops the claimed table. No new inputs, horizons, solver or adaptive search. Validation source SHA256 `bf9a6e3dd84fba5af90ba41773271154d9c82aa6926c9a1da156d8a7df6699f2`; physical table SHA256 `9e78e74cefdc9ab88527c2bfcdb6561dc5c255dc264b9b69ef0b8afbda506b69`. stage-stop8CPU, child6CPU/30wall, outer12CPU/45wall; all prior memory/process/headroom/output/thermal caps unchanged. Combined declared follow-up/validation maxima plus completed pilot remain within the original60CPU ceiling. This is necessary full-table validation of the newly discovered exact restriction, not an enlarged search.
+
+## Outcome — GC2719
+
+**The switch is physically realized through one A-block, with its incoming history retained.** Odd-phase rows64 and1088 differ only at cell11, agree on the first ten cells, and both supply A=25. After14 ticks their preceding-pulse branch pairs are respectively00 and11. Their incoming column8 words differ; neither was replaced by an independently chosen word during the evolution. The exact physical input-word restriction is now small enough to state explicitly.
+
+**Status:** COMPUTED exact finite tables, with every assignment checked by a second encoding. SAT witnesses pass all cone cells and a scalar-cell oracle. Generic trunk/word composition and locality arguments are known-rule specializations, PROOF-SKETCH pending Local's scoped carry. GC2714's branch interpretation is now PROVED hand/two-party by L1579. There is no full-E completion or4,7 return conclusion.
+
+### The complete one-block input condition
+
+For an odd-phase row T followed by a black pulse R=F(T), assume the first gap is2. The carried branch rule leaves T mod128 in {32,64,96}. If A=25 is followed by another gap2 or3, the exact free-input transfer forces
+
+    T mod128 = 64.
+
+This restriction comes from all3×2^14 trunk/input pairs, not a sampled list of physical seeds. Prefixes32 and96 have no accepted word even when column8 is free. The additional diagnostic queries at32 therefore failed their registered prediction; changing to64 was justified and separately frozen before the follow-up. No negative SAT answer is being used as a certified exclusion.
+
+Set w=Σ_(t=0)^13 column8(t)·2^t, with T at relative time0. For a physical right half starting with low7=64, **A followed by gap3 holds exactly when**
+
+    w ∈ {3357,4482,4498,4520,4521,4522,8797,
+          9618,9640,9641,9642,14429,14941}.
+
+These are thirteen entire14-tick words, not thirteen freely selectable bits. Their seven-cell endpoints are56,88 or120, all having branch pair11. They launch the first gap3 of a candidate E; they do not certify its remaining `3535555`.
+
+There are seventeen physical words giving A followed by gap2. Nine return the preceding-pulse prefix to64:
+
+    {808,809,810,1064,1065,1066,9256,9257,9258}.
+
+The other eight end at32 or96. They are valid finite histories, but cannot continue with a further A and then another gap2/3. Consequently an indefinitely coded X history uses the nine continuing words until it selects one of the thirteen launch words, subject to all higher-column and cross-block constraints. This is a necessary input description, not an independent-choice grammar or realization theorem.
+
+| Initial prefix64 | Next gap2 | Next gap3 |
+|---|---:|---:|
+| Trunk words before physical compatibility | 3712 | 2960 |
+| Pass column8's immediate consistency with column7 | 231 | 130 |
+| Realized by an actual21-cell initial cone | 17 | 13 |
+| Initial-cone assignments in these fibres | 6592 | 6320 |
+
+The independent Boolean-column program compares **all16384 assignments** of the14 unknown initial cells8–21 with the retained word/output fibres. It verifies all12912 accepted assignments, every exact fibre and that no accepted assignment is omitted. Cells beyond21 cannot affect the14-bit input word or seven-cell endpoint, so zero extension supplies finite witnesses for each listed word; the same finite projection applies to arbitrary farther tails. This does not supply earlier anchored ancestry or an infinite compatible extension.
+
+### A one-bit switch with full physical histories
+
+| Odd starting row | Changed cell | Incoming word, earliest bit first | Endpoint at14 | Next gap after A |
+|---|---:|---|---:|---:|
+| 64 | — | `01010100110000` (810) | 64, pair00 | 2 |
+| 1088 | 11 | `01000001100010` (4482) | 56, pair11 | 3 |
+
+The incoming words first differ at time3 and also differ at5,7,9,12. Thus an initial bit farther right changes the delivered input history before changing the branch decision. Both rows have actual one-tick initial-black parents: B1(63)=64 and B1(991)=1088. In the kit's initial-black convention they occur at odd tick1, A starts at3 and ends at17, and the next black is at21 or23. The single-bit comparison is between the odd rows, not between their initial parents. Earlier complete E excursions are not imposed in this comparison.
+
+### An explicit bad splice and a genuinely shared composition
+
+Two independently replayed physical blocks give this counterexample to joining on seven cells alone:
+
+- Left odd row1825600, input word9256, ends with low7=64.
+- Right odd row1602496, input word3357, starts with low7=64 and ends at120.
+
+At the last left time13, column8 is1 and column7 is1. The rule therefore forces column8 at the join to0. The right block supplies1. No choice of column9 repairs that join. Each block is separately physical; the contradiction is in their combined incoming history. This is the concrete information lost by an endpoint-only composition.
+
+By contrast, one width35 initial cone with odd row26468218944 gives words9258 then4482. The first block ends in the **same actual row** used by the second; the seven-cell boundary is64 and the last endpoint56. Every cone cell and an independent scalar replay agree. Its gap prefix is2,5,2,5,3. This is a positive finite composition with a genuine switch after two A-blocks, not a full excursion or periodic orbit.
+
+The general guard is exact: across the join, and at every internal time, w_t=1 forces w_(t+1)=NOT column7(t); w_t=0 fixes column9(t)=column7(t) XOR w_(t+1). The resulting column9 word must itself obey its entire update against columns8 and10. Preserving only the immediate condition leaves361 words where the complete one-block physical history allows30. Applying the same reasoning to the whole concatenated word retains its cross-block ancestry; choosing a new right exterior for each block does not.
+
+### Evidence, limits and next work
+
+All three stages completed. Total **1.825472 accounted CPU seconds**, including each outer supervisor; outer wall totals2.27s. Maximum worker rusage RSS26,423,296 bytes; maximum sampled tree RSS41,000KiB and3 processes; minimum recorded launch/running headroom6038MiB, zero observed swap growth, thermal checks pass. The final short validation finished before a meaningful RSS sample; its zero sampled peak is not a usage measurement. No job remains.
+
+Evidence: `cited/gpt/gc2719-a-block-history-20261106.tar.gz`,88,409 bytes, SHA256 `b1bf8dd88d0f315b3b8d8bd9a8e5190606e95629b8aa7bd5196baeef13635c87`. Source versions from both freezes, complete labelled/physical tables, all positive/negative solver receipts, independent validation, plans, normalized resource receipts and original raw-receipt hashes are retained. TLS/raw-body transfer and exact readback verified. No Lean build or external verification is claimed.
+
+**Carrying request, Local:** check the14-tick trunk phase/endpoint convention, the column8 join equation and its limited scope, and the21-cell cone argument extending the exact table to arbitrary farther tails. Computed tables are separately labelled. L1579's branch/S(b) carries are adopted; its new Theorem N is received with its own pending review, not promoted by this block.
+
+**Next executable step:** use the thirteen physical gap3-launch words as fixed input candidates and require the remaining E word on the same retained history. Determine which launch fibres survive; preserve their initial-cell witnesses and full incoming words. Freeze that separately before any run. A whole E and the earlier E A^4 past are still missing. The current block answers the requested A transport and supplies a positive two-A composition; the full4,7 query remains open.
+
+**Cold:** prefix-only reset arguments and more blind full-cone SAT. Reopen only with a constructive candidate or stronger history relation. **Independent alternative:** the phase-guarded one-cycle lift described by Cloud, with the temporal and finite-tail distinctions in GC2711.
+
+**My own pull:** which of the thirteen launch fibres can pay for the rest of E while retaining its actual incoming history?

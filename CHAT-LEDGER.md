@@ -34098,3 +34098,17 @@ The owner asks GPT to track the00→11 switch through A while preserving incomin
 ## GC2718 — GPT: one-bit branch switch, exact physical words, and an impossible splice (2026-11-06)
 
 [Results and independent full-table validation freeze](reports/GPT-A-BLOCK-INCOMING-HISTORY-20261106.md#follow-up-result-and-full-table-validation-freeze--gc2718). Source64 has17/13 physical input words for next A/gap3; one-bit change at cell11 (64→1088) preserves A and switches00→11. Individual physical blocks9256→3357 match the seven-cell seam but fail column8's forced join. A shared two-block witness9258→4482 passes full-cell/scalar replay. No rest-of-E or full4,7 claim. Validate all16384 assignments by a different Boolean-column encoding, with no enlarged search;8CPU stage within the original60 ceiling. Both earlier jobs complete; new validation is the only planned job.
+
+## GC2719 — GPT: A-block switch tracked; physical word alphabet and cross-block history verified (2026-11-06)
+
+[Outcome and exact word lists](reports/GPT-A-BLOCK-INCOMING-HISTORY-20261106.md#outcome--gc2719). **COMPUTED:** A followed by gap2/3 forces predecessor low7=64. Physical21-cell histories give17/13 incoming column8 words, versus231/130 after the immediate adjacent-column check. Nine of the17 return64 and can continue a coded A tail. An independent Boolean-column encoding checks every one of the16384 initial-cone assignments and all30 word/output fibres.
+
+**Concrete switch:** odd rows64 and1088 differ at cell11; both supply A, with words810/4482 and final pairs00/11. Initial-black parents63/991 place them at actual odd tick1. The single-bit comparison is at that odd row, not at the parents. **History matters at the join:** physical left word9256 and right3357 share seven seam cells but require column8 at the join to be0 and1 respectively. No right-column choice repairs it. By contrast one shared35-cell cone gives words9258→4482 and gap prefix2,5,2,5,3; all cone cells/scalar replay pass. No full E or earlier-E past is imposed.
+
+Original prediction that all three source prefixes work is refuted. All three extra queries originally pinned to32 return UNSAT on that wrong premise; no certified UNSAT claim is used. Follow-up at64 was separately frozen using the new exact transfer evidence, with the same cones/conflict budget. Three completed capped stages total1.825472 accountedCPU seconds including supervisors; no job. Evidence cited/gpt/gc2719-a-block-history-20261106.tar.gz,88409 bytes,SHA256b1bf8dd88d0f315b3b8d8bd9a8e5190606e95629b8aa7bd5196baeef13635c87; normalized and readback verified.
+
+**L1579:** complete report and both carrying paragraphs read; branch selector and S(b) repair adopted PROVED hand/two-party. New Theorem N is received PROOF-SKETCH, with its separate requested review pending owner assignment. **REVIEW-REQUEST, Local:** carry the short14-tick trunk/endpoint convention, column8 join rule and21-cell cone scope in the outcome report. No new compute assigned. Exact finite tables remain COMPUTED.
+
+Current target: the thirteen gap3-launch fibres through the rest of E, preserving initial cells and incoming words; freeze any run separately. Full4,7 realization open. Cold: endpoint-only resets and larger blind full-cone SAT. Alternative: Cloud's one-cycle lift with temporal/tail guards. Both schedules paused.
+
+**My own pull:** which of the thirteen launch histories can supply the rest of E?

@@ -6439,12 +6439,18 @@ The stronger finite mortality bound awaits the explicit failed-scan extension; �
 
 **PROVED hand/two-party, GPT GC2711: C, S(a), G and conditional R. The explicit width-K witness repair of S(b) is GPT's new argument and remains PROOF-SKETCH pending Local (GC2714 status refinement); see the [review](reports/GPT-RETURNED-PULL-REVIEW-20261106.md).** [Statements and proofs](reports/SW02-CLASS-AMPLIFIER.md). Theorem C: q(W) is the sum over orbit classes of floor((W - v_C)/2) + 1, so q(W) - q(W - 2) = o(W). Theorem S: the sector (strip, shift - width mod 16) is constant on merge classes and all 64 occur, on the kit's `odd_reaches_one_of_four`, `least_period_16`, `four_distinct`. Corollary: at most k classes of immortal rows give Q01 on at least 64 - k sectors. Lemma R: a width-controlled block map cannot raise the right-edge rate, e_d(b) <= e_d(x) once Per_d(x) >= Q. Candidate H stays open for all radii.
 
-### Waiting room — GC2714: the guarded physical A/E branch pair
+### GC2714: the guarded physical A/E branch pair
 
-**PROOF-SKETCH; finite cone checks COMPUTED in two independent encodings.** [Derivation and guards](reports/GPT-SHORT-SEAM-RESTRICTION-20261106.md#outcome--gc2714). At odd phase F=B1 composed with B0, R=F(T), R1=1. The next sampled gap is2 iff T4=T5=0 and T6 OR T7=1; it is3 iff T4=T5=1 and T6 OR T7=1; T1…3=000 follows from R1=1. Equivalently gap2 requires R low7 in25,49,89 (exact on image rows), gap3 iff low5=23. Image guard essential; initial tick1 is not automatically covered. Known corridor/local-rule specialization, not novelty clearance. No autonomous branch bit, full4,7 realization or capture result; Local carrying read requested.
+**PROVED hand/two-party, carried Local L1579; finite cone checks COMPUTED in two independent encodings.** [Derivation and guards](reports/GPT-SHORT-SEAM-RESTRICTION-20261106.md#outcome--gc2714). At odd phase F=B1 composed with B0, R=F(T), R1=1. The next sampled gap is2 iff T4=T5=0 and T6 OR T7=1; it is3 iff T4=T5=1 and T6 OR T7=1; T1…3=000 follows from R1=1. Equivalently gap2 requires R low7 in25,49,89 (exact on image rows), gap3 iff low5=23. Image guard essential; initial tick1 is not automatically covered. Known corridor/local-rule specialization, not novelty clearance. No autonomous branch bit, full4,7 realization or capture result; Local carrying read requested.
 
 ### Waiting room — L1579: the left invariant ν and exact small class counts
 
 **PROOF-SKETCH, hand, awaiting a read.** [Statement and proof](reports/SW02-NEVER-MERGE.md#1-theorem-n). Every nonzero row has one 2-adic number ν(Y), constant on merge classes at any lag; M(W) >= |Per(L_W)|, and M(W) is unbounded by kit `D_least_period_unbounded`. With witnessed merges this gives M(1..6) = 1, 2, 2, 3, 5, 9, in C and Python. The integer clock is COMPUTED and the lock is a CONJECTURE.
 
 **L1579 carries:** GPT's width-K repair of S(b) and the GC2714 branch selector, read and re-derived by Local, are PROVED hand/two-party within their stated guards.
+
+### Waiting room — GC2719: exact A-block incoming-word interface
+
+[Full statements, phase, witnesses and scope](reports/GPT-A-BLOCK-INCOMING-HISTORY-20261106.md#outcome--gc2719). **COMPUTED:** complete labelled transfer and independent whole-table validation; all16384 physical21-cell assignments checked. A followed by gap2/3 forces predecessor low7=64; seventeen/thirteen physical input words, nine of the former returning64. One cell11 flip64→1088 realizes00→11 after A. Separately physical words9256/3357 have an impossible column8 join, whereas9258/4482 share a physical two-A history. **PROOF-SKETCH pending Local:** generic14-tick trunk/column-word composition and21-cell projection scope. No full E completion, anchored earlier-E history or4,7 realization.
+
+**GC2711 carry update, L1579:** Local independently derived GPT's reverse_K width-K sector witnesses. S(b) and the64-sector corollary are PROVED hand/two-party; the earlier pending labels are superseded by that carrying paragraph.
