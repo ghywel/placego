@@ -33486,3 +33486,26 @@ My own pull: a joint three-check law under actual survival conditioning; the uni
 **Next:** Block 2, on the owner's word.
 
 **Record searched:** L-7's report and sources; kit main `9d837cd` for the M rows.
+
+## GC2691 — GPT: final swarm record received; Block 3 Intel assignment registered (2026-11-06)
+
+**At the owner's request, re L1564–L1566.** Fetched and fast-forwarded through `a629e178`; read NOW, WARM-LEADS, the final outcome/bench and barrier summaries, the submission/M queues, current backlog/board updates and Block 1's outside-work register. Fresh Local/Cloud addressed flag lists and GPT state read. **WARM-LEADS is the live tracker.** Latest committed progress already closes Block 1; Block 2 is next. The owner assigns GPT the Block 3 Intel computation. This is its source handover/preparation, not a start of that block, a new carrying read of every candidate, or a heavy run. Packaging/posting and both GPT schedules remain deferred.
+
+**Final record received.** Local reports 186 launches, 556 doors, 164 claims and four carried result groups from GC2690; no prize proof. The main new computational lead is BN-13's classification of every R<2^22 and 557,056 sampled larger right halves. The class-count route and other uncarried proofs remain self-checks. Block 1 houses all175 flags, files outside prior art and reports the missing job's charge reconciled; this is Local's audit report, not a fresh GPT aggregate accounting check. The committed post-lock HOST-STOP repair is source-read. Block 2 must compare the newly registered outside work against each submission row before novelty or delivery decisions.
+
+**Packets safely received, not blanket accepted:**
+
+- `cited/local/sw02-all-20261106.tar.gz`, 14,984,885 bytes, SHA256 `c231157f6daeb1433d2c8aaf2e0190f78b5c4723009fdcc32ee8842a5c11d94c`.
+- `cited/local/sw02-second-20261106.tar.gz`, 1,759,242 bytes, SHA256 `a5bbfc81689042d31086424857663680481dd116ed3edacb2758058ef3938911`.
+
+Both verified after raw HTTPS GET; archive paths/link types and total expanded size checked before selective extraction. Read the complete BN-13 report/preregistration and R-02 report, core2.py/core3.py and relevant facts. Existing data remain outside git. Block 6's specific carrying reads stay queued for when the owner turns them over.
+
+**Block 3 handover sharpened.** It is the sparse lift of the free-input, odd-tick W-column graph, with all four choices of the next two columns; Local prepares the C implementation, GPT runs on Intel. Source controls: W=31 has 688,649 core windows and 1,259 distinct low-16 words; at W=30 R-02 reports large leaky components with gap sets {2,3,5}, {2,3,4,5} and {3}. R-02 predicts persistence to W38–40; a surviving component is a useful obstruction, not a failed task. No such graph or timing was recomputed in this update.
+
+BN-13 already refutes completeness of the original fixed W=30 class list:56 rows entered ether family k=20 outside that window, and R=3,793,493 entered a different period-7 lock, lock-7b (33 windows at W=45). Do not silently treat these as counterexamples to TrapOrPeriodic, or assume only one period-7 lock. The run target should retain the general ether-family statement and the second lock control, and distinguish arbitrary free-input paths from finite-right-half realizability. A leaky SCC may retain an infinite internal path. Certificate success needs elimination of unaccepted infinite paths or a justified eventual-periodic output condition, not merely exits or periodic labels on one selected walk. These are preparation guards, not new status promotions.
+
+**Exact next executable step:** Local completes Block 2's SevenLock/queue comparison and supplies a source-pinned Block 3 implementation, baseline inputs, acceptance/certificate specification and bounded stage plan. GPT checks those, including real aggregate CPU accounting and memory/output stops, then executes the agreed stages. The approximate one-hour/8GiB estimate in the tracker is not a measured Intel result. No automatic horizon/width enlargement or autonomous submission phase is started here.
+
+**Record searched:** the new committed tracker/results/doors/backlog, L1564–L1566, GC2690, complete BN-13 and R-02 sources in the immutable final archive, and the Block 1 prior-art register. No new external theorem, novelty clearance or kernel verification claimed; the last complete external refresh remains GC2690's 12:22:44Z checkpoint. The deeper outside-work comparison belongs to Block 2.
+
+My own pull: use one persistent residual component to identify the first additional temporal compatibility constraint, rather than interpreting its outgoing edges as inevitable escape. This fits Block 3's named-obstruction outcome and needs its prepared graph first.
