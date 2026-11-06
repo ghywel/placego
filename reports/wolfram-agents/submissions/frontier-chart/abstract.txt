@@ -1,0 +1,5 @@
+The kit proves that mortality of the auxiliary frontier implies Q01, and that a repeat budget at every length is mortality, and it records the converse as not known. This module proves the converse: Q01 implies mortality. So Q01, mortality and repeat budgets at every length are one statement.
+
+The proof reads an immortal frontier as a space-time chart. Successive frontiers give the high bit of depth e of the n-th frontier at time 2n - e, and the low bit at time 2n - e - 1. The two scan recurrences of the update are then exactly the Rule 30 recurrence at every cell of depth at least two. The two terminal symbols of a frontier give the rule at depth one with a white wall, from time one on. So the row at time two is a finitely supported start of the zero-boundary left half, and column -1 is black at every later even step, which Q01 forbids.
+
+Nothing here proves Q01, mortality or a budget, and Problems 1 to 3 stay open. Equivalently, proving a repeat budget is neither easier nor harder than proving Q01.

@@ -1,0 +1,252 @@
+{
+"claim": "partial",
+"declared": [
+{
+"kind": "theorem",
+"name": "Rule30Submission.Z_rec",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.atDepth_of_length_le",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.budget_iff_Q01",
+"standardAxioms": true
+},
+{
+"kind": "def",
+"name": "Rule30Submission.chart",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.chart_hi",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.chart_interior",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.chart_lo",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.chart_wall",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.even_or_odd",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.finSupp_start",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.fr_length",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.fr_ne_nil",
+"standardAxioms": true
+},
+{
+"kind": "def",
+"name": "Rule30Submission.frontier",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.frontier_of_run",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.frontier_step",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.inX_start",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.mortality_iff_Q01",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.mortality_of_Q01",
+"standardAxioms": true
+},
+{
+"kind": "def",
+"name": "Rule30Submission.start",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.zrow_chart",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.chart.eq_1",
+"standardAxioms": true
+},
+{
+"kind": "def",
+"name": "Rule30Submission.fr_length.match_1_1",
+"standardAxioms": true
+},
+{
+"kind": "def",
+"name": "Rule30Submission.fr_ne_nil.match_1_1",
+"standardAxioms": true
+},
+{
+"kind": "def",
+"name": "Rule30Submission.frontier.match_1",
+"standardAxioms": true
+}
+],
+"headlines": [
+{
+"axioms": [
+"propext",
+"Classical.choice",
+"Quot.sound"
+],
+"found": true,
+"kind": "theorem",
+"name": "Rule30Submission.mortality_of_Q01",
+"ok": true,
+"problems": [],
+"typeMatches": true
+},
+{
+"axioms": [
+"propext",
+"Classical.choice",
+"Quot.sound"
+],
+"found": true,
+"kind": "theorem",
+"name": "Rule30Submission.mortality_iff_Q01",
+"ok": true,
+"problems": [],
+"typeMatches": true
+},
+{
+"axioms": [
+"propext",
+"Classical.choice",
+"Quot.sound"
+],
+"found": true,
+"kind": "theorem",
+"name": "Rule30Submission.budget_iff_Q01",
+"ok": true,
+"problems": [],
+"typeMatches": true
+},
+{
+"axioms": [
+"propext",
+"Quot.sound"
+],
+"found": true,
+"kind": "theorem",
+"name": "Rule30Submission.Z_rec",
+"ok": true,
+"problems": [],
+"typeMatches": true
+},
+{
+"axioms": [
+"propext",
+"Quot.sound"
+],
+"found": true,
+"kind": "theorem",
+"name": "Rule30Submission.chart_interior",
+"ok": true,
+"problems": [],
+"typeMatches": true
+},
+{
+"axioms": [
+"propext",
+"Classical.choice",
+"Quot.sound"
+],
+"found": true,
+"kind": "theorem",
+"name": "Rule30Submission.chart_wall",
+"ok": true,
+"problems": [],
+"typeMatches": true
+},
+{
+"axioms": [
+"propext",
+"Classical.choice",
+"Quot.sound"
+],
+"found": true,
+"kind": "theorem",
+"name": "Rule30Submission.zrow_chart",
+"ok": true,
+"problems": [],
+"typeMatches": true
+},
+{
+"axioms": [
+"propext",
+"Classical.choice",
+"Quot.sound"
+],
+"found": true,
+"kind": "theorem",
+"name": "Rule30Submission.inX_start",
+"ok": true,
+"problems": [],
+"typeMatches": true
+},
+{
+"axioms": [
+"propext",
+"Quot.sound"
+],
+"found": true,
+"kind": "theorem",
+"name": "Rule30Submission.finSupp_start",
+"ok": true,
+"problems": [],
+"typeMatches": true
+}
+],
+"importsStatements": true,
+"module": "Rule30Submission",
+"newAxioms": [],
+"official": [],
+"reasons": [],
+"replay": {
+"constants": 58,
+"ok": true
+},
+"verdict": "pass",
+"verifiedTargets": []
+}

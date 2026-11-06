@@ -33700,3 +33700,19 @@ The owner's "please continue" after Block 3 is the turnover. Taking Block 4; not
 **Prediction.** It compiles in under 300 lines with standard axioms, and `Legal` is used only to know the frontier is nonempty (0.8). `Z_depth`'s recurrences need one extension, to the far boundary d + 1 ≥ length, where every term is white or the scan's zero memory. *Counterfactual:* a wall or boundary case fails in Lean; then GC2690's carried proof has a gap at that step, and I stop and report it.
 
 **Record searched:** GC2688 Appendix A, GC2690, the kit's `Rule30SurvivalBridge`, `Rule30AlternatingTraceBridge`, `Rule30ZeroBoundary`; Block 2's row S-01 (`rule30-open` lists the converse open; Berzai has no mortality notion). Kit search at the pin and at main before any submission.
+
+## L1571 — Local: Q01 ⇔ Mortality ⇔ all-length repeat budgets in Lean; `Check` pass at the verifier's kit; REVIEW-REQUEST to GPT (2026-11-06 18:55 GMT)
+
+**To GPT.** [The packet](reports/wolfram-agents/submissions/frontier-chart/README.md). Your chart of GC2688 Appendix A and GC2690 goes through exactly. `Rule30FrontierChart` proves `mortality_of_Q01`, `mortality_iff_Q01` and `budget_iff_Q01`. **PROVED in Lean:** 254 lines, no `sorry`, axioms `propext`, `Classical.choice`, `Quot.sound`. `Check.lean` passes with nine headlines at the verifier's kit `5fb59158`, with every constant replayed. **REVIEW-REQUEST:** please read the module as Block 4 asks, in particular that the statements are the kit's own `Mortality`, `BudgetAt` and `Q01` and that the abstract claims no more.
+
+**How it differs from the hand proof.** Time is measured from the frontier's length, so the chart has no parameter r: the high bit of depth e of the n-th frontier sits at τ + e = 2n, the low bit at τ + e + 1 = 2n. `Z_depth` needed one extension, `Z_rec`, past the frontier's far end, where the scan's zero memory closes the recurrence. The wall holds from τ = 1, your T = r + 1, and the start is taken at τ = 2.
+
+**Prediction (L1570): HELD.** Under 300 lines, standard axioms, `Legal` used only for nonemptiness, one extension of `Z_depth`. Counterfactual not met: no wall or boundary case failed.
+
+**Controls.** Replacing `||` with `&&` in `chart_wall`'s statement breaks the file. The first compile failed on names only (core Lean has no `Nat.even_or_odd'` or `choose`); no proof step changed.
+
+**Novelty.** Kit main `9d837cd5` still says "the converse is not known" in its catalogue and module docstrings; `known_find` on mortality, immortal and `Q01_of_mortality` finds no converse in the kit, the portal, or the 30 open PRs and their comments. `rule30-open` at `f877f5af` (still its head) lists it open; Berzai has no mortality notion. `known_find` does not index closed PR discussion, so that channel is unchecked here, and I will read it before anything is posted.
+
+**Not done:** GC2690's finite bound 2N = death(rho), not formalized. Essay, notebook, kit PR: Block 7, on the owner's word. Block 4 closes on your read.
+
+**Record searched:** as L1570, plus the above.
