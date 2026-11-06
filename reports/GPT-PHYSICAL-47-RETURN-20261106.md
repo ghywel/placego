@@ -85,7 +85,10 @@ new window lift, seed census or adaptive increase.
 
 ## Outcome
 
-Pending the frozen computation.
+The first stage completed: raw fibres below, physical query **UNKNOWN** at its
+fixed60,000-conflict budget. No witness or UNSAT certificate. There will be no
+conflict-budget increase. A changed representation is frozen below before its
+small replay.
 
 Source/input freeze:
 
@@ -100,3 +103,82 @@ Source/input freeze:
 | dfa_xx_W40_c0.txt | 0323f4a3bb60717f97c432c378e61cd85feacd1a9097ce667396de58d196167a |
 | dfa_xx_W41_c0.txt | 0d0231db4179ab4ac79eb9409933beefe313d9c4a1473cffcbe7ee6bd0b9593c |
 | gc2707-plan.json | f3227bf47c9366c2d514c04251f766617c5ba12dd7cff231481d63e6d0ab9aa6 |
+
+## GC2708: exact finite ancestry at the seam (freeze before replay)
+
+**Change of representation, GPT-owned.** The fixed solve finished in9.53wall
+seconds,9.505429 accounted worker CPU plus0.248supervisor CPU. Only413 of64,981
+variables were forced by unit propagation. At the main167-cell seam, only its
+head bit was forced; the other166 are unassigned by UP, not proved logically
+free. The known corridor law did not materially reduce this cone.
+
+For finite right halves let B_b(X)=((X<<1)|b) XOR (X|(X>>1)), with cell1 the
+least significant bit. The kit's `Rule30Predecessors.T`, `back`, `lin_back`,
+`eq_back` already reconstruct predecessors from the right. Its white-tail
+specialization has a unique candidate: set x_N=x_(N+1)=0 for an output Y of
+width N, and descend
+
+    x_(i-1) = Y_i XOR (x_i OR x_(i+1)), i=N,...,2.
+
+Accept iff Y_1=b XOR(x_1 OR x_2). Y=0 and Y=1 have predecessor0 precisely
+for b=0 and b=1 respectively. The rightmost-disagreement argument also proves
+injectivity on finite right halves, already covered by the kit's
+`Preimages.eq_of_evol_one_eq_of_right` in the full-line setting. Thus whole
+finite histories cannot merge under a prescribed drive; a predictive reset is
+a projection. No new inverse theorem is claimed.
+
+Put m=193 and v_t(k)=x^t_(k+t). The inverse recurrence becomes
+
+    v_(t-1)(k) = v_t(k) XOR (v_(t-1)(k+1) OR v_(t-1)(k+2)).
+
+Sweep M's cells j from the right, with k=j-m. This needs two stored diagonals
+for each unfinished predecessor row. At spatial cell0 check its prescribed
+center b_t=(t even); at cell1 check its head if the past word prescribes it.
+Start at j=max(width(M),m+1), filling leading zeros, so no early boundary or
+head check is skipped. A row can be discarded after its center check.
+
+After consuming through j=168, center checks for times0..25 and heads through
+time26 have been exposed. The live rows are26..192:167 rows,334 bits. The
+remaining input is M's first167 cells, sufficient to determine the next166
+physical ticks of the head. This is an upper bound on a sufficient state,
+not a minimal automaton or an enumerated334-bit state space. The tail must
+generate the same state consumed by the prefix; selecting arbitrary states
+would erase the physical compatibility condition again.
+
+**Exact target (PROOF-SKETCH pending Local carry):** the original finite
+E A^4 E A^7 E query has a witness iff there is a finite M of width<=553 such
+that (i) its193 inversions with boundaries b_192,...,b_0 succeed and their
+odd-time heads1..193 match E A^4 E, and (ii) its first167 cells give A^7 E
+at odd ticks193..359. The width bound corresponds to the original360-cell
+root: a nonzero finite row grows by one cell at each step, and the zero root
+becomes nonzero at the first b_0=1 step. Both directions follow by joining
+the reconstructed past to the forward evolution of that same M. Ancestors
+alone, without their head checks, are insufficient. Requiring width41 X
+membership throughout the future would instead require207 cells; this
+query imposes no such membership.
+
+**Bounded replay, prediction written first.** Implement the sequential inverse
+and diagonal scan independently. Exhaustively compare one-step inversion with
+a forward lookup for both boundaries and every output<2^13; compare accepted
+and rejected multistep histories, zero padding and a corrupted past-head guard.
+For one fixed control, take seed19 at physical time193 and flip cell168.
+Prediction: both full rows have the same future head through166 steps, while
+the modified row fails the prescribed193-step ancestry. If it survives, retain
+that counterfactual. This is a control, not a4,7 witness. Even rejection excludes
+only the changed full row: the shared prefix still has the original valid
+completion. No sampling, seed search, CNF solve or enlarged horizon.
+
+Record searched: GC2706/2707; actual kit Predecessors transfer/reconstruction
+proofs and Preimages right-asymptotic injectivity at9d837cd5; PR208 ancestry
+statement retained as context, not used as a carrying theorem. Existing
+column-word-tree/preimage literature supplies the recurrence; the present
+work specializes the interface to the4,7 cut. No novelty/submission claim.
+
+One serial18CPU/70wall worker in a30 aggregate-CPU/90wall stage, worker stop20
+and10CPU supervision reserve. This plus the completed9.76CPU stage stays below
+the block's120CPU cap. Other frozen host/pressure/output/process limits above
+remain unchanged. Source `physical_ancestry.py` SHA256
+`a7071cc2e836c22fd56c565370be7d4b65cc4f4eb6aaa2c4dca4b8b31c473701`;
+plan `gc2708-ancestry-plan.json` SHA256
+`f3e732af24bc770ba657f6b53fcc59ab19639c1b826883da0ef4c9a19f26603e`.
+The wrapper/stage/monitor hashes are unchanged. Result pending this replay.
