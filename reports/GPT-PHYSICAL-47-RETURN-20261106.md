@@ -4,6 +4,14 @@ GPT GC2707, 6 November 2026. Owner-requested continuation of the
 [two-state return automaton](GPT-BRIDGE-RETURN-AUTOMATON-20261106.md).
 GPT owns this bounded block; no Local run is duplicated and schedules remain paused.
 
+**GC2709 result:** the4,7 cycle contracts the width41 window fibre from31,339
+to30,163, then fixes it; exact raw-fibre resets start at8 A blocks, whereas
+predictive resets start at7. The physical trace query is **UNKNOWN**. A checked
+finite-ancestry implementation now preserves the shared row and its past;
+known diagonal inversion shows that its high tail determines the lower193
+cells uniquely. This is a precise compatibility coordinate, not a bridge
+witness or a smaller search space. Hand specialization awaits Local carry.
+
 ## The missing state, before computation
 
 The raw gap DFA retains sets of possible current windows. Its two-state
@@ -89,6 +97,31 @@ The first stage completed: raw fibres below, physical query **UNKNOWN** at its
 fixed60,000-conflict budget. No witness or UNSAT certificate. There will be no
 conflict-budget increase. A changed representation is frozen below before its
 small replay.
+
+**COMPUTED relative to the retained DFAs:**
+
+| Width | Initial after-E fibre | After one4,7 cycle | Further4,7 cycles |
+|---|---:|---:|---|
+| 38 | 11,870 (raw20) | 11,105 (raw165) | same raw165 |
+| 39 | 16,437 (raw20) | 15,537 (raw165) | same raw165 |
+| 40 | 22,882 (raw20) | 21,914 (raw173) | same raw173 |
+| 41 | 31,339 (raw20) | 30,163 (raw200) | same raw200 |
+
+The exact unary joint orbits have preperiods19,19,22,24 and period1.
+Every n>=8 resets all reachable raw return subsets to a common subset;
+n=7 does not. At38–40 that common subset is the initial raw20. At41 it is
+raw109,31,333 windows, six fewer than raw20. In particular, the two predictive
+states erase information one A block earlier than these raw fibres do.
+The6/7/8 distinctions are finite-window results, retaining the source subset
+hash/completeness caveat. Stable nonempty Post-images do not make every member
+immortal, or supply a consistent exterior across unbounded widths and time.
+
+The original physical CNF has64,981 variables/387,901 clauses; the checked UP
+reduction has64,568/384,112. Its unit log passes an independent reason-clause
+replay, including corrupted-log rejection. Fixed seed19 phase/row controls
+pass scalar and integer replay; a wrong fixed trace bit rejects. The solve
+used60,001 actual conflicts for a requested60,000 budget and returned UNKNOWN.
+No target model was available for the implemented full-original-CNF replay.
 
 Source/input freeze:
 
@@ -223,6 +256,15 @@ is an invertible coordinate change, not a dimension reduction or a witness.
 Equivalently, once a valid tail has generated the334-bit cut state, each
 successive boundary check determines the next low seam bit uniquely.
 
+**Exact prior-art match, source read:** D is literally
+`Rule30ControlledResponse.diagonal`; its `step` and `run_sound` identify the
+driven evolution. Reversing w bits conjugates D to Phi modulo2^w in
+`Rule30Equivalents.TFunction`; `testBit_Phi`, `Phi_mod` and `mod_of_Phi_mod`
+already give the finite triangular permutation. These are at kit commit
+`9d837cd5e5ac447cd868c20aebf49a1b4cfa866e`. The ancestry completion is a short
+specialization of known mathematics, reproved here for the seam's indexing.
+No claim of a newly discovered inverse or T-function is intended.
+
 **Additional implementation control, frozen before execution:** compare the
 tail-inverse completion with an independent forward lookup for every8-bit
 tail at depths1,2,5,7, and reconstruct the already-fixed seed19 seam from
@@ -235,3 +277,48 @@ remains120CPU. New source SHA256
 `6d55a6bd120120c34c81f12ea6d9a453a1754a1fafaeea92ac92e867ed1fe912`;
 plan `gc2708-completion-plan.json` SHA256
 `712ecab4df46fccc0d84b15707c7aef5dfba49f5d674de3a7bea9b8c0f245e6e`.
+
+**Result:** all1024 tail-completion cases and the193-step seam reconstruction
+pass, as do the existing controls. Worker CPU0.353988s, supervisor0.114s,
+wall0.56s, worker rusage peak17,534,976 bytes. Across all three completed
+stages and the refused preflight: **10.807616 accounted CPU seconds**.
+First-stage maximum sampled tree RSS307,224KiB, minimum measured headroom
+6006MiB, zero swap growth, at most3 observed processes; short control stages
+have rusage peaks rather than meaningful sampled peaks. No job remains.
+
+## Evidence and continuation
+
+Shared-store `cited/gpt/gc2709-physical-return-20261106.tar.gz`,3,909,947 bytes,
+SHA256 `f55c0d38075763ae9846037da27043bc7dea9f42668a9aef37631e17c1192e5e`;
+TLS/raw-body upload and exact readback verified. It contains all four input
+DFAs, source versions, original/reduced CNFs, propagation proof log, variable
+map, raw-fibre output, both ancestry outputs, frozen plans and normalized
+resource/refusal receipts. The manifest records raw receipt/plan hashes before
+path normalization and digests of all stored members. The original CNF is
+SHA256 `21b425011ebc816994a2dfe221539ca2da6a5900b23d1f7009c9bbe26d70426c`;
+the propagated one is
+`194acc173a5f90512981858447c76a60da2b354b766448e0fa6dc484f314a649`.
+
+**Local carrying request:** check the Post-image inclusion and its limited
+consequence; the phase/width/past-head guards in the exact193/167 split; and
+the tail-completion identity, including q=0 and q<2^360. The generic reset
+clock in GC2706 remains a separate pending carry. Computation, implementation
+self-checks and a GPT subagent's proof audit do not replace that read.
+
+**Compact queue.** GPT owns the actual-history bridge question; Local is asked
+for the scoped read, with no new compute assignment. Next executable step:
+use the retained real two-E fixture R=2,135,555 from L1569 to extract its
+complete-E seam, express that seam in q coordinates, and trace which head
+guard rejects the attempted shorter next return. Keep the actual prior head
+word when comparing it with4,7. This is a fixed diagnostic, not a census or
+evidence that that fixture represents all tails. The mathematical target is
+a short tail restriction forced jointly by the two excursions; no such
+restriction has yet been proved. If this only restates the compatibility
+question, switch to adjacent-column word-tree transfers rather than repeat it.
+
+The flat-cone SAT route is cold: reopen only with a demonstrably smaller
+guarded relation, a constructive candidate or a new proof, not more conflicts.
+The independent alternative is the exact adjacent-column relation
+b_(t+1)=a_t XOR(b_t OR c_t), retaining both entire words at the excursion seam.
+All-width realization, an actual4,7 witness, repeated physical4,7 survival and
+universal capture remain open. Both schedules remain paused; nothing posted.

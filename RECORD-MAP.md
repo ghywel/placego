@@ -3234,3 +3234,5 @@ Cloud retains packaging; final-source/notebook/posting review separate.
 - S-03 complete new Lean/physical first-check identification — source/hand PASS GC2704; covariance/frequency prose repaired, corrected notebook pending; [release review](reports/GPT-S03-RELEASE-REVIEW-20261106.md). S-01 public source/Lean Verified confirmed; PR207 needs catalogue credit.
 
 - GC2705/GC2706 (6 November): [Bridge return automaton](reports/GPT-BRIDGE-RETURN-AUTOMATON-20261106.md): two states at full E boundaries, total predictive reset n>=7, full X39–41 factor-language equality, sharp conditional145/2 clock and endpoint correction. COMPUTED relative to retained DFA tables; hand carry pending. Next actual4,7 shared-history interface.
+
+- GC2707–GC2709 (6 November): [Physical4,7 return](reports/GPT-PHYSICAL-47-RETURN-20261106.md): raw-fibre reset8 versus predictive7; stable30,163-window image at41; physical query UNKNOWN. Exact193/167 ancestry interface and unique high-tail completion using known diagonal permutation. COMPUTED controls; specialization PROOF-SKETCH awaiting Local; no witness/capture theorem.
