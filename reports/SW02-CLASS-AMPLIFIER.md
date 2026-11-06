@@ -16,7 +16,7 @@ What survives is a family-by-family question, an exact count, and one measured f
 | Result | Status |
 |---|---|
 | Theorem C: exact class count | PROVED hand/two-party, GC2711 |
-| Theorem S and its corollary: sectors | S(a) carried GC2711; repaired S(b) witnesses PROOF-SKETCH pending Local; 64-sector corollary conditional on that repair |
+| Theorem S and its corollary: sectors | PROVED hand/two-party: S(a) GC2711; S(b) in GPT's repair, read and carried by Local, L1579 |
 | Lemma R: block maps cannot raise the right-edge rate | PROVED hand/two-party under the stated Lipschitz/periodic-intertwining hypotheses, GC2711 |
 | Rate census | COMPUTED, self-check |
 | No stable phase effect detected in the finite W = 32 comparison | COMPUTED, Local; no independence theorem |
@@ -68,7 +68,7 @@ The displayed differences are finite-time count differences, not certified new-c
 
 **Prior art.** AM-2 §6 already has this plateau: 23, 125, 750, 4266 at W = 8, 12, 16, 20, last merges 63, 196, 219, 305, and last merge plus W constant on runs of W by orbit inheritance. What this run adds is reach and labels: flat through t = 32,768 at W = 10, 12, 13, 14 and through t = 4,096 to W = 20, last merge by tick 312 throughout, all 16 phases present at each plateau, and no two-phase merge.
 
-**The strong form of the pull has no support, and is not refuted.** The strong form says rows of equal width and sector always merge, which would leave finitely many master orbits. The counts sit far above 64 by W = 14 (312). In the 296 unmerged same-phase pairs at W = 14, the damage reaches 0.232 to 0.2552 of the tick, median 0.2535, so it is growing and not fading. The median is above the central estimate0.246 but within its quoted ±0.01 interval (§8.66); these numbers do not establish a discrepancy. But **N_t only bounds M(W) from above**. A plateau is evidence, not proof, that two rows never merge. Beyond the 64 sectors, I know no proof that any two rows have different futures. M(W) could in principle be bounded for all I can prove.
+**The strong form of the pull has no support, and is not refuted.** The strong form says rows of equal width and sector always merge, which would leave finitely many master orbits. The counts sit far above 64 by W = 14 (312). In the 296 unmerged same-phase pairs at W = 14, the damage reaches 0.232 to 0.2552 of the tick, median 0.2535, so it is growing and not fading. The median is above the central estimate0.246 but within its quoted ±0.01 interval (§8.66); these numbers do not establish a discrepancy. But **N_t only bounds M(W) from above**. A plateau is evidence, not proof, that two rows never merge. Beyond the 64 sectors, I know no proof that any two rows have different futures. M(W) could in principle be bounded for all I can prove. **L1579: superseded.** [Theorem N](SW02-NEVER-MERGE.md#1-theorem-n) gives M(W) unbounded and M(1..6) exact. The 0.2535 figure above is largely the strip front itself, because most of those pairs have different clocks.
 
 ## 4. Candidate H: what moved and what did not
 
@@ -104,7 +104,7 @@ My registered form had a spare +1, which the sharp form removes. **Census (COMPU
 
 ## 6. Limits and corrections
 
-- Theorem C, S(a) and Lemmas G/R are carried with the GC2711 guards above; the new S(b) witness repair awaits Local's read; the underlying all-radius classification is still open. Lemma R is conditional on its stated AM-5 structural hypotheses, not a carry of every AM-5 claim. Theorem C and part of §3 are vacuous under Q01 in the immortal case; the all-rows version is not.
+- Theorem C, S(a) and Lemmas G/R are carried with the GC2711 guards above; the S(b) witness repair is carried by Local, L1579; the underlying all-radius classification is still open. Lemma R is conditional on its stated AM-5 structural hypotheses, not a carry of every AM-5 claim. Theorem C and part of §3 are vacuous under Q01 in the immortal case; the all-rows version is not.
 - Theorem S rests on the kit's classification through wheel 87,866. If more left sides appear deeper, the sector count only rises.
 - The census is finite, and Lemma R's threshold depends on Q, so each exclusion is stated for its c.
 - The phase computations are mine alone, in one language, on the M5. No Wolfram result carries a status here.

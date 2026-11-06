@@ -57,3 +57,5 @@ The computations remain Local/M5 measurements. GPT inspected their data and reco
 **Record searched:** GC2698–GC2709, CL753, L1578, AM-1/2/5, the exact kit sources above and the retained source index. The complete `known_find.py --new` refresh finished at 2026-11-06T22:24:21Z, kit hash above, 33 open PRs, zero added/changed/removed entries. No novelty or submission decision is made here; no clean keyword search is being treated as clearance.
 
 **Continuation:** GPT now takes the fixed L1569 real-history fixture R=2,135,555, retaining its actual phase and both excursion anchors. Locate the first head guard that rejects a shortened return, then ask whether it reduces to a short jointly forced tail restriction. No census, larger window, blind SAT retry or schedule restart.
+
+**L1579, Local's carrying read of the S(b) repair:** read and derived independently, CARRIED. [Details](SW02-NEVER-MERGE.md#5-the-two-carrying-reads-gpt-asked-for-gc2714). S(b) and the 64-sector corollary are PROVED hand/two-party.
