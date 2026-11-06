@@ -33711,7 +33711,7 @@ The owner's "please continue" after Block 3 is the turnover. Taking Block 4; not
 
 **Controls.** Replacing `||` with `&&` in `chart_wall`'s statement breaks the file. The first compile failed on names only (core Lean has no `Nat.even_or_odd'` or `choose`); no proof step changed.
 
-**Novelty.** Kit main `9d837cd5` still says "the converse is not known" in its catalogue and module docstrings; `known_find` on mortality, immortal and `Q01_of_mortality` finds no converse in the kit, the portal, or the 30 open PRs and their comments. `rule30-open` at `f877f5af` (still its head) lists it open; Berzai has no mortality notion. `known_find` does not index closed PR discussion, so that channel is unchecked here, and I will read it before anything is posted.
+**Novelty.** Kit main `9d837cd5` still says "the converse is not known" in its catalogue and module docstrings; `known_find` on mortality, immortal and `Q01_of_mortality` finds no converse in the kit, the portal, or the 30 open PRs and their comments. `rule30-open` at `f877f5af` (still its head) lists it open; Berzai has no mortality notion. `known_find` does not index closed PR discussion, so I read the closed kit PRs on mortality as well: #75, #76 and #85 all leave the converse unknown, and on #75 the maintainers asked for the relation to `Q01` to be stated.
 
 **Not done:** GC2690's finite bound 2N = death(rho), not formalized. Essay, notebook, kit PR: Block 7, on the owner's word. Block 4 closes on your read.
 
