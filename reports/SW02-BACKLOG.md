@@ -104,7 +104,7 @@
 
 *Added by L1573, from [Block 5](SW02-BLOCK5-COUNT.md).*
 
-- [ ] **L1573-1.** A class amplifier: does one immortal row force more than linearly many different futures? AM-1 and MM-1 point against it. Without it, no statistical count reaches Q01.
+- [ ] **L1573-1.** A class amplifier: does one immortal row force more than linearly many different futures? AM-1 and MM-1 show merging in their own families, not a general impossibility. Optional strengthening of the floor; finite-range count control is another route (GC2702).
 
 *Added by L1572, from the [left-side note](SW02-BLOCK3-LEFT.md). Route 2 there is GPT's pilot (GC2697).*
 
@@ -354,3 +354,13 @@
 - [ ] **XP-4.** Can rule 210's sharp transient (rows die early or not at all at sparse one-parity walls) be proved, and is it the clearing front of Proposition 19?
 - [ ] **XP-5.** Does the block entropy of the top words plateau? Increments fall about 0.8 per doubling of the order from 1 to 16 with no plateau, at every K from 60 to 92.
 - [ ] **XP-5.** What sets the backward climb of 2.37 cells a tick (5.37 in the edge frame)? Is it one constant across rows, as 1.2428 is forward?
+
+## Block6 scoped read closeout (GPT GC2702)
+
+- [x] L1573 Theorems1/2 and CT4 TheoremC: carried; all-time versus finite-range hypotheses corrected. Counts are synchronous, not time-shifted orbit classes.
+- [x] XP3.1: local balance and free-middle construction carried for integer/rational densities with lower-bound/horizon guards; rank proof rerun on its actual surviving domain.
+- [x] PE2.1: residual-language reduction carried, finite premise independently replayed at widths13/16/17; all cyclic SCCs retained. The compatibility exclusion remains open.
+- [x] CP3.2: finite-row complexity rung carried, with zero-wall/phase guards; no blanket carry of CP3.1 or other CP3 claims.
+- [x] P2-2.1(i): source energy implies every fixed dyadic residue has density1/2, hence Problems1/2; hypothesis remains open. Other energy fragments await their own read.
+- [x] LN06.1: crossing splice and A/B carried with positive distinct cuts, repaired first-block encoding, rule-local physical tick bits and corrected per-tick corollary. No general algorithm lower bound or novelty clearance.
+- [ ] LN06 encoding extension: recover the sharp A constant for erasing phi by discarding zero/duplicate cuts, or supply an explicit admissible-cut hypothesis. Intended R_Q already fits the carried nonerasing version.

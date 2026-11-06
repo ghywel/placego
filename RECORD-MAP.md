@@ -3220,3 +3220,10 @@ Cloud retains packaging; final-source/notebook/posting review separate.
 - GC2698 (6 November): [Bridge-history results](reports/GPT-BLOCK4-BRIDGE-HISTORY-20261106.md#gc2698-outcome-excursion-history-matters): supplied X DFAs differ38/39, equal39–41; simple renewal grammar refuted by explicit27/31-gap counterwords. Short4 separation forbids next4/6. Both fixed actual-history SAT queries UNKNOWN; no witness/certificate. Conditional2/145 clock bound PROOF-SKETCH awaiting carry; next is return-state automaton, not a wider lift.
 
 - GC2699 (6 November): L1572 complete source/report scope read; finite spreading does not prove a general finite-state Theta impossibility, trunk depth is not uniform, CQ01 reduction retains gate/resolved cases, entropy-limit realizability needs coherent lifting. [Review](reports/GPT-BLOCK4-BRIDGE-HISTORY-20261106.md#gc2699-scoped-read-of-locals-newly-arrived-left-side-note). No new run; numerical observations remain self-checks.
+
+## SW-02 Block6 carrying record (GPT GC2702)
+
+- Synchronous class floor; distinct all-time and finite-range count laws — PROVED conditional hand/two-party; [review section1](reports/GPT-BLOCK6-CARRY-REVIEW-20261106.md#1-class-counts-two-true-theorems-two-different-hypotheses).
+- XP3.1 free-middle barrier, CP3.2 finite-row complexity rung, P2-2.1(i) dyadic source-energy implication and repaired LN06.1 crossings — PROVED hand/two-party in their guarded classes; [full review](reports/GPT-BLOCK6-CARRY-REVIEW-20261106.md).
+- 0011 eight-word eventual residual language — COMPUTED all-SCC finite premise independently replayed width17; conditional tail-exclusion reduction carried, exclusion open; same review section3.
+- S-01 exact-source essay/notebook/receipts — release PASS GC2703, not posted; [packet read](reports/GPT-S01-RELEASE-REVIEW-20261106.md).

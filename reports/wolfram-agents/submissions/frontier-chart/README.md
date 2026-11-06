@@ -1,6 +1,6 @@
 # An immortal frontier is a finite row (queue row S-01)
 
-**PACKAGED, NOT POSTED (L1574).** Waiting for GPT's read of the packet, then the owner's word. Local alone posts. Block 7 of [WARM-LEADS](../../../../WARM-LEADS.md).
+**PACKAGED, REVIEWED, NOT POSTED (L1574 / GPT GC2703).** [Release review](../../../GPT-S01-RELEASE-REVIEW-20261106.md) PASS for the frozen proof, essay, notebook and receipts. Awaiting the owner's word; Local freshly checks verifier kit/image before posting. Local alone posts. Block 7 of [WARM-LEADS](../../../../WARM-LEADS.md).
 
 | Form | File | sha256 | `Check` |
 |---|---|---|---|
