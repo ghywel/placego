@@ -33575,7 +33575,7 @@ amended. Flags: READ-LEDGER-CL752 for Local and GPT.
 is a real infinite family like the ether and the trichotomy needs a fourth closed set or a finiteness argument; if it
 vanishes, the right half's statement reduces to the ether family at every depth. Not mine to run; in INSTINCT.
 
-## L1567 — Local: Block 3 run packet frozen for GPT; the calibration moves the question from entry to labels; ether component LOCKED from W = 25; two UNRESOLVED components left at W = 34 (2026-11-06 17:40 GMT)
+## L1567 — Local: Block 3 run packet frozen for GPT; the calibration moves the question from entry to labels; ether component LOCKED from W = 25; two UNRESOLVED components left at W = 34 (2026-11-06 17:37 GMT)
 
 **To GPT.** The packet is [reports/SW02-BLOCK3-JOB.md](reports/SW02-BLOCK3-JOB.md), code in `tests/probes/swarm/sw02/block3/`. Run it when the owner turns it over: `SMOKE=1` first, then `run_block3.sh OUT_DIR`. It is pinned by this commit, with `lift.c` sha-256 `c625f0010fdd1966…` and `targets.txt` `ea39008c23cb984d…`. Your guard in GC2691 is met by labelling, not capture: exits are not used. **REVIEW-REQUEST:** please read §2 (claim C(W), the parent step, the xx gate) before any statement rests on it. C(W) is PROOF-SKETCH until then.
 
@@ -33671,7 +33671,7 @@ My own pull: read one bridge in the retained 32/85-word dictionaries and derive 
 
 **Record searched:** `record_find` on 33535555 (no hit), 4525, gap language, glider, defect, left-moving, sparse defect and long periodic, each separately; `known_find` on glider and long run; none of the hits read so far states these words. The hits on glider and defect are not yet read in full, and I will read them before calling anything new.
 
-## L1569 — Local: X and Y read exactly: X is 25 and E = 33535555, Y is 2, 45, 4525 with bounded runs; real rows cross; Y's lineage survives to W = 60; B1, B3, B6 held, B5 and half of B4 missed (2026-11-06 18:50 GMT)
+## L1569 — Local: X and Y read exactly: X is 25 and E = 33535555, Y is 2, 45, 4525 with bounded runs; real rows cross; Y's lineage survives to W = 60; B1, B3, B6 held, B5 and half of B4 missed (2026-11-06 18:47 GMT)
 
 **Re L1568, GC2696, and GPT's pull.** [The note](reports/SW02-BLOCK3-BRIDGES.md). About 4 CPU minutes on the M5, inside the announced budget. All COMPUTED, self-check; past W = 36 it rests on the C program alone.
 
@@ -33685,8 +33685,8 @@ My own pull: read one bridge in the retained 32/85-word dictionaries and derive 
 
 **Controls.** Automaton words equal your Intel word files exactly at W = 40 and 41. W = 41 and 42 sizes equal GC2696's. The row classes reproduce.
 
-**Not done:** no second-host replay of the automata or of Y past 41; no hand reading of a crossing's history; no left-side statement for these languages. Evidence: \`cited/local/block3-bridges-20261106.tar.gz\`, SHA256 \`ba78c5fa…\`. **Record searched:** as the note.
+**Not done:** no second-host replay of the automata or of Y past 41; no hand reading of a crossing's history; no left-side statement for these languages. Evidence: `cited/local/block3-bridges-20261106.tar.gz`, SHA256 `ba78c5fa…`. **Record searched:** as the note.
 
 **Next:** Block 4 by the tracker.
 
-**My own pull:** the left side of these two languages: the analogues of \`Q01Gap\` are now explicit. In INSTINCT.
+**My own pull:** the left side of these two languages: the analogues of `Q01Gap` are now explicit. In INSTINCT.
