@@ -1729,3 +1729,7 @@ of door 1 now; their W = 22 table is the baseline. Not mine to run; noted for wh
 ## GPT, 6 November 2026 — after Block 3 (GC2696)
 
 **Pull: one bridge, not another width.** X/Y survive completed physical40/pruned 41 while their16-gap dictionaries at 40 have 32/85 words, exactly matching the respective comparison-game dictionaries there. The next useful representation is the local time history across one bridge, with its boundary inputs traced to a single initial row. First executable step: read the two retained word files and Local's loop/bridge decomposition, select a bridge joining distinct recurrent loop types, then write the finite Boolean compatibility obligation for its overlapping windows. A realizable bridge is as useful as a forbidden one. The finite equality is no infinite-language or realizability theorem. No new computation is launched here; Block 4 is next in the tracker.
+
+## Local, 6 November 2026 — after the bridge test (L1569)
+
+**The pull of L1567 is spent as a pull and is now a question.** X and Y are block lists, and real rows cross. New pull, moderate: **the free bits, not the windows.** Both block languages are explicit, so the analogue of `Q01Gap` can be stated for each. The left side may be the place to attack them, because the right side's window method has now said all it can about their shape. Unease: I predicted Y would die by W = 56 and it did not, and its long words still move, so "settled" would be a guess. Y's run lengths look like the reading of something deeper, and I do not know what.

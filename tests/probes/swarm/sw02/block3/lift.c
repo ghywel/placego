@@ -26,7 +26,7 @@
  *
  * Usage: lift --targets FILE --mode xx|pq --wmax N [--wreport N] [--out DIR] [--max-nodes N] [--dump] [--dense W]
  *             [--no-lock7] [--r02] [--prune-from P] [--over-max W] [--gapn N] [--gap-limit NODES] [--resume W FILE]
- *             [--rows B T LATEFILE]
+ *             [--rows B T LATEFILE] [--dfa-from W] [--dfa-max STATES] [--drop-largest-at W]
  * --r02: targets are the kit's 829 trap windows alone, every colour, no family and no lock (R-02's graph, a control).
  */
 #include <stdint.h>
@@ -45,7 +45,7 @@ typedef uint8_t u8;
 #define MAXW 62
 
 static int MODE = 0; /* 0 xx, 1 pq */
-static int R02 = 0, GAPN = 6;
+static int R02 = 0, GAPN = 6, DFAW = 0, DFAMAX = 2000000, DROPW = 0;
 static u64 GAPLIM = 40000000;
 static u8 *trap16;
 static const char *ETHER[7] = {"0011", "0110", "1101", "0101", "0011", "0001", "0001"};
@@ -394,6 +394,77 @@ static void gaprec(const u32 *set, size_t m, int depth) {
     free(cur);
 }
 
+/* The exact gap language of one component: subset construction on its gap automaton, from all black windows.
+ * A DFA state is a set of black windows, kept only until it is expanded, and named by an order-free 128-bit hash. */
+static inline u64 mix64(u64 x) {
+    x += 0x9E3779B97F4A7C15ULL; x = (x ^ (x >> 30)) * 0xBF58476D1CE4E5B9ULL;
+    x = (x ^ (x >> 27)) * 0x94D049BB133111EBULL; return x ^ (x >> 31);
+}
+typedef struct { u64 a, b; u32 size; int id; } DKey;
+typedef struct { u32 *set; u32 size; int id; } DItem;
+static DKey *dtab; static size_t dcap, dcount;
+static int dfind(u64 a, u64 b, u32 size) {
+    size_t i = (size_t)(a % dcap);
+    for (;;) {
+        if (dtab[i].id < 0) { dtab[i].a = a; dtab[i].b = b; dtab[i].size = size; dtab[i].id = (int)dcount++; return -1 - dtab[i].id; }
+        if (dtab[i].a == a && dtab[i].b == b && dtab[i].size == size) return dtab[i].id;
+        if (++i == dcap) i = 0;
+    }
+}
+static void gapdfa(const u32 *comp, const u32 *succ, const u64 *core, u32 c, const u32 *bl, size_t nb, size_t n, const char *path, int maxstates) {
+    dcap = (size_t)maxstates * 4 + 7; dtab = xalloc(sizeof(DKey) * dcap); dcount = 0;
+    for (size_t i = 0; i < dcap; i++) dtab[i].id = -1;
+    u32 *mark = xcalloc(sizeof(u32) * n); u32 stamp = 0;
+    FILE *f = fopen(path, "w");
+    size_t qcap = (size_t)maxstates + 1, qh = 0, qt = 0;
+    DItem *q = xalloc(sizeof(DItem) * qcap);
+    u64 ha = 0, hb = 0;
+    for (size_t i = 0; i < nb; i++) { ha += mix64(bl[i]); hb += mix64((u64)bl[i] ^ 0xABCDEF0123456789ULL); }
+    (void)dfind(ha, hb, (u32)nb);
+    q[qt].set = xalloc(sizeof(u32) * nb); memcpy(q[qt].set, bl, sizeof(u32) * nb); q[qt].size = (u32)nb; q[qt].id = 0; qt++;
+    int overflow = 0;
+    while (qh < qt) {
+        DItem it = q[qh++];
+        if (f) fprintf(f, "%d %u", it.id, it.size);
+        u32 *cur = it.set; size_t nc = it.size;
+        for (int g = 1; g <= 9 && nc; g++) {
+            size_t capn = nc * 4, n2 = 0, nbk = 0;
+            u32 *nxt = xalloc(sizeof(u32) * capn), *bk = xalloc(sizeof(u32) * capn);
+            u32 s1 = ++stamp, s2 = ++stamp;
+            for (size_t i = 0; i < nc; i++) {
+                u32 v = cur[i];
+                for (int j = 0; j < 4 && succ[4 * (size_t)v + j] != NIL; j++) {
+                    u32 x = succ[4 * (size_t)v + j];
+                    if (comp[x] != c) continue;
+                    if (core[x] & 1) { if (mark[x] != s1) { mark[x] = s1; bk[nbk++] = x; } }
+                    else if (mark[x] != s2) { mark[x] = s2; nxt[n2++] = x; }
+                }
+            }
+            if (nbk) {
+                u64 a = 0, b = 0;
+                for (size_t i = 0; i < nbk; i++) { a += mix64(bk[i]); b += mix64((u64)bk[i] ^ 0xABCDEF0123456789ULL); }
+                int id = -1;
+                if (dcount < (size_t)maxstates) {
+                    id = dfind(a, b, (u32)nbk);
+                    if (id < 0) {
+                        id = -1 - id;
+                        q[qt].set = xalloc(sizeof(u32) * nbk); memcpy(q[qt].set, bk, sizeof(u32) * nbk);
+                        q[qt].size = (u32)nbk; q[qt].id = id; qt++;
+                    }
+                } else overflow = 1;
+                if (f) fprintf(f, " %d:%d", g, id);
+            }
+            free(bk); free(cur);
+            cur = nxt; nc = n2;
+        }
+        free(cur);
+        if (f) fprintf(f, "\n");
+    }
+    if (f) fclose(f);
+    printf(" GAPDFA W %d states %zu%s\n", (int)0, dcount, overflow ? " OVERFLOW" : "");
+    free(q); free(dtab); free(mark);
+}
+
 /* Strongly connected components with a cycle, and what each one holds. With keep, the UNRESOLVED windows are returned. */
 static void analyse(const u64 *core, size_t n, const u32 *succ, int W, const char *label, FILE *js, int track,
                     const char *dir, u64 **keep, size_t *nkeep) {
@@ -562,10 +633,13 @@ static void analyse(const u64 *core, size_t n, const u32 *succ, int W, const cha
         for (size_t i = 0; i < n; i++) if (rank[comp[i]] >= 0) { pw[npw] = core[i]; pc[npw++] = rank[comp[i]]; }
     }
     if (keep) {
+        /* --drop-largest-at W: leave out the largest UNRESOLVED component at that width, with all its descendants */
+        int drop = -1;
+        if (W == DROPW) for (size_t i = 0; i < no; i++) if (out[i].kind == UNRESOLVED) { drop = (int)i; break; }
         size_t cnt = 0;
-        for (size_t i = 0; i < n; i++) if (rank[comp[i]] >= 0 && out[rank[comp[i]]].kind == UNRESOLVED) cnt++;
+        for (size_t i = 0; i < n; i++) if (rank[comp[i]] >= 0 && rank[comp[i]] != drop && out[rank[comp[i]]].kind == UNRESOLVED) cnt++;
         *keep = xalloc(8 * cnt); *nkeep = 0;
-        for (size_t i = 0; i < n; i++) if (rank[comp[i]] >= 0 && out[rank[comp[i]]].kind == UNRESOLVED) (*keep)[(*nkeep)++] = core[i];
+        for (size_t i = 0; i < n; i++) if (rank[comp[i]] >= 0 && rank[comp[i]] != drop && out[rank[comp[i]]].kind == UNRESOLVED) (*keep)[(*nkeep)++] = core[i];
     }
     free(rank);
     u64 tot = 0; for (size_t i = 0; i < no; i++) tot += out[i].nodes;
@@ -589,6 +663,17 @@ static void analyse(const u64 *core, size_t n, const u32 *succ, int W, const cha
     }
     if (no > 24) printf("  %s ... %zu more components, in the jsonl\n", label, no - 24);
     fflush(stdout); if (js) fflush(js);
+    if (track && DFAW && W >= DFAW) {
+        for (size_t i = 0; i < no; i++) {
+            if (out[i].kind != UNRESOLVED) continue;
+            u32 c = out[i].id, a = cstart[c], b = cstart[c + 1];
+            u32 *bl = xalloc(sizeof(u32) * (b - a)); size_t nb = 0;
+            for (u32 j = a; j < b; j++) if (core[mem[j]] & 1) bl[nb++] = mem[j];
+            char p[1024]; snprintf(p, sizeof p, "%s/dfa_%s_W%d_c%zu.txt", dir, MODE ? "pq" : "xx", W, i);
+            gapdfa(comp, succ, core, c, bl, nb, n, p, DFAMAX);
+            free(bl);
+        }
+    }
     /* gap words of the UNRESOLVED components */
     if (track && GAPN > 0) {
         gmark = xcalloc(sizeof(u32) * n); gstamp = 0; gcomp = comp; gsucc = succ; gcore = core;
@@ -692,17 +777,33 @@ static void rows_mode(int B, int T, const char *late) {
     int L = (T + B) / 64 + 3;
     u64 *row = xalloc(8 * (size_t)L), *nw = xalloc(8 * (size_t)L);
     long cnt[5] = {0, 0, 0, 0, 0}, last[5] = {0, 0, 0, 0, 0};
+    /* Crossings: gap histories in hex digits, newest last. X: 2525 E 2525; Y: 2222 45 2222 and 2222 4525 2222. */
+    const u64 PX = 0x2525335355552525ULL;
+    const u64 PY1 = 0x2222452222ULL, MY1 = 0xFFFFFFFFFFULL, PY2 = 0x222245252222ULL, MY2 = 0xFFFFFFFFFFFFULL;
+    long xrows = 0, yrows = 0, xmax = 0, ymax = 0, xhist[16], yhist[16];
+    u64 xbest = 0, ybest = 0;
+    memset(xhist, 0, sizeof xhist); memset(yhist, 0, sizeof yhist);
     u64 lastR[5] = {0, 0, 0, 0, 0};
     FILE *f = late ? fopen(late, "w") : NULL;
     u64 M = (1ULL << 62) - 1;
     for (u64 R = 0; R < (1ULL << B); R++) {
         memset(row, 0, 8 * (size_t)L);
         row[0] = R;
-        int len = 1, cls = 0, tick = -1;
+        int len = 1, cls = 0, tick = -1, sinceb = -1;
+        u64 hist = 0; long xc = 0, yc = 0;
         for (int t = 0; t <= T; t++) {
             if (t & 1) {
                 int c = is_target(row[0] & M, 62);
                 if (c) { cls = c; tick = t; break; }
+                if (row[0] & 1) {
+                    if (sinceb >= 0) {
+                        int g = sinceb + 1 > 15 ? 15 : sinceb + 1;
+                        hist = (hist << 4) | (u64)g;
+                        if (hist == PX) xc++;
+                        if ((hist & MY1) == PY1 || (hist & MY2) == PY2) yc++;
+                    }
+                    sinceb = 0;
+                } else if (sinceb >= 0) sinceb++;
             }
             u64 carry = (t & 1) ? 0 : 1;
             for (int i = 0; i <= len && i < L; i++) {
@@ -714,6 +815,8 @@ static void rows_mode(int B, int T, const char *late) {
             if (len < L - 1 && row[len]) len++;
         }
         cnt[cls]++;
+        if (xc) { xrows++; if (xc > xmax) { xmax = xc; xbest = R; } xhist[xc > 15 ? 15 : xc]++; }
+        if (yc) { yrows++; if (yc > ymax) { ymax = yc; ybest = R; } yhist[yc > 15 ? 15 : yc]++; }
         if (cls && tick > last[cls]) { last[cls] = tick; lastR[cls] = R; }
         if (!cls) printf("ROW-NOT-ENTERED R %llu by tick %d low window %llu\n", (unsigned long long)R, T, (unsigned long long)(row[0] & M));
         if (f && (tick >= 2048 || !cls)) fprintf(f, "%llu %d %d\n", (unsigned long long)R, tick, cls);
@@ -722,6 +825,10 @@ static void rows_mode(int B, int T, const char *late) {
     const char *nm[5] = {"none", "gate", "family", "lock7", "lock7b"};
     for (int c = 1; c < 5; c++) printf("ROWS B %d %s %ld latest tick %ld R %llu\n", B, nm[c], cnt[c], last[c], (unsigned long long)lastR[c]);
     printf("ROWS B %d none %ld by tick %d\n", B, cnt[0], T);
+    printf("CROSSINGS X rows %ld most %ld at R %llu; Y rows %ld most %ld at R %llu\n", xrows, xmax, (unsigned long long)xbest, yrows, ymax, (unsigned long long)ybest);
+    printf("CROSSINGS X by count:"); for (int i = 1; i < 16; i++) printf(" %ld", xhist[i]);
+    printf("\nCROSSINGS Y by count:"); for (int i = 1; i < 16; i++) printf(" %ld", yhist[i]);
+    printf("\n");
 }
 
 int main(int argc, char **argv) {
@@ -744,6 +851,9 @@ int main(int argc, char **argv) {
         else if (!strcmp(argv[i], "--prune-from")) prune = atoi(argv[++i]);
         else if (!strcmp(argv[i], "--over-max")) overmax = atoi(argv[++i]);
         else if (!strcmp(argv[i], "--gapn")) GAPN = atoi(argv[++i]);
+        else if (!strcmp(argv[i], "--dfa-from")) DFAW = atoi(argv[++i]);
+        else if (!strcmp(argv[i], "--drop-largest-at")) DROPW = atoi(argv[++i]);
+        else if (!strcmp(argv[i], "--dfa-max")) DFAMAX = atoi(argv[++i]);
         else if (!strcmp(argv[i], "--gap-limit")) GAPLIM = (u64)atoll(argv[++i]);
         else if (!strcmp(argv[i], "--resume")) { resumew = atoi(argv[++i]); resume = argv[++i]; }
         else { fprintf(stderr, "unknown argument %s\n", argv[i]); return 2; }

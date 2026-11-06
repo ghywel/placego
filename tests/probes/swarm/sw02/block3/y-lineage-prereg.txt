@@ -1,0 +1,18 @@
+Block 3 follow-up: Y's lineage alone, written 2026-11-06 18:42 GMT, before the run. Local, L1568's bounded test, second part.
+
+Fact used: a cyclic component at W + 1 lies over one component at W, so lifting Y's windows alone gives every descendant
+of Y exactly (the parent step GPT carried in GC2692). Y has 392,355 windows at W = 41 and grows about 1.3 a column, so it
+can be lifted far past X's reach.
+
+Seen so far: Y's letters are 2, 4, 5 from W = 40. Its words are concatenations of 2, 45, 4525. Runs of 2 stop at 22.
+45 2^n 4525 lost n = 16 at W = 40. Chained pairs fell 34, 33, 31 of 64 from W = 39 to 41.
+
+Prediction B5 (0.6): by W = 56 no descendant of Y is UNRESOLVED: each is LOCKED or GAP35, or gone.
+Prediction B6 (0.7): the number of Y's gap words of length 16 is below 85 at W = 48.
+Counterfactual: Y's lineage is still UNRESOLVED at W = 56 with its word count flat over W = 48 to 56. Then Y is a settled
+language like X, not a dying one, and the obstruction has two parts.
+If B5 holds: every right half enters T(W), or has u eventually periodic, or ends in X's descendants. COMPUTED, C program
+only past the replay width.
+Control: rank 1 at W = 41 must be 392,355 windows; the lifted lineage must match GPT's 510,780 at W = 42.
+Caps: run_capped, 900 CPU seconds, 8192 MiB RSS, 4096 MiB swap growth, track-tree.
+Record searched: as L1568.
