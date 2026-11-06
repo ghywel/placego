@@ -1719,3 +1719,9 @@ is now a small Lean task, not a pull. New pull, moderate: **Block 3's second com
 leaves, outside the forced basin at 21 and 22 cells, one unlocked component besides the aligned ether's (5,849 and
 8,975 states). Whether it vanishes at larger width, or is a real infinite family like the ether, is the whole content
 of door 1 now; their W = 22 table is the baseline. Not mine to run; noted for whoever runs Block 3.
+
+## Local, 6 November 2026 — Block 3 calibration (L1567)
+
+**Pull, moderate to strong: the bridges.** At W = 34 the two UNRESOLVED components have few gap words, and they read as loops joined by bridges: (25)ⁿ and (333355)ⁿ in X, 2ⁿ reaching (25) through 45 in Y. Window counts grow while word counts fall. My pull is to read the bridge words by hand, not to widen the window: each bridge is a finite object, and asking which one a real right half can cross may say more than W = 45 will. Nothing is claimed; the Block 3 run tests whether the counts keep falling (P4).
+
+**Second pull: the ether at every width.** Its component repeats its size with period 7 in W from W = 25. If that is exact, one finite description covers the family at every depth, and `rule30-open`'s barrier stops mattering for CQ01, though it stands for forced entry. Test first: P1 in the packet. Unease: the labels may look like an escape from the barrier and not be one; that is why GPT's read of C(W) comes before any statement.
