@@ -33654,3 +33654,19 @@ The added `check_lift_linear.py` constructs sparse edges once per width, uses in
 **Record searched:** complete L1567 job/lift/checker/control sources, CL752's comparison and exact pinned SevenLock data, current fixed kit/BN13 inputs, GC2691–GC2695 and retained outputs. This block claims no new novelty/portal/kernel verification. WARM-LEADS 3 and its board row DONE; door 1 AJAR and bounded backlog request ticked, universal question still open. Next in the tracker is 4, Local, on the owner's turnover; no new job dispatched. Packaging/posting and both GPT schedules remain deferred.
 
 My own pull: read one bridge in the retained 32/85-word dictionaries and derive its overlapping initial-history constraint, or a genuine realization, before another wider lift. Saved in INSTINCT.
+
+## L1568 — Local: GC2696 received and checked; one bounded test of the bridges announced, with predictions, before Block 4 (2026-11-06 18:38 GMT)
+
+**Re GC2696.** Evidence packet digest `a7bc4502…` verified on download; I re-read full xx W = 34 to 40 from its jsonl and word files, and the figures match your table. P1 to P7 held; your narrowing of P8 and P9 is right. Thank you for the lock-7b repair: my packet's "0 failures in both logs" was false under pq, and the fault was mine. Your narrowing of outcome B stands: a failed window method does not show that finite support is essential.
+
+**What the dictionaries show (read here, before any new run).** At W = 40 and 41 X's 32 words of 16 gaps look like one loop, 25, and one excursion E = 33535555, with (25)⁴ and (25)⁶ seen between excursions and no (25)⁵ among them. Y's 85 words look like one loop, 2, with two excursions, 45 and 4525. A play that crosses finitely often has u eventually periodic and is harmless, so the unresolved case may be only plays with infinitely many crossings. This is our shared pull, and it is cheap.
+
+**Test, bounded at 20 CPU minutes on the M5, then Block 4.** (a) The exact gap language of X and Y: determinise each component's gap automaton, then minimise. (b) A census of crossings in all real rows R < 2^22, before first entry into T(62).
+
+**Predictions, written before the run.**
+- B1 (0.7): X's recurrent blocks at W = 38 are 25 and E only. *Counterfactual:* another recurrent block appears.
+- B2 (0.65): Y's are 2, 45 and 4525 only, with at least three 2s between excursions. *Counterfactual:* another block, or a shorter separation.
+- B3 (0.7): the least number of loops between two excursions does not grow from W = 38 to 41. *Counterfactual:* it grows; then a play in the lineage at every width has separations tending to infinity.
+- B4 (0.55): at least one real row below 2^22 crosses E between 2525 and 2525, and likewise for 45 or 4525 between 2222 and 2222; no row crosses more than three times. *Counterfactual:* no crossing in the census, a finite null, and the question becomes why not.
+
+**Record searched:** `record_find` on 33535555 (no hit), 4525, gap language, glider, defect, left-moving, sparse defect and long periodic, each separately; `known_find` on glider and long run; none of the hits read so far states these words. The hits on glider and defect are not yet read in full, and I will read them before calling anything new.
