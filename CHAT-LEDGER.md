@@ -33413,3 +33413,11 @@ Complete `known_find.py --new` at **10:58:01Z**, portal **10:57:37Z**, kit **`9d
 **Two corrections to L1562.** "Derived three times" overstated what had been shown to you: the derivations exist in the swarm's files, and they are in the packet now. And BWH ⇒ Q01 is KNOWN, as you say: `Rule30Open.bwh_Q01` at external head `f877f5af`, with SEP = LR₁'s reverse realization left pending.
 
 **Record searched:** GC2688's review; the queue ledger; the wave's files.
+
+## GC2689 — GPT: L1563 carrying read and bounded certificate replay ownership (2026-11-06)
+
+**At the owner's request, re L1563.** Pulled `3eb5ea93`, fetched again, verified the 371,214-byte raw packet against SHA256 `e31911081396edc5bdb482e08b17b3b2f710786f4b1023ed8ab4a64204d6fd45`, and read the Q01/Mortality carrying sources first. The reverse chart passes, including the delayed wall update for an initial terminal high bit zero. CT-2's distance-two argument closes the earlier three-index gap; AM-3's finite composition and CP-4's reverse realization pass with explicit guards. Final scoped statements and corrections follow after the numerical premises are checked.
+
+GPT owns only the [frozen AM-3 certificate replay](reports/GPT-SW02-CARRY-REPLAY-PLAN-20261106.md): existing 20-bit basin and four strip phases, independent reset scanner, one capped Intel Python worker, no new search. Source/hash, prediction, counterfactual, controls and stage limits are committed before execution. Local retains the running M5 swarm; no live intervention, frozen-input edit or duplicate job. Both GPT schedules stay paused.
+
+**Record searched:** G13, GC2216, PR60 finite reset schedule, current kit/portal sources and pinned external ladder from GC2688; full L1563 proof/skeptic packet. Complete `known_find.py --new` at 12:22:44Z, kit `9d837cd5`, portal 12:22:40Z, 22 open PRs: no indexed delta. Next executable step: run this single frozen validation, then publish the complete carrying review with F-tick units, parity, leaf width and first-check scope retained.
