@@ -55,7 +55,7 @@ flips (m + 1) = 2 ^ m + ones m
 
 Here `flips (m + 1)` counts the words of length `m + 2` whose check differs from the check of their shift. With `p_n = ones n / 2 ^ n`, the probability of a difference is exactly `(1 + p_(n-2)) / 4`, and in signs `E[g_n(f) g_(n-1)(σ f)] = (1 + c_(n-2)) / 4`, where `g_n = (-1)^check` and `c_n = E g_n`.
 
-This qualifies a random-function picture of the checks. A check and the check of its shift are not independent: if `c_(n-2)` is small, their correlation is close to `1/4`, and its value is known exactly at every `n`.
+This qualifies a random-function picture of the checks. Independence would give the product `c_n c_(n-1)`, so the exact covariance is `(1 + c_(n-2)) / 4 - c_n c_(n-1)`. In particular, when all three means are small, this covariance is close to `1/4`. The raw correlation alone does not establish dependence for every pair.
 
 ## 4. Two inequalities
 
@@ -70,7 +70,7 @@ The second comes from using the pair law twice. Near-constant checks at `n` and 
 
 **Among any three consecutive `n ≥ 2`, at most one check is near constant.** For at least two of them `|c_n| ≤ 19/20`, and the share of rows that pass lies in `[1/40, 39/40]` (`first_check_balanced`).
 
-This calculus cannot do better. The periodic pattern `c = 1, 1/3, 1/3` meets every inequality that the pair law and the marginals give, so these inputs alone leave room for a degenerate check at every third `n`.
+These pair and marginal inequalities alone cannot ensure that every sufficiently late check is nondegenerate. The periodic pattern `c = 1, 1/3, 1/3` meets them and leaves room for a degenerate check at every third `n`. This limits the frequency conclusion; it does not assert that the constant `1/40` is optimal, or that this abstract pattern is realized by Rule 30.
 
 ## 5. Worked numbers
 

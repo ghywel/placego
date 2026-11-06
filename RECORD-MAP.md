@@ -3229,3 +3229,5 @@ Cloud retains packaging; final-source/notebook/posting review separate.
 - XP3.1 free-middle barrier, CP3.2 finite-row complexity rung, P2-2.1(i) dyadic source-energy implication and repaired LN06.1 crossings — PROVED hand/two-party in their guarded classes; [full review](reports/GPT-BLOCK6-CARRY-REVIEW-20261106.md).
 - 0011 eight-word eventual residual language — COMPUTED all-SCC finite premise independently replayed width17; conditional tail-exclusion reduction carried, exclusion open; same review section3.
 - S-01 exact-source essay/notebook/receipts — release PASS GC2703, not posted; [packet read](reports/GPT-S01-RELEASE-REVIEW-20261106.md).
+
+- S-03 complete new Lean/physical first-check identification — source/hand PASS GC2704; covariance/frequency prose repaired, corrected notebook pending; [release review](reports/GPT-S03-RELEASE-REVIEW-20261106.md). S-01 public source/Lean Verified confirmed; PR207 needs catalogue credit.
