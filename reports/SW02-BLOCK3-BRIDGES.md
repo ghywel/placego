@@ -8,7 +8,7 @@
 
 Each UNRESOLVED component has an exact gap language, found by determinising its gap automaton. Both turn out to be short lists of blocks.
 
-**X, at W = 38 to 41.** Every gap word is a factor of a concatenation of two blocks: **25** and **E = 33535555**. Between two E's there are n copies of 25, where n = 4 or n ≥ 6, and 25 repeats without limit. The same language appears at all four widths at every length. At W = 36 the blocks are the same but n = 3 and 5 still occur.
+**X, at W = 38 to 41.** Every gap word is a factor of a concatenation of two blocks: **25** and **E = 33535555**. Between two E's there are n copies of 25, where n = 4 or n ≥ 6, and 25 repeats without limit. The block form and one-separation set appear at all four widths, but do not specify the complete language. **GPT correction, GC2698:** exact DFA comparison finds W38 strictly larger than W39, and W39–41 equal at every finite length. In particular E(25)^4 E(25)^4 E is forbidden throughout, and E(25)^4 E(25)^6 E is forbidden from W39. See the [counterwords and review](GPT-BLOCK4-BRIDGE-HISTORY-20261106.md#gc2698-outcome-excursion-history-matters). At W = 36 the blocks are the same but n = 3 and 5 still occur.
 
 **Y, at W = 40 to 60.** Every gap word is a factor of a concatenation of **2**, **45** and **4525**. Unlike X, Y has no loop: at W = 60 runs of 2 stop at 21, so its language has no 2^∞. The allowed runs at W = 60 are:
 
@@ -19,7 +19,7 @@ Each UNRESOLVED component has an exact gap language, found by determinising its 
 | 4525 | 45 | 3 |
 | 4525 | 4525 | none |
 
-**This changes what "unresolved" means.** A play in X with finitely many E's ends in (25)^∞. Then u is eventually periodic with period 7, which is harmless. So the word form of C(41) is:
+**This changes what "unresolved" means.** A play in X with finitely many E's ends in (25)^∞. Then u is eventually periodic with period 7, which is harmless. So a necessary word form of C(41), refined by Y’s descendants at W60 and without treating single-separation rules as a full grammar, is:
 
 > Every right half enters T(41), or has u eventually periodic, or has a gap sequence that is eventually either (a) a concatenation of 25 and E with infinitely many E's, or (b) a word over 2, 45 and 4525 with the runs above (W = 60 for those runs).
 

@@ -4,6 +4,8 @@
 
 ## Test requests
 
+- [x] **Block3 bridge DFA follow-up, GC2698.** Exact all-length products refute equality38–41 and the independent-choice X grammar;39–41 agree. Counterwords locate return-state memory. Two fixed physical-history queries UNKNOWN; physical realizability remains open. [Evidence](GPT-BLOCK4-BRIDGE-HISTORY-20261106.md).
+
 *Requests marked done were covered by the bench (BN-02, BN-11 to BN-16, BN-L1).*
 
 - [x] **R-02 / Block 3, bounded lift past 31.** GC2696: completed full xx/pq40 and pruned xx41; X/Y persist. Independent replay xx36/pq32,42 gap extraction partial. Finite test closed, universal disappearance question below stays open. [Results](GPT-BLOCK3-RESULTS-20261106.md).
@@ -99,6 +101,8 @@
 - [ ] **XP-5.** rr.c real mode for 1e11 row-ticks (about 21 CPU minutes on one M5 core at 8e7 row-ticks a second; better on the Intel host, the code is portable vector C), reading the witness route past tick 18 on real rows, age >= 2000 preferred (T = 8000). *Cost:* 1,300 CPU seconds, 4 GiB cap, under 1 GB RAM if the record cap is set
 
 ## Open questions
+
+- [ ] **Bridge return state, GC2698.** Build the complete-E return automaton of X39–41 with exact unary exponent labels. Which long interval resets its state, and which state corresponds to an actual generated right-boundary history? This replaces the refuted renewal grammar; no wider lift or blind SAT enlargement.
 
 - [ ] **AM-1.** Does the record hold any immortality-preserving operation on finite zero-boundary rows whose output is provably not G-orbit-equivalent to its input (G^a z = G^b y for no a, b)? I found none: predecessors, partners and bundle edits are all s…
 - [ ] **AM-1.** The W = 14 champion 11083 has no single-flip partner but shares its future from tick 8 with 11165 and 11307 (a bundle edit, GC1911's finite S). Is the per-row count of bundle siblings among long survivors measured anywhere beyond L955's who…
