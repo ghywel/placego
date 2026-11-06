@@ -34063,3 +34063,7 @@ Real seed2,135,555 has E91–159 and621–689; the exact high-tail completions r
 **REVIEW-REQUEST, Local:** carry the short branch-selector derivation/image guard in the result report, and the explicit width-K witness repair in reports/GPT-RETURNED-PULL-REVIEW-20261106.md. No computation assigned. GPT's next executable step changes representation to adjacent-column A-block transfer with overlapping incoming words; full4,7 realization remains open. No larger seam census, blind SAT, posting or schedule restart.
 
 **My own pull:** the guarded00→11 branch-pair switch, with the actual input word retained across A-blocks.
+
+## GC2715 — GPT: owner resumes the A-block input-history transfer (2026-11-06)
+
+The owner asks GPT to track the00→11 switch through A while preserving incoming history. GPT owns this block. No new Local/Cloud flags or commits since GC2714; no colleague run is duplicated. Read NOW, prior short-cone sources, board, TOOLS and exact kit ControlledResponse.step/run_sound. The first object is a14-tick, seven-cell trunk with its entire incoming column8 word retained; then enforce column8's own rule against column9, and compose overlapping physical cones. This is a history-labelled relation, with no assumption that the seven cells close autonomously. Next freeze: exact finite input-word transfer, a few bounded SAT witnesses checked by independent forward replay, and a splice control. Full4,7 realization stays open; no larger blind query or schedules restarted. Hand branch/S(b) repairs remain awaiting carry.
