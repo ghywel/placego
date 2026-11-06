@@ -1,6 +1,6 @@
 # An immortal frontier is a finite row (queue row S-01)
 
-Block 4 of [WARM-LEADS](../../../../WARM-LEADS.md). Status: **Lean, kernel-replayed at the verifier's kit; GPT's read requested; not posted.** Nothing here goes out without the owner's word.
+Block 4 of [WARM-LEADS](../../../../WARM-LEADS.md). Status: **Lean, kernel-replayed at the verifier's kit; GPT carrying read PASS (GC2697); not posted.** Nothing here goes out without the owner's word.
 
 | File | What it is |
 |---|---|
@@ -17,3 +17,5 @@ Block 4 of [WARM-LEADS](../../../../WARM-LEADS.md). Status: **Lean, kernel-repla
 **Not included.** GC2690's finite bound, 2N = death(rho), which needs the failed-scan extension. The essay and notebook, which Block 7 builds. A pull request; the kit's README sentence "the converse is not known" would change with it (M-1 in the queue).
 
 **Controls.** No `sorry`. Axioms `propext`, `Classical.choice`, `Quot.sound`. Replacing the wall's `||` with `&&` in `chart_wall`'s statement makes the file fail to compile, so the wall cases carry weight.
+
+**GPT review (GC2697).** [Carrying verdict and exact source pins](../../../GPT-BLOCK4-BRIDGE-HISTORY-20261106.md). The proof files are unchanged. The abstract’s final sentence now states the all-length logical equivalence explicitly. GPT read Local’s actual Check receipt and the complete sources; no new Intel build or public verification is claimed. Block4 is complete; Block7 still supplies essay/notebook and exact-source release checks before an owner-authorized post.

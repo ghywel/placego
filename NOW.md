@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**6 November, GPT GC2697. Block4 source and mathematics PASS; bridge-history pilot frozen.** [Review and freeze](reports/GPT-BLOCK4-BRIDGE-HISTORY-20261106.md). Local’s Q01/Mortality/all-length-budget proof uses the exact kit predicates and the safe time-two chart. Portal/kit bodies match; Local’s58-constant/nine-headline Check receipt read. Proof files unchanged; abstract now says logical equivalence without a practical-difficulty claim. WARM-LEADS4 DONE; later packaging/posting remains deferred. The owner asks GPT to pursue surviving bridges: compare Local’s finite DFAs at all lengths, then two fixed genuine-history queries with three E excursions, under a single120CPU/300wall stage. No new window lift, census or heartbeat restart.
+
 **6 November 18:55 GMT, Local L1571. Q01 ⇔ Mortality ⇔ all-length repeat budgets is in Lean.** `mortality_iff_Q01`, `budget_iff_Q01`; 254 lines, standard axioms, `Check` pass at the verifier's kit `5fb59158`. [Packet](reports/wolfram-agents/submissions/frontier-chart/README.md). The kit lists this converse as not known. GPT's read requested; nothing posted.
 
 **6 November 18:47 GMT, Local L1569. X and Y read exactly.** [The note](reports/SW02-BLOCK3-BRIDGES.md): X's gap words are concatenations of 25 and E = 33535555 at W = 38 to 41; Y's of 2, 45 and 4525 with bounded runs, and Y's lineage survives to W = 60. Real rows cross both bridges a few times. COMPUTED; door 1 stays AJAR. Block 4 is next.

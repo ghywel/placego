@@ -1,0 +1,38 @@
+# Block4 carrying read and surviving bridge histories
+
+GPT GC2697, 6 November 2026. **Block4 passes the requested source/mathematics review.** Local's kit and portal proofs have identical bodies, and their statements are the kit's own Q01, Mortality and all-length BudgetAt. No proof change is requested. One abstract sentence now states logical equivalence without an unsupported practical-difficulty comparison. The bridge follow-up below is a separate, newly frozen bounded test; it has not yet run at this checkpoint.
+
+## Block4 verdict
+
+The complete 254-line kit form and 249-line portal form were read, including the far-boundary extension Z_rec. Inside the frontier it uses the kit's Z_depth. At the first exterior depth the zero-memory scan's first output is (a OR b,b), which cancels both components of the recurrence; farther out all terms are white. Thus chart_interior covers every positive depth, including the moving far boundary.
+
+The two parity cases of chart_wall use the terminal pair (1, NOT s) and penultimate (s,s). The wall is proved for tau>=1. The horizontal start is taken at tau=2, and zrow_chart shifts by two; there is no illicit use at tau=0. inX_start reads a terminal high bit after a successful update. fr_length and atDepth's white default imply finite support, with the safe bound2*length(fr0)+6. This bound is not the stronger quantitative mortality claim left out of the packet. Legal is used only to rule out an empty initial frontier.
+
+The converse composes the existing mortality namespace equivalence, Q01_of_mortality and Q01_iff_staged. budget_iff_Q01 quantifies over every frontier length, with a budget allowed to depend on that length. It does not prove one uniform budget, Q01 itself, or a prize statement. The abstract's final sentence is repaired accordingly; proof files are unchanged.
+
+**Evidence distinctions:** GPT carries the source and mathematics and compares the two proof bodies byte for byte. Local's actual Check JSON is read: verdict pass,58 replayed constants,9 headlines, importsStatements true, no new axioms/reasons, standard axioms only, verifier kit5fb591588cfa869bfdc47946799b5ddd70a903d1. This is Local's M5 compilation/replay receipt, not an independent Intel build or public Lean Verified/Human Verified status. Essay/notebook, exact-source release receipts and outward posting remain later work, on the owner's instruction.
+
+| Cleared file | SHA256 |
+|---|---|
+| Rule30FrontierChart.lean | 4c90192e4166d7a381a80cec264a3b94959ca19e8d1c9af606c14a309b4949c1 |
+| Rule30Submission.lean | 9a5e9e81cb1fc276c116951773f9f8b4572f80f77f9f4f6f3276970cd27566a4 |
+| Local Check JSON | b8a19b13d9849464c04cc59f32b76b47ad59044d943d76659f7a0ccc65b45683 |
+| Revised abstract | 14785a5445d51ddee4dbea93ae6d241769869c0553ea4042ceaf49a8ad7b526b |
+
+The complete source index refreshed at19:01:36Z: kit9d837cd5e5ac447cd868c20aebf49a1b4cfa866e, portal19:01:22Z,30 open PRs,33 additions since the previous complete check. The mortality search has no indexed converse. Closed PR75 at f131449bf08949cbf0d815b678f6d6dc431524ad,76 at fa511089735aa73643560165f1cc2dceffa2420c,85 at571f545554c7f533066cde5a2c50cc98c4210fbc were separately read through current metadata, issue comments, review bodies and inline comments; they leave this converse unknown. Current landed SurvivalBridge, AlternatingTraceBridge and ZeroBoundary definitions and carrying statements were read. This is not a blanket carrying read of the33 additions.
+
+## Bridge question and frozen test
+
+L1569 already supplies genuine finite bridge crossings, so the question is now repeated crossings and their history compatibility. Its archive is raw-body/digest verified: cited/local/block3-bridges-20261106.tar.gz,1,410,257 bytes, SHA256 ba78c5fa0d097eb77b607d0abbcd87f316855b18eafa7c201a1037d0086b6147. No new window lift or census is proposed.
+
+First compare the supplied X automata at widths38,39,40,41 by exact finite-product BFS. Compare them with the factor language of A=25 and E=33535555 with4 or>=6 A blocks between E's. This tests equality, not just block-list inclusion or agreement through16 gaps. Compute exact unary transition orbits for E A^n E and Y's excursion separations, replacing the n<=400 cutoff. The conclusions concern the supplied finite DFAs; they retain Local's hash-collision/original-graph-completeness caveat. A DFA comparison is not a fresh replay of the original C subset construction.
+
+Then solve exactly two fixed actual-history SAT queries: gaps A^2(A^n E)^3 A^2, n=4 and6. Physical observation ticks are1+2s; the alternating center is black at even ticks. All initial cells in the triangular backward light cone are free, and every subsequent cone cell obeys the actual Rule30 rule. A model specifies one finite right-half integer, with zeros beyond that cone. Check it by separate scalar-cell and bit-integer simulation. No finite right half, horizon or number of crossings is increased after seeing a result. Positive results are finite witnesses only. UNSAT without a checked certificate remains an uncertified solver outcome, never a forbidden-word theorem.
+
+**Predictions written before execution:** (P1) the X automata at38..41 have equal all-length languages; (P2) their language equals the claimed simple grammar; a shortest separating word would refute this prediction; (P3) at least one fixed three-excursion pattern has a genuine finite-history witness. Counterfactuals: an automaton mismatch, a grammar separating word, or both SAT queries unknown/uncertified UNSAT. Any of those is retained without a wider retry. Controls: equivalent/inequivalent DFA toys; fixed initial R=19 whose literal trace must be SAT; a wrong first tick under the same fixed root must be UNSAT; every new SAT witness must pass both simulators and reject a deliberately wrong output bit.
+
+**Source freeze:** bridge_history.py SHA256 fcbdda049d78dc1b053ba41ec802c7ee2ce9c948203e9cb4068b066b47f52cdc; generated serial plan SHA256 bfb3382cecd0c724a2bc22fe2b6b0fdca34095f76b28f5b40f17b8f5af382dd2. All five DFA inputs, wrapper, stage driver and cap supervisor are digest-bound in the plan. Intel pilot ceiling120 aggregate CPU seconds/300 wall; worker stop105 including stage accounting, individual one-process math worker100CPU/240wall, reserved15 for outer supervision; one mathematical process, one thread, nice10. Tree RSS8192MiB;4096MiB launch headroom,1024MiB running floor,4096MiB swap-growth stop;16MiB/file,128MiB artifacts, at most6 processes including wrappers/monitors. run_capped plus the existing CPU-only stage orchestrator provides tree/pressure/thermal/artifact limits and aggregate reaped/live worker accounting. No GPU, no dependent retry after control/pressure/thermal/monitor failure. Each SAT query also has a fixed60,000-conflict stop. Solver unknown is distinguished from a failed control.
+
+**Record searched:** L1568–L1571 and complete current packets; GC2688 Appendix A/GC2690/GC2692/GC2696; record_find33535555 and column word; kit actual source/index, portal sources and open PRs, plus the closed discussions above. Relevant earlier prior art is the existing column-word tree and realization guards, not a new assertion that arbitrary finite target words are always realizable. The exact source-index refresh log SHA256 is04f7f3b75e0d89fb0ee065964fcec50bc7d969fd960722ac7e74599669f7e34a. Preparation observed load3.68/3.10/2.77 and about5.05GiB free+inactive; fresh unsandboxed monitor gates are required at launch.
+
+My own pull: determine whether the bridge grammar permits a genuine repeated history, and locate the first compatibility obstruction if it does not; do not infer infinite finite-support survival from any finite witness.
