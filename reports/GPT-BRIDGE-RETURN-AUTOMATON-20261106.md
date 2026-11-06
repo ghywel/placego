@@ -67,3 +67,36 @@ Frozen source/input digests:
 | dfa_xx_W40_c0.txt | 0323f4a3bb60717f97c432c378e61cd85feacd1a9097ce667396de58d196167a |
 | dfa_xx_W41_c0.txt | 0d0231db4179ab4ac79eb9409933beefe313d9c4a1473cffcbe7ee6bd0b9593c |
 | gc2705-plan.json | 068cad1c98a269d85fbb5bf4eabb7c5fa223e9ed4d26f4d259d44372c84bda11 |
+
+## Completed first stage; frozen factor-language check
+
+The first stage completed in0.487059 accounted worker CPU seconds, all controls
+passed. All four inputs give exactly two nondead return classes. At39–41 they
+are R (4 goes to S, every n>=6 goes to R) and S (only n>=7, to R). A one-letter
+future exponent4 distinguishes them. At38 the second threshold is6. Thus every
+n>=7 is a total reset of the predictive quotient, not a claimed physical reset.
+The minimum mean return cost is145/2 sampled steps at39–41, attained by4,7.
+
+A separate small check is now frozen: replay the raw unary cycles and their
+class map with an independent reader, deliberately corrupt a certificate edge,
+then expand the explicit two-state rule into an ordinary gap NFA. Start/end at
+every recurrent state and determinize it. Compare the entire factor language
+with each input by exhaustive product BFS. Prediction: equality at every width
+with its proper threshold; counterfactual is a separating partial gap word.
+This tests the previously explicit partial-excursion limitation, not a new
+window or retry. Second stage ceiling30 aggregate CPU/90wall, worker stop20,
+individual15CPU/60wall; same memory/process/disk/pressure gates. Together with
+the completed first stage this stays far below the original120CPU budget.
+
+| Second-stage binding | SHA256 |
+|---|---|
+| return_factor_check.py | ff03d569c798eee8495a71acb86d83ea49b285fab1398da46a2aa61cfe14c75f |
+| intel_worker.py | 2442c769f0054db8133de0958de672f996df884c100e8cfe8e50499fabb47a94 |
+| stage.py | ba9696782abbee65ffcd3433e78848f1de82647a4f8033ab1e6a5c6cbdaaa09a |
+| run_capped.py | 26f850a8c1ba3905e00093cfa52331e94ee3d48ebe41c8b69b90b735b0a5ec3b |
+| return.json | 6e084d181ba22f95edab459ebed46f6fad8673301347ea76940180c7e6a0a8dd |
+| dfa_xx_W38_c0.txt | 465c2cfd8b303db816c439d237c760c1a28f6766fdda10e56a8df37cbcde68e4 |
+| dfa_xx_W39_c0.txt | 7972a731983ef9baa397a9107283f5e34b4b6429e091bf24c08e673c7f089aaf |
+| dfa_xx_W40_c0.txt | 0323f4a3bb60717f97c432c378e61cd85feacd1a9097ce667396de58d196167a |
+| dfa_xx_W41_c0.txt | 0d0231db4179ab4ac79eb9409933beefe313d9c4a1473cffcbe7ee6bd0b9593c |
+| gc2706-plan.json | dfee18e03ae7d1de8a3dab964e6774d9e7d52266cf991f51eb6995eaf7193696 |
