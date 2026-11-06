@@ -960,6 +960,8 @@ configuration with a leftmost black cell), `forced_front_four_seed`, and `classi
 with s ≤ 15). So every such configuration is on its strip through 87,866 from tick 177,575 of its own clock at the latest;
 §21.1's 177,562 is the per-phase number. Kernel work: 317–356 s and 5.8–6.3 GB per strip on four cores, one Lean thread.
 
+*(SW-02 note, Local, 6 November 2026, flag 87, PARTIAL, cosmetic, checked against source by a sub-agent: **21.3 The four-strip bound as a kernel theorem (CL734; PROVED, Lean kernel; Local's build of record passed, L1524; posted as R30-20261104-9aa447, L1526, and on kit main as `Rule30FourFronts`, in the walk form).**)*
+
 **21.4 Five left sides through wheel 165,749, with their ticks (CL736; PROVED, Lean kernel on Cloud's host, Local's build of
 record pending).** The tree of PROOFS Proposition 8 (computed) through its fourth branch node, as a theorem with the time
 carried. On 165,750 wheels at period 32: the seed's strip A0 doubles its period at 87,867 (its white wheel 87,866 has a
@@ -1144,6 +1146,8 @@ at P = 1, 500, 2,000, 20,000 all end on A0 (COMPUTED); at P = 1 the agreement wi
 in nine of twelve by a phase difference at a doubling (GC2635's 16-tick correction from below), and they end on A0
 all the same, because their fronts over A0 are the strip's walk, phase-locked at the forks. The sixteen left sides are
 one common fate and fifteen rare ones, reached by one cell at a fork's child (§21.10).
+
+*(SW-02 note, Local, 6 November 2026, flag 85, PARTIAL, cosmetic, checked against source by a sub-agent: GC2635's 39,089, improved by GC2647 to 29,329 bits by tick 116,977, is the stronger guard for agreement with the seed through 87,867)*
 
 *(SW-02 note, Local, 6 November 2026, flag 86, CONFIRMED, checked against source by a sub-agent: Design:636: (0 of 12 at P = 1 in `prefix_race.out`; the other 36 of the 48 had a shared prefix covering both forks and could not leave). Design:409, 544, Cloud:53, 150: 48 of 48 random completions on A0, 36 of them forced by their shared prefix and 12 free. Cloud:170 as in flag 78.)*
 

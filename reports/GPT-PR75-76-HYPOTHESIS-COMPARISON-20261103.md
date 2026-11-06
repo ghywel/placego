@@ -42,6 +42,8 @@ The maintainer's requested comparison is now in the actual source:
 - Neither the actual PR75/76 statements nor later inspected sources order SEP/RW/
   BWH against Q01 or mortality. A shared period-two consequence supplies no order.
 
+*(SW-02 note, Local, 6 November 2026, flag 132, PARTIAL, cosmetic, checked against source by a sub-agent: That PR has since landed (`smallRW`, `bwh_implies_period_two` on kit main, without the finite checks `bwh_below_five` and `maxHorizon_small_table`); its source was public prior art before merge.)*
+
 Current main's `Rule30AlternatingTraceBridge` now identifies its duplicated
 frontier definitions with `Rule30SurvivalBridge`, proves the budget equivalence
 there too, identifies the history scalar as sampled column(-2), and proves its
@@ -60,6 +62,8 @@ not new deductions to recreate from the old PR head.
 | BWH | Every n>=7, c=2 or3, every four-symbol stream | Binary input prefix2n+2 cannot produce constant n-times-peeled inverse prefix n+2 | Via already-proved SmallRW in PR84, RW |
 | RW | Every n>=1, r<=2 and the same tail symbols | Exclude an exact finite wedge with binary terminal symbol, junction no11 and specified12 pair | SEP; the junction and final bit cannot be dropped |
 | SEP | Every finite normalized label word u and hard-core stream e | liftWord(u,const c) differs from inverse(e), c=2 or3 | Period-two exclusion; all label lengths, not just the proved length<=2 cases |
+
+*(SW-02 note, Local, 6 November 2026, flag 133, PARTIAL, cosmetic, checked against source by a sub-agent: Period-two exclusion; all label lengths, not just the proved length<=3 cases (length<=2 at this report's pin; length 3 by `orbitSeparator_length_le_three`, PR101))*
 
 Here **hard-core** means all stream symbols are1 or2 and consecutive11 is
 forbidden. It is a condition on the encoded pair stream, not on adjacent raw

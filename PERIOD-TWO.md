@@ -131,6 +131,8 @@ OUTCOME.
 - **Q7's affine waiting envelopes** (GC596; second triage, 2026-10-08): they give a slope below 3 only at dyadic
   periods up to 4.
 
+*(SW-02 note, Local, 6 November 2026, flag 31, PARTIAL, cosmetic, checked against source by a sub-agent: - **The SAT crib** (§8.37): for the free-column record R(d) (kissat and CaDiCaL, one encoding, depths 41 and 53), correct but slower than enumeration. SAT on R_real, a different query, is the Q6 row's instrument and is not closed.)*
+
 *(SW-02 note, Local, 6 November 2026, flag 30, CONFIRMED, checked against source by a sub-agent: PERIOD-TWO.md:112-113 and RULE30-PRIZE-8.1.md:2329: as flags 28 and 29. PERIOD-TWO.md:460: 'Every local layer language of column 1 computed, to width 28, has positive entropy (§8.14, §8.20). So such a condition, if it exists, is not local in column 1 at any width computed; positive entropy at every width is not proved.')*
 
 *(SW-02 note, Local, 6 November 2026, flag 29, CONFIRMED, checked against source by a sub-agent: PERIOD-TWO.md:112: as flag 28. RULE30-PRIZE-8.1.md:2329: 'So, as far as computed, no local rule of column 1 gives the bounded law for 0101 (MEASURED; LR_m is not refuted, §8.14). The cost side has to come from the left half's forced cells themselves.')*
@@ -144,6 +146,8 @@ delivery side is a theorem (the channel bound). The cost side holds exactly only
 column 1 can only turn black once, and that is Condrey's proof. Next to 0101 it holds only as a coin model: each
 condition costs about one bit, and luck adds a logarithm, as in Cramér's model of prime gaps (PRIOR-ART, the owner's
 zeta note).
+
+*(SW-02 note, Local, 6 November 2026, flag 32, PARTIAL, cosmetic, checked against source by a sub-agent: delivery side is a theorem (the channel bound: in Lean to 0.2445 bits per visible bit at width 14, R30-20261023-4d1a54; the sharper 0.1236 at m = 28 is an exact rational check outside Lean, §8.33).)*
 
 **Why it is hard.** The measured law holds for a random centre word as well as for periodic ones (§8.42), so a proof
 cannot come from properties every word shares. It must use what is special about periodic words, as Jen's theorem
@@ -429,8 +433,13 @@ gets a row before its first run, naming the row it serves. Nothing is deleted: a
 | Night task list, 3 November (NIGHT-TASKS.md: A1–A5 submissions, B1–B5 atlas cells, C1–C4 prize pathways, D the capture inference) | **OPEN** (menu, owner's word; CL688) | Written by Cloud with each task's object, step, prediction and kill test; the workers' own pulls take precedence | A worker who takes a task gives it its own row before the first run; Cloud reads the night's results | GPT, Local; Cloud if running |
 | The synthesis essay (the map of everyone's results by object, the connections, the open questions; Lean anchor Lemmas F1–F3) | **POSTED, Lean Verified** as R30-20261103-3cf160 (L1481; 37 constants, standard axioms), at the owner's word after GPT's packet read (GC2595) and Cloud's confirmation (CL707); kit PR #117 (`Rule30LeftCoincidence`) | [Delivery record](reports/wolfram-agents/submissions/synthesis/README.md) | The kit PR's review is the maintainers'; corrections to placements are welcome (section 6) | Cloud (prose), GPT (reads), Local (Lean, build, post) |
 | SW-02: the door and question swarm (the owner's word, L1559 to L1564) | **DONE** 6 November; no prize statement | [Results](reports/SW02-RESULTS.md), [door ledger](reports/SW02-DOORS.md); GC2690 carries four results | Five ajar doors, led by the trichotomy certificate; the owner chooses | Local ran; GPT carried; Cloud reviewed |
-| Work after SW-02: blocks 1 to 11 ([WARM-LEADS](WARM-LEADS.md)) | **TODO**, Block 1 next; each block gets its own row when it starts | Schedule, warm leads, closed doors, [submission queue](reports/wolfram-agents/DELIVERY-QUEUE.md#sw-02-submission-queue-6-november-2026), [backlog](reports/SW02-BACKLOG.md) | The blocks in order, on the owner's word | Local; GPT and Cloud as assigned |
+| Work after SW-02: blocks 1 to 11 ([WARM-LEADS](WARM-LEADS.md)) | **OPEN**, Block 1 DONE (L1566), Block 2 next; each block gets its own row when it starts | Schedule, warm leads, closed doors, [submission queue](reports/wolfram-agents/DELIVERY-QUEUE.md#sw-02-submission-queue-6-november-2026), [backlog](reports/SW02-BACKLOG.md) | The blocks in order, on the owner's word | Local; GPT and Cloud as assigned |
+| Block 1: settle what the swarm found | **DONE** L1566 | PRIOR-ART section; flags housed; receipt reconciled; M list | Nothing | Local |
 | SW-02: the door and question swarm (the owner's word, L1559 to L1564) | **DONE** 6 November; no prize statement | [Results](reports/SW02-RESULTS.md), [door ledger](reports/SW02-DOORS.md); GC2690 carries four results | Five ajar doors, led by the trichotomy certificate; the owner chooses | Local ran; GPT carried; Cloud reviewed |
+
+*(SW-02 note, Local, 6 November 2026, flag 36, PARTIAL, cosmetic, checked against source by a sub-agent: | The kit's new library (Szegő proved, Durand–Cobham stated, approximate recurrences) | **CLOSED** as a route | Filed in PRIOR-ART. All three are equivalences for every bit sequence, so each restates Problem 1; GPT's task 2, a scoped guard on approximate recurrences only, shows they add nothing to the visible bits | Nothing: Durand's theorem landing in the kit would add one more restatement | — |)*
+
+*(SW-02 note, Local, 6 November 2026, flag 34, PARTIAL, cosmetic, checked against source by a sub-agent: CQ01 census (job 2; GC1804 specification, GC1814 acceptance): E(L, B), the first failure time of the longest alternation (through time E - 1) from finite configurations with left support L and right support B)*
 
 *(SW-02 note, Local, 6 November 2026, flag 37, PARTIAL, checked against source by a sub-agent: | Night task list, 3 November (NIGHT-TASKS.md: A1–A5 submissions, B1–B5 atlas cells, C1–C4 prize pathways, D the capture inference) | **OPEN** for B3, B4, B5, C1, C3 (the owner's steer, CL690); the rest done | A1–A5, B2 and C2 have their own rows; B1 answered (GC2409), D done (L1357), C4 carried (GC2525, L1425) | B3, B4, B5, C1, C3 not run. A worker who takes one gives it its own row before the first run; Cloud reads the results | GPT, Local; Cloud if running |)*
 
@@ -517,6 +526,8 @@ prize needs a statement about every single finite configuration. The questions a
    neither games, and measure $N_\text{both} N_\text{neither} / (N_\text{black} N_\text{white})$. A ratio near 1
    confirms the coin model's independence. One well below 1 would be an obstruction a proof could use.
    Measured (§8.51): between 0.66 and 1.34 at $w = 24$, with no trend. Independent up to a constant factor.
+
+*(SW-02 note, Local, 6 November 2026, flag 39, PARTIAL, cosmetic, checked against source by a sub-agent: 3. **[CLOSED as a route of its own until a family of potentials is named, §8.61; strip graphs empty to R = 9 for 01, a failed search]** ~~**A machine-found certificate.**~~)*
 
 *(SW-02 note, Local, 6 November 2026, flag 38, CONFIRMED, checked against source by a sub-agent: pays in lumps: at w = 16 to 22 at most 3 free steps in a row and any 8 steps costing 8.3 bits or more (§8.52), but up to b = 24 runs of 5 free steps, and twelve conditions costing 1.84 bits at depth 19 (§8.53), so the)*
 

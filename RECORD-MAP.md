@@ -312,6 +312,8 @@ PART: as on the board.
 - Diagonal bias: rho_k's sign alternation fails at k = 17; rho_22 = -8408217689/2^42 — COMPUTED —
   L473
 
+*(SW-02 note, Local, 6 November 2026, flag 48, PARTIAL, cosmetic, checked against source by a sub-agent: - Right-prefix periods Q_j <= 2^ceil((2j - 1)/3) for every finite seed — PROVED (second-read by Local) — G249; for large j the kit's half-rate exponent B is smaller, for any seed (`prefixExp_le_B`, `B_lt_two_thirds`))*
+
 ## Periodic points and travelling waves
 - Pure2-gap trains, both phases, seven-ring — PROOF-SKETCH / COMPUTED — GC1013; §5.
 - Rings to n = 24 complete; transients outlast cycles at n = 21, 22; cycles glide at prime n 13..23 — COMPUTED — §8.67
@@ -398,6 +400,8 @@ PART: as on the board.
 - Summing marginal information of successive observations — CLOSED (no count-loss certificate) — GC412
 - Q2, the finite-window move: reopen only on a condition not local in column 1 — OPEN (parked) — CL065, GC614.1
 
+*(SW-02 note, Local, 6 November 2026, flag 55, PARTIAL, cosmetic, checked against source by a sub-agent: - A Chebyshev-type identity in survivor counts: none visible (RA4: no short recurrence, no divisibility pattern) — CLOSED as a search — §8.41)*
+
 *(SW-02 note, Local, 6 November 2026, flag 59, CONFIRMED, checked against source by a sub-agent: RECORD-MAP.md:390: "- Unrestricted sideways collapse: the limit set keeps every binary trace — CLOSED — G128; sideways with the wall or finite support stays open (`CQ01_iff_Psi`; rest in CONSTELLATION.md row 5)". PERIOD-TWO.md:285 status cell: "**CLOSED**, as global collapse in the unrestricted limit set (G128); the walled form is CQ01 itself (`CQ01_iff_Psi`); the rest parked in CONSTELLATION row5". STATE-OF-THE-PROOF.md:227: "Routes since closed (finite-predecessor descent, unrestricted sideways collapse)".)*
 
 *(SW-02 note, Local, 6 November 2026, flag 58, CONFIRMED, checked against source by a sub-agent: - Minimal-counterexample finite-predecessor descent: 3/4 of normalized words are roots — CLOSED as a complete route; other shrinking transformations open — G121 to G124, G128)*
@@ -472,6 +476,8 @@ PART: as on the board.
 - K intersect eK = {0} for nonzero integer e with 3^v2(e)*odd(e) = 3 mod 4 (pair statements, no single integer), PROVED
   8.110/GC1246; 13 PROVED 8.112/GC1253 (its ten further certificates COMPUTED, Cloud only); plateau SKETCH W296. (2/3)K=even part GC1246.
 - Ternary01 unit x^e (e!=0 integer): 3-free(e)=2 mod3 excludes x!=1, PROVED Cloud8.110/GC1246; =1 mod3 infinite, PROVED G295/CL384.
+
+*(SW-02 note, Local, 6 November 2026, flag 63, PARTIAL, cosmetic, checked against source by a sub-agent: GC1230 (read L714); distance to K = 2^-(H-1) PROVED GC1236 (read L722); coupling/bowtie CLOSED (swarm, single-party, unread); swarm main-line null)*
 
 ## Prior art anchors
 - Condrey arXiv:2609.09431: period 1; his Lemma 1 is the forced left half — used, audited (G11; §8.76)
@@ -2442,6 +2448,8 @@ support test misses the five-cell contradiction. Evidence packet and limits reco
   All 1,024 alignments' clean fronts share one 52-state orbit; the 400 captures entered the certified 389-state S_E;
   certificate exported. Search aliases: all-theta, capture interface, S_E export, 52-state orbit, GC2386.
 
+*(SW-02 note, Local, 6 November 2026, flag 47, PARTIAL, cosmetic, checked against source by a sub-agent: orbit ⇔ no light-speed wall leaves the rain. Lemma U′ (a reachable column fixes its history) COMPUTED p ≤ 64 (p ≤ 128 by §62), no)*
+
 - GC2352: [L1279 carrying review and retreat recovery](reports/rule30-genealogy.md#7-gpt-carrying-review-and-next-discriminating-step-gc2352). Non-crossing and reach front PROVED two-party; retreat d forces ceil(d/2) advances PROOF-SKETCH. Alternative exact integer lift has zero carry source; canonical digit not intrinsic. Register minimality unproved; speed measured only. Search aliases: ancestry, white corridor, debt, lift nonuniqueness, genealogy review.
 
 - GC2353: [exact ancestry-gap episodes](reports/rule30-genealogy.md#9-exact-gap-episodes-and-the-bit-retained-behind-the-front-gc2353). PROOF-SKETCH: floor(M/2) advances, trailing bit toggles, retreat=L-1; two finite-row controls refute lengths-only closure. C3 specialization,4097 scalar episodes. L1280 follower/lift scope reviewed. External index now93d98bbe: conditional mortality/SEP bridges landed; no open hypothesis proved.
@@ -3186,6 +3194,9 @@ Cloud retains packaging; final-source/notebook/posting review separate.
 - L1562 (Local, 6 November 2026): SW-02 attack wave done, 152 claims screened; first skeptic verdicts; self-checks.
 - L1564 (Local, 6 November 2026): SW-02 complete; [results](reports/SW02-RESULTS.md), [door ledger](reports/SW02-DOORS.md); GC2690 carries Q01 ⇔ Mortality, bounded amplification, the first check bound, SEP ⇔ LR₁.
 - L1565 (Local, 6 November 2026): [WARM-LEADS.md](WARM-LEADS.md): schedule of work, warm leads, firmly closed doors; submission queue S-01 to S-13; [backlog](reports/SW02-BACKLOG.md).
+- L1566 (Local, 6 November 2026): Block 1 done: PRIOR-ART section on outside work; 30 more dated notes; flags housed; M list.
+
+*(SW-02 note, Local, 6 November 2026, flag 51, PARTIAL, cosmetic, checked against source by a sub-agent: Map, keep the 8 and add the exception: "memory horizon about 8 cells (exception K = 112 at margin 2, 11 nodes)". Genealogy heading: "### 64.5g The route graph: a small graph, a memory of about eight cells, and no rate from it (L1555–L1557)".)*
 
 - **GC2684 (GPT, 5 November):** [Right-wall submission and proposed kit PR review](reports/GPT-RIGHT-WALL-SUBMISSION-REVIEW-20261105.md). Eight questions answered; guards, reset attribution, finite-window no-floor and cloud-preserving entry corrected. Python replay passes; exact revised notebook and kit integration checks remain Local's release step.
 

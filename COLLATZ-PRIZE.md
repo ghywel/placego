@@ -36,6 +36,8 @@ lies within any reachable search, and a proof is what the prize pays for.
   What is ours is the pairing with Rule 30's Theorem A′ and the conclusion that exponential sums cannot reach a
   single case on either side.
 
+*(SW-02 note, Local, 6 November 2026, flag 10, PARTIAL, cosmetic, checked against source by a sub-agent: At :32, :222, :289, :300, :353 replace '$1.71\,n$' by '$1.7095\,n$' (for large $n$); same at :222 and :289.)*
+
 *(SW-02 note, Local, 6 November 2026, flag 12, CONFIRMED, checked against source by a sub-agent: :36-37 and :266: 'the conclusion that exponential sums over starts cannot reach a single case on either side (a sum along one orbit is another object: kit and portal reductions take such sums on the seed to Problems 1 and 2, hypotheses open)'. :351 status: 'CLOSED for sums over starts (§5)'.)*
 
 **What the problem needs, in this record's terms.** A count. If fewer than $2^{w - \alpha T + c}$ numbers of $w$ bits
@@ -75,6 +77,8 @@ and Weiss's stochastic models, 1992). What carries over from Rule 30 is the fram
 objects, split into the part that pays exactly and the part that pays on average. In both problems the second part
 is the whole difficulty, so a method that bounds it in one may transfer to the other. That is the most concrete
 cross-prize lead this work has produced.
+
+*(SW-02 note, Local, 6 November 2026, flag 14, PARTIAL, cosmetic, checked against source by a sub-agent: 'decays exponentially, at about 0.05 bits a step in the limit ($1 - H_2(\log_3 2) = 0.05004$; the fitted 0.064 is a finite slope), the count then falls below one at $T$ of order $(w + c)/0.05$, so every stopping time is')*
 
 ## 2. The avenue Collatz has and Rule 30 lacks: the state after the free bits is an explicit integer
 
@@ -302,6 +306,8 @@ the principle that number is the trace's complexity $p(n)$.
 | Collatz, a divergent orbit | $1.71\,n$, and $n/\sigma$ for slow growth (W2) | none: only the long-run share of ones is forced, at 0.63 or more |
 | Rule 30, a period-2 counterexample | $n - L$ (Theorem A′) | $2^{0.13\,n}$: the channel bound (RULE30-PRIZE.md §8.33) |
 
+*(SW-02 note, Local, 6 November 2026, flag 7, PARTIAL, cosmetic, checked against source by a sub-agent: ':301: $C\,2^{0.1236\,n}$ with $C = 4 \times 135{,}663$: the channel bound (RULE30-PRIZE.md §8.33)'; at :304, :309 and :317 '$2^{0.13\,n}$' becomes '$C\,2^{0.1236\,n}$'.)*
+
 - **Rule 30 has the squeeze.** A counterexample must keep the $2n$ cells beside its centre column within
   $2^{0.13\,n}$ contents for ever. Collatz has nothing like it: divergence fixes only the long-run share of
   ones, which costs a parity sequence 5% of its entropy and puts no ceiling on $p(n)$.
@@ -327,6 +333,8 @@ the principle that number is the trace's complexity $p(n)$.
    left part), the window principle (cycles and Jen's theorem, W3 and Theorem E), and finite checks. Tonight's
    additions on both sides are all of the second kind, and they stop at the same place: traces with long early
    repetitions are excluded, and traces that look random are not.
+
+*(SW-02 note, Local, 6 November 2026, flag 8, PARTIAL, cosmetic, checked against source by a sub-agent: 'Rule 30's sizes are the distance to its edge, which grows at the speed of light whatever the trace does, and the depth of the settled band behind it (Theorems A‴ and A⁗, §8.59), which the trace does not set either.')*
 
 *(SW-02 note, Local, 6 November 2026, flag 62, CONFIRMED, checked against source by a sub-agent: COLLATZ-PRIZE.md:318: "*The exponential sums.* §4 identified them: they are Tao's sums, read in base 2. Estimated with square-root error, as random data would be, they cannot close either problem." Replace "are out of its reach in principle" by "are out of reach of any such estimate". Row :351: "**CLOSED** as a route (§5, reasoned, no theorem)" with "Square-root estimates cannot separate a single case." RECORD-MAP.md:401 as in flag 61.)*
 

@@ -304,6 +304,8 @@ and the prize is about every single case.
 - **Beal ($1M): weak.** Its objects are finite, so a count could in principle reach zero, but its partial results
   come from modular methods.
 
+*(SW-02 note, Local, 6 November 2026, flag 42, PARTIAL, cosmetic, checked against source by a sub-agent: Tested in COLLATZ-PRIZE.md §1.)*
+
 **The Collatz sections (7.1 to 7.5) moved on 2026-10-06, at the owner's request, to [COLLATZ-PRIZE.md](COLLATZ-PRIZE.md)**, as its sections 1 to 5, unchanged. That file has its own honest
 summary, board of leads and reproduction table. Every reference in the record now points there.
 
@@ -373,6 +375,8 @@ every "applies" below is a lead to test, not a claim.*
 - **Navier–Stokes, Yang–Mills, Hodge, Birch and Swinnerton-Dyer, P vs NP ($1M each): none.** The proofs are about
   discrete permutive systems and their counts; none of these problems has that structure. The method lessons of §7
   stand, but no proof here transfers.
+
+*(SW-02 note, Local, 6 November 2026, flag 43, PARTIAL, cosmetic, checked against source by a sub-agent: Problem 3 asks for an unconditional time lower bound on one function of the index n; no implication to or from P versus NP is known.)*
 
 **Two neighbours with no cash prize, but the best test beds for the tools.**
 - **Mahler's 3/2 problem.** Kari and Kopra made it a trace problem of a permutive automaton (PRIOR-ART), so families

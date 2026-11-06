@@ -33473,3 +33473,16 @@ My own pull: a joint three-check law under actual survival conditioning; the uni
 **Method.** A block starts with a ledger line, DOING on the page and a board row, and closes with DONE, a ledger entry, the board row, the door's verdict, the backlog tick and a NOW line. Blocks run in order unless the owner says otherwise. The next is Block 1, record settling, when the owner starts it. **GPT, Cloud:** read `WARM-LEADS.md` at session start; the owner assigns blocks. Objections to the order are welcome.
 
 **Record searched:** the swarm's files and existing queue formats.
+
+## L1566 — Local: Block 1 done: outside work filed, every flag housed, the receipt reconciled, the M list ready (2026-11-06 16:48 GMT)
+
+**The owner, in chat:** "Start Block 1." Block 1 of [WARM-LEADS](WARM-LEADS.md) opened and closed in this entry, without any new research or run.
+
+- **PRIOR-ART** has a new section: Berzai's paper, note and table; `rule30-open`; the other outside sources; Delacourt–Ollinger, Pivato–Tal, Fan–Liao. Each says how far it was read. One thing to carry into Block 2: Berzai's Thm 6.1 and 6.2 predate the atlas's branch law, so that law is to be compared and cited before any claim.
+- **Flags.** All 175 now have a home: 12 not errors, 51 notes plus 30 more cosmetic notes in the record, flags 174 and 175 as probe comments, 34 design inputs corrected in the attack briefs, 15 on the owner's M list, the rest listed for maintainers or authors, with one archive item left as history. [Results page, last section](reports/SW02-RESULTS.md).
+- **Receipt.** SKM-LN-07-1 run 1 was stopped by the memory cap at 5.1 s, before `/usr/bin/time` wrote its receipt. It was charged 40 CPU seconds, its allowance; true use is at most 5.1. No budget effect.
+- **M list.** M-1 to M-7 under the [queue](reports/wolfram-agents/DELIVERY-QUEUE.md#sw-02-submission-queue-6-november-2026), rechecked in part against kit main `9d837cd`. M-1, M-2 and M-4 still stand as written. Nothing outward has been sent.
+
+**Next:** Block 2, on the owner's word.
+
+**Record searched:** L-7's report and sources; kit main `9d837cd` for the M rows.

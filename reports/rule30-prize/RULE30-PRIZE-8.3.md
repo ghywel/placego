@@ -715,6 +715,8 @@ Bézier curves ... Stop thinking in terms of counting and start thinking in term
 - *Rule 30's exact Bézier form.* By §8.49, $c \lor r = c \oplus r \oplus cr$, so one step is $x' = Lx \oplus N(x)$,
   with $L$ the Rule 150 step and $N(x)_i = x_i x_{i+1}$. Unrolled over GF(2):
 
+*(SW-02 note, Local, 6 November 2026, flag 162, PARTIAL, cosmetic, checked against source by a sub-agent: other jumps straight there (the Bernstein formula). The jump is the shortcut Wolfram's Problem 3 asks about, to the $n$-th flip (STATE-OF-THE-PROOF.md §2), and Problem 3, read as "no such shortcut", implies Problem 1 (§8.34).)*
+
 ```math
 x_t \;=\; L^t x_0 \;\oplus\; \bigoplus_{s=0}^{t-1} L^{\,t-1-s}\, N(x_s).
 ```
@@ -2273,6 +2275,8 @@ prize problems are a ladder of observers:
 - Problem 3 (no shortcut): it beats every fast observer; a linear-time lower bound for one specific function.
 The same ladder as the digits of sqrt 2: computable, believed normal, proved normal for nothing but constructed
 numbers (Champernowne). Rule 30's column is sqrt 2 with a worse rule.
+
+*(SW-02 note, Local, 6 November 2026, flag 67, PARTIAL, cosmetic, checked against source by a sub-agent: - Problem 3 (no shortcut): it beats every fast observer; a lower bound linear in the index n, so exponential in the length of its binary input, for one specific function.)*
 
 **Flocking, the opposite direction.** In the Vicsek model noise goes in and order comes out, with a proved phase
 transition; Rule 30 puts order in and randomness comes out. "Perfectly reproducible" cuts both ways: Rule 30 is also

@@ -643,6 +643,8 @@ Lean Verified, 71f858 Unverified), twenty Human Verified, four Kit Contributions
   caution: Lean Verified means the replay passed, not that the title is true. Nothing to adopt.
 Kit still 932cf8d (our pull requests #49, #50, #51, #54, #56 open). Human Verified for our nine entries of October 27 to 29 pending.
 
+*(SW-02 note, Local, 6 November 2026, flag 167, PARTIAL, cosmetic, checked against source by a sub-agent: GC2191, which read the full source: the physical premise is already excluded by `no_column_eventually_constant_finite`; the numeric frontier is not claimed known.)*
+
 ## 18. New kit PR57 at the 00:10:27Z refresh, 30 October 2026 (GPT, GC2214)
 
 Kit main remains932cf8dd;22openPRs. PR57 head37f8d755 adds Rule30DrivenMaskTransport, its catalog row and aggregate import. [Full source/evidence carrying review](../rule30-periodic-mask-review.md): arbitrary-driver transport iff falling pins, black-time consistency equivalence, and a conditional Problem1 bridge retaining the open exclusion. Canonical five-source identities and retained author28-constant/10-headline replay inspected; no GPT replay. No new portal entry or prize solution. The fresh horizon dc3d17 status remains Lean Verified, Human Verified pending. Sleeping workers were not contacted.
@@ -1306,6 +1308,10 @@ lists 129 entries, 128 Lean Verified; the other is the old R30-20261024-71f858 (
 - **New, Ulrey:** [5f86d4](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-5f86d4), 942 constants, conditional
   bridges. Its abstract and its Lean differ on the Problem 2 hypothesis (L1500).
 - No new entry cites the synthesis essay, A5 or A6, in abstract or source.
+
+*(SW-02 note, Local, 6 November 2026, flag 166, PARTIAL, cosmetic, checked against source by a sub-agent: - **New, Ulrey:** [829c71](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-829c71) (first posted as 5f86d4, same Lean), 942 constants, conditional bridges. The first abstract and the Lean differed on the Problem 2 hypothesis (L1500); 829c71's abstract states the Lean hypothesis.)*
+
+*(SW-02 note, Local, 6 November 2026, flag 165, PARTIAL, cosmetic, checked against source by a sub-agent: - [6a0257](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-6a0257) (first posted as c1a82a, same source): `problem2_of_source_energy`, official)*
 
 ## 4 November 2026 18:53 refresh (L1511)
 

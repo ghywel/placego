@@ -137,7 +137,7 @@ PROOF-SKETCH. This is a research-note guard, not a change to the already-deliver
 | S-12 | Complexity rung p(n) − n → ∞ for free words of finite rows; near-squares of slack at most 2 | Not read | Valid; valid with repair | Partly known: Bugeaud–Kim, Cassaigne | Not started | Block 6 reserve |
 | S-13 | Free-middle theorem: survival does not restrict additive potentials; rank barriers B2+ | Not read | Valid with repair; valid | Partly known: GC1772 §3 | Not started | Block 6 first read |
 
-**For the owner: corrections outside our own record.** These are outward-facing and go only on the owner's word.
+**For the owner: corrections outside our own record.** These are outward-facing and go only on the owner's word. Rechecked 6 November against kit main `9d837cd`: M-1, M-2 and M-4 still stand as written; the others were not rechecked line by line. All are self-checks, except M-1, which GC2690 carries.
 
 | Row | Where | What | Flags |
 |---|---|---|---|
@@ -146,4 +146,5 @@ PROOF-SKETCH. This is a research-note guard, not a change to the already-deliver
 | M-3 | Kit `lean/README.md` line 195 at the pin, and its portal abstract | An all-a bound is claimed that no declaration holds | 97 |
 | M-4 | Kit `equivalents/CATALOG.md` | The n²/4 partner count holds in one phase only | 95 |
 | M-5 | Portal R30-20261104-829c71 | Hypothesis `h_scan` appears false, so the headline is vacuous (PROOF-SKETCH, needs a read) | 112, 123 |
-| M-6 | Portal R30-20261103-1c93e6, R30-20261105-c13fb2 | Titles overclaim: "sub-linear" windows are linear, and "complete" exclusion assumes period 2 | 116, 121, 124 |
+| M-6 | Portal R30-20261103-1c93e6, R30-20261105-c13fb2, R30-20261105-d75e27 | Titles overclaim: "sub-linear" windows are linear, "complete" exclusion assumes period 2, and CQ01 is dropped as a hypothesis, not proved | 116, 121, 124, 125, 127 |
+| M-7 | Kit docstrings: `no_edge_dfa_ranking`, `Rule30CoupledGerms`, `Rule30EtherThree` | The ranking barrier covers one functional only; two germ theorems are vacuous under the alternating column; "no wall is known" understates a proved no_wall | 71, 92, 107 |

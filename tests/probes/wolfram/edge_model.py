@@ -1,3 +1,4 @@
+# SW-02 note, Local, 6 November 2026, flag 174: the sample overran the strip; 353 of 2,062 wheels were absent and counted white. Use range(2, K, 97) at line 174 and divide by len(range(2, K, 97)) at line 177 before reusing edge_model.out's line 12.
 """edge_model.py: the two-wheel model of the edge (CL741). The edge m(t) is the lowest erroneous wheel of the actual row
 against the strip (e = a XOR C, errors below the edge are zero). Model M(L, R, W): state = the strip's bits at wheels
 m-L..m+R and the errors at m+1..m+W; every other bit the wall-frame step needs is a fresh fair coin (two strip bits below

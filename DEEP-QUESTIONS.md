@@ -423,6 +423,8 @@ There is a precise distinction behind this. If we insist that a replacement pres
 
 ## DQ-006 — Too many exceptions to fit
 
+*(SW-02 note, Local, 6 November 2026, flag 21, PARTIAL, cosmetic, checked against source by a sub-agent: Add to 'What is known': 'L972–L974 (GC1911) give an operation: each tock forgotten before the white edge yields a same-width partner survivor, decided finitely, and tocks after the free chapter are never forgotten. It does not give the surplus: no crowding follows.')*
+
 **Question:** Could one hypothetical eternal survivor generate more distinct survivors than can fit inside a common size limit?
 
 **Origin:** the Collatz appraisal and subsequent GPT–Cloud review, revisited in the owner's discussion of contradiction arguments, 25 October 2026. **Status: Parked.**

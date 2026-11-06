@@ -90,6 +90,8 @@ minutes with predictions written first; "thinking" means a reasoning item. Prize
 | 20 | **Alternation, heard (the owner's ear, 2026-10-09; serves row 17).** The necklace's music box runs "staccato arpeggio staccato arpeggio repeat". Does N-fold alternation of that form reveal structure? | Exact under fair rows, by left permutivity: a window's density correlation $k$ rows apart is the rightward light-speed diagonal's $\rho_k = \mathbb{E}(-1)^{x_{t+k}(i) \oplus x_t(i-k)}$, which alternates in sign at every lag computed (-1/2, 1/4, -1/4, 5/32, ... to $k = 12$) and decays far more slowly than $(-1/2)^k$. Alternation is the default: eight flips in a row are 16 times commoner than for uncorrelated rows, so a detector for it finds the rule, and structure shows only as departures (§8.70, third addendum; `rule30_cloud_alternation.py`). | Whether the sign alternates at every lag; a closed form or decay law for $\rho_k$; whether the single seed's rows follow it. | Cheap: the single-seed measurement, with CL078's predictions. Thinking: the sign of $\rho_k$ as the bias of the $k$-step mask $g_k$ in $x_{t+k}(i) = x_t(i-k) \oplus g_k$. | Dense and sparse rows take turns because every cell is the opposite of its upper-left neighbour three times in four, and the owner heard it before anyone saw it. |
 | 21 | **The carry of Rule 30 (the owner, 2026-10-11; a side question, handed to Intel).** Rule 30 is a Gray step plus a correction field c = (1 - x_i) x_{i+1}, as multiplying by 3 is a Gray step plus carries; Holte's carries chain has an explicit matrix with eigenvalues 1, 1/b, 1/b^2. Does Rule 30's run-count process have such a matrix, what corrections does the centre column see through the Pascal mask, and is the column carry a finite-order Markov chain? KIMI-QUESTIONS-5.md states it with predictions and counterfactuals. First block (Intel, CL310): the run count has no Holte matrix (corr 1/2, 1/8, 1/32 at lags 1..3), the three-XOR count nearly does (spectrum near (-1/2)^k), the column carry is SOLVED (IN007, CL313, 8.90): the Gray correction is the two-time AND c_t(i) = x_t(i+1) x_{t+1}(i+1), so under the coin measure the column carry is the sliding AND of fair coins, a hidden two-state chain with P(1 after m zeros) = F(m+1)/(2F(m+3)) and entropy rate 1 - (1/16) sum F(g) 2^-g log2 F(g) = 0.699243 bits. Lag laws exact to t = 12 (IN008, CL314): everything lives on three sites of the rightward diagonal; K and D are two signings of the same three numbers (proved by hand, second read CL321). | solved | | | |
 
+*(SW-02 note, Local, 6 November 2026, flag 17, PARTIAL, cosmetic, checked against source by a sub-agent: 'and left at about 0.2436 ± 0.0003 cells per step on a random background (MEASURED, CL742; earlier 0.246, §8.30, LB5; NKS 0.2428 ± 0.0003)')*
+
 ## C. How to choose, if curiosity leads
 
 The owner's rules apply unchanged: steps before leaps, literature before leaps, a prediction before every run, a
@@ -1590,6 +1592,8 @@ patterns that recur exactly at light speed with period dividing 16 are completel
   step rotates by 56 cells).
 - Walls: four, every one of them into the rain.
 - The light-speed recurrence conjecture says no wall leaves the rain.
+
+*(SW-02 note, Local, 6 November 2026, flag 15, PARTIAL, cosmetic, checked against source by a sub-agent: '... with period dividing 16 are completely enumerated (COMPUTED; the full core-program audit outstanding at last mention).')*
 
 Questions:
 - Is there an order on light-speed phases with walls only going up and the rain at the top?

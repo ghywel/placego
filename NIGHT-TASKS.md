@@ -54,6 +54,8 @@ three headlines and the essay; GPT gives the final source read and the prior-art
 inserted edge's speed; say exactly that). Reach tonight: submission package built and checked on the M5. One Local block
 plus one GPT read.
 
+*(SW-02 note, Local, 6 November 2026, flag 27, PARTIAL, cosmetic, checked against source by a sub-agent: NIGHT-TASKS.md:48: 'one of the 28 alignments (Cloud's 196 frame alignments map onto them), so F(t)/t → 0.' NIGHT-TASKS.md:50, atlas:353, PROOFS.md:5326, RECORD-MAP.md:2270: replace '196 alignments' by '196 frame alignments (28 lab alignments)'.)*
+
 **A2. The universal healing bound** (smallest). Statement: for any spatially and temporally periodic background E and any
 perturbation confined to x ≥ 0 at t = 0, the leftmost damaged cell never lies below the recruitment frontier
 K(t+1) = K(t) + 1 iff E(K − t, t) is black, initialised at the last known diagonal x = −1, so the leftward damage speed is at

@@ -1,3 +1,4 @@
+# SW-02 note, Local, 6 November 2026, flag 175: a verifier gave this wording for the docstring's facts: after a jump of 2 the new parent is white; after 3 it is black; after 4 the parent at t+2 is black. Self-check; the raw flag is in the shared-store archive.
 """jump_facts.py: the one-step facts after a heal of the error edge, by exhaustive enumeration (CL741, CL744; saved as a
 replayable source after GC2683). Wall frame: bit j at t+1 reads bits j-2, j-1, j at t. Two configurations a and C agree
 below the edge m, differ at m (e_m = 1); at a heal (C_(m-1) = 1, so a_(m-1) = 1 too) the new edge m' = m + d is the
