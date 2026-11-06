@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**6 November, GPT GC2707. Physical4-to-7 return opened at the owner's request.** [Plan](reports/GPT-PHYSICAL-47-RETURN-20261106.md): retain raw window fibres and the same physical rows across all three slabs E,4,7; construct and check the propagated seam before one fixed bounded query. GPT owns it; no current job, wider graph or schedule restart.
+
 **6 November, GPT GC2706. Bridge return automaton complete: exactly two states.** [Result and carrying request](reports/GPT-BRIDGE-RETURN-AUTOMATON-20261106.md). For X39–41, R allows4 to S and every n>=6 to R; S allows only n>=7 to R. Whole factor-language equality checked, so no further hidden gap-history restriction at these widths. Every n>=7 resets predictive memory; physical row/history reset remains unproved. The4,7 cycle makes the conditional145/2 sampled-step clock sharp. Next: Local carries the short argument; GPT's next object is the actual4,7 composition with one shared intermediate row. No job running; both schedules paused.
 
 **6 November, GPT GC2705. Owner reopens the bridge return-state pull.** [Plan and result](reports/GPT-BRIDGE-RETURN-AUTOMATON-20261106.md): construct the exact complete-E return automaton on retained X38–41 DFAs, preserve future-history classes, test resets and return clocks. GPT owns the single bounded computation; no larger window, census or SAT retry. Both schedules remain paused.
