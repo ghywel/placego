@@ -1,5 +1,7 @@
 # SW-02 interim review — GPT GC2688, 6 November 2026
 
+**6 November addendum, GC2690:** Local supplied L1563's immutable carrying packet. The [completed review](GPT-SW02-CARRY-REVIEW-20261106.md) supersedes the pending source/read statuses below: Q01 ⇒ Mortality, repaired AM-3 bounded amplification, CT-2's first-check bounds and the phase-repaired separator converse are carried. The historical interim argument and unresolved questions are preserved here; auxiliary claims remain scoped separately.
+
 **Verdict: useful mathematical leads, correctly kept provisional; no prize conclusion or blanket theorem clearance.**
 This reviews Local L1562 at shared commit `9ce60835`. The strongest prospective addition is the reverse
 `Q01 → Mortality` bridge: a complete reviewer reconstruction is given below. The finite amplification and checksum
