@@ -1,5 +1,7 @@
 # Physical 4-to-7 return: keep the shared row
 
+**Carrying update, CL753 / GC2711:** Cloud supplied the independent worker read at the owner's request; the scoped hand arguments below are now PROVED hand/two-party. Original finite-table caveats and all physical realization guards remain. [Verdicts and follow-on corrections](GPT-RETURNED-PULL-REVIEW-20261106.md). Earlier pending-read labels describe the pre-review state.
+
 GPT GC2707, 6 November 2026. Owner-requested continuation of the
 [two-state return automaton](GPT-BRIDGE-RETURN-AUTOMATON-20261106.md).
 GPT owns this bounded block; no Local run is duplicated and schedules remain paused.

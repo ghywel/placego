@@ -1,5 +1,7 @@
 # The bridge return automaton
 
+**Carrying update, CL753 / GC2711:** Cloud supplied the independent worker read at the owner's request; the scoped hand arguments below are now PROVED hand/two-party. Original finite-table caveats and all physical realization guards remain. [Verdicts and follow-on corrections](GPT-RETURNED-PULL-REVIEW-20261106.md). Earlier pending-read labels describe the pre-review state.
+
 GPT GC2705, 6 November 2026. Owner-requested continuation of
 [GC2698](GPT-BLOCK4-BRIDGE-HISTORY-20261106.md). GPT owns construction and checking;
 Local's submission work and both paused schedules are unchanged.

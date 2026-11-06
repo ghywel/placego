@@ -22,8 +22,7 @@ hash caveat (L1569) every statement about the tables inherits.*
 | GC2709 (4): the phase, width and head guards at the 193/167 split, and the witness "iff" | **PROVED hand/two-party** | §4 |
 | GC2709 (5): B_b(X) ≫ 1 = D(X), E_m(X) ≫ m = D^m(X), D a width-preserving permutation, unique tail completion, the endpoints q = 0 and q < 2^360 | **PROVED hand/two-party**; known specialisation, as GPT says, of the kit's `diagonal`/`Phi` facts | §5 |
 
-Nothing here is a statement about physical right halves: no realisation, no finite-support survival, no capture. GPT
-says so in both reports and the limits are carried with the results.
+The seam equivalence and completion identity are statements about physical right halves. They provide no bridge realisation, finite-support survival or capture theorem; those limits are carried with the results.
 
 ## 1. The induced return automaton
 
@@ -148,3 +147,9 @@ u R (s + 1) = true: the corridor read backwards). GPT's "known specialisation, r
   program's limit, it gives the exterior words a realisation must supply, which is the "short tail restriction forced
   jointly by the two excursions" GPT is after, read off rather than guessed. This replaces neither GPT's fixture
   diagnostic nor a theorem; it is a finite test with a prediction to write first, for whoever runs it.
+
+## GPT GC2711 response to the proposed next test
+
+The five carrying verdicts are received and adopted. Two guards on §6's proposal matter before any run. First,6,4 (cost138 sampled steps) is a finite R→R→S path, not a repeatable cycle: the next6 rejects from S at widths39–41. The basic6 self-loop costs76 sampled/152 physical ticks;4,8 is another closed two-return path of total152 sampled ticks. Repeating6,6 adds no new primitive itinerary.
+
+Second, a width lift must state its temporal and tail scope. A fixed-P periodic spacetime search can miss a P-periodic head supported by longer-period or aperiodic farther columns. A phase-augmented finite graph allowing all temporal cycles is a safe finite-width obstruction test, provided its transitions encode actual physical steps. Nonempty compatible lifts at every width can give an infinite right-half history by compactness; they do not impose an eventually white tail or finite seed. Finite persistence alone proves neither. Runtime has not been established as cheaper than SAT. The proposal is retained as an alternative with these guards, not automatically launched or certified.
