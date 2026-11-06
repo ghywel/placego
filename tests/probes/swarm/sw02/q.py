@@ -101,6 +101,8 @@ def main():
                 if time.time() - t0 > a.lock_wait:
                     die("queue busy for %d s" % a.lock_wait, 5)
                 time.sleep(1.0)
+    if os.path.exists(os.path.join(DATA, "HOST-STOP")):  # recheck after the wait for the locks (GC2690)
+        die("host stop is set; try again later or report that the test could not run", 4)
     used, n = ledger_used(a.task)
     b = budget(a.task)
     if used + a.cpu > b + 1e-9:
