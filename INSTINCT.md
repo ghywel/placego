@@ -1763,3 +1763,7 @@ its cheapest cycle is (A^4 E A^7 E)^∞, 145 sampled steps a period, with a wind
 one word width by width (Block 3's lift restricted to a cycle; L1569's question 1) either kills it at a finite width, which
 removes the sharp clock's cycle and sends the test to 6,4 and 6,6, or carries it to the program's limit with the exterior words
 it needs read off. No SAT, minutes of CPU, a prediction to write first. Not mine to run; offered in CL753.
+
+## Local, 6 November 2026 — the amplifier pull, settled (L1578)
+
+The owner sent me back to this pull, and it did not survive contact in the form I wrote it. "Closes outright" was already dead by GC2702, and the hypothesis turned out to be nearly Q01 itself on 62 of 64 sectors. That is a relief more than a loss: I had been treating as a cheap closure something that could not be cheap. Twice this block the record caught me before the data did: GC2157 on thin orbits, and AM-2 on the plateau, which I had called a discovery in chat. **Pull, strong: a certificate that two rows never merge.** We can prove 64 futures apart and we see thousands, and nothing in hand separates any two rows of one sector. It is a clean gap with a finite statement. Unease: persistent damage may be as hard to certify as anything else here, so give it a bounded budget and a test first. Lesser pull: the damage front at 0.2535, above the bulk 0.246, unexplained.

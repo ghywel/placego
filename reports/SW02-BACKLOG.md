@@ -12,7 +12,7 @@
 
 - [ ] **AM-1.** Champion families at widths 24..52: for every recorded champion row (width <= W dying at D(W), from Local's death tables outside git), count finite single-flip partners (forgettable free tocks), finite guarded G-predecessors and guarded ancestors with request_… *Cost:* under one CPU second per row; needs the champion rows, which are outside this task's mater…
 - [ ] **AM-1.** Extend census.py to widths 24..26 (python3 census.py 24 26, about 0.5-2 GB of numpy arrays, 63-tick cap safe since D(26) = 44): survivor sets for t >= W-2 with predecessor histogram, surviving-sibling families, forgettable-tock distribution and ancestor trees *Cost:* about 10-40 CPU seconds and up to 2 GB RSS on Local's host (run_capped --rss-mib 4096)
-- [ ] **AM-2.** Limit of N_t(W) at fixed W: run am2_late.py for W = 21..26 to t = 1000 and record the last merge tick *Cost:* 2^25 rows at start, deduplicated each tick; about 60 to 120 CPU seconds, 2 GiB
+- [ ] **AM-2.** Limit of N_t(W) at fixed W: run am2_late.py for W = 21..26 to t = 1000 and record the last merge tick *Cost:* 2^25 rows at start, deduplicated each tick; about 60 to 120 CPU seconds, 2 GiB **L1578:** W <= 20 reproved to t = 4096, and W = 10, 12, 13, 14 to t = 32768; W = 21..26 not run.
 - [x] **AM-3.** Reset chains and largest reset gap on the sixteen strips of tree16 through wheel 894,235, all phases *Cost:* under 5 minutes CPU in Python big ints once the strips are in hand
 - [ ] **AM-3.** Exact complete depth n*(y,t) for y = 1, 3, 7 to t about 1000, by tracking the set of lane states instead of the tree *Cost:* tree size 2^n is the limit; a lane-set version needs writing; about 10 minutes CPU
 - [ ] **AM-4.** Extend the exact check counts |C_n|, s(n) and S_2n(2n) to n = 31, 32 (and 33, 34 if the queue allows) with the chunked truth-table counter. *Cost:* about 2.3 s times 2^(n-26) of CPU per n on this host with CH = 22 (n = 26 took 2.0 s cumul…
@@ -104,7 +104,7 @@
 
 *Added by L1573, from [Block 5](SW02-BLOCK5-COUNT.md).*
 
-- [ ] **L1573-1.** A class amplifier: does one immortal row force more than linearly many different futures? AM-1 and MM-1 show merging in their own families, not a general impossibility. Optional strengthening of the floor; finite-range count control is another route (GC2702).
+- [ ] **L1573-1.** A class amplifier: does one immortal row force more than linearly many different futures? AM-1 and MM-1 show merging in their own families, not a general impossibility. Optional strengthening of the floor; finite-range count control is another route (GC2702). **L1578:** answered as far as it can be. By [Theorem S](SW02-CLASS-AMPLIFIER.md#2-theorem-s-why-one-orbit-is-not-a-shortcut), a general refutation would give Q01 on at least 62 of 64 sectors. Pursue it family by family.
 
 *Added by L1572, from the [left-side note](SW02-BLOCK3-LEFT.md). Route 2 there is GPT's pilot (GC2697).*
 
@@ -126,7 +126,7 @@
 - [ ] **AM-4.** Did any survey estimate or heuristic lean on the observation |s(n)| <= 4 * 2^(n/2) (R-01, n <= 20)? It fails at n = 23, 25, 27 (ratios |s|/2^(n/2) = 8.25, 5.17, 5.43), so anything built on it needs revisiting.
 - [ ] **AM-4.** Is the column-frame parity law S_2n(2n) = n mod 2 worth a kit module? Its mechanism is the kit's own telescoping (AlgebraicDegree.deriv_evol_diag_succ) run on the sideways recursion of Rule30ZeroBoundary with the even entries of column -1 p…
 - [ ] **AM-5.** Does any map in the tail-equivalence full group (finite prefix edits of the free word, L972-L974, GC1913) have a width cost and a free action that violate sum 2^(-w_i/2)<=1?
-- [ ] **AM-5.** Can the F-class classification be proved for all radii under width control, or does it imply a statement about col(1) that is itself open, such as col(1) containing every finite word?
+- [ ] **AM-5.** Can the F-class classification be proved for all radii under width control, or does it imply a statement about col(1) that is itself open, such as col(1) containing every finite word? **L1578:** still open for all radii. H quantifies over all naturals, so no implication to col(1) was found; [Lemmas G and R](SW02-CLASS-AMPLIFIER.md#4-candidate-h-what-moved-and-what-did-not) are partial.
 - [ ] **BR-1.** Is Cmin(n), the least certificate for the centre cell over all rows, at least c n for a constant c? Computed: 2,3,4,5,5,6,7,8 for n = 1..8; the guess n + 1 fails at n = 5.
 - [ ] **BR-1.** What is the growth of a_w = |A_w| = 4,8,14,23,42,75,132,228,398,694,1204, and is A_w the same object as the kit's strip bad class at period 2?
 - [ ] **BR-1.** Does the seed realise a closed flip walk at every w, and is that strictly weaker than U_fin?
