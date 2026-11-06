@@ -1,0 +1,62 @@
+Class amplifier: transfer test. Local, written 6 November 2026 before any run.
+
+Question. AM-5 Candidate H: a one-sided block map on column words with A(N) in N and width cost w is 0 or F^j.
+AM-5 s7: with T(x) = x xor (2x|4x), F(2x) = T(x), A(2^n y) = 2^(n-r) B_n(y), B_n = T^-(n-r) Psi T^(n-r), Psi(u) = A(2^r u),
+B_n natural of width <= width y + c, c = r + w, periodic in n with 2-power period.
+
+New step to test. If T acts transitively on a residue class, b_n = B_n(1) fixes Psi on the whole closure O_1 of the orbit of 1:
+Psi(T^s 1) = T^s b_(r+s) for s in Z_2. So every natural y = T^s 1 in a piece must have T^s b natural, width <= width y + c.
+This uses all naturals, not col(1), so it does not need col(1) to contain every word.
+
+Predictions.
+P1 (0.8). T has exactly two orbit closures on odd residues, {1,7 mod 8} and {3,5 mod 8}, and the orbit of 1 mod 2^k has size 2^(k-2) for k <= 28.
+  Counterfactual: smaller orbits mean O_1 is thin, not clopen, and the reduction covers little.
+P2 (0.85). For each natural b < 2^12 outside 0 and {T^j 1}, the pass set {natural y in O_1: T^s(y) b has zero bits above width y + c} misses every residue class of natural y mod 2^6, at c = 12.
+  Counterfactual: a nontrivial b passing on a whole class is a candidate piecewise amplifier on deep rows. It would have to be tested against F-commutation.
+P3 (0.6). log_1(y) is not an integer for natural y outside the orbit of 1, and no rational pattern shows at small y.
+  Counterfactual: a rational pattern would give an explicit formula for T^s and a route to a hand proof.
+
+Limits fixed in advance. One C program, K <= 28, about a minute on the M5, run_capped, no retry at larger K without a new line here.
+A pass or fail here is COMPUTED and says nothing about Q01.
+
+Record searched: AM-1, AM-5, MM-1, GC2702, SW02-BACKLOG AM-5 lines 128-129, Rule30FourLeftSides, Rule30PrefixMerger; record_find class amplifier, share futures, one orbit, CT4C, AM-1, MM-1, 3955, orbit floor, four left; known_find commut (71 candidate hits, not yet read one by one). Right-edge genealogy read next.
+
+Addendum, written after reading PROOFS GC2157 and before any run.
+GC2157 gives e_(2m) <= m + log2(m) + 1 for the orbit of the seed, e_j = log2 of the T-period of 1 mod 2^j. So P1 is expected REFUTED, O_1 is thin, and P2's pass set is expected to be vacuous (few naturals in O_1). P1 and P2 stand as written.
+New step. Psi is 1-Lipschitz and Psi(T^k 1) = T^k b_(r+k), b periodic with 2-power period Q. On k = rho mod Q, equal T^k 1 mod 2^(d+1) gives equal T^k b mod 2^d. So when both periods are at least Q,
+  (RATE)  Per_d(b) <= Per_(d+1)(1), that is e_d(b) <= e_(d+1)(1) for all large d, for every impulse value b.
+P4 (0.6). Most odd naturals b have e_d(b) > e_(d+1)(1) at some d <= 40, and the survivors among odd b < 2^10 are few and structured, close to {T^j 1}.
+  Counterfactual: if every odd b has seed-like rate, RATE restricts nothing and this route is closed.
+P5 (0.5). Seed 1 is the slowest class: no odd b has e_d(b) < e_d(1) by more than a bounded amount.
+  Counterfactual: faster-than-seed classes exist only below it; then RATE is one-sided and leaves a family of slow rows to explain.
+
+Results so far (written before the next run). P1 REFUTED (e_44(1) = 18, not 42). P4 HELD in part: 453 of 512 odd b < 2^10 fail RATE by depth 43, but survivors at depth 62 are many T-orbits with stable offsets, not only {T^j 1}. P5 REFUTED: rows slower than the seed exist (e_36 from 9). RATE closes nothing alone and adds no coverage past AM-5's box. Line stopped here.
+
+Sector test, written before the run.
+Claim (hand). Kit left_side_classification gives each nonzero row a strip sigma and a time shift s mod 16, with s(FY) = s(Y) + 1. Put iota(Y) = (sigma, s - width mod 16). If F^a Y = F^b Y' then iota(Y) = iota(Y'). So "all immortal rows share one orbit" forces all immortal rows into one sector, that is, Q01 on every other sector.
+P6 (0.7). All 64 sectors occur among rows of width <= 16, with roughly equal shares.
+  Counterfactual: few sectors, or one dominant, weakens the corollary to the sectors that occur.
+P7 (0.95). Merges preserve iota: no violation among rows of width <= 16 merged by tick 64. A violation means a bug or a wrong reading of the kit statement.
+P8 (0.7). Among survivors at W = 32, the pass rate at each check past t = W is independent of sector within 3 sigma.
+  Counterfactual: a sector bias means the left side steers the wall, which would be a discovery and a new statistic.
+Fork depth: how many cycles of v -> 4v xor (2v|v) occur mod 2^K, for K = 8..64. Read, not predicted.
+Record searched: as above, plus Rule30FourLeftSides README row, PROOFS L1514 entry, genealogy 25.1 and 29.1-29.2, GC2157.
+
+Sector results (before the next run). P7 HELD: no violation on merges or along orbits. P8 HELD: max |z| 2.5 over eight checks, W = 32. P6 in its checkable form HELD: 16 shift phases by width 12, shares unequal (33 to 272 of 2048). Strips not censused; all 64 sectors follow by hand from multiplying by 2 and the kit's finite realisations.
+
+Merge limit, written before the run. N_t(W) = distinct rows at tick t among rows of exact width W. N_64 is 54, 130, 199 at W = 10, 12, 13.
+Strong form of the pull: rows of equal width and equal sector always merge, so N_t(W) falls to the number of sectors, and every row's future is one of finitely many master orbits. That would reduce Q01 to finitely many rows.
+P9 (0.75). The strong form is FALSE: N_t(W) settles on a plateau well above the sector count, with damage persisting, at W = 10, 12, 13, 14 through t = 32768.
+  Counterfactual: if N_t keeps falling toward the sector count, stop everything else: that is the main result and it goes to GPT at once.
+P10 (0.6). The last merges happen before t = 4096 at each W tested.
+  Counterfactual: merges at ever later ticks mean no plateau can be read from a finite run, and N_t only gives an upper bound.
+Read also: per-sector plateau counts, and how far the damage between two unmerged rows of one sector reaches at the last tick.
+
+Merge-limit results (before the next run). P9 HELD: plateaus 53, 125, 193, 312 at W = 10, 12, 13, 14, flat from tick 256 to 32768, all 16 shift sectors present. P10 HELD: last merge by tick 224 at each W (32-tick resolution). Damage top / t: median 0.253, max 0.2552.
+
+Class-birth sequence, written before the run. M(W) = plateau of N_t(W), exact width. F raises width by one and is injective on classes at the plateau, so m(W) = M(W) - M(W-1) counts classes whose least width is W.
+P11 (0.7). M(W) has a plateau for every W <= 20 by t = 4096, and log2 M(W) / W stays in [0.55, 0.65] for W >= 10.
+  Counterfactual: merges still happening past t = 2048 at W = 20 mean the W <= 14 plateau is a small-width effect.
+P12 (0.6). Monotone check: M(W) <= M(W+1) at every W, which is forced if the plateau is real. A failure means the run stopped too early.
+P13 (0.5). m(W) > 0 at every W >= 2: new futures are born at every width.
+  Counterfactual: a width with no new class would be a structural surprise worth a hand look.
