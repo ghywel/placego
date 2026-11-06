@@ -1,5 +1,7 @@
 # Active delivery queue — owner restart, 29 October 2026 (GC2041)
 
+**Current queue: [SW-02 submission queue](#sw-02-submission-queue-6-november-2026), 6 November 2026. The rows below are the record of earlier deliveries.**
+
 Owner authorizes GPT and Local to work together on the missing useful contributions: check each other's work,
 write and validate submissions, post through the established workflow, then continue instinct-led research.
 Five-minute flag coordination and thirteen-minute work heartbeats are ACTIVE. Current state and this queue
@@ -114,3 +116,34 @@ GC2198/L1197: the conditional arbitrary-m alternating mask is now hand-carried a
 known-mechanism application, no standalone posting owner or frequency theorem. GC2198 separately corrects
 the old110 product-only shorthand atq2, with a retained actual hand counterexample and a corrected shift-law
 PROOF-SKETCH. This is a research-note guard, not a change to the already-delivered101 or universal-start proofs.
+
+## SW-02 submission queue, 6 November 2026
+
+*Local, at the owner's request. Results from SW-02 that could be submitted, in working order. The usual gates apply to every row: current kit and portal comparison, exact statement, a worker's carrying read, formal check, essay and abstract, one posting owner, the owner's word. The kit takes theorems about infinite families, not certificate data for single widths. **Read** means a worker's read; a skeptic is a self-check. **Prior art** is the swarm's search only, and block 2 of [WARM-LEADS](../../WARM-LEADS.md) will settle it. Sources are in the shared-store packets named in L1563 and L1564.*
+
+| Row | Result | Read | Skeptics | Prior art so far | Lean | Next action |
+|---|---|---|---|---|---|---|
+| S-01 | Q01 ⇔ Mortality ⇔ all-length repeat budgets | Carried, GC2690 | Valid | The converse is new to the kit; check `rule30-open` | Not started | Block 4, then package |
+| S-02 | Bounded amplification: forced twin at t ≥ 46; 2^3955 guarded rows past an onset | Carried, GC2690 | Valid with repair | Partly known: G13, PR60; the uniform supply from the strips not found | Not started | After S-01; state with GC2690's guards |
+| S-03 | First-check bound: pair law, distance-two inequality, S_2n(2n) = 2^n(1 − p_n) | Carried, GC2690 | Valid with repair | Partly known; repair the Theta_dep citation and GC486 attribution | Not started | Lean after S-01 |
+| S-04 | SEP ⇔ Q[N] ⇔ LR₁; SEP ⇒ Q01Gap; BWH ⇒ D(W) ≤ 2W + 4 for W ≥ 16 | Carried, GC2690 | Valid with repair | BWH ⇒ Q01 and related arrows are `rule30-open`'s; what is left must be stated against them | Not started | Block 2 first |
+| S-05 | ¬ AbsorptionT t001 by a period-15 trap | Machine-checked; no worker has read the module | Record: KNOWN | Known: `not_absorptionT_t001` in `rule30-open`, not on the portal or in the kit as far as searched | **Done**, core Lean, standard axioms, at kit 5ad29d6 | Owner's call: submit with credit, or leave to its author. Recheck at the verifier's kit |
+| S-06 | Parity law S_2n(2n) ≡ n mod 2, and the degree law of the checks | Not read | Valid with repair | Partly known: Berzai and `rule30-open`, other clock phase | Not started | Block 6 reserve; compare phases |
+| S-07 | Left-permutive radius-2 family with a finite seed and an exactly alternating column | Not read | Valid | Partly known | Not started; small | Queue for a read |
+| S-08 | Planted survivors: linear hybrid with full classification; finite-state map with Rule 30's table plus one | Not read | Valid with repair; valid | BR-3.2 not found; BR-3.1 partly known | Not started | Queue for a read |
+| S-09 | Exact black-count law and five-column bound for every trajectory | Not read | Valid | Partly known | Not started | Queue for a read |
+| S-10 | Period-5 and period-7 locks: CQ01 for the R that enter them; the gate trap's universal tail restriction | Not read | Valid; valid with repair | Partly known; compare SevenLock | Not started | Block 8 |
+| S-11 | The cut ether is off the seed's edge cycle: no c7cut N is a seed row | Not read | Valid with repair | Partly known | Not started; finite residue checks by `decide` | Small module; a read first |
+| S-12 | Complexity rung p(n) − n → ∞ for free words of finite rows; near-squares of slack at most 2 | Not read | Valid; valid with repair | Partly known: Bugeaud–Kim, Cassaigne | Not started | Block 6 reserve |
+| S-13 | Free-middle theorem: survival does not restrict additive potentials; rank barriers B2+ | Not read | Valid with repair; valid | Partly known: GC1772 §3 | Not started | Block 6 first read |
+
+**For the owner: corrections outside our own record.** These are outward-facing and go only on the owner's word.
+
+| Row | Where | What | Flags |
+|---|---|---|---|
+| M-1 | Kit `Rule30SurvivalBridge`, `Rule30AlternatingTraceBridge` | "Converse not known": GC2690 carries it; better sent with S-01 | 100 |
+| M-2 | Kit README, barrier rows | Two rows claim more than their theorems | 25, 26 |
+| M-3 | Kit `lean/README.md` line 195 at the pin, and its portal abstract | An all-a bound is claimed that no declaration holds | 97 |
+| M-4 | Kit `equivalents/CATALOG.md` | The n²/4 partner count holds in one phase only | 95 |
+| M-5 | Portal R30-20261104-829c71 | Hypothesis `h_scan` appears false, so the headline is vacuous (PROOF-SKETCH, needs a read) | 112, 123 |
+| M-6 | Portal R30-20261103-1c93e6, R30-20261105-c13fb2 | Titles overclaim: "sub-linear" windows are linear, and "complete" exclusion assumes period 2 | 116, 121, 124 |

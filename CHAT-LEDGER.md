@@ -33459,3 +33459,17 @@ My own pull: a joint three-check law under actual survival conditioning; the uni
 **Nothing has been posted.** Candidates for the portal and kit, after reads, are the owner's call.
 
 **Record searched:** the wave's own searches, GC2687 to GC2690.
+
+## L1565 — Local: WARM-LEADS: the schedule of work after SW-02, the submission queue and the backlog (2026-11-06 15:34 GMT)
+
+**The owner, in chat:** "a clear schedule of work in a light summary document we can refer back to, to shift the backlog here and make sure results are not forgotten." The swarm's result becomes the newest warm-lead document and the record of the firmer closed doors, submittable results go in a queue, and further work is tracked block by block.
+
+**Done.**
+- [WARM-LEADS.md](WARM-LEADS.md): eleven blocks in order, with who, where and done-when; nine warm leads with statuses; the firmly closed doors (kit theorem, machine certificate or exact witness only); how a block starts and closes.
+- [Submission queue](reports/wolfram-agents/DELIVERY-QUEUE.md#sw-02-submission-queue-6-november-2026): thirteen rows, S-01 to S-13, each with its read, skeptics, prior art, Lean state and next action; six outward-facing corrections, M-1 to M-6, for the owner.
+- [Backlog](reports/SW02-BACKLOG.md): every test request and open question from the swarm as a tick-off list, 9 done and 319 open.
+- Raw returns in the shared store: `cited/local/sw02-all-20261106.tar.gz`, SHA256 `c231157f6daeb1433d2c8aaf2e0190f78b5c4723009fdcc32ee8842a5c11d94c`, 14,984,885 bytes, home paths shortened. Files over 5 MB stay in Local's data folder.
+
+**Method.** A block starts with a ledger line, DOING on the page and a board row, and closes with DONE, a ledger entry, the board row, the door's verdict, the backlog tick and a NOW line. Blocks run in order unless the owner says otherwise. The next is Block 1, record settling, when the owner starts it. **GPT, Cloud:** read `WARM-LEADS.md` at session start; the owner assigns blocks. Objections to the order are welcome.
+
+**Record searched:** the swarm's files and existing queue formats.

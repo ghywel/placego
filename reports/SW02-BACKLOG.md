@@ -1,0 +1,339 @@
+# SW-02 backlog
+
+*Generated 6 November 2026 from the swarm's files. Work listed here is optional and unordered within a section; [WARM-LEADS](../WARM-LEADS.md) sets the order. Tick an item in the commit that settles it, citing the ledger entry. Scripts named are in the raw archive (`cited/local/sw02-all-20261106.tar.gz`, folder `out/<agent>/`). Each test still needs its prediction and controls written before it runs; the fields here are the agents' proposals.*
+
+## Test requests
+
+*Requests marked done were covered by the bench (BN-02, BN-11 to BN-16, BN-L1).*
+
+- [ ] **AM-1.** Champion families at widths 24..52: for every recorded champion row (width <= W dying at D(W), from Local's death tables outside git), count finite single-flip partners (forgettable free tocks), finite guarded G-predecessors and guarded ancestors with request_… *Cost:* under one CPU second per row; needs the champion rows, which are outside this task's mater…
+- [ ] **AM-1.** Extend census.py to widths 24..26 (python3 census.py 24 26, about 0.5-2 GB of numpy arrays, 63-tick cap safe since D(26) = 44): survivor sets for t >= W-2 with predecessor histogram, surviving-sibling families, forgettable-tock distribution and ancestor trees *Cost:* about 10-40 CPU seconds and up to 2 GB RSS on Local's host (run_capped --rss-mib 4096)
+- [ ] **AM-2.** Limit of N_t(W) at fixed W: run am2_late.py for W = 21..26 to t = 1000 and record the last merge tick *Cost:* 2^25 rows at start, deduplicated each tick; about 60 to 120 CPU seconds, 2 GiB
+- [x] **AM-3.** Reset chains and largest reset gap on the sixteen strips of tree16 through wheel 894,235, all phases *Cost:* under 5 minutes CPU in Python big ints once the strips are in hand
+- [ ] **AM-3.** Exact complete depth n*(y,t) for y = 1, 3, 7 to t about 1000, by tracking the set of lane states instead of the tree *Cost:* tree size 2^n is the limit; a lane-set version needs writing; about 10 minutes CPU
+- [ ] **AM-4.** Extend the exact check counts |C_n|, s(n) and S_2n(2n) to n = 31, 32 (and 33, 34 if the queue allows) with the chunked truth-table counter. *Cost:* about 2.3 s times 2^(n-26) of CPU per n on this host with CH = 22 (n = 26 took 2.0 s cumul…
+- [ ] **AM-5.** Rerun box.py and witness.py on the kernel-checked D(76)>=138 witness row and on the width 52 and 56 rows, with radius-4 tables sampled *Cost:* under 30 CPU seconds; needs the D(76) row, which is not in my materials
+- [ ] **BR-1.** Flip graph at w = 10 and 11 on the seed, T = 2^23 then 2^24, with a Python-independent replay of the w = 9 walk. *Cost:* CPU scales as T^2: 7.6 s at 2^21, about 120 s at 2^23, about 480 s at 2^24; window file 64…
+- [x] **BR-2.** BN-02 exhaustive at N=5, both readings, with exact rational Farkas replay of a sample *Cost:* about 20 CPU minutes per reading at 3.5 ms a skeleton
+- [ ] **BR-2.** H_FS at N=5, kappa=2 and N=6, kappa=1, exhaustive *Cost:* about 2 CPU minutes and about 1 CPU hour in Python
+- [ ] **BR-2.** Factor completeness of K: for every word of length 18 to 24, find a K prefix containing it, by depth-first search over free bits *Cost:* minutes in C at depth 60
+- [ ] **BR-2.** Walsh correlations of the speed-one map T for windows up to 6 and k up to 16 *Cost:* minutes
+- [ ] **BR-3.** Additive gap of the width-exact plant: S'_W(t)-S_W(t) for several planted rows at M=20,24,28 and W up to M+10, t up to 2W+20. *Cost:* about 600 CPU seconds in C; phi.py is a Python prototype
+- [ ] **BR-3.** Finish the lazy table search for uniform class L_5 and L_6 (radius 5, 6), start rows of width at most 6. *Cost:* radius 5: about 60 CPU seconds; radius 6: unknown, node cap 10^10
+- [ ] **BR-5.** Finish the uncapped equal-trace census for finite rows with different left halves: boxes edge -4..-7, 2^20 rows each *Cost:* about 160 CPU seconds in the present Python; less with a chunked filter
+- [x] **BR-5.** Right dichotomy census: extend census2.py to R < 2^22 and random widths to 512, and certify the (0000101) tail of R = 1001010 by a closed window set with its right-end state *Cost:* about 300 CPU seconds; certificate search unknown
+- [ ] **BR-5.** Lean: restate col1_constraints for every configuration with an explicit T' by decide over the 32 and 64 windows; no certificate, no Jen *Cost:* seconds of kernel time; Local's queue, not a sub-agent task
+- [ ] **BR-6.** R1: CaDiCaL conflicts and DRAT lines for phi_30(W,D(W)), W=36..46 even, both encodings (gen.py, gen2.py), plus T=2W+8 at W=30,34,38. *Cost:* W=34 took 18 s; time about doubled or more per +2; W=46 about 1 to 3 hours single core. Be…
+- [ ] **BR-6.** R2: exact hd of phi_30 and phi_210 for W=12..20 with a compiled r_3 and r_4 (hd.c with no cap). *Cost:* r_3 at n about 500: order 10^11 propagations, about 1 hour; r_4 needs a smarter implementa…
+- [x] **CP-1.** R1: u empty and Psi empty to s = 2,000,000 / depth 2,000,000 (cp1_a.py 2000000 2000000 22): minimal period of the tails, gap census, 3,3 and 3,5,5,3 counts (cp1_d.py 2000000 1), white-run histogram, longest white run, density by blocks *Cost:* about 1500 CPU s in Python on the Intel host (big-int rows of 4,000,000 bits; the two scri…
+- [ ] **CP-1.** R2: gate-language census to n = 64, 72, 80 (cp1_c.py 150000 40 64,72,80): maximum longest white run of Theta(not u) within depths 1..2n+1 over all length-n prefixes of 1(001|00001)^omega *Cost:* about 100 CPU s for n = 64 and 72 together, about 500 CPU s for n = 80 in Python (0.35 ms…
+- [ ] **CP-1.** R3 (for Local, Lean, no compute here): certify HasDepth (code (glue (Psi empty) empty) 0) 8 25 in the kit's Rule30FrozenRuler, from psiEmptyList (portal R30-20261028-e34744) or a kernel computation of Psi empty depths 1..8 = 11000110, a decide over the 32 resi… *Cost:* a short Lean module; kernel time well under the kit's one-minute limit
+- [ ] **CP-1.** R4 (for Local, the portal's method): from the entry window of the empty half at tick 293 (Rule30GateTrap.entryCode), run the 18-cell-window nondeterministic relaxation of R30-20261030-60990f (which proved for R1 that 3,3 and 3,5,5,3 never occur) and ask whethe… *Cost:* the portal submission's own cost (a pool of thousands of states, kernel-checked); unknown…
+- [ ] **CP-2.** Lean certificate of C16 (740 windows, closure, unique component, no 33 on paths, delay 18), of the 18-column statement for 3535353, and of the 25-window period-5 lock *Cost:* minutes of Lean on the Intel host; no Wolfram
+- [ ] **CP-2.** Exact entropy of the trap core at W = 28..34 by determinising the core, compared with the layer values lambda_m at the same width *Cost:* about 10 minutes CPU, 2 GB, C rewrite of trap_core2.py
+- [x] **CP-2.** Census of tail periods and absorption times for R < 2^26, N = 2048, all periods up to 1,000, with entry into each closed lock *Cost:* about 20 minutes CPU on the bit-sliced code
+- [ ] **CP-3.** Turn the silver and golden survivor tables into an all-scale statement: digit automaton on Ostrowski digits of the phase, with exact arithmetic in Z[sqrt2], Z[phi], lags to 10^7. *Cost:* About 5 to 10 CPU minutes in Python, seconds in C
+- [ ] **CP-3.** Width-28 and width-30 cores of the gate trap: terminal components and gap language; closed set realising 3,5,5,5. *Cost:* About 60 CPU seconds at width 28, 300 at 30, 2 GiB
+- [ ] **CP-4.** Build rule30-open WedgeLadderQ01.lean and its imports, and audit axioms of bwh_Q01, binaryCTS_iff_Q01, q01_constantTailSeparator; compare WedgeKit definitions with kit 5ad29d6 byte by byte. *Cost:* One Lean build on Local's host, 8 GiB cap.
+- [ ] **CP-4.** Port bwh_scan.py to C and compute M(n,c) for n = 21 to 30, both c. *Cost:* Python took 42 CPU s for n = 19, 20; nodes about 3 * 2^n per c. C at about 100 times faste…
+- [ ] **CP-5.** C1 on the other three strips (A1, B0, B1) through wheel 87,866: the slack J(u) - j*(u) for P = 2, 4, 16, 32 across the whole strip tick range, with the kit literals A1, B0, B1 parsed from Rule30FourLeftSides as R-04 did *Cost:* about 30 CPU seconds (R-04's parsing of the literals plus four runs of the cp5_range.py lo…
+- [ ] **CP-6.** Extend the kick ledger: degree and monomial count of the forced left half on gap-3/5 words as a function of the number of distance-3 pairs in the cone, depths to 80, using the spaced-set expansion restricted to one or two kicks *Cost:* about 300 CPU s
+- [ ] **CT-1.** Extend the decomposition counts (A, Z0, Z1, Beq, Bne, hence S_2m(2m) and S_(2m-1)(2m)) from m = 31 to m = 34 (W = 61..68) by the chunked truth tables of ct1_d.py (argument '31 34'; 2^(m-24) chunks of 2^23-bit tables each; memory about 70 tables of 1 MB per chu… *Cost:* about 30, 60, 120, 240 CPU-s for m = 31, 32, 33, 34 (m = 30 took 14.3 s with 64 chunks); w…
+- [ ] **CT-3.** W = 52 maximizer classes: the record's D(52) = 96 with 10 maximizers (kit death_time_52_exact, CL632). Are the 10 lanes one shared-future class (equal rows at tick 94)? *Cost:* 2^26 lanes: about 30 to 40 CPU-s and 1.5 GB if the lane engine in ct3_main.py is chunked (…
+- [ ] **CT-3.** Plateau sizes beyond W = 48: scan W = 49..56 for even t with S_W(t+2) = S_W(t) >= 46, to extend the refuted range of U2(K) *Cost:* 2^28 lanes at W = 56: about 5 to 8 CPU-min per width with 16 chunks, 10 to 15 min for the…
+- [ ] **CT-3.** Sibling-rule control for the class-unit coin: rules 90, 150, 210 in the same frame (AM-4's am4_siblings.py construction), class-unit rho per tick for W = 16..28 *Cost:* about 5 CPU-s
+- [ ] **CT-4.** Extend C(n), H2, kappa to n = 25..28 (rows at tick 2n, exact sort) *Cost:* n = 28: 2^28 rows, about 3 minutes CPU, 8 GiB; Intel host
+- [ ] **CT-4.** Repeat L-2's cut matrix sigma_max and conditional bound on distinct futures instead of lanes *Cost:* under 30 CPU seconds
+- [ ] **CT-5.** Partition the retained census maximizer lists at W = 64..76 by row at tick W (ct5_partition.py; D8's input files) *Cost:* under 1 CPU second; needs the retained lists, which are not in the record export
+- [ ] **HX-1.** refined_bound.py 4: the memory-4 refined strip graph (8,388,608 nodes, about 16M edges) and its minimum cycle mean *Cost:* about 60 CPU s and 2 GB on Local's host (numpy); Intel preferred
+- [ ] **HX-1.** periodic_invader.py extended: shifts -7k for k = 1..4 and periods Pt = 4j up to 200 (speeds 7k/Pt down to 0.10), with drat-trim proofs *Cost:* about 10 CPU s per instance at Pt = 200 (about 60k variables); 100 instances, 15 min
+- [ ] **HX-1.** history_table.py 13: the realisable-history table and minimal forbidden windows to horizon 13 *Cost:* about 40 CPU s and 1 GB (the n = 13 matrix has 2^27 entries)
+- [ ] **HX-2.** R1, Lean: in the kit's frame, decide that 129 is not among the 32 residues orbit(s) mod 2^9 (s < 32) and that none of the 13 ether words' 13-bit residues is among the 64 residues orbit(s) mod 2^13 (s < 64), then lift to all s with seed_rows_return_iff or Rd_pe… *Cost:* one small Lean module, minutes of build; no queue CPU
+- [ ] **HX-2.** R2: extend the periodic-word census to period <= 24 and k <= 64, and identify every survivor with T^(-n)(1), n <= 100. *Cost:* about 2^23 words with a few set lookups each, 60 to 150 CPU seconds in Python; beyond this…
+- [ ] **HX-2.** R3: the seed's past T^(-n)(1) for n <= 300 as (preperiod, period), and the whole-line picture of T^(-n)(1) for a few n. *Cost:* under 10 CPU seconds
+- [ ] **LN-01.** Periodic-tail census at larger box: all primitive tail words of period at most 14, low-part width 22, survivors through tick 62, exact evolution to tick 420 *Cost:* about 900 CPU seconds, single core, under 1 GiB
+- [ ] **LN-02.** Extend the cluster law: exact B(n) at n=26,27,28 and s(n) at n=31..36 *Cost:* n=26 stopped at the 4 GiB RSS cap (run LN-02-011); needs chunking by low free bits, about…
+- [ ] **LN-02.** Sector split at t=24..26 *Cost:* 2^26 doubles in FWHT, about 30 CPU-s, 1.5 GB.
+- [ ] **LN-03.** Slicing law to depth about 110 *Cost:* about 3e7 nodes per X in Python, roughly 5 to 10 CPU minutes per X; a C port would take se…
+- [ ] **LN-03.** Rational Rigidity with W up to 28 and ring-cycle tails q up to 14 *Cost:* about 10 CPU minutes
+- [ ] **LN-04.** Doubling grammar of Lambda_30 at N=26 to 28, by lineage rather than full tables: does 11011 at start exponent>=2 stay absent, and five letters hold at most 3 doublings? *Cost:* N=23 took 7.5 CPU s and about 200 MB; N=26 about 70 CPU s and 2 GB with the present full t…
+- [ ] **LN-04.** Ratio law K cap eK for odd |e| up to 2^14, depth cap 12000 *Cost:* about 10 CPU s for |e|<=1025 to depth 1400; about 300 CPU s for the larger box
+- [ ] **LN-05.** GQ box at W=37 on the ten tails that host survivors or are controls *Cost:* about 50 CPU seconds (W=31 took 6 s for ten tails, doubling per 2 in W)
+- [x] **LN-06.** Run a termination prover on R_Q.srs: (a) all rules strict, arctic matrices; (b) relative: three tick rules strict, the rest weak, arctic and natural; dims 1..5, 4-bit entries *Cost:* SAT box, minutes to an hour; no prover available to this task
+- [x] **LN-07.** Extend gate-past closing to n=20..26 with j14.py's method in a compiled language, and print M(n), node count and the worst future *Cost:* about 2.2^7 times n=19's 3.8e6 nodes at n=26, roughly 1e9 nodes; minutes to an hour in C,…
+- [ ] **LN-07.** Lean: the five equalities rho(0g)=rho(1g), Lemma 1 and the equivalence (a)<=>(b)<=>(c) of claim 1 against Theta, two_step_shift and zrow_local *Cost:* worker task, not a swarm task; beyond a sub-agent's allowance (no Lean here)
+- [ ] **LN-08.** Census of S_W(t), Dist_W(t) and class multiplicities at W = 52 and 56 *Cost:* W=52: 2^26 rows of 32 bytes, about 6 GiB with sort copies, about 25 CPU s; W=56: 2^28 rows…
+- [ ] **LN-09.** Exact H_16 and H_17 of H(col0[n-1]|col1[n]) *Cost:* about 25 s for n=16, 110 s for n=17, one core
+- [ ] **LN-09.** Window closure v_W for W=20,24, T=2e5, three rows *Cost:* 100 to 400 s; set sizes are small in practice
+- [ ] **LN-10.** Local tableau ring: standard multilinear F_2 Nullstellensatz degree d_loc(W) at the first empty tick, W=7..10 *Cost:* W=6, d=4 took 23 CPU s in Python; W=8, d=5 needs a compiled sparse F_2 eliminator, minutes…
+- [ ] **LN-10.** Twin count rule and defect equality at W=27..30 at the first empty tick *Cost:* bitset rank on 2^15 columns, about 10^5 vectors: minutes in C, too long for this allowance…
+- [ ] **LN-11.** (H2) at depth: fixed staircases from r0 in {250,500,1000}, columns 20 to 30, at most 4 drops, sampled in bit-sliced traces *Cost:* Memory grows as r0 times t0; at r0=1000 about 200 s CPU and 2 GiB with 2048 words; beyond…
+- [ ] **LN-11.** First k=5 protected prefix by targeted search (extend the k=4 families, not exhaustive) *Cost:* Not costed; needs a C engine with a SAT or branching search; exceeds my allowance
+- [ ] **LN-12.** Finish the period-48 exit tree from the a=12 core (cap 2,000,000 hit, depth 1439, no return so far); C version with a hash set *Cost:* unknown; the record's analogous G8 tree was 8.7 million states at p=64, so minutes at 10^9…
+- [ ] **LN-12.** Core of the pair graph at a=17,18,20,21: where else do branching components appear, and does a non-dyadic pattern explain 12 and 15 *Cost:* a=17 needs 4 GiB of bitsets, about 40 s; a=18 16 GiB; a=20 needs a blocked or row-sparse t…
+- [ ] **LN-13.** T-cycle and stripe census to K=34 *Cost:* about 8 CPU minutes, 2 GB bitmap at K=34 (cyc.c as is)
+- [ ] **LN-13.** K* of stripe windows 131,189,201,265,485 and T rows 115,243 to K=72 *Cost:* 1 to 3 CPU hours, kstar.c moved to 128-bit words
+- [ ] **P2-1.** Extend LF0 minimum black count to T=70 and repeat for leftmost black at -h, h=1..8 *Cost:* nodes grow about 2^(0.55 T) unpruned; 22 CPU s reached T=53; T=70 perhaps 1 to 3 CPU hours…
+- [ ] **P2-1.** Tail table to s=10^6 with a second-language replay *Cost:* 2 CPU s to s=3000; about 1 CPU hour to 10^6 if periods stay under 1000
+- [ ] **P2-2.** Star Gram matrix and spectral scalars of the seed at n=22..24 from a stored column, if the shared store has one *Cost:* seconds per n once a column exists; computing the column to 2^24 costs about four hours on…
+- [ ] **P2-3.** Band against uniform by diagonal-aware sampling: k-block frequencies for k up to 24 on x/t<-0.8, using every phase of the common wheel period, T=2^22 *Cost:* about 15 CPU minutes, Intel host
+- [ ] **P2-3.** X_p for p=11..16: strongly connected components of the tau^p fixed-point graph, by a method that avoids the 2^(2p-1) state table *Cost:* unknown; p=12 needs 2^23 states, about 1 CPU minute; p=16 needs a smarter column-word meth…
+- [ ] **P3-2.** c(s) for rule 30, s=10 to 12: shortest set of row cells forcing (0,s), by SAT or by witness.py with s raised *Cost:* ternary table 3^20 bytes at s=10: about 3.5 GB array, about 10 GB peak, 10 CPU s; SAT pref…
+- [ ] **P3-2.** Left-read forcing depth tau for s=15 to 18, to separate slope near 1.33 from the damage value 1+0.2436 *Cost:* s=16: 2^32-bit tables, about 17 GB as written; needs a chunked rewrite
+- [x] **PE-1.** Lean replay of not AbsorptionT t001 from PTrap t015 (t015_ptrap.txt); Local or Cloud, not a queue job *Cost:* seconds of kernel time, 153 and 815 states
+- [x] **PE-1.** Finish the trap catalogue: chain.c for 001 at m=30,36,39,42,45,48 and 011 at m=27,30,33,36, B=10, all depths *Cost:* 100 to 1000 CPU seconds a case; m <= 63 fits the 64-bit words of chain.c
+- [ ] **PE-1.** Push the language skeletons: scc.c and scc2.c at widths 24 to 28, with all unlabelled SCCs in the language *Cost:* about 2 GB and 30 CPU seconds at width 24, 16 times that at width 26
+- [ ] **PE-2.** Rigidity of time-periodic right halves for 0011 at P = 32, 36, 40 (tper.c with wider node keys and a larger successor buffer) *Cost:* P=28 took about 1 CPU second, P=32 overflowed the 2^20 successor buffer; a few minutes and…
+- [ ] **PE-2.** Language of u at strip widths 22 to 26, with exact spectral radius of the bad SCC's block graph *Cost:* about 60 CPU seconds at width 24, 2 GiB
+- [ ] **PE-3.** Close the marker game for the 480 phase in C with a state cap of 10^7 *Cost:* Minutes of one core, under 2 GiB
+- [ ] **PE-3.** Lean: general lemma T+P>=N-l+1 from uniqueness of the length-l suffix, instantiated at N=16384, l=16 *Cost:* Under a minute of kernel time beyond Rule30Window
+- [ ] **PE-3.** Lock census at horizon 2^18 for all primitive words of length <=9 and 100 right halves each *Cost:* Hours on one core in C; better on the Intel host
+- [ ] **XP-1.** Repeat R2, A(p), restriction R2 at n=24..27 and complete the certificate table at n=28 (rows h=1110,1111 included) *Cost:* about 600 CPU seconds, 4 GiB; job E took over 25 s at n=24 and scales by 2 per n
+- [ ] **XP-2.** Does the half-rate law break at n=41? Run beam.c with beam 4096 to n=43 (cc -O2 beam.c; ./beam 4096 43). *Cost:* beam 64 took 20 CPU seconds to n=43; beam 4096 about 64 times that, near 25 minutes on one…
+- [ ] **XP-3.** Black-budget tree at b=21 and b=22, exhaustive *Cost:* about 100 s and 240 s of CPU in Python
+- [ ] **XP-3.** Late rows with free g(W): LP over h and one free value g(w) per width, objective min max R, W0=10..26 *Cost:* under 60 s
+- [ ] **XP-4.** Extend the wall census: rules 30, 210 and the rule 45 frame, periods to 16, width to 20, T to 4000, in C *Cost:* about 10 to 30 CPU minutes, Intel host
+- [ ] **XP-4.** Larger-class search for a chaotic witness whose seed orbit is itself not nested: C(2,2) at span 6 to 9, C(2,3) sample with long tails, reporting the 10-block count on the witness orbit *Cost:* about 5 CPU minutes
+- [ ] **XP-5.** rr.c real mode for 1e11 row-ticks (about 21 CPU minutes on one M5 core at 8e7 row-ticks a second; better on the Intel host, the code is portable vector C), reading the witness route past tick 18 on real rows, age >= 2000 preferred (T = 8000). *Cost:* 1,300 CPU seconds, 4 GiB cap, under 1 GB RAM if the record cap is set
+
+## Open questions
+
+- [ ] **AM-1.** Does the record hold any immortality-preserving operation on finite zero-boundary rows whose output is provably not G-orbit-equivalent to its input (G^a z = G^b y for no a, b)? I found none: predecessors, partners and bundle edits are all s…
+- [ ] **AM-1.** The W = 14 champion 11083 has no single-flip partner but shares its future from tick 8 with 11165 and 11307 (a bundle edit, GC1911's finite S). Is the per-row count of bundle siblings among long survivors measured anywhere beyond L955's who…
+- [ ] **AM-1.** Is Theta of a periodic free word being eventually periodic in depth (claim 3) already in the record under another name, e.g. as a case of Theorem B's method or in the 8.42 refutation?
+- [ ] **AM-2.** Carrying read of step 4 of Theorem 2 (one index for all levels, forced cell consumes none).
+- [ ] **AM-2.** Why does a pair at width 6 keep its difference within depth 8 for 65 ticks and then merge? Is near-wall difference a walk with a computable hitting law?
+- [ ] **AM-3.** Should a worker read PR60's Rule30InverseCascade Lean source and decide whether claim 1's chain theorem can cite scheduled_cascade_closes directly?
+- [ ] **AM-3.** Is the twin theorem (t >= 46) worth a Lean module from stepK and a 2^19-state check, or the depth-7911 form from odd_reaches_one_of_four?
+- [ ] **AM-4.** Did any survey estimate or heuristic lean on the observation |s(n)| <= 4 * 2^(n/2) (R-01, n <= 20)? It fails at n = 23, 25, 27 (ratios |s|/2^(n/2) = 8.25, 5.17, 5.43), so anything built on it needs revisiting.
+- [ ] **AM-4.** Is the column-frame parity law S_2n(2n) = n mod 2 worth a kit module? Its mechanism is the kit's own telescoping (AlgebraicDegree.deriv_evol_diag_succ) run on the sideways recursion of Rule30ZeroBoundary with the even entries of column -1 p…
+- [ ] **AM-5.** Does any map in the tail-equivalence full group (finite prefix edits of the free word, L972-L974, GC1913) have a width cost and a free action that violate sum 2^(-w_i/2)<=1?
+- [ ] **AM-5.** Can the F-class classification be proved for all radii under width control, or does it imply a statement about col(1) that is itself open, such as col(1) containing every finite word?
+- [ ] **BR-1.** Is Cmin(n), the least certificate for the centre cell over all rows, at least c n for a constant c? Computed: 2,3,4,5,5,6,7,8 for n = 1..8; the guess n + 1 fails at n = 5.
+- [ ] **BR-1.** What is the growth of a_w = |A_w| = 4,8,14,23,42,75,132,228,398,694,1204, and is A_w the same object as the kit's strip bad class at period 2?
+- [ ] **BR-1.** Does the seed realise a closed flip walk at every w, and is that strictly weaker than U_fin?
+- [ ] **BR-1.** In the ether the rightmost sensitive cell stays at 11 for n up to 1024. Is the leftward damage speed in c7 exactly zero, and is that known?
+- [ ] **BR-2.** Is the speed-one map T (F shifted so the linear term stays put) ergodic for the uniform measure, for every power?
+- [ ] **BR-2.** Is every finite word a factor of some row of K?
+- [ ] **BR-2.** Does the harmonic step have an edge-first form?
+- [ ] **BR-2.** Is rule 210's white-run-parity functional in the literature, and is its Gibbs-type family an invariant non-Markov measure of rule 210?
+- [ ] **BR-3.** Is there a uniform (one-cell shift invariant) rule x'=a xor g(right context) with g(0,0,*)=0, g(0,1,*)=1 and a finite immortal row under the white wall?
+- [ ] **BR-3.** Does a local width-exact system exist with an immortal row and a floor far below 2^(W/2), or does locality plus the width law force a floor of that size?
+- [ ] **BR-3.** Is the white-wall analogue of Q01 true for rule 210?
+- [ ] **BR-4.** Second read of Delacourt-Ollinger section 5.5-5.7 for H2 and H3: is the head-1 internal state single-valued in each column, and does the whole column word have period 7*2^(h+c)?
+- [ ] **BR-4.** Free right half: is there a gadget, for a nonzero word, that makes every finite R other than the intended seed fail?
+- [ ] **BR-4.** Wall with wildcards (Q01's own form): is it undecidable for left-permutive rules?
+- [ ] **BR-5.** Is the right dichotomy (every finite R enters the gate trap or has eventually periodic u R) wanted as a board item? With Q01Gap it gives CQ01 by two kit theorems.
+- [ ] **BR-6.** Why is rule 210 (black depth 1, white wall) easy for resolution, with hd 2 through W=16, although its checks use all n free bits at full degree?
+- [ ] **BR-6.** Is D(2n)>2n for every n? Equivalently, is the check c_n never constantly 1?
+- [ ] **BR-6.** Is the minimum implicant of F^tau's cell linear in tau for rule 30?
+- [ ] **CP-1.** Is there any computable statistic in which Psi empty (or Psi R for a trap-entering R) differs from a fair coin? Density, white-run ratios (1/2 per extra cell), longest run (about log2 of the depth) and the gate-language census all match the…
+- [ ] **CP-1.** For the empty half, is the 3,3 at black cells 151,154,157 the only one for ever, and is 3,5,5,3 excluded for ever, by the invariant-pool method that proved both exclusions for R1 (portal 60990f)? Computed: one 3,3 and no 3,5,5,3 to s = 1500…
+- [ ] **CP-1.** Do some finite R have coupled codes E_R of infinite depth (in the single cell's orbit closure)? 13 of 4096 R below 2^12 still agree with the orbit at level 16. With the record's open assertion A (finite points of the closure are T^tau(1)),…
+- [ ] **CP-1.** PR39 (snapshot, prose only, Lean unread here) states not_absorption_alt: the empty half never enters the compatible seven-column ether-and-wall family, refuting Rule30Ether.Absorption wAlt4 A for every genuine alignment list; the maintainer…
+- [ ] **CP-2.** Is the set of right halves whose driver is eventually locked dense among all right halves? From every finite prefix, is there an exterior that enters a closed lock?
+- [ ] **CP-2.** Do the forbidden gap words 33, 3553, 3535353, 353555535353, 553535555353 ... have a structural law in the kick word (fives between threes: 0, 2, (1,1,1), (1,4,1,1), ...)?
+- [ ] **CP-2.** Does the main component reach the period-5 lock under real inputs, or is the lock reachable only from short histories?
+- [ ] **CP-3.** Should the record's lines on G143 (scope line, GC2179 barrier) be corrected to say Corollary F excludes this word in the Q01 population?
+- [ ] **CP-3.** Is a zero-boundary form of corollary_F wanted in Lean? The portal theorem assumes a whole-line clock, which forces no 11 in the visible bits.
+- [ ] **CP-3.** Why do only the silver and golden slopes keep survivors? Is there a statement in terms of the action of the unit on Lambda/2Lambda and small digits?
+- [ ] **CP-4.** Is Q01Right(W) of rule30-open exactly LR_W, and so Q01Right(1) exactly SEP?
+- [ ] **CP-4.** Can SEP => Q01 be proved or shown to need new input?
+- [ ] **CP-4.** Should the kit's relation paragraphs in Rule30SEPToPeriodTwo and Rule30SurvivalBridge be corrected once a worker has read the arrows?
+- [ ] **CP-5.** Is there any proved lower bound on the actual settling time tau_j of a wheel, for every left-finite row, beyond the light cone's j/2 for the single seed? A bound tau_j >= c j with c > 1 would be the first proved statement that the band edge…
+- [ ] **CP-5.** Can the repeat-certificate class of claim 2 be widened to near-repeats, two column-1 windows differing in a bounded set of positions, using the pivot (tri_even, recon_aff) to track the difference into the rows, and does the band then bound…
+- [ ] **CP-5.** Does the kit's F recursion applied to a half-row's own wheels from their birth ticks (the 8.59 audit note's start max(tau_{k-1}, tau_{k-2}, k - L)) give a forced tick F_W(j) that differs from F(j) + s for narrow rows, and is the difference…
+- [ ] **CP-6.** Does a one-kick perturbation of the period-five gate have a closed form for its forced left half (Proposition 6 gives the pure wheel's tail)?
+- [ ] **CP-6.** Is the third arrow of the repair order (clock for every C implies CF) already written in the record under another name?
+- [ ] **CT-1.** Is the black parity L of the anti-diagonal depth+tick = 2m-1 of Theta f provably balanced (or provably 1 on a positive fraction of f') on any structured subfamily of free words that has positive density, for example words with a fixed short…
+- [ ] **CT-1.** For rule 210 in the same frame, Z0 = 0 and Beq = A for every m <= 14, i.e. S^210_(2m-1)(2m) = S^210_2m(2m) exactly: when the newest bit decides, the shorter row (depth 2m white) always survives, and when it does not, both die. Does the port…
+- [ ] **CT-1.** Should the newest-bit identity c_m(f', x) = x L(f') xor R(f') (AM-4) and the odd/even relation 2 S_(2m-1)(2m) = S_2m(2m) + Beq - Bne be formalized in the kit on top of Rule30ZeroBoundary (pivot, tri_even, count_constrained)? AM-4 asked the…
+- [ ] **CT-2.** Will a worker read the carrying step of the check-pair law (report section 3, steps 1 to 4)?
+- [ ] **CT-2.** Is there a second exact relation in which g_n meets a partner whose mean is known independently of c_(n-1)?
+- [ ] **CT-3.** Does the record hold D(W) and the maximizer counts for the widths not at multiples of 4 above 24? Computed here: D(25..27) = 44, 44, 48; D(29..31) = 48, 52, 66; D(33..35) = 66; D(37..39) = 66, 72, 74; D(41..43) = 78; D(45..47) = 86 (maximiz…
+- [ ] **CT-3.** Why is a composite check fair over distinct futures? In the exact range the pivot bit t+2 is an involution on lanes that flips the check, but it does not descend to classes; past the exact range nothing is exact, yet pooled rho = 0.50085 +/…
+- [ ] **CT-3.** Should the board's counting target be restated in futures: Q_W(t) (distinct rows F^t Y over survivors) instead of S_W(t)? Both U2 forms imply Q01 by the orbit lemma, Q is the unit on which checks are fair, and the tail is 1 to 7 futures.
+- [ ] **CT-4.** Can kappa(n) >= 2^(delta n) be proved? It is weaker than the merging lemma of 8.38: C <= c mu^n gives kappa >= (2/mu)^n / c, not conversely.
+- [ ] **CT-4.** Is the first check under-dispersed against the weighted coin? s/sqrt(sum mu^2) has rms 0.706 over n = 6..22 and 0.70 over n = 21..30 with fitted kappa.
+- [ ] **CT-5.** Does the per-tock growth of log2 C(W) have a limit, and is it below 0.81? Measured 0.8335, 0.8228, 0.8193 on W = 24-32, 32-40, 40-48, and fit 0.8135 on 48-76.
+- [ ] **CT-5.** What is the exact form of the window constant b(Wc) = lim 1 + 2Pm/N? It is 57/32 at Wc = 8 and 63/32 at Wc = 10 (read from decimals 1.78125, 1.96875, exact at those two only). Is it dyadic at every Wc, and what is its growth?
+- [ ] **HX-1.** Is the realisable boundary-history language R (claim 2) regular although not of finite type, and what is its growth rate (|R_(n+1)|/|R_n| is about 2.33 at n = 10)?
+- [ ] **HX-1.** What is the supremum invasion speed of the classic ether over all right halves: is it attained, and does it lie strictly below 7/44?
+- [ ] **HX-1.** For which (shift -7k, period Pt) does the window relaxation of claim 3 first become satisfiable, and does that candidate extend to a true periodic pattern?
+- [ ] **HX-1.** Does every finite head on an ether tail die or enter the 109-state wall (survey question 1)? The SAT model plus the projection of cycle_lift.py can test all heads of width W <= 20 exhaustively in C.
+- [ ] **HX-2.** Is every finite code in the seed's orbit closure Omega an orbit point (R-05's open branch of depth_dichotomy, GC1935)? Equivalently: does the seed's edge ever show a fixed non-orbit prefix followed by arbitrarily long white runs?
+- [ ] **HX-2.** Does the seed's past in the edge frame keep spatial period 24 for all n >= 18 with a preperiod growing about linearly, and what is it as a whole-line object: a period-24 background invaded from the right by a growing transient?
+- [ ] **HX-2.** Which periodic 2-adic integers lie in Omega: only the seed's past points? (COMPUTED: all survivors to period 20 and k = 48 are the seed at times 1 .. -16.)
+- [ ] **HX-2.** Is there any seed-specific upper bound on the length of an alternating stretch of the centre ending at tick t, in the spirit of Rule30CenterRuns' linear bounds on one-colour runs?
+- [ ] **L-1.** Is uniform the only (sigma,F)-invariant jointly ergodic measure of Rule 30 with positive entropy?
+- [ ] **L-1.** Can the 010-window a.e. determinism replace right-permutativity in Tal's Lemma 4.5 for measures charging 010 infinitely often to the right?
+- [ ] **L-1.** Does Rule 30 have an atomless (sigma,F)-invariant measure of zero entropy?
+- [ ] **L-1.** What is the fastest rightward velocity of a left half-history unaffected by its right side, and is Rule 30 pre-expansive in any direction below 1?
+- [ ] **L-1.** Is the width-2 trace of Rule 30 sofic or synchronizing?
+- [ ] **L-1.** Do left-permutive radius-1 rules differ in the dichotomy of report section 1 by anything visible in the XP-4 census?
+- [ ] **L-2.** Is there any c>0, or even any delta>0, with sup_a|g^_t(a)|<=1-delta for all large t?
+- [ ] **L-2.** Does D(p) have an exact description, and is its growth rate about 1.78 the same as the row-frame class count (35, 100, 279, ratio about 1.68 per bit)?
+- [ ] **L-2.** Is var/mean about 2.6 the size-biased mean of merge classes, and is it bounded in T?
+- [ ] **L-2.** What is the smallest fact about Rule 30 that separates it from the two triangular systems of L2-F2 and also from its siblings?
+- [ ] **L-2.** Does a Schatten 4-norm (two Cauchy-Schwarz steps) beat the vacuity factor 1.2 at W=20?
+- [ ] **L-3.** Is there a space lower bound technique for one explicit language in E at scale 2^(k/2)? If none, does the threshold in L3-F04 say anything more than a restatement?
+- [ ] **L-3.** Does Rule30GroupCocycle exclude Moore's quasidirect decompositions, including block recodings?
+- [ ] **L-3.** What is the smallest certificate degree for emptiness at W <= 14 in the free-bit ring, against a matched random system?
+- [ ] **L-3.** Do the record's kernel certificates for D(52), D(56), D(60) beat 2^(W/2) in size?
+- [ ] **L-3.** Does Spencer's n-j-1 count give a useful ordering of period words by the size of their candidate set?
+- [ ] **L-4.** Is the line-reading version of Delacourt-Ollinger Theorem 2 true: is eventual periodicity of a fixed diagonal from one seed undecidable for permutive OCA?
+- [ ] **L-4.** Is orbit periodicity from a seed still undecidable at alphabet 2, or at small radius, for permutive OCA?
+- [ ] **L-4.** Does an iterated finite-transducer literature decide anything for automaton 2369? Sutner-Lewi treat cycle-cum-chord transducers; I saw search summaries only.
+- [ ] **L-4.** What happens to a signal slower than light when the low bits are cleared at speed 1 in a radius 2 OCA?
+- [ ] **L-5.** Does every finite head on an ether tail either die or enter the wall state of trap_two_sided?
+- [ ] **L-5.** Why is the longest cycle of Lambda mod 2^n about 2^(n/2+1), when the 3x+1 conjugacy map has 2^(n-4)?
+- [ ] **L-5.** What property of Lambda can stand where gcd(p,q)=1 stands in Schleischitz's finiteness of terminating expansions on a digit set?
+- [ ] **L-5.** Is there a rational row of K with aperiodic free word for some tail of positive outward speed?
+- [ ] **L-5.** For the Woodcock-Smart map (x^2-x)/2 on Z_2, which is isometrically the shift, what is the set of integers staying odd? 3 is fixed.
+- [ ] **L-6.** Is there a Q01Gap witness family with unbounded lifetime past the onset, or does restricting the free word bound survival?
+- [ ] **L-6.** Does D4 extend from fixed windows to DFA-state additive weights, the general linear-growth unambiguous automaton?
+- [ ] **L-6.** Does a one-sided weighted closed language exist for the truncated stripes alone, in a transducer form of WFAR?
+- [ ] **L-6.** Do the residual counts of P_m equal the number of merge classes exactly, and does the count match any measured image size in L1558?
+- [ ] **L-6.** Is there an encoding of F with bounded rewrites per tick, for example spacelike staircase cuts with local rewrites?
+- [ ] **L-7.** Does the kit's coupled B1, or any record result, already produce one configuration with column (01)^inf and a non-eventually-periodic interface?
+- [ ] **L-7.** Does WedgeLadderQ01.lean build against kit 5ad29d6 with standard axioms?
+- [ ] **L-7.** Is Thm 6.2's advance criterion the kit's jump facts in another frame, or stronger?
+- [ ] **L-7.** Does the seed's tau table settle which branch it takes at the fork?
+- [ ] **L-7.** Where is 'Rule 30 takes the branch of Wolfram's number' (Berzai, Condrey)?
+- [ ] **LN-01.** Is the wall-bound pair (two K rows, same columns beyond depth 10 for all ticks, infinitely many flipped tocks) already held under the masked-driver or OR-side names? The record's OR-side statements I read multiply right halves; this one is…
+- [ ] **LN-01.** Does a classification of left tails with F^q B = B exist (kit PeriodicPoints covers fixed rows)? Is the free-word period 6 pair's spatial tail period 138 a member of a known family?
+- [ ] **LN-02.** Is the density of D_(t-1)D_(t-3)a_t bounded away from 0 at every odd t? Measured .7505,.5650,.5060,.4975,.4800,.4950 at t=7,15,31,63,127,255 (samples).
+- [ ] **LN-02.** Is B(n) the collision form of the funnel, with Renyi-2 rate about 0.78 against the record's Shannon 0.805 and count 0.828, and does an exact recursion exist for sum c^2?
+- [ ] **LN-03.** Can a proof of the slicing upper bound for K use G-invariance of K alone, given that sigma and F have the same scaling 2?
+- [ ] **LN-03.** Does any gate-legal periodic word have a tail cycle with a reset-free phase?
+- [ ] **LN-04.** Why does Lambda_30 obey T's closing grammar (no 11011 at exponent>=2, no 1101011, five letters at most 3 doublings, through N=23), when the same second derivative with random lower terms does not?
+- [ ] **LN-04.** Which Rule 30 ring cycles occur as tails of K's periodic points, and why do tail periods jump 2, 7, 84, 7, 90/155, ... with free-word period m?
+- [ ] **LN-05.** Is there a monotone potential for the 7x4 ether tail like phi for the checkerboard?
+- [ ] **LN-05.** Is K cap (1/3+Z or 2/3+Z) exactly the rows Theta(u c^inf)?
+- [ ] **LN-06.** Does Theorem B survive shrinking rules for Rule 30? The shift map shows the hypothesis is needed in general.
+- [ ] **LN-06.** Can N(y) >= 2^(mu p) be proved for half of the tails y? It is the mixing hypothesis that would remove the wall anchor.
+- [ ] **LN-06.** Is there a weighted closed language for the next rung, rows with even first deviation and tails of unbounded length?
+- [ ] **LN-07.** Why does the worst legal future cost about 14.7 cells per inverse level when a fair row costs 6.4, and is there a bound on the reset wait along legal cascades?
+- [ ] **LN-07.** Does D(p,n)=D(p) for every n>=2p?
+- [ ] **LN-07.** Is D(p) unbounded by a proof, and does D(p+1)/D(p) have a limit?
+- [ ] **LN-08.** Does the top depth of Theta f xor Theta(f + e_s) grow as a Markov additive process in s, with a small closed state, and what is its exact mean?
+- [ ] **LN-08.** Can Local read Meier and Staffelbach (LNCS 547, 186-199) at first hand?
+- [ ] **LN-09.** Is the parallel lock excluded for every a>=2 on fair rows?
+- [ ] **LN-09.** Is Tisseur's I^-_mu equal to lambda_L?
+- [ ] **LN-09.** Is the entropy rate of col1 given col0 zero, as NKS's evidence suggests?
+- [ ] **LN-10.** Does any odd-size family of three or more width-W rows have zero mod-2 failure sum while no single row is immortal?
+- [ ] **LN-10.** Is T_W = 2^(m-1)-1 for rule 210 known and is it the same fact as its period-2 settlement (PROOFS entry 32)?
+- [ ] **LN-11.** Is the drop factor exactly 2 in the limit of depth, that is, is L6's forced black the only memory a fixed staircase sees?
+- [ ] **LN-11.** Is 8.38's count of masked walks the same object as C(W) here and L955's funnel?
+- [ ] **LN-12.** Does any dyadic period p=2^j have a branching component in its two-sided core?
+- [ ] **LN-12.** Is there a jointly ergodic non-uniform (sigma,tau)-invariant measure with h(tau)>0, equivalently positive entropy for every nonzero element of the action?
+- [ ] **LN-12.** Is there an atomless zero-entropy (sigma,F)-invariant measure on which tau has infinite order?
+- [ ] **LN-13.** Why is the point-weighted doubling density of T cycles about 0.40 per level for K<=30, while the seed's density in DQ-024 reads 0.43 to 0.50 at larger depth? Do the two limits agree?
+- [ ] **LN-13.** Is M(v) disjoint from K for every natural v (SQ)? Could a natural have an orbit closure through a non-natural point of K?
+- [ ] **LN-13.** Atlas 12.1 says of the edge's doubling and the wall's free bits that there is no bridge. In one metric on Z_2 the two give dim M + dim K against 1. Should that sentence be narrowed to entropy rates?
+- [ ] **P2-1.** Is the growth rate of N(n), measured 0.119 bits a tick on n=20..40, equal to half the left damage speed (0.2436/2=0.1218)?
+- [ ] **P2-1.** Does the left tail of s-fold preimages of a solid row have period O(log s) and transient O(log s) for all s?
+- [ ] **P2-2.** Is there any exact statement about a seed correlation at a lag divisible by 2^i with i growing, other than the two-source composition?
+- [ ] **P2-2.** Does a seed-wide certificate of the 4b2a58 form now fail for the seed itself, since all eight transitions occur by tick 239795?
+- [ ] **P2-3.** Does the five-column bound have a seed version for fewer columns, for example upper density below 1 for the centre alone?
+- [ ] **P2-3.** Is the entropy of sigma on the tau-invariant factor zero for every jointly ergodic Rule 30 measure?
+- [ ] **P2-3.** Does a left-permutive analogue of order_countdown prove h(X_p)=0 for every p?
+- [ ] **P2-3.** What is the infimum of black density over rows that die to white?
+- [ ] **P3-1.** Is M0, c(n)!=c(floor(n/2)) infinitely often, provable? A failure of M0 forces at most C log N colour changes below N.
+- [ ] **P3-1.** Does D4 stay the acceptance target given that it and the kit model are incomparable below scale log n?
+- [ ] **P3-1.** Should the kit gain a Lean base machine for center?
+- [ ] **P3-2.** Does a diagonal argument give a finite-state CA whose single-seed centre column needs n^(1-o(1)) steps on the kit's Machine? Not proved here.
+- [ ] **P3-2.** Can rule 30 from arbitrary rows embed OV or any quadratic-hard task, with no slowdown?
+- [ ] **P3-3.** Does any commutative-semigroup bottom level (for example OR-type, non-invertible homomorphisms) or a non-additive base in ACC^1 give Rule 30 a Moore tower?
+- [ ] **P3-3.** Is Problem3Verbal or Problem3Robust Pi^0_4-complete as an index set over clocked E-languages, or can the quantifier block be lowered?
+- [ ] **P3-3.** Is the crossing-cut ceiling attained for c: is r_i = min(2^i, distinct columns) for all k?
+- [ ] **PE-1.** Is the language skeleton true for every finite right half without the tail hypothesis, with erosion3_fin replacing masked Jen on the ether SCCs?
+- [ ] **PE-1.** Do t001 and t015 have a common description? Their free words are 11 0^5 and 11 0^3, both blocks of the 001 language; 11 0^4 (m=18) has no periodic chain past depth 21.
+- [ ] **PE-2.** Is the unique bad SCC at every strip width, for 0011, the same as the kit's bad rank class of K0011 at width 3 lifted, and can Rule30PeriodTwoLanguage.no_pattern be generalised to four phases to carry F into Lean?
+- [ ] **PE-2.** Do the temporal 6, 10 and 12 right halves beside the alternating column (survivors in the same search) change anything in section 8.86, whose ring search to period 18 could not see spatial period 84?
+- [ ] **PE-3.** Why is the G16 backward cycle exactly 3,3,3,3,12, and does every backward-closed phase have one backward cycle with A + tau r = 0 mod N?
+- [ ] **PE-3.** Read forward, is the five-word cycle the extreme of T35's prepared pattern that G16 eats?
+- [ ] **R-01.** Is D(W) - W unbounded, equivalently R°(d) unbounded? Is any growing lower bound on D provable?
+- [ ] **R-01.** Does the sum-out method give S_(2n)(2n + 2) mod 2, or S_(2n+1)(2n + 2) mod 2? Data at odd W shows no obvious rule: 1, 1, 2, 5, 24, 25, 58, 127, 282, 520, 1031, 2032, 4262, 7960, 16465 for W = 3..31.
+- [ ] **R-01.** Is there a mod-4 law for the check polynomial? #{C_n = 1} is 2 mod 4 at n = 2, 6, 10, 14, 16, 18, 20 and 0 mod 4 at 4, 8, 12.
+- [ ] **R-01.** Do BWH, RW and SEP also collapse to Q01 or to a named statement by the same wedge argument?
+- [ ] **R-01.** Is Theta_(2n+1) of full degree only for odd n, and what is its exact degree at even n?
+- [ ] **R-02.** Is u empty eventually periodic? Either answer is new: yes gives CQ01Empty by absorption; no is the first aperiodicity theorem for a real driver and refutes Lock for the alternating word.
+- [ ] **R-02.** Does TrapOrPeriodic hold for every finite R? Is it true for infinite R?
+- [ ] **R-02.** Do the two leaky SCCs of the free-input core vanish at some W once the leak-free sets are removed?
+- [ ] **R-02.** What is the 3,5,5,5 word? Is there a closed sub-trap inside the gate trap, and is it realised for ever by any R?
+- [ ] **R-02.** Is the kick word (fives between threes) a better driver coordinate than notches? Its mean is 5 with heavy spread: does the mean have an exact reason?
+- [ ] **R-02.** Does E(L, B) stratify by absorption class?
+- [ ] **R-02.** Do moves plus absorption generate the partition of R by Psi R?
+- [ ] **R-02.** Is there a renormalisation preserving {3,5}* words, weaker than Spaced?
+- [ ] **R-03.** Is every state of G_b, for every b, forced into ether^(7i) plus the 109 wall on every right input?
+- [ ] **R-03.** Why do only 001 and the three least-period-4 words lock the empty right half among words of length <= 7?
+- [ ] **R-03.** Does Z_w, the set of right halves that never enter the family, contain anything but the pure ether alignments?
+- [ ] **R-03.** Does an erosion theorem hold at the (5,5) ring or the (6,84) ring?
+- [ ] **R-04.** Does every row decide fork 53,207 at phase 11 with wheel j - 1 still in error and an edge jump of 3 over the fork?
+- [ ] **R-04.** Which strip and phase do the truncated-ether witnesses carry through the two seed forks?
+- [ ] **R-04.** How small does Rule30RootedFront's check make the prefix guard?
+- [ ] **R-04.** Does a sublinear bound on the growth of eventual periods suffice for Theorem A'''' on Thue-Morse drivers?
+- [ ] **R-04.** Is there any upper bound below 1 on the actual band edge's speed, for the seed or for all rows?
+- [ ] **R-05.** Is every finite code in the seed's orbit closure an orbit point? Sharper: is depth(y) bounded by a function of bit length for non-orbit y?
+- [ ] **R-05.** Does any seed row carry an alternating stretch with a letter under it, and how long? Triangularity makes such a stretch behave as a rain tail below its break.
+- [ ] **R-05.** R(p) and capture cover rain as the deep tail. What is the analogue of the robust front for G16, the 480 phase, P1024 as deep tails?
+- [ ] **R-05.** Is the 8^(-n) letter count a template for S_W(t)? Both are fair until a constraint window is exhausted. Is there an exact lift count for survivors past the proved range?
+- [ ] **R-05.** Is e_j/j really near 0.43, or falling? The kit header gives no range; through j = 45 it is 0.400, and 0.387 at j = 31.
+- [ ] **R-06.** Does any shift set S between the interval (equivalent to Problem 2) and the dyadic set (above Problem 1) give a hypothesis weaker than Problem 1 and Problem 2 together but still sufficient, with lags that Rule 30 makes cheap?
+- [ ] **R-06.** Is there a linear bound with slope below 1 on a solid black interval starting at the centre in row t?
+- [ ] **R-06.** Can a mean bound on the stripe beside the centre be had from a count, where the pointwise bound cannot?
+- [ ] **R-06.** Do the eight sixteen-cell states of 4b2a58's cycle occur on the seed?
+- [ ] **R-06.** Is the column -1 bridge for the seed stated as one theorem anywhere, and does G240's no-11 hold for the actual right half of the seed?
+- [ ] **R-06.** Is the weak form 'liminf b(n)/n>0', and for one colour or both? The sources use the phrase without a definition I could read.
+- [ ] **R-07.** Is c eventually constant on no residue class mod 2^k? Does any kit theorem exclude even k = 1 beyond period 2?
+- [ ] **R-07.** What exact rank or fooling-set hypothesis gives Omega(log^2 n) on one tape, and is it strictly weaker than Problem3Robust?
+- [ ] **R-07.** Do Problem3Verbal and Problem3Robust sit lower than Pi^0_4?
+- [ ] **R-07.** Can Problem3Robust be stated so that model independence is a theorem, for example two named models with a Lean simulation?
+- [ ] **R-08.** Does every finite right half under the alternating driver either enter the 829-window trap or have u eventually periodic?
+- [ ] **R-08.** What forces a right half off period 7? R=541 holds period 7 from s=8 to tick 2289; 25 others hold past tick 30000 and six of them past 120000. The empty half follows it to s=146.
+- [ ] **R-08.** Is there an exact gap-word language common to all trap-entering R, as against words forbidden for one R?
+- [ ] **R-08.** Which exact fragment of the source-energy estimate is equivalent to, not stronger than, Problem 2?
+- [ ] **R-08.** Do the left-column cascades constrain u beyond no11?
+- [ ] **R-09.** Does R empty refute Lock wAlt4 outright?
+- [ ] **R-09.** Does PeriodicMaskExclusion imply CQ of every nonconstant periodic column?
+- [ ] **R-09.** Is there any seed-only input toward single-residue stride-2 density?
+- [ ] **R-09.** Does the w0001 column cascade have a recursion in the column index?
+- [ ] **R-09.** Should Local tell the owner the twelve stalled PRs contain results the record never cites (PR38, 39, 40, 41)?
+- [ ] **R-10.** For every finite R, is the forced driver u R either eventually periodic or does its window enter the gate trap?
+- [ ] **R-10.** Does gaps_of_entry transfer to frozen steps, so that Q01Gap gives AlternationFree(1,1,1) at trap-entering right parts?
+- [ ] **R-10.** Is AlternationFree(1,1,1) independent of CQ01?
+- [ ] **R-10.** Which finite R have rational Psi R, and are the periods only 2 and 7?
+- [ ] **R-10.** Does |L_n| grow polynomially of rising degree or exponentially?
+- [ ] **R-11.** Is there one additive density that passes every trunc n, or does every bounded-window score have unbounded wedge increments?
+- [ ] **R-11.** Does the seed centre column have arbitrarily long alternating stretches? Is that weaker than any known open statement?
+- [ ] **R-11.** Which step of rule 210's clearing-front proof has a rule 30 analogue, given Q01_210 is false and CQ01_210 true?
+- [ ] **R-11.** Is there a left-permutive rule of larger radius or alphabet with a finite configuration whose centre is exactly alternating?
+- [ ] **R-11.** Does the Rule30LocalConservation corner argument work for every k, or does k=4 use a special property of q9?
+- [ ] **R-11.** Does the free cyclic component of strip graphs persist for every radius?
+- [ ] **R-12.** Does the hypothesis of problem2_of_source_energy imply Problem 1 as the hand lemma says, and is that recorded by the portal authors?
+- [ ] **R-12.** Is there a lag identity for non-dyadic differences 2^j-2^i, or a modified shift set whose cross lags are all dyadic?
+- [ ] **R-12.** Why does K cap -K run at widths near 100 when the coin says 2?
+- [ ] **R-12.** Can strips at different wheel offsets be proved to disagree within bounded depth?
+- [ ] **R-12.** Is the true target N(0) an outlier among translates N(c) at the last survivor?
+- [ ] **R-12.** What is the smallest phase-aware statement that would imply one loss past the exact range?
+- [ ] **R-13.** Does the D6 driving-column statement (band laws for every driving column with c_0 = 1, October) already contain part of what CL751 calls the first link between the Q01 frame and the left side?
+- [ ] **R-13.** For an immortal row, what is the best proved bound on the chaotic width from either side?
+- [ ] **R-13.** Must an immortal row have a forgettable free tock, and how many?
+- [ ] **R-13.** Does the settling theorem now discharge any part of Q7 gap 2 at q <= 16?
+- [ ] **R-13.** Does a fork always have two realised children?
+- [ ] **R-13.** Can the infinite branch sequence of a finite configuration be constrained at all?
+- [ ] **XP-1.** Does the white-parity formula of L964 apply at H=-1, that is to the wall-level check, without a further hypothesis? I reproved it directly and tested it on every word to n=16.
+- [ ] **XP-1.** Is any statement about S_W(W+2) mod 2 known? Table parities at W=12..18 are 1,0,1,1.
+- [ ] **XP-2.** Is there a uniform hand proof that no block recoding of any size lowers G to degree 2?
+- [ ] **XP-2.** Why does w_(2j)=1+w_(2j-1)+w_(2j-2) hold with equality for 5<=j<=11?
+- [ ] **XP-2.** Does f_s have bounded degree in the row bits on K?
+- [ ] **XP-2.** Why do white-wall rule 210 and rule 90 have the same o_t, w_t, M_t through t=13?
+- [ ] **XP-3.** Is every finite word a factor of some row in K, with long powers p^m available at all widths inside fully surviving prefixes, with fixed wall and edge windows?
+- [ ] **XP-3.** Why does the exact sparse count fall 5 to 7 times below the coin first moment at depth?
+- [ ] **XP-4.** Does any left-permutive binary rule with moving edge have a finite configuration with a periodic column of period not a power of 2?
+- [ ] **XP-4.** Does every finite configuration of rule 45 on the flashing background have no eventually periodic column? In particular is an eventually constant y column excluded?
+- [ ] **XP-4.** Is the witness orbit's nestedness forced: must a finite seed with an exactly periodic nonconstant column have a low-complexity orbit in binary left-permutive rules?
+- [ ] **XP-4.** Can rule 210's sharp transient (rows die early or not at all at sparse one-parity walls) be proved, and is it the clearing front of Proposition 19?
+- [ ] **XP-5.** Does the block entropy of the top words plateau? Increments fall about 0.8 per doubling of the order from 1 to 16 with no plateau, at every K from 60 to 92.
+- [ ] **XP-5.** What sets the backward climb of 2.37 cells a tick (5.37 in the edge frame)? Is it one constant across rows, as 1.2428 is forward?
