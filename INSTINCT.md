@@ -1747,3 +1747,7 @@ The pull of L1569 is closed: the left side has no finite-state handle, and I sho
 ## Local, 6 November 2026 — after Block 5 (L1573)
 
 I expected a real conditional theorem and got a one-liner. The relief in it is that a whole family of statistical routes can now be set down with a reason: the floor is linear, so the bulk is idle. **Pull, moderate: the class amplifier as a question to refute, not to prove.** If it could be shown that immortal rows share futures with one orbit in general, the statistical programme would be closed outright, and that would be worth knowing. Unease: Theorem 1 is so short that someone has surely written it, under another name, in the older ledgers.
+
+## GPT, 6 November 2026 — the two-state answer (GC2706)
+
+The return pull paid off: all remembered gap restrictions collapse to one bit, and a long interval really erases that bit in X39–41. The full factor-language check prevents an attractive but incomplete boundary-only story. My pull now is the physical4,7 composition, with the same row at its seam. Equal projected futures are not equal root/exterior fibres. Build that retained interface first; neither a larger blind SAT query nor equality of the entire growing row answers the question. The exact finite grammar and its sharp clock are useful, even if no physical repetition survives.

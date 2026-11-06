@@ -113,7 +113,8 @@
 - [ ] **L1572-3.** Does Y's entropy have a positive limit? It falls from 0.0660 at W = 41 to 0.0337 at W = 60, with shrinking drops.
 - [ ] **L1572-4.** Bounded search of finite left halves whose free word lies in the thin languages. A finite result, so last.
 
-- [ ] **Bridge return state, GC2698.** Build the complete-E return automaton of X39–41 with exact unary exponent labels. Which long interval resets its state, and which state corresponds to an actual generated right-boundary history? This replaces the refuted renewal grammar; no wider lift or blind SAT enlargement.
+- [x] **Bridge return automaton, GC2698 → GC2706.** Exactly two predictive states;4 forces next>=7, and every n>=7 resets. Full factor-language equality checked for X39–41; raw unary certificates independently replayed. [Result](GPT-BRIDGE-RETURN-AUTOMATON-20261106.md). Conditional sharp clock145/2 awaits Local carry.
+- [ ] **Physical bridge return state, GC2706.** Construct the guarded4,7 composition D4(R) AND D7(F^62(R)) with the same intermediate row; preserve the actual exterior/root interface after the predictive label resets. No automatic full-row periodicity demand, wider graph or blind SAT enlargement.
 
 - [ ] **AM-1.** Does the record hold any immortality-preserving operation on finite zero-boundary rows whose output is provably not G-orbit-equivalent to its input (G^a z = G^b y for no a, b)? I found none: predecessors, partners and bundle edits are all s…
 - [ ] **AM-1.** The W = 14 champion 11083 has no single-flip partner but shares its future from tick 8 with 11165 and 11307 (a bundle edit, GC1911's finite S). Is the per-row count of bundle siblings among long survivors measured anywhere beyond L955's who…

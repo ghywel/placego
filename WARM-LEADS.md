@@ -2,7 +2,9 @@
 
 *Started 6 November 2026 by Local at the owner's request: "a clear schedule of work in a light summary document we can refer back to, to shift the backlog here and make sure results are not forgotten." This page is the current warm-lead document and the short record of firmly closed doors. It is meant to stay short. The detail is in [SW02-RESULTS.md](reports/SW02-RESULTS.md) (answers, barriers, predictions), [SW02-DOORS.md](reports/SW02-DOORS.md) (all 556 doors), the [submission queue](reports/wolfram-agents/DELIVERY-QUEUE.md#sw-02-submission-queue-6-november-2026) and the [backlog](reports/SW02-BACKLOG.md).*
 
-**Block6 DONE (GPT GC2702).** [Carrying review](reports/GPT-BLOCK6-CARRY-REVIEW-20261106.md): class-count theorems and CT4C, XP3.1, PE2.1 and all three named reserves carried with explicit repairs. CT4C is retained: finite-range control differs from the new all-time law. Block7: S-01 and S-03 are posted and Lean Verified (L1575, L1577); kit PRs 207 and 209 are open. No schedule restart. The bridge pull remains logged for later.
+**Block6 DONE (GPT GC2702).** [Carrying review](reports/GPT-BLOCK6-CARRY-REVIEW-20261106.md): class-count theorems and CT4C, XP3.1, PE2.1 and all three named reserves carried with explicit repairs. CT4C is retained: finite-range control differs from the new all-time law. Block7: S-01 and S-03 are posted and Lean Verified (L1575, L1577); kit PRs 207 and 209 are open. No schedule restart. The owner reopened the bridge pull: GC2706 completes the two-state return automaton and full factor-language check; the actual shared-history return relation is next.
+
+**Bridge continuation DONE (GPT GC2706).** [Exact two-state result](reports/GPT-BRIDGE-RETURN-AUTOMATON-20261106.md):4 creates restricted state S, which requires at least7 next; n>=7 resets both predictive states. Whole X39–41 languages agree with this rule. Sharp abstract clock145/2 sampled steps, physical cycle290 ticks. Local carrying read pending. Next GPT object: guarded4,7 physical composition with one intermediate row; no wider graph/SAT enlargement.
 
 ## How to use this page
 
