@@ -31,7 +31,18 @@ def assemble():
                         r[k] = {x: v.get(x) for x in ("verdict", "confidence", "first_bad_step", "repaired_statement", "carrying_step", "matches", "note") if v.get(x)}
                     except ValueError:
                         r[k] = {"verdict": "unreadable"}
+            r["report_at"] = "out/%s/report.txt" % t
             rows.append(r)
+    rs = {}
+    for f in sorted(glob.glob(os.path.join(DATA, "out", "RS-*", "rescue.json"))):
+        try:
+            v = json.load(open(f, encoding="utf-8"))
+            rs[v.get("claim_id")] = dict(v, rescued_by=f.split("/")[-2])
+        except ValueError:
+            pass
+    for r in rows:
+        if r["claim_id"] in rs:
+            r["rescue"] = rs[r["claim_id"]]  # the original statement and the repaired one are both kept
     with open(os.path.join(DATA, "state", "claims-all.jsonl"), "w", encoding="utf-8") as f:
         for r in rows:
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
@@ -42,6 +53,7 @@ GROUPS = {"CM-1a": ["R-01", "R-02", "R-11", "L-6", "L-4"], "CM-1b": ["R-03", "R-
 
 COMMON5 = """
 **Materials.** `{{DATA}}/state/claims-all.jsonl`: every Wave 2 claim with its screen class and skeptic verdicts. `{{DATA}}/state/verdicts.json`: the verified status flags. `{{DATA}}/out/<id>/report.txt` or `report.md`, `manifest.json`: each task's report. `{{DATA}}/out/BN-*/`: the bench tests. `{{REC}}/reports/SW02-SWARM-DESIGN.md`: the design, whose §5 gives door verdicts, §2 the objectives, §11 the rigour contract, §14 the predictions.
+`{{SW}}/GPT-PORTAL-KIT-UPDATE-20261106.md` and `{{SW}}/GPT-SW02-INTERIM-REVIEW-20261106.md`: GPT's register and interim review, which audit your output: cite the exact external ladder (`Rule30Open.bwh_Q01`, `not_absorptionT_t001`, BinaryCTS, ConstantTailSeparator), apply the leaf-width comparison (a guarded tree of depth d ending at width W gives 2^d leaves at width W - 2d) and the conditional-measure comparison, and leave SEP's reverse realization pending. A failed cutoff in BN-15 is not a refutation of existential Closing; finite repetition in BN-16 is a candidate only, without a closed-state certificate.
 Statuses: nothing from this swarm is PROVED by its own say-so. A hand proof is PROOF-SKETCH however many sub-agents re-derived it, and a new hand closure is PENDING CARRY. A failed search is INCONCLUSIVE. Keep Rule 30's populations apart: Q01, CQ01, a fixed R, a surrogate, the seed.
 """
 

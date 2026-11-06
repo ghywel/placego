@@ -52,7 +52,7 @@ Write `verdict.json` in your folder (Bash heredoc): `claim_id`, `verdict` (VALID
 
 RS = """# SW-02 task {{ID}}: rescuer
 
-**Role.** A claim died, but a reader judged it interesting. Can a weaker true statement be saved? **Locus:** the claim below, its report at `{{DATA}}/out/{task}/report.txt`, and its verdicts at `{{DATA}}/out/SK-*/` for this claim. State the strongest statement that survives the objections, prove it or say what is missing, and say what it would still teach.
+**Role.** A claim died, but a reader judged it interesting. Can a weaker true statement be saved? **Locus:** the claim below, its report at `{{DATA}}/out/{task}/report.txt`, and its verdicts in `{{DATA}}/out/SKR-<claim>/` and `{{DATA}}/out/SKM-<claim>/`, if any. State the strongest statement that survives the objections, prove it or say what is missing, and say what it would still teach.
 
 Write `rescue.json` in your folder (Bash heredoc): `claim_id`, `rescued_statement`, `status`, `proof_at`, `what_it_teaches`, `open_step`. Put your work in the manifest's `report` field. Budget: about 80 tool calls, 120 CPU seconds.
 

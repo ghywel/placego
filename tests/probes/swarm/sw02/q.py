@@ -84,24 +84,29 @@ def main():
         a.rss_mib = 4096  # the owner's rule, 4 November 2026
     q = os.path.join(DATA, "queue")
     os.makedirs(os.path.join(q, "runs"), exist_ok=True)
+    if a.lane == "small" and (a.cpu > 120 or a.wall > 180):
+        die("the small lane takes jobs up to 120 CPU seconds and 180 s wall; a longer job goes in your report for Local's queue", 7)
     if os.path.exists(os.path.join(DATA, "HOST-STOP")):
         die("host stop is set; try again later or report that the test could not run", 4)
+    # one job at a time per lane, and one job at a time per task across both lanes (GC2688)
+    tlock = open(os.path.join(q, "task-%s.lock" % a.task), "w")
     lock = open(os.path.join(q, "lock" if a.lane == "small" else "lock-bench"), "w")
     t0 = time.time()
-    while True:
-        try:
-            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-            break
-        except OSError:
-            if time.time() - t0 > a.lock_wait:
-                die("queue busy for %d s" % a.lock_wait, 5)
-            time.sleep(1.0)
+    for lk in (tlock, lock):
+        while True:
+            try:
+                fcntl.flock(lk, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                break
+            except OSError:
+                if time.time() - t0 > a.lock_wait:
+                    die("queue busy for %d s" % a.lock_wait, 5)
+                time.sleep(1.0)
     used, n = ledger_used(a.task)
     b = budget(a.task)
     if used + a.cpu > b + 1e-9:
         left = b - used
         die("task %s has %.1f of %.0f CPU seconds left; ask for less with --cpu, or put the test in your report for Local's queue" % (a.task, max(left, 0), b), 6)
-    run = os.path.join(q, "runs", "%s-%03d" % (a.task, n + 1))
+    run = os.path.join(q, "runs", "%s-%03d-%d" % (a.task, n + 1, os.getpid()))
     full = [sys.executable, CAPPED, "--out", run, "--cpu", str(a.cpu), "--wall", str(a.wall), "--rss-mib", str(a.rss_mib),
             "--file-mib", str(a.file_mib), "--disk-mib", str(a.disk_mib), "--min-free-mib", "1024", "--launch-free-mib", "2048",
             "--swap-growth-mib", "4096", "--track-tree", "--max-procs", str(a.max_procs), "--", "nice", "-n", "10"] + cmd
@@ -115,10 +120,12 @@ def main():
     except (OSError, ValueError):
         pass
     charged = cpu_from_receipt(run)
-    if charged is None:
-        charged = min(wall, float(a.cpu))  # fail towards charging the task
+    missing_receipt = charged is None
+    if missing_receipt:
+        charged = float(a.cpu)  # no receipt: charge the whole allowance, and mark it for reconciliation (GC2688)
     with open(os.path.join(q, "ledger.jsonl"), "a") as f:
-        f.write(json.dumps({"task": a.task, "n": n + 1, "cpu": round(charged, 3), "wall": round(wall, 3), "reason": reason, "at": int(time.time())}) + "\n")
+        fcntl.flock(f, fcntl.LOCK_EX)
+        f.write(json.dumps({"task": a.task, "n": n + 1, "cpu": round(charged, 3), "wall": round(wall, 3), "reason": reason, "at": int(time.time()), "lane": a.lane, "missing_receipt": missing_receipt}) + "\n")
     out = os.path.join(run, "out.txt")
     if os.path.exists(out):
         with open(out, errors="replace") as f:

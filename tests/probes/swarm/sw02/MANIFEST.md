@@ -32,9 +32,9 @@ The M5 is set aside, with memory watched.
 | 2 Pilot and main | 56 | xhigh; max on Fable slots | 120 |
 | 3 Screeners, skeptics, rescuers | up to 69 | high; xhigh for SK-M | 80 |
 | 4 Bench | up to 11 | high | 60; Local reviews each test and runs it |
-| 5 Compile | 6 | high; max on Fable judges | 100 |
+| 5 Compile | ~~6~~ 8: three door compilers in place of one, for size, within the retry allowance | high; max on Fable judges | 100 |
 
-BN-11 makes the bench ceiling 11, as Cloud added. Retry allowance: 15 extra launches in all, each logged. A batch never holds more than about 24 tasks, so
+BN-11 makes the bench ceiling 11, as Cloud added. Retry allowance: 15 extra launches in all, each logged. Used, as of 6 November: 4 fresh-eyes retries, 3 extra screeners (six in place of three, because a screener re-derives proofs), 3 extra smoke tasks, 2 extra compilers: 12 of 15. A batch never holds more than about 24 tasks, so
 the meter and the host are read between batches.
 
 **Fable slots (Cloud's recommendation, kept):** AM-1, AM-4, CP-1, CP-5, HX-1, HX-2, CT-1, CT-3, JD-1, JD-2, and SK-M on any prize-level claim.
@@ -44,7 +44,7 @@ the meter and the host are read between batches.
 | Meter | Rule |
 |---|---|
 | Five-hour window | Start a batch only under 85%; otherwise wait for the reset, because agents die at the limit (SW-01) |
-| Weekly, all models | Stop launching new attack or refutation batches at about 50%; compile what exists |
+| Weekly, all models | ~~Stop launching new attack or refutation batches at about 50%; compile what exists~~ Lifted by the owner, 6 November |
 | Weekly, Fable | Fable slots fall back to Opus at 45% (Cloud: a quarter of the week above the 20% read at the freeze) |
 | Meter unavailable | No new wave |
 
@@ -56,7 +56,7 @@ rises to at most 8 reasoning sessions if the watch stays clear; the workflow too
 
 ## Compute
 
-One job at a time, through `q.py`, under `run_capped.py --track-tree` with `--rss-mib` at least 4096, `--swap-growth-mib 4096`, `--min-free-mib 1024`, `--launch-free-mib 2048`, `--file-mib 16`, `--disk-mib 128`, `--max-procs 3`, nice 10. Budget 120 CPU seconds
+One job at a time per lane, through `q.py` (amended 6 November after GC2688: a small lane of checks up to 120 CPU seconds and a bench lane of one substantive job, with one job at a time per task across both, unique run folders, and a job with no receipt charged its whole allowance and marked for reconciliation), under `run_capped.py --track-tree` with `--rss-mib` at least 4096, `--swap-growth-mib 4096`, `--min-free-mib 1024`, `--launch-free-mib 2048`, `--file-mib 16`, `--disk-mib 128`, `--max-procs 3`, nice 10. Budget 120 CPU seconds
 per task, charged from the `/usr/bin/time` receipt; a job is one worker, so run_capped's per-process `--cpu` is its budget. A stage needing children declares it with `--max-procs` and is charged the same way. Bench tests may get
 more in `budgets.json`, set by Local with the test's freeze. Nothing is sent to the Intel host automatically.
 
