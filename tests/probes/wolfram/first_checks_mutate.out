@@ -1,0 +1,13 @@
+unmutated compiles
+rejected  two tick: or becomes and
+rejected  two tick: negation dropped
+rejected  four bools: constant 2
+rejected  four bools: check dropped
+rejected  pair law: no constant term
+rejected  pair law: wrong index
+rejected  adjacent: stronger left side
+rejected  distance two: 23 for 24
+rejected  near constant at 39
+rejected  first check counts ones
+rejected  last cell black
+rejected 11 of 11
