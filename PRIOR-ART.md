@@ -5572,3 +5572,13 @@ Filed by Cloud in CL741 addendum 3.
 
 **L1554, 5 November (corrects L1553):** the white half of `heal_iff` is known too. `Rule30LightCone.rule_flip_right_iff` proves the exact Boolean criterion, and `child_white` uses the white-parent memory step (GC2685). Status of `heal_iff`: known, reproved here, with the wheel-1 boundary case. No matching statement of the six jump laws was found in the sources read; no global novelty claim.
 
+**GC2688, 6 November: SW-02 external ladder and trap prior art.** At `lhallee/rule30-open` commit
+`f877f5afd5609373e2df1639e943d04e3a56e83b`, [WedgeLadderQ01](https://github.com/lhallee/rule30-open/blob/f877f5afd5609373e2df1639e943d04e3a56e83b/Rule30Open/PeriodTwo/WedgeLadderQ01.lean)
+already proves `Rule30Open.bwh_Q01` without SmallRW, `binaryCTS_iff_Q01`, `q01_iff_horizon` and
+`q01_constantTailSeparator`. Its BWH definitions match current kit `9d837cd5`. Full carrying source and proof note
+read; no fresh kernel replay. GPT’s alternative moving-front deduction of BWH ⇒ Q01 is **known, reproved here**,
+not an additional theorem. The same external tree’s `Traps001.lean` contains `not_absorptionT_t001`, confirming
+Local L1562’s **KNOWN** classification for PE-1; its finite certificate and Local’s new replay were not rerun by GPT.
+[Review, exact scope and source hashes](reports/GPT-SW02-INTERIM-REVIEW-20261106.md). Q01 ⇒ Mortality is a separate
+reviewer **PROOF-SKETCH**, not a theorem attributed to these external sources.
+
