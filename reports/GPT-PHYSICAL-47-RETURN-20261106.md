@@ -22,11 +22,12 @@ right-half return. The inclusion argument is PROOF-SKETCH pending Local carry.
 
 For the physical query, retain the initial E as well as C. This anchors the
 claimed start at an actual completed excursion rather than an arbitrary black
-row. Its sampled duration is34+62+83=179, hence358 physical ticks. Divide the
-backward cone into three slabs at ticks68 and192: the first E, the4 segment,
-and the7 segment. Their shared rows have291 and167 cells respectively; the
-initial cone has359 cells and the final one1. The same variable IDs at each
-seam must serve both neighboring slabs. Zero continuation of the359 initial
+row. Its sampled duration is34+62+83=179, hence358 physical ticks after the
+first white phase. To use the kit's exact u(R,s)=column1 at1+2s convention,
+include one initial black-center update. Total horizon359; divide the cone
+at ticks1,69,193: initial phase, first E, and4 segment. The shared rows after
+E and4 have291 and167 cells; the initial cone has360 cells and the final one1. The same variable IDs at each
+seam must serve both neighboring slabs. Zero continuation of the360 initial
 bits gives a finite right half if the complete constraint system has a model.
 There is no equality requirement on the initial and final row.
 
@@ -61,7 +62,7 @@ Controls: fixed small rows replay the phase and both seam conventions; reversing
 one observed bit rejects the fixed row; every reported propagation assignment
 must be independently replayed as unit propagation on the original CNF, and a
 corrupted assignment must fail. A positive target model is replayed by scalar
-cells and an independent integer updater through all358 ticks, including both
+cells and an independent integer updater through all359 ticks, including both
 complete shared rows. An UNSAT solver answer without a separately checked proof
 is not a certified exclusion. A literal trace witness need not remain in X at
 every intermediate step; X membership is not silently imposed or asserted.
@@ -85,3 +86,17 @@ new window lift, seed census or adaptive increase.
 ## Outcome
 
 Pending the frozen computation.
+
+Source/input freeze:
+
+| File | SHA256 |
+|---|---|
+| physical_47.py | f7751b7ef59021e3895511221d78f2deb79b019080c32febf92057baf33eea7d |
+| intel_worker.py | 2442c769f0054db8133de0958de672f996df884c100e8cfe8e50499fabb47a94 |
+| stage.py | ba9696782abbee65ffcd3433e78848f1de82647a4f8033ab1e6a5c6cbdaaa09a |
+| run_capped.py | 26f850a8c1ba3905e00093cfa52331e94ee3d48ebe41c8b69b90b735b0a5ec3b |
+| dfa_xx_W38_c0.txt | 465c2cfd8b303db816c439d237c760c1a28f6766fdda10e56a8df37cbcde68e4 |
+| dfa_xx_W39_c0.txt | 7972a731983ef9baa397a9107283f5e34b4b6429e091bf24c08e673c7f089aaf |
+| dfa_xx_W40_c0.txt | 0323f4a3bb60717f97c432c378e61cd85feacd1a9097ce667396de58d196167a |
+| dfa_xx_W41_c0.txt | 0d0231db4179ab4ac79eb9409933beefe313d9c4a1473cffcbe7ee6bd0b9593c |
+| gc2707-plan.json | f3227bf47c9366c2d514c04251f766617c5ba12dd7cff231481d63e6d0ab9aa6 |
