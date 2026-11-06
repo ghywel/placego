@@ -6,8 +6,12 @@ import sys
 from pathlib import Path
 
 root = Path(sys.argv[1]); smoke = sys.argv[2] == 'smoke'
+previous = Path(sys.argv[3]) if len(sys.argv) > 3 else root
+def located(relative):
+    p = root / relative
+    return p if p.is_file() else previous / relative
 def text(name):
-    p = root / (name + '.stdout')
+    p = located(name + '.stdout')
     assert p.is_file() and p.stat().st_size, ('missing output', name)
     s = p.read_text()
     assert 'DISAGREE' not in s and 'DIFFERENT' not in s and 'FAIL ' not in s, name
@@ -41,15 +45,22 @@ def unresolved(path):
                 # Parent ranks differ after harmless parents are omitted.
                 result[r['W']].append(tuple(r[k] for k in ('nodes', 'edges', 'gcd', 'gaps', 'first', 'black')))
     return {w: sorted(v) for w, v in result.items()}
-a = unresolved(root / 'xx/scc_xx.jsonl')
-b = unresolved(root / 'xxp/scc_xx_pruned.jsonl')
+a = unresolved(located('xx/scc_xx.jsonl'))
+b = unresolved(located('xxp/scc_xx_pruned.jsonl'))
 shared = sorted(a.keys() & b.keys())
 assert shared, 'missing full/pruned overlap'
 for w in shared:
     assert a[w] == b[w], ('full/pruned discrepancy', w)
 for name in ('base', 'r02', 'rows', 'xx', 'xxp', 'pq', 'checkxx', 'checkpq', 'tails', 'reentry'):
-    r = json.loads((root / (name + '.receipt.json')).read_text())
-    assert r['returncode'] == 0 and r['reason'] == 'EXIT', name
+    r = json.loads(located(name + '.receipt.json').read_text())
+    if name == 'xxp' and previous != root:
+        assert r['returncode'] == -24 and 500 <= r['cpu_s'] <= 505, r
+        completed = max(map(int, re.findall(r'^W (\d+) analysed ', text('xxp'), re.M)))
+        assert completed >= 40
+        b = {w: rows for w, rows in b.items() if w <= completed}
+    else:
+        assert r['returncode'] == 0 and r['reason'] == 'EXIT', name
 print(json.dumps({'controls': 'PASS', 'phase': 'smoke' if smoke else 'main', 'pruned_overlap': shared,
                   'independent_replay_through': {'xx': 22 if smoke else 36, 'pq': 20 if smoke else 32},
-                  'unresolved_at_max_xx': a[max(a)], 'unresolved_at_max_pruned': b[max(b)]}, sort_keys=True))
+                  'unresolved_at_max_xx': a[max(a)], 'unresolved_at_max_pruned': b[max(b)],
+                  'partial_pruned_extraction': previous != root}, sort_keys=True))
