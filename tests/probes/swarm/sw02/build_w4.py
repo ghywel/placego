@@ -5,7 +5,7 @@ import json
 from build_common import *
 
 COMMONB = """
-**Rules for this test.** Write your prediction and counterfactual in `prereg.txt` in your folder before you run anything; the freeze below already fixes the main one. Include the controls named. Run through the queue, one job at a time, with `--cpu` and `--wall` as stated. Keep every output, and report failures and refuted predictions as they are. Put your account in the manifest's `report` field; other files by Bash heredoc in your folder.
+**Rules for this test.** Write your prediction and counterfactual in `prereg.txt` in your folder before you run anything; the freeze below already fixes the main one. Include the controls named. Run through the queue with `--lane bench`, one job at a time, with `--cpu` and `--wall` as stated. Keep every output, and report failures and refuted predictions as they are. Put your account in the manifest's `report` field; other files by Bash heredoc in your folder.
 """
 
 BN11 = """# SW-02 task {{ID}}: bench, the rate off A0
@@ -49,7 +49,7 @@ Write a core-Lean module in your folder, importing the kit's module, that define
 
     PATH=$HOME/.elan/bin:$PATH LEAN_PATH={{KITLIB}} lean {{OUT}}/File.lean
 
-run through the queue with `--cpu 600 --wall 900 --rss-mib 8192 --max-procs 4`. This is the one Lean task in the swarm; run nothing else in Lean. Print the axioms with `#print axioms`: standard axioms only.
+run through the queue with `--lane bench --cpu 600 --wall 900 --rss-mib 8192 --max-procs 4`. This is the one Lean task in the swarm; run nothing else in Lean. Print the axioms with `#print axioms`: standard axioms only.
 
 **Frozen prediction.** It compiles. **Counterfactual:** a failed check means an error in the table or in the reading of `EncF`. Say exactly which.
 
@@ -58,13 +58,62 @@ run through the queue with `--cpu 600 --wall 900 --rss-mib 8192 --max-procs 4`. 
 If the kit's compiled library lacks a module or differs from the pin, say so. Budget: 900 CPU seconds in all, about 70 tool calls.
 """ + COMMONB
 
+
+BN13 = """# SW-02 task {{ID}}: bench, the right-half census
+
+**Test (requested by BR-5, CP-2, R-02, R-08).** The survey and attack wave found that every finite right half R tested enters the 829-window gate trap or has u R eventually periodic, with periods 2, 5, 7 and 14 seen, and closed locks inside and outside the trap. Whether this dichotomy (TrapOrPeriodic) holds for every finite R is open. Extend the census: every R < 2^22, and at least 2,000 random R at each width 64, 128, 256, 512, driven by the alternating column, to a horizon of at least 30,000 ticks. Classify each R by entry into the trap, by eventual period, and by which closed lock it enters (`{{DATA}}/out/R-02/`, `{{DATA}}/out/BR-5/`, `{{DATA}}/out/CP-2/`, `{{DATA}}/out/PE-1/` hold scripts and tables; write C if Python is too slow). Report the latest entry times, any R in no class by the horizon, and the distribution of absorption times.
+
+**Frozen prediction.** No R outside the known classes; the latest entry time grows slowly with width. **Counterfactual:** a row in no class by the horizon is the finding: keep it and follow it longer.
+
+**Controls.** Reproduce R-08's counts for R < 2^11 first: 1,971 enter the trap by tick 2,400 and 77 do not, of which 52 have period 2 and 25 period 7.
+
+Budget: 1,500 CPU seconds, at most 500 per job; about 60 tool calls.
+""" + COMMONB
+
+BN14 = """# SW-02 task {{ID}}: bench, the trap catalogue
+
+**Test (requested by PE-1).** PE-1's `chain.c` found the second trap for 001 (period 15) and period-14 and period-10 traps for the alternating driver, but stopped at period 24 for 011 and 21 for 001 at full depth. Finish the catalogue: 001 at m = 30, 36, 39, 42, 45, 48; 011 at m = 27, 30, 33, 36; the alternating word at every even m up to 40; B = 10, all depths. C3w(011) is the bottleneck for period 3: a trap for 011 would be the first. Copy `{{DATA}}/out/PE-1/chain.c` to your folder and read PE-1's report for its use.
+
+**Frozen prediction.** More traps for 001 and the alternating word; none for 011. **Counterfactual:** a trap for 011 would change the status of C3w(011).
+
+**Controls.** m = 21, B = 9 returns exactly t001 at depth 38; m = 8 returns the kit's period-8 wall; m = 3 returns nothing (`no_wall`).
+
+Budget: 1,500 CPU seconds, at most 500 per job; about 50 tool calls.
+""" + COMMONB
+
+BN15 = """# SW-02 task {{ID}}: bench, gate-past closing
+
+**Test (requested by LN-07).** `Closing(n)` for every n is PR52's hypothesis, and LN-07 verified it through past length 19 with cutoff about 29.4 n. Extend it to n = 20 to 26 with `{{DATA}}/out/LN-07/j14.py`'s method in C, printing M(n), the node count and the worst future. Read LN-07's report first.
+
+**Frozen prediction.** Closing holds through n = 26 and the cutoff stays within 10% of 29.4 n. **Counterfactual:** a failure would refute the hypothesis of PR52's reduction.
+
+**Controls.** Reproduce n <= 19 first.
+
+Budget: 900 CPU seconds, at most 450 per job; about 50 tool calls.
+""" + COMMONB
+
+BN16 = """# SW-02 task {{ID}}: bench, one sequence further
+
+**Test (requested by CP-1).** Extend CP-1's box: u(empty) and Psi(empty) to s = 2,000,000 and depth 2,000,000, in C with a word-packed row if needed. Report the minimal period of the tails, the gap census, the counts of 3,3 and 3,5,5,3, the white-run histogram of Psi(empty), and the longest white run against the coin's prediction. CP-1's scripts are in `{{DATA}}/out/CP-1/`.
+
+**Frozen prediction.** No eventual period; exactly one 3,3; no 3,5,5,3; longest white run within 3 of log2 of the depth. **Counterfactual:** an eventual period of u(empty) would give CQ01Empty by the kit's absorption route: replay it at once and assume first that it is an artefact.
+
+**Controls.** Reproduce CP-1's numbers at 150,000 first.
+
+Budget: 1,500 CPU seconds, at most 500 per job; about 50 tool calls.
+""" + COMMONB
+
 def main():
     lib = os.path.join(DATA, "kit-build", "lean", ".lake", "build", "lib", "lean")
     write_task("BN-11", BN11, REC_FULL)
     write_task("BN-12", BN12, REC_FULL)
     write_task("BN-02", BN02, REC_FULL)
     write_task("BN-L1", BNL.replace("{{KITLIB}}", lib), REC_FULL)
-    b = {"BN-11": 1500, "BN-12": 900, "BN-02": 1200, "BN-L1": 900}
+    write_task("BN-13", BN13, REC_FULL)
+    write_task("BN-14", BN14, REC_FULL)
+    write_task("BN-15", BN15, REC_FULL)
+    write_task("BN-16", BN16, REC_FULL)
+    b = {"BN-L1": 900, "BN-12": 900, "BN-11": 1500, "BN-13": 1500, "BN-14": 1500, "BN-02": 1200, "BN-15": 900, "BN-16": 1500}
     p = os.path.join(DATA, "queue", "budgets.json")
     cur = json.load(open(p)) if os.path.exists(p) else {}
     cur.update(b)

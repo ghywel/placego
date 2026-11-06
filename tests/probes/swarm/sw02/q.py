@@ -72,6 +72,7 @@ def main():
     ap.add_argument("--file-mib", type=int, default=16)
     ap.add_argument("--disk-mib", type=int, default=128)
     ap.add_argument("--lock-wait", type=int, default=1500)
+    ap.add_argument("--lane", default="small", choices=["small", "bench"])  # bench: the one substantive job; small: seconds-long checks
     ap.add_argument("cmd", nargs=argparse.REMAINDER)
     a = ap.parse_args()
     cmd = a.cmd[1:] if a.cmd and a.cmd[0] == "--" else a.cmd
@@ -85,7 +86,7 @@ def main():
     os.makedirs(os.path.join(q, "runs"), exist_ok=True)
     if os.path.exists(os.path.join(DATA, "HOST-STOP")):
         die("host stop is set; try again later or report that the test could not run", 4)
-    lock = open(os.path.join(q, "lock"), "w")
+    lock = open(os.path.join(q, "lock" if a.lane == "small" else "lock-bench"), "w")
     t0 = time.time()
     while True:
         try:

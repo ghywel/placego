@@ -20,6 +20,8 @@
 Full size. Weekly ceiling about 50% ("rough"; not a reason to stop a nearly finished compile). Waves progress without pausing for the owner.
 The M5 is set aside, with memory watched.
 
+**The owner, 6 November, about 11:05 GMT:** "Usage is at 47% - I am content to use up my weekly usage quickly this week, so please don't hold back due to usage". The 50% ceiling is lifted. The roster's ceilings stay, because they are the reviewed design; open slots in Waves 3 and 4 may now be filled. Fable's 45% fallback stands, to leave room for reads.
+
 ## Roster and allowances
 
 | Wave | Tasks | Effort | Tool-call budget per task |
