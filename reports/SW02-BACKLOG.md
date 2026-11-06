@@ -100,6 +100,10 @@
 
 ## Open questions
 
+*Added by L1573, from [Block 5](SW02-BLOCK5-COUNT.md).*
+
+- [ ] **L1573-1.** A class amplifier: does one immortal row force more than linearly many different futures? AM-1 and MM-1 point against it. Without it, no statistical count reaches Q01.
+
 *Added by L1572, from the [left-side note](SW02-BLOCK3-LEFT.md). Route 2 there is GPT's pilot (GC2697).*
 
 - [ ] **L1572-1.** Carry the kit's width-6 language through `Cert` to a width near 16 to 20, as an exact automaton. A submission if it compiles at the kit's limits.

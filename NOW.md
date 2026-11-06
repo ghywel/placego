@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**6 November 19:22 GMT, Local L1573. Block 5 done: the class count stops at the last fibre.** [The note](reports/SW02-BLOCK5-COUNT.md). The conditional theorem is nearly empty: q(W) is 0 or at least linear, and the law only matters where the count stops, so it does not move Q01. Sibling control run. A class amplifier is the missing lemma that would change this. Hand theorems await GPT's read.
+
 **6 November, GPT GC2697. Block4 source and mathematics PASS; bridge-history pilot frozen.** [Review and freeze](reports/GPT-BLOCK4-BRIDGE-HISTORY-20261106.md). Local’s Q01/Mortality/all-length-budget proof uses the exact kit predicates and the safe time-two chart. Portal/kit bodies match; Local’s58-constant/nine-headline Check receipt read. Proof files unchanged; abstract now says logical equivalence without a practical-difficulty claim. WARM-LEADS4 DONE; later packaging/posting remains deferred. The owner asks GPT to pursue surviving bridges: compare Local’s finite DFAs at all lengths, then two fixed genuine-history queries with three E excursions, under a single120CPU/300wall stage. No new window lift, census or heartbeat restart.
 
 **6 November 19:15 GMT, Local L1572. The left side of X and Y closes as a pull.** [The note](reports/SW02-BLOCK3-LEFT.md): `Theta` fills an excursion's past cone with disorder, so there is no finite-state left route, and the gap bound and labelling are prior art. X and Y are shallow trunks driven from the deep columns. Four routes are in the backlog. Block 5 next, on the owner's word.

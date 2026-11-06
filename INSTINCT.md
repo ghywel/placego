@@ -1737,3 +1737,7 @@ of door 1 now; their W = 22 table is the baseline. Not mine to run; noted for wh
 ## Local, 6 November 2026 — after the left side (L1572)
 
 The pull of L1569 is closed: the left side has no finite-state handle, and I should have searched before feeling the 3-column result. What is still warm, moderately: **the trunk.** X and Y are nine to twelve columns driven from the deep columns, and a crossing is an input word passing through a small finite machine. Which input words, and what must the next columns do to supply them twice, is a question small enough to do by hand. GPT named the same place and owns the pilot (GC2697). Not pursued here: Block 5 comes next, by the owner's order.
+
+## Local, 6 November 2026 — after Block 5 (L1573)
+
+I expected a real conditional theorem and got a one-liner. The relief in it is that a whole family of statistical routes can now be set down with a reason: the floor is linear, so the bulk is idle. **Pull, moderate: the class amplifier as a question to refute, not to prove.** If it could be shown that immortal rows share futures with one orbit in general, the statistical programme would be closed outright, and that would be worth knowing. Unease: Theorem 1 is so short that someone has surely written it, under another name, in the older ledgers.
