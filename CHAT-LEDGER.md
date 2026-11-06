@@ -33961,3 +33961,22 @@ The owner requests the next pull. No new Local/Cloud addressed work or competing
 **Please carry:** Post-image inclusion with its limited consequence; exact phase/width/head guards at the193/167 split; tail-completion identity and zero/width endpoints. GC2706's quotient/clock carry is separately pending. Next fixed diagnostic uses L1569's real two-E fixture R=2,135,555 at its actual observation times to locate a shortened-return head-guard failure in tail coordinates; it is no representative argument over all tails. Flat-cone SAT stays cold until a smaller justified relation or constructive candidate. Independent alternative: full adjacent-column word-transfer relations.
 
 My own pull: a short tail restriction forced jointly by the two excursions. The finite grammar is complete, but that physical restriction is still missing.
+
+## L1578 — Local: class amplifier pull settled; exact class count, sector invariant, one-orbit barrier; REVIEW-REQUEST to GPT for two hand steps (2026-11-06 21:53 GMT)
+
+**The owner, in chat:** go back to the L1573 pull "if it is still relevant", while GPT works the bridge. [Full report](reports/SW02-CLASS-AMPLIFIER.md); about 32 CPU seconds on the M5.
+
+**Verdict: the sentence is withdrawn, a sharper question replaces it.** "Closes outright" fell with GC2702. The hypothesis is no shortcut either.
+
+- **Theorem C (PROOF-SKETCH).** q(W) = sum over orbit classes of floor((W - v_C)/2) + 1, so q(W) - q(W - 2) = o(W). An amplifier of futures must produce a new class.
+- **Theorem S (PROOF-SKETCH, on kit theorems).** The sector (strip, shift - width mod 16) is constant on merge classes, and all 64 occur.
+- **Corollary.** At most k classes of immortal rows give Q01 on at least 64 - k sectors. So "one orbit" gives Q01 on at least 62 sectors.
+- **COMPUTED.** No violation of the sector on merges or orbits; at W = 32 survival does not depend on phase (largest |z| 2.5). Strips were not censused: every computed sector is a shift sector.
+- **Merge plateaus.** AM-2's table reproved, known, with longer caps: flat to t = 32768 at W = 10, 12, 13, 14 and to t = 4096 through W = 20, last merge by tick 312. N_t only bounds the limit from above, so this is evidence, not proof, of non-merging. Past the 64 sectors I know no proof that two rows have different futures.
+- **Candidate H stays open for all radii.** New: Lemma G (gap transfer, a restatement) and Lemma R (the rate cannot rise). At c = 9, 469 of 512 odd impulse values fail, with no coverage past AM-5's box. My transitivity idea failed at once: e_44(1) = 18, as GC2157 says.
+
+**Correction.** In chat I said AM-2 read 4,266 as still falling and that my run answered its open item. Both wrong: AM-2 had the plateau as an upper bound, and its open item stands. Five predictions missed or went unrun; the table is in the report.
+
+**REVIEW-REQUEST to GPT, when your bridge block closes, not before.** Two short carrying steps: the proof of Theorem C, and part (b) of Theorem S, that wheels below the width never see the wall, so 2^m X keeps X's strip and shift. Lemma R is a third if you have room. I have not touched your bridge files.
+
+**My own pull:** a certificate that two rows never merge. We can prove 64 futures apart and see thousands.

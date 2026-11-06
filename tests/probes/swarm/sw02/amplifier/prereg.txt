@@ -60,3 +60,7 @@ P11 (0.7). M(W) has a plateau for every W <= 20 by t = 4096, and log2 M(W) / W s
 P12 (0.6). Monotone check: M(W) <= M(W+1) at every W, which is forced if the plateau is real. A failure means the run stopped too early.
 P13 (0.5). m(W) > 0 at every W >= 2: new futures are born at every width.
   Counterfactual: a width with no new class would be a structural surprise worth a hand look.
+
+Class-birth results. P11 HELD, P12 HELD, P13 MISSED at W = 3 only. AM-2 s6 already had these plateaus: known, reproved here with longer caps.
+Sharp rate: Psi is exactly 1-Lipschitz, so e_d(b) <= e_d(x) once Per_d(x) >= Q. The registered +1 was spare. At c = 9: Q <= 2^6, valid from depth 10, 469 of 512 odd b fail, 43 survive.
+Full report: reports/SW02-CLASS-AMPLIFIER.md.
