@@ -82,6 +82,8 @@ def target(c, W):
     return t
 
 def edges(c, W):
+    if not len(c):
+        return np.array([], dtype=np.int64), np.array([], dtype=np.int64)
     mv = moves(c, W); n = len(c); S = []; D = []; ids = np.arange(n)
     for j in range(4):
         p = np.searchsorted(c, mv[j]); p[p >= n] = 0
@@ -101,6 +103,7 @@ def peel(c, W):
 
 def comps(c, S, D):
     n = len(c)
+    if not n: return []
     g = csr_matrix((np.ones(len(S), dtype=np.int8), (S, D)), shape=(n, n))
     nc, lab = connected_components(g, directed=True, connection='strong')
     size = np.bincount(lab, minlength=nc)
@@ -143,10 +146,10 @@ while True:
         if a.dumps:
             import os
             p = '%s/core_%d_%s.bin' % (a.dumps, W, a.mode)
-            if os.path.exists(p):
-                d = np.fromfile(p, dtype=np.uint64).astype(np.int64)
-                dig = ' dump %s' % ('same' if len(d) == len(c) and (d == c).all() else 'DIFFERENT')
-                fails += 'DIFFERENT' in dig
+            assert os.path.isfile(p) and os.path.getsize(p) % 8 == 0, ('missing/truncated dump', p)
+            d = np.fromfile(p, dtype=np.uint64).astype(np.int64)
+            dig = ' dump %s' % ('same' if len(d) == len(c) and (d == c).all() else 'DIFFERENT')
+            fails += 'DIFFERENT' in dig
         print('W', W, 'core', len(c), 'components', len(mine), 'agree' if same else 'DISAGREE', dig, 'cpu', round(time.process_time() - t0, 1), flush=True)
         if not same:
             fails += 1

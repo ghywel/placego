@@ -34,14 +34,16 @@ for R in Rs:
     rows = ref.drv(ref.alt_col, R, T + 30)
     tails[R] = [rows[t] for t in range(T - (T % 2) + 1, T + 28, 2)]
 bad = 0
-for p in sorted(glob.glob('%s/core_*_%s.bin' % (dumps, mode)), key=lambda s: int(re.search(r'core_(\d+)_', s).group(1))):
+paths = sorted(glob.glob('%s/core_*_%s.bin' % (dumps, mode)), key=lambda s: int(re.search(r'core_(\d+)_', s).group(1)))
+assert paths, 'no core dumps: no control was checked'
+for p in paths:
     W = int(re.search(r'core_(\d+)_', p).group(1))
     core = np.fromfile(p, dtype=np.uint64)
     mask = (1 << W) - 1
     inside = entered = 0
     for R, tail in tails.items():
         ws = np.array([x & mask for x in tail], dtype=np.uint64)
-        hit = core[np.minimum(np.searchsorted(core, ws), len(core) - 1)] == ws
+        hit = core[np.minimum(np.searchsorted(core, ws), len(core) - 1)] == ws if len(core) else np.zeros(len(ws), dtype=bool)
         if hit.all(): inside += 1
         elif any(in_family(x & mask, W) or in_lock(x & mask, W) for x in tail): entered += 1
         else: bad += 1; print('  FAIL W', W, 'R', R)
