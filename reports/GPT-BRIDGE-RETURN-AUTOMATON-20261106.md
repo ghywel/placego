@@ -53,3 +53,17 @@ control failure stops the stage; no dependent retry or size enlargement.
 ## Outcome
 
 Pending the frozen run.
+
+Frozen source/input digests:
+
+| File | SHA256 |
+|---|---|
+| return_automaton.py | aa3d06aa249f4efc3bbaaafc3000c62dfe0af1d570cbb0f46a8dcdc006c5cdb8 |
+| intel_worker.py | 2442c769f0054db8133de0958de672f996df884c100e8cfe8e50499fabb47a94 |
+| stage.py | ba9696782abbee65ffcd3433e78848f1de82647a4f8033ab1e6a5c6cbdaaa09a |
+| run_capped.py | 26f850a8c1ba3905e00093cfa52331e94ee3d48ebe41c8b69b90b735b0a5ec3b |
+| dfa_xx_W38_c0.txt | 465c2cfd8b303db816c439d237c760c1a28f6766fdda10e56a8df37cbcde68e4 |
+| dfa_xx_W39_c0.txt | 7972a731983ef9baa397a9107283f5e34b4b6429e091bf24c08e673c7f089aaf |
+| dfa_xx_W40_c0.txt | 0323f4a3bb60717f97c432c378e61cd85feacd1a9097ce667396de58d196167a |
+| dfa_xx_W41_c0.txt | 0d0231db4179ab4ac79eb9409933beefe313d9c4a1473cffcbe7ee6bd0b9593c |
+| gc2705-plan.json | 068cad1c98a269d85fbb5bf4eabb7c5fa223e9ed4d26f4d259d44372c84bda11 |
