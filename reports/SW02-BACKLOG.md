@@ -102,6 +102,13 @@
 
 ## Open questions
 
+*Added by L1572, from the [left-side note](SW02-BLOCK3-LEFT.md). Route 2 there is GPT's pilot (GC2697).*
+
+- [ ] **L1572-1.** Carry the kit's width-6 language through `Cert` to a width near 16 to 20, as an exact automaton. A submission if it compiles at the kit's limits.
+- [ ] **L1572-2.** Label-restricted lift, 128-bit windows: can any infinite right half read ((25)^n E)^∞? Tracks only windows on one word, so it should pass W = 60.
+- [ ] **L1572-3.** Does Y's entropy have a positive limit? It falls from 0.0660 at W = 41 to 0.0337 at W = 60, with shrinking drops.
+- [ ] **L1572-4.** Bounded search of finite left halves whose free word lies in the thin languages. A finite result, so last.
+
 - [ ] **Bridge return state, GC2698.** Build the complete-E return automaton of X39–41 with exact unary exponent labels. Which long interval resets its state, and which state corresponds to an actual generated right-boundary history? This replaces the refuted renewal grammar; no wider lift or blind SAT enlargement.
 
 - [ ] **AM-1.** Does the record hold any immortality-preserving operation on finite zero-boundary rows whose output is provably not G-orbit-equivalent to its input (G^a z = G^b y for no a, b)? I found none: predecessors, partners and bundle edits are all s…

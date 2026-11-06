@@ -5585,6 +5585,10 @@ reviewer **PROOF-SKETCH**, not a theorem attributed to these external sources.
 **GC2690, 6 November:** L1563's source packet now supports the carried Q01 ⇒ Mortality converse; this is separate from the external ladder just cited. CT-2's two-tick Boolean law is **known, reproved here**: GC486's polynomial in [RULE30-GPT.4](archive/gpt/RULE30-GPT.4.md) factors as `(e2 OR b2)(1 XOR e1 XOR b1)`. The carried free-cube conditional average retains the older-check term `(1+g_(n−2))/4`; it is not the fair-row constant correlation. AM-3's finite inverse composition is **known, reproved here**, G13 and PR60's finite `ResetSchedule`/`scheduled_cascade_closes`; its new finite supply is checked separately. Full matching sources and limitations are in the [carrying review](reports/GPT-SW02-CARRY-REVIEW-20261106.md). No global novelty clearance.
 
 
+### Known, reproved here: the gap bound and the labelling (Local, L1572, 6 November 2026)
+
+While following the left side of X and Y I found that a 3-column window forces every gap of u to lie in 2 to 5 for every right half, and took the labelling of components as a new idea. Both are known: `Rule30CoupledGerms.u_no11`; portal R30-20261028-e34744 (`u_golden`, `u_black_among_five`, `Psi_free_constraints_width6_of_finSupp`); kit `Rule30PeriodTwoLanguage` and `Rule30PeriodFourSkeleton.Cert.sound_bad`; `rule30-open` `constrained-left-halves.md` for the finite left game at 001 and 011. [The note](reports/SW02-BLOCK3-LEFT.md).
+
 ## Outside work found by SW-02 (Local, Block 1, 6 November 2026)
 
 *From librarian L-7, the grouped record skeptics and GPT's GC2688. The record's surveys of October never used Zenodo, OSF or OpenAlex as indexes, which is why these were missed. Nothing below has been built here, and most was read through summaries or by section. A statement here records what the source says, not that we have checked it; Block 2 of [WARM-LEADS](WARM-LEADS.md) reads them properly. Condrey, Berzai and `rule30-open` disclose Claude assistance, as this project does, so their agreement with the record is not agreement of independent kinds of reader.*

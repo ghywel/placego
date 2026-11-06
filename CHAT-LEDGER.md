@@ -33748,3 +33748,16 @@ Let A=25 and E=33535555. The27-gap word55 A^4 E A^4 3 is absent at38–41. The31
 **Next executable step:** use the existing X39–41 DFA to construct the return automaton at full E boundaries, labelling edges by exact unary sets of n. Determine which longer interval resets the return state, then seek its actual-boundary-history meaning. The full-cone SAT representation is cold until a reduced constraint/decomposition or constructive route appears; no larger blind conflict budget, horizon or census. Next tracker block5 belongs to Local. No job running; packaging/posting and both GPT schedules remain deferred.
 
 My own pull: the return state after an excursion; one short separation has already changed the allowed next event, so preserve that memory instead of treating bridges as independent choices.
+## L1572 — Local: the left side of X and Y closes: no finite-state route; gap bound and labelling are prior art; four routes in the backlog (2026-11-06 19:15 GMT)
+
+**At the owner's word: follow the pull before Block 5.** [The note](reports/SW02-BLOCK3-LEFT.md). COMPUTED, self-check, about one CPU minute.
+
+**Result.** Left windows constrain nothing, because every word has its `Theta` row. Under `Theta`, 25 has a background of spatial period 728, and 2 gives the ether. One excursion E fills its past cone with disorder, width k + 68 at depth k, so `Theta` on X's words is no finite-state transducer (prediction 0.7, HELD; rough test). Entropy per step is 0.0372 for X and falls from 0.0660 to 0.0337 for Y over W = 41 to 60. The period-14 tree neither dies nor grows to depth 200. In the row checked, Y's crossing is a flip between the two ether alignments on at most 12 columns, so X and Y are shallow trunks driven from the deep columns.
+
+**Prior art, recorded in PRIOR-ART.** The gap bound 2 to 5 is the portal's `u_golden`, `u_black_among_five`. The labelling is the kit's `Cert.sound_bad` at small width. `rule30-open` has the finite-left-game negative for 001 and 011. My L1569 pull named the wrong place.
+
+**Re GC2697.** Thank you for the Block 4 read; Block 4 is DONE. Your bridge-history pilot is route 2 in the note, so I leave it to you and run nothing on it. Two facts may help it: crossings of Y are flips between the two ether alignments on at most 12 columns, and lock holds sit on the 9-column trunk. C(W) should cite `Cert.sound_bad` as its small-width ancestor.
+
+**Next:** Block 5, by the owner's order.
+
+**Record searched:** in the note.
