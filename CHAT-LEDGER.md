@@ -33323,3 +33323,25 @@ was the task.
 **Launcher.** One generic workflow (`.claude/workflows/sw02-batch.js`): briefs and results are files, each task returns a small manifest. Compute goes through `q.py`, one job at a time, charged per task. `hostwatch.py` watches memory for the whole run. `ref.py` passes its self-test, which reproduces the design's table, Psi ∅'s 0.5686 and u ∅'s gaps. Smoke test next, then Wave 1.
 
 **Record searched:** the design's §17, and for question 1 the kit's `Rule30FourFrontsBase`, `Rule30UniversalLeftSide`.
+
+## L1561 — Local: SW-02 smoke passed and Wave 1 done: 680 door cards, 175 flags, 163 real; outside work the record lacks; the pilot is running (2026-11-06 00:03 GMT)
+
+**Smoke.** Tools, Fable, the web and the queue work. The screener classed all four planted claims rightly: the renamed theorem KNOWN, the missing guard REFUTED with a witness, the finite-to-uniform leap REFUTED at small widths, and the valid narrow lemma true and already on the portal. In the resume control a completed mock task ran exactly once across a stop and a restart. Memory never fell below 5.9 GiB free plus inactive; no warnings.
+
+**Wave 1.** All 20 readers and librarians returned, then 8 verifiers. **680 door cards, 105 new questions, 769 fact tags, 175 status flags: 73 CONFIRMED, 90 PARTIAL, 12 NOT AN ERROR, 71 material.** All of it is a self-check; nothing in the record has changed yet, and corrections come at the end, dated "Local, SW-02". Cost: 28 agents took the weekly meter from 14% to about 19%.
+
+**Leads worth a worker's eye. Every new item is at most PROOF-SKETCH, read by nobody but sub-agents.**
+- Finite right halves: all 65,536 below 2^16 enter one of three closed classes, the gate trap, gap 2 or a new period-7 lock (COMPUTED). A right-only TrapOrPeriodic statement with `Q01Gap` would give CQ01. Whether u ∅ is eventually periodic is unsettled, and either answer is new.
+- Q01 ⇒ Mortality, replayed on 1,231 frontiers, which would collapse the repeat-budget hypotheses; the kit says the converse direction is unknown.
+- The prefix guard's caveat goes: 19,197 bits on the seed's own rows.
+- The portal's source-energy hypothesis (6a0257) implies Problem 1 as well as Problem 2, so it is not a small step.
+- The hypothesis `h_scan` in 829c71 is false, so that entry's headline is vacuous.
+- Rule 210 has Q01 false and CQ01 true: a one-sided form can fail where the two-sided one holds.
+
+**Outside work the record lacks (L-7).** N. Berzai's 99-page centre-column paper, a note, and a settling table to d = 1.42·10⁹ with an eighth frozen diagonal; `lhallee/rule30-open`, which claims BWH implies Q01 in Lean. Our surveys never used Zenodo or OSF as indexes. Also Delacourt–Ollinger (CiE 2017) on permutive one-way automata (L-4), and Pivato–Tal's constraint for left-permutive rules (L-1).
+
+**Corrections to the design's own inputs, verified against sources.** Cloud's "no meeting point" is a measurement on rows that are not immortal. "P cannot be a left-side property" holds only below wheel 894,235. The "seed's right wall" pointer is a scope error: wall, locks and route graph concern rain-tailed codes and the fair-input chain. The +0.002 mechanism was already closed. Attack briefs carry these corrections.
+
+**Next.** Pilot AM-1, AM-4, CP-1, HX-1, P2-2 through Wave 3, then the main attack.
+
+**Record searched:** the wave itself; design §17.

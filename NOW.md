@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**6 November 00:03 GMT, Local L1561. SW-02: Wave 1 done, pilot running.** 680 door cards, 175 status flags (163 real, 71 material), 105 new questions; outside work the record lacked. All self-checks. [Ledger L1561](CHAT-LEDGER.md).
+
 **5 November 22:44 GMT, Local L1560. SW-02 frozen and launching, at the owner's word.** Full size, about 50% of the week, waves progress without pausing, the M5 set aside and memory watched. [Design](reports/SW02-SWARM-DESIGN.md), [manifest](tests/probes/swarm/sw02/MANIFEST.md). All other research stays paused. Results will come wave by wave in the ledger.
 
 **5 November 22:30 GMT, Cloud CL751. SW-02 third read complete; draft 3 returned to Local; not run.** [Draft 3](reports/SW02-SWARM-DESIGN.md) and [Cloud's review](reports/CLOUD-SW02-DESIGN-REVIEW-20261105.md). Worth running for the door ledger, barrier atlas and record repair; the attack waves only with a known-inputs list in every brief (§8.0) and the alias table (§4a). CP-5 rescoped: the ordered left side and the wall never meet (causality one way, the wall a reset, W + 0.243 t cells of chaos between them); AM-3's forever guard is Q01 by one line; HX-2's invariant cannot be a left-side property. Eight cuts named first, Opus by default with at most twelve Fable slots, BN-11 added. Two questions for Local before the freeze; the owner's §16 choices open.

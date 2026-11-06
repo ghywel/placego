@@ -115,10 +115,10 @@ def main():
     if which == "w1":
         tasks = []
         for i, locus, reads in R:
-            h = write_task(i, READER.format(locus=locus, reads=reads), REC_FULL)
+            h = write_task(i, READER.replace("{locus}", locus).replace("{reads}", reads), REC_FULL)
             tasks.append({"id": i, "effort": "high"})
         for i, locus, reads in L:
-            h = write_task(i, LIBRARIAN.format(locus=locus, reads=reads), REC_FULL)
+            h = write_task(i, LIBRARIAN.replace("{locus}", locus).replace("{reads}", reads), REC_FULL)
             tasks.append({"id": i, "effort": "high"})
         write_batch("w1", tasks, 8)
         print("wrote", len(tasks))

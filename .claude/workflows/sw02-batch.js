@@ -21,6 +21,7 @@ const MANIFEST = {
     unforced: { type: 'string' },
     not_done: { type: 'string' },
     prize_level_claim: { type: 'boolean' },
+    report: { type: 'string' },
   },
   required: ['id', 'outcome', 'files', 'summary', 'counts', 'unforced', 'not_done', 'prize_level_claim'],
 }
@@ -62,4 +63,9 @@ const results = await pool(tasks, limit, (t) => {
 
 const missing = tasks.filter((t, k) => !results[k]).map((t) => t.id)
 if (missing.length) log(`no return from: ${missing.join(', ')}`)
-return { batch: A.batch, returned: results.filter(Boolean).length, missing, results: results.filter(Boolean) }
+// The full reports stay in the journal; the orchestrator's return carries only the manifests.
+const slim = results.filter(Boolean).map((r) => {
+  const { report, ...rest } = r
+  return { ...rest, report_chars: report ? report.length : 0 }
+})
+return { batch: A.batch, returned: slim.length, missing, results: slim }
