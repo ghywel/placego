@@ -102,6 +102,11 @@
 
 ## Open questions
 
+*Added by L1579, from [the never-merge note](SW02-NEVER-MERGE.md).*
+
+- [ ] **L1579-1.** Lock conjecture: every nonzero row has an integer clock c(Y) with theta_g(Y) - theta_g(1) = c(Y) for all large g. It would give M(7) = 15. It needs a bound on white runs in transient words across the gap between the pair front and the strip front.
+- [ ] **L1579-2.** The second front: what decides where two same-clock rows first differ, 100 to 800 wheels below the strip front? This is where a general never-merge certificate would have to work.
+
 *Added by L1573, from [Block 5](SW02-BLOCK5-COUNT.md).*
 
 - [ ] **L1573-1.** A class amplifier: does one immortal row force more than linearly many different futures? AM-1 and MM-1 show merging in their own families, not a general impossibility. Optional strengthening of the floor; finite-range count control is another route (GC2702). **L1578:** answered as far as it can be. By [Theorem S](SW02-CLASS-AMPLIFIER.md#2-theorem-s-why-one-orbit-is-not-a-shortcut), a general refutation would give Q01 on at least 62 of 64 sectors. Pursue it family by family.

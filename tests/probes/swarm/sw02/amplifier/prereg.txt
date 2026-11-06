@@ -64,3 +64,46 @@ P13 (0.5). m(W) > 0 at every W >= 2: new futures are born at every width.
 Class-birth results. P11 HELD, P12 HELD, P13 MISSED at W = 3 only. AM-2 s6 already had these plateaus: known, reproved here with longer caps.
 Sharp rate: Psi is exactly 1-Lipschitz, so e_d(b) <= e_d(x) once Per_d(x) >= Q. The registered +1 was spare. At c = 9: Q <= 2^6, valid from depth 10, 469 of 512 odd b fail, 43 survive.
 Full report: reports/SW02-CLASS-AMPLIFIER.md.
+
+Never-merge block, written before any run, after GC2711, GC2714 and CL753.
+Owner: try for the proof if it stands. It stands: the reviews narrow L1578 and do not touch this target.
+
+Hand claim (Theorem N). For each K let L_K = L mod 2^K, a map on odd residues. For a nonzero row Y and large t put nu_K(Y) = L_K^-(t + width Y)(V_K(F^t Y)), taken on the periodic points of L_K. Then nu_K(FY) = nu_K(Y), and nu_K is compatible in K, so nu(Y) is one 2-adic number, constant on merge classes at any lag. Rows with different nu never merge. Every periodic point of L_W occurs at exact width W, so M(W) >= Pi(W), the number of periodic points of L_W. Kit D_whiteCount_unbounded should give Pi unbounded: infinitely many proved futures.
+
+A certificate needs no kit theorem: two rows reaching different nu_K are proved apart by a finite exact computation.
+
+P14 (0.9). A sideways tree built from wheel 0 reproduces the kit: white wheels 2, 7, 28, 399, 53207, then 58286 on A0 and 72575 on B0, with no other white wheel below 87866, and 1, 2, 3, 4 cycles at the kit's thresholds.
+  Counterfactual: a bug, or a misreading of branch/extend. Stop and fix.
+P15 (0.7). At K = 87867 the 53 classes of width 10 take between 28 and 45 distinct nu values (random throw into 64 sectors gives about 36).
+  Counterfactual: far fewer means fork bits are not spreading classes; the certificate then separates little.
+P16 (0.6). Deeper forks keep separating: distinct nu at width 8 reaches all 23 classes by K = 300000, which would make M(8) = 23 exact.
+  Counterfactual: two classes equal through all computed depth means completeness of nu is in doubt; report the pair.
+P17 (0.5). Completeness conjecture, not testable to the end: nu separates every two rows that do not merge.
+  What would refute it: a pair with nu equal at a depth far beyond their damage front, while the plateau says unmerged.
+Limits fixed in advance. C programs, each run under 5 minutes on the M5 under run_capped; deeper or wider work goes to Intel by request, not here. No claim about Q01.
+Record searched: GC2711, GC2714, CL753, Rule30FourLeftSides (extend, branch, rows_finite, *_return, white_*), Rule30LeftUnbounded (D_infinitely_many_white, D_whiteCount_unbounded, D_least_period_unbounded), Rule30LeftReset, AM-2 s6, genealogy 25.
+
+P14 HELD, exactly (wheels, cycles and thresholds). The tree is KNOWN: Gravner-Griffeath 2012 s8, kit four sides, CL738 sixteen sides in Lean through 894,235; reproved here. Wheel 87866 is the next white wheel, which is why the kit stops there.
+Note before the row run, after reading atlas 21.10-21.11 and CL746: nearly all rows take one fate at each fork, because fronts lock to a common clock. My coin-flip reasoning behind P15 and P16 is therefore suspect. P15 and P16 stand as written; I now expect them to FAIL, with nu separating little beyond the phases.
+Control bug, kept: left_nu.c first cleared one buffer only, and nu_control.py caught it (15 against 12 values). Fixed before any result below.
+
+Row results at K = 894236, W <= 8 (run stopped by my own 280 s cap at 69 rows, W = 9 partial). Distinct nu equals the class count at W <= 6, giving exact M(1..6) = 1, 2, 2, 3, 5, 9. W = 7: 13 of 15. W = 8: 17 of 23. P16 FAILED. No separation beyond level 87868, the seed strip's doubling wheel.
+
+Clock test, written before the run.
+Hand claim. For g <= width let tau_g(Y) be the least tick from which V_g(F^t Y) is on its cycle of L_g. Then tau_g(FY) = tau_g(Y) - 1 while positive, so theta_g(Y) = tau_g(Y) + width Y is F-invariant, and equal for rows merged before tau_g. It is an integer, finer than nu_g, which sees only a residue.
+P18 (0.65). Fronts lock: for large g, theta_g(Y) - theta_g(1) is constant in g for most classes at W <= 8 (CL746 says walks lock at a constant clock offset).
+  Counterfactual: drifting offsets mean no integer clock, and nu is all the left side offers.
+P19 (0.5). Most of the W = 7 and 8 nu-collisions have different locked clocks.
+  Counterfactual: equal clocks with growing damage means the left side cannot separate them at all, and P17 (completeness) is in serious doubt.
+Controls: theta F-invariant on rows and images; merged rows give equal theta at large g. K = 100000, under a minute.
+
+Clock results, W <= 8. P18 HELD: every class has an offset constant to the tick across depths 79000 to 199800. P19 HELD in part: 7 of 9 nu-collision pairs at W = 7, 8 have different clocks, always by a multiple of 32; (129,154) and (145,157) share a clock. First run of this test was invalid and is not used: zsh did not split the depth list, and depths below 0.75 K are unobservable.
+
+Written before the next run.
+P20 (0.7). Clocks cannot explain exponentially many classes: distinct (nu, clock) over M(W) falls with W, below 0.6 at W = 14.
+  Counterfactual: a ratio staying near 1 makes the clock nearly complete, and the left side would decide futures after all.
+P21 (0.6). For same-clock unmerged pairs the first differing wheel stays within 2% of the strip front, so the damage hugs the front.
+  Counterfactual: damage far below the front would mean two separate front processes.
+Replay: Python big integers recompute nu at K = 87868 for the classes of W <= 6, independently of left_nu.c.
+
+Final results of the never-merge block. P15 FAILED (25), P16 FAILED (17), P17 unresolved, P18 HELD, P19 HELD (7 of 9), P20 HELD (0.474), P21 HELD numerically, with a growing gap. Replay: Python reproduces W <= 6. Full report: reports/SW02-NEVER-MERGE.md.
