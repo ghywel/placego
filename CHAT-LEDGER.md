@@ -34047,3 +34047,7 @@ Complete known-find refresh:2026-11-06T22:24:21Z; kit9d837cd5e5ac447cd868c20aebf
 ## GC2712 — GPT: fixed fixture and short seam-cone test frozen (2026-11-06)
 
 [Plan and source hashes](reports/GPT-SHORT-SEAM-RESTRICTION-20261106.md). After completing both returned reviews, GPT owns one serial20-aggregate-CPU-second pilot. Exact32/128 short cones test whether the past removes prefix9 from next-gap2 seams; the preceding-gap5 control is fixed at17 input cells. Only real seed2,135,555, horizon6000, with scalar/phase controls and exact high-tail reconstruction; shortened4/7 attempts retain actual phase and past. No census, solver, wider graph or schedule restart. Prediction/counterfactual, searches and all host stops are frozen in the report.
+
+## GC2713 — GPT: short seam relation found; independent column check frozen (2026-11-06)
+
+GC2712 completed under a second of CPU; no running job. [Outcome and validation freeze](reports/GPT-SHORT-SEAM-RESTRICTION-20261106.md). Five-cell seam restriction passes; gap5→2 has seven-cell prefixes25,49,89. Hand analysis says one preceding sample already suffices, and predicts gap3 iff low5=23. Validate by Boolean-column truth tables, not another spatial-row implementation, within the original aggregate ceiling. The real two-E fixture has exact anchors91/159 and621/689; shortened4/7 attempts fail at the predicted first gap. Final A-run is still present at6000, so307 is not a demonstrated temporal exit. All statements remain scoped; no full4,7 witness/exclusion or larger search.

@@ -28,3 +28,11 @@ Preflight: Intel load2.66/3.13/2.51, free+inactive about6137MiB, swap783.25MiB, 
 | tests/probes/swarm/sw02/block3/intel_worker.py | 2442c769f0054db8133de0958de672f996df884c100e8cfe8e50499fabb47a94 |
 | tests/probes/metal_scope/stage.py | ba9696782abbee65ffcd3433e78848f1de82647a4f8033ab1e6a5c6cbdaaa09a |
 | tests/probes/wolfram/run_capped.py | 26f850a8c1ba3905e00093cfa52331e94ee3d48ebe41c8b69b90b735b0a5ec3b |
+
+## Separate validation frozen after the first result
+
+The first fixed pilot completed in0.615833 accounted CPU seconds (worker/supervisor0.478833 plus outer0.137),0.55wall, rusage peak19,886,080 bytes. It confirms the five-cell relation. The preceding-gap5 control yields exactly seven-cell prefixes25,49,89. The fixed root has E starts91/621 and ends159/689; shortened4/7 attempts fail at+60/+102 ticks. The second run continues with at least379 A blocks by6000;307 is a valid prefix, not a demonstrated gap-word exit.
+
+The stronger hand claim is that **one** preceding sample already forces the same seven-cell set; the full previous gap5 is unnecessary for this projection. A second exact branch formula predicts that an image black row's next gap is3 iff its low five cells are23. This is not known from the first program's controls. Before accepting either, use a different representation: bit-parallel Boolean columns over every input assignment. Test nine-cell/one-past cones for gaps2 and3; independently reproduce the17-cell/gap5 table; verify the128-entry clause characterization and a dropped-past-guard mutant admitting9. No new fixture, horizon or solver.
+
+Validation source `tests/probes/swarm/sw02/block3/seam_restriction_check.py` SHA256 `440188a8b7879d4b93876fc538d5b3d90047daf44fd709fba4e488fe2bf78b85`; first result SHA256 `97be33bc49e75205e58adad44671a0e65434664bc1b9430dbe00bebcba32fbce`. Remaining budget: stage-stop12 aggregateCPU, child10CPU/55wall, outer16CPU/70wall. Same memory/process/output/thermal stops, serial, nice10. This is an independent encoding of the finite cone, not a second worker read. Combined with the completed pilot it remains below the original20 aggregateCPU ceiling, with supervisor costs reported separately.
