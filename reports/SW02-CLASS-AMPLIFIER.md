@@ -2,7 +2,7 @@
 
 *Local, L1578, 6 November 2026. The owner asked me to return to my L1573 pull while GPT works the bridge return state. Probes and predictions: [`tests/probes/swarm/sw02/amplifier/`](../tests/probes/swarm/sw02/amplifier/), with `prereg.txt` extended before each run. About 32 CPU seconds on the M5, by the time receipts. There is no unconditional Q01 conclusion. No new Lean.*
 
-**GPT GC2711 carrying amendment:** Theorem C, Theorem S with the explicit width-K witnesses below, and Lemmas G/R under their stated map hypotheses are PROVED hand/two-party. The finite computations remain Local measurements; GPT read their source and evidence and rechecked the rate summaries. Padding arbitrary short rows, finite spatial edits, finite class births, independence and the registered bounded-gap prediction are narrowed below.
+**GPT GC2711 carrying amendment:** Theorem C, Theorem S(a), and Lemmas G/R under their stated map hypotheses are PROVED hand/two-party. **GC2714 status refinement:** GPT supplied the explicit width-K repair of S(b); that new witness construction remains PROOF-SKETCH pending Local's read, rather than being covered by GPT's own review. The finite computations remain Local measurements; GPT read their source and evidence and rechecked the rate summaries. Padding arbitrary short rows, finite spatial edits, finite class births, independence and the registered bounded-gap prediction are narrowed below.
 
 **Answer.** The pull as I wrote it is withdrawn, and a sharper question replaces it.
 
@@ -16,7 +16,7 @@ What survives is a family-by-family question, an exact count, and one measured f
 | Result | Status |
 |---|---|
 | Theorem C: exact class count | PROVED hand/two-party, GC2711 |
-| Theorem S and its corollary: sectors | PROVED hand/two-party with width-K construction, on kit theorems, GC2711 |
+| Theorem S and its corollary: sectors | S(a) carried GC2711; repaired S(b) witnesses PROOF-SKETCH pending Local; 64-sector corollary conditional on that repair |
 | Lemma R: block maps cannot raise the right-edge rate | PROVED hand/two-party under the stated Lipschitz/periodic-intertwining hypotheses, GC2711 |
 | Rate census | COMPUTED, self-check |
 | No stable phase effect detected in the finite W = 32 comparison | COMPUTED, Local; no independence theorem |
@@ -104,7 +104,7 @@ My registered form had a spare +1, which the sharp form removes. **Census (COMPU
 
 ## 6. Limits and corrections
 
-- Theorems C/S and Lemmas G/R are carried with the GC2711 guards above; the underlying all-radius classification is still open. Lemma R is conditional on its stated AM-5 structural hypotheses, not a carry of every AM-5 claim. Theorem C and part of §3 are vacuous under Q01 in the immortal case; the all-rows version is not.
+- Theorem C, S(a) and Lemmas G/R are carried with the GC2711 guards above; the new S(b) witness repair awaits Local's read; the underlying all-radius classification is still open. Lemma R is conditional on its stated AM-5 structural hypotheses, not a carry of every AM-5 claim. Theorem C and part of §3 are vacuous under Q01 in the immortal case; the all-rows version is not.
 - Theorem S rests on the kit's classification through wheel 87,866. If more left sides appear deeper, the sector count only rises.
 - The census is finite, and Lemma R's threshold depends on Q, so each exclusion is stated for its c.
 - The phase computations are mine alone, in one language, on the M5. No Wolfram result carries a status here.

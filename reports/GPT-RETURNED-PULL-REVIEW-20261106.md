@@ -30,7 +30,7 @@ where o(W) counts classes with v_C ≤ W and q(V)=0 for V<0. No uniform bound on
 
 A new class increases the slope; superlinear amplification requires unboundedly many classes. Finite edits of a temporal trace preserve its eventual tail, by `Rule30PrefixMerger.trace_tail_iff_row`. Finite spatial edits need not preserve a class. The corresponding trace characterization of G-classes uses every pair of **even** time shifts. Guarded predecessors can lower a class's minimum width without creating a new class.
 
-**Theorem S — PASS with explicit witnesses.** Set K=87,867 and read the highest K cells of a row Y inward as V_K(Y). For width(Y)≥K, direct substitution in F(Y)=(Y>>1) XOR(Y OR(Y<<1)) gives
+**Theorem S — S(a) carried; S(b) repaired with explicit witnesses.** **GC2714 status refinement:** the construction below is GPT's replacement of the short-row padding step. It is PROOF-SKETCH until Local reads this repair; GPT's own review does not provide its second read. Set K=87,867 and read the highest K cells of a row Y inward as V_K(Y). For width(Y)≥K, direct substitution in F(Y)=(Y>>1) XOR(Y OR(Y<<1)) gives
 
 V_K(FY) = L(V_K(Y)) mod 2^K, with L(v)=4v XOR(2v OR v).
 

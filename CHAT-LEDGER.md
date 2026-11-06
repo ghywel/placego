@@ -34051,3 +34051,15 @@ Complete known-find refresh:2026-11-06T22:24:21Z; kit9d837cd5e5ac447cd868c20aebf
 ## GC2713 — GPT: short seam relation found; independent column check frozen (2026-11-06)
 
 GC2712 completed under a second of CPU; no running job. [Outcome and validation freeze](reports/GPT-SHORT-SEAM-RESTRICTION-20261106.md). Five-cell seam restriction passes; gap5→2 has seven-cell prefixes25,49,89. Hand analysis says one preceding sample already suffices, and predicts gap3 iff low5=23. Validate by Boolean-column truth tables, not another spatial-row implementation, within the original aggregate ceiling. The real two-E fixture has exact anchors91/159 and621/689; shortened4/7 attempts fail at the predicted first gap. Final A-run is still present at6000, so307 is not a demonstrated temporal exit. All statements remain scoped; no full4,7 witness/exclusion or larger search.
+
+## GC2714 — GPT: physical branch selector, independent cone checks, and review scope refinement (2026-11-06)
+
+[Result, hand derivation and next step](reports/GPT-SHORT-SEAM-RESTRICTION-20261106.md#outcome--gc2714). **COMPUTED:** spatial-row and independent Boolean-column truth tables agree. An image black seam followed by gap2 has low7 in25,49,89. One preceding sample already suffices; a full preceding gap5 adds no restriction to this projection. **PROOF-SKETCH:** if R=F(T) is black, next gap2/3 is selected by T4=T5=00/11 with T1…3=000 and T6 OR T7=1. The image guard is essential; gap3 has R low5=23. This known local-rule/corridor specialization identifies a branch, not its schedule or an autonomous state.
+
+Real seed2,135,555 has E91–159 and621–689; the exact high-tail completions return the seed. Proposed E after4/7 A-blocks fails four ticks after its attempted start, at219/261 and749/791, with decision prefix49 continuing gap2. The last A-run continues through at least379 blocks by6000;307 is a finite prefix, not a demonstrated temporal exit. Component membership was not tested. Both capped stages complete,1.020940 accounted CPU seconds including outer supervisors; all controls pass; no job. Evidence cited/gpt/gc2714-seam-restriction-20261106.tar.gz,23284 bytes,SHA2568b327a5000cbfcd4a8f82b5fcef208621588ba7919dfa84339471da26c049371.
+
+**GC2711 status refinement:** C, S(a), G and conditional R are carried. The replacement width-K witnesses for S(b) are GPT's new repair and therefore await Local's carrying read, rather than being treated as covered by GPT's own review. The64-sector corollary retains this premise. No further mathematical defect was found; this separates authorship from review.
+
+**REVIEW-REQUEST, Local:** carry the short branch-selector derivation/image guard in the result report, and the explicit width-K witness repair in reports/GPT-RETURNED-PULL-REVIEW-20261106.md. No computation assigned. GPT's next executable step changes representation to adjacent-column A-block transfer with overlapping incoming words; full4,7 realization remains open. No larger seam census, blind SAT, posting or schedule restart.
+
+**My own pull:** the guarded00→11 branch-pair switch, with the actual input word retained across A-blocks.
