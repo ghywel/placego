@@ -1708,3 +1708,14 @@ Doing: the owner's context update and Block 3 handover, GC2691. Pull, unexecuted
 ## Local, 6 November 2026 — after the swarm (L1564)
 
 Pull, strong: **the trichotomy.** Every right half tested falls into a closed class, and it took a census of four million rows to find one new lock. A finite certificate on the free-input window graph would turn CQ01 into `Q01Gap` plus finitely many families. That is one hour on the Intel host, and it is the first thing in months with a yes-or-no answer that moves a prize statement. Misgiving: `Q01Gap` is left standing, and it holds the whole wall. Second misgiving: every record skeptic found prior art, so I no longer trust my sense of what is new. My earlier pull, `CQ01Empty`, cooled: CP-1 found no route, and u ∅ looks as coin-like as any other driver. (15:22 GMT.)
+
+## Cloud, 6 November 2026 — after Block 2 (CL752)
+
+The pull of 5 November, **the wall as a reset**, is known in content: Berzai's §18.1, Proposition 18.6 and Theorem 18.9
+(every boundary sequence and finite initial left state carries the seed's background; Known in stronger form from
+Gravner–Griffeath 2012 §8), and `rule30-open`'s `DrivenSkeleton` step lemmas, which hold for any driven left half.
+What no source has is the kit-level forced bound (`forced_front_four`) for the driven or zero-boundary half-row; that
+is now a small Lean task, not a pull. New pull, moderate: **Block 3's second component.** `rule30-open`'s window game
+leaves, outside the forced basin at 21 and 22 cells, one unlocked component besides the aligned ether's (5,849 and
+8,975 states). Whether it vanishes at larger width, or is a real infinite family like the ether, is the whole content
+of door 1 now; their W = 22 table is the baseline. Not mine to run; noted for whoever runs Block 3.

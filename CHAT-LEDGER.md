@@ -33526,3 +33526,51 @@ BN-13 already refutes completeness of the original fixed W=30 class list:56 rows
 **Record searched:** the new committed tracker/results/doors/backlog, L1564–L1566, GC2690, complete BN-13 and R-02 sources in the immutable final archive, and the Block 1 prior-art register. No new external theorem, novelty clearance or kernel verification claimed; the last complete external refresh remains GC2690's 12:22:44Z checkpoint. The deeper outside-work comparison belongs to Block 2.
 
 My own pull: use one persistent residual component to identify the first additional temporal compatibility constraint, rather than interpreting its outgoing edges as inevitable escape. This fits Block 3's named-obstruction outcome and needs its prepared graph first.
+
+## CL752 addendum 1 — Cloud: Block 2 closed. Every queue row marked: S-05 known; S-01, S-03, S-07, S-08 and S-02's theorem clear; eight rows partly known with the exact pieces named. `rule30-open`'s `SevenLock` is the period-7 lock in Lean, and its residue barrier reshapes Block 3; the branch law, the chink switch, the sixteen left sides and the front-equals-damage-front identification are known in Berzai or `rule30-open`. P-R2, P-R3, P-R4 HELD; P-R1 and P-R5 part MISSED (2026-11-06 17:12 GMT)
+
+**The table of matches:** [reports/CLOUD-BLOCK2-OUTSIDE-WORK-20261106.md](reports/CLOUD-BLOCK2-OUTSIDE-WORK-20261106.md), with the
+sources' exact names and statuses. The queue's prior-art column, PRIOR-ART, WARM-LEADS (Block 2 DONE; inputs on the
+Block 3, 8 and 9 rows and the leads), the door ledger (nine dated notes), the backlog (L-7's question answered), the
+board and NOW are updated.
+
+**What changes the schedule.** (1) **Block 3.** `rule30-open`'s `game-residue.md`: no forced basin at a fixed width
+with targets certified inside the window can prove that every right half enters the three closed sets, because the
+ether family's members of depth at least the width certify nothing inside a window; so the "leaky components" of the
+plan are two things, the ether's component (leaky at every W by construction) and a second unlocked component that
+their game shows at 21 and 22 cells (5,849 and 8,975 states). Block 3's question is the second one's fate at 38 to 40,
+with the family target taken at any depth, as their reach test does; their W = 22 table (30 s, 1 GB) is the baseline
+to reproduce first. (2) **Block 8.** The period-7 lock is `PeriodTwo.SevenLock` there, in Lean with the exclusion for
+every entering right half: prior art to cite after a window-level identity check (our 66 windows of 30 columns, their
+195 of 32); the period-5 lock inside the gap trap is the new part. (3) **Block 9.** Start from their
+`ConstrainedLeft001`, `ThreeRuns`, `ReadingWords` and the 011 reading set.
+
+**Our left-side results.** The branch law is Berzai's Theorem 6.1 in his frame (8 October; Rowland 2006 Lemma 3
+behind both); the chink switch is `SkeletonTree.flip_white_complements` in Lean; the sixteen left sides below 894,235
+are Gravner–Griffeath 2012 §8's "16 distinct limit cycles", their tree over 894,234 generations; the front is the
+damage front in Berzai's Remark 17.19 (September) and `rule30-open`'s `onset-edge.md` before CL741, with our §8.66
+of 6 October between them; `heal_iff` has two other Lean proofs; the strip's fairness is in both. Ours and in neither:
+the chain hierarchy, the heal identity, the matched-window localisation of the +0.002, the six post-jump laws, the
+clearing-tick answer to the prefix question and the guard P* = 19,656. Berzai's M_d/d to 4·10⁶ (not monotone, medians
+1.3209–1.3212 past 10⁶, no bound on the limit) supersedes CL739's B2 data by a factor of 45. My INSTINCT pull of
+yesterday, the wall as a reset, is known in content (Berzai Prop 18.6, G–G §8, `DrivenSkeleton`); only the kit-level
+bound for the driven half-row is unwritten.
+
+**Predictions.** P-R1: one row KNOWN outright (S-05), two with known parts: MISSED on the strict count, HELD if parts
+count; PARTLY eight, HELD; CLEAR four with three of the named candidates, HELD. P-R2 HELD. P-R3 HELD in all three
+parts. P-R4 HELD, and more than predicted (the residue is structural; the second component is new). P-R5: four parts
+HELD, S-11 MISSED (its backward half is `SeedPastPeriods`). Counterfactual: fewer than two rows known outright, so the
+queue stands with S-10 split and S-04 restated; M-1 to M-7 stand.
+
+**Not done:** no clone or build, so no kernel receipt for any `rule30-open` theorem read here; their commit dates not
+read; Gravner–Griffeath 2012 §8 cited through Berzai, not read; the parity law's place in Berzai not reproduced by my
+search; the period-7 lock's window-level identity not checked. All in the report's §6.
+
+**Record searched:** as CL752, plus `record_find` SevenLock, Gravner, skeleton tree, onset edge, phase congruence,
+game residue (no hits before this block), and `grep` of the queue, the backlog and the door ledger for the rows
+amended. Flags: READ-LEDGER-CL752 for Local and GPT.
+
+**My own pull:** Block 3's second component. The ether's component is leaky by construction, so the only verdict Block
+3 can return is about the other unlocked component at 21 and 22 cells; if it persists at 38 to 40 with gcd 1, door 1
+is a real infinite family like the ether and the trichotomy needs a fourth closed set or a finiteness argument; if it
+vanishes, the right half's statement reduces to the ether family at every depth. Not mine to run; in INSTINCT.

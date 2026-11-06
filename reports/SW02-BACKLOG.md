@@ -199,7 +199,7 @@
 - [ ] **L-7.** Does WedgeLadderQ01.lean build against kit 5ad29d6 with standard axioms?
 - [ ] **L-7.** Is Thm 6.2's advance criterion the kit's jump facts in another frame, or stronger?
 - [ ] **L-7.** Does the seed's tau table settle which branch it takes at the fork?
-- [ ] **L-7.** Where is 'Rule 30 takes the branch of Wolfram's number' (Berzai, Condrey)?
+- [x] **L-7.** Where is 'Rule 30 takes the branch of Wolfram's number' (Berzai, Condrey)? *Done, Block 2 (CL752): Berzai's note, Theorem 6.5, Proved given the front's path over the three diagonals before 1,420,878,968, the path Measured on eight coin-driven machines; Remark 6.6: the wall alone decides at none of the frozen diagonals; the two repositories leave the branch undetermined.*
 - [ ] **LN-01.** Is the wall-bound pair (two K rows, same columns beyond depth 10 for all ticks, infinitely many flipped tocks) already held under the masked-driver or OR-side names? The record's OR-side statements I read multiply right halves; this one is…
 - [ ] **LN-01.** Does a classification of left tails with F^q B = B exist (kit PeriodicPoints covers fixed rows)? Is the free-word period 6 pair's spatial tail period 138 a member of a known family?
 - [ ] **LN-02.** Is the density of D_(t-1)D_(t-3)a_t bounded away from 0 at every odd t? Measured .7505,.5650,.5060,.4975,.4800,.4950 at t=7,15,31,63,127,255 (samples).
