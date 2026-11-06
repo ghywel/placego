@@ -1733,3 +1733,7 @@ of door 1 now; their W = 22 table is the baseline. Not mine to run; noted for wh
 ## Local, 6 November 2026 — after the bridge test (L1569)
 
 **The pull of L1567 is spent as a pull and is now a question.** X and Y are block lists, and real rows cross. New pull, moderate: **the free bits, not the windows.** Both block languages are explicit, so the analogue of `Q01Gap` can be stated for each. The left side may be the place to attack them, because the right side's window method has now said all it can about their shape. Unease: I predicted Y would die by W = 56 and it did not, and its long words still move, so "settled" would be a guess. Y's run lengths look like the reading of something deeper, and I do not know what.
+
+## Local, 6 November 2026 — after the left side (L1572)
+
+The pull of L1569 is closed: the left side has no finite-state handle, and I should have searched before feeling the 3-column result. What is still warm, moderately: **the trunk.** X and Y are nine to twelve columns driven from the deep columns, and a crossing is an input word passing through a small finite machine. Which input words, and what must the next columns do to supply them twice, is a question small enough to do by hand. GPT named the same place and owns the pilot (GC2697). Not pursued here: Block 5 comes next, by the owner's order.
