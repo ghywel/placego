@@ -1,0 +1,410 @@
+{
+"claim": "partial",
+"declared": [
+{
+"kind": "def",
+"name": "Rule30Submission.Bad",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.adjacent",
+"standardAxioms": true
+},
+{
+"kind": "def",
+"name": "Rule30Submission.check",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.check_xor",
+"standardAxioms": true
+},
+{
+"kind": "def",
+"name": "Rule30Submission.cubeSum",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.cubeSum_add",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.cubeSum_congr",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.cubeSum_const",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.cubeSum_le",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.cubeSum_snoc",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.distance_two",
+"standardAxioms": true
+},
+{
+"kind": "def",
+"name": "Rule30Submission.firstCheck",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.first_check_balanced",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.first_check_count",
+"standardAxioms": true
+},
+{
+"kind": "def",
+"name": "Rule30Submission.flips",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.four_bools",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.four_sum",
+"standardAxioms": true
+},
+{
+"kind": "def",
+"name": "Rule30Submission.gap",
+"standardAxioms": true
+},
+{
+"kind": "def",
+"name": "Rule30Submission.lastWhite",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.lastWhite_of_not_ok",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.lastWhite_row",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.not_both_bad_adjacent",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.not_both_bad_two",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.not_of_xor",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.ok_rowList",
+"standardAxioms": true
+},
+{
+"kind": "def",
+"name": "Rule30Submission.ones",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.ones_le",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.overlap",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.overlap_pair",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.pair_count",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.pow_four_more",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.pow_one_more",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.pow_three_more",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.pow_two_more",
+"standardAxioms": true
+},
+{
+"kind": "def",
+"name": "Rule30Submission.rowList",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.rowList_cell",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.rowList_congr",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.rowList_length",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.shifted_sum",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.toRow_rowList",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.two_of_three",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.two_tick",
+"standardAxioms": true
+},
+{
+"kind": "def",
+"name": "Rule30Submission.word",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.word_ge",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.word_lt",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.word_tail",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.wrong_cell_dead",
+"standardAxioms": true
+},
+{
+"kind": "def",
+"name": "Rule30Submission.cubeSum.match_1",
+"standardAxioms": true
+},
+{
+"kind": "def",
+"name": "Rule30Submission.lastWhite.match_1",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.ones.eq_1",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.rowList.eq_1",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.rowList.eq_2",
+"standardAxioms": true
+},
+{
+"kind": "theorem",
+"name": "Rule30Submission.rowList.eq_def",
+"standardAxioms": true
+},
+{
+"kind": "def",
+"name": "Rule30Submission.rowList.match_1",
+"standardAxioms": true
+}
+],
+"headlines": [
+{
+"axioms": [],
+"found": true,
+"kind": "theorem",
+"name": "Rule30Submission.two_tick",
+"ok": true,
+"problems": [],
+"typeMatches": true
+},
+{
+"axioms": [
+"propext",
+"Quot.sound"
+],
+"found": true,
+"kind": "theorem",
+"name": "Rule30Submission.check_xor",
+"ok": true,
+"problems": [],
+"typeMatches": true
+},
+{
+"axioms": [
+"propext",
+"Quot.sound"
+],
+"found": true,
+"kind": "theorem",
+"name": "Rule30Submission.four_sum",
+"ok": true,
+"problems": [],
+"typeMatches": true
+},
+{
+"axioms": [
+"propext",
+"Quot.sound"
+],
+"found": true,
+"kind": "theorem",
+"name": "Rule30Submission.pair_count",
+"ok": true,
+"problems": [],
+"typeMatches": true
+},
+{
+"axioms": [
+"propext",
+"Classical.choice",
+"Quot.sound"
+],
+"found": true,
+"kind": "theorem",
+"name": "Rule30Submission.overlap",
+"ok": true,
+"problems": [],
+"typeMatches": true
+},
+{
+"axioms": [
+"propext",
+"Classical.choice",
+"Quot.sound"
+],
+"found": true,
+"kind": "theorem",
+"name": "Rule30Submission.adjacent",
+"ok": true,
+"problems": [],
+"typeMatches": true
+},
+{
+"axioms": [
+"propext",
+"Classical.choice",
+"Quot.sound"
+],
+"found": true,
+"kind": "theorem",
+"name": "Rule30Submission.distance_two",
+"ok": true,
+"problems": [],
+"typeMatches": true
+},
+{
+"axioms": [
+"propext",
+"Classical.choice",
+"Quot.sound"
+],
+"found": true,
+"kind": "theorem",
+"name": "Rule30Submission.two_of_three",
+"ok": true,
+"problems": [],
+"typeMatches": true
+},
+{
+"axioms": [
+"propext",
+"Quot.sound"
+],
+"found": true,
+"kind": "theorem",
+"name": "Rule30Submission.first_check_count",
+"ok": true,
+"problems": [],
+"typeMatches": true
+},
+{
+"axioms": [
+"propext",
+"Classical.choice",
+"Quot.sound"
+],
+"found": true,
+"kind": "theorem",
+"name": "Rule30Submission.first_check_balanced",
+"ok": true,
+"problems": [],
+"typeMatches": true
+}
+],
+"importsStatements": true,
+"module": "Rule30Submission",
+"newAxioms": [],
+"official": [],
+"reasons": [],
+"replay": {
+"constants": 98,
+"ok": true
+},
+"verdict": "pass",
+"verifiedTargets": []
+}

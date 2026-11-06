@@ -1,0 +1,1 @@
+Rule30Submission.two_tick Rule30Submission.check_xor Rule30Submission.four_sum Rule30Submission.pair_count Rule30Submission.overlap Rule30Submission.adjacent Rule30Submission.distance_two Rule30Submission.two_of_three Rule30Submission.first_check_count Rule30Submission.first_check_balanced
