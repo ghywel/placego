@@ -33761,3 +33761,15 @@ My own pull: the return state after an excursion; one short separation has alrea
 **Next:** Block 5, by the owner's order.
 
 **Record searched:** in the note.
+
+## GC2699 — GPT: L1572 received during closeout; finite-state, reduction and entropy claims narrowed, no new run (2026-11-06)
+
+**Re L1572.** Safely merged4b7e213d, preserving both workers’ append/backlog additions; full note and all three probe sources read. [Scoped review](reports/GPT-BLOCK4-BRIDGE-HISTORY-20261106.md#gc2699-scoped-read-of-locals-newly-arrived-left-side-note). Finite spreading/compression does not prove that Theta has no finite-state transducer; even a large finite sample can be reproduced by a sufficiently large finite machine. Neither a broad cone nor a narrow interface alone proves the corresponding unbounded automaton statement. The finite observations are retained, the blanket impossibility and route closure are not carried. Concrete route around: distinguish residual future-output states at excursion boundaries, as GC2698’s counterwords already do, rather than inferring infinite-state behavior from visual disorder. This is not a reopening of the kit’s separately proved finite-ranking obstructions.
+
+The displayed CQ01 reduction needs coverage of the gate and resolved cases. If L_W means only X/Y, its Q01[L_W] does not discharge Q01Gap. Correct sufficient form: Q01Gap AND Q01[L_X] AND Q01[L_Y] implies CQ01, with valid C(W)/target/language certificates and the existing periodic exclusions; quantify over finite R in the conclusion. Unrestricted Theta realization alone closes no route that also retains finite-support or actual-history constraints. The001/011 finite-game negative is prior art at those words, with no automatic period-two transfer.
+
+For nested compact subshifts, entropy tends to the intersection entropy; identifying that intersection with genuine right-half histories needs a separate coherent-lifting argument. Neither the finite table nor the fitted value proves a positive limit. Numerical entropy values remain self-check computations. Likewise the checked9–12-column trunk is not a uniform depth bound. The report and NOW now state these limits.
+
+C(W) now cites kit Rule30PeriodFourSkeleton.Cert.sound_bad as a methodological ancestor. Its actual-seed/rank/masked-Jen hypotheses differ from C(W)’s generic right-half graph classification; no identical-theorem or novelty claim. All other L1572 numerical output keeps its original source status. Block4 PASS and GC2698’s bridge counterwords stand. Local continues Block5 on the owner’s order; no GPT job, posting or heartbeat restart. Next GPT bridge representation is the exact return automaton, not a larger blind SAT search.
+
+My own pull: preserve the state linking consecutive excursions; it is now a concrete, finite object with an observed history-dependent constraint.

@@ -73,4 +73,12 @@ The stage completed rc0:38.686791 accounted CPU seconds, plus0.713 seconds of ou
 
 **Next executable step:** construct the return automaton at complete E boundaries from the existing X DFA. Label transitions by exact ultimately periodic sets of possible n. This retains the state discarded by the one-separation table and can test which short/long histories reset that state. Reopen the full physical-history problem only after this supplies a smaller compatibility relation or a constructive witness route. Block4 is DONE; later packaging/posting and GPT schedules remain deferred.
 
+## GC2699 scoped read of Local's newly arrived left-side note
+
+L1572 arrived during closeout and is safely merged. Its complete report and three probe sources are read. The numerical observations retain their self-check status; no duplicate computation is run. The report now separates finite spreading/compression data from the unproved assertion that `Theta` has no finite-state transducer. Neither a finite disorder test nor a narrow interface settles that general question. The observed9–12-column trunk also remains an observation on the tested rows, not a uniform depth bound.
+
+The reduction to CQ01 now retains Q01Gap and both unresolved language exclusions, valid target certificates and the periodic cases. A residual X/Y language exclusion by itself does not cover entry into the gate. Unrestricted Theta realization excludes bare trace-only contradictions, without closing every finite-support or history-compatible route. The001/011 finite-left-game negative is not automatically a period-two theorem.
+
+Nested compact-subshift entropies converge to the entropy of the intersection. Equating that intersection with genuine right-half histories needs the separate coherent-lifting argument, and no finite table or fitted extrapolation proves a positive limit. Kit Cert.sound_bad is cited as a prior-art ancestor with its actual-seed/masked-Jen hypotheses; it is not asserted to be identical to the generic C(W) classification.
+
 My own pull: the return state after an excursion. We now have an explicit case where the preceding short gap changes what can happen next; preserve that state instead of treating excursions as independent choices.
