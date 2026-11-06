@@ -1,4 +1,4 @@
-Rule30FrontierChart: Q01 implies mortality, so Q01, mortality and a repeat budget at every length are one statement (PORTAL-ID)
+Rule30FrontierChart: Q01 implies mortality, so Q01, mortality and a repeat budget at every length are one statement (R30-20261106-45f6e9)
 
 This adds `lean/Ruliology/CellularAutomata/Rule30FrontierChart.lean`, with its `public import` line in `lean/Ruliology.lean` and a row in *Added in the kit*. It imports `Rule30AlternatingTraceBridge` and `Rule30ZeroBoundary`. It also changes the sentences in the `Rule30SurvivalBridge` and `Rule30AlternatingTraceBridge` docstrings and catalogue rows that call the converse not known. No proof in those two modules changes.
 
@@ -26,4 +26,6 @@ This adds `lean/Ruliology/CellularAutomata/Rule30FrontierChart.lean`, with its `
 
 **What it does not do.** It proves no budget, capacity bound or mortality, and no prize problem is settled. The equivalence says nothing about which form is easier to prove.
 
-Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
+Portal entry: [R30-20261106-45f6e9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261106-45f6e9), **Lean Verified**.
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)

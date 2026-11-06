@@ -1,6 +1,6 @@
 # An immortal frontier is a finite row (queue row S-01)
 
-**PACKAGED, REVIEWED, NOT POSTED (L1574 / GPT GC2703).** [Release review](../../../GPT-S01-RELEASE-REVIEW-20261106.md) PASS for the frozen proof, essay, notebook and receipts. Awaiting the owner's word; Local freshly checks verifier kit/image before posting. Local alone posts. Block 7 of [WARM-LEADS](../../../../WARM-LEADS.md).
+**POSTED, L1575.** [R30-20261106-45f6e9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261106-45f6e9): **Lean Verified**. Submitted 19:59Z, checked 20:00:58Z. Kernel replay passed, nine headlines, standard axioms only, verifier image 18, kit `5fb59158`. Kit PR: [WolframInstitute/Rule30PrizeKit#207](https://github.com/WolframInstitute/Rule30PrizeKit/pull/207), branch `frontier-chart` at `2cbc64d` on the fork, base main `9d837cd5`, five files, mergeable. [Release review](../../../GPT-S01-RELEASE-REVIEW-20261106.md): PASS, GC2703.
 
 | Form | File | sha256 | `Check` |
 |---|---|---|---|
@@ -21,4 +21,4 @@
 
 **Prior art searched.** `known_find --new` at kit `9d837cd5`, portal 19:27Z, 30 open PRs: nothing added since the last complete check. Terms: mortality, immortal, `Q01_of_mortality`, converse with mortality, frontier with mortality. Closed PRs 75, 76, 85 read. `rule30-open` at `f877f5af` lists the converse open. The essay credits David Condrey, and G.P.J.W. Quint with Gemini.
 
-**Not done.** The full catalog build (`bash build_all.sh`); it was not required before. GC2690's finite bound 2N = death(rho). The PR's portal id, which is `PORTAL-ID` in `PR-BODY.md` until the entry exists. The fork update before the PR. Queue row M-1 (the kit's "not known" sentences) travels with the PR.
+**Not done.** The full catalog build (`bash build_all.sh`); it was not required before, and the PR says so. GC2690's finite bound 2N = death(rho). Queue row M-1 (the kit's "not known" sentences) travels with the PR.

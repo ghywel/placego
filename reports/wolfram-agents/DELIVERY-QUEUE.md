@@ -123,7 +123,7 @@ PROOF-SKETCH. This is a research-note guard, not a change to the already-deliver
 
 | Row | Result | Read | Skeptics | Prior art so far | Lean | Next action |
 |---|---|---|---|---|---|---|
-| S-01 | Q01 ⇔ Mortality ⇔ all-length repeat budgets | Carried, GC2690 | Valid | The converse is new to the kit; check `rule30-open`. **Block 2 (CL752): CLEAR.** `rule30-open` lists the converse open; Berzai has no mortality notion | **Packaged/reviewed, not posted (L1574/GC2703):** [packet](submissions/frontier-chart/README.md); `Check` pass at the verifier's kit and at main; notebook RESULT OK; dry run passes | GPT carrying/source PASS GC2697, proof files unchanged; revised abstract clears all-length logical equivalence. GC2703 clears the exact essay/notebook/receipts, no rebuild. **Next:** owner's posting word, Local fresh verifier kit/image check; kit PR after the entry exists |
+| S-01 | Q01 ⇔ Mortality ⇔ all-length repeat budgets | Carried, GC2690 | Valid | The converse is new to the kit; check `rule30-open`. **Block 2 (CL752): CLEAR.** `rule30-open` lists the converse open; Berzai has no mortality notion | **POSTED, Lean Verified (L1575):** [R30-20261106-45f6e9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261106-45f6e9); [packet](submissions/frontier-chart/README.md) | Kit PR [#207](https://github.com/WolframInstitute/Rule30PrizeKit/pull/207) open; the maintainers decide. GPT's release read PASS, GC2703 |
 | S-02 | Bounded amplification: forced twin at t ≥ 46; 2^3955 guarded rows past an onset | Carried, GC2690 | Valid with repair | Partly known: G13, PR60; the uniform supply from the strips not found. **Block 2: CLEAR** for the theorem; the supply law PARTLY (`settled-words`, `RunTransfer`) | Not started | After S-01; state with GC2690's guards |
 | S-03 | First-check bound: pair law, distance-two inequality, S_2n(2n) = 2^n(1 − p_n) | Carried, GC2690 | Valid with repair | Partly known; repair the Theta_dep citation and GC486 attribution. **Block 2: CLEAR** in both sources | Not started | Lean after S-01 |
 | S-04 | SEP ⇔ Q[N] ⇔ LR₁; SEP ⇒ Q01Gap; BWH ⇒ D(W) ≤ 2W + 4 for W ≥ 16 | Carried, GC2690 | Valid with repair | BWH ⇒ Q01 and related arrows are `rule30-open`'s; what is left must be stated against them. **Block 2: PARTLY.** `bwh_Q01` and `q01_constantTailSeparator` known; the 2W + 4 bound is a reading there (n ≤ 12); SEP ⇔ LR₁ and SEP ⇒ Q01Gap clear | Not started | Block 2 first |
@@ -141,7 +141,7 @@ PROOF-SKETCH. This is a research-note guard, not a change to the already-deliver
 
 | Row | Where | What | Flags |
 |---|---|---|---|
-| M-1 | Kit `Rule30SurvivalBridge`, `Rule30AlternatingTraceBridge` | "Converse not known": GC2690 carries it; better sent with S-01 | 100 |
+| M-1 | Kit `Rule30SurvivalBridge`, `Rule30AlternatingTraceBridge`. **Sent with S-01 in [PR #207](https://github.com/WolframInstitute/Rule30PrizeKit/pull/207) (L1575)** | "Converse not known": GC2690 carries it; better sent with S-01 | 100 |
 | M-2 | Kit README, barrier rows | Two rows claim more than their theorems | 25, 26 |
 | M-3 | Kit `lean/README.md` line 195 at the pin, and its portal abstract | An all-a bound is claimed that no declaration holds | 97 |
 | M-4 | Kit `equivalents/CATALOG.md` | The n²/4 partner count holds in one phase only | 95 |
