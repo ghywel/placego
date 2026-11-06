@@ -262,7 +262,7 @@
 - [ ] **R-01.** Is Theta_(2n+1) of full degree only for odd n, and what is its exact degree at even n?
 - [ ] **R-02.** Is u empty eventually periodic? Either answer is new: yes gives CQ01Empty by absorption; no is the first aperiodicity theorem for a real driver and refutes Lock for the alternating word.
 - [ ] **R-02.** Does TrapOrPeriodic hold for every finite R? Is it true for infinite R?
-- [ ] **R-02.** Do the two leaky SCCs of the free-input core vanish at some W once the leak-free sets are removed? **Block 3, GC2696: ** two unresolved lineages still survive 40/41, with 32/85 respective 16-gap words at 40. Inspect an actual-history condition on a bridge next; no all-width conclusion.
+- [ ] **R-02.** Do the two leaky SCCs of the free-input core vanish at some W once the leak-free sets are removed? **Block 3, GC2696:** two unresolved lineages still survive 40/41, with 32/85 respective 16-gap words at 40. Inspect an actual-history condition on a bridge next; no all-width conclusion.
 - [ ] **R-02.** What is the 3,5,5,5 word? Is there a closed sub-trap inside the gate trap, and is it realised for ever by any R?
 - [ ] **R-02.** Is the kick word (fives between threes) a better driver coordinate than notches? Its mean is 5 with heavy spread: does the mean have an exact reason?
 - [ ] **R-02.** Does E(L, B) stratify by absorption class?

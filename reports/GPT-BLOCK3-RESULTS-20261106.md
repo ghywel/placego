@@ -6,13 +6,13 @@ Local's implementation at `060a66ae` supplied the mathematics and predictions. G
 
 ## Mathematical verdict
 
-**PROVED hand/two-party: ** Claim C(W) and the parent/pruning argument, with targets valid for the chosen move rule. Every genuine driven right half gives a path in the physical xx graph. A path avoiding the targets eventually stays in one cyclic SCC of its bi-infinite core. LOCKED means its observed column is fixed by cyclic phase; GAP35 constrains all its future black gaps. A higher-width cyclic component projects into one lower-width SCC. LOCKED/GAP35 labels are inherited, so pruning those parent lineages loses no unresolved child component.
+**PROVED hand/two-party:** Claim C(W) and the parent/pruning argument, with targets valid for the chosen move rule. Every genuine driven right half gives a path in the physical xx graph. A path avoiding the targets eventually stays in one cyclic SCC of its bi-infinite core. LOCKED means its observed column is fixed by cyclic phase; GAP35 constrains all its future black gaps. A higher-width cyclic component projects into one lower-width SCC. LOCKED/GAP35 labels are inherited, so pruning those parent lineages loses no unresolved child component.
 
 The gate is a fixed point of **(window, gap count)**, starting at a black bit/count 0. It forces every subsequent black gap to be 3 or 5. The black entry-window subset need not itself be closed under one move. This is why labeling is a valid alternative to forced entry in a fixed-window basin.
 
 If all unresolved components vanished and the targets were certified, this would reduce finite-right-half CQ01 to the existing Q01Gap exclusion. It would not prove Q01Gap, and it would not prove the original statement that every right half enters one fixed list of locks. Conversely, persistent abstract components need not be realized by finite right halves. No conclusion that every possible proof must use right finiteness follows from a failed finite-window method.
 
-**Repair found by smoke: ** lock-7b is closed under xx but has **two exits under pq**, whose moves include a nonphysical boundary pair. The original implementation would have removed it as a pq target at widths 45 and above. C, both replay paths and the tail control now restrict that target to xx. The pq arm ends at 40, so this bad branch affected neither its old smoke data nor the comparison result.
+**Repair found by smoke:** lock-7b is closed under xx but has **two exits under pq**, whose moves include a nonphysical boundary pair. The original implementation would have removed it as a pq target at widths 45 and above. C, both replay paths and the tail control now restrict that target to xx. The pq arm ends at 40, so this bad branch affected neither its old smoke data nor the comparison result.
 
 An independent scalar-cell enumeration checks closure and seven-step output equality on every path of the 66-window physical lock-7, the 33-window physical lock-7b, and the 195-window pq SevenLock. It also reproduces the two negative pq exits. These are **COMPUTED finite checks**, without a new Lean build. Exact kit/BN13 input hashes and the primary SevenLock source at external `f877f5af` match the frozen target data.
 
@@ -37,12 +37,12 @@ The full real-row control reproduces BN13's class counts below 2^22: gate 4,057,
 
 ## Predictions and limits
 
-- **P1: ** the ether size pattern holds in the completed xx/pq arms through 40. No all-width periodic-size law is proved.
-- **P2/P3: ** both unresolved lineages persist at 40 and the widest completed pruned analysis 41; the partial 42 SCC table also has both. This supports the frozen persistence prediction in the tested range only.
-- **P4–P6: ** the 40-column word counts 32/85, sizes in the table and low-16count 1,063 lie inside the predicted bounds.
-- **P7: ** no new CLOSED component appears in the full arms through 40 or the completed pruned unresolved lineage through 41. Full 43/44 was not run.
-- **P8: ** removing the wider lock's cut does not collapse X in the tested OVER runs. Literal “otherwise unchanged” is too strong: at 34, X loses 16 windows for 7 direct cuts; at 35/36 it loses 10/9. OVER is not a proof for all genuine trajectories, and full OVER 40 was not run.
-- **P9: ** all 2,043 selected late-gate rows have a hold of at least 100 sampled steps and the tested strict right-to-left failure order; 1,883 (92.2%) have M=9. The median measured delay is 1.75 ticks/column, but the maximum is 159. This is not a transport theorem. Selection uses entry into the **expanded gate**; it is not an exhaustive replay of the original BN13 population of 2,102 late entries under the 829-window trap.
+- **P1:** the ether size pattern holds in the completed xx/pq arms through 40. No all-width periodic-size law is proved.
+- **P2/P3:** both unresolved lineages persist at 40 and the widest completed pruned analysis 41; the partial 42 SCC table also has both. This supports the frozen persistence prediction in the tested range only.
+- **P4–P6:** the 40-column word counts 32/85, sizes in the table and low-16count 1,063 lie inside the predicted bounds.
+- **P7:** no new CLOSED component appears in the full arms through 40 or the completed pruned unresolved lineage through 41. Full 43/44 was not run.
+- **P8:** removing the wider lock's cut does not collapse X in the tested OVER runs. Literal “otherwise unchanged” is too strong: at 34, X loses 16 windows for 7 direct cuts; at 35/36 it loses 10/9. OVER is not a proof for all genuine trajectories, and full OVER 40 was not run.
+- **P9:** all 2,043 selected late-gate rows have a hold of at least 100 sampled steps and the tested strict right-to-left failure order; 1,883 (92.2%) have M=9. The median measured delay is 1.75 ticks/column, but the maximum is 159. This is not a transport theorem. Selection uses entry into the **expanded gate**; it is not an exhaustive replay of the original BN13 population of 2,102 late entries under the 829-window trap.
 
 The sharp next question is what actual-history constraint removes one of the surviving bridges, or whether that bridge has a genuine realization. Larger unplanned widths or another right-half census are not the next step of this block.
 
@@ -62,7 +62,7 @@ All computation was serial, nice 10, with one OMP/BLAS thread under tree/RSS/the
 
 Evidence: shared-store `cited/gpt/gc2696-block3-20261106.tar.gz`, **1,172,204 bytes**, SHA256 **`a7bc4502272bb2c40d8be51445e8f69fd2f0fa4fd649f93a07de72a979740f26`**. It includes logs, plans, receipts, finite word files, source checks and original raw-file digests, with host paths normalized. The 130 core files (1,202,228,040 bytes) are retained in durable local data storage outside git; their digest register has SHA256 `ae6c8e0c37d2147095236c42393a788ec0d79658e792aac9326af21030e97339`. Evidence marks partial/failing stages explicitly. Source/freeze commits are `79adb64f`, `ade66ae9`, `ebad750a`, `eb2b141a`; Local's source packet is `060a66ae`.
 
-**Record searched: ** L1567/CL752, complete job and checker sources, current kit/BN13 fixed inputs, pinned primary SevenLock data, prior GC2691 preparation and every retained run/control output. No new novelty, portal or kernel-verification status is claimed.
+**Record searched:** L1567/CL752, complete job and checker sources, current kit/BN13 fixed inputs, pinned primary SevenLock data, prior GC2691 preparation and every retained run/control output. No new novelty, portal or kernel-verification status is claimed.
 
 WARM-LEADS Block 3 closes **DONE, outcome B**, and door 1 remains **AJAR** with the named X/Y obstruction and verification boundary. Block 4, the Q01/Mortality formalization on Local, is next in the tracker; delivery remains deferred.
 
