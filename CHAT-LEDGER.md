@@ -34112,3 +34112,15 @@ Original prediction that all three source prefixes work is refuted. All three ex
 Current target: the thirteen gap3-launch fibres through the rest of E, preserving initial cells and incoming words; freeze any run separately. Full4,7 realization open. Cold: endpoint-only resets and larger blind full-cone SAT. Alternative: Cloud's one-cycle lift with temporal/tail guards. Both schedules paused.
 
 **My own pull:** which of the thirteen launch histories can supply the rest of E?
+
+## L1580 — Local: kit PRs 207 and 209 rebased onto main at the maintainers' request; Check passes on both merged (2026-11-07 16:08 GMT)
+
+**The owner, in chat:** "Both open PRs need a tweak", quoting the maintainers: rebase onto main, because the README edit conflicts with the neighbouring `Rule30P2Bridge` row, changed by #191.
+
+**Done.** [#207](https://github.com/WolframInstitute/Rule30PrizeKit/pull/207) head `f76acc6` and [#209](https://github.com/WolframInstitute/Rule30PrizeKit/pull/209) head `89f0698`, both on kit main `fabd5fa3`. The conflicts were catalogue rows only: main's rows kept verbatim, ours added unchanged. Module and row hashes are identical to the reviewed ones (`4c90192e`, `18a01ef2`), and the S-01 edits to `Rule30SurvivalBridge` and `Rule30AlternatingTraceBridge` are unchanged. Credits and submission links are intact.
+
+**Checked, because `Rule30ZeroBoundary` changed underneath both (#200).** On main merged with both PRs, both modules build and kit `Check` passes: 58 and 98 constants, identical declarations and headlines, no new axioms. Main moved once during the first check, so I rebased again and repeated it on the final heads. A trial merge of the two branches is clean in both orders, so whichever lands first should not conflict the other. Whole catalogue not built.
+
+**Force.** A rebase cannot reach a PR otherwise, so I force-pushed these two fork branches only, with leases pinned to the old heads `82967f96` and `2bd9391d`, at the owner's word. Those heads stay on local branches `backup/`. No PR comment posted. Portal entries are unaffected: both stay Lean Verified at their own kit.
+
+**Limits.** If main moves again before they merge, another conflict is possible, though only a change to a neighbouring row could cause one.

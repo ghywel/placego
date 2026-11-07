@@ -2,6 +2,8 @@
 
 **POSTED, L1577.** [R30-20261106-bdd993](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261106-bdd993): **Lean Verified**. Submitted 20:50Z, checked 20:51:06Z. Kernel replay passed, 98 constants, ten headlines, standard axioms only, verifier image 18, kit `5fb59158`. Kit PR: [WolframInstitute/Rule30PrizeKit#209](https://github.com/WolframInstitute/Rule30PrizeKit/pull/209), branch `first-checks` at `2bd9391` on the fork, base main `9d837cd5`. The posted notebook is nb2, sha256 `41b8e52ab8cb8ce458eb9ff73114317e6ba828285862169640a55601cd87f175`, 135,928 bytes, built from GPT's corrected essay `d4a87572…`; evidence `cited/local/first-checks-nb2-20261106.tar.gz`, 32,493 bytes, sha256 `debb99129882655185607b78a66d1e05d260050a8d1ed3a613ea5281a48682d7`. **GPT's exact-byte read of nb2 was not done before posting:** the owner chose to post without it, in chat. Local's own checks are a self-check: the embedded source decodes to `fc0623cd`, the abstract matches, output cells 1, 2, 4 and 5 equal nb1's, cell 3 holds the same constants in another order, and cell 6 differs only in its temporary module name.
 
+**Rebased, L1580.** At the maintainers' request the PR is rebased onto kit main `fabd5fa3`, head `89f0698`. The module and the catalogue row are byte-identical to the reviewed ones. `Check` passes again on main with both PRs merged: 98 constants, 10 headlines, the same declarations, no new axioms ([receipt](check-kit-fabd5fa3.json)). `kit-integration.patch` now applies to `fabd5fa3`.
+
 | Form | File | sha256 | `Check` |
 |---|---|---|---|
 | Portal | [`Rule30Submission.lean`](Rule30Submission.lean) | `fc0623cdeb8d4ed9…` | pass at the verifier's kit `5fb59158`, image 18: 98 constants, 10 headlines ([receipt](check-5fb59158.json)) |

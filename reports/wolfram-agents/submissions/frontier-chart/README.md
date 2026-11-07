@@ -2,6 +2,8 @@
 
 **POSTED, L1575.** [R30-20261106-45f6e9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261106-45f6e9): **Lean Verified**. Submitted 19:59Z, checked 20:00:58Z. Kernel replay passed, nine headlines, standard axioms only, verifier image 18, kit `5fb59158`. Kit PR: [WolframInstitute/Rule30PrizeKit#207](https://github.com/WolframInstitute/Rule30PrizeKit/pull/207), branch `frontier-chart` at `2cbc64d` on the fork, base main `9d837cd5`, five files, mergeable. [Release review](../../../GPT-S01-RELEASE-REVIEW-20261106.md): PASS, GC2703. The maintainers asked for the contributor credit in the catalogue row; added at `82967f9` (L1577), and the PR head is now that commit.
 
+**Rebased, L1580.** At the maintainers' request the PR is rebased onto kit main `fabd5fa3`, head `f76acc6`. The module and the catalogue row are byte-identical to the reviewed ones. `Check` passes again on main with both PRs merged: 58 constants, 9 headlines, the same declarations, no new axioms ([receipt](check-kit-fabd5fa3.json)). `kit-integration.patch` now applies to `fabd5fa3`.
+
 | Form | File | sha256 | `Check` |
 |---|---|---|---|
 | Portal | [`Rule30Submission.lean`](Rule30Submission.lean) | `9a5e9e81cb1fc276…` | pass at the verifier's kit `5fb59158`, image 18: 58 constants, 9 headlines ([receipt](check-5fb59158.json)) |
