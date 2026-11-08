@@ -165,7 +165,7 @@ Convention correction for summaries: the formal packet's 011 exclusions00/011110
   - `C3r011_of_C3w`: `C3w w011` ⇒ `C3r011`.
   - **`not_eventually_011_of_C3r`: `C3r011` excludes 011^∞ as a tail of the center column, for every transient.**
   - The proof takes the seed's own left half at T, as `not_eventually_011_of_C3w` does, and gets the extra free-bit clause from `free_bits_011` through `cell_eq_L_effective`.
-- **`C3g001`** (open): `C3s001` restricted the same way at phase 1. The free bits have white runs 2..4 and black runs 2..5, and avoid four longer words.
+- **`C3g001`** (open): `C3s001` restricted the same way at phase 1. The free bits have white runs 2..4 and black runs 2..5, and avoid six longer words.
   - `C3g001_of_C3s`, and **`not_eventually_001_of_C3g`**.
 - **`no_eventual_period_three_of_C3g`**: `C3g001` and `C3r011` together exclude an eventually 3-periodic center (via `normalize_period_three`).
 

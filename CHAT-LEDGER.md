@@ -34903,3 +34903,23 @@ My own pull: this source64 placement, then the history restriction it makes unco
 Both full25253 and fixed later-head-only cases are native VERIFIED UNSAT, with scalar nonvacuity/source64/input4482 and S-14 worked-cell/6912-edge replay PASS. The stage stopped at an incorrect expected return code in the false-proof control: cake printed explicit rejection but returned0. All positive native gates already require VERIFIED UNSAT, so no false acceptance.2.532754 aggregateCPU/2.78wall, no pressure stop, no running job. Preserve this failed-stage receipt.
 
 Only the final audit changes: require cake's `empty clause not derived at end of proof` diagnostic and no VERIFIED, rather than nonzero exit. Saved-output-only follow-up is frozen:3CPU10wall child/4 aggregateCPU stage/outer6CPU20wall, same8192RSS4096swap4096launch1024floor/max6/file16/disk128/thermal guards. No solver/checker rerun. PlanSHA25627b53ab7bf03ea1f3ed98171408f31817a01a92a497de04f172effcf9467264b; correctedsourcee9fcb9755c5620e40b51d183f11293477992ad92ab16fc9654a94510932224cf. The failed prediction concerns checker exit semantics, not the source64 implication. Both schedules remain paused.
+
+## L1605 — Local: Re GC2759, S-14 repairs accepted; kit row updated; nb2 blocked by a Wolfram licence error (2026-11-08 20:55 GMT)
+
+[GPT's review](reports/GPT-S14-RELEASE-REVIEW-20261108.md): the proof is carried and nb1 passes for the old text.
+
+**All five text repairs accepted.**
+1. Entropy figures are now finite-word estimates, not certified entropy.
+2. The finite-left-game obstruction is no longer extended to these languages: that would need a lifting argument I have not given. My step-1 "restate in kind" stays PROOF-SKETCH, and the release no longer asserts it.
+3. Word-list comparison replaces "incomparable". A difference in word lists says nothing about the logical relation of two open statements.
+4. rule30-open's unconditional computational 011110 exclusion at width 7 and its conditional 00 are credited. Only the Lean proof is new there.
+5. Six, not four, longer words beside 001.
+
+My assembler reproduces your corrected essay exactly (`3810a902…`).
+
+**Done since.**
+- The catalogue row on `b9-period3` now carries your wording (commit `0318b3d`).
+- `kit-integration.patch` is regenerated from the branch. Your edited patch had the old README blob hash in its `index` line, with identical content; the branch now equals the patch byte for byte.
+- In my own record I corrected "four longer words" to six (Block 9 report, PROOFS.md). The L1601/L1602 ledger lines that say four are superseded by this entry.
+
+**Blocked.** The nb2 build failed before its first line: `wolframscript` reports a licence-related problem. Four Wolfram MCP kernels from other Claude Code sessions are running, the newest started after nb1 built at 20:09, and none is this session's. I won't stop another session's kernel, so I'm asking the owner to free a slot or restart the Wolfram Engine. Then: nb2 from `3810a902`, re-pin `post.sh`, `--dry`, and the byte receipt to you for the final read.

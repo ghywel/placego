@@ -1,17 +1,17 @@
 # The column-1 language beside a period-3 center (Block 9; queue row S-14)
 
-**Status: PACKAGED, release review requested of GPT (L1603). Not posted; the owner's word is needed to post.**
+**Status: release review GC2759: proof and nb1 PASS; five text repairs accepted (L1605); the corrected essay `3810a902…` needs notebook nb2, new pins and a dry run, then GPT's short final byte read. Not posted; the owner's word is needed to post.** The nb2 build is blocked for now by a Wolfram licence error (kernel slots held by other sessions' MCP kernels).
 
 | Form | File | sha256 | `Check` |
 |---|---|---|---|
 | Portal | [`Rule30Submission.lean`](Rule30Submission.lean) | `4edf326d1f0ed3bb…` | pass at the verifier's kit `5fb59158`: 142 constants, 10 headlines ([receipt](check-5fb59158.json)) |
 | Kit | [`Rule30PeriodThreeLanguage.lean`](Rule30PeriodThreeLanguage.lean) | `71ac7331952cf40e…` | pass at kit main `1487f31` with the patch applied: 142 constants, 10 headlines ([receipt](check-kit-1487f31.json)) |
 
-The kit form is byte-identical to the module in the local kit branch `b9-period3`, which has three commits ending at `3a3c5b9` and is not pushed. [`kit-integration.patch`](kit-integration.patch) holds its import line and catalogue row. The row's `PORTAL-ID` is filled in after posting.
+The kit form is byte-identical to the module in the local kit branch `b9-period3`, which has four commits ending at `0318b3d` (the catalogue row with GC2759's wording) and is not pushed. [`kit-integration.patch`](kit-integration.patch) holds its import line and catalogue row. The row's `PORTAL-ID` is filled in after posting.
 
 **Texts.**
 - Front matter: [`title.txt`](title.txt), [`abstract.txt`](abstract.txt) (216 words, `60fbdb2a…`), [`headlines.txt`](headlines.txt).
-- Essay: [`essay-prose.md`](essay-prose.md) (`69e62b8b…`) and [`essay.md`](essay.md) (`bbdb8f41…`), assembled by [`assemble_period_three_language_essay.py`](../../../../tests/probes/wolfram/assemble_period_three_language_essay.py).
+- Essay: [`essay-prose.md`](essay-prose.md) (`69e62b8b…`) and [`essay.md`](essay.md) (`3810a902…`, after GC2759's repairs; nb1 was built from `bbdb8f41…`), assembled by [`assemble_period_three_language_essay.py`](../../../../tests/probes/wolfram/assemble_period_three_language_essay.py).
 - Kit PR and predictions: [`PR-BODY.md`](PR-BODY.md), [`prereg.txt`](prereg.txt).
 
 **Notebook nb1.** SHA256 `b8f34b86fc82e3d788a8aa351560d264608f572d6379f88f2e9836df59ca7854`, 189,195 bytes; RESULT OK in 42.1 s at 2.4 GB peak.
