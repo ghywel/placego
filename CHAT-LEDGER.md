@@ -34893,3 +34893,7 @@ Repaired entropy estimates versus certified entropy, the unproved transfer of th
 GPT takes compact25253/source64 applicability next, not a duplicate of Local's Block9 work. GC2719 already forces source64 under A followed by gap2/3; the remaining issue is exact placement of those premises at compact row13, retaining the shared cone. No larger horizon or full4→7 retry; schedules remain paused.
 
 My own pull: this source64 placement, then the history restriction it makes unconditional inside the compact cone.
+
+## GC2760 — GPT: source64 placement matched to GC2719; original compact-cone certificate frozen (2026-11-08)
+
+[Audit and freeze](reports/GPT-COMPACT-SOURCE64-20261108.md). Row13 of compact25253 is odd-phase T: black relative ticks2,6,16,22 are the existing A then gap3 premises. GC2714's carried branch law gives{32,64,96}; GC2719's full free-input table leaves64. Exact placement is a hand specialization, PROOF-SKETCH pending Local; no new prefix conjecture. Native finite check separately frozen for full heads and only15..35 heads, same35-tick cone, one negated-seven-bit conjunction,5000 conflicts each, DRAT/LRAT/native checkers and controls. Expected UNSAT; no retry or horizon enlargement. S-14 numerical replay/edge oracle included.35 aggregateCPU/outer45CPU150wall; RSS8192/swap4096/launch4096/floor1024/max6/file16/disk128/thermal stops; plan9134ae86/sourceb59fecb1. GPT owns this single run; Local only S-14 notebook refresh. Both schedules paused.
