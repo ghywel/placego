@@ -34124,3 +34124,19 @@ Current target: the thirteen gap3-launch fibres through the rest of E, preservin
 **Force.** A rebase cannot reach a PR otherwise, so I force-pushed these two fork branches only, with leases pinned to the old heads `82967f96` and `2bd9391d`, at the owner's word. Those heads stay on local branches `backup/`. No PR comment posted. Portal entries are unaffected: both stay Lean Verified at their own kit.
 
 **Limits.** If main moves again before they merge, another conflict is possible, though only a change to a neighbouring row could cause one.
+
+## L1581 — Local: portal and kit refresh after a two-day gap; S-01 and S-03 merged into the kit; four outside lines touch our work (2026-11-08 10:06 GMT)
+
+**The owner, in chat:** "Can you please do the portal / kit refresh step to add to our records and summarise any important submissions. Then, we shall figure out what to focus on."
+
+**Refresh.** `known_find.py --new`, complete: kit main `48d8fbbc`, portal updated 2026-11-08T10:02:17Z, 12 open kit PRs (all Troy Lowry's from October), 45 added, 41 changed, 51 no longer listed. The 20 changed portal entries are metadata: each now carries a kit-merge commit. The removals are merged or closed PRs, ours among them. Nothing was committed to our record in the gap.
+
+**Ours.** [#207](https://github.com/WolframInstitute/Rule30PrizeKit/pull/207) and [#209](https://github.com/WolframInstitute/Rule30PrizeKit/pull/209) were closed after the maintainers landed both modules as their own commits `7d47dc9` and `3063d45`, 7 November 21:25Z. Module hashes are identical to ours. The portal entries list them.
+
+**New outside work that touches ours.**
+- **G.P.J.W. Quint with Gemini, 17 entries** ([latest](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-9fc145)): the seed's left diagonals in core Lean. A three-bit period-8 oscillator (D 8, D 10, D 29) runs to D 399, the fourth white diagonal; a fourth bit with period 16 is added at D 400; there is exact `whiteCount` through depth 33, and non-periodicity of columns near the left light cone for every period, to about 390 columns. This is the structure under our left-side clock: their oscillator bits are what ν reads mod 16. The kit's four-sides theorem (ours) already covers the classification by kernel; theirs are structural proofs for the seed. No statement about other rows or merging, so Theorem N is untouched.
+- **h3artfield** ([R30-20261108-29c0e5](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-29c0e5), Lean Verified, supersedes 3edf26): `Q01_iff_stub128_mortality`, with `not_InX` for several residue cylinders out to mod 131072 and `stubborn128_no_uniform_hitting_bound`. `InX` is the kit's immortality. This is Q01 attacked by residue class at the wall end, the counterpart of our sector classes at the top. I read the abstract and the twenty headline names only. The Lean is in a notebook I did not download.
+- **Emerson Villafuerte** ([R30-20261107-77fde2](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261107-77fde2), Lean Unverified because the checker ran out of sandbox memory, not a failed proof): 12 is the least period P with positive spatial entropy in Fix(Φ^P) for rightward light-speed recurrence on the bi-infinite line. It bears on genealogy §25's eternal cycles, but ours have a black front and white beyond, with power-of-two periods, so no conflict.
+- **Troy Lowry, kit `Rule30ResponseWidth`** (#219): response classes of the seed's right tail at different ages never coalesce, proved by minimum width. It is the width-law separation in his controlled-response frame, not the left invariant.
+
+**Owed.** GPT GC2719's REVIEW-REQUEST to Local (14-tick trunk and endpoint convention, column-8 join rule, 21-cell cone scope) is open. Theorem N's read awaits the owner's assignment.

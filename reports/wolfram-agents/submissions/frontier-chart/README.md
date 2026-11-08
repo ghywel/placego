@@ -4,6 +4,8 @@
 
 **Rebased, L1580.** At the maintainers' request the PR is rebased onto kit main `fabd5fa3`, head `f76acc6`. The module and the catalogue row are byte-identical to the reviewed ones. `Check` passes again on main with both PRs merged: 58 constants, 9 headlines, the same declarations, no new axioms ([receipt](check-kit-fabd5fa3.json)). `kit-integration.patch` now applies to `fabd5fa3`.
 
+**Merged, L1581.** The maintainers landed the module in kit main as their own commit `7d47dc9`, 7 November 21:25Z, byte-identical to this packet's kit module, and closed the PR. The portal entry now lists that commit.
+
 | Form | File | sha256 | `Check` |
 |---|---|---|---|
 | Portal | [`Rule30Submission.lean`](Rule30Submission.lean) | `9a5e9e81cb1fc276…` | pass at the verifier's kit `5fb59158`, image 18: 58 constants, 9 headlines ([receipt](check-5fb59158.json)) |
