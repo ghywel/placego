@@ -1,6 +1,6 @@
 # From tick 46 on, every row beside the wall has a twin (queue row S-02)
 
-**PROOF/TEXT REVIEW PASS, GPT GC2726. NOT POSTED.** Scope repairs are applied; Local must rebuild the notebook and refresh release pins before posting. [Review](../../../GPT-S02-RELEASE-REVIEW-20261108.md). The owner's posting word remains required. Built at kit main `48d8fbbc`; the portal form passes `Check` at the verifier's kit `5fb59158`, image 18.
+**PROOF/TEXT REVIEW PASS, GPT GC2726; NOTEBOOK REBUILT, L1585. NOT POSTED.** Scope repairs are applied and the release notebook is rebuilt from them (nb2); GPT's short byte read of nb2 and the pins is next. [Review](../../../GPT-S02-RELEASE-REVIEW-20261108.md). The owner's posting word remains required. Built at kit main `48d8fbbc`; the portal form passes `Check` at the verifier's kit `5fb59158`, image 18.
 
 | Form | File | sha256 | `Check` |
 |---|---|---|---|
@@ -11,7 +11,9 @@
 
 **Notebook nb1: reviewed but superseded for release after GC2726 text repairs.** SHA256 `055b6763d2c9ca64df8d5de45727a2a24cb768b4b75f2f9231d6f936af23be86`, 129,190 bytes. RESULT OK in 18.5 s: 6 output cells, no message cells. The worked numbers equal the Python replay ([`late_twins_replay.py`](../../../../tests/probes/wolfram/late_twins_replay.py)), the icon payload equals the portal source byte for byte, the axiom sets match, and KernelChecked holds at 143 declarations. Driver [`late_twins_notebook.wl`](../../../../tests/probes/wolfram/late_twins_notebook.wl), assembler [`assemble_late_twins_essay.py`](../../../../tests/probes/wolfram/assemble_late_twins_essay.py).
 
-**Post script.** `post.sh` lives outside git and refuses unless the notebook, source, abstract, title, essay and headlines match their pins and the verifier is still kit `5fb59158`, image 18. `post.sh --dry` passes.
+**Notebook nb2 (release), L1585.** Built from the corrected essay with the unchanged driver: SHA256 `83e87be1a1df4dbed7c37c1967b3b1b9e2015e6ff9ea44c4408ad872d50483ed`, 129,983 bytes. RESULT OK in 19.5 s: 6 output cells, no message cells, the Abstract cell equal to `abstract.txt` (`72fcf6cc…`), the essay digest `0d108613…`, the icon payload equal to the portal source, the axiom sets matching, KernelChecked 143, no home paths. Notebook, receipts and the sanitized pins and dry run: shared store `cited/local/late-twins-nb2-20261108.tar.gz`, 535,042 bytes, SHA256 `180ff4c753ac1258923b15c05cfeb72aa07057930abac33237e30f1ea25f4a50`.
+
+**Post script.** `post.sh` lives outside git and refuses unless the notebook, source, abstract, title, essay and headlines match their pins and the verifier is still kit `5fb59158`, image 18. Pins refreshed to nb2, the corrected abstract and the corrected essay; `post.sh --dry` passes (L1585).
 
 **Theorems.** `F_shiftRight`, `iter_F_shiftRight`, `band_settles`, `band_late`, `sync`, `twin_of_factors`, `late_twin`, `late_twin_immortal`, `late_twin_off_orbit`.
 

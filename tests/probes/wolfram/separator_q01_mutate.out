@@ -1,0 +1,11 @@
+REJECTED | class with no two adjacent black bits | 185:2: error: unsolved goals
+REJECTED | endpoint at the even tick | 98:2: error: 'show' tactic failed, pattern
+REJECTED | peel chart one depth deeper | 133:4: error: Type mismatch: After simplification, term
+REJECTED | tail symbol 1 allowed (false: phi 1 1 = 2) | 236:23: error: Tactic `decide` proved that the proposition
+REJECTED | layer word at the black ticks (false: black_tick_control) | 371:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+REJECTED | even death bounds from n = 6 | 631:17: error: Application type mismatch: The argument
+REJECTED | odd width without top two black | 628:36: error: Application type mismatch: The argument
+REJECTED | death bound 2W + 2 | 652:23: error: Application type mismatch: The argument
+REJECTED | odd guard witness to tick 38 | 710:24: error: Tactic `decide` proved that the proposition
+REJECTED | threshold witness to tick 32 | 720:73: error: Tactic `decide` proved that the proposition
+mutants accepted: 0 of 10

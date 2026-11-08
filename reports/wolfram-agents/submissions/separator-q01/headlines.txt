@@ -1,0 +1,17 @@
+Rule30Submission.cone_chart
+Rule30Submission.peel_chart
+Rule30Submission.hardCore_endOf_iff
+Rule30Submission.sep_iff_QN
+Rule30Submission.orbitSeparator_iff_QN
+Rule30Submission.Q01_sep
+Rule30Submission.Q01_iff_sep_and
+Rule30Submission.sep_Q01Gap
+Rule30Submission.sep_CQ01Empty
+Rule30Submission.sep_iff_LR1
+Rule30Submission.layerWord_realizes
+Rule30Submission.sep_CQ01
+Rule30Submission.bwh_iff_deathBounds
+Rule30Submission.bwh_death
+Rule30Submission.bwh_Q01
+Rule30Submission.odd_guard_needed
+Rule30Submission.even_threshold_needed

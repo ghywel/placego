@@ -1,0 +1,40 @@
+S-04 separator and death bound: Lean formalization, written before the first build. Local, 8 November 2026, 11:27 UTC.
+Statements carried by GC2690 (CP-4, PROVED hand/two-party): SEP <=> Q[N] <=> LR1; SEP => Q01Gap; BWH => D(W) <= 2W + 4 for W >= 16.
+Here SEP is the kit's ConstantTailSeparator (equivalently OrbitSeparator, kit separator_equivalence); N is the free-bit
+streams with no two adjacent white bits; Q[N] says Theta f is never finitely supported for f in N; LR1 says no width-one
+layer beside the alternating column, with any start cell and any column-2 input, has a finitely supported forced left row.
+Plan: the zero-boundary endpoint zEnd L j = pair of depths 1, 2 at tick 2j + 1, and its cone and peel charts, ported from
+the kit's actual_cone_chart (the chart itself is rule30-open's zcone_chart/zpeel_chart, known, reproved here), with a
+finite-horizon form for the death bound. HardCore (zEnd (Theta f)) iff f is in N. SEP => Q[N] by
+separator_excludes_finite_peel_rank; Q[N] => SEP by the peel chart at an even tick and two_step_shift (no rotation needed).
+LR1 in the kit's sideways phase (centre black at even ticks), where the forced row is Theta of the complement, as for Psi;
+the white-start phase repair of GC2690 belongs to the record's historical convention and is not needed here.
+Death bound: BWH <=> the exact-width death bounds (even W >= 16 dies by 2W; odd W >= 17 with top two black by 2W - 2),
+then two ticks for a general odd width and the kit's q01_width_le_16 below 17. Corollaries: Q01 => SEP and BWH => Q01
+(both rule30-open, known, reproved here), SEP => Q01Gap (new), Q01 <=> SEP and no finite Theta f with 00 infinitely often.
+Prediction (0.75): all of this builds in core Lean at kit main 48d8fbbc in one module of under 700 lines, with no kernel
+certificate, and Check passes with standard axioms at main and at the verifier's kit.
+Counterfactual: the reverse dictionary (BWH <= death bounds) or LR1's realization fails to close; then the module ships
+the forward arrows only and the essay says which converse is left to hand proof.
+Second prediction (0.9): no known death time contradicts 2W + 4 (D(52) = 96, D(56) = 100, D(64) >= 116, D(74) >= 134).
+Record searched: GC2690 and the carry review's CP-4 section; the CP-4 report (Claims A and B); CL752 S-04 row; known_find
+on ConstantTailSeparator, OrbitSeparator, Q01Gap, zend, zpeel_chart, separator_excludes_finite_peel_rank, bwh_Q01,
+q01_constantTailSeparator, binaryCTS, HardCore with Theta/zrow, BWH with zrow/Q01, separator with Q01, wedge with Theta,
+q01_width_le_16, death with width (kit 48d8fbbc, portal 2026-11-08T10:02Z, 12 open PRs): no SEP-Q01 arrow in kit or portal;
+closed kit PRs 64, 76, 84, 86, 101 read for Q01 (PR 76's maintainers asked how SEP relates to Q01; answer then: none known);
+rule30-open at f877f5af (still its head): WedgeLadderQ01 has the chart, BinaryCTS <=> Q01, Q01 => SEP, BWH => Q01,
+q01_iff_horizon; no HardCore, Q01Gap, restriction to N or death-time bound.
+
+Addendum, 8 November 2026, 11:46 UTC (date -u), before running separator_q01_margins.py. Through the dictionary, M(n, 2) is
+max over starts of exact width 2n + 2 of (death tick)/2 - 1 - n, and M(n, 3) the same over exact width 2n + 3 with the
+top two cells black. Prediction (0.85): exhaustive search reproduces the swarm's CP-4 table for n = 5 to 9:
+M(5, 3) = 8, M(6, 2) = 9, M(7, .) = 7, 6; M(8, .) = 6, 7; M(9, .) = 5, 8. Counterfactual: a mismatch means an index
+in the dictionary or in the swarm's search is off; the Lean is unaffected (it is proved), but the essay's reading of
+the table would be wrong and I would stop and find which.
+
+Result (L1585). Prediction mostly HELD: everything builds in core Lean at kit main 48d8fbbc in one module, with no
+kernel certificate beyond two small controls, and Check passes at main and, for the portal form, at the verifier's
+5fb59158 (164 constants, 17 headlines, standard axioms). The line count missed: 741 lines, not under 700 (686 before
+the two guard controls were added). The counterfactual did not occur: both converses (row_of_wedge, layerWord_realizes)
+closed. Q[N] => SEP needed no rotation. Second prediction HELD (every known D(W) under 2W + 4). Addendum prediction
+HELD: M(n, c) for n = 5 to 9 equals the swarm's table. Ten mutants rejected. Notebook nb1 RESULT OK.
