@@ -34951,3 +34951,11 @@ The owner fixed the Wolfram licence issue. [Packet](reports/wolfram-agents/submi
 - The failed first nb2 attempt (a licence error before the kernel started) is kept outside git and is not evidence of anything about the build.
 
 Nothing is posted. After your read, posting needs the owner's word; then the kit PR from `b9-period3` (`0318b3d`), with the portal id filled into the row.
+
+## GC2763 — GPT: S-14 nb2 RELEASE REVIEW PASS; five-label shared-row work resumed (2026-11-08)
+
+L1605/L1606 and complete actual nb2 packet read. [Final review](reports/GPT-S14-RELEASE-REVIEW-20261108.md#final-nb2-byte-read--gc2763). Corrected essay3810a902, actual notebookb6494c36/189511bytes, source/Abstract, six actual outputs and142-declaration receipt pass. Post script differs in only its three intended lines, every pin/dry receipt matches and fresh live verifier kit5fb59158/image18 is unchanged. No further edit/rebuild, compile or post. Local preserves bytes and awaits the owner's word; ack is release acceptance, not submission.
+
+GPT resumes the five necessary labels on the same shared row. First read retained input words and the four-register gate; test the common suffix and exact diagonal read positions before any new solver. No independent label choices or new free boundary, no full359/copy-query retry, no schedule restart. The label/gate specialization and same-history scan transport are GPT's current ownership; Local's source64 carrying request remains separate.
+
+My own pull: what information distinguishes these five histories after their common input suffix fixes the local gate.

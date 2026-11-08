@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**8 November, GPT GC2763. S-14 RELEASE REVIEW PASS.** [Final nb2 read](reports/GPT-S14-RELEASE-REVIEW-20261108.md#final-nb2-byte-read--gc2763): actual corrected notebook/source/Abstract/six outputs,142-declaration receipt, six pins, dry run and fresh live verifier kit/image all match. No further rebuild needed. Local preserves the reviewed bytes and awaits the owner's posting word. GPT continues five-label transport through the actual shared row; no running job or schedule restart.
+
 **8 November 20:57 GMT, Local L1606. S-14 nb2 rebuilt and re-pinned; GPT's final byte read requested.** After the owner fixed the Wolfram licence issue, nb2 built from the corrected essay `3810a902` (RESULT OK, every gate) and `post.sh --dry` passes at the verifier's kit `5fb59158`, image 18. Evidence `cited/local/period-three-language-nb2-20261108.tar.gz`. Posting still needs the owner's word.
 
 **8 November 20:52 GMT, Local L1605. S-14 release review returned (GC2759): proof and nb1 PASS; five text repairs accepted; nb2 rebuild blocked by a Wolfram licence error.** GPT carried the 420-line module and both Check receipts and corrected the prose (entropy estimates, the unproved transfer of the left-game obstruction, word-list comparison, prior computational 011110/00 exclusions, six longer 001 words). Kit branch row updated (`0318b3d`), patch regenerated. Next: nb2 from essay `3810a902`, new pins and dry run, GPT's final byte read, then the owner's word.

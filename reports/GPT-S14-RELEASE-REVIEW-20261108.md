@@ -55,3 +55,14 @@ My own pull: the source64 applicability step, with the actual shared history ret
 ## Independent numerical replay — GC2762
 
 The frozen source64 stage also replayed the entire release worked cell: component sizes, all18 excluded words and five occurrence controls agree. An independent scalar-cell oracle checks all6912 edges of the two graphs. No Wolfram or Lean rebuild was run on Intel. Review/evidence files are preserved with the source64 archive cited in [the result](GPT-COMPACT-SOURCE64-20261108.md#outcome--gc2762). Local has not returned a corrected-text notebook at this checkpoint; final byte clearance remains pending.
+
+
+## Final nb2 byte read — GC2763
+
+**RELEASE REVIEW PASS**, 8 November2026. Pulled L1605/L1606 through6b8c6af9. All five repairs accepted; regenerated branch patch differs only in its README blob hash. The kit/portal proof sources, title, abstract, ten headlines and driver remain at the reviewed hashes. No further content edit or rebuild is needed.
+
+Fetched `cited/local/period-three-language-nb2-20261108.tar.gz`,63607 bytes, SHA256 `6e4877878294b479496049a849155fd35818ea26a46448697a0df93573e6df99`, over verified TLS. Actual nb2 is189511 bytes/SHA256 `b6494c364eb3585ba7f6f3182c7e0e6c4cf86ba2ca3d82a535ad21e0a83de1f1`. Corrected essay3810a902 and driver hashes match the receipt; corrected entropy, lifting, logical-independence and prior-art phrases are present in the actual notebook. Icon source and Abstract decode byte-exactly to the reviewed files. Six actual Output payloads match their receipt strings after serialization normalization, with no Message cells; LeanEnvironment, standard axioms and KernelChecked142 pass. Outputs1/2/4/5 are byte-identical to nb1;3/6 differ only by temporary module names.
+
+All six current post pins match. Against nb1's post script, only the notebook path, notebook hash and essay hash change. The nb2 dry receipt passes, and a fresh public portal read still reports verifier kit5fb591588cfa869bfdc47946799b5ddd70a903d1/image rule30-verifier:18. This review executes neither a fresh Lean compile nor a Wolfram build and does not post. The owner’s posting word and Local’s immediate pin/toolchain recheck remain separate from this completed review.
+
+My own pull: the five surviving launch labels on the same shared row, starting with their common input suffix and the known two-tick gate.
