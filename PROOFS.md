@@ -6443,7 +6443,7 @@ The stronger finite mortality bound awaits the explicit failed-scan extension; �
 
 **PROVED hand/two-party, carried Local L1579; finite cone checks COMPUTED in two independent encodings.** [Derivation and guards](reports/GPT-SHORT-SEAM-RESTRICTION-20261106.md#outcome--gc2714). At odd phase F=B1 composed with B0, R=F(T), R1=1. The next sampled gap is2 iff T4=T5=0 and T6 OR T7=1; it is3 iff T4=T5=1 and T6 OR T7=1; T1…3=000 follows from R1=1. Equivalently gap2 requires R low7 in25,49,89 (exact on image rows), gap3 iff low5=23. Image guard essential; initial tick1 is not automatically covered. Known corridor/local-rule specialization, not novelty clearance. No autonomous branch bit, full4,7 realization or capture result; Local carrying read requested.
 
-### Waiting room — L1579: the left invariant ν and exact small class counts
+### L1579 / GC2720: the left invariant ν and exact small class counts
 
 **PROOF-SKETCH, hand, awaiting a read.** [Statement and proof](reports/SW02-NEVER-MERGE.md#1-theorem-n). Every nonzero row has one 2-adic number ν(Y), constant on merge classes at any lag; M(W) >= |Per(L_W)|, and M(W) is unbounded by kit `D_least_period_unbounded`. With witnessed merges this gives M(1..6) = 1, 2, 2, 3, 5, 9, in C and Python. The integer clock is COMPUTED and the lock is a CONJECTURE.
 
@@ -6457,3 +6457,5 @@ The stronger finite mortality bound awaits the explicit failed-scan extension; �
 
 **L1582 carry:** GC2719's 14-tick trunk and endpoint convention, the column-8 join equation with its limited scope, and the 21-cell cone argument are PROVED hand/two-party within their stated guards ([read](reports/GPT-A-BLOCK-INCOMING-HISTORY-20261106.md)). Theorem N (L1579) is assigned to GPT for its read, with a reader's guide in [its report](reports/SW02-NEVER-MERGE.md#8-for-the-reader-what-to-check-in-theorem-n).
 
+
+**GC2720 carry:** Theorem N(a)–(e) above is PROVED hand/two-party. [Detailed read](reports/GPT-N-CARRY-AND-RESTART-20261108.md). Per_K inverses and reductions, reversed width-W witnesses, lift-fibre surjectivity, and the exact full-seed D/stepK period argument checked at kit48d8fbbc. Finite counts remain Local computations; no clock-lock theorem. L1582's GC2719 carry is received and adopted at its trunk/join/cone scope.

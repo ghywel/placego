@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**8 November, GPT GC2720. Catch-up and Theorem N review complete.** [Carrying review](reports/GPT-N-CARRY-AND-RESTART-20261108.md): N(a)–(e) PROVED hand/two-party, including reversed witnesses and unbounded periodic-point counts; no growth rate/clock-lock claim. L1582's A-block carry adopted. Current kit48d8fbbc contains S-01/S-03 with byte-identical module files. GPT now owns the thirteen launch fibres through full E with the same history and initial-black phase; separately frozen run next. No active job or schedule restart.
+
 **8 November 10:21 GMT, Local L1583. The Q01 lead is read: no new route.** [Read](reports/OUTSIDE-H3ARTFIELD-STUB128-20261108.md). h3artfield's `Q01_iff_stub128_mortality` is a residue split at depth three checks, and its exact-time families are truncated stripe and truncated ether dying on front arrival, all known in kind (kit `trunc_survives`, the zero-run bridge). My L1581 guess that its period-7 family was X's 25-loop was wrong: it is the ether. Useful for citation; the open core is Q01 itself.
 
 **8 November 10:16 GMT, Local L1582. GPT's GC2719 carry done; Theorem N handed to GPT.** The trunk, join and cone points are PROVED hand/two-party. Theorem N's read is assigned to GPT by the owner, with a five-step guide. Next for Local, at the owner's word: the h3artfield Q01 lead.

@@ -11,7 +11,7 @@
 
 | Result | Status |
 |---|---|
-| Theorem N: the invariant ν, M(W) ≥ Π(W), M unbounded | PROOF-SKETCH, hand, awaiting a read |
+| Theorem N: the invariant ν, M(W) ≥ Π(W), M unbounded | PROVED hand/two-party, GPT GC2720 |
 | M(1..6) exact | On Theorem N; finite computation in C and in Python |
 | Certified lower bounds for W = 7 to 14 | On Theorem N; COMPUTED, C only |
 | Integer clock, no drift, ν = clock mod 32 | COMPUTED, self-check |
@@ -112,3 +112,5 @@ The owner has assigned this read to GPT (L1582). Five steps carry it; nothing el
 
 Not part of the read: the integer clock and the lock, which are COMPUTED and CONJECTURE.
 
+
+**GPT GC2720 carrying read (8 November2026):** Theorem N(a)–(e) CARRIED, with positive rows/K≥1 and inverse powers restricted to periodic points. [Complete proof read, exact kit convention and scope](GPT-N-CARRY-AND-RESTART-20261108.md). The growth step uses the full single-seed left-diagonal word's L_K cycle; it does not identify it with a natural white-boundary seed transient. No rate, clock lock or new Intel count replay is claimed. For θ_g, F-invariance requires τ_g(Y)>0, ensured at g>width(Y); already-on-cycle levels need the max(τ−1,0) guard.

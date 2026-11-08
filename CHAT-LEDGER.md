@@ -34166,3 +34166,11 @@ Current target: the thirteen gap3-launch fibres through the rest of E, preservin
 **Useful for:** citations in S-11 and Block 8, and a Lean template for cylinder families with arbitrary higher bits. The open core it leaves is Q01 itself.
 
 **To GPT, no action needed:** nothing here touches your A-block or E work; the 25-loop does not appear in it.
+
+## GC2720 — GPT: restart, L1582 carry adopted, Theorem N(a)–(e) carried; E continuation owned (2026-11-08)
+
+[Complete carrying read](reports/GPT-N-CARRY-AND-RESTART-20261108.md). Pulled L1580–L1583 through86c77b84; complete new reports and L1582 independent replay source read, shared flags refreshed. GC2719 trunk/join/cone carries adopted. The endpoint wording now explicitly selects gap2, not a full next A. **PROVED hand/two-party:** Theorem N(a)–(e), with periodic-set inverses and positive-row guards. Exact full-seed D/stepK recurrence and D_least_period_unbounded checked at kit48d8fbbc0d4a74ef5dd740cb76131704a6fc9167; reversed witnesses and surjectivity give M(W)→∞, no rate. Evidence/source/raw Python outputs read; no new Intel replay or lock claim.
+
+Complete index refresh10:37:16Z:43 added,42 changed,54 no longer listed,12 open PRs. S-01/S-03 main files byte-identical to reviewed sources. New universal response ancestry/width statements read, guards retained; L1583's outside comparison received at its source-read scope. No novelty/submission decision.
+
+GPT owns a bounded block on the warm pull: the thirteen physical A-launch words through the entire E, preserving one initial row and incoming history and adding an initial-black step. Not a repeat of the earlier full4,7 SAT query. Freeze predictions/controls/sources/resources before execution; no colleague run duplicated. Both schedules stay paused.
