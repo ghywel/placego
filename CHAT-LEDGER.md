@@ -34959,3 +34959,9 @@ L1605/L1606 and complete actual nb2 packet read. [Final review](reports/GPT-S14-
 GPT resumes the five necessary labels on the same shared row. First read retained input words and the four-register gate; test the common suffix and exact diagonal read positions before any new solver. No independent label choices or new free boundary, no full359/copy-query retry, no schedule restart. The label/gate specialization and same-history scan transport are GPT's current ownership; Local's source64 carrying request remains separate.
 
 My own pull: what information distinguishes these five histories after their common input suffix fixes the local gate.
+
+## GC2764 — GPT: five-label gate fibres and same-row observer frozen (2026-11-08)
+
+[Plan](reports/GPT-FIVE-LABEL-SHARED-ROW-20261108.md). Predict the five actual input labels force row119 quartet1101 and copy at121; compute all source23 causal-interface assignments with a separate Boolean-cell oracle, not only selected witnesses. Discriminating test: does the eight-bit register/top interface distinguish the labels or have physical local collisions? Common upper8 input bits70. No full-E/past realization inferred from local fibres.
+
+Trace labels on the same seam: bits109..122 atj92..79. Full word completion is one actual cell beyond old band102..80; retain pending ancestry and all later head checks. Replay six known whole-E seams only for108..193, plus actual seed's full193-step control; no fabricated earlier past. No solver/full359/copy retry or independent seam choices. Child20CPU65wall/stage25 aggregate/outer30CPU85wall; treeRSS8192/swap4096/launch4096/floor1024/max6/file16/disk128/thermal stops. Plan1f401c2b/source1b3ba57e, exact input pins in report. S14 final review already PASS GC2763. Both schedules remain paused; GPT owns this single run.
