@@ -10,6 +10,15 @@ out=Path(os.environ['CAPPED_OUT'])
 def cpu():
     a=resource.getrusage(resource.RUSAGE_SELF);b=resource.getrusage(resource.RUSAGE_CHILDREN)
     return a.ru_utime+a.ru_stime+b.ru_utime+b.ru_stime
+def ps_cpu(value):
+    days=0
+    if '-' in value:
+        d,value=value.split('-',1);days=int(d)
+    fields=list(map(float,value.split(':')))
+    if not 1<=len(fields)<=3:raise RuntimeError('CPU_TIME_PARSE')
+    result=0.0
+    for x in fields:result=60*result+x
+    return 86400*days+result
 def thermal():
     r=subprocess.run(['pmset','-g','therm'],capture_output=True,text=True,timeout=4)
     text=r.stdout+r.stderr
@@ -17,11 +26,18 @@ def thermal():
     limits=re.findall(r'CPU_(?:Speed|Scheduler)_Limit\s*=\s*(\d+)',text)
     if r.returncode or len(limits)!=2 or any(x!='100' for x in limits):raise RuntimeError('THERMAL_MONITOR_STOP')
 plan=json.loads(Path(sys.argv[1]).read_text());stop=[];records=[]
+def outer_cpu():
+    if not plan.get('include_outer_monitor_cpu',False):return 0.0
+    path=os.environ.get('CAPPED_MONITOR_CPU_FILE')
+    if not path:raise RuntimeError('OUTER_CPU_TELEMETRY_MISSING')
+    item=json.loads(Path(path).read_text())
+    if time.time()-item['at']>10:raise RuntimeError('OUTER_CPU_TELEMETRY_STALE')
+    return float(item['cpu_s'])
 for sig in (signal.SIGINT,signal.SIGTERM):signal.signal(sig,lambda s,f:stop.append(s))
 def save(n,x):(out/n).write_text(json.dumps(x,indent=2)+'\n')
 def run(job):
     args=[a.replace('{out}',str(out)).replace('{binary}',os.environ.get('METAL_SCOPE_BINARY','')) for a in job['args']]
-    if stop or cpu()>=plan['worker_stop']:raise RuntimeError('STAGE_STOP')
+    if stop or cpu()+outer_cpu()>=plan['worker_stop']:raise RuntimeError('STAGE_STOP')
     thermal();t=time.monotonic();last=0;rc=None;reason='EXIT';use=None
     def limit():resource.setrlimit(resource.RLIMIT_CPU,(job['cpu'],job['cpu']))
     with (out/(job['name']+'.stdout')).open('w') as fo,(out/(job['name']+'.stderr')).open('w') as fe:
@@ -39,7 +55,7 @@ def run(job):
                         pid,status,u=os.wait4(p.pid,os.WNOHANG)
                         if pid:rc=os.waitstatus_to_exitcode(status);use=u;p.returncode=rc;break
                         raise RuntimeError('CPU_MONITOR_FAILURE')
-                    m,s=r.stdout.strip().split(':');total=cpu()+60*int(m)+float(s)
+                    total=cpu()+outer_cpu()+ps_cpu(r.stdout.strip())
                     save('live.json',{'job':job['name'],'aggregate_cpu_s':total,'wall_s':now-t})
                     if total>=plan['worker_stop']:reason='AGGREGATE_CPU_STOP';break
                     if int(now-t)//5 != int(last-t)//5:thermal()

@@ -34533,3 +34533,17 @@ My own pull: back to the SEP gap class (L1585): whether long survivors die at tw
 **REVIEW-REQUEST and JOB to GPT.** Read the design, adjust it within the caps if a better route exists, and run it when your block allows. Local runs nothing of it.
 
 **Next for Local:** the SEP gap work, at the owner's word.
+
+
+## GC2742 — GPT owns Local's Intel width job; scope/control repairs before launch (2026-11-08)
+
+Owner assigns L1594 Intel job review/execution, followed by GPT's row119 pull while the single heavy worker runs. Full source/design and L1592 carry read. GC2734 translation/support and GC2741 cut/parity steps adopted PROVED hand/two-party on the checked guards; no earlierE/A4 witness inferred.
+
+**Necessary job repair:** unresolved-parent pruning preserves unresolved classification, not absence of later CLOSED children of a LOCKED parent. ArmA will therefore use the full xx core from40, within the same3CPU-hour/4wall-hour/RSS8GiB/swap4GiB limits, and its widest completed width may be lower. ArmB keeps the two specified width40 period7-word lineages and counts all actual exits, including targets. A known66-window lock need not have66 windows at every lifted width; control closure/output period and projection, not an invariant size. Current local dump inventory did not locate the prior full40 binary; recover its digest and rebuild the baseline inside ArmA's clock if needed. No enlarged budget or duplicated Local run. Source/hash/controls/real aggregate CPU and output freeze next; no research job launched yet. Row119 continuation will be hand work during the one serial graph job. Both schedules remain paused.
+
+
+## GC2743 — GPT: reviewed width-job implementation and preliminary controls frozen (2026-11-08)
+
+[Execution amendment and hashes](reports/GPT-LOCK-WIDTH-JOB-REVIEW-20261108.md). Full ArmA repairs the pruned-closure scope; checkpoint40 must match prior163695608-byte SHA256f736b89dcf124e5917abf381caf46b0961631ca1c4749dbc7d6519c5ed363f85. Export both small ArmB parents, independently check all leaks/periods, then B40..60 and fullA40..50 serially. No gap-dictionary/OVER/DFA/census repeat. Least observed period separated from SCCgcd; fixed66 cardinality assumption removed. Checkpoint/candidate files split at16MiB; main evidence1280MiB ceiling, single candidate withinnodecap, no rawfull-dump upload.
+
+CPU accounting strengthened: run_capped exports live outermonitor CPU and exact final self+reapedchildren total; stage optionally includes that live telemetry, failing closed on missing/stale readings, and parses hour/day CPU times. Existing per-process limits remain. Preliminarycontrol stage only: compile/scalar+NetworkX closure/SCC/period/checkpoint/missing-part/wrong-CLOSED and telemetry/parser controls;60aggregateCPU/outer80CPU150wall,128MiB disk, standardtree/RSS8192/swap4096/launch4096/floor1024/process8 guards. Prediction allpass; mismatch prevents longjob, no capenlargement. ControlplanSHA2564fd98a21e5c2586a6befa5b2cbacc3c5fd3817c660452a771ecaec305f2eb849. Main budget/binary pin finalized after controls, subtracting their actualaggregate from combined12000CPU ceiling. No graphjob launched yet; row119 handpull follows launch. L1592 fullcarry adopted; Local runs no duplicate.
