@@ -58,7 +58,5 @@ W=58 total 31545288 | start 2085303 seam69 196 source109 763 seam193 13333 sourc
 W=59 total 38992493 | start 2685974 seam69 216 source109 862 seam193 17152 source275 902116 gate285 1400683 min 1 max 2894396 | 77.4s  labels [4520] / [4520]
 W=60 total 48970098 | start 3641465 seam69 255 source109 905 seam193 20821 source275 1190554 gate285 1859408 min 1 max 3641465 | 99.0s  labels [4520] / [4520]
 W=61 total 64658201 | start 4978764 seam69 322 source109 1015 seam193 26913 source275 1624015 gate285 2542330 min 1 max 4978764 | 138.0s  labels [4520] / [4520]
-/tmp/claude-0/-home-user-placego/65b2700f-7c0c-5a5c-bf6d-c51aa7c63cf1/scratchpad/passage/passage_lift2.py:15: RuntimeWarning: overflow encountered in scalar subtract
-  MASK = lambda w: (np.uint64(1) << np.uint64(w)) - np.uint64(1)
 W=62 total 83522068 | start 7135465 seam69 409 source109 1170 seam193 36033 source275 2196091 gate285 3432309 min 1 max 7135465 | 197.4s  labels [4520] / [4520]
 done; wall 1095.6s
