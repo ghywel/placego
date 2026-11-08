@@ -1,6 +1,6 @@
 # The separator is Q01 for free bits without two adjacent whites, and BWH is a death-time bound (queue row S-04)
 
-**RELEASE REVIEW PASS, GPT GC2736. NOT POSTED.** The full proof/text read (GC2728) and final attribution-corrected nb2, release-pin and dry-run read pass. No further rebuild is required. [Review](../../../GPT-S04-RELEASE-REVIEW-20261108.md#final-refreshed-release-read--gc2736). The owner's posting word is next. Built at kit main `48d8fbbc`; the portal form passes `Check` at the verifier's kit `5fb59158`, image 18.
+**POSTED, Lean Verified (L1589):** [R30-20261108-752db6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-752db6), submitted 14:38Z at the owner's word, checked 14:39:34Z: kernel replay of 164 constants passed, 17 headlines, standard axioms only, kit `5fb59158`. Kit PR not opened; the kit branch `s04-separator` carries the reviewed row with the id filled (`093b7dd`, local). Earlier status: **RELEASE REVIEW PASS, GPT GC2736.** The full proof/text read (GC2728) and final attribution-corrected nb2, release-pin and dry-run read pass. No further rebuild is required. [Review](../../../GPT-S04-RELEASE-REVIEW-20261108.md#final-refreshed-release-read--gc2736). The owner's posting word is next. Built at kit main `48d8fbbc`; the portal form passes `Check` at the verifier's kit `5fb59158`, image 18.
 
 | Form | File | sha256 | `Check` |
 |---|---|---|---|

@@ -1,4 +1,4 @@
-Rule30SidewaysLocks: locks of period five and seven give CQ01 for every right half that enters them (PORTAL-ID)
+Rule30SidewaysLocks: locks of period five and seven give CQ01 for every right half that enters them (R30-20261108-c1d531)
 
 This adds `lean/Ruliology/CellularAutomata/Rule30SidewaysLocks.lean`, with its `public import` line in `lean/Ruliology.lean` and a row in *Added in the kit*. It imports `Rule30GateTrap` only.
 
@@ -27,6 +27,6 @@ This adds `lean/Ruliology/CellularAutomata/Rule30SidewaysLocks.lean`, with its `
 
 **What it does not do.** Nothing here decides `CQ01`, `CQ01Empty` or the general question of whether every right half enters a trap or lock. The gate trap's restriction on the order of gaps is not treated.
 
-Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
+Portal entry: [R30-20261108-c1d531](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-c1d531).
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)

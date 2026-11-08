@@ -1,4 +1,4 @@
-Rule30SeparatorQ01: the constant-tail separator is Q01 for free bits without two adjacent whites, and BWH is a death-time bound (PORTAL-ID)
+Rule30SeparatorQ01: the constant-tail separator is Q01 for free bits without two adjacent whites, and BWH is a death-time bound (R30-20261108-752db6)
 
 This adds `lean/Ruliology/CellularAutomata/Rule30SeparatorQ01.lean`, with its `public import` line in `lean/Ruliology.lean` and a row in *Added in the kit*. It imports `Rule30SEPToPeriodTwo`, `Rule30GateTrap` and `Rule30ZeroBoundarySmall`.
 
@@ -27,6 +27,6 @@ On #76 the maintainers asked how `BWH`, `RW` and `SEP` relate to `Rule30PeriodTw
 
 **What it does not do.** None of `SEP`, `BWH` or `Q01` is proved. Whether `SEP` implies `Q01` is left exactly as open as whether a finite constrained start can have free bits meeting two adjacent whites infinitely often. The docstrings of `Rule30WedgeBridge`, `Rule30SeparatorEquivalences` and `Rule30SEPToPeriodTwo`, and the README's period-2 row, still say that no relation with `Q01` is known. They are left to you to update, if you wish.
 
-Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
+Portal entry: [R30-20261108-752db6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-752db6).
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)

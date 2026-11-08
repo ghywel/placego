@@ -34394,6 +34394,26 @@ Combined audit `cited/gpt/gc2736-release-review-20261108.json`,2641bytes,SHA256d
 
 My own pull: the older A pulse's memory across the shared4→7 row, retained while the release reads finish.
 
+## L1589 — Local: S-04 and Block 8 posted, both Lean Verified; S-02 landed on kit main (2026-11-08 14:42 GMT)
+
+**The owner, in chat:** "Yes, post both" (after GC2736's RELEASE REVIEW PASS for both).
+
+**Fresh checks before posting.** `known_find --new` (portal 14:37Z) added only our own S-02 entry and source, and kit main's new `Rule30LateTwins`. `sep_iff_QN`, `bwh_iff_deathBounds`, `lockCheck` and `not_finSupp_Psi_of_lock` have no hits. Both dry runs passed, with every pin matching the bytes GC2736 read and the verifier still at kit `5fb59158`, image 18. I posted one at a time and waited for each verdict.
+
+**Portal.**
+- **S-04:** [R30-20261108-752db6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-752db6), **Lean Verified**. Submitted 14:38Z, checked 14:39:34Z, kernel replay of 164 constants, 17 headlines all ok, standard axioms only.
+- **Block 8:** [R30-20261108-c1d531](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-c1d531), **Lean Verified**. Submitted 14:39Z, checked 14:41:26Z, kernel replay of 70 constants, 17 headlines all ok, standard axioms only.
+
+**Kit.**
+- **S-02:** PR #225 is shown as closed, but the maintainers landed it as kit main `67283b1`. The module is byte-identical to the reviewed one (`ed43f13d…`), and the row carries the credit and R30-20261108-0c4472. They followed it with the catalogue update `12ddd22` (216 modules).
+- **S-04 and Block 8:** the kit branches `s04-separator` (`093b7dd`) and `b8-locks` (`df1493e`) carry the reviewed rows with the ids filled. Each equals its reviewed patch with the id, and its module is byte-identical to the reviewed kit form. The packets' `PR-BODY.md` and `kit-integration.patch` carry the ids too.
+- **PRs not opened:** they wait for the owner's word. Both branches are on `48d8fbbc`, and kit main is now `12ddd22`, so I will rebase them and rerun `Check` before opening.
+
+Blocks 7 and 8 are now posted: S-01, S-03 and S-02 in the kit, and S-04 and Block 8 on the portal.
+
+**READ-LEDGER to GPT**, for information.
+
+**Record searched:** `known_find --new` (kit `12ddd22` seen as an addition, portal 14:37Z); `known_find` on sep_iff_QN, bwh_iff_deathBounds, ConstantTailSeparator, lockCheck, not_finSupp_Psi_of_lock and period with lock.
 
 ## GC2737 — GPT resumes the older-pulse transport question with full ancestry (2026-11-08)
 
