@@ -91,4 +91,36 @@ Private follow-up plan SHA256 `c2621ad28ad566593d3d6fa977a0b193e1f10ba0ed27dbbd4
 | drat-trim | `5a0ec55870ad0fe33e4984e53873743bd7eb9360af53ca22db879524ff3e7c93` |
 | result.json | `a2ea8bb23e57251998154ce676335672600753b9be90416caf9469d9f32a8bde` |
 
+## Change to an explicit nonlinear memory predicate — GC2740
+
+Both corner-corrected W12 queries remain SAT and replay every new condition. The strip-filter route is parked: do not add more strip width/corner constraints without a new structural reason. The returned models only show that this relaxation is inadequate.
+
+There is a direct algebraic transport statement. Put z_s(j)=x^s_(j−193+s), allowing the actual center at position0. The inverse recurrence telescopes:
+
+```text
+z_a(j) XOR z_b(j) = XOR_(s=a,...,b−1) (z_s(j+1) OR z_s(j+2)).
+```
+
+At j83 let P be the parity of the seven OR terms for s111..117. At j80 let Q be the parity of the eight terms for s113..120. Then P=head111 XOR column8(118), whereas Q=center113 XOR column8(121)=column8(121), since the actual center113 is white. All register values are reconstructed from the same M; P reads the register just before83, Q the one just before80. No new independently chosen state is allowed.
+
+Keep common temporal premise S: head113 white and the complete5·3353 heads115..153; omit only head111. The certified weaker white guard gives column8(118)=0, so **P=head111**. The old original-cone black-input implication gives **P=1 implies Q=1** under S. This is an explicit one-way constraint on two nonlinear register predicates three scan cells apart. It is a hand corollary of checked cone implications, PROOF-SKETCH pending a carrying read, not a new original-CNF certificate. The retained good and one-pulse-deleted fixtures give (P,Q)=(1,1) and(0,0).
+
+**One remaining finite question:** is (P,Q)=(0,1) physically possible under S? This distinguishes equality (a copied bit) from one-way information. Return to the unchanged45-tick/46-cell original physical cone, change exactly head3 from black to white and require column8(13)=black. One5000-conflict query, no other constraints or window/horizon growth. Prediction equality: UNSAT; counterfactual SAT supplies the missing corner and refutes equality. UNKNOWN leaves it open. Every SAT model replays original case clauses, all cone cells, independent scalar evolution, both parity identities and full finite ancestry at local seam85. This is not a witness for the earlier E/A^4 target ancestry. Native RUP check any UNSAT; the original two controls give00/11 and wrong-old-pulse rejects the new witness. No additional query in this block.
+
+Main5CPU12wall, one2CPU native slot, aggregate10CPU/outer15CPU30wall; normal one-worker/tree/RSS8192/swap4096/launch4096/floor1024/process6/file16/stage128/thermal stops. This changes from a refuted free-input abstraction to an exact physical missing-corner question, not a larger retry.
+
+Private plan SHA256 `7c0569cf5d94a3da126f33571aa7af1c2954f5671a802ed9342396fc2a884a6c`.
+
+| Source/input | SHA256 |
+|---|---|
+| tests/probes/swarm/sw02/block3/older_pulse_parity.py | `d477ffc475f781fae0480f4a398bf475b2052007dcd0744c19ec676e6ea4463d` |
+| tests/probes/swarm/sw02/block3/strip_proof_check.py | `87dbb21e49d9610924099420a9e5f8f49c4f69ee98739bc8f7e4819e2343856a` |
+| tests/probes/swarm/sw02/block3/physical_47.py | `f7751b7ef59021e3895511221d78f2deb79b019080c32febf92057baf33eea7d` |
+| tests/probes/swarm/sw02/block3/physical_ancestry.py | `6d55a6bd120120c34c81f12ea6d9a453a1754a1fafaeea92ac92e867ed1fe912` |
+| tests/probes/swarm/sw02/block3/e_short_guard.py | `c4e8803b22a00cf035a06cf5783d25b0d09d766fa0ed9c9c507da2af0ed009a1` |
+| tests/probes/swarm/sw02/block3/intel_worker.py | `2442c769f0054db8133de0958de672f996df884c100e8cfe8e50499fabb47a94` |
+| tests/probes/metal_scope/stage.py | `3ecffb8d7d7bcccdc55fa6cd197b0b3d213fe532298bf900457518580c53f62b` |
+| tests/probes/wolfram/run_capped.py | `26f850a8c1ba3905e00093cfa52331e94ee3d48ebe41c8b69b90b735b0a5ec3b` |
+| drat-trim | `5a0ec55870ad0fe33e4984e53873743bd7eb9360af53ca22db879524ff3e7c93` |
+
 My own pull: an acceptance relation at the cut that retains when the older pulse is checked, and which later head checks make it informative.
