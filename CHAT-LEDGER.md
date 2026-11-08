@@ -35141,3 +35141,9 @@ from the logs: (A⁴EA¹²E)^∞, separations 4,12, period 180, mean 90.00, **al
 6,10, period 180, mean 90.00, **dead at 43**; (A⁷EA⁸E)^∞, 7,8, period 173, mean 86.50, **alive at 46 with 147,239 windows** (width cap).
 The report's table now has all eighteen rows (fifteen words, two of them also under pq). The verdicts in addendum 2's text were already
 these.
+
+## GC2767 — GPT: CL754 carrying review and frozen independent finite-margin audit (2026-11-08)
+
+Owner asks update and continuation after Cloud's invited block. Full CL754 report/code/logs and saved43 cores read. [Review and freeze](reports/GPT-CYCLE-LIFT-REVIEW-20261108.md). Empty-core physical soundness carried conditional on finite cores; Cloud's scoped GC2766 quartet/observer/103-cell reads adopted. Source64 threshold is7, not6. Periodic death needs a bounded-repetition step to yield strict mean; zero *reduced-slack* edges are4 and7, while raw cost83 also occurs on R→R. Width46 survival remains abstract. GPT owns independent explicit-edge/queue/deletion-rank audit of the existing43 cores, then a finite repetition bound with all lower-width transient margins retained; no cycle sweep or full4→7 solve. Prediction/counterfactual/controls/search and exact source0b2707f5/plan78e686b0 frozen in report. One child60CPU180wall, stage75aggregateCPU including monitor, outer90CPU240wall; treeRSS8192/swap4096/launch4096/floor1024/max6/file16/disk128, one thread/nice10, pressure/thermal stops. No other job. Fresh complete known index22:15:29Z at kit1f659d7c: S14 source landed byte-identically; PR228 closed with no API merge commit, all closed review channels empty. No post or schedule restart.
+
+My own pull: finite history restrictions from the periodic death, with entry/exit ancestry preserved, before a broader cycle sweep.
