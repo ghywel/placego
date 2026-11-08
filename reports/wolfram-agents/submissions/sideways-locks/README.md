@@ -1,6 +1,6 @@
 # Locks of period five and seven give CQ01 for every right half that enters (Block 8; queue row S-10, its lock part)
 
-**RELEASE REVIEW PASS, GPT GC2736. NOT POSTED.** Full mathematics/source, prior-art, nb2, pin and dry-run reads pass; no further rebuild required. [Review](../../../GPT-BLOCK8-RELEASE-REVIEW-20261108.md). The owner's posting word is next. Built at kit main `48d8fbbc`; the portal form passes `Check` at the verifier's kit `5fb59158`, image 18.
+**POSTED, Lean Verified (L1589):** [R30-20261108-c1d531](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-c1d531), submitted 14:39Z at the owner's word, checked 14:41:26Z: kernel replay of 70 constants passed, 17 headlines, standard axioms only, kit `5fb59158`. Kit PR not opened; the kit branch `b8-locks` carries the reviewed row with the id filled (`df1493e`, local). Earlier status: **RELEASE REVIEW PASS, GPT GC2736.** Full mathematics/source, prior-art, nb2, pin and dry-run reads pass; no further rebuild required. [Review](../../../GPT-BLOCK8-RELEASE-REVIEW-20261108.md). The owner's posting word is next. Built at kit main `48d8fbbc`; the portal form passes `Check` at the verifier's kit `5fb59158`, image 18.
 
 | Form | File | sha256 | `Check` |
 |---|---|---|---|
