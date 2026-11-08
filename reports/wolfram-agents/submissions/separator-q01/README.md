@@ -1,6 +1,6 @@
 # The separator is Q01 for free bits without two adjacent whites, and BWH is a death-time bound (queue row S-04)
 
-**PACKAGED, L1585. NOT POSTED.** Awaiting GPT's packet read and the owner's word. Built at kit main `48d8fbbc`; the portal form passes `Check` at the verifier's kit `5fb59158`, image 18.
+**PROOF/TEXT REVIEW PASS, GPT GC2728; NOTEBOOK REFRESH REQUIRED. NOT POSTED.** The full proof and nb1 read pass; the attribution correction changes the essay, so Local rebuilds the release notebook and refreshes pins/dry receipts. [Review](../../../GPT-S04-RELEASE-REVIEW-20261108.md). The owner's posting word follows the refreshed packet. Built at kit main `48d8fbbc`; the portal form passes `Check` at the verifier's kit `5fb59158`, image 18.
 
 | Form | File | sha256 | `Check` |
 |---|---|---|---|
@@ -9,9 +9,9 @@
 
 The kit form is byte-identical to the module in the local kit branch `s04-separator` (commit `684cacf`, not pushed); [`kit-integration.patch`](kit-integration.patch) holds its import line and catalogue row.
 
-**Texts.** [`title.txt`](title.txt), [`abstract.txt`](abstract.txt) (205 words, `5c037c1c…`), [`essay-prose.md`](essay-prose.md) (`80aca934…`), [`essay.md`](essay.md) (`a8d3d3b8…`), [`headlines.txt`](headlines.txt), [`PR-BODY.md`](PR-BODY.md), [`prereg.txt`](prereg.txt).
+**Texts.** [`title.txt`](title.txt), [`abstract.txt`](abstract.txt) (205 words, `5c037c1c…`), [`essay-prose.md`](essay-prose.md) (`3d969140…`), [`essay.md`](essay.md) (`c7916ca0…`), [`headlines.txt`](headlines.txt), [`PR-BODY.md`](PR-BODY.md), [`prereg.txt`](prereg.txt).
 
-**Notebook nb1.** SHA256 `2f09ee52487c3024c496e12f40dc4a40377b11b5f69630682c81ce7e747365aa`, 187,824 bytes. RESULT OK in 14.2 s: 6 output cells, no message cells. The worked numbers equal the Python replay ([`separator_q01_replay.py`](../../../../tests/probes/wolfram/separator_q01_replay.py)): `{38, 32, 136, True, {2, 3, 5, 8, 13, 21}}`. The icon payload equals the portal source byte for byte, the axiom sets match, KernelChecked holds at 164 declarations, and there are no home paths. Driver [`separator_q01_notebook.wl`](../../../../tests/probes/wolfram/separator_q01_notebook.wl), assembler [`assemble_separator_q01_essay.py`](../../../../tests/probes/wolfram/assemble_separator_q01_essay.py).
+**Notebook nb1: reviewed, superseded for release by GC2728 attribution repair.** SHA256 `2f09ee52487c3024c496e12f40dc4a40377b11b5f69630682c81ce7e747365aa`, 187,824 bytes. RESULT OK in 14.2 s: 6 output cells, no message cells. The worked numbers equal the Python replay ([`separator_q01_replay.py`](../../../../tests/probes/wolfram/separator_q01_replay.py)): `{38, 32, 136, True, {2, 3, 5, 8, 13, 21}}`. The icon payload equals the portal source byte for byte, the axiom sets match, KernelChecked holds at 164 declarations, and there are no home paths. Driver [`separator_q01_notebook.wl`](../../../../tests/probes/wolfram/separator_q01_notebook.wl), assembler [`assemble_separator_q01_essay.py`](../../../../tests/probes/wolfram/assemble_separator_q01_essay.py).
 
 **Post script.** `post.sh` lives outside git and refuses unless the notebook, source, abstract, title, essay and headlines match their pins and the verifier is still kit `5fb59158`, image 18. `post.sh --dry` passes.
 
@@ -33,10 +33,12 @@ The two controls are new. The width-19 witness is the SW-02 skeptic's (SKR-CP-4-
 **Cross-check.** Through the dictionary, an exhaustive search reproduces the swarm's horizon table for `n = 5` to `9` ([`separator_q01_margins.py`](../../../../tests/probes/wolfram/separator_q01_margins.py), [output](../../../../tests/probes/wolfram/separator_q01_margins.out)), as preregistered.
 
 **Prior art in the packet.**
-- `lhallee/rule30-open` at `f877f5af`, still its head (`WedgeLadderQ01`): the chart (`zcone_chart`, `zpeel_chart`), `binaryCTS_iff_Q01`, `q01_constantTailSeparator` and `bwh_Q01`. These are known, reproved here. It has no hard-core class, no `Q01Gap`, no layers and no death bound.
+- `lhallee/rule30-open` at `f877f5af`, still its head (`WedgeLadderQ01`): the chart (`zcone_chart`, `zpeel_chart`), `binaryCTS_iff_Q01`, `q01_constantTailSeparator` and `bwh_Q01`. These are known, reproved here. Its `WedgeLadder.md` already states the exact-width death-time dictionary, with both horizons and the top-two-black guard, and checks it through n=12. That known interpretation is formalized here; the hard-core class, `Q01Gap` implication and layers are additional.
 - The kit's Condrey/Quint separator modules (PRs 76, 84, 86, 101), whose docstrings say that no relation with `Q01` is known, and Bosdure's `Rule30GateTrap` (PR 64).
 - The kit's `constant_separator_excludes_alternating`, which `sep_CQ01` restates sideways, and `q01_width_le_52_linear`, an unconditional `2W + 8` to width 52.
 
 **Evidence.** Shared store `cited/local/separator-q01-20261108.tar.gz`, 525,975 bytes, SHA256 `9ac43baa5f82ae44f651f38a7362a522309db710b2e6818382b814367a5e6319`.
 
 **Not done.** The full catalogue build. The kit branch is not pushed and the PR is not opened. `PORTAL-ID` in the kit row is filled in after posting.
+
+**Local refresh, GC2728.** Rebuild from corrected `essay.md` (SHA256 `c7916ca0bc7d1756b5b4ecb90b66e902ef7c3997c3be777cb4b315d2ac1c530c`), with unchanged source/abstract/title/headlines/driver. Refresh private notebook/essay pins and publish the new notebook, receipts and sanitized pin/dry receipt for the short final byte read. No Lean rebuild is required for this prose-only change unless source/toolchain/verifier changes.

@@ -38,3 +38,5 @@ kernel certificate beyond two small controls, and Check passes at main and, for 
 the two guard controls were added). The counterfactual did not occur: both converses (row_of_wedge, layerWord_realizes)
 closed. Q[N] => SEP needed no rotation. Second prediction HELD (every known D(W) under 2W + 4). Addendum prediction
 HELD: M(n, c) for n = 5 to 9 equals the swarm's table. Ten mutants rejected. Notebook nb1 RESULT OK.
+
+GPT GC2728 review addendum (8 November 2026). The full WedgeLadder.md at f877f5afd5609373e2df1639e943d04e3a56e83b already states the exact-width BWH/death dictionary, including both horizons and the odd top-two guard, as an on-paper/computed interpretation not formalized in Lean. Thus the dictionary is known mathematics formalized here, not a new interpretation. Its simulation and the matching n=5..9 table are independent rechecks of known numbers. Essay, PR body and catalogue attribution corrected; Lean and abstract unchanged. The original preregistration above is preserved as history.

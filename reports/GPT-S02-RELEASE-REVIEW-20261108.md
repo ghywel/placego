@@ -2,7 +2,7 @@
 
 GPT GC2725/GC2726, 8 November2026. Owner requests S02 while Local prepares S02/S04. Research continuation is parked.
 
-**Verdict: mathematics, both Lean sources and existing kernel receipts PASS. Corrected release text is ready. Final release awaits Local's notebook/pin refresh for that text.** No proof, theorem type, headline, title or computational output changed. Nothing has been posted.
+**Final verdict, GC2728: RELEASE REVIEW PASS.** The GC2726 notebook hold is cleared by the L1585 refresh and the final byte read below. No proof, theorem type, headline, title or computational output changed. Nothing has been posted.
 
 ## Mathematics and formal source
 
@@ -51,3 +51,9 @@ Current reviewed pins:
 | Corrected essay | `0d1086135e52a7fbc242be9ec60b2cd0208de47601ced28a9fbd8043d0c817a5` |
 
 The private post script and its old dry-run success are Local's reported checks, not independently inspected here. The notebook refresh/dry-run gate is concrete and is the only packet hold found. Posting still follows the owner's release word. The research pull remains parked.
+
+## Final refreshed release read — GC2728
+
+Local L1585 supplies `cited/local/late-twins-nb2-20261108.tar.gz`, 535,042 bytes, SHA256 `180ff4c753ac1258923b15c05cfeb72aa07057930abac33237e30f1ea25f4a50`; downloaded and digest-verified. Notebook nb2 is129,983 bytes, SHA256 `83e87be1a1df4dbed7c37c1967b3b1b9e2015e6ff9ea44c4408ad872d50483ed`. Its serialized Lean payload and Abstract decode byte for byte to the reviewed files, including the Lean final newline. Its copied essay matches corrected essay0d108613 exactly, and its driver hash matches the unchanged repository driver. All six actual output strings match the receipt's digests; KernelChecked143, nine standard axiom sets, zero Message cells, no public home/scratch paths. RESULT OK in19.5s is Local's build, independently read here; no new Intel compile or Wolfram evaluation.
+
+The supplied sanitized pin extract matches all six release files and nb2. The dry receipt names verifier5fb591588cfa869bfdc47946799b5ddd70a903d1/image18, nine headlines, all guards pass and nothing submitted. This is an independently read pin/dry receipt, not inspection of the whole private post script. **The release-packet gate is cleared.** Owner's posting word remains separate. The earlier remaining-gate section records GC2726's now-completed request.

@@ -1,6 +1,6 @@
 # From tick 46 on, every row beside the wall has a twin (queue row S-02)
 
-**PROOF/TEXT REVIEW PASS, GPT GC2726; NOTEBOOK REBUILT, L1585. NOT POSTED.** Scope repairs are applied and the release notebook is rebuilt from them (nb2); GPT's short byte read of nb2 and the pins is next. [Review](../../../GPT-S02-RELEASE-REVIEW-20261108.md). The owner's posting word remains required. Built at kit main `48d8fbbc`; the portal form passes `Check` at the verifier's kit `5fb59158`, image 18.
+**RELEASE REVIEW PASS, GPT GC2728. NOT POSTED.** Scope repairs are applied; nb2 source, Abstract, essay, output digests, sanitized release pins and dry receipt pass the final byte read. [Review](../../../GPT-S02-RELEASE-REVIEW-20261108.md). The owner's posting word remains required. Built at kit main `48d8fbbc`; the portal form passes `Check` at the verifier's kit `5fb59158`, image 18.
 
 | Form | File | sha256 | `Check` |
 |---|---|---|---|
@@ -27,4 +27,4 @@
 
 **Not done.** The full catalog build. The PR is not opened. `PORTAL-ID` in the kit row is filled after posting.
 
-**Local refresh required, GC2726.** Use corrected essay `0d1086135e52a7fbc242be9ec60b2cd0208de47601ced28a9fbd8043d0c817a5` and abstract `72fcf6cc76bc0fb7c9f1fc281debdd72c5593d467a4dcb1f9167b0d8eec0e6ca`. Lean module hashes and the nine headlines are unchanged. Rebuild with the existing notebook driver, update private post pins and rerun `post.sh --dry`; publish the new notebook digest/receipt and sanitized pin/dry receipt for the short final byte read. The old nb1 source payload and checker receipts passed GPT's read; the old abstract/prose cannot represent this corrected release.
+**GC2726 refresh completed, L1585/GC2728.** The corrected essay/abstract and unchanged Lean/headline pins match nb2 and the sanitized post guards. The dry receipt confirms verifier `5fb591588cfa869bfdc47946799b5ddd70a903d1`, image18, nine headlines, nothing submitted. All six actual output strings match their receipt digests; notebook source/Abstract decode byte-exact, including the Lean source's final newline. The packet hold is cleared; no new build or posting by GPT.
