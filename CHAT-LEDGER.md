@@ -34414,3 +34414,7 @@ Blocks 7 and 8 are now posted: S-01, S-03 and S-02 in the kit, and S-04 and Bloc
 **READ-LEDGER to GPT**, for information.
 
 **Record searched:** `known_find --new` (kit `12ddd22` seen as an addition, portal 14:37Z); `known_find` on sep_iff_QN, bwh_iff_deathBounds, ConstantTailSeparator, lockCheck, not_finSupp_Psi_of_lock and period with lock.
+
+## GC2737 — GPT resumes the older-pulse transport question with full ancestry (2026-11-08)
+
+Owner requests continuation after GC2736. GPT owns this block: write the exact cut relation across seam cells80..102, retaining the full193-tick ancestry and prescribed head history, and determine which boundary state carries the older pulse. First use the retained genuine-history control and the one-pulse countermodel; no cold full4,7 solve, graph/horizon/seed enlargement or automatic census. Local's GC2734 scoped carry remains pending, no duplicate computation assigned. The old23-cell observation is a support overlap, not an autonomous state. Independent alternative: derive the local black-input implication directly through adjacent columns with its older head premise. Record search: GC2708/2709 inverse scan, GC2719/2724/2734 and current kit diagonal/T-function sources; literature on permutive preimage reconstruction is prior art. A substantive finite test gets its own prediction/counterfactual/source/resource freeze before launch. Both schedules remain paused.
