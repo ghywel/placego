@@ -15,7 +15,7 @@ This adds `lean/Ruliology/CellularAutomata/Rule30SidewaysLocks.lean`, with its `
 - `lock5_win_trap`: the period-five lock lies inside `Rule30GateTrap.trap`. There `CQ01` is otherwise conditional on `Q01Gap`; inside `lock5` every gap of `u R` is `5`, and `CQ01` holds with no hypothesis.
 - `u_28998`: `u` of `28998` reads `10000` from step `7` on.
 
-**Checks**, with Lean 4.35.0, at main `48d8fbbc`:
+**Checks**, with Lean 4.35.0, at main `48d8fbbc`, and after rebasing onto main `12ddd22` (`Check` rerun there, same result):
 - `lake build Ruliology.CellularAutomata.Rule30SidewaysLocks`: no warnings, about five seconds for the module on an M5 MacBook Pro, kernel checks included.
 - The kit's own `Check.lean --claim partial` passes all 17 headlines. It replays 70 constants and finds no new axioms; the headlines' axioms are within `propext`, `Classical.choice` and `Quot.sound`.
 - The compiler rejected all nine mutations tested. Seven fail in `decide` on a false statement: a wrong word, period `4`, a window removed, the word of the other period-seven lock, an entry two ticks early, an entry in the wrong class, and column `W + 1` taken as free at both ticks. That last is the freer model of `Rule30GateTrap`, in which none of the three sets closes.

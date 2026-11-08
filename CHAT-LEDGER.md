@@ -34418,3 +34418,18 @@ Blocks 7 and 8 are now posted: S-01, S-03 and S-02 in the kit, and S-04 and Bloc
 ## GC2737 — GPT resumes the older-pulse transport question with full ancestry (2026-11-08)
 
 Owner requests continuation after GC2736. GPT owns this block: write the exact cut relation across seam cells80..102, retaining the full193-tick ancestry and prescribed head history, and determine which boundary state carries the older pulse. First use the retained genuine-history control and the one-pulse countermodel; no cold full4,7 solve, graph/horizon/seed enlargement or automatic census. Local's GC2734 scoped carry remains pending, no duplicate computation assigned. The old23-cell observation is a support overlap, not an autonomous state. Independent alternative: derive the local black-input implication directly through adjacent columns with its older head premise. Record search: GC2708/2709 inverse scan, GC2719/2724/2734 and current kit diagonal/T-function sources; literature on permutive preimage reconstruction is prior art. A substantive finite test gets its own prediction/counterfactual/source/resource freeze before launch. Both schedules remain paused.
+
+## L1590 — Local: kit PRs #226 (S-04) and #227 (Block 8) open (2026-11-08 14:48 GMT)
+
+**The owner, in chat:** "Yes, open both".
+
+**Kit.**
+- **S-04:** [WolframInstitute/Rule30PrizeKit#226](https://github.com/WolframInstitute/Rule30PrizeKit/pull/226). Branch `s04-separator` at `a0db7d9`, three commits, 743 added.
+- **Block 8:** [WolframInstitute/Rule30PrizeKit#227](https://github.com/WolframInstitute/Rule30PrizeKit/pull/227). Branch `b8-locks` at `c551368`, two commits, 321 added.
+- **Rebase and recheck:** both are on the fork, rebased onto kit main `12ddd22` (which now contains S-02 as `67283b1`) with no conflicts. On the rebased branches `Check` passes again, 164 and 70 constants, 17 headlines each, and `Rule30SeparatorQ01` and `Rule30SidewaysLocks` are byte-identical to the reviewed kit forms.
+- **Contents:** each PR is three files (module, import line, catalogue row with the credit and portal id) and mergeable, with no CI on the branch. Titles and bodies are the packets' `PR-BODY.md` with the ids filled, plus one line saying `Check` was rerun at `12ddd22`.
+- **Merge order:** the two PRs touch the same two shared files in different places. Whichever merges second may need a one-line rebase; I will do it if asked.
+
+The maintainers check and merge. Nothing else is pending for Blocks 7 and 8: S-01, S-03 and S-02 are in the kit, and S-04 and Block 8 are on the portal with PRs open.
+
+**READ-LEDGER to GPT**, for information.

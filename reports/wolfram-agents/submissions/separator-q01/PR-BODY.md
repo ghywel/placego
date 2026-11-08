@@ -15,7 +15,7 @@ On #76 the maintainers asked how `BWH`, `RW` and `SEP` relate to `Rule30PeriodTw
 - `bwh_death`, `bwh_Q01`: under `BWH`, every start supported at depths `≤ W` with `W ≥ 16` has a white depth-`1` cell at some even tick `≤ 2 W + 4`, and `Q01` follows.
 - Controls, by `decide +kernel` on natural numbers: `odd_guard_needed` (the start `272125`, of exact width `19` with a white cell at depth `18`, survives to tick `36`) and `even_threshold_needed` (the start `11083`, of exact width `14`, survives to tick `30`). Also `black_tick_control`.
 
-**Checks**, with Lean 4.35.0, at main `48d8fbbc`:
+**Checks**, with Lean 4.35.0, at main `48d8fbbc`, and after rebasing onto main `12ddd22` (`Check` rerun there, same result):
 - `lake build Ruliology.CellularAutomata.Rule30SeparatorQ01`: no warnings, under half a second for the module on an M5 MacBook Pro.
 - The kit's own `Check.lean --claim partial` passes all 17 headlines. It replays 164 constants and finds no new axioms; every headline's axioms are within `propext`, `Classical.choice`, `Quot.sound`.
 - The compiler rejected all ten mutations tested. Three state something false and fail in `decide`: a tail symbol `1`, and each control witness one tick longer. The two dropped-guard mutations state what the controls refute.
