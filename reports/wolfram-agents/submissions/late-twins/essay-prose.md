@@ -14,17 +14,17 @@ So an immortal natural, if one existed, would force another immortal natural of 
 
 ## 2. The top of a row moves on its own
 
-Rule 30 reads a cell's left neighbour, so the cells above a cut never see the cells below it. In this frame that is one identity (`F_shiftRight`): for every row `Y` and every cut `m`,
+With the cut moving out one cell per tick, the cells retained above it depend only on the cells retained at the preceding tick. In this frame that is one identity (`F_shiftRight`): for every row `Y` and every cut `m`,
 
 `F Y >>> (m + 1) = R (Y >>> m)`, where `R u = (u >>> 2) XOR ((u >>> 1) OR u)`.
 
-The cut moves out by one cell each tick, as the top of the row does. Iterating, `iter F t Y >>> (m + t) = R^t (Y >>> m)` (`iter_F_shiftRight`). Taking the cut twenty cells below the top, the top twenty cells of every row evolve by `R`, whatever lies beneath them and wherever the wall is.
+The cut moves out by one cell each tick, as the top of the row does. Iterating, `iter F t Y >>> (m + t) = R^t (Y >>> m)` (`iter_F_shiftRight`). Once the row has width at least twenty, take the cut at the bottom of its top twenty cells. This band evolves by `R`, independently of what lies below the moving cut.
 
 ## 3. The top twenty cells settle within 26 ticks
 
 From any start whose top cell is the twentieth, `R^t` reaches one four-cycle `C20 = {820683, 822904, 911005, 912610}` by `t = 26` and stays there (`band_settles`). Every nonzero row reaches width `20` by tick `19`, so from tick `45` on every row's top twenty cells lie on `C20` (`band_late`).
 
-The kernel checks this in two stages rather than all `2^19` starts at once. Because `R` commutes with shifting, the top thirteen cells evolve on their own too. All `4,096` starts of the top thirteen cells reach the four-cycle `C13 = {6411, 6428, 7117, 7129}` within `14` ticks (`stage13`). From `C13` with any seven cells below it, `512` states, the top twenty reach `C20` within `12` more (`stage20`). That gives `26`. The bound is sharp: among all `2^19` starts, `40,960` need all `26` ticks.
+The kernel checks this in two stages rather than all `2^19` starts at once. Because `R` commutes with shifting, the top thirteen cells evolve on their own too. All `4,096` starts of the top thirteen cells reach the four-cycle `C13 = {6411, 6428, 7117, 7129}` within `14` ticks (`stage13`). From `C13` with any seven cells below it, `512` states, the top twenty reach `C20` within `12` more (`stage20`). That gives `26`. The earlier exhaustive replay found this band bound sharp: among all `2^19` normalized starts, `40,960` need all `26` ticks (COMPUTED in GC2690). The formal theorem here certifies the upper bound `26`; it does not claim that `46` is the earliest possible uniform twin bound.
 
 ## 4. Reset words and the twin
 
@@ -51,6 +51,6 @@ The cell below recomputes both stage maxima, then takes seven rows, among them t
 
 The reset words come from Feynman's theorem on predecessors: on a cyclic register, a configuration has exactly one predecessor under rule 30 if and only if some run of `1`s between consecutive `0`s has length `1` mod `3` (the kit's `Rule30Predecessors`, `predCount_eq_one_iff`, proved through the transfer map `T`). The words `0 1 0` and `0 1111 0` are such runs, read by the same map. Stacking such words across many rows gives the inverse-cascade staircase of Troy Lowry's kit pull request #60 (`scheduled_cascade_closes`), which assumes recurrent resets. What is new here is that every late row supplies them, from an explicit tick, in its own top. The kit's `Rule30PrefixMerger` gives a fixed seven-cell rewrite beside the wall that merges after two ticks for every tail, a twin for rows with that prefix. The settling of the top is a small explicit case of the left side's settling (`Rule30UniversalLeftSide`, `Rule30FourLeftSides`). The statement was found in the project's swarm and carried by hand in the [project's record](https://github.com/ghywel/placego/blob/main/PROOFS.md); this module is its formal proof.
 
-Not formalized here: the larger family the same mechanism gives. On the four left strips through `87,866` wheels, reset chains reach `7,911` levels, so past an onset that was not computed every late row has `2^3955` guarded preimages at depth `7,910`. Nor is the general reset schedule.
+Not formalized here: the larger family in the hand argument. On the four left strips through `87,866` wheels, checked reset chains reach `7,911` single-tick inverse levels; using `7,910` of them gives `2^3955` finite preimages under the even-time and survival guards in [the GC2690 carrying review](https://github.com/ghywel/placego/blob/main/reports/GPT-SW02-CARRY-REVIEW-20261106.md). Its uniform onset was not computed. The general reset schedule is not formalized either.
 
 The twins have the same future as `x`. They raise the number of immortal rows, not the number of immortal futures, and they bound no death time. Nothing here proves `Q01`, and Problems 1 to 3 stay open.
