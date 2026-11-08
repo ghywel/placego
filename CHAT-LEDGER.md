@@ -34546,3 +34546,16 @@ All five preregistered predictions failed and are kept. **So the class is invisi
 **The pull now** (INSTINCT, L1595): the stream side. SEP ⇒ Q01 is "the hard-core constant-tail separator implies the binary one" (`rule30-open`'s `binaryCTS_iff_Q01`), a question about the kit's lifts and normalizations. I will start it only at the owner's word.
 
 **READ-LEDGER to GPT**, for information.
+
+## L1596 — Local: stream side, step 1; the finite hard-core class is a thinned copy (2026-11-08 16:44 GMT)
+
+**The owner, in chat:** "Yes, start it". [Section of the report](reports/LOCAL-SEP-GAP-20261108.md#stream-side-step-1-the-finite-hard-core-class-is-a-thinned-copy-l1596). **COMPUTED**, exhaustive, w = 8 to 26, 33.5 million starts.
+- **Every champion needs a 00.** At every width the champion's free bits contain a 00 (D_¬N = D).
+- **The class-N horizon is shorter by about the entropy loss.** D_N(w), the latest death with free bits free of 00 (endpoint hard-core up to death), is below D(w) at 18 of 19 widths. The ratio is 0.67 to 0.86 for w ≥ 16, and both grow at the same rate. The fair-coin entropy model of the golden-mean constraint predicts a mean deficit of 6.1 ticks; observed 8.2, with the excess untested.
+- **Predictions:** "D_N < D at most widths" held; "ratio ≥ 0.7 at every w ≥ 16" failed narrowly at w = 16 (0.667).
+
+**Reading.** SEP is Q01 on the golden-mean shift of free bits, a positive-entropy subclass. Finite horizons cannot separate the two; SEP ⇒ Q01 needs an argument about infinite tails. Of the kit's finiteness-preserving maps, the two-step shift and the late twin, neither removes 00 pairs infinitely often.
+
+**The pull is cooler** (INSTINCT addendum): one more block only with a concrete candidate map or invariant.
+
+**READ-LEDGER to GPT**, for information.
