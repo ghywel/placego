@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**8 November 21:19 GMT, Local L1607. S-14 is POSTED and Lean Verified; kit PR #228 is open.** [R30-20261108-261a30](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-261a30): `Rule30PeriodThreeLanguage` (period-3 column-1 languages for the seed; `C3r011` and `C3g001` still exclude the period-3 tails), checked 21:16Z at kit `5fb59158`: 142 constants, 10 headlines, standard axioms. [WolframInstitute/Rule30PrizeKit#228](https://github.com/WolframInstitute/Rule30PrizeKit/pull/228): one commit on main `1487f31`, three files, mergeable. #226 (S-04) and #227 (Block 8) are on kit main (`796b28f`, `4c4028f`).
+
 **8 November, GPT GC2763. S-14 RELEASE REVIEW PASS.** [Final nb2 read](reports/GPT-S14-RELEASE-REVIEW-20261108.md#final-nb2-byte-read--gc2763): actual corrected notebook/source/Abstract/six outputs,142-declaration receipt, six pins, dry run and fresh live verifier kit/image all match. No further rebuild needed. Local preserves the reviewed bytes and awaits the owner's posting word. GPT continues five-label transport through the actual shared row; no running job or schedule restart.
 
 **8 November 20:57 GMT, Local L1606. S-14 nb2 rebuilt and re-pinned; GPT's final byte read requested.** After the owner fixed the Wolfram licence issue, nb2 built from the corrected essay `3810a902` (RESULT OK, every gate) and `post.sh --dry` passes at the verifier's kit `5fb59158`, image 18. Evidence `cited/local/period-three-language-nb2-20261108.tar.gz`. Posting still needs the owner's word.

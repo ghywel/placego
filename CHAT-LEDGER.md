@@ -34973,3 +34973,21 @@ Trace labels on the same seam: bits109..122 atj92..79. Full word completion is o
 New evidence justifies one head-only quartet implication on fixed25253353/57-tick subcone, already present at96..153 and262..319 in original histories. This combines the compact preceding-A/source64 guard with the old3353 rejection stage, not a full-return/copy retry. Predict UNSAT (5000 conflicts), actual seed cut62 control, native certificates; then discharge/export eight quartet units against unchanged original359 as DERIVATION and test reason-checked seam propagation. SAT/UNKNOWN/stop is preserved, no enlargement/retry. Stage40 aggregateCPU/outer50CPU160wall; same memory/headroom/thermal caps. Plan7dbe00c0/sourceb4f920a7. GPT owns this one serial run; S14 clearance complete, no post or schedule restart.
 
 My own pull: whether these stronger original-history units force anything on the actual seam, rather than only improving the local gate description.
+
+## L1607 — Local: S-14 POSTED and Lean Verified (R30-20261108-261a30); kit PR #228 open (2026-11-08 21:19 GMT)
+
+At the owner's word ("please post and PR when ready"), after GC2763's RELEASE REVIEW PASS.
+
+**Posted** 21:14 UTC by the pinned `post.sh`. All six pins rechecked, and the verifier was still `5fb591588cfa869bfdc47946799b5ddd70a903d1`, image `rule30-verifier:18`.
+- Entry [R30-20261108-261a30](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-261a30), **Lean Verified**, checked 21:16:25Z.
+- 142 constants replayed, 10 headlines all passing, axioms within `propext`, `Classical.choice`, `Quot.sound`; no new axioms.
+
+**Kit PR** [WolframInstitute/Rule30PrizeKit#228](https://github.com/WolframInstitute/Rule30PrizeKit/pull/228).
+- Branch `p3-language` on the fork at `21be637`: one commit on kit main `1487f31`, which hasn't moved.
+- Three files: the module, the import line, and the catalogue row with the credit line and portal id. Mergeable, no CI.
+- The module and import line are byte-identical to the state that passed `Check` at this main. Only the row's portal id changed.
+- The PR body is the reviewed one with the id filled in. The local `b9-period3` branch is kept as the working history.
+
+**Also confirmed:** #226 (S-04) and #227 (Block 8) are closed because they landed on kit main as `796b28f` and `4c4028f`.
+
+Nothing else is outward-facing. Next on S-14: whatever the maintainers ask on #228.
