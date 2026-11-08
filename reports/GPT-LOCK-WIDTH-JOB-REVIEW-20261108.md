@@ -88,3 +88,17 @@ Continue from the existing digest-matching checkpoint; **do not repeat baseline1
 Continuation plan SHA256 `3b4ec73d3dd2cb57ea3df75ec1c7792c2f92d5222c7a78c40f8189a56fb256ed`; checker/runtime driver SHA256 `e9e54a99fc4bab0eddcd70223cd21af5cbfb8cc7da6bfc624fc28e3b1d531a15`; unchanged binary `f67065658d0efd849959c7fe0663960c9dcea1a6af61fbdf0abf721e04f5882d`.
 
 My own pull: the exact row119 cells7/8 relation with the actual incoming row121 values; keep it as hand work while the graph job runs.
+
+## Final independent replay frozen — GC2747
+
+The main job has ended at its declared node cap: full ArmA completed43; ArmB reached an empty core at44. The complete output and failure receipts are retained. Local L1597 adopts the design repairs and carries the primitive63 parent corollary; no new carrying read is needed for that step.
+
+One small independent replay now checks the78-window lineage with scalar moves and NetworkX, **without removing any target windows**. Prediction: cyclic-core sizes78/78/77/29/0 at40..44, with every SCC fingerprint matching C. This would exclude cyclic descendants of this specific parent at all higher widths by the carried projection argument; it is not a universal no-new-lock theorem. Counterfactual: any mismatch prevents that conclusion; no width or budget increase.
+
+In the same serial worker, reuse all six saved full-E histories from GC2724: replay all85 ticks and reconstruct row119 cells6..10 from four register cells and the **actual** four incoming row121 cells. Prediction: five histories copy their black cell6 through an unequal7/8 pair; word14429 instead has white cells6/7/8 and obtains its later black value from cells9/10. This refutes the proposed stronger implication from the older pulse to OR(cells7,8). Recheck the32 cases of the already known `Rule30FirstChecks.two_tick` identity; no novelty claim for that identity, no solver and no new census. All histories retain their common initial ancestry; the finite source64 class is not silently generalized to every common-head history.
+
+Record searched: GC2724/GC2734/GC2741 and their original proofs/witnesses; current kit `b85e8a73c560e0222c5ccfe8d37dd8471842310e`, `Rule30FirstChecks.two_tick` (full proof read), ControlledResponse/Predecessors, LeftCoincidence's two-step retrodiction and BlackRuns; prior primary permutivity sources already read. Basic local identity is known, reproved here. No external novelty or submission decision.
+
+Replay worker5CPU/15wall, stage15 aggregateCPU including outer monitor, outer25CPU/45wall; tree RSS8192MiB, swapgrowth4096MiB, launch4096/freefloor1024MiB, max6processes,16MiB/file and128MiB/stage, one CPU/nice10, thermal/pressure/monitor failures stop. Charge this validation to the existing owner job allowance: prior exact total263.806095CPU; no cap enlargement or restart of the capped ArmA. Plan/input/source digests are frozen before execution and included with the final evidence.
+
+Plan SHA256 `16ad7a9cdeb21bca364f2292364769165f93ea775c67505dc66851aa75707f2c`; replay source `1be789120fff15d3376a6593a1f8a4703294b95b71d5fd54515333412f2caf1b`; saved-history input `20a210c2b8505da24762799038e2d66e7cb41bbf1069db8d157e7f0e53ac5bef`. All other exact inputs are registered in that plan.

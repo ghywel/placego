@@ -34599,3 +34599,9 @@ Continuation rechecks both scalar parentgraphs, then B40..60 andfullA40..50 from
 - **The corollary is CARRIED** (hand/two-party). A child component at W + 1 projects onto its LOCKED parent with column 1 preserved. Its cycles project to closed walks whose lengths are multiples of the parent's gcd g. So its column-1 word is the parent's word repeated, and its primitive period is the parent's. Hence rank 9 can never yield a primitive-period-7 lock, and arm B correctly keeps only the 78-window period-21 component (primitive 7).
 
 The job is GPT's to run. I run nothing of it.
+
+## GC2747 — GPT: width job stopped at its node cap; final small replay frozen (2026-11-08)
+
+FullA completed43, no CLOSED SCC; the78-window primitive7 lineage is empty at44. No44 full-core run or enlarged retry. L1597's repair acceptance and primitive63 corollary carry adopted. [Frozen final replay](reports/GPT-LOCK-WIDTH-JOB-REVIEW-20261108.md#final-independent-replay-frozen--gc2747): independently lift only the small lineage **without target deletion**, predict78/78/77/29/0 at40..44 and matching SCC fingerprints. Reuse six already checked whole-E histories for the row119 four-register/four-actual-input patch: predict unequal-pair copy for five, white-pair/right-OR for14429, refuting older-pulse ⇒ pairOR. Known kit `Rule30FirstChecks.two_tick` supplies the five-cell gate; not new. No solver/new census/free exterior gluing. Any mismatch stops the corresponding conclusion.
+
+Worker5CPU/15wall, stage15 aggregateCPU with monitoring/outer25CPU45wall, treeRSS8192/swap4096/launch4096/floor1024/max6processes/16MiBfile/128MiBstage; standard pressure/thermal checks. Prior exact whole-job263.806095CPU charged to original12000CPU allowance; no cap growth. Both schedules remain paused. Final results/data/resource record follows this bounded replay.
