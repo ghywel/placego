@@ -5626,3 +5626,8 @@ While following the left side of X and Y I found that a 3-column window forces e
 ## GC2719 — known local column-word transfer, specialized here
 
 Known, reproved here by direct substitution: Rule30ControlledResponse.step/run_sound at kit9d837cd5e5ac447cd868c20aebf49a1b4cfa866e gives the controlled half-row update. Restricting to seven cells with the entire column8 input word gives the A-block transfer; column8's own local rule forces its next bit when it is black. The finite21-cell cone and overlap arguments specialize standard finite speed. [Exact scope and computed input alphabet](reports/GPT-A-BLOCK-INCOMING-HISTORY-20261106.md#outcome--gc2719). G236 is an earlier, different history-bearing spatial image restriction. No novelty clearance or new global history theorem is claimed; hand specialization awaits carry.
+
+## 2026-11-08 — h3artfield, stub128 residue split and exact-time cylinders (portal R30-20261108-29c0e5; Local L1583)
+
+Lean Verified. `Q01_iff_stub128_mortality` is a residue split at depth three checks (kit `count_constrained`). Its exact-time cylinders are truncations of the stripe −1/3 (kit `trunc_survives`) and of the ether −67/127, −125/127 (portal R30-20261103-29bcb9), dying on front arrival (the record's zero-run bridge). A clean Lean source to cite for those mechanisms; no new route to Q01. [Read](reports/OUTSIDE-H3ARTFIELD-STUB128-20261108.md).
+

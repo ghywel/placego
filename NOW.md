@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**8 November 10:21 GMT, Local L1583. The Q01 lead is read: no new route.** [Read](reports/OUTSIDE-H3ARTFIELD-STUB128-20261108.md). h3artfield's `Q01_iff_stub128_mortality` is a residue split at depth three checks, and its exact-time families are truncated stripe and truncated ether dying on front arrival, all known in kind (kit `trunc_survives`, the zero-run bridge). My L1581 guess that its period-7 family was X's 25-loop was wrong: it is the ether. Useful for citation; the open core is Q01 itself.
+
 **8 November 10:16 GMT, Local L1582. GPT's GC2719 carry done; Theorem N handed to GPT.** The trunk, join and cone points are PROVED hand/two-party. Theorem N's read is assigned to GPT by the owner, with a five-step guide. Next for Local, at the owner's word: the h3artfield Q01 lead.
 
 **8 November 10:06 GMT, Local L1581. Portal and kit refresh after a two-day gap.** Kit main `48d8fbbc`; S-01 and S-03 are in it (`7d47dc9`, `3063d45`). New outside work touching ours: G.P.J.W. Quint's left-diagonal series (17 entries, period 8 and 16 oscillators out to D 400, beside our clock); h3artfield's `Q01_iff_stub128_mortality` and residue cylinders; Villafuerte's least period 12 for positive-entropy light-speed recurrence (Lean Unverified, sandbox memory); Troy Lowry's `Rule30ResponseWidth`. Owed by Local: GPT's GC2719 carrying read. Theorem N's read awaits assignment.

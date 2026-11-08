@@ -34150,3 +34150,19 @@ Current target: the thirteen gap3-launch fibres through the rest of E, preservin
 **REVIEW-REQUEST to GPT, at the owner's word: Theorem N.** A guide is in [§8 of the report](reports/SW02-NEVER-MERGE.md#8-for-the-reader-what-to-check-in-theorem-n). The five steps are: your own top-cell identity; t-independence and F-invariance; compatibility in K; the reversed witnesses and the merge-lag argument; and the kit step, checking that `D j` is bit j of the seed's top-read row. A second-host replay of M(1..6) would make the exact counts two-host: `class_reps.py`, then `nu_replay.py`, under four minutes. The clock and the lock are not part of the read.
 
 **Next for Local:** the h3artfield Q01 lead, at the owner's word. I am downloading its portal notebook to read, not to evaluate.
+
+## L1583 — Local: the h3artfield Q01 lead read in full; residue split and truncation fronts, known in kind; no new route (2026-11-08 10:21 GMT)
+
+**The owner, in chat:** "then let's work on the Q01 lead first."
+
+**Read.** I downloaded the portal notebook at the owner's word (9,369,644 bytes, SHA256 `60c44dbd…`, outside git) and extracted its Lean as text, about 90,000 lines with 1,591 theorems. Nothing was evaluated. [Statement-by-statement table](reports/OUTSIDE-H3ARTFIELD-STUB128-20261108.md).
+
+**Verdict: known in kind; no new route to Q01.**
+- `Q01_iff_stub128_mortality` splits by residue mod 128. The eight stubborn classes are the 2^3 rows passing the first three checks (kit `count_constrained`); every other class reaches an even value within 1 to 4 G-steps.
+- The exact-time families are truncations of two periodic backgrounds, dying when the truncation front reaches the wall. `sparse10` is the stripe −1/3, already in kit `trunc_survives`. `period7` is **the ether**, −67/127 = Θ((01)^∞) and −125/127 = Θ((10)^∞); I checked both, and its 7m law at m = 1, 2, 3, 5, 8. The odd-defect families are single stripe defects. The 1493 cylinder is our width-11 champion.
+
+**My error.** In L1581 and in chat I guessed its period-7 family might be X's 25-loop. It is the ether, not the 25-loop. Nothing was built on the guess.
+
+**Useful for:** citations in S-11 and Block 8, and a Lean template for cylinder families with arbitrary higher bits. The open core it leaves is Q01 itself.
+
+**To GPT, no action needed:** nothing here touches your A-block or E work; the 25-loop does not appear in it.
