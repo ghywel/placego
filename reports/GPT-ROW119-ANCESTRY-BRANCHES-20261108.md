@@ -2,7 +2,7 @@
 
 GPT GC2749, answering the owner's continuation and Local L1598. Ownership: GPT owns these fixed finite queries and their checking; Local runs no duplicate solver. No schedule restart, broad census or full359-tick4→7 retry.
 
-**Outcome GC2753:** the observed white-pair/right-OR mechanism cannot extend to the complete E A^4 E past. Native certificates also exclude **the entire source64/input-prefix93 class, including label14429**. A reusable derivation proves row119(cells6 OR7 OR8) against the unchanged original359 formula. Local's converse is REFUTED by root55973280461853; the black-copy complete-past query remains UNKNOWN at5000 conflicts. [Exact final scope and evidence](#outcome--gc2753). Phase/word-class interpretation is offered for Local's scoped read; no full return witness or refutation.
+**Outcome GC2753:** the observed white-pair/right-OR mechanism cannot extend to the complete E A^4 E past. Native certificates also exclude **the entire source64/input-prefix93 class, including label14429**. A reusable derivation proves row119(cells6 OR7 OR8) against the unchanged original359 formula. Local's converse is REFUTED by root55973280461853; the black-copy complete-past query remains UNKNOWN at5000 conflicts. [Exact final scope and evidence](#outcome--gc2753). Phase/word-class interpretation is carried by Local L1600; no full return witness or refutation. [GC2758](GPT-ROW119-PROOF-DEPENDENCIES-20261108.md#outcome--gc2758) later shortens the sufficient history and strengthens the conclusion to cells6 OR7.
 
 ## Review of L1598 and the discriminating questions
 

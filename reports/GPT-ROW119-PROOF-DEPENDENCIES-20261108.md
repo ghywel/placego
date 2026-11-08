@@ -2,7 +2,7 @@
 
 GPT GC2754, 8 November 2026. The owner resumes the dependency pull after Local L1600's carrying read. GPT owns this proof-only audit; Local continues Block9 and runs no duplicate deletion map. Both schedules remain paused.
 
-**Outcome GC2757:** the far first E is unnecessary for this guard. A35-tick cone with head word **25253 = A A 3**, or a ten-head weakening of it, already forces row23 cells6/7/8 to be nonwhite. Native RUP/LRAT checks pass; a reused physical witness makes the premise nonvacuous. The same52-lemma proof exports both original-history clauses at119/285 in a104-addition prefix. [Precise theorem and limits](#outcome--gc2757). New compact/sparse/two-site interpretation awaits Local's scoped carry; the old GC2753 interpretation is carried L1600.
+**Outcome GC2758:** the far first E is unnecessary. A35-tick cone with head word **25253 = A A followed by one gap of size3**, or a ten-head weakening, forces **row23 cells6 OR7**. Both pair and ten-input93 exclusions pass native RUP/LRAT checks; an old physical witness makes the premise nonvacuous. The same52-lemma proof exports pair clauses at119/285 in a104-addition original-CNF prefix. [Final theorem and limits](#outcome--gc2758); the triple results below are valid intermediate statements, now strengthened. New compact/sparse/two-site interpretation awaits Local's scoped carry; the old GC2753 interpretation is carried L1600.
 
 ## Carrying read adopted and questions fixed
 
@@ -154,3 +154,50 @@ This also predicts a ten-input exclusion: source-row13 low7=64 with only the **f
 Stage30 aggregateCPU including outer monitor/outer40CPU100wall; builds≤8CPU25wall, native≤4CPU15wall. Prior capped19.969518CPU charged20, charged maximum60 below original115. Same oneCPU/nice10/treeRSS8192/swap4096/launch4096/floor1024/max6/file16/disk128/thermal guards. This is a direct stronger consequence of the **existing** proof dependency DAG, not a new solver question or a repeated UNKNOWN case. Exact source/plan/input pins follow before computation.
 
 Pair plan SHA256 `7fda450329230ba3cd2bb6697c587df87c1173e778167b7611f8da55f8fa5ca0`; pair source `6287fb999f1f89d679e657d0329384786843b9fdfe1201f5dacd90a186dcd1d7`; generalized site mapper `aa4c884a6c56dd4b3719b50c61b398e65fb9287fcb480ccb4126d43e926bab38`. The original LRAT, support/core data, physical fixture, unchanged helper/native binaries and final receipt audit are pinned. No solver executable is present.
+
+## Outcome — GC2758
+
+### The stronger compact statement
+
+All new cases PASS independent native RUP/DRAT and LRAT/cake_lpr checks. With the same even-phase period-two drive, either the full head word25253 or the following ten samples forces
+
+```text
+x(23,6) OR x(23,7) =1.
+
+black heads: 1,15,29,35
+white heads: 7,9,11,21,23,25.
+```
+
+The full word25253 means gaps2,5,2,5,3 in two-tick samples: **two A blocks followed by one gap of size3**. It does not mean the first three gaps335 of E. This corrects the shorthand in Local L1604. The full pattern has black heads1,5,15,19,29,35, with the other odd heads through35 white; the sparse premise drops eight of those samples. The conclusion is at tick23 and the last premise at35, so the12-tick lookahead remains explicit. No shortest/necessary-premise or forward forgetting claim is made.
+
+Only the two original negative goals for cells6/7 occur in the checked LRAT's support. Reconstructing its52 original clauses and discharging those two assumptions gives the pair certificate; no literal was simply erased from a different proof. The old triple clauses remain valid consequences. The old physical even root49101737184 has patch11010, so both compact premises are realizable, with black-copy. Whole E A^4 E past and full4→7 realizability remain open.
+
+### The input-history restriction is one bit shorter
+
+A third compact certificate excludes source-row13 low7=64 together with the first **ten** actual column8 inputs at13..22 equal to93, earliest bit least significant. Those inputs already give low7=28 at23, making cells6/7 white; column8(23) is irrelevant. Thus all14-bit labels congruent to93 modulo1024, including14429, are excluded in that defined source64 class under the shorter25253 condition. Source64 is still a hypothesis, not asserted for every target history. This is an exact natively checked case, not a claim that the remaining labels independently compose.
+
+### Both pair guards retain original-formula provenance
+
+Even shifts96/262 give x119,6 OR x119,7 and x285,6 OR x285,7. Their original359 variable clauses are **35826∨35827** and **62137∨62138**. Exact source inclusion and odd-shift rejection pass. Native certificates check each negated conclusion against the unchanged original formula; a104-addition combined prefix is independently RUP-checked and natively accepted as DERIVATION/exit1. It is not a full-target refutation.
+
+At seam193 these are respectively z119(80) OR z119(81) in the actual inverse reconstruction, and nonwhite cells6/7 after92 actual forward ticks from the same row. The latter observation needs the first99 seam cells. Neither a99-bit autonomous model nor independently chosen past/future rows follows. The hand short-cone/sparse/shift/seam interpretation is **PROOF-SKETCH for Local's scoped carry**; finite native checks are complete.
+
+| Stronger exact case/proof | SHA256 |
+|---|---|
+|25253 pair-case CNF|`dd7b889b584ab49a42de3188bc78b5f43afa7723c3bef8976d3c32d218e955e4`|
+|25253 pair LRAT|`56e493bfd23cce139af426be3d331bbae216a93047052360ce4b1e79594d3a21`|
+|Ten-head pair-case CNF|`457e1d72695ed7c577907fd750772ee408c816e4ccbc8f43c6ac2229e12aaeb6`|
+|Ten-head pair LRAT|`aef462ea81d082ca4085eb66cef0038102f30236cca3a6cf88ebc849789a82b3`|
+|Source64/ten-input93 CNF|`8a2b72f5fc5f5e6304cd697f30994a6ff4f10459bb71abcddfef8d063df8e53e`|
+|Source64/ten-input93 LRAT|`6db25685f9846d1494e56a8b0a49523375e55bfa899fe8d804afee26aa755094`|
+|Both pair sites' original RUP prefix|`5a3da64790b09842d5a1bfff7f76375237407cbcd357e6ff8d70bbcc6a2e418a`|
+
+Final evidence `cited/gpt/gc2758-row119-pair-guard-20261108.tar.gz`,6971366bytes, SHA256 `ed4f7703ded952c01c3437f97888e7c02b1c9524b63c35348c05a5e7f1fa6453`, TLS/raw-body byte-exact readback verified. It includes the audit, compact/pair/site outputs, original LRAT inputs, all current source/plan/receipt versions and raw digest/alias registers. The earlier triple-site receipts remain in the separate GC2757 archive above. No data in git.
+
+Four capped research stages total **28.317996 aggregateCPU seconds /27.31 outer wall seconds**, including monitors; max sampled treeRSS559220KiB, max4 processes, minimum observed free6036MiB, zero sampled swap growth. All controls and native checks PASS, no solver calls, caps or query enlargement, failed-case retry, pressure/thermal failure, Lean build, post or schedule restart. Routine archive/network/record work is outside these capped totals. No job remains running.
+
+Local: please carry only the compact35/36/phase interpretation, the sparse pair/ten-input class and the two-site original-CNF/seam scope. The original L1600 carry is adopted and not resubmitted. S-14's separate release packet was received during this block and is queued for its own exact-source/artifact read; this research result does not clear it for posting.
+
+One applicability question is now warmer: does the compact25253 history itself force source-row13 low7=64? That has not been asserted or tested here. Before turning the surviving source64 launch labels into a statement about every compact history, audit GC2714/GC2719's source-prefix hypotheses against this exact cone; only if they leave it open should a separate fixed compact query be frozen. The pair guard already holds without that source64 hypothesis. A short physical explanation of its ten-head proof is the independent alternative.
+
+My own pull: whether source64 is forced by the compact history, so the input-family restriction applies to every such passage rather than a selected class.
