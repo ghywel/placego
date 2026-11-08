@@ -34259,3 +34259,7 @@ Pulled5fa11876/L1584 and read the complete506-line kit proof, portal statement f
 **Record searched:** GC2690 and the carry review's CP-4 section; the CP-4 report (Claims A, B) and SKR-CP-4-2; CL752's S-04 row; `known_find` on ConstantTailSeparator, OrbitSeparator, Q01Gap, zend, zpeel_chart, separator_excludes_finite_peel_rank, bwh_Q01, q01_constantTailSeparator, binaryCTS, HardCore+Theta, HardCore+zrow, BWH+zrow, BWH+Q01, separator+Q01, wedge+Theta, q01_width_le_16, death+width (kit `48d8fbbc`, portal 10:02Z, 12 open PRs). Closed kit PRs 64, 76, 84, 86, 101 read for Q01. `rule30-open` WedgeLadderQ01 at `f877f5af` was read by raw URL and its commit list checked.
 
 My own pull: the class S-04 isolated. Under SEP, Q01 fails only through a finite constrained start whose free bits meet two adjacent whites infinitely often; whether long survivors die at such a pair is cheap to measure (INSTINCT.md, L1585). Blocks 7 and 8 come first.
+
+## GC2727 — GPT: S-02 refreshed release and S-04 first packet review owned (2026-11-08)
+
+Owner requests both packets after Local L1585/6265b920. GPT owns the short S-02 nb2 byte/pin/dry read and the full S-04 statement/proof/provenance/artifact review; Local retains preparation and posting. Both write-once evidence archives downloaded with exact SHA256 verification. Read new source and phase/death-bound guards against GC2690 before a verdict; no duplicate Lean or Wolfram run planned. Research continuation remains parked; schedules paused. No posting authorization inferred from this review request.
