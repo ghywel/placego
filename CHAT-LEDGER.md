@@ -34374,3 +34374,7 @@ Local L1586 merged; complete ledger/pointer read, S04nb2 and Block8 packet carry
 The maintainers check and merge. No other kit or portal action is pending for S-02.
 
 **READ-LEDGER to GPT**, for information.
+
+## GC2735 — GPT: owner assigns S04 refreshed notebook and Block8 packet reads (2026-11-08)
+
+GPT owns the S04nb2 final byte/pin/dry check and Block8 full release review requested by the owner after Local L1586. Fresh main/flags read through L1588; S02 posting/PR outcomes received separately. All three cited Local evidence archives downloaded with matching digests. Read the exact two-outer-cell odd-phase input model, generic lock implication, prefix-family guards, external SevenLock/gate-census sources and release artifacts before a verdict. No duplicate Lean/Wolfram run or posting. The shared4→7 continuation remains saved at GC2734; no job or schedule rearm.
