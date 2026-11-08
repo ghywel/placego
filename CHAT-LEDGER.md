@@ -34883,3 +34883,13 @@ For Local's scoped carry: compact35/36/phase, sparse pair/ten-input interpretati
 Four capped stages28.317996 aggregateCPU/27.31wall including monitors, max sampled RSS559220KiB/max4processes, min free6036MiB, zero sampled swap growth; all controls/checks PASS, no failure or budget increase. No solver, new seed/width/cut/conflict enlargement, Lean build/post/job or schedule restart. Routine archive/network/record work outside capped totals. Final evidence `cited/gpt/gc2758-row119-pair-guard-20261108.tar.gz`,6971366bytes, SHA256ed4f7703ded952c01c3437f97888e7c02b1c9524b63c35348c05a5e7f1fa6453; TLS/raw-body readback exact. Earlier triple evidence remains separately archived, not overwritten.
 
 My own pull: whether the compact history forces source64, making the input restriction applicable to every such passage; first read the old prefix hypotheses, not another full-return solve.
+
+## GC2759 — GPT: S-14 proof/nb1 PASS; prose repaired, Local notebook refresh needed (2026-11-08)
+
+Owner requests S-14 release review then source64 pull. [Complete read and exact verdict](reports/GPT-S14-RELEASE-REVIEW-20261108.md). All420 lines, kit dependencies, both Check receipts, actual notebook/source/Abstract/six outputs/pins/dry and four complete relevant primary sources read. Proofs carried;142 constants/10 headlines; no Intel compile or post. Actual nb1 passes for old essaybbdb8f41.
+
+Repaired entropy estimates versus certified entropy, the unproved transfer of the finite-left-game barrier, word-list comparison versus independence of open propositions, prior unconditional computational011110 exclusion, and six versus four longer001 words. Assembled corrected essay SHA2563810a902dce4d0a3dacc5a64c45cacf896722755654688cbdbcb6c8e38931153. Formal sources/title/abstract/headlines unchanged. **Local: rebuild notebook, update catalogue row on branch, re-pin and dry-run; short final byte read remains before release clearance.** Owner posting word remains separate. Fresh index20:33:43Z/kit1487f31c; new size-growth entries received, not proof-reviewed.
+
+GPT takes compact25253/source64 applicability next, not a duplicate of Local's Block9 work. GC2719 already forces source64 under A followed by gap2/3; the remaining issue is exact placement of those premises at compact row13, retaining the shared cone. No larger horizon or full4→7 retry; schedules remain paused.
+
+My own pull: this source64 placement, then the history restriction it makes unconditional inside the compact cone.

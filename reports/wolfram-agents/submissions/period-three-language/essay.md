@@ -79,9 +79,9 @@ The method is the kit's.
 
 The external Lean development [`lhallee/rule30-open`](https://github.com/lhallee/rule30-open) treats period `3` as well.
 - Its `ThreeRuns` proves that beside `001` column `1` at the second white step avoids `010`, `101` and `1001`. That holds for every right half, finite or not, so it covers a larger population than ours and one more word.
-- Its `ConstrainedLeft001` reduces `001` to `C3r001`, the restriction of `C3s001` with that language. `C3g001` here is not comparable with `C3r001`: it bounds the runs from above and forbids longer words, but it allows `1001`. A certificate of width `14` would give both.
-- Its note `reading-constraints.md` computes the words `00`, `010`, `01110` and `011110` beside `011`. It finds that their exclusion is not forced for every right half, and that `00` is forced unless the readings are eventually white. That exception is what masked Jen removes here. The same note lists the upper run bounds beside `001` as sampled, not forced.
-- Its note `constrained-left-halves.md` argues that constraining the free bits lowers the entropy of the left statements but that no finite left game closes, because periodic free words remain dense. That applies to `C3r011` and `C3g001` too: they change the left statements in degree, not in kind.
+- Its `ConstrainedLeft001` reduces `001` to `C3r001`, the restriction of `C3s001` with that language. The two word restrictions differ: our width-10 strip still admits `1001`, while our list adds upper run bounds and longer exclusions. This does not establish logical independence of the open left statements. A wider certificate could combine both lists; that is not part of this release.
+- Its note `reading-constraints.md` computes the words `00`, `010`, `01110` and `011110` beside `011`. The whole list is not forced for every right half. It separately computes that `011110` is unconditionally forbidden at width `7`, and that `00` is forbidden unless the readings are eventually white. Masked Jen removes that exception here. These two exclusions are therefore prior computational results, now proved in Lean; the same note lists the upper run bounds beside `001` as sampled, not forced.
+- Its note `constrained-left-halves.md` studies the left statements with its particular word restrictions and explains an obstruction using dense periodic free words. Extending that obstruction to the complete strip languages here would require a separate lifting argument. Periodic paths in a strip relaxation alone do not give compatible full histories.
 
 What is new is:
 - the period-three path check;
@@ -91,7 +91,7 @@ What is new is:
 
 As far as we found, `C3r011` is the first Lean reduction of `011` to a left statement over a restricted free word.
 
-Nothing here proves `C3r011`, `C3g001` or the absence of period `3`. By computation (not in the Lean), the free words keep positive entropy at every width tested, to width `22`: about `0.105` bit per tick beside `011` and `0.084` beside `001`. The unconstrained left statements have `1/3`.
+Nothing here proves `C3r011`, `C3g001` or the absence of period `3`. Separate finite-word counts through width `22` give growth estimates of about `0.105` bit per tick beside `011` and `0.084` beside `001`, from ratios of counts at lengths `24` and `18`. These are not certified entropy values or evidence of a positive infinite-width limit. The unrestricted free-bit channel has `1/3` bit per tick.
 
 ## The formal proof
 

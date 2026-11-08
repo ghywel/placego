@@ -27,12 +27,12 @@ This adds `lean/Ruliology/CellularAutomata/Rule30PeriodThreeLanguage.lean`, with
 
 **Prior art.** The external development [`lhallee/rule30-open`](https://github.com/lhallee/rule30-open/tree/f877f5afd5609373e2df1639e943d04e3a56e83b) treats period 3 as well.
 - `ThreeRuns` proves that beside `001` column `1` at the second white step avoids `010`, `101` and `1001`, for every right half.
-- `ConstrainedLeft001` reduces `001` to `C3r001`, `C3s001` restricted by that language. `C3g001` here is incomparable with `C3r001`: it adds the upper run bounds and the longer words, but not `1001`.
-- Beside `011`, `reading-constraints.md` computes the words `00`, `010`, `01110` and `011110`, finds their exclusion not forced for every right half, and has no Lean. The upper run bounds beside `001` appear there as sampled, not forced.
+- `ConstrainedLeft001` reduces `001` to `C3r001`, `C3s001` restricted by that language. Our word list adds upper run bounds and longer exclusions, while the width-10 strip still admits `1001`. This comparison of word restrictions proves no logical independence of the open left statements.
+- Beside `011`, `reading-constraints.md` computes `00`, `010`, `01110` and `011110`. The full list is not forced for every right half, but `011110` is already computed as unconditionally forbidden at width 7, and `00` is forced unless the readings are eventually white. These prior computational exclusions have no Lean there. The upper run bounds beside `001` appear as sampled, not forced.
 
 What is new here is the period-3 path check, the `011` language and the `001` upper bounds in Lean, and the restricted statements `C3r011` and `C3g001` with their reductions. The method is the kit's: bad-class certificates with masked Jen (`Rule30PeriodFourSkeleton`) and `Rule30PeriodTwoLanguage`.
 
-**What it does not do.** None of `C3r011`, `C3g001` or the absence of period 3 is proved. The restricted free words keep positive entropy at every width computed, so the restriction changes the left statements in degree, not in kind.
+**What it does not do.** None of `C3r011`, `C3g001` or the absence of period 3 is proved. The separate finite-word growth estimates through width 22 are not certified entropy values, a positive infinite-width limit, or a proof that every finite left game survives.
 
 Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
 
