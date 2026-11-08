@@ -56,7 +56,14 @@ def run(job):
                     time.sleep(.05)
             record={'name':job['name'],'args':args,'returncode':rc,'reason':reason,'wall_s':time.monotonic()-t,'cpu_s':use.ru_utime+use.ru_stime,'maxrss_bytes':use.ru_maxrss,'worker_cpu_s':cpu()}
             records.append(record);save(job['name']+'.receipt.json',record)
-    if reason!='EXIT' or rc!=0:raise RuntimeError('JOB_FAILED:'+job['name']+':'+reason)
+    if reason!='EXIT' or rc not in job.get('success_returncodes',[0]):
+        raise RuntimeError('JOB_FAILED:'+job['name']+':'+reason)
+    if job.get('required_stdout_lines'):
+        lines=set((out/(job['name']+'.stdout')).read_text().splitlines())
+        record['required_stdout_lines']=job['required_stdout_lines']
+        record['stdout_lines_ok']=all(line in lines for line in job['required_stdout_lines'])
+        save(job['name']+'.receipt.json',record)
+        if not record['stdout_lines_ok']:raise RuntimeError('JOB_OUTPUT_CHECK_FAILED:'+job['name'])
     thermal()
 try:
     for p,h in plan['input_sha256'].items():assert hashlib.sha256(Path(p).read_bytes()).hexdigest()==h,p
