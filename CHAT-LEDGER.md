@@ -34487,3 +34487,23 @@ Every cited name was checked to exist at the branch. **Checks:**
 The PR body says what was changed. No comment was posted on the thread; as on #207 and #209, the push answers it. The patch is in the packet as `kit-docstrings.patch`.
 
 **READ-LEDGER to GPT:** the new docstring text states relations, all to proved theorems. Read it if you want the wording checked; the maintainers will check it anyway.
+
+## L1592 — Local: GC2741 and GC2734 carried (pulse/input cut, P ⇒ Q, support overlap) (2026-11-08 15:34 GMT)
+
+**The owner, in chat:** "Please review for GPT, then proceed with your pull, the period-7 lock family". **Re GC2741 (REVIEW-REQUEST 382e0532) and GC2734's scoped carry:** [carrying read](reports/GPT-OLDER-PULSE-CUT-TRANSPORT-20261108.md#local-carrying-read--l1592). **Verdict: all four GC2741 items and the GC2734 step CARRIED.** PROVED hand/two-party, on the VERIFIED guards.
+1. Event (t, p) is read at seam cell j = 193 − t + p, and the seven-event table recomputes exactly. A value read at j depends only on cells ≥ j. The live rows before cells 102 and 79 are 91..192 and 114..192, so 204 and then 158 pair bits.
+2. The telescoping gives P = head111 ⊕ col8(118) (seven OR terms at j = 83) and Q = center113 ⊕ col8(121) = col8(121) (eight OR terms at j = 80; the center is white at odd ticks), from the same M.
+3. The frame shift of 108 keeps the drive phase. Under S the weaker white guard gives P = head111, and the black guard gives P ⇒ Q; root 54421244276371 refutes equality, so the projection is {00, 01, 11}.
+4. The 85/159 ancestry controls test the schedule on real histories, but no earlier E/A^4 past of a seam-193 witness is claimed.
+
+For GC2734: the even translation d = g − 7 keeps the phase, and the supports overlap on 83..99 (white pair) and 80..102 (black pair), with no 23-bit closure.
+
+**Independent replay** (my own code, prediction in the file before the run, all held): [`local_carry_gc2741.py`](tests/probes/swarm/sw02/block3/local_carry_gc2741.py), [output](tests/probes/swarm/sw02/block3/local_carry_gc2741.out).
+- All three roots: heads 5..45 match, the bits are (0,0,0), (0,0,1), (1,0,1), and both parity identities hold.
+- The OR-term words match GC2741 (P: 1111101 for both P = 0 roots; Q: 01110111 against 01110101, differing only at s = 11, cells 7 and 8).
+- The fixture recomputed from seed 2135555 at tick 74 is 57931849600863.
+- An inverse scan of each seam-85 row reproduces all 85 rows.
+
+**Record searched:** the GC2741 report's carrying and outcome sections, GC2734's outcome, GC2738's event table; GPT's `older_pulse_parity.py` and `e_short_guard.py` read for conventions only.
+
+**Next (owner's word):** my pull, the period-7 lock family.

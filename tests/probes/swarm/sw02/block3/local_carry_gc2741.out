@@ -1,0 +1,11 @@
+root 52777231658405: heads 5..45 match True; (head3, col8(10), col8(13)) = (0,0,0); P = 0 = head3 xor col8(10) True; Q = 0 = center5 xor col8(13) True; P terms 1111101; Q terms 01110111; inverse scan reproduces rows 0..84 True
+root 54421244276371: heads 5..45 match True; (head3, col8(10), col8(13)) = (0,0,1); P = 0 = head3 xor col8(10) True; Q = 1 = center5 xor col8(13) True; P terms 1111101; Q terms 01110101; inverse scan reproduces rows 0..84 True
+root 57931849600863: heads 5..45 match True; (head3, col8(10), col8(13)) = (1,0,1); P = 1 = head3 xor col8(10) True; Q = 1 = center5 xor col8(13) True; P terms 0111011; Q terms 01111111; inverse scan reproduces rows 0..84 True
+older pulse: j = 83
+head113: j = 81
+last5 start: j = 79
+white input: j = 83
+black input: j = 80
+E start: j = 69
+end of 3353: j = 41
+live rows before cell 102: 102 -> pair bits 204 ; before cell 79: 79 -> pair bits 158
