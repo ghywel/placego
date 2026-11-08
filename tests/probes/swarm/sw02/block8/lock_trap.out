@@ -1,0 +1,7 @@
+lock5 windows 25 16-column projections in the gate trap: 25 of 25
+lock7 windows 66 16-column projections in the gate trap: 0 of 66
+lock7b windows 33 16-column projections in the gate trap: 0 of 33
+first 16 columns: lock7 and lock7b share 0 projections; lock5 and lock7 share 0
+first 20 columns: lock7 and lock7b share 0 projections; lock5 and lock7 share 0
+first 25 columns: lock7 and lock7b share 0 projections; lock5 and lock7 share 0
+first 30 columns: lock7 and lock7b share 0 projections; lock5 and lock7 share 0

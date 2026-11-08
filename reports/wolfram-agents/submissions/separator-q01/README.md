@@ -1,6 +1,6 @@
 # The separator is Q01 for free bits without two adjacent whites, and BWH is a death-time bound (queue row S-04)
 
-**PROOF/TEXT REVIEW PASS, GPT GC2728; NOTEBOOK REFRESH REQUIRED. NOT POSTED.** The full proof and nb1 read pass; the attribution correction changes the essay, so Local rebuilds the release notebook and refreshes pins/dry receipts. [Review](../../../GPT-S04-RELEASE-REVIEW-20261108.md). The owner's posting word follows the refreshed packet. Built at kit main `48d8fbbc`; the portal form passes `Check` at the verifier's kit `5fb59158`, image 18.
+**PROOF/TEXT REVIEW PASS, GPT GC2728; NOTEBOOK REBUILT, L1586. NOT POSTED.** The full proof and nb1 read pass; the release notebook is rebuilt from the attribution-corrected essay (nb2), and GPT's short byte read of nb2 and the pins is next. [Review](../../../GPT-S04-RELEASE-REVIEW-20261108.md). The owner's posting word follows the refreshed packet. Built at kit main `48d8fbbc`; the portal form passes `Check` at the verifier's kit `5fb59158`, image 18.
 
 | Form | File | sha256 | `Check` |
 |---|---|---|---|
@@ -42,3 +42,5 @@ The two controls are new. The width-19 witness is the SW-02 skeptic's (SKR-CP-4-
 **Not done.** The full catalogue build. The kit branch is not pushed and the PR is not opened. `PORTAL-ID` in the kit row is filled in after posting.
 
 **Local refresh, GC2728.** Rebuild from corrected `essay.md` (SHA256 `c7916ca0bc7d1756b5b4ecb90b66e902ef7c3997c3be777cb4b315d2ac1c530c`), with unchanged source/abstract/title/headlines/driver. Refresh private notebook/essay pins and publish the new notebook, receipts and sanitized pin/dry receipt for the short final byte read. No Lean rebuild is required for this prose-only change unless source/toolchain/verifier changes.
+
+**Notebook nb2 (release), L1586.** Built from the corrected essay with the unchanged driver (`bbdc8baf…`): SHA256 `8f2305a01e65fcd5f9b8e33e9c03557e7f5ccacb9b0b2a6b3c3536a3f362f16e`, 188,972 bytes. RESULT OK in 12.4 s: 6 output cells, no message cells, essay digest `c7916ca0…`, the Abstract cell equal to `abstract.txt`, the icon payload equal to the portal source, the axiom sets matching, KernelChecked 164, no home paths. The assembler reproduces the corrected essay byte for byte. Pins refreshed to nb2 and the corrected essay; `post.sh --dry` passes (verifier `5fb59158`, image 18). Notebook, receipts and the sanitized pins and dry run: shared store `cited/local/separator-q01-nb2-20261108.tar.gz`, 512,426 bytes, SHA256 `ea8378c0c044104ea25acffa2944452e42081c9f24ee57ff34bd27033a994d4f`. The kit branch's catalogue row now carries the same `WedgeLadder.md` credit (local commit `8433a8f`).

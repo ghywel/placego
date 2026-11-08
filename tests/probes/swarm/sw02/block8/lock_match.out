@@ -1,0 +1,11 @@
+lock5.txt      W 34 windows 25 cells closed; period 5; reached 25 of 25; word 10000; class sizes [5, 4, 4, 6, 6]
+lock5.txt      W 34 windows 25 free  failures 2
+lock7.txt      W 30 windows 66 cells closed; period 7; reached 66 of 66; word 0101000; class sizes [7, 7, 9, 13, 13, 10, 7]
+lock7.txt      W 30 windows 66 free  failures 1
+lock7_w45.txt  W 45 windows 33 cells closed; period 7; reached 33 of 33; word 0010100; class sizes [5, 4, 4, 4, 4, 6, 6]
+lock7_w45.txt  W 45 windows 33 free  failures 2
+SevenLock      W 32 windows 195 cells closed; period 7; reached 192 of 195; word 0101000; class sizes [22, 22, 24, 32, 36, 32, 24]
+SevenLock      W 32 windows 195 free  closed; period 7; reached 195 of 195; word 0101000; class sizes [22, 22, 24, 34, 37, 32, 24]
+SevenLock projected to 30 columns: 65 windows; equal to BN-13 lock-7: False; lock-7 minus projection 1; projection minus lock-7 0
+lock-7b projected to 32 columns meets SevenLock: 0
+lock-5 projected to 30 columns meets lock-7: 0
