@@ -6,6 +6,7 @@ import itertools
 import json
 import os
 from pathlib import Path
+import shutil
 import sys
 import e_short_guard as short
 import physical_47 as phys
@@ -83,10 +84,56 @@ def prepare(out):
 
 def answer(out, case):
     text=(out.parent/(case+'-solve.stdout')).read_text()
-    if 's UNSATISFIABLE' in text:return 'UNSAT'
-    if 's SATISFIABLE' in text:return 'SAT'
-    assert 's UNKNOWN' in text or 's INDETERMINATE' in text,text[-300:]
+    rc=json.loads((out.parent/(case+'-solve.receipt.json')).read_text())['returncode']
+    if rc==20:
+        assert 's UNSATISFIABLE' in text;return 'UNSAT'
+    if rc==10:
+        assert 's SATISFIABLE' in text;return 'SAT'
+    assert rc==0 and any(line in ('c UNKNOWN','s UNKNOWN','s INDETERMINATE') for line in text.splitlines()),text[-300:]
     return 'UNKNOWN'
+
+
+def resume(out, prior, histories):
+    # Keep the original raw directory intact. This continuation copies inputs,
+    # adopts the completed queries, and runs only the previously unrun case.
+    for p in (prior/'artifacts').glob('*'):
+        if p.is_file():shutil.copy2(p,out/p.name)
+    for name in ('short-converse-solve','past-copy-solve','unit-good','unit-bad','hard-cake','hard-drat','hard-empty'):
+        for suffix in ('.stdout','.receipt.json'):
+            shutil.copy2(prior/(name+suffix),out.parent/(name+suffix))
+    assert answer(out,'short-converse')=='SAT' and answer(out,'past-copy')=='UNKNOWN'
+    parser_controls=[]
+    for name,text,rc,wanted in (('parser-bad-sat-code','s SATISFIABLE\n',20,None),
+                               ('parser-bad-unknown-code','c UNKNOWN\n',20,None),
+                               ('parser-good-unknown','c UNKNOWN\n',0,'UNKNOWN')):
+        (out.parent/(name+'-solve.stdout')).write_text(text)
+        save(out.parent/(name+'-solve.receipt.json'),{'returncode':rc})
+        try: observed=answer(out,name)
+        except AssertionError: observed=None
+        assert observed==wanted
+        parser_controls.append({'name':name,'observed':observed,'expected':wanted})
+    save(out/'parser-controls.json',parser_controls)
+    check_controls(out)
+    old=json.loads((out/'short-converse.result.json').read_text())['witness']
+    cases=json.loads(histories.read_text());ref=next(x for x in cases if x['word']==4522)['witness']
+    root=int(ref['root']);rr=anc.rows(root,85)
+    assert rr==[int(x,16) for x in ref['rows_hex']]
+    common, ids, n=short.build('253353');common.remove([ids[3][0]])
+    vals, _=short.assignment(root,ids,n);assert short.satisfied(common,vals)
+    state=[rr[11]>>9&1,rr[11]>>10&1,rr[12]>>10&1,rr[12]>>11&1]
+    top=[rr[13]>>(p-1)&1 for p in (11,10,9,8)]
+    window=[rr[11]>>(p-1)&1 for p in range(6,11)]
+    assert rr[3]&1==1 and rr[13]>>7&1==1
+    assert state==old['actual_register']==[1,0,0,1] and top==old['actual_top_word']==[1,1,1,1]
+    assert window==old['row119_window']==[1,1,0,1,1] and old['P']==0
+    q0=anc.rows(int(old['root']),85)[-1];q1=rr[-1];mask=(1<<23)-1
+    bands=[(q>>79)&mask for q in (q0,q1)]
+    save(out/'eight-bit-collision.json',{'roots':[old['root'],str(root)],'P_values':[0,1],
+        'same_actual_register':state,'same_actual_top_word':top,'same_patch':window,'both_common_S':True,
+        'P1_reference':'existing full-E4522 history','all85_reference_rows_replayed':True,
+        'seam85_band80_to102':bands,'same_band':bands[0]==bands[1],
+        'scope':'Physical common-S histories; no prescribed earlier E/A4 past claimed'})
+    print('RESUME_INPUTS_AND_PARSER_PASS; SAME_EIGHT_BIT_INTERFACE_DIFFERENT_PULSE')
 
 
 def convert(out, case):
@@ -203,8 +250,11 @@ def validate(out, case):
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('phase');p.add_argument('--out',type=Path,required=True)
-    p.add_argument('--case');p.add_argument('--kind');p.add_argument('--binary');a=p.parse_args();a.out.mkdir(parents=True,exist_ok=True)
+    p.add_argument('--case');p.add_argument('--kind');p.add_argument('--binary')
+    p.add_argument('--prior',type=Path);p.add_argument('--histories',type=Path)
+    a=p.parse_args();a.out.mkdir(parents=True,exist_ok=True)
     if a.phase=='prepare':prepare(a.out)
+    elif a.phase=='resume':resume(a.out,a.prior,a.histories)
     elif a.phase=='convert':convert(a.out,a.case)
     elif a.phase=='native':native(a.out,a.case,a.kind,a.binary)
     elif a.phase=='controls':check_controls(a.out)
