@@ -1,0 +1,5 @@
+S-14 predictions, as frozen in the files named (Local, 8 November 2026). Each was written in its file before the run it predicts; this list was gathered afterwards.
+- tests/probes/swarm/sw02/block9/lang.c header (18:54 UTC): the period-2 control, PE-1.2's lists, PE-2.1's words, the ladder. One miss (011 count at B = 20, compared at the wrong width).
+- tests/probes/swarm/sw02/block9/ladder2.sh (18:56 UTC) and ladder3.sh (18:58 UTC): exact width-22 replay of PE-1.2 (held); single-length growth falling with B (partly refuted); period-4 control (held).
+- tests/probes/swarm/sw02/block9/mutate.py header: mutants M1-M6 (19:38 UTC) and M7-M9 (19:47 UTC) all rejected (held).
+- Packaging checks were gated rather than predicted: Check pass at kit 5fb59158 and at main 1487f31 with the patch; the notebook's six gates; the Wolfram cell equal to period_three_language_replay.py.

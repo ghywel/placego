@@ -34813,3 +34813,21 @@ At the owner's word ("011 left reduction"). [Report section](reports/LOCAL-BLOCK
 So queue row S-14 holds the language theorems, the period-3 path check, the two reductions and the period-3 corollary. It is ready for packaging: Check, portal form, texts, notebook, catalogue row, then GPT's release review and the owner's word.
 
 My own pull: package S-14 as it stands rather than first widening the 001 certificate to width 14. The 011 reduction is the new piece, and widening is an independent improvement with an untested time cost.
+
+## L1603 — Local: S-14 packaged (not posted); Block 9 DONE; GPT, release review please (2026-11-08 20:12 GMT)
+
+At the owner's word ("Yes, package S-14"). [Packet](reports/wolfram-agents/submissions/period-three-language/README.md).
+- **Portal form** `Rule30Submission.lean` (`4edf326d…`). `Check --claim partial` passes at the verifier's kit `5fb59158`, image 18: 142 constants, 10 headlines, no new axioms ([receipt](reports/wolfram-agents/submissions/period-three-language/check-5fb59158.json)). Its dependencies at 5fb59158 build unchanged.
+- **Kit form** `Rule30PeriodThreeLanguage.lean` (`71ac7331…`). `Check` passes at main `1487f31` with the import line and catalogue row ([patch](reports/wolfram-agents/submissions/period-three-language/kit-integration.patch)). Local kit branch `b9-period3`, ending at `3a3c5b9`, not pushed. The row's credit line is in, with `PORTAL-ID` to fill after posting.
+- **Texts.** Title, abstract (216 words), essay-prose and the assembled essay (`bbdb8f41…`), headlines, [PR body](reports/wolfram-agents/submissions/period-three-language/PR-BODY.md) and [prereg](reports/wolfram-agents/submissions/period-three-language/prereg.txt).
+- **Notebook nb1** (`b8f34b86…`, 189,195 bytes): RESULT OK in 42 s at 2.4 GB.
+  - Six output cells, no message cells.
+  - The Wolfram cell equals [`period_three_language_replay.py`](tests/probes/wolfram/period_three_language_replay.py): the cyclic component sizes {3, 136} and {3, 3, 6, 553}, all forbidden words absent, all controls present.
+  - The Abstract cell, the icon payload, the axiom sets and KernelChecked at 142 all pass their gates.
+- **Post script** pinned outside git; `--dry` passes. Evidence: shared store `cited/local/period-three-language-nb1-20261108.tar.gz`, 63,442 bytes, SHA256 `d47c3bf3880c69f43b62da9f8d00705e49727ed829be1641a2ace500532e81e9` (readback exact; no identifiers).
+
+**Block 9 DONE**, closed by its procedure: the WARM-LEADS row, the board row, a door-5 amendment in SW02-DOORS, and a backlog annotation on PE-1 (widths 24 to 28 not run).
+
+**GPT: a release review, please (REVIEW-REQUEST).** What needs reading: the essay's claims against the module; prior art (rule30-open `ThreeRuns`, `ConstrainedLeft001`, `reading-constraints.md`, `constrained-left-halves.md`); the pins, and the notebook from the cited pack. The step-1 carrying request (the reduction and monotonicity) is folded in: the module's soundness rests on the kit's `sound_bad`, not on my step-1 sketch. So that read is no longer needed for S-14, only for the record. Nothing will be posted before your review and the owner's word.
+
+My own pull: none ahead of the review. After posting, the kit PR from `b9-period3`.

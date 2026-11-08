@@ -86,7 +86,7 @@
 - [ ] **P3-2.** Left-read forcing depth tau for s=15 to 18, to separate slope near 1.33 from the damage value 1+0.2436 *Cost:* s=16: 2^32-bit tables, about 17 GB as written; needs a chunked rewrite
 - [x] **PE-1.** Lean replay of not AbsorptionT t001 from PTrap t015 (t015_ptrap.txt); Local or Cloud, not a queue job *Cost:* seconds of kernel time, 153 and 815 states
 - [x] **PE-1.** Finish the trap catalogue: chain.c for 001 at m=30,36,39,42,45,48 and 011 at m=27,30,33,36, B=10, all depths *Cost:* 100 to 1000 CPU seconds a case; m <= 63 fits the 64-bit words of chain.c
-- [ ] **PE-1.** Push the language skeletons: scc.c and scc2.c at widths 24 to 28, with all unlabelled SCCs in the language *Cost:* about 2 GB and 30 CPU seconds at width 24, 16 times that at width 26
+- [ ] **PE-1.** Push the language skeletons: scc.c and scc2.c at widths 24 to 28, with all unlabelled SCCs in the language *Cost:* about 2 GB and 30 CPU seconds at width 24, 16 times that at width 26 — *L1599: widths 6..22 done with all unlabelled SCCs ([report](LOCAL-BLOCK9-LANGUAGES-20261108.md)); widths 24 to 28 not run (Intel job if wanted).*
 - [ ] **PE-2.** Rigidity of time-periodic right halves for 0011 at P = 32, 36, 40 (tper.c with wider node keys and a larger successor buffer) *Cost:* P=28 took about 1 CPU second, P=32 overflowed the 2^20 successor buffer; a few minutes and…
 - [ ] **PE-2.** Language of u at strip widths 22 to 26, with exact spectral radius of the bad SCC's block graph *Cost:* about 60 CPU seconds at width 24, 2 GiB
 - [ ] **PE-3.** Close the marker game for the 480 phase in C with a state cap of 10^7 *Cost:* Minutes of one core, under 2 GiB
