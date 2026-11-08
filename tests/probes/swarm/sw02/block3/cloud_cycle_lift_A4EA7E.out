@@ -1,0 +1,294 @@
+word A4EA7E: 38 gaps, period 145 sampled steps
+W=1 core sizes min/max/total 1/1/145 rounds 2
+W=2 core sizes min/max/total 1/2/156 rounds 6 time 0.1s
+   source109: n=1 low7=[0]
+   source275: n=1 low7=[0]
+   gate119: n=1 cells6..9 (cell6 low bit) patterns=[0]
+   gate285: n=1 cells6..9 (cell6 low bit) patterns=[0]
+   seam193: n=2
+W=3 core sizes min/max/total 1/2/151 rounds 3 time 0.1s
+   source109: n=1 low7=[0]
+   source275: n=1 low7=[0]
+   gate119: n=1 cells6..9 (cell6 low bit) patterns=[0]
+   gate285: n=1 cells6..9 (cell6 low bit) patterns=[0]
+   seam193: n=1
+W=4 core sizes min/max/total 1/2/176 rounds 3 time 0.1s
+   source109: n=1 low7=[0]
+   source275: n=1 low7=[0]
+   gate119: n=2 cells6..9 (cell6 low bit) patterns=[0]
+   gate285: n=2 cells6..9 (cell6 low bit) patterns=[0]
+   seam193: n=1
+W=5 core sizes min/max/total 1/3/213 rounds 4 time 0.1s
+   source109: n=1 low7=[0]
+   source275: n=1 low7=[0]
+   gate119: n=2 cells6..9 (cell6 low bit) patterns=[0]
+   gate285: n=2 cells6..9 (cell6 low bit) patterns=[0]
+   seam193: n=1
+W=6 core sizes min/max/total 1/4/263 rounds 6 time 0.1s
+   source109: n=1 low7=[0]
+   source275: n=1 low7=[0]
+   gate119: n=2 cells6..9 (cell6 low bit) patterns=[0, 1]
+   gate285: n=2 cells6..9 (cell6 low bit) patterns=[0, 1]
+   seam193: n=1
+W=7 core sizes min/max/total 1/5/320 rounds 5 time 0.1s
+   source109: n=1 low7=[64]
+   source275: n=1 low7=[64]
+   gate119: n=2 cells6..9 (cell6 low bit) patterns=[0, 3]
+   gate285: n=2 cells6..9 (cell6 low bit) patterns=[0, 3]
+   seam193: n=1
+W=8 core sizes min/max/total 1/6/373 rounds 10 time 0.3s
+   source109: n=2 low7=[64]
+   source275: n=2 low7=[64]
+   gate119: n=4 cells6..9 (cell6 low bit) patterns=[0, 3, 4, 7]
+   gate285: n=4 cells6..9 (cell6 low bit) patterns=[0, 3, 4, 7]
+   seam193: n=1
+W=9 core sizes min/max/total 1/7/375 rounds 10 time 0.3s
+   source109: n=4 low7=[64]
+   source275: n=4 low7=[64]
+   gate119: n=6 cells6..9 (cell6 low bit) patterns=[0, 4, 8, 11, 12, 15]
+   gate285: n=6 cells6..9 (cell6 low bit) patterns=[0, 4, 8, 11, 12, 15]
+   seam193: n=1
+W=10 core sizes min/max/total 1/6/359 rounds 13 time 0.3s
+   source109: n=4 low7=[64]
+   source275: n=4 low7=[64]
+   gate119: n=3 cells6..9 (cell6 low bit) patterns=[11, 15]
+   gate285: n=3 cells6..9 (cell6 low bit) patterns=[11, 15]
+   seam193: n=2
+W=11 core sizes min/max/total 1/6/319 rounds 16 time 0.4s
+   source109: n=1 low7=[64]
+   source275: n=1 low7=[64]
+   gate119: n=5 cells6..9 (cell6 low bit) patterns=[11, 15]
+   gate285: n=5 cells6..9 (cell6 low bit) patterns=[11, 15]
+   seam193: n=4
+W=12 core sizes min/max/total 1/10/453 rounds 9 time 0.2s
+   source109: n=1 low7=[64]
+   source275: n=1 low7=[64]
+   gate119: n=6 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=6 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=5
+W=13 core sizes min/max/total 1/13/622 rounds 10 time 0.2s
+   source109: n=1 low7=[64]
+   source275: n=1 low7=[64]
+   gate119: n=8 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=8 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=8
+W=14 core sizes min/max/total 1/19/938 rounds 9 time 0.2s
+   source109: n=2 low7=[64]
+   source275: n=2 low7=[64]
+   gate119: n=7 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=7 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=12
+W=15 core sizes min/max/total 1/24/1306 rounds 15 time 0.4s
+   source109: n=3 low7=[64]
+   source275: n=3 low7=[64]
+   gate119: n=10 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=10 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=19
+W=16 core sizes min/max/total 2/34/1879 rounds 13 time 0.3s
+   source109: n=4 low7=[64]
+   source275: n=4 low7=[64]
+   gate119: n=7 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=7 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=30
+W=17 core sizes min/max/total 2/49/2557 rounds 11 time 0.3s
+   source109: n=3 low7=[64]
+   source275: n=3 low7=[64]
+   gate119: n=6 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=6 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=46
+W=18 core sizes min/max/total 2/85/3544 rounds 19 time 0.6s
+   source109: n=5 low7=[64]
+   source275: n=5 low7=[64]
+   gate119: n=8 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=8 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=49
+W=19 core sizes min/max/total 2/145/4877 rounds 31 time 0.8s
+   source109: n=6 low7=[64]
+   source275: n=6 low7=[64]
+   gate119: n=9 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=9 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=62
+W=20 core sizes min/max/total 3/242/6566 rounds 24 time 0.6s
+   source109: n=9 low7=[64]
+   source275: n=9 low7=[64]
+   gate119: n=10 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=10 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=89
+W=21 core sizes min/max/total 2/345/8978 rounds 19 time 0.5s
+   source109: n=15 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   source275: n=15 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   gate119: n=15 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=15 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=136
+W=22 core sizes min/max/total 2/481/11840 rounds 24 time 0.7s
+   source109: n=13 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   source275: n=13 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   gate119: n=20 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=20 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=192
+W=23 core sizes min/max/total 1/443/10921 rounds 39 time 1.2s
+   source109: n=22 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   source275: n=22 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   gate119: n=19 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=19 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=190
+W=24 core sizes min/max/total 1/561/13968 rounds 30 time 0.9s
+   source109: n=28 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   source275: n=28 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   gate119: n=17 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=17 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=279
+W=25 core sizes min/max/total 2/527/15180 rounds 47 time 1.5s
+   source109: n=32 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   source275: n=41 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   gate119: n=13 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=17 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=405
+W=26 core sizes min/max/total 3/551/14977 rounds 40 time 1.3s
+   source109: n=21 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   source275: n=39 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   gate119: n=12 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=17 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=417
+W=27 core sizes min/max/total 4/623/17243 rounds 46 time 1.5s
+   source109: n=21 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   source275: n=37 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   gate119: n=13 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=16 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=509
+W=28 core sizes min/max/total 4/605/15647 rounds 60 time 1.9s
+   source109: n=16 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   source275: n=31 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   gate119: n=10 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=15 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=522
+W=29 core sizes min/max/total 3/568/16203 rounds 52 time 1.9s
+   source109: n=9 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   source275: n=23 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   gate119: n=9 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=14 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=510
+W=30 core sizes min/max/total 1/578/16929 rounds 66 time 2.2s
+   source109: n=1 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   source275: n=13 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   gate119: n=4 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=10 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=537
+W=31 core sizes min/max/total 2/688/20497 rounds 36 time 1.2s
+   source109: n=2 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   source275: n=15 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   gate119: n=5 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=14 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=682
+W=32 core sizes min/max/total 1/691/20956 rounds 65 time 2.2s
+   source109: n=1 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   source275: n=8 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   gate119: n=6 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=11 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=667
+W=33 core sizes min/max/total 2/754/23409 rounds 47 time 1.6s
+   source109: n=2 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   source275: n=13 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   gate119: n=9 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=19 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=687
+W=34 core sizes min/max/total 1/845/26362 rounds 48 time 1.6s
+   source109: n=3 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   source275: n=20 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   gate119: n=12 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=26 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=737
+W=35 core sizes min/max/total 2/897/29542 rounds 41 time 1.5s
+   source109: n=5 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   source275: n=33 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   gate119: n=17 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=35 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=777
+W=36 core sizes min/max/total 2/910/31866 rounds 55 time 2.1s
+   source109: n=8 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   source275: n=40 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   gate119: n=20 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=25 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=842
+W=37 core sizes min/max/total 2/995/34136 rounds 63 time 2.5s
+   source109: n=13 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   source275: n=45 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   gate119: n=28 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=22 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=921
+W=38 core sizes min/max/total 2/318/9731 rounds 92 time 2.9s
+   source109: n=21 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   source275: n=8 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   gate119: n=36 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=6 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=187
+W=39 core sizes min/max/total 2/108/4597 rounds 75 time 2.1s
+   source109: n=26 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   source275: n=8 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   gate119: n=42 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=11 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=92
+W=40 core sizes min/max/total 2/100/3268 rounds 50 time 1.4s
+   source109: n=34 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   source275: n=8 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   gate119: n=27 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=6 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=95
+W=41 core sizes min/max/total 1/49/1965 rounds 52 time 1.5s
+   source109: n=20 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   source275: n=10 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   gate119: n=5 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=6 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=42
+W=42 core sizes min/max/total 1/39/1163 rounds 91 time 2.2s
+   source109: n=18 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   source275: n=7 low7=[64]
+     labels(14-bit col8 words)=[4520]
+   gate119: n=5 cells6..9 (cell6 low bit) patterns=[11]
+   gate285: n=2 cells6..9 (cell6 low bit) patterns=[11]
+   seam193: n=13
+W=43 core sizes min/max/total 0/0/0 rounds 74 time 0.9s  EMPTY: the periodic 4,7 word has no bi-infinite window path at this width
+done; wall 43.4s

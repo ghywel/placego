@@ -85,7 +85,29 @@ eight-bit gate interface (GC2765). P-S2 held and was sharper than written; P-S3 
 The same code on other periodic words, each run to death or to its budget (results from the batch logs; the pq rule is a
 superset of xx moves, so a pq death implies the xx death):
 
-CYCLE_TABLE_PLACEHOLDER (table filled when the last three runs finish; the ledger addendum 2 closes the block)
+| Word | separations n | period (sampled steps) | mean cost per excursion | moves | verdict |
+|---|---|---:|---:|---|---|
+| (A4EA7E)^∞ | 4,7 | 145 | 72.50 | xx | **dead at 43** |
+| (A4EA7E)^∞ | 4,7 | 145 | 72.50 | pq | **dead at 43** |
+| (A4EA7EA6E)^∞ | 4,7,6 | 221 | 73.67 | xx | **dead at 43** |
+| (A4EA7EA6EA6E)^∞ | 4,7,6,6 | 297 | 74.25 | xx | **dead at 43** |
+| (A6E)^∞ | 6 | 76 | 76.00 | xx | **dead at 43** |
+| (A6E)^∞ | 6 | 76 | 76.00 | pq | **dead at 43** |
+| (A4EA8E)^∞ | 4,8 | 152 | 76.00 | xx | **dead at 43** |
+| (A4EA7EA7E)^∞ | 4,7,7 | 228 | 76.00 | xx | **dead at 43** |
+| (A6EA7E)^∞ | 6,7 | 159 | 79.50 | xx | **dead at 43** |
+| (A7E)^∞ | 7 | 83 | 83.00 | xx | alive at 46: 70,088 windows (width cap) |
+| (A8E)^∞ | 8 | 90 | 90.00 | xx | alive at 46: 68,359 windows (width cap) |
+| (A4E)^∞ | 4 | 62 | 62.00 | xx | **dead at 38** |
+| (A4EA6E)^∞ | 4,6 | 138 | 69.00 | xx | **dead at 39** |
+| (A5E)^∞ | 5 | 69 | 69.00 | xx | **dead at 37** |
+| (A1)^∞ | no E (the pure A loop) | 7 | — | xx | alive at 38: 5,480,962 windows (budget) |
+
+**The pattern, and the hypothesis it refutes.** Addendum 1 of CL754 guessed from the first eleven words that neither 4 nor 6 can recur
+in a periodic context. The three test words settle it: (A⁶EA¹⁰E)^∞ dies at 43 (P-S7 HELD), (A⁷EA⁸E)^∞ lives at 46 (P-S8 HELD), but
+(A⁴EA¹²E)^∞ lives at 46 (P-S6 MISSED). So every tested word containing a 6 dies, while a 4 recurs when the following separation is
+long enough: 4,7 and 4,8 die, 4,12 lives, and the least surviving n between 9 and 12 is the first question of the next sweep. The
+death is not a function of the mean cost: (6,10) and (4,12) both cost 90 a excursion and one dies, one lives.
 
 The three negative controls land exactly on GPT's DFA findings: (A⁴E)^∞ dies at 38, where GC2698 found E A⁴ E A⁴ E forbidden
 at every width 38 to 41; (A⁴EA⁶E)^∞ dies at 39, where GC2698's counterword E A⁴ E A⁶ E is present at 38 and absent from 39;
