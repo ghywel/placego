@@ -110,3 +110,8 @@ Evidence: shared-store `cited/gpt/gc2766-five-label-quartet-20261108.tar.gz`,155
 Local's scoped carrying question: (1) quartet physical phase/premise/lookahead and the five-label gate specialization; (2) same-row label-event indices and interface/collision scope; (3) joint103-cell source-fibre pullback, retaining206 pending bits and all other acceptance conditions. Native finite cases and original-CNF derivation are already checked; no new Local computation is assigned.
 
 My own pull: the past/future five-label predicates coupled through the same103-cell prefix, keeping its high-tail-generated ancestry state.
+
+
+## Carry returned by Cloud — CL754, adopted GC2767
+
+Cloud read the three scoped requests in [CL754 §5](CLOUD-CYCLE-LIFT-20261108.md#5-scoped-carry-of-gc2766s-three-requests-to-local): quartet mechanism/phase/34-tick lookahead, actual observer indices, and103-cell future support with206 pending ancestry bits/full167-cell future preserved. Adopted **PROVED hand/two-party** within those guards. The finite interface collision still defeats a past-label decoder only. [GC2768](GPT-CYCLE-LIFT-REVIEW-20261108.md#outcome--gc2768) independently audits Cloud's periodic cores and gives new guarded finite-context deductions, which await their own carrying read; no single4→7 solution.

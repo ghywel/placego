@@ -10,6 +10,13 @@ soundness lemma of §1 PROVED by hand. Evidence: shared store `cited/cloud/cycle
 SHA256 `dbdab7f43fbc56312225211169390132649eec8c0391237120779c43152d6e85`, 1,091,251 bytes (source, logs, every width's core of
 the 4,7 word as a compressed array file, the seam windows at 41 and 42), readback verified.*
 
+**GPT review/update GC2768:** all43 saved4,7 cores now independently replayed
+on Intel; empty-core transfer carried. The source64 threshold is corrected
+below to7. The clock and finite-survival interpretations are narrowed below;
+[finite-margin continuation](GPT-CYCLE-LIFT-REVIEW-20261108.md#outcome--gc2768)
+gives a new, still carrying-read-pending20-pair bound and guarded five-pair
+label result. Historical predictions remain in CL754's ledger entries.
+
 ## 1. The object and why its death is a theorem about right halves
 
 Windows are the Block 3 packet's: columns 1..W at odd ticks, cell i as bit i − 1, the centre column 0 white at odd ticks and
@@ -54,10 +61,11 @@ The core grows by about 1.07 a column from
 24 to 37 and then collapses: it loses two thirds at 38, half again at 39, and is empty at 43. By the lemma, **no right half,
 finite or infinite, has a column-1 trace that is eventually (A⁴ E A⁷ E)^∞.** The whole run took 43 seconds.
 
-**Consequences for the clock (GC2706, CL753).** The bound of 145/2 sampled steps per excursion is attained in the X grammar
-only by the 4,7 cycle, and the grammar's only infinite paths using just the cost-62 and cost-83 edges are (4,7)^∞. So no
-realisable history attains the bound: the mean return cost of every realisable X history is strictly above 145/2. What the
-infimum is remains open; the periodic candidates below it and just above it are listed in §4.
+**Consequences for the clock (GC2706, CL753).** The minimum cycle mean145/2 in the X grammar is attained by4,7. Its zero reduced-slack edges, under GC2706's potential,
+are exactly R→S at4 and S→R at7; raw cost83 also occurs on R→R at7. Periodic death alone does not exclude sparse defects
+whose mean approaches145/2. GC2768 supplies the missing uniform finite-repetition bound, leading to the stronger conditional
+liminf bound2831/39; that new hand refinement awaits a carrying read. The physical infimum remains open; finite-width
+periodic candidates are listed in §4.
 
 **Consequences for GPT's one passage.** None directly: one passage E A⁴ E A⁷ E is a weaker demand than repeating it, and
 the DFA factor E A⁴ E A⁷ E is present at 38 to 41 (CL753). What this block supplies to the joint pullback is the full list of
@@ -71,7 +79,7 @@ phases where they must, by a method that shares nothing with those certificates:
 
 | Fact (GPT) | Where it should show | What the lift shows | From width |
 |---|---|---|---|
-| source64: a source row 16 ticks before an E launch has cells 1..7 = 0000001 (GC2719, GC2762) | the two source phases, ticks 109 and 275 of the passage | every live window has low 7 cells = 64 | 6 |
+| source64: a source row 16 ticks before an E launch has cells 1..7 = 0000001 (GC2719, GC2762) | the two source phases, ticks 109 and 275 of the passage | every live window has low 7 cells = 64 | 7 |
 | the quartet: row 119 (and 285) cells 6..9 = 1101 (GC2766, 57-tick cone, forced for any window path from width 58) | the two gate phases | every live window has cells 6, 7, 8, 9 = 1, 1, 0, 1 | 12, far below 58 |
 | the six and then five launch labels: the 14-bit column-8 word at the source is one of 4482, 4498, 4520, 4521, 4522 (14429 excluded by the compact two-A premise) (GC2724, GC2762) | the two source phases, readable from 21 cells | **one label only, 4520**, at both launches, the one after A⁴ and the one after A⁷ | 21 |
 
@@ -106,16 +114,15 @@ superset of xx moves, so a pq death implies the xx death):
 | (A5E)^∞ | 5 | 69 | 69.00 | xx | **dead at 37** |
 | (A1)^∞ | no E (the pure A loop) | 7 | — | xx | alive at 38: 5,480,962 windows (budget) |
 
-**The pattern, and the hypothesis it refutes.** Addendum 1 of CL754 guessed from the first eleven words that neither 4 nor 6 can recur
-in a periodic context. The three test words settle it: (A⁶EA¹⁰E)^∞ dies at 43 (P-S7 HELD), (A⁷EA⁸E)^∞ lives at 46 (P-S8 HELD), but
-(A⁴EA¹²E)^∞ lives at 46 (P-S6 MISSED). So every tested word containing a 6 dies, while a 4 recurs when the following separation is
-long enough: 4,7 and 4,8 die, 4,12 lives, and the least surviving n between 9 and 12 is the first question of the next sweep. The
+**The pattern, and the bounded prediction it refutes.** Addendum 1 of CL754 guessed from the first eleven words that neither 4 nor 6 can recur
+in a periodic context. The three test words settle the death-by43 predictions, not physical nonrecurrence: (A⁶EA¹⁰E)^∞ dies at 43 (P-S7 HELD), (A⁷EA⁸E)^∞ lives at 46 (P-S8 HELD), but
+(A⁴EA¹²E)^∞ lives at 46 (P-S6 MISSED). So every tested word containing a 6 dies, while a word with4 survives the finite-width test with a longer following separation: 4,7 and 4,8 die, 4,12 lives, and the least surviving n between 9 and 12 is the first question of the next sweep. The
 death is not a function of the mean cost: (6,10) and (4,12) both cost 90 a excursion and one dies, one lives.
 
 The three negative controls land exactly on GPT's DFA findings: (A⁴E)^∞ dies at 38, where GC2698 found E A⁴ E A⁴ E forbidden
 at every width 38 to 41; (A⁴EA⁶E)^∞ dies at 39, where GC2698's counterword E A⁴ E A⁶ E is present at 38 and absent from 39;
-(A⁵E)^∞ dies at 37, since 5 is never an allowed separation. The pure A loop, whose infinite path is the period-7 lock, lives
-and grows (2.27 million windows at 36, where the budget stopped it). So the method kills what the record says must die and
+(A⁵E)^∞ dies at 37, since 5 is never an allowed separation. The pure A loop, which includes the known period-7 lock, remains live through38
+(5480962 windows at the budget stop). So the method kills what the record says must die and
 keeps what must live, and it reproduces GC2698's two thresholds to the exact width.
 
 ## 5. Scoped carry of GC2766's three requests to Local
@@ -143,7 +150,7 @@ GPT asked Local to carry three hand items; the owner put this block in Local's p
 
 - **P-S1 (0.6):** HELD through 41; the core is empty at 43. The counterfactual's content, a finite death, occurred two columns
   beyond the DFAs' reach.
-- **P-S2 (0.6):** HELD and sharper: source64 at every live source window from width 6, and one label, 4520, from width 21.
+- **P-S2 (0.6):** HELD and sharper: source64 at every live source window from width 7, and one label, 4520, from width 21.
 - **P-S3 (0.75):** HELD, W* = 12 against the certificate's 58.
 - **P-S4 (0.5):** MISSED in the interesting direction: the lift never needed width 60; the word died at 43 in 43 seconds.
 - **P-S5 (0.6):** HELD where it applies: growth was about 1.07 a column from 24 to 37, well under 1.5; the collapse after 37 is the finding, not a growth rate.
@@ -161,8 +168,8 @@ independent implementation.
   with mean below the cheapest survivor's exist? The lift costs seconds per word; a systematic sweep of cycles by increasing
   mean is one block.
 - **Consecutive repetitions.** At width 43 the longest path following the 4,7 trace is finite; its length bounds how many
-  consecutive 4,7 pairs any realisable history can contain, which would turn the strict inequality of §2 into a quantitative
-  one. Computing it sparsely needs a C implementation over the lifted candidates.
+  consecutive 4,7 pairs any realisable history can contain, which supplies the missing uniformity for a quantitative
+  clock improvement. GC2768 obtains a conservative bound in Python from the saved cores, retaining all earlier-width transient margins. A longest path in the last lifted candidate graph alone is insufficient for arbitrary finite histories.
 - **For GPT's joint pullback.** The 13 seam prefixes at width 42 are the only M₁..₄₂ consistent with the periodic past and
   future; their 14-bit future labels (readable from cell 103 on, so not at 42) and their inverse-scan words are the concrete
   joint data the periodic case offers, in the evidence packet.

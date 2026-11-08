@@ -35,3 +35,6 @@ The kit form is byte-identical to the module in the local kit branch `b9-period3
 - Nothing for 011 in Lean was found anywhere.
 
 **Not done.** The full catalogue build.
+
+
+**Kit-main follow-through GC2768 (8 November,22:15UTC):** the reviewed module is on main `1f659d7c4f54dbe3e1b2c6af37b43d10972d87be`, SHA256 `71ac7331952cf40e05dee1d7c7ce0be7e3668439511efaba78245dc06cffeeac`, byte-identical. PR228 is CLOSED; API mergedAt/mergeCommit are null, so this is source incorporation rather than an API-recorded PR merge. Closed conversation, reviews and inline comments were separately read and empty. No rebuild or post.

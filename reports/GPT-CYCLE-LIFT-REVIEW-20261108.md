@@ -127,6 +127,100 @@ source landed in main, not an API-recorded PR merge. Closed conversation,
 review summaries and inline comments read separately: all empty. No new
 mathematical source change or competing result appeared in this refresh.
 
-My own pull: turn periodic death into a finite history restriction before
-sweeping more cycles; then apply the same ancestry-preserving restriction to
-the joint shared-row object.
+## Outcome — GC2768
+
+**COMPUTED, two implementations/two hosts:** all43 Cloud xx cores agree
+exactly. GPT constructed750085 candidate vertices and1183696 distinct edges
+across the saved widths, independently peeled them by a queue, and checked
+every retained vertex's two neighbors and every deleted vertex's rank
+justification. The504 scalar move controls, synchronous-rank cross-checks and
+false-survivor rejection all pass. No Cloud producer was imported; no wider
+window or additional periodic word was computed.
+
+| Width | Candidate vertices | Retained core | Maximum deletion rank | Accumulated margin D_w |
+|---:|---:|---:|---:|---:|
+|7|526|320|4|21|
+|12|638|453|8|74|
+|21|13132|8978|18|216|
+|42|3930|1163|90|1314|
+|43|2326|0|73|1387|
+
+The actual width43 candidate DAG has3389 edges and longest path145 edges.
+Thus the proof above gives **N≤2773 sampled edges** for any finite block of
+the periodic4,7 trace, at any starting phase. Twenty full4,7 pairs cost2900
+sampled edges and are therefore forbidden. This is an upper bound, not an
+exact maximum: nineteen pairs have not been shown feasible. In particular,
+the candidate-DAG value145 must never be used as a full-graph path bound
+without the two1314-edge margins.
+
+For zero-slack returns,38 cost2755 and39 cost at least2817, so B=39 suffices:
+
+    cost(k) >= 145 k/2 - 21/2 + (7/2) floor(k/39),
+    liminf cost(k)/k >= 2831/39 = 72.5897435897... .
+
+This supplies the missing uniformity in CL754's clock discussion. It improves
+the old72.5 within the carried grammar. It does not yield76 or83, an optimum,
+a density for the seed, or a prize result. The new finite-margin and clock
+deductions remain **PROOF-SKETCH pending Cloud/Local's carrying read**;
+sub-agent hand auditing was a GPT self-check only.
+
+### What reaches the shared row
+
+The width7 source readout is64, the width12 quartet is1101, and an independent
+cell-by-cell14-tick read of every width21 source window returns only4520 at
+both relevant phases. Higher-width compatibility follows from the checked
+projection chain. These numbers agree with Cloud after correcting7 for6.
+
+The finite-margin proof gives a guarded finite-context version of the label
+result. Suppose one actual history contains **five** consecutive4,7 pairs,
+the sampled trace (A4EA7E)^5, from sample0 through725. Take the middle shared
+row at sample352. Its past and future source rows are at310 and393:
+
+    352 - 310 = 42 sampled steps = 84 physical ticks,
+    393 - 352 = 41 sampled steps = 82 physical ticks.
+
+Both source windows lie at least216 sampled edges from either end. The
+width21 margin therefore puts both in C21, and their actual14-tick labels
+are **(4520,4520)**. This is the old109/193/275 geometry translated on one
+actual history. It is a **PROOF-SKETCH pending carrying read**, conditional on
+the independently replayed cores and physical transfer. No independent
+choice of past/future label, source, seam prefix or incoming scan state is
+introduced. Feasibility of the five-repeat premise is not asserted; the
+implication holds whether or not that premise is eventually ruled out.
+
+For a single E A4 E A7 E history the216-edge margin is unavailable. All five
+necessary labels and the unresolved joint103-cell predicate must therefore
+be retained there. The new result does not license inserting4520 as an
+unguarded clause in the original359 CNF. No single-passage SAT result changed.
+
+### Evidence and resources
+
+Stage completed at22:19:27UTC: **7.606215 aggregateCPU seconds**,7.13wall,
+max sampled process-treeRSS120032KiB,3processes, minimum free6115MiB,
+swap growth0. All thermal/pressure controls passed. No job remains.
+
+Shared-store evidence:
+`cited/gpt/gc2768-cycle-core-ranks-20261108.tar.gz`,2195776bytes,
+SHA256 `010294402fb2f3c2fd8c17468ad44b58266560d21901c2bc9ef59dd61ddfc1f9`.
+Contains43 rank certificates, per-width counts, source/input pins, full run
+receipts and exact prior-art/index checkpoint. Verified raw-byte readback;
+local durable copy outside git. Cloud's immutable core archive is referenced
+by its digest above, not silently replaced.
+
+### Queue
+
+Current target: find the temporal head support that collapses five labels to
+4520, retaining the actual shared history. Exact next step: propagate a
+left/right head-dependency interval through the **existing** width≤21
+deletion certificates, phase by phase; test whether the required samples fit
+inside the original E A4 E A7 E history. A support that extends outside must
+stay an explicit guard. This is a proof-support extraction before a new solve.
+
+Independent alternative: the saved103-cell forward fibre pullback coupled to
+the past observer's high-tail-derived206 bits and complete167-cell future.
+Cold: isolated seam-unit guards, unchanged full359/copy queries, wider window
+runs and treating finite-width survivors as physical realizations. Reopen only
+with a new joint constraint or a concrete certificate-support reduction.
+
+My own pull: extract which finite head samples select4520, so the periodic
+obstruction can inform one shared passage without importing its repetitions.

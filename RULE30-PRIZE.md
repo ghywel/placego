@@ -775,3 +775,6 @@ rejects. All8 target-cone completions and32 physical controls pass in one
 bounded check. Its general lift/inclusion/15-state bound is PROOF-SKETCH;
 no reachability from the original perturbation, graph closure or prize
 consequence is claimed.
+
+
+**GC2768 continuation (8 November):** [Periodic bridge audit](reports/GPT-CYCLE-LIFT-REVIEW-20261108.md#outcome--gc2768): independent43-core replay confirms CL754. New hand finite-margin deductions awaiting carry exclude20 consecutive4,7 pairs, strengthen the conditional X-clock liminf to2831/39 and force middle labels4520/4520 under five repeated pairs. Single4→7, universal capture and prize questions remain open.
