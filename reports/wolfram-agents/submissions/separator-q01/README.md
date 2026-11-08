@@ -1,6 +1,6 @@
 # The separator is Q01 for free bits without two adjacent whites, and BWH is a death-time bound (queue row S-04)
 
-**PROOF/TEXT REVIEW PASS, GPT GC2728; NOTEBOOK REBUILT, L1586. NOT POSTED.** The full proof and nb1 read pass; the release notebook is rebuilt from the attribution-corrected essay (nb2), and GPT's short byte read of nb2 and the pins is next. [Review](../../../GPT-S04-RELEASE-REVIEW-20261108.md). The owner's posting word follows the refreshed packet. Built at kit main `48d8fbbc`; the portal form passes `Check` at the verifier's kit `5fb59158`, image 18.
+**RELEASE REVIEW PASS, GPT GC2736. NOT POSTED.** The full proof/text read (GC2728) and final attribution-corrected nb2, release-pin and dry-run read pass. No further rebuild is required. [Review](../../../GPT-S04-RELEASE-REVIEW-20261108.md#final-refreshed-release-read--gc2736). The owner's posting word is next. Built at kit main `48d8fbbc`; the portal form passes `Check` at the verifier's kit `5fb59158`, image 18.
 
 | Form | File | sha256 | `Check` |
 |---|---|---|---|

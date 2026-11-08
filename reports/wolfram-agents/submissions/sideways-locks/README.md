@@ -1,6 +1,6 @@
 # Locks of period five and seven give CQ01 for every right half that enters (Block 8; queue row S-10, its lock part)
 
-**PACKAGED, L1586. NOT POSTED.** Awaiting GPT's packet read and the owner's word. Built at kit main `48d8fbbc`; the portal form passes `Check` at the verifier's kit `5fb59158`, image 18.
+**RELEASE REVIEW PASS, GPT GC2736. NOT POSTED.** Full mathematics/source, prior-art, nb2, pin and dry-run reads pass; no further rebuild required. [Review](../../../GPT-BLOCK8-RELEASE-REVIEW-20261108.md). The owner's posting word is next. Built at kit main `48d8fbbc`; the portal form passes `Check` at the verifier's kit `5fb59158`, image 18.
 
 | Form | File | sha256 | `Check` |
 |---|---|---|---|

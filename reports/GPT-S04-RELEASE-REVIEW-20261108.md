@@ -2,7 +2,7 @@
 
 GPT GC2727/GC2728, 8 November2026. Owner requests refreshed S02 and first-draft S04. Research continuation stays parked.
 
-**Verdict: mathematics, both Lean sources and the existing kernel/notebook receipts PASS. One prior-art repair applied. Release awaits Local's notebook/essay-pin refresh for the corrected attribution.** No Lean, headline, abstract, title or driver change; nothing posted. S02's separate nb2 release gate is cleared in its [review](GPT-S02-RELEASE-REVIEW-20261108.md#final-refreshed-release-read--gc2728).
+**Final verdict GC2736: RELEASE REVIEW PASS.** Mathematics and both Lean sources pass GC2728; the attribution-corrected nb2, release pins and dry-run receipt now pass the final read below. The prior artifact hold is cleared. No Lean, headline, abstract, title or driver change; nothing posted. S02's separate nb2 release gate is cleared in its [review](GPT-S02-RELEASE-REVIEW-20261108.md#final-refreshed-release-read--gc2728).
 
 ## Carrying mathematics and formal source
 
@@ -53,5 +53,11 @@ Byte-audit results retained as shared store `cited/gpt/gc2728-release-audit-2026
 ## Fresh external index
 
 Successful complete refresh2026-11-08T12:09:59.779778Z, kit48d8fbbc0d4a74ef5dd740cb76131704a6fc9167, portal updated12:09:55Z,12open PRs: two added index units, one entry plus its source, no changed/removed units. [R30-20261108-b1819c](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-b1819c) is externally Lean Verified,1628constants/16headlines. Abstract, receipt and all16 headline statements read: D401 black after2994; conditional sixteen-state transport and even-parity period16 preservation; all-period inward-column nonperiodicity retaining c≤−2985 and c≤−(T+P)+384. Source SHA256 `21414ffbc08f480f184a2803dcb20c5e8d86dc0e8b7f67f1fcf5fa590d0915b0`. No full proof carry or new local verification. These fixed-seed diagonal results do not supply a general finite-start separator/twin theorem and do not change either packet's review.
+
+## Final refreshed release read — GC2736
+
+Local L1586's nb2 archive was downloaded and its digest verified: `cited/local/separator-q01-nb2-20261108.tar.gz`, 512426 bytes, SHA256 `ea8378c0c044104ea25acffa2944452e42081c9f24ee57ff34bd27033a994d4f`. The actual notebook is 188972 bytes, SHA256 `8f2305a01e65fcd5f9b8e33e9c03557e7f5ccacb9b0b2a6b3c3536a3f362f16e`; its essay equals the corrected `c7916ca0…` release text. Decoded icon source and Abstract match the unchanged reviewed files byte for byte. All six actual output digests match their receipts; kit=True, LeanEnvironment, headline types/axioms and KernelChecked164 agree. Six output cells, zero Message cells, no public home/scratch paths; internal handler events are nonzero.
+
+The sanitized pins match all six release files and nb2. The actual dry-run receipt passes at verifier `5fb591588cfa869bfdc47946799b5ddd70a903d1`, image18, without submitting. This completes the artifact refresh requested by GC2728: **no further rebuild or release-content edit required**. Source-matching Local Check receipts remain the compilation evidence; no fresh Intel compile or full catalogue build is claimed. [Combined Block8/S04 final audit, fresh external index and evidence](GPT-BLOCK8-RELEASE-REVIEW-20261108.md). Posting remains at the owner's word.
 
 My own pull: the same shared4→7 input-history constraints, retained and parked while submission reviews finish.
