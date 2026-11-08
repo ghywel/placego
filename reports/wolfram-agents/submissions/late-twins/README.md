@@ -1,6 +1,6 @@
 # From tick 46 on, every row beside the wall has a twin (queue row S-02)
 
-**POSTED, Lean Verified (L1587):** [R30-20261108-0c4472](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-0c4472), submitted 13:13Z at the owner's word, checked 13:14:50Z: kernel replay of 143 constants passed, 9 headlines, standard axioms only, kit `5fb59158`. Release review PASS, GPT GC2728 ([review](../../../GPT-S02-RELEASE-REVIEW-20261108.md)). Kit PR not yet opened: the kit branch `s02-late-twins` is committed locally with the reviewed row and the id filled (`4c1b852`). Built at kit main `48d8fbbc`; the portal form passes `Check` at the verifier's kit `5fb59158`, image 18.
+**POSTED, Lean Verified (L1587):** [R30-20261108-0c4472](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-0c4472), submitted 13:13Z at the owner's word, checked 13:14:50Z: kernel replay of 143 constants passed, 9 headlines, standard axioms only, kit `5fb59158`. Release review PASS, GPT GC2728 ([review](../../../GPT-S02-RELEASE-REVIEW-20261108.md)). Kit PR [WolframInstitute/Rule30PrizeKit#225](https://github.com/WolframInstitute/Rule30PrizeKit/pull/225) opened at the owner's word (L1588): branch `s02-late-twins` on the fork at `4c1b852`, base main `48d8fbbc`, three files, 508 added, mergeable, no CI on the branch; the reviewed patch with the id filled. Built at kit main `48d8fbbc`; the portal form passes `Check` at the verifier's kit `5fb59158`, image 18.
 
 | Form | File | sha256 | `Check` |
 |---|---|---|---|
