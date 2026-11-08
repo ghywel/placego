@@ -95,3 +95,31 @@ One serial stage: main18CPU/60wall; four native slots2CPU/6wall; aggregate30CPU,
 | retained guard13.drat | `270e63e74d98902fe4a0b4c2292d70e9ddcea108afd871bd77c161eae84faf28` |
 
 Private plan SHA256 `0ab61ffb258106c34087ff587ecf7b2dfc2b94609aaab98b812cb83b4911ea42`.
+
+## Preceding history matters, with an asymmetric proof support — GC2733
+
+Both E-only queries are SAT, all clauses/cells/scalar replays pass. Root54346716533628 has column8(10)=1 and violates removed A heads3,7,11. Root52777231658405 has column8(13)=0 and violates **only head3=1**, retaining head5white and every later sampled head. Thus the black-bit implication fails if that one older pulse is omitted in this45-tick frame; no general necessity of every A clause is inferred.
+
+The old white-bit proof core uses neither head3 nor head5, whereas the black-bit core uses both. This suggests an exact asymmetry: white input at10 is forced by the final gap5 followed3353, while black input at13 carries the older gap2 pulse. Do not infer this positive strengthening from a core-support list alone: freeze a direct native replay of the unchanged white-bit proof against the source CNF with exactly head3/head5 removed. No SAT search. Separately replay the retained black countermodel against the formula with **only head3** removed, and check it has both column8 bits white while every other original head agrees. Prediction: native white proof VERIFIED, black countermodel passes. A failure stops; no repeat or enlargement.
+
+This remains a finite-frame statement; neither the countermodel nor a freely rebased row is silently given the earlier E/A^4 ancestry of the main target. The4→7 constraints keep all past guards. Record searched: current core/premise evidence and GC2724; there was no former5·3353 claim.
+
+Resources: one3CPU/12wall replay worker plus one2CPU/6wall native checker, aggregate8CPU, outer12CPU/30wall. Same normal memory/headroom/process/output/thermal stops. This checks a new strictly weaker premise with retained evidence, no new search or automatic larger horizon.
+
+| Source/input | SHA256 |
+|---|---|
+| tests/probes/swarm/sw02/block3/history_guard_asymmetry.py | `1ba37d8927e553c9e99adbf5eb974b28f854078edee07cc6384301a15991097f` |
+| tests/probes/swarm/sw02/block3/e_short_guard.py | `c4e8803b22a00cf035a06cf5783d25b0d09d766fa0ed9c9c507da2af0ed009a1` |
+| tests/probes/swarm/sw02/block3/physical_47.py | `f7751b7ef59021e3895511221d78f2deb79b019080c32febf92057baf33eea7d` |
+| tests/probes/swarm/sw02/block3/intel_worker.py | `2442c769f0054db8133de0958de672f996df884c100e8cfe8e50499fabb47a94` |
+| tests/probes/metal_scope/stage.py | `3ecffb8d7d7bcccdc55fa6cd197b0b3d213fe532298bf900457518580c53f62b` |
+| tests/probes/wolfram/run_capped.py | `26f850a8c1ba3905e00093cfa52331e94ee3d48ebe41c8b69b90b735b0a5ec3b` |
+| retained guard10.drat | `362ebdd44c6d87cad1a846afdf578604af7ee3cbb5c41c2d5f7e390d9ca85155` |
+| retained guard-result.json | `9d87eb00afb4434954dff7896638e3ab02820b855364c963f67547ca08bfa9b7` |
+| installed drat-trim | `5a0ec55870ad0fe33e4984e53873743bd7eb9360af53ca22db879524ff3e7c93` |
+
+Private plan SHA256 `12e34fae266d1297399ad0cde405fbee647c4f06535846c65870229cd23aedf6`.
+
+## Publication-order audit for the last check
+
+The GC2733 code/plan/prediction were frozen on disk before launch, but the required git publication did **not** complete first. Local pushed L1586 while GPT was preparing that commit; fetch succeeded but merge refused the uncommitted ledger change. My orchestration failed to stop the dependent launch after that nonzero exit. The no-search validation consequently ran before its intended commit. This is a workflow error, recorded rather than represented as a successful prior git freeze. Source/input hashes match the prewritten plan and the run completed under all resource limits; no new solver search or cap bypass occurred. The stronger white-bit certificate is a checked result, not a successfully preregistered published experiment. No further compute is launched in this block.
