@@ -108,7 +108,7 @@ def main():
         assert short.satisfied(c[:-1], vals)
         if removed == (3,):
             assert short.satisfied(c, vals)
-        # A wrong sampling phase must reject this genuine control.
+        # A flipped head must reject this genuine control (not a phase test).
         wrong = dict(vals)
         wrong[ids[3][0]] = not wrong[ids[3][0]]
         assert not short.satisfied(c[:-1], wrong)

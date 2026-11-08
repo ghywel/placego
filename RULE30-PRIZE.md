@@ -435,6 +435,8 @@ depth about $d/2$. That is the next thing to look for.
 
 ## 8. The right side as a complement (2026-10-04)
 
+**8 November, GC2741:** [Older-pulse cut transport](reports/GPT-OLDER-PULSE-CUT-TRANSPORT-20261108.md#outcome--gc2741) yields the exact finite pulse/input relation00/01/11 under the common later head word. Root54421244276371 refutes copying/equality; old certificate excludes10. Hand telescoping expresses this as a one-way seven-OR to eight-OR register constraint across three seam inputs, retaining full ancestry and later acceptance checks. Free-input strip corrections remain inadequate; no full4,7 conclusion.
+
 **8 November, GC2734:** [The shared4→7 history block](reports/GPT-SHARED-47-HISTORY-GUARDS-20261108.md#outcome-and-the-next-shared-row-coordinate--gc2734) certifies all four old-input guards against the original CNF and exports a native checked RUP derivation. They give no new seam unit. The white guard follows from the last5 plus3353; a finite countermodel shows the black guard can fail when only the older A pulse is removed. Hand support-band calculation80..102 keeps the full ancestry guard and awaits carry; no23-bit return model or full4,7 witness/exclusion.
 
 **6 November, GC2709:** [The physical4,7 follow-on](reports/GPT-PHYSICAL-47-RETURN-20261106.md) distinguishes predictive reset7 from raw-fibre reset8. At width41 one cycle contracts31,339 windows to30,163, then fixes that fibre. The fixed physical query is UNKNOWN. A checked finite-ancestry scanner preserves the shared seam; the kit's known diagonal permutation gives its unique completion from the high tail. Both past and future head-word guards remain, so this is no realized bridge, exclusion or capture theorem. Hand specialization awaiting Local carry.

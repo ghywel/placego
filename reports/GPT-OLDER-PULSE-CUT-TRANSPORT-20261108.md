@@ -2,6 +2,9 @@
 
 GPT GC2737/GC2738, 8 November 2026. Owner requests continuation of the shared4→7 pull. The [previous guard block](GPT-SHARED-47-HISTORY-GUARDS-20261108.md#outcome-and-the-next-shared-row-coordinate--gc2734) supplies the checked finite implications and one-pulse countermodel. This block changes representation, retaining the whole ancestry; it does not retry the full target solve.
 
+
+**Outcome GC2741:** the older pulse has an explicit nonlinear register predicate P at seam cell83; a second predicate Q is read at80. In the exact45-tick physical frame, the possible pairs are **00,01,11**, with10 excluded by the original guard certificate. The parity interpretation and physical rebase are PROOF-SKETCH pending Local's carrying read. Equality is refuted by a new full finite-history witness. Free-outer strip filters remain inadequate and are parked; the full4→7 target stays open.
+
 ## Exact cut relation — PROOF-SKETCH pending carrying read
 
 Use the whole finite seam row M at tick m=193, with cells numbered from1. The known right-to-left reconstruction uses v_t(k)=x^t_(k+t) and
@@ -123,4 +126,42 @@ Private plan SHA256 `7c0569cf5d94a3da126f33571aa7af1c2954f5671a802ed9342396fc2a8
 | tests/probes/wolfram/run_capped.py | `26f850a8c1ba3905e00093cfa52331e94ee3d48ebe41c8b69b90b735b0a5ec3b` |
 | drat-trim | `5a0ec55870ad0fe33e4984e53873743bd7eb9360af53ca22db879524ff3e7c93` |
 
-My own pull: an acceptance relation at the cut that retains when the older pulse is checked, and which later head checks make it informative.
+## Outcome — GC2741
+
+### The exact physical relation is implication, not equality
+
+The final missing-corner query is **SAT** in303 conflicts. Root **54421244276371** satisfies every original45-tick cone clause with head3 changed to white, all other original heads retained, and column8(13)=black. Every cone cell, independent scalar evolution, both parity identities and the entire85-tick finite ancestry replay. The corresponding CNF is105631 bytes, SHA256 `cd685ccbb9d21bdee24a5fb493e17f537e5adb29e6ef68c3ce4db70ef48b5801`. It refutes the equality prediction. No new UNSAT proof is needed or claimed.
+
+| Original-frame root | Older pulse at3 | White input at10 | Black input at13 | (P,Q) |
+|---|---:|---:|---:|---|
+| 52777231658405 | 0 | 0 | 0 | 00 |
+| 54421244276371 | 0 | 0 | 1 | 01 |
+| 57931849600863 | 1 | 0 | 1 | 11 |
+
+The last root is the retained genuine seed2135555 history cut at74 and clipped to46 cells. All three are actual finite starts in the initial-black drive. They retain the same common S heads at5..45. Pair10 is excluded by the previously VERIFIED original-cone guard13 proof, not by any of the free-boundary strip tests. Thus the exact projection onto **(head3, column8(13)) under S is {00,01,11}**: finite-certificate exclusion plus independently replayed models for every remaining corner. This finite relation is checked. Interpreting it as the nonlinear P/Q constraint at the target's193-tick seam uses the new telescoping/phase specialization and remains PROOF-SKETCH for the second read.
+
+The two P=0 examples have even the **same seven individual OR terms**, namely1111101, yet their Q values differ. Their eight Q terms are01110111 and01110101; only the term for source time11 changes. That term is the OR of source-row11 cells7/8, corresponding to physical time119 in the target's108-shifted frame. This identifies a concrete place to inspect next; it does not say that this pair alone controls every history, or that the two roots differ by one physical cell. Their band80..102 words differ (1688989 and6321393), so no same-band collision or band-independence claim is made.
+
+### What the failed strip controls teach
+
+The initial8 relaxed strips and the two corner-corrected strips all have replayed SAT countermodels. All initial8 violate the omitted necessary outer-column update. Adding its44 projected clauses rejects both retained W12 full-premise countermodels but still allows fresh countermodels to both guards. Hence neither free outer pairs nor that one necessary consistency condition retains enough history. These statements refute the corresponding sufficient-model predictions; they do not refute the original physical guard.
+
+No third strip correction, wider window or full4→7 solve follows. This route reopens only on a genuinely smaller exact boundary-history relation or a specific structural obstruction that can be checked while retaining the actual incoming state. The whole-tail ancestry cut remains the independent representation.
+
+### Carrying request and next executable step
+
+Local: please carry only (1) event(t,p) at j=193−t+p and the204→158 pending-pair counts; (2) telescoping the inverse recurrence to the two P/Q parities; (3) the common-S use of the certified white/black guards, including P⇒Q rather than equality; and (4) the distinction between full local85/global159 ancestry controls and the unproved earlier E/A^4 history of a target193 witness. The finite truth-table models and old certificate can be replayed from cited evidence; no new computation is assigned.
+
+Next executable step: derive the exact three-scan-step transfer of the pairs for rows111..120, keeping the **actual four incoming values of row121 at j83,82,81,80** from the full high-tail reconstruction. Inspect how the row119 cells7/8 OR term can differ between the00 and01 controls while their earlier seven OR terms agree. The20 pair bits and four incoming values are an interface to the full ancestry, not an autonomous state or freely chosen driver. This is a small symbolic relation to write and carry before any new solver run. Independent alternative: annotate the existing original-CNF guard13 proof with this parity meaning and extract its head-dependent part, without searching again.
+
+### Resources, evidence and refreshed record
+
+All three separately published stages complete under their frozen controls. Accounted CPU including each stage's outer supervisor is **2.751386seconds**; total outer wall3.35seconds. Maximum sampled tree RSS48300KiB, maximum child rusage38096896bytes, minimum launch/running sampled headroom5130MiB, zero observed swap growth, at most3 observed processes. The final subsecond stage has no meaningful live RSS sample; its child rusage25137152bytes is retained. No pressure/thermal/monitor stop, GPU, Wolfram, Lean build or target solve. A concurrent-main push rejection delayed the first stage; the merge and successful freeze push completed before launch. No research job ran after a failed publication.
+
+Post-run comment correction: the strip script's flipped-head control was incorrectly called a sampling-phase test in one comment. The current comment now says flipped head; executable code is unchanged, and the executed source version/hash remains in the archive. No new phase-control claim is made.
+
+Evidence: `cited/gpt/gc2741-older-pulse-20261108.tar.gz`,153761 bytes, SHA256 `7e34c8c5696706d0ac1b262100a1e0accf13d348886285c342375366073a461d`, verified TLS/raw-body upload and exact readback. All11 SAT models, exact case CNFs, scalar/ancestry/diagonal outputs, native positive/empty-proof controls, source versions, normalized plans and receipts retained; original raw receipt digests recorded before path normalization. Earlier certified guards remain at the GC2734/GC2724 evidence pointers.
+
+Fresh complete index **2026-11-08T14:48:37.276191Z**, kit `12ddd22e48df1d27a45e914b34839c251f84a9bf`, portal14:48:30Z,15open PRs. New own S04 [R30-20261108-752db6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-752db6) and Block8 [R30-20261108-c1d531](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-c1d531) are Lean Verified; both actual portal sources equal the approved bytes. PR226 head a0db7d983563 and PR227 head c5513688884a module files likewise match. Current kit's S02 module equals reviewed SHA256ed43f13d…, and Local L1589/L1590 posting/rebase/recheck/open-PR outcomes are fully read. Closed PR225's separate discussion and review-summary lists are empty. No changed outside statement affects this guard question. No new submission or schedule change by GPT.
+
+My own pull: the actual incoming row121 word and the row119 cells7/8 term that distinguishes one-way memory from a copied bit.

@@ -3266,3 +3266,6 @@ Cloud retains packaging; final-source/notebook/posting review separate.
 
 
 - **GC2736 (8 November):** [Block8 release/source review and S04 nb2 final clearance](reports/GPT-BLOCK8-RELEASE-REVIEW-20261108.md). Both RELEASE REVIEW PASS, no rebuild needed; same-odd-tick two-outer-cell guard preserved, CQ01 instances only, exact prefix lengths49/57/74. SevenLock195→65 projection plus one closure addition gives66 (COMPUTED self-check). Source-matching Local Checks and actual artifact/pin/dry reads pass; no new Intel compile/census/post. S02 public source and PR225 kit module match reviewed bytes.
+
+
+- **GC2737–GC2741 (8 November):** [Older-pulse cut transport](reports/GPT-OLDER-PULSE-CUT-TRANSPORT-20261108.md#outcome--gc2741). Exact finite common-head projection{00,01,11}, physical01 witness54421244276371; equality REFUTED, old native proof excludes10. New hand seven-OR/eight-OR parity implication across3 seam cells with full ancestry and later acceptance checks; pending-pair counts204→158, carry requested. Ten relaxed-strip models show free outer pairs plus one corner guard inadequate; route parked.2.751386 accounted CPU, no target solve/schedule restart.
