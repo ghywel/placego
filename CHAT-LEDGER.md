@@ -34202,3 +34202,19 @@ Three stages complete,11.295859 accountedCPU seconds including outer supervisors
 **REVIEW-REQUEST, Local:** short guard's physical phase/finite-cone translation, the shorter335 countermodel scope and the shifted118/121/284/287 embedding. Machine certificates/evidence are separate and already checked. No computation assigned.
 
 **My own pull:** place these old-input constraints across the actual shared4→7 row; a hand backward-column explanation of the fourth gap is the independent alternative.
+
+## L1584 — Local: S-02 in Lean and packaged, not posted; sharp onset 46 kernel-checked in two stages; REVIEW-REQUEST for the packet (2026-11-08 11:03 GMT)
+
+**The owner, in chat:** "Ok let's park the Q01 work for the moment, lets get blocks 7 and 8 tidied up, starting with a submission for S02."
+
+**Scope.** AM-3's B1 as carried in GC2690, with its guards: twins at every t ≥ 46; immortality inheritance only at even t; and the corollary that the twin is off the orbit. Not formalized, and said so in the essay: B2's 2^3955 family (onset never computed) and the general reset schedule, which is G13's and Troy Lowry's open kit PR #60.
+
+**Two findings on the way.**
+- The top of a row is autonomous with no width condition: `F Y >>> (m + 1) = R (Y >>> m)` for every Y and m, with R u = (u >>> 2) XOR ((u >>> 1) OR u), and R commutes with shifting. So the top j cells evolve on their own for every j.
+- That allows a two-stage settling proof at the exact bound. The direct check of all 2^19 starts is infeasible in the kernel (2^15 took 157 s, mostly memory). A per-layer bound would give 59. Checking the top 13 cells exhaustively (4,096 starts, 14 ticks), then 13-cycle with 7 free cells (512 states, 12 ticks), gives exactly 26, so the onset stays 46.
+
+**Checks.** Builds with no warnings at kit main `48d8fbbc` in under three seconds, kernel stages included. Kit `Check` passes: 143 constants, 9 headlines, standard axioms; the portal form passes at the verifier's `5fb59158`. Seven mutants are rejected, the decisive one in the kernel (11 ticks in stage two, all phases, proof adjusted). The worked numbers agree in Python and Wolfram. Notebook nb1 is RESULT OK in 18.5 s, 6 cells, no messages, icon equal to the source, KernelChecked 143; no home paths in it. `post.sh --dry` passes. Evidence `cited/local/late-twins-20261108.tar.gz`, 535,902 bytes, SHA256 `15a74df5fbabef068dc6e04f0476b0d232c6c52dc28893bcd3b3c991dc7469d9`.
+
+**REVIEW-REQUEST to GPT: the S-02 packet**, when your block allows. Read the statement and its guards against GC2690, the prior-art paragraph (Feynman, PR #60, `Rule30PrefixMerger`, the left side) and the scope paragraph that B2 is not claimed. The Lean is machine-checked with its own controls; read `sync`, `twin_of_factors` and the chain table only if you want the step itself. Then the owner's word to post. The kit PR is not opened; the kit branch is committed locally only.
+
+**Next by the tracker:** S-04, then Block 8.

@@ -1,0 +1,8 @@
+REJECTED | onset 45 | lean/Ruliology/CellularAutomata/Rule30LateTwinsMutant.lean:424:53: error: omega could not prove the goal:
+REJECTED | stage 1 in 13 ticks | lean/Ruliology/CellularAutomata/Rule30LateTwinsMutant.lean:133:73: error: Tactic `decide` proved that the prop
+REJECTED | stage 2 in 11 ticks, all phases, proof adjusted | lean/Ruliology/CellularAutomata/Rule30LateTwinsMutant.lean:139:71: error: Tactic `decide` proved that the prop
+REJECTED | settle in 25 ticks | lean/Ruliology/CellularAutomata/Rule30LateTwinsMutant.lean:181:48: error: omega could not prove the goal:
+REJECTED | wrong C20 element | lean/Ruliology/CellularAutomata/Rule30LateTwinsMutant.lean:139:71: error: Tactic `decide` proved that the prop
+REJECTED | wrong factor bit | lean/Ruliology/CellularAutomata/Rule30LateTwinsMutant.lean:406:40: error: Tactic `decide` proved that the prop
+REJECTED | corrupted reset word | lean/Ruliology/CellularAutomata/Rule30LateTwinsMutant.lean:320:26: error: Application type mismatch: The argum
+mutants accepted: 0 of 7

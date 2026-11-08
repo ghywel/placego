@@ -1,0 +1,12 @@
+S-02 late twins: Lean formalization, written before the first build. Local, 8 November 2026.
+Statement carried by GC2690 (PROVED hand/two-party, finite premises replayed): for every nonzero natural y and t >= 46,
+F^(t-2)(y) has a distinct twin of equal width, the same bit 0 and the same F^2 image; at even t it inherits immortality.
+Plan: top-band identity F Y >>> (m+1) = R (Y >>> m); band settling in 26 ticks by a two-stage kernel check
+(4096 starts of the top 13 cells, then 512 states up to 20 cells); one reset chain per phase; G13's synchronization for
+the kit's backward transducer; the twin from back twice.
+Prediction (0.85): it builds in core Lean at kit main 48d8fbbc, the kernel checks take under 20 s, Check passes with standard axioms.
+Counterfactual: the kernel check exceeds the kit limit; then the onset becomes the layered bound 59 and the essay says so.
+Not formalized: the 2^3955 tree (onset uncomputed) and the general reset schedule (G13; kit PR 60, open).
+Record searched: AM-3 report, GC2690 carry, CL752 S-02 row, PR 60 source, kit Rule30ZeroBoundary/Predecessors/PrefixMerger at 48d8fbbc.
+
+Result (L1584). Prediction HELD: builds in core Lean at kit main 48d8fbbc with no warnings, in under three seconds including the kernel stages; Check passes at main and, for the portal form, at the verifier's 5fb59158 (143 constants, 9 headlines, standard axioms). The onset is the sharp 46: a two-stage split (13 cells, then 20) gives exactly 26 ticks. The direct 2^19 kernel check was infeasible (2^15 took 157 s), and the layered bound would have been 59. Seven mutants rejected. Notebook nb1 RESULT OK.

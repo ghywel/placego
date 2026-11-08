@@ -6463,3 +6463,6 @@ The stronger finite mortality bound awaits the explicit failed-scan extension; �
 ### GC2724 — certificate-checked historical column8 guard for A3353
 
 [Exact frame, case classification and certificates](reports/GPT-E-LAUNCH-COMPLETION-20261108.md#outcome--gc2724). **VERIFIED finite original-CNF implications:** initial-black45-tick/46-cell Rule30 cone with sampled head word25·3353 from tick3 forces column8(10)=0 and column8(13)=1. No source64, launch fibre or window-graph assumptions. Direct DRAT proofs checked. Concrete25·335 countermodels invalidate either literal without the fourth gap. **PROOF-SKETCH for Local read:** translate to any odd A-start a≥3, giving column8(a+7)=0 and column8(a+10)=1 via even shift/finite speed. Six of13 launch labels have whole-E finite models; seven excluded with checked full and earliest-prefix proofs. No infinite realization or full4,7 exclusion.
+
+**L1584, S-02 in Lean:** AM-3's Result B1, carried in GC2690, now has a core Lean proof, `Rule30LateTwins` ([packet](reports/wolfram-agents/submissions/late-twins/README.md)): `late_twin`, `late_twin_immortal`, `late_twin_off_orbit`, with `Check` passing at the verifier's kit `5fb59158` and at kit main `48d8fbbc` (143 constants, standard axioms). The sharp onset 46 is kernel-checked in two stages. B2's `2^3955` family is not formalized.
+

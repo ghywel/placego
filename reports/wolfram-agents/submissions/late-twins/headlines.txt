@@ -1,0 +1,1 @@
+Rule30Submission.F_shiftRight Rule30Submission.iter_F_shiftRight Rule30Submission.band_settles Rule30Submission.band_late Rule30Submission.sync Rule30Submission.twin_of_factors Rule30Submission.late_twin Rule30Submission.late_twin_immortal Rule30Submission.late_twin_off_orbit
