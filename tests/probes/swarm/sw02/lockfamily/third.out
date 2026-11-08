@@ -1,0 +1,4 @@
+random tail 0 {'trap': 1} candidates 0
+random tail 20 {'lock7': 112, 'trap': 1888} candidates 0
+random tail 60 {'lock7': 116, 'trap': 1884} candidates 0
+random tail 200 {'lock7': 114, 'trap': 1886} candidates 0

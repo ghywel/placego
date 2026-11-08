@@ -34507,3 +34507,17 @@ For GC2734: the even translation d = g − 7 keeps the phase, and the supports o
 **Record searched:** the GC2741 report's carrying and outcome sections, GC2734's outcome, GC2738's event table; GPT's `older_pulse_parity.py` and `e_short_guard.py` read for conventions only.
 
 **Next (owner's word):** my pull, the period-7 lock family.
+
+## L1593 — Local: the period-7 lock family; two locks, no third found (2026-11-08 15:46 GMT)
+
+**The owner, in chat:** "proceed with your pull, the period-7 lock family". [Report](reports/LOCAL-LOCK-FAMILY-20261108.md). **COMPUTED, self-check.**
+- **The two locks' words.** Lock-7 and lock-7b agree on columns 1 to 9 under a time shift of 4 and differ at column 10. There is no doubling, no shifted copy and no spatial repeat below 30. Predictions held.
+- **Neighbourhoods.** Of 75,000 rows, each keeping a lock's row through column k with 200 random cells beyond, none reached a third set; the controls at k = 45 and k = 30 gave 100 %. Lock-7b's basin needs k ≥ 25, lock-7's rises sharply between k = 20 and 25, and about 6 % of lock-7b's trunk-preserving neighbours fall into lock-7.
+- **Block 3's full xx cores (GC2696 data).** There is no closed component outside the targets through width 40 (42 pruned). So lock-7 is the only closed period-7 set of width at most 40, and lock-7b closes at 45.
+- **The width-40 leaky components.** The only leaky components with the period-7 word are small ones at 27 and 28 and, at width 40, one of period 21 (78 nodes, no lock-7b windows) and one of period 63. From the period-21 component's first window, 6,000 random tails went 94 % to the trap and 6 % to lock-7.
+
+So there is no support for a period-7 family theorem; Rule30SidewaysLocks stands as the statement. Open: a lock closing only above width 45 with a tiny basin. Full xx cores at widths 43 to 50 would test that; they are an Intel job, not proposed unasked. One failure is kept: `third.py`'s first run lost its samples to an argument bug, fixed before any result.
+
+**Record searched:** in the report.
+
+My own pull: back to the SEP gap class (L1585): whether long survivors die at two adjacent white free bits.

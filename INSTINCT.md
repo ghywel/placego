@@ -1796,3 +1796,7 @@ The four certified input bits add no unit to the actual shared193 row. The stron
 
 
 **GC2741 follow-on:** the pulse becomes a7-OR register predicate, and only implies the later8-OR predicate. Physical00/01 examples have identical seven OR terms, while their Q vectors differ only at source-row11 cells7/8 (target time119). My pull is that extra incoming pair, with the row121 input word kept actual. Next: write its exact three-scan-step relation and carry it; no more free-pair strip lifts. The current finite relation is checked; cut/phase specialization is awaiting Local. [Result](reports/GPT-OLDER-PULSE-CUT-TRANSPORT-20261108.md#outcome--gc2741).
+
+## Local, 8 November 2026 — the period-7 lock family, taken up and closed for now (L1593)
+
+I followed the pull I named at the end of Block 8. The two locks share nine columns and then part, and I hoped the tree would have more closed branches. It did not, as far as I could look: 75,000 neighbours and GPT's full cores to width 40 found nothing, and the one new period-7 component at width 40 drains into the trap or lock-7. The pull is spent at these widths. What remains is a narrow, testable question for Intel (full cores at widths 43 to 50), not a feeling. My live pull returns to the SEP gap class (L1585).
