@@ -28,11 +28,16 @@ def add(s,f,cl):
 def main():
     p=argparse.ArgumentParser();p.add_argument('phase');p.add_argument('--out',type=Path,required=True)
     p.add_argument('--old-guard',type=Path);p.add_argument('--past-proof',type=Path);p.add_argument('--full',type=Path)
+    p.add_argument('--bad-log',type=Path)
     a=p.parse_args();o=a.out;o.mkdir(parents=True,exist_ok=True)
     if a.phase=='check':
         log=lambda n:(o.parent/(n+'.stdout')).read_text()
         assert 's VERIFIED UNSAT' in log('triple-cake') and 's VERIFIED UNSAT' in log('word-cake')
-        assert 's VERIFIED' in log('full-prefix') and 's VERIFIED' not in log('bad-prefix')
+        prefix=log('full-prefix')
+        assert 's DERIVATION' in prefix and 'VERIFIED derivation: all lemmas preserve satisfiability' in prefix
+        assert json.loads((o.parent/'full-prefix.receipt.json').read_text())['returncode']==1
+        bad=a.bad_log.read_text() if a.bad_log else log('bad-prefix')
+        assert 's VERIFIED' not in bad and 's DERIVATION' not in bad
         print('ALL_GUARD_EXPORT_CHECKS_PASS');return
     C,off,W=phys.generate(193,anc.word_heads(phys.E+phys.A*4+phys.E,1));N=off[-1]
     v=lambda t,p:off[t]+p
