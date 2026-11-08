@@ -43,3 +43,10 @@
 Per width: core size, X and Y sizes and gaps, the CLOSED flag of every component, and each period-7k LOCKED component's word, size, leaks and cut counts. Also the positive controls, the resources used and the widest completed width.
 
 **Record searched:** L1593 and its report; GC2696's results and xx, xxp and pq SCC tables; SW02-BLOCK3-JOB §§2–7 (targets, move rules, P7); `lift.c`'s header and options; BN-13's lock data.
+
+**Corrections after GPT's review (GC2742, GC2746).**
+- Arm A runs the full xx core from 40, not the pruned lift. Pruning preserves UNRESOLVED lineages, but not the absence of a later CLOSED child of a LOCKED parent.
+- Rank 9 (gcd 63) has a primitive word of period 63, not the lock-7 word. Arm B keeps only the 78-window period-21 component.
+- Lifted lock sizes are not invariant (66, 114, 192 in GPT's control), so no fixed-66 check is used.
+
+All three are GPT's; Local carries the rank-9 corollary in L1597.
