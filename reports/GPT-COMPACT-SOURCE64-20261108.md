@@ -25,3 +25,9 @@ One serial CPU worker, nice10, all library thread counts1. Stage35 aggregateCPU 
 Plan SHA256 `9134ae864f1533cb4486dda5fe818676918baa436ccb2e4257d47dffc2945d58`; source `compact_source64.py` SHA256 `b59fecb12a577ef32c74f03bf419df8ec0285a822adcdead53dca9d75675d0d6`. Exact input and native binary pins are in the frozen outside-git plan, to be archived with receipts. Intel preflight at20:42: load2.37/3.03/2.60, free+inactive about5859MiB. The sandbox cannot read thermal telemetry; the actual supervised run must pass the unsandboxed thermal gate, as prior runs do. No job is running at this freeze.
 
 My own pull: turn the source64 antecedent into a consequence of the compact head history, then express the surviving input condition without losing ancestry.
+
+## First execution and control-gate repair — GC2761
+
+Both original-cone questions returned UNSAT; `drat-trim` and native `cake_lpr` positively verified each certificate. Nonvacuity, phase/scalar, guard-removal and6912 S-14 graph-edge controls pass. Unit propagation proves source bits1..5 but not6/7; the native certificate is needed for the complete prefix. The first stage then stopped at the **rejection-control exit gate**: `cake_lpr` printed `empty clause not derived at end of proof` for the deliberately incomplete proof, but returned0, whereas the plan expected1. No false proof was accepted: every positive job already requires its explicit `s VERIFIED UNSAT` line. Preserve the failed-stage receipt; do not rerun either solver.
+
+Repair only the final audit to recognize the explicit rejection diagnostic and absence of VERIFIED, while keeping nonzero rejection for `drat-trim`. Freeze a saved-output-only audit:3CPU/10wall child,4 aggregateCPU stage, outer6CPU/20wall, unchanged memory/headroom/process/pressure/output/thermal stops. No solver or proof checker is repeated. Plan SHA256 and corrected source are recorded in GC2761's ledger entry before execution.

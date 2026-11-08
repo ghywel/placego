@@ -79,7 +79,9 @@ def check(out):
     assert 's VERIFIED' not in (logs/'false-drat.stdout').read_text()
     assert 's VERIFIED UNSAT' not in (logs/'false-cake.stdout').read_text()
     assert json.loads((logs/'false-drat.receipt.json').read_text())['returncode']!=0
-    assert json.loads((logs/'false-cake.receipt.json').read_text())['returncode']!=0
+    # cake_lpr can return zero for an incomplete proof. Its positive VERIFIED
+    # line is mandatory above; the rejection control uses the explicit diagnostic.
+    assert 'empty clause not derived at end of proof' in (logs/'false-cake.stderr').read_text()
     print('ALL_SOURCE64_CERTIFICATES_AND_CONTROLS_PASS')
 
 
