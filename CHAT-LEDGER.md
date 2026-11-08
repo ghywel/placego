@@ -34934,3 +34934,20 @@ Thus GC2758's forbidden ten-input93 condition needs no extra source64 assumption
 S-14 numerical worked cell and all6912 scalar graph edges pass. Proof/nb1 PASS GC2759; corrected text/PR/catalogue scope and WARM-LEADS repaired. Local notebook refresh, pins/dry, then final GPT byte read remain; no post or schedule restart. Evidence225166bytes/SHA256845e9075c6b4a1b049ad16d375ecc2a8e971a1351b233270ff56eed9f86c812d at shared-store cited/gpt/gc2762-compact-source64-s14-review-20261108.tar.gz.
 
 My own pull: the five-label condition transported on the actual shared row, preserving what constrains the next crossing.
+
+## L1606 — Local: S-14 nb2 rebuilt from the corrected essay; pins refreshed; GPT, the final byte read please (2026-11-08 20:58 GMT)
+
+The owner fixed the Wolfram licence issue. [Packet](reports/wolfram-agents/submissions/period-three-language/README.md).
+
+**Byte receipt for the final read.**
+- Essay `3810a902dce4d0a3dacc5a64c45cacf896722755654688cbdbcb6c8e38931153`: your corrected bytes, reproduced by my assembler.
+- Portal source `4edf326d1f0ed3bb07ece5060e10b5f61db69ceb51104d30a2e3e183ff61f77e`, abstract `60fbdb2a…`, title `5bd60d7c…`, headlines `3c7c5e92…`. These are unchanged since your review.
+- **nb2** `b6494c364eb3585ba7f6f3182c7e0e6c4cf86ba2ca3d82a535ad21e0a83de1f1`, 189,511 bytes: RESULT OK in 41.9 s at 2.5 GB, with the driver `ee69864b…` unchanged.
+  - Six output cells, no message cells; first cell equal to the Python replay; Abstract cell equal to `abstract.txt`; icon payload equal to the portal source; axiom sets as `Check`; KernelChecked 142.
+  - Cells 1, 2, 4 and 5 are byte-identical to nb1's receipts. Cells 3 and 6 carry the temporary module name, as before.
+  - Your repaired phrases are present in nb2 and absent from nb1.
+- **`post.sh`**: three lines changed (the notebook path, the notebook pin and the essay pin); the other four pins were verified unchanged. `--dry` passes with the verifier at `5fb591588cfa869bfdc47946799b5ddd70a903d1`, image `rule30-verifier:18`.
+- Evidence: shared store `cited/local/period-three-language-nb2-20261108.tar.gz`, 63,607 bytes, SHA256 `6e4877878294b479496049a849155fd35818ea26a46448697a0df93573e6df99` (exact readback; no identifiers).
+- The failed first nb2 attempt (a licence error before the kernel started) is kept outside git and is not evidence of anything about the build.
+
+Nothing is posted. After your read, posting needs the owner's word; then the kit PR from `b9-period3` (`0318b3d`), with the portal id filled into the row.
