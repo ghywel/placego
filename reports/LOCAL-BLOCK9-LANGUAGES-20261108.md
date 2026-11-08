@@ -147,3 +147,31 @@ My own pull: the Lean module of step 2. It turns the period-3 skeleton from comp
 **Not done.**
 - The left reduction: a `C3w w011` restricted to free bits avoiding 11 and 100001, and the 001 analogue below `C3s001`, each excluding its tail. This is the counterpart of rule30-open's `ConstrainedLeft001`.
 - Packaging. The kit's `Check.lean`, the portal form, the catalogue row and the import line are not made. Nothing is pushed or posted.
+
+## Step 3: the left reductions (L1602, 19:49 UTC)
+
+**Done, at the owner's word ("011 left reduction").** The module (now 420 lines, SHA256 `71ac7331952cf40e…`; kit branch commit `8b816f1`, not pushed) adds:
+- **`C3r011`** (open): `C3w w011` with the left configuration's free bits restricted to the right half's language. No finitely supported left configuration, driven by the effective boundary 010, keeps column −1 on (*, 0, 1) for all large times while its phase-0 bits never spell a complement of a `col1Forbidden011` word. The complements, checked by `decide`, are 11, 100001, 000101, 1010101, 1010001, 10100101, 00010001 and 000100101.
+  - `C3r011_of_C3w`: `C3w w011` ⇒ `C3r011`.
+  - **`not_eventually_011_of_C3r`: `C3r011` excludes 011^∞ as a tail of the center column, for every transient.**
+  - The proof takes the seed's own left half at T, as `not_eventually_011_of_C3w` does, and gets the extra free-bit clause from `free_bits_011` through `cell_eq_L_effective`.
+- **`C3g001`** (open): `C3s001` restricted the same way at phase 1. The free bits have white runs 2..4 and black runs 2..5, and avoid four longer words.
+  - `C3g001_of_C3s`, and **`not_eventually_001_of_C3g`**.
+- **`no_eventual_period_three_of_C3g`**: `C3g001` and `C3r011` together exclude an eventually 3-periodic center (via `normalize_period_three`).
+
+**Checks.**
+- Built at kit `1487f31` with no warnings. The reductions use `propext`, `Classical.choice` and `Quot.sound`; the implications from C3w and C3s use `propext` only.
+- **All nine mutants are rejected** ([output](../tests/probes/swarm/sw02/block9/mutate.out)). The three new ones, with the prediction written in `mutate.py` before their run, each break their reduction proof:
+  - dropping the complement in `C3r011`'s free-bit clause;
+  - reading `C3r011`'s free bits at phase 1;
+  - reading `C3g001`'s at phase 0.
+
+**Prior art and what is new.**
+- rule30-open's `ConstrainedLeft001` (`c3r_of_c3s`, `not_eventually_001_of_C3r`) is the 001 pattern with `ThreeRuns`' language: free-bit 0-runs ≥ 2 and 1-runs ≥ 3. Our `C3g001` is incomparable with their `C3r001`. Ours bounds runs above and adds longer words, but it lacks 1001, which needs strip width 13.
+- **For 011 nothing comparable exists in Lean**: rule30-open's `constrained-left-halves.md` treats 011 by computation only. `C3r011` and its reduction are new.
+- A width-14 version of the 001 certificate (49,152 strip states, all eleven of PE-1.2's words, 1001 included) would make `C3g001` imply both versions. Whether it fits the kit's per-module time limit is untested.
+
+**What it changes.**
+- Period 3 now reduces in Lean to two left statements, each over a free word of positive but reduced entropy: about 0.084 bit per tick beside 001 at width 22, and 0.105 beside 011.
+- The width-7 and width-10 languages used here are larger than those, so these Lean statements are not yet the thinnest available.
+- As step 1 found, the reduction changes C3 in degree, not in kind.

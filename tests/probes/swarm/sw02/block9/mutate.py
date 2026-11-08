@@ -2,7 +2,10 @@
 """Block 9 step 2 mutants of Rule30PeriodThreeLanguage. Prediction (written 19:38 UTC before the run): all six are rejected.
 M1 adds 11 to col1Forbidden011 (occurs3 true: K011w7_occ_all fails); M2 adds 1001 to col1Forbidden001 (forbidden only
 from width 13: K001w10_occ_all fails); M3 gives K011w7 the word 001 (checkb fails); M4 sets K001w10_bad := 1;
-M5 sets node 0's rank of K011w7 to 65535 (checkb fails); M6 states col1_001 at phase 2 (the proof breaks)."""
+M5 sets node 0's rank of K011w7 to 65535 (checkb fails); M6 states col1_001 at phase 2 (the proof breaks).
+Added for the left reductions (prediction written 8 November 2026 19:47 UTC before their run): M7 drops the complement in
+C3r011's free-bit clause, M8 reads C3r011's free bits at phase 1, M9 reads C3g001's at phase 0; each breaks its
+reduction proof. Usage: mutate.py MODULE KIT_LEAN_DIR [FIRST_MUTANT]."""
 import os, re, subprocess, sys
 src = open(sys.argv[1]).read(); kit = sys.argv[2]; d = os.path.join(kit, 'Ruliology/CellularAutomata')
 def m1(s): return s.replace('def col1Forbidden011 : List (List Bool) :=\n  [[false, false]', 'def col1Forbidden011 : List (List Bool) :=\n  [[true, true], [false, false]', 1)
@@ -14,11 +17,21 @@ def m4(s): return s.replace('def K001w10_bad : Nat := 0', 'def K001w10_bad : Nat
 def m5(s):
     m = re.search(r'def K011w7_rankP : Nat := (\d+)', s); v = int(m.group(1)); v = (v & ~0xFFFF) | 0xFFFF
     return s[:m.start(1)] + str(v) + s[m.end(1):]
+def m7(s):
+    old = "L (fun k => wordAt3 (effWord3 w011) k) s (k + 3 * i) (-1) = !pat.getD i false)"
+    assert old in s; return s.replace(old, "L (fun k => wordAt3 (effWord3 w011) k) s (k + 3 * i) (-1) = pat.getD i false)", 1)
+def m8(s):
+    old = "      (k % 3 = 0 → ∀ pat ∈ col1Forbidden011"
+    assert old in s; return s.replace(old, "      (k % 3 = 1 → ∀ pat ∈ col1Forbidden011", 1)
+def m9(s):
+    old = "      (k % 3 = 1 → ∀ pat ∈ col1Forbidden001"
+    assert old in s; return s.replace(old, "      (k % 3 = 0 → ∀ pat ∈ col1Forbidden001", 1)
 def m6(s): return s.replace("∃ T', T ≤ T' ∧ ∀ t, T' ≤ t → (t - T) % 3 = 1 → ∀ pat ∈ col1Forbidden001,\n      ¬ ∀ i, i < pat.length → cell (t + 3 * i) 1 = pat.getD i false := by\n  have hP : K001w10.P",
                             "∃ T', T ≤ T' ∧ ∀ t, T' ≤ t → (t - T) % 3 = 2 → ∀ pat ∈ col1Forbidden001,\n      ¬ ∀ i, i < pat.length → cell (t + 3 * i) 1 = pat.getD i false := by\n  have hP : K001w10.P", 1)
 sys.set_int_max_str_digits(0)
 env = dict(os.environ, PATH=os.path.expanduser('~/.elan/bin') + ':' + os.environ['PATH'])
-for k, f in enumerate([m1, m2, m3, m4, m5, m6], 1):
+first = int(sys.argv[3]) if len(sys.argv) > 3 else 1
+for k, f in list(enumerate([m1, m2, m3, m4, m5, m6, m7, m8, m9], 1))[first - 1:]:
     s = f(src); assert s != src, k
     name = f'Rule30PeriodThreeLanguageMut{k}'
     s = s.replace('namespace Rule30PeriodThreeLanguage', f'namespace {name}').replace('end Rule30PeriodThreeLanguage', f'end {name}')

@@ -293,5 +293,128 @@ theorem free_bits_001 (T : Nat) (h : ∀ t, T ≤ t → cell t 0 = wordAt3 w001 
   have e2 := e.symm.trans (hm i hi)
   simpa using e2
 
+/-! ## Left reductions
+
+`C3w w011` (`Rule30EtherThreeLeft`) and `C3s001` (`Rule30EtherThreeSkeleton`) ask that no finitely supported left
+configuration keep column `-1` on the skeleton pattern for all large times. Along the true history the free bits
+of column `-1` also obey the right half's language (`free_bits_011`, `free_bits_001`), so it suffices to exclude
+the left configurations whose free bits obey it too. `C3r011` and `C3g001` are these weaker statements; they are
+open. -/
+
+open Rule30DrivenLeft
+
+/-- The free-bit words excluded beside `011`, the complements of `col1Forbidden011`. -/
+theorem col1Forbidden011_complements : col1Forbidden011.map (List.map not) =
+    [[true, true], [true, false, false, false, false, true], [false, false, false, true, false, true], [true, false, true, false, true, false, true], [true, false, true, false, false, false, true], [true, false, true, false, false, true, false, true], [false, false, false, true, false, false, false, true], [false, false, false, true, false, false, true, false, true]] := by decide
+
+/-- The free-bit words excluded beside `001`, the complements of `col1Forbidden001`. -/
+theorem col1Forbidden001_complements : col1Forbidden001.map (List.map not) =
+    [[true, false, true], [false, true, false], [false, false, false, false, false], [true, true, true, true, true, true], [false, true, true, false, false, false], [false, false, false, true, true, false], [true, true, true, true, true, false, false, false], [true, false, false, false, true, true, true, false], [false, true, true, false, false, true, true, false], [false, false, false, true, true, true, true, true]] := by decide
+
+/-- **`C3r011`** (open). `C3w w011` restricted to the free bits that the right half allows: no finitely
+supported left configuration, run as rule 30 on `p ≤ -1` with column `0` replaced by the effective boundary
+`010`, keeps column `-1` equal to `(*, 0, 1)` for all large times while its bits at phase `0`, read on
+consecutive periods, never spell a complement of a word of `col1Forbidden011` (among them `11` and `100001`). -/
+def C3r011 : Prop :=
+  ∀ s : Int → Bool, (∃ M : Nat, ∀ p : Int, p < -(M : Int) → s p = false) →
+    ¬ ∃ K, ∀ k, K ≤ k →
+      fits3 (colPattern3 w011) (k % 3) (L (fun k => wordAt3 (effWord3 w011) k) s k (-1)) = true ∧
+      (k % 3 = 0 → ∀ pat ∈ col1Forbidden011, ¬ ∀ i, i < pat.length →
+        L (fun k => wordAt3 (effWord3 w011) k) s (k + 3 * i) (-1) = !pat.getD i false)
+
+/-- `C3w w011` implies `C3r011`: the restriction only strengthens the hypothesis. -/
+theorem C3r011_of_C3w (hC : C3w w011) : C3r011 :=
+  fun s hs ⟨K, hK⟩ => hC s hs ⟨K, fun k hk => (hK k hk).1⟩
+
+/-- **`C3r011` excludes `011^∞`** as a tail of the center column, for every transient. -/
+theorem not_eventually_011_of_C3r (hC : C3r011) :
+    ¬ ∃ T, ∀ t, T ≤ t → cell t 0 = wordAt3 w011 (t - T) := by
+  rintro ⟨T, hT⟩
+  obtain ⟨T1, hT1, hfree⟩ := free_bits_011 T hT
+  have hdrv : (fun k => Rule30Prize.center (T + k) && Rule30Prize.center (T + k + 1)) =
+      fun k => wordAt3 (effWord3 w011) k := by
+    funext k
+    rw [wordAt3_effWord3]
+    show (cell (T + k) 0 && cell (T + k + 1) 0) = _
+    rw [hT (T + k) (by omega), hT (T + k + 1) (by omega), show T + k - T = k by omega,
+      show T + k + 1 - T = k + 1 by omega]
+  have hL : ∀ k, L (fun k => wordAt3 (effWord3 w011) k) (fun p => cell T p) k (-1) = cell (T + k) (-1) := by
+    intro k
+    have e := cell_eq_L_effective T k (-1) (by omega)
+    rw [hdrv] at e
+    exact e
+  refine hC (fun p => cell T p) ⟨T, fun p hp => cell_eq_false_of_lt T p hp⟩
+    ⟨T1 - T, fun k hk => ⟨?_, ?_⟩⟩
+  · rw [hL k, fits3_011]
+    obtain ⟨-, s1, s2⟩ := col_m1_011 T hT (T + k) (by omega)
+    have : k % 3 = 0 ∨ k % 3 = 1 ∨ k % 3 = 2 := by omega
+    rcases this with h | h | h
+    · rw [ite_eq_right (by omega), ite_eq_right (by omega)]
+    · rw [ite_eq_left h, s1 (by omega)]; rfl
+    · rw [ite_eq_right (by omega), ite_eq_left h, s2 (by omega)]; rfl
+  · intro hk0 pat hpat hm
+    refine hfree (T + k) (by omega) (by omega) pat hpat fun i hi => ?_
+    rw [show T + k + 3 * i = T + (k + 3 * i) by omega, ← hL (k + 3 * i)]
+    exact hm i hi
+
+/-- **`C3g001`** (open). `C3s001` restricted to the free bits that the right half allows: no finitely
+supported left configuration of the zero-boundary left half keeps column `-1` equal to `(0, *, 1)` for all
+large times while its bits at phase `1`, read on consecutive periods, never spell a complement of a word of
+`col1Forbidden001` (so their runs of white have length `2..4` and their runs of black `2..5`). -/
+def C3g001 : Prop :=
+  ∀ s : Int → Bool, (∃ M : Nat, ∀ p : Int, p < -(M : Int) → s p = false) →
+    ¬ ∃ K, ∀ k, K ≤ k →
+      fits3 colPattern001s (k % 3) (L (fun _ => false) s k (-1)) = true ∧
+      (k % 3 = 1 → ∀ pat ∈ col1Forbidden001, ¬ ∀ i, i < pat.length →
+        L (fun _ => false) s (k + 3 * i) (-1) = !pat.getD i false)
+
+/-- `C3s001` implies `C3g001`. -/
+theorem C3g001_of_C3s (hC : C3s001) : C3g001 :=
+  fun s hs ⟨K, hK⟩ => hC s hs ⟨K, fun k hk => (hK k hk).1⟩
+
+/-- **`C3g001` excludes `001^∞`** as a tail of the center column, for every transient. -/
+theorem not_eventually_001_of_C3g (hC : C3g001) :
+    ¬ ∃ T, ∀ t, T ≤ t → cell t 0 = wordAt3 w001 (t - T) := by
+  rintro ⟨T, hT⟩
+  obtain ⟨T', hT', hs⟩ := col_m1_001_skeleton T hT
+  obtain ⟨T1, hT1, hfree⟩ := free_bits_001 T hT
+  have hfun : (fun k => Rule30Prize.center (T + k) && Rule30Prize.center (T + k + 1)) = fun _ => false := by
+    funext k
+    show (cell (T + k) 0 && cell (T + k + 1) 0) = false
+    rw [hT (T + k) (by omega), hT (T + k + 1) (by omega), wordAt3_001, wordAt3_001,
+      show T + k - T = k by omega, show T + k + 1 - T = k + 1 by omega]
+    have : k % 3 = 0 ∨ k % 3 = 1 ∨ k % 3 = 2 := by omega
+    rcases this with h | h | h
+    · rw [h, show (k + 1) % 3 = 1 by omega]; rfl
+    · rw [h, show (k + 1) % 3 = 2 by omega]; rfl
+    · rw [h, show (k + 1) % 3 = 0 by omega]; rfl
+  have hL : ∀ k, L (fun _ => false) (fun p => cell T p) k (-1) = cell (T + k) (-1) := by
+    intro k
+    have e := cell_eq_L_effective T k (-1) (by omega)
+    rw [hfun] at e
+    exact e
+  refine hC (fun p => cell T p) ⟨T, fun p hp => cell_eq_false_of_lt T p hp⟩
+    ⟨(T' - T) + (T1 - T), fun k hk => ⟨?_, ?_⟩⟩
+  · rw [hL k, fits3_001s]
+    obtain ⟨s0, -, s2⟩ := hs (T + k) (by omega)
+    have : k % 3 = 0 ∨ k % 3 = 1 ∨ k % 3 = 2 := by omega
+    rcases this with h | h | h
+    · rw [ite_eq_left h, s0 (by omega)]; rfl
+    · rw [ite_eq_right (by omega), ite_eq_right (by omega)]
+    · rw [ite_eq_right (by omega), ite_eq_left h, s2 (by omega)]; rfl
+  · intro hk1 pat hpat hm
+    refine hfree (T + k) (by omega) (by omega) pat hpat fun i hi => ?_
+    rw [show T + k + 3 * i = T + (k + 3 * i) by omega, ← hL (k + 3 * i)]
+    exact hm i hi
+
+/-- **Period 3 from the two restricted statements.** If `C3g001` and `C3r011` hold, the center column is
+not eventually `3`-periodic. -/
+theorem no_eventual_period_three_of_C3g (h001 : C3g001) (h011 : C3r011) :
+    ¬ ∃ T0, ∀ t, T0 ≤ t → Rule30Prize.center (t + 3) = Rule30Prize.center t := by
+  rintro ⟨T0, hT0⟩
+  rcases normalize_period_three hT0 with ⟨T, -, h1⟩ | ⟨T, -, h2⟩
+  · exact not_eventually_001_of_C3g h001 ⟨T, h1⟩
+  · exact not_eventually_011_of_C3r h011 ⟨T, h2⟩
+
 end Rule30PeriodThreeLanguage
 end Ruliology.CellularAutomata

@@ -5665,3 +5665,4 @@ Known, reproved here: `Rule30FirstChecks.two_tick`, our submitted S-03 result, a
 - **Not found outside SW-02.**
   - The 001 run upper bounds (11111, 000000) as forced facts for left-finite configurations. rule30-open: "sampled, not forced".
   - The longer 001 and 011 words (C3g001, C3g011), PE-2.1's explicit 0011 list, the period-3 ladder to width 22, and the monotonicity of the language in the width.
+- **L1602 addendum.** `C3r011` and its reduction (`not_eventually_011_of_C3r`) were not found in the kit, the portal index or `rule30-open`, whose 011 treatment is computational (`constrained-left-halves.md`). `C3g001` follows the pattern of `rule30-open`'s `ConstrainedLeft001` (`c3r_of_c3s`, `not_eventually_001_of_C3r`) with a different and incomparable language: run upper bounds, no 1001. Known in kind, new in content.

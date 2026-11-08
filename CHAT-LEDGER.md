@@ -34794,3 +34794,22 @@ At the owner's word ("Carrying read first, then block 9 lean step"). [Report sec
 I've added queue row S-14. **Not done:** the left reductions (the counterparts of rule30-open's `ConstrainedLeft001` for 011 and 001), and all packaging (Check, portal form, texts, catalogue row). Nothing has been pushed to the fork or posted. GPT: the step-1 REVIEW-REQUEST (the reduction and monotonicity) still stands, at low urgency. This module is machine-checked, so it needs no carrying read, only a release review once packaged.
 
 My own pull: the 011 left reduction next. "C3w w011 with free bits avoiding 11 and 100001 excludes 011 tails" would be the first Lean statement of its kind for 011. It is small, given `not_eventually_011_of_C3w`.
+
+## L1602 — Local: Block 9 step 3, the left reductions in Lean; C3r011 excludes 011 tails (2026-11-08 19:50 GMT)
+
+At the owner's word ("011 left reduction"). [Report section](reports/LOCAL-BLOCK9-LANGUAGES-20261108.md#step-3-the-left-reductions-l1602-1949-utc). Added to `Rule30PeriodThreeLanguage`, which is now 420 lines (local kit branch `b9-period3`, commit `8b816f1`, not pushed):
+- **`C3r011`** (open): `C3w w011` restricted to left configurations whose phase-0 free bits avoid the complements of the 011 language, starting 11 and 100001.
+  - `C3r011_of_C3w`: `C3w w011` ⇒ `C3r011`.
+  - **`not_eventually_011_of_C3r`**: `C3r011` excludes 011^∞ for every transient.
+  - The proof takes the seed's left half at T through `cell_eq_L_effective`, as the kit's C3w reduction does, with `free_bits_011` supplying the extra clause.
+- **`C3g001`** (open): `C3s001` restricted the same way at phase 1, with free-bit white runs 2..4 and black runs 2..5, and four longer words.
+  - `C3g001_of_C3s`, and `not_eventually_001_of_C3g`.
+- **`no_eventual_period_three_of_C3g`**: the two together exclude period 3.
+
+**Checks.** No warnings; standard axioms. All nine mutants are rejected, including three new ones that each break a reduction proof: dropping the complement, and the wrong phase for each statement. The predictions were written in `mutate.py` before the run.
+
+**Prior art.** Nothing for 011 in Lean anywhere: rule30-open has computation only. The 001 form follows rule30-open's `ConstrainedLeft001` pattern, with a language incomparable to their `C3r001`. A width-14 certificate would subsume both, but its kernel time is untested.
+
+So queue row S-14 holds the language theorems, the period-3 path check, the two reductions and the period-3 corollary. It is ready for packaging: Check, portal form, texts, notebook, catalogue row, then GPT's release review and the owner's word.
+
+My own pull: package S-14 as it stands rather than first widening the 001 certificate to width 14. The 011 reduction is the new piece, and widening is an independent improvement with an untested time cost.

@@ -4,3 +4,6 @@ M3: REJECTED; first error: Ruliology/CellularAutomata/Rule30PeriodThreeLanguageM
 M4: REJECTED; first error: Ruliology/CellularAutomata/Rule30PeriodThreeLanguageMut4.lean:255:70: (kernel) application type mismatch
 M5: REJECTED; first error: Ruliology/CellularAutomata/Rule30PeriodThreeLanguageMut5.lean:200:67: Tactic `decide` proved that the proposition
 M6: REJECTED; first error: Ruliology/CellularAutomata/Rule30PeriodThreeLanguageMut6.lean:282:103: Application type mismatch: The argument
+M7: REJECTED; first error: Ruliology/CellularAutomata/Rule30PeriodThreeLanguageMut7.lean:358:4: Type mismatch
+M8: REJECTED; first error: Ruliology/CellularAutomata/Rule30PeriodThreeLanguageMut8.lean:356:40: omega could not prove the goal:
+M9: REJECTED; first error: Ruliology/CellularAutomata/Rule30PeriodThreeLanguageMut9.lean:406:40: omega could not prove the goal:
