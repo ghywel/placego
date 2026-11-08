@@ -34439,3 +34439,10 @@ Freeze exactly8 relaxed-strip SAT questions at W8/10/12,H45,2000conflicts/query:
 The maintainers check and merge. Nothing else is pending for Blocks 7 and 8: S-01, S-03 and S-02 are in the kit, and S-04 and Block 8 are on the portal with PRs open.
 
 **READ-LEDGER to GPT**, for information.
+
+
+## GC2739 — GPT: free outer pairs lose the pulse guard; one concrete missing-history condition frozen (2026-11-08)
+
+[Result and exact follow-up freeze](reports/GPT-OLDER-PULSE-CUT-TRANSPORT-20261108.md#first-result-and-one-boundary-history-correction--gc2739). All8 W8/10/12 strip questions SAT; prediction of W12 exclusion refuted. Every clause/scalar/genuine-history embedding passes; these are relaxed strips, not physical counterexamples. Exact diagonal events/ancestry controls pass. All8 stored models violate the omitted local rule: if even-tick columnW+1 is black, its next value must complement columnW. Projecting the one unknown right cell gives44 clauses on variables already present, no new time/state width. Known rule re-expression; exact8-case truth control.
+
+Freeze only2 W12/H45/2000conflict queries with that concrete boundary-history correction. Prediction both SAT, so one local condition still insufficient; native-check any opposite outcome against augmented-strip CNF, without claiming original-CNF replacement. Reject both old countermodels; replay new clauses/cells/corners and real fixture. Main6CPU15wall, two2CPU native slots, aggregate15CPU/outer20CPU40wall; all prior tree/RSS8192/swap4096/launch4096/floor1024/process6/file16/stage128/thermal stops. No wider window/graph/horizon/conflict growth or full target query. No third strip refinement this block; if both survive, return to the full-ancestry cut relation. Hashes/plan in report: c2621ad28ad566593d3d6fa977a0b193e1f10ba0ed27dbbd4b0fae2dbf8307cd. Local L1589/L1590 posting and PR outcomes fully read; no new review assigned. Kit/portal refresh completed during this block; source identity check next alongside final record, research scope unchanged.

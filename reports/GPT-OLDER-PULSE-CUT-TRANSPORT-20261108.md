@@ -65,4 +65,30 @@ Private stage-plan SHA256 `feb548b228d2d3b71b80af98542aa4387e35d7523498793407cdc
 | guard10.drat | `362ebdd44c6d87cad1a846afdf578604af7ee3cbb5c41c2d5f7e390d9ca85155` |
 | gc2738-empty.drat | `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855` |
 
+## First result and one boundary-history correction — GC2739
+
+All eight fixed strip queries are SAT, including both full-premise opposites at width12. All clauses/scalar cells and genuine-history embeddings pass. Thus the prediction of narrow-strip exclusion is REFUTED; these are relaxed histories, not physical counterexamples. Native positive/empty-proof controls pass; there are no new UNSAT certificates. Exact ancestry/readout controls at local85 and full global159 pass.
+
+Every retained countermodel violates the same omitted necessary equation at one or more even ticks. If the outer column W+1 is black at an even tick s, its next value must be the complement of column W there, regardless of the unseen next right cell. Existentially eliminating that unseen cell gives `(not center) or (next != left)`, exactly two clauses over **already present** variables. This is known local-rule projection, not a new Rule30 law. For W12 the retained white/black countermodels violate it at8/7 even ticks. The genuine fixture satisfies it.
+
+Freeze exactly two follow-up queries, still W12/H45/2000conflicts, adding these44 clauses, no new tracked cell or time variable. This is one explicit generated-boundary-history correction, weaker than a full wider-strip model; it must not become an automatic sequence of width lifts. Prediction: both opposite-guard queries remain SAT, demonstrating that one such local consistency condition does not capture the required boundary history. Counterfactual: native-checked UNSAT yields a smaller sufficient strip explanation. All SAT results replay clauses, scalar cells and every new corner condition; the two old models must be rejected. Any UNSAT is checked against its augmented-strip CNF; it does not replace the previously certified original cone. No claim of physical lift. After this correction, no third strip refinement in this block. Return to the exact ancestry cut if both survive.
+
+One6CPU/15wall worker, two2CPU/6wall native slots, aggregate15CPU/outer20CPU40wall; all original memory/tree/headroom/process/file/disk/thermal stops unchanged. First stage1.532196 worker/supervisor CPU, outer monitor accounting retained separately. This is a new fixed constraint test justified by the explicit violated local equations, not a larger retry.
+
+Private follow-up plan SHA256 `c2621ad28ad566593d3d6fa977a0b193e1f10ba0ed27dbbd4b0fae2dbf8307cd`.
+
+| Source/input | SHA256 |
+|---|---|
+| tests/probes/swarm/sw02/block3/older_pulse_corner.py | `b9c66c0aebd92c5951aa67129946d22d7b5e4531713001f2cab541be5ec6cdc1` |
+| tests/probes/swarm/sw02/block3/older_pulse_strip.py | `92822af406b6a215dcc34a17a870e1345c3dd6588fb00aadba021499afb1fbe5` |
+| tests/probes/swarm/sw02/block3/strip_proof_check.py | `87dbb21e49d9610924099420a9e5f8f49c4f69ee98739bc8f7e4819e2343856a` |
+| tests/probes/swarm/sw02/block3/physical_47.py | `f7751b7ef59021e3895511221d78f2deb79b019080c32febf92057baf33eea7d` |
+| tests/probes/swarm/sw02/block3/physical_ancestry.py | `6d55a6bd120120c34c81f12ea6d9a453a1754a1fafaeea92ac92e867ed1fe912` |
+| tests/probes/swarm/sw02/block3/e_short_guard.py | `c4e8803b22a00cf035a06cf5783d25b0d09d766fa0ed9c9c507da2af0ed009a1` |
+| tests/probes/swarm/sw02/block3/intel_worker.py | `2442c769f0054db8133de0958de672f996df884c100e8cfe8e50499fabb47a94` |
+| tests/probes/metal_scope/stage.py | `3ecffb8d7d7bcccdc55fa6cd197b0b3d213fe532298bf900457518580c53f62b` |
+| tests/probes/wolfram/run_capped.py | `26f850a8c1ba3905e00093cfa52331e94ee3d48ebe41c8b69b90b735b0a5ec3b` |
+| drat-trim | `5a0ec55870ad0fe33e4984e53873743bd7eb9360af53ca22db879524ff3e7c93` |
+| result.json | `a2ea8bb23e57251998154ce676335672600753b9be90416caf9469d9f32a8bde` |
+
 My own pull: an acceptance relation at the cut that retains when the older pulse is checked, and which later head checks make it informative.
