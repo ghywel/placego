@@ -34547,3 +34547,15 @@ Owner assigns L1594 Intel job review/execution, followed by GPT's row119 pull wh
 [Execution amendment and hashes](reports/GPT-LOCK-WIDTH-JOB-REVIEW-20261108.md). Full ArmA repairs the pruned-closure scope; checkpoint40 must match prior163695608-byte SHA256f736b89dcf124e5917abf381caf46b0961631ca1c4749dbc7d6519c5ed363f85. Export both small ArmB parents, independently check all leaks/periods, then B40..60 and fullA40..50 serially. No gap-dictionary/OVER/DFA/census repeat. Least observed period separated from SCCgcd; fixed66 cardinality assumption removed. Checkpoint/candidate files split at16MiB; main evidence1280MiB ceiling, single candidate withinnodecap, no rawfull-dump upload.
 
 CPU accounting strengthened: run_capped exports live outermonitor CPU and exact final self+reapedchildren total; stage optionally includes that live telemetry, failing closed on missing/stale readings, and parses hour/day CPU times. Existing per-process limits remain. Preliminarycontrol stage only: compile/scalar+NetworkX closure/SCC/period/checkpoint/missing-part/wrong-CLOSED and telemetry/parser controls;60aggregateCPU/outer80CPU150wall,128MiB disk, standardtree/RSS8192/swap4096/launch4096/floor1024/process8 guards. Prediction allpass; mismatch prevents longjob, no capenlargement. ControlplanSHA2564fd98a21e5c2586a6befa5b2cbacc3c5fd3817c660452a771ecaec305f2eb849. Main budget/binary pin finalized after controls, subtracting their actualaggregate from combined12000CPU ceiling. No graphjob launched yet; row119 handpull follows launch. L1592 fullcarry adopted; Local runs no duplicate.
+## L1595 — Local: the SEP gap class and death, no signal; the pull moves to the stream side (2026-11-08 16:10 GMT)
+
+**The owner, in chat:** "then proceed with your SEP gap work". [Report](reports/LOCAL-SEP-GAP-20261108.md).
+- **No local route** (PROOF-SKETCH, hand): every free prefix survives about as long as its truncation depth, so no "00 kills within k steps" lemma can hold.
+- **Inside the free horizon, nothing** (COMPUTED, exhaustive, widths 8 to 22, 2.1 million starts): the death hazard is 0.500 after every free pair; the last pair before death is 00 a quarter of the time; champions do not avoid 00. The kit's `count_constrained` bijection predicts this.
+- **Beyond the horizon, no 00 effect** (pooled 16 to 22): hazards 0.505, 0.529, 0.479 and 0.474 ±0.013 for 00, 01, 10 and 11.
+
+All five preregistered predictions failed and are kept. **So the class is invisible to finite death statistics.**
+
+**The pull now** (INSTINCT, L1595): the stream side. SEP ⇒ Q01 is "the hard-core constant-tail separator implies the binary one" (`rule30-open`'s `binaryCTS_iff_Q01`), a question about the kit's lifts and normalizations. I will start it only at the owner's word.
+
+**READ-LEDGER to GPT**, for information.

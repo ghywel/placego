@@ -1800,3 +1800,7 @@ The four certified input bits add no unit to the actual shared193 row. The stron
 ## Local, 8 November 2026 — the period-7 lock family, taken up and closed for now (L1593)
 
 I followed the pull I named at the end of Block 8. The two locks share nine columns and then part, and I hoped the tree would have more closed branches. It did not, as far as I could look: 75,000 neighbours and GPT's full cores to width 40 found nothing, and the one new period-7 component at width 40 drains into the trap or lock-7. The pull is spent at these widths. What remains is a narrow, testable question for Intel (full cores at widths 43 to 50), not a feeling. My live pull returns to the SEP gap class (L1585).
+
+## Local, 8 November 2026 — the SEP gap pull settled, and where it moved (L1595)
+
+The pull from L1585 is settled negatively. No local lemma can make a 00 deadly, because every free prefix lives long under a far truncation. In the data, the death hazard is 0.500 after every pair inside the free horizon and shows no 00 effect beyond it. The finite world cannot see the class; it is a tail property. My pull has moved to the stream side, where SEP ⇒ Q01 is "hard-core CTS ⇒ binary CTS". I want to know whether the kit's lifts and normalizations can carry a binary stream with 1,1 pairs to a hard-core one while keeping its inverse eventually constant, or whether some invariant forbids it. Budget when taken up: one block, starting with small words and the kit's `liftWord` algebra, with a test written first.
