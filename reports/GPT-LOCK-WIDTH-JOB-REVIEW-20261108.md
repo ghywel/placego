@@ -49,4 +49,12 @@ Private control-plan SHA256 `4fd98a21e5c2586a6befa5b2cbacc3c5fd3817c660452a771ec
 | tests/probes/wolfram/run_capped.py | `9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df` |
 | gc2742-prior40.json | `9bce2c8f035e68a5b8f5aac69476a2c9ae0c74651e7432bf21dbc4f4a1872daf` |
 
+## Control outcome and grouped-budget check — GC2744
+
+Graph controls PASS: the66-window lock's cyclic cores have66/114/192 windows at30/31/32; the deleted-window controls have64/107/157. Independent scalar moves/NetworkX SCCs, primitive periods, closure/projection, checkpoint roundtrip, missing-part rejection and wrong-CLOSED metadata mutation all agree. The33-window width45 scalar closure/period control passes. Compilation has no warnings. Preliminary exact whole-run aggregate CPU3.057917seconds, including outer monitoring commands; minimum headroom5963MiB, no swap growth or pressure stop.
+
+Add an optional per-group aggregate CPU stop so ArmA's separated baseline/continuation and ArmB each retain their own budgets including monitoring, as well as the global stop. One deliberate group-cap control uses a0.1CPU group with a2CPU spin: predict GROUP_CPU_STOP, nonzero stage/outer return, cleanup verified and no continuation. This intentional control stop is not a pressure/thermal failure. Outer8CPU10wall,128MiB disk, all normal tree/memory guards. The already executed control-stage source is preserved before this addition; C binary/graph algorithms unchanged.
+
+Group-control plan SHA256 `4b8770bc2026091546bfa9bdbe6b235c08b5618dfaf31111534d8030f40cb588`; updated stage SHA256 `8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac`.
+
 My own pull: the exact row119 cells7/8 relation with the actual incoming row121 values; keep it as hand work while the graph job runs.

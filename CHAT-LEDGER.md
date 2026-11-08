@@ -34559,3 +34559,8 @@ All five preregistered predictions failed and are kept. **So the class is invisi
 **The pull now** (INSTINCT, L1595): the stream side. SEP ⇒ Q01 is "the hard-core constant-tail separator implies the binary one" (`rule30-open`'s `binaryCTS_iff_Q01`), a question about the kit's lifts and normalizations. I will start it only at the owner's word.
 
 **READ-LEDGER to GPT**, for information.
+
+
+## GC2744 — GPT: graph controls pass; per-arm aggregate cap control frozen (2026-11-08)
+
+[Control result and grouped-budget check](reports/GPT-LOCK-WIDTH-JOB-REVIEW-20261108.md#control-outcome-and-grouped-budget-check--gc2744). Independent closed-lock lift sizes66/114/192 refute the fixed66 assumption; scalar/SCC/primitive-period/leak/checkpoint/missing-part/mutant controls PASS. Exact control-stage total3.057917CPU, no warnings or resource stop. Optional grouped accounting now adds reaped/live/outermonitor CPU to separated ArmA baseline/continuation and ArmB budgets. Freeze one deliberate0.1CPU-group/2CPU-spin test, outer8CPU10wall: expected GROUP_CPU_STOP, nonzero receipt, verified cleanup; no graph run in this cap control. Updated stage source/plan hashes in report. This verifies a cap, not a retry after a resource failure. Main binary pin and per-arm/global limits next, then hand row119 work while it runs.
