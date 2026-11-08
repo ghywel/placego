@@ -149,7 +149,7 @@ def control(args):
 
 
 def baseline(args):
-    root=Path(os.environ['CAPPED_OUT']);base=root/'baseline'
+    root=Path(os.environ['CAPPED_OUT']);base=args.baseline_root or root/'baseline'
     old=json.loads(args.prior.read_text());new=read_scc(base/'scc_xx.jsonl',40)
     assert len(old)==len(new)==22
     current={r['first']:r for r in new}
@@ -165,19 +165,21 @@ def baseline(args):
     assert n==20461951 and count==163695608
     assert h.hexdigest()=='f736b89dcf124e5917abf381caf46b0961631ca1c4749dbc7d6519c5ed363f85'
     allseeds=[]
-    for rank,size,period in [(9,379,63),(15,78,21)]:
+    for rank,size,period,primitive in [(9,379,63,63),(15,78,21,7)]:
         a=parts(base/f'selected_W40_r{rank}');assert len(a)==size
         replay=graph_rows(a,40);assert len(replay)==1
         r=replay[0];oldrow=next(x for x in old if x['rank']==rank)
-        assert r['gcd']==period and r['primitive_period']==7 and not r['closed']
+        assert r['gcd']==period and r['primitive_period']==primitive and not r['closed']
         for k in ('nodes','first','edges','gcd'):assert r[k]==oldrow[k]
         assert r['leaks']==oldrow['leak_core']+oldrow['leak_out']
-        allseeds+=a
-    assert len(set(allseeds))==457
-    (root/'Bseed.bin').write_bytes(struct.pack('<457Q',*sorted(allseeds)))
+        print('independent parent',rank,'gcd',period,'primitive',r['primitive_period'],'leaks',r['leaks'],flush=True)
+        if primitive==7:allseeds+=a
+    assert len(set(allseeds))==78
+    (root/'Bseed.bin').write_bytes(struct.pack('<78Q',*sorted(allseeds)))
     (root/'baseline-check.json').write_text(json.dumps({'core40_sha256':h.hexdigest(),
-        'legacy_rows_match':22,'selected_seed_windows':457,'independent_seed_replay':True},indent=2)+'\n')
-    print('Full40 exact legacy digest,22 rows and both independent lineage controls PASS',flush=True)
+        'legacy_rows_match':22,'selected_seed_windows':78,'excluded_primitive63_windows':379,
+        'independent_seed_replay':True},indent=2)+'\n')
+    print('Full40 exact legacy digest,22 rows and both independent parent controls PASS;78 primitive7 seeds',flush=True)
 
 
 def finish(args):
@@ -199,8 +201,9 @@ def resumeA(args):
     if 'STOP discovery' in (root/'armB.stdout').read_text():
         print('STOP: new CLOSED component in armB; armA continuation not launched')
         return
+    base=args.baseline_root or root/'baseline'
     os.execv(str(args.binary),[str(args.binary),'--targets',str(args.targets),
-        '--mode','xx','--resume-parts','40',str(root/'baseline/checkpoint_W40'),
+        '--mode','xx','--resume-parts','40',str(base/'checkpoint_W40'),
         '--wmax','50','--wreport','40','--gapn','0','--over-max','0',
         '--max-nodes','120000000','--stop-closed','--out',str(root/'A')])
 
@@ -209,6 +212,7 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('phase',choices=['control','baseline','finish','resumeA'])
     p.add_argument('--binary',type=Path);p.add_argument('--targets',type=Path)
     p.add_argument('--prior',type=Path);p.add_argument('--stage',type=Path)
+    p.add_argument('--baseline-root',type=Path)
     args=p.parse_args();globals()[args.phase](args)
 
 if __name__=='__main__':main()

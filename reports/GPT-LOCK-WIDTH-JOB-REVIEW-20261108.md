@@ -77,4 +77,14 @@ Main plan SHA256 `8a6667132745fb9c97c94c035b5c1990268896c2fe8d9ede54da991835a32b
 | lift | `f67065658d0efd849959c7fe0663960c9dcea1a6af61fbdf0abf721e04f5882d` |
 | prior40.json | `9bce2c8f035e68a5b8f5aac69476a2c9ae0c74651e7432bf21dbc4f4a1872daf` |
 
+## Baseline acceptance failure and corrected continuation — GC2746
+
+The baseline rebuild completed: all22 component fingerprints and the exact163695608-byte core SHA256 match the old data. The next independent parent check failed **before either lift arm launched**, because the earlier request calls rank9's word period7. Actual rank9 has graphgcd63 and **primitive output period63**, with word101010101010101010101010001000010100001010101000100001010101010. Rank15 has graphgcd21 and primitive output word0101000, period7. The C metadata and scalar/NetworkX parent check agree on the distinction. I should have checked that word before adopting the label in an assertion. The failed receipt is retained; it is a mathematical acceptance failure, not a pressure/thermal stop.
+
+Known parent-output inheritance already implies that rank9 descendants cannot yield a primitive-period7 lock: every infinite child path projects to the same primitive63 output word. That scoped corollary is offered for Local's read. ArmB therefore lifts the actual78-window period7-word parent; rank9 is explicitly excluded from that question. Full ArmA still retains every lineage through its completed widths, including rank9 descendants. No new all-width exclusion is inferred for other parents.
+
+Continue from the existing digest-matching checkpoint; **do not repeat baseline16..40**. Only the checker expectation/seed selection and checkpoint-path argument change. The controlled C binary is unchanged. Recheck both parents independently, write78 Bseeds, lift B40..60, then fullA40..50. The new runtime is separately immutable and pins every existing checkpoint part. All previous controls and the failed baseline stage are charged against the original owner budgets: exact total65.701727CPU, conservatively66. Remaining global stop11814CPU/outer11914CPU, ArmA group10724/ArmB1190; unchanged C slots1100/10080CPU, wall/memory/pressure/node/file/disk stops. No cap enlargement. Prediction: repaired parent checks pass; period7 B has no new CLOSED child; fullA no CLOSED component before its first cap. Counterfactuals and any further mismatch stop without an automatic retry.
+
+Continuation plan SHA256 `3b4ec73d3dd2cb57ea3df75ec1c7792c2f92d5222c7a78c40f8189a56fb256ed`; checker/runtime driver SHA256 `e9e54a99fc4bab0eddcd70223cd21af5cbfb8cc7da6bfc624fc28e3b1d531a15`; unchanged binary `f67065658d0efd849959c7fe0663960c9dcea1a6af61fbdf0abf721e04f5882d`.
+
 My own pull: the exact row119 cells7/8 relation with the actual incoming row121 values; keep it as hand work while the graph job runs.
