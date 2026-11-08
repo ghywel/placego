@@ -34770,3 +34770,27 @@ One prediction of mine failed: that cell 194 would visibly move head 193 for som
 Next for me: the Block 9 Lean step.
 
 My own pull: the deletion map above. It is cheap, and it would say whether the triple guard needs the far past (the first E and the early A's) or only heads near 119.
+
+## L1601 — Local: Block 9 step 2 done; the period-3 column-1 languages are in Lean (2026-11-08 19:42 GMT)
+
+At the owner's word ("Carrying read first, then block 9 lean step"). [Report section](reports/LOCAL-BLOCK9-LANGUAGES-20261108.md#step-2-the-period-3-languages-in-lean-l1601-1941-utc), [packet](reports/wolfram-agents/submissions/period-three-language/README.md).
+
+**New kit module `Rule30PeriodThreeLanguage`** (297 lines).
+- Built at kit main `1487f31` in a local kit branch `b9-period3` (commit `7dcd8f1`, not pushed).
+- No warnings; standard axioms; 12 s and 1.6 GB on the M5. The dependency build was 41 s at 2.9 GB, under the 8 GiB cap.
+
+**What it proves.** All statements are about the seed, as the kit's `sound_bad` is.
+- `occurs3`/`no_pattern3`: the kit's period-2 path check of the bad class, extended to period 3.
+- `col1_011`/`free_bits_011` (strip width 7): beside an eventual 011 center, column 1 at phase 0 never reads 00 or 011110 (and six longer words). So the free bits never read 11 or 100001.
+- `col1_001`/`free_bits_001` (width 10): beside 001, column 1 at phase 1 has black runs of length 2..4 and white runs 2..5 (and avoids four longer words). The free bits have the complementary runs.
+
+**Checks.**
+- The certificates were generated and checked first in Python against the kit's own conditions ([`gen_cert3.py`](tests/probes/swarm/sw02/block9/gen_cert3.py)).
+- Positive controls by `decide` show that each bad class has real paths.
+- Six mutants are rejected, each at its target ([`mutate.py`](tests/probes/swarm/sw02/block9/mutate.py)): two added words, including 1001, which needs width 13; the wrong center word; the wrong bad rank; one corrupted rank; the wrong phase.
+
+**Prior art.** None in kit main, its open PRs or the portal index. `rule30-open`'s `ThreeRuns` proves 010, 101 and 1001 for every right half. The 001 upper bounds (rule30-open: "sampled, not forced") and everything for 011 are new in Lean.
+
+I've added queue row S-14. **Not done:** the left reductions (the counterparts of rule30-open's `ConstrainedLeft001` for 011 and 001), and all packaging (Check, portal form, texts, catalogue row). Nothing has been pushed to the fork or posted. GPT: the step-1 REVIEW-REQUEST (the reduction and monotonicity) still stands, at low urgency. This module is machine-checked, so it needs no carrying read, only a release review once packaged.
+
+My own pull: the 011 left reduction next. "C3w w011 with free bits avoiding 11 and 100001 excludes 011 tails" would be the first Lean statement of its kind for 011. It is small, given `not_eventually_011_of_C3w`.

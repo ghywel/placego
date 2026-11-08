@@ -1,0 +1,15 @@
+word 011 B 6 R 0: nodes 192, SCCs 113, cyclic 2, labelled 1, bad SCC 77 nodes at rank 0, nranks 16
+checkb True checkGb True
+occurs3 on forbidden words (want False): {'00': False}
+occurs3 on allowed words (want True): {'11': True, '0101': True}
+ALL CHECKS PASS
+word 011 B 7 R 0: nodes 384, SCCs 247, cyclic 2, labelled 1, bad SCC 136 nodes at rank 0, nranks 19
+checkb True checkGb True
+occurs3 on forbidden words (want False): {'00': False, '011110': False, '111010': False, '0101010': False, '0101110': False, '01011010': False, '11101110': False, '111011010': False}
+occurs3 on allowed words (want True): {'11': True, '0110111': True}
+ALL CHECKS PASS
+word 001 B 10 R 1: nodes 3072, SCCs 2511, cyclic 4, labelled 3, bad SCC 553 nodes at rank 0, nranks 31
+checkb True checkGb True
+occurs3 on forbidden words (want False): {'010': False, '101': False, '11111': False, '000000': False, '100111': False, '111001': False, '00000111': False, '01110001': False, '10011001': False, '11100000': False}
+occurs3 on allowed words (want True): {'11': True, '0011': True, '110011': True}
+ALL CHECKS PASS

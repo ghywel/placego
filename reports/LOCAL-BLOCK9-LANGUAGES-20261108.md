@@ -116,3 +116,34 @@ Three runs under `run_capped.py`, each frozen before it ran: CPU 900, wall 1200,
 - `ladder.out` SHA256 `dbbdd24e1a636107…`, `lang.c` `13f1eec4601d8459…`. The data are these small text outputs, kept in git.
 
 My own pull: the Lean module of step 2. It turns the period-3 skeleton from computation into theorems at small widths, and the 001 run bounds are the one new forced fact here.
+
+## Step 2: the period-3 languages in Lean (L1601, 19:41 UTC)
+
+**Done, at the owner's word ("Carrying read first, then block 9 lean step").** New kit module [`Rule30PeriodThreeLanguage`](wolfram-agents/submissions/period-three-language/Rule30PeriodThreeLanguage.lean), 297 lines, SHA256 `4fcbb7f84b5447e8…`.
+- Built at kit main `1487f31` in a local kit branch `b9-period3` (commit `7dcd8f1`, not pushed).
+- `lake build` passes with no warnings, in 12 s at 1.6 GB peak on the M5.
+- Axioms: `propext`, `Classical.choice`, `Quot.sound`.
+
+**What it proves.** All statements are about the seed, as the kit's `Cert.sound_bad` is.
+- `occurs3`, `no_pattern3`: the kit's `Rule30PeriodTwoLanguage` check, extended to period 3. Subset simulation over bitmasks of strips, three ticks per letter, staying in the bad class at every tick. The soundness proof is general in the reading phase R.
+- `col1_011` (certificate `K011w7`: 384 strip states, bad class 136): if the center is `011`-periodic from T, column 1 at phase 0 eventually never spells 00, 011110, 111010, 0101010, 0101110, 01011010, 11101110 or 111011010.
+- `free_bits_011`: so the free bits (column −1 at phase 0, by `col_m1_011`) never spell 11 or 100001, among others.
+- `col1_001` (certificate `K001w10`: 3,072 states, bad class 553): if the center is `001`-periodic from T, column 1 at phase 1 eventually never spells 010, 101, 11111, 000000, 100111, 111001, 00000111, 01110001, 10011001 or 11100000.
+  - So its black runs have length 2..4 and its white runs 2..5.
+- `free_bits_001`: the same for column −1, by `col_m1_001_skeleton`, as complements: white runs 2..4, black runs 2..5.
+
+**Checks.**
+- Positive controls by `decide`: each bad class contains real paths. 11 and 0110111 occur beside 011; 11, 0011 and 110011 occur beside 001. Without these, an empty bad class would make every word "forbidden".
+- The certificates were generated and checked first in Python against the kit's own conditions ([`gen_cert3.py`](../tests/probes/swarm/sw02/block9/gen_cert3.py), [output](../tests/probes/swarm/sw02/block9/gen_cert3.out)). Their words are exactly `lang.c`'s.
+- **Six mutants, all rejected** ([`mutate.py`](../tests/probes/swarm/sw02/block9/mutate.py), prediction in its header; [output](../tests/probes/swarm/sw02/block9/mutate.out)), each at the line it targets:
+  - 11 added to the 011 list, and 1001 added to the 001 list. 1001 is forbidden only from width 13, which is `ThreeRuns`' width.
+  - The wrong center word, the wrong bad rank, and one corrupted rank.
+  - `col1_001` stated at phase 2.
+
+**Prior art.** No period-3 language module in kit main `1487f31` (source grep), its open PRs or the portal index (`record_find`).
+- `rule30-open`'s `ThreeRuns` proves 010, 101 and 1001 for every right half, a larger population.
+- New here: the upper bounds 11111 and 000000 and the longer 001 words, and everything for 011, in Lean. rule30-open has no Lean for 011, and lists the 001 upper bounds as "sampled, not forced".
+
+**Not done.**
+- The left reduction: a `C3w w011` restricted to free bits avoiding 11 and 100001, and the 001 analogue below `C3s001`, each excluding its tail. This is the counterpart of rule30-open's `ConstrainedLeft001`.
+- Packaging. The kit's `Check.lean`, the portal form, the catalogue row and the import line are not made. Nothing is pushed or posted.
