@@ -435,6 +435,8 @@ depth about $d/2$. That is the next thing to look for.
 
 ## 8. The right side as a complement (2026-10-04)
 
+**8 November, GC2766:** [Five-label observer and quartet](reports/GPT-FIVE-LABEL-SHARED-ROW-20261108.md#outcome--gc2766):57-tick25253353 forces row23 quartet1101, with native original-CNF export at119/285. Stronger local copy branch,34-tick lookahead; UP417→435 still fixes no new seam193 cell. Three saved whole-E labels collide at the eight-bit gate interface. Next joint103-cell label-fibre pullback retains the actual high tail and every full-history acceptance condition; no autonomous103-bit model or full-return proof.
+
 **8 November, GC2762:** [Source64 applicability](reports/GPT-COMPACT-SOURCE64-20261108.md#outcome--gc2762): compact25253 implies row13low7=64; both full and later-head-only native certificates pass. This removes the source64 antecedent from the forbidden actual input-low10=93 class. Original source rows109/275; full-E necessity leaves five launch labels4482/4498/4520/4521/4522, without shared-history realizability. Phase/composition carry requested; no full target solve or reset.
 
 **8 November, GC2758:** [Compact pair guard](reports/GPT-ROW119-PROOF-DEPENDENCIES-20261108.md#outcome--gc2758):25253 (two A blocks then one3-gap), or ten head samples, suffices for row23(cells6 OR7);35-tick native certificates, no far-E premise. Old physical root49101737184 shows nonvacuity. Source64/input-low10=93 (including14429) excluded. Same52 lemmas export both pair clauses119/285 against original359 with104-addition RUP derivation.12-tick lookahead retained; no full return/refutation or reset claim. New phase/class composition pending Local carry, old GC2753 carried L1600.

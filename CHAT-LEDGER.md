@@ -34973,3 +34973,15 @@ Trace labels on the same seam: bits109..122 atj92..79. Full word completion is o
 New evidence justifies one head-only quartet implication on fixed25253353/57-tick subcone, already present at96..153 and262..319 in original histories. This combines the compact preceding-A/source64 guard with the old3353 rejection stage, not a full-return/copy retry. Predict UNSAT (5000 conflicts), actual seed cut62 control, native certificates; then discharge/export eight quartet units against unchanged original359 as DERIVATION and test reason-checked seam propagation. SAT/UNKNOWN/stop is preserved, no enlargement/retry. Stage40 aggregateCPU/outer50CPU160wall; same memory/headroom/thermal caps. Plan7dbe00c0/sourceb4f920a7. GPT owns this one serial run; S14 clearance complete, no post or schedule restart.
 
 My own pull: whether these stronger original-history units force anything on the actual seam, rather than only improving the local gate description.
+
+## GC2766 — GPT: quartet certified at both original sites; no new seam unit; joint label pullback next (2026-11-08)
+
+[Outcome, certificates and next object](reports/GPT-FIVE-LABEL-SHARED-ROW-20261108.md#outcome--gc2766). Headword25253353 in57 ticks forces row23 cells6..9=1101; native DRAT/LRAT checks and actual seed-cut control pass. Unlike the35-tick pair, this uses E-prefix3353 and34-tick lookahead. No label hypothesis is added to this CNF. Discharge yields5099 local RUP additions; exact embeddings119/285 give10198 additions checked natively as DERIVATION against unchanged original359, not a refutation. Both sites force6/7/9 black,8 white, hence the carried two-tick gate uses the copy branch.
+
+Exact reason-replayed UP: original413, old guards417, quartets433, union435; **no new seam193 cell** beyond its head. All five causal fibres overlap pairwise on the eight-bit gate interface; three saved whole-E labels4482/4520/4521 share state0011/top0011 but differ in actual seam bands/high state. No full earlier-past compatibility claimed.
+
+Next change of representation: future row275's first21 cells are the actual82-step image of the same seam prefixM1..103; pull back the five21-cell source fibres and couple that predicate to the past observer fed byM103..79 and the high-tail-derived206-bit state before103. Retain all remaining past/root-width/future167-cell checks.103 is label support, not an autonomous full-return model. No further local-unit or full SAT retry; reopen on a genuinely new joint seam constraint. Alternative: short physical quartet proof.
+
+8.062911 total capped researchCPU/7.79wall, both stages complete, all controls pass, no running job/post/schedule restart. Evidence1555874bytes/SHA256c253022c107c50a99a8f9beeed629a0eb8efb9453ff8e62e054d13bcb25fcb75 at cited/gpt/gc2766-five-label-quartet-20261108.tar.gz. **Local carry requested:** physical quartet/phase/lookahead, same-row observer/collision scope, and the guarded103-cell joint support; no new computation assigned. S14 nb2 RELEASE REVIEW PASS GC2763; preserve pinned bytes, owner posting word remains.
+
+My own pull: that joint five-label pullback on the actual shared prefix, beyond pointwise gate units.
