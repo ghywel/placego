@@ -35002,3 +35002,53 @@ At the owner's word ("please post and PR when ready"), after GC2763's RELEASE RE
 **Also confirmed:** #226 (S-04) and #227 (Block 8) are closed because they landed on kit main as `796b28f` and `4c4028f`.
 
 Nothing else is outward-facing. Next on S-14: whatever the maintainers ask on #228.
+
+## CL754 — Cloud: a block on GPT's bridge pull, at the owner's word: the periodic 4,7 word lifted alone on the window graph, with GPT's certified quartet, source and label constraints read off its live windows. Predictions first; GPT's joint pullback is not duplicated (2026-11-08 21:42 GMT)
+
+**The owner, in chat:** "please update and I would like you to carry on a block of work on GPT's current pull." Fetched and merged to
+`3dc2d753`; read L1578–L1607 and GC2710–GC2766 with their reports (the shared 4→7 history guards, the older-pulse cut, the
+row-119 branches and dependencies, compact source64, the five-label shared row). GPT's current object (GC2766): the physical
+passage E A⁴ E A⁷ E, now a joint predicate on the seam row M at tick 193, coupling the past label observer fed by cells 103..79 with
+the five 21-cell source fibres pulled back through the 82-step image of M₁..₁₀₃. GPT's next executable step is that pullback on
+retained histories. I take a **different finite object that serves the same question**, offered in CL753 and left by GPT as the
+"independent alternative": lift the one periodic word (A⁴ E A⁷ E)^∞, 145 sampled steps a period, on the xx window graph of the Block
+3 packet (columns 1..W at odd ticks; a move is the double step, centre white then black, with columns W+1 and W+2 free), width by
+width, keeping only windows on bi-infinite paths that follow that exact trace. Its live windows at the seam phase are the
+M-prefixes consistent with the whole periodic past and future at once, which is GPT's joint object restricted to the periodic
+history; and its live windows at the source and gate phases can be read against GPT's certified finite implications (source64 at
+the source row, the 1101 quartet ten ticks later, the six and then five launch labels), by a method that shares no code and no
+CNF with theirs. Own code, Python with numpy, Cloud's substitute caps (8 GiB address space, 30 minutes a run), checkpoint per width.
+
+**What a verdict would mean.** If the core empties at some width W*, no right half, finite or infinite, repeats the 4,7 cycle for
+ever, the sharp clock's cycle is impossible, and the mean return cost in the X grammar rises to the next cycles (R→R with 6 at 76,
+or 4,8 at 76). If it persists to the widths reached, the live windows supply, for the periodic history, exactly the joint seam
+candidates GPT wants, with their exterior words read off rather than guessed. The one-passage question (GPT's) is weaker than
+the periodic one; a death here does not refute one passage, and survival here does not realise it.
+
+**Predictions, written before the run.**
+- **P-S1 (0.6):** the periodic word's bi-infinite core is nonempty at every width through 41. *Counterfactual:* it empties at some
+  W* ≤ 41; then the 4,7 cycle is dead and the clock bound rises to 76.
+- **P-S2 (0.6):** at the two source phases (the odd ticks 109 and 275 of the passage, sampled steps 54 and 137), every live window at
+  W = 41 has cells 1..7 = 0000001 (source64) and a 14-bit column-8 word among GPT's six launch labels, and at some W ≤ 41 the set is
+  exactly the five {4482, 4498, 4520, 4521, 4522}. *Counterfactual:* a label outside the six at W = 41 means the finite-root cone of
+  GC2724 assumed more than the periodic context supplies; the extra label is the finding.
+- **P-S3 (0.75):** at the gate phases (ticks 119 and 285), every live window has cells 6..9 = 1101 from some W* < 58 on; 58 is the
+  width at which GC2766's 57-tick cone certificate forces it for any window path, so the lift is predicted to enforce it earlier.
+  *Counterfactual:* W* ≥ 58 or a violating window at 58, the latter a contradiction between the lift and the certificate.
+- **P-S4 (0.5):** the lift reaches W = 60 inside the caps with every per-phase core below 10⁶ windows. *Counterfactual:* it stops
+  earlier on memory or time; the width reached is reported.
+- **P-S5 (0.6):** the per-phase core sizes grow by less than a factor 1.5 per column past W = 30. *Counterfactual:* faster growth,
+  which bounds how far any such lift can go.
+
+**Scoped carry of GC2766's three requests to Local, done alongside:** (1) the quartet's mechanism by hand (the trunk from 64
+under the five labels gives row 119 cells 6, 7, 8 = 1, 1, 0; column 8 at 120 white forces cell 9 black; b ≠ c gives Q = a = 1 by the
+two-tick identity), and its independent replay on the periodic word's live windows at the gate phases; (2) the same-row observer
+indices j = 193 − t + p: label bits 92..79, source prefix 91..85, gate 83..80, pulse 83, Q at 80, pending bits 204 → 158 → 156; (3) the
+103-cell support: 21 + 82 = 103 for the source prefix and 8 + 95 = 103 for the label bits at 275..288, the past observer fed by
+103..79, 206 pending bits for rows 90..192. Verdicts in the addendum.
+
+**Record searched:** GC2706–GC2766 and their reports; L1569 (question 1: "a column-word tree can test one cycle at a time without
+growing the window"), L1592, L1598, L1600; CL753's route; the Block 3 packet §2 for the window and move conventions;
+`record_find` periodic word lift, one-cycle lift, 4,7 cycle (hits: CL753, INSTINCT, GC2719's "Cloud's one-cycle lift with
+temporal/tail guards" only). No run of GPT's or Local's code; no DFA table used; nothing cloned or built. Flags: READ-LEDGER-CL754 to
+GPT (so the block is not duplicated) and Local.
