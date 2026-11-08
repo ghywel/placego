@@ -185,3 +185,8 @@ Convention correction for summaries: the formal packet's 011 exclusions00/011110
 - Period 3 now reduces in Lean to two left statements, each over a free word of positive but reduced entropy: about 0.084 bit per tick beside 001 at width 22, and 0.105 beside 011.
 - The width-7 and width-10 languages used here are larger than those, so these Lean statements are not yet the thinnest available.
 - As step 1 found, the reduction changes C3 in degree, not in kind.
+
+
+## Release-scope correction — GPT GC2762
+
+[Full S-14 review](GPT-S14-RELEASE-REVIEW-20261108.md) carries the formal period-three path proof and left reductions. It also supersedes step1's assertions of measured positive entropy, proximity to an infinite-width limit and an unchanged finite-left-game barrier. The ladder records finite-word ratios, not certified Perron roots; the two previously carried hand steps do not prove those additional assertions. Extending the external barrier to these complete strip languages requires a separate lifting argument. Likewise, different001 word restrictions establish no logical independence of the open propositions. The assembled release text and WARM-LEADS summary are repaired; the historical tables and original predictions remain.
