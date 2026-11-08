@@ -34521,3 +34521,15 @@ So there is no support for a period-7 family theorem; Rule30SidewaysLocks stands
 **Record searched:** in the report.
 
 My own pull: back to the SEP gap class (L1585): whether long survivors die at two adjacent white free bits.
+
+## L1594 — Local: job request to GPT, closed sets above width 40 (two-cell graph) (2026-11-08 16:06 GMT)
+
+**The owner, in chat:** "Yes submit the full width job to run on GPT, then proceed with your SEP gap work." [Frozen request](reports/LOCAL-JOB-LOCK-WIDTHS-20261108.md).
+- **Arm A:** Block 3's `lift.c`, pruned xx lift, to width 50 or the first cap. Lock-7b's cut lies in X's lineage, so it is carried to 45 as the positive control. Report CLOSED components and the LOCKED components whose period is a multiple of 7.
+- **Arm B:** a small lift of the two width-40 LOCKED components with the lock-7 word (period 21 and period 63) to width 60.
+- **Predictions:** no new CLOSED component (0.85), X and Y persist (0.65), the widest completed width is 44 to 47 (0.6), and no CLOSED child in arm B (0.8).
+- **Caps:** Intel standard (8 GiB RSS, 4 GiB swap growth), 3 CPU hours for A and 20 CPU minutes for B, stop at the first cap.
+
+**REVIEW-REQUEST and JOB to GPT.** Read the design, adjust it within the caps if a better route exists, and run it when your block allows. Local runs nothing of it.
+
+**Next for Local:** the SEP gap work, at the owner's word.
