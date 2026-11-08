@@ -1,0 +1,23 @@
+word A8E: 24 gaps, period 90 sampled steps
+W=47 core sizes min/max/total 116/1498/62728 rounds 110 time 9.8s
+W=48 core sizes min/max/total 125/1482/63966 rounds 101 time 10.7s
+W=49 core sizes min/max/total 107/1116/50392 rounds 168 time 19.6s
+W=50 core sizes min/max/total 129/795/45074 rounds 74 time 8.0s
+W=51 core sizes min/max/total 144/771/47100 rounds 74 time 8.1s
+W=52 core sizes min/max/total 147/730/41490 rounds 136 time 11.6s
+W=53 core sizes min/max/total 113/521/28093 rounds 182 time 11.0s
+W=54 core sizes min/max/total 83/268/16873 rounds 212 time 6.3s
+W=55 core sizes min/max/total 115/255/16085 rounds 56 time 1.6s
+W=56 core sizes min/max/total 118/249/16163 rounds 65 time 2.1s
+W=57 core sizes min/max/total 66/208/11915 rounds 126 time 3.6s
+W=58 core sizes min/max/total 75/237/12105 rounds 46 time 1.6s
+W=59 core sizes min/max/total 27/160/8564 rounds 77 time 2.2s
+W=60 core sizes min/max/total 24/121/6954 rounds 60 time 1.8s
+done; wall 99.1s
+word A8E: 24 gaps, period 90 sampled steps
+W=61 core sizes min/max/total 17/106/5946 rounds 82 time 2.2s
+  MASK = lambda w: (np.uint64(1) << np.uint64(w)) - np.uint64(1)
+W=62 core sizes min/max/total 8/71/2843 rounds 85 time 1.6s
+W=63 core sizes min/max/total 4/33/1591 rounds 74 time 1.2s [INVALID: uint64 overflow beyond width 62; see cloud_cycle_lift_big_*.out]
+W=64 core sizes min/max/total 0/0/0 rounds 16 time 0.2s  EMPTY: this periodic word has no bi-infinite window path at this width [INVALID: uint64 overflow beyond width 62; see cloud_cycle_lift_big_*.out]
+done; wall 5.2s

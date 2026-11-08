@@ -86,6 +86,7 @@ def label_words(a, Wrow, W):
     return out
 def main(Wmax, ckdir, budget_s):
     t0 = time.time()
+    assert Wmax <= 62, "uint64 words are exact only to width 62 (the exterior pair needs bits W, W+1); use cloud_cycle_lift_big.py beyond (CL755)"
     os.makedirs(ckdir, exist_ok=True)
     # resume
     W0 = 1; sets = None

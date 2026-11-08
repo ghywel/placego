@@ -1,0 +1,10 @@
+W=21 source phase 103, arc [89,113]: full-arc labels [4520]
+  order ends-inward: irreducible support 6 samples: phases [90, 97, 102, 104, 106, 113]
+     as (phase, tick, bit): [(90, 249, 1), (97, 263, 1), (102, 273, 0), (104, 277, 1), (106, 281, 1), (113, 295, 0)]
+  order source-outward: irreducible support 7 samples: phases [90, 92, 99, 107, 108, 111, 113]
+     as (phase, tick, bit): [(90, 249, 1), (92, 253, 1), (99, 267, 1), (107, 283, 0), (108, 285, 0), (111, 291, 1), (113, 295, 0)]
+  order past-first: irreducible support 6 samples: phases [90, 97, 104, 109, 111, 113]
+     as (phase, tick, bit): [(90, 249, 1), (97, 263, 1), (104, 277, 1), (109, 287, 0), (111, 291, 1), (113, 295, 0)]
+  order future-first: irreducible support 5 samples: phases [90, 92, 99, 106, 113]
+     as (phase, tick, bit): [(90, 249, 1), (92, 253, 1), (99, 267, 1), (106, 281, 1), (113, 295, 0)]
+  wall 91.6s

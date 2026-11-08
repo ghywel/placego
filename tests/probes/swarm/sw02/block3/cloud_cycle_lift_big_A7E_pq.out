@@ -1,0 +1,4 @@
+word A7E: period 83; resuming from the uint64 checkpoint at width 62 with 2054 windows (big-int code)
+W=63 core sizes min/max/total 1/57/1249 rounds 33 time 0.3s
+W=64 core sizes min/max/total 0/0/0 rounds 38 time 0.1s  EMPTY: this periodic word has no bi-infinite window path at this width (big-int code)
+done; wall 0.4s

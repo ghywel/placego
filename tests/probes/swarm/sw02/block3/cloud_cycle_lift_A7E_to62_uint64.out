@@ -1,0 +1,22 @@
+word A7E: 22 gaps, period 83 sampled steps
+W=47 core sizes min/max/total 58/794/32613 rounds 156 time 12.0s
+W=48 core sizes min/max/total 62/810/31489 rounds 80 time 5.3s
+W=49 core sizes min/max/total 48/716/28724 rounds 83 time 6.9s
+W=50 core sizes min/max/total 64/737/29507 rounds 60 time 4.8s
+W=51 core sizes min/max/total 80/705/29236 rounds 80 time 6.0s
+W=52 core sizes min/max/total 113/696/29697 rounds 68 time 5.4s
+W=53 core sizes min/max/total 144/650/26855 rounds 101 time 7.4s
+W=54 core sizes min/max/total 170/585/23079 rounds 90 time 6.6s
+W=55 core sizes min/max/total 41/281/10253 rounds 164 time 9.6s
+W=56 core sizes min/max/total 30/212/7782 rounds 77 time 2.7s
+W=57 core sizes min/max/total 19/109/4777 rounds 92 time 3.2s
+W=58 core sizes min/max/total 23/107/4488 rounds 34 time 1.1s
+W=59 core sizes min/max/total 6/79/2073 rounds 86 time 2.5s
+W=60 core sizes min/max/total 1/82/1619 rounds 237 time 7.1s
+done; wall 81.4s
+word A7E: 22 gaps, period 83 sampled steps
+W=61 core sizes min/max/total 1/91/1654 rounds 33 time 0.7s
+  MASK = lambda w: (np.uint64(1) << np.uint64(w)) - np.uint64(1)
+W=62 core sizes min/max/total 1/58/1228 rounds 33 time 0.6s
+W=63 core sizes min/max/total 0/0/0 rounds 39 time 0.4s  EMPTY: this periodic word has no bi-infinite window path at this width [INVALID: uint64 overflow beyond width 62; see cloud_cycle_lift_big_*.out]
+done; wall 1.8s

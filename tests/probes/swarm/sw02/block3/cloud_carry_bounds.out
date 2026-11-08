@@ -1,0 +1,30 @@
+A4EA7E: period 145 sampled steps, 2 returns per period; dead at width 43; d_(death)=73, D_(death-1)=1314, D_(death)=1387
+  candidates at 43: 2326 vertices, 3389 edges, cycle=False, longest path L=145
+  bound: any block of this periodic trace has at most N = 2*1314 + 145 = 2773 sampled edges; so at most 19 full periods (38 returns) fit, and 20 consecutive periods are forbidden
+    assert all(W in rounds for W in range(1, death+1)), "missing widths in the logs"
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    assert all(W in rounds for W in range(1, death+1)), "missing widths in the logs"
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    assert all(W in rounds for W in range(1, death+1)), "missing widths in the logs"
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+A4EA12E: period 180 sampled steps, 2 returns per period; dead at width 47; d_(death)=91, D_(death-1)=2021, D_(death)=2112
+  candidates at 47: 31228 vertices, 47508 edges, cycle=False, longest path L=180
+  bound: any block of this periodic trace has at most N = 2*2021 + 180 = 4222 sampled edges; so at most 23 full periods (46 returns) fit, and 24 consecutive periods are forbidden
+A4EA9E: period 159 sampled steps, 2 returns per period; dead at width 43; d_(death)=92, D_(death-1)=1514, D_(death)=1606
+  candidates at 43: 27018 vertices, 41005 edges, cycle=False, longest path L=183
+  bound: any block of this periodic trace has at most N = 2*1514 + 183 = 3211 sampled edges; so at most 20 full periods (40 returns) fit, and 21 consecutive periods are forbidden
+A4EA10E: period 166 sampled steps, 2 returns per period; dead at width 45; d_(death)=85, D_(death-1)=1845, D_(death)=1930
+  candidates at 45: 2404 vertices, 3562 edges, cycle=False, longest path L=168
+  bound: any block of this periodic trace has at most N = 2*1845 + 168 = 3858 sampled edges; so at most 23 full periods (46 returns) fit, and 24 consecutive periods are forbidden
+A4EA11E: period 173 sampled steps, 2 returns per period; dead at width 43; d_(death)=99, D_(death-1)=1636, D_(death)=1735
+  candidates at 43: 76232 vertices, 117649 edges, cycle=False, longest path L=197
+  bound: any block of this periodic trace has at most N = 2*1636 + 197 = 3469 sampled edges; so at most 20 full periods (40 returns) fit, and 21 consecutive periods are forbidden
+A7E: period 83 sampled steps, 1 returns per period; dead at width 63; d_(death)=38, D_(death-1)=3089, D_(death)=3127
+  candidates at 63: 2456 vertices, 3540 edges, cycle=False, longest path L=74
+  bound: any block of this periodic trace has at most N = 2*3089 + 74 = 6252 sampled edges; so at most 75 full periods (75 returns) fit, and 76 consecutive periods are forbidden
+A8E: period 90 sampled steps, 1 returns per period; dead at width 64; d_(death)=91, D_(death-1)=3407, D_(death)=3498
+  candidates at 64: 4972 vertices, 7351 edges, cycle=False, longest path L=181
+  bound: any block of this periodic trace has at most N = 2*3407 + 181 = 6995 sampled edges; so at most 77 full periods (77 returns) fit, and 78 consecutive periods are forbidden
+A7EA8E: period 173 sampled steps, 2 returns per period; dead at width 65; d_(death)=90, D_(death-1)=3949, D_(death)=4039
+  candidates at 65: 3732 vertices, 5552 edges, cycle=False, longest path L=179
+  bound: any block of this periodic trace has at most N = 2*3949 + 179 = 8077 sampled edges; so at most 46 full periods (92 returns) fit, and 47 consecutive periods are forbidden

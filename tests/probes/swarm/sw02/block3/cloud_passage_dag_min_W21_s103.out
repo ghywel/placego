@@ -1,0 +1,15 @@
+  a=-34 b=103: n=477 labels=[808, 4520, 4951, 15127, 15191]
+  a=-34 b=106: n=379 labels=[808, 4520]
+  a=-34 b=113: n=27 labels=[4520]
+EARLIEST END forcing 4520 at source phase 103 with past from -34: b*=113 (tick 295)
+  a=-34 b=145: labels=[4520]
+  a=103 b=145: labels=[4482, 4498, 4520, 4521, 4522, 14429]
+  a=34 b=145: labels=[4520]
+  a=68 b=145: labels=[4520]
+  a=85 b=145: labels=[4520]
+  a=94 b=145: labels=[4482, 4520]
+  a=89 b=145: labels=[4520]
+  a=91 b=145: labels=[4482, 4520]
+  a=90 b=145: labels=[4482, 4520]
+LATEST START forcing 4520 at source phase 103 with future to 145: a*=89 (tick 247); a=90 does not
+  wall 11.3s

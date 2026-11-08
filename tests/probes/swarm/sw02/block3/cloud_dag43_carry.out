@@ -1,0 +1,8 @@
+core_W42 total 1163
+candidates at 43: 2326
+distinct edges: 3389
+cycle found: False
+longest path (edges): 145
+longest-path starts (phase, count): [118]
+vertices with no candidate successor: 288
+vertices with no candidate predecessor: 308

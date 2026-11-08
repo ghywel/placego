@@ -1,0 +1,46 @@
+W=21 source phase 103: for each start a, the earliest end b(a) forcing 4520 (b<=145)
+  a=60 (tick 189): b(a)=113 (tick 295), span 54 samples
+  a=61 (tick 191): b(a)=113 (tick 295), span 53 samples
+  a=62 (tick 193): b(a)=113 (tick 295), span 52 samples
+  a=63 (tick 195): b(a)=113 (tick 295), span 51 samples
+  a=64 (tick 197): b(a)=113 (tick 295), span 50 samples
+  a=65 (tick 199): b(a)=113 (tick 295), span 49 samples
+  a=66 (tick 201): b(a)=113 (tick 295), span 48 samples
+  a=67 (tick 203): b(a)=113 (tick 295), span 47 samples
+  a=68 (tick 205): b(a)=113 (tick 295), span 46 samples
+  a=69 (tick 207): b(a)=113 (tick 295), span 45 samples
+  a=70 (tick 209): b(a)=113 (tick 295), span 44 samples
+  a=71 (tick 211): b(a)=113 (tick 295), span 43 samples
+  a=72 (tick 213): b(a)=113 (tick 295), span 42 samples
+  a=73 (tick 215): b(a)=113 (tick 295), span 41 samples
+  a=74 (tick 217): b(a)=113 (tick 295), span 40 samples
+  a=75 (tick 219): b(a)=113 (tick 295), span 39 samples
+  a=76 (tick 221): b(a)=113 (tick 295), span 38 samples
+  a=77 (tick 223): b(a)=113 (tick 295), span 37 samples
+  a=78 (tick 225): b(a)=113 (tick 295), span 36 samples
+  a=79 (tick 227): b(a)=113 (tick 295), span 35 samples
+  a=80 (tick 229): b(a)=113 (tick 295), span 34 samples
+  a=81 (tick 231): b(a)=113 (tick 295), span 33 samples
+  a=82 (tick 233): b(a)=113 (tick 295), span 32 samples
+  a=83 (tick 235): b(a)=113 (tick 295), span 31 samples
+  a=84 (tick 237): b(a)=113 (tick 295), span 30 samples
+  a=85 (tick 239): b(a)=113 (tick 295), span 29 samples
+  a=86 (tick 241): b(a)=113 (tick 295), span 28 samples
+  a=87 (tick 243): b(a)=113 (tick 295), span 27 samples
+  a=88 (tick 245): b(a)=113 (tick 295), span 26 samples
+  a=89 (tick 247): b(a)=113 (tick 295), span 25 samples
+  a=90 (tick 249): b(a)=None NOT FORCED
+  a=91 (tick 251): b(a)=None NOT FORCED
+  a=92 (tick 253): b(a)=None NOT FORCED
+  a=93 (tick 255): b(a)=None NOT FORCED
+  a=94 (tick 257): b(a)=None NOT FORCED
+  a=95 (tick 259): b(a)=None NOT FORCED
+  a=96 (tick 261): b(a)=None NOT FORCED
+  a=97 (tick 263): b(a)=None NOT FORCED
+  a=98 (tick 265): b(a)=None NOT FORCED
+  a=99 (tick 267): b(a)=None NOT FORCED
+  a=100 (tick 269): b(a)=None NOT FORCED
+  a=101 (tick 271): b(a)=None NOT FORCED
+  a=102 (tick 273): b(a)=None NOT FORCED
+  a=103 (tick 275): b(a)=None NOT FORCED
+  wall 43.4s
