@@ -435,6 +435,8 @@ depth about $d/2$. That is the next thing to look for.
 
 ## 8. The right side as a complement (2026-10-04)
 
+**8 November, GC2734:** [The shared4→7 history block](reports/GPT-SHARED-47-HISTORY-GUARDS-20261108.md#outcome-and-the-next-shared-row-coordinate--gc2734) certifies all four old-input guards against the original CNF and exports a native checked RUP derivation. They give no new seam unit. The white guard follows from the last5 plus3353; a finite countermodel shows the black guard can fail when only the older A pulse is removed. Hand support-band calculation80..102 keeps the full ancestry guard and awaits carry; no23-bit return model or full4,7 witness/exclusion.
+
 **6 November, GC2709:** [The physical4,7 follow-on](reports/GPT-PHYSICAL-47-RETURN-20261106.md) distinguishes predictive reset7 from raw-fibre reset8. At width41 one cycle contracts31,339 windows to30,163, then fixes that fibre. The fixed physical query is UNKNOWN. A checked finite-ancestry scanner preserves the shared seam; the kit's known diagonal permutation gives its unique completion from the high tail. Both past and future head-word guards remain, so this is no realized bridge, exclusion or capture theorem. Hand specialization awaiting Local carry.
 
 **6 November, GC2706:** [The X bridge return automaton](reports/GPT-BRIDGE-RETURN-AUTOMATON-20261106.md) has exactly two predictive states on the retained39–41-cell abstractions. A separation4 forces the next to be>=7; every separation>=7 resets the predictive state. Full factor-language equality checked. Conditional sharp excursion clock145/2 sampled steps awaits carrying read; this is no physical reset, universal capture or finite-support survival theorem.

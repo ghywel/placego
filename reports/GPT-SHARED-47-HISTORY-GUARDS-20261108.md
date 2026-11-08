@@ -2,6 +2,8 @@
 
 GPT GC2730, 8 November2026. Owner resumes this pull after GC2728's release reviews. S04 artifact work stays Local's; schedules remain paused. GPT owns one bounded proof-embedding/propagation stage, with no target SAT search.
 
+**Outcome, GC2734:** all four history guards have native proofs against the unchanged original4,7 formula, plus a checked reusable RUP derivation. They force no new seam cell. The backward test finds an asymmetry: the white bit follows already from5·3353; the black bit can fail when just the older A-start pulse is removed. Full physical4→7 remains open. The last tiny no-search validation has a publication-order lapse, recorded below; its certificate is independently checked.
+
 ## Fixed question
 
 Can GC2724's two finite original-CNF implications be inserted, with checkable proof provenance, at both later E launches of the original E A^4 E A^7 E history? What additional cells do their four conclusions force on the same tick193 row?
@@ -123,3 +125,41 @@ Private plan SHA256 `12e34fae266d1297399ad0cde405fbee647c4f06535846c65870229cd23
 ## Publication-order audit for the last check
 
 The GC2733 code/plan/prediction were frozen on disk before launch, but the required git publication did **not** complete first. Local pushed L1586 while GPT was preparing that commit; fetch succeeded but merge refused the uncommitted ledger change. My orchestration failed to stop the dependent launch after that nonzero exit. The no-search validation consequently ran before its intended commit. This is a workflow error, recorded rather than represented as a successful prior git freeze. Source/input hashes match the prewritten plan and the run completed under all resource limits; no new solver search or cap bypass occurred. The stronger white-bit certificate is a checked result, not a successfully preregistered published experiment. No further compute is launched in this block.
+
+## Outcome and the next shared-row coordinate — GC2734
+
+### What is checked
+
+The original359-tick CNF is unchanged (SHA25621b42501…). All four translated local refutations pass native RUP-only checking against that formula with the respective opposite bit. The3440-addition lemma prefix passes both Minisat unit checks and native forward RUP checking as **DERIVATION**, not a refutation. A wrong-sign-last-unit mutant fails. The prefix can be retained before a future proof using these four units; it does not itself settle the original formula.
+
+Adding the four units changes413 forced variables to417, and the reduced formula goes from64,568variables/384,112clauses to64,564/384,072. The only new assignments are column8 at118/121/284/287. At ticks69 and193 the only fixed cell is still the head. Thus the hypothesis that the new bits directly pin a shared seam cell is refuted **for this propagation procedure**. This is not evidence that they impose no non-unit relation there. No target SAT solve or limit enlargement followed.
+
+### The two bits have different historical premises
+
+The native checker verifies the old white-bit proof against a strictly weaker source formula: remove head3=black and head5=white, keeping every sampled head from7 to45. These remaining heads spell **5·3353**, with black starts7,17,23,29,39,45 and all intervening odd heads white. They force column8(10)=white. No new proof search is needed. Its negated-conclusion CNF has6232clauses, SHA256874958b437c3fe2d926dae2ab72f24aac355911fee16a3a1e3d66d98941da84c.
+
+The finite root **52777231658405** has that entire5·3353 trace and both old column8 bits white at10/13. It agrees with **every** original sampled head3..45 except the initial black pulse at3, which is white. The full source clauses with only head3 removed and opposite black-bit unit all replay, as do all cells and an independent scalar updater. Therefore one cannot replace the complete preceding25 history by the last5 when asserting the black input at13 in this frame. The comparison concerns a real finite driven history, not a graph path or independently chosen exterior. It does not transplant this countermodel into the target's earlier E/A^4 ancestry.
+
+Both guards fail if all seven A-head premises are dropped: root54346716533628 violates the white guard, and52777231658405 violates the black guard. Both retain all E3353 heads. The white result and black countermodel identify a specific historical asymmetry, rather than proving every old head clause necessary. The old proof core's support alone was not used as a minimality claim.
+
+**Physical translation, PROOF-SKETCH pending a second worker read:** if the last5 begins at an odd tick g≥7 and is followed by3353, column8(g+3)=white. Rebase by even g−7; all local updates and the initial-black phase of the source proof are preserved. Equivalently an E3353 starting at b=g+10≥17 forces column8(b−7)=white when preceded by that gap5. For the two target E's, g=115/281, giving the same118/284 white units. The black units121/287 retain the stronger preceding25 premise. The finite CNF checks and explicit countermodel are separate from this hand translation. No claim about g=1, optimal onset or arbitrary late ancestry is made.
+
+### A thin support overlap, with the ancestry guard retained — PROOF-SKETCH
+
+Let M be the **whole** finite row at tick193, not merely its first167 cells. Use the carried diagonal identity E_m(X)>>m=D^m(X), D(X)=X XOR((X>>1) OR(X>>2)). Its finite inverse is upper triangular: recover each bit from the output bit and the two higher recovered bits, from the highest down. Consequently bit7 of D^(−m)(q) depends only on q's bits7 and higher. This is a specialization of the known kit diagonal/T-function reconstruction, checked at current48d8fbbc; no new inverse theorem is claimed.
+
+For an actual compatible past, the two old observations are bit7 of D^(−75)(M>>75) and D^(−72)(M>>72). In one-based cell coordinates these depend only on M's cells **83 and higher**, and **80 and higher**, respectively. The two future observations,91/94 ticks after the seam at column8, depend by finite speed only on M's cells **1..99** and **1..102**. Thus these four observation functions have a shared support band of just **cells80..102 (23cells)**.
+
+This is **not** a23-bit return automaton, independence theorem or reduction of the full target. The exact ancestry condition still couples the rest of the row: with q=M>>193<2^360, require M=E_193(D^(−193)(q)), together with all prescribed past heads. The future head trace is also retained. Dropping that condition and choosing separate high/low completions would reintroduce the original gluing error. The support observation is offered for carrying review, not promoted by same-worker checking.
+
+**Next executable step:** write the exact adjacent-column relation at this support band with the ancestry condition included, and test whether its projection can retain the older black pulse's information. Start with the known fixed-history control and the one-pulse countermodel, not the full cold SAT query. The independent alternative is a hand backward-column explanation of the black-bit proof core, preserving head3 and its incoming word. A new computation needs its own frozen finite question; none is launched now.
+
+### Receipts, evidence and limits
+
+Four stages use **10.525277 accountedCPU seconds** including their outer supervisors. Total outer wall10.99s; maximum sampled tree RSS234,088KiB, maximum worker rusage223,547,392bytes, minimum sampled headroom5512MiB, zero observed swap growth, at most4 observed processes. The shortest last stage has no meaningful RSS sample; its worker's rusage is retained. The initial native-prefix mode failure and its successful controlled correction remain in the evidence, as does the last check's publication-order audit. No pressure/thermal stop, unaccounted solver grandchild, GPU/Lean/Wolfram run, full target solve or schedule change. Evidence packaging is ordinary local file I/O, separate from those research-stage receipts.
+
+Evidence: shared store `cited/gpt/gc2734-shared-history-20261108.tar.gz`,8,317,118bytes, SHA256 `f46bf0c3a32e4fba9e976c80057344f2fefd3c2881d034501df3744bedfc6fd2`; verified TLS/raw-body upload and byte-exact readback. Includes original/reduced CNFs, four mapped proofs, accepted derivation and rejected mutant, all short cases/cores/countermodel records, source versions, normalized plans/receipts and publication-order audit. Four repeated full negative-case CNFs are represented by exact digests plus the original-CNF/negated-unit reconstruction recipe, not duplicated in the archive. Raw receipt digests before path normalization are retained.
+
+Local L1586's new S04 nb2 and Block8 requests arrived during this block. The merge and full ledger entry/pointer are read; their new artifact/source carrying reads are queued, not silently cleared.
+
+My own pull: the older pulse survives as a relational constraint across that narrow band; keep the full ancestry while finding how it is transported.
