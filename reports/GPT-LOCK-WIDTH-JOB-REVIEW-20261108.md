@@ -2,6 +2,8 @@
 
 GPT GC2742/GC2743, answering Local L1594 and the owner's request to run it, then continue the row119 pull during the single heavy worker. Local runs no duplicate computation. [Original request](LOCAL-JOB-LOCK-WIDTHS-20261108.md) remains the historical preregistration.
 
+**Completed, GC2748:** full target-avoiding graph through43, no CLOSED SCC; first node cap prevents44. The actual primitive7 lineage has78/78/77/29/0 cyclic-core windows at40..44, independently replayed with no target removal. The historical two-parent description below is superseded by GC2746's primitive63 correction, carried by Local L1597. No new lock or universal capture theorem. [Row119 block](GPT-ROW119-PAIR-TRANSPORT-20261108.md) progressed during the single graph worker.
+
 ## Mathematical review
 
 The exact xx rule and closure test are correct. A CLOSED cyclic SCC means every actual two-tick move stays in that same component: both exits to another residual component and exits outside the retained graph count. LOCKED means the observed column is fixed by cyclic phase for paths staying inside; leaky LOCKED is not closed or necessarily physically realizable for ever.
@@ -104,3 +106,44 @@ Replay worker5CPU/15wall, stage15 aggregateCPU including outer monitor, outer25C
 Plan SHA256 `16ad7a9cdeb21bca364f2292364769165f93ea775c67505dc66851aa75707f2c`; replay source `1be789120fff15d3376a6593a1f8a4703294b95b71d5fd54515333412f2caf1b`; saved-history input `20a210c2b8505da24762799038e2d66e7cb41bbf1069db8d157e7f0e53ac5bef`. All other exact inputs are registered in that plan.
 
 Launch-environment correction: the sandbox refused `sysctl vm.swapusage` before any worker was spawned (launcher REFUSED,0.111124 aggregateCPU). Read-only diagnosis returns `Operation not permitted`; this is not evidence of swap pressure or a running-monitor breakdown. Preserve that receipt. Execute the unchanged pinned plan under the same required host permission as the completed graph job, with every monitor/cap unchanged and a fresh output directory. No bypass of the swap check, no computation retry after pressure, no budget increase. Charge the refused launch as well.
+
+## Outcome — GC2748
+
+**COMPUTED, Intel; no kernel certification of the new full-width census.** The full40 baseline reproduces all22 prior SCC fingerprints and the exact20,461,951-window/163,695,608-byte checkpoint SHA256 `f736b89dcf124e5917abf381caf46b0961631ca1c4749dbc7d6519c5ed363f85`. The controlled C binary then completes the full, unpruned target-avoiding cores:
+
+| Width | Retained core windows | CLOSED SCCs |
+|---|---:|---:|
+|40|20,461,951|0|
+|41|30,317,860|0|
+|42|45,417,256|0|
+|43|66,696,788|0|
+
+Next lift would require133,393,576 candidates, above the frozen120,000,000-node cap. The program stops before constructing44, preserving43 as the largest complete width. No retry or node-budget increase. Two UNRESOLVED components persist at43:48,895,838 windows with gap alphabet[2,3,5], and630,829 with[2,4,5]. The corrected full run tests only a finite target-avoiding graph. It neither reaches45/50 nor excludes a new lock first closing above43, a closed set containing target windows, or an unresolved physical history.
+
+**The true primitive7 parent dies as a cyclic lineage.** ArmB's78-window width40 parent has graphgcd21 but primitive output word0101000. The successive cyclic-core sizes are78,78,77,29,0 at40..44; the empty core stays empty through the programmed endpoint60. No CLOSED child is found. The small final scalar/NetworkX replay removes **no target windows**, checks all actual moves, compares SCC fingerprints to C and still obtains exactly these five sizes. The finite result is independently replayed in another implementation by the same worker, not a second-party carrying read.
+
+Hand corollary (**PROOF-SKETCH pending Local's read**, conditional on that finite graph): no cyclic descendant of this particular78-window parent exists at any higher width. Any higher cycle projects to a closed walk in its previous-width candidate graph; closed walks survive both indegree-zero and outdegree-zero peeling. Iteration would therefore give a closed walk in the empty44 core, impossible. This excludes an all-time history staying in this parent as well: after discarding finite transients at each lower-width peel, its higher-width window sequence takes values in a finite graph and would repeat a vertex, yielding a directed cycle. It does not exclude leaving the parent and later entering a different lock. Rank9's primitive63 inheritance exclusion is separately **PROVED hand/two-party, L1597**; no new general period7-family theorem follows.
+
+The original widest-width prediction44..47 did not hold for the repaired full-core design (43 completed); the difference is recorded, not silently reassigned to the old pruned graph. No-new-CLOSED and persistence predictions held only over the completed widths. B's no-CLOSED prediction held and is sharpened to empty44 for its actual primitive7 parent.
+
+### Resources and retained failures
+
+| Stage | Exact aggregate CPU s | Outer wall s | Outcome |
+|---|---:|---:|---|
+|Graph/checkpoint/scalar controls|3.057917|3.84|PASS|
+|Deliberate group-cap control|0.840276|1.10|Expected GROUP_CPU_STOP/cleanup PASS|
+|Full40 baseline + initial parent assertion|61.803534|55.29|Baseline exact; false primitive7 assertion stops before arms|
+|Corrected B + full A + summary|198.104368|175.85|Complete through declared node cap|
+|Sandbox replay launch|0.111124|No child|REFUSED before spawn; swap-monitor permission diagnosed|
+|Unchanged replay with host permission|0.544260|0.55|PASS|
+|Total|264.461479|236.63 for executed stages|Within original allowances|
+
+Totals include supervisor and monitor subprocess CPU. Maximum sampled tree RSS3,826,804KiB; minimum observed free+inactive headroom4,946MiB; zero sampled swap growth. Tree/process, thermal, pressure and output guards stayed active. The final subsecond replay has no periodic RSS sample; its0 sample is not a zero-use measurement. The deliberate cap test, initial acceptance failure and refused sandbox launch remain distinct from pressure/thermal failures; none occurred. No GPU, Lean build, solver, second heavy worker, external post or schedule restart.
+
+### Evidence and next action
+
+Evidence `cited/gpt/gc2748-lock-widths-row119-20261108.tar.gz`,160246 bytes, SHA256 `ab3a279166f05dfa17be68a775c6357375e8fadeb4f121a6a48181cf651175b0`; verified TLS/raw-body upload with byte-exact readback. It contains original raw-file digest register, path-normalized plans/receipts, exact executed source variants, controls/mutant outcomes, both selected parent seeds, all SCC rows, checkpoint-part digest register, small unfiltered deletion certificate and saved-history replay. Large full40 checkpoint is retained in ignored local data, verified part by part and by concatenated digest; it is not uploaded or committed. Its reconstruction is the pinned baseline command and digest above. Data remain outside git.
+
+Local: please carry the empty44 ⇒ no higher cyclic descendant argument on the **specific**78-window lineage, and the [three scoped row119 steps](GPT-ROW119-PAIR-TRANSPORT-20261108.md#what-this-changes-and-the-next-step). No duplicate job assigned. The broad full-core width route is parked at its node cap; reopen only with a representation/algorithm that lowers peak candidates or a specific additional owner budget decision, not another unchanged width run.
+
+My own pull: the row119 gate with the full earlier E/A^4 ancestry; the saved whole-E examples already require two distinct local mechanisms.

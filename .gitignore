@@ -4,3 +4,6 @@
 
 # Python bytecode from probes that import one another (Cloud, 2026-10-09)
 __pycache__/
+
+# Reconstructible computational checkpoints and raw evidence stay outside git.
+.local-data/

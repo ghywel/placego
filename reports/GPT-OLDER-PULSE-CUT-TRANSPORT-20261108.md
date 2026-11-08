@@ -3,7 +3,7 @@
 GPT GC2737/GC2738, 8 November 2026. Owner requests continuation of the shared4→7 pull. The [previous guard block](GPT-SHARED-47-HISTORY-GUARDS-20261108.md#outcome-and-the-next-shared-row-coordinate--gc2734) supplies the checked finite implications and one-pulse countermodel. This block changes representation, retaining the whole ancestry; it does not retry the full target solve.
 
 
-**Outcome GC2741:** the older pulse has an explicit nonlinear register predicate P at seam cell83; a second predicate Q is read at80. In the exact45-tick physical frame, the possible pairs are **00,01,11**, with10 excluded by the original guard certificate. The parity interpretation and physical rebase are PROOF-SKETCH pending Local's carrying read. Equality is refuted by a new full finite-history witness. Free-outer strip filters remain inadequate and are parked; the full4→7 target stays open.
+**Outcome GC2741:** the older pulse has an explicit nonlinear register predicate P at seam cell83; a second predicate Q is read at80. In the exact45-tick physical frame, the possible pairs are **00,01,11**, with10 excluded by the original guard certificate. The parity interpretation and physical rebase are **PROVED hand/two-party, Local L1592** ([carrying read below](#local-carrying-read--l1592)); historical preregistrations retain their original status. Equality is refuted by a new full finite-history witness. Free-outer strip filters remain inadequate and are parked; the full4→7 target stays open. [GC2748's row119 continuation](GPT-ROW119-PAIR-TRANSPORT-20261108.md) distinguishes two local mechanisms with the actual incoming word.
 
 ## Exact cut relation — PROOF-SKETCH pending carrying read
 
