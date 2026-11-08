@@ -5650,3 +5650,16 @@ Known, re-expressed here: the upper-triangular Rule30 inverse scan (`Rule30Prede
 ## GC2748 — Known two-tick gate, specialized to row119
 
 Known, reproved here: `Rule30FirstChecks.two_tick`, our submitted S-03 result, actual current kit `b85e8a73c560e0222c5ccfe8d37dd8471842310e`; full declaration/proof read. In reflected interior indexing its five-bit formula is a XOR([b=c] AND(d OR e)). The32 scalar cases and four-step inverse patch specialize known local identities. [New row119 interpretation](reports/GPT-ROW119-PAIR-TRANSPORT-20261108.md) relates those identities to the already certified pulse guard and reuses six existing whole-E histories; no new generic local-rule/transducer theorem or publication package.
+
+## 2026-11-08 — Block 9: period-3 and period-4 language skeletons against rule30-open (Local L1599)
+
+[Report](reports/LOCAL-BLOCK9-LANGUAGES-20261108.md#prior-art).
+- **Known.**
+  - `rule30-open` at `f877f5af`: `ThreeRuns` (Lean; 001: column 1 avoids 010, 101, 1001 for every right half) and `ConstrainedLeft001` (Lean; C3r001 excludes 001).
+  - `reading-constraints.md` (011 trap words, computed; 00 forced unless the readings are eventually white).
+  - `constrained-left-halves.md` (no finite left game closes; constrained entropies) and `channel-ladder.md` (period-4 channel entropies to W = 30).
+  - The kit's `Cert.sound_bad` and `Rule30PeriodTwoLanguage` (the method, period 2).
+- **Known, reproved here.** The period-4 channel trend (replayed as a control to width 22), the 011 trap words, and the in-kind barrier.
+- **Not found outside SW-02.**
+  - The 001 run upper bounds (11111, 000000) as forced facts for left-finite configurations. rule30-open: "sampled, not forced".
+  - The longer 001 and 011 words (C3g001, C3g011), PE-2.1's explicit 0011 list, the period-3 ladder to width 22, and the monotonicity of the language in the width.
