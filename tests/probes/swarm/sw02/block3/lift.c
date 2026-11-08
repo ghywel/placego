@@ -27,6 +27,8 @@
  * Usage: lift --targets FILE --mode xx|pq --wmax N [--wreport N] [--out DIR] [--max-nodes N] [--dump] [--dense W]
  *             [--no-lock7] [--r02] [--prune-from P] [--over-max W] [--gapn N] [--gap-limit NODES] [--resume W FILE]
  *             [--rows B T LATEFILE] [--dfa-from W] [--dfa-max STATES] [--drop-largest-at W]
+ * GC2742: --resume-parts W PREFIX, --save-at W, --export-at W --export-ranks i,j, --stop-closed.
+ * Checkpoints/components use 16-MiB parts, with exact count manifests.
  * --r02: targets are the kit's 829 trap windows alone, every colour, no family and no lock (R-02's graph, a control).
  */
 #include <stdint.h>
@@ -45,6 +47,10 @@ typedef uint8_t u8;
 #define MAXW 62
 
 static int MODE = 0; /* 0 xx, 1 pq */
+/* GC2742: checkpoint/export support for the owner-authorized width job. */
+static int SAVEW = 0, EXPORTW = 0, STOPCLOSED = 0, FOUND_CLOSED = 0;
+static int EXPORT_RANKS[32], NEXPORT = 0;
+#define CHUNK_WORDS ((size_t)2097152) /* 16 MiB, inherited file cap */
 static int R02 = 0, GAPN = 6, DFAW = 0, DFAMAX = 2000000, DROPW = 0;
 static u64 GAPLIM = 40000000;
 static u8 *trap16;
@@ -336,9 +342,47 @@ enum { LOCKED = 1, GAP35 = 2, UNRESOLVED = 3 };
 static const char *KIND[4] = {"?", "LOCKED", "GAP35", "UNRESOLVED"};
 typedef struct {
     u64 nodes, edges, states, gcd, leak_core, leak_out, black, proj16, famcut, l7, l7b, s7cut;
+    u64 primitive_period;
     u32 gaps, id; int locked, ether, closed, whitecycle, kind, parent; u64 first;
     char word[72];
+    char primitive_word[72];
 } Comp;
+
+static void save_parts(const char *prefix, const u64 *a, size_t n) {
+    char path[1200];
+    size_t offset = 0; int part = 0;
+    while (offset < n) {
+        size_t count = n - offset < CHUNK_WORDS ? n - offset : CHUNK_WORDS;
+        snprintf(path, sizeof path, "%s.part%03d.bin", prefix, part++);
+        FILE *f = fopen(path, "wb");
+        if (!f || fwrite(a + offset, 8, count, f) != count || fclose(f)) { perror(path); exit(2); }
+        offset += count;
+    }
+    snprintf(path, sizeof path, "%s.count", prefix);
+    FILE *f = fopen(path, "w");
+    if (!f) { perror(path); exit(2); }
+    fprintf(f, "%zu %d\n", n, part);
+    if (fclose(f)) exit(2);
+}
+
+static u64 *read_parts(const char *prefix, size_t *n) {
+    char path[1200]; int parts;
+    snprintf(path, sizeof path, "%s.count", prefix);
+    FILE *f = fopen(path, "r");
+    if (!f || fscanf(f, "%zu %d", n, &parts) != 2) { perror(path); exit(2); }
+    fclose(f);
+    if (*n > 120000000 || parts != (int)((*n + CHUNK_WORDS - 1) / CHUNK_WORDS)) exit(2);
+    u64 *a = xalloc(8 * *n); size_t offset = 0;
+    for (int k = 0; k < parts; k++) {
+        snprintf(path, sizeof path, "%s.part%03d.bin", prefix, k);
+        size_t count = *n - offset < CHUNK_WORDS ? *n - offset : CHUNK_WORDS;
+        f = fopen(path, "rb");
+        if (!f || fread(a + offset, 8, count, f) != count || fgetc(f) != EOF) { perror(path); exit(2); }
+        fclose(f); offset += count;
+    }
+    for (size_t k = 1; k < *n; k++) if (a[k-1] >= a[k]) { fprintf(stderr, "unsorted resume\n"); exit(2); }
+    return a;
+}
 /* the components of the previous width, for parents */
 static u64 *pw; static int *pc; static size_t npw;
 static int parent_of(u64 w, int W) {
@@ -574,6 +618,22 @@ static void analyse(const u64 *core, size_t n, const u32 *succ, int W, const cha
                 if (cl[k] < 0) cl[k] = (int8_t)col; else if (cl[k] != col) C.locked = 0;
             }
             if (C.locked && g < 64) { for (u64 k = 0; k < g; k++) C.word[k] = (char)('0' + (cl[k] > 0)); }
+            if (C.locked) {
+                /* Least output-word period; gcd is the graph period. */
+                u32 *pi = xcalloc(sizeof(u32) * (size_t)g);
+                for (u64 k = 0; k < g; k++) if (cl[k] < 0) { fprintf(stderr, "empty cyclic phase\n"); exit(2); }
+                for (u32 k = 1; k < g; k++) {
+                    u32 j = pi[k-1];
+                    while (j && cl[k] != cl[j]) j = pi[j-1];
+                    if (cl[k] == cl[j]) j++;
+                    pi[k] = j;
+                }
+                u64 p = g - pi[g-1];
+                if (g % p) p = g;
+                C.primitive_period = p;
+                for (u64 k = 0; k < p && k < 64; k++) C.primitive_word[k] = (char)('0' + cl[k]);
+                free(pi);
+            }
             free(cl);
         }
         /* gaps between black cells of column 1, as a layered search */
@@ -646,6 +706,20 @@ static void analyse(const u64 *core, size_t n, const u32 *succ, int W, const cha
     printf(" %s W %d nodes %zu cyclic-components %zu in-cycles %llu\n", label, W, n, no, (unsigned long long)tot);
     for (size_t i = 0; i < no; i++) {
         Comp *C = &out[i]; char gs[160]; gapstr(C->gaps, C->whitecycle, gs);
+        int selected = 0;
+        if (W == EXPORTW) for (int k = 0; k < NEXPORT; k++) selected |= (int)i == EXPORT_RANKS[k];
+        if (selected || (STOPCLOSED && C->closed)) {
+            size_t count = 0;
+            u64 *members = xalloc(8 * (size_t)C->nodes);
+            for (size_t v = 0; v < n; v++) if (comp[v] == C->id) members[count++] = core[v];
+            if (count != C->nodes) exit(2);
+            char prefix[1024];
+            snprintf(prefix, sizeof prefix, "%s/%s_W%d_r%zu", dir, C->closed ? "closed" : "selected", W, i);
+            save_parts(prefix, members, count);
+            printf(" EXPORT W %d rank %zu nodes %zu closed %d prefix %s\n", W, i, count, C->closed, prefix);
+            free(members);
+            if (STOPCLOSED && C->closed) FOUND_CLOSED = 1;
+        }
         if (i < 24)
             printf("  %s #%zu %s parent %d nodes %llu states %llu edges %llu gcd %llu word %s gaps %s leaks %llu core %llu out%s%s famcut %llu l7cut %llu sevencut %llu l7bcut %llu proj16 %llu black %.3f first %llu\n",
                    label, i, KIND[C->kind], C->parent, (unsigned long long)C->nodes, (unsigned long long)C->states, (unsigned long long)C->edges,
@@ -655,11 +729,12 @@ static void analyse(const u64 *core, size_t n, const u32 *succ, int W, const cha
                    (unsigned long long)C->famcut, (unsigned long long)C->l7, (unsigned long long)C->s7cut, (unsigned long long)C->l7b,
                    (unsigned long long)C->proj16, (double)C->black / (double)C->nodes, (unsigned long long)C->first);
         if (js)
-            fprintf(js, "{\"W\":%d,\"stage\":\"%s\",\"rank\":%zu,\"kind\":\"%s\",\"parent\":%d,\"word\":\"%s\",\"nodes\":%llu,\"states\":%llu,\"edges\":%llu,\"gcd\":%llu,\"locked\":%d,\"gaps\":\"%s\",\"leak_core\":%llu,\"leak_out\":%llu,\"closed\":%d,\"ether\":%d,\"famcut\":%llu,\"l7cut\":%llu,\"sevencut\":%llu,\"l7bcut\":%llu,\"proj16\":%llu,\"black\":%llu,\"first\":%llu}\n",
+            fprintf(js, "{\"W\":%d,\"stage\":\"%s\",\"rank\":%zu,\"kind\":\"%s\",\"parent\":%d,\"word\":\"%s\",\"nodes\":%llu,\"states\":%llu,\"edges\":%llu,\"gcd\":%llu,\"locked\":%d,\"gaps\":\"%s\",\"leak_core\":%llu,\"leak_out\":%llu,\"closed\":%d,\"ether\":%d,\"famcut\":%llu,\"l7cut\":%llu,\"sevencut\":%llu,\"l7bcut\":%llu,\"proj16\":%llu,\"black\":%llu,\"first\":%llu,\"primitive_period\":%llu,\"primitive_word\":\"%s\",\"primitive_word_truncated\":%d}\n",
                     W, label, i, KIND[C->kind], C->parent, C->word, (unsigned long long)C->nodes, (unsigned long long)C->states, (unsigned long long)C->edges,
                     (unsigned long long)C->gcd, C->locked, gs, (unsigned long long)C->leak_core, (unsigned long long)C->leak_out,
                     C->closed, C->ether, (unsigned long long)C->famcut, (unsigned long long)C->l7, (unsigned long long)C->s7cut,
-                    (unsigned long long)C->l7b, (unsigned long long)C->proj16, (unsigned long long)C->black, (unsigned long long)C->first);
+                    (unsigned long long)C->l7b, (unsigned long long)C->proj16, (unsigned long long)C->black, (unsigned long long)C->first,
+                    (unsigned long long)C->primitive_period, C->primitive_word, C->primitive_period > 64);
     }
     if (no > 24) printf("  %s ... %zu more components, in the jsonl\n", label, no - 24);
     fflush(stdout); if (js) fflush(js);
@@ -832,7 +907,7 @@ static void rows_mode(int B, int T, const char *late) {
 }
 
 int main(int argc, char **argv) {
-    const char *tf = NULL, *dir = ".", *resume = NULL;
+    const char *tf = NULL, *dir = ".", *resume = NULL, *resume_parts = NULL;
     int wmax = 22, wreport = 16, dump = 0, densew = 0, resumew = 0, prune = 0, overmax = 36, rowsB = 0, rowsT = 0;
     const char *rowsfile = NULL;
     size_t maxnodes = 120000000;
@@ -856,6 +931,21 @@ int main(int argc, char **argv) {
         else if (!strcmp(argv[i], "--dfa-max")) DFAMAX = atoi(argv[++i]);
         else if (!strcmp(argv[i], "--gap-limit")) GAPLIM = (u64)atoll(argv[++i]);
         else if (!strcmp(argv[i], "--resume")) { resumew = atoi(argv[++i]); resume = argv[++i]; }
+        else if (!strcmp(argv[i], "--resume-parts")) { resumew = atoi(argv[++i]); resume_parts = argv[++i]; }
+        else if (!strcmp(argv[i], "--save-at")) SAVEW = atoi(argv[++i]);
+        else if (!strcmp(argv[i], "--stop-closed")) STOPCLOSED = 1;
+        else if (!strcmp(argv[i], "--export-at")) EXPORTW = atoi(argv[++i]);
+        else if (!strcmp(argv[i], "--export-ranks")) {
+            const char *s = argv[++i];
+            for (;;) {
+                char *end; long r = strtol(s, &end, 10);
+                if (end == s || r < 0 || r > 1000000 || NEXPORT == 32) return 2;
+                EXPORT_RANKS[NEXPORT++] = (int)r;
+                if (!*end) break;
+                if (*end != ',') return 2;
+                s = end + 1;
+            }
+        }
         else { fprintf(stderr, "unknown argument %s\n", argv[i]); return 2; }
     }
     if (!tf || wmax > 60) { fprintf(stderr, "need --targets; wmax at most 60\n"); return 2; }
@@ -878,14 +968,24 @@ int main(int argc, char **argv) {
             for (int j = 0; j < m; j++) bad7b += !inset(l7b, nl7b, mv[j]);
         }
         printf("closure failures: lock-7 set %d, lock-7b set %d\n", bad, bad7b);
+        if (bad || (!MODE && bad7b)) { fprintf(stderr, "fixed-lock control failed\n"); return 2; }
+        if (!MODE) {
+            int count = 0;
+            for (int i = 0; i < nl7b; i++) count += is_target(l7b[i], 45) == 4;
+            printf("target45 lock7b %d of %d\n", count, nl7b);
+            if (count != nl7b) return 2;
+        }
     }
     if (densew) { dense(densew); return 0; }
     if (rowsB) { rows_mode(rowsB, rowsT, rowsfile); return 0; }
     char jp[1024]; snprintf(jp, sizeof jp, "%s/scc_%s%s%s.jsonl", dir, MODE ? "pq" : "xx", R02 ? "_r02" : "", prune ? "_pruned" : "");
-    FILE *js = fopen(jp, resume ? "a" : "w");
+    FILE *js = fopen(jp, resume || resume_parts ? "a" : "w");
+    if (!js) { perror(jp); return 2; }
     int W = GW;
     u64 *core; size_t n;
-    if (resume) {
+    if (resume_parts) {
+        core = read_parts(resume_parts, &n); W = resumew;
+    } else if (resume) {
         FILE *f = fopen(resume, "rb");
         if (!f) { perror(resume); return 2; }
         fseek(f, 0, SEEK_END); n = (size_t)ftell(f) / 8; fseek(f, 0, SEEK_SET);
@@ -900,6 +1000,10 @@ int main(int argc, char **argv) {
     n = peel(core, n, W, &succ);
     for (;;) {
         printf("W %d core %zu cpu %.1f rss %.0f MiB\n", W, n, cpu(), rss_mib()); fflush(stdout);
+        if (W == SAVEW) {
+            char prefix[1024]; snprintf(prefix, sizeof prefix, "%s/checkpoint_W%d", dir, W);
+            save_parts(prefix, core, n);
+        }
         if (dump) {
             char p[1024]; snprintf(p, sizeof p, "%s/core_%d_%s.bin", dir, W, MODE ? "pq" : "xx");
             FILE *f = fopen(p, "wb"); if (f) { fwrite(core, 8, n, f); fclose(f); }
@@ -913,6 +1017,7 @@ int main(int argc, char **argv) {
             if (keep) { free(core); core = keep; n = nk; printf(" PRUNE W %d keeps %zu windows of UNRESOLVED components\n", W, n); }
             printf("W %d analysed cpu %.1f rss %.0f MiB\n", W, cpu(), rss_mib()); fflush(stdout);
         } else { free(succ); succ = NULL; }
+        if (FOUND_CLOSED) { printf("STOP discovery CLOSED W %d\n", W); break; }
         if (W >= wmax) break;
         if (2 * n > maxnodes) { printf("STOP max-nodes at W %d: lift would hold %zu windows\n", W, 2 * n); break; }
         u64 *nx = xalloc(8 * 2 * n);

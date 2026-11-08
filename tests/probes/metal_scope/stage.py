@@ -10,18 +10,37 @@ out=Path(os.environ['CAPPED_OUT'])
 def cpu():
     a=resource.getrusage(resource.RUSAGE_SELF);b=resource.getrusage(resource.RUSAGE_CHILDREN)
     return a.ru_utime+a.ru_stime+b.ru_utime+b.ru_stime
+def ps_cpu(value):
+    days=0
+    if '-' in value:
+        d,value=value.split('-',1);days=int(d)
+    fields=list(map(float,value.split(':')))
+    if not 1<=len(fields)<=3:raise RuntimeError('CPU_TIME_PARSE')
+    result=0.0
+    for x in fields:result=60*result+x
+    return 86400*days+result
 def thermal():
     r=subprocess.run(['pmset','-g','therm'],capture_output=True,text=True,timeout=4)
     text=r.stdout+r.stderr
     with (out/'thermal.txt').open('a') as f:f.write(text)
     limits=re.findall(r'CPU_(?:Speed|Scheduler)_Limit\s*=\s*(\d+)',text)
     if r.returncode or len(limits)!=2 or any(x!='100' for x in limits):raise RuntimeError('THERMAL_MONITOR_STOP')
-plan=json.loads(Path(sys.argv[1]).read_text());stop=[];records=[]
+plan=json.loads(Path(sys.argv[1]).read_text());stop=[];records=[];group_used={}
+def outer_cpu():
+    if not plan.get('include_outer_monitor_cpu',False):return 0.0
+    path=os.environ.get('CAPPED_MONITOR_CPU_FILE')
+    if not path:raise RuntimeError('OUTER_CPU_TELEMETRY_MISSING')
+    item=json.loads(Path(path).read_text())
+    if time.time()-item['at']>10:raise RuntimeError('OUTER_CPU_TELEMETRY_STALE')
+    return float(item['cpu_s'])
 for sig in (signal.SIGINT,signal.SIGTERM):signal.signal(sig,lambda s,f:stop.append(s))
 def save(n,x):(out/n).write_text(json.dumps(x,indent=2)+'\n')
 def run(job):
     args=[a.replace('{out}',str(out)).replace('{binary}',os.environ.get('METAL_SCOPE_BINARY','')) for a in job['args']]
-    if stop or cpu()>=plan['worker_stop']:raise RuntimeError('STAGE_STOP')
+    if stop or cpu()+outer_cpu()>=plan['worker_stop']:raise RuntimeError('STAGE_STOP')
+    group=job.get('cpu_group');start_cpu=cpu()+outer_cpu()
+    group_limit=plan.get('group_cpu_limits',{}).get(group)
+    if group_limit is not None and group_used.get(group,0)>=group_limit:raise RuntimeError('GROUP_CPU_STOP:'+group)
     thermal();t=time.monotonic();last=0;rc=None;reason='EXIT';use=None
     def limit():resource.setrlimit(resource.RLIMIT_CPU,(job['cpu'],job['cpu']))
     with (out/(job['name']+'.stdout')).open('w') as fo,(out/(job['name']+'.stderr')).open('w') as fe:
@@ -39,9 +58,11 @@ def run(job):
                         pid,status,u=os.wait4(p.pid,os.WNOHANG)
                         if pid:rc=os.waitstatus_to_exitcode(status);use=u;p.returncode=rc;break
                         raise RuntimeError('CPU_MONITOR_FAILURE')
-                    m,s=r.stdout.strip().split(':');total=cpu()+60*int(m)+float(s)
+                    total=cpu()+outer_cpu()+ps_cpu(r.stdout.strip())
                     save('live.json',{'job':job['name'],'aggregate_cpu_s':total,'wall_s':now-t})
                     if total>=plan['worker_stop']:reason='AGGREGATE_CPU_STOP';break
+                    if group_limit is not None and group_used.get(group,0)+total-start_cpu>=group_limit:
+                        reason='GROUP_CPU_STOP';break
                     if int(now-t)//5 != int(last-t)//5:thermal()
                     last=now
                 time.sleep(.05)
@@ -56,6 +77,12 @@ def run(job):
                     time.sleep(.05)
             record={'name':job['name'],'args':args,'returncode':rc,'reason':reason,'wall_s':time.monotonic()-t,'cpu_s':use.ru_utime+use.ru_stime,'maxrss_bytes':use.ru_maxrss,'worker_cpu_s':cpu()}
             records.append(record);save(job['name']+'.receipt.json',record)
+            if group is not None:
+                group_used[group]=group_used.get(group,0)+cpu()+outer_cpu()-start_cpu
+                record['cpu_group']=group;record['group_used_cpu_s']=group_used[group]
+                save(job['name']+'.receipt.json',record)
+                if group_limit is not None and group_used[group]>=group_limit:reason='GROUP_CPU_STOP';record['reason']=reason
+                save(job['name']+'.receipt.json',record)
     if reason!='EXIT' or rc not in job.get('success_returncodes',[0]):
         raise RuntimeError('JOB_FAILED:'+job['name']+':'+reason)
     if job.get('required_stdout_lines'):
@@ -72,4 +99,4 @@ try:
     for job in plan['jobs']:run(job)
     save('output_hashes.json',{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in out.iterdir() if p.is_file() and (p.suffix in ('.air','.metallib') or p.name=='scope')})
 except BaseException as e:stop.append(repr(e));raise
-finally:save('summary.json',{'records':records,'worker_cpu_s':cpu(),'stop':stop})
+finally:save('summary.json',{'records':records,'worker_cpu_s':cpu(),'group_used_cpu_s':group_used,'stop':stop})

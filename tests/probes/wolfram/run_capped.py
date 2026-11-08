@@ -130,6 +130,17 @@ def main():
         print("REFUSED: destination exists", file=sys.stderr); return 2
     os.makedirs(a.out)
     logp = os.path.join(a.out, "launcher.json")
+    monitor_cpu_path = os.path.abspath(os.path.join(a.out, "monitor-cpu.json"))
+    def publish_monitor_cpu():
+        # While the main child is live, CHILDREN contains reaped monitor
+        # commands. After main-child reap, this is the exact whole-run total.
+        own = resource.getrusage(resource.RUSAGE_SELF)
+        children = resource.getrusage(resource.RUSAGE_CHILDREN)
+        value = own.ru_utime + own.ru_stime + children.ru_utime + children.ru_stime
+        with open(monitor_cpu_path + ".tmp", "w") as f:
+            json.dump({"cpu_s": value, "at": time.time()}, f)
+        os.replace(monitor_cpu_path + ".tmp", monitor_cpu_path)
+        return value
     ps_cmd = "bogus-ps-for-test" if os.environ.get("CAPPED_TEST_PS") == "bogus" else "ps"
     minfree = int(os.environ.get("CAPPED_TEST_MINFREE_MIB", a.min_free_mib))
     def finish(reason, rc=None, extra=None):
@@ -137,6 +148,7 @@ def main():
             reason = "INTERRUPTED"
         rec.update({"exit_reason": reason, "child_rc": rc, "end_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                     "supervisor_cpu_s": round(resource.getrusage(resource.RUSAGE_SELF).ru_utime + resource.getrusage(resource.RUSAGE_SELF).ru_stime, 3)})
+        rec["aggregate_cpu_s"] = publish_monitor_cpu()
         if extra: rec.update(extra)
         if stop_signals: rec["stop_signals"] = stop_signals
         rec["inventory"] = {f: os.path.getsize(os.path.join(a.out, f)) for f in sorted(os.listdir(a.out))}
@@ -159,7 +171,9 @@ def main():
             os._exit(97)
     out = open(os.path.join(a.out, "out.txt"), "w"); err = open(os.path.join(a.out, "time_receipt.txt"), "w")
     try:
-        env = dict(os.environ, CAPPED_OUT=os.path.realpath(a.out))      # L974: the child can bind its artifact directory to this destination
+        publish_monitor_cpu()
+        env = dict(os.environ, CAPPED_OUT=os.path.realpath(a.out),
+                   CAPPED_MONITOR_CPU_FILE=monitor_cpu_path)
         p = subprocess.Popen(["/usr/bin/time", "-l"] + cmd, stdout=out, stderr=err, preexec_fn=preexec, start_new_session=True, env=env)
     except Exception as e:
         return finish("REFUSED", extra={"spawn_error": repr(e)})
@@ -172,6 +186,7 @@ def main():
         time.sleep(0.5 if a.track_tree else 1)
         if p.poll() is not None: break
         try:
+            publish_monitor_cpu()
             if a.track_tree:
                 live, rss = tree_update(owned, pgid, ps_cmd); n = len(live)
             else:

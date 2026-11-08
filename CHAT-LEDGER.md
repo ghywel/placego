@@ -34534,6 +34534,19 @@ My own pull: back to the SEP gap class (L1585): whether long survivors die at tw
 
 **Next for Local:** the SEP gap work, at the owner's word.
 
+
+## GC2742 — GPT owns Local's Intel width job; scope/control repairs before launch (2026-11-08)
+
+Owner assigns L1594 Intel job review/execution, followed by GPT's row119 pull while the single heavy worker runs. Full source/design and L1592 carry read. GC2734 translation/support and GC2741 cut/parity steps adopted PROVED hand/two-party on the checked guards; no earlierE/A4 witness inferred.
+
+**Necessary job repair:** unresolved-parent pruning preserves unresolved classification, not absence of later CLOSED children of a LOCKED parent. ArmA will therefore use the full xx core from40, within the same3CPU-hour/4wall-hour/RSS8GiB/swap4GiB limits, and its widest completed width may be lower. ArmB keeps the two specified width40 period7-word lineages and counts all actual exits, including targets. A known66-window lock need not have66 windows at every lifted width; control closure/output period and projection, not an invariant size. Current local dump inventory did not locate the prior full40 binary; recover its digest and rebuild the baseline inside ArmA's clock if needed. No enlarged budget or duplicated Local run. Source/hash/controls/real aggregate CPU and output freeze next; no research job launched yet. Row119 continuation will be hand work during the one serial graph job. Both schedules remain paused.
+
+
+## GC2743 — GPT: reviewed width-job implementation and preliminary controls frozen (2026-11-08)
+
+[Execution amendment and hashes](reports/GPT-LOCK-WIDTH-JOB-REVIEW-20261108.md). Full ArmA repairs the pruned-closure scope; checkpoint40 must match prior163695608-byte SHA256f736b89dcf124e5917abf381caf46b0961631ca1c4749dbc7d6519c5ed363f85. Export both small ArmB parents, independently check all leaks/periods, then B40..60 and fullA40..50 serially. No gap-dictionary/OVER/DFA/census repeat. Least observed period separated from SCCgcd; fixed66 cardinality assumption removed. Checkpoint/candidate files split at16MiB; main evidence1280MiB ceiling, single candidate withinnodecap, no rawfull-dump upload.
+
+CPU accounting strengthened: run_capped exports live outermonitor CPU and exact final self+reapedchildren total; stage optionally includes that live telemetry, failing closed on missing/stale readings, and parses hour/day CPU times. Existing per-process limits remain. Preliminarycontrol stage only: compile/scalar+NetworkX closure/SCC/period/checkpoint/missing-part/wrong-CLOSED and telemetry/parser controls;60aggregateCPU/outer80CPU150wall,128MiB disk, standardtree/RSS8192/swap4096/launch4096/floor1024/process8 guards. Prediction allpass; mismatch prevents longjob, no capenlargement. ControlplanSHA2564fd98a21e5c2586a6befa5b2cbacc3c5fd3817c660452a771ecaec305f2eb849. Main budget/binary pin finalized after controls, subtracting their actualaggregate from combined12000CPU ceiling. No graphjob launched yet; row119 handpull follows launch. L1592 fullcarry adopted; Local runs no duplicate.
 ## L1595 — Local: the SEP gap class and death, no signal; the pull moves to the stream side (2026-11-08 16:10 GMT)
 
 **The owner, in chat:** "then proceed with your SEP gap work". [Report](reports/LOCAL-SEP-GAP-20261108.md).
@@ -34559,3 +34572,21 @@ All five preregistered predictions failed and are kept. **So the class is invisi
 **The pull is cooler** (INSTINCT addendum): one more block only with a concrete candidate map or invariant.
 
 **READ-LEDGER to GPT**, for information.
+
+## GC2744 — GPT: graph controls pass; per-arm aggregate cap control frozen (2026-11-08)
+
+[Control result and grouped-budget check](reports/GPT-LOCK-WIDTH-JOB-REVIEW-20261108.md#control-outcome-and-grouped-budget-check--gc2744). Independent closed-lock lift sizes66/114/192 refute the fixed66 assumption; scalar/SCC/primitive-period/leak/checkpoint/missing-part/mutant controls PASS. Exact control-stage total3.057917CPU, no warnings or resource stop. Optional grouped accounting now adds reaped/live/outermonitor CPU to separated ArmA baseline/continuation and ArmB budgets. Freeze one deliberate0.1CPU-group/2CPU-spin test, outer8CPU10wall: expected GROUP_CPU_STOP, nonzero receipt, verified cleanup; no graph run in this cap control. Updated stage source/plan hashes in report. This verifies a cap, not a retry after a resource failure. Main binary pin and per-arm/global limits next, then hand row119 work while it runs.
+
+
+## GC2745 — GPT: controls pass; full-baseline/B/full-A long job frozen (2026-11-08)
+
+[Main launch freeze/binary/input hashes](reports/GPT-LOCK-WIDTH-JOB-REVIEW-20261108.md#main-launch-freeze--gc2745). Preliminarygraph controls and deliberateGROUP_CPU_STOP control PASS; exactaggregate3.898193CPU charged4. Source-pinned immutable runtime copies prevent active inputs changing during the handpull. Main baseline16..40 must match oldf736b89d… core digest and22 fingerprints; independently scalar-check the457 exported Bseeds. Then B40..60, then fullA40..50, one serial worker. Full A repairs scope of pruning; no invariant66-size assumption. No automatic growth or duplicate Local job.
+
+Main stage global11876CPU/outer11976CPU16290wall, groupA10790/groupB1190 with outer-monitor/reaped/live accounting; individual C slotsA540+10080CPU andB1100CPU. RSS8192MiB, swapgrowth4096, launch4096/floor1024, max8processes,16MiB/file,1280MiB specific checkpoint/candidate evidence ceiling. All pressure/thermal/monitor limits active. Stop at first cap; CLOSED candidate stops anarm and Bdiscovery prevents Acontinuation. Source/binary/plan hashes in report, including mainplan8a6667132745fb9c97c94c035b5c1990268896c2fe8d9ede54da991835a32bbd. No fullcore dump upload. Predictions remain Local's except corrected full-A scope/cardinality; widestwidth may be lower. Row119 handwork begins once this runs; no second compute job. Both schedules staypaused.
+
+
+## GC2746 — GPT: baseline exact, job stopped on false period7 label; corrected continuation frozen
+
+[Failure, parent correction and remaining-budget freeze](reports/GPT-LOCK-WIDTH-JOB-REVIEW-20261108.md#baseline-acceptance-failure-and-corrected-continuation--gc2746). Full40 checkpoint f736b89d… and22 legacy fingerprints match exactly. Independent parent check stops before B/A lift: rank9's379 windows have graphgcd63 **and primitiveword63**, not the lock7 word. Rank15's78 windows havegcd21/primitive7. This was inherited as a bad checker assumption; original failreceipt retained. A child inherits its LOCKED parent's entireword, so rank9 cannot supply a primitive7 lock at anywidth (scoped corollary for Local read). B now uses78 correctseeds; fullA still coversalllineages. No baseline rerun, no capgrowth.
+
+Continuation rechecks both scalar parentgraphs, then B40..60 andfullA40..50 fromtheexisting verifiedcheckpoint, pinnedimmutablecopies/parts andunchangedCbinary. Priorwhole-run CPU65.701727 charged66 againstoriginal12000total andA10800; groupAremaining10724/B1190,global11814/outer11914. Allpreviousmemory/pressure/node/output/wallstops unchanged. Prediction repairedchecksPASS/noCLOSEDbeforecap; furtherfailurestops. PlanSHA2563b4ec73d3dd2cb57ea3df75ec1c7792c2f92d5222c7a78c40f8189a56fb256ed. Ownrow119 handpull pauses only for this correction, then resumes with theoneheavyworker.
