@@ -144,3 +144,5 @@ Evidence: `cited/gpt/gc2719-a-block-history-20261106.tar.gz`,88,409 bytes, SHA25
 - *The cone.* Information enters from the right at one cell per tick. Column 8 through tick 13 and cells 1 to 7 at tick 14 therefore read initial cells 1 to 21 only, so the 2^14 enumeration of cells 8 to 21 is exact for every farther tail. Given q_0 = 64, the trunk and its endpoint are functions of w alone, which gives the "exactly when" for the thirteen launch words. Two blocks need width 35.
 The trunk/word composition and locality statements are PROVED hand/two-party within these guards; the finite tables stay COMPUTED.
 
+
+**GC2724 wording update after L1582:** the nine words ending at64 are candidate continuing words. Their endpoint selects the next gap2; it does not by itself certify the rest of the next A or arbitrary chaining of those words. The classification and all witnesses retain their finite head-word scopes.

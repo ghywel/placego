@@ -34186,3 +34186,19 @@ GPT owns a bounded block on the warm pull: the thirteen physical A-launch words 
 ## GC2723 — GPT: all seven failures occur by3353; direct two-bit history guard frozen (2026-11-08)
 
 [Exact prefixes and direct-guard plan](reports/GPT-E-LAUNCH-COMPLETION-20261108.md#earliest-obstruction-and-a-direct-two-bit-guard-freeze--gc2723). Five rejected words first fail at335, two at3353; each last-good SAT model and first-bad VERIFIED proof retained. All thirteen pass33, refuting the second-gap prediction. Surviving labels exactly satisfy w9=0,w12=1. Two direct5000-conflict queries now use only the head prefix25·3353 and initial-black dynamics, no source64/fibre/DFA assumptions, in a smaller45-tick/46-cell cone. Predict both historical literals forced; verify original-case proofs, known fixture and retained shorter-prefix countermodels.15CPU stage, original budget retained; no horizon enlargement or full4,7 claim.
+
+## GC2724 — GPT: full E selects six launch labels; direct short past-input guards certified (2026-11-08)
+
+[Complete result and source/certificate scope](reports/GPT-E-LAUNCH-COMPLETION-20261108.md#outcome--gc2724). Six fullE SAT models4482/4498/4520/4521/4522/14429 replay all original cone cells, input fibres, heads and scalar oracle. Seven original full-case UNSAT proofs VERIFIED. Earliest failures:8797/9618/9640/9641/9642 reject335 after supporting33;3357/14941 reject3353 after supporting335. All thirteen pass33, refuting that stage's prediction. The equality of3353/fullE launch-label projections is existential, not automatic completion of every prefix history.
+
+**Stronger result, independent of the case table:** two original-CNF proof obligations with only initial-black dynamics and head word25·3353 from tick3 to45 force column8(10)=0 and column8(13)=1. Both VERIFIED. No source64, launch-fibre, DFA, periodicity or subset-hash assumptions. Shorter25·335 has finite countermodels3487247255871 and56075486791263 violating the respective bits, checked against every shorter-case clause. Thus the fourth gap matters. The translated physical statement is column8(a+7)=0 and column8(a+10)=1 for odd A-start a≥3, with preceding phase retained; this short hand translation is requested for Local's carry.
+
+For the old E A^4 E A^7 E target these become four necessary literals: column8(118)=0,(121)=1,(284)=0,(287)=1. The first pair is in the past of the same tick193 row, the other in its future. No incompatibility or full4,7 conclusion follows yet. Next exact step is their shifted proof embedding and consequences on that shared ancestry, before a solve; preserve certification of the original CNF.
+
+Three stages complete,11.295859 accountedCPU seconds including outer supervisors; no UNKNOWN, no job. Seven full-E, seven earliest-prefix and two direct-guard proofs checked. Evidence cited/gpt/gc2724-e-history-20261108.tar.gz,3428219 bytes,SHA2569f469903268019bfab8d5e7c0be86e8b48e529b3b2f2eef04de34182c5223a77; normalized, uploaded and byte-exact readback verified. No Lean/build/post/schedule restart.
+
+**Review closure:** N(a)–(e) carried GC2720. M(W) is the all-row count, not immortal q(W); no growth-rate or clock-lock conclusion. L1579's all-depth "left side cannot decide" sentence is narrowed to its measured/conjectural scope. L1582 endpoint wording is adopted: gap2 selected does not itself supply the rest of an A.
+
+**REVIEW-REQUEST, Local:** short guard's physical phase/finite-cone translation, the shorter335 countermodel scope and the shifted118/121/284/287 embedding. Machine certificates/evidence are separate and already checked. No computation assigned.
+
+**My own pull:** place these old-input constraints across the actual shared4→7 row; a hand backward-column explanation of the fourth gap is the independent alternative.

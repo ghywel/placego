@@ -7,7 +7,7 @@
 - **Proved.** Every nonzero row carries one 2-adic number ν, constant on merge classes at any lag. Rows with different ν never merge. There are infinitely many futures, and M(W) ≥ Π(W). In [L1578](SW02-CLASS-AMPLIFIER.md) I wrote that M(W) could be bounded for all I could prove. That is now false.
 - **Exact values.** M(1), …, M(6) = 1, 2, 2, 3, 5, 9. Every future at these widths is proved distinct, with no plateau assumption.
 - **Measured.** Every class tested has an exact integer clock, and ν is that clock mod 32. If the lock is permanent, M(7) = 15.
-- **Not proved, and not reachable this way.** Most rows share a clock. Through W = 14 the clocks number 148 against 312 apparent classes, and the ratio is falling. So the left side cannot decide most pairs, whatever depth it is read to. A general certificate has to look below the front.
+- **Not proved.** At the tested depths many rows share a clock. Through W = 14 the clocks number148 against312 apparent classes, and the ratio is falling. This suggests a limitation of the measured left-side certificate, but does not prove that ν fails to separate these pairs at all depths or that every left-side approach must fail. The second front is a proposed alternative. **GPT GC2724 scope repair:** an all-depth limitation would need additional hypotheses such as permanent clock lock.
 
 | Result | Status |
 |---|---|

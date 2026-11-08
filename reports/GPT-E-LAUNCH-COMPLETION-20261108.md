@@ -51,3 +51,74 @@ A manually inspected pattern in the resolved thirteen labels is that the six ful
 Before accepting the guard, test it directly without source64, fixed w, the thirteen-fibre table or any DFA assumption. Encode only the initial-black local rule and head word25·3353 from tick3 to45, using a45-tick/46-cell cone. Add either column8(10)=1 or column8(13)=0; each query has5000 conflicts and must give a checked original-CNF contradiction to establish its proposed implication. Prediction: both UNSAT. Counterfactual: SAT identifies a missed scope guard, UNKNOWN leaves the direct claim open. Known real seed2135555 cut at74 controls the base. The already retained prefix335 models for3357 and14941, clipped to46 initial cells, must satisfy the shorter base and opposite historical bits; these are countermodels to shortening the head prefix. No new search for them.
 
 stage-stop15 aggregateCPU, main10CPU/50wall, two direct checker slots1CPU/3wall, outer20CPU/75wall; unchanged RSS/swap/headroom/process/file/disk/thermal stops. Prior actual10.262827 plus this maximum stays within the original100CPU allocation. Sources `e_short_guard.py` SHA256 `c4e8803b22a00cf035a06cf5783d25b0d09d766fa0ed9c9c507da2af0ed009a1`, `e_guard_proof.py` SHA256 `aaba0a22717a3e6bbf6523d99bd441026fd8dc302331fce6564ebadaa10fd748`; prefix data SHA256 `475c2b34207c60e4ee85cb4cf683cc37e46451419005b6510dd32ea202358d18`; all other source/checker hashes in frozen plan. This shrinks the tested cone and removes assumptions; it does not enlarge the original history or revive full4,7 SAT.
+
+## Outcome — GC2724
+
+**Six launch labels can supply a whole E; seven cannot. More sharply, a short head prefix forces two earlier column8 bits.** The new implications were checked directly with no launch-word, source64 or window-graph assumptions. All three stages are complete; no job remains.
+
+### Exact completion of the thirteen retained launch fibres
+
+| Launch word(s) | Last realizable E prefix | First impossible prefix | Full E |
+|---|---|---|---|
+| 4482,4498,4520,4521,4522,14429 | 33535555 | — | SAT; finite witnesses replayed |
+| 8797,9618,9640,9641,9642 | 33 | 335 | UNSAT; checked proofs |
+| 3357,14941 | 335 | 3353 | UNSAT; checked proofs |
+
+The initial prediction that at least one word already fails at33 was refuted: all thirteen can supply it. Five fail at the following5, and two at the next3. Each rejection has both a SAT witness for its last good prefix and a VERIFIED proof for its first bad prefix. The full-E seven negative cases also have separate VERIFIED proofs against their original full-head CNFs. All seven launch-only controls are SAT with the same initial-black/source/input constraints.
+
+The six positives preserve one complete physical history from an initial finite natural through tick85, including every cell of the cone and membership of the tick1 low21 projection in the retained GC2719 fibre. All sampled heads, the whole input word and a separate scalar-cell replay pass. The known real fixture, cut from seed2135555 at tick74, uses launch word4520 and satisfies every original case clause. A reversed first boundary bit changes the first output head, as required by the phase control.
+
+Thus the existential projection onto the thirteen launch labels is already the same at3353 and at the full E. This does **not** say that every history reaching3353 completes E, or that every21-cell representative of a surviving label extends. The witnesses choose compatible higher initial cells once and retain them throughout.
+
+### The short historical guard
+
+Use the original initial-black frame, with A's first black at tick3. The head word is
+
+    25 · 3353
+
+from tick3 through45. The direct CNF contains only the local updates, alternating boundary, these sampled heads and the negation of one proposed conclusion. It contains **no** fixed launch word, source64, DFA, periodicity or finite-certificate hypothesis. Both proof obligations are UNSAT and independently VERIFIED by drat-trim:
+
+    column8(10) = 0,
+    column8(13) = 1.
+
+These are the old incoming bits w9 and w12. They were suggested by the thirteen-case table, but their direct certificates do not rely on that table. A45-tick cone reads only the first46 initial cells; arbitrary cells beyond it cannot affect either the heads or these two observations.
+
+Equivalently, if A starts at an odd tick a≥3 in a physical history and is followed by the gaps3353, then the translated guard is
+
+    column8(a+7) = 0,     column8(a+10) = 1.
+
+Translation uses an even time shift, so the alternating boundary phase is preserved. The preceding odd-phase sample and its previous black-input step exist at a≥3; no initial a=1 claim is made. For a complete E following A, these observations lie7 and4 physical ticks **before E starts**. They are restrictions on the history supplied to the front, not on an independently reset exterior.
+
+**Status:** the two original finite CNF implications are machine-certificate verified. Their physical frame/translation/finite-cone formulation is a short hand specialization for Local's carrying read; no Lean verification is claimed. Unlike the earlier return grammar, these certificates do not inherit a subset-hash/completeness caveat from a window graph.
+
+### The fourth gap matters
+
+The same frame with the shorter head word25·335 has concrete finite countermodels:
+
+| Initial root (first46 cells) | Violated proposed conclusion |
+|---|---|
+| 3487247255871 | column8(13)=0 |
+| 56075486791263 | column8(10)=1 |
+
+Each satisfies every clause of its shorter-head CNF, including the opposite historical bit. These roots come from the retained last-good335 witnesses, with cells beyond46 discarded; no new search was needed. Therefore dropping E's fourth gap from the premise invalidates each proposed literal. “3353 is shortest” here means among these nested prefixes of E, not among all possible temporal premises.
+
+### How this bears on the physical4→7 question
+
+The earlier fixed E A^4 E A^7 E history has E starts at1,125,291. Its last A before the latter two E's starts at111 and277. The new guard consequently requires
+
+    column8(118)=0, column8(121)=1,
+    column8(284)=0, column8(287)=1.
+
+The first pair belongs to the past of the shared tick193 row; the second to its future. This is the requested kind of joint-history information, with an explicit finite proof obligation. It does not prove incompatibility of those pairs or resolve that physical query.
+
+**Next executable step:** place these four certified constraints in the retained193/167 shared-history interface, with the exact even-shift embedding of each proof. Inspect what they force on the same completed row before any solve. Any later UNSAT result must still certify the original CNF; an augmented-CNF receipt alone is insufficient. Do not automatically raise a conflict limit, horizon or graph width. A hand explanation of why the fourth gap fixes the older column8 bits is an independent alternative.
+
+### Evidence and resource receipt
+
+All main queries resolved within their frozen budgets; no UNKNOWN remains. Seven full-E proofs, seven earliest-prefix proofs and two direct-guard proofs were checked. Other retained intermediate proofs are not counted as checked. Source versions, exact original CNFs, DRAT files, checker outputs, positive models, last-good countermodels, original launch fibres and normalized resource plans/receipts are retained.
+
+Evidence: `cited/gpt/gc2724-e-history-20261108.tar.gz`,3,428,219 bytes, SHA256 `9f469903268019bfab8d5e7c0be86e8b48e529b3b2f2eef04de34182c5223a77`; verified TLS/raw-body upload and exact readback. The manifest includes hashes of raw receipts before path normalization. No private paths or credentials are published.
+
+Total accounted CPU including all three outer supervisors:11.295859 seconds; outer wall11.69s. Maximum sampled process-tree RSS60,576KiB, maximum observed4 processes, maximum worker rusage48,939,008 bytes. Minimum recorded headroom6019MiB; zero observed swap growth; thermal/monitor/output stops stayed active. No job, build, portal submission or schedule restart remains running.
+
+**My own pull:** carry the two old-input guards across the actual shared row of the4→7 history, rather than infer a reset from the six surviving labels.

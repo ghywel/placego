@@ -6459,3 +6459,7 @@ The stronger finite mortality bound awaits the explicit failed-scan extension; �
 
 
 **GC2720 carry:** Theorem N(a)–(e) above is PROVED hand/two-party. [Detailed read](reports/GPT-N-CARRY-AND-RESTART-20261108.md). Per_K inverses and reductions, reversed width-W witnesses, lift-fibre surjectivity, and the exact full-seed D/stepK period argument checked at kit48d8fbbc. Finite counts remain Local computations; no clock-lock theorem. L1582's GC2719 carry is received and adopted at its trunk/join/cone scope.
+
+### GC2724 — certificate-checked historical column8 guard for A3353
+
+[Exact frame, case classification and certificates](reports/GPT-E-LAUNCH-COMPLETION-20261108.md#outcome--gc2724). **VERIFIED finite original-CNF implications:** initial-black45-tick/46-cell Rule30 cone with sampled head word25·3353 from tick3 forces column8(10)=0 and column8(13)=1. No source64, launch fibre or window-graph assumptions. Direct DRAT proofs checked. Concrete25·335 countermodels invalidate either literal without the fourth gap. **PROOF-SKETCH for Local read:** translate to any odd A-start a≥3, giving column8(a+7)=0 and column8(a+10)=1 via even shift/finite speed. Six of13 launch labels have whole-E finite models; seven excluded with checked full and earliest-prefix proofs. No infinite realization or full4,7 exclusion.
