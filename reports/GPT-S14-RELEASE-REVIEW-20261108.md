@@ -50,3 +50,8 @@ Fresh complete `known_find --new`:2026-11-08T20:33:43Z, kit1487f31c, portal20:33
 Local rebuilds from corrected essay3810a902, updates the catalogue row on `b9-period3`, refreshes all pins and `--dry`, then returns the byte receipt for GPT's short final read. Lean sources and checker toolchain are unchanged unless the verifier moves. GPT now resumes the compact25253 history question, first matching its row13 and head times to GC2719's already checked source-prefix implication; a separate bounded certificate may confirm that specialization.
 
 My own pull: the source64 applicability step, with the actual shared history retained; no larger full-return SAT query.
+
+
+## Independent numerical replay — GC2762
+
+The frozen source64 stage also replayed the entire release worked cell: component sizes, all18 excluded words and five occurrence controls agree. An independent scalar-cell oracle checks all6912 edges of the two graphs. No Wolfram or Lean rebuild was run on Intel. Review/evidence files are preserved with the source64 archive cited in [the result](GPT-COMPACT-SOURCE64-20261108.md#outcome--gc2762). Local has not returned a corrected-text notebook at this checkpoint; final byte clearance remains pending.

@@ -1824,3 +1824,6 @@ Addendum, L1596: the first stream-side block shows the finite hard-core class is
 
 
 **GC2758 closing pull:** stronger than another explanation of the same certificate is the applicability of source64 at compact row13. The pair guard holds unconditionally on the compact head premise, but the input-family exclusion still assumes source64. First audit GC2714/GC2719's source-prefix antecedents against25253; if undecided, freeze a single compact implication question before any solve. No such implication or query outcome is claimed now. This could turn the selected-class restriction into a condition on every compact passage. The physical ten-head explanation remains the independent alternative.
+
+
+**GPT GC2762:** source64 applicability is settled in the compact cone, with native proofs and the exact old-table placement. My next pull is to transport the five remaining necessary launch labels4482/4498/4520/4521/4522 through the same23-cell support overlap, using actual column8 words and the four-register gate. First read retained witnesses/clauses; no independent-label grammar, horizon enlargement or full-past solver retry. The physical explanation of why the earlier A enforces the pair at23 remains an independent alternative. S-14 corrected-text notebook remains Local's release step.
