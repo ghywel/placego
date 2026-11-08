@@ -34344,3 +34344,18 @@ My own pull: the period-14 tree. lock7 and lock7b share column words on columns 
 **Audit/resources:** the last tiny no-search check ran after a concurrent Local push blocked its intended pre-run commit; my orchestration failed to stop it. On-disk plan/source hashes passed and caps stayed active, but successful prior git publication is not claimed. Initial error and corrected check retained.10.525277 accounted research CPU including outer monitors; maximum sampled234088KiB, minimum sampled5512MiB headroom, zero swap growth, no pressure/thermal stop. Evidence cited/gpt/gc2734-shared-history-20261108.tar.gz,8317118bytes,SHA256f46bf0c3a32e4fba9e976c80057344f2fefd3c2881d034501df3744bedfc6fd2, byte-exact verified transfer. Repeated full negative-case CNFs have reconstruction recipes/digests; originals/proofs/shortcases/receipts/source versions/audit retained.
 
 Local L1586 merged; complete ledger/pointer read, S04nb2 and Block8 packet carrying reads queued, not acknowledged as reviewed. Research block complete, no job, both schedules remain paused. Next executable step: exact adjacent-column relation across the23-cell support band with the same ancestry, or a hand backward-column derivation of the older-pulse black-bit constraint; freeze any new run. My own pull: that older pulse's relational memory across the shared row.
+
+## L1587 — Local: S-02 posted, Lean Verified (R30-20261108-0c4472); kit PR pending the owner's word (2026-11-08 13:15 GMT)
+
+**The owner, in chat:** "Yes, post S-02" (after GC2728's RELEASE REVIEW PASS).
+
+**Portal.** [R30-20261108-0c4472](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-0c4472): **Lean Verified**, submitted 13:13Z, checked 13:14:50Z, kernel replay of 143 constants passed, nine headlines all ok, standard axioms only, Lean 4.35.0, kit `5fb59158`, image 18. Fresh checks just before posting:
+- `known_find --new` at portal 13:13:07Z added only R30-20261108-b1819c and its kit PR #224 (left diagonals). Nothing touches late twins, and `late_twin`, `F_shiftRight` and `band_settles` have no hits.
+- Every packet file matched the pins GPT reviewed in GC2728: notebook nb2 `83e87be1…`, portal source `4322dc31…`, abstract `72fcf6cc…`, essay `0d108613…`, title and headlines.
+- The verifier kit and image were unchanged.
+
+**Kit.** The branch `s02-late-twins` now has two local commits: `8900e45` (the module) and `4c1b852` (the catalogue row with GPT's band wording from GC2726 and the portal id filled). It equals the reviewed `kit-integration.patch` with the id filled, and its module is byte-identical to the reviewed kit form. Kit main is still `48d8fbbc`. The packet's `PR-BODY.md` and `kit-integration.patch` now carry the id. **The PR is not opened.** The owner's word this time was to post; for S-01 it was "post and PR", so I ask before opening it.
+
+**READ-LEDGER to GPT**, for information: no review is needed.
+
+**Record searched:** `known_find --new` (kit `48d8fbbc`, portal 13:13:07Z, 13 open PRs); `known_find` on late_twin, twin with width, F_shiftRight, band_settles.

@@ -1,6 +1,6 @@
 # From tick 46 on, every row beside the wall has a twin (queue row S-02)
 
-**RELEASE REVIEW PASS, GPT GC2728. NOT POSTED.** Scope repairs are applied; nb2 source, Abstract, essay, output digests, sanitized release pins and dry receipt pass the final byte read. [Review](../../../GPT-S02-RELEASE-REVIEW-20261108.md). The owner's posting word remains required. Built at kit main `48d8fbbc`; the portal form passes `Check` at the verifier's kit `5fb59158`, image 18.
+**POSTED, Lean Verified (L1587):** [R30-20261108-0c4472](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-0c4472), submitted 13:13Z at the owner's word, checked 13:14:50Z: kernel replay of 143 constants passed, 9 headlines, standard axioms only, kit `5fb59158`. Release review PASS, GPT GC2728 ([review](../../../GPT-S02-RELEASE-REVIEW-20261108.md)). Kit PR not yet opened: the kit branch `s02-late-twins` is committed locally with the reviewed row and the id filled (`4c1b852`). Built at kit main `48d8fbbc`; the portal form passes `Check` at the verifier's kit `5fb59158`, image 18.
 
 | Form | File | sha256 | `Check` |
 |---|---|---|---|

@@ -1,4 +1,4 @@
-Rule30LateTwins: from tick 46 on, every row beside the wall has a twin of the same width with the same image two ticks later (PORTAL-ID)
+Rule30LateTwins: from tick 46 on, every row beside the wall has a twin of the same width with the same image two ticks later (R30-20261108-0c4472)
 
 This adds `lean/Ruliology/CellularAutomata/Rule30LateTwins.lean`, with its `public import` line in `lean/Ruliology.lean` and a row in *Added in the kit*. It imports `Rule30ZeroBoundary` only.
 
@@ -23,6 +23,6 @@ This adds `lean/Ruliology/CellularAutomata/Rule30LateTwins.lean`, with its `publ
 
 **What it does not do.** A twin has the same future as its row two ticks later, so the twins add rows, not futures. Nothing here bounds a death time or proves `Q01`.
 
-Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
+Portal entry: [R30-20261108-0c4472](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-0c4472).
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
