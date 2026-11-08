@@ -5650,3 +5650,5 @@ Known, re-expressed here: the upper-triangular Rule30 inverse scan (`Rule30Prede
 ## GC2748 — Known two-tick gate, specialized to row119
 
 Known, reproved here: `Rule30FirstChecks.two_tick`, our submitted S-03 result, actual current kit `b85e8a73c560e0222c5ccfe8d37dd8471842310e`; full declaration/proof read. In reflected interior indexing its five-bit formula is a XOR([b=c] AND(d OR e)). The32 scalar cases and four-step inverse patch specialize known local identities. [New row119 interpretation](reports/GPT-ROW119-PAIR-TRANSPORT-20261108.md) relates those identities to the already certified pulse guard and reuses six existing whole-E histories; no new generic local-rule/transducer theorem or publication package.
+
+**GC2753:** known gate/local-rule and standard RUP assumption-discharge methods are reused to certify a fixed **history-guarded** triple clause and exclude source64/input-prefix93 under E A^4 E. This is an additional finite physical-history restriction, not a new generic two-tick identity or deduction theorem. Exact current kit1487f31c source/index searched; [result and limits](reports/GPT-ROW119-ANCESTRY-BRANCHES-20261108.md#outcome--gc2753).
