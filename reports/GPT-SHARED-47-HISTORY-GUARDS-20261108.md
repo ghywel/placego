@@ -65,3 +65,33 @@ Follow-up hashes:
 | gc2731-corrupt-prefix.drup | `1f9c645c0ccfbfda98116d08f5e754ea3e1469a9a89bb77d0797d8c3fcc11d6d` |
 
 Private follow-up plan SHA256 `3057c81c698d8dbd297d390544efe78317d5eb2bc31084c04b4ff65b246b6acd`. Prediction: accepted unchanged derivation, rejected wrong-sign mutant. Any mismatch stops without another retry.
+
+## Verified prefix; change to the historical premise question — GC2732
+
+Corrected native forward RUP check returns **s DERIVATION**, no empty clause, for the unchanged3440-addition prefix; the wrong-sign-final-unit control returns **s NOT VERIFIED** at line3440. Both exact output checks pass and the adapter stage completes. This is certification of an implication derivation, explicitly not an UNSAT proof. Follow-up1.278811 accountedCPU including outer monitor; total so far8.904497CPU.
+
+There is no seam-unit transport to pursue from these four bits alone. Before a solver call on the full target, change representation to the backward forcing premise: **are the old column8 bits forced by E's3353 alone, or does their force genuinely use the preceding A=25 history?** This is a discriminating local question about why the guards arise. It does not erase history when composing two blocks.
+
+Freeze two queries on the existing45-tick/46-cell source cone: delete precisely the seven sampled A-head clauses at ticks3,5,…,15, retain all E-head clauses17,…,45 and initial-black local dynamics, and negate each guard in turn.5000conflicts each, no retry. Prediction: SAT for both, so the preceding history carries necessary information. Counterfactual: a checked UNSAT strengthens that guard to E alone; UNKNOWN leaves this unclassified. Every SAT model must replay all original case clauses, every cone cell, all E heads and an independent scalar updater; it must violate at least one removed A-head premise, and a wrong-bit unit must reject it. This only shows the collection of seven removed premises matters, not that each individually is necessary.
+
+Extract both old verified proof cores first, record which head premises their proofs use, and check each core clause against the exact old source. A used premise is proof support, not proof of its logical necessity. New UNSAT answers export their own original-case CNF/DRAT and get native checks. No enlarged time/space/seed/graph, no full4,7 solve, no theorem-optimality or new novelty claim. Record searched remains GC2719/2724 source/controls and current12:09:59Z kit/portal state; E-only guard was not tested there.
+
+One serial stage: main18CPU/60wall; four native slots2CPU/6wall; aggregate30CPU, outer40CPU/100wall, same RSS8192/swap4096/headroom4096/floor1024/process6/file16/stage128MiB stops. This is a new, strictly relaxed local-premise test, not a retry of the failed adapter or the cold physical target. Total prior8.904497 plus this30CPU ceiling remains below the original80CPU block allocation.
+
+| Frozen input/source | SHA256 |
+|---|---|
+| tests/probes/swarm/sw02/block3/history_guard_premises.py | `596b4d1be21565bba753f7f614522863dc792f2654d3bfd292c3d9d6b8c2bb88` |
+| tests/probes/swarm/sw02/block3/history_guard_core.py | `9f343de8d13a5fbda3327ad3cc0279e879eda206a937ca613cfd5ba961f34925` |
+| tests/probes/swarm/sw02/block3/e_guard_proof.py | `aaba0a22717a3e6bbf6523d99bd441026fd8dc302331fce6564ebadaa10fd748` |
+| tests/probes/swarm/sw02/block3/e_short_guard.py | `c4e8803b22a00cf035a06cf5783d25b0d09d766fa0ed9c9c507da2af0ed009a1` |
+| tests/probes/swarm/sw02/block3/physical_47.py | `f7751b7ef59021e3895511221d78f2deb79b019080c32febf92057baf33eea7d` |
+| tests/probes/swarm/sw02/block3/intel_worker.py | `2442c769f0054db8133de0958de672f996df884c100e8cfe8e50499fabb47a94` |
+| tests/probes/metal_scope/stage.py | `3ecffb8d7d7bcccdc55fa6cd197b0b3d213fe532298bf900457518580c53f62b` |
+| tests/probes/wolfram/run_capped.py | `26f850a8c1ba3905e00093cfa52331e94ee3d48ebe41c8b69b90b735b0a5ec3b` |
+| installed drat-trim | `5a0ec55870ad0fe33e4984e53873743bd7eb9360af53ca22db879524ff3e7c93` |
+| retained guard10.cnf | `5f97f9c5e95c1762f73cb84cd6a4b2bfacc16a5b4c66a8e920ef26acde5c2e42` |
+| retained guard10.drat | `362ebdd44c6d87cad1a846afdf578604af7ee3cbb5c41c2d5f7e390d9ca85155` |
+| retained guard13.cnf | `26bda29c45eabeea356d3eb6ebda527777ffb05b324a2ee6ca442a437c120fef` |
+| retained guard13.drat | `270e63e74d98902fe4a0b4c2292d70e9ddcea108afd871bd77c161eae84faf28` |
+
+Private plan SHA256 `0ab61ffb258106c34087ff587ecf7b2dfc2b94609aaab98b812cb83b4911ea42`.
