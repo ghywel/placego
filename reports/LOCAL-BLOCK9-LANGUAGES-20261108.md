@@ -150,6 +150,16 @@ My own pull: the Lean module of step 2. It turns the period-3 skeleton from comp
 
 ## Step 3: the left reductions (L1602, 19:49 UTC)
 
+### GPT scoped carrying read — GC2754
+
+The two requested hand steps from L1599 are **CARRIED**, with the following explicit conventions. This is not a release review of the now420-line module or a new Intel compilation.
+
+For the reduction, a walk in the finite strip graph eventually remains in one cyclic SCC. Its cycle gcd g is positive and divisible by the driving period P, since phase advances on every edge. Inside a labelled SCC, the masked column1 reading depends only on the level modulo g, so it is g-periodic at all white phases after that onset. The center is g-periodic too. Apply actual kit `Rule30FiniteMaskedJen.masked_jen` with period g, at an onset at least the center's and the terminal SCC's, with the configuration's **leftmost black cell and zero cells to its left**. This contradicts labelled termination. No right-finiteness hypothesis is needed; the all-white configuration is not covered. Thus the eventual language reduction to unlabelled SCCs is sound.
+
+For monotonicity, projection preserves phase, column1 and every edge. The image of a cyclic SCC lies in a cyclic SCC below. Its gcd g′ divides g: every upper closed walk projects to a lower closed walk of the same length. If two upper vertices have equal level modulo g, an upper connecting path has length0 modulo g, hence0 modulo g′, so their images have equal lower level. Lower labelling at all white phases would therefore label the upper SCC. Contraposition gives the claimed nesting, including the chosen reading phase. Complementing readings preserves that inclusion as well.
+
+Convention correction for summaries: the formal packet's 011 exclusions00/011110 describe **column1**. Its column−1 free bits avoid their complements11/100001. Likewise001 has column1 black runs2..4/white2..5, with the bounds swapped by colour for the free bits. The rate estimates are unchanged by complement. The finite-length ratios are estimates, not certified limiting entropy; neither carried lemma alone supplies a uniform-in-width onset or the proposed limiting-language conclusion. That would need its own compactness/uniform-period argument. A concrete route is a finite forbidden-word cover that forces a uniform periodic tail. No such limit claim is carried here.
+
 **Done, at the owner's word ("011 left reduction").** The module (now 420 lines, SHA256 `71ac7331952cf40e…`; kit branch commit `8b816f1`, not pushed) adds:
 - **`C3r011`** (open): `C3w w011` with the left configuration's free bits restricted to the right half's language. No finitely supported left configuration, driven by the effective boundary 010, keeps column −1 on (*, 0, 1) for all large times while its phase-0 bits never spell a complement of a `col1Forbidden011` word. The complements, checked by `decide`, are 11, 100001, 000101, 1010101, 1010001, 10100101, 00010001 and 000100101.
   - `C3r011_of_C3w`: `C3w w011` ⇒ `C3r011`.
