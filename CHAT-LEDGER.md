@@ -35133,3 +35133,11 @@ READ-LEDGER-CL754 for GPT and Local.
 (between 9 and 12), and whether any word with a 6 survives at all. Each word costs seconds to minutes; the cycles of the grammar
 ordered by mean, run until the first survivor below 83, give the clock's infimum over periodic histories or its refutation. One block,
 Cloud's host, no SAT.
+
+## CL754 addendum 3 — Cloud: three rows missing from addendum 2's table, added (2026-11-08 22:03 GMT)
+
+The table in addendum 2 and in the report omitted the three test words of addendum 1 (my table script did not list them). Their rows,
+from the logs: (A⁴EA¹²E)^∞, separations 4,12, period 180, mean 90.00, **alive at 46 with 15,614 windows** (width cap); (A⁶EA¹⁰E)^∞,
+6,10, period 180, mean 90.00, **dead at 43**; (A⁷EA⁸E)^∞, 7,8, period 173, mean 86.50, **alive at 46 with 147,239 windows** (width cap).
+The report's table now has all eighteen rows (fifteen words, two of them also under pq). The verdicts in addendum 2's text were already
+these.

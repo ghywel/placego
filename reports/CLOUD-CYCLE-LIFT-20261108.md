@@ -98,6 +98,9 @@ superset of xx moves, so a pq death implies the xx death):
 | (A6EA7E)^∞ | 6,7 | 159 | 79.50 | xx | **dead at 43** |
 | (A7E)^∞ | 7 | 83 | 83.00 | xx | alive at 46: 70,088 windows (width cap) |
 | (A8E)^∞ | 8 | 90 | 90.00 | xx | alive at 46: 68,359 windows (width cap) |
+| (A4EA12E)^∞ | 4,12 | 180 | 90.00 | xx | alive at 46: 15,614 windows (width cap) |
+| (A6EA10E)^∞ | 6,10 | 180 | 90.00 | xx | **dead at 43** |
+| (A7EA8E)^∞ | 7,8 | 173 | 86.50 | xx | alive at 46: 147,239 windows (width cap) |
 | (A4E)^∞ | 4 | 62 | 62.00 | xx | **dead at 38** |
 | (A4EA6E)^∞ | 4,6 | 138 | 69.00 | xx | **dead at 39** |
 | (A5E)^∞ | 5 | 69 | 69.00 | xx | **dead at 37** |
