@@ -1,0 +1,27 @@
+PASS A1: v(119,6..8) = 35826..35828 and v(121,8) = 36309
+PASS A1: the full head word ends at tick 359
+PASS A1 original: every cell is the Rule 30 gate with the drive at column 0 (64620 cells)
+PASS A1 original: column-1 units include exactly the head word through 359
+PASS A1: the original has no other units
+PASS A2: past heads end at 193 and agree with the original there
+PASS A2: S (253353 at source 3..45) is the original heads 111..153 under +108
+PASS A2 triple: every cell is the Rule 30 gate with the drive at column 0 (18721 cells)
+PASS A2 triple: column-1 units include exactly the head word through 193
+PASS A2 triple: extra units are the three whites at (119, 6..8)
+PASS A2 word: every cell is the Rule 30 gate with the drive at column 0 (18721 cells)
+PASS A2 word: column-1 units include exactly the head word through 193
+PASS A2 word: extra units are row 109 cells 1..7 = 64 and column 8 at 109..119 = bits of 93
+PASS A3: cells > 194 never move heads <= 193 or row-119 cells 6..10; cells > 129 never move the patch
+FAIL A3: cell 194 moves head 193 for some root (tight)
+PASS B: low-seven recurrence equals the true step (20000 random rows)
+trunk [64, 96, 49, 27, 104, 44, 103, 57, 78, 115, 28]
+PASS B: trunk 64 96 49 27 104 44 103 57 78 115 28; cells 6, 7 white at 119 and the eleventh input white
+PASS B: saved 14429 replays its rows; row-1 low seven 64; column-8 word at source 1..14 = 14429 (low eleven 93); cells 6..8 white at 11
+saved labels and their column-8 words: {4482: 4482, 4498: 4498, 4520: 4520, 4521: 4521, 4522: 4522, 14429: 14429}
+P=0 root: {'S': True, 'P': 0, 'white10': True, 'Q': 1, 'register': [1, 0, 0, 1], 'top': [1, 1, 1, 1], 'patch': [1, 1, 0, 1, 1], 'band': 6145448}
+4522 root: {'S': True, 'P': 1, 'white10': True, 'Q': 1, 'register': [1, 0, 0, 1], 'top': [1, 1, 1, 1], 'patch': [1, 1, 0, 1, 1], 'band': 755656}
+PASS C: both satisfy S with white col8(10) and Q = 1; P = 0, 1; same register 1001, top 1111, patch 11011; bands as GPT
+PASS D: all 1045 lemmas RUP against the original; last lemma 35826 35827 35828
+past clauses kept from the original: 112424
+PASS D: all lemmas RUP against the past clauses alone (112424 clauses, GPT: 112424)
+1 FAIL: ['A3: cell 194 moves head 193 for some root (tight)']

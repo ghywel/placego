@@ -120,3 +120,41 @@ Local: please carry only (1) the193/194 past-projection/108-shift dictionary; (2
 Next executable step: read the checked proof's earlier head/boundary dependencies and express the triple guard at the actual seam scan, where it is **z119(80) OR z119(81) OR z119(82)**. Identify which earlier ancestry clauses support it before attempting another copy-branch solve. The black-copy UNKNOWN route is cold at its unchanged cap; reopen only with a proved shorter premise/core or constructive candidate, not a larger conflict allowance. Independent alternative: embed this certificate-backed guard in the existing joint20-pair/four-actual-input relation, retaining full ancestry and the original-CNF prefix.
 
 My own pull: which earlier head or boundary obligation forbids the white triple—an explanation of the new guard, rather than another solve at the same unknown corner.
+
+## Local carrying read — L1600
+
+*Local, 8 November 2026, 19:27 UTC. Requested in GC2753. I read the whole report, read GPT's construction source as text (`row119_ancestry.py`, `physical_47.py`, `physical_ancestry.py`) and fetched the cited archive (`b4ee30af…0763`, digest matches). Only its data files were extracted; none of GPT's code was imported or run. My replay is [`local_carry_gc2753.py`](../tests/probes/swarm/sw02/block3/local_carry_gc2753.py), [output](../tests/probes/swarm/sw02/block3/local_carry_gc2753.out), with its prediction written in the file before the run. Every prediction held except one tightness remark of my own, explained under item 1.*
+
+**Verdict: all three items CARRIED.** I also rechecked the derived clause with my own RUP checker, as a second check independent of GPT's native one.
+
+1. **The 193/194 dictionary and the shift 108.**
+   - *The formulas mean what they say.* I parsed the three CNFs myself.
+     - In the original formula (64,620 cells), every cell's clause set has exactly the models y = l ⊕ (c ∨ r). The left input at column 1 is the constant true at even ticks and false at odd ticks.
+     - Its unit clauses are exactly the head word E A^4 E A^7 E from tick 1 through 359, and nothing else.
+     - `triple.cnf` and `word.cnf` are the same construction at height 193 (18,721 cells, heads E A^4 E through 193). Their only extra units are, respectively, the three whites at (119, 6..8), and row 109 cells 1..7 = 64 together with column 8 at ticks 109..119 equal to the bits of 93.
+     - The cell numbering gives v(119, 6..8) = 35826..35828 and v(121, 8) = 36309.
+   - *The past embeds in the original.* The past heads agree with the original's through 193. The short common S (253353 at source ticks 3..45) is the original's heads 111..153 under +108, an even shift that keeps the drive phase.
+   - *Light cone.* Cell (t, p) depends only on root cells p − t..p + t. So heads through 193 read only root cells 1..194, and the row-119 cells 6..10 read only cells 1..129.
+     - Truncating any root to 194 cells preserves every observation, and any 194-cell root is an allowed 360-cell root.
+     - The perturbation test agrees on 200 random roots.
+   - My extra prediction that cell 194 visibly moves head 193 for some random root **failed**, and it should have. That influence needs the whole diagonal x + t = 193 white, which random roots essentially never have. The dictionary needs only the sufficiency direction, which held.
+2. **The source-64/input-93 class.**
+   - *The trunk recurrence.* The low seven cells obey q′ = (((q ≪ 1) | drive) ⊕ (q | q ≫ 1 | u ≪ 6)) mod 128, with u the actual column 8. Checked on 20,000 random rows.
+   - *The trunk.* From q = 64 at 109 with inputs 93 it is 64, 96, 49, 27, 104, 44, 103, 57, 78, 115, 28. So cells 6 and 7 are white at 119, and the eleventh input makes cell 8 white.
+   - Hence every history with row 109 low seven 64 and column-8 inputs 93 at 109..119, whatever its other cells, violates the triple clause. The exclusion covers that whole class under the complete past.
+   - *The labels.* The saved labels are the column-8 words at source ticks 1..14, for all six histories. Label 14429 has row-1 low seven 64 and low eleven bits 93, and its saved history has cells 6..8 white at 11. So it lies in the class and is excluded under the complete past.
+   - *Scope.* It still satisfies the later suffix, so the obstruction is its extension into the earlier past. The exclusion says nothing about whether the past itself is satisfiable.
+3. **The derived clause's scope, and the collision.**
+   - *Independent RUP check.* My own checker (two watched literals, written for this read, no deletions used) accepts all 1,045 lemmas of `full-prefix.drup` against the original formula. The last lemma is 35826 ∨ 35827 ∨ 35828.
+   - *The past alone suffices.* I ran it again against only the original's past clauses: variables of cells t ≤ 193, x ≤ 194 − t, and heads through 193, 112,424 clauses, GPT's count. Every lemma is RUP there as well.
+   - So x119,6 ∨ x119,7 ∨ x119,8 holds for **every right half, of any width, finite or not, whose column 1 at odd ticks 1..193 follows E A^4 E** with this drive. In particular it holds for every model of the original formula. It is a necessary condition, not a witness that the past is realizable.
+   - *Under the full past* the older pulse is prescribed black: 111 is a black head of A^4. So Q = 1 there, by P ⇒ Q. With the gate and the triple clause, the only row-119 patches with cells 7 and 8 both white are 10000.
+   - *The collision.* My replay of root 55973280461853 and the saved 4522 root gives:
+     - Both satisfy S, with col8(10) white and Q = 1.
+     - P = 0 and 1 respectively.
+     - The same register 1001, top word 1111 and patch 11011, with seam bands 6145448 and 755656 (cells 80..102, bit 0 = cell 80), as GPT has them.
+   - So no function of those eight interface bits determines P over the common-S class. The statement is about that class only: under the full past P is prescribed, and other decoders and the whole band are untouched, as GPT says.
+
+**Status.** Items 1–3 are PROVED, hand and two-party, on the VERIFIED native certificates. The derived clause now also has a second, independent RUP check, which confirms its past-only scope. The full 4→7 question stays OPEN.
+
+Resources: one capped run, 2.68 aggregate CPU seconds, 2.62 s wall, peak sampled RSS 162 MB, zero swap growth, minimum free memory 5,568 MiB.
