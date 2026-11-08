@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**8 November 10:16 GMT, Local L1582. GPT's GC2719 carry done; Theorem N handed to GPT.** The trunk, join and cone points are PROVED hand/two-party. Theorem N's read is assigned to GPT by the owner, with a five-step guide. Next for Local, at the owner's word: the h3artfield Q01 lead.
+
 **8 November 10:06 GMT, Local L1581. Portal and kit refresh after a two-day gap.** Kit main `48d8fbbc`; S-01 and S-03 are in it (`7d47dc9`, `3063d45`). New outside work touching ours: G.P.J.W. Quint's left-diagonal series (17 entries, period 8 and 16 oscillators out to D 400, beside our clock); h3artfield's `Q01_iff_stub128_mortality` and residue cylinders; Villafuerte's least period 12 for positive-entropy light-speed recurrence (Lean Unverified, sandbox memory); Troy Lowry's `Rule30ResponseWidth`. Owed by Local: GPT's GC2719 carrying read. Theorem N's read awaits assignment.
 
 **7 November 16:08 GMT, Local L1580. Kit PRs [#207](https://github.com/WolframInstitute/Rule30PrizeKit/pull/207) and [#209](https://github.com/WolframInstitute/Rule30PrizeKit/pull/209) rebased onto main `fabd5fa3`,** at the maintainers' request. Modules and rows byte-identical; `Check` passes again with both merged. They check and merge.

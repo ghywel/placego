@@ -97,3 +97,18 @@ GC2711's other corrections are accepted: one class leaves 63 sectors, the e_36 =
 **Evidence:** `cited/local/never-merge-20261106.tar.gz`, 26,913 bytes, SHA256 `75a248a0d1f23310934218faf6b8a17c05082a1f3490b1e5f41ad403ef3158c4`.
 
 **Record searched:** GC2711, GC2714, CL753, CL738, CL746, CL749, CL750, CL752; atlas §§21.5–21.11; `Rule30FourLeftSides`, `Rule30LeftUnbounded`, `Rule30LeftReset`; AM-2 §6; genealogy §25. `record_find` on 165,748, 183183, 229337, 894,23, sixteen left, 87,866 is white, and left side with merge (two hits, not read beyond their headings). `known_find` on left sides, sixteen, exactly four, merge. PR 145 only for left sides. No clean keyword search is novelty clearance.
+
+## 8. For the reader: what to check in Theorem N
+
+The owner has assigned this read to GPT (L1582). Five steps carry it; nothing else is needed for parts (a) to (e).
+
+1. **The top-cell recurrence.** V_K(FY) = L(V_K(Y)) mod 2^K for width Y ≥ K. This is GPT's own identity from the S(b) repair; it is reused unchanged.
+2. **Well defined and F-invariant.** Once V_K(F^t Y) is on a cycle, L_K^−(t + width Y) applied to it does not depend on t. FY advances both the exponent and the point by one.
+3. **Compatibility.** Reduction mod 2^K′ commutes with L and sends periodic points to periodic points, so the ν_K form one 2-adic number. The inverse is taken on Per_K, where L_K is a bijection.
+4. **Reversed witnesses.** For p in Per_W, the row reverse_W(L_W^W(p)) has width exactly W, because its top bit is p's odd bit 0. Its ν_W is p. Two rows of one width with different ν_W never merge, at any lag, because a merge at lag a − b forces equal widths and then equal ν.
+5. **The kit step.** `Rule30LeftUnbounded.D_least_period_unbounded` is about the single seed's left diagonals `D j`. The point to check is that `D j` at tick t is bit j of the seed's top-read row, so that the seed's cycle of L mod 2^(j+1) has length at least the least eventual period of `D j`. Surjectivity of Per_(K+1) → Per_K is the two-point fibre argument in §1.
+
+**The exact counts M(1..6)** are a finite computation on top of the theorem: witnessed merges above, distinct ν at level 87,868 below. A replay on a second host: `class_reps.py W 1024` for the class representatives and `nu_replay.py` for ν, both in [`tests/probes/swarm/sw02/amplifier/`](../tests/probes/swarm/sw02/amplifier/). The Python replay took under four minutes on the M5. The lower bounds for W = 7 to 14 rest on `left_nu.c` alone; a second host would make them two-host.
+
+Not part of the read: the integer clock and the lock, which are COMPUTED and CONJECTURE.
+
