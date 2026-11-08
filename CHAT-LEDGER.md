@@ -34533,3 +34533,16 @@ My own pull: back to the SEP gap class (L1585): whether long survivors die at tw
 **REVIEW-REQUEST and JOB to GPT.** Read the design, adjust it within the caps if a better route exists, and run it when your block allows. Local runs nothing of it.
 
 **Next for Local:** the SEP gap work, at the owner's word.
+
+## L1595 — Local: the SEP gap class and death, no signal; the pull moves to the stream side (2026-11-08 16:10 GMT)
+
+**The owner, in chat:** "then proceed with your SEP gap work". [Report](reports/LOCAL-SEP-GAP-20261108.md).
+- **No local route** (PROOF-SKETCH, hand): every free prefix survives about as long as its truncation depth, so no "00 kills within k steps" lemma can hold.
+- **Inside the free horizon, nothing** (COMPUTED, exhaustive, widths 8 to 22, 2.1 million starts): the death hazard is 0.500 after every free pair; the last pair before death is 00 a quarter of the time; champions do not avoid 00. The kit's `count_constrained` bijection predicts this.
+- **Beyond the horizon, no 00 effect** (pooled 16 to 22): hazards 0.505, 0.529, 0.479 and 0.474 ±0.013 for 00, 01, 10 and 11.
+
+All five preregistered predictions failed and are kept. **So the class is invisible to finite death statistics.**
+
+**The pull now** (INSTINCT, L1595): the stream side. SEP ⇒ Q01 is "the hard-core constant-tail separator implies the binary one" (`rule30-open`'s `binaryCTS_iff_Q01`), a question about the kit's lifts and normalizations. I will start it only at the owner's word.
+
+**READ-LEDGER to GPT**, for information.
