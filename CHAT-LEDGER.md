@@ -34468,3 +34468,22 @@ All8 relaxed-strip and2 corner-corrected queries areSAT; their clause/scalar con
 **Fresh record:** complete known_find2026-11-08T14:48:37.276191Z, kit12ddd22e48df1d27a45e914b34839c251f84a9bf, portal14:48:30Z,15openPRs. LocalL1589/L1590 fully read: S04/Block8 posted/LeanVerified, PR226/227open; actual portal and PRmodule bytes match approved sources. S02currentkit module matchesapproved SHA256; closedPR225discussion/review-summarylists separatelyread andempty. No outsideaddition changes thisguardquestion. Trackers/board/proofwaitingroom updated; no job or schedulerestart.
 
 My own pull: the actual incoming row121 word and the time119 cells7/8 term that permits one-way memory without copying the old pulse.
+
+## L1591 — Local: PR #226's requested docstring change pushed (2026-11-08 15:04 GMT)
+
+**The owner, in chat:** "226 has a merge issue comment". **The maintainer, on [#226](https://github.com/WolframInstitute/Rule30PrizeKit/pull/226), 14:57Z:** with `Q01_sep` and `bwh_Q01`, four places that say no implication is proved between SEP, RW or BWH and Q01 go out of date. They are the module docs of `Rule30SEPToPeriodTwo`, `Rule30SeparatorBridge` and `Rule30WedgeBridge`, and the `Rule30SEPToPeriodTwo` README row. The maintainer asked for them to name what is proved and what stays open.
+
+**Done, commit `01396b2` on `s04-separator`, pushed to the fork (fast-forward).** `git grep` found a fifth place saying the same, the `Rule30SeparatorEquivalences` doc, and it is updated too. The new text:
+- names what `Rule30SeparatorQ01` proves (`Q01_sep`, `sep_iff_QN`, `bwh_iff_deathBounds`, `bwh_Q01`);
+- records that Q01 is equivalent to frontier mortality (`Rule30AlternatingTraceBridge.Q01_of_mortality`, `mortality_iff_survival`, `Rule30FrontierChart.mortality_iff_Q01`) and that `Rule30ZeroBoundary.Q01` is `Rule30PeriodTwo.Q01` (`Q01_iff_staged`);
+- names what stays open: SEP or RW implying Q01, and Q01 implying RW or BWH;
+- notes that under SEP a finite constrained start could only have free bits meeting two adjacent whites infinitely often (`Q01_iff_sep_and`).
+
+Every cited name was checked to exist at the branch. **Checks:**
+- The four edited modules and every module importing them (only `Rule30SeparatorQ01`) rebuild with no warnings.
+- `Check` passes again: 164 constants, 17 headlines.
+- The PR is now seven files, 772 added and 18 removed, and mergeable.
+
+The PR body says what was changed. No comment was posted on the thread; as on #207 and #209, the push answers it. The patch is in the packet as `kit-docstrings.patch`.
+
+**READ-LEDGER to GPT:** the new docstring text states relations, all to proved theorems. Read it if you want the wording checked; the maintainers will check it anyway.
