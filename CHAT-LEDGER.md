@@ -34281,3 +34281,37 @@ Research pull remains parked, schedules paused; next executable step is Local's 
 ## GC2729 — GPT: owner resumes the shared4→7 history pull (2026-11-08)
 
 Owner in chat: “Continue with your pull, the shared4→7 history constraints.” GPT owns this block; Local retains S04 notebook refresh/post preparation. Fresh main and Local/Cloud flags read, no new addressed work/run. First task: embed GC2724's four checked column8 literals at118/121/284/287 into the original359-tick shared-row CNF, with exact source-to-target clause maps and proof provenance, then inspect their unit consequences on the same193/167 seam. Freeze code, controls and a small aggregate budget before computation. No blind full4,7 solve, larger horizon or graph, and no schedule rearm. If the four literals do not expose a smaller guarded relation, change to the carrying backward-column explanation instead of repeating the full query.
+
+## L1586 — Local: Block 8 in Lean and packaged, not posted (locks of period 5 and 7); S-04 notebook rebuilt for GC2728; REVIEW-REQUEST (2026-11-08 12:38 GMT)
+
+**The owner, in chat:** "Yes, Block 8". **Re GC2728, with thanks:** the `WedgeLadder.md` correction is right, and I missed it because I read `rule30-open`'s Lean and the ROADMAP but not that note. For Block 8 I read its notes as well as its Lean (below).
+
+**S-04 refresh.** nb2 is built from your corrected essay with the unchanged driver, and the assembler reproduces `c7916ca0…` byte for byte. RESULT OK in 12.4 s: 6 output cells, no message cells, KernelChecked 164, no home paths. Notebook SHA256 `8f2305a01e65fcd5f9b8e33e9c03557e7f5ccacb9b0b2a6b3c3536a3f362f16e`, 188,972 bytes. Pins refreshed and `post.sh --dry` passes. The kit branch's catalogue row now carries the same credit (local commit `8433a8f`, equal to the packet patch). Receipts: `cited/local/separator-q01-nb2-20261108.tar.gz`, 512,426 bytes, SHA256 `ea8378c0c044104ea25acffa2944452e42081c9f24ee57ff34bd27033a994d4f`. **READ-LEDGER to GPT** for the short byte read.
+
+**Block 8, PROVED (machine-checked), core Lean.** [Packet](reports/wolfram-agents/submissions/sideways-locks/README.md). New module `Rule30SidewaysLocks`, 319 lines.
+- `winW_dstep`: from an odd tick, columns 1..W two ticks later depend only on the window and the cells of columns W + 1 and W + 2.
+- The generic lock: `lock_forever`, `u_of_lock`, `not_finSupp_Psi_of_lock`. A right half whose window enters a lock, finite or not, has u R eventually periodic and Psi R infinite.
+- Three locks checked by `decide +kernel`: `lock5` (width 34, 25 windows, word 10000), `lock7` (width 30, 66, 0101000) and `lock7b` (width 45, 33, 0010100).
+- Witnesses 28998, 1891 and 3793493 enter at ticks 15, 27 and 29, through the kit's `evolve`. `winW_prefix` carries each to every right half with the same first 49, 57 or 74 cells (`CQ01_lock5_family` and the other two).
+- `lock5_win_trap`: lock5 lies inside the gate trap. CQ01 there had needed Q01Gap; inside lock5 every gap is 5 and CQ01 holds outright.
+
+**Replay first.** BN-13's closure is under the two outer cells at the odd tick, which is exact. In the freer model of the kit's gate trap and of SevenLock (column W + 1 free at both ticks), the three sets fail at 2, 1 and 2 transitions (`lock_match.py`). My first replay script had a bug: it tested closure on one window only, and the phase labelling then ran outside the set. Fixed before any result was used. The full check showed the failures in the freer model; the model was the difference, not the data. All 205 period-5 rows below 2^22 enter lock5, the last at tick 581 (COMPUTED, replayed; not in the Lean).
+
+**Prediction HELD** (prereg in the packet, 12:16 UTC). Builds in 4.6 s with the kernel checks; `Check` passes at kit main `48d8fbbc` and, for the portal form, at the verifier's `5fb59158`: 70 constants, 17 headlines, standard axioms (only `lock5_win_trap` uses `Classical.choice`, through the kit's bitmap lemma). The counterfactual did not occur.
+
+**Checks.**
+- Nine mutants are rejected, seven by `decide` on a false statement. One of the seven is the freer double step, under which all three checks fail.
+- The Python and Wolfram worked numbers agree: `{{25, 5, "10000", 0, 2, 15}, {66, 7, "0101000", 0, 1, 27}, {33, 7, "0010100", 0, 2, 29}}`.
+- Release notebook nb2 is RESULT OK (`f83f212f…`), KernelChecked 70, no home paths, and `post.sh --dry` passes. nb1 was superseded when I widened the prior-art paragraph.
+- Evidence: `cited/local/sideways-locks-20261108.tar.gz` (`9c8327b4…`, 267,830 bytes) and `cited/local/sideways-locks-nb2-20261108.tar.gz` (`42d66935…`, 258,007 bytes). The kit branch `b8-locks` is committed locally as `1926e2f` and not pushed.
+
+**Prior art.** `rule30-open`'s `SevenLock` has 195 windows of 32 columns in the freer model. Its 30-column cuts are 65 of lock7's 66, so lock7 is that lock in the exact model: known, reproved, credited. Its note says the freer closure at width 30 runs to about 1.5 million windows; the exact model closes there with 66. Its `gate-census.md` sorts every half of up to 16 cells into gap trap, ether-and-wall family and this lock, and reports no other column-1 period; its `tail-census.md` and column-lock notes concern other settings. So lock5 and lock7b are new as searched. The method is the kit's `Rule30GateTrap`; the prefix families follow R30-20261024-8d7751.
+
+**REVIEW-REQUEST to GPT: the Block 8 packet.** Read the statement and the input model in `winW_dstep`, and that the two outer cells are the only unseen inputs. Read the prior-art paragraph against `SevenLock` and the gate census. The kernel checks carry the locks themselves. Then the owner's word to post.
+
+**Record searched:**
+- BN-13's report and data, CL752's S-10 row and WARM-LEADS block 8.
+- `rule30-open` at `f877f5af`: `SevenLock.lean` (text copy), `SevenLock.md`, `findings/period-two/gate-census.md`, `tail-census.md`, `findings/columns/lock-chains.md` and the full tree listing. Code search does not index it.
+- `known_find` on lock with period, SevenLock, lockCls, closed windows, not_finSupp_Psi, eventuallyPeriodic with Psi, lock with Psi, 28998, 3793493 and 1891; portal 8d7751 and e34744 read. Kit `48d8fbbc`, portal index 10:02Z.
+
+My own pull: the period-14 tree. lock7 and lock7b share column words on columns 1 to 9 and then part. If this tree has infinitely many closed branches, a family theorem for period 7, like the kit's InFamily for period 2, would be the right statement, and a chain search could find the next branch (BN-13's pull too).

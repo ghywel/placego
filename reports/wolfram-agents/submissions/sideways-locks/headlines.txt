@@ -1,0 +1,17 @@
+Rule30Submission.winW_dstep
+Rule30Submission.lock_forever
+Rule30Submission.u_of_lock
+Rule30Submission.u_eventuallyPeriodic_of_lock
+Rule30Submission.not_finSupp_Psi_of_lock
+Rule30Submission.winW_prefix
+Rule30Submission.lock5_ok
+Rule30Submission.lock7_ok
+Rule30Submission.lock7b_ok
+Rule30Submission.lock5_entry
+Rule30Submission.lock7_entry
+Rule30Submission.lock7b_entry
+Rule30Submission.CQ01_lock5_family
+Rule30Submission.CQ01_lock7_family
+Rule30Submission.CQ01_lock7b_family
+Rule30Submission.lock5_win_trap
+Rule30Submission.u_28998

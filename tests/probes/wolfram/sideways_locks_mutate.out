@@ -1,0 +1,10 @@
+REJECTED | lock5 word 10001 | decide | 247:64: error: Tactic `decide` proved that the proposition
+REJECTED | lock5 with period 4 | decide | 247:64: error: Tactic `decide` proved that the proposition
+REJECTED | lock5 missing one window | decide | 247:64: error: Tactic `decide` proved that the proposition
+REJECTED | free column W + 1 at both ticks | decide | 67:95: error: unsolved goals
+REJECTED | lock7 read with the word of lock7b | decide | 248:65: error: Tactic `decide` proved that the proposition
+REJECTED | lock5 entry two ticks early | decide | 252:40: error: Tactic `decide` proved that the proposition
+REJECTED | lock7b entry in the wrong class | decide | 256:42: error: Tactic `decide` proved that the proposition
+REJECTED | windows at the even ticks | proof | 72:32: error: unsolved goals
+REJECTED | family prefix one cell short | proof | 263:20: error: Application type mismatch: The argument
+mutants accepted: 0 of 9

@@ -1,0 +1,38 @@
+Block 8 (queue row S-10, its lock part): Lean formalization, written before the first build. Local, 8 November 2026, 12:16 UTC.
+Statement: three closed locks of the right half driven by the alternating column, from SW-02's BN-13 census
+(COMPUTED there, no worker read). A window is columns 1..W at an odd tick. A lock is p classes of windows such that
+every window of class k reads word k in column 1, and every double step from it, for every value of the cells of
+columns W + 1 and W + 2 at the odd tick, lands in class k + 1 mod p. lock-5: W = 34, 25 windows, word 10000.
+lock-7: W = 30, 66 windows, word 0101000. lock-7b: W = 45, 33 windows, word 0010100 (a rotation of 0101000).
+Then u R is eventually periodic for every R whose window is in the lock at an odd tick, and the kit's
+not_finSupp_Psi_of_eventuallyPeriodic gives CQ01 for R (Psi R infinite), unconditionally.
+Replayed here first (tests/probes/swarm/sw02/block8/lock_match.py, lock_data.py): all three closed in that model, each one
+orbit of p classes. In the freer model of the kit's gate trap and rule30-open's SevenLock (column W + 1 free at both
+ticks) lock-5 has 2, lock-7 1 and lock-7b 2 failures, so the module needs the two-cell model. All 205 rows R < 2^22
+with u of eventual period 5 enter lock-5, the last at tick 581. Witnesses: 28998 enters lock-5 at tick 15, 1891 lock-7
+at 27, 3793493 lock-7b at 29.
+Prior art: rule30-open's SevenLock (32 columns, 195 windows, free model, word 0101000, witness cells 100101111 = 489 at
+time 29). Projected to 30 columns it gives 65 windows, all in BN-13's lock-7, which has one more. So lock-7 is that
+lock (known, reproved here in the two-cell model). lock-5 and lock-7b share no window with it. Method: kit Rule30GateTrap
+(Bosdure) and rule30-open SevenLock (lhallee). Prefix families after R30-20261024-8d7751.
+Plan: one module, generic in W: the window, the two-cell double step from rowOf_succ, decode of codes, a generic
+class check, the orbit lemma, u eventually periodic, Psi infinite; three kernel checks; three entry witnesses through the
+kit's rowOf_evolve; prefix families (every R agreeing with a witness on cells 1..W + t0).
+Prediction (0.8): builds in core Lean at kit main 48d8fbbc; the three kernel checks plus witnesses take under 10 s;
+Check passes with standard axioms at main and at the verifier's 5fb59158.
+Counterfactual: a kernel check fails. Then the Lean double step differs from the Python model, or a datum is wrong;
+stop and find which before claiming anything.
+Not in scope: the gate trap's universal tail restriction (S-10's second part), and the infinitely many deeper locks the
+period-14 tree may hold.
+Record searched: BN-13 report and data; CL752's S-10 row; WARM-LEADS block 8; rule30-open SevenLock.lean (text copy
+read in Block 3); known_find on lock with period, SevenLock, lockCls, closed windows, not_finSupp_Psi, eventuallyPeriodic
+with Psi, lock with Psi, 28998, 3793493, 1891 (kit 48d8fbbc, portal index 2026-11-08T10:02Z, 12 open PRs): hits are
+the gate trap (230bc7), the ether-family prefixes (8d7751), drought-clock bounds (6824d5, 75bd53) and certificate data;
+none has a period-5 or period-7 lock.
+
+Result (L1586). Prediction HELD: builds in core Lean at kit main 48d8fbbc, no warnings; the module with its three lock
+checks and three entry witnesses builds in 4.6 s; Check passes at main and, for the portal form, at the verifier's
+5fb59158 (70 constants, 17 headlines, standard axioms). The counterfactual did not occur: all three kernel checks
+passed first time in the two-cell model. Added beyond the plan: lock5_win_trap (lock5 lies in the gate trap, kernel
+check). Nine mutants rejected, seven in decide. Notebook nb1 RESULT OK. The freer one-column model fails all three,
+as the replay said.
