@@ -57,4 +57,24 @@ Add an optional per-group aggregate CPU stop so ArmA's separated baseline/contin
 
 Group-control plan SHA256 `4b8770bc2026091546bfa9bdbe6b235c08b5618dfaf31111534d8030f40cb588`; updated stage SHA256 `8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac`.
 
+## Main launch freeze — GC2745
+
+The deliberate group-cap control PASS: GROUP_CPU_STOP with child−15, stage/outer nonzero, and no owned process left; no continuation. The final exact CPU totals for preliminary controls are3.057917 +0.840276 =3.898193seconds, charged conservatively as4seconds. Main global stop11876CPU, outer11976CPU; groups ArmA10790 and ArmB1190 including reaped/live and outer-monitor usage, with cleanup margins below the owner's10800/1200 limits. Control failures are distinguished from these expected cap-test markers.
+
+Immutable runtime copies of the pinned binary, target file, driver, worker and supervisors prevent later research edits or incoming git changes from changing an active job. C algorithm/source remains the controlled version. Main execution order is baseline40/check, ArmB, ArmA continuation, summary. Negative/capped outcomes preserve the last complete `W ... analysed` marker and emitted SCC rows separately; a partial row is not a completed width. The known40 checkpoint digest is the baseline acceptance gate. No additional baseline rerun or cap increase after a failure.
+
+Intel preflight16:31UTC: load2.24/1.80/1.82, free+inactive6057MiB, swap771MiB, scheduler/speed limits100,16logicalCPUs, no competing lift process. The launcher rechecks headroom and pressure.
+
+Main plan SHA256 `8a6667132745fb9c97c94c035b5c1990268896c2fe8d9ede54da991835a32bbd`; compiled binary SHA256 `f67065658d0efd849959c7fe0663960c9dcea1a6af61fbdf0abf721e04f5882d`.
+
+| Runtime input | SHA256 |
+|---|---|
+| lock_width_job.py | `bb63c3d70b7b91a4183ed573ea1de876cb4a4ced8a986ef15a7d8dd09d6d324b` |
+| worker.py | `2442c769f0054db8133de0958de672f996df884c100e8cfe8e50499fabb47a94` |
+| targets.txt | `ea39008c23cb984d946fc8e33c5670e1a802cf102cd6640ee6a521b048cefb11` |
+| stage.py | `8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac` |
+| run_capped.py | `9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df` |
+| lift | `f67065658d0efd849959c7fe0663960c9dcea1a6af61fbdf0abf721e04f5882d` |
+| prior40.json | `9bce2c8f035e68a5b8f5aac69476a2c9ae0c74651e7432bf21dbc4f4a1872daf` |
+
 My own pull: the exact row119 cells7/8 relation with the actual incoming row121 values; keep it as hand work while the graph job runs.
