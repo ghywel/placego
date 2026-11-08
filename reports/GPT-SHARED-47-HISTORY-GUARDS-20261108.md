@@ -43,3 +43,25 @@ Intel preflight12:27Z: load1.47/1.79/2.04; free+inactive about4512MiB; swap707Mi
 | installed drat-trim | `5a0ec55870ad0fe33e4984e53873743bd7eb9360af53ca22db879524ff3e7c93` |
 
 Private stage-plan SHA256 `127694d338a88794cb0c6287ac97b03d0529a88e145340ea3c4b88b10b15dfd9`; its public resource/input description is above.
+
+## First result and narrow checker-adapter correction — GC2731
+
+All four native original-formula-plus-negated-conclusion proofs are VERIFIED. The independent Minisat propagation check accepts3440 conditionalized RUP additions. All four premise embeddings and wrong-phase/sign/reason controls pass. Unit assignments rise413→417: **exactly the four guards, no other cells**, and each shared row at69/193 still has only its head forced. The tentative non-head seam-unit prediction is REFUTED. The reduced formula loses40clauses and4variables, which is no basis for reopening the cold full4,7 solve.
+
+The stage then stopped on my checker adapter: I selected drat-trim's `-S` mode for a non-refuting derivation. That mode attempts to justify deleting the remaining formula to certify satisfiability; it does not check this implication prefix. The failed output is retained. The primary checker source's forward `-f` mode explicitly accepts a derivation with no empty clause and reports `s DERIVATION`, while returning exit1 even for that accepted status. Source read: [drat-trim.c](https://github.com/marijnheule/drat-trim/blob/master/drat-trim.c), forward-mode and return-code branches. No mathematical result is inferred from the failed mode.
+
+A narrowly frozen follow-up checks the unchanged prefix with `-f -U`, requiring exact line `s DERIVATION`, and a wrong-sign-final-unit mutant requiring `s NOT VERIFIED`. Both tools return1, so stage.py now supports explicitly listed return codes plus exact mandatory output lines; its default remains exit0. The pair tests distinguish accepted derivation from rejected proof despite the same exit code. Main embedding/propagation is not rerun. No target solve, source proof change or cap increase. Two3CPU/10wall direct-exec checker slots, aggregate10CPU, outer15CPU/35wall, unchanged tree/memory/headroom/file/disk/thermal stops. Prior stage7.625686 accountedCPU including outer monitor; this remains far below the original80CPU block budget.
+
+Follow-up hashes:
+
+| Item | SHA256 |
+|---|---|
+| tests/probes/metal_scope/stage.py | `3ecffb8d7d7bcccdc55fa6cd197b0b3d213fe532298bf900457518580c53f62b` |
+| tests/probes/wolfram/run_capped.py | `26f850a8c1ba3905e00093cfa52331e94ee3d48ebe41c8b69b90b735b0a5ec3b` |
+| tests/probes/swarm/sw02/block3/shared_guard_proof.py | `e14f25f617c190faee635b97bdf36e5879c347f3c39d13ea5864dadf86832f8a` |
+| installed drat-trim | `5a0ec55870ad0fe33e4984e53873743bd7eb9360af53ca22db879524ff3e7c93` |
+| original.cnf | `21b425011ebc816994a2dfe221539ca2da6a5900b23d1f7009c9bbe26d70426c` |
+| lemma-prefix.drup | `6d538c80ee31b5fc90018cd44ebd4735a9c3d21f95431ed89fec9d1c3cca4a05` |
+| gc2731-corrupt-prefix.drup | `1f9c645c0ccfbfda98116d08f5e754ea3e1469a9a89bb77d0797d8c3fcc11d6d` |
+
+Private follow-up plan SHA256 `3057c81c698d8dbd297d390544efe78317d5eb2bc31084c04b4ff65b246b6acd`. Prediction: accepted unchanged derivation, rejected wrong-sign mutant. Any mismatch stops without another retry.
