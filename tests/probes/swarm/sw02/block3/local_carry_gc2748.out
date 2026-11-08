@@ -1,0 +1,36 @@
+PASS Bseed: 78 distinct windows below 2^40, least 5522065728
+W40: core 78, SCCs 1, edges 112, gcd 21, word 010100001010000101000, consistent True, primitive 7 0101000, leaking moves 30
+PASS W40 parent: one SCC of 78, 112 edges, gcd 21, primitive word a rotation of 0101000, 30 leaks
+W41: candidates 156, core 78, SCCs 1, edges 101, least 5522065728, gcd 21, primitive 7 0101000, consistent True
+PASS W41: core 78, one SCC, 101 edges, least 5522065728, primitive period 7
+W42: candidates 156, core 77, SCCs 1, edges 98, least 5522065728, gcd 21, primitive 7 0101000, consistent True
+PASS W42: core 77, one SCC, 98 edges, least 5522065728, primitive period 7
+W43: candidates 154, core 29, SCCs 1, edges 36, least 30352548404, gcd 21, primitive 7 0001010, consistent True
+PASS W43: core 29, one SCC, 36 edges, least 30352548404, primitive period 7
+W44: candidates 58, core empty
+PASS W44: core empty
+PASS projection lemma: 140965 moves at widths 41..44 all project to moves
+PASS core sizes {40: 78, 41: 78, 42: 77, 43: 29, 44: 0} agree with GPT C rows {40: 78, 41: 78, 42: 77, 43: 29} (absent width = empty)
+PASS five-cell identity, 32 cases
+PASS four-register recurrence is an identity on 20000 random rows
+PASS six positive histories with the stated labels
+4482: rows 86, row1&127 64, S heads True, P 1/1, col8(10) 0, Q 1/1, Q terms 01111111, row11 cells6..10 11010, register 0011, incoming 0011, mechanism left copy, row11&127 100
+PASS 4482: replay, S, P = Q = 1, white col8(10), window 11010, register, gate, s=11 term, GPT fields
+4498: rows 86, row1&127 64, S heads True, P 1/1, col8(10) 0, Q 1/1, Q terms 01111111, row11 cells6..10 11010, register 0111, incoming 1011, mechanism left copy, row11&127 100
+PASS 4498: replay, S, P = Q = 1, white col8(10), window 11010, register, gate, s=11 term, GPT fields
+4520: rows 86, row1&127 64, S heads True, P 1/1, col8(10) 0, Q 1/1, Q terms 01111111, row11 cells6..10 11010, register 0011, incoming 0011, mechanism left copy, row11&127 100
+PASS 4520: replay, S, P = Q = 1, white col8(10), window 11010, register, gate, s=11 term, GPT fields
+4521: rows 86, row1&127 64, S heads True, P 1/1, col8(10) 0, Q 1/1, Q terms 01111111, row11 cells6..10 11010, register 0011, incoming 0011, mechanism left copy, row11&127 100
+PASS 4521: replay, S, P = Q = 1, white col8(10), window 11010, register, gate, s=11 term, GPT fields
+4522: rows 86, row1&127 64, S heads True, P 1/1, col8(10) 0, Q 1/1, Q terms 01111111, row11 cells6..10 11011, register 1001, incoming 1111, mechanism left copy, row11&127 100
+PASS 4522: replay, S, P = Q = 1, white col8(10), window 11011, register, gate, s=11 term, GPT fields
+14429: rows 86, row1&127 64, S heads True, P 1/1, col8(10) 0, Q 1/1, Q terms 01110101, row11 cells6..10 00011, register 1100, incoming 0101, mechanism right OR, row11&127 28
+PASS 14429: replay, S, P = Q = 1, white col8(10), window 00011, register, gate, s=11 term, GPT fields
+ALL PASS
+root 52777231658405 (P,Q) = 00: row11 cells6..10 00111, mechanism left copy, a 0, d or e 1, Q 0
+PASS root 52777231658405: mechanism left copy
+root 54421244276371 (P,Q) = 01: row11 cells6..10 00011, mechanism right OR, a 0, d or e 1, Q 1
+PASS root 54421244276371: mechanism right OR, b = c = 0, a = 0, d or e = 1
+root 57931849600863 (P,Q) = 11: row11 cells6..10 11011, mechanism left copy, a 1, d or e 1, Q 1
+PASS root 57931849600863: mechanism left copy
+ALL PASS (with C)

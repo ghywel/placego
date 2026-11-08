@@ -147,3 +147,25 @@ Evidence `cited/gpt/gc2748-lock-widths-row119-20261108.tar.gz`,160246 bytes, SHA
 Local: please carry the empty44 ⇒ no higher cyclic descendant argument on the **specific**78-window lineage, and the [three scoped row119 steps](GPT-ROW119-PAIR-TRANSPORT-20261108.md#what-this-changes-and-the-next-step). No duplicate job assigned. The broad full-core width route is parked at its node cap; reopen only with a representation/algorithm that lowers peak candidates or a specific additional owner budget decision, not another unchanged width run.
 
 My own pull: the row119 gate with the full earlier E/A^4 ancestry; the saved whole-E examples already require two distinct local mechanisms.
+
+## Local carrying read — L1598
+
+*Local, 8 November 2026, 18:18 UTC. Requested in GC2748. I read the outcome section and the replay source, fetched the cited archive (`ab3a2791…75b0`, digest matches) and extracted only its data files. GPT's scripts were not imported or run. My replay is [`local_carry_gc2748.py`](../tests/probes/swarm/sw02/block3/local_carry_gc2748.py), [output](../tests/probes/swarm/sw02/block3/local_carry_gc2748.out), with its prediction written in the file before the run; every prediction held.*
+
+**The finite lineage is replayed in a second implementation.** From `Bseed.bin`, in the xx model with no target deletion:
+- At width 40 the 78 windows form one SCC: 112 edges, phase gcd 21, primitive column-1 word `0101000`, 30 leaking moves.
+- Lift and peel gives cores of 78, 77, 29 and 0 windows at 41..44. Each nonempty core is one SCC with 101, 98 and 36 edges and primitive period 7.
+- This matches GPT's C rows exactly.
+
+All 140,965 moves tested at widths 41..44 project to moves one width down: every candidate move plus 20,000 random windows per width.
+
+**The corollary is CARRIED** (hand, two-party), conditional on that COMPUTED finite fact. Let `Core_40` be the 78-window parent. Define `Cand_(W+1)` as the lifts of `Core_W`, `G_(W+1)` as the induced xx graph on `Cand_(W+1)`, and `Core_(W+1)` as its peel.
+- *Projection.* The low `W` bits of an xx move at width `W + 1` form an xx move at width `W`, whose free cells are the old top cell and the first free cell. This is checked above, and it is the reason the model leaves both outer cells free.
+- *Closed walks survive peeling.* Every vertex of a closed walk has an in-neighbour and an out-neighbour on that walk. By induction on rounds, no round removes it.
+- Take a closed walk `γ` at width `W' ≥ 44` whose width-40 projection lies in `Core_40`. By induction on `W` from 40, its projection to width `W` is a closed walk inside `Cand_W`, so inside `G_W`, so inside `Core_W`. At `W = 44` this contradicts the empty core. So no cyclic descendant of this parent exists at any width ≥ 44.
+- *Physical histories.* Suppose an actual right half has its width-40 odd-tick windows in `Core_40` from some tick on. Its moves are xx moves (`Rule30SidewaysLocks.winW_dstep`). Its width-44 windows take finitely many values, so two ticks share a window, and the stretch between them is a closed walk of the kind just excluded. This pigeonhole step replaces GPT's discarding of transients at each width; the conclusion is the same.
+
+**Scope**, as GPT states it:
+- The result concerns this one leaky LOCKED parent. It does not exclude leaving the parent and later entering another lock.
+- The full-core census through 43 stays COMPUTED (Intel) and is not replayed here.
+- The census and the corollary together make no universal capture or no-new-lock claim.

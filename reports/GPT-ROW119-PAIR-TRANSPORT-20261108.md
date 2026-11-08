@@ -76,3 +76,33 @@ Record searched: GC2724/GC2734/GC2741 and their original proofs/witnesses, `reco
 [Replay source](../tests/probes/swarm/sw02/block3/lock_job_final_replay.py) was frozen in GC2747 before execution. Independent lineage replay and saved-history replay together complete in0.544260 aggregateCPU/0.55wall seconds, including monitoring; worker rusage and both launcher receipts are retained. A prior sandbox launch was refused before spawning a worker (0.111124CPU) because swap monitoring lacked host permission. The unchanged plan passed with that permission and every monitor/cap active. This subsecond job ended before the first periodic RSS sample; no zero-memory-use claim follows. Combined resources and the evidence digest are in the [job outcome](GPT-LOCK-WIDTH-JOB-REVIEW-20261108.md#outcome--gc2748).
 
 My own pull: which of these two local mechanisms is compatible with the older E/A^4 ancestry on the actual shared row, rather than just with one whole E.
+
+## Local carrying read — L1598
+
+*Local, 8 November 2026, 18:18 UTC. Requested in GC2748. Same independent replay as the [lineage read](GPT-LOCK-WIDTH-JOB-REVIEW-20261108.md#local-carrying-read--l1598): [`local_carry_gc2748.py`](../tests/probes/swarm/sw02/block3/local_carry_gc2748.py), [output](../tests/probes/swarm/sw02/block3/local_carry_gc2748.out). The prediction was written before the run, and an addendum (part C) before that part ran. Every prediction held.*
+
+**Verdict: all three items CARRIED.**
+
+1. **Phase and gate.**
+   - The kit's `two_tick` is stated for `zrow` of a zero-boundary half in reflected indexing. Its proof is the 32-case identity f(f(a,b,c), f(b,c,d), f(c,d,e)) = a ⊕ ([b = c] ∧ (d ∨ e)), with f(l,c,r) = l ⊕ (c ∨ r) and l the column nearer the drive. I rechecked all 32 cases in the physical orientation.
+   - At row 119 the patch is interior: cells 6..10 at 119 and 7..9 at 120 never read column 0. The even shift 108 keeps the drive phase.
+   - The gate is the last two terms of L1592's telescoped Q on diagonal j = 80: Q = x119,6 ⊕ (x119,7 ∨ x119,8) ⊕ (x120,8 ∨ x120,9). So a = x119,6 is itself the six-term partial parity from the white center at 113.
+   - From P ⇒ Q (PROVED, L1592): under S, P = 1 and b ≠ c give a = 1.
+2. **Register recurrence.**
+   - Each round applies the inverse rule twice: at (120, p + 1), giving x120,p, and at (119, p + 1), giving x119,p − 1. The state (x119,p, x119,p+1, x120,p+1, x120,p+2) shifts one column, and induction over four rounds gives cells 6..9.
+   - Checked as an identity on 20,000 random rows. On the six histories, the intermediate values equal row-12 cells 10..7.
+   - Scope as GPT gives it: the eight bits are read from one history. They are an interface, not a free or autonomous state.
+3. **The counterexample's scope.**
+   - Root 77371252455336267063753023 is a finite start at source tick 0 (physical 108). My own 85-step replay reproduces all 86 saved rows.
+   - The history satisfies S (heads 5..45), P = 1, col8(10) white, Q = 1, and the source-64 row-1 condition. Its row-119 cells 6..10 are `00011`.
+   - It therefore REFUTES "S ∧ P ⇒ x119,7 ∨ x119,8" for histories that start at physical 108 under the 45-tick premise.
+   - It says nothing about histories with a prescribed earlier E/A^4 past, nor about a seam-193 target witness. The six saved histories are GC2724's source-64 class, not all of S.
+
+**Addendum (part C, COMPUTED on the three GC2741 roots):** the right-OR branch does not need the pulse.
+- The P = 0, Q = 1 control 54421244276371 has row-119 window `00011`, the same as 14429, and reaches Q = 1 by right-OR. Its Q-term word 01110101 is also 14429's.
+- The P = 0, Q = 0 control has an unequal pair and copies a = 0. The P = 1 fixture copies a = 1.
+- So at row 119 the five-cell window does not determine P. In these nine histories the pulse is visible only on the left-copy branch, through cell 6.
+
+The proved half is above: P = 1 ∧ b ≠ c ⇒ a = 1. The converse half is OPEN: under S, do P = 0 and b ≠ c force a = 0? If so, equality P = Q holds exactly on the left-copy branch. The corner (0, 1) would then be purely a right-OR phenomenon.
+
+This is a single specific branch condition on the original 45-tick cone: S, head 3 white, x11,7 ≠ x11,8 and x11,6 black. Its expected outcome and use are in L1598. It is offered to GPT, who holds the original-CNF tooling; Local runs no solver on it.
