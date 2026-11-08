@@ -34982,6 +34982,23 @@ Exact reason-replayed UP: original413, old guards417, quartets433, union435; **n
 
 Next change of representation: future row275's first21 cells are the actual82-step image of the same seam prefixM1..103; pull back the five21-cell source fibres and couple that predicate to the past observer fed byM103..79 and the high-tail-derived206-bit state before103. Retain all remaining past/root-width/future167-cell checks.103 is label support, not an autonomous full-return model. No further local-unit or full SAT retry; reopen on a genuinely new joint seam constraint. Alternative: short physical quartet proof.
 
-8.062911 total capped researchCPU/7.79wall, both stages complete, all controls pass, no running job/post/schedule restart. Evidence1555874bytes/SHA256c253022c107c50a99a8f9beeed629a0eb8efb9453ff8e62e054d13bcb25fcb75 at cited/gpt/gc2766-five-label-quartet-20261108.tar.gz. **Local carry requested:** physical quartet/phase/lookahead, same-row observer/collision scope, and the guarded103-cell joint support; no new computation assigned. S14 nb2 RELEASE REVIEW PASS GC2763; preserve pinned bytes, owner posting word remains.
+8.062911 total capped researchCPU/7.79wall, both stages complete, all controls pass, no running job/post/schedule restart. Evidence1555874bytes/SHA256c253022c107c50a99a8f9beeed629a0eb8efb9453ff8e62e054d13bcb25fcb75 at cited/gpt/gc2766-five-label-quartet-20261108.tar.gz. **Local carry requested:** physical quartet/phase/lookahead, same-row observer/collision scope, and the guarded103-cell joint support; no new computation assigned. S14 nb2 RELEASE REVIEW PASS GC2763; concurrent L1607 posting adopted. Fresh portal read confirms261a30 Lean Verified142/10 and exact reviewed source; PR228 head21be6378 module matches, body only moves title to PR title, no comments/reviews. No GPT post.
 
 My own pull: that joint five-label pullback on the actual shared prefix, beyond pointwise gate units.
+## L1607 — Local: S-14 POSTED and Lean Verified (R30-20261108-261a30); kit PR #228 open (2026-11-08 21:19 GMT)
+
+At the owner's word ("please post and PR when ready"), after GC2763's RELEASE REVIEW PASS.
+
+**Posted** 21:14 UTC by the pinned `post.sh`. All six pins rechecked, and the verifier was still `5fb591588cfa869bfdc47946799b5ddd70a903d1`, image `rule30-verifier:18`.
+- Entry [R30-20261108-261a30](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-261a30), **Lean Verified**, checked 21:16:25Z.
+- 142 constants replayed, 10 headlines all passing, axioms within `propext`, `Classical.choice`, `Quot.sound`; no new axioms.
+
+**Kit PR** [WolframInstitute/Rule30PrizeKit#228](https://github.com/WolframInstitute/Rule30PrizeKit/pull/228).
+- Branch `p3-language` on the fork at `21be637`: one commit on kit main `1487f31`, which hasn't moved.
+- Three files: the module, the import line, and the catalogue row with the credit line and portal id. Mergeable, no CI.
+- The module and import line are byte-identical to the state that passed `Check` at this main. Only the row's portal id changed.
+- The PR body is the reviewed one with the id filled in. The local `b9-period3` branch is kept as the working history.
+
+**Also confirmed:** #226 (S-04) and #227 (Block 8) are closed because they landed on kit main as `796b28f` and `4c4028f`.
+
+Nothing else is outward-facing. Next on S-14: whatever the maintainers ask on #228.

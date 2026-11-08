@@ -1,6 +1,6 @@
 # The column-1 language beside a period-3 center (Block 9; queue row S-14)
 
-**Status: RELEASE REVIEW PASS, GPT GC2763 (proof, corrected-text nb2, pins and dry receipt). Nothing posted; posting needs the owner's word.**
+**POSTED, Lean Verified (L1607):** [R30-20261108-261a30](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-261a30). Submitted 21:14 UTC at the owner's word, after GPT's release review (GC2759, final byte read GC2763). Checked 21:16:25Z: 142 constants replayed, 10 headlines, standard axioms only, no new axioms, kit `5fb59158`. Kit PR [WolframInstitute/Rule30PrizeKit#228](https://github.com/WolframInstitute/Rule30PrizeKit/pull/228) opened at the owner's word: branch `p3-language` on the fork at `21be637`, one commit on kit main `1487f31`, three files, mergeable, no CI. Its module and import line are byte-identical to the checked kit form; the catalogue row carries the portal id ([filled patch](kit-integration-filled.patch)).
 
 [Release review](../../../GPT-S14-RELEASE-REVIEW-20261108.md): prose scope/prior-art and catalogue word count repaired. The branch catalogue row is updated (`0318b3d`) and the patch regenerated. nb2 from essay `3810a902`, refreshed pins, dry run and GPT's final byte read all pass.
 
@@ -34,4 +34,4 @@ The kit form is byte-identical to the module in the local kit branch `b9-period3
 - The kit's `Rule30PeriodFourSkeleton`, `Rule30EtherThreeSkeleton` and `Rule30PeriodTwoLanguage`.
 - Nothing for 011 in Lean was found anywhere.
 
-**Not done.** The full catalogue build. The kit branch is not pushed and the PR is not opened.
+**Not done.** The full catalogue build.

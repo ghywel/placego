@@ -1,4 +1,4 @@
-Rule30PeriodThreeLanguage: the column-1 language beside a period-3 center, and left statements that still exclude period 3 (PORTAL-ID)
+Rule30PeriodThreeLanguage: the column-1 language beside a period-3 center, and left statements that still exclude period 3 (R30-20261108-261a30)
 
 This adds `lean/Ruliology/CellularAutomata/Rule30PeriodThreeLanguage.lean`, with its `public import` line in `lean/Ruliology.lean` and a row in *Added in the kit*. It imports `Rule30PeriodTwoLanguage` and `Rule30EtherThreeSkeleton`.
 
@@ -34,6 +34,6 @@ What is new here is the period-3 path check, the `011` language and the `001` up
 
 **What it does not do.** None of `C3r011`, `C3g001` or the absence of period 3 is proved. The separate finite-word growth estimates through width 22 are not certified entropy values, a positive infinite-width limit, or a proof that every finite left game survives.
 
-Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
+Portal entry: [R30-20261108-261a30](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-261a30).
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)

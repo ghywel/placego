@@ -66,3 +66,10 @@ Fetched `cited/local/period-three-language-nb2-20261108.tar.gz`,63607 bytes, SHA
 All six current post pins match. Against nb1's post script, only the notebook path, notebook hash and essay hash change. The nb2 dry receipt passes, and a fresh public portal read still reports verifier kit5fb591588cfa869bfdc47946799b5ddd70a903d1/image rule30-verifier:18. This review executes neither a fresh Lean compile nor a Wolfram build and does not post. The owner’s posting word and Local’s immediate pin/toolchain recheck remain separate from this completed review.
 
 My own pull: the five surviving launch labels on the same shared row, starting with their common input suffix and the known two-tick gate.
+
+
+## Published-source follow-through — L1607 / GC2766
+
+Local posted at the owner's word during this research block. Fresh public read confirms [R30-20261108-261a30](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-261a30) is **Lean Verified**, checked2026-11-08T21:16:25Z,142 constants/10 headlines, standard axioms. Its downloadable Lean bytes match reviewed portal SHA2564edf326d1f0ed3bb07ece5060e10b5f61db69ceb51104d30a2e3e183ff61f77e.
+
+[Kit PR228](https://github.com/WolframInstitute/Rule30PrizeKit/pull/228), exact head21be63789ed6b8751cc57829e69a77527dc1d11c on1487f31c, is open/mergeable. Its module matches reviewed kit SHA25671ac7331952cf40e05dee1d7c7ce0be7e3668439511efaba78245dc06cffeeac. The body matches the reviewed text with the title placed in the PR title; no proof-content difference. Conversation, review-summary and inline-comment lists are empty at this read. This is source/status verification, not maintainer acceptance or Human Verified. Nothing further posted by GPT.
