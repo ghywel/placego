@@ -34425,3 +34425,17 @@ Owner requests continuation after GC2736. GPT owns this block: write the exact c
 [Exact relation and preregistration](reports/GPT-OLDER-PULSE-CUT-TRANSPORT-20261108.md). PROOF-SKETCH: the m193 inverse scan reads event(t,p) at seamcell193−t+p. Older pulse111/head1 and white input118/col8 both appear at83; black input121/col8 at80. Their later5·3353 premise heads115..153 are checked at79..41, outside the band and after those observations. Full-ancestry cut has204 pending pair bits before102..80,158 after; neither is a minimal-state claim. Full future trace also needs cells103..167. Thus support overlap is not a closed state or independent exterior gluing. Keep the same whole row, prior-check conjunction and all later acceptance checks.
 
 Freeze exactly8 relaxed-strip SAT questions at W8/10/12,H45,2000conflicts/query: negate each full-premise guard, then W12 weaker-white and one-pulse-deleted-black controls. Exact two-outer-cell odd-step model; missing future outer compatibility is a sound relaxation. Prediction W12 full guards/weakerwhite UNSAT and one-pulse-deletedblack SAT. SAT is a strip witness only, no physical lift asserted; UNKNOWN stays unclassified. Native RUP check every UNSAT with positive/empty-proof controls. Independent scalar replay every SAT and genuine-history embedding; exact diagonal readout on full finite ancestors at local85/global159. No target solve or adaptive growth. Main40CPU80wall, eight2CPU native slots plus two2CPU controls; aggregate65CPU/outer80CPU180wall, one serial worker/nice10, normal tree/RSS8192/swap4096/launch4096/floor1024/process6/file16/stage128 stops. Pressure/thermal/monitor failure stops, no retry. Source/input/plan hashes in report; planSHA256feb548b228d2d3b71b80af98542aa4387e35d7523498793407cdc46c08771daa. Current index13:45:12Z/kit48d8fbbc plus source/record/primary-literature comparisons read. Local owns no duplicate job; scoped GC2734 carry remains pending. Both schedules paused.
+## L1590 — Local: kit PRs #226 (S-04) and #227 (Block 8) open (2026-11-08 14:48 GMT)
+
+**The owner, in chat:** "Yes, open both".
+
+**Kit.**
+- **S-04:** [WolframInstitute/Rule30PrizeKit#226](https://github.com/WolframInstitute/Rule30PrizeKit/pull/226). Branch `s04-separator` at `a0db7d9`, three commits, 743 added.
+- **Block 8:** [WolframInstitute/Rule30PrizeKit#227](https://github.com/WolframInstitute/Rule30PrizeKit/pull/227). Branch `b8-locks` at `c551368`, two commits, 321 added.
+- **Rebase and recheck:** both are on the fork, rebased onto kit main `12ddd22` (which now contains S-02 as `67283b1`) with no conflicts. On the rebased branches `Check` passes again, 164 and 70 constants, 17 headlines each, and `Rule30SeparatorQ01` and `Rule30SidewaysLocks` are byte-identical to the reviewed kit forms.
+- **Contents:** each PR is three files (module, import line, catalogue row with the credit and portal id) and mergeable, with no CI on the branch. Titles and bodies are the packets' `PR-BODY.md` with the ids filled, plus one line saying `Check` was rerun at `12ddd22`.
+- **Merge order:** the two PRs touch the same two shared files in different places. Whichever merges second may need a one-line rebase; I will do it if asked.
+
+The maintainers check and merge. Nothing else is pending for Blocks 7 and 8: S-01, S-03 and S-02 are in the kit, and S-04 and Block 8 are on the portal with PRs open.
+
+**READ-LEDGER to GPT**, for information.
