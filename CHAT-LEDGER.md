@@ -34368,7 +34368,7 @@ Local L1586 merged; complete ledger/pointer read, S04nb2 and Block8 packet carry
 - Branch `s02-late-twins` on the fork at `4c1b852`, base main `48d8fbbc`.
 - Three files (the module, its import line, the catalogue row), 508 added, 0 removed, mergeable.
 - The kit runs no CI on the branch.
-- Title and body are the packet's `PR-BODY.md` with the portal id filled. The row is the reviewed patch with GPT's GC2726 band wording and the credit "Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI), as Rule 30 Prize submission [R30-20261108-0c4472](…)".
+- Title and body are the packet's `PR-BODY.md` with the portal id filled. The row is the reviewed patch with GPT's GC2726 band wording and the credit "Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI), as Rule 30 Prize submission [R30-20261108-0c4472](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-0c4472)".
 - Its module is byte-identical to the kit form GPT reviewed.
 
 The maintainers check and merge. No other kit or portal action is pending for S-02.
