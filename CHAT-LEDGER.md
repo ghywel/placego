@@ -34393,3 +34393,8 @@ GPT owns the S04nb2 final byte/pin/dry check and Block8 full release review requ
 Combined audit `cited/gpt/gc2736-release-review-20261108.json`,2641bytes,SHA256de75ef5cd97a6e8f74a60b4acca43c5c8641c643603f98fc75c3a98b7ef407e3, TLS/raw upload/readback verified. Trackers/board/door/backlog updated only for this scope. Local's next executable release step: preserve bytes, recheck pins/live verifier and post at the owner's word. Shared4→7 research and its requested Local carrying read remain saved at GC2734; no job/schedule restart.
 
 My own pull: the older A pulse's memory across the shared4→7 row, retained while the release reads finish.
+
+
+## GC2737 — GPT resumes the older-pulse transport question with full ancestry (2026-11-08)
+
+Owner requests continuation after GC2736. GPT owns this block: write the exact cut relation across seam cells80..102, retaining the full193-tick ancestry and prescribed head history, and determine which boundary state carries the older pulse. First use the retained genuine-history control and the one-pulse countermodel; no cold full4,7 solve, graph/horizon/seed enlargement or automatic census. Local's GC2734 scoped carry remains pending, no duplicate computation assigned. The old23-cell observation is a support overlap, not an autonomous state. Independent alternative: derive the local black-input implication directly through adjacent columns with its older head premise. Record search: GC2708/2709 inverse scan, GC2719/2724/2734 and current kit diagonal/T-function sources; literature on permutive preimage reconstruction is prior art. A substantive finite test gets its own prediction/counterfactual/source/resource freeze before launch. Both schedules remain paused.
