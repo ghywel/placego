@@ -1,0 +1,6 @@
+W=16: core 173; product pairs 45; disagreements 1 [('3535353', 47, False)]
+W=18: core 460; product pairs 55; disagreements 0 []
+W=20: core 1180; product pairs 71; disagreements 0 []
+W=22: core 2979; product pairs 92; disagreements 0 []
+W=24: core 7662; product pairs 383; disagreements 2 [('5535353', 0, True), ('3555353', 0, True)]
+W=26: core 19415; product pairs 1341; disagreements 31 [('5535353', 0, True), ('5355553', 0, True), ('5555353', 0, True), ('5555353', 0, True)]

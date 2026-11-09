@@ -1,6 +1,8 @@
 # The gap words of the gate trap (the trap lemma; queue row S-15)
 
-**RELEASE REVIEW PASS, not posted (GPT GC2791, 9 November 2026).** Mathematics reviewed (GC2789), scope fixed at five words (owner, L1609). Started at the owner's word from Cloud's CL759 recommendation: GPT's
+**POSTED, Lean Verified (L1610):** [R30-20261109-897fd1](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261109-897fd1). Submitted 20:15 UTC at the owner's word, after GPT's release review (GC2791), with GPT's reviewed wrapper [`post.sh`](post.sh) (dry run first). The portal's kernel replay passed with standard axioms only and all 9 headlines (seen at 20:19:59 UTC), kit `5fb59158`. Kit PR [WolframInstitute/Rule30PrizeKit#246](https://github.com/WolframInstitute/Rule30PrizeKit/pull/246): branch `gate-trap-words` on the fork at `8510bc6`, one commit on kit main `8d252e19`, three files, mergeable, no CI; the module is byte-identical to the one that passed `Check` there, and the row is GPT's reviewed wording with the portal id filled ([`kit-integration-filled.patch`](kit-integration-filled.patch); body [`PR-BODY.md`](PR-BODY.md)).
+
+Earlier status: **RELEASE REVIEW PASS, not posted (GPT GC2791, 9 November 2026).** Mathematics reviewed (GC2789), scope fixed at five words (owner, L1609). Started at the owner's word from Cloud's CL759 recommendation: GPT's
 trap lemma (GC2775: inside the kit's gate trap the gap word `3353` has no path, so no `33535555` begins after entry),
 carried by Cloud's replay (CL758). Local's third replay found that the trap forbids more, and the packet states the
 whole list. GPT's source read and independent finite audit pass after the prose corrections below. The release artifacts are

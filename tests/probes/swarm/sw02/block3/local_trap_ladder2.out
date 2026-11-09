@@ -1,0 +1,31 @@
+W=16: lift 829, black 188, recurrent core 173 after 5 gap steps (sizes [188, 187, 181, 176, 175, 173])
+   eventual minimal forbidden up to 20 gaps: ['33', '3553']
+   allowed words by gaps (last three): [2345, 3553, 5369] ; entropy of the shift these words define: 0.13246 bit per sample
+W=18: lift 3316, black 752, recurrent core 460 after 4 gap steps (sizes [752, 521, 486, 471, 460])
+   eventual minimal forbidden up to 20 gaps: ['33', '3553', '3535353']
+   allowed words by gaps (last three): [1970, 2945, 4399] ; entropy of the shift these words define: 0.12707 bit per sample
+W=20: lift 13264, black 3008, recurrent core 1180 after 4 gap steps (sizes [3008, 1501, 1275, 1207, 1180])
+   eventual minimal forbidden up to 20 gaps: ['33', '3553', '3535353']
+   allowed words by gaps (last three): [1970, 2945, 4399] ; entropy of the shift these words define: 0.12707 bit per sample
+W=22: lift 53056, black 12032, recurrent core 2979 after 8 gap steps (sizes [12032, 4391, 3518, 3218, 3028, 3001]...)
+   eventual minimal forbidden up to 20 gaps: ['33', '3553', '3535353']
+   allowed words by gaps (last three): [1970, 2945, 4399] ; entropy of the shift these words define: 0.12707 bit per sample
+# second run, W to 26, 18 gaps:
+W=16: lift 829, black 188, recurrent core 173 after 5 gap steps (sizes [188, 187, 181, 176, 175, 173])
+   eventual minimal forbidden up to 18 gaps: ['33', '3553']
+   allowed words by gaps (last three): [1024, 1553, 2345] ; entropy of the shift these words define: 0.13246 bit per sample
+W=18: lift 3316, black 752, recurrent core 460 after 4 gap steps (sizes [752, 521, 486, 471, 460])
+   eventual minimal forbidden up to 18 gaps: ['33', '3553', '3535353']
+   allowed words by gaps (last three): [882, 1319, 1970] ; entropy of the shift these words define: 0.12707 bit per sample
+W=20: lift 13264, black 3008, recurrent core 1180 after 4 gap steps (sizes [3008, 1501, 1275, 1207, 1180])
+   eventual minimal forbidden up to 18 gaps: ['33', '3553', '3535353']
+   allowed words by gaps (last three): [882, 1319, 1970] ; entropy of the shift these words define: 0.12707 bit per sample
+W=22: lift 53056, black 12032, recurrent core 2979 after 8 gap steps (sizes [12032, 4391, 3518, 3218, 3028, 3001]...)
+   eventual minimal forbidden up to 18 gaps: ['33', '3553', '3535353']
+   allowed words by gaps (last three): [882, 1319, 1970] ; entropy of the shift these words define: 0.12707 bit per sample
+W=24: lift 212224, black 48128, recurrent core 7662 after 8 gap steps (sizes [48128, 13043, 9721, 8610, 7939, 7779]...)
+   eventual minimal forbidden up to 18 gaps: ['33', '3553', '3535353']
+   allowed words by gaps (last three): [882, 1319, 1970] ; entropy of the shift these words define: 0.12707 bit per sample
+W=26: lift 848896, black 192512, recurrent core 19415 after 9 gap steps (sizes [192512, 39592, 27163, 22999, 20687, 19990]...)
+   eventual minimal forbidden up to 18 gaps: ['33', '3553', '3535353', '35553535555353', '353555555535353', '3535355553555353', '3555553535555353', '353555555535355553']
+   allowed words by gaps (last three): [873, 1303, 1939] ; entropy of the shift these words define: 0.12604 bit per sample

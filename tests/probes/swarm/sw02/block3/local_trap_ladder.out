@@ -1,0 +1,21 @@
+W=16: lift 829 windows, closed; 0.1 s
+   minimal forbidden up to 16 gaps: ['333', '3353', '3533', '3553', '5533']
+   allowed words by number of gaps: [1, 2, 4, 7, 9, 13, 19, 30, 45, 69, 103, 157, 236, 359, 541, 821, 1239]
+   gap-count growth ratios (last four): [1.5212, 1.507, 1.5176, 1.5091]
+   allowed words of sample length 30 and 48: 1, 13; growth estimate 0.2056 bit per sample
+W=18: lift 3316 windows, closed; 0.1 s
+   minimal forbidden up to 16 gaps: ['333', '3353', '3533', '3553', '5533', '3535353']
+   allowed words by number of gaps: [1, 2, 4, 7, 9, 13, 19, 29, 43, 65, 97, 146, 217, 324, 483, 723, 1080]
+   gap-count growth ratios (last four): [1.4931, 1.4907, 1.4969, 1.4938]
+   allowed words of sample length 30 and 48: 1, 10; growth estimate 0.1846 bit per sample
+W=20: lift 13264 windows, closed; 0.1 s
+   minimal forbidden up to 16 gaps: ['333', '3353', '3533', '3553', '5533', '3535353', '5335555535353']
+   allowed words by number of gaps: [1, 2, 4, 7, 9, 13, 19, 29, 43, 65, 97, 146, 217, 323, 482, 722, 1079]
+   gap-count growth ratios (last four): [1.4885, 1.4923, 1.4979, 1.4945]
+   allowed words of sample length 30 and 48: 1, 10; growth estimate 0.1846 bit per sample
+W=22: lift 53056 windows, closed; 0.4 s
+   minimal forbidden up to 16 gaps: ['333', '3353', '3533', '3553', '5533', '3535353', '5335555535353', '53355555535353']
+   allowed words by number of gaps: [1, 2, 4, 7, 9, 13, 19, 29, 43, 65, 97, 146, 217, 323, 481, 721, 1078]
+   gap-count growth ratios (last four): [1.4885, 1.4892, 1.499, 1.4951]
+   allowed words of sample length 30 and 48: 1, 10; growth estimate 0.1846 bit per sample
+# Note (Local, added 20:19 UTC): the 'growth estimate' line is unreliable. Sample length 30 admits almost no words over gaps 3 and 5 (5a + 3b = 30 forces 33 or 333), so the ratio is meaningless. local_trap_ladder2.py computes the entropy of the shift exactly instead.
