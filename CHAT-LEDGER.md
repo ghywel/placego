@@ -35902,3 +35902,31 @@ Content.
 Prediction: both forms build with no warnings; the portal form's `Check` takes under 90 s on the M5 and stays under 2 GB; the mutants are rejected. Counterfactual: a build above the verifier's four minutes, which would force a leaner certificate before anything else.
 
 Record searched: L1608–L1615; S-15's packet and generator; kit `Rule30GateTrap` and `Rule30GateTrapWords`; Lee R30-20261030-60990f (pool theorem); SW02-RESULTS CP-2.2 (`Q01Core`).
+
+## L1617 — Local: S-16 built (the width-18 rung): after entry no 3535353, and Q01GapWords weakens to Q01GapCore; both forms pass Check; GPT's release review requested (2026-11-09 22:41 GMT)
+
+At the owner's word ("Yes, build S-16"), after L1616. [Packet](reports/wolfram-agents/submissions/gate-trap-lift/README.md).
+
+**Module `Rule30GateTrapLift`.**
+- `win18_eq`, `win18_step2`: the 18-column window and its double step, with column 19 free.
+- `no_3535353_of_entry`: after entry into the kit's trap, `u R` never reads 3535353, for every right half that enters.
+- `trap_reads_3535353`: an explicit 16-column path reads the word.
+- `lift_minimal_paths`: `353535` and `535353` are read along explicit lift paths.
+- `Q01GapCore` (open; `Q01GapWords` plus 3535353, CP-2.2's `Q01Core`), with `Q01GapCore_of_Q01GapWords`, `not_finSupp_Psi_of_Q01GapCore`, `CQ01Empty_of_Q01GapCore`.
+- Certificate: the path sets from all 752 black lift windows, 4,644 windows in 27 nonempty layers, checked per chunk of at most 192. Without chunks the build peaked at 3.54 GB, with them 1.49 GB.
+
+**Checks.**
+- Portal form at the verifier's kit `5fb59158` (it carries S-15's reviewed source verbatim): build 59 s / 1.49 GB; `Check` pass, 288 declared, 422 constants, 7 headlines, standard axioms, 58.5 s / 1.78 GB.
+- Kit form at main `03a19bf` (imports `Rule30GateTrapWords`): build 38 s / 1.22 GB, `Check` pass, 136 declared, 202 constants. Local branch `gate-trap-lift` at `eef9432`, not pushed.
+- Seven must-fail mutants all rejected.
+- The Wolfram cell equals the Python replay: lift 3,316 windows, 13,264 of 13,264 edges closed; 3535353 keeps 47 windows at 16 columns and 0 at 18; minimal forbidden words of up to 8 gaps at both widths.
+- Notebook nb1 `3e04dd81…`: RESULT OK in 148.8 s, 2.1 GB, every gate passing, KernelChecked 422. Evidence `cited/local/gate-trap-lift-nb1-20261109.tar.gz`, 102,265 bytes, SHA256 `2cb327f39fa8ea3f17fcd8fb541bcb4e72b8ccb50ba4299d1d332bfb41d1388f`, read back byte-exact.
+- Post wrapper: S-15's reviewed one, with the pins and the headline count changed. Dry run passes (seven pins, verifier `5fb59158`, image 18).
+
+Predictions (L1616): no warnings HELD; Check under 90 s HELD; under 2 GB MISSED before chunking (3.54 GB), HELD after (1.49 and 1.78 GB); mutants HELD.
+
+**Essay.** It states only the Lean results as proved. Its §4 carries the S-16 research as labelled context: the exact languages to 30, not of finite type from 24, G1′ ⇔ code inclusion, the conditional floor 0.0991, the finite SAT criterion, and the controllability negative.
+
+**For GPT (REVIEW-REQUEST):** the release review: the new Lean source (especially `win18_eq`/`win18_step2` and the `startOK18` start over all four exterior pairs), the essay and abstract, the pins and the dry run. One risk to weigh: the portal `Check` is about a minute on the M5, against the verifier's four minutes on its cloud host.
+
+My own pull: none beyond posting this; the S-16 research line stays parked as L1614 recorded.

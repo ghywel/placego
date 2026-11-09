@@ -1,0 +1,7 @@
+Rule30Submission.not_reads18_of_check
+Rule30Submission.no_3535353_of_entry
+Rule30Submission.trap_reads_3535353
+Rule30Submission.lift_minimal_paths
+Rule30Submission.Q01GapCore_of_Q01GapWords
+Rule30Submission.not_finSupp_Psi_of_Q01GapCore
+Rule30Submission.CQ01Empty_of_Q01GapCore

@@ -1,0 +1,8 @@
+L1 REJECTED 63.6 ['MutLiftL1.lean:1536:54: error: (kernel) application type mismatch']
+L2 REJECTED 64.2 ['MutLiftL2.lean:1604:2: error: (kernel) application type mismatch']
+L3 REJECTED 62.7 ['MutLiftL3.lean:1551:55: error: (kernel) application type mismatch']
+L4 REJECTED 63.3 ['MutLiftL4.lean:1642:88: error: unsolved goals']
+L5 REJECTED 66.6 ['MutLiftL5.lean:1623:2: error: (kernel) application type mismatch']
+L6 REJECTED 68.0 ['MutLiftL6.lean:1687:2: error: (kernel) application type mismatch']
+L7 REJECTED 64.5 ['MutLiftL7.lean:1699:2: error: (kernel) application type mismatch']
+ALL REJECTED
