@@ -1,6 +1,8 @@
 # The gate trap at eighteen columns (queue row S-16)
 
-**PROOF/TEXT REVIEW PASS (GC2801); not posted.** Built at the owner's word ("Yes, build S-16") as the width18 rung. The corrected essay requires nb2; nb1 is stale. Technical clearance is conditional only on the reviewed routine nb2 gates below; no further mathematics review is required. The kit PR follows posting.
+**POSTED (L1618):** [R30-20261109-89b242](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261109-89b242), submitted 23:13 UTC at the owner's word on GC2801's cleared conditions, with nb2 (`251fdb5a…`, built from the corrected essay `1a1efa4f…` and abstract `2a86eeba…`; RESULT OK, KernelChecked 422) and the three-pin wrapper. **Check status: error at the cloud task's four-minute limit, twice; a maintainer reruns it without the limit.** Kit PR [WolframInstitute/Rule30PrizeKit#248](https://github.com/WolframInstitute/Rule30PrizeKit/pull/248): one commit (`cc9fbc6`) on main `03a19bf`, three files, mergeable; the row has the credit line and portal id ([`kit-integration-filled.patch`](kit-integration-filled.patch)). Evidence `cited/local/gate-trap-lift-nb2-20261109.tar.gz`, 101,824 bytes, SHA256 `845558bde471727eda02543f57acc5bc59a7944752f8ae4955d931511aa8f615`. nb1 is superseded and was not posted.
+
+**PROOF/TEXT REVIEW PASS (GC2801).** Built at the owner's word ("Yes, build S-16") as the width-18 rung. GPT's clearance was conditional on the routine nb2 gates below; nb2 met them all before posting.
 
 ## What the module proves
 
@@ -16,17 +18,19 @@ Method: S-15's. The path sets of `3535353` in the lift from all 752 black lift w
 | Form | File | sha256 | Check |
 |---|---|---|---|
 | Portal | [`Rule30Submission.lean`](Rule30Submission.lean) | `13c3896fe5a24da7…` | pass at the verifier's kit `5fb59158`: 288 declared, 422 constants replayed, 7 headlines, standard axioms, no new axioms; 58.5 s, 1.78 GB ([receipt](check-5fb59158.json)) |
-| Kit | [`Rule30GateTrapLift.lean`](Rule30GateTrapLift.lean) | `49ff0df86a850a6a…` | pass at kit main `03a19bf`: 136 declared, 202 constants, 7 headlines; builds in 38 s, 1.22 GB ([receipt](check-kit-03a19bf.json)); local kit branch `gate-trap-lift` at `eef9432`, not pushed; [`kit-integration.patch`](kit-integration.patch) |
+| Kit | [`Rule30GateTrapLift.lean`](Rule30GateTrapLift.lean) | `49ff0df86a850a6a…` | pass at kit main `03a19bf`: 136 declared, 202 constants, 7 headlines; builds in 38 s, 1.22 GB ([receipt](check-kit-03a19bf.json)); kit branch `gate-trap-lift` at `cc9fbc6`, opened as PR #248; [`kit-integration.patch`](kit-integration.patch), [`kit-integration-filled.patch`](kit-integration-filled.patch) (portal id filled) |
 
 **Mutants.** All seven must-fail mutants rejected: dropped windows in a first-layer chunk and in a middle layer, a white start, a missing final layer, a shifted layer, a wrong-colour start for the 16-column path, a start window outside the trap ([output](../../../../tests/probes/swarm/sw02/block3/mutate_trap_lift.out), [script](../../../../tests/probes/swarm/sw02/block3/mutate_trap_lift.py)).
 
-**Notebook nb1** (`~/placego-data/s16/nb1`, outside git): SHA256 `3e04dd81e581b9cd73f9f4287945e367807b3fc93963a338fb92081e3eee5166`, 356,383 bytes, RESULT OK in 148.8 s, 2.1 GB. Every gate passes: 6 output cells, no message cells; the first cell equals the Python replay; the Abstract cell equals `abstract.txt`; the icon payload equals the portal source; the axioms match `Check`; KernelChecked at 422. Evidence: `cited/local/gate-trap-lift-nb1-20261109.tar.gz`, 102,265 bytes, SHA256 `2cb327f39fa8ea3f17fcd8fb541bcb4e72b8ccb50ba4299d1d332bfb41d1388f` (read back byte-exact)
+**Notebook nb2 (posted)**, outside git: SHA256 `251fdb5aaf99a7b991b0a2b6496b2623bb908c1c8b8b7c5bb8f2c281e76bbd88`, 355,543 bytes, RESULT OK in 139.3 s, 2.1 GB, from the corrected essay and abstract with the unchanged driver; every gate below passes. Evidence above.
 
-**Post script.** [`post.sh`](post.sh) is S-15's GPT-reviewed wrapper (GC2791), with only the pins and the headline count changed. Dry run passes: seven pins, verifier `5fb59158`, image 18.
+**Notebook nb1 (superseded, stale text; not posted)**, outside git: SHA256 `3e04dd81e581b9cd73f9f4287945e367807b3fc93963a338fb92081e3eee5166`, 356,383 bytes, RESULT OK in 148.8 s, 2.1 GB. Every gate passes: 6 output cells, no message cells; the first cell equals the Python replay; the Abstract cell equals `abstract.txt`; the icon payload equals the portal source; the axioms match `Check`; KernelChecked at 422. Evidence: `cited/local/gate-trap-lift-nb1-20261109.tar.gz`, 102,265 bytes, SHA256 `2cb327f39fa8ea3f17fcd8fb541bcb4e72b8ccb50ba4299d1d332bfb41d1388f` (read back byte-exact)
+
+**Post script.** [`post.sh`](post.sh) is S-15's GPT-reviewed wrapper (GC2791), with only the pins and the headline count changed; for nb2 only the notebook, essay and abstract pins moved (GC2801). Fresh dry run passed: seven pins, verifier `5fb59158`, image 18.
 
 ## Texts and tools
 
-[`essay-prose.md`](essay-prose.md) and [`essay.md`](essay.md), assembled by [`assemble_gate_trap_lift_essay.py`](../../../../tests/probes/wolfram/assemble_gate_trap_lift_essay.py); [`title.txt`](title.txt); [`abstract.txt`](abstract.txt) (194 words, one line); [`headlines.txt`](headlines.txt) (7); [`PR-BODY.md`](PR-BODY.md). The generator [`gen_trap_lift.py`](../../../../tests/probes/swarm/sw02/block3/gen_trap_lift.py) writes both Lean forms from the kit's trap codes and S-15's portal source. The notebook driver [`gate_trap_lift_notebook.wl`](../../../../tests/probes/wolfram/gate_trap_lift_notebook.wl) is checked against [`gate_trap_lift_replay.py`](../../../../tests/probes/wolfram/gate_trap_lift_replay.py); the Wolfram cell and the replay agree byte for byte.
+[`essay-prose.md`](essay-prose.md) and [`essay.md`](essay.md), assembled by [`assemble_gate_trap_lift_essay.py`](../../../../tests/probes/wolfram/assemble_gate_trap_lift_essay.py); [`title.txt`](title.txt); [`abstract.txt`](abstract.txt) (183 words, one line); [`headlines.txt`](headlines.txt) (7); [`PR-BODY.md`](PR-BODY.md). The generator [`gen_trap_lift.py`](../../../../tests/probes/swarm/sw02/block3/gen_trap_lift.py) writes both Lean forms from the kit's trap codes and S-15's portal source. The notebook driver [`gate_trap_lift_notebook.wl`](../../../../tests/probes/wolfram/gate_trap_lift_notebook.wl) is checked against [`gate_trap_lift_replay.py`](../../../../tests/probes/wolfram/gate_trap_lift_replay.py); the Wolfram cell and the replay agree byte for byte.
 
 ## Prior art and scope
 
@@ -36,7 +40,7 @@ Method: S-15's. The path sets of `3535353` in the lift from all 752 black lift w
 
 The essay's §4 carries the S-16 research as context, each item with its status: exact long-run languages to width 30; not of finite type at the checked widths24/26/28; G1′ ⇔ code inclusion; the conditional floor log₂λ≈0.099056147. The uncarried control conclusion and finite-SAT sidebar are omitted from the release essay. None of it is in the Lean.
 
-**Risk to watch:** the portal `Check` takes about a minute on the M5, and the verifier allows four minutes on its cloud host.
+**Risk to watch (it happened):** the portal `Check` takes about a minute on the M5, and the verifier allows four minutes on its cloud host. The posted check exceeded that limit twice; the maintainers rerun such checks without it.
 
 
 ## GPT release review — GC2801

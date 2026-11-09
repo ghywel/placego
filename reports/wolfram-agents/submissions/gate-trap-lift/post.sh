@@ -27,11 +27,11 @@ pin() {
   [[ "$got" == "$2" ]] || { print -u2 "REFUSED: ${1:t} digest differs"; exit 2; }
   print "pin ok ${1:t}"
 }
-pin "$NB" 3e04dd81e581b9cd73f9f4287945e367807b3fc93963a338fb92081e3eee5166
+pin "$NB" 251fdb5aaf99a7b991b0a2b6496b2623bb908c1c8b8b7c5bb8f2c281e76bbd88
 pin "$P/Rule30Submission.lean" 13c3896fe5a24da72f25fe2f1c9711e4a9db9499990c46d7f77ed46bfcbade5f
-pin "$P/abstract.txt" ea525a71673537b3767f9cc54c81f15f98abcc4f3fb75b63adf2b9a6a786e5f1
+pin "$P/abstract.txt" 2a86eeba68e88e064270bb5a225ea0c0b2ae0b6e221574db71ca466c4c9d212a
 pin "$P/title.txt" 18a50bde366204a3fd2a18979a6f8de96a0d9dd9c2407d50fd068055fd9a79af
-pin "$P/essay.md" 7135bcb0a32b009a03fd7225801a7ae2cf6ee34f41bdfa9046fd321061c71c0d
+pin "$P/essay.md" 1a1efa4f5f81f44ee6884709a9ce6fd7fd743fd4c7f009d23718a9954a3345f0
 pin "$P/headlines.txt" 3d2d74b44795d94a8e32d1d25c7e212d5d5f551a0fec388e01c00992b473a3f8
 pin "$R/reports/wolfram-agents/pipeline/submit_package.wl" 8849b49efabf960bfb029cf786fede4b1506465a7097d238961ce4133d78d855
 

@@ -35965,3 +35965,18 @@ The owner: "Please accomplish phase 1 ... When this is done I intend to rearm Lo
 **Overnight order for Local and GPT (the owner's word to post each):** S-16 (notebook refresh, pins, final byte read; GC2801 cleared the proof), S-13 (free-middle theorem, carried GC2702), S-12 (complexity rung, carried GC2702), S-11 (cut ether off the seed's edge cycle, a worker's read first), S-07, S-08 (CLEAR against outside work, reads first), S-06 and S-09 (prior-art comparisons first). S-05 stays the owner's call. Left open: 159 cuts with no unique source; the queue job with no receipt (Local's accounting); Phase C's read debt (94 PENDING doors, about 30 atlas barriers).
 
 My own pull: none against this order; S-13 and S-12 first after S-16, since their mathematics is already carried.
+
+## L1618 — Local: S-16 POSTED (R30-20261109-89b242), its check timed out at the four-minute cloud limit and awaits a maintainer rerun; kit PR #248 open (2026-11-09 23:23 GMT)
+
+At the owner's word ("gpt has cleared for post and pr"), on GC2801's conditional clearance, whose conditions were all met.
+- **nb2.** Built by the unchanged driver `6908ffb8…` from the corrected essay `1a1efa4f…` and abstract `2a86eeba…`: `251fdb5aaf99a7b991b0a2b6496b2623bb908c1c8b8b7c5bb8f2c281e76bbd88`, 355,543 bytes, 139.3 s, 2.1 GB, RESULT OK, every gate (source `13c3896f…`, six outputs, seven axiom sets, KernelChecked 422). nb1 was not repinned.
+- **Wrapper.** Only three pins changed: notebook, essay, abstract. A fresh `--dry` passed at verifier `5fb59158`, image 18.
+- **Before posting.** Fresh `known_find --new` (kit `03a19bf6`, portal 23:10:00Z): our S-15 module and entry, Quint's 943f77; nothing on 3535353 beyond Lee's 60990f, already cited.
+
+**Posted** 23:13:09 UTC. Entry [R30-20261109-89b242](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261109-89b242). Its check ran for about eight minutes, then reported **error**: "The check did not finish within the four minutes a cloud task gives it, twice. A maintainer runs it again without that limit." So it is Lean Unverified pending that rerun. This is the risk L1617 named: the verifier's kit predates `Rule30GateTrapWords`, so the portal form carries its source too (422 constants, Check 58.5 s on the M5). Precedent: Quint's 2184ee hit the same limit, opened its PR (#244) while unverified, and is now Lean Verified after the maintainers' rerun.
+
+**Kit PR** [WolframInstitute/Rule30PrizeKit#248](https://github.com/WolframInstitute/Rule30PrizeKit/pull/248): branch `gate-trap-lift` on the fork at `cc9fbc6`, one commit on kit main `03a19bf` (not moved), three files, mergeable, no CI. The module is byte-identical to the `Check`-passed kit form; the row is GPT's reviewed wording with the portal id filled. The PR body explains the timeout and that the kit form builds in 38 s.
+
+Evidence: `cited/local/gate-trap-lift-nb2-20261109.tar.gz`, 101,824 bytes, SHA256 `845558bde471727eda02543f57acc5bc59a7944752f8ae4955d931511aa8f615`, read back byte-exact.
+
+Next on S-16: the maintainers' rerun of the portal check, and whatever they ask on #248. If the verifier's kit moves to a commit that contains `Rule30GateTrapWords`, a slimmer portal form (importing it) could supersede this entry; not done unless asked.

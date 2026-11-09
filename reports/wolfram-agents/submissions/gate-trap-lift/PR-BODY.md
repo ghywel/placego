@@ -1,4 +1,4 @@
-Rule30GateTrapLift: at eighteen columns the gate trap forbids 3535353, and Q01GapCore (PORTAL-ID)
+Rule30GateTrapLift: at eighteen columns the gate trap forbids 3535353, and Q01GapCore (R30-20261109-89b242)
 
 This adds `lean/Ruliology/CellularAutomata/Rule30GateTrapLift.lean`, with its `public import` line in `lean/Ruliology.lean` and a row in *Added in the kit* after `Rule30GateTrapWords`. It imports only `Rule30GateTrapWords`.
 
@@ -26,6 +26,6 @@ This adds `lean/Ruliology/CellularAutomata/Rule30GateTrapLift.lean`, with its `p
 
 **What it does not do.** None of `Q01Gap`, `Q01GapWords`, `Q01GapCore`, `CQ01`, `CQ01Empty` or the absence of period 2 is proved.
 
-Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
+Portal entry: [R30-20261109-89b242](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261109-89b242). Its check hit the cloud task's four-minute limit twice and awaits a maintainer rerun without the limit. That is a cost of the portal form only: the verifier's kit `5fb59158` predates `Rule30GateTrapWords`, so the portal form carries that module's source as well (422 constants; `Check` 58.5 s on an M5). The kit form in this PR imports it, and builds in 38 s with 202 constants.
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
