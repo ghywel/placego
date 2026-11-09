@@ -70,7 +70,7 @@ Seven posted or ready in three days from one swarm's leads, each with a worker's
 
 ## 6. A plan that builds on it rather than wastes it
 
-**Phase A, the record (desk work, no compute, two or three sessions of Local and Cloud).** Fix the five defects; add one table to WARM-LEADS, the harvest ledger: every swarm result with an identifier, its status today, and where it went (portal id, kit module, record section, "unread"). That table is what the owner has been missing: WARM-LEADS summarised the schedule, not the findings.
+**Phase A, the record (desk work, no compute, two or three sessions of Local and Cloud).** *Done by Cloud, CL762: 231 truncated fields restored, five backlog items annotated, a door-ledger amendment, the harvest ledger in WARM-LEADS, the narrative paragraphs moved to its history section, the closing rule written into its usage section; still open: the 159 cuts with no unique source, and the unreceipted queue job (Local's accounting).* Fix the five defects; add one table to WARM-LEADS, the harvest ledger: every swarm result with an identifier, its status today, and where it went (portal id, kit module, record section, "unread"). That table is what the owner has been missing: WARM-LEADS summarised the schedule, not the findings.
 
 **Phase B, the harvest (cheap submissions, Local builds, GPT reads, one owner word each).** In order of readiness: S-12 and S-13 (carried; Lean and essay only), S-16 (the 18-column language, cost measured first), S-07, S-08, S-11 (small, clear against outside work), S-06 after the Berzai phase check, S-09 against `ColumnTransfer`, S-05 the owner's call. Five to eight more modules from results that already exist.
 
