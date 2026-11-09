@@ -1,0 +1,12 @@
+18-column lift: 3316 windows, closure violations 0; every 18-window's low 16 bits in the 16-trap: True
+  3535353: layers [37, 30, 33, 46, 58, 0] DIES (28 layers)
+  333: layers [192, 192, 47, 57, 62, 0] DIES (10 layers)
+  3353: layers [53, 55, 67, 85, 94, 0] DIES (15 layers)
+  3533: layers [234, 247, 92, 92, 89, 0] DIES (15 layers)
+  3553: layers [198, 213, 237, 249, 273, 0] DIES (17 layers)
+  5533: layers [421, 433, 100, 106, 100, 0] DIES (17 layers)
+  35353: layers [90, 86, 116, 140, 150, 43] survives (20 layers)
+  535353: layers [75, 68, 92, 112, 118, 43] survives (25 layers)
+  5555: layers [420, 421, 433, 372, 369, 420] survives (21 layers)
+  35: layers [176, 192, 192, 147, 157, 202] survives (9 layers)
+16-column graph, 3535353 final layer: 47 windows (L1608: 47)
