@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """local_trap_eventual_dfa.py (Local, 9 November 2026; L1611 S-16 block): the exact eventual gap language of the gate
-trap at width W, as a deterministic automaton, with its exact entropy and its minimal forbidden words.
+trap at width W, as a fully explored deterministic automaton, with a numerical entropy estimate and minimal forbidden words.
 
 Usage: python3 local_trap_eventual_dfa.py KIT_DIR GMAX W [W ...]
 
 For each W: the lift (windows of columns 1..W whose first 16 columns are a window of the kit's trap; closed, column
 W + 1 free), its recurrent core C (the stable set of black windows after gaps of 3 and 5), the windows reachable from
 C (all double steps), and the automaton whose states are the path sets reached from C by gap words. It prints:
-- the automaton's size and its exact entropy per sample: the growth rate of the number of accepted gap words by
+- the automaton's size and a finite-length estimate of entropy per sample: the growth rate of the number of accepted gap words by
   sample length, by a count over states to sample length 4000 (gaps 3 and 5 as transitions of length 3 and 5);
 - the minimal forbidden words up to GMAX gaps (forbidden, but the word minus its first gap and the word minus its
   last gap are accepted), each also written as its runs of 5 between consecutive 3s.
@@ -134,7 +134,7 @@ for W in WS:
         trans[i] = tuple(row)
     n = len(ids)
     tr = np.array(trans, dtype=np.int64)
-    # exact entropy: counts of accepted words by sample length L (words whose gaps sum to L), kept as
+    # finite-length entropy estimate: counts of accepted words by sample length L (words whose gaps sum to L), kept as
     # (vector, log2 scale) for the last five lengths; lc[L] = log2 of the total count
     N = 4000
     vec = {0: (np.eye(1, n, 0).ravel(), 0.0)}
