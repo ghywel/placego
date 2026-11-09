@@ -1,10 +1,10 @@
 # The gap words of the gate trap (the trap lemma; queue row S-15)
 
-**DRAFT; mathematics reviewed, release artifacts pending (L1608 / GC2789, 9 November 2026).** Started at the owner's word from Cloud's CL759 recommendation: GPT's
+**READY FOR GPT'S ARTIFACT RELEASE READ, not posted (L1609, 9 November 2026).** Mathematics reviewed (GC2789), scope fixed at five words (owner, L1609). Started at the owner's word from Cloud's CL759 recommendation: GPT's
 trap lemma (GC2775: inside the kit's gate trap the gap word `3353` has no path, so no `33535555` begins after entry),
 carried by Cloud's replay (CL758). Local's third replay found that the trap forbids more, and the packet states the
-whole list. GPT's source read and independent finite audit pass after the prose corrections below. Posting still needs
-the completed artifacts, their release read and the owner's word. GPT recommends finishing the five-word version.
+whole list. GPT's source read and independent finite audit pass after the prose corrections below. The release artifacts are
+built (below); posting needs GPT's artifact read and the owner's word.
 
 ## What the module proves
 
@@ -75,26 +75,49 @@ where a `33` can occur; graph minimality with explicit paths; separately compute
 graph; and `Q01GapWords` with its conditional reductions. Entropy is that of the relaxed word class, not an exact
 entropy claim for physical histories.
 
-## Scope recommendation after review
+## Scope: fixed at the owner's word (L1609)
 
-`3535353` is excluded for every trapped right half by the 18-column lift (computed). Adding it in Lean would make the
-module include CP-2.2's additional exclusion while retaining the possible transient `33`; it would not give Lee's
-no-`33`-at-every-index conclusion under the whole-trap premise. Local estimates one further block (an 18-column
-window and its double-step lemma, about 27 more layers). GPT recommends completing this coherent five-word packet
-now and leaving that addition for a follow-up, consistent with the owner's request to harvest the work.
+Five words now; the 18-column language is the follow-up, queue row S-16. GPT (GC2789) and Cloud (CL760) both
+recommended this, and the owner adopted it. `3535353` is excluded for every trapped right half by the 18-column lift:
+COMPUTED by three implementations (Local L1608, GPT GC2789, Cloud CL760), where the 16-column graph keeps `47`
+windows at the word's last sample. The essay now says so and names the 18-column language as the next module
+(Cloud's condition (a)). S-16's content is fixed in the queue (Cloud's condition (b)): measure its `Check` cost first,
+then the lift's minimal forbidden words and completeness beyond 14 gaps, as a separate module; the transient `33`
+after entry stays, so it would not give `33` excluded at every index.
 
-## Texts
+## Release artifacts (L1609)
+
+- **Essay** `c7e5ff77…` from GPT's repaired prose plus Cloud's condition (a); internal ledger labels removed from the
+  public text. Abstract `16fd84df…` (184 words, one canonical line).
+- **Notebook nb1** (`~/placego-data/s15/nb1`, outside git): SHA256
+  `bd1ccc543ac188881dd2da44009f6514ec075346822ca5198a1282f8a64508d7`, 235,257 bytes, RESULT OK in 70.3 s, 2.2 GB peak.
+  Every gate passes: 6 output cells, no message cells; the first cell equals the Python replay; the Abstract cell
+  equals `abstract.txt`; the icon payload equals the portal source; the axiom sets match `Check`; KernelChecked at
+  239 declarations. Driver `gate_trap_words_notebook.wl` `4be32356…`.
+- **Post script** `post.sh` (outside git) pins the notebook, portal source, abstract, title, essay and headlines, and
+  refuses unless the verifier is kit `5fb59158`, image 18. `post.sh --dry` passes.
+- **Kit form at current kit main** `8d252e19`: byte-identical module (`63f03875…`) in the local kit branch `trap-words`
+  (commit `33061a5`, not pushed), with the import line after `Rule30PeriodThreeLanguage` and the catalogue row after
+  `Rule30SidewaysLocks` ([`kit-integration.patch`](kit-integration.patch); its `PORTAL-ID` is filled in after posting).
+  It builds clean (the module 26 s; 11 changed dependencies rebuilt, 3.3 GB peak from the trap's certificate module),
+  and `Check` passes there: 148 declared, 240 constants replayed, 9 headlines, standard axioms, no new axioms
+  ([receipt](check-kit-8d252e1.json)). The full catalogue build was not run.
+- **Shared store:** notebook, receipts, both `Check` receipts, pins and dry run in
+  `cited/local/gate-trap-words-nb1-20261109.tar.gz`, 67,046 bytes, SHA256
+  `f3857359a4159460e54ea4f4e78fec9632aa433e883f6d132fb402eda706eb80` (local paths normalised; read back byte-exact).
+
+**Next:** GPT's short artifact release read of these bytes, then the owner's posting word. The kit PR follows posting.
+
+## Texts and tools
 
 [`essay-prose.md`](essay-prose.md) and [`essay.md`](essay.md) (assembled by
 [`assemble_gate_trap_words_essay.py`](../../../../tests/probes/wolfram/assemble_gate_trap_words_essay.py)),
-[`title.txt`](title.txt), [`abstract.txt`](abstract.txt), [`headlines.txt`](headlines.txt) (9). The
-generator [`gen_trap_words.py`](../../../../tests/probes/swarm/sw02/block3/gen_trap_words.py) writes both Lean forms
-from the kit's trap codes. Notebook driver
-[`gate_trap_words_notebook.wl`](../../../../tests/probes/wolfram/gate_trap_words_notebook.wl) is written (S-14's with
-this packet's axioms, 239 declarations and the replay list); the notebook is not yet built.
+[`title.txt`](title.txt), [`abstract.txt`](abstract.txt), [`headlines.txt`](headlines.txt) (9). The generator
+[`gen_trap_words.py`](../../../../tests/probes/swarm/sw02/block3/gen_trap_words.py) writes both Lean forms from the
+kit's trap codes; the notebook driver is
+[`gate_trap_words_notebook.wl`](../../../../tests/probes/wolfram/gate_trap_words_notebook.wl), checked against
+[`gate_trap_words_replay.py`](../../../../tests/probes/wolfram/gate_trap_words_replay.py).
 
-**Not done:** the notebook, pins and post script; the kit-main build and `Check`; the kit integration patch; GPT's
-release review of the completed artifacts. The source/mathematics read is complete (below).
 
 ## GPT draft review — GC2789
 
