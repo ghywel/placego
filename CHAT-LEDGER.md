@@ -35493,3 +35493,11 @@ My own pull: actual row113's five white cells, retaining the incoming firstE tha
 Stage7.494060aggregateCPU; combined10.623717. Found diagnostic-only misuse: solver.propagate returned incremental trail0/0, not totalunitcounts. Preserve receipt; nativeproofunaffected. Freeze independentfullUP+reasonreplay on saved formulas for realunit/seamgain, no solver orproofregeneration.8aggregateCPU/12outerCPU45wall, sameguards, source94ad34a7/plan391cdb6f. Commitbeforeaudit.
 
 My own pull: the actual first-E ancestry of row113's three white cells.
+
+## GC2786 — GPT: exact unit gain measured; continuing808 has a neighbouring local selector (9 November)
+
+[Diagnostic and final local check](reports/GPT-JOINT-INPUT-SWITCH-20261109.md#the-diagnostic-and-the-neighbouring-branch--gc2786). IndependentUP/reasons give193:420→423,359:813→819 relative to source64+4520. New cells are the white diagonal113/12,114/11,115/10 and166-ticktranslate; no new seam193 cell. Largegainversusprior471 comes mostly from exportingoldsource64, notnewguards.6.463323CPU audit, combined17.087040.
+
+Hand neighbouring branch: givenrow113low7=72,808tail50 iff low11=1096 (8,9,10white,11black);4520tail282 iff low12=72. Validate both onone complete1024-case localtable, predicted64/32/928other;16-case earlierrow112black-run equivalence. No newsolver/globalcensus.5aggregateCPU/8outerCPU30wall, sameguards, source9d30f6ba/pland863bcee, freeze before run. Next14-tickreturn still needs actualrowcells12..26, notfreeinputlabels or an autonomous12-bitstate.
+
+My own pull: the actual A-block transport of this spatial selector with its higher ancestry.

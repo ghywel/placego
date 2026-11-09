@@ -298,3 +298,57 @@ CompletedCPU charged11 plus8 gives19CPU combined ceiling for this audit.
 
 My own pull: how the preserved first E permits the three-white checkpoint at
 row113, rather than whether the fourteen temporal inputs can be chosen freely.
+
+## The diagnostic and the neighbouring branch — GC2786
+
+Independent full unit propagation and reason replay pass. The earlier zero/zero
+incremental-trail diagnostic is superseded:
+
+| Target | Original | Prior label/old4/quartet union | Source64+4520 | New guards/whites |
+|---|---:|---:|---:|---:|
+| 193 | 220 | 249 | 420 | 423 |
+| 359 | 413 | 471 | 813 | 819 |
+
+The new implication contributes exactly the three white cells (113,12),
+(114,11), (115,10), and their166-tick translates in the longer target. The other
+white cells10,11 at113 already follow by UP once the old source64/4520 facts are
+installed. Most of the larger gain versus471 is therefore the explicit export
+of existing source64 facts, not a new result. No new seam193 cell is forced.
+This audit uses6.463323aggregateCPU, combined17.087040; all guards pass.
+
+A neighbouring local identity gives a more concrete next state. Given q113=72,
+the ten-input tail50 (the remaining part of808) is equivalent to
+
+    row113 low11=1096,
+
+that is cells8,9,10=0 and11=1, with every higher cell unrestricted. The4520 tail
+instead needs cells8..12 all0. Necessity follows from
+w116=NOT(u OR v) and, when w116=0, w117=(NOT u) AND(v OR d), with
+u,v,d at row113cells10,11,12. The808 values force u=0,v=1. For sufficiency,
+row115cells9..11=010; if c is its cell12, row116cells9..12 are11(NOT c)(c OR s),
+forcing row117cell11=0 and all three final inputs120..122=000. This is a hand
+sketch awaiting the same independent carry as the target branch.
+
+**Final fixed local check:** retain the full1,024-row truth table (rather than
+only accepted roots), and test both selectors using scalar and integer evolution.
+Predictions64 rows give808's tail,32 give4520's tail,928 give other words. This
+is a different neighbouring-branch question, not a new global census or search.
+A16-case predecessor check at row112low9=475 tests the equivalent target condition
+row112low11=2011 and (cell12 ORcell13)=1: the five whites arise from the preceding
+black run, with its actual outside pair still attached. No incoming-first-E
+feasibility is asserted by these local tables.
+
+Stage5aggregateCPU/outer8CPU30wall, worker3CPU15wall, same memory/free/thermal and
+output guards. SourceSHA256
+`9d30f6ba50bc9c992694dc22310dc28b0b101b7b21cb85bb227f0e32e0a585bf`;
+plan `d863bceee70c0f7678377b57e4bb3c82c7702ac210c3683fd2e2ba11ba2f4664`.
+CompletedCPU charged18 plus5 gives23CPU combined ceiling.
+
+The next return is deliberately not represented as a free choice between these
+two labels: there are other local words, and the next selector's cells come from
+the same actual higher row. An A-branch low11 prefix plus its actual cells12..26
+suffices to evolve14 ticks and read the next low12 checkpoint. Those15 cells
+carry ancestry; this observation is not an autonomous12-cell return automaton.
+
+My own pull: transport that selector through one actual A block, keeping the
+fifteen higher cells and their shared earlier history.
