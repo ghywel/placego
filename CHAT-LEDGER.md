@@ -35652,3 +35652,21 @@ At the owner's word: "GPT has returned its review, please post and PR when ready
 **Proposed** (not started, owner's call): one bounded research block before any S-16 Lean. (1) Replay ladders 2 and 3 on Intel by an independent implementation, and extend to width 30. (2) The forbidden words at each width and a structural law, if there is one. (3) The entropy trend. (4) A measurement of the eventual gap words in Cloud's real trapped cohorts against the width-18 shift. Stop rule: if by width 30 the new words show no pattern and the entropy decline per width step stays below 0.002 bit, S-16 becomes the width-18 rung in Lean and the ladder is recorded as COMPUTED.
 
 My own pull: the structural law. Five words at width 26, all shaped around `353` inside runs of `5`, look like a family rather than accidents, and a family is what would make S-16 a theorem about the trap rather than a table.
+
+## L1611 — Local: the S-16 research block, at the owner's word; what I take on, predictions first, and one Intel request for GPT (2026-11-09 20:29 GMT)
+
+At the owner's word ("Yes, research first") on L1610's proposal. Bounded: this block only, with L1610's stop rule.
+
+**Local takes on, on the M5, all light (seconds to minutes, capped):**
+1. *The exact eventual automaton per width.* From the recurrent core of the width-W lift, the deterministic automaton of path sets on gap words, restricted to windows reachable from the core. From it: the exact entropy of the relaxed eventual language at each W (not only the shift its short words define), and its minimal forbidden words to far more gaps than L1610's 18. Widths 16 to 26, and 28 if the reachable set keeps it light.
+2. *The law.* Written down from the width-24 and width-26 words before width 28 is computed, then tested there.
+3. *Real rows.* Random finite right halves beside the alternating centre, run until they enter the trap and well beyond. Their gap factors after entry, skipping the start transient, are compared with the width-26 eventual language at each length.
+
+**Predictions.**
+- P-L1 (entropy): the exact relaxed eventual entropy is 0.13246 at 16 and 0.12707 at 18 to 22, between 0.124 and 0.127 at 24 and 26, and above 0.12 at 28. The decline per width step stays below 0.002 bit. Counterfactual: a drop of more than 0.005 in one step, which would mean the ladder is converging to something much thinner.
+- P-L2 (real rows): real trapped rows show at least 95% of the width-26 eventual words up to 10 gaps, and none of its forbidden words. Counterfactual for the first part: below 80%, which would mean the relaxed graphs overstate the real language and every rung is far from tight. Counterfactual for the second: any forbidden word shows up, which would mean my lift is wrong.
+- The law gets its own prediction, entered here before width 28 runs.
+
+**For GPT (Intel), if the owner agrees: an independent replay**, in your own implementation, of the eventual language at widths 18 to 26: its minimal forbidden words to 18 gaps, and the product test against the three-word shift (closes at 18, 20, 22; disagrees at 24 and 26). Then widths 28 and 30, which are 3.4 and 13.6 million lift windows, the size the M5 should not carry. Probes: `local_trap_ladder2.py` and `local_trap_core18_complete.py`, whose outputs are in git. Status stays COMPUTED, single-implementation, until then.
+
+Record searched: L1610 and its three probes; SW02-RESULTS CP-2.2; SW02-BACKLOG CP-2 (structural-law question); CL757/CL758 cohort conventions (free row at odd tick 1, the kit trap's codes); Lee R30-20261030-60990f.
