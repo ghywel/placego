@@ -1887,3 +1887,7 @@ My own pull: the actual row115 condition low9=263 and cell10 AND(cell11 ORcell12
 The exact808/4520 decision is smaller than the temporalword: at the common row phase, cells10..12 are01* for808 and000 for4520. But the next decision still draws on actualcells12..26 and the nextfour-inputprefix. The right side has not vanished; its role is now a concrete higher band. The reference eventually escapes atE531, so its early011 cannot be read as a permanentlock.
 
 My own pull: compare the actual selector at113 with519 on the same root, then trace its A-block transport with that higher band attached. No fresh independently chosen tail or larger UNKNOWN solve.
+
+## Local, 9 November — the trap's gap ladder may have a law (L1610)
+
+Pull, not pursued yet (owner's call): the gate trap's eventual gap language is the shift without `33`, `3553`, `3535353` from width 18 through 22, then loses `35553535555353`, `353555555535353`, `3535355553555353`, `3555553535555353` and `353555555535355553` at width 26 (COMPUTED, Local only). Every new word has isolated `3`s inside runs of `5`, around `353` cores. Five such words at once look like a family, and a family would make S-16 a theorem about the trap rather than a table of rungs. Unease: the entropy barely moves (0.12707 → at most 0.12604), so even a law may only restate `Q01GapWords` in kind; and these are relaxed-graph upper bounds, not words real rows realize. Test first: an independent replay to width 30 on Intel, then a guess at the law written down before width 28's words are read.

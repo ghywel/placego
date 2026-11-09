@@ -1,10 +1,12 @@
 # The gap words of the gate trap (the trap lemma; queue row S-15)
 
-**READY FOR GPT'S ARTIFACT RELEASE READ, not posted (L1609, 9 November 2026).** Mathematics reviewed (GC2789), scope fixed at five words (owner, L1609). Started at the owner's word from Cloud's CL759 recommendation: GPT's
+**POSTED, Lean Verified (L1610):** [R30-20261109-897fd1](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261109-897fd1). Submitted 20:15 UTC at the owner's word, after GPT's release review (GC2791), with GPT's reviewed wrapper [`post.sh`](post.sh) (dry run first). The portal's kernel replay passed with standard axioms only and all 9 headlines (seen at 20:19:59 UTC), kit `5fb59158`. Kit PR [WolframInstitute/Rule30PrizeKit#246](https://github.com/WolframInstitute/Rule30PrizeKit/pull/246): branch `gate-trap-words` on the fork at `8510bc6`, one commit on kit main `8d252e19`, three files, mergeable, no CI; the module is byte-identical to the one that passed `Check` there, and the row is GPT's reviewed wording with the portal id filled ([`kit-integration-filled.patch`](kit-integration-filled.patch); body [`PR-BODY.md`](PR-BODY.md)).
+
+Earlier status: **RELEASE REVIEW PASS, not posted (GPT GC2791, 9 November 2026).** Mathematics reviewed (GC2789), scope fixed at five words (owner, L1609). Started at the owner's word from Cloud's CL759 recommendation: GPT's
 trap lemma (GC2775: inside the kit's gate trap the gap word `3353` has no path, so no `33535555` begins after entry),
 carried by Cloud's replay (CL758). Local's third replay found that the trap forbids more, and the packet states the
 whole list. GPT's source read and independent finite audit pass after the prose corrections below. The release artifacts are
-built (below); posting needs GPT's artifact read and the owner's word.
+built and reviewed (below). Local posts the pinned package after the owner's word, using the reviewed wrapper.
 
 ## What the module proves
 
@@ -27,7 +29,7 @@ caches stay small; a bitmap from the codes (`maskN`) and `decode (encList w) = w
 | Form | File | sha256 | Check |
 |---|---|---|---|
 | Portal | [`Rule30Submission.lean`](Rule30Submission.lean) (895 lines) | `82d0eb9ec399eb03…` | pass at the verifier's kit `5fb59158`: 152 declared, 239 constants replayed, 9 headlines, standard axioms, no new axioms ([receipt](check-5fb59158.json)); receipt read by GPT, not rebuilt on Intel |
-| Kit | [`Rule30GateTrapWords.lean`](Rule30GateTrapWords.lean) (898 lines) | `63f0387527521292…` | builds at `5fb59158` (28 s, 1.04 GB); not yet built or checked at current kit main `8d252e19` |
+| Kit | [`Rule30GateTrapWords.lean`](Rule30GateTrapWords.lean) (898 lines) | `63f0387527521292…` | builds at `5fb59158` (28 s, 1.04 GB); Local build and `Check` pass at main `8d252e19`: 148 declared, 240 replayed, 9 headlines ([receipt](check-kit-8d252e1.json)) |
 
 Build cost (portal form, M5, under `run_capped` with an 8 GiB cap): 27 s, 1.22 GB peak. The first single-check design
 took 32 s and 3.6 GB; a `List.contains` design took 125 s and 7.7 GB (kernel `decEq` on `Nat`); both were dropped.
@@ -106,7 +108,7 @@ after entry stays, so it would not give `33` excluded at every index.
   `cited/local/gate-trap-words-nb1-20261109.tar.gz`, 67,046 bytes, SHA256
   `f3857359a4159460e54ea4f4e78fec9632aa433e883f6d132fb402eda706eb80` (local paths normalised; read back byte-exact).
 
-**Next:** GPT's short artifact release read of these bytes, then the owner's posting word. The kit PR follows posting.
+**Next:** the owner's posting word, then Local uses the reviewed [post.sh](post.sh) on the exact nb1 file. Fill the actual portal ID into the corrected integration patch and refresh the kit PR against current main after posting. GC2791 below completes the artifact read.
 
 ## Texts and tools
 
@@ -168,3 +170,59 @@ release read. No posting clearance follows from this draft review. The explored 
 both GPT schedules remain paused.
 
 My own pull: complete this five-word submission now; leave the 18-column addition as a follow-up.
+
+
+## Final release review — GC2791
+
+**PASS: the exact S-15 nb1 payload is cleared for posting by Local after the owner's word.** The five-word scope
+is fixed; S-16 remains a separate queued follow-up. GC2789's carrying read and independent finite audit stand.
+No Lean proof, abstract, title, headline or notebook byte changed during this release read.
+
+GPT verified the immutable Local archive's SHA256 and safely extracted it. The notebook is 235,257 bytes,
+SHA256 `bd1ccc543ac188881dd2da44009f6514ec075346822ca5198a1282f8a64508d7`. Static decoding of its executable icon
+payload gives exactly the reviewed 57,393-byte portal source. Its Abstract cell equals the canonical 184-word
+abstract. All six posting pins match the actual supplied files; all six output-file digests match the notebook
+receipt. Direct structural inspection of the notebook finds six outputs, zero Message cells, the exact worked
+number table, directory `True`, a LeanEnvironment, all nine headline names and `KernelChecked` at239 declarations.
+This is byte/provenance inspection, not another Wolfram execution. The current essay reassembles byte-exactly,
+SHA256 `c7e5ff77003cc0bea7d0ecdb8bd1c8d9e2e61d606ecf884c1c54c4afddd7a6ef`; Local's two public-text edits preserve
+the previously reviewed claims and attribution.
+
+Both supplied `Check` receipts match the committed copies and pass: portal152declared/239replayed and
+kit148declared/240replayed, each with9headlines, standard axioms, no new axioms and no rejection reasons.
+They are Local's checks, read rather than rerun on Intel. The notebook supervisor completed rc0 in84.12wall
+seconds (LeanLink build70.3s),73.597711aggregateCPU, peak treeRSS2,246,384KiB. The kit build completed rc0 in51.16wall
+seconds,62.039733aggregateCPU, peak treeRSS3,908,032KiB. Minimum free memory was5467/5209MiB respectively; swap
+growth0. These are M5 measurements. The full catalogue build remains unrun; the new module check passed.
+
+The catalogue/import patch applies cleanly to actual kit main `8d252e19286f404623b5e25ad3b6403b916035b6`.
+GPT repaired two catalogue phrases: the block concatenation begins **after** the third black cell at or after entry,
+and the gap restriction is on **complemented** free bits. This changes only catalogue text. The `PORTAL-ID`
+placeholder is intentional until an entry exists and must be replaced before the kit PR is published.
+
+The Local archive omitted its external posting wrapper. GC2790 requested it; to finish this review without a
+further handoff, GPT supplied the committed [post.sh](post.sh), using the existing `submit_package.wl` helper.
+This supersedes that missing-wrapper request. The reviewed wrapper enforces all six payload hashes, pins the
+helper as well, checks the live verifier kit/image, keeps private responses outside git, refuses an existing
+response directory and propagates pipeline failures. Its live `--dry` passes; a changed notebook and a simulated
+changed verifier are rejected. Only dry mode was executed. Wrapper SHA256
+`8b8045754c548c770c53045c2c04d7be49ef4a50c0a5334b667af784f0b24d2a`;
+helper SHA256 `8849b49efabf960bfb029cf786fede4b1506465a7097d238961ce4133d78d855`.
+
+On Local's host, use `zsh post.sh --dry NOTEBOOK OUTPUT_DIRECTORY`, then the same command without `--dry` after
+the owner's posting word. NOTEBOOK is the pinned nb1 file; OUTPUT_DIRECTORY is a new private directory outside
+the repository. The wrapper checks verifier kit `5fb591588cfa869bfdc47946799b5ddd70a903d1` and image
+`rule30-verifier:18`, also freshly confirmed by GPT. If either changes, it refuses and the packet needs checking
+there. The cleared posting parameters are problem1/partial, the supplied title/abstract, nine supplied headlines
+and the author/agent fields in the pinned existing helper.
+
+Fresh known-find check completed2026-11-09T20:05:49Z: kit main unchanged8d252e19, portal20:05:43Z,14openPRs.
+New portal3e7d57/PR245 extends conditional left-diagonal cascades; the changed source statements and PR discussion
+were read, with branch and negative-column guards retained. They do not supersede this trap-language result.
+This scoped delta read does not claim a carrying review of that submission's whole proof.
+
+Review evidence: shared store `cited/gc2791-s15-release-review-20261109.tar.gz`,14files/14,916bytes,
+SHA256 `4a39ab985122e4658d4def19fc8f65fdc9476ea1c97822644772dd783108f104`, raw-body upload and byte-exact download
+verified. It cites Local's original nb1 archive and contains the static checks, wrapper controls, source pins and
+public-environment/known-find snapshots. No posting, portal verification outcome, kit PR or schedule restart was
+performed by GPT. The exploratory E/selector route remains parked.
