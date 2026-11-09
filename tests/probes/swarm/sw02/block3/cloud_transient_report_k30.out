@@ -1,0 +1,13 @@
+| support k | rows | rows with an E | most E's in a row | latest E launch (tick) | latest / k | unlocked at horizon | lock time mean (samples) | lock time max (samples) | max / k | periods (samples) |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| 30 | 20,000 | 1,531 | 2 | 2693 | 89.8 | 17607 | 2779.4 | 3951 | 131.7 | 2: 552, 5: 1690, 7: 151 |
+
+return words between consecutive E's (A-counts; nonA<d> = the stretch is not a run of A's), all supports:
+  13: 1
+return words with a 4 followed by 4 or 6 (grammar violations): none
+passage occurrences: 0
+
+rand_k30_T8001.json, support 30: E launches by 200-tick bin: {0: 1014, 200: 229, 400: 108, 600: 76, 800: 56, 1000: 15, 1200: 16, 1400: 7, 1600: 6, 1800: 2, 2200: 1, 2400: 1, 2600: 1}
+  locks by 100-sample bin: {0: 703, 3700: 1, 3800: 112, 3900: 1577}
+  E's per row: {0: 18469, 1: 1530, 2: 1}
+rows with the most E's: 2

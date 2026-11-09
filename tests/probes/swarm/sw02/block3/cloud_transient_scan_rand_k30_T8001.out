@@ -1,0 +1,5 @@
+  support 30 done, 224s
+  k     rows   withE maxE latestE tick     /k unlocked lock mean(smp) lock max(smp)     /k periods | return words
+ 30    20000    1531    2         2693   89.8    17607         2779.4          3951  131.7 {2: 552, 5: 1690, 7: 151} | {'13': 1}
+passage E A^4 E A^7 E occurrences: 0
+done; wall 223.7s
