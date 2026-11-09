@@ -61,10 +61,13 @@ def analyse(rows, U, ks, acc):
                                                 'E_launch_ticks': [], 'unlocked': 0, 'lock_max_sample': -1, 'lock_max_row': None,
                                                 'lock_sum': 0, 'periods': {}, 'return_words': {}, 'passages': []})
         a['rows'] += 1
+        a.setdefault('E_hist', {}); a.setdefault('lock_hist', {}); a.setdefault('E_per_row', {})
+        a['E_per_row'][int(nE[i])] = a['E_per_row'].get(int(nE[i]), 0) + 1
         if nE[i]:
             a['withE'] += 1; a['maxE'] = max(a['maxE'], int(nE[i]))
             pos = np.flatnonzero(ME[i]); ticks = (2 * pos + 1).tolist()
             a['E_launch_ticks'].extend(ticks)
+            for tk in ticks: b_ = (tk // 200) * 200; a['E_hist'][b_] = a['E_hist'].get(b_, 0) + 1
             if ticks[-1] > a['latestE_tick']: a['latestE_tick'] = ticks[-1]; a['latestE_row'] = int(rows[i])
             if len(pos) >= 2:
                 word = []
@@ -81,6 +84,7 @@ def analyse(rows, U, ks, acc):
         if lock[i] < 0: a['unlocked'] += 1
         else:
             a['lock_sum'] += int(lock[i]); a['periods'][int(per[i])] = a['periods'].get(int(per[i]), 0) + 1
+            b_ = (int(lock[i]) // 100) * 100; a['lock_hist'][b_] = a['lock_hist'].get(b_, 0) + 1
             if lock[i] > a['lock_max_sample']: a['lock_max_sample'] = int(lock[i]); a['lock_max_row'] = int(rows[i])
         if MP.shape[1] and MP[i].any(): a['passages'].append((int(rows[i]), (2 * np.flatnonzero(MP[i]) + 1).tolist()))
 def summary(acc, T):
