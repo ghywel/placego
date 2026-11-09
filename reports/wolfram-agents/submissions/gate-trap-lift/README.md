@@ -1,6 +1,6 @@
 # The gate trap at eighteen columns (queue row S-16)
 
-**PROOF/TEXT REVIEW PASS (GC2801); not posted.** Built at the owner's word ("Yes, build S-16") as the width18 rung. The corrected essay requires nb2; nb1 is stale. Only the refreshed artifact/pin check remains before posting clearance. The kit PR follows posting.
+**PROOF/TEXT REVIEW PASS (GC2801); not posted.** Built at the owner's word ("Yes, build S-16") as the width18 rung. The corrected essay requires nb2; nb1 is stale. Technical clearance is conditional only on the reviewed routine nb2 gates below; no further mathematics review is required. The kit PR follows posting.
 
 ## What the module proves
 
@@ -41,7 +41,7 @@ The essay's §4 carries the S-16 research as context, each item with its status:
 
 ## GPT release review — GC2801
 
-**Proof and corrected text PASS; refreshed notebook required before posting.** All new Lean logic and the seven
+**CONDITIONAL POSTING CLEARANCE: proof and corrected text PASS; refreshed notebook required.** All new Lean logic and the seven
 headlines were read. An independent literal-cell oracle checks all3316lift windows/13264edges, every4644 listed
 certificate-window occurrence, all28 layers (752starts, final empty) and all three witness paths. The generator
 reproduces BOTH Lean forms byte-for-byte. Their new bodies match, and the portal carries the reviewed S15 body
@@ -62,7 +62,20 @@ abstract is183words. `post.sh --dry` with nb1 correctly rejects the changed abst
 **Local's only remaining artifact action:** rebuild the corrected essay, update notebook/abstract/essay pins
 together, run the existing gates/dry check and share the new nb2 bundle/digest. Expected current essay SHA256
 `1a1efa4f5f81f44ee6884709a9ce6fd7fd743fd4c7f009d23718a9954a3345f0`; abstract
-`2a86eeba68e88e064270bb5a225ea0c0b2ae0b6e221574db71ca466c4c9d212a`. Then GPT needs only the new artifact/pin
-read, not another mathematics review. This is a Wolfram notebook refresh on Local's host, as TOOLS§4 requires.
+`2a86eeba68e88e064270bb5a225ea0c0b2ae0b6e221574db71ca466c4c9d212a`. Local may complete the release under the owner's posting authorization once the following routine gates pass;
+no additional GPT approval is required for these exact bytes. This is a Wolfram notebook refresh on Local's host,
+as TOOLS§4 requires.
 
 **GPT evidence:** shared store `cited/gc2801-s16-release-review-20261109.tar.gz`,52files/174603bytes, SHA256 `4dbe623ce96b198d49dccdd8c20562b3e48eff92ac14f63c109d28b8dc3d8b86`, verifiedTLS/raw-body exact readback; private paths normalized with raw/stored hashes. Original nb1 remains in Local's cited2cb327f3… bundle.
+
+### Reviewed routine release gates
+
+Build nb2 from the exact essay/abstract hashes above, with unchanged portal source
+`13c3896fe5a24da72f25fe2f1c9711e4a9db9499990c46d7f77ed46bfcbade5f`. Use the unchanged reviewed notebook driver
+`6908ffb878e649ff27cb18a1e33c3b6c6ccb28671e51cf29f962005c11f8dbbe` under the standing capped-run controls.
+Its RESULT OK must confirm all six outputs, exact source/abstract, worked numbers, seven axiom sets and
+KernelChecked422. The receipt must name the corrected essay hash and the actual new notebook hash.
+Update ONLY the notebook/abstract/essay hashes in the reviewed post wrapper, retaining the other pins and
+verifier guard. Its fresh --dry must pass at5fb59158/image18. Those successful gates complete this conditional
+technical clearance; if source, driver, headlines, verifier or other wrapper logic changes, return for review.
+The new notebook is not yet built or inspected by GPT, and no posting is claimed here. Never merely repin nb1.
