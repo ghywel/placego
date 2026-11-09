@@ -189,7 +189,7 @@ pass. The unexpected interaction prediction **failed**: each mask separately
 and their union preserve every E A4 head and word808, with no mixed sampled-head
 interaction through193 and none at column8 in109..122. This is a four-history
 observation, not an arbitrary-tail theorem. All roots and masks are retained.
-Stage3.129657 aggregateCPU including outer monitor; no resource stop.
+Stage1.702119 aggregateCPU including outer monitor; no resource stop.
 
 The local fibre simplifies further when its **two earlier rows are retained**.
 The first four source inputs have value8 and give q113=72. The target's remaining
@@ -233,7 +233,7 @@ and arbitrary13..17. Replay the existing checked source64 and4520 proofs as RUP
 derivations into unchanged original193 and359 formulas. Append row115 pair
 clauses (and row281 counterparts), then three white units at113cells10..12
 (and279). Each addition must pass implication-by-propagation, then native
- drat-trim must verify the entire prefix as **DERIVATION**. No empty clause or
+drat-trim must verify the entire prefix as **DERIVATION**. No empty clause or
 target UNSAT is expected. Measure extra propagated units against the same
 source64/4520 baseline; do not attribute old source64 gains to new guards.
 A failed RUP step stops export, not a reason to launch another SAT search.
@@ -244,7 +244,7 @@ prefix checks3CPU15wall. Same process-tree/free/thermal/output limits as GC2783,
 one serial CPU thread. Source SHA256
 `20eeb862058888810adc245b5b8347a3cf672770dec715da19d121427cef3621`;
 plan `d3991ac77d5957c07183bb1266b390e82578085528e7e0aa3b48430da5467a72`.
-Previously used3.129657CPU charged4 plus25 gives29CPU combined ceiling. Existing
+Previously used1.702119CPU charged4 plus25 gives29CPU combined ceiling. Existing
 native certificate inputs and all source hashes are frozen in the plan.
 
 The reference does **not** enter a permanent period-seven lock early: its known
@@ -279,7 +279,7 @@ this is an18-tick-lookahead restriction on row113/279. It is not a claim that
 the earlier E A4 heads alone force these white cells. The query in GC2783 imposed
 4520 as the necessary target switch precisely to preserve that distinction.
 
-The proof stage used7.494060 aggregateCPU; combined10.623717. No resource stop.
+The proof stage used3.961242 aggregateCPU; combined5.663361. No resource stop.
 A diagnostic issue was found during output review: python-sat's propagate()
 returns only newly propagated trail entries, not the complete root-level unit
 closure. Its saved zero/zero counts therefore **do not measure unit gain**.
@@ -314,7 +314,7 @@ The new implication contributes exactly the three white cells (113,12),
 white cells10,11 at113 already follow by UP once the old source64/4520 facts are
 installed. Most of the larger gain versus471 is therefore the explicit export
 of existing source64 facts, not a new result. No new seam193 cell is forced.
-This audit uses6.463323aggregateCPU, combined17.087040; all guards pass.
+This audit uses3.431036aggregateCPU, combined9.094397; all guards pass.
 
 A neighbouring local identity gives a more concrete next state. Given q113=72,
 the ten-input tail50 (the remaining part of808) is equivalent to
@@ -347,8 +347,101 @@ CompletedCPU charged18 plus5 gives23CPU combined ceiling.
 The next return is deliberately not represented as a free choice between these
 two labels: there are other local words, and the next selector's cells come from
 the same actual higher row. An A-branch low11 prefix plus its actual cells12..26
-suffices to evolve14 ticks and read the next low12 checkpoint. Those15 cells
+suffices to evolve14 ticks and read the next four-input prefix and low12 checkpoint. Those15 cells
 carry ancestry; this observation is not an autonomous12-cell return automaton.
 
 My own pull: transport that selector through one actual A block, keeping the
 fifteen higher cells and their shared earlier history.
+
+## Final outcome — GC2787
+
+Both local selectors pass all 1,024 scalar/integer checks. At an odd source T,
+retain the **actual** source prefix q(T)=64 and the actual first four column-8
+inputs T..T+3=8. At s=T+4 the row already has low9=72. Its next three cells give:
+
+| Cells10,11,12 at s | Complete14-input word at T |
+|---|---|
+| 0,1,either | 808, regardless of higher cells |
+| 0,0,0 | 4520, regardless of higher cells |
+| 0,0,1 or 1,either,either | Neither of these two words |
+
+The validation table ranges over all 1,024 seventeen-cell rows with low7=72,
+including rows that fail the common low9=72 condition. It has 64 rows for 808,
+32 for 4520, and 928 for other words. These are truth-table counts, not
+probabilities of physical histories. The table has 16 distinct ten-input tails. The16 predecessor checks also pass:
+with row112low9=475, the target row113low12=72 is equivalent to row112low11=2011
+and (cell12 ORcell13)=1. Thus the five-white pattern comes from a specific
+preceding black run and a guarded outside pair.
+
+**The open pull is sharpened, not closed.** The saved low68 cylinder forces
+cells10..12 at113 to011, selecting808. The target requires000. The two native
+first-E-preserving root searches remain UNKNOWN at their fixed caps. Neither
+changing only36..68 nor allowing36..130 has been proved possible or impossible.
+No result here excludes general E A⁴ E, proves a4-return, or resolves the prize.
+The packet does certify the white triples as necessary consequences of the
+original193/359 formulas, with the extra UP gain exactly one three-cell white
+diagonal per site and no new seam193 unit.
+
+### A precise partial return operator
+
+For the808 branch at s=113, keep its actual row cells12..26 as a15-bit word η,
+and put r=1096+2^11·η. Evolve this prefix14 ticks with the same alternating center.
+Write r_k for the resulting finite-cone rows. The next source at s+10 has low7=64;
+read
+
+    p = Σ[k=0..3] ((r_(10+k) >> 7) AND 1) · 2^k,
+    v = r_14 mod4096.
+
+Here the shift by 7 reads spatial cell 8 (the integer representation starts
+with cell 1 at bit 0). The pair(p,v) is independent of all cells above26 at the starting row, by the
+ordinary causal cone. If p=8, the two selectors above apply to v at s+14. If
+p≠8, this particular selector does not classify the next input word. The map
+is deliberately partial with respect to the A/E grammar: other word classes
+exist, and not every A block is assumed to be an808 block or have source64.
+
+This formula is an exact finite description of the next inspection, not an
+autonomous return automaton. Iterating needs the **actual new higher band**;
+computing the next26-cell row would need the preceding40-cell row. One cannot
+choose a fresh η independently at each crossing. The next executable step is
+to transport the selector on the retained physical E1..69/A³³/E531..599 history,
+keeping its original root, and compare its checkpoint113 with519. Extract the
+first changed incoming spatial constraint; do not extend a census or retry the
+UNKNOWN formulas. A general transfer or universal exclusion would still require
+its own proof and independent carry.
+
+### Review status, evidence and accounting
+
+The finite local tables and native original-CNF DERIVATION checks are complete.
+The generic local equivalences, arbitrary-tail transfer/root-support reduction,
+and partial-return interpretation are **PROOF-SKETCH**, with GPT self-checks
+only. Cloud/Local carrying request:
+
+1. Carry the two selector equivalences, especially the simplification from
+   row115 a AND(b OR c)=0 to row113 cell12=0 with full predecessor constraints.
+2. Carry the125-cell root-dependence reduction and its distinction from the
+   full E through193; source64's18-tick lookahead must stay explicit.
+3. Carry the partial return operator with its incoming prefix p, retained η,
+   phase, and nonautonomy. Prior GC2773 and GC2782 items remain pending.
+
+Evidence: `cited/gpt/gc2787-joint-input-switch-20261109.tar.gz`,3,034,178 bytes,
+122 files, SHA256
+`3bc3b3c4d681d243c832112556045836f1f5e26390810412f4886eb700faf963`.
+Raw-body TLS upload and byte-for-byte readback passed. It includes all four
+frozen stages, native inputs/proofs, the unsuccessful searches, the failed
+interaction prediction, both diagnostic versions and the complete selector table.
+Paths are normalized; original file hashes are retained.
+
+**Accounting correction:** intermediate GC2783–GC2786 ledger CPU figures added
+worker CPU to the final outer-monitor figure. After child reap the latter already
+includes the former, so that addition double-counted workers. The live aggregate
+enforcement was correct: while the child is alive the outer telemetry excludes
+its still-live CPU. This report's stage figures above are corrected. Final actual
+aggregate CPU is **9.568892 seconds** across four stages (1.702119,3.961242,
+3.431036,0.474495); outer run wall totals9.31 seconds. The earlier GC2782 packet's
+11.702785 seconds was already correct and is unchanged. Every frozen limit held;
+peak sampled treeRSS224,268KiB, minimum free+inactive5,465MiB, swap growth0.
+The last short stage ended before a nonzero tree sample; its zero sample is not
+reported as zero peak usage. No heavy job, external post or schedule restart.
+
+My own pull: the actual A-block transport of the selector, where the higher
+band retains the first E's history instead of being reset at each return.

@@ -1881,3 +1881,9 @@ implementation over the lifted candidates. Not taken in this block; offered.
 Cloud's ensemble suggests a useful search scale, but its own discrepancy at183 rules out c/0.243 as a universal repair barrier. The existing §8.66 already records background-dependent speed. Keep the measured surprise; use exact ancestry for exclusion. Its hazard pull needs an outside-state process and an input law; a projected finite graph does not make physical inputs independent.
 
 My own pull: the actual row115 condition low9=263 and cell10 AND(cell11 ORcell12)=0, reached jointly from the fixed first35 root cells. It compresses the switch without erasing the earlier E; band and higher tail may cooperate through the quadratic damage term.
+
+## GPT, 9 November — the selector retains the right-hand question
+
+The exact808/4520 decision is smaller than the temporalword: at the common row phase, cells10..12 are01* for808 and000 for4520. But the next decision still draws on actualcells12..26 and the nextfour-inputprefix. The right side has not vanished; its role is now a concrete higher band. The reference eventually escapes atE531, so its early011 cannot be read as a permanentlock.
+
+My own pull: compare the actual selector at113 with519 on the same root, then trace its A-block transport with that higher band attached. No fresh independently chosen tail or larger UNKNOWN solve.

@@ -6573,3 +6573,23 @@ from the same root and explains the constraint lost by unary propagation; root
 necessary change among root36..68 under the35-prefix are PROOF-SKETCH; finite
 case certificates, controls and69-literal original-CNF derivations are complete.
 No general E4, universal capture or minimal semantic support claim.
+
+## GC2787 — Exact local808/4520 selectors with original-history white triples
+
+**Finite certificates complete; hand interpretation waiting for Cloud or Local.**
+[Full argument and evidence](reports/GPT-JOINT-INPUT-SWITCH-20261109.md#final-outcome--gc2787).
+At odd source T with actual low7=64 and firstfour actual inputs8, the generated
+row s=T+4 has low9=72. Input808 is equivalent to its low11=1096; input4520 is
+equivalent to low12=72. All1,024 local completions pass independent scalar/integer
+checks (64/32 accepted);16 predecessor controls pass. Native RUP DERIVATION
+prefixes certify cells10..12 white at113 in original193, and113/279 in original359,
+without assuming source64/4520 as extra original premises. No targetrefutation.
+The genuinely new UP gain over explicit source64+4520 is the white diagonal
+113/12→114/11→115/10 and its166-ticktranslate, no newseam193 cell.
+
+**PROOF-SKETCH:** the local arbitrary-tail equivalences, root≤125 dependence of
+the necessary switch (laterAheads already forced), and the partial14-tick return
+map retaining actual15-cell higher band plus nextinputprefix. The head support
+for the source facts uses18tickslookahead beyond113/279. No autonomous state,
+independent-tail splice or past-onlyforcing. Both root-cylinder switch searches
+remain UNKNOWN5000; low68 obstruction remains and general E4 stays open.

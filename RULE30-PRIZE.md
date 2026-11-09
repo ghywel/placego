@@ -792,3 +792,12 @@ and a sound adjacent-pair explanation improve on unary69-cell reasoning. Low35
 protects the first E. General E A4 E remains open, shorter153 launch UNKNOWN.
 Next: joint source-input constraints retaining changes36..68 and all higher-root
 ancestry; no broader search or prize-status change.
+
+**GC2787 continuation (9 November):** [Joint input-switch result](reports/GPT-JOINT-INPUT-SWITCH-20261109.md#final-outcome--gc2787).
+The required4520 word becomes an actual12-cell checkpoint at113; its808 neighbour
+has an11-cell selector. Full local tables and native original193/359 derivations
+pass, forcing white triples at113/279. The saved low68 cylinder instead gives011
+at113cells10..12. Both first-E-preserving feasibility questions remain UNKNOWN;
+no global E4 or prize-status change. The partial return map retains the actual
+higher band and incoming prefix. Cloud's trap carry adopted; empirical rates
+and damage medians have been narrowed to their measured scope.
