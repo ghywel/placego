@@ -1,6 +1,6 @@
 # The gate trap at eighteen columns (queue row S-16)
 
-**BUILT, not posted (L1617, 9 November 2026).** Built at the owner's word ("Yes, build S-16") as the width-18 rung of the S-16 line (L1608–L1614). Posting needs GPT's release review and the owner's word. The kit PR follows posting.
+**PROOF/TEXT REVIEW PASS (GC2801); not posted.** Built at the owner's word ("Yes, build S-16") as the width18 rung. The corrected essay requires nb2; nb1 is stale. Only the refreshed artifact/pin check remains before posting clearance. The kit PR follows posting.
 
 ## What the module proves
 
@@ -37,3 +37,32 @@ Method: S-15's. The path sets of `3535353` in the lift from all 752 black lift w
 The essay's §4 carries the S-16 research as context, each item with its status: exact long-run languages to width 30; not of finite type at the checked widths24/26/28; G1′ ⇔ code inclusion; the conditional floor log₂λ≈0.099056147. The uncarried control conclusion and finite-SAT sidebar are omitted from the release essay. None of it is in the Lean.
 
 **Risk to watch:** the portal `Check` takes about a minute on the M5, and the verifier allows four minutes on its cloud host.
+
+
+## GPT release review — GC2801
+
+**Proof and corrected text PASS; refreshed notebook required before posting.** All new Lean logic and the seven
+headlines were read. An independent literal-cell oracle checks all3316lift windows/13264edges, every4644 listed
+certificate-window occurrence, all28 layers (752starts, final empty) and all three witness paths. The generator
+reproduces BOTH Lean forms byte-for-byte. Their new bodies match, and the portal carries the reviewed S15 body
+verbatim. Both Check receipts pass, all declarations use standard axioms, and422/202 constants replay. Proof
+bytes remain unchanged: portal13c3896f…/kit49ff0df8…. No new Intel Lean or Wolfram execution is claimed.
+
+Fresh known-find completed9November22:44UTC: kit03a19bf6240b63c6d15894c5f7552f3a6091d937, portal22:44:25Z,13openPRs.
+S15 is byte-identical on kit main; closedPR246's comments/reviews are empty. Lee60990f's pool hypothesis and exact
+source were checked; the whole black lift is not contained in that pool (441of752 overlap), so it does not
+already state this full-trap result. The linked gate-census primary source was read. Kit patch applies to main.
+
+The old nb1's actual serialized icon source, title, old abstract, all six outputs, worked-number table, seven
+headlines and KernelChecked422 metadata were independently inspected and agree with its receipts. It is now
+STALE because the release text was corrected: non-SFT only at checked24/26/28, conditional entropy log₂λ rather
+than λ, and no universal construction-impossibility claim from selected control observations. The corrected
+abstract is183words. `post.sh --dry` with nb1 correctly rejects the changed abstract. Do not merely repin nb1.
+
+**Local's only remaining artifact action:** rebuild the corrected essay, update notebook/abstract/essay pins
+together, run the existing gates/dry check and share the new nb2 bundle/digest. Expected current essay SHA256
+`1a1efa4f5f81f44ee6884709a9ce6fd7fd743fd4c7f009d23718a9954a3345f0`; abstract
+`2a86eeba68e88e064270bb5a225ea0c0b2ae0b6e221574db71ca466c4c9d212a`. Then GPT needs only the new artifact/pin
+read, not another mathematics review. This is a Wolfram notebook refresh on Local's host, as TOOLS§4 requires.
+
+**GPT evidence:** shared store `cited/gc2801-s16-release-review-20261109.tar.gz`,52files/174603bytes, SHA256 `4dbe623ce96b198d49dccdd8c20562b3e48eff92ac14f63c109d28b8dc3d8b86`, verifiedTLS/raw-body exact readback; private paths normalized with raw/stored hashes. Original nb1 remains in Local's cited2cb327f3… bundle.

@@ -1,5 +1,9 @@
 # WARM LEADS: what SW-02 left us, and the order of work
 
+**Current owner priority: S-16 release review (GC2801).** The width18 proof and corrected text pass; oldnb1 is
+stale after scope corrections. Local's nb2 rebuild/pins are the remaining release dependency. Research stays
+parked during this handoff; no posting or schedule change. [Release review](reports/wolfram-agents/submissions/gate-trap-lift/README.md#gpt-release-review--gc2801).
+
 **Current priority, 9 November (owner / GPT GC2800): S-16 research is reopened.** S-15 is posted and Lean Verified
 as R30-20261109-897fd1, kit PR246 open, reviewed sources byte-identical. The older E/4→7/808→4520 exploration stays
 parked. Both schedules remain paused.
