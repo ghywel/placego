@@ -1,0 +1,5 @@
+lift: windows 3316 closed True ; prefix of the lifted step = kit step with own column 17: True
+trap (16 columns) : 3535353 allowed True ; minimal forbidden up to 14 gaps: ['333', '3353', '3533', '3553', '5533']
+   allowed counts by length [1, 2, 4, 7, 9, 13, 19, 30, 45, 69, 103, 157, 236, 359, 541] ; distinct path sets 17
+lift (18 columns) : 3535353 allowed False ; minimal forbidden up to 14 gaps: ['333', '3353', '3533', '3553', '5533', '3535353']
+   allowed counts by length [1, 2, 4, 7, 9, 13, 19, 29, 43, 65, 97, 146, 217, 324, 483] ; distinct path sets 46

@@ -1,0 +1,1019 @@
+---
+Template: ComputationalEssay
+Name: The Gate Trap Forbids Five Gap Words, and Q01Gap Weakens to Q01GapWords
+Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
+Date: 2026-11-09
+Description: Core Lean. After a right half enters the kit's gate trap, column 1 never reads the gap words 333, 3353, 3533, 3553 or 5533, and from the third black cell on no two consecutive gaps are 3. The words are minimal and, by computation, all the trap forbids. So Q01Gap weakens to Q01GapWords, which still gives CQ01 for trapped right halves and CQ01Empty. Open.
+Abstract: For period 2 of rule 30 the kit drives a right half R with the alternating center and reads u R, column 1 at the odd times. Its gate trap, 829 windows of columns 1 to 16 closed under the double step whatever column 17 does, gives after entry only the gaps 3 and 5 between black cells (gaps_of_entry). We prove in core Lean that after entry u R never reads the gap words 333, 3353, 3533, 3553 or 5533 (gap_words_of_entry), hence never 33535555 (no_33535555_of_entry). From the third black cell after entry, no two consecutive gaps are 3 (no_late_33). Each word is minimal for the trap (minimal_paths), and by computation they are all it forbids. The kernel checks the path sets of the trap graph, 40 shared layers in 45 separate checks. The kit's open Q01Gap therefore weakens to Q01GapWords, which has to exclude only the finitely supported left halves whose free bits, complemented, have gaps 3 or 5 and avoid the five words. It still gives CQ01 for every right half that enters the trap, and CQ01Empty. Its class of free bits has 0.132 bit of entropy per sample, against 0.256 for Q01Gap. Q01GapWords remains open.
+Keywords: [rule 30, Rule 30 Prize, period two, gate trap, gap words, right half, CQ01, Q01Gap, Lean 4, LeanLink, partial result]
+Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[lhallee/rule30-open](https://github.com/lhallee/rule30-open)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]
+Links: ["[Rule 30 Prizes](https://rule30prize.org/)", "[R30-20261027-230bc7: a closed trap for the right half driven from the empty row](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261027-230bc7)"]
+---
+
+## 1. The statement
+
+For period `2` the kit drives a right half `R` with the alternating center column and reads `u R s`, column `1` at the odd time `2 s + 1` (`Rule30PeriodTwoSideways.u`). The coupled question `CQ01` asks that the candidate left row `Psi R`, whose free bits are the complement of `u R`, is never finitely supported. The kit's gate trap (`Rule30GateTrap`) is a set of `829` windows of the columns `1..16` at the odd times. It is closed under the double step whatever column `17` does. After the window of `R` enters it, the black cells of `u R` come `3` or `5` steps apart (`gaps_of_entry`). The kit's open `Q01Gap` excludes every finitely supported left half with free bits of that shape. With it, every right half that enters the trap satisfies `CQ01` (`not_finSupp_Psi_of_Q01Gap`), the empty one included (`CQ01Empty_of_Q01Gap`).
+
+A gap word `g₁ g₂ … gₖ` is read from a black cell at `s` when the next black cells are at `s + g₁`, `s + g₁ + g₂`, … and the cells between them are white. This module proves that the trap forbids more than other gaps.
+
+- `gap_words_of_entry`: once the window of `R` is in the trap at an odd time `t0`, `u R` never reads `333`, `3353`, `3533`, `3553` or `5533` from a step `s` with `t0 ≤ 2 s + 1`. `no_3353_of_entry` is the word `3353` alone.
+- `no_33535555_of_entry`: nor `33535555`, which begins with `3353`.
+- `no_late_33`: after any two gaps, the next two are not both `3`. With `gaps_of_entry`: from the third black cell after entry on, `u R` is a concatenation of the blocks `001` and `00001` in which no two blocks `001` are adjacent and no two are separated by exactly two blocks `00001`.
+- `minimal_paths`: each word is minimal for the trap. Removing its first or its last gap gives one of `33`, `335`, `353`, `533`, `355` and `553`, and a path of the trap graph reads each of these.
+- `Q01GapWords` (open) is `Q01Gap` with the five words excluded as well. `Q01Gap` implies it (`Q01GapWords_of_Q01Gap`). It still gives `¬ FinSupp (Psi R)` for every right half whose window enters the trap (`not_finSupp_Psi_of_Q01GapWords`), and so `CQ01Empty` (`CQ01Empty_of_Q01GapWords`).
+
+## 2. The trap graph
+
+A window is coded as a `16`-bit number, bit `i` being column `i + 1` (`Rule30Certificates.GateTrap.decode`). From an odd time column `0` is white, then black. So two steps after the window `w` the window is `step2 w x₁ x₂`, where `x₁` and `x₂` are the two values of column `17`. The trap graph has the `829` windows as vertices and the four double steps from each as edges. Every edge stays in the trap (`trapClosed_ok`). A real right half is a walk in this graph: its windows at the odd times move by `step2` with its own values of column `17` (`win_step2`). Once inside, it stays inside (`win_mem_trap`). So a word that no path of the graph reads in column `1` is never read by a right half after entry.
+
+## 3. The check
+
+For a word `b₀ b₁ … bₙ` of column-`1` samples, the layer `Lₖ` is the set of windows of the trap that can have read `b₀ … bₖ`. The first layer holds the windows that read `b₀`, and each next layer the double steps that read the next letter. The kernel checks three facts for each word: the windows of the trap that read `b₀` are in `L₀` (`startOK`); every double step from `Lₖ₋₁` that reads `bₖ` lands in `Lₖ` (`stepOK`); and the last layer is empty. By induction along the word, a right half in the trap never reads it (`not_reads_of_check`).
+
+The five words share their first samples, so the layers form a tree. There are `40` nonempty layers in all, checked by one start check and `44` step checks, each a separate kernel check. The layers of `3353` have `188, 191, 186, 68, 68, 69, 17, 21, 21, 18, 21, 29, 40, 41` and `0` windows. These are the sizes GPT first computed for this word.
+
+## 4. The whole language
+
+By computation (not in Lean), the five words are all that the trap forbids. A finite word over the gaps `3` and `5` is read along some path of the trap graph exactly when it contains none of them. The test is a product of two deterministic automata: the trap's path sets on gap words, starting from its `188` black windows, and the three-gap memory of the five words. Explored over all `19` reachable pairs, the two never disagree. Up to `14` gaps there are `17` distinct path sets.
+
+Eventually the language is simpler. The words over `3` and `5` that contain neither `33` nor `3553` are those in which every `3` is isolated and two consecutive `3`s are separated by one `5` or by at least three. That class has `0.132` bit of entropy per sample (the root `λ = 1.096` of `λ⁻⁸ + λ⁻¹⁸/(1 − λ⁻⁵) = 1`). The class of `Q01Gap`, all sequences of `001` and `00001`, has `0.256` bit per sample (`λ⁻³ + λ⁻⁵ = 1`). So `Q01GapWords` excludes a class of half the entropy, but the entropy is still positive.
+
+The empty right half enters the trap at time `293`, with the black cell of step `146` (`entry_empty`, `u_empty_146`). From there its gaps run `5, 3, 3, 5, 5, 5, 3, 5, 5, 5, 3, …`: its pair `33` comes right after entry, as `no_late_33` allows. In its first `431` gaps after entry it reads none of the five words, and no other pair `33` occurs (computation, consistent with the theorems).
+
+## 5. What it explains
+
+In finite right halves beside the alternating center, rows often enter the trap during or soon after the gap word `33535555`. We measured two samples of right halves: `20,000` random rows of support `30`, run to time `8001`, and all `1,048,575` rows of support at most `20`, run to time `2001`. In them the word began `1,532` and `77,642` times. `98.8%` and `98.9%` of these occurrences were followed by entry before the horizon, and none of the `79,174` began after entry (MEASURED). `no_33535555_of_entry` explains the last count: the word cannot begin after entry. So the decline of its occurrences over time can come from the shrinking population of rows not yet trapped. None of this shows that every finite right half enters the trap. That is the open part of the kit's reduction.
+
+The open hypothesis on the left half weakens accordingly. `Q01GapWords` has to exclude fewer free bits than `Q01Gap`, and it gives the same consequences for the right halves that enter the trap. The kit's `Rule30PeriodTwoWidth13.CQ01_of_RD_of_Q01Gap` uses `Q01Gap` only through `not_finSupp_Psi_of_Q01Gap`. The same proof therefore gives `CQ01` from its open dichotomy `RD` and `Q01GapWords`. That is not formalized here, because the verifier's kit predates that module.
+
+## 6. Worked numbers
+
+The cell below reads the trap's `829` codes from the kit and counts the edges that stay inside. It then computes the layer sizes of the five words and lists the minimal forbidden gap words of up to eight gaps, with the number of distinct path sets among the allowed ones.
+
+```wl
+trapSource = Import[FileNameJoin[{Environment["RULE30PRIZE_KIT"], "lean", "Ruliology", "CellularAutomata", "Rule30Certificates", "GateTrap.lean"}], "Text"];
+trap = ToExpression /@ StringCases[First[StringCases[trapSource, "def trapCodes : List Nat := [" ~~ Shortest[c__] ~~ "]" :> c]], DigitCharacter ..];
+inTrap = AssociationThread[trap -> True];
+step[s_, c_, x_] := With[{e = BitOr[s, BitShiftLeft[x, 16]]}, BitAnd[BitXor[BitOr[BitShiftLeft[e, 1], c], BitOr[e, BitShiftRight[e, 1]]], 65535]];
+succ[s_] := Union[step[step[s, 0, #1], 1, #2] & @@@ Tuples[{0, 1}, 2]];
+closed = Count[Flatten[Table[step[step[w, 0, a], 1, b], {w, trap}, {a, 0, 1}, {b, 0, 1}]], v_ /; KeyExistsQ[inTrap, v]];
+bits[g_] := Join[{1}, Flatten[Append[ConstantArray[0, # - 1], 1] & /@ g]];
+sizes[w_] := Module[{S = Select[trap, BitAnd[#, 1] == First[w] &], out}, out = {Length[S]}; Do[S = Select[Union[Flatten[succ /@ S]], BitAnd[#, 1] == y &]; AppendTo[out, Length[S]], {y, Rest[w]}]; out];
+gap[S_, g_] := Module[{T = S}, Do[T = Select[Union[Flatten[succ /@ T]], BitAnd[#, 1] == Boole[k == g] &], {k, g}]; T];
+allowed = <|{} -> Select[trap, OddQ]|>; forbidden = {};
+Do[Do[With[{T = gap[allowed[w], g]}, If[T === {}, AppendTo[forbidden, Append[w, g]], allowed[Append[w, g]] = T]], {w, Select[Keys[allowed], Length[#] == n - 1 &]}, {g, {3, 5}}], {n, 8}];
+words = {{3, 3, 3}, {3, 3, 5, 3}, {3, 5, 3, 3}, {3, 5, 5, 3}, {5, 5, 3, 3}};
+{Length[trap], closed, sizes[bits[#]] & /@ words, SortBy[Select[forbidden, KeyExistsQ[allowed, Rest[#]] &], {Length, Identity}], Length[DeleteDuplicates[Sort /@ Values[allowed]]]}
+```
+
+## 7. Prior art and scope
+
+The trap, `gaps_of_entry`, `Q01Gap` and the method are the kit's `Rule30GateTrap` and `Rule30Certificates.GateTrap` (R. Bosdure, Rule 30 Prize submission R30-20261027-230bc7). Its four layers after a black cell give the gaps `3` and `5`. Our layers give the gap words.
+
+The words themselves are partly known.
+- R30-20261030-60990f (J. Lee, with GPT and Claude) proves in Lean that for the one-cell right seed, black only at position `1`, the gap sequence of `u` never contains `33`, `3553` or `3535353`. It uses an `18`-cell relaxation with an invariant pool of `2,040` states, and it credits `33` and `3553` to the authors' earlier work. That is one right half. The theorems here hold for every right half that enters the kit's trap.
+- Our own record has parts of this language. An earlier hand proof, in a different frame, shows that two short returns never follow each other after entry into a closed core. A computation shows that inside the kit's trap `33` occurs at most once and `3553` and `3535353` never occur. That record also names the weaker form of `Q01Gap` that `Q01GapWords` formalizes here.
+- [`lhallee/rule30-open`](https://github.com/lhallee/rule30-open) computes a larger gap trap of windows with a count, with `3,562` entry windows, which contains the kit's `829` (`findings/period-two/gate-census.md`). It notes that `Q01Gap`'s free bits have positive entropy. Its notes record no two adjacent gaps `3` for the empty right half, by computation.
+- `Rule30PeriodTwoWidth13` (R30-20261109-62afca) proves, for every right half, a nine-pair gap language for the left trace. Its pairs include `33`, `35`, `53` and `55`, so on words over `3` and `5` it allows everything.
+- `Rule30SidewaysLocks` puts its lock of period five inside the trap (`lock5_win_trap`). Its gaps `5, 5, 5, …` are allowed here, as they must be.
+
+`3535353` is not among the five words. The `16`-column trap graph reads it, so the trap alone cannot exclude it. Lifted to `18` columns (`3,316` windows, closed), the trap kills it, and up to `14` gaps that is the only word the lift adds (computation, not in Lean).
+
+What is new:
+- the five words in Lean for every right half that enters the kit's trap, with their minimality, and the completeness of the list for the trap graph;
+- `3353` and the start words `333`, `3533`, `5533`, which describe how a pair `33` can occur once right after entry;
+- `Q01GapWords` in Lean, with its reductions.
+
+The exclusion of `3353` was found by GPT's exact path-set computation. The other words of the list, the completeness computation and the module are Claude's. Nothing here proves `Q01Gap`, `Q01GapWords`, `CQ01`, `CQ01Empty` or the absence of period `2`.
+
+## The formal proof
+
+The module is core Lean. It imports the official statements (`Rule30Prize`) and the kit's `Rule30GateTrap`, and through it the trap's data and kernel checks, the driven right half and the zero-boundary left half.
+
+```wl
+Needs["Wolfram`LeanLink`"];
+$Rule30PrizeKit = Environment["RULE30PRIZE_KIT"];
+DirectoryQ[$Rule30PrizeKit]
+```
+
+```wl
+rule30Submission = LeanImportString[(*Iconize["Lean source"]*)"import Ruliology.CellularAutomata.Rule30Prize
+import Ruliology.CellularAutomata.Rule30GateTrap
+
+/-!
+# The gap words of the gate trap
+
+`Rule30GateTrap` gives a set `trap` of `829` windows of the columns `1..16` of the right half
+driven by the alternating column, read at the odd times and closed under the double step whatever
+column `17` does. After the window of a right half `R` enters it, every black cell of `u R` (column
+`1` at the time `2 s + 1`) is followed by the next one at distance `3` or `5` (`gaps_of_entry`).
+This module shows that the trap forbids more: five gap words never occur after entry.
+
+A gap word `g₁ g₂ … gₖ` is read from a black cell at the step `s` when the next black cells are
+at `s + g₁`, `s + g₁ + g₂`, … and the cells between them are white (`gapWord`, `Reads`).
+
+* `gap_words_of_entry`: if the window of `R` is in `trap` at an odd time `t0`, then from every step
+  `s` with `t0 ≤ 2 s + 1`, `u R` reads none of the gap words `333`, `3353`, `3533`, `3553` and
+  `5533`. `no_3353_of_entry` is the second alone.
+* `no_33535555_of_entry`: nor `33535555`, which begins with `3353`.
+* `no_late_33`: after any two gaps, the next two gaps are not both `3`. With `gaps_of_entry`, from
+  the third black cell after entry on, `u R` is a concatenation of the blocks `001` and `00001` in
+  which no two blocks `001` are adjacent and no two are separated by exactly two blocks `00001`.
+* `Q01GapWords` (**open**) is the kit's `Q01Gap` with the five words excluded as well: it follows
+  from `Q01Gap` (`Q01GapWords_of_Q01Gap`), and it still gives `¬ FinSupp (Psi R)` for every right
+  half whose window enters the trap (`not_finSupp_Psi_of_Q01GapWords`), hence `CQ01Empty`
+  (`CQ01Empty_of_Q01GapWords`).
+* `minimal_paths`: each of the five words is minimal for the trap: removing its first or last gap
+  gives a word that a path of the trap graph reads (`33`, `335`, `353`, `533`, `355`, `553`).
+
+The method is the kit's: for each word the windows of the trap that can have read its first `k`
+samples are given as data (`layers333`, …), and the kernel checks that the double step, for every
+value of column `17`, takes each layer into the next and that the last layer is empty (`wordCheck`,
+`not_reads_of_check`). By computation, not in Lean, the five words are all the trap forbids: a word
+over the gaps `3` and `5` is read along some path of the trap graph exactly when it contains none of
+them. Nothing here decides `CQ01`, `Q01Gap`, `Q01GapWords` or Problem 1.
+-/
+
+-- Sequential elaboration: the kernel checks would otherwise run in parallel and stack their memory.
+set_option Elab.async false
+
+namespace Rule30Submission
+
+open Ruliology.CellularAutomata Rule30StripCertificates Rule30GateTrap Rule30ZeroBoundary
+
+/-! ## Gap words -/
+
+/-- The samples of a gap word: a black cell, then for each gap `g` the `g - 1` white cells and the
+next black cell. So `gapWord [3, 5]` is `1, 0, 0, 1, 0, 0, 0, 0, 1`. -/
+def gapWord : List Nat → List Bool
+  | [] => [true]
+  | g :: gs => true :: (List.replicate (g - 1) false ++ gapWord gs)
+
+/-- `v` reads the word `w` from the step `s`. -/
+def Reads (v : Nat → Bool) (s : Nat) (w : List Bool) : Prop :=
+  ∀ i, i < w.length → v (s + i) = w.getD i false
+
+theorem reads_take {v : Nat → Bool} {s : Nat} {w : List Bool} (h : Reads v s w) (n : Nat) :
+    Reads v s (w.take n) := by
+  intro i hi
+  rw [List.length_take] at hi
+  rw [h i (by omega), List.getD_eq_getElem?_getD, List.getD_eq_getElem?_getD,
+    List.getElem?_take_of_lt (by omega)]
+
+theorem reads_drop {v : Nat → Bool} {s : Nat} {w : List Bool} (h : Reads v s w) (k : Nat) :
+    Reads v (s + k) (w.drop k) := by
+  intro i hi
+  rw [List.length_drop] at hi
+  rw [Nat.add_assoc, h (k + i) (by omega), List.getD_eq_getElem?_getD, List.getD_eq_getElem?_getD,
+    List.getElem?_drop]
+
+/-! ## Windows by their codes -/
+
+theorem seg_testBit_encList : ∀ (w : List Bool), seg (fun i => (encList w).testBit i) w.length = w
+  | [] => rfl
+  | x :: l => by
+    have h0 : (encList (x :: l)).testBit 0 = x := by
+      cases x <;> simp [encList] <;> omega
+    have h1 : (fun i => (encList (x :: l)).testBit (i + 1)) = (fun i => (encList l).testBit i) := by
+      funext i
+      rw [Nat.testBit_succ]
+      congr 1
+      cases x <;> simp [encList] <;> omega
+    show (encList (x :: l)).testBit 0 ::
+      seg (fun i => (encList (x :: l)).testBit (i + 1)) l.length = x :: l
+    rw [h0, h1, seg_testBit_encList l]
+
+theorem decode_encList {w : List Bool} (hw : w.length = 16) : decode (encList w) = w := by
+  have := seg_testBit_encList w
+  rw [hw] at this
+  exact this
+
+/-- A list of codes as a bitmap: bit `n` is set for each code `n` of the list. -/
+def maskN : List Nat → Nat
+  | [] => 0
+  | n :: rest => 2 ^ n ||| maskN rest
+
+theorem maskN_spec : ∀ (L : List Nat) (n : Nat), (maskN L).testBit n = true → n ∈ L
+  | [], n, h => by simp [maskN] at h
+  | m :: rest, n, h => by
+    simp only [maskN, Nat.testBit_or, Bool.or_eq_true] at h
+    rcases h with h | h
+    · rw [Nat.testBit_two_pow] at h
+      have e : m = n := by simpa using h
+      subst e
+      exact List.mem_cons_self
+    · exact List.mem_cons_of_mem _ (maskN_spec rest n h)
+
+/-- A window whose code is set in the bitmap of a list of codes is in the decoded list. -/
+theorem mem_of_maskN {LN : List Nat} {w : List Bool} (hw : w.length = 16)
+    (h : inM (maskN LN) w = true) : w ∈ LN.map decode :=
+  List.mem_map.2 ⟨encList w, maskN_spec LN _ h, decode_encList hw⟩
+
+/-! ## The word check -/
+
+/-- The windows of `trap` that read `b` in column `1` are in the layer `L`. -/
+def startOK (b : Bool) (L : List Nat) : Bool :=
+  trap.all (fun w => w.headD false != b || inM (maskN L) w)
+
+/-- One layer: every double step from a window of the layer `S`, for all four values of column `17`,
+either does not read `b` in column `1` or lands in the layer `L`. -/
+def stepOK (S : List Nat) (b : Bool) (L : List Nat) : Bool :=
+  (S.map decode).all (allSucc (fun w => w.headD false != b || inM (maskN L) w))
+
+/-- Reading the letters `word` from the windows `S`. For each letter, every double step from a
+window of `S`, for all four values of column `17`, either does not read the letter in column `1` or
+lands in the next layer; after the last letter the layer is empty. -/
+def readCheck : List Nat → List Bool → List (List Nat) → Bool
+  | S, [], _ => S.isEmpty
+  | S, b :: rest, L :: Ls => stepOK S b L && readCheck L rest Ls
+  | _, _ :: _, [] => false
+
+/-- **The word check.** The windows of `trap` that read the first letter of `word` in column `1`
+are in the first layer, and `readCheck` holds from there for the other letters and layers. -/
+def wordCheck : List Bool → List (List Nat) → Bool
+  | b :: rest, L :: Ls => startOK b L && readCheck L rest Ls
+  | _, _ => false
+
+section Driven
+variable (R : Nat → Bool)
+
+theorem readCheck_spec : ∀ (word : List Bool) (S : List Nat) (Ls : List (List Nat)),
+    readCheck S word Ls = true → ∀ t, t % 2 = 1 → win R t ∈ S.map decode →
+      ¬ ∀ i, i < word.length → (win R (t + 2 * (i + 1))).headD false = word.getD i false
+  | [], S, Ls, h, t, _, hw, _ => by
+    simp only [readCheck, List.isEmpty_iff] at h
+    subst h
+    simp at hw
+  | b :: rest, S, L :: Ls, h, t, ht, hw, hr => by
+    simp only [readCheck, stepOK, Bool.and_eq_true] at h
+    have hP := win_next R h.1 ht hw
+    have hb : (win R (t + 2)).headD false = b := by simpa using hr 0 (by simp)
+    rw [hb] at hP
+    simp only [bne_self_eq_false, Bool.false_or] at hP
+    refine readCheck_spec rest _ Ls h.2 (t + 2) (by omega) (mem_of_maskN (win_length R _) hP) ?_
+    intro i hi
+    have := hr (i + 1) (by simp; omega)
+    rw [show t + 2 + 2 * (i + 1) = t + 2 * (i + 1 + 1) by omega]
+    simpa using this
+  | _ :: _, _, [], h, _, _, _, _ => by simp [readCheck] at h
+
+/-- **A word check excludes its word after entry.** If `wordCheck word layers` holds and the window
+of `R` is in `trap` at an odd time `t0`, then `u R` does not read `word` from any step `s` with
+`t0 ≤ 2 s + 1`. -/
+theorem not_reads_of_check {word : List Bool} {layers : List (List Nat)}
+    (hc : wordCheck word layers = true) {t0 : Nat} (h0 : t0 % 2 = 1) (hw : win R t0 ∈ trap)
+    (s : Nat) (hs : t0 ≤ 2 * s + 1) : ¬ Reads (Rule30PeriodTwoSideways.u R) s word := by
+  intro hr
+  have hw0 : win R (2 * s + 1) ∈ trap := by
+    have := win_mem_trap R h0 hw ((2 * s + 1 - t0) / 2)
+    rwa [show t0 + 2 * ((2 * s + 1 - t0) / 2) = 2 * s + 1 by omega] at this
+  cases word with
+  | nil => simp [wordCheck] at hc
+  | cons b rest =>
+    cases layers with
+    | nil => simp [wordCheck] at hc
+    | cons L Ls =>
+      simp only [wordCheck, startOK, Bool.and_eq_true] at hc
+      have hb : (win R (2 * s + 1)).headD false = b := by
+        have := hr 0 (by simp)
+        rw [u_eq_head] at this
+        simpa using this
+      have hP := List.all_eq_true.1 hc.1 _ hw0
+      rw [hb] at hP
+      simp only [bne_self_eq_false, Bool.false_or] at hP
+      refine readCheck_spec R rest _ Ls hc.2 (2 * s + 1) (by omega)
+        (mem_of_maskN (win_length R _) hP) ?_
+      intro i hi
+      have := hr (i + 1) (by simp; omega)
+      rw [u_eq_head] at this
+      rw [show 2 * s + 1 + 2 * (i + 1) = 2 * (s + (i + 1)) + 1 by omega]
+      simpa using this
+
+end Driven
+
+/-! ## The layers of the five words -/
+
+/-- The 188 windows of the trap that can have read the samples `1`. -/
+def lay1 : List Nat := [103, 407, 679, 871, 1191, 1431, 1639, 1703, 2727, 3479, 3495, 3687, 3751,
+    4055, 4503, 4775, 4967, 5527, 5735, 6055, 6103, 6247, 6567, 6823, 7271, 7591, 7847, 8039, 8599,
+    8871, 9063, 9383, 9623, 9831, 10919, 11367, 11687, 12391, 12967, 13207, 13719, 13927, 13991,
+    14247, 14439, 14759, 15015, 15975, 16039, 16791, 17063, 17255, 17575, 17815, 18023, 19111,
+    19879, 20135, 21911, 22119, 22439, 22631, 22951, 23207, 24231, 24423, 24679, 24983, 25255,
+    25447, 25767, 26279, 27303, 27751, 28055, 28263, 28631, 28775, 29079, 29351, 29543, 29591,
+    29863, 30103, 30311, 30375, 31399, 31847, 32167, 32359, 32871, 33175, 33447, 33639, 33959,
+    34199, 34407, 34471, 35495, 36247, 36263, 36455, 36519, 36823, 37271, 37543, 37735, 38295,
+    38503, 38823, 38871, 39015, 39335, 39591, 40039, 40359, 40615, 40807, 41367, 41639, 41831,
+    42151, 42391, 42599, 43687, 44135, 44455, 45159, 45735, 45975, 46487, 46695, 46759, 47015,
+    47207, 47527, 47783, 48743, 48807, 49255, 49415, 49831, 50583, 50791, 50855, 51879, 52631,
+    52647, 52839, 52903, 53207, 53655, 54119, 54439, 54679, 54887, 55719, 55975, 56423, 56743,
+    56999, 57191, 57447, 57751, 58023, 58215, 58535, 59047, 60071, 60519, 60823, 61031, 61543,
+    61847, 62119, 62311, 62359, 62631, 62871, 63079, 63143, 63399, 63591, 63911, 64167, 64615,
+    65127, 65191]
+
+/-- The 191 windows of the trap that can have read the samples `10`. -/
+def lay10 : List Nat := [142, 398, 654, 1166, 1486, 1562, 1678, 1818, 2190, 2586, 2702, 3534, 3982,
+    4238, 4750, 5582, 5914, 6030, 6286, 6362, 6542, 6798, 7310, 7706, 7822, 8334, 8846, 9678,
+    10010, 10126, 10382, 10778, 10894, 11662, 12430, 12686, 13262, 13534, 13850, 13966, 14106,
+    14222, 14554, 14734, 14990, 15502, 15822, 16014, 16270, 16526, 17038, 17870, 18202, 18970,
+    19086, 19854, 20622, 21134, 21966, 22298, 22414, 22746, 22926, 23694, 24090, 24206, 24974,
+    25230, 25550, 25742, 26138, 26254, 26510, 27278, 28110, 28558, 28814, 28890, 29326, 29646,
+    29838, 30350, 30490, 30606, 30862, 31374, 32538, 32654, 32910, 33166, 33422, 33934, 34254,
+    34330, 34446, 34586, 34958, 35354, 35470, 36302, 36750, 37006, 37518, 38350, 38682, 38798,
+    39054, 39130, 39310, 39566, 40078, 40474, 40590, 41102, 41614, 42446, 42778, 42894, 43150,
+    43546, 43662, 44430, 45198, 45274, 45454, 46030, 46222, 46302, 46618, 46734, 46874, 46990,
+    47322, 47502, 47758, 48270, 48590, 48782, 48922, 49038, 49294, 49550, 49806, 50318, 50638,
+    50714, 50830, 50970, 51738, 51854, 52622, 52686, 53134, 53390, 53902, 54734, 55066, 55182,
+    55438, 55514, 55694, 55950, 56462, 56858, 56974, 57998, 58318, 58510, 58830, 59022, 59162,
+    59278, 59930, 60046, 60814, 61326, 61582, 61658, 62094, 62414, 62606, 63118, 63258, 63374,
+    63706, 63886, 64142, 64654, 65166, 65306, 65422]
+
+/-- The 186 windows of the trap that can have read the samples `100`. -/
+def lay100 : List Nat := [348, 604, 680, 1628, 1692, 2140, 2536, 2652, 3420, 3676, 3752, 4188,
+    4700, 5212, 5496, 5788, 5980, 6492, 6632, 6748, 6824, 7848, 8284, 8796, 9308, 9592, 9884,
+    10728, 10844, 11868, 11944, 12152, 12380, 12892, 13800, 13916, 13980, 14428, 14684, 14940,
+    15016, 15964, 16220, 16476, 16988, 17500, 18076, 18920, 19036, 19804, 20060, 20136, 20836,
+    21084, 22172, 22876, 23208, 24040, 24156, 24924, 25180, 25692, 25976, 26088, 26204, 26716,
+    27112, 27228, 28316, 28764, 29020, 29276, 29788, 30072, 30184, 30300, 30364, 30812, 31208,
+    31324, 32412, 32424, 32604, 32860, 33116, 33372, 33448, 34396, 34460, 34908, 35304, 35420,
+    36188, 36444, 36520, 36956, 37468, 37980, 38264, 38556, 38748, 39260, 39400, 39516, 39592,
+    40540, 40616, 41052, 41564, 42076, 42360, 42652, 43496, 43612, 44636, 44712, 44920, 45148,
+    45404, 45660, 46568, 46684, 46748, 47196, 47452, 47708, 47784, 48732, 48796, 48988, 49244,
+    49500, 49756, 49832, 50780, 50844, 51292, 51688, 51804, 52572, 52828, 52892, 52904, 53340,
+    53604, 53852, 54364, 54648, 54940, 55644, 55784, 55900, 55976, 56808, 56924, 57000, 57692,
+    57948, 58460, 58744, 58856, 58972, 59036, 59484, 59880, 59996, 61020, 61084, 61304, 61532,
+    61788, 61796, 62044, 62556, 62840, 62952, 63068, 63132, 63580, 63836, 64092, 64168, 65000,
+    65116, 65180, 65372]
+
+/-- The 139 windows of the trap that can have read the samples `1000`. -/
+def lay1000 : List Nat := [106, 618, 874, 1130, 1386, 1594, 1898, 2154, 2618, 3434, 4202, 4458,
+    4714, 5482, 5994, 6250, 6506, 6714, 7018, 7274, 7738, 8298, 8554, 8810, 10090, 10346, 10602,
+    10690, 10810, 11626, 12650, 12906, 13418, 13674, 14442, 15466, 15930, 16490, 17002, 18282,
+    18538, 18882, 19002, 19818, 20586, 21098, 21866, 23402, 23658, 23914, 24122, 24938, 25450,
+    25706, 25962, 26474, 26730, 29034, 29802, 30266, 30570, 30826, 31290, 32874, 33386, 33642,
+    33898, 34154, 34362, 34666, 34922, 35386, 36202, 36970, 37226, 37482, 38250, 38762, 39018,
+    39274, 39482, 39786, 40042, 40298, 40506, 41066, 41322, 41578, 42858, 43114, 43370, 43458,
+    43578, 44394, 45418, 45674, 46186, 46442, 46650, 47210, 48234, 48698, 49258, 49770, 50026,
+    50282, 50538, 50746, 51306, 51650, 51770, 52586, 53354, 53610, 53866, 55146, 55402, 55866,
+    56170, 56426, 56682, 56890, 57450, 57706, 58218, 58474, 59242, 59498, 59754, 60778, 61802,
+    62058, 62570, 62826, 63034, 63338, 63594, 64618, 65082]
+
+/-- The 68 windows of the trap that can have read the samples `1001`. -/
+def lay1001 : List Nat := [871, 1431, 1703, 2727, 3687, 4967, 5527, 6823, 7847, 9063, 10919, 13207,
+    13719, 13927, 13991, 15015, 16039, 17255, 17815, 18023, 21911, 22119, 24231, 25447, 26279,
+    27303, 28263, 29543, 29591, 30375, 31399, 33639, 34199, 34407, 34471, 35495, 36455, 37735,
+    38295, 39591, 40615, 41831, 43687, 45975, 46487, 46695, 46759, 47783, 48807, 50583, 50791,
+    50855, 51879, 54119, 54679, 54887, 55975, 58215, 59047, 60071, 61031, 62311, 62359, 62871,
+    63079, 63143, 64167, 65191]
+
+/-- The 148 windows of the trap that can have read the samples `10000`. -/
+def lay10000 : List Nat := [168, 424, 952, 1400, 1960, 2216, 2424, 2536, 2728, 3496, 3560, 4072,
+    4264, 4776, 5608, 6056, 6520, 6568, 7144, 7656, 8168, 8360, 8680, 8872, 9144, 9704, 10152,
+    10616, 10728, 12264, 12712, 12968, 13688, 13800, 14504, 15016, 15336, 15736, 15848, 16552,
+    17064, 17896, 18344, 18808, 18920, 19880, 20456, 21160, 21992, 22952, 23528, 24040, 25000,
+    25064, 25976, 26536, 26792, 27000, 27304, 28136, 28648, 29352, 30072, 30184, 30632, 31096,
+    31400, 32232, 32744, 32936, 33192, 33448, 33720, 34168, 34280, 34728, 34984, 35192, 35304,
+    35496, 36264, 36328, 36840, 37032, 37544, 38376, 38824, 39288, 39336, 39912, 40424, 40936,
+    41128, 41448, 41640, 41912, 42472, 42920, 43384, 43496, 45032, 45480, 45736, 46456, 46568,
+    47272, 47784, 48104, 48504, 48616, 49320, 49576, 49832, 50552, 50664, 51368, 51688, 51880,
+    52648, 52712, 53224, 53928, 54760, 55208, 55672, 55720, 56296, 56808, 57320, 57512, 57832,
+    58744, 59304, 59768, 59880, 60072, 60904, 61416, 62120, 62840, 62952, 63400, 63864, 64168,
+    64488, 64888, 65000, 65512]
+
+/-- The 68 windows of the trap that can have read the samples `10010`. -/
+def lay10010 : List Nat := [1486, 1678, 2702, 3534, 5582, 5914, 6798, 9678, 10010, 10382, 10894,
+    13966, 14106, 15502, 15822, 16014, 17870, 18202, 19086, 21966, 22298, 23694, 24206, 26254,
+    27278, 28110, 29838, 30350, 30490, 30862, 31374, 34254, 34446, 35470, 36302, 38350, 38682,
+    39566, 42446, 42778, 43150, 43662, 46222, 46734, 46874, 48270, 48590, 48782, 50638, 50830,
+    50970, 51854, 52686, 54734, 55066, 55950, 56462, 56974, 58830, 59022, 59162, 60046, 62606,
+    63118, 63258, 64142, 64654, 65166]
+
+/-- The 168 windows of the trap that can have read the samples `100001`. -/
+def lay100001 : List Nat := [103, 407, 679, 871, 1191, 1639, 1703, 2727, 3479, 3495, 3687, 3751,
+    4055, 4503, 4775, 5527, 5735, 6055, 6103, 6247, 6567, 6823, 7271, 7591, 8039, 8599, 8871, 9063,
+    9383, 9623, 9831, 10919, 11367, 11687, 12391, 12967, 13719, 13927, 13991, 14247, 14439, 14759,
+    15015, 15975, 16791, 17063, 17255, 17575, 17815, 19111, 19879, 20135, 21911, 22119, 22439,
+    22631, 22951, 23207, 24231, 24423, 24679, 24983, 25255, 25447, 25767, 26279, 27303, 27751,
+    28055, 28263, 28631, 28775, 29079, 29351, 29863, 30103, 30311, 31399, 31847, 32167, 32359,
+    32871, 33175, 33447, 33639, 33959, 34199, 34407, 34471, 35495, 36247, 36263, 36455, 36519,
+    36823, 37271, 37543, 38295, 38503, 38823, 38871, 39015, 39335, 39591, 40039, 40359, 40615,
+    40807, 41367, 41639, 41831, 42151, 42391, 42599, 43687, 44135, 44455, 45159, 45735, 46487,
+    46695, 46759, 47015, 47207, 47527, 47783, 48743, 49255, 49831, 50583, 50855, 51879, 52631,
+    52647, 52839, 52903, 53207, 53655, 54439, 54679, 54887, 55719, 55975, 56423, 56743, 56999,
+    57191, 57447, 57751, 58023, 58215, 58535, 60071, 60519, 60823, 61031, 61543, 61847, 62119,
+    62631, 62871, 63079, 63399, 63591, 63911, 64167, 64615, 65127]
+
+/-- The 69 windows of the trap that can have read the samples `100100`. -/
+def lay100100 : List Nat := [1628, 1692, 2140, 2652, 3752, 5212, 5788, 6748, 6824, 9308, 9884,
+    10844, 11944, 12380, 13980, 15016, 15964, 18076, 19036, 20136, 22172, 23208, 24156, 26204,
+    26716, 27228, 28316, 30364, 31324, 32412, 34396, 34460, 34908, 35420, 36520, 37980, 38556,
+    39516, 39592, 42076, 42652, 43612, 44712, 45148, 46748, 47784, 48732, 48796, 50780, 50844,
+    51292, 51804, 52892, 52904, 54364, 54940, 55900, 55976, 56924, 58972, 59484, 59996, 61084,
+    61532, 63132, 64092, 64168, 65116, 65180]
+
+/-- The 171 windows of the trap that can have read the samples `1000010`. -/
+def lay1000010 : List Nat := [142, 398, 654, 1166, 1562, 1818, 2190, 2586, 2702, 3534, 3982, 4238,
+    4750, 5582, 5914, 6030, 6286, 6362, 6542, 6798, 7310, 7706, 7822, 8334, 8846, 10010, 10126,
+    10778, 10894, 11662, 12430, 12686, 13262, 13850, 13966, 14106, 14222, 14554, 14734, 14990,
+    15502, 15822, 16014, 16270, 16526, 17038, 18970, 19086, 19854, 20622, 21134, 21966, 22298,
+    22414, 22746, 22926, 23694, 24090, 24206, 24974, 25230, 25550, 25742, 26138, 26254, 26510,
+    27278, 28110, 28558, 28814, 28890, 29326, 29646, 29838, 30490, 30606, 30862, 31374, 32538,
+    32654, 32910, 33166, 33422, 33934, 34330, 34586, 34958, 35354, 35470, 36302, 36750, 37006,
+    37518, 38350, 38682, 38798, 39054, 39130, 39310, 39566, 40078, 40474, 40590, 41102, 41614,
+    42778, 42894, 43546, 43662, 44430, 45198, 45274, 45454, 46030, 46222, 46618, 46874, 46990,
+    47322, 47502, 47758, 48270, 48590, 48782, 48922, 49038, 49294, 49550, 49806, 50318, 50714,
+    51738, 51854, 52622, 52686, 53134, 53390, 53902, 54734, 55066, 55182, 55438, 55514, 55694,
+    55950, 56462, 56858, 56974, 57998, 58318, 58510, 59022, 59278, 59930, 60046, 60814, 61326,
+    61582, 61658, 62094, 62414, 62606, 63258, 63374, 63706, 63886, 64142, 64654, 65166, 65306,
+    65422]
+
+/-- The 57 windows of the trap that can have read the samples `1001000`. -/
+def lay1001000 : List Nat := [618, 1130, 1594, 1898, 2154, 2618, 4714, 6250, 6714, 7738, 10090,
+    10346, 10810, 11626, 15930, 18282, 18538, 19818, 21098, 24122, 25706, 26474, 26730, 30266,
+    30826, 31290, 33386, 33898, 34362, 34666, 34922, 35386, 37482, 39018, 39482, 40506, 42858,
+    43114, 43578, 44394, 46650, 48698, 50282, 50746, 51306, 52586, 53866, 55402, 55866, 56890,
+    58474, 59242, 59498, 60778, 63034, 63594, 65082]
+
+/-- The 17 windows of the trap that can have read the samples `1001001`. -/
+def lay1001001 : List Nat := [6823, 7847, 10919, 13991, 16039, 24231, 27303, 31399, 39591, 40615,
+    43687, 46759, 48807, 55975, 60071, 64167, 65191]
+
+/-- The 173 windows of the trap that can have read the samples `10000100`. -/
+def lay10000100 : List Nat := [348, 604, 680, 1628, 2140, 2536, 2652, 3420, 3676, 3752, 4188, 4700,
+    5212, 5496, 5788, 5980, 6492, 6632, 6748, 6824, 7848, 8284, 8796, 9308, 9592, 9884, 10728,
+    10844, 11868, 12152, 12380, 12892, 13800, 13916, 13980, 14428, 14684, 14940, 15016, 16220,
+    16476, 16988, 17500, 18076, 18920, 19036, 19804, 20060, 21084, 22172, 22876, 23208, 24040,
+    24156, 24924, 25180, 25692, 25976, 26088, 26204, 26716, 27112, 27228, 28316, 28764, 29020,
+    29276, 29788, 30072, 30184, 30300, 30812, 31208, 31324, 32412, 32424, 32604, 32860, 33116,
+    33372, 33448, 34396, 34908, 35304, 35420, 36188, 36444, 36520, 36956, 37468, 37980, 38264,
+    38556, 38748, 39260, 39400, 39516, 39592, 40540, 40616, 41052, 41564, 42076, 42360, 42652,
+    43496, 43612, 44636, 44920, 45148, 45404, 45660, 46568, 46684, 46748, 47196, 47452, 47708,
+    47784, 48796, 48988, 49244, 49500, 49756, 49832, 50780, 50844, 51292, 51688, 51804, 52572,
+    52828, 52892, 53340, 53852, 54364, 54648, 54940, 55644, 55784, 55900, 55976, 56808, 56924,
+    57000, 57692, 57948, 58460, 58744, 58856, 58972, 59036, 59484, 59880, 59996, 61020, 61084,
+    61304, 61532, 61788, 62044, 62556, 62840, 62952, 63068, 63132, 63580, 63836, 64092, 64168,
+    65000, 65180, 65372]
+
+/-- The 67 windows of the trap that can have read the samples `10010000`. -/
+def lay10010000 : List Nat := [168, 1400, 1960, 2216, 4072, 4776, 5608, 6056, 6520, 8168, 8872,
+    10152, 10616, 12264, 13688, 15736, 15848, 16552, 17064, 18344, 18808, 20456, 25976, 26536,
+    26792, 27000, 29352, 30072, 30632, 31096, 32232, 32744, 32936, 33448, 34168, 34728, 34984,
+    36840, 37544, 38376, 38824, 39288, 40936, 41640, 42920, 43384, 45032, 46456, 48504, 48616,
+    49320, 49832, 50552, 51368, 53224, 53928, 55208, 55672, 57320, 58744, 59304, 59768, 62840,
+    63400, 63864, 64888, 65000]
+
+/-- The 21 windows of the trap that can have read the samples `10010010`. -/
+def lay10010010 : List Nat := [1678, 6798, 10894, 13966, 24206, 26254, 27278, 30350, 31374, 34446,
+    39566, 43662, 46734, 50830, 55950, 56974, 59022, 60046, 63118, 64142, 65166]
+
+/-- The 128 windows of the trap that can have read the samples `100001000`. -/
+def lay100001000 : List Nat := [106, 618, 874, 1386, 1594, 1898, 2154, 2618, 3434, 4202, 4458,
+    4714, 5482, 5994, 6250, 6506, 7018, 7274, 7738, 8298, 8554, 8810, 10090, 10346, 10602, 10810,
+    11626, 12650, 12906, 13418, 13674, 14442, 15466, 15930, 16490, 17002, 18282, 18538, 19002,
+    19818, 20586, 21098, 21866, 23402, 23658, 23914, 24122, 24938, 25450, 25706, 25962, 26474,
+    26730, 29034, 29802, 30266, 30570, 30826, 32874, 33386, 33642, 34154, 34362, 34666, 34922,
+    35386, 36202, 36970, 37226, 37482, 38250, 38762, 39018, 39274, 39786, 40042, 40298, 40506,
+    41066, 41322, 41578, 42858, 43114, 43370, 43578, 44394, 45418, 45674, 46186, 46442, 46650,
+    47210, 48234, 48698, 49258, 49770, 50026, 50538, 50746, 51306, 51770, 52586, 53354, 53610,
+    53866, 55146, 55402, 56170, 56426, 56682, 56890, 57450, 57706, 58218, 58474, 59242, 59498,
+    59754, 60778, 61802, 62058, 62570, 62826, 63034, 63338, 63594, 64618, 65082]
+
+/-- The 92 windows of the trap that can have read the samples `100100001`. -/
+def lay100100001 : List Nat := [103, 407, 679, 1191, 3479, 3495, 3687, 4503, 4775, 5527, 5735,
+    6247, 6567, 7591, 8599, 8871, 9383, 9623, 11687, 12391, 12967, 13719, 14439, 14759, 15015,
+    17063, 17575, 17815, 19879, 21911, 22119, 22631, 22951, 24679, 24983, 25255, 25767, 27303,
+    28055, 28263, 28775, 29079, 30103, 32167, 32871, 33175, 33447, 33959, 34199, 36247, 36263,
+    36455, 37271, 37543, 38295, 38503, 39015, 39335, 40359, 41367, 41639, 42151, 42391, 44455,
+    45159, 45735, 46487, 47207, 47527, 47783, 49255, 49831, 50583, 52631, 52647, 52839, 53655,
+    54679, 54887, 55719, 56743, 57447, 57751, 58023, 58535, 60823, 61031, 61543, 61847, 62871,
+    63591, 63911]
+
+/-- The 21 windows of the trap that can have read the samples `100100100`. -/
+def lay100100100 : List Nat := [1628, 6748, 10844, 15964, 19036, 24156, 26204, 27228, 31324, 34396,
+    35420, 39516, 43612, 48732, 51804, 55900, 56924, 58972, 59996, 64092, 65116]
+
+/-- The 137 windows of the trap that can have read the samples `1000010000`. -/
+def lay1000010000 : List Nat := [168, 424, 1400, 1960, 2216, 2424, 2536, 2728, 3496, 3560, 4072,
+    4264, 5608, 6056, 6520, 6568, 7144, 7656, 8168, 8360, 8680, 9704, 10152, 10616, 10728, 12264,
+    12712, 12968, 13688, 13800, 14504, 15016, 15336, 15736, 15848, 16552, 17064, 17896, 18344,
+    18808, 18920, 19880, 20456, 21160, 21992, 22952, 23528, 24040, 25000, 25064, 25976, 26536,
+    26792, 27304, 28136, 28648, 30072, 30184, 30632, 31096, 31400, 32232, 32744, 32936, 33192,
+    33448, 34168, 34280, 34728, 34984, 35192, 35304, 35496, 36264, 36328, 36840, 37032, 38376,
+    38824, 39288, 39336, 39912, 40424, 40936, 41128, 41448, 42472, 42920, 43384, 43496, 45032,
+    45480, 45736, 46456, 46568, 47272, 47784, 48104, 48504, 48616, 49320, 49576, 49832, 50552,
+    50664, 51368, 51688, 51880, 52648, 52712, 53224, 53928, 54760, 55208, 55672, 55720, 56296,
+    56808, 57320, 57512, 57832, 58744, 59304, 59768, 59880, 60072, 60904, 61416, 62120, 62840,
+    62952, 63400, 64168, 64488, 64888, 65000, 65512]
+
+/-- The 110 windows of the trap that can have read the samples `1001000010`. -/
+def lay1001000010 : List Nat := [142, 398, 654, 1562, 1818, 2586, 2702, 3982, 4238, 4750, 5914,
+    6030, 7310, 7706, 8334, 8846, 10010, 10126, 10778, 11662, 12686, 14106, 14222, 14990, 15502,
+    16270, 16526, 17038, 18970, 19854, 21134, 22298, 22414, 22926, 23694, 24090, 24974, 25230,
+    26138, 26510, 27278, 28558, 28814, 29326, 29838, 30490, 30606, 31374, 32538, 32654, 32910,
+    33166, 33422, 34330, 34586, 35354, 35470, 36750, 37006, 37518, 38682, 38798, 39310, 40078,
+    40474, 41102, 41614, 42778, 42894, 43546, 43662, 44430, 45454, 46222, 46874, 46990, 47758,
+    48270, 48922, 49038, 49294, 49550, 49806, 50714, 51738, 51854, 52622, 53134, 53390, 53902,
+    55066, 55182, 55694, 55950, 56462, 56858, 57998, 59278, 59930, 60046, 60814, 61326, 62094,
+    62606, 63258, 63374, 64142, 64654, 65306, 65422]
+
+/-- The 18 windows of the trap that can have read the samples `1001001000`. -/
+def lay1001001000 : List Nat := [1130, 2154, 6250, 10346, 18538, 25706, 26730, 30826, 33898, 34922,
+    39018, 43114, 50282, 51306, 55402, 58474, 59498, 63594]
+
+/-- The 160 windows of the trap that can have read the samples `10000100001`. -/
+def lay10000100001 : List Nat := [103, 407, 679, 871, 1191, 1639, 1703, 2727, 3479, 3495, 3687,
+    3751, 4503, 5527, 5735, 6055, 6247, 6567, 6823, 7271, 7591, 8039, 8599, 8871, 9063, 9383, 9623,
+    9831, 10919, 11367, 11687, 12391, 12967, 13719, 13927, 13991, 14247, 14439, 14759, 15015,
+    15975, 16791, 17063, 17255, 17575, 17815, 19111, 19879, 20135, 21911, 22119, 22439, 22631,
+    22951, 23207, 24231, 24423, 24679, 24983, 25255, 25447, 25767, 26279, 27303, 27751, 28055,
+    28263, 28775, 29079, 29351, 29863, 30103, 30311, 31399, 31847, 32167, 32359, 32871, 33175,
+    33447, 33639, 33959, 34199, 34407, 34471, 35495, 36247, 36263, 36455, 36519, 37271, 38295,
+    38503, 38823, 39015, 39335, 39591, 40039, 40359, 40615, 40807, 41367, 41639, 41831, 42151,
+    42391, 42599, 43687, 44135, 44455, 45159, 45735, 46487, 46695, 46759, 47015, 47207, 47527,
+    47783, 48743, 49255, 49831, 50583, 50855, 51879, 52631, 52647, 52839, 52903, 53655, 54439,
+    54679, 54887, 55719, 55975, 56423, 56743, 56999, 57191, 57447, 57751, 58023, 58215, 58535,
+    60071, 60519, 60823, 61031, 61543, 61847, 62119, 62631, 62871, 63079, 63399, 63591, 63911,
+    64167, 64615, 65127]
+
+/-- The 118 windows of the trap that can have read the samples `10010000100`. -/
+def lay10010000100 : List Nat := [348, 604, 680, 1628, 2140, 2536, 2652, 3420, 3676, 3752, 4700,
+    5980, 6492, 6632, 6748, 6824, 7848, 8796, 10728, 10844, 11868, 12380, 12892, 13800, 13916,
+    14428, 14684, 14940, 15016, 16220, 16988, 18920, 19036, 19804, 20060, 21084, 22876, 23208,
+    24156, 24924, 25180, 26088, 26204, 26716, 27112, 27228, 29020, 29276, 30184, 30812, 31208,
+    31324, 32424, 32604, 33116, 33372, 33448, 34396, 34908, 35304, 35420, 36188, 36444, 36520,
+    37468, 38748, 39260, 39400, 39516, 39592, 40540, 40616, 41564, 43496, 43612, 44636, 45148,
+    45404, 45660, 46568, 46684, 47196, 47452, 47708, 47784, 48988, 49500, 49756, 49832, 50780,
+    51292, 51688, 51804, 52572, 52828, 53852, 55644, 55784, 55900, 55976, 56924, 57000, 57692,
+    57948, 58856, 59484, 59880, 59996, 61020, 61532, 61788, 62044, 62952, 63580, 63836, 64092,
+    64168, 65372]
+
+/-- The 21 windows of the trap that can have read the samples `10010010000`. -/
+def lay10010010000 : List Nat := [1960, 4776, 6056, 8872, 10152, 17064, 18344, 26536, 29352, 30632,
+    33448, 34728, 37544, 38824, 41640, 42920, 49832, 53928, 55208, 59304, 63400]
+
+/-- The 159 windows of the trap that can have read the samples `100001000010`. -/
+def lay100001000010 : List Nat := [142, 398, 1166, 1562, 1818, 2190, 2586, 2702, 3534, 3982, 4238,
+    4750, 5582, 5914, 6030, 6286, 6542, 6798, 7310, 7706, 7822, 8334, 8846, 10010, 10126, 10778,
+    10894, 11662, 12430, 12686, 13262, 13850, 13966, 14106, 14222, 14734, 14990, 15502, 15822,
+    16014, 16270, 16526, 17038, 18970, 19086, 19854, 20622, 21134, 21966, 22298, 22414, 22926,
+    23694, 24090, 24206, 24974, 25230, 25550, 25742, 26138, 26254, 26510, 27278, 28110, 28558,
+    28814, 29326, 29646, 29838, 30490, 30606, 30862, 31374, 32538, 32654, 32910, 33166, 33934,
+    34330, 34586, 34958, 35354, 35470, 36302, 36750, 37006, 37518, 38350, 38682, 38798, 39054,
+    39310, 39566, 40078, 40474, 40590, 41102, 41614, 42778, 42894, 43546, 43662, 44430, 45198,
+    45454, 46030, 46222, 46618, 46874, 46990, 47502, 47758, 48270, 48590, 48782, 48922, 49038,
+    49294, 49550, 49806, 50318, 50714, 51738, 51854, 52622, 52686, 53134, 53390, 53902, 54734,
+    55066, 55182, 55438, 55694, 55950, 56462, 56858, 56974, 57998, 58318, 58510, 59022, 59278,
+    59930, 60046, 60814, 61326, 61582, 62094, 62414, 62606, 63258, 63374, 63886, 64142, 64654,
+    65166, 65306, 65422]
+
+/-- The 90 windows of the trap that can have read the samples `100100001000`. -/
+def lay100100001000 : List Nat := [106, 874, 1386, 1898, 2154, 4202, 4458, 5482, 5994, 6250, 7018,
+    7274, 8298, 8554, 10090, 10346, 10602, 11626, 13418, 13674, 14442, 15466, 16490, 18282, 18538,
+    19818, 20586, 21866, 23402, 23658, 23914, 24938, 25450, 25706, 25962, 26474, 26730, 29034,
+    29802, 30570, 30826, 32874, 33642, 34154, 34666, 34922, 36970, 37226, 38250, 38762, 39018,
+    39786, 40042, 40298, 41066, 41322, 42858, 43114, 43370, 44394, 46186, 46442, 47210, 48234,
+    49258, 50026, 50538, 51306, 52586, 53354, 53610, 55146, 55402, 56170, 56426, 56682, 57450,
+    57706, 58218, 58474, 59242, 59498, 59754, 60778, 61802, 62570, 62826, 63338, 63594, 64618]
+
+/-- The 47 windows of the trap that can have read the samples `100100001001`. -/
+def lay100100001001 : List Nat := [871, 1703, 2727, 4967, 6823, 9063, 10919, 13927, 13991, 15015,
+    16039, 17255, 18023, 22119, 24231, 25447, 26279, 27303, 29543, 30375, 31399, 33639, 34407,
+    34471, 35495, 37735, 39591, 41831, 43687, 46695, 46759, 47783, 48807, 50791, 50855, 51879,
+    54119, 54887, 55975, 58215, 59047, 60071, 62311, 63079, 63143, 64167, 65191]
+
+/-- The 29 windows of the trap that can have read the samples `100100100001`. -/
+def lay100100100001 : List Nat := [679, 3495, 4775, 6567, 7591, 8871, 11687, 14759, 15015, 17063,
+    19879, 22951, 27303, 32167, 33447, 36263, 37543, 39335, 40359, 41639, 44455, 47527, 47783,
+    49831, 52647, 55719, 56743, 58023, 63911]
+
+/-- The 161 windows of the trap that can have read the samples `1000010000100`. -/
+def lay1000010000100 : List Nat := [348, 604, 680, 1628, 2140, 2536, 2652, 3420, 3676, 3752, 4188,
+    4700, 5212, 5788, 5980, 6492, 6632, 6748, 6824, 7848, 8284, 8796, 9308, 9884, 10728, 10844,
+    11868, 12380, 12892, 13800, 13916, 13980, 14428, 14684, 14940, 15016, 16220, 16476, 16988,
+    17500, 18076, 18920, 19036, 19804, 20060, 21084, 22172, 22876, 23208, 24040, 24156, 24924,
+    25180, 25692, 26088, 26204, 26716, 27112, 27228, 28316, 28764, 29020, 29276, 29788, 30184,
+    30300, 30812, 31208, 31324, 32412, 32424, 32604, 32860, 33116, 33372, 33448, 34396, 34908,
+    35304, 35420, 36188, 36444, 36520, 36956, 37468, 37980, 38556, 38748, 39260, 39400, 39516,
+    39592, 40540, 40616, 41052, 41564, 42076, 42652, 43496, 43612, 44636, 45148, 45404, 45660,
+    46568, 46684, 46748, 47196, 47452, 47708, 47784, 48796, 48988, 49244, 49500, 49756, 49832,
+    50780, 50844, 51292, 51688, 51804, 52572, 52828, 52892, 53340, 53852, 54364, 54940, 55644,
+    55784, 55900, 55976, 56808, 56924, 57000, 57692, 57948, 58460, 58856, 58972, 59036, 59484,
+    59880, 59996, 61020, 61084, 61532, 61788, 62044, 62556, 62952, 63068, 63132, 63580, 63836,
+    64092, 64168, 65000, 65180, 65372]
+
+/-- The 100 windows of the trap that can have read the samples `1001000010000`. -/
+def lay1001000010000 : List Nat := [424, 1960, 2536, 2728, 3496, 3560, 4072, 5608, 6056, 6568,
+    7144, 7656, 8168, 8680, 9704, 10152, 10728, 12264, 12712, 12968, 13800, 15016, 15336, 15848,
+    17064, 17896, 18344, 18920, 19880, 20456, 21160, 21992, 22952, 23528, 24040, 25000, 25064,
+    26536, 27304, 28136, 28648, 30184, 30632, 31400, 32232, 32744, 33192, 33448, 34280, 34728,
+    35304, 35496, 36264, 36328, 36840, 38376, 38824, 39336, 39912, 40424, 40936, 41448, 42472,
+    42920, 43496, 45032, 45480, 45736, 46568, 47784, 48104, 48616, 49576, 49832, 50664, 51688,
+    51880, 52648, 52712, 53224, 53928, 54760, 55208, 55720, 56296, 56808, 57320, 57832, 59304,
+    59880, 60072, 60904, 61416, 62120, 62952, 63400, 64168, 64488, 65000, 65512]
+
+/-- The 48 windows of the trap that can have read the samples `1001000010010`. -/
+def lay1001000010010 : List Nat := [1486, 1678, 2702, 3534, 5582, 6798, 9678, 10382, 10894, 15502,
+    15822, 16014, 17870, 19086, 21966, 23694, 24206, 26254, 27278, 28110, 30862, 31374, 34254,
+    34446, 35470, 36302, 38350, 39566, 42446, 43150, 43662, 48270, 48590, 48782, 50638, 50830,
+    51854, 52686, 54734, 55950, 56462, 56974, 58830, 59022, 60046, 64142, 64654, 65166]
+
+/-- The 40 windows of the trap that can have read the samples `1001001000010`. -/
+def lay1001001000010 : List Nat := [654, 2702, 3982, 4750, 6030, 8846, 14222, 14990, 16270, 17038,
+    21134, 22414, 25230, 27278, 28558, 29326, 31374, 32654, 33422, 35470, 36750, 37518, 38798,
+    41614, 43662, 46990, 47758, 49038, 49806, 51854, 53134, 53902, 55950, 57998, 60046, 61326,
+    62094, 63374, 64142, 65422]
+
+/-- The 51 windows of the trap that can have read the samples `10000100001001`. -/
+def lay10000100001001 : List Nat := [871, 1703, 2727, 3687, 4967, 6823, 9063, 10919, 13927, 13991,
+    15015, 16039, 17255, 18023, 22119, 24231, 25447, 26279, 27303, 28263, 29543, 30375, 31399,
+    33639, 34407, 34471, 35495, 36455, 37735, 39591, 41831, 43687, 46695, 46759, 47783, 48807,
+    50791, 50855, 51879, 54119, 54887, 55975, 58215, 59047, 60071, 61031, 62311, 63079, 63143,
+    64167, 65191]
+
+/-- The 111 windows of the trap that can have read the samples `10010000100001`. -/
+def lay10010000100001 : List Nat := [103, 871, 1639, 1703, 2727, 3495, 3687, 5735, 6055, 6247,
+    6567, 6823, 7271, 7591, 8039, 8871, 9063, 9831, 10919, 11367, 11687, 12391, 13927, 13991,
+    14247, 14439, 14759, 15015, 15975, 17063, 17255, 19111, 19879, 22119, 22439, 22631, 22951,
+    24231, 24423, 24679, 25255, 25447, 26279, 27303, 27751, 28263, 28775, 29351, 30311, 31399,
+    31847, 32167, 32359, 32871, 33639, 34407, 34471, 35495, 36263, 36455, 38503, 38823, 39015,
+    39335, 39591, 40039, 40359, 40615, 40807, 41639, 41831, 42599, 43687, 44135, 44455, 45159,
+    46695, 46759, 47015, 47207, 47527, 47783, 48743, 49255, 49831, 50855, 51879, 52647, 52839,
+    54887, 55719, 55975, 56423, 56743, 56999, 57191, 57447, 58023, 58215, 60071, 60519, 61031,
+    61543, 62119, 63079, 63399, 63591, 63911, 64167, 64615, 65127]
+
+/-- The 48 windows of the trap that can have read the samples `10010000100100`. -/
+def lay10010000100100 : List Nat := [1628, 1692, 2140, 2652, 5212, 5788, 6748, 9308, 9884, 10844,
+    13980, 18076, 19036, 22172, 26204, 26716, 27228, 28316, 30364, 31324, 32412, 34396, 34460,
+    34908, 35420, 37980, 38556, 39516, 42076, 42652, 43612, 46748, 48796, 50780, 50844, 51292,
+    51804, 52892, 54364, 54940, 55900, 58972, 59484, 59996, 61084, 63132, 64092, 65180]
+
+/-- The 41 windows of the trap that can have read the samples `10010010000100`. -/
+def lay10010010000100 : List Nat := [348, 604, 2652, 4700, 6492, 6748, 8796, 10844, 14684, 14940,
+    16988, 19036, 21084, 22876, 24924, 27228, 29020, 31324, 33116, 33372, 35420, 37468, 39260,
+    39516, 41564, 43612, 45404, 47452, 47708, 49500, 49756, 51804, 53852, 55644, 55900, 57692,
+    57948, 59996, 61788, 63836, 64092]
+
+/-- The 51 windows of the trap that can have read the samples `100001000010010`. -/
+def lay100001000010010 : List Nat := [1486, 1678, 2702, 3534, 5582, 6798, 9678, 10382, 10894,
+    15502, 15822, 16014, 17870, 19086, 21966, 23694, 24206, 26254, 27278, 28110, 29838, 30862,
+    31374, 34254, 34446, 35470, 36302, 38350, 39566, 42446, 43150, 43662, 46222, 48270, 48590,
+    48782, 50638, 50830, 51854, 52686, 54734, 55950, 56462, 56974, 58830, 59022, 60046, 62606,
+    64142, 64654, 65166]
+
+/-- The 107 windows of the trap that can have read the samples `100100001000010`. -/
+def lay100100001000010 : List Nat := [398, 1166, 2190, 2702, 3534, 3982, 4750, 5582, 6030, 6286,
+    6542, 6798, 7310, 8846, 10126, 10894, 11662, 12686, 13262, 13966, 14222, 14734, 14990, 15502,
+    15822, 16270, 19086, 19854, 21134, 21966, 22414, 22926, 23694, 24206, 24974, 25230, 25550,
+    25742, 26254, 26510, 27278, 28110, 28558, 29326, 29646, 29838, 30606, 30862, 31374, 32654,
+    33166, 33934, 34958, 35470, 36302, 36750, 37518, 38350, 38798, 39054, 39310, 39566, 40078,
+    41614, 42894, 43662, 44430, 45454, 46030, 46222, 46990, 47502, 47758, 48270, 48590, 49038,
+    49550, 50318, 51854, 52622, 52686, 53134, 53902, 54734, 55182, 55438, 55694, 55950, 56462,
+    56974, 57998, 58318, 58510, 59022, 59278, 60046, 60814, 61326, 62094, 62414, 62606, 63374,
+    63886, 64142, 64654, 65166, 65422]
+
+/-- The 51 windows of the trap that can have read the samples `1000010000100100`. -/
+def lay1000010000100100 : List Nat := [1628, 1692, 2140, 2652, 5212, 5788, 6748, 9308, 9884, 10844,
+    12380, 13980, 18076, 19036, 22172, 26204, 26716, 27228, 28316, 30364, 31324, 32412, 34396,
+    34460, 34908, 35420, 37980, 38556, 39516, 42076, 42652, 43612, 45148, 46748, 48796, 50780,
+    50844, 51292, 51804, 52892, 54364, 54940, 55900, 58972, 59484, 59996, 61084, 61532, 63132,
+    64092, 65180]
+
+/-- The 111 windows of the trap that can have read the samples `1001000010000100`. -/
+def lay1001000010000100 : List Nat := [348, 604, 1628, 2140, 2652, 3420, 4188, 4700, 5212, 5788,
+    5980, 6492, 6748, 8284, 8796, 9308, 9884, 10844, 12380, 13916, 13980, 14428, 14684, 16220,
+    16476, 16988, 17500, 18076, 19036, 19804, 21084, 22172, 22876, 24156, 24924, 25180, 25692,
+    26204, 26716, 27228, 28316, 28764, 29020, 29276, 29788, 30812, 31324, 32412, 32604, 32860,
+    33116, 33372, 34396, 34908, 35420, 36188, 36956, 37468, 37980, 38556, 38748, 39260, 39516,
+    40540, 41052, 41564, 42076, 42652, 43612, 45148, 45404, 46684, 46748, 47196, 47452, 48796,
+    48988, 49244, 49500, 49756, 50780, 50844, 51292, 51804, 52572, 52892, 53340, 53852, 54364,
+    54940, 55644, 55900, 56924, 57692, 57948, 58460, 58972, 59036, 59484, 59996, 61084, 61532,
+    61788, 62044, 62556, 63132, 63580, 63836, 64092, 65180, 65372]
+
+/-- The layers of the gap word `333`, one per sample (188, 191, 186, 68, 68, 69, 17, 21, 21,
+0); the last is empty. -/
+def layers333 : List (List Nat) := [lay1, lay10, lay100, lay1001, lay10010, lay100100, lay1001001,
+    lay10010010, lay100100100, []]
+
+/-- The layers of the gap word `3353`, one per sample (188, 191, 186, 68, 68, 69, 17, 21, 21, 18,
+21, 29, 40, 41, 0); the last is empty. -/
+def layers3353 : List (List Nat) := [lay1, lay10, lay100, lay1001, lay10010, lay100100, lay1001001,
+    lay10010010, lay100100100, lay1001001000, lay10010010000, lay100100100001, lay1001001000010,
+    lay10010010000100, []]
+
+/-- The layers of the gap word `3533`, one per sample (188, 191, 186, 68, 68, 69, 57, 67, 92, 110,
+118, 47, 48, 48, 0); the last is empty. -/
+def layers3533 : List (List Nat) := [lay1, lay10, lay100, lay1001, lay10010, lay100100, lay1001000,
+    lay10010000, lay100100001, lay1001000010, lay10010000100, lay100100001001, lay1001000010010,
+    lay10010000100100, []]
+
+/-- The layers of the gap word `3553`, one per sample (188, 191, 186, 68, 68, 69, 57, 67, 92, 110,
+118, 90, 100, 111, 107, 111, 0); the last is empty. -/
+def layers3553 : List (List Nat) := [lay1, lay10, lay100, lay1001, lay10010, lay100100, lay1001000,
+    lay10010000, lay100100001, lay1001000010, lay10010000100, lay100100001000, lay1001000010000,
+    lay10010000100001, lay100100001000010, lay1001000010000100, []]
+
+/-- The layers of the gap word `5533`, one per sample (188, 191, 186, 139, 148, 168, 171, 173, 128,
+137, 160, 159, 161, 51, 51, 51, 0); the last is empty. -/
+def layers5533 : List (List Nat) := [lay1, lay10, lay100, lay1000, lay10000, lay100001, lay1000010,
+    lay10000100, lay100001000, lay1000010000, lay10000100001, lay100001000010, lay1000010000100,
+    lay10000100001001, lay100001000010010, lay1000010000100100, []]
+
+theorem start1 : startOK true lay1 = true := by decide +kernel
+theorem step10 : stepOK lay1 false lay10 = true := by
+  decide +kernel
+theorem step100 : stepOK lay10 false lay100 = true := by
+  decide +kernel
+theorem step1000 : stepOK lay100 false lay1000 = true := by
+  decide +kernel
+theorem step1001 : stepOK lay100 true lay1001 = true := by
+  decide +kernel
+theorem step10000 : stepOK lay1000 false lay10000 = true := by
+  decide +kernel
+theorem step10010 : stepOK lay1001 false lay10010 = true := by
+  decide +kernel
+theorem step100001 : stepOK lay10000 true lay100001 = true := by
+  decide +kernel
+theorem step100100 : stepOK lay10010 false lay100100 = true := by
+  decide +kernel
+theorem step1000010 : stepOK lay100001 false lay1000010 = true := by
+  decide +kernel
+theorem step1001000 : stepOK lay100100 false lay1001000 = true := by
+  decide +kernel
+theorem step1001001 : stepOK lay100100 true lay1001001 = true := by
+  decide +kernel
+theorem step10000100 : stepOK lay1000010 false lay10000100 = true := by
+  decide +kernel
+theorem step10010000 : stepOK lay1001000 false lay10010000 = true := by
+  decide +kernel
+theorem step10010010 : stepOK lay1001001 false lay10010010 = true := by
+  decide +kernel
+theorem step100001000 : stepOK lay10000100 false lay100001000 = true := by
+  decide +kernel
+theorem step100100001 : stepOK lay10010000 true lay100100001 = true := by
+  decide +kernel
+theorem step100100100 : stepOK lay10010010 false lay100100100 = true := by
+  decide +kernel
+theorem step1000010000 : stepOK lay100001000 false lay1000010000 = true := by
+  decide +kernel
+theorem step1001000010 : stepOK lay100100001 false lay1001000010 = true := by
+  decide +kernel
+theorem step1001001000 : stepOK lay100100100 false lay1001001000 = true := by
+  decide +kernel
+theorem step1001001001 : stepOK lay100100100 true [] = true := by
+  decide +kernel
+theorem step10000100001 : stepOK lay1000010000 true lay10000100001 = true := by
+  decide +kernel
+theorem step10010000100 : stepOK lay1001000010 false lay10010000100 = true := by
+  decide +kernel
+theorem step10010010000 : stepOK lay1001001000 false lay10010010000 = true := by
+  decide +kernel
+theorem step100001000010 : stepOK lay10000100001 false lay100001000010 = true := by
+  decide +kernel
+theorem step100100001000 : stepOK lay10010000100 false lay100100001000 = true := by
+  decide +kernel
+theorem step100100001001 : stepOK lay10010000100 true lay100100001001 = true := by
+  decide +kernel
+theorem step100100100001 : stepOK lay10010010000 true lay100100100001 = true := by
+  decide +kernel
+theorem step1000010000100 : stepOK lay100001000010 false lay1000010000100 = true := by
+  decide +kernel
+theorem step1001000010000 : stepOK lay100100001000 false lay1001000010000 = true := by
+  decide +kernel
+theorem step1001000010010 : stepOK lay100100001001 false lay1001000010010 = true := by
+  decide +kernel
+theorem step1001001000010 : stepOK lay100100100001 false lay1001001000010 = true := by
+  decide +kernel
+theorem step10000100001001 : stepOK lay1000010000100 true lay10000100001001 = true := by
+  decide +kernel
+theorem step10010000100001 : stepOK lay1001000010000 true lay10010000100001 = true := by
+  decide +kernel
+theorem step10010000100100 : stepOK lay1001000010010 false lay10010000100100 = true := by
+  decide +kernel
+theorem step10010010000100 : stepOK lay1001001000010 false lay10010010000100 = true := by
+  decide +kernel
+theorem step100001000010010 : stepOK lay10000100001001 false lay100001000010010 = true := by
+  decide +kernel
+theorem step100100001000010 : stepOK lay10010000100001 false lay100100001000010 = true := by
+  decide +kernel
+theorem step100100001001001 : stepOK lay10010000100100 true [] = true := by
+  decide +kernel
+theorem step100100100001001 : stepOK lay10010010000100 true [] = true := by
+  decide +kernel
+theorem step1000010000100100 : stepOK lay100001000010010 false lay1000010000100100 = true := by
+  decide +kernel
+theorem step1001000010000100 : stepOK lay100100001000010 false lay1001000010000100 = true := by
+  decide +kernel
+theorem step10000100001001001 : stepOK lay1000010000100100 true [] = true := by
+  decide +kernel
+theorem step10010000100001001 : stepOK lay1001000010000100 true [] = true := by
+  decide +kernel
+
+theorem check333 : wordCheck (gapWord [3, 3, 3]) layers333 = true := by
+  rw [show gapWord [3, 3, 3] =
+    [true, false, false, true, false, false, true, false, false,
+    true] from rfl]
+  simp only [layers333, wordCheck, readCheck, start1, step10, step100, step1001, step10010,
+    step100100, step1001001, step10010010, step100100100, step1001001001, List.isEmpty_nil,
+    Bool.and_self]
+
+theorem check3353 : wordCheck (gapWord [3, 3, 5, 3]) layers3353 = true := by
+  rw [show gapWord [3, 3, 5, 3] =
+    [true, false, false, true, false, false, true, false, false,
+    false, false, true, false, false, true] from rfl]
+  simp only [layers3353, wordCheck, readCheck, start1, step10, step100, step1001, step10010,
+    step100100, step1001001, step10010010, step100100100, step1001001000, step10010010000,
+    step100100100001, step1001001000010, step10010010000100, step100100100001001, List.isEmpty_nil,
+    Bool.and_self]
+
+theorem check3533 : wordCheck (gapWord [3, 5, 3, 3]) layers3533 = true := by
+  rw [show gapWord [3, 5, 3, 3] =
+    [true, false, false, true, false, false, false, false, true,
+    false, false, true, false, false, true] from rfl]
+  simp only [layers3533, wordCheck, readCheck, start1, step10, step100, step1001, step10010,
+    step100100, step1001000, step10010000, step100100001, step1001000010, step10010000100,
+    step100100001001, step1001000010010, step10010000100100, step100100001001001, List.isEmpty_nil,
+    Bool.and_self]
+
+theorem check3553 : wordCheck (gapWord [3, 5, 5, 3]) layers3553 = true := by
+  rw [show gapWord [3, 5, 5, 3] =
+    [true, false, false, true, false, false, false, false, true,
+    false, false, false, false, true, false, false, true] from rfl]
+  simp only [layers3553, wordCheck, readCheck, start1, step10, step100, step1001, step10010,
+    step100100, step1001000, step10010000, step100100001, step1001000010, step10010000100,
+    step100100001000, step1001000010000, step10010000100001, step100100001000010,
+    step1001000010000100, step10010000100001001, List.isEmpty_nil, Bool.and_self]
+
+theorem check5533 : wordCheck (gapWord [5, 5, 3, 3]) layers5533 = true := by
+  rw [show gapWord [5, 5, 3, 3] =
+    [true, false, false, false, false, true, false, false, false,
+    false, true, false, false, true, false, false, true] from rfl]
+  simp only [layers5533, wordCheck, readCheck, start1, step10, step100, step1000, step10000,
+    step100001, step1000010, step10000100, step100001000, step1000010000, step10000100001,
+    step100001000010, step1000010000100, step10000100001001, step100001000010010,
+    step1000010000100100, step10000100001001001, List.isEmpty_nil, Bool.and_self]
+
+/-! ## The gap words after entry -/
+
+section Words
+variable (R : Nat → Bool)
+
+/-- **The trap never shows `3353`.** If the window of `R` is in `trap` at an odd time `t0`, then
+`u R` never reads the gap word `3, 3, 5, 3` from a step `s` with `t0 ≤ 2 s + 1`. -/
+theorem no_3353_of_entry {t0 : Nat} (h0 : t0 % 2 = 1) (hw : win R t0 ∈ trap) (s : Nat)
+    (hs : t0 ≤ 2 * s + 1) : ¬ Reads (Rule30PeriodTwoSideways.u R) s (gapWord [3, 3, 5, 3]) :=
+  not_reads_of_check R check3353 h0 hw s hs
+
+/-- **The five gap words.** If the window of `R` is in `trap` at an odd time `t0`, then from every
+step `s` with `t0 ≤ 2 s + 1`, `u R` reads none of the gap words `333`, `3353`, `3533`, `3553` and
+`5533`. -/
+theorem gap_words_of_entry {t0 : Nat} (h0 : t0 % 2 = 1) (hw : win R t0 ∈ trap) (s : Nat)
+    (hs : t0 ≤ 2 * s + 1) :
+    ¬ Reads (Rule30PeriodTwoSideways.u R) s (gapWord [3, 3, 3]) ∧
+      ¬ Reads (Rule30PeriodTwoSideways.u R) s (gapWord [3, 3, 5, 3]) ∧
+      ¬ Reads (Rule30PeriodTwoSideways.u R) s (gapWord [3, 5, 3, 3]) ∧
+      ¬ Reads (Rule30PeriodTwoSideways.u R) s (gapWord [3, 5, 5, 3]) ∧
+      ¬ Reads (Rule30PeriodTwoSideways.u R) s (gapWord [5, 5, 3, 3]) :=
+  ⟨not_reads_of_check R check333 h0 hw s hs, not_reads_of_check R check3353 h0 hw s hs,
+    not_reads_of_check R check3533 h0 hw s hs, not_reads_of_check R check3553 h0 hw s hs,
+    not_reads_of_check R check5533 h0 hw s hs⟩
+
+/-- **No `33535555` after entry**: it begins with `3353`. -/
+theorem no_33535555_of_entry {t0 : Nat} (h0 : t0 % 2 = 1) (hw : win R t0 ∈ trap) (s : Nat)
+    (hs : t0 ≤ 2 * s + 1) :
+    ¬ Reads (Rule30PeriodTwoSideways.u R) s (gapWord [3, 3, 5, 3, 5, 5, 5, 5]) := by
+  intro h
+  have h' := reads_take h 15
+  rw [show (gapWord [3, 3, 5, 3, 5, 5, 5, 5]).take 15 = gapWord [3, 3, 5, 3] by decide] at h'
+  exact no_3353_of_entry R h0 hw s hs h'
+
+/-- **Two gaps of `3` in a row only at the start.** If the window of `R` is in `trap` at an odd time
+`t0`, then from a step `s` with `t0 ≤ 2 s + 1`, after any two gaps `x` and `y` (each `3` or `5`,
+the only gaps of `gaps_of_entry`) the next two gaps are not both `3`. So from the third black cell
+after entry on, no two consecutive gaps are both `3`. -/
+theorem no_late_33 {t0 : Nat} (h0 : t0 % 2 = 1) (hw : win R t0 ∈ trap) (s : Nat)
+    (hs : t0 ≤ 2 * s + 1) (x y : Nat) (hx : x = 3 ∨ x = 5) (hy : y = 3 ∨ y = 5) :
+    ¬ Reads (Rule30PeriodTwoSideways.u R) s (gapWord [x, y, 3, 3]) := by
+  intro h
+  rcases hy with rfl | rfl
+  · rcases hx with rfl | rfl
+    · have h' := reads_drop h 3
+      rw [show (gapWord [3, 3, 3, 3]).drop 3 = gapWord [3, 3, 3] by decide] at h'
+      exact not_reads_of_check R check333 h0 hw (s + 3) (by omega) h'
+    · have h' := reads_drop h 5
+      rw [show (gapWord [5, 3, 3, 3]).drop 5 = gapWord [3, 3, 3] by decide] at h'
+      exact not_reads_of_check R check333 h0 hw (s + 5) (by omega) h'
+  · rcases hx with rfl | rfl
+    · exact not_reads_of_check R check3533 h0 hw s hs h
+    · exact not_reads_of_check R check5533 h0 hw s hs h
+
+end Words
+
+/-! ## A weaker form of `Q01Gap` -/
+
+/-- At `s`, the bit sequence `g` is white, or black with the next black cell at distance `3` or
+`5` (`GapOK`), and `g` reads none of the five gap words from `s`. -/
+def WordsOK (g : Nat → Bool) (s : Nat) : Prop :=
+  GapOK g s ∧ ¬ Reads g s (gapWord [3, 3, 3]) ∧ ¬ Reads g s (gapWord [3, 3, 5, 3]) ∧
+    ¬ Reads g s (gapWord [3, 5, 3, 3]) ∧ ¬ Reads g s (gapWord [3, 5, 5, 3]) ∧
+    ¬ Reads g s (gapWord [5, 5, 3, 3])
+
+/-- **`Q01GapWords`** (**open**): no finitely supported constrained start of the zero-boundary left
+half has free bits whose complement, from some step on, has each black cell followed by the next
+one at distance `3` or `5` and reads none of the gap words `333`, `3353`, `3533`, `3553`, `5533`. -/
+def Q01GapWords : Prop := ∀ L : Nat → Bool, FinSupp L → InX L →
+  ¬ ∃ s0, ∀ s, s0 ≤ s → WordsOK (fun s => !zrow L (2 * s + 1) 1) s
+
+/-- **`Q01Gap` implies `Q01GapWords`**: it excludes more free bits. -/
+theorem Q01GapWords_of_Q01Gap (h : Q01Gap) : Q01GapWords := fun L hf hX ⟨s0, hs⟩ =>
+  h L hf hX ⟨s0, fun s hs' => (hs s hs').1⟩
+
+/-- **`Q01GapWords` gives `CQ01` for every right half whose window enters the trap**, as `Q01Gap`
+does in `not_finSupp_Psi_of_Q01Gap`: the candidate left row `Psi R` has infinitely many black
+cells. -/
+theorem not_finSupp_Psi_of_Q01GapWords (hQ : Q01GapWords) (R : Nat → Bool) {t0 : Nat}
+    (h0 : t0 % 2 = 1) (hw : win R t0 ∈ trap) :
+    ¬ FinSupp (Rule30PeriodTwoSideways.Psi R) := by
+  intro hfin
+  refine hQ _ hfin (Rule30PeriodTwoSideways.Psi_inX R) ⟨t0, fun s hs => ?_⟩
+  have e : (fun s => !zrow (Rule30PeriodTwoSideways.Psi R) (2 * s + 1) 1) =
+      Rule30PeriodTwoSideways.u R := by
+    funext s; rw [Rule30PeriodTwoSideways.Psi_free]; simp; rfl
+  rw [e]
+  exact ⟨gaps_of_entry R h0 hw s (by omega), gap_words_of_entry R h0 hw s (by omega)⟩
+
+/-- **`CQ01Empty` follows from `Q01GapWords`.** -/
+theorem CQ01Empty_of_Q01GapWords (hQ : Q01GapWords) : Rule30PeriodTwoSideways.CQ01Empty :=
+  not_finSupp_Psi_of_Q01GapWords hQ _ (t0 := 293) (by decide) entry_empty
+
+/-! ## The five words are minimal -/
+
+/-- Along the double steps with the listed values of column `17`, the window `w` reads `word` in
+column `1`, starting with its own. -/
+def pathReads : List Bool → List (Bool × Bool) → List Bool → Bool
+  | w, [], [b] => w.headD false == b
+  | w, (x1, x2) :: xs, b :: rest => (w.headD false == b) && pathReads (step2 w x1 x2) xs rest
+  | _, _, _ => false
+
+/-- A path of the trap graph that reads `word`: a window of `trap`, coded by `c`, and values of
+column `17`. By `trapClosed_ok` every window of the path is in `trap`. -/
+def trapPath (c : Nat) (xs : List (Bool × Bool)) (word : List Bool) : Bool :=
+  trapCodes.contains c && pathReads (decode c) xs word
+
+def path33 : Nat × List (Bool × Bool) :=
+  (6103, [(true, false), (false, false), (false, false), (false, false), (false, false),
+    (false, false)])
+def path335 : Nat × List (Bool × Bool) :=
+  (28631, [(true, false), (false, false), (false, false), (false, false), (false, false),
+    (false, false), (false, false), (false, false), (false, false), (false, true), (false, false)])
+def path353 : Nat × List (Bool × Bool) :=
+  (407, [(false, true), (false, false), (true, false), (false, false), (false, false),
+    (false, false), (false, false), (true, false), (false, false), (true, false), (false, false)])
+def path533 : Nat × List (Bool × Bool) :=
+  (49415, [(false, false), (false, false), (false, false), (false, true), (false, true),
+    (true, false), (false, false), (false, false), (false, false), (false, false), (false, false)])
+def path355 : Nat × List (Bool × Bool) :=
+  (16791, [(true, false), (false, false), (false, false), (true, false), (false, true),
+    (false, false), (false, false), (false, true), (false, true), (false, false), (false, false),
+    (false, false), (true, false)])
+def path553 : Nat × List (Bool × Bool) :=
+  (56743, [(false, true), (true, false), (true, false), (false, true), (false, true),
+    (false, false), (true, false), (false, false), (false, false), (true, false), (false, false),
+    (true, false), (false, false)])
+
+/-- **The five words are minimal for the trap.** Removing the first or the last gap of any of them
+gives one of `33`, `335`, `353`, `533`, `355`, `553`, and each of these is read along a path of
+the trap graph. So no shorter word explains any of the five, as far as the trap alone can see. -/
+theorem minimal_paths :
+    trapPath path33.1 path33.2 (gapWord [3, 3]) = true ∧
+    trapPath path335.1 path335.2 (gapWord [3, 3, 5]) = true ∧
+    trapPath path353.1 path353.2 (gapWord [3, 5, 3]) = true ∧
+    trapPath path533.1 path533.2 (gapWord [5, 3, 3]) = true ∧
+    trapPath path355.1 path355.2 (gapWord [3, 5, 5]) = true ∧
+    trapPath path553.1 path553.2 (gapWord [5, 5, 3]) = true := by
+  decide +kernel
+
+end Rule30Submission
+", "ProjectDir" -> $Rule30PrizeKit]
+```
+
+## The formal checks
+
+The theorems, as Lean prints them:
+
+```wl
+opens = {"Rule30Submission", "Ruliology.CellularAutomata", "Ruliology.CellularAutomata.Rule30GateTrap", "Ruliology.CellularAutomata.Rule30StripCertificates", "Ruliology.CellularAutomata.Rule30ZeroBoundary", "Ruliology.CellularAutomata.Rule30PeriodTwoSideways"};
+show[names_, prop_] := Column[Row[{Style[#, Bold], ":  ", rule30Submission["Rule30Submission." <> #][prop, "Open" -> opens]}] & /@ names, Spacings -> 1];
+heads = {"not_reads_of_check", "no_3353_of_entry", "gap_words_of_entry", "no_33535555_of_entry", "no_late_33", "minimal_paths", "Q01GapWords_of_Q01Gap", "not_finSupp_Psi_of_Q01GapWords", "CQ01Empty_of_Q01GapWords"};
+show[heads, "TypeForm"]
+```
+
+Their axioms are standard ones only:
+
+```wl
+AssociationMap[rule30Submission["Rule30Submission." <> #]["Axioms"] &, heads]
+```
+
+The kernel accepts every declaration of the module again. This is the replay the verifier runs; it comes last because it resets LeanLink's elaboration state:
+
+```wl
+rule30Submission["Rule30Submission.CQ01Empty_of_Q01GapWords"]["KernelCheck"]
+```

@@ -1,0 +1,35 @@
+kit trap: 829 codes, entry 49415 in trap True
+P1 closure 3316 of 3316 ; scalar step agrees True
+empty right half: window at 293 = 49415 (kit entryCode 49415 )
+P1 3353 samples 100100100001001 layer sizes [188, 191, 186, 68, 68, 69, 17, 21, 21, 18, 21, 29, 40, 41, 0]
+P1 E = 33535555 layer sizes [188, 191, 186, 68, 68, 69, 17, 21, 21, 18, 21, 29, 40, 41, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+P1 A opening (gap 2) layer sizes [188, 191, 0]
+gaps from black windows: {1: 0, 2: 0, 3: 68, 4: 0, 5: 168, 6: 0, 7: 0} (nonzero only for 3 and 5 expected; 6, 7 can be nonzero through an intermediate black: not a gap)
+P2 allowed gap words by length: [1, 2, 4, 7, 9, 13, 19, 30, 45, 69, 103, 157, 236, 359, 541]
+P2 minimal forbidden gap words up to 14 gaps: ['333', '3353', '3533', '3553', '5533']
+P2 growth ratios [1.5789, 1.5, 1.5333, 1.4928, 1.5243, 1.5032, 1.5212, 1.507]
+P2 distinct path sets 17
+P3 graph path for gap word 335 : True
+P3 graph path for gap word 3355 : True
+P3 graph path for gap word 353 : True
+P3 graph path for gap word 5353 : True
+P3 graph path for gap word 333 : False
+P3 graph path for gap word 5555 : True
+P3 u(empty) from 146: black at 146 True ; gaps in [3, 5] ; length 431
+P3 u(empty) gap word starts 533555355535553555355555355555555553555355535555555355555555
+    335 occurs at gap index 1
+    3355 occurs at gap index 1
+    3353 occurs at gap index -1
+    553 occurs at gap index 4
+    5553 occurs at gap index 3
+    33333 occurs at gap index -1
+    55555 occurs at gap index 19
+P3 u(empty) contains a minimal forbidden word: False
+P4a product states 19 ; disagreements 0 []
+P4b longest white run from a white trap window: 4 (windows white at that many consecutive odd times)
+   word 333 samples 1001001001 layer sizes [188, 191, 186, 68, 68, 69, 17, 21, 21, 0]
+   word 3353 samples 100100100001001 layer sizes [188, 191, 186, 68, 68, 69, 17, 21, 21, 18, 21, 29, 40, 41, 0]
+   word 3533 samples 100100001001001 layer sizes [188, 191, 186, 68, 68, 69, 57, 67, 92, 110, 118, 47, 48, 48, 0]
+   word 3553 samples 10010000100001001 layer sizes [188, 191, 186, 68, 68, 69, 57, 67, 92, 110, 118, 90, 100, 111, 107, 111, 0]
+   word 5533 samples 10000100001001001 layer sizes [188, 191, 186, 139, 148, 168, 171, 173, 128, 137, 160, 159, 161, 51, 51, 51, 0]
+wrote SCRATCH/trap_layers.lean.txt 5 words

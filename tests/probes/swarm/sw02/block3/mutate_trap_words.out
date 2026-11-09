@@ -1,0 +1,11 @@
+M1 REJECTED 28.6 ['MutTrapM1.lean:668:2: error: (kernel) application type mismatch']
+M2 REJECTED 28.8 ['MutTrapM2.lean:722:49: error: Type mismatch']
+M3 REJECTED 28.2 ['MutTrapM3.lean:621:49: error: (kernel) application type mismatch']
+M4 ACCEPTED 28.8 []
+M5 REJECTED 29.4 ['MutTrapM5.lean:711:69: error: unsolved goals']
+M6 REJECTED 29.4 ['MutTrapM6.lean:607:48: error: (kernel) application type mismatch']
+M7 REJECTED 26.5 ['MutTrapM7.lean:653:2: error: (kernel) application type mismatch']
+SOME MUTANT ACCEPTED
+M4a REJECTED 28.3 ['MutTrapM4a.lean:893:2: error: (kernel) application type mismatch']
+M4b REJECTED 28.9 ['MutTrapM4b.lean:893:2: error: (kernel) application type mismatch']
+ALL REJECTED
