@@ -179,3 +179,79 @@ TraceEdge `3b39a4e436a4e597fbf12ae83e7e9f3524089a627f99901b884dfa192057cdae`.
 
 My own pull: reach the actual row115 fibre from the preserved first E, with
 band and higher-tail information interacting rather than spliced independently.
+
+## First outcome and an earlier spatial checkpoint — GC2784
+
+Both rooted switch cases returned **UNKNOWN at5,000 conflicts**. No enlargement,
+solver rerun or witness claim follows. The256 local fibre cases all pass,
+exactly40 accepted. All64 difference-identity controls and scalar cone checks
+pass. The unexpected interaction prediction **failed**: each mask separately
+and their union preserve every E A4 head and word808, with no mixed sampled-head
+interaction through193 and none at column8 in109..122. This is a four-history
+observation, not an arbitrary-tail theorem. All roots and masks are retained.
+Stage3.129657 aggregateCPU including outer monitor; no resource stop.
+
+The local fibre simplifies further when its **two earlier rows are retained**.
+The first four source inputs have value8 and give q113=72. The target's remaining
+ten inputs113..122 have value282. Hand substitution gives their equivalence to
+
+    actual row113 low12 = 72.
+
+Here is the carrying step. The firstfour inputs already force column9 at109,
+110,111 to1, hence column9 at112 to1 and at113 to0. Inputs113,114,115 become0,1,0.
+The first changed input116 requires column9 at115 to1.
+Let u=x(113,10), v=x(113,11). Then
+
+    x(114,9)=u,
+    x(114,10)=u OR v,
+    x(115,9)=NOT(u OR v).
+
+Thus u=v=0. With d=x(113,12), e=x(113,13), the two cells in the earlier fibre
+become x(115,10)=d and x(115,11)=d OR e. Its remaining condition
+x(115,10) AND(x(115,11) OR x(115,12))=0 therefore reduces exactly to d=0.
+Conversely these five white cells8..12 produce the target tail by the same
+identities. No later or independently chosen outside input enters.
+
+The complete switch is source109low7=64, firstfour actual inputs8, and this
+row113 checkpoint. Its own dependence reaches root125; retaining all prior heads
+through125 certainly reaches root126. In fact the switch itself forces the
+last-A heads111..125, so only the earlier heads≤109 need be retained separately,
+and the whole predicate depends on root≤125. This refinement is a hand sketch;
+the original130-variable pilot remains unchanged as UNKNOWN. There is no new
+solve in the shorter coordinates.
+
+The saved low68 pair domains localize the obstruction without a new run:
+row113 pairs at9,10,11 are respectively00,01,11 (encoding2*left+right), hence
+cells10..12 are **011**, while4520 requires000. In particular the first changed
+input cannot be repaired without changing cell11 there. This is an exact
+consequence of the saved sound abstraction for that cylinder, not a new
+measurement of a typical damage speed.
+
+**Result-driven validation/export:** test every1,024 extension of row113low7=72
+through cell17; prediction32 yield ten-input word282, exactly those with low12=72
+and arbitrary13..17. Replay the existing checked source64 and4520 proofs as RUP
+derivations into unchanged original193 and359 formulas. Append row115 pair
+clauses (and row281 counterparts), then three white units at113cells10..12
+(and279). Each addition must pass implication-by-propagation, then native
+ drat-trim must verify the entire prefix as **DERIVATION**. No empty clause or
+target UNSAT is expected. Measure extra propagated units against the same
+source64/4520 baseline; do not attribute old source64 gains to new guards.
+A failed RUP step stops export, not a reason to launch another SAT search.
+
+This stage has a new purpose, not an extension of the UNKNOWN searches.
+Stage25 aggregateCPU/outer35CPU120wall; exporter15CPU60wall, each of two native
+prefix checks3CPU15wall. Same process-tree/free/thermal/output limits as GC2783,
+one serial CPU thread. Source SHA256
+`20eeb862058888810adc245b5b8347a3cf672770dec715da19d121427cef3621`;
+plan `d3991ac77d5957c07183bb1266b390e82578085528e7e0aa3b48430da5467a72`.
+Previously used3.129657CPU charged4 plus25 gives29CPU combined ceiling. Existing
+native certificate inputs and all source hashes are frozen in the plan.
+
+The reference does **not** enter a permanent period-seven lock early: its known
+second E is at531..599 after the90-tick shift (original621..689). It merely
+shadows the locks' common nine-cell template. Local L1593 already records that
+agreement. Target row115low9=263 breaks it at column9, where both lock families
+have7 in the corresponding phase. A finite template is not lock membership.
+
+My own pull: the white run at row113 cells8..12, pulled back through its actual
+first-E ancestry; it is a sharper object than three independent input flips.

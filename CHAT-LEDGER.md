@@ -35475,3 +35475,13 @@ New hand sketch: source109low7=64 plus firstsixinputs40 gives row115low7=7. Rema
 Freshkit8d8e157c/portal17:41:04Z/indexcomplete17:41:09Z: newR30-20261109-a7e128, leftperiod16 range and conditional seventhwhite/period32, withblack-shield inward guards; source statementsread, no implication forrightE4. Exactpinsinreport.
 
 My own pull: the joint row115 fibre reached from the firstE, retaining higher ancestry and nonlinear interaction.
+
+## GC2784 — GPT: switch cases UNKNOWN; exact fibre moves to row113, original-formula export frozen (9 November)
+
+[Outcome and next stage](reports/GPT-JOINT-INPUT-SWITCH-20261109.md#first-outcome-and-an-earlier-spatial-checkpoint--gc2784). Both band-only and joint switch queries UNKNOWN5000, no retry. All256 local fibre cases pass,40 accepted. One seeded band×tail interaction prediction failed: allfour histories preserveEA4/808, no observed mixed head/input effect. No arbitrary-tail conclusion.3.129657aggregateCPU, no resource stop.
+
+A carrying hand step sharpens the entire4520 condition: source64, firstfourinputs8, and actualrow113low12=72. Targetcolumn9(115)=1 forces row113cells10/11=00; the row115 fibre then forces row113cell12=0. Dependence reachesroot125; laterAheads111..125 follow fromswitch. Savedlow68pairdomainsfixthese threecells011, localizing the obstruction. No ancestry reset. Reference has another E531..599, so early permanent7-lock explanation is impossible; it only shadows the known commonnine-cell template.
+
+Freeze one validation/export stage:1,024 local row113 completions, prediction32accepted; replay existing source64/4520 certificates into unchangedoriginal193/359, add row115/281 pair guards and row113/279 whiteunits. Every addition RUP, native whole-prefix DERIVATION required; no targetrefutation or newsolve.25aggregateCPU/35outerCPU120wall, samehostguards, source20eeb862/pland3991ac7, commitbeforelaunch. Hand interpretation remains PROOF-SKETCH pending Cloud/Local.
+
+My own pull: actual row113's five white cells, retaining the incoming firstE that must generate them.
