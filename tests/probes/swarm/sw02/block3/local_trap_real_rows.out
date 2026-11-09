@@ -1,0 +1,7 @@
+real rows: 1500 drawn, 1442 entered the trap by 6001, median entry 29, 892263 gaps after skipping 16 per row; 4 s
+W=18: shown/accepted, rejected real factors, by gaps -> 1:2/2 rej 0; 2:3/3 rej 0; 3:5/5 rej 0; 4:7/7 rej 0; 5:11/11 rej 0; 6:16/16 rej 0; 7:24/24 rej 0; 8:35/35 rej 0; 9:51/53 rej 0; 10:71/79 rej 0
+   e.g. accepted but never shown at 10 gaps: ['3535355553', '3535553535', '3535555353', '3535555553', '3555535353']
+W=26: shown/accepted, rejected real factors, by gaps -> 1:2/2 rej 0; 2:3/3 rej 0; 3:5/5 rej 0; 4:7/7 rej 0; 5:11/11 rej 0; 6:16/16 rej 0; 7:24/24 rej 0; 8:35/35 rej 0; 9:51/53 rej 0; 10:71/79 rej 0
+   e.g. accepted but never shown at 10 gaps: ['3535355553', '3535553535', '3535555353', '3535555553', '3555535353']
+W=28: shown/accepted, rejected real factors, by gaps -> 1:2/2 rej 0; 2:3/3 rej 0; 3:5/5 rej 0; 4:7/7 rej 0; 5:11/11 rej 0; 6:16/16 rej 0; 7:24/24 rej 0; 8:35/35 rej 0; 9:51/53 rej 0; 10:71/79 rej 0
+   e.g. accepted but never shown at 10 gaps: ['3535355553', '3535553535', '3535555353', '3535555553', '3555535353']

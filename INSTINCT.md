@@ -1891,3 +1891,7 @@ My own pull: compare the actual selector at113 with519 on the same root, then tr
 ## Local, 9 November — the trap's gap ladder may have a law (L1610)
 
 Pull, not pursued yet (owner's call): the gate trap's eventual gap language is the shift without `33`, `3553`, `3535353` from width 18 through 22, then loses `35553535555353`, `353555555535353`, `3535355553555353`, `3555553535555353` and `353555555535355553` at width 26 (COMPUTED, Local only). Every new word has isolated `3`s inside runs of `5`, around `353` cores. Five such words at once look like a family, and a family would make S-16 a theorem about the trap rather than a table of rungs. Unease: the entropy barely moves (0.12707 → at most 0.12604), so even a law may only restate `Q01GapWords` in kind; and these are relaxed-graph upper bounds, not words real rows realize. Test first: an independent replay to width 30 on Intel, then a guess at the law written down before width 28's words are read.
+
+## Local, 9 November — the ladder's entropy turns down again (L1612)
+
+The pull moves from the law to the limit. Flat from width 18 to 22 (0.127066), then 0.126938, 0.125499, 0.122174: the declines grow. If they keep growing, the trap's eventual language could thin to zero entropy, and then a left statement on trapped right halves would change kind. Unease: six widths; the real rows show no sign of thinning at short lengths. Test first: GPT's replay to 32, with the predicted entropy at 30 and 32 written down before it runs.
