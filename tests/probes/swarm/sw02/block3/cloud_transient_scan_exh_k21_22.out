@@ -1,0 +1,29 @@
+  chunk [1048576,1179648) done, 81s
+  chunk [1179648,1310720) done, 169s
+  chunk [1310720,1441792) done, 257s
+  chunk [1441792,1572864) done, 344s
+  chunk [1572864,1703936) done, 431s
+  chunk [1703936,1835008) done, 515s
+  chunk [1835008,1966080) done, 599s
+  chunk [1966080,2097152) done, 684s
+  chunk [2097152,2228224) done, 768s
+  chunk [2228224,2359296) done, 856s
+  chunk [2359296,2490368) done, 941s
+  chunk [2490368,2621440) done, 1027s
+  chunk [2621440,2752512) done, 1107s
+  chunk [2752512,2883584) done, 1191s
+  chunk [2883584,3014656) done, 1280s
+  chunk [3014656,3145728) done, 1367s
+  chunk [3145728,3276800) done, 1446s
+  chunk [3276800,3407872) done, 1529s
+  chunk [3407872,3538944) done, 1603s
+  chunk [3538944,3670016) done, 1678s
+  chunk [3670016,3801088) done, 1756s
+  chunk [3801088,3932160) done, 1838s
+  chunk [3932160,4063232) done, 1920s
+  chunk [4063232,4194304) done, 2002s
+  k     rows   withE maxE latestE tick     /k unlocked lock mean(smp) lock max(smp)     /k periods | return words
+ 21  1048576   77041    3         1433   68.2   921700          468.1           701   33.4 {2: 30162, 5: 86665, 7: 10049} | {'8': 8, '23': 7, '14': 7, '19': 7, '11': 6, '43': 5}
+ 22  2097152  153863    3         1433   65.1  1843690          467.5           701   31.9 {2: 60249, 5: 172911, 7: 20302} | {'8': 14, '14': 11, '19': 10, '9': 10, '20': 10, '21': 10}
+passage E A^4 E A^7 E occurrences: 0
+done; wall 2001.6s

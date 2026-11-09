@@ -55,16 +55,43 @@ E's per row: 18,469 rows with none, 1,530 with one, 1 with two (return 13). So t
 
 **Reading.** Column 1 beside the alternating centre has a short active transient, a few hundred ticks, in which almost all E's launch and the few short-period locks form, followed by a long aperiodic phase in which E's are rare and then absent. Neither phase scales with the support: the row's own width is irrelevant from the start, because the bulk beyond the first few cells is chaotic Rule 30 whatever the initial row, and it is the bulk's left edge that drives column 1. The information-transient hypothesis of CL756 is wrong in its mechanism and right in one consequence: E's are a transient. The quantity we keep approaching is better named the E hazard of the near-wall dynamics, which decays in time, and the absence of the compact returns 4 and 6 says the X grammar's cheapest moves are not taken by real rows.
 
-### 2c. Exhaustive rows, supports ≤ 22
+### 2c. Exhaustive rows, supports ≤ 22 (every row of support ≤ 20 to tick 2001; every row of support 21 and 22 to tick 1501)
 
-(PENDING-EXHAUSTIVE)
+| support k | rows | rows with an E | most E's in a row | latest E launch (tick) | latest / k | unlocked at horizon | lock time mean (samples) | lock time max (samples) | max / k | periods (samples) |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| 1 | 1 | 0 | 0 | - | - | 1 | 0.0 | -1 | -1.0 |  |
+| 2 | 2 | 0 | 0 | - | - | 2 | 0.0 | -1 | -0.5 |  |
+| 3 | 4 | 0 | 0 | - | - | 4 | 0.0 | -1 | -0.3 |  |
+| 4 | 8 | 0 | 0 | - | - | 7 | 0.0 | 0 | 0.0 | 2: 1 |
+| 5 | 16 | 0 | 0 | - | - | 14 | 460.0 | 920 | 184.0 | 2: 1, 5: 1 |
+| 6 | 32 | 1 | 1 | 41 | 6.8 | 28 | 460.2 | 921 | 153.5 | 2: 2, 5: 2 |
+| 7 | 64 | 3 | 1 | 115 | 16.4 | 55 | 728.1 | 951 | 135.9 | 2: 2, 5: 7 |
+| 8 | 128 | 9 | 1 | 555 | 69.4 | 111 | 662.4 | 951 | 118.9 | 2: 3, 5: 12, 7: 2 |
+| 9 | 256 | 15 | 1 | 555 | 61.7 | 224 | 701.1 | 951 | 105.7 | 2: 4, 5: 24, 7: 4 |
+| 10 | 512 | 32 | 1 | 555 | 55.5 | 440 | 638.0 | 951 | 95.1 | 2: 15, 5: 49, 7: 8 |
+| 11 | 1,024 | 61 | 1 | 943 | 85.7 | 896 | 636.5 | 951 | 86.5 | 2: 27, 5: 87, 7: 14 |
+| 12 | 2,048 | 139 | 2 | 1717 | 143.1 | 1807 | 614.9 | 951 | 79.2 | 2: 63, 5: 158, 7: 20 |
+| 13 | 4,096 | 278 | 2 | 1717 | 132.1 | 3599 | 629.7 | 951 | 73.2 | 2: 121, 5: 334, 7: 42 |
+| 14 | 8,192 | 578 | 2 | 1717 | 122.6 | 7212 | 630.1 | 951 | 67.9 | 2: 245, 5: 660, 7: 75 |
+| 15 | 16,384 | 1,188 | 2 | 1827 | 121.8 | 14414 | 632.1 | 951 | 63.4 | 2: 484, 5: 1331, 7: 155 |
+| 16 | 32,768 | 2,412 | 2 | 1827 | 114.2 | 28852 | 639.0 | 951 | 59.4 | 2: 945, 5: 2676, 7: 295 |
+| 17 | 65,536 | 4,864 | 2 | 1851 | 108.9 | 57685 | 642.9 | 951 | 55.9 | 2: 1882, 5: 5399, 7: 570 |
+| 18 | 131,072 | 9,702 | 2 | 1929 | 107.2 | 115433 | 645.2 | 951 | 52.8 | 2: 3770, 5: 10796, 7: 1073 |
+| 19 | 262,144 | 19,412 | 2 | 1929 | 101.5 | 230735 | 647.6 | 951 | 50.1 | 2: 7521, 5: 21763, 7: 2125 |
+| 20 | 524,288 | 38,814 | 2 | 1929 | 96.5 | 461701 | 646.8 | 951 | 47.5 | 2: 15071, 5: 43308, 7: 4208 |
+| 21 | 1,048,576 | 77,041 | 3 | 1433 | 68.2 | 921700 | 468.1 | 701 | 33.4 | 2: 30162, 5: 86665, 7: 10049 |
+| 22 | 2,097,152 | 153,863 | 3 | 1433 | 65.1 | 1843690 | 467.5 | 701 | 31.9 | 2: 60249, 5: 172911, 7: 20302 |
+
+Over all 4,194,303 rows: 308,412 show an E (7.3% to 7.5% at every support from 12 up, the same fraction as the random rows), 468 show two or more, and 2 show three (supports 21 and 22; their two-return words are 33,25 (2)). The latest E launch sits at the detection cap at supports 18 and up (1,929 of a 2,001-tick horizon; 1,433 of 1,501): with half a million rows the thin late tail of §2b is sampled, so the latest launch is set by the row count and the horizon, not by the support. **Returns between consecutive E's** (470 pairs): A-counts from 5 to 114, the commonest 19 (35), 23 (31), 8 (31), 114 (25), 43 (25), 14 (25); **a return of 5 occurs 3 times; 4 and 6 never occur**, in 4.2 million exhaustive rows and 470 returns (and in none of the 420,000 random rows' 73 returns). The X grammar of GC2698 (separations in {4} ∪ [6, ∞) at widths 39 to 41) excludes 5, so the three rows with E A⁵ E are not X-lineage plays in the grammar's sense; they are real right halves all the same. No passage.
+
+**The sharp fact.** The clock's infimum 145/2 and the physical 4→7 passage both rest on the compact return 4, and the grammar also admits 6; neither is taken by any real row in 4.2 million exhaustive and 420,000 random histories, while every return from 7 to 114 (and three 5's) is. The question "is E A⁴ E realisable by any right half beside the alternating centre" is a 96-sample finite-trace question, smaller than the passage, and the first thing to settle before the passage.
 
 ## 3. Predictions judged
 
 - P-V1 (latest E launch below 10k + 100 for every support ≤ 40): **MISSED**. The latest launch is 2,291 to 3,543 ticks at every support 21 to 40, about a hundred times the support; it does not scale with k at all.
-- P-V2 (no row with more than four E's): **HELD**, with room: no row has more than two (420,000 random rows; exhaustive rows in §2c).
+- P-V2 (no row with more than four E's): **HELD**: at most two E's in 420,000 random rows, at most three in the 4.2 million exhaustive rows (2 rows of supports 21 and 22).
 - P-V3 (every row periodic by the horizon, lock time linear in k): **MISSED**. About 96.5% of rows are aperiodic at tick 8001; the genuine locks all happen within 200 ticks.
-- P-V4 (no passage; returns obey the grammar): **HELD**, and more: no return of 4 or 6 at all, so the grammar's first rule is never tested by real rows.
+- P-V4 (no passage; returns obey the grammar's first rule): **HELD**: no passage in 4.6 million rows; no 4 is ever followed by anything because no 4 occurs; three returns of 5 occur, which the X grammar excludes, so those rows are outside X between their E's.
 - P-V5 (the E hazard decays): **HELD**. 1,526 launches in ticks 1 to 2000, 3 in 2001 to 4000, none in 4001 to 8000 (support 30).
 - P-V6 (locking memoryless, about 24% by 8001): **MISSED**. Genuine locks are 3.5%, all within the first 100 samples; the apparent 12% at horizon 4001 was detection noise at the horizon.
 
@@ -73,5 +100,7 @@ E's per row: 18,469 rows with none, 1,530 with one, 1 with two (return 13). So t
 **(a) The witness search for the single passage.** Object: a row at tick 1 (cells 1..360 free, the rest irrelevant to the 359 ticks) whose column 1 at odd ticks is E A⁴ E A⁷ E, beside the alternating centre; equivalently, by GC2709's reduction, a seam tail q < 2^360 whose reconstructed past and determined future pass the head filters. What exists: the original 359-tick CNF with GPT's derived clauses (4520 at both sources, source64, the quartet, the 28 units), and Cloud's passage sets, the exact width-W window sets at every phase of the passage (`cloud_passage_lift.py` regenerates them to width 62 in a few minutes; they are the strongest cheap pruning available: a partial row's determined windows must lie in the set of their phase and width). Suggested shape: either a solver run of hours, not thousands of conflicts, on the CNF with the derived clauses, or a depth-first extension of the tick-1 row cell by cell with the passage sets as the lookahead, from the seam outward if GPT prefers its seam coordinates. Outcome A: a witness, which settles realisability for arbitrary rows at once and gives GPT's joint-state work a concrete history. Outcome B: hours without a witness, which is the evidence CL756 asked for that the irreducible part is cryptographic, and the signal to stop paying for exclusion by search.
 
 **(b) The rank.** Object: a function on (window, grammar state) that strictly decreases at every E launch and is bounded below on realisable windows, or an obstruction of the same uniformity; it would close the whole X language at once where the sweep closed fifty words at widths 43 to 65. Data: the deletion-rank certificates of the dead words (`cloud_cycle_lift_*.out`, checkpoints on request), which say which windows die first and why; the six-sample and five-sample supports (GC2770's certificates), which say what an E launch requires of the near past; and the measurement in §2, which says whether E's are a transient. A first probe: for each dead word, the windows deleted at the lowest ranks, read as cell patterns, and the quantity that separates them from the survivors (the position of the first black beyond column 1, the black count in cells 2..W, a parity along a diagonal).
+
+**(a′) The smaller question first: E A⁴ E.** No real row in 4.6 million shows a 4-return. Before the passage, decide whether the 96-sample block E A⁴ E (free ends) is realisable at all: the finite-trace lift of `cloud_passage_lift.py` with the block in place of the passage (minutes to width 62), then GPT's certificates on the block's head supports. If the block dies at some width, the compact return is impossible, the X grammar's cheapest edges are unphysical, the clock's infimum over realisable traces rises from 145/2 to at least c(5) or c(7) depending on 5 and 6, and the 4→7 passage question closes with it. If it survives, the witness search in (a) has a 96-sample target instead of a 359-tick one.
 
 **(c) Further measurement, if wanted:** the death width of (A⁴EAⁿE)^∞ for n = 16, 20 (the sweep stopped at resource caps with millions of windows at widths 35 to 38; Python-int continuation beyond 62 is in `cloud_cycle_lift_big.py`), and the latest E launch against the support at supports 41 to 60 by sampling, to extend §2's law.
