@@ -304,3 +304,55 @@ plan `63fa3663376e8753374fab504c66eec3b217b895e85def2bda41351dbb0ccc89`.
 
 My own pull: retain only the cells needed to force the first E, then identify
 which still-available root choices can change the808 continuation into4520.
+
+## Certificates pass; a35-cell first-E cylinder — GC2779
+
+**Native finite certificate checks PASS.** drat-trim and cake_lpr accept the
+original low70/head129 refutation, the extracted low69/head129 refutation and
+the nontrivial solver control. The false empty proof is rejected. Both original
+CNFs accept the single69-literal RUP blocker as a **DERIVATION**; neither is
+refuted. The359 CNF retains its exact hash21b42501…426c.
+
+The extracted support is precisely cells1..69, with the baseline values; cell70
+is unnecessary. This is a sufficient69-bit cylinder exclusion, not a minimal
+semantic core. The known-prefix analysis is more revealing: for this baseline,
+**35 cells suffice for the complete first E, while69 suffice for black head129**.
+Both numbers are minimum thresholds in the unary-domain propagation calculus,
+not minimum physical supports. Thresholds are independently compared with
+fresh unary propagation at34/35 and68/69. The compact known-front recurrence
+also agrees at all194 rows. The random replacement began too far out to change
+the certified portion of the head trace.
+
+The continuing input808 gives source123 low7=64; the required4520 input gives
+the alternative trunk retained in the evidence. Its differences at116,118,121
+are actual required changes to the same history, not three free knobs. The next
+useful region is now original root cells36..69: changing only cells above69
+cannot repair head129, whereas keeping cells1..35 protects the complete firstE.
+This is a sufficient work-order statement; it does not prove those34 bits alone
+can realize the second launch.
+
+Certificate/explanation stage5.652702 aggregateCPU,5.51wall; sampled treeRSS
+231,564KiB, minimum free6314MiB, zero swap growth. Combined completed research
+CPU9.003805 seconds. No running job, solver retry or new random sample remains.
+
+### One deterministic sensitivity test, frozen
+
+Flip **only original root cell69** of the same actual first-E history. Preserve
+all other root cells and evolve through the already fixed193 horizon with both
+integer and scalar rules. Prediction: head129 changes from black to white
+(tentative). Counterfactual: it remains black, demonstrating that the minimum
+unary threshold does not make this particular bit flip influential. In either
+case retain first damage positions, first changed sampled head, all target
+mismatches and source words67/81/95/109. FirstE must remain exactly unchanged,
+by the checked low35 shield. A contradiction there stops the test.
+
+This is one concrete original-root perturbation selected by the result, with
+full ancestry retained; no bit sweep or horizon enlargement. Stage8aggregateCPU,
+outer12CPU45wall, worker5CPU15wall, same tree/thermal/memory/output guards.
+Completed stages charged10CPU plus8 gives18CPU ceiling for completed work and
+this remaining test. Source `threshold_flip.py` SHA256
+`501e632b3bb681ed0c96f2efd924d45014d05d5f57392fded87e25e742fc2d49`;
+plan `406a9d05af27228ab4b7a6dbbaeaca84312e72bdbd039587a0543f50580905ad`.
+
+My own pull: a perturbation inside the first-E-preserving band, to see whether
+the information threshold is a real path for the required input switch.

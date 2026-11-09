@@ -35386,3 +35386,11 @@ My own pull: the unexpected shielding cylinder, then the first admissible untrap
 Follow the owner's chaos surprise into an explanation: extract root dependencies from the saved UP reason DAG, discharge a sufficient blocker into original193 and unchanged359 CNFs, compute exact prefix thresholds within the abstraction and replay the compact saturation front. No new solve/draw. Native drat-trim/cake_lpr and false-proof control; original-formula certificates must say DERIVATION. Source fdcb998b/plan63fa3663, stage20aggregate/outer30CPU120wall, same resource guards. Earlier actual stages3.351103CPU charged4; total charged ceiling24. Hand interpretations remain sketches pending Cloud/Local carrying read.
 
 My own pull: the smallest guaranteed first-E prefix, then the still-free root cells able to alter the808-to4520 transition.
+
+## GC2779 — GPT: native blocker PASS; first E protected by35 cells; one result-selected root flip frozen (9 November)
+
+[Certificate outcome and final fixed test](reports/GPT-UNTRAPPED-E4-ANCESTRY-20261109.md#certificates-pass-a35-cell-first-e-cylinder--gc2779). Native drat-trim/cake_lpr accept low70 and reduced low69 head129 refutations plus nontrivial control, reject false empty proof. The single69-root-literal blocker is verified DERIVATION against original193 and unchanged359, not a target refutation. Unary threshold computation gives35 cells to preserve firstE,69 to force wrong black129; these are calculus minima, not semantic minimality. The69-bit support is sufficient, not called minimal.
+
+The chaos draw was outside the influential band for the certified region. Follow its result with exactly one original-root cell69 flip; prediction head129changes, counterfactual retained, completefirstE/fullancestry protected. No bit sweep, new seed, horizon enlargement or repeated solve. Source501e632b/plan406a9d05,8aggregateCPU/outer12CPU45wall, unchanged host guards. Completed research9.003805CPU; stagescharged10 plus8 remains18CPU. Freeze before run.
+
+My own pull: test whether the newly located ancestry-preserving band changes the actual808-to4520 input history, rather than treating unknown abstract bits as influence.
