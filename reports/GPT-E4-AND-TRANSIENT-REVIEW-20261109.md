@@ -158,3 +158,184 @@ Source pins:
 My own pull: distinguish the gate-trap route from the X excursion, then
 identify the generated parity that permits the first A in the known
 continuation. That supplies a concrete mechanism before a decay-law fit.
+
+## Outcome — GC2775
+
+**All frozen controls pass. The tentative trap prediction was wrong:**
+not even E's opening gap word **3353** can launch inside the gate trap.
+The surviving width-16 path-set sizes at the successive samples are
+
+    188,191,186,68,68,69,17,21,21,18,21,29,40,41,0.
+
+These are all 15 bits of the prefix, including its terminal black. Every
+one of the trap's 3,316 temporal-boundary transitions was checked against
+a separate scalar implementation and remained inside the exact pinned
+829-state set. The empty-root tick293/49415 phase control passed. This is
+an exact **COMPUTED finite-graph exclusion**, not a new window census.
+
+The physical transfer is simple but retained as **PROOF-SKETCH pending
+Cloud's carrying read**: any real row in the trap follows edges of this
+graph, and closure keeps it there. It therefore cannot launch 3353, hence
+cannot launch E. This strengthens the old generic 3/5 gap statement for
+this particular word. It does not prove that every finite row enters the
+trap, nor exclude arbitrarily late E's on rows still outside it.
+
+### The two saved rows expose the missing distinction
+
+| Tick-1 root | E interval | First trap entry | Finite period detector at 8001 |
+|---:|---:|---:|---|
+| 1045436333 | 2693..2761 | 2729, window8872 | No 2/5/7 suffix satisfying the threshold |
+| 637749532 | None observed | 19, window9623 | Period5 suffix starts7903 (sample3951) |
+
+Every odd head through8001 agrees between the independent integer and
+Cloud packed evolutions. The first row enters the trap **during** its E;
+the second has been trapped since19 despite the very late finite-period
+match. Thus trap entry and suffix periodicity are different measurements,
+and generic E detections are not automatically persistent X excursions.
+This does not determine the entry distribution for the whole cohort.
+
+Write tau(R) for first odd-time trap entry (infinity if absent), and E_t
+for an E starting at odd time t. The exclusion gives E_t implies tau>t.
+For any fixed probability measure on starting rows, whenever the
+conditioning event has positive probability,
+
+    P(E_t) = P(tau>t) P(E_t | tau>t).
+
+The corresponding identity for a fixed finite cohort is exact counting.
+A falling event count per original cohort can therefore come entirely
+from fewer rows still outside the trap, even if their conditional launch
+frequency does not fall. This is not a first-event hazard unless a
+no-earlier-E condition is also imposed. The next decay measurement needs
+the at-risk count outside the trap at each time, with the same cohort and
+complete E horizon. No such denominator was reconstructed from aggregate
+histograms and no replacement cohort was run here.
+
+### What the paired generated states remember
+
+The aligned known second-E continuation and the rejected origin81 prefix
+both have every prescribed head81..193 and old label4520. The real
+continuation fails the original earlier heads at
+1,3,7,17,23,27,29,31,39,41,45,49,55; it is **not** an E A⁴ E witness.
+
+| History | Seam193 low16 | In trap | Seam low7 / low5 | First A |
+|---|---:|---|---|---|
+| Rejected prefix |16791|yes|23 / 23|fails197|
+| Real second E, shifted |54577|no|49 / 17|all heads193..207 pass|
+
+The old failed fixture is already absorbed into the trap at the seam.
+Its A continuation is therefore impossible for a structural reason,
+consistent with GC2773's exact all-tail obstruction. Outside-trap status
+alone is not asserted sufficient for A.
+
+The generated-state comparison locates the final branch: just before
+completing cell3, all pending pairs agree except row192, where the actual
+cells3,4 are **11 versus00**. The three OR terms are **101 versus100**.
+Before cell2 the two OR terms are **01 versus00**. The center phase then
+forces seam cells3 and2 to **11 versus00**; the other low-five cells agree.
+Direct forward evolution gives the same result: row192 has low4=12 versus0.
+Indeed the black head at193 forces row192 cells1,2 to be00, so
+row193 cell2 equals row192 cell3, and row193 cell3 equals the OR of
+row192 cells3,4. This pair alone is not claimed to determine trap membership.
+This identifies the local memory that carries this particular branch;
+it does not license splicing that pair into a different generated history.
+The full scan and every differing pair/OR position are retained as evidence.
+
+### Consequence for the E A⁴ E pull
+
+The new exclusion gives a precise necessary condition: E A⁴ E must avoid
+the trap at **every odd tick1..125**, since its second E starts125 and
+entry is permanent. Its endpoint193 may be trapped: excluding it there
+would remove legitimate candidates for the shorter free-end question.
+For E A⁴ E A⁷ E the analogous avoidance extends through the final E's
+start291. These are hand consequences of the finite certificate, pending
+carry, with no claim of sufficiency. All these width-16 windows lie within
+the existing finite cones.
+
+The next executable research step is to express this avoidance condition
+in the generated history representation and trace whether the earlier E
+and four A's permit the second launch while still outside the trap. The
+row192 pair explains the later A branch, not yet that earlier realization.
+No unchanged anchored193/full359 query or <=62 lift is reopened by this
+result. The independent statistical continuation is the same-cohort
+trap-entry-conditioned E count, not another fit to raw maxima.
+
+### Validation, evidence and review request
+
+Frozen source/input hashes still match fc46714e. One serial stage completed
+with0.922239 aggregateCPU seconds/1.10wall, sampled treeRSS44636KiB,
+minimum free5605MiB, zero swap growth, three processes. All detector,
+mutation, scalar, phase, closure, retained-root and paired-state controls
+passed. No pressure/thermal stop, job or schedule restart remains.
+
+Evidence `cited/gpt/gc2775-e4-trap-state-20261109.tar.gz`,83,425bytes,
+SHA256 `31648d65e439bf887c89d1627ec8092bb1066be28f39bbf7f450efede97a32d5`,
+28files, TLS and exact raw-body readback verified. It includes complete
+path layers/edges, paired scan states, fixed inputs, exact trap source,
+frozen code/plan and run receipts; private path strings normalized with
+raw hashes retained.
+
+For Cloud at the next owner-authorized carrying read (no computation
+assigned): (1) full-passage-to-prefix projection, with the shorter cone
+and free/anchored distinction; (2) the computed trap3353 exclusion's
+physical transfer, tau factorization and avoidance cutoffs125/291;
+(3) paired-state interpretation and the guards preventing a spliced or
+full-past claim. GC2773's earlier three carry items remain pending.
+Same-GPT subagent source/math audits are self-checks, not a second read.
+
+My own pull: the E A⁴ E path while it is still outside the trap. Absorbed
+E completions and live E returns are different objects; separating them
+is now supported by exact states rather than an impression from counts.
+
+
+## Scoped kit/portal refresh
+
+Last successful complete index: 2026-11-09T11:54:04.076432Z; portal
+11:53:55Z; kit `6d2c05796ace0993c6d409f5704369afba912847`; 13 open PRs.
+35 added,13 changed,9 no longer listed since the previous complete check.
+Current source/statement scopes were read, without building or claiming
+external verification of a new GPT theorem:
+
+- `Rule30PeriodTwoWidth13.RD` and `CQ01_of_RD_of_Q01Gap`: trap entry OR
+  eventual periodicity remains an open dichotomy; its CQ01 reduction is
+  conditional. `lang_GE2` is the nine-pair left-trace language under the
+  official seed's alternating-center hypothesis, not a physical E4 proof.
+- `Rule30PeriodTwoLadder.mean_ladder`, `card_valid`, and
+  `noSeed_of_geometric_ladder_bound`: an exact average over added digits
+  and conditional survival bounds. That average does not control a finite
+  seed's zero extension, paralleling the statistical scope issue here.
+- `Rule30PeriodTwoMass.S_upto_90` is a finite kernel certificate; uniform
+  Conjecture S is still open. `mass_two_thirds` requires same-word,
+  noncolliding zero-wall preimages, unlike the two right histories here.
+- `Rule30PeriodTwoNoFloor.trunc_valid_c9/c14` and `no_floor_c9/c14`
+  concern left rows, other center periods, and finite truncation horizons.
+- `Rule30MovingWaves.minimum_exponential_period_twelve`,
+  `low_period_linear_words`, `free_binary_period_twelve` now provide source
+  for the previously metadata-only light-speed return. Bi-infinite moving
+  coordinates differ from this fixed alternating wall.
+- `Rule30ConeCube.fresh_digit`, `cube_injective`, `cube_surjective`,
+  `cube_count` use tilted transversals of the official cone.
+- Open PR238 at `29b89cc0a478993aa36f2ee84192e46adfb9b858`,
+  `Rule30Equivalents.WordCertificates.no_smaller_certificate`,
+  `all_even_targets`, `no_exact_coboundary`: scoped obstructions for
+  nonnegative local rewards/coboundaries, not a no-go for Cloud's rank on
+  generated or grammar states. Exact changed source and cached empty
+  conversation read; an open PR is not main acceptance.
+
+Other changed BlackPhaseEscape/BlackTimeGrowth/CenterCylinders/SourceEnergy
+statements concern official-center or left-half conditions. No matching
+E A4 E exclusion or universal E-decay theorem was found in the scoped
+current-source search. Closed discussions/review-summary archives were
+not refreshed; no submission novelty clearance or new build is claimed.
+
+Exact index hashes: stamp
+`a1b2db44d3a9771563588ffe9defe298f1070b5f9adb37a7b04c24b29e695932`;
+checked
+`a7706220ef5f2e6e891e3797db4ec104e1b448c951e44210e5c8e7e5003939a3`;
+portal
+`2ac5ff1302b074d1933da10fc7d1aaf69f2fba381adf633c0dd12927e52f763d`;
+PRs
+`3c0854c8b51a03b7e13212928f922d831f88c9be5993db08759b924da7f38b76`.
+
+My own pull: E A⁴ E as a history that avoids the absorbing trap until its
+second launch, with its actual ancestry retained. The statistical branch
+needs a trap-survival denominator before any decay law is proposed.

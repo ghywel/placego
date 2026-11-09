@@ -6548,3 +6548,12 @@ A31244-addition native RUP DERIVATION exports all28 bits at109/275 against the u
 **COMPUTED controls:** all five fixed histories,256 saved source21 fibre members, scalar/descending-inverse/old-scanner replays and low92 mutants pass. Same old4520 plus all prescribed81..193 heads can yield later16302 or11316, so it does not determine actual laterlabel. These two histories start81; no original0..80 or nondeterministic-quotient refutation. An independent real seed control passes the full future193..359 but not the original past.
 
 **COMPUTED16-case table; universal-tail hand lift awaiting carry:** fixing row81 modulo2^113 to422256424234816 forces seamlow5=23/head197white for every assignment to cells114..117. Higher bits are outside that head's cone. This one prefix cannot extend to the next required A; not a global4520 or4→7 obstruction. Prediction of a repair was refuted; no automatic larger run. Exact next comparison uses the known second-E continuation with low7=49.
+
+
+## GC2775 — Gate-trap3353 exclusion and finite-history interpretation
+
+[Exact graph/control evidence and scope](reports/GPT-E4-AND-TRANSIENT-REVIEW-20261109.md#outcome--gc2775). **COMPUTED:** all3316 temporal-boundary edges of the kit's829-state trap agree with a scalar checker and preserve the trap. Filtering the15 sampled bits of3353 has sizes188,191,186,68,68,69,17,21,21,18,21,29,40,41,0. Therefore no graph path launches this prefix. No new Lean/kernel build claimed.
+
+**PROOF-SKETCH pending Cloud:** graph-path preservation and known trap closure imply an actual E launch at odd t has first trap-entry tau>t. Thus E A4 E requires avoidance at all odd ticks1..125; the full4→7 passage through291. Endpoint193 of the shorter target need not avoid trap. P(E_t)=P(tau>t)P(E_t|tau>t) where defined; complete-event observability requires t≤H−68. This is not a universal decay or first-event hazard. Full-passage finite-DAG paths project to the shorter prefix, including its end cone, so already-surviving widths≤62 cannot exclude the prefix.
+
+**COMPUTED fixed paired histories:** rejected seam193low16=16791 lies in trap, real continuation54577 does not. Before cell3 completion the only differing pending pair is actual row192 cells3,4=11 versus00. Its head1 at193 forces preceding cells1,2=00, so seamcell2=x192,3 and seamcell3=x192,3 OR x192,4. These identities explain the immediate A branch, not full earlier E compatibility or arbitrary pair replacement. All original earlier failures retained; no E A4 E witness.
