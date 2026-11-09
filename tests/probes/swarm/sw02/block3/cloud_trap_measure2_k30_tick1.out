@@ -1,0 +1,22 @@
+  chunk 0 done 146s
+  chunk 16384 done 178s
+rows 20000: never in the gate trap by 8001: 703; early short-period lock: 703; never trapped and not early-locked: 0; early-locked but later trapped: 0
+lock periods of the never-trapped rows (0 = none found): {2: 552, 7: 151}
+E rows 1531, E launches 1532: absorbed (trap entry during the block) 1513, live 19, from inside the trap 0; rows with >= 2 E's 1; return words of rows with >= 2 E's: {'13': 1}
+live E launch ticks: [7, 17, 21, 25, 29, 59, 61, 63, 63, 79, 91, 97, 171, 241, 247, 263, 361, 891, 1761]
+bin | at-risk row-samples (not trapped, not early-locked) | launches (such rows) | launches per such row per tick
+    0 |       480685 |   1013 | 1.054e-03
+  200 |       111390 |    229 | 1.028e-03
+  400 |        66329 |    108 | 8.141e-04
+  600 |        40037 |     76 | 9.491e-04
+  800 |        22846 |     56 | 1.226e-03
+ 1000 |        12687 |     15 | 5.912e-04
+ 1200 |         8186 |     16 | 9.773e-04
+ 1400 |         5147 |      7 | 6.800e-04
+ 1600 |         2712 |      6 | 1.106e-03
+ 1800 |         1808 |      2 | 5.531e-04
+ 2000 |         1167 |      0 | 0.000e+00
+ 2200 |          609 |      1 | 8.210e-04
+ 2400 |          211 |      1 | 2.370e-03
+ 2600 |           64 |      1 | 7.812e-03
+done; wall 177.7s

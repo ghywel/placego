@@ -10,7 +10,36 @@ The kit's gate trap (`Rule30GateTrap`, data in `GateTrap.lean` at kit `6d2c0579`
 
 ## 2. The measurement: the same cohorts, conditioned on the trap
 
-(PENDING-MEASUREMENT)
+### 2a. Support 30, 20,000 random rows (seed 2, the CL757 cohort), horizon 8001
+
+**Trap entry.** 17,815 rows enter the gate trap in ticks 0–199, 644 in 200–399, 321, 217, 130, 71, 34, 31, 12, 7, 7, 5, 2, 1 in the following 200-tick bins, and 703 never enter by tick 8001. The mean time outside the trap in the first bin is about 48 ticks: most random rows are captured almost at once. No row leaves the trap once in (0 permanence violations), and **no E launches from inside the trap** (0 of 1,532), the carried exclusion on data.
+
+**The 703 rows never trapped are exactly the early short-period locks.** The per-row re-analysis (`cloud_trap_measure2.py`) finds 703 rows with a period-2 (552) or period-7 (151) column-1 trace from some sample below 100 to the horizon, the same 703 rows: zero rows are neither in the trap nor locked at tick 8001, and no early-locked row is later trapped. (No genuine period-5 lock exists in this cohort; CL757's "period 5" detections were all horizon noise.) So by tick 8001 every one of 20,000 rows has been captured: 96.5% by the gate trap, 2.8% by a period-2 lock, 0.75% by the period-7 ether lock, all the locks within 200 ticks.
+
+**Absorbed and live E's.** Of the 1,532 E launches, 1,513 (98.8%) are followed by trap entry within the E's own 35 samples: the E is the row's entry word. 19 are live (no entry during the block), launching at ticks 7, 17, 21, 25, 29, 59, 61, 63, 63, 79, 91, 97, 171, 241, 247, 263, 361, 891 and 1,761; one row has two E's (return 13). The X lineage's "E returns" are these live E's; the compact returns 4 and 6 have never been seen among them.
+
+**The conditional rate.** Launches per row per tick, by 200-tick bin:
+
+| bin (ticks) | at risk: outside the trap (row-samples) | rate | at risk: outside the trap and not early-locked | rate |
+|---:|---:|---:|---:|---:|
+| 0–199 | 550,985 | 9.2e-4 | 480,685 | 1.05e-3 |
+| 200–399 | 181,690 | 6.3e-4 | 111,390 | 1.03e-3 |
+| 400–599 | 136,629 | 4.0e-4 | 66,329 | 8.1e-4 |
+| 600–799 | 110,337 | 3.4e-4 | 40,037 | 9.5e-4 |
+| 800–999 | 93,146 | 3.0e-4 | 22,846 | 1.23e-3 |
+| 1000–1199 | 82,987 | 9.0e-5 | 12,687 | 5.9e-4 |
+| 1200–1399 | 78,486 | 1.0e-4 | 8,186 | 9.8e-4 |
+| 1400–1599 | 75,447 | 4.6e-5 | 5,147 | 6.8e-4 |
+| 1600–1799 | 73,012 | 4.1e-5 | 2,712 | 1.1e-3 |
+| 1800–1999 | 72,108 | 1.4e-5 | 1,808 | 5.5e-4 |
+| 2000–2799 | about 70,500 each | 0 to 7e-6 | 1,167, 609, 211, 64 | 0, 8e-4, 2e-3, 8e-3 (one launch each) |
+| 2800–8000 | 70,300 each | 0 | 0 | — |
+
+With the denominator GPT asked for, rows outside the trap, the rate still falls (from 9.2e-4 to 3.4e-4 by 600–799 and to zero after 2,800), because that denominator is dominated after a thousand ticks by the 703 early-locked rows, which can never launch an E. With the right at-risk set, rows in no closed set, **the rate is flat at about 1·10⁻³ per row per tick** from the first bin to the last bin with more than a thousand row-samples (0.8 to 1.2·10⁻³ where the counts allow; the bins beyond 2,000 hold one launch each). The decline of raw E counts is depletion and nothing else. The same table gives the trap-entry hazard of a chaotic row: 644, 321, 217, 130 entries over the row-samples of bins 200–999 give 2.4 to 2.9·10⁻³ per tick, also flat; so a chaotic row beside the wall is captured at about 2.7·10⁻³ a tick and launches an E at about 1.0·10⁻³ a tick, and about one entry in three happens through an E block. The chaotic population falls by a factor of about 0.6 every 200 ticks and is gone from this cohort by tick 2,800.
+
+### 2b. Exhaustive rows of support ≤ 20, horizon 2001
+
+(PENDING-EXHAUSTIVE)
 
 ## 3. Chaos tests (the owner's method)
 
@@ -32,8 +61,19 @@ The kit's gate trap (`Rule30GateTrap`, data in `GateTrap.lean` at kit `6d2c0579`
 
 ## 4. Predictions judged
 
-(PENDING-PREDICTIONS)
+- P-W1 (entry early: more than half by tick 400, fewer than 5% outside at 2000, fewer than 1% at 8000): **two clauses HELD, one MISSED**: 92% by 400 and 3.6% outside at 2000; but 3.5% are outside at 8000, the early-locked rows, which the counterfactual named (the other closed sets hold them).
+- P-W2 (the conditional rate per untrapped row within a factor of two of the first bin through 600–799): **MISSED as worded** (3.4·10⁻⁴ against 9.2·10⁻⁴), because "outside the trap" includes the early locks; with rows in no closed set as the at-risk set the rate is flat at about 1·10⁻³, which is the mechanism the prediction meant. The letter missed; the re-analysis is after the fact and is labelled so.
+- P-W3 (every E launch has τ > t): **HELD**, 0 of 1,532 and 0 of 1,470 launches from inside the trap, in both placements.
+- Chaos 1 (frame phase irrelevant): **HELD**.
+- Chaos 2 (shielding typical, more than half of first E's survive a redraw of cells 71..120): **HELD**, 73.8%.
+- P-W4 (the first differing head at c/0.243 within 30%): **HELD** within 6% at every c.
 
 ## 5. What this says about E, and what follows
 
-(PENDING-DISCUSSION)
+**E is, almost always, the gate trap's entry word.** 98.8% of E launches end in trap entry within the block. The X lineage's returns live on the 1.2% that do not. The clock, the 4→7 passage and the E-cycle conjecture are all statements about live E's, and the physical data have 19 of them in 20,000 rows and 470 returns in 4.2 million, none with a 4 or a 6.
+
+**The near-wall dynamics of a chaotic row is memoryless.** Trap entry at about 2.7·10⁻³ a tick, E launch at about 1.0·10⁻³ a tick, both flat in time; 3.5% of rows lock into period 2 or 7 within 200 ticks and the rest are captured by the trap, none surviving to tick 8001 in 20,000. The quantity the owner named in CL756, the thing that tends to a limit, is the chaotic population P(no closed set yet at t), which falls geometrically; E's and the "transient" of CL757 are its shadow. Whether P(τ = ∞, no lock) is exactly zero for every finite row is the kit's open RD dichotomy (trap entry or eventual periodicity), and this cohort says it is zero to one part in 20,000 at least.
+
+**Shielding is the damage speed.** A change at cell c reaches column 1 after about c/0.243 ticks, not c. GPT's thresholds are this front. For the passage work the rule is usable both ways: root cells beyond c do not matter before tick c/0.243, and nothing before that tick can be repaired from beyond c.
+
+**What follows, for GPT on the Intel host.** (1) The live E's are the object: a cohort scan that keeps every live E's history (its root and the 35-sample block with its trap-free continuation) gives GPT real histories of the kind its joint-state work needs, with the first-E-preserving cone known to be the low c/0.243 cells. (2) The 4→7 witness search should be seeded by live E's that are followed by A's (the real "E A…" prefixes), not by free roots: the data say a free random root is trapped within about 50 ticks. (3) The conditional hazards 2.7·10⁻³ and 1.0·10⁻³ are the two numbers a mechanism must explain; the trap's 829 windows and the E's opening 3353 are both finite objects, so the entry hazard is computable from the window graph's stationary flow if one exists, which would make the E rate a theorem about a Markov chain rather than a measurement.
