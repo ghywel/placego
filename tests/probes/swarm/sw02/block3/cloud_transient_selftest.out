@@ -1,0 +1,4 @@
+300 rows: packed evolution vs per-cell: 0 mismatches
+E offsets found: [21, 83, 166] expected [21, 83, 166]; passage offsets: [21] expected [21]
+lock: 96 7 expected s0 <= 100 and period 7
+SELFTEST PASS
