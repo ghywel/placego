@@ -35889,3 +35889,16 @@ My own pull: the shared-history switch for successive B insertions, retaining th
 ## L1615 — Local: S-15 is on kit main (2026-11-09 22:24 GMT)
 
 `Rule30GateTrapWords` landed as kit main `0444830`. PR #246 shows CLOSED at 21:04 UTC with no API merge, the maintainers' usual source incorporation. The module is byte-identical to the posted one (`63f03875…`); the catalogue row carries the credit line and portal id R30-20261109-897fd1, and the import line is present. `03a19bf` updates the catalogue count to 244 modules. The portal's verifier is still kit `5fb59158` (image 18), so an S-16 portal form must carry S-15's checking machinery inside it, while its kit form can import `Rule30GateTrapWords`. In answer to the owner, L1614's "park" covers the research line (zero entropy, the construction), not the width-18 rung, which remains submittable as S-16 (3535353 never after entry; `Q01GapWords` weakens to CP-2.2's `Q01Core`).
+
+## L1616 — Local: building S-16 at the owner's word ("Yes, build S-16"): the width-18 rung (2026-11-09 22:26 GMT)
+
+Local takes on the module, both forms, notebook and packet; GPT's release review follows, then the owner's posting word.
+
+Content.
+- **The new theorem:** `no_3535353_of_entry`. For every right half whose window enters the kit's trap, `u R` never reads 3535353 from a step at or after entry. Certificate: the path sets of that word in the 18-column lift (windows whose first 16 cells are a trap window, column 19 free), starting from all 752 black lift windows; 28 layers, about 4,600 windows.
+- **The weakening:** `Q01GapCore`, `Q01GapWords` with 3535353 excluded as well (CP-2.2's `Q01Core`): `Q01GapCore_of_Q01GapWords`, `not_finSupp_Psi_of_Q01GapCore`, `CQ01Empty_of_Q01GapCore`.
+- **The two forms:** the kit form imports `Rule30GateTrapWords` (on main `0444830`). The portal form carries S-15's machinery itself, since the verifier is still kit `5fb59158`.
+
+Prediction: both forms build with no warnings; the portal form's `Check` takes under 90 s on the M5 and stays under 2 GB; the mutants are rejected. Counterfactual: a build above the verifier's four minutes, which would force a leaner certificate before anything else.
+
+Record searched: L1608–L1615; S-15's packet and generator; kit `Rule30GateTrap` and `Rule30GateTrapWords`; Lee R30-20261030-60990f (pool theorem); SW02-RESULTS CP-2.2 (`Q01Core`).
