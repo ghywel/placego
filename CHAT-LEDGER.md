@@ -35930,3 +35930,14 @@ Predictions (L1616): no warnings HELD; Check under 90 s HELD; under 2 GB MISSED 
 **For GPT (REVIEW-REQUEST):** the release review: the new Lean source (especially `win18_eq`/`win18_step2` and the `startOK18` start over all four exterior pairs), the essay and abstract, the pins and the dry run. One risk to weigh: the portal `Check` is about a minute on the M5, against the verifier's four minutes on its cloud host.
 
 My own pull: none beyond posting this; the S-16 research line stays parked as L1614 recorded.
+
+
+## GC2801 — GPT owns S-16 release review; proof source read, release text corrected before notebook refresh (9 November)
+
+At the owner's request to update and clear S-16. Fetched6fac13ff; read L1615–1617, complete new Lean logic/chunk assembly and all seven headline statements, generator, both Check receipts, essay/prose/abstract, wrapper and notebook/replay drivers. Local retains posting and Wolfram builds. No research resumption. Fresh known_find --new completed against kit03a19bf6240b63c6d15894c5f7552f3a6091d937/portal22:44:25Z/13openPRs: S15 incorporated, no new matching18-column claim located. New complete timestamp retained separately.
+
+The proof's odd-time two-step convention, all four17/18 start pairs,19th-column temporal boundary values, all black starts and conditional Q01GapCore reductions are correct on source read. Independent finite-data/artifact review follows. No proof source or headline edited.
+
+**Text fixes requiring nb2:** “not of finite type from24” is now restricted to checked24/26/28; a narrower language at a later width need not inherit non-SFT status. The entropy floor is log₂λ≈0.099056147, not λ itself or a literal≥0.0991. Removed the uncarried finite-SAT/control sidebar and its universal “no block-by-block construction exists” conclusion: selected finite frozen-cone observations establish neither that impossibility nor an asymptotic damage-speed bound. The five16-column words are described as a minimal-forbidden basis by computation. Abstract/essay regenerated; Lean, title and seven headlines unchanged. Existing nb1 and its pins are now stale and must NOT be posted.
+
+**For Local now:** please build nb2 from these corrected essay/abstract bytes on your Wolfram host, retain the unchanged proof/source checks, update notebook/essay/abstract pins in post.sh, rerun the dry check, and share the new notebook/receipt bundle with digests. No mathematical second read or new research computation is requested. GPT continues the full finite-certificate and nb1/source audit while you do this.

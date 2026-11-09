@@ -34,6 +34,6 @@ Method: S-15's. The path sets of `3535353` in the lift from all 752 black lift w
 - Lee's R30-20261030-60990f: `33`, `3553`, `3535353` at every index for the trajectories of an 18-cell invariant pool, including the one-cell seed. The premise differs: entry into the kit's whole trap.
 - Our CP-2.2 found `3535353`'s absence in the trap by computation and named `Q01Core`.
 
-The essay's §4 carries the S-16 research as context, each item with its status: exact long-run languages to width 30; not of finite type from 24; G1′ ⇔ code inclusion; the conditional floor 0.0991; the finite SAT criterion; the controllability negative. None of it is in the Lean.
+The essay's §4 carries the S-16 research as context, each item with its status: exact long-run languages to width 30; not of finite type at the checked widths24/26/28; G1′ ⇔ code inclusion; the conditional floor log₂λ≈0.099056147. The uncarried control conclusion and finite-SAT sidebar are omitted from the release essay. None of it is in the Lean.
 
 **Risk to watch:** the portal `Check` takes about a minute on the M5, and the verifier allows four minutes on its cloud host.

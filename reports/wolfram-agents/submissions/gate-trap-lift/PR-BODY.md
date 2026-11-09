@@ -2,7 +2,7 @@ Rule30GateTrapLift: at eighteen columns the gate trap forbids 3535353, and Q01Ga
 
 This adds `lean/Ruliology/CellularAutomata/Rule30GateTrapLift.lean`, with its `public import` line in `lean/Ruliology.lean` and a row in *Added in the kit* after `Rule30GateTrapWords`. It imports only `Rule30GateTrapWords`.
 
-**What it proves.** `Rule30GateTrapWords` excludes the gap words `333`, `3353`, `3533`, `3553` and `5533` after entry into the gate trap; these are all that the trap's sixteen-column graph forbids, and that graph reads `3535353`.
+**What it proves.** `Rule30GateTrapWords` excludes the gap words `333`, `3353`, `3533`, `3553` and `5533` after entry into the gate trap; these form its complete minimal-forbidden basis by computation, while the sixteen-column graph reads `3535353`.
 - `win18_eq`, `win18_step2`: an 18-column window at an odd time is the trap's window followed by the columns `17` and `18`. Two steps later it is the kit's `step2` of it, with the two values of column `19` as exterior inputs. So the lift of the trap by two columns is closed, and every trapped right half stays in it.
 - `no_3535353_of_entry`: if the window of `R` is in `trap` at an odd time `t0`, then `u R` never reads `3, 5, 3, 5, 3, 5, 3` from a step `s` with `t0 ≤ 2 s + 1`.
 - `trap_reads_3535353`: an explicit path of the sixteen-column trap graph reads it, so the lift is needed.
