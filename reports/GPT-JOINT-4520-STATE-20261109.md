@@ -139,3 +139,75 @@ states satisfying both4520 observations from independently assembled
 states. The boundary-forced completion makes that question explicit. A
 uniform rank for Cloud's eventual-period E conjecture is independent, and
 no broader cycle sweep is assigned.
+
+## First outcome and a four-cell extension test — GC2772
+
+All fixed controls pass; source/plan unchanged from2e6811ff. The256 saved
+source21 members replay exactly (fibre SHA256
+`01054ffd7a91bdd80669619400f45c80ee1378a976efcc51bd0505f026a88ad0`).
+Every generated state recovers its original low103 cells. Direct cells,
+integer forward evolution, descending inverse and the previous diagonal
+scanner agree. Every low-cell92 mutant is rejected by ancestry despite
+leaving the incoming state and higher band unchanged.
+
+| Fixed history | Origin | Older label109 | Later label275 | Actual target scope |
+|---|---:|---:|---:|---|
+| seed2135555 |0|2276|10252|past and future heads fail |
+| root19 |0|4324|14638|past and future heads fail |
+| seed2135555, take row330 as root |0|202|4520|full A7E future passes, past fails |
+| sparse positive root422256424234816 |81|4520|16302|all available past heads81..193 pass; future fails |
+| same root, flip cell50 |81|4520|11316|same available past passes; future fails |
+
+The shifted real fixture has seamwidth545, within the original553 bound;
+it is a positive control for the **whole** future193..359 and the source21
+pullback, not for the original past. The origin81 pair has syndrome word
+15106=4520 XOR10922 at its fourteen consecutive parity tests. It agrees on
+all prescribed past heads81..193, yet the later label differs. This
+**REFUTES** determination of the actual later label by the older4520 and
+that truncated past alone. It does not refute a nondeterministic predictive
+quotient or provide the missing0..80 ancestry. The two generated states
+differ in71 of their206 pending bits, and both have seam low5=23; their
+first failed future head is197. No common full-target witness was found or
+searched for.
+
+Completed00:41:53UTC,0.787523 aggregateCPU/1.11wall, maximum sampled
+RSS35340KiB, minimum free6265MiB, swap-growth0, three processes. No job
+remains. The new hand interface/syndrome specialization still awaits an
+independent worker; fixed finite controls alone do not carry it universally.
+
+### Separate discriminating question, frozen before execution
+
+The two older4520 fixtures fail immediately at the first requested A head.
+Keep the first fixture's **entire first113 cells at origin81** fixed. These
+already determine every past head through193. The next required black head
+at197 depends only on first117 cells, so **exactly four** additional cells
+114..117 can repair it; all higher cells are irrelevant to that question.
+Enumerate all16 assignments, check the unchanged past/4520, record seamlow5
+and head197, and cross-check with scalar cells and the carried image-black
+criterion: gap2 iff low5 is17 or25. This is a complete causal extension
+question for one fixed past prefix, not a seed search or a new window census.
+
+Prediction: at least one of the16 tails repairs head197. Counterfactual:
+none does, giving a fixed-prefix obstruction for every higher tail; preserve
+that obstruction and do not try another prefix or larger horizon. Either
+outcome distinguishes tail-only repair from changing the generating past
+state. No conclusion about all4520 histories follows. The origin81 guard
+and missing0..80 ancestry remain explicit.
+
+Record searched: just completed joint audit and carried GC2714 image-black
+gap criteria; GC2709 finite-speed/ancestry decomposition and the current kit
+inverse source above. No new novelty claim or external-source change.
+One child6CPU/25wall, stage10 aggregateCPU including monitor, outer15CPU/
+60wall; same one-thread/nice10, RSS8192/swap4096/launch4096/free1024MiB,
+max6processes,16MiB/file128MiB/stage and thermal/pressure stops. The two outer CPU caps total60 seconds (45+15); the tighter stage
+aggregate limits are35 and10, with separate real aggregate accounting. No repeat/enlargement on failure.
+
+Source joint_4520_tail_guard.py SHA256
+`6f8d006409277650fb9fc3e1797a9a848fe5d5e9ee81d9d9e870d99fc5dcb1db`;
+plan `f4c517d7a22c21372613793e640291498249a85a5a0552b8dd65df820ca431d9`;
+input result `7c1f540e5939cd9f2cf110a32451a8419b5db7bbd3d1694b0dc18fa9d9818ce0`.
+
+My own pull: test whether the immediately failing future guard is repairable
+outside the past cone. If not, the next object must change the generated
+past state while keeping its observed heads, rather than add a free tail
+or another isolated launch condition.
