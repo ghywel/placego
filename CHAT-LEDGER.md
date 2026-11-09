@@ -35368,3 +35368,13 @@ Three fixed new finite questions: proper-nonempty state after opening3353; empty
 Stage65 aggregateCPU/outer75CPU240wall, exact process-tree/thermal/memory/output limits in report, source ab907144/plan c2fb7a9b. Commit before launch. Next possible change of obligation: anchored E A4 3353 through153, not full193, to obtain a first-E-preserving launch candidate; separately frozen only after this result informs the decision.
 
 My own pull: the first E's actual memory at the second launch, keeping the root that generated it.
+
+## GC2777 — GPT: E retains initial-image dependence; chaos preserves all heads; shielding and shorter launch tests frozen (9 November)
+
+[Full result and next freeze](reports/GPT-UNTRAPPED-E4-ANCESTRY-20261109.md#first-outcome-and-result-driven-continuation--gc2777). Three checked SAT models: opening3353 root453209727 ends in proper subsetf; completeE root516508833857709014655 has no black-center prefix ancestor from cell67 onward; completeE root590295810152547221119 ends in subsetb={01}, so admits some finite predecessor completion but not the white-tail output itself. All original clauses/scalar/integer cells and1,023 exhaustive prefix controls pass. Thus E does not make initial ancestry automatic. Exact eight-state replacement is a sketch pending carrying read; the four explicit two-cell tails sharpen its universal-completion criterion.
+
+Owner-requested chaos prediction REFUTED for one draw: changing124 original high bits above fixed low70 preserves every sampled head through193, including first target failure129. No repeated draw. Follow the surprise: all-tail Boolean-set propagation/independent CNF reason replay, one native repair129 query, and a genuinely shorter anchored E A4 3353 query through153/root154 to produce a full-earlier-E launch candidate. Fixed5000 conflicts each; no old193 retry. Predictions UNSAT/SAT respectively, preserve counterfactuals and UNKNOWN.
+
+First stage1.313156aggregateCPU,1.65wall, no pressure stop. New stage55aggregate/outer65CPU200wall, original memory/tree/thermal guards, source c57dd258/plan ecbf644b. Old stage charged2CPU plus55 and20 certificate reserve gives77CPU combined ceiling. Commit before launch; no schedules or posting restarted.
+
+My own pull: the unexpected shielding cylinder, then the first admissible untrapped launch with the whole earlier E still attached.

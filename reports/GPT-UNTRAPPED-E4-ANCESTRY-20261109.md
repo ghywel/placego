@@ -145,3 +145,86 @@ its own freeze; a surviving candidate must then keep all earlier ancestry.
 
 My own pull: locate where the first E's generated history permits or obstructs
 the second launch, then follow a real candidate's first failed completion head.
+
+## First outcome and result-driven continuation — GC2777
+
+All three cases are **SAT with every original clause and every cone cell
+checked independently**. The weak UNSAT predictions failed; the nonimage
+prediction held. No research UNSAT statement or unverified certificate is used.
+
+| Case | Tick-1 root | Final subset | First impossible prefix cell |
+|---|---:|---|---:|
+|3353, proper nonempty|453209727|f={00,01}|none through29|
+|E, impossible ancestor|516508833857709014655|empty|67|
+|E, proper nonempty|590295810152547221119|b={01}|none through69|
+
+The first gap3 table and free33 root639 pass. All1,023 odd output prefixes
+through width10 agree with exhaustive forward predecessor enumeration, and
+whole-white-tail acceptance agrees with the independent finite inverse.
+
+This settles a useful obstruction: **complete E does not erase the initial
+ancestry condition**. The nonimage E cannot be repaired by any higher output
+tail once its67-cell prefix has failed. The proper-state E has a finite parent
+for its observed69-cell prefix, but not for every higher completion. In fact,
+its zero continuation has no finite parent (00 is absent); a compatible
+completion must retain terminal pair01. Neither example is a full E A⁴ E
+witness. The eight-state reduction remains exact, but cannot simply be removed.
+
+The universal-completion proof has a short explicit converse. For a missing
+pair(a,b), the two higher output cells(a XOR b,b), then all zeroes, force that
+pair under finite backward reconstruction. Thus **U is equivalent to acceptance
+of all four two-cell tails followed by zeroes**. This also proves admission of
+all finite higher tails. This sharpening is a hand sketch, not a new worker read.
+
+### The chaos counterfactual happened
+
+The single124-bit replacement preserved **every sampled head through193**, not
+merely the required first E. Both baseline and changed row fail the target first
+at129; their complete mismatch lists are identical. Prediction of a change by125
+is **REFUTED for this draw**. This is agreement of two actual histories, not yet
+independence of all tails, and no further random draw is made.
+
+First stage:1.313156 aggregate CPU seconds,1.65 outer wall; sampled peak treeRSS
+38,984KiB, minimum free5722MiB, zero swap growth, at most3 processes. All frozen
+controls pass at commit7a7b785a. The remaining native control proof will be checked
+with the next certificate stage; none of the three research answers needs UNSAT
+certification because all are explicit SAT models.
+
+### New fixed tests, frozen before execution
+
+1. **Universal shielding of that same low70 prefix.** Propagate sets of possible
+   Boolean values through the exact193-tick cone, treating every root cell above70
+   as unknown. Every singleton obtained this way is a sound all-tail fact by
+   induction; non-singletons do not prove dependence. Independently reproduce
+   every singleton with exact CNF unit propagation, reject a corrupted reason
+   log, and compare small cones with every concrete tail. Then solve the specific
+   repair question: does that low70 prefix admit the desired white head129?
+   Prediction: UNSAT, with a native certificate required. Counterfactual SAT gives
+   an actual tail defeating the observed pairwise shielding; UNKNOWN stays open.
+2. **Shorter actual launch history.** One original anchored E A⁴ 3353 cone,
+   ticks0..153/root154, with all earlier heads and no extra root restrictions.
+   Prediction: SAT (weak). This would give a first-E-preserving candidate through
+   the untrapped second launch; UNSAT would exclude E A⁴ E, UNKNOWN supplies
+   neither. Inspect a returned root directly through193 and retain its first
+   failure; no adaptive extension solve or larger conflict cap is authorized.
+3. Check the four explicit output-tail completions for the three new fixtures
+   and known physical E. Continue the already reconstructed proper-state E's
+   finite parent through193, retaining all mismatches. No new seed is searched.
+
+The existing source109/4520 theorem is a consequence of the shorter launch
+premise: its five head supports83,87,101,115,129 and predecessor row81 are all
+present. It is not an arbitrary added unit. The current solve uses the original
+shorter CNF; model audit checks source109 and its actual input word afterwards.
+
+New stage55 aggregateCPU, outer65CPU/200wall; prepare8CPU/25wall, two native
+cases12CPU/30wall and5000 conflicts each, audit6CPU/20wall. All earlier tree,
+pressure, thermal and file limits unchanged. Charge the completed stage2CPU;
+reserve at most20 more aggregateCPU for certificate checking, so the combined
+actual-charged research ceiling is77CPU. No new random draw, full193 retry or
+wider finite-DAG lift. Source `untrapped_prefix.py` SHA256
+`c57dd2582f12ce7c952458e18411c066583b65349217f3e906b15a066fd3fe8b`;
+plan `ecbf644b0f3fc6593c028f0d4c86b03b4c86530a3224491f218e4bf8351aa2bd`.
+
+My own pull: whether the unexpected tail immunity is a genuine cylinder of
+first-E histories, and where a different admissible cylinder permits the
+second launch.
