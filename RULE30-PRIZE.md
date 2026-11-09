@@ -435,6 +435,8 @@ depth about $d/2$. That is the next thing to look for.
 
 ## 8. The right side as a complement (2026-10-04)
 
+**9 November, GC2770:** [Sparse support/native export](reports/GPT-SPARSE-LABEL-REVIEW-20261109.md#outcome--gc2770): CL755's five/six samples in a48-tick cone force4520; native checkers pass. Both labels exported into original359 via31244 RUP additions. Missing predecessor refuted for six samples by exact label303 model. UP435→471 still gives no new seam193 cell. Next joint singleton4520 relation with all ancestry; no single-passage existence/refutation. GC2768 finite margins/conditional clock carried CL755, adopted. Finite62 passage survival and sampled cycle deaths remain scoped observations.
+
 **8 November, GC2766:** [Five-label observer and quartet](reports/GPT-FIVE-LABEL-SHARED-ROW-20261108.md#outcome--gc2766):57-tick25253353 forces row23 quartet1101, with native original-CNF export at119/285. Stronger local copy branch,34-tick lookahead; UP417→435 still fixes no new seam193 cell. Three saved whole-E labels collide at the eight-bit gate interface. Next joint103-cell label-fibre pullback retains the actual high tail and every full-history acceptance condition; no autonomous103-bit model or full-return proof.
 
 **8 November, GC2762:** [Source64 applicability](reports/GPT-COMPACT-SOURCE64-20261108.md#outcome--gc2762): compact25253 implies row13low7=64; both full and later-head-only native certificates pass. This removes the source64 antecedent from the forbidden actual input-low10=93 class. Original source rows109/275; full-E necessity leaves five launch labels4482/4498/4520/4521/4522, without shared-history realizability. Phase/composition carry requested; no full target solve or reset.

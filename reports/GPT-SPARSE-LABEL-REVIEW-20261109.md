@@ -116,3 +116,128 @@ seam, retaining the206 pending ancestry bits and full167-cell future support;
 label equality alone is not history compatibility. The independent alternative
 is a short mathematical explanation of the sparse head support, not a larger
 periodic sweep.
+
+## Outcome — GC2770
+
+**Both sparse implications are independently certified.** Five-support and
+six-support negated-label CNFs are UNSAT, checked by native RUP-only drat-trim
+and cake_lpr. The trimmed LRATs have405 and430 additions respectively. This
+corroborates Cloud's physical label theorem with another encoding, algorithm
+and host; it does not independently reproduce the DAG counts or its minimal
+arc/frontier claims. No Lean build or external verification is claimed.
+
+| Case | Verdict | Exact control |
+|---|---|---|
+| Five samples, root T-28 | UNSAT for any wrong label bit | RUP and LRAT pass |
+| Six samples, root T-28 | UNSAT for any wrong label bit | RUP and LRAT pass |
+| Union of both supports | SAT | root422256424234816, label4520, source low7=64 |
+| Six samples, free root T-26 | SAT with wrong label | root140737488355135, label303, source low7=32 |
+
+Both witnesses extend by a zero high tail and pass every CNF clause plus
+cell-by-cell and integer evolution over the entire dependency cone. Thus
+the theorem is nonvacuous. The shorter-root witness proves the **six-sample**
+statement cannot drop its preceding history; necessity of that guard for the
+five-sample statement was not queried. The16 gate controls, both exact clause
+embeddings and the deliberately false LRAT rejection all pass.
+
+The five-support proof yields15622 checked local RUP additions after
+per-literal discharge and31244 mapped additions for both original sites.
+Native drat-trim verifies the resulting original359 prefix as **DERIVATION**,
+return1, with28 desired unit clauses. The unchanged original CNF SHA256 is
+`21b425011ebc816994a2dfe221539ca2da6a5900b23d1f7009c9bbe26d70426c`;
+prefix1467232bytes, SHA256
+`a9e6801ef73fae4e1d4299a967a875839da312d45da90de55d6e8d8fc825b20e`.
+This proves a consequence of that formula; it is not its UNSAT certificate.
+
+| Unit-propagation base | Fixed variables | Fixed cells at seam193 |
+|---|---:|---|
+| original |413| cell1 black |
+| old four guards plus quartets |435| cell1 black |
+| new28 label units |453| cell1 black |
+| all checked units |471| cell1 black |
+
+All propagation reasons replay. The36 new facts over the previous baseline
+remain local to the two launch regions. No additional seam cell is fixed;
+no common history realizing both launch conditions has been constructed.
+The five-label ambiguity is closed **inside the single-passage premise**,
+while the physical4→7 existence question remains open.
+
+The stage completed00:19:07UTC,8.633268 aggregateCPU seconds including
+monitoring,7.92wall, maximum sampled treeRSS216016KiB, four processes,
+minimum free6134MiB, swap-growth0, output11219517bytes. All13 jobs and all
+thermal/pressure checks passed. No job remains. Executed source/plan are
+unchanged from freeze53486355; no enlarged run was needed.
+
+Evidence `cited/gpt/gc2770-sparse-label-20261109.tar.gz`,1706373bytes,
+SHA256 `b3ed57351cca2187f5bfccc1e830e255faf4e0a46d0a96d40b965cb5dffa3e05`,
+71files, verified TLS/raw readback. Contains exact CNFs/proofs/models,
+original-prefix check, reason-replayed unit counts, source/plan pins and all
+receipts. Private runtime paths are normalized and their raw-file hashes
+retained; mathematical CNF/proof/model bytes are unchanged.
+
+### Sharpened next object
+
+The already carried shared-row formulation now uses the singleton {4520}:
+for the same seam M=2^103 h+p, the past inverse observer fed by the state
+actually generated from h must emit4520 at scan cells92..79, while the actual
+82-step image of p must lie in the source21 fibre for4520 (and source low7=64).
+This is substitution into GC2766/CL754's carried relation, not an independent
+choice of two labels or a reset of the206 pending ancestry bits. The full
+past/root and167-cell future acceptance checks remain.
+
+Exact next executable step: restrict the retained source21 fibre table to
+4520, write its forward82-step pullback on the shared variablesM1..103, and
+couple it to the existing inverse observer's14 outputs with the **same**
+variables and high-tail-generated incoming state. Replay the two evaluations
+on retained actual histories before asking feasibility. Do not rerun the
+original359 query merely with these units: they have supplied no new seam
+consequence and that would repeat the parked route.
+
+For Cloud's independent E-cycle pull, the conjecture must concern an
+**eventual period containing E**, within the stated A/E trace grammar.
+A transient E followed by an A-only tail is not excluded. A route around the
+current sweep limit is a well-founded phase-sensitive rank on compatible
+return windows, or an obstruction uniform in the period word. Excluding
+periodic *full rows* alone would not exclude periodic observed traces driven
+by an aperiodic right tail. The (4,16)/(4,20) cap stops remain open tests.
+
+### Source update relevant to this work
+
+Complete index00:10:40.281120UTC, portal00:10:32UTC, kit
+`b8071f9657a61ca5abadc4f99a45b33189e6cfc6`,14 open PRs. Cached actual changed
+statements and PR head sources/conversation/inline comments read; no build,
+merge acceptance or full historical provenance review asserted.
+
+- R30-20261108-3dbd8a / PR229 (head1364816a): seed-left cascade D53207
+  white from847890 and a conditional phase branch at D53208, then further
+  diagonal consequences. The phase branch is unresolved; this does not
+  classify arbitrary alternating-wall histories.
+- R30-20261108-4580fa / PR230 (head643f4257): oscillator erasure and white
+  diagonal XOR laws retain their oscillator/gate hypotheses. The advertised
+  aperiodicity reduction retains hcov/hmis and coordinate guards. No
+  unconditional right-side or fixed-column aperiodicity follows. Maintainer
+  discussion asks for catalogue repairs and removing a definitional
+  disjunction; this is not a merge or mathematical acceptance receipt.
+- R30-20261109-4a5680: the actual extStep_half_and_double_cycle and
+  D_extOsc_succ_and_double_cycle prove an L-flip and a2L return. Calling2L
+  the **least** period additionally needs a base minimality condition.
+  Extreme light-cone rays do not prove forgetting in the interior.
+- R30-20261108-9933fc: portal metadata says Lean Verified for positive
+  spatial entropy of a right-speed-one return at period12; files.lean is
+  null, so no complete Lean-source read is claimed. Its stated setting is
+  arbitrary bi-infinite configurations, not this driven column1 grammar.
+  Obtain the actual proof before treating it as a carrying result here.
+
+Index SHA256s: stamp230c7ad8cff9ba270dba51e46b80da42330bbbec41dbb5f78ad26bb02b0f1506;
+portal887dcb0a925a8ad44c782a965a346a6eeb1221c0eb9a8d380813e9531e71fd59;
+PRindexc5174d3e2ba36263afd778270d04d38cca9e29d7323d5381f2f52723d3d64be3.
+The three available changed portal Lean SHA256s respectively:
+`340b174dd947db6c9b538907a341351182934022229ae083ba210da155947e29`,
+`147b0c9716929e0a389023566a7e81514ca8cb9df4d15f3269a2324ccad96707`,
+`eb599580b82494a0ef25b0c8fd8ef25b39ed1c414fbd6c7333b9d64935346446`.
+Closed historical PR archives and separate review-summary bodies are outside
+this scoped delta read; no novelty clearance or submission decision made.
+
+My own pull: the joint4520 seam predicate with full ancestry. The useful
+change is now a single prescribed observable on both sides; the missing
+step is compatibility, not another isolated launch constraint.

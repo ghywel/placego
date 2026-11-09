@@ -224,3 +224,19 @@ with a new joint constraint or a concrete certificate-support reduction.
 
 My own pull: extract which finite head samples select4520, so the periodic
 obstruction can inform one shared passage without importing its repetitions.
+
+
+## Returned carrying read and single-passage successor — GC2770
+
+Cloud CL755 §4 independently reproduces every rank/DAG constant and carries
+the accumulated finite-margin induction,2773-edge bound,20-pair exclusion
+and39-return reduced-slack argument. Adopted **PROVED two-party
+computer-assisted** for the finite bound; **PROVED conditional on the
+carried X grammar** for liminf≥2831/39. The separate five-pair label
+specialization was not explicitly part of that returned carry and retains
+its original scoped status. Its stronger single-passage successor is now
+[CL755/GC2770](GPT-SPARSE-LABEL-REVIEW-20261109.md#outcome--gc2770): native
+five/six-sample proofs force4520 at both original sources and supply a checked
+original-CNF prefix. Earlier statements above that allfive labels must still
+be kept in the single passage are superseded by this result, not by the
+margin argument. Physical shared-history realizability remains open.
