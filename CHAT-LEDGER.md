@@ -35836,3 +35836,32 @@ GC2799 fixed-word replay COMPLETE,4.707397aggregateCPU/4.99wall. At26/28 m has32
 **Guard refinement before future products:** add the exempt-word prefix to Local's visited product state, and use BFS; no claim is made that this changes the historical answers. The old output remains unchanged and pinned by6bab178e. New saved-graph-only regression checks no witness at16–28 and exactly m in the synthetic factorial language forbidding F∪{m}; the F-only synthetic language must have none. Stage3aggregateCPU/outer4CPU/15wall, child2/10, same512MiB/free/swap/tree/file/stage controls, no new width or trajectories. Source/plan SHA256 {"gc2800-plan.json": "5e8f00110ce9eb6c59f3f8edce199267ab0598c4f37d660a03b0708f5ac15f70", "local_trap_carry_gc2794.py": "2f3615df95865eed39b4dd5ad5fa7d491b0e22e95b7ff071165cb515dbb5cdb6", "gpt_s16_g1_review.py": "35a0fe613ed2c22197cf50d7a7eb935a5db6e99b22f03febe035a864ce89c9bd"}.
 
 Additional cheap checker guard: if a future width loses the one-letter word3 or5, G1 must report that minimal forbidden word, not skip its initial branch. Added the synthetic Avoid(3) control and a factorial-suffix assertion. This is a source change, so repeat ONLY the saved/toy regression under the same3aggregateCPU/outer4CPU/15wall cap, child2/10, all other guards unchanged. Earlier runtime snapshot retained separately; no new physical computation. Updated frozen hashes {"gc2800b-plan.json": "40d4d2ddb37e04a1200c827a546030048e037796f9677de600fa4940adc2311c", "producer": "47ad14f5a289037b84152d6c783313d947a400de9fa891b8dc26bd6e2a61dff5", "test": "bbb6eeb2d91e3ea7175a07ab47d4b9d987a0c044de3e16db184cb21ee30a2836"}.
+
+## L1614 — Local: the construction attempt, at the owner's word. No construction: the free code is not refuted, but block-by-block control is impossible, because each block is already decided inside the light cone of the blocks before it. Recommendation: park S-16 (2026-11-09 22:13 GMT)
+
+At the owner's word ("Try the construction"), after L1613; GC2799–GC2800 read. Probes, each with its prediction in its header before it ran, outputs in git: `local_code_witness.py`, `local_code_freq.py`, `local_run_grammar.py`, `local_phase_lock.py`, `local_b_lock.py`, `local_word_sat.py`, `local_word_sat_past.py`, `local_code_control.py`. [PROOFS section](PROOFS.md#l1614--the-construction-attempt-a-finite-criterion-and-why-greedy-control-fails-local-9-november-2026).
+
+**GC2799–GC2800 accepted.** G1′ is a reformulation of code inclusion, not an independent theorem. My depth-first product gives representative counterexamples: "the shortest" and "pumped family" in L1613 were not certified, so I withdraw both words. The exempt words need a guard in the product state. My rows fix cell 30 black, so they have exact support 30, and finite bins do not prove that rows never lock. GPT's fixed replay confirms that `355535355535353` is accepted at 26 and 28 and minimal forbidden at 30, while its reverse is accepted.
+
+**The target, made finite (PROOF-SKETCH for GPT).** By compactness, G1′ at every width holds exactly when every finite code word over A = 5, B = 3555 is SAT: from some black trap window, under the rule and the alternating boundary, with its head samples fixed. That is one finite instance per word, with no width argument. Relaxed acceptance at width W certifies a physical row only for durations below (W − 16)/2 samples, so widths to 30 say almost nothing physical.
+
+**Physical witnesses (MEASURED, exact simulation).**
+- Real trapped rows realize every code word up to 7 blocks; at 8 blocks, 248 of 256.
+- The absent words are exactly those with runs (4, 4, 4) or (5, 4, 4): zero in 2.29 million windows, against independent baselines of 156 to 800. A pair (4, 4) is preceded only by runs 3, 7, 11 or 12.
+- Odd runs outnumber even runs 10 to 1, yet 3s show no phase sublattice (uniform mod 2 to 16).
+- No row locks into (3555)^∞ or 5^∞ by time 8001, even though BBBBBBBB occurs at 7,183 times its baseline.
+- The sparser code with runs of 3 and 5 only is not complete either: (5, 5, 5, 5, 5) never occurs.
+
+**SAT (COMPUTED; UNSAT answers not LRAT-certified).** 3535353 is UNSAT from all 188 black windows (control). The (4, 4, 4) word `3555535555355553` is SAT from 19 windows, and still SAT after 20, 60 and 100 samples inside the trap. So it is physically possible late, and its absence from real rows is rarity. The free code is not refuted. My two predictions that it was impossible, or transient only, MISSED.
+
+**Greedy control fails (COMPUTED).** With every initial cell of a realized prefix's light cone frozen, the next block was free at 0 of 37 steps. My prediction that both blocks always remain possible MISSED completely. Freezing a fraction f of the cone, both blocks remain possible at 70, 64, 55, 30 and 4.5% of steps for f = 0.1, 0.2, 0.3, 0.4, 0.6. Each block is therefore decided by cells around 0.3 to 0.4 of its light cone, the order of the left damage speed, so no block-by-block construction exists. A proof would have to lay each block's control cells deep inside the cones of earlier blocks and manage their interference. That is the same kind of obstruction as the 4→7 passage, and no finite method in hand addresses it.
+
+**Recommendation.** Park S-16, ladder and construction alike, with this record. What it established:
+- the relaxed language is not of finite type from width 24 (carried);
+- G1′ is equivalent to code inclusion, and code inclusion to a finite SAT criterion;
+- a code floor of 0.0991 would hold if every finite code word is SAT;
+- the physical language has a structured run grammar and no locks;
+- the head's next block is controlled only from deep inside earlier cones.
+Reopen it only with an idea for controlling a block from inside the cone of earlier blocks, not with more widths, words or samples. A cheap next datum, if anyone wants one: SAT on all 2^k code words for k up to 10, to check the finite criterion directly. That is evidence, not a proof.
+
+My own pull: the controllability profile (how free the head is as a function of the frozen fraction) is the most interesting object found, because it measures how much the far right can steer the head. But it belongs to the passage question, not to S-16. I would not pursue it now.

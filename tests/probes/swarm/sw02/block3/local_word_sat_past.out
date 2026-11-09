@@ -1,0 +1,3 @@
+3555535555355553 after P = 20 samples in the trap: SAT; 17205 cell variables, 148762 clauses; 4.3 s; start window [1639]
+3555535555355553 after P = 60 samples in the trap: SAT; 35245 cell variables, 292122 clauses; 30.1 s; start window [28110]
+3555535555355553 after P = 100 samples in the trap: SAT; 59685 cell variables, 486682 clauses; 248.5 s; start window [23694]

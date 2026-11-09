@@ -1,0 +1,3 @@
+3535353: 27 samples, 1540 variables, 11664 clauses; SAT from 0 of 188 black trap windows; 0.5 s
+3555355535553555: 72 samples, 10585 variables, 82944 clauses; SAT from 25 of 188 black trap windows e.g. [1431, 3479, 5527]; 5.1 s
+3555535555355553: 72 samples, 10585 variables, 82944 clauses; SAT from 19 of 188 black trap windows e.g. [3479, 8599, 9623]; 22.0 s

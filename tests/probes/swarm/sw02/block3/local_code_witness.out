@@ -1,0 +1,16 @@
+1500 rows, horizon 8001, 1208948 gaps after skipping 16 per row
+   k= 1:     2 of     2 code words seen; missing e.g. []
+   k= 2:     4 of     4 code words seen; missing e.g. []
+   k= 3:     8 of     8 code words seen; missing e.g. []
+   k= 4:    16 of    16 code words seen; missing e.g. []
+   k= 5:    32 of    32 code words seen; missing e.g. []
+   k= 6:    64 of    64 code words seen; missing e.g. []
+   k= 7:   128 of   128 code words seen; missing e.g. []
+   k= 8:   248 of   256 code words seen; missing e.g. ['BAABABAB', 'BABAABAB', 'BABABABB', 'BABABBAB']
+   k= 9:   470 of   512 code words seen; missing e.g. ['ABAABABAB', 'ABABAABAB', 'ABABABABB', 'ABABABBAB']
+   k=10:   863 of  1024 code words seen; missing e.g. ['AABAABABAB', 'AABABAABAB', 'AABABABABB', 'AABABABBAB']
+   k=11:  1544 of  2048 code words seen; missing e.g. ['AAAABABABBB', 'AAAABABBABB', 'AAAABABBBAB', 'AAABAABABAB']
+   k=12:  2693 of  4096 code words seen; missing e.g. ['AAAAAABABBAB', 'AAAAABABABBB', 'AAAAABABBABB', 'AAAAABABBBAB']
+   k=13:  4609 of  8192 code words seen; missing e.g. ['AAAAAAABABBAB', 'AAAAAABABAAAB', 'AAAAAABABABBB', 'AAAAAABABBABA']
+   k=14:  7733 of 16384 code words seen; missing e.g. ['AAAAAAAABABBAB', 'AAAAAAABABAAAB', 'AAAAAAABABABBB', 'AAAAAAABABBABA']
+longest run A^n followed by B: n = 55

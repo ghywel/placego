@@ -1,0 +1,34 @@
+# FRAC 1.0 (seed 3, started 22:09:56 UTC)
+formula: 93961 variables, 746496 clauses, horizon 432 ticks
+trial 0: window 56423, blocks AAAB, steps aabX (* both possible, a/b only one, X dead end); 2 s
+trial 1: window 65191, blocks AAAAAABAABAA, steps aaaaabaabaa (* both possible, a/b only one, X dead end); 2 s
+trial 2: window 14439, blocks AABAAAAAAAB, steps abaaaaaaabX (* both possible, a/b only one, X dead end); 3 s
+trial 3: window 54679, blocks BBAABBAABAAA, steps baabbaabaaa (* both possible, a/b only one, X dead end); 3 s
+totals: {'steps': 37, 'both': 0, 'onlyA': 26, 'onlyB': 9, 'dead': 2}
+# FRAC 0.1-0.6 (seed 3, started 22:10:56 UTC)
+formula: 93961 variables, 746496 clauses, horizon 432 ticks
+trial 0: window 56423, blocks AAABABABABAA, steps aa********a (* both possible, a/b only one, X dead end); 10 s
+trial 1: window 22119, blocks AAABBABABAAA, steps aa*******a* (* both possible, a/b only one, X dead end); 16 s
+trial 2: window 9831, blocks AAAABABAAABA, steps aaa*******a (* both possible, a/b only one, X dead end); 19 s
+trial 3: window 9831, blocks AAAAAAABAAAA, steps aaa******** (* both possible, a/b only one, X dead end); 21 s
+FRAC 0.1: totals {'steps': 44, 'both': 31, 'onlyA': 13, 'onlyB': 0, 'dead': 0}
+trial 0: window 56423, blocks AAABABABAAAA, steps aa******a*a (* both possible, a/b only one, X dead end); 21 s
+trial 1: window 22119, blocks AAABBABAAAAA, steps aa*****a*a* (* both possible, a/b only one, X dead end); 22 s
+trial 2: window 9831, blocks AAAABABAAAAB, steps aaa****a*a* (* both possible, a/b only one, X dead end); 23 s
+trial 3: window 9831, blocks AAAAAAABAAAA, steps aaa******** (* both possible, a/b only one, X dead end); 23 s
+FRAC 0.2: totals {'steps': 44, 'both': 28, 'onlyA': 16, 'onlyB': 0, 'dead': 0}
+trial 0: window 56423, blocks AAABAAAAABAA, steps aa**a*aa**a (* both possible, a/b only one, X dead end); 23 s
+trial 1: window 22119, blocks AAABBABAABBA, steps aa*****ab** (* both possible, a/b only one, X dead end); 25 s
+trial 2: window 9831, blocks AAAABABAAAAB, steps aaa******a* (* both possible, a/b only one, X dead end); 25 s
+trial 3: window 9831, blocks AAAAAAABAABB, steps aaa*****abb (* both possible, a/b only one, X dead end); 30 s
+FRAC 0.3: totals {'steps': 44, 'both': 24, 'onlyA': 17, 'onlyB': 3, 'dead': 0}
+trial 0: window 56423, blocks AAABAAAAAABB, steps aa**aaaaabb (* both possible, a/b only one, X dead end); 30 s
+trial 1: window 22119, blocks AAABBABAABBB, steps aa*b**aabbb (* both possible, a/b only one, X dead end); 30 s
+trial 2: window 9831, blocks AAAABAAAAAAA, steps aaa**a*aaaa (* both possible, a/b only one, X dead end); 30 s
+trial 3: window 9831, blocks AAAAAAABAAAA, steps aaa*****aaa (* both possible, a/b only one, X dead end); 31 s
+FRAC 0.4: totals {'steps': 44, 'both': 13, 'onlyA': 25, 'onlyB': 6, 'dead': 0}
+trial 0: window 56423, blocks AAABBAAAAAAB, steps aa*baaaaaab (* both possible, a/b only one, X dead end); 31 s
+trial 1: window 22119, blocks AAABBBBAABBA, steps aa*bbbaabba (* both possible, a/b only one, X dead end); 31 s
+trial 2: window 9831, blocks AAAAABAABBBB, steps aaaabaabbbb (* both possible, a/b only one, X dead end); 34 s
+trial 3: window 9831, blocks AAAAABAABBBB, steps aaaabaabbbb (* both possible, a/b only one, X dead end); 34 s
+FRAC 0.6: totals {'steps': 44, 'both': 2, 'onlyA': 25, 'onlyB': 17, 'dead': 0}

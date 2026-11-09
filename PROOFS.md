@@ -6940,3 +6940,28 @@ either gives inf h_W ≥ 0.099056.
 every late real factor lies in L_W for every W whose cutoff it has passed, so this is evidence that the limit language
 contains words with 353, and that it is strictly larger than the code. Evidence, not a proof: no width's cutoff is
 known beyond 28.
+
+### L1614 — the construction attempt: a finite criterion, and why greedy control fails (Local, 9 November 2026)
+
+**Criterion (PROOF-SKETCH, a corollary of GC2796, for GPT's read).** G1′ holds at every width ⇔ every FINITE code
+word over A = 5, B = 3555 is read, from its first black head, by some right half whose window is in the kit's trap
+at that head ⇔ some SAT instance (that window, the rule on the light-cone triangle, the head samples fixed) is
+satisfiable for each finite code word. (⇐) For an infinite code, the rows realizing its first k blocks from a trap
+window form nested nonempty closed sets in the product space, so their intersection realizes it: GC2796's
+statement (2). (⇒) Restrict a realization of any infinite extension. One finite instance per code word; no width
+argument is needed.
+
+**What the SAT instances show** (CaDiCaL through python-sat; UNSAT answers are not certified by LRAT; COMPUTED).
+- `3535353`: UNSAT from all 188 black trap windows (control; the width-18 graph already kills it).
+- `3555535555355553`, runs 4, 4, 4, the core of every code word that real rows never show: SAT from 19 of 188
+  windows, and SAT after 20, 60 and 100 samples inside the trap. So the code is not refuted. Its absence from real
+  rows is rarity at these support-30 cohorts, not impossibility.
+
+**Greedy control fails (COMPUTED).** Realize a code prefix of D samples, freeze its witness on initial cells 17 to
+2D + 1 (all cells its heads depend on), and ask which next block can follow. Over 37 steps neither block was ever
+free: one block 35 times, dead ends twice. The prefix's light cone already decides the next block. Freezing only a
+fraction f of the cone, both blocks remain possible at 70%, 64%, 55%, 30% and 4.5% of steps for f = 0.1, 0.2, 0.3,
+0.4, 0.6. The deciding cells lie around 0.3 to 0.4 of the light cone, the same order as the left damage speed (0.24),
+with a gradual change. Even at f = 0.1, a third of the steps force A from the chosen window. So no block-by-block
+construction can work. A proof must place each block's control cells deep inside the cones of earlier blocks, and
+must manage their interference. That is the same kind of obstruction as the 4→7 passage.

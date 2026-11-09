@@ -1,0 +1,14 @@
+2294231 eight-block windows; per-block B frequency 0.1633; distinct words seen 249 of 256
+least over-represented ten (observed/expected, word, observed, expected):
+   0.0000  ABABABAB  0  800
+   0.0000  BAABABAB  0  800
+   0.0000  BABABABA  0  800
+   0.0000  BABABABB  0  156
+   0.0000  BABABBAB  0  156
+   0.0000  BABBABAB  0  156
+   0.0000  BBABABAB  0  156
+   0.0007  BAAABABA  3  4097
+   0.0013  BBABAAAB  1  800
+   0.0025  BABAABAB  2  800
+most over-represented three: [(1029.38, 'BBBBBBBA', 6120), (2465.98, 'ABBBBBBB', 14661), (7182.97, 'BBBBBBBB', 8335)]
+seed-5 misses: {'BAABABAB': (0, 800), 'BABAABAB': (2, 800), 'BABABABB': (0, 156), 'BABABBAB': (0, 156)}

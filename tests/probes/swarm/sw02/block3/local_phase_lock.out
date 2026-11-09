@@ -1,0 +1,16 @@
+offsets of 3s mod  2: 0:0.519, 1:0.481
+offsets of 3s mod  4: 0:0.261, 1:0.241, 2:0.258, 3:0.241
+offsets of 3s mod  8: 0:0.133, 1:0.120, 2:0.130, 3:0.120, 4:0.128, 5:0.121, 6:0.127, 7:0.120
+offsets of 3s mod 16: 0:0.070, 1:0.060, 2:0.067, 3:0.060, 4:0.065, 5:0.060, 6:0.064, 7:0.060, 8:0.063, 9:0.060, 10:0.063, 11:0.060, 12:0.063, 13:0.061, 14:0.063, 15:0.060
+   {3,5} run sequences of length  1:     2 of     2; missing e.g. []
+   {3,5} run sequences of length  2:     4 of     4; missing e.g. []
+   {3,5} run sequences of length  3:     8 of     8; missing e.g. []
+   {3,5} run sequences of length  4:    16 of    16; missing e.g. []
+   {3,5} run sequences of length  5:    31 of    32; missing e.g. [(5, 5, 5, 5, 5)]
+   {3,5} run sequences of length  6:    58 of    64; missing e.g. [(3, 5, 5, 5, 5, 5), (5, 5, 3, 5, 5, 5), (5, 5, 5, 3, 5, 5)]
+   {3,5} run sequences of length  7:   104 of   128; missing e.g. [(3, 3, 5, 5, 5, 5, 5), (3, 5, 3, 5, 5, 5, 5), (3, 5, 5, 3, 5, 5, 5)]
+   {3,5} run sequences of length  8:   181 of   256; missing e.g. [(3, 3, 3, 5, 5, 5, 5, 5), (3, 3, 5, 3, 5, 5, 5, 5), (3, 3, 5, 5, 3, 5, 5, 5)]
+   {3,5} run sequences of length  9:   303 of   512; missing e.g. [(3, 3, 3, 3, 5, 5, 5, 5, 5), (3, 3, 3, 5, 3, 5, 5, 5, 5), (3, 3, 3, 5, 5, 3, 5, 5, 5)]
+   {3,5} run sequences of length 10:   480 of  1024; missing e.g. [(3, 3, 3, 3, 3, 3, 5, 5, 5, 5), (3, 3, 3, 3, 3, 5, 5, 3, 5, 3), (3, 3, 3, 3, 3, 5, 5, 5, 5, 5)]
+   {3,5} run sequences of length 11:   670 of  2048; missing e.g. [(3, 3, 3, 3, 3, 3, 3, 5, 5, 5, 5), (3, 3, 3, 3, 3, 3, 5, 5, 3, 5, 3), (3, 3, 3, 3, 3, 3, 5, 5, 5, 5, 3)]
+   {3,5} run sequences of length 12:   858 of  4096; missing e.g. [(3, 3, 3, 3, 3, 3, 3, 3, 5, 5, 5, 5), (3, 3, 3, 3, 3, 3, 3, 5, 3, 5, 5, 5), (3, 3, 3, 3, 3, 3, 3, 5, 5, 3, 5, 3)]
