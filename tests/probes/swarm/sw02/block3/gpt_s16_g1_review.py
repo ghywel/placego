@@ -43,5 +43,6 @@ assert check(avoid(strings))[1] == []
 m = "355535355535353"
 toy = check(avoid(strings | {m}))[1]
 assert toy == [m], toy
+assert check(avoid({"3"}))[1] == ["3"]
 print(json.dumps({"saved_checks":rows,"synthetic_witness":toy}), flush=True)
 print("S16_G1_REVIEW_PASS", flush=True)

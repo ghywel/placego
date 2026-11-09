@@ -159,12 +159,15 @@ def g1_product(tr):
     def exempt_prefix(v):
         return v if any(f[:len(v)] == v for f in F) else None
 
-    start = []
+    start = []; bad = []
     for x in (3, 5):
         p = tr[0, col[x]]
         if p >= 0:
             start.append(((int(p), 0, monitor(m0, x), exempt_prefix((x,))), (x,)))
-    seen = {s for s, _ in start}; todo = deque(start); bad = []
+        elif (x,) not in F:
+            # A future width could lose a whole one-letter word; do not skip it.
+            bad.append(str(x))
+    seen = {s for s, _ in start}; todo = deque(start)
     while todo:
         (p, s, m, fp), w = todo.popleft()
         for y in (3, 5):
@@ -174,6 +177,7 @@ def g1_product(tr):
                 if s2 >= 0 and not m2[0] and fp2 not in F:
                     bad.append(''.join(map(str, w2)))
                 continue
+            assert s2 >= 0, "product requires a factorial language"
             if m2[0]:
                 continue
             st = (int(p2), int(s2), m2, fp2)
