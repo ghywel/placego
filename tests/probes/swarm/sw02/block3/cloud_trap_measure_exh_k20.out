@@ -1,0 +1,32 @@
+  chunk [1,65537) done 60s
+  chunk [65537,131073) done 115s
+  chunk [131073,196609) done 170s
+  chunk [196609,262145) done 221s
+  chunk [262145,327681) done 272s
+  chunk [327681,393217) done 324s
+  chunk [393217,458753) done 377s
+  chunk [458753,524289) done 430s
+  chunk [524289,589825) done 483s
+  chunk [589825,655361) done 533s
+  chunk [655361,720897) done 583s
+  chunk [720897,786433) done 633s
+  chunk [786433,851969) done 683s
+  chunk [851969,917505) done 733s
+  chunk [917505,983041) done 782s
+  chunk [983041,1048576) done 824s
+rows 1048575, with E 77508, E launches 77642, launches from inside the trap 0, entries during an E 76760, never in trap by horizon 38753, permanence violations 0, start0=False
+entry histogram (tick bin: rows entering): {0: 934288, 200: 31778, 400: 18246, 600: 10733, 800: 6571, 1000: 3540, 1200: 2160, 1400: 1236, 1600: 844, 1800: 416, 2000: 10}
+E launch histogram: {0: 52191, 200: 10501, 400: 6321, 600: 3527, 800: 2294, 1000: 1262, 1200: 686, 1400: 452, 1600: 306, 1800: 102}
+bin | at-risk row-samples | launches | launches per untrapped row per tick
+    0 |     28719980 |  52191 | 9.086e-04
+  200 |      9659462 |  10501 | 5.436e-04
+  400 |      7237651 |   6321 | 4.367e-04
+  600 |      5832429 |   3527 | 3.024e-04
+  800 |      4995527 |   2294 | 2.296e-04
+ 1000 |      4508010 |   1262 | 1.400e-04
+ 1200 |      4219028 |    686 | 8.130e-05
+ 1400 |      4058729 |    452 | 5.568e-05
+ 1600 |      3960072 |    306 | 3.864e-05
+ 1800 |      3894380 |    102 | 1.310e-05
+ 2000 |        38753 |      0 | 0.000e+00
+done; wall 824.0s
