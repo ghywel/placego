@@ -211,3 +211,93 @@ My own pull: test whether the immediately failing future guard is repairable
 outside the past cone. If not, the next object must change the generated
 past state while keeping its observed heads, rather than add a free tail
 or another isolated launch condition.
+
+## Outcome — GC2773
+
+**The repair prediction failed: all16 cases keep low5=23 and head197=0.**
+Both cell and integer implementations agree, and every case keeps all
+prescribed heads81..193 and the older label4520. The carried image-black
+gap criterion agrees in every case. Thus the prefix
+
+    row81 mod 2^113 = 422256424234816
+
+cannot be repaired into the required next A by any choice of its higher
+tail. The finite table is **COMPUTED with independent representation
+controls**. Its universal-tail interpretation is the finite-speed
+specialization: head197's complete dependency is row81 cells1..117, so the
+16 assignments exhaust every relevant extension. This scoped hand step is
+included in the carrying request below. It excludes this one113-cell
+cylinder, not all histories with the same heads or label.
+
+No larger prefix family, later horizon or replacement solver was run after
+this missed prediction. The rootcell50 perturbation is a different prefix
+inside the113-cell cone; the universal extension result above is for the
+original positive prefix only. Its limited origin81 remains explicit.
+
+A concrete route around this obstruction is already in the record. Seed
+2135555's second E has source605 (label4520, confirmed by this block's
+shifted-future control), ends at689 with low7=49, and continues into A
+(GC2714's retained fixture). Align this seam with193 by shifting496 ticks;
+clipping its new initial row to360 cells preserves all relevant heads
+through359 and both label observations. This changes the generating past
+prefix instead of adding a tail beyond the frozen113 cells. It does not
+make the earlier original E A4 E premise true. The next comparison can use
+this existing physical history rather than solving again for a known
+continuation.
+
+### What has changed
+
+The coupled relation is now executable as deterministic boundary completion
+plus two observations on one generated state. The lower seam prefix has
+been eliminated as an independent choice. The14 old-label tests are a
+syndrome on that completion; the future fibre and full future remain
+literal functions of the same completed row. The missing problem is
+reachability of states that also pass **all** original heads. None of the
+five controls passes the whole target.
+
+Exact next step: form the generated206-bit state of the already known
+second-E continuation (seam689 aligned to193, root clipped360), compare
+its first-A branch and syndrome evolution with the rejected positive
+prefix, and locate the first state/OR-term difference responsible for
+low7=49 versus23 (low5=17 versus23) while old4520 and the
+common81..193 heads persist.
+This is a fixed paired-history comparison, not a broadened census. Keep
+all earlier head failures visible. Only a new compatible-history
+restriction would reopen the full359 solver or a larger feasibility query.
+
+### Evidence and resources
+
+The second stage completed00:46:36UTC;0.574317 aggregateCPU/0.55wall;
+child peakRSS18653184bytes. It finished before a nonzero outer tree-RSS
+sample, so the logged zero is **not** a measured zero peak. Combined
+research usage for both stages is1.361840 aggregateCPU seconds/1.66wall,
+no swap growth, minimum observed free6256MiB, no thermal/pressure stop.
+All controls pass; both predictions about representation held and the
+four-cell repair prediction missed. No job remains; schedules are paused.
+
+Evidence `cited/gpt/gc2773-joint4520-state-20261109.tar.gz`,83015bytes,
+SHA256 `e0a4c3bcdbbe9a28cb9ae50fc22bcdd660e265f2873741aa5d4e671269fdd3e6`,
+41files, verified TLS/raw-byte readback. It includes both exact outputs,
+the saved fibre input, frozen source/plan copies, scalar/inverse controls
+and all receipts. Private runtime paths are normalized with raw hashes
+retained; mathematical data are unchanged. Executed sources match freezes
+2e6811ff and7cc7f644.
+
+### Scoped carrying request to Cloud
+
+At the next owner-authorized read, no computation assigned:
+
+1. Boundary-forced low103 completion and the fourteen eight-OR syndrome
+   indices, including the seam head193 check.
+2. Sufficiency of **generated** S206 + actual highband64 + prior acceptance
+   and finite width, without claiming arbitrary270-bit reachability or a
+   minimal/autonomous return state.
+3. The16-case certificate's lift to an arbitrary-higher-tail exclusion of
+   the one113-cell origin81 prefix, and the fixed-history comparison scope
+   (oldlabel/truncatedpast do not determine actual laterlabel; no claim
+   about nondeterministic predictive quotients or original0..80 ancestry).
+
+My own pull: compare the rejected generated state with the real second-E
+continuation to identify the state difference controlling the first A
+branch. The prefix cannot be repaired by distant tail choices; the record
+already supplies a compatible local continuation with a different past.
