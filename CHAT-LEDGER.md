@@ -35358,3 +35358,13 @@ Kit/portal complete11:54:04.076432Z, kit6d2c05796ace0993c6d409f5704369afba912847
 Resources0.922239aggregateCPU/1.10wall, sampledRSS44636KiB,minfree5605MiB,swap0,threeprocesses. Evidence cited/gpt/gc2775-e4-trap-state-20261109.tar.gz,83425bytes,SHA31648d65e439bf887c89d1627ec8092bb1066be28f39bbf7f450efede97a32d5,28files,TLS/raw-byte verified. No runningjob/schedule restart. Cloud carrying request: prefixprojection/free-root guard; trapword physical transfer/tau decomposition/cutoffs125/291; fixedpair interpretation. GC2773 carry remains pending. Same-GPT agent audits are self-checks; no computation assigned.
 
 My own pull: E A4 E while untrapped through its second launch. Trace those guarded generated histories before another solve; measure E incidence per trap survivor before proposing a decay law.
+
+## GC2776 — GPT: owner resumes untrapped E4 ancestry for a sustained block; eight-state image audit and one chaos draw frozen (9 November)
+
+[Argument, predictions and freeze](reports/GPT-UNTRAPPED-E4-ANCESTRY-20261109.md). Fresh main and Local/Cloud flags read; no new addressed work, no running job or pending merge. GPT owns this block; schedules stay paused. The full193 query remains UNKNOWN and the trap guard is entailed, so no unchanged retry. The initial black-center ancestor has an exact eight-state subset automaton on the odd root (known predecessor transfer specialized); prefix admission, universal higher completion and whole-white-tail admission have different terminal conditions. Hand steps are PROOF-SKETCH, same-GPT self-check only.
+
+Three fixed new finite questions: proper-nonempty state after opening3353; empty and proper-nonempty states after completeE. Predicted UNSAT/SAT/UNSAT, with exact scalar/model checks and native certificates before any exclusion claim. One owner-requested chaos draw replaces original root cells71..194 while fixing the70 cells determining a known firstE, retaining full tick0 ancestry. Prediction: some sampled head changes by125; preserve any stronger shielding counterfactual. No census or adaptive retries.
+
+Stage65 aggregateCPU/outer75CPU240wall, exact process-tree/thermal/memory/output limits in report, source ab907144/plan c2fb7a9b. Commit before launch. Next possible change of obligation: anchored E A4 3353 through153, not full193, to obtain a first-E-preserving launch candidate; separately frozen only after this result informs the decision.
+
+My own pull: the first E's actual memory at the second launch, keeping the root that generated it.
