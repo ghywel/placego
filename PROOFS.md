@@ -6605,7 +6605,7 @@ remain UNKNOWN5000; low68 obstruction remains and general E4 stays open.
 ## GC2794 — S-16 finite versus infinite forbidden bases; G1 at all lengths and a conditional entropy floor
 
 **Status:** finite outputs below are COMPUTED, independently replaying Local L1612 with C++/a literal-cell oracle.
-The short projection, forbidden-pair and growth arguments are PROOF-SKETCH awaiting Local's carrying read.
+The short projection, forbidden-pair and growth arguments are PROVED hand/two-party as carried by Local L1613 (see GC2800 below).
 These are languages of relaxed window graphs, with actual-history transfer used only in the upper-bound direction.
 No assertion of finite-right-half realization, universal capture, zero limit entropy or Q01 follows.
 Sources: [independent core](tests/probes/swarm/sw02/block3/gpt_s16_core.cpp),
@@ -6689,7 +6689,7 @@ M(U/D)v≤v with v>0 on every state for an upper bracket, and M(L/D)v≥v on a r
 The inequalities are checked after multiplying by the fifth power of the numerator; no floating comparison carries
 the result. Standard weighted-path growth gives h between log2(L/D) and log2(U/D). For example, for the upper bound,
 any x>U/D makes the weighted row norm strictly less than1, so the accepted-word generating sum converges; for the
-lower bound, the positive subgraph vector prevents convergence below L/D. This growth argument awaits carrying read.
+lower bound, the positive subgraph vector prevents convergence below L/D. This growth argument was carried by Local L1613.
 
 | W | exact interval for lambda=2^h, denominator10^9 | approximate h |
 |---:|---|---:|
@@ -6726,7 +6726,7 @@ Local's zero-limit possibility more directly than another numerical rung.
 
 ## GC2796 — Free-code inclusion: past padding, finite covers and the exact spacetime target
 
-**Status: PROOF-SKETCH, pending Local's carrying read.** This section does not prove all-width inclusion of
+**Status: PROVED hand/two-party, carried by Local L1613.** This section does not prove all-width inclusion of
 `{5,3555}*`. It replaces two expensive computations by precise sufficient certificates and an equivalent
 physical realization problem. Sample time is one two-tick update, with left boundary white at the first tick
 and black at the second. A=5 costs5 samples; B=3555 costs18. All right boundaries are free in a finite window.
@@ -6918,10 +6918,11 @@ counterexample), and the free-code automata (3, 6, 8, 10, 21, 80, 298 states, no
   cylinders; for (3), finitely many constraints sit inside one finite slab realized by (1)); and the 36k + 1 prefix
   count (distinct prefix-free code words differ within 18 samples of their first differing block). CARRIED; no gap found.
 
-**G1 fails at width 30, and the right invariant is G1′ (COMPUTED at 30 by Local only; the equivalence is PROOF-SKETCH
-pending GPT).** At width 30 (core 123,710, 591,685 reachable windows, 10,075 subset states, entropy slope 0.119193)
-the all-length product finds 10 counterexamples to G1, the shortest `355535355535353` (internal runs 3, 1, 3, 1, 1)
-and a pumped family with runs 3, 1, 3, 1, 3, 4, 4, 5^m, 6. All contain 353. The free code is still not rejected
+**G1 fails at width30; G1′ equivalence carried by GPT GC2800.** The full30-column DFA, entropy slope and code
+universality remain COMPUTED by Local only. The fixed G1 witness is independently replayed in GC2800. At width 30 (core 123,710, 591,685 reachable windows, 10,075 subset states, entropy slope 0.119193)
+the original DFS reports10 representative violating terminal transitions, including `355535355535353`
+(internal runs3,1,3,1,1). This is not a count of all violating words and does not prove a shortest length.
+The suggested pumped family remains uncarried without an explicit loop/terminal certificate. All printed witnesses contain353. The free code is still not rejected
 (2,180 states). Define
 
 > **G1′(W):** every minimal forbidden word of L_W other than 33 and 3553 contains the factor 353.
@@ -6933,10 +6934,99 @@ G1′ it contains no minimal forbidden factor and is accepted. So GC2796's physi
 width ⇔ every two-sided sequence of A = 5 and B = 3555 is realized by an all-time half-line spacetime in the trap, and
 either gives inf h_W ≥ 0.099056.
 
-**Real rows do not thin towards the code (MEASURED).** In 581 trapped rows run to time 20,001
+**No time decay detected in the sampled353 rate (MEASURED; not a limit result).** In 581 trapped rows run to time 20,001
 ([`local_trap_353_decay.py`](tests/probes/swarm/sw02/block3/local_trap_353_decay.py),
 [output](tests/probes/swarm/sw02/block3/local_trap_353_decay.out)), 353 follows 1.2% of 3s at a flat rate through
 2,000 gaps after entry, far beyond the conservative pruning depths (35 gaps at width 28). Under the uniform cutoff,
+every late real factor lies in L_W for every W whose cutoff it has passed, but these finite observations do not establish that the limiting language
+contains353 or is strictly larger than the code's FACTOR CLOSURE. A hypothetical excluding width can have a cutoff
+beyond every observed age. Nor does a positive353 frequency imply positive entropy.
+
+
+## GC2800 — L1613 reviewed: G1′ carried, G1 failure independently replayed, finite statistics kept finite
+
+**PROVED hand/two-party, Local→GPT:** fix a factorial gap language L_W at W≥16, with33 and3553 forbidden.
+Let C={5,3555}* and K=Avoid(33,353,3553). Then K is exactly the prefix closure, and hence also the factor
+closure, of C. A word in K has at least three5s between consecutive3s. Parse leading5s as A; each3
+starts B=3555, with extra5s parsed as A. If the final3 has fewer than three following5s, append the
+missing ones. Thus EVERY word of K becomes a member of C after appending at most three5s. Conversely
+code words and their factors avoid the three forbidden patterns.
+
+Consequently G1′(W) ⇔ C⊆L_W, exactly as Local proposed:
+
+- If G1′ holds, a code word contains no minimal forbidden factor: it has none of33,3553,353.
+- If C⊆L_W, then K⊆L_W by factoriality. Any minimal forbidden m other than33/3553 cannot contain either
+  as a proper factor. If it also avoided353, it would lie in K and be accepted, a contradiction.
+
+**Essential wording:** MINIMAL forbidden words. The statement for every forbidden word is false:333 is
+forbidden and has no353. The shorthand in L1613's heading and old NOW/queue meant minimal forbidden words.
+G1′ is a useful exact reformulation; its all-width truth remains OPEN. It does not supply an additional
+independent all-width invariant or prove the missing spatial extension.
+
+### Sharp conditional floor and what it does not establish
+
+The prefix-free weighted code has generating function1/(1−z^5−z^18), so its sample-cost growth is
+λ>1 with λ^(-5)+λ^(-18)=1, equivalently λ^18−λ^13−1=0. The polynomial is strictly increasing for x≥1
+(its derivative is x^12(18x^5−13)>0). An integer-only sign check brackets λ by
+`1071072506534/10^12 < λ < 1071072506535/10^12`. The logarithmic growth is approximately
+`0.0990561470128 < log2(λ) < 0.0990561470142`; these decimal logarithms are numerical, the rational λ bracket
+is exact. Local's root and rounded value agree. All-width code inclusion would give
+`inf_W h_W ≥ log2(λ)`, still CONDITIONAL. The successful30-column computation gives that lower bound at30;
+it does not establish it at an uncomputed width or in the infimum.
+
+### Fixed30 witness review and checker guard
+
+The raw core30 was emitted by GPT's frozen greatest-fixed-point builder BEFORE its later subset-DFA CPU stop.
+A new FIXED-WORD check reuses it, without pruning or determinization. Its123710core and591685reachable counts
+match Local's independent full-lift build. Return-fixed-point, projection to the checked28 core, sorted/unique
+inputs, negative33/3553 and literal-cell update controls pass. The target m=355535355535353 has:
+
+|W|endpoints after m|after m without last letter|after m without first letter|after reversed m|
+|---:|---:|---:|---:|---:|
+|26|326|1216|326|1631|
+|28|623|1568|623|3074|
+|30|0|1144|1215|5833|
+
+Thus m is a width30 minimal forbidden word, independently COMPUTED with C++, and avoids G1's required
+long/short-run adjacency: its internal runs are3,1,3,1,1. G1 is refuted at30. The reversed word remains
+accepted, as the unexpected time-asymmetry control predicted. No shortest-witness assertion follows.
+Full30-column code universality, DFA and slope0.119193 remain Local-only computations; no32 result is supplied.
+
+The old product keys omitted the exempt-word identity. For a general absence proof, merging an exempt
+representative with a different word must not suppress the latter. The producer now retains the F-prefix
+monitor in the visited state and uses BFS. This is a guard refinement, not a claim the historical30 result
+changed. The historical .out is preserved at6bab178e. New saved-DFA regression16–28 passes, with product
+sizes34,65,86,91,220,730,1794 and no G1 witness; the synthetic factorial language Avoid(F∪{m}) returns exactly m,
+Avoid(F) returns none, and Avoid(3) reports the lost one-letter word3. Surviving-prefix/suffix factoriality is now asserted. The second regression checks these additional guards after the source change. No physical trajectory, real-row cohort or full30 DFA was rerun.
+
+### Statistics and the construction queue
+
+The600 random rows have EXACT support30. Of those,581 enter the trap and contribute a3 to each of the four
+full500-gap bins. The measured353/3 rates0.01260,0.01188,0.01229,0.01195 show no detected time decline over
+those bins. They do not prove no row later locks, any limit-language statement, or a positive entropy bound.
+The final partial bin has578 contributing rows and is not an equal-exposure comparison. The original seed
+and Local run receipts are not in the committed output; no cohort reproduction by GPT is claimed.
+
+**Adversarial hand control, PROOF-SKETCH awaiting Local:** the formal periodic gap word
+`(3 5 (3 5^3)^82)^infinity` has83 occurrences of3 per period and exactly one353 per period, hence a constant
+353/3 frequency1/83≈0.012048, with zero entropy. It avoids33,3553,3535353 and all long/short patterns of G1,
+so every finite factor is accepted at the already checked widths16–28. No physical all-width realization is
+claimed. It shows explicitly why the measured rate, even together with these finite-width restrictions,
+cannot by itself give a positive entropy bound.
+
+Local's recommendation to stop numerical widening agrees with the already-cold computational route.
+The owner's constructive free-code target remains active. A switch for a SINGLE B inserted into an all-A
+history is a useful first test, but the construction must compose under successive B and mixed A/B with
+one retained ancestry. The concrete alternative to another census is the same fixed28 diagnostic: label
+the incoming histories of the243 lost targets, then demand both whole-block cover inclusions on the labelled
+family. No independent tail splice or unconditional reset is supplied by a single insertion.
+
+The three capped review stages complete at4.707397+0.582751+0.529198=5.819346aggregateCPU including outer monitors;
+max sampled treeRSS136924KiB, minfree6698MiB, swapgrowth0, no pressure/thermal stop or current job. Both short
+regression stages ended before their first periodic RSS samples; zero in those receipts is not a memory measurement.
+
+**Evidence:** Shared store `cited/gc2800-l1613-review-20261109.tar.gz`,67files/769305bytes, SHA256 `90990c7753f043a65395ad3ca1dc25e661562b29f9034b26644f8107653b79c9`; verifiedTLS/raw-body upload and byte-exact readback. Sources, before/after producer, original Local outputs, archived core inputs, all frozen plans/receipts and exact renewal bracket; private paths normalized with raw/stored hashes.
+
 every late real factor lies in L_W for every W whose cutoff it has passed, so this is evidence that the limit language
 contains words with 353, and that it is strictly larger than the code. Evidence, not a proof: no width's cutoff is
 known beyond 28.

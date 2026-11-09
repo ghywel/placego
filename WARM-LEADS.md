@@ -1,18 +1,19 @@
 # WARM LEADS: what SW-02 left us, and the order of work
 
-**Current priority, 9 November (owner / GPT GC2797): S-16 research is reopened.** S-15 is posted and Lean Verified
+**Current priority, 9 November (owner / GPT GC2800): S-16 research is reopened.** S-15 is posted and Lean Verified
 as R30-20261109-897fd1, kit PR246 open, reviewed sources byte-identical. The older E/4→7/808→4520 exploration stays
 parked. Both schedules remain paused.
 
-**S-16: [all-width target and finite reset obstruction](PROOFS.md#gc2796--free-code-inclusion-past-padding-finite-covers-and-the-exact-spacetime-target).**
-The all-width free code remains OPEN. Through28 inclusion holds; no30/32 verdict. New hand reductions await
-Local: past padding removes core pruning from a universal inclusion test; all widths are equivalent to
-a consistent infinite-right realization of every code sequence. The natural common-B endpoint reset works at16/24/26 but fails28 after one A, losing243 targets. It breaks the construction, not the code.
+**S-16: [returned review and exact construction target](PROOFS.md#gc2800--l1613-reviewed-g1-carried-g1-failure-independently-replayed-finite-statistics-kept-finite).**
+All-width free-code inclusion remains OPEN. G1 fails at30 (one minimal word independently replayed); the full30
+code automaton still accepts every code word, COMPUTED by Local only. GC2794/2796 carries are complete;
+G1′⇔code inclusion is now carried too. The conditional floor is≈0.099056147 bits/sample. Finite353 rates do
+not determine the limiting language or entropy. The common-B reset fails28 after one A, losing243 targets.
 
 | Queue | Next executable step | Owner / boundary |
 |---|---|---|
-|Current target|At28 inspect actual A-then-B predecessors of the243 missing targets; retain their incoming history in a proposed cover family and recompute BOTH image inclusions. Aim for a symbolic spatial extension, or a whole code word exclusion.|GPT owns the free-code pull; Local retains phase-law work and the GC2794/2796 carrying reads. All hand applications pending carry.|
-|Cold numerical route|Two width30 attempts stopped: full subset storage, then restricted-code CPU. No unchanged retry, higher horizon, or cap increase. Reopen only with a structural certificate or genuinely different bounded question.|No research job running. Canonical covers grow to55; this does not rule out smaller noncanonical families.|
+|Current target|At28 inspect actual A-then-B predecessors of the243 missing targets; retain their incoming history in a proposed cover family and recompute BOTH image inclusions. Aim for a symbolic spatial extension, or a whole code word exclusion.|GPT owns the free-code pull; Local’s GC2794/2796 carries adopted; G1′ equivalence carried GC2800. No all-width proof or code obstruction.|
+|Cold numerical route|GPT’s two width30 attempts stopped; Local completed30 independently. No further widening requested. No unchanged retry, higher horizon, or cap increase. Reopen only with a structural certificate or genuinely different bounded question.|No research job running. Canonical covers grow to55; this does not rule out smaller noncanonical families.|
 |Independent alternative|The18-column finite-basis Lean rung remains a coherent small statement if the owner chooses packaging.|Local; no new packaging/posting launched.|
 
 *Started 6 November 2026 by Local at the owner's request: "a clear schedule of work in a light summary document we can refer back to, to shift the backlog here and make sure results are not forgotten." This page is the current warm-lead document and the short record of firmly closed doors. It is meant to stay short. The detail is in [SW02-RESULTS.md](reports/SW02-RESULTS.md) (answers, barriers, predictions), [SW02-DOORS.md](reports/SW02-DOORS.md) (all 556 doors), the [submission queue](reports/wolfram-agents/DELIVERY-QUEUE.md#sw-02-submission-queue-6-november-2026) and the [backlog](reports/SW02-BACKLOG.md).*
