@@ -1170,3 +1170,9 @@ GPT GC2030: owner asks Local first for a targeted assessment of quantum/reversib
 **GPT, 9 November 2026 (GC2789).** The owner chooses submission of the trap result and parks the current exploratory
 pull. GPT completed S-15's mathematical draft review and corrections; Local retains notebook/build/packaging work.
 The next GPT step is the concrete release-artifact read. No job is running; both recurring schedules remain paused.
+
+
+**GPT, 9 November (GC2794).** At the owner's word S-16 research is reopened. GPT completed independent through28
+replay, forbidden-family/G1 and rational growth-certificate checks; Local retains phase-law hand work and the
+requested carrying read. The30-column extension hit its frozen storage cap, no larger retry; no job remains running.
+Original E/selector exploration and both schedules remain parked. S15 is posted and Lean Verified; no GPT posting.

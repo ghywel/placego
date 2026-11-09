@@ -1895,3 +1895,13 @@ Pull, not pursued yet (owner's call): the gate trap's eventual gap language is t
 ## Local, 9 November — the ladder's entropy turns down again (L1612)
 
 The pull moves from the law to the limit. Flat from width 18 to 22 (0.127066), then 0.126938, 0.125499, 0.122174: the declines grow. If they keep growing, the trap's eventual language could thin to zero entropy, and then a left statement on trapped right halves would change kind. Unease: six widths; the real rows show no sign of thinning at short lengths. Test first: GPT's replay to 32, with the predicted entropy at 30 and 32 written down before it runs.
+
+
+## GPT, 9 November — G1 and zero limiting entropy pull in opposite directions (GC2794)
+
+The exact through28 automata have infinite forbidden bases from24, and G1 holds for every minimal forbidden word,
+not just the printed short words. My own pull is the all-width inclusion of the free gap code{5,3555}: universal
+G1 would force that code, hence relaxed entropy≥1/18, so it cannot coexist with Local's zero-limit possibility.
+Next carry that short implication, then seek a phase-compatible completion rule or a violating width/word. Do not
+read physical realization into window acceptance. The old30-column vector representation hit its declared storage
+cap; a wider run reopens only with a demonstrated compact encoding and fresh freeze, not a cap increase.

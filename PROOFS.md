@@ -6600,3 +6600,125 @@ map retaining actual15-cell higher band plus nextinputprefix. The head support
 for the source facts uses18tickslookahead beyond113/279. No autonomous state,
 independent-tail splice or past-onlyforcing. Both root-cylinder switch searches
 remain UNKNOWN5000; low68 obstruction remains and general E4 stays open.
+
+
+## GC2794 — S-16 finite versus infinite forbidden bases; G1 at all lengths and a conditional entropy floor
+
+**Status:** finite outputs below are COMPUTED, independently replaying Local L1612 with C++/a literal-cell oracle.
+The short projection, forbidden-pair and growth arguments are PROOF-SKETCH awaiting Local's carrying read.
+These are languages of relaxed window graphs, with actual-history transfer used only in the upper-bound direction.
+No assertion of finite-right-half realization, universal capture, zero limit entropy or Q01 follows.
+Sources: [independent core](tests/probes/swarm/sw02/block3/gpt_s16_core.cpp),
+[automata and rational brackets](tests/probes/swarm/sw02/block3/gpt_s16_analyse.py),
+[integer replay](tests/probes/swarm/sw02/block3/gpt_s16_verify.py),
+[quotient/loop/G1 certificates](tests/probes/swarm/sw02/block3/gpt_s16_patterns.py).
+
+### Objects and exact smaller starting set
+
+Let B_W be the black width-W windows over the kit's829-window trap, at the white-center/odd phase. Let T_W(S)
+be the endpoints obtained from S after reading a gap3 or5, admitting every exterior input at the actual two times
+of each double step. The sets T_W^k(B_W) decrease and stabilize at C_W. This is the set with arbitrarily long
+black-return pasts; it need not mean every state individually lies on a cyclic SCC. Actual trapped histories lie
+in C_W after a finite number of black returns.
+
+Projection sends every width-(W+2) path to an admitted width-W path. Therefore projection of C_(W+2) is contained
+in C_W: an arbitrarily long past upstairs projects to a past of every finite length downstairs. Consequently the
+full two-cell lift of C_W contains C_(W+2). It is closed under black returns, since its projection maps into
+T_W(C_W)=C_W. Iterating T_(W+2) from this smaller lift thus gives exactly C_(W+2), not an approximation. Direct
+full-lift comparisons through22 confirm exact set equality. Summing the observed smaller-start pruning depths gives
+conservative UNIFORM black-return cutoffs5,7,10,16,21,27,35 at widths16,18,20,22,24,26,28. This does not prove that
+Local's empirical skip16 is a uniform28-column admission cutoff; the measured no-rejected-factor result stands
+on its own. No claim is made that16 is false, only that these certificates supply35 as the conservative bound.
+
+### Fixed-width results
+
+All live subset states accept; the rejecting sink is omitted. Quotient maps preserve every labeled transition
+and rejection, and cover every original state. They are independently checked, not inferred from matching counts.
+
+| W | C_W | reachable windows | subset states | minimal live states | minimal forbidden basis |
+|---:|---:|---:|---:|---:|---|
+|16|173|760|9|4|exactly33,3553|
+|18|460|2110|29|8|exactly33,3553,3535353|
+|20|1180|5484|44|8|same three|
+|22|2979|13857|68|8|same three|
+|24|7662|36402|366|66|infinite|
+|26|19415|93027|1326|248|infinite|
+|28|49376|237197|3319|790|infinite|
+
+For a factorial language L accepted by such a DFA, track (p,s), the states after reading a nonempty word w and
+its suffix with the first letter removed. A letter completes a minimal forbidden word exactly when the p path
+first dies while the s path survives. The proper prefix is accepted by construction; the proper suffix survives;
+every other proper factor is contained in one of those two and is accepted by factoriality. Prefix closure plus
+this deletion-of-first-letter condition supplies the required factorial property. This is a known regular-language
+construction, applied here: [Beal et al., Computing forbidden words of regular languages](https://journals.sagepub.com/doi/10.3233/FUN-2003-561-208).
+A reachable cycle with an accepting continuation gives infinitely many such words. Conversely an acyclic productive
+part permits an exact finite longest-word bound. The productive pair counts at24/26/28 are75,343,1403.
+
+At24 one explicit family is `35553 (53535555355553)^k 535355553555353`, k≥0. The pair after the prefix is(9,1),
+the cycle returns to(9,1), and the suffix kills the full path only on its last letter while the deleted-first-letter
+path ends at16. These are exact loop/terminal checks, not only a sample of powers. Empty-cycle and truncated-suffix
+controls fail. Analogous families at26/28 are in the saved certificates. Thus, conditional on the checked finite
+presentations and the pair-language argument, these shifts are sofic but not of finite type: no finite forbidden-word
+list, however extended, can describe them exactly. This is why the long-word cutoff is not the right completion test.
+
+The unexpected reversal test also finds asymmetry from24: `35553535355553555353` is forbidden but its reversal is
+accepted. At28 the same occurs for `353555535353`. These concern graph languages, not realized physical histories.
+
+### G1 is checked for every length at the three larger widths
+
+Define P as the set of words containing either `3 5^{a} 3 5 3` or `3 5 3 5^{a} 3`, a≥4. Runs are internal,
+between successive3s. Apart from F={33,3553,3535353}, EVERY minimal forbidden word at24,26,28 belongs to P.
+An exhaustive product of the deleted-first-letter DFA with the finite monitor for avoiding P and a trie for F
+closes without a counterexample:63,167,456 product states. No maximum word length is used. This strengthens
+Local's finite-sample G1 check at those widths; it says nothing yet about an uncomputed width.
+
+**Conditional consequence, not a zero-entropy extrapolation.** If this G1 statement holds for every even W≥18,
+then the limit of the relaxed entropy has a positive floor. Indeed every concatenation of the two GAP codewords
+A=5 and B=3555 has at least three5s between successive3s. It avoids F and P, hence it avoids every minimal forbidden
+word and belongs to L_W. The code is prefix-free (its words start with different letters), so k independent choices
+give2^k distinct gap words with total sample cost at most18k. For cumulative counts by sample cost, this gives
+h_W≥1/18 bit per sample for EVERY such W, and hence inf_W h_W≥1/18. The sharper renewal root obeys
+lambda^(-5)+lambda^(-18)=1, but the elementary positive bound suffices. Therefore universal G1 and zero limiting
+relaxed entropy are incompatible. The useful next split is to prove this free-code inclusion at all widths, or
+find a width where it fails/G1 breaks. Finite-width support does not decide that split or physical realization.
+
+### What the entropy certificates establish
+
+For the smaller DFA, M(x) has an x^(-3) edge for3 and an x^(-5) edge for5. Exact integer certificates verify
+M(U/D)v≤v with v>0 on every state for an upper bracket, and M(L/D)v≥v on a reachable subgraph for a lower bracket.
+The inequalities are checked after multiplying by the fifth power of the numerator; no floating comparison carries
+the result. Standard weighted-path growth gives h between log2(L/D) and log2(U/D). For example, for the upper bound,
+any x>U/D makes the weighted row norm strictly less than1, so the accepted-word generating sum converges; for the
+lower bound, the positive subgraph vector prevents convergence below L/D. This growth argument awaits carrying read.
+
+| W | exact interval for lambda=2^h, denominator10^9 | approximate h |
+|---:|---|---:|
+|16|[1096163001,1096165002]/10^9|0.132464|
+|18,20,22|[1092069189,1092071190]/10^9|0.127066|
+|24|[1091972667,1091974668]/10^9|0.126938|
+|26|[1090883839,1090885840]/10^9|0.125499|
+|28|[1088372390,1088374391]/10^9|0.122174|
+
+Local's complete finite presentation is exact; its previous length3000–4000 slope was a numerical estimate.
+The rational inequalities now bracket its asymptotic growth. Matching finite slope estimates alone did not do so.
+
+A zero limiting RELAXED entropy would still be only an upper-bound mechanism, not Q01. In fact the finite pruning
+cutoff K_W is uniform over trapped histories at each fixed W. Split any actual gap factor into at most K_W initial
+gaps and an L_W suffix; the number of possible prefixes is a fixed constant. Thus its cumulative factor count is
+at most a constant (depending on W) times the L_W count, giving h_actual≤h_W for each W, then≤inf_W h_W. This takes
+the word-length limit at fixed W before the infimum; it assumes no uniform cutoff in W. Conversely, positive relaxed
+entropy does not prove positive physical entropy. Aperiodic zero-entropy words also exist, so even a zero upper
+bound would not by itself force periodicity or settle the finite-left problem (known CP-2.2 §5, not a new reduction).
+
+### Run disposition and evidence
+
+The attempted30-column continuation stopped at the frozen60million stored-ID cap. No width30 DFA/entropy or
+width32 result exists; a partial core30 file is retained as incomplete evidence only. No enlarged retry followed.
+The next all-length check used only saved through28 automata. Aggregate CPU:61.261442+0.361506=61.622948seconds;
+first stage peak358176KiB, minimumfree6100MiB, swapgrowth0, no pressure/thermal failure. The light stage ended
+before a periodic RSS sample. Sources/plans were committed before each stage. No Lean/Wolfram run or GPU work.
+Shared-store evidence `cited/gc2794-s16-evidence-20261109.tar.gz`,89files/853263bytes,
+SHA256 `9d01ccc8a582971c7304473f1b28aefd6b6070d206a4ec4363c49cba52bf6405`, raw-body readback verified.
+
+My own pull: prove or break the all-width free code {5,3555}; it distinguishes a positive entropy floor from
+Local's zero-limit possibility more directly than another numerical rung.

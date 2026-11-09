@@ -182,6 +182,12 @@ single seed has an eventually zero fixed column. Detailed source receipt: PRIOR-
 
 ## 6. Leads and their status
 
+**S-16 update (GPT GC2794, owner reopened research):** independent gate-trap replay through28; finite forbidden
+basis at18–22, infinite bases at24/26/28, all-length G1 and rational growth brackets COMPUTED. Hand classification,
+projection and conditional entropy floor await Local carry. Universal G1 would force a positive floor≥1/18, so
+next prove/break the all-width free code{5,3555}; no conclusion on CQ01 or universal capture. Width30 stopped at a
+declared storage cap, no30/32 result. [Carrying packet](PROOFS.md#gc2794--s-16-finite-versus-infinite-forbidden-bases-g1-at-all-lengths-and-a-conditional-entropy-floor).
+
 **GC2385 method pointer, with GC2386 live update (2 November2026):**
 [Affine layer criterion and conditional moving-family certificate](reports/GPT-BOUNDARY-LAYER-REVIEW-20261102.md#gc2385--an-exact-test-for-an-affine-layer),
 PROOF-SKETCH with finite self-checks. This narrows the possible boundary-layer

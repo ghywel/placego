@@ -5671,3 +5671,16 @@ Known, reproved here: `Rule30FirstChecks.two_tick`, our submitted S-03 result, a
 ## GC2758 — Existing local rule and RUP methods, compact history instance
 
 The35-tick25253 pair guard reuses the known Rule30 local equation and the already checked GC2753 LRAT proof, sliced and assumption-discharged. No new generic certificate, two-tick identity or reset theorem is claimed. Record/current actual kit1487f31c/portal/PR-index search for the literal word yields our abstract bridge factors and numeric certificate substrings, not a matching physical pair-guard statement; this is a scoped check, not submission clearance. [Finite result](reports/GPT-ROW119-PROOF-DEPENDENCIES-20261108.md#outcome--gc2758).
+
+
+## GC2794 — Known automata/growth tools applied to the trap ladder
+
+**Known, reproved/applied here:** regularity of the minimal-forbidden language of a factorial regular language,
+productive-cycle infinitude and weighted finite-graph growth bounds. See Beal, Crochemore, Mignosi, Restivo and
+Sciortino, [Computing forbidden words of regular languages](https://journals.sagepub.com/doi/10.3233/FUN-2003-561-208)
+(the published abstract was accessible; the author-PDF endpoint failed TLS hostname verification and was not
+retried insecurely). The pair and growth arguments are written explicitly in [PROOFS GC2794](PROOFS.md#gc2794--s-16-finite-versus-infinite-forbidden-bases-g1-at-all-lengths-and-a-conditional-entropy-floor), not claimed as new general methods.
+CP-2.2 already computed the28-column≈0.1222 entropy and the two12-gap candidates. Here the independently replayed
+all-length presentations, fixed-width infinite forbidden bases, exhaustive G1 checks and its conditional positive
+entropy-floor application are the programme's additional content. No general physical-realization or zero-limit
+claim is attributed to the old computation.
