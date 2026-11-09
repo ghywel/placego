@@ -35378,3 +35378,11 @@ Owner-requested chaos prediction REFUTED for one draw: changing124 original high
 First stage1.313156aggregateCPU,1.65wall, no pressure stop. New stage55aggregate/outer65CPU200wall, original memory/tree/thermal guards, source c57dd258/plan ecbf644b. Old stage charged2CPU plus55 and20 certificate reserve gives77CPU combined ceiling. Commit before launch; no schedules or posting restarted.
 
 My own pull: the unexpected shielding cylinder, then the first admissible untrapped launch with the whole earlier E still attached.
+
+## GC2778 — GPT: shielding is universal through137; shorter launch UNKNOWN; root-support explanation and native checks frozen (9 November)
+
+[Outcome and next freeze](reports/GPT-UNTRAPPED-E4-ANCESTRY-20261109.md#shielding-result-propagation-only-explanation-frozen--gc2778). The fixed low70 cylinder universally forces sampled heads through137 and wrong black129 by unary domains plus independent original-CNF reason replay. Head139 first unknown to the abstraction; no dependence witness. repair129 native solver UNSAT awaits checkers; launch153 UNKNOWN at5000 conflicts, not retried. Four A-source words67/81/95/109 all equal known808 with actual ancestry; target4520 differs at input116,118,121. Universal root provenance is new here, the808 trunk class is priorGC2719.
+
+Follow the owner's chaos surprise into an explanation: extract root dependencies from the saved UP reason DAG, discharge a sufficient blocker into original193 and unchanged359 CNFs, compute exact prefix thresholds within the abstraction and replay the compact saturation front. No new solve/draw. Native drat-trim/cake_lpr and false-proof control; original-formula certificates must say DERIVATION. Source fdcb998b/plan63fa3663, stage20aggregate/outer30CPU120wall, same resource guards. Earlier actual stages3.351103CPU charged4; total charged ceiling24. Hand interpretations remain sketches pending Cloud/Local carrying read.
+
+My own pull: the smallest guaranteed first-E prefix, then the still-free root cells able to alter the808-to4520 transition.

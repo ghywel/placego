@@ -228,3 +228,79 @@ plan `ecbf644b0f3fc6593c028f0d4c86b03b4c86530a3224491f218e4bf8351aa2bd`.
 My own pull: whether the unexpected tail immunity is a genuine cylinder of
 first-E histories, and where a different admissible cylinder permits the
 second launch.
+
+## Shielding result; propagation-only explanation frozen — GC2778
+
+The next stage returned repair129 **UNSAT, awaiting native proof checks**, and
+the anchored153 launch **UNKNOWN at5000 conflicts**. It is not retried. The
+three-valued calculation and independent exact-CNF reason replay agree: all
+sampled heads through137 are universally fixed by this low70 root prefix;
+139 is the first sampled head that this abstraction cannot determine. This
+last fact is not a witness of dependence. Agreement of the one random pair
+through193 remains only pairwise beyond the certified region.
+
+The fixed prefix value is86316346948290361996. Its known radii are38 at69,
+29 at83,23 at97,14 at111,9 at125 and8 at129. The mechanism is OR saturation:
+for a known prefix of length K followed by unknown cells, the next guaranteed
+known length stays K when its last bit is black, and drops to K−1 when that
+bit is white (also truncate to the remaining cone). Every farther cell remains
+unknown in this unary-domain abstraction. This is a sufficient shielding front,
+not a maximal physical influence front. The generic induction is a hand sketch.
+
+At sources67,81,95,109 the actual low7 state is64 and the entire actual14-bit
+column8 input word is808. All those inputs are known by the same shielding
+calculation. Word808 is **already known** among GC2719's nine continuing-A
+words ([prior table](GPT-A-BLOCK-INCOMING-HISTORY-20261106.md#the-complete-one-block-input-condition)); it is not a new word classification. The target's
+source109 word4520 differs at physical input ticks116,118,121. Thus this
+cylinder keeps supplying the continuing-A input instead of the required E
+launch input. The new fact is its all-tail root provenance, not free-input
+realizability or permission to swap the three bits.
+
+The proper-state E's reconstructed finite parent also replays a complete E,
+but fails the target already at73. The four higher-tail tests pass exactly:
+opening_mid accepts tail integers0,3; e_bad accepts none; e_mid accepts only3;
+the known E accepts all four. The two-cell tail integer is least-significant
+cell first. This tests the different ancestry quantifiers directly.
+
+Resources for this stage:2.037947 aggregateCPU,2.2wall, sampled treeRSS63,352KiB,
+minimum free5619MiB, zero swap growth; all model/abstract/reason controls pass.
+The launch153 UNKNOWN is a precise limit, not evidence for nonrealizability.
+
+### Final explanation and certificate stage
+
+No solver or fresh random draw. Extract the actual fixed-root literals used by
+the saved unit-propagation reason graph for black head129. Replay the smaller
+assumption set. Discharge it as one RUP blocking clause against both the original
+193 E A⁴ E CNF and the unchanged original359 passage CNF. Prediction: a proper
+subset of the70 root bits suffices; counterfactual full support is retained.
+This is a sufficient obstruction, not a minimal core.
+
+Also compute the minimum fixed-prefix length **within this particular unary
+abstraction** for each observed cell. A root bit at position i has threshold i;
+for OR=0 take the maximum input thresholds, for OR=1 take the minimum among
+black inputs; XOR with its left input takes the maximum. Boundary thresholds
+are0. Induction gives the exact singleton threshold for this abstraction,
+which may overestimate semantic necessity. Compare it against fresh unary
+propagation at the two first-E and head129 thresholds and their predecessors.
+Prediction: the first E can be retained with fewer than70 fixed cells, exposing
+where a genuinely relevant root change could be made. No automatic new solve
+or random sampling follows.
+
+Native drat-trim/cake_lpr check the original repair proof, the reduced-root
+refutation and the small UNSAT control; reject the false empty proof. Native
+forward RUP checks of the two original-CNF blockers must report DERIVATION,
+not UNSAT. Keep these distinctions in the record. The known808 and required4520
+trunks are compared for explanation only, retaining the same actual-history
+qualification. Primary [Rule30 inversion background](https://www.wolframscience.com/nks/notes-12-8--rule-30-inversion/)
+is reread; it does not make these inverse questions easy or hard by itself.
+
+Frozen stage20 aggregateCPU/outer30CPU120wall, prepare8CPU25wall, individual
+checker3CPU10wall, unchanged tree/thermal/RSS/swap/free/output limits. Previous
+completed work charged4CPU, so total charged ceiling24CPU for this block's
+completed work plus remaining stage, well below the pilot ceiling. Source
+`shielding_core.py` SHA256
+`fdcb998ba5345fd5bbfc98f3726ee05c3adbaa77fe4d708e6a78525d1e539c14`;
+plan `63fa3663376e8753374fab504c66eec3b217b895e85def2bda41351dbb0ccc89`.
+
+My own pull: retain only the cells needed to force the first E, then identify
+which still-available root choices can change the808 continuation into4520.
