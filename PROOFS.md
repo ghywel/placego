@@ -6722,3 +6722,109 @@ SHA256 `9d01ccc8a582971c7304473f1b28aefd6b6070d206a4ec4363c49cba52bf6405`, raw-b
 
 My own pull: prove or break the all-width free code {5,3555}; it distinguishes a positive entropy floor from
 Local's zero-limit possibility more directly than another numerical rung.
+
+
+## GC2796 — Free-code inclusion: past padding, finite covers and the exact spacetime target
+
+**Status: PROOF-SKETCH, pending Local's carrying read.** This section does not prove all-width inclusion of
+`{5,3555}*`. It replaces two expensive computations by precise sufficient certificates and an equivalent
+physical realization problem. Sample time is one two-tick update, with left boundary white at the first tick
+and black at the second. A=5 costs5 samples; B=3555 costs18. All right boundaries are free in a finite window.
+
+### Past padding removes the greatest-core computation from a universality test
+
+Fix a width W. Let B_W be ALL black lifted trap windows. For a set S, let G_g(S) be the endpoint set of
+an exact black-to-black gap g, and let T(S)=G_3(S)∪G_5(S). Trap invariance makes T(B_W)⊆B_W; T is monotone,
+so T^n(B_W) decreases to the greatest fixed point C_W after some finite number N_W of iterations.
+Write L(S) for finite gap words readable starting in S. Then
+
+`{A,B}* ⊆ L(B_W)  ⇔  {A,B}* ⊆ L(C_W)`.
+
+The reverse direction follows from C_W⊆B_W. For the forward direction, fix a code word v. By the premise,
+A^N_W v is readable from B_W. After its initial N_W copies of A, the path lies in
+G_5^N_W(B_W)⊆T^N_W(B_W)=C_W. Its remaining suffix reads v from C_W. This holds for every v.
+No assumption about an eventual speed, uniform N_W across widths, or a reset is used. The same argument
+works for any return-closed starting set between C_W and B_W.
+
+**Guard:** this is equivalence of UNIVERSAL inclusion, not equality of the two individual languages. A
+transient word can be readable from B_W and absent from C_W. Thus one accepted word from the full lift
+is not evidence that that word lies in the eventual language. The padding is indispensable.
+
+### A finite nonempty family gives a universality certificate
+
+For c=A or B, denote its whole-block endpoint operator by H_c. Suppose a finite family of nonempty
+sets K_i⊆B_W is given, with the following two inclusions for every i:
+
+`H_A(K_i) ⊇ K_j(i,A)` and `H_B(K_i) ⊇ K_j(i,B)`.
+
+Choose any K_i. After a code prefix, the endpoint set contains some K_j: this is true initially and
+persists by monotonicity and the displayed inclusions. All these sets are nonempty, so every finite code
+word is readable. Past padding then puts the entire code language in L(C_W), even when the K_i were
+constructed without calculating C_W. This is a set-valued certificate. It does not say an individual row
+can choose either next gap: its low causal cone determines that gap. An empty K_i would invalidate the
+argument and must be rejected by a checker.
+
+The family can be extracted from a completed subset automaton by retaining its inclusion-minimal
+nonempty states. Each image is another reachable nonempty subset and contains a minimal one. This is
+the familiar antichain idea for NFA universality, not a new generic algorithm (De Wulf, Doyen, Henzinger
+and Raskin, CAV2006; [author's primary-source listing](https://lsv.ens-paris-saclay.fr/~doyen/antichains/antichains.html)).
+The new mathematical task is to describe such a family UNIFORMLY in W and prove its two inclusions,
+not to collect another finite list.
+
+### All widths are equivalent to an infinite-right spacetime family
+
+The following statements are equivalent:
+
+1. At every even W≥16, every finite concatenation of A and B belongs to L(C_W).
+2. Every one-sided infinite A/B sequence is the actual head-gap code of some infinite right initial row,
+   driven by the alternating left boundary and staying in the16-cell trap at sample times.
+3. Every two-sided infinite A/B sequence is realized by an infinite-right spacetime defined for ALL
+   integer physical times, with that alternating boundary and the16-cell trap at every sample time.
+
+**(1)⇒(2), including boundary consistency.** Fix an infinite code and its first k blocks, of sample
+duration D. Choose W≥16+2D. An accepting finite-window path supplies an initial W-cell row. Extend it
+arbitrarily to the right and evolve the actual half-line rule with its prescribed left boundary. The
+low16 cells agree with the window path through physical time2D, since the exterior at width W cannot
+enter this cone. Thus a real half-line row satisfies the first k blocks and the trap throughout. The
+sets of initial rows satisfying the first k blocks are nonempty, closed cylinders in the compact binary
+product space, and are nested. Their intersection realizes the infinite code. No independently chosen
+finite-width exteriors are spliced together.
+
+**(2)⇒(1).** Extend any finite code word to an infinite one. Its realizing row projects to a valid path
+from B_W at every W, so the full code language lies in L(B_W). Apply the past-padding lemma for each W.
+
+**(1)⇒(3).** For a fixed two-sided code, put a code boundary at sample time0. Assign its past and future
+block times by cumulative costs5 or18. Every finite set of spacetime constraints is contained in some
+finite spatial width and some finite segment of whole code blocks. Statement(1) realizes that segment
+in a sufficiently wide window. Choose the width larger still by the finite physical-time cone needed
+for the constraints, and use its actual initial row across that time slab. Hence every finite set of
+local-rule, boundary, head-code and trap constraints is satisfiable. These constraints are closed
+cylinders in the compact product of binary cells indexed by integer time and positive spatial sites.
+Compactness supplies one jointly consistent spacetime. This is the step that preserves ancestry.
+**(3)⇒(2)** by restricting time≥0 after extending a one-sided code arbitrarily to negative code indices.
+
+**Scope and a further consequence.** The initial right row may have infinite support; the alternating
+left boundary is prescribed. For forward time it can be embedded in a full Rule30 configuration by the
+kit's known `Rule30Realization.column_realizable_unique`, with a rebuilt, possibly infinite left half.
+No finite-global-support result or prize statement follows. Each FINITE code word, if(1) holds, does have
+a finite-right-support witness beside the prescribed boundary, by truncating a realizing row beyond its
+finite causal cone. Truncation need not preserve its infinite continuation or its past.
+
+Moreover(1) would force at least2^k distinct initial right prefixes of length36k+1 among this half-line
+family: the2^k length-k code words are distinguished by their observed heads by time36k; the head through
+that time depends on at most those36k+1 initial cells. Thus the family's initial-prefix lower growth rate
+would be at least1/36 bit per cell, as well as the previously proved conditional temporal1/18 floor.
+Both conclusions remain CONDITIONAL on all-width inclusion.
+
+### Why the obvious construction templates do not yet apply
+
+Old GC706/707 force nearest-right temporal blocks from histories that already exist. They do not build
+these histories. The kit's free binary period12 tiles in `Rule30MovingWaves` freely encode SPATIAL
+words in a right-moving frame; they do not prescribe this head's temporal gaps. Neither source closes
+any implication above. A uniform family K_i(W), or a compatible spacetime construction for arbitrary
+code, is the missing carrying step. Width16–28 certificates alone do not provide it.
+
+**Next executable mathematical step:** inspect the inclusion-minimal saved subsets for a structural
+family, then attempt its spatial extension K_i(W)→K_j(W+2), checking BOTH whole-block image inclusions.
+If their antichains grow, keep the exact cover criterion but abandon a bounded-number-of-sets guess.
+No further width enlargement is authorized by the completed pilots' stop rules.
