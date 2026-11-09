@@ -255,3 +255,46 @@ have7 in the corresponding phase. A finite template is not lock membership.
 
 My own pull: the white run at row113 cells8..12, pulled back through its actual
 first-E ancestry; it is a sharper object than three independent input flips.
+
+## Original-formula derivations pass — GC2785
+
+The1,024 row113 fibre tests pass: exactly32 roots, all and only low12=72.
+Every RUP addition passes its propagation check, and native drat-trim verifies
+both entire prefixes against the **original** formulas as DERIVATION:
+
+| Original target | CNF SHA256 | RUP additions |
+|---|---|---:|
+| E A⁴ E,193 ticks | d036d880fb2c1fba3b08d2b61de5d803f3709d45efbe41527e7bea6dda64ae37 | 16,866 |
+| E A⁴ E A⁷ E,359 ticks | 21b425011ebc816994a2dfe221539ca2da6a5900b23d1f7009c9bbe26d70426c | 33,732 |
+
+In particular cells10..12 are white at113, and also at279 for the longer
+passage. These are certified necessary conditions of the exact target history,
+not refutations or existence results. The local12-cell equivalence and its
+physical interpretation remain hand sketches pending the other worker's read.
+The proof imports already checked source64/4520 implications; it does not assume
+those as extra premises of the original CNF.
+
+The supporting head conditions extend to131 (and297 at the second site), so
+this is an18-tick-lookahead restriction on row113/279. It is not a claim that
+the earlier E A4 heads alone force these white cells. The query in GC2783 imposed
+4520 as the necessary target switch precisely to preserve that distinction.
+
+The proof stage used7.494060 aggregateCPU; combined10.623717. No resource stop.
+A diagnostic issue was found during output review: python-sat's propagate()
+returns only newly propagated trail entries, not the complete root-level unit
+closure. Its saved zero/zero counts therefore **do not measure unit gain**.
+The finite table and native derivations are unaffected. Preserve that receipt.
+
+One separately frozen diagnostic uses the repository's independent full unit
+propagator and reason replay on the saved formulas/derived units. It compares
+source64+4520 with the new guards/white cells, and also the earlier old4/quartet
+union, reporting any new seam193 cells. Prediction: some additional units,
+no seam193 unit; counterfactual retained. No proof regeneration or solver run.
+Stage8 aggregateCPU/outer12CPU45wall, worker5CPU20wall, unchanged process-tree,
+free-memory, thermal, swap and output guards. Source SHA256
+`94ad34a7a17be3ca59bceda0ce4b6e725ca127e26541b9dd0e2660726fbbafe8`;
+plan `391cdb6f614f06cabbd539a8ed9aad777eed9fcbd6021ad1ab399a1e50c5b4b4`.
+CompletedCPU charged11 plus8 gives19CPU combined ceiling for this audit.
+
+My own pull: how the preserved first E permits the three-white checkpoint at
+row113, rather than whether the fourteen temporal inputs can be chosen freely.

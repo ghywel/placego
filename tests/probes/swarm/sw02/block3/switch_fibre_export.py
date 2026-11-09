@@ -98,9 +98,9 @@ def main(out, compact, labels):
         assert path.stat().st_size < 16 * 1024 * 1024
         result[str(H)] = {'original': info, 'RUP_additions': len(additions),
                           'guard_clauses': guards, 'white_units': white_units,
-                          'previous_unit_count': len(set(before)),
-                          'new_unit_count': len(set(after)),
-                          'new_units': sorted(set(after) - set(before)),
+                          'incremental_solver_trail_before': len(set(before)),
+                          'incremental_solver_trail_after': len(set(after)),
+                          'unit_count_note': 'Not total UP counts; use --saved for independent diagnostics.',
                           'all_embeddings_exact': True, 'every_addition_RUP_checked': True}
     result['local113'] = {'cases': 1024, 'accepted': 32, 'accepted_roots': fibre113,
                           'predicate': 'low12=72 iff ten actual column8 bits=282, given low7=72'}
@@ -109,10 +109,54 @@ def main(out, compact, labels):
     print(json.dumps(result))
 
 
+def audit_saved(out, saved):
+    """Count all UP units independently; solver.propagate returns only new trail."""
+    out.mkdir(parents=True, exist_ok=True)
+    prior = json.loads((saved / 'result.json').read_text())
+    result = {}
+    for H, word, sites in ((193, anc.E + anc.A * 4 + anc.E, (109,)),
+                           (359, anc.E + anc.A * 4 + anc.E + anc.A * 7 + anc.E, (109, 275))):
+        F, off, W = phys.generate(H, anc.word_heads(word, 1))
+        source = [(off[t] + p) * (1 if p == 7 else -1) for t in sites for p in range(1, 8)]
+        label = [(off[t + k] + 8) * (1 if 4520 >> k & 1 else -1) for t in sites for k in range(14)]
+        old4 = [v for t in sites for v in (-off[t + 9] - 8, off[t + 12] + 8)]
+        quartet = [(off[t + 10] + p) * (1 if b else -1) for t in sites for p, b in ((6, 1), (7, 1), (8, 0), (9, 1))]
+        guards = [g['clause'] for g in prior[str(H)]['guard_clauses']]
+        whites = [g['literal'] for g in prior[str(H)]['white_units']]
+        proof = {tuple(cl) for cl in sparse.proof_clauses(saved / f'guards{H}.drup')}
+        assert all(tuple(c) in proof for c in guards + [[v] for v in source + label + whites])
+        views = {'original': [], 'old_union': [[v] for v in label + old4 + quartet],
+                 'source_labels': [[v] for v in source + label],
+                 'new': [[v] for v in source + label + whites] + guards,
+                 'new_union': [[v] for v in source + label + whites + old4 + quartet] + guards}
+        maps = {}
+        for name, additions in views.items():
+            vals, log, bad = phys.propagate(F + additions)
+            assert bad is None and phys.replay_units(F + additions, log, bad) == vals
+            maps[name] = vals
+        where = {off[t] + p: (t, p) for t in range(H + 1) for p in range(1, W - t + 1)}
+        def gained(a, b):
+            return [{'time': where[v][0], 'cell': where[v][1], 'value': int(bit)}
+                    for v, bit in sorted(maps[b].items()) if v not in maps[a] and v in where]
+        result[str(H)] = {'unit_counts': {n: len(v) for n, v in maps.items()},
+                          'new_over_source_labels': gained('source_labels', 'new'),
+                          'new_union_over_old_union': gained('old_union', 'new_union'),
+                          'new_seam193': [d for d in gained('old_union', 'new_union') if d['time'] == 193],
+                          'independent_UP_reasons_checked': True}
+    (out / 'diagnostics.json').write_text(json.dumps(result, indent=2) + '\n')
+    print('SWITCH_SAVED_DIAGNOSTICS_PASS')
+    print(json.dumps(result))
+
+
 if __name__ == '__main__':
     p = argparse.ArgumentParser()
     p.add_argument('--out', type=Path, required=True)
-    p.add_argument('--compact', type=Path, required=True)
-    p.add_argument('--labels', type=Path, required=True)
+    p.add_argument('--compact', type=Path)
+    p.add_argument('--labels', type=Path)
+    p.add_argument('--saved', type=Path)
     args = p.parse_args()
-    main(args.out, args.compact, args.labels)
+    if args.saved:
+        audit_saved(args.out, args.saved)
+    else:
+        assert args.compact and args.labels
+        main(args.out, args.compact, args.labels)

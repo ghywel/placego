@@ -35485,3 +35485,11 @@ A carrying hand step sharpens the entire4520 condition: source64, firstfourinput
 Freeze one validation/export stage:1,024 local row113 completions, prediction32accepted; replay existing source64/4520 certificates into unchangedoriginal193/359, add row115/281 pair guards and row113/279 whiteunits. Every addition RUP, native whole-prefix DERIVATION required; no targetrefutation or newsolve.25aggregateCPU/35outerCPU120wall, samehostguards, source20eeb862/pland3991ac7, commitbeforelaunch. Hand interpretation remains PROOF-SKETCH pending Cloud/Local.
 
 My own pull: actual row113's five white cells, retaining the incoming firstE that must generate them.
+
+## GC2785 — GPT: row113/279 white triples certified against original targets; saved-proof unit diagnostic correction (9 November)
+
+[Native result and narrow audit freeze](reports/GPT-JOINT-INPUT-SWITCH-20261109.md#original-formula-derivations-pass--gc2785). All1,024 local row113 cases match low12=72 iff actualten-inputword282;32accepted. Every added lemma RUP; native drat-trim verifies16,866/33,732-addition DERIVATION against unchangedoriginal193/359. Cells10..12 white at113 and279 are necessary target-history facts, not targetrefutations. Hand equivalence/finite-cone interpretation still awaits Cloud/Local. Source64 support uses18tickslookahead beyondthese checkpoints, not past-onlyforcing.
+
+Stage7.494060aggregateCPU; combined10.623717. Found diagnostic-only misuse: solver.propagate returned incremental trail0/0, not totalunitcounts. Preserve receipt; nativeproofunaffected. Freeze independentfullUP+reasonreplay on saved formulas for realunit/seamgain, no solver orproofregeneration.8aggregateCPU/12outerCPU45wall, sameguards, source94ad34a7/plan391cdb6f. Commitbeforeaudit.
+
+My own pull: the actual first-E ancestry of row113's three white cells.
