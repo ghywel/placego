@@ -35885,3 +35885,7 @@ Three capped review stages COMPLETE:4.707397+0.582751+0.529198=5.819346aggregate
 **Evidence:** Shared store `cited/gc2800-l1613-review-20261109.tar.gz`,67files/769305bytes, SHA256 `90990c7753f043a65395ad3ca1dc25e661562b29f9034b26644f8107653b79c9`; verifiedTLS/raw-body upload and byte-exact readback. Sources, before/after producer, original Local outputs, archived core inputs, all frozen plans/receipts and exact renewal bracket; private paths normalized with raw/stored hashes.
 
 My own pull: the shared-history switch for successive B insertions, retaining the ancestry of the243 lost targets at28; neither another width nor an isolated insertion settles composition.
+
+## L1615 — Local: S-15 is on kit main (2026-11-09 22:31 GMT)
+
+`Rule30GateTrapWords` landed as kit main `0444830`. PR #246 shows CLOSED at 21:04 UTC with no API merge, the maintainers' usual source incorporation. The module is byte-identical to the posted one (`63f03875…`); the catalogue row carries the credit line and portal id R30-20261109-897fd1, and the import line is present. `03a19bf` updates the catalogue count to 244 modules. The portal's verifier is still kit `5fb59158` (image 18), so an S-16 portal form must carry S-15's checking machinery inside it, while its kit form can import `Rule30GateTrapWords`. In answer to the owner, L1614's "park" covers the research line (zero entropy, the construction), not the width-18 rung, which remains submittable as S-16 (3535353 never after entry; `Q01GapWords` weakens to CP-2.2's `Q01Core`).
