@@ -6826,5 +6826,59 @@ code, is the missing carrying step. Width16–28 certificates alone do not provi
 
 **Next executable mathematical step:** inspect the inclusion-minimal saved subsets for a structural
 family, then attempt its spatial extension K_i(W)→K_j(W+2), checking BOTH whole-block image inclusions.
-If their antichains grow, keep the exact cover criterion but abandon a bounded-number-of-sets guess.
+Growth of the canonical antichain refutes a bounded-size prediction for THAT extraction; it does not rule out a smaller family of sets that are not reachable subset states.
 No further width enlargement is authorized by the completed pilots' stop rules.
+
+
+### GC2797 finite outcome: a reset works through26, but its natural intersection fails at28
+
+**COMPUTED, with the following replay scope.** Direct whole-code subset counts at16–28 are
+3,6,8,10,21,80,298. All transitions survive and match the saved full-gap DFA's corresponding state IDs.
+The forced-all-hashes-equal control matches at16/18/20; exact subset equality resolves collisions. Independent
+NumPy raw-bitmap transfer/core-fixed-point replay completes16–26, then reaches its declared30CPU limit while
+checking28. Thus full independent raw replay28 is INCOMPLETE; earlier independent all-length G1 at28 already
+certifies free-code inclusion there by GC2794. No30/32 code verdict or counterexample was produced:30 reached
+the frozen80CPU child cap. Its saved core30 is retained as unreviewed partial-run evidence, not an accepted
+30-column result. Neither failed job was rerun or enlarged.
+
+The inclusion-minimal reachable subset families have sizes1,2,3,4,6,27,55. Their two image-cover inclusions
+pass an integer-bitmap scan, with empty-set corruption rejected. The≤4 prediction fails at24. These sizes
+are not lower bounds for arbitrary cover families. A shared CHOSEN B target exists through24; there is none
+among the canonical chosen states at26/28. However, all B-images still have a common intersection K, of
+size6769 at26 and9044 at28. This is why a nonconstant greedy map alone could not justify rejecting a reset.
+
+Test the concrete family consisting of the exact A-orbit of K, with the requirement that each B-image
+contains the SAME K. This is one candidate, fixed before the test; maximum20 A images, widths16/24/26/28 only.
+
+| Width | Size of K | Exact A-orbit | Whole B covers K? |
+|---|---:|---|---|
+|16|156|preperiod1, period1; sizes156→160→160|Yes at both states|
+|24|3764|preperiod6, period1; final size5879|Yes at all7 states|
+|26|6769|preperiod11, period1; final size14130|Yes at all12 states|
+|28|9044|first A-image has9576 windows|NO at A-phase1:243 target windows missing|
+
+At28, K⊆H_B(K), but K is NOT a subset of H_B(H_A(K)). Examples missing from the latter image are raw
+window codes593319,1461671,1854887,3165607, with the repository's cell1/least-significant-bit convention.
+All243 missing targets belong to K, which was the intersection of B-images of every canonical minimal
+reachable subset. The obstruction is precisely that taking a common endpoint set discarded the incoming
+histories needed after an intervening A. It disproves this K-orbit reset construction; the gap word
+`53555` itself is still accepted. It does NOT refute all-width free-code inclusion or prove that every
+possible reset family fails. The no-reset-by28 prediction holds; the positive26 construction was useful
+additional structure.
+
+**Next executable step, no new width:** at28 retain the same K but distinguish the incoming histories of
+the243 lost targets; compare their actual A-then-B predecessor sets with K. A proposed repair must recompute
+both image inclusions after any restriction: simply deleting the243 endpoints can also delete required
+inputs, since image does not commute with intersection. Seek a history-aware symbolic family that can be
+extended by two spatial cells, or use its exact failed histories to choose a candidate code obstruction.
+Repeated width enlargement and a bounded-four-state canonical-reset guess are cold. A smaller noncanonical
+family remains open, demonstrated already at26 (12 A-orbit states instead of27 canonical states).
+
+Four research stages used93.943310,34.675859,0.383790,1.558605 aggregateCPU seconds including outer monitoring
+(total130.561564), plus0.110498CPU for the cheap saved-certificate B-target inspection. First two stages stop
+at their declared child CPU caps; last two complete. Maximum sampled process-tree RSS134940KiB, minimum
+free/inactive6793MiB, swap growth0; no pressure/thermal failure or current job. The shortest cover stage
+completed before its first periodic RSS sample, so no zero-RSS measurement is inferred. Sources/plans, full
+raw subsets, covers, missing-target examples and all successful/stopped receipts are preserved externally.
+
+**Evidence:** Shared store `cited/gc2797-s16-free-code-20261109.tar.gz`,134files/2549763bytes, SHA256 `428fc738e52ca42686d66e38846a551816ff1fc7a3eff0dc3ff842893d97d238`, verified TLS/raw-body upload and exact readback. Private paths normalized, original and stored file hashes retained.

@@ -1,19 +1,18 @@
 # WARM LEADS: what SW-02 left us, and the order of work
 
-**Current priority, 9 November (owner / GPT GC2794): S-16 research is reopened.** S-15 is posted and Lean Verified
+**Current priority, 9 November (owner / GPT GC2797): S-16 research is reopened.** S-15 is posted and Lean Verified
 as R30-20261109-897fd1, kit PR246 open, reviewed sources byte-identical. The older E/4→7/808→4520 exploration stays
 parked. Both schedules remain paused.
 
-**S-16: [fixed-width results and carrying arguments](PROOFS.md#gc2794--s-16-finite-versus-infinite-forbidden-bases-g1-at-all-lengths-and-a-conditional-entropy-floor).**
-Independent replay matches Local through28. Widths18–22 have the exact three-word basis;24/26/28 have infinitely
-many minimal forbidden words. Exact loop/quotient checks and all-length G1 products pass; rational matrix
-inequalities bracket the growth. The hand conclusions await Local's carrying read. Width30 hit its frozen
-subset-storage cap; no30/32 DFA or entropy result and no unchanged retry.
+**S-16: [all-width target and finite reset obstruction](PROOFS.md#gc2796--free-code-inclusion-past-padding-finite-covers-and-the-exact-spacetime-target).**
+The all-width free code remains OPEN. Through28 inclusion holds; no30/32 verdict. New hand reductions await
+Local: past padding removes core pruning from a universal inclusion test; all widths are equivalent to
+a consistent infinite-right realization of every code sequence. The natural common-B endpoint reset works at16/24/26 but fails28 after one A, losing243 targets. It breaks the construction, not the code.
 
 | Queue | Next executable step | Owner / boundary |
 |---|---|---|
-|Current target|Carry the projection, pumped-family and growth arguments; then prove or break the all-width free code {5,3555}. Universal G1 would imply a positive relaxed-entropy floor≥1/18, contrary to zero-limit hopes.|Local phase-law hand work; GPT finite certificates/continuation. No physical realization claim.|
-|Cold wider arrays|Reopen30 only after a compact representation and its memory bound are demonstrated and a new run is frozen; the old vector-of-subsets storage is the obstruction.|No automatic cap increase or unchanged retry.|
+|Current target|At28 inspect actual A-then-B predecessors of the243 missing targets; retain their incoming history in a proposed cover family and recompute BOTH image inclusions. Aim for a symbolic spatial extension, or a whole code word exclusion.|GPT owns the free-code pull; Local retains phase-law work and the GC2794/2796 carrying reads. All hand applications pending carry.|
+|Cold numerical route|Two width30 attempts stopped: full subset storage, then restricted-code CPU. No unchanged retry, higher horizon, or cap increase. Reopen only with a structural certificate or genuinely different bounded question.|No research job running. Canonical covers grow to55; this does not rule out smaller noncanonical families.|
 |Independent alternative|The18-column finite-basis Lean rung remains a coherent small statement if the owner chooses packaging.|Local; no new packaging/posting launched.|
 
 *Started 6 November 2026 by Local at the owner's request: "a clear schedule of work in a light summary document we can refer back to, to shift the backlog here and make sure results are not forgotten." This page is the current warm-lead document and the short record of firmly closed doors. It is meant to stay short. The detail is in [SW02-RESULTS.md](reports/SW02-RESULTS.md) (answers, barriers, predictions), [SW02-DOORS.md](reports/SW02-DOORS.md) (all 556 doors), the [submission queue](reports/wolfram-agents/DELIVERY-QUEUE.md#sw-02-submission-queue-6-november-2026) and the [backlog](reports/SW02-BACKLOG.md).*

@@ -188,6 +188,11 @@ projection and conditional entropy floor await Local carry. Universal G1 would f
 next prove/break the all-width free code{5,3555}; no conclusion on CQ01 or universal capture. Width30 stopped at a
 declared storage cap, no30/32 result. [Carrying packet](PROOFS.md#gc2794--s-16-finite-versus-infinite-forbidden-bases-g1-at-all-lengths-and-a-conditional-entropy-floor).
 
+**S-16 follow-on (GPT GC2797):** all-width free code still open. Past-padding and compactness reductions
+are hand sketches pending Local; common-B reset works through26 but loses243 targets after one A at28.
+No code word is rejected. Width30 restricted test stops at frozen CPU cap, no retry. Next target is the
+243 targets' incoming ancestry at fixed28, not another width. [Proof/obstruction packet](PROOFS.md#gc2796--free-code-inclusion-past-padding-finite-covers-and-the-exact-spacetime-target).
+
 **GC2385 method pointer, with GC2386 live update (2 November2026):**
 [Affine layer criterion and conditional moving-family certificate](reports/GPT-BOUNDARY-LAYER-REVIEW-20261102.md#gc2385--an-exact-test-for-an-affine-layer),
 PROOF-SKETCH with finite self-checks. This narrows the possible boundary-layer

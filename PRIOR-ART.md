@@ -5684,3 +5684,16 @@ CP-2.2 already computed the28-column≈0.1222 entropy and the two12-gap candidat
 all-length presentations, fixed-width infinite forbidden bases, exhaustive G1 checks and its conditional positive
 entropy-floor application are the programme's additional content. No general physical-realization or zero-limit
 claim is attributed to the old computation.
+
+
+## GC2796 — Set covers and antichain universality are known methods
+
+**Known, reproved/applied here:** nonempty families of subsets with successor inclusion certify universal
+acceptance; inclusion-minimal reachable subsets give such an antichain family. De Wulf, Doyen, Henzinger
+and Raskin, *Antichains: A New Algorithm for Checking Universality of Finite Automata*, CAV2006;
+[primary author listing](https://lsv.ens-paris-saclay.fr/~doyen/antichains/antichains.html). Listing/abstract
+read; primary PDF fetch timed out, and no paper proof is relied upon. The short sufficient-inclusion
+argument is written explicitly in PROOFS GC2796. Record search also finds GC1000's closed SPATIAL
+simulation quotient, with zero strict inclusions there; the present finite temporal-block subsets have
+explicit strict inclusions and different premises. No new generic automata algorithm is claimed.
+The trap-specific past-padding/compactness applications await Local's carry; the all-width code remains open.
