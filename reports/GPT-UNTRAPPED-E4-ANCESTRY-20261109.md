@@ -389,3 +389,39 @@ plan `005eb51ca174bbb4e8682167f53cecb0af2943971b56734a90cd586ba71cca08`.
 
 My own pull: whether a coordinated higher-tail change can cross the masking
 barrier that screens the isolated bit while leaving the first E intact.
+
+## Joint tails are blocked too; change representation — GC2781
+
+The low68/head129 query returned **UNSAT, proof pending its native check**,
+1.039607aggregateCPU/1.1wall. The SAT prediction failed. Thus the apparent69-cell
+unary threshold is not yet a semantic threshold; neither the isolated flip nor
+a coordinated higher tail supplied a repair. No next-prefix sweep or repeated
+launch solve follows.
+
+Instead retain allowed **adjacent pairs** of cells at each position and time,
+including the prescribed center/head pair at position0. An output pair at
+position i≥1 comes from a four-cell word admitted by three overlapping input
+pair sets; at0 impose the next center explicitly. Forward/backward pruning
+keeps only pairs extendible across the current row's pair chain. Induction
+preserves every actual history of the same root-prefix cylinder. This can
+remember correlations erased by unary sets, while remaining an overapproximation.
+An unknown pair projection is not a realizability result. Full root ancestry is
+never reset or replaced by independent temporal boundary values.
+
+**One fixed test:** low68, original129-tick cone, width2 relations only.
+Prediction: the pair abstraction forces black head129 although the unary one
+does not. Counterfactual: it still permits both values, so adjacent correlations
+alone do not explain the certified obstruction. No higher-order lift follows
+a failure. Check all1,024 concrete completions of the fixed small control cones,
+refinement of unary propagation and the actual reference history. In the same
+stage, native drat-trim/cake_lpr check the already produced low68 proof.
+
+Stage20aggregateCPU/outer30CPU90wall, checker3CPU10wall each, pair audit10CPU30wall;
+unchanged tree/memory/free/swap/thermal/output guards. Completed10.557838CPU
+charged11 plus20 gives31CPU ceiling for completed work and this stage. Source
+`pair_shield.py` SHA256
+`5adf39c6db67abf6c296d366175d2f1a6f6c691b96aab0bea0f4888d244776f2`;
+plan `9142b693714790ba696761a0b7c5bc7852c41230e1792cbdcb3796a1debac52a`.
+
+My own pull: a correlation preserved by the actual ancestry that the unary
+certainty front erased, rather than another finer prefix search.

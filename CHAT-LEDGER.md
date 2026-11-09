@@ -35402,3 +35402,11 @@ My own pull: test whether the newly located ancestry-preserving band changes the
 Next: exactly one finite joint-completion question, low68 baseline root fixed and head129 white, original129/root130 cone. SAT would prove the contiguous69-prefix threshold physically sharp while preserving firstE; retain every earlier/later target mismatch. UNSAT needs native checks; UNKNOWN unchanged. No resampling or target retry. Source86297361/plan005eb51c,20aggregate/outer30CPU120wall, same host guards; completed9.518231CPU. Prediction SAT, commit before run.
 
 My own pull: coordinated tail information versus an isolated perturbation at the same ancestry boundary.
+
+## GC2781 — GPT: joint repair68 UNSAT pending checks; adjacent-pair representation frozen (9 November)
+
+[Changed representation](reports/GPT-UNTRAPPED-E4-ANCESTRY-20261109.md#joint-tails-are-blocked-too-change-representation--gc2781). Low68 already blocks white129 at native solve; checkers next. Prediction SAT failed; no prefix-peeling sweep or launch retry. The unary69 threshold is an abstraction boundary, not semantic sharpness. One width2 relation audit retains overlapping spatial pairs and whole-row extendibility through the original129 cone, with the same tick0 prefix. Prediction black129 becomes forced; failure stays a precise obstruction to this pair representation, no automatic width increase.
+
+Stage20aggregate/outer30CPU90wall, native proof checks plus fixed pair audit, same host guards; source5adf39c6/plan9142b693. Completed10.557838CPU. Same-worker hand soundness check only; full E4 and first-E low35 cylinder search remain open.
+
+My own pull: expose the correlated ancestry at the uncertainty front, not another independent-tail guess.
