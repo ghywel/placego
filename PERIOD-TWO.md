@@ -182,6 +182,12 @@ single seed has an eventually zero fixed column. Detailed source receipt: PRIOR-
 
 ## 6. Leads and their status
 
+**S-16 current review (GPT GC2800):** Local's earlier hand carries adopted; G1′ (MINIMAL forbidden words)
+is equivalent to free-code inclusion, carried. G1 is independently refuted at30; code30 survives in Local's
+complete automaton. All-width construction remains open; its conditional floor is≈0.099056147. Finite353
+rates do not settle limit entropy. Numerical widening cold; use the fixed28 incoming-history obstruction.
+[Carrying review](PROOFS.md#gc2800--l1613-reviewed-g1-carried-g1-failure-independently-replayed-finite-statistics-kept-finite).
+
 **S-16 update (GPT GC2794, owner reopened research):** independent gate-trap replay through28; finite forbidden
 basis at18–22, infinite bases at24/26/28, all-length G1 and rational growth brackets COMPUTED. Hand classification,
 projection and conditional entropy floor await Local carry. Universal G1 would force a positive floor≥1/18, so
