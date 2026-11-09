@@ -10,7 +10,8 @@ from pathlib import Path
 d = Path(sys.argv[1])
 prose = (d / 'essay-prose.md').read_text()
 title = (d / 'title.txt').read_text().strip()
-abstract = ' '.join((d / 'abstract.txt').read_text().split())
+abstract = (d / 'abstract.txt').read_text().strip()
+assert abstract == ' '.join(abstract.split()), 'abstract.txt must be one canonical line for the notebook byte check'
 src = (d / 'Rule30Submission.lean').read_text()
 assert '"' not in src and '\\' not in src, 'the source must embed as a plain string literal'
 lines = prose.split('\n')
@@ -25,7 +26,7 @@ Template: ComputationalEssay
 Name: {title}
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-11-09
-Description: Core Lean. After a right half enters the kit's gate trap, column 1 never reads the gap words 333, 3353, 3533, 3553 or 5533, and from the third black cell on no two consecutive gaps are 3. The words are minimal and, by computation, all the trap forbids. So Q01Gap weakens to Q01GapWords, which still gives CQ01 for trapped right halves and CQ01Empty. Open.
+Description: Core Lean. After a right half enters the kit's gate trap, column 1 never reads the gap words 333, 3353, 3533, 3553 or 5533, and from the third black cell on no two consecutive gaps are 3. These are the minimal forbidden words of the relaxed trap graph; completeness is computed separately. Assuming the open Q01GapWords gives CQ01 for trapped right halves and CQ01Empty.
 Abstract: {abstract}
 Keywords: [rule 30, Rule 30 Prize, period two, gate trap, gap words, right half, CQ01, Q01Gap, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[lhallee/rule30-open](https://github.com/lhallee/rule30-open)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]

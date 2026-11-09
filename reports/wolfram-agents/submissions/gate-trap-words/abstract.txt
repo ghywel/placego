@@ -1,10 +1,1 @@
-For period 2 of rule 30 the kit drives a right half R with the alternating center and reads u R, column 1 at the odd
-times. Its gate trap, 829 windows of columns 1 to 16 closed under the double step whatever column 17 does, gives after
-entry only the gaps 3 and 5 between black cells (gaps_of_entry). We prove in core Lean that after entry u R never
-reads the gap words 333, 3353, 3533, 3553 or 5533 (gap_words_of_entry), hence never 33535555 (no_33535555_of_entry).
-From the third black cell after entry, no two consecutive gaps are 3 (no_late_33). Each word is minimal for the trap
-(minimal_paths), and by computation they are all it forbids. The kernel checks the path sets of the trap graph, 40
-shared layers in 45 separate checks. The kit's open Q01Gap therefore weakens to Q01GapWords, which has to exclude only
-the finitely supported left halves whose free bits, complemented, have gaps 3 or 5 and avoid the five words. It still gives CQ01
-for every right half that enters the trap, and CQ01Empty. Its class of free bits has 0.132 bit of entropy per sample, against
-0.256 for Q01Gap. Q01GapWords remains open.
+For period 2 of rule 30, the kit drives a right half R with the alternating center and reads u R, column 1 at odd times. Its gate trap consists of 829 windows closed under the double step for every exterior input; after entry, black cells in u R have gaps 3 or 5. We prove in core Lean that after entry u R never reads the gap words 333, 3353, 3533, 3553 or 5533, hence never 33535555. From the third black cell at or after entry, no two consecutive gaps are 3. Explicit paths certify minimality for the relaxed trap graph; a separate computation shows the five words characterize that graph's gap language. The kernel checks 40 shared path-set layers in 45 checks. The open Q01Gap implies Q01GapWords, which excludes finitely supported constrained left halves whose complemented free bits eventually have gaps 3 or 5 and avoid the five words. Assuming Q01GapWords yields CQ01 for trapped right halves and CQ01Empty. The relaxed word class has computed entropy 0.132 bit per sample, against 0.256 for Q01Gap. Neither Q01GapWords nor universal trap entry is proved.

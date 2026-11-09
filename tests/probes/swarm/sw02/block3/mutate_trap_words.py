@@ -3,7 +3,8 @@
 must be REJECTED by Lean (any error). Usage: python3 mutate_trap_words.py SOURCE KIT_REPO OUTDIR [MUTANT ...]
 
 M1 drop one window from a middle layer of 3353 (step check fails)
-M2 claim the allowed word 3355 with the layers of 3353 (the last letter differs, the step check fails)
+M2 claim the allowed word 3355 with the layers of 3353 (the unchanged literal expansion fails first;
+   this is a word-expansion/type control, not a direct final-step-check control)
 M3 start from the white windows instead of the black ones (start check fails)
 M4 flip the first column-17 value in the path witness of 353. Not a must-fail mutant after all: column 17 reaches
    column 1 only after about eight double steps, and this path still reads 353 (first run: ACCEPTED, kept as found)

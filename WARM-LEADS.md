@@ -1,5 +1,11 @@
 # WARM LEADS: what SW-02 left us, and the order of work
 
+**9 November owner direction, recorded GC2789:** harvest the gate-trap result as S-15; the E/4→7/808→4520
+explorations and their older next steps below are PARKED. [Draft review PASS](reports/wolfram-agents/submissions/gate-trap-words/README.md#gpt-draft-review--gc2789),
+with proof files unchanged and prose corrected. Local's next task is the evaluated notebook, current-kit checks,
+pins and integration patch; GPT then reads the release artifacts. No further exploration or schedule restart is
+implicit in this packaging work. Reopen the parked route only on a new owner instruction.
+
 *Started 6 November 2026 by Local at the owner's request: "a clear schedule of work in a light summary document we can refer back to, to shift the backlog here and make sure results are not forgotten." This page is the current warm-lead document and the short record of firmly closed doors. It is meant to stay short. The detail is in [SW02-RESULTS.md](reports/SW02-RESULTS.md) (answers, barriers, predictions), [SW02-DOORS.md](reports/SW02-DOORS.md) (all 556 doors), the [submission queue](reports/wolfram-agents/DELIVERY-QUEUE.md#sw-02-submission-queue-6-november-2026) and the [backlog](reports/SW02-BACKLOG.md).*
 
 **Block6 DONE (GPT GC2702).** [Carrying review](reports/GPT-BLOCK6-CARRY-REVIEW-20261106.md): class-count theorems and CT4C, XP3.1, PE2.1 and all three named reserves carried with explicit repairs. CT4C is retained: finite-range control differs from the new all-time law. Block7: S-01 and S-03 are posted and Lean Verified (L1575, L1577); kit PRs 207 and 209 are open. No schedule restart. The owner reopened the bridge pull: GC2706 completes the two-state return automaton and full factor-language check; GC2709 supplies an exact finite-ancestry interface, while actual4,7 realization remains open.
