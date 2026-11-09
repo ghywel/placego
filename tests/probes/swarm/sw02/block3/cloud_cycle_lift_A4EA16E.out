@@ -1,0 +1,41 @@
+word A4EA16E: 56 gaps, period 208 sampled steps
+W=1 core sizes min/max/total 1/1/208 rounds 2
+W=2 core sizes min/max/total 1/2/228 rounds 6 time 0.2s
+W=3 core sizes min/max/total 1/2/214 rounds 3 time 0.1s
+W=4 core sizes min/max/total 1/2/248 rounds 3 time 0.1s
+W=5 core sizes min/max/total 1/3/294 rounds 4 time 0.2s
+W=6 core sizes min/max/total 1/4/362 rounds 6 time 0.2s
+W=7 core sizes min/max/total 1/5/428 rounds 5 time 0.2s
+W=8 core sizes min/max/total 1/6/490 rounds 10 time 0.3s
+W=9 core sizes min/max/total 1/7/528 rounds 10 time 0.4s
+W=10 core sizes min/max/total 1/6/530 rounds 13 time 0.5s
+W=11 core sizes min/max/total 1/6/418 rounds 16 time 0.6s
+W=12 core sizes min/max/total 1/10/642 rounds 9 time 0.3s
+W=13 core sizes min/max/total 1/13/946 rounds 10 time 0.3s
+W=14 core sizes min/max/total 1/19/1496 rounds 9 time 0.3s
+W=15 core sizes min/max/total 1/24/2242 rounds 15 time 0.5s
+W=16 core sizes min/max/total 2/34/3544 rounds 13 time 0.5s
+W=17 core sizes min/max/total 2/49/5230 rounds 11 time 0.4s
+W=18 core sizes min/max/total 2/85/8098 rounds 19 time 0.7s
+W=19 core sizes min/max/total 2/145/12698 rounds 31 time 1.2s
+W=20 core sizes min/max/total 3/242/19661 rounds 24 time 1.0s
+W=21 core sizes min/max/total 2/346/28139 rounds 21 time 1.0s
+W=22 core sizes min/max/total 2/544/43196 rounds 24 time 1.2s
+W=23 core sizes min/max/total 1/853/60284 rounds 42 time 2.4s
+W=24 core sizes min/max/total 1/1345/92791 rounds 30 time 2.2s
+W=25 core sizes min/max/total 2/2171/137446 rounds 53 time 5.0s
+W=26 core sizes min/max/total 3/3449/200803 rounds 65 time 7.7s
+W=27 core sizes min/max/total 4/5489/301085 rounds 52 time 8.4s
+W=28 core sizes min/max/total 4/8787/425162 rounds 84 time 18.7s
+W=29 core sizes min/max/total 3/13763/616019 rounds 72 time 22.0s
+W=30 core sizes min/max/total 1/21625/900874 rounds 76 time 33.6s
+W=31 core sizes min/max/total 2/32791/1302568 rounds 46 time 30.0s
+W=32 core sizes min/max/total 1/47333/1720927 rounds 81 time 76.1s
+W=33 core sizes min/max/total 2/68791/2369400 rounds 74 time 98.3s
+W=34 core sizes min/max/total 1/95434/3217229 rounds 82 time 158.0s
+W=35 core sizes min/max/total 2/122988/3971509 rounds 105 time 276.5s
+W=36 core sizes min/max/total 3/162459/5128724 rounds 79 time 283.1s
+W=37 core sizes min/max/total 4/185051/5708014 rounds 97 time 423.0s
+W=38 core sizes min/max/total 5/145624/4343869 rounds 119 time 477.3s
+budget reached before W 39
+done; wall 1950.8s

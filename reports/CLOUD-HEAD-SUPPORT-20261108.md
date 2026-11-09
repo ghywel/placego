@@ -1,6 +1,6 @@
 # The head support of the label 4520 inside the single passage, the carry of GC2768's finite-margin argument, and the sweep of the grammar's cycles below mean 83 (Cloud, CL755)
 
-*Cloud, 8 November 2026, a block at the owner's word (CL755). Status: COMPUTED by own code with a self-test, one host, unless marked otherwise. Companion to [the cycle-lift report](CLOUD-CYCLE-LIFT-20261108.md) (CL754) and [GPT's review](GPT-CYCLE-LIFT-REVIEW-20261108.md) (GC2767/GC2768). Code: `tests/probes/swarm/sw02/block3/cloud_passage_dag.py` (with `cloud_passage_selftest.py`), `cloud_dag43_carry.py`, and the CL754 probe `cloud_cycle_lift.py` for the sweep; outputs beside them as `.out`; the evidence tarball is in the shared store (digest in the ledger).*
+*Cloud, 8–9 November 2026, a block at the owner's word (CL755). Status: COMPUTED by own code with a self-test, one host, unless marked otherwise. Companion to [the cycle-lift report](CLOUD-CYCLE-LIFT-20261108.md) (CL754) and [GPT's review](GPT-CYCLE-LIFT-REVIEW-20261108.md) (GC2767/GC2768). Code: `tests/probes/swarm/sw02/block3/cloud_passage_dag.py` (with `cloud_passage_selftest.py`), `cloud_dag43_carry.py`, and the CL754 probe `cloud_cycle_lift.py` for the sweep; outputs beside them as `.out`; the evidence tarball is in the shared store (digest in the ledger).*
 
 ## 1. GPT's question, and the tool
 
@@ -56,30 +56,33 @@ At width 24 the same arc [6, 30] is minimal (the frontier is identical: every st
 
 ## 5. The sweep of the grammar's cycles below mean 83
 
-*In progress at this commit: the runs below are the words finished so far; the closing addendum of CL755 and the final version of this section carry the complete table.*
-
-Scope (CL755): the carried X grammar's primitive cycles with k ≤ 4 returns, separations in {4, 6, 7, 8, 9, 10, 11, 12}, no cyclic 4→4 or 4→6, mean cost Σ(34 + 7n)/k below 83, up to rotation, not tested at CL754: the 25 words without a 6, the two words (4,10) and (4,11) for the least-n question, and eight words with a 6 as a sample of the 38. Each run: xx rule, width cap 46, under the substitute cap.
+Scope (CL755): the carried X grammar's primitive cycles with k ≤ 4 returns, separations in {4, 6, 7, 8, 9, 10, 11, 12}, no cyclic 4→4 or 4→6, mean cost Σ(34 + 7n)/k below 83, up to rotation, not tested at CL754: the 25 words without a 6, the two words (4,10) and (4,11) for the least-n question, eight words with a 6 as a sample of the 38, and, in a second batch, the longer separations (4,13), (4,14), (4,16), (4,20). Each run: xx rule, width cap 46, under the substitute cap (four runs in parallel, 900 s each in the first batch, 1,800 s in the second). The outputs are `cloud_cycle_lift_<word>.out`.
 
 | separations | mean cost | period (sampled) | result | wall s |
 |---|---:|---:|---|---:|
 | (4,7,4,8) | 74.25 | 297 | dead at 43 | 108.1 |
 | (4,7,4,9) | 76.00 | 304 | dead at 43 | 136.8 |
-| (4,7,6,7) | 76.00 | 304 | alive at 41 (28425 windows) | - |
-| (4,8,6) | 76.00 | 228 | alive at 38 (49002 windows) | - |
+| (4,7,6,7) | 76.00 | 304 | dead at 43 | 218.5 |
+| (4,8,6) | 76.00 | 228 | dead at 43 | 176.9 |
 | (4,7,4,10) | 77.75 | 311 | dead at 43 | 220.8 |
 | (4,7,7,7) | 77.75 | 311 | dead at 43 | 154.0 |
 | (4,8,4,9) | 77.75 | 311 | dead at 43 | 262.5 |
+| (6,6,6,7) | 77.75 | 311 | dead at 43 | 204.7 |
 | (4,7,8) | 78.33 | 235 | dead at 43 | 184.4 |
 | (4,8,7) | 78.33 | 235 | dead at 43 | 235.1 |
+| (6,6,7) | 78.33 | 235 | dead at 43 | 165.8 |
 | (4,7,4,11) | 79.50 | 318 | dead at 43 | 449.0 |
 | (4,7,7,8) | 79.50 | 318 | dead at 43 | 274.1 |
 | (4,7,8,7) | 79.50 | 318 | dead at 43 | 241.5 |
 | (4,8,4,10) | 79.50 | 318 | dead at 43 | 301.4 |
 | (4,8,7,7) | 79.50 | 318 | dead at 43 | 239.5 |
 | (4,9) | 79.50 | 159 | dead at 43 | 80.3 |
+| (6,6,7,7) | 79.50 | 318 | dead at 43 | 259.7 |
 | (4,7,9) | 80.67 | 242 | dead at 43 | 205.0 |
 | (4,8,8) | 80.67 | 242 | dead at 43 | 163.1 |
 | (4,9,7) | 80.67 | 242 | dead at 43 | 169.4 |
+| (6,6,8) | 80.67 | 242 | dead at 43 | 197.7 |
+| (6,7,7) | 80.67 | 242 | dead at 43 | 188.2 |
 | (4,7,4,12) | 81.25 | 325 | dead at 43 | 849.1 |
 | (4,7,7,9) | 81.25 | 325 | dead at 43 | 262.6 |
 | (4,7,8,8) | 81.25 | 325 | dead at 43 | 238.2 |
@@ -87,10 +90,19 @@ Scope (CL755): the carried X grammar's primitive cycles with k ≤ 4 returns, se
 | (4,8,4,11) | 81.25 | 325 | dead at 43 | 658.4 |
 | (4,8,7,8) | 81.25 | 325 | dead at 43 | 471.3 |
 | (4,8,8,7) | 81.25 | 325 | dead at 43 | 474.4 |
-| (4,9,4,10) | 81.25 | 325 | alive at 37 (237116 windows) | - |
-| (4,9,7,7) | 81.25 | 325 | alive at 37 (186019 windows) | - |
+| (4,9,4,10) | 81.25 | 325 | dead at 43 | 436.7 |
+| (4,9,7,7) | 81.25 | 325 | dead at 43 | 363.5 |
 | (4,10) | 83.00 | 166 | dead at 45 | 130.6 |
 | (4,11) | 86.50 | 173 | dead at 43 | 195.1 |
+| (4,13) | 93.50 | 187 | alive at 46 (15630 windows) | 597.7 |
+| (4,14) | 97.00 | 194 | alive at 46 (36204 windows) | 1070.2 |
+| (6,12) | 97.00 | 194 | dead at 43 | 625.8 |
+| (4,16) | 104.00 | 208 | budget: reached W=38 (4343869 windows) | 1950.8 |
+| (4,20) | 118.00 | 236 | alive at 35 (9405419 windows) | - |
+
+**Every word below mean 83 is dead** (the 25 without a 6 at width 43; (4,10) at 45, (4,11) at 43; the eight with a 6 at 43, (6,12) included), so the owner's "first survivor below 83" does not exist in the swept set, and no n in 9..12 gives a surviving (A⁴EAⁿE)^∞. (4,13) and (4,14) are not excluded at the cap 46 and were continued to 62 (§5a); (4,16) and (4,20) ran out of budget at widths 38 and 35 with millions of windows and were not continued.
+
+**§5a. (4,13) and (4,14), continued.** Resumed from their width-46 checkpoints, both die at width 47 (`cloud_cycle_lift_A4EA13E_to62.out`, `..._A4EA14E_to62.out`), exactly where (4,12) died. So **every (A⁴EAⁿE)^∞ with 7 ≤ n ≤ 14 is dead** (n = 7, 8, 9, 11 at width 43; n = 10 at 45; n = 12, 13, 14 at 47), and the four-A return recurs periodically before no separation up to 14; (4,16) and (4,20) are untested beyond widths 38 and 35.
 
 **The CL754 survivors, carried on.** The uint64 probe is exact only to width 62 (at 63 the second exterior cell is shifted out, at 64 both), so the words that were "alive at 46" were continued with a Python-int implementation from their width-62 checkpoints (`cloud_cycle_lift_big.py`; its moves agree with the uint64 moves on 60,000 random windows at widths 20, 40, 62): (A⁷E)^∞ dies at width 63 (1,228 windows at 62), (A⁸E)^∞ at 64 (2,486 at 63), (A⁷EA⁸E)^∞ at 65 (1,866 at 64; the uint64 run had said 64, wrongly), and (A⁴EA¹²E)^∞ at 47 (15,614 windows at 46, one width past CL754's cap). Under rule30-open's pq rule (A⁷E)^∞ dies at 64. **So every tested periodic word containing an E dies; CL754's "7 and 8 live" and "4 recurs before a long separation" are withdrawn.** Only the pure A loop (the ether) survives, as the lock theorems say it must.
 
@@ -99,12 +111,13 @@ Scope (CL755): the carried X grammar's primitive cycles with k ≤ 4 returns, se
 ## 6. Predictions judged
 
 - P-U1 (the least n in 9..12 with (A⁴EAⁿE)^∞ surviving is 10 or 11): **MISSED**; (4,9), (4,10), (4,11) die at 43, 45, 43 and (4,12) at 47. No n ≤ 12 survives.
-- P-U2 (every word without a 6 below mean 83 dies by 46): **HELD so far** for every word finished at this commit, all at width 43; final judgement in the closing addendum.
-- P-U3 (every word with a 6 dies at 43 or below, including (6,12)): judged in the closing addendum.
+- P-U2 (every word without a 6 below mean 83 dies by 46): **HELD**; all 25 at width 43.
+- P-U3 (every word with a 6 dies at 43 or below, including (6,12)): **HELD**; all eight at 43.
 - P-U4, P-U5 (the single passage forces 4520 at source 109 and at source 275 at width 21): **HELD**, at widths 21–24.
 - P-U6 (the minimal arcs are far shorter than the margin 216, under 40 samples either side): **HELD**: 14 before and 10 after, six samples suffice.
 - P-U7 (GC2768's constants and argument carry): **HELD**.
 - P-U8 (the single passage stays nonempty through width 62): **HELD**; 83.5 million windows at 62 and growing.
+- P-U9 ((4,13) and (4,14), continued from 46, die at or below 62): **HELD**; both at 47.
 
 ## 7. Next steps
 
