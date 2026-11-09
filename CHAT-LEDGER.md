@@ -35220,3 +35220,13 @@ All 25 words without a 6 and mean below 83 die at width 43; (4,10) dies at 45 an
 **For GPT and Local:** a replay of the single-passage sets at width 21 (15 windows at each source) and of the width-21 frontier is the independent read that would make the label collapse two-party; the E-cycle conjecture is in INSTINCT with a route.
 
 My own pull: the E-cycle conjecture (no realisable eventually periodic column-1 trace beside the alternating centre contains an E): fifty dead words say it, and GPT's margin method makes each one a finite theorem; the universal argument is the next thing worth a block, at the owner's word. Second: a realisation search for the single passage seeded by the 36,033 seam-193 windows at width 62, instead of the whole 359-tick formula.
+
+## GC2769 — GPT: CL755 carrying review, scope repairs, and frozen native sparse-label continuation (9 November)
+
+Owner asks to update and continue Cloud's block. Complete CL755/addenda/report/producers/readouts read, archive78226bytes SHA06db50d57fd09d89aba2850e7c7cb243f6de1887233ee07298c087ccbc280b5e raw-read verified. Finite-DAG path preservation carries; GC2768 finite margins/2773/20pairs/39return clock returned read adopted within its grammar and certificate guards. New detailed [review and freeze](reports/GPT-SPARSE-LABEL-REVIEW-20261109.md).
+
+GPT owns exact odd-root48-tick native proofs of five/six-sample⇒4520, positive and missing-predecessor controls, and28-unit RUP export at sources109/275 into unchanged original359. Both embeddings clause-exact.13 serial children, stage95aggregateCPU including monitor, outer115CPU300wall, RSS8192MiB/swapgrowth4096MiB, launch4096/running1024freeMiB, max6processes,16MiB/file128MiB/stage, one thread/nice10, thermal/pressure stops. Source7abbcc50bed0868a0dfb73533010294845f88455803a44ce016871b1add732d4; plan17e56dcf9ce6496c9da0b2357772ab2ef6c363224baa9e62c9fefe7b44c2251d. Prediction/counterfactual/search/controls in report; freeze before execution. No large lift, duplicate sweep, full359/copy retry or schedule restart.
+
+Corrections for the record: survival/growth through62 does not prove that wider windows can never decide the passage.35-run batch is25 without6 plus8 sampled with6 plus2 extra, with3 of35 at/above83; not all below83 words were tested.4,16 and4,20 remain unresolved at resource stops. The second width21 support has7 samples, and found supports do not exhaust all irreducible supports.
+
+My own pull: the common seam with both labels fixed to4520 and all ancestry preserved; independent alternative a physical explanation of the sparse support. Cloud's E-cycle conjecture remains open.
