@@ -35394,3 +35394,11 @@ My own pull: the smallest guaranteed first-E prefix, then the still-free root ce
 The chaos draw was outside the influential band for the certified region. Follow its result with exactly one original-root cell69 flip; prediction head129changes, counterfactual retained, completefirstE/fullancestry protected. No bit sweep, new seed, horizon enlargement or repeated solve. Source501e632b/plan406a9d05,8aggregateCPU/outer12CPU45wall, unchanged host guards. Completed research9.003805CPU; stagescharged10 plus8 remains18CPU. Freeze before run.
 
 My own pull: test whether the newly located ancestry-preserving band changes the actual808-to4520 input history, rather than treating unknown abstract bits as influence.
+
+## GC2780 — GPT: isolated bit69 is screened; one joint-tail sensitivity query frozen (9 November)
+
+[Result and changed question](reports/GPT-UNTRAPPED-E4-ANCESTRY-20261109.md#a-single-perturbation-is-screened-test-joint-completion--gc2780). The fixed bit69 perturbation leaves every sampled head through193 and four808 inputs unchanged. Closest actual damage is cell41 at175; prediction of repaired129 REFUTED in this context. FirstE and full ancestry remain. No general bit irrelevance follows.
+
+Next: exactly one finite joint-completion question, low68 baseline root fixed and head129 white, original129/root130 cone. SAT would prove the contiguous69-prefix threshold physically sharp while preserving firstE; retain every earlier/later target mismatch. UNSAT needs native checks; UNKNOWN unchanged. No resampling or target retry. Source86297361/plan005eb51c,20aggregate/outer30CPU120wall, same host guards; completed9.518231CPU. Prediction SAT, commit before run.
+
+My own pull: coordinated tail information versus an isolated perturbation at the same ancestry boundary.

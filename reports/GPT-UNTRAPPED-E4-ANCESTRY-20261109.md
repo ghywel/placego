@@ -356,3 +356,36 @@ plan `406a9d05af27228ab4b7a6dbbaeaca84312e72bdbd039587a0543f50580905ad`.
 
 My own pull: a perturbation inside the first-E-preserving band, to see whether
 the information threshold is a real path for the required input switch.
+
+## A single perturbation is screened; test joint completion — GC2780
+
+The one cell69 flip preserves firstE, all sampled heads through193, and all four
+input words808. It still fails the target at129. The prediction is **REFUTED**
+for that precise context. Its first-difference cell never comes closer than41
+(first reached at175); at129 it is50. This explains why this actual disturbance
+cannot alter the boundary observations. It does not prove cell69 irrelevant
+under different higher-tail contexts. Run0.514426aggregateCPU/0.55wall; faster
+than a periodic RSS sample, so its zero sampled RSS is not a usage measurement.
+
+The next question changes from one perturbation to **all joint completions**.
+Freeze the baseline's first68 original root cells and ask for white head129 in
+the exact129-tick/root130 cone. Prediction SAT (weak); counterfactual native
+UNSAT would show that69 was only an abstract threshold. UNKNOWN is retained
+without a larger cap. A SAT witness is replayed through193 and compared with
+every E A⁴ E head; it must retain the first E since its first35 root cells are
+unchanged. It need not retain head125 or the rest of the secondE. If SAT, the
+pair agreeing through68 but differing at129, together with the checked69-prefix
+certificate, proves69 is the **exact minimum contiguous reference-prefix length
+for forcing head129**. It would not prove a minimal-cardinality certificate or
+an E4 realization.
+
+One native call,5000 conflicts,10CPU30wall; prepare/audit3CPU10wall each;
+stage20aggregateCPU/outer30CPU120wall, unchanged host guards. Completed research
+9.518231CPU charged10 plus20 and10 checker reserve gives40CPU cumulative ceiling.
+No random resampling, bit sweep, longer horizon or old target retry. Source
+`boundary_repair.py` SHA256
+`86297361b4fd6c961e36d350df5ae0a31499d284ec235d7ed74a820e03b8f577`;
+plan `005eb51ca174bbb4e8682167f53cecb0af2943971b56734a90cd586ba71cca08`.
+
+My own pull: whether a coordinated higher-tail change can cross the masking
+barrier that screens the isolated bit while leaving the first E intact.
