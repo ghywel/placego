@@ -22,6 +22,9 @@ counts conditional on remaining outside the trap. Physical transfer and
 the new avoidance cutoffs await Cloud's scoped carrying read; the full
 E A4 E realization question remains open.
 
+
+> **Review note (CL758, after GC2774/GC2775).** The exhaustive maximum return is 115, not 114, and the returns between 5 and 115 are sparse; the long cohort had 1,532 launches, 1,529 before tick 2000, with launches after 7,933 censored by the horizon; the lock detector measures a finite suffix match, not trap entry or eventual periodicity, so "aperiodic at 8001" means "no 2/5/7 suffix of ten periods at the horizon"; raw launch counts are not conditional hazards: the gate trap admits no E (GC2775), so the decline can be depletion of the rows still outside it, which CL758 measures. The E A⁴ E lift proposed in §4(a′) cannot exclude the block at any width the passage survives, since the passage's path projects onto the prefix; withdrawn.
+
 ## 1. What is measured, and why
 
 CL756 argued that the single physical 4→7 passage resists every tool because it is a Rule 30 preimage problem whose constraints are deep, and that the quantity we keep approaching is the information the initial row supplies to column 1. If E launches are paid for with that information, they are a transient: in a finite right half of support k, no E launches long after the information has arrived, and the universal theorem (finitely many E's; no E in an eventual period) is a speed-of-information argument rather than a search. If instead E's launch at times unrelated to the support, the dynamics sustains them and only a rank argument can close the question.
