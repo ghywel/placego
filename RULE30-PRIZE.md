@@ -784,3 +784,11 @@ consequence is claimed.
 
 
 **GC2768 continuation (8 November):** [Periodic bridge audit](reports/GPT-CYCLE-LIFT-REVIEW-20261108.md#outcome--gc2768): independent43-core replay confirms CL754. New hand finite-margin deductions awaiting carry exclude20 consecutive4,7 pairs, strengthen the conditional X-clock liminf to2831/39 and force middle labels4520/4520 under five repeated pairs. Single4→7, universal capture and prize questions remain open.
+
+**GC2782 continuation (9 November):** [Untrapped first-E ancestry](reports/GPT-UNTRAPPED-E4-ANCESTRY-20261109.md#final-outcome--gc2782).
+The owner-requested random-tail test exposed robust shielding. Exact first-image
+countermodels prevent dropping tick0 ancestry; native low68 cylinder obstruction
+and a sound adjacent-pair explanation improve on unary69-cell reasoning. Low35
+protects the first E. General E A4 E remains open, shorter153 launch UNKNOWN.
+Next: joint source-input constraints retaining changes36..68 and all higher-root
+ancestry; no broader search or prize-status change.

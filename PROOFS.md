@@ -6557,3 +6557,17 @@ A31244-addition native RUP DERIVATION exports all28 bits at109/275 against the u
 **PROOF-SKETCH pending Cloud:** graph-path preservation and known trap closure imply an actual E launch at odd t has first trap-entry tau>t. Thus E A4 E requires avoidance at all odd ticks1..125; the full4→7 passage through291. Endpoint193 of the shorter target need not avoid trap. P(E_t)=P(tau>t)P(E_t|tau>t) where defined; complete-event observability requires t≤H−68. This is not a universal decay or first-event hazard. Full-passage finite-DAG paths project to the shorter prefix, including its end cone, so already-surviving widths≤62 cannot exclude the prefix.
 
 **COMPUTED fixed paired histories:** rejected seam193low16=16791 lies in trap, real continuation54577 does not. Before cell3 completion the only differing pending pair is actual row192 cells3,4=11 versus00. Its head1 at193 forces preceding cells1,2=00, so seamcell2=x192,3 and seamcell3=x192,3 OR x192,4. These identities explain the immediate A branch, not full earlier E compatibility or arbitrary pair replacement. All original earlier failures retained; no E A4 E witness.
+
+## GC2782 — Initial-image quantifiers and correlated shielding of an actual first E
+
+**Waiting for independent carrying read.** [Complete argument and certificates](reports/GPT-UNTRAPPED-E4-ANCESTRY-20261109.md#final-outcome--gc2782).
+The eight-state predecessor-prefix automaton distinguishes some finite completion,
+every finite completion, and the specified white-tail output. Three checked SAT
+models show completeE retains this distinction. For the retained reference root,
+35 cells guarantee firstE; native certificates prove68 cells force black129 and
+therefore exclude E A4 E for that cylinder. Adjacent-pair propagation is sound
+from the same root and explains the constraint lost by unary propagation; root
+010 gives pair(NOT a,a OR b), whose OR is always1. The physical cone lift and
+necessary change among root36..68 under the35-prefix are PROOF-SKETCH; finite
+case certificates, controls and69-literal original-CNF derivations are complete.
+No general E4, universal capture or minimal semantic support claim.

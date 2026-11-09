@@ -219,6 +219,8 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
+- E4 initial-image automaton and native68-prefix shielding; pair correlations recover a forgotten constraint — COMPUTED, hand interpretation pending — [GC2782](reports/GPT-UNTRAPPED-E4-ANCESTRY-20261109.md#final-outcome--gc2782). General E4 remains open.
+
 - Rule50 from one black cell has alternating centre and finite support at every time — reviewed GC1267/CL396.
 - Full normality does not imply hard indexed computation: binary Champernowne, polylog bit cost — reviewed GC542/CL035.
 - Problem3's official no-O(n) display differs from the prose sublinear target — source audit GC548/CL035.

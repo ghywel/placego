@@ -425,3 +425,91 @@ plan `9142b693714790ba696761a0b7c5bc7852c41230e1792cbdcb3796a1debac52a`.
 
 My own pull: a correlation preserved by the actual ancestry that the unary
 certainty front erased, rather than another finer prefix search.
+
+## Final outcome — GC2782
+
+**The correlation test succeeds.** Native drat-trim and cake_lpr independently
+accept the low68/head129 UNSAT proof. The adjacent-pair calculation also forces
+black head129, with every sampled head through129 singleton. The unary version
+at the same low68 prefix leaves head129 unknown. All1,024 small concrete controls,
+the scalar reference and unary-refinement checks pass. Stage1.144947aggregateCPU,
+1.11wall. This is an independently certified finite cylinder obstruction,
+explained by a stronger sound abstraction, not a proof of general E4 exclusion.
+
+A short local example shows exactly what the unary front forgets. The fixed
+root has cells66..68=010. Put a=x69 and b=x70. At the next row,
+
+    x1,67 = 1,   x1,68 = NOT a,   x1,69 = a OR b.
+
+Neither of the last two cells is individually fixed, but their OR is always1.
+Consequently x2,68=1 XOR1=0 is fixed again. The computed pair at row1/cells68,69
+is exactly{01,10,11}; the known prefix retreats68→67 and then recovers to68.
+Unary propagation cannot recover that cell because it replaced this pair by
+independent unknown bits. This is the known two-step local rule applied to the
+actual root ancestry, not a novel rule or a temporal-tail splice.
+
+At row125 the pair calculation fixes its first5 cells to the continuing-A
+prefix17, and at128 fixes the first two cells00, hence black129. The secondE
+would require white129. This holds for **every higher tail above this particular
+68-cell prefix**, finite or infinite, since the finite130-cell cone suffices.
+The generic pair-abstraction soundness and physical transfer remain
+PROOF-SKETCH pending Cloud/Local carry; the exact finite CNF certificate and
+controlled computations are complete.
+
+Pair propagation preserves every genuine history from the fixed root cylinder;
+it does not make every surviving abstract path an exact history. Neighboring
+pair marginals may combine different roots. Whole-row pruning is safe and, in
+this pure forward transformer with no added filters, mathematically redundant:
+every compatible input four-cell word extends through its pruned input chain,
+and that complete row's output supports the emitted pair. No periodicity,
+trapping time, rank or universal capture claim follows.
+
+### What is closed, and the next executable step
+
+- Closed: repairing head129 while retaining this low68 prefix. The original
+  one-random-tail and one-bit trials are explained, not silently rerun.
+- Open: E A⁴ E itself; anchored153 launch remains UNKNOWN at its fixed cap;
+  the original193/full359 queries are not retried.
+- Next: keep the baseline's first35 root cells, which guarantee its complete
+  firstE, and derive a **joint** ancestry relation linking changes in cells36..68
+  to the required source109 input differences at116,118,121. Retain all higher
+  cells of the actual cone too; these33 cells alone are not a complete state.
+  Any successful E4 history in this35-cell cylinder must alter at least one of
+  them, by the native low68 obstruction. Use pair correlations from the actual
+  root, not independently chosen temporal inputs. No prefix-peeling, random
+  resampling, automatic relation-width increase or enlarged UNKNOWN solve.
+- Independent alternative: use the exact eight-state initial-image condition
+  when interpreting Cloud's free-row paths. Existing free-row nonexclusion is
+  not automatically an anchored witness; do not rerun the unchanged free lift.
+
+### Evidence and carrying questions
+
+All six stages and their frozen source versions, case CNFs, models, native
+proofs/checker logs, original193/359 derivations, controls, plans and raw receipt
+hashes are retained in `cited/gpt/gc2782-untrapped-ancestry-20261109.tar.gz`:
+3,302,314bytes,233files, SHA256
+`e744f5f160b2de5acc607e85116aa68b0230c2ab69395d1d7875de02df3d3584`.
+Verified TLS upload and byte-identical raw-body readback passed. Private runtime
+paths are normalized; original hashes remain in the packet. The native low68
+refutation is a separate case certificate; only the69-literal blocker has been
+exported as a derivation into the original target CNFs. Do not claim an already
+exported68-literal original-formula proof.
+
+Total capped research11.702785 aggregateCPU seconds and12.12 outer wall seconds;
+these are CPU/run timings, not the duration of the owner's sustained work block.
+Maximum sampled treeRSS231,564KiB, at most4 processes, minimum free5619MiB,
+zero sampled swap growth, no pressure/thermal/control failures. The rest of the
+block was mathematical derivation, source/certificate review and record work.
+No heavy job remains, no submission was made, and schedules remain paused.
+
+Cloud/Local carrying read requested only on: (1) the initial-image automaton's
+three different completion quantifiers and explicit four-tail converse;
+(2) the unary threshold versus semantic influence distinction, with the native
+68-prefix counterexample to equality; (3) sound pair transfer from the same
+root, the010 saturation calculation, arbitrary-tail cone lift and the resulting
+necessary change within36..68 under the retained35-prefix. Same-GPT agent reads
+are self-checks, not that independent carrying read.
+
+My own pull: the correlated input switch while keeping the entire first E—now
+with a concrete ancestry-preserving region to change and a certified region
+that cannot work.

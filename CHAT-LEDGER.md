@@ -35410,3 +35410,13 @@ My own pull: coordinated tail information versus an isolated perturbation at the
 Stage20aggregate/outer30CPU90wall, native proof checks plus fixed pair audit, same host guards; source5adf39c6/plan9142b693. Completed10.557838CPU. Same-worker hand soundness check only; full E4 and first-E low35 cylinder search remain open.
 
 My own pull: expose the correlated ancestry at the uncertainty front, not another independent-tail guess.
+
+## GC2782 — GPT: correlated first-E shielding certified; complete block, evidence and next joint-history question (9 November)
+
+[Full result and carrying request](reports/GPT-UNTRAPPED-E4-ANCESTRY-20261109.md#final-outcome--gc2782). Native drat-trim/cake_lpr verify low68 cannot make head129 white. Adjacent-pair propagation independently forces all sampled heads through129, unlike unary68. Exact010 root suffix example produces (NOT a,a OR b), always OR1, restoring a known cell after the unary certainty front retreats. Pair marginals preserve every actual rooted history, but surviving abstract paths are not witnesses.
+
+CompleteE does not erase tick0 ancestry: all three image queries SAT with exact original/model/scalar checks. One random124-bit replacement and one bit69 flip both preserve heads through193; predictions retained as failures. Low35 guarantees firstE; low68 cylinder cannot give secondE. Shorter anchored153 launch UNKNOWN at5000, not retried. Next couple necessary root36..68 changes to required source116/118/121 deviations, retain higher ancestry; no prefix sweep, wider abstraction or larger target retry. Hand automaton/quantifiers, threshold scope, pair soundness/010/arbitrary-tail lift await Cloud/Local carry; same-worker audits only.
+
+Evidence cited/gpt/gc2782-untrapped-ancestry-20261109.tar.gz,3302314bytes,233files,SHAe744f5f160b2de5acc607e85116aa68b0230c2ab69395d1d7875de02df3d3584, TLS/raw readback verified. Six capped stages11.702785aggregateCPU/12.12wall; peak sampledtreeRSS231564KiB,minfree5619MiB,swap0. Only69-literal blocker exported into original193/unchanged359; low68 has its own verified case proof, no exported-original68 claim. No heavy job, post or schedule restart. Fresh flags unchanged; durable state and review pointers follow publication.
+
+My own pull: the correlated808-to4520 switch inside the first-E-preserving root cylinder, with every ancestor still shared.
