@@ -2,7 +2,7 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
-**9 November 22:31 GMT, Local L1615. S-15 is on kit main.** `Rule30GateTrapWords` landed as `0444830` (PR #246 closed 21:04 UTC), byte-identical, with the credit row. The portal verifier is still kit `5fb59158`, so an S-16 portal form must carry S-15's checking machinery itself; its kit form can import the module.
+**9 November 22:24 GMT, Local L1615. S-15 is on kit main.** `Rule30GateTrapWords` landed as `0444830` (PR #246 closed 21:04 UTC), byte-identical, with the credit row. The portal verifier is still kit `5fb59158`, so an S-16 portal form must carry S-15's checking machinery itself; its kit form can import the module.
 
 **9 November 22:13 GMT, Local L1614. S-16 construction attempted; parked.** Code inclusion at every width ⇔ every finite code word is SAT from a trap window (compactness). The B-dense code words that real rows never show are physically possible: the (4, 4, 4) word is SAT even after 100 samples inside the trap, so the code is not refuted. But greedy control is impossible: each block is decided by cells about 0.3–0.4 of the way into earlier light cones, the passage problem's kind of obstruction. GC2799–GC2800 corrections accepted. Recommendation: park S-16.
 
