@@ -23,13 +23,20 @@ PREDICTION (written before the first run; clock read 21:48:13 UTC):
  - (d) no rejected code word at 16 to 28 (GPT's code automaton).
  - At W = 30, if run: G1 still has no counterexample, the code is not rejected, and the entropy slope is between
    0.115 and 0.1215 (GPT froze [0.115, 0.123] for 30; my narrower guess says the decline keeps growing).
- Counterfactuals: any failure in (b)-(d) through 28 is a disagreement with GPT to resolve before anything else; a G1
- counterexample or a rejected code word at 30 ends the 1/18 floor route at that width.
+ Counterfactuals: any failure in (b)-(d) through 28 is a disagreement with GPT to resolve before anything else;
+ a G1 counterexample refutes that sufficient hypothesis, while a rejected code word refutes free-code inclusion.
 Result (16-28 started 21:48:51 UTC; 30 started 21:49:19 UTC): (b), (c), (d) HELD through 28, matching GPT exactly
 (code automaton 3, 6, 8, 10, 21, 80, 298 states). At 30: slope 0.119193 (HELD), code not rejected (2,180 states, HELD),
-but G1 MISSED: 10 counterexamples, shortest 355535355535353 (runs 3,1,3,1,1), and a pumped family of runs
-3,1,3,1,3,4,4,5^m,6. Every counterexample contains 353; G1' below replaces G1.
+but G1 MISSED: the original DFS printed 10 representative violating transitions, including
+355535355535353 (runs 3,1,3,1,1). This does not count all counterexample words, prove a shortest length,
+or certify a suggested pumped family. Every displayed witness contains 353; G1' is equivalent to code inclusion.
+
+GC2800 review: the historical .out was produced before the following checker correction. The visited product
+now retains the exempt-word prefix as well as (p,s,P-monitor); otherwise merging can suppress a nonexempt word
+when a representative equals an exempt word. BFS gives shortest representatives in the corrected product.
+The saved16-28 automata and a synthetic violating language check this correction; width30 was not rerun.
 """
+from collections import deque
 import math
 import re
 import sys
@@ -149,23 +156,27 @@ def monitor(m, g):
 def g1_product(tr):
     col = {3: 0, 5: 1}
     m0 = (False, False, -1, 0)
+    def exempt_prefix(v):
+        return v if any(f[:len(v)] == v for f in F) else None
+
     start = []
     for x in (3, 5):
         p = tr[0, col[x]]
         if p >= 0:
-            start.append(((int(p), 0, monitor(m0, x)), (x,)))
-    seen = {s for s, _ in start}; todo = list(start); bad = []
+            start.append(((int(p), 0, monitor(m0, x), exempt_prefix((x,))), (x,)))
+    seen = {s for s, _ in start}; todo = deque(start); bad = []
     while todo:
-        (p, s, m), w = todo.pop()
+        (p, s, m, fp), w = todo.popleft()
         for y in (3, 5):
             p2 = tr[p, col[y]]; s2 = tr[s, col[y]]; m2 = monitor(m, y); w2 = w + (y,)
+            fp2 = exempt_prefix(fp + (y,)) if fp is not None else None
             if p2 < 0:
-                if s2 >= 0 and not m2[0] and w2 not in F:
+                if s2 >= 0 and not m2[0] and fp2 not in F:
                     bad.append(''.join(map(str, w2)))
                 continue
             if m2[0]:
                 continue
-            st = (int(p2), int(s2), m2)
+            st = (int(p2), int(s2), m2, fp2)
             if st not in seen:
                 seen.add(st); todo.append((st, w2))
     return len(seen), bad
@@ -192,7 +203,7 @@ for W in WS:
             res.append(run(tr, w) < 0 and run(tr, w[:-1]) >= 0 and run(tr, w[1:]) >= 0)
         out.append(f'   pumped family k=0..6 minimal forbidden: {res}')
     nps, bad = g1_product(tr)
-    out.append(f'   G1 all-length product: {nps} states, counterexamples {bad[:5]} ({len(bad)})')
+    out.append(f'   G1 all-length product: {nps} states, representative witnesses {bad[:5]} ({len(bad)} violating transitions)')
     code = automaton(start, [(5,), (3, 5, 5, 5)], sR, hR)
     out.append(f'   free code {{5, 3555}}: {len(code)} states, rejections {int((code < 0).sum())}; {time.time() - t0:.1f} s')
     print('\n'.join(out), flush=True)

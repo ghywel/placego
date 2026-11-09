@@ -4,24 +4,25 @@
 Usage: python3 local_trap_353_decay.py KIT_DIR ROWS HORIZON BIN SEED
 
 Hypothesis H-inf: the limit of the trap's eventual gap languages as the width grows is the free code {5, 3555}*,
-the words whose every internal run of 5s between 3s has length at least three; equivalently every word containing
+the FACTOR CLOSURE of the code, whose every internal run of 5s between 3s has length at least three; every word containing
 353 eventually dies. Real trapped rows lie in every width's lift, and a width's eventual language applies after a
 finite number of gaps, so under H-inf a row's 3s would, late enough, all be followed by at least three 5s.
 
-It runs ROWS random right halves of support at most 30 (the kit's alternating column, exact integers, as
+ It runs ROWS random right halves of EXACT support 30 (the kit's alternating column, exact integers, as
 local_trap_real_rows.py) to time HORIZON, and the empty right half, takes each row's gaps from its first black head
 at or after entry into the kit's trap, and reports per bin of BIN gaps after entry: the number of rows still
-showing a 3 in the bin (not yet locked into all-5s), the number of 3s, and the fraction of 3s followed by 5 then 3
+showing a 3 in the observed bin, the number of 3s, and the fraction of 3s followed by 5 then 3
 (the factor 353). It also prints the empty right half's 353 count and the gap index of its last 353.
 
 PREDICTION (written before the first run; clock read 21:51:59 UTC): 353 per 3 falls with time after entry but does
-not reach zero within the horizon: above 0.001 in the last bin, among rows still showing 3s. So H-inf is false for
-real rows at these times, or decides only beyond them. Counterfactual: the fraction falls to 0 in the late bins
+not reach zero within the horizon: above 0.001 in the last bin, among rows still showing 3s. Positive finite-time
+counts do not refute the asymptotic H-inf; its hypothetical cutoff may lie beyond the horizon. Counterfactual: the fraction falls to 0 in the late bins
 while rows still show 3s (strong support for H-inf, and the code would be the limit language), or it stays flat
 (no width effect visible in real rows at all).
 Result (started 21:52:20 UTC): MISSED; the second counterfactual happened. 353 per 3 is flat, 0.0126, 0.0119,
-0.0123, 0.0120 in the four full bins up to 2,000 gaps after entry (581 trapped rows, none locked into all 5s); the
-empty right half shows 353 three times, last at gap 1498. Real rows give no sign of the limit language being the code.
+0.0123, 0.0120 in the four full bins up to 2,000 gaps after entry (all581 trapped rows show a3 in each full bin); the
+empty right half shows 353 three times, last at gap 1498. This is a finite-time observation, not a limit-language
+or entropy conclusion. GC2800: no trajectories or historical output are changed by these wording corrections.
 """
 import random
 import re
