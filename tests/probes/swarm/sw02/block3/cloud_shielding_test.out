@@ -1,0 +1,4 @@
+3000 rows of support 120, horizon 400: 182 with an E, 61 with the first E launching in ticks [70, 300]
+redraw of cells 71..120 (cell 120 kept black): first E preserved at the same tick in 45 of 61 (73.8%); some E still present in 46
+first differing sampled head after the redraw: median tick 287, min 183, 10th/90th percentile 223/400; rows agreeing through tick 193: 59 of 61
+preserved by first-launch tick bin (preserved/total): {50: '16/16', 100: '13/13', 150: '5/7', 200: '7/14', 250: '4/11'}

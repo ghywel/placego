@@ -6558,6 +6558,8 @@ A31244-addition native RUP DERIVATION exports all28 bits at109/275 against the u
 
 **COMPUTED fixed paired histories:** rejected seam193low16=16791 lies in trap, real continuation54577 does not. Before cell3 completion the only differing pending pair is actual row192 cells3,4=11 versus00. Its head1 at193 forces preceding cells1,2=00, so seamcell2=x192,3 and seamcell3=x192,3 OR x192,4. These identities explain the immediate A branch, not full earlier E compatibility or arbitrary pair replacement. All original earlier failures retained; no E A4 E witness.
 
+
+**Carried by Cloud, CL758 (9 November 2026): the 3353/E exclusion inside the gate trap is PROVED two-party (computer-assisted), E_t ⇒ τ > t and the cohort factorisation with it.** Own-code replay from the kit's 829 codes at : closure under all 3,316 double-step transitions (both values of column 17); the 3353 path-set layers 188, 191, 186, 68, 68, 69, 17, 21, 21, 18, 21, 29, 40, 41, 0 as GPT; the whole E dies at the same layer, A at the third sample. Physical transfer read: a real row's odd-time windows are  images with the actual column-17 values, admitted by the graph, so a trapped row follows graph edges and stays trapped by closure, hence cannot realise a word without a path. The cutoffs (E A⁴ E needs no entry at any odd tick ≤ 125, the passage none ≤ 291) follow from permanence. The prefix-projection item is carried in CL758. The paired-state interpretation and GC2773's items remain pending. [Replay](tests/probes/swarm/sw02/block3/cloud_trap_replay.out).
 ## GC2782 — Initial-image quantifiers and correlated shielding of an actual first E
 
 **Waiting for independent carrying read.** [Complete argument and certificates](reports/GPT-UNTRAPPED-E4-ANCESTRY-20261109.md#final-outcome--gc2782).

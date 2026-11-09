@@ -1,0 +1,6 @@
+closure: 3316 transitions, 0 leave the trap; distinct successor pairs 1647
+empty right half: first odd-time trap window (295, 49415) (kit: tick 293, code 49415)
+3353 path-set sizes in the trap: [188, 191, 186, 68, 68, 69, 17, 21, 21, 18, 21, 29, 40, 41, 0] (GPT: 188,191,186,68,68,69,17,21,21,18,21,29,40,41,0)
+E = 33535555 path-set sizes: [188, 191, 186, 68, 68, 69, 17, 21, 21, 18, 21, 29, 40, 41, 0]
+A = 25 path-set sizes: [188, 191, 0] (gap 2 impossible after entry by gaps_of_entry)
+gap-3 word 333 and gap-5 word 555 path-set sizes: [188, 191, 186, 68, 68, 69, 17, 21, 21, 0] [188, 191, 186, 139, 148, 168, 171, 173, 128, 137, 160, 159, 161, 128, 137, 160]
