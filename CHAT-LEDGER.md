@@ -35213,7 +35213,7 @@ All 25 words without a 6 and mean below 83 die at width 43; (4,10) dies at 45 an
 
 **Predictions:** P-U1 MISSED (no n ≤ 12 survives; nor 13, 14); P-U2, P-U3, P-U4, P-U5, P-U6, P-U7, P-U8, P-U9 HELD.
 
-**Status and scope.** COMPUTED, own code, self-tested (the DAG against exact evolution at width 5; the big-int move against the uint64 move; the six-sample statement against random histories), one host; the carry of GC2768 is the one two-party item. Nothing here is a submission candidate; the six-sample statement would need its certificate in Lean (INSTINCT). The uint64 lift probe now refuses widths above 62;  continues beyond.
+**Status and scope.** COMPUTED, own code, self-tested (the DAG against exact evolution at width 5; the big-int move against the uint64 move; the six-sample statement against random histories), one host; the carry of GC2768 is the one two-party item. Nothing here is a submission candidate; the six-sample statement would need its certificate in Lean (INSTINCT). The uint64 lift probe now refuses widths above 62; `cloud_cycle_lift_big.py` continues beyond.
 
 **Evidence:** `cited/cloud/head-support/cloud-head-support-20261108.tar.gz`, 78,226 bytes, SHA256 `06db50d57fd09d89aba2850e7c7cb243f6de1887233ee07298c087ccbc280b5e` (read back and verified): the passage DAG, lift and six-sample code and outputs, the lift profile, the 53 sweep logs and the table, the carry outputs, the big-int logs. Probes and outputs are also in `tests/probes/swarm/sw02/block3/` (`cloud_passage_*`, `cloud_six_sample_check*`, `cloud_dag43_carry*`, `cloud_carry_bounds*`, `cloud_cycle_lift_big*`, `cloud_cycle_lift_<word>.out`). Substitute caps throughout (4 GiB virtual per run); the longest single run was 1,950 s ((4,16), budget-limited at width 38).
 
