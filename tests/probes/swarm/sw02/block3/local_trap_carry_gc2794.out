@@ -1,0 +1,26 @@
+W=16: lift 829, core 173, reachable 760, automaton 9 states, slope 0.132464
+   G1 all-length product: 31 states, counterexamples [] (0)
+   free code {5, 3555}: 3 states, rejections 0; 0.0 s
+W=18: lift 3316, core 460, reachable 2110, automaton 29 states, slope 0.127066
+   G1 all-length product: 65 states, counterexamples [] (0)
+   free code {5, 3555}: 6 states, rejections 0; 0.0 s
+W=20: lift 13264, core 1180, reachable 5484, automaton 44 states, slope 0.127066
+   G1 all-length product: 86 states, counterexamples [] (0)
+   free code {5, 3555}: 8 states, rejections 0; 0.0 s
+W=22: lift 53056, core 2979, reachable 13857, automaton 68 states, slope 0.127066
+   G1 all-length product: 91 states, counterexamples [] (0)
+   free code {5, 3555}: 10 states, rejections 0; 0.0 s
+W=24: lift 212224, core 7662, reachable 36402, automaton 366 states, slope 0.126938
+   pumped family k=0..6 minimal forbidden: [np.True_, np.True_, np.True_, np.True_, np.True_, np.True_, np.True_]
+   G1 all-length product: 220 states, counterexamples [] (0)
+   free code {5, 3555}: 21 states, rejections 0; 0.2 s
+W=26: lift 848896, core 19415, reachable 93027, automaton 1326 states, slope 0.125499
+   G1 all-length product: 730 states, counterexamples [] (0)
+   free code {5, 3555}: 80 states, rejections 0; 1.2 s
+W=28: lift 3395584, core 49376, reachable 237197, automaton 3319 states, slope 0.122174
+   G1 all-length product: 1794 states, counterexamples [] (0)
+   free code {5, 3555}: 298 states, rejections 0; 7.2 s
+# width 30 (started 21:49:19 UTC, 62 s, 1.75 GB peak)
+W=30: lift 13582336, core 123710, reachable 591685, automaton 10075 states, slope 0.119193
+   G1 all-length product: 18237 states, counterexamples ['355535355535353', '3555353555353555355553555535555535555535555553', '3555353555353555355553555535555535555535555535555553', '3555353555353555355553555535555535555535555535555535555553', '35553535553535553555535555355555355555355555355555355535353'] (10)
+   free code {5, 3555}: 2180 states, rejections 0; 61.9 s

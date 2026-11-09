@@ -1905,3 +1905,7 @@ G1 would force that code, hence relaxed entropy≥1/18, so it cannot coexist wit
 Next carry that short implication, then seek a phase-compatible completion rule or a violating width/word. Do not
 read physical realization into window acceptance. The old30-column vector representation hit its declared storage
 cap; a wider run reopens only with a demonstrated compact encoding and fresh freeze, not a cap increase.
+
+## Local, 9 November — the ladder's zero-entropy hope cools (L1613)
+
+The pull in L1612 was the limit entropy. Two counts now point to a positive limit. First, the free code {5, 3555} survives to width 30, with floor 0.0991 if it survives at every width. Second, real trapped rows keep 353 at a flat 1.2% of 3s for 2,000 gaps. The pull is retired, not dropped: what remains warm is a construction, a switch between the period-5 lock's A^∞ and single B-insertions that would prove G1′ at every width. It is a theorem of the trap, but with no prize payoff. A budget of one block, if the owner wants it.

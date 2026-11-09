@@ -6882,3 +6882,61 @@ completed before its first periodic RSS sample, so no zero-RSS measurement is in
 raw subsets, covers, missing-target examples and all successful/stopped receipts are preserved externally.
 
 **Evidence:** Shared store `cited/gc2797-s16-free-code-20261109.tar.gz`,134files/2549763bytes, SHA256 `428fc738e52ca42686d66e38846a551816ff1fc7a3eff0dc3ff842893d97d238`, verified TLS/raw-body upload and exact readback. Private paths normalized, original and stored file hashes retained.
+
+### Local carrying read of GC2794 and GC2796, and G1′ (L1613, 9 November 2026)
+
+**Carried, with independent computation where a step rests on data.** Local's own automata
+([`local_trap_carry_gc2794.py`](tests/probes/swarm/sw02/block3/local_trap_carry_gc2794.py),
+[output](tests/probes/swarm/sw02/block3/local_trap_carry_gc2794.out)) replay GPT's pumped family at width 24 for
+k = 0..6, G1 at all lengths at 24, 26, 28 (my unminimised products close at 220, 730, 1,794 states with no
+counterexample), and the free-code automata (3, 6, 8, 10, 21, 80, 298 states, no rejection), all as GPT found.
+
+- *Projection and the smaller lift (GC2794).* A width-(W+2) path projects to an admitted width-W path with the same
+  heads (column W + 1 is a free input downstairs), so an arbitrarily long past upstairs projects to one downstairs:
+  proj C_{W+2} ⊆ C_W. The two-cell lift D of C_W satisfies C_{W+2} ⊆ D ⊆ B_{W+2} and T(D) ⊆ D (projections of returns
+  land in T_W(C_W) = C_W). Iterating T from D therefore converges to the greatest fixed point inside D, which contains
+  C_{W+2} (a fixed point inside D) and is contained in lim T^k(B_{W+2}) = C_{W+2}. CARRIED.
+- *Infinite minimal-forbidden bases.* For a factorial language, a word x u y is minimal forbidden exactly when it is
+  forbidden while x u and u y are accepted; the pair (state of the word, state of the word minus its first letter)
+  detects this, and a productive cycle pumps it. One step the text leaves implicit is needed for "not of finite type":
+  the core's language is extendable on both sides (every black trap window has a next black within five double steps,
+  `gaps_of_entry`, and every core window has a predecessor in the core because T(C) = C), so it is the language of a
+  shift space, and a shift is of finite type exactly when its language has finitely many minimal forbidden words
+  (Béal, Mignosi, Restivo, Sciortino). CARRIED with that addition, for the relaxed shifts at 24, 26, 28 (and 30).
+- *Entropy brackets.* Subinvariance M(U/D) v ≤ v with v > 0 bounds the Perron root of the weighted matrix, and a
+  superinvariant positive vector on a subgraph reachable from the start bounds it below. That is standard
+  Perron–Frobenius; the exactness lies in GPT's integer arithmetic, which I did not rerun. CARRIED as an argument.
+- *The conditional floor.* Words over the code {5, 3555} have every internal run of 5s at least three, so they avoid
+  33, 3553 and every word with an internal run of one; the code is prefix-free, so k blocks give 2^k distinct words of
+  sample cost at most 18k. CARRIED. The sharper value is the root of λ^-5 + λ^-18 = 1: λ = 1.0710725, so 0.099056 bit
+  per sample.
+- *Actual-history upper bound* h_actual ≤ inf h_W (uniform cutoff at fixed W, then the infimum). CARRIED.
+- *GC2796, all three reductions.* Past padding (A^N moves any readable code word into C_W, and only universal
+  inclusion transfers); the set-cover induction by monotonicity; the equivalences (1) ⇔ (2) ⇔ (3) by the light cone
+  (with W ≥ 16 + 2D the exterior cannot reach the low 16 cells within 2D ticks, so a relaxed path from C_W is followed
+  by an actual half-line row whose low cells match) and compactness in the countable product (nested nonempty closed
+  cylinders; for (3), finitely many constraints sit inside one finite slab realized by (1)); and the 36k + 1 prefix
+  count (distinct prefix-free code words differ within 18 samples of their first differing block). CARRIED; no gap found.
+
+**G1 fails at width 30, and the right invariant is G1′ (COMPUTED at 30 by Local only; the equivalence is PROOF-SKETCH
+pending GPT).** At width 30 (core 123,710, 591,685 reachable windows, 10,075 subset states, entropy slope 0.119193)
+the all-length product finds 10 counterexamples to G1, the shortest `355535355535353` (internal runs 3, 1, 3, 1, 1)
+and a pumped family with runs 3, 1, 3, 1, 3, 4, 4, 5^m, 6. All contain 353. The free code is still not rejected
+(2,180 states). Define
+
+> **G1′(W):** every minimal forbidden word of L_W other than 33 and 3553 contains the factor 353.
+
+*Claim:* G1′(W) ⇔ {5, 3555}* ⊆ L_W. (⇐) A minimal forbidden word m avoiding 353, and not 33 or 3553, has no proper
+factor 33 or 3553 (those are forbidden), so every internal run of m is at least three; then m is a factor of a code
+word (prefix with A's, end with B), hence accepted, a contradiction. (⇒) A code word avoids 33, 3553 and 353, so under
+G1′ it contains no minimal forbidden factor and is accepted. So GC2796's physical equivalence becomes: G1′ at every
+width ⇔ every two-sided sequence of A = 5 and B = 3555 is realized by an all-time half-line spacetime in the trap, and
+either gives inf h_W ≥ 0.099056.
+
+**Real rows do not thin towards the code (MEASURED).** In 581 trapped rows run to time 20,001
+([`local_trap_353_decay.py`](tests/probes/swarm/sw02/block3/local_trap_353_decay.py),
+[output](tests/probes/swarm/sw02/block3/local_trap_353_decay.out)), 353 follows 1.2% of 3s at a flat rate through
+2,000 gaps after entry, far beyond the conservative pruning depths (35 gaps at width 28). Under the uniform cutoff,
+every late real factor lies in L_W for every W whose cutoff it has passed, so this is evidence that the limit language
+contains words with 353, and that it is strictly larger than the code. Evidence, not a proof: no width's cutoff is
+known beyond 28.

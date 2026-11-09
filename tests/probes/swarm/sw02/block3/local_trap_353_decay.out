@@ -1,0 +1,7 @@
+600 rows, horizon 20001; bins of 500 gaps after entry: bin, rows showing a 3, 3s, 353 per 3
+        0-   499:   581 rows,   48396 3s, 353/3 = 0.01260
+      500-   999:   581 rows,   48572 3s, 353/3 = 0.01188
+     1000-  1499:   581 rows,   48169 3s, 353/3 = 0.01229
+     1500-  1999:   581 rows,   48455 3s, 353/3 = 0.01195
+     2000-  2499:   578 rows,   12898 3s, 353/3 = 0.01465
+empty right half: 2106 gaps, 338 3s, 3 occurrences of 353, last at gap 1498
