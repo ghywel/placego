@@ -1,0 +1,8 @@
+2000 rows of support 120, horizon 600; first differing sampled head after redrawing cells above c (cell 120 kept black)
+|  c | predicted c/0.243 | median tick | 10th pct | 90th pct | rows unchanged through the horizon |
+|---:|---:|---:|---:|---:|---:|
+| 20 | 82 | 83 | 48 | 205 | 51 |
+| 40 | 165 | 175 | 114 | 307 | 72 |
+| 60 | 247 | 257 | 185 | 391 | 83 |
+| 80 | 329 | 341 | 255 | 487 | 101 |
+| 100 | 412 | 417 | 329 | 587 | 174 |

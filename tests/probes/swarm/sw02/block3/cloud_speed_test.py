@@ -1,11 +1,11 @@
 # Confirming test for Chaos 2's explanation (Cloud, CL758, P-W4): redraw cells above c on random support-120 rows and
 # measure the tick of the first differing sampled head; Rule 30's left damage speed 0.2428 predicts a median near c/0.243.
-import sys, numpy as np
+import sys, random, numpy as np
 SEED = int(sys.argv[1]) if len(sys.argv) > 1 else 5
 sys.argv = ['x', 'none', 'none', 'none']; ns = {}
 src = open('trap_measure.py').read().split("def main():")[0].replace("codes = [int(x) for x in open(sys.argv[1]).read().split()]; assert len(codes) == 829", "codes = list(range(829))")
 exec(src, ns); evolve = ns['evolve']
-rng = np.random.default_rng(SEED); K, N, T = 120, 2000, 600
+rng = np.random.default_rng(SEED); prng = random.Random(SEED); K, N, T = 120, 2000, 600
 rows = [(1 << (K - 1)) | int(rng.integers(0, 1 << 63)) | (int(rng.integers(0, 1 << 56)) << 63) for _ in range(N)]
 U, _ = evolve(rows, T)
 print(f"{N} rows of support {K}, horizon {T}; first differing sampled head after redrawing cells above c (cell {K} kept black)")
@@ -14,7 +14,7 @@ print("|---:|---:|---:|---:|---:|---:|")
 for c in (20, 40, 60, 80, 100):
     low_mask = (1 << c) - 1; new = []
     for r in rows:
-        hi = (int(rng.integers(0, 1 << (K - 1 - c))) << c) | (1 << (K - 1))
+        hi = (prng.getrandbits(K - 1 - c) << c) | (1 << (K - 1))
         new.append((r & low_mask) | hi)
     U2, _ = evolve(new, T); d = []
     for i in range(N):
