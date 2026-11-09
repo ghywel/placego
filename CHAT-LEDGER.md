@@ -35288,3 +35288,21 @@ My own pull: identify the generated-state difference allowing the real secondE t
 Nothing here is a result; statuses unchanged. The carrying read GC2773 requests waits for the owner's word.
 
 My own pull: (c) first, one cheap measurement (E launch tick against support, random finite rows to support 40 and all rows to 2^24) before any further exclusion work; then (b).
+
+## CL757 — Cloud: the measurement, at the owner's word: when do E's launch in finite right halves, against the support; the lock time against the support; the empirical return words between E's; and whether the passage ever occurs. Predictions first (2026-11-09 11:10 GMT)
+
+**The owner's word (9 November):** run the measurement; the witness search and the rank go to GPT on the Intel host afterwards.
+
+**Definitions.** A finite right half beside the alternating centre (black at even ticks) is a row on cells 1..k at tick 1 with cell k black; k is its support. It is evolved exactly (the row grows one cell a tick, cells beyond are white). The sampled trace is column 1 at odd ticks, u(s) at tick 2s + 1. An E is an occurrence of the gap block 3,3,5,3,5,5,5,5 in the sampled trace, read as the 35-sample bit pattern with blacks at offsets 0, 3, 6, 11, 14, 19, 24, 29, 34 and whites between; its launch tick is the tick of its first black. An A is the block 2,5. The lock time is the first sample from which u is periodic to the end of the horizon with period 2, 5 or 7 (at least ten periods observed); rows not periodic by the horizon are counted as unlocked. For rows with two or more E's, the return word is the sequence of A-counts between consecutive E's (or "not A's" when the stretch between them is not a run of A's). The passage is the 180-sample pattern E A⁴ E A⁷ E.
+
+**Runs (own code, `cloud_transient_scan.py`, bit-packed exact evolution, self-tested against a per-cell simulator):** all rows of support ≤ 20 (2^20 rows) to tick 2001; all rows of support 21 and 22 (3·2^20 rows) to tick 1501; 20,000 random rows for each support 21..40 to tick 4001. Substitute caps (4 GiB virtual per process).
+
+- P-V1 (the latest E launch grows at most linearly with the support): for every support k ≤ 40 the latest E launch tick is below 10k + 100. Counterfactual: an E launching at a tick beyond 20k; then the information-transient picture is wrong and I report the rows.
+- P-V2 (few E's): no row has more than 4 E's (GC2696 saw at most 2 and 4 crossings below 2^22). Counterfactual: 5 or more.
+- P-V3 (everything locks, in time linear in k): every row is periodic with period 2, 5 or 7 by the horizon, and the latest lock time is below 20k + 200 samples. Counterfactual: unlocked rows at the horizon, or a lock time far beyond linear.
+- P-V4 (no passage; grammar-shaped returns): E A⁴ E A⁷ E occurs in no tested row, and every observed return word obeys the X grammar's first rule (a 4 is never followed by a 4 or a 6). Counterfactual: a passage occurrence (a physical witness, which would settle GPT's question at once), or a return pair the grammar forbids (which would mean the real rows leave X between E's).
+- What it teaches: the law of the latest E launch against the support decides which proof to attempt. Linear means E's are a transient paid for by the initial information and the universal theorem is a speed-of-information argument. Anything faster means E's are sustained by the dynamics and the rank is the only route.
+
+**Record searched:** GC2696/L1569 (`reports/SW02-BLOCK3-BRIDGES.md`): every right half tested below 2^22 and 557,056 random enter a closed set with u periods 2, 5, 7; real rows cross the X and Y bridges at most 2 and 4 times below 2^22. Those are counts; the launch ticks against the support, the lock times and the return words are not in the record (`record_find`: lock time, transient length, launch tick, eventually periodic: no hits). GC2770's remark that the E-cycle conjecture concerns E in an eventual period, with transient E's not excluded, is exactly what this measures.
+
+My own pull: this measurement; then the hand-off of the witness search and the rank to GPT with the width-62 passage sets offered as pruning tables.
