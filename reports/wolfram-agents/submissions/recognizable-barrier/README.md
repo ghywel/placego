@@ -1,6 +1,8 @@
 # No ranking through a recognizable statistic (queue row S-19, Cloud's K-06 with K-01)
 
-**Full source/actual-nb1 review PASS GC2852; corrected-text nb2 routine gates pending; not posted.** Built from BR-2.1 and LN-06 as Cloud carried them (CL773; [triage](../../../CLOUD-SW02-CARRY-TRIAGE-20261110.md) §9.1), and from GPT's hand carry of B2+ in both frames ([batch 2](../../../GPT-SW02-CARRY-BATCH2-20261110.md), door 93). A Local sub-agent wrote the module under Local's brief (L1643). Local then rebuilt it, checked it and read its statements against the kit's certificates. That is a self-check; GPT's read is the second read.
+**POSTED, Lean Verified (L1652):** [R30-20261110-d6f07f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-d6f07f), checked 2026-11-10 21:17:08Z with 190 constants, seventeen headlines and standard axioms. Kit PR [WolframInstitute/Rule30PrizeKit#275](https://github.com/WolframInstitute/Rule30PrizeKit/pull/275) from `50f8aca`. Posted from nb2 (`d2dd66504fc23a0c23695e4962a26b84eb578014077045ddf0fe453be645f3fa`, 187,737 bytes, KernelChecked 190; evidence `cited/local/recognizable-barrier-nb2-20261110.tar.gz`, 64,494 bytes, SHA256 `c150607c75eee1d8547c2044ab44d6d528a7c8a001059d9249efca61d6f640eb`, read back exact), with GC2852's text and abstract fixes; nb1 is superseded.
+
+Before posting: **Full source/actual-nb1 review PASS GC2852; corrected-text nb2 routine gates pending; not posted.** Built from BR-2.1 and LN-06 as Cloud carried them (CL773; [triage](../../../CLOUD-SW02-CARRY-TRIAGE-20261110.md) §9.1), and from GPT's hand carry of B2+ in both frames ([batch 2](../../../GPT-SW02-CARRY-BATCH2-20261110.md), door 93). A Local sub-agent wrote the module under Local's brief (L1643). Local then rebuilt it, checked it and read its statements against the kit's certificates. That is a self-check; GPT's read is the second read.
 
 ## What the module proves
 
@@ -14,7 +16,7 @@ The certificates `RecCert`, `WallRecCert`, `WinRecCert`, `JointRecCert` and `Joi
 | Form | File | sha256 | Check |
 |---|---|---|---|
 | Portal | [`Rule30Submission.lean`](Rule30Submission.lean), from [`kit_to_portal.py`](../../../../tests/probes/swarm/sw02/block11/kit_to_portal.py) | `9462b566…` | pass at `5fb59158`, fresh compile 2.9 s: 78 declared, 190 constants, 17 headlines, standard axioms ([receipt](check-5fb59158.json)) |
-| Kit | [`Rule30RecognizableBarrier.lean`](Rule30RecognizableBarrier.lean) | `2c288c91…` | pass at main `03a19bf`: 75 declared, 190 constants ([receipt](check-kit-03a19bf.json)). The kit branch `recognizable-barrier` at `30b8477` is local; [`kit-integration.patch`](kit-integration.patch) |
+| Kit | [`Rule30RecognizableBarrier.lean`](Rule30RecognizableBarrier.lean) | `2c288c91…` | pass at main `03a19bf`: 75 declared, 190 constants ([receipt](check-kit-03a19bf.json)). The kit branch `recognizable-barrier` at `50f8aca` is pushed as PR #275; [`kit-integration.patch`](kit-integration.patch) |
 
 **Mutants.** All seven were rejected ([output](../../../../tests/probes/swarm/sw02/block11/mutate_recognizable_barrier.out)).
 

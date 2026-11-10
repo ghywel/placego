@@ -1,4 +1,4 @@
-Rule30RecognizableBarrier: no ranking through a recognizable statistic, and two rows that defeat every width-bounded rank (PORTAL-ID)
+Rule30RecognizableBarrier: no ranking through a recognizable statistic, and two rows that defeat every width-bounded rank (R30-20261110-d6f07f)
 
 This adds `lean/Ruliology/CellularAutomata/Rule30RecognizableBarrier.lean`, with its `public import` line in `lean/Ruliology.lean` after `Rule30FourFrontsBase` and a row in *Added in the kit*. It imports only `Rule30ZeroBoundaryBarriers`.
 
@@ -33,6 +33,6 @@ Pigeonholing the monoid images identifies rank arguments at different times in d
 
 **What it does not do.** The monoid theorems cover the stated images, width or endpoints and optional fixed windows. The separate width-bounded theorem allows arbitrary row dependence but requires ranks in `[-1, W]`. General value-unbounded weighted ranks and obligations restricted to particular starts remain outside these barriers. Nothing here decides `Q01` or period 2.
 
-Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
+Portal entry: [R30-20261110-d6f07f](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-d6f07f).
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
