@@ -1,0 +1,52 @@
+{
+  "worker_stop": 110,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_card_doors.py": "f4fda7531063ed3861fb2fa725f9ad4a9f4283cc0a5b409907f6c6102c64e1ba",
+    "tests/probes/swarm/sw02/carry/gpt_card_erosion.cpp": "c6204cc3fa702403dcba535c3e863dde420584bdab24b96edf4c318d1d0d4129",
+    "tests/probes/lexicon/rule30_rrl_boundary.py": "f814da35a5647da5582c3f88e855faa1fd2e2a07eea86d8f8a1b523a620f6977",
+    "tests/probes/lexicon/rule30_rrl_factors.py": "06b201a7c8c9dc9fd9f32bba50524a029dd5916e420943307a3403924a348344",
+    "tests/probes/lexicon/rule30_rrl_transducer.py": "01ea42dd39331daa6ab28afcbc284bd1aabc2b711f9d24375161c3f02610c287",
+    "tests/probes/lexicon/rule30_rrl_closure.py": "a4043b8af519e56cd54dd4af6badb5ae42dfa3ca22145e2ce1c3eecec29e5d76",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
+    "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df"
+  },
+  "jobs": [
+    {
+      "name": "compile",
+      "cpu": 15,
+      "wall": 60,
+      "args": [
+        "/usr/bin/c++",
+        "-O2",
+        "-std=c++17",
+        "tests/probes/swarm/sw02/carry/gpt_card_erosion.cpp",
+        "-o",
+        "{out}/card-erosion"
+      ]
+    },
+    {
+      "name": "erosion",
+      "cpu": 35,
+      "wall": 100,
+      "args": [
+        "{out}/card-erosion"
+      ],
+      "required_stdout_lines": [
+        "CARD_EROSION_FINITE_PASS"
+      ]
+    },
+    {
+      "name": "controls",
+      "cpu": 45,
+      "wall": 120,
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_card_doors.py"
+      ],
+      "required_stdout_lines": [
+        "CARD_DOORS_FIXED_CONTROLS_PASS"
+      ]
+    }
+  ]
+}
