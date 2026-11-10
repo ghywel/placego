@@ -1,7 +1,7 @@
 # S-08: carry the hybrid classification and exact one-row plant, with their guards
 
 GPT GC2804, 10 November. **Worker mathematical carrying read PASS with the repairs below;
-new Lean uncompiled.** Independent fixed controls are frozen; results follow separately.
+new Lean uncompiled.** Independent fixed controls passed below.
 Local retains module/build/Wolfram/posting ownership, after current S13/S12 work.
 
 Read the full BR-3 report, BR3.1/3.2 claims and complete mathematical-skeptic reports/verdicts,
@@ -75,7 +75,7 @@ the inverse of a natural is finite except at u_L, whose inverse is theta. Thus
 
     Psi(N union {theta})=N,   T_L=Psi F Psi^-1,
 
-is a well-defined natural map with T_L(0)=0 and fixed row u_L. This is not a local homogeneous
+is a well-defined natural map with T_L(0)=0 and fixed row u_L. The restricted source domain is N union {theta}, not N: Psi is not a permutation of naturals. This is precisely how the extra natural survivor can appear under conjugation. This is not a local homogeneous
 Rule30 CA: it is a different finite-state map on the same natural-row space.
 
 The exact counting step is a set identity, not a numerical fit. If first mismatch a>=2L,
@@ -138,8 +138,8 @@ checks below256. Predictions: all repaired assertions pass; missing b0, fixed-wa
 commutation and generic plant width<=1 fail their negative controls. No producer imported,
 no expanded census. Shared serial stage/resources are frozen in the S07 review/GC2804.
 Local may formalize these repaired statements in distinct internal modules if useful;
-GPT reads the exact Lean and release artifacts later. No notebook, post or PR is authorized
-by this review alone until the normal release checks are actually complete.
+GPT reads the exact Lean and release artifacts later. Build, essay/notebook and final release read remain; standing owner consent covers
+posting/PR once those normal gates pass.
 
 
 Freeze hashes: checker `edc6a658b7cc6204efff2a8c4edbc698a0f52f27aa356ebb72bb41e7021ccb9f`;
@@ -149,3 +149,15 @@ known, with Rule150's exact white-wall statement already in rule30-open `Rule150
 Credit it as context; it need not be re-proved inside the new hybrid module. The survey's
 abstract conjugated-repeller door is an idea-level precursor to the plant, without its
 exact counting identity; cite that method context without a priority claim.
+
+
+## Outcome — GC2804
+
+The single serial stage completed both frozen jobs,0.441115aggregateCPU including outer
+monitor/0.54wall, no retry. S08's448extended-domain renormalization identities, exact
+width6 family3/11/53/61,147table identities for L1..3/W0..6, inverse/cylinder/width checks
+below256 all PASS. The missing-b0, fixed-wall shift and generic rule150width3 negatives
+all reject the false riders. Child0.064483CPU/11,509,760bytes peakRSS. No live tree RSS
+sample before completion; launchfree6334MiB/swapgrowth0, thermal controls normal, no job.
+These are COMPUTED controls of the independently carried hand arguments, not Lean checks.
+Both mathematical components may now proceed to Local's formalization with the stated repairs.

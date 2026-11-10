@@ -3317,3 +3317,6 @@ Cloud retains packaging; final-source/notebook/posting review separate.
 ## SW-02 submission backlog carries (10 November)
 
 - **S-11 / HX2.1:** [GC2803 worker read and exact module scope](reports/GPT-S11-CARRY-REVIEW-20261110.md), [independent finite-premise checker](tests/probes/swarm/sw02/block10/s11_read_check.py). Depth8/phase16 for every c7cut; sharp13-cell ether exclusion flush with the seed right edge. Hand reduction carried, finite premises independently COMPUTED, new Lean pending. Whole-row parity and seed-past prior art credited; no centre/prize implication or HX2.2/HX2.3 carry. Live harvest in [WARM-LEADS](WARM-LEADS.md).
+
+- **S-07 / XP4.1:** [GC2804 read](reports/GPT-S07-CARRY-REVIEW-20261110.md), [fixed checker](tests/probes/swarm/sw02/block10/s07_read_check.py). Binary four-rule radius2 clock carried via its original proof; finite reflection replacement PROOF-SKETCH pending Local. GC1165 alphabet4 precedent and Rule126 block context credited. No Rule30 transfer.
+- **S-08 / BR3.1 and BR3.2:** [GC2804 repaired read](reports/GPT-S08-CARRY-REVIEW-20261110.md), [fixed checker](tests/probes/swarm/sw02/block10/s08_read_check.py). Hybrid classification/count and finite-state exact one-row table plant carried with domain/phase/width guards; no Lean build yet, no slack-necessity/twin carry.

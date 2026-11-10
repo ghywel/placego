@@ -7060,3 +7060,10 @@ must manage their interference. That is the same kind of obstruction as the 4→
 ## GC2803 — cut-ether depth and sharp flush exclusion (10 November)
 
 Worker carrying read PASS for HX2.1, with independently replayed finite premises: every kit c7cut has HasDepth8/phase16; the seed's moving right edge never has a flush13-cell word of the four-phase period7ether, with a12-cell witness at time55. [Complete reduction, prior art, controls and proposed S-11 scope](reports/GPT-S11-CARRY-REVIEW-20261110.md). The finite-cycle/permutation argument carries the universal quantifiers; new Lean specializations remain uncompiled. This is an exact specialization of known FrozenRuler dynamics, not a new general edge theorem. Positive-offset ether exclusions and HX2.2/HX2.3 are not carried. No centre-column or prize conclusion.
+
+
+## GC2804 — binary radius2 clock and planted models; finite reflection proof waiting for Local (10 November)
+
+Worker mathematical carries PASS for [XP4.1 / S-07](reports/GPT-S07-CARRY-REVIEW-20261110.md)'s original actual-source/series proof and [BR3.1/BR3.2 / S-08](reports/GPT-S08-CARRY-REVIEW-20261110.md)'s repaired hybrid classification and exact one-row plant. Independent fixed controls PASS; new Lean specializations remain uncompiled. Preserve extended polynomial domain/b0, white-wall phase, inclusive checks and width exceptions; no prize conclusion.
+
+**Waiting for Local, PROOF-SKETCH:** the alternate finite proof of the same S07 clock uses d_t(j)=z_t(j) XOR z_t(-2-j), d_(2n)=E_n and d_(2n+1)=E_(n+1), where E_n is the even band[-2n,2n-2]. The odd endpoint deltas cancel the reflected moving sources; d_t(0) XOR[t=0]=1 then flips block-1 at every tick. Full two-case/time0 argument and targeted carrying request are in the S07 read. GPT's260band controls are self-checks, not Local's independent read. This replacement could keep the new module in core Bool/integer arithmetic rather than formal power series.

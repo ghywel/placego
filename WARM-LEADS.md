@@ -7,9 +7,9 @@ Local reports its 15-minute heartbeat and 60-second flag waiter armed. Research 
 
 | Work now | Owner | Exact next step |
 |---|---|---|
-| S-13, then S-12 | Local builds; GPT release reader | Formalize the carried XP3.1 free-middle theorem, excluding B2+; then CP3.2 complexity with finite-row/phase guards, excluding near-squares. Assemble essays/notebooks and send exact release packets. |
-| S-11, then S-07 and S-08 | GPT carrying reader; Local builds after carry | S-11 carry PASS GC2803: depth8/phase16 and sharp13-cell flush exclusion; finite premises replayed, Lean pending. Next carry XP4.1, then BR3.1/3.2 while Local builds. |
-| S-06 and S-09 | GPT prior-art comparison | Match exact clock phases with Berzai and exact hypotheses/conclusions with ColumnTransfer before deciding additional content. |
+| S-13, then S-12 | Local builds; GPT release reader | S-13 Lean forms/Check reported by Local L1620; GPT exact source read now (GC2805), Local essay/notebook/release assembly next. S-12 follows with finite-row/phase guards. B2+/near-squares excluded. |
+| S-11, S-07 and S-08 | Worker carries complete; Local builds | S-11 GC2803; S-07 and S-08 GC2804 carried with exact scope/repairs, finite controls PASS. Local builds after S-13/S-12. S-07 finite reflection replacement awaits Local carrying read; original series proof already carried. |
+| S-06 and S-09 | GPT prior-art comparison | GPT next: match exact clock phases with Berzai (S-06), then exact hypotheses/conclusions with ColumnTransfer (S-09). Returned release packets take priority. |
 | S-05 | Local builds/posts; GPT release reader | Submit the known nonabsorption result with explicit rule30-open credit, after source/current-verifier checks. |
 | S-16 | Delivery complete; Local handles PR follow-up | Nb2/public notebook and source exact, GPT GC2802; portal Lean Verified, PR248 open. No rebuild or duplicate post. |
 
@@ -26,11 +26,11 @@ Local reports its 15-minute heartbeat and 60-second flag waiter armed. Research 
 | Order | Row | Content | Swarm source | What is done | What is left |
 |---:|---|---|---|---|---|
 | 1 | S-16 | Width-18 trap language, 3535353 | CP-2.2 | **Posted, Lean Verified** ([R30-20261109-89b242](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261109-89b242), L1618–L1619); kit PR #248 open; nb2/public byte read PASS GC2802 | Merge of #248 (maintainers); no release gate remains |
-| 2 | S-13 | Free-middle theorem (survival does not restrict additive potentials) | XP-3.1 | Carried two-party GC2702 with repairs; **Local building (L1619)** | Lean module, essay; B2+ stays out (unread) |
+| 2 | S-13 | Free-middle theorem (survival does not restrict additive potentials) | XP-3.1 | Carried two-party GC2702; **Local Lean/Check complete L1620, GPT exact read active GC2805** | Five Lean-form choices, then essay/notebook/release; B2+ stays out (unread) |
 | 3 | S-12 | Complexity rung p(n) − n → ∞ for free words of finite rows | CP-3.2 | Carried two-party GC2702 with guards | Lean module, essay; near-square claim stays out |
 | 4 | S-11 | The cut ether is off the seed's edge cycle (HX-2.1) | HX-2 | Worker carry PASS GC2803 with flush/depth guards; all finite premises independently replayed | Local small core module using finite-cycle certificates; exact depth8/phase16 and sharp flush13; no equivalents dependency needed |
-| 5 | S-07 | Radius-2 left-permutive family with an exactly alternating column | XP-4.1 | Skeptic VALID; CLEAR against outside work (CL752) | GPT carrying read, then Local small module |
-| 6 | S-08 | Planted survivors: linear hybrid; finite-state map with Rule 30's table plus one | BR-3.1, BR-3.2 | Skeptic VALID; CLEAR (CL752) | GPT carrying read, then Local module |
+| 5 | S-07 | Radius-2 left-permutive family with an exactly alternating column | XP-4.1 | Worker carry PASS GC2804; original binary clock proof/finite controls pass; alphabet4 precedent GC1165 credited | Local small module; finite reflection proof pending Local, no PowerSeries dependency inherently needed |
+| 6 | S-08 | Planted survivors: linear hybrid; finite-state map with Rule 30's table plus one | BR-3.1, BR-3.2 | Worker carry PASS GC2804 for both repaired components; fixed controls pass | Local module(s): extended polynomial domain/b0 term, exact table swap, width/locality guards; release checks pending |
 | 7 | S-06 | Parity law S_2n(2n) ≡ n mod 2 and the degree law of the checks | XP-1.1 | Self-check; PARTLY known (Berzai, other clock phase) | GPT phase comparison and read, then scope/module |
 | 8 | S-09 | Exact black-count law and five-column bound | P2-3.1 | Self-check; PARTLY known (`ColumnTransfer`) | GPT comparison and read, then scope/module |
 | 9 | S-05 | ¬AbsorptionT t001 | PE-1.1, BN-L1 | Core Lean, KNOWN in `rule30-open` | Owner APPROVED with rule30-open credit (10 November); Local packet, GPT release read |

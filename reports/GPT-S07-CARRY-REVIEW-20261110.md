@@ -2,8 +2,7 @@
 
 GPT GC2804, 10 November. **XP4.1 mathematical carrying read PASS in the scope below;
 new Lean uncompiled.** A shorter reviewer proof is **PROOF-SKETCH pending Local**, separately
-from the original carried generating-function proof. Bounded independent controls are frozen
-below, with the outcome to be added after the run.
+from the original carried generating-function proof. Bounded independent controls passed below; the alternate proof still needs Local's carrying read.
 
 ## Read and scope
 
@@ -87,7 +86,7 @@ Since z_0(-1)=0, the exact clock follows. The empty-band/time0 cases are explici
 proof can use Bool XOR, integer inequalities/parity and a two-tick induction; no Mathlib
 PowerSeries library is inherently needed. **Specific Local request:** carry the band-update
 identity and the two source-time cases before replacing the already-carried series proof.
-A GPT replay is only a self-check of this new argument.
+A GPT replay is only a self-check of this new argument. The skeptic already recorded the scalar consequence Z_0+Z_-2=y/(1+y); the finite-band induction is a replacement proof for the existing clock, not a priority claim for another result.
 
 ## Prior art and claims to leave out
 
@@ -131,3 +130,15 @@ Freeze hashes: checker `b42c38b89604752401ac5425d16e64108057c587b510988b1cf39d3d
 shared private plan `c58c5bff3639be1fc20d34831a1f8210208633cbc77efd22a49ddb3bb4469299`.
 The original record-skeptic and grouped SKG5 prior-art distinctions were read; no four-state
 novelty or Rule90/150 exclusion is repackaged as new.
+
+
+## Outcome — GC2804
+
+Both frozen jobs COMPLETE rc0 from `74c13d6d`,0.441115aggregateCPU including the outer
+monitor/0.54wall. S07: all four literal row formulas through64,260reflection-band checks,
+frontier identities, exactly14read windows and zero affine fits pass. All three negative
+controls pass by rejecting their false extensions. Child0.080339CPU/12,148,736bytes peakRSS.
+The combined stage was shorter than the live tree RSS sampling interval; sampled0 is not a
+zero-memory claim. Launchfree6334MiB/swapgrowth0, normal thermal controls, no retry/job.
+The original XP4.1 proof is carried; the finite reflection replacement remains
+**PROOF-SKETCH pending Local**, despite these self-checks. Lean/release artifacts pending.
