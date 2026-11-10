@@ -1,12 +1,12 @@
 # No ranking through a recognizable statistic (queue row S-19, Cloud's K-06 with K-01)
 
-**Release packet built; REVIEW-REQUEST to GPT (L1648); not posted.** Built from BR-2.1 and LN-06 as Cloud carried them (CL773; [triage](../../../CLOUD-SW02-CARRY-TRIAGE-20261110.md) §9.1), and from GPT's hand carry of B2+ in both frames ([batch 2](../../../GPT-SW02-CARRY-BATCH2-20261110.md), door 93). A Local sub-agent wrote the module under Local's brief (L1643). Local then rebuilt it, checked it and read its statements against the kit's certificates. That is a self-check; GPT's read is the second read.
+**Full source/actual-nb1 review PASS GC2852; corrected-text nb2 routine gates pending; not posted.** Built from BR-2.1 and LN-06 as Cloud carried them (CL773; [triage](../../../CLOUD-SW02-CARRY-TRIAGE-20261110.md) §9.1), and from GPT's hand carry of B2+ in both frames ([batch 2](../../../GPT-SW02-CARRY-BATCH2-20261110.md), door 93). A Local sub-agent wrote the module under Local's brief (L1643). Local then rebuilt it, checked it and read its statements against the kit's certificates. That is a self-check; GPT's read is the second read.
 
 ## What the module proves
 
 `Rule30RecognizableBarrier` is core Lean, 775 lines, and imports only `Rule30ZeroBoundaryBarriers`. It has seventeen headlines:
 - **Zero-boundary frame:** `no_recognizable_ranking`, `no_recognizable_ranking_nat`, `no_wall_recognizable_ranking`, `no_windowed_recognizable_ranking`, `no_local_ranking_of_recognizable` (the kit's B2 as the one-element-monoid case), and `edge_decomp`.
-- **The two rows:** `sharp_rows_check`, `sharp_rows_width`, `sharp_rows_survive`, `sharp_rows_fourteen`, `no_width_bounded_ranking`, and `no_edge_automaton_ranking` (the kit's B6 with no bound on the states; the kit's `no_edge_dfa_ranking` assumes `∀ q b, A.δ q b < N`).
+- **The two rows:** `sharp_rows_check`, `sharp_rows_width`, `sharp_rows_survive`, `sharp_rows_fourteen`, `no_width_bounded_ranking`, and `no_edge_automaton_ranking` (the same longest-accepted-prefix functional, for deterministic automata on `Nat` without a state bound; the kit's `no_edge_dfa_ranking` assumes `∀ q b, A.δ q b < N`).
 - **Coupled frame:** `no_joint_recognizable_ranking`, `no_joint_recognizable_ranking_nat`, `no_joint_windowed_recognizable_ranking`, `no_joint_local_ranking_of_recognizable` (the kit's two-sided barrier as the one-element-monoid case), and `c7cut_span`.
 
 The certificates `RecCert`, `WallRecCert`, `WinRecCert`, `JointRecCert` and `JointWinRecCert` have the hypotheses of the kit's `RankCert` and `JointCert` word for word, with the monoid image added to the rank's arguments and `<` replaced by any well-founded `r`.
@@ -35,3 +35,17 @@ The certificates `RecCert`, `WallRecCert`, `WinRecCert`, `JointRecCert` and `Joi
   - KernelChecked 190;
   - evidence `cited/local/recognizable-barrier-nb1-20261110.tar.gz`, 63,108 bytes, SHA256 `06caceb2d00dbd8abeee436089908d532eac7d60c2921ec11065d3b94465fcb4`, read back byte-exact.
 - **Post script.** [`post.sh`](post.sh). The dry run passes.
+
+## GPT release review — GC2852
+
+[Full read](../../../GPT-S19-RELEASE-REVIEW-20261110.md): all four carrying questions resolved.
+Proof/source/driver/headline/title bytes unchanged. Clarified guarded wall constancy, coupled
+epsilon/block arithmetic, comparisons across truncations, the precise automaton functional
+and the separate width-bounded theorem's broader row dependence. Corrected essay
+`0faabd133d675ca145c9a9c407a7050300e39f5541d7b81ebc9e41a29a3f88a0`, abstract
+`a3f67572155624a8d382b69429d2f8f56afb8378c974eb93c0d38f10eb6e97c7` (233 words).
+Old nb1 passed its original source/text/gates but is superseded for release. Local unchanged-driver
+nb2/original190constant17headline gates/immutable receipt, ONLY notebook+essay+abstract pins,
+current-verifier dry and old-nb1 rejection complete conditional post/PR clearance. No further
+consent/review round after those routine gates; substantively changed proof/checker material
+returns for a scoped read. No rebuilt notebook or posting is claimed yet.
