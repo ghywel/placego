@@ -287,4 +287,55 @@ prefix input pinned by exact hash/bytes and <100000 complete records. All pinned
 source/helper and tool hashes checked. Any failed guard stops/preserves evidence.
 Freeze/ownership publication first; no run yet.
 
+## Format controls pass; bounded cycle read frozen — GC2867/GC2868
+
+Run22:11:03Z–22:11:09Z completes at6.929786aggregateCPU/6.59wall; peak tree
+RSS55176KiB, four processes, min free6216MiB, zero swap growth, no stop. All
+native/decoded/negative controls pass. PHP(5,4),20variables/75clauses: native
+binary832bytes accepted directly by cake_lpr; lossless re-encode; decoded ASCII
+1688bytes accepted by both checkers. Direct binary C input rejected as predicted.
+Five malformed records reject in the decoder; known-good unit accepted and
+corrupt/empty binary rejected in cake_lpr. No target SAT call.
+
+All95190 COMPLETE records of the retained stopped text prefix roundtrip; the
+truncated last record is excluded. Canonical record SHA256
+`6d8dfa266fc93bb1cd42932b4ab64da58a7412c7aed55c3778b65c834824531c`;
+binary prefix7584473bytes (45.207% of stopped text size), SHA256
+`f82f0c2bf41635fc39985635b31996eb2031f2d2db6651abf6f1b6f0778bee18`.
+This is substantial measured headroom on the SAME incomplete prefix; it does
+not estimate the remaining solve length or prove a finished trace fits16MiB.
+Independent checking route for a future complete binary proof: native cake_lpr,
+then positive dependency-cone extraction with unchanged original clause IDs,
+compact text C replay, and separate kit packed-field audit. No assumption
+that raw proof size equals cone size. No new target proof job frozen here.
+
+Evidence `cited/gpt/lrat-format-controls-20261110.tar.gz`,4918865bytes, SHA256
+`b644c8e0d866d67c3413c533d76df79da7b9da94eab906e8794bf5a3235c73b2`,
+verifiedTLS/raw-body/readback: exact tiny proof controls, converted incomplete
+prefix, source/plan and sanitized receipts. PHP CNF `4fa2e5d8…`, binary `40d411cd…`.
+
+**Next mathematical discriminator, frozen GC2868:** use only the exact retained
+170-word projection, not a new strip search. Its one-successor finite overlap
+graph allows a cycle/path partition. For each cycle the least significant bits
+form its candidate spatial row; verify EVERY 16-window recovers the supplied
+cycle, then check13 moving ticks and an independent laboratory Rule30 truth-table
+replay with shift+t at EVERY tick. White/black singleton and toy cycle-with-tail
+controls. For each valid nonconstant cycle, shift13+1 must fail (phase-slip control).
+Predict144 words on physical cycles and26 nonreturning-cycle or transient words,
+from the distinct Cloud core count; a different result is informative rather
+than failure of this audit. Neither count is claimed as a new census or prior-art
+novelty. Record searched: original LN12/CL772/CL775 core sources/report,
+GC2856/2858 exact projection, kit MovingStrip/RingOrbits and PR232 exact retained
+head/current discussions. PR232 provides compiled certificate source/metadata;
+its body and comments link no standalone generator. No reproduction of its census.
+
+Source `gpt_return13_cycle_audit.py`, SHA256
+`ffe724d9d5042b5d13ed1653eebf580c7429dddea5d064e7d2ac534a7cffe6e2`;
+`gpt_return13_cycle_plan.json` pins the original projection
+`35564e639dc174896d35263580f10f9ee11336b789dd55588202d6d22dae5592`.
+8aggregateCPU/30wall/768MiB/tree6, one thread/nice10,16MiB/file128MiB/stage,
+4096launch/1024running free floors,4096swap and existing thermal/pressure/monitor
+stops. No subprocess solver, P14, enumeration or geometry change. Publish before
+run. Coverage remains uncertified even if every listed cycle has been checked.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

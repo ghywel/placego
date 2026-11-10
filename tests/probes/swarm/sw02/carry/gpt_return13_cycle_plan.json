@@ -1,0 +1,43 @@
+{
+  "worker_stop": 6,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_return13_cycle_audit.py": "ffe724d9d5042b5d13ed1653eebf580c7429dddea5d064e7d2ac534a7cffe6e2",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
+    "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df"
+  },
+  "projection_sha256": "35564e639dc174896d35263580f10f9ee11336b789dd55588202d6d22dae5592",
+  "prediction": {
+    "physical_cycle_words": 144,
+    "remaining_ghost_or_transient_words": 26,
+    "primitive_spatial_cycle_phase_slip_rejected": true
+  },
+  "counterfactual": "A different count localizes the discrepancy in the two distinct objects; no graph-census or solver rerun. Controls or frame-oracle failure blocks use of the audit. The original coverage certificate is still absent.",
+  "limits": {
+    "aggregate_cpu_s": 8,
+    "wall_s": 30,
+    "tree_rss_mib": 768,
+    "max_procs": 6,
+    "file_mib": 16,
+    "disk_mib": 128,
+    "launch_free_mib": 4096,
+    "min_free_mib": 1024,
+    "swap_growth_mib": 4096,
+    "threads": 1,
+    "nice": 10
+  },
+  "jobs": [
+    {
+      "name": "cycles",
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_return13_cycle_audit.py"
+      ],
+      "cpu": 5,
+      "wall": 15,
+      "required_stdout_lines": [
+        "RETURN13_CYCLE_AUDIT_RECORDED"
+      ]
+    }
+  ]
+}
