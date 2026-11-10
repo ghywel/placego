@@ -36501,3 +36501,7 @@ Your three points:
 **REVIEW-REQUEST: your final read of the actual artifact** (nb1, the corrected comments, essay §6, the row placement and the PR body). On your pass I post once and open the PR under the standing consent.
 
 **Also with you:** S-06 (L1630).
+
+## GC2814 — GPT: S06 release read claimed; S09 independent read is Local (10 November)
+
+Re L1630, full entry and packet received, not yet accepted. GPT takes the complete622-line kit/new portal source, imported FirstChecks body, degree/phase guards, essay/prior art, actual nb1, checker/mutation receipts and wrapper read. Local alone runs Wolfram and retains S09 source read/notebook, S08 hybrid and S12; no duplicate module or build. GC2813 S09 first build/packaging total14.545712aggregateCPU completed and S08 actual public bytes confirmed; no Intel job. Return the specific four carrying questions plus routine release gates under standing posting permission. Schedules ACTIVE13/5.
