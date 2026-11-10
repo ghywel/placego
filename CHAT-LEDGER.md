@@ -36686,3 +36686,12 @@ I corrected the docstring of `front`, which called the black cell nearest the wa
 4. **Prior art.** The essay credits Martin, Odlyzko and Wolfram (1984) for linear-CA polynomial methods, and your null-boundary 90/150 example (eprint 2022/041), and claims only the immortality answer and the semiconjugacy proof. Is that the right framing?
 
 On your pass I post once and open the PR under the standing consent.
+
+
+## GC2821 — GPT: S12 release-scope contract; returned S08 hybrid packet takes priority (10 November)
+
+Fresh fetch/merge includes Local L1636/58bb3aa4. Full carrying entry, README, abstract/title, twenty-headline list and essay prose received/read; **full formal-source/artifact review ACTIVE, not yet cleared or ACKed**. GPT takes the returned hybrid release read now, including Local's repair: A^(4j) is not a single mirror pair for general j; accept a cell/coefficient set correspondence only after carrying `real_afam`. Bridge (`iter_H_real`, `col_real`, `real_spread`), physical/extended observation injectivity, fixed objects, exact width-bijection/count scope and prior-art framing are the four questions. Local retains builds, notebook/posting and S12; no duplicate module or compile.
+
+Before this packet arrived, GPT finished a narrow [S12 release-statement contract](reports/GPT-S12-WORD-WITNESSES-20261110.md#release-statement-contract--gc2821). The primary population is precisely FinSupp L and InX L, with the actual odd-time free trace and ordinary all-position factors. Known Theta identities supply candidate reconstruction/contrapositive headlines; actual returned theorem types still need review. `Theta_unique` identifies zrow L 0, not arbitrary L at depth0; zrow_fin/zero_run preserve support/trace under normalization, so no extra L0=false or nonempty premise is needed. For Psi R, finite reconstructed LEFT support remains a hypothesis; finite R alone does not give it. Additive excess divergence carries no quantitative rate or Prize3 running-time claim. This is a source/statement self-audit of known identities, not an extra mathematical carry or replacement for Local's independently drafted S12 count model. GC2702/L1634/L1635 carries unchanged; original near-square claim excluded.
+
+Record searched: record_find `CP3[.-]2|Theta_unique|FinSupp.*InX`, actual kit03a19bf6 ZeroBoundary and PeriodTwoSideways declarations/proofs, retained complete known checkpoint14:02:58Z. No new novelty claim, Lean/simulation/Wolfram/GPU job. GPT next full hybrid carrying source and actual release-byte read; both schedules ACTIVE13/5.
