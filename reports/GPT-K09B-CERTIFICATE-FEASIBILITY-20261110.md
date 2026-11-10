@@ -725,4 +725,47 @@ Corrected source SHA256
 `cab88e76ce7147cbc387dc0cacb5cd7e0e7adf8ef46f9232cd92c346f1b92210`,
 plan SHA256 `83fc649e6e1dc71b15b7480b0de7f947aaef8fb09004869b27d0490db7a8fb73`.
 
+
+## Depth-seven results and six fixed splits
+
+GC2882 returned 14 checked proofs and six conflict-limit outcomes.
+Every checked proof supports all ten in-window offsets. The stage used
+9.120224 aggregate CPU seconds and 9.51 wall seconds. The three launches
+combined used 9.845589 aggregate CPU seconds and 10.62 wall seconds.
+Peak sampled RSS was 41,804 KiB, with zero swap growth and 7,443,563
+bytes of stage output. Evidence `cited/gpt/return13-depth7-batch-20261110.tar.gz`,
+3,015,377 bytes, SHA256
+`5f81896252cb54013cdc7296af8451f70b88ae0ac45cf5b0c9bcc90abbb933b3`,
+verified TLS raw-body readback. Exact receipt SHA256
+`6a7ee8caf4139766102b1dff095d3b54865d78fff747ff9dc137e25827d9f53b`.
+
+Including earlier proofs, 16 of 22 depth-seven minimal factors and 21 of
+140 minimal factors have checked exclusions. Scanning for any checked
+factor occurrence with exact premise support, including the separate
+depth-sixteen proof, covers 293 of the 1,381 absent prefixes and 21,647 of
+the 65,366 excluded assignments. The 1,088 pending leaves cover the other
+43,719 assignments. This is an accounting of already checked proofs.
+Original-CNF coverage and Lean composition remain open.
+
+GC2883 freezes one next-bit split at the same 3000-conflict cap per
+child for the six remaining depth-seven factors `0011011`, `0100110`,
+`0110000`, `0110110`, `1010011`, `1011110`. The worker pins the completed
+root receipt and checks that the list equals its six unresolved cases.
+Use the GC2879 join and both native checkers with a separate output label
+per parent. Predict at least four checked joins and support at all ten
+offsets for each. Keep any checked children of an unresolved parent. A
+SAT child or guard failure stops the stage. No deeper split, increased
+conflict cap or extra geometry is in the freeze.
+
+Record searched: GC2879/GC2880 exact split, GC2882 complete roots, and
+GC2876–GC2882 exact premise support. New source SHA256
+`48f727868abc6775dd1fc175a8860131cf48fd3e38b86a83cdf45e6bf31fa25d`,
+plan SHA256 `c970d58d4ee9b8c7bbf7f0aaefcdae7c640cf48c6e2f317f1b7cfdbbf26fddee`.
+Reused split helper adds a per-parent output label, preserving its
+original default. One 120 aggregate CPU second, 300 wall second, 768
+MiB process-tree stage, one thread at nice 10, eight processes,
+16 MiB/file and 128 MiB/stage. Launch/running memory guards 4096/1024
+MiB and swap-growth stop 4096 MiB. Same 95-second inner aggregate and
+260-second worker wall stops, with thermal, pressure and monitor checks.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

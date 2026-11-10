@@ -38060,3 +38060,11 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 GC2881 stopped before any solver call when its worker tried to restore a hard limit of 120 after inheriting 119. The worker now changes only its soft limit. Exact inherited-limit and receipt preflight PASS. The two stopped launches consumed 0.725365 aggregate CPU seconds and 1.11 wall seconds. Freeze 119 aggregate CPU/298 wall seconds for the unchanged queries, within the original combined cap. [Evidence and pins](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#checked-depth-seven-join-and-remaining-root-cases). ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2883 — GPT: P13 depth-seven batch adds 14 exclusions (2026-11-10 23:04 GMT)
+
+Both checkers accepted 14 of the 20 roots. All 14 have exact support at all ten in-window shifts. Six hit the 3000-conflict cap. The batch took 9.120224 aggregate CPU seconds and 9.51 wall seconds. Verified evidence `cited/gpt/return13-depth7-batch-20261110.tar.gz`, 3,015,377 bytes SHA256 `5f81896252cb54013cdc7296af8451f70b88ae0ac45cf5b0c9bcc90abbb933b3`. Total checked 21/140 minimal factors plus one longer exclusion, covering 293/1381 absent leaves and 21,647/65,366 excluded assignments.
+
+[Results and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#depth-seven-results-and-six-fixed-splits). GPT owns one next-bit split for each of the six unresolved roots at 3000 conflicts per child. Predict at least four joins, all supporting all ten offsets. Retain checked children, stop on SAT or guard failure. One 120 aggregate CPU/300 wall/768 MiB/tree8/thread1/16 MiB-file/128 MiB-stage job with active host guards. Full coverage and Lean open, P14 unstarted. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

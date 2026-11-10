@@ -29,10 +29,10 @@ def join(base, children):
     return proof
 
 
-def check_parent(base, body, proof):
+def check_parent(base, body, proof, label='parent'):
     parent_clause = proof[-1][1]
     cube = [-literal for literal in parent_clause]
-    cnf = OUT/'parent.cnf'
+    cnf = OUT/f'{label}.cnf'
     units = ''.join(f'{literal} 0\n' for literal in cube).encode()
     cnf.write_bytes(f'p cnf 910 {len(base) + len(cube)}\n'.encode() + body + units)
     count = len(cube)
@@ -43,10 +43,10 @@ def check_parent(base, body, proof):
     for index, clause, _ in remapped:
         database[index] = clause
     add_step([], unit_ids + [remapped[-1][0]], database, remapped)
-    certificate = OUT/'parent.lrat'
+    certificate = OUT/f'{label}.lrat'
     write_proof(certificate, remapped)
-    guard.cake('parent-cake', cnf, certificate, True, 10, 20)
-    c_check('parent-independent', cnf, certificate)
+    guard.cake(f'{label}-cake', cnf, certificate, True, 10, 20)
+    c_check(f'{label}-independent', cnf, certificate)
 
 
 def main():

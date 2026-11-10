@@ -1,0 +1,63 @@
+{
+  "worker_stop": 110,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_return13_binary_cert.py": "652b6bd02784000929ebf083eec881430bfe04b3f1eecc0a2822a494c5fd4e2f",
+    "tests/probes/swarm/sw02/carry/gpt_lrat_format_controls.py": "92b08d0a72f83eb7b20c8bc4358ea6cfe26986a3029d886998b3da4f88db57e3",
+    "tests/probes/swarm/sw02/carry/gpt_return13_lrat.py": "467bed29611c6dd4b8c251a8a890d5d5d6621a512c7ff8e05e77aa14fd3fb332",
+    "tests/probes/ether_gap_solve.py": "11e02a0327a1527d08e2d61e53c500409ce38d705c5fc299a1ab32c53f724a2d",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
+    "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_control.py": "79ab88c7f843a0a9fe8fab1f23d3330a44720fe9b5d0487d9d171494249b85fa",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_leaves.py": "7169eb470f2f4ba5c66a0db7c6a8ca5d2f83efe5afe07fc718dbf2a20f954b4b",
+    "tests/probes/swarm/sw02/carry/gpt_return13_factor_split.py": "a30e7bf78e72da903e34414a187426f931ddf7c7a5f9f83bfc4917db89bdf669",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_replay.py": "2172dbe0f5cfa1d1a2d7c7a6bd9d4e0136cac77c107af5dd0112c1d865400297",
+    "tests/probes/swarm/sw02/carry/gpt_return13_depth7_splits.py": "48f727868abc6775dd1fc175a8860131cf48fd3e38b86a83cdf45e6bf31fa25d"
+  },
+  "original_cnf_sha256": "badadbb38e00fb0c01991563f3fb6664ed2b78c9ab7254a36fa1bd818313fcd0",
+  "prediction": {
+    "branches": "at least four of six parent joins certify within 3000 conflicts per child",
+    "shifts": "every checked parent supports all ten in-window offsets",
+    "controls": "the six parents are exactly the unresolved depth-seven roots in the pinned receipt"
+  },
+  "counterfactual": "Keep checked children even where the other child is unresolved. A SAT child or guard/control failure stops the stage. No deeper split or higher conflict cap follows in this plan.",
+  "limits": {
+    "aggregate_cpu_s": 120,
+    "wall_s": 300,
+    "tree_rss_mib": 768,
+    "max_procs": 8,
+    "file_mib": 16,
+    "disk_mib": 128,
+    "launch_free_mib": 4096,
+    "min_free_mib": 1024,
+    "swap_growth_mib": 4096,
+    "threads": 1,
+    "nice": 10,
+    "inner_aggregate_stop_cpu_s": 95,
+    "worker_soft_cpu_s": 12,
+    "worker_hard_cpu_s": 120
+  },
+  "jobs": [
+    {
+      "name": "depth7-splits",
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_return13_depth7_splits.py"
+      ],
+      "cpu": 120,
+      "wall": 260,
+      "required_stdout_lines": [
+        "RETURN13_DEPTH7_SPLITS_RECORDED"
+      ]
+    }
+  ],
+  "depth7_batch_receipt_sha256": "6a7ee8caf4139766102b1dff095d3b54865d78fff747ff9dc137e25827d9f53b",
+  "parents": [
+    "0011011",
+    "0100110",
+    "0110000",
+    "0110110",
+    "1010011",
+    "1011110"
+  ]
+}

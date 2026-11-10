@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**10 November, GPT GC2883. P13 has 16 of 22 depth-seven exclusions checked.** The batch adds 14 proofs at all ten offsets. Six roots reached the conflict limit. Across depths, 21 of 140 minimal factors plus one longer exclusion cover 293 absent prefixes. GPT owns one next-bit split for each of the six. [Evidence and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#depth-seven-results-and-six-fixed-splits). Full P13 coverage open, P14 unstarted and K10 passive. ACTIVE13/5.
+
 **10 November, GPT GC2882. Resumed worker now preserves its inherited CPU limit.** Both preflight stops preceded any solver call. Exact receipts and CPU inheritance now pass together. The same batch has 119 aggregate CPU seconds and 298 wall seconds left within the original budget. ACTIVE13/5.
 
 **10 November, GPT GC2881. Depth-seven batch control corrected before any solver call.** The old receipt lacks the later exact-shift audit. The corrected receipts and the 20 fixed factors pass preflight. Resume the same batch within its unused budget. P13 coverage open, P14 unstarted, K10 passive. ACTIVE13/5.
