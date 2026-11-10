@@ -1,6 +1,6 @@
 # The free-middle theorem (queue row S-13)
 
-**DRAFT (L1620): Lean built and checked; GPT's read of the Lean requested; essay, notebook and release artifacts not yet built.** Built under the owner's standing permission of 10 November (L1619) from XP-3.1 as GPT carried it in [GC2702 §2](../../../GPT-BLOCK6-CARRY-REVIEW-20261106.md#2-xp31-free-middle-survives-the-review), with its guards: integer densities, `u(W) → ∞`, the linear lower bound and fixed boundary windows. The B2+ claim stays out.
+**RELEASE PACKET BUILT (L1621), not posted: GPT's Lean and release read requested.** Built under the owner's standing permission of 10 November (L1619) from XP-3.1 as GPT carried it in [GC2702 §2](../../../GPT-BLOCK6-CARRY-REVIEW-20261106.md#2-xp31-free-middle-survives-the-review), with its guards: integer densities, `u(W) → ∞`, the linear lower bound and fixed boundary windows. The B2+ claim stays out.
 
 ## What the module proves
 
@@ -17,7 +17,7 @@
 | Form | File | sha256 | Check |
 |---|---|---|---|
 | Portal | [`Rule30Submission.lean`](Rule30Submission.lean) (from the kit form by [`gen_free_middle_portal.py`](../../../../tests/probes/swarm/sw02/block11/gen_free_middle_portal.py)) | `2cbe3701b2f2a244…` | pass at the verifier's kit `5fb59158`: 129 declared, 405 constants replayed, 8 headlines, standard axioms, no new axioms; build plus Check 3.4 s, 0.97 GB ([receipt](check-5fb59158.json)) |
-| Kit | [`Rule30FreeMiddle.lean`](Rule30FreeMiddle.lean), 1,327 lines | `01a2bea3aad44ac4…` | pass at kit main `03a19bf`: 128 declared, 405 constants, 8 headlines; module build 2.0 s, Check 5.0 s, 0.97 GB ([receipt](check-kit-03a19bf.json)); kit branch `free-middle` local, not pushed |
+| Kit | [`Rule30FreeMiddle.lean`](Rule30FreeMiddle.lean), 1,327 lines | `01a2bea3aad44ac4…` | pass at kit main `03a19bf`: 128 declared, 405 constants, 8 headlines; module build 2.0 s, Check 5.0 s, 0.97 GB ([receipt](check-kit-03a19bf.json)); kit branch `free-middle` local, not pushed; [`kit-integration.patch`](kit-integration.patch) (the import and the catalogue row; `PORTAL-ID` to fill) |
 
 **Mutants.** All eight must-fail mutants rejected ([output](../../../../tests/probes/swarm/sw02/block11/mutate_free_middle.out), [script](../../../../tests/probes/swarm/sw02/block11/mutate_free_middle.py)): a quadratic lower bound (false, by the popcount example), balance from `N ≥ m + 7`, an image count of 255, a whole-row horizon, an all-black prefix, a linear `W` in the counterexample (false, by `free_middle`), windows of `m - 2` cells, and B2 without `u → ∞`.
 
@@ -26,3 +26,24 @@
 - Kit: `Rule30ZeroBoundaryBarriers.no_local_ranking` (B2 for all surviving double steps) and `Rule30LocalConservation.cyclic_conserved_iff_shift_coboundary` (the classification), both used, not reproved. `known_find` for `no_local_ranking`, `RankCert`, `CyclicConserved`, `free middle` (kit `03a19bf6`, portal 10:49:54Z, 20 open PRs): only those kit modules and `Rule30ProductParity.CyclicConserved`, a different notion. Cloud's CL752 comparison: the free-middle theorem CLEAR; `rule30-open`'s conservation-laws note and the kit's barriers PARTLY cover the object.
 - Literature: balance for permutive cellular automata (Hedlund 1969) and absence of conservation laws (Hattori and Takesue 1991) are classical; the kit cites the latter.
 - Not claimed: real or nonlinear densities, bounded margins `u`, rankings with memory, `Q01`, Problem 1. The late population includes rows that are not the left half of rule 30 under an alternating centre.
+
+## Release artifacts (L1621)
+
+- **Texts:**
+  - [`essay-prose.md`](essay-prose.md);
+  - [`essay.md`](essay.md) (`19007d84…`), assembled by [`assemble_free_middle_essay.py`](../../../../tests/probes/wolfram/assemble_free_middle_essay.py) with the portal source embedded verbatim;
+  - [`title.txt`](title.txt);
+  - [`abstract.txt`](abstract.txt) (201 words, one line);
+  - [`headlines.txt`](headlines.txt) (8);
+  - [`PR-BODY.md`](PR-BODY.md).
+- **The worked numbers.** Python ([`free_middle_replay.py`](../../../../tests/probes/wolfram/free_middle_replay.py), with its prediction header) and Wolfram Language give the same list: `{{0, 4, 180, 214}, {0, 6, 375, 381}, {1, 1, 0, 0, 0, 0, 0, 1, 0}, 4, {10, 14, 18, 22, 26, 30, 34}}`.
+  - The balance totals are `0` for popcount at `N = 9` and for the count of `11` at `N = 10`.
+  - The best popcount word has rise `4` read from its deep end.
+  - The planted row's four-step change grows by exactly `4` per period.
+  - The prediction held.
+- **Notebook nb1.** Kept outside git, built by [`free_middle_notebook.wl`](../../../../tests/probes/wolfram/free_middle_notebook.wl) (`ab07295c…`) at the verifier's kit `5fb59158`, under `run_capped.py --track-tree`.
+  - SHA256 `12c748474cfd1b17aeadec1b217ef335c45a0c64c3227a6b02e1ebc24cb14048`, 235,983 bytes.
+  - RESULT OK in 20.3 s, 2.1 GB peak tree RSS.
+  - Gates: 6 output cells and no message cells; the first cell equals the Python replay; the Abstract cell equals `abstract.txt`; the icon payload equals the portal source; the axiom sets match `Check`; KernelChecked at 405.
+  - Evidence: `cited/local/free-middle-nb1-20261110.tar.gz`, 82,514 bytes, SHA256 `f57290fe7a18dd2e348d36ef898c7a5184ee4df6f4567a72dfd697b20b367f6a`, read back byte-exact.
+- **Post script.** [`post.sh`](post.sh) is S-16's reviewed wrapper with only the pins and the headline count (8) changed. The dry run passes: seven pins, verifier `5fb59158`, image 18.

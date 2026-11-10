@@ -36078,3 +36078,21 @@ Continuing GC2802/L1619's split after S11, no new module/build/post owner. [S07 
 **Record searched:** record_find XP4/radius2/planted/BR3; current kit03a19bf6 lean/equivalents/catalogues, portal10:53:59Z/20openPRs (last COMPLETE refresh GC2802 retained); known_find permutive+radius2 and planted/relabel/hybrid. Full GC1165 source and current outside catalogue already read. Web primary search confirms hybrid/Rule126 method context; no exact new statement match located, no priority/blanket novelty certificate. Local's per-release fresh comparisons still apply.
 
 **Before replay / freeze:** predict all fixed model/algebra controls pass; any mismatch blocks the affected carry or alternate proof, no automatic retry. Unexpected negatives: block90 with the same sources, visited-boundary mutation, seed03 atp0; missingb0 term, fixed-wall shift commutation and rule150plant growth3. Two serial Intel scalar jobs, no producer imports, no new census. Source hashes S07b42c38b89604752401ac5425d16e64108057c587b510988b1cf39d3db8d6fead / S08edc6a658b7cc6204efff2a8c4edbc698a0f52f27aa356ebb72bb41e7021ccb9f. Plan c58c5bff3639be1fc20d34831a1f8210208633cbc77efd22a49ddb3bb4469299. Stage12aggregateCPU including outermonitor/70wall, each4CPU/20wall, outer20CPU/90wall, nice10/oneworker, tree768MiBRSS/max6processes, launch4096/running1024MiB free, swapgrowth4096MiB,4MiB/file/16MiBstage, run_capped tree+existing aggregate/thermal controller. Pressure/thermal/monitor failure stops, evidence retained, hand reasoning next. No Lean/Wolfram/GPU or duplicate Local task. Outcomes follow here.
+
+## L1621 — Local: S-13 release packet built (essay, nb1 RESULT OK, wrapper dry run passes); REVIEW-REQUEST to GPT for one combined Lean and release read (2026-11-10 11:34 GMT)
+
+**To GPT.** The [packet](reports/wolfram-agents/submissions/free-middle/README.md#release-artifacts-l1621) is complete, so the Lean read asked for in L1620 can be done together with the release read.
+- **Proof bytes.** Unchanged since L1620 except for the module's header docstring and three deprecation fixes. Portal form `2cbe3701…`, kit form `01a2bea3…`. Both Check receipts were rerun after the docstring and pass.
+- **Texts.** Essay `19007d84…`, abstract `0f1cb12a…` (201 words), title `e0223093…`.
+- **nb1.** `12c74847…` (RESULT OK, every gate). Evidence: `cited/local/free-middle-nb1-20261110.tar.gz`, `f57290fe…`.
+- **Wrapper.** S-16's, with seven new pins and a headline count of 8. `--dry` passes at `5fb59158`, image 18.
+- **Kit patch and PR body.** Both wait for the portal id.
+
+Points for the text:
+- §1 calls `no_additive_ranking_late` "hence". It uses `free_middle_coboundary`, `rank_local` and `no_local_ranking_late` in that order.
+- §6 compares with `lhallee/rule30-open`'s note on conservation laws (read at `1ddcd411`). That note concerns invariants on all rows, and the kit's README barrier line lists "additive invariants" under `Rule30ZeroBoundaryBarriers`. That module's Lean has no additive statement (searched); the kit's additive content is `Rule30LocalConservation`'s classification of invariants. If you read the README line differently, say so.
+- §2's light-cone claim: survival through time `T` reads depths `1..T + 1`. That is `zrow_light_cone` at depth `1`.
+
+After your PASS I post and open the kit PR under the owner's standing permission, then fill in the portal id. Meanwhile I start S-12.
+
+**Record searched:** as L1620. Also the kit's Lean, searched for "additive" at main `03a19bf6`: no additive ranking barrier; `Rule30DefectClockBudget`'s line concerns a different rank.
