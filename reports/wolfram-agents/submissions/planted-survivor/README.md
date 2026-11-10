@@ -1,0 +1,38 @@
+# A planted survivor: rule 30's survival table with one row added (queue row S-08, plant half)
+
+**RELEASE PACKET BUILT (L1628), not posted: GPT's release read requested.** Built from BR-3.2 as GPT carried it ([GC2804](../../../GPT-S08-CARRY-REVIEW-20261110.md)), with GPT's two repairs: `psi` acts on rows and the stripe together, and survival is inclusive (every even check of depth `1` through `t`). The scope is the exact table identity and the finite-state witness. The hybrid half of S-08 (BR-3.1, the 90/150 classification) is not in this packet.
+
+## What the module proves
+
+`Rule30PlantedSurvivor` is core Lean and imports only `Rule30ZeroBoundaryBarriers`. It has ten headlines:
+- `psi_psiInv`, `psiInv_psi`;
+- `psi_stripe`;
+- `psiInv_fin`;
+- `Tn_eq`;
+- `T_finite`, `T_zero`;
+- `T_fixed`, `fixed_survives`;
+- `survival_table`.
+
+| Form | File | sha256 | Check |
+|---|---|---|---|
+| Portal | [`Rule30Submission.lean`](Rule30Submission.lean), from [`kit_to_portal.py`](../../../../tests/probes/swarm/sw02/block11/kit_to_portal.py) | `b6cf4a78…` | pass at `5fb59158`: 91 declared, 266 constants, 10 headlines, standard axioms ([receipt](check-5fb59158.json)) |
+| Kit | [`Rule30PlantedSurvivor.lean`](Rule30PlantedSurvivor.lean) | see receipt | pass at main `03a19bf`: 79 declared, 266 constants ([receipt](check-kit-03a19bf.json)). The kit branch `planted-survivor` at `c500184` is local; [`kit-integration.patch`](kit-integration.patch) |
+
+**Mutants.** All five were rejected ([output](../../../../tests/probes/swarm/sw02/block11/mutate_planted_survivor.out)).
+
+## Release artifacts
+
+- **Texts:**
+  - [`essay-prose.md`](essay-prose.md);
+  - [`essay.md`](essay.md) (`14b27c1a…`, from [`assemble_planted_survivor_essay.py`](../../../../tests/probes/wolfram/assemble_planted_survivor_essay.py));
+  - [`title.txt`](title.txt);
+  - [`abstract.txt`](abstract.txt) (206 words);
+  - [`headlines.txt`](headlines.txt) (10);
+  - [`PR-BODY.md`](PR-BODY.md).
+- **The worked numbers.** Python ([`planted_survivor_replay.py`](../../../../tests/probes/wolfram/planted_survivor_replay.py)) and Wolfram both give `{True, 495, {0,0,0,1,1,1,1,1,1,0,0}, True, True}`, and the prediction held.
+- **nb1** (`8670737a04fae33744eafe2d1712aa19187dcf244d9f8743f47c76beeb238db2`, 149,053 bytes):
+  - RESULT OK in 14.6 s;
+  - every gate passes (six outputs, no messages, icon, abstract, axioms);
+  - KernelChecked 266;
+  - evidence `cited/local/planted-survivor-nb1-20261110.tar.gz`, 50,565 bytes, SHA256 `f519baa08f79733d2e3ad3327a7af2a77b73ed69c383ad841a1a0ac151d405d3`, read back byte-exact.
+- **Post script.** [`post.sh`](post.sh). The dry run passes.

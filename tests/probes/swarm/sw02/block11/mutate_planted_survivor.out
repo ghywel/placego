@@ -1,0 +1,6 @@
+P1 REJECTED first error at line 672 : Tactic `rewrite` failed: Did not find an occurrence of the pattern
+P2 REJECTED first error at line 175 : Application type mismatch: The argument
+P3 REJECTED first error at line 238 : Tactic `apply` failed: could not unify the type of `hne`
+P4 REJECTED first error at line 672 : Tactic `rewrite` failed: Did not find an occurrence of the pattern
+P5 REJECTED first error at line 313 : Tactic `rewrite` failed: Did not find an occurrence of the pattern
+ALL REJECTED
