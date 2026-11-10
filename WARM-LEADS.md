@@ -1,6 +1,15 @@
 # WARM LEADS: what SW-02 left us, and the order of work
 
-**Current mission, 10 November (owner; GPT GC2838): all39 card-only doors reviewed.**
+**Current mission, 10 November 19:48 GMT (owner; GPT GC2839): deliver the ten remaining kit candidates, K-01–K-10 below.**
+The owner expressly authorizes portal posting and kit PRs after the usual independent mathematical, source/checker,
+notebook, essay, credit and privacy checks. GPT's existing13-minute work heartbeat and5-minute flag poller are
+verified ACTIVE; Local's schedules are resumed L1640. Local owns K-03=S-17; K-01 rides with K-06. GPT starts K-02,
+then K-04's module judgement, K-09a's independent tile check and K-08's exact PR52 comparison, prioritizing returned
+release packets. CL775 has completed Cloud's initial K-09 extraction: positive entropy at15 is K-09a; zero entropy
+at13/14 is K-09b and still needs certificates. No duplicate extraction, build or post. Earlier S-01–S-16 packages
+remain delivered; temporal-word research stays PARKED. The old pause below is history, superseded by this restart.
+
+**Completed manual review, 10 November (GPT GC2838): all39 card-only doors reviewed.**
 The submission backlog is delivered. [The card pass](reports/GPT-SW02-CARD-DOORS-20261110.md)
 gives every remaining frozen position an explicit scoped disposition. Two old GPT-only
 proofs (74/75) need Cloud's carrying read;47 needs its unavailable full source. The
@@ -63,6 +72,13 @@ entropy guard; its new computations are received, not independently reviewed by 
 **Unread debt (Phase C of the appraisal).** CL763 [triaged](reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md) the94 pending doors:10 already settled,12 in batch1,33 substantive reads and39 card-only. GC2826 reviews batch2's11 entries:22 original substantive reads remain in batches3/4, plus the39 card-only and the17 atlas-only items. A completed read is not a closure: L7-D1 remains open, and deadline/tail-parity repairs have exact follow-up obligations. B2+, LN13.2 and RS1's named construction now have worker carries. Other atlas claims are untouched. The95 untested AJAR doors,57 unforced findings and56 answer-sheet open fields remain separate. **CL764 (Cloud, 10 November):** batch 3, the ten Problem 3 doors, is carried, and GC2826's two returned steps with it (the branch law's tail parity; the eight-tick deadline step with the period-8 witness as an explicit 80-pair lasso). 51 doors remain: batch 4 (12, GPT) and the 39 card-only; the atlas-only batch of 17 is Cloud's next. **CL765:** the six Problem 3 pieces set aside in batch 3 are processed (triage report §8), with every outside theorem named as read at source or cited. **CL766 (Cloud, 10 November):** the atlas-only batch is done: 15 of its 17 entries carried (some on stated conditions), BR-2.2 and BR-2.3 passed to GPT; leftovers with owners in the triage report §9.4. Kit candidates named for the owner's word: the all-configuration width-5/6 column-1 constraints with explicit onset (BR-5.2), history invisibility (BR-5.3), Theorem D with the one-sided Hedlund lemma; GPT named B2+ at GC2826. Remaining: the 39 card-only doors. **CL768 (Cloud, 10 November):** BR-6.1's resolution-size statements carried (triage report §10); rule 150's hardness is at most 3 at every width (PROOF-SKETCH, wants a reader). GPT finished BR-2.2, BR-2.3 and the XP-3.2 replay at GC2832, so the whole atlas is read. Cloud's remaining short reads: LN-02.1 (iii), (iv) and the all-t step; RS-4 (c2), (c3); LN-03.1's last sentence. Then the 39 card-only doors. **CL770 (Cloud, 10 November):** those three short reads are done (triage report §11), all carried. Phase C now has only the 39 card-only doors left.
 
 ## Kit candidates left from SW-02, in working order (Cloud, CL773, 10 November)
+
+**Owner authorization and ownership amendment, GC2839:** work through this ordered list, including necessary
+proof/certificate work, with express permission to post and open kit PRs after the usual gates; no per-package
+owner consent is needed. This supersedes the older permission wording below. K-02 is DOING with GPT: its source
+and transfer are being read, but independent finite-certificate replay and release clearance are pending.
+Local L1640 owns K-03=S-17. Cloud CL775 has returned the K-09a tiles; GPT's independent check is queued, and no
+builder is assigned until that check. K-09b remains unstarted. New S-numbers are assigned by Local.
 
 *At the owner's request: one table, smallest first, for Local and GPT to work through. Local builds, GPT gives the carrying and release reads, as for S-01 to S-16. Cloud does not post. The row labels K-01 to K-10 are placeholders; Local assigns S-numbers when it takes a row. None of these bears on a prize statement. **Before any build:** recheck novelty against the kit's current main, the portal and the open kit PRs (`known_find.py`); Cloud's host could not refresh that index today, so every "not in the kit" below was checked by direct search of kit 03a19bf only. Posting stays on the owner's word.*
 

@@ -116,6 +116,12 @@ PROOF-SKETCH. This is a research-note guard, not a change to the already-deliver
 
 ## SW-02 submission queue, 6 November 2026
 
+**Second delivery programme, GC2839 (10 November):** the completed S-01–S-16 rows below are history, not a repost
+queue. The live ordered work is [K-01–K-10 in WARM-LEADS](../../WARM-LEADS.md#kit-candidates-left-from-sw-02-in-working-order-cloud-cl773-10-november).
+Owner expressly permits posting/PRs after normal review and release checks. Local L1640 owns K-03=S-17 and plans
+K-01 as a K-06 rider; GPT starts K-02's carry and reviews returned releases. K-09a tiles await GPT's independent
+check; K-09b certificates are unstarted. GPT schedules are ACTIVE13/5; Local's schedules resumed L1640.
+
 **GC2810:** S07 public Lean Verified and exact notebook/source/PR258 confirmed ([read](../GPT-S07-PUBLIC-READ-20261110.md)); L1628 routine nb2/two-pin/current dry audit now PASS. S09 (a)-(e) hand carry complete, sharp five-column module scoped ([read](../GPT-S09-CARRY-REVIEW-20261110.md)); no new Lean or post yet.
 
 *Local, at the owner's request. Results from SW-02 that could be submitted, in working order. The usual gates apply to every row: current kit and portal comparison, exact statement, a worker's carrying read, formal check, essay and abstract, one posting owner, the owner's word. The kit takes theorems about infinite families, not certificate data for single widths. **Read** means a worker's read; a skeptic is a self-check. **Prior art** is the swarm's search only, and block 2 of [WARM-LEADS](../../WARM-LEADS.md) will settle it. Sources are in the shared-store packets named in L1563 and L1564.*
