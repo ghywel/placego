@@ -407,4 +407,59 @@ ancestor/monitor95inner and110outer. Dependency loops also check95CPU; all
 pressure/monitor/control/output stops preserve evidence. Fresh ownership and
 headroom plus this published freeze before launch; no automatic larger retry.
 
+## Binary export stop; change the proof structure — GC2871
+
+GC2870's retained PHP control passes:43 raw additions,40 needed,1571-byte
+trimmed text accepted independently; removal of the final empty step rejects.
+The P13 target native binary trace also reaches16MiB/file, SIGXFSZ(-25), before
+UNSAT or any target checker. Run22:22:58Z–22:23:04Z,6.190421aggregateCPU/5.57wall,
+71956KiB peak tree RSS, min free6148MiB, no swap growth. Forecast of completing
+under16MiB is refuted for this invocation. No completed target proof or packing
+claim. The exact partial binary16777216bytes has SHA256
+`cd0bf132afe678c6eebfa4768e7d41a12868118ab633dfdd8b8aa484ab110505`.
+Evidence `cited/gpt/return13-binary-stop-20261110.tar.gz`,11073685bytes SHA256
+`ec1abb09c421fcd65116c730bc0bd334521078fbcd41a4c2d317a639a2d79d91`, verified
+TLS/raw-body/readback; original/retained digests, controls, partial trace and
+sanitized stop receipts preserved.
+
+**Direct native trace export is parked** after text and binary hit the same
+file guard. Reopen only with independent evidence of a complete trace fitting
+the current limits, or a separately justified owner-approved evidence budget;
+no automatic third format or higher cap. The graph result and original-CNF
+proof obligation are unchanged; P14 is unstarted.
+
+**Different proof representation: a prefix-tree cover.** Let F0 be the exact
+transition/period prefix (5044clauses) of the retained original F. The remaining
+170clauses of F block the170 retained 16-bit words. Make a binary trie of those
+words in the actual little-endian coordinate order. Its leaves are either a
+listed complete word or the first absent prefix. For prefix u, write C_u for
+the clause saying the projected bits disagree with u. A listed leaf already
+has C_u in F. For an absent leaf, a checked positive-RUP refutation of F0 with
+u's assignment units can be discharged into C_u: add C_u to each needed
+learned clause, because negating the lifted clause supplies all the assumed
+bits; drop the now-satisfied assumption-unit hints. Rebuild/validate the
+ordered unit trace, including duplicate/tautological clauses, and refuse RAT
+or unverified dependencies. The discharged final clause is C_u, not a free
+assumption. At an internal node the two child clauses force opposite next
+bits under u, so a two-hint RUP step derives the parent. The root is empty.
+A full proof would therefore replay against exact F with no additional axiom.
+This is a proof design, not a claim that all leaf cases are easy or solved.
+
+Record searched: GC2467/2468 (`gap43_unit_cases.py`) already uses the
+opposite-unit join on propagation traces; GC2753/2754
+(`row119_dependency_audit.py`) already lifts learned clauses by a guard and
+replays the result. Reuse these checked ideas and `guarded_wall_proof_support.py`
+RUP checks; no new generic SAT method is claimed. Do not rerun their old
+experiments. **Exact next:** separately freeze only a PHP(5,4) two-branch
+control requiring learned clauses, with independent checks of the two branch
+proofs, lifted clauses and joined ORIGINAL CNF; missing-child/assumption-polarity
+mutants must reject. Also build the exact retained-word trie without a solver
+and record its leaf depths and partition identity. That establishes the
+compiler and selects a justified small fixed absent-prefix pilot later; no
+full leaf sweep or target query is authorized by this checkpoint alone.
+
+GC2869's conditional graph classification still awaits Local's scoped carry;
+S23 delivered/public checked; K10 passive under L1657's pending owner question.
+No job running, no larger retry, ACTIVE13/5.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
