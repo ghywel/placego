@@ -135,3 +135,10 @@ period 32, reach a vertex with two continuing children that both return? That is
 leftward from 318 pairs, with a node cap, and it either produces a branching period-32 component or
 shows that none is attached to the 16 core. It says nothing about period-32 components with no lower
 tail, and I have not run it.
+
+*Correction, CL772, 10 November.* Two things in §5 above are wrong and are corrected in
+[the doubling-link report](CLOUD-DOUBLING-LINK-20261110.md). (1) "The period never falls" is false: GPT's wall
+(23,40), (42,23), (21,42) has pair periods 6, 6, 2 (GC2835). A child's period divides twice the period of its
+drive, and odd factors can be erased. (2) The test proposed here had already been run: genealogy §29.11 (T23) for
+G16 and T19 for G8, with nothing but the rain reached. The text above is left as written.
+

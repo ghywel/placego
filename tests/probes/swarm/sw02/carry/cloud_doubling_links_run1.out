@@ -1,0 +1,74 @@
+== cores by full census (second code on LN-12's table)
+   P 1: states 1 edges 1 | cyclic components (vertices, edges): count [((1, 1), 1)] | branching: False
+   P 2: states 6 edges 8 | cyclic components (vertices, edges): count [((1, 1), 1), ((2, 2), 1)] | branching: False
+   P 3: states 1 edges 1 | cyclic components (vertices, edges): count [((1, 1), 1)] | branching: False
+   P 4: states 6 edges 8 | cyclic components (vertices, edges): count [((1, 1), 1), ((2, 2), 1)] | branching: False
+   P 5: states 6 edges 6 | cyclic components (vertices, edges): count [((1, 1), 1), ((5, 5), 1)] | branching: False
+   P 6: states 42 edges 50 | cyclic components (vertices, edges): count [((1, 1), 1), ((2, 2), 1), ((10, 10), 3)] | branching: False
+   P 7: states 15 edges 15 | cyclic components (vertices, edges): count [((1, 1), 1), ((14, 14), 1)] | branching: False
+   P 8: states 46 edges 56 | cyclic components (vertices, edges): count [((1, 1), 1), ((2, 2), 1), ((4, 4), 2)] | branching: False
+   P 9: states 46 edges 46 | cyclic components (vertices, edges): count [((1, 1), 1), ((45, 45), 1)] | branching: False
+   P 10: states 11 edges 13 | cyclic components (vertices, edges): count [((1, 1), 1), ((2, 2), 1), ((5, 5), 1)] | branching: False
+   P 11: states 1 edges 1 | cyclic components (vertices, edges): count [((1, 1), 1)] | branching: False
+   P 12: states 270 edges 326 | cyclic components (vertices, edges): count [((1, 1), 1), ((2, 2), 1), ((10, 10), 3), ((12, 12), 1), ((30, 32), 6)] | branching: True
+   P 13: states 144 edges 144 | cyclic components (vertices, edges): count [((1, 1), 1), ((143, 143), 1)] | branching: False
+   P 14: states 62 edges 64 | cyclic components (vertices, edges): count [((1, 1), 1), ((2, 2), 1), ((14, 14), 1), ((21, 21), 2)] | branching: False
+   P 15: states 606 edges 636 | cyclic components (vertices, edges): count [((1, 1), 1), ((5, 5), 1), ((15, 15), 1), ((60, 60), 1), ((525, 555), 1)] | branching: True
+== D6 the period-15 core
+   component 0: vertices 525 edges 555 branching True | pair periods [15] | core edges leaving it 0 | reaches components [] | reached from components []
+   component 1: vertices 60 edges 60 branching False | pair periods [15] | core edges leaving it 0 | reaches components [] | reached from components []
+   component 2: vertices 15 edges 15 branching False | pair periods [15] | core edges leaving it 0 | reaches components [] | reached from components []
+   component 3: vertices 1 edges 1 branching False | pair periods [1] | core edges leaving it 0 | reaches components [] | reached from components []
+   component 4: vertices 5 edges 5 branching False | pair periods [5] | core edges leaving it 0 | reaches components [] | reached from components []
+   transient core pairs 0 | branching components 1 | all terminal: True | each entered from another component: False
+   rotation by 0..14 ticks carries the first branching component to components [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+   its branch vertices: [(5293, 7347), (5461, 23930), (5541, 5735), (9515, 26412), (9557, 22366), (9577, 26009)] count 30
+== D1 G16's exits at periods 16 and 32 (T23, genealogy 29.11)
+   P 16: ring returns after 16 ticks True, after 8 False | G16 states 128 on a cycle True | tree states 1310 | longest tree path 11 pairs | edges into the rain 16 | cyclic components (sizes) [2, 128] | tree states with two parents 2 | tree states with an infinite continuation 144
+   P 32: ring returns after 16 ticks True, after 8 False | G16 states 128 on a cycle True | tree states 18238 | longest tree path 41 pairs | edges into the rain 16 | cyclic components (sizes) [2, 128] | tree states with two parents 34 | tree states with an infinite continuation 144
+   16 -> 32 from G16: doubling links 704 | children are half-shifts and complements: True | a grandchild exists exactly when the adjacent column has even weight: True
+      links with an infinite leftward continuation: 0 | the others die after at most 31 further pairs | survival-length counts (length: links): {1: 416, 2: 176, 5: 32, 6: 16, 10: 32, 15: 16, 31: 16}
+== D3 doubling links out of the complete lower core
+   1 -> 2: doubling links 1 | children are half-shifts and complements: True | a grandchild exists exactly when the adjacent column has even weight: False
+      links with an infinite leftward continuation: 1 | the others die after at most 0 further pairs | survival-length counts (length: links): {}
+      closure 8 pairs | cyclic components not inside the period-1 core (vertices, edges): [(2, 2)]
+   2 -> 4: doubling links 2 | children are half-shifts and complements: True | a grandchild exists exactly when the adjacent column has even weight: True
+      links with an infinite leftward continuation: 0 | the others die after at most 1 further pairs | survival-length counts (length: links): {1: 2}
+      closure 12 pairs | cyclic components not inside the period-2 core (vertices, edges): []
+   3 -> 6: doubling links 1 | children are half-shifts and complements: True | a grandchild exists exactly when the adjacent column has even weight: False
+      links with an infinite leftward continuation: 1 | the others die after at most 0 further pairs | survival-length counts (length: links): {}
+      closure 8 pairs | cyclic components not inside the period-3 core (vertices, edges): [(2, 2)]
+   4 -> 8: doubling links 4 | children are half-shifts and complements: True | a grandchild exists exactly when the adjacent column has even weight: True
+      links with an infinite leftward continuation: 0 | the others die after at most 2 further pairs | survival-length counts (length: links): {2: 4}
+      closure 36 pairs | cyclic components not inside the period-4 core (vertices, edges): []
+   5 -> 10: doubling links 21 | children are half-shifts and complements: True | a grandchild exists exactly when the adjacent column has even weight: False
+      links with an infinite leftward continuation: 1 | the others die after at most 6 further pairs | survival-length counts (length: links): {1: 10, 6: 10}
+      closure 178 pairs | cyclic components not inside the period-5 core (vertices, edges): [(2, 2)]
+   6 -> 12: doubling links 32 | children are half-shifts and complements: True | a grandchild exists exactly when the adjacent column has even weight: True
+      links with an infinite leftward continuation: 6 | the others die after at most 2 further pairs | survival-length counts (length: links): {1: 14, 2: 12}
+      closure 744 pairs | cyclic components not inside the period-6 core (vertices, edges): [(30, 32), (30, 32), (30, 32), (30, 32), (30, 32), (30, 32)]
+   7 -> 14: doubling links 78 | children are half-shifts and complements: True | a grandchild exists exactly when the adjacent column has even weight: False
+      links with an infinite leftward continuation: 1 | the others die after at most 10 further pairs | survival-length counts (length: links): {1: 49, 5: 14, 7: 7, 10: 7}
+      closure 1156 pairs | cyclic components not inside the period-7 core (vertices, edges): [(2, 2)]
+   8 -> 16: doubling links 56 | children are half-shifts and complements: True | a grandchild exists exactly when the adjacent column has even weight: True
+      links with an infinite leftward continuation: 0 | the others die after at most 13 further pairs | survival-length counts (length: links): {1: 24, 2: 8, 4: 8, 8: 8, 13: 8}
+      closure 1908 pairs | cyclic components not inside the period-8 core (vertices, edges): []
+   16 -> 32 from white, rain, G8 and G16: doubling links 1328 | children are half-shifts and complements: True | a grandchild exists exactly when the adjacent column has even weight: True
+      links with an infinite leftward continuation: 0 | the others die after at most 31 further pairs | survival-length counts (length: links): {1: 640, 2: 352, 3: 16, 4: 32, 5: 80, 6: 16, 7: 16, 10: 32} ...
+      closure 43092 pairs | cyclic components (vertices): [1, 2, 4, 4, 128]
+== D4 the period-12 branch vertices and exhaustive half-shift search
+   U: half-differences of its two columns 4095, 1560 (overlap 1560) | continuing children [2602, 1493] with weights [5, 7]
+   V: half-differences of its two columns 4095, 1560 (overlap 1560) | continuing children [2728, 1367] with weights [5, 7]
+   background 0: period 14 cells | valid half-shift fields 2 | equality components (sites, infinite lift) [(14, True)] | columns with zero half-difference 0 | classification equals the literal rule at every site: True | brute force over 2^14 assignments: distinct valid fields 2
+   background 11: period 20 cells | valid half-shift fields 2 | equality components (sites, infinite lift) [(20, True)] | columns with zero half-difference 0 | classification equals the literal rule at every site: True
+   background 011: period 34 cells | valid half-shift fields 2 | equality components (sites, infinite lift) [(34, True)] | columns with zero half-difference 0 | classification equals the literal rule at every site: True
+   background 101: period 34 cells | valid half-shift fields 2 | equality components (sites, infinite lift) [(34, True)] | columns with zero half-difference 0 | classification equals the literal rule at every site: True
+   background 110: period 34 cells | valid half-shift fields 2 | equality components (sites, infinite lift) [(34, True)] | columns with zero half-difference 0 | classification equals the literal rule at every site: True
+== D5 equality graphs of every simple cycle in the cores at even periods
+   P 2: simple cycles 2 | classification equals the literal rule: True | finite field-changing components: 0 | (cycle length, valid fields, components): count [((1, 1, ()), 1), ((2, 2, ((2, True),)), 1)]
+   P 4: simple cycles 2 | classification equals the literal rule: True | finite field-changing components: 0 | (cycle length, valid fields, components): count [((1, 1, ()), 1), ((2, 1, ()), 1)]
+   P 6: simple cycles 5 | classification equals the literal rule: True | finite field-changing components: 0 | (cycle length, valid fields, components): count [((1, 1, ()), 1), ((2, 2, ((2, True),)), 1), ((10, 2, ((10, True),)), 3)]
+   P 8: simple cycles 4 | classification equals the literal rule: True | finite field-changing components: 0 | (cycle length, valid fields, components): count [((1, 1, ()), 1), ((2, 1, ()), 1), ((4, 2, ((4, True),)), 2)]
+   P 10: simple cycles 3 | classification equals the literal rule: True | finite field-changing components: 0 | (cycle length, valid fields, components): count [((1, 1, ()), 1), ((2, 2, ((2, True),)), 1), ((5, 1, ()), 1)]
+   P 12: simple cycles 6 | classification equals the literal rule: True | finite field-changing components: 0 | (cycle length, valid fields, components): count [((1, 1, ()), 1), ((2, 1, ()), 1), ((10, 1, ()), 3), ((12, 2, ((12, True),)), 1)]
+   P 14: simple cycles 5 | classification equals the literal rule: True | finite field-changing components: 0 | (cycle length, valid fields, components): count [((1, 1, ()), 1), ((2, 2, ((2, True),)), 1), ((14, 1, ()), 1), ((21, 2, ((21, True),)), 2)]

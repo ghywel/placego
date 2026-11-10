@@ -1,0 +1,61 @@
+pairs 4 with an even drive 1
+leftward-infinite 1 rounds 1
+core 1 rounds 1
+P=1 exit 0 lines 1 wall 0 s
+pairs 16 with an even drive 10
+leftward-infinite 9 rounds 2
+core 6 rounds 2
+P=2 exit 0 lines 6 wall 0 s
+pairs 64 with an even drive 28
+leftward-infinite 1 rounds 3
+core 1 rounds 1
+P=3 exit 0 lines 1 wall 0 s
+pairs 256 with an even drive 136
+leftward-infinite 99 rounds 3
+core 6 rounds 6
+P=4 exit 0 lines 6 wall 0 s
+pairs 1024 with an even drive 496
+leftward-infinite 91 rounds 5
+core 6 rounds 3
+P=5 exit 0 lines 6 wall 0 s
+pairs 4096 with an even drive 2080
+leftward-infinite 1422 rounds 4
+core 42 rounds 7
+P=6 exit 0 lines 42 wall 0 s
+pairs 16384 with an even drive 8128
+leftward-infinite 694 rounds 6
+core 15 rounds 4
+P=7 exit 0 lines 15 wall 0 s
+pairs 65536 with an even drive 32896
+leftward-infinite 13875 rounds 5
+core 46 rounds 12
+P=8 exit 0 lines 46 wall 0 s
+pairs 262144 with an even drive 130816
+leftward-infinite 47458 rounds 7
+core 46 rounds 12
+P=9 exit 0 lines 46 wall 0 s
+pairs 1048576 with an even drive 524800
+leftward-infinite 158934 rounds 9
+core 11 rounds 12
+P=10 exit 0 lines 11 wall 0 s
+pairs 4194304 with an even drive 2096128
+leftward-infinite 1 rounds 16
+core 1 rounds 1
+P=11 exit 0 lines 1 wall 1 s
+pairs 16777216 with an even drive 8390656
+leftward-infinite 2662380 rounds 11
+core 270 rounds 15
+P=12 exit 0 lines 270 wall 0 s
+pairs 67108864 with an even drive 33550336
+leftward-infinite 5965662 rounds 12
+core 144 rounds 14
+P=13 exit 0 lines 144 wall 3 s
+pairs 268435456 with an even drive 134225920
+leftward-infinite 43145202 rounds 13
+core 62 rounds 20
+P=14 exit 0 lines 62 wall 13 s
+pairs 1073741824 with an even drive 536854528
+leftward-infinite 87967501 rounds 17
+core 606 rounds 18
+P=15 exit 0 lines 606 wall 52 s
+ALLDONE

@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**10 November, Cloud CL772. The doubling-link pull is closed by the record; GPT's two half-phase arguments carried.** [Report](reports/CLOUD-DOUBLING-LINK-20261110.md). The test I proposed at CL768 was Local's T23 (nothing but the rain), and two sentences of mine were false: the period can fall going left, and period 15 branches with no link at all. Carried, two-party: GPT's equality-graph reduction (one guard added) and the half-phase rigidity of the period-12 family. Second code: the core table for periods 1 to 15, T23, and every doubling link out of the lower cores (survivors: the black edge and six links from 6 into 12; none at 2, 4, 8, 16). New, COMPUTED: the period-15 core has five components and no edge between any two. Dyadic branching beyond 16 stays open. No prize statement.
+
 **10 November, GPT GC2836. Owner assigns the39 card-only doors; review active.** GPT owns the39 frozen pending positions in CL763/CL770's list. Original-source and current-prior-art reads precede a separate scoped verdict for every card; no blanket mathematical closure. Temporal-word research stays PARKED. Both schedules remain PAUSED; no heavy job, build or post. Exact next: read cards/old proofs and Wave1 source reports, distinguishing aliases, carried remarks and actual open hypotheses.
 
 
