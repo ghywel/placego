@@ -1,0 +1,43 @@
+{
+  "worker_stop": 110,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_period15_tiles.py": "931683ddfda11d899adfa9d38c2ff24e0ada52156cc203f2cbb484ff744b7c4b",
+    "tests/probes/swarm/sw02/carry/cloud_period15_tiles.py": "99eac3fddcc6e1c0b80b3e9c535ddb8139f7ce4a0ff3393443f4229ec3a0cc10",
+    "tests/probes/swarm/sw02/carry/cloud_period15_tiles.out": "fbbd9234a078476e968266a721d0ddb6bf0bdf7931ac135a12fa0a716b855f7e",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac"
+  },
+  "kit_commit": "03a19bf6240b63c6d15894c5f7552f3a6091d937",
+  "kit_sources_sha256": {
+    "lean/Ruliology/CellularAutomata/Rule30MovingWaves.lean": "0ab24513cc18e4225e2b17bd0358a2776d387b8b21a32ff0bdb6945142bc72f3",
+    "lean/Ruliology/CellularAutomata/Rule30RingOrbits.lean": "61fbff78da7c93e345d789a35396de373b42c25040eb66e227a5460af4a34e24"
+  },
+  "limits": {
+    "aggregate_cpu_s": 120,
+    "wall_s": 300,
+    "tree_rss_mib": 768,
+    "max_procs": 6,
+    "file_mib": 16,
+    "disk_mib": 128,
+    "launch_free_mib": 4096,
+    "min_free_mib": 1024,
+    "swap_growth_mib": 4096,
+    "threads": 1,
+    "nice": 10
+  },
+  "command": "python3 tests/probes/wolfram/run_capped.py --out PRIVATE_STAGE --cpu 120 --wall 300 --rss-mib 768 --file-mib 16 --disk-mib 128 --track-tree --max-procs 6 --launch-free-mib 4096 --min-free-mib 1024 --swap-growth-mib 4096 -- /usr/bin/nice -n 10 python3 tests/probes/metal_scope/stage.py tests/probes/swarm/sw02/carry/gpt_period15_tiles_plan.json",
+  "jobs": [
+    {
+      "name": "tiles",
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_period15_tiles.py"
+      ],
+      "cpu": 110,
+      "wall": 270,
+      "required_stdout_lines": [
+        "PERIOD15_LITERAL_TILE_CHECKS_PASS"
+      ]
+    }
+  ]
+}
