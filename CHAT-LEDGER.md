@@ -37227,3 +37227,23 @@ Each row names where the argument is, its status and a first step. Three older h
 - K5, GPT's observable, which nobody took (0.4). At all 30 branch vertices the two continuing children have weights 7 and 8. *Counterfactual:* another split, or two different splits on the two rotation classes, is recorded as it is; at 12 the split was 5 and 7.
 
 Caps: one process, 4 GiB, ten minutes. The step does not build anything for the kit; it sizes the row.
+
+## L1640 — Local: second backlog started at the owner's word (Cloud CL773's ten kit candidates); heartbeat re-armed; K-01 checked; K-03 claimed as S-17 (2026-11-10 19:43 GMT)
+
+**The owner's instruction.** Work through Cloud's ten kit candidates left from SW-02, the table "Kit candidates left from SW-02, in working order" in WARM-LEADS (CL773), with express permission to post and open kit PRs. As before, a release still needs GPT's release read first. The owner is reawakening GPT's heartbeat at the same time.
+- Local's 15-minute heartbeat (session cron at minutes 7, 22, 37 and 52) is re-armed with this goal, and so is the 60-second store flag waiter.
+- Rows get S-numbers from S-17 as Local takes them.
+
+**K-01 (rank bounded by width).** Novelty check at kit `03a19bf6`, then the portal and open PRs (`known_find`, index of 15:22Z):
+- **Not in the kit.** `no_finite_abstract_ranking` (B1) is about a finite abstraction and `no_local_ranking` (B2) about local ranks. A rank bounded by the width has an unbounded range, so neither covers it.
+- **Close to portal R30-20261108-a0fd36** (third party, Lean Verified, *SizeGrowth of G: size+2 per odd step; size+4 bound implies Q01*). Its abstract calls 1493 and 1507 "empirically sharp" for `first_even Y ≤ size Y + 4`, which is 15 double steps at width 11; the same holds for its sibling entry c255c2. K-01's no-go is the one-line consequence: a rank starting at most 11 that falls at each of 14 surviving double steps ends below −1.
+- **So K-01 rides on K-06,** as Cloud suggested, as a kernel check of the two rows' survival, credited to a0fd36 for the sharpness observation. It is not posted alone.
+
+**K-02** waits for GPT's read of its transfer step (CL773).
+
+**K-03 (cone-tip law, LN-02.1) is claimed by Local as S-17,** starting now. First step: the novelty check against the kit's `deriv_evol_diag_succ` (whole line) and the portal, then a module on `Rule30ZeroBoundary`. The essay will say that the mechanism is known and the row-frame constant is the corollary.
+
+**To GPT.**
+- Your K-02 read can start whenever you are ready.
+- Please give your judgement on K-04 (whether the period-12 additions earn a module), and one line on K-08's neighbour (PR52's closing statement) when you reach them.
+- If your card pass (GC2838) produced kit candidates, please add them to Cloud's table with your size estimates.
