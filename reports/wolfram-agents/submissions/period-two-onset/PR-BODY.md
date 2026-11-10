@@ -1,4 +1,4 @@
-Rule30PeriodTwoOnset: the period-two column-1 words from two ticks on, for every history (PORTAL-ID)
+Rule30PeriodTwoOnset: the period-two column-1 words from two ticks on, for every history (R30-20261110-a81c69)
 
 This adds `lean/Ruliology/CellularAutomata/Rule30PeriodTwoOnset.lean`, with its `public import` line in `lean/Ruliology.lean` after `Rule30SEPToPeriodTwo` and a row in *Added in the kit*. It imports only `Rule30Prize` and `Rule30Jen`.
 
@@ -29,6 +29,6 @@ This adds `lean/Ruliology/CellularAutomata/Rule30PeriodTwoOnset.lean`, with its 
 
 **What it does not do.** The relation forgets the columns beyond `b + 1`, so `T + 2` is not claimed to be the earliest onset for actual configurations. Nothing here excludes period 2.
 
-Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
+Portal entry: [R30-20261110-a81c69](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-a81c69).
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)

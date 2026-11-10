@@ -1,6 +1,8 @@
 # The period-two column-1 words from two ticks on (queue row S-21, Cloud's K-02)
 
-**Full source/actual-nb1 read PASS GC2850; corrected-text nb2/two pins/current dry next; not posted.** [Complete review](../../../GPT-S21-RELEASE-REVIEW-20261110.md). All four L1647 questions resolved; source/proof/abstract/driver unchanged. Clarified scope/credit in prose/PR only. Local unchanged-driver nb2/original136constant gates, notebook+essay pins and fresh dry complete standing conditional posting/PR clearance without another permission round. Old nb1 below is superseded for release. Built from BR-5.2 as Cloud carried it (CL773; [triage](../../../CLOUD-SW02-CARRY-TRIAGE-20261110.md) §9.1) and as GPT carried and sharpened it to a two-tick onset at both widths ([GC2840/GC2843](../../../GPT-K02-CARRY-20261110.md)). Local wrote the module directly, with no sub-agent.
+**POSTED, Lean Verified (L1651):** [R30-20261110-a81c69](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-a81c69), checked 2026-11-10 21:04:39Z with 136 constants, sixteen headlines and standard axioms. Kit PR [WolframInstitute/Rule30PrizeKit#274](https://github.com/WolframInstitute/Rule30PrizeKit/pull/274) from `df1a4fd`. Posted from nb2 (`727cb57928d64d3c97092e150b28bd14444075d911ceef2d88a092e3053e6012`, 128,974 bytes, KernelChecked 136; evidence `cited/local/period-two-onset-nb2-20261110.tar.gz`, 37,545 bytes, SHA256 `93424ccb86cb136f79da25ab8e41e400dc607f30d31d13fb13e653c3db482dd8`, read back exact), with GC2850's prose and credit fixes; nb1 is superseded.
+
+Before posting: **Full source/actual-nb1 read PASS GC2850; corrected-text nb2/two pins/current dry next; not posted.** [Complete review](../../../GPT-S21-RELEASE-REVIEW-20261110.md). All four L1647 questions resolved; source/proof/abstract/driver unchanged. Clarified scope/credit in prose/PR only. Local unchanged-driver nb2/original136constant gates, notebook+essay pins and fresh dry complete standing conditional posting/PR clearance without another permission round. Old nb1 below is superseded for release. Built from BR-5.2 as Cloud carried it (CL773; [triage](../../../CLOUD-SW02-CARRY-TRIAGE-20261110.md) §9.1) and as GPT carried and sharpened it to a two-tick onset at both widths ([GC2840/GC2843](../../../GPT-K02-CARRY-20261110.md)). Local wrote the module directly, with no sub-agent.
 
 ## What the module proves
 
@@ -16,7 +18,7 @@ The minimal-word list up to length `13` and the words excluded without the first
 | Form | File | sha256 | Check |
 |---|---|---|---|
 | Portal | [`Rule30Submission.lean`](Rule30Submission.lean), from [`kit_to_portal.py`](../../../../tests/probes/swarm/sw02/block11/kit_to_portal.py) | `20c00829…` | pass at `5fb59158`: 67 declared, 136 constants, 16 headlines, standard axioms ([receipt](check-5fb59158.json)) |
-| Kit | [`Rule30PeriodTwoOnset.lean`](Rule30PeriodTwoOnset.lean) | `7518614f…` | pass at main `03a19bf`: 63 declared, 136 constants ([receipt](check-kit-03a19bf.json)). The portal form adds four generated `match` names. The kit branch `period-two-onset` at `e6d22df` is local; [`kit-integration.patch`](kit-integration.patch) |
+| Kit | [`Rule30PeriodTwoOnset.lean`](Rule30PeriodTwoOnset.lean) | `7518614f…` | pass at main `03a19bf`: 63 declared, 136 constants ([receipt](check-kit-03a19bf.json)). The portal form adds four generated `match` names. The kit branch `period-two-onset` at `df1a4fd` is pushed as PR #274; [`kit-integration.patch`](kit-integration.patch) |
 
 **Mutants.** All eight were rejected ([output](../../../../tests/probes/swarm/sw02/block11/mutate_period_two_onset.out)).
 
