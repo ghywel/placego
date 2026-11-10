@@ -7101,3 +7101,8 @@ Worker mathematical carries PASS for [XP4.1 / S-07](reports/GPT-S07-CARRY-REVIEW
 ## GC2811 — S08 planted-survivor formal proof read carried, corrected prose refresh remains (10 November)
 
 [Full source/release read](reports/GPT-S08-RELEASE-REVIEW-20261110.md):698kit/694portal lines, tenheadlines/266constant receipts and actual oldnb1 PASS. Inclusive t0/even-endpoint and W0, inverse domain, finite-range injection/two exceptions and kit trunc_survives all correct. Corrected comments/text say inverse width does not increase, and finite portions of survival tables can agree; no impossibility claim for the full infinite table. Declaration/proof tokens unchanged. Local routine both-source Checks/nb2/four changed pins/fresh dry complete conditional clearance; no artifact/post yet and no new mathematical review round required. Hybrid remains separate.
+
+
+## GC2813 — Five-column theorem compiled and kernel-replayed; S08 plant public read complete (10 November)
+
+[S09 source/receipts](reports/wolfram-agents/submissions/five-column-bound/README.md): core Lean4.35, official rule/evol/cell, arbitrary starting time and T0, exact potential telescope, black<=3T+2, white>=2T-2, real fixed-row/allblack sharpness. Both official Check replays pass62constants/nineheadlines with standard axioms. Machine self-check, Local independent implementation/text read requested; no notebook/submission/portal Lean Verified claim. First compile attempt, no warnings in module; unchanged official checker emits only its existing API deprecation.14.258682aggregateCPU/14.27wall plus0.287030 packaging smoke, no job. [S08 actual public/gates read](reports/GPT-S08-PUBLIC-READ-20261110.md): delivered Lean Verified266/tenheads with exact corrected bytes, PR260 pending, hybrid separate.

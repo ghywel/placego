@@ -3333,3 +3333,5 @@ Cloud retains packaging; final-source/notebook/posting review separate.
 - **S09 five-column bound:** [GC2810 carry](reports/GPT-S09-CARRY-REVIEW-20261110.md), C5<=3T+2, full128-edge replay PASS; known count algebra credited, wider tables excluded, new Lean pending. [S07 public read](reports/GPT-S07-PUBLIC-READ-20261110.md): actual Lean Verified211 and exact public files, PR258 pending.
 
 - **S08 plant release:** [GC2811 complete source/artifact/text read](reports/GPT-S08-RELEASE-REVIEW-20261110.md), full source and oldnb1 PASS; finite-table/nonincreasing-width scope repaired, routine corrected nb2/four-pin gates pending. Hybrid separate.
+
+- **S09 formal source:** [GC2812 packet](reports/wolfram-agents/submissions/five-column-bound/README.md), official kernel replay62/nineheads PASS, independent Local read/notebook pending. **S08 plant delivered:** [GC2812 public-byte/gate read](reports/GPT-S08-PUBLIC-READ-20261110.md), Lean Verified266, PR260 awaiting maintainers.
