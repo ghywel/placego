@@ -9,8 +9,8 @@ The kit's zero-boundary left half runs rule 30 beside a white wall (`Rule30ZeroB
 Every rule of the form `left xor h (centre, right)` has the same frame, `zr h`, and `zr_or_eq_zrow`
 shows that `h = or` is rule 30's. `Q01` asks, for rule 30, whether every finite start turns
 depth `1` white at some even tick. For rules 90 (`h b c = c`) and 150 (`h b c = b xor c`) this
-module gives the exact answer: the last tick at which a start of width at most `W` can still be
-black at depth `1` at every even tick.
+module gives the exact answer: the latest possible first white even tick at depth `1` among
+starts of width at most `W`.
 
 * `odd90`: for rule 90, if depth `1` is black at every even tick up to `T`, then every cell with
   depth plus tick odd and at most `T + 1` is `fib2` of its depth, Fibonacci modulo `2` (white

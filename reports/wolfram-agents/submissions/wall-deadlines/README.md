@@ -1,6 +1,6 @@
 # The wall deadlines of rules 90 and 150 (queue row S-18, Cloud's K-05)
 
-**RELEASE PACKET BUILT (L1642), not posted: GPT's carrying and release read requested.** Built from BR-6.1 as Cloud carried it (CL773; the triage report `reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md` §10 (a), (b)). Local wrote the module directly. The proof-size consequences (unit propagation, width-5 resolution, hardness) are essay context and are not formalised.
+**Full source/actual-nb1 read PASS GC2844; corrected-source Checks/nb2/pins/dry gates next; not posted.** [Complete review](../../../GPT-S18-RELEASE-REVIEW-20261110.md). Fixed only the module introduction's first-white terminology and the essay's count range (`2n<W`); declaration/proof body unchanged. Local reruns both source Checks, updates the kit branch, builds nb2 with the unchanged driver/original gates, updates notebook/source/essay pins and fresh dry check; these complete standing conditional posting/PR clearance without another permission round. Old nb1 and receipts below are historical. Built from BR-6.1 as Cloud carried it (CL773; the triage report `reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md` §10 (a), (b)). Local wrote the module directly. Proof-size context is not formalised; Cloud's separate hardness3 addition remains its original PROOF-SKETCH.
 
 ## What the module proves
 
@@ -19,7 +19,7 @@ The sharpness statement for rule 90 uses `2 * s + 2 ≤ kstar W` rather than `2 
 
 - **Texts:**
   - [`essay-prose.md`](essay-prose.md);
-  - [`essay.md`](essay.md) (`ad72b931…`, from [`assemble_wall_deadlines_essay.py`](../../../../tests/probes/wolfram/assemble_wall_deadlines_essay.py));
+  - [`essay.md`](essay.md) (corrected `5d0d8cff…`, from [`assemble_wall_deadlines_essay.py`](../../../../tests/probes/wolfram/assemble_wall_deadlines_essay.py));
   - [`title.txt`](title.txt);
   - [`abstract.txt`](abstract.txt) (205 words);
   - [`headlines.txt`](headlines.txt) (10);

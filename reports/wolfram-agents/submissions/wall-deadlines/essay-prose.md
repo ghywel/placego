@@ -30,7 +30,12 @@ Two steps of rule 150 act on the odd depths at even ticks by their own rule (`tw
 
 ## 4. Scope
 
-Rules 90 and 150 are linear and are not rule 30. They share rule 30's frame and its left permutivity, and, by the same sideways count as the kit's `count_constrained` (not formalised here for them), its number of surviving starts per tick before the deadline. Their deadlines are explicit and linear. Nothing here decides `Q01`.
+Rules 90 and 150 are linear and are not rule 30. They share rule 30's frame and its left permutivity.
+The same triangular count as the kit's `count_constrained` gives `2^(W - n - 1)` starts of width
+at most `W` that remain black at depth `1` at every even tick through `2n`, provided `2n < W`.
+This count for the relatives is not formalised here. Its range is the unsaturated light cone,
+not every tick before the deadline: for example, rule 90 at width `1` still has one survivor
+at tick `2` and dies at tick `4`. Their deadlines are explicit and linear. Nothing here decides `Q01`.
 
 A remark on proof size, not formalised here. Cloud's carried argument shows that these deadlines are found by unit propagation for rule 90, and by width-5 resolution for rule 150, on the natural SAT encoding. So no argument that only uses properties shared by the whole family can give a superpolynomial lower bound on refuting the rule 30 formulas.
 
