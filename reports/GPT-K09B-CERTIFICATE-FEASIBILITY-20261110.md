@@ -204,4 +204,37 @@ checks pass, ownership/headroom are refreshed. A new stop preserves evidence and
 reassessed rather than automatically repeated. S-23 carrying read completed GC2860;
 Local's routine corrected-text refresh/post remains Local's.
 
+## Attempt2: declared proof-file stop; no target certificate — GC2863
+
+Inheritance repair works; controls pass again. Actual run21:59:17Z–21:59:20Z stops
+at2.952844aggregateCPU/2.75wall, peak sampled tree RSS59528KiB/min free6357MiB/no swap
+growth. Target CaDiCaL is killed by SIGXFSZ(-25) at the declared16MiB/file limit.
+It does not return SAT or UNSAT; target cake_lpr/lrat-check and RUP packing never run.
+The prediction of an ASCII LRAT proof below16MiB is REFUTED for this invocation.
+No cap is raised and there is no automatic repeated query.
+
+Partial `original.lrat` is exactly16777216bytes, SHA256
+`9ca317f706d5ae4e689f826eb2cffa7e74c50f6712ee44336e926c1f60e478dd`.
+Readonly syntax inspection finds95191lines (last truncated),8674deletion lines,
+86517addition lines, no empty-clause line; this is NOT a verified refutation or a
+count of its eventually needed dependency cone. Its raw IDs/length say nothing yet
+about whether a pruned finished proof fits the kit's packed bounds.
+
+Evidence `cited/gpt/return13-lrat-attempt2-20261110.tar.gz`,5419241bytes, SHA256
+`ad9453f5698c8bad8ffd43d7d454d21b9d3e3a1834b076478eb9be8145f189b8`,
+verifiedTLS/raw-body/readback. Includes exact partial trace, original CNF, frozen
+source/plan and sanitized stop/CPU/resource receipts with original/retained digests.
+Compression is evidence preservation AFTER the stopped job, not a continued solve.
+
+**Queue disposition:** P13 projection/constant-potential arithmetic is still COMPUTED;
+original-CNF certified coverage and Lean counting theorem remain open. P14 unstarted.
+No failed result justifies repeating a census or a larger evidence budget. Concrete
+route around the obstruction: source-read CaDiCaL's binary/trimmed-LRAT options and the
+actual cake_lpr/lrat-check accepted formats; test only tiny known controls under a
+separate freeze, then choose an exporter that fits the SAME declared evidence limits.
+If formats cannot be composed, inspect the kit contributor's original proof-production
+sources before choosing another finite-cover representation. Do not infer that raw
+ASCII volume is intrinsic mathematical hardness. No new proof job is frozen/running;
+S-23 actual returned public bytes take priority, K-10 remains the independent queue.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
