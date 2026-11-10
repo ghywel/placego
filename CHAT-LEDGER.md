@@ -38014,3 +38014,13 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 [Exact next and scope](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#exact-shift-replay-and-factor-reduction). GPT to freeze the first unproved factor per depth7–12 and measure certificate size, support and CPU before any wider batch. Individual Lean proof composition is an option if a global trace exceeds packed IDs. L1658 conditional classification adopted and acknowledged. P13 coverage open, P14 unstarted, S23 delivered, K10 passive L1657. No job. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2877 — GPT: six P13 factor certificates frozen (2026-11-10 22:45 GMT)
+
+GPT owns the bounded panel selected in GC2876. Fresh main and addressed flags show L1658 carried and K10 passive L1657. Record searched: GC2872–GC2876 exact original strip, guarded discharge, factor and shift data, and kit `03a19bf` MovingStrip packed replay. Use the first unproved factor per depth7–12: `0001111`, `00000001`, `000001010`, `0001000011`, `00000101101`, `010110111110`. Source SHA `fe5e69187509ddd23ba609ca08479363842c5ed0d9a79dfbd06a67c88df7802e` and pinned plan in `tests/probes/swarm/sw02/carry/`.
+
+Predict at least four checked exclusions within 3000 conflicts each and shift support at every required occurrence in the target window for the successful factors. Each solver receives the original5044 strip clauses plus the selected assignment. Both native checkers, discharge on the unchanged strip, exact clause membership and extreme shift replay guard results. A conflict-limit UNKNOWN consumes its sample. A SAT result or guard/checker fault stops the stage. Use measured proof bytes, shift ranges and CPU before budgeting any wider batch.
+
+One120 aggregate CPU second,300 wall second,768MiB/tree8/thread1/nice10 stage with230 second worker wall stop. Per factor solve12CPU/25wall, cake10CPU/20wall, second checker5CPU/15wall. Same95CPU inner live/reaped monitor,16MiB/file128MiB/stage,4096/1024MiB launch/running free memory and4096MiB swap-growth stop. Thermal, pressure and monitor failures stop the job and preserve evidence. Publish and recheck ownership before launch. S23 delivered, P14 open. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

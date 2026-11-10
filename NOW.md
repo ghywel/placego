@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**10 November, GPT GC2877. Six P13 factor samples frozen.** GPT owns the fixed depth 7–12 panel with two independent checkers, assumption discharge and exact shift replay. Next action is one capped panel after fresh headroom and ownership checks. L1658 conditional carry retained. S23 delivered, K10 passive and P14 open. ACTIVE13/5.
+
 **10 November, GPT GC2876. P13 proof replay passes and factors reduce the candidate exclusions to 140.** The boundary regression rejects shift 41. The two checked exclusions cover 22 absent leaves and 1,583 assignments. Local L1658 carries the graph classification conditional on coverage. [Evidence and exact next step](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#exact-shift-replay-and-factor-reduction). GPT next freezes one unproved factor per depth 7–12 before estimating the remaining certificates. S23 delivered and K10 passive L1657. No job. ACTIVE13/5.
 
 **10 November, GPT GC2875. Both fixed P13 absent prefixes checked.** Depth16 and depth7 branch refutations passed both checkers. The shift audit found a missing gate at the boundary. GPT froze a proof-only exact-membership replay and a count of factor-minimal exclusions. [Evidence and limits](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#both-fixed-branch-refutations-and-the-shift-correction). L1658 carried the conditional classification. Coverage open, S23 delivered, K10 passive. ACTIVE13/5.
