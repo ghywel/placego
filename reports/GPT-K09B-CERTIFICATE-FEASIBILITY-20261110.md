@@ -1,6 +1,6 @@
 # K-09b: a fixed strip-SAT discriminator before a larger certificate
 
-GPT,10 November2026, GC2855/GC2856. **PILOT FROZEN; no run yet.**
+GPT,10 November2026, GC2855/GC2856/GC2858. **PILOT COMPLETE, COMPUTED only.**
 GPT owns this feasibility task, not a duplicate profile-pair census. Local retains S-22's
 release and may claim K-08. Current kit03a19bf source and original period1..11 statement/
 parameter/potential metadata read; huge packed data are not rerun or treated as newly checked.
@@ -99,5 +99,43 @@ and preserves this job. Sandbox-only preflight could not read thermal status; no
 launched there. Unsandboxed preflight confirms8physical/16logical,16GiB RAM,70%free reported,
 CPU speed/scheduler100 and no warning; outer guards remeasure actual headroom at launch.
 A failed launch guard is not bypassed or retried under a larger cap.
+
+## Recorded outcome — GC2858
+
+Frozen source/plan published before launch at6f9f4843. Intel run21:40:47Z–21:41:00Z
+completed without a stop:14.638315aggregateCPU seconds,13.35wall, peak tree RSS128072KiB,
+three processes, min free6565MiB, no swap growth,103999bytes stage output. No duplicate job.
+
+All16 gate truth-table cases pass. P7 reproduces all15 exact kit words; omitting word30's
+block makes exactly that word SAT. The seeded intervention removes period-equality pair19
+and remains UNSAT, as predicted. Every SAT witness is independently checked against the
+literal rule30 lookup table and all remaining period equalities.
+
+The fixed P13(q=cols65,offset6,w16) projection completes at **170 words**, not the predicted
+144: the count prediction is REFUTED. This is a finite-strip word list, whereas144 is a
+retained profile-pair core count; neither is automatically a count of the other object.
+No explanation of the26-word difference, classification of all physical rows or additional
+census is claimed. The actual overlap graph has170vertices/170edges, outdegree exactly1
+at every vertex. Thus the proposed constant base1/slope0 potential passes the finite
+arithmetic test. If ORIGINAL strip-CNF coverage is certified and the potential checked in
+Lean, the kit API would bound all rowWord lists by170 independent of m. Literal length
+is m+1. This is a conditional proof route, not a new proved entropy theorem.
+
+Saved original strip clauses plus170 word blocks:910variables/5214clauses,92545bytes,
+SHA256 `badadbb38e00fb0c01991563f3fb6664ed2b78c9ab7254a36fa1bd818313fcd0`.
+No implied constraints were added. Native solver completion is COMPUTED UNSAT; no LRAT,
+packed replay, kernel compilation or external verification has occurred in this stage.
+
+Evidence `cited/gpt/return13-strip-pilot-20261110.tar.gz`,25651bytes, SHA256
+`524fef7a54901edb1e240fe70bd3102c0aaae16e0cb8403a1a41da70d5112dd2`,
+verified raw-body/TLS/readback. Includes source/plan, full word list, exact original CNF,
+resource/output receipts and manifest. Private stage/repository paths in receipts are
+normalized; manifest retains both original and retained hashes. Data remain outside git.
+
+**Exact next step:** a separately frozen proof-production stage on this SAME CNF: known
+SAT/UNSAT and corrupted-proof controls, native LRAT, independent cake_lpr validation,
+then inspect dependency-pruned RUP/packed-field bounds before a Lean module. No geometry
+widening, P14 query or larger census is warranted by this successful feasibility result.
+Local retains S-23=K-08; returned release packets take priority.
 
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

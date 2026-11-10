@@ -2,7 +2,7 @@
 
 **POSTED, Lean Verified (L1654):** [R30-20261110-61f679](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-61f679), checked 2026-11-10 21:34:59Z with 157 constants, twelve headlines and standard axioms. Kit PR [WolframInstitute/Rule30PrizeKit#277](https://github.com/WolframInstitute/Rule30PrizeKit/pull/277) from `5e0fe35`. Posted from nb2 (`e1b0f195fb9a8cc570779b170d857e391eabad37c6c3bdf88c93f4f6a831e599`, 135,586 bytes, KernelChecked 157; evidence `cited/local/ternary-waves-nb2-20261110.tar.gz`, 38,878 bytes, SHA256 `f471b7a15771deef80064db2393a82194ba1c52a286a5b4c5bab14bba85ee8b8`, read back exact), with GC2854's text and abstract fixes; nb1 is superseded.
 
-Before posting: **Full source/actual-nb1 PASS GC2854; corrected-text nb2 routine gates pending; not posted.**
+**Actual public read PASS GC2857:** [notebook/source/text/PR277](../../../GPT-S22-PUBLIC-READ-20261110.md), original157/12 gates confirmed. All release conditions complete; maintainer merge only. The nb1 build details below are retained history.
 - **Sources.** Built from GPT's module judgement (GC2846) and its independent literal tile checks: GC2830 for the three 34-cell tiles at period 12, GC2848 for the three 31-cell tiles at period 15. Cloud carried and searched both: CL768, and CL775 ([period-15 tiles](../../../CLOUD-PERIOD15-TILES-20261110.md)).
 - **Who built it.** A Local sub-agent wrote the module under Local's brief (L1650). Local then rebuilt and checked it, read its statements, and verified its literal data against the frozen evidence. That is a self-check; GPT's read is the second read.
 
@@ -31,9 +31,9 @@ The generic part (`Tiles`, `Certificate`, `Exact`, `Valid`, `Decoder`, `phi_fiel
 
 - **Texts:**
   - [`essay-prose.md`](essay-prose.md);
-  - [`essay.md`](essay.md) (`8c073b90…`, from [`assemble_ternary_waves_essay.py`](../../../../tests/probes/wolfram/assemble_ternary_waves_essay.py));
+  - [`essay.md`](essay.md) (`f6aaab73…`, corrected GC2854, from [`assemble_ternary_waves_essay.py`](../../../../tests/probes/wolfram/assemble_ternary_waves_essay.py));
   - [`title.txt`](title.txt);
-  - [`abstract.txt`](abstract.txt) (240 words, no markdown markup);
+  - [`abstract.txt`](abstract.txt) (241 words, no markdown markup);
   - [`headlines.txt`](headlines.txt) (12);
   - [`PR-BODY.md`](PR-BODY.md).
 - **The worked numbers.** Python ([`ternary_waves_replay.py`](../../../../tests/probes/wolfram/ternary_waves_replay.py)) and Wolfram both give `{3672, 4185, 39, 39, {{0, 1}, {0, 0}, {1, 0}}, {{1, 1}, {0, 0}, {1, 0}}}`, and the prediction held. The Wolfram cell evolves the rings with the built-in `CellularAutomaton[30, …]` on cycles.
@@ -56,4 +56,4 @@ Actual nb1 source/original text/six outputs/original157gates PASS, now supersede
 Local unchanged-driver nb2/original157constant12headline gates/immutable receipt, ONLY
 notebook+essay+abstract pins/current verifier dry/oldnb1 rejection complete conditional
 post/PR clearance without another owner/GPT permission round. Return changed proof/driver/
-checker material for a scoped read. No rebuilt notebook or posting claimed yet.
+checker material for a scoped read. These conditions completed in L1654 and were independently checked against actual public bytes in GC2857.
