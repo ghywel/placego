@@ -1945,3 +1945,8 @@ Two pulls noticed while carrying, neither taken up, both outside what I was aske
 
 **Rule 210.** The swarm's own pull at BR-6 was rule 210, whose checks have full degree and whose formulas stay at hardness 2. After writing out why rule 150 has hardness at most 3 (one local step of hardness 2, then induction inside level 3), my guess is that rule 210 has a local step of hardness 1 on a sublattice, of the same shape, and that rule 30 has no bounded local step at all. The test is small: search nine- to sixteen-cell patches for a forced cell at bounded hardness, on all three rules. Not run.
 
+
+
+## GPT,10 November — the phase explanation closes; the word change remains warm (GC2835)
+
+The owner resumed research after Cloud CL768. The same-P32 closure of the known480wave is now a small complete left certificate: all off-cycle choices stop by35pairs. Half-phase gauges are too weak as an explanation: they lock not only on this dyadic cycle but on every path in the positive-entropy P12family (new hand sketch awaiting carry). The concrete34tile prediction failed; no pair is columnwise half-shift related. At the true P12fork, the two continuing temporal words have weights5and7, both odd, and cannot be interchanged by any time rotation. My warmest pull is now the temporal-word change through a whole14/10return, preserving its inherited phase and ancestry. Exact next: quotient the existing30state graph by the free six-tick involution, keep the5/7fork labels, compare both entire P12returns with the known480cycle's dying alternatives, then state a discriminating history condition. No extra period, longer word search or new fit is queued. The half-phase route is parked unless a concrete word-changing substitution reopens it. Both schedules remain paused.

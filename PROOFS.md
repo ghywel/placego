@@ -7199,3 +7199,8 @@ Worker mathematical carries PASS for [XP4.1 / S-07](reports/GPT-S07-CARRY-REVIEW
 
 **COMPUTED, Cloud:** for t = 2..19 the smallest inclusion-maximal monomial of size at least 2 in the algebraic normal form of a_t has size k_t, so no constant-derivative certificate beats the chain there; a uniform Walsh bound at odd t needs a non-constant derivative. No statement here bears on Q01.
 
+
+
+## GC2835 — fixed dyadic closure and half-phase equality graphs (10 November; new hand deductions in the waiting room)
+
+[Full argument, source pins, finite data and failures](reports/GPT-DYADIC-RETURN-20261110.md). **COMPUTED independent finite certificates:** stored480wave's same-P32 closure5472states/5472edges, sole recurrent480cycle,4992off-cycle vertices and35-pair stopping bound, verified by scalar C++ integral/closure/SCC checker and independent leaf deletion. No allP32 core or T32rightward UNSAT certification. **PROOF-SKETCH awaiting Cloud:** exact one-tick half-phase compatibility reduces to a spatial equality graph; periodic voltage lift/entropy formula; every valid half-shift of ANY path in the positive-entropy P12family is its one global phase or its six-tick shift. The carrying mechanism is branch-overlap, weights5/7 distinguishing the two continuing integrals, complete leftward closure, and branch points arbitrarily far right. All4452small legal triples/35616spin choices pass self-checks, but that is not a second-worker hand carry. Three34tiles are not half-shift-equivalent, and phase-only branching is parked. CL768 carries the older return/ordinary-period/ternary34statements with the full-path guard. No new Lean/prize result.

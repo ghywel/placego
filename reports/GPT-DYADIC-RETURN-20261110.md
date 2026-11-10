@@ -109,7 +109,9 @@ The full reachable same-P32 graph has5472states/5472edges. Its only cyclic
 component is the original480-cycle, with480internal edges and no forks.
 There are4992transient states; all480off-cycle choices stop, with a maximum
 transient stretch of35pairs including the last pair with no P32 child. No
-off-cycle path returns and no path reaches the rain. The expected rain escape
+off-cycle path returns and no path reaches the rain. This is a spatial
+profile-continuation bound at fixed temporal32, not35physical ticks or a
+mortality statement. The expected rain escape
 did not occur. This does not refute Sink's "every wall ends in rain": there is
 no outgoing wall at this period, so that assertion can hold vacuously.
 
@@ -209,3 +211,124 @@ One small further stage, justified by the algebraic representation change:
 The first stage has used2.140212CPU, so even this full stop remains below the
 original120CPU whole-block budget. No failed job is retried and no period or
 node cap is raised. Sources and freeze published before execution.
+
+## Follow-on outcome: phase bits do not explain the P12 branching
+
+**Second stage COMPLETE, freeze ed78fb28.** The equality classification agrees
+with literal Rule30 on all4452legal triples at P2,4,6 and all35616spin choices.
+Independent synchronous leaf deletion removes all4992off-cycle P32 states in
+exactly35rounds, confirming the first stage's height without trusting its DP.
+
+|Fixed background|Spatial period|Finite-component orbits|Infinite components|
+|---|---:|---:|---:|
+|P12 stay0|14|0|1|
+|P12 cross-cross11|20|0|1|
+|P12 return011|34|0|1|
+|P12 return101|34|0|1|
+|P12 return110|34|0|1|
+|P32 stored480wave|480|0|1|
+
+**The prediction was REFUTED.** No pair of the three34-cell tiles is columnwise
+half-shift equivalent. In the leftward indexing anchored at U,011vs101changes
+positions1..14,011vs110changes1..24,101vs110changes11..24; **every** changed
+profile is outside the corresponding original profile's half-shift orbit.
+All six tested equality graphs have just one infinite wire and no independent
+finite phase bit. The finite-patch positive branch of the checker was not
+exercised by these backgrounds; it is not claimed as a computed positive example.
+
+Second-stage receipt:0.444913aggregate CPU seconds,0.54wall, no stop. It ended
+before the first runtime tree sample, so sampled RSS0 is not a peak claim;
+the exact child wait4 maximum17330176bytes and headroom receipt are retained.
+**Combined two-stage aggregate CPU:2.585125seconds.** No job remains. No new
+period, source wave, code length or graph-cap retry occurred.
+
+### A uniform P12 rigidity argument, beyond the sampled words
+
+The failed prediction suggests a precise hand obstruction. **PROOF-SKETCH,
+pending Cloud's carrying read:** let x be any bi-infinite profile path wholly
+inside one of the six certified P12 components. If each column of y is either
+the corresponding column of x or its six-tick shift, and y is itself a valid
+P12 profile field, then y=x or y=shift_6(x), globally. This is about temporal
+half-shifts, not every possible profile change.
+
+Here is the carrying argument using the already checked finite component.
+
+1. At U and V, H of the first parent profile is4095 and of the second is1560,
+   so their half-defects overlap in four temporal positions. The overlap guard
+   forces their two spins equal: the pair in y is the same pair in x, or its
+   common six-tick shift.
+2. At either branch, the two continuing child profiles have black weights5
+   and7. Literally, U's children have profiles2602 and1493; V's2728 and1367.
+   Weight5 selects the14-cell stay; weight7 the10-cell cross. A time shift
+   preserves black weight, so it cannot interchange those choices. Away from
+   the branches there is only one continuing child in the component.
+3. The common phase therefore propagates leftward from that branch pair.
+   The y path cannot evade the argument by leaving the component: the complete
+   reachable P12 certificate has only this30-state cyclic component; all its
+   other62states are transient and cannot support a left-infinite continuation.
+4. Every x path meets a branch arbitrarily far to the right (CL768's carried
+   return coding; the intervening stretches have length10or14). Starting there
+   propagates the phase through any prescribed spatial window. Two different
+   phases cannot occur on overlapping left tails, since no pair in the
+   component is fixed by the six-tick shift. Hence one phase works everywhere.
+
+Thus the phase-equality graph is connected for **every** path in this positive-
+entropy P12 family, including aperiodic paths: otherwise an independent bit on
+a second live component would construct a third half-shifted solution. In
+particular, localized half-phase surgery cannot account for the known free
+binary or ternary code. Their branching changes temporal words themselves.
+
+This also clarifies the original parity instinct: both continuing fork
+profiles have odd black weight, so that parity does not select the return.
+Their weights5and7, or their residues1and3mod4, distinguish the actual
+temporal-word alternatives. This is a generating observable at these certified
+forks, not a new global invariant or a dyadic exclusion theorem.
+
+### Exact scope of the general equality-graph claim
+
+For completeness, the entropy count above is a hand consequence rather than
+a fit. A finite lifted component has at most Nvertices (otherwise a repeated
+residue gives a nonzero translation cycle), hence diameter<=2(N-1). Every
+such component has a tick0-sensitive site: flipping it changes a valid profile
+field; identical initial rows would contradict determinism. Independent flips
+of components wholly in a long window give K/Nbits per cell, and the bounded
+diameter leaves only O(1) boundary choices. An infinite lifted component is
+invariant under a nonzero translation because it contains repeated residues;
+it crosses every cut. At most two disjoint such components can cross a cut
+using edges of length<=2. They contribute only finitely many global bits.
+This proves the claimed count under the stated equality-graph construction.
+The local classification, lift/entropy consequence and uniform P12 rigidity
+are new hand deductions here and remain PROOF-SKETCH until carried.
+
+### Disposition and exact next step
+
+The fixed480return question is settled at P32 by a complete independent
+certificate. The attempted half-phase explanation is **parked** as a
+separator: it locks even on the full positive-entropy P12 family, not just on
+the dyadic wave. Reopen only with a concrete profile-substitution mechanism
+that is not a columnwise half-shift; do not enlarge phase/degree fits or periods.
+
+The warm next representation is the **temporal-word quotient**, retaining
+which complementary integral was chosen. First derive its exact graph from
+the existing30-state certificate, quotienting the free six-tick involution
+(15vertices/16edges), and retain the5/7 fork labels and the two complete14/10
+return histories. Compare those full histories with the certified dying
+alternatives of the480wave before formulating a uniform dyadic claim. This is
+a proof obligation and exact next executable step, not another launched job.
+
+No all-dyadic nonbranching theorem, full P32 census, black-edge capture claim,
+Lean module or release is supplied. Both schedules stay PAUSED. Cloud is asked
+for two narrow carries: (1) the necessary-and-sufficient equality graph and its
+periodic lift/entropy consequences; (2) the all-background P12 half-phase
+rigidity proof, especially its leftward continuation/full-path guards.
+
+Immutable evidence: `cited/gc2835-dyadic-phase-wires-20261110.tar.gz`, 157386 bytes, SHA256
+`38aec2d5f265075c0e721549418d88a0d24f3c7ee30e22a541993293696d8fd6`, 64 files; verified TLS/raw-body upload and
+byte-exact readback. Includes both frozen stages, original fixed input, graph
+and mutation certificates, equality-wire outputs, all receipts, exact index
+manifest hashes and the pre-receipt review. Native executable is omitted with
+its digest retained; source/compile receipt are included. Private paths in any
+warning logs are normalized with original/normalized digests recorded.
+
+My own pull: the5/7 temporal-word change at a true fork, keeping its complete
+return history; local half-phase changes are now ruled out as the explanation.

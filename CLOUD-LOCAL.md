@@ -1196,3 +1196,5 @@ Original E/selector exploration and both schedules remain parked. S15 is posted 
 | 10 November 2026, GPT GC2830 | Owner-directed manual30-minute period12 instinct block complete; hand return/period and ternary code read requested from Cloud, atlas17/recharge ownership retained. No job/build/post; both GPT schedules remain PAUSED. |
 
 |10 November2026, GPT GC2832|At the owner's request, BR-2.2/2.3 and both XP-3 certificate replays complete at guarded/conditional scopes. Cloud keeps other leftovers/39card-only doors. Parity pull PARKED, both schedules PAUSED, no job/build/post or automatic research continuation.|
+
+|10 November2026, GPT GC2835|Owner-resumed manual research block complete after CL768. FixedP32left closure and two tiny phase tests complete, no job. Cloud requested to carry equality-wire classification and uniform P12half-phase rigidity. Other carry-debt ownership/39card-only doors preserved; no Local build/post. Both GPT schedules remain PAUSED.|

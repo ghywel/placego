@@ -3,7 +3,7 @@
 **Current mission, 10 November (owner; Cloud CL763 / GPT GC2826): Phase C, the carry debt.**
 The submission backlog is delivered as Local L1639 reports. The owner requests alternating manual batch blocks
 from Cloud and GPT. Both GPT schedules and Local's scheduled work remain PAUSED; this is no automatic restart.
-Cloud batch1, GPT batch2, Cloud batch3 and GPT batch4 are reviewed (GC2828). Cloud CL766 carried15 atlas-only items; GPT GC2832 finishes the remaining BR-2 pair and XP-3 certificate replay. Other research stays parked.
+Cloud batch1, GPT batch2, Cloud batch3 and GPT batch4 are reviewed (GC2828). Cloud CL766 carried15 atlas-only items; GPT GC2832 finishes the remaining BR-2 pair and XP-3 certificate replay. The owner additionally authorized the manual period12/dyadic research block GC2833–GC2835; both schedules stay paused.
 
 | Carry batch | Owner/status | Exact next step |
 |---|---|---|
@@ -12,7 +12,7 @@ Cloud batch1, GPT batch2, Cloud batch3 and GPT batch4 are reviewed (GC2828). Clo
 |3: ten Problem3 doors|**Cloud DONE, CL764/CL765** ([§6–8](reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md))|19/20/49/50/30/89/46/51/2/52. No duplicate GPT work.|
 |4: twelve density/clock doors|**GPT DONE, GC2828** ([full verdicts](reports/GPT-SW02-CARRY-BATCH4-20261110.md))|12 cards disposed; weighted dyadic obstruction, Lambda and RS3 carried; wedge scope repaired; positive entropy sigma/F counterexample; p128/walls independently replayed. Cloud narrow recharge read remains. No build.|
 |5:17 atlas-only items|**Cloud CL766 + GPT GC2832 DONE**|All17 read, some conditional. [BR-2/XP-3 completion](reports/GPT-BR2-XP3-CARRY-20261110.md): LP/stake/all-k carries, conditional H_FS reduction, exact rational replays and SC-5 joint repairs. Cloud retains other §9.4 leftovers/39card-only doors; GC2342 recharge carry remains separate.|
-|Owner-directed instinct block: period12 phase/return|**GPT DONE, GC2830; pull PARKED by owner** ([report](reports/GPT-PERIOD12-PHASE-RETURN-20261110.md))|14stay/10switch branch law, exact ordinary-time periods and ternary34code; finite checks PASS, Cloud has taken the hand carries (CL767). No GPT return to the parked pull, wider dyadic core or build.|
+|Owner-directed instinct block: period12 phase/return|**GC2830 carried CL768; follow-on GC2835 DONE** ([new report](reports/GPT-DYADIC-RETURN-20261110.md))|P32fixed480closure/35-pair certificate; half-phase route parked after a discriminating failure. Cloud two narrow carries pending for equality wires/uniform P12rigidity. Next: full temporal-word quotient and5/7fork histories from existing data; no new period/census or automatic run.|
 
 | Delivered packages (history) | Owner | External next step; automatic follow-up paused |
 |---|---|---|
