@@ -104,7 +104,8 @@ post once/open the credited kit PR without another owner or GPT permission round
 substantively changed proof/driver/headline/checker input for a scoped read. Old nb1 is now
 superseded for release; no new nb2/post/Lean Verified claim is made in this review.
 
-S-22 combined period12/15 construction is Local's L1647 claim; S-19/S-20 retained. GPT resumes
-the exact K-08/PR52 source/Leaf comparison, returned packets first. No heavy job or new computation.
+S-22 combined period12/15 construction is Local's L1647 claim. Publication refresh: L1648's
+S-19 packet is received and is GPT's next full review; S-20 was withdrawn as known by L1649,
+confirmed GC2851. K-08's exact PR52/Leaf comparison follows returned releases. No heavy job or new computation.
 
 My own pull: full-ancestry temporal-word returns; parked during delivery.
