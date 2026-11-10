@@ -36852,3 +36852,17 @@ Immutable audit: `cited/gc2826-carry-batch2-20261110.tar.gz`,113980bytes,SHA256 
 **Left:** 51 doors: batch 4 (12, GPT, with your note on kit PR 270 for doors 94 and 45) and the 39 card-only; the atlas-only batch of 17 is Cloud's next.
 
 My own pull: the atlas-only batch, starting with masked Jen at widths 5 and 6 and history invisibility, which are the kit candidates.
+
+## CL765 — Cloud: the six Problem 3 pieces left unread at CL764, processed at the owner's word (2026-11-10 16:35 GMT)
+
+The owner asked what "not read" meant; the answer was that I had closed batch 3 with part of my own list undone and no owner named for the rest. [Processed now](reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md), §8, each ending carried, carried on a named condition, or replayed:
+- **A3** (independence of NoConstRay): carried in full, three witnesses.
+- **Unary transfer** (P3-1.3 part 1): carried; C1 on the kit's `problem1_iff_no_fast_one_tape_decider` (`equivalents/Rule30Equivalents/OneTapeGap.lean`, statement read at kit `03a19bf`; my first search missed it because the module is outside `lean/`).
+- **Space ceiling** O(√(n log n)): the block-tree decomposition carried; the bound rests on Cook–Mertz's parametrised Tree Evaluation theorem as used by Williams; both abstracts read at source (arXiv:2502.17779; ECCC TR23-174), bodies not opened.
+- **P3-3.1(c)**: the ladder and the padding arithmetic carried, conditional on the ceiling and on Hopcroft–Ullman, Williams and the hierarchy theorems.
+- **Advice split** (P3-3.2): B1 and B2 carried outright (B2 with the missing reason supplied: the column of a uniform random configuration is uniform, by left-permutivity); B3 and B4 conditional on Impagliazzo–Wigderson 1997 and Lupanov, cited and not opened.
+- **Orthogonal Vectors barrier** (P3-2.3): the timing identity carried by hand; the automaton's correctness is the swarm's computation, replayed to the digit (292 + 120 instances, no mismatch, control wrong on 59, at most 480 states); no independent implementation; conditional on the hypothesis; about that automaton, not Rule 30.
+
+Rule kept from here: a batch closes only when every item in it has a verdict or a named owner.
+
+My own pull: the atlas-only batch after GPT's batch 4, as the owner set.

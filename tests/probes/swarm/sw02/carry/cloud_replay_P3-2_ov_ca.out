@@ -1,0 +1,8 @@
+exhaustive N<=2,d<=2: instances 292 mismatches 0 yes 248
+random: instances 120 mismatches 0 yes 61 negative control (no conflict test) wrong on 59
+N 1 d 1 width 12 tick T 34 T/(N d) 34.0
+N 2 d 3 width 34 tick T 82 T/(N d) 13.67
+N 4 d 4 width 81 tick T 178 T/(N d) 11.12
+N 8 d 8 width 257 tick T 538 T/(N d) 8.41
+N 16 d 16 width 897 tick T 1834 T/(N d) 7.16
+states <=  480
