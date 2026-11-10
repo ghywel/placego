@@ -78,7 +78,7 @@ def check_leaf(label, prefix, base, body):
     rc, output = guard.call(f'{label}-solve', [guard.CADICAL, '-q', '-c', '3000', '--lrat', '--binary',
                                               str(cnf), str(binary)], 12, 25)
     if rc == 0:
-        assert 's UNKNOWN' in output
+        assert output.strip() in {'s UNKNOWN', 'c UNKNOWN'}, (label, output[-1000:])
         entry.update(status='CONFLICT_LIMIT_UNKNOWN', binary_bytes=binary.stat().st_size)
         guard.save()
         return

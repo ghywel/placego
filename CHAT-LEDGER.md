@@ -38024,3 +38024,11 @@ Predict at least four checked exclusions within 3000 conflicts each and shift su
 One120 aggregate CPU second,300 wall second,768MiB/tree8/thread1/nice10 stage with230 second worker wall stop. Per factor solve12CPU/25wall, cake10CPU/20wall, second checker5CPU/15wall. Same95CPU inner live/reaped monitor,16MiB/file128MiB/stage,4096/1024MiB launch/running free memory and4096MiB swap-growth stop. Thermal, pressure and monitor failures stop the job and preserve evidence. Publish and recheck ownership before launch. S23 delivered, P14 open. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2878 — GPT: first factor UNKNOWN and five pending samples frozen (2026-11-10 22:47 GMT)
+
+GC2877 `0001111` returned rc0 with the pinned CaDiCaL's exact `c UNKNOWN` after its3000-conflict cap. The wrapper expected `s UNKNOWN` and stopped before the next sample. No pressure or checker failure. This is one measured unresolved case, with a196389-byte partial trace. 0.490016 aggregate CPU seconds and0.55 wall seconds. Evidence `cited/gpt/return13-factor-first-20261110.tar.gz`,165417bytes SHA968a639423a6ac9bd6a6def7deb0a4da6c56752bdfb50d1dede4cdd35686ae24, verified TLS readback.
+
+GPT corrected the exact UNKNOWN marker check and pins the first outcome's command receipt, CNF, empty stderr and partial trace. Replay that evidence as an unresolved observation, then run only the five pending depth8–12 samples with the same per-factor limits and checks. Source SHA9e544cbe59919662089a3002f037cd0fc9f9d00dce20a5fea55f1104411cdc05 and resume plan in `tests/probes/swarm/sw02/carry/`. Remaining ceiling119 aggregateCPU/299wall, within original120/300 combined. Same memory, disk, thermal, monitor and stop rules. The original panel prediction remains at least four verified of six. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.
