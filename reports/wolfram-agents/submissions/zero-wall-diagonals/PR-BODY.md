@@ -1,4 +1,4 @@
-Rule30ZeroWallDiagonals: zero-wall left diagonals, bounded lag and factor complexity of the free word (PORTAL-ID)
+Rule30ZeroWallDiagonals: zero-wall left diagonals, bounded lag and factor complexity of the free word (R30-20261110-144e6e)
 
 This adds `lean/Ruliology/CellularAutomata/Rule30ZeroWallDiagonals.lean`, with its `public import` line in `lean/Ruliology.lean` after `Rule30LeftAntiPeriod` and a row in *Added in the kit* after the same module. It imports `Rule30LeftUnbounded` and `Rule30ZeroBoundary`.
 
@@ -37,6 +37,6 @@ This adds `lean/Ruliology/CellularAutomata/Rule30ZeroWallDiagonals.lean`, with i
 
 **What it does not do.** It does not decide `Q01`, gives no quantitative rate, and does not include the separate near-square claim.
 
-Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
+Portal entry: [R30-20261110-144e6e](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-144e6e).
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
