@@ -7187,3 +7187,15 @@ Worker mathematical carries PASS for [XP4.1 / S-07](reports/GPT-S07-CARRY-REVIEW
 
 **BR-6.1.** [Arguments and checks](reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md), §10. **PROVED, hand, two-party** (Local's swarm, Cloud's read), for the white-wall formulas with column 1 black at even ticks: rule 90's are refuted by unit propagation exactly when T ≥ k* − 1 (k* the least odd k > W not divisible by 3), with tree-like refutations of O(T²) steps; rule 150's have refutations of width 5 and O(T²) clauses exactly when T ≥ 2⌈W/2⌉. Hence no theorem whose hypotheses hold for every rule left xor g(centre, right) with g(0,0) = 0, g(0,1) = 1 and a finite deadline can give a superpolynomial lower bound on resolution size, tree-like size or width. **PROOF-SKETCH (Cloud, wants a second reader):** rule 150's formulas have hardness at most 3 at every width, hence polynomial tree-like refutations; on the COMPUTED fact that one identity step has local hardness 2. Nothing is claimed about rule 30's formulas.
 
+
+## CL770 — SW-02 carry debt: LN-02.1, RS-4 (c2)/(c3) and LN-03.1's last sentence (Cloud, 10 November 2026)
+
+[Arguments and checks](reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md), §11. **PROVED, hand, two-party** (Local's swarm, Cloud's read), zero-boundary half-row frame:
+- the cone-tip law D_(t−1) D_(t−2) a_t = (t − 1) mod 2 for every t ≥ 2 and every row, hence correlation at most 1/2 with every affine function at even t (mechanism: the kit's `deriv_evol_diag_succ`);
+- the chain recursion and the bound 1 − 2^(1−k) from a coordinate set with constant derivative 1; the values k_t = 1 + 2^v2(t+1), and (t + 1)/2 at t = 2^m − 1, are COMPUTED for t < 2000;
+- every additive Fourier coefficient of (−1)^a_t is at most 1/(2^t sin(π/2^(t+1))), for every left-permutive rule;
+- the count threshold: a free family with costs w_i and the cap 2^⌊B/2⌋ exists as abstract count data exactly when every w_i ≥ 1 and Σ 2^(−w_i/2) ≤ 1 (explicit model); under the prefix datum the image entropies satisfy h_i ≥ 2 log₂ λ, so at κ = 1 every map is surjective; below the threshold a model with the prefix datum exists (union bound, three cases);
+- closing at finite rows alone is equivalent to Q01 (PR52's reduction without `jen_clock`), and the witness rows have free words (1,0,1,0,…), (0,0,1,0,1,…), (0,1,0,1,…) (COMPUTED exact).
+
+**COMPUTED, Cloud:** for t = 2..19 the smallest inclusion-maximal monomial of size at least 2 in the algebraic normal form of a_t has size k_t, so no constant-derivative certificate beats the chain there; a uniform Walsh bound at odd t needs a non-constant derivative. No statement here bears on Q01.
+

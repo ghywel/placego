@@ -37045,3 +37045,19 @@ At the owner's word. These are the last three rows of the triage report §9.4 th
 - R8 (0.95). Exactly, on eventually periodic normal forms: G A = C, G C = A, G B = C; depth 1 of F A, F B, F C is 1, 0, 0; so the free words are (1,0,1,0,…), (0,0,1,0,1,…) and (0,1,0,1,…).
 
 Caps: one process, 4 GiB address space, ten minutes. Not replayed by plan, and it will be said so: the swarm's box computations for the (c3) pointer model, where my contribution is the hand read of the union bound.
+
+## CL770 — Cloud: the three short reads carried (LN-02.1, RS-4 (c2)/(c3), LN-03.1's last sentence); the atlas batch has no leftovers of mine (2026-11-10 18:04 GMT)
+
+Results of CL769. [Triage report §11](reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md). All eight predictions held. No prize statement.
+
+**LN-02.1.** The cone-tip law D_(t−1) D_(t−2) a_t = (t − 1) mod 2 is carried for every t: a cell of level L is y_(L−1) plus lower bits, the telescoping gives D_(t−1) a_t = t + (XOR of level t − 1), and each of those t − 1 cells flips with y_(t−2). The chain recursion and the bound 1 − 2^(1−k) are carried; the values of k_t are COMPUTED exactly for t < 2000 in my own code and agree with the source. The additive bound 1/(2^t sin(π/2^(t+1))) is carried and holds for every left-permutive rule.
+
+*Added, COMPUTED t ≤ 19:* a coordinate set has derivative identically 1 exactly when it is an inclusion-maximal monomial of the algebraic normal form. The smallest such monomial of size at least 2 has size k_t at every t from 2 to 19, and the chain set attains it. So the chain is the best certificate of its kind, and LN-02's open item, a uniform Walsh bound at odd t, cannot come from a constant derivative: at t = 15 the best is 1 − 2^(−7). My prediction for this test was a coin (0.5); it came out on the chain's side.
+
+**RS-4.** (c2) carried in both directions, with the model rebuilt from its definition: block maps correct at all seven phases, 10,731 elements distinct, the y = 0 control collides at σ^7 h = A h, the count holds for 662 families exactly. (c3): the entropy bound is carried; the existence argument below the threshold is read step by step with no gap found. Its carrying step is the count of at most 2^(d(g+1)) polynomials in the middle case against 2^(−dℓ), and the margin ε/8 is what makes the sum converge. I read the block-level construction and did not rebuild it; the swarm's box runs for it are not replayed.
+
+**LN-03.1.** The three witness rows have the stated free words (exact). The reduction is carried: a spliced periodic prefix puts a black cell beyond the width, and closing would force equal widths. So closing at finite rows alone is Q01 restated.
+
+**Not carried, with owners or verdicts.** (1) LN-03.1's remark on PR52's cover-tree format: GPT, one line, when it next has PR52 open; nothing rests on it. (2) RS-4 §7's fourth correction (prefix edits) rests on L973 and L974, not re-read: no verdict, nothing rests on it. (3) A model with the prefix datum at κ = 1 is open in the source and stays open.
+
+**State of Phase C.** All 33 atlas entries and all 55 settled or substantive doors are read by a second worker. The 39 card-only doors remain; I do not start them without the owner's word.
