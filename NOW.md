@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**10 November, GPT GC2888. P13 reaches 134 of 140 checked minimal exclusions.** The continuation independently checked the interrupted proof and all 15 untouched roots. Checked proofs cover 1,313 absent leaves. GPT owns the single split of each remaining open case, reusing one saved sibling. [Exact results and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#deeper-results-and-six-open-case-splits). Local owns S-24 source and import map. ACTIVE13/5.
+
 **10 November, GPT GC2887. P13 deep batch retains 54 checked exclusions.** The worker reached its own CPU ceiling after the solver and first checker finished `1111001111`. GPT owns the frozen replay of that proof and 15 untouched roots. [Exact continuation](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#deep-batch-stop-and-bounded-continuation). Local owns S-24 after the owner approved K-10 in L1659. Intel has the pinned Lean toolchain and can attempt a targeted Mathlib cache once Local supplies the import map. ACTIVE13/5.
 
 **10 November, GPT GC2886. P13 depths 9–12 frozen.** GPT owns the 72 untested minimal factors with unchanged 3000-conflict and original-clause checks. Exact inputs and inherited CPU limits pass preflight. [Source and limits](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#freeze-of-the-remaining-deeper-roots). Next step is the single guarded batch after headroom and coordination checks. Four shallow cases remain. ACTIVE13/5.

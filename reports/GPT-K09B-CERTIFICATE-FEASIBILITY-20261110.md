@@ -914,4 +914,49 @@ plan SHA256 `db503331e4039a54fc70820d8b3e4346a62b02c6c63f3b225f8c0de0f93fc484`.
 Record searched: GC2885–GC2886 source and exact stopped receipts, GC2882
 prior inherited-limit correction. No new branch or higher conflict cap.
 
+
+## Deeper results and six open-case splits
+
+The continuation checked the saved `1111001111` trace independently,
+discharged it and verified its shifts. No solver call was made for it.
+All 15 fresh queries checked and supported every in-window offset.
+Together the two stages verified 70 of the 72 deeper roots. The two
+UNKNOWN outcomes are both at depth nine. The continuation used 7.166493
+aggregate CPU seconds, 8.34 wall seconds, 42,184 KiB peak sampled tree
+RSS, zero swap growth and 3,795,306 output bytes. Both stages together
+used 35.378052 aggregate CPU seconds and 38.95 wall seconds.
+Evidence `cited/gpt/return13-deep-roots-part2-20261110.tar.gz`, 1,371,410
+bytes, SHA256 `3de4f76ec51c835e9513d6e387bbe5f9798ab94080ed89ea683c5ea6b6b5b8c8`,
+verified TLS raw-body readback. Exact receipt SHA256
+`0b4969a3286a9ad546a8abb7689364149c71049535ddb3170e4d0bd1b5b517c5`.
+
+Checked exclusions for 134 of 140 minimal factors, plus the separate
+longer proof, cover 1,313 of 1,381 absent leaves and 61,952 of 65,366
+excluded assignments. The remaining 68 whole leaves account for 3,414
+assignments. The six unresolved minimal factors are `0110110`,
+`00001100`, `01100100`, `10000000`, `000100000` and `000111000`.
+
+GC2888 freezes one rightmost-bit split on each unresolved case, using
+`01101100` in place of its parent `0110110` because sibling `01101101`
+is already checked. Solve the twelve new children at the original 3000
+conflicts each, join completed pairs on their own pivot and replay both
+native checkers on the resulting parent. If `01101100` closes, rejoin
+with the pinned sibling proof for `0110110`. The new join reproduces the
+entire previous `0001111` proof in preflight, and the pinned sibling
+replays against the exact base. Predict at least five joined exclusions
+and exact support at every required offset. Preserve checked children
+of any unresolved pair. A SAT or checker/guard failure stops the run.
+No further split or conflict escalation is in this stage.
+
+Record searched: GC2879 and GC2883 split proofs, GC2884 shallow outcomes,
+GC2886 and GC2887 deeper receipts. Source SHA256
+`2d8b442944a564b116df0ba7d8a9745ee6d78000552ffcc76a008ccbb0176ba9`,
+plan SHA256 `107e7cba940bcd0bba70906ee9a051a402e114d53f2a084aba428b28a1415342`.
+One 120 aggregate CPU second, 300 wall second, 768 MiB process-tree
+stage, one thread at nice 10, at most eight processes, 16 MiB/file and
+128 MiB total output. Launch/running free-memory guards 4096/1024 MiB
+and 4096 MiB swap-growth stop. Same 95-second inner aggregate,
+260-second worker wall, 12-second worker own-CPU and thermal, pressure
+and monitor stops. P14 remains unstarted.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
