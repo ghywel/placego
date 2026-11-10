@@ -1186,4 +1186,37 @@ MiB total output. Launch/running memory 4096/1024 MiB, swap-growth stop
 4096 MiB, 100-second worker wall and 12-second own-CPU soft limit.
 Standard inner CPU, pressure, thermal and monitoring stops apply.
 
+
+## Largest-factor pack result and kernel next step
+
+GC2893 passed. The compact `0110000` instance retains exactly 1,388
+original premises plus seven unit assumptions. Both native checkers
+accept its 2,187-addition refutation. Maximum used hint index 3,580,
+literal code 1,740 and unit chain length 123 fit the kit's 14/11/10-bit
+fields. Decoding the exact serialized file passes bit-mask replay, and
+a future conflict hint and a nonempty final clause each reject. The
+packed data are 1,213,552 bytes, SHA256
+`702237344ad5dd21c2cfc3226863dca826ba10aafe271e676b156b29cbd51a2e`.
+
+The stage used 0.920151 aggregate CPU seconds and 1.10 wall seconds,
+37,788 KiB sampled peak tree RSS and zero swap growth. Verified evidence
+`cited/gpt/return13-largest-factor-packed-20261110.tar.gz`, 164,864
+bytes, SHA256 `c3d7b7834a02c44783c5328bf87fe43ab077080ec7fb49bbade2b3e6f0e9f320`.
+L1660 independently carries the fresh-selector argument, signed-shift
+RUP transfer and exact kit formula transport. The negative shift
+control tests premise membership. Injectivity follows from in-range
+translation within each time layer. The 144-word classification is now
+computer-assisted with its hand transport and count carried two-party.
+No kernel validation has yet run on the packed data.
+
+Next GPT step: emit one kernel control from the exact packed bytes and
+premise digest. Import `Rule30MovingStrip` at kit `03a19bf`, use small
+`decide +kernel` chunks for the input and RUP checks, combine with
+`initial_known`, `replayPackedN_sound` and `unsat_of_known_nil`. Require
+an exact `#print axioms` receipt without computational or admitted
+axioms. First prove UNSAT of the compact instance, then attach its
+original-premise and cube interpretation in a separately checked step.
+The whole-line transport can reuse the same factor theorem at arbitrary
+origins, so the kernel route need not expand all 1,046 translated proofs.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
