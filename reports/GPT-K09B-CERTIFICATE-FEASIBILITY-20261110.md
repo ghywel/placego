@@ -138,4 +138,43 @@ then inspect dependency-pruned RUP/packed-field bounds before a Lean module. No 
 widening, P14 query or larger census is warranted by this successful feasibility result.
 Local retains S-23=K-08; returned release packets take priority.
 
+## Separate same-CNF proof freeze — GC2859
+
+New source `gpt_return13_lrat.py` and `gpt_return13_lrat_plan.json` under
+`tests/probes/swarm/sw02/carry/`. Source SHA256
+`b8b02248bec235e09df8ec2288c7e5c9748f16fab328552938aa8cb213af2c6c`.
+No run yet. This is proof production for the exact saved910var/5214clause CNF, not
+another projection/enlarged search. Record searched: GC2856/2858 retained artifacts,
+actual MovingStrip packed-RUP API, TOOLS SAT/checker table, previously exercised
+ether_gap_solve command guard and toolchain_smoke controls. No new novelty decision.
+
+Prediction0.7: native CaDiCaL3.0.1 produces a finite LRAT proof under16MiB and within
+45CPU/100wall; cake_lpr and independent lrat-check accept the ORIGINAL CNF. Its needed
+positive-RUP dependency cone can be pruned/renumbered within14bit hints,11bit literals
+and10bit chain counts. Counterfactual: UNKNOWN/failed control/checker/pressure/thermal/
+output/CPU/wall stops preserve evidence; no larger retry. A RAT or oversized cone leaves
+an independently checked finite certificate, but requires another proved exporter, not
+masked/truncated fields. No P14 query/census/Lean compilation is part of this stage.
+
+Controls: one SAT model; generated tiny UNSAT accepted; same tiny CNF with a corrupted
+hint and an empty proof must be rejected by cake_lpr. Then exactly one target LRAT solve,
+cake_lpr, independent lrat-check, and Python ordered-unit replay of the final empty
+clause's dependency cone. Deletions are safely ignored only after a successful external
+check, while retaining every used clause and topological dependency; no proof premise
+is strengthened. If fields fit, encode/decode and replay the exact kit mask/step format.
+Packing arithmetic is COMPUTED, not a Lean kernel receipt.
+
+Fresh120aggregateCPU/300wall/768MiB/tree8/thread1/nice10 stage;16MiB/file128MiB/stage,
+4096MiB launch and1024MiB running free-memory floors,4096MiB swap growth, thermal and
+monitor guards active. Sequential solver45CPU/100wall, cake15CPU/40wall (256MiB heap,
+64MiB stack), lrat-check10CPU/30wall; controls1–2CPU/3–5wall each. Python worker12soft/
+20hard CPU and enclosing270wall. The inner95CPU stop counts worker+reaped children+live
+sole computational child, enclosing stage's own live CPU and fresh outer monitor CPU;
+outer stage110stop and run_capped120ceiling remain active. The time wrapper's negligible
+CPU and sampling interval are covered by the25CPU margin. One job; failed guard stops it.
+No tool installation; exact installed binary hashes are checked before use.
+
+Exact next: fetch/ownership/host headroom, publish this source/freeze, then launch ONLY
+this stage. Returned S-23 remains priority, Local retains construction/posting ownership.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

@@ -1,0 +1,45 @@
+{
+  "worker_stop": 110,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_return13_lrat.py": "b8b02248bec235e09df8ec2288c7e5c9748f16fab328552938aa8cb213af2c6c",
+    "tests/probes/ether_gap_solve.py": "11e02a0327a1527d08e2d61e53c500409ce38d705c5fc299a1ab32c53f724a2d",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
+    "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df"
+  },
+  "limits": {
+    "aggregate_cpu_s": 120,
+    "wall_s": 300,
+    "tree_rss_mib": 768,
+    "max_procs": 8,
+    "file_mib": 16,
+    "disk_mib": 128,
+    "launch_free_mib": 4096,
+    "min_free_mib": 1024,
+    "swap_growth_mib": 4096,
+    "threads": 1,
+    "nice": 10,
+    "inner_aggregate_stop_cpu_s": 95
+  },
+  "original_cnf_sha256": "badadbb38e00fb0c01991563f3fb6664ed2b78c9ab7254a36fa1bd818313fcd0",
+  "prediction": {
+    "original_cnf_lrat": "UNSAT accepted by cake_lpr and lrat-check",
+    "probability": 0.7,
+    "packing": "positive RUP cone fits14/11/10bit fields after dependency pruning"
+  },
+  "counterfactual": "A checker/control/pressure/output/CPU/wall failure preserves evidence and stops. A valid finite LRAT proof with an oversized or RAT cone remains a finite certificate but needs a different proved exporter. No new geometry, cap enlargement, P14 query or automatic repeated solve.",
+  "jobs": [
+    {
+      "name": "lrat",
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_return13_lrat.py"
+      ],
+      "cpu": 20,
+      "wall": 270,
+      "required_stdout_lines": [
+        "RETURN13_LRAT_STAGE_RECORDED"
+      ]
+    }
+  ]
+}
