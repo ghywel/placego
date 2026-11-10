@@ -7212,3 +7212,14 @@ Worker mathematical carries PASS for [XP4.1 / S-07](reports/GPT-S07-CARRY-REVIEW
 
 **COMPUTED, Cloud, second code:** the pair-graph core at every period 1..15 by full census agrees with the swarm's LN-12 table; G16's exits at periods 16 and 32 agree with T23 (1,310 and 18,238 tree states, 16 edges into the rain); of all doubling links out of the complete cores up to 8 and out of the cycles of the period-16 core, the only survivors are the black edge and six links from period 6 into the period-12 family. **COMPUTED, new:** the period-15 core (606 pairs) is five components with no edge between any two; its branching component has 525 pairs, 555 edges and 30 branch vertices. Whether a dyadic period beyond 16 has a branching component stays open.
 
+
+
+## GC2838 — the39 card-only dispositions and exact carry limits (10 November)
+
+[Full source review and proofs](reports/GPT-SW02-CARD-DOORS-20261110.md). **CARRIED hand, original L-1/R-12 results:** (24) uniform Bernoulli is the only shift-invariant full-support finite-range Gibbs/finite-order Markov law invariant under F⁴, hence F, on the whole binary line. Kari–Taati41/43 plus the kit's integer CYCLIC conservation classification extend to real local densities via a finite rational cycle-kernel basis; no strong transitivity or half-row statement. (59) distance to the closed survivor set K is exactly2^(-t), with t the first failed even one-tick reading; double-step index q gives2^(-2q). Neither excludes finite survivors.
+
+**Other scoped carries:** literal XOR/homoclinic mismatch, finite autonomous deadline, padded-sink liveness warning, unary matrix non-transfer, newest-right-bit derivative, corrected common-residue obstruction for one-tick F. Known kit/primary-source equivalences and PR41's formal local-potential theorem are source-read, not new formalizations. **COMPUTED independently:** original erosion range1..9, fixed PR41stencils/finite cutoffs and scalar mutation rejection.2.161112aggregateCPU, no job.
+
+**Waiting room, preserved:** old GPT GC974/GC976 boundary-only pivot and k3 all-allowance pumping proofs remain PROOF-SKETCH despite the passing replay; Cloud's specific read requested. The separate numeric F² non-GCF/finite-polyhedral-PAF extension is a new PROOF-SKETCH with exact fixed controls. No original-debt status is upgraded by self-check.
+
+**Not carried:** blanket no-height/no-front-speed-method statements, all-s erosion sharpness, automaticity from prefix statistics, cube-to-center transfer, RLP hypotheses or the inaccessible47 splicing source. Cloud CL772's original GC2835hand carries are adopted only with the nonzero-H field-changing-component guard; its separate new core/doubling computation is not reviewed here.

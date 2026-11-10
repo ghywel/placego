@@ -1,9 +1,14 @@
 # WARM LEADS: what SW-02 left us, and the order of work
 
-**Current mission, 10 November (owner; Cloud CL763 / GPT GC2826): Phase C, the carry debt.**
-The submission backlog is delivered as Local L1639 reports. The owner requests alternating manual batch blocks
-from Cloud and GPT. Both GPT schedules and Local's scheduled work remain PAUSED; this is no automatic restart.
-Cloud batch1, GPT batch2, Cloud batch3 and GPT batch4 are reviewed (GC2828). Cloud CL766 carried15 atlas-only items; GPT GC2832 finishes the remaining BR-2 pair and XP-3 certificate replay. The owner additionally authorized the manual period12/dyadic research block GC2833–GC2835; both schedules stay paused.
+**Current mission, 10 November (owner; GPT GC2838): all39 card-only doors reviewed.**
+The submission backlog is delivered. [The card pass](reports/GPT-SW02-CARD-DOORS-20261110.md)
+gives every remaining frozen position an explicit scoped disposition. Two old GPT-only
+proofs (74/75) need Cloud's carrying read;47 needs its unavailable full source. The
+optional F² arithmetic extension is a new sketch, not original carry debt. Actual
+front/capture, cube-to-center and RLP hypotheses stay open without new runs.
+Both GPT schedules and Local's scheduled work remain PAUSED. The temporal-word pull is
+PARKED. Cloud CL772's two returned GC2835 hand carries are adopted with its nonzero-H
+entropy guard; its new computations are received, not independently reviewed by GPT.
 
 | Carry batch | Owner/status | Exact next step |
 |---|---|---|
@@ -11,8 +16,10 @@ Cloud batch1, GPT batch2, Cloud batch3 and GPT batch4 are reviewed (GC2828). Clo
 |Returned narrow repairs|**Cloud DONE, CL764** ([§5](reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md)): both carried; the period-8 lasso supplied (80 pairs, 640 equations checked). Originally requested:|Check door81's finite defect-tail parity/onset guard and door1's eight-tick truncation argument. Supply the existing period8 spatial lasso for direct checking, not a larger search.|
 |3: ten Problem3 doors|**Cloud DONE, CL764/CL765** ([§6–8](reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md))|19/20/49/50/30/89/46/51/2/52. No duplicate GPT work.|
 |4: twelve density/clock doors|**GPT DONE, GC2828** ([full verdicts](reports/GPT-SW02-CARRY-BATCH4-20261110.md))|12 cards disposed; weighted dyadic obstruction, Lambda and RS3 carried; wedge scope repaired; positive entropy sigma/F counterexample; p128/walls independently replayed. Cloud narrow recharge read remains. No build.|
-|5:17 atlas-only items|**Cloud CL766 + GPT GC2832 DONE**|All17 read, some conditional. [BR-2/XP-3 completion](reports/GPT-BR2-XP3-CARRY-20261110.md): LP/stake/all-k carries, conditional H_FS reduction, exact rational replays and SC-5 joint repairs. Cloud retains other §9.4 leftovers/39card-only doors; GC2342 recharge carry remains separate.|
-|Owner-directed instinct block: period12 phase/return|**GC2830 carried CL768; follow-on GC2835 DONE** ([new report](reports/GPT-DYADIC-RETURN-20261110.md))|P32fixed480closure/35-pair certificate; half-phase route parked after a discriminating failure. Cloud two narrow carries pending for equality wires/uniform P12rigidity. Next: full temporal-word quotient and5/7fork histories from existing data; no new period/census or automatic run.|
+|5:17 atlas-only items|**Cloud CL766 + GPT GC2832 DONE**|All17 read, some conditional. [BR-2/XP-3 completion](reports/GPT-BR2-XP3-CARRY-20261110.md): LP/stake/all-k carries, conditional H_FS reduction, exact rational replays and SC-5 joint repairs. Cloud CL770 completed the other short atlas reads. Original atlas debt is done; GC2342 recharge carry remains separate.|
+|39 card-only doors|**GPT DONE, GC2838** ([full table](reports/GPT-SW02-CARD-DOORS-20261110.md))|Cloud: carry74/75 pivot/pumping steps; optionally the separate F² formulas. External47: exact source required. No automatic research/build/post.|
+|Owner-directed instinct block: period12 phase/return|**GC2830 carried CL768; GC2835 carried CL772 (guard adopted GC2838)**|Equality graph and uniform P12half-phase rigidity are hand/two-party. Count only finite components with nonzero H. Full temporal-word quotient/5–7 fork histories remain parked. Cloud's new core census is not a GPT carry.|
+
 
 | Delivered packages (history) | Owner | External next step; automatic follow-up paused |
 |---|---|---|
@@ -50,6 +57,8 @@ Cloud batch1, GPT batch2, Cloud batch3 and GPT batch4 are reviewed (GC2828). Clo
 **Carried, not yet a submission.** P2-2.1(i) source energy ⇒ density 1/2 on every dyadic residue ⇒ Problems 1 and 2 (GC2702; the hypothesis is open); LN-06.1's crossing splice and A/B (GC2702); Theorem N, the 2-adic merge invariant, M(W) ≥ Π(W) and M unbounded (L1579, GC2720); Block 5's class-count theorems and CT4C (GC2702); PE-2.1's language reduction (GC2702).
 
 **Research that grew out of the swarm (no submission).** Door 1 → X/Y lineages (GC2696, L1569), the two-state return automaton and clock (GC2706, carried CL753), the periodic E-word deaths and the finite-margin bound (CL754, CL755, GC2768), the trap exclusion of E and the capture measurements (GC2775, CL758); PARKED since GC2789.
+
+**Latest card-debt disposition, GC2838:** all39 card-only entries are processed; only original74/75 still need a different worker's hand read, and47 lacks an accessible source. Broader open mathematical questions are retained in the report, not counted as unprocessed cards. The optional F² extension has its own PROOF-SKETCH status. Historical batch counts below are provenance, superseded by this disposition.
 
 **Unread debt (Phase C of the appraisal).** CL763 [triaged](reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md) the94 pending doors:10 already settled,12 in batch1,33 substantive reads and39 card-only. GC2826 reviews batch2's11 entries:22 original substantive reads remain in batches3/4, plus the39 card-only and the17 atlas-only items. A completed read is not a closure: L7-D1 remains open, and deadline/tail-parity repairs have exact follow-up obligations. B2+, LN13.2 and RS1's named construction now have worker carries. Other atlas claims are untouched. The95 untested AJAR doors,57 unforced findings and56 answer-sheet open fields remain separate. **CL764 (Cloud, 10 November):** batch 3, the ten Problem 3 doors, is carried, and GC2826's two returned steps with it (the branch law's tail parity; the eight-tick deadline step with the period-8 witness as an explicit 80-pair lasso). 51 doors remain: batch 4 (12, GPT) and the 39 card-only; the atlas-only batch of 17 is Cloud's next. **CL765:** the six Problem 3 pieces set aside in batch 3 are processed (triage report §8), with every outside theorem named as read at source or cited. **CL766 (Cloud, 10 November):** the atlas-only batch is done: 15 of its 17 entries carried (some on stated conditions), BR-2.2 and BR-2.3 passed to GPT; leftovers with owners in the triage report §9.4. Kit candidates named for the owner's word: the all-configuration width-5/6 column-1 constraints with explicit onset (BR-5.2), history invisibility (BR-5.3), Theorem D with the one-sided Hedlund lemma; GPT named B2+ at GC2826. Remaining: the 39 card-only doors. **CL768 (Cloud, 10 November):** BR-6.1's resolution-size statements carried (triage report §10); rule 150's hardness is at most 3 at every width (PROOF-SKETCH, wants a reader). GPT finished BR-2.2, BR-2.3 and the XP-3.2 replay at GC2832, so the whole atlas is read. Cloud's remaining short reads: LN-02.1 (iii), (iv) and the all-t step; RS-4 (c2), (c3); LN-03.1's last sentence. Then the 39 card-only doors. **CL770 (Cloud, 10 November):** those three short reads are done (triage report §11), all carried. Phase C now has only the 39 card-only doors left.
 

@@ -196,6 +196,12 @@ below is changed. The proofs this room cites have pages in plain words:
    - *Closed routes* (recorded so that no block re-enters them).
      - Product-formula or height coupling of the two readings: it is window-blind, and one odd-denominator rational
        approximates u and -n jointly at Dirichlet height.
+       *Scope amendment, GPT GC2838:* the product-formula warning is retained,
+       but the summary alone is not a carried impossibility theorem for every
+       height method. Any renewed claim must specify the common rational finite
+       approximants and both place-error/height bounds. The asserted universal
+       Dirichlet-height closure was not supplied as a complete proof in the card;
+       no new Mahler research is authorized by this amendment. [Review](reports/GPT-SW02-CARD-DOORS-20261110.md).
      - The "bowtie" of a 3-adic past window and a 2-adic future window: zero pinning gain, since it is the
        (K + L)-bit future window of n_(j-K) scaled by (3/2)^K.
    - *Heuristics worded as theorems, all caught by the skeptics:* "converges to Mahler", "only integer input",

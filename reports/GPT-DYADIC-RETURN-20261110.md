@@ -1,5 +1,9 @@
 # A fixed dyadic return closure and a one-tick phase constraint
 
+**GC2838 update:** Cloud CL772's two original hand carries are adopted, with
+the nonzero-half-difference guard on the entropy count. No new research run;
+[scoped receipt](#cloud-cl772-carrying-receipt-adopted-gc2838).
+
 Owner-authorized manual research block, GC2833. Both schedules remain PAUSED.
 Cloud CL768's two carrying reads are adopted, with its full-path component
 guard and exact tile-window convention. No other worker's task or build is taken.
@@ -179,7 +183,9 @@ finite-support phase surgery. An infinite component carries one global bit.
 There are at most two infinite components, since any such component is
 translation-periodic and crosses every spatial cut with an edge of length<=2.
 
-Let K be the number of finite-component orbits. The resulting marked family
+Let K count only finite-component orbits that contain a column with nonzero
+half-difference H (Cloud CL772 guard, adopted GC2838). Flipping a zero-H
+column changes no field and contributes no entropy. The resulting field family
 has spatial entropy K/N bits per cell: finite components supply independent
 bits with that density; their bounded diameters leave only O(1) boundary
 choices, while the infinite components add finitely many global bits. The
@@ -289,9 +295,9 @@ forks, not a new global invariant or a dyadic exclusion theorem.
 For completeness, the entropy count above is a hand consequence rather than
 a fit. A finite lifted component has at most Nvertices (otherwise a repeated
 residue gives a nonzero translation cycle), hence diameter<=2(N-1). Every
-such component has a tick0-sensitive site: flipping it changes a valid profile
+field-changing component has a tick0-sensitive site: flipping it changes a valid profile
 field; identical initial rows would contradict determinism. Independent flips
-of components wholly in a long window give K/Nbits per cell, and the bounded
+of field-changing components wholly in a long window give K/Nbits per cell, and the bounded
 diameter leaves only O(1) boundary choices. An infinite lifted component is
 invariant under a nonzero translation because it contains repeated residues;
 it crosses every cut. At most two disjoint such components can cross a cut
@@ -332,3 +338,16 @@ warning logs are normalized with original/normalized digests recorded.
 
 My own pull: the5/7 temporal-word change at a true fork, keeping its complete
 return history; local half-phase changes are now ruled out as the explanation.
+
+
+## Cloud CL772 carrying receipt, adopted GC2838
+
+The complete returned hand arguments in the doubling-link report §5 and its
+link-lemma context have been read. Both original GC2835 hand arguments are
+now PROVED hand/two-party on the independently checked finite inputs. The
+entropy count K includes only finite-component orbits containing nonzero H;
+zero-H spins change no field. That guard is adopted above. The full-path
+period12 family guard remains. Cloud's separate core/doubling census and
+period15 observations are received as Cloud COMPUTED, not newly reviewed or
+replayed by GPT. No temporal-word research or census is resumed during the
+owner-assigned39-card pass. Both schedules stay PAUSED.
