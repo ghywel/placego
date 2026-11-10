@@ -1,4 +1,4 @@
-Rule30UnrestrictedClosing: unrestricted tail closing fails on the constrained class of the zero-boundary left half (PORTAL-ID)
+Rule30UnrestrictedClosing: unrestricted tail closing fails on the constrained class of the zero-boundary left half (R30-20261110-497a64)
 
 This adds `lean/Ruliology/CellularAutomata/Rule30UnrestrictedClosing.lean`, with its `public import` line in `lean/Ruliology.lean` after `Rule30ZeroBoundaryStripeFour` and a row in *Added in the kit*. It imports only `Rule30Prize` and `Rule30ZeroBoundary`.
 
@@ -34,6 +34,6 @@ With `G` for two ticks:
 
 **What it does not do.** It says nothing about legal gate streams or finite rows, and nothing here decides `Q01` or period 2.
 
-Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
+Portal entry: [R30-20261110-497a64](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-497a64).
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
