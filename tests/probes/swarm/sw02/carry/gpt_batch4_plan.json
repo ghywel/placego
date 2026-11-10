@@ -1,0 +1,48 @@
+{
+  "worker_stop": 110,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_batch4_checks.py": "542dd192a6d93c88e0f142f9e7114ba62468339538751ef8b66c20687763cf16",
+    "tests/probes/swarm/sw02/carry/gpt_batch4_wall.cpp": "45683e35d5933d50d0231880076f7d4215b4ea73d057f3a98c27332b396b8450",
+    "/private/tmp/gc2827-wall109.txt": "b832a994f7863d68bfeab4dc634d23920226d2fffe919b859c973addc9505421"
+  },
+  "jobs": [
+    {
+      "name": "fixed",
+      "cpu": 30,
+      "wall": 90,
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_batch4_checks.py"
+      ],
+      "required_stdout_lines": [
+        "BATCH4_FIXED_CHECKS_PASS"
+      ]
+    },
+    {
+      "name": "compile",
+      "cpu": 20,
+      "wall": 60,
+      "args": [
+        "/usr/bin/c++",
+        "-O3",
+        "-std=c++17",
+        "tests/probes/swarm/sw02/carry/gpt_batch4_wall.cpp",
+        "-o",
+        "{out}/wall-check"
+      ]
+    },
+    {
+      "name": "wall",
+      "cpu": 70,
+      "wall": 180,
+      "args": [
+        "{out}/wall-check",
+        "/private/tmp/gc2827-wall109.txt"
+      ],
+      "required_stdout_lines": [
+        "BATCH4_WALL_PASS"
+      ]
+    }
+  ]
+}
