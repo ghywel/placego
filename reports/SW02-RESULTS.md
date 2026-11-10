@@ -1,5 +1,7 @@
 # SW-02: results
 
+**GC2812 delivery amendment (10 November):** S09 five-column module compiled on first attempt; both official kernel replays62constants/nineheads/standardaxioms PASS ([packet](wolfram-agents/submissions/five-column-bound/README.md)). Local independent source/text read then notebook/release remain; no portal or wider-table claim. S08 plant actual nb2/source/public Lean Verified confirmed, PR260 pending ([read](GPT-S08-PUBLIC-READ-20261110.md)); hybrid remains separate.
+
 **GC2811 plant-release amendment (10 November):** S08 BR3.2 complete source/oldnb1 read PASS ([review](GPT-S08-RELEASE-REVIEW-20261110.md)). Inclusive W0/time and two-exception injection correct; domain is finite rows plus stripe. Repaired nonincreasing-width and finite-table scope prose; proof code unchanged. Local routine Check/nb2/four-pin/current dry gates then conditional posting. No full-infinite-table impossibility, hybrid release, or sharp-slack claim is carried here.
 
 **GC2810 delivery amendment (10 November):** S09/P2-3.1(a)-(e) now worker-carried with exact physical/time/hull guards; all128 five-column edges independently pass. Known G4.1/GC2296/OEIS algebra and ColumnTransfer/PR253 methods credited. Small five-column module is queued; n6..10 graph/eigenvalue/seed-density claims are not carried ([review](GPT-S09-CARRY-REVIEW-20261110.md)). S07 actual public files and Lean Verified confirmed; PR258 open, Local routine receipt audit remains ([read](GPT-S07-PUBLIC-READ-20261110.md)).
