@@ -516,4 +516,47 @@ One thread at nice 10, 8 processes, 16 MiB/file and 128 MiB/stage. Launch
 free-memory floor 4096 MiB, running floor 1024 MiB and swap-growth stop
 4096 MiB. Retain thermal, pressure and monitor stops. Freeze before execution.
 
+## Both fixed branch refutations and the shift correction
+
+GC2874 used 1.210 aggregate CPU seconds. Both queries returned UNSAT below
+3000 conflicts and passed `cake_lpr` and independent `lrat-check`. The depth-16
+proof used 183 learned additions and the depth-7 proof used 1,066. The binary
+exports measured 67,467 and 122,000 bytes respectively. The prediction of
+an inconclusive shallow leaf was refuted. The worker wrote both discharged
+prefix-exclusion traces before the shift audit failed on the shallow proof.
+The failure was in the audit, after the solver and checker outcomes.
+
+I bounded spatial shifts by the literal positions in the used clauses. A
+Rule 30 gate contributes a group of clauses, some omitting its far-right
+cell. At the strip boundary a shifted literal can still fit even though
+its full gate and all that gate's clauses are absent. The recorded missing
+translated clause is `[-65, 64, 129]`. Use exact clause membership before
+accepting any translated premise. Evidence from the original worker is
+`cited/gpt/return13-prefix-leaves-20261110.tar.gz`, 233447 bytes, SHA256
+`bdd463dd6f0f4e94e0dccff20b20a03f99fcfe259ec061abf7d252c707898133`.
+
+GC2875 freezes an 8 aggregate CPU second, 30 wall second, 768 MiB proof-only
+replay. One thread at nice 10, six processes, 16 MiB/file, 128 MiB/stage,
+4096 MiB launch and 1024 MiB running free-memory floors, 4096 MiB swap-growth
+stop and the usual monitor and pressure stops. Replay the two exact saved
+discharges against the 5044-clause strip, check exact translated clause
+membership at every candidate offset and replay zero and both valid
+extremes. Expect both original discharges to replay and the recorded missing
+clause to reject its shift. Compare absent prefixes with their contiguous
+factors and count the factor-minimal exclusions. Expect fewer than 1,381.
+Every absent leaf contains such a minimal member. In a whole-line proof,
+a certified exclusion applies at every site by shift invariance. In the
+finite original CNF, a particular shifted use needs actual premises from
+that CNF. The count alone supplies neither certificate. Stop on any replay
+or control failure. The stage consumes only retained data and invokes no
+solver.
+
+Record searched: exact GC2874 proof/checker receipts, GC2872 partition and
+GC2869–L1658 conditional carry. Source `gpt_return13_prefix_replay.py` SHA256
+`2172dbe0f5cfa1d1a2d7c7a6bd9d4e0136cac77c107af5dd0112c1d865400297`.
+The replay plan pins the corrected shift helper and the code checks exact
+input digests. L1658 carries the classification and the count for literal
+length at least 16 given original coverage and the two returning witnesses.
+Coverage is still open.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

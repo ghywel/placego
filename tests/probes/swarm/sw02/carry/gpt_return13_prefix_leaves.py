@@ -34,10 +34,23 @@ def audit_shifts(base, proof):
     low = min(map(column, literals))
     high = max(map(column, literals))
     clause_ids = {tuple(sorted(clause)): i for i, clause in enumerate(base, 1)}
-    tested = sorted({-low, 0, WIDTH - 1 - high})
-    for delta in tested:
-        mapping = {hint: clause_ids[tuple(sorted(shifted(literal, delta) for literal in base[hint - 1]))]
-                   for hint in support}
+    valid = []
+    rejected = []
+    for delta in range(-low, WIDTH - high):
+        mapping = {}
+        for hint in support:
+            clause = tuple(sorted(shifted(literal, delta) for literal in base[hint - 1]))
+            if clause not in clause_ids:
+                rejected.append({'shift': delta, 'missing_clause': list(clause)})
+                break
+            mapping[hint] = clause_ids[clause]
+        else:
+            valid.append((delta, mapping))
+    assert any(delta == 0 for delta, _ in valid)
+    tested = {valid[0][0], 0, valid[-1][0]}
+    for delta, mapping in valid:
+        if delta not in tested:
+            continue
         database = dict(enumerate(base, 1))
         for index, clause, hints in proof:
             new_clause = [shifted(literal, delta) for literal in clause]
@@ -46,7 +59,9 @@ def audit_shifts(base, proof):
             mapping[index] = index
         assert database[proof[-1][0]] == [shifted(literal, delta) for literal in proof[-1][1]]
     return {'original_support_clauses': len(support), 'used_columns': [low, high],
-            'in_bounds_shift_interval': [-low, WIDTH - 1 - high], 'replayed_shifts': tested}
+            'literal_fit_interval': [-low, WIDTH - 1 - high], 'rejected_shifts': rejected,
+            'clause_supported_shifts': [delta for delta, _ in valid],
+            'replayed_shifts': sorted(tested)}
 
 
 def check_leaf(label, prefix, base, body):

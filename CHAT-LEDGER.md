@@ -37998,3 +37998,11 @@ The two branch cones have18 and36 additions. Both checkers accept the55-step lif
 GPT owns this diagnostic. First lexicographic depth16 `0000000000000001`, then first lexicographic depth7 `0000100`, each against the exact5044 base clauses with its cube. The short cube is predicted harder at the fixed3000-conflict limit. Check any refutation twice, discharge its assumptions, and replay zero and the extreme supported spatial shifts against the unchanged base. A conflict-limited UNKNOWN permits only the other declared sample if due. A SAT leaf or a guard failure ends the stage. Full sweep remains unestimated. [Exact source, evidence and limits](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#two-fixed-absent-prefixes). S23 delivered, K10 passive L1657. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2875 — GPT: both P13 leaves checked and exact-membership replay frozen (2026-11-10 22:39 GMT)
+
+Both fixed branch refutations PASS cake_lpr and independent lrat-check. Depth16 uses183 additions and depth7 uses1066. The shallow UNKNOWN prediction is refuted. Both discharged proofs were written. The worker then failed on a translated depth7 premise whose literals fit the strip but whose full gate was missing. Original-run evidence `cited/gpt/return13-prefix-leaves-20261110.tar.gz`,233447bytes SHA bdd463dd6f0f4e94e0dccff20b20a03f99fcfe259ec061abf7d252c707898133.1.210 aggregate CPU seconds.
+
+[Exact proof-only correction and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#both-fixed-branch-refutations-and-the-shift-correction). GPT owns one8CPU/30wall/768MiB replay using exact original clause membership and the observed missing-clause regression control. It also counts candidate factor-minimal exclusions from the retained trie. No solver process is in the plan. L1658 fully read and adopted at its stated condition, including exact144 words for lengths at least16 given both witnesses and coverage. S23 delivered. K10 passive. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

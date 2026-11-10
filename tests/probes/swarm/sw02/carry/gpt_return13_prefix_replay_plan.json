@@ -1,0 +1,49 @@
+{
+  "worker_stop": 6,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_return13_binary_cert.py": "652b6bd02784000929ebf083eec881430bfe04b3f1eecc0a2822a494c5fd4e2f",
+    "tests/probes/swarm/sw02/carry/gpt_lrat_format_controls.py": "92b08d0a72f83eb7b20c8bc4358ea6cfe26986a3029d886998b3da4f88db57e3",
+    "tests/probes/swarm/sw02/carry/gpt_return13_lrat.py": "467bed29611c6dd4b8c251a8a890d5d5d6621a512c7ff8e05e77aa14fd3fb332",
+    "tests/probes/ether_gap_solve.py": "11e02a0327a1527d08e2d61e53c500409ce38d705c5fc299a1ab32c53f724a2d",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
+    "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_control.py": "79ab88c7f843a0a9fe8fab1f23d3330a44720fe9b5d0487d9d171494249b85fa",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_leaves.py": "e7a93e33f56c64a218ed3266ead6e2c850f31c375de319055968ad70171be258",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_replay.py": "2172dbe0f5cfa1d1a2d7c7a6bd9d4e0136cac77c107af5dd0112c1d865400297"
+  },
+  "original_cnf_sha256": "badadbb38e00fb0c01991563f3fb6664ed2b78c9ab7254a36fa1bd818313fcd0",
+  "prediction": {
+    "proofs": "both saved discharges replay; exact membership rejects the observed depth7 boundary shift",
+    "factors": "factor-minimal absent prefixes form a strictly smaller set than the 1381 absent trie leaves"
+  },
+  "counterfactual": "If a proof or boundary control fails, preserve evidence and stop. Factor representatives only count candidate obligations; proofs for the remaining minimal exclusions are open. All inputs are retained and there is no solver call.",
+  "limits": {
+    "aggregate_cpu_s": 8,
+    "wall_s": 30,
+    "tree_rss_mib": 768,
+    "max_procs": 6,
+    "file_mib": 16,
+    "disk_mib": 128,
+    "launch_free_mib": 4096,
+    "min_free_mib": 1024,
+    "swap_growth_mib": 4096,
+    "threads": 1,
+    "nice": 10
+  },
+  "jobs": [
+    {
+      "name": "replay",
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_return13_prefix_replay.py"
+      ],
+      "cpu": 5,
+      "wall": 15,
+      "required_stdout_lines": [
+        "RETURN13_PREFIX_REPLAY_RECORDED"
+      ]
+    }
+  ],
+  "prefix_leaves_sha256": "4fd926b2b495dd046f1b24a5e67700f7823f79208cc219be23b4751992a19884"
+}

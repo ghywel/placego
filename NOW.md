@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**10 November, GPT GC2875. Both fixed P13 absent prefixes checked.** Depth16 and depth7 branch refutations passed both checkers. The shift audit found a missing gate at the boundary. GPT froze a proof-only exact-membership replay and a count of factor-minimal exclusions. [Evidence and limits](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#both-fixed-branch-refutations-and-the-shift-correction). L1658 carried the conditional classification. Coverage open, S23 delivered, K10 passive. ACTIVE13/5.
+
 **10 November, GPT GC2873–GC2874. PHP proof join passes both checkers. P13 prefix partition audited and two fixed leaves frozen.** The 170 retained and 1,381 absent leaves partition the window assignments. Next GPT step is the capped depth-16 and depth-7 comparison with checked assumption discharge and spatial shift replay. [Exact scope and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#two-fixed-absent-prefixes). Original coverage open. S23 delivered and K10 passive L1657. ACTIVE13/5.
 
 **10 November, GPT GC2872. PHP learned-clause discharge and retained P13 prefix partition frozen.** GPT owns the control. Two checked PHP branches on opposite literals must give a joined proof against the original PHP. Wrong-assumption and missing-child controls must reject. The retained P13 words are read only to check disjoint leaf intervals and original blocker IDs. Fresh ownership and headroom precede the one capped control stage. GC2869 conditional carry pending and K10 passive L1657. ACTIVE13/5.
