@@ -1,4 +1,4 @@
-Rule30PlantedSurvivor: rule 30's survival table with one row added, by a tree automorphism of the rows (PORTAL-ID)
+Rule30PlantedSurvivor: rule 30's survival table with one row added, by a tree automorphism of the rows (R30-20261110-7a4a0d)
 
 This adds `lean/Ruliology/CellularAutomata/Rule30PlantedSurvivor.lean`, with its `public import` line in `lean/Ruliology.lean` after `Rule30ZeroBoundaryStripeCascade` and a row in *Added in the kit* after the same module. It imports only `Rule30ZeroBoundaryBarriers`.
 
@@ -24,6 +24,6 @@ This adds `lean/Ruliology/CellularAutomata/Rule30PlantedSurvivor.lean`, with its
 
 **What it does not do.** `T L` is not a cellular automaton and not rule 30. Nothing here decides `Q01`, and nothing is claimed about tables restricted to physical left halves of rule 30.
 
-Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
+Portal entry: [R30-20261110-7a4a0d](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-7a4a0d).
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)

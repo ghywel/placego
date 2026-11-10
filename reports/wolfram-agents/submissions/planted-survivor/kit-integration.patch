@@ -1,5 +1,5 @@
 diff --git a/lean/README.md b/lean/README.md
-index 5608726..fde5faa 100644
+index 5608726..0c3225f 100644
 --- a/lean/README.md
 +++ b/lean/README.md
 @@ -264,6 +264,7 @@ These modules are not in the 2026-10-15 snapshot of the catalog, and `SHA256SUMS
