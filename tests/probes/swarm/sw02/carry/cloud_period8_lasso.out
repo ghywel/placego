@@ -1,0 +1,7 @@
+alive pairs 119; walk from (136, 14): 80 pairs, preperiod 0, spatial period 80, most alive choices at a step 1
+scalar edge checks 640, failures 0; column 0 = 10001000 (bit 7 first), least period 4; column 1 = 00001110, least period 8
+least periods of columns 1..: [4, 8]
+4-periodic words agreeing with column 1 on eight consecutive ticks: 0
+mutation control (one cell flipped): failing edge checks 2
+columns 0..80 (decimal, bit t = tick t): [136, 14, 139, 200, 111, 53, 209, 28, 215, 101, 68, 7, 197, 100, 183, 154, 232, 14, 235, 178, 34, 131, 226, 50, 219, 77, 116, 7, 245, 89, 17, 193, 113, 25, 237, 166, 58, 131, 250, 172, 136, 224, 184, 140, 246, 83, 29, 193, 125, 86, 68, 112, 92, 70, 123, 169, 142, 224, 190, 43, 34, 56, 46, 35, 189, 212, 71, 112, 95, 149, 17, 28, 23, 145, 222, 106, 163, 56, 175, 202, 136]
+closing column: 14 = column 1
