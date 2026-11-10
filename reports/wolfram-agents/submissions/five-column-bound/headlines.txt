@@ -1,0 +1,9 @@
+Rule30Submission.potential_bounds
+Rule30Submission.local_potential
+Rule30Submission.telescope
+Rule30Submission.five_column_bound
+Rule30Submission.white_column_bound
+Rule30Submission.evol_five_column_bound
+Rule30Submission.cell_five_column_bound
+Rule30Submission.sharp_rate
+Rule30Submission.sharp_constant
