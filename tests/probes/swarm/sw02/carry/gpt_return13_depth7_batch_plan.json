@@ -10,7 +10,7 @@
     "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df",
     "tests/probes/swarm/sw02/carry/gpt_return13_prefix_control.py": "79ab88c7f843a0a9fe8fab1f23d3330a44720fe9b5d0487d9d171494249b85fa",
     "tests/probes/swarm/sw02/carry/gpt_return13_prefix_leaves.py": "7169eb470f2f4ba5c66a0db7c6a8ca5d2f83efe5afe07fc718dbf2a20f954b4b",
-    "tests/probes/swarm/sw02/carry/gpt_return13_depth7_batch.py": "4bdd535429eb876bde9e604a1e2affdf936e3777ecd2b21abde42789f7a8e2ef"
+    "tests/probes/swarm/sw02/carry/gpt_return13_depth7_batch.py": "cab88e76ce7147cbc387dc0cacb5cd7e0e7adf8ef46f9232cd92c346f1b92210"
   },
   "original_cnf_sha256": "badadbb38e00fb0c01991563f3fb6664ed2b78c9ab7254a36fa1bd818313fcd0",
   "prediction": {
@@ -21,7 +21,7 @@
   "counterfactual": "Retain UNKNOWN cases as a finite pending list. A SAT case or guard/control failure stops the stage. No splitting or larger limits are part of this batch.",
   "limits": {
     "aggregate_cpu_s": 119,
-    "wall_s": 299,
+    "wall_s": 298,
     "tree_rss_mib": 768,
     "max_procs": 8,
     "file_mib": 16,
@@ -33,7 +33,7 @@
     "nice": 10,
     "inner_aggregate_stop_cpu_s": 95,
     "worker_soft_cpu_s": 12,
-    "worker_hard_cpu_s": 120
+    "worker_hard_cpu_s": 119
   },
   "jobs": [
     {

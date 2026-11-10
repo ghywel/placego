@@ -710,4 +710,19 @@ Corrected source SHA256
 `4bdd535429eb876bde9e604a1e2affdf936e3777ecd2b21abde42789f7a8e2ef`,
 plan SHA256 `af757d8801d53019a050a47f21ad1668e61a8b6cb72d120192c6484a2601e8c4`.
 
+
+The GC2881 launch also stopped before any solver call. The 119-second
+inherited hard CPU limit could not be reset to the original 120. The
+worker now lowers only its soft limit and preserves the inherited hard
+limit. Preflight under the exact inherited `(119, 119)` yields `(12, 119)`
+and passes both shift receipts. The second stopped launch used 0.365287
+aggregate CPU seconds and 0.56 wall seconds. GC2882 retains 119 aggregate
+CPU seconds and 298 wall seconds for the unchanged cases, within the
+original combined limits. No memory, output or conflict cap changed.
+Evidence `cited/gpt/return13-depth7-limit-preflight-20261110.tar.gz`, 2588
+bytes, SHA256 `8e661b49caa03bc86d6679c904920ba25edb681a7ccfd411553f47bf53819ba0`.
+Corrected source SHA256
+`cab88e76ce7147cbc387dc0cacb5cd7e0e7adf8ef46f9232cd92c346f1b92210`,
+plan SHA256 `83fc649e6e1dc71b15b7480b0de7f947aaef8fb09004869b27d0490db7a8fb73`.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

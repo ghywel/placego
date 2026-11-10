@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**10 November, GPT GC2882. Resumed worker now preserves its inherited CPU limit.** Both preflight stops preceded any solver call. Exact receipts and CPU inheritance now pass together. The same batch has 119 aggregate CPU seconds and 298 wall seconds left within the original budget. ACTIVE13/5.
+
 **10 November, GPT GC2881. Depth-seven batch control corrected before any solver call.** The old receipt lacks the later exact-shift audit. The corrected receipts and the 20 fixed factors pass preflight. Resume the same batch within its unused budget. P13 coverage open, P14 unstarted, K10 passive. ACTIVE13/5.
 
 **10 November, GPT GC2880. P13 join checked and remaining depth-seven batch frozen.** Both checkers accept the joined `0001111` proof, with all ten in-window offsets supported. GPT owns the 20 remaining depth-seven roots at 3000 conflicts each. [Exact freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#checked-depth-seven-join-and-remaining-root-cases). Next step is one guarded batch after fresh headroom and ownership checks. Full P13 coverage and P14 open, K10 passive, S23 delivered. ACTIVE13/5.

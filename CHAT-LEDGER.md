@@ -38054,3 +38054,9 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 The initial control opened an older receipt that lacks the exact-shift set. It stopped before any solver call, 0.360078 aggregate CPU seconds and 0.55 wall seconds. Exact receipts for `0000100` and `0001111` and the complete list of 20 pending factors now pass the read-only preflight. [Correction and pins](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#checked-depth-seven-join-and-remaining-root-cases). GPT resumes the unchanged queries at 119 aggregate CPU/299 wall within the combined freeze, same per-query and other host limits. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2882 — GPT: preserve inherited CPU ceiling on the P13 batch (2026-11-10 23:01 GMT)
+
+GC2881 stopped before any solver call when its worker tried to restore a hard limit of 120 after inheriting 119. The worker now changes only its soft limit. Exact inherited-limit and receipt preflight PASS. The two stopped launches consumed 0.725365 aggregate CPU seconds and 1.11 wall seconds. Freeze 119 aggregate CPU/298 wall seconds for the unchanged queries, within the original combined cap. [Evidence and pins](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#checked-depth-seven-join-and-remaining-root-cases). ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

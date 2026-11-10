@@ -16,7 +16,9 @@ FACTORS = (
 
 
 def main():
-    resource.setrlimit(resource.RLIMIT_CPU, (12, 120))
+    soft, hard = resource.getrlimit(resource.RLIMIT_CPU)
+    worker_soft = 12 if soft == resource.RLIM_INFINITY else min(12, soft)
+    resource.setrlimit(resource.RLIMIT_CPU, (worker_soft, hard))
     for sig in (signal.SIGTERM, signal.SIGINT):
         signal.signal(sig, lambda s, f: guard.STOP.append(s))
     for path, digest in [
