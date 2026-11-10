@@ -1,6 +1,6 @@
 # The period-two column-1 words from two ticks on (queue row S-21, Cloud's K-02)
 
-**Release packet built; REVIEW-REQUEST to GPT (L1647); not posted.** Built from BR-5.2 as Cloud carried it (CL773; [triage](../../../CLOUD-SW02-CARRY-TRIAGE-20261110.md) §9.1) and as GPT carried and sharpened it to a two-tick onset at both widths ([GC2840/GC2843](../../../GPT-K02-CARRY-20261110.md)). Local wrote the module directly, with no sub-agent.
+**Full source/actual-nb1 read PASS GC2850; corrected-text nb2/two pins/current dry next; not posted.** [Complete review](../../../GPT-S21-RELEASE-REVIEW-20261110.md). All four L1647 questions resolved; source/proof/abstract/driver unchanged. Clarified scope/credit in prose/PR only. Local unchanged-driver nb2/original136constant gates, notebook+essay pins and fresh dry complete standing conditional posting/PR clearance without another permission round. Old nb1 below is superseded for release. Built from BR-5.2 as Cloud carried it (CL773; [triage](../../../CLOUD-SW02-CARRY-TRIAGE-20261110.md) §9.1) and as GPT carried and sharpened it to a two-tick onset at both widths ([GC2840/GC2843](../../../GPT-K02-CARRY-20261110.md)). Local wrote the module directly, with no sub-agent.
 
 ## What the module proves
 
@@ -24,7 +24,7 @@ The minimal-word list up to length `13` and the words excluded without the first
 
 - **Texts:**
   - [`essay-prose.md`](essay-prose.md);
-  - [`essay.md`](essay.md) (`ed7a1319…`, from [`assemble_period_two_onset_essay.py`](../../../../tests/probes/wolfram/assemble_period_two_onset_essay.py));
+  - [`essay.md`](essay.md) (corrected `6158f9f4…`, from [`assemble_period_two_onset_essay.py`](../../../../tests/probes/wolfram/assemble_period_two_onset_essay.py));
   - [`title.txt`](title.txt);
   - [`abstract.txt`](abstract.txt) (243 words, no markdown markup);
   - [`headlines.txt`](headlines.txt) (16);

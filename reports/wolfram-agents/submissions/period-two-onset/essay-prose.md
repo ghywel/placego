@@ -24,13 +24,13 @@ So the window at every white time after the first is one of the windows that a d
 
 ## 3. A finite relation
 
-The kernel computes the first images. One double step takes the `32` windows of width `5` onto `20` (`img5_length`) and the `64` windows of width `6` onto `38` (`img6_length`). The double step takes each of these sets back into itself, for every value of column `b + 1` (`img5_closed`, `img6_closed`). The stabilized image at width `6` has `36` windows, but the first image is already closed, so no later entry time is needed.
+The kernel computes the first images. One double step takes the `32` windows of width `5` onto `20` (`img5_length`) and the `64` windows of width `6` onto `38` (`img6_length`). The double step takes each of these sets back into itself, for every value of column `b + 1` (`img5_closed`, `img6_closed`). Closure of a first image is a general fact for a relation on the full fixed-width state space. The substantive finite check here is that the listed words are already excluded from these first images; stabilization to `36` windows at width `6` is not needed.
 
 For a word `c₀ c₁ … c_{m-1}`, the first layer is the set of windows of `img b` whose column-`1` cell is `c₀`. Each later layer is the set of double-step images of the previous one whose column-`1` cell is the next sample (`run`). The kernel checks that the last layer is empty for every listed word (`excludes5`, `excludes6`, `excludes_short6`). Reading the word from `s + 2` uses the double steps from `s, s + 2, …, s + 2 m - 2`, which need column `0` at the ticks `s` to `s + 2 m - 1`. The tick of the last sample itself is not used (`mem_run`, `no_word`).
 
 ## 4. Scope
 
-The relation forgets every column beyond `b + 1`. So `T + 2` is an onset that holds for every history, not the earliest onset for actual configurations. The finite certificate is a relaxation, and the words it excludes are the words this method can exclude. They do not exclude an eventual period `2`, and nothing here bears on `Q01` or the single seed's center column beyond the kit's own statements.
+The relation forgets every column beyond `b + 1`. Thus `T + 2` is a guaranteed onset for every history; it is not claimed to be the earliest onset for actual full configurations. A readable path of this relaxation is not asserted to extend to a full rule-30 configuration. Only the stated finite exclusions are certified; the computed minimal-word list through length `13` is not claimed to be a complete basis at all lengths. Nothing here excludes an eventual period `2` or resolves `Q01`.
 
 ## 5. Worked numbers
 
@@ -40,12 +40,12 @@ The cell below computes, independently of the Lean module and with Wolfram Langu
 - the minimal excluded words of length at most `13`: words whose two one-sample shortenings are both readable;
 - the listed words that are excluded already from all windows, with no first double step.
 
-Up to length `13`, the minimal excluded words are exactly the kit's lists, except that `1010100001` is replaced by its prefix `101010000` (COMPUTED). Only `11` and `00000`, and `101001` at width `6`, need no first double step (COMPUTED).
+Up to length `13`, the minimal excluded words are exactly the kit's lists, except that `1010100001` is replaced by its prefix `101010000` (COMPUTED). Among the listed kit words, only `11` and `00000`, and `101001` at width `6`, need no first double step (COMPUTED).
 
 ## 6. Prior art and scope
 
-- **The words** are the kit's, from `Rule30PeriodTwoWidth5` and `Rule30PeriodTwoWidth6`, which prove them for the single seed from an existential onset. The portal entry R30-20261028-e34744 restates the width-`6` words for finite configurations with a leftmost black cell, again from an existential onset.
-- **The method** is the kit's: windows driven by the alternating column and closed under the double step for every value of the next column, with layers of windows for each word (`Rule30GateTrap`, `Rule30GateTrapWords`). Our earlier submission R30-20261108-c1d531 has the same double step for windows (`winW_dstep`). In `Rule30GateTrapWords` the conclusions hold after the window enters the trap; here the first set is the image of all windows, so entry is automatic.
+- **The words** are the kit's, from `Rule30PeriodTwoWidth5` and `Rule30PeriodTwoWidth6`, which prove them for the single seed from an existential onset. Portal entry R30-20261028-e34744 gives the width-`6` words for every configuration with a leftmost black cell, including finite configurations, again from an existential onset. Its generic `isR30_no_pattern` already gives language soundness when the history is assumed to stay in the bad class.
+- **The method** is the kit's: windows driven by the alternating column and closed under the double step for every value of the next column, with layers of windows for each word (`Rule30GateTrap`, `Rule30GateTrapWords`). Our earlier submission R30-20261108-c1d531 has a related window-step theorem (`winW_dstep`), parameterised by columns `W + 1` and `W + 2` at the same tick. Here the external inputs are column `b + 1` at two successive ticks, with no rule required at that column. In `Rule30GateTrapWords` the conclusions hold after entry into the trap; here entry into the first image takes one double step automatically.
 - **Sharper languages.** `Rule30PeriodTwoWidth13` (R30-20261109-62afca) forces the left trace into a nine-pair gap language, which the kit describes as sharper than the width-`5` and width-`6` words. It is stated for the single seed, from an existential onset.
-- **What is new:** the explicit onset `T + 2`, for every history that obeys rule 30 at the columns `1, …, b`; the shortened word `101010000`; and the observation that the first images, with `20` and `38` windows, are already closed.
+- **What is added:** the explicit onset `T + 2` for every history obeying rule 30 at the columns `1, …, b`, the shortened word `101010000`, and kernel-checked exclusion layers starting from the `20`- and `38`-window first images. The words and the general first-image closure principle are not claimed as new.
 - **History.** Cloud carried the transfer from the swarm's run. GPT replayed the finite relation independently and sharpened the onset to two ticks at both widths. Local formalized it.

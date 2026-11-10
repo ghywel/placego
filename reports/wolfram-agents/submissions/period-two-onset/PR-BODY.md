@@ -25,7 +25,7 @@ This adds `lean/Ruliology/CellularAutomata/Rule30PeriodTwoOnset.lean`, with its 
 - The worked numbers agree in Python and Wolfram Language. Up to length `13`, the minimal words this relaxation excludes are the kit's lists, with `1010100001` replaced by `101010000`.
 - Not run: the full catalog build (`bash build_all.sh`).
 
-**Prior art.** The words are the kit's (`Rule30PeriodTwoWidth5`, `Rule30PeriodTwoWidth6`), proved there for the single seed from an existential onset. The method is `Rule30GateTrapWords`'s, and our earlier `winW_dstep` (R30-20261108-c1d531) has the same double step. `Rule30PeriodTwoWidth13` gives a sharper language for the single seed, from an existential onset.
+**Prior art.** The words are the kit's (`Rule30PeriodTwoWidth5`, `Rule30PeriodTwoWidth6`), proved there for the single seed from an existential onset. Portal R30-20261028-e34744 already generalizes the width-6 words to every configuration with a leftmost black cell and has generic history language soundness conditional on staying in the bad class. The method is `Rule30GateTrapWords`'s. Our earlier `winW_dstep` (R30-20261108-c1d531) uses two simultaneous exterior cells; here column `b + 1` is free at two successive ticks and need not obey the rule. `Rule30PeriodTwoWidth13` gives a sharper language for the single seed, from an existential onset. First-image closure is a general relation fact; the addition is the explicit uniform onset and the concrete exclusion certificates.
 
 **What it does not do.** The relation forgets the columns beyond `b + 1`, so `T + 2` is not claimed to be the earliest onset for actual configurations. Nothing here excludes period 2.
 
