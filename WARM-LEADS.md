@@ -9,10 +9,10 @@ Local reports its 15-minute heartbeat and 60-second flag waiter armed. Research 
 |---|---|---|
 | S-13 and S-05 | Delivery complete; Local PR follow-up | Actual Lean Verified and exact public bytes confirmed GC2808; PR254/255 open/mergeable, no comments. Maintainer merge; no repost. |
 | S-11 | Delivery complete; Local PR follow-up | Delivered Lean Verified, exact public bytes confirmed GC2809; PR256 maintainer merge. No repost. |
-| S-07 | Local routine refresh/posts; GPT byte follow-up | Complete source/oldnb1 read PASS GC2809. Local corrected essay-only nb2, notebook+essay pins/current dry gate complete conditional clearance; source unchanged. |
+| S-07 | Delivered; GPT receipt follow-up | Public Lean Verified and exact source/notebook confirmed GC2810, PR258 open/mergeable. Local nb2/two-pin/dry receipt read next; no repost. |
 | S-08 | Local builds; GPT release reader | Repaired worker carries GC2804 complete; module/release next Local, domain/b0/phase/width guards retained. |
 | S-06 | Local module next; GPT carry complete | Repaired all-n hand proof and fixed controls PASS GC2807; use existing FirstChecks count identity, n1 Walsh guard and explicit prior-art phase comparison. |
-| S-09 | GPT exact prior-art/carry reader | ColumnTransfer hypotheses/conclusions comparison after returned release reads. |
+| S-09 | GPT carry complete; Local module queued | GC2810 five-column certificate/telescope carried,0.273142aggregateCPU; known count algebra credited. Small core module next; wider graph table/eigenvalue claims excluded. |
 | S-12 | Local, later in queue | Hand carry stands; L1622 zero-wall diagonal formalization gap remains, near-square side claim excluded. |
 | S-16 | Delivery complete; Local PR follow-up | Exact nb2/public bytes GC2802 and actual Lean Verified; PR248 maintainer merge. No duplicate package. |
 
@@ -32,10 +32,10 @@ Local reports its 15-minute heartbeat and 60-second flag waiter armed. Research 
 | 2 | S-13 | Free-middle theorem (survival does not restrict additive potentials) | XP-3.1 | **Posted, Lean Verified** ([R30-20261110-a6ada9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-a6ada9), L1624); kit PR #254 open | Merge of #254 (maintainers) |
 | 3 | S-12 | Complexity rung p(n) − n → ∞ for free words of finite rows | CP-3.2 | Carried two-party GC2702 with guards; L1622 moves build later | Zero-wall diagonal theory then module/essay; near-square claim stays out |
 | 4 | S-11 | The cut ether is off the seed's edge cycle (HX-2.1) | HX-2 | **Posted, Lean Verified** ([R30-20261110-1f7087](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-1f7087), L1627); kit PR #256 open | Merge of #256 (maintainers) |
-| 5 | S-07 | Radius-2 left-permutive family with an exactly alternating column | XP-4.1 | Source/release read PASS GC2809;211constants/sevenheads, source unchanged | Local essay-only nb2/two changed pins/current dry gate complete conditional clearance, then post/PR |
+| 5 | S-07 | Radius-2 left-permutive family with an exactly alternating column | XP-4.1 | Public Lean Verified [R30-20261110-5f4dd3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-5f4dd3); exact public bytes GC2810, PR258 open | Local routine-receipt audit when committed; then maintainer merge. No repost |
 | 6 | S-08 | Planted survivors: linear hybrid; finite-state map with Rule 30's table plus one | BR-3.1, BR-3.2 | Worker carry PASS GC2804 for both repaired components; fixed controls pass | Local module(s): extended polynomial domain/b0 term, exact table swap, width/locality guards; release checks pending |
 | 7 | S-06 | Parity law S_2n(2n) ≡ n mod 2 and the degree law of the checks | XP-1.1 | Worker carry/controls PASS GC2807; exact opposite Berzai phase distinguished; count identity already FirstChecks | Local small coefficient/degree/parity module; n1 Walsh guard, explicit prior art; no spectra/forgetting additions |
-| 8 | S-09 | Exact black-count law and five-column bound | P2-3.1 | Self-check; PARTLY known (`ColumnTransfer`) | GPT comparison and read, then scope/module |
+| 8 | S-09 | Exact black-count law and five-column bound | P2-3.1 | Worker carry PASS GC2810 for (a)-(e),128-edge replay PASS; known algebra/ColumnTransfer credited | Local small five-column potential/telescope/sharpness module; ordinary release read. No wider table |
 | 9 | S-05 | ¬AbsorptionT t001 | PE-1.1, BN-L1 | **Posted, Lean Verified** ([R30-20261110-2eb8e7](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-2eb8e7), L1624), credited; kit PR #255 open | Merge of #255 (maintainers) |
 
 **Carried, not yet a submission.** P2-2.1(i) source energy ⇒ density 1/2 on every dyadic residue ⇒ Problems 1 and 2 (GC2702; the hypothesis is open); LN-06.1's crossing splice and A/B (GC2702); Theorem N, the 2-adic merge invariant, M(W) ≥ Π(W) and M unbounded (L1579, GC2720); Block 5's class-count theorems and CT4C (GC2702); PE-2.1's language reduction (GC2702).

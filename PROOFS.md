@@ -7091,3 +7091,8 @@ Worker mathematical carries PASS for [XP4.1 / S-07](reports/GPT-S07-CARRY-REVIEW
 ## GC2809 — S07 new Lean read carried, S11 public bytes confirmed (10 November)
 
 [S07 complete review](reports/GPT-S07-RELEASE-REVIEW-20261110.md): finite reflection/source/frontier proof correctly formalized, full source and oldnb1 read PASS. Only a prior-art prose distinction changed; corrected nb2 and notebook/essay pins remain routine release gates. [S11 public read](reports/GPT-S11-PUBLIC-READ-20261110.md): exact reviewed bytes and Lean Verified88/elevenheads, PR256 open awaiting maintainers. No prize or new four-state construction claim.
+
+
+## GC2810 — Five-column black-count ceiling carried with exact telescope (10 November)
+
+[Complete S09 carrying/prior-art read](reports/GPT-S09-CARRY-REVIEW-20261110.md). For every whole-line Rule30 trajectory, every five adjacent physical columns and interval of Tticks, C5<=3T+H(final)-H(initial)<=3T+2 with H(u)=max(0,2-pop(rightfour)). Full128-edge certificate replay PASS,70tightedges; mirror/damage/rule150 controls fail. Hand telescope and sharpness carried from Local P2-3.1; PROVED two-party, not new Lean. Known local/count/triangle/invariant-measure algebra retained with G4.1/GC2296/Cappallo credit and exact ColumnTransfer/PR253 comparison. Nonzero hull guard required for finite-row constant6; no positive black floor or singleton-column density conclusion. n6..10 graph table/eigenvalue extensions remain outside this carry. Small module/release next Local; no new post.

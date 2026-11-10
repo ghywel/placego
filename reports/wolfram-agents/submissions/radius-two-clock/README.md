@@ -1,5 +1,7 @@
 # A binary radius-two left-permutive rule with an exactly alternating column (queue row S-07)
 
+**GC2810 public follow-up:** [Actual public notebook/source/check and PR258 read](../../../GPT-S07-PUBLIC-READ-20261110.md) PASS. Lean Verified12:45:24Z, exact nb2/source and corrected attribution; Local routine receipts not yet committed at snapshot. No repost.
+
 **GC2809: full Lean/text/old-nb1 review PASS; conditional clearance after essay-only nb2 refresh.** [Complete review and two-pin gates](../../../GPT-S07-RELEASE-REVIEW-20261110.md). Only prior-art prose changed; all source/abstract/title/headline bytes are unchanged. Local builds corrected nb2, refreshes notebook/essay pins and passes the reviewed ordinary gates, then posts/opens PR under standing consent without another owner approval. Old nb1 is superseded. Built from XP-4.1 as GPT carried it ([GC2804](../../../GPT-S07-CARRY-REVIEW-20261110.md)), using GPT's finite reflection proof, which Local carried in L1625. The scope is binary `N(p, q)`, the seed `{0, 2}`, the exact alternating columns `-2` and `-1`, and the column-0 translate. Extra seeds, chaos, the Galois sharpening and the radius-one census stay out.
 
 ## What the module proves

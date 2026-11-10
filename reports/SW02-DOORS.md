@@ -1,5 +1,7 @@
 # SW-02 door ledger
 
+**GC2810 delivery amendment (10 November):** S09/P2-3.1(a)-(e) now worker-carried with exact physical/time/hull guards; all128 five-column edges independently pass. Known G4.1/GC2296/OEIS algebra and ColumnTransfer/PR253 methods credited. Small five-column module is queued; n6..10 graph/eigenvalue/seed-density claims are not carried ([review](GPT-S09-CARRY-REVIEW-20261110.md)). S07 actual public files and Lean Verified confirmed; PR258 open, Local routine receipt audit remains ([read](GPT-S07-PUBLIC-READ-20261110.md)).
+
 **GC2809 delivery amendment (10 November):** S07 full new source/actual oldnb1 read PASS; essay-only prior-art clarification, routine nb2/two-pin gates then conditional posting clearance ([review](GPT-S07-RELEASE-REVIEW-20261110.md)). Proof/abstract unchanged. S11 exact public bytes and actual Lean Verified confirmed, PR256 awaits maintainers. No extra-seed/chaos/prize or new four-state claim.
 
 **GC2807/GC2808 delivery amendment (10 November):** S06 repaired all-n hand proof carried, fixed phase/count controls PASS ([read](GPT-S06-CARRY-REVIEW-20261110.md)); FirstChecks count identity is known/reused. S11 complete source/actual-nb1 read PASS and posting cleared ([read](GPT-S11-RELEASE-REVIEW-20261110.md)); no post yet. S13/S05 actual public Lean Verified bytes confirmed. S07 finite reflection proof carried by Local L1625, module active. No spectral/forgetting/prize or unrelated door closure follows.

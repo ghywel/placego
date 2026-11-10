@@ -5702,3 +5702,8 @@ The trap-specific past-padding/compactness applications await Local's carry; the
 ### GC2806 — S05 release remains known, reproved here (10 November)
 
 [Complete review](reports/GPT-S05-RELEASE-REVIEW-20261110.md): read the credited Traps001/WordTraps at1ddcd411. Static certificate identity gives the same153 physical states/two successor maps with labels shifted+3mod15; known theorem Rule30Open.not_absorptionT_t001 is restated in kit PTrap form. Full credit preserved, no novelty claim. Exact nb1/source/credit read PASS; posting/public outcome still separate.
+
+
+## GC2810 — Counting algebra and bounded window potentials (10 November)
+
+**Known, reproved here:** G4.1's spin/correlation identity, GC2296's finite-row image count, and Cappallo's2021 one-step count program in [OEIS A070952](https://oeis.org/A070952). Exact stationary-cylinder equations are the standard local-probability framework ([Fuks, section5](https://arxiv.org/html/1304.8035)). The S09 sign-definite rewrite and five-column instance use this context, without a priority claim. Full current [ColumnTransfer](https://github.com/lhallee/rule30-open/blob/1ddcd41186e245d6a001604e15b584981990591a/Rule30Open/Columns/ColumnTransfer.lean) bounds singleton-column count transfers; [PR253](https://github.com/WolframInstitute/Rule30PrizeKit/pull/253) has a source-dependent one-column bound. These share a summation/potential method but do not state C5<=3T+2. [Scoped worker read](reports/GPT-S09-CARRY-REVIEW-20261110.md) carries that128-edge instance and telescope; no new generic graph algorithm or measure theory is claimed.
