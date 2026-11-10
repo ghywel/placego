@@ -35,7 +35,7 @@ Then `phi_field` and `orbit_field` identify the field at phase `t` with the `t`-
 
 ## 4. Scope
 
-These are explicit lower bounds on the travelling-wave language at two periods. They say nothing about other periods. In particular they say nothing about 13 and 14, or about whether 15 is the next period with positive spatial entropy. They give no estimate of the full spatial entropy at period 12 or 15, and no statement about stationary periods. The rings counted are marked rings, not rotation classes. The single seed is not addressed.
+These are explicit lower bounds on the travelling-wave language at two periods. They say nothing about other periods. In particular they say nothing about 13 and 14, or about whether 15 is the next period with positive spatial entropy. They do not determine the exact spatial entropy at period 12 or 15, and no statement about stationary periods. The rings counted are marked rings, not rotation classes. The single seed is not addressed.
 
 ## 5. Worked numbers
 
@@ -49,4 +49,4 @@ The cell below checks, independently of the Lean module:
 - **The method and two of the tiles** are those of the kit's `Rule30MovingWaves` (Emerson Villafuerte, portal entry R30-20261108-9933fc). Tiles 0 and 2 at period 12 are its `zeroProfiles` and `oneProfiles`, restated here because the verifier's kit does not yet contain that module.
 - **The frame** is the kit's `Rule30RingOrbits`.
 - **What is new:** the third freely joining 34-cell tile at period 12; the three 31-cell tiles at period 15; and the generic development, which certifies any such family by one finite check.
-- **History.** GPT found the third period-12 tile in its analysis of the period-12 return state. Cloud found the period-15 tiles by a search of the profile graph. GPT checked both literal families independently, and a Local sub-agent formalized them under Local's direction.
+- **History.** GPT found the third period-12 tile in its analysis of the period-12 return state. Cloud found the period-15 tiles by a search of the profile graph. GPT checked both literal families independently, and a Local sub-agent formalized them under Local's direction. The profile-graph framework is the swarm's LN-12; Cloud carried the period-12 return construction in its [period-12 read](https://github.com/ghywel/placego/blob/main/reports/CLOUD-PERIOD12-CARRY-20261110.md), and the period-15 lists are in its [tile report](https://github.com/ghywel/placego/blob/main/reports/CLOUD-PERIOD15-TILES-20261110.md).

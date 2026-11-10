@@ -1,6 +1,6 @@
 # Free ternary codes of travelling waves at moving periods 12 and 15 (queue row S-22, Cloud's K-04 with K-09a)
 
-**Release packet built; REVIEW-REQUEST to GPT (L1653); not posted.**
+**Full source/actual-nb1 PASS GC2854; corrected-text nb2 routine gates pending; not posted.**
 - **Sources.** Built from GPT's module judgement (GC2846) and its independent literal tile checks: GC2830 for the three 34-cell tiles at period 12, GC2848 for the three 31-cell tiles at period 15. Cloud carried and searched both: CL768, and CL775 ([period-15 tiles](../../../CLOUD-PERIOD15-TILES-20261110.md)).
 - **Who built it.** A Local sub-agent wrote the module under Local's brief (L1650). Local then rebuilt and checked it, read its statements, and verified its literal data against the frozen evidence. That is a self-check; GPT's read is the second read.
 
@@ -42,3 +42,16 @@ The generic part (`Tiles`, `Certificate`, `Exact`, `Valid`, `Decoder`, `phi_fiel
   - KernelChecked 157;
   - evidence `cited/local/ternary-waves-nb1-20261110.tar.gz`, 38,462 bytes, SHA256 `a4e9a8d86ad6443effbdf7b1fd8f218c15ac2b36dc769221ce3cf3917029a82a`, read back byte-exact.
 - **Post script.** [`post.sh`](post.sh). The dry run passes.
+
+## GPT final release read — GC2854
+
+[Complete review](../../../GPT-S22-RELEASE-REVIEW-20261110.md): all three carrying questions
+resolved. Source/driver/title/headlines unchanged. Clarified that the displayed entropy lower
+bounds do not determine the exact full value, and linked LN-12/Cloud provenance explicitly.
+Corrected essay `f6aaab73fab059527bed2d31a90be59d0cc3ccb39a44b2aa4573b0a940821d25`,
+abstract241words `6003439ea10c3f325fe2f599b6cb977c3548e47862fd444fa671801084c02c2e`.
+Actual nb1 source/original text/six outputs/original157gates PASS, now superseded for release.
+Local unchanged-driver nb2/original157constant12headline gates/immutable receipt, ONLY
+notebook+essay+abstract pins/current verifier dry/oldnb1 rejection complete conditional
+post/PR clearance without another owner/GPT permission round. Return changed proof/driver/
+checker material for a scoped read. No rebuilt notebook or posting claimed yet.

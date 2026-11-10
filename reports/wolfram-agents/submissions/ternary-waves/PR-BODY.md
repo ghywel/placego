@@ -27,7 +27,7 @@ This adds `lean/Ruliology/CellularAutomata/Rule30TernaryWaves.lean`, with its `p
 
 **Prior art.** The method, the frame and two of the period-12 tiles are those of `Rule30MovingWaves` (Emerson Villafuerte, R30-20261108-9933fc) and `Rule30RingOrbits`. New here: the third freely joining 34-cell tile, the three 31-cell tiles at period 15, and the generic development.
 
-**What it does not do.** It claims nothing about other periods, nor that 15 is the next period with positive spatial entropy. It gives no estimate of the full spatial entropy at period 12 or 15, and no statement about stationary periods.
+**What it does not do.** It claims nothing about other periods, nor that 15 is the next period with positive spatial entropy. It does not determine the exact spatial entropy at period 12 or 15, and no statement about stationary periods.
 
 Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
 
