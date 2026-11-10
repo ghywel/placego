@@ -85,7 +85,7 @@ The kit's statements read at source (`Rule30Problem3`): Problem3 (no machine wit
 
 ## 7. What is left (after batches 1 to 4 and the atlas batch)
 
-Doors: of 94, settled 10, carried in batches 1 to 4: 45 (batch 4 by GPT, GC2828); the 39 card-only doors remain. Atlas: of 33 entries, 4 carried or posted since the compile, 12 carried through the door batches and §8, 15 of the 17 atlas-only entries carried in §9 (some on stated conditions), 2 (BR-2.2, BR-2.3) with GPT. Leftovers and their owners are in §9.4.
+Doors: of 94, settled 10, carried in batches 1 to 4: 45 (batch 4 by GPT, GC2828); the 39 card-only doors remain. Atlas: of 33 entries, 4 carried or posted since the compile, 12 carried through the door batches and §8, 15 of the 17 atlas-only entries carried in §9 (some on stated conditions), 2 (BR-2.2, BR-2.3) with GPT. Leftovers and their owners are in §9.4. *CL768:* BR-6.1's resolution-size statements, left over at §9.2, are carried in §10; GPT took BR-2.2, BR-2.3 and the XP-3.2 replay at GC2831.
 
 ## 8. The six pieces set aside in batch 3, processed (CL765)
 
@@ -151,10 +151,48 @@ Read in the raw archive against the kit; own checks in `cloud_atlas_checks.py` a
 
 | Item | Owner | Why |
 |---|---|---|
-| BR-2.2 and BR-2.3 (Theorems 3 to 6 of the BR-2 report) | GPT | It read that report at source for B2+ in batch 2 and has its definitions |
-| Replay of XP-3.2's certificates (`cert.py`, `cert2.py`) | Local or GPT | Needs scipy and the swarm's modules; minutes |
-| BR-6.1's resolution-size statements; LN-02.1 (iii), (iv) and the all-t step; RS-4 (c2), (c3); LN-03.1's last sentence | Cloud, next block | Short reads left over here |
+| BR-2.2 and BR-2.3 (Theorems 3 to 6 of the BR-2 report) | GPT (taken, GC2831) | It read that report at source for B2+ in batch 2 and has its definitions |
+| Replay of XP-3.2's certificates (`cert.py`, `cert2.py`) | GPT (taken, GC2831) | Needs scipy and the swarm's modules; minutes |
+| LN-02.1 (iii), (iv) and the all-t step; RS-4 (c2), (c3); LN-03.1's last sentence | Cloud, next block | Short reads left over here. BR-6.1's resolution-size statements were carried at CL768, §10 |
 | XP-2.2's block table (b ≤ 8); CT-3.1's plateaus at widths 32 to 34; RS-2 T5(iv) | Local, bench, if wanted | The swarm's computations; none carries a verdict above |
 | Poonen 2014, Theorem 1 | whoever next has the paper | Cited, not opened |
 
 **Kit candidates from this batch, for the owner's word:** the all-configuration form of the width-5 and width-6 column-1 constraints with an explicit onset (BR-5.2; a small module in the style of `Rule30GateTrapWords`); history invisibility (BR-5.3; a two-case lemma on finite predecessors); Theorem D with the one-sided Hedlund lemma (a rigidity statement for K).
+
+## 10. BR-6.1: the resolution-size statements for rules 90 and 150 (CL768)
+
+Left without a carry at §9.2. Source: the raw BR-6 report, section 3, in the swarm archive. Hand steps read first, then
+[my own generator and checks](../tests/probes/swarm/sw02/carry/cloud_br61_resolution.py)
+([output](../tests/probes/swarm/sw02/carry/cloud_br61_resolution.out)); predictions Q1 to Q5 were pushed first (CL767) and all five held.
+
+**The formula.** Variables x(k, t) for depth k ≥ 1, tick t ≥ 0, k + t ≤ T + 1. Axioms: the rule x(k, t+1) = x(k+1, t) xor h(x(k, t), x(k−1, t)) with x(0, t) = 0; units x(1, 2s) = 1 for 2s ≤ T; units x(k, 0) = 0 for W < k ≤ T + 1. Rule 90 is h(b, c) = c, rule 150 is h = b xor c, rule 30 is h = b or c. Each rule constraint is written by its prime implicates (4, 8 and 6 clauses per cell). The formula is unsatisfiable exactly when T ≥ D(W), the largest first even white tick over rows of width W.
+
+**(a) Rule 90. Carried: PROVED, hand, two-party (Local's swarm, Cloud's read).**
+1. Sideways the rule reads x(k+1, t) = x(k, t+1) xor x(k−1, t). All three cells have the same parity of k + t. So the cells with k + t odd form a closed system, and its boundary is the wall (0) and column 1 at even ticks (all 1). No free bit enters.
+2. By induction on k, x(k, t) = φ(k) for k + t odd, where φ(0) = 0, φ(1) = 1, φ(k+1) = φ(k) xor φ(k−1): Fibonacci mod 2, zero exactly when 3 divides k.
+3. At t = 0 this fixes every odd depth of the row. Let k* be the least odd k > W not divisible by 3. If T + 1 ≥ k*, depth k* must be 1 and is 0 by the width unit. So D_90(W) ≤ k* − 1.
+4. Equality: the row with φ(k) at odd depths up to W and zeros elsewhere agrees with φ at every odd depth up to k* − 1, because the odd depths between W and k* are multiples of 3. The assignment x(k, t) = φ(k) on the odd cells satisfies the forward rule (φ(k) = φ(k+1) xor φ(k−1)), so by forward determinism column 1 is black at every even tick up to k* − 2.
+5. **Proof size.** Each step of 2 is one unit propagation on a three-literal xor clause. So unit propagation alone refutes the formula when T ≥ k* − 1. A unit-propagation refutation that sets m literals gives an input resolution refutation of at most m + 1 steps: start from the falsified clause and resolve away its literals in reverse order of propagation, each against the clause that propagated it; a literal's reasons were set earlier, so nothing returns. Input refutations are tree-like. So rule 90 has **tree-like refutations with O(T²) steps**, and hardness 0. (The source cites Chang 1970 from memory for this step; the direct argument above replaces the citation.)
+
+COMPUTED: for W = 2..40 unit propagation refutes exactly when T ≥ k* − 1 (tested at D − 2, D − 1, D, D + 1, D + 6), the Fibonacci row satisfies T = k* − 2, and the number of literals set before the conflict at T = D is exactly (T + 2)²/4 at every width printed (441 at W = 40, of 861 variables).
+
+**(b) Rule 150. Carried: PROVED, hand, two-party, for the width-bounded refutation.**
+1. Sideways x(k+1, t) = x(k, t+1) + x(k, t) + x(k−1, t). Using it at the cells (k+1, t), (k, t+1), (k, t) and (k−1, t) gives the **four-cell identity** x(k+2, t) = x(k, t+2) + x(k, t) + x(k−2, t) for k ≥ 3, and x(3, t) = x(1, t+2) at the wall. I rederived both; the source's nine cells and four axioms are right.
+2. All four cells of the identity have k odd and t even together. Induction on odd k: column k is black at every even tick inside the triangle. The base is the units on column 1; the step is 1 + 1 + 1 = 1, and each needed cell lies in the triangle whenever the target does.
+3. So every odd depth of the row is black, and the least odd depth above W contradicts its width unit as soon as T ≥ 2⌈W/2⌉. Equality D_150(W) = 2⌈W/2⌉ follows from the count law S_W(t) = 2^(W − ⌊t/2⌋ − 1) > 0 for t < W, which holds for every rule of the form left xor h(centre, right) by the sideways bijection (the kit's `count_constrained` argument).
+4. **Proof size.** Each identity is derived from its four axioms inside nine cells, then three unit resolutions give the next black cell. There are at most (T + 2)²/8 steps. So the refutation has O(T²) clauses and constant width, and it reuses derived units, so it is not tree-like as written.
+
+COMPUTED: the identity is implied by its four axioms (all 512 assignments) and derivable by resolution at **width 5, not at width 4** (72 derived clauses used); the wall case at width 4 (22 clauses). With the identity clauses added, unit propagation refutes exactly when T ≥ 2⌈W/2⌉ for W = 2..40, and a satisfying row exists at T = D − 1. Unit propagation alone refutes at no width.
+
+**(b′) An addition of mine: rule 150 has hardness at most 3 at every width. PROOF-SKETCH (Cloud; wants a second reader) on a COMPUTED local fact.** The source lists "rule 150 tree-like bound only measured" as open, with hardness 3 measured to W = 14.
+- Local fact, COMPUTED: the nine-cell formula of one identity step, with its three known cells set black and its conclusion negated, is refuted by level-2 propagation (hardness 2), and so is the wall case.
+- Level-k propagation r_k adds a literal whenever the formula with that literal negated is refuted at level k − 1, and repeats. It is monotone in the clause set. So at level 3, once the three cells of a step are forced, the next odd-column cell is forced, and the induction of step 2 runs inside r_3. Hence hd(φ_150(W, T)) ≤ 3 for every W and every T ≥ 2⌈W/2⌉.
+- A level-k refutation unwinds into a decision tree: branch on each forced literal in turn; the negated branch closes by a level-(k − 1) tree, and the last node closes by unit propagation. With n variables this gives size O(n^(k+1)), so rule 150 has **tree-like refutations of size polynomial in T** (the exponent from this count is not optimised). The known sharp form is the Beyersdorff–Kullmann characterisation the source cites (arXiv 1310.7627), which I have not opened.
+- COMPUTED: hardness is exactly 3 at W = 6 and 8 in my code, so the bound is attained there.
+
+**(c) The barrier. Carried.** Rules 90 and 150 belong to the family left xor g(centre, right) with g(0,0) = 0 and g(0,1) = 1 (the family of the kit's `Rule30Realization`), they have rule 30's count law for t < W and its 2^⌊W/2⌋ free-bit leaves, and their deadlines are linear in W. Rule 90's formulas have hardness 0 and tree-like size O(T²); rule 150's have width 5 and polynomial size, tree-like included. So **no theorem whose hypotheses hold for every such g with a finite deadline can conclude a superpolynomial lower bound on resolution size, tree-like size or width.** A lower bound for the rule 30 formulas has to use the OR. This says nothing about whether the rule 30 formulas are hard: that stays open in every proof system.
+
+**Controls and the measured table.** COMPUTED: for rule 30 unit propagation refutes only at W = 2. My own level-k code reproduces the source's hardness numbers at T = D(W) in the prime encoding: rule 30: 0, 1, 2, 2 at W = 2, 4, 6, 8; rule 150: 1, 2, 3, 3; rule 90: 0 to W = 10. Brute-force deadlines agree with the closed forms for W = 2..12 and give rule 30's 6, 6, 6, 8, 10, 12, 12, 18, 18, 30, 30. The unexpected test: with an arbitrary target word on column 1 in place of all-black, unit propagation refutes rule 90's formula for exactly the targets no row realises (952 targets at W = 4, 7, 10, of which 71 realised), as the source's last remark says.
+
+**Not carried here, and whose it is.** The source's CaDiCaL conflict table for rule 30 (W = 20..34) and its verdict INCONCLUSIVE stand as MEASURED by the swarm; no DRAT check was run and I did not replay it. The source's hardness values for rule 210 and for rule 150 at W = 10..14 are not replayed. Rule 210's unexplained easiness is the source's own open pull. All three sit with Local's bench if the owner wants them; none carries a verdict above.
+

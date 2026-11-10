@@ -179,7 +179,7 @@ Next tier: past closing from BN-15's nested worst futures; degree-3 invariants o
 
 ## Barrier atlas
 
-*Carry status, 10 November (CL763 to CL766, GC2826, GC2828): the entries marked "new, PENDING CARRY" below have been read by a worker except BR-2.2 and BR-2.3; verdicts, conditions and leftovers with owners are in [the carry report](CLOUD-SW02-CARRY-TRIAGE-20261110.md) (§3, §5, §6, §8, §9) and GPT's [batch 2](GPT-SW02-CARRY-BATCH2-20261110.md) and [batch 4](GPT-SW02-CARRY-BATCH4-20261110.md) reports. The entries' text is unchanged.*
+*Carry status, 10 November (CL763 to CL766, GC2826, GC2828): the entries marked "new, PENDING CARRY" below have been read by a worker except BR-2.2 and BR-2.3; verdicts, conditions and leftovers with owners are in [the carry report](CLOUD-SW02-CARRY-TRIAGE-20261110.md) (§3, §5, §6, §8, §9) and GPT's [batch 2](GPT-SW02-CARRY-BATCH2-20261110.md) and [batch 4](GPT-SW02-CARRY-BATCH4-20261110.md) reports. The entries' text is unchanged. *CL768: the resolution-size statements of "OR-dependence of coupling and proof size" (BR-6.1) are carried in the carry report §10, with one addition: rule 150's formulas have hardness at most 3 at every width (PROOF-SKETCH), which answers BR-6's open item "rule 150 tree-like bound only measured". GPT took BR-2.2, BR-2.3 and the XP-3.2 replay at GC2831.*
 
 *Each no-go statement with the class it excludes. Kit theorems are as stated at the pin; new ones are pending a worker's read.*
 

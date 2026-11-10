@@ -1,0 +1,14 @@
+prime implicates per constraint (generic cell, wall cell): {90: (4, 2), 150: (8, 4), 30: (6, 4)}
+brute-force D for W = 2..12: {90: [4, 4, 4, 6, 6, 10, 10, 10, 10, 12, 12], 150: [2, 4, 4, 6, 6, 8, 8, 10, 10, 12, 12], 30: [6, 6, 6, 8, 10, 12, 12, 18, 18, 30, 30]}
+Q1 rule 90, W = 2..40: unit propagation refutes exactly when T >= k* - 1, and the Fibonacci row satisfies T = k* - 2: True
+   (W, D, literals propagated before the conflict at T = D, variables, clauses): [(2, 4, 9, 15, 38), (6, 6, 16, 28, 77), (11, 12, 49, 91, 297), (21, 22, 144, 276, 982), (31, 34, 324, 630, 2334), (40, 40, 441, 861, 3222)]
+   propagated / (T+2)^2 at T = D: [0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25]
+Q2 rule 150, W = 2..40: with the four-cell identity added, unit propagation refutes exactly when T >= 2*ceil(W/2), and a row satisfies T = D - 1: True
+   unit propagation alone refutes at T = D for W in: []
+   generic identity (k >= 3): implied by its four axioms: True | axiom clauses 32 | derived clauses used, by width bound: {4: None, 5: 72}
+   wall identity (k = 1), x(3,t) = x(1,t+2): implied: True | derived clauses used, by width bound: {2: None, 3: None, 4: 22}
+Q3 rule 30: unit propagation alone refutes at T = D(W) for W in: [2]
+Q4 hardness at T = D(W), prime encoding (None = above 3): {90: {2: 0, 4: 0, 6: 0, 8: 0, 10: 0}, 150: {2: 1, 4: 2, 6: 3, 8: 3}, 30: {2: 0, 4: 1, 6: 2, 8: 2}}
+   source's table: rule 30: 0, 1, 2, 2 (W = 2, 4, 6, 8); rule 150: 1, 2, 3, 3; rule 90: 0 throughout
+Q5 rule 90, arbitrary target words: unit propagation refutes exactly the unrealised targets: True | targets tested 952 of which realised 71
+seconds 6.7

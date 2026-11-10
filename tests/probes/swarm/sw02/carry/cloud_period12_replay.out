@@ -1,0 +1,56 @@
+pairs 16777216 with an even drive (two children) 8390656
+forward-infinite pairs 2662380 rounds 16
+core (pairs on a two-sided infinite path) 270 rounds 15
+core edges 326
+strongly connected components with a cycle: 12 ; transient core pairs: 45
+component shapes (vertices, edges): count -> [((1, 1), 1), ((2, 2), 1), ((10, 10), 3), ((12, 12), 1), ((30, 32), 6)]
+components with more edges than vertices: 6
+P1: component of U: vertices 30 edges 32 branch vertices [(1323, 2868), (2772, 3372)]
+   first return U -> U cells 14
+   first return U -> V cells 10
+   first return V -> V cells 14
+   first return V -> U cells 10
+P1 verdict: PASS
+P2: component index under rotation by 0..11 ticks: [8, 3, 5, 6, 2, 7, 8, 3, 5, 6, 2, 7]
+P2 verdict: PASS | 6-cycle True | six ticks swap U,V True | no fixed pair True | every pair has least temporal period 12 True
+P4: family pairs 180 | core edges leaving the family 0 | core edges entering the family 36
+     edge (1443, 3666) -> (1373, 1443)
+     edge (1131, 2652) -> (2986, 1131)
+     edge (2646, 3705) -> (2986, 2646)
+    other cyclic components (vertices, edges): count -> [((1, 1), 1), ((2, 2), 1), ((10, 10), 3), ((12, 12), 1)]
+    other components with branching: 0
+    core edges not inside one cyclic component (links and transients): 89
+    least temporal period of core pairs: count -> [(1, 2), (2, 4), (6, 48), (12, 216)]
+P4 verdict: FAIL (see counts)
+   word 0 L 14 spatial 14 ordinary period 84
+   word 1 L 10 spatial 20 ordinary period 30
+   word 01 L 24 spatial 48 ordinary period 48
+   word 011 L 34 spatial 34 ordinary period 204
+   word 0011 L 48 spatial 48 ordinary period 48
+P3: primitive words tested 106 mismatches 0 []
+P3 verdict: PASS
+   tile 011 1000111111000010001110001111110000 cells 34 matches GPT's string: False
+   tile 101 1000111111000010001110000000100011 cells 34 matches GPT's string: False
+   tile 110 1000111111000010001111110000100011 cells 34 matches GPT's string: False
+   bits at offsets 20, 23: {'011': '10', '101': '10', '110': '11'}
+   closed walks at U by cell length (<= 40): {14: ['0'], 20: ['11'], 28: ['00'], 34: ['011', '101', '110'], 40: ['1111']}
+P5 verdict: FAIL
+   after a one-cell shift of the window: {'011': True, '101': True, '110': True} | bits at offsets 20, 23: {'011': '01', '101': '00', '110': '10'}
+P5 after alignment: PASS
+S6: edges directly between two different cyclic components: 0
+S6: transient core pairs 45 by least temporal period [(1, 1), (2, 2), (6, 18), (12, 24)]
+   component (2, 2, [2]) black cells at tick 0 on its cycle: 1 | reaches family phases (rotation index, link length): [] | reaches other cycles (size, link length): []
+   component (1, 1, [1]) black cells at tick 0 on its cycle: 0 | reaches family phases (rotation index, link length): [] | reaches other cycles (size, link length): [(2, 3)]
+   component (10, 10, [6]) black cells at tick 0 on its cycle: 7 | reaches family phases (rotation index, link length): [(1, 4), (4, 4)] | reaches other cycles (size, link length): [(2, 2)]
+   component (12, 12, [12]) black cells at tick 0 on its cycle: 6 | reaches family phases (rotation index, link length): [(0, 2), (1, 2), (2, 2), (3, 2), (4, 2), (5, 2)] | reaches other cycles (size, link length): []
+   component (10, 10, [6]) black cells at tick 0 on its cycle: 4 | reaches family phases (rotation index, link length): [(0, 4), (3, 4)] | reaches other cycles (size, link length): [(2, 2)]
+   component (10, 10, [6]) black cells at tick 0 on its cycle: 4 | reaches family phases (rotation index, link length): [(2, 4), (5, 4)] | reaches other cycles (size, link length): [(2, 2)]
+   rotation by one tick sends component (2, 2, [2]) black 1 to component (2, 2, [2]) black 1 | same component: True
+   rotation by one tick sends component (1, 1, [1]) black 0 to component (1, 1, [1]) black 0 | same component: True
+   rotation by one tick sends component (10, 10, [6]) black 7 to component (10, 10, [6]) black 4 | same component: False
+   rotation by one tick sends component (12, 12, [12]) black 6 to component (12, 12, [12]) black 6 | same component: True
+   rotation by one tick sends component (10, 10, [6]) black 4 to component (10, 10, [6]) black 7 | same component: False
+   rotation by one tick sends component (10, 10, [6]) black 4 to component (10, 10, [6]) black 4 | same component: False
+S6: explicit entering configuration: right tail = 6 turns of a 10-cycle, link of 4 pairs, then 120 family pairs entered at rotation index 1
+    window of 184 cells: tau^12 x = x on the 160 checkable cells: True | tau^6 x = x on the whole checkable window: False | on the family part alone: False
+    row (increasing site; the family is on the left): 0110010000011101100100000111011001000001110110010000011101100100000111011001000001110110010000011101100100000111011001000001111110110011111011001111101100111110110011111011001111101100

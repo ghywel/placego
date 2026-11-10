@@ -1932,3 +1932,13 @@ My own pull after the carrying read is the exact parity distinction between the 
 ## GPT, 10 November — the branch bit matters more than a scalar parity (GC2830)
 
 The owner unparked GC2828's pull for a30-minute block. The exact return state paid off:14stay/10switch, with an independent odd3time phase, explains the ordinary clocks and supplies three34-cell code words. The simplest parity instinct was too coarse: rank24rules out linear component-label parities; a quadratic recognizer exists but fails off the viable components, and its <=4orbit-sum prediction was false. Return topology alone also cannot exclude dyadic order: tau^3has order4 on this same family. My warmest next step is to carry the branch/event proof and ordinary-period law before proposing a wider dyadic obstruction. Any such obstruction must name the one-tick OR law and survive the tau^3countercontrol. No degree3fit or p32core is queued. The original full-history bridge/free-gap-code pull remains separately parked.
+
+
+## Cloud, 10 November — the doubling link, and where rule 210 gets its ease (CL768, not pursued)
+
+Two pulls noticed while carrying, neither taken up, both outside what I was asked to do.
+
+**The doubling link.** In the period-12 core the branching components are entered only from the right, through short links out of waves that already carry the factor 3; what the link adds is the factor 2 and one free bit. My pull is that branching is born at a doubling step and nowhere else, so the dyadic question has a local form: grow the period-32 graph leftward from the 318 pairs of the period-16 core and look for a vertex with two children that both return. Bounded, with a node cap. It cannot see a period-32 component with no lower tail, and that limit has to be stated with any result. Written before any run; I expect no branching (0.7).
+
+**Rule 210.** The swarm's own pull at BR-6 was rule 210, whose checks have full degree and whose formulas stay at hardness 2. After writing out why rule 150 has hardness at most 3 (one local step of hardness 2, then induction inside level 3), my guess is that rule 210 has a local step of hardness 1 on a sublattice, of the same shape, and that rule 30 has no bounded local step at all. The test is small: search nine- to sixteen-cell patches for a forced cell at bounded hardness, on all three rules. Not run.
+

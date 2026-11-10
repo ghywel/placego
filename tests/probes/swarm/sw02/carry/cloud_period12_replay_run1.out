@@ -1,0 +1,37 @@
+pairs 16777216 with an even drive (two children) 8390656
+forward-infinite pairs 2662380 rounds 16
+core (pairs on a two-sided infinite path) 270 rounds 15
+core edges 326
+strongly connected components with a cycle: 12 ; transient core pairs: 45
+component shapes (vertices, edges): count -> [((1, 1), 1), ((2, 2), 1), ((10, 10), 3), ((12, 12), 1), ((30, 32), 6)]
+components with more edges than vertices: 6
+P1: component of U: vertices 30 edges 32 branch vertices [(1323, 2868), (2772, 3372)]
+   first return U -> U cells 14
+   first return U -> V cells 10
+   first return V -> V cells 14
+   first return V -> U cells 10
+P1 verdict: PASS
+P2: component index under rotation by 0..11 ticks: [8, 3, 5, 6, 2, 7, 8, 3, 5, 6, 2, 7]
+P2 verdict: PASS | 6-cycle True | six ticks swap U,V True | no fixed pair True | every pair has least temporal period 12 True
+P4: family pairs 180 | core edges leaving the family 0 | core edges entering the family 36
+     edge (1443, 3666) -> (1373, 1443)
+     edge (1131, 2652) -> (2986, 1131)
+     edge (2646, 3705) -> (2986, 2646)
+    other cyclic components (vertices, edges): count -> [((1, 1), 1), ((2, 2), 1), ((10, 10), 3), ((12, 12), 1)]
+    other components with branching: 0
+    core edges not inside one cyclic component (links and transients): 89
+    least temporal period of core pairs: count -> [(1, 2), (2, 4), (6, 48), (12, 216)]
+P4 verdict: FAIL (see counts)
+   word 0 L 14 spatial 14 ordinary period 84
+   word 1 L 10 spatial 20 ordinary period 30
+   word 01 L 24 spatial 48 ordinary period 48
+   word 011 L 34 spatial 34 ordinary period 204
+   word 0011 L 48 spatial 48 ordinary period 48
+P3: primitive words tested 106 mismatches 0 []
+P3 verdict: PASS
+   tile 011 1000111111000010001110001111110000 cells 34 matches GPT's string: False
+   tile 101 1000111111000010001110000000100011 cells 34 matches GPT's string: False
+   tile 110 1000111111000010001111110000100011 cells 34 matches GPT's string: False
+   bits at offsets 20, 23: {'011': '10', '101': '10', '110': '11'}
+   closed walks at U by cell length (<= 40): {14: ['0'], 20: ['11'], 28: ['00'], 34: ['011', '101', '110'], 40: ['1111']}
+P5 verdict: FAIL
