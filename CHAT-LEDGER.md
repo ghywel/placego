@@ -37022,3 +37022,26 @@ logs have private worktree paths normalized; both raw and normalized digests
 are retained. Data stays outside git.
 
 My own pull: the one-tick dyadic obstruction remains parked; the assigned carry debt takes priority.
+
+## CL769 — Cloud: takes the three short reads left from the atlas batch (LN-02.1, RS-4, LN-03.1); predictions before the replays (2026-11-10 18:00 GMT)
+
+At the owner's word. These are the last three rows of the triage report §9.4 that were mine. The sources are the raw LN-02, RS-4 and LN-03 reports in the swarm archive (SHA256 c231157f…d94c), read in full for the parts named. No prize statement.
+
+**What is being read.**
+- **LN-02.1:** the hand step giving D_(t−1) D_(t−2) a_t = (t − 1) mod 2 for every t (CL766 had it COMPUTED to t = 12); the chain bound (iii); the additive bound (iv).
+- **RS-4:** part (c2), the explicit count model and its threshold; part (c3), the prefix datum, the entropy bound and the existence sketch below the threshold.
+- **LN-03.1:** the free words of the three witness rows, and the last sentence: closing at finite rows alone is equivalent to Q01.
+
+*Record searched:* the three raw reports; CL766's §9 for what was already carried; kit 03a19bf by direct search for the lemmas the sources lean on (`Theta_unique`, `Theta_dep`, `count_constrained`, `testBit_F_succ_of_top`, `merge_preserves_last_black`, `deriv_evol_diag_succ`, `walsh_center_eq_zero`, `free_not_eventuallyPeriodic` all present; `HomoclinicClosing` is not on main, it is PR52's); `record_find.py` on "second derivative" and "prefix datum" (the swarm documents and unrelated uses only). The index refresh still fails from this host (HTTP 403).
+
+**Predictions, before any run.** Frame: zero-boundary half-row, a_t = depth 1 at tick t as a function of row bits y_0..y_t.
+- R1 (0.9). The chain of weights, run exactly for 2 ≤ t < 2000, ends with an odd weight after k_t − 1 steps where k_t = 1 + 2^v2(t+1), whenever t + 1 is not a power of 2. At t = 2^m − 1, m ≤ 10, the weights vanish, the last constant is 1 and k_t = (t + 1)/2.
+- R2 (0.9). For t = 2..16 and every row, the derivative of a_t over the chain's coordinate set is 1 (exhaustive).
+- R3 (0.95). For t = 1..16 the largest additive Fourier coefficient of (−1)^a_t is at most 1/(2^t sin(π/2^(t+1))), with equality at t = 1, 2, and every even frequency vanishes.
+- R4, the unexpected test (0.5). A coordinate set S has derivative identically 1 exactly when S is an inclusion-maximal monomial of the algebraic normal form of a_t. So the best certificate of this kind is the smallest maximal monomial of size at least 2. Prediction: for odd t from 5 to 19 that size equals k_t. *Counterfactual:* a smaller one improves bound (iii) at that t to 1 − 2^(1−size), and a size of 2 at every odd t would give the uniform bound 1/2 the source leaves open. Whatever the table is, it is recorded.
+- R5 (0.9). The (c2) model, rebuilt from its definition (blocks 1,1,0,y,0,x,0; A and B as forward block maps): the block maps act as stated at all seven phases; the elements σ^a u(h) are pairwise distinct on a box (words of at most 10 letters, a ≤ 20); with y = 0 they are not, and σ^7 h = A h.
+- R6 (0.95). For every integer family with q ≤ 4, 1 ≤ w_i ≤ 10 and κ ≤ 1: a_c² ≤ 2^c and T(s)² < 64·2^s for all c, s ≤ 200, in exact arithmetic.
+- R7 (0.85). The (c2) model breaks the prefix datum at B = 10 for w = (3, 3): two distinct elements of size at most 10 share their first 5 symbols.
+- R8 (0.95). Exactly, on eventually periodic normal forms: G A = C, G C = A, G B = C; depth 1 of F A, F B, F C is 1, 0, 0; so the free words are (1,0,1,0,…), (0,0,1,0,1,…) and (0,1,0,1,…).
+
+Caps: one process, 4 GiB address space, ten minutes. Not replayed by plan, and it will be said so: the swarm's box computations for the (c3) pointer model, where my contribution is the hand read of the union bound.
