@@ -3,19 +3,21 @@ import Ruliology.CellularAutomata.Rule30Realization
 /-!
 # A sharp black-count ceiling on five adjacent Rule 30 columns
 
-For every Rule 30 trajectory, five adjacent physical columns contain at most `3*T+2`
-black cells in any interval of `T` ticks, including its first row and excluding its endpoint.
-The exact endpoint estimate uses `H(u)=max(0,2-pop(right four cells of u))`, range0..2.
-Its local inequality is a check on seven Boolean input cells; induction then telescopes it.
-`evol_five_column_bound` covers every initial configuration and starting time;
-`cell_five_column_bound` uses the official singleton diagram. The constant2 is sharp atT1,
-and the fixed alternating configuration gives exactly3*T black cells at every horizon.
+For every Rule 30 trajectory, five adjacent physical columns contain at most `3 * T + 2` black
+cells in any interval of `T` ticks, counting its first row and not its endpoint.
 
-The local-bound summation and bounded-potential method are standard; related count-transfer
-bounds are in rule30-open Columns.ColumnTransfer and the source-dependent bound of kit PR253.
-The particular certificate and its scope are P2-3.1 of this programme, carried in GC2810.
-Known spin/count identities (G4.1, GC2296 and Cappallo's OEIS A070952 formula) are context,
-not new claims here. No single-column density, seed-specific gain or prize result follows.
+The proof uses the potential `H(u) = max(0, 2 - pop(right four cells of u))`, with values in
+`0..2` (`potential_bounds`). On seven Boolean input cells, `pop(u) - 3 ≤ H(v) - H(u)`, where `u`
+is the middle five cells and `v` their update, with both exterior cells free (`local_potential`).
+Summing along a trajectory telescopes it (`telescope`, `five_column_bound`), and the window has at
+least `2 * T - 2` white cells (`white_column_bound`). `evol_five_column_bound` covers every
+initial configuration and starting time, and `cell_five_column_bound` the official singleton
+diagram. The constant `2` is needed at `T = 1` (`sharp_constant`), and the fixed alternating
+configuration has exactly `3 * T` black cells in a window at every horizon (`sharp_rate`).
+
+Summing local inequalities and telescoping a bounded potential is a standard method. Nothing here
+bounds the density of a single column or gives a positive lower density, and Problems 1 to 3 stay
+open.
 -/
 
 namespace Rule30Submission
@@ -71,7 +73,7 @@ theorem step_potential (x : Nat → Int → Bool)
   simpa only [weight, pot, h0, h1, h2, h3, h4] using
     local_potential (x t (p-1)) (x t p) (x t (p+1)) (x t (p+2)) (x t (p+3)) (x t (p+4)) (x t (p+5))
 
-/-- Count includes time0 and excludes timeT; the exact endpoint potential is retained. -/
+/-- The count includes time `0` and excludes time `T`; the exact endpoint potential is kept. -/
 theorem telescope (x : Nat → Int → Bool)
     (hx : ∀ t i, x (t+1) i = rule (x t (i-1)) (x t i) (x t (i+1))) (p : Int) (T : Nat) :
     count x p T ≤ 3 * (T : Int) + pot (x T) p - pot (x 0) p := by
@@ -135,7 +137,7 @@ theorem evol_alternating : ∀ t p, evol alternating t p = alternating p
   | 0, p => rfl
   | t+1, p => by rw [evol, evol_alternating t (p-1), evol_alternating t p, evol_alternating t (p+1)]; exact rule_alternating p
 
-/-- The rate3 is attained on an actual fixed row for every horizon. -/
+/-- The rate `3` is attained on an actual fixed row at every horizon. -/
 theorem sharp_rate (T : Nat) : count (evol alternating) 0 T = 3 * (T : Int) := by
   have he : evol alternating = fun _ => alternating := funext fun t => funext fun p => evol_alternating t p
   rw [he]
@@ -144,7 +146,7 @@ theorem sharp_rate (T : Nat) : count (evol alternating) 0 T = 3 * (T : Int) := b
   | zero => rfl
   | succ t ih => simp only [count, hw]; omega
 
-/-- The additive constant2 is required already at horizon1 on a real row. -/
+/-- The additive constant `2` is needed already at horizon `1`, on an actual row. -/
 theorem sharp_constant : count (evol (fun _ => true)) 0 1 = 5 := by decide
 
 end Rule30Submission
