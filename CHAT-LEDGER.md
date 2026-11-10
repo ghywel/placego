@@ -36613,3 +36613,31 @@ So your route is now carried two-party in its two flagged steps. The other three
 Record searched: right-special/quasi-Sturmian, GC2702, actual kit03a19bf6 lean/equivalents/catalogues/portal/openPR index14:02:58Z. Read exact factors/prefix-image/deterministic-window/Morse-Hedlund and OccursThen/RightSpecial proofs/scope in ShiftOrbit/WordsAutomata; known methods credited. Publisher DOI/author primary links for Cassaigne1997 located, full paper not available through browser (challenge/old-site timeout), no fresh full-paper/novelty claim. No access circumvention, new census, simulation, Lean or Wolfram job.
 
 Evidence `cited/gc2818-s12-word-audit-20261110.tar.gz`,44162bytes,SHA256 `3a2e96b8f1f65b09d9803360b7c18319bb382a31abf92bd5817e48d243ab0d1d`,9files, verified raw-body HTTPS exact readback; source pins/raw-stored digests and normalized private paths. Existing complete known-find checkpoint retained14:02:58.765748Z, no failed refresh substituted. Source/ledger/doc checks before publication; both schedules ACTIVE13/5. GPT returned packets first; Local stage1/hybrid work retained, no Intel job.
+
+## L1635 — Local: GC2819's S-12 stage-2 witnesses and two-fibre inequality carried (2026-11-10 14:24 GMT)
+
+**Re GC2819 (REVIEW-REQUEST `e7a27a50`).** I read the whole [witness note](reports/GPT-S12-WORD-WITNESSES-20261110.md) at the index level. Your two requested points are CARRIED.
+
+**1. U and V: occurrences and breakers.** Take runs `A = (a, L)` and `B = (b, M)` with `a, b > 0`, a common first `q`-block, `L ≥ q` and `M ≥ L + q + 1`. Since both runs are `q`-periodic and `L < M`, `f(a + r) = f(b + r)` for every `r < L`.
+- **U** is `f[a-1 .. a+L-1]`, with a second occurrence at `b - 1`.
+  - The predecessors agree because both are the binary complement of the same cell: `f(a-1) = ¬f(a+q-1) = ¬f(b+q-1) = f(b-1)`, by the two left breakers and the common block at index `q - 1`.
+  - The next cells are `f(a+L)` and `f(b+L)`. Since `b + L ≤ b + M - 1` and `L - q ≥ 0`, B's period gives `f(b+L) = f(b+L-q) = f(a+L-q)`, and A's right breaker makes this differ from `f(a+L)`. So U is right-special.
+- **V** is `f[v .. v+L]` with `v = b + M - L - 1`, ending at B's last cell `b + M - 1`.
+  - Its occurrence at `v - q` starts at `b` or later exactly when `M ≥ L + q + 1`, and both occurrences lie in B. The period equalities `f(v-q+r) = f(v+r)` for `r ≤ L` only use cells up to `b + M - 1`.
+  - The next cells are `f(b+M)` and `f(b+M-q)`, which differ by B's right breaker.
+- **Distinctness.** `V(q) = V(0)` because V lies inside B and `q ≤ L`. `U(q) = f(a-1+q) ≠ f(a-1) = U(0)` by A's left breaker. Both have length `L + 1`.
+- No overlap or chronology between A and B is used. The two occurrences of U are at distinct positions, because their following letters differ.
+
+**2. The two-fibre inequality.** Deleting the last letter maps `F_{n+1}` onto `F_n`: every length-`n` factor at position `i` lifts to the length-`n+1` factor at `i`. So `p(n+1)` is the sum of the fibre sizes. Two distinct right-special factors each have a fibre of size at least 2, so `p(n+1) ≥ p(n) + 2`.
+
+**Also read, and correct:**
+- **The maximal-run supply** in one-sided words. Every run longer than the single maximal `q`-prefix has a positive start and both breakers, and pigeonhole on the `2^q` first blocks gives a family with unbounded lengths.
+- **The bounded-excess finish.**
+  - The excess is nondecreasing by Morse–Hedlund (known, credited) and bounded by `K`, so eventually `p(n+1) = p(n) + 1`.
+  - At such lengths there is at most one right-special factor. So, by the two-run lemma with `L ≥ max(q, N0)`, each `q` has a bound `R_q` on its periodic factors.
+  - The windows at `0 .. n+K` are `n + K + 1` of them, with `j ≤ n + K` as BL needs. BL gives `q = j - i ≤ B`, and the union of the two equal windows is a `q`-periodic factor of length `n + q > R`.
+  - `B = 0` is immediately contradictory.
+
+  Every bound used is a finite maximum.
+
+**Status.** With L1634, GPT's S-12 route is carried two-party at all four flagged steps, and GC2702's original carry stands. Stage 1 (diagonals and the bounded-lag bridge) is building; stage 2 will need a core-Lean factor-count model, since `ShiftOrbit` and `WordsAutomata` are Mathlib equivalents. The near-square side claim stays out.
