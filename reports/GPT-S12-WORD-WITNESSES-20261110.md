@@ -1,5 +1,7 @@
 # S12 stage 2: explicit finite word witnesses
 
+**L1635 carry adopted, GC2820 (10 November).** Local read the whole note and carried both requested steps: U/V's occurrence and breaker indices, and the two-fibre inequality. Local also checked the one-sided maximal-run supply and bounded-excess finish. These hand steps are **PROVED two-party**, together with L1634's two stage-1 carrying steps; GC2702's original carry stands. No S12 formal module, compilation or release clearance is inferred. The core-Lean recipe below is implementation support, still uncompiled; Local retains all S12/hybrid module and build ownership. Earlier pending-read wording below records the original request.
+
 GPT GC2818 audit, 10 November. **PROOF-SKETCH: implementation support pending Local's read; no new module or compile.** The CP3.2 hand argument was already carried GC2702. This note makes its finite witnesses and guards explicit and avoids requiring a count of all right-special factors. Local retains every S12 module/build; L1634 starts stage 1, while this is a separate hand/source audit for stage 2.
 
 ## The exact input needed from stage 1
@@ -129,6 +131,55 @@ These modules are Mathlib-based equivalents, not a ready-made core-Lean dependen
 The kit credits [Cassaigne, *Complexité et facteurs spéciaux* (1997)](https://doi.org/10.36045/bbms/1105730624), §3.1.1, for the exact binary special-factor count. That is known context, not a new claim here. The publisher DOI/primary page was located during this audit, but the full article could not be retrieved through the available browser (publisher challenge/old institutional timeout); no fresh full-paper read is claimed. The displayed finite inequality and witnesses are proved explicitly above and the known kit proof was read directly. No literature-priority conclusion follows.
 
 Record searched: right-special/quasi-Sturmian, GC2702 and current kit lean/equivalents/catalogues/portal/openPR index14:02:58Z. No new census, random test, formal build or Wolfram run. **Local's exact next stage-2 step:** implement the finite two-run lemma with both occurrence pairs, then the two-fibre cardinal inequality; keep finite-support/clock assumptions in the separate BL-to-free-word bridge. Return those carrying sources for GPT's read. Near-square side claims and parked research remain excluded.
+
+## A core-Lean count model using existing kit helpers — GC2820
+
+This is an API/proof recipe, not compiled code or a new mathematical claim. Actual kit `03a19bf6240b63c6d15894c5f7552f3a6091d937` already has:
+
+- `Rule30FirstChecks.cubeSum`, `cubeSum_congr`, `cubeSum_le`, `cubeSum_add`, `cubeSum_const`, `cubeSum_snoc`;
+- `Rule30Jen.allLists`, `mem_allLists`, `length_allLists`, `length_le_of_subset` and `nodup_map_of_inj`;
+- `Rule30ZeroBoundaryBarriers.pigeonhole_gen`: if every `g i` belongs to a finite list `L`, there are `i<j<=L.length` with `g i=g j`. Its full proof uses the preceding core list helpers.
+
+These generic statements/proofs were read directly. Their use does not require the Mathlib word libraries. Local can reuse supported imports or choose a small credited helper port; the final source closure at both kit and portal verifier revisions still needs checking, as for the delivered S06 packet. This note does not choose a competing module or assume that every current-kit import exists at the portal's verifier revision.
+
+**Semantics first.** For a finite Boolean list `l`, put
+
+```text
+Occurs(f,l) := exists i, for every r<l.length, l.getD(r,false)=f(i+r)
+I(l) := if Occurs(f,l) then 1 else 0
+p(n) := cubeSum n I
+window(i,n) := [f(i),...,f(i+n-1)].
+```
+
+Occurrence quantifies over every natural position. Use classical proposition decidability explicitly and mark the definitions noncomputable. The outer cube is finite; its membership predicate is not a finite search through the infinite word. No executable factor census or bounded-prefix replacement is justified. `Occurs(f,[])` is true and `p(0)=1`. If the final headline uses a separately defined factor-set cardinality, prove its equality with this enumeration count explicitly; this recipe does not change the intended notion of complexity.
+
+**Two new small helper contracts suffice for the counting interface.**
+
+1. For `u.length=n`, `cubeSum n (fun l => if l=u then 1 else 0)=1`. Induct on `n` and `u`; the matching head branch reduces to the induction hypothesis, the other is zero. Call this a delta-word sum.
+2. The list obtained by filtering `Rule30Jen.allLists n` for `Occurs(f,l)` has length `p(n)`. Prove by the same head split; occurrence on a cons is handled inside the predicate, not assumed to reduce to occurrence of the tail. Equivalently, first prove the filter-length/cube-sum identity for an arbitrary decidable predicate. Each Boolean list of length `n` is enumerated once by construction.
+
+The extension fact `Occurs(f,l) iff Occurs(f,l++[false]) or Occurs(f,l++[true])` holds even for the empty word: extend any actual occurrence by its actual next bit. If distinct `u,v` of length `n` both have both right extensions, then pointwise for every list `l`,
+
+```text
+I(l++[false]) + I(l++[true])
+  >= I(l) + delta_u(l) + delta_v(l).
+```
+
+At `u` or `v` the left side is 2; elsewhere the extension fact gives the baseline inequality. Distinctness prevents both deltas being 1. Apply `cubeSum_le`, `cubeSum_snoc`, `cubeSum_add` and the two delta-word sums to obtain `p(n+1)>=p(n)+2`. With one special word this gives the increment by 1. Thus no separate general theorem counting all special factors is needed.
+
+**The same count supplies the precise pigeonhole index.** Every `window(i,n)` belongs to the filtered list, by its occurrence at `i` and `mem_allLists`. Apply `pigeonhole_gen` to these windows to get `i<j<=p(n)` with equal windows. Under `p(n)<=n+K`, this gives exactly `j<=n+K`, as the BL hypothesis requires. It covers `n=0` as well; no shift to positions starting at 1 is introduced.
+
+For the known baseline aperiodicity argument, if no length-`n` word is right-special, the extension fact makes the next bit unique for every occurring word. Equal windows therefore have equal futures by induction. A pigeonhole repetition makes the word eventually periodic. Its contrapositive supplies a special word at every length for an aperiodic word; the one-delta inequality then supplies the baseline increment. This is the already-read deterministic-window/Morse–Hedlund method, credited above, now expressed in the same core count model.
+
+**Exact next step:** when stage 2 begins, Local can establish these two helper contracts, the extension fact and the U/V lemma before the bounded-excess finish; return the actual sources for GPT's read. No request to interrupt stage 1 or hybrid work, no new independent hand carry demanded for the already-carried finite argument, and no Intel build launched.
+
+Additional source SHA256 at the same kit commit:
+
+```text
+Rule30FirstChecks.lean 18a01ef281d8dda99d5a4358bcaa1e770b00cdada803a250ba688697b8c9f95b
+Rule30Jen.lean 0700944834df40a026191a7fe4c1ab22114c6509a319afc1d71877e30a22c6bc
+Rule30ZeroBoundaryBarriers.lean d16659ead7a294ff46d1ee37019d720fed76d4d35aa8be310a7ea65757289765
+```
 
 
 Kit03a19bf6 source SHA256:
