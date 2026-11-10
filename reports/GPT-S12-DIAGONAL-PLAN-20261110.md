@@ -23,7 +23,7 @@ j+2 <= m+t
   ==> E(j+2,t+1) = E(j,t) XOR (E(j+1,t) OR E(j+2,t)).
 ```
 
-To check the boundary, put k=m+t-(j+2)>=0. The updated child is at depth k+1, and its three input depths are k+2, k+1 and k. These are precisely the three displayed E values. **Equality in the guard is valid:** the old child is the white wall k=0, while the new child is at depth 1, where `zrow_succ` applies. Below this guard, natural subtraction must not be used to pretend the recurrence holds. For each fixed j it therefore holds from time `(j+2)-m`, using natural subtraction.
+To check the boundary, put k=m+t-(j+2)>=0. The updated child is at depth k+1, and its three input depths are k+2, k+1 and k. These are precisely the three displayed E values. **Equality in the guard is valid:** the old child is the white wall k=0, while the new child is at depth 1, where `zrow_succ` applies. Below this guard the recurrence may fail, so natural subtraction must not be used to assert it without another argument. No converse to the sufficient guard is claimed. For each fixed j it therefore holds from time `(j+2)-m`, using natural subtraction.
 
 The suitable abstract interface is:
 

@@ -7,6 +7,8 @@ M1 the entry guard one step early; M2 the second diagonal black from time 0; M3 
 M4 the two-run lemma with M >= L + q; M5 a right-special factor of every length for every word;
 M6 the complexity bound without the aperiodicity hypothesis.
 
+GPT GC2823 review amendment: M6 tests the unchanged proof after changing a parameter. Its conclusion is still true, since bounded lag alone excludes eventual periodicity. The recorded rejection is structural, not a semantic counterexample or proof that the explicit aperiodicity parameter is necessary.
+
 Run from the kit's lean/ directory: python3 -I PATH/mutate_zero_wall_diagonals.py MODULE OUTDIR
 """
 import os

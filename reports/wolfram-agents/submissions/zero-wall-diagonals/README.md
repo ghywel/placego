@@ -4,7 +4,7 @@
 
 ## What the module proves
 
-`Rule30ZeroWallDiagonals` is core Lean, 1,242 lines, and imports `Rule30LeftUnbounded` and `Rule30ZeroBoundary`. It has twenty headlines; see [`headlines.txt`](headlines.txt) and the PR body. The main result is `freeWord_complexity`: for `FinSupp L` and `InX L`, every `K` has `N` with `n + K < factorCount (freeWord L) n` for all `n ≥ N`. It is conditional, since such rows exist only if `Q01` fails. The diagonal package (`E_entry`, `E_tailLeft`, `tail_*`, `E_black_unbounded`) holds for every finite row.
+`Rule30ZeroWallDiagonals` is core Lean, 1,242 lines, and imports `Rule30LeftUnbounded` and `Rule30ZeroBoundary`. It has twenty headlines; see [`headlines.txt`](headlines.txt) and the PR body. The main result is `freeWord_complexity`: for `FinSupp L` and `InX L`, every `K` has `N` with `n + K < factorCount (freeWord L) n` for all `n ≥ N`. It is conditional, since such rows exist only if `Q01` fails. The moving-edge diagonal package requires a nonzero finite row with a last black cell at positive depth; `E_entry` itself needs no support/nonzero hypothesis. The abstract `tail_*` lemmas require all of `TailLeft`, including both eventually black base coordinates.
 
 | Form | File | sha256 | Check |
 |---|---|---|---|

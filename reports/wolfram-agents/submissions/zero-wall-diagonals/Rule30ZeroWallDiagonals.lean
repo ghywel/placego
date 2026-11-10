@@ -1139,7 +1139,7 @@ theorem perRun_bounded {f : Nat → Bool} (hnp : ¬ EventuallyPeriodic f) {N0 : 
   have := hrs (L + 1) (by omega)
   omega
 
-/-- **Bounded lag forces superlinear-plus-slack complexity.** Let `f` be not eventually periodic,
+/-- **Bounded lag forces unbounded additive factor-complexity excess.** Let `f` be not eventually periodic,
 and let bounded-slack repeats of `f` have bounded lag. Then for every `K`, eventually
 `n + K < factorCount f n`. If not, the excess `factorCount f n - n` is bounded and nondecreasing,
 hence eventually constant; then there is eventually one right-special factor per length, so

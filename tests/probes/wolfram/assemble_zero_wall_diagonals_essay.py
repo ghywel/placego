@@ -25,7 +25,7 @@ Template: ComputationalEssay
 Name: {title}
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-11-10
-Description: Core Lean. Zero-wall left diagonals of rule 30 obey their recurrence from entry time, giving eventually black diagonals of every large index; hence a surviving finite row would have a free word with bounded-lag repeats and unbounded factor-complexity excess. Conditional on Q01 failing.
+Description: Core Lean. Zero-wall left diagonals of nonzero finite rule-30 rows obey their recurrence under the entry guard, giving eventually black diagonals at arbitrarily large indices; hence a surviving finite row would have a free word with bounded-lag repeats and unbounded factor-complexity excess. Conditional on Q01 failing.
 Abstract: {abstract}
 Keywords: [rule 30, Rule 30 Prize, period two, Q01, zero-boundary left half, left diagonals, factor complexity, right-special factors, Sturmian words, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]

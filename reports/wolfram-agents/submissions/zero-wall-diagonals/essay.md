@@ -3,8 +3,8 @@ Template: ComputationalEssay
 Name: If a Finite Row Survives, Its Free Word Is Not Sturmian-Like: Zero-Wall Diagonals, Bounded Lag and Rising Factor Complexity
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-11-10
-Description: Core Lean. Zero-wall left diagonals of rule 30 obey their recurrence from entry time, giving eventually black diagonals of every large index; hence a surviving finite row would have a free word with bounded-lag repeats and unbounded factor-complexity excess. Conditional on Q01 failing.
-Abstract: In core Lean 4.35.0 we prove what a counterexample to the kit question Q01 would have to look like. A finite start of the zero-boundary left half of rule 30 that survives every even check is a finitely supported constrained row, and its values at the odd steps form its free word f. For such a row, for every K, the number of distinct length-n factors of f exceeds n + K for all large n; f cannot have the bounded complexity excess of Sturmian words. The route is unconditional up to its last step. For every finite row with last black cell at depth m, the diagonals measured from the moving edge obey the left-diagonal recurrence exactly from their entry time, when j + 2 <= m + t, equality included. From this we port the kit single-seed diagonal theory with entry-time guards: eventual periods 2 to the power j, a finite profile bound, and eventually black diagonals of arbitrarily large index. These force bounded lag for bounded-slack repeats of the free word. A word argument with explicit right-special witnesses then turns bounded lag into unbounded complexity excess. The free-word theorems are conditional: such rows exist only if Q01 fails. Nothing here decides Q01.
+Description: Core Lean. Zero-wall left diagonals of nonzero finite rule-30 rows obey their recurrence under the entry guard, giving eventually black diagonals at arbitrarily large indices; hence a surviving finite row would have a free word with bounded-lag repeats and unbounded factor-complexity excess. Conditional on Q01 failing.
+Abstract: In core Lean 4.35.0 we prove what a counterexample to the kit question Q01 would have to look like. A finite start of the zero-boundary left half of rule 30 that survives every even check is a finitely supported constrained row, and its values at the odd steps form its free word f. For such a row, for every K, the number of distinct length-n factors of f exceeds n + K for all large n; f cannot have the bounded complexity excess of Sturmian words. The abstract word lemmas and the diagonal theory for nonzero finite rows are unconditional. For every nonzero finite row with last black cell at depth m >= 1, the diagonals measured from the moving edge obey the left-diagonal recurrence whenever j + 2 <= m + t, equality included. From this we port the kit single-seed diagonal theory with entry-time guards: eventual periods 2 to the power j, a finite profile bound, and eventually black diagonals of arbitrarily large index. These force bounded lag for bounded-slack repeats of the free word. A word argument with explicit right-special witnesses then turns bounded lag into unbounded complexity excess. The free-word theorems are conditional: such rows exist only if Q01 fails. Nothing here decides Q01.
 Keywords: [rule 30, Rule 30 Prize, period two, Q01, zero-boundary left half, left diagonals, factor complexity, right-special factors, Sturmian words, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]
 Links: ["[Rule 30 Prizes](https://rule30prize.org/)"]
@@ -21,7 +21,7 @@ These are conditional theorems. They say something only if `Q01` fails, and noth
 
 The route has two parts that hold unconditionally.
 - **Zero-wall diagonals.** For any finite row with last black cell at depth `m ≥ 1`, measure diagonals from the moving edge: `E j t = zrow L t (m + t - j)`.
-  - `E_entry`: the left-diagonal recurrence holds exactly from the time the diagonal enters the half-line, `j + 2 ≤ m + t`, equality included.
+  - `E_entry`: the left-diagonal recurrence is guaranteed under the entry guard `j + 2 ≤ m + t`, equality included.
   - `E_tailLeft` packages the edge-measured diagonals as an array whose recurrence holds at each index from some time on (`TailLeft`).
   - For every such array: each coordinate is eventually periodic with period `2^j` (`tail_periodic`); finitely many `Q`-periodic coordinates obey `M + 3 ≤ 4^Q` (`tail_profile_bound`); eventually white coordinates are unbounded, never adjacent, and followed two later by an eventually black one (`tail_white_unbounded`, `tail_no_two_white`, `tail_black_after_white`).
   - So eventually black diagonals occur at arbitrarily large index (`tail_black_unbounded`, `E_black_unbounded`).
@@ -33,7 +33,7 @@ The route has two parts that hold unconditionally.
 
 ## 2. Zero-wall diagonals
 
-The recurrence `E (j+2) (t+1) = E j t xor (E (j+1) t or E (j+2) t)` is rule 30 solved for its left input, read along the diagonal at fixed distance `j` from the edge. It is the kit's `zrow_succ` at depth `m + t - (j + 2)`. At equality the right input is the wall at depth `0`, which is white, so the recurrence still holds there. One step earlier the updated cell would be the wall itself, and the recurrence fails. The worked numbers show both.
+The recurrence `E (j+2) (t+1) = E j t xor (E (j+1) t or E (j+2) t)` is rule 30 solved for its left input, read along the diagonal at fixed distance `j` from the edge. It is the kit's `zrow_succ` at depth `m + t - (j + 2)`. At equality the right input is the wall at depth `0`, which is white, so the recurrence still holds there. One step earlier the updated cell would be the wall itself, so this derivation no longer applies. The recurrence can hold accidentally outside the guard; the worked numbers exhibit a point where it fails. The guard is a sufficient domain for the identity, not an if-and-only-if condition.
 
 So a diagonal obeys the recurrence only from its entry time. The kit's single-seed left-diagonal theory (`Rule30Diagonals`, `Rule30LeftReset`, `Rule30LeftUnbounded`) assumes the recurrence from time `0`. Here every argument takes the maximum of finitely many entry and period thresholds, and never one threshold for infinitely many indices. The periodic-profile bound reuses the kit's array-free inverse map and its pigeonhole: the `M + 3` profile pairs, the ghost pairs before the edge included, are pairwise distinct, so `M + 3 ≤ 4^Q`.
 
@@ -43,11 +43,11 @@ Two steps of the constrained row shift its free word by one place (`row_eq_Theta
 
 Take an eventually black diagonal `b ≥ m + 2K - 1` with black onset `T`, and suppose the lag `j - i` exceeds `max(b/2, (T+1)/2)`. Then the later row has a black cell at depth `m + 2j - b`. That depth lies beyond the earlier row's support but inside the agreed range, which is a contradiction (`lag_le_of_black`). This gives `freeWord_bounded_lag`.
 
-For the words, suppose `p(n) ≤ n + K` for arbitrarily large `n`. The excess `p(n) - n` never decreases, so it is eventually constant, and then there is exactly one right-special factor per length. By `two_run`, the `q`-periodic factors then have bounded length for each `q` (`perRun_bounded`). But two equal windows among the first `n + K + 1` positions have lag at most `B`, and their union is a periodic factor longer than any of those bounds. So `p(n) - n → ∞`.
+For an aperiodic word, suppose `p(n) ≤ n + K` for arbitrarily large `n`. The excess `p(n) - n` never decreases, so it is eventually constant, and then there is exactly one right-special factor per length. By `two_run`, the `q`-periodic factors then have bounded length for each `q` (`perRun_bounded`). But two equal windows among the first `n + K + 1` positions have lag at most `B`, and their union is a periodic factor longer than any of those bounds. So `p(n) - n → ∞`.
 
 ## 4. Scope
 
-- **Conditional.** The free-word theorems apply to finitely supported constrained rows, which exist only if `Q01` fails. If `Q01` holds they are vacuous. The diagonal theorems hold for every finite row.
+- **Conditional.** The free-word theorems apply to finitely supported constrained rows, which exist only if `Q01` fails. If `Q01` holds they are vacuous. The moving-edge black/white diagonal theorems require a nonzero finite row with a last black cell at positive depth. The entry identity itself needs no support or nonzero hypothesis.
 - **No rate.** `p(n) - n → ∞` is qualitative. No rate is claimed.
 - **Excluded.** The queue's separate near-square claim is not part of this module.
 - **The count.** `factorCount` counts factor codes below `2^n`. `le_factorCount` and `factorCount_le` show it is exactly the number of distinct factors.
@@ -58,7 +58,7 @@ The cell below runs the zero-boundary left half from the single black cell at de
 - whether the edge-diagonal recurrence holds at every point inside the guard `j + 2 ≤ m + t`, for `j ≤ 12`;
 - whether it fails somewhere just outside the guard;
 - whether each of `E_0, …, E_10` is periodic on the window `400 ≤ t < 600` with a period dividing `2^j`, and those minimal periods;
-- whether the Fibonacci word, the standard Sturmian word, has exactly `n + 1` factors and one right-special factor of every length `n ≤ 12`.
+- whether the displayed 20,000-bit Fibonacci prefix exhibits exactly `n + 1` factors and one right-special factor at each tested length `n ≤ 12`. This is a finite illustration; the infinite word is the standard Sturmian example.
 
 That last line shows the boundary case `freeWord_complexity` excludes for free words.
 
@@ -1232,7 +1232,7 @@ theorem perRun_bounded {f : Nat → Bool} (hnp : ¬ EventuallyPeriodic f) {N0 : 
   have := hrs (L + 1) (by omega)
   omega
 
-/-- **Bounded lag forces superlinear-plus-slack complexity.** Let `f` be not eventually periodic,
+/-- **Bounded lag forces unbounded additive factor-complexity excess.** Let `f` be not eventually periodic,
 and let bounded-slack repeats of `f` have bounded lag. Then for every `K`, eventually
 `n + K < factorCount f n`. If not, the excess `factorCount f n - n` is bounded and nondecreasing,
 hence eventually constant; then there is eventually one right-special factor per length, so
