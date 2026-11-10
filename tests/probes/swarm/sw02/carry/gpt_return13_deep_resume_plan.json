@@ -1,0 +1,81 @@
+{
+  "worker_stop": 86,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_return13_binary_cert.py": "652b6bd02784000929ebf083eec881430bfe04b3f1eecc0a2822a494c5fd4e2f",
+    "tests/probes/swarm/sw02/carry/gpt_lrat_format_controls.py": "92b08d0a72f83eb7b20c8bc4358ea6cfe26986a3029d886998b3da4f88db57e3",
+    "tests/probes/swarm/sw02/carry/gpt_return13_lrat.py": "467bed29611c6dd4b8c251a8a890d5d5d6621a512c7ff8e05e77aa14fd3fb332",
+    "tests/probes/ether_gap_solve.py": "11e02a0327a1527d08e2d61e53c500409ce38d705c5fc299a1ab32c53f724a2d",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
+    "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_control.py": "79ab88c7f843a0a9fe8fab1f23d3330a44720fe9b5d0487d9d171494249b85fa",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_leaves.py": "7169eb470f2f4ba5c66a0db7c6a8ca5d2f83efe5afe07fc718dbf2a20f954b4b",
+    "tests/probes/swarm/sw02/carry/gpt_return13_deep_roots.py": "35116afb392a6d87e111da341e947633e7ab5bc674cb08aba12d966f9f1ad424",
+    "tests/probes/swarm/sw02/carry/gpt_return13_deep_roots_plan.json": "0c6ee6996be3d920709a32685a6a420a53add088ab650aa713637b74decb77ce",
+    "tests/probes/swarm/sw02/carry/gpt_return13_deep_resume.py": "310e2c8ccb460e89b3c776500c20400e2ba7722fbf5d5a4b5b745eede31c2ef2"
+  },
+  "original_cnf_sha256": "badadbb38e00fb0c01991563f3fb6664ed2b78c9ab7254a36fa1bd818313fcd0",
+  "prediction": {
+    "retained": "independent checker and discharge certify the saved UNSAT proof without another solver call",
+    "untouched": "at least 13 of 15 new queries certify at unchanged cap and all required shifts",
+    "controls": "no completed or partially solved case gets a solver call"
+  },
+  "counterfactual": "Preserve a failed proof check, UNKNOWN or resource stop and reconsider. Stop on SAT or input mismatch. No original solver case is repeated.",
+  "limits": {
+    "aggregate_cpu_s": 91,
+    "wall_s": 269,
+    "tree_rss_mib": 768,
+    "max_procs": 8,
+    "file_mib": 16,
+    "disk_mib": 111,
+    "launch_free_mib": 4096,
+    "min_free_mib": 1024,
+    "swap_growth_mib": 4096,
+    "threads": 1,
+    "nice": 10,
+    "inner_aggregate_stop_cpu_s": 95,
+    "worker_soft_cpu_s": 12,
+    "worker_hard_cpu_s": 91
+  },
+  "jobs": [
+    {
+      "name": "deep-resume",
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_return13_deep_resume.py",
+        "tests/probes/swarm/sw02/carry/gpt_return13_deep_resume_plan.json"
+      ],
+      "cpu": 91,
+      "wall": 229,
+      "required_stdout_lines": [
+        "RETURN13_DEEP_RESUME_RECORDED"
+      ]
+    }
+  ],
+  "factors": [
+    "1111100111",
+    "1111111001",
+    "00001110010",
+    "00100100000",
+    "00101101111",
+    "01001000011",
+    "01111001101",
+    "10000101100",
+    "10100100001",
+    "10101101110",
+    "11001000010",
+    "11111001100",
+    "011111000111",
+    "110110111111",
+    "111111000110"
+  ],
+  "prior_receipt_sha256": "16b2d03f59d5f7ec99d92815303daba62cd3540e8a2b7dfad19cc90b4aecb712",
+  "full_plan_sha256": "0c6ee6996be3d920709a32685a6a420a53add088ab650aa713637b74decb77ce",
+  "interrupted": {
+    "label": "factor-1111001111",
+    "prefix_in_variable_order": "1111001111",
+    "cnf_sha256": "17b6153eb8746f54c4a0a10c37cdfbb772b1d08c5322ffd4c565da9e05bd896d",
+    "binary_sha256": "cdde222ab939ccb33016939e91e0aa28499dc079ec45bdada19f07ed79371e5d",
+    "checker_stdout_sha256": "c680d3bd38a04c7beee7d54999f8f00b43051f75a53cf2bd170ae0cc5f99eb5f"
+  }
+}

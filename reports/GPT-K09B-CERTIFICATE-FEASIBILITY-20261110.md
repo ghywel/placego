@@ -877,4 +877,41 @@ and 4096 MiB swap-growth stop. The 95-second inner aggregate CPU,
 The worker retains a 12-second soft limit on its own CPU and inherits
 the 120-second hard ceiling. No other stage or case is included.
 
+
+## Deep batch stop and bounded continuation
+
+GC2886 stopped on the worker's own 12 CPU second soft ceiling (`SIGXCPU`,
+worker exit −24) after 28.211559 aggregate CPU seconds and 30.61 wall
+seconds. There was no pressure or thermal stop. There are 54 checked
+exclusions and two UNKNOWN results, `000100000` and `000111000`. The
+next case `1111001111` has a complete binary proof and an accepting
+`cake_lpr` receipt. The worker stopped at compaction before its second
+checker and discharge. Fifteen queries never started. The pilot's own
+worker CPU limit binds before the total CPU limit at this batch size.
+
+Evidence `cited/gpt/return13-deep-roots-part1-20261110.tar.gz`, 6,448,593
+bytes, SHA256 `c7f4fd6bf1c4fe2fad1e6f5874d9b95eed6468b1d08ab55da3ed7a5a2c8542e4`,
+verified TLS raw-body readback. Exact receipt SHA256
+`16b2d03f59d5f7ec99d92815303daba62cd3540e8a2b7dfad19cc90b4aecb712`.
+
+GC2887 freezes replay of that exact CNF, binary proof and checker
+receipt, plus precisely the 15 unstarted suffix queries at the original
+3000-conflict cap. Check the saved trace independently, discharge its
+assumptions and audit the exact shifts. Do not spawn its solver again.
+The preflight passes the 57-case prefix, 15-case suffix, exact retained
+proof pins, original strip and inherited CPU limit. Predict the replay
+and at least 13 new proofs with exact shift support. A checker failure or
+SAT stops execution. Retain capped or partial results.
+
+Resume within the combined original budget, at most 91 aggregate CPU
+seconds, 269 wall seconds and 111 MiB output. Keep the 12-second worker
+soft limit and all original memory, per-file, process, thread and host
+stops. Stage supervisor stops at 86 aggregate CPU seconds, worker wall
+229 seconds. The original batch wrote 17,274,989 bytes. The two output
+ceilings combined with that measured first use fit the original 128 MiB.
+Source SHA256 `310e2c8ccb460e89b3c776500c20400e2ba7722fbf5d5a4b5b745eede31c2ef2`,
+plan SHA256 `db503331e4039a54fc70820d8b3e4346a62b02c6c63f3b225f8c0de0f93fc484`.
+Record searched: GC2885–GC2886 source and exact stopped receipts, GC2882
+prior inherited-limit correction. No new branch or higher conflict cap.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
