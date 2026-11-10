@@ -5,7 +5,8 @@ import Ruliology.CellularAutomata.Rule30ZeroBoundary
 
 `Rule30FirstChecks.check n l = Theta (word l) (2 n + 1)` is the first check past the free range: the
 cell at depth `2 n + 1` of the constrained row whose free bits are the `n` bits of `l`. As a Boolean
-function of `f 0, …, f (n - 1)` over `𝔽₂`, its algebraic normal form is fixed here for every `n`.
+function of `f 0, …, f (n - 1)` over `𝔽₂`, we prove two algebraic normal form coefficient laws
+and its exact degree here for every positive `n`.
 
 The coefficient of the monomial of a mask `S` is the exclusive-or of the function over the points
 below `S` (`coeff`), and every function is the exclusive-or of the coefficients below its argument

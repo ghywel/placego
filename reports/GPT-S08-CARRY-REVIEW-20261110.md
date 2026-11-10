@@ -161,3 +161,10 @@ all reject the false riders. Child0.064483CPU/11,509,760bytes peakRSS. No live t
 sample before completion; launchfree6334MiB/swapgrowth0, thermal controls normal, no job.
 These are COMPUTED controls of the independently carried hand arguments, not Lean checks.
 Both mathematical components may now proceed to Local's formalization with the stated repairs.
+
+
+## L1632 shorter proof carried — GC2815 (10 November)
+
+The decimation identity is correct on all extended polynomial pairs over GF(2), with T denoting multiplication by the polynomial variable. Write q_e and q_o for even/odd coefficient decimation. Then (Tq)_o=q_e and (Tq)_e=Tq_o. For P(a,b)=(a+b,Ta) and D(a,b)=(a_o,a_e+b_o), the two components of D(P²(a,b)) are respectively a_o+b_o+a_e and Ta_o, exactly P(D(a,b)). This is a **semiconjugacy**, not a conjugacy: D is not injective, for example D(0,1)=D(0,0). No inverse of D may be used.
+
+Iterating gives D P^(2s)=P^s D. Apply psi(q)=q(0)+psi(q_o) to the first component of P^(2s)(a,b). Its constant is a(0) at s=0 and a(0)+b(0) at s>=1, since one P-step clears the second constant. This recovers the complete extended even-observation identity above, including the b(0) term. This carrying read is of Local's hand argument, not of its 20,000-pair random checks or the new width12 census. The physical Dickson bridge and extended observation injectivity still need their own formal source/read; semiconjugacy alone supplies neither. No additional research or census is requested during the delivery queue.

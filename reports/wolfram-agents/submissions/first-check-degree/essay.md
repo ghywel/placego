@@ -4,7 +4,7 @@ Name: The First Check of the Zero-Boundary Left Half: Its Weight Is n mod 2, Its
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-11-10
 Description: Core Lean. For every n the first check of the zero-boundary left half has top ANF coefficient n mod 2 and degree n or n - 1, so its weight and the number of first-check survivors are congruent to n mod 2; in the other clock phase the weight is always odd. Nothing about the single seed.
-Abstract: In core Lean 4.35.0 we fix the algebraic normal form of the first check of the zero-boundary left half of rule 30 for every n. Keep column -1 black at every even step and let its values at the odd steps be n free bits. The first check past the free range is the cell at depth 2n + 1, the kit's Rule30FirstChecks.check. For n >= 1 its top coefficient is n mod 2, and for n >= 2 the coefficient of the monomial without the second free bit is n + 1 mod 2, so the check has degree n for odd n and n - 1 for even n. With the kit's first_check_count, the number of rows of width at most 2n that are black at column -1 at every even tick through 2n is congruent to n modulo 2. The Walsh sum is 2 mod 4 exactly at odd n >= 2, and 0 at n = 1. In the other clock phase, with the free bits at the even steps, the check has odd weight for every n. The proof is a derivative along the anti-diagonals of the reconstruction. Nothing here bears on the single seed.
+Abstract: In Lean 4.35.0 we prove two ANF coefficient laws and the exact degree of the first check of the zero-boundary left half of rule 30. Keep column -1 black at every even step and let its values at the odd steps be n free bits. The first check past the free range is the cell at depth 2n + 1, the kit's Rule30FirstChecks.check. For n >= 1 its top coefficient is n mod 2, and for n >= 2 the coefficient of the monomial without the second free bit is n + 1 mod 2, so the check has degree n for odd n and n - 1 for even n. With the kit's first_check_count, the number of rows of width at most 2n that are black at column -1 at every even tick through 2n is congruent to n modulo 2. The Walsh sum is 2 mod 4 exactly at odd n >= 2, and 0 at n = 1. In the other clock phase, with the free bits at the even steps, the check has odd weight for every n. The proof is a derivative along the anti-diagonals of the reconstruction. Nothing here bears on the single seed.
 Keywords: [rule 30, Rule 30 Prize, period two, zero-boundary left half, first check, algebraic normal form, degree, parity, Moebius transform, Walsh sum, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]
 Links: ["[Rule 30 Prizes](https://rule30prize.org/)"]
@@ -14,7 +14,7 @@ Links: ["[Rule 30 Prizes](https://rule30prize.org/)"]
 
 In the zero-boundary left half, keep column `-1` black at every even step and let its values at the odd steps be free bits `f 0, f 1, …`. The kit reconstructs the whole row from that column (`Rule30ZeroBoundary.Theta`). The first cell past `n` free bits is the cell at depth `2n + 1`, the kit's first check `Rule30FirstChecks.check n`, a Boolean function of `f 0, …, f (n - 1)`.
 
-This module fixes its algebraic normal form over `GF(2)` for every `n`. The coefficient of a monomial is the exclusive-or of the function over the points below its mask (`coeff`), and every function is the exclusive-or of the coefficients below its argument (`anf_expansion`).
+This module proves two coefficient laws in its algebraic normal form over `GF(2)`, and its exact degree for every positive `n`. The coefficient of a monomial is the exclusive-or of the function over the points below its mask (`coeff`), and every function is the exclusive-or of the coefficients below its argument (`anf_expansion`).
 - `top_coefficient`: for `n ≥ 1`, the coefficient of `f 0 ⋯ f (n - 1)` is `n mod 2`.
 - `omit_coefficient`: for `n ≥ 2`, the coefficient of the monomial of every free bit except `f 1` is `n + 1 mod 2`.
 - `check_degree`: so the check has degree `n` for odd `n` and `n - 1` for even `n`. At even `n` the top coefficient only bounds the degree; the second coefficient fixes it.
@@ -107,7 +107,8 @@ import Ruliology.CellularAutomata.Rule30ZeroBoundary
 
 `Rule30FirstChecks.check n l = Theta (word l) (2 n + 1)` is the first check past the free range: the
 cell at depth `2 n + 1` of the constrained row whose free bits are the `n` bits of `l`. As a Boolean
-function of `f 0, …, f (n - 1)` over `𝔽₂`, its algebraic normal form is fixed here for every `n`.
+function of `f 0, …, f (n - 1)` over `𝔽₂`, we prove two algebraic normal form coefficient laws
+and its exact degree here for every positive `n`.
 
 The coefficient of the monomial of a mask `S` is the exclusive-or of the function over the points
 below `S` (`coeff`), and every function is the exclusive-or of the coefficients below its argument

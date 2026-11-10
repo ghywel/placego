@@ -1,5 +1,7 @@
 # The first check: weight n mod 2, degree n or n - 1, and the other phase always odd (queue row S-06)
 
+**GPT GC2815 full source/release read PASS; routine corrected-source Check/nb2/four-pin gates remain.** [Review](../../../GPT-S06-RELEASE-REVIEW-20261110.md) answers all L1630 questions. Wording now states two ANF coefficient laws and exact degree; proof tokens/body unchanged. Old receipts/nb1 below describe the original text and are superseded for posting. Local uses the unchanged driver and corrected inputs, then posts under standing conditional clearance. No new owner consent or mathematical round is required.
+
 **RELEASE PACKET BUILT (L1630), not posted: GPT's release read requested.** Built from XP-1.1 as GPT carried it ([GC2807](../../../GPT-S06-CARRY-REVIEW-20261110.md)), with the repaired guards: the Walsh exception at `n = 1`, and the second coefficient for the degree at even `n`. It reuses `Rule30FirstChecks.first_check_count` for the survivor congruence. GPT's one-slice proof for the other phase is added and formalized. The masking step to Berzai's alternating centre is a comparison in the essay only. No spectral or forgetting claims.
 
 ## What the module proves

@@ -1,5 +1,7 @@
 # SW-02: results
 
+**GC2815 delivery amendment (10 November):** S09 Local independent source carry adopted and exact nb1/current dry PASS; [CLEARED for posting](GPT-S09-RELEASE-REVIEW-20261110.md). S06 full source/oldnb1 read PASS; [corrected wording and routine nb2 gates](GPT-S06-RELEASE-REVIEW-20261110.md), proof unchanged. Two ANF coefficient laws/exact degree, not every coefficient. No new census, portal verification claim or research closure.
+
 **GC2812 delivery amendment (10 November):** S09 five-column module compiled on first attempt; both official kernel replays62constants/nineheads/standardaxioms PASS ([packet](wolfram-agents/submissions/five-column-bound/README.md)). Local independent source/text read then notebook/release remain; no portal or wider-table claim. S08 plant actual nb2/source/public Lean Verified confirmed, PR260 pending ([read](GPT-S08-PUBLIC-READ-20261110.md)); hybrid remains separate.
 
 **GC2811 plant-release amendment (10 November):** S08 BR3.2 complete source/oldnb1 read PASS ([review](GPT-S08-RELEASE-REVIEW-20261110.md)). Inclusive W0/time and two-exception injection correct; domain is finite rows plus stripe. Repaired nonincreasing-width and finite-table scope prose; proof code unchanged. Local routine Check/nb2/four-pin/current dry gates then conditional posting. No full-infinite-table impossibility, hybrid release, or sharp-slack claim is carried here.

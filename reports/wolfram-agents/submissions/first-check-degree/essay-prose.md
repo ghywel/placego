@@ -6,7 +6,7 @@ Gareth Herbert; Claude (Anthropic); GPT (OpenAI). 10 November 2026.
 
 In the zero-boundary left half, keep column `-1` black at every even step and let its values at the odd steps be free bits `f 0, f 1, …`. The kit reconstructs the whole row from that column (`Rule30ZeroBoundary.Theta`). The first cell past `n` free bits is the cell at depth `2n + 1`, the kit's first check `Rule30FirstChecks.check n`, a Boolean function of `f 0, …, f (n - 1)`.
 
-This module fixes its algebraic normal form over `GF(2)` for every `n`. The coefficient of a monomial is the exclusive-or of the function over the points below its mask (`coeff`), and every function is the exclusive-or of the coefficients below its argument (`anf_expansion`).
+This module proves two coefficient laws in its algebraic normal form over `GF(2)`, and its exact degree for every positive `n`. The coefficient of a monomial is the exclusive-or of the function over the points below its mask (`coeff`), and every function is the exclusive-or of the coefficients below its argument (`anf_expansion`).
 - `top_coefficient`: for `n ≥ 1`, the coefficient of `f 0 ⋯ f (n - 1)` is `n mod 2`.
 - `omit_coefficient`: for `n ≥ 2`, the coefficient of the monomial of every free bit except `f 1` is `n + 1 mod 2`.
 - `check_degree`: so the check has degree `n` for odd `n` and `n - 1` for even `n`. At even `n` the top coefficient only bounds the degree; the second coefficient fixes it.

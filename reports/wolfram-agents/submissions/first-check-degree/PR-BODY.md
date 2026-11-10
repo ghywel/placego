@@ -2,7 +2,7 @@ Rule30FirstCheckDegree: the first check has degree n or n - 1, and its weight is
 
 This adds `lean/Ruliology/CellularAutomata/Rule30FirstCheckDegree.lean`, with its `public import` line in `lean/Ruliology.lean` after `Rule30FirstChecks` and a row in *Added in the kit* after the same module. It imports only `Rule30FirstChecks`.
 
-**What it proves.** It fixes the algebraic normal form of `Rule30FirstChecks.check n` for every `n`. The coefficient of a monomial is the exclusive-or over the subcube below its mask (`coeff`), and `anf_expansion` proves the Möbius inversion, so the degree is a formal statement (`IsDegree`).
+**What it proves.** It proves two algebraic normal form coefficient laws for `Rule30FirstChecks.check n`, and its exact degree for every positive `n`. The coefficient of a monomial is the exclusive-or over the subcube below its mask (`coeff`), and `anf_expansion` proves the Möbius inversion, so the degree is a formal statement (`IsDegree`).
 - `top_coefficient`: for `n ≥ 1`, the coefficient of `f 0 ⋯ f (n - 1)` is `n mod 2`.
 - `omit_coefficient`: for `n ≥ 2`, the coefficient of the monomial without `f 1` is `n + 1 mod 2`.
 - `check_degree`: the check has degree `n` for odd `n` and `n - 1` for even `n`.
@@ -30,7 +30,7 @@ This adds `lean/Ruliology/CellularAutomata/Rule30FirstCheckDegree.lean`, with it
   - the survivors `1, 2, 3, 4, 17, 38` for `n ≤ 6`, by direct simulation;
   - the Walsh sums;
   - the other phase.
-- Not run: the full catalog build (`bash build_all.sh`).
+- The full catalog was not validated. An uncapped `lake build Ruliology` attempt on Local's M5 was stopped before completion and supplies no receipt; `bash build_all.sh` was not run. The targeted module and official replays above passed.
 
 **Prior art.**
 - **Reused.** The check, `ones` and `first_check_count` are `Rule30FirstChecks`'s.

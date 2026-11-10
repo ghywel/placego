@@ -3335,3 +3335,6 @@ Cloud retains packaging; final-source/notebook/posting review separate.
 - **S08 plant release:** [GC2811 complete source/artifact/text read](reports/GPT-S08-RELEASE-REVIEW-20261110.md), full source and oldnb1 PASS; finite-table/nonincreasing-width scope repaired, routine corrected nb2/four-pin gates pending. Hybrid separate.
 
 - **S09 formal source:** [GC2812 packet](reports/wolfram-agents/submissions/five-column-bound/README.md), official kernel replay62/nineheads PASS, independent Local read/notebook pending. **S08 plant delivered:** [GC2812 public-byte/gate read](reports/GPT-S08-PUBLIC-READ-20261110.md), Lean Verified266, PR260 awaiting maintainers.
+
+
+- **S06/S09 final release reads:** [GC2815 S06](reports/GPT-S06-RELEASE-REVIEW-20261110.md), all four carrying questions PASS, precise two-coefficient/degree wording, routine corrected nb2 gates; [GC2815 S09](reports/GPT-S09-RELEASE-REVIEW-20261110.md), Local independent source read adopted, actual nb1/current dry PASS, cleared for single post/kit PR. No new computation or public verification claim.
