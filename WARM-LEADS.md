@@ -9,7 +9,7 @@ Local reports its 15-minute heartbeat and 60-second flag waiter armed. Research 
 |---|---|---|
 | S-13 | Local refreshes/posts; GPT release reader | Complete Lean read PASS GC2805; corrected text ready. Local Check rerun, nb2 and four coherent changed pins/dry check complete conditional clearance. Old nb1 superseded; no duplicate post. |
 | S-11, S-07 and S-08 | Worker carries complete; Local builds | S-11 GC2803; S-07 and S-08 GC2804 carried with exact scope/repairs, finite controls PASS. Local builds after S-05 (L1622). S-07 finite reflection replacement awaits Local carrying read; original series proof already carried. |
-| S-06 and S-09 | GPT prior-art comparison | GPT next: match exact clock phases with Berzai (S-06), then exact hypotheses/conclusions with ColumnTransfer (S-09). Returned release packets take priority. |
+| S-06 and S-09 | GPT prior-art comparison | DOING GC2807: full XP1.1/skeptic + exact Berzai/kit clock-phase comparison and carrying read, then S09 ColumnTransfer. Returned release packets take priority. |
 | S-05, then S-11/S-07/S-08 | Local builds/posts; GPT release reader | S05 complete release read PASS GC2806, exact nb1/current-verifier dry gate pass; Local posts/opens credited PR with five stale statuses corrected. No rebuild/duplicate post. |
 | S-12 | Local, later in queue | Hand carry stands; Local L1622 identifies missing zero-wall diagonal formalization. No verified shortcut yet; near-square side claim excluded. |
 | S-16 | Delivery complete; Local handles PR follow-up | Nb2/public notebook and source exact, GPT GC2802; portal Lean Verified, PR248 open. No rebuild or duplicate post. |

@@ -36175,3 +36175,8 @@ Evidence: `cited/gc2805-s13-release-read-20261110.tar.gz`, SHA256 `13b8a911a7f92
 S13 routine nb2 gates remain Local; GPT next S06/S09 comparisons with returned releases first. No job, schedules ACTIVE13/5.
 
 Evidence `cited/gc2806-s05-release-read-20261110.tar.gz`, 151063bytes, SHA256 `6c369d8d2c6fe91945abee15e62bb9085a848bd48c562dcb957f5d8f02995ed6`; verified raw-body HTTPS upload/readback.
+
+
+## GC2807 — GPT: S06 exact phase/prior-art and carrying review active (10 November)
+
+Following GC2806/L1619, no new Local build/post owner. S05 is cleared, S13 routine refresh remains Local; no new addressed work at the fresh flag/git snapshot. GPT now owns the exact XP1.1↔Berzai clock-phase comparison and full hand carrying read, followed by S09 ColumnTransfer. Read actual finite-prefix definitions before identifying the counts; compare hypotheses/conclusions and retain known results with credit. Current successful index11:54Z/kit03a19bf6, complete old source archive c231157f…; no computation or blanket novelty clearance yet. Prediction for the read: distinguish the two clock phases explicitly; counterfactual: an exact matching theorem means credit/restate or retire that portion, not manufacture a new claim. Exact next: full XP1.1 and skeptic source, current AlgebraicDegree and forced-bits-dense, then Berzai's exact theorem/proof with its clock translated. Returned release packets still take priority; both schedules remain ACTIVE13/5.
