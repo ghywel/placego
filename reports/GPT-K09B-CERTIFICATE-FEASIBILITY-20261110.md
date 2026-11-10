@@ -1219,4 +1219,36 @@ original-premise and cube interpretation in a separately checked step.
 The whole-line transport can reuse the same factor theorem at arbitrary
 origins, so the kernel route need not expand all 1,046 translated proofs.
 
+
+## Single-factor kernel pilot freeze
+
+GC2895 freezes a single Lean 4.35.0 kernel check of the exact compact
+`0110000` instance. Build `Rule30Jen`, `Rule30Prize`, `Rule30Realization`,
+`Rule30RingOrbits` and `Rule30MovingStrip` from the pinned kit sources
+in an isolated output tree. The generated proof source keeps the
+GC2893 premise literals and packed words. It splits input and RUP checks
+into at most 32 clauses or steps per `decide +kernel` theorem, then uses
+`initial_known`, `replayPackedN_sound` and `unsat_of_known_nil`. Expect
+clean compile and the exact printed axiom list with only ordinary
+logical axioms. A mismatch, diagnostic, compiler failure or guard stop
+ends the stage with evidence. There is no extra factor or whole-line
+claim in this pilot.
+
+Source `cited/gpt/return13-packed-kernel-control-20261110.lean`, 1,480,668
+bytes, SHA256 `3e552d171f5517dcdda8c57e7db45e8bfd9272b6e9814e1214b163c5618e7c8e`,
+verified TLS raw-body readback. The plan pins all five imports, the exact
+compiler identity and the two packed input files. Worker SHA256
+`87778776870174909e721fe9439200a7e1840aa2f987a7c9cbee56b9534ac687`,
+plan SHA256 `92d91b8cbeb8024bc2dd2ea581c5fbdb71df739bbfe3d44300866dbf6a996f98`.
+Record searched: GC2892–GC2894 and the pinned kit `MovingReturn01` and
+`Rule30MovingStrip` kernel proof forms.
+
+One 120 aggregate CPU second and 300 wall second stage, 8192 MiB
+process-tree RSS, 4096 MiB swap-growth stop, 4096/1024 MiB launch/running
+free memory. One thread at nice 10, at most eight processes, 16 MiB/file,
+128 MiB output, 260-second worker wall and 12-second supervisor own-CPU.
+Inner aggregate stop 95 CPU seconds, final Lean child 75 CPU/180 wall
+seconds, prior children at most 20 CPU/40 wall seconds each. Standard
+pressure, thermal and monitoring stops apply. No solver, Mathlib or P14.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

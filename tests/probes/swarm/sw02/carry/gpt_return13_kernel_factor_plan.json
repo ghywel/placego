@@ -1,0 +1,73 @@
+{
+  "worker_stop": 110,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_return13_binary_cert.py": "652b6bd02784000929ebf083eec881430bfe04b3f1eecc0a2822a494c5fd4e2f",
+    "tests/probes/swarm/sw02/carry/gpt_lrat_format_controls.py": "92b08d0a72f83eb7b20c8bc4358ea6cfe26986a3029d886998b3da4f88db57e3",
+    "tests/probes/swarm/sw02/carry/gpt_return13_lrat.py": "467bed29611c6dd4b8c251a8a890d5d5d6621a512c7ff8e05e77aa14fd3fb332",
+    "tests/probes/ether_gap_solve.py": "11e02a0327a1527d08e2d61e53c500409ce38d705c5fc299a1ab32c53f724a2d",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
+    "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_control.py": "79ab88c7f843a0a9fe8fab1f23d3330a44720fe9b5d0487d9d171494249b85fa",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_leaves.py": "7169eb470f2f4ba5c66a0db7c6a8ca5d2f83efe5afe07fc718dbf2a20f954b4b",
+    "tests/probes/swarm/sw02/carry/gpt_return13_kernel_factor.py": "87778776870174909e721fe9439200a7e1840aa2f987a7c9cbee56b9534ac687"
+  },
+  "prediction": {
+    "core": "all five pinned imports compile in isolation",
+    "kernel": "single compact factor closes with exact printed axiom set limited to the ordinary logical axioms",
+    "scope": "no full strip, other factor or P14 is compiled"
+  },
+  "counterfactual": "Stop at the first nonzero compiler result, unexpected diagnostic, axiom mismatch, or host/monitor cap. Preserve all outputs.",
+  "limits": {
+    "aggregate_cpu_s": 120,
+    "wall_s": 300,
+    "tree_rss_mib": 8192,
+    "max_procs": 8,
+    "file_mib": 16,
+    "disk_mib": 128,
+    "launch_free_mib": 4096,
+    "min_free_mib": 1024,
+    "swap_growth_mib": 4096,
+    "threads": 1,
+    "nice": 10,
+    "inner_aggregate_stop_cpu_s": 95,
+    "worker_soft_cpu_s": 12,
+    "worker_hard_cpu_s": 120
+  },
+  "jobs": [
+    {
+      "name": "kernel-factor",
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_return13_kernel_factor.py",
+        "tests/probes/swarm/sw02/carry/gpt_return13_kernel_factor_plan.json"
+      ],
+      "cpu": 120,
+      "wall": 260,
+      "required_stdout_lines": [
+        "RETURN13_KERNEL_FACTOR_RECORDED"
+      ]
+    }
+  ],
+  "kit_commit": "03a19bf6240b63c6d15894c5f7552f3a6091d937",
+  "kit_sources": {
+    "Rule30Jen": "0700944834df40a026191a7fe4c1ab22114c6509a319afc1d71877e30a22c6bc",
+    "Rule30Prize": "9d6bc9deff317ec056d9d321c1fb0373fdaba808d91112da3c7870e7562f283c",
+    "Rule30Realization": "da6444504fc3d9789ccdae0f042f63e980b6f0de1ce23958d5387e6d4999eac5",
+    "Rule30RingOrbits": "61fbff78da7c93e345d789a35396de373b42c25040eb66e227a5460af4a34e24",
+    "Rule30MovingStrip": "0836be6971aac516ea20df016a59e3ba9a81f9d5b04cda3a1cbd0d3cdad95c47"
+  },
+  "lean_binary_sha256": "3f04956c5cef436a26fd88956effdb6767d8beb0174012c19989764bd74a4f3b",
+  "lean_version": "Lean (version 4.35.0, x86_64-apple-darwin24.6.0, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+  "packed_inputs": [
+    {
+      "file": "factor-premises.json",
+      "sha256": "fa4825c4199b4dc212a4102ebe865d60e5b51fb010be66dede00b0e309a4c053"
+    },
+    {
+      "file": "packed-rup.json",
+      "sha256": "702237344ad5dd21c2cfc3226863dca826ba10aafe271e676b156b29cbd51a2e"
+    }
+  ],
+  "generated_source_sha256": "3e552d171f5517dcdda8c57e7db45e8bfd9272b6e9814e1214b163c5618e7c8e"
+}
