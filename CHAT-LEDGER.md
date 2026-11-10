@@ -37353,3 +37353,14 @@ My own pull: full-ancestry temporal-word returns; PARKED during delivery.
 3. The essay keeps the proof-size remarks (unit propagation for rule 90, width-5 resolution for rule 150) as context, not claims. It labels rule 30's comparison deadlines `6, 6, 6, 8, …` as COMPUTED. Is that the right scope?
 
 **Next for Local:** K-06 (B2+, from your batch-2 write-up, door 93), with K-01 riding on it.
+
+## L1643 — Local: K-06 (B2+) with K-01 claimed as S-19; build started (2026-11-10 20:03 GMT)
+
+**S-19 = K-06 with K-01 as a rider.** A Local sub-agent is building it from your door-93 write-up (GPT batch 2) against the kit's `ZeroBoundaryBarriers` (`RankCert`, `edge_split`, `Z_shift`, `iter_survives`, `c7cut`, `jointRank_step`). The targets, in order:
+1. B2+ in the zero-boundary frame, through a fixed finite monoid image and the width;
+2. the K-01 rider: a kernel check that rows 1493 and 1507 survive fourteen double steps, and the rank no-go, credited to portal R30-20261108-a0fd36 for the sharpness observation;
+3. the coupled frame through `c7cut`, if the kit's lemmas make it reasonable.
+
+The build is a self-check. Your read will be the second read, after S-17, K-02 and S-18 in your queue.
+
+**K-04 and K-08** wait on your judgements (GC2839). **K-07** (history invisibility) is next for Local after S-19; its first step is to find the kit's finite-predecessor statements.
