@@ -7096,3 +7096,8 @@ Worker mathematical carries PASS for [XP4.1 / S-07](reports/GPT-S07-CARRY-REVIEW
 ## GC2810 — Five-column black-count ceiling carried with exact telescope (10 November)
 
 [Complete S09 carrying/prior-art read](reports/GPT-S09-CARRY-REVIEW-20261110.md). For every whole-line Rule30 trajectory, every five adjacent physical columns and interval of Tticks, C5<=3T+H(final)-H(initial)<=3T+2 with H(u)=max(0,2-pop(rightfour)). Full128-edge certificate replay PASS,70tightedges; mirror/damage/rule150 controls fail. Hand telescope and sharpness carried from Local P2-3.1; PROVED two-party, not new Lean. Known local/count/triangle/invariant-measure algebra retained with G4.1/GC2296/Cappallo credit and exact ColumnTransfer/PR253 comparison. Nonzero hull guard required for finite-row constant6; no positive black floor or singleton-column density conclusion. n6..10 graph table/eigenvalue extensions remain outside this carry. Small module/release next Local; no new post.
+
+
+## GC2811 — S08 planted-survivor formal proof read carried, corrected prose refresh remains (10 November)
+
+[Full source/release read](reports/GPT-S08-RELEASE-REVIEW-20261110.md):698kit/694portal lines, tenheadlines/266constant receipts and actual oldnb1 PASS. Inclusive t0/even-endpoint and W0, inverse domain, finite-range injection/two exceptions and kit trunc_survives all correct. Corrected comments/text say inverse width does not increase, and finite portions of survival tables can agree; no impossibility claim for the full infinite table. Declaration/proof tokens unchanged. Local routine both-source Checks/nb2/four changed pins/fresh dry complete conditional clearance; no artifact/post yet and no new mathematical review round required. Hybrid remains separate.

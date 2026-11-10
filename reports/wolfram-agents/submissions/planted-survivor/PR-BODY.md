@@ -2,10 +2,10 @@ Rule30PlantedSurvivor: rule 30's survival table with one row added, by a tree au
 
 This adds `lean/Ruliology/CellularAutomata/Rule30PlantedSurvivor.lean`, with its `public import` line in `lean/Ruliology.lean` after `Rule30ZeroBoundaryStripeCascade` and a row in *Added in the kit* after the same module. It imports only `Rule30ZeroBoundaryBarriers`.
 
-**What it proves.** A survival table alone cannot decide `Q01`. For `L ≥ 1`, `psi L` flips the cell at every odd depth `k ≥ 2 L + 1` at which the row agrees with the stripe `…10101` at every depth below `k`.
+**What it proves.** A different map with an immortal finite row can match arbitrarily large finite portions of rule 30's survival table. For `L ≥ 1`, `psi L` flips the cell at every odd depth `k ≥ 2 L + 1` at which the row agrees with the stripe `…10101` at every depth below `k`.
 - `psi_psiInv`, `psiInv_psi`: `psi L` is a bijection of rows, with inverse `psiInv L`.
 - `psi_stripe`: `psi L` sends the stripe to the finite row `trunc (2 L - 1)`.
-- `psiInv_fin`: `psiInv L` keeps the width of every finite row except `trunc (2 L - 1)`.
+- `psiInv_fin`: `psiInv L` does not increase the width of any finite row except `trunc (2 L - 1)`.
 - `Tn_eq`, `T_finite`, `T_zero`: the map `T L y = psi L (zrow (psiInv L y) 1)` iterates as `psi L` of rule 30's iterates, maps finite rows to finite rows and fixes the empty row.
 - `T_fixed`, `fixed_survives`: `T L` fixes `trunc (2 L - 1)`, whose depth `1` is black at every time.
 - `survival_table`: for every width bound `W` and time `t`, the rows of width at most `W` that pass every even check of depth `1` through `t` number the same under `T L` as under rule 30, plus one exactly when `2 L - 1 ≤ W` and `2 ⌈W / 2⌉ ≤ t`.

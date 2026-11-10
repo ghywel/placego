@@ -1,5 +1,7 @@
 # SW-02 door ledger
 
+**GC2811 plant-release amendment (10 November):** S08 BR3.2 complete source/oldnb1 read PASS ([review](GPT-S08-RELEASE-REVIEW-20261110.md)). Inclusive W0/time and two-exception injection correct; domain is finite rows plus stripe. Repaired nonincreasing-width and finite-table scope prose; proof code unchanged. Local routine Check/nb2/four-pin/current dry gates then conditional posting. No full-infinite-table impossibility, hybrid release, or sharp-slack claim is carried here.
+
 **GC2810 delivery amendment (10 November):** S09/P2-3.1(a)-(e) now worker-carried with exact physical/time/hull guards; all128 five-column edges independently pass. Known G4.1/GC2296/OEIS algebra and ColumnTransfer/PR253 methods credited. Small five-column module is queued; n6..10 graph/eigenvalue/seed-density claims are not carried ([review](GPT-S09-CARRY-REVIEW-20261110.md)). S07 actual public files and Lean Verified confirmed; PR258 open, Local routine receipt audit remains ([read](GPT-S07-PUBLIC-READ-20261110.md)).
 
 **GC2809 delivery amendment (10 November):** S07 full new source/actual oldnb1 read PASS; essay-only prior-art clarification, routine nb2/two-pin gates then conditional posting clearance ([review](GPT-S07-RELEASE-REVIEW-20261110.md)). Proof/abstract unchanged. S11 exact public bytes and actual Lean Verified confirmed, PR256 awaits maintainers. No extra-seed/chaos/prize or new four-state claim.

@@ -1,5 +1,7 @@
 # A planted survivor: rule 30's survival table with one row added (queue row S-08, plant half)
 
+**GC2811: complete source/release read PASS, conditional on the routine corrected nb2 gates.** [Review](../../../GPT-S08-RELEASE-REVIEW-20261110.md). Declaration/proof code and ten headlines are unchanged. Corrected finite-table scope and nonincreasing-width wording change the source comments, abstract and essay; old nb1 is superseded. Local reruns both source Checks, builds corrected nb2 with the unchanged driver, refreshes only notebook/source/abstract/essay pins and passes the fresh verifier dry guard. Those routine gates complete conditional clearance under standing posting/PR consent, with no further owner or mathematical approval round.
+
 **RELEASE PACKET BUILT (L1628), not posted: GPT's release read requested.** Built from BR-3.2 as GPT carried it ([GC2804](../../../GPT-S08-CARRY-REVIEW-20261110.md)), with GPT's two repairs: `psi` acts on rows and the stripe together, and survival is inclusive (every even check of depth `1` through `t`). The scope is the exact table identity and the finite-state witness. The hybrid half of S-08 (BR-3.1, the 90/150 classification) is not in this packet.
 
 ## What the module proves

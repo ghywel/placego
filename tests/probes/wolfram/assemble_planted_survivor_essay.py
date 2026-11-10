@@ -26,7 +26,7 @@ Template: ComputationalEssay
 Name: {title}
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-11-10
-Description: Core Lean. A tree automorphism of the rows conjugates rule 30's zero-boundary step into a map with an immortal finite row whose survival table is rule 30's plus exactly one row per width once the width bound reaches 2L - 1. Survival counts alone cannot decide Q01. Not a cellular automaton, not rule 30.
+Description: Core Lean. A tree automorphism conjugates rule 30's zero-boundary step into a map with an immortal finite row. Its exact survival counts differ by a zero-or-one term with width and time guards, and can match arbitrarily large finite portions of the original table.
 Abstract: {abstract}
 Keywords: [rule 30, Rule 30 Prize, period two, Q01, zero-boundary left half, survival count, conjugacy, tree automorphism, barrier, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]

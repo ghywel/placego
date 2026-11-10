@@ -4,16 +4,16 @@ import Ruliology.CellularAutomata.Rule30ZeroBoundaryBarriers
 # A planted survivor: rule 30's survival table with one row added
 
 `Q01` asks whether every finite start of the zero-boundary left half eventually turns depth `1`
-white at an even time. A survival table alone cannot decide it. This module conjugates the kit's
-step by a tree automorphism of the rows and obtains a different map of finite rows. Its survival
-table is rule 30's with exactly one row added, and it has an immortal finite row.
+white at an even time. Arbitrarily large finite portions of its survival table can also occur
+for a different map with an immortal finite row. This module conjugates the kit's step by a
+tree automorphism of the rows; the counts differ by the explicit zero-or-one term below.
 
 For `L ≥ 1`, `psi L` flips the cell at every odd depth `k ≥ 2 L + 1` at which the row agrees with
 the stripe `…10101` at all depths below `k` (`pf`, `site`). The flip at `k` reads only depths
 below `k`, so `psi L` is a tree automorphism, with inverse `psiInv L` (`psi_psiInv`,
 `psiInv_psi`), and it fixes the depths up to `2 L`. It sends the stripe to the finite row
-`trunc (2 L - 1)` (`psi_stripe`). It keeps finite rows finite (`psi_fin`), and its inverse keeps
-the width of every finite row except `trunc (2 L - 1)` (`psiInv_fin`).
+`trunc (2 L - 1)` (`psi_stripe`). It keeps finite rows finite (`psi_fin`), and its inverse does not increase
+the width of any finite row except `trunc (2 L - 1)` (`psiInv_fin`).
 
 * `T L y = psi L (zrow (psiInv L y) 1)` is rule 30's zero-boundary step read through `psi L`, so
   `n` steps of `T L` are `psi L` of `n` steps of rule 30 (`Tn_eq`), and depth `1` is the same
@@ -203,8 +203,8 @@ theorem psi_fin (L : Nat) {x : Nat → Bool} {W : Nat} (hx : Fin_ W x) : Fin_ (W
   rw [hx k (by omega), pf_false_of_fin hx k (by omega)]
   cases site L k <;> rfl
 
-/-- **The inverse of a finite row has the same width, unless the row is the image of the
-stripe.** -/
+/-- **The inverse does not increase the width of a finite row, unless the row is the image of
+the stripe.** -/
 theorem psiInv_fin (L : Nat) {y : Nat → Bool} {W : Nat} (hy : Fin_ W y)
     (hne : ¬ ∀ k, 1 ≤ k → y k = trunc (2 * L - 1) k) : Fin_ W (psiInv L y) := by
   intro k hk

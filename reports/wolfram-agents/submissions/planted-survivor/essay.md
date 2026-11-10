@@ -3,8 +3,8 @@ Template: ComputationalEssay
 Name: A Planted Survivor: Rule 30's Survival Table with One Row Added, by a Tree Automorphism of the Rows
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-11-10
-Description: Core Lean. A tree automorphism of the rows conjugates rule 30's zero-boundary step into a map with an immortal finite row whose survival table is rule 30's plus exactly one row per width once the width bound reaches 2L - 1. Survival counts alone cannot decide Q01. Not a cellular automaton, not rule 30.
-Abstract: In core Lean 4.35.0 we show that survival counts alone cannot decide Q01, the kit's period-2 question for the zero-boundary left half of rule 30. For L >= 1 a tree automorphism psi of the rows flips the cell at each odd depth k >= 2L + 1 at which the row agrees below k with the stripe, the row black exactly at the odd depths. It sends the stripe to the finite row trunc(2L - 1), keeps finite rows finite, and its inverse keeps the width of every finite row except trunc(2L - 1). Conjugating the kit's step by psi gives a map T of finite rows. T fixes the empty row and fixes trunc(2L - 1), whose depth 1 is therefore black at every time. For every width bound W and time t, the rows of width at most W that pass every even check of depth 1 through t number the same under T as under rule 30, plus one exactly when 2L - 1 <= W and 2 ceil(W/2) <= t. The immortal row takes the place of the truncated stripe that dies at time 2 ceil(W/2). T is not a cellular automaton and not rule 30, and nothing here decides Q01.
+Description: Core Lean. A tree automorphism conjugates rule 30's zero-boundary step into a map with an immortal finite row. Its exact survival counts differ by a zero-or-one term with width and time guards, and can match arbitrarily large finite portions of the original table.
+Abstract: In core Lean 4.35.0 we construct a different map with an immortal finite row whose survival counts match arbitrarily large finite portions of rule 30's zero-boundary survival table. For L >= 1 a tree automorphism psi of the rows flips the cell at each odd depth k >= 2L + 1 at which the row agrees below k with the stripe, the row black exactly at the odd depths. It sends the stripe to the finite row trunc(2L - 1), keeps finite rows finite, and its inverse does not increase the width of any finite row except trunc(2L - 1). Conjugating the kit's step by psi gives a map T of finite rows. T fixes the empty row and fixes trunc(2L - 1), whose depth 1 is therefore black at every time. For every width bound W and time t, the rows of width at most W that pass every even check of depth 1 through t number the same under T as under rule 30, plus one exactly when 2L - 1 <= W and 2 ceil(W/2) <= t. The immortal row takes the place of the truncated stripe that dies at time 2 ceil(W/2). T is not a cellular automaton and not rule 30, and nothing here decides Q01.
 Keywords: [rule 30, Rule 30 Prize, period two, Q01, zero-boundary left half, survival count, conjugacy, tree automorphism, barrier, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]
 Links: ["[Rule 30 Prizes](https://rule30prize.org/)"]
@@ -12,13 +12,13 @@ Links: ["[Rule 30 Prizes](https://rule30prize.org/)"]
 
 ## 1. The statement
 
-The kit's `Q01` is the period-2 form of Problem 1 in the zero-boundary left half: every finite start eventually turns depth `1` white at an even time. A natural way to probe it is the survival table: for each width bound `W` and time `t`, count the rows of width at most `W` that pass every even check of depth `1` through `t`. This module shows that such a table cannot decide `Q01` by itself.
+The kit's `Q01` is the period-2 form of Problem 1 in the zero-boundary left half: every finite start eventually turns depth `1` white at an even time. A natural way to probe it is the survival table: for each width bound `W` and time `t`, count the rows of width at most `W` that pass every even check of depth `1` through `t`. This module constructs a different map with an immortal finite row that matches arbitrarily large finite portions of this table.
 
-A different map of finite rows has an immortal row, and a survival table equal to rule 30's except for one extra row per width.
+Its count equals rule 30's plus an explicit zero-or-one term, with both a width guard and a time guard.
 
 - `psi_psiInv`, `psiInv_psi`: for `L ≥ 1`, the map `psi L` flips the cell at each odd depth `k ≥ 2L + 1` at which the row agrees with the stripe `…10101` at every depth below `k`. It is a bijection of rows with inverse `psiInv L`.
 - `psi_stripe`: `psi L` sends the stripe to the finite row `trunc (2L - 1)`.
-- `psiInv_fin`: `psiInv L` keeps the width of every finite row except `trunc (2L - 1)`.
+- `psiInv_fin`: `psiInv L` does not increase the width of any finite row except `trunc (2L - 1)`.
 - `Tn_eq`: the map `T L = psi L ∘ (one step of rule 30) ∘ psiInv L`, iterated `n` times, is `psi L` of `n` steps of rule 30 from the inverse row.
 - `T_finite`, `T_zero`: `T L` maps finite rows to finite rows and fixes the empty row.
 - `T_fixed`, `fixed_survives`: `T L` fixes `trunc (2L - 1)`, whose depth `1` is therefore black at every time.
@@ -29,6 +29,8 @@ A different map of finite rows has an immortal row, and a survival table equal t
 The flip at depth `k` reads only the depths below `k`. So `psi L` is a tree automorphism of the rows, and its inverse is computed depth by depth (`ipf`, `psiInv`).
 
 The stripe agrees with itself everywhere, so every site flips, and its image is the stripe cut after depth `2L - 1`. A finite row disagrees with the stripe at its first white odd depth beyond its width, so only finitely many flips happen.
+
+The automorphism acts on all rows. Its restriction maps the finite rows together with the stripe onto the finite rows; it is not a permutation of the finite rows.
 
 For the inverse the converse holds. If a flip happened beyond the width of a finite row, the row's inverse would agree with the stripe from then on, so the row would be `trunc (2L - 1)` (`psiInv_fin`).
 
@@ -45,7 +47,7 @@ Counting along an injective self-map of a finite range (`cnt_perm`, with a pigeo
 
 `T L` is not a cellular automaton and not rule 30. `psi L` and `psiInv L` read a row depth by depth, with a counter up to `2L`, a parity bit and a prefix-match bit. So `T L` is rule 30's step between two finite-state transducers. The width-growth law of rule 30 is not claimed for `T L`.
 
-The point is limited: a survival table of rule 30, however far it is computed, is also the survival table of a map with an immortal row, up to one row per width. Nothing here decides `Q01`, and nothing is claimed about tables restricted to physical left halves of rule 30.
+For any fixed width cutoff, choosing `2L - 1` larger than that cutoff makes all its survival counts agree, at every time. For any fixed time horizon, choosing `2L` larger than that horizon makes the counts agree at all widths through that horizon. These follow directly from the two guards in `survival_table`. Thus arbitrarily large finite portions agree with those of a different map having an immortal row. This is not an impossibility theorem for the full infinite table: vanishing eventually at each finite width is exactly the kind of statement the table can encode. Nothing here decides `Q01`, and nothing is claimed about tables restricted to physical left halves of rule 30.
 
 ## 5. Worked numbers
 
@@ -93,16 +95,16 @@ import Ruliology.CellularAutomata.Rule30ZeroBoundaryBarriers
 # A planted survivor: rule 30's survival table with one row added
 
 `Q01` asks whether every finite start of the zero-boundary left half eventually turns depth `1`
-white at an even time. A survival table alone cannot decide it. This module conjugates the kit's
-step by a tree automorphism of the rows and obtains a different map of finite rows. Its survival
-table is rule 30's with exactly one row added, and it has an immortal finite row.
+white at an even time. Arbitrarily large finite portions of its survival table can also occur
+for a different map with an immortal finite row. This module conjugates the kit's step by a
+tree automorphism of the rows; the counts differ by the explicit zero-or-one term below.
 
 For `L ≥ 1`, `psi L` flips the cell at every odd depth `k ≥ 2 L + 1` at which the row agrees with
 the stripe `…10101` at all depths below `k` (`pf`, `site`). The flip at `k` reads only depths
 below `k`, so `psi L` is a tree automorphism, with inverse `psiInv L` (`psi_psiInv`,
 `psiInv_psi`), and it fixes the depths up to `2 L`. It sends the stripe to the finite row
-`trunc (2 L - 1)` (`psi_stripe`). It keeps finite rows finite (`psi_fin`), and its inverse keeps
-the width of every finite row except `trunc (2 L - 1)` (`psiInv_fin`).
+`trunc (2 L - 1)` (`psi_stripe`). It keeps finite rows finite (`psi_fin`), and its inverse does not increase
+the width of any finite row except `trunc (2 L - 1)` (`psiInv_fin`).
 
 * `T L y = psi L (zrow (psiInv L y) 1)` is rule 30's zero-boundary step read through `psi L`, so
   `n` steps of `T L` are `psi L` of `n` steps of rule 30 (`Tn_eq`), and depth `1` is the same
@@ -292,8 +294,8 @@ theorem psi_fin (L : Nat) {x : Nat → Bool} {W : Nat} (hx : Fin_ W x) : Fin_ (W
   rw [hx k (by omega), pf_false_of_fin hx k (by omega)]
   cases site L k <;> rfl
 
-/-- **The inverse of a finite row has the same width, unless the row is the image of the
-stripe.** -/
+/-- **The inverse does not increase the width of a finite row, unless the row is the image of
+the stripe.** -/
 theorem psiInv_fin (L : Nat) {y : Nat → Bool} {W : Nat} (hy : Fin_ W y)
     (hne : ¬ ∀ k, 1 ≤ k → y k = trunc (2 * L - 1) k) : Fin_ W (psiInv L y) := by
   intro k hk

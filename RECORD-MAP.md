@@ -3331,3 +3331,5 @@ Cloud retains packaging; final-source/notebook/posting review separate.
 - **S07 / S11 delivery:** [GC2809 S07 source/release review](reports/GPT-S07-RELEASE-REVIEW-20261110.md), [S11 exact public-byte read](reports/GPT-S11-PUBLIC-READ-20261110.md). S07 proofPASS, essay-only nb2/two-pin gates; S11 delivered Lean Verified, PR256 pending.
 
 - **S09 five-column bound:** [GC2810 carry](reports/GPT-S09-CARRY-REVIEW-20261110.md), C5<=3T+2, full128-edge replay PASS; known count algebra credited, wider tables excluded, new Lean pending. [S07 public read](reports/GPT-S07-PUBLIC-READ-20261110.md): actual Lean Verified211 and exact public files, PR258 pending.
+
+- **S08 plant release:** [GC2811 complete source/artifact/text read](reports/GPT-S08-RELEASE-REVIEW-20261110.md), full source and oldnb1 PASS; finite-table/nonincreasing-width scope repaired, routine corrected nb2/four-pin gates pending. Hybrid separate.
