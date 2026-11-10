@@ -12,7 +12,12 @@ In the zero-boundary left half of rule 30, the cell at depth `1` and tick `t` is
 - `face_disagree`: so for even `t`, every function whose second difference in those two directions vanishes disagrees with `a_t` somewhere on each such face of four rows. Affine functions are such functions (`affine_second`).
 - `tip_not_affine`: hence `a_t` is not affine for even `t ≥ 2`.
 
-Each face of four rows therefore holds at least one disagreement. So at least a quarter of all rows disagree with any affine function, and the correlation of `a_t` with any affine function is at most `1/2`. That last counting step is elementary and is not formalised here; the worked numbers check it for `t ≤ 12`.
+For even `t`, fix any `N ≥ t + 1` and put the uniform distribution on the cells at depths `1, …, N`.
+Compare `a_t` with any affine function of those cells. The disjoint faces obtained by varying depths
+`t - 1` and `t` each have an odd number of disagreements: either one or three. Thus between a quarter
+and three quarters of all fillings disagree. Equivalently, the absolute normalised Walsh correlation
+is at most `1/2`. This counting step is elementary and is not formalised here; the worked numbers
+check the bound for even `t ≤ 12`, using `N = t + 1`.
 
 ## 2. Two derivatives
 

@@ -4,7 +4,7 @@ Name: The Cone Tip of the Zero-Boundary Left Half: A Second Derivative of the Co
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-11-10
 Description: Core Lean. In the zero-boundary left half of rule 30 the second difference of the depth-1 cell at tick t in depths t - 1 and t is t - 1 mod 2 on every row; for even t the cell is not affine and disagrees with every affine function on each face of four rows.
-Abstract: In core Lean 4.35.0 we compute a second derivative of the column of the zero-boundary left half of rule 30, exactly and for every tick. The cell at depth 1 and tick t is a Boolean function of the start at depths 1 to t + 1. For every t >= 2 and every row, flipping depths t and t - 1 in the four possible ways changes this cell by t - 1 modulo 2 in total: the same constant on every row. The proof is a derivative along anti-diagonals. A cell reads its deepest input with coefficient 1, so flipping depth t changes the cell by the negated cells two levels back, and each of those real cells flips with depth t - 1 while the white wall does not. For even t the law has two consequences. Every function with vanishing second differences in those directions, in particular every affine function, disagrees with the cell somewhere on each face of four rows. And the cell is not affine. So at least a quarter of all rows disagree with any affine function, a counting step stated in words and checked numerically for t <= 12. The mechanism is the classical left-permutive derivative, already in the kit for the whole line. Nothing here bears on the single seed.
+Abstract: In core Lean 4.35.0 we compute a second derivative of the column of the zero-boundary left half of rule 30, exactly and for every tick. The cell at depth 1 and tick t is a Boolean function of the start at depths 1 to t + 1. For every t >= 2 and every row, flipping depths t and t - 1 in the four possible ways changes this cell by t - 1 modulo 2 in total: the same constant on every row. The proof is a derivative along anti-diagonals. A cell reads its deepest input with coefficient 1, so flipping depth t changes the cell by the negated cells two levels back, and each of those real cells flips with depth t - 1 while the white wall does not. For even t the law has two consequences. Every function with vanishing second differences in those directions, in particular every affine function, disagrees with the cell somewhere on each face of four rows. And the cell is not affine. On uniformly distributed input bits, its absolute normalised Walsh correlation with any affine function is at most 1/2, a counting consequence stated in words and checked numerically for even t <= 12. The mechanism is the classical left-permutive derivative, already in the kit for the whole line. Nothing here bears on the single seed.
 Keywords: [rule 30, Rule 30 Prize, zero-boundary left half, left permutivity, Boolean derivative, algebraic degree, affine, Walsh, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]
 Links: ["[Rule 30 Prizes](https://rule30prize.org/)"]
@@ -20,7 +20,12 @@ In the zero-boundary left half of rule 30, the cell at depth `1` and tick `t` is
 - `face_disagree`: so for even `t`, every function whose second difference in those two directions vanishes disagrees with `a_t` somewhere on each such face of four rows. Affine functions are such functions (`affine_second`).
 - `tip_not_affine`: hence `a_t` is not affine for even `t ≥ 2`.
 
-Each face of four rows therefore holds at least one disagreement. So at least a quarter of all rows disagree with any affine function, and the correlation of `a_t` with any affine function is at most `1/2`. That last counting step is elementary and is not formalised here; the worked numbers check it for `t ≤ 12`.
+For even `t`, fix any `N ≥ t + 1` and put the uniform distribution on the cells at depths `1, …, N`.
+Compare `a_t` with any affine function of those cells. The disjoint faces obtained by varying depths
+`t - 1` and `t` each have an odd number of disagreements: either one or three. Thus between a quarter
+and three quarters of all fillings disagree. Equivalently, the absolute normalised Walsh correlation
+is at most `1/2`. This counting step is elementary and is not formalised here; the worked numbers
+check the bound for even `t ≤ 12`, using `N = t + 1`.
 
 ## 2. Two derivatives
 
