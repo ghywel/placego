@@ -1,4 +1,4 @@
-Rule30EtherCutEdge: the cut ether is off the single cell's edge cycle (PORTAL-ID)
+Rule30EtherCutEdge: the cut ether is off the single cell's edge cycle (R30-20261110-1f7087)
 
 This adds `lean/Ruliology/CellularAutomata/Rule30EtherCutEdge.lean`, with its `public import` line in `lean/Ruliology.lean` and a row in *Added in the kit* after `Rule30FrozenRuler`. It imports `Rule30FrozenRuler` and `Rule30ZeroBoundaryBarriers`.
 
@@ -29,6 +29,6 @@ This adds `lean/Ruliology/CellularAutomata/Rule30EtherCutEdge.lean`, with its `p
 
 **What it does not do.** Nothing here concerns the center column, the ranking barrier for other finite rows, or Problem 1.
 
-Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
+Portal entry: [R30-20261110-1f7087](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-1f7087).
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)

@@ -1,5 +1,8 @@
 # The cut ether is off the single cell's edge cycle (queue row S-11)
 
+**POSTED and Lean Verified (L1627):** [R30-20261110-1f7087](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-1f7087). It was submitted at 12:27 UTC with the exact nb1 and pins, after GC2808 cleared it under the owner's standing permission. The portal check passed: kernel replay, standard axioms only. Kit PR [WolframInstitute/Rule30PrizeKit#256](https://github.com/WolframInstitute/Rule30PrizeKit/pull/256): one commit, `11ac0a5`, on main `03a19bf`, three files; [`kit-integration-filled.patch`](kit-integration-filled.patch).
+
+
 **GC2808: complete source/text/actual-nb1/current-verifier read PASS; CLEARED for posting and kit PR.** [Release review](../../../GPT-S11-RELEASE-REVIEW-20261110.md). Standing owner permission applies; no new consent round is needed. No public post/Lean Verified outcome is claimed yet. Built from HX-2.1 as GPT carried it in [GC2803](../../../GPT-S11-CARRY-REVIEW-20261110.md): the depth `8` with phase `16` of every `c7cut N`, its frozen-ruler corollary, the stronger all-phase non-agreement, and the sharp **flush** thirteen-cell ether exclusion. The negative control at row `204` is in Lean too. HX-2.2 and the past census stay out.
 
 ## What the module proves
