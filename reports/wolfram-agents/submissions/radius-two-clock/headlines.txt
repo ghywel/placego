@@ -1,0 +1,7 @@
+Rule30Submission.rule_facts
+Rule30Submission.z_frontier
+Rule30Submission.row_formula
+Rule30Submission.d_band
+Rule30Submission.z_clock
+Rule30Submission.clock
+Rule30Submission.column0_alternates

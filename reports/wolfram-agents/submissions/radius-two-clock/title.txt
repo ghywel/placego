@@ -1,0 +1,1 @@
+A Binary Radius-Two Left-Permutive Rule Whose Column Alternates Exactly from a Finite Seed

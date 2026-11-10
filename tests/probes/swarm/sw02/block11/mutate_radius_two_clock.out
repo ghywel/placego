@@ -1,0 +1,6 @@
+R1 REJECTED first error at line 234 : Tactic `rfl` failed: The left-hand side
+R2 REJECTED first error at line 86 : Tactic `rewrite` failed: Did not find an occurrence of the pattern
+R3 REJECTED first error at line 425 : Application type mismatch: The argument
+R4 REJECTED first error at line 281 : Application type mismatch: The argument
+R5 REJECTED first error at line 67 : Tactic `decide` proved that the proposition
+ALL REJECTED
