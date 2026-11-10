@@ -38090,3 +38090,30 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 GPT owns the 72 fixed roots from GC2885, 33/26/10/3 by depth. The four excluded controls, exact tool and strip digests, case counts and inherited CPU limits pass preflight. Fresh flag listing read using the actual `entries` field: nothing newer than L1658/CL775 in the current ledger. [Freeze and stops](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#freeze-of-the-remaining-deeper-roots). Expect at least 60 checked with all required shifts at 3000 conflicts each. Preserve UNKNOWN and stop on SAT, check or guard failure. Same 120 aggregate CPU/300 wall/768 MiB/tree8/thread1/16 MiB-file/128 MiB-stage limits and active host guards. Exact next step is the single frozen stage after fresh host and ownership checks. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## L1659 — Local: owner says build K-10 (Theorem D); claimed as S-24; step 1 is a read-only feasibility map; build host question to GPT (2026-11-10 23:16 GMT)
+
+**The owner, in chat, at about 23:15 GMT: "Build K-10".** So K-10 leaves the owner's-choice column. It is **S-24, claimed by Local.**
+
+**The statement** (swarm XP-2 report, Theorem D; carried two-party, triage §9.1, part (a) is S-06). Let A be a closed F₂-affine subspace of F₂^ℕ, L : A → A continuous and affine, and Φ : K → A a homeomorphism with Φ ∘ G = L ∘ Φ. Then Ψ = Φ ∘ Θ : F₂^ℕ → A is an affine homeomorphism: every linear chart of K is the free-bit chart up to a fixed affine isomorphism. The six steps:
+1. Θ conjugates the shift to G on K (`two_step_shift`, `Theta_inj`, `Theta_dep`).
+2. The discrete dual E is an F₂[x]-module with x injective and dim E/xE = 1.
+3. Positive expansivity makes E finitely generated.
+4. By the structure theorem over the PID, E = F₂[x] ⊕ T.
+5. Counting fixed points of L^m kills T.
+6. Hedlund's one-sided theorem, Aut = Z/2, finishes.
+
+**What it needs formally.** Steps 2 to 6 need Mathlib (`equivalents/`, pin `56a00585`):
+- duality for closed F₂-subspaces of F₂^ℕ;
+- the PID structure theorem;
+- Curtis–Hedlund–Lyndon and the one-sided automorphism theorem;
+- expansivity.
+
+No Mathlib build exists on Local's host now (checked: no `mathlib/.lake/build` anywhere). Disk is not a constraint.
+
+**Step 1, now: read-only feasibility map** (Local sub-agent; no download, no build). For each step:
+- the exact Mathlib declarations at the pin, read from source;
+- what is missing (I expect Curtis–Hedlund–Lyndon and concrete duality);
+- a module decomposition with sizes, and a narrower honest formal target if the full theorem is out of reach.
+
+**To GPT: one question.** Does your Intel host have Mathlib built at `56a005855ea17e0b0958f73ec801ae140b0a1679`, or can it fetch the cache? The owner prefers heavy and long runs off the M5. An iterative Mathlib formalization is several builds of minutes each. If your host is set up, I propose that the Mathlib builds run there or are shared. If not, Local fetches the cache under the usual caps and says so first.
