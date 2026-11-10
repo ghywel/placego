@@ -1103,4 +1103,60 @@ stop 4096 MiB. Five serial workers each have 55 wall seconds and retain
 the 12-second own-CPU soft cap. Standard thermal, pressure and aggregate
 stops apply. No new solver calls, P14 work or Lean build.
 
+
+## Original CNF coverage checked
+
+All four selector refutations passed `cake_lpr` and `lrat-check`. They
+cover 141 canonical exclusions (140 factor-minimal, one depth-16).
+The checker recovered every translated premise by exact clause membership
+for the 1,046 uses. The out-of-support translation at shift 41 rejected.
+All 1,381 absent leaves and 170 original blockers fit the exact trie.
+The missing-root-child control rejected. Both checkers passed the
+2,931-addition trie refutation on 5,214 unchanged original clauses plus
+1,046 derived exclusions. The original CNF is therefore UNSAT by the
+composite construction above. The largest individual proof file is
+3,060,755 bytes. No pressure, thermal or resource stop occurred.
+
+| Shard | Canonical exclusions | Translations | Native proof additions |
+|---|---:|---:|---:|
+| 0 | 36 | 273 | 25876 |
+| 1 | 35 | 239 | 25727 |
+| 2 | 35 | 253 | 25716 |
+| 3 | 35 | 281 | 25722 |
+
+11.629353 aggregate CPU seconds and 11.03 wall seconds. Peak sampled tree
+RSS 229,116 KiB, zero swap growth and 12,912,006 bytes of stage output.
+Evidence `cited/gpt/return13-composite-coverage-20261110.tar.gz`, 2,809,472
+bytes, SHA256 `3efea2414b28a0123ce7494e4b0bc0ad52d4e51d6345ff18893016e9785f3c7d`,
+verified TLS raw-body readback. Trie receipt SHA256
+`ada7dd4d4c02f26b3bb78b682953afefeacf744d1a1c805b460c77410fec2463`.
+Its original CNF SHA256 is
+`badadbb38e00fb0c01991563f3fb6664ed2b78c9ab7254a36fa1bd818313fcd0`.
+The final native trie proof alone is 158,192 bytes with SHA256
+`69a712916a0bbfce6e10bb0fa64a218e34072437a9dd7ac5e0074ac97257531d`.
+
+A separate clause-by-clause source comparison against kit `03a19bf`
+`transitionFormula`, `periodFormula` and `forbid` reproduced all 5,214
+ordered DIMACS clauses exactly at `p=13`, `q=cols=65`, `offset=6`, `w=16`,
+using DIMACS variable `v+1` for Lean variable `v`. The kit's
+`finite_strip_forces` transports the checked coverage to every window of
+each whole-line row fixed by `orbit · 13`. Combining that with GC2869's
+computed cycles and physical witnesses and L1658's carried argument
+certifies 144 moving-return configurations (white plus the 143 distinct
+translates), hence exactly 144 words at every literal length at least 16.
+This is computer-assisted with native certificate checks and carried
+counting. The composite selector, signed-shift transport and exact
+kit-formula identification are offered to Local for a scoped independent
+read. There is no Lean build or release approval yet. P14 is unstarted.
+
+Next GPT step: freeze a proof-only export control for the largest
+canonical discharge `0110000`, 2,186 additions, SHA256
+`fe1054e2a76aeab2dbc707cfee7c9d236d3e9aa8da5f2b186be76024dfea021e`.
+Add the exact target units and final empty clause, remap dependency
+indices to a compact local list and measure the kit 14/11/10-bit packed
+bounds. Pin the packed bytes and run the exact round-trip checker and a
+bad-hint control before any broader export or Lean stage. The target
+format reuses the local packed proof via literal-shift premise lemmas
+and a small final trie, instead of expanding the 827,885 additions.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

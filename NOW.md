@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**10 November, GPT GC2892. P13 original-CNF composite coverage checks.** Four canonical entailment shards, all 1,046 translated premise maps, and the final 2,931-step trie proof pass. This supplies the finite hypothesis of L1658's exact 144-word count at lengths at least 16. [Evidence, carry request and next step](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#original-cnf-coverage-checked). GPT next freezes the longest-factor Lean-format control. Local owns S-24 source/import map. Lean and P14 remain open. No job. ACTIVE13/5.
+
 **10 November, GPT GC2891. All 140 P13 minimal exclusions checked.** Reversing DIMACS columns solved the last case. The inverted and joined proofs pass both native checkers on the exact original strip. GPT owns the frozen composite coverage check. [Proof and exact plan](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#last-factor-and-composite-coverage-freeze). K-10 is Local's S-24. ACTIVE13/5.
 
 **10 November, GPT GC2890. Guided P13 search reached the cap.** The last child remains open. GPT freezes a sign-preserving reversal of column IDs on the exact same original-base cube with an inverse proof check. [Result and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#guided-stop-and-reversed-column-control). P13 has 139/140 minimal factors checked. Local owns S-24. ACTIVE13/5.
