@@ -85,7 +85,7 @@ The kit's statements read at source (`Rule30Problem3`): Problem3 (no machine wit
 
 ## 7. What is left (after batches 1 to 4 and the atlas batch)
 
-Doors: of 94, settled 10, carried in batches 1 to 4: 45 (batch 4 by GPT, GC2828); the 39 card-only doors remain. Atlas: of 33 entries, 4 carried or posted since the compile, 12 carried through the door batches and §8, 15 of the 17 atlas-only entries carried in §9 (some on stated conditions), 2 (BR-2.2, BR-2.3) with GPT. Leftovers and their owners are in §9.4. *CL768:* BR-6.1's resolution-size statements, left over at §9.2, are carried in §10; GPT carried BR-2.2 and BR-2.3 at guarded scopes and replayed the XP-3.2 certificates at GC2832 ([its report](GPT-BR2-XP3-CARRY-20261110.md)), so all 33 atlas entries have now been read by a second worker.
+Doors: of 94, settled 10, carried in batches 1 to 4: 45 (batch 4 by GPT, GC2828); the 39 card-only doors remain. Atlas: of 33 entries, 4 carried or posted since the compile, 12 carried through the door batches and §8, 15 of the 17 atlas-only entries carried in §9 (some on stated conditions), 2 (BR-2.2, BR-2.3) with GPT. Leftovers and their owners are in §9.4. *CL768:* BR-6.1's resolution-size statements, left over at §9.2, are carried in §10; GPT carried BR-2.2 and BR-2.3 at guarded scopes and replayed the XP-3.2 certificates at GC2832 ([its report](GPT-BR2-XP3-CARRY-20261110.md)), so all 33 atlas entries have now been read by a second worker. *CL770:* the three short reads left with Cloud (LN-02.1, RS-4 (c2) and (c3), LN-03.1's last sentence) are carried in §11. What remains of Phase C is the 39 card-only doors.
 
 ## 8. The six pieces set aside in batch 3, processed (CL765)
 
@@ -153,7 +153,8 @@ Read in the raw archive against the kit; own checks in `cloud_atlas_checks.py` a
 |---|---|---|
 | BR-2.2 and BR-2.3 (Theorems 3 to 6 of the BR-2 report) | GPT: done, GC2832 | It read that report at source for B2+ in batch 2 and has its definitions |
 | Replay of XP-3.2's certificates (`cert.py`, `cert2.py`) | GPT: done, GC2832 | Needs scipy and the swarm's modules; minutes |
-| LN-02.1 (iii), (iv) and the all-t step; RS-4 (c2), (c3); LN-03.1's last sentence | Cloud, next block | Short reads left over here. BR-6.1's resolution-size statements were carried at CL768, §10 |
+| LN-02.1 (iii), (iv) and the all-t step; RS-4 (c2), (c3); LN-03.1's last sentence | Cloud: done, CL770, §11 | BR-6.1's resolution-size statements were carried at CL768, §10 |
+| LN-03.1's remark that no cover tree in PR52's format exists over K | GPT, one line, when it next has PR52 open | It depends on PR52's Leaf format, which is not on the kit's main and which GPT reviewed (GC2251, GC2252). Nothing rests on it |
 | XP-2.2's block table (b ≤ 8); CT-3.1's plateaus at widths 32 to 34; RS-2 T5(iv) | Local, bench, if wanted | The swarm's computations; none carries a verdict above |
 | Poonen 2014, Theorem 1 | whoever next has the paper | Cited, not opened |
 
@@ -195,4 +196,64 @@ COMPUTED: the identity is implied by its four axioms (all 512 assignments) and d
 **Controls and the measured table.** COMPUTED: for rule 30 unit propagation refutes only at W = 2. My own level-k code reproduces the source's hardness numbers at T = D(W) in the prime encoding: rule 30: 0, 1, 2, 2 at W = 2, 4, 6, 8; rule 150: 1, 2, 3, 3; rule 90: 0 to W = 10. Brute-force deadlines agree with the closed forms for W = 2..12 and give rule 30's 6, 6, 6, 8, 10, 12, 12, 18, 18, 30, 30. The unexpected test: with an arbitrary target word on column 1 in place of all-black, unit propagation refutes rule 90's formula for exactly the targets no row realises (952 targets at W = 4, 7, 10, of which 71 realised), as the source's last remark says.
 
 **Not carried here, and whose it is.** The source's CaDiCaL conflict table for rule 30 (W = 20..34) and its verdict INCONCLUSIVE stand as MEASURED by the swarm; no DRAT check was run and I did not replay it. The source's hardness values for rule 210 and for rule 150 at W = 10..14 are not replayed. Rule 210's unexplained easiness is the source's own open pull. All three sit with Local's bench if the owner wants them; none carries a verdict above.
+
+## 11. The three short reads left from the atlas batch (CL770)
+
+Sources: the raw LN-02, RS-4 and LN-03 reports. Hand steps read first; then [my own checks](../tests/probes/swarm/sw02/carry/cloud_three_reads.py) ([output](../tests/probes/swarm/sw02/carry/cloud_three_reads.out)). Predictions R1 to R8 were pushed first (CL769) and all eight held.
+
+### 11.1 LN-02.1: the cone-tip law for every t, the chain bound, the additive bound
+
+Frame: C_k(s) is depth k at tick s, C_k(0) = y_(k−1), C_0 = 0, C_k(s+1) = C_(k+1)(s) + (C_k(s) or C_(k−1)(s)); the level of a cell is k + s; a_t = C_1(t).
+
+**The law for every t. PROVED, hand, two-party (Local's swarm, Cloud's read).** The mechanism is the kit's (`AlgebraicDegree.deriv_evol_diag_succ`); the row-frame constant is the corollary.
+1. A cell of level L is y_(L−1) plus a function of y_0..y_(L−2). Induction on the tick: the left neighbour has the same level, the OR term has levels L − 1 and L − 2.
+2. Telescoping along level t + 1: a_t = y_t + XOR over k = 1..t of (p_k or q_k), with p_k = C_k(t−k) of level t and q_k = C_(k−1)(t−k) of level t − 1, q_1 = 0.
+3. Flipping y_(t−1) flips every p_k and no q_k, and (p or q) + (p+1 or q) = 1 + q. So D_(t−1) a_t = t + P_(t−1), the XOR of the t − 1 cells of level t − 1.
+4. **Carrying step.** By 1, each of those t − 1 cells flips with y_(t−2). So D_(t−2) D_(t−1) a_t = (t − 1) mod 2, on every row, for every t ≥ 2.
+5. For even t each 2-face in those two directions carries an odd sum of a_t and an even sum of any affine function, so the correlation with any affine function is at most 1/2.
+
+COMPUTED: exhaustive for t = 2..16 (CL766 had t ≤ 12).
+
+**(iii) The chain. Recursion and bound PROVED, hand, two-party; the value of k_t COMPUTED.** For weights w on level L put Φ(L, w) = XOR of w_i C_i(L−i) and W_k = w_1 + … + w_k.
+- Telescoping each cell to the top gives Φ = |w| y_(L−1) + XOR over k ≤ L − 1 of W_k (p_k or q_k), with p_k of level L − 1 and q_k of level L − 2. I rederived it.
+- If |w| is odd, D_(L−1) Φ = 1 and the chain stops. If |w| is even, D_(L−2) Φ = |W| + Φ(L − 2, w′) with w′_j = W_(j+1). The start is D_(t−1) a_t = t + Φ(t − 1, all ones).
+- So there is a coordinate set S_t with D_(S_t) a_t constant. When that constant is 1 and |S_t| = k ≥ 2, every k-cube in those directions carries an odd number of disagreements with any affine function, so the correlation is at most 1 − 2^(1−k).
+- COMPUTED, exact, 2 ≤ t < 2000 (second code): the chain ends on an odd weight with k_t = 1 + 2^v2(t+1) whenever t + 1 is not a power of 2; at t = 2^m − 1 (m ≤ 10) the weights vanish, the last constant is 1 and k_t = (t + 1)/2. Exhaustive check of D_(S_t) a_t = 1 on every row for t = 2..16.
+- So "a_t is not affine" is PROVED for every even t and COMPUTED-certified for every t below 2000. For all t it needs the chain's outcome in closed form, which nobody has written.
+
+**An addition of mine: the chain's certificate is the best of its kind (COMPUTED, t ≤ 19).** D_S f is identically 1 exactly when S is an inclusion-maximal monomial of the algebraic normal form of f (one line from D_S f = Σ over T ⊇ S of c_T x_(T∖S)). So the best constant-derivative certificate is the smallest maximal monomial of size at least 2. For every t from 2 to 19 that size equals k_t, and the chain set is one of the monomials attaining it. At t = 3, 7, 15 it is 2, 4, 8. **Consequence:** the open item "uniform Walsh bound at odd t" cannot be reached by any constant-derivative certificate in this range; at t = 2^m − 1 the best such bound is 1 − 2^(1−(t+1)/2). A uniform bound there needs a derivative that is not constant, such as the swarm's sampled D_(t−1) D_(t−3) a_t.
+
+**(iv) The additive bound. PROVED, hand, two-party.** By step 1, (−1)^a_t changes sign under x ↦ x + 2^t, so even frequencies vanish and for odd a the coefficient is 2^(−t) times a sum over x < 2^t of ±e(−ax/2^(t+1)). Its modulus is at most the largest value of Σ |cos(φ + πk/2^t)| over the 2^t equally spaced angles, which is 1/sin(π/2^(t+1)). So every coefficient is at most 1/(2^t sin(π/2^(t+1))), which is 1/√2 at t = 1 and falls to 2/π. Only the linear top bit is used, so this holds for every left-permutive rule and the additive form of the question is empty, as the source says. COMPUTED t = 1..16: the bound holds, with equality at t = 1 and 2 (0.70711, 0.65328), and rule 30's largest coefficient is 0.02855 at t = 16 against the bound 0.63662.
+
+### 11.2 RS-4, parts (c2) and (c3)
+
+**(c2) The count threshold. PROVED, hand, two-party.** Statement: for integers w_i, a countable shift-closed set E of binary sequences with block maps ψ_i, sizes obeying size(σf) = size f + 2 and size(ψ_i f) ≤ size f + w_i, at most 2^⌊B/2⌋ elements of size at most B, and a free word action at a point, exists exactly when every w_i ≥ 1 and κ = Σ 2^(−w_i/2) ≤ 1.
+- *Model.* Blocks 1,1,0,y,0,x,0; A(x, y) = (σx, y) and B(x, y) = (σx, y + x) are forward block maps of window 8; g_i = A^i B. A word of n letters acts as (x, y) ↦ (σ^n x, y + p(σ)x) with p recording where the B's sit, so words are free. With x = 1 on the powers of 4 and y = 1 on twice the powers of 4, σ^a u(h) = σ^b v(h) forces a ≡ b mod 7 by the markers, equal total shifts because x is not eventually periodic, then equal block shifts because a nonzero polynomial in σ applied to y has an isolated 1 near 2·4^i where every bounded combination of x vanishes, then equal words because no nonzero polynomial kills a tail of x. All five steps read.
+- *Count.* a_c ≤ 2^(c/2) by induction from κ ≤ 1, so the elements of size at most B number less than 8·2^((B−7)/2) = 2^((B−1)/2) ≤ 2^⌊B/2⌋.
+- *Converse.* This is (c1) with size in place of width: a generator of cost at most 0 gives infinitely many elements of bounded size, and κ^n ≤ 2^(S/2)(n(M − m) + 1) forces κ ≤ 1.
+- COMPUTED, own code: the two block maps act as stated at all seven phases; 10,731 elements (words of at most 8 letters in A and B, a ≤ 20) pairwise distinct on 4,200 symbols; the control y = 0 has 3,570 collisions, the smallest being σ^7 h = A h; for all 662 families with q ≤ 4, w_i ≤ 10 and κ ≤ 1, a_c² ≤ 2^c and T(s)² < 64·2^s to 200 in exact arithmetic, the largest T(s)/2^(s/2) being 4.0.
+
+**(c3) The prefix datum.**
+- *The datum (known).* Two rows of K of width at most B with the same first ⌊B/2⌋ free bits are equal: depths 1..B are fixed by column 1 at ticks 0..B − 1, of which the odd ones are those free bits. `count_constrained` is its cardinality.
+- *The (c2) model fails it.* COMPUTED: at w = (3, 3) and B = 10 the three elements h, g_0 h, g_1 h are distinct and share their first 5 symbols.
+- *Entropy bound. PROVED, hand, two-party.* Under the datum, the elements ψ_i(v(point)) for words v of cost at most s are distinct of size at most B = W + s + w_i, so their ⌊B/2⌋-prefixes are distinct words of any subshift X_i containing ψ_i(E). The number of such v grows like λ^s with Σ λ^(−w_i) = 1 (the standard growth of a weighted free monoid; the source says "tilted law of large numbers"). So log₂ λ ≤ h_i / 2. At κ = 1, λ = √2, so the image of ψ_i has entropy 1 and ψ_i is surjective.
+- *The model below the threshold. Read; I found no gap. PROVED, hand, two-party, at the level of an existence argument.* The source called this the step most needing a read. What I checked:
+  1. Kraft gives the prefix code on generator words of length b, and with w_i ≥ 1 and b ≥ 4/ε the emitted length is at most ½(1 − ε/2) w(u).
+  2. With L/d ≤ 1 + ε/8, the first ⌊B/2⌋ symbols hold at least S/2L + a′ + (1 + ε/8) g − 3 blocks. This needs (1 + ε/8)²(1 − ε/2) ≤ 1, which is true.
+  3. Different phase or state: the elements differ inside two blocks.
+  4. Case I, different total x-shift: probability 2^(−ℓ) per pair of shifts, and the union is over pairs of shifts, not pairs of elements, which is why it converges.
+  5. **Carrying step,** case II, same total shift and a′ < b′: the exponents of z^(a′) P_u + z^(b′) P_v lie in a window of g + 1, so there are at most 2^(d(g+1)) of them, against 2^(−dℓ) each. The margin ε/8 in step 2 is exactly what makes the sum over g converge.
+  6. Case III, a′ = b′: the two emissions differ, a nonzero polynomial of degree at most g kills ℓ symbols of x, 2^(g+1) polynomials against 2^(−ℓ).
+  All three sums are finite and tend to 0 as the base size S grows, so some pair (x, y) has no bad event, and separation gives the cap.
+  The block-level engineering (the state copied in every block, the guard, forward-only reading) I read and did not rebuild. The swarm's box computations for this model are not replayed and stay COMPUTED by the swarm.
+- Left open by the source and still open: a model with the prefix datum at κ = 1.
+
+**Section 7 of the source (corrections to AM-5).** The first three follow from parts (a) to (c1) and I agree with them. The fourth, on prefix edits, rests on L973 and L974, which I did not re-read: no verdict, and nothing rests on it. Section 8 (the kit's free monoid as a control) is the swarm's computation, not replayed.
+
+### 11.3 LN-03.1: the free words, and closing at finite rows
+
+- **The free words. COMPUTED, exact, plus the kit's `Theta_unique`.** On eventually periodic normal forms: G A = C, G C = A, G B = C; depth 1 of A, B, C is black and depth 1 of F A, F B, F C is 1, 0, 0. So all three rows are in K and their free words are (1,0,1,0,…), (0,0,1,0,1,…) and (0,1,0,1,…). A and B differ only in free bit 0 and at infinitely many depths.
+- **The reduction (source §3.2). PROVED, hand, two-party.** Let Y be a set of free words with the splice property from a periodic word q. If two words of Y that agree on a tail always have eventually equal rows, no word of Y has a finite row. The steps: Θq is eventually periodic in depth, because a pair of time-periodic columns moves sideways by a map on a finite set; it is not eventually white, because G adds 2 to the width of a nonzero finite row and G^p Θq = Θq; so splicing q onto f for long enough puts a black cell beyond the width of Θf, while closing makes the spliced row finite of the same width as Θf. Each step read.
+- **The last sentence. PROVED, hand, two-party.** Q01 holds exactly when every free word with a finite row keeps a finite row under every change of finitely many free bits. One direction is the reduction with Y all free words. The other is vacuous. So closing at finite rows is Q01 restated and adds no leverage, and closing away from finite rows is false by the witness. This is PR52's reduction with `jen_clock` removed, known in that form.
+- Not carried: the remark that no cover tree in PR52's format exists over K at past length 1. It depends on PR52's Leaf format, which I have not read at source. Owner in §9.4.
 

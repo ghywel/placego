@@ -37031,3 +37031,41 @@ At the owner's request to continue a research block, fresh merge e33ccc1a and co
 **Record search changes the proposed next test.** Genealogy29.11/T23 already completes G16's p32 exits (18238states, only rain exits), T19 does G8 and the defect/rain trees are already checked; the stored `phase480_p32.txt` has been known since L1304 and replayed GC2362. No repeated full p16core or generic sample is assigned. GPT instead owns the same-period32 **return closure of the fixed480cycle**: determine whether off-cycle choices return to it and create a branching SCC. The old sampled `general_front.py` chose one eventual cycle, not this SCC question. Independent half-period twists of its spatial profiles give a second, much smaller constraint graph to identify a possible phase-lock mechanism.
 
 Prediction/counterfactual, source/hash, controls and stage-wide stops will be published before any computation. A period12 branching component is the positive control; a valid small six-to-two period-loss wall checks the limits of the suggested "period never falls" rule. No p64/p256 run, larger period or automatic cap retry. Exact next: derive the twist compatibility identity, freeze the fixed p32 return-closure/gauge test, then let its result choose the proof step. Cloud's other carry-debt items remain its queue; no build/post assigned.
+## CL769 — Cloud: takes the three short reads left from the atlas batch (LN-02.1, RS-4, LN-03.1); predictions before the replays (2026-11-10 18:00 GMT)
+
+At the owner's word. These are the last three rows of the triage report §9.4 that were mine. The sources are the raw LN-02, RS-4 and LN-03 reports in the swarm archive (SHA256 c231157f…d94c), read in full for the parts named. No prize statement.
+
+**What is being read.**
+- **LN-02.1:** the hand step giving D_(t−1) D_(t−2) a_t = (t − 1) mod 2 for every t (CL766 had it COMPUTED to t = 12); the chain bound (iii); the additive bound (iv).
+- **RS-4:** part (c2), the explicit count model and its threshold; part (c3), the prefix datum, the entropy bound and the existence sketch below the threshold.
+- **LN-03.1:** the free words of the three witness rows, and the last sentence: closing at finite rows alone is equivalent to Q01.
+
+*Record searched:* the three raw reports; CL766's §9 for what was already carried; kit 03a19bf by direct search for the lemmas the sources lean on (`Theta_unique`, `Theta_dep`, `count_constrained`, `testBit_F_succ_of_top`, `merge_preserves_last_black`, `deriv_evol_diag_succ`, `walsh_center_eq_zero`, `free_not_eventuallyPeriodic` all present; `HomoclinicClosing` is not on main, it is PR52's); `record_find.py` on "second derivative" and "prefix datum" (the swarm documents and unrelated uses only). The index refresh still fails from this host (HTTP 403).
+
+**Predictions, before any run.** Frame: zero-boundary half-row, a_t = depth 1 at tick t as a function of row bits y_0..y_t.
+- R1 (0.9). The chain of weights, run exactly for 2 ≤ t < 2000, ends with an odd weight after k_t − 1 steps where k_t = 1 + 2^v2(t+1), whenever t + 1 is not a power of 2. At t = 2^m − 1, m ≤ 10, the weights vanish, the last constant is 1 and k_t = (t + 1)/2.
+- R2 (0.9). For t = 2..16 and every row, the derivative of a_t over the chain's coordinate set is 1 (exhaustive).
+- R3 (0.95). For t = 1..16 the largest additive Fourier coefficient of (−1)^a_t is at most 1/(2^t sin(π/2^(t+1))), with equality at t = 1, 2, and every even frequency vanishes.
+- R4, the unexpected test (0.5). A coordinate set S has derivative identically 1 exactly when S is an inclusion-maximal monomial of the algebraic normal form of a_t. So the best certificate of this kind is the smallest maximal monomial of size at least 2. Prediction: for odd t from 5 to 19 that size equals k_t. *Counterfactual:* a smaller one improves bound (iii) at that t to 1 − 2^(1−size), and a size of 2 at every odd t would give the uniform bound 1/2 the source leaves open. Whatever the table is, it is recorded.
+- R5 (0.9). The (c2) model, rebuilt from its definition (blocks 1,1,0,y,0,x,0; A and B as forward block maps): the block maps act as stated at all seven phases; the elements σ^a u(h) are pairwise distinct on a box (words of at most 10 letters, a ≤ 20); with y = 0 they are not, and σ^7 h = A h.
+- R6 (0.95). For every integer family with q ≤ 4, 1 ≤ w_i ≤ 10 and κ ≤ 1: a_c² ≤ 2^c and T(s)² < 64·2^s for all c, s ≤ 200, in exact arithmetic.
+- R7 (0.85). The (c2) model breaks the prefix datum at B = 10 for w = (3, 3): two distinct elements of size at most 10 share their first 5 symbols.
+- R8 (0.95). Exactly, on eventually periodic normal forms: G A = C, G C = A, G B = C; depth 1 of F A, F B, F C is 1, 0, 0; so the free words are (1,0,1,0,…), (0,0,1,0,1,…) and (0,1,0,1,…).
+
+Caps: one process, 4 GiB address space, ten minutes. Not replayed by plan, and it will be said so: the swarm's box computations for the (c3) pointer model, where my contribution is the hand read of the union bound.
+
+## CL770 — Cloud: the three short reads carried (LN-02.1, RS-4 (c2)/(c3), LN-03.1's last sentence); the atlas batch has no leftovers of mine (2026-11-10 18:04 GMT)
+
+Results of CL769. [Triage report §11](reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md). All eight predictions held. No prize statement.
+
+**LN-02.1.** The cone-tip law D_(t−1) D_(t−2) a_t = (t − 1) mod 2 is carried for every t: a cell of level L is y_(L−1) plus lower bits, the telescoping gives D_(t−1) a_t = t + (XOR of level t − 1), and each of those t − 1 cells flips with y_(t−2). The chain recursion and the bound 1 − 2^(1−k) are carried; the values of k_t are COMPUTED exactly for t < 2000 in my own code and agree with the source. The additive bound 1/(2^t sin(π/2^(t+1))) is carried and holds for every left-permutive rule.
+
+*Added, COMPUTED t ≤ 19:* a coordinate set has derivative identically 1 exactly when it is an inclusion-maximal monomial of the algebraic normal form. The smallest such monomial of size at least 2 has size k_t at every t from 2 to 19, and the chain set attains it. So the chain is the best certificate of its kind, and LN-02's open item, a uniform Walsh bound at odd t, cannot come from a constant derivative: at t = 15 the best is 1 − 2^(−7). My prediction for this test was a coin (0.5); it came out on the chain's side.
+
+**RS-4.** (c2) carried in both directions, with the model rebuilt from its definition: block maps correct at all seven phases, 10,731 elements distinct, the y = 0 control collides at σ^7 h = A h, the count holds for 662 families exactly. (c3): the entropy bound is carried; the existence argument below the threshold is read step by step with no gap found. Its carrying step is the count of at most 2^(d(g+1)) polynomials in the middle case against 2^(−dℓ), and the margin ε/8 is what makes the sum converge. I read the block-level construction and did not rebuild it; the swarm's box runs for it are not replayed.
+
+**LN-03.1.** The three witness rows have the stated free words (exact). The reduction is carried: a spliced periodic prefix puts a black cell beyond the width, and closing would force equal widths. So closing at finite rows alone is Q01 restated.
+
+**Not carried, with owners or verdicts.** (1) LN-03.1's remark on PR52's cover-tree format: GPT, one line, when it next has PR52 open; nothing rests on it. (2) RS-4 §7's fourth correction (prefix edits) rests on L973 and L974, not re-read: no verdict, nothing rests on it. (3) A model with the prefix datum at κ = 1 is open in the source and stays open.
+
+**State of Phase C.** All 33 atlas entries and all 55 settled or substantive doors are read by a second worker. The 39 card-only doors remain; I do not start them without the owner's word.

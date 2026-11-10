@@ -1,0 +1,44 @@
+== LN-02.1
+R1 chain, 2 <= t < 2000: mismatches with k_t = 1 + 2^v2(t+1) (and the power-of-two rule): 0 []
+   at t = 2^m - 1: {3: (('vanish', 1), 2), 7: (('vanish', 1), 4), 15: (('vanish', 1), 8), 31: (('vanish', 1), 16), 63: (('vanish', 1), 32), 127: (('vanish', 1), 64), 255: (('vanish', 1), 128), 511: (('vanish', 1), 256), 1023: (('vanish', 1), 512)}
+   first chain sets: {2: [1, 0], 3: [2, 0], 4: [3, 2], 5: [4, 2, 1], 7: [6, 4, 2, 0], 9: [8, 6, 5], 11: [10, 8, 6, 4, 3], 13: [12, 10, 9], 15: [14, 12, 10, 8, 6, 4, 2, 0]}
+R2 exhaustive t = 2..16: derivative over the chain set is 1 on every row, and the pair law D_(t-1) D_(t-2) a_t = (t-1) mod 2 holds: True | rows 262136
+R3 additive coefficients t = 1..16: sup <= bound and even frequencies vanish: True
+   (t, sup, bound): [(1, 0.70711, 0.70711), (2, 0.65328, 0.65328), (3, 0.54318, 0.64073), (4, 0.44969, 0.63764)] (8, 0.16121, 0.63662) (12, 0.06967, 0.63662) (16, 0.02855, 0.63662) | limit 2/pi = 0.63662
+R4 smallest inclusion-maximal monomial of size >= 2 (best constant-derivative certificate):
+   t 2 | chain k_t 2 | least size 2 | how many of that size 1 | largest maximal monomial 2 | chain set is a maximal monomial: True | example [0, 1]
+   t 3 | chain k_t 2 | least size 2 | how many of that size 1 | largest maximal monomial 2 | chain set is a maximal monomial: True | example [0, 2]
+   t 4 | chain k_t 2 | least size 2 | how many of that size 3 | largest maximal monomial 3 | chain set is a maximal monomial: True | example [0, 3]
+   t 5 | chain k_t 3 | least size 3 | how many of that size 2 | largest maximal monomial 4 | chain set is a maximal monomial: True | example [0, 1, 4]
+   t 6 | chain k_t 2 | least size 2 | how many of that size 1 | largest maximal monomial 5 | chain set is a maximal monomial: True | example [4, 5]
+   t 7 | chain k_t 4 | least size 4 | how many of that size 2 | largest maximal monomial 6 | chain set is a maximal monomial: True | example [0, 1, 4, 6]
+   t 8 | chain k_t 2 | least size 2 | how many of that size 1 | largest maximal monomial 7 | chain set is a maximal monomial: True | example [6, 7]
+   t 9 | chain k_t 3 | least size 3 | how many of that size 1 | largest maximal monomial 8 | chain set is a maximal monomial: True | example [5, 6, 8]
+   t 10 | chain k_t 2 | least size 2 | how many of that size 1 | largest maximal monomial 8 | chain set is a maximal monomial: True | example [8, 9]
+   t 11 | chain k_t 5 | least size 5 | how many of that size 4 | largest maximal monomial 9 | chain set is a maximal monomial: True | example [0, 3, 6, 8, 10]
+   t 12 | chain k_t 2 | least size 2 | how many of that size 1 | largest maximal monomial 10 | chain set is a maximal monomial: True | example [10, 11]
+   t 13 | chain k_t 3 | least size 3 | how many of that size 1 | largest maximal monomial 11 | chain set is a maximal monomial: True | example [9, 10, 12]
+   t 14 | chain k_t 2 | least size 2 | how many of that size 1 | largest maximal monomial 13 | chain set is a maximal monomial: True | example [12, 13]
+   t 15 | chain k_t 8 | least size 8 | how many of that size 2 | largest maximal monomial 14 | chain set is a maximal monomial: True | example [0, 1, 4, 6, 8, 10, 12, 14]
+   t 16 | chain k_t 2 | least size 2 | how many of that size 1 | largest maximal monomial 15 | chain set is a maximal monomial: True | example [14, 15]
+   t 17 | chain k_t 3 | least size 3 | how many of that size 1 | largest maximal monomial 16 | chain set is a maximal monomial: True | example [13, 14, 16]
+   t 18 | chain k_t 2 | least size 2 | how many of that size 1 | largest maximal monomial 16 | chain set is a maximal monomial: True | example [16, 17]
+   t 19 | chain k_t 5 | least size 5 | how many of that size 1 | largest maximal monomial 17 | chain set is a maximal monomial: True | example [11, 12, 14, 16, 18]
+   odd t >= 5: (t, k_t, least): [(5, 3, 3), (7, 4, 4), (9, 3, 3), (11, 5, 5), (13, 3, 3), (15, 8, 8), (17, 3, 3), (19, 5, 5)]
+R4 verdict (least = k_t at every odd t from 5 to 19): True
+   Walsh bound 1 - 2^(1-least) at odd t: [(5, 0.75), (7, 0.875), (9, 0.75), (11, 0.9375), (13, 0.75), (15, 0.9921875), (17, 0.75), (19, 0.9375)]
+== RS-4 (c2)
+R5a block maps A, B act as (sigma x, y) and (sigma x, y + x) at all seven phases: True
+   closed form agrees with the block maps on the word BAB: True
+R5b box (words in A, B of length <= 8, a <= 20; 4200 symbols compared): distinct 10731 of 10731 | collisions 0
+   control y = 0: distinct 7161 | collisions 3570 | a smallest one: ((7, ''), (0, 'A')) | sigma^7 h = A h: True
+R6 families q <= 4, 1 <= w_i <= 10, kappa <= 1: 662 | with kappa = 1: [(2, 2), (2, 4, 4), (2, 4, 6, 6), (4, 4, 4, 4)] | a_c^2 <= 2^c and T(s)^2 < 64 * 2^s for c, s <= 200: True | largest T(s)/2^(s/2): 4.0
+R7 (c2) model, w = (3,3), sizes at most 10 (h 7, sigma h 9, g0 h 10, g1 h 10): distinct elements with the same first 5 symbols: [('h', 'g0 h'), ('h', 'g1 h'), ('g0 h', 'g1 h')]
+== LN-03.1
+R8 on the first 4000 depths: G A = C: True | G C = A: True | G B = C: True | depth 1 of F A, F B, F C: 1 0 0 | of A, B, C: 1 1 1
+   tail periods of F A, F B, F C, G A, G B: 7 7 7 7 7 (equality on 4000 depths past preperiod plus period is equality everywhere)
+   row A black at even ticks 0..198: True | free word starts [1, 0, 1, 0, 1, 0, 1, 0] | matches the stated word on 100 terms: True
+   row B black at even ticks 0..198: True | free word starts [0, 0, 1, 0, 1, 0, 1, 0] | matches the stated word on 100 terms: True
+   row C black at even ticks 0..198: True | free word starts [0, 1, 0, 1, 0, 1, 0, 1] | matches the stated word on 100 terms: True
+   A and B differ at 90 of the first 140 depths; G A = G B
+seconds 4.3
