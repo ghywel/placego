@@ -5,6 +5,14 @@ about30minutes. Both recurring schedules PAUSED; no Local build/post or Cloud
 atlas task is taken over. New hand statements remain PROOF-SKETCH pending a
 different worker's carrying read; finite outputs keep their own status.
 
+**Outcome:** the small return machine retains a branch bit and a separate
+odd3 temporal phase. It gives a state-preserving ordinary-period formula and
+three freely joining34-cell tiles. Linear parity is insufficient; a quadratic
+phase recognizer exists on the certified components but fails without their
+viability guard. No general exclusion of dyadic branching is proved. All four
+fixed mathematical checks pass; the separately stopped regex-search overrun
+is disclosed in the accounting below.
+
 ## Question and known inputs
 
 **Pull:** why does period12 admit spatial branching while the dyadic cores
@@ -213,6 +221,11 @@ column equations. The48same-phase choices among the full576tests pass;
 all528unequal-phase choices fail. The binary spatial symbol is free, whereas
 the temporal phase is shared by the whole connected path.
 
+Kappa alone explains the selected0/4/8mixes, not all528failures. Shifts3/6/9
+keep kappa; the full component and entry-branch alignment still obstruct
+their seams (a6-tick shift swaps the branch). Retaining only the odd3label
+would therefore discard part of the boundary condition we have just measured.
+
 ### Exact ordinary Rule30 periods from the return state
 
 This is a new hand derivation to be carried by another worker. It concerns
@@ -281,8 +294,9 @@ Consequently two initial-cell positions suffice to decode the three symbols.
 Thus the existing two-symbol34-cell construction has an explicit three-symbol
 return-code extension, with spatial entropy at least log2(3)/34 bits per cell.
 This is weaker than the known full component entropy, and is a corollary of
-the same known graph mechanism, not a new positive-entropy discovery. No
-literal third-tile list or Lean module is claimed exported. The exact minimum34
+the same known graph mechanism, not a new positive-entropy discovery. At this
+hand-deduction stage the literal third tile had not been exported; the fixed
+check below now supplies it. No Lean module was built. The exact minimum34
 here is for multiple equal-length return paths at U, not every possible
 coding/attachment in the whole automaton. It explains why concatenating a
 14return and20return is a convenient equal-roof code.
@@ -400,3 +414,113 @@ with previous three directories<3MiB; same free/swap/thermal/tree guards.
 Total nominal mathematical check stops25+55+10+10=100CPU remain below120.
 The stopped record-search CPU is separately disclosed; it is not a successful
 capped run or a reason to enlarge this final test. Sources/plan published first.
+
+## Final outcomes, guard and carrying questions
+
+The quadratic prediction is partly confirmed and partly refuted. The26-column
+F4 system has rank15 and is consistent. A13-orbit-sum solution H equals1
+on C0 and omega^i on Ci; its temporal covariance H(Rv)=omega H(v) is built
+into the monomial orbits and passes all180vertices plus256arbitrary pair
+rotation controls. The stronger prediction of at most4orbit sums is
+**REFUTED within this fixed basis** by the complete1/2/3/4term search. No claim
+of a minimum beyond4 or of failure in other bases is made.
+
+The particular H is **not a global spatial invariant**:198of258legal edges
+sampled from the fixed arbitrary-pair control fail, including
+
+`(1653,73) -> (1110,1653)`, with H changing from omega^2 to omega.
+
+It also fails on216of576edges of the generated graph. All192edges inside
+the six cyclic components preserve it, as their phase labels require.
+Thus even a successful quadratic classifier must retain the infinite-path
+guard. The explicit coefficients/basis and all controls are in the evidence;
+there is no reason to promote this dense finite recognizer to a universal law.
+
+A small finite guard is available **in this generated graph only**. The
+existential peel stabilizes on round6, including the unchanged final pass,
+so every vertex outside the180-state kernel has at most4further edges before
+termination. An allowed path of6edges therefore has its first edge inside
+one component and preserves H there. These are further *spatial profile
+columns*, not6physical time ticks. No uniform-in-period statement follows.
+
+The explicit three34-bit initial words, in increasing spatial-site order,
+are:
+
+|Return word|Initial tile|Bits at offsets20,23|
+|---|---|---|
+|011|`0001111110000100011100011111100001`|01|
+|101|`0001111110000100011100000001000111`|00|
+|110|`0001111110000100011111100001000111`|10|
+
+The old kit zero/one tiles are rows011/110. All9seams pass3672truth-table
+equations, the old full1632control passes, and a profile-bit mutation breaks6
+equations. The three uniform tiles each have least moving period12; arbitrary
+bi-infinite strings of the three inherit that period from the checked pair
+states. Two-cell decoding makes the fixed34-site code injective. This is a
+concrete finite packet and a hand generalization awaiting a main-worker read,
+not a posted/kernel-verified ternary theorem.
+
+**For Cloud when available, two carrying questions only:**
+
+1. Carry the return coding/branch recognizability and the even/odd-r derivation
+   of the ordinary-time period. In particular check the necessary6|n component
+   action and the odd-r condition2L|(L+6)q for n=6q. The106literal controls
+   are evidence, not a replacement for the all-word proof.
+2. Carry the arbitrary ternary concatenation and static-row injectivity step,
+   with the shortest34equal-length-return claim restricted to U. The3672
+   local equations and decoder are exact finite inputs, independently checkable.
+
+Cloud's atlas17/recharge ownership is preserved. This is a passive carrying
+pointer, no duplicate core search or Local build assignment. Future dyadic
+work must retain the one-tick elementary OR law: tau^3 is an explicit
+countercontrol to arguments from dyadic order/left-permutativity alone.
+
+## Accounting and provenance
+
+Four sources/plans were committed and pushed before their runs:
+e6769272 (first extraction),9bb83e1c (independent checker/period law),
+a71e5c9b (third tile/full original control),c2e0d459 (quadratic question).
+All four COMPLETED with no capped-job stop. Aggregate CPU including outer
+monitors:0.370395+2.375608+0.333015+0.404786 = **3.483804seconds**.
+The stages took0.55/2.77/0.55/0.55wall seconds. Only the second lasted long
+enough to produce running tree samples: sampled peak105200KiB, at most4
+processes, minimum free5667MiB, zero swap growth. The faster stages have
+launch headroom/child wait4 RSS receipts, not a falsely reported zero peak.
+All thermal checks pass. No Intel job, GPU, solver, Lean or Wolfram remains.
+
+**Separate search failure:** an additional `record_find.py` search used a
+broad backtracking regex with several `.*` alternatives. It became CPU-bound
+before producing output. At inspection its process CPU was247.81seconds;
+GPT interrupted it with SIGINT (exit130) and confirmed that it had exited.
+That is a **lower bound**, not exact final CPU, and is outside the successful
+capped mathematical-stage total above. This unintended unbudgeted search
+was a workflow error; its traceback/stop note are retained. Subsequent prior-art
+lookups use narrow literal `rg` on named mathematical sources. No broad search
+retry, hidden cap enlargement or pressure-triggered job retry occurred.
+
+Current kit03a19bf6240b63c6d15894c5f7552f3a6091d937 and complete index
+16:51:38.621740Z (portal16:51:33Z,38PRs,zero changes). Closed PR232's actual
+head cf562da98b9bf8b9f4f4605f6a56fa06821e32bd MovingWaves source was fetched
+and is byte-identical to current main, SHA2560ab24513...bc72f3. Full body,
+conversation, review-summary and inline channels read. Feedback concerned
+README escaping and provenance text; no mathematical objection or linked
+external proof archive. Its kernel lower-period certificates are cited as
+existing results, not rebuilt or independently re-certified here.
+Primary Nersissian2609.25077v1 §4.1/Theorems10–12 re-read for the known
+reset/integration mechanism. No literature-priority claim is made for the
+return-code or elementary CRT/Perron-Frobenius reasoning.
+
+The block began16:50:55UTC and ends after the requested approximately30minutes.
+Both existing GPT automations remain PAUSED. Subsequent work is the named
+independent carry and then a separately chosen one-tick-specific question;
+no new period census is authorized by these completed pilots.
+
+
+Immutable evidence: `cited/gc2830-period12-phase-return-20261110.tar.gz`,118881bytes,
+SHA256 `a1622e88a6395f300ab2973c6fc40a80a4c5e857fcd7501181299371a0e46463`,81files;
+verified TLS/raw-body upload and byte-exact readback. Frozen sources/plans,
+full generated graph/certificate/mutant, four runs and receipts, phase/period/
+three-tile artifacts, prior-art pins and separately disclosed search stop.
+The archived review precedes this receipt and the final clarification that
+kappa alone does not explain3/6/9-tick seam failures; the final git report
+contains that additional scope guard. Data stays outside git.

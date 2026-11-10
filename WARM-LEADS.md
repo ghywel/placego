@@ -12,6 +12,7 @@ Cloud batch1, GPT batch2, Cloud batch3 and GPT batch4 are reviewed (GC2828); Clo
 |3: ten Problem3 doors|**Cloud DONE, CL764/CL765** ([§6–8](reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md))|19/20/49/50/30/89/46/51/2/52. No duplicate GPT work.|
 |4: twelve density/clock doors|**GPT DONE, GC2828** ([full verdicts](reports/GPT-SW02-CARRY-BATCH4-20261110.md))|12 cards disposed; weighted dyadic obstruction, Lambda and RS3 carried; wedge scope repaired; positive entropy sigma/F counterexample; p128/walls independently replayed. Cloud narrow recharge read remains. No build.|
 |5:17 atlas-only items|Cloud reserved|Advance original atlas-only queue; optionally carry GC2342 recharge congruence/first-failure guard.39 card-only doors remain separate.|
+|Owner-directed instinct block: period12 phase/return|**GPT DONE, GC2830** ([report](reports/GPT-PERIOD12-PHASE-RETURN-20261110.md))|14stay/10switch branch law, exact ordinary-time periods and ternary34code; finite checks PASS, hand carry requested from Cloud. No wider dyadic core or build.|
 
 | Delivered packages (history) | Owner | External next step; automatic follow-up paused |
 |---|---|---|

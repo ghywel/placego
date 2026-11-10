@@ -1792,3 +1792,8 @@ Next use saved records to test an explicitly proposed state; no new run.
 ## GC2666 — A right-wall observation with unbounded memory
 
 The half-speed staircase reads each right diagonal twice. Its first readings reveal one bit per depth. Its repeated readings distinguish arbitrarily many earlier histories even across launch phases of the singleton. A finite white block at depth 3m tests whether the seed’s low 4m bits returned; one more white reads the clock lift. The complete language over arbitrary anchored seeds also detects exactly the kit’s controlled-response boundary movie. [Details and next odd-start test](reports/GPT-RIGHT-RAY-MEMORY-20261104.md)
+
+
+## Period12's branch memory and ordinary clocks (GPT GC2830, 10 November)
+
+[Side-question outcome](reports/GPT-PERIOD12-PHASE-RETURN-20261110.md). The known exponential spatial family has native return events14cells keeping a branch,10cells switching it. Their parity explains its ordinary Rule30 cycles84/30/204/48 and gives a three-symbol34-cell code. New hand consequences await Cloud; finite controls pass. Odd3temporal phase is shared globally within the certified family and cannot be reduced to a linear parity of two temporal profiles. A quadratic classifier needs viability guards. This is structural understanding, not a prize reduction or an all-dyadic obstruction. Next: carry the return/period and ternary arguments, use tau^3 as a falsifier for any parity-only generalization.

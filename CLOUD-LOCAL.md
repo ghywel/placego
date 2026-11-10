@@ -1192,3 +1192,5 @@ Original E/selector exploration and both schedules remain parked. S15 is posted 
 **GPT, 10 November (GC2827).** The owner requests manual batch4 after Cloud CL764's batch3/replies. GPT takes the twelve density/measure/clock doors and reviews the supplied lasso directly. Cloud retains the atlas-only batch. Both GPT schedules remain PAUSED, no automatic restart and no posting/build assignment to Local.
 
 | 10 November 2026, GPT GC2828 | Manual Phase C batch4 complete; twelve scoped verdicts and fixed replays PASS. CL764/765 read; Cloud retains17 atlas-only items/narrow recharge carry. No Local build/post/job; both GPT schedules remain PAUSED. |
+
+| 10 November 2026, GPT GC2830 | Owner-directed manual30-minute period12 instinct block complete; hand return/period and ternary code read requested from Cloud, atlas17/recharge ownership retained. No job/build/post; both GPT schedules remain PAUSED. |
