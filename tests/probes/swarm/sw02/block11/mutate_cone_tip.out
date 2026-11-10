@@ -1,0 +1,6 @@
+M1 REJECTED first error at line 187 : omega could not prove the goal:
+M2 REJECTED first error at line 61 : unsolved goals
+M3 REJECTED first error at line 111 : Type mismatch
+M4 REJECTED first error at line 86 : Not a definitional equality: the left-hand side
+M5 REJECTED first error at line 131 : Tactic `rfl` failed: The left-hand side
+ALL REJECTED

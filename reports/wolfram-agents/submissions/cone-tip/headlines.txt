@@ -1,0 +1,7 @@
+Rule30Submission.level_aff
+Rule30Submission.diag
+Rule30Submission.chain_flip
+Rule30Submission.cone_tip
+Rule30Submission.face_disagree
+Rule30Submission.affine_second
+Rule30Submission.tip_not_affine
