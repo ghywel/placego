@@ -104,4 +104,108 @@ redirects to hand work; no retry or automatic cap enlargement.
 
 ## Outcome
 
-Pending the separately frozen stage. No predicted count is an executed result.
+**First stage COMPLETE, freeze dc3fad7f (published in merge bece27e7).**
+The full reachable same-P32 graph has5472states/5472edges. Its only cyclic
+component is the original480-cycle, with480internal edges and no forks.
+There are4992transient states; all480off-cycle choices stop, with a maximum
+transient stretch of35pairs including the last pair with no P32 child. No
+off-cycle path returns and no path reaches the rain. The expected rain escape
+did not occur. This does not refute Sink's "every wall ends in rain": there is
+no outgoing wall at this period, so that assertion can hold vacuously.
+
+The independent C++ checker reconstructs every cyclic integral one temporal
+bit at a time, verifies closed reachability and independently recomputes the
+entire SCC partition. P12's92-state reachable closure gives the known30/32
+component with its two branch vertices. The one-bit corrupt P32 fixture is
+rejected as NOT_CLOSED. No cap/pressure/thermal stop occurred.
+
+The half-shift graph of the480wave has1920marked states and960edges; exactly
+two recurrent480-cycles, with no persistent mixed parent phases. Every pair
+has nonzero half-defect overlap (support sizes2,4,6,8,10,12,14). This proves
+global half-phase locking on this fixed background, on the stated finite data.
+But the14-cell P12 stay loop also has only its two global half-phases despite
+four zero-overlap positions. Therefore the stay-loop gauge alone does not
+separate the known positive-entropy P12 component from the dyadic cycle.
+
+The period-loss control is explicit (pairs in the leftward convention):
+
+    (23,40) -> (42,23) -> (21,42),  pair periods 6 -> 6 -> 2.
+
+The first pair lies on a10-cycle of P6, and the last on the rain2-cycle; all
+equations hold including the temporal wrap. Hence the proposed blanket
+"period never falls" statement fails even with infinite ancestry. Only the
+odd-part divisibility/child-period-divides-twice-parent statement is used here.
+
+**Prior-art clarification:** T32/genealogy37 already reports rightward
+rigidity of the480wave, through depth67, from uncertified SAT answers. If
+adopted, that rigidity also rules out a returning excursion. This block does
+not claim first discovery of the wave's simplicity. It supplies an independent,
+small **leftward** complete graph certificate and the explicit35-pair bound;
+it does not certify T32's rightward UNSATs or infer rightward rigidity from a
+leftward computation. The existing black-edge exclusion remains separately known.
+
+First-stage resource receipt:2.140212aggregate CPU seconds including monitors,
+2.73wall seconds, sampled102020KiB treeRSS/max4processes, launch5711MiB and
+sampled minimum5666MiB free+inactive, zero swap growth,383691artifact bytes.
+All five planned jobs pass, including the expected exit2corruption rejection.
+
+## Follow-on question and freeze: the actual34-cell return words
+
+The local identity has a sharper form. It is **an equality graph**, not a
+general nonlinear constraint. For a valid triple(u,c,d), retain the notation
+A,B,C and put D=Delta Hu=A xor B xor C.
+
+- If C!=0, the parents must have e_c=e_d. Then the equation is just
+  (e_u xor e_c)*D=0, so also e_u=e_c if D!=0.
+- If C=0, A and B have disjoint supports. The equation is equivalent to
+  e_u=e_c whenever A!=0, and e_u=e_d whenever B!=0.
+
+These conditions are necessary and sufficient. No constraint involves the
+spin of a profile with Hz=0, which is a duplicate encoding and is removed.
+Thus for any fixed P-periodic background, **all** independently half-shifted
+valid fields are exactly spin assignments constant on the components of an
+explicit undirected graph on the live spatial sites, with edges of length1or2.
+This is a PROOF-SKETCH pending a carrying read; the proof is the displayed
+algebra, not an extrapolation from the480wave.
+
+For a spatially N-periodic background the finite quotient graph has integer
+translation labels. In each quotient component, assign lift heights along a
+spanning tree. The gcd g of the discrepancies on closed walks determines its
+lift: g=0 gives one orbit of **finite** components, and g>0 gives g infinite
+components. Each finite component can be flipped alone, giving an exact
+finite-support phase surgery. An infinite component carries one global bit.
+There are at most two infinite components, since any such component is
+translation-periodic and crosses every spatial cut with an edge of length<=2.
+
+Let K be the number of finite-component orbits. The resulting marked family
+has spatial entropy K/N bits per cell: finite components supply independent
+bits with that density; their bounded diameters leave only O(1) boundary
+choices, while the infinite components add finitely many global bits. The
+profile field determines its initial row by determinism, and a spin is recovered
+locally from any nonzero Hz coordinate using at most P-1future ticks. A
+nontrivial finite-component flip must change some tick0cell, again by
+determinism. These are hand implications awaiting a second worker's read.
+
+**Prediction before the follow-on run:** among the three known closed34-cell
+return words011,101,110, some pair differs only by such local half-shifts
+(0.6). That would locate an actual finite equality component and explain a
+binary return choice. Counterfactual: no pair is in one half-shift profile
+class; then this gauge mechanism does not explain the branching, and the route
+is parked until a concrete profile-substitution argument reopens it. Three
+tiles cannot all be one boundary-fixed equality family: its number of choices
+is a power of two. No more code words or larger return lengths are searched.
+
+Fixed controls: all legal profile triples at P2,4,6 and every one of their
+eight spin choices; the14-cell stay and20-cell cross-cross loops; the same480
+background. An independent synchronous leaf deletion of the already checked
+P32 graph must give35rounds/4992removed vertices. Any finite phase patch found
+is checked at every affected local equation and must be visible at tick0.
+
+[Equality-graph and local-truth-table checker](../tests/probes/swarm/sw02/carry/gpt_phase_wires.py)
+and [hashed follow-on plan](../tests/probes/swarm/sw02/carry/gpt_phase_wire_plan.json).
+One small further stage, justified by the algebraic representation change:
+20aggregate CPU-second stop,60wall,768MiB treeRSS,max4processes, same
+16MiB/file/128MiB disk/free-memory/swap/thermal/monitor stops. One worker/nice10.
+The first stage has used2.140212CPU, so even this full stop remains below the
+original120CPU whole-block budget. No failed job is retried and no period or
+node cap is raised. Sources and freeze published before execution.

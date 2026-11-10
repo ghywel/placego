@@ -1,0 +1,26 @@
+{
+  "worker_stop": 20,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_phase_wires.py": "ca862aa8bc1bb16c211a4b7818aa795e1517b27ac3180ef00416d9d669b080df",
+    "tests/probes/phase480_p32.txt": "6f77ed2178c4fca0169fc0690b952b680276a787c06d44e8bba36e0eabb92bc3",
+    "/private/tmp/gc2833-dyadic-run/p12-closure.tsv": "308beabc7864d75f58cebc30801f98a5d2593ac32605e49253c827d4f781d993",
+    "/private/tmp/gc2833-dyadic-run/p32-closure.tsv": "d17498dad55084eebb9535066faa2bea13cb4030d1f8aa2eaf49145d2ac839dd",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
+    "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df"
+  },
+  "jobs": [
+    {
+      "name": "wires",
+      "cpu": 15,
+      "wall": 45,
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_phase_wires.py"
+      ],
+      "required_stdout_lines": [
+        "PHASE_WIRE_CLASSIFICATION_PASS"
+      ]
+    }
+  ]
+}
