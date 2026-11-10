@@ -1,0 +1,46 @@
+{
+  "worker_stop": 110,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_k02.py": "5b5e0d34ea2fd4d7a976d1ecb02b114e9523c0287288bf6268c3954245298538",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
+    "tests/probes/swarm/sw02/carry/cloud_atlas_checks.py": "57a0f58755bd8fa19a296a856653498f8b20f138681649b182c7ff0e847b229b",
+    "tests/probes/swarm/sw02/carry/cloud_kit_col1Forbidden_width5.txt": "ea8ad13e9828a0b738afaaa190b6cdc5116580a5672d99d6a0a9c75f49f90d48",
+    "tests/probes/swarm/sw02/carry/cloud_kit_col1Forbidden_width6.txt": "0360bf16fe3dd9664043c0547a913c5e8e0620067197536ae836b0b2c3eb8f88"
+  },
+  "kit_commit": "03a19bf6240b63c6d15894c5f7552f3a6091d937",
+  "kit_sources_sha256": {
+    "lean/Ruliology/CellularAutomata/Rule30PeriodTwoWidth5.lean": "b4cf0ccb6a799840bf6d50591c225b0e9e30e0dccbc3fbf12bcaf9ee0015d197",
+    "lean/Ruliology/CellularAutomata/Rule30PeriodTwoWidth6.lean": "f8846e6499a179057dfdfe8efcb20c98db7a90a3869b338b4ac686be700f62b0",
+    "lean/Ruliology/CellularAutomata/Rule30Jen.lean": "0700944834df40a026191a7fe4c1ab22114c6509a319afc1d71877e30a22c6bc",
+    "lean/Ruliology/CellularAutomata/Rule30PeriodTwoLanguage.lean": "f6403a855ccb069b66855f4e57934216c5052db51f14a2f7d14f1a37917aa782",
+    "lean/Ruliology/CellularAutomata/Rule30PeriodFourSkeleton.lean": "9a36981e2343b99d1d44955d65ffe71fdec1db0b4fd8930d545a947629f1621f"
+  },
+  "limits": {
+    "aggregate_cpu_s": 120,
+    "wall_s": 300,
+    "tree_rss_mib": 768,
+    "max_procs": 6,
+    "file_mib": 16,
+    "disk_mib": 128,
+    "launch_free_mib": 4096,
+    "min_free_mib": 1024,
+    "swap_growth_mib": 4096,
+    "threads": 1,
+    "nice": 10
+  },
+  "command": "python3 tests/probes/wolfram/run_capped.py --out PRIVATE_STAGE --cpu 120 --wall 300 --rss-mib 768 --file-mib 16 --disk-mib 128 --track-tree --max-procs 6 --launch-free-mib 4096 --min-free-mib 1024 --swap-growth-mib 4096 -- python3 tests/probes/metal_scope/stage.py tests/probes/swarm/sw02/carry/gpt_k02_plan.json",
+  "jobs": [
+    {
+      "name": "relation",
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_k02.py"
+      ],
+      "required_stdout_lines": [
+        "K02_FIXED_RELATION_CHECKS_PASS"
+      ],
+      "cpu": 110
+    }
+  ]
+}
