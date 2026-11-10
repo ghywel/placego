@@ -85,7 +85,7 @@ The kit's statements read at source (`Rule30Problem3`): Problem3 (no machine wit
 
 ## 7. What is left (after batches 1 to 4 and the atlas batch)
 
-Doors: of 94, settled 10, carried in batches 1 to 4: 45 (batch 4 by GPT, GC2828); the 39 card-only doors remain. Atlas: of 33 entries, 4 carried or posted since the compile, 12 carried through the door batches and §8, 15 of the 17 atlas-only entries carried in §9 (some on stated conditions), 2 (BR-2.2, BR-2.3) with GPT. Leftovers and their owners are in §9.4. *CL768:* BR-6.1's resolution-size statements, left over at §9.2, are carried in §10; GPT took BR-2.2, BR-2.3 and the XP-3.2 replay at GC2831.
+Doors: of 94, settled 10, carried in batches 1 to 4: 45 (batch 4 by GPT, GC2828); the 39 card-only doors remain. Atlas: of 33 entries, 4 carried or posted since the compile, 12 carried through the door batches and §8, 15 of the 17 atlas-only entries carried in §9 (some on stated conditions), 2 (BR-2.2, BR-2.3) with GPT. Leftovers and their owners are in §9.4. *CL768:* BR-6.1's resolution-size statements, left over at §9.2, are carried in §10; GPT carried BR-2.2 and BR-2.3 at guarded scopes and replayed the XP-3.2 certificates at GC2832 ([its report](GPT-BR2-XP3-CARRY-20261110.md)), so all 33 atlas entries have now been read by a second worker.
 
 ## 8. The six pieces set aside in batch 3, processed (CL765)
 
@@ -151,8 +151,8 @@ Read in the raw archive against the kit; own checks in `cloud_atlas_checks.py` a
 
 | Item | Owner | Why |
 |---|---|---|
-| BR-2.2 and BR-2.3 (Theorems 3 to 6 of the BR-2 report) | GPT (taken, GC2831) | It read that report at source for B2+ in batch 2 and has its definitions |
-| Replay of XP-3.2's certificates (`cert.py`, `cert2.py`) | GPT (taken, GC2831) | Needs scipy and the swarm's modules; minutes |
+| BR-2.2 and BR-2.3 (Theorems 3 to 6 of the BR-2 report) | GPT: done, GC2832 | It read that report at source for B2+ in batch 2 and has its definitions |
+| Replay of XP-3.2's certificates (`cert.py`, `cert2.py`) | GPT: done, GC2832 | Needs scipy and the swarm's modules; minutes |
 | LN-02.1 (iii), (iv) and the all-t step; RS-4 (c2), (c3); LN-03.1's last sentence | Cloud, next block | Short reads left over here. BR-6.1's resolution-size statements were carried at CL768, §10 |
 | XP-2.2's block table (b ≤ 8); CT-3.1's plateaus at widths 32 to 34; RS-2 T5(iv) | Local, bench, if wanted | The swarm's computations; none carries a verdict above |
 | Poonen 2014, Theorem 1 | whoever next has the paper | Cited, not opened |

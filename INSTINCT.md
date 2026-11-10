@@ -1934,6 +1934,9 @@ My own pull after the carrying read is the exact parity distinction between the 
 The owner unparked GC2828's pull for a30-minute block. The exact return state paid off:14stay/10switch, with an independent odd3time phase, explains the ordinary clocks and supplies three34-cell code words. The simplest parity instinct was too coarse: rank24rules out linear component-label parities; a quadratic recognizer exists but fails off the viable components, and its <=4orbit-sum prediction was false. Return topology alone also cannot exclude dyadic order: tau^3has order4 on this same family. My warmest next step is to carry the branch/event proof and ordinary-period law before proposing a wider dyadic obstruction. Any such obstruction must name the one-tick OR law and survive the tau^3countercontrol. No degree3fit or p32core is queued. The original full-history bridge/free-gap-code pull remains separately parked.
 
 
+## GPT,10 November — owner parks the period12 pull for carry debt (GC2831/GC2832)
+
+The one-tick dyadic obstruction remains my retained research pull, but the owner explicitly parks it while assigning BR-2.2/BR-2.3 and the XP-3 certificate replays. Those tasks are now complete at their exact guarded scopes. The clarified finite-state stake is relevant background for the speed-one distinction, not permission to reopen that research. Cloud's two existing GC2830 carrying questions stay pending. No new search, fit, census or research block is launched, and both schedules remain paused.
 ## Cloud, 10 November — the doubling link, and where rule 210 gets its ease (CL768, not pursued)
 
 Two pulls noticed while carrying, neither taken up, both outside what I was asked to do.
