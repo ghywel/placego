@@ -181,6 +181,41 @@ Rule30Jen.lean 0700944834df40a026191a7fe4c1ab22114c6509a319afc1d71877e30a22c6bc
 Rule30ZeroBoundaryBarriers.lean d16659ead7a294ff46d1ee37019d720fed76d4d35aa8be310a7ea65757289765
 ```
 
+## Release statement contract — GC2821
+
+**Source/statement audit, not a new mathematical carry or compiled packet.** The intended primary headline is exactly
+
+```text
+FinSupp L -> InX L ->
+  for every K, exists N, for every n>=N,
+    n+K < p_(fun s => zrow L (2*s+1) 1)(n).
+```
+
+Here `p` is ordinary all-position factor complexity, as above. The threshold depends on the row and K; the proof gives no uniform numerical threshold, rate, density law, or lower bound on the ratio p(n)/n beyond its stated additive conclusion. Suggested descriptive wording: **unbounded additive factor-complexity excess**. This is combinatorial word complexity, not a running-time lower bound for Prize Problem 3.
+
+Two useful statement forms follow by the known reconstruction identities, with the actual Lean equalities still to be checked in Local's source:
+
+```text
+FinSupp (Theta f) ->
+  for every K, exists N, for every n>=N, n+K < p_f(n);
+
+(exists K, for every N, exists n>=N, p_f(n)<=n+K) ->
+  not FinSupp (Theta f).
+```
+
+The first uses `Theta_inX` and `Theta_free`; the second is its classical contrapositive. An eventual upper bound is unnecessary: a fixed additive bound along an unbounded set of lengths suffices. These are statement rewrites of the carried result, not permission to assert an exclusion for arbitrary block codes or the neighbouring CP3.1 near-square claim.
+
+**No extra initial wall-bit hypothesis.** Actual `InX L` is the constraint at every even tick, including zero. Consequently `L 1=true` follows from `hX 0`, and `last_black` supplies the positive leading edge from `FinSupp L`; no independent nonempty-row assumption is needed. `zrow L 0` forces depth 0 white and agrees with L at every positive depth. The source identity is `Theta_unique : zrow L 0 = Theta f`, not generally `L=Theta f`. `zrow_fin` at time zero preserves finite support, while `zrow_zero_run` preserves the actual trace and constraint. Thus a theorem quantified over `FinSupp L` and `InX L` need not add `L 0=false`; use the normalized row when reconstructing.
+
+**Coupled application retains finite reconstruction.** At the same kit commit, `Rule30PeriodTwoSideways.Psi` is exactly `Theta (fun s => !u R s)`, and `Psi_inX`/`Psi_free` give the actual constraint/free bits. S12 applies if `FinSupp (Psi R)` is supplied. Finite support of R alone does not supply this hypothesis: the kit's `CQ01_iff_Psi` states the open target as the opposite conclusion for all finite R. Do not drop the reconstructed-left-row finiteness guard or claim a theorem about every right driver. No existence of a finite constrained row, universal capture, Q01/CQ01, or prize solution follows from this conditional complexity rung.
+
+Read actual `Rule30ZeroBoundary.FinSupp`, `zrow_fin`, `last_black`, `zrow_zero_run`, `InX`, `Theta_inX`, `Theta_free`, `Theta_unique`, `free_not_eventuallyPeriodic`; and `Rule30PeriodTwoSideways.u`, `Psi`, `Psi_inX`, `Psi_free`, `Psi_unique`, `CQ01_iff_Psi`, including their displayed proofs. Record search `CP3[.-]2|Theta_unique|FinSupp.*InX` returned the GC2702 scoped carry, current support notes, and existing guarded kit/portal/PR declarations. Known source identities, no novelty claim or new build. Exact next: compare Local's returned theorem types and essay with these population, quantifier, wall-normalization and factor-count contracts before release clearance.
+
+```text
+Rule30ZeroBoundary.lean fbc567ec6c0e40ce9cf2a904694fd2f3188f63fe4f3c827b11e5b10f3bc63595
+Rule30PeriodTwoSideways.lean d08b1d0d0ea35051855323fbf1e8a88f01ab39a89ad0361b76f161437c206b54
+```
+
 
 Kit03a19bf6 source SHA256:
 
