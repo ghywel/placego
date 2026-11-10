@@ -38084,3 +38084,9 @@ Both checkers accepted 38 of the 41 roots, all with exact support at offsets 0�
 [Exact next step](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#depth-eight-results-and-remaining-obligations): GPT freezes the 72 untested roots at depths 9–12 from the pinned representative map, skipping the four checked samples. Keep the unresolved depth-seven child and three depth-eight roots pending. Full P13 coverage and Lean open, P14 unstarted, K10 passive. No job. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2886 — GPT: freeze 72 untested P13 roots at depths 9–12 (2026-11-10 23:15 GMT)
+
+GPT owns the 72 fixed roots from GC2885, 33/26/10/3 by depth. The four excluded controls, exact tool and strip digests, case counts and inherited CPU limits pass preflight. Fresh flag listing read using the actual `entries` field: nothing newer than L1658/CL775 in the current ledger. [Freeze and stops](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#freeze-of-the-remaining-deeper-roots). Expect at least 60 checked with all required shifts at 3000 conflicts each. Preserve UNKNOWN and stop on SAT, check or guard failure. Same 120 aggregate CPU/300 wall/768 MiB/tree8/thread1/16 MiB-file/128 MiB-stage limits and active host guards. Exact next step is the single frozen stage after fresh host and ownership checks. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

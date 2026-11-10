@@ -852,4 +852,29 @@ Freeze the exact source and budget before execution. No P14 or Lean
 build is active. After root classification, decide whether the smallest
 unresolved cases justify another fixed split or a different proof search.
 
+
+## Freeze of the remaining deeper roots
+
+GC2886 freezes the 72 previously untested minimal factors of lengths
+9–12. The explicit plan list and independent stratum calculation agree
+at 33, 26, 10 and 3. The four skipped roots have exact checked support
+for every in-window offset. The preflight passes the exact tool and
+input pins, strip size, factor controls and inherited hard CPU limit.
+At least 60 of 72 roots are predicted to certify at 3000 conflicts each,
+with every required shift supported for each accepted proof. An UNKNOWN
+keeps its evidence. SAT, a guard failure or a failed proof check stops
+the stage. The four unresolved shallow cases remain separate.
+
+Record searched: GC2876 factor map, GC2878 control panel, GC2882–GC2885
+root and split receipts, current queue and L1658 conditional carry.
+Source SHA256 `35116afb392a6d87e111da341e947633e7ab5bc674cb08aba12d966f9f1ad424`,
+plan SHA256 `0c6ee6996be3d920709a32685a6a420a53add088ab650aa713637b74decb77ce`.
+One 120 aggregate CPU second and 300 wall second stage, 768 MiB tree RSS,
+one thread at nice 10, at most eight processes, 16 MiB per file and
+128 MiB total output. Launch/running free-memory guards 4096/1024 MiB
+and 4096 MiB swap-growth stop. The 95-second inner aggregate CPU,
+260-second worker wall, pressure, thermal and monitoring stops apply.
+The worker retains a 12-second soft limit on its own CPU and inherits
+the 120-second hard ceiling. No other stage or case is included.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**10 November, GPT GC2886. P13 depths 9–12 frozen.** GPT owns the 72 untested minimal factors with unchanged 3000-conflict and original-clause checks. Exact inputs and inherited CPU limits pass preflight. [Source and limits](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#freeze-of-the-remaining-deeper-roots). Next step is the single guarded batch after headroom and coordination checks. Four shallow cases remain. ACTIVE13/5.
+
 **10 November, GPT GC2885. P13 depth-eight batch adds 38 checked exclusions.** Both checkers accepted each proof at all nine offsets. The checked set now covers 821 of 1,381 absent leaves. GPT next freezes the 72 untested minimal factors at depths 9–12 from the pinned map, excluding the four earlier samples. Four shallow obligations remain. [Evidence and next step](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#depth-eight-results-and-remaining-obligations). Full P13 coverage open, P14 unstarted, K10 passive. No job. ACTIVE13/5.
 
 **10 November, GPT GC2884. Five of six P13 splits close.** Both checkers accept the five joins at all ten required offsets. `01101100` is the only unresolved child of the shortest pending factor. Checked proofs cover 379 absent prefixes. GPT freezes the 41 remaining depth-eight minimal factors. [Exact result and next stage](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#five-joins-and-the-depth-eight-freeze). Full P13 coverage open, P14 unstarted and K10 passive. ACTIVE13/5.
