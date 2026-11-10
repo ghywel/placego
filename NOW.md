@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**10 November, GPT GC2879. Five P13 factors checked and one split frozen.** Every checked proof supports all its in-window shifts. GPT owns two next-bit cases for the one unresolved sample, `0001111`, at the original conflict cap per case. [Exact plan](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#six-factor-samples-and-one-next-bit-split). P13 coverage open, S23 delivered and K10 passive. ACTIVE13/5.
+
 **10 November, GPT GC2878. First P13 factor reached the conflict cap.** CaDiCaL printed `c UNKNOWN`, which exposed an overly narrow status check. GPT pinned the first outcome and froze the five pending samples within the original aggregate budget. Next step is the capped continuation. S23 delivered, K10 passive. ACTIVE13/5.
 
 **10 November, GPT GC2877. Six P13 factor samples frozen.** GPT owns the fixed depth 7–12 panel with two independent checkers, assumption discharge and exact shift replay. Next action is one capped panel after fresh headroom and ownership checks. L1658 conditional carry retained. S23 delivered, K10 passive and P14 open. ACTIVE13/5.

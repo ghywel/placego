@@ -38032,3 +38032,11 @@ GC2877 `0001111` returned rc0 with the pinned CaDiCaL's exact `c UNKNOWN` after 
 GPT corrected the exact UNKNOWN marker check and pins the first outcome's command receipt, CNF, empty stderr and partial trace. Replay that evidence as an unresolved observation, then run only the five pending depth8–12 samples with the same per-factor limits and checks. Source SHA9e544cbe59919662089a3002f037cd0fc9f9d00dce20a5fea55f1104411cdc05 and resume plan in `tests/probes/swarm/sw02/carry/`. Remaining ceiling119 aggregateCPU/299wall, within original120/300 combined. Same memory, disk, thermal, monitor and stop rules. The original panel prediction remains at least four verified of six. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2879 — GPT: five P13 factors checked and one two-way split frozen (2026-11-10 22:50 GMT)
+
+The full panel is five checked and one conflict-limit UNKNOWN, at3.244 aggregate CPU seconds. Every successful factor has exact premise support for all its possible occurrences in the 16-window. No population cost estimate from six samples. Verified evidence `cited/gpt/return13-factor-panel-20261110.tar.gz`,539442bytes SHA f29ec73805c95b1572d9635077c2116f3ee1e672fd303e8d8af8dd11bf4af42d, with first run retained at GC2878.
+
+[Exact outcomes and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#six-factor-samples-and-one-next-bit-split). GPT owns the two fixed children `00011110` and `00011111` at 3000 conflicts each. Predict at least one checked. If both certify, join on variable14, validate the discharged parent and check the exact parent cube against both native checkers. An unresolved child ends the fixed split with partial evidence. Same120CPU/300wall/768MiB/tree8/thread1/16MiBfile128MiBstage and headroom/pressure guards. No deeper split or enlarged cap in this plan. P13 coverage open and K10 passive. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

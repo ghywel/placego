@@ -600,4 +600,53 @@ option pending source adaptation and compilation. A direct single trace
 remains parked. L1658's reviewed graph implication applies when coverage
 is established, and P14 remains open.
 
+## Six factor samples and one next-bit split
+
+The GC2877/GC2878 panel used 3.244 aggregate CPU seconds and 3.89 seconds
+wall time across both launches. The first query returned `c UNKNOWN` with
+exit status 0. I had expected `s UNKNOWN`, so the wrapper stopped. The
+corrected wrapper retained the first query's pinned receipt and partial
+trace and ran the five pending queries under the remaining aggregate
+budget. All five passed both native checkers, assumption discharge and
+exact support checks at every in-window offset.
+
+| Factor | Status | Binary bytes | Discharged additions | Used columns | Supported shifts |
+|---|---|---:|---:|---|---|
+| `0001111` | Conflict limit | 196389 partial | | | |
+| `00000001` | Checked | 129966 | 1054 | 0–19 | 0–44 |
+| `000001010` | Checked | 89752 | 407 | 0–17 | 0–46 |
+| `0001000011` | Checked | 84065 | 482 | 0–22 | 0–41 |
+| `00000101101` | Checked | 70905 | 326 | 0–19 | 0–44 |
+| `010110111110` | Checked | 70302 | 252 | 2–25 | −2–38 |
+
+Evidence `cited/gpt/return13-factor-first-20261110.tar.gz`, 165417 bytes,
+SHA256 `968a639423a6ac9bd6a6def7deb0a4da6c56752bdfb50d1dede4cdd35686ae24`.
+Continuation `cited/gpt/return13-factor-panel-20261110.tar.gz`, 539442 bytes,
+SHA256 `f29ec73805c95b1572d9635077c2116f3ee1e672fd303e8d8af8dd11bf4af42d`.
+Both had verified TLS raw-body readback. Receipt SHA256
+`8121d57eb7868cf140237ac7fa8c5e327321c010ef11420b0230548ac8899027`.
+The depth strata each have one sample. This establishes cost and support
+for those proofs and isolates an unresolved shallow case. It leaves
+full coverage and the total cost estimate open.
+
+GC2879 freezes one split of `0001111` into `00011110` and `00011111`, each
+with the same 3000-conflict cap on the exact strip. Predict at least one
+checked child. If both certify, discharge each cube against the 5044
+clauses, append the two derivations with fresh IDs and resolve the final
+clauses on variable 14. Recheck the resulting parent refutation against
+the exact parent cube with both native checkers and audit the discharges
+against the original strip. An unresolved child leaves the parent open.
+Keep either checked child and stop at these two queries. Any SAT result
+or guard failure stops the job for audit.
+
+Record searched: GC2872–GC2873 PHP proof composition and GC2874–GC2878
+P13 discharges, corrected shifts and panel receipt. Split source SHA256
+`4f74a5707d518b36bda17749dd352d7276c0440d24f8e0a9b3b8337d27ef26b6`,
+pinned plan `gpt_return13_factor_split_plan.json`. One 120 aggregate CPU
+second, 300 wall second, 768 MiB process-tree stage. One thread at nice 10,
+eight processes, 16 MiB/file and 128 MiB/stage, 4096 MiB launch and 1024 MiB
+running free memory, 4096 MiB swap-growth stop. Same 95 CPU inner monitor,
+160 wall worker stop and thermal, pressure and monitor checks. No other
+factor or strip geometry is in the plan.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

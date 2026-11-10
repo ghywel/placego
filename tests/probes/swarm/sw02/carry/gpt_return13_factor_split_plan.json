@@ -1,0 +1,57 @@
+{
+  "worker_stop": 110,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_return13_binary_cert.py": "652b6bd02784000929ebf083eec881430bfe04b3f1eecc0a2822a494c5fd4e2f",
+    "tests/probes/swarm/sw02/carry/gpt_lrat_format_controls.py": "92b08d0a72f83eb7b20c8bc4358ea6cfe26986a3029d886998b3da4f88db57e3",
+    "tests/probes/swarm/sw02/carry/gpt_return13_lrat.py": "467bed29611c6dd4b8c251a8a890d5d5d6621a512c7ff8e05e77aa14fd3fb332",
+    "tests/probes/ether_gap_solve.py": "11e02a0327a1527d08e2d61e53c500409ce38d705c5fc299a1ab32c53f724a2d",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
+    "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_control.py": "79ab88c7f843a0a9fe8fab1f23d3330a44720fe9b5d0487d9d171494249b85fa",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_leaves.py": "7169eb470f2f4ba5c66a0db7c6a8ca5d2f83efe5afe07fc718dbf2a20f954b4b",
+    "tests/probes/swarm/sw02/carry/gpt_return13_factor_split.py": "4f74a5707d518b36bda17749dd352d7276c0440d24f8e0a9b3b8337d27ef26b6",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_replay.py": "2172dbe0f5cfa1d1a2d7c7a6bd9d4e0136cac77c107af5dd0112c1d865400297"
+  },
+  "original_cnf_sha256": "badadbb38e00fb0c01991563f3fb6664ed2b78c9ab7254a36fa1bd818313fcd0",
+  "prediction": {
+    "branches": "one or both exclusions below 3000 conflicts, with at least one checked forecast",
+    "join": "if both are certified, their exclusions yield the parent clause by a two-hint RUP step and the proof refutes the parent cube with both native checkers"
+  },
+  "counterfactual": "An unresolved child leaves the parent open. Keep all checked partial evidence. No deeper split or parent retry follows automatically. A SAT child or resource/control failure stops for audit.",
+  "limits": {
+    "aggregate_cpu_s": 120,
+    "wall_s": 300,
+    "tree_rss_mib": 768,
+    "max_procs": 8,
+    "file_mib": 16,
+    "disk_mib": 128,
+    "launch_free_mib": 4096,
+    "min_free_mib": 1024,
+    "swap_growth_mib": 4096,
+    "threads": 1,
+    "nice": 10,
+    "inner_aggregate_stop_cpu_s": 95,
+    "worker_soft_cpu_s": 12,
+    "worker_hard_cpu_s": 120
+  },
+  "jobs": [
+    {
+      "name": "factor-split",
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_return13_factor_split.py"
+      ],
+      "cpu": 120,
+      "wall": 160,
+      "required_stdout_lines": [
+        "RETURN13_FACTOR_SPLIT_RECORDED"
+      ]
+    }
+  ],
+  "panel_receipt_sha256": "8121d57eb7868cf140237ac7fa8c5e327321c010ef11420b0230548ac8899027",
+  "branches": [
+    "00011110",
+    "00011111"
+  ]
+}
