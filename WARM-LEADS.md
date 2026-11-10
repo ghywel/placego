@@ -7,12 +7,14 @@ Local reports its 15-minute heartbeat and 60-second flag waiter armed. Research 
 
 | Work now | Owner | Exact next step |
 |---|---|---|
-| S-13 | Local refreshes/posts; GPT release reader | Complete Lean read PASS GC2805; corrected text ready. Local Check rerun, nb2 and four coherent changed pins/dry check complete conditional clearance. Old nb1 superseded; no duplicate post. |
-| S-11, S-07 and S-08 | Worker carries complete; Local builds | S-11 GC2803; S-07 and S-08 GC2804 carried with exact scope/repairs, finite controls PASS. Local builds after S-05 (L1622). S-07 finite reflection replacement carried L1625, Local module active; original series proof already carried. |
-| S-06 and S-09 | GPT prior-art comparison | S06 repaired worker carry/controls PASS GC2807, exact other-phase comparison read; Local module next, reuse FirstChecks. GPT next S09 ColumnTransfer; returned release packets first. |
-| S-05, then S-11/S-07/S-08 | Local builds/posts; GPT release reader | S05 complete release read PASS GC2806, exact nb1/current-verifier dry gate pass; Local posts/opens credited PR with five stale statuses corrected. No rebuild/duplicate post. |
-| S-12 | Local, later in queue | Hand carry stands; Local L1622 identifies missing zero-wall diagonal formalization. No verified shortcut yet; near-square side claim excluded. |
-| S-16 | Delivery complete; Local handles PR follow-up | Nb2/public notebook and source exact, GPT GC2802; portal Lean Verified, PR248 open. No rebuild or duplicate post. |
+| S-13 and S-05 | Delivery complete; Local PR follow-up | Actual Lean Verified and exact public bytes confirmed GC2808; PR254/255 open/mergeable, no comments. Maintainer merge; no repost. |
+| S-11 | Local posts; GPT read complete | Full source/actual nb1/current dry gate PASS GC2808. Post exact pins once, then credited kit PR under standing consent. |
+| S-07 | GPT returned release reader; Local assembly | L1626 packet built,211constants/sevenheads; complete source/artifact read next. Reflection proof already carried L1625. |
+| S-08 | Local builds; GPT release reader | Repaired worker carries GC2804 complete; module/release next Local, domain/b0/phase/width guards retained. |
+| S-06 | Local module next; GPT carry complete | Repaired all-n hand proof and fixed controls PASS GC2807; use existing FirstChecks count identity, n1 Walsh guard and explicit prior-art phase comparison. |
+| S-09 | GPT exact prior-art/carry reader | ColumnTransfer hypotheses/conclusions comparison after returned release reads. |
+| S-12 | Local, later in queue | Hand carry stands; L1622 zero-wall diagonal formalization gap remains, near-square side claim excluded. |
+| S-16 | Delivery complete; Local PR follow-up | Exact nb2/public bytes GC2802 and actual Lean Verified; PR248 maintainer merge. No duplicate package. |
 
 *Started 6 November 2026 by Local at the owner's request: "a clear schedule of work in a light summary document we can refer back to, to shift the backlog here and make sure results are not forgotten." This page is the current warm-lead document and the short record of firmly closed doors. It is meant to stay short. The detail is in [SW02-RESULTS.md](reports/SW02-RESULTS.md) (answers, barriers, predictions), [SW02-DOORS.md](reports/SW02-DOORS.md) (all 556 doors), the [submission queue](reports/wolfram-agents/DELIVERY-QUEUE.md#sw-02-submission-queue-6-november-2026) and the [backlog](reports/SW02-BACKLOG.md).*
 
@@ -29,8 +31,8 @@ Local reports its 15-minute heartbeat and 60-second flag waiter armed. Research 
 | 1 | S-16 | Width-18 trap language, 3535353 | CP-2.2 | **Posted, Lean Verified** ([R30-20261109-89b242](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261109-89b242), L1618–L1619); kit PR #248 open; nb2/public byte read PASS GC2802 | Merge of #248 (maintainers); no release gate remains |
 | 2 | S-13 | Free-middle theorem (survival does not restrict additive potentials) | XP-3.1 | **Posted, Lean Verified** ([R30-20261110-a6ada9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-a6ada9), L1624); kit PR #254 open | Merge of #254 (maintainers) |
 | 3 | S-12 | Complexity rung p(n) − n → ∞ for free words of finite rows | CP-3.2 | Carried two-party GC2702 with guards; L1622 moves build later | Zero-wall diagonal theory then module/essay; near-square claim stays out |
-| 4 | S-11 | The cut ether is off the seed's edge cycle (HX-2.1) | HX-2 | Carried GC2803; **Lean built, release packet ready (L1624)** | GPT's release read, then post and PR |
-| 5 | S-07 | Radius-2 left-permutive family with an exactly alternating column | XP-4.1 | Worker carry PASS GC2804; original binary clock proof/finite controls pass; alphabet4 precedent GC1165 credited | Local small module; finite reflection proof carried L1625; module active Local, no PowerSeries dependency needed |
+| 4 | S-11 | The cut ether is off the seed's edge cycle (HX-2.1) | HX-2 | **Full release read PASS GC2808**, exact nb1/88constants/current dry gate | Local post once/kit PR under standing consent; public outcome pending |
+| 5 | S-07 | Radius-2 left-permutive family with an exactly alternating column | XP-4.1 | Carried GC2804; reflection proof carried L1625; **Lean built, release packet ready (L1626)** | GPT's release read, then post and PR |
 | 6 | S-08 | Planted survivors: linear hybrid; finite-state map with Rule 30's table plus one | BR-3.1, BR-3.2 | Worker carry PASS GC2804 for both repaired components; fixed controls pass | Local module(s): extended polynomial domain/b0 term, exact table swap, width/locality guards; release checks pending |
 | 7 | S-06 | Parity law S_2n(2n) ≡ n mod 2 and the degree law of the checks | XP-1.1 | Worker carry/controls PASS GC2807; exact opposite Berzai phase distinguished; count identity already FirstChecks | Local small coefficient/degree/parity module; n1 Walsh guard, explicit prior art; no spectra/forgetting additions |
 | 8 | S-09 | Exact black-count law and five-column bound | P2-3.1 | Self-check; PARTLY known (`ColumnTransfer`) | GPT comparison and read, then scope/module |
