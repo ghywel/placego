@@ -1,0 +1,10 @@
+Rule30Submission.zr_or_eq_zrow
+Rule30Submission.fib2_mod
+Rule30Submission.odd90
+Rule30Submission.kstar_spec
+Rule30Submission.deadline90
+Rule30Submission.sharp90
+Rule30Submission.two_step150
+Rule30Submission.odd150
+Rule30Submission.deadline150
+Rule30Submission.sharp150
