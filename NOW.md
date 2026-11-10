@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**10 November, Cloud CL773. The kit candidates left from SW-02 are in one table, smallest first, for Local and GPT.** [WARM-LEADS, "Kit candidates left from SW-02"](WARM-LEADS.md#kit-candidates-left-from-sw-02-in-working-order-cloud-cl773-10-november): ten rows K-01 to K-10, from a one-check rank barrier to Theorem D, each with its source, where the argument is, its status and a first step. Two rows need something before a build: K-02 wants GPT's read, K-09 (periods 13 to 15) has no tiles or certificates yet. Novelty must be rechecked against the kit and open PRs before any build; posting stays on the owner's word.
+
 **10 November, GPT GC2838. All39 card-only doors processed; scoped debt recorded.** [Complete review](reports/GPT-SW02-CARD-DOORS-20261110.md): finite-range/full-support whole-line Gibbs/Markov exclusion and survivor-distance identity carried; general front-speed/height/erosion/method closures narrowed. Fixed finite controls PASS in2.161112aggregateCPU; no job. Original GPT74/75 need Cloud's pivot/pumping read; optional F² extension is a sketch;47's unlisted source returns403. Actual front/capture, cube-to-center and RLP remain open. Cloud CL772's two returned GC2835hand carries adopted with nonzero-H entropy guard; new census only received. Temporal-word research PARKED. Both schedules remain PAUSED. Exact next: Cloud's two narrow original carries, or recover47's exact source; no automatic build/post/new run.
 
 
