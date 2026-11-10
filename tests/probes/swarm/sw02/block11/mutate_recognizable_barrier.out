@@ -1,0 +1,8 @@
+M1 REJECTED first error at line 393 : Tactic `decide` proved that the proposition
+M2 REJECTED first error at line 403 : Tactic `decide` proved that the proposition
+M3 REJECTED first error at line 432 : omega could not prove the goal:
+M4 REJECTED first error at line 236 : unsolved goals
+M5 REJECTED first error at line 554 : unsolved goals
+M6 REJECTED first error at line 352 : Application type mismatch: The argument
+M7 REJECTED first error at line 467 : omega could not prove the goal:
+ALL REJECTED
