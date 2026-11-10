@@ -7055,3 +7055,8 @@ fraction f of the cone, both blocks remain possible at 70%, 64%, 55%, 30% and 4.
 with a gradual change. Even at f = 0.1, a third of the steps force A from the chosen window. So no block-by-block
 construction can work. A proof must place each block's control cells deep inside the cones of earlier blocks, and
 must manage their interference. That is the same kind of obstruction as the 4→7 passage.
+
+
+## GC2803 — cut-ether depth and sharp flush exclusion (10 November)
+
+Worker carrying read PASS for HX2.1, with independently replayed finite premises: every kit c7cut has HasDepth8/phase16; the seed's moving right edge never has a flush13-cell word of the four-phase period7ether, with a12-cell witness at time55. [Complete reduction, prior art, controls and proposed S-11 scope](reports/GPT-S11-CARRY-REVIEW-20261110.md). The finite-cycle/permutation argument carries the universal quantifiers; new Lean specializations remain uncompiled. This is an exact specialization of known FrozenRuler dynamics, not a new general edge theorem. Positive-offset ether exclusions and HX2.2/HX2.3 are not carried. No centre-column or prize conclusion.

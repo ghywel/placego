@@ -1,6 +1,6 @@
 # S-11: carry the flush edge exclusion, not the centre-column barrier
 
-GPT GC2803, 10 November. **First worker read: in progress until the finite replay below returns.**
+GPT GC2803, 10 November. **Worker carrying read PASS, with the flush/depth scope below.** Finite premises independently replayed; new Lean specializations remain uncompiled.
 Local retains module/build/notebook/post ownership. This read concerns HX-2.1 only; HX-2.2's ranking
 claims, HX-2.3's past census and asymptotic interpretations are excluded.
 
@@ -60,7 +60,7 @@ cycle of the one-bit code under the map `T`, restricted to its first k bits.
    Kit `evol_c7_four`/`evol_c7_shift` cover all phases/positions, and `seed_code` connects the
    finite cycle to actual whole-line seed rows.
 
-This carries the universal reduction **conditional on the stated finite checks**. The module
+The finite replay below now passes, completing the worker carry of this universal reduction with its checked finite premises. The module
 should check those finite facts in Lean, not assume the Python result as an axiom. No Lean
 compilation or kernel proof of these new specializations is claimed here yet.
 
@@ -103,11 +103,36 @@ tree768MiB RSS, max6processes, launchfree4096/runningfloor1024MiB, swapgrowth409
 and redirects to hand reasoning; no retry or enlargement is authorized by this freeze.
 Private executable plan SHA256 `f171059ae32d18c84ae4c61ae181364c61bf3bc115aeb322266b9159ed8b3c4d`.
 
+## Outcome — GC2803
+
+**Finite premises PASS**, one run from freeze `69cc598e`: C9 has32 distinct states,129 absent,
+phase16 is385, C13 has64states, all13exit depths exact, deepest12-prefix present at55. The
+exhaustive256odd-state map is bijective and preserves membership/nonmembership in C9. Literal
+whole-line rows0..204 agree with the tuple map; four physical cuts through32ticks agree below8
+and differ at8 from phase16+t. Both offset counterexamples and the odd-span15 control pass.
+This is a COMPUTED independent finite replay, not a new kernel certificate.
+
+Stage COMPLETED rc0,0.334574aggregateCPU seconds including the outer monitor,0.54wall; child
+0.058516CPU seconds and12,341,248bytes maximumRSS. The child finished before a live tree RSS
+sample, so the launcher's zero RSS sample is **not** a measured zero peak. Launch free5149MiB,
+swapgrowth0; thermal controls normal, no monitor/pressure stop, no retry and no running job.
+The hand universal reduction is now carried; Local's Lean certificate/build still remains.
+The earlier automated privacy scan had a regex syntax error; the corrected scan passes, with
+no file-content failure. This is recorded separately from the mathematical controls.
+
 ## Next executable handoff
 
-After the finite replay, give Local the carried small-module scope: `c7cut_depth`8/16,
+Local may now build the carried small-module scope: `c7cut_depth`8/16,
 its frozen-ruler corollary, no seed flush13-ether prefix, and the sharp12witness. A finite
 prefix invariant may supply the stronger all-phase nonagreement; keep it explicit. Existing
 kit general results should be cited/imported, with new calculations checked through ordinary
 kernel reduction/certificates. Do not formalize HX2.2 or past-period claims in S-11. Local
 continues S-13/S-12 first; this is a passive statement handoff, not a competing build request.
+
+Suggested exact public flush statement: for every seed time s, ether phase a and spatial
+position p, there exists j<13 such that `R j s` differs from `evol c7 a (p-j)`; its sharpness
+witness uses s=55, a=3, p=4 and equality for every j<12. This includes white-ended windows
+by the trivial j=0 mismatch; the finite certificate needs only the13black-ended words.
+Keep the k=8/phase16 depth as the main cut theorem, with the no-exact-white-run-width>=8
+corollary available directly from the existing frozen-ruler theorem. No fixed positive
+window offset is introduced by either statement.
