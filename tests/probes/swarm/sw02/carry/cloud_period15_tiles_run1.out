@@ -1,0 +1,18 @@
+core pairs 606 | branching component: pairs 525 edges 555 branch vertices 30
+K5 weights of the two continuing children at the branch vertices: (weights): vertices [((7, 8), 30)]
+   rotation classes of branch vertices: 2 | column weights of the branch pairs by class: [(7, 8), (7, 10)]
+first-return segments between branch vertices: 60 | (cells: segments) [(3, 15), (7, 15), (9, 15), (27, 15)] | self-returns 0
+K2 growth rate of the component (4000 iterations): 1.087715
+   shortest cycle in the component: 31 cells
+K1 least length with at least two closed walks, over the 30 branch vertices: (length, walks): vertices [((31, 2), 15), ((31, 3), 15)]
+   least over all: 31 cells, at 30 branch vertices; first: (5293, 7347)
+K4 closed walks of length 31 at that vertex: 2
+   walk with branch choices 10100 | returns to the vertex on the way: 0 
+      tile: 1100100000001111010110110110011
+   walk with branch choices 11000 | returns to the vertex on the way: 0 
+      tile: 1100100000001111010101110110011
+   tiles distinct: True | positions where the first two differ: [20, 21]
+K3 rings from every word of 1 to 4 tiles: return after 15 moving steps, the ordinary rule gives evol x 15 (i + 15) = x i, and no return after 1, 3 or 5: True | rings 30
+   entropy from two tiles of 31 cells: 0.03226 bits per cell | log2 of the growth rate: 0.1213
+   pair periods in the component: [15]
+   equations a kernel certificate would check for two tiles: 4 seams x 31 sites x 15 ticks = 1860

@@ -1,0 +1,32 @@
+core pairs 606 | branching component: pairs 525 edges 555 branch vertices 30
+K5 weights of the two continuing children at the branch vertices: (weights): vertices [((7, 8), 30)]
+   rotation classes of branch vertices: 2 | column weights of the branch pairs by class: [(7, 8), (7, 10)]
+first-return segments between branch vertices: 60 | (cells: segments) [(3, 15), (7, 15), (9, 15), (27, 15)] | self-returns 0
+K2 growth rate of the component (4000 iterations): 1.087715
+   shortest cycle in the component: 31 cells
+K1 least length with at least two closed walks, over the 30 branch vertices: (length, walks): vertices [((31, 2), 15), ((31, 3), 15)]
+   least over all: 31 cells, at 30 branch vertices; first: (5293, 7347)
+K4 closed walks of length 31 at that vertex: 2
+   walk with branch choices 10100 | returns to the vertex on the way: 0 
+      tile: 1100100000001111010110110110011
+   walk with branch choices 11000 | returns to the vertex on the way: 0 
+      tile: 1100100000001111010101110110011
+   tiles distinct: True | positions where the first two differ: [20, 21]
+K3 rings from every word of 1 to 4 tiles: return after 15 moving steps, the ordinary rule gives evol x 15 (i + 15) = x i, and no return after 1, 3 or 5: True | rings 30
+   entropy from two tiles of 31 cells: 0.03226 bits per cell | log2 of the growth rate: 0.1213
+three-tile vertex (5461, 23930) | closed walks of 31 cells: 3
+   branch choices 01110 tile: 1010111000011111001010010011110
+   branch choices 10010 tile: 1010110110110011110010000000111
+   branch choices 10110 tile: 1010111000011111001010000000111
+   tiles distinct: True | positions where they differ: [6, 7, 8, 10, 12, 13, 16, 17, 18, 23, 26, 27, 30] | letters there: ['1000110011110', '0111001100001', '1000110010001']
+   rings from every word of 1 to 3 of the three tiles return after 15 moving steps and not after 1, 3, 5: True | rings 39 | entropy from three tiles: 0.05113 bits per cell
+profiles (bit t = tick t), increasing site order; every walk starts and ends at its vertex
+   two-tile vertex (5293, 7347)
+      choices 10100 [5293, 7347, 21194, 21162, 11183, 23120, 26216, 21848, 21844, 31412, 17738, 18094, 9577, 26009, 5717, 5461, 23930, 21125, 13126, 10949, 10917, 21926, 10837, 30069, 2890, 3277, 2731, 19114, 20310, 10409, 26837]
+      choices 11000 [5293, 7347, 21194, 21162, 11183, 23120, 26216, 21848, 21844, 27316, 21834, 24238, 8553, 20889, 12629, 10581, 27114, 5397, 23834, 21141, 13206, 10841, 10837, 30069, 2890, 3277, 2731, 19114, 20310, 10409, 26837]
+   three-tile vertex (5461, 23930)
+      choices 01110 [5461, 23930, 21125, 13126, 10949, 10917, 21927, 10836, 13684, 11082, 11470, 12969, 10921, 27605, 5165, 6707, 22058, 21802, 11581, 21154, 11171, 23122, 26226, 5451, 21834, 24238, 8553, 20889, 12629, 10581, 27050]
+      choices 10010 [5461, 23930, 21125, 13126, 10949, 10917, 21926, 10837, 30069, 2890, 3277, 2731, 19114, 20310, 10409, 26837, 5293, 7347, 21194, 21162, 11183, 23120, 26216, 21848, 21844, 31412, 17738, 18094, 9577, 26009, 5717]
+      choices 10110 [5461, 23930, 21125, 13126, 10949, 10917, 21927, 10836, 13684, 11082, 11470, 12969, 10921, 27605, 5165, 6707, 22058, 21802, 11573, 21162, 11183, 23120, 26216, 21848, 21844, 31412, 17738, 18094, 9577, 26009, 5717]
+   pair periods in the component: [15]
+   equations a kernel certificate would check for two tiles: 4 seams x 31 sites x 15 ticks = 1860

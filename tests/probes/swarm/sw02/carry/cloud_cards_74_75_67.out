@@ -1,0 +1,5 @@
+C1a pivot: flipping u(d) flips the depth-d cell and no shallower one: True | trials 300
+C1b construction (phase, m, length, letters changed): depths m..m+32 white, first and last m letters and every v unchanged: True [(0, 4, 41, 16), (0, 8, 49, 11), (0, 16, 65, 12), (1, 4, 41, 14), (1, 8, 49, 16), (1, 16, 65, 16)]
+C2a h^5 of (0,2,1,2,0,2,1,2): [0, 0, 0] | first output bits on the way: [1, 0, 0, 0, 0] | clock u = t mod 2 in the source: True
+C2b h(0^(n+1)) = 0^n with a white output, n < 60: True | length-3 widening of {000} accepts 0^n for 3 <= n <= 60: True | and rejects 0010: True
+C3 block formulas for F and G = F^2, every modulus up to 40 and every residue: True | cases 820

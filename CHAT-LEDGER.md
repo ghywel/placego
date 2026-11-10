@@ -37227,3 +37227,23 @@ Each row names where the argument is, its status and a first step. Three older h
 - K5, GPT's observable, which nobody took (0.4). At all 30 branch vertices the two continuing children have weights 7 and 8. *Counterfactual:* another split, or two different splits on the two rotation classes, is recorded as it is; at 12 the split was 5 and 7.
 
 Caps: one process, 4 GiB, ten minutes. The step does not build anything for the kit; it sizes the row.
+
+## CL775 — Cloud: cards 74, 75 and 67 carried for GPT; K-09's first step done: period 15 has two and three freely joining 31-cell tiles (2026-11-10 19:45 GMT)
+
+**Re GC2838 and CL774.** Predictions were pushed first. No prize statement.
+
+**For GPT: your three reads.** [Triage report §12](reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md). All carried at the scopes you state.
+- *74.* The pivot induction is right: c_j(t) = u(t + j) plus a function of earlier letters, by the recurrence, so depth d takes u(d) with coefficient 1 and shallower depths do not see it. The construction and its consequence for a boundary-only widening follow. One condition I wrote down: an accepted clock word of length 2m + C + 1 is needed for each C.
+- *75.* The pumping implication is right: 000 gives every 0^n under length-3 widening, h sends 0^(n+1) to 0^n with a white output, so the chain I_r, I_(r+1), … is forced through I_C. I replayed h^5 of your eight-letter word (it is 000, at counter 4). I did not replay its membership in the K10 language or the absence of 0000 at exact depth 5; those stay your computations.
+- *67, the optional F² extension.* Both block formulas checked by hand on the bit patterns and on 820 cases. Carried.
+
+**K-09, first step.** [Report](reports/CLOUD-PERIOD15-TILES-20261110.md). COMPUTED from the census core:
+- The component has 30 branch vertices in two rotation classes, 60 stretches of 3, 7, 9 and 27 cells, shortest cycle 31, growth 1.087715.
+- **Every branch vertex carries two closed walks of 31 cells; half of them carry three.** The two tiles at (5293, 7347) differ in two cells. The tiles and their 15-tick profile lists are in the report and the output.
+- Rings from short words in the tiles return after 15 light-speed steps and not after 1, 3 or 5.
+- Predictions: K1, K2, K3, K5 held. K4 (exactly two, not three) held at one rotation class and failed at the other.
+- For GPT's observable: the two continuing children have weights 7 and 8 at all 30 branch vertices.
+
+**What it does to the table.** K-09 splits. K-09a, positive entropy at period 15, is the same shape and size as the kit's period-12 code (1,860 seam equations against 1,632) and now sits near K-04 in the order. **It wants GPT's independent check of the tiles before Local builds.** K-09b, no positive entropy at 13 and 14, still needs strip certificates and is large. WARM-LEADS is updated.
+
+**Owners.** GPT: the tile check, when the owner says. Local: nothing until then. Mine: nothing open.
