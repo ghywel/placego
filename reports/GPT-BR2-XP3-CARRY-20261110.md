@@ -1,6 +1,7 @@
 # BR-2.2/BR-2.3 carrying read and XP-3.2 exact replays
 
-Owner-requested manual block, GC2831. Both schedules remain **PAUSED**. The
+Owner-requested manual block, GC2831/GC2832, **COMPLETE** at the scopes below.
+Both schedules remain **PAUSED**. The
 parity/period12 research pull is parked. Cloud retains its other §9.4 leftovers
 and the39 card-only doors. No module, build, posting or larger census is assigned.
 
@@ -13,7 +14,8 @@ audit, joint repair generator and exact joint certificates. Raw archive SHA256
 `c231157f6daeb1433d2c8aaf2e0190f78b5c4723009fdcc32ee8842a5c11d94c`.
 **Record searched:** CL766/triage §9, GC2826's B2+ read, GC2702/XP3.1 and S13;
 SW02-RESULTS; current kit actual `Rule30LocalConservation`,
-`Rule30ZeroBoundaryBarriers`, `Rule30PeriodTwoSideways` sources. Kit pin
+`Rule30ZeroBoundaryBarriers`, `Rule30ZeroBoundary` and
+`Rule30PeriodTwoSideways` sources. Kit pin
 `03a19bf6240b63c6d15894c5f7552f3a6091d937`; known-find's last complete refresh
 2026-11-10T16:51:38.621740Z. This is a carrying review, not a novelty decision.
 The kit's `cyclic_conserved_iff_shift_coboundary` already covers integer
@@ -154,8 +156,11 @@ a bottom DFA component B after r>=1 cells. K's free-word chart supplies a
 G-periodic y' with the same first r cells: choose a periodic free word matching
 the finitely many free bits needed by Theta_dep. Let its period be p.
 
-The prefix shared by y' and G^p y' reaches B on both product tracks, and can
-be extended arbitrarily while surviving p double steps. It reaches a bottom
+Use an input prefix of y' long enough for both tracks to have read their first
+r cells and for the wall-position counter to flush; r+4p+2cells suffice. Its
+first r output cells equal those of y', since G^p y'=y'. This fixes all p
+survival checks, so arbitrary further input letters followed by a final black
+cell remain allowed. Both tracks stay in B, and the product reaches a bottom
 product component inside B x B. Cycle pumping for that power is valid, both
 track means equal nu_B, and the reconstructed stake identity applies.
 H_FS kills mu on that component; its projection covers all of B, because a
@@ -182,12 +187,123 @@ needs no general H_FS conjecture.
 Finally a finite complete DFA has a word z taking every state into a bottom
 component: repeatedly send one remaining nonbottom image state along a shortest
 path to a bottom; already-bottom images stay there. A bound N(N-1)/2 follows
-by summing the remaining nonbottom counts. If z occurred anywhere in a K row,
+as follows. If there are n nonbottom states and k current nonbottom images,
+choose an image closest to the bottoms. Its shortest path has length at most
+n-k+1: its lower-distance transient states are outside the current image set.
+Applying that word loses at least one nonbottom image; sum these bounds to
+get n(n+1)/2<=N(N-1)/2. If z occurred anywhere in a K row,
 that row would reach a bottom component, a contradiction. Its prefixes lie in
 the proper regular language of paths avoiding bottom components. This is the
 conditional dichotomy, not a proof of H_FS, factor completeness, or Q01.
 
 ## Replay result
 
-Pending the separately frozen bounded stage. Do not read the predictions above
-as executed checks or a finite-certificate carry.
+**COMPUTED, independent exact replay PASS.** The stage at freeze `d963f4f4`
+completed all four jobs, no stop and no job remaining. Both literal script
+replays regenerated all 13 certificate files **byte-identically** to their
+filed originals. HiGHS's forwarded thread options produced the expected
+OptimizeWarning, retained in the logs; no algorithm or feature was changed.
+
+|Certificate scope|Independently checked outcome|
+|---|---|
+|No boundary terms, r=1..6|All six exact rational convex identities pass. Supports1,1,1,1,17,33. The r=6 largest denominator is5252248224.|
+|Separate boundary terms, seven triples|All seven pass exact counts, width, positive coefficients summing to1, and separate wall/edge flows.|
+|Joint boundary terms at(1,3,3),(2,3,3),(3,3,3),(4,4,4)|The same filed certificates also have zero joint flow.|
+|Joint boundary terms at(2,6,6),(3,6,6),(4,6,6)|The originals fail, with8,10,14 nonzero joint labels. SC-5's replacements have supports14,11,18 and zero joint flow; maximum denominators106,33,168.|
+
+There were29 complete rational identity checks:13 filed+13 regenerated+3 joint
+repairs. An independent literal Rule30 truth-table update and tuple-window
+counter checked them; neither the source's packed update nor its count or
+elimination functions carry this check. Exhaustive width<=14 start checking
+gave189 late roots and797 rows in their forward closure, all reaching a white
+check within the fixed400-tick audit cap. Every certificate pair belongs to
+that closure and survives its double step. The retained root/time witnesses
+also put every support at its own declared W0, not just the common14bound.
+
+All13 +1000 negative LP controls returned numerical status2, independently
+backed by an **exact** separating coordinate: the width equation forces total
+coefficient1, while the raised coordinate exceeds the maximum among every
+available pair in the larger width14 closure. A corrupted coefficient fails
+normalization. The unexpected Y=3 check passes at r<=3 but fails at r=4;
+the actual r=4 certificate is Y=0x23, GY=0xc5. The old report's Y=3-through-r4
+sentence is corrected, not carried.
+
+BR controls:2048 accepted input/image product paths agree with literal physical
+Delta, over four fixed DFA skeletons and both readings. The memory-flip and
+triangular-bijection identities pass1008 fixed cases (kappa1..8, ell1..6).
+The fixed two-state white-run-parity DFA has a stake for rule210 at powers1..4
+and none for rule30 there. These are bounded controls, not a proof of H_FS or
+an automata census.
+
+Resource receipt: **4.518872 aggregate CPU seconds** including monitor work,
+5.0 wall seconds, sampled process-tree maximum79080 KiB, max3 live processes,
+5586 MiB launch headroom/5513 MiB sampled running minimum, zero swap growth.
+The stage disk envelope finished below128 KiB. Sampled RSS is not an unsampled
+peak claim. No Lean, GPU, Wolfram, larger width or repeated LP search.
+
+### What the finite identities imply
+
+Write f(Y) as its width, counts of nonzero zero-padded r-windows, and the
+one-hot joint boundary label. For each cleared triple the certificate gives
+
+    sum_i lambda_i [f(GY_i)-f(Y_i)] = f(trunc(n+2))-f(trunc(n)) = v,
+    lambda_i>0, sum_i lambda_i=1.
+
+The stripe increment v is constant for all sufficiently large odd n: adding
+one01period adds the same two bulk windows, keeps both end labels, and adds2
+to width. If R=C+x.f drops by at least1 on every listed pair, then x.v<=-1.
+Consequently R(trunc(n+2))<=R(trunc(n))-1 indefinitely, contradicting any
+uniform lower bound on these surviving truncated stripes. The four smaller
+boundary certificates and three joint replacements therefore cover arbitrary
+beta(wall,edge), including interacting wall/edge terms. The three failed
+originals alone cover only beta1(wall)+beta2(edge).
+
+Omitting the all-zero window loses no affine-in-counts potential: there are
+W+r-1 padded windows; its coefficient is absorbed into the affine width term
+and constant. This does not cover nonlinear g(W), larger r, a free threshold
+excluding the listed pairs, seed-only obligations, or arbitrary DFA weights.
+An integer/rational strict ranking has a uniform decrement after scaling;
+unscaled real strict decreases on this finite list also have a positive minimum.
+
+### Carry dispositions and next steps
+
+**BR-2.2 CARRIED WITH EXPLICIT GUARDS, hand/two-party:** Theorem3's trim
+product/endpoint LP equivalence; Theorem4's reachable-cycle obstruction and
+equal-mean bottom-component stake identity; Theorem5's all-positive-power
+finite-window classification. The report's terse (c) must retain the equal-mean
+guard supplied by (b). Numerical N<=4 infeasibility stays numerical; no
+class-wide DFA barrier follows.
+
+**BR-2.3 CARRIED CONDITIONALLY, hand/two-party:** Theorem6 under H_FS, or
+definite bottom components. The wedge term is controlled by finite DFA
+endpoints after entry, not by any prediction of its contents. H_FS and
+factor completeness remain open. The rule210 countercontrol prevents upgrading
+left-permutivity or finite-window rigidity into H_FS.
+
+**XP-3.2 hand implication CARRIED** (agreeing with CL766), and its finite
+premises now independently COMPUTED as above. All seven joint-boundary scopes
+survive using the correct replacements. The source attribution is **SC-5**,
+not SC-2. No new module, release clearance or prize inference.
+
+Primary literature boundary checked directly:
+[Kari–Taati, Theorem47](https://arxiv.org/html/1311.2319v3)
+assumes strong transitivity. That assumption has not been established here;
+the finite-window argument above does not invoke it. The existing kit's
+four-step result and these standard general conservation methods remain prior art.
+
+The requested two leftover tasks are complete at these scopes. Cloud CL767 is carrying the two earlier GC2830 questions and keeps
+its other §9.4 leftovers; no new census or formalization assigned. The parity
+pull and both schedules stay parked/paused. A future all-k module should use
+the explicit memory-flip induction, with rule210 as its scope control; a general
+DFA exclusion would still need H_FS or a replacement structural hypothesis.
+
+Immutable evidence: `cited/gc2832-br2-xp3-carry-20261110.tar.gz`, 92925 bytes, SHA256
+`65c06d839c6c2bd2442c03cf58f6dee904b56a3c050e5eb512b04879516232bf`, 79 files; verified TLS/raw-body upload and
+byte-exact readback. Includes frozen inputs/plan, both original scripts and
+filed/regenerated certificates, SC-5 repairs, independent closure witnesses,
+all four run receipts and the review before this archive receipt. Two warning
+logs have private worktree paths normalized; both raw and normalized digests
+are retained. Data stays outside git.
+
+My own pull: the one-tick dyadic obstruction remains parked; the assigned
+carry debt takes priority, and no research continuation is launched here.

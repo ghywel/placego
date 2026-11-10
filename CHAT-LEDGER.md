@@ -36979,3 +36979,26 @@ Caps: one process, 4 GiB address space, ten minutes each. The reads and results 
 At the owner's explicit request, fresh fetch and safe merge through Cloud CL766/b47bb105. Complete CL766 handover and atlas §9 read. GPT owns the remaining BR-2 Theorems3–6 carrying reconstruction (exact product LP, stake identity, all-k window lemma, conditional wall-read reduction) and the two XP-3.2 certificate-script replays, including SC-2's joint-boundary correction. Cloud retains its other §9.4 leftovers and the39 card-only doors; no build/post or duplicate run assigned.
 
 The GC2830 parity/period12 pull is PARKED; its existing Cloud carry requests stay pending, not withdrawn. Both work heartbeat and flag poller remain PAUSED. Original sources and dependencies will be read and an exact bounded replay/source freeze published before any substantial computation. Each result will distinguish a carried hand step, a rational certificate replay, a floating LP status and an unresolved assumption. Exact next step: reconstruct the trim product/start/end convention and identify the precise seven late-row feature triples before freezing the replay.
+
+
+## GC2832 — GPT: BR-2.2/BR-2.3 carried at guarded scopes; both XP-3 scripts and joint repairs independently replayed (10 November)
+
+**Re CL766 and owner's explicit leftover assignment; complete original carrying sources read.** [Full reconstruction and replay](reports/GPT-BR2-XP3-CARRY-20261110.md). **BR-2.2 PROVED hand/two-party with explicit guards:** fixed-skeleton LP on reachable/coaccessible trim product, exact wall lag/padding/end scores and longest/shortest path equivalence; reachable-cycle pump; equal-mean bottom-product Poisson/harmonic identity; every-positive-power finite-window classification by oldest-memory flip and stake-forgetting induction. The equality of component means is necessary for the zero-cycle/stake conclusion. Numerical N<=4 infeasibility remains numerical, not an exact certificate or class barrier. **BR-2.3 PROVED hand/two-party as a conditional implication:** H_FS or definite bottoms forces a forbidden K factor. Actual periodic free-word prefix fixes every intermediate survivor guard; wall counter is flushed before using bulk. Both tracks enter the same bottom DFA component, the wedge is read there, and the score difference is2pn*nu+O(1). H_FS/factor completeness remain open; rule210 retains its nonzero-stake control. No prize or general DFA exclusion.
+
+**XP-3.2 COMPUTED independent exact:** the unmodified `cert.py14 6` and `cert2.py14` run through a disclosed one-thread/import/output adapter and reproduce all13filed certificate files byte-identically. Independent literal Rule30 cells/tuple-window counts verify29complete rational identities (13filed+13rerun+3joint repairs), positive weights/sum1, exact width/count increments and joint/separate flows.189late roots/797forward-closure rows from widths<=14 checked; retained root/time witnesses place every support at its declared W0. All13negative LP controls return2 and have an independent exact coordinate separator; coefficient corruption rejected.
+
+**Scope/citation repairs:** `cert2.py` only enforces separate wall/edge circulation. Its r=2,3,4/w=e=6 certificates fail joint flow on8,10,14labels. The correct **SC-5** (not SC-2) replacements have supports14,11,18 and zero joint flow; all seven stated joint-boundary scopes are therefore certified using those replacements. Y=3 works only through r=3; r=4 uses0x23 with GY=0xc5. Hand affine-width/count obstruction agrees with CL766 and is carried. Nonlinear g(W), all radii and thresholds omitting the listed pairs remain open.
+
+Frozen stage `d963f4f4` PASS:4.518872aggregateCPU including monitor,5.0wall,sampled79080KiB treeRSS,max3processes,5586launch/5513minimum freeMiB,zero swapgrowth.2048fixed product-path and1008memory/bijection controls PASS; fixed2state rule210stake persists powers1..4 while rule30control is zero. No build, wider census, Wolfram or post; no job remains. Current kit03a19bf6/last complete index16:51:38Z retained; actual Theta_dep/two_step_shift/trunc_survives and conservation headers read. Kari–Taati Theorem47 directly read: strong transitivity required, not assumed here.
+
+**Re CL767, received/read:** Cloud has taken the two existing GC2830 carries and BR-6 resolution-size leftovers; no duplicate work assigned. The owner's parity pull remains PARKED and both schedules PAUSED. These two assigned leftover tasks are complete; Cloud retains its other §9.4 leftovers/39card-only doors. No automatic return to research.
+
+Immutable evidence: `cited/gc2832-br2-xp3-carry-20261110.tar.gz`, 92925 bytes, SHA256
+`65c06d839c6c2bd2442c03cf58f6dee904b56a3c050e5eb512b04879516232bf`, 79 files; verified TLS/raw-body upload and
+byte-exact readback. Includes frozen inputs/plan, both original scripts and
+filed/regenerated certificates, SC-5 repairs, independent closure witnesses,
+all four run receipts and the review before this archive receipt. Two warning
+logs have private worktree paths normalized; both raw and normalized digests
+are retained. Data stays outside git.
+
+My own pull: the one-tick dyadic obstruction remains parked; the assigned carry debt takes priority.

@@ -3,7 +3,7 @@
 **Current mission, 10 November (owner; Cloud CL763 / GPT GC2826): Phase C, the carry debt.**
 The submission backlog is delivered as Local L1639 reports. The owner requests alternating manual batch blocks
 from Cloud and GPT. Both GPT schedules and Local's scheduled work remain PAUSED; this is no automatic restart.
-Cloud batch1, GPT batch2, Cloud batch3 and GPT batch4 are reviewed (GC2828); Cloud retains the17 atlas-only items. Other research stays parked.
+Cloud batch1, GPT batch2, Cloud batch3 and GPT batch4 are reviewed (GC2828). Cloud CL766 carried15 atlas-only items; GPT GC2832 finishes the remaining BR-2 pair and XP-3 certificate replay. Other research stays parked.
 
 | Carry batch | Owner/status | Exact next step |
 |---|---|---|
@@ -11,8 +11,8 @@ Cloud batch1, GPT batch2, Cloud batch3 and GPT batch4 are reviewed (GC2828); Clo
 |Returned narrow repairs|**Cloud DONE, CL764** ([§5](reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md)): both carried; the period-8 lasso supplied (80 pairs, 640 equations checked). Originally requested:|Check door81's finite defect-tail parity/onset guard and door1's eight-tick truncation argument. Supply the existing period8 spatial lasso for direct checking, not a larger search.|
 |3: ten Problem3 doors|**Cloud DONE, CL764/CL765** ([§6–8](reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md))|19/20/49/50/30/89/46/51/2/52. No duplicate GPT work.|
 |4: twelve density/clock doors|**GPT DONE, GC2828** ([full verdicts](reports/GPT-SW02-CARRY-BATCH4-20261110.md))|12 cards disposed; weighted dyadic obstruction, Lambda and RS3 carried; wedge scope repaired; positive entropy sigma/F counterexample; p128/walls independently replayed. Cloud narrow recharge read remains. No build.|
-|5:17 atlas-only items|Cloud reserved|Advance original atlas-only queue; optionally carry GC2342 recharge congruence/first-failure guard.39 card-only doors remain separate.|
-|Owner-directed instinct block: period12 phase/return|**GPT DONE, GC2830** ([report](reports/GPT-PERIOD12-PHASE-RETURN-20261110.md))|14stay/10switch branch law, exact ordinary-time periods and ternary34code; finite checks PASS, hand carry requested from Cloud. No wider dyadic core or build.|
+|5:17 atlas-only items|**Cloud CL766 + GPT GC2832 DONE**|All17 read, some conditional. [BR-2/XP-3 completion](reports/GPT-BR2-XP3-CARRY-20261110.md): LP/stake/all-k carries, conditional H_FS reduction, exact rational replays and SC-5 joint repairs. Cloud retains other §9.4 leftovers/39card-only doors; GC2342 recharge carry remains separate.|
+|Owner-directed instinct block: period12 phase/return|**GPT DONE, GC2830; pull PARKED by owner** ([report](reports/GPT-PERIOD12-PHASE-RETURN-20261110.md))|14stay/10switch branch law, exact ordinary-time periods and ternary34code; finite checks PASS, Cloud has taken the hand carries (CL767). No GPT return to the parked pull, wider dyadic core or build.|
 
 | Delivered packages (history) | Owner | External next step; automatic follow-up paused |
 |---|---|---|
@@ -153,3 +153,6 @@ not determine the limiting language or entropy. The common-B reset fails28 after
 **GC2758 bridge continuation (GPT):** [compact pair guard](reports/GPT-ROW119-PROOF-DEPENDENCIES-20261108.md#outcome--gc2758).25253=A A then one3-gap suffices for row23(cells6 OR7), with ten-head weakening, native certificates and a nonvacuity witness. Source64/input-low10=93 (including14429) is excluded. Same52 lemmas give pair guards119/285 and a104-addition prefix for original359. Old GC2753 carried L1600; new compact/phase/class interpretation pending Local. Next executable step: audit GC2714/GC2719 source-prefix hypotheses to decide whether compact25253 forces source64; no such implication is claimed yet. Alternative: explain the ten-head pair proof physically, then use both checked pairs in the actual joint seam relation (inverse scan80/81 and92-step future, prefix99). No autonomous99-bit model. Whole-past copy query stays UNKNOWN at unchanged cap; a shorter guard does not make a shorter equivalent full-past realization question. No further SAT or schedule restart.
 
 **GC2748 Intel job (GPT), DONE:** [finite graph outcome](reports/GPT-LOCK-WIDTH-JOB-REVIEW-20261108.md#outcome--gc2748). Full unpruned target-avoiding xx graph completes43, no CLOSED SCC;44 blocked by declared node cap. Actual primitive7 parent78/78/77/29/0 at40..44, independently unfiltered replayed; no higher cyclic descendant is carried by Local L1598. Primitive63 inheritance exclusion carried L1597. Broad width route cold until a smaller peak-memory representation or specific owner budget change; no unchanged rerun. No outstanding compute task.
+
+
+**GC2832,10 November: the two atlas carry/replay leftovers are complete.** BR-2.2's finite LP and all-k window lemma are carried with trim/reachability/equal-mean guards. BR-2.3 stays conditional on H_FS or definite bottoms; no class-wide conclusion. Original `cert.py`/`cert2.py` outputs reproduce byte-for-byte; all29filed/regenerated/joint identities are independently exact, at their declared start widths. The three wider boundary originals cover separate terms only; SC-5 repairs carry the joint claim. SC-2 was an attribution error, corrected. No module/post or autonomous return to the parity pull; both schedules PAUSED.

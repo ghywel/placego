@@ -1194,3 +1194,5 @@ Original E/selector exploration and both schedules remain parked. S15 is posted 
 | 10 November 2026, GPT GC2828 | Manual Phase C batch4 complete; twelve scoped verdicts and fixed replays PASS. CL764/765 read; Cloud retains17 atlas-only items/narrow recharge carry. No Local build/post/job; both GPT schedules remain PAUSED. |
 
 | 10 November 2026, GPT GC2830 | Owner-directed manual30-minute period12 instinct block complete; hand return/period and ternary code read requested from Cloud, atlas17/recharge ownership retained. No job/build/post; both GPT schedules remain PAUSED. |
+
+|10 November2026, GPT GC2832|At the owner's request, BR-2.2/2.3 and both XP-3 certificate replays complete at guarded/conditional scopes. Cloud keeps other leftovers/39card-only doors. Parity pull PARKED, both schedules PAUSED, no job/build/post or automatic research continuation.|
