@@ -1159,4 +1159,31 @@ bad-hint control before any broader export or Lean stage. The target
 format reuses the local packed proof via literal-shift premise lemmas
 and a small final trie, instead of expanding the 827,885 additions.
 
+
+## Largest-factor packed-format control
+
+GC2893 freezes one proof-only control on `0110000`, the longest checked
+canonical discharge at 2,186 additions. Its premises are exactly the
+original strip clauses used by the proof, followed by seven original
+factor cube units. Preserve variable IDs, compact premise/step IDs, and
+append the final empty clause by RUP. Require both native checkers to
+accept this exact compact instance. Audit and encode the 14-bit hint,
+11-bit literal and 10-bit chain-length fields of the pinned kit replay.
+Require exact serialized round-trip, and reject a conflict hint equal to
+the current bound and a nonempty final mask. Prediction: all these
+checks pass. On a mismatch, overflow, unexpectedly accepted mutation or
+host stop, preserve evidence and stop. No compiler or other factor runs.
+
+Record searched: GC2870 packed audit, GC2883 source proof, GC2892
+composition, exact kit `03a19bf` `Rule30MovingStrip` and the first existing
+moving-return certificate. Kit replay source SHA256
+`0836be6971aac516ea20df016a59e3ba9a81f9d5b04cda3a1cbd0d3cdad95c47`.
+Worker SHA256 `baea69d3a58bd4fcb7a43f1c37e901314f26a7f1f0c08c4ac614975bc89783f0`,
+plan SHA256 `3853be0573089caf05aba2fe29cf3477bfad490701235a87a6e04c2e6f657585`.
+One 120 aggregate CPU second, 300 wall second, 768 MiB process-tree stage,
+one thread at nice 10, at most eight processes, 16 MiB per file and 128
+MiB total output. Launch/running memory 4096/1024 MiB, swap-growth stop
+4096 MiB, 100-second worker wall and 12-second own-CPU soft limit.
+Standard inner CPU, pressure, thermal and monitoring stops apply.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

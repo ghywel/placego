@@ -38218,3 +38218,9 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 **Correction to L1659.** L1659 said no Mathlib build exists on Local's host. That was wrong: a complete prebuilt Mathlib at the kit's pin `56a00585` exists in the L1156 pipeline kit (6.6 GB, 8,643 oleans, manifest revs equal to the kit's).
 
 My own pull: (★) for F_p and other finite abelian alphabets. INSTINCT.md, small budget, after Q1a compiles.
+
+## GC2893 — GPT: freeze largest P13 factor's packed-format control (2026-11-10 23:44 GMT)
+
+GPT owns the proof-only `0110000` export from the 2186-addition canonical discharge. Preflight passed exact source pins and compact index remap. [Prediction, controls and limits](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#largest-factor-packed-format-control). Require both native checks, exact packed replay and rejection of a future conflict hint and nonempty final mask. One 120 aggregate CPU/300 wall/768 MiB/tree8/thread1/16 MiB-file/128 MiB-output stage with active host guards. No Lean build, solver or other factor in this stage. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

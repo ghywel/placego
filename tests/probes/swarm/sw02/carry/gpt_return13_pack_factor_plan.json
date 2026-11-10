@@ -1,0 +1,73 @@
+{
+  "worker_stop": 110,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_return13_binary_cert.py": "652b6bd02784000929ebf083eec881430bfe04b3f1eecc0a2822a494c5fd4e2f",
+    "tests/probes/swarm/sw02/carry/gpt_lrat_format_controls.py": "92b08d0a72f83eb7b20c8bc4358ea6cfe26986a3029d886998b3da4f88db57e3",
+    "tests/probes/swarm/sw02/carry/gpt_return13_lrat.py": "467bed29611c6dd4b8c251a8a890d5d5d6621a512c7ff8e05e77aa14fd3fb332",
+    "tests/probes/ether_gap_solve.py": "11e02a0327a1527d08e2d61e53c500409ce38d705c5fc299a1ab32c53f724a2d",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
+    "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_control.py": "79ab88c7f843a0a9fe8fab1f23d3330a44720fe9b5d0487d9d171494249b85fa",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_leaves.py": "7169eb470f2f4ba5c66a0db7c6a8ca5d2f83efe5afe07fc718dbf2a20f954b4b",
+    "tests/probes/swarm/sw02/carry/gpt_return13_factor_split.py": "a30e7bf78e72da903e34414a187426f931ddf7c7a5f9f83bfc4917db89bdf669",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_replay.py": "2172dbe0f5cfa1d1a2d7c7a6bd9d4e0136cac77c107af5dd0112c1d865400297",
+    "tests/probes/swarm/sw02/carry/gpt_return13_final_splits.py": "2d8b442944a564b116df0ba7d8a9745ee6d78000552ffcc76a008ccbb0176ba9",
+    "tests/probes/swarm/sw02/carry/gpt_return13_coverage.py": "bae1aa4a69348deee9dfee71834147dea8fe54b49161ecfbdfcefdecf1504fd8",
+    "tests/probes/swarm/sw02/carry/gpt_return13_implied_retry.py": "de0c4b422cc7210b76bae178cd6a5d357901daf68eae81c536c0f327caca6df8",
+    "tests/probes/swarm/sw02/carry/gpt_return13_pack_factor.py": "baea69d3a58bd4fcb7a43f1c37e901314f26a7f1f0c08c4ac614975bc89783f0"
+  },
+  "original_cnf_sha256": "badadbb38e00fb0c01991563f3fb6664ed2b78c9ab7254a36fa1bd818313fcd0",
+  "prediction": {
+    "native": "both native checkers accept the exact support plus seven unit assumptions",
+    "packed": "14/11/10-bit fields fit and exact packed replay accepts",
+    "mutations": "future conflict hint and nonempty final clause each reject"
+  },
+  "counterfactual": "Stop on any mismatch, packed overflow, failed negative control or host/monitor limit. Preserve evidence. No kernel build or additional factor in this stage.",
+  "limits": {
+    "aggregate_cpu_s": 120,
+    "wall_s": 300,
+    "tree_rss_mib": 768,
+    "max_procs": 8,
+    "file_mib": 16,
+    "disk_mib": 128,
+    "launch_free_mib": 4096,
+    "min_free_mib": 1024,
+    "swap_growth_mib": 4096,
+    "threads": 1,
+    "nice": 10,
+    "inner_aggregate_stop_cpu_s": 95,
+    "worker_soft_cpu_s": 12,
+    "worker_hard_cpu_s": 120
+  },
+  "jobs": [
+    {
+      "name": "pack-factor",
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_return13_pack_factor.py",
+        "tests/probes/swarm/sw02/carry/gpt_return13_pack_factor_plan.json"
+      ],
+      "cpu": 120,
+      "wall": 100,
+      "required_stdout_lines": [
+        "RETURN13_PACKED_FACTOR_RECORDED"
+      ]
+    }
+  ],
+  "tool_sha256": {
+    "/usr/local/bin/cake_lpr": "445c63926127267a4f0ae5c363b2bffcb004aece119ca50414e7bc22f8bdec23",
+    "/usr/local/bin/lrat-check": "87429b8c50afdba643e83ea6ab712d36f49d5e4f47f488bd5d9ebc332bd204f1"
+  },
+  "kit_commit": "03a19bf6240b63c6d15894c5f7552f3a6091d937",
+  "kit_replayer": {
+    "file": "lean/Ruliology/CellularAutomata/Rule30MovingStrip.lean",
+    "sha256": "0836be6971aac516ea20df016a59e3ba9a81f9d5b04cda3a1cbd0d3cdad95c47"
+  },
+  "discharged_proof": {
+    "factor": "0110000",
+    "file": "gc2883-depth7-splits/parent-0110000-discharged.lrat",
+    "sha256": "fe1054e2a76aeab2dbc707cfee7c9d236d3e9aa8da5f2b186be76024dfea021e",
+    "steps": 2186
+  }
+}
