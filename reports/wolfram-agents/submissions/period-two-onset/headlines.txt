@@ -1,0 +1,16 @@
+Rule30Submission.win_dstep
+Rule30Submission.img5_length
+Rule30Submission.img6_length
+Rule30Submission.img5_closed
+Rule30Submission.img6_closed
+Rule30Submission.no_word5
+Rule30Submission.no_word6
+Rule30Submission.no_short6
+Rule30Submission.onset5
+Rule30Submission.onset6
+Rule30Submission.col1_constraints5
+Rule30Submission.col1_constraints6
+Rule30Submission.free_bit5
+Rule30Submission.free_bit6
+Rule30Submission.free_bit_constraints5
+Rule30Submission.free_bit_constraints6
