@@ -1,0 +1,1 @@
+The First Check of the Zero-Boundary Left Half: Its Weight Is n mod 2, Its Degree Is n or n - 1, and the Other Clock Phase Is Always Odd
