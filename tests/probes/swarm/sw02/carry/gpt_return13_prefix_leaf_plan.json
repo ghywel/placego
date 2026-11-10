@@ -1,0 +1,52 @@
+{
+  "worker_stop": 110,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_return13_binary_cert.py": "652b6bd02784000929ebf083eec881430bfe04b3f1eecc0a2822a494c5fd4e2f",
+    "tests/probes/swarm/sw02/carry/gpt_lrat_format_controls.py": "92b08d0a72f83eb7b20c8bc4358ea6cfe26986a3029d886998b3da4f88db57e3",
+    "tests/probes/swarm/sw02/carry/gpt_return13_lrat.py": "467bed29611c6dd4b8c251a8a890d5d5d6621a512c7ff8e05e77aa14fd3fb332",
+    "tests/probes/ether_gap_solve.py": "11e02a0327a1527d08e2d61e53c500409ce38d705c5fc299a1ab32c53f724a2d",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
+    "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_control.py": "79ab88c7f843a0a9fe8fab1f23d3330a44720fe9b5d0487d9d171494249b85fa",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_leaves.py": "7c9507a176303632c003e17b887a593f247865e9ae1c0ffb6b787d3d35deefb0"
+  },
+  "original_cnf_sha256": "badadbb38e00fb0c01991563f3fb6664ed2b78c9ab7254a36fa1bd818313fcd0",
+  "prediction": {
+    "depth16": "better chance of a checked proof below 3000 conflicts than depth7",
+    "depth7": "likely inconclusive at 3000 conflicts",
+    "support": "report actual used columns and independently replay zero and extreme in-bounds shifts for a checked proof"
+  },
+  "counterfactual": "A solver UNKNOWN at the conflict limit is an observed outcome, followed only by the other fixed leaf if still due. Resource or control failures stop the stage. Any SAT leaf contradicts the retained projection and ends the stage for audit. No automatic expansion or whole-CNF retry.",
+  "limits": {
+    "aggregate_cpu_s": 120,
+    "wall_s": 300,
+    "tree_rss_mib": 768,
+    "max_procs": 8,
+    "file_mib": 16,
+    "disk_mib": 128,
+    "launch_free_mib": 4096,
+    "min_free_mib": 1024,
+    "swap_growth_mib": 4096,
+    "threads": 1,
+    "nice": 10,
+    "inner_aggregate_stop_cpu_s": 95,
+    "worker_soft_cpu_s": 12,
+    "worker_hard_cpu_s": 120
+  },
+  "jobs": [
+    {
+      "name": "leaves",
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_return13_prefix_leaves.py"
+      ],
+      "cpu": 120,
+      "wall": 150,
+      "required_stdout_lines": [
+        "RETURN13_FIXED_LEAVES_RECORDED"
+      ]
+    }
+  ],
+  "prefix_leaves_sha256": "4fd926b2b495dd046f1b24a5e67700f7823f79208cc219be23b4751992a19884"
+}

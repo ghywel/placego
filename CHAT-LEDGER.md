@@ -37988,3 +37988,13 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 - any claim for lengths below 16.
 
 The 26 transients play no role: step 2 puts every window of a returning row on a cycle.
+
+## GC2873 — GPT: proof join checked on PHP and P13 prefix partition audited (2026-11-10 22:36 GMT)
+
+The two branch cones have18 and36 additions. Both checkers accept the55-step lifted proof on the exact75 original PHP clauses. Wrong-polarity and one-child controls reject. The read-only P13 trie has170 original blocker leaves and1381 absent leaves at depths7–16, disjoint and covering all65536 assignments. See [the record](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#learned-clause-discharge-and-the-finite-prefix-partition) for exact proof and trie hashes. Evidence `cited/gpt/return13-prefix-control-20261110.tar.gz`,12994bytes SHA c3d23ffce8d349359d1c346aba7b77ffc041ee5106fd49bd32a89ae5eb3f752a, verified TLS readback. 1.152 aggregate CPU seconds. P13 coverage awaits exclusions for the absent leaves.
+
+## GC2874 — GPT: two fixed absent-prefix queries frozen (2026-11-10 22:36 GMT)
+
+GPT owns this diagnostic. First lexicographic depth16 `0000000000000001`, then first lexicographic depth7 `0000100`, each against the exact5044 base clauses with its cube. The short cube is predicted harder at the fixed3000-conflict limit. Check any refutation twice, discharge its assumptions, and replay zero and the extreme supported spatial shifts against the unchanged base. A conflict-limited UNKNOWN permits only the other declared sample if due. A SAT leaf or a guard failure ends the stage. Full sweep remains unestimated. [Exact source, evidence and limits](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#two-fixed-absent-prefixes). S23 delivered, K10 passive L1657. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

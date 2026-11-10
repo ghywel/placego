@@ -462,4 +462,58 @@ GC2869's conditional graph classification still awaits Local's scoped carry;
 S23 delivered/public checked; K10 passive under L1657's pending owner question.
 No job running, no larger retry, ACTIVE13/5.
 
+## Learned-clause discharge and the finite prefix partition
+
+GC2872 completed at 1.152 aggregate CPU seconds and 1.12 seconds wall time. The
+positive and negative PHP branch cones have 18 and 36 additions. Their lifted
+clauses resolve in a 55-step proof of the unchanged 75-clause PHP. Both
+`cake_lpr` and `lrat-check` accepted it. The mismatched-assumption guard and
+one-child proof rejected. The joined proof SHA256 is
+`223c770a8e7faeb687fd821d747242ba8d20cd025f80d49650d75a404e96402f`.
+
+The P13 trie audit matched all 170 retained leaves to the exact original
+blockers. Its 1,381 absent leaves have depth counts 22, 73, 118, 152, 166 and
+170 at each of depths 12 through 16, in order starting at depth 7. The full
+set of leaf intervals partitions the 65,536 window assignments. Its SHA256 is
+`4fd926b2b495dd046f1b24a5e67700f7823f79208cc219be23b4751992a19884`.
+These are checked partition data. Every absent leaf still needs its own
+exclusion or an exclusion that covers it. The full proof cost remains open.
+
+Evidence `cited/gpt/return13-prefix-control-20261110.tar.gz` contains the exact
+control proof files, trie and sanitized receipts. 12994 bytes and SHA256
+`c3d23ffce8d349359d1c346aba7b77ffc041ee5106fd49bd32a89ae5eb3f752a`,
+verified by TLS raw-body readback.
+
+## Two fixed absent prefixes
+
+GC2874 freezes two first-in-lexicographic-order absent prefixes at the
+extreme depths. Test `0000000000000001` at depth 16 first, then `0000100` at
+depth 7. Each solver input contains the exact 5044 transition and period
+clauses from the retained 65-column formula and the named prefix assignment.
+Each call has 3000 conflicts, 12 CPU seconds and 25 seconds wall time.
+A verified branch proof will be discharged into its exclusion against the
+unaugmented 5044 clauses. Replay the discharged proof at zero and the extreme
+shifts allowed by its used columns, with exact original clause membership.
+This measures whether translation of the particular proof can shorten the
+list of independent leaf obligations.
+
+Prediction. The depth-16 leaf has a better chance of a checked exclusion
+below the conflict limit than depth 7. The shallow leaf is likely to return
+UNKNOWN. If a proof exists, report its actual support span and shifted replay
+results. UNKNOWN consumes the fixed sample and permits the other leaf if it
+is due. A SAT result or a resource, control or monitor failure ends the stage
+for audit. The 1,381-leaf sweep is a separate unestimated job. A successful
+leaf alone leaves P13 coverage open.
+
+Record searched: GC2871 prefix-tree design, GC2872 exact retained partition
+and proof controls, GC2856 strip layout, GC2869 conditional classification,
+and the exact current kit proof API and PR232 references recorded above.
+Source `gpt_return13_prefix_leaves.py` SHA256
+`7c9507a176303632c003e17b887a593f247865e9ae1c0ffb6b787d3d35deefb0`.
+Plan `gpt_return13_prefix_leaf_plan.json` pins all imports and inputs. One
+120 aggregate CPU second, 300 second wall, 768 MiB process-tree stage.
+One thread at nice 10, 8 processes, 16 MiB/file and 128 MiB/stage. Launch
+free-memory floor 4096 MiB, running floor 1024 MiB and swap-growth stop
+4096 MiB. Retain thermal, pressure and monitor stops. Freeze before execution.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
