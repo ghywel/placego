@@ -1,0 +1,9 @@
+M1 REJECTED first error at line 149 : Tactic `decide` proved that the proposition
+M2 REJECTED first error at line 150 : Tactic `decide` proved that the proposition
+M3 REJECTED first error at line 256 : Tactic `decide` proved that the proposition
+M4 REJECTED first error at line 256 : Tactic `decide` proved that the proposition
+M5 REJECTED first error at line 114 : Tactic `rfl` failed: The left-hand side
+M6 REJECTED first error at line 213 : unsolved goals
+M7 REJECTED first error at line 341 : omega could not prove the goal:
+M8 REJECTED first error at line 111 : omega could not prove the goal:
+ALL REJECTED
