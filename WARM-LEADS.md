@@ -1,11 +1,18 @@
 # WARM LEADS: what SW-02 left us, and the order of work
 
-**Current mission, 10 November (owner; GPT GC2802 / Local L1619): clear the SW-02 submission backlog.**
-The owner gives standing permission to post and open kit PRs after the usual independent review and release
-checks; no per-package consent is needed. GPT's 13-minute work heartbeat and 5-minute flag poller are ACTIVE.
-Local reports its 15-minute heartbeat and 60-second flag waiter armed. Research excursions remain parked.
+**Current mission, 10 November (owner; Cloud CL763 / GPT GC2826): Phase C, the carry debt.**
+The submission backlog is delivered as Local L1639 reports. The owner requests alternating manual batch blocks
+from Cloud and GPT. Both GPT schedules and Local's scheduled work remain PAUSED; this is no automatic restart.
+Cloud batch1 and GPT batch2 are reviewed; Cloud's Problem3 batch3 is next. Other research stays parked.
 
-| Work now | Owner | Exact next step |
+| Carry batch | Owner/status | Exact next step |
+|---|---|---|
+|2: eleven door entries|GPT DONE; [full verdicts](reports/GPT-SW02-CARRY-BATCH2-20261110.md)|B2+/RS1/regular-orbit and guarded transfers carried. L7-D1 is separate and open; deadline witness validation stopped at512 pairs, no retry.|
+|Returned narrow repairs|Cloud carrying read requested|Check door81's finite defect-tail parity/onset guard and door1's eight-tick truncation argument. Supply the existing period8 spatial lasso for direct checking, not a larger search.|
+|3: ten Problem3 doors|Cloud retained per CL763|19/20/49/50/30/89/46/51/2/52. No duplicate GPT work.|
+|4: twelve density/clock doors|GPT later manual block|Compare PR270's actual source-energy equivalence/vdC statements before doors94/45. No block4 work started.|
+
+| Delivered packages (history) | Owner | External next step; automatic follow-up paused |
 |---|---|---|
 | S-13 and S-05 | Delivery complete; Local PR follow-up | Actual Lean Verified and exact public bytes confirmed GC2808; PR254/255 open/mergeable, no comments. Maintainer merge; no repost. |
 | S-11 | Delivery complete; Local PR follow-up | Delivered Lean Verified, exact public bytes confirmed GC2809; PR256 maintainer merge. No repost. |
@@ -42,7 +49,7 @@ Local reports its 15-minute heartbeat and 60-second flag waiter armed. Research 
 
 **Research that grew out of the swarm (no submission).** Door 1 → X/Y lineages (GC2696, L1569), the two-state return automaton and clock (GC2706, carried CL753), the periodic E-word deaths and the finite-margin bound (CL754, CL755, GC2768), the trap exclusion of E and the capture measurements (GC2775, CL758); PARKED since GC2789.
 
-**Unread debt (Phase C of the appraisal).** *CL763, 10 November: [triaged](reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md). Of the 94 pending doors, 10 were settled by later carries or Lean, 12 are carried in batch 1, 33 are substantive reads in three batches (2: GPT, 3: Cloud, 4: GPT), 39 are card-only; of the atlas's 33 entries 4 are carried or posted and 17 form a fifth batch.* Before the triage: 94 doors marked PENDING an argument and about 30 atlas barriers marked "new, PENDING CARRY"; 95 of the 100 AJAR doors untested; 57 unforced findings; 56 answer-sheet open fields. Triage first, then batches of ten.
+**Unread debt (Phase C of the appraisal).** CL763 [triaged](reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md) the94 pending doors:10 already settled,12 in batch1,33 substantive reads and39 card-only. GC2826 reviews batch2's11 entries:22 original substantive reads remain in batches3/4, plus the39 card-only and the17 atlas-only items. A completed read is not a closure: L7-D1 remains open, and deadline/tail-parity repairs have exact follow-up obligations. B2+, LN13.2 and RS1's named construction now have worker carries. Other atlas claims are untouched. The95 untested AJAR doors,57 unforced findings and56 answer-sheet open fields remain separate.
 
 ## How to use this page
 

@@ -1,5 +1,7 @@
 # SW-02 backlog
 
+**GC2826 Phase C batch2 amendment (10 November):** [eleven carrying dispositions](GPT-SW02-CARRY-BATCH2-20261110.md). RS1's line-reading construction answers the L-4 family question below at hand/two-party status; B2+ and LN13.2 are carried, not compiled. Do not tick BR2's weighted/H_FS/census requests or CP5's actual-front timing question: those are different work. Exact new follow-up is Cloud's read of the branch tail-parity guard and deadline eight-tick repair, plus a supplied existing period8 spatial-lasso certificate; no expanded witness search. L7-D1 stays open. No programme/schedule restart.
+
 **GC2823 final-backlog amendment (10 November):** [S12 full source/original nb1 read PASS](GPT-S12-RELEASE-REVIEW-20261110.md); scope wording corrected, proof tokens unchanged. Local's corrected nb2/bothChecks/four-pin/current dry gates complete conditional posting clearance. [S08 hybrid public bytes and Lean Verified445 confirmed](GPT-S08-HYBRID-RELEASE-REVIEW-20261110.md), PR267 maintainer merge. Nine delivered; S12 routine refresh only. No near-square/prize claim or duplicate computation.
 
 **GC2822 delivery amendment (10 November):** S08 hybrid [full source and actual nb1 release read PASS](GPT-S08-HYBRID-RELEASE-REVIEW-20261110.md), CLEARED for Local's single post/PR, unchanged source/essay/notebook. Exact width bijection is carried; numerical cardinality is kernel-checked only through12. Local L1637 S12 both-stage module/Check324/nb1 now received, GPT full review next, not cleared. Earlier stage1/support-pending labels are historical.
@@ -232,7 +234,7 @@
 - [ ] **L-3.** What is the smallest certificate degree for emptiness at W <= 14 in the free-bit ring, against a matched random system?
 - [ ] **L-3.** Do the record's kernel certificates for D(52), D(56), D(60) beat 2^(W/2) in size?
 - [ ] **L-3.** Does Spencer's n-j-1 count give a useful ordering of period words by the size of their candidate set?
-- [ ] **L-4.** Is the line-reading version of Delacourt-Ollinger Theorem 2 true: is eventual periodicity of a fixed diagonal from one seed undecidable for permutive OCA?
+- [x] **L-4.** Is the line-reading version of Delacourt-Ollinger Theorem 2 true: is eventual periodicity of a fixed diagonal from one seed undecidable for permutive OCA? **GC2826:** RS1's exact construction and detector corollary carried, family/radius2 OCA only; no fixed Rule30 or binary-alphabet claim. [Proof and guards](GPT-SW02-CARRY-BATCH2-20261110.md#doors76-and80-rs-1s-construction).
 - [ ] **L-4.** Is orbit periodicity from a seed still undecidable at alphabet 2, or at small radius, for permutive OCA?
 - [ ] **L-4.** Does an iterated finite-transducer literature decide anything for automaton 2369? Sutner-Lewi treat cycle-cum-chord transducers; I saw search summaries only.
 - [ ] **L-4.** What happens to a signal slower than light when the low bits are cleared at speed 1 in a radius 2 OCA?
