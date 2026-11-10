@@ -36945,3 +36945,31 @@ At the owner's word, after GC2828. [Report §9](reports/CLOUD-SW02-CARRY-TRIAGE-
 **Kit candidates, for the owner's word:** the all-configuration width-5/6 column-1 constraints with explicit onset; history invisibility; Theorem D with the one-sided Hedlund lemma.
 
 My own pull: the BR-5.2 module first among the candidates: it is small, it removes a hypothesis from a kit theorem, and its certificate is two tiny graphs.
+
+## CL767 — Cloud: takes GC2830's two carrying reads and the BR-6.1 resolution-size statements; predictions before the replays (2026-11-10 17:41 GMT)
+
+At the owner's word. Two pieces of work, both small. Nothing here touches a prize statement.
+
+**1. GC2830 (GPT's period-12 return block), read in full.** I take both carrying questions: (i) return coding, branch recognizability and the even/odd-r ordinary-period formula; (ii) free ternary concatenation, static-row injectivity and the minimum 34 at U. The hand steps are read first; the finite inputs they rest on are replayed in my own code from the local rule alone, not from the kit tiles or GPT's graph.
+
+*Record searched:* GC2829, GC2830 and `reports/GPT-PERIOD12-PHASE-RETURN-20261110.md`; the kit at 03a19bf (`Rule30MovingWaves`: `free_binary_period_twelve`, `exact_period_twelve`, the two 34-cell tiles, all prior art); the LN-12 card. The kit and portal index refresh fails from this host (HTTP 403), so the kit source was searched directly.
+
+*Predictions (written before any run).* Frame: a pair (c, d) of 12-tick profiles at sites i+1, i+2; its children are (u, c) with u(t+1) = u(t) xor (c(t) or d(t)).
+- P1 (0.9). The full graph on all 2^24 pairs, cut down to pairs on a two-sided infinite path, has a strongly connected component through U = (1323, 2868) with 30 vertices and 32 edges, branch vertices exactly U and V = (2772, 3372), first returns of 14 cells (same branch) and 10 cells (other branch).
+- P2 (0.9). Rotating time by one tick permutes six such components in one 6-cycle; six ticks swap U and V inside the component.
+- P3 (0.85). For every primitive event word of length at most 6, the least spatial period and the least ordinary Rule 30 period, found by running the ordinary rule on a ring built from my own path, equal GPT's formula.
+- P4, the unexpected test (0.6). In the full two-sided core no edge enters or leaves the six components: they are isolated, and every other strongly connected piece of the core is a plain cycle. GPT's graph was generated leftward from the tiles, so it cannot see an edge entering from elsewhere. *Counterfactual:* an entering edge gives period-12 configurations that are in the family on the left and outside it on the right; the family must then be defined by the whole path, and the report's sentence "all continuing neighbouring pairs have the same i" needs that guard. A second branching component not among the six would be a new object and is recorded whatever it is.
+- P5 (0.9). The three return words 011, 101, 110 give three distinct 34-bit tiles equal to the three strings in GPT's table.
+
+**2. BR-6.1, the resolution-size statements** (left without a carry at CL766, report §9.4). The source is the raw BR-6 report in the swarm archive (SHA256 c231157f…d94c), section 3: (a) rule 90 on the white wall with column 1 black at even ticks is refuted by unit propagation, D_90(W) = k* − 1; (b) rule 150 has a constant-width refutation with O(T^2) steps, D_150(W) = 2⌈W/2⌉; (c) the barrier that follows. Hand steps read first, then my own generator of the formulas.
+
+*Record searched:* `record_find.py` on "unit propagation", "resolution refutation", "D_90", "Fibonacci mod 2" (only CL766's own check and unrelated certificate tools); kit 03a19bf by direct search (`Rule30Realization.barrier` is the single-seed sibling barrier; no module on proof size; no rule 90 or 150 wall formula). Posted today and related, not the same statement: S-08 `Rule30HybridWall` (the alternating 90/150 hybrid on the white wall).
+
+*Predictions.*
+- Q1 (0.95). In the prime encoding, unit propagation alone refutes the rule 90 formula exactly when T ≥ k* − 1, for W = 2..40, and at T = k* − 2 the explicit row (odd depths carry Fibonacci mod 2) satisfies it.
+- Q2 (0.9). For rule 150 unit propagation alone does not refute at T = D_150(W) for W ≥ 4; with the four-cell identity x(k+2,t) + x(k,t+2) + x(k,t) + x(k−2,t) = 0 added it refutes exactly when T ≥ 2⌈W/2⌉. The identity follows from its four axioms by resolution of width at most 7 on nine cells; the least width is measured by saturation.
+- Q3 (0.85). Control: for rule 30 unit propagation does not refute at T = D(W) for W ≥ 4.
+- Q4, the unexpected test (0.75). The hardness numbers of the source (rule 30: 0, 1, 2, 2 for W = 2, 4, 6, 8; rule 150: 1, 2, 3, 3; rule 90: 0) come out of my own r_k code at T = D(W). *Counterfactual:* a mismatch means my encoding or my reading of T differs from the source's, and the measured table is then not carried.
+- Q5 (0.8). For rule 90 with a random target word in place of the all-black one, unit propagation refutes exactly the targets no row realizes (brute force, W ≤ 10).
+
+Caps: one process, 4 GiB address space, ten minutes each. The reads and results go to the triage report and to a short review note for GPT.
