@@ -1,0 +1,42 @@
+# Unrestricted tail closing fails on the constrained class (queue row S-23, Cloud's K-08)
+
+**Release packet built; REVIEW-REQUEST to GPT (L1655); not posted.**
+- **Sources.** Built from LN-03.1 as Cloud computed and carried it (CL770 §11.3; [triage](../../../CLOUD-SW02-CARRY-TRIAGE-20261110.md) §9.1), and from GPT's comparison with open PR #52 ([GC2853](../../../GPT-K08-PR52-COMPARISON-20261110.md)), whose parity-translated mismatch Local carried (L1654).
+- **Who built it.** A Local sub-agent wrote the module under Local's brief. Local then rebuilt and checked it and read its statements. That is a self-check; GPT's read is the second read.
+
+## What the module proves
+
+`Rule30UnrestrictedClosing` is core Lean, 258 lines, and imports only `Rule30Prize` and `Rule30ZeroBoundary`. It has sixteen headlines:
+- `two_A`, `two_B`, `two_C`, `two_cycle`;
+- `inX_A`, `inX_B`, `inX_C`;
+- `free_A`, `free_B`, `free_C`;
+- `theta_A`, `theta_B`, `theta_C`;
+- `differ_AB`, `differ_one_tick`;
+- `not_unrestricted_closing`.
+
+The exact mismatch set, the nine residues modulo 14 plus depth 2, is COMPUTED, not formalised. The module proves the subsequence `14 q + 3`.
+
+| Form | File | sha256 | Check |
+|---|---|---|---|
+| Portal | [`Rule30Submission.lean`](Rule30Submission.lean), from [`kit_to_portal.py`](../../../../tests/probes/swarm/sw02/block11/kit_to_portal.py) | `76cc57bd…` | pass at `5fb59158`: 37 declared, 82 constants, 16 headlines, standard axioms ([receipt](check-5fb59158.json)) |
+| Kit | [`Rule30UnrestrictedClosing.lean`](Rule30UnrestrictedClosing.lean) | `fc6a8796…` | pass at main `03a19bf`: 37 declared, 82 constants ([receipt](check-kit-03a19bf.json)). The kit branch `unrestricted-closing` at `c597d98` is local; [`kit-integration.patch`](kit-integration.patch) |
+
+**Mutants.** All six were rejected ([output](../../../../tests/probes/swarm/sw02/block11/mutate_unrestricted_closing.out)).
+
+## Release artifacts
+
+- **Texts:**
+  - [`essay-prose.md`](essay-prose.md);
+  - [`essay.md`](essay.md) (`a5704c55…`, from [`assemble_unrestricted_closing_essay.py`](../../../../tests/probes/wolfram/assemble_unrestricted_closing_essay.py));
+  - [`title.txt`](title.txt);
+  - [`abstract.txt`](abstract.txt) (218 words, no markdown markup);
+  - [`headlines.txt`](headlines.txt) (16);
+  - [`PR-BODY.md`](PR-BODY.md).
+- **The worked numbers.** Python ([`unrestricted_closing_replay.py`](../../../../tests/probes/wolfram/unrestricted_closing_replay.py)) and Wolfram both give `{True, True, True, True, {"10101010", "00101010", "01010101"}, {0, 1, 3, 5, 6, 8, 9, 11, 12}, True}`, and the prediction held.
+- **nb1** (`beb062cb67bf8309a9ac3fc290b720821a374b6327cc30e41f165a6ced37c788`, 93,400 bytes):
+  - built from [`unrestricted_closing_notebook.wl`](../../../../tests/probes/wolfram/unrestricted_closing_notebook.wl);
+  - RESULT OK in 15 s;
+  - every gate passes;
+  - KernelChecked 82;
+  - evidence `cited/local/unrestricted-closing-nb1-20261110.tar.gz`, 29,448 bytes, SHA256 `aea6e7d5ae21a170ea1ac516e4713575c1ebb0ab7537c1c18787bdf2b4f14444`, read back byte-exact.
+- **Post script.** [`post.sh`](post.sh). The dry run passes.

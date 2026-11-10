@@ -1,0 +1,16 @@
+Rule30Submission.two_A
+Rule30Submission.two_B
+Rule30Submission.two_C
+Rule30Submission.two_cycle
+Rule30Submission.inX_A
+Rule30Submission.inX_B
+Rule30Submission.inX_C
+Rule30Submission.free_A
+Rule30Submission.free_B
+Rule30Submission.free_C
+Rule30Submission.theta_A
+Rule30Submission.theta_B
+Rule30Submission.theta_C
+Rule30Submission.differ_AB
+Rule30Submission.differ_one_tick
+Rule30Submission.not_unrestricted_closing
