@@ -1,0 +1,5 @@
+Rule30Submission.trap001fifteen_check
+Rule30Submission.fifteen_apart_t001
+Rule30Submission.stays
+Rule30Submission.not_absorptionT_t001
+Rule30Submission.rule30open_half
