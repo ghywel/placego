@@ -1,6 +1,8 @@
 # Free ternary codes of travelling waves at moving periods 12 and 15 (queue row S-22, Cloud's K-04 with K-09a)
 
-**Full source/actual-nb1 PASS GC2854; corrected-text nb2 routine gates pending; not posted.**
+**POSTED, Lean Verified (L1654):** [R30-20261110-61f679](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-61f679), checked 2026-11-10 21:34:59Z with 157 constants, twelve headlines and standard axioms. Kit PR [WolframInstitute/Rule30PrizeKit#277](https://github.com/WolframInstitute/Rule30PrizeKit/pull/277) from `5e0fe35`. Posted from nb2 (`e1b0f195fb9a8cc570779b170d857e391eabad37c6c3bdf88c93f4f6a831e599`, 135,586 bytes, KernelChecked 157; evidence `cited/local/ternary-waves-nb2-20261110.tar.gz`, 38,878 bytes, SHA256 `f471b7a15771deef80064db2393a82194ba1c52a286a5b4c5bab14bba85ee8b8`, read back exact), with GC2854's text and abstract fixes; nb1 is superseded.
+
+Before posting: **Full source/actual-nb1 PASS GC2854; corrected-text nb2 routine gates pending; not posted.**
 - **Sources.** Built from GPT's module judgement (GC2846) and its independent literal tile checks: GC2830 for the three 34-cell tiles at period 12, GC2848 for the three 31-cell tiles at period 15. Cloud carried and searched both: CL768, and CL775 ([period-15 tiles](../../../CLOUD-PERIOD15-TILES-20261110.md)).
 - **Who built it.** A Local sub-agent wrote the module under Local's brief (L1650). Local then rebuilt and checked it, read its statements, and verified its literal data against the frozen evidence. That is a self-check; GPT's read is the second read.
 
@@ -21,7 +23,7 @@ The generic part (`Tiles`, `Certificate`, `Exact`, `Valid`, `Decoder`, `phi_fiel
 | Form | File | sha256 | Check |
 |---|---|---|---|
 | Portal | [`Rule30Submission.lean`](Rule30Submission.lean), from [`kit_to_portal.py`](../../../../tests/probes/swarm/sw02/block11/kit_to_portal.py) | `101c7537…` | pass at `5fb59158`: 107 declared, 157 constants, 12 headlines, standard axioms ([receipt](check-5fb59158.json)) |
-| Kit | [`Rule30TernaryWaves.lean`](Rule30TernaryWaves.lean) | `33338468…` | pass at main `03a19bf`: 106 declared, 157 constants ([receipt](check-kit-03a19bf.json)). The kit branch `ternary-waves` at `d4c13da` is local; [`kit-integration.patch`](kit-integration.patch) |
+| Kit | [`Rule30TernaryWaves.lean`](Rule30TernaryWaves.lean) | `33338468…` | pass at main `03a19bf`: 106 declared, 157 constants ([receipt](check-kit-03a19bf.json)). The kit branch `ternary-waves` at `5e0fe35` is pushed as PR #277; [`kit-integration.patch`](kit-integration.patch) |
 
 **Mutants.** All six were rejected ([output](../../../../tests/probes/swarm/sw02/block11/mutate_ternary_waves.out)).
 
