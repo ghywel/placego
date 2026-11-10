@@ -1,0 +1,7 @@
+M1 REJECTED first error at line 173 : Application type mismatch: The argument
+M2 REJECTED first error at line 219 : omega could not prove the goal:
+M3 REJECTED first error at line 116 : omega could not prove the goal:
+M4 REJECTED first error at line 290 : Application type mismatch: The argument
+M5 REJECTED first error at line 327 : omega could not prove the goal:
+M6 REJECTED first error at line 244 : Tactic `rfl` failed: The left-hand side
+ALL REJECTED
