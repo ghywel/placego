@@ -1,0 +1,61 @@
+{
+  "worker_stop": 110,
+  "include_outer_monitor_cpu": true,
+  "kit_commit": "03a19bf6240b63c6d15894c5f7552f3a6091d937",
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_return13_strip_pilot.py": "932bedbaf4e0d2e6da16f83a986a5b83863d8d23fc877d7f0428d68e8309e500",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
+    "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df"
+  },
+  "kit_sources_sha256": {
+    "lean/Ruliology/CellularAutomata/Rule30MovingStrip.lean": "0836be6971aac516ea20df016a59e3ba9a81f9d5b04cda3a1cbd0d3cdad95c47",
+    "lean/Ruliology/CellularAutomata/Rule30Certificates/MovingReturn07.lean": "19bc4f802f891638ad5fa56ab32d536a7ec0d30943ac203a5d8d552d275ef96d",
+    "lean/Ruliology/CellularAutomata/Rule30MovingWaves.lean": "0ab24513cc18e4225e2b17bd0358a2776d387b8b21a32ff0bdb6945142bc72f3"
+  },
+  "runtime": {
+    "python": "3.14.7",
+    "machine": "x86_64",
+    "pysat": "1.9.dev17",
+    "pysolvers_sha256": "4c2a9f27aa2261d45b7692f2e94e08cba0c1cac555b107b882e6a9fe0a793403"
+  },
+  "limits": {
+    "aggregate_cpu_s": 120,
+    "wall_s": 300,
+    "tree_rss_mib": 768,
+    "max_procs": 6,
+    "file_mib": 16,
+    "disk_mib": 128,
+    "launch_free_mib": 4096,
+    "min_free_mib": 1024,
+    "swap_growth_mib": 4096,
+    "threads": 1,
+    "nice": 10,
+    "worker_soft_cpu_s": 85,
+    "worker_soft_wall_s": 230,
+    "models": 512,
+    "conflicts_per_call": 500000
+  },
+  "prediction": {
+    "p7_exact_words": 15,
+    "omitted_p7_word": "SAT",
+    "chaos_remove_one_period_equality_pair": "UNSAT",
+    "p13_projected_words": 144,
+    "p13_unit_constant_potential": true
+  },
+  "counterfactual": "Any control mismatch blocks target. UNKNOWN/model cap/CPU stop preserves evidence, no enlargement or solver retry. Non-deterministic overlap rejects proposed constant potential, not zero entropy.",
+  "jobs": [
+    {
+      "name": "strip",
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_return13_strip_pilot.py"
+      ],
+      "cpu": 100,
+      "wall": 270,
+      "required_stdout_lines": [
+        "RETURN13_STRIP_PILOT_RECORDED"
+      ]
+    }
+  ],
+  "command": "python3 tests/probes/wolfram/run_capped.py --out PRIVATE_STAGE --cpu 120 --wall 300 --rss-mib 768 --file-mib 16 --disk-mib 128 --track-tree --max-procs 6 --launch-free-mib 4096 --min-free-mib 1024 --swap-growth-mib 4096 -- /usr/bin/nice -n 10 python3 tests/probes/metal_scope/stage.py tests/probes/swarm/sw02/carry/gpt_return13_strip_plan.json"
+}

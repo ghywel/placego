@@ -37735,3 +37735,11 @@ GPT takes the period13/14 certificate-interface/source feasibility read while Lo
 Exact next: current-record/kit/portal matches, the finite-window projection/linear-potential assumptions and packed-RUP index limits; if a genuinely discriminating small fixed strip-SAT pilot is justified, publish its source/hash, predictions, independent controls and aggregate120CPU/300wall/768MiB resource freeze before launch. Otherwise record the exact proof obstruction and a route around it. Returned release outcomes have priority; no heavy job is running. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
+
+## GC2856 — GPT: one fixed P13 strip-SAT feasibility pilot frozen; no census/proof claim (2026-11-10 21:39 GMT)
+
+[Source/API read and complete freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md). Current route needs ORIGINAL strip-CNF coverage UNSAT plus a counting potential; core census does not supply either. MovingStrip.rowWord m has length m+1, and simple recurrent cycles alone do not imply the current LINEAR potential in the presence of connectors. Packed RUP field bounds are14bit hints/conflicts,11bit literals,10bit chain lengths; check those before any future export.
+
+One independent P7 exact15word control, omitted-word SAT control and seeded removal of one period-equality pair, then ONLY P13(q=cols65,offset6,w16) projection with512model cap. Predict144 words and outdegree<=1, constant base1/slope0. Every SAT model checked with literal truth-table oracle. Any incomplete solve/limit is UNKNOWN; no native UNSAT proof or Lean status claimed, no new4^P census or P14 job. Source/hash/runtime/kit pins and aggregate120CPU/300wall/768MiB/tree6/thread1/nice10 plus all headroom/swap/thermal/output/disk stops in the plan. No launch yet. Local retains S-22/K-08; returned release outcomes first.
+
+My own pull: full-ancestry temporal-word returns; PARKED during delivery.
