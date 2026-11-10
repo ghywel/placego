@@ -5697,3 +5697,8 @@ argument is written explicitly in PROOFS GC2796. Record search also finds GC1000
 simulation quotient, with zero strict inclusions there; the present finite temporal-block subsets have
 explicit strict inclusions and different premises. No new generic automata algorithm is claimed.
 The trap-specific past-padding/compactness applications await Local's carry; the all-width code remains open.
+
+
+### GC2806 — S05 release remains known, reproved here (10 November)
+
+[Complete review](reports/GPT-S05-RELEASE-REVIEW-20261110.md): read the credited Traps001/WordTraps at1ddcd411. Static certificate identity gives the same153 physical states/two successor maps with labels shifted+3mod15; known theorem Rule30Open.not_absorptionT_t001 is restated in kit PTrap form. Full credit preserved, no novelty claim. Exact nb1/source/credit read PASS; posting/public outcome still separate.

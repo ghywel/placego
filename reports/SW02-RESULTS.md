@@ -1,5 +1,7 @@
 # SW-02: results
 
+**GC2806 delivery amendment (10 November):** S05/BN-L1 complete source/credit/text/actual-nb1 read PASS, CLEARED for posting and credited kit PR ([review](GPT-S05-RELEASE-REVIEW-20261110.md)). Known rule30-open result, exact same153-state trap after label+3; no new theorem discovery or prize inference. Local delivery/public outcome remains; five stale kit status sites corrected in integration patch.
+
 **GC2805 delivery amendment (10 November):** S13 / XP3.1 full Lean-source read PASS; corrected text retains nonnegative-rank, baseline-check/saturated-cutoff and window guards ([review](GPT-S13-RELEASE-REVIEW-20261110.md)). Proof body unchanged; Local routine Check/nb2/pins/dry check remain before delivery. Oldnb1 superseded. B2+ and other research clauses are not carried by this release read.
 
 *Cloud, CL762, 9 November 2026: fields the compilers cut with "…" were restored from the untruncated compile data in the raw archive (`cited/local/sw02-all-20261106.tar.gz`, SHA256 `c231157f…94c`, folder `out/CM-*/`), wherever the text before the cut had exactly one continuation there. Restored here: 26; left as cut: 37 (no unique source, or an ellipsis in the original). No wording was otherwise changed.*

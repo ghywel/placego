@@ -10,7 +10,7 @@ Local reports its 15-minute heartbeat and 60-second flag waiter armed. Research 
 | S-13 | Local refreshes/posts; GPT release reader | Complete Lean read PASS GC2805; corrected text ready. Local Check rerun, nb2 and four coherent changed pins/dry check complete conditional clearance. Old nb1 superseded; no duplicate post. |
 | S-11, S-07 and S-08 | Worker carries complete; Local builds | S-11 GC2803; S-07 and S-08 GC2804 carried with exact scope/repairs, finite controls PASS. Local builds after S-05 (L1622). S-07 finite reflection replacement awaits Local carrying read; original series proof already carried. |
 | S-06 and S-09 | GPT prior-art comparison | GPT next: match exact clock phases with Berzai (S-06), then exact hypotheses/conclusions with ColumnTransfer (S-09). Returned release packets take priority. |
-| S-05, then S-11/S-07/S-08 | Local builds/posts; GPT release reader | Submit the known nonabsorption result with explicit rule30-open credit, after source/current-verifier checks. |
+| S-05, then S-11/S-07/S-08 | Local builds/posts; GPT release reader | S05 complete release read PASS GC2806, exact nb1/current-verifier dry gate pass; Local posts/opens credited PR with five stale statuses corrected. No rebuild/duplicate post. |
 | S-12 | Local, later in queue | Hand carry stands; Local L1622 identifies missing zero-wall diagonal formalization. No verified shortcut yet; near-square side claim excluded. |
 | S-16 | Delivery complete; Local handles PR follow-up | Nb2/public notebook and source exact, GPT GC2802; portal Lean Verified, PR248 open. No rebuild or duplicate post. |
 
@@ -34,7 +34,7 @@ Local reports its 15-minute heartbeat and 60-second flag waiter armed. Research 
 | 6 | S-08 | Planted survivors: linear hybrid; finite-state map with Rule 30's table plus one | BR-3.1, BR-3.2 | Worker carry PASS GC2804 for both repaired components; fixed controls pass | Local module(s): extended polynomial domain/b0 term, exact table swap, width/locality guards; release checks pending |
 | 7 | S-06 | Parity law S_2n(2n) ≡ n mod 2 and the degree law of the checks | XP-1.1 | Self-check; PARTLY known (Berzai, other clock phase) | GPT phase comparison and read, then scope/module |
 | 8 | S-09 | Exact black-count law and five-column bound | P2-3.1 | Self-check; PARTLY known (`ColumnTransfer`) | GPT comparison and read, then scope/module |
-| 9 | S-05 | ¬AbsorptionT t001 | PE-1.1, BN-L1 | Core Lean, KNOWN in `rule30-open` | Owner APPROVED with rule30-open credit (10 November); Local packet, GPT release read |
+| 9 | S-05 | ¬AbsorptionT t001 | PE-1.1, BN-L1 | Core Lean/known rule30-open; **complete release read PASS GC2806**, actual nb1 and dry gate pass | Local post once and credited kit PR, correcting all five stale statuses; public outcome pending |
 
 **Carried, not yet a submission.** P2-2.1(i) source energy ⇒ density 1/2 on every dyadic residue ⇒ Problems 1 and 2 (GC2702; the hypothesis is open); LN-06.1's crossing splice and A/B (GC2702); Theorem N, the 2-adic merge invariant, M(W) ≥ Π(W) and M unbounded (L1579, GC2720); Block 5's class-count theorems and CT4C (GC2702); PE-2.1's language reduction (GC2702).
 

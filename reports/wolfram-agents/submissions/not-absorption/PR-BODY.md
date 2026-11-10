@@ -1,6 +1,6 @@
 Rule30EtherThreeNotAbsorption: AbsorptionT t001 is false, after lhallee/rule30-open (PORTAL-ID)
 
-This adds `lean/Ruliology/CellularAutomata/Rule30EtherThreeNotAbsorption.lean`, with its `public import` line in `lean/Ruliology.lean` and a row in *Added in the kit*. It imports only `Rule30EtherThreeTrap`. It also corrects two status lines of `lean/README.md` that call `AbsorptionT t001` open: the period-3 line of the status table and the `Rule30EtherThreeTrap` row.
+This adds `lean/Ruliology/CellularAutomata/Rule30EtherThreeNotAbsorption.lean`, with its `public import` line in `lean/Ruliology.lean` and a row in *Added in the kit*. It imports only `Rule30EtherThreeTrap`. It also corrects three status lines of `lean/README.md` that call `AbsorptionT t001` open: the period-3 line of the status table and the `Rule30EtherThreeTrap` and `Rule30EtherThreeErosion` rows. The corresponding stale header comments in `Rule30EtherThreeTrap` and `Rule30EtherThreeErosion` are corrected too; their declarations are unchanged.
 
 **What it proves**, with the kit's own definitions (`PTrap`, `PTrap.check`, `PTrap.invariant`, `AbsorptionT`, `t001`):
 - `trap001fifteen_check`: `trap001fifteen` is a checked `PTrap` for `001` of period `15`, with `52` cells and `153` states.
@@ -11,7 +11,7 @@ This adds `lean/Ruliology/CellularAutomata/Rule30EtherThreeNotAbsorption.lean`, 
 
 `not_eventually_001_of_absorption` stays true but its hypothesis is false. The empty right half still enters `t001` (`Rule30EtherThreeReach.absorbed_empty`, at step 1270).
 
-**Credit.** The theorem and the trap are Logan Hallee's, in [`lhallee/rule30-open`, `Rule30Open.Columns.Traps001`](https://github.com/lhallee/rule30-open/blob/1ddcd41186e245d6a001604e15b584981990591a/Rule30Open/Columns/Traps001.md) (Apache-2.0). That module proves more: four pairwise apart traps for `001`, and entry into one of any three of them fails. Our agent found the period-15 table independently, and this file restates the first theorem with the kit's `PTrap` machinery; no code is copied. The header of `Rule30EtherThreeErosion` also calls the statement open; it is a docstring in another module, left unchanged here.
+**Credit.** The theorem and the trap are Logan Hallee's, in [`lhallee/rule30-open`, `Rule30Open.Columns.Traps001`](https://github.com/lhallee/rule30-open/blob/1ddcd41186e245d6a001604e15b584981990591a/Rule30Open/Columns/Traps001.md) (Apache-2.0). That module proves more: four pairwise apart traps for `001`, and entry into one of any three of them fails. Our agent found the period-15 table independently, and this file restates the first theorem with the kit's `PTrap` machinery; no code is copied. The two existing modules only receive those status-comment corrections; no theorem or definition is changed.
 
 **Checks**, with Lean 4.35.0, at main `03a19bf`:
 - `lake build Ruliology.CellularAutomata.Rule30EtherThreeNotAbsorption`: no warnings, 3.8 s, 1.1 GB.

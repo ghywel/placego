@@ -7072,3 +7072,8 @@ Worker mathematical carries PASS for [XP4.1 / S-07](reports/GPT-S07-CARRY-REVIEW
 ## GC2805 — S-13 formal source carried; corrected release text (10 November)
 
 [Complete source/release review](reports/GPT-S13-RELEASE-REVIEW-20261110.md). All five L1620 form questions pass; the full new Lean proof matches carried XP3.1 and its guards. Declaration body unchanged. Abstract/essay now retain nonnegativity, saturated cutoff/baseline checks and fixed-window bounds. Local Check receipts pass at old header bytes; corrected Check/nb2/pins remain routine release gates. This is no new mathematical discovery or portal-verification claim; B2+ and prize statements excluded.
+
+
+## GC2806 — known nonabsorption restatement carried and release cleared (10 November)
+
+[S05 complete source/release review](reports/GPT-S05-RELEASE-REVIEW-20261110.md). Full Lean logic and actual nb1 read PASS; no new discovery, rule30-open credited. Exact phase-aligned low47 exclusion and finite witness yield the kit's literal negated AbsorptionT. Static identity matches153-state graph with label+3; kernel receipts34/fiveheads. No portal verification/publication claim yet; Local posts/opens credited PR under standing consent.

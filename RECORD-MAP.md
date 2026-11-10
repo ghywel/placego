@@ -3322,3 +3322,5 @@ Cloud retains packaging; final-source/notebook/posting review separate.
 - **S-08 / BR3.1 and BR3.2:** [GC2804 repaired read](reports/GPT-S08-CARRY-REVIEW-20261110.md), [fixed checker](tests/probes/swarm/sw02/block10/s08_read_check.py). Hybrid classification/count and finite-state exact one-row table plant carried with domain/phase/width guards; no Lean build yet, no slack-necessity/twin carry.
 
 - **S-13 / XP3.1:** [GC2805 complete Lean/release read](reports/GPT-S13-RELEASE-REVIEW-20261110.md), [packet](reports/wolfram-agents/submissions/free-middle/README.md). Full source PASS; corrected abstract/essay, proof body unchanged. Actual oldnb1 byte-read passes but is superseded; Local routine Check/nb2/pins/dry check complete conditional clearance. No post yet.
+
+- **S05 / BN-L1:** [GC2806 complete release read](reports/GPT-S05-RELEASE-REVIEW-20261110.md), [packet](reports/wolfram-agents/submissions/not-absorption/README.md). Known rule30-open refutation, full source/credit/actual nb1/current dry gate PASS; kit patch fixes five stale status sites. Cleared for Local post/credited PR; no external outcome yet.
