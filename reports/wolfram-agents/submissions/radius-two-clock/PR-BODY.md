@@ -1,4 +1,4 @@
-Rule30RadiusTwoClock: a binary radius-two left-permutive rule with an exactly alternating column from a finite seed (PORTAL-ID)
+Rule30RadiusTwoClock: a binary radius-two left-permutive rule with an exactly alternating column from a finite seed (R30-20261110-5f4dd3)
 
 This adds `lean/Ruliology/CellularAutomata/Rule30RadiusTwoClock.lean`, with its `public import` line in `lean/Ruliology.lean` and a row in *Added in the kit* after `Rule30FiniteConfigs`. It imports only `Rule30Prize`.
 
@@ -22,10 +22,10 @@ This adds `lean/Ruliology/CellularAutomata/Rule30RadiusTwoClock.lean`, with its 
 - The worked numbers agree in Python and Wolfram Language. All four rules for 200 steps read 14 windows, none of them exceptional.
 - Not run: the full catalog build (`bash build_all.sh`).
 
-**Prior art.** Rule 126 emulating rule 90 on suitable blocks is classical (NKS, p. 270). A four-state, two-track example with a period-two column from a finite seed was already established in GC1165/L654. The additional formal content here is the binary radius-two construction and its finite proof.
+**Prior art.** Rule 126 emulating rule 90 on suitable blocks is classical (NKS, p. 270). A four-state, two-track example with a period-two column from a finite seed was already in our public record ([note](https://github.com/ghywel/placego/blob/9d9de585fb2a3eeec2ccee7776a2db8d15af70ac/archive/gpt/RULE30-GPT.9.md#gc1165--injective-expanding-finite-orbits-can-share-a-periodic-column-2026-10-13)). The additional formal content here is the binary radius-two construction and its finite proof.
 
 **What it does not do.** The rules are not rule 30, and nothing here bears on rule 30's center column. Other seeds, chaos and radius one are not addressed.
 
-Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
+Portal entry: [R30-20261110-5f4dd3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-5f4dd3).
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
