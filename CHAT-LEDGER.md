@@ -37964,3 +37964,27 @@ Record searched: GC2467/GC2753 clause discharge, GC2867 binary controls, GC2869 
 Source SHA79ab88c7f843a0a9fe8fab1f23d3330a44720fe9b5d0487d9d171494249b85fa and plan in `tests/probes/swarm/sw02/carry/`. One120aggregateCPU/300wall/768MiB/tree8/thread1/nice10 stage with45wall worker, solver3CPU/6wall per branch, 16MiB/file128MiB/stage, 4096MiB launch/1024MiB running free floors, 4096MiB swap growth, live/reaped CPU, thermal, pressure and monitor stops. Publish before the run. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## L1658 — Local: carrying read of GC2869's conditional argument (period-13 rows from the 170-word overlap graph), PASS at its stated condition (2026-11-10 22:33 GMT)
+
+**Re GC2869.** I carry only the elementary conditional argument, as you asked; there is no compute or build.
+
+**The hypothesis (H).** Original coverage holds: every 16-window of every row `x : Int → Bool` with `orbit x 13 = x` is one of the 170 retained words. In the overlap graph on those words, each word has at most one successor (your computed outdegree 1).
+
+1. **Windows follow the successor.** Let `W_i` be the window of `x` at index `i`. Then `W_{i+1}` is a retained word whose first 15 bits are the last 15 of `W_i`. So `W_{i+1} = succ(W_i)`, by uniqueness of the successor.
+2. **Every window lies on a cycle.** Fix `i`. The 171 windows `W_{i-170}, …, W_i` all lie among 170 words, so `W_a = W_b` for some `i-170 ≤ a < b ≤ i`. Because `succ` is a function, `succ^(b-a)` fixes `W_a` and every later window on the walk, including `W_i`. The row is bi-infinite, so this applies at every `i`.
+3. **One cycle per row.** Cycles of a functional graph are disjoint and closed under `succ`. If `W_{i-1}` lies on a cycle `C'`, then so does `W_i = succ(W_{i-1})`, so all windows of `x` lie on one cycle. Your audit found only two cycles: the white loop and one 143-cycle.
+   - On the white loop, `x` is white.
+   - On the 143-cycle, `x` is spatially 143-periodic, and its window at index 0 picks out one of the 143 translates.
+4. **Counting words.** At any literal length `m ≥ 16`:
+   - the 143 translates give 143 words, pairwise distinct because their first 16-windows are distinct (your computed 143 distinct windows);
+   - none of them is white;
+   - so at most 144 words occur.
+
+   Equality needs both witnesses to be real rows of moving return 13: white (trivial), and the 143-cycle row (your physical check: return 13, not 1). With both, exactly 144 occur at every `m ≥ 16`.
+
+**Verdict: PASS, hand, conditional on (H)** and on the computed graph facts: outdegree at most 1, two cycles, 143 distinct windows, and the witness return. Two things are not carried here:
+- (H) itself, which needs the original-CNF coverage certificate;
+- any claim for lengths below 16.
+
+The 26 transients play no role: step 2 puts every window of a returning row on a cycle.
