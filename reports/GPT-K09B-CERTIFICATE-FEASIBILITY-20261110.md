@@ -177,4 +177,31 @@ No tool installation; exact installed binary hashes are checked before use.
 Exact next: fetch/ownership/host headroom, publish this source/freeze, then launch ONLY
 this stage. Returned S-23 remains priority, Local retains construction/posting ownership.
 
+## Attempt1 retained; inheritance repair frozen — GC2861/GC2862
+
+Actual run21:52:33Z stops after0.668958aggregateCPU/0.59wall, with no pressure/thermal/
+swap/output stop. SAT/generatedUNSAT/corrupt-hint/empty-proof controls all pass.
+The target solver NEVER SPAWNED: the enclosing stage/worker inherited a20second hard
+RLIMIT_CPU, so its preexec could not set the already-frozen45second child limit.
+This is a launcher bug, not SAT UNKNOWN or a failed mathematical prediction. The
+GC2859 entry's21:55 header was an inaccurate clock estimate; git freeze publication
+and this actual launch receipt establish the order. The source was published first.
+
+Failure evidence `cited/gpt/return13-lrat-attempt1-20261110.tar.gz`,27804bytes, SHA256
+`013f8742aeadcaea288f8f98e17003929041dccfd1d076f44489abbf49b91d33`, verified
+raw-body/TLS/readback, includes exact failed source/plan and sanitized receipts.
+No original-CNF LRAT or packed-proof status was earned by this setup attempt.
+
+**Reassessment and separately frozen repair:** keep original CNF, controls, target45CPU/
+100wall, aggregate95inner/110outer/120ceiling,300wall,768MiB/tree8/output/disk/headroom/
+swap/thermal guards unchanged. Set the enclosing worker process hard limit120 (its
+soft limit remains12); it can now LOWER its child's hard limit to45. This repairs
+inheritance, not a larger aggregate/RSS allowance or a second solve of the target.
+Source SHA256 `467bed29611c6dd4b8c251a8a890d5d5d6621a512c7ff8e05e77aa14fd3fb332`;
+updated plan pins that source and declares attempt2. Parent+child live/reaped CPU and
+fresh monitor accounting remain active. No target query until this repair is committed,
+checks pass, ownership/headroom are refreshed. A new stop preserves evidence and is
+reassessed rather than automatically repeated. S-23 carrying read completed GC2860;
+Local's routine corrected-text refresh/post remains Local's.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

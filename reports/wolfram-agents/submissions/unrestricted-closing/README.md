@@ -1,6 +1,6 @@
 # Unrestricted tail closing fails on the constrained class (queue row S-23, Cloud's K-08)
 
-**Release packet built; REVIEW-REQUEST to GPT (L1655); not posted.**
+**Complete source/actual-nb1 PASS GC2860; routine corrected-text nb2 gates next; not posted.** [Full review](../../../GPT-S23-RELEASE-REVIEW-20261110.md): all three carrying questions resolved. Proof/source/headlines/driver unchanged; title now accurately says eventually periodic, exact free words and guarded context sharpened. Local unchanged-driver nb2/original82constant16headline gates/immutable receipt, ONLY notebook+title+abstract+essay pins/current verifier dry/oldnb1 rejection complete conditional posting/PR clearance under standing consent.
 - **Sources.** Built from LN-03.1 as Cloud computed and carried it (CL770 §11.3; [triage](../../../CLOUD-SW02-CARRY-TRIAGE-20261110.md) §9.1), and from GPT's comparison with open PR #52 ([GC2853](../../../GPT-K08-PR52-COMPARISON-20261110.md)), whose parity-translated mismatch Local carried (L1654).
 - **Who built it.** A Local sub-agent wrote the module under Local's brief. Local then rebuilt and checked it and read its statements. That is a self-check; GPT's read is the second read.
 
@@ -27,9 +27,9 @@ The exact mismatch set, the nine residues modulo 14 plus depth 2, is COMPUTED, n
 
 - **Texts:**
   - [`essay-prose.md`](essay-prose.md);
-  - [`essay.md`](essay.md) (`a5704c55…`, from [`assemble_unrestricted_closing_essay.py`](../../../../tests/probes/wolfram/assemble_unrestricted_closing_essay.py));
+  - [`essay.md`](essay.md) (`c0848717…`, corrected GC2860, from [`assemble_unrestricted_closing_essay.py`](../../../../tests/probes/wolfram/assemble_unrestricted_closing_essay.py));
   - [`title.txt`](title.txt);
-  - [`abstract.txt`](abstract.txt) (218 words, no markdown markup);
+  - [`abstract.txt`](abstract.txt) (217 words, no markdown markup);
   - [`headlines.txt`](headlines.txt) (16);
   - [`PR-BODY.md`](PR-BODY.md).
 - **The worked numbers.** Python ([`unrestricted_closing_replay.py`](../../../../tests/probes/wolfram/unrestricted_closing_replay.py)) and Wolfram both give `{True, True, True, True, {"10101010", "00101010", "01010101"}, {0, 1, 3, 5, 6, 8, 9, 11, 12}, True}`, and the prediction held.

@@ -25,9 +25,9 @@ Template: ComputationalEssay
 Name: {title}
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-11-10
-Description: Core Lean. Three periodic rows of the zero-boundary left half of rule 30, all black at depth 1 at every even tick, with two of them mapped to the same row by two ticks while differing on every tail: unrestricted tail closing fails on the class. Nothing here decides Q01 or period 2.
+Description: Core Lean. Three eventually periodic rows of the zero-boundary left half of rule 30, all black at depth 1 at every even tick, with two of them mapped to the same row by two ticks while differing on every tail: unrestricted tail closing fails on the class. Nothing here decides Q01 or period 2.
 Abstract: {abstract}
-Keywords: [rule 30, Rule 30 Prize, period two, Q01, zero-boundary left half, closing, counterexample, periodic rows, Lean 4, LeanLink, partial result]
+Keywords: [rule 30, Rule 30 Prize, period two, Q01, zero-boundary left half, closing, counterexample, eventually periodic rows, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]
 Links: ["[Rule 30 Prizes](https://rule30prize.org/)"]
 ---

@@ -1,4 +1,4 @@
-# Unrestricted Tail Closing Fails on the Constrained Class of the Zero-Boundary Left Half: Three Periodic Rows of Rule 30
+# Unrestricted Tail Closing Fails on the Constrained Class of the Zero-Boundary Left Half: Three Eventually Periodic Rows of Rule 30
 
 Gareth Herbert; Claude (Anthropic); GPT (OpenAI). 10 November 2026.
 
@@ -28,9 +28,9 @@ The even-tick rows from `A` are `A, C, A, C, …`, and from `B` they are `B, C, 
 
 ## 4. The failure, and what it does not touch
 
-Since `A` and `B` differ at every depth `14 q + 3`, they agree on no tail of depths, while `G A = G B`. That refutes the unrestricted eventual-tail closing property on `K`.
+Since `A` and `B` differ at every depth `14 q + 3`, they agree on no tail of depths, while `G A = G B`. That refutes the unrestricted eventual-tail closing property on `K`. This is not merely an accident of choosing one double step: the kit's semiflow identity `zrow_shift` implies that the two runs agree at every tick from tick 2 on. They therefore also agree after every positive number of double steps.
 
-The open kit pull request 52 states guarded closing properties, `HomoclinicClosing` and `AllPastClosing`, proves them equivalent and relates them to a finite-support reduction. These assume that the gate streams are legal: every eight-bit window lies in a set of ten values. They are not contradicted. In that pull request's convention the gate words are the complemented even heads one tick later. For `F A` and `F B` these are `0` and `1` followed by the common future `1010…`, whose first window has the value `85`, outside the ten legal windows. The one-tick mismatch at `14 q + 4` (`differ_one_tick`) shows that the infinite difference survives that change of convention. The legality guard is therefore essential to such closing statements.
+The open [kit pull request 52](https://github.com/WolframInstitute/Rule30PrizeKit/pull/52) states guarded closing properties, `HomoclinicClosing` and `AllPastClosing`, proves them equivalent and relates them to a finite-support reduction. These assume that the gate streams are legal: every eight-bit window lies in a set of ten values. They are not contradicted. In that pull request's convention the gate words are the complemented even heads one tick later. For `F A` and `F B` these are `0` and `1` followed by the common future `1010…`, whose first window has the value `85`, outside the ten legal windows. The one-tick mismatch at `14 q + 4` (`differ_one_tick`) shows that the infinite difference survives that change of convention. This explicit pair refutes the unrestricted version obtained by dropping legality; it does not identify legality as the only possible sufficient restriction.
 
 ## 5. Worked numbers
 
@@ -46,6 +46,6 @@ The mismatch set is the nine residues `0, 1, 3, 5, 6, 8, 9, 11, 12` modulo `14`,
 ## 6. Prior art and scope
 
 - **The framework** is the kit's: `Rule30ZeroBoundary` with `zrow`, `InX`, `Theta` and `Theta_unique`.
-- **The guarded neighbours.** The closest statements are in open kit pull request 52 (`Rule30GateTailReduction`: `HomoclinicClosing`, `AllPastClosing` and their equivalence under `GateLegal`). Also relevant is pull request 47's synchronizing-carrier families, which assume a synchronizing future and so exclude this alternating one. This module complements them: it shows that their guards cannot be dropped.
+- **The guarded neighbours.** The closest statements are in open kit pull request 52 (`Rule30GateTailReduction`: `HomoclinicClosing`, `AllPastClosing` and their equivalence under `GateLegal`). Also relevant is pull request 47's synchronizing-carrier families, which assume a synchronizing future and so exclude this alternating one. This module gives an explicit obstruction to unrestricted closing, rather than contradicting either guarded result.
 - **What is not here.** The finite-row form of closing and its equivalence with `Q01`, carried by hand in our record, is not formalized. Nothing is said about legal gate streams. Nothing here decides `Q01` or period `2`.
 - **History.** The three rows and their two-tick cycle come from our programme's swarm run (LN-03.1) as Cloud computed and carried them. GPT compared them with pull request 52 and translated the mismatch into its convention, and Local carried that step. A Local sub-agent formalized the module under Local's direction.

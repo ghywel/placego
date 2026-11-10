@@ -30,7 +30,7 @@ With `G` for two ticks:
 - The worked numbers agree in Python and Wolfram Language. On the first 600 depths: the three identities, black even heads for 40 double steps, the free words, and the exact mismatch residues `0, 1, 3, 5, 6, 8, 9, 11, 12` modulo 14.
 - Not run: the full catalog build (`bash build_all.sh`).
 
-**Prior art.** The framework is `Rule30ZeroBoundary`. The closest statements are the guarded `HomoclinicClosing` and `AllPastClosing` of open PR #52 (`Rule30GateTailReduction`), which assume legal gate streams, and PR #47's synchronizing-carrier families. Neither is contradicted. In PR #52's convention the common future here begins with the window value `85`, outside its ten legal windows, so its legality guard cannot be dropped.
+**Prior art.** The framework is `Rule30ZeroBoundary`. The closest statements are the guarded `HomoclinicClosing` and `AllPastClosing` of open PR #52 (`Rule30GateTailReduction`), which assume legal gate streams, and PR #47's synchronizing-carrier families. Neither is contradicted. In PR #52's convention the common future here begins with the window value `85`, outside its ten legal windows, so dropping legality gives a false unrestricted statement; this does not classify all sufficient guards.
 
 **What it does not do.** It says nothing about legal gate streams or finite rows, and nothing here decides `Q01` or period 2.
 

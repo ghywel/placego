@@ -2,7 +2,7 @@
   "worker_stop": 110,
   "include_outer_monitor_cpu": true,
   "input_sha256": {
-    "tests/probes/swarm/sw02/carry/gpt_return13_lrat.py": "b8b02248bec235e09df8ec2288c7e5c9748f16fab328552938aa8cb213af2c6c",
+    "tests/probes/swarm/sw02/carry/gpt_return13_lrat.py": "467bed29611c6dd4b8c251a8a890d5d5d6621a512c7ff8e05e77aa14fd3fb332",
     "tests/probes/ether_gap_solve.py": "11e02a0327a1527d08e2d61e53c500409ce38d705c5fc299a1ab32c53f724a2d",
     "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
     "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df"
@@ -19,7 +19,9 @@
     "swap_growth_mib": 4096,
     "threads": 1,
     "nice": 10,
-    "inner_aggregate_stop_cpu_s": 95
+    "inner_aggregate_stop_cpu_s": 95,
+    "worker_soft_cpu_s": 12,
+    "worker_hard_cpu_s": 120
   },
   "original_cnf_sha256": "badadbb38e00fb0c01991563f3fb6664ed2b78c9ab7254a36fa1bd818313fcd0",
   "prediction": {
@@ -35,11 +37,13 @@
         "python3",
         "tests/probes/swarm/sw02/carry/gpt_return13_lrat.py"
       ],
-      "cpu": 20,
+      "cpu": 120,
       "wall": 270,
       "required_stdout_lines": [
         "RETURN13_LRAT_STAGE_RECORDED"
       ]
     }
-  ]
+  ],
+  "attempt": 2,
+  "repair": "Only hard-limit inheritance: stage120, worker soft12/hard120, child solver45. First attempt target never spawned; controls passed. Aggregate95/110/120CPU and all memory/output/wall guards unchanged; no mathematical retry or budget enlargement."
 }

@@ -1,1 +1,1 @@
-Unrestricted Tail Closing Fails on the Constrained Class of the Zero-Boundary Left Half: Three Periodic Rows of Rule 30
+Unrestricted Tail Closing Fails on the Constrained Class of the Zero-Boundary Left Half: Three Eventually Periodic Rows of Rule 30

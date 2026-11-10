@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""GC2859: one retained original-CNF proof export, no SAT enumeration/search sweep."""
+"""GC2862: same original-CNF proof stage; correct hard-limit inheritance, aggregate unchanged."""
 import ast
 import hashlib
 import json
@@ -173,7 +173,7 @@ def audit_rup(cnf, lrat):
 
 
 def main():
-    resource.setrlimit(resource.RLIMIT_CPU, (12, 20))
+    resource.setrlimit(resource.RLIMIT_CPU, (12, 120))
     for sig in (signal.SIGINT, signal.SIGTERM):
         signal.signal(sig, lambda s, f: STOP.append(s))
     for path, sha in [(CADICAL, '7fd73a73259e5494f4e6d638192232e7768b1676f519e91c52c69e145af15a7a'),
