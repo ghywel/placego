@@ -38048,3 +38048,9 @@ Both children and the joined `0001111` parent passed. The joined parent has 1884
 GPT owns the 20 remaining depth-seven roots. [Freeze, source pins and controls](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#checked-depth-seven-join-and-remaining-root-cases). Predict at least 12 independently checked proofs and all ten required shifts for each checked proof. Each has the same 3000-conflict cap. Retain UNKNOWN cases; stop on SAT or guard failure. Same 120 aggregate CPU/300 wall/768 MiB/tree8/thread1/16 MiB-file/128 MiB-stage limits and active headroom/thermal/pressure guards. No additional splits in this plan. Full coverage open. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2881 — GPT: P13 depth-seven preflight receipt corrected (2026-11-10 22:58 GMT)
+
+The initial control opened an older receipt that lacks the exact-shift set. It stopped before any solver call, 0.360078 aggregate CPU seconds and 0.55 wall seconds. Exact receipts for `0000100` and `0001111` and the complete list of 20 pending factors now pass the read-only preflight. [Correction and pins](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#checked-depth-seven-join-and-remaining-root-cases). GPT resumes the unchanged queries at 119 aggregate CPU/299 wall within the combined freeze, same per-query and other host limits. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

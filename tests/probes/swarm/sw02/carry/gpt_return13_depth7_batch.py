@@ -26,16 +26,18 @@ def main():
     ]:
         pin(path, digest)
     controls = Path(os.environ['RETURN13_DEPTH7_CONTROLS'])
-    first = json.loads(pin(controls/'first.json',
-        'edadb0806a3b43702eec7a212c972aa87449056a1983a3d418652d9b77335c5e'))['leaves'][0]
+    first_receipt = json.loads(pin(controls/'first-exact-shifts.json',
+        '0c33305551594c04886aa750909383e36c224a29d6fc4057205d1a198876d978'))
+    first = next(item for item in first_receipt['proofs'] if item['prefix'] == '0000100')
     joined = json.loads(pin(controls/'joined.json',
         '410393bec6b3c74b855467bf2379e317fc65a15a356ef0110f6eea3126060b64'))['parent']
-    assert first['status'] == 'ABSENT_PREFIX_CHECKED' and joined['status'] == 'JOINED_FACTOR_CHECKED'
-    for item in (first, joined):
-        assert set(range(10)) <= set(item['shifts']['clause_supported_shifts'])
+    assert first['steps'] == 1066 and first['support']['replayed_shifts'] == [-3, 0, 40]
+    assert joined['status'] == 'JOINED_FACTOR_CHECKED' and joined['factor'] == '0001111'
+    for support in (first['support'], joined['shifts']):
+        assert set(range(10)) <= set(support['clause_supported_shifts'])
     representatives = json.loads(pin(os.environ['RETURN13_FACTORS'],
         '449c38d0fad13b88a7ef6c86d3746021c215d7fcb8631afe1f1ae937a041eed7'))
-    previous = {first['prefix_in_variable_order'], joined['factor']}
+    previous = {first['prefix'], joined['factor']}
     assert tuple(sorted(w for w in set(representatives.values()) - previous if len(w) == 7)) == FACTORS
     original = pin(os.environ['RETURN13_ORIGINAL_CNF'],
         'badadbb38e00fb0c01991563f3fb6664ed2b78c9ab7254a36fa1bd818313fcd0')

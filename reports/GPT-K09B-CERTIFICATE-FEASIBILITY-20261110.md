@@ -695,4 +695,19 @@ those exclusions to prove coverage. This would keep proof indices local
 and reuse each certificate at every supported shift. The Lean adaptation
 and the original-CNF composition have yet to be implemented.
 
+
+GC2880 stopped in the control reader before any SAT call. It opened the
+receipt from the run that ended at the obsolete shift audit. That receipt
+records no exact-support set. GC2881 pins the corrected GC2876 replay for
+`0000100` and the already checked joined-parent receipt for `0001111`.
+The two exact-support and stratum-completeness controls pass a read-only
+preflight. The first launch used 0.360078 aggregate CPU seconds and 0.55
+wall seconds. The identical queries retain 119 aggregate CPU seconds and
+299 wall seconds, within the original combined budget. Evidence for the
+stopped launch `cited/gpt/return13-depth7-preflight-20261110.tar.gz`, 2590
+bytes, SHA256 `737e58a7aa47fb644d6e58ca589c55a57dfd48cfef4c6ac2b758101cd00de937`.
+Corrected source SHA256
+`4bdd535429eb876bde9e604a1e2affdf936e3777ecd2b21abde42789f7a8e2ef`,
+plan SHA256 `af757d8801d53019a050a47f21ad1668e61a8b6cb72d120192c6484a2601e8c4`.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
