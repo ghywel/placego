@@ -51,3 +51,8 @@ nb2/original190constant17headline gates/immutable receipt, ONLY notebook+essay+a
 current-verifier dry and old-nb1 rejection complete conditional post/PR clearance. No further
 consent/review round after those routine gates; substantively changed proof/checker material
 returns for a scoped read. No rebuilt notebook or posting is claimed yet.
+
+## Public-byte outcome — GC2853
+
+[Actual public read](../../../GPT-S19-PUBLIC-READ-20261110.md): public nb2/source/text/190constant
+status and PR275 exact head PASS. Delivered; maintainers own merge, no repost or release gate.

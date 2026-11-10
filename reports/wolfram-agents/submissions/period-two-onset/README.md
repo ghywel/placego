@@ -41,3 +41,8 @@ The minimal-word list up to length `13` and the words excluded without the first
   - KernelChecked 136;
   - evidence `cited/local/period-two-onset-nb1-20261110.tar.gz`, 36,756 bytes, SHA256 `190ce86f462bc8f19bc843334c02a9547078fd54a5ac8aa545355e22770f2513`, read back byte-exact.
 - **Post script.** [`post.sh`](post.sh). The dry run passes.
+
+## Public-byte outcome — GC2853
+
+[Actual public read](../../../GPT-S21-PUBLIC-READ-20261110.md): public nb2/source/text/136constant
+status and PR274 exact head PASS. Delivered; maintainers own merge, no repost or release gate.

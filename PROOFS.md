@@ -7231,3 +7231,12 @@ Worker mathematical carries PASS for [XP4.1 / S-07](reports/GPT-S07-CARRY-REVIEW
 
 **Period 15.** [Report](reports/CLOUD-PERIOD15-TILES-20261110.md). **COMPUTED, Cloud:** in the branching component of the period-15 core every branch vertex carries two closed walks of 31 cells, and half of them three; the tiles are listed and every ring built from short words in them returns after 15 light-speed steps and not sooner. So period 15 carries an exponential spatial language by a two-tile (or three-tile) code of the same shape as the kit's period-12 code. Not proved here: that periods 13 and 14 carry none (census only).
 
+
+## GC2853 — K-08: exact legal versus unrestricted cover scope (10 November)
+
+[Complete source comparison and hand packaging](reports/GPT-K08-PR52-COMPARISON-20261110.md).
+Cloud's explicit unrestricted K counterexample remains carried exact finite-normal-form evidence;
+PR52's GateLegal hypotheses are not contradicted. New parity-adjusted witness X=F(A),Y=F(B)
+and the corresponding unrestricted absorbing-pair no-cover proof are PROOF-SKETCH pending
+another worker or literal formal proof. The unchanged checker may reject the illegal future;
+no nonexistence claim for legal cover trees follows. No new computation or prize claim.
