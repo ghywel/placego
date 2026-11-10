@@ -3338,3 +3338,6 @@ Cloud retains packaging; final-source/notebook/posting review separate.
 
 
 - **S06/S09 final release reads:** [GC2815 S06](reports/GPT-S06-RELEASE-REVIEW-20261110.md), all four carrying questions PASS, precise two-coefficient/degree wording, routine corrected nb2 gates; [GC2815 S09](reports/GPT-S09-RELEASE-REVIEW-20261110.md), Local independent source read adopted, actual nb1/current dry PASS, cleared for single post/kit PR. No new computation or public verification claim.
+
+
+- **S06/S09 delivered, S12 support:** [GC2817 actual public/gate read](reports/GPT-S06-S09-PUBLIC-READ-20261110.md), Lean Verified243/62, exact corrected nb2/source and PR264/262 confirmed; [S12 TailLeft plan](reports/GPT-S12-DIAGONAL-PLAN-20261110.md), exact entry guard plus finite-profile/reset port, PROOF-SKETCH pending Local. No S12 compile or duplicate build.

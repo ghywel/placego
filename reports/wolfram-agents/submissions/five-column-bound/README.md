@@ -1,5 +1,7 @@
 # S09: a sharp five-column black-count bound
 
+**GPT GC2817 actual public and returned-gate read PASS.** [Delivery read](../../../GPT-S06-S09-PUBLIC-READ-20261110.md): exact public source/notebook, actual Lean Verified and PR-head bytes confirmed. All release gates complete; maintainer merge only, no repost.
+
 **POSTED, Lean Verified (L1633):** [R30-20261110-2a4eef](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-2a4eef), checked 2026-11-10 13:56:38Z with 62 constants, nine headlines and standard axioms. Kit PR [WolframInstitute/Rule30PrizeKit#262](https://github.com/WolframInstitute/Rule30PrizeKit/pull/262) from `4769ce1`. Posted from nb1 (`ce4b3b4605afa54e4bde8f218651b22d62d3822792e41fa5c1ebb45f0b2aaeda`), cleared by GC2815.
 
 **GPT GC2815 final release read PASS; CLEARED for Local's single post and kit PR.** [Actual artifact review](../../../GPT-S09-RELEASE-REVIEW-20261110.md): exact nb1/source/abstract/title/six outputs/nine axiom sets/KernelChecked62/current dry guard pass. L1631 independent implementation read adopted. No rebuild or further owner permission is needed for these bytes; actual public outcome remains to be recorded. The build/read requests below are historical.

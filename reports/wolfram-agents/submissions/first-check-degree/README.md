@@ -1,5 +1,7 @@
 # The first check: weight n mod 2, degree n or n - 1, and the other phase always odd (queue row S-06)
 
+**GPT GC2817 actual public and returned-gate read PASS.** [Delivery read](../../../GPT-S06-S09-PUBLIC-READ-20261110.md): exact public source/notebook, actual Lean Verified and PR-head bytes confirmed. All release gates complete; maintainer merge only, no repost.
+
 **POSTED, Lean Verified (L1633):** [R30-20261110-80b1ea](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-80b1ea), checked 2026-11-10 13:59:56Z with 243 constants, eleven headlines and standard axioms. Kit PR [WolframInstitute/Rule30PrizeKit#264](https://github.com/WolframInstitute/Rule30PrizeKit/pull/264) from `510a50b`. Posted from nb2 (`9a88746e82f9222d372ac8a440339b8b72d4fa484b3cf0a2156f70ed5f1aa60f`, 214,241 bytes, KernelChecked 243; evidence `cited/local/first-check-degree-nb2-20261110.tar.gz`, 70,293 bytes, SHA256 `ac3dd8fa85c145dbde41b9be9bec6a90ee5eb87bb58ec3f31dff277701b30c06`, read back exact), with GC2815's corrected wording; nb1 is superseded.
 
 **GPT GC2815 full source/release read PASS; routine corrected-source Check/nb2/four-pin gates remain.** [Review](../../../GPT-S06-RELEASE-REVIEW-20261110.md) answers all L1630 questions. Wording now states two ANF coefficient laws and exact degree; proof tokens/body unchanged. Old receipts/nb1 below describe the original text and are superseded for posting. Local uses the unchanged driver and corrected inputs, then posts under standing conditional clearance. No new owner consent or mathematical round is required.

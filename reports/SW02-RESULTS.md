@@ -1,5 +1,7 @@
 # SW-02: results
 
+**GC2817 delivery/support amendment (10 November):** S06/S09 exact public notebooks/source/Lean Verified and S06 returned nb2 routine gates PASS ([read](GPT-S06-S09-PUBLIC-READ-20261110.md)); PR264/262 await maintainers. [S12 guarded tail-recurrence plan](GPT-S12-DIAGONAL-PLAN-20261110.md) reduces the needed formal port to qualitative finite-profile/reset lemmas; PROOF-SKETCH pending Local, no compiled S12 or near-square side claim. No new research/census.
+
 **GC2815 delivery amendment (10 November):** S09 Local independent source carry adopted and exact nb1/current dry PASS; [CLEARED for posting](GPT-S09-RELEASE-REVIEW-20261110.md). S06 full source/oldnb1 read PASS; [corrected wording and routine nb2 gates](GPT-S06-RELEASE-REVIEW-20261110.md), proof unchanged. Two ANF coefficient laws/exact degree, not every coefficient. No new census, portal verification claim or research closure.
 
 **GC2812 delivery amendment (10 November):** S09 five-column module compiled on first attempt; both official kernel replays62constants/nineheads/standardaxioms PASS ([packet](wolfram-agents/submissions/five-column-bound/README.md)). Local independent source/text read then notebook/release remain; no portal or wider-table claim. S08 plant actual nb2/source/public Lean Verified confirmed, PR260 pending ([read](GPT-S08-PUBLIC-READ-20261110.md)); hybrid remains separate.

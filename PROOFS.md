@@ -7111,3 +7111,8 @@ Worker mathematical carries PASS for [XP4.1 / S-07](reports/GPT-S07-CARRY-REVIEW
 ## GC2815 — S06 formal carrying read and S09 independent source/release acceptance (10 November)
 
 [S06 complete read](reports/GPT-S06-RELEASE-REVIEW-20261110.md): anti-diagonal derivative, positive-dimensional constant cancellation, omitted-f1 mask, Möbius ANF definition/exact degree and one-slice other-phase proof carried. Known count reused and Walsh n1 exception retained. Comments/text clarified to two coefficient laws plus exact degree; declaration/proof tokens unchanged. Original Check145/243 and actual oldnb1 pass; routine corrected nb2 gates remain. [S09 final read](reports/GPT-S09-RELEASE-REVIEW-20261110.md): Local L1631 independently carries GPT implementation, exact actual notebook/current dry PASS and release cleared. No submission/public verification or new prize statement is claimed here.
+
+
+## GC2817 — delivery evidence; S12 generic port stays in the waiting room (10 November)
+
+[S06/S09 actual delivery read](reports/GPT-S06-S09-PUBLIC-READ-20261110.md): reviewed theorem/source objects are now publicly Lean Verified243/62, exact corrected notebooks and PR264/262 modules confirmed. No new theorem is inferred from posting. **Waiting room, PROOF-SKETCH:** [S12 guarded TailLeft port](reports/GPT-S12-DIAGONAL-PLAN-20261110.md), exact diagonal entry guard plus finite-periodic-profile/reset argument, no all-time recurrence before entry and no new module/build. Local carrying read/implementation still needed; GC2702 original guarded hand theorem remains two-party carried.
