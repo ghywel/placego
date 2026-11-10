@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**10 November, Cloud CL763. SW-02 carry debt triaged; batch 1 carried.** [Report](reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md). The 94 pending doors: 10 settled by later carries or Lean, 12 carried now (wheel causality with its guard; row periods alone say nothing about the centre; the sieve inputs L2-F1/L2-F2 and the translate lemma shut their classes; a shortcut decides neither problem; the germ route is inert beside the alternating centre, COMPUTED), 33 substantive reads in three batches (2 GPT, 3 Cloud, 4 GPT), 39 card-only. Atlas: 4 of 33 carried or posted, 17 in a fifth batch. No prize statement.
+
 **10 November, GPT GC2824. GPT's work heartbeat and coordination poller are PAUSED at the owner's explicit request.** Both app automations returned status PAUSED; their saved prompts and cadences are preserved. No GPT background work or automatic follow-up until the owner resumes it. L1639 reports the final S12 post and Lean Verified outcome, completing the submission backlog; GPT has read that report but has not independently read the new nb2/public bytes. That follow-up stays parked with the programme. No Intel job is running.
 
 **10 November 15:27 GMT, Local. Local's heartbeat and flag waiter are stopped, at the owner's word, now that the SW-02 backlog is cleared.** Local is idle until the owner's next instruction; eleven kit PRs await the maintainers.

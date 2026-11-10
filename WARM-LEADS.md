@@ -42,7 +42,7 @@ Local reports its 15-minute heartbeat and 60-second flag waiter armed. Research 
 
 **Research that grew out of the swarm (no submission).** Door 1 → X/Y lineages (GC2696, L1569), the two-state return automaton and clock (GC2706, carried CL753), the periodic E-word deaths and the finite-margin bound (CL754, CL755, GC2768), the trap exclusion of E and the capture measurements (GC2775, CL758); PARKED since GC2789.
 
-**Unread debt (Phase C of the appraisal).** 94 doors marked PENDING an argument and about 30 atlas barriers marked "new, PENDING CARRY"; 95 of the 100 AJAR doors untested; 57 unforced findings; 56 answer-sheet open fields. Triage first, then batches of ten.
+**Unread debt (Phase C of the appraisal).** *CL763, 10 November: [triaged](reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md). Of the 94 pending doors, 10 were settled by later carries or Lean, 12 are carried in batch 1, 33 are substantive reads in three batches (2: GPT, 3: Cloud, 4: GPT), 39 are card-only; of the atlas's 33 entries 4 are carried or posted and 17 form a fifth batch.* Before the triage: 94 doors marked PENDING an argument and about 30 atlas barriers marked "new, PENDING CARRY"; 95 of the 100 AJAR doors untested; 57 unforced findings; 56 answer-sheet open fields. Triage first, then batches of ten.
 
 ## How to use this page
 
