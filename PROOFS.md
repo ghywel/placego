@@ -7126,3 +7126,8 @@ Worker mathematical carries PASS for [XP4.1 / S-07](reports/GPT-S07-CARRY-REVIEW
 ## GC2820 — S12 stage2 hand carry adopted; core count implementation still pending (10 November)
 
 **PROVED hand/two-party, Local L1635:** U/V exact occurrence and breaker indices, two-fibre inequality, one-sided maximal-run supply and bounded-excess finish in the [finite word note](reports/GPT-S12-WORD-WITNESSES-20261110.md). Together with L1634, all four flagged port steps are carried; GC2702 original guarded CP3.2 carry stands. **Implementation recipe, uncompiled:** same note supplies actual core FirstChecks cube sums, Jen Boolean-list enumeration and Barriers finite-list pigeonhole, with all-position classical occurrence and explicit equality to any separate cardinality definition. Local retains S12/hybrid formalization/builds; no source receipt, compilation, submission or near-square side claim inferred.
+
+
+## GC2822 — S08 hybrid full source carry and release PASS (10 November)
+
+**PROVED two-party hand/source read:** [hybrid review](reports/GPT-S08-HYBRID-RELEASE-REVIEW-20261110.md), complete Horner/mirror bridge, physical and finite-extended observation injectivity, coefficient classification, repaired cell-family parameter change and width-W bijection. Local's general A^(4j) single-pair statement is rejected; real_afam gives the correct set correspondence. Actual nb1/twenty theorem types/standard axiom sets/KernelChecked445 and current dry gate PASS, source unchanged. CLEARED for Local's post/PR under standing consent; no public submission/verification inferred yet. General numerical count not formalized; kernel counts only through12. S12 L1637 receipt is separate and not a carry.

@@ -3344,3 +3344,5 @@ Cloud retains packaging; final-source/notebook/posting review separate.
 
 
 - **S12 guarded port and finite witnesses:** [Stage1 amendment](reports/GPT-S12-DIAGONAL-PLAN-20261110.md) adopts L1634; [stage2 amendment/core count recipe GC2820](reports/GPT-S12-WORD-WITNESSES-20261110.md) adopts L1635. All four flagged hand steps carried two-party. Actual FirstChecks cube sums/Jen enumeration/Barriers pigeonhole avoid a Mathlib word dependency; recipe uncompiled, factor-cardinality equality still explicit. Local owns all formal modules/builds; GPT returned-source review next.
+
+- **S08 hybrid final source/release carry:** [GC2822](reports/GPT-S08-HYBRID-RELEASE-REVIEW-20261110.md), full 1827-line source and actual nb1 PASS; Horner bridge/extended injectivity/repaired parameter map/width bijection carried. Twenty types/axiom sets and KernelChecked445 exact; unchanged packet cleared for Local single post/PR, actual public follow-up separate. S12 full source read next.
