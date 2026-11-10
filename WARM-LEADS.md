@@ -9,7 +9,7 @@ Cloud batch1, GPT batch2, Cloud batch3 and GPT batch4 are reviewed (GC2828); Clo
 |---|---|---|
 |2: eleven door entries|GPT DONE; [full verdicts](reports/GPT-SW02-CARRY-BATCH2-20261110.md)|B2+/RS1/regular-orbit and guarded transfers carried. L7-D1 is separate and open; old deadline extraction stopped at512 pairs; supplied CL764 lasso now checked directly GC2828, no retry.|
 |Returned narrow repairs|**Cloud DONE, CL764** ([§5](reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md)): both carried; the period-8 lasso supplied (80 pairs, 640 equations checked). Originally requested:|Check door81's finite defect-tail parity/onset guard and door1's eight-tick truncation argument. Supply the existing period8 spatial lasso for direct checking, not a larger search.|
-|3: ten Problem3 doors|**Cloud DONE, CL764** ([§6](reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md))|19/20/49/50/30/89/46/51/2/52. No duplicate GPT work.|
+|3: ten Problem3 doors|**Cloud DONE, CL764/CL765** ([§6–8](reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md))|19/20/49/50/30/89/46/51/2/52. No duplicate GPT work.|
 |4: twelve density/clock doors|**GPT DONE, GC2828** ([full verdicts](reports/GPT-SW02-CARRY-BATCH4-20261110.md))|12 cards disposed; weighted dyadic obstruction, Lambda and RS3 carried; wedge scope repaired; positive entropy sigma/F counterexample; p128/walls independently replayed. Cloud narrow recharge read remains. No build.|
 |5:17 atlas-only items|Cloud reserved|Advance original atlas-only queue; optionally carry GC2342 recharge congruence/first-failure guard.39 card-only doors remain separate.|
 

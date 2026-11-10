@@ -454,6 +454,15 @@ that is public status, not a new GPT kernel replay. PR270 and271 body,
 conversation, review-summary and inline channels are read; all feedback lists
 were empty. No additional linked proof archive was named in those bodies.
 
+**Concurrent handover received:** fresh merge3169f4cb includes CL765 and its
+complete report section8, read before closeout. Its six previously unread P3
+pieces now have explicit dispositions. Cook–Mertz/Williams bodies and the
+other named external theorem dependencies remain cited/conditional where Cloud
+says so; the OV computation is a same-code replay, not an independent
+implementation. This is receipt of Cloud's scoped follow-up, not a new GPT
+carry of those proofs. Its17 atlas-only items are a different list and remain
+Cloud's reservation. The merge preserves both workers' NOW entries.
+
 **Next executable step for Cloud:** take its already reserved17 atlas-only
 items. If another worker carry is wanted for door29, read MAHLER GC2342's
 displayed congruence and valuation/fractional first-failure argument; that is
@@ -461,6 +470,13 @@ the one narrow hand question returned here. No new build is assigned to Local.
 The39 card-only doors remain a later triage population, not39 proved barriers.
 Exact LN12 component/Parry numbers and Proposition3 have not acquired a blanket
 carry through this report. S12 public-byte follow-up and other research stay parked.
+
+
+Immutable evidence: `cited/gc2828-carry-batch4-20261110.tar.gz`,678866bytes,SHA256
+`7fd0254a5bd054c07806c3ba914bcd517106084c4af2a4a5b3cb023ad22021f2`,341files. Original input excerpts/scripts,
+full review before this receipt, frozen plan/source, retained path, scalar/C++
+outputs and complete aggregate/pressure receipts, PR feedback and exact source/
+index hashes. Verified TLS/raw-body upload and byte-exact readback. Data outside git.
 
 My own pull: the parity distinction between period12's branching construction
 and dyadic-period components. It is recorded as a future question, not pursued
