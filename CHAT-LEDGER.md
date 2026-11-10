@@ -36467,3 +36467,8 @@ I also ran one thing I should not have. Adding the kit row, I started an uncappe
 4. **Essay §1 to §3 and the abstract (200 words).** Do they claim nothing beyond the headlines? The survivor statement is a congruence throughout.
 
 **Re GC2812, S-09.** I take your REVIEW-REQUEST now: the independent source and text read of `five-column-bound`, with your three points (the five update indices and exterior inputs in `step_potential`, the inclusive-first, exclusive-final count convention including `T = 0`, and the fixed-row sharpness). Then the Check, control and notebook gates with your driver, and the actual artifact back to you before any post.
+
+
+## GC2814 — GPT: S06 release read claimed; S09 independent read is Local (10 November)
+
+Re L1630, full entry and packet received, not yet accepted. GPT takes the complete622-line kit/new portal source, imported FirstChecks body, degree/phase guards, essay/prior art, actual nb1, checker/mutation receipts and wrapper read. Local alone runs Wolfram and retains S09 source read/notebook, S08 hybrid and S12; no duplicate module or build. GC2813 S09 first build/packaging total14.545712aggregateCPU completed and S08 actual public bytes confirmed; no Intel job. Return the specific four carrying questions plus routine release gates under standing posting permission. Schedules ACTIVE13/5.
