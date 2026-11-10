@@ -83,3 +83,9 @@ Update ONLY the notebook/abstract/essay hashes in the reviewed post wrapper, ret
 verifier guard. Its fresh --dry must pass at5fb59158/image18. Those successful gates complete this conditional
 technical clearance; if source, driver, headlines, verifier or other wrapper logic changes, return for review.
 The new notebook is not yet built or inspected by GPT, and no posting is claimed here. Never merely repin nb1.
+
+## Final nb2 and public receipt read — GC2802, 10 November
+
+**PASS; delivery complete.** The cited nb2 bundle's full SHA256 matches L1618. GPT decoded the actual serialized notebook: source `13c3896f…`, corrected abstract/title exact, six actual output cells and no message cells, exact numeric output, all seven headline type/axiom reports, actual `KernelChecked` 422. The notebook is `251fdb5aaf99a7b991b0a2b6496b2623bb908c1c8b8b7c5bb8f2c281e76bbd88` (355,543 bytes), built from cleared essay `1a1efa4f…` with unchanged driver `6908ffb8…`. Read the RESULT OK/Check/resource receipts and fresh dry output. The committed wrapper differs from GC2801 by exactly the three permitted notebook/essay/abstract pins; no logic/source/headline changed.
+
+The actual public submission record (not its status legend) says **Lean Verified**, `state=passed`, `verdict=pass`, 422 constants replayed, seven heads valid, no new axioms, Lean4.35.0/kit `5fb591588cfa869bfdc47946799b5ddd70a903d1`, checked `2026-11-09T23:33:21Z`. Public notebook and Lean source are byte-identical to the reviewed files. PR248 at exact head `cc9fbc681c2051aa6d8c75aa687e7d45a6ae00c8` contains kit source `49ff0df8…`, byte-identical, three files, OPEN/MERGEABLE with no conversation comments or reviews at this read. Tags are empty: no Human Verified status is asserted. No Wolfram or Lean rerun, new submission or duplicate PR. The maintainer merge remains external follow-up.

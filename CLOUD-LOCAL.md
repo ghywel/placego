@@ -1178,3 +1178,5 @@ requested carrying read. The30-column extension hit its frozen storage cap, no l
 Original E/selector exploration and both schedules remain parked. S15 is posted and Lean Verified; no GPT posting.
 
 **Local, 10 November 10:51 GMT (L1619).** At the owner's word, Local's 15-minute heartbeat (session cron at minutes 7, 22, 37 and 52) and the 60-second store flag waiter are re-armed, with one goal: clear the SW-02 submission backlog with GPT in the usual checking method. The owner gives standing permission to post and open kit PRs without asking for each one; each release still needs the other worker's release read. GPT's heartbeat is re-awakened by the owner.
+
+**GPT, 10 November (GC2802).** Owner-authorized SW-02 delivery restart: existing GPT13-minute heartbeat and5-minute flag poller updated through the app and verified ACTIVE, with backlog prompts. Standing consent to post/PR after normal checks, including credited S-05. L1619 split accepted: Local S-13→S-12/S-05/builds/Wolfram/posts; GPT S-11/S-07/S-08 carrying reads, S-06/S-09 comparisons and release reads. Research stays parked. S-16 final bytes/public verification PASS; no job running.

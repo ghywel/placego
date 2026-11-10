@@ -1,24 +1,17 @@
 # WARM LEADS: what SW-02 left us, and the order of work
 
-**Current owner priority: S-16 release review (GC2801).** The width18 proof and corrected text pass; oldnb1 is
-stale after scope corrections. Local's reviewed nb2 gates/pins complete conditional technical clearance without another GPT approval. Research stays
-parked during this handoff; no posting or schedule change. [Release review](reports/wolfram-agents/submissions/gate-trap-lift/README.md#gpt-release-review--gc2801).
+**Current mission, 10 November (owner; GPT GC2802 / Local L1619): clear the SW-02 submission backlog.**
+The owner gives standing permission to post and open kit PRs after the usual independent review and release
+checks; no per-package consent is needed. GPT's 13-minute work heartbeat and 5-minute flag poller are ACTIVE.
+Local reports its 15-minute heartbeat and 60-second flag waiter armed. Research excursions remain parked.
 
-**Current priority, 9 November (owner / GPT GC2800): S-16 research is reopened.** S-15 is posted and Lean Verified
-as R30-20261109-897fd1, kit PR246 open, reviewed sources byte-identical. The older E/4→7/808→4520 exploration stays
-parked. Both schedules remain paused.
-
-**S-16: [returned review and exact construction target](PROOFS.md#gc2800--l1613-reviewed-g1-carried-g1-failure-independently-replayed-finite-statistics-kept-finite).**
-All-width free-code inclusion remains OPEN. G1 fails at30 (one minimal word independently replayed); the full30
-code automaton still accepts every code word, COMPUTED by Local only. GC2794/2796 carries are complete;
-G1′⇔code inclusion is now carried too. The conditional floor is≈0.099056147 bits/sample. Finite353 rates do
-not determine the limiting language or entropy. The common-B reset fails28 after one A, losing243 targets.
-
-| Queue | Next executable step | Owner / boundary |
+| Work now | Owner | Exact next step |
 |---|---|---|
-|Current target|At28 inspect actual A-then-B predecessors of the243 missing targets; retain their incoming history in a proposed cover family and recompute BOTH image inclusions. Aim for a symbolic spatial extension, or a whole code word exclusion.|GPT owns the free-code pull; Local’s GC2794/2796 carries adopted; G1′ equivalence carried GC2800. No all-width proof or code obstruction.|
-|Cold numerical route|GPT’s two width30 attempts stopped; Local completed30 independently. No further widening requested. No unchanged retry, higher horizon, or cap increase. Reopen only with a structural certificate or genuinely different bounded question.|No research job running. Canonical covers grow to55; this does not rule out smaller noncanonical families.|
-|Independent alternative|The18-column finite-basis Lean rung remains a coherent small statement if the owner chooses packaging.|Local; no new packaging/posting launched.|
+| S-13, then S-12 | Local builds; GPT release reader | Formalize the carried XP3.1 free-middle theorem, excluding B2+; then CP3.2 complexity with finite-row/phase guards, excluding near-squares. Assemble essays/notebooks and send exact release packets. |
+| S-11, then S-07 and S-08 | GPT carrying reader; Local builds after carry | Read complete HX2.1 proof/skeptic sources and current kit edge conventions; settle the flush/residue guards before Lean. Then carry XP4.1 and BR3.1/3.2. |
+| S-06 and S-09 | GPT prior-art comparison | Match exact clock phases with Berzai and exact hypotheses/conclusions with ColumnTransfer before deciding additional content. |
+| S-05 | Local builds/posts; GPT release reader | Submit the known nonabsorption result with explicit rule30-open credit, after source/current-verifier checks. |
+| S-16 | Delivery complete; Local handles PR follow-up | Nb2/public notebook and source exact, GPT GC2802; portal Lean Verified, PR248 open. No rebuild or duplicate post. |
 
 *Started 6 November 2026 by Local at the owner's request: "a clear schedule of work in a light summary document we can refer back to, to shift the backlog here and make sure results are not forgotten." This page is the current warm-lead document and the short record of firmly closed doors. It is meant to stay short. The detail is in [SW02-RESULTS.md](reports/SW02-RESULTS.md) (answers, barriers, predictions), [SW02-DOORS.md](reports/SW02-DOORS.md) (all 556 doors), the [submission queue](reports/wolfram-agents/DELIVERY-QUEUE.md#sw-02-submission-queue-6-november-2026) and the [backlog](reports/SW02-BACKLOG.md).*
 
@@ -26,21 +19,21 @@ not determine the limiting language or entropy. The common-B reset fails28 after
 
 *Added at the owner's request, after [the SW-02 appraisal](reports/CLOUD-SW02-APPRAISAL-20261109.md). One row per result that carries an identifier; "home" is where it lives now. Update a row in the commit that changes it. The full statements are in [SW02-RESULTS.md](reports/SW02-RESULTS.md); the tests in [SW02-DOORS.md](reports/SW02-DOORS.md) (AJAR doors) and [the backlog](reports/SW02-BACKLOG.md).*
 
-**Posted and Lean Verified (8).** S-01 Q01 ⇔ Mortality ⇔ repeat budgets ([R30-20261106-45f6e9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261106-45f6e9), kit main); S-02 the forced twin at t ≥ 46 ([R30-20261108-0c4472](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-0c4472), kit main); S-03 the first-check bound ([R30-20261106-bdd993](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261106-bdd993), kit main); S-04 SEP ⇔ Q[N] ⇔ LR₁ and BWH ⇒ D(W) ≤ 2W + 4 ([R30-20261108-752db6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-752db6)); S-10 the period-5 and period-7 locks ([R30-20261108-c1d531](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-c1d531)); S-14 the period-3 languages and left reductions ([R30-20261108-261a30](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-261a30), kit main); S-15 the gate trap's five gap words ([R30-20261109-897fd1](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261109-897fd1), kit main, L1615). S-16 the width-18 rung (3535353, `Q01GapCore`): conditional clearance GC2801, notebook refresh pending.
+**Posted and Lean Verified (8).** S-01 Q01 ⇔ Mortality ⇔ repeat budgets ([R30-20261106-45f6e9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261106-45f6e9), kit main); S-02 the forced twin at t ≥ 46 ([R30-20261108-0c4472](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-0c4472), kit main); S-03 the first-check bound ([R30-20261106-bdd993](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261106-bdd993), kit main); S-04 SEP ⇔ Q[N] ⇔ LR₁ and BWH ⇒ D(W) ≤ 2W + 4 ([R30-20261108-752db6](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-752db6)); S-10 the period-5 and period-7 locks ([R30-20261108-c1d531](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-c1d531)); S-14 the period-3 languages and left reductions ([R30-20261108-261a30](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261108-261a30), kit main); S-15 the gate trap's five gap words ([R30-20261109-897fd1](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261109-897fd1), kit main, L1615). S-16 the width-18 rung (3535353, `Q01GapCore`): [R30-20261109-89b242](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261109-89b242), Lean Verified; final nb2/public byte read PASS GC2802; kit PR248 open.
 
-**Ready to harvest, in order** (the overnight list; each needs Local's build and essay, GPT's release read, and the owner's word to post):
+**Delivery order** (10 November: Local builds/posts, GPT gives carrying/release reads; standing owner consent covers posting and PRs after checks):
 
 | Order | Row | Content | Swarm source | What is done | What is left |
 |---:|---|---|---|---|---|
-| 1 | S-16 | Width-18 trap language, 3535353 | CP-2.2 | **Posted, Lean Verified** ([R30-20261109-89b242](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261109-89b242), L1618–L1619); kit PR #248 open | Merge of #248 (maintainers) |
+| 1 | S-16 | Width-18 trap language, 3535353 | CP-2.2 | **Posted, Lean Verified** ([R30-20261109-89b242](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261109-89b242), L1618–L1619); kit PR #248 open; nb2/public byte read PASS GC2802 | Merge of #248 (maintainers); no release gate remains |
 | 2 | S-13 | Free-middle theorem (survival does not restrict additive potentials) | XP-3.1 | Carried two-party GC2702 with repairs; **Local building (L1619)** | Lean module, essay; B2+ stays out (unread) |
 | 3 | S-12 | Complexity rung p(n) − n → ∞ for free words of finite rows | CP-3.2 | Carried two-party GC2702 with guards | Lean module, essay; near-square claim stays out |
-| 4 | S-11 | The cut ether is off the seed's edge cycle (HX-2.1) | HX-2 | Self-check; backlog T45 has the plan (residues by `decide`, lift by `seed_rows_return_iff`) | A worker's read, then a small module |
-| 5 | S-07 | Radius-2 left-permutive family with an exactly alternating column | XP-4.1 | Skeptic VALID; CLEAR against outside work (CL752) | A worker's read, small module |
-| 6 | S-08 | Planted survivors: linear hybrid; finite-state map with Rule 30's table plus one | BR-3.1, BR-3.2 | Skeptic VALID; CLEAR (CL752) | A worker's read, module |
-| 7 | S-06 | Parity law S_2n(2n) ≡ n mod 2 and the degree law of the checks | XP-1.1 | Self-check; PARTLY known (Berzai, other clock phase) | The phase comparison, a read, module |
-| 8 | S-09 | Exact black-count law and five-column bound | P2-3.1 | Self-check; PARTLY known (`ColumnTransfer`) | Comparison, read, module |
-| — | S-05 | ¬AbsorptionT t001 | PE-1.1, BN-L1 | Core Lean, KNOWN in `rule30-open` | The owner's call: submit with credit, or leave to its author |
+| 4 | S-11 | The cut ether is off the seed's edge cycle (HX-2.1) | HX-2 | Self-check; backlog T45 has the plan (residues by `decide`, lift by `seed_rows_return_iff`) | GPT takes the carrying read (GC2802), then Local builds |
+| 5 | S-07 | Radius-2 left-permutive family with an exactly alternating column | XP-4.1 | Skeptic VALID; CLEAR against outside work (CL752) | GPT carrying read, then Local small module |
+| 6 | S-08 | Planted survivors: linear hybrid; finite-state map with Rule 30's table plus one | BR-3.1, BR-3.2 | Skeptic VALID; CLEAR (CL752) | GPT carrying read, then Local module |
+| 7 | S-06 | Parity law S_2n(2n) ≡ n mod 2 and the degree law of the checks | XP-1.1 | Self-check; PARTLY known (Berzai, other clock phase) | GPT phase comparison and read, then scope/module |
+| 8 | S-09 | Exact black-count law and five-column bound | P2-3.1 | Self-check; PARTLY known (`ColumnTransfer`) | GPT comparison and read, then scope/module |
+| 9 | S-05 | ¬AbsorptionT t001 | PE-1.1, BN-L1 | Core Lean, KNOWN in `rule30-open` | Owner APPROVED with rule30-open credit (10 November); Local packet, GPT release read |
 
 **Carried, not yet a submission.** P2-2.1(i) source energy ⇒ density 1/2 on every dyadic residue ⇒ Problems 1 and 2 (GC2702; the hypothesis is open); LN-06.1's crossing splice and A/B (GC2702); Theorem N, the 2-adic merge invariant, M(W) ≥ Π(W) and M unbounded (L1579, GC2720); Block 5's class-count theorems and CT4C (GC2702); PE-2.1's language reduction (GC2702).
 
@@ -116,6 +109,30 @@ All raw returns are in the shared store as `cited/local/sw02-all-20261106.tar.gz
 ## History: status paragraphs moved from the top of this page (CL762)
 
 *These were at the head of the page; they are kept here unchanged, newest last as written.*
+
+### Superseded 9 November research/release queue (moved by GC2802)
+
+**Current owner priority: S-16 release review (GC2801).** The width18 proof and corrected text pass; oldnb1 is
+stale after scope corrections. Local's reviewed nb2 gates/pins complete conditional technical clearance without another GPT approval. Research stays
+parked during this handoff; no posting or schedule change. [Release review](reports/wolfram-agents/submissions/gate-trap-lift/README.md#gpt-release-review--gc2801).
+
+**Current priority, 9 November (owner / GPT GC2800): S-16 research is reopened.** S-15 is posted and Lean Verified
+as R30-20261109-897fd1, kit PR246 open, reviewed sources byte-identical. The older E/4→7/808→4520 exploration stays
+parked. Both schedules remain paused.
+
+**S-16: [returned review and exact construction target](PROOFS.md#gc2800--l1613-reviewed-g1-carried-g1-failure-independently-replayed-finite-statistics-kept-finite).**
+All-width free-code inclusion remains OPEN. G1 fails at30 (one minimal word independently replayed); the full30
+code automaton still accepts every code word, COMPUTED by Local only. GC2794/2796 carries are complete;
+G1′⇔code inclusion is now carried too. The conditional floor is≈0.099056147 bits/sample. Finite353 rates do
+not determine the limiting language or entropy. The common-B reset fails28 after one A, losing243 targets.
+
+| Queue | Next executable step | Owner / boundary |
+|---|---|---|
+|Current target|At28 inspect actual A-then-B predecessors of the243 missing targets; retain their incoming history in a proposed cover family and recompute BOTH image inclusions. Aim for a symbolic spatial extension, or a whole code word exclusion.|GPT owns the free-code pull; Local’s GC2794/2796 carries adopted; G1′ equivalence carried GC2800. No all-width proof or code obstruction.|
+|Cold numerical route|GPT’s two width30 attempts stopped; Local completed30 independently. No further widening requested. No unchanged retry, higher horizon, or cap increase. Reopen only with a structural certificate or genuinely different bounded question.|No research job running. Canonical covers grow to55; this does not rule out smaller noncanonical families.|
+|Independent alternative|The18-column finite-basis Lean rung remains a coherent small statement if the owner chooses packaging.|Local; no new packaging/posting launched.|
+
+
 
 **Block6 DONE (GPT GC2702).** [Carrying review](reports/GPT-BLOCK6-CARRY-REVIEW-20261106.md): class-count theorems and CT4C, XP3.1, PE2.1 and all three named reserves carried with explicit repairs. CT4C is retained: finite-range control differs from the new all-time law. Block7: S-01 and S-03 are posted and Lean Verified (L1575, L1577); kit PRs 207 and 209 are open. No schedule restart. The owner reopened the bridge pull: GC2706 completes the two-state return automaton and full factor-language check; GC2709 supplies an exact finite-ancestry interface, while actual4,7 realization remains open.
 
