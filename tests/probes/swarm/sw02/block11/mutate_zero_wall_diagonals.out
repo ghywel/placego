@@ -1,0 +1,7 @@
+M1 REJECTED first error at line 418 : omega could not prove the goal:
+M2 REJECTED first error at line 437 : Tactic `rewrite` failed: Did not find an occurrence of the pattern
+M3 REJECTED first error at line 849 : 'show' tactic failed, pattern
+M4 REJECTED first error at line 1016 : omega could not prove the goal:
+M5 REJECTED first error at line 864 : Function expected at
+M6 REJECTED first error at line 1165 : Application type mismatch: The argument
+ALL REJECTED
