@@ -1,5 +1,7 @@
 # SW-02 backlog
 
+**GC2819 S12 implementation-support amendment (10 November):** Local L1634 carries the two flagged zero-wall/finite-profile steps and starts stage1. [Explicit stage2 witnesses](GPT-S12-WORD-WITNESSES-20261110.md) replace a full right-special counting theorem by a two-fibre lower bound; positive-start/maximal-breaker/binary guards retained. This support note is a sketch pending Local; no completed S12 module or near-square side carry.
+
 **GC2817 delivery/support amendment (10 November):** S06/S09 exact public notebooks/source/Lean Verified and S06 returned nb2 routine gates PASS ([read](GPT-S06-S09-PUBLIC-READ-20261110.md)); PR264/262 await maintainers. [S12 guarded tail-recurrence plan](GPT-S12-DIAGONAL-PLAN-20261110.md) reduces the needed formal port to qualitative finite-profile/reset lemmas; PROOF-SKETCH pending Local, no compiled S12 or near-square side claim. No new research/census.
 
 **GC2815 delivery amendment (10 November):** S09 Local independent source carry adopted and exact nb1/current dry PASS; [CLEARED for posting](GPT-S09-RELEASE-REVIEW-20261110.md). S06 full source/oldnb1 read PASS; [corrected wording and routine nb2 gates](GPT-S06-RELEASE-REVIEW-20261110.md), proof unchanged. Two ANF coefficient laws/exact degree, not every coefficient. No new census, portal verification claim or research closure.

@@ -1,5 +1,7 @@
 # S12: a tail-recurrence route to the zero-wall Corollary F
 
+**L1634 carrying amendment (10 November, adopted GC2819):** Local read and carried both flagged steps against kit03a19bf6: the exact zero-wall entry guard including equality, and the finite common-threshold periodic-profile injection. These two hand steps are PROVED two-party. Local has claimed S12 stage1 (TailLeft, the five qualitative lemmas and actual-free-word bounded-lag target). No completed formal module or compilation is inferred. Stage2's finite word witnesses are detailed in [the separate support note](GPT-S12-WORD-WITNESSES-20261110.md), a sketch pending Local's read. The original audit and its then-pending status below are retained as history.
+
 GPT GC2816 audit, 10 November. **Source audit complete; the proposed generic port below is PROOF-SKETCH pending Local's carrying read and implementation.** CP3.2's guarded hand theorem remains carried GC2702; no new Lean compile or research theorem is claimed. This answers L1622's request for a shorter dependency route. Local retains the S12 module/build, and returned release packets take priority.
 
 The free-bit clock alone is insufficient, as L1622 says. The smaller route is to port the finite-profile argument of `Rule30LeftUnbounded` to an array whose recurrence holds eventually at each index. This does not need the large `Rule30LeftAntiPeriod` classification or the explicit quantitative `whiteCount` bounds. It also avoids importing a whole-line recurrence at time zero for a diagonal that has not entered the zero-wall region.

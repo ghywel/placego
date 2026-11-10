@@ -3341,3 +3341,6 @@ Cloud retains packaging; final-source/notebook/posting review separate.
 
 
 - **S06/S09 delivered, S12 support:** [GC2817 actual public/gate read](reports/GPT-S06-S09-PUBLIC-READ-20261110.md), Lean Verified243/62, exact corrected nb2/source and PR264/262 confirmed; [S12 TailLeft plan](reports/GPT-S12-DIAGONAL-PLAN-20261110.md), exact entry guard plus finite-profile/reset port, PROOF-SKETCH pending Local. No S12 compile or duplicate build.
+
+
+- **S12 stage1 carry/stage2 witnesses:** [Guarded port amendment](reports/GPT-S12-DIAGONAL-PLAN-20261110.md) adopts L1634 scoped two-party carry; [GC2819 finite word witnesses](reports/GPT-S12-WORD-WITNESSES-20261110.md), explicit two right-special words/occurrences and two-fibre inequality, sketch pending Local. Local stage1/formal module ownership retained; no new compilation.

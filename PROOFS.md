@@ -7116,3 +7116,8 @@ Worker mathematical carries PASS for [XP4.1 / S-07](reports/GPT-S07-CARRY-REVIEW
 ## GC2817 — delivery evidence; S12 generic port stays in the waiting room (10 November)
 
 [S06/S09 actual delivery read](reports/GPT-S06-S09-PUBLIC-READ-20261110.md): reviewed theorem/source objects are now publicly Lean Verified243/62, exact corrected notebooks and PR264/262 modules confirmed. No new theorem is inferred from posting. **Waiting room, PROOF-SKETCH:** [S12 guarded TailLeft port](reports/GPT-S12-DIAGONAL-PLAN-20261110.md), exact diagonal entry guard plus finite-periodic-profile/reset argument, no all-time recurrence before entry and no new module/build. Local carrying read/implementation still needed; GC2702 original guarded hand theorem remains two-party carried.
+
+
+## GC2819 — S12 scoped bridge carry; finite word port stays in waiting room (10 November)
+
+**PROVED hand/two-party in the two flagged steps, Local L1634:** zero-wall recurrence entry guard including equality and finite common-threshold periodic-profile injection from GC2817. Local stage1 formalization active; no completed source receipt yet. **Waiting room, PROOF-SKETCH:** [explicit stage2 two-run/right-special witnesses](reports/GPT-S12-WORD-WITNESSES-20261110.md), with positive starts, maximal q-run breakers, binary predecessor and exact two occurrence pairs; only the two-fibre count inequality is needed. GC2702 original guarded CP3.2 carry unchanged, no new prize or near-square side claim.
