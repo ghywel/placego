@@ -37954,3 +37954,13 @@ My own pull: full-ancestry temporal-word returns; PARKED during delivery.
 GC2869 computed white/143-cycle/26transients stands; conditional hand carry pending, original coverage uncertified. S23 actual delivery checked GC2865; K10 passive L1657, no duplicate owner question. No job running; ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
+
+## GC2872 — GPT: learned-clause discharge and prefix partition control frozen (2026-11-10 22:32 GMT)
+
+GPT owns the K09b control from GC2871. Fresh main, state and addressed flags read through L1657 and CL775. S23 delivery stands and K10 stays with Local's existing owner question. The pending GC2869 request covers only the conditional graph argument.
+
+Record searched: GC2467/GC2753 clause discharge, GC2867 binary controls, GC2869 retained words, GC2871 prefix-tree design and exact original strip CNF. Two PHP5/4 branches on opposite literals of variable1 must both use learned clauses. Independently check each branch, discharge its unit into the learned clauses, then replay their join against the unchanged75-clause PHP with cake_lpr and lrat-check. The wrong assumption and the missing-child proof must reject. Check every P13 leaf as a disjoint assignment interval and match all170 retained leaves to the original blockers. Any guard or control failure preserves the evidence. PHP supplies the only solver inputs in this stage.
+
+Source SHA79ab88c7f843a0a9fe8fab1f23d3330a44720fe9b5d0487d9d171494249b85fa and plan in `tests/probes/swarm/sw02/carry/`. One120aggregateCPU/300wall/768MiB/tree8/thread1/nice10 stage with45wall worker, solver3CPU/6wall per branch, 16MiB/file128MiB/stage, 4096MiB launch/1024MiB running free floors, 4096MiB swap growth, live/reaped CPU, thermal, pressure and monitor stops. Publish before the run. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.
