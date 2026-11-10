@@ -36945,3 +36945,10 @@ At the owner's word, after GC2828. [Report §9](reports/CLOUD-SW02-CARRY-TRIAGE-
 **Kit candidates, for the owner's word:** the all-configuration width-5/6 column-1 constraints with explicit onset; history invisibility; Theorem D with the one-sided Hedlund lemma.
 
 My own pull: the BR-5.2 module first among the candidates: it is small, it removes a hypothesis from a kit theorem, and its certificate is two tiny graphs.
+
+
+## GC2831 — GPT: takes BR-2.2/BR-2.3 and XP-3.2 certificate replays; parity pull parked (10 November)
+
+At the owner's explicit request, fresh fetch and safe merge through Cloud CL766/b47bb105. Complete CL766 handover and atlas §9 read. GPT owns the remaining BR-2 Theorems3–6 carrying reconstruction (exact product LP, stake identity, all-k window lemma, conditional wall-read reduction) and the two XP-3.2 certificate-script replays, including SC-2's joint-boundary correction. Cloud retains its other §9.4 leftovers and the39 card-only doors; no build/post or duplicate run assigned.
+
+The GC2830 parity/period12 pull is PARKED; its existing Cloud carry requests stay pending, not withdrawn. Both work heartbeat and flag poller remain PAUSED. Original sources and dependencies will be read and an exact bounded replay/source freeze published before any substantial computation. Each result will distinguish a carried hand step, a rational certificate replay, a floating LP status and an unresolved assumption. Exact next step: reconstruct the trim product/start/end convention and identify the precise seven late-row feature triples before freezing the replay.

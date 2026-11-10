@@ -1,0 +1,93 @@
+{
+  "worker_stop": 110,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_atlas_replay.py": "bd7718050dfae6e98d2a08ce861884ca6d385dc6a52047c4acbfeabf3c284802",
+    "tests/probes/swarm/sw02/ref.py": "fbc1f27f8ad6f5c0b26cc7aa5cc863e5a6e4586ce49fa7cf044a7400d50c3c70",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
+    "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df",
+    "/private/tmp/gc2831-raw/out/XP-3/cert.py": "710e5f333b81e2f8e2d00533efe6c2db77f703c301f10cb889f1065d784fea1d",
+    "/private/tmp/gc2831-raw/out/XP-3/cert2.py": "69ebd0db582ea0e0024340bc89c813d066b91838010c77aaa102ffb04e022d14",
+    "/private/tmp/gc2831-raw/out/XP-3/certlib.py": "1d62ee31051517ebf1ab0ded02ce7848e5cad0d98c78ced161c15f45450d5674",
+    "/private/tmp/gc2831-raw/out/XP-3/bb.py": "7aa7bf6f010062433a40a5b72e330aabffa633bb831137a4f6b4b5d85307b866",
+    "/private/tmp/gc2831-raw/out/XP-3/report.txt": "3556d5d889a993c48fdd6af2ea7e78adf16378fa2f16e6526b75f39618891a90",
+    "/private/tmp/gc2831-raw/out/XP-3/cert2_r1_w3.json": "907e1314d12d5117eeee388df71e2995c3d16b6dd193ecb8f612957364cf5504",
+    "/private/tmp/gc2831-raw/out/XP-3/cert2_r2_w3.json": "143440108c61d1fb5549b4a60a667f65eca3e96a7ecc990f793c563f43fe576a",
+    "/private/tmp/gc2831-raw/out/XP-3/cert2_r2_w6.json": "fddddf997368ff51ebf248e461d6805c9d47d7b490a542fe98ecac83baa4df72",
+    "/private/tmp/gc2831-raw/out/XP-3/cert2_r3_w3.json": "636e76e34641482bce26acfa36653a11f19d8cfad504acaba6eae4a98cbe5e74",
+    "/private/tmp/gc2831-raw/out/XP-3/cert2_r3_w6.json": "8ad31daa61f0e726d1c58e82642b981345dd2962c029511a9d41a94494bfcd46",
+    "/private/tmp/gc2831-raw/out/XP-3/cert2_r4_w4.json": "1ac3b4c5d9be1336cb469f3e59afe9cbbd8a27c639fa05aeba4863a2b1327d0f",
+    "/private/tmp/gc2831-raw/out/XP-3/cert2_r4_w6.json": "b8f75b647ee89f4dd11960293db7d1e460e22f9b1c74b7881b2ee6d21d3fc7aa",
+    "/private/tmp/gc2831-raw/out/XP-3/cert_r1.json": "a1368c00afe22a26f5f71cf95bac71df2fe2d4245b013863c1361834e479d29e",
+    "/private/tmp/gc2831-raw/out/XP-3/cert_r2.json": "96ef2473a3a3425bfa89982a48c4bf613e90f16dc42a5de74a718cbce127b076",
+    "/private/tmp/gc2831-raw/out/XP-3/cert_r3.json": "043bd152b7448a9c8be5c191248491e261142dcf50538f1e1717be1d8481e4a1",
+    "/private/tmp/gc2831-raw/out/XP-3/cert_r4.json": "c39e258f627c48ddfdd342145420a08bc758313fbcd30fe967dbf8f149eb5596",
+    "/private/tmp/gc2831-raw/out/XP-3/cert_r5.json": "baf67b1223a8925cc19076ef58593b955a23e66ef758437bfb06b61a1cfbf2bc",
+    "/private/tmp/gc2831-raw/out/XP-3/cert_r6.json": "2cece2f205fca0fc832c1f234addbc962f4130d2f0bf3dc4d65b73acaab83ed2",
+    "/private/tmp/gc2831-raw/out/SC-5/joint_r2_w6_W14.json": "8d878ea9c80bca6e01712a155c5ea845fad71d683b76c8b5fb3374bd9aaf4721",
+    "/private/tmp/gc2831-raw/out/SC-5/joint_r3_w6_W14.json": "ddbddb738dbc529e241a89f7c35f4e2993e830c1edddfc34253a308e6d0587f6",
+    "/private/tmp/gc2831-raw/out/SC-5/joint_r4_w6_W14.json": "7812c2a39bf43267e3c0cfac500ab305afefad4ccbd6a2ac0e483df78f2b38bf",
+    "/private/tmp/gc2831-raw/out/SC-5/t4_cert.py": "aa749f23314ba4fcea94d92615419ac0150e10f5853ee7e702a852699fe49877",
+    "/private/tmp/gc2831-raw/out/SC-5/t5_joint.py": "60d8c8f47755f869c4861d469dcd0997dd470df5f0da4a5fd82fd8da6a3595f5",
+    "/private/tmp/gc2831-raw/out/SC-5/t7_more.py": "a49e8f2df2dd6addf76f6504e4043a281b944ee670a339c5130060ee99c7ca6a",
+    "/private/tmp/gc2831-raw/out/SC-5/report.txt": "0dc1d0c84ed4d340a1fa96858294522b5ac8b5c0dffd691553913991c3fd8497",
+    "/private/tmp/gc2825-raw/BR-2/report.txt": "18ce0cf2069e102efd09ce36bfd7303ec56da28e5f426b17033fdf98f394675a",
+    "/private/tmp/gc2825-raw/BR-2/lp.py": "5bc71ff64064090b3a5fc6834e5a5ca914f1b87a64a950b5880d82cc34634a7f",
+    "/private/tmp/gc2825-raw/BR-2/hfs_core.py": "8479ac73ee56060c50335de6395a724a47bf88d9f55cb1b366cebcf5f646abe0",
+    "/private/tmp/gc2825-raw/BR-2/claims.jsonl": "9c6a35db1de9ad79fd7aab210add319038dc86562fde5a1820ae7a894e1f8776"
+  },
+  "jobs": [
+    {
+      "name": "cert",
+      "cpu": 20,
+      "wall": 60,
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_atlas_replay.py",
+        "cert"
+      ],
+      "required_stdout_lines": [
+        "ATLAS_CERT_REPLAY_PASS"
+      ]
+    },
+    {
+      "name": "cert2",
+      "cpu": 35,
+      "wall": 90,
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_atlas_replay.py",
+        "cert2"
+      ],
+      "required_stdout_lines": [
+        "ATLAS_CERT2_REPLAY_PASS"
+      ]
+    },
+    {
+      "name": "verify",
+      "cpu": 40,
+      "wall": 100,
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_atlas_replay.py",
+        "verify"
+      ],
+      "required_stdout_lines": [
+        "ATLAS_RATIONAL_CERTIFICATES_PASS"
+      ]
+    },
+    {
+      "name": "br",
+      "cpu": 15,
+      "wall": 45,
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_atlas_replay.py",
+        "br"
+      ],
+      "required_stdout_lines": [
+        "ATLAS_BR_CONTROLS_PASS"
+      ]
+    }
+  ]
+}
