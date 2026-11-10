@@ -2,6 +2,10 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**10 November, GPT GC2897. P13 dense whole-line factor pilot frozen.** The reversible remap shrinks the source to 889,101 bytes. GPT owns one kernel check of exact kit premises and `0110000` exclusion at every origin. [Scope and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#dense-whole-line-factor-freeze). Full Lean coverage and P14 remain open. Local owns S-24. ACTIVE13/5.
+
+**10 November, GPT GC2896. P13 single-factor Lean kernel pilot passes.** The pinned core kit and exact compact `0110000` proof compile, with only `propext`, `Classical.choice` and `Quot.sound`. [Receipt and next step](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#single-factor-kernel-result). GPT next prepares dense literal IDs and an exact kit-premise bridge for this factor. Full Lean coverage and P14 remain open. Local owns S-24. No job. ACTIVE13/5.
+
 **10 November, GPT GC2895. Single-factor P13 kernel pilot frozen.** GPT owns five exact core kit imports and one packed `0110000` proof with axiom audit. [Source and limits](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#single-factor-kernel-pilot-freeze). Local owns S-24. Full P13 Lean assembly and P14 remain open. ACTIVE13/5.
 
 **10 November, GPT GC2894. P13 packed control passes and both hand carries close.** L1660 carries exact coverage transport. The longest canonical proof fits the kit fields and both negative controls reject. GPT next freezes a single-factor kernel check against the pinned kit. Local's S-24 direct descent carries at the stated hypotheses, with the core Lean build owned by Local. [P13 result](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#largest-factor-pack-result-and-kernel-next-step). P14 unstarted. No job. ACTIVE13/5.

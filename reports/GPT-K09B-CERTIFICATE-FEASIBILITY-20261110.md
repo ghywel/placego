@@ -1251,4 +1251,66 @@ Inner aggregate stop 95 CPU seconds, final Lean child 75 CPU/180 wall
 seconds, prior children at most 20 CPU/40 wall seconds each. Standard
 pressure, thermal and monitoring stops apply. No solver, Mathlib or P14.
 
+
+## Single-factor kernel result
+
+The five exact kit imports and `P13PackedControl.unsat` checked on the
+pinned Intel Lean 4.35.0 toolchain. The printed axiom list is exactly
+`[propext, Classical.choice, Quot.sound]`, with empty diagnostics from
+the core imports. The final source check used 20.716 aggregate CPU
+seconds; the full stage used 29.779892 aggregate CPU seconds and 28.31
+wall seconds. Peak sampled tree RSS 775,476 KiB, zero swap growth and
+5,390,627 bytes of stage output. No guard stop. Verified evidence
+`cited/gpt/return13-packed-kernel-receipt-20261110.tar.gz`, 4,594 bytes,
+SHA256 `894aacf5d5d2361f6a4e54b087b37255537e28874891dc3c551005e552f9c3ed`.
+Exact receipt SHA256
+`124a806687bfd2a346804f48ec5fb38d6953f2e619ae1708469b8cdc94d4c068`.
+The exact generated source was pinned at GC2895. This kernel theorem
+proves UNSAT of the compact numerical cube instance only.
+
+The packed file uses 338 distinct variables across its clause masks,
+with the highest variable index 870. Hex clause masks take 1,004,682
+characters, packed steps 162,580. Next, remap just these variables to
+dense indices without changing polarity or any hint IDs. Preserve the
+inverse map, verify exact literal and packed-word round trips, and
+freeze one kernel pilot on the same factor using the pinned core
+objects. In that pilot, attach the original support by indexing the
+actual kit transition/period clause list, and identify the seven cube
+units with `Matches x origin 7 6` in the translated strip assignment.
+This will test the reusable implication from one checked local proof
+to exclusion at every whole-line origin. Full coverage assembly,
+release and P14 remain separate.
+
+
+## Dense whole-line factor freeze
+
+GC2897 freezes one exact dense remap and whole-line bridge pilot for
+`0110000`. The remap preserves polarity and all hint IDs, with a checked
+inverse on each clause mask, packed word and premise. Dense mask hex
+characters fall from 1,004,682 to 381,335. The generated source with the
+additional kit bridge is 889,101 bytes, versus 1,480,668 for the original
+compact UNSAT control. Both serialize the same local proof.
+
+Use the 25 pinned build objects from the passed isolated GC2895 build.
+The new Lean proof restores literals, checks the selected original clause
+indices against the actual kit transition/period clauses and models the
+seven cube units in `assignment 65 x (origin-6)`. The final theorem is
+`∀ x, orbit x 13 = x → ∀ origin, ¬ Matches x origin 7 6`. Prediction:
+exact remap passes, and Lean checks the whole-line statement with only
+ordinary logical axioms. Stop at an input, compiler, axiom or guard
+failure and retain evidence. No other factor or P14 runs.
+
+Generated source `cited/gpt/return13-dense-kernel-control-20261110.lean`,
+SHA256 `d729e682dcd334ab19fe330772cf6e8c375182de37c832a710463bd893287675`,
+verified TLS raw-body readback. Worker SHA256
+`fccbaa36c5ef484e272f9d3e5715e4921cb67b7ea6e5175a086d5912285651c2`,
+plan SHA256 `df3409a2d489524a048719ddbab1856a7f13486a4ec190e1e10c357b69dc3822`.
+Record searched: GC2892, L1660, GC2893–GC2896 and the exact kit
+`assignment_variable`, `transition_models`, `period_models` and `lit_mk`.
+One 120 aggregate CPU second and 300 wall second stage, 8192 MiB tree
+RSS, 4096 MiB swap-growth, 4096/1024 MiB launch/running free memory.
+One thread at nice 10, at most eight processes, 16 MiB/file, 128 MiB
+output. One Lean child at 85 CPU/180 wall seconds under the 95-second
+inner aggregate and standard pressure, thermal and monitor stops.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

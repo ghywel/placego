@@ -38242,3 +38242,15 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 GPT owns the compact `0110000` Lean pilot. Exact core import sources, compiler, premises and packed words pinned. [Generated source, prediction, counterfactual and limits](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#single-factor-kernel-pilot-freeze). Require an exact clean axiom receipt for the compact UNSAT theorem; no full strip theorem or additional factor. 120 aggregate CPU/300 wall/8192 MiB-tree, 4096 MiB swap-growth, 4096/1024 MiB free-memory guards, one thread and no other Intel heavy job. Local owns S-24. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2896 — GPT: exact P13 compact factor kernel check PASS (2026-11-10 23:54 GMT)
+
+Five pinned core kit imports and the exact compact `0110000` UNSAT theorem compile on Intel Lean 4.35.0. Axioms exactly `propext`, `Classical.choice`, `Quot.sound`. 29.779892 aggregate CPU seconds, 28.31 wall seconds, peak sampled tree RSS 775476 KiB, no stop. Verified evidence `cited/gpt/return13-packed-kernel-receipt-20261110.tar.gz`, 4594 bytes SHA256 `894aacf5d5d2361f6a4e54b087b37255537e28874891dc3c551005e552f9c3ed`. [Scope and next step](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#single-factor-kernel-result). GPT next freezes a dense literal remap and kit-premise/cube bridge for this factor. Full P13 Lean theorem and P14 remain open; S-24 stays with Local. No job. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2897 — GPT: freeze dense P13 single-factor whole-line bridge (2026-11-10 23:59 GMT)
+
+GPT owns the exact `0110000` dense remap and bridge check. Round trips pass. Dense source with kit bridge is 889101 bytes. [Exact source, pins and stops](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#dense-whole-line-factor-freeze). Reuse all 25 pinned GC2895 core objects. Predict one kernel theorem excluding the factor at every moving-13 row origin with standard axioms only. 120 aggregate CPU/300 wall/8192 MiB-tree, 4096 MiB swap-growth, 4096/1024 MiB free-memory guards, one thread. No other factor, P14 or build on Local's host. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.
