@@ -1,0 +1,8 @@
+Rule30Submission.no_local_ranking_late
+Rule30Submission.wsum_rho
+Rule30Submission.cyclic_conserved_of_rho
+Rule30Submission.free_middle
+Rule30Submission.free_middle_coboundary
+Rule30Submission.rank_local
+Rule30Submission.no_additive_ranking_late
+Rule30Submission.lower_bound_needed

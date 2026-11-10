@@ -1,0 +1,9 @@
+L1 REJECTED first error at line 1131: : omega could not prove the goal:
+L2 REJECTED first error at line 612: : omega could not prove the goal:
+L3 REJECTED first error at line 505: : Tactic `rfl` failed: The left-hand side
+L4 REJECTED first error at line 82: : omega could not prove the goal:
+L5 REJECTED first error at line 844: : unsolved goals
+L6 REJECTED first error at line 1318: : Tactic `rewrite` failed: Did not find an occurrence of the pattern
+L7 REJECTED first error at line 1258: : Application type mismatch: The argument
+L8 REJECTED first error at line 98: : Function expected at
+ALL REJECTED
