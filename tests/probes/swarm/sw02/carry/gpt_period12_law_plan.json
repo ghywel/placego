@@ -1,0 +1,61 @@
+{
+  "worker_stop": 55,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_period12_certificate.cpp": "db77167c73d412c9b7e73c750d6183c7889102b1ccef65a2459bfc307132eb32",
+    "tests/probes/swarm/sw02/carry/gpt_period12_law.py": "c2bbe6096d57633f06ad32f9b8bcdeba49e5d764ab74e2a86a2a4477dea46e34",
+    "/private/tmp/gc2829-component.txt": "bf660369c21f213ad8637ac232dae5978c516550f51b5f62cf35c0b8adf071df",
+    "/private/tmp/gc2829-component-mutant.txt": "bbc91a97fa8856676bafb531efbfcb1621ece229206c354d01809d37811a3975",
+    "/private/tmp/gc2829-period12-run/period12-graph.json": "1359b0b3d6f25fdbd90ba208ed533b841a3bf5668be7e4a02fdf0ce4063f0956",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
+    "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df"
+  },
+  "jobs": [
+    {
+      "name": "compile",
+      "args": [
+        "/usr/bin/c++",
+        "-O3",
+        "-std=c++17",
+        "tests/probes/swarm/sw02/carry/gpt_period12_certificate.cpp",
+        "-o",
+        "{out}/period12-check"
+      ],
+      "cpu": 20,
+      "wall": 60
+    },
+    {
+      "name": "certificate",
+      "args": [
+        "{out}/period12-check",
+        "/private/tmp/gc2829-component.txt"
+      ],
+      "cpu": 10,
+      "wall": 30
+    },
+    {
+      "name": "mutant",
+      "args": [
+        "{out}/period12-check",
+        "/private/tmp/gc2829-component-mutant.txt"
+      ],
+      "cpu": 5,
+      "wall": 15,
+      "success_returncodes": [
+        2
+      ]
+    },
+    {
+      "name": "law",
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_period12_law.py"
+      ],
+      "cpu": 20,
+      "wall": 60,
+      "required_stdout_lines": [
+        "PERIOD12_PERIOD_LAW_PASS"
+      ]
+    }
+  ]
+}

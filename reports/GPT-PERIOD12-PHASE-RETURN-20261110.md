@@ -63,4 +63,54 @@ outer-monitor CPU and thermal checks; run_capped tree tracking,
 4096MiB launch/1024MiB running free floors and4096MiB swap-growth stop.
 Sources/plan and these predictions published before execution.
 
-No output or result is asserted in this pre-run freeze.
+No output or result was asserted in the pre-run freeze.
+
+## First pilot outcome and second fixed validation freeze
+
+The first pilot COMPLETED, no stop. The generated graph has552nodes/576edges;
+exactly six cyclic components of30nodes/32edges. At root component C the two
+branch states are U=(1323,2868), V=(2772,3372). Their first branch returns are
+U->U and V->V of length14; U->V and V->U of length10. Temporal rotation has
+component orbit6, its sixth power swaps U/V, and every C pair has least
+temporal period12. All64OR-triple and4096projector controls pass.
+All unequal-phase seams fail, including the unexpected0/4/8mixes; same-phase
+seams pass for both tile bits. This is COMPUTED, not an all-dyadic theorem.
+
+This suggests an exact return description: a binary event0 takes14cells and
+keeps the branch, event1 takes10cells and switches it. For a primitive periodic
+event word of length m with r ones, put L=14m-4r. Prediction:
+
+* if r is even, the least spatial period is L and the ordinary Rule30 time
+  period is lcm(12,L);
+* if r is odd, the least spatial period is2L and ordinary time period is
+  12L/gcd(2L,L+6).
+
+The first controls would be84 for one self loop,30 for one cross repeated,
+204 for self/cross/cross (L=34), and48 for self/self/cross/cross (L=48).
+These match the old reported ring periods, but no general formula is inferred
+from four matches. The second pilot tests every primitive binary event word
+of lengths1..6 by an independent packed ordinary-rule evolution, with literal
+least spatial/time periods. Counterfactual: any mismatch refuses the formula
+and retains the exact word; no length7 retry.
+
+An independent C++ checker enumerates all4096candidate integrations per
+generated pair, checks exact closure/strong connectivity, six-component
+temporal action and existential peeling of the exterior. Prediction: the
+infinite-continuation kernel is exactly those180vertices, with no cross-phase
+edge. A single corrupted edge must be rejected. This tests the generated
+certificate without its prefix-XOR/SCC implementation.
+
+Additional discriminant: find all linear F2 parities constant within each of
+the six components. Prediction: they do not distinguish the odd3 phase;
+a nonconstant three-phase label would be an unexpected simpler invariant.
+This is a fixed24-variable rank calculation, not a polynomial-degree search.
+
+Sources: [scalar C++ checker](../tests/probes/swarm/sw02/carry/gpt_period12_certificate.cpp),
+[period-law controls](../tests/probes/swarm/sw02/carry/gpt_period12_law.py),
+[second frozen plan](../tests/probes/swarm/sw02/carry/gpt_period12_law_plan.json).
+Input graph and normalized text/mutant are hash-pinned in the plan.
+Second stage aggregate stop55CPU,180wall,768MiBtreeRSS,max6processes,
+16MiB/file,127MiBoutput. Together with first stage's actual<1MiB, this keeps
+the block's128MiB data budget; combined nominal aggregate stops25+55=80CPU
+remain below120. Same launch/running/swap/thermal/tree guards, sequential only.
+No failure or resource cap is being retried or enlarged.
