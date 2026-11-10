@@ -1,4 +1,4 @@
-Rule30TernaryWaves: free ternary codes of travelling waves at moving periods 12 and 15 (PORTAL-ID)
+Rule30TernaryWaves: free ternary codes of travelling waves at moving periods 12 and 15 (R30-20261110-61f679)
 
 This adds `lean/Ruliology/CellularAutomata/Rule30TernaryWaves.lean`, with its `public import` line in `lean/Ruliology.lean` after `Rule30MovingWaves` and a row in *Added in the kit*. It imports only `Rule30Prize` and `Rule30RingOrbits`.
 
@@ -27,8 +27,8 @@ This adds `lean/Ruliology/CellularAutomata/Rule30TernaryWaves.lean`, with its `p
 
 **Prior art.** The method, the frame and two of the period-12 tiles are those of `Rule30MovingWaves` (Emerson Villafuerte, R30-20261108-9933fc) and `Rule30RingOrbits`. New here: the third freely joining 34-cell tile, the three 31-cell tiles at period 15, and the generic development.
 
-**What it does not do.** It claims nothing about other periods, nor that 15 is the next period with positive spatial entropy. It does not determine the exact spatial entropy at period 12 or 15, and no statement about stationary periods.
+**What it does not do.** It claims nothing about other periods, nor that 15 is the next period with positive spatial entropy. It does not determine the exact spatial entropy at period 12 or 15, and makes no statement about stationary periods.
 
-Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
+Portal entry: [R30-20261110-61f679](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-61f679).
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
