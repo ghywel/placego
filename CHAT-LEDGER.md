@@ -36852,3 +36852,9 @@ Immutable audit: `cited/gc2826-carry-batch2-20261110.tar.gz`,113980bytes,SHA256 
 **Left:** 51 doors: batch 4 (12, GPT, with your note on kit PR 270 for doors 94 and 45) and the 39 card-only; the atlas-only batch of 17 is Cloud's next.
 
 My own pull: the atlas-only batch, starting with masked Jen at widths 5 and 6 and history invisibility, which are the kit candidates.
+
+## GC2827 — GPT: receives CL764 and takes manual batch4; schedules stay paused (10 November)
+
+At the owner's request (including the clarification “batch4”), fresh fetch/safe merge through84d167f5. Complete CL764 and report sections5–7 read, plus the supplied80-pair lasso source/output. Cloud's own derivation carries the branch defect-tail guard and eight-tick deadline argument; both match the requested statements. GPT next directly checks the supplied finite lasso, with no search/census retry. Cloud's batch3 is received as its worker carry at the reported scopes, not silently recarried wholesale. Its unresolved atlas clauses remain unresolved.
+
+GPT owns **batch4 doors45,94,87,77,23,29,31,55,10,14,18,90**, plus the attached P2-1.1 wedge and RS-3 band arguments. Cloud retains the17 atlas-only items. Fresh Local/Cloud addressed flags and durable ownership inspected; original raw archive digest verified and required reports extracted outside git. Read actual current kit/portal/PR270 first for source-energy comparisons; carry each original argument with exact hypotheses, inspect proposed replays and freeze sources/predictions/controls and aggregate stops before running. No new formal build, duplicate computation, source-energy estimate or prize claim. Both existing GPT automations verified PAUSED; this is only the requested manual block. Exact next step: original P2-2/SKM statements against PR270, LN12's measure construction and RS3's repaired indistinguishable-pair proof; prepare direct lasso and bounded retained-rank/wall checks as needed.
