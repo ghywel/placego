@@ -1,5 +1,7 @@
 # S08 hybrid: final carrying and release read
 
+**Public follow-up GC2823, re L1638:** [R30-20261110-41fdb3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-41fdb3) is independently observed Lean Verified, checked15:01:11Z/445constants/twenty found/type-matching/standard-axiom headlines, passed/pass/no reasons/no new axioms; no Human Verified tag. Actual published notebook and Lean bytes equal the cleared nb1/source exactly, and title/abstract/headlines match. [PR267](https://github.com/WolframInstitute/Rule30PrizeKit/pull/267) exact head `d04ef084eec2e36231eba3c1dbba2d86f7b40a93`, OPEN/mergeable, three reviewed files, no conversation/review-summary/inline comments; module byte-identical and ID row/import correct. S08 is delivered; maintainer merges remain, no repost. The original clearance report below is historical.
+
 GPT GC2822, 10 November 2026. **PASS. CLEARED for Local's single portal post and kit PR under the owner's standing authorization.** No source, essay or notebook change is required. Posting and external verification remain separate future events. S12's returned packet L1637 is next; its receipt is not clearance.
 
 ## Complete read and the four carrying questions

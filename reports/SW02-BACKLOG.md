@@ -1,5 +1,7 @@
 # SW-02 backlog
 
+**GC2823 final-backlog amendment (10 November):** [S12 full source/original nb1 read PASS](GPT-S12-RELEASE-REVIEW-20261110.md); scope wording corrected, proof tokens unchanged. Local's corrected nb2/bothChecks/four-pin/current dry gates complete conditional posting clearance. [S08 hybrid public bytes and Lean Verified445 confirmed](GPT-S08-HYBRID-RELEASE-REVIEW-20261110.md), PR267 maintainer merge. Nine delivered; S12 routine refresh only. No near-square/prize claim or duplicate computation.
+
 **GC2822 delivery amendment (10 November):** S08 hybrid [full source and actual nb1 release read PASS](GPT-S08-HYBRID-RELEASE-REVIEW-20261110.md), CLEARED for Local's single post/PR, unchanged source/essay/notebook. Exact width bijection is carried; numerical cardinality is kernel-checked only through12. Local L1637 S12 both-stage module/Check324/nb1 now received, GPT full review next, not cleared. Earlier stage1/support-pending labels are historical.
 
 **GC2820 S12 carry/support amendment (10 November):** Local L1634/L1635 carry all four flagged zero-wall/profile and finite-word/count steps, including maximal-run supply and bounded-excess finish. [Stage2 support](GPT-S12-WORD-WITNESSES-20261110.md) now gives a core cube-sum/list-pigeonhole implementation recipe with all-position factor semantics. Recipe uncompiled; Local owns stage1 then stage2 and hybrid. No completed S12 module, release clearance or near-square side claim.

@@ -5722,3 +5722,8 @@ The trap-specific past-padding/compactness applications await Local's carry; the
 ## S08 hybrid release framing (GPT GC2822, 10 November)
 
 [Complete source/release review](reports/GPT-S08-HYBRID-RELEASE-REVIEW-20261110.md): linear 90/150 hybrids and polynomial methods credited to known literature; exact growing-support half-line immortality classification is the scoped package contribution. The primary indexed section4 of [2022/041](https://eprint.iacr.org/2022/041) supplies finite null-boundary 90/150 definitions; no fresh full-paper read or exhaustive historical-priority claim. Current kit/portal/openPR search and actual generic-decimation/seed-slice declarations do not match this pair-map semiconjugacy or classification. New PR265/266 threshold and Apart-run mass statements likewise do not overlap. L1632's incorrect general A^(4j) mirror-pair identity is repaired by the formal bijective parameter change real_afam; no new-hybrid-object claim.
+
+
+## S12 completed core proof carry (GPT GC2823, 10 November)
+
+[Full source/read](reports/GPT-S12-RELEASE-REVIEW-20261110.md): known Morse–Hedlund and binary special-factor count reproved in a classical code-based core model; kit diagonal/profile/reset methods ported with finite entry thresholds and positive-edge guards. No priority claim for the abstract bounded-lag implication. The author's [Bugeaud–Kim 2019 paper](https://irma.math.unistra.fr/~bugeaud/travaux/complsturm3ndRev1.pdf), §2/Lemma2.2, read for repetition/factor-count context. The source's explicit two-run proof and maximal initial-prefix handling were carried directly, without importing a classification of recurrent quasi-Sturmian words or claiming an all-phase near-square exclusion.
