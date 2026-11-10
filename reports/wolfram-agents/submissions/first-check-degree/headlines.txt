@@ -1,0 +1,11 @@
+Rule30Submission.diag
+Rule30Submission.top_succ
+Rule30Submission.top_coefficient
+Rule30Submission.omit_coefficient
+Rule30Submission.anf_expansion
+Rule30Submission.check_degree
+Rule30Submission.ones_parity
+Rule30Submission.first_check_parity
+Rule30Submission.walsh_mod_four
+Rule30Submission.walsh_one
+Rule30Submission.other_phase_odd
