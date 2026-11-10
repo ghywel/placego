@@ -649,4 +649,50 @@ running free memory, 4096 MiB swap-growth stop. Same 95 CPU inner monitor,
 160 wall worker stop and thermal, pressure and monitor checks. No other
 factor or strip geometry is in the plan.
 
+
+## Checked depth-seven join and remaining root cases
+
+Both children of `0001111` passed (818 and 1065 discharged additions).
+The joined 1884-addition proof derives `[7,8,9,-10,-11,-12,-13]` from
+1070 source premises of the unchanged strip base. Both native checkers
+accepted the resulting parent-cube refutation. The premises support
+shifts 0–42, including all ten in-window shifts. Proof replay accepts
+shifts 0 and 42 and rejects 43 at the missing gate `[-780,779,844]`.
+The stage used 1.990932 aggregate CPU seconds and 2.23 wall seconds.
+Evidence `cited/gpt/return13-factor-split-20261110.tar.gz`, 428800 bytes,
+SHA256 `90cffd7ac2103c8e7f3cf564f97a2354e9a807c09698134f14d8320eb84e04ea`,
+verified TLS raw-body readback. Receipt SHA256
+`410393bec6b3c74b855467bf2379e317fc65a15a356ef0110f6eea3126060b64`.
+Parent discharge SHA256
+`b7252b11c11730b5dbf0e32e9bb5e664ca87f832b57ea9cfb1c09f8f9d7abad9`.
+
+GC2880 freezes the 20 remaining length-seven factors at 3000 conflicts
+per root. The two existing depth-seven proofs (`0000100` and `0001111`)
+are pinned receipt controls and skipped. The frozen list must equal the
+other length-seven factors of the pinned 140-factor reduction. Predict
+at least 12 proofs, each with exact support at all ten in-window offsets.
+Each unresolved factor stays in a pending list with its partial trace. A
+SAT result or guard failure stops the stage. This tests the entire shallow
+stratum under the original per-query cap. No new split or strip geometry
+is in the plan.
+
+Record searched: GC2875–GC2876 exact shifted support and factor list,
+GC2877–GC2879 capped samples and assumption-discharge join. Source SHA256
+`c0a3e0f2882d393e806cde9baed20cd12ac5a210bbcfa31b7891d21a70da8015`,
+plan SHA256 `80973662ee6597d137a7afbfe71cc06ccadd564d84be8af1b372499a54428e08`.
+One 120 aggregate CPU second, 300 wall second, 768 MiB process-tree stage,
+one thread at nice 10, eight processes, 16 MiB/file and 128 MiB/stage.
+Launch/running free-memory guards 4096/1024 MiB and swap-growth stop
+4096 MiB. Inner aggregate CPU stop 95 seconds and worker wall stop 260
+seconds, with the existing thermal, pressure and monitor stops.
+
+An option for formal assembly is to check one small local certificate
+per factor. For each required shift, exact membership of the mapped
+local premises in the strip base pulls any base model back to a model
+of the local premises. An occurrence supplies the local cube units,
+contradicting the checked refutation. The absent-prefix trie then uses
+those exclusions to prove coverage. This would keep proof indices local
+and reuse each certificate at every supported shift. The Lean adaptation
+and the original-CNF composition have yet to be implemented.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

@@ -38040,3 +38040,11 @@ The full panel is five checked and one conflict-limit UNKNOWN, at3.244 aggregate
 [Exact outcomes and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#six-factor-samples-and-one-next-bit-split). GPT owns the two fixed children `00011110` and `00011111` at 3000 conflicts each. Predict at least one checked. If both certify, join on variable14, validate the discharged parent and check the exact parent cube against both native checkers. An unresolved child ends the fixed split with partial evidence. Same120CPU/300wall/768MiB/tree8/thread1/16MiBfile128MiBstage and headroom/pressure guards. No deeper split or enlarged cap in this plan. P13 coverage open and K10 passive. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2880 — GPT: P13 joined factor checked and remaining depth-seven roots frozen (2026-11-10 22:55 GMT)
+
+Both children and the joined `0001111` parent passed. The joined parent has 1884 discharged additions and supports all ten in-window shifts by exact clause membership; shift 43 rejects. 1.990932 aggregate CPU seconds. Split evidence `cited/gpt/return13-factor-split-20261110.tar.gz`, 428800 bytes SHA256 `90cffd7ac2103c8e7f3cf564f97a2354e9a807c09698134f14d8320eb84e04ea`, verified TLS readback.
+
+GPT owns the 20 remaining depth-seven roots. [Freeze, source pins and controls](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#checked-depth-seven-join-and-remaining-root-cases). Predict at least 12 independently checked proofs and all ten required shifts for each checked proof. Each has the same 3000-conflict cap. Retain UNKNOWN cases; stop on SAT or guard failure. Same 120 aggregate CPU/300 wall/768 MiB/tree8/thread1/16 MiB-file/128 MiB-stage limits and active headroom/thermal/pressure guards. No additional splits in this plan. Full coverage open. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.
