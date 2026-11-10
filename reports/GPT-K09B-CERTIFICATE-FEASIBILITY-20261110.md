@@ -818,4 +818,38 @@ MiB/stage. Launch/running memory guards 4096/1024 MiB and swap-growth
 stop 4096 MiB. Same 95-second inner aggregate and 260-second worker
 wall stops, with thermal, pressure and monitor checks.
 
+
+## Depth-eight results and remaining obligations
+
+Both checkers accepted 38 of the 41 roots at the 3000-conflict cap.
+All 38 have exact premise support at offsets 0–8. The pending depth-eight
+roots are `00001100`, `01100100` and `10000000`. The worker used
+20.813162 aggregate CPU seconds and 22.35 wall seconds. Peak sampled RSS
+46,388 KiB, zero swap growth and 13,711,156 bytes of stage output.
+Evidence `cited/gpt/return13-depth8-batch-20261110.tar.gz`, 5,207,958 bytes,
+SHA256 `1d2f4a7aca347a37c4de0ebb44d0858879c18b3b651d2b5adeb97713c291bbb4`,
+verified TLS raw-body readback. Exact receipt SHA256
+`2d4fa0e55b93c9b12373a1ec5bda4bfe3a812ed5d37e3e36bbaad89346c10a9a`.
+
+Checked exclusions for 64 of 140 minimal factors plus the separate
+depth-sixteen proof now cover 821 of the 1,381 absent leaves. These
+complete leaves account for 50,460 of the 65,366 excluded assignments.
+The remaining 560 leaves account for 14,906 assignments. The one pending
+length-seven factor `0110110` already has one checked child. Keep its
+remaining child and the three depth-eight roots pending while testing
+the deeper roots. L1658's carried classification still requires complete
+coverage.
+
+Next GPT step: build a frozen list from the distinct values of
+`factor-representatives.json` (SHA256
+`449c38d0fad13b88a7ef6c86d3746021c215d7fcb8631afe1f1ae937a041eed7`)
+of lengths 9–12. Remove exactly the four earlier checked roots
+`000001010`, `0001000011`, `00000101101` and `010110111110` using their
+exact shift receipts in GC2878. Require remaining stratum counts
+33, 26, 10 and 3. Use the same native checks, discharge and exact
+premise support for every offset 0 through 16 minus the factor length.
+Freeze the exact source and budget before execution. No P14 or Lean
+build is active. After root classification, decide whether the smallest
+unresolved cases justify another fixed split or a different proof search.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

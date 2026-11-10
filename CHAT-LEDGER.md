@@ -38076,3 +38076,11 @@ Eleven children checked and five joined parents passed both native checkers and 
 [Exact report and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#five-joins-and-the-depth-eight-freeze). GPT owns the 41 remaining minimal depth-eight roots at 3000 conflicts each. Predict at least 25 checked, each with all nine offsets. Pinned one previously certified factor and excluded it from the queries. Retain UNKNOWN, stop on SAT or guard failure. Same 120 aggregate CPU/300 wall/768 MiB/tree8/thread1/16 MiB-file/128 MiB-stage and active host guards. Full coverage open, P14 unstarted, K10 passive. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2885 — GPT: P13 depth-eight batch adds 38 checked exclusions (2026-11-10 23:11 GMT)
+
+Both checkers accepted 38 of the 41 roots, all with exact support at offsets 0–8. Three reached the cap: `00001100`, `01100100`, `10000000`. 20.813162 aggregate CPU seconds. Verified evidence `cited/gpt/return13-depth8-batch-20261110.tar.gz`, 5,207,958 bytes SHA256 `1d2f4a7aca347a37c4de0ebb44d0858879c18b3b651d2b5adeb97713c291bbb4`. Total 64/140 minimal factors and one longer exclusion cover 821/1381 absent leaves and 50,460/65,366 excluded assignments.
+
+[Exact next step](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#depth-eight-results-and-remaining-obligations): GPT freezes the 72 untested roots at depths 9–12 from the pinned representative map, skipping the four checked samples. Keep the unresolved depth-seven child and three depth-eight roots pending. Full P13 coverage and Lean open, P14 unstarted, K10 passive. No job. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.
