@@ -35980,3 +35980,26 @@ At the owner's word ("gpt has cleared for post and pr"), on GC2801's conditional
 Evidence: `cited/local/gate-trap-lift-nb2-20261109.tar.gz`, 101,824 bytes, SHA256 `845558bde471727eda02543f57acc5bc59a7944752f8ae4955d931511aa8f615`, read back byte-exact.
 
 Next on S-16: the maintainers' rerun of the portal check, and whatever they ask on #248. If the verifier's kit moves to a commit that contains `Rule30GateTrapWords`, a slimmer portal form (importing it) could supersede this entry; not done unless asked.
+
+## L1619 — Local: backlog day at the owner's word, with standing permission to post and PR; heartbeat and flag waiter re-armed; S-16 Lean Verified; S-13 claimed (2026-11-10 10:51 GMT)
+
+**The owner, in chat (10 November):** "your mission today is to clear our back log of submissions that were left over from the swarm. … I am going to reawaken your and GPT's heartbeats so you can work on these together in the usual checking method, with my explicit permission to post and PR without requiring my consent for each one." The backlog as Cloud audited it: S-16 (notebook refresh and final byte read), S-13 and S-12 (carried two-party, need Lean and an essay), S-11, S-07, S-08 (a worker's read, then a small module), S-06 and S-09 (prior-art comparison first), S-05 (yes, crediting the work at `rule30-open`).
+
+**What the permission changes.** Local may post to the portal and open kit PRs without asking the owner for each one. The checking method is unchanged: every release still needs the other worker's release read first (AGENTS §4), and Local still posts alone.
+
+**Arrangement (Local, M5).** A 15-minute heartbeat (session cron at minutes 7, 22, 37 and 52; it expires after seven days) with the goal above, and the 60-second store flag waiter (`sharedstore/local_flag_waiter.py`), re-armed after each wake. Heavy compute goes to Intel.
+
+**S-16 is done.** [R30-20261109-89b242](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261109-89b242) is now **Lean Verified** after the maintainers' rerun. Cloud's audit line for S-16 (notebook refresh, final byte read) was already met last night (L1618). Kit PR [#248](https://github.com/WolframInstitute/Rule30PrizeKit/pull/248) is open and mergeable, with no comments yet.
+
+**Daily portal check** (`known_find --new`, kit `03a19bf6`, portal 10:49:54Z, 20 open PRs; 33 added). Six new portal entries since 9 November, all Lean Verified: 943f77, 037fe3, 21dc25, 5795f4, 8eccec and e8cb67. One touches our work:
+- [R30-20261110-037fe3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-037fe3), with kit PR [#249](https://github.com/WolframInstitute/Rule30PrizeKit/pull/249), extends our `Rule30GateTrapWords`. It adds `Q01TwoWords`, the eventual statement with only `33` and `3553` forbidden, and proves `Q01TwoWords_iff_Q01GapWords`. The reduction is the one our S-16 essay states by computation: four of the five words contain `33`, and as eventual conditions `33` and `3553` imply the rest (`WordsOK_of_TwoWordsOK`). It also proves five-layer coverage of the trap (a black cell of `u R` within every five samples after entry) and spacing laws.
+- **Consequence for S-16:** `Q01GapCore` is then equivalent to the three-word eventual statement `33`, `3553`, `3535353`. That restatement is not in our module. It is a small follow-up if wanted; nothing needs changing.
+- The other entries (left-diagonal retrodiction 943f77, run-end source observables 21dc25, the spacing hierarchy 5795f4, periodic windows of the driven left half 8eccec, autonomous observables are constant e8cb67) are recorded for the S-12/S-13 novelty checks and do not touch them on their statements.
+
+**Claim.** Local takes S-13 now (XP-3.1, the free-middle theorem, as GPT carried it in GC2702 §2 with its guards: integer and rational densities, `u(W) → ∞`, the linear lower bound and the fixed boundary windows), then S-12 (CP-3.2, GC2702 §4). Both build on the kit's `Rule30LocalConservation.cyclic_conserved_iff_shift_coboundary` and `Rule30ZeroBoundaryBarriers.no_local_ranking`. The first step is a kit search for those names and the module that would extend them.
+
+**To GPT.** Shall we split the reads so the queue moves in parallel? Proposal: you take the first worker's read of S-11 (HX-2.1, backlog T45's plan), S-07 and S-08, and the prior-art comparisons for S-06 and S-09 (Berzai's phase; `ColumnTransfer`). Local builds the modules as each read passes, and you give each finished packet its release read. If you would rather build some of them yourself, say which, so that we do not duplicate. S-05 is Local's: the kit packet with credit to `rule30-open`, rechecked at the verifier's kit.
+
+**Record searched:** `known_find --new` as above; [the harvest ledger](WARM-LEADS.md#harvest-ledger-every-sw-02-result-and-where-it-went-cloud-cl762-9-november); [GC2702's carrying review](reports/GPT-BLOCK6-CARRY-REVIEW-20261106.md); PR #249's module at its head `60b2f8bc` (`Q01TwoWords` and its equivalence read).
+
+My own pull: whether every combination of the blocks 5 and 3555 shows up at every width. It is logged in `INSTINCT.md` and stays behind the backlog today.

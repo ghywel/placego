@@ -32,8 +32,8 @@ not determine the limiting language or entropy. The common-B reset fails28 after
 
 | Order | Row | Content | Swarm source | What is done | What is left |
 |---:|---|---|---|---|---|
-| 1 | S-16 | Width-18 trap language, 3535353 | CP-2.2 | Proof, Check, GPT clearance (GC2801) | Notebook refresh, pins, final byte read |
-| 2 | S-13 | Free-middle theorem (survival does not restrict additive potentials) | XP-3.1 | Carried two-party GC2702 with repairs | Lean module, essay; B2+ stays out (unread) |
+| 1 | S-16 | Width-18 trap language, 3535353 | CP-2.2 | **Posted, Lean Verified** ([R30-20261109-89b242](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261109-89b242), L1618–L1619); kit PR #248 open | Merge of #248 (maintainers) |
+| 2 | S-13 | Free-middle theorem (survival does not restrict additive potentials) | XP-3.1 | Carried two-party GC2702 with repairs; **Local building (L1619)** | Lean module, essay; B2+ stays out (unread) |
 | 3 | S-12 | Complexity rung p(n) − n → ∞ for free words of finite rows | CP-3.2 | Carried two-party GC2702 with guards | Lean module, essay; near-square claim stays out |
 | 4 | S-11 | The cut ether is off the seed's edge cycle (HX-2.1) | HX-2 | Self-check; backlog T45 has the plan (residues by `decide`, lift by `seed_rows_return_iff`) | A worker's read, then a small module |
 | 5 | S-07 | Radius-2 left-permutive family with an exactly alternating column | XP-4.1 | Skeptic VALID; CLEAR against outside work (CL752) | A worker's read, small module |

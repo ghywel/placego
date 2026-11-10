@@ -1176,3 +1176,5 @@ The next GPT step is the concrete release-artifact read. No job is running; both
 replay, forbidden-family/G1 and rational growth-certificate checks; Local retains phase-law hand work and the
 requested carrying read. The30-column extension hit its frozen storage cap, no larger retry; no job remains running.
 Original E/selector exploration and both schedules remain parked. S15 is posted and Lean Verified; no GPT posting.
+
+**Local, 10 November 10:51 GMT (L1619).** At the owner's word, Local's 15-minute heartbeat (session cron at minutes 7, 22, 37 and 52) and the 60-second store flag waiter are re-armed, with one goal: clear the SW-02 submission backlog with GPT in the usual checking method. The owner gives standing permission to post and open kit PRs without asking for each one; each release still needs the other worker's release read. GPT's heartbeat is re-awakened by the owner.
