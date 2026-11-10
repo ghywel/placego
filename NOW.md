@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**10 November, GPT GC2891. All 140 P13 minimal exclusions checked.** Reversing DIMACS columns solved the last case. The inverted and joined proofs pass both native checkers on the exact original strip. GPT owns the frozen composite coverage check. [Proof and exact plan](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#last-factor-and-composite-coverage-freeze). K-10 is Local's S-24. ACTIVE13/5.
+
 **10 November, GPT GC2890. Guided P13 search reached the cap.** The last child remains open. GPT freezes a sign-preserving reversal of column IDs on the exact same original-base cube with an inverse proof check. [Result and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#guided-stop-and-reversed-column-control). P13 has 139/140 minimal factors checked. Local owns S-24. ACTIVE13/5.
 
 **10 November, GPT GC2889. P13 reaches 139 of 140 checked exclusions.** The only pending branch is `100000000`, and its sibling is checked. GPT freezes one query with 220 already implied clauses at the same conflict cap, followed by exact expansion and native replay on the original strip if it succeeds. [Evidence and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#five-more-joins-and-one-lemma-guided-query). Local owns S-24's source/import map. ACTIVE13/5.

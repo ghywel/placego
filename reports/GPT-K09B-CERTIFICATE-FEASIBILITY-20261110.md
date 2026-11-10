@@ -1041,4 +1041,66 @@ output. Launch/running memory 4096/1024 MiB and swap-growth stop 4096 MiB.
 Same inner aggregate, own-CPU, worker wall, pressure, thermal and monitor
 stops. Full P13 coverage remains open until its composition is checked.
 
+
+## Last factor and composite coverage freeze
+
+GC2890 returned UNSAT within the original conflict cap. Both checkers
+accepted the inverted cone on the byte-identical original `100000000`
+child CNF and the joined `10000000` parent CNF. The child discharge has
+568 steps and supports shifts −5 through 39. The parent has 1525 steps
+and supports shifts 0–39, including all nine required offsets. The run
+used 1.455890 aggregate CPU seconds and 1.65 wall seconds. Evidence
+`cited/gpt/return13-final-factor-20261110.tar.gz`, 230,908 bytes, SHA256
+`b13dc243385d421a730fa0a6efde4d30df852b46fd97bd554b778eb3a4f5a0b0`,
+verified TLS raw-body readback. Receipt SHA256
+`6f95c8db8135663e26c32405d952f1fc15343b32c1df9ed559cf0f1deb755373`.
+
+All 140 minimal exclusions now have checked proofs at the required
+shifts. Include the already checked depth-16 exclusion when selecting
+occurrences. The exact selection covers all 1,381 absent leaves with
+1,046 distinct shifted lemmas, accounting for 65,366 assignments.
+Repeated expansion would copy 827,885 learned additions before the trie.
+The sum of the unshifted text lengths counted once per selected occurrence
+is 92,664,412 bytes. Keep the sharing through a composite certificate.
+The manifest is `cited/gpt/return13-composition-selection-20261110.json`,
+233,669 bytes, SHA256
+`3f1cc5f50123405458be92c5a5587d4108fd6936db4af491aaf1b1066d66a5a5`.
+
+GC2891 freezes four canonical entailment checks and one final trie
+check in a single serial stage. Write `B` for the 5044 original strip
+clauses. For each group of canonical conclusions `L_i`, add a disjunction
+of fresh selectors `s_i`, and for every literal `l` of `L_i` add
+`¬s_i ∨ ¬l`. A model of `B` that falsifies any `L_i` extends to this CNF
+by selecting that index. Replay the original-base derivations of the
+`L_i`, derive `¬s_i` by RUP, and check the resulting contradiction with
+both native checkers. This checks `B ⊨ L_i` for every group member.
+
+For each selected translation, map the signed literals without changing
+polarity or identifying distinct variables in the proof's support.
+The exact membership of every mapped premise in `B` permits the same
+RUP steps at the translated location. A translated factor exclusion
+weakens to the exclusion of its assigned absent prefix. A retained leaf
+already has its exact blocker in the original 5214 clauses. Resolve
+both children at each internal trie node and use both native checkers
+on the formula containing those original clauses and the proved
+translated lemmas. The selector and shift checks are needed to infer
+UNSAT of the original CNF from this final check. This is a composite
+certificate, with no Lean claim.
+
+Preflight passes exact leaf assignments, proof shard balance and a small
+selector entailment control. Expect all four shards, the 1,046 translated
+premise maps, and the 2,931-step trie refutation to check. The missing
+shift and one-child empty-proof controls must reject. Stop on any failed
+proof, input, control or guard. Preserve completed shards if stopped.
+Record searched: original strip GC2858, exact trie GC2872, shift
+correction GC2876, GC2879–GC2890 retained discharges. Source SHA256
+`bae1aa4a69348deee9dfee71834147dea8fe54b49161ecfbdfcefdecf1504fd8`,
+plan SHA256 `828e6894b2252d1c0a664837a4ff4131d409c671dfe687afb9497d06f4ec0e8a`.
+One 120 aggregate CPU second, 300 wall second, 768 MiB process-tree
+stage, one thread at nice 10, at most eight processes, 16 MiB/file and
+128 MiB output. Launch/running memory 4096/1024 MiB and swap-growth
+stop 4096 MiB. Five serial workers each have 55 wall seconds and retain
+the 12-second own-CPU soft cap. Standard thermal, pressure and aggregate
+stops apply. No new solver calls, P14 work or Lean build.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

@@ -38149,3 +38149,11 @@ The 220 short shifted exclusions did not resolve the last child within 3000 conf
 [Result and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#guided-stop-and-reversed-column-control). GPT owns one search-order control. Reverse variable IDs within each time layer of the unchanged child, then check the inverted proof against its byte-identical original and join with the saved sibling if UNSAT. Exact branch and proof round-trip preflight PASS. Original 3000-conflict cap, same 120 aggregate CPU/300 wall/768 MiB/tree8/thread1/16 MiB-file/128 MiB-stage and active stops. No further same-search retry planned after this result. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2891 — GPT: last P13 factor checked; full coverage composition frozen (2026-11-10 23:37 GMT)
+
+Reversing DIMACS column IDs produced a proof. Both checkers pass the inverse cone on the byte-identical original child and the joined original parent. Parent has 1525 discharged steps and shifts 0–39. 1.455890 aggregate CPU seconds. Verified evidence `cited/gpt/return13-final-factor-20261110.tar.gz`, 230,908 bytes SHA256 `b13dc243385d421a730fa0a6efde4d30df852b46fd97bd554b778eb3a4f5a0b0`. All 140 minimal exclusions now check.
+
+[Exact composition and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#last-factor-and-composite-coverage-freeze). GPT owns four native canonical entailment checks with fresh selectors, exact translated-premise checks for 1,046 selected lemmas, then original blockers and 1,381 absent leaves combined by trie resolution. Preflight PASS. Predict all parts and negative controls pass. One serial 120 aggregate CPU/300 wall/768 MiB/tree8/thread1/16 MiB-file/128 MiB-output stage, same host guards. No solver, P14 or Lean build. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.
