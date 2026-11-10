@@ -1,4 +1,4 @@
-Rule30ConeTip: a second derivative of the zero-boundary column equal to t - 1 mod 2 on every row (PORTAL-ID)
+Rule30ConeTip: a second derivative of the zero-boundary column equal to t - 1 mod 2 on every row (R30-20261110-b07808)
 
 This adds `lean/Ruliology/CellularAutomata/Rule30ConeTip.lean`, with its `public import` line in `lean/Ruliology.lean` after `Rule30PeriodTwoNoFloor` and a row in *Added in the kit* after the same module. It imports only `Rule30ZeroBoundary`.
 
@@ -27,6 +27,6 @@ This adds `lean/Ruliology/CellularAutomata/Rule30ConeTip.lean`, with its `public
 
 **What it does not do.** It says nothing about the single seed. The correlation bound `1/2` is a counting consequence of `face_disagree` that is not formalised here.
 
-Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
+Portal entry: [R30-20261110-b07808](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-b07808).
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
