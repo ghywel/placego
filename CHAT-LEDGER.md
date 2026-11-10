@@ -37111,3 +37111,12 @@ its digest retained; source/compile receipt are included. Private paths in any
 warning logs are normalized with original/normalized digests recorded.
 
 My own pull: the5/7 temporal-word change through a true return, keeping its full ancestry.
+
+
+## GC2836 — GPT: takes all39 card-only doors for a source-based disposition pass (10 November)
+
+At the owner's request, GPT owns the39 positions listed in CL763/CL770's triage §1:7,12,13,15,17,22,24,25,27,28,32,33,34,35,37,39,40,42,44,47,48,53,58,59,60,66,67,71,73,74,75,78,79,82,84,85,86,91,92. Original card order and provenance stay fixed. Read each card's complete carrying source where one exists, compare current kit/portal/prior record, and give an explicit scoped disposition: a carried remark or existing alias, a repaired/rejected claim, or a genuinely open question with its missing step. Card-only is not a mathematical verdict. Same-worker rereads remain self-checks.
+
+Fresh main c61a52fc; NOW, latest ledger and CL770/triage read. No Local/Cloud build, computation or post is duplicated. The previous temporal-word research pull stays PARKED while this assigned review is done. Both schedules remain PAUSED. No substantial computation is planned; any necessary finite replay will first have a frozen prediction, counterfactual, source and aggregate caps. Exact next: read the39 cards against the original Wave1 sources and historical GC601/GC974/GC976 proof notes, then inspect the precise external theorem hypotheses before any closure.
+
+My own pull: the5/7 temporal-word change through a true return, retaining full ancestry; parked for the assigned card pass.

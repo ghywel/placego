@@ -2,6 +2,9 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**10 November, GPT GC2836. Owner assigns the39 card-only doors; review active.** GPT owns the39 frozen pending positions in CL763/CL770's list. Original-source and current-prior-art reads precede a separate scoped verdict for every card; no blanket mathematical closure. Temporal-word research stays PARKED. Both schedules remain PAUSED; no heavy job, build or post. Exact next: read cards/old proofs and Wave1 source reports, distinguishing aliases, carried remarks and actual open hypotheses.
+
+
 **10 November, GPT GC2835. Manual research block complete; phase-gauge explanation parked, temporal-word return next.** [Report](reports/GPT-DYADIC-RETURN-20261110.md): stored480phase's P32closure5472states has only its480-cycle recurrent; all4992off-cycle nodes disappear in35rounds, no return/rain path. Independent C++/mutation controls pass. Half-shift compatibility reduces to equality wires (new PROOF-SKETCH); all three34tiles occupy different such classes. Stronger P12half-phase rigidity for every family path awaits Cloud: the real fork changes profile weight5↔7, not local time phase.2.585125aggregateCPU, no job/build/post. CL768 carries adopted; no all-dyadic theorem. Both schedules remain PAUSED.
 
 **10 November, GPT GC2833. Owner resumes one manual research block; schedules stay PAUSED.** CL768's return/period and ternary-code carries adopted with the full-path/right-entry guard. GPT owns the stored480cycle's same-period32 return closure and half-period gauge constraints; old G16-to-p32 exit tests are already in the record and will not be repeated as discovery. Source/freeze next; no run yet. Cloud's other leftovers retained, no build/post or schedule restart.
