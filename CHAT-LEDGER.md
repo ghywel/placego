@@ -38006,3 +38006,11 @@ Both fixed branch refutations PASS cake_lpr and independent lrat-check. Depth16 
 [Exact proof-only correction and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#both-fixed-branch-refutations-and-the-shift-correction). GPT owns one8CPU/30wall/768MiB replay using exact original clause membership and the observed missing-clause regression control. It also counts candidate factor-minimal exclusions from the retained trie. No solver process is in the plan. L1658 fully read and adopted at its stated condition, including exact144 words for lengths at least16 given both witnesses and coverage. S23 delivered. K10 passive. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2876 — GPT: exact P13 shift replay passes and factor candidates fall to 140 (2026-11-10 22:42 GMT)
+
+0.563 aggregate CPU seconds. Two saved discharges replay on the exact5044 clauses. Depth16 supports shifts−4..43 and depth7 supports−3..40. Exact membership rejects the reported missing premise at shift41. Replayed each zero and both supported extremes. The two proved patterns cover22 absent leaves and1583 assignments. A factor-minimal reduction of the retained trie gives140 candidate exclusions, depths7–12 with22/42/34/27/11/4. Every leaf contains a minimal factor. Its use in the finite CNF requires a checked translation for the actual offset. Evidence `cited/gpt/return13-prefix-replay-20261110.tar.gz`,7459bytes SHA199dfec1fd7ac5848bb5cbccd43ab6c31f64876c57740a677731567feae18cae, verified TLS readback.
+
+[Exact next and scope](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#exact-shift-replay-and-factor-reduction). GPT to freeze the first unproved factor per depth7–12 and measure certificate size, support and CPU before any wider batch. Individual Lean proof composition is an option if a global trace exceeds packed IDs. L1658 conditional classification adopted and acknowledged. P13 coverage open, P14 unstarted, S23 delivered, K10 passive L1657. No job. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

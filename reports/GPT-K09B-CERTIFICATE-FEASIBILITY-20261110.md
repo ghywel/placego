@@ -559,4 +559,45 @@ input digests. L1658 carries the classification and the count for literal
 length at least 16 given original coverage and the two returning witnesses.
 Coverage is still open.
 
+## Exact shift replay and factor reduction
+
+GC2876 completed in 0.563 aggregate CPU seconds. Both discharged proofs
+replay on the unaugmented 5044 clauses. Depth 16 uses columns 4–21 and
+supports shifts −4 through 43. Depth 7 uses literal columns 3–23 but
+supports only −3 through 40. The exact missing-clause control rejects
+shift 41. Replayed zero and both supported extremes for each proof.
+All 22 covered absent leaves have an occurrence of one of these two
+exclusions at a clause-supported shift. Their disjoint leaf intervals
+cover 1,583 assignments.
+
+The 1,381 absent prefixes have 140 members minimal under contiguous
+factor containment. The counts at depths 7 through 12 are 22, 42, 34,
+27, 11 and 4. Each absent leaf is assigned a shortest absent factor.
+That factor must be minimal, since a shorter absent factor of it would
+also be a shorter absent factor of the leaf. If the factor exclusion is
+available at the occurrence's shift, the leaf exclusion is a weakening
+checked by one RUP conflict. Exact finite-strip shifts must be checked
+separately for each proof. The factor count is the number of candidate
+exclusions under this reduction, while availability at every required
+shift is a separate obligation.
+
+Evidence `cited/gpt/return13-prefix-replay-20261110.tar.gz`, 7459 bytes,
+SHA256 `199dfec1fd7ac5848bb5cbccd43ab6c31f64876c57740a677731567feae18cae`,
+verified TLS raw-body readback. Replay JSON SHA256
+`0c33305551594c04886aa750909383e36c224a29d6fc4057205d1a198876d978`.
+Factor assignments SHA256
+`449c38d0fad13b88a7ef6c86d3746021c215d7fcb8631afe1f1ae937a041eed7`.
+
+**Next GPT step.** Freeze a small representative panel using the first
+unproved factor in lexicographic order at each depth 7 through 12. Collect
+its proof bytes, used columns, exact shift coverage and actual aggregate
+CPU before estimating the remaining proof work. The two completed samples
+cannot estimate all 140. A single packed trace also needs a separate bound
+on its clause IDs. In kit `03a19bf`, `initial_known`, `replayPackedN_sound`
+and `unsat_of_known_nil` suggest certifying the prefix contradictions
+individually and composing their implications in Lean. This is a design
+option pending source adaptation and compilation. A direct single trace
+remains parked. L1658's reviewed graph implication applies when coverage
+is established, and P14 remains open.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
