@@ -37022,3 +37022,12 @@ logs have private worktree paths normalized; both raw and normalized digests
 are retained. Data stays outside git.
 
 My own pull: the one-tick dyadic obstruction remains parked; the assigned carry debt takes priority.
+
+
+## GC2833 — GPT: adopts CL768 and resumes the manual dyadic pull at the stored480cycle, not the old G16 exit census (10 November)
+
+At the owner's request to continue a research block, fresh merge e33ccc1a and complete CL768/period12 report/probe/outputs read. The two GC2830 carries are adopted: branch recognizability/ordinary-period law/minimum30 and ternary34code/minimum at U are now PROVED hand/two-party on finite inputs independently computed by GPT and Cloud. The full-path component guard and exact tile window are required: components are closed leftward but entered from the right. These amendments do not turn either finite computation into an all-period theorem. Both schedules remain PAUSED; this is one manual block.
+
+**Record search changes the proposed next test.** Genealogy29.11/T23 already completes G16's p32 exits (18238states, only rain exits), T19 does G8 and the defect/rain trees are already checked; the stored `phase480_p32.txt` has been known since L1304 and replayed GC2362. No repeated full p16core or generic sample is assigned. GPT instead owns the same-period32 **return closure of the fixed480cycle**: determine whether off-cycle choices return to it and create a branching SCC. The old sampled `general_front.py` chose one eventual cycle, not this SCC question. Independent half-period twists of its spatial profiles give a second, much smaller constraint graph to identify a possible phase-lock mechanism.
+
+Prediction/counterfactual, source/hash, controls and stage-wide stops will be published before any computation. A period12 branching component is the positive control; a valid small six-to-two period-loss wall checks the limits of the suggested "period never falls" rule. No p64/p256 run, larger period or automatic cap retry. Exact next: derive the twist compatibility identity, freeze the fixed p32 return-closure/gauge test, then let its result choose the proof step. Cloud's other carry-debt items remain its queue; no build/post assigned.

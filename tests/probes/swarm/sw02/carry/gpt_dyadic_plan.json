@@ -1,0 +1,78 @@
+{
+  "worker_stop": 110,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_dyadic_return.py": "7a5a4a7201695797c0591568e533cfe38973068d3d35d83c461edaadff983553",
+    "tests/probes/swarm/sw02/carry/gpt_dyadic_certificate.cpp": "5cfe969b25d629325a49b337705afe919f46ba780e29865b321dd1016e82c6b8",
+    "tests/probes/swarm/sw02/carry/gpt_period12_return.py": "fd2041d0d2be2da99d45258fb4b330ff740bbfc6c93bd234acf075bfd4ebca32",
+    "tests/probes/phase480_p32.txt": "6f77ed2178c4fca0169fc0690b952b680276a787c06d44e8bba36e0eabb92bc3",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
+    "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df"
+  },
+  "jobs": [
+    {
+      "name": "extract",
+      "cpu": 45,
+      "wall": 120,
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_dyadic_return.py"
+      ],
+      "required_stdout_lines": [
+        "DYADIC_RETURN_EXTRACTION_COMPLETE"
+      ]
+    },
+    {
+      "name": "compile",
+      "cpu": 20,
+      "wall": 60,
+      "args": [
+        "/usr/bin/c++",
+        "-O2",
+        "-std=c++17",
+        "tests/probes/swarm/sw02/carry/gpt_dyadic_certificate.cpp",
+        "-o",
+        "{out}/dyadic-check"
+      ]
+    },
+    {
+      "name": "p12check",
+      "cpu": 5,
+      "wall": 20,
+      "args": [
+        "{out}/dyadic-check",
+        "{out}/p12-closure.tsv"
+      ],
+      "required_stdout_lines": [
+        "DYADIC_CERTIFICATE_PASS"
+      ]
+    },
+    {
+      "name": "p32check",
+      "cpu": 35,
+      "wall": 90,
+      "args": [
+        "{out}/dyadic-check",
+        "{out}/p32-closure.tsv"
+      ],
+      "required_stdout_lines": [
+        "DYADIC_CERTIFICATE_PASS"
+      ]
+    },
+    {
+      "name": "mutation",
+      "cpu": 5,
+      "wall": 20,
+      "args": [
+        "{out}/dyadic-check",
+        "{out}/p32-corrupted.tsv"
+      ],
+      "success_returncodes": [
+        2
+      ],
+      "required_stdout_lines": [
+        "DYADIC_CERTIFICATE_REJECT"
+      ]
+    }
+  ]
+}

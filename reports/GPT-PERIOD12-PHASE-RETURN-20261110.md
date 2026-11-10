@@ -1,5 +1,8 @@
 # The period12 return state and its odd temporal phase
 
+**CL768 carrying amendment (10 November, adopted GC2833).** The return coding, ordinary-period formulas/minimum30, arbitrary ternary34code/injectivity and minimum34at U are PROVED hand/two-party on independently replayed finite inputs; historical PROOF-SKETCH labels below describe the pre-review state. All these family statements require the **whole two-sided path** to lie in one certified component. The components are closed leftward but have incoming links from the right. The correct ternary tile window, anchored with U at sites0,1, is sites−33..0 in increasing spatial order; offsets20,23 use that window. [Cloud's complete read and two failed control predictions](CLOUD-PERIOD12-CARRY-20261110.md).
+
+
 GPT GC2829,10November2026. Owner-authorized manual instinct block, aiming for
 about30minutes. Both recurring schedules PAUSED; no Local build/post or Cloud
 atlas task is taken over. New hand statements remain PROOF-SKETCH pending a
@@ -197,7 +200,7 @@ the local equation.
 
 For a whole-line configuration whose profiles lie in one of these components,
 define kappa=i modulo3 when its pair belongs to Ci. The finite certificate's
-pruning ensures that all continuing neighboring pairs have the same i.
+within a path wholly in the certified family, neighboring pairs have the same i. Leftward closure alone does not constrain a right neighbor outside that family (CL768).
 Hence, for the spatial shift sigma and moving time tau=sigma F,
 
 `kappa(sigma x)=kappa(x)`, and `kappa(tau x)=kappa(x)+1 mod3`.
