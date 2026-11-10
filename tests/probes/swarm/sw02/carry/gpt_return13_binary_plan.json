@@ -1,0 +1,49 @@
+{
+  "worker_stop": 110,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_return13_binary_cert.py": "652b6bd02784000929ebf083eec881430bfe04b3f1eecc0a2822a494c5fd4e2f",
+    "tests/probes/swarm/sw02/carry/gpt_lrat_format_controls.py": "92b08d0a72f83eb7b20c8bc4358ea6cfe26986a3029d886998b3da4f88db57e3",
+    "tests/probes/swarm/sw02/carry/gpt_return13_lrat.py": "467bed29611c6dd4b8c251a8a890d5d5d6621a512c7ff8e05e77aa14fd3fb332",
+    "tests/probes/ether_gap_solve.py": "11e02a0327a1527d08e2d61e53c500409ce38d705c5fc299a1ab32c53f724a2d",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
+    "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df"
+  },
+  "original_cnf_sha256": "badadbb38e00fb0c01991563f3fb6664ed2b78c9ab7254a36fa1bd818313fcd0",
+  "prediction": {
+    "retained_php_pruned_cone": "verified; removal of final empty clause rejected",
+    "binary_target": "complete below16MiB, 0.4 confidence",
+    "if_complete": "direct cake accepted; positive trimmed cone independently accepted; packing fields audited, not assumed"
+  },
+  "counterfactual": "Any guard/control stop preserves evidence. If binary also reaches cap, park direct native export; no third format or larger retry. A RAT/oversized needed cone remains a distinct finite-certificate/packing outcome. No new geometry/P14/census.",
+  "limits": {
+    "aggregate_cpu_s": 120,
+    "wall_s": 300,
+    "tree_rss_mib": 768,
+    "max_procs": 8,
+    "file_mib": 16,
+    "disk_mib": 128,
+    "launch_free_mib": 4096,
+    "min_free_mib": 1024,
+    "swap_growth_mib": 4096,
+    "threads": 1,
+    "nice": 10,
+    "inner_aggregate_stop_cpu_s": 95,
+    "worker_soft_cpu_s": 12,
+    "worker_hard_cpu_s": 120
+  },
+  "jobs": [
+    {
+      "name": "binary",
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_return13_binary_cert.py"
+      ],
+      "cpu": 120,
+      "wall": 270,
+      "required_stdout_lines": [
+        "RETURN13_BINARY_STAGE_RECORDED"
+      ]
+    }
+  ]
+}

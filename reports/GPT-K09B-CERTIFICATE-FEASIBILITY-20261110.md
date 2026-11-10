@@ -338,4 +338,73 @@ Source `gpt_return13_cycle_audit.py`, SHA256
 stops. No subprocess solver, P14, enumeration or geometry change. Publish before
 run. Coverage remains uncertified even if every listed cycle has been checked.
 
+## What the 26 extra words are — GC2869
+
+The frozen audit completes at0.336571aggregateCPU/0.55wall; child wait4 maxRSS
+14610432bytes, no live tree RSS sample in this subsecond stage, no stop. All
+controls and moving/laboratory phase identities pass. The 170-word graph has
+exactly two cycles, lengths1 and143, and26 transient vertices. Both cycles
+really return at moving tick13; there are no nonreturning cycles. The singleton
+is white. The nonwhite cyclic row has143 distinct 16-windows, so its spatial
+period is exactly143; it is not fixed after one moving tick. The one-cell phase
+slip rejects. This validates the predicted144 cyclic words and resolves the
+26-word difference in these retained objects without a new census or solve.
+These are COMPUTED cycle/replay facts. No least ordinary laboratory period is
+claimed.
+
+Evidence `cited/gpt/return13-cycle-audit-20261110.tar.gz`,4957bytes SHA256
+`40315b9dae173b76702dde787ea398e652acab2397debd2208662477f8eaffa8`, verified
+TLS/raw-body/readback. Full `cycle-audit.json` SHA256
+`fdc140355e2aea5b00b61099ddd6e87d9da3f023b43026471eb8a2622af05010`.
+
+**Conditional carrying argument (PROOF-SKETCH).** Assume the original strip
+coverage has been certified: every 16-window of each whole-line moving-13 row
+is one of the retained words. At any index i, look back170 steps in the overlap
+graph, obtaining171 vertices. A repeat gives a cycle, and the unique successor
+keeps the entire subsequent path on it, including at i. Thus EVERY vertex of
+the bi-infinite path lies on a cycle, and its next and previous cycle phases
+are fixed. Read the first bit of each window. The whole-line row must be white
+or a translate of the 143-cell cycle word. Conversely the cyclic replay lifts
+by the kit's ring/whole-line locality; these translates are actual returns.
+The 143 distinct windows separate the translates at every length >=16, and
+white adds one. Hence under coverage, exactly144 configurations and exactly144
+words at each literal length >=16; the existing potential theorem already gives
+the weaker uniform170 bound. The remaining finite obligation is the SAME
+original coverage CNF, not another graph census or an assumption that each
+finite-strip word extends to a whole line. Local carrying read requested on
+this conditional deduction only. This is not yet a Lean or entropy claim.
+
+## One same-CNF binary export freeze — GC2870
+
+Justification: GC2867 actually validates native binary acceptance and measures
+2.21x more byte headroom on the retained prefix; GC2869 identifies the exact
+stronger conditional conclusion this certificate would unlock. This is a
+change in proof representation within unchanged limits, not a repeat of the
+stopped ASCII pipeline or an assumption that compression suffices. One target
+only. Forecast0.4 that the whole binary proof finishes below16MiB. If binary
+also hits the limit, park direct native export; no third format/cap enlargement.
+
+`gpt_return13_binary_cert.py` and plan pin exact source
+`652b6bd02784000929ebf083eec881430bfe04b3f1eecc0a2822a494c5fd4e2f`, original
+CNF, codec/guard, solver/checkers and the retained PHP binary control. First
+check that control and extract/independently verify its positive dependency
+cone; removing the final empty addition must be rejected. Then one binary
+solve of the original CNF, direct cake_lpr, compact positive dependency cone
+with all original clause IDs retained, independent text checker, packed-field
+and mask replay audit. No dropped clauses or implied additions to the original
+formula. Deletions are omitted from the trimmed cone only with positive RUP
+hints and an independent replay; any RAT dependency leaves a separate
+finite-certificate status without that packing path. No silent truncation,
+new geometry, P14 query, census or Lean build. Record searched: GC2864/2867
+pinned primary sources and actual format controls; GC2869 cyclic audit; current
+kit MovingStrip/PR232 proof API; prior source/hash receipts unchanged.
+
+Same120aggregateCPU/300wall/768MiB/tree8/thread1/nice10 and16MiB/file128MiB/stage,
+4096launch/1024running free floors,4096swap and all thermal/pressure/monitor stops.
+Solver45CPU/100wall, cake15CPU/40wall (256heap/64stack), C check10CPU/30wall;
+known controls<=2CPU/5wall each, sequential. Worker12soft/120hard, live/reaped/
+ancestor/monitor95inner and110outer. Dependency loops also check95CPU; all
+pressure/monitor/control/output stops preserve evidence. Fresh ownership and
+headroom plus this published freeze before launch; no automatic larger retry.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
