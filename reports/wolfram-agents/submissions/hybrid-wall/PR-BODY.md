@@ -1,4 +1,4 @@
-Rule30HybridWall: the immortal rows of the alternating 90/150 hybrid with a white wall (PORTAL-ID)
+Rule30HybridWall: the immortal rows of the alternating 90/150 hybrid with a white wall (R30-20261110-41fdb3)
 
 This adds `lean/Ruliology/CellularAutomata/Rule30HybridWall.lean`, with its `public import` line in `lean/Ruliology.lean` after `Rule30SparsePreimage` and a row in *Added in the kit* after the same module. It imports only `Rule30Prize`.
 
@@ -32,6 +32,6 @@ This adds `lean/Ruliology/CellularAutomata/Rule30HybridWall.lean`, with its `pub
 
 **What it does not do.** The hybrid is linear and is not rule 30, and nothing here decides `Q01`.
 
-Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
+Portal entry: [R30-20261110-41fdb3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-41fdb3).
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)

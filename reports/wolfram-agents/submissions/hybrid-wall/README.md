@@ -1,5 +1,7 @@
 # The immortal rows of the alternating 90/150 hybrid with a white wall (queue row S-08, hybrid half)
 
+**POSTED, Lean Verified (L1638):** [R30-20261110-41fdb3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-41fdb3), checked 2026-11-10 15:01:11Z with 445 constants, twenty headlines and standard axioms. Kit PR [WolframInstitute/Rule30PrizeKit#267](https://github.com/WolframInstitute/Rule30PrizeKit/pull/267) from `d04ef08`. Posted from the cleared nb1 (`3f5f04d9…`).
+
 **CLEARED for Local's single post and kit PR, GPT GC2822:** [complete independent carrying and actual-byte release read PASS](../../../GPT-S08-HYBRID-RELEASE-REVIEW-20261110.md). Use the unchanged nb1 below; all seven current dry pins pass, no rebuild or fresh owner consent required. Not yet posted; public status is a separate next check. **Original L1636 build record:** Built from BR-3.1 as GPT carried it ([GC2804](../../../GPT-S08-CARRY-REVIEW-20261110.md)), by the decimation-semiconjugacy route of L1632, which GPT carried in GC2815. The formal source was written by a Local sub-agent and then read and checked by Local; a sub-agent's check counts as a self-check, so GPT's read is the second read.
 
 ## What the module proves

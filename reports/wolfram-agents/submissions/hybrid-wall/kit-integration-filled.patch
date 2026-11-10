@@ -1,0 +1,24 @@
+diff --git a/lean/README.md b/lean/README.md
+index 5608726..a9f5136 100644
+--- a/lean/README.md
++++ b/lean/README.md
+@@ -228,6 +228,7 @@ These modules are not in the 2026-10-15 snapshot of the catalog, and `SHA256SUMS
+ | `Rule30SixTail` | 2026-10-24 | Exclude every tail of at most six bits after at least 77 white phases. The sixteen new six-bit cores use backward-vacuum certificate chains; shorter tails use the five-tail theorem. Contributed by Troy Lowry with OpenAI Codex. | `no_six_tail_leftFinite`, `no_six_tail_finite` |
+ | `Rule30SixTailReduction` | 2026-10-24 | Trimming and rotation reduce every tail of at most six bits to the five-tail family or sixteen new black-ended cores. Contributed by Troy Lowry with OpenAI Codex; intrinsic `sixCores` characterization (`mem_sixCores_iff`), disjointness from `shortCores ++ fiveCores`, and canonical `seed` specialization by G.P.J.W. Quint and Gemini as Rule 30 Prize submission [R30-20261104-b96a01](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261104-b96a01). | `decomposition`, `no_six_tail_of_cores`, `sixCores_length`, `sixCores_head_last_true`, `mem_sixCores_iff`, `short_five_length_le_five`, `sixCores_disjoint_short_five`, `no_six_tail_of_black_ended_six`, `no_six_tail_seed_of_cores` |
+ | `Rule30SparsePreimage` | 2026-10-24 | Sparse predecessor checks with a proved bitmask completeness condition recover full strip predecessor implications. Contributed by Troy Lowry with OpenAI Codex. | `restricted_of_sparse`, `colConst_inter_of_sparse` |
++| `Rule30HybridWall` | 2026-11-10 | The immortal rows of a linear relative of rule 30, exactly. The alternating 90/150 hybrid `H` with a white wall applies rule 150 at odd depths and rule 90 at even depths; a row is immortal when its depth-1 cell is black at every even time. A finite row is immortal iff `x 1 = 1`, `x (4 j + 3) = x (4 j + 5)` and `x (4 j + 2) = x (4 j + 1) + x (4 j + 3)` for every `j` (`immortal_iff_bitFam_anyWall`, `immortal_iff_famRow`); in powers of `A = S + S⁻¹` these are the rows `(A + A²) p(A⁴) + r(A⁴)` with `p 0 = 1`, `r 0 = 0` (`immortal_real_iff`). For `W ≥ 2` the immortal rows of width at most `W` are in bijection with the Boolean words supported below `W / 2 - 1` (`immortal_iff_param`), and their count `2 ^ (W / 2 - 1)` is kernel-checked for `W ≤ 12`; the width-6 ones are `3, 11, 53, 61` (`immortal_width_six`). The column of every nonzero finite row is not eventually periodic (`col_not_eventually_periodic`). The proof is the decimation semiconjugacy `D (P (P x)) = P (D x)` of the pair model `P (a, b) = (a + b, T a)` (`D_P_P`, `psi_even_time`). The hybrid is not rule 30. Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI), as Rule 30 Prize submission [R30-20261110-41fdb3](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-41fdb3). | `D_P_P`, `psi_even_time`, `even_time_constant`, `psi_mono`, `iter_H_real`, `col_real`, `colE_even`, `col_inj`, `colE_inj`, `real_surj`, `real_inj`, `immortal_real_iff`, `real_afam`, `immortal_iff_famRow`, `immortal_iff_bitFam_anyWall`, `immortal_iff_param`, `immortal_width_six`, `not_immortal_width_one`, `col_not_eventually_periodic`, `immortal_odd_word_not_eventually_periodic` |
+ | `Rule30UniformWhitePadding` | 2026-10-24 | The five pumping certificate families hold for every column of every leftmost-black start, using the generic finite-strip soundness theorem. Contributed by Troy Lowry with OpenAI Codex. | `no_paddingA_leftFinite`, `no_paddingE_leftFinite` |
+ | `Rule30VacuumExample` | 2026-10-24 | Two five-bit tail applications of the generic vacuum-avoidance criterion use width-five strips; the analytic white-pulse bound handles arbitrary padding. Contributed by Troy Lowry with OpenAI Codex. | `no_paddingA`, `no_paddingB` |
+ | `Rule30WhitePadding` | 2026-10-24 | A stable zero-driven reachable set and finite tail checks give a strip certificate for every sufficiently long white prefix, by pumping rather than enumerating padding lengths. Contributed by Troy Lowry with OpenAI Codex. | `zeros_stable`, `padding_strip`, `no_padding_word` |
+diff --git a/lean/Ruliology.lean b/lean/Ruliology.lean
+index a7f2e37..cdff5d8 100644
+--- a/lean/Ruliology.lean
++++ b/lean/Ruliology.lean
+@@ -87,6 +87,7 @@ public import Ruliology.CellularAutomata.Rule30ZeroPredecessor
+ public import Ruliology.CellularAutomata.Rule30BackwardTube
+ public import Ruliology.CellularAutomata.Rule30WhitePaddingVacuumCriterion
+ public import Ruliology.CellularAutomata.Rule30SparsePreimage
++public import Ruliology.CellularAutomata.Rule30HybridWall
+ public import Ruliology.CellularAutomata.Rule30RestrictedBackwardTube
+ public import Ruliology.CellularAutomata.Rule30UniformWhitePadding
+ public import Ruliology.CellularAutomata.Rule30WordRotation
