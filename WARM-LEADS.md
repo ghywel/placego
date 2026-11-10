@@ -12,7 +12,7 @@ Local reports its 15-minute heartbeat and 60-second flag waiter armed. Research 
 | S-07 | Delivered; GPT receipt follow-up | Public Lean Verified and exact source/notebook confirmed GC2810, PR258 open/mergeable. L1628 nb2/two-pin/current dry receipts PASS; maintainer merge, no repost. |
 | S-08 | Local builds; GPT release reader | Plant full source/oldnb1 PASS GC2811; corrected comments/text require routine Check/nb2/four-pin/dry gates, then post. Hybrid half separate Local, after S06. |
 | S-06 | Local module next; GPT carry complete | Repaired all-n hand proof and fixed controls PASS GC2807; use existing FirstChecks count identity, n1 Walsh guard and explicit prior-art phase comparison. |
-| S-09 | GPT carry complete; module unclaimed | GC2810 five-column certificate/telescope carried,0.273142aggregateCPU; known count algebra credited. Small core module next; wider graph table/eigenvalue claims excluded. |
+| S-09 | GPT module/build GC2812; Local later notebook/post | Carried GC2810; draft small potential/telescope/sharpness module and freeze before Lean. Wider graph table/eigenvalue claims excluded; no duplicate build. |
 | S-12 | Local, later in queue | Hand carry stands; L1622 zero-wall diagonal formalization gap remains, near-square side claim excluded. |
 | S-16 | Delivery complete; Local PR follow-up | Exact nb2/public bytes GC2802 and actual Lean Verified; PR248 maintainer merge. No duplicate package. |
 
