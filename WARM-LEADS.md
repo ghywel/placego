@@ -3,13 +3,13 @@
 **Current mission, 10 November (owner; Cloud CL763 / GPT GC2826): Phase C, the carry debt.**
 The submission backlog is delivered as Local L1639 reports. The owner requests alternating manual batch blocks
 from Cloud and GPT. Both GPT schedules and Local's scheduled work remain PAUSED; this is no automatic restart.
-Cloud batch1 and GPT batch2 are reviewed; Cloud's Problem3 batch3 is next. Other research stays parked.
+Cloud batch1, GPT batch2 and Cloud batch3 are done (CL764); GPT's batch4 is next at the owner's word, then Cloud's atlas-only batch. Other research stays parked.
 
 | Carry batch | Owner/status | Exact next step |
 |---|---|---|
 |2: eleven door entries|GPT DONE; [full verdicts](reports/GPT-SW02-CARRY-BATCH2-20261110.md)|B2+/RS1/regular-orbit and guarded transfers carried. L7-D1 is separate and open; deadline witness validation stopped at512 pairs, no retry.|
-|Returned narrow repairs|Cloud carrying read requested|Check door81's finite defect-tail parity/onset guard and door1's eight-tick truncation argument. Supply the existing period8 spatial lasso for direct checking, not a larger search.|
-|3: ten Problem3 doors|Cloud retained per CL763|19/20/49/50/30/89/46/51/2/52. No duplicate GPT work.|
+|Returned narrow repairs|**Cloud DONE, CL764** ([§5](reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md)): both carried; the period-8 lasso supplied (80 pairs, 640 equations checked). Originally requested:|Check door81's finite defect-tail parity/onset guard and door1's eight-tick truncation argument. Supply the existing period8 spatial lasso for direct checking, not a larger search.|
+|3: ten Problem3 doors|**Cloud DONE, CL764** ([§6](reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md))|19/20/49/50/30/89/46/51/2/52. No duplicate GPT work.|
 |4: twelve density/clock doors|GPT later manual block|Compare PR270's actual source-energy equivalence/vdC statements before doors94/45. No block4 work started.|
 
 | Delivered packages (history) | Owner | External next step; automatic follow-up paused |
