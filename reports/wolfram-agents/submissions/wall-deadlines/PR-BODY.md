@@ -1,4 +1,4 @@
-Rule30WallDeadlines: the exact wall deadlines of rules 90 and 150 (PORTAL-ID)
+Rule30WallDeadlines: the exact wall deadlines of rules 90 and 150 (R30-20261110-c20b0a)
 
 This adds `lean/Ruliology/CellularAutomata/Rule30WallDeadlines.lean`, with its `public import` line in `lean/Ruliology.lean` after `Rule30ExactReturn` and a row in *Added in the kit* after the same module. It imports only `Rule30ZeroBoundary`.
 
@@ -20,6 +20,6 @@ This adds `lean/Ruliology/CellularAutomata/Rule30WallDeadlines.lean`, with its `
 
 **What it does not do.** Rules 90 and 150 are linear and are not rule 30. Nothing here decides `Q01`, and the proof-size remarks of the essay are not formalised.
 
-Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
+Portal entry: [R30-20261110-c20b0a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-c20b0a).
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)

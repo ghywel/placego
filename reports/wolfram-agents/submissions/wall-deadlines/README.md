@@ -1,6 +1,8 @@
 # The wall deadlines of rules 90 and 150 (queue row S-18, Cloud's K-05)
 
-**Full source/actual-nb1 read PASS GC2844; corrected-source Checks/nb2/pins/dry gates next; not posted.** [Complete review](../../../GPT-S18-RELEASE-REVIEW-20261110.md). Fixed only the module introduction's first-white terminology and the essay's count range (`2n<W`); declaration/proof body unchanged. Local reruns both source Checks, updates the kit branch, builds nb2 with the unchanged driver/original gates, updates notebook/source/essay pins and fresh dry check; these complete standing conditional posting/PR clearance without another permission round. Old nb1 and receipts below are historical. Built from BR-6.1 as Cloud carried it (CL773; the triage report `reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md` §10 (a), (b)). Local wrote the module directly. Proof-size context is not formalised; Cloud's separate hardness3 addition remains its original PROOF-SKETCH.
+**POSTED, Lean Verified (L1646):** [R30-20261110-c20b0a](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-c20b0a), checked 2026-11-10 20:32:22Z with 87 constants, ten headlines and standard axioms. Kit PR [WolframInstitute/Rule30PrizeKit#273](https://github.com/WolframInstitute/Rule30PrizeKit/pull/273) from `9168167`. Posted from nb2 (`986646fe7e2e8d4767342938b41c5ebcd1a45b5306f0bbfec32e5a5c7e91b939`, 98,121 bytes, KernelChecked 87; evidence `cited/local/wall-deadlines-nb2-20261110.tar.gz`, 30,199 bytes, SHA256 `e54adea3d716009e8ccc98295acbe424eb9482594fe4fef6b287cf07d97ccd73`, read back exact), with GC2844's comment and count-range fixes; nb1 is superseded.
+
+Before posting: **Full source/actual-nb1 read PASS GC2844; corrected-source Checks/nb2/pins/dry gates next; not posted.** [Complete review](../../../GPT-S18-RELEASE-REVIEW-20261110.md). Fixed only the module introduction's first-white terminology and the essay's count range (`2n<W`); declaration/proof body unchanged. Local reruns both source Checks, updates the kit branch, builds nb2 with the unchanged driver/original gates, updates notebook/source/essay pins and fresh dry check; these complete standing conditional posting/PR clearance without another permission round. Old nb1 and receipts below are historical. Built from BR-6.1 as Cloud carried it (CL773; the triage report `reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md` §10 (a), (b)). Local wrote the module directly. Proof-size context is not formalised; Cloud's separate hardness3 addition remains its original PROOF-SKETCH.
 
 ## What the module proves
 
@@ -11,7 +13,7 @@ The sharpness statement for rule 90 uses `2 * s + 2 ≤ kstar W` rather than `2 
 | Form | File | sha256 | Check |
 |---|---|---|---|
 | Portal | [`Rule30Submission.lean`](Rule30Submission.lean), from [`kit_to_portal.py`](../../../../tests/probes/swarm/sw02/block11/kit_to_portal.py) | `6afbb54f…` | pass at `5fb59158`: 27 declared, 87 constants, 10 headlines, standard axioms ([receipt](check-5fb59158.json)) |
-| Kit | [`Rule30WallDeadlines.lean`](Rule30WallDeadlines.lean) | see receipt | pass at main `03a19bf`: 26 declared, 87 constants ([receipt](check-kit-03a19bf.json)). The kit branch `wall-deadlines` at `eb5fd65` is local; [`kit-integration.patch`](kit-integration.patch) |
+| Kit | [`Rule30WallDeadlines.lean`](Rule30WallDeadlines.lean) | see receipt | pass at main `03a19bf`: 26 declared, 87 constants ([receipt](check-kit-03a19bf.json)). The kit branch `wall-deadlines` at `9168167` is pushed as PR #273; [`kit-integration.patch`](kit-integration.patch) |
 
 **Mutants.** All six were rejected ([output](../../../../tests/probes/swarm/sw02/block11/mutate_wall_deadlines.out)).
 
