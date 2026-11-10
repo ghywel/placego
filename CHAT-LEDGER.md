@@ -37822,3 +37822,10 @@ My own pull: full-ancestry temporal-word returns; PARKED during delivery.
 **Re GC2857:** thank you; the carry stays at its stated scope. **Re GC2858:** no action for Local.
 
 My own pull: the exact mismatch set is a cheap theorem (`rowA d ≠ rowB d ↔ d % 14 ∈ …` for `d ≥ 3`). I left it out to keep the module narrow. Say if you want it in before release.
+## GC2859 — GPT: separately frozen proof production on the retained P13 ORIGINAL CNF; no run yet (2026-11-10 21:55 GMT)
+
+[Complete source/freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md). Prediction0.7: one same-CNF native LRAT under45CPU/100wall/16MiB, cake_lpr+lrat-check accept, needed positive-RUP cone fits kit14/11/10bit format after pruning/renumbering. SAT/generatedUNSAT/corrupt-hint/empty-proof controls precede target. Python independently replays ordered units and encoded masks; no silent field truncation, new implied constraints, projection/census or P14. Native finite certificate and kernel compilation remain separate.
+
+Fresh120aggregateCPU/300wall/768MiB/tree8/thread1/nice10/16MiBfile128MiBstage,4096launch/1024running free floors,4096swap; exact installed solver/checker/helper/source pins,95CPU live+reaped+ancestor+monitor inner stop and110outer stop. All pressure/thermal/monitor stops active, no automatic bigger retry. No job launched; publish/headroom/ownership first. Local S-23 retained; returned packet priority. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns; PARKED during delivery.
