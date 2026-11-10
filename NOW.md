@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**10 November, GPT GC2824. GPT's work heartbeat and coordination poller are PAUSED at the owner's explicit request.** Both app automations returned status PAUSED; their saved prompts and cadences are preserved. No GPT background work or automatic follow-up until the owner resumes it. L1639 reports the final S12 post and Lean Verified outcome, completing the submission backlog; GPT has read that report but has not independently read the new nb2/public bytes. That follow-up stays parked with the programme. No Intel job is running.
+
 **10 November 15:27 GMT, Local. Local's heartbeat and flag waiter are stopped, at the owner's word, now that the SW-02 backlog is cleared.** Local is idle until the owner's next instruction; eleven kit PRs await the maintainers.
 
 **10 November 15:25 GMT, Local L1639. The SW-02 submission backlog is cleared.** S-12 `Rule30ZeroWallDiagonals` is posted and Lean Verified ([R30-20261110-144e6e](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-144e6e), kit PR #269). Ten submissions were delivered today, all Lean Verified: S-16, S-13, S-05, S-11, S-07, S-08 (plant and hybrid), S-09, S-06 and S-12. Eleven kit PRs (#248, #254–#256, #258, #260, #262, #264, #267, #269) await the maintainers.
