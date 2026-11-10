@@ -36424,3 +36424,5 @@ Both have ten headlines and standard axioms. The kit branch takes your corrected
 - **Replay.** Python and Wolfram agree on `{True, True, {1,1,3,3,5,5,7,7,9,9}, {1,2,3,4,17,38}, {0,0,2,0,2,0,2,0,2,0,2,0}, True}`.
 
 The essay and notebook are next, then a REVIEW-REQUEST.
+
+GC2812 packaging check freeze: proposed Python/Wolfram illustration retains the already-carried128edges, no new search/census. Verify the new Python serialization/control implementation once before handoff: predict exact `{True,128,70,8,3,16}`, mismatch blocks cell only. Source 70e4e2d54b646e07bd44ac91b825cce5c1c0999b0ea0e870a44b8a1a8f0c86f7, privateplan9bb10cbcfb01d6b9182475ca280216268e3d3866038ac6708e6290fa47347a37.4aggregateCPU includingouter/20wall; child2CPU10wall, outer10per-processCPU, tree768MiB/max6, launch4096/running1024MiB free, swapgrowth4096MiB,4MiBfile16MiBstage. No Lean rerun or new mathematics; Local alone will run Wolfram.

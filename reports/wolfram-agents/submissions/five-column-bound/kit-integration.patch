@@ -1,0 +1,18 @@
+diff --git a/lean/README.md b/lean/README.md
+--- a/lean/README.md
++++ b/lean/README.md
+@@ -475,4 +475,5 @@
+ |---|---|---|---|
+ | `Rule30Realization` | R1 | Some configuration realizes any right half together with any column 0. Rules 90, 150 and 210 meet Jen's hypotheses, yet their center columns are eventually constant. | `column_realizable_unique`, `seed_perturbation`, `barrier` |
++| `Rule30FiveColumnBound` | 2026-11-10 | Every five adjacent physical Rule 30 columns contain at most `3*T+2` black cells in any interval of `T` ticks, for every configuration and starting time (`evol_five_column_bound`), including the official singleton (`cell_five_column_bound`). The potential `max(0,2-pop(right four))` has range0..2 and a kernel-checked seven-bit inequality (`local_potential`); its exact endpoint telescope (`telescope`) yields the bound and at least `2*T-2` white cells (`white_column_bound`). An all-black window at T1 needs constant2 and the fixed alternating row attains rate3 at every horizon (`sharp_constant`, `sharp_rate`). This is a five-column sum, with no individual-column density or prize conclusion. Contributed by Gareth Herbert with Claude (Anthropic) and GPT (OpenAI), as Rule 30 Prize submission [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID). | `potential_bounds`, `local_potential`, `telescope`, `five_column_bound`, `white_column_bound`, `evol_five_column_bound`, `cell_five_column_bound`, `sharp_rate`, `sharp_constant` |
+ | `Rule30ZeroBoundaryBarriers` | R2 | For `Q01` there is no ranking through a finite abstraction, no local ranking and no edge-DFA ranking. Also gives a two-sided barrier. | `finite_abstraction_has_lasso`, `no_local_ranking`, `no_edge_dfa_ranking`, `no_joint_local_ranking` |
+ | `Rule30EtherWallWitness` | 2026-10-31 | A periodic left half cannot replace the finite one in `Rule30Ether.lock_excludes` and `absorption_excludes`: for `0001`, `0011`, `0111` and the alternating column, a left half of spatial period 7 (the ether) and a finite right half (ether columns, a wall state, then white) give center column `w^∞` from time 0. | `period_four_left_periodic_right_finite`, `alt_left_periodic_right_finite`, `alt_coupled_left_periodic` |
+diff --git a/lean/Ruliology.lean b/lean/Ruliology.lean
+--- a/lean/Ruliology.lean
++++ b/lean/Ruliology.lean
+@@ -21,4 +21,5 @@
+ public import Ruliology.CellularAutomata.Rule30WhiteSeed
+ public import Ruliology.CellularAutomata.Rule30Realization
++public import Ruliology.CellularAutomata.Rule30FiveColumnBound
+ public import Ruliology.CellularAutomata.Rule30FactorWindow
+ public import Ruliology.CellularAutomata.Rule30PeriodTwo

@@ -1,6 +1,6 @@
 # S09: a sharp five-column black-count bound
 
-**GPT owns the module/build (GC2812). Draft source frozen; no compile or posting yet.** Local retains independent release read, Wolfram/notebook and posting ownership. [Carried mathematics and prior art](../../../GPT-S09-CARRY-REVIEW-20261110.md).
+**First build and both official kernel replays PASS (GC2812): nine headlines,62constants, standard axioms.** Local independent source/text read and Wolfram/notebook/release remain; no submission or portal Lean Verified claim. GPT owns this module; Local explicitly agrees L1629. [Carried mathematics and prior art](../../../GPT-S09-CARRY-REVIEW-20261110.md).
 
 The nine proposed headlines cover the finite potential, arbitrary-trajectory endpoint telescope, `C5<=3T+2`, the white-count consequence, every configuration/starting-time specialization, the official singleton specialization and sharpness. It imports the official `Rule30Prize` and `Rule30Realization` definitions. No count-law recreation, wider-window table or prize claim.
 
@@ -22,3 +22,15 @@ plan     c09024818588a61f42aa143e32a466d97a191e44951a21615f17819e123f011a
 ```
 
 Next: run this one frozen build; inspect every receipt and exact theorem/axiom output. A successful self-check still needs Local's independent source read and the ordinary notebook/essay/release gates.
+
+## First-build result and review request
+
+Frozen source compiled on the first attempt; no module warnings. Both official replays pass: kit32/portal33declared,62constants, all nine headlines, no new axioms. Official Check itself emits a pre-existing Environment.replay deprecation warning; its unchanged JSON verdict is pass. The first receipt parser encountered that warning before JSON; only parsing changed, with no rebuild or checker change.
+
+AggregateCPU14.258682s including monitor,14.27wall, max sampledRSS743688KiB, max3processes, minimum free6334MiB, swapgrowth0, final capped directory3634338bytes. Peak child wait4RSS745541632bytes. No job remains. Sources, full logs and all eight receipts are retained outside git by digest; checked JSON receipts are in this packet. No full kit/catalog or Wolfram build was run.
+
+**To Local: please give the independent source/text read.** Check the five update indices/exterior inputs in step_potential, the inclusive-first/exclusive-final count convention includingT0, and the actual fixed-row sharpness. Hand mathematics is already carried GC2810; this asks about the new formal implementation and essay scope.
+
+Prepared for your notebook build: [essay-prose.md](essay-prose.md), [essay.md](essay.md), [abstract.txt](abstract.txt), nine [headlines](headlines.txt), the [assembler](../../../../tests/probes/wolfram/assemble_five_column_bound_essay.py), [Python replay](../../../../tests/probes/wolfram/five_column_bound_replay.py), and [notebook driver](../../../../tests/probes/wolfram/five_column_bound_notebook.wl). The replay's expected six-value cell is the previously checked128-edge control, not a new census. These are proposed build inputs, not a built notebook.
+
+After your read, run the ordinary verifier-source Check, Python/Wolfram control and capped notebook gates using the prepared driver. A wrapper is intentionally not supplied with a fictitious notebook digest; adapt the already-reviewed S08 guard after the real artifact exists. Preserve exact source/text/headline/driver hashes and return the actual artifact/receipts for GPT's final read before posting. Local remains the sole notebook builder/poster; standing owner consent applies after release checks.
