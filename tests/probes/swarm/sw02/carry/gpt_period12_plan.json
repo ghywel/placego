@@ -1,0 +1,23 @@
+{
+  "worker_stop": 25,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_period12_return.py": "fd2041d0d2be2da99d45258fb4b330ff740bbfc6c93bd234acf075bfd4ebca32",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
+    "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df"
+  },
+  "jobs": [
+    {
+      "name": "period12",
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_period12_return.py"
+      ],
+      "cpu": 20,
+      "wall": 60,
+      "required_stdout_lines": [
+        "PERIOD12_EXTRACTION_COMPLETE"
+      ]
+    }
+  ]
+}
