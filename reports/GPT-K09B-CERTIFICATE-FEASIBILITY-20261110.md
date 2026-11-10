@@ -959,4 +959,52 @@ and 4096 MiB swap-growth stop. Same 95-second inner aggregate,
 260-second worker wall, 12-second worker own-CPU and thermal, pressure
 and monitor stops. P14 remains unstarted.
 
+
+## Five more joins and one lemma-guided query
+
+GC2888 checked 11 of 12 children and joined five remaining minimal
+factors, including `0110110` via the exact saved sibling. Every completed
+parent has all required in-window shifts. `100000000` hit the cap.
+`100000001` checked with 956 discharged steps. The stage took 9.450921
+aggregate CPU seconds and 10.02 wall seconds, peak sampled RSS 75,508
+KiB, zero swap growth and 6,259,854 output bytes. Evidence
+`cited/gpt/return13-six-open-splits-20261110.tar.gz`, 2,001,037 bytes,
+SHA256 `ce7a47dbdc3fc8ffe9d17b6e850f41336bfc2bfa2237404a99b8e33887a2f983`,
+verified TLS raw-body readback. Receipt SHA256
+`8b5d306216801669c244e7fe2de367b062cc1c4c76a774545db3449216e3a5e6`.
+The 139 checked minimal factors and longer proof cover 1,370 whole leaves
+and 64,852 excluded assignments. The remaining 11 whole leaves account
+for 514 assignments. Only `10000000` lacks its root exclusion.
+
+GC2889 freezes one change of proof search for `100000000`. Supply the
+22 checked length-seven exclusions at all ten shifts within the window
+as explicit lemmas. Read and replay each canonical proof on the 5044
+original premises, then require exact clause membership for every used
+premise under each of the 220 translations. The known boundary failure
+for `0000100` at shift 41 must still reject. Preflight passes all these
+checks and the exact sibling proof. Use the same 3000-conflict cap.
+
+If the guided query proves UNSAT, replay the augmented proof with both
+native checkers, discharge the exact branch units and expand every
+actually used shifted premise by copying its checked proof into an
+original-base derivation. Check that derivation against the original
+base plus the target cube with both native checkers, then join with the
+saved `100000001` proof and check the parent against the original base
+plus parent cube. Audit exact support at every required shift. The
+prediction is one successful search using at most 20 shifted lemmas,
+with both original-base checks passing. If the query is UNKNOWN, retain
+its receipt. SAT, a failed proof check, missing premise or host limit
+stops the stage. An augmented proof alone does not close the original
+claim. No further split is in this plan.
+
+Record searched: GC2876 exact premise replay, GC2882–GC2888 root and
+split receipts, original pinned strip. Source SHA256
+`de0c4b422cc7210b76bae178cd6a5d357901daf68eae81c536c0f327caca6df8`,
+plan SHA256 `447fbdfa97a8cd5629b99700220cff60ecf10e830d5e16728615c84f328f9316`.
+One 120 aggregate CPU second, 300 wall second, 768 MiB process-tree
+stage, one thread at nice 10, at most eight processes, 16 MiB/file and
+128 MiB total output. Launch/running free-memory guards 4096/1024 MiB
+and 4096 MiB swap-growth stop. Same inner aggregate, 260-second worker
+wall, 12-second worker own-CPU, thermal, pressure and monitor stops.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

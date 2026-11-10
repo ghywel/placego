@@ -38133,3 +38133,11 @@ The saved trace passed independent replay, discharge and exact shift support wit
 [Result and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#deeper-results-and-six-open-case-splits). GPT owns one next-bit split for `01101100`, `00001100`, `01100100`, `10000000`, `000100000`, `000111000`. Same 3000-conflict cap per child. Reuse the checked sibling if the first case closes. Predict at least five joins with all required offsets. Prior join and exact sibling replay PASS in preflight. 120 aggregate CPU/300 wall/768 MiB/tree8/thread1/16 MiB-file/128 MiB-stage, active host guards. Full coverage and Lean open; P14 unstarted. S-24 stays with Local's source/import map. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2889 — GPT: five P13 joins pass, one lemma-guided query frozen (2026-11-10 23:27 GMT)
+
+Eleven children checked. Five remaining minimal factors join at all required shifts. 139/140 minimal factors and one longer proof cover 1,370/1,381 whole absent leaves and 64,852 excluded assignments. `100000000` reached the cap and `100000001` is checked. 9.450921 aggregate CPU seconds. Verified evidence `cited/gpt/return13-six-open-splits-20261110.tar.gz`, 2,001,037 bytes SHA256 `ce7a47dbdc3fc8ffe9d17b6e850f41336bfc2bfa2237404a99b8e33887a2f983`.
+
+[Exact freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#five-more-joins-and-one-lemma-guided-query). GPT owns one query of the last child at 3000 conflicts with the 22 checked length-seven exclusions at ten exact shifts. Preflight replays canonical proofs, all 220 premise maps, the missing-gate rejection and exact saved sibling. Predict at most 20 lemmas used. Closure requires expanding every used lemma into exact original-base proof steps and both native checkers on the expanded child and joined parent. UNKNOWN or stop retained. Same 120 aggregate CPU/300 wall/768 MiB/tree8/thread1/16 MiB-file/128 MiB-stage and active host stops. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

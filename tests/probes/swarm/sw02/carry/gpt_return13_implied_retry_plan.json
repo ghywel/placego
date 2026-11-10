@@ -1,0 +1,163 @@
+{
+  "worker_stop": 110,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_return13_binary_cert.py": "652b6bd02784000929ebf083eec881430bfe04b3f1eecc0a2822a494c5fd4e2f",
+    "tests/probes/swarm/sw02/carry/gpt_lrat_format_controls.py": "92b08d0a72f83eb7b20c8bc4358ea6cfe26986a3029d886998b3da4f88db57e3",
+    "tests/probes/swarm/sw02/carry/gpt_return13_lrat.py": "467bed29611c6dd4b8c251a8a890d5d5d6621a512c7ff8e05e77aa14fd3fb332",
+    "tests/probes/ether_gap_solve.py": "11e02a0327a1527d08e2d61e53c500409ce38d705c5fc299a1ab32c53f724a2d",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
+    "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_control.py": "79ab88c7f843a0a9fe8fab1f23d3330a44720fe9b5d0487d9d171494249b85fa",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_leaves.py": "7169eb470f2f4ba5c66a0db7c6a8ca5d2f83efe5afe07fc718dbf2a20f954b4b",
+    "tests/probes/swarm/sw02/carry/gpt_return13_factor_split.py": "a30e7bf78e72da903e34414a187426f931ddf7c7a5f9f83bfc4917db89bdf669",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_replay.py": "2172dbe0f5cfa1d1a2d7c7a6bd9d4e0136cac77c107af5dd0112c1d865400297",
+    "tests/probes/swarm/sw02/carry/gpt_return13_final_splits.py": "2d8b442944a564b116df0ba7d8a9745ee6d78000552ffcc76a008ccbb0176ba9",
+    "tests/probes/swarm/sw02/carry/gpt_return13_implied_retry.py": "de0c4b422cc7210b76bae178cd6a5d357901daf68eae81c536c0f327caca6df8"
+  },
+  "original_cnf_sha256": "badadbb38e00fb0c01991563f3fb6664ed2b78c9ab7254a36fa1bd818313fcd0",
+  "prediction": {
+    "query": "the single previously capped branch certifies at 3000 conflicts with 220 checked shifted length-seven clauses",
+    "expansion": "at most 20 lemmas used and both native checkers pass the expanded original-base branch and joined original-base parent",
+    "controls": "all 220 premise maps exact and the known missing shift 41 rejects"
+  },
+  "counterfactual": "UNKNOWN remains pending. SAT, bad shifts, checker failure or a host limit stops the job with evidence. An augmented proof alone never closes the original-base claim.",
+  "limits": {
+    "aggregate_cpu_s": 120,
+    "wall_s": 300,
+    "tree_rss_mib": 768,
+    "max_procs": 8,
+    "file_mib": 16,
+    "disk_mib": 128,
+    "launch_free_mib": 4096,
+    "min_free_mib": 1024,
+    "swap_growth_mib": 4096,
+    "threads": 1,
+    "nice": 10,
+    "inner_aggregate_stop_cpu_s": 95,
+    "worker_soft_cpu_s": 12,
+    "worker_hard_cpu_s": 120
+  },
+  "jobs": [
+    {
+      "name": "implied-retry",
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_return13_implied_retry.py",
+        "tests/probes/swarm/sw02/carry/gpt_return13_implied_retry_plan.json"
+      ],
+      "cpu": 120,
+      "wall": 260,
+      "required_stdout_lines": [
+        "RETURN13_IMPLIED_RETRY_RECORDED"
+      ]
+    }
+  ],
+  "proofs": {
+    "0000100": {
+      "file": "gc2874-prefix-leaves/depth7-discharged.lrat",
+      "sha256": "16335b6ee6c2e540637aa59a31da9012bb5147e36ac63b136c4f8e08b67e5f9b"
+    },
+    "0001111": {
+      "file": "gc2879-factor-split/parent-discharged.lrat",
+      "sha256": "b7252b11c11730b5dbf0e32e9bb5e664ca87f832b57ea9cfb1c09f8f9d7abad9"
+    },
+    "0010111": {
+      "file": "gc2882-depth7-run/factor-0010111-discharged.lrat",
+      "sha256": "dc5decc3b726330b33979d903a2a7642c2ad78c412f4b2fe9afedf21a26a14e5"
+    },
+    "0011000": {
+      "file": "gc2882-depth7-run/factor-0011000-discharged.lrat",
+      "sha256": "69e1ebb13760fd80f8fee1a93b4fcc6021789465153f813185e1a099aaf573c3"
+    },
+    "0011011": {
+      "file": "gc2883-depth7-splits/parent-0011011-discharged.lrat",
+      "sha256": "8fd0d96fd3e35dad1ae6c8c7df53eb723849962a8acf94cfeb225cf205b758bc"
+    },
+    "0100011": {
+      "file": "gc2882-depth7-run/factor-0100011-discharged.lrat",
+      "sha256": "eaba976dcb1aca1700134f1f9a8f6b2bc61839951f7902614904e46f7539a3ba"
+    },
+    "0100110": {
+      "file": "gc2883-depth7-splits/parent-0100110-discharged.lrat",
+      "sha256": "0d173936836ecf64e59808e41cd8bdd994e6233d7d3a90bcd36a63c7af32e1e8"
+    },
+    "0101111": {
+      "file": "gc2882-depth7-run/factor-0101111-discharged.lrat",
+      "sha256": "c5429b24a567d435d7c64770f0dfd4afcfe5562c1db3db1b2891981b40e238b9"
+    },
+    "0110000": {
+      "file": "gc2883-depth7-splits/parent-0110000-discharged.lrat",
+      "sha256": "fe1054e2a76aeab2dbc707cfee7c9d236d3e9aa8da5f2b186be76024dfea021e"
+    },
+    "0110110": {
+      "file": "gc2888-final-splits/parent-0110110-discharged.lrat",
+      "sha256": "462f3384248e100dd83c2c2f13e42bbbd65f959452132358a1c08ae6b3f8a8d1"
+    },
+    "0111101": {
+      "file": "gc2882-depth7-run/factor-0111101-discharged.lrat",
+      "sha256": "5da76ea4a0f03fe993a692afd0f901b10e9509eb6573c27971bd6205b8734b09"
+    },
+    "1010000": {
+      "file": "gc2882-depth7-run/factor-1010000-discharged.lrat",
+      "sha256": "958cd01b3eeb7d65b15d7b48c34f8211d8f893e7ce6931ec54b4a1c0918afd6d"
+    },
+    "1010011": {
+      "file": "gc2883-depth7-splits/parent-1010011-discharged.lrat",
+      "sha256": "6e52871558cecd7548c27ee2ed09d8de70534121b7ccf2c64655bb8d8cfc7f6d"
+    },
+    "1011001": {
+      "file": "gc2882-depth7-run/factor-1011001-discharged.lrat",
+      "sha256": "e8cf726f9f947ae1591287779669c01aaf17b64c904d9367b57d2ba83d2d4c2b"
+    },
+    "1011010": {
+      "file": "gc2882-depth7-run/factor-1011010-discharged.lrat",
+      "sha256": "1d5ed64425b606812d7dc64b171b6517bd0a31fd3e45a881e29a1a5f6fd484d4"
+    },
+    "1011110": {
+      "file": "gc2883-depth7-splits/parent-1011110-discharged.lrat",
+      "sha256": "b0b1fe8f1b2d9a1498a9c2de0f9853d9444e4e3fd1e47eb31a0c450042310f87"
+    },
+    "1100001": {
+      "file": "gc2882-depth7-run/factor-1100001-discharged.lrat",
+      "sha256": "1547f5fbbc47634be7c43e324b1d4ae74f5b38da698e933d0cfd0a8ee0ceef59"
+    },
+    "1101000": {
+      "file": "gc2882-depth7-run/factor-1101000-discharged.lrat",
+      "sha256": "884c2f1f32dd3576844d9a61672cb48da0b4fb1eef4a6055b9686b00c73b642b"
+    },
+    "1101100": {
+      "file": "gc2882-depth7-run/factor-1101100-discharged.lrat",
+      "sha256": "7941f91a246d3bad4c76a4d42133fbe6b0845dafae0adff8d5bfb3b08cb99ce5"
+    },
+    "1110100": {
+      "file": "gc2882-depth7-run/factor-1110100-discharged.lrat",
+      "sha256": "b427ae5be05e405ac515fb112b61f125139b753f8a6caa2e9341f21b60e04724"
+    },
+    "1111011": {
+      "file": "gc2882-depth7-run/factor-1111011-discharged.lrat",
+      "sha256": "671db146aa9081611e83f54c7221e1c09690e2acfa14c5a37ed7633878bd5de4"
+    },
+    "1111101": {
+      "file": "gc2882-depth7-run/factor-1111101-discharged.lrat",
+      "sha256": "e6ed62b96a5acc033279fd4cd82b3c35eeddc9a908a4e36526e349d3d0052b61"
+    }
+  },
+  "final_splits": {
+    "file": "gc2888-final-splits/solve.json",
+    "sha256": "8b5d306216801669c244e7fe2de367b062cc1c4c76a774545db3449216e3a5e6"
+  },
+  "sibling": {
+    "file": "gc2888-final-splits/child-100000001-discharged.lrat",
+    "sha256": "8b3c176d66715ba00ce402f24cf0ef4ac29e89c7c7f72c95704536b649b1e21d"
+  },
+  "factors": {
+    "file": "gc2875-prefix-replay/factor-representatives.json",
+    "sha256": "449c38d0fad13b88a7ef6c86d3746021c215d7fcb8631afe1f1ae937a041eed7"
+  },
+  "tool_sha256": {
+    "/usr/local/bin/cadical": "7fd73a73259e5494f4e6d638192232e7768b1676f519e91c52c69e145af15a7a",
+    "/usr/local/bin/cake_lpr": "445c63926127267a4f0ae5c363b2bffcb004aece119ca50414e7bc22f8bdec23",
+    "/usr/local/bin/lrat-check": "87429b8c50afdba643e83ea6ab712d36f49d5e4f47f488bd5d9ebc332bd204f1"
+  }
+}
