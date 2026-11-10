@@ -237,4 +237,54 @@ sources before choosing another finite-cover representation. Do not infer that r
 ASCII volume is intrinsic mathematical hardness. No new proof job is frozen/running;
 S-23 actual returned public bytes take priority, K-10 remains the independent queue.
 
+## Native proof formats and controls-only freeze — GC2864/GC2866
+
+Read pinned primary sources, fetched over verified TLS:
+
+- [CaDiCaL3.0.1 encoder](https://github.com/arminbiere/cadical/blob/rel-3.0.1/src/lrattracer.cpp),
+  SHA256 `6b05cfe9597e6712f6d6933cbe09cf422e88e754164b346cf8563e1631805eb0`, and
+  [options](https://github.com/arminbiere/cadical/blob/rel-3.0.1/src/options.hpp)
+  `790edefb1046799635188c1b9877ecdbc01e221694200fcf20a3c31d74304353`.
+  Binary uses tagged additions/deletions, signed base128 varints for literals AND IDs,
+  and zero-terminated lists. Binary deletion records omit the text line's current-ID
+  prefix. No intrinsic dependency trimming is performed by this tracer.
+- [cake_lpr033aad53 documentation](https://github.com/tanyongkiam/cake_lpr/blob/033aad53d1733bd4b8ca41cf6f1b5fb5d84f8de2/README.md),
+  `3aa0d6c46b71b32698ae62e41db46fe7b0d7448cee8235c143fd89ccbafdfd14`, explicitly
+  supports binary input. Acceptance requires the actual VERIFIED UNSAT marker, not
+  just rc0: the tool can return0 on a rejected proof.
+- [lrat-check2e3b2dc0 parser](https://github.com/marijnheule/drat-trim/blob/2e3b2dc0ecf938addbd779d42877b6ed69d9a985/lrat-check.c),
+  `bf07c2ac96b9035da1ebcc578cb95e956a2b795629d613154cdb307f8a8f4a95`.
+  Actual `parseLine`/main use formatted text reads; the unused CLRAT constant is
+  not binary support. It can consume text on stdin; no large expanded proof file
+  is required in principle, but any future pipe would need BOTH processes counted.
+  A simpler route, if a finished binary proof fits, is to decode just the final
+  checked dependency cone to a bounded text file and check that separately.
+
+Record searched: existing record_find binary/LRAT/trim matches, prior ASCII proof
+scripts/TOOLS, GC2863 retained partial, current kit MovingStrip API. This is tool
+compatibility, not a novelty or target-certificate decision. Last GPT COMPLETE
+known_find remains21:53:40Z/kit03a19bf/44PRs at GC2860's exact hashes. L1656's Local
+refresh and GPT's direct later S23 public read are distinct evidence.
+
+Frozen `gpt_lrat_format_controls.py` and `gpt_lrat_format_plan.json` under
+`tests/probes/swarm/sw02/carry/`; source SHA256
+`92b08d0a72f83eb7b20c8bc4358ea6cfe26986a3029d886998b3da4f88db57e3`.
+Prediction: native PHP(5,4) binary proof accepted by cake, lossless roundtrip,
+decoded text accepted by both checkers; native binary rejected by lrat-check.
+Synthetic multibyte signed IDs/literals and deletion roundtrip; five malformed
+records reject, unit binary good accepted/corrupt/empty rejected. This is a test
+of bytes and semantics on known controls, no P13 solver call. Only after passing
+controls, convert the COMPLETE records of the retained16MiB partial ASCII trace
+and compare record digests. Predict binary ratio<0.65 (0.9 confidence); this does
+not bound the size of a finished proof or supply its empty clause. No target
+solve, enlarged budget, new geometry, P14/census or Lean build.
+
+One120aggregateCPU/300wall/768MiB/tree8/thread1/nice10,16MiB/file128MiB/stage,
+4096launch/1024running free floors,4096swap and all thermal/pressure/monitor guards.
+Same live/reaped/ancestor/monitor95inner/110outer guards and repaired hard-limit
+inheritance (worker12soft/120hard). Each native control<=2CPU/5wall, serial only;
+prefix input pinned by exact hash/bytes and <100000 complete records. All pinned
+source/helper and tool hashes checked. Any failed guard stops/preserves evidence.
+Freeze/ownership publication first; no run yet.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

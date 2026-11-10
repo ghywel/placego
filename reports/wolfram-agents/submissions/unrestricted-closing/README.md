@@ -2,7 +2,7 @@
 
 **POSTED, Lean Verified (L1656):** [R30-20261110-497a64](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-497a64), checked 2026-11-10 22:03:25Z with 82 constants, sixteen headlines and standard axioms. Kit PR [WolframInstitute/Rule30PrizeKit#278](https://github.com/WolframInstitute/Rule30PrizeKit/pull/278) from `05ba1a8`. Posted from nb2 (`7e6029bcd8fc33f8e6c1b8f694dcd2d8302a69f0281f837ac92ebf71ef9728b0`, 94,076 bytes, KernelChecked 82; evidence `cited/local/unrestricted-closing-nb2-20261110.tar.gz`, 29,890 bytes, SHA256 `fe227eb601068c28510cefa9b4b2c2a46d2553f928332ca78abd2a091b18f51a`, read back exact). The GC2860 abstract wrote the free words with three-dot ellipses, which the notebook converter rewrites, so the Abstract gate failed; the posted abstract (`abstract.txt`, 223 words) spells them as 10 repeated, 00 followed by 10 repeated, and 01 repeated, with the essay reassembled from it. nb1 is superseded.
 
-Before posting: **Complete source/actual-nb1 PASS GC2860; routine corrected-text nb2 gates next; not posted.** [Full review](../../../GPT-S23-RELEASE-REVIEW-20261110.md): all three carrying questions resolved. Proof/source/headlines/driver unchanged; title now accurately says eventually periodic, exact free words and guarded context sharpened. Local unchanged-driver nb2/original82constant16headline gates/immutable receipt, ONLY notebook+title+abstract+essay pins/current verifier dry/oldnb1 rejection complete conditional posting/PR clearance under standing consent.
+**Actual public bytes PASS GC2865.** [Public read](../../../GPT-S23-PUBLIC-READ-20261110.md): exact nb2/source/text/PR278 and original82/16 gates; all release conditions complete, maintainer merge only. Before posting: **complete source/actual-nb1 PASS GC2860.** [Full review](../../../GPT-S23-RELEASE-REVIEW-20261110.md): all three carrying questions resolved. Proof/source/headlines/driver unchanged; title now accurately says eventually periodic, exact free words and guarded context sharpened. Local unchanged-driver nb2/original82constant16headline gates/immutable receipt, ONLY notebook+title+abstract+essay pins/current verifier dry/oldnb1 rejection complete conditional posting/PR clearance under standing consent.
 - **Sources.** Built from LN-03.1 as Cloud computed and carried it (CL770 §11.3; [triage](../../../CLOUD-SW02-CARRY-TRIAGE-20261110.md) §9.1), and from GPT's comparison with open PR #52 ([GC2853](../../../GPT-K08-PR52-COMPARISON-20261110.md)), whose parity-translated mismatch Local carried (L1654).
 - **Who built it.** A Local sub-agent wrote the module under Local's brief. Local then rebuilt and checked it and read its statements. That is a self-check; GPT's read is the second read.
 
@@ -29,9 +29,9 @@ The exact mismatch set, the nine residues modulo 14 plus depth 2, is COMPUTED, n
 
 - **Texts:**
   - [`essay-prose.md`](essay-prose.md);
-  - [`essay.md`](essay.md) (`c0848717…`, corrected GC2860, from [`assemble_unrestricted_closing_essay.py`](../../../../tests/probes/wolfram/assemble_unrestricted_closing_essay.py));
+  - [`essay.md`](essay.md) (`d3ed6b95…`, final corrected text L1656, from [`assemble_unrestricted_closing_essay.py`](../../../../tests/probes/wolfram/assemble_unrestricted_closing_essay.py));
   - [`title.txt`](title.txt);
-  - [`abstract.txt`](abstract.txt) (217 words, no markdown markup);
+  - [`abstract.txt`](abstract.txt) (223 words, no markdown markup);
   - [`headlines.txt`](headlines.txt) (16);
   - [`PR-BODY.md`](PR-BODY.md).
 - **The worked numbers.** Python ([`unrestricted_closing_replay.py`](../../../../tests/probes/wolfram/unrestricted_closing_replay.py)) and Wolfram both give `{True, True, True, True, {"10101010", "00101010", "01010101"}, {0, 1, 3, 5, 6, 8, 9, 11, 12}, True}`, and the prediction held.
