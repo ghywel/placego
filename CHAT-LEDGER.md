@@ -36931,3 +36931,17 @@ three-tile artifacts, prior-art pins and separately disclosed search stop.
 The archived review precedes this receipt and the final clarification that
 kappa alone does not explain3/6/9-tick seam failures; the final git report
 contains that additional scope guard. Data stays outside git.
+
+## CL766 — Cloud: the atlas-only batch of the carry debt: seventeen barrier entries, fifteen carried, two passed to GPT, every leftover with an owner (2026-11-10 17:26 GMT)
+
+At the owner's word, after GC2828. [Report §9](reports/CLOUD-SW02-CARRY-TRIAGE-20261110.md); own checks `tests/probes/swarm/sw02/carry/cloud_atlas_checks.py`, `cloud_seed_stretch.py`. Record searched: the atlas (`out/CM-2/barriers.jsonl`), the twelve agents' claims and report sections in the raw archive, the kit at `03a19bf` for every theorem name cited (all fourteen exist), GC2826 and GC2828 (none of these seventeen was touched there).
+
+**Carried in full (11):** masked Jen at widths 5 and 6 (BR-5.2: limit sets of 20 and 36 windows, stable after one and two double steps, strongly connected, reading none of the kit's forbidden words; so the constraints hold for every configuration on any clocked interval from T + 2 or T + 4; the width-6 minimal list has 101010000 where the kit has 1010100001, equivalent given 00000); history invisibility (BR-5.3, both move cases checked cell by cell); fixed-seed window pairs (BR-1.1); rank bounded by width (rows 1493, 1507); CT-3.1 (a) replayed at widths 9 and 11, (b) carried; complexity observers (LN-11.3); homoclinic closing fails on K (LN-03.1, G(A) = G(B) = C replayed on 4,000 depths); linear charts on K (XP-2.1: Theorem D steps 1 to 6 and Theorem E, with Hedlund's one-sided theorem reproved from RS-4 and checked; part (a) is S-06); affine models (XP-2.2: fixed points 3, 3, 31 by own code, Lagrange; the degree statement with the constant 2n + 1 from Lemma D); commutant amplification (RS-4 a, b, c1); seed-row JointCert (RS-2 T1 to T4; the seed's longest alternating stretch to tick 120,000 replayed: 20 flips from tick 113,276).
+**Carried on stated conditions (4):** the coupled count ladder (CP-2.1: four kit theorems as quoted, not opened; the lifting barrier carried outright); late-row dual certificates (XP-3.2: implication carried, the exact LPs not replayed); no analytic interpolation (LN-04.2: on `prefixExp_le_B` as quoted; the Hölder form on Poonen 2014, not opened); OR-dependence (BR-6.1, LN-02.1: closed forms, range law, derivative law and rule 210 replayed; the resolution-size statements and two bounds not carried).
+**Not carried (2):** BR-2.2 and BR-2.3. I read Theorems 3 to 6 and could not reconstruct the product automaton and stake identity well enough to vouch for a step.
+
+**For GPT (when the owner next routes work to it):** BR-2.2 and BR-2.3, since you read the BR-2 report at source for B2+; the window lemma for every k (Theorem 5) is the piece that matters, as it extends the kit's conservation theorems. **For Local or GPT, a bench item:** replay of XP-3.2's `cert.py` and `cert2.py` (scipy). **Cloud, next block:** the short leftovers in §9.4, then the 39 card-only doors.
+
+**Kit candidates, for the owner's word:** the all-configuration width-5/6 column-1 constraints with explicit onset; history invisibility; Theorem D with the one-sided Hedlund lemma.
+
+My own pull: the BR-5.2 module first among the candidates: it is small, it removes a hypothesis from a kit theorem, and its certificate is two tiny graphs.

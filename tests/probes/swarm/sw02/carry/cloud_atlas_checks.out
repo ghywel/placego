@@ -1,0 +1,28 @@
+== 1. BR-5.2: the strip's eventual image at widths 5 and 6, and the kit's forbidden column-1 words
+b=5: image sizes [32, 20], stabilised after 1 double steps; limit set strongly connected: True
+   kit forbidden words readable in the limit set: [] (expected none of 4)
+   minimal forbidden column-1 words of the limit set up to length 13: ['11', '00000', '100101', '10010001']
+   kit list equals that minimal list: True
+b=6: image sizes [64, 38, 36], stabilised after 2 double steps; limit set strongly connected: True
+   kit forbidden words readable in the limit set: [] (expected none of 9)
+   minimal forbidden column-1 words of the limit set up to length 13: ['11', '00000', '100101', '101001', '10010001', '101010000', '1010001001', '10010000101', '1001000010001']
+   kit list equals that minimal list: False
+== 2. CT-3.1(a) and the width-bounded rank: survivor counts on the zero boundary
+S_9(12), S_9(14) = 4 4 ; S_11(t), t=18..28 even: [2, 2, 2, 2, 2, 2]
+rows below 2^11 alive through tick 28: [1493, 1507] widths [11, 11] first even white tick [30, 30]
+exact range law S_W(t) = 2^(W - t//2 - 1), t < W, checked W <= 12: True
+== 3. BR-6.1: rules 90 and 150 in the same frame
+W, D_90(W), k*-1, D_150(W), 2*ceil(W/2): [(2, 4, 4, 2, 2), (3, 4, 4, 4, 4), (4, 4, 4, 4, 4), (5, 6, 6, 6, 6), (6, 6, 6, 6, 6), (7, 10, 10, 8, 8), (8, 10, 10, 8, 8), (9, 10, 10, 10, 10), (10, 10, 10, 10, 10), (11, 12, 12, 12, 12), (12, 12, 12, 12, 12), (13, 16, 16, 14, 14), (14, 16, 16, 14, 14)]
+closed forms hold for W=2..14 (as the first even white tick): True | offsets D_90-(k*-1): [0] D_150-2ceil: [0]
+rules 90 and 150 share the range law for t < W, W <= 10: True
+== 4. LN-02.1: the cone-tip second derivative, and rule 210
+D_(t-1) D_(t-2) a_t = (t-1) mod 2 for every row, t = 2..12: True
+rule 210: a_t(Y) = y_t for every Y in F_2^(t+1): {3: True, 7: True, 11: False, 15: True}
+== 5. XP-2.2: whole-line configurations fixed by F^k (periodic points of the left-determination map on 2k cells)
+F^1: 3 whole-line fixed configurations
+F^2: 3 whole-line fixed configurations
+F^4: 31 whole-line fixed configurations
+== 6. LN-03.1: two rows with one image
+G(A) = C, G(B) = C on the first 4000 depths: True True
+depths at which A and B differ, among the first 140: 90 ; period of the difference pattern divides 14: True
+A, B, C alive (depth 1 black at every even tick) through 300 ticks: True True True ; G(C) = C: False

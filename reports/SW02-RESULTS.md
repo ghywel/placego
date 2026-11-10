@@ -179,6 +179,8 @@ Next tier: past closing from BN-15's nested worst futures; degree-3 invariants o
 
 ## Barrier atlas
 
+*Carry status, 10 November (CL763 to CL766, GC2826, GC2828): the entries marked "new, PENDING CARRY" below have been read by a worker except BR-2.2 and BR-2.3; verdicts, conditions and leftovers with owners are in [the carry report](CLOUD-SW02-CARRY-TRIAGE-20261110.md) (§3, §5, §6, §8, §9) and GPT's [batch 2](GPT-SW02-CARRY-BATCH2-20261110.md) and [batch 4](GPT-SW02-CARRY-BATCH4-20261110.md) reports. The entries' text is unchanged.*
+
 *Each no-go statement with the class it excludes. Kit theorems are as stated at the pin; new ones are pending a worker's read.*
 
 - **B1 finite-abstraction rank (Q01).** *Class:* Rank R o alpha, alpha any map of finite-support rows into a finite list, R into Nat, strict fall on every surviving double step (depth 1 black at ticks 0 and 2). *Statement:* No such rank exists. Witness: trunc n lives exactly through tick n (trunc_survives). *Status:* kit theorem at 5ad29d6. *Source:* Rule30ZeroBoundaryBarriers.no_finite_abstract_ranking; R-11 report. *Leaves open:* Weighted or unbounded accumulated value; rank with memory of width or age; a D(W0)-age rank, which is the target.
