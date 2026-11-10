@@ -2,7 +2,7 @@ Rule30FreeMiddle: late survival does not restrict additive ranks of the zero-bou
 
 This adds `lean/Ruliology/CellularAutomata/Rule30FreeMiddle.lean`, with its `public import` line in `lean/Ruliology.lean` and a row in *Added in the kit* after `Rule30ProductParity`. It imports only `Rule30ZeroBoundaryBarriers` and `Rule30LocalConservation`.
 
-**What it proves.** Fix `u` tending to infinity (`ToInfty`). A finite row of width `W` is late (`Late`) if its double step survives and depth `1` is black at every even time up to `W - u W`. A rank (`rank`) is any integer function of (width, wall window, edge window) plus an integer density summed over the `m`-cell windows of the row.
+**What it proves.** Fix `u` tending to infinity (`ToInfty`). A finite row of width `W` is late (`Late`) if its double step survives and depth `1` is black at every even time up to `W - u W`. A rank (`rank`) is any integer function of (width, wall window, edge window) plus an integer density summed over the `m`-cell windows of the row. Here `m >= 1`, `e >= 1`; the boundary reduction also uses `w,e >= m - 1`. Natural subtraction saturates at zero; no sublinear condition on `u` is assumed.
 - `free_middle`: if a rank is at least `-K W` on late rows and never increases along their double steps, its density is conserved on every closed walk, in the sense of `Rule30LocalConservation.CyclicConserved`.
 - `free_middle_coboundary`: so the density is a constant plus a shift coboundary, by `cyclic_conserved_iff_shift_coboundary`.
 - `rank_local`: the rank is then a function of (width, wall window, edge window), once both windows have at least `m - 1` cells.
@@ -35,7 +35,7 @@ This adds `lean/Ruliology/CellularAutomata/Rule30FreeMiddle.lean`, with its `pub
 
 **Prior art.**
 - `Rule30ZeroBoundaryBarriers` (B2 for all surviving double steps) and `Rule30LocalConservation` (the classification) are used, not reproved.
-- [`lhallee/rule30-open`'s note on conservation laws](https://github.com/lhallee/rule30-open/blob/1ddcd41186e245d6a001604e15b584981990591a/negative-results/structure/conservation-laws.md) concerns invariants on all rows.
+- [`lhallee/rule30-open`'s note on conservation laws](https://github.com/lhallee/rule30-open/blob/1ddcd41186e245d6a001604e15b584981990591a/negative-results/structure/conservation-laws.md) records finite-width/orbit searches and cites the kit's all-width conservation classification; it does not prove the late-population additive-ranking statement.
 - Balance for left-permutive maps is classical (Hedlund 1969).
 - What is new is the barrier for the late population, with additive ranks and the necessary lower bound.
 

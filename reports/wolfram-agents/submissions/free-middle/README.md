@@ -1,6 +1,8 @@
 # The free-middle theorem (queue row S-13)
 
-**RELEASE PACKET BUILT (L1621), not posted: GPT's Lean and release read requested.** Built under the owner's standing permission of 10 November (L1619) from XP-3.1 as GPT carried it in [GC2702 §2](../../../GPT-BLOCK6-CARRY-REVIEW-20261106.md#2-xp31-free-middle-survives-the-review), with its guards: integer densities, `u(W) → ∞`, the linear lower bound and fixed boundary windows. The B2+ claim stays out.
+**GC2805: complete Lean read PASS; corrected text ready, nb2 refresh required.** [Full review and routine release gates](../../../GPT-S13-RELEASE-REVIEW-20261110.md). The old nb1 and old pins below are historical and must not be posted. Conditional clearance completes when Local reruns Check at corrected comment bytes, builds/pins coherent nb2 and passes the reviewed dry-run gates; standing owner authorization then covers posting/PR without another consent round.
+
+**Historical L1621 packet:** Built under the owner's standing permission of 10 November (L1619) from XP-3.1 as GPT carried it in [GC2702 §2](../../../GPT-BLOCK6-CARRY-REVIEW-20261106.md#2-xp31-free-middle-survives-the-review), with its guards: integer densities, `u(W) → ∞`, the linear lower bound and fixed boundary windows. The B2+ claim stays out.
 
 ## What the module proves
 
@@ -16,10 +18,10 @@
 
 | Form | File | sha256 | Check |
 |---|---|---|---|
-| Portal | [`Rule30Submission.lean`](Rule30Submission.lean) (from the kit form by [`gen_free_middle_portal.py`](../../../../tests/probes/swarm/sw02/block11/gen_free_middle_portal.py)) | `2cbe3701b2f2a244…` | pass at the verifier's kit `5fb59158`: 129 declared, 405 constants replayed, 8 headlines, standard axioms, no new axioms; build plus Check 3.4 s, 0.97 GB ([receipt](check-5fb59158.json)) |
-| Kit | [`Rule30FreeMiddle.lean`](Rule30FreeMiddle.lean), 1,327 lines | `01a2bea3aad44ac4…` | pass at kit main `03a19bf`: 128 declared, 405 constants, 8 headlines; module build 2.0 s, Check 5.0 s, 0.97 GB ([receipt](check-kit-03a19bf.json)); kit branch `free-middle` local, not pushed; [`kit-integration.patch`](kit-integration.patch) (the import and the catalogue row; `PORTAL-ID` to fill) |
+| Portal | [`Rule30Submission.lean`](Rule30Submission.lean) (from the kit form by [`gen_free_middle_portal.py`](../../../../tests/probes/swarm/sw02/block11/gen_free_middle_portal.py)) | `fee006a2e070ae38…` (header-only correction; Check rerun pending) | historical pre-correction pass at the verifier's kit `5fb59158`: 129 declared, 405 constants replayed, 8 headlines, standard axioms, no new axioms; build plus Check 3.4 s, 0.97 GB ([receipt](check-5fb59158.json)) |
+| Kit | [`Rule30FreeMiddle.lean`](Rule30FreeMiddle.lean), 1,327 lines | `f092151067a727e0…` (header-only correction; Check rerun pending) | historical pre-correction pass at kit main `03a19bf`: 128 declared, 405 constants, 8 headlines; module build 2.0 s, Check 5.0 s, 0.97 GB ([receipt](check-kit-03a19bf.json)); kit branch `free-middle` local, not pushed; [`kit-integration.patch`](kit-integration.patch) (the import and the catalogue row; `PORTAL-ID` to fill) |
 
-**Mutants.** All eight must-fail mutants rejected ([output](../../../../tests/probes/swarm/sw02/block11/mutate_free_middle.out), [script](../../../../tests/probes/swarm/sw02/block11/mutate_free_middle.py)): a quadratic lower bound (false, by the popcount example), balance from `N ≥ m + 7`, an image count of 255, a whole-row horizon, an all-black prefix, a linear `W` in the counterexample (false, by `free_middle`), windows of `m - 2` cells, and B2 without `u → ∞`.
+**Mutants.** All eight proof/typing mutations were compiler-rejected; rejection alone does not refute every mutated mathematical statement. Local tested ([output](../../../../tests/probes/swarm/sw02/block11/mutate_free_middle.out), [script](../../../../tests/probes/swarm/sw02/block11/mutate_free_middle.py)): a quadratic lower bound (false, by the popcount example), balance from `N ≥ m + 7`, an image count of 255, a whole-row horizon, an all-black prefix, a linear `W` in the counterexample (false, by `free_middle`), windows of `m - 2` cells, and B2 without `u → ∞`.
 
 ## Prior art and scope
 
@@ -29,11 +31,13 @@
 
 ## Release artifacts (L1621)
 
+**Historical nb1; superseded by GC2805 text corrections.**
+
 - **Texts:**
   - [`essay-prose.md`](essay-prose.md);
-  - [`essay.md`](essay.md) (`19007d84…`), assembled by [`assemble_free_middle_essay.py`](../../../../tests/probes/wolfram/assemble_free_middle_essay.py) with the portal source embedded verbatim;
+  - [`essay.md`](essay.md) (`470c8e36…` after GC2805; oldnb1 used19007d84…), assembled by [`assemble_free_middle_essay.py`](../../../../tests/probes/wolfram/assemble_free_middle_essay.py) with the portal source embedded verbatim;
   - [`title.txt`](title.txt);
-  - [`abstract.txt`](abstract.txt) (201 words, one line);
+  - [`abstract.txt`](abstract.txt) (204 words after GC2805, one line; oldnb1 used201 words);
   - [`headlines.txt`](headlines.txt) (8);
   - [`PR-BODY.md`](PR-BODY.md).
 - **The worked numbers.** Python ([`free_middle_replay.py`](../../../../tests/probes/wolfram/free_middle_replay.py), with its prediction header) and Wolfram Language give the same list: `{{0, 4, 180, 214}, {0, 6, 375, 381}, {1, 1, 0, 0, 0, 0, 0, 1, 0}, 4, {10, 14, 18, 22, 26, 30, 34}}`.
@@ -46,4 +50,4 @@
   - RESULT OK in 20.3 s, 2.1 GB peak tree RSS.
   - Gates: 6 output cells and no message cells; the first cell equals the Python replay; the Abstract cell equals `abstract.txt`; the icon payload equals the portal source; the axiom sets match `Check`; KernelChecked at 405.
   - Evidence: `cited/local/free-middle-nb1-20261110.tar.gz`, 82,514 bytes, SHA256 `f57290fe7a18dd2e348d36ef898c7a5184ee4df6f4567a72dfd697b20b367f6a`, read back byte-exact.
-- **Post script.** [`post.sh`](post.sh) is S-16's reviewed wrapper with only the pins and the headline count (8) changed. The dry run passes: seven pins, verifier `5fb59158`, image 18.
+- **Post script (historical pins; intentionally stale).** [`post.sh`](post.sh) is S-16's reviewed wrapper with only the pins and the headline count (8) changed. The dry run passes: seven pins, verifier `5fb59158`, image 18.

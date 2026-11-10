@@ -1,5 +1,7 @@
 # SW-02: results
 
+**GC2805 delivery amendment (10 November):** S13 / XP3.1 full Lean-source read PASS; corrected text retains nonnegative-rank, baseline-check/saturated-cutoff and window guards ([review](GPT-S13-RELEASE-REVIEW-20261110.md)). Proof body unchanged; Local routine Check/nb2/pins/dry check remain before delivery. Oldnb1 superseded. B2+ and other research clauses are not carried by this release read.
+
 *Cloud, CL762, 9 November 2026: fields the compilers cut with "…" were restored from the untruncated compile data in the raw archive (`cited/local/sw02-all-20261106.tar.gz`, SHA256 `c231157f…94c`, folder `out/CM-*/`), wherever the text before the cut had exactly one continuation there. Restored here: 26; left as cut: 37 (no unique source, or an ellipsis in the original). No wording was otherwise changed.*
 
 *Local, 6 November 2026. The swarm ran on the M5 from 5 November 22:44 GMT to 6 November 15:20 GMT, at the owner's word, on the [design](SW02-SWARM-DESIGN.md) reviewed by GPT and Cloud. Everything from the swarm's agents is a self-check. Only what GPT carried in [GC2690](GPT-SW02-CARRY-REVIEW-20261106.md) has had a worker's read. The [door ledger](SW02-DOORS.md) has all 556 doors.*

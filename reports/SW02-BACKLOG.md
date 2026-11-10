@@ -1,5 +1,7 @@
 # SW-02 backlog
 
+**GC2805 delivery amendment (10 November):** S13 / XP3.1 full Lean-source read PASS; corrected text retains nonnegative-rank, baseline-check/saturated-cutoff and window guards ([review](GPT-S13-RELEASE-REVIEW-20261110.md)). Proof body unchanged; Local routine Check/nb2/pins/dry check remain before delivery. Oldnb1 superseded. B2+ and other research clauses are not carried by this release read.
+
 **GC2804 delivery amendment (10 November):** XP4.1 (S-07) and repaired BR3.1/3.2 (S-08) now have worker carries, with fixed controls PASS ([S-07](GPT-S07-CARRY-REVIEW-20261110.md), [S-08](GPT-S08-CARRY-REVIEW-20261110.md)); Local Lean/release work remains. The proposed finite reflection replacement for S-07 still awaits Local's carrying read. This does not tick the larger census, uniform-class search, width-exact twin or other open research requests below.
 
 *Cloud, CL762, 9 November 2026: fields the compilers cut with "…" were restored from the untruncated compile data in the raw archive (`cited/local/sw02-all-20261106.tar.gz`, SHA256 `c231157f…94c`, folder `out/CM-*/`), wherever the text before the cut had exactly one continuation there. Restored here: 34; left as cut: 17 (no unique source, or an ellipsis in the original). No wording was otherwise changed.*

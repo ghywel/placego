@@ -12,8 +12,8 @@ asks the same of a smaller population and a larger class of ranks.
 
 **The late population.** Fix `u : Nat → Nat` tending to infinity (`ToInfty u`). `Late u s W` holds
 for a finite row `s` of width `W` whose double step survives and which keeps depth `1` black at
-every even time up to `W - u W`. So the rows must survive almost to their own width, short of it
-only by the margin `u W`.
+every even time up to `W - u W`. The cutoff is natural subtraction, `max (W - u W) 0`; no sublinear-growth
+assumption on `u` is made, so the cutoff need not be asymptotic to `W`.
 
 **The ranks.** `rank w e m β h s W = β W (wallW w s) (edgeW e s W) + dens m h s W`: an arbitrary
 integer function of the width and the two boundary windows, plus an integer density `h` summed over

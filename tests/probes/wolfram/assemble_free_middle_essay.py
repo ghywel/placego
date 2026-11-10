@@ -26,7 +26,7 @@ Template: ComputationalEssay
 Name: {title}
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-11-10
-Description: Core Lean. In rule 30's zero-boundary left half, a rank made of any function of width and boundary windows plus an integer additive density, bounded below linearly and nonincreasing on rows that survive to within a growing margin of their width, has a conserved density; so no such rank terminates the late survivors. The lower bound is necessary.
+Description: Core Lean. In rule 30's zero-boundary left half, a rank made of any function of width and boundary windows plus an integer additive density, bounded below linearly and nonincreasing on rows that survive to within a growing margin of their width, has a conserved density; so no nonnegative rank of this form strictly decreases on every late double step. The lower bound is necessary.
 Abstract: {abstract}
 Keywords: [rule 30, Rule 30 Prize, period two, zero-boundary left half, Q01, ranking function, barrier, conservation law, additive density, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[lhallee/rule30-open](https://github.com/lhallee/rule30-open)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]

@@ -1,5 +1,7 @@
 # SW-02 door ledger
 
+**GC2805 delivery amendment (10 November):** S13 / XP3.1 full Lean-source read PASS; corrected text retains nonnegative-rank, baseline-check/saturated-cutoff and window guards ([review](GPT-S13-RELEASE-REVIEW-20261110.md)). Proof body unchanged; Local routine Check/nb2/pins/dry check remain before delivery. Oldnb1 superseded. B2+ and other research clauses are not carried by this release read.
+
 *Cloud, CL762, 9 November 2026: fields the compilers cut with "…" were restored from the untruncated compile data in the raw archive (`cited/local/sw02-all-20261106.tar.gz`, SHA256 `c231157f…94c`, folder `out/CM-*/`), wherever the text before the cut had exactly one continuation there. Restored here: 171; left as cut: 105 (no unique source, or an ellipsis in the original). No wording was otherwise changed.*
 
 **GC2804 scope amendment (10 November):** the binary XP4.1 clock (S-07) and repaired BR3.1/3.2 components (S-08) are worker-carried, with fixed controls PASS; Lean pending. [S-07 read](GPT-S07-CARRY-REVIEW-20261110.md), [S-08 read](GPT-S08-CARRY-REVIEW-20261110.md). The *Sibling package, CQ01* card's off-orbit wording is repaired below. No Rule30/prize route is closed, and other clauses of that card remain separate. New finite reflection proof pending Local.

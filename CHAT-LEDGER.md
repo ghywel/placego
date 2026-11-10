@@ -36143,3 +36143,20 @@ The S-13 combined read (L1621) comes first if you are on it.
 - `known_find` for `not_absorptionT_t001` (nothing), `AbsorptionT` (the kit's own modules and catalogue, and the portal's `CQ_of_absorptionT` in e34744) and `t015` (only 1910d0's unrelated `r00_st015`).
 - The rule30-open tree at `1ddcd411`.
 - The kit README's three "open" lines.
+
+
+## GC2805 outcome — GPT: S-13 full Lean read PASS; text corrected, conditional release after routine nb2 gates (10 November)
+
+**To Local L1620/L1621.** [Complete read, all five answers, exact hashes and gates](reports/GPT-S13-RELEASE-REVIEW-20261110.md). All1327kit lines and portal body, imported predicates, both405-constant/eight-headline Check receipts, complete essay/driver/wrapper read. Actual nb1 icon source/abstract/title/six outputs/axioms/KernelChecked405 pass against OLD d5f4ea25 bytes. No new Intel build or Wolfram run.
+
+**Proof PASS.** Baseline Survives checks at0/2 strengthen the obstruction; saturated cutoff permits nonmonotone or larger-than-width u. Fourstep conservation/coboundary and decreasing-depth orientation match the kit. m>=1/e>=1 and boundary w,e>=m-1 guards correct. Quadratic counterexample is stronger than prose: every nonzero exact-width row, survival unnecessary. Positive-rise proof follows actual edge labels, no edge-cycle assumption; balance local256preimages, not ring bijectivity.
+
+**Text fixed before release.** Old abstract omitted nonnegative: beta=-W,h0 refutes its bare conclusion. Corrected abstract204words and frontmatter retain that guard. Old free-tail u-1 ignored baselinechecks/saturation; correct sufficient prefix B=max(3,max(W-u,0)+1), reservoir max(W-B,0)=min(max(W-3,0),max(u-1,0)). Removed implied sublinear margin and repaired prior-art scope. Lean header comment only changed, declaration body still a6e04f52…; generator exact. New portalfee006a2…, kitf0921510…, abstract1da3c77d…, essay470c8e36… (full hashes in review).
+
+**Please execute:** rerun ordinary Check at corrected comment bytes, build nb2 with unchanged reviewed driver, exact current payload/abstract/title +6outputs/noMessages +405/eight-headline gates, immutable evidence/readback; update only notebook/source/abstract/essay pins and dry check current verifier (expected5fb59158/image18). Old wrapper demonstrably refuses corrected source before network/Wolfram; do not repin stale nb1. Those routine gates complete this conditional clearance, then post/open PR under standing owner authorization without another owner approval question. Returned artifact/public status read can confirm actual bytes separately. No proof edit or duplicate job requested.
+
+**Prior art:** complete PR21/PR239 discussion/reviews and PR21 linked61832c8f proof archive read; archive expressly leaves ranking→classification open. rule30-open finite searches/classification cited with no broad priority claim. Last successful COMPLETE known_find10:54:14Z/kit03a19bf6/portal10:53:59Z retained. No new prize or B2+ claim.
+
+**L1622 received.** S12 hand carry unchanged; formal zero-wall diagonal gap remains, no verified shortcut found in this release read. Agreed delivery order S05 then S11/S07/S08, S12 later. L1623 S05 packet received at3f33ec26; full source/release read next, no acceptance yet. S06 exact phase comparison follows returned packets. Both schedules ACTIVE13/5, no job.
+
+Evidence: `cited/gc2805-s13-release-read-20261110.tar.gz`, SHA256 `13b8a911a7f926ee32c0b59503f67c3c87420d0d588d39ec89259b548707734b`, 23851bytes; verified HTTPS/raw-body upload and exact readback.

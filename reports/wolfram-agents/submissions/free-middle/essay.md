@@ -3,8 +3,8 @@ Template: ComputationalEssay
 Name: The Free-Middle Theorem: Late Survival Does Not Restrict Additive Ranks of Rule 30's Zero-Boundary Left Half
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-11-10
-Description: Core Lean. In rule 30's zero-boundary left half, a rank made of any function of width and boundary windows plus an integer additive density, bounded below linearly and nonincreasing on rows that survive to within a growing margin of their width, has a conserved density; so no such rank terminates the late survivors. The lower bound is necessary.
-Abstract: In core Lean 4.35.0 we prove a strengthened ranking barrier for the zero-boundary left half of rule 30, where the kit poses its period-2 question Q01. Fix a margin u(W) tending to infinity, and call a finite row of width W late if its double step survives and column -1 stays black at every even time up to W - u(W). Consider ranks made of an arbitrary integer function of the width and two boundary windows plus an integer density summed over the m-cell windows of the row. If such a rank is at least -KW on late rows and never increases along their double steps, the density is conserved on every closed walk, hence a constant plus a shift coboundary, and the rank depends only on the width and the boundary windows. So no rank of this form strictly decreases along every late double step, extending the kit's barrier B2 to the late population and to additive ranks. The proof plants a periodic word in the free middle of a row behind a stripe prefix and uses the balance of the four-step image. Popcount minus W^2 shows that the lower bound is needed. Nothing here decides Q01 or Problem 1.
+Description: Core Lean. In rule 30's zero-boundary left half, a rank made of any function of width and boundary windows plus an integer additive density, bounded below linearly and nonincreasing on rows that survive to within a growing margin of their width, has a conserved density; so no nonnegative rank of this form strictly decreases on every late double step. The lower bound is necessary.
+Abstract: In core Lean 4.35.0 we prove a strengthened ranking barrier for the zero-boundary left half of rule 30. Fix a margin u(W) tending to infinity. A finite row of width W is late if it passes the checks at times 0 and 2 and every even check through max(W - u(W), 0). Consider a rank consisting of an arbitrary integer function of the width and two fixed boundary windows plus an integer density on m-cell windows. Here m and the edge-window width are positive; for the boundary reduction, both windows have at least m - 1 cells. If the rank is at least -KW on late rows and never increases along their double steps, the density is conserved on every closed walk, hence a constant plus a shift coboundary, and the rank depends only on the width and boundary windows. Consequently no nonnegative rank of this form strictly decreases along every late double step. The proof plants a periodic word behind a stripe prefix and uses balance of the four-step image. The available middle grows with both width and margin; no sublinear assumption on u is needed. Popcount minus W^2 shows why the linear lower bound matters. Nothing here decides Q01 or Problem 1.
 Keywords: [rule 30, Rule 30 Prize, period two, zero-boundary left half, Q01, ranking function, barrier, conservation law, additive density, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[lhallee/rule30-open](https://github.com/lhallee/rule30-open)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]
 Links: ["[Rule 30 Prizes](https://rule30prize.org/)", "[rule30-open: Rule 30 has no additive conservation law](https://github.com/lhallee/rule30-open/blob/1ddcd41186e245d6a001604e15b584981990591a/negative-results/structure/conservation-laws.md)"]
@@ -12,9 +12,9 @@ Links: ["[Rule 30 Prizes](https://rule30prize.org/)", "[rule30-open: Rule 30 has
 
 ## 1. The statement
 
-The kit's `Q01` is the period-2 form of Problem 1 in the zero-boundary left half. It says that every finite start eventually turns column `-1` white at an even time. A termination proof would be a rank: a natural number attached to each row that strictly decreases along every surviving double step. The kit's barrier `Rule30ZeroBoundaryBarriers.no_local_ranking` (B2) shows that no function of the width, a wall window of `w` cells and an edge window of `e` cells can be such a rank. This module strengthens B2 in two directions at once. The rank may contain an additive density, and it need only decrease on rows that survive almost to their own width.
+The kit's `Q01` is the period-2 form of Problem 1 in the zero-boundary left half. It says that every finite start eventually turns column `-1` white at an even time. A termination proof would be a rank: a natural number attached to each row that strictly decreases along every surviving double step. The kit's barrier `Rule30ZeroBoundaryBarriers.no_local_ranking` (B2) shows that no function of the width, a wall window of `w` cells and an edge window of `e` cells can be such a rank. This module strengthens B2 in two directions at once. The rank may contain an additive density, and it need only decrease on rows passing a width-dependent cutoff, with a margin tending to infinity.
 
-Fix `u : Nat → Nat` with `u(W) → ∞`. A row of width `W` is *late* (`Late u s W`) if its double step survives and depth `1` is black at every even time up to `W - u(W)`. A *rank* is `β(W, wall window, edge window) + Σ h(window)`, where the sum runs over the `m`-cell windows of the row and `β` and `h` are arbitrary integer functions.
+Fix `u : Nat → Nat` with `u(W) → ∞`. A row of width `W` is *late* (`Late u s W`) if its double step survives and depth `1` is black at every even time up to `W - u(W)`. A *rank* is `β(W, wall window, edge window) + Σ h(window)`, where the sum runs over the `m`-cell windows of the row and `β` and `h` are arbitrary integer functions. Here `m ≥ 1` and `e ≥ 1`. The boundary reduction and additive-ranking obstruction use `w, e ≥ m - 1`; fixed shorter windows can be enlarged while ignoring the extra cells.
 
 - `free_middle`: suppose the rank is at least `-K W` on late rows and never increases along their double steps. Then `h` is conserved on every closed walk of overlapping windows, in the sense of the kit's `Rule30LocalConservation.CyclicConserved`. By the kit's `cyclic_conserved_iff_shift_coboundary`, `h` is a constant plus a shift coboundary (`free_middle_coboundary`).
 - `rank_local`: once both windows have at least `m - 1` cells, such a rank is a function of (width, wall window, edge window) alone.
@@ -26,7 +26,7 @@ Survival short of the whole row therefore puts no constraint on additive potenti
 
 ## 2. Why the middle is free
 
-Survival through time `T` reads only the depths `1, …, T + 1` of the start, because that is where the light cone of depth `1` at time `T` ends. A late row of width `W` therefore constrains only its first `W - u(W) + 1` depths. The remaining `u(W) - 1` depths are free, and `u(W)` grows.
+Survival through time `T` reads only the depths `1, …, T + 1` of the start, because that is where the light cone of depth `1` at time `T` ends. The two baseline checks at times `0` and `2` are required as well. Thus all the check conditions of a late row lie inside the prefix of length `B(W) = max(3, max(W - u(W), 0) + 1)`. The number of depths beyond that sufficient prefix is `max(W - B(W), 0) = min(max(W - 3, 0), max(u(W) - 1, 0))`. It tends to infinity with `W`, even when `u(W)` exceeds `W`. Exact width fixes the top cell, and the boundary labels and interfaces use a fixed further number of cells; the remaining middle still grows without bound.
 
 The proof plants a cyclic word `d` in that free part. Its row (`mkRow`) has three parts:
 - the stripe `…10101` on the first `D` depths;
@@ -53,7 +53,7 @@ For the restricted B2 (`no_local_ranking_late`), the kit's own proof works after
 ## 4. Scope
 
 - **Densities.** The densities are integer-valued; rational densities reduce to integer ones by clearing denominators.
-- **The margin.** `u` must tend to infinity. A bounded margin, where survival reaches the whole row, is not covered; there the middle is no longer free.
+- **The margin.** `u` must tend to infinity. A bounded margin is not covered: it leaves only a bounded reservoir by this construction. The case `u = 0` requires checks through the whole width. No claim about the bounded-margin case follows from this theorem.
 - **Which rows.** As in the kit's barriers, the late population includes rows that are not the left half of rule 30 under an alternating centre.
 - **Not claimed.** Nothing here bears on nonlinear or nonlocal rankings, decides `Q01`, or proves Problem 1.
 
@@ -81,7 +81,7 @@ changes = Table[With[{s = row[12, mu, best]}, Total[Rest[Nest[zstep, s, 4]]] - T
 ## 6. Prior art and scope
 
 - **The kit.** The kit's B2 (`Rule30ZeroBoundaryBarriers.no_local_ranking`) and its classification of conserved densities (`Rule30LocalConservation`) are used, not reproved. The latter cites T. Hattori and S. Takesue, Physica D 49 (1991), 295–322. The balance of left-permutive maps is classical (G. A. Hedlund, Math. Systems Theory 3 (1969), 320–375).
-- **rule30-open.** [`lhallee/rule30-open`'s note on conservation laws](https://github.com/lhallee/rule30-open/blob/1ddcd41186e245d6a001604e15b584981990591a/negative-results/structure/conservation-laws.md) finds no additive conservation law on the single cell's orbit or on block counts. Like the kit's barriers, it concerns all rows or all surviving double steps. We found no earlier statement for a late population or for additive ranks.
+- **rule30-open.** [`lhallee/rule30-open`'s note on conservation laws](https://github.com/lhallee/rule30-open/blob/1ddcd41186e245d6a001604e15b584981990591a/negative-results/structure/conservation-laws.md) finds no additive conservation law on the single cell's orbit or on block counts. Its orbit and finite-width searches remain computations; it also cites the kit's all-width classification of conserved densities. Neither those searches nor that classification supplies a nonincrease-to-conservation argument on the late population. We retain the late-population additive-rank theorem as the additional formal statement, without a broader priority claim.
 - **Where it came from.** The statement and a first proof came from a sub-agent run of our programme. GPT carried it, with repairs to the balance step, to the restriction to the late population and to the role of the lower bound.
 
 What is new here, in Lean, is the barrier for the late population, with additive densities and its necessary lower bound. Nothing here proves `Q01` or Problem 1.
@@ -109,8 +109,8 @@ asks the same of a smaller population and a larger class of ranks.
 
 **The late population.** Fix `u : Nat → Nat` tending to infinity (`ToInfty u`). `Late u s W` holds
 for a finite row `s` of width `W` whose double step survives and which keeps depth `1` black at
-every even time up to `W - u W`. So the rows must survive almost to their own width, short of it
-only by the margin `u W`.
+every even time up to `W - u W`. The cutoff is natural subtraction, `max (W - u W) 0`; no sublinear-growth
+assumption on `u` is made, so the cutoff need not be asymptotic to `W`.
 
 **The ranks.** `rank w e m β h s W = β W (wallW w s) (edgeW e s W) + dens m h s W`: an arbitrary
 integer function of the width and the two boundary windows, plus an integer density `h` summed over

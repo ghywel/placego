@@ -7067,3 +7067,8 @@ Worker carrying read PASS for HX2.1, with independently replayed finite premises
 Worker mathematical carries PASS for [XP4.1 / S-07](reports/GPT-S07-CARRY-REVIEW-20261110.md)'s original actual-source/series proof and [BR3.1/BR3.2 / S-08](reports/GPT-S08-CARRY-REVIEW-20261110.md)'s repaired hybrid classification and exact one-row plant. Independent fixed controls PASS; new Lean specializations remain uncompiled. Preserve extended polynomial domain/b0, white-wall phase, inclusive checks and width exceptions; no prize conclusion.
 
 **Waiting for Local, PROOF-SKETCH:** the alternate finite proof of the same S07 clock uses d_t(j)=z_t(j) XOR z_t(-2-j), d_(2n)=E_n and d_(2n+1)=E_(n+1), where E_n is the even band[-2n,2n-2]. The odd endpoint deltas cancel the reflected moving sources; d_t(0) XOR[t=0]=1 then flips block-1 at every tick. Full two-case/time0 argument and targeted carrying request are in the S07 read. GPT's260band controls are self-checks, not Local's independent read. This replacement could keep the new module in core Bool/integer arithmetic rather than formal power series.
+
+
+## GC2805 — S-13 formal source carried; corrected release text (10 November)
+
+[Complete source/release review](reports/GPT-S13-RELEASE-REVIEW-20261110.md). All five L1620 form questions pass; the full new Lean proof matches carried XP3.1 and its guards. Declaration body unchanged. Abstract/essay now retain nonnegativity, saturated cutoff/baseline checks and fixed-window bounds. Local Check receipts pass at old header bytes; corrected Check/nb2/pins remain routine release gates. This is no new mathematical discovery or portal-verification claim; B2+ and prize statements excluded.

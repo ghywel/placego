@@ -7,10 +7,11 @@ Local reports its 15-minute heartbeat and 60-second flag waiter armed. Research 
 
 | Work now | Owner | Exact next step |
 |---|---|---|
-| S-13, then S-12 | Local builds; GPT release reader | S-13 Lean forms/Check reported by Local L1620; GPT exact source read now (GC2805), Local essay/notebook/release assembly next. S-12 follows with finite-row/phase guards. B2+/near-squares excluded. |
-| S-11, S-07 and S-08 | Worker carries complete; Local builds | S-11 GC2803; S-07 and S-08 GC2804 carried with exact scope/repairs, finite controls PASS. Local builds after S-13/S-12. S-07 finite reflection replacement awaits Local carrying read; original series proof already carried. |
+| S-13 | Local refreshes/posts; GPT release reader | Complete Lean read PASS GC2805; corrected text ready. Local Check rerun, nb2 and four coherent changed pins/dry check complete conditional clearance. Old nb1 superseded; no duplicate post. |
+| S-11, S-07 and S-08 | Worker carries complete; Local builds | S-11 GC2803; S-07 and S-08 GC2804 carried with exact scope/repairs, finite controls PASS. Local builds after S-05 (L1622). S-07 finite reflection replacement awaits Local carrying read; original series proof already carried. |
 | S-06 and S-09 | GPT prior-art comparison | GPT next: match exact clock phases with Berzai (S-06), then exact hypotheses/conclusions with ColumnTransfer (S-09). Returned release packets take priority. |
-| S-05 | Local builds/posts; GPT release reader | Submit the known nonabsorption result with explicit rule30-open credit, after source/current-verifier checks. |
+| S-05, then S-11/S-07/S-08 | Local builds/posts; GPT release reader | Submit the known nonabsorption result with explicit rule30-open credit, after source/current-verifier checks. |
+| S-12 | Local, later in queue | Hand carry stands; Local L1622 identifies missing zero-wall diagonal formalization. No verified shortcut yet; near-square side claim excluded. |
 | S-16 | Delivery complete; Local handles PR follow-up | Nb2/public notebook and source exact, GPT GC2802; portal Lean Verified, PR248 open. No rebuild or duplicate post. |
 
 *Started 6 November 2026 by Local at the owner's request: "a clear schedule of work in a light summary document we can refer back to, to shift the backlog here and make sure results are not forgotten." This page is the current warm-lead document and the short record of firmly closed doors. It is meant to stay short. The detail is in [SW02-RESULTS.md](reports/SW02-RESULTS.md) (answers, barriers, predictions), [SW02-DOORS.md](reports/SW02-DOORS.md) (all 556 doors), the [submission queue](reports/wolfram-agents/DELIVERY-QUEUE.md#sw-02-submission-queue-6-november-2026) and the [backlog](reports/SW02-BACKLOG.md).*
@@ -26,8 +27,8 @@ Local reports its 15-minute heartbeat and 60-second flag waiter armed. Research 
 | Order | Row | Content | Swarm source | What is done | What is left |
 |---:|---|---|---|---|---|
 | 1 | S-16 | Width-18 trap language, 3535353 | CP-2.2 | **Posted, Lean Verified** ([R30-20261109-89b242](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261109-89b242), L1618–L1619); kit PR #248 open; nb2/public byte read PASS GC2802 | Merge of #248 (maintainers); no release gate remains |
-| 2 | S-13 | Free-middle theorem (survival does not restrict additive potentials) | XP-3.1 | Carried two-party GC2702; **Local Lean/Check complete L1620, GPT exact read active GC2805** | Five Lean-form choices, then essay/notebook/release; B2+ stays out (unread) |
-| 3 | S-12 | Complexity rung p(n) − n → ∞ for free words of finite rows | CP-3.2 | Carried two-party GC2702 with guards | Lean module, essay; near-square claim stays out |
+| 2 | S-13 | Free-middle theorem (survival does not restrict additive potentials) | XP-3.1 | Carried GC2702; **complete Lean read PASS GC2805**, text corrected; oldnb1 read against old bytes | Local routine Check/nb2/coherent pins/dry check complete conditional clearance; B2+ stays out |
+| 3 | S-12 | Complexity rung p(n) − n → ∞ for free words of finite rows | CP-3.2 | Carried two-party GC2702 with guards; L1622 moves build later | Zero-wall diagonal theory then module/essay; near-square claim stays out |
 | 4 | S-11 | The cut ether is off the seed's edge cycle (HX-2.1) | HX-2 | Worker carry PASS GC2803 with flush/depth guards; all finite premises independently replayed | Local small core module using finite-cycle certificates; exact depth8/phase16 and sharp flush13; no equivalents dependency needed |
 | 5 | S-07 | Radius-2 left-permutive family with an exactly alternating column | XP-4.1 | Worker carry PASS GC2804; original binary clock proof/finite controls pass; alphabet4 precedent GC1165 credited | Local small module; finite reflection proof pending Local, no PowerSeries dependency inherently needed |
 | 6 | S-08 | Planted survivors: linear hybrid; finite-state map with Rule 30's table plus one | BR-3.1, BR-3.2 | Worker carry PASS GC2804 for both repaired components; fixed controls pass | Local module(s): extended polynomial domain/b0 term, exact table swap, width/locality guards; release checks pending |
