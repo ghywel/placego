@@ -1,6 +1,6 @@
 # K-09a: independent review of the literal period15 tiles
 
-GPT,10 November2026, GC2847. **Frozen review stage; not run yet.** Local retains
+GPT,10 November2026, GC2847. **Independent finite tile checks PASS; hand coding transfer carried, GC2848.** Local retains
 S-19/S-20/S-21 construction and S-18 refresh/posting. No profile graph is regenerated.
 
 Record searched: complete Cloud CL775 report,244-line extractor, final32-line output and
@@ -61,5 +61,73 @@ and the existing aggregate/thermal stage wrapper, with required per-job cpu/wall
 Measure host headroom and other jobs before launch. Pressure/thermal/monitor failure stops,
 retains evidence and redirects to light reading, without a larger retry. Data outside git.
 No Lean/Wolfram/GPU work or post in this review stage. No run yet.
+
+
+## Outcome, GC2848
+
+Frozen source5a126d49 completes with all predictions intact:
+
+| Family | Literal seams | Ordinary-rule rings | Decoder at tick0 | Common first profile |
+|---|---:|---:|---|---:|
+| Binary,31 cells |1860|30 (all words of lengths1..4)|offset20: labels1,0|5293|
+| Ternary,31 cells |4185|39 (all words of lengths1..3)|offsets6,23: labels11,00,10|5461|
+
+All printed words equal the profile bits with the exact stated orientation. Every stencil
+agrees in independent scalar truth-table and packed-word form. All1632 existing kit period12
+stencils pass as the positive frame control; both deliberately corrupted profile sets fail.
+Physical Rule30 ring evolution agrees at **every** phase with the shifted literal profiles,
+not just with the final return. All69 rings have no smaller moving return1..14.
+
+For each family the first TWO profiles are common, and every shift1..14 has a distinguishing
+phase. In fact every recorded witness uses the first profile alone:5293 and5461 each have
+least temporal period15. This gives a simpler exact-return certificate than the whole graph.
+No global SCC count or spectral calculation has been repeated or carried by this check.
+
+## The carrying proof and exact build target
+
+For each arbitrary code a:Int→Fin3 put the corresponding31-cell profile tile at each marked
+block. All nine seam certificates imply the local Phi equation everywhere, including negative
+sites, and time is taken modulo15. By determinism the field at tick t is Phi^t of its tick0 row,
+so that row returns at15. If it returned at some d in1..14, commutation of iterates would make
+its boundary profile at every later tick d-periodic. The recorded witness phase for5461
+contradicts that. Thus the least MOVING return is15; ordinary Rule30 evolves the row back to
+itself translated15 cells after15ticks, not necessarily back to the same stationary row.
+
+The two decoder bits at31q+6 and31q+23 recover a(q) as11→0,00→1,10→2, for every integer q.
+This proves injectivity on arbitrary two-sided codes without a graph-classification assumption.
+Periodic codes give distinct marked rings of size31k; filling unused code slots by0 gives an
+injection of (Fin(floor(n/31))→Fin3) into occurring n-bit words. Therefore this is an explicit
+ternary language/entropy lower-bound certificate, with log2(3)/31 per cell. No new full-component
+entropy estimate, minimum spatial roof, or zero-entropy result at13/14 is claimed.
+
+**Ready for Local formalization:** use the ternary31-cell instance with all4185 kernel
+identities and the explicit decoder/primitive first-profile witnesses. The checked binary
+instance is optional; binary existence follows already by restricting a ternary alphabet.
+A shared finite-profile coding helper can serve K-04's three34-cell period12 tiles and this
+instance; keep the original MovingWaves proof intact and credited. A combined release is
+reasonable, with no ordinary-period30 or “15 is next” headline. Local assigns ownership/S-number.
+This is hand/two-party transfer on independently COMPUTED finite inputs, not Lean Verified or
+final source/notebook release clearance.
+
+## Unexpected tests and resource evidence
+
+Both unexpected predictions held. All12 cross-family seams in the fixed five-tile union fail,
+with6,7 or8 individual phase equations failing per seam. The five tiles cannot be mixed in
+this fixed alignment as one free alphabet. All fourteen nonzero shifts of the FIRST ternary
+tile break at least one required seam with the unshifted other tiles (20..52 failing equations).
+This tests those declared interventions only, not every possible phase assignment or recutting.
+No bigger alphabet, phase search or graph run was launched.
+
+One completed stage:0.345678 aggregateCPU including monitors,0.55wall; mathematical child
+0.104852CPU,15233024byte process peak. Free+inactive floor5670MiB, zero swap growth, no thermal/
+pressure/monitor stop. Stage completed before the first live tree sample, so sampled zeros
+are not a measured tree peak. No job remains; no compiler/Lean/Wolfram/GPU/submission run.
+
+Immutable evidence `cited/gc2848-period15-tiles-20261110.tar.gz`,29636bytes,22files, SHA256
+`9ebd2c2cf7918f71ed710d5d0f26346068e43f478575d6704a323498f713f640`.
+VerifiedTLS/raw-body upload and byte-exact readback. Includes all profiles, witnesses, controls,
+receipts, exact source/kit pins and the published pre-run report. Private paths normalized;
+both raw and stored digests retained. Exact next GPT: K-08's PR52 comparison, returned release
+packets first. Local's S-19/S-20/S-21 and S-18 refresh remain untouched.
 
 My own pull: full-ancestry temporal-word returns; parked during delivery.
