@@ -1,0 +1,11 @@
+Rule30Submission.cycle9
+Rule30Submission.cycle13
+Rule30Submission.off9_closed
+Rule30Submission.cut_code_prefix
+Rule30Submission.c7cut_depth
+Rule30Submission.c7cut_frozen
+Rule30Submission.c7cut_off_seed
+Rule30Submission.c7cut_not_seed_row
+Rule30Submission.seed_no_flush_ether
+Rule30Submission.seed_flush_ether_sharp
+Rule30Submission.seed_offset_ether_204

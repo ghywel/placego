@@ -1,0 +1,7 @@
+E1 REJECTED first error at line 140 : Tactic `decide` proved that the proposition
+E2 REJECTED first error at line 204 : Tactic `rewrite` failed: Did not find an occurrence of the pattern
+E3 REJECTED first error at line 306 : Application type mismatch: The argument
+E4 REJECTED first error at line 145 : (kernel) application type mismatch
+E5 REJECTED first error at line 333 : Tactic `rewrite` failed: Did not find an occurrence of the pattern
+E6 REJECTED first error at line 322 : Type mismatch
+ALL REJECTED

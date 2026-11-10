@@ -1,4 +1,4 @@
-Rule30EtherThreeNotAbsorption: AbsorptionT t001 is false, after lhallee/rule30-open (PORTAL-ID)
+Rule30EtherThreeNotAbsorption: AbsorptionT t001 is false, after lhallee/rule30-open (R30-20261110-2eb8e7)
 
 This adds `lean/Ruliology/CellularAutomata/Rule30EtherThreeNotAbsorption.lean`, with its `public import` line in `lean/Ruliology.lean` and a row in *Added in the kit*. It imports only `Rule30EtherThreeTrap`. It also corrects three status lines of `lean/README.md` that call `AbsorptionT t001` open: the period-3 line of the status table and the `Rule30EtherThreeTrap` and `Rule30EtherThreeErosion` rows. The corresponding stale header comments in `Rule30EtherThreeTrap` and `Rule30EtherThreeErosion` are corrected too; their declarations are unchanged.
 
@@ -22,6 +22,6 @@ This adds `lean/Ruliology/CellularAutomata/Rule30EtherThreeNotAbsorption.lean`, 
 
 **What it does not do.** It does not decide whether the center column can be eventually `001`. `Q001`, `C3s001` and `C3w(011)` stay open.
 
-Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
+Portal entry: [R30-20261110-2eb8e7](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-2eb8e7).
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)

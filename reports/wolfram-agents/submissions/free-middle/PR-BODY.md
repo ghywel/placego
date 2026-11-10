@@ -1,4 +1,4 @@
-Rule30FreeMiddle: late survival does not restrict additive ranks of the zero-boundary left half (PORTAL-ID)
+Rule30FreeMiddle: late survival does not restrict additive ranks of the zero-boundary left half (R30-20261110-a6ada9)
 
 This adds `lean/Ruliology/CellularAutomata/Rule30FreeMiddle.lean`, with its `public import` line in `lean/Ruliology.lean` and a row in *Added in the kit* after `Rule30ProductParity`. It imports only `Rule30ZeroBoundaryBarriers` and `Rule30LocalConservation`.
 
@@ -41,6 +41,6 @@ This adds `lean/Ruliology/CellularAutomata/Rule30FreeMiddle.lean`, with its `pub
 
 **What it does not do.** Integer densities only. Bounded margins `u` are not covered. Nothing here decides `Q01` or Problem 1.
 
-Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
+Portal entry: [R30-20261110-a6ada9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-a6ada9).
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
