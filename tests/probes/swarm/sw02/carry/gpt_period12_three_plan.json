@@ -1,0 +1,24 @@
+{
+  "worker_stop": 10,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_period12_three_tiles.py": "b0f3a3ff85849b35b21a83ac369147587a8da49709059370ea89a1188169090b",
+    "/private/tmp/gc2829-period12-run/period12-graph.json": "1359b0b3d6f25fdbd90ba208ed533b841a3bf5668be7e4a02fdf0ce4063f0956",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
+    "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df"
+  },
+  "jobs": [
+    {
+      "name": "three-tiles",
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_period12_three_tiles.py"
+      ],
+      "cpu": 5,
+      "wall": 20,
+      "required_stdout_lines": [
+        "PERIOD12_THREE_TILES_PASS"
+      ]
+    }
+  ]
+}

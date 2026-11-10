@@ -114,3 +114,257 @@ Second stage aggregate stop55CPU,180wall,768MiBtreeRSS,max6processes,
 the block's128MiB data budget; combined nominal aggregate stops25+55=80CPU
 remain below120. Same launch/running/swap/thermal/tree guards, sequential only.
 No failure or resource cap is being retried or enlarged.
+
+## What the small graph actually explains
+
+The second pilot COMPLETED. An independent scalar C++ checker verifies all552
+nodes/576edges by testing every possible12-bit integral, rather than using
+the extractor's prefix-XOR formula. Existential pruning leaves exactly the180
+vertices of the six30-state components after6rounds; no infinite continuation
+from the generated family can leave its component. A corrupted edge is
+rejected. All106primitive event words of lengths1..6 pass both the literal
+least-spatial-period check and the predicted ordinary-time period.
+
+The common-parity test has rank24: **no nonzero F2-linear parity of the two
+complete12-tick profiles is constant on each of the six components**. Adding
+a constant gives only the globally constant affine parities. This is a
+finite24-variable statement, not a ban on nonlinear phase labels or on
+observations involving more spatial cells. It sharpens the initial pull:
+the relevant object is a retained phase/return state, rather than one
+ordinary parity bit of the observed pair.
+
+### A two-state return machine
+
+Use increasing depth, i.e. move left along spatial sites. The certified cyclic
+component has exactly two vertices with two continuing children:
+
+* U=(1323,2868);
+* V=(2772,3372).
+
+Every other continuing vertex has one child. The next branch is reached by
+exactly the following four paths:
+
+```mermaid
+stateDiagram-v2
+    U --> U: 0 / 14 cells
+    U --> V: 1 / 10 cells
+    V --> V: 0 / 14 cells
+    V --> U: 1 / 10 cells
+```
+
+The paths have shared final segments; they are not four disjoint corridors.
+For example the30-state count is not14+14+10+10 minus two endpoints. The
+return coding records a path between successive branches and so preserves
+this overlap, its position, and the incoming branch. Collapsing U and V would
+lose the state needed to decide whether a finite spatial return has closed.
+
+**Hand consequence, PROOF-SKETCH on the finite certificate.** Every bi-infinite
+binary event sequence beta has a realization after choosing one branch at
+one marked boundary. Event0 costs14cells and preserves that branch; event1
+costs10cells and toggles it. Conversely every bi-infinite path in this component
+hits branch vertices infinitely in both directions and has this description.
+Otherwise a cycle avoiding all branches would be a separate closed component,
+contrary to the checked strong connectivity and unique outgoing edge there.
+The bounded return paths give the inverse description.
+
+This explains the known component entropy without a floating eigensolver.
+The weighted two-branch return matrix is
+
+`[[z^14,z^10],[z^10,z^14]]`.
+
+Its positive growth root satisfies rho^-14+rho^-10=1. Squaring the equivalent
+1-z^14=z^10 gives the recorded polynomial
+rho^28-2rho^14-rho^8+1=0. This is **known, rederived here** from the return
+paths. It is not a new full-core classification or entropy theorem for dyadic
+periods.
+
+### A three-valued temporal phase, and a separate branch bit
+
+Let R rotate every12-bit temporal profile by one tick. On components,
+R acts as a6-cycle C0,C1,...,C5. On a fixed component R^6 is an involution J
+with no fixed pair; in particular J(U)=V and J(V)=U. Applying J to a first
+return preserves the event0/1 and exchanges the endpoint branch labels.
+This follows from the explicit paths and temporal rotation commuting with
+the local equation.
+
+For a whole-line configuration whose profiles lie in one of these components,
+define kappa=i modulo3 when its pair belongs to Ci. The finite certificate's
+pruning ensures that all continuing neighboring pairs have the same i.
+Hence, for the spatial shift sigma and moving time tau=sigma F,
+
+`kappa(sigma x)=kappa(x)`, and `kappa(tau x)=kappa(x)+1 mod3`.
+
+This is a finite **nonlinear** phase recognizer on this specific family.
+It reads two complete temporal profiles, not two cells of one row. On the
+period12 family those profiles are determined by a finite initial-row window,
+so the label is continuous there. The rank24 result says that a linear parity
+of this particular24-bit observation cannot replace it.
+
+Any equality tau^n x=sigma^s x in this family therefore needs3|n; the full
+six-component label strengthens this to6|n. No dyadic time return, even
+with a compensating spatial translation, can occur **inside this family**.
+That conclusion is about the certified components, not about all Rule30
+configurations of power-of-two temporal period.
+
+The unexpected seam test is now explained: independently choosing temporal
+phases0/4/8 on adjacent tiles attempts to change kappa across their junction.
+All24 unequal-phase choices for the four spatial-bit pairs break both seam
+column equations. The48same-phase choices among the full576tests pass;
+all528unequal-phase choices fail. The binary spatial symbol is free, whereas
+the temporal phase is shared by the whole connected path.
+
+### Exact ordinary Rule30 periods from the return state
+
+This is a new hand derivation to be carried by another worker. It concerns
+only periodic paths in this certified component (and its temporal images).
+
+Let beta be a primitive periodic event word, m its length and r its number
+of1events. Put L=14m-4r. A spatial period maps a branch vertex to a branch
+vertex, hence shifts beta by a multiple of m events. Each such shift changes
+the branch by r modulo2. Thus the **least spatial period** is L if r is even,
+and2L if r is odd. This uses branch recognizability; it is not a word count.
+
+Moving time tau^6 acts as J: it keeps the event sequence and flips the branch.
+If r is even, J is not a spatial shift of this path. Any such shift would
+move beta by a multiple of m while preserving the branch, a contradiction.
+For ordinary time F=sigma^-1 tau to return,6|n first; writing n=6q, q must
+then be even, and the spatial shift n must be divisible by L. Therefore
+
+`period_F = lcm(12,L)` when r is even.
+
+If r is odd, a displacement of L cells implements J; displacements plus/minus L
+are identical modulo the spatial period2L. Thus F^(6q) returns precisely when
+`(L+6)q=0 mod2L`. Its least period is
+
+`period_F = 12L / gcd(2L,L+6)` when r is odd.
+
+All106primitive words of lengths1..6 were checked against independent
+ordinary-row evolution; none returned before its predicted period. The four
+old examples are now consequences:
+
+|Event word|L|Least spatial period|Ordinary F period|
+|---|---:|---:|---:|
+|0|14|14|84|
+|1|10|20|30|
+|011|34|34|204|
+|0011|48|48|48|
+
+These are the two14-cycles, the cross/cross20-cycle, and their composites up
+to marked origin/time phase. The original A/B values84,30,204,48 are not new
+measurements; the state-preserving formula is the explanatory step.
+
+As a corollary, the minimum ordinary F period within these six components is30.
+For m>=3, L>=10m>=30 and the displayed period is at least L. The only smaller
+primitive event lengths give84(m=1,r=0),30(m=1,r=1) and48(m=2,r=1).
+An F-periodic configuration here must be spatially periodic, since tau^12=id
+implies sigma^(12n)x=x whenever F^n x=x. Thus no aperiodic event sequence is
+an unexamined exception to this minimum. This is not the global minimum
+ordinary period for Rule30 (white, for instance, is fixed).
+
+### Why34 is natural; a third same-length code word
+
+**PROOF-SKETCH, no further computation launched.** A return to U requires an
+even number of cross events. Before length34 the only nonempty return words
+are0(length14),11(length20), and00(length28), each unique at its own length.
+At length34 there are exactly three:
+
+`011`, `101`, `110`.
+
+They are U-self/cross/cross, U-cross/V-self/cross, and cross/cross/U-self.
+All start and end at the same actual pair U, so arbitrary concatenations
+of all three give valid period12 profile fields. Distinct profile paths give
+distinct34-bit initial tiles: otherwise replace one tile in a fixed common
+two-sided continuation. The entire initial row would be unchanged but its
+future profile field would differ, contradicting deterministic evolution.
+Consequently two initial-cell positions suffice to decode the three symbols.
+
+Thus the existing two-symbol34-cell construction has an explicit three-symbol
+return-code extension, with spatial entropy at least log2(3)/34 bits per cell.
+This is weaker than the known full component entropy, and is a corollary of
+the same known graph mechanism, not a new positive-entropy discovery. No
+literal third-tile list or Lean module is claimed exported. The exact minimum34
+here is for multiple equal-length return paths at U, not every possible
+coding/attachment in the whole automaton. It explains why concatenating a
+14return and20return is a convenient equal-roof code.
+
+### Third fixed check, frozen before export
+
+The third-word deduction warrants one literal finite artifact check, not a
+larger search: concatenate the already saved return paths011/101/110, reverse
+their leftward profiles, and check all9seams/34sites/12ticks,3672equations.
+Prediction: all pass; the original kit two tiles are two of these three;
+three distinct34-bit initial words admit a two-position decoder. A one-bit
+temporal-profile mutation must fail. Counterfactual: any bad seam/duplicate
+word refuses the ternary code, with no longer tile search.
+
+**Control audit:** the first extractor checked seams and reused the kit's
+known interior certificate; it did not independently re-execute all1632local
+equations, despite the broader positive-control wording in the initial plan.
+This final tiny check completes that intended control explicitly, using the
+rule-number truth table. No claim of an earlier full1632replay is made.
+
+Sources: [literal three-tile check](../tests/probes/swarm/sw02/carry/gpt_period12_three_tiles.py)
+and [third fixed plan](../tests/probes/swarm/sw02/carry/gpt_period12_three_plan.json).
+10aggregateCPU stop,30wall,768MiBtreeRSS,max4processes,16MiB/file,
+126MiBoutput (the completed first two directories total<2MiB), same free/swap/
+thermal/tree guards. Combined *mathematical check* stop budgets25+55+10=90CPU
+remain below120. The unrelated slow record search described below is charged
+separately and is not hidden in this figure. No failed research job is retried.
+
+## The algebraic separation and its limits
+
+Write S for temporal shift and work over F2 on12-periodic temporal words.
+The cyclic module decomposes because
+
+`S^12-1=(S+1)^4 (S^2+S+1)^4`.
+
+The projector E=1+S^4+S^8 has image the4-periodic words; Q=1+E=S^4+S^8
+is the complementary odd-factor sector. Direct identities are E^2=E,
+Q^2=Q and EQ=0. On Q's image, temporal difference Delta=1+S is invertible,
+with inverse S^4+S^5+S^6+S^7. This follows from
+
+`(1+S)(S^4+S^5+S^6+S^7)=S^4+S^8=Q`.
+
+On E's image Delta is nilpotent of index4. For purely dyadic cap2^k the whole
+cyclic module is the nilpotent sector, since S^(2^k)-1=(S+1)^(2^k).
+These are standard characteristic-two/CRT facts, not Rule30-specific results.
+
+The nonlinear gate couples the sectors. At each of the four time residues
+modulo4, encode the three bits x0,x1,x2 at offsets0/4/8 as
+
+`d=x0+x1+x2 in F2`, `z=x0+omega*x1+omega^2*x2 in F4`,
+
+where omega^2+omega+1=0. They invert as
+x_j=d+Tr(omega^(-j)z). For two triples(d,z),(e,w), OR has coordinates
+
+`(d+e+de+Tr(z*w^2), (1+e)z+(1+d)w+(zw)^2)`.
+
+Expanding the traces proves this; all64triple pairs passed an independent
+literal truth-table check. The odd sector cannot simply be discarded as
+another linear observable: it interacts quadratically with itself and the
+dyadic part.
+
+**The edge exclusion is already known (G157/Jen–Rowland/Nersissian).**
+If the two driving profiles are4-periodic, the next profile w has
+Delta w4-periodic. Hence w(t+4)+w(t) is a constant epsilon. Repeating this
+three times in a12-periodic word gives0=3epsilon=epsilon, so w is4-periodic.
+The odd factor cannot be generated from a4-periodic pair. More generally,
+binary-tree automorphisms have only power-of-two cycles on each finite level;
+a finite orbit of period12 in the rooted2-adic system is already4-periodic.
+The whole-line period12 phase must therefore come from its infinite spatial
+history, rather than a finite black-edge entrance. This is the prior-art
+domain distinction made concrete, not a new light-speed recurrence proof.
+
+**A useful countercontrol to overgeneralization:** on the very same
+positive-entropy family, the time map tau^3 has exact order4. It remains a
+left-permutative cellular automaton, now a three-tick/radius6 rule. Thus
+dyadic time order plus left-permutativity alone cannot forbid spatial
+branching. The one-tick elementary OR law must enter any proposed theorem
+about Rule30's dyadic components. Return topology without the temporal
+generator is insufficient.
+
+What remains open is sharper than the initial vague parity question: does
+the **one-tick** Rule30 profile graph have a branching component at a dyadic
+period beyond16? This block neither computes that graph nor supplies its
+exclusion. Its exact phase/return code and failed linear-parity route give a
+test object and a countercontrol for a proposed proof.
