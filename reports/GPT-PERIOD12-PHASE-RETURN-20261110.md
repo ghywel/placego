@@ -368,3 +368,35 @@ the **one-tick** Rule30 profile graph have a branching component at a dyadic
 period beyond16? This block neither computes that graph nor supplies its
 exclusion. Its exact phase/return code and failed linear-parity route give a
 test object and a countercontrol for a proposed proof.
+
+## Following the warmer question: a quadratic phase recognizer?
+
+The three-tile check passes3672equations; original kit1632control now also
+passes in full. Mutation breaks6equations. Initial words are distinct, decoded
+by offsets20,23 as01,00,10. The original binary tiles are words011 and110;
+101 is the third. This is a finite artifact, not a new Lean submission.
+
+The rank24 result redirects from a linear parity to a **covariant quadratic**
+observable on the same fixed pair space. Freeze one final tiny question:
+for every orbit of a degree1/2 monomial under temporal rotation R, use the
+F4 orbit sum B(v)=sum_t omega^(-t)m(R^t v), retaining orbits of length divisible
+by3. There are26such orbit sums. They satisfy B(Rv)=omega B(v) as polynomial
+identities. Does a linear combination over F4 equal1 on C0, and hence
+omega^i on Ci? Prediction: yes; tentative stronger prediction, at most4orbit
+sums suffice. Failure settles this basis only; no degree3 extension today.
+
+Countercontrols: evaluate the result on all180component vertices and256fixed
+arbitrary pair rotations. Then test256fixed random pairs' legal integration
+edges: prediction, it is **not** a global invariant on that unrestricted
+population. Also report behavior on all576generated edges, without inferring
+infinite-continuation guards from a passing sample. If no quadratic solution
+exists, preserve the inconsistent system instead. This is a30x26F4system
+on the existing certificate, not another core/period census.
+
+[Fixed phase-question source](../tests/probes/swarm/sw02/carry/gpt_period12_quadratic_phase.py)
+and [plan](../tests/probes/swarm/sw02/carry/gpt_period12_quadratic_plan.json):
+10aggregateCPU stop,30wall,768MiBtreeRSS,max4processes,16MiB/file,125MiBoutput
+with previous three directories<3MiB; same free/swap/thermal/tree guards.
+Total nominal mathematical check stops25+55+10+10=100CPU remain below120.
+The stopped record-search CPU is separately disclosed; it is not a successful
+capped run or a reason to enlarge this final test. Sources/plan published first.

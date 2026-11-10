@@ -1,0 +1,25 @@
+{
+  "worker_stop": 10,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_period12_quadratic_phase.py": "ba0ea8ab5cf97d7cd7cee6f24b2389ab9c598ad1d789261d8d28fcb9eb200739",
+    "tests/probes/swarm/sw02/carry/gpt_period12_return.py": "fd2041d0d2be2da99d45258fb4b330ff740bbfc6c93bd234acf075bfd4ebca32",
+    "/private/tmp/gc2829-period12-run/period12-graph.json": "1359b0b3d6f25fdbd90ba208ed533b841a3bf5668be7e4a02fdf0ce4063f0956",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
+    "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df"
+  },
+  "jobs": [
+    {
+      "name": "quadratic",
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_period12_quadratic_phase.py"
+      ],
+      "cpu": 5,
+      "wall": 20,
+      "required_stdout_lines": [
+        "PERIOD12_QUADRATIC_QUESTION_SETTLED"
+      ]
+    }
+  ]
+}
