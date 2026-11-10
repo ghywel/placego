@@ -48,3 +48,23 @@ Executable: `tests/probes/swarm/sw02/carry/gpt_batch2_checks.py --raw-root RAW
 --kit-root KIT`, with the verified outside-git raw extraction and current kit.
 Only this fixed run is authorized by this freeze. Hand review continues separately.
 Frozen runner SHA256: `f2f1af074d7caafdcefd6410eec2f17ea959c7c177d68558f3418392efc17398`.
+
+### Additional fixed witness validation, frozen after the topology issue was found
+
+The first run completed PASS,15.189060 aggregate CPU seconds. The deadline card's
+closed-family argument is false: InFamily is a union of cylinders. A finite
+eight-tick discrepancy from every ether column repairs the argument. To validate
+its exact input independently, one additional fixed certificate search/check is
+frozen here: starting temporal-column pair(136,14), period8, at most512 pairs;
+find one spatial lasso, then check every edge with an independent scalar Rule30
+equation. This is one existing witness, no classification or period enlargement.
+Prediction: a lasso exists, column1 has least temporal period8; the seven ether
+columns pass and a one-cell mutation of the returned lasso fails. Counterfactual:
+no lasso within512 pairs leaves the deadline conclusion conditional, with no retry.
+
+Second run ceiling5 aggregate CPU/30wall/128MiB RSS/tree2processes/1thread/nice10,
+1MiB per file/4MiB disk; same4096MiB launch/1024MiB running/4096MiB swap-growth
+guards. Stop on pressure, thermal or monitor failure. Combined charged CPU will
+be at most20.189060 seconds, within the original120-second pilot allowance.
+Source `tests/probes/swarm/sw02/carry/gpt_deadline_witness.py`; its pre-run commit
+freezes the complete source. The first run and its evidence are not repeated.
