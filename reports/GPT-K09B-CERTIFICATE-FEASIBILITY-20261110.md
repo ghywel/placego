@@ -1007,4 +1007,38 @@ stage, one thread at nice 10, at most eight processes, 16 MiB/file and
 and 4096 MiB swap-growth stop. Same inner aggregate, 260-second worker
 wall, 12-second worker own-CPU, thermal, pressure and monitor stops.
 
+
+## Guided stop and reversed-column control
+
+The length-seven lemmas did not produce a proof within 3000 conflicts.
+GC2889 completed with UNKNOWN in 1.925323 aggregate CPU seconds and 2.19
+wall seconds. The proof expansion did not run. Evidence
+`cited/gpt/return13-lemma-guided-20261110.tar.gz`, 151,408 bytes,
+SHA256 `b02ca5aec9a6b670e9af4a853f22ccd4e81702e1fbe11cb30f63401b61169eb5`,
+verified TLS raw-body readback. Receipt SHA256
+`bbfdec1f117a51628e68f2b5483df4aea34205562a40ec9996516a9d8f7b01f3`.
+
+GC2890 tests sensitivity to variable order on the exact last branch.
+Reverse the 65 column IDs within each of the 14 time layers, keeping
+literal sign and clause order. The map is an involution. Preflight checks
+both CNF directions, byte-exact recovery of the old child and a signed
+LRAT round trip on the saved sibling. One query at the original 3000
+conflicts, without the guided clauses. If it yields UNSAT, verify the
+raw proof, compact its positive cone, invert the literal permutation
+and run both native checkers on the byte-identical original child CNF.
+Discharge and join with the exact saved sibling, then run both original
+parent checks and verify every required shift. Predict UNSAT and exact
+support for the joined parent. Retain UNKNOWN or any failure. No increase
+of the conflict or host caps is part of this stage.
+
+Record searched: GC2888 original capped branch and saved sibling,
+GC2889 guided cap and boundary control, GC2876 exact shift rule.
+Source SHA256 `4ce3d5b1bd77a2716f027c9c68165269a9b0e4fe4a73460a75d47461c40dba00`,
+plan SHA256 `2f0f10501b927da6b04f8bb8cb2eeac2498b01d4e864002d2903c116984490b8`.
+One 120 aggregate CPU second, 300 wall second, 768 MiB process-tree stage,
+one thread at nice 10, at most eight processes, 16 MiB/file and 128 MiB
+output. Launch/running memory 4096/1024 MiB and swap-growth stop 4096 MiB.
+Same inner aggregate, own-CPU, worker wall, pressure, thermal and monitor
+stops. Full P13 coverage remains open until its composition is checked.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

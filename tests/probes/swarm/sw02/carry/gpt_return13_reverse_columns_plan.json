@@ -1,0 +1,73 @@
+{
+  "worker_stop": 110,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_return13_binary_cert.py": "652b6bd02784000929ebf083eec881430bfe04b3f1eecc0a2822a494c5fd4e2f",
+    "tests/probes/swarm/sw02/carry/gpt_lrat_format_controls.py": "92b08d0a72f83eb7b20c8bc4358ea6cfe26986a3029d886998b3da4f88db57e3",
+    "tests/probes/swarm/sw02/carry/gpt_return13_lrat.py": "467bed29611c6dd4b8c251a8a890d5d5d6621a512c7ff8e05e77aa14fd3fb332",
+    "tests/probes/ether_gap_solve.py": "11e02a0327a1527d08e2d61e53c500409ce38d705c5fc299a1ab32c53f724a2d",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
+    "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_control.py": "79ab88c7f843a0a9fe8fab1f23d3330a44720fe9b5d0487d9d171494249b85fa",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_leaves.py": "7169eb470f2f4ba5c66a0db7c6a8ca5d2f83efe5afe07fc718dbf2a20f954b4b",
+    "tests/probes/swarm/sw02/carry/gpt_return13_factor_split.py": "a30e7bf78e72da903e34414a187426f931ddf7c7a5f9f83bfc4917db89bdf669",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_replay.py": "2172dbe0f5cfa1d1a2d7c7a6bd9d4e0136cac77c107af5dd0112c1d865400297",
+    "tests/probes/swarm/sw02/carry/gpt_return13_final_splits.py": "2d8b442944a564b116df0ba7d8a9745ee6d78000552ffcc76a008ccbb0176ba9",
+    "tests/probes/swarm/sw02/carry/gpt_return13_reverse_columns.py": "4ce3d5b1bd77a2716f027c9c68165269a9b0e4fe4a73460a75d47461c40dba00"
+  },
+  "original_cnf_sha256": "badadbb38e00fb0c01991563f3fb6664ed2b78c9ab7254a36fa1bd818313fcd0",
+  "prediction": {
+    "query": "reverse column IDs with identical clauses and 3000 conflicts; expect an UNSAT proof",
+    "restoration": "inverse cone passes both checkers against byte-identical original child, joined parent supports all nine shifts",
+    "controls": "involution and exact restored formula"
+  },
+  "counterfactual": "UNKNOWN is retained. Any checker, scope, pressure or SAT result stops the stage. No conflict cap increase.",
+  "limits": {
+    "aggregate_cpu_s": 120,
+    "wall_s": 300,
+    "tree_rss_mib": 768,
+    "max_procs": 8,
+    "file_mib": 16,
+    "disk_mib": 128,
+    "launch_free_mib": 4096,
+    "min_free_mib": 1024,
+    "swap_growth_mib": 4096,
+    "threads": 1,
+    "nice": 10,
+    "inner_aggregate_stop_cpu_s": 95,
+    "worker_soft_cpu_s": 12,
+    "worker_hard_cpu_s": 120
+  },
+  "jobs": [
+    {
+      "name": "reverse-columns",
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_return13_reverse_columns.py",
+        "tests/probes/swarm/sw02/carry/gpt_return13_reverse_columns_plan.json"
+      ],
+      "cpu": 120,
+      "wall": 260,
+      "required_stdout_lines": [
+        "RETURN13_REVERSE_COLUMNS_RECORDED"
+      ]
+    }
+  ],
+  "sibling": {
+    "file": "gc2888-final-splits/child-100000001-discharged.lrat",
+    "sha256": "8b3c176d66715ba00ce402f24cf0ef4ac29e89c7c7f72c95704536b649b1e21d"
+  },
+  "tool_sha256": {
+    "/usr/local/bin/cadical": "7fd73a73259e5494f4e6d638192232e7768b1676f519e91c52c69e145af15a7a",
+    "/usr/local/bin/cake_lpr": "445c63926127267a4f0ae5c363b2bffcb004aece119ca50414e7bc22f8bdec23",
+    "/usr/local/bin/lrat-check": "87429b8c50afdba643e83ea6ab712d36f49d5e4f47f488bd5d9ebc332bd204f1"
+  },
+  "guided_receipt": {
+    "file": "gc2889-implied-retry/solve.json",
+    "sha256": "bbfdec1f117a51628e68f2b5483df4aea34205562a40ec9996516a9d8f7b01f3"
+  },
+  "original_child": {
+    "file": "gc2888-final-splits/child-100000000.cnf",
+    "sha256": "f40a8e80bc2c9ffb0e0eeabfd1e0f449548688a5c62a7166ef7384919a9a7525"
+  }
+}

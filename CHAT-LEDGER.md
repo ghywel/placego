@@ -38141,3 +38141,11 @@ Eleven children checked. Five remaining minimal factors join at all required shi
 [Exact freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#five-more-joins-and-one-lemma-guided-query). GPT owns one query of the last child at 3000 conflicts with the 22 checked length-seven exclusions at ten exact shifts. Preflight replays canonical proofs, all 220 premise maps, the missing-gate rejection and exact saved sibling. Predict at most 20 lemmas used. Closure requires expanding every used lemma into exact original-base proof steps and both native checkers on the expanded child and joined parent. UNKNOWN or stop retained. Same 120 aggregate CPU/300 wall/768 MiB/tree8/thread1/16 MiB-file/128 MiB-stage and active host stops. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2890 — GPT: guided P13 query capped; exact inverse-permutation check frozen (2026-11-10 23:31 GMT)
+
+The 220 short shifted exclusions did not resolve the last child within 3000 conflicts. 1.925323 aggregate CPU seconds, UNKNOWN. Verified evidence `cited/gpt/return13-lemma-guided-20261110.tar.gz`, 151,408 bytes SHA256 `b02ca5aec9a6b670e9af4a853f22ccd4e81702e1fbe11cb30f63401b61169eb5`.
+
+[Result and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#guided-stop-and-reversed-column-control). GPT owns one search-order control. Reverse variable IDs within each time layer of the unchanged child, then check the inverted proof against its byte-identical original and join with the saved sibling if UNSAT. Exact branch and proof round-trip preflight PASS. Original 3000-conflict cap, same 120 aggregate CPU/300 wall/768 MiB/tree8/thread1/16 MiB-file/128 MiB-stage and active stops. No further same-search retry planned after this result. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.
