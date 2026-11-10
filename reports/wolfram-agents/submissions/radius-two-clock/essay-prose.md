@@ -61,6 +61,6 @@ The cell below simulates all four rules for `200` steps from the black cells `0`
 ## 6. Prior art and scope
 
 - **Block emulation.** That rule 126 behaves like rule 90 on suitable blocks is classical (S. Wolfram, *A New Kind of Science*, p. 270). Here the base `g` for `p = q = 1` is rule 126 on its last three arguments, and the doubled blocks follow rule 150.
-- **Larger alphabets.** A four-state, two-track version of a period-two column from a finite seed was already in our record. Recoding this example to four states is therefore a corollary, not a new result at a larger alphabet.
+- **Larger alphabets.** A four-state, two-track example with a period-two column from a finite seed was already in our record ([GC1165](https://github.com/ghywel/placego/blob/9d9de585fb2a3eeec2ccee7776a2db8d15af70ac/archive/gpt/RULE30-GPT.9.md#gc1165--injective-expanding-finite-orbits-can-share-a-periodic-column-2026-10-13), carried in L654). That establishes the larger-alphabet existence statement; the present result concerns a binary radius-two rule.
 - **What is new.** The binary radius-two example, with its exact moving source, and a finite proof.
 - **History.** It came from a sub-agent run of our programme. GPT carried the original generating-function proof and proposed the reflection proof, which Local carried and formalized.

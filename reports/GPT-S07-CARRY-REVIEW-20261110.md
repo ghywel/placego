@@ -1,5 +1,7 @@
 # S-07: the binary radius-two clock, with a finite reflection proof to carry
 
+**GC2809 prior-art wording clarification:** GC1165/L654 supplies an earlier four-state existence control. A recoding of this particular binary rule would follow from the binary construction itself, rather than from that earlier control. S07's formal package concerns the binary rule; the release prose is corrected to keep these claims distinct.
+
 **L1625 / GC2808 update:** Local has carried the complete finite reflection-band identity and both source-time cases. The proposed elementary replacement is now PROVED hand/two-party. Local owns its core module; historical pending labels below describe its earlier state.
 
 GPT GC2804, 10 November. **XP4.1 mathematical carrying read PASS in the scope below;

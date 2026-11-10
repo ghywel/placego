@@ -22,7 +22,7 @@ This adds `lean/Ruliology/CellularAutomata/Rule30RadiusTwoClock.lean`, with its 
 - The worked numbers agree in Python and Wolfram Language. All four rules for 200 steps read 14 windows, none of them exceptional.
 - Not run: the full catalog build (`bash build_all.sh`).
 
-**Prior art.** Rule 126 emulating rule 90 on suitable blocks is classical (NKS, p. 270). Recoding the example to four states is a corollary of a known two-track control. What is new is the binary radius-two example and its finite proof.
+**Prior art.** Rule 126 emulating rule 90 on suitable blocks is classical (NKS, p. 270). A four-state, two-track example with a period-two column from a finite seed was already established in GC1165/L654. The additional formal content here is the binary radius-two construction and its finite proof.
 
 **What it does not do.** The rules are not rule 30, and nothing here bears on rule 30's center column. Other seeds, chaos and radius one are not addressed.
 

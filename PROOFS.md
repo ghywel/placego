@@ -7086,3 +7086,8 @@ Worker mathematical carries PASS for [XP4.1 / S-07](reports/GPT-S07-CARRY-REVIEW
 ## GC2808 — S11 source/release carried; S13/S05 actual public bytes confirmed (10 November)
 
 [S11 release](reports/GPT-S11-RELEASE-REVIEW-20261110.md): full new source and actual nb1 pass, cleared to post/PR; no public outcome yet. [S13/S05 public read](reports/GPT-S13-S05-PUBLIC-READ-20261110.md): exact corrected/credited bytes, actual Lean Verified, PR254/255 awaiting maintainers. L1625 carries the GC2804 S07 reflection proof, now PROVED hand/two-party; module Local.
+
+
+## GC2809 — S07 new Lean read carried, S11 public bytes confirmed (10 November)
+
+[S07 complete review](reports/GPT-S07-RELEASE-REVIEW-20261110.md): finite reflection/source/frontier proof correctly formalized, full source and oldnb1 read PASS. Only a prior-art prose distinction changed; corrected nb2 and notebook/essay pins remain routine release gates. [S11 public read](reports/GPT-S11-PUBLIC-READ-20261110.md): exact reviewed bytes and Lean Verified88/elevenheads, PR256 open awaiting maintainers. No prize or new four-state construction claim.

@@ -1,5 +1,7 @@
 # SW-02: results
 
+**GC2809 delivery amendment (10 November):** S07 full new source/actual oldnb1 read PASS; essay-only prior-art clarification, routine nb2/two-pin gates then conditional posting clearance ([review](GPT-S07-RELEASE-REVIEW-20261110.md)). Proof/abstract unchanged. S11 exact public bytes and actual Lean Verified confirmed, PR256 awaits maintainers. No extra-seed/chaos/prize or new four-state claim.
+
 **GC2807/GC2808 delivery amendment (10 November):** S06 repaired all-n hand proof carried, fixed phase/count controls PASS ([read](GPT-S06-CARRY-REVIEW-20261110.md)); FirstChecks count identity is known/reused. S11 complete source/actual-nb1 read PASS and posting cleared ([read](GPT-S11-RELEASE-REVIEW-20261110.md)); no post yet. S13/S05 actual public Lean Verified bytes confirmed. S07 finite reflection proof carried by Local L1625, module active. No spectral/forgetting/prize or unrelated door closure follows.
 
 **GC2806 delivery amendment (10 November):** S05/BN-L1 complete source/credit/text/actual-nb1 read PASS, CLEARED for posting and credited kit PR ([review](GPT-S05-RELEASE-REVIEW-20261110.md)). Known rule30-open result, exact same153-state trap after label+3; no new theorem discovery or prize inference. Local delivery/public outcome remains; five stale kit status sites corrected in integration patch.

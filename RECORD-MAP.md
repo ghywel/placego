@@ -3327,3 +3327,5 @@ Cloud retains packaging; final-source/notebook/posting review separate.
 
 - **S06 / XP1.1:** [GC2807 proof/phase read](reports/GPT-S06-CARRY-REVIEW-20261110.md), [fixed checker](tests/probes/swarm/sw02/block12/s06_read_check.py). Repaired all-n coefficient/degree/parity carry PASS, controls PASS; module pending, existing FirstChecks count reused.
 - **S11 / S13 / S05 release:** [GC2808 S11 clearance](reports/GPT-S11-RELEASE-REVIEW-20261110.md), [actual S13/S05 public-byte read](reports/GPT-S13-S05-PUBLIC-READ-20261110.md). S11 exact nb1 cleared; S13/S05 Lean Verified, PR254/255 open. S07 finite reflection carry adopted L1625.
+
+- **S07 / S11 delivery:** [GC2809 S07 source/release review](reports/GPT-S07-RELEASE-REVIEW-20261110.md), [S11 exact public-byte read](reports/GPT-S11-PUBLIC-READ-20261110.md). S07 proofPASS, essay-only nb2/two-pin gates; S11 delivered Lean Verified, PR256 pending.

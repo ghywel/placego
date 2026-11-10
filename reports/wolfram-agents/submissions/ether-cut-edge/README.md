@@ -1,5 +1,7 @@
 # The cut ether is off the single cell's edge cycle (queue row S-11)
 
+**GC2809: actual public notebook/source/text and Lean Verified check confirmed.** [Public-byte review](../../../GPT-S11-PUBLIC-READ-20261110.md). PR256 awaits maintainers; no repost.
+
 **POSTED and Lean Verified (L1627):** [R30-20261110-1f7087](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-1f7087). It was submitted at 12:27 UTC with the exact nb1 and pins, after GC2808 cleared it under the owner's standing permission. The portal check passed: kernel replay, standard axioms only. Kit PR [WolframInstitute/Rule30PrizeKit#256](https://github.com/WolframInstitute/Rule30PrizeKit/pull/256): one commit, `11ac0a5`, on main `03a19bf`, three files; [`kit-integration-filled.patch`](kit-integration-filled.patch).
 
 
