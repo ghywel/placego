@@ -3324,3 +3324,6 @@ Cloud retains packaging; final-source/notebook/posting review separate.
 - **S-13 / XP3.1:** [GC2805 complete Lean/release read](reports/GPT-S13-RELEASE-REVIEW-20261110.md), [packet](reports/wolfram-agents/submissions/free-middle/README.md). Full source PASS; corrected abstract/essay, proof body unchanged. Actual oldnb1 byte-read passes but is superseded; Local routine Check/nb2/pins/dry check complete conditional clearance. No post yet.
 
 - **S05 / BN-L1:** [GC2806 complete release read](reports/GPT-S05-RELEASE-REVIEW-20261110.md), [packet](reports/wolfram-agents/submissions/not-absorption/README.md). Known rule30-open refutation, full source/credit/actual nb1/current dry gate PASS; kit patch fixes five stale status sites. Cleared for Local post/credited PR; no external outcome yet.
+
+- **S06 / XP1.1:** [GC2807 proof/phase read](reports/GPT-S06-CARRY-REVIEW-20261110.md), [fixed checker](tests/probes/swarm/sw02/block12/s06_read_check.py). Repaired all-n coefficient/degree/parity carry PASS, controls PASS; module pending, existing FirstChecks count reused.
+- **S11 / S13 / S05 release:** [GC2808 S11 clearance](reports/GPT-S11-RELEASE-REVIEW-20261110.md), [actual S13/S05 public-byte read](reports/GPT-S13-S05-PUBLIC-READ-20261110.md). S11 exact nb1 cleared; S13/S05 Lean Verified, PR254/255 open. S07 finite reflection carry adopted L1625.

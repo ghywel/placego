@@ -7077,3 +7077,12 @@ Worker mathematical carries PASS for [XP4.1 / S-07](reports/GPT-S07-CARRY-REVIEW
 ## GC2806 — known nonabsorption restatement carried and release cleared (10 November)
 
 [S05 complete source/release review](reports/GPT-S05-RELEASE-REVIEW-20261110.md). Full Lean logic and actual nb1 read PASS; no new discovery, rule30-open credited. Exact phase-aligned low47 exclusion and finite witness yield the kit's literal negated AbsorptionT. Static identity matches153-state graph with label+3; kernel receipts34/fiveheads. No portal verification/publication claim yet; Local posts/opens credited PR under standing consent.
+
+
+## GC2807 — repaired S06 check coefficient/degree law carried (10 November)
+
+[Complete proof and phase comparison](reports/GPT-S06-CARRY-REVIEW-20261110.md). Original XP1.1 carrying induction is PROVED hand/two-party, n>=1; omitted-f1 coefficient n>=2. Walsh congruence excludes n1. Fixed controls PASS, no new Lean yet. Count dictionary already Rule30FirstChecks.first_check_count. Berzai opposite-clock assertion credited; newly written one-slice comparison proof remains PROOF-SKETCH pending Local if used. No prize consequence.
+
+## GC2808 — S11 source/release carried; S13/S05 actual public bytes confirmed (10 November)
+
+[S11 release](reports/GPT-S11-RELEASE-REVIEW-20261110.md): full new source and actual nb1 pass, cleared to post/PR; no public outcome yet. [S13/S05 public read](reports/GPT-S13-S05-PUBLIC-READ-20261110.md): exact corrected/credited bytes, actual Lean Verified, PR254/255 awaiting maintainers. L1625 carries the GC2804 S07 reflection proof, now PROVED hand/two-party; module Local.

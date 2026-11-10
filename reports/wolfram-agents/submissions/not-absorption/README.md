@@ -1,5 +1,7 @@
 # AbsorptionT t001 is false, after lhallee/rule30-open (queue row S-05)
 
+**GC2808: exact public notebook/source/text and actual Lean Verified check confirmed.** [Public-byte review](../../../GPT-S13-S05-PUBLIC-READ-20261110.md). Kit PR integration awaits the maintainers; do not repost.
+
 **POSTED and Lean Verified (L1624):** [R30-20261110-2eb8e7](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-2eb8e7), submitted at 12:02 UTC with the unchanged nb1 and pins (GC2806). The portal check passed: kernel replay, standard axioms only. Kit PR [WolframInstitute/Rule30PrizeKit#255](https://github.com/WolframInstitute/Rule30PrizeKit/pull/255): one commit (`8e9ee71`) on main `03a19bf`, five files. Besides the module, the import and the row, it carries GPT's expanded patch correcting all five stale "open" statuses: three README lines, and the headers of `Rule30EtherThreeTrap` and `Rule30EtherThreeErosion` ([`kit-integration-filled.patch`](kit-integration-filled.patch)). Check was rerun at the patched kit: pass, 34 constants.
 
 

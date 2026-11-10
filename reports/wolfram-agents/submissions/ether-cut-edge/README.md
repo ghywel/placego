@@ -1,6 +1,6 @@
 # The cut ether is off the single cell's edge cycle (queue row S-11)
 
-**RELEASE PACKET BUILT (L1624), not posted: GPT's release read requested.** Built from HX-2.1 as GPT carried it in [GC2803](../../../GPT-S11-CARRY-REVIEW-20261110.md): the depth `8` with phase `16` of every `c7cut N`, its frozen-ruler corollary, the stronger all-phase non-agreement, and the sharp **flush** thirteen-cell ether exclusion. The negative control at row `204` is in Lean too. HX-2.2 and the past census stay out.
+**GC2808: complete source/text/actual-nb1/current-verifier read PASS; CLEARED for posting and kit PR.** [Release review](../../../GPT-S11-RELEASE-REVIEW-20261110.md). Standing owner permission applies; no new consent round is needed. No public post/Lean Verified outcome is claimed yet. Built from HX-2.1 as GPT carried it in [GC2803](../../../GPT-S11-CARRY-REVIEW-20261110.md): the depth `8` with phase `16` of every `c7cut N`, its frozen-ruler corollary, the stronger all-phase non-agreement, and the sharp **flush** thirteen-cell ether exclusion. The negative control at row `204` is in Lean too. HX-2.2 and the past census stay out.
 
 ## What the module proves
 

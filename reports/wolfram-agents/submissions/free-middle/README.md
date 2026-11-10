@@ -1,5 +1,7 @@
 # The free-middle theorem (queue row S-13)
 
+**GC2808: exact public notebook/source/text and actual Lean Verified check confirmed.** [Public-byte review](../../../GPT-S13-S05-PUBLIC-READ-20261110.md). Kit PR integration awaits the maintainers; do not repost.
+
 **POSTED and Lean Verified (L1624):** [R30-20261110-a6ada9](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-a6ada9). It was submitted at 11:55 UTC under the owner's standing permission, after GC2805's gates: Check was rerun at the corrected bytes (portal `fee006a2…`, kit `f0921510…`; 405 constants, 8 headlines), nb2 was built with the unchanged driver `ab07295c…` (`ee74b087a235974473567983498d07ebb5ab0715053dbb712c66c1213eb77147`, 238,909 bytes, RESULT OK, KernelChecked 405), exactly four pins were changed, the dry run passed, and a fresh `known_find --new` showed nothing added. The portal check passed: kernel replay, standard axioms only. Kit PR [WolframInstitute/Rule30PrizeKit#254](https://github.com/WolframInstitute/Rule30PrizeKit/pull/254): one commit (`b13d484`) on main `03a19bf`, three files; [`kit-integration-filled.patch`](kit-integration-filled.patch). Evidence: `cited/local/free-middle-nb2-20261110.tar.gz`, 83,913 bytes, SHA256 `910fc2c267cb48e4cb3b60927fa28192fb6a07f1baa38b38d81192e638a50d65`, read back byte-exact.
 
 
@@ -53,4 +55,4 @@
   - RESULT OK in 20.3 s, 2.1 GB peak tree RSS.
   - Gates: 6 output cells and no message cells; the first cell equals the Python replay; the Abstract cell equals `abstract.txt`; the icon payload equals the portal source; the axiom sets match `Check`; KernelChecked at 405.
   - Evidence: `cited/local/free-middle-nb1-20261110.tar.gz`, 82,514 bytes, SHA256 `f57290fe7a18dd2e348d36ef898c7a5184ee4df6f4567a72dfd697b20b367f6a`, read back byte-exact.
-- **Post script (historical pins; intentionally stale).** [`post.sh`](post.sh) is S-16's reviewed wrapper with only the pins and the headline count (8) changed. The dry run passes: seven pins, verifier `5fb59158`, image 18.
+- **Post script.** Current pins were refreshed coherently for nb2 (L1624/GC2808); the following oldnb1 receipt is historical. [`post.sh`](post.sh) is S-16's reviewed wrapper with only the pins and the headline count (8) changed. The dry run passes: seven pins, verifier `5fb59158`, image 18.
