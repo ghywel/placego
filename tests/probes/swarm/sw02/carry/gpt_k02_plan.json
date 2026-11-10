@@ -1,5 +1,5 @@
 {
-  "worker_stop": 110,
+  "worker_stop": 109,
   "include_outer_monitor_cpu": true,
   "input_sha256": {
     "tests/probes/swarm/sw02/carry/gpt_k02.py": "5b5e0d34ea2fd4d7a976d1ecb02b114e9523c0287288bf6268c3954245298538",
@@ -29,7 +29,7 @@
     "threads": 1,
     "nice": 10
   },
-  "command": "python3 tests/probes/wolfram/run_capped.py --out PRIVATE_STAGE --cpu 120 --wall 300 --rss-mib 768 --file-mib 16 --disk-mib 128 --track-tree --max-procs 6 --launch-free-mib 4096 --min-free-mib 1024 --swap-growth-mib 4096 -- python3 tests/probes/metal_scope/stage.py tests/probes/swarm/sw02/carry/gpt_k02_plan.json",
+  "command": "python3 tests/probes/wolfram/run_capped.py --out PRIVATE_STAGE --cpu 119 --wall 299 --rss-mib 768 --file-mib 16 --disk-mib 128 --track-tree --max-procs 6 --launch-free-mib 4096 --min-free-mib 1024 --swap-growth-mib 4096 -- /usr/bin/nice -n 10 python3 tests/probes/metal_scope/stage.py tests/probes/swarm/sw02/carry/gpt_k02_plan.json",
   "jobs": [
     {
       "name": "relation",
@@ -40,7 +40,18 @@
       "required_stdout_lines": [
         "K02_FIXED_RELATION_CHECKS_PASS"
       ],
-      "cpu": 110
+      "cpu": 109,
+      "wall": 298
     }
-  ]
+  ],
+  "prior_setup_attempt": {
+    "exit": "CHILD_FAILED: stage wrapper KeyError wall; relation killed before output",
+    "aggregate_cpu_s": 0.229143,
+    "wall_s": 0.55,
+    "reason_for_correction": "Add required job wall key; bounded setup correction, no mathematical failure and no pressure/thermal stop. Preserve run1."
+  },
+  "remaining_attempt_limits": {
+    "cpu_s": 119,
+    "wall_s": 299
+  }
 }
