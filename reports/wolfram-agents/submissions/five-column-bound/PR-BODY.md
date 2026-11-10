@@ -1,4 +1,4 @@
-Rule30FiveColumnBound: a sharp five-column black-count ceiling (PORTAL-ID)
+Rule30FiveColumnBound: a sharp five-column black-count ceiling (R30-20261110-2a4eef)
 
 This adds `lean/Ruliology/CellularAutomata/Rule30FiveColumnBound.lean`, with its `public import` line in `lean/Ruliology.lean` after `Rule30Realization` and a row in *Added in the kit* after `Rule30LightCone`. It imports `Rule30Prize` and `Rule30Realization`, and uses the official `Rule30Jen.rule`, the arbitrary-row evolution `Rule30Realization.evol` and the singleton diagram `cell`.
 
@@ -20,6 +20,6 @@ This adds `lean/Ruliology/CellularAutomata/Rule30FiveColumnBound.lean`, with its
 
 **What it does not do.** It bounds a sum over five columns. It gives no density bound for an individual column, no positive lower density, no improvement for the single seed, and no prize result.
 
-Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
+Portal entry: [R30-20261110-2a4eef](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-2a4eef).
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)

@@ -1,4 +1,4 @@
-Rule30FirstCheckDegree: the first check has degree n or n - 1, and its weight is n mod 2 (PORTAL-ID)
+Rule30FirstCheckDegree: the first check has degree n or n - 1, and its weight is n mod 2 (R30-20261110-80b1ea)
 
 This adds `lean/Ruliology/CellularAutomata/Rule30FirstCheckDegree.lean`, with its `public import` line in `lean/Ruliology.lean` after `Rule30FirstChecks` and a row in *Added in the kit* after the same module. It imports only `Rule30FirstChecks`.
 
@@ -40,6 +40,6 @@ This adds `lean/Ruliology/CellularAutomata/Rule30FirstCheckDegree.lean`, with it
 
 **What it does not do.** Nothing here bears on the single seed. The survivor statement is a congruence, not a count.
 
-Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
+Portal entry: [R30-20261110-80b1ea](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261110-80b1ea).
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)
