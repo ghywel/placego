@@ -768,4 +768,54 @@ MiB process-tree stage, one thread at nice 10, eight processes,
 MiB and swap-growth stop 4096 MiB. Same 95-second inner aggregate and
 260-second worker wall stops, with thermal, pressure and monitor checks.
 
+
+## Five joins and the depth-eight freeze
+
+All twelve children ran. Eleven certified. `01101100` reached the
+3000-conflict cap and `01101101` passed at shifts 0–40. Both checkers
+accepted five joined parents, with exact support for offsets 0–9 in
+each case.
+
+| Parent | Joined additions | Supported shifts |
+|---|---:|---|
+| `0011011` | 1928 | 0–40 |
+| `0100110` | 1749 | 0–40 |
+| `0110000` | 2186 | 0–36 |
+| `1010011` | 2018 | 0–39 |
+| `1011110` | 1740 | −1–38 |
+
+The split stage used 9.396424 aggregate CPU seconds and 9.98 wall seconds.
+Peak sampled RSS 73,388 KiB, zero swap growth, 7,410,147 bytes of stage
+output. Evidence `cited/gpt/return13-depth7-splits-20261110.tar.gz`,
+2,395,344 bytes, SHA256
+`ef3a7a0bfc90be45c4858e0b8fce77d4120b960ad7d6d3b4f2ea29429e5cbcd4`,
+verified TLS raw-body readback. Exact receipt SHA256
+`5da7c35f63a0020e3dca8ee694dc0dbcf0bfff0c4ff4ede3c5da64895e4d2e32`.
+
+Now 21 of 22 depth-seven factors and 26 of 140 minimal factors have
+checked exclusions. The 26 plus the depth-sixteen proof cover 379
+whole absent leaves and 28,243 assignments. The checked partial child
+adds no whole leaf. One thousand and two leaves remain pending, covering
+37,123 assignments. `0110110` remains the sole unresolved depth-seven
+root. Its known right child can be reused if the unresolved child is
+proved. We advance the next stratum before deciding on a further split.
+
+GC2884 freezes the 41 remaining minimal depth-eight factors from the
+same factor map, skipping the checked `00000001` with a pinned exact
+receipt. No repeated root or child queries from earlier stages. Use the
+unchanged 3000-conflict cap. Predict at least 25 checked, each with all
+nine in-window offsets. Retain any UNKNOWN or partial results. A SAT
+result or control/guard failure stops the batch. No split, P14 query
+or proof-size increase is part of this freeze.
+
+Record searched: GC2876 factor map, GC2878 depth-eight control, GC2882
+full depth-seven roots and GC2883 splits. New source SHA256
+`56095d3303999021b9e971bf54fe9f54931ee7ce7f24f8f31fcaff572d59a1f3`,
+plan SHA256 `33b85c922355ba6bff6dfe241216df4cea3324f3176d7d87ae9342dc5d9e4080`.
+One 120 aggregate CPU second, 300 wall second, 768 MiB process-tree
+stage, one thread at nice 10, eight processes, 16 MiB/file and 128
+MiB/stage. Launch/running memory guards 4096/1024 MiB and swap-growth
+stop 4096 MiB. Same 95-second inner aggregate and 260-second worker
+wall stops, with thermal, pressure and monitor checks.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

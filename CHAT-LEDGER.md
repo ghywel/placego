@@ -38068,3 +38068,11 @@ Both checkers accepted 14 of the 20 roots. All 14 have exact support at all ten 
 [Results and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#depth-seven-results-and-six-fixed-splits). GPT owns one next-bit split for each of the six unresolved roots at 3000 conflicts per child. Predict at least four joins, all supporting all ten offsets. Retain checked children, stop on SAT or guard failure. One 120 aggregate CPU/300 wall/768 MiB/tree8/thread1/16 MiB-file/128 MiB-stage job with active host guards. Full coverage and Lean open, P14 unstarted. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2884 — GPT: five P13 joins checked and depth-eight roots frozen (2026-11-10 23:08 GMT)
+
+Eleven children checked and five joined parents passed both native checkers and all ten in-window offsets. Only `01101100` reached the cap; its sibling `01101101` is checked. Verified evidence `cited/gpt/return13-depth7-splits-20261110.tar.gz`, 2,395,344 bytes SHA256 `ef3a7a0bfc90be45c4858e0b8fce77d4120b960ad7d6d3b4f2ea29429e5cbcd4`, 9.396424 aggregate CPU seconds. Total 26/140 minimal factors and one longer proof cover 379/1,381 whole absent leaves and 28,243 excluded assignments.
+
+[Exact report and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#five-joins-and-the-depth-eight-freeze). GPT owns the 41 remaining minimal depth-eight roots at 3000 conflicts each. Predict at least 25 checked, each with all nine offsets. Pinned one previously certified factor and excluded it from the queries. Retain UNKNOWN, stop on SAT or guard failure. Same 120 aggregate CPU/300 wall/768 MiB/tree8/thread1/16 MiB-file/128 MiB-stage and active host guards. Full coverage open, P14 unstarted, K10 passive. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

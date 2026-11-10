@@ -1,0 +1,98 @@
+{
+  "worker_stop": 110,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_return13_binary_cert.py": "652b6bd02784000929ebf083eec881430bfe04b3f1eecc0a2822a494c5fd4e2f",
+    "tests/probes/swarm/sw02/carry/gpt_lrat_format_controls.py": "92b08d0a72f83eb7b20c8bc4358ea6cfe26986a3029d886998b3da4f88db57e3",
+    "tests/probes/swarm/sw02/carry/gpt_return13_lrat.py": "467bed29611c6dd4b8c251a8a890d5d5d6621a512c7ff8e05e77aa14fd3fb332",
+    "tests/probes/ether_gap_solve.py": "11e02a0327a1527d08e2d61e53c500409ce38d705c5fc299a1ab32c53f724a2d",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
+    "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_control.py": "79ab88c7f843a0a9fe8fab1f23d3330a44720fe9b5d0487d9d171494249b85fa",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_leaves.py": "7169eb470f2f4ba5c66a0db7c6a8ca5d2f83efe5afe07fc718dbf2a20f954b4b",
+    "tests/probes/swarm/sw02/carry/gpt_return13_depth8_batch.py": "56095d3303999021b9e971bf54fe9f54931ee7ce7f24f8f31fcaff572d59a1f3"
+  },
+  "original_cnf_sha256": "badadbb38e00fb0c01991563f3fb6664ed2b78c9ab7254a36fa1bd818313fcd0",
+  "prediction": {
+    "proofs": "at least 25 of 41 root queries certify within 3000 conflicts each",
+    "shifts": "each checked proof supports all nine in-window offsets",
+    "controls": "one checked factor is skipped and the fixed list exactly completes the depth-eight stratum"
+  },
+  "counterfactual": "Retain each UNKNOWN and any partial stage receipt. SAT or a guard/control failure stops the job. No deeper split or increased conflict cap in this stage.",
+  "limits": {
+    "aggregate_cpu_s": 120,
+    "wall_s": 300,
+    "tree_rss_mib": 768,
+    "max_procs": 8,
+    "file_mib": 16,
+    "disk_mib": 128,
+    "launch_free_mib": 4096,
+    "min_free_mib": 1024,
+    "swap_growth_mib": 4096,
+    "threads": 1,
+    "nice": 10,
+    "inner_aggregate_stop_cpu_s": 95,
+    "worker_soft_cpu_s": 12,
+    "worker_hard_cpu_s": 120
+  },
+  "jobs": [
+    {
+      "name": "depth8-batch",
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_return13_depth8_batch.py",
+        "tests/probes/swarm/sw02/carry/gpt_return13_depth8_batch_plan.json"
+      ],
+      "cpu": 120,
+      "wall": 260,
+      "required_stdout_lines": [
+        "RETURN13_DEPTH8_BATCH_RECORDED"
+      ]
+    }
+  ],
+  "factor_representatives_sha256": "449c38d0fad13b88a7ef6c86d3746021c215d7fcb8631afe1f1ae937a041eed7",
+  "factors": [
+    "00000011",
+    "00000110",
+    "00001100",
+    "00010011",
+    "00100101",
+    "00101000",
+    "00101011",
+    "00111010",
+    "00111110",
+    "01000000",
+    "01001010",
+    "01010101",
+    "01010110",
+    "01011100",
+    "01100011",
+    "01100100",
+    "01100110",
+    "01111000",
+    "10000000",
+    "10000010",
+    "10000111",
+    "10001011",
+    "10001101",
+    "10010001",
+    "10010010",
+    "10011101",
+    "10100101",
+    "10101001",
+    "10101010",
+    "10101100",
+    "11000001",
+    "11000101",
+    "11001001",
+    "11001011",
+    "11010100",
+    "11010111",
+    "11100010",
+    "11100101",
+    "11110000",
+    "11110010",
+    "11111111"
+  ],
+  "panel_receipt_sha256": "8121d57eb7868cf140237ac7fa8c5e327321c010ef11420b0230548ac8899027"
+}
