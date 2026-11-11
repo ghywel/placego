@@ -1713,4 +1713,66 @@ single Lean child has 75 CPU/150 wall seconds within the 95-second
 inner aggregate stop and 200-second worker wall limit. Retain
 the pressure, thermal and telemetry guards.
 
+## Conditional overlap bound kernel result
+
+GC2910 validates the exact saved Lean result from GC2909. Lean
+exited zero with empty stderr and emitted both requested axiom
+audits and a compiled object. The original launcher reported
+`CHILD_FAILED` after Lean finished because the Python receipt
+parser rejected the blank separator before empty stderr. The
+parser now strips surrounding whitespace. It accepts the saved
+output and still rejects an unexpected diagnostic, `sorryAx`,
+and a missing theorem. No second Lean run was needed.
+
+The three imported factor proofs match indices 6, 49 and 53.
+Substitution of the other width-seven proof at index 6 fails as
+expected. The checked theorem `conditional_word_bound` gives
+a list of at most 170 words covering all rows that avoid the
+141 canonical factors, at each positive length. Its axiom audit
+and that of `checked_factor_indices` show only `propext`,
+`Classical.choice` and `Quot.sound`. The 138 remaining kernel
+proofs, sharp 144 count in Lean, and P14 remain open.
+
+The launcher used 22.732455 aggregate CPU seconds, 20.51 wall,
+525,904 KiB peak sampled tree RSS, five processes and zero swap
+growth. Exact object is 86,904 bytes, SHA256
+`74e0c8d3611912cb4a1c75f73d49e8d57335d649c101e55b0849e27f588f1bbf`.
+Evidence `cited/gpt/return13-overlap-kernel-receipt-20261111.tar.gz`,
+32,596 bytes, SHA256
+`7b0fe5204776e2bdc00b5353e97bc8fa29d6943ccb52c7bb7b37bb7f94d61b63`
+with verified readback. Saved audit SHA256
+`0a32aad98dccc40ee3f5096c2a0f2879e6d1cff04a44cbcfb4cbc1bbfe8510e9`.
+The historical frozen source and launcher receipts remain unchanged.
+
+## Remaining factor export inventory freeze
+
+GC2911 sizes the exports for the remaining 138 factors without
+invoking Lean or a SAT solver. All canonical files are present.
+From the pinned manifest these discharges have 99,392 additions
+and 11,212,669 text bytes before support compaction. Generate and
+check one exact packed proof and Lean source at a time with the
+GC2904 emitter. Check both packed mutations in every case. Record
+the generated source digest, size, support and packed steps. The
+exporter may remove unused additions and must still replay the exact
+conclusion. Temporary generated data is discarded after each
+successful case, so the durable output is the measured inventory.
+It sizes a later Lean shard and does not add kernel proofs.
+
+Record searched: pinned GC2891 manifest, GC2892 original-CNF
+certificate, and exact GC2902, GC2905 and GC2910 receipts. Expect
+all 138 conversions to pass and each source to fit the 16 MiB file
+limit. Stop at the first mismatch, accepted mutation or host
+guard, retaining the completed inventory prefix. No P14 work.
+
+[Plan](../tests/probes/swarm/sw02/carry/gpt_return13_export_inventory_plan.json)
+SHA256 `2ec1acf8c7ab9c259d68d2908736507a16400814b6bf2adc5e098add609aa3c7`.
+[Worker](../tests/probes/swarm/sw02/carry/gpt_return13_export_inventory.py)
+SHA256 `b17b10d24fadf29f2c61f117f4cfdc31b2afeee78695428c645624ad6e6e0334`.
+GPT owns one serial Python stage with 120 aggregate CPU seconds,
+300 wall seconds, 768 MiB process-tree RSS, up to eight processes
+and one thread at nice 10. Limits are 16 MiB/file, 128 MiB output,
+free-memory floors 4096/1024 MiB and swap growth 4096 MiB.
+Retain the 95-second inner aggregate stop and 200-second worker
+wall limit, pressure, thermal and telemetry guards.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

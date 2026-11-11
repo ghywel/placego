@@ -10,7 +10,7 @@
     "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df",
     "tests/probes/swarm/sw02/carry/gpt_return13_prefix_control.py": "79ab88c7f843a0a9fe8fab1f23d3330a44720fe9b5d0487d9d171494249b85fa",
     "tests/probes/swarm/sw02/carry/gpt_return13_prefix_leaves.py": "7169eb470f2f4ba5c66a0db7c6a8ca5d2f83efe5afe07fc718dbf2a20f954b4b",
-    "tests/probes/swarm/sw02/carry/gpt_return13_overlap_kernel.py": "650699e6d3791026d6083b65b033a3b533b552bd8202a51ef23e9e6a0f2fa72f",
+    "tests/probes/swarm/sw02/carry/gpt_return13_overlap_kernel.py": "eb956fc2286134c07445a2ba5dd365cd9bbe182b634d137b0c2d0e1fb5071ebe",
     "tests/probes/swarm/sw02/carry/P13OverlapBound.lean.inc": "6bfebfaa5701499b8909b8749871cba90af817a7b249a81e37f03d360d8ecb7e"
   },
   "prediction": {

@@ -23,7 +23,7 @@ def digest(data):
     return hashlib.sha256(data).hexdigest()
 
 
-def prepare_factor(spec, manifest, base, gate):
+def prepare_factor(spec, manifest, base, gate, out=OUT):
     factor = spec['word']
     width = len(factor)
     value = sum((bit == '1') << i for i, bit in enumerate(factor))
@@ -37,13 +37,13 @@ def prepare_factor(spec, manifest, base, gate):
     assert initial[len(supported):] == units
     assert derivation[-1][1] == [-unit[0] for unit in units]
 
-    work = OUT/f'packing-{factor}'
+    work = out/f'packing-{factor}'
     work.mkdir()
     cnf, lrat, packed_path = (work/file for file in ('factor.cnf', 'factor.lrat', 'packed.json'))
     write_cnf(cnf, 910, initial)
     write_proof(lrat, proof)
     audit = audit_rup(cnf, lrat, packed_path)
-    assert audit['packable'] and audit['used_additions'] == len(derivation) + 1, audit
+    assert audit['packable'] and 1 <= audit['used_additions'] <= len(derivation) + 1, audit
     packed = json.loads(packed_path.read_bytes())
     masks = [int(mask, 16) for mask in packed['masks_hex']]
     steps = [int(step, 16) for step in packed['steps_hex']]
@@ -60,11 +60,12 @@ def prepare_factor(spec, manifest, base, gate):
     generated = join_source(premises, packed, bridge, namespace)
     assert f'¬ Matches x origin {width} {value} :='.encode() in generated
     assert f'(List.range {width}).map (fun i => [mkLit (vid 65 0 (6+i)) (({value} : Nat).testBit i)])'.encode() in generated
-    lean_file = OUT/f'{namespace}.lean'
+    lean_file = out/f'{namespace}.lean'
     lean_file.write_bytes(generated)
     result = {
         'word': factor, 'lean_width': width, 'lean_value': value, 'base_clauses': len(supported),
-        'lrup_additions': audit['used_additions'], 'source_bytes': len(generated),
+        'canonical_additions': len(derivation), 'lrup_additions': audit['used_additions'],
+        'source_bytes': len(generated),
         'source_sha256': digest(generated), 'negative_controls': ['forward conflict hint', 'nonempty goal'],
     }
     return lean_file, result

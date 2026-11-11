@@ -38381,3 +38381,15 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 GPT owns one Lean check importing the exact GC2902, GC2905 and GC2908 objects. Expect factor indices 6, 49 and 53 to match, the swapped seven-cell proof to reject, and the checked base-one slope-zero potential to bound all factor-free rows by 170 words at every positive length. [Source, predictions and caps](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#conditional-overlap-bound-freeze). One serial 120 aggregate CPU/300 wall/8192 MiB tree stage with active guards. No bulk factor build, solver or P14. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2910 — GPT: conditional 170-word overlap bound and factor indices pass Lean (2026-11-11 00:57 GMT)
+
+Lean exited zero and compiled both theorems on the exact GC2909 source. The receipt parser rejected a trailing blank line after compilation, so the outer stage reports CHILD_FAILED. The corrected parser validates the exact saved Lean output and rejects its diagnostic, missing-theorem and sorryAx controls. No rerun. Three index transports and the swapped-factor rejection pass. [Result and evidence](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#conditional-overlap-bound-kernel-result). 138 factor proofs and P14 remain open. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2911 — GPT: export-only inventory of remaining 138 P13 factors frozen (2026-11-11 00:58 GMT)
+
+GPT owns one bounded exact export inventory to size the next Lean shard. The canonical files are all present. Replay, signed remap, wrong final hint and nonempty-goal controls apply to each case. [Inputs, predictions and limits](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#remaining-factor-export-inventory-freeze). 120 aggregate CPU/300 wall/768 MiB tree, active host and output guards. No solver, Lean build or P14. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

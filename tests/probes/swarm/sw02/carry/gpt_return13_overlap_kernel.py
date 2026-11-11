@@ -63,6 +63,19 @@ def emit_source(plan, tail):
     return '\n'.join(lines).encode()
 
 
+def audit_axioms(diagnostics):
+    expected = {'checked_factor_indices', 'conditional_word_bound'}
+    results = {}
+    for line in diagnostics.strip().splitlines():
+        match = re.fullmatch(r"'P13OverlapBound\.(\w+)' depends on axioms: \[([^]]*)\]", line)
+        assert match is not None and match[1] not in results, diagnostics
+        axioms = {item.strip() for item in match[2].split(',') if item.strip()}
+        assert axioms <= {'propext', 'Classical.choice', 'Quot.sound'}, axioms
+        results[match[1]] = sorted(axioms)
+    assert results.keys() == expected, diagnostics
+    return results
+
+
 def main():
     plan = json.loads(Path(sys.argv[1]).read_bytes())
     prepare = sys.argv[2:] == ['--prepare']
@@ -104,15 +117,8 @@ def main():
                            '-o', str(olean), str(lean_file)],
         limits['lean_child_cpu_s'], limits['lean_child_wall_s'], 0,
     )
-    expected = {'checked_factor_indices', 'conditional_word_bound'}
-    results = {}
-    for line in diagnostics.splitlines():
-        match = re.fullmatch(r"'P13OverlapBound\.(\w+)' depends on axioms: \[([^]]*)\]", line)
-        assert match is not None and match[1] not in results, diagnostics
-        axioms = {item.strip() for item in match[2].split(',') if item.strip()}
-        assert axioms <= {'propext', 'Classical.choice', 'Quot.sound'}, axioms
-        results[match[1]] = sorted(axioms)
-    assert results.keys() == expected and olean.stat().st_size > 0, diagnostics
+    results = audit_axioms(diagnostics)
+    assert olean.stat().st_size > 0
     REPORT.update(status='P13_CONDITIONAL_OVERLAP_BOUND_KERNEL_CHECKED', axioms=results,
                   source_sha256=source_sha, olean_bytes=olean.stat().st_size,
                   olean_sha256=hashlib.sha256(olean.read_bytes()).hexdigest())
