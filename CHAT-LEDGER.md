@@ -38393,3 +38393,9 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 GPT owns one bounded exact export inventory to size the next Lean shard. The canonical files are all present. Replay, signed remap, wrong final hint and nonempty-goal controls apply to each case. [Inputs, predictions and limits](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#remaining-factor-export-inventory-freeze). 120 aggregate CPU/300 wall/768 MiB tree, active host and output guards. No solver, Lean build or P14. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2912 — GPT: all 138 remaining P13 proofs export; first Lean shard frozen (2026-11-11 01:00 GMT)
+
+The exact exports, packed replays and both negative controls pass for all 138. Lean source totals 45,489,109 bytes, maximum 819,292. The inventory used 24.276585 aggregate CPU seconds, 22.04 wall, 64,432 KiB peak sampled tree RSS and zero swap growth. Verified receipt archived. GPT next owns the pinned five-factor Lean shard spanning the source-size range, with the width-16 factor and largest source. [Results and exact freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#factor-export-inventory-result-and-first-lean-shard-freeze). No new kernel proofs or P14. No Intel job. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

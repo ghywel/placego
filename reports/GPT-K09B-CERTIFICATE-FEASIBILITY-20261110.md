@@ -1775,4 +1775,55 @@ free-memory floors 4096/1024 MiB and swap growth 4096 MiB.
 Retain the 95-second inner aggregate stop and 200-second worker
 wall limit, pressure, thermal and telemetry guards.
 
+## Factor export inventory result and first Lean shard freeze
+
+GC2912 recorded exact successful exports for all 138 remaining
+factors. Every signed remap and packed replay passed. The final
+hint and nonempty-goal mutations rejected for every factor.
+There are 99,530 packed additions across the remaining proofs.
+Their generated Lean sources total 45,489,109 bytes, with maximum
+819,292 bytes. Each source fits the 16 MiB file guard. This checks
+exportability and provides size data. The kernel count stays at
+three of 141. The launcher used 24.276585 aggregate CPU seconds,
+22.04 wall, 64,432 KiB peak sampled tree RSS, three processes and
+zero swap growth.
+
+Verified evidence `cited/gpt/return13-factor-export-inventory-20261111.tar.gz`,
+12,725 bytes, SHA256
+`8d8b057ed17e6e0b971332334dfa0bfeb6c5c106999495847004e889f9b96f83`.
+Exact inventory receipt SHA256
+`f19ab8eab4dc66f4cae0e59cf4af91da05a5775623c3a317fb26e4862fea27a7`.
+
+The next GPT stage is one five-factor Lean shard drawn from the
+minimum, quartiles and maximum of measured source size. The
+minimum is also the sole width-16 factor.
+
+| Factor | Source bytes | Packed additions |
+|---|---:|---:|
+| `0000000000000001` | 71158 | 184 |
+| `100001010` | 202206 | 380 |
+| `01100011` | 311840 | 752 |
+| `110111011` | 433876 | 851 |
+| `1010011` | 819292 | 2019 |
+
+All five exact source pins reproduce. Their 1,838,372 bytes
+suggest roughly one minute of aggregate CPU by the three prior
+checks. This estimate is a prediction. Expect the largest source
+to consume the most CPU and the five whole-line theorems to pass
+with standard axioms within the 95-second inner cap. Stop at the
+first failed proof or guard, retaining earlier receipts.
+
+Record searched: GC2912 export inventory and GC2902/GC2905 Lean
+measurements. [Shard plan](../tests/probes/swarm/sw02/carry/gpt_return13_kernel_shard1_plan.json)
+SHA256 `78f5bb1f18641babc5e647f2651b0e64936f09898fe03a6e15ec9932a03ec1e6`.
+The worker is the existing `gpt_return13_kernel_panel.py` with
+the output-directory parameter from GC2911. One serial stage
+under `run_capped.py` and `metal_scope/stage.py`, at 120 aggregate
+CPU seconds, 300 wall, 8192 MiB tree RSS, eight processes, one
+thread at nice 10, 16 MiB/file and 128 MiB output. Free-memory
+launch/run floors are 4096/1024 MiB and swap-growth stop 4096 MiB.
+Each Lean child has 60 CPU/125 wall seconds. Keep the 95-second
+inner aggregate and 200-second worker wall stops, plus thermal,
+pressure and telemetry guards. No P14 or bulk replay.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
