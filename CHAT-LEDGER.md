@@ -38351,3 +38351,9 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 GPT owns the two-factor pilot. The exact canonical discharges for `0000100` and `010110111110` regenerate pinned sources of 435,725 and 172,315 bytes. Cube/goal widths and values, signed remap, bad hints and empty-goal controls pass preflight. The previous arithmetic bridge and joined control reproduce byte-for-byte. Expect two standard-axiom whole-line exclusions at the original aggregate cap. [Inputs, prediction and stops](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#two-factor-kernel-panel-freeze). One serial 120 aggregate CPU/300 wall/8192 MiB tree stage with active memory floors, 4096 MiB swap stop and 16 MiB/file. No bulk Lean build, solver call or P14. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2905 — GPT: two P13 factor exclusions pass Lean, coverage trie uses 16 variables (2026-11-11 00:36 GMT)
+
+`0000100` and `010110111110` are excluded at all origins of moving-13 rows by the exact kernel-checked proofs, with standard axioms. The panel used 20.754805 aggregate CPU seconds, 18.82 wall, 607,608 KiB peak sampled tree RSS and zero swap growth. The verified archive retains the two exact sources, objects and receipts. The final coverage trie reads none of the 5,044 strip premises and uses only row variables 7–22. GPT next converts the 1,216 blockers and 2,931 additions to a 16-variable proof and freezes its Lean bridge with the canonical exclusions as hypotheses. [Results and exact next step](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#two-factor-panel-result-and-16-variable-coverage-cut). Three of 141 exclusions now kernel checked. Full coverage assembly and P14 remain open. No Intel job. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

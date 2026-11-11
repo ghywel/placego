@@ -1507,4 +1507,63 @@ have 60 CPU/125 wall seconds within the shared 95-second inner
 aggregate stop and 200-second worker wall guard. Thermal, pressure
 and CPU telemetry guards remain active. The prior cap is unchanged.
 
+## Two-factor panel result and 16-variable coverage cut
+
+GC2905 passed both exact sources with Lean 4.35.0 and kit `03a19bf`.
+`P13Factor0000100.factor_excluded` has conclusion
+`¬ Matches x origin 7 16`, and
+`P13Factor010110111110.factor_excluded` has conclusion
+`¬ Matches x origin 12 2010`. Both assume `orbit x 13 = x` and
+quantify over all origins. Their axiom audits contain `propext`,
+`Classical.choice` and `Quot.sound`. The shorter discharge had the
+smaller source and compiled object, as predicted.
+
+| Factor | Child-stage CPU increment (s) | Lean wall (s) | Object bytes |
+|---|---:|---:|---:|
+| `0000100` | 13.758063 | 12.334 | 7278312 |
+| `010110111110` | 5.963385 | 5.268 | 4198720 |
+
+The launcher measured 20.754805 aggregate CPU seconds, 18.82 wall,
+607,608 KiB peak sampled tree RSS, five processes, zero swap growth
+and 13,097,941 bytes final output. Verified evidence
+`cited/gpt/return13-two-factor-kernel-receipt-20261111.tar.gz`,
+2,844,579 bytes, SHA256
+`f7f8509b811498ad4f2da87225144868ecabfc68b6acc5eae5ffe3a22812b271`.
+Exact receipt SHA256
+`8d469360d89e130fe8900c82808dafa9936979febcc2df868cfff2671c73bb48`.
+Three of 141 canonical exclusions are now kernel checked. The
+native 144-word classification, full Lean coverage and P14 retain
+their prior statuses.
+
+A read-only audit of the pinned GC2892 `coverage.cnf` and
+`coverage.lrat` found that the final trie proof uses only DIMACS
+variables 7 through 22 and never refers to the first 5,044 clauses.
+Every one of the remaining 1,216 initial clauses is referenced.
+All 2,931 additions have one or two positive hints, ending in the
+empty clause. Thus remove the first 5,044 clauses, subtract 5,044
+from every clause ID and hint, and send each signed literal
+`±j` to `±(j-6)`. Both maps preserve indices and signs. This
+retains the exact RUP derivation on 16 variables, with 170 retained
+word blockers and 1,046 shifted-factor blockers as premises.
+
+Next GPT step is to implement this converter against the two
+GC2892 hashes and rederive the 1,216 clauses in exact order from the
+170 retained words and GC2891 selected occurrences. Require a
+strip-premise mutation and a shifted-blocker mismatch to reject.
+Freeze one 16-variable packed Lean check before compiling. The
+bridge should take all 141 canonical exclusions as a hypothesis.
+For an arbitrary window origin, the assignment is
+`fun j => x (origin + j)`. Each excluded factor yields a literal
+where the matching predicate fails, so its occurrence clause is
+modelled at the shifted origin. If no retained word matches, the
+same argument models all 170 retained-word blockers. Packed UNSAT
+then forces a match. This isolates coverage assembly from the cost
+of compiling the remaining 138 canonical exclusions.
+
+For the entropy goal, the existing kit overlap lemma can use base
+one and slope zero at every retained vertex once coverage checks.
+The observed outdegree at most one would give at most 170 words at
+every length. A separate graph-and-witness check is needed for the
+sharp 144 count. No period-14 result follows.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
