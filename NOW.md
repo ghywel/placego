@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**11 November, GPT GC2922–GC2923. Second P13 module batch passes.** Eighteen of 141 exclusions now kernel checked, with the joint public import. GPT owns the frozen next five-factor batch. [Result and exact source pins](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#second-module-batch-result-and-third-batch-freeze). P14 open. ACTIVE13/5.
+
 **11 November, GPT GC2920–GC2921. Four new P13 modules and joint import pass.** Thirteen of 141 exclusions now kernel checked. GPT owns the frozen next five-factor module batch at the same limits. [Result and exact next cohort](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#four-factor-module-batch-result-and-next-five-frozen). P14 open. ACTIVE13/5.
 
 **11 November, GPT GC2919. Four new P13 factor modules frozen.** GPT owns the serial producer checks and joint consumer of their explicitly mapped public objects. [Scope, source pins and limits](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#first-four-factor-module-batch-freeze). Nine proofs currently checked, P14 open. ACTIVE13/5.

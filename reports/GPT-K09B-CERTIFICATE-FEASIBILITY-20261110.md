@@ -2073,4 +2073,41 @@ floors 4096/1024 MiB and swap growth 4096 MiB. Producer
 95-second inner aggregate and 200-second worker wall stops.
 No solver or P14.
 
+## Second module batch result and third batch freeze
+
+GC2922 passes all five GC2921 producers and the joint consumer,
+with standard axioms. Eighteen of 141 exclusions now have
+kernel proofs. The launcher measured 57.253653 aggregate CPU
+seconds, 50.88 wall, 500,936 KiB peak sampled tree RSS, five
+processes and zero swap growth. Final output 32,617,016 bytes.
+The five public objects total 155,872 bytes.
+
+Verified evidence `cited/gpt/return13-module-batch2-receipt-20261111.tar.gz`,
+7,127,686 bytes, SHA256
+`f297503448fb786bebbfdfbde03bd2ccc1f265e3564c69131b29a4b37dca3c4f`.
+Exact receipt SHA256
+`30522d64604b3a8babe6d904de414012d2a150cf93780997566f572dbe1366e3`.
+
+GC2923 freezes the next five unchecked lexicographic factors
+under the same source-size ceiling. They are `000100000`,
+`0001000011`, `00010011`, `000110010`, `000110100`, totalling
+1,783,445 ordinary source bytes. Exact generated module pins
+and the joint consumer reproduce. Expect all producers and the
+consumer to pass with standard axioms below 70 aggregate CPU
+seconds. Stop at any failed proof, pin, axiom or host guard,
+retaining the checked prefix.
+
+Record searched: exact GC2912 inventory and GC2920/GC2922
+batch receipts. [Plan](../tests/probes/swarm/sw02/carry/gpt_return13_module_batch3_plan.json)
+SHA256 `cbcf89b5cc8cfe906c470ace319edd72d391c2d2f2edcee27410f49e05108e96`.
+Consumer SHA256
+`2dfba5edb4584eabb65f5b54804c373b4eaca4c561644a64307789e14be3d6ab`.
+Same serial worker and limits as GC2921: 120 aggregate CPU
+seconds, 300 wall, 8192 MiB tree, eight processes, one thread
+at nice 10, 16 MiB/file and 128 MiB output. Keep 4096/1024 MiB
+free-memory floors, swap growth 4096 MiB, producer 60 CPU/125
+wall and consumer 10 CPU/20 wall, under the 95-second inner
+aggregate and 200-second worker wall stops. Thermal,
+pressure and monitor guards remain active.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
