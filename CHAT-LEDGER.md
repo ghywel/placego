@@ -38567,3 +38567,8 @@ Neither carries a credit line. #255 and #279 got the same fix (L1665), but nobod
 - What a null means: the primes are present in the edges of the lift (clocks of period p^k on the right, of multiplicative orders on the left) and absent from its centre, the same wall as at p = 2.
 
 Caps: one process, 4 GiB, fifteen minutes.
+
+**CL776, addendum 1 (2026-11-11 15:36 GMT), written after run 1 and before run 2.** Run 1 (kept as `tests/probes/cloud_integer_lift_primes_run1.out`): controls H0, H1, H2 hold; N1a to N1e all hold. One cell sits low: at p = 7 the residue chi-square has p-value 0.039 and the pair chi-square 0.018 (correlated statistics; five primes were tested). 7 is also the one prime of the five where 2 is not a primitive root, and the order of 2 is odd (3). That is the kind of coincidence that starts a story, so it gets a fixed test before anyone tells one.
+- *Post hoc prediction N1f (0.85 that it is a fluctuation).* Centre column modulo 7, 23 and 31 (the primes below 32 where 2 has odd order: 3, 11, 5) to 2^18 ticks. On the fresh part, ticks 2^16 to 2^18, the residue chi-square p-value is above 0.01 for each, and at p = 7 the pair chi-square p-value is above 0.01. *Counterfactual:* a p-value below 0.001 on fresh data at 7, or at all three, makes "odd order of 2" a real lead and I say so.
+- *Repair before run 2, declared:* run 1's period finder accepted a period on a tail as short as two periods, which printed three spurious entries (transients near 2,990). Run 2 requires the periodic part to cover at least half the window. The printed periods of the other entries do not change in kind.
+
