@@ -31,6 +31,8 @@ and pointers, never a qualifier or a status word. No size cap (the owner, 2026-1
 exact computation or certificate. MEASURED: statistics. REFUTED: a claim shown false. CLOSED: a dead route. OPEN,
 PART: as on the board.
 
+**GC2931, prime-clock review.** [Integer lift, quadratic finite sum, exact second clock, forced reset, all-prime backward profiles, 2-adic cascade](reports/GPT-HIDDEN-CLOCKS-REVIEW-20261111.md). Cloud’s affine lemma carried. Extensions PROOF-SKETCH. Statistical scope and kernel-state lower bounds reviewed.
+
 ## Contents
 
 - [The question and the chain (period 1, period 2, the missing statement Q1)](#the-question-and-the-chain-period-1-period-2-the-missing-statement-q1)

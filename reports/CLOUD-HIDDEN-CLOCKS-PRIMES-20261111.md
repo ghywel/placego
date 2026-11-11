@@ -5,6 +5,8 @@ statement and nothing changes a status on the board. New hand statements are PRO
 reads them. A sub-agent sweep meant to accompany this stopped at a usage limit after two of its five record
 searches; no lens or skeptic ran, and what it did return is a self-check.
 
+**GPT review, GC2931.** The left-edge lemma is carried with scalar periods dividing the stated product. The review adds proposed exact second and third clocks, unbounded left-prefix periods at every prime, and explicit 2-adic cascade bounds. Statistical conclusions below have been narrowed to their tested scope. [Carrying read and strengthenings](GPT-HIDDEN-CLOCKS-REVIEW-20261111.md).
+
 **The owner's question.** The kit collects provable statements and nobody has a bearing on the prize questions.
 We know what a counterexample must look like; can it be proved impossible? "I eternally feel the pull of the
 primes … hidden by some non obvious transformation. Perhaps a transformation that shifts even as time is run like
@@ -13,12 +15,10 @@ a cyclic cipher." The image: a two-factor code that changes every thirty seconds
 
 **Outcome.**
 1. The two-factor picture is exactly true, and already proved: at its right edge the single cell's pattern is a
-   binary counter read through a fixed scrambler. The centre column reads wheel number t at time t, before that
-   wheel has turned once. That is why the clock never unlocks the centre.
+   binary counter read through a fixed scrambler. The centre column reads wheel number t at time t. Controlling those phases across changing depths remains open.
 2. There is a transformation under which every prime appears: reading Rule 30's polynomial over the integers.
    It is in the literature. What is new here is its left edge, where each odd prime p sees a clock whose period
-   is the multiplicative order of 2 modulo p, and its centre, which behaves as a fair p-sided die at every prime
-   tested and is independent from prime to prime.
+   is the multiplicative order of 2 modulo p. The tested centre counts and selected joint tables are compatible with the stated uniformity and independence reference models.
 3. On the time axis the centre column has now been tested against the three kinds of arithmetic a tick number
    has: its residues (every modulus to two million), its digits (bases 2, 3, 5, 7) and its factorisation (the
    primes, Liouville, Möbius, at last to 2^24). Results in §4 and §5.
@@ -69,8 +69,7 @@ At Rule 30's right edge:
 
 So far it is the app. The difference is which wheel is read. The centre column is the cell at depth t at time t.
 Each tick reads a new wheel, and from the third wheel on, at every depth computed, that wheel's period is longer
-than t. The secret in use grows faster than the counter. A rolling code whose key outruns its clock never repeats, and one reading
-per wheel says nothing about that wheel's law.
+than t. These observations concern the measured wheels. Increasing wheel periods alone do not force an aperiodic sampled diagonal. The missing condition must relate successive wheels at the phases the centre samples.
 
 What would unlock it is a formula for wheel j at time t that is uniform in both. The record names that as open
 (DQ-030), and Problem 3 asks to prove that no fast one exists. How fast the wheels grow is itself open below:
@@ -102,10 +101,9 @@ is a statement about this lift.
 
 **Right edge (KNOWN: Nersissian, Theorems 12 and 13, Corollary 9).** The diagonal at depth k is an integer-valued
 polynomial D_k(t) of degree F_(k+2) − 1, with D_1 = t and D_2 = t², so modulo any prime p it is purely periodic
-with period a power of p. The centre column is c(n) = D_n(n) mod 2. The right edge is an odometer for every
-prime at once.
+with period a power of p. The centre column is c(n) = D_n(n) mod 2. This supplies finite clock factors with prime-power periods at every prime.
 
-**Left edge (mine; PROOF-SKETCH until read; COMPUTED controls; not found in the abstracts of Nersissian's two
+**Left edge (Cloud, carried by GPT GC2931 with the divisibility qualification below; COMPUTED controls; not found in the abstracts of Nersissian's two
 papers or in the sections of the second that I read, whose companion 2609.25077 treats Rule 30's left
 diagonals modulo 2 through the mirror rule 86 and which I did not read in full).** Write u = 1 + A along the left edge, u_n(t)
 for depth n. The rule gives
@@ -115,7 +113,7 @@ for depth n. The rule gives
 - Depth 1 is u_1 = 2^t exactly, so A = 2^t − 1.
 - Depth 2 is u_2(t) = 2^(t(t−1)/2) · (1 + Σ_(m<t) 2^(−m(m+1)/2)), a partial theta series in 1/2.
 - Modulo an odd prime p, once the two shallower diagonals are periodic with period P, depth n follows a fixed
-  affine map x ↦ αx + β of the field once per period. So it is eventually periodic, with period P times 1, or p
+  affine map x ↦ αx + β of the field once per period. So it is eventually periodic, with period dividing P times 1, or p
   (when α = 1), or the multiplicative order of α (a divisor of p − 1). A new transient can arise only when
   α = 0, that is when some multiplier in the period vanishes modulo p.
 - So **the first left clock modulo p has period exactly the order of 2 modulo p.** It is p − 1 exactly when 2 is
@@ -166,11 +164,10 @@ second code in C for p = 7, [source](../tests/probes/cloud_lift_centre_modp.c)).
 | 7 | 2^21 | 0.501 | see below | |
 
 - **N1a, N1b, N1c held** at all five primes by their stated threshold (p-value above 0.001).
-- **N1d held.** The columns modulo 2 and modulo 3, 5, 7, 11, 13 are independent (p-values 0.19, 0.46, 0.22, 0.83,
-  0.51), and so are 3 against 5 (0.97), 3 against 7 (0.61) and 5 against 7 (0.69).
-- **N1e held.** The 2-adic valuation of the centre count is geometric with ratio 1/2 to valuation 10 (8,277,
-  4,087, 1,984, 1,032, 499, … against 8,192, 4,096, 2,048, …; p-value 0.78) and independent of the valuation of
-  t + 1 (p-value 0.62). There is no Kummer-type carry law behind the centre bit in this lift.
+- **N1d held by its finite test criterion.** The selected joint tables gave independence-reference p-values 0.19, 0.46, 0.22, 0.83 and 0.51 for 2 against 3, 5, 7, 11 and 13, and 0.97, 0.61 and 0.69 for 3 against 5, 3 against 7 and 5 against 7.
+- **N1e held by its finite test criterion.** The 2-adic valuation histogram of the centre count fits the geometric reference with ratio 1/2 to valuation 10 (8,277,
+  4,087, 1,984, 1,032, 499, … against 8,192, 4,096, 2,048, …; p-value 0.78) and its joint table with the coarsened valuation of
+  t + 1 gives independence-reference p-value 0.62. Other digit and carry laws remain open.
 - **The flag at 7, chased and closed.** After 2^16 ticks the residues at 7 had p-value 0.039; after 2^18 the
   chi-square was 20.5 on 6 degrees of freedom (p-value 0.002), with residue 1 at −3.4 sigma. 7 is also the one
   prime of the five where the order of 2 is odd. Two post hoc predictions were pushed before two longer runs.
@@ -181,6 +178,8 @@ second code in C for p = 7, [source](../tests/probes/cloud_lift_centre_modp.c)).
   pairs tested for dependence alone give p-values 0.163, 0.365 and 0.074 on the three disjoint stretches; the
   low pair values in the table came from the residue counts. **A fluctuation**, among some seventy residue
   classes looked at.
+
+**Calibration note, GPT GC2931.** The initial pair table uses overlapping consecutive pairs, so its uniform-multinomial chi-square reference needs correction. The later dependence-only statistic removes fitted marginals. Block-test chi-square tails also use an asymptotic null distribution. The saved p-values are measurements under those stated reference laws.
 
 ### 4.4 The time axis: JOB CS-01, owed since 15 October
 
@@ -202,8 +201,7 @@ at 2^20 and 2^22 exactly. The first code, the probe exactly as written on
 15 October, was still running when this was written; its outcome is appended to its header and to 8.114 when it
 ends.
 
-**The drift was a fluctuation. The direct reading of the primes hunch is closed at 2^24**: sixteen million
-ticks, a million primes, and the column does not see them, nor the parity of the number of prime factors.
+**The larger sample did not sustain the earlier drift prediction.** These three arithmetic correlation tests are closed at 2^24. Asymptotic arithmetic orthogonality remains open.
 
 ### 4.5 Reading
 
@@ -212,33 +210,28 @@ ticks, a million primes, and the column does not see them, nor the parity of the
   the right (period p^k), multiplicatively on the left (the order of 2 and of later multipliers modulo p). That
   is new to the record, and it is a true form of the instinct that the primes are in the picture "in a dimension
   that is not the number line". It is also only a statement about this lift.
-- At the centre of the lift every prime sees a fair die, and the dice at different primes are independent. So
-  the odd primes carry no information about Rule 30's bit: by the Chinese remainder theorem the count's residues
-  at different primes are free of each other, and the data agree.
-- On the time axis the column ignores the primes to 2^24.
-- So the primes are where the clocks are, on the periodic edges, and not where the question is. This is the
-  same verdict as 8.114's structural reading of the sister problems ("the primes govern the cycles, and the
-  integer orbit has none"), now with a second, independent place where it holds.
+- At the centre of the lift the selected finite tests are compatible with uniformity and independence. CRT identifies joint residues with a residue modulo the product. A distribution theorem along this orbit requires an additional argument.
+- On the time axis the three tested arithmetic sums show no sustained drift through 2^24.
+- The edge clocks have proved arithmetic structure. These centre tests leave any deeper arithmetic structure unresolved.
 
 **Excess variance: looked for at 7 and not found; one control on the line.** The four disjoint stretches of
 the 2^21 run at 7 had chi-squares 13.3, 11.2, 17.6 and 5.3 on 6 degrees of freedom each, 47.4 on 24 (p-value
 about 0.003), with the large deviations in different residues and of different signs. That is not a bias; it is
 what excess variance looks like, and also what four looks at one prime look like. One statistic was fixed before
 its data existed (N1h, CL776 addenda 3 and 4): cut 2^21 ticks into blocks of 2^10, 2^13 and 2^16, sum the
-blocks' chi-squares, and ask for an exact tail p-value above 0.0005, after calibrating on 120 fair dice
+blocks' chi-squares, and ask for a chi-square-reference tail p-value above 0.0005, after calibrating on 120 fair dice
 ([probe](../tests/probes/cloud_lift_block_dispersion.py), [output](../tests/probes/cloud_lift_block_dispersion.out)).
 
 | Sequence | Blocks of 2^10 | Blocks of 2^13 | Blocks of 2^16 | Verdict |
 |---|---|---|---|---|
 | Rule 30's own centre bits | ratio 0.995 (p 0.44) | 1.128 (p 0.078) | 1.246 (p 0.16) | inside |
 | centre of the lift modulo 7 | 0.998 (p 0.45) | 1.050 (p 0.085) | 1.205 (p 0.028) | inside: N1h held |
-| centre of the lift modulo 5 (control) | 1.018 (p 0.13) | 1.011 (p 0.40) | **0.638 (lower tail, p 0.0005)** | on the line |
+| centre of the lift modulo 5 (control) | 1.018 (p 0.13) | 1.011 (p 0.40) | **0.638 (lower tail, p rounds to 0.0005)** | below the declared threshold |
 | planted control: a die with a slowly drifting 1% excess | 1.023 | 1.202 | 2.402 | far outside, as it should be |
 
 At 7 there is no excess variance by the declared line, and 7 is no further out than Rule 30's own bits. At the
 control prime 5 the 32 blocks of 65,536 ticks are more even than a fair die's, in the direction nobody
-predicted and exactly at the line; eighteen tails were looked at, so one at this level somewhere has a chance of
-about 1 in 100. By the rule written beforehand the judge is fresh data: the lift modulo 5 to 2^22 ticks, with
+predicted and below the threshold at full precision, as the saved False verdict records. Eighteen tails were inspected. A union bound using their reference probabilities is approximately 0.009. By the rule written beforehand the judge is fresh data: the lift modulo 5 to 2^22 ticks, with
 prediction N1i (0.85 that it is chance; lower-tail p-value above 0.01 on the 32 fresh blocks). **That run was in
 progress when this report was written; its result is appended at the end of the report.**
 
@@ -246,7 +239,7 @@ progress when this report was written; its result is appended at the end of the 
 
 "Hidden generator" has a precise meaning for each classical building block, and each has a detector. For every
 finite-register model the kit proves "profile bounded ⟺ eventually periodic" (catalogue §7 item 13), so each
-detector is also a restatement of Problem 1 and none can prove anything from finite data (8.116: such a block
+finite test leaves Problem 1 open. Finite witnesses can still exclude specified small models, as the kernel counts below illustrate (8.116: such a block
 "calibrates an observer and cannot close a prize").
 
 | Building block | What it would mean | Detector | What the record or today says |
@@ -264,7 +257,7 @@ detector is also a restatement of Problem 1 and none can prove anything from fin
 ([Probe](../tests/probes/cloud_centre_spectrum_kernels.py), [output](../tests/probes/cloud_centre_spectrum_kernels.out).)
 The spectrum's control: forcing one tick in 1,009 black raises the maximum to 23.9, outside the window.
 
-What is left when all of these are removed is the one gate. Over GF(2) the centre cell at time t is a polynomial
+These tests leave the nonlinear gate as a structural target. Over GF(2) the centre cell at time t is a polynomial
 of degree 2t − 1 in the starting row with millions of terms by t = 12 (degree law, PROVED and in the kit), and
 the single cell evaluates it at one point. In the lift that evaluation is the count A_t(0). Nothing is hidden in
 the sense of a key. What looks random is the parity of a count whose number of digits grows by about two thirds at every step
@@ -310,7 +303,7 @@ every proved clock.
 - A sweep of the space-time diagram against the primes. It still has no definition, and G301 forbids choosing
   one after looking. The lift suggests the only loci with proved structure are the two edges.
 - The next-bit predictor ladder on a billion bits (specified, never run; reports/wolfram-agents/GPU-METAL-JOBS.md).
-- A second reader for the left-edge lemma of §4.2.
+- At the original writing, a second reader for the left-edge lemma of §4.2. GPT has now carried it in GC2931.
 - Two runs were still computing when this was written: the fresh run of the lift modulo 5 to 2^22 (prediction
   N1i, §4.5), and the first code of CS-01 at 2^24. Their results are appended below.
 

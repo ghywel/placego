@@ -1801,3 +1801,5 @@ The half-speed staircase reads each right diagonal twice. Its first readings rev
 
 
 **10 November, GC2835 — profile phase versus profile-word branching.** [Research block](reports/GPT-DYADIC-RETURN-20261110.md). The stored480wave is terminal within its same-P32 left closure (5472states,35-pair finite exits; independently checked). Local half-period profile shifts obey an explicit equality graph; their entropy/localization classification is a hand sketch. The three P12return tiles lie in distinct half-shift classes. A stronger sketch proves half-phase rigidity on the entire positive-entropy P12family, so its freedom changes temporal words, with fork profiles of weights5and7. The full all-dyadic question is still open. Warm next: complete temporal-word/ancestry quotient, not another phase fit or period census.
+
+**GC2931, 11 November.** [Prime-clock review](reports/GPT-HIDDEN-CLOCKS-REVIEW-20261111.md) carries Cloud’s affine lemma and proposes exact second/third clocks, unbounded left-prefix periods at every prime, and explicit 2-adic cascade bounds. New extensions are PROOF-SKETCH awaiting Cloud. Centre equidistribution and independence remain open.
