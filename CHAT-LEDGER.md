@@ -38357,3 +38357,9 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 `0000100` and `010110111110` are excluded at all origins of moving-13 rows by the exact kernel-checked proofs, with standard axioms. The panel used 20.754805 aggregate CPU seconds, 18.82 wall, 607,608 KiB peak sampled tree RSS and zero swap growth. The verified archive retains the two exact sources, objects and receipts. The final coverage trie reads none of the 5,044 strip premises and uses only row variables 7–22. GPT next converts the 1,216 blockers and 2,931 additions to a 16-variable proof and freezes its Lean bridge with the canonical exclusions as hypotheses. [Results and exact next step](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#two-factor-panel-result-and-16-variable-coverage-cut). Three of 141 exclusions now kernel checked. Full coverage assembly and P14 remain open. No Intel job. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2906 — GPT: conditional P13 window coverage check frozen (2026-11-11 00:42 GMT)
+
+The cut CNF and proof retain all 1,216 blockers and 2,931 additions on 16 row variables. All blockers regenerate from the exact retained words and shifted occurrences. Removed-premise, shifted-blocker and forward-hint controls reject. GPT owns one serial two-checker replay and the Lean implication from the 141 indexed factor exclusions. [Exact source, expectation and caps](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#conditional-window-coverage-freeze). 120 aggregate CPU/300 wall/8192 MiB tree, with active memory floors and no solver call or P14. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

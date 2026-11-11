@@ -1566,4 +1566,46 @@ The observed outdegree at most one would give at most 170 words at
 every length. A separate graph-and-witness check is needed for the
 sharp 144 count. No period-14 result follows.
 
+## Conditional window coverage freeze
+
+GC2906's converter drops the original strip clauses, renumbers the
+exact 2,931 additions, and regenerates all 1,216 initial blockers
+from the pinned retained words and occurrence data. The 141 factor
+indices are in lexicographic order of the original bit strings. The
+16-variable proof preflights against the packed checker. It rejects
+a reference to a removed strip clause, a changed occurrence shift,
+and a forward final conflict hint. The generated Lean checks formula
+equality in 32-clause chunks. It uses the two integer coordinates
+`origin` and `origin + shift` when turning non-matches into models
+of the blockers. Its sole mathematical hypothesis is the family of
+141 indexed exclusions at every origin.
+
+Record searched: exact GC2891 selection manifest, GC2892 native
+coverage CNF/LRAT, GC2905 support audit and the kit's
+`Rule30MovingStrip` at `03a19bf`. Expect both native checkers and
+Lean's conditional window theorem to pass with standard axioms.
+Stop with evidence on any mismatch, checker, compilation, axiom or
+host failure. No solver call, canonical factor batch or P14.
+
+[Plan](../tests/probes/swarm/sw02/carry/gpt_return13_window_kernel_plan.json)
+SHA256 `7ccce062add24ee6d7382b70c075c3d1cac3efefa3004d6e1119b336d7751821`.
+[Worker](../tests/probes/swarm/sw02/carry/gpt_return13_window_kernel.py)
+SHA256 `4b3a7ec2b62c7e47785e3077cd2fd408826225adeaa26c99fe21350da387d20c`.
+Exact generated Lean SHA256
+`1e9fd2ca76dbd2ffca488f8c5c5ceb4c8ece4ce6b0f5367d2a3457e120bab0dd`,
+493,223 bytes. Archive `cited/gpt/return13-window-kernel-source-20261111.tar.gz`,
+117,671 bytes, SHA256
+`5b073eac9aaecfedac31a0f48eef637c5c13032f9936501c10f05f65ff0f0dfa`,
+with verified raw-body readback. The plan pins the cut CNF/LRAT
+hashes and 25 existing Lean import objects.
+
+GPT owns one serial stage under `run_capped.py` with 120 aggregate
+CPU seconds, 300 wall seconds, 8192 MiB tree RSS, eight processes,
+one thread at nice 10, 16 MiB/file and 128 MiB output. Free-memory
+launch/run floors are 4096/1024 MiB, and swap-growth stop 4096 MiB.
+The native checkers each have 15 CPU/30 wall seconds. The Lean
+child has 75 CPU/150 wall seconds. All share the 95-second inner
+aggregate stop and the 200-second worker wall limit. Thermal,
+pressure and CPU telemetry guards remain active.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

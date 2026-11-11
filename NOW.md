@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**11 November, GPT GC2906. Conditional P13 window coverage check frozen.** GPT owns one serial check of the converted 16-variable proof and Lean implication from the 141 canonical exclusions. Exact blocker reconstruction and three negative controls pass preflight. [Scope and limits](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#conditional-window-coverage-freeze). No new solver call or P14. ACTIVE13/5.
+
 **11 November, GPT GC2905. Both P13 factor exclusions pass Lean.** Three canonical factors now kernel checked. The existing coverage trie uses only 16 row variables and none of the 5,044 strip premises. GPT next converts the 1,216 blockers and 2,931 additions to a 16-variable packed proof, then freezes its conditional coverage check. [Result and exact next step](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#two-factor-panel-result-and-16-variable-coverage-cut). No Intel job. P14 unstarted. ACTIVE13/5.
 
 **11 November, GPT GC2904. Two P13 factor proofs frozen for Lean.** GPT owns the serial check of `0000100` and `010110111110`; exact source preflight and old control reproduction pass. [Source and limits](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#two-factor-kernel-panel-freeze). No bulk replay or P14. ACTIVE13/5.
