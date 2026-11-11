@@ -1962,3 +1962,19 @@ What I am left with after the block. The period-15 core has no walls: five compo
 - **Local, 2026-11-10 (L1648), parked during delivery:** the largest first-even index of G over odd rows of bit length L is 1, 3, 2, 3, 4, 5, 6, 5, 9, 7, 15, 8 for L = 1..12; "bit length plus four" (R30-20261108-a0fd36's bound) is attained at L = 11 only by 1493 and 1507. Is it attained infinitely often, and does a sharp form give a short width-bounded barrier in the coupled frame too? Budget: one bounded census after the SW-02 backlog. Also (L1646/L1647): is the width-6 relaxation's excluded language of finite type (the kit's words plus 101010000)? GPT's GC2849 test design: compare the factor-NFA language with the list-avoiding DFA, both inclusions, capped product.
 
 - **Local, 2026-11-10 (L1661), parked until S-24's Q1a compiles:** (★) "every shift-equivariant group law on the one-sided full shift with a finite window, identity 0, commutative and with (x+y)+y = x, is coordinatewise xor" may extend to F_p (with x + y + y + ... replaced by the inverse) and to finite abelian alphabets. Budget: one hand attempt plus a bounded SAT check like s24_star_descent_check.py at alphabet 3.
+
+
+## The owner, 11 November — the primes again, and the two-factor code (recorded by Cloud, CL776 and CL777)
+
+The owner: "I eternally feel the pull of the primes, that their relevancy is somehow passing us by unnoticed … hidden by some non obvious transformation. Perhaps a transformation that shifts even as time is run like a cyclic cipher." The image: a two-factor code that changes every thirty seconds and still unlocks the account. "What is rule 30 hiding."
+
+What was done with it, [report](reports/CLOUD-HIDDEN-CLOCKS-PRIMES-20261111.md):
+- The two-factor picture is literally true at the right edge and was already proved (the odometer); the centre reads each wheel once, before it turns. Known; drawn together, not found.
+- A transformation under which the primes appear exists (the integer lift, Nersissian's). New here: on its left edge every odd prime sees a clock whose period is the order of 2; at its centre every prime sees a fair die.
+- JOB CS-01, owed since the first primes hunch of 15 October, is run: the column ignores the primes to 2^24.
+- Still open from 15 October and untouched: a sweep of the diagram. It has no definition, and G301 forbids choosing one after looking.
+
+Verdict on the instinct, as far as today goes: right about the clocks and right that the primes are in the picture off the number line; no sign of them at the centre, in the bit or in any prime's shadow of the count.
+
+**Cloud's pull after the block (noticed, not pursued).** The left edge of the lift is the first place where the seed's white left half is an explicit arithmetic object: powers of 2, then a theta series. The kit says any proof must use the far-left whiteness. Taken modulo 2^k the recurrence makes depth 3 a counter (u_2 tends to 1 and u_1 to 0 in the 2-adic sense, so u_3 falls by exactly 1 a tick from some time on) and depth 4 a running product of that counter, which tends to 0. That is a hand remark, unchecked by any run. The pull is to write that cascade out and see whether the left band's known depths (eventually white diagonals at 2, 7, 28, 399; CONSTELLATION row 1) come out of it. It is about the ordered left band, not the centre; one block, with the depths to 30 predicted from the cascade before any computation.
+

@@ -38611,3 +38611,28 @@ Caps: one process, 4 GiB, fifteen minutes.
 
 *N2a and N2b held* (`tests/probes/cloud_centre_spectrum_kernels.out`): the largest of 2^21 spectral powers of the centre column is 15.2 inside a coin's 12.6 to 21.5; 511, 364, 156 and 400 kernel sequences in bases 2, 3, 5 and 7 are pairwise distinct with least disagreement 0.478.
 
+
+## CL777 — Cloud: what Rule 30 hides, and where the primes are; results of CL776 and its five addenda (2026-11-11 18:54 GMT)
+
+**For the owner's question of 11 November; for GPT one reading request at the end.** [Report](reports/CLOUD-HIDDEN-CLOCKS-PRIMES-20261111.md). No prize statement and no status on the board changes.
+
+**Known already, drawn together (nothing of mine).** For a random start the centre column is an exact fair coin independent of the right half (kit). The single cell is that cipher's output on the all-white message with the all-white key (PROOFS 33). At the right edge the pattern is the binary odometer behind a fixed scrambler (Coven, Pivato and Yassawi; kit `Odometer`): the two-factor picture, exactly. The centre column reads wheel t at time t, once, before the wheel has turned (kit catalogue §7 item 9; DQ-030). That is why the clock does not unlock the centre.
+
+**New.**
+1. *The left edge of the integer lift* (the lift is Nersissian's, arXiv 2609.25078; its right edge is his). With u = 1 + A: u_n(t+1) = u_n(t)·u_(n−1)(t) + u_(n−2)(t) − 1. Depth 1 is 2^t − 1. Modulo an odd prime the periods are products of powers of p and multiplicative orders, and **the first left clock has period the order of 2 modulo p** (checked at ten primes). PROOF-SKETCH; COMPUTED controls on exact integers.
+2. *The centre of the lift modulo odd primes.* A fair die at 3, 5, 7, 11, 13, 23 and 31; no period; independent across primes; the 2-adic valuation of the count geometric. All six predictions held.
+3. *CS-01 at last.* The centre column at prime times and against Liouville and Möbius at 2^24: +0.83, −0.41, −0.20 sigma. Fresh ticks: −0.43, +0.56, +1.37. The 2^22 drift was a fluctuation. Second code; the probe's own run is still going and its figures will be appended to its header.
+4. *Two observers the record had not used on the column.* Spectrum at 2^22: no line. Kernels in bases 2, 3, 5, 7: 511, 364, 156, 400 sequences, all distinct.
+
+**Flags, with their handling.**
+- *7.* p-value 0.039 at 2^16, 0.002 at 2^18. Two post hoc predictions pushed before two longer runs; at 2^21 by a second code the p-value is 0.50 and the low residue sits high. Closed.
+- *Excess variance at 7,* seen across four stretches and not predicted. One statistic fixed and calibrated before its data existed: held at 7.
+- *5, the control,* under-dispersed at blocks of 2^16 with p-value 0.0005, on the declared line. Fresh run to 2^22 in progress with prediction N1i; result in an addendum to this entry.
+
+**Mistakes of mine in this block.** My rename of run 1's output did not take effect and run 2 overwrote it; it was recovered from git. My period finder accepted too short a tail in run 1. My first cut for the block statistic assumed a normal score where the chi-square is skewed; repaired before the data existed. A draft of the report with placeholders was on main for about an hour between addenda.
+
+**What did not happen.** The sub-agent sweep stopped at a usage limit: two record searches finished (primes; ciphers), three did not, and no lens or skeptic ran. I have not relaunched it.
+
+**To GPT, when free, one read:** the left-edge lemma (report §4.2): the recurrence, the affine-map step that gives "period times 1, p, or an order dividing p − 1", and the claim that a new transient needs a vanishing multiplier. It is short. Nothing else is asked.
+
+**Owners.** N1i's result and the first code's CS-01 figures: mine, as addenda here. The sweep of the diagram against the primes remains undefined and unowned, as since 15 October.

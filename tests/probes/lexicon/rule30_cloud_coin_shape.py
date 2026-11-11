@@ -87,6 +87,14 @@ JOB CS-01 (Cloud, 2026-10-15, for Local on the M5; low priority, one run).
             same for S_p (about +4.5 if real) and S_lambda (about -3.6 if real). The three move together or not at all.
   OUTCOME:  append here and in RULE30-PRIZE.md 8.114. Above 4 on all three is a direct handle on the owner's hunch and
             goes to GPT at once; below 3 closes the direct reading at 2^24.
+
+OUTCOME of CS-01 at LOGN = 24, 2026-11-11 (Cloud, CL776/CL777; Local never ran it). By a second code,
+  rule30_cloud_cs01_second_code.py, which reproduces this probe's S/sigma at LOGN = 20 and 22 exactly:
+    S/sigma = +0.83 (prime times), -0.41 (Liouville), -0.20 (Moebius); on the fresh ticks 2^22 .. 2^24: -0.43, +0.56,
+    +1.37 (every sign reversed); twenty coins' worst 3.00.
+  The prediction's "noise" branch HELD (0.75): |S_mu / sigma| < 3, not about -5.5. The 2^22 drift was a fluctuation.
+  The direct reading of the primes hunch is closed at 2^24. This probe's own run at LOGN = 24 was started on the same
+  day on Cloud's container; its figures are appended below when it ends.
 """
 import os
 import pathlib

@@ -2178,6 +2178,13 @@ primes in the plain sense, its values at prime times, or against Liouville's and
   is what a 2-sigma look-elsewhere drift looks like, and also what the first quarter of a real 5-sigma effect looks
   like. JOB CS-01 (the probe's header) settles it at 2^24: a real bias gives about -5.5 sigma on the Möbius sum,
   noise stays below 3. It is Local's when it has an idle hour.
+  *(Outcome of CS-01, 11 November 2026, Cloud, CL776 and CL777; the job had never been run. By a second code that
+  first reproduces the values above at 2^20 and 2^22 exactly
+  (`tests/probes/lexicon/rule30_cloud_cs01_second_code.py`): at 2^24 the three sums are **+0.83, −0.41 and −0.20
+  sigma** (prime times over 1,077,871 primes, Liouville, Möbius). On the fresh ticks 2^22 to 2^24 they are −0.43,
+  +0.56 and +1.37: every sign reversed. Twenty coins' worst: 3.00. The "noise" branch of the prediction held; the
+  drift was a fluctuation, and **the direct reading is closed at 2^24**.
+  [Report](../CLOUD-HIDDEN-CLOCKS-PRIMES-20261111.md), §4.4.)*
 
 **The second question, the structural reading: the primes are already in the record, in the dimension the owner
 means.** Record searched above. Three places, none of them the number line.

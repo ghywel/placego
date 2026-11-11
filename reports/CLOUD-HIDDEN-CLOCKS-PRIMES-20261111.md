@@ -198,7 +198,9 @@ that the 2^22 drift was real (then about +4.5, −3.6 and −5.5 at 2^24), other
 Twenty pseudo-random coins' worst value over the three sums: 3.00. COMPUTED by a second code
 ([source](../tests/probes/lexicon/rule30_cloud_cs01_second_code.py),
 [output](../tests/probes/lexicon/rule30_cloud_cs01_second_code.out)) that first reproduces 8.114's published values
-at 2^20 and 2^22 exactly. CS01-FIRST-CODE
+at 2^20 and 2^22 exactly. The first code, the probe exactly as written on
+15 October, was still running when this was written; its outcome is appended to its header and to 8.114 when it
+ends.
 
 **The drift was a fluctuation. The direct reading of the primes hunch is closed at 2^24**: sixteen million
 ticks, a million primes, and the column does not see them, nor the parity of the number of prime factors.
@@ -218,7 +220,27 @@ ticks, a million primes, and the column does not see them, nor the parity of the
   same verdict as 8.114's structural reading of the sister problems ("the primes govern the cycles, and the
   integer orbit has none"), now with a second, independent place where it holds.
 
-N1H-RESULT
+**Excess variance: looked for at 7 and not found; one control on the line.** The four disjoint stretches of
+the 2^21 run at 7 had chi-squares 13.3, 11.2, 17.6 and 5.3 on 6 degrees of freedom each, 47.4 on 24 (p-value
+about 0.003), with the large deviations in different residues and of different signs. That is not a bias; it is
+what excess variance looks like, and also what four looks at one prime look like. One statistic was fixed before
+its data existed (N1h, CL776 addenda 3 and 4): cut 2^21 ticks into blocks of 2^10, 2^13 and 2^16, sum the
+blocks' chi-squares, and ask for an exact tail p-value above 0.0005, after calibrating on 120 fair dice
+([probe](../tests/probes/cloud_lift_block_dispersion.py), [output](../tests/probes/cloud_lift_block_dispersion.out)).
+
+| Sequence | Blocks of 2^10 | Blocks of 2^13 | Blocks of 2^16 | Verdict |
+|---|---|---|---|---|
+| Rule 30's own centre bits | ratio 0.995 (p 0.44) | 1.128 (p 0.078) | 1.246 (p 0.16) | inside |
+| centre of the lift modulo 7 | 0.998 (p 0.45) | 1.050 (p 0.085) | 1.205 (p 0.028) | inside: N1h held |
+| centre of the lift modulo 5 (control) | 1.018 (p 0.13) | 1.011 (p 0.40) | **0.638 (lower tail, p 0.0005)** | on the line |
+| planted control: a die with a slowly drifting 1% excess | 1.023 | 1.202 | 2.402 | far outside, as it should be |
+
+At 7 there is no excess variance by the declared line, and 7 is no further out than Rule 30's own bits. At the
+control prime 5 the 32 blocks of 65,536 ticks are more even than a fair die's, in the direction nobody
+predicted and exactly at the line; eighteen tails were looked at, so one at this level somewhere has a chance of
+about 1 in 100. By the rule written beforehand the judge is fresh data: the lift modulo 5 to 2^22 ticks, with
+prediction N1i (0.85 that it is chance; lower-tail p-value above 0.01 on the 32 fresh blocks). **That run was in
+progress when this report was written; its result is appended at the end of the report.**
 
 ## 5. Other building blocks, and what a detector for each says
 
@@ -289,3 +311,9 @@ every proved clock.
   one after looking. The lift suggests the only loci with proved structure are the two edges.
 - The next-bit predictor ladder on a billion bits (specified, never run; reports/wolfram-agents/GPU-METAL-JOBS.md).
 - A second reader for the left-edge lemma of §4.2.
+- Two runs were still computing when this was written: the fresh run of the lift modulo 5 to 2^22 (prediction
+  N1i, §4.5), and the first code of CS-01 at 2^24. Their results are appended below.
+
+## 8. Later results
+
+*(Appended as the two runs end.)*
