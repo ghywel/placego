@@ -44,7 +44,7 @@ def dense_inputs(premises, packed):
         used |= mask
     old = [v for v in range((used.bit_length()+1)//2) if used >> (2*v) & 3]
     new = {v: j for j, v in enumerate(old)}
-    assert len(old) == 338 and len(new) == len(old)
+    assert 0 < len(old) <= 2**10
     dense_masks = [rename_mask(mask, new) for mask in masks]
     dense_steps = [rename_step(step, new) for step in steps]
     assert [rename_mask(mask, old) for mask in dense_masks] == masks
@@ -58,7 +58,9 @@ def dense_inputs(premises, packed):
         'masks_hex': [hex(mask) for mask in dense_masks], 'steps_hex': [hex(step) for step in dense_steps]}
 
 
-def bridge(old, ids):
+def bridge(old, ids, factor='0110000'):
+    width = len(factor)
+    value = int(factor[::-1], 2)
     lines = [*emit_table('oldVar', old, 32),
              'open Ruliology.CellularAutomata.Rule30RingOrbits',
              'private def restoreLit (l : Nat) : Nat := 2 * oldVar (l / 2) + l % 2',
@@ -66,7 +68,7 @@ def bridge(old, ids):
              'private def baseArray : Array (List Nat) := stripBase.toArray',
              'private def selectBase (i : Nat) : List Nat := (baseArray[i]?).getD []',
              'private def cube : List (List Nat) :=',
-             '  (List.range 7).map (fun i => [mkLit (vid 65 0 (6+i)) ((6 : Nat).testBit i)])']
+             f'  (List.range {width}).map (fun i => [mkLit (vid 65 0 (6+i)) (({value} : Nat).testBit i)])']
     parts, checks = [], []
     for start in range(0, len(ids), 32):
         label = f'indices{len(parts)}'
@@ -82,7 +84,7 @@ def bridge(old, ids):
                   '    formula.map (List.map restoreLit) = supportIds.map selectBase ++ cube := by',
                   '  simp only [formula, supportIds, List.map_append, List.append_assoc,',
                   '    ' + ', '.join(checks) + ']'])
-    lines.extend('''private theorem stripLength : stripBase.length = 5044 := by decide +kernel
+    proof = '''private theorem stripLength : stripBase.length = 5044 := by decide +kernel
 private theorem indices_ok : supportIds.all (fun i => decide (i < 5044)) = true := by decide +kernel
 
 private theorem selectBase_mem {i : Nat} (hi : i < 5044) : selectBase i ∈ stripBase := by
@@ -100,18 +102,18 @@ private theorem models_pullback (a : Nat → Bool) (c : List Nat)
   have hm : (2 * oldVar (l/2) + l%2) % 2 = l%2 := by omega
   simpa only [Lit, restoreLit, hd, hm] using hv
 
-private theorem cube_models (x : Int → Bool) (origin : Int) (h : Matches x origin 7 6) :
+private theorem cube_models (x : Int → Bool) (origin : Int) (h : Matches x origin WIDTH VALUE) :
     ∀ c ∈ cube, Models (assignment 65 x (origin-6)) c := by
   intro c hc
   rcases List.mem_map.mp hc with ⟨j, hj, rfl⟩
-  have hj7 : j < 7 := List.mem_range.mp hj
+  have hj7 : j < WIDTH := List.mem_range.mp hj
   refine ⟨_, List.mem_cons_self, (lit_mk _ _ _).mpr ?_⟩
   rw [assignment_variable (by decide) x (origin-6) 0 (6+j) (by omega)]
   have he : origin - 6 + ((6+j : Nat) : Int) = origin + j := by omega
   simpa only [orbit, he] using h j hj7
 
 theorem factor_excluded (x : Int → Bool) (hx : orbit x 13 = x) (origin : Int) :
-    ¬ Matches x origin 7 6 := by
+    ¬ Matches x origin WIDTH VALUE := by
   intro hm
   let a := assignment 65 x (origin-6)
   apply unsat (fun v => a (oldVar v))
@@ -129,7 +131,8 @@ theorem factor_excluded (x : Int → Bool) (hx : orbit x 13 = x) (origin : Int) 
     · exact transition_models (by decide) x (origin-6) _ ht
     · exact period_models (by decide) (by decide) x hx (origin-6) _ hp
   · exact cube_models x origin hm _ hcube
-'''.splitlines())
+'''
+    lines.extend(proof.replace('WIDTH', str(width)).replace('VALUE', str(value)).splitlines())
     return '\n'.join(lines)
 
 
@@ -138,7 +141,7 @@ def emit_dense(premises, packed):
     base_source = emit(compact_premises, compact_packed).decode()
     base_source, _, _ = base_source.partition('end P13PackedControl')
     base_source = base_source.replace('namespace P13PackedControl', 'namespace P13DenseControl')
-    assert premises['factor'] == '0110000' and len(premises['base_clause_ids']) == 1388
+    assert premises['factor'] == '0110000' and len(premises['base_clause_ids']) == 1388 and len(old) == 338
     source = base_source + bridge(old, [i-1 for i in premises['base_clause_ids']]) + '\n'
     source += '\nend P13DenseControl\n\n#print axioms P13DenseControl.factor_excluded\n'
     return source.encode(), compact_packed

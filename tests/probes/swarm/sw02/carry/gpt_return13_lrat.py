@@ -69,7 +69,7 @@ def literal_mask(clause):
     return sum(1 << (2*(abs(l)-1) + int(l > 0)) for l in set(clause))
 
 
-def audit_rup(cnf, lrat):
+def audit_rup(cnf, lrat, packed_output=None):
     """Replay the used positive LRAT cone, then AUDIT packed bounds before encoding."""
     original = []
     for line in cnf.read_text().splitlines():
@@ -167,7 +167,8 @@ def audit_rup(cnf, lrat):
             assert conflict < bound and masks[conflict] & xs == masks[conflict]
         assert masks[-1] == 0 and remap[empty] == len(masks)-1
         # Decimal Python limits are irrelevant to the Lean binary natural encoding.
-        (OUT/'packed-rup.json').write_text(json.dumps({'masks_hex': [hex(m) for m in masks],
+        output = OUT/'packed-rup.json' if packed_output is None else packed_output
+        output.write_text(json.dumps({'masks_hex': [hex(m) for m in masks],
             'steps_hex': [hex(p) for p in packed], 'original_cnf_sha256': hashlib.sha256(cnf.read_bytes()).hexdigest()}, indent=2)+'\n')
     return result
 

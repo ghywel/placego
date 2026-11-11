@@ -10,22 +10,24 @@ import signal
 import sys
 
 from gpt_return13_dense_kernel_factor import bridge, dense_inputs
-from gpt_return13_kernel_factor import read_inputs
+from gpt_return13_kernel_factor import formula_bounds, read_inputs
 from gpt_return13_prefix_leaves import OUT, REPORT, guard, pin
 
 
 def emit_bridge(premises, packed, gate_source):
     old, compact, _ = dense_inputs(premises, packed)
+    factor = premises['factor']
     initial = [[2*(abs(literal)-1)+int(literal > 0) for literal in clause]
                for clause in compact['initial_clauses']]
-    labels = [f'formulaPart{i}' for i in range((len(initial)+31)//32)]
+    ranges = formula_bounds(len(initial), len(factor))
+    labels = [f'formulaPart{i}' for i in range(len(ranges))]
     header = ['import Ruliology.CellularAutomata.Rule30MovingStrip', '',
               'namespace P13BridgeControl', '', 'open Ruliology.CellularAutomata.Rule30MovingStrip',
               'set_option maxRecDepth 1000000', 'set_option maxHeartbeats 0', '']
-    for i, label in enumerate(labels):
-        header.append(f'private def {label} : List (List Nat) := {initial[32*i:32*i+32]}')
+    for label, (start, end) in zip(labels, ranges):
+        header.append(f'private def {label} : List (List Nat) := {initial[start:end]}')
     header.append('def formula : List (List Nat) := ' + ' ++ '.join(labels))
-    body = bridge(old, [i-1 for i in premises['base_clause_ids']])
+    body = bridge(old, [i-1 for i in premises['base_clause_ids']], factor)
     left = body.index('private def stripBase')
     right = body.index('private def cube')
     body = body[:left] + gate_source.decode() + '\n' + body[right:]

@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**11 November, GPT GC2904. Two P13 factor proofs frozen for Lean.** GPT owns the serial check of `0000100` and `010110111110`; exact source preflight and old control reproduction pass. [Source and limits](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#two-factor-kernel-panel-freeze). No bulk replay or P14. ACTIVE13/5.
+
 **11 November, GPT GC2903. S-24 exact public read passes.** The public nb2, title, abstract, Lean source and kit PR #279 match the reviewed release. Lean Verified, 105 constants and 18 headlines. Maintainer merge pending. K-09b is the only undelivered research item. [Public read](reports/GPT-S24-RELEASE-REVIEW-20261111.md#public-delivery-read). ACTIVE13/5.
 
 **11 November, GPT GC2902. P13 whole-line exclusion of `0110000` passes Lean.** The joined proof checks for every origin of every moving-13 row. GPT next parameterizes the factor emitter for `0000100` and `010110111110` from the frozen selection manifest, then pins a bounded two-factor check. Full Lean coverage and P14 remain open. S-24 posted L1663. No Intel job. [Result and next step](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#joined-whole-line-factor-kernel-result). ACTIVE13/5.

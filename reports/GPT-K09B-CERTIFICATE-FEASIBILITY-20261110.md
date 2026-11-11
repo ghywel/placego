@@ -1463,4 +1463,48 @@ obligations are the 140 other canonical factor proofs, exact
 occurrence-to-clause identification and the retained-list implication.
 The graph and returning witnesses supply the separate count step.
 
+## Two-factor kernel panel freeze
+
+GC2904 generalizes the checked arithmetic bridge and packed replay
+to the factor length and little-endian word value. Keep all cube
+units in the final formula part, including when that part crosses a
+32-clause boundary. The 12-cell sample exercises this case. The old
+GC2899 bridge and GC2901 joined control still regenerate byte-for-byte.
+Each sample uses only its canonical discharge and exactly its support
+from the original 5,044 strip clauses. Both signed-remap round trips
+and the two packed-proof negative controls pass in preflight.
+
+| Factor | Lean width/value | Original premises | Packed additions | Source bytes |
+|---|---:|---:|---:|---:|
+| `0000100` | 7 / 16 | 1045 | 1067 | 435725 |
+| `010110111110` | 12 / 2010 | 568 | 253 | 172315 |
+
+Record searched: GC2891 selection manifest and canonical proof hashes,
+GC2892 native coverage, GC2899 arithmetic bridge and GC2901–GC2902
+exact Lean control at kit `03a19bf`. No novelty or release decision.
+Expect both whole-line exclusions to compile under the original pilot
+budget with standard logical axioms, with the shorter discharge giving
+a smaller source and object. Any source mismatch, unexpected control,
+compiler error, axiom or host stop retains completed evidence. No
+bulk build, new solver calls or period 14 work.
+
+Frozen [plan](../tests/probes/swarm/sw02/carry/gpt_return13_kernel_panel_plan.json)
+SHA256 `068026223d241afcd7386b1b11dc251d6a6fbb53a0e317d61320df5950bb9790`,
+[worker](../tests/probes/swarm/sw02/carry/gpt_return13_kernel_panel.py)
+SHA256 `37d24ed366419ca07317d5f26c86a781d1e80a980fd87784a7caf1019764d60a`.
+Verified raw-body archive
+`cited/gpt/return13-two-factor-kernel-sources-20261111.tar.gz`,
+82,183 bytes, SHA256
+`fe68c4d1f93cf0f8585b55ab6482e03fd41e122b706444f515088736bc70a6c8`.
+One serial Intel stage under `run_capped.py` and `metal_scope/stage.py`
+with the plan. The worker reads the pinned original CNF and selection
+manifest, canonical proofs by digest and the 25 exact GC2895 kit
+objects. Limits are 120 aggregate CPU seconds, 300 wall seconds,
+8192 MiB process-tree RSS, at most eight processes, one thread at
+nice 10, 16 MiB/file and 128 MiB output. Launch/running free memory
+4096/1024 MiB and swap growth 4096 MiB. Two serial Lean children each
+have 60 CPU/125 wall seconds within the shared 95-second inner
+aggregate stop and 200-second worker wall guard. Thermal, pressure
+and CPU telemetry guards remain active. The prior cap is unchanged.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

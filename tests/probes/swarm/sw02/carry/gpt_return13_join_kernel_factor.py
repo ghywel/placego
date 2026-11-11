@@ -14,23 +14,25 @@ from gpt_return13_kernel_factor import emit, read_inputs
 from gpt_return13_prefix_leaves import OUT, REPORT, guard, pin
 
 
-def join_source(premises, packed, checked_bridge):
+def join_source(premises, packed, checked_bridge, namespace='P13JoinedControl'):
+    factor = premises['factor']
+    value = int(factor[::-1], 2)
     _, compact, compact_packed = dense_inputs(premises, packed)
-    core, marker, _ = emit(compact, compact_packed).decode().partition('end P13PackedControl')
+    core, marker, _ = emit(compact, compact_packed, len(factor)).decode().partition('end P13PackedControl')
     assert marker
-    core = core.replace('namespace P13PackedControl', 'namespace P13JoinedControl')
+    core = core.replace('namespace P13PackedControl', f'namespace {namespace}')
     bridge = checked_bridge.decode()
     formula_lines = lambda text: [line for line in text.splitlines()
                                   if line.startswith(('private def formulaPart', 'def formula :'))]
     assert formula_lines(core) == formula_lines(bridge)
     suffix = bridge[bridge.index('private noncomputable def oldVar0'):bridge.index('end P13BridgeControl')]
-    suffix += '''open Ruliology.CellularAutomata.Rule30RingOrbits in
+    suffix += f'''open Ruliology.CellularAutomata.Rule30RingOrbits in
 theorem factor_excluded (x : Int → Bool) (hx : orbit x 13 = x) (origin : Int) :
-    ¬ Matches x origin 7 6 := factor_excluded_of_unsat unsat x hx origin
+    ¬ Matches x origin {len(factor)} {value} := factor_excluded_of_unsat unsat x hx origin
 
-end P13JoinedControl
+end {namespace}
 
-#print axioms P13JoinedControl.factor_excluded
+#print axioms {namespace}.factor_excluded
 '''
     return (core + suffix).encode()
 

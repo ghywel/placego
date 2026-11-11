@@ -36,11 +36,18 @@ def emit_table(name, values, chunk):
     yield f'private noncomputable def {name} : Nat → Nat := {group_table(groups, 0)}'
 
 
-def emit(premises, packed):
+def formula_bounds(size, cube_width=0):
+    # Keep all cube units together in the last part of the premise bridge.
+    base_size = size - cube_width
+    return [(start, start + 32 if start + 32 < base_size else size)
+            for start in range(0, max(base_size, 1), 32)]
+
+
+def emit(premises, packed, cube_width=0):
     initial = [[2*(abs(literal)-1)+int(literal > 0) for literal in clause]
                for clause in premises['initial_clauses']]
     masks, steps = packed['masks_hex'], packed['steps_hex']
-    assert len(initial) == 1395 and len(masks) == 3582 and len(steps) == 2187
+    assert initial and steps and len(masks) == len(initial) + len(steps)
     assert int(masks[-1], 16) == 0
     lines = ['import Ruliology.CellularAutomata.Rule30MovingStrip', '',
              'namespace P13PackedControl', '', 'open Ruliology.CellularAutomata.Rule30MovingStrip',
@@ -48,17 +55,17 @@ def emit(premises, packed):
     lines.extend(emit_table('getClause', masks, 32))
     lines.extend(emit_table('getStep', steps, 32))
     formulas = []
-    for start in range(0, len(initial), 32):
+    for start, end in formula_bounds(len(initial), cube_width):
         label = f'formulaPart{len(formulas)}'
         formulas.append(label)
-        lines.append(f'private def {label} : List (List Nat) := {initial[start:start+32]}')
+        lines.append(f'private def {label} : List (List Nat) := {initial[start:end]}')
         lines.append(f'private theorem {label}_ok : checkFormula getClause {label} {start} = true := by decide +kernel')
     lines.append('def formula : List (List Nat) := ' + ' ++ '.join(formulas))
     lines.append('private theorem formula_ok : checkFormula getClause formula 0 = true := by')
     lines.append('  unfold formula')
     lines.extend(f'  apply checkFormula_append_ok {label}_ok' for label in formulas[:-1])
     lines.append(f'  exact {formulas[-1]}_ok')
-    lines.append('private theorem formula_length : formula.length = 1395 := by decide +kernel')
+    lines.append(f'private theorem formula_length : formula.length = {len(initial)} := by decide +kernel')
     chunks = []
     for start in range(0, len(steps), 32):
         n = min(32, len(steps)-start)
@@ -69,7 +76,7 @@ def emit(premises, packed):
     lines.append(f'private theorem nil_ok : Nat.beq (getClause {len(masks)-1}) 0 = true := by decide +kernel')
     lines.extend(['theorem unsat : ∀ a : Nat → Bool, ¬ (∀ c ∈ formula, Models a c) := by',
                   '  intro a ha',
-                  '  have hk0 : Known getClause a 1395 := by',
+                  f'  have hk0 : Known getClause a {len(initial)} := by',
                   '    rw [← formula_length]',
                   '    exact initial_known formula_ok ha'])
     for j, (label, n, idx, pos) in enumerate(chunks):
