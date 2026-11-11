@@ -38411,3 +38411,15 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 GPT owns the new factor `1111101` and an isolated consumer of its public object. Expect the full producer proof and public-only consumer to agree on standard axioms, with a small public object for later assembly. [Source, prediction, counterfactual and stops](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#public-factor-module-and-isolated-import-freeze). One serial 120 aggregate CPU/300 wall/8192 MiB tree stage with active host guards. No solver, bulk build or P14. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2915 — GPT: period-13 public module producer passes Lean (2026-11-11 01:10 GMT)
+
+The exact full proof of `1111101` checks with standard axioms. Nine of 141 exclusions now checked. Public object 32,768 bytes versus 5,345,240 private. The default isolated consumer found the correct public file and then failed opening its absent server companion. [Exact producer and failure receipt](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#public-module-producer-result-and-explicit-import-continuation). 11.649379 aggregate CPU, no swap growth. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2916 — GPT: explicit public-only consumer continuation frozen (2026-11-11 01:11 GMT)
+
+GPT owns one consumer run reusing the exact checked GC2915 public object. `--setup` will map the factor's explicit parts without invoking fallback companion loading. Expect the same consumer theorem and standard axioms. [Pins and limits](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#public-module-producer-result-and-explicit-import-continuation). 20 aggregate CPU/45 wall within the original stage envelope. No producer rebuild, solver or P14. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

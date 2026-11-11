@@ -1,0 +1,106 @@
+{
+  "worker_stop": 16,
+  "include_outer_monitor_cpu": true,
+  "input_sha256": {
+    "tests/probes/swarm/sw02/carry/gpt_return13_binary_cert.py": "652b6bd02784000929ebf083eec881430bfe04b3f1eecc0a2822a494c5fd4e2f",
+    "tests/probes/swarm/sw02/carry/gpt_lrat_format_controls.py": "92b08d0a72f83eb7b20c8bc4358ea6cfe26986a3029d886998b3da4f88db57e3",
+    "tests/probes/swarm/sw02/carry/gpt_return13_lrat.py": "8d56f5cea398f5992853d6e3c39673204a412737fb8d0449a7f202e338f6c62b",
+    "tests/probes/ether_gap_solve.py": "11e02a0327a1527d08e2d61e53c500409ce38d705c5fc299a1ab32c53f724a2d",
+    "tests/probes/metal_scope/stage.py": "8b9eb25f6bb6704ac27cf50c27ab3e8caba347c62a2376519e78c0ff7f61a3ac",
+    "tests/probes/wolfram/run_capped.py": "9d155b6958e9e53bb2435eac84e5f1f28d6753c3802e1261bf96a09e3b6738df",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_control.py": "79ab88c7f843a0a9fe8fab1f23d3330a44720fe9b5d0487d9d171494249b85fa",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_leaves.py": "7169eb470f2f4ba5c66a0db7c6a8ca5d2f83efe5afe07fc718dbf2a20f954b4b",
+    "tests/probes/swarm/sw02/carry/gpt_return13_kernel_factor.py": "4c9c2dc46aa3d817594da0881c5696a53a198372b6c50746a82b5e57f54de36e",
+    "tests/probes/swarm/sw02/carry/gpt_return13_dense_kernel_factor.py": "b42850005196dffc821339f0076de632d7dfd31d87bade35019f1290aac3a6b1",
+    "tests/probes/swarm/sw02/carry/gpt_return13_pack_factor.py": "baea69d3a58bd4fcb7a43f1c37e901314f26a7f1f0c08c4ac614975bc89783f0",
+    "tests/probes/swarm/sw02/carry/gpt_return13_coverage.py": "bae1aa4a69348deee9dfee71834147dea8fe54b49161ecfbdfcefdecf1504fd8",
+    "tests/probes/swarm/sw02/carry/gpt_return13_implied_retry.py": "de0c4b422cc7210b76bae178cd6a5d357901daf68eae81c536c0f327caca6df8",
+    "tests/probes/swarm/sw02/carry/gpt_return13_prefix_replay.py": "2172dbe0f5cfa1d1a2d7c7a6bd9d4e0136cac77c107af5dd0112c1d865400297",
+    "tests/probes/swarm/sw02/carry/gpt_return13_factor_split.py": "a30e7bf78e72da903e34414a187426f931ddf7c7a5f9f83bfc4917db89bdf669",
+    "tests/probes/swarm/sw02/carry/gpt_return13_final_splits.py": "2d8b442944a564b116df0ba7d8a9745ee6d78000552ffcc76a008ccbb0176ba9",
+    "tests/probes/swarm/sw02/carry/gpt_return13_join_kernel_factor.py": "44f990152e06d3a27c286937724434a2d2c38476354b72ffb1f0cb7724bfdbdc",
+    "tests/probes/swarm/sw02/carry/gpt_return13_kernel_panel.py": "98269bdffb9e4964c1c12675bdeebce3b82ae7ed2b4f374daa42c5fbe57ccbe1",
+    "tests/probes/swarm/sw02/carry/gpt_return13_bridge_only.py": "c62d0267c8e486e10111e963cf3f9c2f704c820b5bcda6304790bb356ae776af",
+    "tests/probes/swarm/sw02/carry/P13GateIndex.lean.inc": "fa705bb19501d044fbff861f8ad211f372743cc9001783f9b136ab1042ed9094",
+    "tests/probes/swarm/sw02/carry/gpt_return13_factor_module_smoke.py": "6bc5528ea7f7f4c436aeff274c98eeb4d2b635eab31b782bc452c12554849596",
+    "tests/probes/swarm/sw02/carry/gpt_return13_public_import_continue.py": "748c1d9ab31e510dd1d8484e8c9908c132a2f0da3c51b5d31e4a0c78596c3977"
+  },
+  "prediction": {
+    "import": "Lean explicit setup supplies only the saved public .olean; the exact existing consumer compiles with the producer\u2019s standard axiom set."
+  },
+  "counterfactual": "Stop if artifact schema, import, axiom, or host checks fail. Preserve the checked producer. No producer rebuild, repeat, bulk build or P14.",
+  "limits": {
+    "aggregate_cpu_s": 20,
+    "wall_s": 45,
+    "tree_rss_mib": 8192,
+    "max_procs": 8,
+    "file_mib": 16,
+    "disk_mib": 16,
+    "launch_free_mib": 4096,
+    "min_free_mib": 1024,
+    "swap_growth_mib": 4096,
+    "threads": 1,
+    "nice": 10,
+    "inner_aggregate_stop_cpu_s": 16,
+    "worker_soft_cpu_s": 12,
+    "worker_hard_cpu_s": 20,
+    "consumer_cpu_s": 10,
+    "consumer_wall_s": 20
+  },
+  "jobs": [
+    {
+      "name": "explicit-public-consumer",
+      "args": [
+        "python3",
+        "tests/probes/swarm/sw02/carry/gpt_return13_public_import_continue.py",
+        "tests/probes/swarm/sw02/carry/gpt_return13_public_import_continue_plan.json"
+      ],
+      "cpu": 20,
+      "wall": 35,
+      "required_stdout_lines": [
+        "P13_FACTOR_MODULE_EXPLICIT_PUBLIC_IMPORT_KERNEL_CHECKED"
+      ]
+    }
+  ],
+  "kit_commit": "03a19bf6240b63c6d15894c5f7552f3a6091d937",
+  "kit_sources": {
+    "Rule30Jen": "0700944834df40a026191a7fe4c1ab22114c6509a319afc1d71877e30a22c6bc",
+    "Rule30Prize": "9d6bc9deff317ec056d9d321c1fb0373fdaba808d91112da3c7870e7562f283c",
+    "Rule30Realization": "da6444504fc3d9789ccdae0f042f63e980b6f0de1ce23958d5387e6d4999eac5",
+    "Rule30RingOrbits": "61fbff78da7c93e345d789a35396de373b42c25040eb66e227a5460af4a34e24",
+    "Rule30MovingStrip": "0836be6971aac516ea20df016a59e3ba9a81f9d5b04cda3a1cbd0d3cdad95c47"
+  },
+  "lean_binary_sha256": "3f04956c5cef436a26fd88956effdb6767d8beb0174012c19989764bd74a4f3b",
+  "lean_version": "Lean (version 4.35.0, x86_64-apple-darwin24.6.0, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+  "kit_objects": {
+    "Ruliology/CellularAutomata/Rule30Jen.ir": "1e4c1c960ec46e03c293f1bc5d89df5a132dfca642d6978ff82f6ac31bbab7b2",
+    "Ruliology/CellularAutomata/Rule30Jen.ir.sig": "3efeacee152b0ff6f0b2b53592a70a5345e5ab4839e68d54f2f5ef07db7402f1",
+    "Ruliology/CellularAutomata/Rule30Jen.olean": "4ca3c3cfa8bcd89dea050ddf73cd7bf9a29b4f53dff9d44da29053a66dc31168",
+    "Ruliology/CellularAutomata/Rule30Jen.olean.private": "5d408cfecd8e3880911ec915d4d00b52486a029ca43a5815a58a593867178b96",
+    "Ruliology/CellularAutomata/Rule30Jen.olean.server": "c84606c0a860ca326a1b076be5700037b613d04c45d7a04db4424ff365c43af2",
+    "Ruliology/CellularAutomata/Rule30MovingStrip.ir": "ba0d243410da8fe1e183b0183eb936e6724822ae078e1058ae7de759b85a064c",
+    "Ruliology/CellularAutomata/Rule30MovingStrip.ir.sig": "81ece7340a569451d541c02e49f9a076823dfc9014a3b12a75474c0cc6ffca46",
+    "Ruliology/CellularAutomata/Rule30MovingStrip.olean": "a433eb0943b1c1d146241b45cbc5e016f7c87b95d298287f9f39f55a3b0ddbb6",
+    "Ruliology/CellularAutomata/Rule30MovingStrip.olean.private": "af23536dd82bc084c766cafafdbdfd1dc80415df97acea480ecd18aa14a77791",
+    "Ruliology/CellularAutomata/Rule30MovingStrip.olean.server": "5edc58d5a698c57525dff85acb16d5d9235509e0160e6b90792fef2f0cae21be",
+    "Ruliology/CellularAutomata/Rule30Prize.ir": "4c6db0c8b808b6a7f54a9436ea7339b6002b67482c006cb1d9ad37fd7089c4c6",
+    "Ruliology/CellularAutomata/Rule30Prize.ir.sig": "080f8967d707b6e92a481dd1fb91fe71658b2dc843ad65ee1f0be58519dff1bd",
+    "Ruliology/CellularAutomata/Rule30Prize.olean": "e713c4a88f6e5eb7f4068534dd885787217ad041c403e1c0f88a8eaf8982aa52",
+    "Ruliology/CellularAutomata/Rule30Prize.olean.private": "2107f184005d42ce52693508cb602e4cec3b5a3235cf2019a58efe582c1dd3f0",
+    "Ruliology/CellularAutomata/Rule30Prize.olean.server": "8933347cc28b33b7aa43fceb56b288b5febbbb412f29986a04af9686229ae182",
+    "Ruliology/CellularAutomata/Rule30Realization.ir": "a5595eef80dfc143a674347013ab71497800f93d0c0f9059cfaad36fdf00e57b",
+    "Ruliology/CellularAutomata/Rule30Realization.ir.sig": "1734497a6c5bd5dd1bedd37961f6661f0e49915df2b5ec0163da42c06ec4a67a",
+    "Ruliology/CellularAutomata/Rule30Realization.olean": "ce22a6fd4557776c3aeb5fe8ee0a8b5b1e09f31b49988943e4fcb7f0279eb187",
+    "Ruliology/CellularAutomata/Rule30Realization.olean.private": "df21a9825c3ff18a3e80437e15aa32ce8035e92f720218f031b1e248db6c8e3b",
+    "Ruliology/CellularAutomata/Rule30Realization.olean.server": "e8baed95a7a38c07064eee77c66ea6a1d0cf1a6ab81aeff3ef659469643f07df",
+    "Ruliology/CellularAutomata/Rule30RingOrbits.ir": "d4e724f3bde372687fc7a67b893a8a96b39d29537b9a79ac3b8cc1bb8230eaca",
+    "Ruliology/CellularAutomata/Rule30RingOrbits.ir.sig": "9b7c5049b79861dff63cd007c44e065ce7b531fa0cf4fe4bb0fb23187adc18ce",
+    "Ruliology/CellularAutomata/Rule30RingOrbits.olean": "cf9f78f3976b1ff9f0d6724a75853d05569eca44298efb32cd5de76b0e3a15c6",
+    "Ruliology/CellularAutomata/Rule30RingOrbits.olean.private": "e814249a83a2a26dcd03c491af7d63fbec28d8ec18fceb9c8e4848eaba55dbd0",
+    "Ruliology/CellularAutomata/Rule30RingOrbits.olean.server": "737dc681a5b848f7ff0395556c4aef871a23a419ea6e43cc2f5f25a43fe61e69"
+  },
+  "consumer_sha256": "4a3051b64bc57d76fec16b87c9492b6283c6702e41bb989aafd46e7c2dea2808",
+  "module": "P13Factor1111101",
+  "producer_receipt_sha256": "d30c539ab7e4bf7d9e47383079fea4c6a56f60feb7c649b678e69940ea9cd602",
+  "public_olean_sha256": "15393f555f059a5ea4197b4ee3597088c05de75b30bb4562bdaad027603b62c0"
+}

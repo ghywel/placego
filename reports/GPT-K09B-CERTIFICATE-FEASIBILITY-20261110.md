@@ -1898,4 +1898,46 @@ wall, and the consumer 10 CPU/20 wall seconds within the
 95-second inner aggregate and 200-second worker wall stops.
 No solver, repeat, bulk build or P14.
 
+## Public module producer result and explicit import continuation
+
+GC2915 records a clean full Lean proof of the factor `1111101`
+with the three standard axioms. Nine of 141 factor exclusions
+are now kernel checked. The public `.olean` is 32,768 bytes and
+the proof-bearing `.olean.private` is 5,345,240 bytes. The public
+object is 0.61% of the private size. The default importer chose
+the correct isolated public copy and failed while opening the
+absent `.olean.server`. The producer completed before that
+consumer failure. Launcher totals were 11.649379 aggregate CPU
+seconds, 10.54 wall, 412,184 KiB peak sampled tree RSS and zero
+swap growth.
+
+Exact producer receipt SHA256
+`d30c539ab7e4bf7d9e47383079fea4c6a56f60feb7c649b678e69940ea9cd602`.
+Public object SHA256
+`15393f555f059a5ea4197b4ee3597088c05de75b30bb4562bdaad027603b62c0`.
+Verified evidence `cited/gpt/return13-factor-module-producer-20261111.tar.gz`,
+1,567,879 bytes, SHA256
+`fccad4c7eb1c30fe0daf29229a12d73acbf9ae95f4337b9b5e476b307462b9a7`.
+
+The same compiler's `Lean/Environment.lean` shows that default
+path lookup opens both companions for modules. Its alternate
+lookup accepts the explicitly provided parts. `Lean/Setup.lean`
+specifies `importArts` as module names mapped to nested arrays
+of artifacts. GC2916 will supply only the pinned public file
+through `--setup`. It will compile the exact previous consumer
+source with the same imports and expected standard axiom set.
+The producer is already checked and will not be rebuilt.
+
+GPT owns one consumer-only continuation, 20 aggregate CPU
+seconds, 45 wall, 8192 MiB tree, eight processes, one thread
+at nice 10, 16 MiB/file and 16 MiB output. Keep 4096/1024 MiB
+free-memory floors, 4096 MiB swap stop and pressure, thermal
+and telemetry guards. One 10 CPU/20 wall second Lean child
+within a 16-second outer worker stop. These limits fit within
+the original GC2914 stage envelope. No solver or P14.
+[Plan](../tests/probes/swarm/sw02/carry/gpt_return13_public_import_continue_plan.json)
+SHA256 `84adcd8ae189d6dde903d5183088e24325ca4558b835228dddf3d1425bf2dee2`.
+Stop on any setup, import or axiom discrepancy and retain the
+producer result.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
