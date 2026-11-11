@@ -1,10 +1,10 @@
-# Every Linear Chart of the Constrained Zero-Boundary Starts Is the Free-Bit Chart: Shift-Equivariant Group Laws on One-Sided Bit Sequences Are Xor
+# Every Linear Chart of the Constrained Zero-Boundary Starts Is the Free-Bit Chart
 
 Gareth Herbert; Claude (Anthropic); GPT (OpenAI). 11 November 2026.
 
 ## 1. The statement
 
-The kit's zero-boundary left half runs rule 30 beside a white wall (`Rule30ZeroBoundary.zrow`). Its constrained starts are those that are black at depth `1` at every even tick (`InX`), and they hold the kit's question `Q01`. Here they are taken white at depth `0` as well, since the dynamics ignores that cell: `KK L := L 0 = false ∧ InX L`.
+The kit's zero-boundary left half runs rule 30 beside a white wall (`Rule30ZeroBoundary.zrow`). Its constrained starts are those that are black at depth `1` at every even tick (`InX`). The kit's `Q01` asks whether finite support rules out `InX`. The class used here also takes depth `0` to be white, since the dynamics ignores that cell. Thus `KK L` means `L 0 = false ∧ InX L`.
 
 Every start in `KK` has free bits, the cells at depth `1` at the odd ticks (`fb`). The kit's `Theta` rebuilds the start from them. Two steps of the dynamics shift the free bits by one (`two_step_shift`). So `KK` is a copy of the one-sided bit sequences, with two steps acting as the shift. This is the *free-bit chart*.
 
@@ -15,7 +15,7 @@ Could some other identification of `KK` with an affine space make two steps act 
 
 Then `Ψ := Φ ∘ Theta` satisfies `Ψ (f + g + h) = Ψ f + Ψ g + Ψ h`. `free_bit_chart_affine` gives the equivalent form `Ψ (f + g) = Ψ f + Ψ g + Ψ 0`, and `free_bit_chart_iso` shows that `Ψ` is a bijection onto `A`, finitely dependent both ways.
 
-*Uniform finite dependence* (`ULD`) means that each output bit is fixed by one finite window of the input, the same for all inputs in the domain. On a compact domain of the product space it is the same as continuity, but that equivalence is not formalized here. Closedness of `A` and continuity of `Lm` are not used.
+*Uniform finite dependence* (`ULD`) means that each output bit is fixed by one finite window of the input, the same for all inputs in the domain. For a continuous Boolean output coordinate on a compact domain, finitely many cylinders on which it is constant cover the domain. Their maximum prefix length gives the uniform window. Conversely, each such window gives continuity in that output coordinate. This is the classical topological adapter. The core Lean hypotheses are the two uniform finite-dependence conditions and the stated affine and conjugacy identities.
 
 ## 2. The free-bit side
 
@@ -30,7 +30,7 @@ Pull the affine structure of `A` back to the free bits: `x ⊕ y := Ψ' (Ψ x + 
 
 `window_zero` descends to window `0`, where `Q` is constant. It equals `Q u 0 = 0` by the neutral element (`q_white`), so the operation is xor.
 
-Each hypothesis is needed, as the worked numbers show. Without the neutral element, `x + y + 1` is a law. Without commutativity, `x_n + y_n + y_(n+1)` is a law.
+The controls illustrate the role of two hypotheses. Dropping the white neutral element admits `x + y + 1`. Dropping commutativity admits `x_n + y_n + y_(n+1)`.
 
 ## 4. Scope
 
@@ -46,7 +46,7 @@ A shift-commuting law whose correction has window `w` has the form `(x + y)_n = 
 ## 6. Prior art and scope
 
 - **The theorem** was stated in our programme with a different proof, by duality, the structure theorem over `F₂[x]`, a fixed-point count and Hedlund's theorem. This proof goes through the group-law lemma instead and needs none of them.
-- **Hedlund (1969)** showed that the one-sided full 2-shift has only two automorphisms, the identity and the bit flip.
-- **The group-law lemma** is probably known in the theory of one-sided group shifts. It is not claimed as new.
+- **Hedlund (1969)** showed that the one-sided full 2-shift has only two automorphisms, the identity and the bit flip. [Endomorphisms and Automorphisms of the Shift Dynamical System](https://doi.org/10.1007/BF01691062)
+- **Topological group laws.** Wibmer’s Corollary 4.4 and Hedlund’s theorem also give the rigidity for group laws with white identity. Wibmer gives a shift-equivariant group isomorphism to the cyclic group of order two’s full one-sided shift, using surjectivity to identify the quotient by a power’s kernel with the original group. Hedlund then forces the identity map because the isomorphism fixes white. The direct descent here derives associativity from its stated hypotheses. [Expansive Dynamics on Profinite Groups](https://arxiv.org/abs/2008.00755)
 - **The kit** supplies the free-bit chart (`Rule30ZeroBoundary`). The degree law of `Rule30FirstCheckDegree` (our earlier submission R30-20261110-80b1ea) is a companion statement about the same chart.
 - **History.** The swarm run of our programme stated the theorem, and Cloud and GPT carried it. A Local sub-agent found the shorter route, GPT carried it, and a second Local sub-agent formalized it under Local's direction.

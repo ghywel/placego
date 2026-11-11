@@ -1,5 +1,5 @@
 {
-  "worker_stop": 110,
+  "worker_stop": 105,
   "include_outer_monitor_cpu": true,
   "input_sha256": {
     "tests/probes/swarm/sw02/carry/gpt_return13_binary_cert.py": "652b6bd02784000929ebf083eec881430bfe04b3f1eecc0a2822a494c5fd4e2f",
@@ -18,8 +18,8 @@
     "tests/probes/swarm/sw02/carry/gpt_return13_prefix_replay.py": "2172dbe0f5cfa1d1a2d7c7a6bd9d4e0136cac77c107af5dd0112c1d865400297",
     "tests/probes/swarm/sw02/carry/gpt_return13_factor_split.py": "a30e7bf78e72da903e34414a187426f931ddf7c7a5f9f83bfc4917db89bdf669",
     "tests/probes/swarm/sw02/carry/gpt_return13_final_splits.py": "2d8b442944a564b116df0ba7d8a9745ee6d78000552ffcc76a008ccbb0176ba9",
-    "tests/probes/swarm/sw02/carry/gpt_return13_bridge_only.py": "6bb187409a4e69e2d51e84038c214cc645b21abe9f3b34ee52b52aac7445702c",
-    "tests/probes/swarm/sw02/carry/P13GateIndex.lean.inc": "634663ab3035149800abacc329965017e5311ada00d933991622d8f708ae826e"
+    "tests/probes/swarm/sw02/carry/gpt_return13_bridge_only.py": "5afdc9c84171a7a07b483a4d41a3af888ceceb8b50bd9ac3cbd1e2f3b5fb5fee",
+    "tests/probes/swarm/sw02/carry/P13GateIndex.lean.inc": "fa705bb19501d044fbff861f8ad211f372743cc9001783f9b136ab1042ed9094"
   },
   "prediction": {
     "scope": "only exact kit premise and cube implication, with compact UNSAT as a theorem parameter",
@@ -28,12 +28,12 @@
   },
   "counterfactual": "Preserve exact diagnostics or partial output at the first failure or guard. No rerun of the combined replay or increased limits.",
   "limits": {
-    "aggregate_cpu_s": 120,
-    "wall_s": 300,
+    "aggregate_cpu_s": 110,
+    "wall_s": 291,
     "tree_rss_mib": 8192,
     "max_procs": 8,
     "file_mib": 16,
-    "disk_mib": 128,
+    "disk_mib": 127,
     "launch_free_mib": 4096,
     "min_free_mib": 1024,
     "swap_growth_mib": 4096,
@@ -41,7 +41,7 @@
     "nice": 10,
     "inner_aggregate_stop_cpu_s": 95,
     "worker_soft_cpu_s": 12,
-    "worker_hard_cpu_s": 120
+    "worker_hard_cpu_s": 110
   },
   "jobs": [
     {
@@ -51,7 +51,7 @@
         "tests/probes/swarm/sw02/carry/gpt_return13_bridge_only.py",
         "tests/probes/swarm/sw02/carry/gpt_return13_bridge_only_plan.json"
       ],
-      "cpu": 120,
+      "cpu": 110,
       "wall": 180,
       "required_stdout_lines": [
         "RETURN13_BRIDGE_ONLY_RECORDED"
@@ -78,7 +78,7 @@
       "sha256": "702237344ad5dd21c2cfc3226863dca826ba10aafe271e676b156b29cbd51a2e"
     }
   ],
-  "generated_source_sha256": "ac076847885e8dce2659d443d6f1c5d27c4a23139c04e141912994ed68da444e",
+  "generated_source_sha256": "1b135394da1b0f7436a1dba9077a2312703eae0ab60fe795ebd653b3f517e6b7",
   "kit_objects": {
     "Ruliology/CellularAutomata/Rule30Jen.ir": "1e4c1c960ec46e03c293f1bc5d89df5a132dfca642d6978ff82f6ac31bbab7b2",
     "Ruliology/CellularAutomata/Rule30Jen.ir.sig": "3efeacee152b0ff6f0b2b53592a70a5345e5ab4839e68d54f2f5ef07db7402f1",
@@ -108,6 +108,6 @@
   },
   "gate_source": {
     "file": "tests/probes/swarm/sw02/carry/P13GateIndex.lean.inc",
-    "sha256": "634663ab3035149800abacc329965017e5311ada00d933991622d8f708ae826e"
+    "sha256": "fa705bb19501d044fbff861f8ad211f372743cc9001783f9b136ab1042ed9094"
   }
 }

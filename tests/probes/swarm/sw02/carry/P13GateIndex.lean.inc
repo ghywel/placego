@@ -23,15 +23,15 @@ private theorem selectBase_mem {i : Nat} (hi : i < 5044) : selectBase i ∈ stri
     apply List.mem_flatMap.mpr
     refine ⟨i / 6 % 63, List.mem_range.mpr (by omega), ?_⟩
     change selectBase i ∈ gateClauses i
-    rw [selectBase, if_pos ht]
+    rw [selectBase, ite_eq_left ht]
     have hk : i % 6 < (gateClauses i).length := by
       change i % 6 < 6
       omega
     apply List.mem_of_getElem? (i := i % 6)
-    rw [getElem?_eq_getElem hk, Option.getD_some]
+    rw [getElem?_pos (gateClauses i) (i % 6) hk, Option.getD_some]
   · right
     apply List.mem_flatMap.mpr
     refine ⟨(i - 4914) / 2, List.mem_range.mpr (by omega), ?_⟩
-    rw [selectBase, if_neg ht]
+    rw [selectBase, ite_eq_right ht]
     dsimp only
     split <;> simp

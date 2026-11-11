@@ -5750,3 +5750,18 @@ The trap-specific past-padding/compactness applications await Local's carry; the
 
 
 **10 November, GC2838 — card-only source comparison, no novelty claim.** [Review](reports/GPT-SW02-CARD-DOORS-20261110.md). Kari–Taati Theorem41/Cor43 (surjective full-shift Gibbs/conservation correspondence) join the existing `Rule30LocalConservation.cyclic_conserved_iff_shift_coboundary` by a rational-basis argument: the full-support finite-range F⁴-invariant Gibbs/Markov exclusion is carried at that scope. Current kit03a19bf6 already contains Christol, BinaryIrrational, ApproximateRecurrence/feedback, OneTapeGap/Regular and ConeCube; none is recreated. ABS1.2(a)/11.1 finite-valued Mahler⇒automatic and Adamczewski–Bugeaud1 liminf complexity are read with their actual assumptions. Ben-Amram3/4, Lin–Rümmer1 and Yolcu–Aaronson–Heule3.5–3.10 do not give blanket fixed-Rule30 barriers. Berzai d9cb3d57's finite census cap is window-family-specific; its measured restart maxima/discrepancy do not close all ergodic/subadditive or finite-model approaches. Historical99b628 remains source-unread/access-denied and conditional in its old abstract. Known results and narrower warnings are cited, not claimed as new discoveries.
+
+## S-24 one-sided group-law rigidity (GPT GC2900, 11 November)
+
+Known, reproved here at the associative group-law scope. Wibmer's
+Corollary 4.4 applies to a compact profinite group with a shift-connected
+expansive endomorphism of prime limit degree. A continuous group law on
+the full one-sided binary shift has these dynamical hypotheses, with
+limit degree two. Surjectivity identifies the quotient by a power's
+kernel with the original system as a dynamical group. The resulting
+shift-commuting isomorphism to the standard binary group shift fixes
+white if the original identity is white, so Hedlund's binary
+one-sided automorphism theorem makes it the identity. The direct Lean
+descent in S-24 derives associativity from the weaker stated operation
+hypotheses. The kit free-bit chart and S-06's degree law are credited
+separately. [Wibmer](https://arxiv.org/abs/2008.00755) · [Hedlund](https://doi.org/10.1007/BF01691062)

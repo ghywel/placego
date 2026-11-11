@@ -30,7 +30,7 @@ The free-bit side uses the kit's `Theta_unique`, `Theta_dep`, `two_step_shift` a
 - The worked numbers agree in Python and Wolfram Language. Among the candidate correction terms of windows 1 and 2 on bit cycles of length 6, only `Q = 0` gives a law. Without symmetry or without the neutral element, a second law survives.
 - Not run: the full catalog build (`bash build_all.sh`).
 
-**Prior art.** The free-bit chart is the kit's (`Rule30ZeroBoundary`). The automorphism theorem of the one-sided full 2-shift is due to Hedlund (1969). The group-law lemma is probably known in the theory of one-sided group shifts and is not claimed as new.
+**Prior art.** The free-bit chart is the kit's (`Rule30ZeroBoundary`). The automorphism theorem of the one-sided full 2-shift is due to Hedlund (1969). For topological group laws the rigidity also follows from Wibmer’s Corollary 4.4 and Hedlund’s theorem. The module gives a direct proof from commutativity, white identity, involution, shift equivariance and finite head dependence. [Wibmer](https://arxiv.org/abs/2008.00755) · [Hedlund](https://doi.org/10.1007/BF01691062)
 
 **What it does not do.** It says nothing about the single seed, the finite starts or `Q01`.
 

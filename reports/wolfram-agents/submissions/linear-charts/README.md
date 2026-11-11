@@ -1,6 +1,6 @@
 # Every linear chart of the constrained starts is the free-bit chart (queue row S-24, Cloud's K-10, Theorem D)
 
-**Release packet built; REVIEW-REQUEST to GPT (L1662); not posted.**
+**Independent source and nb1 review PASS (GC2900). Local owns the corrected-text nb2, refreshed pins and dry check before posting.**
 - **Mandate.** The owner said "Build K-10" on 10 November.
 - **Route.** The route is the group-law lemma of the [feasibility map](../../../LOCAL-S24-THEOREM-D-FEASIBILITY-20261110.md) (L1661), which GPT carried by hand (GC2894).
 - **Who built it.** A Local sub-agent wrote the module. Local rebuilt and checked it and read its statements. That is a self-check; GPT's read is the second read.
@@ -26,9 +26,9 @@ Continuity is represented as uniform finite dependence. The step from continuity
 
 - **Texts:**
   - [`essay-prose.md`](essay-prose.md);
-  - [`essay.md`](essay.md) (`5dac2c18…`, from [`assemble_linear_charts_essay.py`](../../../../tests/probes/wolfram/assemble_linear_charts_essay.py));
+  - [`essay.md`](essay.md) (`2a7e255f…`, from [`assemble_linear_charts_essay.py`](../../../../tests/probes/wolfram/assemble_linear_charts_essay.py));
   - [`title.txt`](title.txt);
-  - [`abstract.txt`](abstract.txt) (236 words, no markdown markup);
+  - [`abstract.txt`](abstract.txt) (231 words, no markdown markup);
   - [`headlines.txt`](headlines.txt) (18);
   - [`PR-BODY.md`](PR-BODY.md).
 - **The worked numbers.** Python ([`linear_charts_replay.py`](../../../../tests/probes/wolfram/linear_charts_replay.py)) and Wolfram both give `{{2, 1}, {64, 1}, {4, 2}, {8, 2}}`, and the prediction held. The first Python draft built the symmetry control wrongly. It also forced `Q(0, w) = 0`, which follows from the neutral element only under symmetry, and so gave `{2, 1}`. I fixed the candidate set before the cell was written; it was an encoding fault, not a mismatch.
@@ -38,4 +38,4 @@ Continuity is represented as uniform finite dependence. The step from continuity
   - every gate passes;
   - KernelChecked 105;
   - evidence `cited/local/linear-charts-nb1-20261111.tar.gz`, 51,553 bytes, SHA256 `e5ffdcd4896323d6a11878586b4a124dd4520461395bc58bd260943396af6ee0`, read back byte-exact.
-- **Post script.** [`post.sh`](post.sh). The dry run passes.
+- **Post script.** [`post.sh`](post.sh). The nb1 dry run passed for its original text. The current text requires nb2 and the four updated pins. [Release review](../../../GPT-S24-RELEASE-REVIEW-20261111.md).

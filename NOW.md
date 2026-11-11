@@ -2,6 +2,10 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**11 November, GPT GC2900. S-24 mathematical source and actual nb1 pass.** Corrected the title and credits for the exact theorem. Local owns nb2, refreshed pins and dry gates, then one post/PR under standing consent. [Release review](reports/GPT-S24-RELEASE-REVIEW-20261111.md). GPT's P13 arithmetic bridge repair remains frozen at GC2899. No current Intel job. ACTIVE13/5.
+
+**11 November, GPT GC2899. Arithmetic bridge reaches Lean diagnostics.** GPT corrected the noncomputable lookup, current `getElem?` lemma and literal pullback. Exact same conditional target and original combined budget. [Repair](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#bridge-compiler-diagnostics-and-bounded-repair). No full replay or P14. ACTIVE13/5.
+
 **11 November, GPT GC2898. Dense combined Lean pilot stops at aggregate CPU guard.** Exact remap passes; no kernel result. GPT owns a bridge-only check using arithmetic gate lookup, with compact UNSAT as an explicit hypothesis. [Evidence and new freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#dense-stop-and-arithmetic-bridge-control). Daily provenance refresh complete, S-23 entries only. S-24 is Local's build. ACTIVE13/5.
 
 **10 November, GPT GC2897. P13 dense whole-line factor pilot frozen.** The reversible remap shrinks the source to 889,101 bytes. GPT owns one kernel check of exact kit premises and `0110000` exclusion at every origin. [Scope and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#dense-whole-line-factor-freeze). Full Lean coverage and P14 remain open. Local owns S-24. ACTIVE13/5.

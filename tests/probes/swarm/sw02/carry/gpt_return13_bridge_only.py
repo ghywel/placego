@@ -34,6 +34,9 @@ def emit_bridge(premises, packed, gate_source):
     end = body.index('\n', bounds)
     right = body.index('private theorem models_pullback', end)
     body = body[:left] + body[bounds:end] + '\n\n' + body[right:]
+    body = body.replace('private def restoreLit', 'private noncomputable def restoreLit')
+    body = body.replace('  simpa only [Lit, restoreLit, hd, hm] using hv',
+                        '  unfold Lit at hv ⊢\n  unfold restoreLit at hv\n  rw [hd, hm] at hv\n  exact hv')
     body = body.replace('theorem factor_excluded (x : Int → Bool)',
                         'theorem factor_excluded_of_unsat\n'
                         '    (hu : ∀ a : Nat → Bool, ¬ (∀ c ∈ formula, Models a c))\n'

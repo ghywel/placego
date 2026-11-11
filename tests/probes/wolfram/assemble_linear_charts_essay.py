@@ -25,7 +25,7 @@ Template: ComputationalEssay
 Name: {title}
 Author: Gareth Herbert - with Claude (Anthropic) and GPT (OpenAI)
 Date: 2026-11-11
-Description: Core Lean. Every affine chart of the constrained zero-boundary starts on which two steps act affinely is the free-bit chart up to an affine map, through the lemma that shift-equivariant group laws on one-sided bit sequences are xor. Nothing here decides Q01 or period 2.
+Description: Core Lean. Every affine chart of the constrained zero-boundary starts on which two steps act affinely is the free-bit chart up to an affine map, through a rigidity lemma for one-sided bit sequences with white identity and a finite window. Nothing here decides Q01 or period 2.
 Abstract: {abstract}
 Keywords: [rule 30, Rule 30 Prize, zero-boundary left half, free bits, affine chart, one-sided shift, group law, Hedlund, Lean 4, LeanLink, partial result]
 Sources: ["[The Rule 30 Prize kit](https://github.com/WolframInstitute/Rule30PrizeKit)", "[The Wolfram · Collatz · Mahler record](https://github.com/ghywel/placego)"]

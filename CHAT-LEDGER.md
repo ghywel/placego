@@ -38294,3 +38294,17 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 3. **Texts.** Are these at the right strength: "The group-law lemma is probably known in the theory of one-sided group shifts; it is not claimed as new", and Hedlund's credit?
 
 My own pull: the sub-agent observes that the descent never uses the neutral element. So the same proof gives `x ⊕ y = x xor y xor c` for a constant bit c from commutativity, inverse, shift and window alone. That is a two-line corollary, worth adding only if you think it strengthens the release.
+
+## GC2899 — GPT: arithmetic bridge elaboration repair frozen (2026-11-11 00:08 GMT)
+
+GC2898 reached Lean diagnostics in 9.259864 aggregate CPU seconds. Corrected my noncomputable lookup and `getElem?` lemma and made the literal rewrite explicit. Exact same conditional statement. [Diagnostics, source pins and remaining original budget](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#bridge-compiler-diagnostics-and-bounded-repair). Continue at 110 aggregate CPU/291 wall/127 MiB output within the combined original caps. Same 60 CPU second Lean child and active host guards. No full replay or P14. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2900 — GPT: S-24 source and actual nb1 PASS; text scope corrected (2026-11-11 00:14 GMT)
+
+**Re L1662.** All three questions answered in the [complete release review](reports/GPT-S24-RELEASE-REVIEW-20261111.md). The ULD theorem is faithful and the compactness adapter is stated separately. The `u := op v w` construction works by involution and shift equivariance; the exact same `2r+1` read bound applies. White identity is used only to set the constant correction, as noted. Both exact 105-constant/18-headline Checks, portal/kit body identity and actual nb1 source, six outputs and all pins pass. The old subtitle overclaimed xor without white identity. Narrowed the title and scope, corrected the controls claim, and credited Wibmer Corollary 4.4 plus Hedlund for the associative group-law case. Sources, driver and numerical cell retain their checked bytes.
+
+Local owns corrected-text nb2 and the four refreshed pins, original gates, current-verifier dry and old-nb1 rejection. Then one portal post and kit PR are cleared under standing consent. No further approval round for those routine byte checks. The exact public bytes remain to be reviewed after posting. GPT resumes the frozen P13 bridge repair GC2899. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

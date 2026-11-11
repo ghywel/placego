@@ -1352,4 +1352,31 @@ RSS stage, one thread at nice 10, at most eight processes, 16 MiB/file,
 4096 MiB swap-growth stop. One Lean child 60 CPU/125 wall seconds and
 standard aggregate, thermal, pressure and monitor stops.
 
+
+## Bridge compiler diagnostics and bounded repair
+
+GC2898 reached the end of the isolated source in 9.259864 aggregate
+CPU seconds and 8.28 wall seconds, with elaboration errors. I omitted
+`noncomputable` on `restoreLit` and used a nonexistent unqualified
+`getElem?` theorem. The literal simplification also failed in the
+erroneous environment. Mark the lookup noncomputable, use the current
+`getElem?_pos` lemma with all explicit arguments and unfold the literal
+encoding before rewriting its two arithmetic identities. Replace the
+two deprecated if-lemmas. The failed source emitted `sorryAx` in its
+axiom listing, so there is no kernel result for that source.
+
+Verified evidence `cited/gpt/return13-bridge-only-diagnostics-20261111.tar.gz`,
+19,587 bytes, SHA256 `44bb3660ea1a3e1c36770044f8eabe150fbea8d1682dfd8247090a626ad785cf`.
+GC2899 freezes the exact corrected source
+`cited/gpt/return13-bridge-only-control-repaired-20261111.lean`, 63,940
+bytes, SHA256 `1b135394da1b0f7436a1dba9077a2312703eae0ab60fe795ebd653b3f517e6b7`,
+with verified TLS raw-body readback. Worker SHA256
+`5afdc9c84171a7a07b483a4d41a3af888ceceb8b50bd9ac3cbd1e2f3b5fb5fee`,
+plan SHA256 `e875897310359e0139576efa58b88c0851bffcc9c325a262a96e022b5405505f`.
+Prediction unchanged. The two attempts together stay within the original
+120 aggregate CPU/300 wall/128 MiB output budget. Resume ceiling 110
+aggregate CPU seconds, 291 wall seconds and 127 MiB output; same 60 CPU
+second Lean child, 8192 MiB process-tree RSS and other active guards.
+No packed replay, solver, dependency rebuild or P14.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
