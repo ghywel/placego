@@ -1,0 +1,31 @@
+== left diagonals 0..420 modulo 2^6, t < 2^17; periods judged on [2^16, 2^17); 1 s
+   depths not settled on the window: none
+   binary prefix exponent E(n,1) by depth range (from 3): [(3, 7, 1), (8, 28, 2), (29, 399, 3), (400, 420, 4)]
+   L1 control (stages 3..7, 8..28, 29..399, 400..420): True | white diagonals (u odd for good): [2, 7, 28, 399] | constant black diagonals: 4, first [4, 9, 30, 401]
+   control (GC2931, GC2933): e(3,k) = e(5,k) = e(6,k) = k and depths 2, 4 constant, k <= 6: True
+L2 (E(n,k) = E(n,1) + k - 1 for 3 <= n <= 420, 2 <= k <= 6): False
+   k = 2: E(n,k) by depth range [(3, 28, 2), (29, 420, 4)] | deviation from the law on [(8, 28, -1), (400, 420, -1)]
+   k = 3: E(n,k) by depth range [(3, 7, 3), (8, 28, 4), (29, 420, 5)] | deviation from the law on [(400, 420, -1)]
+   k = 4: E(n,k) by depth range [(3, 7, 4), (8, 28, 5), (29, 420, 6)] | deviation from the law on [(400, 420, -1)]
+   k = 5: E(n,k) by depth range [(3, 7, 5), (8, 28, 6), (29, 420, 7)] | deviation from the law on [(400, 420, -1)]
+   k = 6: E(n,k) by depth range [(3, 7, 6), (8, 28, 7), (29, 420, 8)] | deviation from the law on [(400, 420, -1)]
+L2' (one more digit, one more doubling, for k >= 3; deviation in -1..2): True (steps True, range True)
+counterfactual (a second counter: E(n,k) - E(n,1) >= 2(k-1) at some n >= 8): not seen
+L3: diagonals eventually constant modulo 64: [(0, 2), (1, 0), (2, 1), (4, 0)]
+   scalar exponents e(n,k), k = 1..6, depths 1..40:
+     1: 000000 | 2: 000000 | 3: 123456 | 4: 000000 | 5: 123456 | 6: 123456 | 7: 023456 | 8: 224567
+     9: 023456 | 10: 224567 | 11: 224567 | 12: 224567 | 13: 224567 | 14: 224567 | 15: 224567 | 16: 224567
+     17: 224567 | 18: 224567 | 19: 224567 | 20: 224567 | 21: 224567 | 22: 224567 | 23: 114567 | 24: 224567
+     25: 224567 | 26: 224567 | 27: 224567 | 28: 024567 | 29: 345678 | 30: 034567 | 31: 345678 | 32: 345678
+     33: 345678 | 34: 345678 | 35: 345678 | 36: 345678 | 37: 345678 | 38: 345678 | 39: 345678 | 40: 345678
+   k = 2: among depths whose binary diagonal is not constant, e(n,k) - e(n,1) - (k-1) takes values {-1: 39, 0: 350, 1: 18, 2: 4}
+   k = 3: among depths whose binary diagonal is not constant, e(n,k) - e(n,1) - (k-1) takes values {-1: 20, 0: 368, 1: 19, 2: 4}
+   k = 4: among depths whose binary diagonal is not constant, e(n,k) - e(n,1) - (k-1) takes values {-1: 20, 0: 368, 1: 19, 2: 4}
+   k = 5: among depths whose binary diagonal is not constant, e(n,k) - e(n,1) - (k-1) takes values {-1: 20, 0: 368, 1: 19, 2: 4}
+   k = 6: among depths whose binary diagonal is not constant, e(n,k) - e(n,1) - (k-1) takes values {-1: 20, 0: 368, 1: 19, 2: 4}
+   binary-constant diagonals (8): their exponents modulo 2^k, k = 2..6, as (depth, colour, exponents):
+     (2,w,00000) (4,b,00000) (7,w,23456) (9,b,23456) (28,w,24567) (30,b,34567) (399,w,45678) (401,b,45678)
+   onset of periodicity modulo 2^1 at depths [3, 6, 8, 12, 20, 29, 50, 100, 200, 300, 399, 400, 420]: [2, 2, 2, 6, 23, 30, 73, 134, 257, 389, 501, 498, 523]
+   onset of periodicity modulo 2^6 at depths [3, 6, 8, 12, 20, 29, 50, 100, 200, 300, 399, 400, 420]: [7, 12, 12, 27, 35, 43, 81, 178, 306, 442, 589, 584, 619]
+   binary onset divided by depth, depths 20..420: least 1.034, median 1.274, largest 1.479 | every onset exceeds its depth (the centre is read at t = n): False
+seconds 4

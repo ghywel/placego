@@ -1,0 +1,74 @@
+== Part 0: the diagonal recurrence on the whole integer rows, t <= 12
+   [PASS] u_n(t+1) = u_n(t) u_(n-1)(t) + u_(n-2)(t) - 1 for -2 <= n <= 26, t < 12
+   [PASS] u_0 = 2, u_(-1) = 1, u_1 = 2^t
+   [PASS] centre counts 1, 1, 4, 17, 199, 11783, 13840878
+== Part 1: the second and third clocks at the odd primes below 200 (GC2931)
+   [PASS] least period of u_2 from time zero is 2d (d even) or p d (d odd), all 45 primes
+   [PASS] the same on the tail (least eventual period)
+   [PASS] S = 0 at even d; S * Sbar = d and S != 0 at odd d
+   [PASS] at odd d every residue occurs exactly d times in a period
+   [PASS] u_2 reaches zero inside its first period (x(d) = -1, x(d+1) = 0 at even d; x(kd) = 1 + kS with a zero at some k <= p - 1 at odd d)
+   [PASS] u_3 is P2-periodic from one tick after the first zero of u_2
+   [PASS] the prefix (u_2, u_3) has least eventual period exactly P2
+   [PASS] negative control: 'the period is 2d at every prime' fails  holds at 31 of 45 (the 31 primes with d even)
+   [PASS] negative control: 'the period is p d at every prime' fails  holds at 14 of 45
+   p, d = ord_p(2), P2, first zero z of u_2, true onset of u_3's periodicity:
+     3: 2, 4, 3, 0 | 5: 4, 8, 2, 3 | 7: 3, 21, 3, 4 | 11: 10, 20, 11, 12 | 13: 12, 24, 4, 5 | 17: 8, 16, 9, 10
+     19: 18, 36, 19, 20 | 23: 11, 253, 12, 13 | 29: 28, 56, 11, 12 | 31: 5, 155, 66, 67 | 37: 36, 72, 37, 38 | 41: 20, 40, 21, 22
+     43: 14, 28, 7, 8 | 47: 23, 1081, 13, 14 | 53: 52, 104, 53, 54 | 59: 58, 116, 12, 13 | 61: 60, 120, 61, 62 | 67: 66, 132, 22, 23
+     71: 35, 2485, 52, 53 | 73: 9, 657, 208, 209 | 79: 39, 3081, 85, 86 | 83: 82, 164, 83, 84 | 89: 11, 979, 11, 12 | 97: 48, 96, 49, 50
+     101: 100, 200, 101, 102 | 103: 51, 5253, 38, 39 | 107: 106, 212, 107, 108 | 109: 36, 72, 37, 38 | 113: 28, 56, 29, 30 | 127: 7, 889, 168, 169
+     131: 130, 260, 131, 132 | 137: 68, 136, 69, 70 | 139: 138, 276, 18, 19 | 149: 148, 296, 149, 150 | 151: 15, 2265, 396, 397 | 157: 52, 104, 53, 54
+     163: 162, 324, 163, 164 | 167: 83, 13861, 113, 114 | 173: 172, 344, 173, 174 | 179: 178, 356, 179, 180 | 181: 180, 360, 181, 182 | 191: 95, 18145, 197, 198
+     193: 96, 192, 38, 39 | 197: 196, 392, 197, 198 | 199: 99, 19701, 467, 468
+   primes with d odd (14): [7, 23, 31, 47, 71, 73, 79, 89, 103, 127, 151, 167, 191, 199]
+== Part 2: prefix periods to depth 16 at p = 2, 3, 5, 7 (GC2931, backward profile)
+   p = 2: (depth, prefix period, scalar period): (1,1,1) (2,1,1) (3,2,2) (4,2,1) (5,2,2) (6,2,2) (7,2,1) (8,4,4) (9,4,1) (10,4,4) (11,4,4) (12,4,4) (13,4,4) (14,4,4) (15,4,4) (16,4,4)
+   [PASS] p = 2: n + 2 <= p^(2 P_n) to depth 16
+   [PASS] p = 2: P_n = lcm of the scalar periods of depths n - 1 and n, 2 <= n <= 16
+   p = 3: (depth, prefix period, scalar period): (1,2,2) (2,4,4) (3,4,4) (4,4,4) (5,4,2) (6,12,12) (7,12,12) (8,12,12) (9,12,12) (10,12,12) (11,12,12) (12,12,12) (13,12,12) (14,12,12) (15,12,12) (16,12,12)
+   [PASS] p = 3: n + 2 <= p^(2 P_n) to depth 16
+   [PASS] p = 3: P_n = lcm of the scalar periods of depths n - 1 and n, 2 <= n <= 16
+   p = 5: (depth, prefix period, scalar period): (1,4,4) (2,8,8) (3,8,8) (4,8,8) (5,8,8) (6,8,8) (7,8,8) (8,8,8) (9,8,8) (10,8,8) (11,8,8) (12,40,40) (13,40,40) (14,40,40) (15,40,40) (16,40,40)
+   [PASS] p = 5: n + 2 <= p^(2 P_n) to depth 16
+   [PASS] p = 5: P_n = lcm of the scalar periods of depths n - 1 and n, 2 <= n <= 16
+   p = 7: (depth, prefix period, scalar period): (1,3,3) (2,21,21) (3,21,21) (4,21,21) (5,21,21) (6,21,21) (7,21,21) (8,21,21) (9,21,21) (10,21,21) (11,21,21) (12,21,21) (13,21,21) (14,21,21) (15,21,21) (16,126,126)
+   [PASS] p = 7: n + 2 <= p^(2 P_n) to depth 16
+   [PASS] p = 7: P_n = lcm of the scalar periods of depths n - 1 and n, 2 <= n <= 16
+== Part 3: the 2-adic cascade and depth six modulo 2^64 (GC2931, GC2933)
+   [PASS] u_3(t) + t is constant modulo 2^64 for t >= 65  C mod 2^16 = 55421
+   [PASS] v_2(C - u_3(t) - t) >= t - 1 for 1 <= t <= 64  equality at 32 of 64 ticks
+   [PASS] r_k <= 2k for k <= 40  r_k: 2 4 4 6 10 18 34 44 at k = 1, 2, 3, 4, 8, 16, 32, 40
+   [PASS] u_4 = 0 modulo 2^k from k + 1 + r_k, k <= 40
+   [PASS] u_5 = u_3 modulo 2^k from k + 2 + r_k, k <= 40
+   [PASS] F by the rising-factorial sum equals -(-1)^n D_n at x = -n-1, every residue, k <= 12
+   [PASS] F(x - 1) = x F(x) - 1, every residue, k <= 12
+   [PASS] min(v_2(F(x)), k) = min(v_2(x + 2), k), every residue, k <= 12
+   [PASS] F vanishes modulo 2^k only on the class of -2, k <= 12
+   F modulo 4 at x = 0, 1, 2, 3: [2, 3, 0, 3]
+   [PASS] u_6(t) = F(C - t) modulo 2^k for N_6(k) <= t <= 16384, k <= 40
+   [PASS] the simpler onset 5k + 2 and statement (2): v_2(u_6(t) - F(C - t)) >= floor((t - 2)/5) for 7 <= t <= 202
+   [PASS] min(v_2(u_6(t)), k) = min(v_2(C + 2 - t), k) beyond N_6(k), k <= 40
+   [PASS] least eventual period of u_6 modulo 2^k is exactly 2^k, k <= 12 (2^k is a period, 2^(k-1) is not)
+   k: stated onsets (u_4, u_5, u_6) against the true ones on this window
+     k =  1: r_k =  2 | u_4:   4 /   2 | u_5:   5 /   0 | u_6:   7 /   2
+     k =  2: r_k =  4 | u_4:   7 /   4 | u_5:   8 /   4 | u_6:  12 /   6
+     k =  3: r_k =  4 | u_4:   8 /   4 | u_5:   9 /   4 | u_6:  13 /   6
+     k =  4: r_k =  6 | u_4:  11 /   5 | u_5:  12 /   5 | u_6:  18 /   6
+     k =  6: r_k =  8 | u_4:  15 /  10 | u_5:  16 /  10 | u_6:  24 /  12
+     k =  8: r_k = 10 | u_4:  19 /  12 | u_5:  20 /  12 | u_6:  30 /  14
+     k = 12: r_k = 16 | u_4:  29 /  14 | u_5:  30 /  14 | u_6:  46 /  20
+     k = 16: r_k = 18 | u_4:  35 /  18 | u_5:  36 /  18 | u_6:  54 /  24
+     k = 24: r_k = 28 | u_4:  53 /  26 | u_5:  54 /  26 | u_6:  82 /  30
+     k = 32: r_k = 34 | u_4:  67 /  36 | u_5:  68 /  36 | u_6: 102 /  40
+     k = 40: r_k = 44 | u_4:  85 /  46 | u_5:  86 /  46 | u_6: 130 /  46
+   [PASS] negative control: the reversed phase F(C + t) fails (k = 8)  1008 of 1024 ticks differ
+   [PASS] negative control: the phase shifted by one, F(C - t + 1), fails (k = 8)  1024 of 1024 ticks differ
+   [PASS] negative control: zeros at t = C + 1 modulo 2^8 fails  8 of 1024 ticks disagree
+   measured, not claimed: least eventual period of u_7 modulo 2^1 on the tail is 1
+   measured, not claimed: least eventual period of u_7 modulo 2^2 on the tail is 4
+   measured, not claimed: least eventual period of u_7 modulo 2^3 on the tail is 8
+   measured, not claimed: least eventual period of u_7 modulo 2^4 on the tail is 16
+   measured, not claimed: least eventual period of u_7 modulo 2^5 on the tail is 32
+   measured, not claimed: least eventual period of u_7 modulo 2^6 on the tail is 64
+ALL PASS: True (36 of 36 checks); 11 s
