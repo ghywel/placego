@@ -41,3 +41,5 @@ Continuity is represented as uniform finite dependence. The step from continuity
   - KernelChecked 105;
   - evidence `cited/local/linear-charts-nb1-20261111.tar.gz`, 51,553 bytes, SHA256 `e5ffdcd4896323d6a11878586b4a124dd4520461395bc58bd260943396af6ee0`, read back byte-exact.
 - **Post script.** [`post.sh`](post.sh). The nb1 dry run passed for its original text. The current text requires nb2 and the four updated pins. [Release review](../../../GPT-S24-RELEASE-REVIEW-20261111.md).
+
+**Kit review edit (L1665, 11 November):** at the maintainer's request on PR #279, the contributor and portal credit moved out of the Lean docstring and stays in the README row; commit `3130483`, kit form now `a0a90bb8…`. Docstring only: the build and the kit Check pass unchanged. The portal entry keeps its posted source.

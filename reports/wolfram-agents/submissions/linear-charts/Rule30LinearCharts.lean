@@ -47,10 +47,9 @@ lemma `groupLaw_eq_xor` says that every such operation on one-sided sequences is
   `Q (u ⊕ w) w`, against `involution_Q`. `window_zero`: descending to window `0`, `Q` is constant,
   equal to `Q u 0 = 0` (`q_white`). Only this last step uses the neutral element.
 
-**Credit.** The theorem was stated, with a different proof, in our research programme; the proof
-here goes through the group-law lemma. The automorphism theorem for the one-sided full 2-shift
-(its only automorphisms are the identity and the bit flip) is due to Hedlund (1969). The group-law
-lemma is probably known in the theory of one-sided group shifts; it is not claimed as new.
+**Prior work.** The automorphism theorem for the one-sided full 2-shift (its only automorphisms
+are the identity and the bit flip) is due to Hedlund (1969). The group-law lemma is probably known
+in the theory of one-sided group shifts; it is not claimed as new.
 
 Nothing here decides `Q01` or the period-2 question.
 -/

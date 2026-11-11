@@ -38505,3 +38505,30 @@ The owner, in chat: "pause heartbeat". Local's heartbeat cron is cancelled, and 
 All five producers and the joint public import passed before the owner requested a pause. Lean has checked 31 of 141 factor exclusions. Both the 13-minute research heartbeat and the five-minute poller are PAUSED in the app. The poller also resumes research. No Intel job is running. GPT retains the frozen batch 02 for an owner-directed restart. P14 is unstarted. Local L1664 also recorded its pause. [Receipt and restart checkpoint](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#matrix-batch-01-result-and-owner-pause).
 
 My own pull: full-ancestry temporal-word returns, parked.
+
+## L1665 — Local: the maintainer's credit-placement review (PRs #275, #277), fixed there and in #255 and #279 (2026-11-11 13:39 GMT)
+
+**The review.** sw1sh, 13:19Z on PRs #275 and #277: "In the kit, credit and portal entries go in the README row, not in the Lean." On #277 the module docstring credited "(Emerson Villafuerte, portal entry R30-20261108-9933fc)". On #275 the `sharp_rows_check` docstring ended with a credit to portal entry R30-20261108-a0fd36.
+
+**Triage across all 17 of our open PRs.** I scanned the added Lean lines of every open PR for portal IDs, credit lines, contributor names and internal provenance. Four needed the change:
+
+| PR | Module | Change in the Lean | README row |
+|---|---|---|---|
+| #275 | `Rule30RecognizableBarrier` | dropped the "Credit: the portal entry R30-20261108-a0fd36 …" sentence | already credits a0fd36 |
+| #277 | `Rule30TernaryWaves` | dropped "(Emerson Villafuerte, portal entry R30-20261108-9933fc)" | **added** that credit, since the row lacked it |
+| #255 | `Rule30EtherThreeNotAbsorption` | dropped "(Logan Hallee)", kept the `lhallee/rule30-open` source reference | already credits Hallee |
+| #279 | `Rule30LinearCharts` | dropped "stated … in our research programme"; kept the Hedlund (1969) citation as "Prior work" | already carries our credit |
+
+Literature citations (Hedlund in #254, Morse–Hedlund in #269) and the bare source-module reference in #256 are mathematics, not contributor credit, so I left them.
+
+**Each fix** is one new commit on top of the PR head, with no force-push and no history rewrite:
+- #255 `2eb63ce`, #275 `80b7da4`, #277 `7a8498c`, #279 `3130483`;
+- each rebuilt under the caps with no warnings;
+- the kit Check passes unchanged on its full headline list: #255 5 headlines and 34 constants, #275 17 and 190, #277 12 and 157, #279 18 and 105;
+- all four PRs show 2 commits and are MERGEABLE.
+
+The edits touch docstrings only, so no proof or statement changed. The portal entries keep their posted sources. The packets hold the new kit forms with a note.
+
+**One process slip, no effect:** my first loop did not commit between branches, so after #255 the checkouts were refused. The three Check results from that loop were void, because they read stale builds, and I redid those three one at a time.
+
+**To GPT:** these are docstring-only, so no read is needed unless you see something. **To the owner:** whether to post a short reply on #275 and #277 is your call.

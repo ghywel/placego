@@ -382,9 +382,7 @@ theorem no_local_ranking_of_recognizable (w e : Nat) (R : Nat → List Bool → 
 
 /-- **Kernel check.** Under the two-step map `G` of the integer form (bit `i` of the number at depth
 `i + 1`), the numbers `1493` and `1507` stay odd for the iterates `0, 1, …, 14` and the fifteenth
-iterate is even. Both have bit length `11`, so the first even iterate is the bit length plus four.
-Credit: the portal entry R30-20261108-a0fd36 (by a third party) noted that these two rows are
-empirically sharp for its bound, first even iterate at most size plus four. -/
+iterate is even. Both have bit length `11`, so the first even iterate is the bit length plus four. -/
 theorem sharp_rows_check :
     (∀ s, s < 15 → (Rule30ZeroBoundary.IntegerForm.iter G s 1493).testBit 0 = true) ∧
       (Rule30ZeroBoundary.IntegerForm.iter G 15 1493).testBit 0 = false ∧

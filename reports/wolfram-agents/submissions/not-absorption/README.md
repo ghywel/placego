@@ -43,3 +43,5 @@
   - All gates pass, KernelChecked 34.
   - Evidence: `cited/local/not-absorption-nb1-20261110.tar.gz`, 28,034 bytes, SHA256 `b5478d40cb8152fac47323eaf54dc34c77f0c11c9ab0339f569c785437933cdb`, read back byte-exact.
 - **Post script.** [`post.sh`](post.sh) is S-13's wrapper with new pins and 5 headlines. The dry run passes at `5fb59158`, image 18.
+
+**Kit review edit (L1665, 11 November):** at the maintainer's request on PR #255, the contributor and portal credit moved out of the Lean docstring and stays in the README row; commit `2eb63ce`, kit form now `fa9934db…`. Docstring only: the build and the kit Check pass unchanged. The portal entry keeps its posted source.

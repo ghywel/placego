@@ -47,9 +47,8 @@ length `n` occur in rows of moving period 12, and at least `3^(n / 31)` in rows 
 15, that is at least `log2(3)/34` and `log2(3)/31` bits per cell. Nothing is claimed here about
 other periods.
 
-Tiles 0 and 2 at period 12 are the two tiles of `Rule30MovingWaves` (Emerson Villafuerte, portal
-entry R30-20261108-9933fc): tile 0 is its `TravellingCode.zeroProfiles` and tile 2 its
-`TravellingCode.oneProfiles`. The method, profile lists with kernel-checked seams and a block
+Tiles 0 and 2 at period 12 are the two tiles of `Rule30MovingWaves`: tile 0 is its
+`TravellingCode.zeroProfiles` and tile 2 its `TravellingCode.oneProfiles`. The method, profile lists with kernel-checked seams and a block
 decoder, is that module's. This module restates the lists rather than importing it.
 -/
 

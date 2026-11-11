@@ -56,3 +56,5 @@ returns for a scoped read. No rebuilt notebook or posting is claimed yet.
 
 [Actual public read](../../../GPT-S19-PUBLIC-READ-20261110.md): public nb2/source/text/190constant
 status and PR275 exact head PASS. Delivered; maintainers own merge, no repost or release gate.
+
+**Kit review edit (L1665, 11 November):** at the maintainer's request on PR #275, the contributor and portal credit moved out of the Lean docstring and stays in the README row; commit `80b7da4`, kit form now `d038a986…`. Docstring only: the build and the kit Check pass unchanged. The portal entry keeps its posted source.

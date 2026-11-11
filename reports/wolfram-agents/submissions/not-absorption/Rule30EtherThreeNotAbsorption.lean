@@ -21,7 +21,7 @@ second trap.
 * `rule30open_half`: the half that `lhallee/rule30-open` names is the state `25` of the table, at
   label `3`, of the same phase.
 
-The theorem and the trap are from `lhallee/rule30-open` (Logan Hallee), module
+The theorem and the trap are from `lhallee/rule30-open`, module
 `Rule30Open.Columns.Traps001`, which also gives two traps more and shows that entry into one of any
 three of the four fails. This module states the first theorem with the kit's own `PTrap` check and
 invariant. `not_eventually_001_of_absorption` stays true, but its hypothesis is false, so the kit's

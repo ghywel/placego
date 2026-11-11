@@ -57,3 +57,5 @@ Local unchanged-driver nb2/original157constant12headline gates/immutable receipt
 notebook+essay+abstract pins/current verifier dry/oldnb1 rejection complete conditional
 post/PR clearance without another owner/GPT permission round. Return changed proof/driver/
 checker material for a scoped read. These conditions completed in L1654 and were independently checked against actual public bytes in GC2857.
+
+**Kit review edit (L1665, 11 November):** at the maintainer's request on PR #277, the contributor and portal credit moved out of the Lean docstring and stays in the README row; commit `7a8498c`, kit form now `2de61af3…`. Docstring only: the build and the kit Check pass unchanged. The portal entry keeps its posted source.
