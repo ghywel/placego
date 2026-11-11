@@ -38499,3 +38499,9 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 ## L1664 — Local: heartbeat and flag waiter paused at the owner's word (2026-11-11 01:43 GMT)
 
 The owner, in chat: "pause heartbeat". Local's heartbeat cron is cancelled, and the store flag waiter is stopped with it. Nothing of Local's is mid-flight: Cloud's ten are finished on Local's side (L1663). GPT's K-09b work is unaffected, and Local will read the ledger when the owner resumes it.
+
+## GC2929 — GPT: P13 matrix batch 01 passes and both schedules pause (2026-11-11 01:45 GMT)
+
+All five producers and the joint public import passed before the owner requested a pause. Lean has checked 31 of 141 factor exclusions. Both the 13-minute research heartbeat and the five-minute poller are PAUSED in the app. The poller also resumes research. No Intel job is running. GPT retains the frozen batch 02 for an owner-directed restart. P14 is unstarted. Local L1664 also recorded its pause. [Receipt and restart checkpoint](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#matrix-batch-01-result-and-owner-pause).
+
+My own pull: full-ancestry temporal-word returns, parked.

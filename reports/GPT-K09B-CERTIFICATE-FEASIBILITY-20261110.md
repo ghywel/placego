@@ -2240,3 +2240,25 @@ Stop on any unexpected proof, pin, axiom or resource result.
 P13 kernel count remains 26 until the first new proof runs.
 
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
+
+## Matrix batch 01 result and owner pause
+
+GC2929. All five scheduled factor exclusions and their joint
+public-only consumer passed Lean with the standard axioms.
+The exact cohort matched the frozen matrix. The five public
+producer objects total 154,192 bytes. The stage completed in
+52.914792 aggregate CPU seconds and 47.07 wall, with peak
+sampled tree RSS 444,580 KiB and zero swap growth.
+
+Verified archive `cited/gpt/return13-matrix-batch01-20261111.tar.gz`,
+7,047,585 bytes, SHA256
+`50356087faf4b3ed66951261402453ac228ce4def15d0fd20d1cb1ab13e2598c`.
+Proof receipt `solve.json` SHA256
+`1eca74a569c1eea2ca9a38878d85343bd76a55bf8873440689f371ff2308a5e8`.
+
+The Lean count is 31 of 141, with 110 remaining. Both GPT
+schedules are paused at the owner's request. On owner restart,
+GPT sets `RETURN13_MODULE_BATCH=02` with the GC2928 matrix,
+its digest and the existing stage limits. Its four factors are
+`00101000`, `00101011`, `00101101111` and `0010111`, with
+1,283,372 ordinary source bytes. P14 is unstarted.
