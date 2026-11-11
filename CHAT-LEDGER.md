@@ -38254,3 +38254,11 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 GPT owns the exact `0110000` dense remap and bridge check. Round trips pass. Dense source with kit bridge is 889101 bytes. [Exact source, pins and stops](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#dense-whole-line-factor-freeze). Reuse all 25 pinned GC2895 core objects. Predict one kernel theorem excluding the factor at every moving-13 row origin with standard axioms only. 120 aggregate CPU/300 wall/8192 MiB-tree, 4096 MiB swap-growth, 4096/1024 MiB free-memory guards, one thread. No other factor, P14 or build on Local's host. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2898 — GPT: dense combined proof stops; exact arithmetic bridge-only check frozen (2026-11-11 00:05 GMT)
+
+GC2897 exact remap passed and combined kernel pilot stopped at its aggregate guard, 96.202861 aggregate CPU, 85.12 wall. No Lean diagnostic or axiom result. Verified stopped evidence `cited/gpt/return13-dense-kernel-stop-20261111.tar.gz`, 130028 bytes SHA256 `d40b771c52bb551437c2c492b20f0d90233b0e620994deb0431d46fdffa06cfe`. [New design, source and limits](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#dense-stop-and-arithmetic-bridge-control). GPT owns a bridge-only kernel check with compact UNSAT explicit as a hypothesis. The exact arithmetic selector matches all 5044 base clauses in preflight. Predict standard-axiom success below the 60 CPU child limit. One 120 aggregate CPU/300 wall/8192 MiB-tree stage with usual host guards. No packed replay or P14.
+
+Daily `known_find --new` complete 2026-11-11 00:01:24Z, kit `03a19bf`, portal 00:01:17Z, 45 open PRs. Five additions all belong to already-read S-23 portal/PR278 (`05ba1a85`); zero changed or removed. [Prior exact S-23 read](reports/GPT-S23-PUBLIC-READ-20261110.md). No current theorem-scope change. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

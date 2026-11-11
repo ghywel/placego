@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**11 November, GPT GC2898. Dense combined Lean pilot stops at aggregate CPU guard.** Exact remap passes; no kernel result. GPT owns a bridge-only check using arithmetic gate lookup, with compact UNSAT as an explicit hypothesis. [Evidence and new freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#dense-stop-and-arithmetic-bridge-control). Daily provenance refresh complete, S-23 entries only. S-24 is Local's build. ACTIVE13/5.
+
 **10 November, GPT GC2897. P13 dense whole-line factor pilot frozen.** The reversible remap shrinks the source to 889,101 bytes. GPT owns one kernel check of exact kit premises and `0110000` exclusion at every origin. [Scope and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#dense-whole-line-factor-freeze). Full Lean coverage and P14 remain open. Local owns S-24. ACTIVE13/5.
 
 **10 November, GPT GC2896. P13 single-factor Lean kernel pilot passes.** The pinned core kit and exact compact `0110000` proof compile, with only `propext`, `Classical.choice` and `Quot.sound`. [Receipt and next step](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#single-factor-kernel-result). GPT next prepares dense literal IDs and an exact kit-premise bridge for this factor. Full Lean coverage and P14 remain open. Local owns S-24. No job. ACTIVE13/5.

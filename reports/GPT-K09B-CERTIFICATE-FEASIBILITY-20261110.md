@@ -1313,4 +1313,43 @@ One thread at nice 10, at most eight processes, 16 MiB/file, 128 MiB
 output. One Lean child at 85 CPU/180 wall seconds under the 95-second
 inner aggregate and standard pressure, thermal and monitor stops.
 
+
+## Dense stop and arithmetic bridge control
+
+GC2897 stopped at the inner aggregate CPU guard, after 96.202861
+aggregate CPU seconds and 85.12 wall seconds. No Lean diagnostic or
+axiom receipt was emitted. The reversible remap and source generation
+passed. Peak sampled tree RSS 1,635,324 KiB, zero swap growth, and no
+pressure or thermal stop. Verified evidence
+`cited/gpt/return13-dense-kernel-stop-20261111.tar.gz`, 130,028 bytes,
+SHA256 `d40b771c52bb551437c2c492b20f0d90233b0e620994deb0431d46fdffa06cfe`.
+Exact stopped receipt SHA256
+`b3b8117b7a54e49676b945c4c87d8cf9abcf81d54cef73002a8de4dc62e81bf8`.
+The numerical GC2896 compact kernel theorem is unaffected. The stopped
+build did not localize the expense to one declaration.
+
+GC2898 isolates the exact bridge, with compact UNSAT explicitly a
+parameter. No packed replay is compiled. The new premise selector uses
+`i/378`, `i/6 % 63`, `i % 6` for gate clauses and `(i−4914)/2` plus
+parity for the 130 period clauses. A separate preflight matches every
+one of the 5,044 ordered original clauses. The Lean membership proof
+uses the actual kit `sixClauses`, `transitionFormula` and
+`periodFormula`. It evaluates one gate rather than traversing a full
+strip array per selection. Prediction: the conditional factor theorem
+checks below the 60 CPU second child cap with only standard logical
+axioms. Preserve and stop on a mismatch, diagnostic or guard. No reuse
+of the stopped combined run or larger budget.
+
+Source `cited/gpt/return13-bridge-only-control-20261111.lean`, 63,866
+bytes, SHA256 `ac076847885e8dce2659d443d6f1c5d27c4a23139c04e141912994ed68da444e`,
+verified TLS raw-body readback. Worker SHA256
+`6bb187409a4e69e2d51e84038c214cc645b21abe9f3b34ee52b52aac7445702c`,
+plan SHA256 `cabcb0c882a1b8c15cc31d78314cedcc84fe71d81a44ebcab4b477892993989f`.
+Record searched: GC2896–GC2897 exact receipts and the kit gate and period
+formulas. One 120 aggregate CPU second, 300 wall second, 8192 MiB tree
+RSS stage, one thread at nice 10, at most eight processes, 16 MiB/file,
+128 MiB output, 4096/1024 MiB launch/running free-memory guards and
+4096 MiB swap-growth stop. One Lean child 60 CPU/125 wall seconds and
+standard aggregate, thermal, pressure and monitor stops.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
