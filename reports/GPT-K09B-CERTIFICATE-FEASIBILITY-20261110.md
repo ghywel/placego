@@ -2155,4 +2155,50 @@ floors 4096/1024 MiB, swap growth 4096 MiB, producer
 aggregate and 200-second worker wall guards, and thermal,
 pressure and telemetry stops. P14 remains open.
 
+## Fourth module batch result and remaining batch schedule
+
+GC2926 passed the three GC2925 producers and the joint consumer
+with standard axioms. Twenty-six of 141 exclusions now have
+kernel proofs. The public objects total 106,576 bytes. The
+launcher recorded 45.567530 aggregate CPU seconds, 40.44 wall,
+569,872 KiB peak sampled tree RSS, five processes and zero swap
+growth. Final output was 23,904,484 bytes.
+
+Verified evidence `cited/gpt/return13-module-batch4-receipt-20261111.tar.gz`,
+5,159,601 bytes, SHA256
+`e12214d111dbf5394f3780796d30cc6cd52368ef0358a6e1aa94086c951bcccf`.
+Exact receipt SHA256
+`7b14ffa05336b63b421cf15336cf6770bd08a3bc71be1279aa416f9d6c4062bb`.
+
+GC2927 prepares one schedule for the remaining 115 factors.
+It checks the six exact completed receipts covering 23 entries
+in the GC2912 export inventory. The three earlier factors were
+already excluded from that inventory. The 37,110,333 remaining
+ordinary source bytes partition into 24 consecutive lexicographic
+batches, each at most 1.8 MB and eight factors. Generate the exact
+module and joint-consumer source digests under the existing
+emitter and discard each temporary generated source after hashing.
+The schedule keeps the same per-batch producer, consumer and
+stage limits. Each later launch selects one fixed batch from the
+pinned schedule and checks the current owner and host headroom.
+
+Record searched: GC2912 source inventory, GC2913 and GC2915
+receipts, GC2920/GC2922/GC2924/GC2926 batch receipts, and the
+completed source-index refresh at 01:28:43Z. Expect all 115
+pending sources to reproduce and partition exactly once, with
+the existing packed replay and mutation controls passing.
+Stop at the first failed receipt, source, proof or host guard
+and retain the completed schedule prefix. This is a Python
+preparation stage. P14 remains open.
+
+[Plan](../tests/probes/swarm/sw02/carry/gpt_return13_module_matrix_plan.json)
+SHA256 `be8ee7d089203fb7d6f2a271e5926fd429597a007773c3bdc761afbe20d20722`.
+[Worker](../tests/probes/swarm/sw02/carry/gpt_return13_module_matrix.py)
+SHA256 `3428b6239c860ca2fa0d41c94311b6bb0a8bb15d209aaf39ab5c6d55a48bfdd3`.
+One serial 120 aggregate CPU second/300 wall second/768 MiB tree
+stage, eight processes, one thread at nice 10, 16 MiB/file and
+128 MiB output. Keep 4096/1024 MiB free-memory floors, swap
+growth 4096 MiB, 95-second inner aggregate and 200-second
+worker wall stops, and thermal, pressure and telemetry guards.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

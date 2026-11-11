@@ -20,8 +20,8 @@ def prepare_inputs(plan):
     return manifest, clauses[:5044], pin(gate['file'], gate['sha256'])
 
 
-def prepare_module(spec, inputs):
-    source, result = prepare_factor(spec, *inputs)
+def prepare_module(spec, inputs, out=OUT):
+    source, result = prepare_factor(spec, *inputs, out=out)
     assert result['source_sha256'] == spec['source_sha256'], result
     generated = as_module(source.read_bytes())
     source.write_bytes(generated)
@@ -48,7 +48,14 @@ def emit_consumer(results):
 
 
 def main():
-    plan = json.loads(Path(sys.argv[1]).read_bytes())
+    if sys.argv[1] == '--matrix':
+        raw = pin(os.environ['RETURN13_MODULE_MATRIX'], os.environ['RETURN13_MODULE_MATRIX_SHA256'])
+        plan = json.loads(raw)
+        batch = os.environ['RETURN13_MODULE_BATCH']
+        plan.update(plan['batches'][batch])
+        REPORT['batch'] = batch
+    else:
+        plan = json.loads(Path(sys.argv[1]).read_bytes())
     prepare_only = sys.argv[2:] == ['--prepare']
     if not prepare_only:
         soft, hard = resource.getrlimit(resource.RLIMIT_CPU)
