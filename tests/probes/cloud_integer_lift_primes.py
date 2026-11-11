@@ -138,6 +138,11 @@ def main():
     u = lambda t, n: 1 + rows[t].get(-t + n, 0)
     okU = all(u(t + 1, n) == u(t, n) * u(t, n - 1) + u(t, n - 2) - 1 for t in range(1, 14) for n in range(1, 8))
     print("   left-edge recurrence u_n(t+1) = u_n(t) u_(n-1)(t) + u_(n-2)(t) - 1, depths 1..7, t = 1..13:", okU)
+    from fractions import Fraction
+    okT = all(Fraction(u(t, 2)) == 2 ** (t * (t - 1) // 2) * (1 + sum(Fraction(1, 2 ** (m * (m + 1) // 2)) for m in range(t)))
+              for t in range(1, 15))
+    print("   depth 2: u_2(t) = 2^(t(t-1)/2) * (1 + sum over m < t of 2^(-m(m+1)/2)), t = 1..14:", okT,
+          "| u_2(1..6):", [u(t, 2) for t in range(1, 7)])
     for p in (3, 5, 7):
         rm = rows_mod(p, 14)
         ok = all(rows[t].get(j, 0) % p == rm[t, j + 14] for t in range(15) for j in range(-t, t + 1))

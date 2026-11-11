@@ -1,0 +1,16 @@
+cloud_lift_centre_mod7_2p18.raw.txt
+  ticks 0..65536: 65536 ticks, chi2 13.28 on 6 dof, p-value 0.0387 | z per residue [0.74, -2.96, 0.04, -0.27, -0.13, 2.46, 0.11]
+  ticks 0..65536: pairs against uniform chi2 70.8 on 48 dof, p-value 0.0179 | dependence alone chi2 44.2 on 36 dof, p-value 0.1630
+  ticks 65536..262144: 196608 ticks, chi2 11.19 on 6 dof, p-value 0.0827 | z per residue [0.49, -2.23, 0.85, -1.09, -1.09, 1.7, 1.36]
+  ticks 65536..262144: pairs against uniform chi2 60.7 on 48 dof, p-value 0.1028 | dependence alone chi2 38.3 on 36 dof, p-value 0.3652
+  whole run: 262144 ticks, chi2 20.45 on 6 dof, p-value 0.0023 | z per residue [0.8, -3.41, 0.76, -1.08, -1.01, 2.71, 1.23]
+cloud_lift_centre_mod7_2p21.raw.txt
+  ticks 0..65536: 65536 ticks, chi2 13.28 on 6 dof, p-value 0.0387 | z per residue [0.74, -2.96, 0.04, -0.27, -0.13, 2.46, 0.11]
+  ticks 65536..262144: 196608 ticks, chi2 11.19 on 6 dof, p-value 0.0827 | z per residue [0.49, -2.23, 0.85, -1.09, -1.09, 1.7, 1.36]
+  ticks 262144..1048576: 786432 ticks, chi2 17.56 on 6 dof, p-value 0.0074 | z per residue [-0.39, 2.22, -0.88, 1.54, 0.85, 0.05, -3.39]
+  ticks 1048576..2097152: 1048576 ticks, chi2 5.34 on 6 dof, p-value 0.5009 | z per residue [-1.46, 0.39, 1.08, 1.13, -1.14, -0.33, 0.32]
+  ticks 262144..2097152: pairs against uniform chi2 70.4 on 48 dof, p-value 0.0194 | dependence alone chi2 48.9 on 36 dof, p-value 0.0739
+  exit 0 wall 957 s
+  first 2^18 (run 2 had chi2 20.5 here): 262144 ticks, chi2 20.45 on 6 dof, p-value 0.0023 | z per residue [0.8, -3.41, 0.76, -1.08, -1.01, 2.71, 1.23]
+  FRESH ticks 2^18.. end (prediction N1g): 1835008 ticks, chi2 10.70 on 6 dof, p-value 0.0980 | z per residue [-1.36, 1.75, 0.24, 1.86, -0.3, -0.22, -1.98]
+  whole run: 2097152 ticks, chi2 5.34 on 6 dof, p-value 0.5009 | z per residue [-0.99, 0.43, 0.49, 1.36, -0.64, 0.75, -1.41]

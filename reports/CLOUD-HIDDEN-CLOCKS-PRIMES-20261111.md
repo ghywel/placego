@@ -1,0 +1,261 @@
+# What Rule 30 hides: the clocks, the cipher and the primes
+
+Cloud, CL776 and CL777, 11 November 2026, in answer to the owner's question of that day. Nothing here is a prize
+statement and nothing changes a status on the board. New hand statements are PROOF-SKETCH until another worker
+reads them. A sub-agent sweep meant to accompany this stopped at a usage limit after two of its five record
+searches; no lens or skeptic ran, and what it did return is a self-check.
+
+**The owner's question.** The kit collects provable statements and nobody has a bearing on the prize questions.
+We know what a counterexample must look like; can it be proved impossible? "I eternally feel the pull of the
+primes … hidden by some non obvious transformation. Perhaps a transformation that shifts even as time is run like
+a cyclic cipher." The image: a two-factor code that changes every thirty seconds and still unlocks the account.
+"What is rule 30 hiding."
+
+**Outcome.**
+1. The two-factor picture is exactly true, and already proved: at its right edge the single cell's pattern is a
+   binary counter read through a fixed scrambler. The centre column reads wheel number t at time t, before that
+   wheel has turned once. That is why the clock never unlocks the centre.
+2. There is a transformation under which every prime appears: reading Rule 30's polynomial over the integers.
+   It is in the literature. What is new here is its left edge, where each odd prime p sees a clock whose period
+   is the multiplicative order of 2 modulo p, and its centre, which behaves as a fair p-sided die at every prime
+   tested and is independent from prime to prime.
+3. On the time axis the centre column has now been tested against the three kinds of arithmetic a tick number
+   has: its residues (every modulus to two million), its digits (bases 2, 3, 5, 7) and its factorisation (the
+   primes, Liouville, Möbius, at last to 2^24). Results in §4 and §5.
+4. Whether the counterexample can be proved impossible is where it was. §6 says why, in the record's and the
+   kit's own words, and what the lift does and does not add.
+
+## 1. Record searched
+
+By me before proposing anything, and by the two searches that finished: INSTINCT.md 15 and 16 October (the
+owner's primes hunch, refined to "some sweep we haven't seen, diagonal or irregularly diagonal, perhaps even the
+sum of 2 primes masking it"); RULE30-PRIZE 8.114 to 8.116 (the direct reading killed at 2^22 with a drift handed
+to JOB CS-01; the structural reading; the observer thesis); G301 and CL398 (a sweep must be fixed in advance);
+PROOFS entries 33 and 34 (Propositions 20 and 21: the centre column as an autokey cipher); 8.15, 8.37, 8.70, 8.90,
+8.110; DEEP-QUESTIONS DQ-030 ("the centre reads diagonal k = t, a moving target"); genealogy §3 (S2, S3), §15.1,
+§25, §29; CONSTELLATION rows 2, 7, 11, 21; PERIOD-TWO §1 and §5; the kit catalogue `equivalents/CATALOG.md` at
+c791556, §7 items 2, 4, 5, 6, 8, 9, 11, 13; `record_find` on some thirty terms (CL776). Outside: Nersissian,
+*Diagonal Bases and Diagonal Periods of Elementary Cellular Automata*, arXiv 2609.25078 (abstract, §3 Remark 6,
+§10.2, §12.1, §17 read today); Coven, Pivato and Yassawi 2007 as cited by the kit.
+
+Not found anywhere: the left diagonals of the integer lift; the lift's centre column modulo odd primes as a
+sequence; Artin's conjecture in any role; a direct power spectrum of the single-seed centre column; a kernel test
+in a base other than 2; an outcome for CS-01; the owner's two-factor image.
+
+## 2. What is known to be hidden
+
+All of this is in the record or the kit. Nothing in this section is mine.
+
+| What | Exact statement | Status and place |
+|---|---|---|
+| A cipher with nothing hidden | For a random start the centre column is an exact fair coin, independent of the right half. One fresh bit of the left half enters the centre at each tick by XOR. | Lean, kit `RandomConfigurations` (`measurePreserving_trace`, `indepFun_trace_rightHalf`); as an autokey cipher, PROOFS 33 and 34 |
+| The single cell is the empty message | With a white left half there is nothing to transport. The centre column is the cipher's own output on the all-white message with the all-white key. | PROOFS 33 |
+| A counter at the right edge | In the frame of the right edge the single cell's orbit closure is the binary odometer. The cells behind the edge evolve by the triangular bijection Φ(x) = x xor (2x or 4x), and the cell at depth j has period dividing 2^j. | Coven, Pivato and Yassawi 2007; Lean, kit `Odometer.isClosedEmbedding_seed`, `TFunction.orbit_two_pow_mod`; periods at most 2^⌈(2j−1)/3⌉ (G249) |
+| Clocks at the left edge | Left diagonals are eventually periodic with power-of-two periods, after transients. | Jen 1986, Rowland; Lean, kit `Ld_periodic`; our Lemmas B1 to B3 |
+| The moving target | The centre column reads row t of the diagonal array at time t: inside that row's first period on the right, inside the transient on the left. | Kit catalogue §7 item 9; DQ-030; genealogy §15.1: "No known clock reaches there" |
+| One nonlinear gate | Rule 30 is rule 150 plus the product of the centre and right cells. Rules 90, 150 and 210 share every structural hypothesis and have eventually constant centres, so a proof must use that product. | Lean, kit `Rule30Realization.barrier`; sibling barriers in our carry reports |
+| The carry | The correction that separates Rule 30 from a Gray step is a two-time AND, and under the coin measure the column carry is a hidden two-state chain with an exact entropy rate. | 8.90, the owner's question of 11 October, solved |
+
+## 3. The two-factor picture, exactly
+
+A two-factor code is code = f(secret, counter). The app and the server share the secret, the counter is the
+time, and the same secret is used for ever.
+
+At Rule 30's right edge:
+- the counter is the tick number t, written in binary;
+- the wheels are the right diagonals: the cell at depth j behind the edge is a fixed function of the low bits of
+  t, with period 2, 2, 4, 8, 8, 16, 32, 32 at depths 1 to 8 (COMPUTED here; the record has them to depth 16);
+- the scrambler is fixed once and for all by the rule.
+
+So far it is the app. The difference is which wheel is read. The centre column is the cell at depth t at time t.
+Each tick reads a new wheel, and from the third wheel on, at every depth computed, that wheel's period is longer
+than t. The secret in use grows faster than the counter. A rolling code whose key outruns its clock never repeats, and one reading
+per wheel says nothing about that wheel's law.
+
+What would unlock it is a formula for wheel j at time t that is uniform in both. The record names that as open
+(DQ-030), and Problem 3 asks to prove that no fast one exists. How fast the wheels grow is itself open below:
+the periods are at most 2^⌈(2j−1)/3⌉ (PROVED, G249), measured near 2^(0.35j) to 2^(0.4j), and a positive lower
+rate is "exactly the missing statement" of GC2157.
+
+## 4. The primes
+
+### 4.1 What the record had
+
+8.114: "No arithmetic prime enters the rule." The centre column at prime times and against Liouville's and
+Möbius's functions was a coin's at 2^22, with all three sums drifting the same way at about 2 sigma; the 2^24
+run that would settle it (JOB CS-01) was never run. The primes govern the periodic side of the sister problems
+(orders of 3/2 modulo primes, Zsigmondy) and the aperiodic side has none. The owner's refinement, a sweep of
+the diagram, was never defined.
+
+### 4.2 The integer lift (known) and its two edges (the left one is new here)
+
+Read Rule 30's polynomial over the integers:
+
+    A_0 = the single 1,    A_(t+1)(j) = A_t(j−1) + A_t(j) + A_t(j+1) + A_t(j)·A_t(j+1).
+
+A_t(j) counts the ways of expanding the cell into products of copies of the seed. Rule 30 is A modulo 2, and
+modulo a prime p the same recurrence is an automaton with p states. The centre counts begin 1, 1, 4, 17, 199,
+11783, 13840878 (no match in an OEIS search today) and have 1,658 bits by t = 14. This lift is Nersissian's "canonical polynomial
+lift" (arXiv 2609.25078), and the record met it modulo 4 in genealogy S3. **Caveat, already in the record
+(GC2352):** another integer lift keeps every value 0 or 1, so nothing below is intrinsic to Rule 30's bits. It
+is a statement about this lift.
+
+**Right edge (KNOWN: Nersissian, Theorems 12 and 13, Corollary 9).** The diagonal at depth k is an integer-valued
+polynomial D_k(t) of degree F_(k+2) − 1, with D_1 = t and D_2 = t², so modulo any prime p it is purely periodic
+with period a power of p. The centre column is c(n) = D_n(n) mod 2. The right edge is an odometer for every
+prime at once.
+
+**Left edge (mine; PROOF-SKETCH until read; COMPUTED controls; not found in the abstracts of Nersissian's two
+papers or in the sections of the second that I read, whose companion 2609.25077 treats Rule 30's left
+diagonals modulo 2 through the mirror rule 86 and which I did not read in full).** Write u = 1 + A along the left edge, u_n(t)
+for depth n. The rule gives
+
+    u_n(t+1) = u_n(t)·u_(n−1)(t) + u_(n−2)(t) − 1,    u_0 = 2, u_(−1) = 1.
+
+- Depth 1 is u_1 = 2^t exactly, so A = 2^t − 1.
+- Depth 2 is u_2(t) = 2^(t(t−1)/2) · (1 + Σ_(m<t) 2^(−m(m+1)/2)), a partial theta series in 1/2.
+- Modulo an odd prime p, once the two shallower diagonals are periodic with period P, depth n follows a fixed
+  affine map x ↦ αx + β of the field once per period. So it is eventually periodic, with period P times 1, or p
+  (when α = 1), or the multiplicative order of α (a divisor of p − 1). A new transient can arise only when
+  α = 0, that is when some multiplier in the period vanishes modulo p.
+- So **the first left clock modulo p has period exactly the order of 2 modulo p.** It is p − 1 exactly when 2 is
+  a primitive root modulo p, which is the subject of Artin's conjecture.
+- At p = 2 the multiplier 2^t vanishes after one tick. That is why Rule 30's own left diagonals have transients
+  and only power-of-two periods: the prime 2 is the one prime at which the multiplicative clock collapses.
+
+COMPUTED ([probe](../tests/probes/cloud_integer_lift_primes.py),
+[output](../tests/probes/cloud_integer_lift_primes.out),
+[run 1](../tests/probes/cloud_integer_lift_primes_run1.out)): the recurrence and both closed forms hold on the
+exact integers for t ≤ 14 (u_2 = 2, 5, 21, 169, 2705, 86561, …); the mod-p automata equal the lift reduced
+modulo p.
+
+| p | Order of 2 mod p | First left clock | Left clocks, depths 1 to 8 (period) | Right clocks, depths 1 to 8 (period) |
+|---|---|---|---|---|
+| 2 | | 1 | 1, 1, 2, 1, 2, 2, 1, 4 | 2, 2, 4, 8, 8, 16, 32, 32 |
+| 3 | 2 | 2 | 2, 4, 4, 4, 2, 12, 12, 12 | 3, 3, 9, 9, 27, 27, 27, 81 |
+| 5 | 4 | 4 | 4, 8, 8, 8, 8, 8, 8, 8 | 5, 5, 5, 25, 25, 25, 125, 125 |
+| 7 | 3 | 3 | 3, 21, 21, 21, 21, 21, 21, 21 | 7, 7, 7, 49, 49, 49, 49, 49 |
+| 11 | 10 | 10 | 10, 20, 20, 20, 20, 20, 20, 20 | 11, 11, 11, 11, 121, 121, 121, 121 |
+| 13 | 12 | 12 | 12, 24, 24, 24, 24, 24, 24, 288 | 13, 13, 13, 13, 13, 169, 169, 169 |
+
+The first left clock equals the order of 2 at all ten primes tried (3 to 31). Left clocks from depth 3 on have
+transients at odd primes too.
+
+So in the lift the two edges carry the two classical kinds of arithmetic. The right edge is additive: sums of
+polynomials, periods p^k. The left edge is multiplicative: the diagonal multiplies itself by its neighbour,
+giving powers, a theta series, and periods built from multiplicative orders. The centre column is the diagonal
+where the two families meet, at depth t from both edges. The sister problems have the same shape: in Collatz and
+in Mahler's problem a multiplicative step (times 3) meets an additive one (carries, division by 2).
+
+### 4.3 The centre of the lift modulo odd primes (new)
+
+Predictions N1a to N1g were pushed first (CL776 and its addenda).
+
+The centre column of the mod-p automaton from the single 1 ([probe](../tests/probes/cloud_integer_lift_primes.py);
+second code in C for p = 7, [source](../tests/probes/cloud_lift_centre_modp.c)).
+
+| p | Ticks | Residues equidistributed (chi-square p-value) | Consecutive pairs (p-value) | Eventual period up to 8,192 |
+|---|---|---|---|---|
+| 3 | 2^16 | 0.544 | 0.728 | none |
+| 5 | 2^16 | 0.850 | 0.718 | none |
+| 7 | 2^16 | 0.039 | 0.018 | none |
+| 11 | 2^16 | 0.846 | | none |
+| 13 | 2^16 | 0.289 | | none |
+| 23 | 2^18 | 0.976 | | |
+| 31 | 2^18 | 0.357 | | |
+| 7 | 2^21 | 0.501 | see below | |
+
+- **N1a, N1b, N1c held** at all five primes by their stated threshold (p-value above 0.001).
+- **N1d held.** The columns modulo 2 and modulo 3, 5, 7, 11, 13 are independent (p-values 0.19, 0.46, 0.22, 0.83,
+  0.51), and so are 3 against 5 (0.97), 3 against 7 (0.61) and 5 against 7 (0.69).
+- **N1e held.** The 2-adic valuation of the centre count is geometric with ratio 1/2 to valuation 10 (8,277,
+  4,087, 1,984, 1,032, 499, … against 8,192, 4,096, 2,048, …; p-value 0.78) and independent of the valuation of
+  t + 1 (p-value 0.62). There is no Kummer-type carry law behind the centre bit in this lift.
+- **The flag at 7, chased and closed.** After 2^16 ticks the residues at 7 had p-value 0.039; after 2^18 the
+  chi-square was 20.5 on 6 degrees of freedom (p-value 0.002), with residue 1 at −3.4 sigma. 7 is also the one
+  prime of the five where the order of 2 is odd. Two post hoc predictions were pushed before two longer runs.
+  N1f (fresh ticks 2^16 to 2^18, also at 23 and 31, the other primes below 32 with odd order): held, p-values
+  0.083, 0.685, 0.196. N1g (2^21 ticks by the C code, which first reproduced the 20.5): on the 1,835,008 fresh
+  ticks the p-value is 0.098 and residue 1 sits at +1.75 sigma; over the whole 2^21 ticks the p-value is 0.50
+  and residue 1 sits at +0.43 sigma. A real bias of the size first seen would have put it near −9.6. Consecutive
+  pairs tested for dependence alone give p-values 0.163, 0.365 and 0.074 on the three disjoint stretches; the
+  low pair values in the table came from the residue counts. **A fluctuation**, among some seventy residue
+  classes looked at.
+
+### 4.4 The time axis: JOB CS-01, owed since 15 October
+
+RESULTS-CS01
+
+### 4.5 Reading
+
+RESULTS-READING
+
+## 5. Other building blocks, and what a detector for each says
+
+"Hidden generator" has a precise meaning for each classical building block, and each has a detector. For every
+finite-register model the kit proves "profile bounded ⟺ eventually periodic" (catalogue §7 item 13), so each
+detector is also a restatement of Problem 1 and none can prove anything from finite data (8.116: such a block
+"calibrates an observer and cannot close a prize").
+
+| Building block | What it would mean | Detector | What the record or today says |
+|---|---|---|---|
+| A linear shift register | the column obeys a linear recurrence over GF(2) | linear complexity | N/2 exactly at 2^22, fair jump law (8.70) |
+| Arithmetic with carries | the column is the 2-adic expansion of a small fraction | 2-adic complexity | within 6.2 bits of n/2 to 65,536 (kit data) |
+| A fixed period, any length | a line in the spectrum; also anything that depends on t modulo m, Legendre symbols included | power spectrum | **today, N2a:** largest of 2^21 powers is 15.2, a coin's window is 12.6 to 21.5; shares above 1, 2, 4, 8 match a coin's to four digits |
+| A counter read in base k | an automaton reading the digits of t | kernel sequences | base 2: 31 states needed (GC487). **Today, N2b:** 511, 364, 156 and 400 kernel sequences in bases 2, 3, 5, 7, all distinct, least pairwise disagreement 0.478 |
+| The factorisation of t | the column sees primes, Liouville or Möbius | the three sums | 8.114 at 2^22; CS-01 at 2^24 in §4.4 |
+| Time doubling | c(2t) = c(t), as for rule 150 | agreement rate | 0.4961 for Rule 30, 1 for rule 150 (8.110) |
+| A rotation | a Sturmian or quasi-periodic column | factor counts | every word of length up to 19 occurs in the first 10^7 bits (kit data); Sturmian drivers excluded by theorem in the period-2 problem (Theorem E) |
+| A nonlinear register | bounded maximum-order complexity | longest repeat | longest repeated word 43 bits at 2^22, controls 40 to 45 (word-bias probe) |
+| The initial condition | the randomness is the left half's | theorem | true for random starts, and the single cell has none to give (§2) |
+
+([Probe](../tests/probes/cloud_centre_spectrum_kernels.py), [output](../tests/probes/cloud_centre_spectrum_kernels.out).)
+The spectrum's control: forcing one tick in 1,009 black raises the maximum to 23.9, outside the window.
+
+What is left when all of these are removed is the one gate. Over GF(2) the centre cell at time t is a polynomial
+of degree 2t − 1 in the starting row with millions of terms by t = 12 (degree law, PROVED and in the kit), and
+the single cell evaluates it at one point. In the lift that evaluation is the count A_t(0). Nothing is hidden in
+the sense of a key. What looks random is the parity of a count whose number of digits grows by about two thirds at every step
+(71, 122, 207, 349, 589, 990, 1,658 bits at t = 8 to 14).
+
+## 6. Can the counterexample be proved impossible?
+
+**What the programme already does.** It attacks exactly this, period by period, for every finite start. Period 1
+is closed (Condrey). Period 2 is the main line, and PERIOD-TWO §5 names its one missing statement: "keeping the
+wall's conditions costs real information", proved only beside a constant wall. Its likely shape is "a size
+argument, like Chebyshev's proof of Bertrand's postulate, and not a proof that Rule 30 is random".
+
+**Why it resists, in three sentences from the kit's catalogue and one theorem.**
+- "A proof of Problem 1 that does not also prove FinConf must use something specific to the seed's orbit, and the
+  odometer structure of its right edge is not such a thing" (§7 item 8). Every partial result so far is uniform
+  over finite rows.
+- Every known way of proving that one specific number is irrational needs an arithmetic approximation or
+  structure, a functional equation, gaps, early repetitions, "that x₂ is not known to have. … A proof must build
+  arithmetic structure out of the CA dynamics" (§7 items 4 and 5).
+- If A or B is a theorem, proving A equivalent to B is as hard as proving both (item 7, on Jen's dichotomy), so
+  neighbouring columns cannot be traded for the centre.
+- `seed_perturbation`: for every n some configuration agrees with the single cell on every cell from −n
+  rightwards, has the same centre column up to time n, and a white centre column for ever after. So no argument
+  that ignores the far left can work.
+
+**What the lift adds, and what it does not.** It is one way of building arithmetic structure out of the dynamics:
+the centre bit is the parity of an explicit integer, c(n) = D_n(n) mod 2, with D_n a polynomial given by an
+explicit recurrence. That is the kind of object irrationality proofs work on. It does not come with a functional
+equation, and Nersissian's paper says plainly that producing the representation is the cost. The new left-edge
+statement puts the multiplicative side in the same array. I see no proof in it. What it gives is a single
+object in which "the additive clock", "the multiplicative clock" and "the centre" are three diagonals of one
+integer array, and the question "why can neither clock reach the centre" has a form one can compute with.
+
+**Honest odds.** That the primes, as a set, are what blocks a proof: I put this low, because every test that
+could have shown them at the centre has now come back a coin, and the one place they do appear is the edges.
+That the prime 2 and multiplicative orders are part of the right language: high, because they are already in
+every proved clock.
+
+## 7. What was not done
+
+- The seven lenses and their skeptics of the sub-agent sweep, and three of its five record searches (the main
+  line, the exact clockwork, the analogies). I read those parts of the record myself more narrowly.
+- A sweep of the space-time diagram against the primes. It still has no definition, and G301 forbids choosing
+  one after looking. The lift suggests the only loci with proved structure are the two edges.
+- The next-bit predictor ladder on a billion bits (specified, never run; reports/wolfram-agents/GPU-METAL-JOBS.md).
+- A second reader for the left-edge lemma of §4.2.

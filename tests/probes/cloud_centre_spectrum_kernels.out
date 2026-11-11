@@ -1,0 +1,16 @@
+control: first 50 bits equal A051023: True | density 0.50017
+== N2a power spectrum (power scaled to mean 1)
+   rule 30 centre: mean power 1.0000 | largest 15.21 at frequency 421187/4194304 (period 9.958) | share above 1, 2, 4, 8: [0.36763, 0.13532, 0.01823, 0.00034] (coin: [0.36788, 0.13534, 0.01832, 0.00034])
+   coin 0: mean power 1.0000 | largest 17.64 at frequency 1251412/4194304 (period 3.352) | share above 1, 2, 4, 8: [0.36784, 0.13536, 0.01836, 0.00034] (coin: [0.36788, 0.13534, 0.01832, 0.00034])
+   coin 1: mean power 1.0000 | largest 14.32 at frequency 1406381/4194304 (period 2.982) | share above 1, 2, 4, 8: [0.36765, 0.13521, 0.01842, 0.00035] (coin: [0.36788, 0.13534, 0.01832, 0.00034])
+   coin 2: mean power 1.0000 | largest 14.82 at frequency 379741/4194304 (period 11.045) | share above 1, 2, 4, 8: [0.36743, 0.13533, 0.01841, 0.00036] (coin: [0.36788, 0.13534, 0.01832, 0.00034])
+   control: every 1009th tick forced black: mean power 1.0000 | largest 23.87 at frequency 586122/4194304 (period 7.156) | share above 1, 2, 4, 8: [0.36736, 0.13527, 0.01832, 0.00036] (coin: [0.36788, 0.13534, 0.01832, 0.00034])
+   prediction window for the largest value: 12.63 to 21.46 | rule 30 inside: True | the planted prime period stands out: True
+== N2b kernel sequences
+   rule 30 centre base 2, depth 8: 511 kernel sequences of 16384 bits | distinct 511 | least pairwise disagreement 0.4831 between (2, 3) and (8, 137) (a coin's sd per pair: 0.0039; pairs 130305)
+   rule 30 centre base 3, depth 5: 364 kernel sequences of 17260 bits | distinct 364 | least pairwise disagreement 0.4840 between (5, 68) and (5, 117) (a coin's sd per pair: 0.0038; pairs 66066)
+   rule 30 centre base 5, depth 3: 156 kernel sequences of 33554 bits | distinct 156 | least pairwise disagreement 0.4903 between (3, 67) and (3, 98) (a coin's sd per pair: 0.0027; pairs 12090)
+   rule 30 centre base 7, depth 3: 400 kernel sequences of 12228 bits | distinct 400 | least pairwise disagreement 0.4780 between (3, 13) and (3, 253) (a coin's sd per pair: 0.0045; pairs 79800)
+   coin 0 base 3, depth 5: 364 kernel sequences of 17260 bits | distinct 364 | least pairwise disagreement 0.4846 between (2, 5) and (5, 5) (a coin's sd per pair: 0.0038; pairs 66066)
+   control: Thue-Morse, base 2, depth 6: 127 kernel sequences, distinct 2
+N2b verdict (all distinct and least disagreement above 0.46 in every base): True
