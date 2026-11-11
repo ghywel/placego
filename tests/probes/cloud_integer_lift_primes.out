@@ -8,25 +8,25 @@ H2 left diagonal depth 1 is 2^t - 1 exactly (t = 1..14): True
    the mod-5 automaton equals the integer lift reduced mod 5 (t <= 14): True
    the mod-7 automaton equals the integer lift reduced mod 7 (t <= 14): True
 == edge diagonals of the mod-p automata (t <= 3000)
-   p =  2: right diagonals depth 1..8 (transient+period): ['0+2', '0+2', '0+2^2', '0+2^3', '2989+2', '0+2^4', '0+2^5', '0+2^5']
+   p =  2: right diagonals depth 1..8 (transient+period): ['0+2', '0+2', '0+2^2', '0+2^3', '0+2^3', '0+2^4', '0+2^5', '0+2^5']
             left diagonals  depth 1..8 (transient+period): ['0+1', '0+1', '0+2', '0+1', '0+2', '0+2', '0+1', '0+2^2']
-   p =  3: right diagonals depth 1..8 (transient+period): ['0+3', '0+3', '0+3^2', '0+3^2', '0+3^3', '0+3^3', '2990+1', '2986+1']
+   p =  3: right diagonals depth 1..8 (transient+period): ['0+3', '0+3', '0+3^2', '0+3^2', '0+3^3', '0+3^3', '0+3^3', '0+3^4']
             left diagonals  depth 1..8 (transient+period): ['0+2', '0+2^2', '0+2^2', '0+2^2', '2+2', '1+2^2*3', '7+2^2*3', '10+2^2*3'] | order of 2 mod p = 2
    p =  5: right diagonals depth 1..8 (transient+period): ['0+5', '0+5', '0+5', '0+5^2', '0+5^2', '0+5^2', '0+5^3', '0+5^3']
             left diagonals  depth 1..8 (transient+period): ['0+2^2', '0+2^3', '0+2^3', '1+2^3', '4+2^3', '6+2^3', '12+2^3', '12+2^3'] | order of 2 mod p = 4
    p =  7: right diagonals depth 1..8 (transient+period): ['0+7', '0+7', '0+7', '0+7^2', '0+7^2', '0+7^2', '0+7^2', '0+7^2']
-            left diagonals  depth 1..8 (transient+period): ['0+3', '0+3*7', '1+3*7', '0+3*7', '2993+1', '0+3*7', '2+3*7', '2+3*7'] | order of 2 mod p = 3
+            left diagonals  depth 1..8 (transient+period): ['0+3', '0+3*7', '1+3*7', '0+3*7', '1+3*7', '0+3*7', '2+3*7', '2+3*7'] | order of 2 mod p = 3
    p = 11: right diagonals depth 1..8 (transient+period): ['0+11', '0+11', '0+11', '0+11', '0+11^2', '0+11^2', '0+11^2', '0+11^2']
             left diagonals  depth 1..8 (transient+period): ['0+2*5', '0+2^2*5', '9+2^2*5', '12+2^2*5', '13+2^2*5', '21+2^2*5', '28+2^2*5', '32+2^2*5'] | order of 2 mod p = 10
    p = 13: right diagonals depth 1..8 (transient+period): ['0+13', '0+13', '0+13', '0+13', '0+13', '0+13^2', '0+13^2', '0+13^2']
             left diagonals  depth 1..8 (transient+period): ['0+2^2*3', '0+2^3*3', '2+2^3*3', '16+2^3*3', '19+2^3*3', '20+2^3*3', '39+2^3*3', '38+2^5*3^2'] | order of 2 mod p = 12
    depth-1 left diagonal, (p, order of 2 mod p, period found, transient): [(3, 2, 2, 0), (5, 4, 4, 0), (7, 3, 3, 0), (11, 10, 10, 0), (13, 12, 12, 0), (17, 8, 8, 0), (19, 18, 18, 0), (23, 11, 11, 0), (29, 28, 28, 0), (31, 5, 5, 0)] | all equal: True
-centre column modulo 2: 65536 ticks in 12 s
-centre column modulo 3: 65536 ticks in 9 s
-centre column modulo 5: 65536 ticks in 8 s
-centre column modulo 7: 65536 ticks in 9 s
-centre column modulo 11: 65536 ticks in 9 s
-centre column modulo 13: 65536 ticks in 9 s
+centre column modulo 2: 65536 ticks in 11 s
+centre column modulo 3: 65536 ticks in 8 s
+centre column modulo 5: 65536 ticks in 7 s
+centre column modulo 7: 65536 ticks in 7 s
+centre column modulo 11: 65536 ticks in 7 s
+centre column modulo 13: 65536 ticks in 8 s
 control: the mod-2 column starts as A051023: True
 first 40 centre residues modulo 3: 1112120001122200221010222212000201201020
 first 40 centre residues modulo 5: 1142433344312433304042330042124040322022
@@ -55,4 +55,8 @@ first 40 centre residues modulo 5: 1142433344312433304042330042124040322022
       [981, 484, 273, 246]
       [1021, 516, 262, 237]
    independence: chi2 7.2 dof 9 p-value 0.619
-seconds 56
+== N1f centre column modulo 7, 23, 31 to 2^18 ticks; statistics on the fresh part 2^16..2^18
+   p =  7 (order of 2: 3): fresh residues chi2 11.2 dof 6 p-value 0.083 | whole run chi2 20.5 p-value 0.002 | fresh pairs chi2 60.7 dof 48 p-value 0.103 | first 2^16 ticks agree with the short run: True | 150 s
+   p = 23 (order of 2: 11): fresh residues chi2 18.3 dof 22 p-value 0.685 | whole run chi2 10.9 p-value 0.976 | 141 s
+   p = 31 (order of 2: 5): fresh residues chi2 36.4 dof 30 p-value 0.196 | whole run chi2 32.2 p-value 0.357 | 133 s
+seconds 473
