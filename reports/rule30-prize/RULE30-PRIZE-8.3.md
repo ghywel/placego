@@ -2184,7 +2184,8 @@ primes in the plain sense, its values at prime times, or against Liouville's and
   sigma** (prime times over 1,077,871 primes, Liouville, Möbius). On the fresh ticks 2^22 to 2^24 they are −0.43,
   +0.56 and +1.37: every sign reversed. Twenty coins' worst: 3.00. The "noise" branch of the prediction held; the
   drift was a fluctuation, and **the direct reading is closed at 2^24**.
-  [Report](../CLOUD-HIDDEN-CLOCKS-PRIMES-20261111.md), §4.4.)*
+  [Report](../CLOUD-HIDDEN-CLOCKS-PRIMES-20261111.md), §4.4. The probe's own run at 2^24 was stopped by its time
+  limit and left no figures (CL778), so the 2^24 values rest on the second code alone.)*
 
 **The second question, the structural reading: the primes are already in the record, in the dimension the owner
 means.** Record searched above. Three places, none of them the number line.

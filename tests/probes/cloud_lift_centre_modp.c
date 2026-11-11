@@ -35,6 +35,11 @@ int main(int argc, char **argv) {
             w = (uint8_t)(v - 10); v = w < v ? w : v;
             w = (uint8_t)(v - 5);  v = w < v ? w : v;
             y[j] = v;
+#elif P == 2 && defined(FAST2)
+            /* added for the kernel certificate (CL778, K): modulus 2 in byte lanes; for bits c*r = c & r.
+               This is rule 30 by its algebraic normal form l + c + r + c r, an independent second generator
+               for the bit-packed one in cloud_centre_spectrum_kernels.py (which uses l xor (c or r)).          */
+            y[j] = (uint8_t)((x[j - 1] + x[j] + x[j + 1] + (x[j] & x[j + 1])) & 1);
 #else
             unsigned v = (unsigned)x[j - 1] + x[j] + x[j + 1] + (unsigned)x[j] * x[j + 1];
             y[j] = (uint8_t)(v % P);

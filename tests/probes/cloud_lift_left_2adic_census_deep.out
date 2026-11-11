@@ -1,0 +1,17 @@
+== third part: left diagonals 0..53300 modulo 2^8, t < 2^17; periods up to 2^12 judged on the last 2^15 ticks; 54 s
+   k = 1: E(n,k) by depth range [(3, 7, 1), (8, 28, 2), (29, 399, 3), (400, 53300, 4)]
+   k = 2: E(n,k) by depth range [(3, 28, 2), (29, 53207, 4), (53208, 53300, 5)]
+   k = 3: E(n,k) by depth range [(3, 7, 3), (8, 28, 4), (29, 53207, 5), (53208, 53300, 6)]
+   k = 4: E(n,k) by depth range [(3, 7, 4), (8, 28, 5), (29, 53207, 6), (53208, 53300, 7)]
+   k = 5: E(n,k) by depth range [(3, 7, 5), (8, 28, 6), (29, 53207, 7), (53208, 53300, 8)]
+   k = 6: E(n,k) by depth range [(3, 7, 6), (8, 28, 7), (29, 53207, 8), (53208, 53300, 9)]
+   k = 7: E(n,k) by depth range [(3, 7, 7), (8, 28, 8), (29, 53207, 9), (53208, 53300, 10)]
+   k = 8: E(n,k) by depth range [(3, 7, 8), (8, 28, 9), (29, 53207, 10), (53208, 53300, 11)]
+   control: white diagonals (u odd on the whole window): [2, 7, 28, 399, 53207] | constant black diagonals: [4, 9, 30, 401, 53209]
+   control (white diagonals 2, 7, 28, 399, 53207; binary prefix period 16 from depth 400 to 53300): True
+L5: gamma = E(n,k) - k on depths 29..53300, by k: {3: [2, 3], 4: [2, 3], 5: [2, 3], 6: [2, 3], 7: [2, 3], 8: [2, 3]}
+L5: gamma stays 2 through depth 53300: False | rises to 3 exactly at depth 53208: True
+   scalar exponents e(n,2) at depths 53200..53215: [4, 4, 4, 4, 4, 4, 4, 4, 5, 4, 5, 5, 5, 5, 5, 5]
+   scalar exponents e(n,3) at depths 53200..53215: [5, 5, 5, 5, 5, 5, 5, 5, 6, 5, 6, 6, 6, 6, 6, 6]
+   scalar exponents e(n,8) at depths 53200..53215: [10, 10, 10, 10, 10, 10, 10, 10, 11, 10, 11, 11, 11, 11, 11, 11]
+seconds 54

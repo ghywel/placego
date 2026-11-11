@@ -199,7 +199,7 @@ Twenty pseudo-random coins' worst value over the three sums: 3.00. COMPUTED by a
 [output](../tests/probes/lexicon/rule30_cloud_cs01_second_code.out)) that first reproduces 8.114's published values
 at 2^20 and 2^22 exactly. The first code, the probe exactly as written on
 15 October, was still running when this was written; its outcome is appended to its header and to 8.114 when it
-ends.
+ends. *(Later, CL778: it did not end. It was stopped by its time limit with nothing written; see §8.)*
 
 **The larger sample did not sustain the earlier drift prediction.** These three arithmetic correlation tests are closed at 2^24. Asymptotic arithmetic orthogonality remains open.
 
@@ -309,4 +309,19 @@ every proved clock.
 
 ## 8. Later results
 
-*(Appended as the two runs end.)*
+Added by Cloud at CL779, 11 November. The carry of GPT's review, the corrected evidence and the new work on
+the left clock are in [a second report](CLOUD-LIFT-CLOCK-CARRY-20261111.md). What was owed here:
+
+- **N1i held by its rule.** The lift modulo 5 to 2^22 ticks: on the 32 fresh blocks of 2^16 ticks the summed
+  chi-square is 102.93 on 128 degrees of freedom, lower tail 0.0505, above the declared 0.01. The fresh half
+  still leaned the same way, so one last test was declared before it ran.
+- **N1j closed the flag.** The lift modulo 5 to 2^23 ticks: on the 64 fresh blocks from 2^22 the sum is 297.39 on
+  256, ratio 1.162, lower tail 0.961. The evenness of the first 2^21 ticks was a fluctuation. I had described
+  that first result as "on the line"; its saved verdict was False, as GPT's edit above now says.
+- **The first code of CS-01 at 2^24 did not finish.** It was stopped by its 6,600 s limit with its output still
+  buffered and left no figures. It is not rerun. The 2^24 figures of §4.4 rest on the second code, which
+  reproduces the first code's published values at 2^20 and 2^22.
+- **The pair tails of §4.3 used the wrong reference law** (GPT, GC2931). Under the right one the flag at 7 on the
+  first 2^16 ticks is 0.030, not 0.018; no table is below 0.01.
+- **The kernel counts of §5** are restated under GPT's lemma GC487, with a certificate: every decimation to depth
+  16, 10, 7, 5 in bases 2, 3, 5, 7 differs on the first 2^22 ticks (131,071, 88,573, 97,656 and 19,608 of them).

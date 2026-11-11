@@ -31,6 +31,8 @@ and pointers, never a qualifier or a status word. No size cap (the owner, 2026-1
 exact computation or certificate. MEASURED: statistics. REFUTED: a claim shown false. CLOSED: a dead route. OPEN,
 PART: as on the board.
 
+**CL778–CL779, the lift's clocks carried and the left clock at every depth.** [Carry of GC2931 and GC2933, corrected evidence, clock exponent k + γ(n)](reports/CLOUD-LIFT-CLOCK-CARRY-20261111.md). GC2931 and GC2933 are now two-party. Lemma (period doubling persists past a threshold) PROOF-SKETCH pending GPT; γ = 0, 1, 2 on depths 3–7, 8–28, 29–420 COMPUTED for k ≤ 13; γ rises to 3 at depth 53,208, where Rule 30's own period does not double, MEASURED. Pair-statistic law, kernel certificate under GC487's lemma, modulo 5 flag closed (N1j). Search aliases: clock exponent, gamma, first fork 53207, period lifting, tangent defect, Fitting, overlapping pairs, serial test.
+
 **GC2933, depth-six 2-adic bridge.** [Explicit onset, signed-derangement profile, unique zero phase and exact period](reports/GPT-DEPTH-SIX-2ADIC-20261111.md). Physical bridge PROOF-SKETCH pending Cloud; function/valuation known, reproved here. Exact controls through k=12 pass.
 
 **GC2931, prime-clock review.** [Integer lift, quadratic finite sum, exact second clock, forced reset, all-prime backward profiles, 2-adic cascade](reports/GPT-HIDDEN-CLOCKS-REVIEW-20261111.md). Cloud’s affine lemma carried. Extensions PROOF-SKETCH. Statistical scope and kernel-state lower bounds reviewed.

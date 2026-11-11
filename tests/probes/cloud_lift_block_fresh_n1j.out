@@ -1,0 +1,18 @@
+sequence: 8388608 ticks modulo 5, SHA-256 76774e464da9ba3b44da8136402312bd189030617efd4b0453de76e86f8b96eb
+control: the first 4194304 ticks equal the earlier run's sequence: True
+== old ticks [0, 2^22): residue counts [838043, 837142, 840507, 839115, 839497], chi-square 8.11 on 4 dof, upper tail 0.0877
+   blocks of 2^10 (4096): sum 16406.75 on 16384 dof, ratio 1.0014, upper tail 0.448555, lower tail 0.551445
+   blocks of 2^13 (512): sum 1965.98 on 2048 dof, ratio 0.9600, upper tail 0.901235, lower tail 0.098765
+   blocks of 2^16 (64): sum 184.61 on 256 dof, ratio 0.7211, upper tail 0.999747, lower tail 0.000253
+      per-block chi-squares: 1.4 0.8 1.2 5.1 6.3 0.4 1.0 7.5 2.2 0.4 4.6 3.1 2.5 3.3 3.0 0.6 2.7 7.7 1.7 5.5 0.3 1.6 0.4 0.8 2.3 3.0 1.5 2.2 1.3 4.0 2.9 0.4 2.1 7.8 1.8 3.1 0.8 2.9 1.7 4.7 5.7 6.1 3.4 2.7 3.2 1.6 3.8 1.2 4.0 0.3 5.6 3.6 1.4 0.4 3.3 2.2 5.2 0.8 1.8 1.8 14.9 3.7 0.1 1.1
+== fresh ticks [2^22, 2^23): residue counts [839740, 838784, 839357, 839522, 836901], chi-square 6.32 on 4 dof, upper tail 0.1764
+   blocks of 2^10 (4096): sum 16156.23 on 16384 dof, ratio 0.9861, upper tail 0.896243, lower tail 0.103757
+   blocks of 2^13 (512): sum 2112.99 on 2048 dof, ratio 1.0317, upper tail 0.154966, lower tail 0.845034
+   blocks of 2^16 (64): sum 297.39 on 256 dof, ratio 1.1617, upper tail 0.038512, lower tail 0.961488
+      per-block chi-squares: 7.2 0.5 7.2 0.5 0.9 1.2 5.2 6.2 2.3 6.3 2.7 2.0 0.7 4.7 10.9 3.1 9.7 1.6 16.3 2.1 1.1 11.9 3.9 4.1 4.9 4.2 1.8 4.1 0.5 4.8 13.3 9.0 1.9 4.7 0.4 6.3 4.6 0.4 6.1 1.1 17.9 2.8 5.3 2.9 4.5 0.5 0.2 2.1 0.5 4.0 4.8 5.2 11.5 7.3 4.0 4.8 0.3 10.5 3.1 1.6 5.4 8.9 1.9 7.2
+N1j: 64 fresh blocks of 2^16 ticks, sum 297.39 on 256 dof, lower tail 0.961488, upper tail 0.038512
+N1j verdict: closed (lower tail above 0.05)
+   secondary, ticks [2^21, 2^23), blocks of 2^10 (6144): sum 24223.65 on 24576 dof, ratio 0.9857, lower tail 0.055474
+   secondary, ticks [2^21, 2^23), blocks of 2^13 (768): sum 3043.88 on 3072 dof, ratio 0.9908, lower tail 0.362658
+   secondary, ticks [2^21, 2^23), blocks of 2^16 (96): sum 400.33 on 384 dof, ratio 1.0425, lower tail 0.727398
+   secondary, the whole run [0, 2^23), blocks of 2^16 (128): sum 482.01 on 512 dof, ratio 0.9414, lower tail 0.174805

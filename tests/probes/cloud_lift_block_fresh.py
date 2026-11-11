@@ -12,7 +12,8 @@ That reference is asymptotic (GPT's note, GC2931): the tail values are not exact
 
 Prediction N1i, pushed before the run existed (CL776 addendum 5): on the 32 fresh blocks of 2^16 ticks the lower-tail
 value is above 0.01.  Chance given beforehand: 0.85.
-Usage: cloud_lift_block_fresh.py P SEQFILE LO HI [OLDSEQFILE]
+Usage: cloud_lift_block_fresh.py P SEQFILE LO HI [OLDSEQFILE [SEC]]
+       LO HI = 21 22 is N1i.  LO HI = 22 23 is N1j (CL778); SEC = 21 adds the secondary figures from 2^21 on.
 """
 import hashlib, importlib.util, pathlib, sys
 import numpy as np
@@ -52,8 +53,20 @@ def main():
                 print("      per-block chi-squares:", " ".join(f"{v:.1f}" for v in per_block))
     nb, X, dof, upper, _ = block_stat(seq[1 << lo:1 << hi], P, 16)
     lower = 1 - upper
-    print(f"N1i: {nb} fresh blocks of 2^16 ticks, sum {X:.2f} on {dof} dof, lower tail {lower:.6f}, upper tail {upper:.6f}")
-    print("N1i verdict (lower tail above 0.01):", lower > 0.01)
+    if hi == 22:
+        print(f"N1i: {nb} fresh blocks of 2^16 ticks, sum {X:.2f} on {dof} dof, lower tail {lower:.6f}, upper tail {upper:.6f}")
+        print("N1i verdict (lower tail above 0.01):", lower > 0.01)
+    else:
+        # N1j (CL778): the 64 fresh blocks of [2^22, 2^23).  Closed above 0.05, real below 0.001, otherwise unresolved.
+        print(f"N1j: {nb} fresh blocks of 2^16 ticks, sum {X:.2f} on {dof} dof, lower tail {lower:.6f}, upper tail {upper:.6f}")
+        print("N1j verdict:", "closed (lower tail above 0.05)" if lower > 0.05 else "real (lower tail below 0.001)" if lower < 0.001 else "unresolved (between 0.001 and 0.05)")
+        if len(sys.argv) > 6:                              # secondary, no verdict: all fresh blocks from 2^SEC on
+            sec = int(sys.argv[6])
+            for lb in (10, 13, 16):
+                nb, X, dof, upper, _ = block_stat(seq[1 << sec:1 << hi], P, lb)
+                print(f"   secondary, ticks [2^{sec}, 2^{hi}), blocks of 2^{lb} ({nb}): sum {X:.2f} on {dof} dof, ratio {X / dof:.4f}, lower tail {1 - upper:.6f}")
+            nb, X, dof, upper, _ = block_stat(seq[:1 << hi], P, 16)
+            print(f"   secondary, the whole run [0, 2^{hi}), blocks of 2^16 ({nb}): sum {X:.2f} on {dof} dof, ratio {X / dof:.4f}, lower tail {1 - upper:.6f}")
 
 
 if __name__ == "__main__":

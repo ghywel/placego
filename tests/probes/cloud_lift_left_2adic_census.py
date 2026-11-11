@@ -18,7 +18,9 @@ Predictions (CL778, before the run):
   L2' (0.9)  E(n,k+1) = E(n,k) + 1 for k >= 3 at every depth, and E(n,k) - E(n,1) - (k-1) in {-1, 0, 1, 2}.
   Counterfactual: E(n,k) - E(n,1) >= 2(k-1) at some n >= 8 (a second independent 2-adic counter).
   L3 (exploratory, 0.6)  the only diagonals eventually constant modulo 64 are 2 (value 1) and 4 (value 0).
-Usage: cloud_lift_left_2adic_census.py
+Usage: cloud_lift_left_2adic_census.py           (parts 1 and 2: depths to 420)
+       cloud_lift_left_2adic_census.py --deep    (part 3: depths to 53,300)
+       cloud_lift_left_2adic_census.py --deep 18 (part 3 again to t = 2^18, judged on the last 2^16 ticks)
 """
 import sys, time
 import numpy as np
@@ -170,5 +172,61 @@ def high_digits():
     print(f"seconds {time.time() - t0:.0f}")
 
 
+def deep():
+    """Third part (CL778 addendum 2, prediction L5): depths to 53,300 modulo 2^8, by a rolling comparison.
+
+    Nothing large is stored: a ring of the last 2^12 rows, and for each lag 2^j the OR over the last 2^15 ticks of
+    row(t) xor row(t - 2^j).  A diagonal has period 2^j modulo 2^k on that window exactly when the low k bits of its
+    OR are zero."""
+    D2, K2, LOGT2, LOGW, JMAX = 53300, 8, 17, 15, 12
+    if sys.argv[-1].isdigit():                       # robustness rerun: a later and longer window
+        LOGT2 = int(sys.argv[-1]); LOGW = LOGT2 - 2
+    T2 = 1 << LOGT2; W = 1 << LOGW; R = 1 << JMAX
+    t0 = time.time()
+    mask = (1 << K2) - 1
+    u = np.ones(D2 + 2, dtype=np.int64); u[1] = 2
+    ring = np.zeros((R, D2 + 1), dtype=np.uint8)
+    acc = np.zeros((JMAX + 1, D2 + 1), dtype=np.uint8)
+    for t in range(T2):
+        if t >= T2 - W - R:
+            row = u[1:].astype(np.uint8)
+            if t >= T2 - W:
+                for j in range(JMAX + 1):
+                    acc[j] |= row ^ ring[(t - (1 << j)) % R]
+            ring[t % R] = row
+        nxt = u.copy()
+        nxt[2:] = (u[2:] * u[1:-1] + u[:-2] - 1) & mask
+        u = nxt
+    last = u[1:].astype(np.uint8)
+    print(f"== third part: left diagonals 0..{D2} modulo 2^{K2}, t < 2^{LOGT2}; periods up to 2^{JMAX} judged on the last 2^{LOGW} ticks; {time.time() - t0:.0f} s")
+    e = {}; E = {}
+    for k in range(1, K2 + 1):
+        ek = np.full(D2 + 1, -1, dtype=np.int64)
+        for j in range(JMAX + 1):
+            ok = (acc[j] & ((1 << k) - 1)) == 0
+            ek[(ek < 0) & ok] = j
+        e[k] = ek
+        bad = np.nonzero(ek < 0)[0]
+        if len(bad):
+            print(f"   k = {k}: {len(bad)} depths not settled on the window, the first at depth {int(bad[0])}")
+            ek = np.where(ek < 0, JMAX + 1, ek)
+        E[k] = np.maximum.accumulate(ek)
+        print(f"   k = {k}: E(n,k) by depth range {[(lo, hi, int(v)) for lo, hi, v in ranges(E[k].tolist(), 3)]}")
+    const = np.nonzero(e[1] == 0)[0]
+    white = [int(n) for n in const if n >= 2 and last[n] & 1]
+    black = [int(n) for n in const if n >= 2 and not last[n] & 1]
+    print(f"   control: white diagonals (u odd on the whole window): {white} | constant black diagonals: {black}")
+    c = white == [2, 7, 28, 399, 53207] and [(lo, hi, int(v)) for lo, hi, v in ranges(E[1].tolist(), 3)] == [(3, 7, 1), (8, 28, 2), (29, 399, 3), (400, D2, 4)]
+    print(f"   control (white diagonals 2, 7, 28, 399, 53207; binary prefix period 16 from depth 400 to {D2}): {c}")
+    gam = {k: sorted(set((E[k][29:] - k).tolist())) for k in range(3, K2 + 1)}
+    stay = all(g == [2] for g in gam.values())
+    rise = all((E[k][29:53208] == k + 2).all() and (E[k][53208:] == k + 3).all() for k in range(3, K2 + 1))
+    print(f"L5: gamma = E(n,k) - k on depths 29..{D2}, by k: {gam}")
+    print(f"L5: gamma stays 2 through depth {D2}: {stay} | rises to 3 exactly at depth 53208: {rise}")
+    for k in (2, 3, 8):
+        print(f"   scalar exponents e(n,{k}) at depths 53200..53215: {[int(x) for x in e[k][53200:53216]]}")
+    print(f"seconds {time.time() - t0:.0f}")
+
+
 if __name__ == "__main__":
-    main()
+    deep() if "--deep" in sys.argv else main()

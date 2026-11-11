@@ -1,6 +1,7 @@
 == the trace
    4194304 ticks from the bit-packed generator; first 50 equal A051023: True; density 0.50017
    SHA-256 of the trace (one byte per tick): 602911d2339b7c172123fab18937f03f5daf81687965637e310fb46bbcbaa0b0
+   second generator (the integer lift's byte code at modulus 2): first 4194304 ticks identical: True
 == controls
    Thue-Morse, base 2, depth 8: 2 different decimations among 511 (2 expected)
    pseudo-random coin, base 2: all 131071 decimations to depth 16 are pairwise different on n = 1..63; already on n = 1..35 | best count at any depth: 262126 (depth 17, n = 1..31)

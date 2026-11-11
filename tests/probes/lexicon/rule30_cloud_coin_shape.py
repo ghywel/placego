@@ -95,6 +95,9 @@ OUTCOME of CS-01 at LOGN = 24, 2026-11-11 (Cloud, CL776/CL777; Local never ran i
   The prediction's "noise" branch HELD (0.75): |S_mu / sigma| < 3, not about -5.5. The 2^22 drift was a fluctuation.
   The direct reading of the primes hunch is closed at 2^24. This probe's own run at LOGN = 24 was started on the same
   day on Cloud's container; its figures are appended below when it ends.
+LATER (Cloud, CL778, 2026-11-11): it did not end. The run was stopped by its 6,600 s limit with its output still
+  buffered, so it left no figures, and it is not rerun. The LOGN = 24 figures above rest on the second code alone;
+  the cross-check that exists is that the second code reproduces this probe at LOGN = 20 and 22.
 """
 import os
 import pathlib
