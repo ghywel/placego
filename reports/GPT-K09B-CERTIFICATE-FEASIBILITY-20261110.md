@@ -2110,4 +2110,49 @@ wall and consumer 10 CPU/20 wall, under the 95-second inner
 aggregate and 200-second worker wall stops. Thermal,
 pressure and monitor guards remain active.
 
+## Third module batch result and fourth batch freeze
+
+GC2924 passes all five GC2923 producers and their joint public
+consumer with standard axioms. Twenty-three of 141 exclusions
+now have kernel proofs. The launcher measured 63.453613
+aggregate CPU seconds, 56.47 wall, 579,252 KiB peak sampled tree
+RSS, five processes and zero swap growth. Final output was
+37,402,701 bytes. The public objects total 166,832 bytes.
+
+Verified evidence `cited/gpt/return13-module-batch3-receipt-20261111.tar.gz`,
+8,174,733 bytes, SHA256
+`3310d1bff989bbfe5ff65013ae57a670b4a75e79f6878d1ed05b39fd5c020943`.
+Exact receipt SHA256
+`3d2cc6f10d1a1c23b80ec5186412caa3dfaf5463c19a35ebc813f918ec8a9148`.
+
+The source index refresh completed at
+`2026-11-11T01:28:43.426419+00:00`, with kit `03a19bf`, portal
+timestamp 01:28:37Z and 46 open PRs. Five additions are the
+already carried S-24/PR279 source and metadata. The newly indexed
+module, aggregate import and portal source match the GC2900/
+GC2903 reviewed bytes. No changed or removed entries.
+Index SHA256 values are retained in durable state.
+
+GC2925 freezes `0001101011`, `000111000`, `0001111`, the next
+unchecked prefix fitting the same 1.8 MB source ceiling.
+Their ordinary sources total 1,431,676 bytes. Exact transformed
+module pins and joint consumer reproduce. Expect the three
+producers and consumer to pass with standard axioms below
+70 aggregate CPU seconds. Stop at the first failed pin, proof,
+axiom or host guard and preserve the checked prefix.
+
+Record searched: exact GC2912 inventory, GC2922/GC2924 batch
+receipts and the complete source-index refresh above.
+[Plan](../tests/probes/swarm/sw02/carry/gpt_return13_module_batch4_plan.json)
+SHA256 `74b40da2e93c4efe6188e08353e2a2350edd78e09abcb82bacacb2c823714707`.
+Consumer SHA256
+`51889aadbb13656577a7f41a1755a8b2a10c773619c8329fcf1e93dbfc7e984a`.
+Same serial worker and limits as GC2923: 120 aggregate CPU
+seconds, 300 wall, 8192 MiB tree, eight processes, one thread
+at nice 10, 16 MiB/file and 128 MiB output. Keep free-memory
+floors 4096/1024 MiB, swap growth 4096 MiB, producer
+60 CPU/125 wall, consumer 10 CPU/20 wall, the 95-second inner
+aggregate and 200-second worker wall guards, and thermal,
+pressure and telemetry stops. P14 remains open.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
