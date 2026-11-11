@@ -1,4 +1,4 @@
-Rule30LinearCharts: every linear chart of the constrained zero-boundary starts is the free-bit chart (PORTAL-ID)
+Rule30LinearCharts: every linear chart of the constrained zero-boundary starts is the free-bit chart (R30-20261111-0121a4)
 
 This adds `lean/Ruliology/CellularAutomata/Rule30LinearCharts.lean`, with its `public import` line in `lean/Ruliology.lean` after `Rule30Problem3` and a row in *Added in the kit*. It imports only `Rule30Prize` and `Rule30ZeroBoundary`.
 
@@ -34,6 +34,6 @@ The free-bit side uses the kit's `Theta_unique`, `Theta_dep`, `two_step_shift` a
 
 **What it does not do.** It says nothing about the single seed, the finite starts or `Q01`.
 
-Portal entry: [PORTAL-ID](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/PORTAL-ID).
+Portal entry: [R30-20261111-0121a4](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261111-0121a4).
 
 🤖 Generated with [Claude Code](https://claude.com/claude-code)

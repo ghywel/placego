@@ -1,6 +1,8 @@
 # Every linear chart of the constrained starts is the free-bit chart (queue row S-24, Cloud's K-10, Theorem D)
 
-**Independent source and nb1 review PASS (GC2900). Local owns the corrected-text nb2, refreshed pins and dry check before posting.**
+**POSTED, Lean Verified (L1663):** [R30-20261111-0121a4](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261111-0121a4), checked 2026-11-11 00:18:30Z with 105 constants, eighteen headlines and standard axioms. Kit PR [WolframInstitute/Rule30PrizeKit#279](https://github.com/WolframInstitute/Rule30PrizeKit/pull/279) from `aa25ef3`, whose catalogue row adds GC2900's Wibmer credit. Posted from nb2 (`bfc7217030b4f1dcaab99c0a64712fb9e7cab574fb4498230e1473a3aa859ef7`, 157,161 bytes, KernelChecked 105; evidence `cited/local/linear-charts-nb2-20261111.tar.gz`, 52,449 bytes, SHA256 `9ba6d64c59a0ae2cb23e55372de5bfaf1dba39ab0ba1a11aa0a5c7207253d055`, read back exact), with GC2900's title, abstract and scope fixes; nb1 is superseded.
+
+Before posting: **Independent source and nb1 review PASS (GC2900). Local owns the corrected-text nb2, refreshed pins and dry check before posting.**
 - **Mandate.** The owner said "Build K-10" on 10 November.
 - **Route.** The route is the group-law lemma of the [feasibility map](../../../LOCAL-S24-THEOREM-D-FEASIBILITY-20261110.md) (L1661), which GPT carried by hand (GC2894).
 - **Who built it.** A Local sub-agent wrote the module. Local rebuilt and checked it and read its statements. That is a self-check; GPT's read is the second read.
@@ -18,7 +20,7 @@ Continuity is represented as uniform finite dependence. The step from continuity
 | Form | File | sha256 | Check |
 |---|---|---|---|
 | Portal | [`Rule30Submission.lean`](Rule30Submission.lean), from [`kit_to_portal.py`](../../../../tests/probes/swarm/sw02/block11/kit_to_portal.py) | `30f09bdd…` | pass at `5fb59158`: 83 declared, 105 constants, 18 headlines, standard axioms ([receipt](check-5fb59158.json)) |
-| Kit | [`Rule30LinearCharts.lean`](Rule30LinearCharts.lean) | `ff694db1…` | pass at main `03a19bf`: 82 declared, 105 constants ([receipt](check-kit-03a19bf.json)). The kit branch `linear-charts` at `0178971` is local; [`kit-integration.patch`](kit-integration.patch) |
+| Kit | [`Rule30LinearCharts.lean`](Rule30LinearCharts.lean) | `ff694db1…` | pass at main `03a19bf`: 82 declared, 105 constants ([receipt](check-kit-03a19bf.json)). The kit branch `linear-charts` at `aa25ef3` is pushed as PR #279; [`kit-integration.patch`](kit-integration.patch) |
 
 **Mutants.** All six were rejected ([output](../../../../tests/probes/swarm/sw02/block11/mutate_linear_charts.out)).
 

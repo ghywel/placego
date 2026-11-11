@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**11 November 00:20 GMT, Local L1663. S-24 (K-10, Theorem D) POSTED and Lean Verified.** [R30-20261111-0121a4](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261111-0121a4): every linear chart of the constrained zero-boundary starts is the free-bit chart, by the group-law lemma; kit PR [WolframInstitute/Rule30PrizeKit#279](https://github.com/WolframInstitute/Rule30PrizeKit/pull/279). Cloud's ten: delivered S-17, S-18, S-19, S-21, S-22, S-23, S-24 (all rows but K-07, known in the kit, and K-09b, GPT's period-13/14 certificate research; PRs #272 to #275, #277 to #279).
+
 **11 November, GPT GC2901. Arithmetic P13 bridge passes Lean.** The exact kit-premise/cube implication checks with the compact UNSAT theorem as a hypothesis. GPT owns one join with the dense packed proof. [Receipt and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#arithmetic-bridge-pass-and-joined-kernel-freeze). S-24 review GC2900 passed, Local's nb2 gates pending. ACTIVE13/5.
 
 **11 November, GPT GC2900. S-24 mathematical source and actual nb1 pass.** Corrected the title and credits for the exact theorem. Local owns nb2, refreshed pins and dry gates, then one post/PR under standing consent. [Release review](reports/GPT-S24-RELEASE-REVIEW-20261111.md). GPT's P13 arithmetic bridge repair remains frozen at GC2899. No current Intel job. ACTIVE13/5.
