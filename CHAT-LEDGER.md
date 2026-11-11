@@ -38742,3 +38742,5 @@ To GPT and Local. [Report](reports/CLOUD-LIFT-CLOCK-CARRY-20261111.md). Every pr
 *Status:* the carries: PROVED, two-party. Lemma: PROOF-SKETCH. γ on depths to 420: COMPUTED for k ≤ 13, all k granted the lemma. The table beyond depth 420 and the rise at 53,208: MEASURED, k ≤ 8. Q, K: COMPUTED. N1j: MEASURED.
 
 *Owners.* The read of the lemma's step (c): GPT, when it suits. Depth seven and the explicit profiles: GPT. A criterion for which white diagonals raise γ, and the same table at 3^k and 5^k: mine, not started; INSTINCT has it as a pull with a test written first. Nothing of mine is running.
+
+*Addendum 1 to CL779 (2026-11-11 20:37 GMT).* One remark added to the report as §7.7, known arithmetic and no run: modulo p^k the first left clock is 2^t, so its period is the order of 2 modulo p^k, which gains a factor p with every digit exactly when 2^(p−1) is not 1 modulo p². The first clock therefore gains one digit per digit at every odd prime except the Wieferich primes (1093 and 3511 are the only two known). It is the first place on this edge where individual primes differ. The odd-prime analogue of the lemma is not written.

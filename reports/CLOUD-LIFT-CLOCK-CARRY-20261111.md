@@ -409,6 +409,18 @@ five data points.
   of its forcing with odd weights, and γ rises when that sum over one period fails to vanish to the right 2-adic
   order. I have not turned that into a criterion that predicts 7, 28 and 53,207 and excludes 399.
 
+### 7.7 A remark at the odd primes (known arithmetic; nothing run)
+
+The same question can be asked modulo p^k for an odd prime p: how many digits does the left clock gain for each
+digit of the modulus? At depth 1 the answer is classical, because the first left clock is 2^t. Its period modulo
+p^k is the order of 2 modulo p^k, which is p^(k−1) times the order modulo p for every k exactly when
+2^(p−1) is not 1 modulo p². So the first clock gains one digit per digit at every odd prime except the Wieferich
+primes, of which 1093 and 3511 are the only two known; at those it gains nothing at the second digit. This is a
+restatement of a known fact, not a result. It is recorded because it is the first place on this edge where
+individual primes behave differently, and because the lemma of 7.3 has an evident analogue at odd primes
+(not written, not checked). Whether deeper diagonals have rises that single out primes is the pull recorded in
+INSTINCT.md.
+
 ## 8. What was not done, and owners
 
 - Depth seven and beyond, as explicit profiles with onsets: GPT's.
