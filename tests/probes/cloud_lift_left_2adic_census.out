@@ -27,5 +27,26 @@ L3: diagonals eventually constant modulo 64: [(0, 2), (1, 0), (2, 1), (4, 0)]
      (2,w,00000) (4,b,00000) (7,w,23456) (9,b,23456) (28,w,24567) (30,b,34567) (399,w,45678) (401,b,45678)
    onset of periodicity modulo 2^1 at depths [3, 6, 8, 12, 20, 29, 50, 100, 200, 300, 399, 400, 420]: [2, 2, 2, 6, 23, 30, 73, 134, 257, 389, 501, 498, 523]
    onset of periodicity modulo 2^6 at depths [3, 6, 8, 12, 20, 29, 50, 100, 200, 300, 399, 400, 420]: [7, 12, 12, 27, 35, 43, 81, 178, 306, 442, 589, 584, 619]
-   binary onset divided by depth, depths 20..420: least 1.034, median 1.274, largest 1.479 | every onset exceeds its depth (the centre is read at t = n): False
+   binary onset divided by depth, depths 20..420: least 1.034, median 1.274, largest 1.479 | depths whose diagonal is already periodic when it crosses the centre (onset <= n): [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 19]
 seconds 4
+== second part: modulo 2^13, t < 2^19, periods judged on [2^18, 2^19); 2 s
+   k =  1: E(n,k) by depth range [(3, 7, 1), (8, 28, 2), (29, 399, 3), (400, 420, 4)]
+   k =  2: E(n,k) by depth range [(3, 28, 2), (29, 420, 4)]
+   k =  3: E(n,k) by depth range [(3, 7, 3), (8, 28, 4), (29, 420, 5)]
+   k =  4: E(n,k) by depth range [(3, 7, 4), (8, 28, 5), (29, 420, 6)]
+   k =  5: E(n,k) by depth range [(3, 7, 5), (8, 28, 6), (29, 420, 7)]
+   k =  6: E(n,k) by depth range [(3, 7, 6), (8, 28, 7), (29, 420, 8)]
+   k =  7: E(n,k) by depth range [(3, 7, 7), (8, 28, 8), (29, 420, 9)]
+   k =  8: E(n,k) by depth range [(3, 7, 8), (8, 28, 9), (29, 420, 10)]
+   k =  9: E(n,k) by depth range [(3, 7, 9), (8, 28, 10), (29, 420, 11)]
+   k = 10: E(n,k) by depth range [(3, 7, 10), (8, 28, 11), (29, 420, 12)]
+   k = 11: E(n,k) by depth range [(3, 7, 11), (8, 28, 12), (29, 420, 13)]
+   k = 12: E(n,k) by depth range [(3, 7, 12), (8, 28, 13), (29, 420, 14)]
+   k = 13: E(n,k) by depth range [(3, 7, 13), (8, 28, 14), (29, 420, 15)]
+L4 (E(n,k) = k, k + 1, k + 2 on depths 3..7, 8..28, 29..420 for 3 <= k <= 13): True
+   certificate of gamma(n) by the persistence lemma: a level k >= 2 with P_k >= 2 max(P_2, n P_1) and P_(k+1) = 2 P_k
+     depths 3..7: P_1 = 2, P_2 = 4, threshold 28; first level past it k = 5 (P_k = 32); P_(k+1) = 2 P_k at every depth of the range: True; gamma = [0]
+     depths 8..28: P_1 = 4, P_2 = 4, threshold 224; first level past it k = 7 (P_k = 256); P_(k+1) = 2 P_k at every depth of the range: True; gamma = [1]
+     depths 29..399: P_1 = 8, P_2 = 16, threshold 6384; first level past it k = 11 (P_k = 8192); P_(k+1) = 2 P_k at every depth of the range: True; gamma = [2]
+     depths 400..420: P_1 = 16, P_2 = 16, threshold 13440; first level past it k = 12 (P_k = 16384); P_(k+1) = 2 P_k at every depth of the range: True; gamma = [2]
+seconds 13

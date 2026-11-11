@@ -121,8 +121,52 @@ def main():
         sel = [3, 6, 8, 12, 20, 29, 50, 100, 200, 300, 399, 400, 420]
         print(f"   onset of periodicity modulo 2^{k} at depths {sel}: {[int(on[k][n]) for n in sel]}")
     r = on[1][20:] / np.arange(20, DEPTH + 1)
+    late = [n for n in range(3, DEPTH + 1) if on[1][n] <= n]
     print(f"   binary onset divided by depth, depths 20..{DEPTH}: least {r.min():.3f}, median {np.median(r):.3f}, largest {r.max():.3f}"
-          f" | every onset exceeds its depth (the centre is read at t = n): {bool((on[1][3:] > np.arange(3, DEPTH + 1)).all())}")
+          f" | depths whose diagonal is already periodic when it crosses the centre (onset <= n): {late}")
+    print(f"seconds {time.time() - t0:.0f}")
+    high_digits()
+
+
+def high_digits():
+    """Second part (CL778 addendum 1, prediction L4): digits 1..13 to t = 2^19, and the certificate of gamma(n)."""
+    K2, LOGT2, EMAX2 = 13, 19, 17
+    T2 = 1 << LOGT2; TAIL2 = T2 // 2
+    t0 = time.time()
+    mask = (1 << K2) - 1
+    u = np.ones(DEPTH + 2, dtype=np.int64); u[1] = 2
+    hist = np.empty((T2, DEPTH + 1), dtype=np.uint16)
+    for t in range(T2):
+        hist[t] = u[1:]
+        nxt = u.copy()
+        nxt[2:] = (u[2:] * u[1:-1] + u[:-2] - 1) & mask
+        u = nxt
+    print(f"== second part: modulo 2^{K2}, t < 2^{LOGT2}, periods judged on [2^{LOGT2 - 1}, 2^{LOGT2}); {time.time() - t0:.0f} s")
+    E = {}
+    for k in range(1, K2 + 1):
+        h = hist & np.uint16((1 << k) - 1)
+        e = np.full(h.shape[1], -1, dtype=np.int64)
+        for j in range(EMAX2 + 1):
+            if (e >= 0).all():
+                break
+            P = 1 << j
+            ok = (h[TAIL2:T2 - P] == h[TAIL2 + P:T2]).all(axis=0)
+            e[(e < 0) & ok] = j
+        assert (e >= 0).all(), f"unsettled depths at k = {k}"
+        E[k] = np.maximum.accumulate(e)
+        print(f"   k = {k:2d}: E(n,k) by depth range {[(lo, hi, int(v)) for lo, hi, v in ranges(E[k].tolist(), 3)]}")
+    gam = {(3, 7): 0, (8, 28): 1, (29, DEPTH): 2}
+    L4 = all((E[k][lo:hi + 1] == k + g).all() for k in range(3, K2 + 1) for (lo, hi), g in gam.items())
+    print(f"L4 (E(n,k) = k, k + 1, k + 2 on depths 3..7, 8..28, 29..{DEPTH} for 3 <= k <= {K2}): {L4}")
+    print("   certificate of gamma(n) by the persistence lemma: a level k >= 2 with P_k >= 2 max(P_2, n P_1) and P_(k+1) = 2 P_k")
+    for lo, hi in ((3, 7), (8, 28), (29, 399), (400, DEPTH)):
+        P1 = 1 << int(E[1][hi]); P2 = 1 << int(E[2][hi])
+        need = 2 * max(P2, hi * P1)
+        k = next(k for k in range(2, K2) if (1 << int(E[k][lo:hi + 1].min())) >= need)
+        grow = bool((E[k + 1][lo:hi + 1] == E[k][lo:hi + 1] + 1).all())
+        g = sorted(set((E[k][lo:hi + 1] - k).tolist()))
+        print(f"     depths {lo}..{hi}: P_1 = {P1}, P_2 = {P2}, threshold {need}; first level past it k = {k} (P_k = {1 << int(E[k][lo])});"
+              f" P_(k+1) = 2 P_k at every depth of the range: {grow}; gamma = {g}")
     print(f"seconds {time.time() - t0:.0f}")
 
 
