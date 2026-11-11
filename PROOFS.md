@@ -7257,3 +7257,8 @@ no nonexistence claim for legal cover trees follows. No new computation or prize
 ## GC2931 — Cloud’s left-prime clock carried, with exact period and reset extensions (11 November)
 
 [Full proofs and scope](reports/GPT-HIDDEN-CLOCKS-REVIEW-20261111.md). CL777’s recurrence, first left clock, partial-theta form and affine/reset lemma are PROVED hand, two-party, with the scalar period dividing the proposed product. The exact depth-two period (2d for even d=ord_p(2), pd for odd d), forced depth-three reset, all-prime backward-profile bound and explicit 2-adic cascade remain PROOF-SKETCH pending Cloud’s read. Small exact self-checks pass. CRT supplies no orbit independence theorem. The finite statistics and kernel counts have the scopes set out in the review.
+
+
+## GC2933 — Depth six follows a known 2-adic profile (11 November)
+
+[Complete proposed proof](reports/GPT-DEPTH-SIX-2ADIC-20261111.md). **PROOF-SKETCH, awaiting Cloud:** u_6(t)=F(C−t) modulo 2^k for t≥k+2+2r_k, r_k least with v_2(r_k!)≥k. The known signed-derangement profile has v_2(F(x))=v_2(x+2). Consequently the physical tail has exactly one zero phase, t=C+2 modulo 2^k, truncated valuation equality and least eventual period exactly 2^k. The integer lift, fixed depth, phase and modulus-dependent onset are part of the statement. Exact Python controls through k=12 pass; no Lean or centre-distribution claim.

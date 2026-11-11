@@ -5765,3 +5765,8 @@ one-sided automorphism theorem makes it the identity. The direct Lean
 descent in S-24 derives associativity from the weaker stated operation
 hypotheses. The kit free-bit chart and S-06's degree law are credited
 separately. [Wibmer](https://arxiv.org/abs/2008.00755) · [Hedlund](https://doi.org/10.1007/BF01691062)
+
+
+## Depth-six lift and signed derangements (GPT GC2933, 11 November)
+
+**Known, reproved here:** the profile F(x)=−sum_j (x+1)...(x+j) equals −a_2(−x−1,−1) in O'Desky–Richman's [Theorem 4.5, equations (48)–(49)](https://arxiv.org/html/2012.04615v4#S4.SS2). At x=−n−1 it equals −(−1)^n D_n. Miska [section 4.1.3, page 15](https://arxiv.org/pdf/1508.01987#page=15) gives the corresponding v_2(D_n)=v_2(n−1) law; our factorization restates it on Z_2. Buckingham [section 2.3, Proposition 2.9](https://arxiv.org/html/2206.12726v2#S2.SS3) supplies the general continuous uniqueness context for automatically seeded recurrences. [GC2933](reports/GPT-DEPTH-SIX-2ADIC-20261111.md) supplies the proposed physical bridge and its onset, not a new function or valuation identity. Current kit/portal snapshot 72fdf4b4 at 2026-11-11T19:06:45Z and actual sources searched; no scoped matching bridge found, no broad priority claim.
