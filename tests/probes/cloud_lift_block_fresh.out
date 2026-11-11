@@ -1,0 +1,14 @@
+sequence: 4194304 ticks modulo 5, SHA-256 c1f0e5d6ba441d8ad6cb1e74c2e0cf0f21b6aa98ed1cf4fba2b596fd0d6d07f8
+control: the first 2097152 ticks equal the earlier run's sequence: True
+== old ticks [0, 2^21): residue counts [419728, 418269, 420105, 419340, 419710], chi-square 4.72 on 4 dof, upper tail 0.3175
+   blocks of 2^10 (2048): sum 8339.34 on 8192 dof, ratio 1.0180, upper tail 0.125186, lower tail 0.874814
+   blocks of 2^13 (256): sum 1035.10 on 1024 dof, ratio 1.0108, upper tail 0.397807, lower tail 0.602193
+   blocks of 2^16 (32): sum 81.68 on 128 dof, ratio 0.6381, upper tail 0.999518, lower tail 0.000482
+      per-block chi-squares: 1.4 0.8 1.2 5.1 6.3 0.4 1.0 7.5 2.2 0.4 4.6 3.1 2.5 3.3 3.0 0.6 2.7 7.7 1.7 5.5 0.3 1.6 0.4 0.8 2.3 3.0 1.5 2.2 1.3 4.0 2.9 0.4
+== fresh ticks [2^21, 2^22): residue counts [418315, 418873, 420402, 419775, 419787], chi-square 6.54 on 4 dof, upper tail 0.1620
+   blocks of 2^10 (2048): sum 8067.41 on 8192 dof, ratio 0.9848, upper tail 0.834746, lower tail 0.165254
+   blocks of 2^13 (256): sum 930.88 on 1024 dof, ratio 0.9091, upper tail 0.982512, lower tail 0.017488
+   blocks of 2^16 (32): sum 102.93 on 128 dof, ratio 0.8042, upper tail 0.949510, lower tail 0.050490
+      per-block chi-squares: 2.1 7.8 1.8 3.1 0.8 2.9 1.7 4.7 5.7 6.1 3.4 2.7 3.2 1.6 3.8 1.2 4.0 0.3 5.6 3.6 1.4 0.4 3.3 2.2 5.2 0.8 1.8 1.8 14.9 3.7 0.1 1.1
+N1i: 32 fresh blocks of 2^16 ticks, sum 102.93 on 128 dof, lower tail 0.050490, upper tail 0.949510
+N1i verdict (lower tail above 0.01): True
