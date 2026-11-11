@@ -38399,3 +38399,15 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 The exact exports, packed replays and both negative controls pass for all 138. Lean source totals 45,489,109 bytes, maximum 819,292. The inventory used 24.276585 aggregate CPU seconds, 22.04 wall, 64,432 KiB peak sampled tree RSS and zero swap growth. Verified receipt archived. GPT next owns the pinned five-factor Lean shard spanning the source-size range, with the width-16 factor and largest source. [Results and exact freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#factor-export-inventory-result-and-first-lean-shard-freeze). No new kernel proofs or P14. No Intel job. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2913 — GPT: five more period-13 exclusions pass Lean (2026-11-11 01:05 GMT)
+
+All five GC2912 sources, including the width-16 case and the largest source, compile with standard axioms. Eight of 141 exclusions now kernel checked. The stage used 60.831246 aggregate CPU seconds, 54.35 wall, 720,332 KiB peak sampled tree RSS and zero swap growth. [Exact result and evidence](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#first-five-factor-kernel-shard-result). The five ordinary objects total 27,873,736 bytes. Whole-list Lean theorem and P14 open. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2914 — GPT: one public factor module and isolated import check frozen (2026-11-11 01:07 GMT)
+
+GPT owns the new factor `1111101` and an isolated consumer of its public object. Expect the full producer proof and public-only consumer to agree on standard axioms, with a small public object for later assembly. [Source, prediction, counterfactual and stops](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#public-factor-module-and-isolated-import-freeze). One serial 120 aggregate CPU/300 wall/8192 MiB tree stage with active host guards. No solver, bulk build or P14. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

@@ -1826,4 +1826,76 @@ Each Lean child has 60 CPU/125 wall seconds. Keep the 95-second
 inner aggregate and 200-second worker wall stops, plus thermal,
 pressure and telemetry guards. No P14 or bulk replay.
 
+## First five-factor kernel shard result
+
+GC2913 checked all five GC2912 sources with standard axioms.
+This brings the kernel-checked exclusions to eight of 141. The
+width-16 case passed, and the largest source took the most CPU.
+The predicted one-minute scale agreed with the observed
+60.831246 aggregate CPU seconds and 54.35 wall. Peak sampled tree
+RSS was 720,332 KiB with five processes and zero swap growth.
+Final stage output was 32,830,843 bytes.
+
+| Factor | Child-stage CPU increment (s) | Object bytes |
+|---|---:|---:|
+| `0000000000000001` | 2.477842 | 1988304 |
+| `100001010` | 7.215342 | 4213856 |
+| `01100011` | 9.852007 | 4925568 |
+| `110111011` | 13.785125 | 7349800 |
+| `1010011` | 24.993623 | 9396208 |
+
+Exact receipt SHA256
+`3ea2e3df80add83581e4ddcff8e35bfa0688c76d5a5ae5977e9c19c59b1dc374`.
+Verified evidence `cited/gpt/return13-kernel-shard1-receipt-20261111.tar.gz`,
+7,096,410 bytes, SHA256
+`4b80295c744de622501dbbe68f8b9d7a853d1304a823ef0c0874eb1999e79a04`.
+The five ordinary import objects total 27,873,736 bytes. Another
+43,650,737 generated source bytes remain. The theorem that
+excludes all factors and the period-14 work remain open.
+
+## Public factor module and isolated import freeze
+
+GC2914 checks a new factor, `1111101`, as a Lean module with
+one public theorem. Its pinned ordinary source is 318,546 bytes,
+the closest remaining case to the 311,840-byte checked case
+`01100011`. The transformation adds `module`, makes the
+existing kit import public, and exports the final whole-line
+theorem. All other proof bytes retain their generated content.
+The signed remap and packed replay controls still run first.
+
+Compile the full producer and audit its axiom set. For the
+consumer, copy only the factor's public `.olean` to an isolated
+search directory. Require `lean --deps` to select that exact
+copy. Compile a second module relaying the theorem and audit
+the transitive axioms again. The producer and its full outputs
+remain available as evidence. The prediction is a public
+object smaller than one tenth of the private proof object and
+the same three standard axioms in producer and consumer. If the
+consumer fails, retain a clean producer result at its audited
+scope and keep public-only assembly open.
+
+Record searched: GC2912 exact inventory, GC2913 object sizes and
+Lean 4.35.0 `Lean/AddDecl.lean` and `Lean/Util/CollectAxioms.lean`
+at compiler commit `eb6cafb7290e8bd5f2937522d8d804f58f02bafc`.
+The latter records transitive axiom dependencies for visible
+declarations at module export. No assumption about portal
+acceptance or release packaging is made.
+
+[Plan](../tests/probes/swarm/sw02/carry/gpt_return13_factor_module_smoke_plan.json)
+SHA256 `205aedd8fbf950cda40af4ee467ed7cc4a108900721c0c729b62c1fed4e81132`.
+[Worker](../tests/probes/swarm/sw02/carry/gpt_return13_factor_module_smoke.py)
+SHA256 `6bc5528ea7f7f4c436aeff274c98eeb4d2b635eab31b782bc452c12554849596`.
+Generated producer SHA256
+`7ee781512cf1a2cea5cf2df0a6ecec32a142f845b04d1f209f5a361714596658`.
+Generated consumer SHA256
+`4a3051b64bc57d76fec16b87c9492b6283c6702e41bb989aafd46e7c2dea2808`.
+GPT owns one serial 120 aggregate CPU/300 wall/8192 MiB tree stage,
+one thread at nice 10 and at most eight processes. Keep
+16 MiB/file, 128 MiB output, 4096/1024 MiB free-memory floors,
+4096 MiB swap-growth stop and pressure, thermal and monitor guards.
+The producer gets 60 CPU/125 wall, the dependency query 3 CPU/8
+wall, and the consumer 10 CPU/20 wall seconds within the
+95-second inner aggregate and 200-second worker wall stops.
+No solver, repeat, bulk build or P14.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
