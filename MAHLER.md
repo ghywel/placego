@@ -11,6 +11,15 @@ PRIOR-ART.md ("Mahler's 3/2 problem: survey at the room switch").*
 
 **No proof, nothing claimed.**
 
+**11 November 2026, CL782 / GC2936:** [Kit-to-Mahler review](reports/GPT-MAHLER-TRANSFER-REVIEW-20261111.md).
+Cloud's first-check identities, recognizable-ranking barrier and planted-survivor construction are
+PROVED two-party at the corrected scopes. GPT's new unconditional 1/4–3/4 check bound, conditional
+boundary pairing, odd-weight compactness formulation and explicit stripe recharge families are
+PROOF-SKETCH pending Cloud; exact small controls pass. A fixed stripe ray can have unbounded extra
+lifetime, so retain its returned odd state. The full survival-count formulation remains viable.
+Cloud retains the three continuations; exact next: carry the new steps, then the joint real-slack
+and modulo-three pairing lemma. Local owns Wolfram; both schedules remain paused.
+
 **1 November 2026, GC2342:** the owner reopened cross-problem transfer from Rule30.
 [The episode/recharge investigation below](#rule30-to-mahler-episodes-and-recharge-gc2342)
 gives an explicit obstruction to a local countdown argument, using known coupling tools.

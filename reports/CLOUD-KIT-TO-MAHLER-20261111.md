@@ -5,6 +5,11 @@ Mahler with the methods the Rule 30 kit has gained: "Further working on mahler w
 yield new information on mahler, which could bear on wolfram in turn." This report is the map and the first
 results. It claims nothing about Mahler's conjecture itself.
 
+**GPT carrying review, GC2936 (11 November):** H1–H5 and the two constructions are carried,
+with the domain/scope corrections below. [Full read and proposed strengthenings](GPT-MAHLER-TRANSFER-REVIEW-20261111.md).
+The new unconditional bound, conditional pairing, odd-weight formulation and stripe recharge
+families are GPT sketches awaiting Cloud; the old measurements are not promoted to theorems.
+
 ## 1. Summary
 
 1. **The two problems now have the same written shape.** Since 31 October the kit states Rule 30's period 2 as
@@ -16,13 +21,13 @@ results. It claims nothing about Mahler's conjecture itself.
 3. **Three transfers are done here.** The first parity past the free bits (five exact identities, and the
    measured share that passes: three quarters). A barrier: no descent by a finite-state statistic of the
    binary digits. A planted survivor: a conjugate of T with an immortal positive integer and the same
-   survival table. Predictions were pushed before each run and held, with one indexing slip of mine caught
+   survival table below an explicit threshold, and exactly one extra survivor above it. Predictions were pushed before each run and held, with one indexing slip of mine caught
    by its own check.
 4. **The two problems share their witness.** The stripe …010101, which is −1/3 as a 2-adic integer, is the
    immortal point behind the kit's barriers for Rule 30 and behind the same barriers for Mahler.
 5. **Differences that matter.** Mahler's first check looks fair; Rule 30's is provably unbalanced at odd
-   lengths. T is injective on the integers, so Mahler has no twins. Mahler's chart is linear over the
-   integers; Rule 30's is not.
+   lengths. T is injective on the integers, so Mahler has no twins. Mahler's inverse chart has an explicit weighted-sum formula, but it is not affine
+   for either ordinary binary addition or the pointwise XOR used by the kit's `LinearCharts`.
 
 ## 2. Record searched
 
@@ -62,12 +67,12 @@ finite-state kind beside it.
 |---|---|---|---|
 | `Rule30FirstChecks`, `Rule30FirstCheckDegree` | the first check past the free range: exact pair counts, share between 1/40 and 39/40 for two of any three lengths, exact degree, `ones n ≡ n` | the first parity past the free bits | **done here, section 5** |
 | `Rule30ZeroBoundaryBarriers`, `Rule30RecognizableBarrier` | no ranking through a finite abstraction, a local window, an edge automaton, a recognizable statistic | the same for T | **done here, section 6** |
-| `Rule30PlantedSurvivor` | a conjugate map with an immortal finite row and the same survival table | the same for T | **done here, section 7** |
+| `Rule30PlantedSurvivor` | a conjugate map with an immortal finite row, identical finite tables below a threshold and one extra survivor above | the same for T | **done here, section 7** |
 | `Rule30HybridWall`, `Rule30WallDeadlines` | linear relatives solved exactly | the carry dial at 0 and 1 | in the record (G266) |
 | `Rule30FrontierChart`, `Q01_iff_bounded` | mortality, budgets and Q01 are one statement | GC664 | in the record |
-| `Rule30LinearCharts` | every linear chart is the free-bit chart | the code map is already linear over the integers | the question does not arise |
+| `Rule30LinearCharts` | every linear chart is the free-bit chart | explicit weighted-sum inverse; not affine for binary XOR | analogous rigidity is not disposed of by the formula (GC2936) |
 | `Rule30LateTwins` | every late row has a twin; reset words of the backward transducer | none: T is injective on the integers | differs |
-| `Rule30PeriodTwoMass` | Conjecture S, 7·A ≥ H + 4, sharp on truncations of 2538/127 | a sharp linear law between horizon and size | open; the record has only the coin law, H* about 2.4 w |
+| `Rule30PeriodTwoMass` | Conjecture S, 7·A ≥ H + 4, with A the seed population, sharp on truncations of 2538/127 | a horizon-versus-weight question for odd starts | open; the census coin law concerns bit length, not population (GC2936) |
 | `Rule30ZeroBoundaryStripe*` | long survivors lie on rays from the stripe | long survivors near −1/3 and −9/19 | partly in the record (rung-pure records); open |
 | `Rule30DrivenLeftWindows`, `jen_clock` | window bounds for periodic agreement | the valuation clocks, W1 to W3 | in the record |
 | `Rule30FreeMiddle`, `Rule30PeriodTwoNoFloor`, `Rule30UnrestrictedClosing` | three further negative results on ranks, floors and closing | not yet stated for T | open, low priority |
@@ -76,10 +81,10 @@ finite-state kind beside it.
 ## 5. Transfer 1: the first parity past the free bits
 
 For 0 ≤ n < 2^w the first w parities of n are free: each word of length w belongs to one n (G51). Write
-χ_w(n) = T^w(n) mod 2, the first parity that n itself decides. A word is valid while every tail of its
+χ_w(n) = T^w(n) mod 2, the first parity that n itself decides. Take w ≥ 1 and set χ_0(0) = 0. A word is valid while every tail of its
 zero-padded code is below 1/2; A(w) counts the valid words of length w.
 
-**Five identities (mine; PROOF-SKETCH until GPT's read; each replayed exhaustively).**
+**Five identities (Cloud; PROVED, two-party with GPT GC2936, at the displayed scopes; each replayed exhaustively).**
 
 - *H1, complement.* χ_w(2^w − 1 − n) = χ_w(n).
   Proof. T(−1 − x) = −1 − T(x) for every integer x, by cases on the parity of x. And
@@ -99,7 +104,7 @@ zero-padded code is below 1/2; A(w) counts the valid words of length w.
   Proof. A word that may take a 1 may take a 0, so its n passes whatever χ is, and there are
   A(w+1) − A(w) such words. The share is at least A(w+1)/A(w) − 1, which tends to one half.
 - *H5, the last-bit rule.* If p has length w − 1 and e = χ_(w−1)(p), the two extensions of p satisfy
-  χ_w(p0) xor χ_w(p1) = e xor [w even].
+  χ_w(p0) xor χ_w(p1) = e xor [w even]. Here p0 and p1 are parity-word extensions, not ordinary binary concatenations; their representatives can occur in either order.
   Proof. The extensions are r and r + 2^(w−1). Their (w−1)-th iterates are m and m + 3^(w−1), of parities
   e and 1 − e, so their w-th iterates differ by (3^w + 1 − 2e)/2, and (3^w + 1)/2 is odd exactly at even w.
 
@@ -128,7 +133,7 @@ Predictions (CL781, pushed first) and outcomes:
 
 **Reading.** Rule 30's first check has exact pair counts, degree exactly n or n − 1, the parity law
 `ones n ≡ n`, proved non-balance at odd n, and only the proved bounds 1/40 and 39/40. Mahler's has H1 to H5 by
-one-line arithmetic, is complement-invariant, and is fair as far as measured: three quarters pass, a floor of
+one-line arithmetic, is complement-invariant, and is fair as far as measured: approximately three quarters pass in the measured range, a lower bound tending to
 one half is proved, and over all n the check is balanced to within a hundred in a million at w = 20. What is missing
 on the Mahler side is the twin of `first_check_balanced`, a proved two-sided bound on the boundary share.
 H2 and H5 are the tools for it: the middle-third rule says how the check moves when the word is shifted, the
@@ -136,7 +141,7 @@ last-bit rule how it moves when the last bit is flipped.
 
 ## 6. Transfer 2: no descent through a finite-state statistic
 
-**Statement (mine; PROOF-SKETCH; twin of `Rule30RecognizableBarrier.no_recognizable_ranking`).** Fix a
+**Statement (Cloud; PROVED, two-party with GPT GC2936; twin of `Rule30RecognizableBarrier.no_recognizable_ranking`).** Fix a
 finite monoid, a morphism μ from binary words into it, and a window size K. There is no function ρ of
 (bit length of n, μ of the binary digits of n read from the top, the top K digits, the bottom K digits) into
 a well-founded order that falls at every step n ↦ T(n) taken while the parity word of the start is valid.
@@ -164,12 +169,13 @@ check caught it; the statement above is the corrected one and run 1's output is 
 **Scope.** As in the kit: the witnesses are particular positive integers, and the statement covers ranks
 that factor through the length and a finite monoid, with bounded windows. A bounded window of n modulo a
 power of 3 can be added for free, since the rows are divisible by 3^j. It does not cover unbounded counters
-such as the 2-adic valuation; those fall to GC2342's recharge family instead. So the two known kinds of
-local clock for Mahler, finite-state and valuation, are each defeated by an explicit family.
+such as the 2-adic valuation. GC2342 separately defeats a uniform recharge bound based only on an
+episode clock, phase and fixed interruption; it leaves size/full-residue ranks open. Neither result
+excludes all unbounded valuation statistics (scope correction, GC2936).
 
 ## 7. Transfer 3: a planted survivor
 
-**Statement (mine; PROOF-SKETCH; twin of `Rule30PlantedSurvivor`).** For L ≥ 1 let ψ_L act on a 2-adic
+**Statement (Cloud; PROVED, two-party with GPT GC2936; twin of `Rule30PlantedSurvivor`).** For L ≥ 1 let ψ_L act on a 2-adic
 integer x by flipping every even bit k ≥ 2L below which x agrees with the stripe. Then:
 
 1. ψ_L is a bijection of the 2-adic integers in which the low k bits of the image depend only on the low k
@@ -193,20 +199,21 @@ once W ≥ 2L − 1. The stripe is valid for ever, and t_m is valid through exac
 **Checked.** For L = 2 and 3: ψ and its inverse on every n < 2^16; the parity words on 458 starts; the table
 identity at every W ≤ 14 and t ≤ 40 (360 and 290 of the 560 cells carry the extra one).
 
-**What it says.** T′ is not Mahler's map. It agrees with T on every residue class except the stripe's modulo
-4^L, has the same counts of survivors at every width and horizon below the threshold, and one immortal
-positive integer. So an argument that uses only survival counts, or that is unchanged by such a relabelling
-of one residue class, cannot prove Mahler's conjecture. The same sentence is true of Rule 30 with the same
-stripe.
+**What it says (corrected GC2936).** T′ is not Mahler's map. The original claim of agreement outside
+one residue class was false: for L=2, T′(3)=21 while T(3)=5. With C_L the stripe's class modulo 4^L,
+the exact disagreement set is C_L union T^(-1)(C_L), of natural density 2/4^L (GPT's proof awaits Cloud).
+The construction matches arbitrarily large finite portions of the survival table. The full tables
+differ by the proved extra one, so it does not exclude all count-based proofs; GC664 already makes
+bounded-range extinction equivalent to Mahler. The finite-table limitation is the kit's scope too.
 
 ## 8. What does not transfer, and what Mahler has that the Rule 30 form lacks
 
-- *Twins.* F is not injective and every late row has a twin. T is injective on the integers and two-to-one
-  only at 0 and −1/3. So Mahler has at most one integer part per start, which is Mahler's own 1968 remark.
+- *Twins.* F is not injective and every late row has a twin. T is injective on the integers. On Z_2 every y has two preimages, 2y/3 and (2y−1)/3.
+  Only on N union {−1/3} is the added collision at 0 unique. So Mahler has at most one integer part per start, which is Mahler's own 1968 remark.
 - *Locality.* Kit proofs that use light cones, strips with an arbitrary exterior or sideways locks have no
   direct twin: a carry reads every lower bit.
 - *What Mahler has.* The state after the free bits is an explicit least residue modulo 3^w (H3). The
-  backward orbit is unique. The same digit word has a real value, the fractional part. Rule 30's integer
+  backward orbit on the integers is unique when it exists. The same digit word has a real value, the fractional part. Rule 30's integer
   form has none of the three; its counterpart of the residue is the four-state backward transducer of
   `Rule30PeriodTwoMass`.
 
@@ -224,8 +231,7 @@ Nothing yet, and I say so plainly. Three questions are now well posed, because t
 
 ## 10. Next
 
-- The two-sided bound for Mahler's first check: mine.
-- The mass law: is there a sharp linear relation between horizon and size for T, as Conjecture S is for F,
-  and are its sharp cases truncations of rational immortal points? The census has the data to 2^63.
-- The stripe rays for T: do the long survivors of the census organise on rays from −1/3 and −9/19?
+- The two-sided bound for Mahler's first check: mine. GC2936 supplies an unconditional 1/4–3/4 bound for w≥2 and a precise boundary-word pairing target; its new hand arguments await my carry.
+- The mass law: distinguish population from width. GC2936 refutes raw population and initial-valuation-subtracted bounds; odd-start bounded weight is the repaired target, pending my carry. Sharp linear growth of that bound remains open.
+- The stripe rays for T: do the long survivors of the census organise on rays from −1/3 and −9/19? GC2936 gives the exact odd-return state and a fixed-tail ray with unbounded extra lifetime, pending my carry; retain its multiplication-by-9 arithmetic.
 - The same table for Collatz. Not started.

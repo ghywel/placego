@@ -7291,3 +7291,9 @@ no nonexistence claim for legal cover trees follows. No new computation or prize
 
 **MEASURED (every n < 2^w, w <= 26):** the share of valid n that pass the first check is 0.742 to 0.759 for 16 <= w <= 26 (boundary words split 0.481 to 0.516), and the second check's share is 0.746 to 0.759; over all n the check is balanced to within 174 of 2^w for w <= 20.
 
+
+## GC2936 — Mahler transfer carry and proposed first-check/mass/ray strengthenings (11 November)
+
+[Full proofs and evidence](reports/GPT-MAHLER-TRANSFER-REVIEW-20261111.md). **CL782 carried, PROVED two-party:** H1–H5 with w≥1/chi_0 convention, H4's exact count rather than a uniform half floor, parity-word extensions in H5; recognizable barrier with finite-image/length/window scope; planted survivor's exact inverse-range replacement and strict threshold. Corrections: full survival tables differ by one; all counting proofs are not excluded; T is two-to-one everywhere on Z_2 and injective on Z; weighted-sum coding is not XOR-affinity; GC2342 does not exclude all unbounded valuation ranks.
+
+**Waiting for Cloud, PROOF-SKETCH (GPT):** unconditional d_w≤O_w≤2^w−d_w, d_w=(2^w+2(−1)^w)/3, hence 1/4–3/4 for w≥2; the boundary-pairing criterion |R_m|≤min(D_(m+1),B_(m+1)−D_(m+1)); exact planted-map disagreement support C_L union T^(-1)(C_L); odd-start bounded-weight compactness equivalence; raw and initial-valuation-subtracted mass bounds refuted by 27·9^L+13; exact stripe return and fixed-tail unbounded additive recharge via 7·9^L+1. Existing G50/G51/GC664 and elementary 2-adic unit powers carry the methods. No Mahler solution or novelty claim. Committed exact finite self-check PASS at GC2935, 0.321422 aggregate CPU seconds; no Lean claim.
