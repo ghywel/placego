@@ -1,0 +1,20 @@
+== H5: the last-bit rule, every word of length w - 1, w <= 20
+   [PASS] chi_w(r) xor chi_w(r + 2^(w-1)) = chi_(w-1)(r) xor [w even] for every r < 2^(w-1), 2 <= w <= 20
+   [PASS] the check differs from the shifted word's check on exactly floor((2^(w+1) - 2)/3) - floor((2^w - 2)/3) of the n < 2^w, 2 <= w <= 20
+   exact excess of chi = 1 over one half of the n < 2^w, w = 2..20: [0, -2, -2, -6, -2, -2, -2, 14, 10, 2, -2, -30, -146, -94, -174, -74, -102, -94, -78]
+== B: the truncated stripes and the matching of (length, image, windows)
+   [PASS] after j + 1 steps the orbit of t_L is at 3^j 2^(2L-1-j), 0 <= j <= 2L-1, L <= 30
+   [PASS] t_L is valid through exactly 2L + 1 parities, L <= 30 (word 1 0^(2L-1) 1, then a second 1)
+   [PASS] monoid 'ones modulo 5': period 1; times j1 = 4 < j2 = 11, shift e = 2; rows (L, j2) and (L + e, j1) agree at five depths
+   [PASS] monoid 'value modulo 7, read from the top': period 3; times j1 = 4 < j2 = 76, shift e = 21; rows (L, j2) and (L + e, j1) agree at five depths
+   [PASS] monoid 'the last two letters and the length parity': period 2; times j1 = 4 < j2 = 18, shift e = 4; rows (L, j2) and (L + e, j1) agree at five depths
+== PS: the planted survivor
+   [PASS] L = 2: psi and its inverse are mutually inverse on every natural number below 2^16 (t_L = 5 apart)
+   [PASS] L = 2: psi fixes bit 0 and maps every n < 2^16 to a natural number of at most two more bits
+   [PASS] L = 2: the parity word of x under T' is the parity word of psi^(-1)(x) under T (sample of 458 starts, 12 steps)
+   [PASS] L = 2: survival table of T' = that of T, plus one exactly when 2L - 1 <= W and t > 2 ceil(W/2) + 1 (W <= 14, t <= 40)  360 of 560 cells carry the extra one
+   [PASS] L = 3: psi and its inverse are mutually inverse on every natural number below 2^16 (t_L = 21 apart)
+   [PASS] L = 3: psi fixes bit 0 and maps every n < 2^16 to a natural number of at most two more bits
+   [PASS] L = 3: the parity word of x under T' is the parity word of psi^(-1)(x) under T (sample of 458 starts, 12 steps)
+   [PASS] L = 3: survival table of T' = that of T, plus one exactly when 2L - 1 <= W and t > 2 ceil(W/2) + 1 (W <= 14, t <= 40)  290 of 560 cells carry the extra one
+ALL PASS: True (15 of 15 checks); 7 s

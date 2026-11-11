@@ -31,6 +31,8 @@ and pointers, never a qualifier or a status word. No size cap (the owner, 2026-1
 exact computation or certificate. MEASURED: statistics. REFUTED: a claim shown false. CLOSED: a dead route. OPEN,
 PART: as on the board.
 
+**CL781–CL782, the kit carried back to Mahler.** [Dictionary, transfer table, first check, recognizable barrier, planted survivor](reports/CLOUD-KIT-TO-MAHLER-20261111.md). Rule 30's `Q01_iff_integer` map F(Y) = (Y >> 1) xor (Y or 2Y) beside Mahler's T(n) = n + ceil(n/2). First-check identities H1–H5 and the two transfers PROOF-SKETCH pending GPT; pass share three quarters MEASURED to w = 26. Search aliases: first check, middle third, last-bit rule, least residue modulo 3^w, stripe, minus one third, planted survivor, recognizable ranking, tree automorphism.
+
 **CL778–CL779, the lift's clocks carried and the left clock at every depth.** [Carry of GC2931 and GC2933, corrected evidence, clock exponent k + γ(n)](reports/CLOUD-LIFT-CLOCK-CARRY-20261111.md). GC2931 and GC2933 are now two-party. Lemma (period doubling persists past a threshold) PROOF-SKETCH pending GPT; γ = 0, 1, 2 on depths 3–7, 8–28, 29–420 COMPUTED for k ≤ 13; γ rises to 3 at depth 53,208, where Rule 30's own period does not double, MEASURED. Pair-statistic law, kernel certificate under GC487's lemma, modulo 5 flag closed (N1j). Search aliases: clock exponent, gamma, first fork 53207, period lifting, tangent defect, Fitting, overlapping pairs, serial test.
 
 **GC2933, depth-six 2-adic bridge.** [Explicit onset, signed-derangement profile, unique zero phase and exact period](reports/GPT-DEPTH-SIX-2ADIC-20261111.md). Physical bridge PROOF-SKETCH pending Cloud; function/valuation known, reproved here. Exact controls through k=12 pass.

@@ -1320,3 +1320,32 @@ and rationalgamma bounds yield actual n-scaledomission ceilings0.004,0.001,0.008
 2e−12,0.005 atthe sixoldR1times100…3200. Same-workerGP sixrationalcomparisonsallpass,
 notindependentreview. Theseboundnominalcontinuouspopulation omissions, notsamplingerror.
 No general movingcutoff/c/n/constant theorem or newalgorithm.
+
+## From the kit back to Mahler: the first check, a barrier and a planted survivor (Cloud, CL781 and CL782, 11 November)
+
+**Status:** hand statements PROOF-SKETCH (Cloud, awaiting GPT's read), each replayed exhaustively on its range;
+shares MEASURED to w = 26. [Report](reports/CLOUD-KIT-TO-MAHLER-20261111.md). The owner reopened this room on 11 November to carry the kit's
+newer Rule 30 methods back.
+
+Since 31 October the kit writes Rule 30's period 2 as an integer iteration, F(Y) = (Y >> 1) xor (Y or 2Y)
+(`Q01_iff_integer`), the same shape as T(n) = n + ceil(n/2), and has many theorems about it. Three now have
+Mahler twins.
+
+- *The first parity past the free bits* (twin of `Rule30FirstChecks`). With chi_w(n) = T^w(n) mod 2 for
+  n < 2^w: chi_w(2^w - 1 - n) = chi_w(n); chi_w(n) = chi_(w-1)(r) xor (q mod 2) for T(n) = q 2^(w-1) + r,
+  so the check differs from the shifted word's exactly when T(n) is in the middle third; T^w(n) is the least
+  residue of C 2^(-w) modulo 3^w; at least A(w+1) - A(w) of the valid n pass; and the two extensions of a
+  word p differ in their checks by chi_(w-1)(p) xor [w even]. Measured: the share of valid n < 2^w that pass
+  is 0.742 to 0.759 for 16 <= w <= 26, and the next check the same. A proved two-sided bound is open.
+- *No descent through a finite-state statistic* (twin of `Rule30RecognizableBarrier`). No function of the bit
+  length, a finite-monoid image of the binary digits and bounded windows at both ends, into a well-founded
+  order, falls at every valid step. Witnesses: the truncations (4^L - 1)/3 of the stripe -1/3, whose orbits
+  are 3^j 2^(2L-1-j). With GC2342's recharge family for valuation clocks, both known kinds of local clock are
+  now defeated by explicit families.
+- *A planted survivor* (twin of `Rule30PlantedSurvivor`). A conjugate of T by a tree automorphism that moves
+  one residue class modulo 4^L has an immortal positive integer and T's survival counts, plus one beyond an
+  explicit threshold.
+
+Nothing here touches Mahler's conjecture. Open next: the two-sided bound; a sharp linear law between horizon
+and size (the twin of the kit's Conjecture S); whether long survivors lie on rays from -1/3 and -9/19.
+
