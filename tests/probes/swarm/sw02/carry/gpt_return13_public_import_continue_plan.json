@@ -1,5 +1,5 @@
 {
-  "worker_stop": 16,
+  "worker_stop": 8,
   "include_outer_monitor_cpu": true,
   "input_sha256": {
     "tests/probes/swarm/sw02/carry/gpt_return13_binary_cert.py": "652b6bd02784000929ebf083eec881430bfe04b3f1eecc0a2822a494c5fd4e2f",
@@ -23,29 +23,29 @@
     "tests/probes/swarm/sw02/carry/gpt_return13_bridge_only.py": "c62d0267c8e486e10111e963cf3f9c2f704c820b5bcda6304790bb356ae776af",
     "tests/probes/swarm/sw02/carry/P13GateIndex.lean.inc": "fa705bb19501d044fbff861f8ad211f372743cc9001783f9b136ab1042ed9094",
     "tests/probes/swarm/sw02/carry/gpt_return13_factor_module_smoke.py": "6bc5528ea7f7f4c436aeff274c98eeb4d2b635eab31b782bc452c12554849596",
-    "tests/probes/swarm/sw02/carry/gpt_return13_public_import_continue.py": "748c1d9ab31e510dd1d8484e8c9908c132a2f0da3c51b5d31e4a0c78596c3977"
+    "tests/probes/swarm/sw02/carry/gpt_return13_public_import_continue.py": "b7fe1f9005edb61c94e0a316aaec4b1876b11953baede8f3fdc17ca31cd5db80"
   },
   "prediction": {
     "import": "Lean explicit setup supplies only the saved public .olean; the exact existing consumer compiles with the producer\u2019s standard axiom set."
   },
   "counterfactual": "Stop if artifact schema, import, axiom, or host checks fail. Preserve the checked producer. No producer rebuild, repeat, bulk build or P14.",
   "limits": {
-    "aggregate_cpu_s": 20,
-    "wall_s": 45,
+    "aggregate_cpu_s": 10,
+    "wall_s": 25,
     "tree_rss_mib": 8192,
     "max_procs": 8,
     "file_mib": 16,
-    "disk_mib": 16,
+    "disk_mib": 15,
     "launch_free_mib": 4096,
     "min_free_mib": 1024,
     "swap_growth_mib": 4096,
     "threads": 1,
     "nice": 10,
-    "inner_aggregate_stop_cpu_s": 16,
-    "worker_soft_cpu_s": 12,
-    "worker_hard_cpu_s": 20,
-    "consumer_cpu_s": 10,
-    "consumer_wall_s": 20
+    "inner_aggregate_stop_cpu_s": 8,
+    "worker_soft_cpu_s": 6,
+    "worker_hard_cpu_s": 10,
+    "consumer_cpu_s": 5,
+    "consumer_wall_s": 12
   },
   "jobs": [
     {
@@ -55,8 +55,8 @@
         "tests/probes/swarm/sw02/carry/gpt_return13_public_import_continue.py",
         "tests/probes/swarm/sw02/carry/gpt_return13_public_import_continue_plan.json"
       ],
-      "cpu": 20,
-      "wall": 35,
+      "cpu": 10,
+      "wall": 19,
       "required_stdout_lines": [
         "P13_FACTOR_MODULE_EXPLICIT_PUBLIC_IMPORT_KERNEL_CHECKED"
       ]
@@ -102,5 +102,6 @@
   "consumer_sha256": "4a3051b64bc57d76fec16b87c9492b6283c6702e41bb989aafd46e7c2dea2808",
   "module": "P13Factor1111101",
   "producer_receipt_sha256": "d30c539ab7e4bf7d9e47383079fea4c6a56f60feb7c649b678e69940ea9cd602",
-  "public_olean_sha256": "15393f555f059a5ea4197b4ee3597088c05de75b30bb4562bdaad027603b62c0"
+  "public_olean_sha256": "15393f555f059a5ea4197b4ee3597088c05de75b30bb4562bdaad027603b62c0",
+  "schema_repair": "The old parser rejected missing dynlibs before elaboration. Emit empty dynlibs, plugins, and options in the same setup mapping."
 }

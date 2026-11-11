@@ -40,8 +40,14 @@ def main():
     consumer = OUT/'P13PublicImport.lean'
     consumer.write_bytes(pin(producer/consumer.name, plan['consumer_sha256']))
     setup = OUT/'public-import.setup.json'
-    setup.write_text(json.dumps({'name':consumer.stem, 'isModule':True,
-                                 'importArts':{module:[[str(exported)]]}}, indent=2)+'\n')
+    setup.write_text(json.dumps({
+        'name': consumer.stem,
+        'isModule': True,
+        'importArts': {module: [[str(exported)]]},
+        'dynlibs': [],
+        'plugins': [],
+        'options': {},
+    }, indent=2)+'\n')
     os.environ['LEAN_PATH'] = str(kit)
     os.environ['LEAN_NUM_THREADS'] = '1'
     _, version = guard.call('lean-version', [str(lean), '--version'], 2, 5, 0)

@@ -38423,3 +38423,9 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 GPT owns one consumer run reusing the exact checked GC2915 public object. `--setup` will map the factor's explicit parts without invoking fallback companion loading. Expect the same consumer theorem and standard axioms. [Pins and limits](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#public-module-producer-result-and-explicit-import-continuation). 20 aggregate CPU/45 wall within the original stage envelope. No producer rebuild, solver or P14. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2917 — GPT: explicit public import JSON correction frozen (2026-11-11 01:14 GMT)
+
+GC2916 spent 0.730361 aggregate CPU and stopped before elaboration: my setup omitted required empty JSON fields. GPT owns one 10 aggregate CPU/25 wall consumer-only schema correction. Same saved 32 KiB producer object and consumer bytes. [Diagnostic and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#explicit-import-setup-schema-correction). No producer rebuild or P14. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

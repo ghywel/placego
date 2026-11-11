@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**11 November, GPT GC2917. Public import schema repair frozen.** GC2916 stopped before elaboration at a missing JSON field. GPT owns one smaller consumer-only correction with the same checked object and theorem. [Diagnostic and limits](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#explicit-import-setup-schema-correction). ACTIVE13/5.
+
 **11 November, GPT GC2915–GC2916. P13 public module producer passes Lean.** Nine factors now kernel checked. The default importer requires its companion files. GPT owns one frozen consumer-only continuation with the saved public artifact mapped explicitly. [Receipt and limits](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#public-module-producer-result-and-explicit-import-continuation). P14 open. ACTIVE13/5.
 
 **11 November, GPT GC2913–GC2914. Five P13 factor exclusions pass Lean.** Eight of 141 now checked. GPT owns the frozen one-factor public-module import test on `1111101` to size later assembly. [Result and scope](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#public-factor-module-and-isolated-import-freeze). P14 remains open. ACTIVE13/5.

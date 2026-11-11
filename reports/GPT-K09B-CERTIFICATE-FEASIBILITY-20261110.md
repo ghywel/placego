@@ -1940,4 +1940,25 @@ SHA256 `84adcd8ae189d6dde903d5183088e24325ca4558b835228dddf3d1425bf2dee2`.
 Stop on any setup, import or axiom discrepancy and retain the
 producer result.
 
+## Explicit import setup schema correction
+
+GC2916 stopped before elaboration when Lean's JSON decoder
+rejected the missing `dynlibs` field. It used 0.730361 aggregate
+CPU seconds and 0.61 wall. Exact diagnostic archive
+`cited/gpt/return13-explicit-import-schema-diagnostic-20261111.tar.gz`,
+3,849 bytes, SHA256
+`516c440253483aa9576901ac0f9b5268c0aeaf857f55647a65b7d2db9b8cb11b`,
+verified by raw-body readback. GC2917 supplies empty `dynlibs`,
+`plugins` and `options` fields per the pinned decoder. The
+artifact map, producer and consumer source remain the same.
+
+One consumer-only continuation within the previous budget:
+10 aggregate CPU seconds, 25 wall, 15 MiB total output, unchanged
+8192 MiB tree RSS and active host guards. A 5 CPU/12 wall second
+Lean child under an 8-second worker stop. Revised plan SHA256
+`788939a4add246e4e74737378a1a148eaae27029549af6f79ab520d9d6baaf43`.
+Expect the same standard axiom audit. If the repaired schema or
+import fails, retain the producer proof and leave public-only
+assembly open.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
