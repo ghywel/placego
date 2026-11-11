@@ -1999,4 +1999,37 @@ full evidence, and use one consumer with an explicit map of
 the four public objects. No change to the original factor
 certificates. Nine of 141 exclusions checked. P14 remains open.
 
+## First four-factor module batch freeze
+
+GC2919 generalizes the checked module wrapper into a serial
+batch. The new worker reuses the exact certificate emitter and
+public-theorem transformation, preserving the measured ordinary
+source digests. It records each checked producer immediately.
+The joint consumer relays all four conclusions from explicitly
+mapped public objects and checks every transitive axiom audit.
+It uses a separate log name from the outer worker.
+
+Record searched: exact GC2912 inventory, GC2913 full-factor
+checks and GC2915/GC2918 module and explicit-import results.
+The four targets are `00000001`, `00000011`, `000001010`
+and `00000101101`, with 1,334,934 ordinary source bytes.
+Expect all four producer proofs and the joint consumer to pass
+with standard axioms under 60 aggregate CPU seconds. Stop at
+the first failed pin, proof, axiom or host guard and preserve
+the checked prefix. No solver or P14.
+
+[Plan](../tests/probes/swarm/sw02/carry/gpt_return13_module_batch1_plan.json)
+SHA256 `df4f89e669738bad18c4b79f01904d7f9d41779976aaa527ca56b5cf14acc139`.
+[Worker](../tests/probes/swarm/sw02/carry/gpt_return13_module_batch.py)
+SHA256 `a2eb75a366766003adb1c248350c663285bd2a4f5bb417047b5285102d019f45`.
+Consumer SHA256
+`c68fb6a3268da9bf80b621ab080950e750a9ed027eb05993204d67c2060794a1`.
+GPT owns one serial stage, 120 aggregate CPU seconds, 300 wall,
+8192 MiB tree RSS, eight processes, one thread at nice 10,
+16 MiB/file, 128 MiB output, 4096/1024 MiB free-memory floors
+and 4096 MiB swap-growth stop. Each producer has 60 CPU/125
+wall seconds, and the consumer 10 CPU/20 wall, under the
+95-second inner aggregate and 200-second worker wall stops.
+Thermal, pressure and monitor guards remain active.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

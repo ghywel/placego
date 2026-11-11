@@ -17,6 +17,12 @@ def digest(data):
     return hashlib.sha256(data).hexdigest()
 
 
+def as_module(original):
+    decl = b'\ntheorem factor_excluded ('
+    assert original.startswith(b'import ') and original.count(decl) == 1
+    return b'module\n\npublic ' + original.replace(decl, b'\npublic theorem factor_excluded (', 1)
+
+
 def prepare(plan):
     manifest = json.loads(pin(os.environ['RETURN13_SELECTION'], plan['manifest_sha256']))
     variables, clauses = read_cnf(pin(os.environ['RETURN13_ORIGINAL_CNF'], plan['original_cnf_sha256']))
@@ -27,9 +33,7 @@ def prepare(plan):
     source, result = prepare_factor(factor, manifest, clauses[:5044], gate)
     assert result['source_sha256'] == factor['source_sha256']
     original = source.read_bytes()
-    decl = b'\ntheorem factor_excluded ('
-    assert original.startswith(b'import ') and original.count(decl) == 1
-    module_source = b'module\n\npublic ' + original.replace(decl, b'\npublic theorem factor_excluded (', 1)
+    module_source = as_module(original)
     source.write_bytes(module_source)
     consumer = OUT/'consumer'/'P13PublicImport.lean'
     consumer.parent.mkdir()
