@@ -52,7 +52,7 @@ def main():
     os.environ['LEAN_NUM_THREADS'] = '1'
     _, version = guard.call('lean-version', [str(lean), '--version'], 2, 5, 0)
     assert version.strip() == plan['lean_version']
-    _, output = guard.call('explicit-public-consumer', [str(lean), '-j1', '-DElab.async=false',
+    _, output = guard.call('lean-public-import', [str(lean), '-j1', '-DElab.async=false',
                                                        f'--setup={setup}', '-R', str(OUT), str(consumer)],
                            plan['limits']['consumer_cpu_s'], plan['limits']['consumer_wall_s'], 0)
     axioms = audit_axioms(output, 'P13PublicImport.excluded')

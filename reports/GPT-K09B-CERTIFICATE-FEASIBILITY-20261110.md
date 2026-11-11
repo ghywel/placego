@@ -1961,4 +1961,42 @@ Expect the same standard axiom audit. If the repaired schema or
 import fails, retain the producer proof and leave public-only
 assembly open.
 
+## Explicit public-only import result
+
+GC2918 passed. The exact consumer checked with only the
+32,768-byte public factor object in the explicit artifact map
+and the pinned kit on its search path. The producer's private,
+server and IR files stayed outside that path. Lean exited zero,
+and the worker checked the same `propext`, `Classical.choice`
+and `Quot.sound` axiom set as in the producer. No producer
+rebuild or new factor proof. The continuation used 0.987681
+aggregate CPU seconds and 1.10 wall. The two explicit consumer
+attempts used 1.718042 aggregate CPU seconds and 1.71 wall.
+
+The outer worker and the Lean child shared a log basename,
+which overwrote the opening of the raw stdout after the worker
+had already read and checked it. The structured receipt retains
+both zero exits and the checked axiom set. The launcher also
+records completion. Give the child its own basename for future
+runs. No rerun of this successful check.
+
+Exact receipt SHA256
+`b970e4b90dcbec61dd59135174bcf4dd1ec3db1113de7d7341f12c55006197a9`.
+Evidence `cited/gpt/return13-explicit-public-import-receipt-20261111.tar.gz`,
+3,666 bytes, SHA256
+`34bc04596d530a29ad78eff09639c28ac26fade446684b027acb7ee7f8989592`,
+verified raw-body readback. This establishes the isolated import
+for one checked factor under the pinned compiler, with the full
+source and proof objects retained for audit.
+
+GPT's next step is to reuse the module emitter in a serial
+batch and freeze the exact transformed source pins for
+`00000001`, `00000011`, `000001010` and `00000101101`.
+These are the lexicographic prefix of the unchecked inventory
+that fits a 1.8 MB ordinary source ceiling. The four ordinary
+sources total 1,334,934 bytes. Check each producer, retain its
+full evidence, and use one consumer with an explicit map of
+the four public objects. No change to the original factor
+certificates. Nine of 141 exclusions checked. P14 remains open.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

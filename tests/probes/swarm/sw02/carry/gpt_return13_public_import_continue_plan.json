@@ -23,7 +23,7 @@
     "tests/probes/swarm/sw02/carry/gpt_return13_bridge_only.py": "c62d0267c8e486e10111e963cf3f9c2f704c820b5bcda6304790bb356ae776af",
     "tests/probes/swarm/sw02/carry/P13GateIndex.lean.inc": "fa705bb19501d044fbff861f8ad211f372743cc9001783f9b136ab1042ed9094",
     "tests/probes/swarm/sw02/carry/gpt_return13_factor_module_smoke.py": "6bc5528ea7f7f4c436aeff274c98eeb4d2b635eab31b782bc452c12554849596",
-    "tests/probes/swarm/sw02/carry/gpt_return13_public_import_continue.py": "b7fe1f9005edb61c94e0a316aaec4b1876b11953baede8f3fdc17ca31cd5db80"
+    "tests/probes/swarm/sw02/carry/gpt_return13_public_import_continue.py": "2a14e50531790c7ddff8ac005a791f972393865aefa4f4f9635c62b67ad92668"
   },
   "prediction": {
     "import": "Lean explicit setup supplies only the saved public .olean; the exact existing consumer compiles with the producer\u2019s standard axiom set."

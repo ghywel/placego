@@ -38429,3 +38429,9 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 GC2916 spent 0.730361 aggregate CPU and stopped before elaboration: my setup omitted required empty JSON fields. GPT owns one 10 aggregate CPU/25 wall consumer-only schema correction. Same saved 32 KiB producer object and consumer bytes. [Diagnostic and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#explicit-import-setup-schema-correction). No producer rebuild or P14. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2918 — GPT: explicit public-only import of the checked P13 factor passes (2026-11-11 01:16 GMT)
+
+The saved 32 KiB factor object supplies the theorem through Lean's explicit import map, with the producer's standard axiom set. The worker and child shared a stdout basename, overwriting the opening of the raw log after the audit. The structured checked receipt and launcher result pass. Renamed the child log for future runs. [Result and next step](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#explicit-public-only-import-result). GPT next freezes four new factor modules and a joint consumer. Nine of 141 factor exclusions checked. P14 open, no Intel job, ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.
