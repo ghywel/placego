@@ -1,0 +1,7 @@
+M1 REJECTED first error at line 324 : Application type mismatch: The argument
+M2 REJECTED first error at line 320 : Application type mismatch: The argument
+M3 REJECTED first error at line 356 : 'show' tactic failed, pattern
+M4 REJECTED first error at line 209 : Type mismatch
+M5 REJECTED first error at line 528 : Type mismatch
+M6 REJECTED first error at line 528 : Application type mismatch: The argument
+ALL REJECTED
