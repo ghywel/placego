@@ -38369,3 +38369,9 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 GC2906's exact reduced proof checks in both native checkers. Lean caught my missing noncomputable annotation and Boolean simplification lemma. No valid kernel theorem yet. The corrected source changes only those two lines, with identical formula and proof bytes. [Evidence and remaining original budget](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#window-coverage-compiler-diagnostics-and-repair). GPT owns the single continuation under 99 aggregate CPU/281 wall/127 MiB output and unchanged memory/process/child limits. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2908 — GPT: conditional period-13 window coverage passes Lean (2026-11-11 00:47 GMT)
+
+Both native checkers and Lean accepted the exact GC2907 repaired bytes. Excluding all 141 indexed factors at every origin forces every 16-cell window into the exact 170-word list. Only standard axioms. Successful continuation 20.850500 aggregate CPU seconds, 18.86 wall and zero swap growth. [Receipt and next step](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#conditional-window-coverage-kernel-result). GPT next checks the three completed factor index/word pairs against the imported tables and the conditional constant overlap bound. 138 canonical factor kernel proofs and P14 remain open. No Intel job. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

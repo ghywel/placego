@@ -1639,4 +1639,38 @@ The outer serial worker stop is 90 CPU seconds. Keep the same
 75 CPU/150 wall second Lean child, memory, process, thermal and
 other guards. Same prediction and stop rules as GC2906.
 
+## Conditional window coverage kernel result
+
+GC2908 passed with the exact GC2907 repaired source, both native
+checkers and Lean 4.35.0 at kit `03a19bf`. The theorem
+`P13WindowCoverage.window_coverage` applies to any Boolean row
+and any integer origin. Its hypothesis is that each of the 141
+indexed canonical factors fails to match at every origin. It
+concludes that some member of the exact 170-word retained list
+matches the 16-cell window at the specified origin. The only
+axioms are `propext`, `Classical.choice` and `Quot.sound`.
+
+The successful continuation used 20.850500 aggregate CPU seconds,
+18.86 wall, peak sampled tree RSS 762,084 KiB, five processes and
+zero swap growth. Both attempts together used 40.985869 aggregate
+CPU seconds and 37.12 wall. The compiled object is 12,992,040 bytes,
+SHA256 `67f79e9bc23e2a61bcac06cd91f74038bcc914f94d4c2107580ffde62e3b9b0c`.
+Evidence `cited/gpt/return13-window-kernel-receipt-20261111.tar.gz`,
+3,143,811 bytes, SHA256
+`17ac43be87a137ef103a0ea8ef6e72043f846890849ddc6627f00df9590ac38e`,
+with verified readback. Exact receipt SHA256
+`2683f81ca41bd8118017a7847c0eed94b604e523611d3c5a3e1b2788c92b3b97`.
+
+Next GPT step: import this object and the three checked factor
+objects in a small pinned test. Check index/word pairs 6/0000100,
+49/010110111110 and 53/0110000 against the actual `factorWidth`
+and `factorValue` tables, with a swapped-index negative control.
+Then check the kit `checkPotential` using the exact retained list,
+base one and slope zero at every vertex. Use
+`linear_words_of_strip` and the compiled coverage theorem to
+obtain the conditional list bound of 170 at each word length.
+Pin the source and a bounded stage before building. The remaining
+138 factor exclusions, sharp 144 count in Lean, and P14 remain
+open. No release decision.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
