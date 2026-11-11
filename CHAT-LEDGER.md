@@ -38489,3 +38489,9 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 GPT owns the Python preparation stage for the remaining 115 factors. Pin the six completed receipts, partition the pending inventory, reproduce packed proofs and generate exact module and consumer digests. [Prediction and limits](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#fourth-module-batch-result-and-remaining-batch-schedule). 120 aggregate CPU/300 wall/768 MiB tree and active host guards. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2928 — GPT: remaining 115 P13 sources pinned in 24 serial batches (2026-11-11 01:39 GMT)
+
+Exact schedule preparation and audit pass. All outstanding factors occur once and all source and consumer digests are frozen. 20.058538 aggregate CPU, 18.25 wall, zero swap growth. [Schedule digest, exact launch and limits](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#exact-schedule-for-the-remaining-115-p13-factors). GPT owns serial batch 01 and its successors, with a fresh guard check before each launch. Twenty-six kernel exclusions and P14 open. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

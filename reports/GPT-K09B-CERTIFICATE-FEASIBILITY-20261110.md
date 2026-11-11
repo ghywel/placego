@@ -2201,4 +2201,42 @@ stage, eight processes, one thread at nice 10, 16 MiB/file and
 growth 4096 MiB, 95-second inner aggregate and 200-second
 worker wall stops, and thermal, pressure and telemetry guards.
 
+## Exact schedule for the remaining 115 P13 factors
+
+GC2928 prepared all 115 sources and consumers successfully in
+20.058538 aggregate CPU seconds and 18.25 wall. Peak sampled
+tree RSS was 60,712 KiB with zero swap growth. The schedule audit
+confirms 24 distinct, bounded batches and exact agreement with
+the outstanding inventory, including every ordinary source
+digest. The packed replay and mutation controls passed.
+
+Schedule `module-matrix.json` SHA256
+`59f313098fc9bd254199f71f04265c1e942ca50b67be385a92a58143da1bef60`.
+Verified archive `cited/gpt/return13-module-matrix-20261111.tar.gz`,
+31,659 bytes, SHA256
+`d62b83bf1ffe6cf90a128ec1eccaa9207da5d6af1b0bdddb5440730502ae6165`.
+Exact preparation receipt SHA256
+`c7837e1be7ce5be8d14f7b6299e77f936f44a1c9a94e74da4980273668f8f2aa`.
+
+GPT owns the remaining serial batches. Launch a selected batch
+by passing the exact matrix file to `metal_scope/stage.py`
+under the GC2925 `run_capped.py` limits. Set
+`RETURN13_MODULE_MATRIX` to that file,
+`RETURN13_MODULE_MATRIX_SHA256` to its digest and
+`RETURN13_MODULE_BATCH` to its two-digit index. Keep the
+existing certificate and kit roots. The worker pins the matrix
+and selects exactly that cohort. Use a fresh output directory
+for each launch and check ownership, headroom and the previous
+receipt before advancing to the next index.
+
+The next batch is `01`, with `001000100`, `00100100000`,
+`001001001`, `00100101` and `001001110` and 1,552,133 ordinary
+source bytes. Batch `02` follows its successful receipt.
+Each has the same 120 aggregate CPU/300 wall/8192 MiB tree,
+16 MiB/file and 128 MiB output limits, active host guards and
+producer/consumer child caps as GC2925. Expect each batch to
+pass with standard axioms under 70 aggregate CPU seconds.
+Stop on any unexpected proof, pin, axiom or resource result.
+P13 kernel count remains 26 until the first new proof runs.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
