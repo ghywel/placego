@@ -38744,3 +38744,29 @@ To GPT and Local. [Report](reports/CLOUD-LIFT-CLOCK-CARRY-20261111.md). Every pr
 *Owners.* The read of the lemma's step (c): GPT, when it suits. Depth seven and the explicit profiles: GPT. A criterion for which white diagonals raise γ, and the same table at 3^k and 5^k: mine, not started; INSTINCT has it as a pull with a test written first. Nothing of mine is running.
 
 *Addendum 1 to CL779 (2026-11-11 20:37 GMT).* One remark added to the report as §7.7, known arithmetic and no run: modulo p^k the first left clock is 2^t, so its period is the order of 2 modulo p^k, which gains a factor p with every digit exactly when 2^(p−1) is not 1 modulo p². The first clock therefore gains one digit per digit at every odd prime except the Wieferich primes (1093 and 3511 are the only two known). It is the first place on this edge where individual primes differ. The odd-prime analogue of the lemma is not written.
+
+## CL780 — Cloud: the owner asks what we can do that bears on the centre; my reading of the record and three proposals, nothing started (2026-11-11 21:27 GMT)
+
+To the owner, GPT and Local. The owner, after CL779: "Then what can we do that bears on the centre. The object of our interest is as far away as we started ... I am clean out of ideas how to move us forward." This entry is an answer from the record, not a result. Tentative where marked.
+
+*Record searched (before proposing):* PERIOD-TWO.md §1 to §6 and its closed routes; the honest summary of RULE30-PRIZE.md; PROOFS entries 38 and 40 (the sparse walls) and GC2794 (the trap language's conditional entropy floor); L564 to L568 and L640 (the exact visible language beside the alternating wall, to length 44); the kit's catalogue §6.3 and §7 as fetched today, and the kit's `Rule30PaddedWords`, `Rule30WhiteEndNine` and `Rule30White17Runs` at my clone of 5 November (8cf1bd4); record_find for Duhamel, Frobenius, Dubickas, Thue, white_end_ge9, visible language, infinitely often. Four things I thought of on the way are already in the record and are not proposed: the dyadic Duhamel identity (GC420 to GC446), strip graphs at period 2 (entry 38's family, empty to radius 9), the forced walk as the object (8.37), and the placement beside Mahler's problem (8.45).
+
+**1. There is one gate.** Every statement about the centre column that is weaker than "it shows two equal cells in a row, infinitely often" is proved (Condrey gives both colours, so 01 and 10 recur). That sentence is period 2. Problems 2 and 3 lie behind it. So "bears on the centre" means "bears on that sentence".
+
+**2. Where the line between provable and not provable runs (from the record and the kit, drawn together).**
+- *Provable side.* A period word with a long run is excluded because the run fixes the neighbouring column whatever the right half does, and Jen's theorem finishes (entries 38 and 40; the kit's padded words: for the single seed every word 0^r u is excluded once r passes a bound depending on u, down to r = 9 for u = 1 and r = 8 for u = 11; every eventual period must contain a white run shorter than 17). At r = 9 the kit already needs a one-bit label on column 1 with a checked transition rule; the plain pumped check fails there.
+- *The other side.* The alternating word has no run. Beside it column 1 keeps freedom: 21,389 words of length 44 in phase 0 (L640), the count growing by about 11 percent a symbol and not settling (L568). An upper bound of 0.1236 bits per visible bit is certified. For the related trap language of relaxed windows a floor of 0.099 is conditional on the all-width free code, still open (GC2794, GC2800); that work says itself that it asserts nothing yet about the limit entropy.
+- *Between.* For 0^r 1 with r from 8 down to 2 nobody has located where the freedom starts.
+
+**3. Why the edges never arrive.** All proved structure lives on the two edges. The nearest, the settled left band, ends about a fifth of the way from the centre to the left edge at every time (CL779's census: onset over depth between 1.03 and 1.48, median 1.27, depths 20 to 420). Jen's method needs two columns. The one-column statement is of the kind that is open for powers of 3/2 since Mahler (1968), where the analogue of Condrey's theorem is itself open.
+
+**4. Three proposals. None is an order and none is started.**
+- *P-A, walk the provable edge down and find where it stops.* For the walls 0^r 1, r = 8, 7, …, 2 (and 0 1^q at q = 8, 6, …): the exact eventual language of column 1, by the SAT instrument of L564 and L640, classified as bounded, slowly growing or free; a mode certificate wherever it is bounded. Every bounded case is a new case of Problem 1 for the prize's own row. The first unbounded r is the true limit of Jen-type methods, which nobody has measured. *What it teaches:* whether period 2 is the only hard wall or the first of a hard family. Tentative odds: a new excluded word at r = 8, 0.5; reaching r = 1 this way, under 0.05.
+- *P-B, settle the fork at period 2.* Prove or break the all-width free code (GPT and Local's question of 9 November). Positive entropy would put the every-finite-row form of period 2 in Mahler's regime, where no method exists for any system, and would be worth stating publicly as the reason the problem is hard. Zero entropy would leave room for a finish of Jen's kind. Either answer changes what we ask next.
+- *P-C, the seed alone.* The generated-history line (GC2771 to GC2773) is the only work that uses the prize's own row. Keep it small and alive.
+
+**5. What I would stop.** The lift (CL776 to CL779) and further lemmas about the edges, unless they come free. They cannot reach the gate, for the reason in item 3.
+
+*Honest odds, mine:* the prize, very low; period 2 for the single seed within months, a few percent; new cases of Problem 1 below r = 9, likely.
+
+*Owners:* none until the owner chooses. If P-A is chosen, the language counts are mine or Local's, certificates Local's, reads GPT's.
