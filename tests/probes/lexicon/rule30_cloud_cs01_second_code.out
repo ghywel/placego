@@ -1,0 +1,17 @@
+N = 2^24; generator control (A051023): True; density 0.50031; 1397 s
+sieve controls: mu(0..20) True, lambda(0..20) True, primes below 2^20: 82025 (82025 expected)
+whole run:
+  S_p (x at prime times)     S =       859 over  1077871 terms; S/sigma = +0.83
+  S_lambda (x . Liouville)   S =     -1681 over 16777215 terms; S/sigma = -0.41
+  S_mu (x . Moebius)         S =      -631 over 10199301 terms; S/sigma = -0.20
+first 2^22:
+  S_p (x at prime times)     S =      1243 over   295947 terms; S/sigma = +2.28
+  S_lambda (x . Liouville)   S =     -3681 over  4194303 terms; S/sigma = -1.80
+  S_mu (x . Moebius)         S =     -4414 over  2549834 terms; S/sigma = -2.76
+fresh part 2^22..2^24:
+  S_p (x at prime times)     S =      -384 over   781924 terms; S/sigma = -0.43
+  S_lambda (x . Liouville)   S =      2000 over 12582912 terms; S/sigma = +0.56
+  S_mu (x . Moebius)         S =      3783 over  7649467 terms; S/sigma = +1.37
+coins: largest |S/sigma| over 20 coins x 3 sums = 3.00
+density of c at prime times 0.50040 against overall 0.50031
+seconds 1408

@@ -1,0 +1,11 @@
+== N1h block dispersion over 2^21 ticks (score = (chi-square - dof) / sqrt(2 dof))
+   control: generator reproduces A051023: True
+   rule 30 centre bits (P = 2): blocks of 2^10 (2048): ratio 0.9947, score -0.17, tail p 0.4362 | blocks of 2^13 (256): ratio 1.1280, score +1.45, tail p 0.0778 | blocks of 2^16 (32): ratio 1.2456, score +0.98, tail p 0.1602
+   pseudo-random 7-sided die 0: blocks of 2^10 (2048): ratio 1.0028, score +0.22, tail p 0.4108 | blocks of 2^13 (256): ratio 1.0588, score +1.63, tail p 0.0537 | blocks of 2^16 (32): ratio 0.8990, score -0.99, tail p 0.1609
+   pseudo-random 7-sided die 1: blocks of 2^10 (2048): ratio 1.0091, score +0.72, tail p 0.2361 | blocks of 2^13 (256): ratio 1.0266, score +0.74, tail p 0.2291 | blocks of 2^16 (32): ratio 0.9798, score -0.20, tail p 0.4342
+   pseudo-random 7-sided die 2: blocks of 2^10 (2048): ratio 1.0210, score +1.65, tail p 0.0502 | blocks of 2^13 (256): ratio 1.1331, score +3.69, tail p 0.0002 | blocks of 2^16 (32): ratio 1.0785, score +0.77, tail p 0.2166
+   pseudo-random 5-sided die: blocks of 2^10 (2048): ratio 0.9844, score -1.00, tail p 0.1585 | blocks of 2^13 (256): ratio 0.9922, score -0.18, tail p 0.4357 | blocks of 2^16 (32): ratio 1.0049, score +0.04, tail p 0.4679
+   control: 7-sided die with a slowly drifting 1 percent excess of one face: blocks of 2^10 (2048): ratio 1.0228, score +1.79, tail p 0.0375 | blocks of 2^13 (256): ratio 1.2019, score +5.60, tail p 0.0000 | blocks of 2^16 (32): ratio 2.4022, score +13.74, tail p 0.0000
+   centre of the lift modulo 7: blocks of 2^10 (2048): ratio 0.9984, score -0.13, tail p 0.4518 | blocks of 2^13 (256): ratio 1.0498, score +1.38, tail p 0.0854 | blocks of 2^16 (32): ratio 1.2046, score +2.00, tail p 0.0277
+   centre of the lift modulo 5: blocks of 2^10 (2048): ratio 1.0180, score +1.15, tail p 0.1252 | blocks of 2^13 (256): ratio 1.0108, score +0.25, tail p 0.3978 | blocks of 2^16 (32): ratio 0.6381, score -2.90, tail p 0.0005
+N1h verdict (smaller tail p-value above 0.0005 at every block size): {7: True, 5: False} | rule 30 bits: True

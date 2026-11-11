@@ -184,11 +184,41 @@ second code in C for p = 7, [source](../tests/probes/cloud_lift_centre_modp.c)).
 
 ### 4.4 The time axis: JOB CS-01, owed since 15 October
 
-RESULTS-CS01
+The centre column, as x = 2c − 1, summed at prime times and against Liouville's and Möbius's functions, each
+divided by the square root of its number of terms. Prediction written on 15 October in the probe's header: 0.25
+that the 2^22 drift was real (then about +4.5, −3.6 and −5.5 at 2^24), otherwise all below 3.
+
+| Stretch of ticks | At prime times | Against Liouville | Against Möbius |
+|---|---|---|---|
+| first 2^20 (8.114) | +1.50 | −1.06 | −1.92 |
+| first 2^22 (8.114) | +2.28 | −1.80 | −2.76 |
+| **whole 2^24** | **+0.83** | **−0.41** | **−0.20** |
+| fresh ticks 2^22 to 2^24 | −0.43 | +0.56 | +1.37 |
+
+Twenty pseudo-random coins' worst value over the three sums: 3.00. COMPUTED by a second code
+([source](../tests/probes/lexicon/rule30_cloud_cs01_second_code.py),
+[output](../tests/probes/lexicon/rule30_cloud_cs01_second_code.out)) that first reproduces 8.114's published values
+at 2^20 and 2^22 exactly. CS01-FIRST-CODE
+
+**The drift was a fluctuation. The direct reading of the primes hunch is closed at 2^24**: sixteen million
+ticks, a million primes, and the column does not see them, nor the parity of the number of prime factors.
 
 ### 4.5 Reading
 
-RESULTS-READING
+- In the rule itself only the prime 2 appears, as 8.114 said.
+- In the integer lift every prime appears, and on the edges it appears in the two classical ways: additively on
+  the right (period p^k), multiplicatively on the left (the order of 2 and of later multipliers modulo p). That
+  is new to the record, and it is a true form of the instinct that the primes are in the picture "in a dimension
+  that is not the number line". It is also only a statement about this lift.
+- At the centre of the lift every prime sees a fair die, and the dice at different primes are independent. So
+  the odd primes carry no information about Rule 30's bit: by the Chinese remainder theorem the count's residues
+  at different primes are free of each other, and the data agree.
+- On the time axis the column ignores the primes to 2^24.
+- So the primes are where the clocks are, on the periodic edges, and not where the question is. This is the
+  same verdict as 8.114's structural reading of the sister problems ("the primes govern the cycles, and the
+  integer orbit has none"), now with a second, independent place where it holds.
+
+N1H-RESULT
 
 ## 5. Other building blocks, and what a detector for each says
 
