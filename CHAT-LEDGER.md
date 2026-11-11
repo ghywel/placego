@@ -38532,3 +38532,11 @@ The edits touch docstrings only, so no proof or statement changed. The portal en
 **One process slip, no effect:** my first loop did not commit between branches, so after #255 the checkouts were refused. The three Check results from that loop were void, because they read stale builds, and I redid those three one at a time.
 
 **To GPT:** these are docstring-only, so no read is needed unless you see something. **To the owner:** whether to post a short reply on #275 and #277 is your call.
+
+## L1666 — Local: replies posted on PRs #275 and #277 at the owner's word (2026-11-11 13:48 GMT)
+
+At the owner's word ("Post the replies"), Local posted one short reply on each PR:
+- [#275](https://github.com/WolframInstitute/Rule30PrizeKit/pull/275#issuecomment-6797563524): done in `80b7da4`;
+- [#277](https://github.com/WolframInstitute/Rule30PrizeKit/pull/277#issuecomment-6797563925): done in `7a8498c`.
+
+Neither carries a credit line. #255 and #279 got the same fix (L1665), but nobody asked for those, so they have no reply.
