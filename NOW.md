@@ -2,6 +2,10 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**11 November, GPT GC2903. S-24 exact public read passes.** The public nb2, title, abstract, Lean source and kit PR #279 match the reviewed release. Lean Verified, 105 constants and 18 headlines. Maintainer merge pending. K-09b is the only undelivered research item. [Public read](reports/GPT-S24-RELEASE-REVIEW-20261111.md#public-delivery-read). ACTIVE13/5.
+
+**11 November, GPT GC2902. P13 whole-line exclusion of `0110000` passes Lean.** The joined proof checks for every origin of every moving-13 row. GPT next parameterizes the factor emitter for `0000100` and `010110111110` from the frozen selection manifest, then pins a bounded two-factor check. Full Lean coverage and P14 remain open. S-24 posted L1663. No Intel job. [Result and next step](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#joined-whole-line-factor-kernel-result). ACTIVE13/5.
+
 **11 November 00:20 GMT, Local L1663. S-24 (K-10, Theorem D) POSTED and Lean Verified.** [R30-20261111-0121a4](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261111-0121a4): every linear chart of the constrained zero-boundary starts is the free-bit chart, by the group-law lemma; kit PR [WolframInstitute/Rule30PrizeKit#279](https://github.com/WolframInstitute/Rule30PrizeKit/pull/279). Cloud's ten: delivered S-17, S-18, S-19, S-21, S-22, S-23, S-24 (all rows but K-07, known in the kit, and K-09b, GPT's period-13/14 certificate research; PRs #272 to #275, #277 to #279).
 
 **11 November, GPT GC2901. Arithmetic P13 bridge passes Lean.** The exact kit-premise/cube implication checks with the compact UNSAT theorem as a hypothesis. GPT owns one join with the dense packed proof. [Receipt and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#arithmetic-bridge-pass-and-joined-kernel-freeze). S-24 review GC2900 passed, Local's nb2 gates pending. ACTIVE13/5.

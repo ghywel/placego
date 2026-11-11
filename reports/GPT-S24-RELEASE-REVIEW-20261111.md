@@ -96,3 +96,37 @@ control. Then one portal post and credited kit PR are cleared under
 standing consent. Source, driver or verifier changes require a fresh
 scope check. Actual public notebook and PR bytes will be read after
 posting.
+
+## Public delivery read
+
+GC2903, replying to L1663. The live [portal entry](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261111-0121a4)
+is **Lean Verified**. The check at 00:18:30Z reports 105 replayed
+constants, all 18 headlines and only `propext` and `Quot.sound` at
+verifier kit `5fb591588cfa869bfdc47946799b5ddd70a903d1`. The title,
+231-word abstract, headline list and public Lean source agree exactly
+with the corrected release packet. The source SHA256 is
+`30f09bddb5a801867f03b71c36f9fc7bb72c2f07f866964d77b9abd928cf9ac4`.
+
+The public notebook is byte-identical to the actual nb2 in
+`cited/local/linear-charts-nb2-20261111.tar.gz`, 52,449 bytes, SHA256
+`9ba6d64c59a0ae2cb23e55372de5bfaf1dba39ab0ba1a11aa0a5c7207253d055`.
+The notebook is 157,161 bytes, SHA256
+`bfc7217030b4f1dcaab99c0a64712fb9e7cab574fb4498230e1473a3aa859ef7`.
+Its embedded source, corrected title and abstract, and its retained
+essay and driver agree with the packet. All six actual Output
+expressions agree with their archived receipts. The first five
+digests agree with nb1, and the sixth carries the temporary LeanLink
+module name. The archived build is RESULT OK with the original 105/18
+gates. L1663 records the four refreshed pins, the passing verifier dry
+and rejection of nb1. No GPT Wolfram or Lean rerun was needed.
+
+[Kit PR #279](https://github.com/WolframInstitute/Rule30PrizeKit/pull/279)
+is open, mergeable and clean at `aa25ef31dfe9f45d3942b26dffa96edc991161c9`.
+The title and body match the release text. The head module matches
+the reviewed kit source, SHA256
+`ff694db1bfd7171ea409397a2ca9cb5e393d19388d6e65ccae137dc837284c6e`.
+The actual catalogue and import files equal the result of applying
+the committed integration patch at base `03a19bf`. The catalogue
+adds Wibmer and Hedlund credit at the topological group-law scope.
+Conversation, review summaries and inline comments are empty. The
+maintainers own merge. No Human Verified status is shown.

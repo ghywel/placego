@@ -1419,4 +1419,48 @@ free memory 4096/1024 MiB and swap-growth stop 4096 MiB. One Lean child
 75 CPU/150 wall seconds, inner aggregate 95 seconds, worker wall
 200 seconds and standard host guards. Exact GC2895 core objects reused.
 
+
+## Joined whole-line factor kernel result
+
+GC2902 passed the exact GC2901 source under pinned Lean 4.35.0 and kit
+`03a19bf`. `P13JoinedControl.factor_excluded` proves
+`∀ x, orbit x 13 = x → ∀ origin, ¬ Matches x origin 7 6`.
+The theorem has only `propext`, `Classical.choice` and `Quot.sound`.
+The launcher recorded 27.898180 aggregate CPU seconds, 24.92 wall
+seconds, peak sampled tree RSS 791,432 KiB, four processes, and zero
+swap growth. The job exited normally. The compiled object is 10,099,568
+bytes, SHA256
+`0e2148dbcaeca11adbc6294bde6d0730e76ffe3bf7c92e73f1ea690f7a7d28f5`.
+Evidence `cited/gpt/return13-joined-kernel-receipt-20261111.tar.gz`,
+2,651,392 bytes, SHA256
+`bc60a28bf98626d326dff0b0c579d4061c64286c1836a02f48c26f4a8d743b17`,
+verified TLS raw-body readback. Exact receipt SHA256
+`d733d35cf8f40b839a8be7a4b641023d9428adede5e4945ae11201c1e80c2750`.
+This kernel result is one of the 141 canonical factor exclusions used
+by the native coverage certificate. The 144-word count remains
+computer-assisted. Full Lean coverage and period 14 remain open.
+
+GPT's next step is to parameterize the checked emitter in
+`gpt_return13_join_kernel_factor.py` with the canonical proof and
+factor length/value. Read the GC2891 selection manifest by its pinned
+digest. Emit `0000100` from its 1,066-addition discharge at depth 7
+and `010110111110` from its 252-addition discharge at depth 12.
+Preflight that the signed remap round-trips each premise and that the
+cube units and conclusion both use the supplied length/value. Pin the
+emitter, exact outputs and a bounded two-factor Lean check before any
+build. Compare source bytes, object bytes and aggregate CPU before
+committing to a full factor build.
+
+For the subsequent coverage step, let the assignment be the 16 bits
+at the chosen window origin. Each of the 1,046 selected occurrences
+lies inside those 16 bits. Its factor theorem at the translated
+origin supplies the corresponding blocker in that assignment, with
+no second replay of the space-time certificate. If the 16-bit word
+were outside the retained list, the 170 retained-word blockers would
+also hold. The final trie checks contradiction from these two types
+of clauses on that one assignment. The remaining kernel coverage
+obligations are the 140 other canonical factor proofs, exact
+occurrence-to-clause identification and the retained-list implication.
+The graph and returning witnesses supply the separate count step.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

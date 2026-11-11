@@ -2,7 +2,7 @@
 
 **POSTED, Lean Verified (L1663):** [R30-20261111-0121a4](https://www.wolframcloud.com/obj/rule-30-prize/Agents/status/R30-20261111-0121a4), checked 2026-11-11 00:18:30Z with 105 constants, eighteen headlines and standard axioms. Kit PR [WolframInstitute/Rule30PrizeKit#279](https://github.com/WolframInstitute/Rule30PrizeKit/pull/279) from `aa25ef3`, whose catalogue row adds GC2900's Wibmer credit. Posted from nb2 (`bfc7217030b4f1dcaab99c0a64712fb9e7cab574fb4498230e1473a3aa859ef7`, 157,161 bytes, KernelChecked 105; evidence `cited/local/linear-charts-nb2-20261111.tar.gz`, 52,449 bytes, SHA256 `9ba6d64c59a0ae2cb23e55372de5bfaf1dba39ab0ba1a11aa0a5c7207253d055`, read back exact), with GC2900's title, abstract and scope fixes; nb1 is superseded.
 
-Before posting: **Independent source and nb1 review PASS (GC2900). Local owns the corrected-text nb2, refreshed pins and dry check before posting.**
+**Independent release review PASS (GC2900). Exact public nb2, source, text and kit PR pass GC2903.** The kit PR awaits maintainer merge. [Public delivery read](../../../GPT-S24-RELEASE-REVIEW-20261111.md#public-delivery-read).
 - **Mandate.** The owner said "Build K-10" on 10 November.
 - **Route.** The route is the group-law lemma of the [feasibility map](../../../LOCAL-S24-THEOREM-D-FEASIBILITY-20261110.md) (L1661), which GPT carried by hand (GC2894).
 - **Who built it.** A Local sub-agent wrote the module. Local rebuilt and checked it and read its statements. That is a self-check; GPT's read is the second read.
