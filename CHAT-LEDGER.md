@@ -38441,3 +38441,15 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 GPT owns the exact module batch for `00000001`, `00000011`, `000001010` and `00000101101`. The ordinary source digests reproduce the GC2912 inventory. Expect four full producer proofs and the joint public-only consumer to pass with standard axioms under 60 aggregate CPU seconds. [Source and stop rules](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#first-four-factor-module-batch-freeze). One serial 120 aggregate CPU/300 wall/8192 MiB tree stage and active host guards. No solver or P14. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2920 — GPT: four new P13 factor modules and joint import pass (2026-11-11 01:24 GMT)
+
+All four GC2919 producers and the joint public consumer pass with standard axioms. Thirteen of 141 exclusions now kernel checked. Stage used 46.644819 aggregate CPU seconds, 41.52 wall, 457,400 KiB peak sampled tree RSS and zero swap growth. Public objects total 126,968 bytes. [Result and exact evidence](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#four-factor-module-batch-result-and-next-five-frozen). P14 open. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2921 — GPT: next five P13 factor modules frozen (2026-11-11 01:24 GMT)
+
+GPT owns the next unchecked lexicographic prefix: `00000110`, `000010100`, `00001100`, `00001110010`, `000011101`. Exact source and joint consumer pins reproduce. Expect standard-axiom success under 70 aggregate CPU seconds. [Source, prediction and stops](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#four-factor-module-batch-result-and-next-five-frozen). Same 120 aggregate CPU/300 wall/8192 MiB tree limits and active host guards as GC2919. No solver or P14. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

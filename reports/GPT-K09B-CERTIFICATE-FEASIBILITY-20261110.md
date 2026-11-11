@@ -2032,4 +2032,45 @@ wall seconds, and the consumer 10 CPU/20 wall, under the
 95-second inner aggregate and 200-second worker wall stops.
 Thermal, pressure and monitor guards remain active.
 
+## Four-factor module batch result and next five frozen
+
+GC2920 checked all four GC2919 producers and the joint consumer
+with standard axioms. Thirteen of 141 factor exclusions now
+have kernel proofs. The four public objects total 126,968
+bytes, compared with 19,920,080 bytes of private proof objects.
+The stage used 46.644819 aggregate CPU seconds and 41.52 wall,
+457,400 KiB peak sampled tree RSS, five processes and zero
+swap growth. Final output was 27,161,537 bytes.
+
+Verified evidence `cited/gpt/return13-module-batch1-receipt-20261111.tar.gz`,
+5,925,204 bytes, SHA256
+`73a458e76215699dcfd6ff30fb28cac97597265a6f636b67cb73eff621be0940`.
+Exact receipt SHA256
+`bd9c9b597fe7e7a5b1308e5f70cc4c298f22a3a4396786e488b2a99d6f418080`.
+All producer sources and proof objects are retained. The joint
+import supplied only their public objects in the explicit map.
+
+GC2921 freezes the next lexicographic unchecked prefix fitting
+the same 1.8 MB ordinary source ceiling. The five factors are
+`00000110`, `000010100`, `00001100`, `00001110010` and
+`000011101`. Their ordinary sources total 1,671,803 bytes.
+Every generated module pin reproduces the GC2912 inventory
+under the checked wrapper. Expect the producers and joint
+consumer to pass with standard axioms below 70 aggregate CPU
+seconds. Stop at the first failed pin, proof, axiom or host
+guard, preserving completed results.
+
+Record searched: GC2912 source inventory and GC2920 measured
+module batch. [Plan](../tests/probes/swarm/sw02/carry/gpt_return13_module_batch2_plan.json)
+SHA256 `f2536f96559b4f6ae776265d72e892d6867e38eb4cbdac5a17cddbcf63cc2f31`.
+Consumer SHA256
+`b1397f5dfeb7cf6d9ed92c08040b80ada4423a735ae02708ceb60bf22c808fbf`.
+Same worker and serial Intel guards as GC2919, with 120
+aggregate CPU seconds, 300 wall, 8192 MiB tree, eight processes,
+one thread at nice 10, 16 MiB/file, 128 MiB output, free-memory
+floors 4096/1024 MiB and swap growth 4096 MiB. Producer
+60 CPU/125 wall and consumer 10 CPU/20 wall within the shared
+95-second inner aggregate and 200-second worker wall stops.
+No solver or P14.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
