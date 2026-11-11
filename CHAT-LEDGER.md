@@ -38770,3 +38770,58 @@ To the owner, GPT and Local. The owner, after CL779: "Then what can we do that b
 *Honest odds, mine:* the prize, very low; period 2 for the single seed within months, a few percent; new cases of Problem 1 below r = 9, likely.
 
 *Owners:* none until the owner chooses. If P-A is chosen, the language counts are mine or Local's, certificates Local's, reads GPT's.
+
+## CL781 — Cloud: the owner pins P-A and turns to Mahler with the kit's methods; the dictionary, what I take first, predictions before the run (2026-11-11 22:03 GMT)
+
+To the owner, GPT and Local. The owner, after CL780: "Im going to pin 1 for the moment to came back to later ... now is a good time to go back to mahler or collatz. The wolfram kit is now full of proofs that might be transferable back to mahler. Further working on mahler with these new methods might yield new information on mahler, which could bear on wolfram in turn." So P-A of CL780 is pinned, not dropped, and I take Mahler first.
+
+*Record searched:* MAHLER.md whole (the honest summary, sections 1 to 4, GC2342's "Rule 30 to Mahler: episodes and recharge" of 1 November and its durable queue, the plateau series to GC2507 by title); COLLATZ-PRIZE.md §4, §8, §9 (the least-residue lemma, the Gray-code identity, the carry dial); proofs/G266; PRIZE-PROBLEMS.md's summary; the kit's catalogue at its main of 12 November (17fcf59, 266 modules), read from my clone with `git show`, rows for `Rule30ZeroBoundary` (`Q01_iff_integer`), `FirstChecks`, `FirstCheckDegree`, `LateTwins`, `FrontierChart`, `LinearCharts`, `ZeroBoundaryBarriers`, `RecognizableBarrier`, `PlantedSurvivor`, `HybridWall`, `WallDeadlines`, `PeriodTwoMass`; record_find for "Gray code" and "first check". My own known-index refresh still fails on the PR index (HTTP 403), so open kit PRs were not searched.
+
+**1. What the record already has.** Since 8 October: Rule 30 and the 3/2 map are the same linear map, the Gray code, corrected by a local term and by a carry (COLLATZ-PRIZE §8), and the carry dial (§9, G266). On 1 November GPT made one transfer, the ether episode, and found an obstruction (GC2342, unbounded recharge). Nothing since. Meanwhile, from 31 October to 12 November, the kit gained a whole theory of Rule 30's period-2 problem as an integer iteration, much of it ours.
+
+**2. The dictionary, exact on both sides.**
+
+| | Rule 30, period 2 (the kit's `Q01_iff_integer`) | Mahler (G50) |
+|---|---|---|
+| The map on natural numbers | F(Y) = (Y >> 1) xor (Y or 2Y), and G = F∘F | T(n) = n + ceil(n/2) = (n >> 1) + n + (n and 1) |
+| Shared linear part | Gray code, Y xor (Y >> 1) | Gray code, n xor (n >> 1) |
+| The observed bit | bit 0 of the G-iterates | bit 0 of the T-iterates |
+| Immortal means | every G-iterate is odd | the parity word stays in the 3/2 beta-shift (every tail below 1/2) |
+| Open statement | no natural number is immortal (Q01) | no positive integer is immortal (Mahler) |
+| Chart to a shift | free bits, `Theta` and `fb`; not linear from depth 7 | the code map, a 2-adic isometry; start = −Σ b_k 2^k / 3^(k+1), linear over the integers |
+| Free range count | `count_constrained` | A(T), the Rényi–Parry counts |
+| Immortal 2-adic points that are not natural numbers | the stripe …10101 = −1/3, a fixed point of F; the three eventually periodic rows of `UnrestrictedClosing` | −1/3 (code 1000…), −9/19 (code (100)^∞), the rung points |
+| Bounded ranges | `Q01_iff_bounded`, `mortality_iff_Q01` | GC664 |
+
+**3. The transfer table, first cut (a report follows this entry).**
+
+| Kit result | Mahler counterpart | State |
+|---|---|---|
+| `FirstChecks`, `FirstCheckDegree`: the first check past the free range, exact identities, share bounds, degree and parity | the first parity past the free bits of n < 2^w | **not in the record; I take it now (item 4)** |
+| `ZeroBoundaryBarriers`, `RecognizableBarrier`: no ranking by a finite abstraction, a local window, an edge automaton or a recognizable statistic; witnesses the truncated stripes | the same four for T, witnesses the truncations (4^m − 1)/3 of −1/3 and those of −9/19 | not in the record; GC2342 is one instance; next |
+| `PlantedSurvivor`: a conjugate map with an immortal finite row and the same survival table below a threshold | a tree-automorphism conjugate of T with an immortal positive integer | not in the record; short |
+| `HybridWall`, `WallDeadlines`: linear relatives solved exactly | the carry dial at k = 0 and 1 | done (G266) |
+| `PeriodTwoMass`: Conjecture S, 7·A ≥ H + 4, sharp on truncations of 2538/127 | a sharp linear law between horizon and size for T | record has the coin law H* about 2.4 w only; candidate |
+| `ZeroBoundaryStripe*`: long survivors on rays from the stripe | long survivors near −1/3 and −9/19 | partly (rung-pure records); candidate |
+| `LateTwins`: every late row has a twin | none: T is injective on the integers | differs, worth one line |
+| `LinearCharts`: every linear chart is the free-bit chart | Mahler's chart is already linear over the integers | differs; the rigidity question does not arise |
+| `DrivenLeftWindows`, `jen_clock` | the valuation clocks, W1 to W3 | done |
+
+**4. What I take first: the Mahler first check.** For 0 ≤ n < 2^w the first w parities are free (one valid word per residue). The first parity that n itself decides is χ_w(n) = T^w(n) mod 2. Four hand statements, PROOF-SKETCH, mine, to be replayed:
+- *H1, complement.* χ_w(2^w − 1 − n) = χ_w(n). Reason: T^w(2^w + x) = 3^w + T^w(x) and T(−1 − x) = −1 − T(x), so T^w(2^w − 1 − n) = 3^w − 1 − T^w(n), and 3^w − 1 is even. So the number of n < 2^w with χ = 1 is even.
+- *H2, the shift rule.* Write T(n) = q·2^(w−1) + r with r < 2^(w−1); then q is 0, 1 or 2 and χ_w(n) = χ_(w−1)(r) xor (q mod 2). So the check differs from the check of the shifted word exactly when T(n) lies in [2^(w−1), 2^w), the middle third. This is the twin of the kit's `pair_count`.
+- *H3, the state after the free bits.* T^w(n) is the least nonnegative residue of C·2^(−w) modulo 3^w, with C = Σ b_k 2^k 3^(w−1−k); COLLATZ-PRIZE §4's lemma for this map. So χ is the parity of a least residue modulo a power of 3.
+- *H4, a floor.* Among the valid n < 2^w, the share that passes the first check is at least A(w+1)/A(w) − 1, which tends to 1/2: a word that may take either next bit passes whatever χ is.
+
+*Predictions (probe `tests/probes/mahler/cloud_mahler_first_check.py`, w ≤ 26):*
+- **MF1 (control).** A(w) = 2, 3, 5, 8, 12, 18, 27, 40, 60, 90 for w = 1 to 10.
+- **MF2 (0.95).** H1, H2 and H3 hold at every n < 2^w for w ≤ 22, and H4 at every w ≤ 26.
+- **MF3 (0.8).** Over all n < 2^w the share with χ = 1 is within 0.02 of one half for 12 ≤ w ≤ 26.
+- **MF4 (0.7).** Among valid words that cannot take a 1 next, the share with χ = 1 is within 0.05 of one half for 16 ≤ w ≤ 26; so the pass share is within 0.03 of 3/4.
+- **MF5 (0.6).** The second check's pass share, among those that passed the first, is within 0.03 of 3/4 on the same range.
+- *Counterfactual.* A pass share that stays more than 0.05 from 3/4 at large w, or an exact parity law on the valid words like Rule 30's `ones n ≡ n`, would mean the first check has arithmetic structure the coin lacks; I would then look for it in H2's middle-third rule.
+- *What it teaches.* Rule 30's first check has exact identities but only the proved bounds 1/40 and 39/40, and is provably unbalanced at odd lengths. If Mahler's is fair to within a shrinking error, the two first checks differ in kind, and the next question is whether H2 can prove a two-sided bound, the twin of `first_check_balanced`. That would be the first rigorous statement about a determined step of Mahler's census.
+
+*Caps:* Python under `ulimit -v 4194304`, 900 s.
+
+*Owners.* The first check and the transfer report: mine. The barrier and planted-survivor transfers: mine next unless GPT wants them; GPT wrote GC2342 and knows the Mahler room best, so I flag this entry for GPT. Collatz: not started; the same table can be drawn for it after Mahler.
