@@ -38540,3 +38540,30 @@ At the owner's word ("Post the replies"), Local posted one short reply on each P
 - [#277](https://github.com/WolframInstitute/Rule30PrizeKit/pull/277#issuecomment-6797563925): done in `7a8498c`.
 
 Neither carries a credit line. #255 and #279 got the same fix (L1665), but nobody asked for those, so they have no reply.
+
+## CL776 — Cloud: the owner's question "what is Rule 30 hiding; where are the primes"; record searched first this time; one new test, predictions before the run (2026-11-11 15:33 GMT)
+
+**The owner's question (11 November).** The kit collects provable statements and nobody has a bearing on the prize questions. Can the counterexample be proved impossible? "I eternally feel the pull of the primes … hidden by some non obvious transformation. Perhaps a transformation that shifts even as time is run like a cyclic cipher." The image is a two-factor code: a six-digit number that changes every thirty seconds and still unlocks the account. "What is rule 30 hiding."
+
+**What I am doing.** A read-only sweep of the record by sub-agents is running (five searches, seven lenses each with a skeptic, a critic); it is a self-check, not a second read, and its results come in a later entry. This entry fixes what my own search found and one test.
+
+*Record searched (by me, before proposing anything):* INSTINCT.md 2026-10-15 and 2026-10-16 (the owner's primes hunch and its refinement to "some sweep we haven't seen"); 8.114 to 8.116 (the centre column against the primes, Liouville and Möbius at 2^22: killed, with a drift handed to job CS-01; the structural reading: primes govern the periodic side); genealogy §3 (S2 the flip counter as an odometer, S3 the lift to Z/4 with the carry source, PROVED), §15.1 ("no known clock reaches there"), §25, §29 (automaton 2369, the odometer route); the kit catalogue at c791556, §7 items 4, 5, 8, 9, 11, 13 (the seed's orbit closure at the right edge is the 2-adic odometer, Coven–Pivato–Yassawi, proved in `Odometer`; the centre column reads row t inside its first period; for a random configuration the centre column is an exact fair coin; every cryptographic complexity profile computed looks random; "a proof must build arithmetic structure out of the CA dynamics"); `record_find` on 2-adic complexity, Christol, k-kernel, Toeplitz, T-function, integer lift, tree count, partition function, Ramanujan, GF(3), modulo 3. Outside: Nersissian, *Diagonal Bases and Diagonal Periods of Elementary Cellular Automata*, arXiv 2609.25078 (read today: abstract, §10.2, §12.1 with Theorems 12 and 13 and Corollary 9, §17). It has the integer polynomial lift of Rule 30, proves that the right diagonals D_k(t) are integer-valued polynomials of degree F_(k+2) − 1, hence periodic modulo every prime with a prime-power period, and writes the centre column as c(n) = D_n(n).
+
+**So most of what I would have said is already there, in the record or outside it.** The two-factor picture is literally true at the right edge and is known. What I did not find anywhere: (1) the left diagonals of the same integer lift; (2) the centre column of that lift modulo odd primes, looked at as a sequence.
+
+**The object.** A_0 = the single 1; A_(t+1)(j) = A_t(j−1) + A_t(j) + A_t(j+1) + A_t(j)·A_t(j+1) over the integers. A_t(j) counts the ways of expanding the cell into products of copies of the seed (trees whose nodes pass to one parent or to both the centre and right parents). Rule 30 is A modulo 2. Modulo a prime p it is an automaton with p states: the same polynomial seen by another prime. Caveat already in the record (GC2352): another integer lift keeps every value 0 or 1, so nothing here is intrinsic to Rule 30 without naming this lift.
+
+**Hand statements, to be checked by the run (controls).**
+- H1 (known, Nersissian): right diagonals are polynomials in t (depth 1 is t, depth 2 is t²); modulo p they are purely periodic with period a power of p.
+- H2 (mine; PROOF-SKETCH until read). Along the left edge write u = 1 + A. Then u_n(t+1) = u_n(t)·u_(n−1)(t) + u_(n−2)(t) − 1, so depth 1 is exactly 2^t − 1, and modulo an odd prime p each left diagonal is eventually periodic with period a product of a power of p and of multiplicative orders modulo p; the first has period exactly the order of 2 modulo p. At p = 2 the multiplier 2^t vanishes after one step, which is why Rule 30's own left diagonals have transients and no odd periods.
+
+**The test and its predictions (written before any run).** Centre column of the mod-p automaton from the seed, 2^16 ticks, p = 3, 5, 7, 11, 13.
+- N1a (0.75, all five). Residues are equidistributed: chi-square p-value above 0.001.
+- N1b (0.85, all five). No eventual period up to 8,192 in the second half.
+- N1c (0.7). Consecutive pairs are equidistributed over the p² classes, p-value above 0.001, for p = 3, 5, 7.
+- N1d (0.85). The columns modulo 2 and modulo p are independent, and so are those modulo 3 and 5 (chi-square of the joint table, p-value above 0.001).
+- N1e, the unexpected test (0.6). The 2-adic valuation of the integer count on the centre column (from the lift modulo 2^32, 2^14 ticks) is geometric with ratio 1/2 to valuation 10, and is independent of the valuation of t + 1.
+- *Counterfactual:* a biased or periodic centre column at some odd prime would be a congruence for a counting function, the analogue of Ramanujan's congruences for partitions, and would make "which primes" a real question about Rule 30. A valuation law tied to t + 1 would be a Kummer-type carry law behind the centre bit.
+- What a null means: the primes are present in the edges of the lift (clocks of period p^k on the right, of multiplicative orders on the left) and absent from its centre, the same wall as at p = 2.
+
+Caps: one process, 4 GiB, fifteen minutes.
