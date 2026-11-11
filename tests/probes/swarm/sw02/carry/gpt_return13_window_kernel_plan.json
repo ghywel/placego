@@ -1,5 +1,5 @@
 {
-  "worker_stop": 110,
+  "worker_stop": 90,
   "include_outer_monitor_cpu": true,
   "input_sha256": {
     "tests/probes/swarm/sw02/carry/gpt_return13_binary_cert.py": "652b6bd02784000929ebf083eec881430bfe04b3f1eecc0a2822a494c5fd4e2f",
@@ -20,8 +20,8 @@
     "tests/probes/swarm/sw02/carry/gpt_return13_final_splits.py": "2d8b442944a564b116df0ba7d8a9745ee6d78000552ffcc76a008ccbb0176ba9",
     "tests/probes/swarm/sw02/carry/gpt_return13_join_kernel_factor.py": "44f990152e06d3a27c286937724434a2d2c38476354b72ffb1f0cb7724bfdbdc",
     "tests/probes/swarm/sw02/carry/gpt_return13_bridge_only.py": "c62d0267c8e486e10111e963cf3f9c2f704c820b5bcda6304790bb356ae776af",
-    "tests/probes/swarm/sw02/carry/gpt_return13_window_kernel.py": "4b3a7ec2b62c7e47785e3077cd2fd408826225adeaa26c99fe21350da387d20c",
-    "tests/probes/swarm/sw02/carry/P13WindowCoverage.lean.inc": "93875fac4b7ac52fa3ebe235a8ceee172a1c9f7a9e107fe7aa28ea691193c91d"
+    "tests/probes/swarm/sw02/carry/gpt_return13_window_kernel.py": "4673222da2fa85756c01fe7ecb2a2783eb02af91b784fa7ae62d91408d54e1a7",
+    "tests/probes/swarm/sw02/carry/P13WindowCoverage.lean.inc": "7796fa6be09a8755ad66cde8a38af0b212af1d9c0cc9d214ba9a21ccfee20ca0"
   },
   "prediction": {
     "conversion": "16-variable exact checker input with all 1216 blockers and 2931 additions; all three negative controls reject",
@@ -29,12 +29,12 @@
   },
   "counterfactual": "Stop and retain evidence on provenance mismatch, accepted mutation, native check, compilation, axiom or host failure. No new solver call, bulk factor build or P14.",
   "limits": {
-    "aggregate_cpu_s": 120,
-    "wall_s": 300,
+    "aggregate_cpu_s": 99,
+    "wall_s": 281,
     "tree_rss_mib": 8192,
     "max_procs": 8,
     "file_mib": 16,
-    "disk_mib": 128,
+    "disk_mib": 127,
     "launch_free_mib": 4096,
     "min_free_mib": 1024,
     "swap_growth_mib": 4096,
@@ -42,7 +42,7 @@
     "nice": 10,
     "inner_aggregate_stop_cpu_s": 95,
     "worker_soft_cpu_s": 12,
-    "worker_hard_cpu_s": 120,
+    "worker_hard_cpu_s": 99,
     "lean_child_cpu_s": 75,
     "lean_child_wall_s": 150
   },
@@ -54,7 +54,7 @@
         "tests/probes/swarm/sw02/carry/gpt_return13_window_kernel.py",
         "tests/probes/swarm/sw02/carry/gpt_return13_window_kernel_plan.json"
       ],
-      "cpu": 120,
+      "cpu": 99,
       "wall": 200,
       "required_stdout_lines": [
         "P13_CONDITIONAL_WINDOW_COVERAGE_KERNEL_CHECKED"
@@ -101,7 +101,7 @@
   "manifest_sha256": "3f1cc5f50123405458be92c5a5587d4108fd6936db4af491aaf1b1066d66a5a5",
   "lemma_source": {
     "file": "tests/probes/swarm/sw02/carry/P13WindowCoverage.lean.inc",
-    "sha256": "93875fac4b7ac52fa3ebe235a8ceee172a1c9f7a9e107fe7aa28ea691193c91d"
+    "sha256": "7796fa6be09a8755ad66cde8a38af0b212af1d9c0cc9d214ba9a21ccfee20ca0"
   },
   "coverage_cnf_sha256": "97d15983b45ae54d5df1da7a804ee13c76aea4f167f7f2459bc619e8b7bac0cd",
   "coverage_lrat_sha256": "69a712916a0bbfce6e10bb0fa64a218e34072437a9dd7ac5e0074ac97257531d",
@@ -113,6 +113,7 @@
   "expected": {
     "cnf_sha256": "7cd36b8e7c641d0382da05ef14ed0e79fdc204544103e4c235a894fb52661f40",
     "lrat_sha256": "a1149303d055bf5f2ff5f530c65167728ffe81f47212645179218198edf9e7d2",
-    "source_sha256": "1e9fd2ca76dbd2ffca488f8c5c5ceb4c8ece4ce6b0f5367d2a3457e120bab0dd"
-  }
+    "source_sha256": "0dcf09ca115f42e25707a84a9500231a0f09452915d46a9d58d0998c3efdaad0"
+  },
+  "repair": "GC2906 spent 20.135369 aggregate CPU seconds, 18.26 wall and 799377 bytes. Correct noncomputable occurrenceBlocker and add Bool.true_and to indices_ok. Shared original budget retained."
 }

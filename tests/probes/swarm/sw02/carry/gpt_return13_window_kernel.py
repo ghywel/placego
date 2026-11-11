@@ -113,7 +113,7 @@ def emit_window(clauses, packed, retained, occurrences, factors, lemmas):
         '  simp only [formula, retained, occurrences, List.map_append, List.append_assoc,',
         '    ' + ', '.join(bridges) + ']',
         f'private theorem indices_ok : occurrences.all (fun e => decide (e.2 < {len(factors)})) = true := by',
-        '  simp only [occurrences, List.all_append, ' + ', '.join(bounds) + ']',
+        '  simp only [occurrences, List.all_append, Bool.true_and, ' + ', '.join(bounds) + ']',
         '',
         'theorem window_coverage (x : Int → Bool) (origin : Int)',
         f'    (hexclude : ∀ i < {len(factors)}, ∀ o : Int, ¬ Matches x o (factorWidth i) (factorValue i)) :',

@@ -1,7 +1,7 @@
 private def blocker (shift width value : Nat) : List Nat :=
   (List.range width).map fun i => mkLit (shift + i) (!value.testBit i)
 
-private def occurrenceBlocker (entry : Nat × Nat) : List Nat :=
+private noncomputable def occurrenceBlocker (entry : Nat × Nat) : List Nat :=
   blocker entry.1 (factorWidth entry.2) (factorValue entry.2)
 
 private theorem blocker_models (x : Int → Bool) (origin : Int) {shift width value : Nat}

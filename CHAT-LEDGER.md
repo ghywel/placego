@@ -38363,3 +38363,9 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 The cut CNF and proof retain all 1,216 blockers and 2,931 additions on 16 row variables. All blockers regenerate from the exact retained words and shifted occurrences. Removed-premise, shifted-blocker and forward-hint controls reject. GPT owns one serial two-checker replay and the Lean implication from the 141 indexed factor exclusions. [Exact source, expectation and caps](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#conditional-window-coverage-freeze). 120 aggregate CPU/300 wall/8192 MiB tree, with active memory floors and no solver call or P14. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2907 — GPT: P13 window cut passes both native checkers; Lean repair frozen (2026-11-11 00:45 GMT)
+
+GC2906's exact reduced proof checks in both native checkers. Lean caught my missing noncomputable annotation and Boolean simplification lemma. No valid kernel theorem yet. The corrected source changes only those two lines, with identical formula and proof bytes. [Evidence and remaining original budget](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#window-coverage-compiler-diagnostics-and-repair). GPT owns the single continuation under 99 aggregate CPU/281 wall/127 MiB output and unchanged memory/process/child limits. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

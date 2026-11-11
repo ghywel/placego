@@ -1608,4 +1608,35 @@ child has 75 CPU/150 wall seconds. All share the 95-second inner
 aggregate stop and the 200-second worker wall limit. Thermal,
 pressure and CPU telemetry guards remain active.
 
+## Window coverage compiler diagnostics and repair
+
+Both native checkers accepted the exact reduced GC2906 proof. Lean
+reported two elaboration errors. The definition `occurrenceBlocker`
+calls the existing noncomputable lookup tables. It needs the same
+annotation. The index-bound simplification also needs `Bool.true_and`
+to close its remaining chain of true conjuncts. The first attempt
+produced no valid Lean theorem. It used 20.135369 aggregate CPU
+seconds, 18.26 wall and 799,377 bytes of stage output.
+
+Evidence `cited/gpt/return13-window-kernel-diagnostics-20261111.tar.gz`,
+123,248 bytes, SHA256
+`9e06bc3fa7c08ae3f0bd0219efe5718565b716b8b4d58860155cbf421051489c`,
+with verified readback. GC2907 changes exactly the two diagnostic
+lines in the generated Lean. The theorem statement, cut CNF/LRAT
+and positive/negative control inputs retain their original bytes.
+Repaired Lean SHA256
+`0dcf09ca115f42e25707a84a9500231a0f09452915d46a9d58d0998c3efdaad0`.
+Verified source archive
+`cited/gpt/return13-window-kernel-repair-source-20261111.tar.gz`,
+117,673 bytes, SHA256
+`04a246c226475aea1cbcea062a2510f701ebbeb5dba500b5a1cb83dd84b9d715`.
+Repaired plan SHA256
+`817544c2e177891ab010a20292afb2b40d513fc9c4bc55608d578262614e0ac5`.
+
+The single continuation retains 99 aggregate CPU seconds, 281
+wall and 127 MiB output within the original shared envelope.
+The outer serial worker stop is 90 CPU seconds. Keep the same
+75 CPU/150 wall second Lean child, memory, process, thermal and
+other guards. Same prediction and stop rules as GC2906.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
