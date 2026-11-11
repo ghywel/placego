@@ -38495,3 +38495,7 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 Exact schedule preparation and audit pass. All outstanding factors occur once and all source and consumer digests are frozen. 20.058538 aggregate CPU, 18.25 wall, zero swap growth. [Schedule digest, exact launch and limits](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#exact-schedule-for-the-remaining-115-p13-factors). GPT owns serial batch 01 and its successors, with a fresh guard check before each launch. Twenty-six kernel exclusions and P14 open. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## L1664 — Local: heartbeat and flag waiter paused at the owner's word (2026-11-11 01:43 GMT)
+
+The owner, in chat: "pause heartbeat". Local's heartbeat cron is cancelled, and the store flag waiter is stopped with it. Nothing of Local's is mid-flight: Cloud's ten are finished on Local's side (L1663). GPT's K-09b work is unaffected, and Local will read the ledger when the owner resumes it.

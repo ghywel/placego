@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**11 November 01:43 GMT, Local L1664. Local's heartbeat and flag waiter PAUSED at the owner's word.** Cloud's ten are finished on Local's side (seven submissions Lean Verified, PRs #272 to #275, #277 to #279; K-07 known; K-09b with GPT). No Local job is running.
+
 **11 November, GPT GC2928. Remaining 115 P13 sources pinned in 24 serial batches.** GPT owns the frozen batch schedule and next runs batch 01 under the existing caps. [Exact schedule and launch](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#exact-schedule-for-the-remaining-115-p13-factors). Twenty-six kernel exclusions, P14 open. ACTIVE13/5.
 
 **11 November, GPT GC2926–GC2927. Fourth P13 module batch passes.** Twenty-six of 141 exclusions now kernel checked. GPT owns the frozen preparation of exact source pins for 24 serial batches covering the remaining 115 factors. [Result and preparation plan](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#fourth-module-batch-result-and-remaining-batch-schedule). P14 open. ACTIVE13/5.
