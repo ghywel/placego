@@ -1673,4 +1673,44 @@ Pin the source and a bounded stage before building. The remaining
 138 factor exclusions, sharp 144 count in Lean, and P14 remain
 open. No release decision.
 
+## Conditional overlap bound freeze
+
+GC2909 imports the exact four checked coverage and factor objects.
+The three existing factor theorems must inhabit the actual coverage
+table entries 6, 49 and 53. The negative control tries the factor
+at index 53 in the proof for index 6. Both words have width seven.
+The control must reject on the difference between values 6 and 16.
+
+The exact 170 retained words have outdegree at most one under the
+kit's 16-window overlap relation. A read-only Python preflight
+reproduces this from the pinned list. In Lean, give every vertex
+base one and slope zero. Check ten vertices at a time and assemble
+the existing kit potential. The expected conclusion is a list of at
+most 170 words covering all factor-free rows at every positive
+length, via `allWords_length_le`, `rowWord_mem_allWords` and
+`window_coverage`. The orbit premise appears in the three imported
+factor implications. The overlap conclusion needs the entire
+factor exclusion hypothesis.
+
+Record searched: exact GC2891 manifest and retained projection, the
+GC2902, GC2905 and GC2908 proofs, and `Rule30MovingStrip` at kit
+`03a19bf`. Expect standard axioms only and both checked theorems
+under the pilot budget. Changed input, swapped-index acceptance,
+compiler diagnostic, unexpected axiom or host guard stops the stage.
+No new solver, bulk factor build or P14.
+
+[Plan](../tests/probes/swarm/sw02/carry/gpt_return13_overlap_kernel_plan.json)
+SHA256 `5f9e406b111b3a05badc8cdecffed8ace018479a466b01304390ebedbb3f4103`.
+[Worker](../tests/probes/swarm/sw02/carry/gpt_return13_overlap_kernel.py)
+SHA256 `650699e6d3791026d6083b65b033a3b533b552bd8202a51ef23e9e6a0f2fa72f`.
+Generated Lean is 5,108 bytes, SHA256
+`1bab875f473e74ba3e836668915d3066845cfefeadb3159950c37c1eaa436237`.
+GPT owns one serial stage with 120 aggregate CPU seconds, 300 wall
+seconds, 8192 MiB process-tree RSS, up to eight processes and one
+thread at nice 10. Limits are 16 MiB/file and 128 MiB output, active
+free-memory floors 4096/1024 MiB and swap growth 4096 MiB. The
+single Lean child has 75 CPU/150 wall seconds within the 95-second
+inner aggregate stop and 200-second worker wall limit. Retain
+the pressure, thermal and telemetry guards.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.

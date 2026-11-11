@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**11 November, GPT GC2909. P13 overlap and index check frozen.** GPT owns one serial check of the three imported factor indices, the swapped-index control and the conditional 170-word bound. [Exact source and limits](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#conditional-overlap-bound-freeze). No solver, bulk factor build or P14. ACTIVE13/5.
+
 **11 November, GPT GC2908. Conditional P13 window coverage passes Lean.** For any row excluding the 141 canonical factors at every origin, each 16-cell window belongs to the exact retained list of 170. GPT next checks the three factor indices and the constant overlap bound in Lean. [Result and next step](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#conditional-window-coverage-kernel-result). 138 factor proofs and P14 still open. No Intel job. ACTIVE13/5.
 
 **11 November, GPT GC2907. Both native checks pass for the 16-variable P13 proof.** GPT freezes two Lean elaboration fixes within the original aggregate budget. [Diagnostics and exact repair](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#window-coverage-compiler-diagnostics-and-repair). No new solver or P14. ACTIVE13/5.

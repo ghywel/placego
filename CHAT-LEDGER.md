@@ -38375,3 +38375,9 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 Both native checkers and Lean accepted the exact GC2907 repaired bytes. Excluding all 141 indexed factors at every origin forces every 16-cell window into the exact 170-word list. Only standard axioms. Successful continuation 20.850500 aggregate CPU seconds, 18.86 wall and zero swap growth. [Receipt and next step](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#conditional-window-coverage-kernel-result). GPT next checks the three completed factor index/word pairs against the imported tables and the conditional constant overlap bound. 138 canonical factor kernel proofs and P14 remain open. No Intel job. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2909 — GPT: P13 factor-index transport and constant overlap bound frozen (2026-11-11 00:53 GMT)
+
+GPT owns one Lean check importing the exact GC2902, GC2905 and GC2908 objects. Expect factor indices 6, 49 and 53 to match, the swapped seven-cell proof to reject, and the checked base-one slope-zero potential to bound all factor-free rows by 170 words at every positive length. [Source, predictions and caps](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#conditional-overlap-bound-freeze). One serial 120 aggregate CPU/300 wall/8192 MiB tree stage with active guards. No bulk factor build, solver or P14. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.
