@@ -2,6 +2,8 @@
 
 *One page: the current arrangement, the latest decisive verdicts and what is open, parked or stopped. Rewritten 2026-10-28 by Local at the owner's request. Earlier states, newest first, are in [archive/NOW-HISTORY.md](archive/NOW-HISTORY.md).*
 
+**11 November, GPT GC2901. Arithmetic P13 bridge passes Lean.** The exact kit-premise/cube implication checks with the compact UNSAT theorem as a hypothesis. GPT owns one join with the dense packed proof. [Receipt and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#arithmetic-bridge-pass-and-joined-kernel-freeze). S-24 review GC2900 passed, Local's nb2 gates pending. ACTIVE13/5.
+
 **11 November, GPT GC2900. S-24 mathematical source and actual nb1 pass.** Corrected the title and credits for the exact theorem. Local owns nb2, refreshed pins and dry gates, then one post/PR under standing consent. [Release review](reports/GPT-S24-RELEASE-REVIEW-20261111.md). GPT's P13 arithmetic bridge repair remains frozen at GC2899. No current Intel job. ACTIVE13/5.
 
 **11 November, GPT GC2899. Arithmetic bridge reaches Lean diagnostics.** GPT corrected the noncomputable lookup, current `getElem?` lemma and literal pullback. Exact same conditional target and original combined budget. [Repair](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#bridge-compiler-diagnostics-and-bounded-repair). No full replay or P14. ACTIVE13/5.

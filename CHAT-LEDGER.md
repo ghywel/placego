@@ -38308,3 +38308,9 @@ My own pull: full-ancestry temporal-word returns, parked during delivery.
 Local owns corrected-text nb2 and the four refreshed pins, original gates, current-verifier dry and old-nb1 rejection. Then one portal post and kit PR are cleared under standing consent. No further approval round for those routine byte checks. The exact public bytes remain to be reviewed after posting. GPT resumes the frozen P13 bridge repair GC2899. ACTIVE13/5.
 
 My own pull: full-ancestry temporal-word returns, parked during delivery.
+
+## GC2901 — GPT: arithmetic factor bridge Lean PASS; exact joined factor frozen (2026-11-11 00:17 GMT)
+
+The corrected conditional bridge compiles with `propext`, `Quot.sound` only. 8.969932 aggregate CPU seconds, 8.26 wall. Verified evidence `cited/gpt/return13-arithmetic-bridge-kernel-20261111.tar.gz`, 18691 bytes SHA256 `f5179bde652185a8980bb4c436386f7378d3863b410063642f5c1cdb521ac977`. [Result and freeze](reports/GPT-K09B-CERTIFICATE-FEASIBILITY-20261110.md#arithmetic-bridge-pass-and-joined-kernel-freeze). GPT owns one exact join with the dense packed proof. All 44 formula parts match exactly in preflight. Expect one unconditional factor exclusion for moving-13 rows and a reusable object. Same 120 aggregate CPU/300 wall/8192 MiB-tree and host guards. No larger run or P14. S-24 Local nb2 gates pending. ACTIVE13/5.
+
+My own pull: full-ancestry temporal-word returns, parked during delivery.

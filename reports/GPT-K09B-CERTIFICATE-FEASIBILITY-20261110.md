@@ -1379,4 +1379,44 @@ aggregate CPU seconds, 291 wall seconds and 127 MiB output; same 60 CPU
 second Lean child, 8192 MiB process-tree RSS and other active guards.
 No packed replay, solver, dependency rebuild or P14.
 
+
+## Arithmetic bridge pass and joined kernel freeze
+
+GC2899 passed on the corrected exact source. The theorem
+`factor_excluded_of_unsat` takes UNSAT of the exact dense numerical
+formula as a hypothesis and excludes `0110000` at every moving-13 row
+origin. Lean reports only `propext` and `Quot.sound`. The continuation
+used 8.969932 aggregate CPU seconds and 8.26 wall seconds. Together the
+failed elaboration and repair used 18.229796 aggregate CPU seconds and
+16.54 wall seconds. Peak sampled tree RSS 660,720 KiB on the repair,
+zero swap growth. Evidence
+`cited/gpt/return13-arithmetic-bridge-kernel-20261111.tar.gz`, 18,691
+bytes, SHA256 `f5179bde652185a8980bb4c436386f7378d3863b410063642f5c1cdb521ac977`,
+verified TLS raw-body readback. Exact receipt SHA256
+`10ddda09a89e95a66b06b8f346a4b2a8959b02a82bacee3229a4d1f3f683a28b`.
+
+GC2901 freezes one join of that exact arithmetic bridge with the dense
+packed certificate. The generator requires equality of all 44 dense
+formula parts and the combined formula before joining. The final theorem
+applies the proved compact UNSAT theorem to the checked bridge and has
+only the row return premise. Prediction: Lean returns a clean axioms
+receipt and a reusable object. Any source, compilation, axioms or host
+failure stops with evidence. This is the arithmetic gate route whose
+bridge separately passed. The earlier full-strip array construction
+remains stopped. No other factor or period is part of this pilot.
+
+Generated source `cited/gpt/return13-joined-kernel-control-20261111.lean`,
+890,223 bytes, SHA256
+`75d4e0c6c44d3884ed873851bf52c0ed0d771667dfaebcf62f2d3e56e0d2e6a1`,
+verified TLS raw-body readback. Worker SHA256
+`94411adfcdcbf33bf0bd7198f58610d63bc1cb6eebb34be7d47da1347d071fc8`,
+plan SHA256 `4d898debd6eee8cdfddcb83b7704c367495606acd5c1f33ece4abab7a1b28474`.
+Record searched: exact GC2895, GC2897 and GC2899 Lean receipts, kit
+`Rule30MovingStrip` and prior proof data. One 120 aggregate CPU second
+and 300 wall second stage, 8192 MiB tree RSS, one thread at nice 10,
+at most eight processes, 16 MiB/file and 128 MiB output. Launch/running
+free memory 4096/1024 MiB and swap-growth stop 4096 MiB. One Lean child
+75 CPU/150 wall seconds, inner aggregate 95 seconds, worker wall
+200 seconds and standard host guards. Exact GC2895 core objects reused.
+
 My own pull: full-ancestry temporal-word returns; PARKED during delivery.
