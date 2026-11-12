@@ -58,7 +58,7 @@ def nonsmall_bound(k):
     """N(k): the least possible number of indices u < k with ||y_u|| >= 1/5, from the run lemma."""
     u, cnt = 0, 1
     while True:
-        lim = u + 2 + math.log(2.0 ** (u + 3) / 5) / math.log(1.5)
+        lim = u + 2 + ((u + 3) * math.log(2.0) - math.log(5.0)) / math.log(1.5)
         nxt = math.ceil(lim) - 1          # the largest integer strictly below lim
         if nxt >= k:
             return cnt
@@ -101,6 +101,17 @@ def best_product(k, beam=4000, cap=20000000):
     return best[0], best[1], nodes, True
 
 
+def explicit_bound(rho):
+    """min over H of rho (1 + ln(H)/2) + 1/sqrt(2 (H - 1)): the bound of steps 3 and 4 with rho* = rho."""
+    best = (1.0, 0)
+    for e in range(2, 400):
+        H = 10 ** (e / 10.0)
+        v = rho * (1 + 0.5 * math.log(H)) + 1 / math.sqrt(2 * (H - 1))
+        if v < best[0]:
+            best = (v, H)
+    return best
+
+
 def main():
     kb = int(sys.argv[1]) if len(sys.argv) > 1 else 22
     kbb = int(sys.argv[2]) if len(sys.argv) > 2 else 64
@@ -122,7 +133,9 @@ def main():
         h = np.arange(M, dtype=np.int64)
         worst = max(worst, float(np.abs(F - 2 ** w * r[(h * g) % M]).max()) / 2 ** w)
     print('   largest | |FT(h)| / 2^w - rho_w(h 3^-w) | over every h, w = 1..12: %.2e' % worst)
-    r1 = worst < 1e-9
+    pars = max(abs(float((rho_all(w) ** 2).sum()) - 2.0) for w in range(1, 15))
+    print('   Parseval: | sum over all h of rho_w(h)^2 - 2 | for w = 1..14: %.2e' % pars)
+    r1 = worst < 1e-9 and pars < 1e-9
     print('R1: %s' % r1)
 
     print('\n== R2 the two-sided Fourier bound against the exact arc extremes (every multiplier)')
@@ -175,14 +188,17 @@ def main():
           % (min(ratios), max(ratios), kb, min(steps), max(steps)))
     print('   by search over the bits of n (branch and bound):')
     prev = None
-    for k in [16, 20, 22, 24, 28, 32, 40, 48, 56, 64]:
+    for k in [16, 20, 22, 24, 28, 32, 40, 48, 56, 64, 72, 80]:
         if k > kbb:
             break
         p, n, nodes, done = best_product(k)
         chk = '' if k not in star else '   (brute force %.6e)' % star[k][0]
         rate = '' if prev is None else '   per step since k = %d: %.4f' % (prev[0], (p / prev[1]) ** (1.0 / (k - prev[0])))
-        print('   k = %2d: rho* %s %.6e, nodes %d%s%s   proved bound cos(pi/5)^N = %.4f'
-              % (k, '=' if done else '>=', p, nodes, chk, rate, math.cos(math.pi / 5) ** nonsmall_bound(k)))
+        eb = explicit_bound(p) if done else (float('nan'), 0)
+        print('   k = %2d: rho* %s %.6e, nodes %d%s%s   proved bound cos(pi/5)^N = %.4f;   '
+              'so |O_w/2^w - 1/2| <= %.5f for every w >= %d (H = %.0f)'
+              % (k, '=' if done else '>=', p, nodes, chk, rate, math.cos(math.pi / 5) ** nonsmall_bound(k),
+                 eb[0], k, eb[1]))
         prev = (k, p)
         sys.stdout.flush()
 

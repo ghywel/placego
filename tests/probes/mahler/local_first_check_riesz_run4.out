@@ -1,0 +1,56 @@
+== R1 the Fourier transform of Y_w against the product
+   largest | |FT(h)| / 2^w - rho_w(h 3^-w) | over every h, w = 1..12: 2.22e-16
+R1: True
+
+== R2 the two-sided Fourier bound against the exact arc extremes (every multiplier)
+   k =  3: lower 0.24610 <= certified half-width 0.37500 <= upper 0.44607   ok
+   k =  4: lower 0.18932 <= certified half-width 0.31250 <= upper 0.36962   ok
+   k =  5: lower 0.16219 <= certified half-width 0.25000 <= upper 0.34398   ok
+   k =  6: lower 0.15694 <= certified half-width 0.21875 <= upper 0.30681   ok
+   k =  7: lower 0.14840 <= certified half-width 0.20312 <= upper 0.26937   ok
+   k =  8: lower 0.13044 <= certified half-width 0.19141 <= upper 0.21753   ok
+   k =  9: lower 0.09660 <= certified half-width 0.16211 <= upper 0.18960   ok
+   k = 10: lower 0.09585 <= certified half-width 0.14648 <= upper 0.17102   ok
+   k = 11: lower 0.09419 <= certified half-width 0.13574 <= upper 0.15462   ok
+   k = 12: lower 0.09054 <= certified half-width 0.12817 <= upper 0.14034   ok
+   k = 13: lower 0.08269 <= certified half-width 0.11560 <= upper 0.12450   ok
+R2: True
+   the same upper bound holds for the true O_w, w = 2..20: True
+
+== R3 the largest product rho*_k
+   k =  3: rho* = 0.543184 at n = 5   half-width / rho* = 0.690
+   k =  4: rho* = 0.419887 at n = 5   ratio to k-1: 0.7730   half-width / rho* = 0.744
+   k =  5: rho* = 0.360149 at n = 27   ratio to k-1: 0.8577   half-width / rho* = 0.694
+   k =  6: rho* = 0.348605 at n = 109   ratio to k-1: 0.9679   half-width / rho* = 0.628
+   k =  7: rho* = 0.329644 at n = 237   ratio to k-1: 0.9456   half-width / rho* = 0.616
+   k =  8: rho* = 0.289761 at n = 493   ratio to k-1: 0.8790   half-width / rho* = 0.661
+   k =  9: rho* = 0.214587 at n = 965   ratio to k-1: 0.7406   half-width / rho* = 0.755
+   k = 10: rho* = 0.212932 at n = 1989   ratio to k-1: 0.9923   half-width / rho* = 0.688
+   k = 11: rho* = 0.209245 at n = 1989   ratio to k-1: 0.9827   half-width / rho* = 0.649
+   k = 12: rho* = 0.201121 at n = 1989   ratio to k-1: 0.9612   half-width / rho* = 0.637
+   k = 13: rho* = 0.183694 at n = 10181   ratio to k-1: 0.9134   half-width / rho* = 0.629
+   k = 14: rho* = 0.148535 at n = 26565   ratio to k-1: 0.8086   half-width / rho* = 0.684
+   k = 15: rho* = 0.130007 at n = 34541   ratio to k-1: 0.8753   half-width / rho* = 0.654
+   k = 16: rho* = 0.111298 at n = 13285   ratio to k-1: 0.8561
+   k = 17: rho* = 0.102807 at n = 144357   ratio to k-1: 0.9237
+   k = 18: rho* = 0.085443 at n = 406501   ratio to k-1: 0.8311
+   k = 19: rho* = 0.068128 at n = 1042373   ratio to k-1: 0.7973
+   k = 20: rho* = 0.060754 at n = 222731   ratio to k-1: 0.8918
+   k = 21: rho* = 0.054971 at n = 2849261   ratio to k-1: 0.9048
+   k = 22: rho* = 0.054971 at n = 7043565   ratio to k-1: 1.0000
+R3 half-width / rho* for k = 8..15 lies in [0.629, 0.755] (predicted inside [0.3, 3]); step ratios for k = 11..22 lie in [0.797, 1.000] (predicted inside [0.80, 0.92])
+   by search over the bits of n (branch and bound):
+   k = 16: rho* = 1.112976e-01, nodes 97   (brute force 1.112976e-01)   proved bound cos(pi/5)^N = 0.5295
+   k = 20: rho* = 6.075392e-02, nodes 343   (brute force 6.075392e-02)   per step since k = 16: 0.8596   proved bound cos(pi/5)^N = 0.5295
+   k = 22: rho* = 5.497093e-02, nodes 430   (brute force 5.497093e-02)   per step since k = 20: 0.9512   proved bound cos(pi/5)^N = 0.5295
+   k = 24: rho* = 5.496756e-02, nodes 432   per step since k = 22: 1.0000   proved bound cos(pi/5)^N = 0.5295
+   k = 28: rho* = 5.486419e-02, nodes 438   per step since k = 24: 0.9995   proved bound cos(pi/5)^N = 0.5295
+   k = 32: rho* = 5.226367e-02, nodes 481   per step since k = 28: 0.9879   proved bound cos(pi/5)^N = 0.5295
+   k = 40: rho* = 2.466529e-02, nodes 2137   per step since k = 32: 0.9104   proved bound cos(pi/5)^N = 0.4284
+   k = 48: rho* = 1.044033e-02, nodes 11807   per step since k = 40: 0.8981   proved bound cos(pi/5)^N = 0.4284
+   k = 56: rho* = 4.069909e-03, nodes 77881   per step since k = 48: 0.8889   proved bound cos(pi/5)^N = 0.4284
+   k = 64: rho* = 2.424794e-03, nodes 220133   per step since k = 56: 0.9373   proved bound cos(pi/5)^N = 0.4284
+
+== R4 the run lemma, every odd n mod 2^(k+1), k = 20
+   ||y_u|| >= 2^-(u+2): True;  growth by 3/2 inside a run: True;  non-small count >= N(k) for every k <= 20: True (least count at k = 20: 4, N(20) = 3);  rho*_k <= cos(pi/5)^N(k), k <= 22: True
+R4: True

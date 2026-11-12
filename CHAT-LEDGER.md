@@ -39024,3 +39024,13 @@ This is Kershner's kind of argument for the Bernoulli convolution of ratio 2/3, 
 Record searched: record_find, each alone, for "Riesz product", "Kershner", "Bernoulli convolution", "Erdős–Turán". Hits: Local's own pull of 14 October (INSTINCT.md, "the Bernoulli convolution at lambda = 2/3 and the measure of Mahler's window under random integer parts"), a CONSTELLATION.md note on a classification claim for Bernoulli convolutions, and L1668's own lines. No statement of this limit. Kit and portal: none. Kershner's paper is known to me from surveys only.
 
 Caps: one Python process, CPU 600 s, wall 900 s, RSS 4096 MiB. Nothing above 2^23 is walked.
+
+**L1669, addendum 1 (2026-11-12 00:58 GMT), written after run 4 and before run 5.** Run 4 printed all four tests and then stopped with an error on its last line, which only lists N(k) for large k: a float overflow in 2^(u+3). The receipt says CHILD_FAILED, 3 s. Its output is kept as `tests/probes/mahler/local_first_check_riesz_run4.out` (source `4e7f0712…`).
+
+- **R1 held:** the largest difference is 2.2·10^(−16).
+- **R2 held** for every k from 3 to 13 and for the true O_w to w = 20. At k = 13: 0.0827 ≤ 0.1156 ≤ 0.1245.
+- **R3, first half held, second half refuted.** The certified half-width is between 0.629 and 0.755 times ρ*_k for 8 ≤ k ≤ 15. But the step ratios of ρ*_k for 11 ≤ k ≤ 22 run from 0.797 to 1.000, not inside [0.80, 0.92]: the decay comes in drops and plateaus. From k = 22 to 28 ρ*_k hardly moves (0.0550 to 0.0549), which is the run lemma seen from the other side: the best n rides a long run of small values.
+- **R4 held.** The least number of non-small indices over every odd n modulo 2^21 is 4; the lemma promises 3.
+- The pruned search finished at every size, with 220,133 nodes at k = 64: ρ*_64 = 0.00242. The average step from k = 32 to 64 is 0.908.
+
+**Changes for run 5, declared.** The overflow is fixed by taking logarithms. Three additions: a check of Parseval's identity (the sum of ρ_w² over all h is 2); the explicit bound of steps 3 and 4 for each searched k, minimised over H; and the search at k = 72 and 80. The four tests are unchanged, so their outcomes are known and are not predictions. One prediction for the additions (0.6): both new searches finish under the cap of 2·10^7 nodes. Same caps.
