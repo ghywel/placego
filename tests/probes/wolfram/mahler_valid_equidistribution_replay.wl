@@ -90,3 +90,11 @@ nsRow[w_] := Module[{unit, rho, okRel = True, okGrow = True, okFloor = True, okC
    Do[If[Count[tab, {a0, n_} /; n <= l] > (2 w)^(l - 1), okCount = False], {a0, 0, w - 1}, {l, 1, w}];
    {w, okRel, okGrow, okFloor, okCount, Min[Cases[tab, {0, n_} :> n]]}];
 Print["Lemmas N and F {w, relation, growth by 3/2, floor, count, least NS over odd h}: ", nsRow[10], " ", nsRow[12]];
+
+(* Added with the report: Proposition M (the Fejer majorant) at w = m + j = 12 and 16, j = 1 .. 6. *)
+majRow[w_] := Module[{s = validStarts[w], n, g, rows},
+   n = Length[s];
+   g = Table[Abs[Total[Exp[2. Pi I Mod[h s, 2^w]/2^w]]]/n, {h, 1, 63}];
+   rows = Table[{Count[s, x_ /; x < 2^(w - j)], N[(Pi^2/4) n 2^-j (1 + 2 Total[g[[;; 2^j - 1]]])]}, {j, 1, 6}];
+   {w, And @@ (#[[1]] <= #[[2]] & /@ rows), Round[Min[#[[2]]/#[[1]] & /@ rows], 0.001], rows[[All, 1]]}];
+Print["Proposition M {w, holds for j = 1..6, least bound/count, counts}: ", majRow[12], " ", majRow[16]];
