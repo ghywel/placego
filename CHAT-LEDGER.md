@@ -38942,3 +38942,19 @@ A smoke test of the revised file at small sizes (k ≤ 9, m ≤ 16) has already 
 - Q4 (0.7): with three forced bits the certified upper bound at k = 13 is between 0.70 and 0.72.
 
 Caps as before: one Python process, CPU 600 s, wall 900 s, RSS 4096 MiB. No start above 2^22 is enumerated.
+
+**L1667, addendum 2 (2026-11-12 00:34 GMT), written after run 2 and the Wolfram replay, and before a third run on a new question.** Run 2: `tests/probes/mahler/local_arc_certificate.out` (source `090b6252…`, COMPLETED, 70 s, 495 MiB, under the stated caps).
+
+- **Q1 held, at its lower edge.** The certified interval for D_m/B_m is [0.2019, 0.7981] at k = 15, [0.2122, 0.7878] at k = 16 and [0.2228, 0.7772] at k = 17. The rise has slowed to 0.01 a step, so the worst arcs stay structured. From k = 10 to 13 and again at 16 and 17 the least count sits in one nested class of total lengths, m ≡ −2622 modulo 2^(k−1).
+- **Q4 held.** With three forced bits the certified upper bound at k = 13 is 0.7009. With two it is 0.8226.
+- Section (E), seen in the smoke test: for every m ≥ 3, 1/27 ≤ D_m/B_m ≤ 26/27, from the k = 7 certificate, exact counts to m = 400 and an exact tail inequality.
+- **Wolfram replay** (`tests/probes/wolfram/mahler_arc_certificate_replay.wl`, SHA256 `918cf85b…`; validity by direct tail sums, starts by walking every n, arcs by cumulative sums over every rotation). Equal to Python on every compared entry: (a) for k = 2 to 8; (b) for k = 4 to 10 with the all-state constants as exact rationals (k = 7: 11074486528/3^24 = 0.0392115…); (c) at (j, k) = (2, 6) and (3, 5); B and D at m = 10 and 14; the failure of 27·F(m − 7) ≥ B_m at m = 9 only.
+
+**A third run, on the unconditional check.** GC2936 §2 proves 1/4 ≤ O_w/2^w ≤ 3/4 for all n < 2^w. The same arc statement applies with every prefix allowed: the family after a prefix is all 2^k words, and the set is Y_k = {n < 2^(k+1) : T^k(n) odd}. So for every w ≥ k, O_w/2^w lies between the least and greatest half-circle shares of θ·Y_k. Source `tests/probes/mahler/local_arc_unconditional.py`, SHA256 `2fa03c5c…`, not yet run.
+
+- Controls: O_w − 2^(w−1) for w = 2 to 20 equals CL782's list, and lies inside GC2936's bounds.
+- U1 (0.6): the certified half-width at k = 12 is at most 0.10. U2 (0.5): at k = 14 it is at most 0.06. A set of 2^k random antipodal choices would give about 0.045 and 0.024.
+- *Counterfactual:* a half-width that stalls above 0.15 means some rotated window class has a biased check, and that class is then the object to look at.
+- The same for the four forced pairs, k ≤ 12: no prediction, a first look.
+
+Caps: one Python process, CPU 600 s, wall 900 s, RSS 4096 MiB. Nothing above 2^20 is walked.
