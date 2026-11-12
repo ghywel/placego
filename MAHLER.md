@@ -11,6 +11,13 @@ PRIOR-ART.md ("Mahler's 3/2 problem: survey at the room switch").*
 
 **No proof, nothing claimed.**
 
+**12 November 2026, L1667–L1668:** [the first check is balanced on both sides](reports/LOCAL-MAHLER-ARC-CERTIFICATE-20261112.md).
+For every m ≥ 3 the valid words of length m that cannot take a 1 have forced parity 1 in a share between
+1/27 and 26/27, and eventually between 0.2228 and 0.7772; GC2936's pairing lemma holds with |R_m| ≥ F(m − 6);
+the unconditional check lies between 0.415 and 0.585 from w = 15. Hand steps are PROOF-SKETCH (Local) awaiting
+a carrying read; the finite certificates are COMPUTED. This bounds a fixed number of checks. It is not a
+route to extinction, and the report says why.
+
 **11 November 2026, CL782 / GC2936:** [Kit-to-Mahler review](reports/GPT-MAHLER-TRANSFER-REVIEW-20261111.md).
 Cloud's first-check identities, recognizable-ranking barrier and planted-survivor construction are
 PROVED two-party at the corrected scopes. GPT's new unconditional 1/4–3/4 check bound, conditional
@@ -1357,4 +1364,24 @@ Mahler twins.
 
 Nothing here touches Mahler's conjecture. Open next: the two-sided bound; a sharp linear law between horizon
 and size (the twin of the kit's Conjecture S); whether long survivors lie on rays from -1/3 and -9/19.
+
+## The first check is balanced on both sides (Local, L1667 and L1668, 12 November)
+
+**Status:** hand arguments PROOF-SKETCH (Local, awaiting a carrying read); finite tables COMPUTED, exact, and
+replayed in Wolfram at the smaller sizes. [Report](reports/LOCAL-MAHLER-ARC-CERTIFICATE-20261112.md).
+
+- *The arc statement.* Write a word as p″s, with the prefix of length l. The starts r″ + 2^l t, t < 2^k, have
+  continuations equal to the parity words of x″ + 3^l t, x″ = T^l(r″). So the number of them whose continuation
+  lies in a set W of words of length K is the number of points of 3^(-l) N_K(W) in an arc of 2^k consecutive
+  residues of Z/2^K. The prefix is a rotation and a multiplier.
+- *Theorem A.* With B_m the valid words of length m that cannot take a 1, D_m those with forced parity 1, and
+  F the count of full words: F(m - 7) <= D_m <= B_m - F(m - 7) for m >= 7, and 1/27 <= D_m/B_m <= 26/27 for
+  every m >= 3. The certificate is 14 points in Z/256 with every cyclic gap at most 121, for the 64 powers of 3.
+- *Theorem B, GC2936's lemma.* |R_m| >= F(m - 6) for m >= 6: four points in Z/16, by hand.
+- *Larger tables.* D_m/B_m is eventually in [0.2228, 0.7772]; the share of valid starts passing the first
+  check is eventually in [0.611, 0.889] (measured 0.75); at most 0.823 pass two checks and 0.701 pass three.
+  Over all n < 2^w the check has share in [0.415, 0.585] for every w >= 15.
+- *Limits.* Some arc always holds a survivor, so the method gives no extinction and no exponent below
+  Flatto's. The certified constants converge slowly; four predictions that assumed random-like worst
+  rotations were refuted. The limit 1/2 is open.
 

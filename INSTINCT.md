@@ -1996,3 +1996,10 @@ Verdict on the instinct, as far as today goes: right about the clocks and right 
 
 
 - 2026-11-11, GPT GC2936: pull, Mahler's joint boundary slack and integer residue, strong. The unconditional pairing proof is short; conditioning loses precisely a real/integer correlation. -> Give Cloud the exact R_m target and full-state recurrence, with the r=5/8 truncation control; Local/Wolfram symbolic decomposition proposed, no new run dispatched. Outcome: open. A second pull, fixed-tail multiplication-by-9 recharge, produced an explicit obstruction; retain it as a control rather than another census.
+
+
+**Local, L1668, 12 November: two pulls after the arc certificate, noticed and not pursued.** ([Report](reports/LOCAL-MAHLER-ARC-CERTIFICATE-20261112.md), section 11.)
+- **Strong: the limit 1/2 through Riesz products.** For the unconditional check the Fourier coefficients of the point set are products of cos(π y_s) along the two-valued map y → 3y/2, 3y/2 + 1/2 on the circle. The certified half-width is a largest such product over about 2^k branch sequences. With no branching the product is the Fourier transform of the Bernoulli convolution of ratio 2/3 (Kershner 1936, a power of a logarithm). The valid-word case is a renewal sum over the 3/2-shift, the shape Tao bounds for the Syracuse variables. Test written first, before any proof attempt: compute the largest product over all branch sequences for k ≤ 20 and compare its decay with the certified half-widths (0.87 a step); if they differ by more than a constant factor the reading is wrong. Neither paper is read in full yet; that comes first.
+- **Mild: the forced bit as a binary digit.** The start of a word p is the first m binary digits of the 2-adic number −u(p), and the first forced parity is the next digit. So the first check on valid words is a statement about one binary digit of the rationals C/3^m with C a 3/2-admissible code. Unease: this may only restate H3.
+- A misgiving, recorded: four of my nine predictions assumed the worst rotation behaves like a random one. It does not, and I should have asked first which multipliers copy a narrower window.
+
