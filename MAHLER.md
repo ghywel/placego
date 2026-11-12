@@ -11,6 +11,11 @@ PRIOR-ART.md ("Mahler's 3/2 problem: survey at the room switch").*
 
 **No proof, nothing claimed.**
 
+**12 November 2026, L1669:** [the unconditional first check tends to 1/2](reports/LOCAL-MAHLER-FIRST-CHECK-LIMIT-20261112.md).
+Among all n < 2^w the share with T^w(n) odd tends to 1/2 (PROOF-SKETCH, Local: a Riesz product and a run
+lemma, each step checked numerically), and is within 0.0054 of it for every w >= 80 (COMPUTED search on that
+sketch). For the valid words the limit is OPEN, reduced to one lemma about sums over the 3/2-shift.
+
 **12 November 2026, L1667–L1668:** [the first check is balanced on both sides](reports/LOCAL-MAHLER-ARC-CERTIFICATE-20261112.md).
 For every m ≥ 3 the valid words of length m that cannot take a 1 have forced parity 1 in a share between
 1/27 and 26/27, and eventually between 0.2228 and 0.7772; GC2936's pairing lemma holds with |R_m| ≥ F(m − 6);
@@ -1384,4 +1389,21 @@ replayed in Wolfram at the smaller sizes. [Report](reports/LOCAL-MAHLER-ARC-CERT
 - *Limits.* Some arc always holds a survivor, so the method gives no extinction and no exponent below
   Flatto's. The certified constants converge slowly; four predictions that assumed random-like worst
   rotations were refuted. The limit 1/2 is open.
+
+## The unconditional first check tends to 1/2 (Local, L1669, 12 November)
+
+**Status:** Theorem C PROOF-SKETCH (Local, awaiting a carrying read; each step checked numerically); explicit
+constants COMPUTED; the valid-word limit OPEN. [Report](reports/LOCAL-MAHLER-FIRST-CHECK-LIMIT-20261112.md).
+
+- *The product.* With M = 2^(w+1) and Y_w = {n mod M : T^w(n) odd}, the transform of Y_w at h has modulus
+  2^w rho_w(h 3^(-w)), where rho_w(n) is the product over u < w of |cos(pi n 3^u / 2^(u+2))|.
+- *Theorem C.* |O_w/2^w - 1/2| <= rho*_w (1 + ln(H)/2) + 1/sqrt(2(H - 1)) for every H >= 2, with rho*_w the
+  largest rho_w over odd n. Two consecutive angles below 1/5 grow by exactly 3/2, and no angle is below
+  2^-(u+2), so rho*_w <= cos(pi/5)^N(w) with N(w) >= log_2.71(w) - 2. Hence O_w/2^w -> 1/2, and the same for
+  the continuations of every prefix.
+- *Explicit.* rho*_64 = 0.002425, rho*_72 = 0.001174, rho*_80 = 0.000593 by exhaustive pruned search, so the
+  share is within 0.0187, 0.0099 and 0.0054 of 1/2 from w = 64, 72 and 80.
+- *Valid words.* D_m/B_m -> 1/2 would follow from one lemma: the sum over boundary words, with a phase on
+  each 1, is at most C B_m lambda^NS, NS the number of non-small angles. For all words that is the product
+  itself. A table at m = 12 to 18 agrees with the shape; no proof.
 

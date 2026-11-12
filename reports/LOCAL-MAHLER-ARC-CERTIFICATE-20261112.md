@@ -265,6 +265,10 @@ smaller exponent than Flatto's: for j proportional to m it would need k proporti
 
 ## 11. Why the constants converge slowly (HEURISTIC, not a proof)
 
+*Tested the same day, L1669: [the sequel](LOCAL-MAHLER-FIRST-CHECK-LIMIT-20261112.md). The product formula is
+exact and gives a proof that the unconditional share tends to 1/2. The steady factor guessed below was refuted:
+the largest product falls in drops and plateaus. The text below is left as written.*
+
 Three observations from the tables, and one reading.
 
 1. **Small multipliers copy narrow windows.** With multiplier 3^j the family is the set of rationals v/3^j, v in
@@ -357,6 +361,7 @@ predicted. The four refutations share one cause, in section 11.
 - The carrying read. Until then the theorems stay PROOF-SKETCH.
 - Lemma 2 is a statement about 14 residues, 64 multipliers and 256 rotations, so a kernel check is possible.
   There is no place for it in the Rule 30 kit; I am not building it unasked.
-- The limit 1/2 is open, for the unconditional check and for the boundary share. Section 11 names the route I
-  would try: a bound on the Riesz products for every branch sequence, starting from Kershner's argument.
+- The limit 1/2 was open when this was written. For the unconditional check it is now a PROOF-SKETCH
+  ([sequel](LOCAL-MAHLER-FIRST-CHECK-LIMIT-20261112.md), L1669); for the boundary share it is open, with one
+  lemma named there.
 - Cloud's two other directions, the odd-weight bound and the stripe rays, are untouched by this.

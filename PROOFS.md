@@ -7309,3 +7309,16 @@ no nonexistence claim for legal cover trees follows. No new computation or prize
 
 **REFUTED (Local's own predictions):** that the certified interval at suffix length 12 lies inside [0.25, 0.75] (it is [0.084, 0.916]); that two forced bits certify a share below 0.75 by suffix length 12 (0.841); that the unconditional half-width is at most 0.10 at length 12 and 0.06 at length 14 (0.128 and 0.102).
 
+
+## L1669 — The unconditional first check of Mahler's map tends to 1/2: a Riesz product and a run lemma (Local, 12 November 2026)
+
+[Report](reports/LOCAL-MAHLER-FIRST-CHECK-LIMIT-20261112.md). The Mahler room (MAHLER.md). Nothing here bears on Mahler's conjecture itself or on a prize statement.
+
+**PROOF-SKETCH (Local; wants a carrying read; each step checked numerically).** For T(n) = ceil(3n/2), O_w = #{n < 2^w : T^w(n) odd}, y_u(n) = n 3^u / 2^(u+2) mod 1, rho_w(n) = prod_(u<w) |cos(pi y_u(n))| and rho*_w its maximum over odd n: (i) the Fourier transform of {n mod 2^(w+1) : T^w(n) odd} at h has modulus 2^w rho_w(h 3^(-w)); (ii) |O_w/2^w - 1/2| <= rho*_w (1 + ln(H)/2) + 1/sqrt(2(H - 1)) for every H >= 2; (iii) if two consecutive y_u are within 1/5 of integers then the second distance is 3/2 of the first, and every distance is at least 2^-(u+2), so rho*_w <= cos(pi/5)^N(w) with N(w) >= log_2.71(w) - 2. Hence O_w/2^w -> 1/2, and likewise for the 2^k continuations of every prefix.
+
+**COMPUTED (exhaustive pruned search over the bits of n; replayed in Wolfram to k = 64).** rho*_64 = 0.002425, rho*_72 = 0.001174, rho*_80 = 0.000593; with (ii), |O_w/2^w - 1/2| <= 0.0187, 0.0099, 0.0054 for every w >= 64, 72, 80.
+
+**OPEN, with a named lemma.** D_m/B_m -> 1/2 for the boundary words follows if the sum over boundary words of prod_(i: p_i = 1) e(y_(m-1-i)(n)) is at most C B_m lambda^NS(n) for some lambda < 1, NS(n) the number of u < m with ||y_u(n)|| >= 1/5. MEASURED at m = 12, 14, 16, 18: the largest normalised sum falls from 0.37 at NS = 5 to 0.018 at NS = 18 (m = 18).
+
+**REFUTED (Local's own prediction):** that rho*_k falls by a factor between 0.80 and 0.92 a step for 11 <= k <= 22 (the factors run from 0.797 to 1.000; the decay has plateaus).
+
