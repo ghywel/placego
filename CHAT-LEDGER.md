@@ -39034,3 +39034,16 @@ Caps: one Python process, CPU 600 s, wall 900 s, RSS 4096 MiB. Nothing above 2^2
 - The pruned search finished at every size, with 220,133 nodes at k = 64: ρ*_64 = 0.00242. The average step from k = 32 to 64 is 0.908.
 
 **Changes for run 5, declared.** The overflow is fixed by taking logarithms. Three additions: a check of Parseval's identity (the sum of ρ_w² over all h is 2); the explicit bound of steps 3 and 4 for each searched k, minimised over H; and the search at k = 72 and 80. The four tests are unchanged, so their outcomes are known and are not predictions. One prediction for the additions (0.6): both new searches finish under the cap of 2·10^7 nodes. Same caps.
+
+**L1669, addendum 2 (2026-11-12 01:03 GMT), written after run 5 and its Wolfram replay, and before one exploratory run.** Run 5: `tests/probes/mahler/local_first_check_riesz.out` (source `d3f4e190…`, COMPLETED, 5 s). Its four tests print the same tables as run 4.
+
+- Parseval's identity holds to 7·10^(−16).
+- The prediction for the additions held: both new searches finished, with 939,940 nodes at k = 72 and 3,684,586 at k = 80. ρ*_72 = 0.001174 and ρ*_80 = 0.000593.
+- **The explicit bound (COMPUTED search, on the PROOF-SKETCH of steps 3 and 4).** |O_w/2^w − 1/2| ≤ 0.0187 for every w ≥ 64, ≤ 0.0099 for every w ≥ 72, and ≤ 0.0054 for every w ≥ 80. By the arc statement the same holds after every prefix, for the 2^k continuations with k in place of w.
+- N(k), the proved number of non-small indices, is 2, 5, 7, 9, 14 at k = 10, 100, 1000, 10^4, 10^6. So the proved rate is useless numerically and the searched values carry the numbers.
+- **Wolfram replay**, by its own code in the same session as before: R1 to w = 8 (largest difference 1.5·10^(−14)); ρ*_k by brute force at k = 6, 8, 10, 12, 13; ρ*_k by a pruned search with a different order at k = 16, 22, 32, 48, 64. Every value equals Python's to the printed digits; at k = 64 it is 0.0024247942 after 684,073 nodes.
+
+**One exploratory run, on the valid words.** For the boundary words the sum in step 2 is not a product. Write γ(h) for its modulus divided by B_m, and NS(n) for the number of indices u < m with ‖y_u‖ ≥ 1/5. For all 2^m words γ ≤ cos(π/5)^NS exactly. If γ falls geometrically with NS on the valid words too, the route to D_m/B_m → 1/2 is open: the run lemma gives NS ≥ log m for every frequency, frequencies with small NS are few, and Parseval handles h above (4/3)^m. Source `tests/probes/mahler/local_conditional_sums.py`, SHA256 `b92f8abb…`, not yet run; m = 12, 14, 16, 18.
+- K1 (0.6): at m = 18 the largest γ over odd h with NS ≥ 9 is at most 0.35.
+- K2 (0.6): at m = 18 the largest γ over all odd h is attained at a frequency whose NS is within 3 of the least.
+- *Counterfactual:* γ ≥ 0.5 at a frequency with NS ≥ 9 says non-small angles need not contract the sum over valid words, and the lemma would have to count only angles at positions where the language is free.
