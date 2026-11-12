@@ -196,7 +196,7 @@ def test_T1(lev):
     say('flips at sites, w = 3 .. 16, three classes: %d checked, %d fail (valid, same state, same sites)' % (nflip, bad))
     worst_a = worst_f = 0.0
     viol = 0
-    slack = 1.0
+    slack = float('inf')
     for w in range(8, 15):
         R, st, W, FM = lev[w]
         A = len(W)
@@ -419,10 +419,10 @@ def test_T3(lev):
         if (b1[nz] > b2[nz] * (1 + 1e-12)).any():
             okG2 = False
         j = int(np.argmax(np.where(nz, gam / b1, 0)))
-        say('w = %d: least NS %d (Lemma N floor %.2f at a = 0), Lemma F worst count/bound %.3f; '
+        say('w = %d: least NS over odd h %d (Lemma N floor %.2f), over all h != 0 %d; Lemma F worst count/bound %.3f; '
             'largest gamma/bound1 = %.4f at h = %d (gamma %.4f, |U| = %d); least |U| = %d, largest bound1 = %.4f'
-            % (w, int(NS[nz].min()), math.log(w / 0.85) / math.log(2.71), worstF, float(gam[j] / b1[j]), j,
-               float(gam[j]), int(usize[j]), int(usize[nz].min()), float(b1[nz].max())))
+            % (w, int(NS[nz & (val == 0)].min()), math.log(w / 0.85) / math.log(2.71), int(NS[nz].min()), worstF,
+               float(gam[j] / b1[j]), j, float(gam[j]), int(usize[j]), int(usize[nz].min()), float(b1[nz].max())))
         tab = []
         for k in range(int(usize[nz].min()), int(usize[nz].max()) + 1):
             c = nz & (usize == k)

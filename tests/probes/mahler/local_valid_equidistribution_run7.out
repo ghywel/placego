@@ -1,0 +1,107 @@
+L1670 probe.  d = 1010000010010010100000000010000001000010...
+F(0..12) = [1, 1, 1, 2, 3, 4, 6, 9, 13, 20, 30, 44, 67]
+   census at w = 0: 1 words (0 s)
+   census at w = 8: 40 words (0 s)
+   census at w = 16: 1018 words (0 s)
+   census at w = 24: 26111 words (0 s)
+   census at w = 32: 669182 words (0 s)
+   census at w = 40: 17150425 words (8 s)
+--- controls
+C1 census sizes equal the renewal sums A(w), B_w for every w <= 26: True, True
+C2 starts and words equal a direct walk of every n < 2^w, w <= 16: True
+   m = 10: B = 46, D = 26 (CL782: 46, 26)
+   m = 14: B = 226, D = 112 (CL782: 226, 112)
+   m = 18: B = 1144, D = 561 (CL782: 1144, 561)
+   m = 22: B = 5804, D = 2924 (CL782: 5804, 2924)
+C3 (B, D) equal CL782 at m = 10, 14, 18, 22: True
+C4 least F(n)(2/3)^n for n <= 400: 4/9 = 0.444444 at n = 2; hand floor prod(1 - (2/3)^k) = 0.069272; v_400 = 0.517015063
+CONTROLS HELD: C1 to C4
+--- T1: Lemma T (toggles)
+flips at sites, w = 3 .. 16, three classes: 12008 checked, 0 fail (valid, same state, same sites)
+w = 8 .. 14, every h: |G from starts - G from angles| <= 3.99e-13; |G - sum of fibre products| <= 2.62e-13
+   |G(h)| <= sum_q prod_sites |cos|: 0 violations; least ratio bound/|G| over h != 0: 1.0000
+T1 HELD: Lemma T on every word and frequency tested
+--- T2: Lemma R (renewal inequality), lambda = cos(pi/5) = 0.809017, K_hand = 72.7214, mu_hand = 0.994748
+E_s(r) by the formula equals a brute-force count for s <= 8, r <= 10: True
+sharp series K(r), r = 3 .. 400 (s < 700): sup = 13.371865 at r = 5; K(3) = 5.4340, K(4) = 8.5084, K(5) = 13.3719, K(6) = 9.9140, K(400) = 11.510147; mu* = 0.971435
+histograms of site counts: 39864 pairs (t, U), t <= 26; at t = 26: 12664 sets, 19582 full words
+identity (a) as integer polynomials in lambda: 0 failures
+V(t;U'') <= K V(i;U'') F(t-i-3): largest ratio seen 9.0000 (K_hand 72.72, sharp series 13.3719); 0 above K_hand
+V(t;U) <= mu^|U| F(t): 0 failures with mu_hand, 0 with mu* = 1 - 2 kappa/K*
+   t = 12: largest per-site factor 0.94869 at U = [2]
+   t = 16: largest per-site factor 0.95064 at U = [2, 11]
+   t = 20: largest per-site factor 0.94980 at U = [2, 15]
+   t = 24: largest per-site factor 0.94966 at U = [2]
+   t = 26: largest per-site factor 0.94970 at U = [2, 21]
+T2 HELD: Lemma R: identity, the K inequality and the bound, every 3-separated U, t <= 26
+T2-sharpness HELD: largest per-site factor at t = 26 is 0.9497 (predicted 0.93 to 0.96); K* = 13.372 (predicted 12 to 14)
+--- T3: one frequency (Lemmas N and F, and the bound of step 3)
+w = 10: least NS 1 (Lemma N floor 2.47 at a = 0), Lemma F worst count/bound 1.000; largest gamma/bound1 = 0.4654 at h = 128 (gamma 0.4121, |U| = 1); least |U| = 1, largest bound1 = 0.9491
+   |U| : largest gamma / largest bound1   1: 0.412/0.949, 2: 0.318/0.912, 3: 0.179/0.837
+w = 12: least NS 1 (Lemma N floor 2.66 at a = 0), Lemma F worst count/bound 1.000; largest gamma/bound1 = 0.4594 at h = 512 (gamma 0.4071, |U| = 1); least |U| = 1, largest bound1 = 0.9487
+   |U| : largest gamma / largest bound1   1: 0.407/0.949, 2: 0.345/0.909, 3: 0.200/0.864, 4: 0.163/0.759
+w = 14: least NS 1 (Lemma N floor 2.81 at a = 0), Lemma F worst count/bound 1.000; largest gamma/bound1 = 0.4620 at h = 2048 (gamma 0.4097, |U| = 1); least |U| = 1, largest bound1 = 0.9493
+   |U| : largest gamma / largest bound1   1: 0.410/0.949, 2: 0.345/0.905, 3: 0.224/0.866, 4: 0.142/0.819
+w = 16: least NS 1 (Lemma N floor 2.94 at a = 0), Lemma F worst count/bound 1.000; largest gamma/bound1 = 0.4588 at h = 8192 (gamma 0.4068, |U| = 1); least |U| = 1, largest bound1 = 0.9497
+   |U| : largest gamma / largest bound1   1: 0.407/0.950, 2: 0.343/0.905, 3: 0.224/0.864, 4: 0.170/0.815, 5: 0.115/0.746
+T3 HELD: Lemma N True, Lemma F True, gamma <= bound1 True, bound1 <= 6.2 mu^|U| True
+--- T4: the largest deviation over intervals of the valid starts (Theorem V, measured)
+   w : A(w), sup(count/A - length/2^w), sup(length/2^w - count/A), over all intervals, times sqrt(A)
+    4 :         8  0.12500  0.12500  0.25000  0.707
+    6 :        18  0.16493  0.00694  0.17188  0.729
+    8 :        40  0.09297  0.05078  0.14375  0.909
+   10 :        90  0.03077  0.05879  0.08956  0.850
+   12 :       201  0.01122  0.03508  0.04630  0.656
+   14 :       452  0.01971  0.01618  0.03589  0.763
+   16 :      1018  0.01415  0.00493  0.01908  0.609
+   18 :      2291  0.01218  0.00235  0.01452  0.695
+   20 :      5157  0.00784  0.00272  0.01057  0.759
+   22 :     11606  0.00493  0.00640  0.01133  1.221
+   24 :     26111  0.00214  0.00241  0.00455  0.735
+   26 :     58750  0.00051  0.00196  0.00246  0.597
+   28 :    132186  0.00061  0.00094  0.00155  0.563
+   30 :    297413  0.00023  0.00067  0.00090  0.491
+   32 :    669182  0.00008  0.00066  0.00074  0.605
+   34 :   1505660  0.00037  0.00016  0.00053  0.645
+   36 :   3387733  0.00019  0.00018  0.00037  0.681
+   38 :   7622411  0.00011  0.00003  0.00015  0.407
+   40 :  17150425  0.00008  0.00001  0.00008  0.337
+   ratios over four steps: 8: 0.322, 12: 0.412, 16: 0.554, 20: 0.431, 24: 0.340, 28: 0.477, 32: 0.501, 36: 0.220
+T4 HELD: thresholds at w = 12, 16, 20, 24: True; every four-step ratio <= 0.75: True
+--- the first check on valid words: D_m/B_m (V1)
+   8: 13/20 = 0.65000, 12: 48/100 = 0.48000, 16: 245/509 = 0.48134, 20: 1329/2578 = 0.51552, 24: 6604/13054 = 0.50590, 28: 33113/66095 = 0.50099, 32: 167051/334594 = 0.49926, 36: 846854/1693860 = 0.49996
+   33: 0.49972, 34: 0.49986, 35: 0.50031, 36: 0.49996, 37: 0.49990, 38: 0.49999, 39: 0.49985, 40: 0.49990
+--- T5: the share of valid words of length m that pass j more checks, against (3/4)^j (V2)
+   m = 12 (A = 201): 0.7612 0.5672 0.4378 0.3433 0.3085 0.2637 0.2289 0.1841
+   m = 16 (A = 1018): 0.7593 0.5747 0.4322 0.3173 0.2367 0.1798 0.1385 0.1061
+   m = 20 (A = 5157): 0.7423 0.5631 0.4221 0.3139 0.2319 0.1739 0.1328 0.0987
+   m = 24 (A = 26111): 0.7471 0.5592 0.4187 0.3156 0.2368 0.1779 0.1324 0.0977
+   m = 28 (A = 132186): 0.7495 0.5617 0.4210 0.3144 0.2358 0.1772 0.1326 0.0990
+   m = 32 (A = 669182): 0.7504 0.5630 0.4225 0.3170 0.2379 0.1784 0.1338 0.1003
+   (3/4)^j          : 0.7500 0.5625 0.4219 0.3164 0.2373 0.1780 0.1335 0.1001
+   direct walk m = 12: A = 201; survivors after m + j steps, j = 0, 4, 8, 12, 16, 20: [201, 69, 37, 10, 2, 1] (9 s)
+   direct walk m = 16: A = 1018; survivors after m + j steps, j = 0, 4, 8, 12, 16, 20: [1018, 323, 108, 48, 17, 4] (10 s)
+   direct walk m = 20: A = 5157; survivors after m + j steps, j = 0, 4, 8, 12, 16, 20: [5157, 1619, 509, 146, 43, 11] (10 s)
+   direct walk m = 24: A = 26111; survivors after m + j steps, j = 0, 4, 8, 12, 16, 20: [26111, 8240, 2550, 805, 262, 82] (10 s)
+   direct walk m = 28: A = 132186; survivors after m + j steps, j = 0, 4, 8, 12, 16, 20: [132186, 41557, 13092, 4180, 1344, 384] (18 s)
+   census and direct walk agree on every S(m, m + j) both computed: True
+T5 HELD: largest |share - (3/4)^j| for m = 20, 24, 28, 32 and j <= 8: 0.0077 (limit 0.02); at m = 32: 0.0007 (limit 0.005)
+--- T6: the small frequencies, gamma_w(h) for 0 < h < 64
+   w = 12: largest 0.12219 at h = 44; 1/sqrt(A) = 0.07053; gamma at h = 1, 2, 3, 9, 27: 0.00670 0.02931 0.01829 0.05727 0.08467
+   w = 16: largest 0.05516 at h = 12; 1/sqrt(A) = 0.03134; gamma at h = 1, 2, 3, 9, 27: 0.00662 0.01954 0.00931 0.01122 0.03655
+   w = 20: largest 0.04115 at h = 56; 1/sqrt(A) = 0.01393; gamma at h = 1, 2, 3, 9, 27: 0.00183 0.01000 0.00825 0.00648 0.00039
+   w = 24: largest 0.01269 at h = 48; 1/sqrt(A) = 0.00619; gamma at h = 1, 2, 3, 9, 27: 0.00113 0.00069 0.00065 0.00948 0.00972
+   w = 28: largest 0.00335 at h = 15; 1/sqrt(A) = 0.00275; gamma at h = 1, 2, 3, 9, 27: 0.00068 0.00158 0.00110 0.00039 0.00169
+   w = 32: largest 0.00289 at h = 5; 1/sqrt(A) = 0.00122; gamma at h = 1, 2, 3, 9, 27: 0.00025 0.00024 0.00025 0.00030 0.00092
+   w = 36: largest 0.00073 at h = 12; 1/sqrt(A) = 0.00054; gamma at h = 1, 2, 3, 9, 27: 0.00024 0.00015 0.00021 0.00005 0.00066
+   w = 40: largest 0.00060 at h = 13; 1/sqrt(A) = 0.00024; gamma at h = 1, 2, 3, 9, 27: 0.00001 0.00001 0.00001 0.00003 0.00010
+T6 HELD: largest gamma over 0 < h < 64: 0.00289 at w = 32 (limit 0.03), 0.00060 at w = 40 (limit 0.01)
+--- no prediction: the longest-lived n >= 1 below 2^m (life = number of valid parities)
+   m = 12: longest life 28 = m + 16, at n = [149]; left at the end: 1 (n = 0 only expected); int64 walk to step 48
+   m = 16: longest life 38 = m + 22, at n = [8101]; left at the end: 1 (n = 0 only expected); int64 walk to step 52
+   m = 20: longest life 46 = m + 26, at n = [690773]; left at the end: 1 (n = 0 only expected); int64 walk to step 56
+   m = 24: longest life 58 = m + 34, at n = [13272845]; left at the end: 1 (n = 0 only expected); int64 walk to step 60
+   m = 28: longest life 60 = m + 32, at n = [119104516, 124868429]; left at the end: 1 (n = 0 only expected); int64 walk to step 54
+--- constants: K_hand = 72.7214, mu_hand = 0.994748, K* = see T2, mu* = 0.971435
+failures: none
+done in 18 s

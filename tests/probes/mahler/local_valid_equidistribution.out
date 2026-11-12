@@ -19,7 +19,7 @@ CONTROLS HELD: C1 to C4
 --- T1: Lemma T (toggles)
 flips at sites, w = 3 .. 16, three classes: 12008 checked, 0 fail (valid, same state, same sites)
 w = 8 .. 14, every h: |G from starts - G from angles| <= 3.99e-13; |G - sum of fibre products| <= 2.62e-13
-   |G(h)| <= sum_q prod_sites |cos|: 0 violations; least ratio bound/|G| over h != 0: 1.0000
+   |G(h)| <= sum_q prod_sites |cos|: 0 violations; least ratio bound/|G| over h != 0: 1.1429
 T1 HELD: Lemma T on every word and frequency tested
 --- T2: Lemma R (renewal inequality), lambda = cos(pi/5) = 0.809017, K_hand = 72.7214, mu_hand = 0.994748
 E_s(r) by the formula equals a brute-force count for s <= 8, r <= 10: True
@@ -36,13 +36,13 @@ V(t;U) <= mu^|U| F(t): 0 failures with mu_hand, 0 with mu* = 1 - 2 kappa/K*
 T2 HELD: Lemma R: identity, the K inequality and the bound, every 3-separated U, t <= 26
 T2-sharpness HELD: largest per-site factor at t = 26 is 0.9497 (predicted 0.93 to 0.96); K* = 13.372 (predicted 12 to 14)
 --- T3: one frequency (Lemmas N and F, and the bound of step 3)
-w = 10: least NS 1 (Lemma N floor 2.47 at a = 0), Lemma F worst count/bound 1.000; largest gamma/bound1 = 0.4654 at h = 128 (gamma 0.4121, |U| = 1); least |U| = 1, largest bound1 = 0.9491
+w = 10: least NS over odd h 4 (Lemma N floor 2.47), over all h != 0 1; Lemma F worst count/bound 1.000; largest gamma/bound1 = 0.4654 at h = 128 (gamma 0.4121, |U| = 1); least |U| = 1, largest bound1 = 0.9491
    |U| : largest gamma / largest bound1   1: 0.412/0.949, 2: 0.318/0.912, 3: 0.179/0.837
-w = 12: least NS 1 (Lemma N floor 2.66 at a = 0), Lemma F worst count/bound 1.000; largest gamma/bound1 = 0.4594 at h = 512 (gamma 0.4071, |U| = 1); least |U| = 1, largest bound1 = 0.9487
+w = 12: least NS over odd h 4 (Lemma N floor 2.66), over all h != 0 1; Lemma F worst count/bound 1.000; largest gamma/bound1 = 0.4594 at h = 512 (gamma 0.4071, |U| = 1); least |U| = 1, largest bound1 = 0.9487
    |U| : largest gamma / largest bound1   1: 0.407/0.949, 2: 0.345/0.909, 3: 0.200/0.864, 4: 0.163/0.759
-w = 14: least NS 1 (Lemma N floor 2.81 at a = 0), Lemma F worst count/bound 1.000; largest gamma/bound1 = 0.4620 at h = 2048 (gamma 0.4097, |U| = 1); least |U| = 1, largest bound1 = 0.9493
+w = 14: least NS over odd h 4 (Lemma N floor 2.81), over all h != 0 1; Lemma F worst count/bound 1.000; largest gamma/bound1 = 0.4620 at h = 2048 (gamma 0.4097, |U| = 1); least |U| = 1, largest bound1 = 0.9493
    |U| : largest gamma / largest bound1   1: 0.410/0.949, 2: 0.345/0.905, 3: 0.224/0.866, 4: 0.142/0.819
-w = 16: least NS 1 (Lemma N floor 2.94 at a = 0), Lemma F worst count/bound 1.000; largest gamma/bound1 = 0.4588 at h = 8192 (gamma 0.4068, |U| = 1); least |U| = 1, largest bound1 = 0.9497
+w = 16: least NS over odd h 4 (Lemma N floor 2.94), over all h != 0 1; Lemma F worst count/bound 1.000; largest gamma/bound1 = 0.4588 at h = 8192 (gamma 0.4068, |U| = 1); least |U| = 1, largest bound1 = 0.9497
    |U| : largest gamma / largest bound1   1: 0.407/0.950, 2: 0.343/0.905, 3: 0.224/0.864, 4: 0.170/0.815, 5: 0.115/0.746
 T3 HELD: Lemma N True, Lemma F True, gamma <= bound1 True, bound1 <= 6.2 mu^|U| True
 --- T4: the largest deviation over intervals of the valid starts (Theorem V, measured)
@@ -80,8 +80,8 @@ T4 HELD: thresholds at w = 12, 16, 20, 24: True; every four-step ratio <= 0.75: 
    m = 32 (A = 669182): 0.7504 0.5630 0.4225 0.3170 0.2379 0.1784 0.1338 0.1003
    (3/4)^j          : 0.7500 0.5625 0.4219 0.3164 0.2373 0.1780 0.1335 0.1001
    direct walk m = 12: A = 201; survivors after m + j steps, j = 0, 4, 8, 12, 16, 20: [201, 69, 37, 10, 2, 1] (9 s)
-   direct walk m = 16: A = 1018; survivors after m + j steps, j = 0, 4, 8, 12, 16, 20: [1018, 323, 108, 48, 17, 4] (10 s)
-   direct walk m = 20: A = 5157; survivors after m + j steps, j = 0, 4, 8, 12, 16, 20: [5157, 1619, 509, 146, 43, 11] (10 s)
+   direct walk m = 16: A = 1018; survivors after m + j steps, j = 0, 4, 8, 12, 16, 20: [1018, 323, 108, 48, 17, 4] (9 s)
+   direct walk m = 20: A = 5157; survivors after m + j steps, j = 0, 4, 8, 12, 16, 20: [5157, 1619, 509, 146, 43, 11] (9 s)
    direct walk m = 24: A = 26111; survivors after m + j steps, j = 0, 4, 8, 12, 16, 20: [26111, 8240, 2550, 805, 262, 82] (10 s)
    direct walk m = 28: A = 132186; survivors after m + j steps, j = 0, 4, 8, 12, 16, 20: [132186, 41557, 13092, 4180, 1344, 384] (18 s)
    census and direct walk agree on every S(m, m + j) both computed: True
