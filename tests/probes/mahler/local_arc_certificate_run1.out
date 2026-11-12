@@ -1,0 +1,171 @@
+digits of 1 in base 3/2: 1010000010010010100000000010000001000010
+C0 slack rule = direct tail sums = tower automaton, and counts = renewal A(n), n <= 14: True
+   A(1..10) = [2, 3, 5, 8, 12, 18, 27, 40, 60, 90] (census: 2, 3, 5, 8, 12, 18, 27, 40, 60, 90)
+C1 N_12 and T^12 against a direct walk on every valid word of length 12: True
+
+== (a) residues of r modulo 3 on the boundary continuations of a full word
+   k =  2: |S_k| =    1, multipliers     2, least number of gaps prime to 3: 1, guaranteed starts off any one residue: 0   FAILS at theta in [1, 3]
+   k =  3: |S_k| =    2, multipliers     2, least number of gaps prime to 3: 1, guaranteed starts off any one residue: 0   FAILS at theta in [1]
+   k = 4, theta =  1: points [6, 8, 9, 13], gaps [2, 1, 4, 9]
+   k = 4, theta = 11: points [2, 3, 8, 15], gaps [1, 5, 7, 3]
+   k = 4, theta =  9: points [1, 5, 6, 8], gaps [4, 1, 2, 9]
+   k = 4, theta =  3: points [2, 7, 8, 11], gaps [5, 1, 3, 7]
+   k =  4: |S_k| =    4, multipliers     4, least number of gaps prime to 3: 3, guaranteed starts off any one residue: 1
+   k =  5: |S_k| =    6, multipliers     8, least number of gaps prime to 3: 3, guaranteed starts off any one residue: 1
+   k =  6: |S_k| =    9, multipliers    16, least number of gaps prime to 3: 5, guaranteed starts off any one residue: 2
+   k =  7: |S_k| =   14, multipliers    32, least number of gaps prime to 3: 6, guaranteed starts off any one residue: 4
+   k =  8: |S_k| =   20, multipliers    64, least number of gaps prime to 3: 9, guaranteed starts off any one residue: 6
+   k =  9: |S_k| =   30, multipliers   128, least number of gaps prime to 3: 13, guaranteed starts off any one residue: 10
+   k = 10: |S_k| =   46, multipliers   256, least number of gaps prime to 3: 21, guaranteed starts off any one residue: 18
+   k = 11: |S_k| =   67, multipliers   512, least number of gaps prime to 3: 31, guaranteed starts off any one residue: 27
+   k = 12: |S_k| =  100, multipliers  1024, least number of gaps prime to 3: 50, guaranteed starts off any one residue: 44
+P1 (a) holds at k = 4 for every multiplier and rotation: True
+
+== (b) first check: deaths among the boundary continuations, per prefix state
+   k =  2: full state |S| =    1, deaths between    0 and    1 for every prefix; all states: D/B eventually in [0.0000, 1.0000]   (weights carried: 1.000000 of 1)
+   k =  3: full state |S| =    2, deaths between    0 and    2 for every prefix; all states: D/B eventually in [0.0000, 1.0000]   (weights carried: 1.000000 of 1)
+   k =  4: full state |S| =    4, deaths between    0 and    4 for every prefix; all states: D/B eventually in [0.0000, 1.0000]   (weights carried: 1.000000 of 1)
+   k =  5: full state |S| =    6, deaths between    0 and    6 for every prefix; all states: D/B eventually in [0.0000, 1.0000]   (weights carried: 1.000000 of 1)
+   k =  6: full state |S| =    9, deaths between    0 and    9 for every prefix; all states: D/B eventually in [0.0000, 1.0000]   (weights carried: 1.000000 of 1)
+   k =  7: full state |S| =   14, deaths between    1 and   13 for every prefix; all states: D/B eventually in [0.0392, 0.9608]   (weights carried: 1.000000 of 1)
+   k =  8: full state |S| =   20, deaths between    1 and   19 for every prefix; all states: D/B eventually in [0.0396, 0.9604]   (weights carried: 1.000000 of 1)
+   k =  9: full state |S| =   30, deaths between    1 and   29 for every prefix; all states: D/B eventually in [0.0397, 0.9603]   (weights carried: 1.000000 of 1)
+   k = 10: full state |S| =   46, deaths between    3 and   43 for every prefix; all states: D/B eventually in [0.0519, 0.9481]   (weights carried: 1.000000 of 1)
+   k = 11: full state |S| =   67, deaths between    6 and   61 for every prefix; all states: D/B eventually in [0.0681, 0.9319]   (weights carried: 1.000000 of 1)
+   k = 12: full state |S| =  100, deaths between   10 and   90 for every prefix; all states: D/B eventually in [0.0841, 0.9159]   (weights carried: 1.000000 of 1)
+   k = 13: full state |S| =  152, deaths between   21 and  131 for every prefix; all states: D/B eventually in [0.1157, 0.8843]   (weights carried: 1.000000 of 1)
+   k = 14: full state |S| =  226, deaths between   44 and  182 for every prefix; all states: D/B eventually in [0.1639, 0.8361]   (weights carried: 1.000000 of 1)
+P2 least k whose full-state family is never all-equal: 7 (predicted <= 8)
+P3 certified interval at k = 12: [0.0841, 0.9159] (predicted inside [0.25, 0.75])
+   the certificate at k = 7: points theta N(s1) in Z/256 and their largest cyclic gap (<= 128)
+      theta =   1: [16, 21, 45, 56, 78, 101, 116, 132, 134, 137, 141, 158, 192, 216]  largest gap 56
+      theta = 171: [7, 15, 26, 44, 47, 64, 72, 104, 119, 124, 130, 131, 138, 176]  largest gap 87
+      theta =  57: [5, 24, 46, 94, 100, 101, 120, 125, 129, 144, 173, 192, 212, 214]  largest gap 48
+      theta =  19: [8, 40, 43, 48, 64, 87, 119, 127, 143, 156, 186, 202, 204, 242]  largest gap 38
+      theta = 177: [16, 29, 52, 62, 68, 88, 125, 133, 166, 184, 185, 192, 213, 238]  largest gap 37
+      theta =  59: [64, 71, 95, 106, 108, 127, 147, 176, 188, 200, 215, 226, 232, 250]  largest gap 70
+      theta = 105: [36, 49, 109, 117, 144, 148, 152, 157, 192, 206, 213, 246, 248, 254]  largest gap 60
+      theta =  35: [12, 39, 48, 64, 71, 82, 136, 154, 168, 170, 187, 207, 220, 223]  largest gap 54
+      theta =  97: [4, 13, 16, 56, 69, 109, 142, 192, 198, 216, 222, 233, 244, 245]  largest gap 50
+      theta = 203: [23, 64, 66, 72, 74, 104, 163, 167, 172, 175, 176, 207, 218, 252]  largest gap 59
+      theta = 153: [22, 24, 69, 84, 93, 110, 120, 141, 144, 158, 192, 225, 228, 229]  largest gap 49
+      theta =  51: [8, 23, 28, 31, 40, 47, 48, 64, 75, 76, 122, 138, 178, 247]  largest gap 69
+      theta =  17: [16, 25, 46, 88, 93, 101, 126, 180, 181, 184, 192, 196, 230, 253]  largest gap 54
+      theta =  91: [31, 42, 60, 64, 119, 162, 176, 179, 186, 200, 231, 232, 236, 255]  largest gap 55
+      theta = 201: [14, 20, 54, 62, 77, 85, 125, 144, 145, 152, 164, 181, 192, 248]  largest gap 56
+      theta =  67: [18, 48, 64, 90, 92, 106, 111, 127, 136, 140, 168, 199, 219, 231]  largest gap 43
+      theta = 193: [6, 16, 30, 37, 56, 73, 77, 116, 132, 192, 206, 213, 216, 237]  largest gap 60
+      theta = 235: [2, 10, 44, 64, 71, 72, 79, 104, 111, 124, 154, 176, 183, 195]  largest gap 63
+      theta = 249: [24, 37, 61, 65, 86, 100, 109, 120, 144, 174, 192, 197, 212, 222]  largest gap 58
+      theta =  83: [8, 40, 48, 58, 64, 74, 107, 114, 151, 156, 183, 191, 204, 207]  largest gap 57
+      theta = 113: [16, 38, 52, 61, 68, 69, 88, 110, 121, 149, 184, 190, 192, 221]  largest gap 51
+      theta = 123: [23, 64, 98, 108, 122, 135, 159, 176, 188, 191, 200, 211, 232, 234]  largest gap 45
+      theta =  41: [36, 45, 53, 78, 93, 118, 126, 144, 148, 149, 152, 192, 241, 248]  largest gap 49
+      theta =  99: [12, 15, 26, 31, 42, 48, 64, 103, 135, 136, 168, 210, 220, 251]  largest gap 42
+      theta =  33: [4, 5, 14, 16, 45, 56, 70, 94, 169, 181, 192, 205, 216, 244]  largest gap 75
+      theta =  11: [15, 64, 72, 87, 90, 104, 172, 176, 194, 202, 227, 231, 239, 252]  largest gap 68
+      theta =  89: [5, 24, 29, 30, 77, 84, 120, 144, 150, 161, 165, 192, 228, 238]  largest gap 47
+      theta = 115: [8, 10, 28, 40, 48, 50, 55, 64, 76, 87, 95, 111, 139, 250]  largest gap 111
+      theta = 209: [16, 29, 37, 88, 102, 117, 174, 180, 184, 189, 192, 196, 217, 254]  largest gap 57
+      theta = 155: [34, 39, 58, 60, 63, 64, 95, 170, 176, 183, 200, 232, 236, 243]  largest gap 75
+      theta = 137: [13, 20, 21, 61, 81, 117, 142, 144, 152, 164, 182, 190, 192, 248]  largest gap 56
+      theta = 131: [7, 27, 39, 48, 64, 92, 136, 140, 146, 168, 175, 191, 218, 234]  largest gap 44
+      theta = 129: [9, 13, 16, 56, 78, 116, 132, 134, 149, 158, 173, 192, 216, 229]  largest gap 40
+      theta =  43: [3, 26, 44, 64, 72, 104, 124, 130, 135, 138, 143, 175, 176, 247]  largest gap 71
+      theta = 185: [1, 24, 45, 46, 94, 100, 120, 133, 144, 192, 212, 214, 229, 253]  largest gap 48
+      theta = 147: [8, 15, 40, 48, 64, 156, 171, 186, 202, 204, 215, 242, 247, 255]  largest gap 92
+      theta =  49: [5, 16, 52, 57, 62, 68, 85, 88, 157, 166, 184, 192, 238, 253]  largest gap 69
+      theta = 187: [19, 64, 87, 106, 108, 176, 188, 199, 200, 223, 226, 232, 250, 255]  largest gap 68
+      theta = 233: [29, 36, 85, 144, 148, 152, 177, 192, 206, 237, 245, 246, 248, 254]  largest gap 59
+      theta = 163: [12, 48, 59, 64, 79, 82, 95, 136, 154, 167, 168, 170, 199, 220]  largest gap 48
+      theta = 225: [4, 16, 56, 105, 117, 141, 142, 192, 197, 198, 216, 222, 237, 244]  largest gap 50
+      theta =  75: [35, 39, 47, 64, 66, 72, 74, 79, 104, 151, 172, 176, 218, 252]  largest gap 47
+      theta =  25: [13, 22, 24, 84, 97, 101, 110, 120, 144, 158, 192, 197, 221, 228]  largest gap 60
+      theta = 179: [8, 28, 40, 48, 64, 76, 119, 122, 138, 151, 159, 175, 178, 203]  largest gap 61
+      theta = 145: [16, 46, 53, 88, 125, 126, 153, 180, 184, 192, 196, 221, 229, 230]  largest gap 42
+      theta = 219: [42, 51, 60, 64, 103, 127, 159, 162, 176, 186, 200, 232, 236, 247]  largest gap 51
+      theta =  73: [14, 17, 20, 53, 54, 62, 144, 152, 164, 192, 205, 213, 248, 253]  largest gap 82
+      theta = 195: [18, 48, 64, 71, 90, 91, 92, 103, 106, 136, 140, 168, 239, 255]  largest gap 71
+      theta =  65: [6, 16, 30, 56, 85, 109, 116, 132, 165, 192, 201, 205, 206, 216]  largest gap 46
+      theta = 107: [2, 10, 44, 55, 64, 67, 72, 104, 124, 154, 176, 199, 207, 239]  largest gap 34
+      theta = 121: [24, 69, 86, 100, 120, 144, 165, 174, 189, 192, 193, 212, 222, 237]  largest gap 45
+      theta = 211: [8, 23, 40, 48, 55, 58, 63, 64, 74, 79, 114, 156, 204, 235]  largest gap 48
+      theta = 241: [16, 21, 38, 52, 68, 88, 93, 110, 184, 189, 190, 192, 197, 249]  largest gap 74
+      theta = 251: [7, 31, 63, 64, 83, 98, 108, 122, 151, 176, 188, 200, 232, 234]  largest gap 32
+      theta = 169: [21, 36, 78, 113, 118, 126, 144, 148, 152, 173, 181, 192, 221, 248]  largest gap 42
+      theta = 227: [7, 12, 26, 42, 48, 64, 123, 136, 143, 159, 168, 210, 220, 231]  largest gap 59
+      theta = 161: [4, 14, 16, 41, 53, 56, 70, 77, 94, 133, 173, 192, 216, 244]  largest gap 40
+      theta = 139: [64, 72, 90, 99, 103, 104, 111, 143, 172, 176, 194, 202, 215, 252]  largest gap 68
+      theta = 217: [24, 30, 33, 37, 84, 120, 133, 144, 150, 157, 192, 205, 228, 238]  largest gap 47
+      theta = 243: [8, 10, 11, 28, 40, 48, 50, 64, 76, 183, 215, 223, 239, 250]  largest gap 107
+      theta =  81: [16, 61, 88, 89, 102, 157, 165, 174, 180, 184, 192, 196, 245, 254]  largest gap 55
+      theta =  27: [34, 55, 58, 60, 64, 115, 167, 170, 176, 191, 200, 223, 232, 236]  largest gap 54
+      theta =   9: [20, 141, 142, 144, 149, 152, 164, 182, 189, 190, 192, 209, 245, 248]  largest gap 121
+      theta =   3: [47, 48, 63, 64, 92, 135, 136, 140, 146, 155, 167, 168, 218, 234]  largest gap 69
+
+== (c) j forced bits: the share of valid words of every long length that pass j checks
+   j = 1, k =  4: pass share eventually in [0.5000, 1.0000]   (coin value 0.7500)
+   j = 1, k =  5: pass share eventually in [0.5000, 1.0000]   (coin value 0.7500)
+   j = 1, k =  6: pass share eventually in [0.5000, 1.0000]   (coin value 0.7500)
+   j = 1, k =  7: pass share eventually in [0.5196, 0.9804]   (coin value 0.7500)
+   j = 1, k =  8: pass share eventually in [0.5198, 0.9802]   (coin value 0.7500)
+   j = 1, k =  9: pass share eventually in [0.5198, 0.9802]   (coin value 0.7500)
+   j = 1, k = 10: pass share eventually in [0.5259, 0.9741]   (coin value 0.7500)
+   j = 1, k = 11: pass share eventually in [0.5341, 0.9659]   (coin value 0.7500)
+   j = 1, k = 12: pass share eventually in [0.5420, 0.9580]   (coin value 0.7500)
+   j = 2, k =  4: pass share eventually in [0.0694, 0.9681]   (coin value 0.5625)
+   j = 2, k =  5: pass share eventually in [0.1157, 0.9339]   (coin value 0.5625)
+   j = 2, k =  6: pass share eventually in [0.1801, 0.9008]   (coin value 0.5625)
+   j = 2, k =  7: pass share eventually in [0.2119, 0.8756]   (coin value 0.5625)
+   j = 2, k =  8: pass share eventually in [0.2403, 0.8756]   (coin value 0.5625)
+   j = 2, k =  9: pass share eventually in [0.2403, 0.8756]   (coin value 0.5625)
+   j = 2, k = 10: pass share eventually in [0.2644, 0.8695]   (coin value 0.5625)
+   j = 2, k = 11: pass share eventually in [0.2960, 0.8556]   (coin value 0.5625)
+   j = 2, k = 12: pass share eventually in [0.3218, 0.8411]   (coin value 0.5625)
+   j = 3, k =  4: pass share eventually in [0.0000, 0.8899]   (coin value 0.4219)
+   j = 3, k =  5: pass share eventually in [0.0000, 0.8876]   (coin value 0.4219)
+   j = 3, k =  6: pass share eventually in [0.0000, 0.8714]   (coin value 0.4219)
+   j = 3, k =  7: pass share eventually in [0.0439, 0.8516]   (coin value 0.4219)
+   j = 3, k =  8: pass share eventually in [0.0446, 0.8047]   (coin value 0.4219)
+   j = 3, k =  9: pass share eventually in [0.0663, 0.7642]   (coin value 0.4219)
+   j = 3, k = 10: pass share eventually in [0.0865, 0.7427]   (coin value 0.4219)
+   j = 3, k = 11: pass share eventually in [0.1100, 0.7328]   (coin value 0.4219)
+   j = 3, k = 12: pass share eventually in [0.1326, 0.7209]   (coin value 0.4219)
+
+== P4 direct enumeration of the valid words, m <= 22
+   B and D at w = 10, 14, 18, 22: [(46, 26), (226, 112), (1144, 561), (5804, 2924)]; equal to Cloud's table: True
+   |R_m| >= F(m - 6) for 6 <= m <= 22: True;  GC2936 pairing D_(m+1) >= |R_m| and B_(m+1) - D_(m+1) >= |R_m| for m < 22: True
+   m: |R_m|, F(m-6), D_m, B_m, D_m/B_m
+    6:     3     1     3     9  0.3333
+    7:     4     1     7    14  0.5000
+    8:     8     1    13    20  0.6500
+    9:    11     2    16    30  0.5333
+   10:    17     3    26    46  0.5652
+   11:    23     4    33    67  0.4925
+   12:    33     6    48   100  0.4800
+   13:    58     9    77   152  0.5066
+   14:    75    13   112   226  0.4956
+   15:   117    20   165   338  0.4882
+   16:   169    30   245   509  0.4813
+   17:   265    44   372   763  0.4875
+   18:   375    67   561  1144  0.4904
+   19:   570   101   855  1719  0.4974
+   20:   857   150  1329  2578  0.5155
+   21:  1278   226  1966  3866  0.5085
+   22:  1940   340  2924  5804  0.5038
+   every prefix family (k = 2..10, every prefix of every length up to 22 - k: 45161 families) inside its certified range: True
+   full-state families, observed extremes of deaths against the certified ones:
+      k =  2: observed   0..  1, certified   0..  1 of 1
+      k =  3: observed   0..  2, certified   0..  2 of 2
+      k =  4: observed   0..  4, certified   0..  4 of 4
+      k =  5: observed   0..  6, certified   0..  6 of 6
+      k =  6: observed   1..  8, certified   0..  9 of 9
+      k =  7: observed   3.. 11, certified   1.. 13 of 14
+      k =  8: observed   4.. 16, certified   1.. 19 of 20
+      k =  9: observed   8.. 20, certified   1.. 29 of 30
+      k = 10: observed  14.. 28, certified   3.. 43 of 46
+   exact inequality  sum_i F(m-k-i) lo_i <= D_m <= sum_i F(m-k-i) hi_i  for k = 2..10, m <= 22: True
+P4: True
+
+JSON {"P": {"P1": true, "P2_k": 7, "P4": true}, "a": {"10": [46, 21, 18], "11": [67, 31, 27], "12": [100, 50, 44], "2": [1, 1, 0], "3": [2, 1, 0], "4": [4, 3, 1], "5": [6, 3, 1], "6": [9, 5, 2], "7": [14, 6, 4], "8": [20, 9, 6], "9": [30, 13, 10]}, "b": {"10": {"L": 0.05185495742455115, "S0": 46, "hi0": 43, "lo0": 3}, "11": {"L": 0.06810233541868559, "S0": 67, "hi0": 61, "lo0": 6}, "12": {"L": 0.08407200797670261, "S0": 100, "hi0": 90, "lo0": 10}, "13": {"L": 0.11566483482079931, "S0": 152, "hi0": 131, "lo0": 21}, "14": {"L": 0.16393766552933686, "S0": 226, "hi0": 182, "lo0": 44}, "2": {"L": 0.0, "S0": 1, "hi0": 1, "lo0": 0}, "3": {"L": 0.0, "S0": 2, "hi0": 2, "lo0": 0}, "4": {"L": 0.0, "S0": 4, "hi0": 4, "lo0": 0}, "5": {"L": 0.0, "S0": 6, "hi0": 6, "lo0": 0}, "6": {"L": 0.0, "S0": 9, "hi0": 9, "lo0": 0}, "7": {"L": 0.03921150268482992, "S0": 14, "hi0": 13, "lo0": 1}, "8": {"L": 0.0396428343641005, "S0": 20, "hi0": 19, "lo0": 1}, "9": {"L": 0.03966926228516819, "S0": 30, "hi0": 29, "lo0": 1}}, "c": {"1,10": [0.5259274574548813, 0.9740725212877244], "1,11": [0.5340511461912535, 0.9659488322906572], "1,12": [0.5420359826887888, 0.9579639960116487], "1,4": [0.4999999813726451, 1.0], "1,5": [0.49999997839598925, 1.0], "1,6": [0.4999999793891648, 1.0], "1,7": [0.5196057304014784, 0.9803942486575851], "1,8": [0.5198213951390733, 0.9801785828179498], "1,9": [0.5198346096884396, 0.9801653688574159], "2,10": [0.26438770499431813, 0.8695021542285011], "2,11": [0.2960377245584909, 0.8555980625644402], "2,12": [0.3217756135666509, 0.8410516924284563], "2,4": [0.06939960459974598, 0.9680650580741402], "2,5": [0.11566593909378417, 0.9339308328501208], "2,6": [0.18007076129186478, 0.900828208863387], "2,7": [0.21186217938123342, 0.8755953576923726], "2,8": [0.24032913675399978, 0.8755949922292805], "2,9": [0.2403291364602926, 0.8755949929642574], "3,10": [0.08651178942315033, 0.742688598536047], "3,11": [0.11004419052221551, 0.7328462984692279], "3,12": [0.13257938062286906, 0.7208651289771142], "3,4": [0.0, 0.8898779221441034], "3,5": [0.0, 0.8875557049296214], "3,6": [0.0, 0.8714178300865659], "3,7": [0.04385119437855474, 0.8515865332415034], "3,8": [0.04455359049546939, 0.80466022850714], "3,9": [0.06626020404530587, 0.7642369949916548]}, "census": {"B": [0, 1, 1, 2, 4, 6, 9, 14, 20, 30, 46, 67, 100, 152, 226, 338, 509, 763, 1144, 1719, 2578, 3866, 5804], "D": [0, 0, 1, 1, 1, 1, 3, 7, 13, 16, 26, 33, 48, 77, 112, 165, 245, 372, 561, 855, 1329, 1966, 2924], "F": [1, 1, 1, 2, 3, 4, 6, 9, 13, 20, 30, 44, 67, 101, 150, 226, 340, 509, 764, 1147, 1719, 2579, 3870], "R": [0, 0, 1, 1, 1, 2, 3, 4, 8, 11, 17, 23, 33, 58, 75, 117, 169, 265, 375, 570, 857, 1278, 1940]}}
+elapsed 12.3 s

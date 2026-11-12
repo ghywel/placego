@@ -38924,3 +38924,21 @@ The β-shift supplies the families. This part is known (Rényi, Parry; full word
 Record searched: MAHLER.md's summary and section list. record_find, each term alone: "boundary word", "renewal", "half-circle", "full cylinder", "expansion of 1", "quasi-greedy", "Parry", "first check", "rotation certificate", "GC663", "death-bin", "reset word". Hits read: the β-shift identification and its counts (MAHLER.md §1, GC663, PRIOR-ART.md's Li–Li note), the Parry normalisation (`record_law_check.py`), CL782 and GC2936. The kit's main at 6888b9bd and the portal, through the same tool: no Mahler statement. None of these has a proved bound for the first check on the valid words. The literature beyond the record's survey is not searched yet, and no novelty is claimed.
 
 Caps: one Python process on the M5, CPU 600 s, wall 900 s, RSS 4096 MiB, exact integers. No start above 2^22 is enumerated, so the census is not enlarged. A Wolfram replay of the certificate tables follows the Python run.
+
+**L1667, addendum 1 (2026-11-12 00:24 GMT), written after run 1 and before run 2.** Run 1 is kept as `tests/probes/mahler/local_arc_certificate_run1.out` (source SHA256 `ee846fa5…` at that run; COMPLETED, 13 s, under the stated caps).
+
+- **P1 held.** (a) holds at k = 4 for the four multipliers: three gaps prime to 3 each time, as computed by hand.
+- **P2 held, at k = 7.** After every full prefix, the 14 boundary words p″s never all have the same check: for each of the 64 multipliers the largest cyclic gap of the 14 points in Z/256 is at most 121, below 128.
+- **P3 refuted; its counterfactual is what happened.** Summed over prefix states, the certified interval for D_m/B_m at k = 12 is [0.084, 0.916], not inside [0.25, 0.75]. It is [0.039, 0.961] at k = 7 and [0.164, 0.836] at k = 14. The worst arcs are much worse than typical ones: at k = 10 the certified range of deaths in a full-state family is 3 to 43 of 46, while every actual prefix up to length 12 gives 14 to 28.
+- **P4 held.** Cloud's B and D at w = 10, 14, 18, 22 are reproduced. All 45,161 prefix families (k = 2 to 10, every prefix of every length up to 22 − k) lie inside their certified ranges. |R_m| ≥ F(m − 6) for 6 ≤ m ≤ 22, and GC2936's two pairing inequalities hold for m < 22.
+- **P5 refuted.** With two forced bits the certified pass share at k = 12 is between 0.32 and 0.84, so not below 0.75. With three it is at most 0.721.
+
+**Changes for run 2, declared.** The arc routine is vectorised over multipliers, with the run 1 routine kept as its control. Section (b) goes to k = 17 and prints where the minimum sits. A direct check of (a) on the enumerated words is added. A new section (E) gives explicit constants for every length by exact rational arithmetic. Source SHA256 `090b6252…`.
+
+A smoke test of the revised file at small sizes (k ≤ 9, m ≤ 16) has already run, so two of its results are observations and not predictions: the vectorised routine equals the simple one, and section (E) reports that 27·F(m − 7) ≥ B_m for every m from 7 to 400 except m = 9, with an exact tail inequality beyond 400.
+
+**Predictions for run 2, before it runs.**
+- Q1 (0.75): the certified lower end at k = 17 is between 0.22 and 0.32. *Counterfactual:* below 0.22 means the worst arcs stay structured at this scale, and I look at what they are before going further.
+- Q4 (0.7): with three forced bits the certified upper bound at k = 13 is between 0.70 and 0.72.
+
+Caps as before: one Python process, CPU 600 s, wall 900 s, RSS 4096 MiB. No start above 2^22 is enumerated.
