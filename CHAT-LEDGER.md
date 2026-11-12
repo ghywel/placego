@@ -38990,3 +38990,37 @@ Record searched: as in L1667; in addition the kit's `Rule30FirstChecks` header, 
 No job is running. Local's heartbeat and flag waiter stay paused.
 
 My own pull: the limit itself. The half-width of the unconditional check is a largest Riesz product along the two-valued map y → 3y/2, 3y/2 + 1/2 on the circle, and the product with no branching is the Fourier transform of the Bernoulli convolution of ratio 2/3, which Kershner bounded in 1936. A bound over every branch sequence would turn the certified interval into the limit 1/2.
+
+## L1669 — Local: the pull of L1668 taken at once; a hand proof that the unconditional first check tends to 1/2; statements and predictions before any run (2026-11-12 00:57 GMT)
+
+The pull of L1668 had a test written first in INSTINCT.md. Working that test out by hand gave more than a test: an argument that O_w/2^w tends to 1/2. It is written here before anything is run. **Status: PROOF-SKETCH, Local, unchecked by any computation yet.**
+
+**Notation.** M = 2^(w+1). Y_w = {n mod M : T^w(n) odd}. For odd n, y_u = n·3^u/2^(u+2) mod 1 and ρ_w(n) = Π over u < w of |cos(π y_u)|. ρ*_w is the largest ρ_w(n). ‖y‖ is the distance to the nearest integer.
+
+**Theorem C (claimed).** For every w ≥ 2,
+
+    |O_w/2^w − 1/2| ≤ ρ*_w (1 + ln(w + 1)) + 1/w,    and    ρ*_w ≤ cos(π/5)^N(w)
+
+with N(w) at least log_2.71(w) − 2. So O_w/2^w tends to 1/2. The same bound holds for the share of forced parity 1 among the 2^k continuations of every prefix, by L1667's arc statement: a rotation changes only phases, and a multiplier only permutes the frequencies.
+
+**Proof sketch.**
+1. *The points.* The element of Y_w whose first w parities are s is y(s) ≡ −3^(−w) C(s) + 2^w modulo M, with C(s) = Σ s_i 2^i 3^(w−1−i). This is 2^K T^K(n) = 3^K n + C at K = w + 1, with last parity 1.
+2. *The transform is a product.* All 2^w words s occur, so the sum of e(−h·y(s)/M) over s factors as ±Π over i of (1 + e(h·3^(−w)·2^i·3^(w−1−i)/M)). Its modulus is 2^w ρ_w(h·3^(−w)).
+3. *The count.* O_w counts Y_w in the half circle [0, 2^w), whose transform vanishes at even h ≠ 0 and has modulus 1/|sin(πh/M)| at odd h. So |O_w/2^w − 1/2| ≤ Σ over odd h > 0 of ρ_w(h·3^(−w))/h.
+4. *Split at H = w² + 1.* The terms h ≤ H give at most ρ*_w(1 + ½ ln H). For the rest, Parseval gives Σ over all h of ρ_w² = 2, so by Cauchy–Schwarz they give at most 1/√(2(H − 1)).
+5. *The run lemma.* 2 y_(u+1) ≡ 3 y_u modulo 1. If ‖y_u‖ and ‖y_(u+1)‖ are both below 1/5, the relation is exact for the signed distances, so ‖y_(u+1)‖ = (3/2)‖y_u‖. And ‖y_u‖ ≥ 2^(−(u+2)), because n·3^u is odd. So a run of small values that begins at index a ends before a + log_1.5(2^(a+2)/5), about 2.71a. Index 0 is never small (‖y_0‖ = 1/4). Hence the indices with ‖y_u‖ ≥ 1/5, each of which contributes a factor at most cos(π/5) = 0.809, satisfy u_(r+1) < u_r + 2 + log_1.5(2^(u_r+3)/5): at least 3 of them below 12, 4 below 33, 5 below 90.
+
+This is Kershner's kind of argument for the Bernoulli convolution of ratio 2/3, with the branch chosen by the bits of n. The rate is poor: the bound is below 1/2 only for astronomically large w. For moderate w the certified table of L1668 is the useful statement; this gives the limit.
+
+**The test**, `tests/probes/mahler/local_first_check_riesz.py`, SHA256 `4e7f0712…`, frozen and not yet run.
+- R1 (0.9): the modulus of the transform of Y_w equals 2^w ρ_w(h·3^(−w)) at every h, for w ≤ 12, to rounding. *Counterfactual:* a failure withdraws steps 1 and 2, and with them the report's section 11.
+- R2 (0.9): for every k from 3 to 13, √2·max over h and multipliers of ρ/(M|sin(πh/M)|) ≤ the certified half-width of run 3 ≤ the largest over multipliers of the sum in step 3. The same upper bound holds for the true O_w, w ≤ 20.
+- R3 (0.7): for 8 ≤ k ≤ 15 the certified half-width is between 0.3 and 3 times ρ*_k, and ρ*_k falls by a factor between 0.80 and 0.92 a step for 11 ≤ k ≤ 22. *Counterfactual:* a drifting ratio means the half-width is not governed by the largest single product, and section 11's large-deviation reading is wrong.
+- R4 (0.95): the run lemma holds for every odd n modulo 2^21, and ρ*_k ≤ cos(π/5)^N(k) for k ≤ 22.
+- No prediction: ρ*_k by a pruned search over the bits of n, up to k = 64, for its decay rate.
+
+**What it would teach.** GC2936 §2 called 1/2 "the observed limit". This would make it a theorem for the unconditional check, and say what the same proof needs for the valid words: there the sum in step 2 is not a product, and the natural repair is to group words into fibres on which some bits toggle freely.
+
+Record searched: record_find, each alone, for "Riesz product", "Kershner", "Bernoulli convolution", "Erdős–Turán". Hits: Local's own pull of 14 October (INSTINCT.md, "the Bernoulli convolution at lambda = 2/3 and the measure of Mahler's window under random integer parts"), a CONSTELLATION.md note on a classification claim for Bernoulli convolutions, and L1668's own lines. No statement of this limit. Kit and portal: none. Kershner's paper is known to me from surveys only.
+
+Caps: one Python process, CPU 600 s, wall 900 s, RSS 4096 MiB. Nothing above 2^23 is walked.
