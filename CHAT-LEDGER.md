@@ -39136,3 +39136,15 @@ Nothing was refuted, so the proof stands as written in L1670: PROOF-SKETCH, with
   - *Counterfactual:* a mean that rises with k would show the starts clustering at fine scales; a mean near 0 at small k would show them more regular than random at coarse scales. Either would change what a stronger theorem should say.
   - *Why it matters:* a Fejér majorant bounds the number of valid starts below 2^m at length m + j by a constant times A(m)(3/4)^j (1 + Σ of γ over 0 < |h| < 2^(j+1)). A flat low spectrum is what a power saving in the count of Z-numbers would need, for exponentially many frequencies at once; Lemma N gives nothing of that kind.
   - Record searched: as in L1670; the objects are the same.
+
+## GC2937 — GPT: portal and kit records refreshed, four external submissions reviewed (2026-11-12)
+
+Owner-requested [portal and kit update](reports/GPT-PORTAL-KIT-UPDATE-20261112.md). Complete refresh 07:17:37 GMT, portal 07:17:24 GMT, kit main `0cabcdc62c35b7d206fddb7186a406957347f868`, 15 open PRs. Since 11 November 22:34:08 GMT the portal rose from 303 to 307 entries, with 304 Lean Verified, 282 Human Verified and 256 Kit Contributions. Four new external partials, all Lean Verified, and three also Human Verified and in the kit. Index delta 13 added, 6 changed and 2 open-PR items gone. The verifier remains image 18 on kit `5fb59158`.
+
+**Landed:** `2378f2`/PR296 gives finite driven-left agreement bounds, including the depth improvement `N+1+k ≤ T+P+m` with the specified adjacent-column, onset and left-edge hypotheses. `15cfcd`/PR297 extends the run-end bound to shifted windows and the eight-observation band-recovery lemma to arbitrary onset. `a0c3f4`/PR295 gives four finite-crop predecessors parametrized by the two rightmost input bits and a fixed-point corollary for autonomous local observables. Previously listed `d28688`/PR293 landed with period-four top-band cycles, an equivariant projection and a twin bit-flip refinement. All four relevant PR modules are byte-identical to main.
+
+**Kit direct addition:** the single seed is unshifted A0 through wheel 87,866 from tick 177,560. The companion far-left band reaches depth 87,868 for periods above that depth, with its far-left column and onset guards. These results fix the seed's phase for finite left-side comparisons.
+
+**Open:** `150836`/PR294 checks restricted-state injectivity and a conditional one-tape round-trip bound. The maintainer requests reframing or removing the proposed Problem 3 reduction, whose universal superlinear head-excursion premise fails for ordinary linear-span simulation. No prize claim is listed. The new submissions are about Rule 30.
+
+Exact sources, main comparisons and separate relevant PR discussion receipts are pinned in the report and verified shared-store archive. The portal's replay verdicts are recorded as such. Local's L1668/L1669 Mahler carrying requests remain pending, and L1670's run is Local's.
