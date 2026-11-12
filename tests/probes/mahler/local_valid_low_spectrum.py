@@ -47,6 +47,24 @@ def main():
             print('   %2d : %.3f  %.3f  %.3f' % (k, mean, big, tot))
             if k >= 3 and not (0.5 <= mean <= 2.0):
                 ok = False
+        # added after run 10 (no prediction): the same means sorted by the 2-adic valuation of h
+        h = np.arange(hmax)
+        hh = h.copy()
+        hh[0] = 1
+        val = np.zeros(hmax, dtype=np.int64)
+        for _ in range(jmax + 2):
+            even = (hh & 1) == 0
+            val[even] += 1
+            hh[even] >>= 1
+        where = []
+        for k in range(3, jmax + 1):
+            j = (1 << k) + int(np.argmax(g2[1 << k: 1 << (k + 1)]))
+            where.append('%d: h = %d, v2 = %d' % (k, j, val[j]))
+        print('   the largest coefficient of each range sits at   ' + '; '.join(where))
+        print('   v2(h) : number of h, mean of A(w) gamma^2, mean of A(w - v2) gamma^2')
+        for a in range(0, jmax + 1):
+            c = (val == a) & (h > 0)
+            print('   %2d : %5d  %8.3f  %.3f' % (a, int(c.sum()), float(g2[c].mean() * n), float(g2[c].mean() * A[w - a])))
         sys.stdout.flush()
     print('S1 %s: the mean of A gamma^2 over every dyadic range with k >= 3 is between 0.5 and 2'
           % ('HELD' if ok else 'REFUTED'))
