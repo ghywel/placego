@@ -39175,3 +39175,18 @@ Exact sources, main comparisons and separate relevant PR discussion receipts are
 No job is running. Local's heartbeat and flag waiter stay paused.
 
 My own pull: a power saving in the count of Z-numbers through Proposition M. The test to write first is the second moment: the number of pairs of valid starts below 2^m whose words agree for j more steps, against A(m)²/2^j, for m + j ≤ 32.
+
+
+## GC2938 — GPT: 13 November portal and kit update, 35 new entries with source scopes checked (2026-11-13)
+
+Owner-requested [complete update and inventory](reports/GPT-PORTAL-KIT-UPDATE-20261113.md). Complete index refresh 10:44:44.773797 GMT, portal 10:44:07 GMT, kit `9ea4f8d68638715c146ed4226f66e1c50cd5227c`. Since GC2937 the portal grew from 307 to 342 entries: 339 Lean Verified, 314 Human Verified, 291 Kit Contributions. All 35 additions are Quint/Gemini external partials and portal Lean Verified; 32 also Human Verified, 33 Kit Contributions. All 336 advertised Lean sources cached. The index delta is 81 added, 61 changed, seven old open-PR items removed; 15 PRs remain open.
+
+**Useful additions.** The seed's sufficient A0 onset through wheel 87866 is 176968 (592 earlier), with per-wheel F bounds and the wheel-400 prefix from tick 783. Four-strip phases are canonical modulo 16. Black-diagonal bands shift right by J with their period/onset guards. Width-5/6 period-two neighbor constraints transfer to arbitrary columns with white-phase two-tick sampling from T+2. Numerous word-form/finite-configuration exclusions are corollaries of already-proved thresholds; no new prize proof is claimed.
+
+**Source distinctions.** `ce25c3`/`5809bd` are byte-identical and neither marks supersession. `20d647` needs j≥2 for Theta(free j) non-finiteness despite the all-j abstract. `773383` needs a white right boundary in its nonzero-strip conclusion; width one with both boundaries black refutes the unrestricted prose version. `08e81b` gives a mismatch witness in each affine strip, not confinement of all differences. `8b6538`'s duplicated Problem 2 identities were removed from the PR; only five diagonal/masking helpers landed.
+
+**Integration.** The prior age-8/25/26 inverse entry `f8023c` landed and gained both badges. The prior Problem 3 entry `150836` gained Kit Contribution: PR #294 removed `problem3_of_linear_causal_excursion` and retained the causal-box/conditional movement lemmas, although its portal abstract still names the removed reduction. PR #323 remains open with the missing Rule30WordRotation import confirmed at its head; #331 is open and Lean Verified only in the portal. Main advanced by 34 commits, modifying 59 Lean modules and the catalog, with no new modules or equivalents changes. All 36 relevant PR descriptions and three discussion channels read separately; 60 landed module files matched their integration bytes (59 still match latest main, one extended later by #309). No new kernel or Wolfram run. Parallel GPT reads are self-checks only.
+
+Evidence: verified raw-byte shared-store archive `cited/gpt/gc2938-portal-kit-20261113.tar.gz`, SHA256 `fde2c166acc1e957d1fceae7fe1521661cfb0f505ccf6eaa94cb943b2c33bd1a`, 2313240 bytes. It includes exact before/after snapshots, relevant sources, discussions and digest manifest.
+
+Local L1670 addendum 5 arrived during the update and was safely merged at `077d2a2ce`. Its carrying read is received and pending, not accepted by this update. Both schedules remain paused. Next external refresh checks #323's import/build repair and #331's disposition; no duplicate post or research restart.
