@@ -9,7 +9,8 @@ every lemma tested at every case within reach and replayed in Wolfram at the sma
 read by GPT or Cloud. The tables are **COMPUTED** or **MEASURED** as labelled. The proved rate is a tiny power of
 a logarithm: the theorem is a limit statement and gives no usable number. Nothing here proves Mahler's
 conjecture and nothing lowers Flatto's exponent. Novelty is **not cleared**: I found no improvement of Flatto's
-count by search, and Flatto's paper itself is unread.
+count by search, and Flatto's paper itself is unread. A Local sub-agent read sections 2 to 8 adversarially on
+13 November (section 11a); that is a self-check, not the second read, and its corrections are in the text.
 
 ## 1. Summary
 
@@ -28,7 +29,7 @@ count by search, and Flatto's paper itself is unread.
    (Lemma R) shows that a fixed share of words has a free bit at any prescribed place, with a uniform constant.
    L1669's run lemma (Lemma N) gives every frequency at least about log w non-small angles. The Erdős–Turán
    inequality does the rest.
-6. **Proved against measured.** The proved discrepancy is of order (ln w)·w^(−0.002). The measured one is about
+6. **Proved against measured.** The proved discrepancy is of order (ln w)·w^(−0.0018). The measured one is about
    0.6/√A(w), that is, it falls like (2/3)^(w/2): 0.00008 at w = 40.
 7. **Tests.** The six predictions for run 7 and the sharpness guess all held. One later prediction (S1, a flat
    low spectrum) was refuted: the low frequencies carry less than a flat share. Two informational lines in
@@ -56,6 +57,15 @@ d_i = [c_i > 2/3], and d = 1010000010010010100… are the digits of 1 in base 3/
 z·d_0…d_(s−1) with z *full* (state 0), uniquely. From state s the letter d_s leads to s + 1, and where d_s = 1
 the letter 0 leads to state 0. This is the 3/2-shift of Flatto (1992) and of L1668.
 
+*Why the slack decides validity (known; written out at the self-check's request).* Let S_k be the tail at k,
+(1/3) Σ_(j≥0) q_(k+j) (2/3)^j with zeros past the end, so S_k = q_k/3 + (2/3) S_(k+1). Claim: the tails at
+0, …, k are all below 1/2 exactly when S_j < c_j/2 for j ≤ k, where c_0 = 1 and c_(j+1) = min(1, 3c_j/2 − q_j).
+At k = 0 this is S_0 < 1/2. Given S_k < c_k/2, the identity turns it into S_(k+1) < (3c_k/2 − q_k)/2, and adding
+the tail at k + 1 gives S_(k+1) < c_(k+1)/2. Since S ≥ 0, and S_w = 0 for a word of length w, the word is valid
+exactly when every c_j is positive; a 0 keeps c positive, and a 1 at step k keeps c_(k+1) = 3c_k/2 − 1 positive
+exactly when c_k > 2/3. Brute force against the tails in exact rationals agrees for every word of length at most
+12 (self-check).
+
 **Counts.** F(n) is the number of full words of length n: F(0) = 1, F(n) = Σ over j < n with d_j = 1 of
 F(n−1−j). 𝒱_w is the set of valid words, A(w) = Σ_(s≤w) F(w−s) its size, V_w the set of their starts. A
 *boundary* word is valid and cannot take a 1 (state s ≥ 1 with d_s = 0); B_m counts them, and D_m counts those
@@ -69,7 +79,8 @@ whose start r, as an integer below 2^m, has T^m(r) odd.
 - (F3) F(n+3) ≥ F(n+2) + F(n) ≥ 2F(n), since d_0 = d_2 = 1. So F(s) ≥ 2^floor(s/3).
 - (F4) c_F (3/2)^n ≤ F(n) ≤ (3/2)^n with c_F = Π_(k≥1) (1 − (2/3)^k) > 0.069. Put v_n = F(n)(2/3)^n. The
   recursion makes v_n a combination of earlier values with weights d_j (2/3)^(j+1), j < n; all the weights
-  sum to 1 (the expansion of 1) and those with j ≥ n sum to (2/3)^n c_n ≤ (2/3)^n.
+  sum to 1 (the expansion of 1) and those with j ≥ n sum to (2/3)^n c_n ≤ (2/3)^n. So
+  v_n ≥ (1 − (2/3)^n)·min_(k<n) v_k, and by induction v_n ≥ Π_(k≥1) (1 − (2/3)^k).
   *COMPUTED:* the least v_n for n ≤ 400 is 4/9, at n = 2, and v_400 = 0.517015063.
 - (F5) E_s(r) ≤ F(r), where E_s(r) is the number of words of length r leading from state s to state 0. Both
   slack maps are non-decreasing in c, so a word that is allowed from slack c_s and ends full is allowed from
@@ -88,7 +99,7 @@ Constants: K = 8(1 + 2/λ)/(1 − 1/(2λ)) = 72.72, μ = 1 − 2κ/K = 0.994748,
 
 **Proposition G (one frequency).** Let h ≢ 0 modulo 2^w have 2-adic valuation a < w. Then
 
-    γ_w(h) ≤ 6.3 · (0.85/(w − a))^δ.
+    γ_w(h) ≤ 6.23 · (0.85/(w − a))^δ.
 
 **Theorem V (the valid starts are equidistributed).** For every w ≥ 4,
 
@@ -166,8 +177,10 @@ V(t; U) ≤ (1 − 2κ/K) V(t; U″). Induction on |U| ends at V(t; ∅) = F(t).
 of K. For 3 ≤ r ≤ 400 its largest value is 13.3719, at r = 5, and K(400) = 11.5101; with it μ would be 0.97144
 and δ about 0.0097. The largest ratio V(t; U″)/(V(i; U″)F(t − i − 3)) seen for t ≤ 26 is exactly 9 (t = 7, i = 2).
 At t = 12, 16, 20, 24, 26 the largest per-site factor (V(t; U)/F(t))^(1/|U|) is between 0.9487 and 0.9506, at
-sets containing position 2, where a site is least likely. So the weakest contraction seen is near 0.95 a site;
-the hand constant gives 0.9947.
+sets containing position 2, where a site is least likely. Over every t ≤ 26 the largest per-site factor is
+0.9576, at t = 7 and U = {2}; from t = 10 on it stays between 0.948 and 0.952. So the weakest contraction seen is
+0.958 a site, near 0.95 for the longer words; the hand constant gives 0.9947. (An earlier draft said "near 0.95"
+without the short words; the self-check found t = 7.)
 
 ## 6. Lemmas N and F: the angles
 
@@ -183,9 +196,16 @@ Fix w and h = 2^a h′ with h′ odd. By section 2 the phase of bit i is α_i = 
 *Proof.* (1) and (2) are read off the formula. (3): let b be the representative of β_u in (−1/5, 1/5); by (2),
 β_(u+1) is 3b/2 or 3b/2 + 1/2 modulo 1, and the second is at distance at least 1/2 − 3/10 = 1/5 from the
 integers. (4): count from v = u − a. Index v = 0 is not small. A run of small indices that starts at v_s has
-‖β‖ ≥ 2^(−(v_s+1)) at its start and grows by 3/2 a step, so its length is below 1.7095·v_s − 1.26. Hence the
-non-small indices p_1 = 0 < p_2 < … satisfy p_(k+1) < 2.7095·p_k + 1.45, and if there are k of them then
-w − a < 0.85·2.7095^k. ∎
+‖β‖ ≥ 2^(−(v_s+1)) at its start and grows by 3/2 a step, so a run of length L has
+(3/2)^(L−1) 2^(−(v_s+1)) < 1/5, that is L < α v_s + b with α = ln 2/ln 1.5 = 1.709511… and
+b = 1 + α − ln 5/ln 1.5 = −1.259851…. Hence the non-small indices p_1 = 0 < p_2 < … satisfy
+p_(k+1) < (1 + α) p_k + (1 + α + b) = 2.709511… p_k + 1.449660…, and if there are k of them then
+w − a < 0.848·2.70952^k ≤ 0.85·2.71^k. ∎
+
+*Correction (self-check, 13 November).* The first draft rounded α down, to 1.7095·v_s − 1.26 and
+2.7095·p_k + 1.45. Those rounded bounds are false for large indices: a frequency at w = 1000 has a run of 621
+small angles starting at v_s = 364, where 1.7095·364 − 1.26 = 620.998. The conclusion, NS(h) more than
+log_2.71((w − a)/0.85), is unaffected.
 
 **Lemma F (not used in the proof below; tested).** For fixed a, at most (2w)^(L−1) of the h′ modulo 2^(w−a) have
 NS ≤ L. The two lifts of h′ by one bit give angles that differ by 1/2, and at most one of two such angles is
@@ -201,14 +221,17 @@ corresponding 3-separated set of positions i = w − 1 − u ≤ w − 3, so |U|
     |G_w(h)| ≤ Σ_(s=0)^(w) V(w − s; U ∩ [0, w − s − 3]) ≤ Σ_s μ^(|U| − ceil(s/3)) F(w − s)
              ≤ μ^|U| F(w) Σ_s 2^(−floor(s/3)) μ^(−ceil(s/3)) ≤ 6.2 μ^|U| A(w).
 
-With Lemma N(4), μ^|U| ≤ μ^(−2/3) μ^(NS/3) ≤ 1.004·(0.85/(w − a))^δ. ∎
+With Lemma N(4), μ^|U| ≤ μ^(−2/3) μ^(NS/3) ≤ 1.0036·(0.85/(w − a))^δ, and 6.2·1.0036 < 6.23. ∎
+(The sum Σ_s 2^(−floor(s/3)) μ^(−ceil(s/3)) is 6.0531, below 6.2.)
 
 **Theorem V.** The Erdős–Turán inequality (Kuipers and Niederreiter, *Uniform Distribution of Sequences*,
 chapter 2, Theorem 2.5) says that for N points x_n of [0, 1) and every positive integer M the discrepancy over
 intervals is at most 6/(M + 1) + (4/π) Σ_(h=1)^M (1/h)·|N^(−1) Σ_n e(h x_n)|. An interval that wraps around is
 the complement of one that does not, so the same bound holds for D(w), with the points r/2^w and the sums
 γ_w(h). Take M = w. Every h ≤ w has valuation a ≤ log_2 w, so Proposition G gives
-γ_w(h) ≤ 6.3 (0.85/(w − log_2 w))^δ, and Σ_(h≤w) 1/h ≤ 1 + ln w. ∎
+γ_w(h) ≤ 6.23 (0.85/(w − log_2 w))^δ, and Σ_(h≤w) 1/h ≤ 1 + ln w; (4/π)·6.23 = 7.93 < 8. ∎
+(As I recall it the book's form has weights 1/h − 1/(M + 1); replacing them by 1/h only weakens it. The first
+draft quoted 6.3 here, and (4/π)·6.3 = 8.02 exceeds the displayed 8; the self-check caught it.)
 
 *A note on the first version.* L1670 wrote this proof with the exact Fourier series of the interval, Parseval
 above (4/3)^w w² and Lemma F for the frequencies below. I believe that version is correct too, but it is longer
@@ -229,15 +252,18 @@ A(m) − D_m = A(m+1)/2 + εA(m+1) with |ε| ≤ D(m+1), that is D_m = B_m/2 −
 A(m+1) ≤ 2A(m) ≤ 12F(m) ≤ 24F(m−1) ≤ 24B_m, by (F1) to (F3) and d_1 = 0. ∎
 
 **V2.** The count is #(V_(m+j) ∩ [0, 2^m)) = A(m+j)(2^(−j) + ε) with |ε| ≤ D(m+j), and A(m+j)/A(m) → (3/2)^j
-because F(n)(2/3)^n converges ([the arc certificate](LOCAL-MAHLER-ARC-CERTIFICATE-20261112.md), sections 4 and 5:
-known, and certified there to nine digits from n = 340). ∎
+because v_n = F(n)(2/3)^n converges to a positive limit. Convergence is the renewal theorem of Erdős, Feller and
+Pollard: v_n = Σ_k f_k v_(n−k) + (a term tending to 0) with weights f_k = d_(k−1)(2/3)^k that sum to 1, are
+aperiodic (k = 1 and k = 3 occur) and have finite mean; it is also certified to nine digits from n = 340 in
+[the arc certificate](LOCAL-MAHLER-ARC-CERTIFICATE-20261112.md), sections 4 and 5. The limit is positive by (F4).
+Then A(w)(2/3)^w = Σ_s v_(w−s)(2/3)^s converges by dominated convergence, to a positive limit. ∎
 
 **V3.** Let 2^(m−1) < x ≤ 2^m. A Z-number below x has integer part n < 2^m with a valid word at every length,
 and distinct Z-numbers have distinct integer parts. In Proposition M every h with 0 < |h| < 2^j has valuation
-below j, so w − a > m and γ_(m+j)(h) ≤ 6.3 (0.85/m)^δ; there are fewer than 2·2^j such h; and
+below j, so w − a > m and γ_(m+j)(h) ≤ 6.23 (0.85/m)^δ; there are fewer than 2·2^j such h; and
 A(m+j) ≤ 6F(m+j) ≤ 6(3/2)^(m+j). So the count is at most
 
-    (π²/4) · 6 · (3/2)^m · [ (3/4)^j + 12.6 (3/2)^j (0.85/m)^δ ]     for every j ≥ 0.
+    (π²/4) · 6 · (3/2)^m · [ (3/4)^j + 12.46 (3/2)^j (0.85/m)^δ ]     for every j ≥ 0.
 
 Take j = ceil(δ log_2 m): the bracket is at most 20·m^(−c) with c = δ log_2(4/3). With (3/2)^m < 1.5·x^θ and
 m ≥ log_2 x the count is below 450·x^θ/(log_2 x)^c. ∎
@@ -348,8 +374,28 @@ The steps I would attack, in order.
 6. **V3.** Mahler's lemma as used, the valuation bound a < j for |h| < 2^j, and the arithmetic of the choice of
    j.
 
-Lemma F and the first version's Parseval step are no longer on the path. (F4)'s hand constant 0.069 is not
-used in the final proofs either; the Fourier route needed it.
+Lemma F and the first version's Parseval step are no longer on the path. (F4) is used only for the positivity of
+the limit in V2 and for F(n) ≤ (3/2)^n in V3; its constant 0.069 enters nowhere else.
+
+## 11a. Self-check by a Local sub-agent (13 November; not a second read)
+
+A sub-agent of Local read sections 2 to 8 with instructions to refute, and tested each lemma with its own code
+(scripts outside git). By AGENTS.md §4 this is a self-check. Findings, each verified by me before the text was
+changed:
+- **One false sentence:** the rounded constants of Lemma N(4) (corrected above; the conclusion stands).
+- **One wrong constant:** 8 in Theorem V needed 6.23 in Proposition G, not 6.3 (corrected above).
+- **Two slips:** the weakest per-site factor is 0.9576 at t = 7, not "near 0.95"; the summary's rate exponent is
+  0.0018, not 0.002 (both corrected).
+- **Four gaps, filled above:** why the slack decides validity; the induction in (F4); the positivity of the limit
+  and the step from F to A in V2; the form of the Erdős–Turán weights.
+- **Checked independently by it:** r(q); the automaton against the tails for w ≤ 12; (F1) to (F5); Lemma T on
+  1628 flips with sites taken from the definition, including sites exactly 3 apart, at w − 3 and at 0 (sites 1 or
+  2 apart do interfere, 3032 cases, so the separation is needed); the fibre sums; Lemma R (a) to (d) and the bound
+  on all 854 non-empty 3-separated U for t ≤ 16; K(3..8); Lemma N (1) to (3) for every h at w ≤ 14; Proposition G
+  at every h for w ≤ 14; the Fejér majorant for m + j ≤ 14 (least ratio π²/4, at j = 0); V1's identities for
+  m ≤ 14; V3's arithmetic (constant 444).
+
+The steps of section 11 are still the ones for GPT or Cloud to read.
 
 ## 12. Receipts
 
@@ -393,6 +439,8 @@ nothing on Mahler's map. No novelty claimed.
   frequency and Lemma F says that few frequencies are that poor, but not that the small ones are not among
   them. This is where 2 and 3 would have to be shown independent.
 - **A sharper Lemma R.** The measured contraction is 0.95 a site against the proved 0.9947. A proof with K(r)
-  in place of K needs a certified supremum over all r; the computation covers r ≤ 400.
+  in place of K needs a certified supremum over all r; the computation covers r ≤ 400. For larger r the
+  interval for F(n)(2/3)^n of the arc certificate should pin K(r) to its limit 11.51, below the value 13.37 at
+  r = 5; I have not written that out. It would raise δ to about 0.0097 and change nothing else.
 - **Other bases.** The proof uses d_0 d_1 d_2 = 101 for the free bit and 3/2 for the growth. Whether T_(p/q)
   has a free pattern for every p < q² is not examined.

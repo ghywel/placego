@@ -7322,3 +7322,16 @@ no nonexistence claim for legal cover trees follows. No new computation or prize
 
 **REFUTED (Local's own prediction):** that rho*_k falls by a factor between 0.80 and 0.92 a step for 11 <= k <= 22 (the factors run from 0.797 to 1.000; the decay has plateaus).
 
+## L1670 — The valid starts of Mahler's map are equidistributed: free bits, a renewal inequality, and the count of Z-numbers (Local, 12 November 2026)
+
+[Report](reports/LOCAL-MAHLER-VALID-STARTS-20261112.md). The Mahler room (MAHLER.md). Nothing here proves Mahler's conjecture or bears on a prize statement; Flatto's exponent is unchanged.
+
+**PROOF-SKETCH (Local; wants a carrying read; every lemma tested exhaustively at small sizes and replayed in Wolfram).** For T(n) = ceil(3n/2), V_w the set of n < 2^w whose first w parities are valid, A(w) its size, gamma_w(h) = |sum over V_w of e(h n/2^w)|/A(w), lambda = cos(pi/5): (T) a bit that follows a full prefix and is followed by 00 flips freely, so with sites restricted to a 3-separated set U, |sum over valid q of e(sum q_i alpha_i)| <= sum over q of prod over the sites of q of |cos(pi alpha_i)|; (R) sum over full z of length t of lambda^(sites of z in U) <= mu^|U| F(t), with mu = 1 - 2(1 - lambda)/K and K = 8(1 + 2/lambda)/(1 - 1/(2 lambda)) < 72.8; (N) a frequency of 2-adic valuation a has more than log_2.71((w - a)/0.85) angles at distance at least 1/5 from the integers; (G) hence gamma_w(h) <= 6.23 (0.85/(w - a))^delta with delta = ln(1/mu)/(3 ln 2.71) = 0.00176; (V) by the Erdős–Turán inequality the discrepancy of V_w over intervals is at most 6/(w + 1) + 8(1 + ln w)(0.85/(w - log_2 w))^delta, so it tends to 0; (M) #{n < 2^m valid for m + j steps} <= (pi^2/4) A(m+j) 2^-j (1 + sum over 0 < |h| < 2^j of gamma_(m+j)(h)), by a Fejér majorant. Corollaries: (V1) D_m/B_m -> 1/2, with |D_m/B_m - 1/2| at most 24 times the discrepancy at m + 1, which closes L1669's open limit; (V2) the share of valid starts below 2^m that pass j more checks tends to (3/4)^j; (V3) the number of Z-numbers below x is at most 450 x^theta/(log_2 x)^c, theta = log_2(3/2), c = 0.0007: o(x^theta) against Flatto's O(x^theta).
+
+**COMPUTED.** The sharp series constant K(r) has supremum 13.3719 over 3 <= r <= 400, at r = 5; the weakest per-site contraction seen for t <= 26 is 0.9576 (t = 7, U = {2}), and between 0.948 and 0.952 for 10 <= t <= 26. Lemma F (hand argument, tested, not used by the final proof): at most (2w)^(L-1) frequencies of a given valuation have at most L non-small angles.
+
+**MEASURED (exact starts).** Discrepancy over intervals 0.046, 0.019, 0.011, 0.0046, 0.00074, 0.00008 at w = 12, 16, 20, 24, 32, 40, about 0.6/sqrt(A(w)); D_m/B_m = 0.49996 at m = 36; pass shares within 0.0007 of (3/4)^j at m = 32, j <= 8; no n >= 1 below 2^28 keeps a valid word beyond m + 34 steps (known ground: Dubickas and Mossinghoff to 2^57).
+
+**REFUTED (Local's own prediction S1):** that the mean of A(w) gamma^2 over each dyadic range of low frequencies lies between 0.5 and 2. Eight of 25 ranges are below 0.5; the odd low frequencies average about 0.3.
+
+**Novelty not cleared.** No improvement of Flatto's count found by search; Flatto's paper is unread.

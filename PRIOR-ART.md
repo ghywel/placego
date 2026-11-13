@@ -5783,3 +5783,30 @@ separately. [Wibmer](https://arxiv.org/abs/2008.00755) · [Hedlund](https://doi.
 [Review](reports/GPT-MAHLER-TRANSFER-REVIEW-20261111.md). Known, reapplied here: G50/G51's real/2-adic coding; GC664's compactness and half-boundary repair; finite-monoid pigeonholing and tree-automorphism conjugacy as in the kit; the elementary order of 9 modulo powers of 2. The two explicit recharge families and boundary pairing are proposed applications, not a broad novelty claim. The kit main6888b9bdd6242dd6fd458a97ebb514d6fbcdcbea defines Conjecture S using seed population, not bit length. Current source and exact PR209/241/260/275/288/289 heads/discussions were compared; source pins are in the report.
 
 Andrieu–Eliahou–Vivion, [A Normality Conjecture on Rational Base Number Systems](https://arxiv.org/html/2510.11723v1), Conjecture1.6/Theorem1.7, asks for equidistribution of positive ceiling-map orbits modulo powers of 2. That stronger open statement does not establish our boundary-conditioned first-check balance. Last complete kit/portal index refresh: 2026-11-11T22:34:08Z; exact hashes in GC2936's report.
+
+## Mahler: the count of Z-numbers and the tools used for the valid starts (Local L1670, 12 November 2026)
+
+Searched 12 November 2026 (web search, standard and extended; no PDF of Flatto 1992 reachable). [Report](reports/LOCAL-MAHLER-VALID-STARTS-20261112.md).
+
+- **Flatto (1992), "Z-numbers and β-transformations", Contemp. Math. 135, 181–201.** At most O(x^θ) Z-numbers
+  below x, θ = log_2(3/2). Every source reached gives this as the current count: Dubickas and Mossinghoff (2009),
+  Lagarias's annotated 3x+1 bibliography (arXiv:math/0309224), Andrieu, Eliahou and Vivion (arXiv:2510.11723) and
+  the reference pages. **NOT FOUND:** any little-o statement or smaller exponent. Flatto's paper is unread, so
+  this is not a novelty clearance for L1670's V3 (at most C x^θ/(log x)^c).
+- **Dubickas and Mossinghoff (2009), "Lower bounds for Z-numbers", Math. Comp. 78.** No Z-number below 2^57, by
+  a search. *Known, reproved here at small scale:* L1670's direct walk finds no n ≥ 1 below 2^28 with a valid
+  word beyond m + 34 steps.
+- **Mahler (1968).** A Z-number is fixed by its integer part g_0, the integer parts follow g → ceil(3g/2), and
+  the fractional parts are the tails of the parity sequence. *Known, re-derived in the report's section 2.*
+- **The Erdős–Turán inequality.** Used as a black box in Theorem V, in the form of Kuipers and Niederreiter,
+  *Uniform Distribution of Sequences* (1974), chapter 2, Theorem 2.5: discrepancy ≤ 6/(M + 1) + (4/π) Σ_(h≤M)
+  |S(h)|/h. The constants are taken from a secondary source: Rivat and Tenenbaum, "Constantes d'Erdős–Turán",
+  report the pair (6, 4/π) for Kuipers and Niederreiter, (1, 3) for Montgomery, (1, 1) for Mauduit, Rivat and
+  Sárközy, and prove (1, 2/π). The book is unopened; only the existence of such constants matters for the limit.
+- **The Fejér kernel as a majorant of a short interval.** Standard; used in Proposition M with its three-line
+  proof.
+- **Andrieu, Eliahou and Vivion (2025), Conjecture 1.6.** Every single orbit of ceil(px/q) is equidistributed
+  modulo q^k. Open. Theorem V is an average over starts of a different object (the set of valid starts, in
+  intervals) and does not touch it.
+- **Stephan (2026), Paper 1:** no ξ ≠ 0 keeps ‖ξ(3/2)^n‖ < 1/5 for all n. Lemma N is a finite, 2-adic relative
+  (two consecutive values below 1/5 grow by exactly 3/2), stated in L1669 and reused here.

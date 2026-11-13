@@ -11,10 +11,19 @@ PRIOR-ART.md ("Mahler's 3/2 problem: survey at the room switch").*
 
 **No proof, nothing claimed.**
 
+**12 November 2026, L1670:** [the valid starts are equidistributed](reports/LOCAL-MAHLER-VALID-STARTS-20261112.md).
+The integers below 2^w whose first w parities pass Mahler's test are equidistributed over intervals (Theorem V,
+PROOF-SKETCH, Local: free bits, a renewal inequality, L1669's run lemma and the Erdős–Turán inequality). Same
+status: the first check on valid words tends to 1/2, which closes L1669's open limit; the share passing j more
+checks tends to (3/4)^j; the number of Z-numbers below x is at most C x^θ/(log x)^c with c about 0.0007, against
+Flatto's O(x^θ). The exponent is unchanged and the proved rate gives no usable number; measured, the discrepancy
+is about 0.6/√A(w). Novelty not cleared.
+
 **12 November 2026, L1669:** [the unconditional first check tends to 1/2](reports/LOCAL-MAHLER-FIRST-CHECK-LIMIT-20261112.md).
 Among all n < 2^w the share with T^w(n) odd tends to 1/2 (PROOF-SKETCH, Local: a Riesz product and a run
 lemma, each step checked numerically), and is within 0.0054 of it for every w >= 80 (COMPUTED search on that
-sketch). For the valid words the limit is OPEN, reduced to one lemma about sums over the 3/2-shift.
+sketch). For the valid words the limit was left open, reduced to one lemma about sums over the 3/2-shift;
+L1670 proves that lemma (PROOF-SKETCH).
 
 **12 November 2026, L1667–L1668:** [the first check is balanced on both sides](reports/LOCAL-MAHLER-ARC-CERTIFICATE-20261112.md).
 For every m ≥ 3 the valid words of length m that cannot take a 1 have forced parity 1 in a share between
@@ -1407,3 +1416,30 @@ constants COMPUTED; the valid-word limit OPEN. [Report](reports/LOCAL-MAHLER-FIR
   each 1, is at most C B_m lambda^NS, NS the number of non-small angles. For all words that is the product
   itself. A table at m = 12 to 18 agrees with the shape; no proof.
 
+## The valid starts are equidistributed (Local, L1670, 12 November)
+
+**Status:** Theorem V, Propositions G and M and corollaries V1 to V3 PROOF-SKETCH (Local, awaiting a carrying
+read; every lemma tested exhaustively at small sizes and replayed in Wolfram); tables COMPUTED or MEASURED.
+[Report](reports/LOCAL-MAHLER-VALID-STARTS-20261112.md).
+
+- *Free bits (Lemma T).* A bit that follows a full prefix and is followed by 00 can be flipped: z000 and z100 are
+  both full. With sites restricted to a 3-separated set U, the flips act freely and keep the sites, so the sum
+  over valid words of e(sum q_i alpha_i) is at most the sum over words of the product of |cos(pi alpha_i)| over
+  their sites.
+- *Renewal inequality (Lemma R).* The sum over full words z of length t of lambda^(sites of z in U) is at most
+  mu^|U| F(t), with lambda = cos(pi/5), mu = 1 - 2(1 - lambda)/K and K < 72.8. The sharp series constant is
+  13.37 (COMPUTED for r <= 400); the weakest contraction seen is 0.958 a site (t = 7), near 0.95 for t >= 10.
+- *One frequency (Proposition G).* With the run lemma of L1669 (more than log_2.71((w - a)/0.85) non-small
+  angles at valuation a): gamma_w(h) <= 6.23 (0.85/(w - a))^delta, delta = 0.00176.
+- *Theorem V.* By the Erdős–Turán inequality the discrepancy over intervals of V_w = {n < 2^w : valid word of
+  length w} is at most 6/(w + 1) + 8(1 + ln w)(0.85/(w - log_2 w))^delta. It tends to 0.
+- *Corollaries.* V1: D_m/B_m -> 1/2. V2: the share of valid starts below 2^m that pass j more checks tends to
+  (3/4)^j. V3: at most 450 x^theta/(log_2 x)^c Z-numbers below x, theta = log_2(3/2), c = 0.0007.
+- *Proposition M and the wall.* #{n < 2^m valid for m + j steps} <= (pi^2/4) A(m+j) 2^-j (1 + sum over
+  0 < |h| < 2^j of gamma). A bounded sum for j = eps m would lower the exponent by 0.415 eps. Measured, the sum
+  is about 0.5 * 2^j/sqrt(A); proved, each term is only a power of log. This is the 2-against-3 wall with a
+  number on it.
+- *Measured.* Discrepancy 0.046, 0.019, 0.011, 0.0046, 0.00074, 0.00008 at w = 12, 16, 20, 24, 32, 40, about
+  0.6/sqrt(A(w)); D_m/B_m = 0.49996 at m = 36; pass shares within 0.0007 of (3/4)^j at m = 32.
+- *Refuted (S1).* The low spectrum is not flat: the mean of A gamma^2 over odd low frequencies is about 0.3.
+  The valid starts are more even than random points at coarse scales.
