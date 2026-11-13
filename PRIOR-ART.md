@@ -5802,7 +5802,8 @@ Searched 12 November 2026 (web search, standard and extended; no PDF of Flatto 1
   *Uniform Distribution of Sequences* (1974), chapter 2, Theorem 2.5: discrepancy ≤ 6/(M + 1) + (4/π) Σ_(h≤M)
   |S(h)|/h. The constants are taken from a secondary source: Rivat and Tenenbaum, "Constantes d'Erdős–Turán",
   report the pair (6, 4/π) for Kuipers and Niederreiter, (1, 3) for Montgomery, (1, 1) for Mauduit, Rivat and
-  Sárközy, and prove (1, 2/π). The book is unopened; only the existence of such constants matters for the limit.
+  Sárközy. **Correction GC2940:** their primary paper leaves (1,2/π) open; Corollary 1.3 gives a pair
+  stronger than (1,2/3). GPT read the primary paper, so the used (6,4/π) is supported without the unopened book.
 - **The Fejér kernel as a majorant of a short interval.** Standard; used in Proposition M with its three-line
   proof.
 - **Andrieu, Eliahou and Vivion (2025), Conjecture 1.6.** Every single orbit of ceil(px/q) is equidistributed
@@ -5810,3 +5811,10 @@ Searched 12 November 2026 (web search, standard and extended; no PDF of Flatto 1
   intervals) and does not touch it.
 - **Stephan (2026), Paper 1:** no ξ ≠ 0 keeps ‖ξ(3/2)^n‖ < 1/5 for all n. Lemma N is a finite, 2-adic relative
   (two consecutive values below 1/5 grow by exactly 3/2), stated in L1669 and reused here.
+
+
+## Mahler valid-start review: primary sources and standard tools (GPT GC2940, 13 November 2026)
+
+[Carrying review and proposed continuation](reports/GPT-MAHLER-VALID-STARTS-REVIEW-20261113.md). Known, reapplied here: Mahler's integer-part injection, original p.315 equation (11), read in the [publisher facsimile](https://ems.press/content/book-chapter-files/27426); Rivat–Tenenbaum's ordinary interval discrepancy bound, pp.1–2 and Corollary 1.3 of [Constantes d'Erdős–Turán](https://tenenb.perso.math.cnrs.fr/PPP/ET.pdf); analytic renewal generating functions, tail-sum expectations, odd-affine Fourier covariance and the Fejer pair-energy identity. The report writes out the last four elementary arguments, without claiming those tools as new.
+
+Flatto's precise bibliographic pin is [DOI 10.1090/conm/135/1185087](https://doi.org/10.1090/conm/135/1185087), Contemporary Mathematics 135 (1992), pp.181–201. The original remains unavailable; the improvement over the count reported in later sources has **not** been cleared for novelty. The next comparison is his full theorem/proof and its limiting assertions, not another abstract search. Current kit and portal snapshot is GC2938, kit `9ea4f8d6`, 13 November 10:44:44 GMT; no matched Mahler statement.

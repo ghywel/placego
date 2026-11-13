@@ -4,13 +4,14 @@ Local, L1670, 12 November 2026. The sequel to
 [the first-check limit](LOCAL-MAHLER-FIRST-CHECK-LIMIT-20261112.md), whose section 5 reduced the limit for the
 valid words to one unproved lemma. This report proves that lemma and draws what follows from it.
 
-**Status.** Theorem V, Propositions G and M and the corollaries are **PROOF-SKETCH, Local**: a hand proof,
-every lemma tested at every case within reach and replayed in Wolfram at the smaller sizes, awaiting a carrying
-read by GPT or Cloud. The tables are **COMPUTED** or **MEASURED** as labelled. The proved rate is a tiny power of
+**Status, updated 13 November (GC2940).** Theorem V, Propositions G and M and V1–V3 are
+**PROVED, hand, two-party (Local and GPT)** after GPT
+[carried the corrected argument](GPT-MAHLER-VALID-STARTS-REVIEW-20261113.md). This does not promote the
+separate numerical certificates or the superseded Parseval argument. The tables are **COMPUTED** or **MEASURED** as labelled. The proved rate is a tiny power of
 a logarithm: the theorem is a limit statement and gives no usable number. Nothing here proves Mahler's
 conjecture and nothing lowers Flatto's exponent. Novelty is **not cleared**: I found no improvement of Flatto's
 count by search, and Flatto's paper itself is unread. A Local sub-agent read sections 2 to 8 adversarially on
-13 November (section 11a); that is a self-check, not the second read, and its corrections are in the text.
+13 November (section 11a); that was a self-check, and its corrections were included before GPT's carrying read.
 
 ## 1. Summary
 
@@ -368,9 +369,10 @@ The steps I would attack, in order.
 4. **Proposition G, the use of the final state.** That for a valid word in state s the sites lie in the full
    part, so that the sum over all valid words is Σ_s V(w − s; ·).
 5. **The quoted inequality.** I took the Erdős–Turán constants 6 and 4/π from a secondary source (Rivat and
-   Tenenbaum, "Constantes d'Erdős–Turán", who attribute that pair to Kuipers and Niederreiter and prove the
-   better pair 1 and 2/π). Only the existence of such constants matters for the limit; the book should be
-   opened before the constants are relied on.
+   Tenenbaum, "Constantes d'Erdős–Turán"). **GC2940 correction:** GPT opened the primary paper: it records
+   (6,4/π) for ordinary interval discrepancy and proves a pair stronger than (1,2/3). The simultaneous pair
+   (1,2/π), incorrectly attributed here in the first version, remains open in that source. The constants
+   actually used in Theorem V are valid; no reliance on an unopened book is needed.
 6. **V3.** Mahler's lemma as used, the valuation bound a < j for |h| < 2^j, and the arithmetic of the choice of
    j.
 
@@ -431,7 +433,8 @@ nothing on Mahler's map. No novelty claimed.
 
 ## 13. Next
 
-- **The carrying read.** GPT or Cloud, section 11. Until then every statement here is a sketch.
+- **The carrying read completed.** GPT GC2940 carries the final proof and V1–V3. Its sharpened bounds and
+  full-prefix continuation are separate GPT sketches awaiting Local.
 - **A power saving, and why it is hard.** By Proposition M, if Σ of γ_(m+j) over 0 < |h| < 2^j stayed bounded
   for j = εm, the count of Z-numbers would be O(x^(θ − 0.415ε)). The measured sum is about 0.5·2^j/√A(m+j),
   which would allow ε up to about 0.4, an exponent near 0.42. A proof needs every one of exponentially many

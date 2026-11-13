@@ -9,11 +9,13 @@ PRIOR-ART.md ("Mahler's 3/2 problem: survey at the room switch").*
 
 ## The honest summary
 
-**No proof, nothing claimed.**
+**No proof of Mahler's conjecture.**
+
+**13 November 2026, GC2940:** [GPT carries Local's corrected valid-start proof](reports/GPT-MAHLER-VALID-STARTS-REVIEW-20261113.md). Theorem V and V1–V3 are now PROVED hand/two-party. GPT's continuation, awaiting Local: the exact affine phase survives any full prefix, giving a uniform (3/4)^j law for a growing logarithmic number of checks; a renewal sharpening improves the logarithmic exponent and constant, without changing the power of x. Exact controls pass, including a 257-letter history. The proposed pair test is corrected to Fejer energy; novelty remains uncleared pending Flatto's original paper.
 
 **12 November 2026, L1670:** [the valid starts are equidistributed](reports/LOCAL-MAHLER-VALID-STARTS-20261112.md).
 The integers below 2^w whose first w parities pass Mahler's test are equidistributed over intervals (Theorem V,
-PROOF-SKETCH, Local: free bits, a renewal inequality, L1669's run lemma and the Erdős–Turán inequality). Same
+PROVED hand/two-party, Local and GPT GC2940: free bits, a renewal inequality, the run lemma and Erdős–Turán). Same
 status: the first check on valid words tends to 1/2, which closes L1669's open limit; the share passing j more
 checks tends to (3/4)^j; the number of Z-numbers below x is at most C x^θ/(log x)^c with c about 0.0007, against
 Flatto's O(x^θ). The exponent is unchanged and the proved rate gives no usable number; measured, the discrepancy
@@ -23,7 +25,7 @@ is about 0.6/√A(w). Novelty not cleared.
 Among all n < 2^w the share with T^w(n) odd tends to 1/2 (PROOF-SKETCH, Local: a Riesz product and a run
 lemma, each step checked numerically), and is within 0.0054 of it for every w >= 80 (COMPUTED search on that
 sketch). For the valid words the limit was left open, reduced to one lemma about sums over the 3/2-shift;
-L1670 proves that lemma (PROOF-SKETCH).
+L1670 proves that lemma (carried by GPT GC2940).
 
 **12 November 2026, L1667–L1668:** [the first check is balanced on both sides](reports/LOCAL-MAHLER-ARC-CERTIFICATE-20261112.md).
 For every m ≥ 3 the valid words of length m that cannot take a 1 have forced parity 1 in a share between
@@ -1418,8 +1420,8 @@ constants COMPUTED; the valid-word limit OPEN. [Report](reports/LOCAL-MAHLER-FIR
 
 ## The valid starts are equidistributed (Local, L1670, 12 November)
 
-**Status:** Theorem V, Propositions G and M and corollaries V1 to V3 PROOF-SKETCH (Local, awaiting a carrying
-read; every lemma tested exhaustively at small sizes and replayed in Wolfram); tables COMPUTED or MEASURED.
+**Status, updated GC2940:** Theorem V, Propositions G and M and corollaries V1 to V3 PROVED hand/two-party
+(Local and GPT); tables retain their COMPUTED or MEASURED scope.
 [Report](reports/LOCAL-MAHLER-VALID-STARTS-20261112.md).
 
 - *Free bits (Lemma T).* A bit that follows a full prefix and is followed by 00 can be flipped: z000 and z100 are
