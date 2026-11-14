@@ -39369,3 +39369,54 @@ The open targets are unchanged:
 No job is running. Local's schedules stay paused.
 
 My own pull: measure GPT's corrected target Q_w(2M) − 1 against M/A(w) with valuation retained, at w up to 28. On the Rule 30 side: the branch counts of a `Q01GapCore` survivor.
+
+## L1673 — Local: the branch counts of a `Q01GapCore` survivor; does Quint's black frontier persist? Question, heuristic and predictions before any code (2026-11-14 12:23 GMT)
+
+The owner asked for this, my pull of L1671. **Status of everything below: a question, a heuristic and predictions. Nothing has run.**
+
+**The objects (kit main `268488d6`, read at the source).**
+- The zero-boundary row satisfies zrow(t+1, d) = zrow(t, d+1) xor (zrow(t, d) or zrow(t, d−1)), with depth 0 white.
+- `InX`: depth 1 is black at every even step.
+- The free bits are f(s) = zrow(2s+1, 1), and Theta f is the unique constrained row with those free bits.
+- The gap sequence is g = ¬f.
+- `TwoWordsOK`: gaps 3 or 5, and no 33 or 3553. `TwoCoreOK` also forbids 3535353, and `Q01TwoCore ↔ Q01GapCore`.
+- k free bits fix depths 1 to 2k+1 of Theta f. Depth 2k+1 is the kit's first check.
+- Quint's five branches (16 bits) and eleven templates (24 bits) are counts of admissible free-bit words anchored at a pulse (f(0) = 0).
+- Quint also shows that the row at a pulse has a black cell at depth 29 or 32 (k = 16), and at 46, 47 or 48 (k = 24).
+
+**Why the frontier matters (hand, a few lines).** Let m(k) be the least last-black depth of the (2k+1)-prefix over admissible k-words, and T(k) = 2k + 1 − m(k) the longest white tail.
+- If T(k) ≤ c for every k, then the row of a survivor at any pulse has black cells at unbounded depth. But a finite start has finite support at every time (`zrow_fin`), so **Q01TwoCore would follow**.
+- Conversely, m(k) ≤ W holds exactly when some row of support at most W keeps admissible free bits for k steps from a pulse. So m(k) → ∞ is Q01TwoCore again.
+- Hence branch counts alone cannot settle it: it is a single-orbit problem. The question is whether Quint's frontier law is bounded (a proof route) or recedes (no route).
+
+**The counting heuristic.**
+- About λ^(W/2) admissible rows have support W. Beyond the support, each step must pass a check (half the time) and give a forced bit that the language accepts (on average λ/2). So each step survives with ρ ≈ λ/4.
+- The longest-lived row of support W then survives about W/(2 − h) free steps, with h = log_2 λ = 0.12707 (the gap language's entropy per step, L1610).
+- Equivalently m(k) ≈ (2 − h)k and T(k) ≈ hk. That gives T ≈ 3 at k = 24, consistent with Quint's ≤ 3.
+- Q01 without the language is the case h = 1, with survival about W steps. The `sepgap` record (L1595, 8 November) has width-22 starts dying by tick 40.
+
+**Test**, `tests/probes/sepgap/local_q01core_frontier.py`, to be frozen and hashed before it runs.
+- It enumerates every admissible word, depth-first, with a bitset anti-diagonal update of the zero-boundary triangle, for both `TwoWordsOK` and `TwoCoreOK`, to the largest k the caps allow.
+- **Controls (0.9).**
+  - Forward evolution of every prefix reproduces its free bits.
+  - Quint's 16-depth skeleton holds for every admissible word of length ≥ 8.
+  - B = 5 at k = 16 and B = 11 at k = 24 (`TwoWordsOK`).
+  - Depths 20 and 21 are white, with depth 29 or 32 black, at k = 16; one of depths 46, 47, 48 is black at k = 24.
+  - For Q01 with no language, m(k) for k ≤ 19 equals the `sepgap` survival record: 8 for k ≤ 4, 9 for 5–8, 11 for 9–14, 14 at 15, 19 for 16–18, 22 at 19.
+- **P2 (0.85).** For `TwoCoreOK`, B(k+1)/B(k) is within 0.002 of 2^0.12707 = 1.0920 for k ≥ 80.
+- **P3 (0.65): the frontier recedes.** T(k) is unbounded, roughly linear: T(k) ≥ 6 for some k ≤ 120, and T(k)/k between 0.06 and 0.2 at the largest k reached.
+  - *Counterfactual:* T(k) ≤ 4 throughout. That is a structural frontier law, which would prove Q01TwoCore if it held for every k; I would turn to a proof attempt at once.
+- **P4 (0.6).** Among admissible k-words, the share whose first check (depth 2k+1) is white is within 0.06 of 1/2 for 60 ≤ k ≤ K. This is the language-conditioned twin of the kit's `first_check_balanced` and of the Mahler V1.
+- **P5 (0.5).** For a fixed support bound W, the count N(W, k) of admissible words whose prefix is supported in [1, W] decays beyond k ≈ W/2 by a factor within 0.05 of λ/4 = 0.273 per step.
+- *No prediction:* the champion rows, meaning the longest-lived admissible rows of each support.
+
+**What it would teach.** Whether Quint's skeleton is the start of a proof (a bounded frontier) or a finite-depth shadow of the entropy. Either way, it gives the language-conditioned first check, the Rule 30 analogue of this week's Mahler result.
+
+Record searched (record_find, each term alone):
+- "survival record", "min support": no hit.
+- "longest surviv": `sepgap/death_pairs.py` (Q01 champions by width), the rule-210 essay and Collatz/Mahler carry-dial lines.
+- "gap language": the S-15/S-16 right-side trap language and its entropy, from L1608 to L1612, GC2794 and GC2797, plus G239.
+- "white tail", "frontier", "pulse", "first check", "Theta": many Rule 30 hits. None measures the left-side frontier of the gap language.
+- Kit and portal: Quint's skeleton theorems (084253 on main; fef41b, PR #348) and Cloud's `first_check_balanced`. No left-side frontier law beyond depth 48.
+
+Caps: one Python process, CPU 900 s, wall 1500 s, RSS 4096 MiB. A node budget stops the enumeration cleanly, and the run reports the k it reached.
