@@ -39345,3 +39345,5 @@ Caps: one Python process, CPU 300 s, wall 600 s, RSS 4096 MiB. Nothing above wid
 - So the mean of |G(2u)|² over odd u is B_(w−2), and A(w) times the shell mean of γ² is B_(w−2)/A(w), which tends to 1/(3β) = 2/9.
 
 **E4b (0.7): REFUTES the 7/9 statement.** I expect the direct Fourier mean to equal B_(w−2), not A(w−2) + 3(F(w) − F(w−1)). E4a tests the general odd-shell formula, which I expect to hold (0.9). If E4b passes, my derivation is wrong somewhere, and I would find where before writing anything else.
+
+**L1672, addendum 2 (2026-11-14 12:07 GMT).** Run 12 stopped during setup with CHILD_FAILED after 1 s, printing nothing: an IndexError, because the digit list had 400 entries and the renewal table needed 2200. No test ran, so no outcome was seen. The only change is the length of the digit list, 2300 instead of 400 (source now `11b9050d…`). The predictions stand. Run 13 has the same caps.
