@@ -1,0 +1,42 @@
+L1672 carry tests.  d = 101000001001001010000000001000...
+--- controls
+C0 PASS: word counts = A(w); starts give their words by literal walk; 2^w T^w(r) = 3^w r + B_w, w <= 12
+C1 PASS: slack c_i has denominator 2^i and d_i = [c_i > 2/3], i < 40
+--- GC2940 section 3
+G1 PASS: F(n+2) <= F(n+1) + F(n) and F(n+3) <= 5F(n) for n < 2000; ones of d at least 2 apart (first 400 digits)
+   K_5 = 45.45085, mu_5 = 0.99159606, delta_5 = 0.00282176, C_5 = 1.022834, c_5 = 0.001171, C_Z = 45.1582
+G2 PASS: GC2940 constants as quoted
+G3 PASS: E[mu^(-ceil(S/3))] <= 1/(2mu - 1) for w <= 300 (largest ['1.005022', '1.008072'] against bounds ['1.010616', '1.017095']); A(w-s)F(s) <= A(w)
+G4 PASS: Lemma R with mu_5: V(t;U) <= mu_5^|U| F(t) for every 3-separated U, t <= 22 (largest ratio 1.0000)
+G5 PASS: gamma_w(h) <= mu_5^|U(h)| / (2 mu_5 - 1) at every h != 0, 8 <= w <= 14 (largest ratio 0.4182)
+--- GC2940 section 4 (no prediction: the renewal rate)
+   1/m_1 = 0.517015062816, v_400 = 0.517015062816; per-step decay of max|v_n - 1/m_1| over blocks of 40: 40: 1.3753
+G6 PASS: P(1) = sum f_k = 1 (to 1e-12, 399 terms)
+--- GC2940 section 5
+G7 PASS: every full prefix of length <= 9, k <= 5, j <= 3 (1200 cases): T^l(r_p + 2^l t) = g_p + 3^l t; count = residue formula; C_p(k,0) = A(k); A(k) - D_(p,k) = C_p(k,1)
+G8 PASS: a random full prefix of length 240 (blocks 000 and 100, seed 1672): the same transport at (k, j) = (4,0), (4,2), (5,3)
+G9 PASS: the guard: 101 has state 3 (slack 1/8), r = 1, T^3(1) = 5, T^3(9) = 32, only t = 1 extends
+--- GC2942 sections 3 and 4
+E1 PASS: prefix phase 3^l r(uv) = 2^l r(v) - B_l(u) mod 2^w, B_l(u) < 3^l/2, suffix valid, w <= 12, every split
+E2 PASS: (C) Q_(3^l)(H) >= (4H/pi^2) sum M_v^2 / A^2 >= 4H/(pi^2 A(n)) whenever H 3^l <= 2^w, 8 <= w <= 16 (1084 cases; least ratio 2.199)
+E3 PASS: null model at w = 10: mean over odd b of Q_b(2^J) - 1 = H/A - C_(w-J)/A^2 <= H(1/A - 1/N), J <= 7; the +-3^k cycle has the same mean
+E4a PASS: odd-shell formula mean_(v2 h = a) |G(h)|^2 = sum_p Delta_(s_p)(a)^2 at w = 10, 12, 14, every valuation; A(w) x odd-shell mean = B_(w-1)/A(w): ['0.333333', '0.333333', '0.333333'] -> 1/3
+   w = 8: direct 30.0000, B_(w-2) = 9, A(w-2) + 3(F(w) - F(w-1)) = 30
+   w = 10: direct 70.0000, B_(w-2) = 20, A(w-2) + 3(F(w) - F(w-1)) = 70
+   w = 12: direct 159.0000, B_(w-2) = 46, A(w-2) + 3(F(w) - F(w-1)) = 159
+   w = 14: direct 348.0000, B_(w-2) = 100, A(w-2) + 3(F(w) - F(w-1)) = 348
+E4b PASS: GPT's valuation-one numerator A(w-2) + 3(F(w) - F(w-1)) equals the direct mean of |G(2u)|^2 over odd u; its ratio to A(w): ['0.777779', '0.777778', '0.777778'] (claimed -> 7/9); B_(w-2)/A(w): ['0.222222', '0.222222', '0.222222']
+--- GC2942 sections 5 and 6
+E5 PASS: (V) and the exact prefix Fourier form: |G(3^l h) - T(h)| <= (2 pi^2 h^2/N^2) sum C_s v_s A_s(n), three cases
+E6 PASS: (D) same-suffix energy <= (1 + pi^2/3) H/A for q = 3^l <= H <= 4q <= N, w = 10, 12, 14 (largest ratio 0.233); one point per grid slot in every class
+E7 PASS: truncation baseline: every circular interval of L residues holds at most A(ceil(log2 L)) valid starts, w <= 12
+E8 PASS: ternary valuation: v3(B(p) - B(p')) = number of common trailing bits (sampled pairs, w = 12); E_0 = Q - 1, E_w = (H-1)/A, every E_n >= 0
+--- GC2942 section 7
+E9 PASS: (T): R r + B = N k with k = T^w(r) = 2^(-w) B mod 3^w, injective, k mod 3^4 from the last 4 bits; energy error within (pi/N) sqrt(H(H^2-1)/6) at w = 10, 12, 14, H = 4, 16, 64 (largest ratio 0.019)
+E10 PASS: (F): cylinders tile [0, 3^w/2) in numerator coordinates with gaps 2^(w-1) c_s, q_s odd, and the identity holds for every h modulo 2^(w+1), w <= 14
+E11 PASS: (G) and (G'): the ternary same-suffix energy equals the minimum-slack kernel sum and its threshold factorisation, three cases
+--- GC2942 section 7: the transfer operator
+E12 PASS: (H) exactly by piecewise integration, (I) at random rational points, the recursion for P_(k,t), and (J): beta^w [L^w e_(h a_w/2)](0+) = G_w^ter(h) and A(w) at h = 0, w <= 12
+E13 PASS: section 8 one-step identity G_(s,w)(3h) = sum e(-hb/2^w) G_(t,w-1)(h), w <= 12, s <= 5; A_s(n) = 1 + sum_t d_(s+t) A(n-1-t), s < 8, n < 12
+failures: none
+done in 1 s

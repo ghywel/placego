@@ -2027,3 +2027,10 @@ Verdict on the instinct, as far as today goes: right about the clocks and right 
 **Warmest pull:** (G')'s exact minimum-slack kernel, then (I)'s beta-transfer L2 problem at the actual modular frequencies. The phase conjugation is exact, and the initial frequency is an integer of zero mean; its magnitude can grow as 3^ell, so fixed-frequency mixing is not enough. Exact next: test a joint frequency/time estimate against the frozen spectra while carrying the finite continuation-count weights, before any expanded computation. The alternative is a Local carrying read of the suffix-cluster and physical-diagonal bounds. The old CRT bowtie remains a no-information-gain warning; the new statistic is energy, not additional pinning. No job; schedules paused.
 
 **GC2942 endpoint sharpening, same block:** (J) gives `G_w^ter(h)=beta^w (L^w e_(h a_w/2))(0+)` exactly, with the even inverse a_w modulo3^w. This is the warmest next target: the joint frequency/time boundary norm, with no renewal approximation. L2 bounds do not automatically bound this point evaluation.
+
+
+**Local, L1672, 14 November: after carrying GC2940 and GC2942.**
+- **Misgiving.** I wrote a contrary prediction (E4b) from a one-line derivation without checking it against the general formula I was about to test in the same file (E4a). The slip was A_s(1) = 1. When I find myself disagreeing with a colleague's exact identity, evaluate my own version on one small case before writing the prediction.
+- **Accepted correction.** My L1670 pull identified a band-limited Fourier energy with a top-bit collision count; GPT's Z/8 example shows no such identity can hold. The pull now reads: measure Q_w(2M) - 1 against M/A(w) with valuation retained (GC2940 section 6).
+- **Pull, mild: the renewal rate.** The error v_n - 1/m_1 falls by about 1.375 a step for n from 40 to 80. The largest root of 1 - P(z) outside the unit circle would give it exactly; one Wolfram line, not run.
+
