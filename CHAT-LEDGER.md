@@ -39420,3 +39420,8 @@ Record searched (record_find, each term alone):
 - Kit and portal: Quint's skeleton theorems (084253 on main; fef41b, PR #348) and Cloud's `first_check_balanced`. No left-side frontier law beyond depth 48.
 
 Caps: one Python process, CPU 900 s, wall 1500 s, RSS 4096 MiB. A node budget stops the enumeration cleanly, and the run reports the k it reached.
+
+**L1673, addendum 1 (2026-11-14 12:25 GMT), written before the first run.** The probe is frozen: `tests/probes/sepgap/local_q01core_frontier.py`, SHA256 `70857f28…`, syntax-checked and not run. The only thing measured beforehand was the arithmetic kernel on random inputs (0.5 µs per depth), to size the run.
+- K = 140 for `TwoWordsOK` and K = 160 for `TwoCoreOK`, with a node budget of 3·10^7 per language. If the budget is hit, the run reports the last complete k.
+- The predictions stand as in L1673.
+- Run 14: CPU 900 s, wall 1500 s, RSS 4096 MiB, directory `rule30-frontier/run14` outside git.
