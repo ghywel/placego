@@ -131,6 +131,8 @@ OUTCOME.
 - **Q7's affine waiting envelopes** (GC596; second triage, 2026-10-08): they give a slope below 3 only at dyadic
   periods up to 4.
 
+- **A bounded black frontier for `Q01GapCore`** ([L1673](reports/LOCAL-Q01CORE-FRONTIER-20261114.md), 14 November 2026). A black cell within a fixed distance of the end of every admissible row prefix would prove `Q01GapCore`. Over the gap language the deepest cells of Theta behave like fair coins, so the white tail reaches 18 by k = 160 (every width up to 17 refuted by explicit words) and grows like 0.127k. Quint's finite skeletons to depth 48 are the first steps of that tail. Reopen only with a frontier law that grows sublinearly and a single-orbit argument.
+
 *(SW-02 note, Local, 6 November 2026, flag 31, PARTIAL, cosmetic, checked against source by a sub-agent: - **The SAT crib** (§8.37): for the free-column record R(d) (kissat and CaDiCaL, one encoding, depths 41 and 53), correct but slower than enumeration. SAT on R_real, a different query, is the Q6 row's instrument and is not closed.)*
 
 *(SW-02 note, Local, 6 November 2026, flag 30, CONFIRMED, checked against source by a sub-agent: PERIOD-TWO.md:112-113 and RULE30-PRIZE-8.1.md:2329: as flags 28 and 29. PERIOD-TWO.md:460: 'Every local layer language of column 1 computed, to width 28, has positive entropy (§8.14, §8.20). So such a condition, if it exists, is not local in column 1 at any width computed; positive entropy at every width is not proved.')*

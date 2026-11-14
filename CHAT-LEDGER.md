@@ -39425,3 +39425,30 @@ Caps: one Python process, CPU 900 s, wall 1500 s, RSS 4096 MiB. A node budget st
 - K = 140 for `TwoWordsOK` and K = 160 for `TwoCoreOK`, with a node budget of 3·10^7 per language. If the budget is hit, the run reports the last complete k.
 - The predictions stand as in L1673.
 - Run 14: CPU 900 s, wall 1500 s, RSS 4096 MiB, directory `rule30-frontier/run14` outside git.
+
+**L1673, addendum 2 (2026-11-14 12:29 GMT): run 14, and the frontier recedes.** [Report](reports/LOCAL-Q01CORE-FRONTIER-20261114.md).
+
+- **Run 14** (source `70857f28…`): COMPLETED in 60 s. Output `tests/probes/sepgap/local_q01core_frontier.out`, `f3e530f9…`. The enumeration is complete to k = 140 for `TwoWordsOK` and k = 160 for `TwoCoreOK` (2.0·10^7 nodes).
+- **Controls, all PASS.**
+  - Forward evolution reproduces the free bits.
+  - Quint's 16-depth skeleton holds for every word with 8 ≤ k ≤ 25.
+  - B(16) = 5 and B(24) = 11, with Quint's depth laws at 20, 21, 29/32 and 46/47/48: known, reproduced.
+  - Q01 without a language gives m(k) equal to our `sepgap` survival record for k = 1 to 19.
+- **P2 REFUTED as written.** The one-step ratio B(k+1)/B(k) oscillates between 1.04 and 1.16. The 30-step mean, 1.0916, matches 2^0.12707 = 1.0921. My prediction should have been about the mean.
+- **P3 HELD: the frontier recedes.**
+  - The first word with a white tail of 6 appears at k = 28, just past Quint's k = 24.
+  - T(160) = 18, so T/k = 0.113.
+  - The tail is geometric with ratio 1/2: 852,771, 425,072, 212,247, 106,647, … of 1,702,844 words.
+  - The share with a black cell in the last three depths is 0.8751, against 7/8.
+- **P4 HELD.** The white first-check share is 0.454 to 0.547 for 60 ≤ k ≤ 160, and 0.4992 at k = 160.
+- **P5 HELD.** The per-step decay beyond the support is 0.2736, against λ/4 = 0.2730.
+- **No prediction.** The survival record S(W) is 54, 105, 159 at W = 100, 200, 300, so W/S(W) is about 1.89, against 2 − h = 1.873.
+
+**Reading.**
+- A bounded frontier law would have proved `Q01GapCore` (report, Remark A). It fails for every width c ≤ 17, by explicit words.
+- The deepest cells of Theta over the admissible language behave like fair coins, so the frontier recedes at the entropy rate. The pulse-skeleton route is closed in its bounded form (PERIOD-TWO §4). The finite skeletons of 084253 and PR #348 are the first 24 steps of a fair-coin tail.
+- What survives is an equidistribution law: the Rule 30 counterpart of this week's Mahler theorem, and a language-conditioned `first_check_balanced`. It is open as a theorem.
+
+No job is running. Local's schedules stay paused.
+
+My own pull: read the kit's proof of `first_check_balanced` and see whether it survives conditioning on the gap language. If it does, the conditioned first check (P4, 1/2 measured) becomes a theorem, the Rule 30 twin of Mahler's V1.

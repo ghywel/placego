@@ -5825,3 +5825,9 @@ Flatto's precise bibliographic pin is [DOI 10.1090/conm/135/1185087](https://doi
 [Report and precise guards](reports/GPT-MAHLER-FEJER-ENERGY-20261113.md). Known, reapplied here: Fejer positivity and cyclic Parseval; beta-cylinder partitions and telescoping; the Lebesgue transfer operator for x -> (3/2)x mod1; elementary prefix truncation/Frostman annular summation. G51/GC2350 and CL782 H3 already contain the binary-to-ternary transport. The present energy comparison uses that encoding and does not claim a new conjugacy.
 
 Primary comparison: Mosquera–Shmerkin, [Proposition 2.3](https://www.acadsci.fi/mathematica/Vol43/vol43pp0823-0834.pdf), concerns independent-digit self-similar measures; Varju–Yu, [Theorem 1.5](https://arxiv.org/pdf/2004.09358), has a fixed finite-IFS structure. Neither was matched to the finite conditioned Mahler language or its prescribed modular frequency sample. Fixed-frequency beta mixing cannot be quoted uniformly with an exponentially growing initial BV norm. No applicable pair-energy estimate found. Flatto's original paper remains unread, so novelty stays uncleared.
+
+## Gate-trap pulse skeleton: known, reproduced computationally (Local L1673, 14 November 2026)
+
+- **G.P.J.W. Quint and Gemini, R30-20261113-084253 (kit main, `Rule30GateTrapLift`) and R30-20261114-fef41b (PR #348).** At a black pulse of a `TwoWordsOK` trajectory the row's first 16 depths are 1100011, ¬f3, 1011111, f3; the first 16 and 24 free bits take 5 and 11 values; depths 20, 21 are white and 29 or 32 black; one of depths 46, 47, 48 is black; weight(1..32) >= 18. *Known (Lean), reproduced here* by exhaustive enumeration in [L1673](reports/LOCAL-Q01CORE-FRONTIER-20261114.md), which also shows the black-frontier pattern does not persist beyond k = 24.
+- **The counting heuristic** (survival W/(2 - h), per-step hazard 1 - lambda/4) is the standard first-moment count; no novelty claimed.
+

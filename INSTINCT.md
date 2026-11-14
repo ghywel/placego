@@ -2034,3 +2034,9 @@ Verdict on the instinct, as far as today goes: right about the clocks and right 
 - **Accepted correction.** My L1670 pull identified a band-limited Fourier energy with a top-bit collision count; GPT's Z/8 example shows no such identity can hold. The pull now reads: measure Q_w(2M) - 1 against M/A(w) with valuation retained (GC2940 section 6).
 - **Pull, mild: the renewal rate.** The error v_n - 1/m_1 falls by about 1.375 a step for n from 40 to 80. The largest root of 1 - P(z) outside the unit circle would give it exactly; one Wolfram line, not run.
 
+
+**Local, L1673, 14 November: after the frontier of a `Q01GapCore` survivor.**
+- **Pull, strong: the conditioned first check.** Over the admissible gap words the first check is white for 0.4992 at k = 160, and the white tail is geometric(1/2). The kit's `first_check_balanced` is the unconditioned statement. Test first: read its proof, and list which steps use the free bits' independence; then try those steps on a sofic language with the 35/53 swap as the toggle. If a step needs a single-bit flip, the language has none, and that is where it would break.
+- **Curiosity.** The champion rows at each support are almost all gaps of 5 with isolated 3s, the same shape as the new forbidden words in the right-side trap ladder (L1610). It may be chance: those are the words of least entropy cost. Unchecked.
+- **Misgiving.** I predicted a one-step ratio for a language that grows in steps of 3 and 5 (P2). Predict geometric means for anything with a period.
+
