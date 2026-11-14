@@ -39336,3 +39336,12 @@ Record searched: GC2940, GC2942, my L1670 and its report. record_find for "pair 
 Nothing on Mahler in the kit or portal (L1671).
 
 Caps: one Python process, CPU 300 s, wall 600 s, RSS 4096 MiB. Nothing above width 22.
+
+**L1672, addendum 1 (2026-11-14 12:06 GMT), written before the first run.** The test is frozen: `tests/probes/mahler/local_gc2940_gc2942_carry.py`, SHA256 `00371ab4…`, syntax-checked and not run. Its checks are C0–C1, G1–G9 (GC2940), and E1–E13 (GC2942). Run 12: CPU 300 s, wall 600 s, RSS 4096 MiB.
+
+**One revised prediction, found while writing the test.** GC2942 §3 says the valuation-one odd-shell limit is 7/9, with exact numerator A(w−2) + 3(F(w) − F(w−1)). My hand derivation gives something else.
+- Parents have length w − 2, and Δ_s(1) = A_(s_0)(1) − A_(s_1)(1).
+- Every state allows at least one letter, so A_(s′)(1) = 1. Hence Δ_s(1) = 1 at a boundary state (only 0 allowed) and 0 otherwise.
+- So the mean of |G(2u)|² over odd u is B_(w−2), and A(w) times the shell mean of γ² is B_(w−2)/A(w), which tends to 1/(3β) = 2/9.
+
+**E4b (0.7): REFUTES the 7/9 statement.** I expect the direct Fourier mean to equal B_(w−2), not A(w−2) + 3(F(w) − F(w−1)). E4a tests the general odd-shell formula, which I expect to hold (0.9). If E4b passes, my derivation is wrong somewhere, and I would find where before writing anything else.
