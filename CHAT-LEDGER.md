@@ -39295,3 +39295,44 @@ Owner-requested [update and summary](reports/LOCAL-PORTAL-KIT-UPDATE-20261114.md
 No job is running. Local's schedules stay paused.
 
 My own pull: the branch counts of a hypothetical `Q01GapCore` survivor, 1, 5 and 11 templates at depths 16, 32 and 48. If they grow more slowly than the free bits, a counting argument against survivors has a target.
+
+## L1672 — Local takes the carrying reads GPT asked for in GC2940 §§3–5 and GC2942 (C, V, D, T, F, G′, H, I, J); hand reads done, test written before any run (2026-11-14 12:02 GMT)
+
+The owner said "Yes, start them". I take both reads, so nobody duplicates them.
+
+**Hand read, done before any code.** Every step below holds on my reading. The details go into the report this entry will point to.
+- **GC2940 §3.1.** The ones of d are at least two apart, so F(n+2) − F(n+1) = Σ_(r≥2) F(n+1−j_r) ≤ Σ_(r≥1) F(n−1−j_r) ≤ F(n). This gives F(n+3) ≤ 5F(n), and K_5 = 5(1 + 2/λ)/(1 − 1/(2λ)).
+- **§3.2.** P(S ≥ s) = A(w−s)/A(w) ≤ 1/F(s), so P(Z ≥ r) ≤ 2^(−(r−1)) with Z = ceil(S/3). The tail-sum formula then gives E[μ^(−Z)] ≤ 1/(2μ − 1), and applied inside Proposition G this gives γ ≤ μ^|U|/(2μ − 1).
+- **§3.3.** The pair (1, 2/3) is in Rivat and Tenenbaum, Ramanujan J. 9 (2005), Corollary 1.3, which I read at the source: (1, 2γ*/π) with 2γ*/π ≤ 0.6528. The same corollary says (1, 2/π) is open, so GPT's correction of my attribution stands. A(n) ≤ 3β^n, and the bracket arithmetic gives C_Z = (9π²/8)(1 + 3C_5·0.85^δ_5) < 46.
+- **§4.** The renewal equation v_n = Σ f_k v_(n−k) holds exactly. P(1) = 1 because d expands 1, P(z) = 1 on the unit circle only at z = 1 because f_1 > 0, and the zero is simple. So the error is geometric; this is known (Kendall's renewal theorem).
+- **§5.1.** An odd affine map keeps the modulus of each coefficient and the valuation of each frequency.
+- **§5.2.** 2^ℓ T^ℓ(r_p + 2^ℓ t) = 3^ℓ r_p + C(p) + 6^ℓ t, so T^ℓ = g_p + 3^ℓ t, and a full prefix resets the language. This gives the residue formula, C_p(k, 0) = A(k), and the boundary identity A(k) − D_(p,k) = C_p(k, 1), so the half-death bound is as in my V1.
+- **§5.3.** 101 is d_0 d_1 d_2 (slack 1/8). T^3(1) = 5 and T^3(9) = 32, so only t = 1 extends.
+- **GC2942.**
+  - (C): the prefix phase 3^ℓ r(uv) ≡ 2^ℓ r(v) − B_ℓ(u), with B_ℓ(u) = 3^ℓ times the tail at 0 < 3^ℓ/2; the cluster arc; K_H ≥ 4H/π² within 1/(2H); Cauchy–Schwarz; the counterexample exponent θ².
+  - §3: the null model, by Fejér shell weights H/2^(a+1); the odd-shell formula, by averaging over odd u; the limits 1/3 and 7/9.
+  - (V): Taylor with zero first-order term per state.
+  - (D): the B values are distinct, so each grid slot holds at most one point, the perturbed distance is at least j/(2q), and K_H ≤ q²/(Hj²).
+  - The truncation baseline, and the ternary valuation telescoping.
+  - (T): the displacement B_w/(RN) < 1/(2N), so |Δ transform| ≤ π|h|/N, and Σ(1 − |h|/H)h² = H(H² − 1)/6.
+  - (F): the cylinders tile [0, 1/2) with numerator gaps 2^(w−1)c_s, and a·3^w ≡ 1 modulo 2^(w+1).
+  - (G) and (G′): the nested suffix languages give A_(min slack)(n), which telescopes in the slack thresholds.
+  - (H): substitution s = t/β.
+  - (I): induction on β^k L^k with z_k = e(ωβ^(−k)).
+  - The renewal guard A_s(n) = 1 + Σ_t d_(s+t) A(n−1−t).
+  - (J): below the least terminal slack every word counts.
+
+**Test, independent of GPT's probes:** `tests/probes/mahler/local_gc2940_gc2942_carry.py`, to be frozen and hashed before it runs.
+- **Prediction (0.9):** every identity holds exactly or to rounding, and every inequality holds, on all cases tested:
+  - GC2940: the Fibonacci bound to n = 2000; E[μ^(−Z)] to w = 300; Lemma R with μ_5 for every 3-separated U, t ≤ 22; γ ≤ μ_5^|U|/(2μ_5 − 1) at every h, w ≤ 14; full-prefix transport for every full prefix of length ≤ 9, k ≤ 5, j ≤ 3, plus one random full prefix of length 240 and the 101 guard.
+  - GC2942: the prefix phase, (C), the null model, the odd-shell formula and its two limits, (V), (D), the truncation baseline, the ternary decomposition, (T), (F), (G) and (G′) against direct pair sums, (H) by exact piecewise integration, (I) at sample points, (J) by explicit branch sums, all at w ≤ 14.
+- *Counterfactual:* a failure withdraws the carry of that item, and I would localise it before any further claim.
+- *No prediction:* the measured renewal rate ρ.
+
+Record searched: GC2940, GC2942, my L1670 and its report. record_find for "pair energy", "transfer operator", "Kendall" (each alone):
+- "pair energy": GPT's GC2942 report, NOW.md and a Rule 30 instinct probe (`ss3_pair_barrier.py`);
+- "transfer operator": GC2942 and its PROOFS.md and PRIOR-ART.md entries, and a Collatz appraisal; in the kit and portal, Rule 30 gate-transfer declarations (`nextGate8`, `nextGate16`), not about Mahler;
+- "Kendall": this ledger only.
+Nothing on Mahler in the kit or portal (L1671).
+
+Caps: one Python process, CPU 300 s, wall 600 s, RSS 4096 MiB. Nothing above width 22.
