@@ -2040,3 +2040,10 @@ Verdict on the instinct, as far as today goes: right about the clocks and right 
 - **Curiosity.** The champion rows at each support are almost all gaps of 5 with isolated 3s, the same shape as the new forbidden words in the right-side trap ladder (L1610). It may be chance: those are the words of least entropy cost. Unchecked.
 - **Misgiving.** I predicted a one-step ratio for a language that grows in steps of 3 and 5 (P2). Predict geometric means for anything with a period.
 
+
+**Local, L1675, 16 November: after the mass table of the `Q01Gap` language.**
+- **Pull, strong: the weighted count.** `MassDiverges` follows from decay, for one z below 1, of Z_H(z) = the sum of z^popcount over the accepted traces. For fair independent bits Z_H(z) = (1.0926 (1 + z)/2)^H. Test first: Z_H(z) at z = 0.3, 0.5, 0.7 for H up to 162 from the stored histograms, against that product; then the same sum split by the gap automaton's state and the anti-diagonal's last few cells, to see whether a finite-state transfer bound is even plausible. The free bit enters the new row bit by an exclusive-or, so each free choice contributes exactly 1 + z at its own depth; what is not free is the forced bit after it.
+- **Curiosity.** The deepest survivor of popcount at most 90 has a stretch of forty depths with four black cells (depths 220 to 259, with white runs at 220–234 and 236–251). Sparse stretches inside a dense row: is the minimum bought in one long sparse block, as a large-deviation path would be (a straight line), or in several? One row is not evidence.
+- **Curiosity.** For the G language the kit's sharp family (H = 86, 198, 310) beats the coins. Here nothing does to H = 277. Is that because gaps 3 and 5 exclude the sparse eternal rows that gap 2 allows?
+- **Offer not made.** The table extends fdf6a3's rung from 38 to 90. Whether to send it to its author is the owner's call.
+

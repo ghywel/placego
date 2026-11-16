@@ -39541,3 +39541,31 @@ Caps: one Python process, CPU 600 s, wall 900 s, RSS 4096 MiB. A time guard stop
 - **Sizes.** Phase 1 goes to 80 free steps. Phase 2 tries M = 50, 60, …, 120 and stops when the time guard predicts a search that would pass 330 s in all.
 - **The kit's eight seeds** are written into the probe as public data of R30-20261115-fdf6a3.
 - Run 15: CPU 600 s, wall 900 s, RSS 4096 MiB, directory `rule30-frontier/run15` outside git.
+
+**L1675, addendum 2 (2026-11-16 14:13 GMT): run 15, its Wolfram replay, and the table to popcount 90.** [Report](reports/LOCAL-Q01GAP-MASS-TABLE-20261116.md).
+
+- **Run 15** (source `8bb02cf3…`): COMPLETED in 228 s. Output `tests/probes/sepgap/local_q01gap_mass_table.out`, `1dc3668c…`. Controls C0 to C4 pass.
+- **K1 HELD: the kit's rung, and it is sharp.**
+  - μ(102) = 38, and the eight survivors of popcount 38 are exactly `c37Roots`.
+  - As finite seeds they survive to 102, 102, 102, 103, 103, 103, 107, 110; y* is the last.
+  - `NoMass 37 H` first holds at H = 102 and `NoMass 38 H` at H = 111, so the submission's two horizons are the least possible.
+- **The table (COMPUTED).** The least H with `NoMass M H` is 148, 182, 212, 244, 278 for M = 50, 60, 70, 80, 90. μ(H) is exact to H = 277. The search for M = 90 visited 1.07·10^8 nodes.
+- **K2 HELD.** H_M/M runs from 2.82 to 3.14 for 40 ≤ M ≤ 90.
+- **K3 HELD: the minimum is statistical.**
+  - Over all accepted traces the popcount has mean 0.5005·H − 0.13 and variance 0.2563·H − 3.4: fair coins.
+  - μ − x1 is between +3.1 and +7.8 for 60 ≤ H ≤ 162, as for the minimum of a branching random walk.
+  - Extrapolated from H ≤ 162, the horizons for M = 60, 70, 80, 90 come out as 180, 215, 249, 284, against the exact 182, 212, 244, 278.
+  - The lower tail is depleted: two words of popcount 55 at H = 162, where a Gaussian would have 12.5.
+- **K4 HELD.** At H = 162 the sparsest prefixes have support 161 or 162; the shortest (support 142) have popcount 78 or more, against μ = 55.
+- **K5 HELD.** The white-tail counts halve (ratios 0.487 to 0.510), and the longest white tail is 20.
+- **No prediction.** The deep minimisers are not prefixes of one another: the deepest survivor of popcount at most 90 exceeds μ(H) by up to 6 along the way. No structured sparse family shows to H = 277.
+- **Wolfram replay** (`tests/probes/wolfram/q01gap_mass_table_replay.wl`, `1ad25c82…`, explicit anti-diagonal lists, 31 s). Equal to Python: the horizons 102, 111, 148, 182; the eight seeds and their survival lengths; μ(H) to H = 180; the node counts 63,489 and 407,950. Python only: M = 70, 80, 90 and the popcount statistics.
+
+**Reading.**
+- The kit's mass coordinate obeys the same fair-coin statistics as L1673's support coordinate, with about three ticks of survival per unit of mass.
+- `MassDiverges` would follow from a decay, for one z below 1, of the sum of z^popcount over the accepted traces. That is a weighted count over a language, the shape of the Mahler lemma of L1670, but with a non-linear map in place of a character.
+- The table extends fdf6a3's rung from 38 to 90. Offering it to its author is the owner's call; I have not done it.
+
+No job is running. Local's schedules stay paused.
+
+My own pull: the weighted count itself. Measure Z_H(z), the sum of z^popcount over the accepted traces, against (1.0926·(1 + z)/2)^H for a few z, and look at how it factors along the gap automaton. If the per-step factor is already near (1 + z)/2 at each free bit, there may be a transfer-operator bound to prove.

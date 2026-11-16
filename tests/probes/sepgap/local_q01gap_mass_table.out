@@ -1,0 +1,53 @@
+L1675 mass-table probe.
+C0 PASS: the anti-diagonal recursion inverts arbitrary columns: 300 random columns of length <= 40
+C1 PASS: accepted prefixes = {z < 2^H : SurvivesTo z H} by literal simulation of the kit acceptor, 3 <= H <= 18
+   phase 1: 8350743 nodes in 14 s; B at H = 102, 162: 6654, 1355842
+C2 PASS: every sampled prefix (30 to 100 free steps) survives to its H when run forward as a finite seed
+C3 PASS: 7 mu(H) >= H + 4 for 3 <= H <= 90 (the kit's S_upto_90, on a sublanguage)
+--- K1: the rung of R30-20261115-fdf6a3
+   mu(102) = 38; prefixes of popcount <= 38 at H = 102: 8; equal to c37Roots as a set: True
+   popcounts of c37Roots: [38, 38, 38, 38, 38, 38, 38, 38]; bit lengths: [96, 97, 102, 95, 100, 102, 100, 99]
+   survival of the eight as finite seeds (largest H with SurvivesTo): [102, 102, 102, 103, 103, 103, 107, 110]; y* survives to 110
+   exact least horizons: NoMass 37 H first holds at H = 102; NoMass 38 H first holds at H = 111
+K1 HELD: mu(102) = 38, minimisers = c37Roots, none survives to 111, y* survives to 110
+--- phase 1: popcount over every accepted trace (even H)
+   H : B(H), mean, variance, mu(H), x1 = mean - sd sqrt(2 ln B), mu - x1, least support, H - support
+    22 :        5   10.000    0.800    9    8.395   +0.60   21   1
+    42 :       33   20.727    4.380   18   15.193   +2.81   38   4
+    62 :      195   30.908   12.053   23   19.633   +3.37   55   7
+    82 :     1129   40.900   17.307   30   25.302   +4.70   72  10
+   102 :     6654   50.948   22.681   38   30.966   +7.03   89  13
+   122 :    39221   60.950   28.111   43   36.565   +6.44  108  14
+   142 :   230552   70.938   33.008   49   42.387   +6.61  126  16
+   162 :  1355842   80.935   37.978   55   48.186   +6.81  142  20
+   fits over 80 <= H <= 162: mean = 0.5005 H -0.133; variance = 0.2563 H -3.355; ln B = 0.08860 H -0.233 (theory 0.08858)
+   first-moment slope rho - sqrt(2 sigma^2 eta) = 0.2874; fair coins with this entropy: 0.293
+   mu - x1 over 60 <= H <= 162: least +3.08, largest +7.81; median over 120 <= H <= 162: +6.91
+   lower tail at H = 162 (popcount: count / Gaussian expectation): 55: 2/12.5, 56: 5/24.5, 57: 7/46.5, 58: 27/86.2, 59: 75/155.7, 60: 130/273.8, 61: 265/468.9, 62: 507/782.2, 63: 942/1270.9, 64: 1667/2011.4
+--- the two coordinates at H = 102 and H = 162
+   H = 102: mu = 38, supports of its minimisers [95, 96, 97, 99, 100, 102]; least support 89, popcounts of its minimisers [50]
+      frontier (support W : least popcount among prefixes of support <= W): 89:50 93:49 94:41 95:38
+   H = 162: mu = 55, supports of its minimisers [161, 162]; least support 142, popcounts of its minimisers [78, 81, 82, 87]
+      frontier (support W : least popcount among prefixes of support <= W): 142:78 146:65 149:64 150:56 161:55
+K4 HELD: at H = 162 every min-popcount prefix has support >= 154 (least 161) and every min-support prefix has popcount >= 1.2 mu = 66.0 (least 78)
+      white-tail counts: [677783, 338090, 169300, 85050, 43392, 21116, 10798, 5253, 2569, 1250, 654, 296, 173, 59, 27, 13, 15, 0, 0, 0, 4]
+K5 HELD: white-tail ratios ['0.499', '0.501', '0.502', '0.510', '0.487'] (within 0.03 of 1/2), longest white tail 20 (predicted 14 to 26)
+--- phase 2: depth-first searches bounded by popcount
+   M =  50: NoMass M H first holds at H = 148 (H/M = 2.960); 63489 nodes, 0 s; largest box 3445
+   M =  60: NoMass M H first holds at H = 182 (H/M = 3.033); 407950 nodes, 1 s; largest box 20411
+   M =  70: NoMass M H first holds at H = 212 (H/M = 3.029); 2615198 nodes, 4 s; largest box 123197
+   M =  80: NoMass M H first holds at H = 244 (H/M = 3.050); 16767196 nodes, 27 s; largest box 748057
+   M =  90: NoMass M H first holds at H = 278 (H/M = 3.089); 107462695 nodes, 181 s; largest box 4562344
+   M = 100 not started: the time guard predicts 1196 s
+C4 PASS: the bounded search reproduces phase 1's mu(H) at every H <= 162
+   mu(H) exact to H = 277 (M* = 90): 20: 7, 40: 16, 60: 23, 80: 29, 100: 37, 120: 43, 140: 49, 160: 54, 180: 59, 200: 67, 220: 74, 240: 79, 260: 85
+   mass table M : least H with NoMass M H   10: 29, 15: 40, 20: 50, 25: 72, 30: 83, 35: 97, 37: 102, 38: 111, 40: 116, 45: 128, 50: 148, 55: 165, 60: 182, 65: 195, 70: 212, 75: 226, 80: 244, 85: 265, 90: 278
+K2 HELD: H_M / M for 40 <= M <= 90 ranges from 2.818 to 3.138 (predicted 2.4 to 3.3)
+   least-squares line through mu(H), even H >= 60: mu = 0.3071 H +5.32; mu(H)/H from 0.3199 to 0.3833; differential slope from H = 162 to 276: 0.3070
+   M : exact horizon, extrapolated with the in-sample offset, extrapolated raw   50: 148 / 145 / 169, 60: 182 / 180 / 204, 70: 212 / 215 / 239, 80: 244 / 249 / 273, 90: 278 / 284 / 308
+K3 HELD: in sample, mu - x1 between +3.08 and +7.81 (band -2 to +12): True; out of sample, horizons beyond 162 within 10% of the extrapolation: True
+   the deepest survivor of popcount <= 90 (H = 276, popcount 90, 2 such): excess of its H-bit prefix over mu(H): largest 6 (at H = 96), zero at 33 of 129 even H
+   minimisers per even H (count at mu, capped at 64): 100: 4, 120: 6, 140: 2, 160: 2, 180: 1, 200: 1, 220: 9, 240: 2, 260: 1
+   that survivor, depth 1 first: 011010101000000100110110000011010100001111000111000100100101001001000100101001011000111011011001100000100100001100100000100010000101000001100000000100000101000110000011101000100101000001110010110100000101000010001101011000000000000000100000000000000001100010010000100100001110
+failures: none
+done in 227 s

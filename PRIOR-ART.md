@@ -5831,3 +5831,9 @@ Primary comparison: Mosquera–Shmerkin, [Proposition 2.3](https://www.acadsci.f
 - **G.P.J.W. Quint and Gemini, R30-20261113-084253 (kit main, `Rule30GateTrapLift`) and R30-20261114-fef41b (PR #348).** At a black pulse of a `TwoWordsOK` trajectory the row's first 16 depths are 1100011, ¬f3, 1011111, f3; the first 16 and 24 free bits take 5 and 11 values; depths 20, 21 are white and 29 or 32 black; one of depths 46, 47, 48 is black; weight(1..32) >= 18. *Known (Lean), reproduced here* by exhaustive enumeration in [L1673](reports/LOCAL-Q01CORE-FRONTIER-20261114.md), which also shows the black-frontier pattern does not persist beyond k = 24.
 - **The counting heuristic** (survival W/(2 - h), per-step hazard 1 - lambda/4) is the standard first-moment count; no novelty claimed.
 
+## Mass stratum of `Q01Gap`: the kit's rung, known and reproduced (Local L1675, 16 November 2026)
+
+- **Emerson Villafuerte with Codex and Antigravity, R30-20261115-fdf6a3 (kit `Rule30ZeroCoastBridge`).** `MassDiverges <-> Q01Gap`; `NoMass 37 102` and `NoMass 38 111`, with the eight seeds `c37Roots` of popcount 38. *Known (Lean), reproduced here* by exhaustive enumeration and a Wolfram replay in [L1675](reports/LOCAL-Q01GAP-MASS-TABLE-20261116.md), which also computes that 102 and 111 are the least such horizons and extends the table to popcount 90.
+- **The kit's Conjecture S** (`Rule30PeriodTwoMass`): weight at least (H + 4)/7 for the larger G language, kernel-checked to H = 90, sharp at H = 86, 198, 310, computed by its author to H = 300. The gap language is a sublanguage; its least weight is about 0.307 H + 5.
+- **Minimum of a branching random walk** (first-moment speed; a logarithmic correction above it): standard theory, used here only as a description. Cited from memory (Hammersley, Kingman, Biggins; Bramson), not opened. No novelty claimed.
+
