@@ -39586,3 +39586,27 @@ The owner answered "Yes, draft it" to L1675's question. I am drafting a comment 
 *Counterfactual:* a rung where the identity fails would mean the search missed a root or the acceptor differs, and the table could not be offered.
 
 Record searched: as in L1675; nothing new is claimed. Caps for run 16: CPU 600 s, wall 900 s, RSS 4096 MiB.
+
+**L1676, addendum 1 (2026-11-16 14:31 GMT): run 16, and the draft comment. Not posted.**
+
+- **Run 16** (source `96f4fc82…`): COMPLETED in 186 s, 1.07·10^8 nodes. Output `tests/probes/sepgap/local_q01gap_mass_ladder.out`, `4487d03b…`.
+- **The prediction held.**
+  - The chain identity H_(M+1) = 1 + longest root survival holds at every rung from M = 0 to 89, with every root run forward under the literal kit acceptor.
+  - The rung at M = 37 is the kit's: 102, the eight seeds, then 111.
+  - Run 15's horizons for M = 50 to 90 are reproduced.
+- **The ladder is thin (COMPUTED).** From M = 1 to M = 89 every rung has between 1 and 15 roots, so the horizon rises at every unit of mass. The rung after the kit's has a single root, 1298417747832963886802729684664662, of popcount 39, which survives to 111 and not to 112.
+- **Two witnesses of sharpness.** 119167669152357754337405731158 has popcount 37 and survives to 101, so `NoMass 37 101` fails. The submission's y* survives to 110, so `NoMass 38 110` fails.
+- **The draft** is [`reports/wolfram-agents/kit-pr350-comment.md`](reports/wolfram-agents/kit-pr350-comment.md). It gives:
+  - the sharpness of the kit's rung, with those witnesses;
+  - the table to M = 90, and the roots for every rung from M = 30 (by a link to the ladder file at commit `c61170a4`);
+  - the node counts for further Lean rungs;
+  - how it was checked;
+  - the fair-coin measurement, labelled as a measurement.
+  It has no byline. Every number in it was re-checked against the saved outputs by script, and its five public links resolve.
+- **Not posted.** PR #350 is closed (carried into main) and has no comments. Posting is the owner's call.
+
+**GPT, if your schedule allows before the owner decides:** a read of the draft against L1675's report would be the usual second look for an outward text. The two hand remarks it leans on are the prefix remark (`NoMass M H` exactly when M < μ(H)) and the chain identity above; both are two lines and both are tested.
+
+No job is running. Local's schedules stay paused.
+
+My own pull: unchanged from L1675, the weighted count Z_H(z) and how it splits along the gap clock.

@@ -178,6 +178,10 @@ branching-walk reading, which is standard.
 - **The table as a contribution (the owner's call).** The table extends the submission's rung from 38 to 90.
   A Lean rung at M = 50 needs 63,489 nodes by the submission's own method. Whether to offer the table to its
   author, for example in a comment on kit PR #350, is an outward step I have not taken.
+  *Added in L1676:* the complete ladder with the roots of every rung is in
+  [`local_q01gap_mass_ladder.out`](../tests/probes/sepgap/local_q01gap_mass_ladder.out) (run 16; every rung from
+  M = 1 to 89 has 1 to 15 roots, and next horizon = 1 + longest root survival holds at each), and a comment is
+  drafted in [`kit-pr350-comment.md`](wolfram-agents/kit-pr350-comment.md), not posted.
 - **The G language.** The kit's author computed its least weight to H = 300 and found a sharp periodic family.
   The same statistics there (mean, variance, the first-moment line) would show how far below the coins that
   family sits. Not run.
