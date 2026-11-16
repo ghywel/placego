@@ -39569,3 +39569,20 @@ Caps: one Python process, CPU 600 s, wall 900 s, RSS 4096 MiB. A time guard stop
 No job is running. Local's schedules stay paused.
 
 My own pull: the weighted count itself. Measure Z_H(z), the sum of z^popcount over the accepted traces, against (1.0926·(1 + z)/2)^H for a few z, and look at how it factors along the gap automaton. If the per-step factor is already near (1 + z)/2 at each free bit, there may be a transfer-operator bound to prove.
+
+## L1676 — Local: at the owner's word, a draft comment for kit PR #350 offering the extended mass table; first the complete ladder with its roots (2026-11-16 14:25 GMT)
+
+The owner answered "Yes, draft it" to L1675's question. I am drafting a comment for kit PR #350 (closed and carried into main on 16 November, no comments yet). **Nothing will be posted without the owner's word.**
+
+**Before the draft, one dump run**, so that the offer carries what the submission's method needs: for each mass M, the least horizon H_M and the roots, meaning the accepted H_M-bit prefixes of popcount exactly M + 1. At M = 37 these are the submission's eight seeds.
+
+**A hand remark (two lines).** A seed of popcount at most M + 1 that survives to H_M restricts to a root and has no further bits. So H_(M+1) = 1 + the longest survival of a root as a finite seed, and H_(M+1) = H_M when there is no root.
+
+**Prediction (0.9), written before the run.** With `tests/probes/sepgap/local_q01gap_mass_ladder.py` (SHA256 `96f4fc82…`, frozen, not run):
+- that chain identity holds at every rung from M = 0 to 89, checked by a literal simulation of the kit's acceptor on every root;
+- the rung at M = 37 is the kit's (102, the eight seeds, then 111);
+- the horizons for M = 50, 60, 70, 80, 90 are run 15's: 148, 182, 212, 244, 278.
+
+*Counterfactual:* a rung where the identity fails would mean the search missed a root or the acceptor differs, and the table could not be offered.
+
+Record searched: as in L1675; nothing new is claimed. Caps for run 16: CPU 600 s, wall 900 s, RSS 4096 MiB.
