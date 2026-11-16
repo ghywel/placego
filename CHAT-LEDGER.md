@@ -39452,3 +39452,33 @@ Caps: one Python process, CPU 900 s, wall 1500 s, RSS 4096 MiB. A node budget st
 No job is running. Local's schedules stay paused.
 
 My own pull: read the kit's proof of `first_check_balanced` and see whether it survives conditioning on the gap language. If it does, the conditioned first check (P4, 1/2 measured) becomes a theorem, the Rule 30 twin of Mahler's V1.
+
+## L1674 — Local: 16 November portal and kit update; four new entries, three kit merges, nothing on Mahler; `Q01Gap` restated as mass divergence; a first Problem 3 upper bound (2026-11-16 13:53 GMT)
+
+Owner-requested [update and summary](reports/LOCAL-PORTAL-KIT-UPDATE-20261116.md). Complete `known_find.py --new` on Local's host: portal 2026-11-16 13:49:53Z, kit main `8b397bde`, 14 open PRs.
+
+- **The baseline** is Local's own complete check of 14 November (L1671), so the delta is exact. Diffed against the L1671 archive:
+  - 4 entries added, none removed;
+  - `fef41b` and `1ced53` gained Human Verified and Kit Contribution;
+  - no status changes.
+- **Totals.** 364 entries: 361 Lean Verified, 337 Human Verified, 312 Kit Contribution. The verifier is unchanged: kit `5fb59158`, Lean 4.35.0.
+- **Kit main moved by three commits.**
+  - #348 and #349 (Quint) landed: the depth-48 gate-trap skeleton, and the GE2 hierarchy with the RD bridge.
+  - #350 (Villafuerte) adds the new module `Rule30ZeroCoastBridge`.
+- **The new entries.**
+  - **`fdf6a3`** (Villafuerte, Codex, Antigravity; on main as `Rule30ZeroCoastBridge`). With `NoMass M H` (no seed of popcount at most M survives the 3/5 gap clock to tick H) and `MassDiverges` (every M has such an H), main proves `MassDiverges ↔ FiniteSeedsTerminate ↔ Q01Gap`, hence `massDiverges_of_Q01` and `CQ01Empty_of_massDiverges`. All of these remain open. The submission adds the finite rung `NoMass 37 102`.
+  - **`043275`** (KDRonald3 with Claude Code). The first upper bound in the kit's Problem 3 model: an explicit one-tape machine (9 symbols, 69 states) computes the centre column in 21(n+1)² steps. No lower bound is claimed.
+  - **`2d4add`** (KDRonald3 with Claude Code). Seven sets of three-column windows, a black pair and a low window recur in every configuration with a leftmost black cell. The proof traps a wider window in a finite graph and contradicts Jen and `no_column_eventually_constant`. Nothing on period 2, and the authors say so.
+  - **`18db54`** (Quint; PR #351 open). Closed forms for depths 4 to 9 under `GValid`, GE2 re-anchoring at every even-time zero, and recurrent 24-bit seed classes.
+- **What touches our work.**
+  - `Rule30ZeroCoastBridge` stratifies `Q01Gap` survival by popcount, where L1673 stratified the thinner languages by support (survival about W/(2 − h)). Running L1673's probe on the `Q01Gap` language would put the two tables side by side; not done.
+  - `18db54` is another finite-depth skeleton, like the gate-trap one whose frontier L1673 showed recedes. Its frontier is untested.
+- **Our posts and credit.** All 16 of our 10 and 11 November posts are on main; 15 are Human Verified, the exception being `2eb8e7`, unchanged. Our credit on the `Rule30GateTrapLift` row survives #348's edit.
+- **Open PRs.** #351 is new; #238 and Troy Lowry's twelve are unchanged and uncommented.
+- **Evidence.** `cited/local/portal-kit-20261116.tar.gz`, 371,615 bytes, SHA256 `f82af8428661ce688d1f584d3068436aab6b563e8f88a31a2fd18bae29b0da33`, read back byte-exact. No Lean or Wolfram build was run.
+
+Record searched (record_find, each term alone): "one-tape", "quadratic time", "exists_quadratic_machine", "Computes M center", "recurrent window", "black_pair", "NoMass", "MassDiverges", "popcount". The record has Problem 3's formal statements and CL765's unary remark, but no machine construction. It has no recurrence of windows, and no mass stratification of `Q01Gap`.
+
+No job is running. Local's schedules stay paused.
+
+My own pull: run L1673's frontier probe on the `Q01Gap` language (gaps 3 or 5, no forbidden words) and read off its survival table by popcount as well as by support. The kit's `NoMass 37 102` is then an exact check, and the two coordinates can be compared on one object.
