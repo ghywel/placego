@@ -39482,3 +39482,56 @@ Record searched (record_find, each term alone): "one-tape", "quadratic time", "e
 No job is running. Local's schedules stay paused.
 
 My own pull: run L1673's frontier probe on the `Q01Gap` language (gaps 3 or 5, no forbidden words) and read off its survival table by popcount as well as by support. The kit's `NoMass 37 102` is then an exact check, and the two coordinates can be compared on one object.
+
+## L1675 — Local: the exact mass table of the `Q01Gap` language, against the kit's rung and against a branching-walk estimate; question and predictions before any code (2026-11-16 14:01 GMT)
+
+The owner said "Yes, run it" to my pull of L1674. **Status: a question, a heuristic and predictions. Nothing has run.**
+
+**The objects (kit main `8b397bde`, `Rule30ZeroCoastBridge`, read at the source).**
+- A seed y is a left row read as an integer; F is the zero-boundary step.
+- `SurvivesTo y H`: the depth-1 trace of y at ticks 0 to H − 1 is white at tick 0, black at odd ticks, and at even ticks follows the gap clock (resets 6 or 10 ticks apart, that is gaps 3 or 5 free steps). The empty and the unfinished gap are accepted.
+- `NoMass M H`: no y of popcount at most M survives to H. `MassDiverges ↔ Q01Gap` (`massDiverges_iff_Q01Gap`).
+- The submission R30-20261115-fdf6a3 has one rung: the eight seeds `c37Roots`, of popcount 38, are all the survivors to 102 of popcount at most 38, so `NoMass 37 102`; and `NoMass 38 111`.
+
+**A remark (hand, two lines).** `SurvivesTo y H` reads only bits 0 to H − 1 of y, because depth 1 at tick t depends on depths 1 to t + 1. So `NoMass M H` holds exactly when M < μ(H), where μ(H) is the least popcount of an H-bit prefix whose trace is accepted for H ticks. μ is non-decreasing, and `Q01Gap` is "μ is unbounded". The mass table is the function μ, and one depth-first search bounded by popcount computes it exactly.
+
+**What is known about floors of this kind.** The kit's `Rule30PeriodTwoMass` has Conjecture S for the larger G language (gaps at least 2): weight at least (H + 4)/7. The kernel checks it to H = 90, and the constant is attained at H = 86, 198, 310 (`sharp_86` and its companions). So for the G language the least weight has slope exactly 1/7 as far as computed, along a periodic family. Fair coins with the G language's entropy would give slope 0.168, so there the structured family beats the coins.
+
+**The heuristic for the gap language.**
+- The language has 1.1938^k words of k free steps (x^(−3) + x^(−5) = 1), so η = 0.0886 nats per tick.
+- Words form a tree and popcount accumulates along a path. If the new row bits behave like coins with mean ρ and variance σ² per tick, μ(H) follows a branching random walk: the first-moment line x1(H) = mean − sd·√(2 ln B(H)), plus a logarithmic correction.
+- Fair coins would give slope 0.293. The kit's rung has 38/102 = 0.373.
+
+**Test**, `tests/probes/sepgap/local_q01gap_mass_table.py`, to be frozen and hashed before it runs.
+- Phase 1 enumerates every accepted trace to 80 free steps (H = 162) and records, at every H, the count B, the popcount histogram and the support.
+- Phase 2 runs depth-first searches bounded by popcount M, for M = 38, 50, 60, … as far as a time guard allows. Each ends when no prefix of popcount at most M is left, which is the exact horizon H_M.
+
+**Controls (0.9).**
+- For H ≤ 18, the accepted prefixes are exactly the z < 2^H that survive to H under a literal simulation of the kit's acceptor.
+- Every sampled prefix survives to its H when run forward as a finite seed.
+- 7μ(H) ≥ H + 4 for H ≤ 90, as the kit's `S_upto_90` requires of a sublanguage.
+
+**K1 (0.9): the kit's rung.** μ(102) = 38; the minimisers at H = 102 are exactly the eight `c37Roots`; none of them survives to 111 as a finite seed; y* = 343533199256979670105602359638 survives to 110.
+
+**K2 (0.65): linear growth.** For every M from 40 to the largest completed, 2.4 ≤ H_M/M ≤ 3.3.
+
+**K3 (0.5): the minimum is statistical.**
+- For every even H from 60 to 162, x1(H) − 2 ≤ μ(H) ≤ x1(H) + 12, with x1 from the measured mean, variance and count.
+- Beyond H = 162, the exact horizons H_M are within 10% of those extrapolated from x1 with linear fits.
+- *Counterfactual below the band:* a structured family of sparse rows, as `sharp_86` shows for the G language. I would then look for its period.
+- *Counterfactual above the band:* a structural mass floor, which is what a proof of `MassDiverges` would need.
+
+**K4 (0.5): the two coordinates pick different rows.** At H = 162 every min-popcount prefix has support at least 154, and every min-support prefix has popcount at least 1.2μ(162).
+
+**K5 (0.6): L1673's fair-coin frontier holds in this language too.** At H = 162 the white-tail counts halve (successive ratios within 0.03 of 1/2 for tails 0 to 5), and the longest white tail is between 14 and 26.
+
+*No prediction:* the exact table M → H_M, including the least H for M = 37 and 38; ρ and σ²; whether the minimisers at different H are prefixes of one another.
+
+**What it would teach.** Whether the kit's mass coordinate is governed by a statistical law (then `MassDiverges` is as hard as an exact large-deviation bound) or by a structured family (then there is a sharp constant to conjecture, as in Conjecture S).
+
+Record searched (record_find, each term alone): "Conjecture S", "ConjS", "sharp_86", "MassFloor", "mass floor", "weight floor", "c37Roots", "min popcount", "seed weight", and in L1674 "NoMass", "MassDiverges", "popcount".
+- Our record's "Conjecture S" lines are an older strip-form conjecture (8.83, IN010) and the kit's `ConjS` as cited in CL782 and GC2936 for the Mahler twin.
+- The kit and portal have `Rule30PeriodTwoMass` (Conjecture S, G language, computed to H = 300 by its author) and fdf6a3's single rung.
+- No mass table for the gap language beyond M = 38 was found.
+
+Caps: one Python process, CPU 600 s, wall 900 s, RSS 4096 MiB. A time guard stops phase 2 before a search that would not fit.
