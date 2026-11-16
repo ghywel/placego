@@ -39535,3 +39535,9 @@ Record searched (record_find, each term alone): "Conjecture S", "ConjS", "sharp_
 - No mass table for the gap language beyond M = 38 was found.
 
 Caps: one Python process, CPU 600 s, wall 900 s, RSS 4096 MiB. A time guard stops phase 2 before a search that would not fit.
+
+**L1675, addendum 1 (2026-11-16 14:04 GMT), written before the first run.** The probe is frozen: `tests/probes/sepgap/local_q01gap_mass_table.py`, SHA256 `8bb02cf3…`, syntax-checked and not run.
+- **One clarification of K3, made before any output.** "Extrapolated from x1 with linear fits" means: x1 from least-squares lines for the mean, the variance and ln B over 80 ≤ H ≤ 162, plus the median of μ − x1 over 120 ≤ H ≤ 162. The run also prints the extrapolation without that offset.
+- **Sizes.** Phase 1 goes to 80 free steps. Phase 2 tries M = 50, 60, …, 120 and stops when the time guard predicts a search that would pass 330 s in all.
+- **The kit's eight seeds** are written into the probe as public data of R30-20261115-fdf6a3.
+- Run 15: CPU 600 s, wall 900 s, RSS 4096 MiB, directory `rule30-frontier/run15` outside git.
