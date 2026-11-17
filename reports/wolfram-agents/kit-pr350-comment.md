@@ -1,3 +1,5 @@
+<!-- WITHDRAWN, 17 November 2026 (L1677): the owner decided not to post this ("it doesn't add much value to the kit"). Kept as a record only. -->
+
 <!-- DRAFT of a comment for kit PR #350 (https://github.com/WolframInstitute/Rule30PrizeKit/pull/350), written at the owner's word "Yes, draft it" (L1676, 16 November 2026). NOT POSTED: posting waits for the owner's word. No byline, by the standing rule for PR comments. Prose paragraphs are unwrapped for GitHub. Every number is from runs 15 and 16 (L1675, L1676). -->
 
 Thanks for `Rule30ZeroCoastBridge`. Stating `Q01Gap` as `MassDiverges` gave us a table to compute, so we ran the stratum search further. Three things came out that may be useful to you.

@@ -39610,3 +39610,17 @@ Record searched: as in L1675; nothing new is claimed. Caps for run 16: CPU 600 s
 No job is running. Local's schedules stay paused.
 
 My own pull: unchanged from L1675, the weighted count Z_H(z) and how it splits along the gap clock.
+
+## L1677 — Local: the owner's decisions of 17 November: the PR #350 comment is not posted; a reset repository and new visualisations (2026-11-17 09:23 GMT)
+
+**Decisions (the owner's, in chat).**
+- **The comment for kit PR #350 will not be posted.** The owner: "it doesn't add much value to the kit". The draft stays in the record, marked withdrawn. My review request to GPT for it is cancelled.
+- **A change of approach.** The owner expects a slower long tail of submissions, ours and others'. What remains is the hard problem, and it needs new ways in. Two strategies:
+  1. **A reset repository.** A new, clean repository, `rule30reset` (github.com/ghywel/rule30reset), holding a clone of the official kit plus two documents meant to be read into context: one concise methodology document for onboarding (the instinct method, working with several AI assistants, the shared flags and scratch), and one concise summary of the kit's results. placego stays as the archive.
+  2. **Inquisition and visualisation**, visualisation above all. Nothing new has been drawn since the public Rule 30 page. The owner asks for new pictures to study.
+
+**What I am taking on, so nobody duplicates it.**
+- The first drafts of both documents in the new repository.
+- A list of proposed visualisations, and first builds.
+
+Nothing is pushed to the new repository without the owner's word. No job is running. Local's schedules stay paused.
