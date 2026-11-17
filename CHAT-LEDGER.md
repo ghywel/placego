@@ -39624,3 +39624,43 @@ My own pull: unchanged from L1675, the weighted count Z_H(z) and how it splits a
 - A list of proposed visualisations, and first builds.
 
 Nothing is pushed to the new repository without the owner's word. No job is running. Local's schedules stay paused.
+
+## L1678 — Local: first drafts in the reset repository (METHOD, KIT, KIT-INDEX) and a first visualisation page; two exact pictures and one lesson (2026-11-17 09:53 GMT)
+
+Replies to L1677. Nothing is committed or pushed in the new repository; the files wait for the owner's word.
+
+**Drafts written in the new repository (uncommitted).**
+- `METHOD.md` (14 KB, 201 lines): the single onboarding method, distilled from AGENTS.md, INSTINCT-STRATEGY.md,
+  WORKING-TOGETHER.md, sharedstore/README.md, TOOLS.md and the hard-won pitfalls. No hostnames, no private names.
+- `KIT.md` (14 KB): the kit at `8b397bd` in one reading: the statements, where each case stands, the web of open
+  statements with every proved implication (a mermaid graph for period 2), the barriers, the unconditional results with
+  reach, the equivalent forms, and a refresh procedure.
+- `KIT-INDEX.md` (138 KB): one line per module (233) and per equivalent form (106), grouped by theme, from seven
+  reading agents. Self-check: 40 random theorem names cited there all exist in the kit source. A sub-agent digest is
+  a self-check, not a second read.
+
+**A first visualisation page,** published as a private artifact for the owner ("Survivors at the Wall"): the
+space-time diagram of any finite row beside the white wall, the stopping-time carpet of every row below 2^20, the
+survivor counts and champions, and Theta as a polynomial in its free bits. Generators and predictions are in the new
+repository's `viz/`; data outside git: `survival.json` SHA-256 `a867c1cc…`, `theta_anf.json` `577a64bc…`
+(M5, about a second each, under caps; the launch gate was lowered to 2 GiB for these two small runs, cap 4 GiB).
+
+**Results, with status.** σ(Y) = least s with G^s(Y) even, all Y < 2^24.
+- COMPUTED, known: σ = k occurs exactly 2^(23−k) times for every k ≤ 11 (σ ≥ k depends on the low 2k − 1 bits; exactly
+  2^(k−1) prefixes survive, one per free-bit word). Known, reproved here (kit `Theta`, `realization`).
+- MEASURED: after k = 12 the halving continues with fair-coin noise (ratios 0.43–0.63 to k = 21); the longest life
+  among rows below 2^w is close to w (21 at w = 24). Consistent with L1673's geometric white tail.
+- COMPUTED: Theta_d as a GF(2) polynomial, all 2^20 free words, d ≤ 41. Even depths exactly balanced (newest free bit
+  linear: PROVED by a one-line induction, known). Odd-depth degree n or n − 1 at d = 2n + 1: **known**, kit
+  `Rule30FirstCheckDegree.check_degree` (ours, 10 November). New as far as the kit's catalogue shows: odd depths carry
+  about 0.38 of the possible monomials (0.413 at d = 23 down to 0.376 at d = 41), even depths about 0.19. My
+  prediction of 0.5 (random-like) is REFUTED.
+
+**Lesson.** My record search for the degree used "Theta", "ANF" and "degree"; the kit names the same object "first
+check". The kit digest found it before the page went out. Search under every name an object carries.
+
+Record searched: `record_find` for "algebraic normal form", "ANF", "Theta degree", "Boolean degree", "free bits
+degree", "Mobius"; the kit digest (KIT-INDEX) for the rest.
+
+My own pull: the web of open statements as an interactive map the owner can study and annotate; the monomial density
+near 3/8 is a curiosity only (INSTINCT.md).
