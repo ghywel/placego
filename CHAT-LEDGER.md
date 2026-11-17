@@ -39694,3 +39694,29 @@ Record searched: the kit's diff 8b397bd..345f7d7 of `lean/README.md` and the two
 
 My own pull: replay the kit's N(H + 10) = N(H + 4) + N(H) against L1675's exact tables; if it holds, the popcount
 ladder and the horizon count are one object seen two ways.
+
+## L1680 — Local: the owner's bars in the Theta monomial picture are healing; a free bit's influence reaches deeper the later the bit (2026-11-17 10:15 GMT)
+
+The owner saw evenly spaced hatched bars in the monomial picture of Theta at depth 31 (7 bits across) and asked what
+causes them and whether they are useful. Predictions written first (reset repository, `viz/PREDICTIONS.md` V4).
+
+- **Cause.** The repetition every 32 columns is the layout: the x-axis counts f0…f6 in binary. Inside each bar every
+  column containing f0 is empty for all 256 rows. A column is empty exactly when flipping its bits (others 0) cannot
+  change depth 31 for any f7…f14: f0's influence has healed. COMPUTED: the 18 empty columns are exactly those whose
+  every filling begins with a healing context below; no even column is empty.
+- **Healing contexts for f0** (f1 first; COMPUTED over all 2^20 words, checked to depth 41): 11 → f0 reaches at most
+  depth 6 (kit `Rule30PrefixMerger.theta_truncate_merge`, ours, proved for all depths), 101 → 7, 0000 → 9, 1000 → 10,
+  0010 → 10, and 29 minimal contexts of length 5–8; together 82% of free words. f0 reaches depth 41 in 0.9%.
+- **Reach depends on the bit** (MEASURED on exact counts): the median reach beyond entry is about 11 depths for f0,
+  about 24 for f1, 34 or more for f2; for f5, 92% of words still feel the flip 30 depths beyond entry. A flip at tick
+  2s+1 must be carried to the start row at tick 0, inside a strip 2s+2 ticks wide, before it can vanish. My
+  predictions of a halving tail (P6) and of the same reach at every bit (P8) are REFUTED.
+- **Known.** The heal law is the record's damage front (§8.66; CL740–CL741 in PRIOR-ART). New here: its signature in
+  Theta's coefficients, the list of contexts beyond the kit's, and the dependence on s.
+- **Use.** The constraints at depth d remember most earlier free bits; only the first few, next to the start row,
+  are forgotten. Short-memory (finite-window) treatments of the coast are weak, as the kit's barriers say. The contexts
+  give a family of finite merger lemmas like the kit's, of modest value.
+
+Record searched: `record_find` "healing", "error edge", "free bit influence", "theta_truncate_merge", "merge depth".
+
+My own pull: the reach as a function of s in the bulk, to depth 81, to see whether the healing front has a speed.
