@@ -39664,3 +39664,33 @@ degree", "Mobius"; the kit digest (KIT-INDEX) for the rest.
 
 My own pull: the web of open statements as an interactive map the owner can study and annotate; the monomial density
 near 3/8 is a curiosity only (INSTINCT.md).
+
+## L1679 — Local: the kit update step for the reset repository, and its first run (8b397bd → 345f7d7); NoSeedGE2 ⇒ Q01Gap is now in the kit (2026-11-17 10:09 GMT)
+
+The owner: KIT.md and KIT-INDEX.md must be "kept in lockstep with the official repository". Written in the reset
+repository (uncommitted, as before): `KIT-UPDATE.md`, the procedure, and `kit/`, its tools.
+
+**How lockstep is checked.** `kit/index.jsonl` holds one record per table row of the kit's two catalogues, keyed
+by file, section and module cell, with the SHA-256 of the row's exact text; `KIT-INDEX.md` is generated from it.
+`kit/check.py` (read-only, any revision) reports new, changed and removed rows, changed prose blocks that KIT.md
+summarises, stale stamps, and cited names the kit no longer declares; it exits 0 only when everything is in step.
+`kit/build.py --restamp` refuses while any row is out of step. Tested: in step at the old commit; the two changed rows
+found against the kit's main; a tampered copy gives one NEW and one REMOVED and the restamp refuses; a stale commit
+in KIT.md's prose is caught (that check was added after the first run missed it). The migration kept 238 lean rows,
+not 233: the first assembly had merged five rows that describe one module in two tables.
+
+**First run, kit 8b397bd → 345f7d7** (three commits, PRs 351–353): 0 new, 2 changed, 0 removed rows.
+- `Rule30ZeroCoastBridge`: NoSeedGE2 ⇒ MassDiverges ∧ Q01Gap (`survivesTo_two_mul_imp_ge2_and_noSeedGE2_imp_massDiverges`,
+  R30-20261117-ed1335), so Q01 ⇒ NoSeedGE2 ⇒ Q01Gap; RD ∧ MassDiverges ⇒ CQ01Empty and no eventual period 2; and the
+  seeds surviving the gap language to horizon H satisfy N(H + 10) = N(H + 4) + N(H) exactly, N = 1, 2, 4, 7, 12, 20,
+  33, 55 at H = 6, 12, …, 48 (`survivingSeeds_length_add_ten_and_initial_counts`, Quint and Gemini). COMPUTED here:
+  the growth root of x^10 = x^4 + 1 is 1.09264 = 2^0.1278 per tick (2^0.2556 per double step). L1673's figure,
+  2^0.12707 per free step, is for the stricter core language: close, but a different language and possibly a different
+  unit, so not a match. Untested here: a replay of the recurrence against the L1675 tables would be a cheap check.
+- `Rule30PeriodTwoWidth13`: depths 4–9 retrodiction and GE2 re-anchoring at every even-time zero (`ge2_shift_at_even_zero`).
+- KIT.md §3 changed: an arrow NoSeedGE2 → Q01Gap, and the seed-count law. Restamped; `kit/check.py` prints IN STEP.
+
+Record searched: the kit's diff 8b397bd..345f7d7 of `lean/README.md` and the two Lean sources.
+
+My own pull: replay the kit's N(H + 10) = N(H + 4) + N(H) against L1675's exact tables; if it holds, the popcount
+ladder and the horizon count are one object seen two ways.
